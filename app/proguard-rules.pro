@@ -1,0 +1,29 @@
+# Descente-Canyon ProGuard rules
+
+# JSoup
+-keeppackagenames org.jsoup.nodes
+
+# Ktor
+-keep class io.ktor.** { *; }
+-dontwarn io.ktor.**
+
+# Kotlin Serialization
+-keepattributes *Annotation*, InnerClasses
+-dontnote kotlinx.serialization.AnnotationsKt
+-keepclassmembers class kotlinx.serialization.json.** {
+    *** Companion;
+}
+-keepclasseswithmembers class kotlinx.serialization.json.** {
+    kotlinx.serialization.KSerializer serializer(...);
+}
+-keep,includedescriptorclasses class fr.descentecanyon.app.**$$serializer { *; }
+-keepclassmembers class fr.descentecanyon.app.** {
+    *** Companion;
+}
+-keepclasseswithmembers class fr.descentecanyon.app.** {
+    kotlinx.serialization.KSerializer serializer(...);
+}
+
+# Room
+-keep class * extends androidx.room.RoomDatabase
+-dontwarn androidx.room.paging.**

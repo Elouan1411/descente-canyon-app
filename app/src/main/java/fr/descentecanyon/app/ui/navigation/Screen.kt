@@ -1,0 +1,24 @@
+package fr.descentecanyon.app.ui.navigation
+
+import kotlinx.serialization.Serializable
+
+/**
+ * Type-safe navigation routes for the app.
+ */
+sealed interface Screen {
+
+    @Serializable
+    data object Home : Screen
+
+    @Serializable
+    data object Search : Screen
+
+    @Serializable
+    data object Map : Screen
+
+    @Serializable
+    data object Favorites : Screen
+
+    @Serializable
+    data class CanyonDetail(val canyonId: Int) : Screen
+}

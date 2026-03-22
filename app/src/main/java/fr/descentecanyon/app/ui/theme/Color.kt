@@ -1,0 +1,32 @@
+package fr.descentecanyon.app.ui.theme
+
+import androidx.compose.ui.graphics.Color
+
+// Primary - Canyon blue/teal tones
+val CanyonBlue = Color(0xFF1A6B8A)
+val CanyonBlueDark = Color(0xFF0D4F6A)
+val CanyonBlueLight = Color(0xFF4A9BB5)
+
+// Secondary - Earth/rock tones
+val RockBrown = Color(0xFF8B6914)
+val RockBrownDark = Color(0xFF5C4A12)
+val RockBrownLight = Color(0xFFB8922E)
+
+// Background
+val SurfaceLight = Color(0xFFF8F9FA)
+val SurfaceDark = Color(0xFF1A1C1E)
+
+// Debit level colors (matching descente-canyon.com)
+val DebitCrue = Color(0xFFFF0000)
+val DebitTresGros = Color(0xFFFF6600)
+val DebitGros = Color(0xFFFFAA00)
+val DebitCorrect = Color(0xFF00AA00)
+val DebitFilet = Color(0xFF0066FF)
+val DebitSec = Color(0xFF999999)
+val DebitInconnu = Color(0xFFCCCCCC)
+
+// Cotation difficulty colors
+val CotationFacile = Color(0xFF4CAF50)
+val CotationMoyen = Color(0xFFFF9800)
+val CotationDifficile = Color(0xFFF44336)
+val CotationTresDifficile = Color(0xFF9C27B0)
