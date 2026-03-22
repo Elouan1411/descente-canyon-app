@@ -1,0 +1,115 @@
+package fr.descentecanyon.app.data.remote.scraper
+
+import fr.descentecanyon.app.data.remote.dto.ScrapedDebit
+import org.jsoup.nodes.Document
+
+/**
+ * Parses debit (water flow) observation pages.
+ */
+internal object DebitParser {
+
+    // CSS class -> debit level name mapping
+    private val DEBIT_CLASS_MAP = mapOf(
+        "debit1" to "CRUE",
+        "debit2" to "TRES_GROS",
+        "debit3" to "GROS",
+        "debit4" to "CORRECT",
+        "debit5" to "FILET",
+        "debit6" to "SEC",
+    )
+
+    /**
+     * Parse the debits page for a specific canyon:
+     * /canyoning/canyon-debit/{id}/observations.html
+     */
+    fun parseCanyonDebits(doc: Document, canyonId: Int): List<ScrapedDebit> {
+        val results = mutableListOf<ScrapedDebit>()
+        val rows = doc.select("table#listedebit tbody tr")
+
+        for (row in rows) {
+            // Skip year separator rows (they have colspan)
+            if (row.select("td[colspan]").isNotEmpty()) continue
+
+            // Check this is a debit row (class contains debitN)
+            val rowClass = row.className()
+            val debitLevel = DEBIT_CLASS_MAP.entries
+                .firstOrNull { rowClass.contains(it.key) }
+                ?.value ?: continue
+
+            val tds = row.select("td")
+            if (tds.size < 4) continue
+
+            val dateRaw = tds[0].text().trim()
+            val auteur = tds[1].text().trim()
+
+            // Extract remark if exists
+            val remarkBtn = row.selectFirst("td button.lire")
+            val commentaire = if (remarkBtn != null) {
+                val remarkId = remarkBtn.id().removePrefix("r")
+                doc.selectFirst("tr#tr$remarkId p")?.text()?.trim()
+            } else null
+
+            results.add(
+                ScrapedDebit(
+                    canyonId = canyonId,
+                    canyonNom = "",
+                    date = dateRaw,
+                    niveauRaw = debitLevel,
+                    auteur = auteur.ifBlank { null },
+                    commentaire = commentaire,
+                )
+            )
+        }
+
+        return results
+    }
+
+    /**
+     * Parse the global latest debits page: /canyoning/derniers-debits
+     */
+    fun parseLatestDebits(doc: Document): List<ScrapedDebit> {
+        val results = mutableListOf<ScrapedDebit>()
+        val rows = doc.select("table#listedebit tbody tr")
+
+        for (row in rows) {
+            val tds = row.select("td")
+            if (tds.size < 5) continue
+
+            // Column 2: Canyon link
+            val canyonLink = tds[1].selectFirst("a") ?: continue
+            val canyonNom = canyonLink.text().trim()
+            val canyonHref = canyonLink.attr("href")
+            val canyonId = Regex("/canyon/(\\d+)/").find(canyonHref)
+                ?.groupValues?.get(1)?.toIntOrNull() ?: continue
+
+            // Column 4: Last debit date
+            val dateLink = tds[3].selectFirst("a")
+            val dateRaw = dateLink?.ownText()?.trim() ?: ""
+
+            // Determine most recent debit level from the last non-empty day column
+            var lastDebitLevel = "INCONNU"
+            for (i in (4 until tds.size).reversed()) {
+                val span = tds[i].selectFirst("span.ic-tint")
+                if (span != null) {
+                    val spanClass = span.className()
+                    val level = (1..6).firstOrNull { spanClass.contains("d$it") }
+                    if (level != null) {
+                        lastDebitLevel = DEBIT_CLASS_MAP["debit$level"] ?: "INCONNU"
+                        break
+                    }
+                }
+            }
+
+            results.add(
+                ScrapedDebit(
+                    canyonId = canyonId,
+                    canyonNom = canyonNom,
+                    date = dateRaw,
+                    niveauRaw = lastDebitLevel,
+                )
+            )
+        }
+
+        return results
+    }
+}
