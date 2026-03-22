@@ -4,16 +4,24 @@ import fr.descentecanyon.app.data.local.dao.CanyonDao
 import fr.descentecanyon.app.data.local.dao.DebitDao
 import fr.descentecanyon.app.data.local.dao.GeoPointDao
 import fr.descentecanyon.app.data.local.dao.PhotoDao
+import fr.descentecanyon.app.data.local.entity.GeoPointEntity
 import fr.descentecanyon.app.data.mapper.toDetail
 import fr.descentecanyon.app.data.mapper.toEntity
 import fr.descentecanyon.app.data.mapper.toSummary
 import fr.descentecanyon.app.data.remote.scraper.CanyonScraper
 import fr.descentecanyon.app.domain.model.CanyonDetail
 import fr.descentecanyon.app.domain.model.CanyonSummary
+import fr.descentecanyon.app.domain.model.GeoPointType
 import fr.descentecanyon.app.domain.repository.CanyonRepository
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.onStart
+import kotlin.math.asin
+import kotlin.math.cos
+import kotlin.math.pow
+import kotlin.math.sin
+import kotlin.math.sqrt
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -82,9 +90,36 @@ class CanyonRepositoryImpl @Inject constructor(
         longitude: Double,
         radiusKm: Double,
     ): Flow<Result<List<CanyonSummary>>> {
-        // TODO: Implement nearby search using geopoints
-        return canyonDao.searchByName("").map { entities ->
-            Result.success(entities.map { it.toSummary() })
+        return flow {
+            val representativePoints = geoPointDao.getAll()
+                .groupBy { it.canyonId }
+                .mapValues { (_, points) -> points.bestMarkerPoint() }
+
+            if (representativePoints.isEmpty()) {
+                emit(Result.success(emptyList()))
+                return@flow
+            }
+
+            val canyons = canyonDao.getByIds(representativePoints.keys.toList())
+            val nearby = canyons.mapNotNull { canyon ->
+                val point = representativePoints[canyon.id] ?: return@mapNotNull null
+                val distanceKm = haversineKm(
+                    latitude = latitude,
+                    longitude = longitude,
+                    targetLatitude = point.latitude,
+                    targetLongitude = point.longitude,
+                )
+                if (distanceKm > radiusKm) return@mapNotNull null
+
+                canyon.toSummary().copy(
+                    latitude = point.latitude,
+                    longitude = point.longitude,
+                ) to distanceKm
+            }
+                .sortedBy { (_, distanceKm) -> distanceKm }
+                .map { (summary, _) -> summary }
+
+            emit(Result.success(nearby))
         }
     }
 
@@ -156,5 +191,35 @@ class CanyonRepositoryImpl @Inject constructor(
             }
         }
         canyonDao.insertAll(merged)
+    }
+
+    private fun List<GeoPointEntity>.bestMarkerPoint(): GeoPointEntity {
+        return minByOrNull { point ->
+            when (runCatching { GeoPointType.valueOf(point.type) }.getOrDefault(GeoPointType.UNKNOWN)) {
+                GeoPointType.PARKING_AMONT -> 0
+                GeoPointType.PARKING_AVAL -> 1
+                GeoPointType.ENTREE -> 2
+                GeoPointType.SORTIE -> 3
+                GeoPointType.POINT_REMARQUABLE -> 4
+                GeoPointType.ECHAPPATOIRE -> 5
+                GeoPointType.UNKNOWN -> 6
+            }
+        } ?: first()
+    }
+
+    private fun haversineKm(
+        latitude: Double,
+        longitude: Double,
+        targetLatitude: Double,
+        targetLongitude: Double,
+    ): Double {
+        val earthRadiusKm = 6371.0
+        val latDistance = Math.toRadians(targetLatitude - latitude)
+        val lonDistance = Math.toRadians(targetLongitude - longitude)
+        val a = sin(latDistance / 2).pow(2.0) +
+            cos(Math.toRadians(latitude)) * cos(Math.toRadians(targetLatitude)) *
+            sin(lonDistance / 2).pow(2.0)
+
+        return 2 * earthRadiusKm * asin(sqrt(a))
     }
 }

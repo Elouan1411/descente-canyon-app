@@ -9,6 +9,9 @@ import fr.descentecanyon.app.data.local.entity.GeoPointEntity
 @Dao
 interface GeoPointDao {
 
+    @Query("SELECT * FROM geo_points")
+    suspend fun getAll(): List<GeoPointEntity>
+
     @Query("SELECT * FROM geo_points WHERE canyonId = :canyonId")
     suspend fun getByCanyonId(canyonId: Int): List<GeoPointEntity>
 

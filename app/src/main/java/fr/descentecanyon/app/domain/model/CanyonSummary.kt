@@ -13,4 +13,6 @@ data class CanyonSummary(
     val dernierDebit: NiveauDebit? = null,
     val url: String,
     val isOffline: Boolean = false,
+    val latitude: Double? = null,
+    val longitude: Double? = null,
 )
