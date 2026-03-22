@@ -88,6 +88,9 @@ dependencies {
     // DataStore (preferences)
     implementation(libs.androidx.datastore.preferences)
 
+    // Security (encrypted credential storage)
+    implementation(libs.androidx.security.crypto)
+
     // Hilt (dependency injection)
     implementation(libs.hilt.android)
     ksp(libs.hilt.android.compiler)

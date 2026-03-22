@@ -1,6 +1,7 @@
 package fr.descentecanyon.app.data.remote.scraper
 
 import fr.descentecanyon.app.BuildConfig
+import fr.descentecanyon.app.data.remote.auth.SessionManager
 import fr.descentecanyon.app.data.remote.dto.ScrapedCanyonDetail
 import fr.descentecanyon.app.data.remote.dto.ScrapedCanyonSummary
 import fr.descentecanyon.app.data.remote.dto.ScrapedDebit
@@ -18,9 +19,12 @@ import javax.inject.Singleton
 
 /**
  * Scrapes canyon data from descente-canyon.com HTML pages.
+ * Session cookies from [SessionManager] are attached to all requests when logged in.
  */
 @Singleton
-class CanyonScraper @Inject constructor() {
+class CanyonScraper @Inject constructor(
+    private val sessionManager: SessionManager,
+) {
 
     companion object {
         const val BASE_URL = "https://www.descente-canyon.com"
@@ -133,10 +137,10 @@ class CanyonScraper @Inject constructor() {
     // --- Internal ---
 
     private fun fetchDocument(url: String): Document {
-        return Jsoup.connect(url)
+        val connection = Jsoup.connect(url)
             .userAgent(USER_AGENT)
             .timeout(TIMEOUT_MS)
-            .get()
+        return sessionManager.applyTo(connection).get()
     }
 }
 
