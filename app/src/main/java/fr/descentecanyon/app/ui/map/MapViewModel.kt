@@ -15,6 +15,7 @@ import javax.inject.Inject
 
 data class MapUiState(
     val canyons: List<CanyonSummary> = emptyList(),
+    val selectedCanyon: CanyonSummary? = null,
     val isLoading: Boolean = false,
     val error: String? = null,
     val hasLocationPermission: Boolean = false,
@@ -61,6 +62,9 @@ class MapViewModel @Inject constructor(
                         _uiState.update {
                             it.copy(
                                 canyons = canyons,
+                                selectedCanyon = it.selectedCanyon?.let { selected ->
+                                    canyons.firstOrNull { canyon -> canyon.id == selected.id }
+                                },
                                 isLoading = false,
                                 error = null,
                             )
@@ -87,5 +91,15 @@ class MapViewModel @Inject constructor(
         _uiState.update {
             it.copy(error = "Aucune position recente disponible sur cet appareil.")
         }
+    }
+
+    fun selectCanyon(canyonId: Int) {
+        _uiState.update { state ->
+            state.copy(selectedCanyon = state.canyons.firstOrNull { it.id == canyonId })
+        }
+    }
+
+    fun clearSelectedCanyon() {
+        _uiState.update { it.copy(selectedCanyon = null) }
     }
 }

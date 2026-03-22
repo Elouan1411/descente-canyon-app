@@ -30,9 +30,12 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.ModalBottomSheet
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -54,6 +57,7 @@ import fr.descentecanyon.app.ui.theme.CanyonBlue
 import fr.descentecanyon.app.ui.theme.CanyonBlueDark
 import fr.descentecanyon.app.ui.theme.RockBrownLight
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MapScreen(
     onCanyonClick: (Int) -> Unit,
@@ -77,6 +81,45 @@ fun MapScreen(
         if (context.hasLocationPermission()) {
             viewModel.onLocationPermissionResult(true)
             loadNearbyFromDevice(context, viewModel)
+        }
+    }
+
+    uiState.selectedCanyon?.let { canyon ->
+        ModalBottomSheet(
+            onDismissRequest = viewModel::clearSelectedCanyon,
+        ) {
+            Column(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 20.dp, vertical = 8.dp),
+                verticalArrangement = Arrangement.spacedBy(12.dp),
+            ) {
+                Text(
+                    text = canyon.nom,
+                    style = MaterialTheme.typography.headlineSmall,
+                    fontWeight = FontWeight.Bold,
+                )
+                Text(
+                    text = stringResource(
+                        R.string.map_bottom_sheet_meta,
+                        canyon.cotation,
+                        canyon.pays,
+                    ),
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                )
+                Row(
+                    horizontalArrangement = Arrangement.spacedBy(12.dp),
+                ) {
+                    Button(onClick = { onCanyonClick(canyon.id) }) {
+                        Text(text = stringResource(R.string.map_bottom_sheet_open))
+                    }
+                    TextButton(onClick = viewModel::clearSelectedCanyon) {
+                        Text(text = stringResource(R.string.back))
+                    }
+                }
+                Spacer(modifier = Modifier.height(12.dp))
+            }
         }
     }
 
@@ -125,7 +168,7 @@ fun MapScreen(
                 ) {
                     MapLibreView(
                         markers = uiState.canyons,
-                        onMarkerClick = onCanyonClick,
+                        onMarkerClick = viewModel::selectCanyon,
                         modifier = Modifier
                             .fillMaxWidth()
                             .height(280.dp),

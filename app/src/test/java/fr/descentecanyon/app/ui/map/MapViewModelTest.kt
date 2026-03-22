@@ -67,4 +67,31 @@ class MapViewModelTest {
         assertEquals(6.9, viewModel.uiState.value.userLongitude)
         assertEquals(listOf(42), viewModel.uiState.value.canyons.map { it.id })
     }
+
+    @Test
+    @OptIn(ExperimentalCoroutinesApi::class)
+    fun `select canyon exposes bottom sheet item`() = runTest {
+        every { canyonRepository.getCanyonsNearby(43.7, 6.9, 50.0) } returns flowOf(
+            Result.success(
+                listOf(
+                    CanyonSummary(
+                        id = 7,
+                        nom = "Aiglun",
+                        pays = "France",
+                        cotation = "v5a5IV",
+                        url = "/canyoning/canyon/7/aiglun.html",
+                    )
+                )
+            )
+        )
+        val viewModel = MapViewModel(getNearbyCanyonsUseCase)
+
+        viewModel.loadNearby(43.7, 6.9)
+        advanceUntilIdle()
+        viewModel.selectCanyon(7)
+
+        assertEquals(7, viewModel.uiState.value.selectedCanyon?.id)
+        viewModel.clearSelectedCanyon()
+        assertEquals(null, viewModel.uiState.value.selectedCanyon)
+    }
 }
