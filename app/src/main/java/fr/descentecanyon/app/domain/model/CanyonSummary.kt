@@ -15,4 +15,5 @@ data class CanyonSummary(
     val isOffline: Boolean = false,
     val latitude: Double? = null,
     val longitude: Double? = null,
+    val markerType: GeoPointType? = null,
 )

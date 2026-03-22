@@ -7,6 +7,7 @@ import fr.descentecanyon.app.data.local.dao.PhotoDao
 import fr.descentecanyon.app.data.local.entity.CanyonEntity
 import fr.descentecanyon.app.data.local.entity.GeoPointEntity
 import fr.descentecanyon.app.data.remote.scraper.CanyonScraper
+import fr.descentecanyon.app.domain.model.GeoPointType
 import io.mockk.coEvery
 import io.mockk.mockk
 import kotlinx.coroutines.flow.first
@@ -47,6 +48,7 @@ class CanyonRepositoryNearbyTest {
         assertEquals(listOf(1, 2), result.map { it.id })
         assertEquals(43.70, result.first().latitude)
         assertEquals(6.90, result.first().longitude)
+        assertEquals(GeoPointType.PARKING_AMONT, result.first().markerType)
     }
 
     private fun canyonEntity(

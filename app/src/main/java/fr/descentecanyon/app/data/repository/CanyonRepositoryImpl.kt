@@ -114,6 +114,7 @@ class CanyonRepositoryImpl @Inject constructor(
                 canyon.toSummary().copy(
                     latitude = point.latitude,
                     longitude = point.longitude,
+                    markerType = runCatching { GeoPointType.valueOf(point.type) }.getOrDefault(GeoPointType.UNKNOWN),
                 ) to distanceKm
             }
                 .sortedBy { (_, distanceKm) -> distanceKm }

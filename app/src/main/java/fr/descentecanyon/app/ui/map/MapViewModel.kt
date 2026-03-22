@@ -3,7 +3,9 @@ package fr.descentecanyon.app.ui.map
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
+import fr.descentecanyon.app.map.MAP_OFFLINE_RADIUS_KM
 import fr.descentecanyon.app.domain.model.CanyonSummary
+import fr.descentecanyon.app.domain.usecase.DownloadMapOfflineRegionUseCase
 import fr.descentecanyon.app.domain.usecase.GetNearbyCanyonsUseCase
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -17,7 +19,9 @@ data class MapUiState(
     val canyons: List<CanyonSummary> = emptyList(),
     val selectedCanyon: CanyonSummary? = null,
     val isLoading: Boolean = false,
+    val isDownloadingOfflineRegion: Boolean = false,
     val error: String? = null,
+    val transientMessage: String? = null,
     val hasLocationPermission: Boolean = false,
     val hasRequestedLocationPermission: Boolean = false,
     val userLatitude: Double? = null,
@@ -27,6 +31,7 @@ data class MapUiState(
 @HiltViewModel
 class MapViewModel @Inject constructor(
     private val getNearbyCanyonsUseCase: GetNearbyCanyonsUseCase,
+    private val downloadMapOfflineRegionUseCase: DownloadMapOfflineRegionUseCase,
 ) : ViewModel() {
 
     private val _uiState = MutableStateFlow(MapUiState())
@@ -51,6 +56,7 @@ class MapViewModel @Inject constructor(
                 it.copy(
                     isLoading = true,
                     error = null,
+                    transientMessage = null,
                     userLatitude = latitude,
                     userLongitude = longitude,
                 )
@@ -93,6 +99,40 @@ class MapViewModel @Inject constructor(
         }
     }
 
+    fun downloadSelectedRegion(radiusKm: Double = MAP_OFFLINE_RADIUS_KM) {
+        val selected = _uiState.value.selectedCanyon ?: return
+        val latitude = selected.latitude ?: return
+        val longitude = selected.longitude ?: return
+        if (_uiState.value.isDownloadingOfflineRegion) return
+
+        viewModelScope.launch {
+            _uiState.update { it.copy(isDownloadingOfflineRegion = true, transientMessage = null) }
+            downloadMapOfflineRegionUseCase(
+                name = selected.nom,
+                latitude = latitude,
+                longitude = longitude,
+                radiusKm = radiusKm,
+            ).fold(
+                onSuccess = {
+                    _uiState.update {
+                        it.copy(
+                            isDownloadingOfflineRegion = false,
+                            transientMessage = "Zone de carte telechargee pour ${selected.nom}",
+                        )
+                    }
+                },
+                onFailure = { throwable ->
+                    _uiState.update {
+                        it.copy(
+                            isDownloadingOfflineRegion = false,
+                            transientMessage = throwable.message ?: "Impossible de telecharger la zone hors-ligne.",
+                        )
+                    }
+                },
+            )
+        }
+    }
+
     fun selectCanyon(canyonId: Int) {
         _uiState.update { state ->
             state.copy(selectedCanyon = state.canyons.firstOrNull { it.id == canyonId })
@@ -101,5 +141,9 @@ class MapViewModel @Inject constructor(
 
     fun clearSelectedCanyon() {
         _uiState.update { it.copy(selectedCanyon = null) }
+    }
+
+    fun clearTransientMessage() {
+        _uiState.update { it.copy(transientMessage = null) }
     }
 }

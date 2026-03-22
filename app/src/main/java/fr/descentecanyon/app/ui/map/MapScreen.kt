@@ -34,11 +34,14 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.ModalBottomSheet
+import androidx.compose.material3.SnackbarHost
+import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
@@ -52,6 +55,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import fr.descentecanyon.app.R
 import fr.descentecanyon.app.domain.model.CanyonSummary
+import fr.descentecanyon.app.map.MAP_OFFLINE_RADIUS_KM
 import fr.descentecanyon.app.ui.components.CanyonSummaryCard
 import fr.descentecanyon.app.ui.theme.CanyonBlue
 import fr.descentecanyon.app.ui.theme.CanyonBlueDark
@@ -66,6 +70,7 @@ fun MapScreen(
 ) {
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
     val context = LocalContext.current
+    val snackbarHostState = remember { SnackbarHostState() }
     val permissionLauncher = rememberLauncherForActivityResult(
         contract = ActivityResultContracts.RequestMultiplePermissions(),
     ) { permissions ->
@@ -81,6 +86,13 @@ fun MapScreen(
         if (context.hasLocationPermission()) {
             viewModel.onLocationPermissionResult(true)
             loadNearbyFromDevice(context, viewModel)
+        }
+    }
+
+    LaunchedEffect(uiState.transientMessage) {
+        uiState.transientMessage?.let { message ->
+            snackbarHostState.showSnackbar(message)
+            viewModel.clearTransientMessage()
         }
     }
 
@@ -114,6 +126,18 @@ fun MapScreen(
                     Button(onClick = { onCanyonClick(canyon.id) }) {
                         Text(text = stringResource(R.string.map_bottom_sheet_open))
                     }
+                    Button(
+                        onClick = viewModel::downloadSelectedRegion,
+                        enabled = !uiState.isDownloadingOfflineRegion,
+                    ) {
+                        Text(
+                            text = if (uiState.isDownloadingOfflineRegion) {
+                                stringResource(R.string.map_bottom_sheet_downloading)
+                            } else {
+                                stringResource(R.string.map_bottom_sheet_download, MAP_OFFLINE_RADIUS_KM.toInt())
+                            }
+                        )
+                    }
                     TextButton(onClick = viewModel::clearSelectedCanyon) {
                         Text(text = stringResource(R.string.back))
                     }
@@ -129,6 +153,10 @@ fun MapScreen(
             .padding(horizontal = 16.dp),
         verticalArrangement = Arrangement.spacedBy(12.dp),
     ) {
+        item {
+            SnackbarHost(hostState = snackbarHostState)
+        }
+
         item {
             Spacer(modifier = Modifier.height(8.dp))
             MapHeroCard(
@@ -168,6 +196,8 @@ fun MapScreen(
                 ) {
                     MapLibreView(
                         markers = uiState.canyons,
+                        userLatitude = uiState.userLatitude,
+                        userLongitude = uiState.userLongitude,
                         onMarkerClick = viewModel::selectCanyon,
                         modifier = Modifier
                             .fillMaxWidth()
