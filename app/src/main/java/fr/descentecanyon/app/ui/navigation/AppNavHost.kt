@@ -27,6 +27,9 @@ fun AppNavHost(
                 onCanyonClick = { canyonId ->
                     navController.navigate(Screen.CanyonDetail(canyonId))
                 },
+                onQuickSearchClick = {
+                    navController.navigate(Screen.Search)
+                },
             )
         }
 

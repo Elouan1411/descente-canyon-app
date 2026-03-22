@@ -1,0 +1,72 @@
+package fr.descentecanyon.app.ui.canyon
+
+import androidx.lifecycle.SavedStateHandle
+import fr.descentecanyon.app.domain.model.Canyon
+import fr.descentecanyon.app.domain.model.CanyonDetail
+import fr.descentecanyon.app.domain.repository.CanyonRepository
+import fr.descentecanyon.app.domain.repository.FavoritesRepository
+import fr.descentecanyon.app.domain.usecase.DownloadCanyonOfflineUseCase
+import fr.descentecanyon.app.domain.usecase.GetCanyonDetailUseCase
+import fr.descentecanyon.app.domain.usecase.ToggleFavoriteUseCase
+import fr.descentecanyon.app.testutil.MainDispatcherRule
+import io.mockk.coEvery
+import io.mockk.every
+import io.mockk.mockk
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.flow.flowOf
+import kotlinx.coroutines.test.advanceUntilIdle
+import kotlinx.coroutines.test.runTest
+import org.junit.Assert.assertEquals
+import org.junit.Assert.assertFalse
+import org.junit.Assert.assertTrue
+import org.junit.Rule
+import org.junit.Test
+
+class CanyonDetailViewModelTest {
+
+    @get:Rule
+    val mainDispatcherRule = MainDispatcherRule()
+
+    private val canyonRepository = mockk<CanyonRepository>()
+    private val favoritesRepository = mockk<FavoritesRepository>()
+    private val getCanyonDetailUseCase = GetCanyonDetailUseCase(canyonRepository)
+    private val toggleFavoriteUseCase = ToggleFavoriteUseCase(favoritesRepository)
+    private val downloadCanyonOfflineUseCase = DownloadCanyonOfflineUseCase(canyonRepository)
+
+    @Test
+    @OptIn(ExperimentalCoroutinesApi::class)
+    fun `download for offline updates canyon state`() = runTest {
+        coEvery { canyonRepository.getCanyonDetail(42) } returns Result.success(detail(isOffline = false))
+        coEvery { canyonRepository.downloadForOffline(42) } returns Result.success(Unit)
+        every { favoritesRepository.isFavorite(42) } returns flowOf(false)
+
+        val viewModel = CanyonDetailViewModel(
+            savedStateHandle = SavedStateHandle(mapOf("canyonId" to 42)),
+            getCanyonDetailUseCase = getCanyonDetailUseCase,
+            toggleFavoriteUseCase = toggleFavoriteUseCase,
+            downloadCanyonOfflineUseCase = downloadCanyonOfflineUseCase,
+            favoritesRepository = favoritesRepository,
+        )
+        advanceUntilIdle()
+
+        viewModel.downloadForOffline()
+        advanceUntilIdle()
+
+        assertTrue(viewModel.uiState.value.canyonDetail?.canyon?.isOffline == true)
+        assertFalse(viewModel.uiState.value.isDownloading)
+        assertEquals("Disponible hors-ligne", viewModel.uiState.value.transientMessage)
+    }
+
+    private fun detail(isOffline: Boolean) = CanyonDetail(
+        canyon = Canyon(
+            id = 42,
+            nom = "Riolan",
+            nomComplet = "Canyon du Riolan",
+            pays = "France",
+            commune = "Sigale",
+            cotation = "v4a4III",
+            url = "/canyoning/canyon/42/riolan.html",
+            isOffline = isOffline,
+        ),
+    )
+}
