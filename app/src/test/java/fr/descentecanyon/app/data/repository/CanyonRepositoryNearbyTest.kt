@@ -8,6 +8,7 @@ import fr.descentecanyon.app.data.local.entity.CanyonEntity
 import fr.descentecanyon.app.data.local.entity.GeoPointEntity
 import fr.descentecanyon.app.data.remote.scraper.CanyonScraper
 import fr.descentecanyon.app.domain.model.GeoPointType
+import fr.descentecanyon.app.domain.repository.MapOfflineRepository
 import io.mockk.coEvery
 import io.mockk.mockk
 import kotlinx.coroutines.flow.first
@@ -22,6 +23,7 @@ class CanyonRepositoryNearbyTest {
     private val debitDao = mockk<DebitDao>()
     private val photoDao = mockk<PhotoDao>()
     private val scraper = mockk<CanyonScraper>(relaxed = true)
+    private val mapOfflineRepository = mockk<MapOfflineRepository>()
 
     @Test
     fun `get nearby canyons keeps closest markers within radius`() = runTest {
@@ -41,6 +43,7 @@ class CanyonRepositoryNearbyTest {
             debitDao = debitDao,
             photoDao = photoDao,
             scraper = scraper,
+            mapOfflineRepository = mapOfflineRepository,
         )
 
         val result = repository.getCanyonsNearby(43.70, 6.90, radiusKm = 10.0).first().getOrThrow()

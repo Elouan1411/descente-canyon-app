@@ -7,10 +7,16 @@ import fr.descentecanyon.app.data.remote.dto.ScrapedCanyonSummary
 import fr.descentecanyon.app.data.remote.dto.ScrapedDebit
 import fr.descentecanyon.app.data.remote.dto.ScrapedGeoPoint
 import fr.descentecanyon.app.data.remote.dto.ScrapedPhoto
+import fr.descentecanyon.app.domain.model.AirTemperature
+import fr.descentecanyon.app.domain.model.DebitSubmission
+import fr.descentecanyon.app.domain.model.NiveauDebit
+import fr.descentecanyon.app.domain.model.ObservationType
+import fr.descentecanyon.app.domain.model.WaterTemperature
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.sync.Semaphore
 import kotlinx.coroutines.sync.withPermit
 import kotlinx.coroutines.withContext
+import org.jsoup.Connection
 import org.jsoup.Jsoup
 import org.jsoup.nodes.Document
 import org.jsoup.nodes.Element
@@ -111,6 +117,42 @@ class CanyonScraper @Inject constructor(
             }
         }
 
+    suspend fun submitDebit(submission: DebitSubmission): Result<Unit> =
+        withContext(Dispatchers.IO) {
+            semaphore.withPermit {
+                runCatching {
+                    val url = "$BASE_URL/canyoning/ajout-debit/${submission.canyonId}/formulaire-observation.html"
+                    val response = sessionManager.applyTo(
+                        Jsoup.connect(url)
+                            .userAgent(USER_AGENT)
+                            .timeout(TIMEOUT_MS)
+                            .method(Connection.Method.POST)
+                            .data(
+                                mapOf(
+                                    "groupe" to submission.observerName,
+                                    "emailgroupe" to submission.observerEmail.orEmpty(),
+                                    "date_mesure" to submission.observationDate.toString(),
+                                    "parcouru" to submission.observationType.toFormValue(),
+                                    "debit" to submission.debitLevel.toFormValue(),
+                                    "eau" to submission.waterTemperature.toFormValue(),
+                                    "air" to submission.airTemperature.toFormValue(),
+                                    "remarque" to submission.comment,
+                                )
+                            )
+                    ).execute()
+
+                    val finalUrl = response.url().toString()
+                    val doc = response.parse()
+                    val success = finalUrl.contains("/canyoning/canyon-debit/${submission.canyonId}/observations.html") ||
+                        doc.selectFirst("form#monformulaire") == null
+
+                    if (!success) {
+                        throw IllegalStateException("Le formulaire de debit a ete refuse par le serveur.")
+                    }
+                }
+            }
+        }
+
     /**
      * Scrape full canyon detail: summary + description + geopoints merged.
      */
@@ -142,6 +184,39 @@ class CanyonScraper @Inject constructor(
             .timeout(TIMEOUT_MS)
         return sessionManager.applyTo(connection).get()
     }
+}
+
+private fun ObservationType.toFormValue(): String = when (this) {
+    ObservationType.NON_PARCOURU -> "0"
+    ObservationType.PARCOURU -> "1"
+}
+
+private fun NiveauDebit.toFormValue(): String = when (this) {
+    NiveauDebit.CRUE -> "1"
+    NiveauDebit.TRES_GROS -> "2"
+    NiveauDebit.GROS -> "3"
+    NiveauDebit.CORRECT -> "4"
+    NiveauDebit.FILET -> "5"
+    NiveauDebit.SEC -> "6"
+    NiveauDebit.INCONNU -> ""
+}
+
+private fun WaterTemperature.toFormValue(): String = when (this) {
+    WaterTemperature.CHAUDE -> "1"
+    WaterTemperature.DOUCE -> "2"
+    WaterTemperature.FROIDE -> "3"
+    WaterTemperature.TRES_FROIDE -> "4"
+    WaterTemperature.GLACEE -> "5"
+    WaterTemperature.INCONNUE -> ""
+}
+
+private fun AirTemperature.toFormValue(): String = when (this) {
+    AirTemperature.SUPER_CHAUD -> "1"
+    AirTemperature.CHAUD -> "2"
+    AirTemperature.BON -> "3"
+    AirTemperature.FRISQUET -> "4"
+    AirTemperature.FROID -> "5"
+    AirTemperature.INCONNUE -> ""
 }
 
 // --- Utility extensions ---

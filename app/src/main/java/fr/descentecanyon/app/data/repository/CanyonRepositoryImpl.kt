@@ -13,7 +13,9 @@ import fr.descentecanyon.app.domain.model.CanyonDetail
 import fr.descentecanyon.app.domain.model.CanyonSummary
 import fr.descentecanyon.app.domain.model.GeoPointType
 import fr.descentecanyon.app.domain.repository.CanyonRepository
+import fr.descentecanyon.app.domain.repository.MapOfflineRepository
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.firstOrNull
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.onStart
@@ -32,6 +34,7 @@ class CanyonRepositoryImpl @Inject constructor(
     private val debitDao: DebitDao,
     private val photoDao: PhotoDao,
     private val scraper: CanyonScraper,
+    private val mapOfflineRepository: MapOfflineRepository,
 ) : CanyonRepository {
 
     /**
@@ -60,28 +63,31 @@ class CanyonRepositoryImpl @Inject constructor(
     }
 
     override suspend fun getCanyonDetail(canyonId: Int): Result<CanyonDetail> {
-        // Try local first
         val localCanyon = canyonDao.getById(canyonId)
         if (localCanyon != null && localCanyon.isOffline) {
-            val geoPoints = geoPointDao.getByCanyonId(canyonId)
-            val photos = photoDao.getByCanyonId(canyonId)
-            return Result.success(localCanyon.toDetail(geoPoints, photos, emptyList()))
+            return Result.success(loadLocalDetail(localCanyon.id, localCanyon))
         }
 
-        // Fetch from remote
-        return scraper.scrapeCanyonDescription(canyonId).map { scraped ->
-            val entity = scraped.toEntity()
+        return runCatching {
+            val detail = scraper.scrapeFullCanyonDetail(canyonId).getOrThrow()
+            val photos = scraper.scrapeCanyonPhotos(canyonId).getOrDefault(emptyList())
+            val debits = scraper.scrapeCanyonDebits(canyonId).getOrDefault(emptyList())
+            val entity = detail.toEntity()
             insertPreservingFlags(entity)
-
-            val geoPointEntities = scraped.geoPoints.map { it.toEntity(canyonId) }
-            geoPointDao.deleteByCanyonId(canyonId)
-            geoPointDao.insertAll(geoPointEntities)
-
-            entity.toDetail(
-                geoPoints = geoPointEntities,
-                photos = emptyList(),
-                debits = emptyList(),
+            replaceSupportingData(
+                canyonId = canyonId,
+                geoPointEntities = detail.geoPoints.map { it.toEntity(canyonId) },
+                photoEntities = photos.map { it.toEntity() },
+                debitEntities = debits.map { it.toEntity() },
             )
+
+            loadLocalDetail(canyonId, canyonDao.getById(canyonId) ?: entity)
+        }.recoverCatching {
+            if (localCanyon != null) {
+                loadLocalDetail(canyonId, localCanyon)
+            } else {
+                throw it
+            }
         }
     }
 
@@ -125,19 +131,26 @@ class CanyonRepositoryImpl @Inject constructor(
     }
 
     override suspend fun downloadForOffline(canyonId: Int): Result<Unit> = runCatching {
-        // 1. Scrape full canyon data
-        val detail = scraper.scrapeCanyonDescription(canyonId).getOrThrow()
+        val detail = scraper.scrapeFullCanyonDetail(canyonId).getOrThrow()
+        val photos = scraper.scrapeCanyonPhotos(canyonId).getOrDefault(emptyList())
+        val debits = scraper.scrapeCanyonDebits(canyonId).getOrDefault(emptyList())
         val entity = detail.toEntity().copy(isOffline = true)
 
-        // 2. Save to local DB, preserving isFavorite
         insertPreservingFlags(entity)
 
         val geoPointEntities = detail.geoPoints.map { it.toEntity(canyonId) }
-        geoPointDao.deleteByCanyonId(canyonId)
-        geoPointDao.insertAll(geoPointEntities)
+        val photoEntities = photos.map { it.toEntity() }
+        val debitEntities = debits.map { it.toEntity() }
+        replaceSupportingData(canyonId, geoPointEntities, photoEntities, debitEntities)
 
-        // 3. TODO: Download map tiles for offline use
-        // 4. TODO: Optionally download photos
+        geoPointEntities.bestMarkerPointOrNull()?.let { point ->
+            mapOfflineRepository.downloadRegion(
+                name = entity.nom,
+                latitude = point.latitude,
+                longitude = point.longitude,
+                radiusKm = 3.0,
+            ).getOrThrow()
+        }
     }
 
     override suspend fun removeOfflineData(canyonId: Int): Result<Unit> = runCatching {
@@ -194,7 +207,43 @@ class CanyonRepositoryImpl @Inject constructor(
         canyonDao.insertAll(merged)
     }
 
+    private suspend fun replaceSupportingData(
+        canyonId: Int,
+        geoPointEntities: List<GeoPointEntity>,
+        photoEntities: List<fr.descentecanyon.app.data.local.entity.PhotoEntity>,
+        debitEntities: List<fr.descentecanyon.app.data.local.entity.DebitEntity>,
+    ) {
+        geoPointDao.deleteByCanyonId(canyonId)
+        if (geoPointEntities.isNotEmpty()) {
+            geoPointDao.insertAll(geoPointEntities)
+        }
+
+        photoDao.deleteByCanyonId(canyonId)
+        if (photoEntities.isNotEmpty()) {
+            photoDao.insertAll(photoEntities)
+        }
+
+        debitDao.deleteByCanyonId(canyonId)
+        if (debitEntities.isNotEmpty()) {
+            debitDao.insertAll(debitEntities)
+        }
+    }
+
+    private suspend fun loadLocalDetail(
+        canyonId: Int,
+        canyon: fr.descentecanyon.app.data.local.entity.CanyonEntity,
+    ): CanyonDetail {
+        val geoPoints = geoPointDao.getByCanyonId(canyonId)
+        val photos = photoDao.getByCanyonId(canyonId)
+        val debits = debitDao.getByCanyonId(canyonId).firstOrNull().orEmpty()
+        return canyon.toDetail(geoPoints, photos, debits)
+    }
+
     private fun List<GeoPointEntity>.bestMarkerPoint(): GeoPointEntity {
+        return bestMarkerPointOrNull() ?: first()
+    }
+
+    private fun List<GeoPointEntity>.bestMarkerPointOrNull(): GeoPointEntity? {
         return minByOrNull { point ->
             when (runCatching { GeoPointType.valueOf(point.type) }.getOrDefault(GeoPointType.UNKNOWN)) {
                 GeoPointType.PARKING_AMONT -> 0
@@ -205,7 +254,7 @@ class CanyonRepositoryImpl @Inject constructor(
                 GeoPointType.ECHAPPATOIRE -> 5
                 GeoPointType.UNKNOWN -> 6
             }
-        } ?: first()
+        }
     }
 
     private fun haversineKm(

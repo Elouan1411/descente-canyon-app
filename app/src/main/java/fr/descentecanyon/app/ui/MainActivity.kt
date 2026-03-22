@@ -1,6 +1,7 @@
 package fr.descentecanyon.app.ui
 
 import android.os.Bundle
+import androidx.lifecycle.lifecycleScope
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -17,15 +18,32 @@ import androidx.navigation.NavDestination.Companion.hasRoute
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import dagger.hilt.android.AndroidEntryPoint
+import fr.descentecanyon.app.data.network.ConnectivityObserver
+import fr.descentecanyon.app.domain.usecase.SyncPendingDebitsUseCase
 import fr.descentecanyon.app.ui.navigation.AppNavHost
 import fr.descentecanyon.app.ui.navigation.BottomNavItem
 import fr.descentecanyon.app.ui.theme.DescenteCanyonTheme
+import kotlinx.coroutines.flow.distinctUntilChanged
+import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
+    @Inject lateinit var connectivityObserver: ConnectivityObserver
+    @Inject lateinit var syncPendingDebitsUseCase: SyncPendingDebitsUseCase
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+        lifecycleScope.launch {
+            connectivityObserver.observe()
+                .distinctUntilChanged()
+                .collect { isOnline ->
+                    if (isOnline) {
+                        syncPendingDebitsUseCase()
+                    }
+                }
+        }
         setContent {
             DescenteCanyonTheme {
                 MainScreen()

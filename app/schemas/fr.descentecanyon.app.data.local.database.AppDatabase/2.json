@@ -1,0 +1,483 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 2,
+    "identityHash": "8994815255519fc555861c44b22fe278",
+    "entities": [
+      {
+        "tableName": "canyons",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER NOT NULL, `nom` TEXT NOT NULL, `nomComplet` TEXT NOT NULL, `pays` TEXT NOT NULL, `region` TEXT, `departement` TEXT, `commune` TEXT NOT NULL, `massif` TEXT, `cotation` TEXT NOT NULL, `altitudeDepart` INTEGER, `denivele` INTEGER, `longueur` INTEGER, `cascadeMax` INTEGER, `cordeMin` INTEGER, `tempsApproche` TEXT, `tempsDescente` TEXT, `tempsRetour` TEXT, `navette` TEXT, `interet` REAL, `nbVotes` INTEGER NOT NULL, `url` TEXT NOT NULL, `accesAval` TEXT, `accesAmont` TEXT, `approche` TEXT, `descente` TEXT, `retour` TEXT, `engagement` TEXT, `periode` TEXT, `isOffline` INTEGER NOT NULL, `isFavorite` INTEGER NOT NULL, `lastUpdated` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nom",
+            "columnName": "nom",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nomComplet",
+            "columnName": "nomComplet",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "pays",
+            "columnName": "pays",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "region",
+            "columnName": "region",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "departement",
+            "columnName": "departement",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "commune",
+            "columnName": "commune",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "massif",
+            "columnName": "massif",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "cotation",
+            "columnName": "cotation",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "altitudeDepart",
+            "columnName": "altitudeDepart",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "denivele",
+            "columnName": "denivele",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "longueur",
+            "columnName": "longueur",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "cascadeMax",
+            "columnName": "cascadeMax",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "cordeMin",
+            "columnName": "cordeMin",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "tempsApproche",
+            "columnName": "tempsApproche",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "tempsDescente",
+            "columnName": "tempsDescente",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "tempsRetour",
+            "columnName": "tempsRetour",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "navette",
+            "columnName": "navette",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "interet",
+            "columnName": "interet",
+            "affinity": "REAL"
+          },
+          {
+            "fieldPath": "nbVotes",
+            "columnName": "nbVotes",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "url",
+            "columnName": "url",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "accesAval",
+            "columnName": "accesAval",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "accesAmont",
+            "columnName": "accesAmont",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "approche",
+            "columnName": "approche",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "descente",
+            "columnName": "descente",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "retour",
+            "columnName": "retour",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "engagement",
+            "columnName": "engagement",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "periode",
+            "columnName": "periode",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "isOffline",
+            "columnName": "isOffline",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isFavorite",
+            "columnName": "isFavorite",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lastUpdated",
+            "columnName": "lastUpdated",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        }
+      },
+      {
+        "tableName": "geo_points",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `canyonId` INTEGER NOT NULL, `type` TEXT NOT NULL, `latitude` REAL NOT NULL, `longitude` REAL NOT NULL, `label` TEXT, FOREIGN KEY(`canyonId`) REFERENCES `canyons`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "canyonId",
+            "columnName": "canyonId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "type",
+            "columnName": "type",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "latitude",
+            "columnName": "latitude",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "longitude",
+            "columnName": "longitude",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "label",
+            "columnName": "label",
+            "affinity": "TEXT"
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_geo_points_canyonId",
+            "unique": false,
+            "columnNames": [
+              "canyonId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_geo_points_canyonId` ON `${TABLE_NAME}` (`canyonId`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "canyons",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "canyonId"
+            ],
+            "referencedColumns": [
+              "id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "debits",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `canyonId` INTEGER NOT NULL, `date` TEXT NOT NULL, `niveau` TEXT NOT NULL, `auteur` TEXT, `commentaire` TEXT, FOREIGN KEY(`canyonId`) REFERENCES `canyons`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "canyonId",
+            "columnName": "canyonId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "date",
+            "columnName": "date",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "niveau",
+            "columnName": "niveau",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "auteur",
+            "columnName": "auteur",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "commentaire",
+            "columnName": "commentaire",
+            "affinity": "TEXT"
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_debits_canyonId",
+            "unique": false,
+            "columnNames": [
+              "canyonId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_debits_canyonId` ON `${TABLE_NAME}` (`canyonId`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "canyons",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "canyonId"
+            ],
+            "referencedColumns": [
+              "id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "photos",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `canyonId` INTEGER NOT NULL, `url` TEXT NOT NULL, `thumbnailUrl` TEXT, `auteur` TEXT, `description` TEXT, `localPath` TEXT, FOREIGN KEY(`canyonId`) REFERENCES `canyons`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "canyonId",
+            "columnName": "canyonId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "url",
+            "columnName": "url",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "thumbnailUrl",
+            "columnName": "thumbnailUrl",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "auteur",
+            "columnName": "auteur",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "description",
+            "columnName": "description",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "localPath",
+            "columnName": "localPath",
+            "affinity": "TEXT"
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_photos_canyonId",
+            "unique": false,
+            "columnNames": [
+              "canyonId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_photos_canyonId` ON `${TABLE_NAME}` (`canyonId`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "canyons",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "canyonId"
+            ],
+            "referencedColumns": [
+              "id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "pending_debit_submissions",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `canyonId` INTEGER NOT NULL, `observerName` TEXT NOT NULL, `observerEmail` TEXT, `observationDate` TEXT NOT NULL, `isDescended` INTEGER NOT NULL, `debitLevel` TEXT NOT NULL, `waterTemperature` TEXT NOT NULL, `airTemperature` TEXT NOT NULL, `comment` TEXT NOT NULL, `createdAt` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "canyonId",
+            "columnName": "canyonId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "observerName",
+            "columnName": "observerName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "observerEmail",
+            "columnName": "observerEmail",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "observationDate",
+            "columnName": "observationDate",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isDescended",
+            "columnName": "isDescended",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "debitLevel",
+            "columnName": "debitLevel",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "waterTemperature",
+            "columnName": "waterTemperature",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "airTemperature",
+            "columnName": "airTemperature",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "comment",
+            "columnName": "comment",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "createdAt",
+            "columnName": "createdAt",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        }
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '8994815255519fc555861c44b22fe278')"
+    ]
+  }
+}

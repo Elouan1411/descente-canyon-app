@@ -8,6 +8,7 @@ import fr.descentecanyon.app.data.remote.dto.ScrapedCanyonDetail
 import fr.descentecanyon.app.data.remote.dto.ScrapedCanyonSummary
 import fr.descentecanyon.app.data.remote.dto.ScrapedDebit
 import fr.descentecanyon.app.data.remote.dto.ScrapedGeoPoint
+import fr.descentecanyon.app.data.remote.dto.ScrapedPhoto
 import fr.descentecanyon.app.domain.model.Canyon
 import fr.descentecanyon.app.domain.model.CanyonDetail
 import fr.descentecanyon.app.domain.model.CanyonPhoto
@@ -150,6 +151,14 @@ fun ScrapedDebit.toEntity(): DebitEntity = DebitEntity(
     niveau = niveauRaw,
     auteur = auteur,
     commentaire = commentaire,
+)
+
+fun ScrapedPhoto.toEntity(): PhotoEntity = PhotoEntity(
+    canyonId = canyonId,
+    url = url,
+    thumbnailUrl = thumbnailUrl,
+    auteur = auteur,
+    description = description,
 )
 
 fun ScrapedCanyonSummary.toEntity(): CanyonEntity = CanyonEntity(

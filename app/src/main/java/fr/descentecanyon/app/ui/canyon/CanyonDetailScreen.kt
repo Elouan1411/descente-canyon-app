@@ -21,6 +21,7 @@ import androidx.compose.material.icons.filled.CloudDone
 import androidx.compose.material.icons.filled.CloudDownload
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.FavoriteBorder
 import androidx.compose.material.icons.filled.KeyboardArrowDown
@@ -89,6 +90,7 @@ import java.time.format.DateTimeFormatter
 fun CanyonDetailScreen(
     canyonId: Int,
     onBackClick: () -> Unit,
+    onReportDebitClick: () -> Unit,
     modifier: Modifier = Modifier,
     viewModel: CanyonDetailViewModel = hiltViewModel(),
 ) {
@@ -157,6 +159,16 @@ fun CanyonDetailScreen(
                 horizontalAlignment = Alignment.End,
                 verticalArrangement = Arrangement.spacedBy(12.dp),
             ) {
+                SmallFloatingActionButton(
+                    onClick = onReportDebitClick,
+                    containerColor = MaterialTheme.colorScheme.tertiaryContainer,
+                    contentColor = MaterialTheme.colorScheme.onTertiaryContainer,
+                ) {
+                    Icon(
+                        imageVector = Icons.Default.Edit,
+                        contentDescription = stringResource(R.string.debit_form_title),
+                    )
+                }
                 SmallFloatingActionButton(
                     onClick = {
                         if (!uiState.isDownloading && uiState.canyonDetail?.canyon?.isOffline != true) {

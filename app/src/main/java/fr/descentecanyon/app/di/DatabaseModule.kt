@@ -10,6 +10,7 @@ import dagger.hilt.components.SingletonComponent
 import fr.descentecanyon.app.data.local.dao.CanyonDao
 import fr.descentecanyon.app.data.local.dao.DebitDao
 import fr.descentecanyon.app.data.local.dao.GeoPointDao
+import fr.descentecanyon.app.data.local.dao.PendingDebitSubmissionDao
 import fr.descentecanyon.app.data.local.dao.PhotoDao
 import fr.descentecanyon.app.data.local.database.AppDatabase
 import javax.inject.Singleton
@@ -41,4 +42,9 @@ object DatabaseModule {
 
     @Provides
     fun providePhotoDao(database: AppDatabase): PhotoDao = database.photoDao()
+
+    @Provides
+    fun providePendingDebitSubmissionDao(database: AppDatabase): PendingDebitSubmissionDao {
+        return database.pendingDebitSubmissionDao()
+    }
 }
