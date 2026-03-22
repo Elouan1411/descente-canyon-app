@@ -12,8 +12,8 @@ import fr.descentecanyon.app.domain.model.CanyonDetail
 import fr.descentecanyon.app.domain.model.CanyonSummary
 import fr.descentecanyon.app.domain.repository.CanyonRepository
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.onStart
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -26,16 +26,29 @@ class CanyonRepositoryImpl @Inject constructor(
     private val scraper: CanyonScraper,
 ) : CanyonRepository {
 
-    override fun searchByName(query: String): Flow<Result<List<CanyonSummary>>> = flow {
-        // Emit local results first
-        canyonDao.searchByName(query).collect { localResults ->
-            if (localResults.isNotEmpty()) {
-                emit(Result.success(localResults.map { it.toSummary() }))
+    /**
+     * B-1 fix: Use Room's reactive Flow directly instead of collecting inside a flow{} builder
+     * (which would block forever since Room Flows never complete).
+     * Remote results are fetched on subscription via onStart and inserted into DB,
+     * which automatically triggers a new emission from the Room Flow.
+     */
+    override fun searchByName(query: String): Flow<Result<List<CanyonSummary>>> {
+        return canyonDao.searchByName(query)
+            .map<List<fr.descentecanyon.app.data.local.entity.CanyonEntity>, Result<List<CanyonSummary>>> { entities ->
+                Result.success(entities.map { it.toSummary() })
             }
-        }
-
-        // Then try to fetch from remote
-        // TODO: Implement remote search and merge with local results
+            .onStart {
+                // Fire-and-forget remote fetch; inserted rows trigger a new Flow emission
+                try {
+                    val remoteResults = scraper.searchCanyons(query).getOrNull()
+                    if (!remoteResults.isNullOrEmpty()) {
+                        val entities = remoteResults.map { it.toEntity() }
+                        insertAllPreservingFlags(entities)
+                    }
+                } catch (_: Exception) {
+                    // Remote failure is non-fatal; local results still flow
+                }
+            }
     }
 
     override suspend fun getCanyonDetail(canyonId: Int): Result<CanyonDetail> {
@@ -44,15 +57,13 @@ class CanyonRepositoryImpl @Inject constructor(
         if (localCanyon != null && localCanyon.isOffline) {
             val geoPoints = geoPointDao.getByCanyonId(canyonId)
             val photos = photoDao.getByCanyonId(canyonId)
-            val debits = debitDao.getByCanyonId(canyonId)
-            // For debits we need a snapshot, not a flow
             return Result.success(localCanyon.toDetail(geoPoints, photos, emptyList()))
         }
 
         // Fetch from remote
         return scraper.scrapeCanyonDescription(canyonId).map { scraped ->
             val entity = scraped.toEntity()
-            canyonDao.insert(entity)
+            insertPreservingFlags(entity)
 
             val geoPointEntities = scraped.geoPoints.map { it.toEntity(canyonId) }
             geoPointDao.deleteByCanyonId(canyonId)
@@ -70,9 +81,11 @@ class CanyonRepositoryImpl @Inject constructor(
         latitude: Double,
         longitude: Double,
         radiusKm: Double,
-    ): Flow<Result<List<CanyonSummary>>> = flow {
+    ): Flow<Result<List<CanyonSummary>>> {
         // TODO: Implement nearby search using geopoints
-        emit(Result.success(emptyList()))
+        return canyonDao.searchByName("").map { entities ->
+            Result.success(entities.map { it.toSummary() })
+        }
     }
 
     override suspend fun downloadForOffline(canyonId: Int): Result<Unit> = runCatching {
@@ -80,8 +93,8 @@ class CanyonRepositoryImpl @Inject constructor(
         val detail = scraper.scrapeCanyonDescription(canyonId).getOrThrow()
         val entity = detail.toEntity().copy(isOffline = true)
 
-        // 2. Save to local DB
-        canyonDao.insert(entity)
+        // 2. Save to local DB, preserving isFavorite
+        insertPreservingFlags(entity)
 
         val geoPointEntities = detail.geoPoints.map { it.toEntity(canyonId) }
         geoPointDao.deleteByCanyonId(canyonId)
@@ -102,8 +115,46 @@ class CanyonRepositoryImpl @Inject constructor(
         }
     }
 
-    override fun getCanyonsByLocation(locationPath: String): Flow<Result<List<CanyonSummary>>> = flow {
+    override fun getCanyonsByLocation(locationPath: String): Flow<Result<List<CanyonSummary>>> {
         // TODO: Implement location-based browsing
-        emit(Result.success(emptyList()))
+        return canyonDao.searchByName("").map { entities ->
+            Result.success(entities.map { it.toSummary() })
+        }
+    }
+
+    // --- B-4/B-5 fix: Preserve isFavorite and isOffline flags on insert ---
+
+    /**
+     * Insert a single entity while preserving existing user flags (isFavorite, isOffline).
+     */
+    private suspend fun insertPreservingFlags(entity: fr.descentecanyon.app.data.local.entity.CanyonEntity) {
+        val existing = canyonDao.getById(entity.id)
+        val merged = if (existing != null) {
+            entity.copy(
+                isFavorite = existing.isFavorite,
+                isOffline = entity.isOffline || existing.isOffline,
+            )
+        } else {
+            entity
+        }
+        canyonDao.insert(merged)
+    }
+
+    /**
+     * Insert a list of entities while preserving existing user flags.
+     */
+    private suspend fun insertAllPreservingFlags(entities: List<fr.descentecanyon.app.data.local.entity.CanyonEntity>) {
+        val merged = entities.map { entity ->
+            val existing = canyonDao.getById(entity.id)
+            if (existing != null) {
+                entity.copy(
+                    isFavorite = existing.isFavorite,
+                    isOffline = existing.isOffline,
+                )
+            } else {
+                entity
+            }
+        }
+        canyonDao.insertAll(merged)
     }
 }

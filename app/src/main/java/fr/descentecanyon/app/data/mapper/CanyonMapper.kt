@@ -5,6 +5,8 @@ import fr.descentecanyon.app.data.local.entity.DebitEntity
 import fr.descentecanyon.app.data.local.entity.GeoPointEntity
 import fr.descentecanyon.app.data.local.entity.PhotoEntity
 import fr.descentecanyon.app.data.remote.dto.ScrapedCanyonDetail
+import fr.descentecanyon.app.data.remote.dto.ScrapedCanyonSummary
+import fr.descentecanyon.app.data.remote.dto.ScrapedDebit
 import fr.descentecanyon.app.data.remote.dto.ScrapedGeoPoint
 import fr.descentecanyon.app.domain.model.Canyon
 import fr.descentecanyon.app.domain.model.CanyonDetail
@@ -85,7 +87,7 @@ fun GeoPointEntity.toDomain(): GeoPoint = GeoPoint(
 fun DebitEntity.toDomain(): Debit = Debit(
     id = id,
     canyonId = canyonId,
-    date = LocalDate.parse(date),
+    date = DateParser.parseToLocalDate(date) ?: LocalDate.EPOCH,
     niveau = try { NiveauDebit.valueOf(niveau) } catch (_: Exception) { NiveauDebit.INCONNU },
     auteur = auteur,
     commentaire = commentaire,
@@ -140,4 +142,23 @@ fun ScrapedGeoPoint.toEntity(canyonId: Int): GeoPointEntity = GeoPointEntity(
     latitude = latitude,
     longitude = longitude,
     label = label,
+)
+
+fun ScrapedDebit.toEntity(): DebitEntity = DebitEntity(
+    canyonId = canyonId,
+    date = DateParser.parseToIsoString(date) ?: date,
+    niveau = niveauRaw,
+    auteur = auteur,
+    commentaire = commentaire,
+)
+
+fun ScrapedCanyonSummary.toEntity(): CanyonEntity = CanyonEntity(
+    id = id,
+    nom = nom,
+    nomComplet = nom,
+    pays = pays,
+    departement = departement,
+    commune = "",
+    cotation = cotation,
+    url = url,
 )

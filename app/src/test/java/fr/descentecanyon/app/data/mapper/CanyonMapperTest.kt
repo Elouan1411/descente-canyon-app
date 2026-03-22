@@ -1,0 +1,220 @@
+package fr.descentecanyon.app.data.mapper
+
+import fr.descentecanyon.app.data.local.entity.CanyonEntity
+import fr.descentecanyon.app.data.local.entity.DebitEntity
+import fr.descentecanyon.app.data.local.entity.GeoPointEntity
+import fr.descentecanyon.app.domain.model.GeoPointType
+import fr.descentecanyon.app.domain.model.NiveauDebit
+import org.junit.Assert.*
+import org.junit.Test
+import java.time.LocalDate
+
+class CanyonMapperTest {
+
+    // --- Helper factories ---
+
+    private fun canyonEntity(
+        id: Int = 42,
+        nom: String = "Riolan",
+        nomComplet: String = "Canyon du Riolan",
+        pays: String = "France",
+        region: String? = "PACA",
+        departement: String? = "06",
+        commune: String = "Sigale",
+        massif: String? = "Prealpes de Grasse",
+        cotation: String = "v3a3III",
+        altitudeDepart: Int? = 800,
+        denivele: Int? = 250,
+        longueur: Int? = 1500,
+        cascadeMax: Int? = 15,
+        cordeMin: Int? = 30,
+        tempsApproche: String? = "45min",
+        tempsDescente: String? = "3h",
+        tempsRetour: String? = "30min",
+        navette: String? = "non",
+        interet: Float? = 4.2f,
+        nbVotes: Int = 120,
+        url: String = "/canyoning/canyon/42/",
+        isOffline: Boolean = false,
+        isFavorite: Boolean = false,
+        lastUpdated: Long = 1_000_000L,
+    ) = CanyonEntity(
+        id = id,
+        nom = nom,
+        nomComplet = nomComplet,
+        pays = pays,
+        region = region,
+        departement = departement,
+        commune = commune,
+        massif = massif,
+        cotation = cotation,
+        altitudeDepart = altitudeDepart,
+        denivele = denivele,
+        longueur = longueur,
+        cascadeMax = cascadeMax,
+        cordeMin = cordeMin,
+        tempsApproche = tempsApproche,
+        tempsDescente = tempsDescente,
+        tempsRetour = tempsRetour,
+        navette = navette,
+        interet = interet,
+        nbVotes = nbVotes,
+        url = url,
+        isOffline = isOffline,
+        isFavorite = isFavorite,
+        lastUpdated = lastUpdated,
+    )
+
+    // --- Entity -> Domain (toDomain) ---
+
+    @Test
+    fun `toDomain maps all fields correctly`() {
+        val entity = canyonEntity()
+        val canyon = entity.toDomain()
+
+        assertEquals(42, canyon.id)
+        assertEquals("Riolan", canyon.nom)
+        assertEquals("Canyon du Riolan", canyon.nomComplet)
+        assertEquals("France", canyon.pays)
+        assertEquals("PACA", canyon.region)
+        assertEquals("06", canyon.departement)
+        assertEquals("Sigale", canyon.commune)
+        assertEquals("Prealpes de Grasse", canyon.massif)
+        assertEquals("v3a3III", canyon.cotation)
+        assertEquals(800, canyon.altitudeDepart)
+        assertEquals(250, canyon.denivele)
+        assertEquals(1500, canyon.longueur)
+        assertEquals(15, canyon.cascadeMax)
+        assertEquals(30, canyon.cordeMin)
+        assertEquals("45min", canyon.tempsApproche)
+        assertEquals("3h", canyon.tempsDescente)
+        assertEquals("30min", canyon.tempsRetour)
+        assertEquals("non", canyon.navette)
+        assertEquals(4.2f, canyon.interet)
+        assertEquals(120, canyon.nbVotes)
+        assertEquals("/canyoning/canyon/42/", canyon.url)
+        assertFalse(canyon.isOffline)
+        assertEquals(1_000_000L, canyon.lastUpdated)
+    }
+
+    // --- Entity -> Summary (toSummary) ---
+
+    @Test
+    fun `toSummary maps summary fields correctly`() {
+        val entity = canyonEntity(isOffline = true, interet = 3.5f)
+        val summary = entity.toSummary()
+
+        assertEquals(42, summary.id)
+        assertEquals("Riolan", summary.nom)
+        assertEquals("France", summary.pays)
+        assertEquals("06", summary.departement)
+        assertEquals("v3a3III", summary.cotation)
+        assertEquals(3.5f, summary.interet)
+        assertEquals("/canyoning/canyon/42/", summary.url)
+        assertTrue(summary.isOffline)
+    }
+
+    // --- DebitEntity -> Debit (valid date) ---
+
+    @Test
+    fun `DebitEntity toDomain with valid ISO date`() {
+        val entity = DebitEntity(
+            id = 1,
+            canyonId = 42,
+            date = "2025-07-15",
+            niveau = "CORRECT",
+            auteur = "Jean",
+            commentaire = "Beau debit",
+        )
+        val debit = entity.toDomain()
+
+        assertEquals(1L, debit.id)
+        assertEquals(42, debit.canyonId)
+        assertEquals(LocalDate.of(2025, 7, 15), debit.date)
+        assertEquals(NiveauDebit.CORRECT, debit.niveau)
+        assertEquals("Jean", debit.auteur)
+        assertEquals("Beau debit", debit.commentaire)
+    }
+
+    // --- DebitEntity -> Debit (invalid date - should not crash) ---
+
+    @Test
+    fun `DebitEntity toDomain with malformed date does not crash`() {
+        val entity = DebitEntity(
+            id = 2,
+            canyonId = 42,
+            date = "not-a-date",
+            niveau = "GROS",
+            auteur = null,
+            commentaire = null,
+        )
+        val debit = entity.toDomain()
+
+        // Should fall back to epoch instead of throwing
+        assertEquals(LocalDate.EPOCH, debit.date)
+        assertEquals(NiveauDebit.GROS, debit.niveau)
+    }
+
+    @Test
+    fun `DebitEntity toDomain with empty date does not crash`() {
+        val entity = DebitEntity(
+            id = 3,
+            canyonId = 42,
+            date = "",
+            niveau = "SEC",
+        )
+        val debit = entity.toDomain()
+
+        assertEquals(LocalDate.EPOCH, debit.date)
+    }
+
+    // --- DebitEntity -> Debit (unknown niveau) ---
+
+    @Test
+    fun `DebitEntity toDomain with unknown niveau falls back to INCONNU`() {
+        val entity = DebitEntity(
+            id = 4,
+            canyonId = 42,
+            date = "2025-06-01",
+            niveau = "UNKNOWN_LEVEL",
+        )
+        val debit = entity.toDomain()
+
+        assertEquals(NiveauDebit.INCONNU, debit.niveau)
+    }
+
+    // --- GeoPointEntity with unknown type ---
+
+    @Test
+    fun `GeoPointEntity toDomain with unknown type falls back to UNKNOWN`() {
+        val entity = GeoPointEntity(
+            id = 10,
+            canyonId = 42,
+            type = "SOME_FUTURE_TYPE",
+            latitude = 43.85,
+            longitude = 6.95,
+            label = "Point X",
+        )
+        val geoPoint = entity.toDomain()
+
+        assertEquals(GeoPointType.UNKNOWN, geoPoint.type)
+        assertEquals(43.85, geoPoint.latitude, 0.001)
+        assertEquals(6.95, geoPoint.longitude, 0.001)
+        assertEquals("Point X", geoPoint.label)
+    }
+
+    @Test
+    fun `GeoPointEntity toDomain with valid type maps correctly`() {
+        val entity = GeoPointEntity(
+            id = 11,
+            canyonId = 42,
+            type = "PARKING_AVAL",
+            latitude = 43.85,
+            longitude = 6.95,
+            label = "Parking bas",
+        )
+        val geoPoint = entity.toDomain()
+
+        assertEquals(GeoPointType.PARKING_AVAL, geoPoint.type)
+    }
+}

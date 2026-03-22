@@ -2,6 +2,7 @@ package fr.descentecanyon.app.data.repository
 
 import fr.descentecanyon.app.data.local.dao.DebitDao
 import fr.descentecanyon.app.data.mapper.toDomain
+import fr.descentecanyon.app.data.mapper.toEntity
 import fr.descentecanyon.app.data.remote.scraper.CanyonScraper
 import fr.descentecanyon.app.domain.model.Debit
 import fr.descentecanyon.app.domain.repository.DebitRepository
@@ -29,7 +30,16 @@ class DebitRepositoryImpl @Inject constructor(
     }
 
     override suspend fun refreshDebits(canyonId: Int): Result<List<Debit>> {
-        // TODO: Scrape debits page and update local DB
-        return Result.success(emptyList())
+        return scraper.scrapeCanyonDebits(canyonId).map { scrapedDebits ->
+            // Map scraped DTOs to entities
+            val entities = scrapedDebits.map { it.toEntity() }
+
+            // Replace existing debits for this canyon with fresh data
+            debitDao.deleteByCanyonId(canyonId)
+            debitDao.insertAll(entities)
+
+            // Return domain models
+            entities.map { it.toDomain() }
+        }
     }
 }
