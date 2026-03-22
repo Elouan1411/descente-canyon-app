@@ -116,6 +116,24 @@ fun MapScreen(
             }
         }
 
+        if (uiState.canyons.isNotEmpty()) {
+            item {
+                Card(
+                    modifier = Modifier.fillMaxWidth(),
+                    shape = RoundedCornerShape(24.dp),
+                    elevation = CardDefaults.cardElevation(defaultElevation = 2.dp),
+                ) {
+                    MapLibreView(
+                        markers = uiState.canyons,
+                        onMarkerClick = onCanyonClick,
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(280.dp),
+                    )
+                }
+            }
+        }
+
         when {
             uiState.isLoading -> {
                 item {
