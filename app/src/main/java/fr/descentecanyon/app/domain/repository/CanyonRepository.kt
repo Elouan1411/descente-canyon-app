@@ -21,6 +21,12 @@ interface CanyonRepository {
      * Get full canyon detail by ID.
      * Loads from local DB if available offline, otherwise scrapes from web.
      */
+    suspend fun getCanyonPreview(canyonId: Int): Result<CanyonDetail>
+
+    /**
+     * Get full canyon detail by ID.
+     * Loads from local DB if available offline, otherwise scrapes from web.
+     */
     suspend fun getCanyonDetail(canyonId: Int): Result<CanyonDetail>
 
     /**

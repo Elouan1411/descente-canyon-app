@@ -58,10 +58,7 @@ private fun MainScreen() {
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentDestination = navBackStackEntry?.destination
 
-    // Hide bottom bar on detail screens
-    val showBottomBar = BottomNavItem.entries.any { item ->
-        currentDestination?.hasRoute(item.screen::class) == true
-    }
+    val showBottomBar = true
 
     Scaffold(
         bottomBar = {

@@ -1,0 +1,200 @@
+package fr.descentecanyon.app.ui.canyon
+
+import android.content.Intent
+import android.net.Uri
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material.icons.filled.Navigation
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
+import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.TopAppBarDefaults
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import fr.descentecanyon.app.R
+import fr.descentecanyon.app.domain.model.CanyonDetail
+import fr.descentecanyon.app.domain.model.GeoPoint
+import fr.descentecanyon.app.domain.model.GeoPointType
+import fr.descentecanyon.app.ui.map.MapLibreView
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun CanyonPointsMapScreen(
+    canyonId: Int,
+    onBackClick: () -> Unit,
+    modifier: Modifier = Modifier,
+    viewModel: CanyonDetailViewModel = hiltViewModel(),
+) {
+    val uiState = viewModel.uiState.collectAsStateWithLifecycle().value
+    val context = LocalContext.current
+
+    Scaffold(
+        topBar = {
+            TopAppBar(
+                title = { Text(uiState.canyonDetail?.canyon?.nom ?: "Canyon #$canyonId") },
+                navigationIcon = {
+                    IconButton(onClick = onBackClick) {
+                        Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = stringResource(R.string.back))
+                    }
+                },
+                colors = TopAppBarDefaults.topAppBarColors(
+                    containerColor = MaterialTheme.colorScheme.primaryContainer,
+                    titleContentColor = MaterialTheme.colorScheme.onPrimaryContainer,
+                ),
+            )
+        },
+        modifier = modifier,
+    ) { innerPadding ->
+        when {
+            uiState.isLoading && uiState.canyonDetail == null -> Box(
+                modifier = Modifier.fillMaxSize().padding(innerPadding),
+                contentAlignment = Alignment.Center,
+            ) { CircularProgressIndicator() }
+
+            uiState.canyonDetail != null -> CanyonPointsMapContent(
+                detail = uiState.canyonDetail,
+                modifier = Modifier.padding(innerPadding),
+                onNavigate = { point ->
+                    val label = Uri.encode(point.label ?: "Canyon")
+                    val uri = Uri.parse("geo:${point.latitude},${point.longitude}?q=${point.latitude},${point.longitude}($label)")
+                    context.startActivity(Intent(Intent.ACTION_VIEW, uri))
+                },
+            )
+
+            else -> Box(
+                modifier = Modifier.fillMaxSize().padding(innerPadding),
+                contentAlignment = Alignment.Center,
+            ) { Text(uiState.error ?: "Erreur") }
+        }
+    }
+}
+
+@Composable
+private fun CanyonPointsMapContent(
+    detail: CanyonDetail,
+    onNavigate: (GeoPoint) -> Unit,
+    modifier: Modifier = Modifier,
+) {
+    val markers = remember(detail.geoPoints) {
+        detail.geoPoints.mapIndexed { index, point ->
+            fr.descentecanyon.app.domain.model.CanyonSummary(
+                id = detail.canyon.id * 10 + index,
+                nom = pointDisplayName(point),
+                pays = detail.canyon.pays,
+                cotation = detail.canyon.cotation,
+                url = detail.canyon.url,
+                latitude = point.latitude,
+                longitude = point.longitude,
+                markerType = point.type,
+            )
+        }
+    }
+
+    LazyColumn(
+        modifier = modifier.fillMaxSize().padding(16.dp),
+        verticalArrangement = Arrangement.spacedBy(12.dp),
+    ) {
+        item {
+            Card(modifier = Modifier.fillMaxWidth(), elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)) {
+                MapLibreView(
+                    markers = markers,
+                    userLatitude = null,
+                    userLongitude = null,
+                    onMarkerClick = {},
+                    clusterMarkers = false,
+                    modifier = Modifier.fillMaxWidth().height(420.dp),
+                )
+            }
+        }
+
+        items(detail.geoPoints.sortedBy { pointPriority(it.type) }, key = { it.id.takeIf { id -> id != 0L } ?: (it.latitude.toString()+it.longitude.toString()) }) { point ->
+            Card(modifier = Modifier.fillMaxWidth(), elevation = CardDefaults.cardElevation(defaultElevation = 1.dp)) {
+                Row(
+                    modifier = Modifier.fillMaxWidth().padding(14.dp),
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                ) {
+                    Column(modifier = Modifier.weight(1f)) {
+                        Row(verticalAlignment = Alignment.CenterVertically) {
+                            Box(Modifier.size(12.dp).background(pointColor(point.type), CircleShape))
+                            Spacer(Modifier.width(8.dp))
+                            Text(pointDisplayName(point), style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.SemiBold, color = pointColor(point.type))
+                        }
+                        Text(
+                            text = stringResource(R.string.map_location_coordinates, point.latitude, point.longitude),
+                            style = MaterialTheme.typography.bodySmall,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant,
+                        )
+                    }
+                    TextButton(onClick = { onNavigate(point) }) {
+                        Icon(Icons.Default.Navigation, contentDescription = null)
+                        Spacer(Modifier.width(6.dp))
+                        Text(stringResource(R.string.navigate))
+                    }
+                }
+            }
+        }
+    }
+}
+
+private fun pointDisplayName(point: GeoPoint): String = when (point.type) {
+    GeoPointType.PARKING_AMONT -> point.label ?: "Parking amont"
+    GeoPointType.PARKING_AVAL -> point.label ?: "Parking aval"
+    GeoPointType.ENTREE -> point.label ?: "Debut du canyon"
+    GeoPointType.SORTIE -> point.label ?: "Sortie du canyon"
+    GeoPointType.POINT_REMARQUABLE -> point.label ?: "Point remarquable"
+    GeoPointType.ECHAPPATOIRE -> point.label ?: "Echappatoire"
+    GeoPointType.UNKNOWN -> point.label ?: "Point GPS"
+}
+
+private fun pointPriority(type: GeoPointType): Int = when (type) {
+    GeoPointType.PARKING_AMONT -> 0
+    GeoPointType.PARKING_AVAL -> 1
+    GeoPointType.ENTREE -> 2
+    GeoPointType.SORTIE -> 3
+    GeoPointType.POINT_REMARQUABLE -> 4
+    GeoPointType.ECHAPPATOIRE -> 5
+    GeoPointType.UNKNOWN -> 6
+}
+
+private fun pointColor(type: GeoPointType): Color = when (type) {
+    GeoPointType.PARKING_AMONT -> fr.descentecanyon.app.ui.theme.CanyonBlue
+    GeoPointType.PARKING_AVAL -> Color(0xFF7C3AED)
+    GeoPointType.ENTREE -> fr.descentecanyon.app.ui.theme.CotationFacile
+    GeoPointType.SORTIE -> fr.descentecanyon.app.ui.theme.CotationDifficile
+    GeoPointType.POINT_REMARQUABLE -> fr.descentecanyon.app.ui.theme.RockBrownLight
+    GeoPointType.ECHAPPATOIRE -> fr.descentecanyon.app.ui.theme.CanyonBlueDark
+    GeoPointType.UNKNOWN -> fr.descentecanyon.app.ui.theme.DebitInconnu
+}

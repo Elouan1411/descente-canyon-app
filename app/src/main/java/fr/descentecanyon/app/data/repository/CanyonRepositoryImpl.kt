@@ -72,6 +72,24 @@ class CanyonRepositoryImpl @Inject constructor(
             }
     }
 
+    override suspend fun getCanyonPreview(canyonId: Int): Result<CanyonDetail> {
+        val localCanyon = canyonDao.getById(canyonId)
+        if (localCanyon != null) {
+            return Result.success(loadLocalDetail(canyonId, localCanyon))
+        }
+
+        return runCatching {
+            val summary = scraper.scrapeCanyonSummary(canyonId).getOrThrow()
+            val entity = summary.toEntity()
+            insertPreservingFlags(entity)
+            entity.toDetail(
+                geoPoints = emptyList(),
+                photos = emptyList(),
+                debits = emptyList(),
+            )
+        }
+    }
+
     override suspend fun getCanyonDetail(canyonId: Int): Result<CanyonDetail> {
         val localCanyon = canyonDao.getById(canyonId)
         if (localCanyon != null && localCanyon.isOffline) {

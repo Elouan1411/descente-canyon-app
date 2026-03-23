@@ -96,39 +96,17 @@ fun CanyonDetailScreen(
     canyonId: Int,
     onBackClick: () -> Unit,
     onReportDebitClick: () -> Unit,
+    onShowMapClick: () -> Unit,
     modifier: Modifier = Modifier,
     viewModel: CanyonDetailViewModel = hiltViewModel(),
 ) {
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
     val context = LocalContext.current
-    var showGeoPointsMap by rememberSaveable { mutableStateOf(false) }
-    var showFullscreenGeoPointsMap by rememberSaveable { mutableStateOf(false) }
 
     LaunchedEffect(uiState.transientMessage) {
         uiState.transientMessage?.let { message ->
             Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
             viewModel.clearTransientMessage()
-        }
-    }
-
-    if (showGeoPointsMap) {
-        uiState.canyonDetail?.let { detail ->
-            CanyonGeoPointsSheet(
-                detail = detail,
-                onDismiss = { showGeoPointsMap = false },
-                onNavigate = { point -> openNavigation(context, point) },
-                onOpenFullscreen = { showFullscreenGeoPointsMap = true },
-            )
-        }
-    }
-
-    if (showFullscreenGeoPointsMap) {
-        uiState.canyonDetail?.let { detail ->
-            CanyonGeoPointsFullScreenDialog(
-                detail = detail,
-                onDismiss = { showFullscreenGeoPointsMap = false },
-                onNavigate = { point -> openNavigation(context, point) },
-            )
         }
     }
 
@@ -247,7 +225,7 @@ fun CanyonDetailScreen(
                             contentDescription = null,
                         )
                     },
-                    onClick = { showGeoPointsMap = true },
+                    onClick = onShowMapClick,
                     expanded = true,
                     containerColor = MaterialTheme.colorScheme.primary,
                     contentColor = MaterialTheme.colorScheme.onPrimary,

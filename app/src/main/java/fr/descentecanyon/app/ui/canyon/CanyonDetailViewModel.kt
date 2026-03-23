@@ -8,6 +8,7 @@ import fr.descentecanyon.app.domain.model.CanyonDetail
 import fr.descentecanyon.app.domain.repository.FavoritesRepository
 import fr.descentecanyon.app.domain.usecase.DownloadCanyonOfflineUseCase
 import fr.descentecanyon.app.domain.usecase.GetCanyonDetailUseCase
+import fr.descentecanyon.app.domain.usecase.GetCanyonPreviewUseCase
 import fr.descentecanyon.app.domain.usecase.ToggleFavoriteUseCase
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -28,6 +29,7 @@ data class CanyonDetailUiState(
 @HiltViewModel
 class CanyonDetailViewModel @Inject constructor(
     savedStateHandle: SavedStateHandle,
+    private val getCanyonPreviewUseCase: GetCanyonPreviewUseCase,
     private val getCanyonDetailUseCase: GetCanyonDetailUseCase,
     private val toggleFavoriteUseCase: ToggleFavoriteUseCase,
     private val downloadCanyonOfflineUseCase: DownloadCanyonOfflineUseCase,
@@ -48,6 +50,16 @@ class CanyonDetailViewModel @Inject constructor(
     fun loadCanyon(id: Int) {
         viewModelScope.launch {
             _uiState.update { it.copy(isLoading = true, error = null) }
+            getCanyonPreviewUseCase(id).onSuccess { preview ->
+                _uiState.update {
+                    it.copy(
+                        canyonDetail = preview,
+                        isLoading = false,
+                        error = null,
+                    )
+                }
+            }
+
             getCanyonDetailUseCase(id).fold(
                 onSuccess = { detail ->
                     _uiState.update {
