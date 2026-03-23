@@ -13,6 +13,17 @@ import org.jsoup.nodes.Document
 internal object SearchParser {
 
     private val CANYON_URL_REGEX = Regex("/canyoning/canyon/(\\d+)/(.+)\\.html")
+    private val COUNTRY_NAMES = mapOf(
+        "FR" to "France",
+        "ES" to "Espagne",
+        "IT" to "Italie",
+        "CH" to "Suisse",
+        "PT" to "Portugal",
+        "GR" to "Grece",
+        "RE" to "Reunion",
+        "MQ" to "Martinique",
+        "GP" to "Guadeloupe",
+    )
 
     fun parse(doc: Document): List<ScrapedCanyonSummary> {
         val results = mutableListOf<ScrapedCanyonSummary>()
@@ -46,6 +57,7 @@ internal object SearchParser {
                     ?.firstOrNull { it.startsWith("d-") && it.length > 2 }
                     ?.removePrefix("d-")
                     ?.uppercase()
+                    ?.let { COUNTRY_NAMES[it] ?: it }
                     ?: ""
             } else {
                 // Flat DOM: search siblings for flag images
@@ -55,6 +67,7 @@ internal object SearchParser {
                     ?.firstOrNull { it.startsWith("d-") && it.length > 2 }
                     ?.removePrefix("d-")
                     ?.uppercase()
+                    ?.let { COUNTRY_NAMES[it] ?: it }
                     ?: ""
             }
 

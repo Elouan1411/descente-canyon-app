@@ -67,18 +67,20 @@ fun CanyonSummaryCard(
                         maxLines = 1,
                         overflow = TextOverflow.Ellipsis,
                     )
-                    val location = buildString {
-                        append(canyon.pays)
-                        canyon.departement?.let { append(" - $it") }
-                    }
+                    val location = listOf(
+                        canyon.pays.takeIf { it.isNotBlank() },
+                        canyon.departement?.takeIf { it.isNotBlank() && !it.startsWith("-") },
+                    ).joinToString(" - ")
                     Text(
-                        text = location,
+                        text = location.ifBlank { stringResource(R.string.search_location_unknown) },
                         style = MaterialTheme.typography.bodySmall,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                     )
                 }
                 Spacer(modifier = Modifier.width(8.dp))
-                CotationBadge(cotation = canyon.cotation)
+                canyon.cotation.takeIf { it.isNotBlank() }?.let {
+                    CotationBadge(cotation = it)
+                }
             }
 
             Row(

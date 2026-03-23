@@ -222,6 +222,24 @@ class CanyonMapperTest {
         assertEquals(first.id, second.id)
     }
 
+    @Test
+    fun `CanyonEntity toSummary normalizes country code`() {
+        val entity = CanyonEntity(
+            id = 1,
+            nom = "Test",
+            nomComplet = "Test",
+            pays = "FR",
+            departement = "Isere",
+            commune = "Test",
+            cotation = "v3a3III",
+            url = "/canyoning/canyon/1/test.html",
+        )
+
+        val summary = entity.toSummary()
+
+        assertEquals("France", summary.pays)
+    }
+
     // --- GeoPointEntity with unknown type ---
 
     @Test

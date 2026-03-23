@@ -31,7 +31,7 @@ class SearchParserTest {
         assertEquals("Le Furon (partie basse)", first.nom)
         assertEquals("/canyoning/canyon/27/Furon-partie-basse.html", first.url)
         assertEquals("Isère", first.departement)
-        assertEquals("FR", first.pays)
+        assertEquals("France", first.pays)
     }
 
     @Test

@@ -19,6 +19,20 @@ import fr.descentecanyon.app.domain.model.GeoPointType
 import fr.descentecanyon.app.domain.model.NiveauDebit
 import java.time.LocalDate
 
+private val COUNTRY_NAMES = mapOf(
+    "FR" to "France",
+    "ES" to "Espagne",
+    "IT" to "Italie",
+    "CH" to "Suisse",
+    "PT" to "Portugal",
+    "GR" to "Grece",
+    "RE" to "Reunion",
+    "MQ" to "Martinique",
+    "GP" to "Guadeloupe",
+)
+
+private fun String.normalizeCountryName(): String = COUNTRY_NAMES[this.uppercase()] ?: this
+
 // --- Entity -> Domain ---
 
 fun CanyonEntity.toDomain(): Canyon = Canyon(
@@ -50,7 +64,7 @@ fun CanyonEntity.toDomain(): Canyon = Canyon(
 fun CanyonEntity.toSummary(): CanyonSummary = CanyonSummary(
     id = id,
     nom = nom,
-    pays = pays,
+    pays = pays.normalizeCountryName(),
     departement = departement,
     cotation = cotation,
     interet = interet,
