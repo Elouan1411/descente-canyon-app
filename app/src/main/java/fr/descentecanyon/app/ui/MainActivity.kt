@@ -6,9 +6,13 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.navigationBars
+import androidx.compose.foundation.layout.windowInsetsPadding
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
@@ -68,30 +72,39 @@ private fun MainScreen() {
         contentWindowInsets = WindowInsets(0, 0, 0, 0),
         bottomBar = {
             if (showBottomBar) {
-                NavigationBar(windowInsets = WindowInsets(0, 0, 0, 0)) {
-                    BottomNavItem.entries.forEach { item ->
-                        NavigationBarItem(
-                            icon = { Icon(item.icon, contentDescription = item.label) },
-                            label = { Text(item.label) },
-                            selected = currentDestination?.hasRoute(item.screen::class) == true,
-                            onClick = {
-                                navController.navigate(item.screen) {
-                                    if (item == BottomNavItem.HOME) {
-                                        popUpTo(navController.graph.id) {
-                                            inclusive = false
-                                            saveState = false
+                Column(
+                    modifier = Modifier
+                        .background(MaterialTheme.colorScheme.surface)
+                        .windowInsetsPadding(WindowInsets.navigationBars),
+                ) {
+                    HorizontalDivider(
+                        color = MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.7f),
+                    )
+                    NavigationBar(windowInsets = WindowInsets(0, 0, 0, 0)) {
+                        BottomNavItem.entries.forEach { item ->
+                            NavigationBarItem(
+                                icon = { Icon(item.icon, contentDescription = item.label) },
+                                label = { Text(item.label) },
+                                selected = currentDestination?.hasRoute(item.screen::class) == true,
+                                onClick = {
+                                    navController.navigate(item.screen) {
+                                        if (item == BottomNavItem.HOME) {
+                                            popUpTo(navController.graph.id) {
+                                                inclusive = false
+                                                saveState = false
+                                            }
+                                            restoreState = false
+                                        } else {
+                                            popUpTo(navController.graph.startDestinationId) {
+                                                saveState = true
+                                            }
+                                            restoreState = true
                                         }
-                                        restoreState = false
-                                    } else {
-                                        popUpTo(navController.graph.startDestinationId) {
-                                            saveState = true
-                                        }
-                                        restoreState = true
+                                        launchSingleTop = true
                                     }
-                                    launchSingleTop = true
-                                }
-                            },
-                        )
+                                },
+                            )
+                        }
                     }
                 }
             }
