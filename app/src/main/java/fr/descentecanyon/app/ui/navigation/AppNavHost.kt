@@ -11,6 +11,7 @@ import fr.descentecanyon.app.ui.debit.DebitFormScreen
 import fr.descentecanyon.app.ui.favorites.FavoritesScreen
 import fr.descentecanyon.app.ui.home.HomeScreen
 import fr.descentecanyon.app.ui.map.MapScreen
+import fr.descentecanyon.app.ui.offline.OfflineManagerScreen
 import fr.descentecanyon.app.ui.search.SearchScreen
 
 @Composable
@@ -30,6 +31,9 @@ fun AppNavHost(
                 },
                 onQuickSearchClick = {
                     navController.navigate(Screen.Search)
+                },
+                onOfflineManagerClick = {
+                    navController.navigate(Screen.OfflineManager)
                 },
             )
         }
@@ -70,6 +74,15 @@ fun AppNavHost(
         composable<Screen.DebitForm> {
             DebitFormScreen(
                 onBackClick = { navController.popBackStack() },
+            )
+        }
+
+        composable<Screen.OfflineManager> {
+            OfflineManagerScreen(
+                onBackClick = { navController.popBackStack() },
+                onCanyonClick = { canyonId ->
+                    navController.navigate(Screen.CanyonDetail(canyonId))
+                },
             )
         }
     }

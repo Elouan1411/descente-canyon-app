@@ -24,4 +24,7 @@ sealed interface Screen {
 
     @Serializable
     data class DebitForm(val canyonId: Int) : Screen
+
+    @Serializable
+    data object OfflineManager : Screen
 }

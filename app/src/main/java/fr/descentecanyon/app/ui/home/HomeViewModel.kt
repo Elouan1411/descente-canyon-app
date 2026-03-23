@@ -3,6 +3,7 @@ package fr.descentecanyon.app.ui.home
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
+import fr.descentecanyon.app.data.network.ConnectivityObserver
 import fr.descentecanyon.app.domain.model.Debit
 import fr.descentecanyon.app.domain.usecase.GetLatestDebitsUseCase
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -16,18 +17,29 @@ data class HomeUiState(
     val latestDebits: List<Debit> = emptyList(),
     val isLoading: Boolean = false,
     val error: String? = null,
+    val isOnline: Boolean = true,
 )
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
     private val getLatestDebitsUseCase: GetLatestDebitsUseCase,
+    private val connectivityObserver: ConnectivityObserver,
 ) : ViewModel() {
 
     private val _uiState = MutableStateFlow(HomeUiState())
     val uiState: StateFlow<HomeUiState> = _uiState.asStateFlow()
 
     init {
+        observeConnectivity()
         loadLatestDebits()
+    }
+
+    private fun observeConnectivity() {
+        viewModelScope.launch {
+            connectivityObserver.observe().collect { online ->
+                _uiState.update { it.copy(isOnline = online) }
+            }
+        }
     }
 
     fun loadLatestDebits() {

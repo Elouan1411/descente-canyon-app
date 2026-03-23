@@ -15,6 +15,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AccountCircle
+import androidx.compose.material.icons.filled.CloudDownload
 import androidx.compose.material.icons.filled.Refresh
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.Card
@@ -62,6 +63,7 @@ import java.time.format.DateTimeFormatter
 fun HomeScreen(
     onCanyonClick: (Int) -> Unit,
     onQuickSearchClick: () -> Unit,
+    onOfflineManagerClick: () -> Unit,
     modifier: Modifier = Modifier,
     homeViewModel: HomeViewModel = hiltViewModel(),
     authViewModel: AuthViewModel = hiltViewModel(),
@@ -91,6 +93,13 @@ fun HomeScreen(
                     )
                 },
                 actions = {
+                    IconButton(onClick = onOfflineManagerClick) {
+                        Icon(
+                            imageVector = Icons.Default.CloudDownload,
+                            contentDescription = stringResource(R.string.offline_manager_title),
+                            modifier = Modifier.size(28.dp),
+                        )
+                    }
                     IconButton(onClick = { showLoginDialog = true }) {
                         Icon(
                             imageVector = Icons.Default.AccountCircle,
@@ -114,6 +123,26 @@ fun HomeScreen(
                 .padding(horizontal = 16.dp),
             verticalArrangement = Arrangement.spacedBy(8.dp),
         ) {
+            if (!homeState.isOnline) {
+                item {
+                    Card(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(top = 8.dp),
+                        colors = CardDefaults.cardColors(
+                            containerColor = MaterialTheme.colorScheme.errorContainer,
+                        ),
+                    ) {
+                        Text(
+                            text = stringResource(R.string.offline_banner),
+                            style = MaterialTheme.typography.bodyMedium,
+                            color = MaterialTheme.colorScheme.onErrorContainer,
+                            modifier = Modifier.padding(12.dp),
+                        )
+                    }
+                }
+            }
+
             // Credit card
             item {
                 Spacer(modifier = Modifier.height(8.dp))
