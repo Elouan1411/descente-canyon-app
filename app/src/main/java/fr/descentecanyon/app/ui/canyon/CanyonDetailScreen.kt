@@ -290,35 +290,7 @@ private fun CanyonDetailContent(
 
     Column(modifier = modifier.fillMaxSize()) {
         Column {
-            Card(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(horizontal = 16.dp, vertical = 12.dp),
-                colors = CardDefaults.cardColors(
-                    containerColor = MaterialTheme.colorScheme.surfaceVariant,
-                ),
-            ) {
-                Column(modifier = Modifier.padding(16.dp)) {
-                    Row(
-                        modifier = Modifier.fillMaxWidth(),
-                        horizontalArrangement = Arrangement.SpaceBetween,
-                        verticalAlignment = Alignment.CenterVertically,
-                    ) {
-                        CotationBadge(cotation = canyon.cotation, large = true)
-                        Spacer(modifier = Modifier.width(12.dp))
-                        canyon.interet?.let { interest ->
-                            InterestStars(interest = interest)
-                        }
-                    }
-                    Text(
-                        text = "${canyon.commune} - ${canyon.pays}",
-                        style = MaterialTheme.typography.bodyMedium,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant,
-                        modifier = Modifier.padding(top = 8.dp),
-                    )
-                    CompactStatsGrid(detail = detail, modifier = Modifier.padding(top = 12.dp))
-                }
-            }
+            SummaryCard(detail = detail)
         }
 
         // Tabs
@@ -349,7 +321,74 @@ private fun CanyonDetailContent(
 }
 
 @Composable
-private fun CompactStatsGrid(
+private fun SummaryCard(
+    detail: CanyonDetail,
+    modifier: Modifier = Modifier,
+) {
+    val canyon = detail.canyon
+    var expanded by rememberSaveable(detail.canyon.id) { mutableStateOf(true) }
+
+    Card(
+        modifier = modifier
+            .fillMaxWidth()
+            .padding(horizontal = 16.dp, vertical = 12.dp),
+        colors = CardDefaults.cardColors(
+            containerColor = MaterialTheme.colorScheme.surfaceVariant,
+        ),
+    ) {
+        Column(modifier = Modifier.padding(16.dp)) {
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically,
+            ) {
+                CotationBadge(cotation = canyon.cotation, large = true)
+                Spacer(modifier = Modifier.width(12.dp))
+                canyon.interet?.let { interest ->
+                    InterestStars(interest = interest)
+                }
+            }
+            Text(
+                text = "${canyon.commune} - ${canyon.pays}",
+                style = MaterialTheme.typography.bodyMedium,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                modifier = Modifier.padding(top = 8.dp),
+            )
+
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(top = 12.dp),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically,
+            ) {
+                Text(
+                    text = stringResource(R.string.canyon_summary_title),
+                    style = MaterialTheme.typography.labelLarge,
+                    fontWeight = FontWeight.SemiBold,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                )
+                TextButton(onClick = { expanded = !expanded }) {
+                    Text(
+                        text = if (expanded) stringResource(R.string.canyon_summary_collapse) else stringResource(R.string.canyon_summary_expand),
+                    )
+                    Spacer(modifier = Modifier.width(4.dp))
+                    Icon(
+                        imageVector = if (expanded) Icons.Default.KeyboardArrowUp else Icons.Default.KeyboardArrowDown,
+                        contentDescription = null,
+                    )
+                }
+            }
+
+            AnimatedVisibility(visible = expanded) {
+                SummaryStatsGrid(detail = detail, modifier = Modifier.padding(top = 4.dp))
+            }
+        }
+    }
+}
+
+@Composable
+private fun SummaryStatsGrid(
     detail: CanyonDetail,
     modifier: Modifier = Modifier,
 ) {
