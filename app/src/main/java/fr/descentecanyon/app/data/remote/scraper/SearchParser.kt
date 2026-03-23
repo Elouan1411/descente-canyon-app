@@ -2,6 +2,7 @@ package fr.descentecanyon.app.data.remote.scraper
 
 import fr.descentecanyon.app.data.remote.dto.ScrapedCanyonSummary
 import org.jsoup.nodes.Document
+import java.util.Locale
 
 /**
  * Parses search results from the canyon AJAX endpoint.
@@ -13,17 +14,6 @@ import org.jsoup.nodes.Document
 internal object SearchParser {
 
     private val CANYON_URL_REGEX = Regex("/canyoning/canyon/(\\d+)/(.+)\\.html")
-    private val COUNTRY_NAMES = mapOf(
-        "FR" to "France",
-        "ES" to "Espagne",
-        "IT" to "Italie",
-        "CH" to "Suisse",
-        "PT" to "Portugal",
-        "GR" to "Grece",
-        "RE" to "Reunion",
-        "MQ" to "Martinique",
-        "GP" to "Guadeloupe",
-    )
 
     fun parse(doc: Document): List<ScrapedCanyonSummary> {
         val results = mutableListOf<ScrapedCanyonSummary>()
@@ -57,7 +47,7 @@ internal object SearchParser {
                     ?.firstOrNull { it.startsWith("d-") && it.length > 2 }
                     ?.removePrefix("d-")
                     ?.uppercase()
-                    ?.let { COUNTRY_NAMES[it] ?: it }
+                    ?.toDisplayCountryName()
                     ?: ""
             } else {
                 // Flat DOM: search siblings for flag images
@@ -67,7 +57,7 @@ internal object SearchParser {
                     ?.firstOrNull { it.startsWith("d-") && it.length > 2 }
                     ?.removePrefix("d-")
                     ?.uppercase()
-                    ?.let { COUNTRY_NAMES[it] ?: it }
+                    ?.toDisplayCountryName()
                     ?: ""
             }
 
@@ -84,4 +74,23 @@ internal object SearchParser {
 
         return results
     }
+}
+
+private fun String.toDisplayCountryName(): String {
+    val specialCases = mapOf(
+        "RE" to "Reunion",
+        "MQ" to "Martinique",
+        "GP" to "Guadeloupe",
+        "GF" to "Guyane",
+        "NC" to "Nouvelle-Caledonie",
+        "PF" to "Polynesie francaise",
+        "YT" to "Mayotte",
+    )
+    specialCases[this]?.let { return it }
+
+    val locale = Locale("", this)
+    return locale.getDisplayCountry(Locale.FRENCH)
+        .takeIf { it.isNotBlank() }
+        ?.replaceFirstChar { char -> if (char.isLowerCase()) char.titlecase(Locale.FRENCH) else char.toString() }
+        ?: this
 }

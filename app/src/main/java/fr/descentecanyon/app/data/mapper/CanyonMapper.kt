@@ -18,20 +18,28 @@ import fr.descentecanyon.app.domain.model.GeoPoint
 import fr.descentecanyon.app.domain.model.GeoPointType
 import fr.descentecanyon.app.domain.model.NiveauDebit
 import java.time.LocalDate
+import java.util.Locale
 
-private val COUNTRY_NAMES = mapOf(
-    "FR" to "France",
-    "ES" to "Espagne",
-    "IT" to "Italie",
-    "CH" to "Suisse",
-    "PT" to "Portugal",
-    "GR" to "Grece",
-    "RE" to "Reunion",
-    "MQ" to "Martinique",
-    "GP" to "Guadeloupe",
-)
+private fun String.normalizeCountryName(): String {
+    if (length !in 2..3) return this
 
-private fun String.normalizeCountryName(): String = COUNTRY_NAMES[this.uppercase()] ?: this
+    val code = uppercase()
+    val specialCases = mapOf(
+        "RE" to "Reunion",
+        "MQ" to "Martinique",
+        "GP" to "Guadeloupe",
+        "GF" to "Guyane",
+        "NC" to "Nouvelle-Caledonie",
+        "PF" to "Polynesie francaise",
+        "YT" to "Mayotte",
+    )
+    specialCases[code]?.let { return it }
+
+    return Locale("", code).getDisplayCountry(Locale.FRENCH)
+        .takeIf { it.isNotBlank() }
+        ?.replaceFirstChar { char -> if (char.isLowerCase()) char.titlecase(Locale.FRENCH) else char.toString() }
+        ?: this
+}
 
 // --- Entity -> Domain ---
 

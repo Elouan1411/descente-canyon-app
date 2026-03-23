@@ -112,7 +112,11 @@ class CanyonScraper @Inject constructor(
                         .timeout(TIMEOUT_MS)
                         .data("nom", query)
                         .ignoreContentType(true)
-                    val doc = sessionManager.applyTo(connection).post()
+                    val body = sessionManager.applyTo(connection).execute().body()
+                    val doc = Jsoup.parse(
+                        "<table><tbody>$body</tbody></table>",
+                        BASE_URL,
+                    )
                     SearchParser.parse(doc)
                 }
             }
