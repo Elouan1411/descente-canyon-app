@@ -122,46 +122,78 @@ private fun CanyonPointsMapContent(
         }
     }
 
-    LazyColumn(
-        modifier = modifier.fillMaxSize().padding(16.dp),
+    Column(
+        modifier = modifier
+            .fillMaxSize()
+            .padding(16.dp),
         verticalArrangement = Arrangement.spacedBy(12.dp),
     ) {
-        item {
-            Card(modifier = Modifier.fillMaxWidth(), elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)) {
-                MapLibreView(
-                    markers = markers,
-                    userLatitude = null,
-                    userLongitude = null,
-                    onMarkerClick = {},
-                    clusterMarkers = false,
-                    modifier = Modifier.fillMaxWidth().height(420.dp),
-                )
-            }
+        Card(
+            modifier = Modifier.fillMaxWidth(),
+            elevation = CardDefaults.cardElevation(defaultElevation = 2.dp),
+        ) {
+            MapLibreView(
+                markers = markers,
+                userLatitude = null,
+                userLongitude = null,
+                onMarkerClick = {},
+                clusterMarkers = false,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(360.dp),
+            )
         }
 
-        items(detail.geoPoints.sortedBy { pointPriority(it.type) }, key = { it.id.takeIf { id -> id != 0L } ?: (it.latitude.toString()+it.longitude.toString()) }) { point ->
-            Card(modifier = Modifier.fillMaxWidth(), elevation = CardDefaults.cardElevation(defaultElevation = 1.dp)) {
-                Row(
-                    modifier = Modifier.fillMaxWidth().padding(14.dp),
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.SpaceBetween,
-                ) {
-                    Column(modifier = Modifier.weight(1f)) {
-                        Row(verticalAlignment = Alignment.CenterVertically) {
-                            Box(Modifier.size(12.dp).background(pointColor(point.type), CircleShape))
-                            Spacer(Modifier.width(8.dp))
-                            Text(pointDisplayName(point), style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.SemiBold, color = pointColor(point.type))
+        Card(
+            modifier = Modifier
+                .fillMaxWidth()
+                .fillMaxSize(),
+            elevation = CardDefaults.cardElevation(defaultElevation = 1.dp),
+        ) {
+            LazyColumn(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(12.dp),
+                verticalArrangement = Arrangement.spacedBy(10.dp),
+            ) {
+                items(
+                    detail.geoPoints.sortedBy { pointPriority(it.type) },
+                    key = { it.id.takeIf { id -> id != 0L } ?: (it.latitude.toString() + it.longitude.toString()) },
+                ) { point ->
+                    Card(
+                        modifier = Modifier.fillMaxWidth(),
+                        elevation = CardDefaults.cardElevation(defaultElevation = 1.dp),
+                    ) {
+                        Row(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(14.dp),
+                            verticalAlignment = Alignment.CenterVertically,
+                            horizontalArrangement = Arrangement.SpaceBetween,
+                        ) {
+                            Column(modifier = Modifier.weight(1f)) {
+                                Row(verticalAlignment = Alignment.CenterVertically) {
+                                    Box(Modifier.size(12.dp).background(pointColor(point.type), CircleShape))
+                                    Spacer(Modifier.width(8.dp))
+                                    Text(
+                                        pointDisplayName(point),
+                                        style = MaterialTheme.typography.titleMedium,
+                                        fontWeight = FontWeight.SemiBold,
+                                        color = pointColor(point.type),
+                                    )
+                                }
+                                Text(
+                                    text = stringResource(R.string.map_location_coordinates, point.latitude, point.longitude),
+                                    style = MaterialTheme.typography.bodySmall,
+                                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                                )
+                            }
+                            TextButton(onClick = { onNavigate(point) }) {
+                                Icon(Icons.Default.Navigation, contentDescription = null)
+                                Spacer(Modifier.width(6.dp))
+                                Text(stringResource(R.string.navigate))
+                            }
                         }
-                        Text(
-                            text = stringResource(R.string.map_location_coordinates, point.latitude, point.longitude),
-                            style = MaterialTheme.typography.bodySmall,
-                            color = MaterialTheme.colorScheme.onSurfaceVariant,
-                        )
-                    }
-                    TextButton(onClick = { onNavigate(point) }) {
-                        Icon(Icons.Default.Navigation, contentDescription = null)
-                        Spacer(Modifier.width(6.dp))
-                        Text(stringResource(R.string.navigate))
                     }
                 }
             }
