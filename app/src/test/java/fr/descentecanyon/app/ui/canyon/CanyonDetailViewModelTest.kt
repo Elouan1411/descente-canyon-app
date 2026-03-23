@@ -1,6 +1,7 @@
 package fr.descentecanyon.app.ui.canyon
 
 import androidx.lifecycle.SavedStateHandle
+import fr.descentecanyon.app.data.network.ConnectivityObserver
 import fr.descentecanyon.app.domain.model.Canyon
 import fr.descentecanyon.app.domain.model.CanyonDetail
 import fr.descentecanyon.app.domain.repository.CanyonRepository
@@ -33,6 +34,7 @@ class CanyonDetailViewModelTest {
     private val canyonRepository = mockk<CanyonRepository>()
     private val favoritesRepository = mockk<FavoritesRepository>()
     private val photoRepository = mockk<PhotoRepository>()
+    private val connectivityObserver = mockk<ConnectivityObserver>()
     private val getCanyonPreviewUseCase = GetCanyonPreviewUseCase(canyonRepository)
     private val getCanyonDetailUseCase = GetCanyonDetailUseCase(canyonRepository)
     private val toggleFavoriteUseCase = ToggleFavoriteUseCase(favoritesRepository)
@@ -46,6 +48,7 @@ class CanyonDetailViewModelTest {
         coEvery { canyonRepository.getCanyonPreview(42) } returns Result.success(detail(isOffline = false))
         coEvery { canyonRepository.downloadForOffline(42) } returns Result.success(Unit)
         every { favoritesRepository.isFavorite(42) } returns flowOf(false)
+        every { connectivityObserver.observe() } returns flowOf(true)
 
         val viewModel = CanyonDetailViewModel(
             savedStateHandle = SavedStateHandle(mapOf("canyonId" to 42)),
@@ -54,6 +57,7 @@ class CanyonDetailViewModelTest {
             toggleFavoriteUseCase = toggleFavoriteUseCase,
             downloadCanyonOfflineUseCase = downloadCanyonOfflineUseCase,
             downloadPhotoForOfflineUseCase = downloadPhotoForOfflineUseCase,
+            connectivityObserver = connectivityObserver,
             favoritesRepository = favoritesRepository,
         )
         advanceUntilIdle()
@@ -75,6 +79,7 @@ class CanyonDetailViewModelTest {
         coEvery { canyonRepository.getCanyonDetail(42) } returns Result.success(detail(isOffline = false))
         coEvery { canyonRepository.downloadForOffline(42) } returns Result.success(Unit)
         every { favoritesRepository.isFavorite(42) } returns flowOf(false)
+        every { connectivityObserver.observe() } returns flowOf(true)
 
         val viewModel = CanyonDetailViewModel(
             savedStateHandle = SavedStateHandle(mapOf("canyonId" to 42)),
@@ -83,6 +88,7 @@ class CanyonDetailViewModelTest {
             toggleFavoriteUseCase = toggleFavoriteUseCase,
             downloadCanyonOfflineUseCase = downloadCanyonOfflineUseCase,
             downloadPhotoForOfflineUseCase = downloadPhotoForOfflineUseCase,
+            connectivityObserver = connectivityObserver,
             favoritesRepository = favoritesRepository,
         )
 
@@ -120,6 +126,7 @@ class CanyonDetailViewModelTest {
         coEvery { canyonRepository.downloadForOffline(42) } returns Result.success(Unit)
         coEvery { photoRepository.downloadPhoto(8) } returns Result.success("/tmp/photo.jpg")
         every { favoritesRepository.isFavorite(42) } returns flowOf(false)
+        every { connectivityObserver.observe() } returns flowOf(true)
 
         val viewModel = CanyonDetailViewModel(
             savedStateHandle = SavedStateHandle(mapOf("canyonId" to 42)),
@@ -128,6 +135,7 @@ class CanyonDetailViewModelTest {
             toggleFavoriteUseCase = toggleFavoriteUseCase,
             downloadCanyonOfflineUseCase = downloadCanyonOfflineUseCase,
             downloadPhotoForOfflineUseCase = downloadPhotoForOfflineUseCase,
+            connectivityObserver = connectivityObserver,
             favoritesRepository = favoritesRepository,
         )
 

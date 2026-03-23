@@ -273,6 +273,7 @@ fun CanyonDetailScreen(
             uiState.canyonDetail != null -> {
                 CanyonDetailContent(
                     detail = uiState.canyonDetail!!,
+                    isOnline = uiState.isOnline,
                     downloadingPhotoIds = uiState.downloadingPhotoIds,
                     onDownloadPhoto = viewModel::downloadPhoto,
                     modifier = Modifier.padding(innerPadding),
@@ -286,6 +287,7 @@ fun CanyonDetailScreen(
 @Composable
 private fun CanyonDetailContent(
     detail: CanyonDetail,
+    isOnline: Boolean,
     downloadingPhotoIds: Set<Long>,
     onDownloadPhoto: (Long) -> Unit,
     modifier: Modifier = Modifier,
@@ -364,6 +366,8 @@ private fun CanyonDetailContent(
             0 -> TopoTab(detail = detail, listState = topoListState)
             1 -> PhotosTab(
                 photos = detail.photos,
+                isOnline = isOnline,
+                isOfflineSaved = detail.canyon.isOffline,
                 downloadingPhotoIds = downloadingPhotoIds,
                 onDownloadPhoto = onDownloadPhoto,
                 listState = photosListState,
@@ -559,6 +563,8 @@ private fun CollapsibleSection(
 @Composable
 private fun PhotosTab(
     photos: List<CanyonPhoto>,
+    isOnline: Boolean,
+    isOfflineSaved: Boolean,
     downloadingPhotoIds: Set<Long>,
     onDownloadPhoto: (Long) -> Unit,
     listState: LazyListState,
@@ -572,7 +578,10 @@ private fun PhotosTab(
             contentAlignment = Alignment.Center,
         ) {
             Text(
-                text = stringResource(R.string.no_photos),
+                text = when {
+                    !isOnline && isOfflineSaved -> stringResource(R.string.no_offline_photos_without_network)
+                    else -> stringResource(R.string.no_photos)
+                },
                 style = MaterialTheme.typography.bodyLarge,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
             )

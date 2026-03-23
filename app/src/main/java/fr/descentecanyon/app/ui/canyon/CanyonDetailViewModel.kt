@@ -4,6 +4,7 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
+import fr.descentecanyon.app.data.network.ConnectivityObserver
 import fr.descentecanyon.app.domain.model.CanyonDetail
 import fr.descentecanyon.app.domain.repository.FavoritesRepository
 import fr.descentecanyon.app.domain.usecase.DownloadCanyonOfflineUseCase
@@ -25,6 +26,7 @@ data class CanyonDetailUiState(
     val isFavorite: Boolean = false,
     val isDownloading: Boolean = false,
     val downloadingPhotoIds: Set<Long> = emptySet(),
+    val isOnline: Boolean = true,
     val transientMessage: String? = null,
 )
 
@@ -36,6 +38,7 @@ class CanyonDetailViewModel @Inject constructor(
     private val toggleFavoriteUseCase: ToggleFavoriteUseCase,
     private val downloadCanyonOfflineUseCase: DownloadCanyonOfflineUseCase,
     private val downloadPhotoForOfflineUseCase: DownloadPhotoForOfflineUseCase,
+    private val connectivityObserver: ConnectivityObserver,
     private val favoritesRepository: FavoritesRepository,
 ) : ViewModel() {
 
@@ -48,6 +51,7 @@ class CanyonDetailViewModel @Inject constructor(
     init {
         loadCanyon(canyonId)
         observeFavorite(canyonId)
+        observeConnectivity()
     }
 
     fun loadCanyon(id: Int) {
@@ -89,6 +93,14 @@ class CanyonDetailViewModel @Inject constructor(
         viewModelScope.launch {
             favoritesRepository.isFavorite(id).collect { isFav ->
                 _uiState.update { it.copy(isFavorite = isFav) }
+            }
+        }
+    }
+
+    private fun observeConnectivity() {
+        viewModelScope.launch {
+            connectivityObserver.observe().collect { online ->
+                _uiState.update { it.copy(isOnline = online) }
             }
         }
     }
