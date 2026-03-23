@@ -20,9 +20,6 @@ import javax.inject.Inject
 
 enum class SearchFilter {
     ALL,
-    EASY,
-    SPORT,
-    EXPERT,
     OFFLINE,
 }
 
@@ -32,6 +29,8 @@ data class SearchUiState(
     val isLoading: Boolean = false,
     val error: String? = null,
     val selectedFilter: SearchFilter = SearchFilter.ALL,
+    val availableCountries: List<String> = emptyList(),
+    val selectedCountry: String? = null,
 )
 
 @OptIn(FlowPreview::class, ExperimentalCoroutinesApi::class)
@@ -66,9 +65,10 @@ class SearchViewModel @Inject constructor(
                             latestResults = canyons
                             _uiState.update {
                                 it.copy(
-                                    results = filterResults(canyons, it.selectedFilter),
+                                    results = filterResults(canyons, it.selectedFilter, it.selectedCountry),
                                     isLoading = false,
                                     error = null,
+                                    availableCountries = availableCountries(canyons),
                                 )
                             }
                         },
@@ -100,7 +100,16 @@ class SearchViewModel @Inject constructor(
         _uiState.update {
             it.copy(
                 selectedFilter = filter,
-                results = filterResults(latestResults, filter),
+                results = filterResults(latestResults, filter, it.selectedCountry),
+            )
+        }
+    }
+
+    fun onCountrySelected(country: String?) {
+        _uiState.update {
+            it.copy(
+                selectedCountry = country,
+                results = filterResults(latestResults, it.selectedFilter, country),
             )
         }
     }
@@ -108,18 +117,21 @@ class SearchViewModel @Inject constructor(
     private fun filterResults(
         results: List<CanyonSummary>,
         filter: SearchFilter,
+        country: String?,
     ): List<CanyonSummary> {
-        return when (filter) {
+        val filtered = when (filter) {
             SearchFilter.ALL -> results
-            SearchFilter.EASY -> results.filter { difficultyBucket(it.cotation) <= 2 }
-            SearchFilter.SPORT -> results.filter { difficultyBucket(it.cotation) in 3..4 }
-            SearchFilter.EXPERT -> results.filter { difficultyBucket(it.cotation) >= 5 }
             SearchFilter.OFFLINE -> results.filter { it.isOffline }
         }
+
+        return country?.let { selected ->
+            filtered.filter { it.pays.equals(selected, ignoreCase = true) }
+        } ?: filtered
     }
 
-    private fun difficultyBucket(cotation: String): Int {
-        val value = cotation.trim().firstOrNull()?.digitToIntOrNull()
-        return value ?: cotation.trim().dropWhile { !it.isDigit() }.firstOrNull()?.digitToIntOrNull() ?: 0
+    private fun availableCountries(results: List<CanyonSummary>): List<String> {
+        return results.mapNotNull { it.pays.takeIf(String::isNotBlank) }
+            .distinct()
+            .sorted()
     }
 }

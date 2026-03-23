@@ -41,13 +41,13 @@ class SearchViewModelTest {
 
     @Test
     @OptIn(ExperimentalCoroutinesApi::class)
-    fun `selected filter narrows fetched results`() = runTest {
+    fun `selected filters narrow fetched results`() = runTest {
         every { canyonRepository.searchByName("ri") } returns flowOf(
             Result.success(
                 listOf(
-                    summary(id = 1, cotation = "v2a2II"),
-                    summary(id = 2, cotation = "v4a4III"),
-                    summary(id = 3, cotation = "v5a5IV", isOffline = true),
+                    summary(id = 1, pays = "France"),
+                    summary(id = 2, pays = "Espagne"),
+                    summary(id = 3, pays = "France", isOffline = true),
                 )
             )
         )
@@ -58,9 +58,10 @@ class SearchViewModelTest {
         advanceUntilIdle()
 
         assertEquals(listOf(1, 2, 3), viewModel.uiState.value.results.map { it.id })
+        assertEquals(listOf("Espagne", "France"), viewModel.uiState.value.availableCountries)
 
-        viewModel.onFilterSelected(SearchFilter.EXPERT)
-        assertEquals(listOf(3), viewModel.uiState.value.results.map { it.id })
+        viewModel.onCountrySelected("France")
+        assertEquals(listOf(1, 3), viewModel.uiState.value.results.map { it.id })
 
         viewModel.onFilterSelected(SearchFilter.OFFLINE)
         assertEquals(listOf(3), viewModel.uiState.value.results.map { it.id })
@@ -69,13 +70,13 @@ class SearchViewModelTest {
 
     private fun summary(
         id: Int,
-        cotation: String,
+        pays: String,
         isOffline: Boolean = false,
     ) = CanyonSummary(
         id = id,
         nom = "Canyon $id",
-        pays = "France",
-        cotation = cotation,
+        pays = pays,
+        cotation = "v3a3III",
         url = "/canyoning/canyon/$id/test.html",
         isOffline = isOffline,
     )

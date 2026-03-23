@@ -86,6 +86,17 @@ fun SearchScreen(
                     label = { Text(text = filter.label()) },
                 )
             }
+            uiState.availableCountries.forEach { country ->
+                FilterChip(
+                    selected = uiState.selectedCountry == country,
+                    onClick = {
+                        viewModel.onCountrySelected(
+                            if (uiState.selectedCountry == country) null else country,
+                        )
+                    },
+                    label = { Text(text = country) },
+                )
+            }
         }
 
         Spacer(modifier = Modifier.height(12.dp))
@@ -152,9 +163,6 @@ fun SearchScreen(
 private fun SearchFilter.label(): String {
     return when (this) {
         SearchFilter.ALL -> stringResource(R.string.search_filter_all)
-        SearchFilter.EASY -> stringResource(R.string.search_filter_easy)
-        SearchFilter.SPORT -> stringResource(R.string.search_filter_sport)
-        SearchFilter.EXPERT -> stringResource(R.string.search_filter_expert)
         SearchFilter.OFFLINE -> stringResource(R.string.search_filter_offline)
     }
 }
