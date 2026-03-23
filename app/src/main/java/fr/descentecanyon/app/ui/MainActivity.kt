@@ -112,13 +112,12 @@ private fun MainScreen() {
                 }
             }
         },
-    ) { innerPadding ->
+    ) {
         AppNavHost(
             navController = navController,
             modifier = Modifier
                 .fillMaxSize()
-                .background(MaterialTheme.colorScheme.background)
-                .padding(innerPadding),
+                .background(MaterialTheme.colorScheme.background),
         )
     }
 }
