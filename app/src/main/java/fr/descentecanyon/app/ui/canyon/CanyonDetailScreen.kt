@@ -270,6 +270,8 @@ fun CanyonDetailScreen(
             uiState.canyonDetail != null -> {
                 CanyonDetailContent(
                     detail = uiState.canyonDetail!!,
+                    downloadingPhotoIds = uiState.downloadingPhotoIds,
+                    onDownloadPhoto = viewModel::downloadPhoto,
                     modifier = Modifier.padding(innerPadding),
                 )
             }
@@ -281,6 +283,8 @@ fun CanyonDetailScreen(
 @Composable
 private fun CanyonDetailContent(
     detail: CanyonDetail,
+    downloadingPhotoIds: Set<Long>,
+    onDownloadPhoto: (Long) -> Unit,
     modifier: Modifier = Modifier,
 ) {
     val canyon = detail.canyon
@@ -339,7 +343,11 @@ private fun CanyonDetailContent(
         // Tab content
         when (selectedTab) {
             0 -> TopoTab(detail = detail)
-            1 -> PhotosTab(photos = detail.photos)
+            1 -> PhotosTab(
+                photos = detail.photos,
+                downloadingPhotoIds = downloadingPhotoIds,
+                onDownloadPhoto = onDownloadPhoto,
+            )
             2 -> DebitsTab(debits = detail.debits)
         }
     }
@@ -529,6 +537,8 @@ private fun CollapsibleSection(
 @Composable
 private fun PhotosTab(
     photos: List<CanyonPhoto>,
+    downloadingPhotoIds: Set<Long>,
+    onDownloadPhoto: (Long) -> Unit,
     modifier: Modifier = Modifier,
 ) {
     if (photos.isEmpty()) {
@@ -553,7 +563,11 @@ private fun PhotosTab(
                 items = photos,
                 key = { it.id.takeIf { id -> id != 0L } ?: it.url.hashCode().toLong() },
             ) { photo ->
-                PhotoCard(photo = photo)
+                PhotoCard(
+                    photo = photo,
+                    isDownloading = downloadingPhotoIds.contains(photo.id),
+                    onDownload = { onDownloadPhoto(photo.id) },
+                )
             }
             item {
                 Spacer(modifier = Modifier.height(80.dp))
@@ -565,6 +579,8 @@ private fun PhotosTab(
 @Composable
 private fun PhotoCard(
     photo: CanyonPhoto,
+    isDownloading: Boolean,
+    onDownload: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     Card(
@@ -573,7 +589,7 @@ private fun PhotoCard(
     ) {
         Column {
             AsyncImage(
-                model = photo.url,
+                model = photo.localPath ?: photo.url,
                 contentDescription = photo.description,
                 modifier = Modifier
                     .fillMaxWidth()
@@ -581,6 +597,29 @@ private fun PhotoCard(
                 contentScale = ContentScale.Crop,
             )
             Column(modifier = Modifier.padding(12.dp)) {
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.CenterVertically,
+                ) {
+                    if (photo.localPath != null) {
+                        SmallMetaBadge(text = stringResource(R.string.photo_saved_offline))
+                    }
+                    if (photo.localPath == null) {
+                        TextButton(
+                            onClick = onDownload,
+                            enabled = photo.id != 0L && !isDownloading,
+                        ) {
+                            Text(
+                                text = if (isDownloading) {
+                                    stringResource(R.string.downloading_offline)
+                                } else {
+                                    stringResource(R.string.photo_download_action)
+                                }
+                            )
+                        }
+                    }
+                }
                 photo.description?.takeIf { it.isNotBlank() }?.let { description ->
                     Text(
                         text = description,

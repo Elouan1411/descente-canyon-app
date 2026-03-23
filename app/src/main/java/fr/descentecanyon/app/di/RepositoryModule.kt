@@ -10,12 +10,14 @@ import fr.descentecanyon.app.data.repository.DebitRepositoryImpl
 import fr.descentecanyon.app.data.repository.DebitSubmissionRepositoryImpl
 import fr.descentecanyon.app.data.repository.FavoritesRepositoryImpl
 import fr.descentecanyon.app.data.repository.MapOfflineRepositoryImpl
+import fr.descentecanyon.app.data.repository.PhotoRepositoryImpl
 import fr.descentecanyon.app.domain.repository.AuthRepository
 import fr.descentecanyon.app.domain.repository.CanyonRepository
 import fr.descentecanyon.app.domain.repository.DebitRepository
 import fr.descentecanyon.app.domain.repository.DebitSubmissionRepository
 import fr.descentecanyon.app.domain.repository.FavoritesRepository
 import fr.descentecanyon.app.domain.repository.MapOfflineRepository
+import fr.descentecanyon.app.domain.repository.PhotoRepository
 import javax.inject.Singleton
 
 @Module
@@ -41,6 +43,10 @@ abstract class RepositoryModule {
     @Binds
     @Singleton
     abstract fun bindMapOfflineRepository(impl: MapOfflineRepositoryImpl): MapOfflineRepository
+
+    @Binds
+    @Singleton
+    abstract fun bindPhotoRepository(impl: PhotoRepositoryImpl): PhotoRepository
 
     @Binds
     @Singleton

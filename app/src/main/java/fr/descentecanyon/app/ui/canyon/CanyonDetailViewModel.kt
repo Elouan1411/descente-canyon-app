@@ -7,6 +7,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import fr.descentecanyon.app.domain.model.CanyonDetail
 import fr.descentecanyon.app.domain.repository.FavoritesRepository
 import fr.descentecanyon.app.domain.usecase.DownloadCanyonOfflineUseCase
+import fr.descentecanyon.app.domain.usecase.DownloadPhotoForOfflineUseCase
 import fr.descentecanyon.app.domain.usecase.GetCanyonDetailUseCase
 import fr.descentecanyon.app.domain.usecase.GetCanyonPreviewUseCase
 import fr.descentecanyon.app.domain.usecase.ToggleFavoriteUseCase
@@ -23,6 +24,7 @@ data class CanyonDetailUiState(
     val error: String? = null,
     val isFavorite: Boolean = false,
     val isDownloading: Boolean = false,
+    val downloadingPhotoIds: Set<Long> = emptySet(),
     val transientMessage: String? = null,
 )
 
@@ -33,6 +35,7 @@ class CanyonDetailViewModel @Inject constructor(
     private val getCanyonDetailUseCase: GetCanyonDetailUseCase,
     private val toggleFavoriteUseCase: ToggleFavoriteUseCase,
     private val downloadCanyonOfflineUseCase: DownloadCanyonOfflineUseCase,
+    private val downloadPhotoForOfflineUseCase: DownloadPhotoForOfflineUseCase,
     private val favoritesRepository: FavoritesRepository,
 ) : ViewModel() {
 
@@ -129,5 +132,36 @@ class CanyonDetailViewModel @Inject constructor(
 
     fun clearTransientMessage() {
         _uiState.update { it.copy(transientMessage = null) }
+    }
+
+    fun downloadPhoto(photoId: Long) {
+        if (photoId == 0L || _uiState.value.downloadingPhotoIds.contains(photoId)) return
+
+        viewModelScope.launch {
+            _uiState.update { it.copy(downloadingPhotoIds = it.downloadingPhotoIds + photoId) }
+            downloadPhotoForOfflineUseCase(photoId).fold(
+                onSuccess = { localPath ->
+                    _uiState.update { state ->
+                        state.copy(
+                            canyonDetail = state.canyonDetail?.copy(
+                                photos = state.canyonDetail.photos.map { photo ->
+                                    if (photo.id == photoId) photo.copy(localPath = localPath) else photo
+                                }
+                            ),
+                            downloadingPhotoIds = state.downloadingPhotoIds - photoId,
+                            transientMessage = "Photo telechargee",
+                        )
+                    }
+                },
+                onFailure = { throwable ->
+                    _uiState.update {
+                        it.copy(
+                            downloadingPhotoIds = it.downloadingPhotoIds - photoId,
+                            transientMessage = throwable.message ?: "Impossible de telecharger la photo",
+                        )
+                    }
+                },
+            )
+        }
     }
 }

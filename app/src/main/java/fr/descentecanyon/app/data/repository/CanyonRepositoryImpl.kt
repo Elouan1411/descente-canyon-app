@@ -205,16 +205,14 @@ class CanyonRepositoryImpl @Inject constructor(
 
     override suspend fun downloadForOffline(canyonId: Int): Result<Unit> = runCatching {
         val detail = scraper.scrapeFullCanyonDetail(canyonId).getOrThrow()
-        val photos = scraper.scrapeCanyonPhotos(canyonId).getOrDefault(emptyList())
         val debits = scraper.scrapeCanyonDebits(canyonId).getOrDefault(emptyList())
         val entity = detail.toEntity().copy(isOffline = true)
 
         insertPreservingFlags(entity)
 
         val geoPointEntities = detail.geoPoints.map { it.toEntity(canyonId) }
-        val photoEntities = photos.map { it.toEntity() }
         val debitEntities = debits.map { it.toEntity() }
-        replaceSupportingData(canyonId, geoPointEntities, photoEntities, debitEntities)
+        replaceSupportingData(canyonId, geoPointEntities, emptyList(), debitEntities)
 
         geoPointEntities.bestMarkerPointOrNull()?.let { point ->
             withTimeoutOrNull(15_000) {
