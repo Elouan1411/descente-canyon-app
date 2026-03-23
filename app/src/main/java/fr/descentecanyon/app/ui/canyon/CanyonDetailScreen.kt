@@ -11,7 +11,6 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -394,48 +393,88 @@ private fun SummaryStatsGrid(
 ) {
     val canyon = detail.canyon
 
-    data class StatItem(val label: String, val value: String?)
+    val parcoursStats = listOf(
+        SummaryStat(stringResource(R.string.altitude), canyon.altitudeDepart?.let { "${it}m" }),
+        SummaryStat(stringResource(R.string.elevation), canyon.denivele?.let { "${it}m" }),
+        SummaryStat(stringResource(R.string.length), canyon.longueur?.let { "${it}m" }),
+        SummaryStat(stringResource(R.string.max_waterfall), canyon.cascadeMax?.let { "${it}m" }),
+        SummaryStat(stringResource(R.string.rope), canyon.cordeMin?.let { "${it}m" }),
+    ).filter { !it.value.isNullOrBlank() }
 
-    val stats = listOf(
-        StatItem(stringResource(R.string.altitude), canyon.altitudeDepart?.let { "${it}m" }),
-        StatItem(stringResource(R.string.elevation), canyon.denivele?.let { "${it}m" }),
-        StatItem(stringResource(R.string.length), canyon.longueur?.let { "${it}m" }),
-        StatItem(stringResource(R.string.max_waterfall), canyon.cascadeMax?.let { "${it}m" }),
-        StatItem(stringResource(R.string.rope), canyon.cordeMin?.let { "${it}m" }),
-        StatItem(stringResource(R.string.approach_time), canyon.tempsApproche),
-        StatItem(stringResource(R.string.descent_time), canyon.tempsDescente),
-        StatItem(stringResource(R.string.return_time), canyon.tempsRetour),
-    )
+    val timeStats = listOf(
+        SummaryStat(stringResource(R.string.approach_time), canyon.tempsApproche),
+        SummaryStat(stringResource(R.string.descent_time), canyon.tempsDescente),
+        SummaryStat(stringResource(R.string.return_time), canyon.tempsRetour),
+    ).filter { !it.value.isNullOrBlank() }
 
-    val displayedStats = stats.filter { !it.value.isNullOrBlank() }
-
-    FlowRow(
+    Column(
         modifier = modifier.fillMaxWidth(),
-        horizontalArrangement = Arrangement.spacedBy(8.dp),
-        verticalArrangement = Arrangement.spacedBy(8.dp),
+        verticalArrangement = Arrangement.spacedBy(12.dp),
     ) {
-        displayedStats.forEach { stat ->
-            Card(
-                colors = CardDefaults.cardColors(
-                    containerColor = MaterialTheme.colorScheme.surface.copy(alpha = 0.9f),
-                ),
-                elevation = CardDefaults.cardElevation(defaultElevation = 0.dp),
-            ) {
-                Row(
-                    modifier = Modifier.padding(horizontal = 10.dp, vertical = 8.dp),
-                    horizontalArrangement = Arrangement.spacedBy(8.dp),
-                    verticalAlignment = Alignment.CenterVertically,
-                ) {
-                    Text(
-                        text = stat.label,
-                        style = MaterialTheme.typography.labelSmall,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant,
-                    )
-                    Text(
-                        text = stat.value ?: "-",
-                        style = MaterialTheme.typography.labelLarge,
-                        fontWeight = FontWeight.Bold,
-                    )
+        if (parcoursStats.isNotEmpty()) {
+            SummarySection(
+                title = stringResource(R.string.canyon_summary_parcours),
+                stats = parcoursStats,
+            )
+        }
+        if (timeStats.isNotEmpty()) {
+            SummarySection(
+                title = stringResource(R.string.canyon_summary_timing),
+                stats = timeStats,
+            )
+        }
+    }
+}
+
+private data class SummaryStat(
+    val label: String,
+    val value: String?,
+)
+
+@Composable
+private fun SummarySection(
+    title: String,
+    stats: List<SummaryStat>,
+    modifier: Modifier = Modifier,
+) {
+    Column(modifier = modifier, verticalArrangement = Arrangement.spacedBy(8.dp)) {
+        Text(
+            text = title,
+            style = MaterialTheme.typography.labelLarge,
+            fontWeight = FontWeight.SemiBold,
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
+        )
+        Card(
+            colors = CardDefaults.cardColors(
+                containerColor = MaterialTheme.colorScheme.surface.copy(alpha = 0.92f),
+            ),
+            elevation = CardDefaults.cardElevation(defaultElevation = 0.dp),
+        ) {
+            Column(modifier = Modifier.fillMaxWidth()) {
+                stats.forEachIndexed { index, stat ->
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(horizontal = 14.dp, vertical = 10.dp),
+                        horizontalArrangement = Arrangement.SpaceBetween,
+                        verticalAlignment = Alignment.CenterVertically,
+                    ) {
+                        Text(
+                            text = stat.label,
+                            style = MaterialTheme.typography.bodyMedium,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant,
+                        )
+                        Text(
+                            text = stat.value ?: "-",
+                            style = MaterialTheme.typography.titleMedium,
+                            fontWeight = FontWeight.Bold,
+                        )
+                    }
+                    if (index != stats.lastIndex) {
+                        HorizontalDivider(
+                            color = MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.35f),
+                        )
+                    }
                 }
             }
         }
