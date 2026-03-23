@@ -7,8 +7,10 @@ import fr.descentecanyon.app.data.local.dao.PhotoDao
 import fr.descentecanyon.app.data.local.entity.CanyonEntity
 import fr.descentecanyon.app.data.local.entity.GeoPointEntity
 import fr.descentecanyon.app.data.remote.scraper.CanyonScraper
+import fr.descentecanyon.app.data.remote.scraper.NearbyCanyonRemoteSource
 import fr.descentecanyon.app.domain.model.GeoPointType
 import fr.descentecanyon.app.domain.repository.MapOfflineRepository
+import fr.descentecanyon.app.data.remote.dto.ScrapedCanyonSummary
 import io.mockk.coEvery
 import io.mockk.mockk
 import kotlinx.coroutines.flow.first
@@ -23,10 +25,13 @@ class CanyonRepositoryNearbyTest {
     private val debitDao = mockk<DebitDao>()
     private val photoDao = mockk<PhotoDao>()
     private val scraper = mockk<CanyonScraper>(relaxed = true)
+    private val nearbyCanyonRemoteSource = mockk<NearbyCanyonRemoteSource>()
     private val mapOfflineRepository = mockk<MapOfflineRepository>()
 
     @Test
     fun `get nearby canyons keeps closest markers within radius`() = runTest {
+        // Remote endpoint fails -> falls through to local DB
+        coEvery { nearbyCanyonRemoteSource.getNearbyCanyons(any(), any()) } returns Result.failure(Exception("offline"))
         coEvery { geoPointDao.getAll() } returns listOf(
             GeoPointEntity(canyonId = 1, type = "PARKING_AMONT", latitude = 43.70, longitude = 6.90),
             GeoPointEntity(canyonId = 2, type = "ENTREE", latitude = 43.72, longitude = 6.95),
@@ -43,6 +48,7 @@ class CanyonRepositoryNearbyTest {
             debitDao = debitDao,
             photoDao = photoDao,
             scraper = scraper,
+            nearbyCanyonRemoteSource = nearbyCanyonRemoteSource,
             mapOfflineRepository = mapOfflineRepository,
         )
 
@@ -52,6 +58,30 @@ class CanyonRepositoryNearbyTest {
         assertEquals(43.70, result.first().latitude)
         assertEquals(6.90, result.first().longitude)
         assertEquals(GeoPointType.PARKING_AMONT, result.first().markerType)
+    }
+
+    @Test
+    fun `get nearby canyons uses remote endpoint when available`() = runTest {
+        coEvery { nearbyCanyonRemoteSource.getNearbyCanyons(43.70, 6.90) } returns Result.success(
+            listOf(
+                ScrapedCanyonSummary(id = 26, nom = "Furon (partie haute)", pays = "FR", departement = "Isere", url = "/canyoning/canyon/26/Furon.html", distanceKm = 0.4),
+                ScrapedCanyonSummary(id = 27, nom = "Furon (partie basse)", pays = "FR", departement = "Isere", url = "/canyoning/canyon/27/Furon.html", distanceKm = 3.0),
+            )
+        )
+        val repository = CanyonRepositoryImpl(
+            canyonDao = canyonDao,
+            geoPointDao = geoPointDao,
+            debitDao = debitDao,
+            photoDao = photoDao,
+            scraper = scraper,
+            nearbyCanyonRemoteSource = nearbyCanyonRemoteSource,
+            mapOfflineRepository = mapOfflineRepository,
+        )
+
+        val result = repository.getCanyonsNearby(43.70, 6.90, radiusKm = 50.0).first().getOrThrow()
+
+        assertEquals(listOf(26, 27), result.map { it.id })
+        assertEquals("Furon (partie haute)", result.first().nom)
     }
 
     private fun canyonEntity(

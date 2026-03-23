@@ -155,6 +155,32 @@ class CanyonScraper @Inject constructor(
         }
 
     /**
+     * Scrape nearby canyons using the server-side geolocation endpoint.
+     * POST /job/canyonbygeoloc with latitude, longitude, interetmin.
+     * The server calculates distances and returns sorted HTML table rows.
+     */
+    suspend fun scrapeNearbyCanyons(
+        latitude: Double,
+        longitude: Double,
+        interetMin: Double = 0.0,
+    ): Result<List<ScrapedCanyonSummary>> =
+        withContext(Dispatchers.IO) {
+            semaphore.withPermit {
+                runCatching {
+                    val connection = Jsoup.connect("$BASE_URL/job/canyonbygeoloc")
+                        .userAgent(USER_AGENT)
+                        .timeout(TIMEOUT_MS)
+                        .data("latitude", latitude.toString())
+                        .data("longitude", longitude.toString())
+                        .data("interetmin", interetMin.toString())
+                        .ignoreContentType(true)
+                    val doc = sessionManager.applyTo(connection).post()
+                    NearbyParser.parse(doc)
+                }
+            }
+        }
+
+    /**
      * Scrape full canyon detail: summary + description + geopoints merged.
      * Acquires only one semaphore permit for the entire composite operation
      * to avoid contention with the 3-permit limit.

@@ -9,6 +9,7 @@ import fr.descentecanyon.app.data.mapper.toDetail
 import fr.descentecanyon.app.data.mapper.toEntity
 import fr.descentecanyon.app.data.mapper.toSummary
 import fr.descentecanyon.app.data.remote.scraper.CanyonScraper
+import fr.descentecanyon.app.data.remote.scraper.NearbyCanyonRemoteSource
 import fr.descentecanyon.app.domain.model.CanyonDetail
 import fr.descentecanyon.app.domain.model.CanyonSummary
 import fr.descentecanyon.app.domain.model.GeoPointType
@@ -34,6 +35,7 @@ class CanyonRepositoryImpl @Inject constructor(
     private val debitDao: DebitDao,
     private val photoDao: PhotoDao,
     private val scraper: CanyonScraper,
+    private val nearbyCanyonRemoteSource: NearbyCanyonRemoteSource,
     private val mapOfflineRepository: MapOfflineRepository,
 ) : CanyonRepository {
 
@@ -97,6 +99,26 @@ class CanyonRepositoryImpl @Inject constructor(
         radiusKm: Double,
     ): Flow<Result<List<CanyonSummary>>> {
         return flow {
+            // Try the remote server-side nearby endpoint first
+            val remoteResult = nearbyCanyonRemoteSource.getNearbyCanyons(latitude, longitude).getOrNull()
+            if (!remoteResult.isNullOrEmpty()) {
+                val nearby = remoteResult
+                    .filter { (it.distanceKm ?: 0.0) <= radiusKm }
+                    .map { scraped ->
+                        CanyonSummary(
+                            id = scraped.id,
+                            nom = scraped.nom,
+                            pays = scraped.pays,
+                            departement = scraped.departement,
+                            cotation = scraped.cotation,
+                            url = scraped.url,
+                        )
+                    }
+                emit(Result.success(nearby))
+                return@flow
+            }
+
+            // Fallback to local DB for offline mode
             val representativePoints = geoPointDao.getAll()
                 .groupBy { it.canyonId }
                 .mapValues { (_, points) -> points.bestMarkerPoint() }
