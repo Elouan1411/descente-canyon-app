@@ -2,6 +2,7 @@ package fr.descentecanyon.app.data.remote.scraper
 
 import fr.descentecanyon.app.data.remote.dto.ScrapedCanyonSummary
 import org.jsoup.nodes.Document
+import java.util.Locale
 
 /**
  * Parses the nearby canyon AJAX response from POST /job/canyonbygeoloc.
@@ -21,6 +22,7 @@ internal object NearbyParser {
 
     private val CANYON_URL_REGEX = Regex("/canyoning/canyon/(\\d+)/(.+)\\.html")
     private val DISTANCE_REGEX = Regex("""([\d.,]+)\s*km""")
+    private val INTEREST_REGEX = Regex("""([\d.,]+)""")
 
     fun parse(doc: Document): List<ScrapedCanyonSummary> {
         val results = mutableListOf<ScrapedCanyonSummary>()
@@ -30,7 +32,12 @@ internal object NearbyParser {
         if (rows.isNotEmpty()) {
             for (row in rows) {
                 val link = row.selectFirst("a[href~=/canyoning/canyon/\\d+/]") ?: continue
-                val summary = extractFromLink(link, row.select("td").getOrNull(0), row.select("td").getOrNull(3))
+                val summary = extractFromLink(
+                    link = link,
+                    distanceTd = row.select("td").getOrNull(0),
+                    interestTd = row.select("td").getOrNull(1),
+                    locationTd = row.select("td").getOrNull(3),
+                )
                 if (summary != null && results.none { it.id == summary.id }) {
                     results.add(summary)
                 }
@@ -41,7 +48,7 @@ internal object NearbyParser {
         if (results.isEmpty()) {
             val links = doc.select("a[href~=/canyoning/canyon/\\d+/]")
             for (link in links) {
-                val summary = extractFromLink(link, null, null)
+                val summary = extractFromLink(link, null, null, null)
                 if (summary != null && results.none { it.id == summary.id }) {
                     results.add(summary)
                 }
@@ -54,6 +61,7 @@ internal object NearbyParser {
     private fun extractFromLink(
         link: org.jsoup.nodes.Element,
         distanceTd: org.jsoup.nodes.Element?,
+        interestTd: org.jsoup.nodes.Element?,
         locationTd: org.jsoup.nodes.Element?,
     ): ScrapedCanyonSummary? {
         val href = link.attr("href")
@@ -70,6 +78,13 @@ internal object NearbyParser {
             ?.replace(",", ".")
             ?.toDoubleOrNull()
 
+        val interet = interestTd?.text()?.trim()?.let { text ->
+            INTEREST_REGEX.find(text)
+                ?.groupValues?.get(1)
+                ?.replace(",", ".")
+                ?.toFloatOrNull()
+        }
+
         val departement = locationTd?.ownText()?.trim()?.takeIf { it.isNotBlank() }
 
         val flagImg = locationTd?.selectFirst("img[class~=d-]")
@@ -78,6 +93,7 @@ internal object NearbyParser {
             ?.firstOrNull { it.startsWith("d-") && it.length > 2 }
             ?.removePrefix("d-")
             ?.uppercase()
+            ?.toDisplayCountryName()
             ?: ""
 
         return ScrapedCanyonSummary(
@@ -85,8 +101,28 @@ internal object NearbyParser {
             nom = nom,
             pays = pays,
             departement = departement,
+            interet = interet,
             url = href,
             distanceKm = distanceKm,
         )
     }
+}
+
+private fun String.toDisplayCountryName(): String {
+    val specialCases = mapOf(
+        "RE" to "Reunion",
+        "MQ" to "Martinique",
+        "GP" to "Guadeloupe",
+        "GF" to "Guyane",
+        "NC" to "Nouvelle-Caledonie",
+        "PF" to "Polynesie francaise",
+        "YT" to "Mayotte",
+    )
+    specialCases[this]?.let { return it }
+
+    val locale = Locale("", this)
+    return locale.getDisplayCountry(Locale.FRENCH)
+        .takeIf { it.isNotBlank() }
+        ?.replaceFirstChar { char -> if (char.isLowerCase()) char.titlecase(Locale.FRENCH) else char.toString() }
+        ?: this
 }

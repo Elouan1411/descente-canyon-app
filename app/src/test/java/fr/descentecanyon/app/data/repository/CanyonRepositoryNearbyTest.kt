@@ -64,8 +64,8 @@ class CanyonRepositoryNearbyTest {
     fun `get nearby canyons uses remote endpoint when available`() = runTest {
         coEvery { nearbyCanyonRemoteSource.getNearbyCanyons(43.70, 6.90) } returns Result.success(
             listOf(
-                ScrapedCanyonSummary(id = 26, nom = "Furon (partie haute)", pays = "FR", departement = "Isere", url = "/canyoning/canyon/26/Furon.html", distanceKm = 0.4),
-                ScrapedCanyonSummary(id = 27, nom = "Furon (partie basse)", pays = "FR", departement = "Isere", url = "/canyoning/canyon/27/Furon.html", distanceKm = 3.0),
+                ScrapedCanyonSummary(id = 26, nom = "Furon (partie haute)", pays = "France", departement = "Isere", interet = 2.6f, url = "/canyoning/canyon/26/Furon.html", distanceKm = 0.4),
+                ScrapedCanyonSummary(id = 27, nom = "Furon (partie basse)", pays = "France", departement = "Isere", interet = 2.4f, url = "/canyoning/canyon/27/Furon.html", distanceKm = 3.0),
             )
         )
         val repository = CanyonRepositoryImpl(
@@ -82,6 +82,8 @@ class CanyonRepositoryNearbyTest {
 
         assertEquals(listOf(26, 27), result.map { it.id })
         assertEquals("Furon (partie haute)", result.first().nom)
+        assertEquals("France", result.first().pays)
+        assertEquals(2.6f, result.first().interet)
     }
 
     private fun canyonEntity(

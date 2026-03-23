@@ -178,7 +178,11 @@ class CanyonScraper @Inject constructor(
                         .data("longitude", longitude.toString())
                         .data("interetmin", interetMin.toString())
                         .ignoreContentType(true)
-                    val doc = sessionManager.applyTo(connection).post()
+                    val body = sessionManager.applyTo(connection).execute().body()
+                    val doc = Jsoup.parse(
+                        "<table><tbody>$body</tbody></table>",
+                        BASE_URL,
+                    )
                     NearbyParser.parse(doc)
                 }
             }

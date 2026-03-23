@@ -150,15 +150,16 @@ class CanyonRepositoryImpl @Inject constructor(
                 val nearby = remoteResult
                     .filter { (it.distanceKm ?: 0.0) <= radiusKm }
                     .map { scraped ->
-                        CanyonSummary(
-                            id = scraped.id,
-                            nom = scraped.nom,
-                            pays = scraped.pays,
-                            departement = scraped.departement,
-                            cotation = scraped.cotation,
-                            url = scraped.url,
-                        )
-                    }
+                    CanyonSummary(
+                        id = scraped.id,
+                        nom = scraped.nom,
+                        pays = scraped.pays,
+                        departement = scraped.departement,
+                        cotation = scraped.cotation,
+                        interet = scraped.interet,
+                        url = scraped.url,
+                    )
+                }
                 emit(Result.success(nearby))
                 return@flow
             }

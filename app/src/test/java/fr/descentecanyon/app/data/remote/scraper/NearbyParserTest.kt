@@ -31,7 +31,8 @@ class NearbyParserTest {
         assertEquals("Furon (partie haute)", first.nom)
         assertEquals(0.4, first.distanceKm!!, 0.01)
         assertEquals("Isère", first.departement)
-        assertEquals("FR", first.pays)
+        assertEquals("France", first.pays)
+        assertEquals(null, first.interet)
     }
 
     @Test
@@ -43,6 +44,7 @@ class NearbyParserTest {
         assertEquals(2113, third.id)
         assertEquals("Infernet", third.nom)
         assertEquals(9.3, third.distanceKm!!, 0.01)
+        assertEquals(3.2f, third.interet!!, 0.01f)
     }
 
     @Test

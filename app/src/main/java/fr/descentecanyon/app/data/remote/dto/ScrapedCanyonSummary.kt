@@ -9,6 +9,7 @@ data class ScrapedCanyonSummary(
     val pays: String = "",
     val departement: String? = null,
     val cotation: String = "",
+    val interet: Float? = null,
     val url: String = "",
     val distanceKm: Double? = null,
 )
