@@ -10,7 +10,7 @@ import org.jsoup.nodes.Document
 internal object GeoPointParser {
 
     private val POINT_REGEX = Regex(
-        """LatLng\(([\d.]+),([\d.]+)\),\s*type:\s*'([a-z_]+)'""",
+        """LatLng\(\s*(-?[\d.]+)\s*,\s*(-?[\d.]+)\s*\)\s*,\s*type:\s*'([a-z_]+)'""",
     )
 
     // Map site type names to our GeoPointType enum names
@@ -25,10 +25,10 @@ internal object GeoPointParser {
     )
 
     fun parse(doc: Document): List<ScrapedGeoPoint> {
-        val scriptElement = doc.selectFirst("script:containsData(initMap)")
+        val jsCode = doc.select("script")
+            .joinToString("\n") { it.data() }
+            .takeIf { it.isNotBlank() }
             ?: return emptyList()
-
-        val jsCode = scriptElement.data()
         val results = mutableListOf<ScrapedGeoPoint>()
 
         for (match in POINT_REGEX.findAll(jsCode)) {
