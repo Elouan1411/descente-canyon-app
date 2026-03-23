@@ -18,7 +18,9 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.LazyListState
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.filled.CloudDone
 import androidx.compose.material.icons.filled.CloudDownload
@@ -52,6 +54,7 @@ import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -289,6 +292,19 @@ private fun CanyonDetailContent(
 ) {
     val canyon = detail.canyon
     var selectedTab by rememberSaveable { mutableIntStateOf(0) }
+    val topoListState = rememberLazyListState()
+    val photosListState = rememberLazyListState()
+    val debitsListState = rememberLazyListState()
+    val activeListState = when (selectedTab) {
+        0 -> topoListState
+        1 -> photosListState
+        else -> debitsListState
+    }
+    val isInfoCollapsed by remember(activeListState, selectedTab) {
+        derivedStateOf {
+            activeListState.firstVisibleItemIndex > 0 || activeListState.firstVisibleItemScrollOffset > 24
+        }
+    }
     val tabs = listOf(
         stringResource(R.string.tab_topo),
         stringResource(R.string.tab_photos),
@@ -297,37 +313,40 @@ private fun CanyonDetailContent(
 
     Column(modifier = modifier.fillMaxSize()) {
         // Header
-        Card(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(16.dp),
-            colors = CardDefaults.cardColors(
-                containerColor = MaterialTheme.colorScheme.surfaceVariant,
-            ),
-        ) {
-            Column(modifier = Modifier.padding(16.dp)) {
-                Row(
-                    modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.SpaceBetween,
-                    verticalAlignment = Alignment.CenterVertically,
+        AnimatedVisibility(visible = !isInfoCollapsed) {
+            Column {
+                Card(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(horizontal = 16.dp, vertical = 12.dp),
+                    colors = CardDefaults.cardColors(
+                        containerColor = MaterialTheme.colorScheme.surfaceVariant,
+                    ),
                 ) {
-                    CotationBadge(cotation = canyon.cotation, large = true)
-                    Spacer(modifier = Modifier.width(12.dp))
-                    canyon.interet?.let { interest ->
-                        InterestStars(interest = interest)
+                    Column(modifier = Modifier.padding(16.dp)) {
+                        Row(
+                            modifier = Modifier.fillMaxWidth(),
+                            horizontalArrangement = Arrangement.SpaceBetween,
+                            verticalAlignment = Alignment.CenterVertically,
+                        ) {
+                            CotationBadge(cotation = canyon.cotation, large = true)
+                            Spacer(modifier = Modifier.width(12.dp))
+                            canyon.interet?.let { interest ->
+                                InterestStars(interest = interest)
+                            }
+                        }
+                        Text(
+                            text = "${canyon.commune} - ${canyon.pays}",
+                            style = MaterialTheme.typography.bodyMedium,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant,
+                            modifier = Modifier.padding(top = 8.dp),
+                        )
                     }
                 }
-                Text(
-                    text = "${canyon.commune} - ${canyon.pays}",
-                    style = MaterialTheme.typography.bodyMedium,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant,
-                    modifier = Modifier.padding(top = 8.dp),
-                )
+
+                StatsGrid(detail = detail)
             }
         }
-
-        // Stats grid
-        StatsGrid(detail = detail)
 
         // Tabs
         PrimaryTabRow(selectedTabIndex = selectedTab) {
@@ -342,13 +361,14 @@ private fun CanyonDetailContent(
 
         // Tab content
         when (selectedTab) {
-            0 -> TopoTab(detail = detail)
+            0 -> TopoTab(detail = detail, listState = topoListState)
             1 -> PhotosTab(
                 photos = detail.photos,
                 downloadingPhotoIds = downloadingPhotoIds,
                 onDownloadPhoto = onDownloadPhoto,
+                listState = photosListState,
             )
-            2 -> DebitsTab(debits = detail.debits)
+            2 -> DebitsTab(debits = detail.debits, listState = debitsListState)
         }
     }
 }
@@ -416,9 +436,11 @@ private fun StatsGrid(
 @Composable
 private fun TopoTab(
     detail: CanyonDetail,
+    listState: LazyListState,
     modifier: Modifier = Modifier,
 ) {
     LazyColumn(
+        state = listState,
         modifier = modifier.padding(horizontal = 16.dp, vertical = 8.dp),
         verticalArrangement = Arrangement.spacedBy(4.dp),
     ) {
@@ -539,6 +561,7 @@ private fun PhotosTab(
     photos: List<CanyonPhoto>,
     downloadingPhotoIds: Set<Long>,
     onDownloadPhoto: (Long) -> Unit,
+    listState: LazyListState,
     modifier: Modifier = Modifier,
 ) {
     if (photos.isEmpty()) {
@@ -556,6 +579,7 @@ private fun PhotosTab(
         }
     } else {
         LazyColumn(
+            state = listState,
             modifier = modifier.padding(horizontal = 16.dp, vertical = 8.dp),
             verticalArrangement = Arrangement.spacedBy(12.dp),
         ) {
@@ -643,6 +667,7 @@ private fun PhotoCard(
 @Composable
 private fun DebitsTab(
     debits: List<Debit>,
+    listState: LazyListState,
     modifier: Modifier = Modifier,
 ) {
     if (debits.isEmpty()) {
@@ -660,6 +685,7 @@ private fun DebitsTab(
         }
     } else {
         LazyColumn(
+            state = listState,
             modifier = modifier.padding(horizontal = 16.dp, vertical = 8.dp),
             verticalArrangement = Arrangement.spacedBy(8.dp),
         ) {
