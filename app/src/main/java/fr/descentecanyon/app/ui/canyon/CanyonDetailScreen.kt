@@ -39,6 +39,7 @@ import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.ExtendedFloatingActionButton
+import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -55,11 +56,11 @@ import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.snapshotFlow
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.layout.ContentScale
@@ -207,7 +208,7 @@ fun CanyonDetailScreen(
                 horizontalAlignment = Alignment.End,
                 verticalArrangement = Arrangement.spacedBy(12.dp),
             ) {
-                SmallFloatingActionButton(
+                FloatingActionButton(
                     onClick = onShowMapClick,
                     containerColor = MaterialTheme.colorScheme.primary,
                     contentColor = MaterialTheme.colorScheme.onPrimary,
@@ -286,9 +287,20 @@ private fun CanyonDetailContent(
         1 -> photosListState
         else -> debitsListState
     }
-    val isInfoCollapsed by remember(activeListState, selectedTab) {
-        derivedStateOf {
-            activeListState.firstVisibleItemIndex > 0 || activeListState.firstVisibleItemScrollOffset > 24
+    var isInfoCollapsed by rememberSaveable(selectedTab) { mutableStateOf(false) }
+
+    LaunchedEffect(activeListState, selectedTab) {
+        snapshotFlow {
+            activeListState.firstVisibleItemIndex to activeListState.firstVisibleItemScrollOffset
+        }.collect { (index, offset) ->
+            val shouldCollapse = index > 0 || offset > 120
+            val shouldExpand = index == 0 && offset < 8
+
+            if (!isInfoCollapsed && shouldCollapse) {
+                isInfoCollapsed = true
+            } else if (isInfoCollapsed && shouldExpand) {
+                isInfoCollapsed = false
+            }
         }
     }
     val tabs = listOf(
