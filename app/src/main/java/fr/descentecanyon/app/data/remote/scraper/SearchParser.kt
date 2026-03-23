@@ -4,37 +4,65 @@ import fr.descentecanyon.app.data.remote.dto.ScrapedCanyonSummary
 import org.jsoup.nodes.Document
 
 /**
- * Parses search results from the canyon database.
- * Search is done via POST to /canyoning with parameter q=query.
- * Results are returned as a list of canyon links.
+ * Parses search results from the canyon AJAX endpoint.
+ *
+ * The endpoint POST /job/canyonbynom returns HTML table row fragments.
+ * We locate canyon links and extract department/country from the
+ * closest table row or from the surrounding DOM context.
  */
 internal object SearchParser {
+
+    private val CANYON_URL_REGEX = Regex("/canyoning/canyon/(\\d+)/(.+)\\.html")
 
     fun parse(doc: Document): List<ScrapedCanyonSummary> {
         val results = mutableListOf<ScrapedCanyonSummary>()
 
-        // Search results are typically links to canyon pages in the main content area
         val canyonLinks = doc.select("a[href~=/canyoning/canyon/\\d+/]")
 
         for (link in canyonLinks) {
             val href = link.attr("href")
-            val id = Regex("/canyon/(\\d+)/").find(href)
-                ?.groupValues?.get(1)?.toIntOrNull() ?: continue
+            val match = CANYON_URL_REGEX.find(href) ?: continue
+            val id = match.groupValues[1].toIntOrNull() ?: continue
 
-            // Avoid duplicate IDs (same canyon can appear in multiple links)
             if (results.any { it.id == id }) continue
 
-            val nom = link.text().trim()
+            val nom = link.attr("title").takeIf { it.isNotBlank() }
+                ?: link.text().trim()
             if (nom.isBlank()) continue
 
-            // Try to get department/country from surrounding context
-            val parentRow = link.closest("tr") ?: link.closest("li") ?: link.parent()
-            val departement = parentRow?.select("td")?.getOrNull(1)?.text()?.trim()
+            // Try to find the enclosing <tr> for structured extraction
+            val row = link.closest("tr")
+
+            var departement: String? = null
+            var pays = ""
+
+            if (row != null) {
+                // Structured: look in the third <td> which contains flag + department
+                val locationTd = row.select("td").getOrNull(2)
+                departement = locationTd?.ownText()?.trim()?.takeIf { it.isNotBlank() }
+                val flagImg = locationTd?.selectFirst("img[class~=d-]")
+                pays = flagImg?.className()
+                    ?.split(" ")
+                    ?.firstOrNull { it.startsWith("d-") && it.length > 2 }
+                    ?.removePrefix("d-")
+                    ?.uppercase()
+                    ?: ""
+            } else {
+                // Flat DOM: search siblings for flag images
+                val flagImg = doc.selectFirst("img[class~=d-]")
+                pays = flagImg?.className()
+                    ?.split(" ")
+                    ?.firstOrNull { it.startsWith("d-") && it.length > 2 }
+                    ?.removePrefix("d-")
+                    ?.uppercase()
+                    ?: ""
+            }
 
             results.add(
                 ScrapedCanyonSummary(
                     id = id,
                     nom = nom,
+                    pays = pays,
                     departement = departement,
                     url = href,
                 )

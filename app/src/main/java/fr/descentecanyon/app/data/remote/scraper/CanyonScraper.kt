@@ -107,10 +107,11 @@ class CanyonScraper @Inject constructor(
         withContext(Dispatchers.IO) {
             semaphore.withPermit {
                 runCatching {
-                    val connection = Jsoup.connect("$BASE_URL/canyoning")
+                    val connection = Jsoup.connect("$BASE_URL/job/canyonbynom")
                         .userAgent(USER_AGENT)
                         .timeout(TIMEOUT_MS)
-                        .data("q", query)
+                        .data("nom", query)
+                        .ignoreContentType(true)
                     val doc = sessionManager.applyTo(connection).post()
                     SearchParser.parse(doc)
                 }

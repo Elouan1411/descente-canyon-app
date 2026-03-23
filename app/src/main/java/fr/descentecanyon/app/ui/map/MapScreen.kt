@@ -4,7 +4,9 @@ import android.Manifest
 import android.annotation.SuppressLint
 import android.content.Context
 import android.location.Location
+import android.location.LocationListener
 import android.location.LocationManager
+import android.os.Looper
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.background
@@ -467,15 +469,55 @@ private fun NearbyCanyonCard(
     }
 }
 
+@SuppressLint("MissingPermission")
 private fun loadNearbyFromDevice(
     context: Context,
     viewModel: MapViewModel,
 ) {
-    val location = context.bestLastKnownLocation() ?: run {
+    if (!context.hasLocationPermission()) {
         viewModel.onLocationUnavailable()
         return
     }
-    viewModel.loadNearby(location.latitude, location.longitude)
+
+    val locationManager = context.getSystemService(Context.LOCATION_SERVICE) as? LocationManager
+    if (locationManager == null) {
+        viewModel.onLocationUnavailable()
+        return
+    }
+
+    // Try cached location first
+    val cached = bestLastKnownLocation(locationManager)
+    if (cached != null) {
+        viewModel.loadNearby(cached.latitude, cached.longitude)
+        return
+    }
+
+    // No cached location: request a fresh one
+    val provider = when {
+        locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER) -> LocationManager.NETWORK_PROVIDER
+        locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER) -> LocationManager.GPS_PROVIDER
+        else -> {
+            viewModel.onLocationUnavailable()
+            return
+        }
+    }
+
+    locationManager.requestSingleUpdate(
+        provider,
+        object : LocationListener {
+            override fun onLocationChanged(location: Location) {
+                viewModel.loadNearby(location.latitude, location.longitude)
+            }
+
+            @Deprecated("Deprecated in API")
+            override fun onStatusChanged(provider: String?, status: Int, extras: android.os.Bundle?) {}
+            override fun onProviderEnabled(provider: String) {}
+            override fun onProviderDisabled(provider: String) {
+                viewModel.onLocationUnavailable()
+            }
+        },
+        Looper.getMainLooper(),
+    )
 }
 
 private fun Context.hasLocationPermission(): Boolean {
@@ -485,18 +527,17 @@ private fun Context.hasLocationPermission(): Boolean {
         android.content.pm.PackageManager.PERMISSION_GRANTED
 }
 
-@SuppressLint("MissingPermission")
-private fun Context.bestLastKnownLocation(): Location? {
-    if (!hasLocationPermission()) return null
+private fun bestLastKnownLocation(locationManager: LocationManager): Location? {
+    val providers = listOf(
+        LocationManager.NETWORK_PROVIDER,
+        LocationManager.GPS_PROVIDER,
+        LocationManager.PASSIVE_PROVIDER,
+    )
 
-    val locationManager = getSystemService(Context.LOCATION_SERVICE) as? LocationManager ?: return null
-    val providers = buildList {
-        add(LocationManager.GPS_PROVIDER)
-        add(LocationManager.NETWORK_PROVIDER)
-        add(LocationManager.PASSIVE_PROVIDER)
-    }
-
-    return providers.mapNotNull { provider ->
+    @SuppressLint("MissingPermission")
+    fun getLocation(provider: String): Location? =
         runCatching { locationManager.getLastKnownLocation(provider) }.getOrNull()
-    }.maxByOrNull { it.accuracy.takeIf { accuracy -> accuracy > 0f }?.let { accuracy -> -accuracy } ?: Float.MIN_VALUE }
+
+    return providers.mapNotNull { getLocation(it) }
+        .maxByOrNull { it.accuracy.takeIf { a -> a > 0f }?.let { a -> -a } ?: Float.MIN_VALUE }
 }
