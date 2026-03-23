@@ -20,6 +20,7 @@ import kotlinx.coroutines.flow.firstOrNull
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.onStart
+import kotlinx.coroutines.withTimeoutOrNull
 import kotlin.math.asin
 import kotlin.math.cos
 import kotlin.math.pow
@@ -166,12 +167,14 @@ class CanyonRepositoryImpl @Inject constructor(
         replaceSupportingData(canyonId, geoPointEntities, photoEntities, debitEntities)
 
         geoPointEntities.bestMarkerPointOrNull()?.let { point ->
-            mapOfflineRepository.downloadRegion(
-                name = entity.nom,
-                latitude = point.latitude,
-                longitude = point.longitude,
-                radiusKm = 3.0,
-            ).getOrThrow()
+            withTimeoutOrNull(15_000) {
+                mapOfflineRepository.downloadRegion(
+                    name = entity.nom,
+                    latitude = point.latitude,
+                    longitude = point.longitude,
+                    radiusKm = 3.0,
+                )
+            }
         }
     }
 

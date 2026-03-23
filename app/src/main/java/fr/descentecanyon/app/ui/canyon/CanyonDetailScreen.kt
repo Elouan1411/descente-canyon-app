@@ -27,6 +27,7 @@ import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.FavoriteBorder
 import androidx.compose.material.icons.filled.KeyboardArrowDown
 import androidx.compose.material.icons.filled.KeyboardArrowUp
+import androidx.compose.material.icons.filled.Map
 import androidx.compose.material.icons.filled.Navigation
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -37,6 +38,7 @@ import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.ModalBottomSheet
 import androidx.compose.material3.PrimaryTabRow
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SmallFloatingActionButton
@@ -56,7 +58,6 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
-import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.Modifier
@@ -77,6 +78,7 @@ import fr.descentecanyon.app.domain.model.NiveauDebit
 import fr.descentecanyon.app.ui.components.CotationBadge
 import fr.descentecanyon.app.ui.components.DebitBadge
 import fr.descentecanyon.app.ui.components.InterestStars
+import fr.descentecanyon.app.ui.map.MapLibreView
 import fr.descentecanyon.app.ui.theme.DebitCorrect
 import fr.descentecanyon.app.ui.theme.DebitCrue
 import fr.descentecanyon.app.ui.theme.DebitFilet
@@ -98,13 +100,23 @@ fun CanyonDetailScreen(
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
     val snackbarHostState = remember { SnackbarHostState() }
     val context = LocalContext.current
-    val navigationTarget = uiState.canyonDetail?.geoPoints.orEmpty().navigationTarget()
+    var showGeoPointsMap by rememberSaveable { mutableStateOf(false) }
 
     LaunchedEffect(uiState.transientMessage) {
         uiState.transientMessage?.let { message ->
             Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
             snackbarHostState.showSnackbar(message)
             viewModel.clearTransientMessage()
+        }
+    }
+
+    if (showGeoPointsMap) {
+        uiState.canyonDetail?.let { detail ->
+            CanyonGeoPointsSheet(
+                detail = detail,
+                onDismiss = { showGeoPointsMap = false },
+                onNavigate = { point -> openNavigation(context, point) },
+            )
         }
     }
 
@@ -171,17 +183,39 @@ fun CanyonDetailScreen(
                         contentDescription = stringResource(R.string.debit_form_title),
                     )
                 }
-                ExtendedFloatingActionButton(
-                    text = {
-                        Text(
-                            text = when {
-                                uiState.canyonDetail?.canyon?.isOffline == true -> stringResource(R.string.downloaded_offline)
-                                uiState.isDownloading -> stringResource(R.string.downloading_offline)
-                                else -> stringResource(R.string.download_for_offline_short)
-                            },
-                        )
-                    },
-                    icon = {
+                if (uiState.isDownloading) {
+                    ExtendedFloatingActionButton(
+                        text = { Text(stringResource(R.string.downloading_offline)) },
+                        icon = {
+                            CircularProgressIndicator(
+                                modifier = Modifier.size(18.dp),
+                                strokeWidth = 2.dp,
+                                color = MaterialTheme.colorScheme.onSecondaryContainer,
+                            )
+                        },
+                        onClick = {},
+                        expanded = true,
+                        containerColor = MaterialTheme.colorScheme.secondaryContainer,
+                        contentColor = MaterialTheme.colorScheme.onSecondaryContainer,
+                    )
+                } else {
+                    SmallFloatingActionButton(
+                        onClick = {
+                            if (uiState.canyonDetail?.canyon?.isOffline != true) {
+                                viewModel.downloadForOffline()
+                            }
+                        },
+                        containerColor = if (uiState.canyonDetail?.canyon?.isOffline == true) {
+                            fr.descentecanyon.app.ui.theme.CotationFacile
+                        } else {
+                            MaterialTheme.colorScheme.secondaryContainer
+                        },
+                        contentColor = if (uiState.canyonDetail?.canyon?.isOffline == true) {
+                            MaterialTheme.colorScheme.onPrimary
+                        } else {
+                            MaterialTheme.colorScheme.onSecondaryContainer
+                        },
+                    ) {
                         Icon(
                             imageVector = if (uiState.canyonDetail?.canyon?.isOffline == true) {
                                 Icons.Default.CloudDone
@@ -194,36 +228,18 @@ fun CanyonDetailScreen(
                                 stringResource(R.string.download_for_offline)
                             },
                         )
-                    },
-                    onClick = {
-                        if (!uiState.isDownloading && uiState.canyonDetail?.canyon?.isOffline != true) {
-                            viewModel.downloadForOffline()
-                        }
-                    },
-                    expanded = true,
-                    containerColor = when {
-                        uiState.canyonDetail?.canyon?.isOffline == true -> MaterialTheme.colorScheme.primaryContainer
-                        uiState.isDownloading -> MaterialTheme.colorScheme.secondaryContainer
-                        else -> MaterialTheme.colorScheme.secondaryContainer
-                    },
-                    contentColor = when {
-                        uiState.canyonDetail?.canyon?.isOffline == true -> MaterialTheme.colorScheme.onPrimaryContainer
-                        else -> MaterialTheme.colorScheme.onSecondaryContainer
-                    },
-                )
+                    }
+                }
                 ExtendedFloatingActionButton(
-                    text = { Text(stringResource(R.string.navigate)) },
+                    text = { Text(stringResource(R.string.show_map_points)) },
                     icon = {
                         Icon(
-                            imageVector = Icons.Default.Navigation,
+                            imageVector = Icons.Default.Map,
                             contentDescription = null,
                         )
                     },
-                    onClick = {
-                        navigationTarget?.let { openNavigation(context, it) }
-                    },
+                    onClick = { showGeoPointsMap = true },
                     expanded = true,
-                    modifier = if (navigationTarget != null) Modifier else Modifier.alpha(0.7f),
                     containerColor = MaterialTheme.colorScheme.primary,
                     contentColor = MaterialTheme.colorScheme.onPrimary,
                 )
@@ -634,11 +650,130 @@ private fun DebitsTab(
     }
 }
 
-private fun List<GeoPoint>.navigationTarget(): GeoPoint? {
-    return firstOrNull { it.type == GeoPointType.PARKING_AMONT }
-        ?: firstOrNull { it.type == GeoPointType.PARKING_AVAL }
-        ?: firstOrNull { it.type == GeoPointType.ENTREE }
-        ?: firstOrNull()
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+private fun CanyonGeoPointsSheet(
+    detail: CanyonDetail,
+    onDismiss: () -> Unit,
+    onNavigate: (GeoPoint) -> Unit,
+) {
+    val markers = remember(detail.geoPoints) {
+        detail.geoPoints.mapIndexed { index, point ->
+            fr.descentecanyon.app.domain.model.CanyonSummary(
+                id = detail.canyon.id * 10 + index,
+                nom = point.displayName(),
+                pays = detail.canyon.pays,
+                cotation = detail.canyon.cotation,
+                url = detail.canyon.url,
+                latitude = point.latitude,
+                longitude = point.longitude,
+                markerType = point.type,
+            )
+        }
+    }
+
+    ModalBottomSheet(onDismissRequest = onDismiss) {
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 20.dp, vertical = 8.dp),
+            verticalArrangement = Arrangement.spacedBy(16.dp),
+        ) {
+            Text(
+                text = stringResource(R.string.show_map_points),
+                style = MaterialTheme.typography.headlineSmall,
+                fontWeight = FontWeight.Bold,
+            )
+            Text(
+                text = detail.canyon.nom,
+                style = MaterialTheme.typography.bodyMedium,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+            )
+
+            if (markers.isNotEmpty()) {
+                Card(
+                    modifier = Modifier.fillMaxWidth(),
+                    elevation = CardDefaults.cardElevation(defaultElevation = 2.dp),
+                ) {
+                    MapLibreView(
+                        markers = markers,
+                        userLatitude = null,
+                        userLongitude = null,
+                        onMarkerClick = {},
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(260.dp),
+                    )
+                }
+            }
+
+            detail.geoPoints.sortedBy { it.type.navigationPriority() }.forEach { point ->
+                Card(
+                    modifier = Modifier.fillMaxWidth(),
+                    elevation = CardDefaults.cardElevation(defaultElevation = 1.dp),
+                ) {
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(14.dp),
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.SpaceBetween,
+                    ) {
+                        Column(modifier = Modifier.weight(1f)) {
+                            Text(
+                                text = point.displayName(),
+                                style = MaterialTheme.typography.titleMedium,
+                                fontWeight = FontWeight.SemiBold,
+                            )
+                            Text(
+                                text = stringResource(
+                                    R.string.map_location_coordinates,
+                                    point.latitude,
+                                    point.longitude,
+                                ),
+                                style = MaterialTheme.typography.bodySmall,
+                                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                            )
+                        }
+                        TextButton(onClick = { onNavigate(point) }) {
+                            Icon(
+                                imageVector = Icons.Default.Navigation,
+                                contentDescription = null,
+                            )
+                            Spacer(modifier = Modifier.width(6.dp))
+                            Text(text = stringResource(R.string.navigate))
+                        }
+                    }
+                }
+            }
+
+            Spacer(modifier = Modifier.height(24.dp))
+        }
+    }
+}
+
+private fun GeoPoint.displayName(): String {
+    return when (type) {
+        GeoPointType.PARKING_AMONT -> label ?: "Parking amont"
+        GeoPointType.PARKING_AVAL -> label ?: "Parking aval"
+        GeoPointType.ENTREE -> label ?: "Debut du canyon"
+        GeoPointType.SORTIE -> label ?: "Sortie du canyon"
+        GeoPointType.POINT_REMARQUABLE -> label ?: "Point remarquable"
+        GeoPointType.ECHAPPATOIRE -> label ?: "Echappatoire"
+        GeoPointType.UNKNOWN -> label ?: "Point GPS"
+    }
+}
+
+private fun GeoPointType.navigationPriority(): Int {
+    return when (this) {
+        GeoPointType.PARKING_AMONT -> 0
+        GeoPointType.PARKING_AVAL -> 1
+        GeoPointType.ENTREE -> 2
+        GeoPointType.SORTIE -> 3
+        GeoPointType.POINT_REMARQUABLE -> 4
+        GeoPointType.ECHAPPATOIRE -> 5
+        GeoPointType.UNKNOWN -> 6
+    }
 }
 
 private fun openNavigation(
