@@ -614,6 +614,23 @@ private fun PhotosTab(
     listState: LazyListState,
     modifier: Modifier = Modifier,
 ) {
+    var selectedPhoto by rememberSaveable { mutableStateOf<CanyonPhoto?>(null) }
+
+    selectedPhoto?.let { photo ->
+        Dialog(onDismissRequest = { selectedPhoto = null }) {
+            Card(modifier = Modifier.fillMaxWidth()) {
+                AsyncImage(
+                    model = photo.localPath ?: photo.url,
+                    contentDescription = photo.description,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(420.dp),
+                    contentScale = ContentScale.Fit,
+                )
+            }
+        }
+    }
+
     if (photos.isEmpty()) {
         Box(
             modifier = modifier
@@ -644,6 +661,7 @@ private fun PhotosTab(
                     photo = photo,
                     isDownloading = downloadingPhotoIds.contains(photo.id),
                     onDownload = { onDownloadPhoto(photo.id) },
+                    onOpen = { selectedPhoto = photo },
                 )
             }
             item {
@@ -658,15 +676,17 @@ private fun PhotoCard(
     photo: CanyonPhoto,
     isDownloading: Boolean,
     onDownload: () -> Unit,
+    onOpen: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     Card(
+        onClick = onOpen,
         modifier = modifier.fillMaxWidth(),
         elevation = CardDefaults.cardElevation(defaultElevation = 1.dp),
     ) {
         Column {
             AsyncImage(
-                model = photo.localPath ?: photo.url,
+                model = photo.localPath ?: photo.thumbnailUrl ?: photo.url,
                 contentDescription = photo.description,
                 modifier = Modifier
                     .fillMaxWidth()
