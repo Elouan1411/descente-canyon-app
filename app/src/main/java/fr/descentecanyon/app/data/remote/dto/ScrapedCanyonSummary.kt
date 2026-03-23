@@ -12,4 +12,6 @@ data class ScrapedCanyonSummary(
     val interet: Float? = null,
     val url: String = "",
     val distanceKm: Double? = null,
+    val latitude: Double? = null,
+    val longitude: Double? = null,
 )

@@ -188,6 +188,20 @@ class CanyonScraper @Inject constructor(
             }
         }
 
+    suspend fun scrapeMapIndex(): Result<List<ScrapedCanyonSummary>> =
+        withContext(Dispatchers.IO) {
+            semaphore.withPermit {
+                runCatching {
+                    val connection = Jsoup.connect("$BASE_URL/canyoning/carte.json")
+                        .userAgent(USER_AGENT)
+                        .timeout(20_000)
+                        .ignoreContentType(true)
+                    val body = sessionManager.applyTo(connection).execute().body()
+                    MapIndexParser.parse(body)
+                }
+            }
+        }
+
     /**
      * Scrape full canyon detail: summary + description + geopoints merged.
      * Acquires only one semaphore permit for the entire composite operation

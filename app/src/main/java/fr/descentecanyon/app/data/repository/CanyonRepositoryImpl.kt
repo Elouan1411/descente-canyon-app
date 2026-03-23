@@ -9,6 +9,7 @@ import fr.descentecanyon.app.data.mapper.toDetail
 import fr.descentecanyon.app.data.mapper.toEntity
 import fr.descentecanyon.app.data.mapper.toSummary
 import fr.descentecanyon.app.data.remote.scraper.CanyonScraper
+import fr.descentecanyon.app.data.remote.scraper.MapIndexRemoteSource
 import fr.descentecanyon.app.data.remote.scraper.NearbyCanyonRemoteSource
 import fr.descentecanyon.app.domain.model.CanyonDetail
 import fr.descentecanyon.app.domain.model.CanyonSummary
@@ -42,6 +43,7 @@ class CanyonRepositoryImpl @Inject constructor(
     private val photoDao: PhotoDao,
     private val scraper: CanyonScraper,
     private val nearbyCanyonRemoteSource: NearbyCanyonRemoteSource,
+    private val mapIndexRemoteSource: MapIndexRemoteSource,
     private val mapOfflineRepository: MapOfflineRepository,
 ) : CanyonRepository {
 
@@ -147,19 +149,23 @@ class CanyonRepositoryImpl @Inject constructor(
             // Try the remote server-side nearby endpoint first
             val remoteResult = nearbyCanyonRemoteSource.getNearbyCanyons(latitude, longitude).getOrNull()
             if (!remoteResult.isNullOrEmpty()) {
+                val mapIndexById = mapIndexRemoteSource.getMapIndex().getOrDefault(emptyList()).associateBy { it.id }
                 val nearby = remoteResult
                     .filter { (it.distanceKm ?: 0.0) <= radiusKm }
                     .map { scraped ->
-                    CanyonSummary(
-                        id = scraped.id,
-                        nom = scraped.nom,
-                        pays = scraped.pays,
-                        departement = scraped.departement,
-                        cotation = scraped.cotation,
-                        interet = scraped.interet,
-                        url = scraped.url,
-                    )
-                }
+                        val indexed = mapIndexById[scraped.id]
+                        CanyonSummary(
+                            id = scraped.id,
+                            nom = scraped.nom,
+                            pays = scraped.pays,
+                            departement = scraped.departement,
+                            cotation = scraped.cotation,
+                            interet = scraped.interet ?: indexed?.interet,
+                            url = scraped.url,
+                            latitude = indexed?.latitude,
+                            longitude = indexed?.longitude,
+                        )
+                    }
                 emit(Result.success(nearby))
                 return@flow
             }
