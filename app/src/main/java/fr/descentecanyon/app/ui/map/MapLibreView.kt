@@ -1,6 +1,7 @@
 package fr.descentecanyon.app.ui.map
 
 import android.os.Bundle
+import android.util.Log
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.remember
@@ -27,6 +28,8 @@ import org.maplibre.android.geometry.LatLngBounds
 import org.maplibre.android.maps.MapLibreMap
 import org.maplibre.android.maps.MapView
 import org.maplibre.android.maps.Style
+
+private const val TAG = "MapLibreView"
 
 @Composable
 fun MapLibreView(
@@ -107,7 +110,11 @@ private class MapRenderState(
                 attachListeners(map)
                 listenersAttached = true
             }
-            render(force = true)
+            runCatching {
+                render(force = true)
+            }.onFailure { throwable ->
+                Log.e(TAG, "Unable to render map after style load", throwable)
+            }
         }
     }
 
@@ -121,12 +128,20 @@ private class MapRenderState(
         this.userLatitude = userLatitude
         this.userLongitude = userLongitude
         this.onMarkerClick = onMarkerClick
-        render(force = false)
+        runCatching {
+            render(force = false)
+        }.onFailure { throwable ->
+            Log.e(TAG, "Unable to refresh map data", throwable)
+        }
     }
 
     private fun attachListeners(map: MapLibreMap) {
         map.addOnCameraIdleListener {
-            render(force = true)
+            runCatching {
+                render(force = true)
+            }.onFailure { throwable ->
+                Log.e(TAG, "Unable to update map after camera move", throwable)
+            }
         }
         map.setOnMarkerClickListener { marker ->
             handleMarkerTap(map, marker)
@@ -223,24 +238,32 @@ private class MapRenderState(
     }
 
     private fun MapDisplayMarker.toMarkerOptions(iconFactory: IconFactory): MarkerOptions {
+        fun MarkerOptions.applySafeIcon(resId: Int): MarkerOptions {
+            return runCatching {
+                icon(iconFactory.fromResource(resId))
+            }.onFailure { throwable ->
+                Log.e(TAG, "Unable to load marker icon $resId", throwable)
+            }.getOrDefault(this)
+        }
+
         return when (this) {
             is MapDisplayMarker.Canyon -> MarkerOptions()
                 .position(LatLng(latitude, longitude))
                 .title(canyon.nom)
                 .snippet("canyon:${canyon.id}")
-                .icon(iconFactory.fromResource(canyon.markerType.markerIconRes()))
+                .applySafeIcon(canyon.markerType.markerIconRes())
 
             is MapDisplayMarker.Cluster -> MarkerOptions()
                 .position(LatLng(latitude, longitude))
                 .title("$count canyons")
                 .snippet("cluster:${canyonIds.joinToString(",")}")
-                .icon(iconFactory.fromResource(R.drawable.map_marker_cluster))
+                .applySafeIcon(R.drawable.map_marker_cluster)
 
             is MapDisplayMarker.User -> MarkerOptions()
                 .position(LatLng(latitude, longitude))
                 .title("Votre position")
                 .snippet("user")
-                .icon(iconFactory.fromResource(R.drawable.map_marker_user))
+                .applySafeIcon(R.drawable.map_marker_user)
         }
     }
 
