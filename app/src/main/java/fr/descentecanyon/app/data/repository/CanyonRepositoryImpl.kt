@@ -19,10 +19,10 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.firstOrNull
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.map
-import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withTimeout
 import kotlinx.coroutines.withTimeoutOrNull
@@ -54,22 +54,19 @@ class CanyonRepositoryImpl @Inject constructor(
      * which automatically triggers a new emission from the Room Flow.
      */
     override fun searchByName(query: String): Flow<Result<List<CanyonSummary>>> {
-        return canyonDao.searchByName(query)
-            .map<List<fr.descentecanyon.app.data.local.entity.CanyonEntity>, Result<List<CanyonSummary>>> { entities ->
-                Result.success(entities.map { it.toSummary() })
+        return flow {
+            val remoteResults = runCatching { scraper.searchCanyons(query).getOrThrow() }.getOrNull()
+            if (!remoteResults.isNullOrEmpty()) {
+                val entities = remoteResults.map { it.toEntity() }
+                insertAllPreservingFlags(entities)
+                emit(Result.success(entities.map { it.toSummary() }))
+                return@flow
             }
-            .onStart {
-                // Fire-and-forget remote fetch; inserted rows trigger a new Flow emission
-                try {
-                    val remoteResults = scraper.searchCanyons(query).getOrNull()
-                    if (!remoteResults.isNullOrEmpty()) {
-                        val entities = remoteResults.map { it.toEntity() }
-                        insertAllPreservingFlags(entities)
-                    }
-                } catch (_: Exception) {
-                    // Remote failure is non-fatal; local results still flow
-                }
-            }
+
+            canyonDao.searchByName(query)
+                .map { entities -> Result.success(entities.map { it.toSummary() }) }
+                .collect { emit(it) }
+        }
     }
 
     override suspend fun getCanyonPreview(canyonId: Int): Result<CanyonDetail> {
