@@ -202,24 +202,21 @@ fun CanyonDetailScreen(
         floatingActionButton = {
             Column(
                 modifier = Modifier
-                    .padding(bottom = 92.dp)
+                    .padding(bottom = 28.dp)
                     .navigationBarsPadding(),
                 horizontalAlignment = Alignment.End,
                 verticalArrangement = Arrangement.spacedBy(12.dp),
             ) {
-                ExtendedFloatingActionButton(
-                    text = { Text(stringResource(R.string.show_map_points)) },
-                    icon = {
-                        Icon(
-                            imageVector = Icons.Default.Map,
-                            contentDescription = null,
-                        )
-                    },
+                SmallFloatingActionButton(
                     onClick = onShowMapClick,
-                    expanded = true,
                     containerColor = MaterialTheme.colorScheme.primary,
                     contentColor = MaterialTheme.colorScheme.onPrimary,
-                )
+                ) {
+                    Icon(
+                        imageVector = Icons.Default.Map,
+                        contentDescription = stringResource(R.string.show_map_points),
+                    )
+                }
             }
         },
         modifier = modifier,
@@ -492,7 +489,7 @@ private fun TopoTab(
             }
         }
         item {
-            Spacer(modifier = Modifier.height(80.dp)) // FAB clearance
+            Spacer(modifier = Modifier.height(132.dp)) // FAB clearance
         }
     }
 }
@@ -590,7 +587,7 @@ private fun PhotosTab(
                 )
             }
             item {
-                Spacer(modifier = Modifier.height(80.dp))
+                Spacer(modifier = Modifier.height(132.dp))
             }
         }
     }
@@ -692,7 +689,7 @@ private fun DebitsTab(
                 DebitListItem(debit = debit)
             }
             item {
-                Spacer(modifier = Modifier.height(80.dp)) // FAB clearance
+                Spacer(modifier = Modifier.height(132.dp)) // FAB clearance
             }
         }
     }
