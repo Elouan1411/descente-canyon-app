@@ -150,8 +150,8 @@ class CanyonMapperTest {
         )
         val debit = entity.toDomain()
 
-        // Should fall back to epoch instead of throwing
-        assertEquals(LocalDate.EPOCH, debit.date)
+        // Should fall back to 1970-01-01 instead of throwing
+        assertEquals(LocalDate.of(1970, 1, 1), debit.date)
         assertEquals(NiveauDebit.GROS, debit.niveau)
     }
 
@@ -165,7 +165,7 @@ class CanyonMapperTest {
         )
         val debit = entity.toDomain()
 
-        assertEquals(LocalDate.EPOCH, debit.date)
+        assertEquals(LocalDate.of(1970, 1, 1), debit.date)
     }
 
     // --- DebitEntity -> Debit (unknown niveau) ---

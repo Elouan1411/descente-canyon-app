@@ -101,4 +101,21 @@ class DateParserTest {
     fun `parseToLocalDate with blank returns null`() {
         assertNull(DateParser.parseToLocalDate(""))
     }
+
+    @Test
+    fun `parse invalid day-month combination returns null`() {
+        assertNull(DateParser.parseToIsoString("31-02-2026"))
+    }
+
+    @Test
+    fun `French date with accented month`() {
+        val result = DateParser.parseToIsoString("mer. 5 février 2026")
+        assertEquals("2026-02-05", result)
+    }
+
+    @Test
+    fun `French date with non-accented month variant`() {
+        val result = DateParser.parseToIsoString("sam. 8 aout 2025")
+        assertEquals("2025-08-08", result)
+    }
 }

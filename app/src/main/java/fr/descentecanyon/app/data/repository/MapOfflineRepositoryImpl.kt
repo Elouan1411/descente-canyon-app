@@ -41,6 +41,9 @@ class MapOfflineRepositoryImpl @Inject constructor(
                 name.toByteArray(),
                 object : OfflineManager.CreateOfflineRegionCallback {
                     override fun onCreate(offlineRegion: OfflineRegion) {
+                        continuation.invokeOnCancellation {
+                            offlineRegion.setDownloadState(OfflineRegion.STATE_INACTIVE)
+                        }
                         offlineRegion.setObserver(
                             object : OfflineRegion.OfflineRegionObserver {
                                 override fun onStatusChanged(status: org.maplibre.android.offline.OfflineRegionStatus) {

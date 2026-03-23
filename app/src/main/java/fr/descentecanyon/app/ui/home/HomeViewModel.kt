@@ -6,6 +6,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import fr.descentecanyon.app.data.network.ConnectivityObserver
 import fr.descentecanyon.app.domain.model.Debit
 import fr.descentecanyon.app.domain.usecase.GetLatestDebitsUseCase
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -29,6 +30,8 @@ class HomeViewModel @Inject constructor(
     private val _uiState = MutableStateFlow(HomeUiState())
     val uiState: StateFlow<HomeUiState> = _uiState.asStateFlow()
 
+    private var debitsJob: Job? = null
+
     init {
         observeConnectivity()
         loadLatestDebits()
@@ -43,7 +46,8 @@ class HomeViewModel @Inject constructor(
     }
 
     fun loadLatestDebits() {
-        viewModelScope.launch {
+        debitsJob?.cancel()
+        debitsJob = viewModelScope.launch {
             _uiState.update { it.copy(isLoading = true, error = null) }
             getLatestDebitsUseCase(limit = 20).collect { result ->
                 result.fold(

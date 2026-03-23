@@ -21,8 +21,8 @@ import javax.inject.Singleton
 class SessionManager @Inject constructor() {
 
     private val mutex = Mutex()
-    private var cookies: Map<String, String> = emptyMap()
-    private var _loggedInUsername: String? = null
+    @Volatile private var cookies: Map<String, String> = emptyMap()
+    @Volatile private var _loggedInUsername: String? = null
 
     val isLoggedIn: Boolean get() = _loggedInUsername != null
     val loggedInUsername: String? get() = _loggedInUsername

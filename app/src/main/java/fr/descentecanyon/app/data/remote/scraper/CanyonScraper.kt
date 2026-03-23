@@ -107,11 +107,11 @@ class CanyonScraper @Inject constructor(
         withContext(Dispatchers.IO) {
             semaphore.withPermit {
                 runCatching {
-                    val doc = Jsoup.connect("$BASE_URL/canyoning")
+                    val connection = Jsoup.connect("$BASE_URL/canyoning")
                         .userAgent(USER_AGENT)
                         .timeout(TIMEOUT_MS)
                         .data("q", query)
-                        .post()
+                    val doc = sessionManager.applyTo(connection).post()
                     SearchParser.parse(doc)
                 }
             }
@@ -155,24 +155,35 @@ class CanyonScraper @Inject constructor(
 
     /**
      * Scrape full canyon detail: summary + description + geopoints merged.
+     * Acquires only one semaphore permit for the entire composite operation
+     * to avoid contention with the 3-permit limit.
      */
     suspend fun scrapeFullCanyonDetail(canyonId: Int): Result<ScrapedCanyonDetail> =
         withContext(Dispatchers.IO) {
-            runCatching {
-                val summary = scrapeCanyonSummary(canyonId).getOrThrow()
-                val description = scrapeCanyonDescription(canyonId).getOrThrow()
-                val geoPoints = scrapeCanyonGeoPoints(canyonId).getOrDefault(emptyList())
+            semaphore.withPermit {
+                runCatching {
+                    val summaryDoc = fetchDocument("$BASE_URL/canyoning/canyon/$canyonId/")
+                    val summary = SummaryParser.parse(summaryDoc, canyonId)
 
-                summary.copy(
-                    accesAval = description.accesAval,
-                    accesAmont = description.accesAmont,
-                    approche = description.approche,
-                    descente = description.descente,
-                    retour = description.retour,
-                    engagement = description.engagement,
-                    periode = description.periode,
-                    geoPoints = geoPoints,
-                )
+                    val descDoc = fetchDocument("$BASE_URL/canyoning/canyon-description/$canyonId/topo.html")
+                    val description = DescriptionParser.parse(descDoc, canyonId)
+
+                    val geoPoints = runCatching {
+                        val geoDoc = fetchDocument("$BASE_URL/canyoning/canyon-carte/$canyonId/carte.html")
+                        GeoPointParser.parse(geoDoc)
+                    }.getOrDefault(emptyList())
+
+                    summary.copy(
+                        accesAval = description.accesAval,
+                        accesAmont = description.accesAmont,
+                        approche = description.approche,
+                        descente = description.descente,
+                        retour = description.retour,
+                        engagement = description.engagement,
+                        periode = description.periode,
+                        geoPoints = geoPoints,
+                    )
+                }
             }
         }
 

@@ -34,11 +34,21 @@ class EncryptedCredentialStore @Inject constructor(
     }
 
     private val prefs: SharedPreferences by lazy {
+        try {
+            createEncryptedPrefs()
+        } catch (_: Exception) {
+            // Keystore corruption or OS upgrade: clear and recreate
+            context.deleteSharedPreferences(PREFS_NAME)
+            createEncryptedPrefs()
+        }
+    }
+
+    private fun createEncryptedPrefs(): SharedPreferences {
         val masterKey = MasterKey.Builder(context)
             .setKeyScheme(MasterKey.KeyScheme.AES256_GCM)
             .build()
 
-        EncryptedSharedPreferences.create(
+        return EncryptedSharedPreferences.create(
             context,
             PREFS_NAME,
             masterKey,

@@ -13,8 +13,6 @@ import fr.descentecanyon.app.domain.model.WaterTemperature
 import fr.descentecanyon.app.domain.repository.DebitSubmissionRepository
 import kotlinx.coroutines.flow.Flow
 import java.io.IOException
-import java.net.SocketTimeoutException
-import java.net.UnknownHostException
 import java.time.LocalDate
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -49,9 +47,12 @@ class DebitSubmissionRepositoryImpl @Inject constructor(
 
         var synced = 0
         pendingDao.getAll().forEach { pending ->
-            remoteSource.submit(pending.toDomain()).getOrThrow()
-            pendingDao.deleteById(pending.id)
-            synced += 1
+            runCatching {
+                remoteSource.submit(pending.toDomain()).getOrThrow()
+                pendingDao.deleteById(pending.id)
+                synced += 1
+            }
+            // Individual failure is non-fatal; continue with next item
         }
         synced
     }
@@ -88,5 +89,5 @@ private fun PendingDebitSubmissionEntity.toDomain(): DebitSubmission = DebitSubm
 )
 
 private fun Throwable.isRecoverableNetworkFailure(): Boolean {
-    return this is IOException || this is SocketTimeoutException || this is UnknownHostException
+    return this is IOException
 }
