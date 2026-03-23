@@ -47,6 +47,27 @@ class DebitParserTest {
     }
 
     @Test
+    fun `canyon debits parse observation and temperatures`() {
+        val doc = Jsoup.parse(loadHtml("canyon_debits.html"))
+        val result = DebitParser.parseCanyonDebits(doc, 2186)
+
+        assertTrue(result.any { it.isDescended != null })
+        assertTrue(result.any { it.waterTemperature != null })
+        assertTrue(result.any { it.airTemperature != null })
+    }
+
+    @Test
+    fun `specific debit row parses as descended with temperatures`() {
+        val doc = Jsoup.parse(loadHtml("canyon_debits.html"))
+        val result = DebitParser.parseCanyonDebits(doc, 2186)
+        val debit = result.first { it.auteur?.contains("joachim.seauve") == true }
+
+        assertEquals(true, debit.isDescended)
+        assertEquals("Froide", debit.waterTemperature)
+        assertEquals("Bon", debit.airTemperature)
+    }
+
+    @Test
     fun `parse latest debits returns non-empty list`() {
         val doc = Jsoup.parse(loadHtml("derniers_debits.html"))
         val result = DebitParser.parseLatestDebits(doc)

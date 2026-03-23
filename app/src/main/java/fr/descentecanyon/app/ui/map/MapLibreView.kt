@@ -1,5 +1,9 @@
 package fr.descentecanyon.app.ui.map
 
+import android.graphics.Bitmap
+import android.graphics.Canvas
+import android.graphics.Paint
+import android.graphics.Rect
 import android.os.Bundle
 import android.util.Log
 import androidx.compose.runtime.Composable
@@ -37,6 +41,7 @@ fun MapLibreView(
     userLatitude: Double?,
     userLongitude: Double?,
     onMarkerClick: (Int) -> Unit,
+    clusterMarkers: Boolean = true,
     modifier: Modifier = Modifier,
 ) {
     val context = LocalContext.current
@@ -82,6 +87,7 @@ fun MapLibreView(
                 userLatitude = userLatitude,
                 userLongitude = userLongitude,
                 onMarkerClick = onMarkerClick,
+                clusterMarkers = clusterMarkers,
             )
         },
     )
@@ -95,6 +101,7 @@ private class MapRenderState(
     private var userLatitude: Double? = null
     private var userLongitude: Double? = null
     private var onMarkerClick: (Int) -> Unit = {}
+    private var clusterMarkers: Boolean = true
     private var listenersAttached = false
     private var lastSignature: String? = null
     private var didFitCamera = false
@@ -123,11 +130,13 @@ private class MapRenderState(
         userLatitude: Double?,
         userLongitude: Double?,
         onMarkerClick: (Int) -> Unit,
+        clusterMarkers: Boolean,
     ) {
         this.markers = markers
         this.userLatitude = userLatitude
         this.userLongitude = userLongitude
         this.onMarkerClick = onMarkerClick
+        this.clusterMarkers = clusterMarkers
         runCatching {
             render(force = false)
         }.onFailure { throwable ->
@@ -172,12 +181,27 @@ private class MapRenderState(
         val map = map ?: return
         if (map.style == null) return
 
-        val displayMarkers = MapClusterEngine.cluster(
-            canyons = markers,
-            zoom = map.cameraPosition.zoom,
-            userLatitude = userLatitude,
-            userLongitude = userLongitude,
-        )
+        val displayMarkers = if (clusterMarkers) {
+            MapClusterEngine.cluster(
+                canyons = markers,
+                zoom = map.cameraPosition.zoom,
+                userLatitude = userLatitude,
+                userLongitude = userLongitude,
+            )
+        } else {
+            buildList {
+                val currentUserLatitude = userLatitude
+                val currentUserLongitude = userLongitude
+                markers.forEach { canyon ->
+                    val latitude = canyon.latitude ?: return@forEach
+                    val longitude = canyon.longitude ?: return@forEach
+                    add(MapDisplayMarker.Canyon(canyon, latitude, longitude))
+                }
+                if (currentUserLatitude != null && currentUserLongitude != null) {
+                    add(MapDisplayMarker.User(currentUserLatitude, currentUserLongitude))
+                }
+            }
+        }
         val signature = buildSignature(displayMarkers, map.cameraPosition.zoom)
         if (!force && lastSignature == signature) return
         lastSignature = signature
@@ -209,14 +233,41 @@ private class MapRenderState(
 
         val camera = map.getCameraForLatLngBounds(bounds, intArrayOf(80, 80, 80, 80))
         if (camera != null) {
-            map.moveCamera(CameraUpdateFactory.newCameraPosition(camera))
+            val adjustedZoom = maxOf(camera.zoom, preferredZoom(displayMarkers))
+            val target = camera.target ?: LatLng(displayMarkers.first().latitude, displayMarkers.first().longitude)
+            map.moveCamera(
+                CameraUpdateFactory.newLatLngZoom(
+                    target,
+                    adjustedZoom,
+                )
+            )
         } else {
             map.moveCamera(
                 CameraUpdateFactory.newLatLngZoom(
                     LatLng(displayMarkers.first().latitude, displayMarkers.first().longitude),
-                    if (displayMarkers.size == 1) 11.0 else 8.5,
+                    preferredZoom(displayMarkers),
                 )
             )
+        }
+    }
+
+    private fun preferredZoom(displayMarkers: List<MapDisplayMarker>): Double {
+        if (displayMarkers.size <= 1) return 14.5
+
+        val latitudes = displayMarkers.map { it.latitude }
+        val longitudes = displayMarkers.map { it.longitude }
+        val maxSpan = maxOf(
+            (latitudes.maxOrNull() ?: 0.0) - (latitudes.minOrNull() ?: 0.0),
+            (longitudes.maxOrNull() ?: 0.0) - (longitudes.minOrNull() ?: 0.0),
+        )
+
+        return when {
+            maxSpan < 0.003 -> 15.0
+            maxSpan < 0.008 -> 14.0
+            maxSpan < 0.02 -> 13.0
+            maxSpan < 0.05 -> 12.0
+            maxSpan < 0.12 -> 11.0
+            else -> 9.5
         }
     }
 
@@ -238,11 +289,11 @@ private class MapRenderState(
     }
 
     private fun MapDisplayMarker.toMarkerOptions(iconFactory: IconFactory): MarkerOptions {
-        fun MarkerOptions.applySafeIcon(resId: Int): MarkerOptions {
+        fun MarkerOptions.applySafeIcon(bitmap: Bitmap): MarkerOptions {
             return runCatching {
-                icon(iconFactory.fromResource(resId))
+                icon(iconFactory.fromBitmap(bitmap))
             }.onFailure { throwable ->
-                Log.e(TAG, "Unable to load marker icon $resId", throwable)
+                Log.e(TAG, "Unable to load marker icon bitmap", throwable)
             }.getOrDefault(this)
         }
 
@@ -251,30 +302,69 @@ private class MapRenderState(
                 .position(LatLng(latitude, longitude))
                 .title(canyon.nom)
                 .snippet("canyon:${canyon.id}")
-                .applySafeIcon(canyon.markerType.markerIconRes())
+                .applySafeIcon(createMarkerBitmap(canyon.markerLabel(), canyon.markerColor()))
 
             is MapDisplayMarker.Cluster -> MarkerOptions()
                 .position(LatLng(latitude, longitude))
                 .title("$count canyons")
                 .snippet("cluster:${canyonIds.joinToString(",")}")
-                .applySafeIcon(R.drawable.map_marker_cluster)
+                .applySafeIcon(createMarkerBitmap(count.toString(), 0xFF8B6914.toInt()))
 
             is MapDisplayMarker.User -> MarkerOptions()
                 .position(LatLng(latitude, longitude))
                 .title("Votre position")
                 .snippet("user")
-                .applySafeIcon(R.drawable.map_marker_user)
+                .applySafeIcon(createMarkerBitmap("Moi", 0xFF111827.toInt()))
         }
     }
 
-    private fun GeoPointType?.markerIconRes(): Int {
-        return when (this) {
-            GeoPointType.PARKING_AMONT,
-            GeoPointType.PARKING_AVAL -> R.drawable.map_marker_parking
-
-            GeoPointType.ENTREE -> R.drawable.map_marker_entry
-            GeoPointType.SORTIE -> R.drawable.map_marker_exit
-            else -> R.drawable.map_marker_parking
+    private fun CanyonSummary.markerLabel(): String {
+        return when (markerType) {
+            GeoPointType.PARKING_AMONT -> "P A"
+            GeoPointType.PARKING_AVAL -> "P V"
+            GeoPointType.ENTREE -> "Ent"
+            GeoPointType.SORTIE -> "Sor"
+            GeoPointType.POINT_REMARQUABLE -> "Pt"
+            GeoPointType.ECHAPPATOIRE -> "Ech"
+            GeoPointType.UNKNOWN, null -> nom.take(3).ifBlank { "Can" }
         }
+    }
+
+    private fun CanyonSummary.markerColor(): Int {
+        return when (markerType) {
+            GeoPointType.PARKING_AMONT -> 0xFF1A6B8A.toInt()
+            GeoPointType.PARKING_AVAL -> 0xFF7C3AED.toInt()
+            GeoPointType.ENTREE -> 0xFF4CAF50.toInt()
+            GeoPointType.SORTIE -> 0xFFF44336.toInt()
+            GeoPointType.POINT_REMARQUABLE -> 0xFFB8922E.toInt()
+            GeoPointType.ECHAPPATOIRE -> 0xFF0D4F6A.toInt()
+            GeoPointType.UNKNOWN, null -> 0xFF1A6B8A.toInt()
+        }
+    }
+
+    private fun createMarkerBitmap(label: String, colorInt: Int): Bitmap {
+        val width = 124
+        val height = 56
+        val bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888)
+        val canvas = Canvas(bitmap)
+
+        val fillPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply { color = colorInt }
+        val strokePaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+            color = 0xFFFFFFFF.toInt()
+            style = Paint.Style.STROKE
+            strokeWidth = 4f
+        }
+        val textPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+            color = 0xFFFFFFFF.toInt()
+            textSize = 24f
+            textAlign = Paint.Align.CENTER
+            isFakeBoldText = true
+        }
+        val rect = Rect(8, 8, width - 8, height - 8)
+        canvas.drawRoundRect(rect.left.toFloat(), rect.top.toFloat(), rect.right.toFloat(), rect.bottom.toFloat(), 20f, 20f, fillPaint)
+        canvas.drawRoundRect(rect.left.toFloat(), rect.top.toFloat(), rect.right.toFloat(), rect.bottom.toFloat(), 20f, 20f, strokePaint)
+        val y = height / 2f - (textPaint.descent() + textPaint.ascent()) / 2f
+        canvas.drawText(label.take(4), width / 2f, y, textPaint)
+        return bitmap
     }
 }

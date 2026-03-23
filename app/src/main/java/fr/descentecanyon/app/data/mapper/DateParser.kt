@@ -17,15 +17,23 @@ import java.util.Locale
 object DateParser {
 
     private val FRENCH_MONTHS = mapOf(
-        "janvier" to 1, "février" to 2, "fevrier" to 2,
-        "mars" to 3, "avril" to 4, "mai" to 5, "juin" to 6,
-        "juillet" to 7, "août" to 8, "aout" to 8,
-        "septembre" to 9, "octobre" to 10, "novembre" to 11, "décembre" to 12, "decembre" to 12,
+        "janv" to 1, "janvier" to 1,
+        "fevr" to 2, "févr" to 2, "fevrier" to 2, "février" to 2,
+        "mars" to 3,
+        "avr" to 4, "avril" to 4,
+        "mai" to 5,
+        "juin" to 6,
+        "juil" to 7, "juillet" to 7,
+        "aout" to 8, "août" to 8,
+        "sept" to 9, "septembre" to 9,
+        "oct" to 10, "octobre" to 10,
+        "nov" to 11, "novembre" to 11,
+        "dec" to 12, "déc" to 12, "decembre" to 12, "décembre" to 12,
     )
 
     // Matches: "dim. 22 mars 2026", "lun 1 juin 2025", "mar.  15  janvier  2025"
     private val FRENCH_LONG_REGEX = Regex(
-        """(?:\w+\.?\s+)?(\d{1,2})\s+(\p{L}+)\s+(\d{4})""",
+        """(?:\w+\.?\s+)?(\d{1,2})\s+(\p{L}+\.?)(?:\s+)(\d{4})""",
     )
 
     private val DAY_MONTH_REGEX = Regex("""(\d{1,2})/(\d{2})""")
@@ -79,7 +87,7 @@ object DateParser {
         val match = FRENCH_LONG_REGEX.find(normalized) ?: return null
 
         val day = match.groupValues[1].toIntOrNull() ?: return null
-        val monthName = match.groupValues[2]
+        val monthName = match.groupValues[2].removeSuffix(".")
         val year = match.groupValues[3].toIntOrNull() ?: return null
         val month = FRENCH_MONTHS[monthName] ?: return null
 

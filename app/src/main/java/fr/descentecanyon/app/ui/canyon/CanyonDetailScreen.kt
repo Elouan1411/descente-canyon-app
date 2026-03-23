@@ -43,6 +43,7 @@ import androidx.compose.material3.ModalBottomSheet
 import androidx.compose.material3.PrimaryTabRow
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SmallFloatingActionButton
+import androidx.compose.material3.Snackbar
 import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Tab
@@ -122,7 +123,13 @@ fun CanyonDetailScreen(
 
     Scaffold(
         snackbarHost = {
-            SnackbarHost(hostState = snackbarHostState)
+            SnackbarHost(hostState = snackbarHostState) { data ->
+                Snackbar(
+                    snackbarData = data,
+                    containerColor = MaterialTheme.colorScheme.inverseSurface,
+                    contentColor = MaterialTheme.colorScheme.inverseOnSurface,
+                )
+            }
         },
         topBar = {
             TopAppBar(
@@ -657,6 +664,9 @@ private fun CanyonGeoPointsSheet(
     onDismiss: () -> Unit,
     onNavigate: (GeoPoint) -> Unit,
 ) {
+    val sheetState = androidx.compose.material3.rememberModalBottomSheetState(
+        skipPartiallyExpanded = true,
+    )
     val markers = remember(detail.geoPoints) {
         detail.geoPoints.mapIndexed { index, point ->
             fr.descentecanyon.app.domain.model.CanyonSummary(
@@ -672,10 +682,14 @@ private fun CanyonGeoPointsSheet(
         }
     }
 
-    ModalBottomSheet(onDismissRequest = onDismiss) {
+    ModalBottomSheet(
+        onDismissRequest = onDismiss,
+        sheetState = sheetState,
+    ) {
         Column(
             modifier = Modifier
                 .fillMaxWidth()
+                .fillMaxSize()
                 .padding(horizontal = 20.dp, vertical = 8.dp),
             verticalArrangement = Arrangement.spacedBy(16.dp),
         ) {
@@ -700,6 +714,7 @@ private fun CanyonGeoPointsSheet(
                         userLatitude = null,
                         userLongitude = null,
                         onMarkerClick = {},
+                        clusterMarkers = false,
                         modifier = Modifier
                             .fillMaxWidth()
                             .height(260.dp),
@@ -786,8 +801,8 @@ private fun GeoPointType.navigationPriority(): Int {
 }
 
 private fun GeoPointType.mapColor() = when (this) {
-    GeoPointType.PARKING_AMONT,
-    GeoPointType.PARKING_AVAL -> fr.descentecanyon.app.ui.theme.CanyonBlueLight
+    GeoPointType.PARKING_AMONT -> fr.descentecanyon.app.ui.theme.CanyonBlue
+    GeoPointType.PARKING_AVAL -> androidx.compose.ui.graphics.Color(0xFF7C3AED)
     GeoPointType.ENTREE -> fr.descentecanyon.app.ui.theme.CotationFacile
     GeoPointType.SORTIE -> fr.descentecanyon.app.ui.theme.CotationDifficile
     GeoPointType.POINT_REMARQUABLE -> fr.descentecanyon.app.ui.theme.RockBrownLight

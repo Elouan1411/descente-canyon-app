@@ -15,11 +15,16 @@ import fr.descentecanyon.app.domain.model.CanyonSummary
 import fr.descentecanyon.app.domain.model.GeoPointType
 import fr.descentecanyon.app.domain.repository.CanyonRepository
 import fr.descentecanyon.app.domain.repository.MapOfflineRepository
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.firstOrNull
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.onStart
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withTimeout
 import kotlinx.coroutines.withTimeoutOrNull
 import kotlin.math.asin
 import kotlin.math.cos
@@ -39,6 +44,8 @@ class CanyonRepositoryImpl @Inject constructor(
     private val nearbyCanyonRemoteSource: NearbyCanyonRemoteSource,
     private val mapOfflineRepository: MapOfflineRepository,
 ) : CanyonRepository {
+
+    private val repositoryScope = CoroutineScope(SupervisorJob() + Dispatchers.IO)
 
     /**
      * B-1 fix: Use Room's reactive Flow directly instead of collecting inside a flow{} builder
@@ -73,8 +80,12 @@ class CanyonRepositoryImpl @Inject constructor(
 
         return runCatching {
             val detail = scraper.scrapeFullCanyonDetail(canyonId).getOrThrow()
-            val photos = scraper.scrapeCanyonPhotos(canyonId).getOrDefault(emptyList())
-            val debits = scraper.scrapeCanyonDebits(canyonId).getOrDefault(emptyList())
+            val photos = withTimeoutOrNull(1_500) {
+                scraper.scrapeCanyonPhotos(canyonId).getOrDefault(emptyList())
+            } ?: emptyList()
+            val debits = withTimeoutOrNull(1_500) {
+                scraper.scrapeCanyonDebits(canyonId).getOrDefault(emptyList())
+            } ?: emptyList()
             val entity = detail.toEntity()
             insertPreservingFlags(entity)
             replaceSupportingData(
@@ -83,6 +94,27 @@ class CanyonRepositoryImpl @Inject constructor(
                 photoEntities = photos.map { it.toEntity() },
                 debitEntities = debits.map { it.toEntity() },
             )
+
+            if (photos.isEmpty() || debits.isEmpty()) {
+                repositoryScope.launch {
+                    runCatching {
+                        withTimeout(15_000) {
+                            val refreshedPhotos = if (photos.isEmpty()) {
+                                scraper.scrapeCanyonPhotos(canyonId).getOrDefault(emptyList())
+                            } else photos
+                            val refreshedDebits = if (debits.isEmpty()) {
+                                scraper.scrapeCanyonDebits(canyonId).getOrDefault(emptyList())
+                            } else debits
+                            replaceSupportingData(
+                                canyonId = canyonId,
+                                geoPointEntities = detail.geoPoints.map { it.toEntity(canyonId) },
+                                photoEntities = refreshedPhotos.map { it.toEntity() },
+                                debitEntities = refreshedDebits.map { it.toEntity() },
+                            )
+                        }
+                    }
+                }
+            }
 
             loadLocalDetail(canyonId, canyonDao.getById(canyonId) ?: entity)
         }.recoverCatching {
