@@ -68,6 +68,7 @@ fun DebitFormScreen(
     }
 
     Scaffold(
+        containerColor = MaterialTheme.colorScheme.background,
         topBar = {
             TopAppBar(
                 title = { Text(stringResource(R.string.debit_form_title)) },

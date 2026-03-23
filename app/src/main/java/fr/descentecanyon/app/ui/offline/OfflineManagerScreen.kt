@@ -67,6 +67,7 @@ fun OfflineManagerScreen(
     }
 
     Scaffold(
+        containerColor = MaterialTheme.colorScheme.background,
         topBar = {
             TopAppBar(
                 title = { Text(stringResource(R.string.offline_manager_title)) },

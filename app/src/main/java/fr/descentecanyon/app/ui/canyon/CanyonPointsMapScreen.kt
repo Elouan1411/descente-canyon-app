@@ -61,6 +61,7 @@ fun CanyonPointsMapScreen(
     val context = LocalContext.current
 
     Scaffold(
+        containerColor = MaterialTheme.colorScheme.background,
         topBar = {
             TopAppBar(
                 title = { Text(uiState.canyonDetail?.canyon?.nom ?: "Canyon #$canyonId") },
