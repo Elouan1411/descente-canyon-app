@@ -134,6 +134,45 @@ fun CanyonDetailScreen(
                     }
                 },
                 actions = {
+                    IconButton(onClick = onReportDebitClick) {
+                        Icon(
+                            imageVector = Icons.Default.Edit,
+                            contentDescription = stringResource(R.string.debit_form_title),
+                        )
+                    }
+                    IconButton(
+                        onClick = {
+                            if (!uiState.isDownloading && uiState.canyonDetail?.canyon?.isOffline != true) {
+                                viewModel.downloadForOffline()
+                            }
+                        },
+                    ) {
+                        if (uiState.isDownloading) {
+                            CircularProgressIndicator(
+                                modifier = Modifier.size(18.dp),
+                                strokeWidth = 2.dp,
+                                color = MaterialTheme.colorScheme.onPrimaryContainer,
+                            )
+                        } else {
+                            Icon(
+                                imageVector = if (uiState.canyonDetail?.canyon?.isOffline == true) {
+                                    Icons.Default.CloudDone
+                                } else {
+                                    Icons.Default.CloudDownload
+                                },
+                                contentDescription = if (uiState.canyonDetail?.canyon?.isOffline == true) {
+                                    stringResource(R.string.offline_available)
+                                } else {
+                                    stringResource(R.string.download_for_offline)
+                                },
+                                tint = if (uiState.canyonDetail?.canyon?.isOffline == true) {
+                                    fr.descentecanyon.app.ui.theme.CotationFacile
+                                } else {
+                                    MaterialTheme.colorScheme.onPrimaryContainer
+                                },
+                            )
+                        }
+                    }
                     IconButton(onClick = { viewModel.toggleFavorite() }) {
                         Icon(
                             imageVector = if (uiState.isFavorite) {
@@ -163,68 +202,11 @@ fun CanyonDetailScreen(
         floatingActionButton = {
             Column(
                 modifier = Modifier
-                    .padding(bottom = 72.dp)
+                    .padding(bottom = 92.dp)
                     .navigationBarsPadding(),
                 horizontalAlignment = Alignment.End,
                 verticalArrangement = Arrangement.spacedBy(12.dp),
             ) {
-                SmallFloatingActionButton(
-                    onClick = onReportDebitClick,
-                    containerColor = MaterialTheme.colorScheme.tertiaryContainer,
-                    contentColor = MaterialTheme.colorScheme.onTertiaryContainer,
-                ) {
-                    Icon(
-                        imageVector = Icons.Default.Edit,
-                        contentDescription = stringResource(R.string.debit_form_title),
-                    )
-                }
-                if (uiState.isDownloading) {
-                    ExtendedFloatingActionButton(
-                        text = { Text(stringResource(R.string.downloading_offline)) },
-                        icon = {
-                            CircularProgressIndicator(
-                                modifier = Modifier.size(18.dp),
-                                strokeWidth = 2.dp,
-                                color = MaterialTheme.colorScheme.onSecondaryContainer,
-                            )
-                        },
-                        onClick = {},
-                        expanded = true,
-                        containerColor = MaterialTheme.colorScheme.secondaryContainer,
-                        contentColor = MaterialTheme.colorScheme.onSecondaryContainer,
-                    )
-                } else {
-                    SmallFloatingActionButton(
-                        onClick = {
-                            if (uiState.canyonDetail?.canyon?.isOffline != true) {
-                                viewModel.downloadForOffline()
-                            }
-                        },
-                        containerColor = if (uiState.canyonDetail?.canyon?.isOffline == true) {
-                            fr.descentecanyon.app.ui.theme.CotationFacile
-                        } else {
-                            MaterialTheme.colorScheme.secondaryContainer
-                        },
-                        contentColor = if (uiState.canyonDetail?.canyon?.isOffline == true) {
-                            MaterialTheme.colorScheme.onPrimary
-                        } else {
-                            MaterialTheme.colorScheme.onSecondaryContainer
-                        },
-                    ) {
-                        Icon(
-                            imageVector = if (uiState.canyonDetail?.canyon?.isOffline == true) {
-                                Icons.Default.CloudDone
-                            } else {
-                                Icons.Default.CloudDownload
-                            },
-                            contentDescription = if (uiState.canyonDetail?.canyon?.isOffline == true) {
-                                stringResource(R.string.offline_available)
-                            } else {
-                                stringResource(R.string.download_for_offline)
-                            },
-                        )
-                    }
-                }
                 ExtendedFloatingActionButton(
                     text = { Text(stringResource(R.string.show_map_points)) },
                     icon = {
