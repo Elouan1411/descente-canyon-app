@@ -60,6 +60,12 @@ fun CanyonSummaryCard(
                 verticalAlignment = Alignment.CenterVertically,
             ) {
                 Column(modifier = Modifier.weight(1f)) {
+                    fun String?.cleanLocationPart(): String? {
+                        return this
+                            ?.trim()
+                            ?.takeIf { it.isNotBlank() && !it.equals("null", ignoreCase = true) && it != "-" }
+                    }
+
                     Text(
                         text = canyon.nom,
                         style = MaterialTheme.typography.titleMedium,
@@ -68,8 +74,8 @@ fun CanyonSummaryCard(
                         overflow = TextOverflow.Ellipsis,
                     )
                     val location = listOf(
-                        canyon.pays.takeIf { it.isNotBlank() },
-                        canyon.departement?.takeIf { it.isNotBlank() && !it.startsWith("-") },
+                        canyon.pays.cleanLocationPart(),
+                        canyon.departement.cleanLocationPart(),
                     ).joinToString(" - ")
                     Text(
                         text = location.ifBlank { stringResource(R.string.search_location_unknown) },

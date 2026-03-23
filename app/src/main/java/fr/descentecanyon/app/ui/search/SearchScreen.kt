@@ -143,6 +143,7 @@ fun SearchScreen(
 
         // Results
         LazyColumn(
+            modifier = Modifier.weight(1f),
             verticalArrangement = Arrangement.spacedBy(8.dp),
         ) {
             items(
@@ -155,7 +156,7 @@ fun SearchScreen(
                 )
             }
             item {
-                Spacer(modifier = Modifier.height(8.dp))
+                Spacer(modifier = Modifier.height(96.dp))
             }
         }
     }
