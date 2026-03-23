@@ -91,6 +91,9 @@ fun DebitEntity.toDomain(): Debit = Debit(
     date = DateParser.parseToLocalDate(date) ?: LocalDate.of(1970, 1, 1),
     niveau = try { NiveauDebit.valueOf(niveau) } catch (_: Exception) { NiveauDebit.INCONNU },
     auteur = auteur,
+    isDescended = isDescended,
+    waterTemperature = waterTemperature,
+    airTemperature = airTemperature,
     commentaire = commentaire,
 )
 
@@ -150,6 +153,9 @@ fun ScrapedDebit.toEntity(): DebitEntity = DebitEntity(
     date = DateParser.parseToIsoString(date) ?: date,
     niveau = niveauRaw,
     auteur = auteur,
+    isDescended = isDescended,
+    waterTemperature = waterTemperature,
+    airTemperature = airTemperature,
     commentaire = commentaire,
 )
 

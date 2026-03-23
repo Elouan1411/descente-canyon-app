@@ -43,6 +43,14 @@ object DatabaseModule {
         }
     }
 
+    private val MIGRATION_2_3 = object : Migration(2, 3) {
+        override fun migrate(db: SupportSQLiteDatabase) {
+            db.execSQL("ALTER TABLE debits ADD COLUMN isDescended INTEGER")
+            db.execSQL("ALTER TABLE debits ADD COLUMN waterTemperature TEXT")
+            db.execSQL("ALTER TABLE debits ADD COLUMN airTemperature TEXT")
+        }
+    }
+
     @Provides
     @Singleton
     fun provideDatabase(@ApplicationContext context: Context): AppDatabase {
@@ -52,6 +60,7 @@ object DatabaseModule {
             AppDatabase.DATABASE_NAME,
         )
             .addMigrations(MIGRATION_1_2)
+            .addMigrations(MIGRATION_2_3)
             .build()
     }
 

@@ -2,8 +2,8 @@ package fr.descentecanyon.app.ui.canyon
 
 import android.content.Intent
 import android.net.Uri
-import android.widget.Toast
 import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Arrangement
@@ -18,6 +18,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.filled.CloudDone
 import androidx.compose.material.icons.filled.CloudDownload
 import androidx.compose.material.icons.Icons
@@ -104,7 +105,6 @@ fun CanyonDetailScreen(
 
     LaunchedEffect(uiState.transientMessage) {
         uiState.transientMessage?.let { message ->
-            Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
             snackbarHostState.showSnackbar(message)
             viewModel.clearTransientMessage()
         }
@@ -720,11 +720,20 @@ private fun CanyonGeoPointsSheet(
                         horizontalArrangement = Arrangement.SpaceBetween,
                     ) {
                         Column(modifier = Modifier.weight(1f)) {
-                            Text(
-                                text = point.displayName(),
-                                style = MaterialTheme.typography.titleMedium,
-                                fontWeight = FontWeight.SemiBold,
-                            )
+                            Row(verticalAlignment = Alignment.CenterVertically) {
+                                Box(
+                                    modifier = Modifier
+                                        .size(12.dp)
+                                        .background(point.type.mapColor(), CircleShape)
+                                )
+                                Spacer(modifier = Modifier.width(8.dp))
+                                Text(
+                                    text = point.displayName(),
+                                    style = MaterialTheme.typography.titleMedium,
+                                    fontWeight = FontWeight.SemiBold,
+                                    color = point.type.mapColor(),
+                                )
+                            }
                             Text(
                                 text = stringResource(
                                     R.string.map_location_coordinates,
@@ -776,6 +785,16 @@ private fun GeoPointType.navigationPriority(): Int {
     }
 }
 
+private fun GeoPointType.mapColor() = when (this) {
+    GeoPointType.PARKING_AMONT,
+    GeoPointType.PARKING_AVAL -> fr.descentecanyon.app.ui.theme.CanyonBlueLight
+    GeoPointType.ENTREE -> fr.descentecanyon.app.ui.theme.CotationFacile
+    GeoPointType.SORTIE -> fr.descentecanyon.app.ui.theme.CotationDifficile
+    GeoPointType.POINT_REMARQUABLE -> fr.descentecanyon.app.ui.theme.RockBrownLight
+    GeoPointType.ECHAPPATOIRE -> fr.descentecanyon.app.ui.theme.CanyonBlueDark
+    GeoPointType.UNKNOWN -> fr.descentecanyon.app.ui.theme.DebitInconnu
+}
+
 private fun openNavigation(
     context: android.content.Context,
     point: GeoPoint,
@@ -790,6 +809,7 @@ private fun DebitListItem(
     debit: Debit,
     modifier: Modifier = Modifier,
 ) {
+    var expanded by rememberSaveable(debit.id) { mutableStateOf(false) }
     val bgColor = when (debit.niveau) {
         NiveauDebit.SEC -> DebitSec
         NiveauDebit.FILET -> DebitFilet
@@ -801,7 +821,9 @@ private fun DebitListItem(
     }
 
     Card(
-        modifier = modifier.fillMaxWidth(),
+        modifier = modifier
+            .fillMaxWidth()
+            .clickable { expanded = !expanded },
         colors = CardDefaults.cardColors(
             containerColor = bgColor.copy(alpha = 0.1f),
         ),
@@ -814,11 +836,21 @@ private fun DebitListItem(
             verticalAlignment = Alignment.CenterVertically,
         ) {
             Column(modifier = Modifier.weight(1f)) {
-                Text(
-                    text = debit.date.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")),
-                    style = MaterialTheme.typography.bodyMedium,
-                    fontWeight = FontWeight.Medium,
-                )
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    Text(
+                        text = debit.date.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")),
+                        style = MaterialTheme.typography.bodyMedium,
+                        fontWeight = FontWeight.Medium,
+                    )
+                    debit.isDescended?.let { isDescended ->
+                        Spacer(modifier = Modifier.width(8.dp))
+                        Text(
+                            text = if (isDescended) stringResource(R.string.debit_type_descended) else stringResource(R.string.debit_type_not_descended),
+                            style = MaterialTheme.typography.labelSmall,
+                            color = MaterialTheme.colorScheme.primary,
+                        )
+                    }
+                }
                 debit.auteur?.let { auteur ->
                     Text(
                         text = auteur,
@@ -826,18 +858,75 @@ private fun DebitListItem(
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                     )
                 }
-                debit.commentaire?.takeIf { it.isNotBlank() }?.let { comment ->
-                    Text(
-                        text = comment,
-                        style = MaterialTheme.typography.bodySmall,
-                        maxLines = 2,
-                        overflow = TextOverflow.Ellipsis,
-                        modifier = Modifier.padding(top = 2.dp),
-                    )
+                AnimatedVisibility(visible = expanded) {
+                    Column {
+                        debit.commentaire?.takeIf { it.isNotBlank() }?.let { comment ->
+                            Text(
+                                text = comment,
+                                style = MaterialTheme.typography.bodySmall,
+                                modifier = Modifier.padding(top = 6.dp),
+                            )
+                        }
+                        Row(
+                            modifier = Modifier.padding(top = 6.dp),
+                            horizontalArrangement = Arrangement.spacedBy(12.dp),
+                        ) {
+                            debit.waterTemperature?.let {
+                                Text(
+                                    text = stringResource(R.string.debit_water_temperature_short, it),
+                                    style = MaterialTheme.typography.labelSmall,
+                                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                                )
+                            }
+                            debit.airTemperature?.let {
+                                Text(
+                                    text = stringResource(R.string.debit_air_temperature_short, it),
+                                    style = MaterialTheme.typography.labelSmall,
+                                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                                )
+                            }
+                        }
+                    }
+                }
+                if (!expanded) {
+                    debit.commentaire?.takeIf { it.isNotBlank() }?.let { comment ->
+                        Text(
+                            text = comment,
+                            style = MaterialTheme.typography.bodySmall,
+                            maxLines = 2,
+                            overflow = TextOverflow.Ellipsis,
+                            modifier = Modifier.padding(top = 2.dp),
+                        )
+                    }
                 }
             }
             Spacer(modifier = Modifier.width(8.dp))
-            DebitBadge(niveau = debit.niveau)
+            Column(horizontalAlignment = Alignment.End, verticalArrangement = Arrangement.spacedBy(6.dp)) {
+                DebitBadge(niveau = debit.niveau)
+                debit.waterTemperature?.let {
+                    SmallMetaBadge(text = it)
+                }
+            }
         }
+    }
+}
+
+@Composable
+private fun SmallMetaBadge(
+    text: String,
+    modifier: Modifier = Modifier,
+) {
+    Card(
+        modifier = modifier,
+        colors = CardDefaults.cardColors(
+            containerColor = MaterialTheme.colorScheme.secondaryContainer,
+        ),
+    ) {
+        Text(
+            text = text,
+            style = MaterialTheme.typography.labelSmall,
+            color = MaterialTheme.colorScheme.onSecondaryContainer,
+            modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp),
+        )
     }
 }

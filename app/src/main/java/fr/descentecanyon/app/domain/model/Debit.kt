@@ -11,6 +11,9 @@ data class Debit(
     val date: LocalDate,
     val niveau: NiveauDebit,
     val auteur: String? = null,
+    val isDescended: Boolean? = null,
+    val waterTemperature: String? = null,
+    val airTemperature: String? = null,
     val commentaire: String? = null,
 )
 

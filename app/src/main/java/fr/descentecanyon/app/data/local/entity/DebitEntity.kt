@@ -23,5 +23,8 @@ data class DebitEntity(
     val date: String, // ISO date string (yyyy-MM-dd)
     val niveau: String, // NiveauDebit name
     val auteur: String? = null,
+    val isDescended: Boolean? = null,
+    val waterTemperature: String? = null,
+    val airTemperature: String? = null,
     val commentaire: String? = null,
 )

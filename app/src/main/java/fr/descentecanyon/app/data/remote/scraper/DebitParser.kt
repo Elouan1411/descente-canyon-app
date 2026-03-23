@@ -41,6 +41,14 @@ internal object DebitParser {
 
             val dateRaw = tds[0].text().trim()
             val auteur = tds[1].text().trim()
+            val observationTitle = tds[2].selectFirst("span")?.attr("title")?.trim()?.lowercase()
+            val isDescended = when {
+                observationTitle?.contains("parcouru") == true && observationTitle.contains("non") -> false
+                observationTitle?.contains("parcouru") == true -> true
+                else -> null
+            }
+            val waterTemperature = tds.getOrNull(4)?.text()?.trim()?.ifBlank { null }
+            val airTemperature = tds.getOrNull(5)?.text()?.trim()?.ifBlank { null }
 
             // Extract remark if exists
             val remarkBtn = row.selectFirst("td button.lire")
@@ -56,6 +64,9 @@ internal object DebitParser {
                     date = dateRaw,
                     niveauRaw = debitLevel,
                     auteur = auteur.ifBlank { null },
+                    isDescended = isDescended,
+                    waterTemperature = waterTemperature,
+                    airTemperature = airTemperature,
                     commentaire = commentaire,
                 )
             )
