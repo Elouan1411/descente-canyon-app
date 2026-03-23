@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -60,7 +61,6 @@ import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
-import androidx.compose.runtime.snapshotFlow
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.layout.ContentScale
@@ -282,27 +282,6 @@ private fun CanyonDetailContent(
     val topoListState = rememberLazyListState()
     val photosListState = rememberLazyListState()
     val debitsListState = rememberLazyListState()
-    val activeListState = when (selectedTab) {
-        0 -> topoListState
-        1 -> photosListState
-        else -> debitsListState
-    }
-    var isInfoCollapsed by rememberSaveable(selectedTab) { mutableStateOf(false) }
-
-    LaunchedEffect(activeListState, selectedTab) {
-        snapshotFlow {
-            activeListState.firstVisibleItemIndex to activeListState.firstVisibleItemScrollOffset
-        }.collect { (index, offset) ->
-            val shouldCollapse = index > 0 || offset > 120
-            val shouldExpand = index == 0 && offset < 8
-
-            if (!isInfoCollapsed && shouldCollapse) {
-                isInfoCollapsed = true
-            } else if (isInfoCollapsed && shouldExpand) {
-                isInfoCollapsed = false
-            }
-        }
-    }
     val tabs = listOf(
         stringResource(R.string.tab_topo),
         stringResource(R.string.tab_photos),
@@ -310,39 +289,35 @@ private fun CanyonDetailContent(
     )
 
     Column(modifier = modifier.fillMaxSize()) {
-        // Header
-        AnimatedVisibility(visible = !isInfoCollapsed) {
-            Column {
-                Card(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(horizontal = 16.dp, vertical = 12.dp),
-                    colors = CardDefaults.cardColors(
-                        containerColor = MaterialTheme.colorScheme.surfaceVariant,
-                    ),
-                ) {
-                    Column(modifier = Modifier.padding(16.dp)) {
-                        Row(
-                            modifier = Modifier.fillMaxWidth(),
-                            horizontalArrangement = Arrangement.SpaceBetween,
-                            verticalAlignment = Alignment.CenterVertically,
-                        ) {
-                            CotationBadge(cotation = canyon.cotation, large = true)
-                            Spacer(modifier = Modifier.width(12.dp))
-                            canyon.interet?.let { interest ->
-                                InterestStars(interest = interest)
-                            }
+        Column {
+            Card(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 16.dp, vertical = 12.dp),
+                colors = CardDefaults.cardColors(
+                    containerColor = MaterialTheme.colorScheme.surfaceVariant,
+                ),
+            ) {
+                Column(modifier = Modifier.padding(16.dp)) {
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.SpaceBetween,
+                        verticalAlignment = Alignment.CenterVertically,
+                    ) {
+                        CotationBadge(cotation = canyon.cotation, large = true)
+                        Spacer(modifier = Modifier.width(12.dp))
+                        canyon.interet?.let { interest ->
+                            InterestStars(interest = interest)
                         }
-                        Text(
-                            text = "${canyon.commune} - ${canyon.pays}",
-                            style = MaterialTheme.typography.bodyMedium,
-                            color = MaterialTheme.colorScheme.onSurfaceVariant,
-                            modifier = Modifier.padding(top = 8.dp),
-                        )
                     }
+                    Text(
+                        text = "${canyon.commune} - ${canyon.pays}",
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                        modifier = Modifier.padding(top = 8.dp),
+                    )
+                    CompactStatsGrid(detail = detail, modifier = Modifier.padding(top = 12.dp))
                 }
-
-                StatsGrid(detail = detail)
             }
         }
 
@@ -374,7 +349,7 @@ private fun CanyonDetailContent(
 }
 
 @Composable
-private fun StatsGrid(
+private fun CompactStatsGrid(
     detail: CanyonDetail,
     modifier: Modifier = Modifier,
 ) {
@@ -393,42 +368,37 @@ private fun StatsGrid(
         StatItem(stringResource(R.string.return_time), canyon.tempsRetour),
     )
 
-    val displayedStats = stats.filter { it.value != null }
+    val displayedStats = stats.filter { !it.value.isNullOrBlank() }
 
-    Column(modifier = modifier.padding(horizontal = 16.dp)) {
-        displayedStats.chunked(2).forEach { row ->
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.spacedBy(8.dp),
+    FlowRow(
+        modifier = modifier.fillMaxWidth(),
+        horizontalArrangement = Arrangement.spacedBy(8.dp),
+        verticalArrangement = Arrangement.spacedBy(8.dp),
+    ) {
+        displayedStats.forEach { stat ->
+            Card(
+                colors = CardDefaults.cardColors(
+                    containerColor = MaterialTheme.colorScheme.surface.copy(alpha = 0.9f),
+                ),
+                elevation = CardDefaults.cardElevation(defaultElevation = 0.dp),
             ) {
-                row.forEach { stat ->
-                    Card(
-                        modifier = Modifier.weight(1f),
-                        colors = CardDefaults.cardColors(
-                            containerColor = MaterialTheme.colorScheme.surface,
-                        ),
-                        elevation = CardDefaults.cardElevation(defaultElevation = 1.dp),
-                    ) {
-                        Column(modifier = Modifier.padding(8.dp)) {
-                            Text(
-                                text = stat.label,
-                                style = MaterialTheme.typography.labelSmall,
-                                color = MaterialTheme.colorScheme.onSurfaceVariant,
-                            )
-                            Text(
-                                text = stat.value ?: "-",
-                                style = MaterialTheme.typography.titleMedium,
-                                fontWeight = FontWeight.Bold,
-                            )
-                        }
-                    }
-                }
-                // If the row has only one item, add an empty spacer for alignment
-                if (row.size == 1) {
-                    Spacer(modifier = Modifier.weight(1f))
+                Row(
+                    modifier = Modifier.padding(horizontal = 10.dp, vertical = 8.dp),
+                    horizontalArrangement = Arrangement.spacedBy(8.dp),
+                    verticalAlignment = Alignment.CenterVertically,
+                ) {
+                    Text(
+                        text = stat.label,
+                        style = MaterialTheme.typography.labelSmall,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    )
+                    Text(
+                        text = stat.value ?: "-",
+                        style = MaterialTheme.typography.labelLarge,
+                        fontWeight = FontWeight.Bold,
+                    )
                 }
             }
-            Spacer(modifier = Modifier.height(8.dp))
         }
     }
 }
