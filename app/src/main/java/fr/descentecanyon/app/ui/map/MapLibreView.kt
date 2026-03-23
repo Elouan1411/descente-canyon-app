@@ -203,6 +203,18 @@ private class MapRenderState(
                 }
             }
         }
+        val fitMarkers = buildList {
+            val currentUserLatitude = userLatitude
+            val currentUserLongitude = userLongitude
+            markers.forEach { canyon ->
+                val latitude = canyon.latitude ?: return@forEach
+                val longitude = canyon.longitude ?: return@forEach
+                add(MapDisplayMarker.Canyon(canyon, latitude, longitude))
+            }
+            if (currentUserLatitude != null && currentUserLongitude != null) {
+                add(MapDisplayMarker.User(currentUserLatitude, currentUserLongitude))
+            }
+        }
         val signature = buildSignature(displayMarkers, map.cameraPosition.zoom)
         if (!force && lastSignature == signature) return
         lastSignature = signature
@@ -215,7 +227,7 @@ private class MapRenderState(
         }
 
         if (!didFitCamera) {
-            fitCamera(map, displayMarkers)
+            fitCamera(map, fitMarkers.ifEmpty { displayMarkers })
             didFitCamera = true
         }
     }
@@ -234,7 +246,7 @@ private class MapRenderState(
 
         val camera = map.getCameraForLatLngBounds(bounds, intArrayOf(80, 80, 80, 80))
         if (camera != null) {
-            val adjustedZoom = maxOf(camera.zoom, preferredZoom(displayMarkers))
+            val adjustedZoom = minOf(camera.zoom, preferredZoom(displayMarkers))
             val target = camera.target ?: LatLng(displayMarkers.first().latitude, displayMarkers.first().longitude)
             map.moveCamera(
                 CameraUpdateFactory.newLatLngZoom(
@@ -263,12 +275,12 @@ private class MapRenderState(
         )
 
         return when {
-            maxSpan < 0.003 -> 15.0
-            maxSpan < 0.008 -> 14.0
-            maxSpan < 0.02 -> 13.0
-            maxSpan < 0.05 -> 12.0
-            maxSpan < 0.12 -> 11.0
-            else -> 9.5
+            maxSpan < 0.003 -> 14.0
+            maxSpan < 0.008 -> 13.0
+            maxSpan < 0.02 -> 12.0
+            maxSpan < 0.05 -> 11.0
+            maxSpan < 0.12 -> 10.0
+            else -> 8.5
         }
     }
 

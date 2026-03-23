@@ -23,7 +23,6 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Explore
@@ -47,7 +46,6 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
@@ -150,49 +148,69 @@ fun MapScreen(
         }
     }
 
-    LazyColumn(
+    Column(
         modifier = modifier
             .fillMaxSize()
             .statusBarsPadding()
             .padding(horizontal = 16.dp),
         verticalArrangement = Arrangement.spacedBy(12.dp),
     ) {
-        item {
-            SnackbarHost(hostState = snackbarHostState)
-        }
+        SnackbarHost(hostState = snackbarHostState)
+        Spacer(modifier = Modifier.height(8.dp))
 
-        item {
-            Spacer(modifier = Modifier.height(8.dp))
-            MapHeroCard(
+        if (!uiState.hasLocationPermission) {
+            PermissionCard(
+                showRationale = uiState.hasRequestedLocationPermission,
+                onRequestPermission = {
+                    permissionLauncher.launch(
+                        arrayOf(
+                            Manifest.permission.ACCESS_FINE_LOCATION,
+                            Manifest.permission.ACCESS_COARSE_LOCATION,
+                        )
+                    )
+                },
+            )
+        } else {
+            NearbyStatusCard(
                 canyonCount = uiState.canyons.size,
                 hasLocation = uiState.userLatitude != null && uiState.userLongitude != null,
+                onRefresh = { loadNearbyFromDevice(context, viewModel) },
             )
         }
 
-        item {
-            if (!uiState.hasLocationPermission) {
-                PermissionCard(
-                    showRationale = uiState.hasRequestedLocationPermission,
-                    onRequestPermission = {
-                        permissionLauncher.launch(
-                            arrayOf(
-                                Manifest.permission.ACCESS_FINE_LOCATION,
-                                Manifest.permission.ACCESS_COARSE_LOCATION,
-                            )
-                        )
-                    },
-                )
-            } else {
-                LocationCard(
-                    latitude = uiState.userLatitude,
-                    longitude = uiState.userLongitude,
-                    onRefresh = { loadNearbyFromDevice(context, viewModel) },
-                )
+        when {
+            uiState.isLoading -> {
+                Box(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .fillMaxSize()
+                        .padding(32.dp),
+                    contentAlignment = Alignment.Center,
+                ) {
+                    CircularProgressIndicator()
+                }
             }
-        }
 
-        if (uiState.canyons.isNotEmpty()) {
-            item {
+            uiState.error != null -> {
+                Card(
+                    colors = CardDefaults.cardColors(
+                        containerColor = MaterialTheme.colorScheme.errorContainer,
+                    ),
+                ) {
+                    Text(
+                        text = uiState.error.orEmpty(),
+                        color = MaterialTheme.colorScheme.onErrorContainer,
+                        style = MaterialTheme.typography.bodyMedium,
+                        modifier = Modifier.padding(16.dp),
+                    )
+                }
+            }
+
+            uiState.canyons.isEmpty() && uiState.hasLocationPermission -> {
+                EmptyNearbyCard()
+            }
+
+            else -> {
                 Card(
                     modifier = Modifier.fillMaxWidth(),
                     shape = RoundedCornerShape(24.dp),
@@ -208,94 +226,61 @@ fun MapScreen(
                             .height(280.dp),
                     )
                 }
-            }
-        }
 
-        when {
-            uiState.isLoading -> {
-                item {
-                    Box(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(32.dp),
-                        contentAlignment = Alignment.Center,
+                Text(
+                    text = stringResource(R.string.map_nearby_title),
+                    style = MaterialTheme.typography.titleLarge,
+                    fontWeight = FontWeight.SemiBold,
+                )
+
+                Card(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .fillMaxSize(),
+                    elevation = CardDefaults.cardElevation(defaultElevation = 1.dp),
+                ) {
+                    LazyColumn(
+                        modifier = Modifier.fillMaxSize().padding(12.dp),
+                        verticalArrangement = Arrangement.spacedBy(10.dp),
                     ) {
-                        CircularProgressIndicator()
+                        items(
+                            items = uiState.canyons,
+                            key = { canyon -> canyon.id },
+                        ) { canyon ->
+                            NearbyCanyonCard(
+                                canyon = canyon,
+                                onClick = { onCanyonClick(canyon.id) },
+                            )
+                        }
+                        item { Spacer(modifier = Modifier.height(12.dp)) }
                     }
                 }
             }
-
-            uiState.error != null -> {
-                item {
-                    Card(
-                        colors = CardDefaults.cardColors(
-                            containerColor = MaterialTheme.colorScheme.errorContainer,
-                        ),
-                    ) {
-                        Text(
-                            text = uiState.error.orEmpty(),
-                            color = MaterialTheme.colorScheme.onErrorContainer,
-                            style = MaterialTheme.typography.bodyMedium,
-                            modifier = Modifier.padding(16.dp),
-                        )
-                    }
-                }
-            }
-
-            uiState.canyons.isEmpty() && uiState.hasLocationPermission -> {
-                item {
-                    EmptyNearbyCard()
-                }
-            }
-
-            else -> {
-                item {
-                    Text(
-                        text = stringResource(R.string.map_nearby_title),
-                        style = MaterialTheme.typography.titleLarge,
-                        fontWeight = FontWeight.SemiBold,
-                    )
-                }
-                items(
-                    items = uiState.canyons,
-                    key = { canyon -> canyon.id },
-                ) { canyon ->
-                    NearbyCanyonCard(
-                        canyon = canyon,
-                        onClick = { onCanyonClick(canyon.id) },
-                    )
-                }
-            }
-        }
-
-        item {
-            Spacer(modifier = Modifier.height(12.dp))
         }
     }
 }
 
 @Composable
-private fun MapHeroCard(
+private fun NearbyStatusCard(
     canyonCount: Int,
     hasLocation: Boolean,
+    onRefresh: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     Card(
         modifier = modifier.fillMaxWidth(),
         shape = RoundedCornerShape(24.dp),
-        colors = CardDefaults.cardColors(containerColor = Color.Transparent),
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.secondaryContainer),
     ) {
-        Box(
-            modifier = Modifier
-                .fillMaxWidth()
-                .background(
-                    Brush.linearGradient(
-                        colors = listOf(CanyonBlueDark, CanyonBlue, RockBrownLight),
-                    )
-                )
-                .padding(20.dp),
+        Row(
+            modifier = Modifier.fillMaxWidth().padding(18.dp),
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically,
         ) {
-            Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
+            Column(
+                modifier = Modifier.weight(1f),
+                verticalArrangement = Arrangement.spacedBy(6.dp),
+            ) {
                 Row(
                     horizontalArrangement = Arrangement.spacedBy(10.dp),
                     verticalAlignment = Alignment.CenterVertically,
@@ -303,12 +288,12 @@ private fun MapHeroCard(
                     Icon(
                         imageVector = Icons.Default.Explore,
                         contentDescription = null,
-                        tint = Color.White,
+                        tint = MaterialTheme.colorScheme.onSecondaryContainer,
                     )
                     Text(
-                        text = stringResource(R.string.tab_map),
-                        style = MaterialTheme.typography.headlineSmall,
-                        color = Color.White,
+                        text = stringResource(R.string.map_nearby_title),
+                        style = MaterialTheme.typography.titleLarge,
+                        color = MaterialTheme.colorScheme.onSecondaryContainer,
                         fontWeight = FontWeight.Bold,
                     )
                 }
@@ -318,18 +303,12 @@ private fun MapHeroCard(
                     } else {
                         stringResource(R.string.map_ready_without_location)
                     },
-                    style = MaterialTheme.typography.bodyLarge,
-                    color = Color.White.copy(alpha = 0.92f),
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = MaterialTheme.colorScheme.onSecondaryContainer,
                 )
-                Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                    repeat(canyonCount.coerceIn(1, 4)) { index ->
-                        Box(
-                            modifier = Modifier
-                                .size(if (index == 0) 14.dp else 10.dp)
-                                .background(Color.White.copy(alpha = 0.9f), CircleShape),
-                        )
-                    }
-                }
+            }
+            Button(onClick = onRefresh) {
+                Text(text = stringResource(R.string.retry))
             }
         }
     }
@@ -373,49 +352,6 @@ private fun PermissionCard(
 }
 
 @Composable
-private fun LocationCard(
-    latitude: Double?,
-    longitude: Double?,
-    onRefresh: () -> Unit,
-    modifier: Modifier = Modifier,
-) {
-    Card(
-        modifier = modifier.fillMaxWidth(),
-        colors = CardDefaults.cardColors(
-            containerColor = MaterialTheme.colorScheme.secondaryContainer,
-        ),
-    ) {
-        Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(16.dp),
-            horizontalArrangement = Arrangement.SpaceBetween,
-            verticalAlignment = Alignment.CenterVertically,
-        ) {
-            Column(modifier = Modifier.weight(1f)) {
-                Text(
-                    text = stringResource(R.string.map_location_title),
-                    style = MaterialTheme.typography.titleMedium,
-                    fontWeight = FontWeight.SemiBold,
-                )
-                Text(
-                    text = if (latitude != null && longitude != null) {
-                        stringResource(R.string.map_location_coordinates, latitude, longitude)
-                    } else {
-                        stringResource(R.string.map_location_unknown)
-                    },
-                    style = MaterialTheme.typography.bodySmall,
-                    color = MaterialTheme.colorScheme.onSecondaryContainer,
-                )
-            }
-            Button(onClick = onRefresh) {
-                Text(text = stringResource(R.string.retry))
-            }
-        }
-    }
-}
-
-@Composable
 private fun EmptyNearbyCard(modifier: Modifier = Modifier) {
     Card(modifier = modifier.fillMaxWidth()) {
         Column(
@@ -447,27 +383,6 @@ private fun NearbyCanyonCard(
             canyon = canyon,
             onClick = onClick,
         )
-        canyon.latitude?.let { latitude ->
-            canyon.longitude?.let { longitude ->
-                Row(
-                    modifier = Modifier.padding(start = 12.dp, top = 6.dp),
-                    verticalAlignment = Alignment.CenterVertically,
-                ) {
-                    Icon(
-                        imageVector = Icons.Default.Place,
-                        contentDescription = null,
-                        modifier = Modifier.size(14.dp),
-                        tint = MaterialTheme.colorScheme.primary,
-                    )
-                    Spacer(modifier = Modifier.size(4.dp))
-                    Text(
-                        text = stringResource(R.string.map_marker_coordinates, latitude, longitude),
-                        style = MaterialTheme.typography.bodySmall,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant,
-                    )
-                }
-            }
-        }
     }
 }
 
