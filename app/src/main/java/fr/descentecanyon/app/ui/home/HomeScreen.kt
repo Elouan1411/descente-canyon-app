@@ -371,7 +371,7 @@ private fun DebitCard(
                 verticalAlignment = Alignment.CenterVertically,
             ) {
                 Text(
-                    text = "Canyon #${debit.canyonId}",
+                    text = debit.canyonNom ?: "Canyon #${debit.canyonId}",
                     style = MaterialTheme.typography.titleMedium,
                     fontWeight = FontWeight.Bold,
                     maxLines = 1,

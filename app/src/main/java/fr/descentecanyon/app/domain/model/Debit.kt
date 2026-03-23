@@ -8,6 +8,7 @@ import java.time.LocalDate
 data class Debit(
     val id: Long = 0,
     val canyonId: Int,
+    val canyonNom: String? = null,
     val date: LocalDate,
     val niveau: NiveauDebit,
     val auteur: String? = null,

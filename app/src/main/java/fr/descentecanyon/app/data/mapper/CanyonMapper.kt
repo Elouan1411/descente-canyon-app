@@ -88,6 +88,7 @@ fun GeoPointEntity.toDomain(): GeoPoint = GeoPoint(
 fun DebitEntity.toDomain(): Debit = Debit(
     id = id,
     canyonId = canyonId,
+    canyonNom = null,
     date = DateParser.parseToLocalDate(date) ?: LocalDate.of(1970, 1, 1),
     niveau = try { NiveauDebit.valueOf(niveau) } catch (_: Exception) { NiveauDebit.INCONNU },
     auteur = auteur,
@@ -96,6 +97,27 @@ fun DebitEntity.toDomain(): Debit = Debit(
     airTemperature = airTemperature,
     commentaire = commentaire,
 )
+
+fun ScrapedDebit.toLatestDomain(): Debit = Debit(
+    id = buildLatestDebitStableId(),
+    canyonId = canyonId,
+    canyonNom = canyonNom.ifBlank { null },
+    date = DateParser.parseToLocalDate(date) ?: LocalDate.of(LocalDate.now().year, 1, 1),
+    niveau = try { NiveauDebit.valueOf(niveauRaw) } catch (_: Exception) { NiveauDebit.INCONNU },
+    auteur = auteur,
+    isDescended = isDescended,
+    waterTemperature = waterTemperature,
+    airTemperature = airTemperature,
+    commentaire = commentaire,
+)
+
+private fun ScrapedDebit.buildLatestDebitStableId(): Long {
+    return listOf(canyonId.toString(), canyonNom, date, niveauRaw, auteur.orEmpty(), commentaire.orEmpty())
+        .joinToString("|")
+        .hashCode()
+        .toLong()
+        .let { if (it == 0L) 1L else kotlin.math.abs(it) }
+}
 
 fun PhotoEntity.toDomain(): CanyonPhoto = CanyonPhoto(
     id = id,

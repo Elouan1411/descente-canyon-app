@@ -3,6 +3,7 @@ package fr.descentecanyon.app.data.repository
 import fr.descentecanyon.app.data.local.dao.DebitDao
 import fr.descentecanyon.app.data.mapper.toDomain
 import fr.descentecanyon.app.data.mapper.toEntity
+import fr.descentecanyon.app.data.mapper.toLatestDomain
 import fr.descentecanyon.app.data.remote.scraper.CanyonScraper
 import fr.descentecanyon.app.domain.model.Debit
 import fr.descentecanyon.app.domain.repository.DebitRepository
@@ -28,7 +29,7 @@ class DebitRepositoryImpl @Inject constructor(
         return flow {
             emit(
                 scraper.scrapeLatestDebits().map { scrapedDebits ->
-                    scrapedDebits.take(limit).map { it.toEntity().toDomain() }
+                    scrapedDebits.take(limit).map { it.toLatestDomain() }
                 }
             )
         }
