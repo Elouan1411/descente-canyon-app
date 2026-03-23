@@ -2,6 +2,7 @@ package fr.descentecanyon.app.ui.canyon
 
 import android.content.Intent
 import android.net.Uri
+import android.widget.Toast
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -43,9 +44,6 @@ import androidx.compose.material3.ModalBottomSheet
 import androidx.compose.material3.PrimaryTabRow
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SmallFloatingActionButton
-import androidx.compose.material3.Snackbar
-import androidx.compose.material3.SnackbarHost
-import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Tab
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
@@ -67,6 +65,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.window.Dialog
+import androidx.compose.ui.window.DialogProperties
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import coil3.compose.AsyncImage
@@ -100,13 +100,13 @@ fun CanyonDetailScreen(
     viewModel: CanyonDetailViewModel = hiltViewModel(),
 ) {
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
-    val snackbarHostState = remember { SnackbarHostState() }
     val context = LocalContext.current
     var showGeoPointsMap by rememberSaveable { mutableStateOf(false) }
+    var showFullscreenGeoPointsMap by rememberSaveable { mutableStateOf(false) }
 
     LaunchedEffect(uiState.transientMessage) {
         uiState.transientMessage?.let { message ->
-            snackbarHostState.showSnackbar(message)
+            Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
             viewModel.clearTransientMessage()
         }
     }
@@ -117,20 +117,22 @@ fun CanyonDetailScreen(
                 detail = detail,
                 onDismiss = { showGeoPointsMap = false },
                 onNavigate = { point -> openNavigation(context, point) },
+                onOpenFullscreen = { showFullscreenGeoPointsMap = true },
+            )
+        }
+    }
+
+    if (showFullscreenGeoPointsMap) {
+        uiState.canyonDetail?.let { detail ->
+            CanyonGeoPointsFullScreenDialog(
+                detail = detail,
+                onDismiss = { showFullscreenGeoPointsMap = false },
+                onNavigate = { point -> openNavigation(context, point) },
             )
         }
     }
 
     Scaffold(
-        snackbarHost = {
-            SnackbarHost(hostState = snackbarHostState) { data ->
-                Snackbar(
-                    snackbarData = data,
-                    containerColor = MaterialTheme.colorScheme.inverseSurface,
-                    contentColor = MaterialTheme.colorScheme.inverseOnSurface,
-                )
-            }
-        },
         topBar = {
             TopAppBar(
                 title = {
@@ -663,10 +665,62 @@ private fun CanyonGeoPointsSheet(
     detail: CanyonDetail,
     onDismiss: () -> Unit,
     onNavigate: (GeoPoint) -> Unit,
+    onOpenFullscreen: () -> Unit,
 ) {
     val sheetState = androidx.compose.material3.rememberModalBottomSheetState(
         skipPartiallyExpanded = true,
     )
+
+    ModalBottomSheet(
+        onDismissRequest = onDismiss,
+        sheetState = sheetState,
+    ) {
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .fillMaxSize()
+                .padding(horizontal = 20.dp, vertical = 8.dp),
+            verticalArrangement = Arrangement.spacedBy(16.dp),
+        ) {
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically,
+            ) {
+                Column(modifier = Modifier.weight(1f)) {
+                    Text(
+                        text = stringResource(R.string.show_map_points),
+                        style = MaterialTheme.typography.headlineSmall,
+                        fontWeight = FontWeight.Bold,
+                    )
+                    Text(
+                        text = detail.canyon.nom,
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    )
+                }
+                TextButton(onClick = onOpenFullscreen) {
+                    Text(text = stringResource(R.string.fullscreen_map))
+                }
+            }
+
+            CanyonGeoPointsMapAndList(
+                detail = detail,
+                onNavigate = onNavigate,
+                mapHeight = 260.dp,
+            )
+
+            Spacer(modifier = Modifier.height(24.dp))
+        }
+    }
+}
+
+@Composable
+private fun CanyonGeoPointsMapAndList(
+    detail: CanyonDetail,
+    onNavigate: (GeoPoint) -> Unit,
+    mapHeight: androidx.compose.ui.unit.Dp,
+) {
     val markers = remember(detail.geoPoints) {
         detail.geoPoints.mapIndexed { index, point ->
             fr.descentecanyon.app.domain.model.CanyonSummary(
@@ -682,96 +736,135 @@ private fun CanyonGeoPointsSheet(
         }
     }
 
-    ModalBottomSheet(
-        onDismissRequest = onDismiss,
-        sheetState = sheetState,
-    ) {
-        Column(
-            modifier = Modifier
-                .fillMaxWidth()
-                .fillMaxSize()
-                .padding(horizontal = 20.dp, vertical = 8.dp),
-            verticalArrangement = Arrangement.spacedBy(16.dp),
+    if (markers.isNotEmpty()) {
+        Card(
+            modifier = Modifier.fillMaxWidth(),
+            elevation = CardDefaults.cardElevation(defaultElevation = 2.dp),
         ) {
-            Text(
-                text = stringResource(R.string.show_map_points),
-                style = MaterialTheme.typography.headlineSmall,
-                fontWeight = FontWeight.Bold,
+            MapLibreView(
+                markers = markers,
+                userLatitude = null,
+                userLongitude = null,
+                onMarkerClick = {},
+                clusterMarkers = false,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(mapHeight),
             )
-            Text(
-                text = detail.canyon.nom,
-                style = MaterialTheme.typography.bodyMedium,
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
-            )
+        }
+    }
 
-            if (markers.isNotEmpty()) {
-                Card(
-                    modifier = Modifier.fillMaxWidth(),
-                    elevation = CardDefaults.cardElevation(defaultElevation = 2.dp),
+    LazyColumn(
+        modifier = Modifier.fillMaxWidth(),
+        verticalArrangement = Arrangement.spacedBy(10.dp),
+    ) {
+        items(
+            items = detail.geoPoints.sortedBy { it.type.navigationPriority() },
+            key = { it.id.takeIf { id -> id != 0L } ?: (it.latitude.toString() + it.longitude.toString()) },
+        ) { point ->
+            Card(
+                modifier = Modifier.fillMaxWidth(),
+                elevation = CardDefaults.cardElevation(defaultElevation = 1.dp),
+            ) {
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(14.dp),
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.SpaceBetween,
                 ) {
-                    MapLibreView(
-                        markers = markers,
-                        userLatitude = null,
-                        userLongitude = null,
-                        onMarkerClick = {},
-                        clusterMarkers = false,
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .height(260.dp),
-                    )
-                }
-            }
-
-            detail.geoPoints.sortedBy { it.type.navigationPriority() }.forEach { point ->
-                Card(
-                    modifier = Modifier.fillMaxWidth(),
-                    elevation = CardDefaults.cardElevation(defaultElevation = 1.dp),
-                ) {
-                    Row(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(14.dp),
-                        verticalAlignment = Alignment.CenterVertically,
-                        horizontalArrangement = Arrangement.SpaceBetween,
-                    ) {
-                        Column(modifier = Modifier.weight(1f)) {
-                            Row(verticalAlignment = Alignment.CenterVertically) {
-                                Box(
-                                    modifier = Modifier
-                                        .size(12.dp)
-                                        .background(point.type.mapColor(), CircleShape)
-                                )
-                                Spacer(modifier = Modifier.width(8.dp))
-                                Text(
-                                    text = point.displayName(),
-                                    style = MaterialTheme.typography.titleMedium,
-                                    fontWeight = FontWeight.SemiBold,
-                                    color = point.type.mapColor(),
-                                )
-                            }
+                    Column(modifier = Modifier.weight(1f)) {
+                        Row(verticalAlignment = Alignment.CenterVertically) {
+                            Box(
+                                modifier = Modifier
+                                    .size(12.dp)
+                                    .background(point.type.mapColor(), CircleShape)
+                            )
+                            Spacer(modifier = Modifier.width(8.dp))
                             Text(
-                                text = stringResource(
-                                    R.string.map_location_coordinates,
-                                    point.latitude,
-                                    point.longitude,
-                                ),
-                                style = MaterialTheme.typography.bodySmall,
-                                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                                text = point.displayName(),
+                                style = MaterialTheme.typography.titleMedium,
+                                fontWeight = FontWeight.SemiBold,
+                                color = point.type.mapColor(),
                             )
                         }
-                        TextButton(onClick = { onNavigate(point) }) {
-                            Icon(
-                                imageVector = Icons.Default.Navigation,
-                                contentDescription = null,
-                            )
-                            Spacer(modifier = Modifier.width(6.dp))
-                            Text(text = stringResource(R.string.navigate))
-                        }
+                        Text(
+                            text = stringResource(
+                                R.string.map_location_coordinates,
+                                point.latitude,
+                                point.longitude,
+                            ),
+                            style = MaterialTheme.typography.bodySmall,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant,
+                        )
+                    }
+                    TextButton(onClick = { onNavigate(point) }) {
+                        Icon(
+                            imageVector = Icons.Default.Navigation,
+                            contentDescription = null,
+                        )
+                        Spacer(modifier = Modifier.width(6.dp))
+                        Text(text = stringResource(R.string.navigate))
                     }
                 }
             }
+        }
+        item {
+            Spacer(modifier = Modifier.height(12.dp))
+        }
+    }
+}
 
-            Spacer(modifier = Modifier.height(24.dp))
+@Composable
+private fun CanyonGeoPointsFullScreenDialog(
+    detail: CanyonDetail,
+    onDismiss: () -> Unit,
+    onNavigate: (GeoPoint) -> Unit,
+) {
+    Dialog(
+        onDismissRequest = onDismiss,
+        properties = DialogProperties(
+            usePlatformDefaultWidth = false,
+            decorFitsSystemWindows = false,
+        ),
+    ) {
+        Card(
+            modifier = Modifier.fillMaxSize(),
+            shape = CardDefaults.shape,
+        ) {
+            Column(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(16.dp),
+                verticalArrangement = Arrangement.spacedBy(12.dp),
+            ) {
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.CenterVertically,
+                ) {
+                    Column(modifier = Modifier.weight(1f)) {
+                        Text(
+                            text = stringResource(R.string.show_map_points),
+                            style = MaterialTheme.typography.headlineSmall,
+                            fontWeight = FontWeight.Bold,
+                        )
+                        Text(
+                            text = detail.canyon.nom,
+                            style = MaterialTheme.typography.bodyMedium,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant,
+                        )
+                    }
+                    TextButton(onClick = onDismiss) {
+                        Text(text = stringResource(R.string.back))
+                    }
+                }
+                CanyonGeoPointsMapAndList(
+                    detail = detail,
+                    onNavigate = onNavigate,
+                    mapHeight = 360.dp,
+                )
+            }
         }
     }
 }

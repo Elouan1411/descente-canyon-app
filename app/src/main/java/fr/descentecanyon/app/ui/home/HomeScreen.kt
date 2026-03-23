@@ -44,6 +44,7 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import fr.descentecanyon.app.R
+import fr.descentecanyon.app.ui.components.CanyonSummaryCard
 import fr.descentecanyon.app.domain.model.Debit
 import fr.descentecanyon.app.domain.model.NiveauDebit
 import fr.descentecanyon.app.ui.auth.AuthViewModel
@@ -153,7 +154,62 @@ fun HomeScreen(
                 QuickSearchCard(onClick = onQuickSearchClick)
             }
 
-            // Section header
+            item {
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(top = 16.dp, bottom = 4.dp),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.CenterVertically,
+                ) {
+                    Text(
+                        text = stringResource(R.string.home_offline_canyons),
+                        style = MaterialTheme.typography.titleLarge,
+                    )
+                    IconButton(onClick = onOfflineManagerClick) {
+                        Icon(
+                            imageVector = Icons.Default.CloudDownload,
+                            contentDescription = stringResource(R.string.offline_manager_title),
+                        )
+                    }
+                }
+            }
+
+            if (homeState.offlineCanyons.isEmpty()) {
+                item {
+                    Card(
+                        modifier = Modifier.fillMaxWidth(),
+                        colors = CardDefaults.cardColors(
+                            containerColor = MaterialTheme.colorScheme.secondaryContainer,
+                        ),
+                    ) {
+                        Column(modifier = Modifier.padding(16.dp)) {
+                            Text(
+                                text = stringResource(R.string.home_offline_empty_title),
+                                style = MaterialTheme.typography.titleMedium,
+                                fontWeight = FontWeight.SemiBold,
+                            )
+                            Text(
+                                text = stringResource(R.string.home_offline_empty_body),
+                                style = MaterialTheme.typography.bodySmall,
+                                color = MaterialTheme.colorScheme.onSecondaryContainer,
+                                modifier = Modifier.padding(top = 6.dp),
+                            )
+                        }
+                    }
+                }
+            } else {
+                items(
+                    items = homeState.offlineCanyons,
+                    key = { it.id },
+                ) { canyon ->
+                    CanyonSummaryCard(
+                        canyon = canyon,
+                        onClick = { onCanyonClick(canyon.id) },
+                    )
+                }
+            }
+
             item {
                 Row(
                     modifier = Modifier
@@ -175,7 +231,6 @@ fun HomeScreen(
                 }
             }
 
-            // Loading
             if (homeState.isLoading) {
                 item {
                     Box(
@@ -189,7 +244,6 @@ fun HomeScreen(
                 }
             }
 
-            // Error
             homeState.error?.let { error ->
                 item {
                     Column(
@@ -211,9 +265,8 @@ fun HomeScreen(
                 }
             }
 
-            // Debit cards
             items(
-                items = homeState.latestDebits,
+                items = homeState.latestDebits.take(6),
                 key = { it.id },
             ) { debit ->
                 DebitCard(

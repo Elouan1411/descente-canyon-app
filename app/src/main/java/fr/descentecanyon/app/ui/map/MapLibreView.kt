@@ -6,6 +6,7 @@ import android.graphics.Paint
 import android.graphics.Rect
 import android.os.Bundle
 import android.util.Log
+import androidx.core.content.ContextCompat
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.remember
@@ -302,7 +303,7 @@ private class MapRenderState(
                 .position(LatLng(latitude, longitude))
                 .title(canyon.nom)
                 .snippet("canyon:${canyon.id}")
-                .applySafeIcon(createMarkerBitmap(canyon.markerLabel(), canyon.markerColor()))
+                .applySafeIcon(drawableToBitmap(canyon.markerIconRes()))
 
             is MapDisplayMarker.Cluster -> MarkerOptions()
                 .position(LatLng(latitude, longitude))
@@ -318,28 +319,28 @@ private class MapRenderState(
         }
     }
 
-    private fun CanyonSummary.markerLabel(): String {
+    private fun CanyonSummary.markerIconRes(): Int {
         return when (markerType) {
-            GeoPointType.PARKING_AMONT -> "P A"
-            GeoPointType.PARKING_AVAL -> "P V"
-            GeoPointType.ENTREE -> "Ent"
-            GeoPointType.SORTIE -> "Sor"
-            GeoPointType.POINT_REMARQUABLE -> "Pt"
-            GeoPointType.ECHAPPATOIRE -> "Ech"
-            GeoPointType.UNKNOWN, null -> nom.take(3).ifBlank { "Can" }
+            GeoPointType.PARKING_AMONT -> R.drawable.map_marker_parking_amont
+            GeoPointType.PARKING_AVAL -> R.drawable.map_marker_parking_aval
+            GeoPointType.ENTREE -> R.drawable.map_marker_entry
+            GeoPointType.SORTIE -> R.drawable.map_marker_exit
+            GeoPointType.POINT_REMARQUABLE -> R.drawable.map_marker_remarkable
+            GeoPointType.ECHAPPATOIRE -> R.drawable.map_marker_escape
+            GeoPointType.UNKNOWN, null -> R.drawable.map_marker_point
         }
     }
 
-    private fun CanyonSummary.markerColor(): Int {
-        return when (markerType) {
-            GeoPointType.PARKING_AMONT -> 0xFF1A6B8A.toInt()
-            GeoPointType.PARKING_AVAL -> 0xFF7C3AED.toInt()
-            GeoPointType.ENTREE -> 0xFF4CAF50.toInt()
-            GeoPointType.SORTIE -> 0xFFF44336.toInt()
-            GeoPointType.POINT_REMARQUABLE -> 0xFFB8922E.toInt()
-            GeoPointType.ECHAPPATOIRE -> 0xFF0D4F6A.toInt()
-            GeoPointType.UNKNOWN, null -> 0xFF1A6B8A.toInt()
-        }
+    private fun drawableToBitmap(resId: Int): Bitmap {
+        val drawable = ContextCompat.getDrawable(context, resId)
+            ?: return createMarkerBitmap("?", 0xFF1A6B8A.toInt())
+        val width = drawable.intrinsicWidth.coerceAtLeast(64)
+        val height = drawable.intrinsicHeight.coerceAtLeast(64)
+        val bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888)
+        val canvas = Canvas(bitmap)
+        drawable.setBounds(0, 0, width, height)
+        drawable.draw(canvas)
+        return bitmap
     }
 
     private fun createMarkerBitmap(label: String, colorInt: Int): Bitmap {

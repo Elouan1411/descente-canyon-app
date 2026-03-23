@@ -4,7 +4,9 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import fr.descentecanyon.app.data.network.ConnectivityObserver
+import fr.descentecanyon.app.domain.model.CanyonSummary
 import fr.descentecanyon.app.domain.model.Debit
+import fr.descentecanyon.app.domain.repository.CanyonRepository
 import fr.descentecanyon.app.domain.usecase.GetLatestDebitsUseCase
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -16,6 +18,7 @@ import javax.inject.Inject
 
 data class HomeUiState(
     val latestDebits: List<Debit> = emptyList(),
+    val offlineCanyons: List<CanyonSummary> = emptyList(),
     val isLoading: Boolean = false,
     val error: String? = null,
     val isOnline: Boolean = true,
@@ -25,6 +28,7 @@ data class HomeUiState(
 class HomeViewModel @Inject constructor(
     private val getLatestDebitsUseCase: GetLatestDebitsUseCase,
     private val connectivityObserver: ConnectivityObserver,
+    private val canyonRepository: CanyonRepository,
 ) : ViewModel() {
 
     private val _uiState = MutableStateFlow(HomeUiState())
@@ -34,6 +38,7 @@ class HomeViewModel @Inject constructor(
 
     init {
         observeConnectivity()
+        observeOfflineCanyons()
         loadLatestDebits()
     }
 
@@ -41,6 +46,14 @@ class HomeViewModel @Inject constructor(
         viewModelScope.launch {
             connectivityObserver.observe().collect { online ->
                 _uiState.update { it.copy(isOnline = online) }
+            }
+        }
+    }
+
+    private fun observeOfflineCanyons() {
+        viewModelScope.launch {
+            canyonRepository.getOfflineCanyons().collect { canyons ->
+                _uiState.update { it.copy(offlineCanyons = canyons) }
             }
         }
     }

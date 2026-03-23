@@ -102,7 +102,8 @@ object DateParser {
      * "22/03" -> assumes current year
      */
     private fun tryParseDayMonthSlash(value: String): String? {
-        val match = DAY_MONTH_REGEX.matchEntire(value.trim()) ?: return null
+        val normalized = value.trim().substringAfterLast(' ').trim()
+        val match = DAY_MONTH_REGEX.matchEntire(normalized) ?: return null
         val day = match.groupValues[1].toIntOrNull() ?: return null
         val month = match.groupValues[2].toIntOrNull() ?: return null
         return try {
