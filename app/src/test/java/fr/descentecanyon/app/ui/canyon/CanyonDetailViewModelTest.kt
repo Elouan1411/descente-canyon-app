@@ -54,7 +54,7 @@ class CanyonDetailViewModelTest {
 
         assertTrue(viewModel.uiState.value.canyonDetail?.canyon?.isOffline == true)
         assertFalse(viewModel.uiState.value.isDownloading)
-        assertEquals("Disponible hors-ligne", viewModel.uiState.value.transientMessage)
+        assertEquals("Canyon telecharge pour usage hors-ligne", viewModel.uiState.value.transientMessage)
     }
 
     private fun detail(isOffline: Boolean) = CanyonDetail(

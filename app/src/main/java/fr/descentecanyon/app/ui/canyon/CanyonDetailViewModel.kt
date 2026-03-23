@@ -99,7 +99,7 @@ class CanyonDetailViewModel @Inject constructor(
                                 detail.copy(canyon = detail.canyon.copy(isOffline = true))
                             },
                             isDownloading = false,
-                            transientMessage = "Disponible hors-ligne",
+                            transientMessage = "Canyon telecharge pour usage hors-ligne",
                         )
                     }
                 },

@@ -2,6 +2,7 @@ package fr.descentecanyon.app.ui.canyon
 
 import android.content.Intent
 import android.net.Uri
+import android.widget.Toast
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
@@ -101,6 +102,7 @@ fun CanyonDetailScreen(
 
     LaunchedEffect(uiState.transientMessage) {
         uiState.transientMessage?.let { message ->
+            Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
             snackbarHostState.showSnackbar(message)
             viewModel.clearTransientMessage()
         }
@@ -169,33 +171,46 @@ fun CanyonDetailScreen(
                         contentDescription = stringResource(R.string.debit_form_title),
                     )
                 }
-                SmallFloatingActionButton(
+                ExtendedFloatingActionButton(
+                    text = {
+                        Text(
+                            text = when {
+                                uiState.canyonDetail?.canyon?.isOffline == true -> stringResource(R.string.downloaded_offline)
+                                uiState.isDownloading -> stringResource(R.string.downloading_offline)
+                                else -> stringResource(R.string.download_for_offline_short)
+                            },
+                        )
+                    },
+                    icon = {
+                        Icon(
+                            imageVector = if (uiState.canyonDetail?.canyon?.isOffline == true) {
+                                Icons.Default.CloudDone
+                            } else {
+                                Icons.Default.CloudDownload
+                            },
+                            contentDescription = if (uiState.canyonDetail?.canyon?.isOffline == true) {
+                                stringResource(R.string.offline_available)
+                            } else {
+                                stringResource(R.string.download_for_offline)
+                            },
+                        )
+                    },
                     onClick = {
                         if (!uiState.isDownloading && uiState.canyonDetail?.canyon?.isOffline != true) {
                             viewModel.downloadForOffline()
                         }
                     },
-                    modifier = if (!uiState.isDownloading && uiState.canyonDetail?.canyon?.isOffline != true) {
-                        Modifier
-                    } else {
-                        Modifier.alpha(0.55f)
+                    expanded = true,
+                    containerColor = when {
+                        uiState.canyonDetail?.canyon?.isOffline == true -> MaterialTheme.colorScheme.primaryContainer
+                        uiState.isDownloading -> MaterialTheme.colorScheme.secondaryContainer
+                        else -> MaterialTheme.colorScheme.secondaryContainer
                     },
-                    containerColor = MaterialTheme.colorScheme.secondaryContainer,
-                    contentColor = MaterialTheme.colorScheme.onSecondaryContainer,
-                ) {
-                    Icon(
-                        imageVector = if (uiState.canyonDetail?.canyon?.isOffline == true) {
-                            Icons.Default.CloudDone
-                        } else {
-                            Icons.Default.CloudDownload
-                        },
-                        contentDescription = if (uiState.canyonDetail?.canyon?.isOffline == true) {
-                            stringResource(R.string.offline_available)
-                        } else {
-                            stringResource(R.string.download_for_offline)
-                        },
-                    )
-                }
+                    contentColor = when {
+                        uiState.canyonDetail?.canyon?.isOffline == true -> MaterialTheme.colorScheme.onPrimaryContainer
+                        else -> MaterialTheme.colorScheme.onSecondaryContainer
+                    },
+                )
                 ExtendedFloatingActionButton(
                     text = { Text(stringResource(R.string.navigate)) },
                     icon = {
@@ -208,7 +223,7 @@ fun CanyonDetailScreen(
                         navigationTarget?.let { openNavigation(context, it) }
                     },
                     expanded = true,
-                    modifier = if (navigationTarget != null) Modifier else Modifier.alpha(0.55f),
+                    modifier = if (navigationTarget != null) Modifier else Modifier.alpha(0.7f),
                     containerColor = MaterialTheme.colorScheme.primary,
                     contentColor = MaterialTheme.colorScheme.onPrimary,
                 )
