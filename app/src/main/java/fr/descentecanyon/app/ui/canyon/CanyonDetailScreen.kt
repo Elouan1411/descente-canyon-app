@@ -617,24 +617,44 @@ private fun BibliographySection(
     val maps = entries.filter { it.kind == BibliographyKind.MAP }
     val resources = entries.filter { it.kind == BibliographyKind.RESOURCE }
 
+    var expanded by rememberSaveable { mutableStateOf(false) }
+
     Card(
         modifier = modifier.fillMaxWidth(),
         elevation = CardDefaults.cardElevation(defaultElevation = 1.dp),
     ) {
-        Column(modifier = Modifier.padding(12.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
-            Text(
-                text = stringResource(R.string.bibliography),
-                style = MaterialTheme.typography.titleMedium,
-                fontWeight = FontWeight.SemiBold,
-            )
-            if (topoguides.isNotEmpty()) {
-                BibliographyGroup(title = stringResource(R.string.topoguides_with_count, topoguides.size), entries = topoguides)
+        Column {
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .clickable { expanded = !expanded }
+                    .padding(12.dp),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically,
+            ) {
+                Text(
+                    text = stringResource(R.string.bibliography),
+                    style = MaterialTheme.typography.titleMedium,
+                    fontWeight = FontWeight.SemiBold,
+                )
+                Icon(
+                    imageVector = if (expanded) Icons.Default.KeyboardArrowUp else Icons.Default.KeyboardArrowDown,
+                    contentDescription = null,
+                    modifier = Modifier.size(24.dp),
+                )
             }
-            if (maps.isNotEmpty()) {
-                BibliographyGroup(title = stringResource(R.string.maps_with_count, maps.size), entries = maps)
-            }
-            if (resources.isNotEmpty()) {
-                BibliographyGroup(title = stringResource(R.string.resources_with_count, resources.size), entries = resources)
+            AnimatedVisibility(visible = expanded) {
+                Column(modifier = Modifier.padding(horizontal = 12.dp, vertical = 4.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
+                    if (topoguides.isNotEmpty()) {
+                        BibliographyGroup(title = stringResource(R.string.topoguides_with_count, topoguides.size), entries = topoguides)
+                    }
+                    if (maps.isNotEmpty()) {
+                        BibliographyGroup(title = stringResource(R.string.maps_with_count, maps.size), entries = maps)
+                    }
+                    if (resources.isNotEmpty()) {
+                        BibliographyGroup(title = stringResource(R.string.resources_with_count, resources.size), entries = resources)
+                    }
+                }
             }
         }
     }
@@ -708,49 +728,157 @@ private fun RegulationSection(
     regulations: List<Regulation>,
     modifier: Modifier = Modifier,
 ) {
+    var expanded by rememberSaveable { mutableStateOf(false) }
+
     Card(
         modifier = modifier.fillMaxWidth(),
         elevation = CardDefaults.cardElevation(defaultElevation = 1.dp),
     ) {
-        Column(modifier = Modifier.padding(12.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-            Text(
-                text = stringResource(R.string.regulations_with_count, regulations.size),
-                style = MaterialTheme.typography.titleMedium,
-                fontWeight = FontWeight.SemiBold,
-            )
-            regulations.forEach { regulation ->
-                val statusText = regulation.status?.let { stringResource(R.string.regulation_status, it) }
-                val actionText = regulation.action?.let { stringResource(R.string.regulation_action, it) }
-                val effectiveDateText = regulation.effectiveDate?.let {
-                    stringResource(R.string.regulation_effective_date, it)
+        Column {
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .clickable { expanded = !expanded }
+                    .padding(12.dp),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically,
+            ) {
+                Text(
+                    text = stringResource(R.string.regulations_with_count, regulations.size),
+                    style = MaterialTheme.typography.titleMedium,
+                    fontWeight = FontWeight.SemiBold,
+                )
+                Icon(
+                    imageVector = if (expanded) Icons.Default.KeyboardArrowUp else Icons.Default.KeyboardArrowDown,
+                    contentDescription = null,
+                    modifier = Modifier.size(24.dp),
+                )
+            }
+            AnimatedVisibility(visible = expanded) {
+                Column(modifier = Modifier.padding(horizontal = 12.dp, vertical = 4.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                    regulations.forEach { regulation ->
+                        RegulationItem(regulation = regulation)
+                    }
                 }
-                CollapsibleSection(
-                    title = regulation.title,
-                    content = buildString {
+            }
+        }
+    }
+}
+
+@Composable
+private fun RegulationItem(
+    regulation: Regulation,
+    modifier: Modifier = Modifier,
+) {
+    val status = regulation.status.orEmpty()
+    val isInactive = status.contains("obsol", ignoreCase = true) ||
+        status.contains("abrog", ignoreCase = true)
+
+    val containerColor = when {
+        status.contains("actif", ignoreCase = true) -> DebitCorrect.copy(alpha = 0.12f)
+        status.contains("temp", ignoreCase = true) -> DebitTresGros.copy(alpha = 0.12f)
+        isInactive -> MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.45f)
+        else -> MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.65f)
+    }
+    val accentColor = when {
+        status.contains("actif", ignoreCase = true) -> DebitCorrect
+        status.contains("temp", ignoreCase = true) -> DebitTresGros
+        isInactive -> MaterialTheme.colorScheme.onSurfaceVariant
+        else -> MaterialTheme.colorScheme.primary
+    }
+    var expanded by rememberSaveable(regulation.id) { mutableStateOf(!isInactive) }
+    val statusText = regulation.status?.let { stringResource(R.string.regulation_status, it) }
+    val actionText = regulation.action?.let { stringResource(R.string.regulation_action, it) }
+    val effectiveDateText = regulation.effectiveDate?.let {
+        stringResource(R.string.regulation_effective_date, it)
+    }
+
+    Card(
+        modifier = modifier.fillMaxWidth(),
+        colors = CardDefaults.cardColors(containerColor = containerColor),
+    ) {
+        Column {
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .clickable { expanded = !expanded }
+                    .padding(12.dp),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically,
+            ) {
+                Column(modifier = Modifier.weight(1f)) {
+                    Text(
+                        text = regulation.title,
+                        style = MaterialTheme.typography.titleSmall,
+                        fontWeight = FontWeight.SemiBold,
+                    )
+                    Spacer(modifier = Modifier.height(6.dp))
+                    RegulationStatusBadge(text = regulation.status ?: stringResource(R.string.regulation_status_unknown), accentColor)
+                }
+                Icon(
+                    imageVector = if (expanded) Icons.Default.KeyboardArrowUp else Icons.Default.KeyboardArrowDown,
+                    contentDescription = null,
+                    tint = accentColor,
+                )
+            }
+            AnimatedVisibility(visible = expanded) {
+                Column(modifier = Modifier.padding(horizontal = 12.dp, vertical = 4.dp)) {
+                    val body = buildString {
                         appendLineIfNotBlank(statusText)
                         appendLineIfNotBlank(actionText)
                         appendLineIfNotBlank(effectiveDateText)
                         appendLineIfNotBlank(regulation.summary)
-                        appendLineIfNotBlank(regulation.remark)
-                        appendLineIfNotBlank(regulation.details)
-                    }.trim(),
-                )
-                regulation.attachments.forEach { attachment ->
+                        if (!isInactive) {
+                            appendLineIfNotBlank(regulation.remark)
+                            appendLineIfNotBlank(regulation.details)
+                        }
+                    }.trim()
+                    if (body.isNotBlank()) {
+                        Text(
+                            text = body,
+                            style = MaterialTheme.typography.bodyMedium,
+                            modifier = Modifier.padding(bottom = 8.dp),
+                        )
+                    }
+                    if (!isInactive) {
+                        regulation.attachments.forEach { attachment ->
+                            LinkRow(
+                                icon = Icons.Default.Description,
+                                label = attachment.label,
+                                url = attachment.url,
+                                modifier = Modifier.padding(start = 4.dp),
+                            )
+                        }
+                    }
                     LinkRow(
-                        icon = Icons.Default.Description,
-                        label = attachment.label,
-                        url = attachment.url,
-                        modifier = Modifier.padding(start = 8.dp),
+                        icon = Icons.Default.Language,
+                        label = stringResource(R.string.open_regulation_page),
+                        url = regulation.textUrl,
+                        modifier = Modifier.padding(start = 4.dp),
                     )
                 }
-                LinkRow(
-                    icon = Icons.Default.Language,
-                    label = stringResource(R.string.open_regulation_page),
-                    url = regulation.textUrl,
-                    modifier = Modifier.padding(start = 8.dp),
-                )
             }
         }
+    }
+}
+
+@Composable
+private fun RegulationStatusBadge(
+    text: String,
+    color: androidx.compose.ui.graphics.Color,
+    modifier: Modifier = Modifier,
+) {
+    Card(
+        modifier = modifier,
+        colors = CardDefaults.cardColors(containerColor = color.copy(alpha = 0.16f)),
+    ) {
+        Text(
+            text = text,
+            color = color,
+            style = MaterialTheme.typography.labelSmall,
+            fontWeight = FontWeight.SemiBold,
+            modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp),
+        )
     }
 }
 
