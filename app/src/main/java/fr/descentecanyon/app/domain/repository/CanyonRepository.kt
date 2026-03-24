@@ -39,11 +39,6 @@ interface CanyonRepository {
     ): Flow<Result<List<CanyonSummary>>>
 
     /**
-     * Legacy no-op kept for compatibility.
-     */
-    suspend fun downloadForOffline(canyonId: Int): Result<Unit>
-
-    /**
      * Remove offline data for a canyon.
      */
     suspend fun removeOfflineData(canyonId: Int): Result<Unit>

@@ -116,8 +116,6 @@ class CanyonRepositoryImpl @Inject constructor(
         }
     }
 
-    override suspend fun downloadForOffline(canyonId: Int): Result<Unit> = Result.success(Unit)
-
     override suspend fun removeOfflineData(canyonId: Int): Result<Unit> = runCatching {
         canyonDao.setOffline(canyonId, false)
         // TODO: Remove cached map tiles and photos
