@@ -5,12 +5,14 @@ import android.net.Uri
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
@@ -123,78 +125,95 @@ private fun CanyonPointsMapContent(
         }
     }
 
-    Column(
+    BoxWithConstraints(
         modifier = modifier
             .fillMaxSize()
             .padding(16.dp),
-        verticalArrangement = Arrangement.spacedBy(12.dp),
     ) {
-        Card(
-            modifier = Modifier.fillMaxWidth(),
-            elevation = CardDefaults.cardElevation(defaultElevation = 2.dp),
+        val mapHeight = 360.dp
+        val listHeight = (maxHeight - mapHeight - 12.dp).coerceAtLeast(180.dp)
+
+        Column(
+            modifier = Modifier.fillMaxSize(),
+            verticalArrangement = Arrangement.spacedBy(12.dp),
         ) {
-            MapLibreView(
-                markers = markers,
-                userLatitude = null,
-                userLongitude = null,
-                onMarkerClick = {},
-                clusterMarkers = false,
+            Card(
+                modifier = Modifier.fillMaxWidth(),
+                elevation = CardDefaults.cardElevation(defaultElevation = 2.dp),
+            ) {
+                MapLibreView(
+                    markers = markers,
+                    userLatitude = null,
+                    userLongitude = null,
+                    onMarkerClick = {},
+                    clusterMarkers = false,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(mapHeight),
+                )
+            }
+
+            Card(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .height(360.dp),
-            )
-        }
-
-        Card(
-            modifier = Modifier
-                .fillMaxWidth()
-                .fillMaxSize(),
-            elevation = CardDefaults.cardElevation(defaultElevation = 1.dp),
-        ) {
-            LazyColumn(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .padding(12.dp),
-                verticalArrangement = Arrangement.spacedBy(10.dp),
+                    .height(listHeight),
+                colors = CardDefaults.cardColors(
+                    containerColor = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f),
+                ),
+                elevation = CardDefaults.cardElevation(defaultElevation = 1.dp),
             ) {
-                items(
-                    detail.geoPoints.sortedBy { pointPriority(it.type) },
-                    key = { it.id.takeIf { id -> id != 0L } ?: (it.latitude.toString() + it.longitude.toString()) },
-                ) { point ->
-                    Card(
-                        modifier = Modifier.fillMaxWidth(),
-                        elevation = CardDefaults.cardElevation(defaultElevation = 1.dp),
-                    ) {
-                        Row(
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .padding(14.dp),
-                            verticalAlignment = Alignment.CenterVertically,
-                            horizontalArrangement = Arrangement.SpaceBetween,
+                LazyColumn(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .navigationBarsPadding()
+                        .padding(12.dp),
+                    verticalArrangement = Arrangement.spacedBy(10.dp),
+                ) {
+                    items(
+                        detail.geoPoints.sortedBy { pointPriority(it.type) },
+                        key = { it.id.takeIf { id -> id != 0L } ?: (it.latitude.toString() + it.longitude.toString()) },
+                    ) { point ->
+                        Card(
+                            modifier = Modifier.fillMaxWidth(),
+                            colors = CardDefaults.cardColors(
+                                containerColor = MaterialTheme.colorScheme.surface.copy(alpha = 0.96f),
+                            ),
+                            elevation = CardDefaults.cardElevation(defaultElevation = 1.dp),
                         ) {
-                            Column(modifier = Modifier.weight(1f)) {
-                                Row(verticalAlignment = Alignment.CenterVertically) {
-                                    Box(Modifier.size(12.dp).background(pointColor(point.type), CircleShape))
-                                    Spacer(Modifier.width(8.dp))
+                            Row(
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .padding(14.dp),
+                                verticalAlignment = Alignment.CenterVertically,
+                                horizontalArrangement = Arrangement.SpaceBetween,
+                            ) {
+                                Column(modifier = Modifier.weight(1f)) {
+                                    Row(verticalAlignment = Alignment.CenterVertically) {
+                                        Box(Modifier.size(12.dp).background(pointColor(point.type), CircleShape))
+                                        Spacer(Modifier.width(8.dp))
+                                        Text(
+                                            pointDisplayName(point),
+                                            style = MaterialTheme.typography.titleMedium,
+                                            fontWeight = FontWeight.SemiBold,
+                                            color = pointColor(point.type),
+                                        )
+                                    }
                                     Text(
-                                        pointDisplayName(point),
-                                        style = MaterialTheme.typography.titleMedium,
-                                        fontWeight = FontWeight.SemiBold,
-                                        color = pointColor(point.type),
+                                        text = stringResource(R.string.map_location_coordinates, point.latitude, point.longitude),
+                                        style = MaterialTheme.typography.bodySmall,
+                                        color = MaterialTheme.colorScheme.onSurfaceVariant,
                                     )
                                 }
-                                Text(
-                                    text = stringResource(R.string.map_location_coordinates, point.latitude, point.longitude),
-                                    style = MaterialTheme.typography.bodySmall,
-                                    color = MaterialTheme.colorScheme.onSurfaceVariant,
-                                )
-                            }
-                            TextButton(onClick = { onNavigate(point) }) {
-                                Icon(Icons.Default.Navigation, contentDescription = null)
-                                Spacer(Modifier.width(6.dp))
-                                Text(stringResource(R.string.navigate))
+                                TextButton(onClick = { onNavigate(point) }) {
+                                    Icon(Icons.Default.Navigation, contentDescription = null)
+                                    Spacer(Modifier.width(6.dp))
+                                    Text(stringResource(R.string.navigate))
+                                }
                             }
                         }
+                    }
+                    item {
+                        Spacer(modifier = Modifier.height(28.dp))
                     }
                 }
             }
