@@ -25,6 +25,8 @@
 
 ### Lot géographique examiné : Var
 - Site officiel accessible : `https://www.var.gouv.fr/`
+- Recherche interne testée : `https://www.var.gouv.fr/contenu/action?SearchText=canyoning`
+- Résultat observé : **0 résultat** pour `canyoning` sur le moteur interne du site préfectoral.
 - Dans cette passe, aucune page canyoning/réglementation dédiée n'a pu être isolée automatiquement avec un niveau de confiance suffisant depuis le portail officiel seul.
 - Texte prioritaire du dataset à revalider :
   - **ID 579** - `Actif` - Arrêté préfectoral (Var) - 13 mai 2025
@@ -32,6 +34,8 @@
 
 ### Lot géographique examiné : Alpes-Maritimes
 - Site officiel accessible : `https://www.alpes-maritimes.gouv.fr/`
+- Recherche interne testée : `https://www.alpes-maritimes.gouv.fr/contenu/action?SearchText=canyoning`
+- Résultat observé : **1 résultat**, mais il est lié à une *étude d'impact sur l'environnement* et ne permet pas d'identifier une réglementation canyoning exploitable.
 - Dans cette passe, aucune page canyoning explicite n'a pu être confirmée automatiquement depuis le portail officiel.
 - Textes actifs prioritaires à revalider :
   - **ID 349** - Arrêté préfectoral (Alpes-Maritimes) - 27 oct 2016
@@ -41,6 +45,8 @@
 
 ### Lot géographique examiné : Alpes-de-Haute-Provence
 - Site officiel accessible : `https://www.alpes-de-haute-provence.gouv.fr/`
+- Recherche interne testée : `https://www.alpes-de-haute-provence.gouv.fr/contenu/action?SearchText=canyoning`
+- Résultat observé : **0 résultat** pour `canyoning` sur le moteur interne du site préfectoral.
 - Dans cette passe, aucun résultat canyoning dédié n'a pu être identifié automatiquement à partir de la navigation générique du site.
 - Textes actifs prioritaires à revalider :
   - **ID 42** - Arrêté préfectoral (Alpes de Haute Provence) - 03 juil 1996
@@ -71,7 +77,27 @@ Pour l'instant, aucun candidat nouveau n'a été ajouté automatiquement avec un
 ## Recommandation
 Procéder en **lots thématiques ou géographiques** (ex. `Lozère`, `Var`, `Alpes-Maritimes`, `Corse-du-Sud`, `Alpes-de-Haute-Provence`) pour permettre une validation réellement fiable via sources officielles.
 
+### Lot géographique examiné : Isère
+- Site officiel accessible : `https://www.isere.gouv.fr/`
+- Recherche interne testée : `https://www.isere.gouv.fr/contenu/action?SearchText=canyoning`
+- Résultat observé : **8 résultats**, dont plusieurs PDF de **Recueil des actes administratifs (RAA)** mentionnant le mot `canyoning`.
+- Interprétation : il existe de la matière officielle exploitable dans les publications Isère, mais une lecture PDF ciblée est nécessaire pour déterminer si ces résultats correspondent à de véritables réglementations canyoning encore en vigueur.
+- Conclusion : **lot prometteur pour détection de textes manquants ou mis à jour**, mais pas de confirmation ferme ajoutée dans cette passe.
+
+### Lot géographique examiné : Ain
+- Site officiel accessible : `https://www.ain.gouv.fr/`
+- Recherche interne testée : `https://www.ain.gouv.fr/contenu/action?SearchText=canyoning`
+- Résultat observé : **1 résultat**, lié aux *dispositions spécifiques ORSEC secours en montagne* ; le mot canyoning n'y apparaît que comme activité mentionnée, sans réglementation canyoning locale clairement exploitable.
+- Conclusion : aucune confirmation supplémentaire ni candidat suffisamment solide ajouté dans cette passe.
+
+### Lot géographique examiné : Corse-du-Sud / Haute-Corse
+- Sites officiels accessibles :
+  - `https://www.corse-du-sud.gouv.fr/`
+  - `https://www.haute-corse.gouv.fr/`
+- Recherches internes testées sur `canyoning` : **0 résultat** sur les deux portails.
+- Conclusion : aucune confirmation supplémentaire ni nouveau candidat solide identifié dans cette passe, malgré l'importance du lot corse dans le dataset.
+
 ## Prochaine priorité recommandée
-1. **Var** : `ID 579 - Arrêté préfectoral (Var) - 13 mai 2025` (84 canyons liés)
-2. **Alpes-Maritimes** : `ID 349`, `ID 153`, `ID 194`
-3. **Alpes-de-Haute-Provence** : `ID 42`, `ID 534`
+1. **Isère** : inspection manuelle des RAA 2015/2018/2022/2023 mentionnant `canyoning`
+2. **Var** : `ID 579 - Arrêté préfectoral (Var) - 13 mai 2025` (84 canyons liés)
+3. **Alpes-Maritimes** : `ID 349`, `ID 153`, `ID 194`
