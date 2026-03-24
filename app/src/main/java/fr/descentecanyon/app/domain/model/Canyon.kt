@@ -12,7 +12,10 @@ data class Canyon(
     val region: String? = null,
     val departement: String? = null,
     val commune: String,
+    val communes: List<String> = emptyList(),
     val massif: String? = null,
+    val bassin: String? = null,
+    val coursEau: String? = null,
     val cotation: String,
     val altitudeDepart: Int? = null,
     val denivele: Int? = null,
@@ -26,6 +29,7 @@ data class Canyon(
     val interet: Float? = null,
     val nbVotes: Int = 0,
     val url: String,
+    val hasSpecificRegulation: Boolean = false,
     val isOffline: Boolean = false,
     val lastUpdated: Long = 0L,
 )

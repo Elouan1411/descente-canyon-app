@@ -4,6 +4,7 @@ import android.content.Intent
 import android.net.Uri
 import android.widget.Toast
 import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
@@ -20,26 +21,25 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.LazyListState
+import androidx.compose.foundation.lazy.LazyListScope
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material.icons.filled.CloudDone
-import androidx.compose.material.icons.filled.CloudDownload
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material.icons.filled.Description
 import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.FavoriteBorder
 import androidx.compose.material.icons.filled.KeyboardArrowDown
 import androidx.compose.material.icons.filled.KeyboardArrowUp
+import androidx.compose.material.icons.filled.Language
 import androidx.compose.material.icons.filled.Map
 import androidx.compose.material.icons.filled.Navigation
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.ExtendedFloatingActionButton
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
@@ -76,12 +76,15 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import coil3.compose.AsyncImage
 import fr.descentecanyon.app.R
+import fr.descentecanyon.app.domain.model.BibliographyEntry
+import fr.descentecanyon.app.domain.model.BibliographyKind
 import fr.descentecanyon.app.domain.model.CanyonDetail
 import fr.descentecanyon.app.domain.model.CanyonPhoto
 import fr.descentecanyon.app.domain.model.Debit
 import fr.descentecanyon.app.domain.model.GeoPoint
 import fr.descentecanyon.app.domain.model.GeoPointType
 import fr.descentecanyon.app.domain.model.NiveauDebit
+import fr.descentecanyon.app.domain.model.Regulation
 import fr.descentecanyon.app.ui.components.CotationBadge
 import fr.descentecanyon.app.ui.components.DebitBadge
 import fr.descentecanyon.app.ui.components.InterestStars
@@ -141,39 +144,6 @@ fun CanyonDetailScreen(
                             imageVector = Icons.Default.Edit,
                             contentDescription = stringResource(R.string.debit_form_title),
                         )
-                    }
-                    IconButton(
-                        onClick = {
-                            if (!uiState.isDownloading && uiState.canyonDetail?.canyon?.isOffline != true) {
-                                viewModel.downloadForOffline()
-                            }
-                        },
-                    ) {
-                        if (uiState.isDownloading) {
-                            CircularProgressIndicator(
-                                modifier = Modifier.size(18.dp),
-                                strokeWidth = 2.dp,
-                                color = MaterialTheme.colorScheme.onPrimaryContainer,
-                            )
-                        } else {
-                            Icon(
-                                imageVector = if (uiState.canyonDetail?.canyon?.isOffline == true) {
-                                    Icons.Default.CloudDone
-                                } else {
-                                    Icons.Default.CloudDownload
-                                },
-                                contentDescription = if (uiState.canyonDetail?.canyon?.isOffline == true) {
-                                    stringResource(R.string.offline_available)
-                                } else {
-                                    stringResource(R.string.download_for_offline)
-                                },
-                                tint = if (uiState.canyonDetail?.canyon?.isOffline == true) {
-                                    fr.descentecanyon.app.ui.theme.CotationFacile
-                                } else {
-                                    MaterialTheme.colorScheme.onPrimaryContainer
-                                },
-                            )
-                        }
                     }
                     IconButton(onClick = { viewModel.toggleFavorite() }) {
                         Icon(
@@ -270,7 +240,7 @@ fun CanyonDetailScreen(
     }
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
+@OptIn(ExperimentalMaterial3Api::class, ExperimentalFoundationApi::class)
 @Composable
 private fun CanyonDetailContent(
     detail: CanyonDetail,
@@ -280,46 +250,47 @@ private fun CanyonDetailContent(
     onOpenPhotoGallery: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
-    val canyon = detail.canyon
     var selectedTab by rememberSaveable { mutableIntStateOf(0) }
-    val topoListState = rememberLazyListState()
-    val photosListState = rememberLazyListState()
-    val debitsListState = rememberLazyListState()
+    val listState = rememberLazyListState()
     val tabs = listOf(
         stringResource(R.string.tab_topo),
         stringResource(R.string.tab_photos),
         stringResource(R.string.tab_debits),
     )
 
-    Column(modifier = modifier.fillMaxSize()) {
-        Column {
-            SummaryCard(detail = detail)
-        }
+    LazyColumn(
+        state = listState,
+        modifier = modifier.fillMaxSize(),
+        verticalArrangement = Arrangement.spacedBy(0.dp),
+    ) {
+        item { SummaryCard(detail = detail) }
 
-        // Tabs
-        PrimaryTabRow(selectedTabIndex = selectedTab) {
-            tabs.forEachIndexed { index, title ->
-                Tab(
-                    selected = selectedTab == index,
-                    onClick = { selectedTab = index },
-                    text = { Text(title) },
-                )
+        stickyHeader {
+            PrimaryTabRow(
+                selectedTabIndex = selectedTab,
+                containerColor = MaterialTheme.colorScheme.background,
+            ) {
+                tabs.forEachIndexed { index, title ->
+                    Tab(
+                        selected = selectedTab == index,
+                        onClick = { selectedTab = index },
+                        text = { Text(title) },
+                    )
+                }
             }
         }
 
-        // Tab content
         when (selectedTab) {
-            0 -> TopoTab(detail = detail, listState = topoListState)
-            1 -> PhotosTab(
+            0 -> topoItems(detail)
+            1 -> photosItems(
                 photos = detail.photos,
                 isOnline = isOnline,
                 isOfflineSaved = detail.canyon.isOffline,
                 downloadingPhotoIds = downloadingPhotoIds,
                 onDownloadPhoto = onDownloadPhoto,
                 onOpenPhotoGallery = onOpenPhotoGallery,
-                listState = photosListState,
             )
-            2 -> DebitsTab(debits = detail.debits, listState = debitsListState)
+            2 -> debitItems(detail.debits)
         }
     }
 }
@@ -330,7 +301,6 @@ private fun SummaryCard(
     modifier: Modifier = Modifier,
 ) {
     val canyon = detail.canyon
-    var expanded by rememberSaveable(detail.canyon.id) { mutableStateOf(true) }
 
     Card(
         modifier = modifier
@@ -358,35 +328,7 @@ private fun SummaryCard(
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                 modifier = Modifier.padding(top = 8.dp),
             )
-
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(top = 12.dp),
-                horizontalArrangement = Arrangement.SpaceBetween,
-                verticalAlignment = Alignment.CenterVertically,
-            ) {
-                Text(
-                    text = stringResource(R.string.canyon_summary_title),
-                    style = MaterialTheme.typography.labelLarge,
-                    fontWeight = FontWeight.SemiBold,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant,
-                )
-                TextButton(onClick = { expanded = !expanded }) {
-                    Text(
-                        text = if (expanded) stringResource(R.string.canyon_summary_collapse) else stringResource(R.string.canyon_summary_expand),
-                    )
-                    Spacer(modifier = Modifier.width(4.dp))
-                    Icon(
-                        imageVector = if (expanded) Icons.Default.KeyboardArrowUp else Icons.Default.KeyboardArrowDown,
-                        contentDescription = null,
-                    )
-                }
-            }
-
-            AnimatedVisibility(visible = expanded) {
-                SummaryStatsGrid(detail = detail, modifier = Modifier.padding(top = 4.dp))
-            }
+            SummaryStatsGrid(detail = detail, modifier = Modifier.padding(top = 12.dp))
         }
     }
 }
@@ -486,22 +428,13 @@ private fun SummarySection(
     }
 }
 
-@Composable
-private fun TopoTab(
-    detail: CanyonDetail,
-    listState: LazyListState,
-    modifier: Modifier = Modifier,
-) {
-    LazyColumn(
-        state = listState,
-        modifier = modifier.padding(horizontal = 16.dp, vertical = 8.dp),
-        verticalArrangement = Arrangement.spacedBy(4.dp),
-    ) {
+private fun LazyListScope.topoItems(detail: CanyonDetail) {
         detail.accesAval?.let { text ->
             item {
                 CollapsibleSection(
                     title = stringResource(R.string.access_downstream),
                     content = text,
+                    modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp),
                 )
             }
         }
@@ -510,6 +443,7 @@ private fun TopoTab(
                 CollapsibleSection(
                     title = stringResource(R.string.access_upstream),
                     content = text,
+                    modifier = Modifier.padding(horizontal = 16.dp, vertical = 4.dp),
                 )
             }
         }
@@ -518,6 +452,7 @@ private fun TopoTab(
                 CollapsibleSection(
                     title = stringResource(R.string.approach),
                     content = text,
+                    modifier = Modifier.padding(horizontal = 16.dp, vertical = 4.dp),
                 )
             }
         }
@@ -526,6 +461,7 @@ private fun TopoTab(
                 CollapsibleSection(
                     title = stringResource(R.string.descent),
                     content = text,
+                    modifier = Modifier.padding(horizontal = 16.dp, vertical = 4.dp),
                 )
             }
         }
@@ -534,6 +470,7 @@ private fun TopoTab(
                 CollapsibleSection(
                     title = stringResource(R.string.return_path),
                     content = text,
+                    modifier = Modifier.padding(horizontal = 16.dp, vertical = 4.dp),
                 )
             }
         }
@@ -542,6 +479,7 @@ private fun TopoTab(
                 CollapsibleSection(
                     title = stringResource(R.string.engagement),
                     content = text,
+                    modifier = Modifier.padding(horizontal = 16.dp, vertical = 4.dp),
                 )
             }
         }
@@ -550,13 +488,56 @@ private fun TopoTab(
                 CollapsibleSection(
                     title = stringResource(R.string.period),
                     content = text,
+                    modifier = Modifier.padding(horizontal = 16.dp, vertical = 4.dp),
+                )
+            }
+        }
+        detail.geologie?.let { text ->
+            item {
+                CollapsibleSection(
+                    title = stringResource(R.string.geology),
+                    content = text,
+                    modifier = Modifier.padding(horizontal = 16.dp, vertical = 4.dp),
+                )
+            }
+        }
+        detail.historique?.let { text ->
+            item {
+                CollapsibleSection(
+                    title = stringResource(R.string.history),
+                    content = text,
+                    modifier = Modifier.padding(horizontal = 16.dp, vertical = 4.dp),
+                )
+            }
+        }
+        detail.remarques?.let { text ->
+            item {
+                CollapsibleSection(
+                    title = stringResource(R.string.notes),
+                    content = text,
+                    modifier = Modifier.padding(horizontal = 16.dp, vertical = 4.dp),
+                )
+            }
+        }
+        if (detail.bibliography.isNotEmpty()) {
+            item {
+                BibliographySection(
+                    entries = detail.bibliography,
+                    modifier = Modifier.padding(horizontal = 16.dp, vertical = 4.dp),
+                )
+            }
+        }
+        if (detail.regulations.isNotEmpty()) {
+            item {
+                RegulationSection(
+                    regulations = detail.regulations,
+                    modifier = Modifier.padding(horizontal = 16.dp, vertical = 4.dp),
                 )
             }
         }
         item {
             Spacer(modifier = Modifier.height(132.dp)) // FAB clearance
         }
-    }
 }
 
 @Composable
@@ -610,53 +591,244 @@ private fun CollapsibleSection(
 }
 
 @Composable
-private fun PhotosTab(
+private fun BibliographySection(
+    entries: List<BibliographyEntry>,
+    modifier: Modifier = Modifier,
+) {
+    val topoguides = entries.filter { it.kind == BibliographyKind.TOPOGUIDE }
+    val maps = entries.filter { it.kind == BibliographyKind.MAP }
+    val resources = entries.filter { it.kind == BibliographyKind.RESOURCE }
+
+    Card(
+        modifier = modifier.fillMaxWidth(),
+        elevation = CardDefaults.cardElevation(defaultElevation = 1.dp),
+    ) {
+        Column(modifier = Modifier.padding(12.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
+            Text(
+                text = stringResource(R.string.bibliography),
+                style = MaterialTheme.typography.titleMedium,
+                fontWeight = FontWeight.SemiBold,
+            )
+            if (topoguides.isNotEmpty()) {
+                BibliographyGroup(title = stringResource(R.string.topoguides), entries = topoguides)
+            }
+            if (maps.isNotEmpty()) {
+                BibliographyGroup(title = stringResource(R.string.maps), entries = maps)
+            }
+            if (resources.isNotEmpty()) {
+                BibliographyGroup(title = stringResource(R.string.resources), entries = resources)
+            }
+        }
+    }
+}
+
+@Composable
+private fun BibliographyGroup(
+    title: String,
+    entries: List<BibliographyEntry>,
+) {
+    Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
+        Text(
+            text = title,
+            style = MaterialTheme.typography.labelLarge,
+            color = MaterialTheme.colorScheme.primary,
+            fontWeight = FontWeight.SemiBold,
+        )
+        entries.forEach { entry ->
+            Card(
+                colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.45f)),
+            ) {
+                Column(modifier = Modifier.padding(12.dp), verticalArrangement = Arrangement.spacedBy(4.dp)) {
+                    Text(
+                        text = entry.title,
+                        style = MaterialTheme.typography.bodyLarge,
+                        fontWeight = FontWeight.SemiBold,
+                    )
+                    entry.authors.takeIf { it.isNotEmpty() }?.let { authors ->
+                        Text(
+                            text = stringResource(R.string.bibliography_authors, authors.joinToString()),
+                            style = MaterialTheme.typography.bodySmall,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant,
+                        )
+                    }
+                    bibliographyMetaLine(entry)?.let { meta ->
+                        Text(
+                            text = meta,
+                            style = MaterialTheme.typography.bodySmall,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant,
+                        )
+                    }
+                    entry.status?.let { status ->
+                        Text(
+                            text = status,
+                            style = MaterialTheme.typography.bodySmall,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant,
+                        )
+                    }
+                    entry.url?.let { url ->
+                        LinkRow(
+                            icon = Icons.Default.Language,
+                            label = url,
+                            url = url,
+                        )
+                    }
+                    entry.detailUrl?.let { url ->
+                        LinkRow(
+                            icon = Icons.Default.Description,
+                            label = stringResource(R.string.open_reference),
+                            url = url,
+                        )
+                    }
+                }
+            }
+        }
+    }
+}
+
+@Composable
+private fun RegulationSection(
+    regulations: List<Regulation>,
+    modifier: Modifier = Modifier,
+) {
+    Card(
+        modifier = modifier.fillMaxWidth(),
+        elevation = CardDefaults.cardElevation(defaultElevation = 1.dp),
+    ) {
+        Column(modifier = Modifier.padding(12.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+            Text(
+                text = stringResource(R.string.regulations),
+                style = MaterialTheme.typography.titleMedium,
+                fontWeight = FontWeight.SemiBold,
+            )
+            regulations.forEach { regulation ->
+                val statusText = regulation.status?.let { stringResource(R.string.regulation_status, it) }
+                val actionText = regulation.action?.let { stringResource(R.string.regulation_action, it) }
+                val effectiveDateText = regulation.effectiveDate?.let {
+                    stringResource(R.string.regulation_effective_date, it)
+                }
+                CollapsibleSection(
+                    title = regulation.title,
+                    content = buildString {
+                        appendLineIfNotBlank(statusText)
+                        appendLineIfNotBlank(actionText)
+                        appendLineIfNotBlank(effectiveDateText)
+                        appendLineIfNotBlank(regulation.summary)
+                        appendLineIfNotBlank(regulation.remark)
+                        appendLineIfNotBlank(regulation.details)
+                    }.trim(),
+                )
+                regulation.attachments.forEach { attachment ->
+                    LinkRow(
+                        icon = Icons.Default.Description,
+                        label = attachment.label,
+                        url = attachment.url,
+                        modifier = Modifier.padding(start = 8.dp),
+                    )
+                }
+                LinkRow(
+                    icon = Icons.Default.Language,
+                    label = stringResource(R.string.open_regulation_page),
+                    url = regulation.textUrl,
+                    modifier = Modifier.padding(start = 8.dp),
+                )
+            }
+        }
+    }
+}
+
+@Composable
+private fun LinkRow(
+    icon: androidx.compose.ui.graphics.vector.ImageVector,
+    label: String,
+    url: String,
+    modifier: Modifier = Modifier,
+) {
+    val context = LocalContext.current
+    Row(
+        modifier = modifier
+            .fillMaxWidth()
+            .clickable {
+                context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
+            }
+            .padding(vertical = 4.dp),
+        verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.spacedBy(8.dp),
+    ) {
+        Icon(
+            imageVector = icon,
+            contentDescription = null,
+            tint = MaterialTheme.colorScheme.primary,
+            modifier = Modifier.size(18.dp),
+        )
+        Text(
+            text = label,
+            style = MaterialTheme.typography.bodySmall,
+            color = MaterialTheme.colorScheme.primary,
+        )
+    }
+}
+
+private fun bibliographyMetaLine(entry: BibliographyEntry): String? {
+    val parts = buildList {
+        entry.publicationYear?.let { add(it.toString()) }
+        entry.editor?.let { add(it) }
+        entry.reference?.let { add(it) }
+        entry.scale?.let { add(it) }
+    }
+    return parts.takeIf { it.isNotEmpty() }?.joinToString(" - ")
+}
+
+private fun StringBuilder.appendLineIfNotBlank(value: String?) {
+    if (!value.isNullOrBlank()) {
+        if (isNotEmpty()) {
+            append("\n\n")
+        }
+        append(value.trim())
+    }
+}
+
+private fun LazyListScope.photosItems(
     photos: List<CanyonPhoto>,
     isOnline: Boolean,
     isOfflineSaved: Boolean,
     downloadingPhotoIds: Set<Long>,
     onDownloadPhoto: (Long) -> Unit,
     onOpenPhotoGallery: () -> Unit,
-    listState: LazyListState,
-    modifier: Modifier = Modifier,
 ) {
     if (photos.isEmpty()) {
-        Box(
-            modifier = modifier
+        item {
+            Box(
+                modifier = Modifier
                 .fillMaxWidth()
                 .padding(32.dp),
-            contentAlignment = Alignment.Center,
-        ) {
-            Text(
-                text = when {
-                    !isOnline && isOfflineSaved -> stringResource(R.string.no_offline_photos_without_network)
-                    else -> stringResource(R.string.no_photos)
-                },
-                style = MaterialTheme.typography.bodyLarge,
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
-            )
-        }
-    } else {
-        LazyColumn(
-            state = listState,
-            modifier = modifier.padding(horizontal = 16.dp, vertical = 8.dp),
-            verticalArrangement = Arrangement.spacedBy(12.dp),
-        ) {
-            items(
-                items = photos,
-                key = { it.id.takeIf { id -> id != 0L } ?: it.url.hashCode().toLong() },
-            ) { photo ->
-                PhotoCard(
-                    photo = photo,
-                    onOpen = {
-                        PhotoGallerySession.open(photos, photos.indexOf(photo))
-                        onOpenPhotoGallery()
+                contentAlignment = Alignment.Center,
+            ) {
+                Text(
+                    text = when {
+                        !isOnline && isOfflineSaved -> stringResource(R.string.no_offline_photos_without_network)
+                        else -> stringResource(R.string.no_photos)
                     },
+                    style = MaterialTheme.typography.bodyLarge,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
                 )
             }
-            item {
-                Spacer(modifier = Modifier.height(132.dp))
-            }
+        }
+    } else {
+        items(
+            items = photos,
+            key = { it.id.takeIf { id -> id != 0L } ?: it.url.hashCode().toLong() },
+        ) { photo ->
+            PhotoCard(
+                photo = photo,
+                onOpen = {
+                    PhotoGallerySession.open(photos, photos.indexOf(photo))
+                    onOpenPhotoGallery()
+                },
+                modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp),
+            )
+        }
+        item {
+            Spacer(modifier = Modifier.height(132.dp))
         }
     }
 }
@@ -706,40 +878,34 @@ private fun ProgressivePhoto(
     }
 }
 
-@Composable
-private fun DebitsTab(
-    debits: List<Debit>,
-    listState: LazyListState,
-    modifier: Modifier = Modifier,
-) {
+private fun LazyListScope.debitItems(debits: List<Debit>) {
     if (debits.isEmpty()) {
-        Box(
-            modifier = modifier
+        item {
+            Box(
+                modifier = Modifier
                 .fillMaxWidth()
                 .padding(32.dp),
-            contentAlignment = Alignment.Center,
-        ) {
-            Text(
-                text = stringResource(R.string.no_debits),
-                style = MaterialTheme.typography.bodyLarge,
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
-            )
+                contentAlignment = Alignment.Center,
+            ) {
+                Text(
+                    text = stringResource(R.string.no_debits),
+                    style = MaterialTheme.typography.bodyLarge,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                )
+            }
         }
     } else {
-        LazyColumn(
-            state = listState,
-            modifier = modifier.padding(horizontal = 16.dp, vertical = 8.dp),
-            verticalArrangement = Arrangement.spacedBy(8.dp),
-        ) {
-            items(
-                items = debits,
-                key = { it.id },
-            ) { debit ->
-                DebitListItem(debit = debit)
-            }
-            item {
-                Spacer(modifier = Modifier.height(132.dp)) // FAB clearance
-            }
+        items(
+            items = debits,
+            key = { it.id },
+        ) { debit ->
+            DebitListItem(
+                debit = debit,
+                modifier = Modifier.padding(horizontal = 16.dp, vertical = 4.dp),
+            )
+        }
+        item {
+            Spacer(modifier = Modifier.height(132.dp)) // FAB clearance
         }
     }
 }

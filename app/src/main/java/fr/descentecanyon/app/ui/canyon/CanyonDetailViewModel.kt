@@ -7,7 +7,6 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import fr.descentecanyon.app.data.network.ConnectivityObserver
 import fr.descentecanyon.app.domain.model.CanyonDetail
 import fr.descentecanyon.app.domain.repository.FavoritesRepository
-import fr.descentecanyon.app.domain.usecase.DownloadCanyonOfflineUseCase
 import fr.descentecanyon.app.domain.usecase.DownloadPhotoForOfflineUseCase
 import fr.descentecanyon.app.domain.usecase.GetCanyonDetailUseCase
 import fr.descentecanyon.app.domain.usecase.GetCanyonPreviewUseCase
@@ -24,7 +23,6 @@ data class CanyonDetailUiState(
     val isLoading: Boolean = false,
     val error: String? = null,
     val isFavorite: Boolean = false,
-    val isDownloading: Boolean = false,
     val downloadingPhotoIds: Set<Long> = emptySet(),
     val isOnline: Boolean = true,
     val transientMessage: String? = null,
@@ -36,7 +34,6 @@ class CanyonDetailViewModel @Inject constructor(
     private val getCanyonPreviewUseCase: GetCanyonPreviewUseCase,
     private val getCanyonDetailUseCase: GetCanyonDetailUseCase,
     private val toggleFavoriteUseCase: ToggleFavoriteUseCase,
-    private val downloadCanyonOfflineUseCase: DownloadCanyonOfflineUseCase,
     private val downloadPhotoForOfflineUseCase: DownloadPhotoForOfflineUseCase,
     private val connectivityObserver: ConnectivityObserver,
     private val favoritesRepository: FavoritesRepository,
@@ -108,37 +105,6 @@ class CanyonDetailViewModel @Inject constructor(
     fun toggleFavorite() {
         viewModelScope.launch {
             toggleFavoriteUseCase(canyonId)
-        }
-    }
-
-    fun downloadForOffline() {
-        if (_uiState.value.isDownloading || _uiState.value.canyonDetail?.canyon?.isOffline == true) {
-            return
-        }
-
-        viewModelScope.launch {
-            _uiState.update { it.copy(isDownloading = true, transientMessage = null) }
-            downloadCanyonOfflineUseCase(canyonId).fold(
-                onSuccess = {
-                    _uiState.update { state ->
-                        state.copy(
-                            canyonDetail = state.canyonDetail?.let { detail ->
-                                detail.copy(canyon = detail.canyon.copy(isOffline = true))
-                            },
-                            isDownloading = false,
-                            transientMessage = "Canyon telecharge pour usage hors-ligne",
-                        )
-                    }
-                },
-                onFailure = { throwable ->
-                    _uiState.update {
-                        it.copy(
-                            isDownloading = false,
-                            transientMessage = throwable.message ?: "Telechargement impossible",
-                        )
-                    }
-                },
-            )
         }
     }
 

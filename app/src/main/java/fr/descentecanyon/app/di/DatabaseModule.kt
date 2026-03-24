@@ -12,8 +12,11 @@ import dagger.hilt.components.SingletonComponent
 import fr.descentecanyon.app.data.local.dao.CanyonDao
 import fr.descentecanyon.app.data.local.dao.DebitDao
 import fr.descentecanyon.app.data.local.dao.GeoPointDao
+import fr.descentecanyon.app.data.local.dao.AppMetadataDao
+import fr.descentecanyon.app.data.local.dao.BibliographyDao
 import fr.descentecanyon.app.data.local.dao.PendingDebitSubmissionDao
 import fr.descentecanyon.app.data.local.dao.PhotoDao
+import fr.descentecanyon.app.data.local.dao.RegulationDao
 import fr.descentecanyon.app.data.local.database.AppDatabase
 import javax.inject.Singleton
 
@@ -51,6 +54,92 @@ object DatabaseModule {
         }
     }
 
+    private val MIGRATION_3_4 = object : Migration(3, 4) {
+        override fun migrate(db: SupportSQLiteDatabase) {
+            db.execSQL("ALTER TABLE canyons ADD COLUMN communesJson TEXT")
+            db.execSQL("ALTER TABLE canyons ADD COLUMN bassin TEXT")
+            db.execSQL("ALTER TABLE canyons ADD COLUMN coursEau TEXT")
+            db.execSQL("ALTER TABLE canyons ADD COLUMN geologie TEXT")
+            db.execSQL("ALTER TABLE canyons ADD COLUMN historique TEXT")
+            db.execSQL("ALTER TABLE canyons ADD COLUMN remarques TEXT")
+            db.execSQL("ALTER TABLE canyons ADD COLUMN hasSpecificRegulation INTEGER NOT NULL DEFAULT 0")
+
+            db.execSQL(
+                """
+                CREATE TABLE IF NOT EXISTS `bibliography_entries` (
+                    `id` TEXT NOT NULL,
+                    `kind` TEXT NOT NULL,
+                    `resourceType` TEXT,
+                    `title` TEXT NOT NULL,
+                    `authorsJson` TEXT,
+                    `publicationYear` INTEGER,
+                    `reference` TEXT,
+                    `editor` TEXT,
+                    `status` TEXT,
+                    `scale` TEXT,
+                    `detailUrl` TEXT,
+                    `url` TEXT,
+                    PRIMARY KEY(`id`)
+                )
+                """.trimIndent()
+            )
+            db.execSQL(
+                """
+                CREATE TABLE IF NOT EXISTS `canyon_bibliography` (
+                    `canyonId` INTEGER NOT NULL,
+                    `bibliographyId` TEXT NOT NULL,
+                    PRIMARY KEY(`canyonId`, `bibliographyId`),
+                    FOREIGN KEY(`canyonId`) REFERENCES `canyons`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE,
+                    FOREIGN KEY(`bibliographyId`) REFERENCES `bibliography_entries`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE
+                )
+                """.trimIndent()
+            )
+            db.execSQL("CREATE INDEX IF NOT EXISTS `index_canyon_bibliography_canyonId` ON `canyon_bibliography` (`canyonId`)")
+            db.execSQL("CREATE INDEX IF NOT EXISTS `index_canyon_bibliography_bibliographyId` ON `canyon_bibliography` (`bibliographyId`)")
+
+            db.execSQL(
+                """
+                CREATE TABLE IF NOT EXISTS `regulation_texts` (
+                    `id` INTEGER NOT NULL,
+                    `status` TEXT,
+                    `action` TEXT,
+                    `title` TEXT NOT NULL,
+                    `summary` TEXT,
+                    `remark` TEXT,
+                    `details` TEXT,
+                    `effectiveDate` TEXT,
+                    `textUrl` TEXT NOT NULL,
+                    `attachmentsJson` TEXT,
+                    PRIMARY KEY(`id`)
+                )
+                """.trimIndent()
+            )
+            db.execSQL(
+                """
+                CREATE TABLE IF NOT EXISTS `canyon_regulations` (
+                    `canyonId` INTEGER NOT NULL,
+                    `regulationId` INTEGER NOT NULL,
+                    PRIMARY KEY(`canyonId`, `regulationId`),
+                    FOREIGN KEY(`canyonId`) REFERENCES `canyons`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE,
+                    FOREIGN KEY(`regulationId`) REFERENCES `regulation_texts`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE
+                )
+                """.trimIndent()
+            )
+            db.execSQL("CREATE INDEX IF NOT EXISTS `index_canyon_regulations_canyonId` ON `canyon_regulations` (`canyonId`)")
+            db.execSQL("CREATE INDEX IF NOT EXISTS `index_canyon_regulations_regulationId` ON `canyon_regulations` (`regulationId`)")
+
+            db.execSQL(
+                """
+                CREATE TABLE IF NOT EXISTS `app_metadata` (
+                    `key` TEXT NOT NULL,
+                    `value` TEXT NOT NULL,
+                    PRIMARY KEY(`key`)
+                )
+                """.trimIndent()
+            )
+        }
+    }
+
     @Provides
     @Singleton
     fun provideDatabase(@ApplicationContext context: Context): AppDatabase {
@@ -61,6 +150,7 @@ object DatabaseModule {
         )
             .addMigrations(MIGRATION_1_2)
             .addMigrations(MIGRATION_2_3)
+            .addMigrations(MIGRATION_3_4)
             .build()
     }
 
@@ -75,6 +165,15 @@ object DatabaseModule {
 
     @Provides
     fun providePhotoDao(database: AppDatabase): PhotoDao = database.photoDao()
+
+    @Provides
+    fun provideBibliographyDao(database: AppDatabase): BibliographyDao = database.bibliographyDao()
+
+    @Provides
+    fun provideRegulationDao(database: AppDatabase): RegulationDao = database.regulationDao()
+
+    @Provides
+    fun provideAppMetadataDao(database: AppDatabase): AppMetadataDao = database.appMetadataDao()
 
     @Provides
     fun providePendingDebitSubmissionDao(database: AppDatabase): PendingDebitSubmissionDao {

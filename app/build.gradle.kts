@@ -11,6 +11,10 @@ android {
     namespace = "fr.descentecanyon.app"
     compileSdk = 35
 
+    sourceSets {
+        getByName("main").assets.srcDirs("src/main/assets", "../offline-data/full")
+    }
+
     defaultConfig {
         applicationId = "fr.descentecanyon.app"
         minSdk = 26

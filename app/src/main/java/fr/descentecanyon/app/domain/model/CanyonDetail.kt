@@ -13,7 +13,12 @@ data class CanyonDetail(
     val retour: String? = null,
     val engagement: String? = null,
     val periode: String? = null,
+    val geologie: String? = null,
+    val historique: String? = null,
+    val remarques: String? = null,
     val geoPoints: List<GeoPoint> = emptyList(),
+    val bibliography: List<BibliographyEntry> = emptyList(),
+    val regulations: List<Regulation> = emptyList(),
     val photos: List<CanyonPhoto> = emptyList(),
     val debits: List<Debit> = emptyList(),
 )

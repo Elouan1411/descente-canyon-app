@@ -16,7 +16,6 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.CloudDone
 import androidx.compose.material.icons.filled.CloudOff
-import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.Storage
 import androidx.compose.material.icons.filled.Sync
 import androidx.compose.material.icons.filled.Wifi
@@ -139,7 +138,6 @@ fun OfflineManagerScreen(
                     OfflineCanyonCard(
                         canyon = canyon,
                         onClick = { onCanyonClick(canyon.id) },
-                        onRemove = { viewModel.removeOfflineCanyon(canyon.id) },
                     )
                 }
             }
@@ -259,7 +257,6 @@ private fun StorageSummaryCard(
 private fun OfflineCanyonCard(
     canyon: CanyonSummary,
     onClick: () -> Unit,
-    onRemove: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     Card(
@@ -296,13 +293,6 @@ private fun OfflineCanyonCard(
                 )
             }
             CotationBadge(cotation = canyon.cotation)
-            IconButton(onClick = onRemove) {
-                Icon(
-                    imageVector = Icons.Default.Delete,
-                    contentDescription = stringResource(R.string.offline_remove),
-                    tint = MaterialTheme.colorScheme.error,
-                )
-            }
         }
     }
 }

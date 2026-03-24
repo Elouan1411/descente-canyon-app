@@ -20,6 +20,12 @@ interface CanyonDao {
     @Query("SELECT * FROM canyons WHERE id = :id")
     suspend fun getById(id: Int): CanyonEntity?
 
+    @Query("SELECT COUNT(*) FROM canyons")
+    suspend fun count(): Int
+
+    @Query("SELECT id FROM canyons WHERE isFavorite = 1")
+    suspend fun getFavoriteIds(): List<Int>
+
     @Query("SELECT * FROM canyons WHERE isOffline = 1")
     fun getOfflineCanyons(): Flow<List<CanyonEntity>>
 
@@ -37,6 +43,9 @@ interface CanyonDao {
 
     @Update
     suspend fun update(canyon: CanyonEntity)
+
+    @Query("DELETE FROM canyons")
+    suspend fun clearAll()
 
     @Query("UPDATE canyons SET isOffline = :isOffline WHERE id = :canyonId")
     suspend fun setOffline(canyonId: Int, isOffline: Boolean)
