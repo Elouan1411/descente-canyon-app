@@ -17,8 +17,11 @@ import fr.descentecanyon.app.domain.model.CanyonSearchItem
 import fr.descentecanyon.app.domain.model.CanyonSummary
 import fr.descentecanyon.app.domain.model.GeoPointType
 import fr.descentecanyon.app.domain.repository.CanyonRepository
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.firstOrNull
+import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.map
 import kotlin.math.asin
@@ -60,6 +63,8 @@ class CanyonRepositoryImpl @Inject constructor(
                 )
             }
         }
+            .distinctUntilChanged()
+            .flowOn(Dispatchers.Default)
     }
 
     override suspend fun getCanyonPreview(canyonId: Int): Result<CanyonDetail> {

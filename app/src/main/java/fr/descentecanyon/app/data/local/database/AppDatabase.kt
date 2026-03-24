@@ -34,7 +34,7 @@ import fr.descentecanyon.app.data.local.entity.RegulationTextEntity
         AppMetadataEntity::class,
         PendingDebitSubmissionEntity::class,
     ],
-    version = 4,
+    version = 5,
     exportSchema = true,
 )
 abstract class AppDatabase : RoomDatabase() {

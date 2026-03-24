@@ -170,6 +170,80 @@ def extract_float(value: str | None) -> float | None:
     return float(match.group(0)) if match else None
 
 
+def normalize_interest(value: float | None) -> float | None:
+    if value is None:
+        return None
+    return value if 0.0 <= value <= 4.0 else None
+
+
+def is_active_regulation_status(value: str | None) -> bool:
+    return normalize_label(value or "") in {"", "actif", "indefini"}
+
+
+def rule_text(rule: dict[str, Any]) -> str:
+    parts = [rule.get("summary"), rule.get("remark"), rule.get("details")]
+    return normalize_label(" ".join(part for part in parts if part))
+
+
+def infer_canyon_forbidden(canyon: dict[str, Any]) -> bool:
+    regulation = canyon["reglementation"]
+    rating = canyon["rating"]
+    timings = canyon["timings"]
+    topo = canyon["topo"]
+
+    explicit_forbidden = any(
+        is_active_regulation_status(rule.get("status")) and (
+            normalize_label(rule.get("action") or "") == "interdit" or
+            any(
+                phrase in rule_text(rule)
+                for phrase in (
+                    "pratique du canyon y est donc interdite",
+                    "pratique du canyoning est interdite",
+                    "descente du canyon interdite",
+                    "descente interdite du canyon",
+                    "canyon interdit",
+                )
+            )
+        )
+        for rule in regulation.get("rules", [])
+    )
+
+    has_practical_info = any(
+        clean_text(value)
+        for value in (
+            rating.get("cotation"),
+            timings.get("approche"),
+            timings.get("descente"),
+            timings.get("retour"),
+            topo.get("accesAval"),
+            topo.get("accesAmont"),
+            topo.get("approche"),
+            topo.get("descente"),
+            topo.get("retour"),
+            topo.get("engagement"),
+            topo.get("periode"),
+        )
+    )
+    missing_practical_info = (
+        regulation.get("hasSpecificRegulation") and
+        not has_practical_info and
+        normalize_interest(rating.get("interet")) is None and
+        int(rating.get("nbVotes") or 0) == 0
+    )
+    return explicit_forbidden or missing_practical_info
+
+
+def enrich_canyon_flags(payload: dict[str, Any]) -> dict[str, Any]:
+    canyon = payload.get("canyon")
+    if not canyon:
+        return payload
+
+    rating = canyon.setdefault("rating", {})
+    rating["interet"] = normalize_interest(rating.get("interet"))
+    canyon.setdefault("reglementation", {})["isForbidden"] = infer_canyon_forbidden(canyon)
+    return payload
+
+
 def badge_value(container: BeautifulSoup | Any, icon_class: str) -> str | None:
     if container is None:
         return None
@@ -299,8 +373,10 @@ def parse_summary_page(canyon_id: int, html: str) -> dict[str, Any]:
             communes.append(text)
 
     interest_block = fiche.select_one("a[href*='canyon-interet']")
-    interest_container = interest_block.parent if interest_block is not None else fiche
-    interet = extract_float(clean_text(interest_container.get_text(" ", strip=True)) if interest_container else None)
+    interest_container = interest_block.parent if interest_block is not None else None
+    interet = normalize_interest(
+        extract_float(clean_text(interest_container.get_text(" ", strip=True)) if interest_container else None)
+    )
     nb_votes = 0
     if interest_block is not None:
         votes_match = re.search(r"(\d+)\s*vote", interest_block.get_text(" ", strip=True), re.I)
@@ -677,6 +753,7 @@ def parse_canyon_regulation_page(canyon_id: int, html: str | None) -> dict[str, 
 
     return {
         "hasSpecificRegulation": bool(rules),
+        "isForbidden": False,
         "rules": rules,
     }
 
@@ -694,7 +771,7 @@ def scrape_canyon(canyon_id: int) -> dict[str, Any]:
     bibliography = parse_bibliography_page(fetch_optional_text(bibliography_url))
     regulation = parse_canyon_regulation_page(canyon_id, fetch_optional_text(summary["regulationUrl"]) if summary["regulationUrl"] else None)
 
-    return {
+    return enrich_canyon_flags({
         "schemaVersion": 2,
         "scrapedAt": datetime.now(timezone.utc).isoformat(),
         "source": {
@@ -761,7 +838,7 @@ def scrape_canyon(canyon_id: int) -> dict[str, Any]:
             "bibliography": bibliography,
             "reglementation": regulation,
         },
-    }
+    })
 
 
 def build_index(canyons: list[dict[str, Any]]) -> dict[str, Any]:
@@ -782,6 +859,7 @@ def build_index(canyons: list[dict[str, Any]]) -> dict[str, Any]:
                 "interet": item["canyon"]["rating"]["interet"],
                 "url": item["canyon"]["identity"]["url"],
                 "hasSpecificRegulation": item["canyon"]["reglementation"]["hasSpecificRegulation"],
+                "isForbidden": item["canyon"]["reglementation"].get("isForbidden", False),
                 "representativePoint": item["canyon"]["representativePoint"],
             }
             for item in canyons
@@ -811,6 +889,7 @@ def build_optimized_records(canyons: list[dict[str, Any]]) -> dict[str, Any]:
                 "topo": canyon["topo"],
                 "representativePoint": canyon["representativePoint"],
                 "hasSpecificRegulation": canyon["reglementation"]["hasSpecificRegulation"],
+                "isForbidden": canyon["reglementation"].get("isForbidden", False),
             }
         )
 
@@ -899,6 +978,7 @@ def build_room_import_records(canyons: list[dict[str, Any]]) -> dict[str, Any]:
                 "isFavorite": False,
                 "lastUpdated": scraped_at_ms,
                 "hasSpecificRegulation": canyon["reglementation"]["hasSpecificRegulation"],
+                "isForbidden": canyon["reglementation"].get("isForbidden", False),
             }
         )
 
@@ -1017,7 +1097,7 @@ def load_canyons_from_output(output_dir: Path) -> list[dict[str, Any]]:
         return []
     canyons: list[dict[str, Any]] = []
     for path in sorted(canyon_dir.glob("*.json"), key=lambda item: int(item.stem)):
-        canyons.append(json.loads(path.read_text(encoding="utf-8")))
+        canyons.append(enrich_canyon_flags(json.loads(path.read_text(encoding="utf-8"))))
     return canyons
 
 

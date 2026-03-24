@@ -29,7 +29,7 @@ class SearchViewModelTest {
 
     @Test
     @OptIn(ExperimentalCoroutinesApi::class)
-    fun `full local catalog is available without query`() = runTest {
+    fun `broad catalog is deferred while keeping available filters`() = runTest {
         every { canyonRepository.observeSearchCatalog() } returns flowOf(
             listOf(
                 canyon(id = 1, pays = "France", departement = "Ain"),
@@ -40,7 +40,9 @@ class SearchViewModelTest {
 
         advanceUntilIdle()
 
-        assertEquals(setOf(1, 2), viewModel.uiState.value.results.map { it.id }.toSet())
+        assertEquals(emptyList<Int>(), viewModel.uiState.value.results.map { it.id })
+        assertEquals(true, viewModel.uiState.value.isResultListDeferred)
+        assertEquals(2, viewModel.uiState.value.totalResultsCount)
         assertEquals(listOf("Espagne", "France"), viewModel.uiState.value.availableCountries)
     }
 
@@ -86,6 +88,8 @@ class SearchViewModelTest {
         val viewModel = SearchViewModel(searchCanyonsUseCase, SavedStateHandle())
 
         advanceUntilIdle()
+        viewModel.onQueryChanged("a")
+        advanceUntilIdle()
         viewModel.onSortSelected(SearchSortField.NAME)
         advanceUntilIdle()
         assertEquals(SortDirection.ASC, viewModel.uiState.value.criteria.sortDirection)
@@ -109,7 +113,9 @@ class SearchViewModelTest {
         nom = nom,
         nomComplet = nom,
         pays = pays,
+        countryTokens = pays.split(',').map(String::trim),
         departement = departement,
+        departmentTokens = departement?.split(',')?.map(String::trim).orEmpty(),
         cotation = "v3a3III",
         cotationRating = CotationRating.parse("v3a3III"),
         interet = interet,

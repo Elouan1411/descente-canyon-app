@@ -41,6 +41,7 @@ data class CanyonEntity(
     val historique: String? = null,
     val remarques: String? = null,
     val hasSpecificRegulation: Boolean = false,
+    val isForbidden: Boolean = false,
     // Offline management
     val isOffline: Boolean = false,
     val isFavorite: Boolean = false,

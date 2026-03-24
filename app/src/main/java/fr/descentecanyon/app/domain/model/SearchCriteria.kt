@@ -56,6 +56,14 @@ data class SearchCriteria(
             ropeRange.isActive()
     }
 
+    fun shouldDeferBroadResults(): Boolean {
+        return query.isBlank() &&
+            !favoritesOnly &&
+            selectedCountry == null &&
+            selectedDepartment == null &&
+            !hasAdvancedFilters()
+    }
+
     fun activeFilterCount(): Int {
         var count = 0
         if (favoritesOnly) count++

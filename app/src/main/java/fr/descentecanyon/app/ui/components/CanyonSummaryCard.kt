@@ -11,7 +11,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.CloudDownload
 import androidx.compose.material.icons.filled.Star
-import androidx.compose.material.icons.filled.StarHalf
+import androidx.compose.material.icons.automirrored.filled.StarHalf
 import androidx.compose.material.icons.outlined.StarOutline
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -97,8 +97,12 @@ fun CanyonSummaryCard(
                 horizontalArrangement = Arrangement.SpaceBetween,
                 verticalAlignment = Alignment.CenterVertically,
             ) {
-                canyon.interet?.let { interest ->
-                    InterestStars(interest = interest)
+                if (canyon.isForbidden) {
+                    ForbiddenBadge()
+                } else {
+                    canyon.interet?.let { interest ->
+                        InterestStars(interest = interest)
+                    }
                 }
                 Row(verticalAlignment = Alignment.CenterVertically) {
                     canyon.dernierDebit?.let { niveau ->
@@ -116,6 +120,26 @@ fun CanyonSummaryCard(
                 }
             }
         }
+    }
+}
+
+@Composable
+private fun ForbiddenBadge(
+    modifier: Modifier = Modifier,
+) {
+    Card(
+        modifier = modifier,
+        colors = CardDefaults.cardColors(
+            containerColor = MaterialTheme.colorScheme.error.copy(alpha = 0.12f),
+        ),
+    ) {
+        Text(
+            text = stringResource(R.string.regulation_forbidden),
+            style = MaterialTheme.typography.labelSmall,
+            fontWeight = FontWeight.Bold,
+            color = MaterialTheme.colorScheme.error,
+            modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp),
+        )
     }
 }
 
@@ -170,7 +194,7 @@ fun InterestStars(
         repeat(4) { index ->
             val icon = when {
                 index < fullStars -> Icons.Filled.Star
-                index == fullStars && hasHalfStar -> Icons.Filled.StarHalf
+                index == fullStars && hasHalfStar -> Icons.AutoMirrored.Filled.StarHalf
                 else -> Icons.Outlined.StarOutline
             }
             Icon(

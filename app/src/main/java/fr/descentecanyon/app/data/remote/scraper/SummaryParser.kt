@@ -32,6 +32,8 @@ internal object SummaryParser {
         val massif = ficheSection?.select("a[href*=/lieu/14/], a[href*=/lieu/15/], a[href*=/lieu/16/]")
             ?.firstOrNull()?.text()?.trim()
 
+        val regulationLink = doc.selectFirst("a[href*='/canyoning/canyon-reglementation/$canyonId/legislation.html']")
+
         // Technical data from badge spans
         val badges = ficheSection ?: doc
 
@@ -47,8 +49,16 @@ internal object SummaryParser {
         val navette = badges.badgeText("picto-navette")
 
         // Interest rating
-        val interestText = ficheSection?.selectFirst("strong")?.text()?.trim()
-        val interet = interestText?.split("/")?.firstOrNull()?.extractFloat()
+        val interet = ficheSection
+            ?.selectFirst("a[href*=canyon-interet]")
+            ?.parent()
+            ?.selectFirst("strong")
+            ?.text()
+            ?.trim()
+            ?.split("/")
+            ?.firstOrNull()
+            ?.extractFloat()
+            ?.takeIf { it in 0f..4f }
 
         // Nb votes: "(27 votes)"
         val votesText = ficheSection?.selectFirst("a[href*=canyon-interet]")?.text() ?: ""
@@ -81,6 +91,7 @@ internal object SummaryParser {
             navette = navette,
             interet = interet,
             nbVotes = nbVotes,
+            isForbidden = regulationLink != null && cotation.isBlank() && interet == null && nbVotes == 0,
             url = url,
         )
     }

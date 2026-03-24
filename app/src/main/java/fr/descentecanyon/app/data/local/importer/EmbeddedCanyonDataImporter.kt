@@ -129,6 +129,7 @@ class EmbeddedCanyonDataImporter @Inject constructor(
             historique = historique,
             remarques = remarques,
             hasSpecificRegulation = hasSpecificRegulation,
+            isForbidden = isForbidden,
             isOffline = true,
             isFavorite = isFavorite,
             lastUpdated = lastUpdated,
@@ -242,6 +243,7 @@ private data class CanyonImportRow(
     val isFavorite: Boolean = false,
     val lastUpdated: Long,
     val hasSpecificRegulation: Boolean = false,
+    val isForbidden: Boolean = false,
 )
 
 @Serializable

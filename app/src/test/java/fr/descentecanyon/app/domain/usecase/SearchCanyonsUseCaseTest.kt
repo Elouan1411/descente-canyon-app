@@ -9,6 +9,7 @@ import fr.descentecanyon.app.domain.model.SortDirection
 import fr.descentecanyon.app.domain.repository.CanyonRepository
 import io.mockk.mockk
 import org.junit.Assert.assertEquals
+import org.junit.Assert.assertTrue
 import org.junit.Test
 
 class SearchCanyonsUseCaseTest {
@@ -25,6 +26,7 @@ class SearchCanyonsUseCaseTest {
                 canyon(id = 4, cotation = "V3A3V"),
             ),
             criteria = SearchCriteria(
+                query = "canyon",
                 sortField = SearchSortField.DIFFICULTY,
                 sortDirection = SortDirection.DESC,
             ),
@@ -61,6 +63,7 @@ class SearchCanyonsUseCaseTest {
                 canyon(id = 3, longueur = 500),
             ),
             criteria = SearchCriteria(
+                query = "canyon",
                 sortField = SearchSortField.LENGTH,
                 sortDirection = SortDirection.DESC,
             ),
@@ -69,19 +72,64 @@ class SearchCanyonsUseCaseTest {
         assertEquals(listOf(1, 3, 2), result.results.map { it.id })
     }
 
+    @Test
+    fun `broad search is deferred until user types or filters`() {
+        val result = useCase(
+            catalog = listOf(
+                canyon(id = 1),
+                canyon(id = 2),
+            ),
+            criteria = SearchCriteria(),
+        )
+
+        assertTrue(result.isResultListDeferred)
+        assertEquals(2, result.totalResultsCount)
+        assertEquals(emptyList<Int>(), result.results.map { it.id })
+    }
+
+    @Test
+    fun `country and subdivision filters match multi-valued entries`() {
+        val result = useCase(
+            catalog = listOf(
+                canyon(
+                    id = 1,
+                    pays = "France, Espagne",
+                    countryTokens = listOf("France", "Espagne"),
+                    departement = "Pyrenees-Atlantiques, Huesca",
+                    departmentTokens = listOf("Pyrenees-Atlantiques", "Huesca"),
+                )
+            ),
+            criteria = SearchCriteria(
+                selectedCountry = "Espagne",
+                selectedDepartment = "Huesca",
+            ),
+        )
+
+        assertEquals(listOf(1), result.results.map { it.id })
+        assertEquals(listOf("Espagne", "France"), result.availableCountries)
+        assertEquals(listOf("Huesca", "Pyrenees-Atlantiques"), result.availableDepartments)
+    }
+
     private fun canyon(
         id: Int,
         cotation: String = "V3A3III",
         longueur: Int? = 1000,
+        pays: String = "France",
+        countryTokens: List<String> = listOf("France"),
+        departement: String? = null,
+        departmentTokens: List<String> = emptyList(),
     ) = CanyonSearchItem(
         id = id,
         nom = "Canyon $id",
         nomComplet = "Canyon $id",
-        pays = "France",
+        pays = pays,
+        countryTokens = countryTokens,
+        departement = departement,
+        departmentTokens = departmentTokens,
         cotation = cotation,
         cotationRating = CotationRating.parse(cotation),
         longueur = longueur,
         url = "/canyoning/canyon/$id/test.html",
-        searchableText = "canyon $id france",
+        searchableText = "canyon $id ${countryTokens.joinToString(" ")} ${departmentTokens.joinToString(" ")}".lowercase(),
     )
 }

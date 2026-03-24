@@ -24,6 +24,7 @@ data class ScrapedCanyonDetail(
     val navette: String? = null,
     val interet: Float? = null,
     val nbVotes: Int = 0,
+    val isForbidden: Boolean = false,
     val url: String = "",
     // Description fields
     val accesAval: String? = null,

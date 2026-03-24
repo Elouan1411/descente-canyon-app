@@ -5,8 +5,10 @@ data class CanyonSearchItem(
     val nom: String,
     val nomComplet: String,
     val pays: String,
+    val countryTokens: List<String> = emptyList(),
     val region: String? = null,
     val departement: String? = null,
+    val departmentTokens: List<String> = emptyList(),
     val commune: String? = null,
     val massif: String? = null,
     val bassin: String? = null,
@@ -21,6 +23,7 @@ data class CanyonSearchItem(
     val cascadeMax: Int? = null,
     val cordeMin: Int? = null,
     val hasSpecificRegulation: Boolean = false,
+    val isForbidden: Boolean = false,
     val hasNavette: Boolean = false,
     val isFavorite: Boolean = false,
     val representativeLat: Double? = null,
@@ -40,6 +43,7 @@ fun CanyonSearchItem.toSummary(): CanyonSummary {
         url = url,
         latitude = representativeLat,
         longitude = representativeLng,
+        isForbidden = isForbidden,
     )
 }
 
@@ -47,4 +51,6 @@ data class SearchResultSet(
     val results: List<CanyonSearchItem> = emptyList(),
     val availableCountries: List<String> = emptyList(),
     val availableDepartments: List<String> = emptyList(),
+    val totalResultsCount: Int = results.size,
+    val isResultListDeferred: Boolean = false,
 )

@@ -25,45 +25,71 @@ class SearchCanyonsUseCase @Inject constructor(
         catalog: List<CanyonSearchItem>,
         criteria: SearchCriteria,
     ): SearchResultSet {
-        val availableCountries = filterItems(catalog, criteria, includeCountry = false, includeDepartment = false)
-            .mapNotNull { it.pays.takeIf(String::isNotBlank) }
+        val normalizedQuery = criteria.query.normalizeForSearch()
+        val baseMatches = catalog.asSequence()
+            .filter { matchesBaseFilters(it, criteria, normalizedQuery) }
+            .toList()
+
+        val availableCountries = baseMatches.asSequence()
+            .flatMap { it.countryTokens.asSequence() }
             .distinct()
             .sorted()
 
-        val availableDepartments = filterItems(catalog, criteria, includeCountry = true, includeDepartment = false)
-            .mapNotNull { it.departement?.takeIf(String::isNotBlank) }
+        val countryMatches = baseMatches.asSequence()
+            .filter { matchesCountry(it, criteria.selectedCountry) }
+            .toList()
+
+        val availableDepartments = countryMatches.asSequence()
+            .flatMap { it.departmentTokens.asSequence() }
             .distinct()
             .sorted()
+
+        val results = countryMatches.asSequence()
+            .filter { matchesDepartment(it, criteria.selectedDepartment) }
+            .toList()
+
+        if (criteria.shouldDeferBroadResults()) {
+            return SearchResultSet(
+                results = emptyList(),
+                availableCountries = availableCountries.toList(),
+                availableDepartments = availableDepartments.toList(),
+                totalResultsCount = results.size,
+                isResultListDeferred = true,
+            )
+        }
 
         return SearchResultSet(
-            results = sortItems(filterItems(catalog, criteria), criteria),
-            availableCountries = availableCountries,
-            availableDepartments = availableDepartments,
+            results = sortItems(results, criteria),
+            availableCountries = availableCountries.toList(),
+            availableDepartments = availableDepartments.toList(),
+            totalResultsCount = results.size,
         )
     }
 
-    private fun filterItems(
-        catalog: List<CanyonSearchItem>,
+    private fun matchesBaseFilters(
+        item: CanyonSearchItem,
         criteria: SearchCriteria,
-        includeCountry: Boolean = true,
-        includeDepartment: Boolean = true,
-    ): List<CanyonSearchItem> {
-        val normalizedQuery = criteria.query.normalizeForSearch()
-        return catalog.filter { item ->
-            matchesQuery(item, normalizedQuery) &&
-                (!criteria.favoritesOnly || item.isFavorite) &&
-                (!includeCountry || criteria.selectedCountry == null || item.pays.equals(criteria.selectedCountry, ignoreCase = true)) &&
-                (!includeDepartment || criteria.selectedDepartment == null || item.departement.equals(criteria.selectedDepartment, ignoreCase = true)) &&
-                item.cotationRating.matches(criteria) &&
-                (criteria.interestMin == null || (item.interet ?: Float.NEGATIVE_INFINITY) >= criteria.interestMin) &&
-                (!criteria.regulationOnly || item.hasSpecificRegulation) &&
-                (!criteria.shuttleOnly || item.hasNavette) &&
-                criteria.altitudeRange.matches(item.altitudeDepart) &&
-                criteria.elevationRange.matches(item.denivele) &&
-                criteria.lengthRange.matches(item.longueur) &&
-                criteria.maxWaterfallRange.matches(item.cascadeMax) &&
-                criteria.ropeRange.matches(item.cordeMin)
-        }
+        normalizedQuery: String,
+    ): Boolean {
+        return matchesQuery(item, normalizedQuery) &&
+            (!criteria.favoritesOnly || item.isFavorite) &&
+            item.cotationRating.matches(criteria) &&
+            (criteria.interestMin == null || (item.interet ?: Float.NEGATIVE_INFINITY) >= criteria.interestMin) &&
+            (!criteria.regulationOnly || item.hasSpecificRegulation) &&
+            (!criteria.shuttleOnly || item.hasNavette) &&
+            criteria.altitudeRange.matches(item.altitudeDepart) &&
+            criteria.elevationRange.matches(item.denivele) &&
+            criteria.lengthRange.matches(item.longueur) &&
+            criteria.maxWaterfallRange.matches(item.cascadeMax) &&
+            criteria.ropeRange.matches(item.cordeMin)
+    }
+
+    private fun matchesCountry(item: CanyonSearchItem, country: String?): Boolean {
+        return country == null || item.countryTokens.any { it.equals(country, ignoreCase = true) }
+    }
+
+    private fun matchesDepartment(item: CanyonSearchItem, department: String?): Boolean {
+        return department == null || item.departmentTokens.any { it.equals(department, ignoreCase = true) }
     }
 
     private fun sortItems(

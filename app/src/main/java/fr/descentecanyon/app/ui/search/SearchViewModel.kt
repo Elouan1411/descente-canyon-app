@@ -27,6 +27,8 @@ data class SearchUiState(
     val availableCountries: List<String> = emptyList(),
     val availableDepartments: List<String> = emptyList(),
     val activeFilterCount: Int = 0,
+    val totalResultsCount: Int = 0,
+    val isResultListDeferred: Boolean = false,
 )
 
 @HiltViewModel
@@ -56,8 +58,11 @@ class SearchViewModel @Inject constructor(
                     availableCountries = resultSet.availableCountries,
                     availableDepartments = resultSet.availableDepartments,
                     activeFilterCount = criteria.activeFilterCount(),
+                    totalResultsCount = resultSet.totalResultsCount,
+                    isResultListDeferred = resultSet.isResultListDeferred,
                 )
-            }.collect { state ->
+                }
+                .collect { state ->
                 _uiState.value = state
             }
         }

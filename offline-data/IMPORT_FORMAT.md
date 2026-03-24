@@ -41,7 +41,7 @@ Fichiers:
 
 - `canyons`
   - reprend toutes les colonnes existantes de `CanyonEntity`
-  - ajoute deja dans le JSON des champs futurs: `communes`, `bassin`, `coursEau`, `geologie`, `historique`, `remarques`, `hasSpecificRegulation`
+  - ajoute deja dans le JSON des champs futurs: `communes`, `bassin`, `coursEau`, `geologie`, `historique`, `remarques`, `hasSpecificRegulation`, `isForbidden`
 
 - `geo_points`
   - compatible avec `GeoPointEntity`
@@ -69,6 +69,7 @@ Je recommande une migration Room avec:
   - `historique TEXT`
   - `remarques TEXT`
   - `hasSpecificRegulation INTEGER NOT NULL DEFAULT 0`
+  - `isForbidden INTEGER NOT NULL DEFAULT 0`
 
 - nouvelle table `bibliography_entries`
   - `id TEXT PRIMARY KEY`

@@ -14,6 +14,7 @@ import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
@@ -39,6 +40,7 @@ import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -68,10 +70,16 @@ fun SearchScreen(
     viewModel: SearchViewModel = hiltViewModel(),
 ) {
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
+    val listState = rememberLazyListState()
     var showFiltersSheet by rememberSaveable { mutableStateOf(false) }
     var showSortMenu by rememberSaveable { mutableStateOf(false) }
     var showCountryMenu by rememberSaveable { mutableStateOf(false) }
     var showDepartmentMenu by rememberSaveable { mutableStateOf(false) }
+    val filterAndSortCriteria = uiState.criteria.copy(query = "")
+
+    LaunchedEffect(filterAndSortCriteria) {
+        listState.scrollToItem(0)
+    }
 
     Column(
         modifier = modifier
@@ -269,7 +277,7 @@ fun SearchScreen(
         Spacer(modifier = Modifier.height(12.dp))
 
         Text(
-            text = stringResource(R.string.search_results_count, uiState.results.size),
+            text = stringResource(R.string.search_results_count, uiState.totalResultsCount),
             style = MaterialTheme.typography.labelLarge,
             color = MaterialTheme.colorScheme.onSurfaceVariant,
         )
@@ -296,7 +304,22 @@ fun SearchScreen(
             )
         }
 
-        if (!uiState.isLoading && uiState.results.isEmpty()) {
+        if (!uiState.isLoading && uiState.isResultListDeferred) {
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(32.dp),
+                contentAlignment = Alignment.Center,
+            ) {
+                Text(
+                    text = stringResource(R.string.search_broad_results_hint),
+                    style = MaterialTheme.typography.bodyLarge,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                )
+            }
+        }
+
+        if (!uiState.isLoading && !uiState.isResultListDeferred && uiState.results.isEmpty()) {
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -311,22 +334,27 @@ fun SearchScreen(
             }
         }
 
-        LazyColumn(
-            modifier = Modifier.weight(1f),
-            verticalArrangement = Arrangement.spacedBy(8.dp),
-        ) {
-            items(
-                items = uiState.results,
-                key = { it.id },
-            ) { canyon ->
-                CanyonSummaryCard(
-                    canyon = canyon.toSummary(),
-                    onClick = { onCanyonClick(canyon.id) },
-                )
+        if (!uiState.isResultListDeferred) {
+            LazyColumn(
+                state = listState,
+                modifier = Modifier.weight(1f),
+                verticalArrangement = Arrangement.spacedBy(8.dp),
+            ) {
+                items(
+                    items = uiState.results,
+                    key = { it.id },
+                ) { canyon ->
+                    CanyonSummaryCard(
+                        canyon = canyon.toSummary(),
+                        onClick = { onCanyonClick(canyon.id) },
+                    )
+                }
+                item {
+                    Spacer(modifier = Modifier.height(96.dp))
+                }
             }
-            item {
-                Spacer(modifier = Modifier.height(96.dp))
-            }
+        } else {
+            Spacer(modifier = Modifier.weight(1f))
         }
     }
 
@@ -354,10 +382,12 @@ private fun SearchFiltersSheet(
     ModalBottomSheet(
         onDismissRequest = onDismiss,
         sheetState = sheetState,
+        dragHandle = null,
     ) {
         Column(
             modifier = Modifier
                 .fillMaxWidth()
+                .statusBarsPadding()
                 .verticalScroll(rememberScrollState())
                 .padding(horizontal = 20.dp, vertical = 8.dp),
             verticalArrangement = Arrangement.spacedBy(18.dp),
@@ -371,8 +401,13 @@ private fun SearchFiltersSheet(
                     text = stringResource(R.string.search_filters_title),
                     style = MaterialTheme.typography.headlineSmall,
                 )
-                TextButton(onClick = onClearAll) {
-                    Text(stringResource(R.string.search_clear_filters))
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    TextButton(onClick = onClearAll) {
+                        Text(stringResource(R.string.search_clear_filters))
+                    }
+                    TextButton(onClick = onDismiss) {
+                        Text(stringResource(R.string.close))
+                    }
                 }
             }
 

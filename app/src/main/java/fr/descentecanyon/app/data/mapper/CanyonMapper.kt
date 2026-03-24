@@ -109,7 +109,7 @@ fun CanyonEntity.toDomain(): Canyon = Canyon(
     tempsDescente = tempsDescente,
     tempsRetour = tempsRetour,
     navette = navette,
-    interet = interet,
+    interet = interet.normalizedInterest(),
     nbVotes = nbVotes,
     url = url,
     hasSpecificRegulation = hasSpecificRegulation,
@@ -117,36 +117,44 @@ fun CanyonEntity.toDomain(): Canyon = Canyon(
     lastUpdated = lastUpdated,
 )
 
-fun CanyonEntity.toSummary(): CanyonSummary = CanyonSummary(
+fun CanyonEntity.toSummary(
+    isForbidden: Boolean = false,
+): CanyonSummary = CanyonSummary(
     id = id,
     nom = nom,
     pays = pays.normalizeCountryName(),
     departement = departement,
     cotation = cotation,
-    interet = interet,
+    interet = interet.normalizedInterest().takeUnless { isForbidden || this.isForbidden },
     url = url,
     isOffline = isOffline,
+    isForbidden = isForbidden || this.isForbidden,
 )
 
 fun CanyonEntity.toSearchItem(
     representativeLat: Double? = null,
     representativeLng: Double? = null,
+    isForbidden: Boolean = false,
 ): CanyonSearchItem {
     val normalizedCountry = pays.normalizeCountryName()
+    val countryTokens = normalizedCountry.toAdministrativeTokens()
+    val departmentTokens = departement.toAdministrativeTokens()
     return CanyonSearchItem(
         id = id,
         nom = nom,
         nomComplet = nomComplet,
         pays = normalizedCountry,
+        countryTokens = countryTokens,
         region = region,
         departement = departement,
+        departmentTokens = departmentTokens,
         commune = commune.takeIf(String::isNotBlank),
         massif = massif,
         bassin = bassin,
         coursEau = coursEau,
         cotation = cotation,
         cotationRating = CotationRating.parse(cotation),
-        interet = interet,
+        interet = interet.normalizedInterest().takeUnless { isForbidden || this.isForbidden },
         nbVotes = nbVotes,
         altitudeDepart = altitudeDepart,
         denivele = denivele,
@@ -154,6 +162,7 @@ fun CanyonEntity.toSearchItem(
         cascadeMax = cascadeMax,
         cordeMin = cordeMin,
         hasSpecificRegulation = hasSpecificRegulation,
+        isForbidden = isForbidden || this.isForbidden,
         hasNavette = navette.hasUsefulNavette(),
         isFavorite = isFavorite,
         representativeLat = representativeLat,
@@ -163,7 +172,9 @@ fun CanyonEntity.toSearchItem(
             add(nom)
             add(nomComplet)
             add(normalizedCountry)
+            addAll(countryTokens)
             departement?.let(::add)
+            addAll(departmentTokens)
             region?.let(::add)
             commune.takeIf(String::isNotBlank)?.let(::add)
             massif?.let(::add)
@@ -275,6 +286,14 @@ private fun String?.hasUsefulNavette(): Boolean {
     return normalized !in setOf("non", "no", "aucune", "aucun", "0", "-")
 }
 
+private fun String?.toAdministrativeTokens(): List<String> {
+    return this.orEmpty()
+        .split(',', ';')
+        .map(String::trim)
+        .filter(String::isNotBlank)
+        .distinct()
+}
+
 fun PhotoEntity.toDomain(): CanyonPhoto = CanyonPhoto(
     id = id,
     canyonId = canyonId,
@@ -308,6 +327,7 @@ fun ScrapedCanyonDetail.toEntity(): CanyonEntity = CanyonEntity(
     navette = navette,
     interet = interet,
     nbVotes = nbVotes,
+    isForbidden = isForbidden,
     url = url,
     accesAval = accesAval,
     accesAmont = accesAmont,
@@ -355,3 +375,7 @@ fun ScrapedCanyonSummary.toEntity(): CanyonEntity = CanyonEntity(
     cotation = cotation,
     url = url,
 )
+
+private fun Float?.normalizedInterest(): Float? {
+    return this?.takeIf { it in 0f..4f }
+}
