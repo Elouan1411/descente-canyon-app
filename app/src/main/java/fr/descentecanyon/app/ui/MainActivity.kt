@@ -31,6 +31,7 @@ import fr.descentecanyon.app.data.network.ConnectivityObserver
 import fr.descentecanyon.app.domain.usecase.SyncPendingDebitsUseCase
 import fr.descentecanyon.app.ui.navigation.AppNavHost
 import fr.descentecanyon.app.ui.navigation.BottomNavItem
+import fr.descentecanyon.app.ui.navigation.Screen
 import fr.descentecanyon.app.ui.theme.DescenteCanyonTheme
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.launch
@@ -67,7 +68,7 @@ private fun MainScreen() {
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentDestination = navBackStackEntry?.destination
 
-    val showBottomBar = true
+    val showBottomBar = currentDestination?.hasRoute(Screen.PhotoGallery::class) != true
 
     Scaffold(
         contentWindowInsets = WindowInsets(0, 0, 0, 0),

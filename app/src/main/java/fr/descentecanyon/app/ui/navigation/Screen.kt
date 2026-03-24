@@ -29,5 +29,8 @@ sealed interface Screen {
     data class CanyonPointsMap(val canyonId: Int) : Screen
 
     @Serializable
+    data object PhotoGallery : Screen
+
+    @Serializable
     data object OfflineManager : Screen
 }

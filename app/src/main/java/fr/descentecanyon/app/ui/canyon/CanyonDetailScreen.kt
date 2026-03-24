@@ -1,11 +1,9 @@
 package fr.descentecanyon.app.ui.canyon
 
-import android.app.Activity
 import android.content.Intent
 import android.net.Uri
 import android.widget.Toast
 import androidx.compose.animation.AnimatedVisibility
-import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
@@ -25,8 +23,6 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyListState
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
-import androidx.compose.foundation.pager.HorizontalPager
-import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.filled.CloudDone
 import androidx.compose.material.icons.filled.CloudDownload
@@ -53,7 +49,6 @@ import androidx.compose.material3.ModalBottomSheet
 import androidx.compose.material3.PrimaryTabRow
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SmallFloatingActionButton
-import androidx.compose.material3.Surface
 import androidx.compose.material3.Tab
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
@@ -61,7 +56,6 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
@@ -69,22 +63,15 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
-import androidx.compose.ui.graphics.Brush
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
-import androidx.compose.ui.window.DialogWindowProvider
 import androidx.compose.ui.window.DialogProperties
-import androidx.core.view.WindowCompat
-import androidx.core.view.WindowInsetsControllerCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import coil3.compose.AsyncImage
@@ -115,6 +102,7 @@ fun CanyonDetailScreen(
     onBackClick: () -> Unit,
     onReportDebitClick: () -> Unit,
     onShowMapClick: () -> Unit,
+    onOpenPhotoGallery: () -> Unit,
     modifier: Modifier = Modifier,
     viewModel: CanyonDetailViewModel = hiltViewModel(),
 ) {
@@ -274,6 +262,7 @@ fun CanyonDetailScreen(
                     isOnline = uiState.isOnline,
                     downloadingPhotoIds = uiState.downloadingPhotoIds,
                     onDownloadPhoto = viewModel::downloadPhoto,
+                    onOpenPhotoGallery = onOpenPhotoGallery,
                     modifier = Modifier.padding(innerPadding),
                 )
             }
@@ -288,6 +277,7 @@ private fun CanyonDetailContent(
     isOnline: Boolean,
     downloadingPhotoIds: Set<Long>,
     onDownloadPhoto: (Long) -> Unit,
+    onOpenPhotoGallery: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     val canyon = detail.canyon
@@ -326,6 +316,7 @@ private fun CanyonDetailContent(
                 isOfflineSaved = detail.canyon.isOffline,
                 downloadingPhotoIds = downloadingPhotoIds,
                 onDownloadPhoto = onDownloadPhoto,
+                onOpenPhotoGallery = onOpenPhotoGallery,
                 listState = photosListState,
             )
             2 -> DebitsTab(debits = detail.debits, listState = debitsListState)
@@ -625,21 +616,10 @@ private fun PhotosTab(
     isOfflineSaved: Boolean,
     downloadingPhotoIds: Set<Long>,
     onDownloadPhoto: (Long) -> Unit,
+    onOpenPhotoGallery: () -> Unit,
     listState: LazyListState,
     modifier: Modifier = Modifier,
 ) {
-    var selectedPhotoIndex by rememberSaveable { mutableStateOf<Int?>(null) }
-
-    selectedPhotoIndex?.let { startIndex ->
-        PhotoGalleryDialog(
-            photos = photos,
-            initialIndex = startIndex,
-            downloadingPhotoIds = downloadingPhotoIds,
-            onDownloadPhoto = onDownloadPhoto,
-            onDismiss = { selectedPhotoIndex = null },
-        )
-    }
-
     if (photos.isEmpty()) {
         Box(
             modifier = modifier
@@ -668,7 +648,10 @@ private fun PhotosTab(
             ) { photo ->
                 PhotoCard(
                     photo = photo,
-                    onOpen = { selectedPhotoIndex = photos.indexOf(photo) },
+                    onOpen = {
+                        PhotoGallerySession.open(photos, photos.indexOf(photo))
+                        onOpenPhotoGallery()
+                    },
                 )
             }
             item {
@@ -721,190 +704,6 @@ private fun ProgressivePhoto(
             )
         }
     }
-}
-
-@OptIn(ExperimentalFoundationApi::class)
-@Composable
-private fun PhotoGalleryDialog(
-    photos: List<CanyonPhoto>,
-    initialIndex: Int,
-    downloadingPhotoIds: Set<Long>,
-    onDownloadPhoto: (Long) -> Unit,
-    onDismiss: () -> Unit,
-) {
-    var showOverlay by rememberSaveable { mutableStateOf(true) }
-    val pagerState = rememberPagerState(
-        initialPage = initialIndex.coerceIn(0, (photos.size - 1).coerceAtLeast(0)),
-        pageCount = { photos.size },
-    )
-    val context = LocalContext.current
-    val view = LocalView.current
-
-    DisposableEffect(context, view) {
-        val dialogWindow = (view.parent as? DialogWindowProvider)?.window
-        val activity = context as? Activity
-        val window = dialogWindow ?: activity?.window
-        val previousStatusBarColor = window?.statusBarColor
-        val previousNavBarColor = window?.navigationBarColor
-        val insetsController = window?.let { WindowCompat.getInsetsController(it, it.decorView) }
-        val previousLightStatus = insetsController?.isAppearanceLightStatusBars
-        val previousLightNav = insetsController?.isAppearanceLightNavigationBars
-
-        if (window != null && insetsController != null) {
-            WindowCompat.setDecorFitsSystemWindows(window, false)
-            window.statusBarColor = android.graphics.Color.BLACK
-            window.navigationBarColor = android.graphics.Color.BLACK
-            insetsController.isAppearanceLightStatusBars = false
-            insetsController.isAppearanceLightNavigationBars = false
-            insetsController.hide(WindowInsetsCompat.Type.systemBars())
-            insetsController.systemBarsBehavior = WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
-        }
-
-        onDispose {
-            if (window != null && insetsController != null) {
-                previousStatusBarColor?.let { window.statusBarColor = it }
-                previousNavBarColor?.let { window.navigationBarColor = it }
-                previousLightStatus?.let { insetsController.isAppearanceLightStatusBars = it }
-                previousLightNav?.let { insetsController.isAppearanceLightNavigationBars = it }
-                insetsController.show(WindowInsetsCompat.Type.systemBars())
-            }
-        }
-    }
-
-    Dialog(
-        onDismissRequest = onDismiss,
-        properties = DialogProperties(
-            usePlatformDefaultWidth = false,
-            decorFitsSystemWindows = false,
-        ),
-    ) {
-        Surface(
-            modifier = Modifier.fillMaxSize(),
-            color = Color.Black,
-        ) {
-            HorizontalPager(
-                state = pagerState,
-                modifier = Modifier.fillMaxSize(),
-            ) { page ->
-                val photo = photos[page]
-                Box(
-                    modifier = Modifier
-                        .fillMaxSize()
-                        .clickable { showOverlay = !showOverlay },
-                ) {
-                    FullscreenPhoto(
-                        photo = photo,
-                        modifier = Modifier.fillMaxSize(),
-                        contentScale = ContentScale.Fit,
-                    )
-
-                    AnimatedVisibility(
-                        visible = showOverlay,
-                        modifier = Modifier.align(Alignment.TopCenter),
-                    ) {
-                        Row(
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .background(
-                                    Brush.verticalGradient(
-                                        listOf(Color.Black.copy(alpha = 0.65f), Color.Transparent),
-                                    )
-                                )
-                                .statusBarsPadding()
-                                .padding(horizontal = 16.dp, vertical = 12.dp),
-                            horizontalArrangement = Arrangement.SpaceBetween,
-                            verticalAlignment = Alignment.CenterVertically,
-                        ) {
-                            Text(
-                                text = "${page + 1}/${photos.size}",
-                                color = Color.White,
-                                style = MaterialTheme.typography.titleMedium,
-                            )
-                            Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                                if (photo.localPath != null) {
-                                    SmallMetaBadge(text = stringResource(R.string.photo_saved_offline))
-                                } else {
-                                    IconButton(
-                                        onClick = { onDownloadPhoto(photo.id) },
-                                        enabled = photo.id != 0L && !downloadingPhotoIds.contains(photo.id),
-                                    ) {
-                                        if (downloadingPhotoIds.contains(photo.id)) {
-                                            CircularProgressIndicator(
-                                                modifier = Modifier.size(18.dp),
-                                                strokeWidth = 2.dp,
-                                                color = Color.White,
-                                            )
-                                        } else {
-                                            Icon(
-                                                imageVector = Icons.Default.CloudDownload,
-                                                contentDescription = stringResource(R.string.photo_download_action),
-                                                tint = Color.White,
-                                            )
-                                        }
-                                    }
-                                }
-                                IconButton(onClick = onDismiss) {
-                                    Icon(
-                                        imageVector = Icons.AutoMirrored.Filled.ArrowBack,
-                                        contentDescription = stringResource(R.string.back),
-                                        tint = Color.White,
-                                    )
-                                }
-                            }
-                        }
-                    }
-
-                    AnimatedVisibility(
-                        visible = showOverlay,
-                        modifier = Modifier.align(Alignment.BottomCenter),
-                    ) {
-                        Column(
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .background(
-                                    Brush.verticalGradient(
-                                        listOf(Color.Transparent, Color.Black.copy(alpha = 0.78f)),
-                                    )
-                                )
-                                .navigationBarsPadding()
-                                .padding(horizontal = 16.dp, vertical = 18.dp),
-                            verticalArrangement = Arrangement.spacedBy(6.dp),
-                        ) {
-                            photo.description?.takeIf { it.isNotBlank() }?.let {
-                                Text(
-                                    text = it,
-                                    color = Color.White,
-                                    style = MaterialTheme.typography.bodyLarge,
-                                    fontWeight = FontWeight.Medium,
-                                )
-                            }
-                            photo.auteur?.takeIf { it.isNotBlank() }?.let {
-                                Text(
-                                    text = it,
-                                    color = Color.White.copy(alpha = 0.82f),
-                                    style = MaterialTheme.typography.bodySmall,
-                                )
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
-@Composable
-private fun FullscreenPhoto(
-    photo: CanyonPhoto,
-    modifier: Modifier = Modifier,
-    contentScale: ContentScale,
-) {
-    AsyncImage(
-        model = photo.localPath ?: photo.url,
-        contentDescription = photo.description,
-        modifier = modifier.background(Color.Black),
-        contentScale = contentScale,
-    )
 }
 
 @Composable
