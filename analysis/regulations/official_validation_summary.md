@@ -81,7 +81,9 @@ Procéder en **lots thématiques ou géographiques** (ex. `Lozère`, `Var`, `Alp
 - Site officiel accessible : `https://www.isere.gouv.fr/`
 - Recherche interne testée : `https://www.isere.gouv.fr/contenu/action?SearchText=canyoning`
 - Résultat observé : **8 résultats**, dont plusieurs PDF de **Recueil des actes administratifs (RAA)** mentionnant le mot `canyoning`.
-- Interprétation : il existe de la matière officielle exploitable dans les publications Isère, mais une lecture PDF ciblée est nécessaire pour déterminer si ces résultats correspondent à de véritables réglementations canyoning encore en vigueur.
+- Contrôle technique complémentaire effectué : téléchargement et tentative d'extraction de texte sur plusieurs RAA (`2015`, `2018`, `2022`, `2023`).
+- Résultat de ce contrôle : aucune occurrence directement exploitable de `canyon` / `canyoning` n'a pu être retrouvée automatiquement dans le texte brut extrait des PDF.
+- Interprétation : les résultats du moteur interne peuvent provenir d'un index OCR, d'annexes, ou de contenus non récupérables proprement via extraction texte simple ; une lecture humaine PDF reste nécessaire pour conclure.
 - Conclusion : **lot prometteur pour détection de textes manquants ou mis à jour**, mais pas de confirmation ferme ajoutée dans cette passe.
 
 ### Lot géographique examiné : Ain

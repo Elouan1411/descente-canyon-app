@@ -48,6 +48,10 @@ Ces documents ressortent sur la recherche officielle `https://www.isere.gouv.fr/
 
 Ces documents sont enregistrés ici comme **sources potentielles** uniquement. Tant qu'un article ou arrêté canyoning précis n'a pas été extrait, ils ne doivent pas être intégrés au dataset.
 
+### Limite technique observée sur les RAA Isère
+- Une tentative d'extraction automatique du texte de plusieurs RAA (`2015`, `2018`, `2022`, `2023`) n'a pas permis de retrouver directement les mots `canyon` ou `canyoning` dans le texte brut extrait.
+- Conséquence : ces PDF restent des **candidats faibles** tant qu'une lecture humaine ou un outil OCR plus robuste n'a pas confirmé le texte exact.
+
 ## Pourquoi il n'y a pas encore d'autres candidats ici
 - la recherche officielle large (communes, préfectures, régions, parcs) déclenche rapidement des protections anti-bot côté moteurs
 - pour les textes potentiellement nouveaux, il faut confirmer qu'ils concernent bien le canyonisme et pas un autre usage du site
