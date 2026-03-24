@@ -33,6 +33,12 @@ def write_json(path: Path, data: Any) -> None:
     path.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
 
 
+def normalized_path(value: str | Path | None) -> Path | None:
+    if value is None:
+        return None
+    return Path(str(value).replace("\\", "/"))
+
+
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description="Batch canyon-by-canyon resumable catchment computation across the whole base."
@@ -95,15 +101,16 @@ def source_is_available(source: dict[str, Any]) -> bool:
     mode = source.get("mode")
     if mode == "derive_local_hydrology":
         dem = source.get("dem")
-        return bool(dem) and Path(dem).exists()
+        dem_path = normalized_path(dem)
+        return dem_path is not None and dem_path.exists()
     if mode == "precomputed_hydrology":
         required = [source.get("upaRaster")]
         optional = [source.get("flowdirRaster"), source.get("elevationRaster")]
         if not all(required):
             return False
-        if not all(Path(path).exists() for path in required if path):
+        if not all(normalized_path(path).exists() for path in required if path):
             return False
-        if not all(Path(path).exists() for path in optional if path):
+        if not all(normalized_path(path).exists() for path in optional if path):
             return False
         return True
     return False
@@ -275,7 +282,7 @@ def ensure_local_hydrology(
 
     source_dir = output_dir / "sources" / source["name"]
     dem_path = materialize_dem_if_needed(
-        Path(source["dem"]).resolve(),
+        normalized_path(source["dem"]).resolve(),
         source_dir,
         gdal_translate,
         source.get("srs", DEFAULT_LAMBERT93_PROJ4),
@@ -493,9 +500,9 @@ def main() -> int:
                 )
             elif source["mode"] == "precomputed_hydrology":
                 raster_paths = {
-                    "upa": Path(source["upaRaster"]).resolve(),
-                    "flowdir": Path(source["flowdirRaster"]).resolve() if source.get("flowdirRaster") else None,
-                    "elevation": Path(source["elevationRaster"]).resolve() if source.get("elevationRaster") else None,
+                    "upa": normalized_path(source["upaRaster"]).resolve(),
+                    "flowdir": normalized_path(source["flowdirRaster"]).resolve() if source.get("flowdirRaster") else None,
+                    "elevation": normalized_path(source["elevationRaster"]).resolve() if source.get("elevationRaster") else None,
                 }
             else:
                 raise SystemExit(f"Unsupported source mode: {source['mode']}")
