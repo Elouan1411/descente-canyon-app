@@ -1,5 +1,6 @@
 package fr.descentecanyon.app.ui.canyon
 
+import android.app.Activity
 import android.content.Intent
 import android.net.Uri
 import android.widget.Toast
@@ -15,10 +16,10 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.matchParentSize
 import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyListState
@@ -60,6 +61,7 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
@@ -78,6 +80,8 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
+import androidx.core.view.WindowCompat
+import androidx.core.view.WindowInsetsControllerCompat
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import coil3.compose.AsyncImage
@@ -702,14 +706,14 @@ private fun ProgressivePhoto(
         AsyncImage(
             model = photo.localPath ?: photo.thumbnailUrl ?: photo.url,
             contentDescription = photo.description,
-            modifier = Modifier.matchParentSize(),
+            modifier = Modifier.fillMaxSize(),
             contentScale = contentScale,
         )
         if (photo.localPath == null) {
             AsyncImage(
                 model = photo.url,
                 contentDescription = photo.description,
-                modifier = Modifier.matchParentSize(),
+                modifier = Modifier.fillMaxSize(),
                 contentScale = contentScale,
             )
         }
@@ -730,6 +734,33 @@ private fun PhotoGalleryDialog(
         initialPage = initialIndex.coerceIn(0, (photos.size - 1).coerceAtLeast(0)),
         pageCount = { photos.size },
     )
+    val context = LocalContext.current
+
+    DisposableEffect(context) {
+        val activity = context as? Activity
+        val window = activity?.window
+        val previousStatusBarColor = window?.statusBarColor
+        val previousNavBarColor = window?.navigationBarColor
+        val insetsController = window?.let { WindowCompat.getInsetsController(it, it.decorView) }
+        val previousLightStatus = insetsController?.isAppearanceLightStatusBars
+        val previousLightNav = insetsController?.isAppearanceLightNavigationBars
+
+        if (window != null && insetsController != null) {
+            window.statusBarColor = android.graphics.Color.BLACK
+            window.navigationBarColor = android.graphics.Color.BLACK
+            insetsController.isAppearanceLightStatusBars = false
+            insetsController.isAppearanceLightNavigationBars = false
+        }
+
+        onDispose {
+            if (window != null && insetsController != null) {
+                previousStatusBarColor?.let { window.statusBarColor = it }
+                previousNavBarColor?.let { window.navigationBarColor = it }
+                previousLightStatus?.let { insetsController.isAppearanceLightStatusBars = it }
+                previousLightNav?.let { insetsController.isAppearanceLightNavigationBars = it }
+            }
+        }
+    }
 
     Dialog(
         onDismissRequest = onDismiss,
@@ -742,108 +773,108 @@ private fun PhotoGalleryDialog(
             modifier = Modifier.fillMaxSize(),
             color = Color.Black,
         ) {
-            BoxWithConstraints(modifier = Modifier.fillMaxSize()) {
-                HorizontalPager(
-                    state = pagerState,
-                    modifier = Modifier.fillMaxSize(),
-                ) { page ->
-                    val photo = photos[page]
-                    Box(
-                        modifier = Modifier
-                            .fillMaxSize()
-                            .clickable { showOverlay = !showOverlay },
-                    ) {
-                        ProgressivePhoto(
-                            photo = photo,
-                            modifier = Modifier.fillMaxSize(),
-                            contentScale = ContentScale.Fit,
-                        )
+            HorizontalPager(
+                state = pagerState,
+                modifier = Modifier.fillMaxSize(),
+            ) { page ->
+                val photo = photos[page]
+                Box(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .clickable { showOverlay = !showOverlay },
+                ) {
+                    FullscreenPhoto(
+                        photo = photo,
+                        modifier = Modifier.fillMaxSize(),
+                        contentScale = ContentScale.Fit,
+                    )
 
-                        AnimatedVisibility(
-                            visible = showOverlay,
-                            modifier = Modifier.align(Alignment.TopCenter),
-                        ) {
-                            Row(
-                                modifier = Modifier
-                                    .fillMaxWidth()
-                                    .background(
-                                        Brush.verticalGradient(
-                                            listOf(Color.Black.copy(alpha = 0.65f), Color.Transparent),
-                                        )
+                    AnimatedVisibility(
+                        visible = showOverlay,
+                        modifier = Modifier.align(Alignment.TopCenter),
+                    ) {
+                        Row(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .background(
+                                    Brush.verticalGradient(
+                                        listOf(Color.Black.copy(alpha = 0.65f), Color.Transparent),
                                     )
-                                    .padding(horizontal = 16.dp, vertical = 20.dp),
-                                horizontalArrangement = Arrangement.SpaceBetween,
-                                verticalAlignment = Alignment.CenterVertically,
-                            ) {
-                                Text(
-                                    text = "${page + 1}/${photos.size}",
-                                    color = Color.White,
-                                    style = MaterialTheme.typography.titleMedium,
                                 )
-                                Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                                    if (photo.localPath != null) {
-                                        SmallMetaBadge(text = stringResource(R.string.photo_saved_offline))
-                                    } else {
-                                        IconButton(
-                                            onClick = { onDownloadPhoto(photo.id) },
-                                            enabled = photo.id != 0L && !downloadingPhotoIds.contains(photo.id),
-                                        ) {
-                                            if (downloadingPhotoIds.contains(photo.id)) {
-                                                CircularProgressIndicator(
-                                                    modifier = Modifier.size(18.dp),
-                                                    strokeWidth = 2.dp,
-                                                    color = Color.White,
-                                                )
-                                            } else {
-                                                Icon(
-                                                    imageVector = Icons.Default.CloudDownload,
-                                                    contentDescription = stringResource(R.string.photo_download_action),
-                                                    tint = Color.White,
-                                                )
-                                            }
+                                .statusBarsPadding()
+                                .padding(horizontal = 16.dp, vertical = 12.dp),
+                            horizontalArrangement = Arrangement.SpaceBetween,
+                            verticalAlignment = Alignment.CenterVertically,
+                        ) {
+                            Text(
+                                text = "${page + 1}/${photos.size}",
+                                color = Color.White,
+                                style = MaterialTheme.typography.titleMedium,
+                            )
+                            Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                                if (photo.localPath != null) {
+                                    SmallMetaBadge(text = stringResource(R.string.photo_saved_offline))
+                                } else {
+                                    IconButton(
+                                        onClick = { onDownloadPhoto(photo.id) },
+                                        enabled = photo.id != 0L && !downloadingPhotoIds.contains(photo.id),
+                                    ) {
+                                        if (downloadingPhotoIds.contains(photo.id)) {
+                                            CircularProgressIndicator(
+                                                modifier = Modifier.size(18.dp),
+                                                strokeWidth = 2.dp,
+                                                color = Color.White,
+                                            )
+                                        } else {
+                                            Icon(
+                                                imageVector = Icons.Default.CloudDownload,
+                                                contentDescription = stringResource(R.string.photo_download_action),
+                                                tint = Color.White,
+                                            )
                                         }
                                     }
-                                    IconButton(onClick = onDismiss) {
-                                        Icon(
-                                            imageVector = Icons.AutoMirrored.Filled.ArrowBack,
-                                            contentDescription = stringResource(R.string.back),
-                                            tint = Color.White,
-                                        )
-                                    }
+                                }
+                                IconButton(onClick = onDismiss) {
+                                    Icon(
+                                        imageVector = Icons.AutoMirrored.Filled.ArrowBack,
+                                        contentDescription = stringResource(R.string.back),
+                                        tint = Color.White,
+                                    )
                                 }
                             }
                         }
+                    }
 
-                        AnimatedVisibility(
-                            visible = showOverlay,
-                            modifier = Modifier.align(Alignment.BottomCenter),
+                    AnimatedVisibility(
+                        visible = showOverlay,
+                        modifier = Modifier.align(Alignment.BottomCenter),
+                    ) {
+                        Column(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .background(
+                                    Brush.verticalGradient(
+                                        listOf(Color.Transparent, Color.Black.copy(alpha = 0.78f)),
+                                    )
+                                )
+                                .navigationBarsPadding()
+                                .padding(horizontal = 16.dp, vertical = 18.dp),
+                            verticalArrangement = Arrangement.spacedBy(6.dp),
                         ) {
-                            Column(
-                                modifier = Modifier
-                                    .fillMaxWidth()
-                                    .background(
-                                        Brush.verticalGradient(
-                                            listOf(Color.Transparent, Color.Black.copy(alpha = 0.78f)),
-                                        )
-                                    )
-                                    .padding(horizontal = 16.dp, vertical = 18.dp),
-                                verticalArrangement = Arrangement.spacedBy(6.dp),
-                            ) {
-                                photo.description?.takeIf { it.isNotBlank() }?.let {
-                                    Text(
-                                        text = it,
-                                        color = Color.White,
-                                        style = MaterialTheme.typography.bodyLarge,
-                                        fontWeight = FontWeight.Medium,
-                                    )
-                                }
-                                photo.auteur?.takeIf { it.isNotBlank() }?.let {
-                                    Text(
-                                        text = it,
-                                        color = Color.White.copy(alpha = 0.82f),
-                                        style = MaterialTheme.typography.bodySmall,
-                                    )
-                                }
+                            photo.description?.takeIf { it.isNotBlank() }?.let {
+                                Text(
+                                    text = it,
+                                    color = Color.White,
+                                    style = MaterialTheme.typography.bodyLarge,
+                                    fontWeight = FontWeight.Medium,
+                                )
+                            }
+                            photo.auteur?.takeIf { it.isNotBlank() }?.let {
+                                Text(
+                                    text = it,
+                                    color = Color.White.copy(alpha = 0.82f),
+                                    style = MaterialTheme.typography.bodySmall,
+                                )
                             }
                         }
                     }
@@ -851,6 +882,20 @@ private fun PhotoGalleryDialog(
             }
         }
     }
+}
+
+@Composable
+private fun FullscreenPhoto(
+    photo: CanyonPhoto,
+    modifier: Modifier = Modifier,
+    contentScale: ContentScale,
+) {
+    AsyncImage(
+        model = photo.localPath ?: photo.url,
+        contentDescription = photo.description,
+        modifier = modifier.background(Color.Black),
+        contentScale = contentScale,
+    )
 }
 
 @Composable
