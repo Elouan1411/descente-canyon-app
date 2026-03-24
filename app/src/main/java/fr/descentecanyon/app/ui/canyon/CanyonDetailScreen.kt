@@ -4,6 +4,7 @@ import android.content.Intent
 import android.net.Uri
 import android.widget.Toast
 import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
@@ -14,6 +15,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.matchParentSize
 import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -22,6 +24,8 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyListState
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
+import androidx.compose.foundation.pager.HorizontalPager
+import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.filled.CloudDone
 import androidx.compose.material.icons.filled.CloudDownload
@@ -48,6 +52,7 @@ import androidx.compose.material3.ModalBottomSheet
 import androidx.compose.material3.PrimaryTabRow
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SmallFloatingActionButton
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Tab
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
@@ -62,6 +67,8 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.Modifier
@@ -614,21 +621,16 @@ private fun PhotosTab(
     listState: LazyListState,
     modifier: Modifier = Modifier,
 ) {
-    var selectedPhoto by rememberSaveable { mutableStateOf<CanyonPhoto?>(null) }
+    var selectedPhotoIndex by rememberSaveable { mutableStateOf<Int?>(null) }
 
-    selectedPhoto?.let { photo ->
-        Dialog(onDismissRequest = { selectedPhoto = null }) {
-            Card(modifier = Modifier.fillMaxWidth()) {
-                AsyncImage(
-                    model = photo.localPath ?: photo.url,
-                    contentDescription = photo.description,
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .height(420.dp),
-                    contentScale = ContentScale.Fit,
-                )
-            }
-        }
+    selectedPhotoIndex?.let { startIndex ->
+        PhotoGalleryDialog(
+            photos = photos,
+            initialIndex = startIndex,
+            downloadingPhotoIds = downloadingPhotoIds,
+            onDownloadPhoto = onDownloadPhoto,
+            onDismiss = { selectedPhotoIndex = null },
+        )
     }
 
     if (photos.isEmpty()) {
@@ -659,9 +661,7 @@ private fun PhotosTab(
             ) { photo ->
                 PhotoCard(
                     photo = photo,
-                    isDownloading = downloadingPhotoIds.contains(photo.id),
-                    onDownload = { onDownloadPhoto(photo.id) },
-                    onOpen = { selectedPhoto = photo },
+                    onOpen = { selectedPhotoIndex = photos.indexOf(photo) },
                 )
             }
             item {
@@ -674,8 +674,6 @@ private fun PhotosTab(
 @Composable
 private fun PhotoCard(
     photo: CanyonPhoto,
-    isDownloading: Boolean,
-    onDownload: () -> Unit,
     onOpen: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
@@ -684,53 +682,171 @@ private fun PhotoCard(
         modifier = modifier.fillMaxWidth(),
         elevation = CardDefaults.cardElevation(defaultElevation = 1.dp),
     ) {
-        Column {
+        ProgressivePhoto(
+            photo = photo,
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(220.dp),
+            contentScale = ContentScale.Crop,
+        )
+    }
+}
+
+@Composable
+private fun ProgressivePhoto(
+    photo: CanyonPhoto,
+    modifier: Modifier = Modifier,
+    contentScale: ContentScale,
+) {
+    Box(modifier = modifier.background(MaterialTheme.colorScheme.surface)) {
+        AsyncImage(
+            model = photo.localPath ?: photo.thumbnailUrl ?: photo.url,
+            contentDescription = photo.description,
+            modifier = Modifier.matchParentSize(),
+            contentScale = contentScale,
+        )
+        if (photo.localPath == null) {
             AsyncImage(
-                model = photo.localPath ?: photo.thumbnailUrl ?: photo.url,
+                model = photo.url,
                 contentDescription = photo.description,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(220.dp),
-                contentScale = ContentScale.Crop,
+                modifier = Modifier.matchParentSize(),
+                contentScale = contentScale,
             )
-            Column(modifier = Modifier.padding(12.dp)) {
-                Row(
-                    modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.SpaceBetween,
-                    verticalAlignment = Alignment.CenterVertically,
-                ) {
-                    if (photo.localPath != null) {
-                        SmallMetaBadge(text = stringResource(R.string.photo_saved_offline))
-                    }
-                    if (photo.localPath == null) {
-                        TextButton(
-                            onClick = onDownload,
-                            enabled = photo.id != 0L && !isDownloading,
+        }
+    }
+}
+
+@OptIn(ExperimentalFoundationApi::class)
+@Composable
+private fun PhotoGalleryDialog(
+    photos: List<CanyonPhoto>,
+    initialIndex: Int,
+    downloadingPhotoIds: Set<Long>,
+    onDownloadPhoto: (Long) -> Unit,
+    onDismiss: () -> Unit,
+) {
+    var showOverlay by rememberSaveable { mutableStateOf(true) }
+    val pagerState = rememberPagerState(
+        initialPage = initialIndex.coerceIn(0, (photos.size - 1).coerceAtLeast(0)),
+        pageCount = { photos.size },
+    )
+
+    Dialog(
+        onDismissRequest = onDismiss,
+        properties = DialogProperties(
+            usePlatformDefaultWidth = false,
+            decorFitsSystemWindows = false,
+        ),
+    ) {
+        Surface(
+            modifier = Modifier.fillMaxSize(),
+            color = Color.Black,
+        ) {
+            BoxWithConstraints(modifier = Modifier.fillMaxSize()) {
+                HorizontalPager(
+                    state = pagerState,
+                    modifier = Modifier.fillMaxSize(),
+                ) { page ->
+                    val photo = photos[page]
+                    Box(
+                        modifier = Modifier
+                            .fillMaxSize()
+                            .clickable { showOverlay = !showOverlay },
+                    ) {
+                        ProgressivePhoto(
+                            photo = photo,
+                            modifier = Modifier.fillMaxSize(),
+                            contentScale = ContentScale.Fit,
+                        )
+
+                        AnimatedVisibility(
+                            visible = showOverlay,
+                            modifier = Modifier.align(Alignment.TopCenter),
                         ) {
-                            Text(
-                                text = if (isDownloading) {
-                                    stringResource(R.string.downloading_offline)
-                                } else {
-                                    stringResource(R.string.photo_download_action)
+                            Row(
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .background(
+                                        Brush.verticalGradient(
+                                            listOf(Color.Black.copy(alpha = 0.65f), Color.Transparent),
+                                        )
+                                    )
+                                    .padding(horizontal = 16.dp, vertical = 20.dp),
+                                horizontalArrangement = Arrangement.SpaceBetween,
+                                verticalAlignment = Alignment.CenterVertically,
+                            ) {
+                                Text(
+                                    text = "${page + 1}/${photos.size}",
+                                    color = Color.White,
+                                    style = MaterialTheme.typography.titleMedium,
+                                )
+                                Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                                    if (photo.localPath != null) {
+                                        SmallMetaBadge(text = stringResource(R.string.photo_saved_offline))
+                                    } else {
+                                        IconButton(
+                                            onClick = { onDownloadPhoto(photo.id) },
+                                            enabled = photo.id != 0L && !downloadingPhotoIds.contains(photo.id),
+                                        ) {
+                                            if (downloadingPhotoIds.contains(photo.id)) {
+                                                CircularProgressIndicator(
+                                                    modifier = Modifier.size(18.dp),
+                                                    strokeWidth = 2.dp,
+                                                    color = Color.White,
+                                                )
+                                            } else {
+                                                Icon(
+                                                    imageVector = Icons.Default.CloudDownload,
+                                                    contentDescription = stringResource(R.string.photo_download_action),
+                                                    tint = Color.White,
+                                                )
+                                            }
+                                        }
+                                    }
+                                    IconButton(onClick = onDismiss) {
+                                        Icon(
+                                            imageVector = Icons.AutoMirrored.Filled.ArrowBack,
+                                            contentDescription = stringResource(R.string.back),
+                                            tint = Color.White,
+                                        )
+                                    }
                                 }
-                            )
+                            }
+                        }
+
+                        AnimatedVisibility(
+                            visible = showOverlay,
+                            modifier = Modifier.align(Alignment.BottomCenter),
+                        ) {
+                            Column(
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .background(
+                                        Brush.verticalGradient(
+                                            listOf(Color.Transparent, Color.Black.copy(alpha = 0.78f)),
+                                        )
+                                    )
+                                    .padding(horizontal = 16.dp, vertical = 18.dp),
+                                verticalArrangement = Arrangement.spacedBy(6.dp),
+                            ) {
+                                photo.description?.takeIf { it.isNotBlank() }?.let {
+                                    Text(
+                                        text = it,
+                                        color = Color.White,
+                                        style = MaterialTheme.typography.bodyLarge,
+                                        fontWeight = FontWeight.Medium,
+                                    )
+                                }
+                                photo.auteur?.takeIf { it.isNotBlank() }?.let {
+                                    Text(
+                                        text = it,
+                                        color = Color.White.copy(alpha = 0.82f),
+                                        style = MaterialTheme.typography.bodySmall,
+                                    )
+                                }
+                            }
                         }
                     }
-                }
-                photo.description?.takeIf { it.isNotBlank() }?.let { description ->
-                    Text(
-                        text = description,
-                        style = MaterialTheme.typography.bodyMedium,
-                        fontWeight = FontWeight.Medium,
-                    )
-                }
-                photo.auteur?.takeIf { it.isNotBlank() }?.let { auteur ->
-                    Text(
-                        text = auteur,
-                        style = MaterialTheme.typography.bodySmall,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant,
-                        modifier = Modifier.padding(top = 4.dp),
-                    )
                 }
             }
         }
