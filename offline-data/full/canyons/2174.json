@@ -1,0 +1,159 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:44:24.330480+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2174,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2174/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2174/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2174/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2174/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/2174/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 2174,
+    "identity": {
+      "nom": "Fouge",
+      "nomComplet": "La Fouge",
+      "prefixeNom": "La",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2174/Fouge.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Ain",
+      "communePrincipale": "Cerdon",
+      "communes": [
+        "Cerdon"
+      ],
+      "massif": "Bugey",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "",
+      "interet": 655.0,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": 655,
+      "deniveleM": 170,
+      "longueurM": 700,
+      "cascadeMaxM": null,
+      "cordeMiniM": null,
+      "navette": null
+    },
+    "timings": {
+      "approche": null,
+      "descente": null,
+      "retour": null
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2174,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.05389,
+        "longitude": 5.491667,
+        "label": null
+      },
+      {
+        "canyonId": 2174,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.058887,
+        "longitude": 5.474722,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 46.05389,
+      "longitude": 5.491667,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_e9fa736554a413b8",
+          "kind": "MAP",
+          "title": "3230 O",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 495,
+          "status": "Actif",
+          "action": "Interdit",
+          "title": "Arrêté municipal (Cerdon, Boyeux-Saint-Jérôme) - 10 jan 2022",
+          "summary": "Suite à des \"pluies torrentielles\" ayant entrainé \"glissements de terrain et éboulements rocheux\", l'accès aux cascades de la Fouge est interdit jusqu'à nouvel ordre.",
+          "remark": "Arrêtés d'interdiction pris par les communes de Boyeux-Saint-Jérôme (16/02/2022) et Cerdon (10/01/2022).",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nArrêté municipal (Cerdon) n°A2022_01_10_01 du 10 janvier 2022",
+          "effectiveDate": "10 jan 2022",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/495/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté municipal (Cerdon) n°A2022_01_10_01 du 10 janvier 2022",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem495_pj1.pdf"
+            }
+          ]
+        },
+        {
+          "id": 254,
+          "status": "Actif",
+          "action": "Autorise",
+          "title": "Arrêté - 29 juin 2011",
+          "summary": "Le tribunal administratif, saisi par les fédérations (FFME, FFS, FFCAM), a annulé l'arrêté municipal qui interdisait la descente de la Fouge depuis juillet 2009.",
+          "remark": null,
+          "details": "Jugement du tribunal administratif du 29 juin 2011",
+          "effectiveDate": "29 juin 2011",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/254/legislation.html",
+          "attachments": [
+            {
+              "label": "Jugement du tribunal administratif du 29 juin 2011",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem254_pj1.pdf"
+            }
+          ]
+        },
+        {
+          "id": 174,
+          "status": "Abrogé",
+          "action": "Interdit",
+          "title": "Arrêté municipal (Cerdon) - 16 mars 2009",
+          "summary": "Toutes les activités sportives et de loisirs (canyon, mais aussi randonnée, chasse, pêche, etc...) sont interdites sur le site de la Fouge et de ses abords.",
+          "remark": "Suite à un accident mortel largement médiatisé, la sénatrice-maire de Cerdon s'est empressée de prendre cet arrêté, rappelant le fait que quelques années plus tôt, un précédent arrêté (illégal !) s'était vu retoqué par la préfecture. Naturellement, on ne peut que contester la justification invoquée : le canyon de la Fouge ne présente pas de risques supplémentaires à ceux présents naturellement dans d'autres canyons d'une difficulté comparable, le parcours de la Fouge n'ayant d'ailleurs jamais eu la réputation d'un parcours extrême.\n\nL'AGESSEC (association regroupant la FFCAM, la FFME et la FFS) s'est saisie de ce dossier et va travailler à la réouverture de ce canyon.",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nArrêté municipal de Cerdon du 16 mars 2009",
+          "effectiveDate": "16 mars 2009",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/174/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté municipal de Cerdon du 16 mars 2009",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/arrete174.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

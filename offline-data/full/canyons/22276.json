@@ -1,0 +1,144 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:28.099270+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22276,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22276/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22276/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22276/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22276/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/22276/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 22276,
+    "identity": {
+      "nom": "Frio",
+      "nomComplet": "Ribeiro Frio",
+      "prefixeNom": "Ribeiro",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22276/Frio.html"
+    },
+    "location": {
+      "pays": "Portugal",
+      "region": "Madeira",
+      "departement": "Machico Municipality",
+      "communePrincipale": "Porto da Cruz",
+      "communes": [
+        "Porto da Cruz"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a3II",
+      "interet": 2.5,
+      "nbVotes": 12
+    },
+    "metrics": {
+      "altitudeDepartM": 1130,
+      "deniveleM": 250,
+      "longueurM": 1500,
+      "cascadeMaxM": 50,
+      "cordeMiniM": 45,
+      "navette": "1.5km"
+    },
+    "timings": {
+      "approche": "3min",
+      "descente": "2h30",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "La première voiture sera laissé en montant de Faial à Paso da Poisso (ER 103). Vous trouverez sur votre droite après le village de Ribeiro Frio une maison forestière avec une pisciculture (à voir), continuer encore et quelques virages après vous trouverez une route fermée avec une chaine qui traverse la vallée et amène à de jolies maisons visibles de l'autre coté de la vallée. Garer le véhicule sur la ER103, en face du début de cette route, sur une aire à pic-nic. Ensuite continuer avec le deuxième véhicule vers le col, vous verrez sur votre droite la cascade et 300m au dessus vous pourrez garer le véhicule à gauche (conseillé car plus de place) ou à droite à l'entrée d'une petite piste forestière. Juste après un virage gauche.",
+      "accesAmont": null,
+      "approche": "Un chemin mène à la rivière (environ 50 mètres) puis on se situe à 100 mètres de la cascade de 50m.",
+      "descente": "Ça commence par une très belle cascade de 45 mètres puis on enchaine par quelques rappels et quelques sauts possibles. Saut du gros rocher suspendu possible mais il faut sonder.",
+      "retour": "La sortie se fait en rive gauche juste après un pont (le seul), on rejoint le pont par une petite main courante. On traverse le pont et remonte la petite route sur 150 mètre avant de rejoidre la route ER103. Je vous conseille sans navette, marche supplémentaire de seulement 10/15 min sur route",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22276,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 32.72377,
+        "longitude": -16.890171,
+        "label": null
+      },
+      {
+        "canyonId": 22276,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 32.733105,
+        "longitude": -16.888079,
+        "label": null
+      },
+      {
+        "canyonId": 22276,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 32.723656,
+        "longitude": -16.889688,
+        "label": null
+      },
+      {
+        "canyonId": 22276,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 32.733646,
+        "longitude": -16.887081,
+        "label": null
+      },
+      {
+        "canyonId": 22276,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 32.729042,
+        "longitude": -16.889292,
+        "label": "sortie après partie sup. (après le pont)"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 32.723656,
+      "longitude": -16.889688,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_6a3489c9c396c0e6",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyoning.camadeira.com/canyons/ribeiro-frio-superior/",
+          "url": "http://canyoning.camadeira.com/canyons/ribeiro-frio-superior/"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 204,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté",
+          "summary": "Demande d'autorisation auprès du service forestier qui se situe au jardin botanique de Funchal (demande possible par mail dsfrn.sra@gov-madeira.pt). Demande à faire 48h à l'avance.",
+          "remark": null,
+          "details": null,
+          "effectiveDate": null,
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/204/legislation.html",
+          "attachments": []
+        }
+      ]
+    }
+  }
+}

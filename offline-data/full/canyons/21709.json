@@ -1,0 +1,139 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:24.888006+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21709,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21709/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21709/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21709/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21709/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21709,
+    "identity": {
+      "nom": "Nefeli",
+      "nomComplet": "Canyon Nefeli, Rogovos Papigo",
+      "prefixeNom": "Canyon",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21709/Nefeli.html"
+    },
+    "location": {
+      "pays": "Grèce",
+      "region": "Epirus Region",
+      "departement": "Ioannina",
+      "communePrincipale": "Papigo",
+      "communes": [
+        "Papigo"
+      ],
+      "massif": "Pindos",
+      "bassin": "Voidomatis",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.4,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 820,
+      "deniveleM": 350,
+      "longueurM": 1200,
+      "cascadeMaxM": 23,
+      "cordeMiniM": 30,
+      "navette": "15.4km"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "5h",
+      "retour": "1h"
+    },
+    "topo": {
+      "accesAval": "De Aristi prendre la route de Papigo, se garer au pont sur la Voidomatis, au départ des rafts.\n\nAccès",
+      "accesAmont": "Continuer la route en direction de Papigo. Se garer.",
+      "approche": "Descendre le beau sentier face à l'église jusqu'à croiser le cours d'eau",
+      "descente": "Au dessus de la route entre les deux villages de Papigo c'est Rogovos, ça ne coule qu'au printemps.\n\nEnsuite du croisement du sentier c'est Nefeli 1 qui est guidé puis Nefeli 2 guidé aussi avec possiblement beaucoup de monde. Compter 45 minutes pour un groupe autonome pour les deux parties. Après un dernier sentier en rive gauche balisé rouge avec cordes fixes, on commence la partie sauvage, bien plus belle avec un bel enchaînement de rappel, bien plus longue aussi.\n\nAu niveau d'un glissement de terrain c'est un peu caca bloc jusqu'à la Voidomatis, ça passe plus ou moins toujours à gauche dans les talus.",
+      "retour": "Voidomatis vers l'aval. Garder au moins le bas de combinaison, l'eau est glaciale même en été 7° max.",
+      "engagement": "Faible sur les parties guidées, fort ensuite",
+      "periode": "Toujours en eau, gros débit au printemps",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21709,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 39.964943,
+        "longitude": 20.722017,
+        "label": null
+      },
+      {
+        "canyonId": 21709,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 39.955124,
+        "longitude": 20.714849,
+        "label": null
+      },
+      {
+        "canyonId": 21709,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 39.96806,
+        "longitude": 20.718927,
+        "label": null
+      },
+      {
+        "canyonId": 21709,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 39.944588,
+        "longitude": 20.687943,
+        "label": "pour alternative 1 (vers le bas, par Voidomatis)"
+      },
+      {
+        "canyonId": 21709,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 39.950443,
+        "longitude": 20.707083,
+        "label": "Alternative 2 : vers le haut, jusqu'á Vikos village"
+      },
+      {
+        "canyonId": 21709,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 39.947548,
+        "longitude": 20.712662,
+        "label": "Retour vers Vikos: Voidomatis karst-source et chapelle"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 39.96806,
+      "longitude": 20.718927,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_d1a896852ba8cbe4",
+          "kind": "MAP",
+          "title": "3.1 Pindos: Zagori Walking Map (Anavasi)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

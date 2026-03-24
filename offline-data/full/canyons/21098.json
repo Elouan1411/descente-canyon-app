@@ -1,0 +1,163 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:48:08.749732+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21098,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21098/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21098/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21098/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21098/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/21098/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 21098,
+    "identity": {
+      "nom": "Carcheto",
+      "nomComplet": "Ruisseau de Carcheto",
+      "prefixeNom": "Ruisseau de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21098/Carcheto.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Corse",
+      "departement": "Haute-Corse",
+      "communePrincipale": "Canavaggia",
+      "communes": [
+        "Canavaggia"
+      ],
+      "massif": null,
+      "bassin": "Golo",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 2.2,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": null,
+      "longueurM": null,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h30",
+      "descente": "1h/1h30",
+      "retour": "1h"
+    },
+    "topo": {
+      "accesAval": "Se rendre au village de Canavaggia. Prendre une piste qui monte et se diriger vers une grande antenne de téléphonie. On peut stationner à proximité.",
+      "accesAmont": null,
+      "approche": "De l'antenne, continuer la piste en se dirigeant vers une crète (grande antenne au sommet). Rapidement, (ne pas monter !) prendre un sentier sur la gauche (quelques balises à la peinture bleue, quelques cairns) qui mène au ruisseau de Stazzatello (45 min / 1h). On perd les balises bleues (qui mènent au pont génois de fin ??) en prenant sur la droite. On arrive ensuite à un second ruisseau (anciennne passerelle en mauvais état). Continuer à s'élever jusqu'à dominer le ruisseau de Carcheto que l'on rejoindra à vue.",
+      "descente": null,
+      "retour": "Sortir au pont génois et revenir à la voiture ou enchaîner avec le ruisseau de Vadone (conseillé). Envisager dans ce cas-là une navette.",
+      "engagement": null,
+      "periode": "Eviter l'été (filet d'eau)",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Carte IGN indispensable !"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21098,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.4953,
+        "longitude": 9.2353,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "SORTIE",
+      "latitude": 42.4953,
+      "longitude": 9.2353,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_2bafc8e0f7a42d9c",
+          "kind": "TOPOGUIDE",
+          "title": "La Corse en Canyon",
+          "authors": [
+            "Association CorseCanyon"
+          ],
+          "publicationYear": 2018,
+          "reference": null,
+          "editor": "auto-edition",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/1127/La-Corse-en-Canyon-3eme-edition.html"
+        },
+        {
+          "id": "biblio_eeda460e91ce529f",
+          "kind": "TOPOGUIDE",
+          "title": "Corse Canyons (2ème édition)",
+          "authors": [
+            "Franck Jourdan",
+            "Jean-François Fiorina"
+          ],
+          "publicationYear": 2006,
+          "reference": "2-84698-169-8",
+          "editor": "Albiana",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/133/Corse-Canyons.html"
+        },
+        {
+          "id": "biblio_fab33759293ad66d",
+          "kind": "TOPOGUIDE",
+          "title": "Corse Canyons",
+          "authors": [
+            "Franck Jourdan",
+            "Jean-François Fiorina"
+          ],
+          "publicationYear": 2004,
+          "reference": "ISBN : 2-9520630-5-2",
+          "editor": "Corsecanyon",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1119/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_fc7cd14ea88e299a",
+          "kind": "MAP",
+          "title": "4349 OT Vescovato (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 232,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Corse) - 08 juin 2011",
+          "summary": "- Le canyonisme est interdit la nuit (sauf dérogation)\n\n- Le canyonisme est interdit s'il y a une alerte émise par Météo-France de niveau orange ou rouge en cours.\n\n- Le canyonisme est interdit aux mineurs de moins de 7 ans, sauf canyon évalué égal ou inférieur à V1-A3-E3\n\n- Les groupes auront un effectif maximum de 12 personnes, hors encadrement.",
+          "remark": "L'arrêté du 9 juillet 2019 pris conjointement par les préfectures de Corse-du-Sud et de Haute-Corse harmonise les réglementations existantes pour les deux départements.",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nArrêté préfectoral (Haute-Corse) n°2011-159-0008 du 8 juin 2011\n\nArrêté préfectoral modificatif (Corse-du-Sud et Haute-Corse) n°R20-2019-07-09-001 du 9 juillet 2019",
+          "effectiveDate": "08 juin 2011",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/232/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral (Haute-Corse) n°2011-159-0008 du 8 juin 2011",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem232_pj1.pdf"
+            },
+            {
+              "label": "Arrêté préfectoral modificatif (Corse-du-Sud et Haute-Corse) n°R20-2019-07-09-001 du 9 juillet 2019",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem232_pj2.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

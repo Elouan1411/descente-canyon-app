@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:57.388068+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22415,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22415/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22415/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22415/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22415/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22415,
+    "identity": {
+      "nom": "Weida'a",
+      "nomComplet": "Wadi Weida'a",
+      "prefixeNom": "Wadi",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22415/Weida-a.html"
+    },
+    "location": {
+      "pays": "Jordanie",
+      "region": null,
+      "departement": "Karak",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": "Dead Sea",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v1a1II",
+      "interet": 0.2,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": 100,
+      "longueurM": 1500,
+      "cascadeMaxM": null,
+      "cordeMiniM": null,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "10min",
+      "descente": "??",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "Du croisement entre la route de la mer Morte et la route de Karak (\"Mazra'a junction\"), faire environ six km en direction de Karak. Au niveau d'un virage, juste avant un pont, on tourne à droite pour rejoindre par une très courte piste un réservoir d'eau. Stationner là.",
+      "accesAmont": null,
+      "approche": "Emprunter un canal en RG qui part du réservoir et rejoint le canyon (un passage un peu aérien)",
+      "descente": "Remonter la gorge sans intérêt jusqu'à un court encaissement avec une cascade de 4m. Elle se remonte en escalade en RG, mais il n'est pas sûr que le reste ait un intérêt. Faire demi-tour...",
+      "retour": "Regagner le véhicule par le canal",
+      "engagement": null,
+      "periode": "Coule toute l'année",
+      "geologie": "Argile et grès.",
+      "historique": null,
+      "remarques": "Éviter le vendredi, jour de congé des jordaniens. Très peu d'intérêt : sale et pratiquement aucun caractère canyon : un éboulement a bouleversé le site à notre avis."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22415,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 31.24159,
+        "longitude": 35.579224,
+        "label": null
+      },
+      {
+        "canyonId": 22415,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 31.242619,
+        "longitude": 35.576809,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 31.242619,
+      "longitude": 35.576809,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:43.374839+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22351,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22351/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22351/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22351/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22351/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22351,
+    "identity": {
+      "nom": "Furet",
+      "nomComplet": "Cascade du Furet, Ruisseau du Furet",
+      "prefixeNom": "Cascade du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22351/Furet.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Isère",
+      "communePrincipale": "Barraux",
+      "communes": [
+        "Barraux"
+      ],
+      "massif": "Chartreuse",
+      "bassin": "Isère",
+      "coursEau": "Ruisseau du Furet"
+    },
+    "rating": {
+      "cotation": "v4a1II",
+      "interet": 1.2,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 852,
+      "deniveleM": 260,
+      "longueurM": 700,
+      "cascadeMaxM": 80,
+      "cordeMiniM": 60,
+      "navette": "1.2km"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "40min",
+      "retour": "40min"
+    },
+    "topo": {
+      "accesAval": "Sur la D282, se garer à St Marcel d'en haut au niveau du pont coté 852 sur une large place à bois.",
+      "accesAmont": null,
+      "approche": "On attaque le ruisseau au point IGN 852.",
+      "descente": "Après quelques ressauts on arrive à la cascade de 80m. Anneau de corde sur arbre en RG (déviation en fixe sous le bloc coincé à -4m RD). Fractionnement à -35m RG (1 piton + 1 spit + 1 goujon) pour un dernier jet d'une cinquantaine de mètres.",
+      "retour": "Au pied de la cascade, continuer la descente jusqu'à tomber sur le sentier qui traverse le ruisseau (point IGN 592). Prendre le sentier sur la gauche jusqu'au point IGN 825.\n\nOu continuer aux abords du ruisseau pour descendre une cascade-ressaut d'une quinzaine de mètres et une cascade d'environ dix mètres toutes deux séparées de 10 minutes de marche (pour collectionneur uniquement)",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "Équipement correct au 22 juin 2015 (prévoir anneaux de corde et de quoi ré-équiper en fonction des crues et de l'hiver)."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22351,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 45.440022,
+        "longitude": 5.957873,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 45.440022,
+      "longitude": 5.957873,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_07737b47737fa6b4",
+          "kind": "MAP",
+          "title": "3333 OT Massif de la Chartreuse Nord (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

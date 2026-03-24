@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:16.190580+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22503,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22503/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22503/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22503/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22503/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22503,
+    "identity": {
+      "nom": "Orasso",
+      "nomComplet": "Rio di Orasso, Torrente di Orasso",
+      "prefixeNom": "Rio di",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22503/Orasso.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Piemonte",
+      "departement": "Verbano-Cusio-Ossola",
+      "communePrincipale": "Cursolo-Orasso",
+      "communes": [
+        "Cursolo-Orasso"
+      ],
+      "massif": "Monte Gridone",
+      "bassin": "Cannobino",
+      "coursEau": "Rio di Orasso"
+    },
+    "rating": {
+      "cotation": "v3a3III",
+      "interet": 2.4,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 680,
+      "deniveleM": 130,
+      "longueurM": 450,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 30,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "25min",
+      "descente": "2h",
+      "retour": "25min"
+    },
+    "topo": {
+      "accesAval": "De Cannobio par la Vallée de Cannobino - direction Malesco/Centovalli jusqu'à Orasso",
+      "accesAmont": null,
+      "approche": "De Orasso (705m alt.) prendre le sentier vers Bugnago. À la bifurcation (15min de marche environ 800m alt.) tous les panneaux indicateurs indiquent vers le haut, mais nous prenons la sente horizontale sans indication. La sente arrive à une maison de pierre. Continuer à l'horizontale vers le nord et ensuite en direction du ruisseau sec. Ne pas monter, mais descendre la sente vers le lit de la rivière.",
+      "descente": "Merveilleuse C 25, quelques étroits, petits rappels, marche, désescalades.",
+      "retour": "Après le pont de pierre (sentier) et avant le pont de la route sortir à gauche et monter le sentier vers Orasso.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22503,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.102795,
+        "longitude": 8.596244,
+        "label": null
+      },
+      {
+        "canyonId": 22503,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.096046,
+        "longitude": 8.594398,
+        "label": null
+      },
+      {
+        "canyonId": 22503,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.095074,
+        "longitude": 8.585719,
+        "label": "navette possible, mais ne gagner pas le temps"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.095074,
+      "longitude": 8.585719,
+      "label": "navette possible, mais ne gagner pas le temps"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_99b63f0226a4e96a",
+          "kind": "MAP",
+          "title": "286 Malcantone (CNS (Carta Nazionale Svizzera))",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

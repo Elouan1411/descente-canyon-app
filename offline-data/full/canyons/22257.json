@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:23.269375+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22257,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22257/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22257/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22257/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22257/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22257,
+    "identity": {
+      "nom": "Ramaclé",
+      "nomComplet": "Canyon de Ramaclé, Ruisseau de la Rosette",
+      "prefixeNom": "Canyon de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22257/Ramacle.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Château-d'Oex",
+      "departement": "Vaud",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": "La Sarine - Saane",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.0,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 1070,
+      "deniveleM": 130,
+      "longueurM": null,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "1h",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "De Château d'Oex, prendre la direction de Gstaad, dans le hameau Les Granges prendre à droite direction Gérignox. Passer le tunnel, puis le pont, 200m plus loin prendre à droite au carrefour. Puis encore à droite dans l'épingle, pancartes \"cascades du Ramaclé\" On croise le canyon sur un pont 500m plus loin. Des places de parking 200m après le canyon à la sortie du bois.",
+      "accesAmont": null,
+      "approche": "Prendre la petite sente derrière le banc qui amène sur un bon chemin 30m plus haut.Remonter se chemin pendant 10mn (balisage jaune).\n\nOn croise alors le ruisseau du Ramaclé, ne pas se mettre à l'eau ici, mais traverser le ruisseau et descendre 2mn le chemin qui part vers l'affluent RD, ruisseau de Rosette.\n\nCet affluent à un meilleur potentiel canyon.\n\nSe mettre à l'eau vers le pont de bois.",
+      "descente": "Succession de cascades avec quelques marmites peu profonde dans une belle forêt. Encaissement ponctuel, possibilité de quelques toboggans en amortissant... Le passage sous la route est joli, le canyon ce fini dans la rivière \"La Sarine\"",
+      "retour": "Remonter RG un sentier touristique qui ramène à la voiture en 5mn.",
+      "engagement": "Possibilité de sortir après chaque obstacle.",
+      "periode": "Après la fonte des neiges",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Pour la partie haute il y a 2 départs possible, le ruisseau du Ramaclé, ou l'affluent RD le ruisseau de la Rosette.\n\nL'affluent RD est bien plus intéressant d'un point de vue canyon.\n\nAprès on peu commencer par descendre Ramaclé, puis sortir RD après la confluence avec l'affluent de la Rosette, et remonter en haut de l'affluent par une sente RD en 5mn.\n\nEquipement correct, mais quand même prévoir la trousse."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22257,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.467606,
+        "longitude": 7.153372,
+        "label": "Départ de l'affluent RD"
+      },
+      {
+        "canyonId": 22257,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.470264,
+        "longitude": 7.153419,
+        "label": null
+      },
+      {
+        "canyonId": 22257,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.470081,
+        "longitude": 7.149669,
+        "label": null
+      },
+      {
+        "canyonId": 22257,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 46.467606,
+        "longitude": 7.151933,
+        "label": "Départ du canyon par ruisseau du Ramaclé"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.470081,
+      "longitude": 7.149669,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_2c43e3db298a4f10",
+          "kind": "MAP",
+          "title": "1245 Château d'Oex (Swisstopo)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

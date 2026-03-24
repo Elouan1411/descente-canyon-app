@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:46:47.324840+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2771,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2771/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2771/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2771/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2771/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2771,
+    "identity": {
+      "nom": "Arribère",
+      "nomComplet": "Caouba d' Arribère, Ruisseau d'Arribère",
+      "prefixeNom": "Caouba d'",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2771/Arribere.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Hautes-Pyrénées",
+      "communePrincipale": "Viey",
+      "communes": [
+        "Viey"
+      ],
+      "massif": "Bigorre",
+      "bassin": "Gave de Pau",
+      "coursEau": "Ruisseau d'Arribère"
+    },
+    "rating": {
+      "cotation": "v4a2II",
+      "interet": 2.1,
+      "nbVotes": 21
+    },
+    "metrics": {
+      "altitudeDepartM": 1050,
+      "deniveleM": 200,
+      "longueurM": 800,
+      "cascadeMaxM": 38,
+      "cordeMiniM": 50,
+      "navette": "5.0km"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "2h30",
+      "retour": "0h10"
+    },
+    "topo": {
+      "accesAval": "Aval: au niveau de la déchetterie au lieu dit Les Clarets, en aval de la bifurcation vers Viey.",
+      "accesAmont": "Amont : de Luz Saint Sauveur vers Barèges, prendre à gauche la D140 vers Viey. Stationner sur le parking communal à l'entrée Est du village.",
+      "approche": "Du parking, traversée le village sans prendre trop de hauteur. Viviste pittoresque. On arrive à la sortie Ouest du village (parking interdit, propriété privée). Prendre le bon chemin de Lias. Attention toutefois aux chutes de pierres, casque recommandé. Passage au risques et périls des passants.\n\nAu gué, poursuivre et 50 m plus loin prendre le sentier ascendant (raide) dans le sous bois. A l'approche de l'éperon rocheux vers le torrent, suivre une sente à droite qui rejoint le torrent au départ d'une grande cascade.",
+      "descente": "Jusqu'au gué, succession de trois cascade dans un encaissement très travaillé. 100 m après le gué, le torrent s'encaisse à nouveau. La gorge est superbement taillé et ponctuée de petits ressauts (rappels et toboggans). La grande cascade dans un cirque confiné est le plus beau passage. La fin se fait dans une ambiance plus forestière.",
+      "retour": "Au pont, sortir en rive gauche. Suivre obligatoirement le chemin régulièrement entretenu (propriété privée) juqu'au parking aval.\n\nNéanmoins, possibilité de remonter à pied jusqu'au village par un sentier serpentant au dessus du parking aval. Dénivelé: 110m, durée ~25min.",
+      "engagement": "Echappatoires possibles en rive gauche en dessous du gué.",
+      "periode": "Faisable tôt en saison. Toujours un peu d'eau, quoique presque à sec l'été.",
+      "geologie": "Schiste et ophites qui dessinent de belles mosaïques.",
+      "historique": "Ouverture 1991 par P. Nogué.",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2771,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.884457,
+        "longitude": 0.019245,
+        "label": null
+      },
+      {
+        "canyonId": 2771,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.880566,
+        "longitude": 0.019295,
+        "label": null
+      },
+      {
+        "canyonId": 2771,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 42.882095,
+        "longitude": 0.024204,
+        "label": null
+      },
+      {
+        "canyonId": 2771,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 42.879929,
+        "longitude": 0.021029,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 42.882095,
+      "longitude": 0.024204,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_66d5328512d1b5a5",
+          "kind": "MAP",
+          "title": "1748 OT Gavarnie (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

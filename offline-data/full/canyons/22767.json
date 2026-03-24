@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:54:16.439862+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22767,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22767/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22767/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22767/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22767/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22767,
+    "identity": {
+      "nom": "Agva",
+      "nomComplet": "Kanyonu Agva, Kuzdere, Agva",
+      "prefixeNom": "Kanyonu",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22767/Agva.html"
+    },
+    "location": {
+      "pays": "Turquie",
+      "region": "Kemer",
+      "departement": "Antalya",
+      "communePrincipale": "Kuzdere",
+      "communes": [
+        "Kuzdere"
+      ],
+      "massif": "Bey Daglan",
+      "bassin": "Mer méditerranée",
+      "coursEau": "Agva"
+    },
+    "rating": {
+      "cotation": "v3a3III",
+      "interet": 1.5,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 470,
+      "deniveleM": 300,
+      "longueurM": 4100,
+      "cascadeMaxM": 12,
+      "cordeMiniM": 25,
+      "navette": "8.0km"
+    },
+    "timings": {
+      "approche": "10min",
+      "descente": "4h",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "voir geolocalisation",
+      "accesAmont": null,
+      "approche": "voir geolocalisation",
+      "descente": null,
+      "retour": "voir geolocalisation",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22767,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 36.593876,
+        "longitude": 30.449831,
+        "label": null
+      },
+      {
+        "canyonId": 22767,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 36.60112,
+        "longitude": 30.484293,
+        "label": null
+      },
+      {
+        "canyonId": 22767,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 36.592308,
+        "longitude": 30.443586,
+        "label": null
+      },
+      {
+        "canyonId": 22767,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 36.600334,
+        "longitude": 30.48455,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 36.592308,
+      "longitude": 30.443586,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_1c594af2856279f1",
+          "kind": "MAP",
+          "title": "Türkische Riviera-Antalya-Kemer-Fethiye (Freytag & Berndt)",
+          "scale": "1/150000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

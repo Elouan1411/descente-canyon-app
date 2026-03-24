@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:11.520899+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23812,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23812/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23812/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23812/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23812/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23812,
+    "identity": {
+      "nom": "Scinauz",
+      "nomComplet": "Val Scinauz, Rio Molino",
+      "prefixeNom": "Val",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23812/Scinauz.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Frioul-Vénétie julienne",
+      "departement": "Udine",
+      "communePrincipale": "Pontebba",
+      "communes": [
+        "Pontebba"
+      ],
+      "massif": "Alpes Carniques - Carniche - Karnischen",
+      "bassin": "Fella",
+      "coursEau": "Rio Molino"
+    },
+    "rating": {
+      "cotation": "v4a2II",
+      "interet": 2.3,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 880,
+      "deniveleM": 275,
+      "longueurM": 1400,
+      "cascadeMaxM": 40,
+      "cordeMiniM": 45,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h",
+      "descente": "1h30min",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": "21.09.2012 Peer, Richard, daTomi",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23812,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.519333,
+        "longitude": 13.355261,
+        "label": null
+      },
+      {
+        "canyonId": 23812,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.51112,
+        "longitude": 13.34987,
+        "label": null
+      },
+      {
+        "canyonId": 23812,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.51086,
+        "longitude": 13.34907,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.51086,
+      "longitude": 13.34907,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

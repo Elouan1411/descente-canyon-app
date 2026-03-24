@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:17.397528+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21946,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21946/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21946/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21946/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21946/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21946,
+    "identity": {
+      "nom": "Capèche",
+      "nomComplet": "Cascades de Capèche, Cascade de l'Oule, Ruisseau de Port-Bielh",
+      "prefixeNom": "Cascades de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21946/Capeche.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Hautes-Pyrénées",
+      "communePrincipale": "Aragnouet",
+      "communes": [
+        "Aragnouet"
+      ],
+      "massif": "Néouvielle",
+      "bassin": "Aure",
+      "coursEau": "Ruisseau de Port-Bielh"
+    },
+    "rating": {
+      "cotation": "v4a2II",
+      "interet": 2.0,
+      "nbVotes": 5
+    },
+    "metrics": {
+      "altitudeDepartM": 1730,
+      "deniveleM": 230,
+      "longueurM": 750,
+      "cascadeMaxM": 75,
+      "cordeMiniM": 80,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "3h00",
+      "retour": "10"
+    },
+    "topo": {
+      "accesAval": "De Fabian prendre la route du Cap de Long (D929) ce garer au 1er parking (Artiguste).",
+      "accesAmont": null,
+      "approche": "A pieds prendre la large piste qui monte au Lac de l'Oule. A 300m de barrage dans un large lacet à gauche descendez plein Est vers le fond du talweg. Le canyon commence là.",
+      "descente": "Enchaînement de plusieurs petits rappels 4 à 9m souvent en amarrage naturel. Puis un rappel de 15m suivie de la grande cascade de 75m relais très bien équipé.",
+      "retour": "Après la grande cascade suivre le lit du ruisseau jusqu'à son collecteur et remonter la route vers le parking sur 1km.",
+      "engagement": "Sans engagement particulier sauf entre l'avant dernier rappel (15m) et la grande cascade.",
+      "periode": "Le débit constant qui coule correspond au débit réservé du Barrage.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Le Barrage est une prise d'eau qui alimente l'usine hydroélectrique de Eget-Cité. Ce renseigner auprès de celle ci."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21946,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.821503,
+        "longitude": 0.206273,
+        "label": null
+      },
+      {
+        "canyonId": 21946,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.815872,
+        "longitude": 0.206605,
+        "label": null
+      },
+      {
+        "canyonId": 21946,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 42.819016,
+        "longitude": 0.194192,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 42.819016,
+      "longitude": 0.194192,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_ea58b8fc020a675e",
+          "kind": "MAP",
+          "title": "1748 ET Neouvielle (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

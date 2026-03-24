@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:08.900928+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23529,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23529/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23529/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23529/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23529/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23529,
+    "identity": {
+      "nom": "St Pierre",
+      "nomComplet": "Ravin de St Pierre",
+      "prefixeNom": "Ravin de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23529/St-Pierre.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-de-Haute-Provence",
+      "communePrincipale": "Beynes",
+      "communes": [
+        "Beynes"
+      ],
+      "massif": "Montagne de Beynes",
+      "bassin": "Asse",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a1II",
+      "interet": 0.8,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 760,
+      "deniveleM": 60,
+      "longueurM": 200,
+      "cascadeMaxM": 12,
+      "cordeMiniM": 12,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "40min",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "De Digne-les-Bains prendre route Napoléon en direction de Nice sur la N85. Passer la clue de Chabrières et tourner à droite sur St Pierre quelques mètres après le tunnel. On traverse l'Asse par un pont, pour emprunter la piste montante à droite. Stationner votre véhicule au premier virage en tête d'épingle d'où part une piste à gauche.",
+      "accesAmont": null,
+      "approche": "Emprunter la piste de gauche qui descend et qui est traversée par un petit ruisseau, puis on longe un enclos d'ânes. Après une petite descente, récupérer le sentier partant à droite : celui-ci s'élève progressivement pour passer devant deux petits cabanons de captage. Une fois passée la zone rocheuse et que le sentier devient horizontal, descendre au mieux vers le ruisseau pour se rendre à l'entrée de l'encaissement.",
+      "descente": "Au départ, un encaissement où quatre petites cascades se dés-escaladent assez facilement. On marche 50 m pour arriver sur une C3 1pt en rd et une jolie C12 1pt en rg. La suite n'est qu'une série de désescalades de blocs. Parcourir 200 m dans le ruisseau avant de sortir en rg et récupérer au mieux le sentier pris à aller.",
+      "retour": "Suivre le sentier pris à l'aller.",
+      "engagement": "Court encaissement au départ.",
+      "periode": "En eau, mais passe après les grosses averses en version gros débit.",
+      "geologie": null,
+      "historique": "lolo et ALAIN 13",
+      "remarques": "A faire si vous êtes dans le coin, ou après avoir fait la descente du ravin du Suy.\n\nEquipement minimaliste sur goujon de 8 type mono-point ."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23529,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.996731,
+        "longitude": 6.258556,
+        "label": null
+      },
+      {
+        "canyonId": 23529,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.997871,
+        "longitude": 6.25994,
+        "label": null
+      },
+      {
+        "canyonId": 23529,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.004101,
+        "longitude": 6.255991,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.004101,
+      "longitude": 6.255991,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_680c62deb49de2a2",
+          "kind": "MAP",
+          "title": "3441 OT Barreme (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

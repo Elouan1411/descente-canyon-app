@@ -1,0 +1,166 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:33.828681+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23912,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23912/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23912/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23912/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23912/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23912,
+    "identity": {
+      "nom": "Agua Negra (supérieur)",
+      "nomComplet": "Canyon de Agua Negra (supérieur)",
+      "prefixeNom": "Canyon de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23912/Agua-Negra-superieur.html"
+    },
+    "location": {
+      "pays": "Portugal",
+      "region": "Madeira",
+      "departement": "Calheta Municipality",
+      "communePrincipale": "Calheta",
+      "communes": [
+        "Calheta"
+      ],
+      "massif": "Paul da Serra",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v5a2III",
+      "interet": 2.6,
+      "nbVotes": 5
+    },
+    "metrics": {
+      "altitudeDepartM": 1350,
+      "deniveleM": 350,
+      "longueurM": 1600,
+      "cascadeMaxM": 70,
+      "cordeMiniM": 65,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "4h30",
+      "retour": "1h15"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": "Depuis la confluence de la route et du ruisseau, suivre se dernier jusqu'au départ.\n\nPour éviter la broussaille, il est conseillé de suivre la vague piste sur une petite crête en RG jusqu'à sa fin. Ensuite trouver une ancienne sente, dans la broussaille, qui descend au départ (GPS fortement conseillé).",
+      "descente": "12 rappels.",
+      "retour": "Après la dernière cascade (25 fontes), suivre la llevada à gauche.\n\nEnsuite, deux possibilités :\n\n- si vous avez laissé une voiture ou bout de la llevada, la suivre pendant 1 h environ, traverser un tunnel d'environ 500 m, puis prendre la piste à droite pour rejoindre la voiture en 10 min.\n\n- si vous avez laisser une voiture en haut de la piste de la casa do Rabaçal, la rejoindre après avoir suivi la llevada pendant 30 minutes environ, puis remonter la piste.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23912,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 32.762657,
+        "longitude": -17.11253,
+        "label": null
+      },
+      {
+        "canyonId": 23912,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 32.765419,
+        "longitude": -17.125692,
+        "label": null
+      },
+      {
+        "canyonId": 23912,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 32.765137,
+        "longitude": -17.101425,
+        "label": null
+      },
+      {
+        "canyonId": 23912,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 32.754879,
+        "longitude": -17.133911,
+        "label": null
+      },
+      {
+        "canyonId": 23912,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 32.753899,
+        "longitude": -17.149309,
+        "label": "Parking avec navette longue, mais sans remontée au retour (passage par la llevada)."
+      },
+      {
+        "canyonId": 23912,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 32.761719,
+        "longitude": -17.134771,
+        "label": "Casa de Rabaçal (fin de la llevada, début de la piste)"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 32.765137,
+      "longitude": -17.101425,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_d4559c6470527679",
+          "kind": "TOPOGUIDE",
+          "title": "Meeting Canyoning Madeira 2016",
+          "authors": [
+            "Duarte Silva e colaboradores"
+          ],
+          "publicationYear": 2016,
+          "reference": null,
+          "editor": "Clube Naval do Seixal",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1343/topoguide.html"
+        },
+        {
+          "id": "biblio_2714eb823c608ae0",
+          "kind": "TOPOGUIDE",
+          "title": "Meeting Canyoning Madeira 2015",
+          "authors": [
+            "Duarte Silva"
+          ],
+          "publicationYear": 2015,
+          "reference": null,
+          "editor": "Clube Naval do Seixal",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1342/topoguide.html"
+        }
+      ],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_aed2aca83094e101",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyoning.camadeira.com/canyons/agua-negra/",
+          "url": "http://canyoning.camadeira.com/canyons/agua-negra/"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

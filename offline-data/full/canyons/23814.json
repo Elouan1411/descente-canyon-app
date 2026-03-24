@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:12.154216+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23814,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23814/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23814/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23814/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23814/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23814,
+    "identity": {
+      "nom": "Döbernitzengraben",
+      "nomComplet": "Döbernitzengraben",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23814/Dobernitzengraben.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Carinthie",
+      "departement": "Hermagor",
+      "communePrincipale": "Kirchbach",
+      "communes": [
+        "Kirchbach"
+      ],
+      "massif": "Alpes Carniques - Carniche - Karnischen",
+      "bassin": "Gail",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a3III",
+      "interet": 1.6,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 890,
+      "deniveleM": 200,
+      "longueurM": 800,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "50",
+      "descente": "2h",
+      "retour": "15"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23814,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.61755,
+        "longitude": 13.18716,
+        "label": null
+      },
+      {
+        "canyonId": 23814,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.621971,
+        "longitude": 13.18806,
+        "label": null
+      },
+      {
+        "canyonId": 23814,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.628513,
+        "longitude": 13.176707,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.628513,
+      "longitude": 13.176707,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_214436933f6be22b",
+          "kind": "MAP",
+          "title": "3110-Ost Steinfeld (ÖK25V)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_1bcbc92d9dc90bab",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/C.....ernitzengrabenCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/C.....ernitzengrabenCanyon"
+        },
+        {
+          "id": "resource_290440ce6ce239e4",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://ropewiki.com/Dobernitzengraben",
+          "url": "http://ropewiki.com/Dobernitzengraben"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

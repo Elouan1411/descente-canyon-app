@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:42.563404+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23110,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23110/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23110/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23110/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23110/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23110,
+    "identity": {
+      "nom": "Ehrenbach Klamm",
+      "nomComplet": "Ehrenbach Klamm, Ehrenbach Schlucht, Ehrenbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23110/Ehrenbach-Klamm.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Tyrol",
+      "departement": "Kitzbühel",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Kitzbühler Alpen",
+      "bassin": "Großache - Tiroler Ache",
+      "coursEau": "Ehrenbach"
+    },
+    "rating": {
+      "cotation": "v3a3III",
+      "interet": 1.4,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1100,
+      "deniveleM": 250,
+      "longueurM": 1150,
+      "cascadeMaxM": 18,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "3h15",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23110,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.424255,
+        "longitude": 12.386119,
+        "label": null
+      },
+      {
+        "canyonId": 23110,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.432373,
+        "longitude": 12.393517,
+        "label": null
+      },
+      {
+        "canyonId": 23110,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.432892,
+        "longitude": 12.393651,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.432892,
+      "longitude": 12.393651,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_0c2ed75c15f0fe8f",
+          "kind": "MAP",
+          "title": "34/2 Kitzbüheler Alpen Ost (Alpenverein (AV) Karte)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_46b83ca5e7d014d7",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/Canyons/EhrenbachCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/Canyons/EhrenbachCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

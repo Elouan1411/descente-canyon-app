@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:54.635442+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22682,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22682/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22682/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22682/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22682/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22682,
+    "identity": {
+      "nom": "Lawoi",
+      "nomComplet": "Lawoi",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22682/Lawoi.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Tamins",
+      "departement": "Graubünden/Grigioni/Grischun",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Piz Segnas",
+      "bassin": "Vorderrhein",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a2IV",
+      "interet": 3.2,
+      "nbVotes": 8
+    },
+    "metrics": {
+      "altitudeDepartM": 2300,
+      "deniveleM": 180,
+      "longueurM": 1000,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "3h30",
+      "descente": "3h30",
+      "retour": "2h30"
+    },
+    "topo": {
+      "accesAval": "Parking au Kunkelspass (permis de circulation à acheter à Vättis, Hôtel Tamina, pour CHF 15.00 (2016))",
+      "accesAmont": null,
+      "approche": "Du Kunkelspass, se rendre au refuge du Ringelspitz CAS. Du refuge suivre le chemin vers Ringelspitz. Au deuxième croisement avec le Lawoi, c'est le départ.",
+      "descente": "3 encaissements super étroits et sculptés magnifiques. Partie I tournant par trous et arches naturelles ; partie II mi part tournant et mi part énorme encaissement, souterraine (petit Cormor) avec traits de lumière (frontale pas nécessaire) ; partie III énorme encaissement 50cm de large et 40m profondeur.\n\nAprès la partie III (fin au croisement avec le sentier d'accès), il est aussi possible de continuer le canyon. Il y a des jolis rappels et des encaissements. Cette partie lV se finit au croisement avec un sentier de randonnée (voir la carte). De là, monter le chemin rive gauche (80hm) 15min et vous arrivez au refuge de Ringelspitz.",
+      "retour": "Retour sur le chemin d'accès au Kunkelspass.",
+      "engagement": null,
+      "periode": "Petit ruisseau glaciaire, l'eau turquoise-grise, saison après principale fonte de neige et avec pas trop grande chaleur (août - octobre).",
+      "geologie": "Scié au calcaire par le Verrucano",
+      "historique": null,
+      "remarques": "Le petit encaissement avant la prise du refuge est bloqué (2010 infranchissable)!!!"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22682,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.88171,
+        "longitude": 9.361564,
+        "label": null
+      },
+      {
+        "canyonId": 22682,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.872669,
+        "longitude": 9.373902,
+        "label": null
+      },
+      {
+        "canyonId": 22682,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.855526,
+        "longitude": 9.409983,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.855526,
+      "longitude": 9.409983,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_9179b25820804ecc",
+          "kind": "MAP",
+          "title": "247 Sardona (Carte Nationale Suisse)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_cc7208008b23549f",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.grandcanyons.ch/de/imgGallery_83_0_pictList.html",
+          "url": "http://www.grandcanyons.ch/de/imgGallery_83_0_pictList.html"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

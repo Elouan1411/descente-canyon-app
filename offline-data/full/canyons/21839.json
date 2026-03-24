@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:56.006115+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21839,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21839/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21839/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21839/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21839/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/21839/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 21839,
+    "identity": {
+      "nom": "Etages",
+      "nomComplet": "Vallon des Etages",
+      "prefixeNom": "Vallon des",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21839/Etages.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Isère",
+      "communePrincipale": "Saint-Christophe-en-Oisans",
+      "communes": [
+        "Saint-Christophe-en-Oisans"
+      ],
+      "massif": "Ecrins - Oisans - Champsaur",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v5a5IV",
+      "interet": 3.1,
+      "nbVotes": 64
+    },
+    "metrics": {
+      "altitudeDepartM": 1798,
+      "deniveleM": 198,
+      "longueurM": 500,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "40min",
+      "descente": "4h",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "Parking au hameau des Etages",
+      "accesAmont": null,
+      "approche": null,
+      "descente": "Un superbe granite blanc bien sculpté. Des toboggans, des vasques percées, des grottes, des ponts de roche. Tout pour se faire plaisir !",
+      "retour": null,
+      "engagement": "Moyen, des échappatoires.",
+      "periode": "Attention nous avons affaire à un canyon glaciaire. Il est impraticable 10 mois sur 12, du fait de la fonte des glaciers. On ne peut le parcourir qu'à l'automne (oct. Nov.) lorsqu'il a commencé à geler. le niveau baisse alors mais reste sportif. La température est alors très basse. 2° dans l'eau. - 5° à l'extérieur. Il faut donc un équipement adapté, prévoyez les gants et les chaussettes néoprènes en 5 mm, une souris, voire une seconde combi de 2-3 mm. Si le canyon est en partie pris par les glaces, prévoyez les crampons, piolets et broches. Le cours d’eau peut modifier son lit.",
+      "geologie": null,
+      "historique": "GSM",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21839,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.936337,
+        "longitude": 6.258302,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.936337,
+      "longitude": 6.258302,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 592,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Information - 12 fév 2025",
+          "summary": "La RD530 est réouverte à la circulation jusqu'à Saint-Christophe-en-Oisans (\"Ville\") depuis le 12/02/2025. La circulation reste réglementée au-delà : il convient donc de se renseigner pour accéder aux Ruisseau d'en Bas et au Vallon des Etages.",
+          "remark": null,
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.",
+          "effectiveDate": "12 fév 2025",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/592/legislation.html",
+          "attachments": []
+        },
+        {
+          "id": 559,
+          "status": "Obsolète",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Isère) - 01 juil 2024",
+          "summary": "Suite aux dramatiques crues torrentielles de juin 2024, la D530 est fermée par arrêté préfectoral depuis le Clapier d'Auris ce qui condamne l'accès à la vallée du Vénéon, et donc l'accès à tous les canyons de la vallée (sauf riverains).\n\nDe plus, les crues ont pu causer de très gros dégâts et changements dans certains de ces canyons.",
+          "remark": "Réouverture de la route jusqu'à Saint-Christophe-en-Oisans (\"Ville\") depuis le 12/02/2025. Circulation réglementée au-delà.",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nArrêté préfectoral (Isère) n°38-2024-07 du 1er juillet 2024",
+          "effectiveDate": "12 fév 2025",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/559/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral (Isère) n°38-2024-07 du 1er juillet 2024",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem559_pj1.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

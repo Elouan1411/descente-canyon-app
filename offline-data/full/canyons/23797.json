@@ -1,0 +1,192 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:08.250564+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23797,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23797/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23797/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23797/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23797/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23797,
+    "identity": {
+      "nom": "Malo",
+      "nomComplet": "Rio Malo",
+      "prefixeNom": "Rio",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23797/Malo.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Piemonte",
+      "departement": "Torino",
+      "communePrincipale": "Novalesa",
+      "communes": [
+        "Novalesa"
+      ],
+      "massif": "Rocciamelone",
+      "bassin": "Val Susa",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a3III",
+      "interet": null,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": 1670,
+      "deniveleM": 350,
+      "longueurM": 500,
+      "cascadeMaxM": 60,
+      "cordeMiniM": 60,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "2h40min",
+      "descente": "4h",
+      "retour": "1h15min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": "D. Ruotolo - Camoletto, 19.10.2002",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23797,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.212238,
+        "longitude": 7.00533,
+        "label": null
+      },
+      {
+        "canyonId": 23797,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.20792,
+        "longitude": 7.00646,
+        "label": null
+      },
+      {
+        "canyonId": 23797,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.201336,
+        "longitude": 7.008028,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.201336,
+      "longitude": 7.008028,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_d077bf79f60b4790",
+          "kind": "TOPOGUIDE",
+          "title": "Canyoning nelle Alpi Occidentali",
+          "authors": [
+            "Daniele Geuna/Dino Ruotolo"
+          ],
+          "publicationYear": 2010,
+          "reference": "978-88-87890-94-5",
+          "editor": "Versante Sud",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1232/topoguide.html"
+        },
+        {
+          "id": "biblio_60029af297dac6c3",
+          "kind": "TOPOGUIDE",
+          "title": "Italia Nord-Ovest - Gole e Canyon Vol.3",
+          "authors": [
+            "Franscesco Cacace",
+            "Roberto Jarre",
+            "Dino Ruotolo",
+            "Roberto Schenone. Traduit en français par Thierry Achmetoff"
+          ],
+          "publicationYear": 2003,
+          "reference": "88-900260-2-2",
+          "editor": "Adriambiente",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/153/topoguide.html"
+        },
+        {
+          "id": "biblio_8dc74a2785daa886",
+          "kind": "TOPOGUIDE",
+          "title": "N°2 Valli di Lanzo e Moncenisio (IGC) - 1/50000",
+          "authors": [],
+          "publicationYear": null,
+          "reference": null,
+          "editor": null,
+          "status": null,
+          "detailUrl": null
+        },
+        {
+          "id": "biblio_adf3d0a83c0bbe64",
+          "kind": "TOPOGUIDE",
+          "title": "55 IV-SO Novalesa (IGMI 25/V) - 1/25000",
+          "authors": [],
+          "publicationYear": null,
+          "reference": null,
+          "editor": null,
+          "status": null,
+          "detailUrl": null
+        },
+        {
+          "id": "biblio_244c0b1a92b986fd",
+          "kind": "TOPOGUIDE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/Canyons/MaloCanyon",
+          "authors": [],
+          "publicationYear": null,
+          "reference": null,
+          "editor": null,
+          "status": null,
+          "detailUrl": "http://canyon.carto.net/cwiki/bin/view/Canyons/MaloCanyon"
+        },
+        {
+          "id": "biblio_95f6e5b0460d60c3",
+          "kind": "TOPOGUIDE",
+          "title": "http://catastoforre.aic-canyoning.it/ind.....NTE/pro/TO/cod/TO013",
+          "authors": [],
+          "publicationYear": null,
+          "reference": null,
+          "editor": null,
+          "status": null,
+          "detailUrl": "http://catastoforre.aic-canyoning.it/index/forra/reg/PIEMONTE/pro/TO/cod/TO013"
+        },
+        {
+          "id": "biblio_eb5ec678410b8c80",
+          "kind": "TOPOGUIDE",
+          "title": "http://ropewiki.com/Malo",
+          "authors": [],
+          "publicationYear": null,
+          "reference": null,
+          "editor": null,
+          "status": null,
+          "detailUrl": "http://ropewiki.com/Malo"
+        }
+      ],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

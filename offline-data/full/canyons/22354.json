@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:43.722921+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22354,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22354/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22354/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22354/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22354/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22354,
+    "identity": {
+      "nom": "Charbonniers",
+      "nomComplet": "Ruisseau des Charbonniers",
+      "prefixeNom": "Ruisseau des",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22354/Charbonniers.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Isère",
+      "communePrincipale": "Saint-Paul-de-Varces",
+      "communes": [
+        "Saint-Paul-de-Varces"
+      ],
+      "massif": "Vercors",
+      "bassin": "Drac",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1I",
+      "interet": 0.3,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 740,
+      "deniveleM": 200,
+      "longueurM": 500,
+      "cascadeMaxM": 15,
+      "cordeMiniM": 25,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "40",
+      "descente": "30min",
+      "retour": "10"
+    },
+    "topo": {
+      "accesAval": "Se rendre à Saint-Paul-de-Varces et trouver sur le haut du village le chemin du Sorbier. Se garer peu après l'entrée de celui-ci, le long de la route sur les emplacements aménagés après les containers à ordures.",
+      "accesAmont": null,
+      "approche": "Prendre la route goudronnée (maisons) puis la piste jusqu'au réservoir des Mousses. Par la piste qui devient plus raide, on rejoint le départ en 25/30 min au moment où la piste se met à longer de très près le ruisseau. La partie située sous le captage des Mousses ne présente pas d'intérêt.",
+      "descente": "Très approximativement: c15, c12, c5 (shuntable), c12 (micro-geyser!). Les AN sont parfois loin des seuils des cascades.",
+      "retour": "Sortir en RD au niveau d'une sente qui rejoint le réservoir des Mousses (on rate une c5 !)",
+      "engagement": "Peu engagé.",
+      "periode": "Printemps ou après une période pluvieuse.",
+      "geologie": null,
+      "historique": "Première descente inconnue.",
+      "remarques": "Très peu d'intérêt, pour collectionneurs. A faire avec un bon volume d'eau"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22354,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.069942,
+        "longitude": 5.637252,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.069942,
+      "longitude": 5.637252,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_f71cf3569cd5f7fc",
+          "kind": "MAP",
+          "title": "3235 OT Autrans - Gorges de La Bourne (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

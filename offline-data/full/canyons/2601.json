@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:46:07.922852+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2601,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2601/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2601/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2601/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2601/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2601,
+    "identity": {
+      "nom": "Scalucce",
+      "nomComplet": "Vajo delle Scalucce",
+      "prefixeNom": "Vajo delle",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2601/Scalucce.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Vénétie",
+      "departement": "Verona",
+      "communePrincipale": "Fumane",
+      "communes": [
+        "Fumane"
+      ],
+      "massif": "Valpolicella",
+      "bassin": "Adige",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 1.4,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 640,
+      "deniveleM": 180,
+      "longueurM": 1000,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 25,
+      "navette": "2.9km"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "2h30",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": "En suivant l’A4 allant de Milan à Venise prenez l’A22 qui va de Vérone à Bolzano. (A vérifier) Sortez à Verona Nord. Rendez vous à San Pietro Incariano, puis à Fumane. Suivez ensuite les indications pour Molina (Parco delle Cascate). Garez vous devant l’église.\n\nParking",
+      "accesAmont": "Continuez à suivre la route vers Sant’Anna d’Alfraedo. Au bout de 2,9 km garez vous après un virage à côté d’un champ. En 2005, il y avait un abreuvoir.",
+      "approche": "Suivez le cours d’eau à sec à travers les sentes jusqu’à rejoindre les premiers obstacles.",
+      "descente": "Les cascades ont un intérêt moindre et il y a peu d’eau au mois de juillet. En revanche, faîtes un tour dans le secteur, tout d’abord pour admirer les maisons faîtes de très grandes plaques de calcaire (2 m sur 3) et ensuite pour admirer les cascades qui bordent le canyon lors de la remontée (Elles sont interdites à la descente et non équipée).",
+      "retour": "Remontez vers l’église par les passerelles puis par les bons chemins à touristes.",
+      "engagement": "Moyen, des échappatoires existent.",
+      "periode": "Peu d'eau l'été.\n\nToute la saison.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Les cascades du parc sont interdites à la descente."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2601,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.613796,
+        "longitude": 10.927362,
+        "label": null
+      },
+      {
+        "canyonId": 2601,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.607735,
+        "longitude": 10.917792,
+        "label": null
+      },
+      {
+        "canyonId": 2601,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 45.616051,
+        "longitude": 10.927126,
+        "label": null
+      },
+      {
+        "canyonId": 2601,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 45.6106,
+        "longitude": 10.91187,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 45.616051,
+      "longitude": 10.927126,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

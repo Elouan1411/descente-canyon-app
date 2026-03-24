@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:49.874187+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23997,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23997/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23997/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23997/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23997/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23997,
+    "identity": {
+      "nom": "Piumogna",
+      "nomComplet": "Cascata Piumogna",
+      "prefixeNom": "Cascata",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23997/Piumogna.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Faido",
+      "departement": "Tessin",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": "Ticino",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.6,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 940,
+      "deniveleM": 240,
+      "longueurM": 500,
+      "cascadeMaxM": 60,
+      "cordeMiniM": 65,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "35min",
+      "descente": "2h",
+      "retour": "2min"
+    },
+    "topo": {
+      "accesAval": "Dans Faido, aller se garer au pied des cascades de Piumogna.",
+      "accesAmont": null,
+      "approche": "Du parking, continuer sur la route pendant 400m ; à la seconde épingle, prendre le sentier qui revient vers les cascades et les traverse sur un petit pont. Après le pont prendre à gauche un sentier qui remonte en lacet les cascades. Nous avons commencé au second barrage, mais le sentier doit surement permettre d'atteindre le premier barrage.",
+      "descente": "Du second barrage, la descente commence par une C20, puis on arrive à la belle C60 qui tombe dans un beau petit encaissement. A la sortie de l'encaissement on trouve une zone avec d'immense bloc puis encore quelques petits obstacles puis on arrive au pont. En dessous du pont il y a un beau toboggan puis encore des cascades ouvertes.",
+      "retour": "Revenir au parking par la route ou en traversant le Ticino.",
+      "engagement": "Pas d'échappatoire jusqu'au pont.",
+      "periode": "Barrage en amont, bien appeler le barrage avant de s'engager. Des panneaux avec le numéro de tel sont présents vers le pont et au départ du canyon.",
+      "geologie": null,
+      "historique": "13/11/2017 : Thomas Guigon, Matthias Holzinger et Pascal Van Duin",
+      "remarques": "Cascade bien visible de la vallée, nous n'avons pas vu de points lors de notre descente. Il existe une partie en amont du barrage, mais lors de notre descente le débit semblait trop important pour passer une cascade en goulet."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23997,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.475182,
+        "longitude": 8.78932,
+        "label": null
+      },
+      {
+        "canyonId": 23997,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.4767,
+        "longitude": 8.79548,
+        "label": null
+      },
+      {
+        "canyonId": 23997,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.477402,
+        "longitude": 8.79726,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.477402,
+      "longitude": 8.79726,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

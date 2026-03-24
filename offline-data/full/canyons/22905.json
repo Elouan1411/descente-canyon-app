@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:54:51.665002+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22905,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22905/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22905/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22905/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22905/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22905,
+    "identity": {
+      "nom": "Navès",
+      "nomComplet": "Ruisseau de Navès",
+      "prefixeNom": "Ruisseau de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22905/Naves.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Gard",
+      "communePrincipale": "Arphy",
+      "communes": [
+        "Arphy"
+      ],
+      "massif": "Mont Aigoual",
+      "bassin": "Arre",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 1.4,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 750,
+      "deniveleM": 250,
+      "longueurM": 1200,
+      "cascadeMaxM": 17,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "2-3h",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": "Du Vigan, prendre la D48 qui monte sur l'Aigoual. Au bout d'environ 7.5 km, on traverse le ruisseau du Navès, juste avant que la D190, qui permet de descendre sur Arphy, ne rejoigne la D48. Se garer.",
+      "accesAmont": null,
+      "approche": "Monter grosso modo en direction du Nord-Est, en rive gauche du ruisseau, de telle manière à arriver aux environs du point côté 789 m sur l'IGN. Lorsque l'on y était, c'était du hors sentier, plutôt très épineux... Descendre comme l'on peut pour rejoindre le ruisseau.",
+      "descente": "- Partie amont en sous-bois, peu d’obstacles (quelques ressaut, une C4 et une C5 et un S1 (!) dans un mini-encaissement, un ou deux petits toboggans)\n\n- Puis ça se dégage, on a vue sur le pont en contrebas. On enchaine alors : T4, jolie C15, petite goulotte avec C10, C2 et R2, C15, petits toboggans casse-cul, C10, C15, C5, deux petits ressauts, et on arrive au pont.\n\n- La partie aval est moins intéressante : on a tout d’abord une série de petits ressauts et de marche dans les blocs, puis on arrive au niveau d’une série C10, C2 qui se désescalade, marche, puis une C3. On arrive alors à l'amont d'une habitation située en RG (\"la Borie\"). Sortir avant, et entamer la remontée.\n\nTout se descend sur AN.",
+      "retour": "On remonte au mieux vers la D48. C'est plutôt option \"sanglier\", mais ça passe sans trop de souci.",
+      "engagement": "Engagement plutôt limité. Descente à tendance \"ouverte\", comme généralement celles du coin.",
+      "periode": "A faire au printemps.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Pour les hauteurs, c’est pas du précis ; ça dépendra notamment de l’AN auquel on s’accroche ! Lors de notre \"ouverture\", on avait une corde de 60, et une autre de 40, et aucun souci.\n\nOn peut s'arrêter au pont, la partie aval ne présentant pas un intérêt majeur.\n\nPetit côté \"aventure\" fort sympathique. Descente à coupler sur une journée avec son copain, le ruisseau des Vignals."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22905,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.032272,
+        "longitude": 3.59946,
+        "label": null
+      },
+      {
+        "canyonId": 22905,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.024422,
+        "longitude": 3.596284,
+        "label": null
+      },
+      {
+        "canyonId": 22905,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.028496,
+        "longitude": 3.595276,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.028496,
+      "longitude": 3.595276,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_fb5949b340608cd9",
+          "kind": "MAP",
+          "title": "2641 ET Mont-Aigoual (Le Vigan) (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:52.090712+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22669,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22669/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22669/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22669/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22669/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22669,
+    "identity": {
+      "nom": "Lars",
+      "nomComplet": "Cascade du Lars",
+      "prefixeNom": "Cascade du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22669/Lars.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Haute-Savoie",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Bornes - Aravis",
+      "bassin": "Fier",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v5a1IV",
+      "interet": 2.8,
+      "nbVotes": 7
+    },
+    "metrics": {
+      "altitudeDepartM": 1700,
+      "deniveleM": 200,
+      "longueurM": 150,
+      "cascadeMaxM": 200,
+      "cordeMiniM": 80,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h30",
+      "descente": "1h30/2h",
+      "retour": "30/40min"
+    },
+    "topo": {
+      "accesAval": "Se rendre au village de Montmin, point de départ de la randonnée classique vers le sommet de la Tournette. Se garer au niveau de l'église ou bien plus en contrebas dans le village.",
+      "accesAmont": null,
+      "approche": "Monter dans le village en suivant la pancarte verte \"la Tournette\" sur une route interdite à la circulation se transformant en chemin (quelques balises vertes discrètes). Après avoir traversé le ruisseau alimenté par la cascade, on arrive à une bifurcation (panneau) et on continue en direction de la Tournette. On arrive ainsi sur le plateau sommital de la falaise du Lars puis, vers l'altitude 1750m, on prend à droite une petite sente en direction des ruines du chalet du Lars qui coupe bientôt le ruisseau, point de départ de la descente.",
+      "descente": "Les longueurs sont données à titre indicatif, elles n'ont pas été mesurées. Avant la grande cascade : R4 (shunt RD) / R2 / T20 + T5 (1 point RG, rappel 25/30 m~) Grande cascade : C25 + C10 ( 2 points RD, rappel 35/40 m~) / C18 + C6 ( 2 points RG, rappel 25m fractionnable optionnellement à -18 m en RD sur un relais d'escalade) / C30/35~ ( 2 points RD ) / C20/25~ ( AN au centre, lunule ) / C35 + C30 (2 points RG sur vire confortable, rappel 70 m~ ?)",
+      "retour": "Après le dernier rappel et deux ressauts de 5m, une sente coupe le ruisseau. On peut la suivre à gauche (approche de la voie d'escalade, non testé) ou à droite. On descend ensuite assez vite le long d'un petit pierrier dans une pente herbeuse et on rejoint le sentier emprunté à l'aller au niveau de la forêt.",
+      "engagement": "Pas échappatoire dans la grande cascade ni de mise à l'abri possible hormis d'essayer de rattraper la voie escalade qui coupe la cascade.",
+      "periode": "A faire après une période de pluie pour y trouver un débit correct. Certainement hyper-sensible aux orages.",
+      "geologie": null,
+      "historique": "Parcouru par les grimpeurs et les glaciairistes à la montée. Repéré par Thomas Guigon et descendu le 19/06/2011 par Laurence Boyé, Maxime Cassan, Sylvain Jaubertie et Yves Daniou.",
+      "remarques": "La cascade est prise dans la glace l'hiver : les amarrages posés peuvent donc souffrir. Prévoir en conséquence..."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22669,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.814167,
+        "longitude": 6.285278,
+        "label": "ruines du chalet de Lars"
+      },
+      {
+        "canyonId": 22669,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.812778,
+        "longitude": 6.282222,
+        "label": null
+      },
+      {
+        "canyonId": 22669,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.803055,
+        "longitude": 6.264722,
+        "label": "église"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.803055,
+      "longitude": 6.264722,
+      "label": "église"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_68c3d089c92edd13",
+          "kind": "MAP",
+          "title": "3431 OT Lac d'Annecy (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

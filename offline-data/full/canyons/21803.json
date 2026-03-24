@@ -1,0 +1,141 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:47.382770+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21803,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21803/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21803/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21803/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21803/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/21803/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 21803,
+    "identity": {
+      "nom": "Mujib (inférieur)",
+      "nomComplet": "Wadi Mujib (inférieur), Mujib Siq, Mujib",
+      "prefixeNom": "Wadi",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21803/Mujib-inferieur.html"
+    },
+    "location": {
+      "pays": "Jordanie",
+      "region": "Mazra`a",
+      "departement": "Madaba",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Moab",
+      "bassin": "Dead Sea",
+      "coursEau": "Mujib"
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 3.2,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 250,
+      "deniveleM": 120,
+      "longueurM": 2000,
+      "cascadeMaxM": 18,
+      "cordeMiniM": 20,
+      "navette": "2.0km"
+    },
+    "timings": {
+      "approche": "1h",
+      "descente": "3h30",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "Guide de RSCN nécessaire (inclus permit et Wadi Hidan Siq - \"Malaqi trail\") - 2007: 40 JD (= 44 Euro);"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21803,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 31.456718,
+        "longitude": 35.584984,
+        "label": null
+      },
+      {
+        "canyonId": 21803,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 31.466593,
+        "longitude": 35.574223,
+        "label": null
+      },
+      {
+        "canyonId": 21803,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 31.46727,
+        "longitude": 35.572979,
+        "label": null
+      },
+      {
+        "canyonId": 21803,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 31.451979,
+        "longitude": 35.566479,
+        "label": "piste d'approche"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 31.46727,
+      "longitude": 35.572979,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_f8a93134b0f783d2",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.rscn.org.jo/AdventuresActivitiesMujib.asp?ID=ctr3_2",
+          "url": "http://www.rscn.org.jo/AdventuresActivitiesMujib.asp?ID=ctr3_2"
+        },
+        {
+          "id": "resource_b6d4f4a4287e167b",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.tictac.co.il/desert/su.html",
+          "url": "http://www.tictac.co.il/desert/su.html"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 146,
+          "status": "Indéfini",
+          "action": "Réglemente",
+          "title": "Arrêté",
+          "summary": "seulement avec guide RSCN",
+          "remark": null,
+          "details": null,
+          "effectiveDate": null,
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/146/legislation.html",
+          "attachments": []
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:18.463161+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23019,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23019/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23019/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23019/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23019/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23019,
+    "identity": {
+      "nom": "Saint Martin",
+      "nomComplet": "Vallon de Saint Martin, Saint Martin",
+      "prefixeNom": "Vallon de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23019/Saint-Martin.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-Maritimes",
+      "communePrincipale": "Escragnolles",
+      "communes": [
+        "Escragnolles"
+      ],
+      "massif": "Préalpes de Grasse",
+      "bassin": "Siagne",
+      "coursEau": "Saint Martin"
+    },
+    "rating": {
+      "cotation": "v4a1I",
+      "interet": 0.7,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 860,
+      "deniveleM": 80,
+      "longueurM": 50,
+      "cascadeMaxM": 45,
+      "cordeMiniM": 45,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15",
+      "descente": "45",
+      "retour": "30"
+    },
+    "topo": {
+      "accesAval": "à droite. Altitude: 921 m. 100 m après une petite route part à gauche, en direction du hameau de Baïl. Rouler 1,5 km (en dépassant l'arrêt pour colle aval) et se garer à coté d'une petite ruine.",
+      "accesAmont": null,
+      "approche": "Revenir 50 m, prendre une piste qui descend perpendiculairement à la route. Ruine. Obliquer à droite, passer au dessus de grottes, redescendre en pente douce par de vieux chênes et rejoindre le vallon.",
+      "descente": "C 20 ( MC + 1 spit8), R3 à contourner R D puis C 45 (1 spit10, MC, 2 spits10).",
+      "retour": "Sortir de la vasque finale rive gauche (la suite est pourrie), remonter le ravin qui se présente.\n\nLe départ est \"sanglier grade 3\" puis plus simple, un petit ressaut vers le haut, mène vers les sentes parcourues à l'allée et la ruine. Rejoindre facilement la route.",
+      "engagement": "Très faible, échappatoire entre les deux rappels. Un petit bémol: au pied de la C 45, poursuivre parait compliqué (ronces). La remontée du ravin demande précautions sur les 20 premiers mètres.",
+      "periode": "Souvent sec, sinon faible débit, peut (éventuellement) se faire à sec ou après une période de fortes pluies.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Falaise bien courte, à faire avec d'autre petite dans la région (colle aval, raïs, beiral)."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23019,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.730232,
+        "longitude": 6.806872,
+        "label": null
+      },
+      {
+        "canyonId": 23019,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.729893,
+        "longitude": 6.807575,
+        "label": null
+      },
+      {
+        "canyonId": 23019,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.732174,
+        "longitude": 6.807243,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.732174,
+      "longitude": 6.807243,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_320b97347a970faa",
+          "kind": "MAP",
+          "title": "3543 ET Haute-Siagne (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

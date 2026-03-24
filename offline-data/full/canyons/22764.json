@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:54:15.647722+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22764,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22764/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22764/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22764/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22764/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22764,
+    "identity": {
+      "nom": "Redécouverte",
+      "nomComplet": "Canyon de la Redécouverte",
+      "prefixeNom": "Canyon de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22764/Redecouverte.html"
+    },
+    "location": {
+      "pays": "Portugal",
+      "region": "Madeira",
+      "departement": "São Vicente Municipality",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2III",
+      "interet": null,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": 1470,
+      "deniveleM": 475,
+      "longueurM": 900,
+      "cascadeMaxM": 45,
+      "cordeMiniM": null,
+      "navette": "8.1km"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "4h",
+      "retour": "55min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": "Ouvert en septembre 2000 par François Meyer et Antoine Florin.",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22764,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 32.751659,
+        "longitude": -17.050308,
+        "label": null
+      },
+      {
+        "canyonId": 22764,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 32.757931,
+        "longitude": -17.047611,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 32.751659,
+      "longitude": -17.050308,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

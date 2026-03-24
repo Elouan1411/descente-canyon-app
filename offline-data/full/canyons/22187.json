@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:09.105705+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22187,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22187/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22187/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22187/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22187/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22187,
+    "identity": {
+      "nom": "Tarref d'Cima",
+      "nomComplet": "Estreitos de Tarref d'Cima, Tapume de Verissimo (inférieur)",
+      "prefixeNom": "Estreitos de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22187/Tarref-d-Cima.html"
+    },
+    "location": {
+      "pays": "Cap-Vert",
+      "region": null,
+      "departement": "Tarref d'Cima",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a2IV",
+      "interet": 2.6,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 540,
+      "deniveleM": 80,
+      "longueurM": 1000,
+      "cascadeMaxM": 13,
+      "cordeMiniM": 15,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h",
+      "descente": "1h20min",
+      "retour": "35min"
+    },
+    "topo": {
+      "accesAval": "De la ville Ribeira Grande vers Boca de Ambas as Ribeiras (200m alt.). Tourner à gauche vers la vallée de Caibros. Continuer jusqu'à la fin de la route goudronnée (ou du béton). Encore quelques centaines de mètres (environ 400m) suivre la piste jusqu'à un grand parking, avec un terrain de jeu pour les enfants (440m alt.).",
+      "accesAmont": null,
+      "approche": "Du terrain de jeu monter dans ou à côté du lit de la rivière Tapume jusqu'à l'encaissement. Avant l'encaissement suivre le sentier, qui monte a gauche. Continuer au-dessus de la clue (à droite). Ensuite descendre le sentier vers le lit et les champs à côté de la rivière. Aller (attention à ne pas abîmer les cultures !) vers le début de la clue.",
+      "descente": "Désescalader le barrage et sauter la prochaine cascade. Arriver au 1er rappel.\n\nSuivent quelques petits rappels, marcher, nager et un merveilleux étroit avec un ensemble de stalactites multicolores.",
+      "retour": "Après l'étroit retour au sentier d'approche.",
+      "engagement": null,
+      "periode": "Toujours en eau.",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22187,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 17.125898,
+        "longitude": -25.130663,
+        "label": null
+      },
+      {
+        "canyonId": 22187,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 17.129595,
+        "longitude": -25.128094,
+        "label": null
+      },
+      {
+        "canyonId": 22187,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 17.138905,
+        "longitude": -25.126354,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 17.138905,
+      "longitude": -25.126354,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_a0b95353ed9c3736",
+          "kind": "MAP",
+          "title": "Santo Antâo (Goldstadt-Wanderkarte)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

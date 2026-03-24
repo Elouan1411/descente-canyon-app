@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:16.587184+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22224,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22224/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22224/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22224/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22224/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22224,
+    "identity": {
+      "nom": "Sikia",
+      "nomComplet": "Sikia, Rodakino A ; Sykia",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22224/Sikia-.html"
+    },
+    "location": {
+      "pays": "Grèce",
+      "region": "Crete",
+      "departement": "Rethymno",
+      "communePrincipale": "Rodakino",
+      "communes": [
+        "Rodakino"
+      ],
+      "massif": "Lefka Ori",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2III",
+      "interet": 1.9,
+      "nbVotes": 6
+    },
+    "metrics": {
+      "altitudeDepartM": 300,
+      "deniveleM": 100,
+      "longueurM": 1200,
+      "cascadeMaxM": 11,
+      "cordeMiniM": 15,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "2h",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "De Rethymon vers le sud, passer Armeni. Environ 8 km après Armeni tourner à droite direction Agios Vasinos Sellia. Continuer tout à droit (pas vers Plakia) vers ouest environ 18 km (de Sellia); arriver à Kato Rodakino. Traverser le village. A sa fin à gauche garer la voiture.",
+      "accesAmont": null,
+      "approche": "Sur la route quelques mètres vers l'ouest chercher une piste qui monte en direction du nord. La prendre, ignorer une piste à gauche et la prochaine piste à droite (600 m de la voiture) et la suivante à gauche (700m de la voiture). Passer deux portes. A environ 1 km de la voiture arriver au point où la piste tourne à droite (vers le nord-est) et où commence le Sikia (il est au-dessous à gauche).\n\nTraverser alors un ruisseau sec et descendre vers le lit du Sikia (1000 m alt.)",
+      "descente": "Désescalader environ 30min (2 rappels). Arriver du Radakino B à droite. Continuer jusqu'à pont (encore 11 rappels).",
+      "retour": "Après le pont sortir à gauche vers la route puis de là à droite vers Kato Rodakino.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22224,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 35.206654,
+        "longitude": 24.324015,
+        "label": null
+      },
+      {
+        "canyonId": 22224,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 35.201687,
+        "longitude": 24.314138,
+        "label": null
+      },
+      {
+        "canyonId": 22224,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 35.200439,
+        "longitude": 24.315029,
+        "label": null
+      },
+      {
+        "canyonId": 22224,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 35.203636,
+        "longitude": 24.318436,
+        "label": "affluent Rodakino B"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 35.200439,
+      "longitude": 24.315029,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

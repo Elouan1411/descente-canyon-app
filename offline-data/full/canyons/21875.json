@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:04.596248+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21875,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21875/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21875/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21875/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21875/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21875,
+    "identity": {
+      "nom": "Mattre",
+      "nomComplet": "Mattre",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21875/Mattre.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Calabre",
+      "departement": "Cosenza",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 1.5,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": null,
+      "longueurM": null,
+      "cascadeMaxM": null,
+      "cordeMiniM": null,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "1h",
+      "descente": "3h",
+      "retour": "2min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": "Un canyon vite à sec avec un passage en grotte et une belle C30 encaissée. Le reste n'a pas grand intérêt !",
+      "retour": null,
+      "engagement": "échappatoires dans la jungle.",
+      "periode": "Vite à sec",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21875,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 39.848644,
+        "longitude": 15.864773,
+        "label": null
+      },
+      {
+        "canyonId": 21875,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 39.855106,
+        "longitude": 15.888435,
+        "label": null
+      },
+      {
+        "canyonId": 21875,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 39.848545,
+        "longitude": 15.863839,
+        "label": null
+      },
+      {
+        "canyonId": 21875,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 39.854477,
+        "longitude": 15.888376,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 39.848545,
+      "longitude": 15.863839,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

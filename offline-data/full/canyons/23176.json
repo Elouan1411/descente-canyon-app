@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:58.933864+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23176,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23176/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23176/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23176/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23176/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23176,
+    "identity": {
+      "nom": "Cros-Chaumeil",
+      "nomComplet": "Cros-Chaumeil",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23176/Cros-Chaumeil.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Cantal",
+      "communePrincipale": "Le Claux",
+      "communes": [
+        "Le Claux"
+      ],
+      "massif": "Monts du Cantal",
+      "bassin": "Grande Rhue",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": null,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": 1360,
+      "deniveleM": 200,
+      "longueurM": 550,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h00",
+      "descente": "2h30",
+      "retour": "15"
+    },
+    "topo": {
+      "accesAval": "Du Claux, se rendre au hameau de Chavaroche puis de la Buge. Se garer au mieux.",
+      "accesAmont": null,
+      "approche": "Monter le chemin dans les bois de la Bragouze jusqu'aux alpages : contourner un vaste impluvium, entrer dans la septième et dernière ravine.",
+      "descente": "Descente de 5 rappels et de 6-7 petits toboggans, en deux parties : la deuxième est plus intéressante avec une c23 suivie d'une c16.",
+      "retour": "Retour à travers prés vers la Padèle puis la Buge.",
+      "engagement": null,
+      "periode": "Intermittent",
+      "geologie": null,
+      "historique": "Premiere descente par P. Viette, P-M. Orblin et A. Vialon le 28/05/2009.",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23176,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.16021,
+        "longitude": 2.66784,
+        "label": null
+      },
+      {
+        "canyonId": 23176,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.176247,
+        "longitude": 2.689072,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.176247,
+      "longitude": 2.689072,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_daf9041e16b163a9",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons cantalous",
+          "authors": [
+            "Philippe VIETTE-COSTE"
+          ],
+          "publicationYear": 2018,
+          "reference": "97829563881-0-4",
+          "editor": "Auto-édition",
+          "status": "en stock\n\n- 14,00 € -\n\nCommandez cet ouvrage dès maintenant !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/1124/Canyons-cantalous.html"
+        },
+        {
+          "id": "biblio_0ada102a5dea7773",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons arvernes",
+          "authors": [
+            "Philippe Viette-Coste",
+            "Serge Navarro",
+            "Pierre-Marie Orblin"
+          ],
+          "publicationYear": 2012,
+          "reference": "978-2-7466-3647-7",
+          "editor": "auto-édition",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/165/Canyons-arvernes.html"
+        }
+      ],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

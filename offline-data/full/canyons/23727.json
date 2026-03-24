@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:53.275184+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23727,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23727/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23727/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23727/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23727/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23727,
+    "identity": {
+      "nom": "Echelle",
+      "nomComplet": "Ravin de l' Echelle",
+      "prefixeNom": "Ravin de l'",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23727/Echelle.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-de-Haute-Provence",
+      "communePrincipale": "Faucon-du-Caire",
+      "communes": [
+        "Faucon-du-Caire"
+      ],
+      "massif": null,
+      "bassin": "Sasse",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1I",
+      "interet": 0.8,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 1111,
+      "deniveleM": 100,
+      "longueurM": 200,
+      "cascadeMaxM": 18,
+      "cordeMiniM": 25,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "1h00",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "De Sisteron, emprunter la D951 pour traverser La Motte-du-Caire, Le Caire et Faucon-du-Caire. Rouler encore deux km et à la ferme St Barthélemy (voir carte) prendre à droite sur Le Mas, puis prendre à gauche pour se garer sans gêner au Mas.",
+      "accesAmont": null,
+      "approche": "Continuer à pied la piste et avant d'arriver sur le petit ruisseau, prendre à gauche sur le semblant de sentier. Sentier se transformant rapidement en sente peu marquée. Monter au mieux en rive droite, jusqu'à atteindre le départ de la descente au point (Alt. 1111m sur l'IGN).",
+      "descente": "C18 sur AN avec anneau de corde en RD, Pi7+C5 sur 1pt en RG, D2, C5 sur 1pt en RG, Pi6 à descendre en désescalade.",
+      "retour": "Sortir en RD et reprendre l'itinéraire pris à l'aller pour rejoindre votre véhicule.",
+      "engagement": "Aucun",
+      "periode": "en eau",
+      "geologie": null,
+      "historique": "Tony-13, Bastien, lolo et ALAIN 13",
+      "remarques": "Equipé sur mono-points (goujons de 8mm et maillons de chaîne) . L'intérêt de la descente est assez limité."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23727,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.406563,
+        "longitude": 6.115389,
+        "label": null
+      },
+      {
+        "canyonId": 23727,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.406548,
+        "longitude": 6.115309,
+        "label": null
+      },
+      {
+        "canyonId": 23727,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.40868,
+        "longitude": 6.111404,
+        "label": null
+      },
+      {
+        "canyonId": 23727,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 44.407207,
+        "longitude": 6.113303,
+        "label": "Approche et retour"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.40868,
+      "longitude": 6.111404,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_28e68141a286bb81",
+          "kind": "MAP",
+          "title": "3338 ET Gap (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

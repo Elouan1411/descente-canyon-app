@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:25.434029+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23045,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23045/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23045/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23045/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23045/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23045,
+    "identity": {
+      "nom": "Echelle",
+      "nomComplet": "Cascade de l' Echelle",
+      "prefixeNom": "Cascade de l'",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23045/Echelle.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Isère",
+      "communePrincipale": "Saint-Gervais",
+      "communes": [
+        "Saint-Gervais"
+      ],
+      "massif": "Vercors",
+      "bassin": "Isère",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 0.5,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": null,
+      "longueurM": null,
+      "cascadeMaxM": 40,
+      "cordeMiniM": 40,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "??",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "De Saint-Gervais, prendre la direction de Rencurel par la route des Ecouges. Se garer au Pont Chabert (cf parking des Ecouges 1)",
+      "accesAmont": null,
+      "approche": "Remonter la D35, puis prendre à droite au mieux afin d'arriver en amont de la barre de l'Echelle (cf IGN)",
+      "descente": "Descente sur AN.",
+      "retour": "Retourner à la voiture par la route d'accès.",
+      "engagement": null,
+      "periode": "De \"sec\" à \"en glace\" en passant par \"le filet d'eau\" et le \"débit correct\" en fonction de la saison.",
+      "geologie": null,
+      "historique": "Parcouru par les glaciairistes.",
+      "remarques": "Une bouse étoile de l'Isère qui intéressera ceux qui souhaitent en avoir plus. Attention aux vols sur le parking du Pont Chabert."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23045,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.177109,
+        "longitude": 5.4986,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.177109,
+      "longitude": 5.4986,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_f71cf3569cd5f7fc",
+          "kind": "MAP",
+          "title": "3235 OT Autrans - Gorges de La Bourne (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

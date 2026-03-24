@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:46.019953+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23977,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23977/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23977/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23977/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23977/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23977,
+    "identity": {
+      "nom": "Pissay",
+      "nomComplet": "Torrent de Pissay",
+      "prefixeNom": "Torrent de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23977/Pissay.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Vaucluse",
+      "communePrincipale": "Cabrières-d'Aigues",
+      "communes": [
+        "Cabrières-d'Aigues"
+      ],
+      "massif": "Luberon",
+      "bassin": "Durance",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a1I",
+      "interet": 0.3,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 570,
+      "deniveleM": 100,
+      "longueurM": 600,
+      "cascadeMaxM": 5,
+      "cordeMiniM": 7,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "45min",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "Depuis Pertuis, prendre la direction de la Cadières-d'Aigues par la D9. Au carrefour avec la D27 (étang de la Bonde), aller en face toujours la Cabrières-d'Aigues et faire 1km sur la D9 avant de tourner à droite. Puis, suivre cette petite route sur 450m et prendre à gauche. A la D120, prendre à droite en direction de La Motte-d'Aigues et de suite la première à gauche (chemin de la montagne). Aller jusqu'au bout de la route et gare-vous sur le petit parking (début de la piste).",
+      "accesAmont": null,
+      "approche": "Suivre la piste et quittez-là en prenant le premier sentier partant à droite, puis un second à droite pour descendre sur le \"torrent\" du Pissay.",
+      "descente": "Suite de désescalades (Pi2+Pi5, C3+C3, Pi5, C4, C2, C3, Pi4,\n\nC3) avant arriver sur un étranglement rocheux à la C5 finale sur 1pt en Rd.",
+      "retour": "Suivre le sentier en sortant en Rd. Passer une ruine et arriver sur une piste avec un sentier partant à droite . A cet endroit, aller tout droit à travers bois et rejoignez le parking.",
+      "engagement": "Aucun, jusqu'à l'étranglement rocheux final.",
+      "periode": "A faire après les pluies, comme les descentes voisines;",
+      "geologie": null,
+      "historique": "Un point posé sur la C5 finale (oct 2017) . goujon de 8mm+maillon de chaîne.",
+      "remarques": "Manque de verticalité pour en faire une descente intéressante. Dommage,car la roche est plutôt sculptée sur la veine d'eau. Peut compléter la journée, si vous parcourez les descentes voisines."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23977,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.803143,
+        "longitude": 5.513448,
+        "label": null
+      },
+      {
+        "canyonId": 23977,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.796097,
+        "longitude": 5.513126,
+        "label": null
+      },
+      {
+        "canyonId": 23977,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.795319,
+        "longitude": 5.507869,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.795319,
+      "longitude": 5.507869,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_3cea02269723b911",
+          "kind": "MAP",
+          "title": "3243 OT Pertuis - Lourmarin (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

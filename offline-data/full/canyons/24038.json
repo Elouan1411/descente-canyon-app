@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:58.181262+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24038,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24038/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24038/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24038/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24038/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24038,
+    "identity": {
+      "nom": "Gaudichard",
+      "nomComplet": "Ravin de Gaudichard",
+      "prefixeNom": "Ravin de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24038/Gaudichard.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-de-Haute-Provence",
+      "communePrincipale": "Le Castellard-Mélan",
+      "communes": [
+        "Le Castellard-Mélan"
+      ],
+      "massif": "Préalpes de Digne",
+      "bassin": "Vançon",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1II",
+      "interet": 1.8,
+      "nbVotes": 6
+    },
+    "metrics": {
+      "altitudeDepartM": 1170,
+      "deniveleM": 280,
+      "longueurM": 1100,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 25,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "2h00",
+      "retour": "50min"
+    },
+    "topo": {
+      "accesAval": "De Mallemoisson (Route de Digne-les-Bains N85), prendre la D17 en direction de Thoard, Authon par le col de Font Belle et se rendre à Mélan. Au petit hameau, suivre la piste sur 2km jusqu'au col de Mounis (attention,suivant les périodes, cette piste peut-être interdite à la circulation des véhicules motorisés). Garez-vous sans gêner et non loin du panneau indiquant le GR6.",
+      "accesAmont": null,
+      "approche": "Au panneau, emprunter le GR6 en direction de St-Geniez. Faire 100 m et emprunter le sentier de gauche. Environ 80 m plus loin, descendre à gauche via la pente et rejoindre le petit ru.",
+      "descente": "C9 sur An avec anneau de corde en RG, marche, C4 sur AN avec anneau de corde en RD, marche, C6 sur AN en RD, marche, D2, C12 sur 1 pt en RG, marche, C4+C4 sur AN en RG (R2x 12m), marche dans un mini-encaissement de 30m encombré de quelques branches mortes, C20 sur AN avec anneau de corde et maillon en RG, marche, D2, passage sous blocs, C12 sur An avec anneau de corde en Rd, marche, C18 sur AN avec anneau de corde et maillon rapide en RD, marche avec un court encaissement, C5 sur 1 pt en RG, marche avec désescalades, C9 sur AN en RG, marche, C8 sur AN en RG, encaissement de 50 m avec deux petites désescalades, marche, D2, D3.\n\nPour la sortie : après le dernier encaissement, progresser au moins 200 m dans le ruisseau et sortez en RD dès que la pente vous semble la moins raide.",
+      "retour": "Remonter la pente sous couvert de pins et rejoignez une ancienne piste mal entretenue (herbeuse). Celle-ci, sur sa montée, croise le GR6 et vous ramène au parking.",
+      "engagement": "Presque aucun.",
+      "periode": "A faire pendant les saisons humides.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Équipement : terrain d'aventure. Équipé principalement sur amarrages naturels avec quelques anneaux de corde et deux points sur goujons de 8mm avec maillons de chaîne.\n\nAttention !! Risque de chutes de pierres, le terrain est instable sur endroits. Le port du casque est vivement conseillé ! Bien nettoyer les verticales avant de descendre. Ne pas rester au pied des cascades.\n\nVérifier les points posés avant de descendre dessus !"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24038,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.208542,
+        "longitude": 6.11673,
+        "label": null
+      },
+      {
+        "canyonId": 24038,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.213196,
+        "longitude": 6.106001,
+        "label": null
+      },
+      {
+        "canyonId": 24038,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.20768,
+        "longitude": 6.118028,
+        "label": null
+      },
+      {
+        "canyonId": 24038,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 44.215504,
+        "longitude": 6.109649,
+        "label": "GR6"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.20768,
+      "longitude": 6.118028,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

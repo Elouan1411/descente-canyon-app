@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:00.649829+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23184,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23184/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23184/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23184/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23184/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23184,
+    "identity": {
+      "nom": "Valplane",
+      "nomComplet": "Cascade de Valplane",
+      "prefixeNom": "Cascade de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23184/Valplane.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-de-Haute-Provence",
+      "communePrincipale": "Allos",
+      "communes": [
+        "Allos"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 0.7,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1950,
+      "deniveleM": 60,
+      "longueurM": 100,
+      "cascadeMaxM": 35,
+      "cordeMiniM": 50,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "30min",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "D'Allos, prendre la D226 en direction du lac d'Allos et garez-vous sur le parking de Valplane (juste avant le portique empêchant les camping-cars de passer).",
+      "accesAmont": null,
+      "approche": "Du parking prendre le sentier balisé \"cascade de Valplane\". Au bout de 10min on aperçoit la cascade, poursuivre sur ce sentier (ne pas prendre la première bifurcation à gauche, croix jaune sur arbre) mais la 2ème 50m plus loin qui vous permettra de rejoindre le ravin au dessus de la cascade.",
+      "descente": "C35 équipée en retrait sur AN en RG (corde et maillon) puis quelques désescalades bien glissantes non équipées.",
+      "retour": "Après la cascade poursuivre dans le lit et sortir dés que possible au mieux en RG pour retrouver le sentier pris pour l'approche.",
+      "engagement": null,
+      "periode": "Gros débit à la fonte des neiges qui rendra plus belle la cascade.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "La pose d'un relais (inox car le seul bon rocher est dans une zone humide) en RG dix mètres en dessous de l'AN permettrait une récupération de corde plus facile et de prendre des cordes plus courtes.\n\nRD on est dans le parc national du Mercantour, RG on est en dehors."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23184,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.240559,
+        "longitude": 6.676844,
+        "label": null
+      },
+      {
+        "canyonId": 23184,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.247326,
+        "longitude": 6.669159,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.247326,
+      "longitude": 6.669159,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

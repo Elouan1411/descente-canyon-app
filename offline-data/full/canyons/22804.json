@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:54:25.936194+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22804,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22804/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22804/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22804/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22804/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22804,
+    "identity": {
+      "nom": "Pedena",
+      "nomComplet": "Valle Pedena",
+      "prefixeNom": "Valle",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22804/Pedena.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Lombardia",
+      "departement": "Sondrio",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a3IV",
+      "interet": 2.4,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 1220,
+      "deniveleM": 480,
+      "longueurM": 2200,
+      "cascadeMaxM": 25,
+      "cordeMiniM": null,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "40min",
+      "descente": "5h",
+      "retour": "40min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": "25 rappels.",
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22804,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.084763,
+        "longitude": 9.610722,
+        "label": null
+      },
+      {
+        "canyonId": 22804,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.085316,
+        "longitude": 9.599644,
+        "label": null
+      },
+      {
+        "canyonId": 22804,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.087296,
+        "longitude": 9.606417,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.087296,
+      "longitude": 9.606417,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

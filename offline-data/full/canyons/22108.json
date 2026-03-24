@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:51.752839+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22108,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22108/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22108/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22108/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22108/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22108,
+    "identity": {
+      "nom": "Morobbia",
+      "nomComplet": "Valle Morobbia, Morobbia",
+      "prefixeNom": "Valle",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22108/Morobbia.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Bellinzona",
+      "departement": "Tessin",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": "Ticino",
+      "coursEau": "Morobbia"
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 1.6,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 520,
+      "deniveleM": 170,
+      "longueurM": 3000,
+      "cascadeMaxM": 15,
+      "cordeMiniM": 20,
+      "navette": "4.5km"
+    },
+    "timings": {
+      "approche": "10min",
+      "descente": "3h30min",
+      "retour": "35min"
+    },
+    "topo": {
+      "accesAval": "De Bellinzona (Giubiasco) vers Pianezzo, Vellano (est). Garer une voiture dans un parking dans Pianezzo.\n\nAvec la 2eme voiture continuer 5 épingles (3km). Dans la 6eme épingles (á gauche) tourner á droite et suivre (1400m) la petite route vers la-bas jusqu'au barrage (parking).",
+      "accesAmont": null,
+      "approche": "Du parking continué la petite route vers la-bas et ensuite le sentier jusqu'à la passerelle.",
+      "descente": "Marche et déescalade avec quelques ressauts et a la fin de canyon quelques rappels",
+      "retour": "Après les rappels et un affluent RD sortir á droite sur le pont et suivre le sentier á droite jusqu'á Pianezzo.",
+      "engagement": null,
+      "periode": null,
+      "geologie": "Gneiss",
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22108,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.165714,
+        "longitude": 9.064676,
+        "label": null
+      },
+      {
+        "canyonId": 22108,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.166767,
+        "longitude": 9.035654,
+        "label": null
+      },
+      {
+        "canyonId": 22108,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 46.167408,
+        "longitude": 9.066789,
+        "label": null
+      },
+      {
+        "canyonId": 22108,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 46.168919,
+        "longitude": 9.028589,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 46.167408,
+      "longitude": 9.066789,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_9a9578770c172929",
+          "kind": "MAP",
+          "title": "1313 Bellinzona (Carte Nationale Suisse)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

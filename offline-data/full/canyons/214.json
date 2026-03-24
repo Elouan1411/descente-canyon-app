@@ -1,0 +1,173 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:43:30.721526+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 214,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/214/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/214/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/214/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/214/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 214,
+    "identity": {
+      "nom": "Gaz",
+      "nomComplet": "Le Gaz, Ruisseau des Grandes Routes",
+      "prefixeNom": "Le",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/214/Gaz.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Isère",
+      "communePrincipale": "Rovon",
+      "communes": [
+        "Saint-Gervais",
+        "Rovon"
+      ],
+      "massif": "Vercors",
+      "bassin": "Isère",
+      "coursEau": "Ruisseau des Grandes Routes"
+    },
+    "rating": {
+      "cotation": "v5a2III",
+      "interet": 2.0,
+      "nbVotes": 45
+    },
+    "metrics": {
+      "altitudeDepartM": 1000,
+      "deniveleM": 80,
+      "longueurM": 50,
+      "cascadeMaxM": 35,
+      "cordeMiniM": 35,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "30min",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "De Saint-Gervais, prendre la D35 en direction du col de Romeyère. La route passe sur un pont devant la C65 des Ecouges. Continuer la route. Passer dans le tunnel. Peu après sa sortie, prendre à gauche le pont Chabert (Alt. 882m) et se garer sur le parking.",
+      "accesAmont": null,
+      "approche": "Du parking, prendre A PIED la route privée qui monte au gîte des Ecouges. La route passe une première fois le ruisseau qu'on longe depuis le début, continuer 50m. Un panneau indique sur votre gauche \"chemin du moulin\". Le prendre et retraverser dans l'autre sens la rivière. S'en suit quelque virage bien marqués. Vous arriverez sur la rivière du Gaz. La suivre jusqu'à ce qu'il se précipite dans le canyon des\n\nEcouges\n\n.",
+      "descente": "Les deux rappels et le pan incliné nécessitant une longue main courante sont visibles de la route.",
+      "retour": "ATTENTION !!! Il est conseillé d'installer au préalable une corde pour aider à la sortie, à moins d'enchainer sur la\n\npartie I des Ecouges",
+      "engagement": "Une fois dans la verticale, la sortie est soit par les\n\nEcouges\n\n, soit par en face (corde utile à mettre en place) pour rejoindre la route.",
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "Bonne connaissance des techniques de corde et un débit modéré est nécessaire."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 214,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.180832,
+        "longitude": 5.497222,
+        "label": null
+      },
+      {
+        "canyonId": 214,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.179375,
+        "longitude": 5.497112,
+        "label": null
+      },
+      {
+        "canyonId": 214,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.177288,
+        "longitude": 5.4987,
+        "label": null
+      },
+      {
+        "canyonId": 214,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 45.183247,
+        "longitude": 5.500975,
+        "label": "Endroit où l'on quitte la piste pour prendre un sentier à gauche"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.177288,
+      "longitude": 5.4987,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_e7d94bb2f47393ab",
+          "kind": "TOPOGUIDE",
+          "title": "Cascades, Gorges & Canyons : Pré-alpes d'Isère et de Savoie",
+          "authors": [
+            "Bertrand Hauser",
+            "Delphine Baratin"
+          ],
+          "publicationYear": 2007,
+          "reference": "978-2-9529407-0-2",
+          "editor": "Descente-Canyon.com",
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/11/Cascades--Gorges-et-Canyons-:-Pre-alpes-d-Isere-et-de-Savoie.html"
+        },
+        {
+          "id": "biblio_0f06b44eb9a42186",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons du Vercors et Alentours",
+          "authors": [
+            "J-C. Botti",
+            "B. Rosset",
+            "Y. Launay",
+            "C. Larribe",
+            "T. Larribe",
+            "Spéléo Club MJC de Tullins"
+          ],
+          "publicationYear": 1997,
+          "reference": "ISBN 2-7417-0211-X",
+          "editor": "Gap",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/12/topoguide.html"
+        },
+        {
+          "id": "biblio_e2259ea833d03cf8",
+          "kind": "TOPOGUIDE",
+          "title": "Infern'eaux",
+          "authors": [
+            "P. Boiron",
+            "J. Carles",
+            "J-M. Etienne",
+            "R. Vuillot"
+          ],
+          "publicationYear": 1990,
+          "reference": "ISBN 2-7038-0065-7",
+          "editor": "Didier et Richard",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/11/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_f71cf3569cd5f7fc",
+          "kind": "MAP",
+          "title": "3235 OT Autrans - Gorges de La Bourne (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

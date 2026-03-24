@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:39.329907+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22336,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22336/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22336/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22336/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22336/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22336,
+    "identity": {
+      "nom": "Prunes",
+      "nomComplet": "Ravine des Prunes",
+      "prefixeNom": "Ravine des",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22336/Prunes.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Cilaos",
+      "departement": "La Réunion",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Cilaos",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a2III",
+      "interet": 2.1,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 1998,
+      "deniveleM": 614,
+      "longueurM": 1400,
+      "cascadeMaxM": 60,
+      "cordeMiniM": 60,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h15",
+      "descente": "5h00",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "A Cilaos prendre la route de Bras Sec. Stationner au parking du sentier du bloc.",
+      "accesAmont": null,
+      "approche": "Suivre le sentier jusqu'au lieu-dit Matarum, la ravine coupe le sentier à l'altitude 1998 m suivre cette ravine pendant 10 mn pour trouver le 1er rappel",
+      "descente": "15 rappels",
+      "retour": "Après 10 à 15 mn dans les blocs on rejoint la route de départ",
+      "engagement": "Attention aux chutes de pierre de R5 à R9",
+      "periode": "En été avec un peu plus d'eau c'est mieux, cependant tenir compte du risque accru de chutes de pierres en cas de pluie.",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22336,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": -21.112862,
+        "longitude": 55.488609,
+        "label": null
+      },
+      {
+        "canyonId": 22336,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": -21.123583,
+        "longitude": 55.487141,
+        "label": null
+      },
+      {
+        "canyonId": 22336,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": -21.123501,
+        "longitude": 55.483166,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": -21.123501,
+      "longitude": 55.483166,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_b239997245dc5eb0",
+          "kind": "MAP",
+          "title": "4405RT Saint-Pierre (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

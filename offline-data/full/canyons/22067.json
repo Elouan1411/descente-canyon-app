@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:42.623814+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22067,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22067/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22067/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22067/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22067/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22067,
+    "identity": {
+      "nom": "Jaglingbach",
+      "nomComplet": "Jaglingbach, Geojagl",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22067/Jaglingbach.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Haute-Autriche",
+      "departement": "Gmunden",
+      "communePrincipale": "Bad Ischl",
+      "communes": [
+        "Bad Ischl"
+      ],
+      "massif": "Salzkammergut",
+      "bassin": "Ischl",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2III",
+      "interet": 1.8,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 840,
+      "deniveleM": 505,
+      "longueurM": 1000,
+      "cascadeMaxM": 27,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h15min",
+      "descente": "3-4h",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "Accès identique à Grabenbach. Continuez la piste et garez-vous au terminus de la route au niveau des barrières.",
+      "accesAmont": null,
+      "approche": "Empruntez la piste qui part à gauche après les barrières. Lorsqu’elle tourne à gauche pour rejoindre une maison d’exploitation, prenez la piste de droite. A la rivière remontez au mieux RD. Au niveau des falaises, il faut trouver un cheminement sur une vire raide qui part sur la gauche. L’escalade n’est pas nécessaire mais le passage est délicat (Accès sanglier Grade II). On trouve une meilleure sente au dessus et on remonte à côté du canyon jusqu’au moment où l’encaissement disparaît.",
+      "descente": "Les obstacles aux formes parfois sympathiques commencent tout de suite. Peu de rappels sont obligatoires mais les rochers sont très glissants, obligeant à des désescalades parfois délicates. Dans la dernière partie, des résurgences redonnent de l’eau.",
+      "retour": "Après les grands plans inclinés arrive un affluent RG. On sort au niveau de la piste le reste ayant peu d’intérêt. On rejoint sans problèmes les véhicules.",
+      "engagement": "Faible. Quasiment tous les obstacles peuvent s’éviter.",
+      "periode": "A sec au départ. Petit filet d’eau ensuite. Peut se faire après les pluies.\n\nmai-octobre.",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22067,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.709869,
+        "longitude": 13.721876,
+        "label": null
+      },
+      {
+        "canyonId": 22067,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.697647,
+        "longitude": 13.719746,
+        "label": null
+      },
+      {
+        "canyonId": 22067,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.692547,
+        "longitude": 13.712472,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.692547,
+      "longitude": 13.712472,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_4efa32b3285a258d",
+          "kind": "MAP",
+          "title": "96 Bad Ischl (ÖK50 (BEV))",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_b0dbdea0d917a991",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/C.....?topic=GeojaglCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/C.....?topic=GeojaglCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

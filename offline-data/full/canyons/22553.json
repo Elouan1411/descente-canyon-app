@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:28.028471+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22553,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22553/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22553/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22553/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22553/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22553,
+    "identity": {
+      "nom": "Tour carrée",
+      "nomComplet": "Ravin de la Tour carrée, Jonte",
+      "prefixeNom": "Ravin de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22553/Tour-carree.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Aveyron",
+      "communePrincipale": "Peyreleau",
+      "communes": [
+        "Peyreleau"
+      ],
+      "massif": "Causse Noir",
+      "bassin": "Jonte",
+      "coursEau": "Jonte"
+    },
+    "rating": {
+      "cotation": "v4a1II",
+      "interet": 1.5,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 730,
+      "deniveleM": 160,
+      "longueurM": 200,
+      "cascadeMaxM": 35,
+      "cordeMiniM": 38,
+      "navette": "15.0km"
+    },
+    "timings": {
+      "approche": "20min/ 1h3",
+      "descente": "2h",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "Sans navette:aller à Peyreleau,quartier des Rouquets,et suivre la piste le long de la Jonte sur environ 1,5kms . Se garer à D au niveau d'une ruine (2/3 véhicules).\n\nAvec navette:laisser 1 véhicule comme précedemment , et monter sur le causse par la cote d'Aleyrac,puis à G direction St André de Vezines . Avant le prieuré de St Jean de Balmes prendre la piste à G ( borne commémorative) puis à nouveau à G sur 2,5kms jusqu'au Champignon préhistorique.",
+      "accesAmont": null,
+      "approche": "Sans navette : 1h30 , D+300m ; remonter la piste vers l'amont et grimper jusqu'à l'ermitage St Michel (la visite s'impose);suivre le sentier des corniches de la Jonte qui mène au Champignon : assez accidenté , beaucoup de racines . Après un petit ravin (arbre en travers) repérer à D un petit arbre qui sert d'AN .\n\nAvec navette : du Champignon , suivre vers l'amont le sentier des corniches de la Jonte , direction l'ermitage : 20mn , D-116m . Trouver le départ à G avant l'arbre en travers .",
+      "descente": "Cette faille est bien visible de la route des gorges de la Jonte , à G de la tour carrée, située entre la tour du Curvelié à D et la muraille du Fabié à G .\n\nSuccession de 5 rappels , sans échappatoire , à éviter par temps humide .\n\nR1 25m sur AN , suivi d'une pente terreuse ou il peut ètre utile d'installer une MC sur 1 buis .\n\nR2 35m caché dans une niche ; présence d'une étroiture au départ ?...\n\nR3 20m avec MC en place ; attention aux pierres .\n\nFaire MC 10m rappelable sur AN pour accéder au R4 15m sur AN .\n\nR5 28m",
+      "retour": "Du pied du dernier rappel descendre au mieux dans le bartas jusqu'à la piste qui longe la Jonte ...La suivre à G 5mn .",
+      "engagement": "Pas d'échappatoire après R2 .",
+      "periode": "Ravin sans eau, ce qui ne veut pas dire toujours sec...(versant Nord)",
+      "geologie": "Dans les calcaires à gros bancs du Bathonien supérieur .",
+      "historique": "Les millavois Michel Galzin ,Frédo Sola, et Papic pour la finition et le nettoyage .",
+      "remarques": "Éviter les périodes pluvieuses , ne pas prendre son dernier rappel tout neuf , tenue de \"combat\" (étroiture).\n\nA voir dans le secteur : St Jean de Balmes, le toit-citerne de la Roujarie 400m + loin à G, l'ermitage St Michel, le cirque de Madasse, la fontaine St Martin ."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22553,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.186359,
+        "longitude": 3.233083,
+        "label": null
+      },
+      {
+        "canyonId": 22553,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 44.183163,
+        "longitude": 3.223675,
+        "label": "Champignon Préhistorique"
+      },
+      {
+        "canyonId": 22553,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.190105,
+        "longitude": 3.226275,
+        "label": "piste le long de la Jonte"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 44.183163,
+      "longitude": 3.223675,
+      "label": "Champignon Préhistorique"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_3bf86c23b7e29bf2",
+          "kind": "MAP",
+          "title": "2640 OT Gorges du Tarn (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

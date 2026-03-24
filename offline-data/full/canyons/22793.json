@@ -1,0 +1,147 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:54:22.961252+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22793,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22793/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22793/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22793/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22793/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22793,
+    "identity": {
+      "nom": "Weißenbach",
+      "nomComplet": "Weißenbach, Stierkarabfluss",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22793/Weißenbach.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Haute-Autriche",
+      "departement": "Kirchdorf an der Krems",
+      "communePrincipale": "Steyrling",
+      "communes": [
+        "Steyrling"
+      ],
+      "massif": "Totes Gebirge - Massif Mort",
+      "bassin": "Steyr",
+      "coursEau": "Weißenbach"
+    },
+    "rating": {
+      "cotation": "v4a3IV",
+      "interet": 2.6,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 1040,
+      "deniveleM": 355,
+      "longueurM": 2200,
+      "cascadeMaxM": 40,
+      "cordeMiniM": 45,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "2h",
+      "descente": "4h",
+      "retour": "40min"
+    },
+    "topo": {
+      "accesAval": "Sortir de la A9 (Sankt Pankratz) et prendre la B319 direction Hinterstoder.\n\nSortir de la B319 en direction de Steyrling et continuer la route puis la piste jusqu'à \"Brunnental\" (rivière Steyrling).\n\n1er bifurcation à gauche, 2ème bifurcation à gauche jusqu'à la barrière.",
+      "accesAmont": null,
+      "approche": "Continuer la piste (ca. 30 Min) jusqu'au creusement des pistes et prendre la piste à droite.\n\nContinuer le sentier, traverser le Weißenbach et continuer une sente jusqu'à \"Stierkar\" (alt. 1050 m)",
+      "descente": "1ère partie : succession de rappels (20m-13m-40m-10m-15m-25m-25m).\n\n2ème partie : marche\n\n3ême partie encaisement",
+      "retour": "A la fin de l'encaissement, sortie en remontant vers le creusement des pistes. Revenir vers la barrière.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22793,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.744019,
+        "longitude": 14.105673,
+        "label": "Stierkarabfluss"
+      },
+      {
+        "canyonId": 22793,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.763012,
+        "longitude": 14.114074,
+        "label": null
+      },
+      {
+        "canyonId": 22793,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.772243,
+        "longitude": 14.072016,
+        "label": null
+      },
+      {
+        "canyonId": 22793,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.762177,
+        "longitude": 14.109664,
+        "label": "creusement des pistes"
+      },
+      {
+        "canyonId": 22793,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.747692,
+        "longitude": 14.105544,
+        "label": "départ de la 2ème partie"
+      },
+      {
+        "canyonId": 22793,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.755325,
+        "longitude": 14.106531,
+        "label": "départ de la 3ème partie"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.772243,
+      "longitude": 14.072016,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_77c1c804c4512aea",
+          "kind": "MAP",
+          "title": "WK 5501 Nationalpark Kalkalpen (Freytag & Berndt)",
+          "scale": "1/35000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_ac0aaeddbfd2f524",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/C.....topic=StierkarCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/C.....topic=StierkarCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

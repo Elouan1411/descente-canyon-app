@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:57.411394+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23170,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23170/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23170/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23170/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23170/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23170,
+    "identity": {
+      "nom": "Fontanelles",
+      "nomComplet": "Cascades de Fontanelles",
+      "prefixeNom": "Cascades de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23170/Fontanelles.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Tarn-et-Garonne",
+      "communePrincipale": "Cazals",
+      "communes": [
+        "Cazals"
+      ],
+      "massif": "Causses du Quercy",
+      "bassin": "Aveyron",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a1I",
+      "interet": 0.9,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 195,
+      "deniveleM": 80,
+      "longueurM": 300,
+      "cascadeMaxM": 14,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "1h15",
+      "retour": "25min"
+    },
+    "topo": {
+      "accesAval": "Depuis Saint-Antonin-Noble-Val prendre la direction de Montauban D958 et une fois arrivé sur le Causse prendre à gauche direction Montricoux (D958).\n\nUn kilomètre environ avant le carrefour direction Cazals avant un virage à gauche, remarquer un parking sur la gauche, se garer.",
+      "accesAmont": null,
+      "approche": "Suivre la route une cinquantaine de mètre jusqu'à la sortie du virage. Remarquer alors une sente qui descend sur la gauche.\n\nPrendre cette sente, on arrive au bout d'un quart d'heure de marche à la première cascade.",
+      "descente": "Enchainement de 3 petites cascades de tuf et ressauts jusqu’au bord de l'Aveyron dans un cadre sauvage.",
+      "retour": "Après la dernière cascade continuer 20m pour arriver sur un bon sentier qui longe l'Aveyron. Le prendre par la gauche et remarquer au bout d'une vingtaine de mètre une sente qui part à gauche et monte raide, la suivre, au bout de 10min on arrive au dessus de la deuxième cascade, suivre la sente et revenir par le chemin pris pour l'approche.",
+      "engagement": "La première cascade peut se shunter par le chemin de retour, ensuite il est possible de s'échapper mais ce n'est pas facile.",
+      "periode": "Coule de l'automne au printemps, sec l'été.",
+      "geologie": "Cascades de tufs",
+      "historique": null,
+      "remarques": "Amarrages naturels uniquement. Pas d'encaissement."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23170,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.133476,
+        "longitude": 1.70199,
+        "label": null
+      },
+      {
+        "canyonId": 23170,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.133385,
+        "longitude": 1.704372,
+        "label": null
+      },
+      {
+        "canyonId": 23170,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.136559,
+        "longitude": 1.699737,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.136559,
+      "longitude": 1.699737,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_38f5d038d3889ec3",
+          "kind": "MAP",
+          "title": "2140E St-Antonin-Noble-Val (IGN Série Bleue)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

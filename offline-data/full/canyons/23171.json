@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:57.774788+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23171,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23171/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23171/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23171/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23171/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23171,
+    "identity": {
+      "nom": "Porto",
+      "nomComplet": "Vallone Porto, Carafocchia d'o Munacello",
+      "prefixeNom": "Vallone",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23171/Porto.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Campanie",
+      "departement": "Salerno",
+      "communePrincipale": "Positano",
+      "communes": [
+        "Positano"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v5a1IV",
+      "interet": 2.8,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 880,
+      "deniveleM": 710,
+      "longueurM": 1500,
+      "cascadeMaxM": 160,
+      "cordeMiniM": 65,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "1h30",
+      "descente": "5hà 6h30",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": "se garer à la sortie de Positano en allant vers Praiano",
+      "accesAmont": "monter à Nocelle, se garer au bout de la route.\n\nIl semble qu'il soit possible de prendre un bus pour effectuer la navette, ce dernier passerait toute les deux heures.\n\nPossibilité de ne pas faire de navette, un sentier remonte rive gauche jusqu'à Nocelle puis jusqu'au départ.",
+      "approche": "Prendre le chemin en direction du mont Caliello jusqu'à couper le vallon. Il existe deux départs différents, le ramo destro et sinistro.",
+      "descente": "Les deux départs sont secs.\n\nRamo destro (orographique) : 30 cascades (!!) dont une de 160 mètres fractionnées en 20-20-60-60\n\nRamo sinistro : 40 cascades (!!) dont une de 75 à 100 mètres? corde max 65m\n\nL'eau apparaît en milieu de parcours et jusqu'à la fin. Encaissement très fort mais échappatoire évidente sur la route qui coupe le vallon.\n\nRespect à l'ermite qui habite dans le vallon dans la seconde partie.",
+      "retour": null,
+      "engagement": "Une échappatoire évidente, le reste semble très encaissé!!",
+      "periode": "Sec en haut, en eau en bas.",
+      "geologie": null,
+      "historique": "M.Amoroso, E.Zezza, E.Barella, S.De Cicco, A.Romano, A.Esposito en 1991",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23171,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 40.640533,
+        "longitude": 14.490101,
+        "label": null
+      },
+      {
+        "canyonId": 23171,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 40.634289,
+        "longitude": 14.48523,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 40.640533,
+      "longitude": 14.490101,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_0ef1ba36c9bbdedf",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://catastoforre.aic-canyoning.it/index/forra/cod/SA014",
+          "url": "http://catastoforre.aic-canyoning.it/index/forra/cod/SA014"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

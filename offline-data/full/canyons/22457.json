@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:05.628006+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22457,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22457/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22457/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22457/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22457/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22457,
+    "identity": {
+      "nom": "Serra",
+      "nomComplet": "Torrente Serra, Serra",
+      "prefixeNom": "Torrente",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22457/Serra.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Toscana",
+      "departement": "Lucca",
+      "communePrincipale": "Seravezza",
+      "communes": [
+        "Seravezza"
+      ],
+      "massif": "Alpes apuanes - Alpi Apuane",
+      "bassin": "Versilia",
+      "coursEau": "Serra"
+    },
+    "rating": {
+      "cotation": "v3a4III",
+      "interet": 2.3,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 560,
+      "deniveleM": 360,
+      "longueurM": 2500,
+      "cascadeMaxM": 12,
+      "cordeMiniM": 20,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "??",
+      "descente": "5h30",
+      "retour": "??"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22457,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.041588,
+        "longitude": 10.233024,
+        "label": null
+      },
+      {
+        "canyonId": 22457,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.023678,
+        "longitude": 10.221105,
+        "label": null
+      },
+      {
+        "canyonId": 22457,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 44.04034,
+        "longitude": 10.233035,
+        "label": null
+      },
+      {
+        "canyonId": 22457,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 44.022999,
+        "longitude": 10.221067,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 44.04034,
+      "longitude": 10.233035,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_dda017973552eb75",
+          "kind": "MAP",
+          "title": "101/102 Alpi Apuane (MULTIGRAPHIC - Carta dei sentieri e dei rifugi)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_2ee74c707926d40f",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.openspeleo.org/openspeleo/canyons-view-79.fr.html",
+          "url": "http://www.openspeleo.org/openspeleo/canyons-view-79.fr.html"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

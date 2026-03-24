@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:15.079976+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22498,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22498/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22498/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22498/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22498/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22498,
+    "identity": {
+      "nom": "Dießbachschlucht",
+      "nomComplet": "Dießbachschlucht, Dießbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22498/Dießbachschlucht.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Salzbourg",
+      "departement": "Politischer Bezirk Zell am See",
+      "communePrincipale": "Weissbach bei Lofer",
+      "communes": [
+        "Weissbach bei Lofer"
+      ],
+      "massif": "Salzburger Kalkalpen",
+      "bassin": "Saalach",
+      "coursEau": "Dießbach"
+    },
+    "rating": {
+      "cotation": "v4a3V",
+      "interet": 3.3,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 1140,
+      "deniveleM": 440,
+      "longueurM": null,
+      "cascadeMaxM": 50,
+      "cordeMiniM": 55,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h40",
+      "descente": "4h30",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "Échappatoire devant la dernière cascade (C50) à droite vers le sentier"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22498,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.504948,
+        "longitude": 12.810713,
+        "label": null
+      },
+      {
+        "canyonId": 22498,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.498444,
+        "longitude": 12.80389,
+        "label": null
+      },
+      {
+        "canyonId": 22498,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.497002,
+        "longitude": 12.798783,
+        "label": null
+      },
+      {
+        "canyonId": 22498,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.504524,
+        "longitude": 12.805585,
+        "label": "sortir le sentiers vers cours d'eau (sans sente)"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.497002,
+      "longitude": 12.798783,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_c49372f2d240738f",
+          "kind": "MAP",
+          "title": "92 Lofer (ÖK 50)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_b4be7ff7516e9978",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/C.....ssbachschluchtCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/C.....ssbachschluchtCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

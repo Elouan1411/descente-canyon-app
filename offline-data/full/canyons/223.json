@@ -1,0 +1,211 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:43:34.373760+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 223,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/223/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/223/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/223/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/223/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/223/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 223,
+    "identity": {
+      "nom": "Tréfond-Pernaz",
+      "nomComplet": "Tréfond-Pernaz",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/223/Trefond-Pernaz.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Ain",
+      "communePrincipale": "Serrières-de-Briord",
+      "communes": [
+        "Bénonces",
+        "Serrières-de-Briord"
+      ],
+      "massif": "Bugey",
+      "bassin": "Rhône",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a3I",
+      "interet": 2.6,
+      "nbVotes": 111
+    },
+    "metrics": {
+      "altitudeDepartM": 360,
+      "deniveleM": 90,
+      "longueurM": 2000,
+      "cascadeMaxM": 10,
+      "cordeMiniM": 15,
+      "navette": "3.5km"
+    },
+    "timings": {
+      "approche": "??",
+      "descente": "1h30",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "Aval : se garer au niveau du nouveau parking aménagé (rue du Pont) par la municipalité (WC publiques disponibles) (coordonnées GPS : 45°48'33.3\"N 5°27'12.8\"E) (Le silo a disparu en 2022-2023 au profit de ce parking)\n\nNota : ne plus utiliser le parking de l'église, trop gênant pour les riverains et maintenant interdit sauf possesseurs d'une carte de stationnement.",
+      "accesAmont": "Amont : de Serrières-de-Briord prendre la D32 en direction de Bénonces sur un peu plus de 2km. Puis descendre à droite un chemin carrossable vers le cours d'eau (300m). Se garer au niveau du pont (pancarte d'information).",
+      "approche": "Marche d'approche sans voiture possible en empruntant le chemin de l'Eglise puis en suivant le sentier parallèle à la RD32 (compter 30-35 min)",
+      "descente": "Une descente très ludique avec beaucoup de petits sauts et toboggans, à sonder bien évidemment (les vasques ont tendance à se charger en gravier) et une fin magnifique pour ceux qui en veulent un peu plus...\n\nAssez discontinu (pas mal de marche mais jamais trop longues)",
+      "retour": "Un sentier évident en RD nous ramène au village.",
+      "engagement": "Il est toujours possible de sortir du canyon mise à part sur 2 ou 3 courts passages.",
+      "periode": "Nombreuses vasques avec parfois quelques brasses à faire.\n\nAttention à la réglementation spécifique (période de pratique autorisée : 15 avril au 31 juillet et du 1er septembre au 31 octobre).",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Pas mal pour les débutants.\n\nIl ne sert à rien de remonter à la confluence: pas d'obstacle. Passez votre chemin sous le pont, et prenez le sentier 15m en aval en RG.\n\nPeu d'intérêt à l'étiage."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 223,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.821682,
+        "longitude": 5.467672,
+        "label": null
+      },
+      {
+        "canyonId": 223,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 45.8218,
+        "longitude": 5.468273,
+        "label": null
+      },
+      {
+        "canyonId": 223,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 45.808998,
+        "longitude": 5.453682,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 45.8218,
+      "longitude": 5.468273,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_3e478b1678d6811f",
+          "kind": "MAP",
+          "title": "3231 OT Amberieu-en-Bugey (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 345,
+          "status": "Abrogé",
+          "action": "Interdit",
+          "title": "Arrêté préfectoral (Ain) - 08 sept 2016",
+          "summary": "En raison de la sécheresse, conjugué à l'attaque de pyrale qui attaque les buis, le risque d'incendie est maximal. Aussi, l'accès à tous les massifs forestiers est interdit par arrêté préfectoral sur les voies et chemins non asphaltés. Dans ces conditions, la pratique de la descente de canyon n'est pas possible pour l'ensemble des canyons qui nécessitent d'emprunter un sentier ou une piste, ou encore s'il se trouve au sein d'une forêt.\n\nL'interdiction est valable du 09 septembre jusqu'au 30 septembre 2016, mais cette période pourra être prolongée si les conditions le justifient.\n\nPour info, l'amende est de quatrième classe (750 euros !).",
+          "remark": null,
+          "details": "Arrêté préfectoral du 08 septembre 2016\n\nCarte des communes concernées par l'arrêté préfectoral\n\nArrêté levant l'interdiction au 22 septembre 2016",
+          "effectiveDate": "30 sept 2016",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/345/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral du 08 septembre 2016",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem345_pj1.pdf"
+            },
+            {
+              "label": "Carte des communes concernées par l'arrêté préfectoral",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem345_pj2.pdf"
+            },
+            {
+              "label": "Arrêté levant l'interdiction au 22 septembre 2016",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem345_pj3.pdf"
+            }
+          ]
+        },
+        {
+          "id": 103,
+          "status": "Obsolète",
+          "action": "Interdit",
+          "title": "Arrêté préfectoral (Ain) - 10 août 2005",
+          "summary": "La pratique du canyonisme est interdite pour des raisons de sécheresse, jusqu'au 15 septembre, sauf évolution.\n\nPour infos, l'amende est de 1500 €, 3000 € en cas de récidive...",
+          "remark": null,
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.",
+          "effectiveDate": "15 sept 2005",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/103/legislation.html",
+          "attachments": []
+        },
+        {
+          "id": 76,
+          "status": "Obsolète",
+          "action": "Interdit",
+          "title": "Arrêté préfectoral (Ain) - 10 août 2004",
+          "summary": "NOTE : ABROGE PAR LA PREFECTURE.\n\nCanyon interdit pour des raisons de sécheresse.\n\nJusqu'au 15 septembre 2004, sauf changement.\n\nAmende : 1500 € et 3000 € en cas de récidive !",
+          "remark": null,
+          "details": "Communiqué de la préfecture de l'Ain, mettant fin à l'interdiction\n\nArrêté Préfectoral du 10 août 2004, interdisant la pratique du canyoning sur certains cours d'eau",
+          "effectiveDate": "24 août 2004",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/76/legislation.html",
+          "attachments": [
+            {
+              "label": "Communiqué de la préfecture de l'Ain, mettant fin à l'interdiction",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/abrogeAin2004.pdf"
+            },
+            {
+              "label": "Arrêté Préfectoral du 10 août 2004, interdisant la pratique du canyoning sur certains cours d'eau",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/arrete76.pdf"
+            }
+          ]
+        },
+        {
+          "id": 57,
+          "status": "Obsolète",
+          "action": "Interdit",
+          "title": "Arrêté préfectoral (Ain) - 01 juil 2003",
+          "summary": "Pour des raisons de sécheresse, les canyons de Treffond-Pernaz et du rhéby sont interdit jusqu'au 31 octobre 2003. Si la situation météo le permet, cet arrêté sera supprimé avant le 31 octobre 2003.\n\nPlus d'infos : actualité du 26 juillet 2003",
+          "remark": "L'arrêté préfectoral du 11 avril 2002 est donc abrogé. Il définissait de manière précise les parties praticables et posait une interdiction partielle pour la protection du milieu. La pratique de descente de canyon était interdite au mois d'Août et du 1er novembre au 14 avril.\n\nCet arrêté prenait lui-même le relais de l'arrêté municipal concerté de 1995 qui autorisait la pratique du 15 avril au 31 juillet et du 1er septembre au 31 octobre.",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nConsultez le document\n\nArrêté Prefectoral du 22 juillet 2003\n\nPréfecture de l'Ain\n\nDirection des relations avec les collectivités locales\n\nARRETE\n\nPortant interdiction de la pratique du canyonning et de la pêche sur le cours d'eau du RHEBY, de la PERNAZ et de ses affluents\n\nLe préfet de l'Ain\n\nChevalier de la légion d'honneur,\n\nVU le code général des collectivités territoriales, notamment son article 2215.1 ;\n\nVU la loi n°84-610 relative à l'organisation et à la promotion des activités physiques et sportives ;\n\nVU la loi n°92-3 du 3 janvier 1992 sur l'eau ;\n\nVU le décret n°73-912 du 21 mai 1997 portant réglementation du canyonning dans le département de l'Ain ;\n\nVU l'arrêté préfectoral du 11 avril 2002 portant réglementation du canyonning sur le cours d'eau du Rhéby, de la Pernaz et de ses affluents ;\n\nVU l'avis du président de la fédération départementale pour la pêche et la protection des milieux aquatiques de l'Ain du 18 juillet 2003 ;\n\nVU l'avis du chef de brigade du conseil supérieur de la pêche de l'Ain du 18 juillet 2003 ;\n\nVU l'avis du directeur départemental de la jeunesse et des sports en date du 18 juillet 2003 ;\n\nCONSIDERANT le niveau très bas des rivières ;\n\nCONSIDERANT qu'il n'est par conséquent plus possible d'envisager la descente des canyons sans causer d'importantes dégradations du milieu et du biotope ;\n\nSUR proposition de la secrétaire générale de la préfecture ;\n\nARTICLE 1er - La pratique de la pêche sur les cours d'eau de la Pernaz et de ses affluents, communes de Serrières de Briord, Montagnieu, Bénonces et Seillonnaz, et sur le cours d'eau le Rhéby commune de Villebois, est interdite.\n\nLa pratique de la descente des canyons sur ces mêmes cours d'eau est interdite.\n\nARTICLE 2 - Les dispositions de l'article 1 sont d'application immédiate et jusqu'au 31 octobre 2003.\n\nElles seront revues en tant que besoin en fonction de l'évolution de la situation météorologique et hydrologique.\n\nARTICLE 3 - La secrétaire générale de la préfecture, le sous préfet de BELLEY, le directeur départemental de la jeunesse et des sports, le lieutenant colonel commandant le groupement de gendarmerie de l'Ain, le directeur départemental de l'agriculture et de la forêt, le directeur départemental des services d'incendie et de secours, les maires des communes concernées sont chargés, chacun en ce qui le concerne, de l'exécution du présent arrêté qui sera publié au recueil des actes administratifs et affiché dans chaque mairie concernée.\n\nFait à BOURG EN BRESSE, le 22 juillet 2003\n\nPour le Préfet,\n\nLa Secrétaire Générale - Isabelle RUEFF",
+          "effectiveDate": "31 oct 2003",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/57/legislation.html",
+          "attachments": []
+        },
+        {
+          "id": 7,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Ain) - 11 avr 2002",
+          "summary": "Il définit de manière précise les parties praticables et pose une interdiction partielle pour la protection du milieu. La pratique de descente de canyon est interdite au mois d'Août et du 1er novembre au 14 avril.",
+          "remark": "Cet arrêté prend le relais de l'arrêté municipal concerté de 1995 qui autorisait la pratique du 15 avril au 31 juillet et du 1er septembre au 31 octobre.",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.",
+          "effectiveDate": "11 avr 2002",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/7/legislation.html",
+          "attachments": []
+        },
+        {
+          "id": 518,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Ain) - 11 avr 2002",
+          "summary": "Réglemente la pratique sur la Pernaz et ses affluents, impacte donc :\n\n- Trefond-Pernaz\n\n- Arodin\n\n- Rhéby\n\nSections autorisées précisées dans l'arrêté pour chaque canyon.\n\nDéfinit la période et les horaires de pratique :\n\nDescente autorisée du 15 avril au 31 juillet, et du 01 septembre au 31 octobre de chaque année, uniquement entre 10h le matin et 18h l'après-midi.",
+          "remark": null,
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.",
+          "effectiveDate": "11 avr 2002",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/518/legislation.html",
+          "attachments": []
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,180 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:45:55.840067+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2549,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2549/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2549/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2549/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2549/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/2549/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 2549,
+    "identity": {
+      "nom": "Viula",
+      "nomComplet": "Ruisseau de Viula, Canyon d'Olcani",
+      "prefixeNom": "Ruisseau de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2549/Viula.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Corse",
+      "departement": "Haute-Corse",
+      "communePrincipale": "Olcani",
+      "communes": [
+        "Nonza",
+        "Olcani"
+      ],
+      "massif": "Cap Corse",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a2III",
+      "interet": 2.6,
+      "nbVotes": 17
+    },
+    "metrics": {
+      "altitudeDepartM": 500,
+      "deniveleM": 120,
+      "longueurM": 700,
+      "cascadeMaxM": 50,
+      "cordeMiniM": 55,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h",
+      "descente": "2h",
+      "retour": "45min"
+    },
+    "topo": {
+      "accesAval": "Face Ouest du Cap Corse, du village de Nonza, poursuivre vers le Nord puis monter au village d'Olcani par la D.233. Avant le hameau de Lainosa, stationner le véhicule au point côté 297 IGN, dans une épingle à cheveux d'où part une piste. Un panneau d'information de randonnée marque le début de cette piste.",
+      "accesAmont": null,
+      "approche": "Du parking, emprunter la piste qui passe sur le ponte Novu. La piste se transforme en sentier balisé vert. Aux divers embranchements, prendre successivement les directions de Bocca di Violu, puis Monte Stello ( toujours à gauche ). 20 minutes après le dernier embranchement, prendre un sentier bien marqué (présence d'un cairn) qui rejoint le départ du ruisseau.",
+      "descente": "Après quelques désescalades et petits tobogans, on arrive à une très belle étroiture constituée d'une C13, C12 et une C8, le tout bien encaissé.\n\nS'en suit une C22 qui précède une belle C50 en pan incliné.",
+      "retour": "Après la C50, continuer dans la rivière pendant 45 min en profitant des desescalades, petits sauts et tobogans qui ponctuent le retour. On arrive ainsi au Ponte Novu franchi lors de la marche d'approche.",
+      "engagement": "Peu engagé dans l'ensemble, sauf au passage de l'étroiture ou il deviendra un véritable piège en cas de crue ou d'orage. Tous les rappels dans cette partie étroite sont réalisés dans l'actif.",
+      "periode": "Petit débit en période éstivale\n\nDébit optimal en Hiver...",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Un très bel encaisement aquatique\n\nUne partie de ces données sont tirées du très bon Topo de Franck Jourdan et J.F Fiorina."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2549,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.795555,
+        "longitude": 9.390278,
+        "label": null
+      },
+      {
+        "canyonId": 2549,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.802776,
+        "longitude": 9.376111,
+        "label": null
+      },
+      {
+        "canyonId": 2549,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 42.804169,
+        "longitude": 9.373611,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 42.804169,
+      "longitude": 9.373611,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_2bafc8e0f7a42d9c",
+          "kind": "TOPOGUIDE",
+          "title": "La Corse en Canyon",
+          "authors": [
+            "Association CorseCanyon"
+          ],
+          "publicationYear": 2018,
+          "reference": null,
+          "editor": "auto-edition",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/1127/La-Corse-en-Canyon-3eme-edition.html"
+        },
+        {
+          "id": "biblio_eeda460e91ce529f",
+          "kind": "TOPOGUIDE",
+          "title": "Corse Canyons (2ème édition)",
+          "authors": [
+            "Franck Jourdan",
+            "Jean-François Fiorina"
+          ],
+          "publicationYear": 2006,
+          "reference": "2-84698-169-8",
+          "editor": "Albiana",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/133/Corse-Canyons.html"
+        },
+        {
+          "id": "biblio_fab33759293ad66d",
+          "kind": "TOPOGUIDE",
+          "title": "Corse Canyons",
+          "authors": [
+            "Franck Jourdan",
+            "Jean-François Fiorina"
+          ],
+          "publicationYear": 2004,
+          "reference": "ISBN : 2-9520630-5-2",
+          "editor": "Corsecanyon",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1119/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_e078ea6264eda2fb",
+          "kind": "MAP",
+          "title": "4347 OT Cap Corse (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 232,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Corse) - 08 juin 2011",
+          "summary": "- Le canyonisme est interdit la nuit (sauf dérogation)\n\n- Le canyonisme est interdit s'il y a une alerte émise par Météo-France de niveau orange ou rouge en cours.\n\n- Le canyonisme est interdit aux mineurs de moins de 7 ans, sauf canyon évalué égal ou inférieur à V1-A3-E3\n\n- Les groupes auront un effectif maximum de 12 personnes, hors encadrement.",
+          "remark": "L'arrêté du 9 juillet 2019 pris conjointement par les préfectures de Corse-du-Sud et de Haute-Corse harmonise les réglementations existantes pour les deux départements.",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nArrêté préfectoral (Haute-Corse) n°2011-159-0008 du 8 juin 2011\n\nArrêté préfectoral modificatif (Corse-du-Sud et Haute-Corse) n°R20-2019-07-09-001 du 9 juillet 2019",
+          "effectiveDate": "08 juin 2011",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/232/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral (Haute-Corse) n°2011-159-0008 du 8 juin 2011",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem232_pj1.pdf"
+            },
+            {
+              "label": "Arrêté préfectoral modificatif (Corse-du-Sud et Haute-Corse) n°R20-2019-07-09-001 du 9 juillet 2019",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem232_pj2.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

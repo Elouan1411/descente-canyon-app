@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:37.802861+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22040,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22040/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22040/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22040/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22040/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22040,
+    "identity": {
+      "nom": "Cannobino",
+      "nomComplet": "Torrente Cannobino",
+      "prefixeNom": "Torrente",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22040/Cannobino.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Piemonte",
+      "departement": "Verbano-Cusio-Ossola",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 1.4,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": null,
+      "longueurM": null,
+      "cascadeMaxM": null,
+      "cordeMiniM": 10,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "??",
+      "descente": "??",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "De Cannobio prenez la direction de Domodossola par la Valle Cannobina. Prenez ensuite à droite la direction de Santa Anna.\n\nParking",
+      "accesAmont": "Suivez la Valle Cannobino et garez vous après le pont avant le village de Cavoglio Spoccia.",
+      "approche": null,
+      "descente": "Très longue randonnée aquatique avec un gros débit ce qui rend dangereux certains passages.",
+      "retour": "Fin dans une vasque géante. Sortez RG par un bon chemin.",
+      "engagement": null,
+      "periode": "Gros débit. Présence d’un barrage en amont ! Eau de mauvaise qualité.",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22040,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.066586,
+        "longitude": 8.6285,
+        "label": "depart deuxième (depart normal)"
+      },
+      {
+        "canyonId": 22040,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.07579,
+        "longitude": 8.602091,
+        "label": "depart 1ère partie (cela ne vaut pas la peine)"
+      },
+      {
+        "canyonId": 22040,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.06089,
+        "longitude": 8.668942,
+        "label": null
+      },
+      {
+        "canyonId": 22040,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 46.066673,
+        "longitude": 8.627862,
+        "label": "pour l'entrée inf."
+      },
+      {
+        "canyonId": 22040,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 46.075718,
+        "longitude": 8.601576,
+        "label": "parking pour le 1er depart"
+      },
+      {
+        "canyonId": 22040,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 46.061207,
+        "longitude": 8.667971,
+        "label": "parking S. Anna pour 3 heures seulement ..."
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 46.066673,
+      "longitude": 8.627862,
+      "label": "pour l'entrée inf."
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

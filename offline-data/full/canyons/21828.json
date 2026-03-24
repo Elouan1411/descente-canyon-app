@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:52.721283+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21828,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21828/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21828/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21828/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21828/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21828,
+    "identity": {
+      "nom": "Mühlbach",
+      "nomComplet": "Mühlbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21828/Muhlbach.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Haute-Autriche",
+      "departement": "Gmunden",
+      "communePrincipale": "Hallstatt",
+      "communes": [
+        "Hallstatt"
+      ],
+      "massif": null,
+      "bassin": "Hallstätter See",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 1.0,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 770,
+      "deniveleM": 190,
+      "longueurM": 400,
+      "cascadeMaxM": 35,
+      "cordeMiniM": 40,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "45min",
+      "descente": "3h30",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": "Ou avec funiculaire (5,50 Euro in 2007)",
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "ammarages en mauvais etat, eau grise et polluée"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21828,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.562489,
+        "longitude": 13.64336,
+        "label": null
+      },
+      {
+        "canyonId": 21828,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.561848,
+        "longitude": 13.647895,
+        "label": null
+      },
+      {
+        "canyonId": 21828,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.555038,
+        "longitude": 13.64502,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.555038,
+      "longitude": 13.64502,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

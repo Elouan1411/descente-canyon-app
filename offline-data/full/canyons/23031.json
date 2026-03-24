@@ -1,0 +1,147 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:21.766209+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23031,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23031/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23031/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23031/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23031/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23031,
+    "identity": {
+      "nom": "Scroa",
+      "nomComplet": "Val di Scroa",
+      "prefixeNom": "Val di",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23031/Scroa.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Vénétie",
+      "departement": "Belluno",
+      "communePrincipale": "Trichiana",
+      "communes": [
+        "Trichiana"
+      ],
+      "massif": "Prealpi Bellunesi",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a3III",
+      "interet": 1.4,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 650,
+      "deniveleM": 125,
+      "longueurM": 550,
+      "cascadeMaxM": 15,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "1h20min",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": "De Belluno prendre la SP 1 sur Piave direction de sud-ouest, le long de Limana à Trichiana (12,7 km). Au centre de Trichiana tourner en direction de Passo San Boldo (sud). Continuer environ 5km et passer la localité Sant'Antonio. Traverser alors le Torrent Arda pour tourner à gauche (6,35km de Trichiana) vers Campedel. Continuer sur ce petite route environ 1km et on croise sur un pont \"notre\" ruisseau. Devant le pont à gauche il y a de la place pour la voiture.",
+      "accesAmont": null,
+      "approche": "A l'est du pont prendre à quelques mètres une piste vers le sud. Et descendre facilement à droite en bas vers le lit de ruisseau.",
+      "descente": "Amarrages insuffisantes (2012), beaucoup de désescalade, 6 petits rappels, quelques petits toboggans et sauts.",
+      "retour": "Devant le ruisseau Arda, grimper en haut à droite la petite pente et aller vers le bord d'Arda. Monter la piste long du Torrente Arda jusqu'au barrage. D'ici vers l'ouest, prendre une sente et ensuite un chemin. Suivre celui-ci vers le haut, laisser à droite une trace et atteigner une petite clairière dans la forêt.\n\nDe cette clairière suivre la sente vers sud-ouest. Prendre un chemin étroit long la gorge, qui monte facilement. A sa fin, prendre un autre chemin qui mène en montant vers la route. Nous atteignons celle-ci à une petite maison qui était justement rénovée en 2012. Maintenant à droite descendre la route jusqu'au pont et la voiture.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23031,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.029598,
+        "longitude": 12.175341,
+        "label": null
+      },
+      {
+        "canyonId": 23031,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.034214,
+        "longitude": 12.172868,
+        "label": null
+      },
+      {
+        "canyonId": 23031,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.03009,
+        "longitude": 12.174976,
+        "label": null
+      },
+      {
+        "canyonId": 23031,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 46.030819,
+        "longitude": 12.17478,
+        "label": "Arrivé à la route"
+      },
+      {
+        "canyonId": 23031,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 46.033657,
+        "longitude": 12.174525,
+        "label": "début de la sente dans clairière vers sud-ouest."
+      },
+      {
+        "canyonId": 23031,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 46.034901,
+        "longitude": 12.174515,
+        "label": "Debut sentier vers le-haut"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.03009,
+      "longitude": 12.174976,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_0dcee14cdc13db79",
+          "kind": "MAP",
+          "title": "024 Prealpi e Dolomiti Bellunesi (Tabacco)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_71b953234e3f5f26",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://lnx.canyoning.it/index/forra/cod/BL053",
+          "url": "http://lnx.canyoning.it/index/forra/cod/BL053"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

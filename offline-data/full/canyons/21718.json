@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:27.228230+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21718,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21718/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21718/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21718/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21718/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21718,
+    "identity": {
+      "nom": "Zernone",
+      "nomComplet": "Torrente Zernone",
+      "prefixeNom": "Torrente",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21718/Zernone.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Lombardia",
+      "departement": "Sondrio",
+      "communePrincipale": "Villa di Chiavenna",
+      "communes": [
+        "Villa di Chiavenna"
+      ],
+      "massif": null,
+      "bassin": "Mera",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.5,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 960,
+      "deniveleM": 380,
+      "longueurM": 600,
+      "cascadeMaxM": 50,
+      "cordeMiniM": 60,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h",
+      "descente": "3h",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "de Chiavenna par SS37 vers Maloja jusqu'à Villa di Chiavenna",
+      "accesAmont": null,
+      "approche": "sentier a la rive droite jusqu'au torrent",
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21718,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.334854,
+        "longitude": 9.493947,
+        "label": null
+      },
+      {
+        "canyonId": 21718,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.332378,
+        "longitude": 9.492745,
+        "label": null
+      },
+      {
+        "canyonId": 21718,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.33226,
+        "longitude": 9.492402,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.33226,
+      "longitude": 9.492402,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_e20f7eb27f3865c5",
+          "kind": "MAP",
+          "title": "92 Chiavenna-Val Bregaglia (Kompass)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:20.205530+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23585,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23585/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23585/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23585/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23585/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23585,
+    "identity": {
+      "nom": "Bärentrittfälle-Zügenschlucht",
+      "nomComplet": "Bärentrittfälle-Zügenschlucht, Brüggentobelbach, Landwasser",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23585/Barentrittfalle-Zugenschlucht.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Davos",
+      "departement": "Graubünden/Grigioni/Grischun",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": "Landwasser",
+      "coursEau": "Brüggentobelbach, Landwasser"
+    },
+    "rating": {
+      "cotation": "v3a3IV",
+      "interet": 2.2,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1230,
+      "deniveleM": 135,
+      "longueurM": 1500,
+      "cascadeMaxM": 40,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "3h",
+      "retour": "45min"
+    },
+    "topo": {
+      "accesAval": "Parking à la gare de Wiesen.",
+      "accesAmont": null,
+      "approche": "Suivre la vielle route de la Zügenschlucht jusqu'à Bärentritt.",
+      "descente": "Descente des cascades du Bärenbtritt jusqu'à la confluence avec la rivière Landwasser. Dans celle-ci rando aqua jusqu'à la fin de la gorge. Attention, il y a une prise d'eau sur la rivière Landwasser.",
+      "retour": "Remonter RD sur le chemin pour rentrer à la gare de Wiesen.",
+      "engagement": "Difficile.",
+      "periode": "Brüggentobelbach descente verticale, Landwasser rando aqua dans gorge profonde.\n\nJuillet - Octobre",
+      "geologie": "Dolomit",
+      "historique": "30.07.2008: Timo Stammwitz.",
+      "remarques": "La cascade de Bärentrittfälle est bien visibledepuis la vielle route, aujourd'hui chemin historique sans traffic.\n\nLandwasser grande prise d'eau (jusqu'à 14 m3/s), et une deuxième prise sur Monsteinerbach, petit bassin de retention. Au cas ou on prend tout le débit naturel."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23585,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.700588,
+        "longitude": 9.72417,
+        "label": null
+      },
+      {
+        "canyonId": 23585,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.69479,
+        "longitude": 9.70945,
+        "label": null
+      },
+      {
+        "canyonId": 23585,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.695992,
+        "longitude": 9.71661,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.695992,
+      "longitude": 9.71661,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_1db776ee9890d9c5",
+          "kind": "MAP",
+          "title": "1216 Filisur (Carte Nationale Suisse)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

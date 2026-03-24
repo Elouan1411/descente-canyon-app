@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:44.843775+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22078,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22078/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22078/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22078/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22078/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22078,
+    "identity": {
+      "nom": "Glapet",
+      "nomComplet": "Canyon du Glapet",
+      "prefixeNom": "Canyon du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22078/Glapet.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Haute-Savoie",
+      "communePrincipale": "Megève",
+      "communes": [
+        "Megève"
+      ],
+      "massif": "Mont Blanc",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a3III",
+      "interet": 1.7,
+      "nbVotes": 8
+    },
+    "metrics": {
+      "altitudeDepartM": 1310,
+      "deniveleM": 160,
+      "longueurM": 1300,
+      "cascadeMaxM": 15,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "2h",
+      "retour": "50min"
+    },
+    "topo": {
+      "accesAval": "De Megeve, direction Mont d'Arbois.\n\nAprès avoir franchi le pont de \"la Belle au Bois\", au hameau \"le Maz\", tourner à gauche. Se garer à proximité du pont suivant, point de départ de la descente.",
+      "accesAmont": null,
+      "approche": "Départ amarré au pont",
+      "descente": "Enchainement dans une gorge sombre bien sculptée de plusieurs rappels de petite hauteur.\n\nQuelques passages peuvent poser des problèmes par fort débit mais rien de vraiment dangereux. Le rajout de goujons peut être nécessaire selon le débit.\n\nA noter en cours de route, l'absence d'équipement d'un ressaut qui par fort débit s'avère assez dangereux : repérer un arbre RD où une courte escalade est nécessaire pour l'atteindre.\n\nEnfin avant la C7 finale l'enchainement C4/C6 se fait par un rappel de 15m RD sur AN hors crue (non décrite dans le topo).",
+      "retour": "Par rapport au topo nous n'avons pas repéré de sortie après la C7.\n\nNous sommes sortis avant en RG, attention le sol est très glissant et malléable sans aucune prise fiable avant un bon moment.\n\nEn revanche il semblerait qu'il soit beaucoup plus aisé de sortir juste avant la C15 en RD (non essayé).\n\nUne fois sorti (par la RG), remonter en longeant la gorge jusqu'à la voiture",
+      "engagement": "Peu d'échappatoires et zones hors crue en cours de descente",
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "L'équipement est bon lorsqu'il est présent.\n\nSortie assez délicate.\n\nFait après de bonnes précipitations, pas de nage, pas de sauts repérés."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22078,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.843781,
+        "longitude": 6.631786,
+        "label": null
+      },
+      {
+        "canyonId": 22078,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.85376,
+        "longitude": 6.61892,
+        "label": null
+      },
+      {
+        "canyonId": 22078,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 45.844975,
+        "longitude": 6.631365,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 45.843781,
+      "longitude": 6.631786,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_bf97d8efb10efc46",
+          "kind": "MAP",
+          "title": "3531 OT Megève - Col des Aravis (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

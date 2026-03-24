@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:57.195187+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22133,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22133/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22133/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22133/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22133/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22133,
+    "identity": {
+      "nom": "Duratón",
+      "nomComplet": "Cascadas de Duratón, Turaton, Barranco del Puerto, Rio Duratón",
+      "prefixeNom": "Cascadas de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22133/Duraton.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Comunidad de Madrid",
+      "departement": "Provincia de Madrid",
+      "communePrincipale": "Somosierra",
+      "communes": [
+        "Somosierra"
+      ],
+      "massif": "Sierra de Guadarrama",
+      "bassin": "Río Duratón",
+      "coursEau": "Rio Duratón"
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 1.9,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1470,
+      "deniveleM": 90,
+      "longueurM": 260,
+      "cascadeMaxM": 29,
+      "cordeMiniM": 35,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "1h",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "Prendre le N1/E5 Burgos-Madrid. 92 km de Burgos arriver à Puerto (Port) de Somosierra et ses maisons. Prendre la vielle route vers le nord (cul-de-sac) et continuer 200 m. Ici - une piste tourne à droite - garer la voiture.",
+      "accesAmont": null,
+      "approche": "Prendre la piste quelques centaines de mètres. Avant les cascades monter raide par une sente vers l'est. Contourner les rochers par une courbe à gauche (vers le nord) et descendre au cours d'eau vers le nord-ouest.",
+      "descente": "Succession de rappels et cascades ouvertes.",
+      "retour": "Après la dernière cascade sortir à gauche et retour",
+      "engagement": null,
+      "periode": null,
+      "geologie": "Gneiss",
+      "historique": null,
+      "remarques": "Faire en passant !"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22133,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 41.147186,
+        "longitude": -3.569098,
+        "label": null
+      },
+      {
+        "canyonId": 22133,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 41.145779,
+        "longitude": -3.574333,
+        "label": null
+      },
+      {
+        "canyonId": 22133,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 41.144245,
+        "longitude": -3.578045,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 41.144245,
+      "longitude": -3.578045,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_588ae9a1edf6f6a5",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://mayayo.blogspot.com/2007/07/casca.....l-duratn-madrid.html",
+          "url": "http://mayayo.blogspot.com/2007/07/casca.....l-duratn-madrid.html"
+        },
+        {
+          "id": "resource_60db8a8a8d93d3aa",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://ropewiki.com/Turaton",
+          "url": "http://ropewiki.com/Turaton"
+        },
+        {
+          "id": "resource_0a3b3f9bd923d1e5",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/Canyons/DuratonCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/Canyons/DuratonCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:57.761662+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23485,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23485/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23485/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23485/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23485/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23485,
+    "identity": {
+      "nom": "Méan",
+      "nomComplet": "Torrent de Méan",
+      "prefixeNom": "Torrent de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23485/Mean.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Hautes-Alpes",
+      "communePrincipale": "Saint-Clément-sur-Durance",
+      "communes": [
+        "Saint-Clément-sur-Durance"
+      ],
+      "massif": "Ecrins - Oisans - Champsaur",
+      "bassin": "Durance",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a4II",
+      "interet": 2.0,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1820,
+      "deniveleM": 200,
+      "longueurM": 500,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 40,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "45min",
+      "descente": "2h00",
+      "retour": "35min"
+    },
+    "topo": {
+      "accesAval": "D'Embrun prendre la direction de Briançon sur la N94. Passer Châteauroux-les-Alpes pour se rendre à Saint-Clément-sur-Durance . Traverser le village et prendre à gauche la D38, juste avant le pont de la voie ferrée . Rouler quelques mètres et quitter la D38 pour prendre à gauche la petite route traversant Saint-Clément-sur-Durance (D638). La route monte et l'on passe trois virages en lacet avant de trouver une piste à gauche qu'il faut emprunter (Alt 1100 sur IGN). Aller au bout de cette piste au parking de Beauregard (Alt 1532 sur l'IGN) ou Prè du Play (extrémité de la piste du vallon du Couleau) .",
+      "accesAmont": null,
+      "approche": "Continuer à suivre la piste pour franchir le petit torrent du ravin de Chambe qui barre la piste. Quelques mètre plus loin, emprunter une sente discrète sur votre gauche qui part dans l’herbe, sans balisage et qui descend pour rejoindre la passerelle penchée du Couleau . Le sentier remonte en forêt et rejoindre une piste qu'il faudra emprunter en prenant à droite . Aller au bout de piste, pour attaquer un joli sentier qui grimpe dans les falaises de l'anciènne ardoisière pour se rendre à la passerelle du Méan (départ de la descente) .",
+      "descente": "Faire quelques mètres depuis la passerelle, C9 où s'en suit une C11 . Désescalade dans une faille en rg de la cascade suivante, puis se rendre sur le gros bloc en rg précédant un Pi10+jolie C27 ( 2x40 m utile ). S'en suit, quelques désescalades délicates en rd pour se rendre sur une C10. C18 et Pi20+C10 .",
+      "retour": "Descendre un peu le torrent et sortir à gauche dés que possible . L'on pénètre alors dans un bois avec une petite lisière qui rejoint le torrent du Couleau . Traverser le torrent et rejoignez la piste . Remonter la piste si vous enchaînez avec la cascade du haut Couleau ou descendez la piste, si vous rejoignez le parking et votre véhicule .",
+      "engagement": "Descente ouverte sauf sur la deuxième cascade qui est plus encaissée .",
+      "periode": "Débit conséquent en dehors de la période estivale .",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Attention, roche glissante sur les parties jaunes du torrent .\n\nPar gros débit, s'abstenir de descendre. Sauf si vous avez emporté avec vous, de quoi équiper la descente hors actif .\n\nIl est possible, si vous le souhaitez, d'enchaîner le torrent du Méan avec la belle cascade de 38 m du haut Couleau ( Alt 1708 sur l'IGN ) par le sentier menant à la cabane de Saint-Clément ."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23485,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.672283,
+        "longitude": 6.505132,
+        "label": null
+      },
+      {
+        "canyonId": 23485,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.668922,
+        "longitude": 6.516689,
+        "label": null
+      },
+      {
+        "canyonId": 23485,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.668385,
+        "longitude": 6.510578,
+        "label": "Autre parking possible"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.668922,
+      "longitude": 6.516689,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_d3ba8daa244cabe2",
+          "kind": "MAP",
+          "title": "3437 ET Orcieres-Merlette (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

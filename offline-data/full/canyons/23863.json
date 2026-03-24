@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:22.514615+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23863,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23863/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23863/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23863/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23863/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23863,
+    "identity": {
+      "nom": "Ranciara",
+      "nomComplet": "Ranciara",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23863/Ranciara.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Sicilia",
+      "departement": "Messina",
+      "communePrincipale": "Savoca",
+      "communes": [
+        "Savoca"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a3III",
+      "interet": 1.6,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 260,
+      "deniveleM": 70,
+      "longueurM": 700,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 30,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "1h",
+      "descente": "1h30min",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "navette possible - pas necessaire (2,5 km)",
+      "accesAmont": null,
+      "approche": "1h sans navette",
+      "descente": "voir lien",
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23863,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 37.956642,
+        "longitude": 15.266325,
+        "label": null
+      },
+      {
+        "canyonId": 23863,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 37.956623,
+        "longitude": 15.273245,
+        "label": null
+      },
+      {
+        "canyonId": 23863,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 37.956608,
+        "longitude": 15.272355,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 37.956608,
+      "longitude": 15.272355,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_abd0626bd9940bda",
+          "kind": "MAP",
+          "title": "262 I-NO Limina (IGMI 25/V)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_7e4cd5f233c3c479",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/Canyons/RanciaraCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/Canyons/RanciaraCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

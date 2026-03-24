@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:35.809510+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23921,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23921/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23921/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23921/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23921/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23921,
+    "identity": {
+      "nom": "Älggibach",
+      "nomComplet": "Älggibach, Aelggibach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23921/Alggibach.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Sachseln",
+      "departement": "Obwald",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Alpes Uranaises",
+      "bassin": "Sarnersee - Lac de Sarnen",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v5a2III",
+      "interet": 2.1,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 1565,
+      "deniveleM": 420,
+      "longueurM": 600,
+      "cascadeMaxM": 80,
+      "cordeMiniM": 85,
+      "navette": "6.5km"
+    },
+    "timings": {
+      "approche": "1min",
+      "descente": "2-3h",
+      "retour": "2min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": ", continuer encore 3.6km sur la route en direction de l’alpage de Älggi et se garer vers le champ juste en amont des premières cascades (alt. 1570 m), sans se mettre dans l’herbe et sans gêner.",
+      "approche": "Les premières cascades sont au bout du champs.",
+      "descente": "La première partie est un enchainement de cascades ouvertes légèrement sculptées. On ne lâche pas la corde. Sur le bas les cascades s’aplatissent, on en a contourné certaines en RD.\n\nOn rejoint un sentier (alt. 1400 m) qui permet de remonter à la route. En continuant, le canyon reforme une série de cascades assez plate sur des dalles, nous n’avons pas équipés ces obstacles, nous avons contourné en RD. On arrive ensuite en haut de la C80, main courante AN RG pour atteindre un relais RG, puis une longueur de 80 m. Rappel de corde facile.\n\nAu pied de la C80, encore des dalles a désescalader, puis 2 derniers rappels de 15 et 20m (AN RD et point RD) et on rejoint la route.",
+      "retour": "Sortir à la route et remonter au parking.",
+      "engagement": "Peu d’échappatoires évidentes sauf le sentier que l’on croise au milieu du canyon.",
+      "periode": "A faire rapidement après des pluies, le torrent s’assèche vite.",
+      "geologie": null,
+      "historique": "12/06/2017 : Thomas Guigon, Matthias Holzinger, Niklaus Kretz, Andi Senn.",
+      "remarques": "Possible de ne pas faire de navette, mais l’approche ou le retour semble assez long dans ce cas."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23921,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.801601,
+        "longitude": 8.23078,
+        "label": null
+      },
+      {
+        "canyonId": 23921,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.804482,
+        "longitude": 8.22538,
+        "label": null
+      },
+      {
+        "canyonId": 23921,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 46.800812,
+        "longitude": 8.23165,
+        "label": null
+      },
+      {
+        "canyonId": 23921,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 46.805672,
+        "longitude": 8.22436,
+        "label": null
+      },
+      {
+        "canyonId": 23921,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 46.803211,
+        "longitude": 8.22993,
+        "label": "Echappatoire sur le sentier de randonnée"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 46.800812,
+      "longitude": 8.23165,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_191151af4e8aa8f6",
+          "kind": "MAP",
+          "title": "1190 Melchtal (Swisstopo)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,148 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:44:13.924979+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2143,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2143/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2143/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2143/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2143/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2143,
+    "identity": {
+      "nom": "Morette",
+      "nomComplet": "Cascades de Morette",
+      "prefixeNom": "Cascades de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2143/Morette.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Haute-Savoie",
+      "communePrincipale": "Thônes",
+      "communes": [
+        "Thônes"
+      ],
+      "massif": "Bornes - Aravis",
+      "bassin": "Fier",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a1II",
+      "interet": 2.2,
+      "nbVotes": 33
+    },
+    "metrics": {
+      "altitudeDepartM": 710,
+      "deniveleM": 100,
+      "longueurM": 500,
+      "cascadeMaxM": 45,
+      "cordeMiniM": 50,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "1h30",
+      "retour": "2min"
+    },
+    "topo": {
+      "accesAval": "A Annecy, suivre la D909 en direction de Thônes. Traverser le Fier, puis tourner à gauche. Se garer après la scierie sur le parking face à la grotte de lourdes.",
+      "accesAmont": null,
+      "approche": "Emprunter le GR96, à proximité du pont, le suivre jusqu'au replat, prendre à gauche, passer le petit pont puis descendre pour rejoindre le ruisseau au niveau du gros bloc.",
+      "descente": "C8, siphon sous bloc, C45 avec frottement gênant pour le rappel de corde, PI 15, C8, C30",
+      "retour": "On sort directement sur la route, 50m au dessus de la voiture.",
+      "engagement": "Un sentier suit les cascades tout le long de la descente RG.",
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2143,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.902222,
+        "longitude": 6.2875,
+        "label": null
+      },
+      {
+        "canyonId": 2143,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.900833,
+        "longitude": 6.286944,
+        "label": null
+      },
+      {
+        "canyonId": 2143,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.900555,
+        "longitude": 6.286389,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.900555,
+      "longitude": 6.286389,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_87a84633f292e5a0",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons de Haute-Savoie (réédition)",
+          "authors": [
+            "Ch. Charletty",
+            "G. Gudefin",
+            "B. Hugon",
+            "J-P. Beaudoin"
+          ],
+          "publicationYear": 2004,
+          "reference": "ISBN: 2741702888",
+          "editor": "GAP",
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/128/Canyons-de-Haute-Savoie.html"
+        },
+        {
+          "id": "biblio_1e61b240bec55aed",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons de Haute Savoie",
+          "authors": [
+            "Christian Charletty",
+            "Gérard Gudefin",
+            "Bruno Hugon",
+            "Comité Départemental de Spéléologie 74"
+          ],
+          "publicationYear": 1997,
+          "reference": "ISBN 2-7417-0202-0",
+          "editor": "Gap",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/19/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_68c3d089c92edd13",
+          "kind": "MAP",
+          "title": "3431 OT Lac d'Annecy (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

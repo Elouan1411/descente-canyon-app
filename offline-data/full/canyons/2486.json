@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:45:42.042375+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2486,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2486/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2486/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2486/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2486/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2486,
+    "identity": {
+      "nom": "Bergougnous",
+      "nomComplet": "Ravin de Bergougnous",
+      "prefixeNom": "Ravin de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2486/Bergougnous.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Hérault",
+      "communePrincipale": "St Maurice de Navacelles",
+      "communes": [
+        "St Maurice de Navacelles"
+      ],
+      "massif": null,
+      "bassin": "Vis",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1I",
+      "interet": 1.9,
+      "nbVotes": 14
+    },
+    "metrics": {
+      "altitudeDepartM": 640,
+      "deniveleM": 300,
+      "longueurM": 1100,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 35,
+      "navette": "4.0km"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "2h30",
+      "retour": "20min/1h15"
+    },
+    "topo": {
+      "accesAval": "de Saint-Maurice-Navacelles prenez la direction de Navacelles. Une fois en vue de Navacelles, prenez la route à gauche (D130) en direction de Blandas. Garez-vous au niveau du premier pont submersible (radier sur IGN) rencontré sur la D130",
+      "accesAmont": "retournez vers Saint-Maurice-Navacelles par la D130. 1km après la Baume Auriol garez-vous à droite au niveau d'une piste avec un sens interdit.\n\nAutre accès Amont : se garer sur le parking de la Baume Auriol : s'équiper. Descendre le \"sentier du facteur\" vers Navacelle. Dans la seconde épingle bien marquée, continuer tout droit sur la vire évidente. Poursuivre cette vire sur env 1km : Vue magnifique ! c'est aussi beau que le canyon ! Un passage étroit et expo arrive rapidement, chercher les points sur le rocher et installer MC. Il faut remonter sur le plateau en bout de vire, puis reprendre la vire sur encore env 500m. Sortie sur le plateau, viser les 2 têtes de talweg (IGN) (cairns). Enfin, le talweg du Bergougnous (courbe 650 sur IGN, juste au dessous du \"quartou\")",
+      "approche": "Du parking amont : prendre la piste pendant 10 minutes. Au petit col prendre un chemin sur votre droite qui tombe sur une clôture, traverser le pré en suivant une vague piste qui vous mène au départ de l'encaissement très bien marqué.",
+      "descente": "Une dizaine de rappels dont le plus haut est d'une trentaine de mètres.\n\nRoche glissante.",
+      "retour": "Sortez RD par une sente qui récupère le GR au bord de la Vis.",
+      "engagement": "Canyon sec. Pas de vasques profondes.",
+      "periode": "A faire après une période de pluies pour avoir un filet d'eau. A ne pas faire s'il pleut, sauf à vouloir se ramasser des pierres sur la tête.\n\nS'il est \"mouillé\" depuis le départ, le Bergougnous devient extrêmement glissant ! faites gaffes !",
+      "geologie": "Calcaire en pile d'assiette : dangereux s'il y a de l'eau - glissant",
+      "historique": "Philippe GERBIER et Patrick PAGES en mai 1994",
+      "remarques": "Bien refermer les clôtures !"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2486,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.89064,
+        "longitude": 3.49479,
+        "label": null
+      },
+      {
+        "canyonId": 2486,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 43.88031,
+        "longitude": 3.500884,
+        "label": null
+      },
+      {
+        "canyonId": 2486,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 43.892727,
+        "longitude": 3.502665,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 43.88031,
+      "longitude": 3.500884,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_9ef50910aba84110",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://clementdom.free.fr/html/bergougnous.htm",
+          "url": "http://clementdom.free.fr/html/bergougnous.htm"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

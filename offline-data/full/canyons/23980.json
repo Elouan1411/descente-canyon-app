@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:46.379678+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23980,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23980/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23980/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23980/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23980/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23980,
+    "identity": {
+      "nom": "Cavagliasch",
+      "nomComplet": "Cavagliasch, Cavaglia, Acqua da Palü",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23980/Cavagliasch.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": null,
+      "departement": "Graubünden/Grigioni/Grischun",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": null,
+      "coursEau": "Acqua da Palü"
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 3.3,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 1917,
+      "deniveleM": 300,
+      "longueurM": 1150,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 25,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "??",
+      "descente": "2h+1h30",
+      "retour": "??"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": "Canyon en 2 parties :\n\nPart I : 200 m de dénivelé pour 850 m de long. Sous le barrage de Lagh da Palü : Partie sympa composée d'une vingtaine de petits rappels.\n\n1.6 km de marche sépare les 2 parties.\n\nPart II : 80 m de dénivelé et 300 m de long, puis le chaos de bloc. 2 sections magnifiques qui vaudraient un 3.5/4 mais entre et après il y a pas mal de marche dans les blocs.",
+      "retour": null,
+      "engagement": "Important : peu d'échappatoires évidentes.",
+      "periode": "Barrage en amont de chaque partie. Malheureusement la compagnie qui opère les canyons ne veut pas garantir qu'il n'y aura pas de lâcher d'eau.",
+      "geologie": null,
+      "historique": "Les noms de Pascal Van Duin ou Lucas Nizzola sont mentionnés, fin des années 90 apparemment.",
+      "remarques": "Équipement ok, mais peut nécessiter la pose de quelques points pour des personnes moins à l'aise avec les ancrages naturels et/ou les désescalades."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23980,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.371559,
+        "longitude": 10.02496,
+        "label": null
+      },
+      {
+        "canyonId": 23980,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 46.368099,
+        "longitude": 10.03232,
+        "label": "Fin de la partie I"
+      },
+      {
+        "canyonId": 23980,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 46.360538,
+        "longitude": 10.04855,
+        "label": "Départ partie II"
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 46.371559,
+      "longitude": 10.02496,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,141 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:44:58.286934+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2302,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2302/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2302/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2302/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2302/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/2302/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 2302,
+    "identity": {
+      "nom": "Arcs",
+      "nomComplet": "Ravin des Arcs, Lamalou",
+      "prefixeNom": "Ravin des",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2302/Arcs.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Hérault",
+      "communePrincipale": "Saint-Martin-de-Londres",
+      "communes": [
+        "Saint-Martin-de-Londres"
+      ],
+      "massif": "Garrigues",
+      "bassin": "Hérault",
+      "coursEau": "Lamalou"
+    },
+    "rating": {
+      "cotation": "v1a2I",
+      "interet": 1.9,
+      "nbVotes": 26
+    },
+    "metrics": {
+      "altitudeDepartM": 170,
+      "deniveleM": 40,
+      "longueurM": 1000,
+      "cascadeMaxM": 4,
+      "cordeMiniM": 15,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "2h30",
+      "retour": "50min"
+    },
+    "topo": {
+      "accesAval": "Sur la route entre Montpellier et Ganges, peu après le village de Saint Martin de Londres. Grands parkings avant le pont de part et d'autre de la route",
+      "accesAmont": null,
+      "approche": "Du parking prendre le sentier RG qui progresse parallement à la rivière, passer le long d'une lavogne, au gué fait de poteaux électriques prendre au plus près de la rivière le sentier RD jusqu'à la fin de celui ci",
+      "descente": "Beau canyon calcaire encaissé présentant l'originalité de l'arc. Les périodes en eau sont cependant rares.. Enchaînement de petites cascades et long biefs.. Nombreux sauts possibles depuis les berges.",
+      "retour": "Après un long bief nagé (~100m) dont la fin est marquée par l'ouverture définitive et évidente de la gorge, longez la falaise en RD jusqu'au pied d'un raide pierrier. Remontez le pierrier pendant une dizaine de minutes pour atteindre le GR que l'on suivra par le droite d'abord jusqu'au Grand Arc, puis jusqu'à la voiture.",
+      "engagement": "Peu engagé compte tenu des difficultés, mais peu d'endroit pour sortir de façon évidente compte tenu de la verticalité des berges.",
+      "periode": "Difficile à dire. Le \"coup de bol\" semble être la meilleure météo.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Très souvent à sec, mais possibilité de crues énormes.\n\nSi les vasques sont pleines, pas besoin de corde. Si le canyon est totalement sec (coeur de l'été) la corde sera indispensable à quelques endroits."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2302,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.818211,
+        "longitude": 3.735223,
+        "label": null
+      },
+      {
+        "canyonId": 2302,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.821922,
+        "longitude": 3.727985,
+        "label": null
+      },
+      {
+        "canyonId": 2302,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.812023,
+        "longitude": 3.741926,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.812023,
+      "longitude": 3.741926,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_d21c82018f2ec920",
+          "kind": "MAP",
+          "title": "2742 ET Ganges - Pic Saint-Loup - Saint-Martin-de-Londres (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_6c68f91b707ad0ba",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://clementdom.free.fr/html/ravin_des_arcs.htm",
+          "url": "http://clementdom.free.fr/html/ravin_des_arcs.htm"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 547,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté - 13 avr 1993",
+          "summary": "Du 15 janvier au 30 juin, il est interdit de pénétrer dans le périmètre du biotope défini autour du Ravin des Arcs. La pratique du canyoning y est donc interdite, seule la circulation pédestre sur le sentier balisé étant autorisée à cette période.",
+          "remark": "Ceci afin de garantir la protection des aigles de Bonelli.",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nArrêté relatif à la protection d'un biotope (Préfecture de l'Hérault) n°93-I-0872 du 13 avril 1993",
+          "effectiveDate": "13 avr 1993",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/547/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté relatif à la protection d'un biotope (Préfecture de l'Hérault) n°93-I-0872 du 13 avril 1993",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem547_pj1.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

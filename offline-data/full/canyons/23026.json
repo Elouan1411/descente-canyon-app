@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:20.597126+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23026,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23026/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23026/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23026/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23026/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23026,
+    "identity": {
+      "nom": "Rio Stuet",
+      "nomComplet": "Rio Stuet",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23026/Rio-Stuet.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Frioul-Vénétie julienne",
+      "departement": "Ex provincia di Pordenone",
+      "communePrincipale": "Claut",
+      "communes": [
+        "Claut"
+      ],
+      "massif": "Dolomites du Frioul",
+      "bassin": "Val Settimana",
+      "coursEau": "Rio Stuet"
+    },
+    "rating": {
+      "cotation": "v4a4IV",
+      "interet": 2.9,
+      "nbVotes": 9
+    },
+    "metrics": {
+      "altitudeDepartM": 1070,
+      "deniveleM": 140,
+      "longueurM": 850,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "40min",
+      "descente": "2h30min",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "De Claut monter le Val Settimana jusqu'au terminus de la route (aire de pique-nique, parking).",
+      "accesAmont": null,
+      "approche": "Du parking prendre la passerelle sur la Settimana, passer le Rifugio Pussa par la gauche et suivre le chemin (\"CAI 364\") qui monte. Celui-ci longe la vallée de Rio Stuet plein nord. A une intersection avec un poteau indicateur, on prend le chemin à la direction Col de Post (\"CAI 366A\"). Il dirige en bas vers le lit de ruisseau de Rio Stuet (entrée).",
+      "descente": "7 rappels, beaucoup de désescalades, de court passages de marche, quelques possibilités de saut, ravin exposé au sud.",
+      "retour": "Arriver au collecteur du Torrente Settimana, prendre la passerelle et revenir au parking.",
+      "engagement": null,
+      "periode": "Juillet - Sept.",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23026,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.350452,
+        "longitude": 12.596684,
+        "label": null
+      },
+      {
+        "canyonId": 23026,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.346245,
+        "longitude": 12.593379,
+        "label": null
+      },
+      {
+        "canyonId": 23026,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.3447,
+        "longitude": 12.589957,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.3447,
+      "longitude": 12.589957,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_ff21942f4e737548",
+          "kind": "MAP",
+          "title": "021 Dolomiti di Sinistra Piave (Tabacco)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_18c7444af6871103",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://lnx.canyoning.it/index/forra/cod/PN010",
+          "url": "http://lnx.canyoning.it/index/forra/cod/PN010"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

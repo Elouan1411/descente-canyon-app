@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:56.047117+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22127,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22127/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22127/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22127/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22127/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22127,
+    "identity": {
+      "nom": "Val Grande",
+      "nomComplet": "Val Grande",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22127/Val-Grande.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Trentino-Alto Adige",
+      "departement": "Trento",
+      "communePrincipale": "Borgo Chiese",
+      "communes": [
+        "Borgo Chiese"
+      ],
+      "massif": null,
+      "bassin": "Chiese",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.1,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 600,
+      "deniveleM": 120,
+      "longueurM": 300,
+      "cascadeMaxM": 36,
+      "cordeMiniM": 40,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "25min",
+      "descente": "1h20min",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "De Lago d'Idro prendre SS 237 vers nord (Cortina d'Ampezzo), passer Storo (Palvico) et arriver à Condino (Fiume Chiese). Prendre la rue Via Acquaiolo (direction du château de Chiesa di San Lorenzo). Traverser la SS 237 par un tunnel et le Fiume Chiese par un pont. Se garer juste après le pont.",
+      "accesAmont": null,
+      "approche": "Après la maison prendre la piste à gauche et traverser notre ruisseau, passer les maisons, prochaine bifurcation à droite. Dans une épingle près du ruisseau, quitter la bonne piste pour une sente vers qui remonte la RD du torrent,. La sente est relativement toujours bien visible, elle ne reste près du ruisseau (rive droite-orograf.) Monter environ 120m de dénivelé, pour arriver à une bifurcation à droite qui redescend au cours d'eau.",
+      "descente": "Succession de rappels, 6-7 rappels en tout.",
+      "retour": "Après la dernière cascade, continuer quelques mètres dans le torrent et sortir à droite vers la piste et retour vers Condino.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "Peu d'intérêt pour la partie supérieure (avec navette ou à pied par le \"sentiero 450\" - rive gauche orograf. de Val Grande) : entrée de la route (1100m), commencer avec un rappel sombre dans les bois et continuer avec désescalades et marche.\n\nA combiner avec Palvico, Fontana Santa, Bianca, Caffaro..."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22127,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.88472,
+        "longitude": 10.605669,
+        "label": null
+      },
+      {
+        "canyonId": 22127,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.884304,
+        "longitude": 10.60348,
+        "label": null
+      },
+      {
+        "canyonId": 22127,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.885155,
+        "longitude": 10.599489,
+        "label": "parking avant le tunnel"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.885155,
+      "longitude": 10.599489,
+      "label": "parking avant le tunnel"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_6aa200a690889c85",
+          "kind": "MAP",
+          "title": "096 Alto Garda - Val di Ledro (Kompass)",
+          "scale": "1:35000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

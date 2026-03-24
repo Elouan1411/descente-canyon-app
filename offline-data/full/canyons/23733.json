@@ -1,0 +1,134 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:54.744737+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23733,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23733/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23733/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23733/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23733/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23733,
+    "identity": {
+      "nom": "Abu Kusheiba",
+      "nomComplet": "Wadi Abu Kusheiba, Khashabah, Zgarà, Khshebeh",
+      "prefixeNom": "Wadi",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23733/Abu-Kusheiba-.html"
+    },
+    "location": {
+      "pays": "Jordanie",
+      "region": null,
+      "departement": "Madaba",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2III",
+      "interet": 2.0,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 250,
+      "deniveleM": 110,
+      "longueurM": 900,
+      "cascadeMaxM": 7,
+      "cordeMiniM": 10,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "2h30min",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23733,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 31.579023,
+        "longitude": 35.567768,
+        "label": "de l\"arrivée\" remonter jusqu'à \"depart\" et retour"
+      },
+      {
+        "canyonId": 23733,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 31.578058,
+        "longitude": 35.55743,
+        "label": "de \"l'arrivée\" vers le-haut jusqu'à \"depart\" et retour"
+      },
+      {
+        "canyonId": 23733,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 31.577473,
+        "longitude": 35.555904,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 31.577473,
+      "longitude": 35.555904,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_49d58b5b4e372ae8",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/Canyons/AbuKusheibaCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/Canyons/AbuKusheibaCanyon"
+        },
+        {
+          "id": "resource_44b988a06020b14d",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://wikimapia.org/#lang=de⪫=31.562.....5/Wadi-Abu-Khushybah",
+          "url": "http://wikimapia.org/#lang=de⪫=31.562.....5/Wadi-Abu-Khushybah"
+        },
+        {
+          "id": "resource_f7a62db643027213",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.everytrail.com/view_trip.php?trip_id=3113691",
+          "url": "http://www.everytrail.com/view_trip.php?trip_id=3113691"
+        },
+        {
+          "id": "resource_c6486687f08af09a",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "https://web.archive.org/web/201402031020.....ure-Reserve_B.jpg",
+          "url": "https://web.archive.org/web/201402031020.....ure-Reserve_B.jpg"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:45.636572+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22081,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22081/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22081/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22081/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22081/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22081,
+    "identity": {
+      "nom": "Ripa Rossa",
+      "nomComplet": "Fosso di Ripa Rossa",
+      "prefixeNom": "Fosso di",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22081/Ripa-Rossa.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Lazio",
+      "departement": "Rieti",
+      "communePrincipale": "Poggio Catino",
+      "communes": [
+        "Poggio Catino"
+      ],
+      "massif": "Monti Sabini",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": null,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": 745,
+      "deniveleM": 230,
+      "longueurM": 1500,
+      "cascadeMaxM": null,
+      "cordeMiniM": 15,
+      "navette": "4.0km"
+    },
+    "timings": {
+      "approche": "10min",
+      "descente": "2h30",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "De Rieti suivez la direction de Poggio Miretto. A un carrefour prenez à gauche la direction de Poggio Catino (SP46). Après le carrefour pour San Giovanni in Sabina ne ratez pas la bifurcation peu visible avec le panneau en bois : il Fienile di Orazio, azienda agrituristica. Traversez le hameau. Ne ratez pas dans la descente à droite le second panneau en bois : il Fienile di Orazio. Garez vous au fond du vallon à côté du pont.\n\nParking",
+      "accesAmont": "Remontez sur la route principale qui mène vers Poggio Catino. Montez jusqu’au col et garez vous au niveau du restaurant de l’Osteria di Tancia.",
+      "approche": "Rejoignez le cours d’eau.",
+      "descente": "Quelques obstacles intéressants.",
+      "retour": null,
+      "engagement": "Pas d’échappatoires",
+      "periode": "Pas d’eau l’été.\n\nA faire au printemps et l’hiver.",
+      "geologie": null,
+      "historique": "Août 1995, T Dobosz, F Vittori",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22081,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.304619,
+        "longitude": 12.755567,
+        "label": null
+      },
+      {
+        "canyonId": 22081,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.304119,
+        "longitude": 12.771692,
+        "label": null
+      },
+      {
+        "canyonId": 22081,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 42.304157,
+        "longitude": 12.749741,
+        "label": null
+      },
+      {
+        "canyonId": 22081,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 42.304104,
+        "longitude": 12.771869,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 42.304157,
+      "longitude": 12.749741,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

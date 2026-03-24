@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:00.888448+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22148,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22148/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22148/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22148/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22148/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/22148/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 22148,
+    "identity": {
+      "nom": "Miroir",
+      "nomComplet": "Cascades du Miroir, Cascade de la Pisse, Ruisseau de la Pisse",
+      "prefixeNom": "Cascades du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22148/Miroir.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Hautes-Alpes",
+      "communePrincipale": "Ceillac",
+      "communes": [
+        "Ceillac"
+      ],
+      "massif": "Queyras",
+      "bassin": null,
+      "coursEau": "Ruisseau de la Pisse"
+    },
+    "rating": {
+      "cotation": "",
+      "interet": 1950.0,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": 1950,
+      "deniveleM": 200,
+      "longueurM": 170,
+      "cascadeMaxM": null,
+      "cordeMiniM": null,
+      "navette": null
+    },
+    "timings": {
+      "approche": null,
+      "descente": null,
+      "retour": null
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": "Crochet à lunule et un peu de corde/cordelette, maillons, (au minimum) strictement indispensable pour un parcours en début de saison.",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22148,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.646149,
+        "longitude": 6.789908,
+        "label": null
+      },
+      {
+        "canyonId": 22148,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.647503,
+        "longitude": 6.791192,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 44.646149,
+      "longitude": 6.789908,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 586,
+          "status": "Actif",
+          "action": "Interdit",
+          "title": "Arrêté municipal (Ceillac) - 23 sept 2025",
+          "summary": "La pratique du canyoning est interdite de manière permanente au lit-dit \"Cascade de la Pisse\"",
+          "remark": "Les pratiques de l'escalade et de la highline sont également interdites par ce même arrêté municipal",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nArrêté municipal (Ceillac) du 23 septembre 2025",
+          "effectiveDate": "23 sept 2025",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/586/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté municipal (Ceillac) du 23 septembre 2025",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem586_pj1.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

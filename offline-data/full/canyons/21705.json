@@ -1,0 +1,176 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:23.649814+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21705,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21705/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21705/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21705/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21705/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21705,
+    "identity": {
+      "nom": "Rentadors",
+      "nomComplet": "Torrent de Rentadors, Riera Major",
+      "prefixeNom": "Torrent de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21705/Rentadors.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Cataluña",
+      "departement": "Gerona",
+      "communePrincipale": "Viladrau",
+      "communes": [
+        "Viladrau"
+      ],
+      "massif": "Montseny",
+      "bassin": "Riu Ter",
+      "coursEau": "Riera Major"
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.3,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": 360,
+      "longueurM": 1600,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 40,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "2h",
+      "descente": "3h30",
+      "retour": "50min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21705,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 41.822231,
+        "longitude": 2.348821,
+        "label": null
+      },
+      {
+        "canyonId": 21705,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 41.831409,
+        "longitude": 2.3569,
+        "label": null
+      },
+      {
+        "canyonId": 21705,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 41.844997,
+        "longitude": 2.370429,
+        "label": null
+      },
+      {
+        "canyonId": 21705,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 41.833504,
+        "longitude": 2.363391,
+        "label": "passer l'Ermita de l'Elerola"
+      },
+      {
+        "canyonId": 21705,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 41.822006,
+        "longitude": 2.354443,
+        "label": "passer Sant Segimon"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 41.844997,
+      "longitude": 2.370429,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_1c1e046792ce7e5b",
+          "kind": "TOPOGUIDE",
+          "title": "Barrancs, Torrents, Canyons i Cavitats del Pirineu de Girona",
+          "authors": [
+            "Crisi Gonzalez",
+            "Mari Nivera",
+            "Enric Peradalta",
+            "Damià Pérez i Lluis Domnigo"
+          ],
+          "publicationYear": 2015,
+          "reference": "978-84-606-8896-9",
+          "editor": null,
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/1109/Barrancs--Torrents--Canyons-i-Cavitats-del-Pirineu-de-Girona.html"
+        },
+        {
+          "id": "biblio_a1a82953c23de029",
+          "kind": "TOPOGUIDE",
+          "title": "Girona (Tomo II), Descenso de cañones",
+          "authors": [
+            "Eduardo Gómez"
+          ],
+          "publicationYear": 1998,
+          "reference": null,
+          "editor": null,
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1168/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_e1dc0643c5e0077d",
+          "kind": "MAP",
+          "title": "Montseny (Alpina)",
+          "scale": "1/40000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_c82610ce2baa7296",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://ropewiki.com/Rentadors",
+          "url": "http://ropewiki.com/Rentadors"
+        },
+        {
+          "id": "resource_b5e0d7c38d546662",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/Canyons/RentadorsCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/Canyons/RentadorsCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

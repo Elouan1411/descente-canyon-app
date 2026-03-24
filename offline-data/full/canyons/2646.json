@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:46:18.554550+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2646,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2646/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2646/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2646/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2646/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2646,
+    "identity": {
+      "nom": "Leone supérieur",
+      "nomComplet": "Rio Leone supérieur",
+      "prefixeNom": "Rio",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2646/Leone-superieur.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Ligurie",
+      "departement": "Genova",
+      "communePrincipale": "Arenzano",
+      "communes": [
+        "Arenzano"
+      ],
+      "massif": "Mont Beigua",
+      "bassin": "Lerone",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a3III",
+      "interet": 2.0,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 645,
+      "deniveleM": 260,
+      "longueurM": 1350,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h35",
+      "descente": "2h45",
+      "retour": "1h"
+    },
+    "topo": {
+      "accesAval": "Sortir de l'autoroute à Arenzano (A10). Au rond point prendre à droite direction Cogoletto. Puis la première à droite direction Terralba. Dans le hameau on prend la \"via Pecorara\", 3° à gauche. Monter cette route très étroite et prendre la première à droite, panneau \"ristorante Agueta du Sciria\". Se garer un peu avant le parking du restaurant.",
+      "accesAmont": null,
+      "approche": "Dans le virage à droite de la route goudronnée (et qui monte à une aire de pique nique), commence une piste. Suivez là, on arrive d'abord au \"passo Gua\", par lequel on repassera au retour. Continuez la piste principale en montée, qui devient sentier en bordure d'une petite falaise. A la bifurcation suivante, prendre à droite, en montée, direction passo della Gava. Traverser le rio Gava, passer rapidement au dessus d'une croupe herbeuse et d'un petit refuge. A la bifurcation (de là on voit la C30) ne pas monter à droite mais continuer par un petit sentier à flanc de montagne qui mène rapidement au rio Leone.",
+      "descente": "Succession de cascades et de quelques vasques, dont une très belle, à descendre en rappel, quoique quelques sauts sont possibles. Une petite section pas très belle (ancien captage, un ressaut a contourner rive D) mène à la confluence avec le rio Gava Ponente. Vingt minutes de marche aisée mènent au \"lagu du Tina\" (rappel piton rive G, toboggan ou saut de 6/7m).",
+      "retour": "80 mètres après le \"Lagu da Tina\" un très bon sentier part rive G, en légère montée, puis à plat. Aux deux bifurcations suivre le panneau \"passo Gua\". Du \"passo Gua\", continuer en descente par l'itinéraire de montée.",
+      "engagement": "Moyen. Il est possible d'interrompre la descente à la passerelle qq dizaines de mètres avant la confluence avec le rio Gava (pour se faire descendre 20m après et monter raide rive G) mais c'est dommage de rater le logo della Tina.",
+      "periode": "Peut se faire au printemps (A3) avec un bon débit ou en été pendant lequel la chaleur permettra de faire et refaire certains sauts (petit débit: A2).",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Le lagu da Tina (lago della Tina) est classé 5° des lieux à voir sur Arenzano. Il est de plus, a connotation religieuse (christianisation d'un ancien culte païen). Donc calme et respect aux alentours de cette splendide vasque profonde.\n\nBivouac possible: juste avant le restaurant part une piste un peu raide qui mène sur une crête qui domine la mer..."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2646,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.438828,
+        "longitude": 8.669498,
+        "label": null
+      },
+      {
+        "canyonId": 2646,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.431831,
+        "longitude": 8.663876,
+        "label": null
+      },
+      {
+        "canyonId": 2646,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.411446,
+        "longitude": 8.666038,
+        "label": null
+      },
+      {
+        "canyonId": 2646,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 44.433971,
+        "longitude": 8.668871,
+        "label": "confluence Gava/Leone"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.411446,
+      "longitude": 8.666038,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_8369f2bd9fbefbce",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.cicarudeclan.com/ita/a5_leone.htm",
+          "url": "http://www.cicarudeclan.com/ita/a5_leone.htm"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

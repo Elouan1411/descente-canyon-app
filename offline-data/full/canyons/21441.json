@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:49:25.358702+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21441,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21441/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21441/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21441/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21441/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21441,
+    "identity": {
+      "nom": "Saix",
+      "nomComplet": "Cascades de Saix, Le Foron",
+      "prefixeNom": "Cascades de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21441/Saix.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Haute-Savoie",
+      "communePrincipale": "Mieussy",
+      "communes": [
+        "Mieussy"
+      ],
+      "massif": "Chablais - Platé - Aiguilles Rouges",
+      "bassin": "Giffre",
+      "coursEau": "Le Foron"
+    },
+    "rating": {
+      "cotation": "v4a2II",
+      "interet": 1.1,
+      "nbVotes": 5
+    },
+    "metrics": {
+      "altitudeDepartM": 1330,
+      "deniveleM": 100,
+      "longueurM": 150,
+      "cascadeMaxM": 60,
+      "cordeMiniM": 60,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "1h",
+      "retour": "40min"
+    },
+    "topo": {
+      "accesAval": "anches (évident). Attention : les derniers paravalanches sont maintenant remplacés par un tunnel, l'ancienne route est interdite aux piétons et le stationnement interdit.\n\npréférer un parking plus haut, au premier carrefour pour rejoindre le chemin d'accès.",
+      "accesAmont": null,
+      "approche": "Descendre au mieux (partir en traverse vers l'amont) et rejoindre les 3 pylônes électriques, point de départ de la course.\n\nA ce niveau le torrent est traversé par une passerelle joignant le chemin de retour décrit plus bas et un chemin balisé qui remonte à Sommant et qu'il est préférable d'emprunter pour descendre et remonter jusqu'au parking.\n\nce chemin est bien marqué sur la carte IGN, il démarre dans un ensemble d'immeubles sur la route de Roche Pallud, à 150m du croisement.",
+      "descente": "Succession de rappels. On ne quitte pas la corde.\n\nPremier ancrage sous la passerelle dans des ferrailles coincées, puis RD 2 plaquettes horizontales (vérifier celle de droite qui se fissure) reliées en répartiteur.\n\nDernier ancrage RG décalé (une plaquette et un piton).\n\nAvec ce débit, les parties humides glissent beaucoup.",
+      "retour": "Remonter dré dans l'pentu....\n\nOn remonte au mieux l’éboulis en rive droite (malaisé) pour couper et emprunter un chemin de randonnée équipé de câbles qui ramène au départ.\n\nRester le long de la barre rocheuse pour trouver le chemin assez haut à droite.\n\nNe surtout pas tirer à gauche dans l'éboulis, on peut rejoindre la route vers les paravalanches mais il faudrait ensuite traverser le tunnel à pied.",
+      "engagement": "On peut s'échapper rive droite assez souvent si le débit n'est pas trop conséquent.",
+      "periode": "La période optimale est la fin du printemps. L'été, il reste trop peu d'eau pour que la descente soit intéressante.\n\n2011 année \"exceptionnelle\", plus de neige fin mars donc pas d'eau mi-avril.",
+      "geologie": null,
+      "historique": "1ère descente connue par R. GAUMER et G. GUDEFIN en 1995. Les glaciairistes la pratiquaient avant mais dans le sens inverse.",
+      "remarques": "Conserver un baudrier à proximité pour le chemin de randonnée peut s'avérer être une bonne idée.\n\nGarder surtout le casque jusqu'à la passerelle,"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21441,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.158333,
+        "longitude": 6.543611,
+        "label": null
+      },
+      {
+        "canyonId": 21441,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.158054,
+        "longitude": 6.541944,
+        "label": null
+      },
+      {
+        "canyonId": 21441,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.161388,
+        "longitude": 6.555,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.161388,
+      "longitude": 6.555,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_0e7ca75ede9890e1",
+          "kind": "MAP",
+          "title": "3429 ET Bonneville-Cluses (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

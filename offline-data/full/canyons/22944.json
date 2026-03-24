@@ -1,0 +1,140 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:00.474513+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22944,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22944/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22944/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22944/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22944/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22944,
+    "identity": {
+      "nom": "Ragnatsch",
+      "nomComplet": "Cascades de Ragnatsch, Ragnatscher Bach",
+      "prefixeNom": "Cascades de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22944/Ragnatsch.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Mels",
+      "departement": "Saint Gallen",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Préalpes appenzelloises",
+      "bassin": "Walensee",
+      "coursEau": "Ragnatscher Bach"
+    },
+    "rating": {
+      "cotation": "v4a2V",
+      "interet": 2.5,
+      "nbVotes": 6
+    },
+    "metrics": {
+      "altitudeDepartM": 1100,
+      "deniveleM": 530,
+      "longueurM": 600,
+      "cascadeMaxM": 140,
+      "cordeMiniM": 70,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "3-4h",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "Se garer au parking de la télécabine à Hinterspina.",
+      "accesAmont": null,
+      "approche": "De la station amont de la télécabine à Hinterspina suivre le sentier vers le bas.",
+      "descente": "Parcours vertical, enchainement de grands rappels. Descente ensolleilée et avec une vue large sur la vallée.",
+      "retour": "Suivre le chemin retour au parking.",
+      "engagement": "Peu d'échappatoires évidentes dans ces grandes verticales.",
+      "periode": "Après fin de la fonte de neige, Mai - Novembre.",
+      "geologie": null,
+      "historique": "Marcel Schmed, Beat Tanner",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22944,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.079102,
+        "longitude": 9.40594,
+        "label": null
+      },
+      {
+        "canyonId": 22944,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.073849,
+        "longitude": 9.39728,
+        "label": null
+      },
+      {
+        "canyonId": 22944,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 47.069672,
+        "longitude": 9.39996,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.069672,
+      "longitude": 9.39996,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_ee92621b53de3c8c",
+          "kind": "TOPOGUIDE",
+          "title": "Canyoning : Swiss Alps / Alpes Suisse",
+          "authors": [
+            "Association Openbach"
+          ],
+          "publicationYear": 2015,
+          "reference": "9782746679450",
+          "editor": "auto-edition",
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/195/Canyoning-:-Swiss-alps---Alpes-suisses-Vol-1.html"
+        },
+        {
+          "id": "biblio_b440b623b8f939ea",
+          "kind": "TOPOGUIDE",
+          "title": "GRand CANYONS",
+          "authors": [
+            "Timo Stammwitz"
+          ],
+          "publicationYear": 2010,
+          "reference": "978-3-9523369-5-3",
+          "editor": null,
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/155/GRand-CANYONS.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_41373e153daf03ee",
+          "kind": "MAP",
+          "title": "1155 Sargans (Swisstopo)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

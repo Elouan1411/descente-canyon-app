@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:26.607169+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21717,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21717/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21717/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21717/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21717/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21717,
+    "identity": {
+      "nom": "Livrio",
+      "nomComplet": "Val de Livrio",
+      "prefixeNom": "Val de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21717/Livrio.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Lombardia",
+      "departement": "Sondrio",
+      "communePrincipale": "Comune di Caiolo",
+      "communes": [
+        "Comune di Caiolo"
+      ],
+      "massif": null,
+      "bassin": "Adda",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 1.5,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 580,
+      "deniveleM": 330,
+      "longueurM": 1800,
+      "cascadeMaxM": 15,
+      "cordeMiniM": 20,
+      "navette": "5.5km"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "4h",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "de Caiolo à San Antonio (alt. 775m)",
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": "très aquatique",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21717,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.136459,
+        "longitude": 9.832292,
+        "label": null
+      },
+      {
+        "canyonId": 21717,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.148533,
+        "longitude": 9.821219,
+        "label": null
+      },
+      {
+        "canyonId": 21717,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 46.140118,
+        "longitude": 9.831605,
+        "label": null
+      },
+      {
+        "canyonId": 21717,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 46.150688,
+        "longitude": 9.820168,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 46.140118,
+      "longitude": 9.831605,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_bab495774c6020bc",
+          "kind": "MAP",
+          "title": "CNS 279 Compas 104 CNS",
+          "scale": null,
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

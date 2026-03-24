@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:39.546188+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22049,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22049/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22049/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22049/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22049/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22049,
+    "identity": {
+      "nom": "Bockloch",
+      "nomComplet": "Cascades du Bockloch",
+      "prefixeNom": "Cascades du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22049/Bockloch.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Grand Est",
+      "departement": "Haut-Rhin",
+      "communePrincipale": "Wildenstein",
+      "communes": [
+        "Wildenstein"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a1I",
+      "interet": 1.2,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 697,
+      "deniveleM": 140,
+      "longueurM": 360,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "25min",
+      "descente": "1h",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": "Garer la voiture au bord du Lac de Kruth. La cascade terminale est bien visible du parking.",
+      "accesAmont": null,
+      "approche": "Du parking prendre le GR (croix bleues). Monter pendant 25 min jusqu'à couper un chemin forestier. Le départ se trouve au pont qui enjambe le ruisseau.",
+      "descente": "C4, C15, T3, C4,C5 et une dernière C25 (arbre RG).",
+      "retour": null,
+      "engagement": "Nul, tout est évitable facilement",
+      "periode": "A faire au printemps ou après une bonne période de pluie.",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22049,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.965302,
+        "longitude": 6.9527,
+        "label": null
+      },
+      {
+        "canyonId": 22049,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.9645,
+        "longitude": 6.9559,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 47.965302,
+      "longitude": 6.9527,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_4bd1ce1a5988d97d",
+          "kind": "MAP",
+          "title": "3619 OT Bussang-La-Bresse (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

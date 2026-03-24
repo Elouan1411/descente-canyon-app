@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:17.925376+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23575,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23575/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23575/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23575/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23575/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23575,
+    "identity": {
+      "nom": "Grand Béal",
+      "nomComplet": "Ruisseau du Grand Béal",
+      "prefixeNom": "Ruisseau du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23575/Grand-Beal.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Isère",
+      "communePrincipale": "Tréminis",
+      "communes": [
+        "Tréminis"
+      ],
+      "massif": "Dévoluy",
+      "bassin": "Drac",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1II",
+      "interet": 1.6,
+      "nbVotes": 5
+    },
+    "metrics": {
+      "altitudeDepartM": 1418,
+      "deniveleM": 300,
+      "longueurM": 1200,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 25,
+      "navette": "6.0km"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "1h30",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": ", traverser le Grand Béal et suivre cette bonne piste (qui fait une grosse boucle) sur environ 6km et se garer sans gêner à proximité du deuxième gué en béton traversé.",
+      "approche": "Pas d'approche si on fait la navette mais possibilité de monter à pied (pour les écolos) en suivant le sentier de rando balisé jaune menant au col de la Croix par la rive gauche sur 200m puis par la rive droite de notre ruisseau (compter une petite heure). Si vous optez pour cette option, le sentier retombe sur la piste après la grimpette, prendre alors à droite et le Grand Béal sera le premier ravin rencontré avec un gué en béton.",
+      "descente": "Marche en blocs puis 4 rappels assez proches puis de nouveau marche en blocs.",
+      "retour": "Remonter en RG la piste dès que vous l'apercevez, on retrouve très vite le parking aval.",
+      "engagement": "Peu engagé, possibilité de s'échapper à tout moment.",
+      "periode": "Faisable dès le printemps ; un gros débit de fonte ne devrait pas poser de problèmes à la descente.",
+      "geologie": null,
+      "historique": "Équipement de première par l'équipe d'Arnaud Astier, largement suffisant pour ce parcours.",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23575,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 44.706375,
+        "longitude": 5.784469,
+        "label": null
+      },
+      {
+        "canyonId": 23575,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 44.713104,
+        "longitude": 5.770381,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 44.706375,
+      "longitude": 5.784469,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_45fe654f05c1ff3a",
+          "kind": "MAP",
+          "title": "3336 OT La Mure Valbonnais (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

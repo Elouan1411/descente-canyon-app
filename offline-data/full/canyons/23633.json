@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:32.157480+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23633,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23633/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23633/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23633/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23633/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23633,
+    "identity": {
+      "nom": "Curnier",
+      "nomComplet": "Combe de Curnier",
+      "prefixeNom": "Combe de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23633/Curnier.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Vaucluse",
+      "communePrincipale": "Bédoin",
+      "communes": [
+        "Bédoin"
+      ],
+      "massif": "Mont Ventoux",
+      "bassin": "Rhône",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1III",
+      "interet": 1.2,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 591,
+      "deniveleM": 90,
+      "longueurM": 550,
+      "cascadeMaxM": 15,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "35min",
+      "descente": "50min",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "De Carpentras, se rendre à Bédoin par la D974. Dans le village tourner à droite en direction du centre et tourner de nouveau à droite en direction de Sault, toujours sur la D974. Rouler quelques mètres avant de prendre à gauche en direction du domaine de Bélézy, puis suivre la direction du gîte de Curnier jusqu'au parking final après les Colombets.",
+      "accesAmont": null,
+      "approche": "Ne pas rentrer par le fond de la combe en suivant le sentier, mais plutôt essayer de trouver un itinéraire via les éboulis en remontant par la crête en rive droite de la combe Curnier. En haut, une sente plus ou moins marquée suit et surplombe la combe puis rejoint un sentier mieux tracé par la suite jusqu'à la Combe Bouisse, affluent rive droite de Curnier. Descendre dans la Combe Bouisse jusqu'au premier rappel.",
+      "descente": "C15 en fil d'araignée sur AN (chêne), sortir par la RG et rejoindre la belle Combe de Curnier. La suite est une jolie marche de retour dans un bel encaissement très étroit, où il est parfois nécessaire de passer de profil pour ne pas rester bloquer.",
+      "retour": "Suivre l'itinéraire plus ouvert jusqu'au parking.",
+      "engagement": "Pas d'échappatoire dans l'encaissement.",
+      "periode": "En eau après les pluies.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Attention aux chutes de pierres. Port du casque conseillé."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23633,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.140621,
+        "longitude": 5.219309,
+        "label": null
+      },
+      {
+        "canyonId": 23633,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.136837,
+        "longitude": 5.217343,
+        "label": null
+      },
+      {
+        "canyonId": 23633,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.132858,
+        "longitude": 5.214634,
+        "label": null
+      },
+      {
+        "canyonId": 23633,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 44.139179,
+        "longitude": 5.216841,
+        "label": "Sente d'approche"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.132858,
+      "longitude": 5.214634,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_2f6c53ae7f1abe4d",
+          "kind": "MAP",
+          "title": "3140 ET Mont-Ventoux (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

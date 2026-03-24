@@ -1,0 +1,163 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:44:25.633782+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2181,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2181/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2181/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2181/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2181/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/2181/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 2181,
+    "identity": {
+      "nom": "Sémine (amont)",
+      "nomComplet": "La Sémine (amont)",
+      "prefixeNom": "La",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2181/Semine-amont.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Ain",
+      "communePrincipale": "Belleydoux",
+      "communes": [
+        "Champfromier",
+        "Belleydoux"
+      ],
+      "massif": "Jura",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 2.6,
+      "nbVotes": 28
+    },
+    "metrics": {
+      "altitudeDepartM": 970,
+      "deniveleM": 240,
+      "longueurM": 1800,
+      "cascadeMaxM": 28,
+      "cordeMiniM": 35,
+      "navette": "13.0km"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "4h00",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "Traverser GIRON en direction de la station de ski. Traverser la forêt et après celle-ci, prendre le premier chemin à gauche et se garer à droite juste avant le petit cour d'eau qui est la semine.",
+      "accesAmont": null,
+      "approche": "Traverser le champ en suivant la semine (sens du courant) pour arriver aux premières gorges.",
+      "descente": "Le canyon s'engage dans une série de petites gorges bien creusées et de large cascade entrecoupées de marches en sous-bois assez longues.",
+      "retour": "Suivre le chemin de pêcheur rive droite",
+      "engagement": "Courtes zones encaissées.\n\nÉchappatoires nombreuses et faciles.\n\nTous les rappels sont équipés principalement en rive droite mais attention aux frottements.",
+      "periode": "Périodes idéales de début Avril à fin Octobre.",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2181,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.25,
+        "longitude": 5.835,
+        "label": null
+      },
+      {
+        "canyonId": 2181,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.24472,
+        "longitude": 5.812222,
+        "label": null
+      },
+      {
+        "canyonId": 2181,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 46.250557,
+        "longitude": 5.837778,
+        "label": null
+      },
+      {
+        "canyonId": 2181,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 46.24472,
+        "longitude": 5.811944,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 46.250557,
+      "longitude": 5.837778,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_ba7d831063d0ef6c",
+          "kind": "MAP",
+          "title": "3329 O",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 297,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Convention - 20 déc 2011",
+          "summary": "Une convention a été signée entre les pêcheurs et les canyonistes. Concernant la pratique du canyonisme, il convient de respecter les règles suivantes :\n\n- entrée après 9h30 et sortie avant 18h.\n\n- marche sur les berges dès que la flottaison n'est plus possible.\n\n- respect des propriétés traversées (pas de détritus ni d'abandon de cordes), ni d'intervention sur les arbres tombés sans concertation.",
+          "remark": null,
+          "details": "Convention entre les pratiquants de la pêche et ceux du canyoning",
+          "effectiveDate": "20 déc 2011",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/297/legislation.html",
+          "attachments": [
+            {
+              "label": "Convention entre les pratiquants de la pêche et ceux du canyoning",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem297_pj1.pdf"
+            }
+          ]
+        },
+        {
+          "id": 76,
+          "status": "Obsolète",
+          "action": "Interdit",
+          "title": "Arrêté préfectoral (Ain) - 10 août 2004",
+          "summary": "NOTE : ABROGE PAR LA PREFECTURE.\n\nCanyon interdit pour des raisons de sécheresse.\n\nJusqu'au 15 septembre 2004, sauf changement.\n\nAmende : 1500 € et 3000 € en cas de récidive !",
+          "remark": null,
+          "details": "Communiqué de la préfecture de l'Ain, mettant fin à l'interdiction\n\nArrêté Préfectoral du 10 août 2004, interdisant la pratique du canyoning sur certains cours d'eau",
+          "effectiveDate": "24 août 2004",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/76/legislation.html",
+          "attachments": [
+            {
+              "label": "Communiqué de la préfecture de l'Ain, mettant fin à l'interdiction",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/abrogeAin2004.pdf"
+            },
+            {
+              "label": "Arrêté Préfectoral du 10 août 2004, interdisant la pratique du canyoning sur certains cours d'eau",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/arrete76.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:46.768315+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22641,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22641/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22641/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22641/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22641/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22641,
+    "identity": {
+      "nom": "Guiers Mort",
+      "nomComplet": "Cascades du Guiers Mort",
+      "prefixeNom": "Cascades du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22641/Guiers-Mort.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Isère",
+      "communePrincipale": "Saint-Pierre-de-Chartreuse",
+      "communes": [
+        "Saint-Pierre-de-Chartreuse"
+      ],
+      "massif": "Chartreuse",
+      "bassin": "Guiers Mort",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v5a2II",
+      "interet": 1.0,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": null,
+      "longueurM": null,
+      "cascadeMaxM": null,
+      "cordeMiniM": 80,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h",
+      "descente": "1h",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "De Saint-Pierre-de-Chartreuse prendre la route de Perquelin jusqu'à son terminus : grand parking.",
+      "accesAmont": null,
+      "approche": "Prendre la piste interdite à la circulation jusqu'au panneau \"Ruisseau de Bellefond altitude 1170m\" où l'on prendra à droite jusqu'à la \"Source du Guiers\" en 1h.",
+      "descente": "Débuter la descente depuis la source du Guiers en utilisant un point de MC. Toutes les cascades s'équipent sur AN.\n\nEn fonction du débit on peut choisir son itinéraire en fonction des nombreux AN.",
+      "retour": "Revenir au parking via le sentier emprunté à l'aller.",
+      "engagement": "On peut s'échapper à toutes les cascades.",
+      "periode": null,
+      "geologie": "Très très fracturé.",
+      "historique": null,
+      "remarques": "On peut coupler la descente avec la cascade du Rajas (2*30m sur AN) visible sur la droite du parking, connue des glaciéristes."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22641,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.326138,
+        "longitude": 5.857722,
+        "label": "entrée"
+      },
+      {
+        "canyonId": 22641,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.33036,
+        "longitude": 5.853333,
+        "label": null
+      },
+      {
+        "canyonId": 22641,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.331001,
+        "longitude": 5.8475,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.331001,
+      "longitude": 5.8475,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_bf7324fa2ae1510e",
+          "kind": "MAP",
+          "title": "3334 OT Massif de la Chartreuse Sud (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

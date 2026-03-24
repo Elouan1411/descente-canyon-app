@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:59:08.183370+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24083,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24083/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24083/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24083/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24083/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24083,
+    "identity": {
+      "nom": "Roranche",
+      "nomComplet": "Combe Roranche",
+      "prefixeNom": "Combe",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24083/Roranche.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Hautes-Alpes",
+      "communePrincipale": "Saint-Jean-Saint-Nicolas",
+      "communes": [
+        "Saint-Jean-Saint-Nicolas"
+      ],
+      "massif": "Ecrins - Oisans - Champsaur",
+      "bassin": "Drac",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a1III",
+      "interet": 1.6,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 1850,
+      "deniveleM": 400,
+      "longueurM": 1000,
+      "cascadeMaxM": 32,
+      "cordeMiniM": 40,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h20",
+      "descente": "2h30",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "De Gap, prendre la N85 en direction de Grenoble. A Puymonbeau, bien avant le col Bayard, prendre à droite sur la D944 direction Ancelle. De là, rester sur la D944 et passer Chabottes jusqu'à arriver à Pont du Fossé,où, après être passé sur le Drac, prendre à gauche sur le hameau St Jean par la D43. A St Jean, prendre à droite (D343) et se rendre sur Les Roranches. Se garer à gauche sur un petit parking goudronné en face d'une ferme.",
+      "accesAmont": null,
+      "approche": "Emprunter le GR à gauche de la ferme. Celui-ci rejoint le GR de pays du tour du Vieux Chaillol. Prendre alors à gauche, en direction du col du Palastre. Traverser le ruisseau de la Combe Roranche et poursuivre sur la montée en lacée jusqu'à que celui-ci revienne sur le ruisseau. Départ de la descente.",
+      "descente": "Descente parsemée de cascades n’excédant pas 32m, agrémentée de quelques désescalades et de marches en rivière parfois fastidieuses. Sortir en RG, lorsque une piste traverse le ruisseau sur la partie aval.",
+      "retour": "Suivre la piste jusqu'au parking sur Les Roranches.",
+      "engagement": "A noter deux échappatoires évidentes (sentiers).",
+      "periode": "A faire en début de saison, après la fonte des neiges ou après un gros orage.",
+      "geologie": null,
+      "historique": "Pose de deux mono-points en 2018.",
+      "remarques": "Présence parfois d'un ancien équipement sur plaquettes et spits, pitons et autres... Certaines cascades se descendent parfois directement sur amarrages naturels.\n\nAttention, des roches sur les pentes terreuses de la portion finale (la portion de marche fastidieuse) sont plutôt instables et risquent de chuter sur quelques endroits !!... Rester vigilant !...\n\nPrévoir du matériel de ré-équipement . Equipement vieillissant ou manquant."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24083,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.694229,
+        "longitude": 6.20154,
+        "label": null
+      },
+      {
+        "canyonId": 24083,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.683414,
+        "longitude": 6.199823,
+        "label": null
+      },
+      {
+        "canyonId": 24083,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.682262,
+        "longitude": 6.205376,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.682262,
+      "longitude": 6.205376,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_b0e951331c704682",
+          "kind": "MAP",
+          "title": "3437 OT Champsaur - Parc des Ecrins (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

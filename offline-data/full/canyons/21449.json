@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:49:27.260086+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21449,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21449/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21449/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21449/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21449/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21449,
+    "identity": {
+      "nom": "Wieslergraben",
+      "nomComplet": "Wieslergraben",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21449/Wieslergraben.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Salzbourg",
+      "departement": "Hallein",
+      "communePrincipale": "Postalm",
+      "communes": [
+        "Postalm"
+      ],
+      "massif": "Katergebirge",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 3.0,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 1100,
+      "deniveleM": 350,
+      "longueurM": null,
+      "cascadeMaxM": 140,
+      "cordeMiniM": 50,
+      "navette": "6.0km"
+    },
+    "timings": {
+      "approche": "??",
+      "descente": "3-4h",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "De Bad Ischl, prendre la direction de Salzburg par la route 158. Au niveau de Strobl, prendre la direction de Postalm. Attention, il s'agit d'une route à péage; il vous en coûtera 12€ (en 2006) pour 1 voiture et 3 personnes, et valable une seule journée (gloup!)! Dans la première épingle, laisser une voiture. La piste est interdite à la circulation et vous pouvez vous retrouver coincé si quelqu'un est venu fermer à clé la barrière! Avec un deuxième véhicule, poursuivez sur la route, qui va passer au dessus du ruisseau. Garer vous un peu avant sur la droite. Le départ du canyon est en contrebas de la route.",
+      "accesAmont": null,
+      "approche": null,
+      "descente": "Le Wieslergraben est un affluent du Rußbach\n\nUne dizaine de rappels (max 35m) suivie d'une C140 fractionnée (20+20+50+50). Cette cascade vous dépose dans le Rußbach. Il ne vous reste alors que 3 obstacles (C5, C3, T1). La sortie se situe au niveau du barrage. La grande verticale peut-être à sec !",
+      "retour": "Suivre la piste qui rejoint l'épingle où vous avez laissé la première voiture",
+      "engagement": "Canyon peu encaissé. Echappatoire RG en haut de la C140 (panneau \"Blonde Hutte\"). Pas d'échappatoire dans le Rußbach (le collecteur) qu'il faut descendre sur une courte portion.",
+      "periode": "Si le débit est déjà important dans le Wieslergraben, certains passages risquent d'être difficiles à franchir dans le Rußbach (présence de troncs d'arbre). La grande verticale peut-être à sec !",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Possibilité de remonter directement au parking amont par la via ferrata . Voir panneau à la sortie du canyon. A vérifier, mais peut régler le problème de la navette onéreuse (péage)."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21449,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.661224,
+        "longitude": 13.445206,
+        "label": null
+      },
+      {
+        "canyonId": 21449,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.661629,
+        "longitude": 13.460569,
+        "label": null
+      },
+      {
+        "canyonId": 21449,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 47.661804,
+        "longitude": 13.445034,
+        "label": null
+      },
+      {
+        "canyonId": 21449,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 47.670704,
+        "longitude": 13.460999,
+        "label": null
+      },
+      {
+        "canyonId": 21449,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.655849,
+        "longitude": 13.4513,
+        "label": "confluent Wieslergraben avec Rußbach"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 47.661804,
+      "longitude": 13.445034,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_04ca47de1b99327f",
+          "kind": "MAP",
+          "title": "20 Dachstein - Südliches Salzkammergut (Kompass)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

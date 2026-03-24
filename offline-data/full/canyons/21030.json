@@ -1,0 +1,144 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:47:53.764757+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21030,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21030/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21030/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21030/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21030/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21030,
+    "identity": {
+      "nom": "Morterone",
+      "nomComplet": "Valle di Morterone",
+      "prefixeNom": "Valle di",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21030/Morterone.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Lombardia",
+      "departement": "Lecco",
+      "communePrincipale": "Morterone",
+      "communes": [
+        "Morterone"
+      ],
+      "massif": null,
+      "bassin": "Lac de Come",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2III",
+      "interet": 2.0,
+      "nbVotes": 5
+    },
+    "metrics": {
+      "altitudeDepartM": 830,
+      "deniveleM": 50,
+      "longueurM": 1500,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "10min",
+      "descente": "2h",
+      "retour": "1h"
+    },
+    "topo": {
+      "accesAval": "De Lenno, monter vers le Valsassina puis bifurquer à droite pour suivre la route de Morterone. Dans le long village, tourner à gauche pour suivre la piste indiquant Carigone (980m) et se garer au bout de 300m. (demander l'accord aux riverains peut s'avérer utile. Ils sont très sympas d'ailleurs)",
+      "accesAmont": null,
+      "approche": "Continuer la piste et traverser la cour d'une maison pour suivre un sentier descendant dans les prés vers 2 bergeries (les propriétaires nous ont gentillement montré le passage -> courtoisie de rigueur). Puis au niveau des bergeries suivre le sentier qui descend à droite vers le cours d'eau que l'on suivra jusqu'à la 1ère difficulté.",
+      "descente": "On franchit la 1ère cascade (avec l'arche puis on suit le ruisseau qui se transforme en ravin pour finalement s'encaisser réellement jusqu'à la confluence avec l'Enna. A partir d'ici, le débit est multiplié par 2 ou 3. On suit alors l'Enna (marche et quelques sauts) jusqu'à la confluence avec la résurgence karstique de Fiümlatt.",
+      "retour": "Remonter en rive gauche, traverser un pont et prendre ensuite à la 2 ème bifurcation à gauche pour rejoindre le départ de la course.",
+      "engagement": "Les passages encaissés le sont vraiment, mais cela est ponctuel. Le reste du temps des échappatoires sont possibles dans la forêt.",
+      "periode": "Peu d'eau en général avant la confluence avec l'Enna.\n\nPréférer les mois d'Avril, Mai, Juin.",
+      "geologie": null,
+      "historique": "1ère descente par Filipazzi, Cerina, Miragoli en 1995",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21030,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.881599,
+        "longitude": 9.493582,
+        "label": null
+      },
+      {
+        "canyonId": 21030,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.883766,
+        "longitude": 9.506779,
+        "label": null
+      },
+      {
+        "canyonId": 21030,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.87767,
+        "longitude": 9.484291,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.87767,
+      "longitude": 9.484291,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_3813ed43a35207fd",
+          "kind": "TOPOGUIDE",
+          "title": "Canyoning in Lombardia",
+          "authors": [
+            "Pascal van Duin"
+          ],
+          "publicationYear": 2005,
+          "reference": "ISBN 88-901753-0-3",
+          "editor": "Edizioni TopCanyon",
+          "status": "en stock\n\n- 24,90 € -\n\nCommandez cet ouvrage dès maintenant !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/18/Canyoning-in-Lombardia.html"
+        },
+        {
+          "id": "biblio_9a587136e3eea5ef",
+          "kind": "TOPOGUIDE",
+          "title": "Italia Nord-Est - Gole e Canyon Vol.2",
+          "authors": [
+            "Maurizio Biondi",
+            "Francesco Cacae",
+            "Roberto Schenone"
+          ],
+          "publicationYear": 2000,
+          "reference": "88-900260-0-6",
+          "editor": "Associazione Italiana Canyoning",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/114/Gole---Canyons-2-:-Italia-Nord-Est.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_13e9ce73fe6633f7",
+          "kind": "MAP",
+          "title": "297 kompass 105 (Carte Nationale Suisse)",
+          "scale": null,
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

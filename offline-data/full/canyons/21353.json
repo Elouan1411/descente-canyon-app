@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:49:05.404928+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21353,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21353/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21353/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21353/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21353/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21353,
+    "identity": {
+      "nom": "Ossèse inf",
+      "nomComplet": "Canyon d' Ossèse inf, Ossèse",
+      "prefixeNom": "Canyon d'",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21353/Ossese-inf.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Ariège",
+      "communePrincipale": "Ossese",
+      "communes": [
+        "Ossese"
+      ],
+      "massif": "Aliot",
+      "bassin": null,
+      "coursEau": "Ossèse"
+    },
+    "rating": {
+      "cotation": "v2a2II",
+      "interet": 2.0,
+      "nbVotes": 7
+    },
+    "metrics": {
+      "altitudeDepartM": 980,
+      "deniveleM": 60,
+      "longueurM": 300,
+      "cascadeMaxM": 15,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "1h",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "De Saint Girons prendre direction Seix puis Ustou. Tourner à droite vers Ossèse et monter jusqu'au terminus. Se garer sans gêner.",
+      "accesAmont": null,
+      "approche": "Du terminus se diriger plein sud comme pour monter à Ossèse sup. Passer une barrière métallique puis descendre par une sente dans la rivière.",
+      "descente": "De courts tobs, deux petits rappels (attention le premier de 8m tonche) puis le goulet central à aborder avec beaucoup de précaution.",
+      "retour": "Remonter sur un muret en rive droite à la fin du canyon et traverser les prés pour rejoindre le sentier qui part de la voiture.",
+      "engagement": "Court, mais ne pas s'engager dans le goulet si ça bouillonne. Equipement correct.",
+      "periode": "A faire à l'étiage complet.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Faire attention au goulet central.\n\nCanyon à compléter avec sa partie sup et/ou Calie."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21353,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.758385,
+        "longitude": 1.257149,
+        "label": null
+      },
+      {
+        "canyonId": 21353,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.761337,
+        "longitude": 1.25822,
+        "label": null
+      },
+      {
+        "canyonId": 21353,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 42.76469,
+        "longitude": 1.262527,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 42.76469,
+      "longitude": 1.262527,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_7992ba9ac2302817",
+          "kind": "TOPOGUIDE",
+          "title": "Pyrénées en Cascades - Les grandes verticales du canyonisme",
+          "authors": [
+            "Bruno Matéo"
+          ],
+          "publicationYear": 2012,
+          "reference": null,
+          "editor": "Rando éditions",
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/172/Pyrenees-en-Cascades---Les-grandes-verticales-du-canyonisme.html"
+        },
+        {
+          "id": "biblio_29d8dbb9ae9f9a10",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons du Haut-Couserans - Ariège, Pyrénées",
+          "authors": [
+            "Mickaël Ménager"
+          ],
+          "publicationYear": 2008,
+          "reference": "978-2-7466-0311-0",
+          "editor": null,
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/131/Canyons-du-Haut-Couserans.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_a74afea2541626fb",
+          "kind": "MAP",
+          "title": "2048 OT Aulus Les Bains (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

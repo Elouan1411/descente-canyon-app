@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:40.621092+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22342,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22342/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22342/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22342/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22342/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22342,
+    "identity": {
+      "nom": "Blatnica",
+      "nomComplet": "Blatnica, Blatni Graben",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22342/Blatnica.html"
+    },
+    "location": {
+      "pays": "Slovénie",
+      "region": "Bohinj",
+      "departement": "Gorenjska",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Alpes Juliennes",
+      "bassin": "Sava Bohinjka",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a1IV",
+      "interet": 1.8,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 980,
+      "deniveleM": 490,
+      "longueurM": 1200,
+      "cascadeMaxM": 45,
+      "cordeMiniM": 50,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h40",
+      "descente": "3h20",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": "Depuis Bled prenez la route 209 en direction de Bohinjska Bistrica. Environ 6 km après Bohinjska Bela vous passez devant un vieux bâtiment en bois qui est sur votre droite (le câble transporteur de bois). Environ 500 m après ce bâtiment vous atteignez un grand parking sur votre gauche.",
+      "accesAmont": null,
+      "approche": "Du parking suivez le chemin balisé qui monte dans la direction de « Rovtarica ». Passez la station intermédiaire du câble de transport de bois et continuez sur ce chemin jusqu'à ce qu'il atteigne une piste forestière. Tournez à gauche jusqu’à ce qu’elle atteigne le lit du ruisseau.",
+      "descente": "Après un peu de caca-bloc, la gorge commence à devenir de plus en plus étroite. Une série de rappels suit jusqu'à ce que vous atteigniez les dernières grandes cscades (45m chacune). Malheureusement la gorge seche quasiment toute l'année.",
+      "retour": "Retour immédiat",
+      "engagement": "Pas d’échappatoires faciles dans la deuxième partie",
+      "periode": "Présence d’eau uniquement après la fonte des neiges et les fortes pluies",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22342,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.295952,
+        "longitude": 14.064474,
+        "label": null
+      },
+      {
+        "canyonId": 22342,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.30357,
+        "longitude": 14.052887,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.30357,
+      "longitude": 14.052887,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_252789aa8769b722",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/Canyons/BlatnicaCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/Canyons/BlatnicaCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

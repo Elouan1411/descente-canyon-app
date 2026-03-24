@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:45:43.519955+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2499,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2499/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2499/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2499/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2499/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2499,
+    "identity": {
+      "nom": "Taradelle",
+      "nomComplet": "Ruisseau de Taradelle",
+      "prefixeNom": "Ruisseau de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2499/Taradelle.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Hérault",
+      "communePrincipale": "Saint-Geniès-de-Varensal",
+      "communes": [
+        "Saint-Geniès-de-Varensal"
+      ],
+      "massif": "Espinouse",
+      "bassin": "La Mare",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a3II",
+      "interet": 2.0,
+      "nbVotes": 16
+    },
+    "metrics": {
+      "altitudeDepartM": 800,
+      "deniveleM": 404,
+      "longueurM": null,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 30,
+      "navette": "15.0km"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "4h",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "Voir accès ruisseau d'Albès. Se garer avant les seconds lacets, dans un champ herbeux dans une ligne droite plate après les premiers lacets. On aura repéré deux petits ravins non encaissés. Se garer à cette hauteur.",
+      "accesAmont": null,
+      "approche": "Suivre les petits ravins qui se rejoignent. Continuer dans le lit.",
+      "descente": "Belle première partie sèche dans les bois qui offre sans temps morts une succession de désescalades et de 10 rappels asez esthétiques (15 m maxi) dans un décor de mousse. La deuxième partie se fait dans les schistes et l'eau apparait (débit faible) C12 ; T6 glissade possible ; T15 ; T7 ;jusqu'à la confluence avec le ruiseau d'Albès avant la C8 arrosée (attention au débit car Albès est beaucoup mieux alimenté). Se succèdent ensuite des cascatelles, sauts désescalades avec parfois de la végétation jusqu'à un beau bief permettant de beaux sauts dans une grande vasque sculptée.",
+      "retour": "Sortie après la vasque en rive G. Sentier qui traverse l'affluent du Roc d'Orque, rejoint une piste et un pont, tourner à D et monter à la pisciculture.",
+      "engagement": "Faible. attention au débit d'Albès dans les 2 dernieres cascades.",
+      "periode": "Avril Mai Juin",
+      "geologie": "Calcaire puis schistes.",
+      "historique": "équipé en 1992 par les guides locaux",
+      "remarques": "Ne pas se garer au pont mais à la pisciculture si on veut pas géner (300m de marche en plus, alors...)\n\nComme pour Albès : Site classé Natura 2000"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2499,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.686497,
+        "longitude": 2.990685,
+        "label": null
+      },
+      {
+        "canyonId": 2499,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 43.697914,
+        "longitude": 2.978668,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 43.697914,
+      "longitude": 2.978668,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_fc07aa1bfb96647b",
+          "kind": "MAP",
+          "title": "2543 OT Lamalou-Les-Bains (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

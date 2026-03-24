@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:58.446660+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21851,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21851/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21851/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21851/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21851/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21851,
+    "identity": {
+      "nom": "Ale",
+      "nomComplet": "Torrent d' Ale",
+      "prefixeNom": "Torrent d'",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21851/Ale.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Hautes-Alpes",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Ecrins - Oisans - Champsaur",
+      "bassin": "Durance",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v6a4III",
+      "interet": 2.5,
+      "nbVotes": 12
+    },
+    "metrics": {
+      "altitudeDepartM": 2100,
+      "deniveleM": 100,
+      "longueurM": 600,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "2h",
+      "descente": "2h30",
+      "retour": "45min"
+    },
+    "topo": {
+      "accesAval": "De Briançon se rendre à Vallouise, de Vallouise prendre la direction du Villard puis d'Entre les Aigues. Se garer sur le grand parking au terminus de la route.",
+      "accesAmont": null,
+      "approche": "Du fond du parking prendre la direction de Jas Lacroix. Une fois arrivé à la bergerie poursuivre le sentier (GR54), traverser le torrent de Chanteloube (c'est lui qui amène de plus gros du débit dans le torrent de Malemort) et continuer à monter jusqu'à un replat herbeux (C25 visible pendant la montée sur votre gauche) (30 bonnes minutes depuis la bergerie). Du replat rejoindre le début de l'étroiture. Toute l'approche se déroule dans un cadre magnifique.",
+      "descente": "Sauts, toboggans, rappels arrosés, escalades, désescalades.",
+      "retour": "A la sortie de la gorge traverser le torrent de Chanteloube pour récuperer le GR",
+      "engagement": "A la fois très engagé (on est dans un cadre de montagne assez isolé) et peu engagé (beaucoup d'échappatoires dans le canyon).",
+      "periode": "La meilleure période est la fin de l'été.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "- Le canyon se situe dans le parc national des Ecrins, il est donc interdit de poser des amarrages fixes (pas de goujons, de spits, de pitons ou des broches). Cela rend le parcours assez technique (voir très technique si vous le parcourez en version gros débit): il faudra donc être à l'aise en désescalade, sauts et rappels arrosés pour pouvoir se faire plaisir dans ce canyon et être bon dans la bidouille d'amarrages de fortunes.\n\n- Gros point positif ce canyon reste assez ouvert et est donc très ensoleillé.\n\n- Selon le placement de votre amarrage pour la C25 le rappel de corde sera très difficile."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21851,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.798611,
+        "longitude": 6.367778,
+        "label": null
+      },
+      {
+        "canyonId": 21851,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.801109,
+        "longitude": 6.368333,
+        "label": null
+      },
+      {
+        "canyonId": 21851,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.830555,
+        "longitude": 6.4025,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.830555,
+      "longitude": 6.4025,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

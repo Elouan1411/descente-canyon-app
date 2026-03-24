@@ -1,0 +1,134 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:38.895091+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23666,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23666/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23666/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23666/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23666/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23666,
+    "identity": {
+      "nom": "Shab",
+      "nomComplet": "Wadi Shab",
+      "prefixeNom": "Wadi",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23666/Shab.html"
+    },
+    "location": {
+      "pays": "Oman",
+      "region": null,
+      "departement": "Ash Sharqiyah",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Hajar oriental",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v1a3III",
+      "interet": 2.2,
+      "nbVotes": 6
+    },
+    "metrics": {
+      "altitudeDepartM": 80,
+      "deniveleM": 10,
+      "longueurM": 300,
+      "cascadeMaxM": 4,
+      "cordeMiniM": null,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "45min",
+      "descente": "30min",
+      "retour": "40min"
+    },
+    "topo": {
+      "accesAval": "Se rendre au parking du Wadi Shab situé à Ash-Shab en dessous du grand pont de la voie express 17 Muscat-Sur (bien indiqué, très touristique, sortie Ash-Shab/Tiwi).",
+      "accesAmont": null,
+      "approche": "Traverser le wadi Shab en bateau (1 rial par personne aller-retour) pour atteindre le sentier de randonnée en rive gauche qui remonte le wadi en changeant quelques fois de rive. On passe au-dessus d'une première petite gorge par la rive gauche (panneaux d'interdiction de nager dans le wadi) puis d'une seconde plus longue. Redescendre alors par le sentier (quelques marches aménagées) jusqu'au wadi puis marcher dans les blocs et suivre le Falaj RD(canal d'irrigation) jusqu'à tomber sur les première vasque où la baignade devient obligatoire.",
+      "descente": "En aller-retour, on remonte le wadi puis on entre dans la grotte par un étroit petit corridor. On butte alors sur une cascade de 4m (cordes fixes pour descendre/monter) qui se jette dans une grande vasque semi-souterraine profonde. Retour par le même itinéraire.",
+      "retour": "On rentre par le même itinéraire qu'à l'aller",
+      "engagement": "Peu engagé.",
+      "periode": "Toujours en eau, la combinaison n'est pas nécessaire.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "- Randonnée aquatique très fréquentée par les omanais en fin de semaine (vendredi-samedi). Bien choisir donc le jour de descente.\n\n- Site très touristique\n\n- plusieurs panneaux signalent qu'il est interdit et dangereux de nager dans le wadi...\n\n- le service de traversée en bateau coûtait en 2018 1 rial l'aller-retour"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23666,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 22.831848,
+        "longitude": 59.227097,
+        "label": "au-dessus de la grotte"
+      },
+      {
+        "canyonId": 23666,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 22.838717,
+        "longitude": 59.244877,
+        "label": null
+      },
+      {
+        "canyonId": 23666,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 22.839102,
+        "longitude": 59.246204,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 22.839102,
+      "longitude": 59.246204,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_bcc618d233d1bb89",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/Canyons/ShabCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/Canyons/ShabCanyon"
+        },
+        {
+          "id": "resource_bb36ed53ecfcf2c6",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://home.kpn.nl/lilian_jan_schreurs/oman/WADISHAB.htm",
+          "url": "http://home.kpn.nl/lilian_jan_schreurs/oman/WADISHAB.htm"
+        },
+        {
+          "id": "resource_4c9a3dcbe31e853b",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://ca.wikiloc.com/wikiloc/view.do?id=11245891",
+          "url": "http://ca.wikiloc.com/wikiloc/view.do?id=11245891"
+        },
+        {
+          "id": "resource_85d03ef9f9bfef6d",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://wp.me/p2RC16-2TY",
+          "url": "http://wp.me/p2RC16-2TY"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

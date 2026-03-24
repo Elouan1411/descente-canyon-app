@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:34.111926+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23915,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23915/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23915/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23915/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23915/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23915,
+    "identity": {
+      "nom": "Lajinhas",
+      "nomComplet": "Lajinhas",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23915/Lajinhas.html"
+    },
+    "location": {
+      "pays": "Portugal",
+      "region": "Madeira",
+      "departement": "Porto Moniz Municipality",
+      "communePrincipale": "Seixal",
+      "communes": [
+        "Seixal"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1II",
+      "interet": null,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": 500,
+      "longueurM": 1000,
+      "cascadeMaxM": 35,
+      "cordeMiniM": 35,
+      "navette": "27.0km"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "5h30",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": "31 rappels.",
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23915,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 32.78257,
+        "longitude": -17.122568,
+        "label": null
+      },
+      {
+        "canyonId": 23915,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 32.788002,
+        "longitude": -17.116066,
+        "label": null
+      },
+      {
+        "canyonId": 23915,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 32.782639,
+        "longitude": -17.127043,
+        "label": null
+      },
+      {
+        "canyonId": 23915,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 32.796749,
+        "longitude": -17.113974,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 32.782639,
+      "longitude": -17.127043,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_d4559c6470527679",
+          "kind": "TOPOGUIDE",
+          "title": "Meeting Canyoning Madeira 2016",
+          "authors": [
+            "Duarte Silva e colaboradores"
+          ],
+          "publicationYear": 2016,
+          "reference": null,
+          "editor": "Clube Naval do Seixal",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1343/topoguide.html"
+        },
+        {
+          "id": "biblio_2714eb823c608ae0",
+          "kind": "TOPOGUIDE",
+          "title": "Meeting Canyoning Madeira 2015",
+          "authors": [
+            "Duarte Silva"
+          ],
+          "publicationYear": 2015,
+          "reference": null,
+          "editor": "Clube Naval do Seixal",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1342/topoguide.html"
+        }
+      ],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

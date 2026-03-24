@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:40.545676+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23381,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23381/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23381/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23381/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23381/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23381,
+    "identity": {
+      "nom": "Campo Pozino",
+      "nomComplet": "Barranco Campo Pozino, Moros",
+      "prefixeNom": "Barranco",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23381/Campo-Pozino.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Aragón",
+      "departement": "Huesca",
+      "communePrincipale": "Labuerda",
+      "communes": [
+        "Labuerda"
+      ],
+      "massif": "Mt Perdu (Monte Perdido)",
+      "bassin": "Cinca",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 1.2,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 695,
+      "deniveleM": 110,
+      "longueurM": 850,
+      "cascadeMaxM": 13,
+      "cordeMiniM": 15,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "1h30",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": "Depuis l'Ainsa, suivre A-138 en direction de la France. Traverser Labuerda et poursuivre 2,3 km depuis le rond-point de la sortie du village jusqu'à atteindre la station électrique située à droite. Moins de 100 m après rejoindre la piste servant de parking à gauche de la route, se garer au mieux.",
+      "accesAmont": null,
+      "approche": "Suivre la piste qui passe au dessus du barranco et prendre ensuite celle de gauche fermée par une chaine et qui monte. La suivre jusqu'à ce qu'elle retraverse le barranco, soit 800 m de montée puis 350 m de descente depuis une ancienne carrière.",
+      "descente": "Descente secondaire qui s'envisage au passage. Enchainement peu continu avec r3 puis S3 puis R10 (ou désescalade 5m + S5), plus loin R15 puis marche jusqu'à atteindre une succession de dalles en plan incliné avec des toboggans possibles, enfin nouvelle marche pour rejoindre en RD le parking.",
+      "retour": null,
+      "engagement": "Peu engagé, le débit est observable au parking.",
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23381,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.475636,
+        "longitude": 0.137907,
+        "label": null
+      },
+      {
+        "canyonId": 23381,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.471569,
+        "longitude": 0.144108,
+        "label": null
+      },
+      {
+        "canyonId": 23381,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 42.470943,
+        "longitude": 0.144505,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 42.470943,
+      "longitude": 0.144505,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_f62b97cafa27436c",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://ropewiki.com/Campo_Pozino",
+          "url": "http://ropewiki.com/Campo_Pozino"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

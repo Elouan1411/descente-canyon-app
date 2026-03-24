@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:51.789673+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22388,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22388/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22388/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22388/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22388/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22388,
+    "identity": {
+      "nom": "Schürpfengraben",
+      "nomComplet": "Schürpfengraben",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22388/Schurpfengraben.html"
+    },
+    "location": {
+      "pays": "Allemagne",
+      "region": "Bayern",
+      "departement": "Oberbayern",
+      "communePrincipale": "Lenggries",
+      "communes": [
+        "Landkreis Bad Tölz-Wolfratshausen",
+        "Lenggries"
+      ],
+      "massif": "Karwendel",
+      "bassin": "Loisach",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 1.8,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 880,
+      "deniveleM": 120,
+      "longueurM": 750,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 25,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h",
+      "descente": "2h",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22388,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.559883,
+        "longitude": 11.552518,
+        "label": null
+      },
+      {
+        "canyonId": 22388,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.558693,
+        "longitude": 11.557008,
+        "label": "depart partie II (970m alt.)"
+      },
+      {
+        "canyonId": 22388,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.562817,
+        "longitude": 11.546996,
+        "label": null
+      },
+      {
+        "canyonId": 22388,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.56884,
+        "longitude": 11.534271,
+        "label": null
+      },
+      {
+        "canyonId": 22388,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.558971,
+        "longitude": 11.563271,
+        "label": "Départ Schürpfengraben sup. (2x50m corde)"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.56884,
+      "longitude": 11.534271,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

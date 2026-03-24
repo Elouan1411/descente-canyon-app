@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:09.941297+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22985,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22985/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22985/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22985/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22985/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22985,
+    "identity": {
+      "nom": "Ochsenschlucht",
+      "nomComplet": "Ochsenschlucht, Feistritz",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22985/Ochsenschlucht.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Carinthie",
+      "departement": "Spittal an der Drau District",
+      "communePrincipale": "Berg im Drautal",
+      "communes": [
+        "Berg im Drautal"
+      ],
+      "massif": "Gailtaler Alpen",
+      "bassin": "Drau",
+      "coursEau": "Feistritz"
+    },
+    "rating": {
+      "cotation": "v4a6IV",
+      "interet": 2.7,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 840,
+      "deniveleM": 180,
+      "longueurM": 2000,
+      "cascadeMaxM": 16,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h30min",
+      "descente": "3h",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "Quitter l'autoroute du Sud A2 (Salzbourg - Villach) au noeud Spittal-Millstätter See et prendre la route B100 vers l'ouest jusqu'à Berg im Drautal. Prenez à gauche et passez par le pont en RD de la \"Drau\" et allez à Feistritz. Rapidement, après avoir traversé Feistritz, garez-vous au départ d'une piste en RG de la rivière de Feistritz qu'on a traversé sur un pont.",
+      "accesAmont": null,
+      "approche": "Remontez le lit de la rivière jusqu'à un barrage avec prise d'eau. Montez alors sur votre gauche (RD) vers une route goudronnée interdite à la circulation. Suivez cette route sur 2,8 à partir du barrage en montant. A la première bifurcation, prenez la route de droite. Après que plus loin de 750 m passer une ferme (parc à gibier - en 2013) et suivre à travers des prés encore sur 400 m en montant jusqu'à un autre croisement (920 m d'altitude). Ici allez tout droit et prenez au bout de 300m un sentier en foret qui surplombe la gorge jusqu'à atteindre le lit du ruisseau.",
+      "descente": "Beaucoup d'eau. Equipé hors crue. La difficulté dépend de la profondeur des bassins et des mouvements d'eau dangereux.",
+      "retour": "Du barrage suivre le lit en RG de la rivière jusqu'à la voiture.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22985,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.71442,
+        "longitude": 13.124574,
+        "label": null
+      },
+      {
+        "canyonId": 22985,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.728771,
+        "longitude": 13.127804,
+        "label": null
+      },
+      {
+        "canyonId": 22985,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.73317,
+        "longitude": 13.121409,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.73317,
+      "longitude": 13.121409,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_aff8d13ca40122c4",
+          "kind": "MAP",
+          "title": "WK 223 Gailtal – Gitschtal – Lesachtal – Weissensee – Oberes Drautal (Freytag & Berndt)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_18ff3697845ffba7",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.outdooractive.com/de/wanderun.....hlucht/4211534/#fu=1",
+          "url": "http://www.outdooractive.com/de/wanderun.....hlucht/4211534/#fu=1"
+        },
+        {
+          "id": "resource_f1e2b9969c8f7434",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/C.....OchsenschluchtCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/C.....OchsenschluchtCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

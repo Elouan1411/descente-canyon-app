@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:29.721250+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22558,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22558/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22558/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22558/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22558/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22558,
+    "identity": {
+      "nom": "Versoud de Belledonne",
+      "nomComplet": "Ruisseau du Versoud de Belledonne, Ruisseau du Versoud",
+      "prefixeNom": "Ruisseau du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22558/Versoud-de-Belledonne.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Isère",
+      "communePrincipale": "Saint-Jean-le-Vieux",
+      "communes": [
+        "Saint-Jean-le-Vieux"
+      ],
+      "massif": "Belledonne",
+      "bassin": "Isère",
+      "coursEau": "Ruisseau du Versoud"
+    },
+    "rating": {
+      "cotation": "v4a2II",
+      "interet": 0.8,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 467,
+      "deniveleM": 218,
+      "longueurM": 700,
+      "cascadeMaxM": 40,
+      "cordeMiniM": 60,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "2h",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "De Grenoble, prendre la rocade sud direction Chambéry et sortir à Domène puis continuer jusqu'au village du Versoud. Ne pas rater une petite route sur la droite qui monte près de l'église. Se garer à côté du ruisseau en face des habitations.\n\nParking",
+      "accesAmont": "Revenir sur Domène et prendre à gauche la D11 jusqu'à la Monta. Une place de voiture sur la droite au niveau du ruisseau.",
+      "approche": null,
+      "descente": "Tout s'équipe sur AN. Nombreux embâcles qui peuvent s'avérer utiles. Rocher médiocre pénalisant l'équipement fixe.",
+      "retour": "Pour rejoindre le parking aval, un chemin longe le ruisseau en RD.",
+      "engagement": "Encaissement bien marqué même si en forêt, rendant l’échappatoire très problématique. Nombreuses portions à l'abri des crues.",
+      "periode": "Privilégier les périodes humides. Néanmoins, de nombreuses désescalades seront impossibles par fort débit.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Prévoir de la corde à couper.\n\nSoyez discrets sur les parkings."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22558,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 45.212368,
+        "longitude": 5.871177,
+        "label": null
+      },
+      {
+        "canyonId": 22558,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 45.214161,
+        "longitude": 5.862876,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 45.212368,
+      "longitude": 5.871177,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_f8b3c239d2398f99",
+          "kind": "MAP",
+          "title": "3335 OT Grenoble (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

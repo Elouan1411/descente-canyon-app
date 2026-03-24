@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:25.019358+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23606,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23606/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23606/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23606/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23606/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23606,
+    "identity": {
+      "nom": "Orino supérieur",
+      "nomComplet": "Orino supérieur",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23606/Orino-superieur.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Serravalle",
+      "departement": "Tessin",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": "Brenno",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.2,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 1679,
+      "deniveleM": 345,
+      "longueurM": 1800,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h",
+      "descente": "2h",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "Voir canyon de Costa.",
+      "accesAmont": null,
+      "approche": "Du parking traverser le torrent et remonter celui-ci toujours en RD sur le bon sentier de randonnée jusqu’à la passerelle à l’altitude 1679m.",
+      "descente": "Attention, prise d’eau en amont du canyon et pas d’information sur son fonctionnement.\n\nLa descente commence par de petits obstacles à contourner ou à désescalader, avec quelques sauts et toboggans. Puis on arrive dans une zone où l'on sort la corde pour 5 rappels.",
+      "retour": "Sortir RD après la dernière cascade ou après le dernier obstacle de Costa et revenir au parking par le sentier.",
+      "engagement": null,
+      "periode": "Attention, prise d’eau en amont du canyon et pas d’information sur son fonctionnement.",
+      "geologie": null,
+      "historique": "Première descente le 17/08/2013 par : Natacha et Thomas Guigon, Cedric Gumy, Matthias Holzinger, Zacharry Lagger, Timo Stammwitz.",
+      "remarques": "Equipement monopoint Ø10mm inox, à compléter."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23606,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.46608,
+        "longitude": 9.03079,
+        "label": null
+      },
+      {
+        "canyonId": 23606,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.449451,
+        "longitude": 9.05372,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.449451,
+      "longitude": 9.05372,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

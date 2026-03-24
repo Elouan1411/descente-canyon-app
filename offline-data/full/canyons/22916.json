@@ -1,0 +1,144 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:54:53.741876+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22916,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22916/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22916/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22916/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22916/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22916,
+    "identity": {
+      "nom": "Fifi",
+      "nomComplet": "Ravine Fifi, Ravine Peyre-Arse 1",
+      "prefixeNom": "Ravine",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22916/Fifi.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Cantal",
+      "communePrincipale": "Lavigerie",
+      "communes": [
+        "Lavigerie"
+      ],
+      "massif": "Monts du Cantal",
+      "bassin": "Santoire",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a2III",
+      "interet": 2.0,
+      "nbVotes": 6
+    },
+    "metrics": {
+      "altitudeDepartM": 1540,
+      "deniveleM": 300,
+      "longueurM": 750,
+      "cascadeMaxM": 35,
+      "cordeMiniM": 45,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "45min",
+      "descente": "3hoo",
+      "retour": "35min"
+    },
+    "topo": {
+      "accesAval": "Parking des Burons d'Aylac entre Lavigerie et le Pas-de-Peyrol.",
+      "accesAmont": null,
+      "approche": "Point de départ peu évident, peut se confondre avec les nombreuses autres ravines qui descendent du Puy de Peyre-Arse.",
+      "descente": "La première partie est peu convaincante avec des cascades en plans inclinés et dans un ravin en V. Après une zone ouverte et un affluent en Rg, la ravine s'encaisse profondément en deux sauts de 25 et 18m, le corridor étroit marque une chicane et chute de nouveau de 20m, encore 100m de ce beau mais court passage unique en Auvergne et c'est déjà fini.",
+      "retour": "Comme l'Impradine.",
+      "engagement": "Modéré sauf dans l'encaissement sans aucune échappatoire. Au printemps, s'assurer qu'aucun névé tardif ne subsiste dans le ravin et ses combes ombragées.",
+      "periode": "Affluent de la rive droite de l'Impradine. Intermittent : après de bonnes pluies, au printemps.",
+      "geologie": "Brèches volcaniques",
+      "historique": "Explo par P. Viette, P-M. Orblin, K. Herida, P. Saint-Etienne le 18 mai 2011.",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22916,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.109581,
+        "longitude": 2.702122,
+        "label": null
+      },
+      {
+        "canyonId": 22916,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.115799,
+        "longitude": 2.699354,
+        "label": null
+      },
+      {
+        "canyonId": 22916,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.112202,
+        "longitude": 2.686404,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.112202,
+      "longitude": 2.686404,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_daf9041e16b163a9",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons cantalous",
+          "authors": [
+            "Philippe VIETTE-COSTE"
+          ],
+          "publicationYear": 2018,
+          "reference": "97829563881-0-4",
+          "editor": "Auto-édition",
+          "status": "en stock\n\n- 14,00 € -\n\nCommandez cet ouvrage dès maintenant !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/1124/Canyons-cantalous.html"
+        },
+        {
+          "id": "biblio_0ada102a5dea7773",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons arvernes",
+          "authors": [
+            "Philippe Viette-Coste",
+            "Serge Navarro",
+            "Pierre-Marie Orblin"
+          ],
+          "publicationYear": 2012,
+          "reference": "978-2-7466-3647-7",
+          "editor": "auto-édition",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/165/Canyons-arvernes.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_dca64d22e699a24f",
+          "kind": "MAP",
+          "title": "2435 OT Monts du Cantal (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

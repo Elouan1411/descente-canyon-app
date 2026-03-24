@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:30.812500+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22290,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22290/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22290/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22290/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22290/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22290,
+    "identity": {
+      "nom": "Montlaux",
+      "nomComplet": "Cascade de Montlaux",
+      "prefixeNom": "Cascade de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22290/Montlaux.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-de-Haute-Provence",
+      "communePrincipale": "Cruis",
+      "communes": [
+        "Cruis"
+      ],
+      "massif": "Montagne de Lure",
+      "bassin": "Lauzon",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 0.2,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 590,
+      "deniveleM": 60,
+      "longueurM": 200,
+      "cascadeMaxM": 15,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "40min",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "Se rendre au village de Cruis,non loin de St Etienne les orgues au pied de la face sud de la montagne de Lure.Empruntez la D16 en direction de Sigonce sur 3,5 km et arrêtez-vous juste après le pont qui enjambe le Lauzon (point 538 sur l'IGN).Parking à gauche non loin des contenairs à poubelles.",
+      "accesAmont": null,
+      "approche": "Emprunter la piste en face du parking(débit visible) puis prendre à gauche par deux fois pour rejoindre le PR vous menant au départ du mini parcours.Le PR traverse le ruisseau.",
+      "descente": "Une C12 et une C15 sur AN .Le reste se désescalade.",
+      "retour": "Une fois passé les deux trois obstacles,sortez au mieux en RG pour reprendre le chemin de l'aller .",
+      "engagement": "Aucun",
+      "periode": "En eau après les pluies.Sec en été",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Fond vaseux et parfois glissant."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22290,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.033615,
+        "longitude": 5.846722,
+        "label": null
+      },
+      {
+        "canyonId": 22290,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.036625,
+        "longitude": 5.850166,
+        "label": null
+      },
+      {
+        "canyonId": 22290,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.038074,
+        "longitude": 5.853009,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.038074,
+      "longitude": 5.853009,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_fdf5675efff27487",
+          "kind": "MAP",
+          "title": "3341 OT Montagne-de-Lure (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

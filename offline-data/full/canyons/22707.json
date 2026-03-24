@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:54:02.417676+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22707,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22707/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22707/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22707/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22707/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/22707/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 22707,
+    "identity": {
+      "nom": "Latay (supérieur)",
+      "nomComplet": "Ruisseau du Latay (supérieur), Vallon de la Caou, Haut-Latay, Latay",
+      "prefixeNom": "Ruisseau du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22707/Latay-superieur.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Var",
+      "communePrincipale": "Signes",
+      "communes": [
+        "Signes"
+      ],
+      "massif": "Sainte Baume",
+      "bassin": null,
+      "coursEau": "Latay"
+    },
+    "rating": {
+      "cotation": "v2a2I",
+      "interet": 0.7,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 640,
+      "deniveleM": 90,
+      "longueurM": 1600,
+      "cascadeMaxM": 10,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h30",
+      "descente": "1h30",
+      "retour": "1h10"
+    },
+    "topo": {
+      "accesAval": "D'Aubagne, prendre la N8 vers Toulon, passer Cuges et OK Coral.\n\nAu hameau \"le Camp\", prendre à gauche la D2 en direction de Signes. Environ 2km après la bifurcation avec la D402, prendre à gauche (au niveau de la carrière \"point 241 sur l'IGN\") une route-piste en direction du Latay.\n\nPrendre à gauche à la première bifurcation.\n\nGarez vous sur un pseudo-parking (carrefour de plusieurs pistes et chemin) 600m plus loin.",
+      "accesAmont": null,
+      "approche": "Du parking, ne pas prendre à gauche (quand on regarde l'amont du Ruisseau) la piste interdite à la circulation, mais prendre tout droit le large chemin (balisé en vert).\n\nCe chemin longe le canyon et la piste interdite à la circulation. Vous retombez, au bout d'une petite quinzaine de minutes, sur cette piste quand elle fait un virage à gauche. Prendre alors le deuxième chemin sur votre droite qui vous mène au bord d'un petit ru (petit canal) et un cube de béton. De là suivre le plus possible ce petit canal qui vous mènera, après 40 mn de marche, jusqu'à un gué du Latay. Passer le Latay (gué) et suivre la Piste \"Mazaugues ou les glacières\" dans un premier temps, puis \"Mazaugues\" pour accéder au départ du Vallon de la Caou.",
+      "descente": "Quelques petits ressauts vous mène à la C10 du vallon de la Caou et l'on suit le Latay pour accéder à une C3 (petit barrage) après quelques minutes de marche dans la rivière ou un sentier en RD.Encore une courte marche vous mène à la cascade du pont du Diable, une C8 sur AN ou saut possible, nage de quelques mètres et l'on enchaine avec un T4 puis T2 ou quelques passages sous blocs, pour tomber dans la vasque finale.\n\n(si vous re-longez le canal pour rejoindre la partie intermédiaire, il existe une cascade T10, entre le Haut Latay et cette partie intermédiaire après 30 mn de marche).",
+      "retour": "Suivre le sentier du canal pris à l'aller.",
+      "engagement": "Aucun",
+      "periode": "Le Vallon de la Caou doit se charger en eau au printemps après quelques grosses pluies. Le haut Latay est toujours en eau.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Il est possible d'enchainer les 3 parties du Latay dans la journée. Sur le Haut Latay, visite des ruines de l'ancien moulin."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22707,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.328671,
+        "longitude": 5.84779,
+        "label": null
+      },
+      {
+        "canyonId": 22707,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.322414,
+        "longitude": 5.838032,
+        "label": null
+      },
+      {
+        "canyonId": 22707,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.28772,
+        "longitude": 5.822968,
+        "label": null
+      },
+      {
+        "canyonId": 22707,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 43.306873,
+        "longitude": 5.825034,
+        "label": "Cascade à faire au retour"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.28772,
+      "longitude": 5.822968,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_172d0b15123f0bba",
+          "kind": "MAP",
+          "title": "3345 OT Signes - Tourves (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 579,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Var) - 13 mai 2025",
+          "summary": "- La pratique du canyonisme dans des canyons secs (cotation aquaticité A1 ou habituellement à sec) est autorisée toute l'année\n\n- La pratique du canyonisme dans des canyons aquatiques est interdite du 1er novembre au 31 mars.\n\nPour la période du 1er avril au 30 octobre, il est interdit :\n\n- de pratiquer du coucher du soleil à 9h\n\n- de s'engager dans une descente de canyon aquatique après 17h.\n\n- De manière générale, il est interdit :\n\n- de s'engager si une alerte vigilance météo de niveau orange ou rouge est émise par Météo France, en ce qui concerne le risque \"pluie\", \"orage\", et \"inondation\", sur le secteur concerné.\n\n- de constituer un groupe de plus de 10 personnes (encadrement inclus)",
+          "remark": null,
+          "details": "Arrêté préfectoral (Préfecture du Var) SDJES-SPORTS-2025-12 du 13 mai 2025",
+          "effectiveDate": "13 mai 2025",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/579/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral (Préfecture du Var) SDJES-SPORTS-2025-12 du 13 mai 2025",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem579_pj1.pdf"
+            }
+          ]
+        },
+        {
+          "id": 545,
+          "status": "Abrogé",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Var) - 06 mai 2024",
+          "summary": "La pratique du canyonisme se voit interdite du 1er novembre au 31 mars.\n\nPour la période du 1er avril au 30 octobre, il est interdit :\n\n- de s'engager dans une descente de canyon avant 9h et après 17h.\n\n- de s'engager si une alerte vigilance météo de niveau orange ou rouge est émise par Météo France, en ce qui concerne le risque \"pluie\", \"orage\", et \"inondation\", sur le secteur concerné.\n\n- de constituer un groupe de plus de 10 personnes (encadrement inclus)",
+          "remark": "Arrêté abrogé et remplacé par l'arrêté préfectoral SDJES-SPORTS-2025-12 du 13 mai 2025",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nArrêté préfectoral (Var) n° SDJES-SPORTS-2024-0004 du 06 mai 2024",
+          "effectiveDate": "13 mai 2025",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/545/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral (Var) n° SDJES-SPORTS-2024-0004 du 06 mai 2024",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem545_pj1.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

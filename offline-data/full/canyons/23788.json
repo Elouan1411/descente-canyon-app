@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:06.073217+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23788,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23788/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23788/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23788/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23788/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23788,
+    "identity": {
+      "nom": "Faore",
+      "nomComplet": "Rui di Faore",
+      "prefixeNom": "Rui di",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23788/Faore.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Vénétie",
+      "departement": "Belluno",
+      "communePrincipale": "Longarone",
+      "communes": [
+        "Longarone"
+      ],
+      "massif": "Dolomiti di Sinistra Piave",
+      "bassin": "Piave",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a2IV",
+      "interet": 2.5,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 950,
+      "deniveleM": 450,
+      "longueurM": 1100,
+      "cascadeMaxM": 41,
+      "cordeMiniM": 45,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h30min",
+      "descente": "4h",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": "Kalkmergel",
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23788,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.24334,
+        "longitude": 12.32526,
+        "label": null
+      },
+      {
+        "canyonId": 23788,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.241421,
+        "longitude": 12.3155,
+        "label": null
+      },
+      {
+        "canyonId": 23788,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.24297,
+        "longitude": 12.314956,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.24297,
+      "longitude": 12.314956,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

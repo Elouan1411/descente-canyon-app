@@ -1,0 +1,138 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:26.031697+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23878,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23878/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23878/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23878/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23878/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/23878/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 23878,
+    "identity": {
+      "nom": "Niffru",
+      "nomComplet": "Ruisseau de Niffru, Canyon de Lora",
+      "prefixeNom": "Ruisseau de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23878/Niffru.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Corse",
+      "departement": "Corse-du-Sud",
+      "communePrincipale": "Conca",
+      "communes": [
+        "Zonza",
+        "Conca"
+      ],
+      "massif": "Alta rocca",
+      "bassin": "Cavo",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a3III",
+      "interet": 2.1,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 520,
+      "deniveleM": 230,
+      "longueurM": 900,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 25,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h30",
+      "descente": "3h00",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "De Sainte-Lucie de Porto-Vecchio, suivre la D168 puis la D168a. Traverser Taggliu Rossu et emprunter la piste longeant le Cavu. Passer l'accro-branche. Rouler et prendre la piste de droite se rendant sur le pont de Marion si celle-ci est ouverte, sans quoi il faudra un peu plus marcher. Franchir le pont de Fontanella et continuer jusqu'à que la piste fasse une tête d'épingle au niveau de la barrière vrillée. Se garer sans gêner.",
+      "accesAmont": null,
+      "approche": "Continuer la piste à pied, en laissant celle de la barrière vrillée (retour). A la jonction des pistes à Radichella, prendre la piste de gauche. Passer un réservoir d'eau et emprunter le sentier en face au niveau de la tête d'épingle de la piste. Faire quelques mètres sur ce sentier avant de bifurquer à gauche sur une sente de chasseurs peu marquée, juste avant un chêne liège. Le maquis a vite repris ses droits et le jeu de piste peut vous rendre sur quelques impasses et mauvaises surprises. La première crête passe sans souci si l'on suit bien la sente, mais la seconde où se trouve le monolithe est un peu plus compliquée. La sente se perd et il faut parfois improviser pour se rendre sur la crête de celle-ci (départ de la descente sous le monolithe).",
+      "descente": "Le départ commence par une petite désescalade où s'en suit un petit saut possible dans une vasque profonde. Sur l'autre vasque, un saut possible de 5 m en RD, nage de 10 m, puis C6 avec un saut possible de 6 m en RG, puis un saut possible sur la vasque suivante, C20 sur 1 pt en RG, désescalade, C8 sur 1pt en RD, C15 sur 1 pt en RG, C17 sur 1pt en RD, nage de 6 m, C20 sur 2 pts en RD, désescalades et courte marche, PI20 sur 1 pt en RD, nage de 15 m, petit saut de 2 m possible en RG sur la vasque suivante, passage sous bloc, désescalades et marche jusqu'au gué de la piste.",
+      "retour": "Remonter la piste à gauche et rejoindre votre véhicule.",
+      "engagement": "Très peu d'échappatoires. Descente majoritairement encaissée.",
+      "periode": "Printemps.",
+      "geologie": null,
+      "historique": "ouverture le 2 juillet 2011 : Franck Jourdan",
+      "remarques": "Equipement sur mono-points (plaquettes avec anneaux, goujons de 10 mm). Géologie fascinante par le décor (granite rose). Malheureusement, cascades très peu sculptées."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23878,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 41.757732,
+        "longitude": 9.292014,
+        "label": null
+      },
+      {
+        "canyonId": 23878,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 41.751133,
+        "longitude": 9.289187,
+        "label": null
+      },
+      {
+        "canyonId": 23878,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 41.747646,
+        "longitude": 9.292894,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 41.747646,
+      "longitude": 9.292894,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_b6fb73f30bb7590c",
+          "kind": "MAP",
+          "title": "4253 ET Aiguilles-de-Bavella (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 520,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Corse-du-Sud) - 26 juil 2011",
+          "summary": "- Le canyonisme est interdit la nuit (sauf dérogation)\n\n- Le canyonisme est interdit s'il y a une alerte émise par Météo-France de niveau orange ou rouge en cours.\n\n- Le canyonisme est interdit aux mineurs de moins de 7 ans, sauf canyon évalué égal ou inférieur à V1-A3-E3\n\n- Les groupes auront un effectif maximum de 12 personnes, hors encadrement.",
+          "remark": "L'arrêté du 9 juillet 2019 pris conjointement par les préfectures de Corse-du-Sud et de Haute-Corse harmonise les réglementations existantes pour les deux départements.",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nArrêté préfectoral modificatif (Corse-du-Sud et Haute-Corse) n°R20-2019-07-09-001 du 9 juillet 2019\n\nArrêté préfectoral (Corse-du-Sud) n°2011207-0005 du 26 juillet 2011",
+          "effectiveDate": "26 juil 2011",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/520/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral modificatif (Corse-du-Sud et Haute-Corse) n°R20-2019-07-09-001 du 9 juillet 2019",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem520_pj2.pdf"
+            },
+            {
+              "label": "Arrêté préfectoral (Corse-du-Sud) n°2011207-0005 du 26 juillet 2011",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem520_pj1.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

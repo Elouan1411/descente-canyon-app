@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:47:59.802437+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21057,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21057/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21057/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21057/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21057/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21057,
+    "identity": {
+      "nom": "Cagateille",
+      "nomComplet": "Canyon de Cagateille, Ruisseau des cors",
+      "prefixeNom": "Canyon de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21057/Cagateille.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Ariège",
+      "communePrincipale": "Cabousset",
+      "communes": [
+        "Cabousset"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": "Ruisseau des cors"
+    },
+    "rating": {
+      "cotation": "v3a3III",
+      "interet": 2.5,
+      "nbVotes": 22
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": 130,
+      "longueurM": 500,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "2h15",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "A st lizier continuer la D38, traverser Portet, Ariail, à Stillon passer le pont, traverser le village, traverser Bourdex, Cabousset et continuer jusqu'au bout de la route. Parking",
+      "accesAmont": null,
+      "approche": "Prendre le sentier du cirque de Cagateille. Environ 20 a 30 min de marche vous amène a la sortie du bois dans une grande jasse ou coule le ruisseau des cors. Des la sortie du bois descendre en direction du cours d'eau. De la, progresser en RD sur une cinquantaine de mètres pour atteindre le départ.",
+      "descente": null,
+      "retour": "Sortir du bois puis remonter en 5 mn en RD pour rejoindre le parking",
+      "engagement": "première partie assez ouverte\n\nensuite encaissée",
+      "periode": "à l'étiage, juin / juillet / août / septembre",
+      "geologie": null,
+      "historique": null,
+      "remarques": "petit canyon sympa\n\nAttention : un rappel mène dans la veine d'eau dans une faille. Possibilité de l'éviter en empruntant une main courante pour s'échapper rive droite."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21057,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.749451,
+        "longitude": 1.293596,
+        "label": null
+      },
+      {
+        "canyonId": 21057,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.755005,
+        "longitude": 1.288575,
+        "label": null
+      },
+      {
+        "canyonId": 21057,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 42.756077,
+        "longitude": 1.287824,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 42.756077,
+      "longitude": 1.287824,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_a74afea2541626fb",
+          "kind": "MAP",
+          "title": "2048 OT Aulus Les Bains (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:10.051077+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23805,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23805/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23805/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23805/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23805/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23805,
+    "identity": {
+      "nom": "Milassoire",
+      "nomComplet": "Ravin de Milassoire",
+      "prefixeNom": "Ravin de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23805/Milassoire.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Drôme",
+      "communePrincipale": "Bellecombe-Tarendol",
+      "communes": [
+        "Bellecombe-Tarendol"
+      ],
+      "massif": "Drôme provençale",
+      "bassin": "Aigues - Aigue - Eygues - Aygues",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a1II",
+      "interet": 1.3,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 1010,
+      "deniveleM": 160,
+      "longueurM": 200,
+      "cascadeMaxM": 35,
+      "cordeMiniM": 35,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "35min",
+      "descente": "1h30",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "De Nyons, emprunter la D94 en direction de Gap. Passer les hammeaux d'Aubres et Les Pilles, puis prendre à droite par le pont de Curnier la direction de Sainte-Jalle sur la D64. A Sainte-Jalle, continuer la D64 en direction de Saint-Auban-sur-l'Ouvèze. Rouler quelques kilomètres et prendre à gauche sur Bellecombe-Tarendol par la D162. 300 m après Bellecombe-Tarendol, prendre à droite la petite route se transformant rapidement en piste. Passer le site d'escalade du rocher de l'Aiglier, puis celle-ci grimpe et se sépare en deux. Prendre alors celle de gauche pour dépasser le ravin de Charbonnière et se garer juste avant le petit pont du ravin de Milassoire.",
+      "accesAmont": null,
+      "approche": "Suivre à pied la piste qui monte. Plus haut, quitter celle-ci en prenant à droite par la pseudo piste avant les ruines de la Chevalière. Contourner le bas du verger et remonter celui-ci en le suivant du côté droit. En haut du verger, suivre une sente rejoignant un bon sentier juste au dessus du verger. Prendre alors la direction du canyon, le sentier devient mal entretenu et passe par un premier semblant de ravin. Continuer pour se rendre au départ du second beaucoup plus caractérisé (Milassoire, alt. 1010 m sur l'IGN).",
+      "descente": "La descente commence par Pi3 + C4 (R10 sur AN (pin) en RD), C4 sur 1 pt en RG, Pi8 (Mc8 sur An (pin avec anneau de corde + maillon en RG) jusqu'au relais de la C35), C35 sur 2 pts en RG, C5 + C10 (R20 sur 1pt en RG), désescalade, C3 sur 1pt en RG, C3+C4 (R15 sur AN (pin) en RG), C6 sur 1 pt en RG, désescalade en RD d'une C5 et C4 sur AN (petit pin) en RD.",
+      "retour": "Suivre le ravin marneux par quelques petites désescalades jusqu'à la piste.",
+      "engagement": "Aucun",
+      "periode": "A faire après de grosses pluies.",
+      "geologie": null,
+      "historique": "Tony-13, lolo, ALAIN 13",
+      "remarques": "Sympathique première partie, la seconde l'est beaucoup moins...\n\nÉquipement minimaliste sur mono-points (goujons de 8 mm + maillons de chaîne). Points doublées au relais de la C35 (margelle confortable pour deux personnes)."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23805,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.36285,
+        "longitude": 5.368824,
+        "label": null
+      },
+      {
+        "canyonId": 23805,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.36211,
+        "longitude": 5.367521,
+        "label": null
+      },
+      {
+        "canyonId": 23805,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.360435,
+        "longitude": 5.367215,
+        "label": null
+      },
+      {
+        "canyonId": 23805,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 44.363571,
+        "longitude": 5.363165,
+        "label": "Approche"
+      },
+      {
+        "canyonId": 23805,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 44.364906,
+        "longitude": 5.367,
+        "label": "Sente d'approche"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.360435,
+      "longitude": 5.367215,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_4e3735bcc40c64f3",
+          "kind": "MAP",
+          "title": "3139 OT Nyons (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

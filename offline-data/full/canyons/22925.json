@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:54:55.829814+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22925,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22925/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22925/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22925/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22925/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22925,
+    "identity": {
+      "nom": "Plaine-Basse",
+      "nomComplet": "Cascades de Plaine-Basse, Ruisseau du Pré-de-l'Angle",
+      "prefixeNom": "Cascades de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22925/Plaine-Basse.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Cantal",
+      "communePrincipale": "Brezons",
+      "communes": [
+        "Brezons"
+      ],
+      "massif": "Monts du Cantal",
+      "bassin": "Le Brezons",
+      "coursEau": "Ruisseau du Pré-de-l'Angle"
+    },
+    "rating": {
+      "cotation": "v4a2II",
+      "interet": 1.5,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 1350,
+      "deniveleM": 360,
+      "longueurM": 750,
+      "cascadeMaxM": 28,
+      "cordeMiniM": 30,
+      "navette": "16.0km"
+    },
+    "timings": {
+      "approche": "10min",
+      "descente": "3h00",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "Aval : au pont sur le Brezons, sous le hameau de Lustrande.\n\nUn accès sans navette est possible mais il faut compter plus de deux heures en suivant les sentiers.",
+      "accesAmont": "Amont : par Vigouroux et la route des Jasseries du Louvatier, puis une piste carrossable.",
+      "approche": "A travers les parcs à vaches (piste agricole) en direction du nord sur 500m.",
+      "descente": "Une succession de belles cascades, séparées par de brèves marches en forêt en milieu ouvert.",
+      "retour": "Par les rives jusqu'à la confluence avec le Brezons et le pont.",
+      "engagement": "Nombreuses échappatoires entre les cascades sauf dans le premier enchaînement qui franchit la barre basaltique.",
+      "periode": "Rarement à sec avec généralement encore un petit filet d'eau au coeur de l'été. Descente de printemps ou après les pluies.",
+      "geologie": "Basaltes et trachyandésites",
+      "historique": "Descente par Philippe Viette et Pierre-Marie Orblin le 4 juillet 2009.",
+      "remarques": "Equipement intégralement sur amarrages naturels. Prévoir de quoi rééquiper."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22925,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.004288,
+        "longitude": 2.770143,
+        "label": "A la lisière du bois"
+      },
+      {
+        "canyonId": 22925,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.009312,
+        "longitude": 2.776977,
+        "label": "A la sortie du goulet"
+      },
+      {
+        "canyonId": 22925,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 44.999077,
+        "longitude": 2.773147,
+        "label": null
+      },
+      {
+        "canyonId": 22925,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 45.011223,
+        "longitude": 2.779477,
+        "label": "Hameau de Lustrande : avant le pont."
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 44.999077,
+      "longitude": 2.773147,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_daf9041e16b163a9",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons cantalous",
+          "authors": [
+            "Philippe VIETTE-COSTE"
+          ],
+          "publicationYear": 2018,
+          "reference": "97829563881-0-4",
+          "editor": "Auto-édition",
+          "status": "en stock\n\n- 14,00 € -\n\nCommandez cet ouvrage dès maintenant !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/1124/Canyons-cantalous.html"
+        },
+        {
+          "id": "biblio_0ada102a5dea7773",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons arvernes",
+          "authors": [
+            "Philippe Viette-Coste",
+            "Serge Navarro",
+            "Pierre-Marie Orblin"
+          ],
+          "publicationYear": 2012,
+          "reference": "978-2-7466-3647-7",
+          "editor": "auto-édition",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/165/Canyons-arvernes.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_dca64d22e699a24f",
+          "kind": "MAP",
+          "title": "2435 OT Monts du Cantal (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

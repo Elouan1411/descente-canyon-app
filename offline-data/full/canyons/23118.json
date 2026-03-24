@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:44.422292+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23118,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23118/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23118/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23118/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23118/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23118,
+    "identity": {
+      "nom": "Gößgraben",
+      "nomComplet": "Gößgraben, Gößbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23118/Goßgraben.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Carinthie",
+      "departement": "Spittal an der Drau District",
+      "communePrincipale": "Malta",
+      "communes": [
+        "Malta"
+      ],
+      "massif": "Hohe Tauern",
+      "bassin": "Malta",
+      "coursEau": "Gößbach"
+    },
+    "rating": {
+      "cotation": "v4a4III",
+      "interet": 2.1,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 980,
+      "deniveleM": 130,
+      "longueurM": 1050,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "1h30",
+      "retour": "2min"
+    },
+    "topo": {
+      "accesAval": "A10, Gmünd, Maltatal",
+      "accesAmont": null,
+      "approche": "par le sentier rive gauche.",
+      "descente": "sauts, toboggans, rappels, marche",
+      "retour": null,
+      "engagement": null,
+      "periode": "en été et automne",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23118,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.982277,
+        "longitude": 13.447913,
+        "label": null
+      },
+      {
+        "canyonId": 23118,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.983234,
+        "longitude": 13.454276,
+        "label": null
+      },
+      {
+        "canyonId": 23118,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.983391,
+        "longitude": 13.456344,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.983391,
+      "longitude": 13.456344,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_593806870824c8ca",
+          "kind": "MAP",
+          "title": "221 Liesertal, Maltatal, Millstätter See, Spittal, Nockalmstraße (Freytag & Berndt)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_eb0e13bc68dd2c1e",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/Canyons/GoessbachCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/Canyons/GoessbachCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

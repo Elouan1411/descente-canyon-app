@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:11.148518+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23545,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23545/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23545/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23545/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23545/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23545,
+    "identity": {
+      "nom": "Robana",
+      "nomComplet": "Rio Robana",
+      "prefixeNom": "Rio",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23545/Robana.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Piemonte",
+      "departement": "Verbano-Cusio-Ossola",
+      "communePrincipale": "Beura-Cardezza",
+      "communes": [
+        "Villadossola",
+        "Beura-Cardezza"
+      ],
+      "massif": null,
+      "bassin": "Ossola",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a2II",
+      "interet": 2.3,
+      "nbVotes": 5
+    },
+    "metrics": {
+      "altitudeDepartM": 457,
+      "deniveleM": 157,
+      "longueurM": null,
+      "cascadeMaxM": 38,
+      "cordeMiniM": 40,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "2h30",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": "SS33 Gravellona Toce - Sempione, sortir à Villadossola et tourner à gauche direction Beura. Tourner encore à gauche, dépasser Quarata, et à la sortie de Cosa, prendre à droite la via Bellini en rive G du ruisseau. Continuer jusqu'à la fin de la route, qui devient une piste, jusqu'à la sortie évidente du torrent, au niveau d'un pont.",
+      "accesAmont": null,
+      "approche": "Du parking franchir le pont et attaquer le sentier balisé qui monte. A un embranchement prendre ...(très probablement) à gauche direction Calasca puis à droite à la prochaine pour rejoindre le torrent.\n\n(A la première intersection en prenant à droite on arrive vite à la passerelle départ de l'aval; un sentier continue rive gauche puis croise le ruisseau dans la zone de marche et continue...)",
+      "descente": "Un canyon intéressant, composé de 2 parties séparées par une zone de marche, la première plus encaissée et la seconde plus ouverte et verticale.",
+      "retour": "Arrivée directe à la voiture.",
+      "engagement": "Échappatoire à la fin de l'amont par un sentier qui traverse le torrent puis par la passerelle au départ de l'aval. Puis échappatoire probable du relais de la C38 (câble, captage).",
+      "periode": "Avril à Octobre. De préférence au printemps ou après quelques pluies.\n\nPas de difficulté particulière mais quelques passages peuvent se révéler problématiques en cas de gros débit.",
+      "geologie": "Gneiss",
+      "historique": "SCVV",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23545,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.096462,
+        "longitude": 8.314854,
+        "label": null
+      },
+      {
+        "canyonId": 23545,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.096592,
+        "longitude": 8.314524,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.096592,
+      "longitude": 8.314524,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_9a5af571355994e9",
+          "kind": "MAP",
+          "title": "285 Domodossola (Carte Nationale Suisse)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

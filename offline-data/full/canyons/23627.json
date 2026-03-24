@@ -1,0 +1,144 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:30.730551+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23627,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23627/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23627/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23627/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23627/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23627,
+    "identity": {
+      "nom": "Forcos",
+      "nomComplet": "Barranco del Forcos, A Glera, Otal",
+      "prefixeNom": "Barranco del",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23627/Forcos.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Aragón",
+      "departement": "Huesca",
+      "communePrincipale": "Broto",
+      "communes": [
+        "Broto"
+      ],
+      "massif": "Sierra de Tendenera",
+      "bassin": "Ara",
+      "coursEau": "Otal"
+    },
+    "rating": {
+      "cotation": "v2a2II",
+      "interet": 2.7,
+      "nbVotes": 13
+    },
+    "metrics": {
+      "altitudeDepartM": 1117,
+      "deniveleM": 140,
+      "longueurM": 2000,
+      "cascadeMaxM": 13,
+      "cordeMiniM": 15,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h",
+      "descente": "1h45",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "Du rond point de Fiscal, suivre la direction de Sabiñanigo, traverser le Ara et prendre la route (piste) qui mène au village de Bergua. Se garer en bout de piste vers le village.",
+      "accesAmont": null,
+      "approche": "Traverser le village et redescendre vers la confluence entre le rio de la Pera et le rio Otal. Ensuite, 2 options :\n\n- soit longer le canyon et en 45 min, on arrive au départ du canyon au lieu dit \"Puen d'As Crabas\";\n\n- soit monter au village abandonné d'Escartin puis redescendre vers l'entrée du canyon (environ 1h45 hors visite du village).\n\nLes deux chemins sont balisés.",
+      "descente": "Le canyon commence par un joli rappel, toboggan ou saut (à sonder). Ensuite, on entre dans un très beau défilé.\n\nLe reste du canyon est une ballade aquatique avec de beaux passages, quelques sauts et ressauts.",
+      "retour": "Une fois sorti(e)s du cours d'eau, suivre le chemin longeant celui-ci en RG et reprendre le chemin aller.",
+      "engagement": "Pas d’échappatoire dans le premier estrecho.",
+      "periode": "Printemps, été.",
+      "geologie": "Flysh",
+      "historique": null,
+      "remarques": "Le canyon est plutôt ombragé ; à faire avec du soleil pour les jeux de couleurs et la chaleur.\n\nLe village abandonné d'Escartin vaut le détour (belles bâtisses, superbe panorama, espantabrujas, fontaine, église)."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23627,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.546295,
+        "longitude": -0.197434,
+        "label": null
+      },
+      {
+        "canyonId": 23627,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.538601,
+        "longitude": -0.179339,
+        "label": null
+      },
+      {
+        "canyonId": 23627,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 42.533703,
+        "longitude": -0.166964,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 42.533703,
+      "longitude": -0.166964,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_831c9e6897eebb28",
+          "kind": "TOPOGUIDE",
+          "title": "Senderos de agua del rio Ara",
+          "authors": [
+            "Ricardo Blanco",
+            "Alex Puyo",
+            "David Tresaco"
+          ],
+          "publicationYear": 2014,
+          "reference": "978-84-8321-410-7",
+          "editor": "Prames",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1279/topoguide.html"
+        },
+        {
+          "id": "biblio_fcae506cf45f5fdb",
+          "kind": "TOPOGUIDE",
+          "title": "Carte N°3 - Mont Perdu : du rio Gallego au rio Cinca.",
+          "authors": [
+            "Patrick Gimat + Jean-Paul Pontroué"
+          ],
+          "publicationYear": 1999,
+          "reference": null,
+          "editor": null,
+          "status": "en stock\n\n- 7,50 € -\n\nCommandez cet ouvrage dès maintenant !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/122/Carte-n°3-:-Mont-Perdu.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_9963760d1a389b54",
+          "kind": "MAP",
+          "title": "Carte de randonnées Gavarnie-Ordesa (Rando Editions - Institut Cartografic de Catalunya)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

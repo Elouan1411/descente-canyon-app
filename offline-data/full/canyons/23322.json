@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:34.110306+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23322,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23322/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23322/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23322/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23322/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23322,
+    "identity": {
+      "nom": "Lona",
+      "nomComplet": "Rio Lona",
+      "prefixeNom": "Rio",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23322/Lona.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Ligurie",
+      "departement": "Imperia",
+      "communePrincipale": "Comune di Badalucco",
+      "communes": [
+        "Comune di Badalucco"
+      ],
+      "massif": "Alpi Liguri - Alpes ligures",
+      "bassin": "Argentina",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a2I",
+      "interet": 1.2,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 270,
+      "deniveleM": 140,
+      "longueurM": 900,
+      "cascadeMaxM": 10,
+      "cordeMiniM": 15,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "40min",
+      "descente": "1h",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "Autoroute A10 Ventimiglia/Genova, sortir à Arma di Taggia. 2,6km après le péage prendre la 2° à droite direction Imperia-Taggia par la SS1bis. Au rond-point à gauche direction Taggia-Triora. La route passe rive gauche puis revient rive droite, peu après elle passe sur la rivière Oxentina. Juste après le pont tourner à droite, panneau \"Meosü\". Se garer juste avant le pont sur l'Argentina.",
+      "accesAmont": null,
+      "approche": "Passer le pont, continuer. Quand l'asphalte disparait, continuer à plat une piste en terre puis une piste bétonnée en légère descente passe devant une maison. Un canal grillagé mène au pont sur le rio Lona. Juste après des escaliers mènent à une sente en rive gauche. La quitter pour une montée \"sanglier soft\", raide par des petites sentes, qui rejoint en 10 minutes d'effort un bon sentier que l'on suit jusqu'au remblai.",
+      "descente": "Après le remblai rentrer dans le rio et passer par le tunnel.\n\n3 rappels (5, 10 et 10) et qq ressauts de 2/3m à sauter ou à désescalader.\n\nBonne adhérence.",
+      "retour": "50 mètres après la C3 sous le pont, sortir rive D et prendre un sentier qui aboutit devant la maison devant laquelle on est passé à l'aller.",
+      "engagement": null,
+      "periode": "Peu aquatique, rares et petites vasques.",
+      "geologie": null,
+      "historique": "L. Deambrogio, D. Geuna et M. Panzani en mars 2009.",
+      "remarques": "Les pistes d'accès (au début de l'approche) desservent des propriétés, restez discrets et courtois."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23322,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.894756,
+        "longitude": 7.857243,
+        "label": null
+      },
+      {
+        "canyonId": 23322,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.894772,
+        "longitude": 7.846814,
+        "label": null
+      },
+      {
+        "canyonId": 23322,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.898808,
+        "longitude": 7.843252,
+        "label": null
+      },
+      {
+        "canyonId": 23322,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 43.894878,
+        "longitude": 7.847361,
+        "label": "Pont sur le rio Lona"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.898808,
+      "longitude": 7.843252,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_a3482111c0bd004f",
+          "kind": "MAP",
+          "title": "ASF n°2 Moyenne Roya - Val Nervia e Argentina (Alpes sans fronti?res)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_dcd5587c57a25b52",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://catastoforre.aic-canyoning.it/index/forra/cod/IM021",
+          "url": "http://catastoforre.aic-canyoning.it/index/forra/cod/IM021"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

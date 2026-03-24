@@ -1,0 +1,201 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:44:46.837031+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2243,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2243/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2243/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2243/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2243/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/2243/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 2243,
+    "identity": {
+      "nom": "Bronze",
+      "nomComplet": "Gorges du Bronze",
+      "prefixeNom": "Gorges du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2243/Bronze.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Haute-Savoie",
+      "communePrincipale": "Bonneville",
+      "communes": [
+        "Mont-Saxonnex",
+        "Bonneville"
+      ],
+      "massif": "Bornes - Aravis",
+      "bassin": "Arve",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a3III",
+      "interet": 2.3,
+      "nbVotes": 39
+    },
+    "metrics": {
+      "altitudeDepartM": 550,
+      "deniveleM": 80,
+      "longueurM": 500,
+      "cascadeMaxM": 10,
+      "cordeMiniM": 15,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "2h.",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": "Aval : Au début de la D286, à la sortie de Thuet, prendre la route des Gorges du Bronze, puis la piste pour le parking vers la centrale et la cascade.",
+      "accesAmont": "Amont : option navette à oublier, montée à pied en 10 minutes depuis le parking de la centrale.",
+      "approche": "Sans navette : du parking, repérer, un peu en dessous de la centrale, le bon chemin qui monte assez raide dans les bois, puis se redresse (croisement avec le sentier du parking amont) avant de rejoindre les marches évoquées plus haut, puis le départ du canyon.",
+      "descente": "Ressauts et petits rappels, deux à trois sauts (bien sonder, vasques souvent engravées, et présence de blocs non visibles !)",
+      "retour": "Sortir en RG avant le déversoir. Retour au parking en 30 secondes.",
+      "engagement": "Intérêt limité si pas ou peu d'eau, par contre dès que le débit devient moyen à gros, cela peut être plaisant... sachez tout de même renoncer !\n\nQuelques possibilités de se mettre hors d'eau mais aucune de sortir du canyon avant la fin.",
+      "periode": "Avec un bon débit, canyon intéressant pour appréhender les mouvements d'eau: contre courant, drossages etc... sans jamais être trop dangereux de par la taille des vasques.\n\nATTENTION : le canyon se trouve dans le TCC (Tronçon court circuité) de la centrale de Thuet. Le débit réservé est de 65 l/s. La centrale démarre à 90 l/s avec un débit d'équipement à 900l/s. Donc il existe un risque réel de variation de débit dans ce canyon. Dans l'attente d'essais et d'une réglementation, ne pas s'engager dans le canyon si le débit affiché sur Hydroreel est supérieur à 400l/s.",
+      "geologie": null,
+      "historique": "Gros travaux de nettoyage en 2022/23, avec création de nouveaux chemins, etc...",
+      "remarques": "Canyon avec de l'eau de qualité parfois douteuse : canyon très odorant si peu d'eau.\n\nL'accès indiqué dans le topo de Haute-Savoie est très fortement déconseillé : privilégier l'accès à pied depuis le bas."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2243,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.060001,
+        "longitude": 6.448056,
+        "label": null
+      },
+      {
+        "canyonId": 2243,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.06028,
+        "longitude": 6.445,
+        "label": null
+      },
+      {
+        "canyonId": 2243,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.05875,
+        "longitude": 6.446722,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.05875,
+      "longitude": 6.446722,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_87a84633f292e5a0",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons de Haute-Savoie (réédition)",
+          "authors": [
+            "Ch. Charletty",
+            "G. Gudefin",
+            "B. Hugon",
+            "J-P. Beaudoin"
+          ],
+          "publicationYear": 2004,
+          "reference": "ISBN: 2741702888",
+          "editor": "GAP",
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/128/Canyons-de-Haute-Savoie.html"
+        },
+        {
+          "id": "biblio_1e61b240bec55aed",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons de Haute Savoie",
+          "authors": [
+            "Christian Charletty",
+            "Gérard Gudefin",
+            "Bruno Hugon",
+            "Comité Départemental de Spéléologie 74"
+          ],
+          "publicationYear": 1997,
+          "reference": "ISBN 2-7417-0202-0",
+          "editor": "Gap",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/19/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_af26f7b19d539814",
+          "kind": "MAP",
+          "title": "3430 ET La Clusaz - Le Grand-Bornand (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 218,
+          "status": "Abrogé",
+          "action": "Interdit",
+          "title": "Arrêté municipal (Bonneville) - 10 juil 2010",
+          "summary": "Suite à une tempête localisée sur le canyon du Bronze, son accès, son parcours sont interdits provisoirement. De nombreux arbres ont été déracinés. L’interdiction s’applique à tous usagers et aussi aux grimpeurs pour le site du pont du Bronze. La remise en état est amorcée.\n\nCet arrêté a été levé le 18 juillet 2010 (arrêté n°271/2010). Le canyon est donc ré-autorisé, selon les conditions définies en 2009 (cf règlementation)",
+          "remark": null,
+          "details": "Arrêté municipal n°268/2010 du 10 juillet 2010",
+          "effectiveDate": "10 juil 2010",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/218/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté municipal n°268/2010 du 10 juillet 2010",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem218_pj1.pdf"
+            }
+          ]
+        },
+        {
+          "id": 192,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté municipal (Bonneville) - 03 août 2009",
+          "summary": "Cet arrêté ré-autorise la pratique du canyonisme dans ce canyon, grâce au travail mené par le Comité Départemental de Pilotage Canyon 74. Il fait suite à un arrêté d'interdiction. Outre un certain nombre de recommandations sur la préparation, l'équipement personnel et collectif, et la progression, il est précisé que les pratiquants ne doivent pas stationner de manière prolongée dans le site d'arrivée.",
+          "remark": null,
+          "details": "Arrêté municipal n°279.2009 du 03 août 2009",
+          "effectiveDate": "03 août 2009",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/192/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté municipal n°279.2009 du 03 août 2009",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem192_pj1.pdf"
+            }
+          ]
+        },
+        {
+          "id": 58,
+          "status": "Obsolète",
+          "action": "Interdit",
+          "title": "Arrêté préfectoral (Haute-Savoie) - 21 juil 2003",
+          "summary": "En raison de la sécheresse, le canyon de Montmin, les Rots de Balme et les gorges du Bronze sont interdits à la pratique pour une durée de 3 mois, sauf changement des conditions météo permettant un retour à une situation normale.",
+          "remark": "Pris sans concertation, cet arrêté est dénoncé par les professionnels.",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nConsultez le\n\ntexte (ou extrait)\n\n[Extrait]\n\nArticle 5 : Sports d’eau vive et baignade\n\nAfin de préserver la faune et la flore aquatique, la pratique du canyoning est interdite dans les cours d’eau\n\nsuivants :\n\n- ruisseau des ROTS ou de BALME (affluent de l’Arve) ;\n\n- ruisseau du BRONZE (affluent de l’Arve) ;\n\n- ruisseau de MONTMIN (affluent de l’Eau Morte).\n\nLe Fier, la Filière et le Chéran feront l’objet d’un suivi bactériologique. Des mesures d’interdiction de la baignade\n\npourront être prises ultérieurement par arrêté préfectoral.\n\nArrêté préfectoral du 21 juillet 2003",
+          "effectiveDate": "21 oct 2003",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/58/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral du 21 juillet 2003",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/arrete58.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

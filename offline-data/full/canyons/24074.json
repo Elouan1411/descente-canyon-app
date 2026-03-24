@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:59:06.128821+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24074,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24074/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24074/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24074/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24074/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24074,
+    "identity": {
+      "nom": "Bertogna",
+      "nomComplet": "Rio Bertogna",
+      "prefixeNom": "Rio",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24074/Bertogna.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Piemonte",
+      "departement": "Verbano-Cusio-Ossola",
+      "communePrincipale": "Omegna",
+      "communes": [
+        "Omegna"
+      ],
+      "massif": "Monte Mottarone",
+      "bassin": "Ossola",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 2.2,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 550,
+      "deniveleM": 200,
+      "longueurM": 650,
+      "cascadeMaxM": 40,
+      "cordeMiniM": 40,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "50min",
+      "descente": "2h",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "De Gravellona prendre direction Omegna centre, via 4 novembre. Passer le pont sur le torrent Strona, puis à gauche au rond-point (Penny market, vieille cheminée rose plus loin). Au second rond-point (sculpture) prendre la première à gauche, via Verta, passer le pont sur Bertogna puis à droite en rive droite du ruisseau (via Bergna puis via Bertogna). Puis à droite, via Carcallo, le pont est tout proche, parking à côté.",
+      "accesAmont": null,
+      "approche": "Du parking, revenir vers la gauche, continuer par la via Ronco pour un petit pâté de maison. Le parcours traverse entre les maisons en suivant le balisage rouge/blanc. On arrive d'abord à l'Alpe Selvia sous couvert forestier, puis à l'Alpe Bertogna (alt. 584 m). Prendre à droite et rejoindre le ruisseau.",
+      "descente": "Un premier rappel mène à une zone de petit toboggans, un petit ressaut équipé rive D avec matériel du SCVV... Un grand pan incliné avec toboggan à droite et relais rive D ou rappel direct sur arbuste rive G. Une grande cascade en rideau puis la cascade finale. La goulotte passe bien même en gros débit, en écart d'abord puis en opposition pieds/dos.",
+      "retour": "Du pied de la cascade finale continuer par le ruisseau, dépasser le pont d'une vingtaine de mètres pour un escalier en pierre rive droite.",
+      "engagement": "Très moyen, des chemins coupent dans la seconde moitié.",
+      "periode": "Très petits biefs dans la zone des toboggans.\n\nDébut mai à octobre.",
+      "geologie": null,
+      "historique": "Armaroli, Bianchi, Carminati et Galimberti le 16.06.2013.",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24074,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.880829,
+        "longitude": 8.422923,
+        "label": null
+      },
+      {
+        "canyonId": 24074,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.884064,
+        "longitude": 8.415064,
+        "label": null
+      },
+      {
+        "canyonId": 24074,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 45.8839,
+        "longitude": 8.423036,
+        "label": "L'Alpe Bertogna"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.884064,
+      "longitude": 8.415064,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

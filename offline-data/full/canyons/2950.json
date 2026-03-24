@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:47:34.609989+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2950,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2950/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2950/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2950/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2950/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2950,
+    "identity": {
+      "nom": "Moulis",
+      "nomComplet": "Canyon de Moulis, Cascade d'Aubert, Ruisseau de Poudades (ac)",
+      "prefixeNom": "Canyon de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2950/Moulis.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Ariège",
+      "communePrincipale": "Moulis",
+      "communes": [
+        "Moulis"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": "Ruisseau de Poudades (ac)"
+    },
+    "rating": {
+      "cotation": "v4a2II",
+      "interet": 2.4,
+      "nbVotes": 29
+    },
+    "metrics": {
+      "altitudeDepartM": 605,
+      "deniveleM": 125,
+      "longueurM": 500,
+      "cascadeMaxM": 45,
+      "cordeMiniM": 50,
+      "navette": "4.0km"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "1h30",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "5km à l'ouest de St Girons, le long de la vallée du Lez\n\nLaisser un véhicule dans le village d'Aubert, au bord du Lez (près du pont de pierre)",
+      "accesAmont": null,
+      "approche": "En voiture, passer par Moulis, puis monter vers Montfaucon.\n\nParking de quelques place quand on rejoint le valllon, ou un peu plus loin.\n\nAccèder au canyon par le parc Aventure (pannonceaux). Prendre par le portillon RD pour redescendre ensuite au cours d'eau.",
+      "descente": "une premiere C6 suivi d'un toboggan équipé RG qui peut se faire sans corde en amortissant, suivi d'un autre plus petit.\n\nSuit une belle C25 avec plusieurs marmites.\n\nBallade en sous bois, et re-petit toboggan qu'on peut refaire ou éviter MC RD.\n\nArrive alors la belle cascade d'Aubert, C45, avec 2 départs possibles RG (avant ou après la MC), suivant niveaux d'eau",
+      "retour": "Le sentier part RD au milieu de la dernière rampe, puis longe le ruisseau. On traverse un canal de dérivation. Au niveau d'une maisonnette, on prend à G la piste qui ramène à Aubert (flechage sur pannonceaux)",
+      "engagement": null,
+      "periode": "Avant mi-juin, été-automne après pluies ou orage (petit bassin versant, ce qui ne l'empèche pas d'avoir des crues...)",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Trop court, dommage ! A coupler, dans la journée, avec le parc aventure.\n\nprestataire très sympa : http://www.horizonvertical.net"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2950,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.959106,
+        "longitude": 1.110935,
+        "label": null
+      },
+      {
+        "canyonId": 2950,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 42.965382,
+        "longitude": 1.108309,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 42.965382,
+      "longitude": 1.108309,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_872fe3d6423900b2",
+          "kind": "MAP",
+          "title": "2047 OT Saint-Girons - Couserans (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_01a81a073d702cf5",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://yelsub1.free.fr/moulis/",
+          "url": "http://yelsub1.free.fr/moulis/"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

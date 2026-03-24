@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:06.675861+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21887,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21887/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21887/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21887/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21887/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21887,
+    "identity": {
+      "nom": "Gouaux",
+      "nomComplet": "Cascades de Gouaux",
+      "prefixeNom": "Cascades de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21887/Gouaux.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Haute-Garonne",
+      "communePrincipale": "Gouaux-de-Luchon",
+      "communes": [
+        "Gouaux-de-Luchon"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a1II",
+      "interet": 2.4,
+      "nbVotes": 24
+    },
+    "metrics": {
+      "altitudeDepartM": 800,
+      "deniveleM": 170,
+      "longueurM": 350,
+      "cascadeMaxM": 45,
+      "cordeMiniM": 45,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "2h",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": "A 5km au Nord de Luchon, prendre la D27a en direction de Gouaux de Luchon. Au niveau du premier pont, se garer. Le final du canyon est visible sur votre droite.",
+      "accesAmont": null,
+      "approche": "Remonter rive droite par une sente raide vous mènera au départ du canyon.\n\nMoins direct, remonter la route pendant environ 300m. Au niveau d'un petit pont emprunter un sentier qui monte sur la droite. Le suivre en restant toujours à droite.",
+      "descente": "Belle descente orientée Ouest très ensoleillée.\n\nLa descente commence par un tob de 4m puis suivent une dizaine de rappels, le plus grand faisant 45m.",
+      "retour": null,
+      "engagement": "Faible, peu encaissé. De nombreux échappatoires sont possibles rive droite.",
+      "periode": "Peut se faire toute l'année, de préférence au printemps car plus chargé en eau. Attention l'hiver à la neige en amont (avalanches).",
+      "geologie": null,
+      "historique": "?",
+      "remarques": "Très bien équipé. Idéal pour travailler les mains courantes rappelables."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21887,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.838306,
+        "longitude": 0.609999,
+        "label": null
+      },
+      {
+        "canyonId": 21887,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.83815,
+        "longitude": 0.60575,
+        "label": null
+      },
+      {
+        "canyonId": 21887,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 42.841583,
+        "longitude": 0.608644,
+        "label": "Se garer sur la bas coté à gauche juste avant le virage à gauche. Le départ de la marche d'approche se fait à partir du virage en montant tout droit dans la pente sur 15 mètres pour croiser un chemin (prendre à droite) qui nous mènera à l'entrée du canyon."
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 42.841583,
+      "longitude": 0.608644,
+      "label": "Se garer sur la bas coté à gauche juste avant le virage à gauche. Le départ de la marche d'approche se fait à partir du virage en montant tout droit dans la pente sur 15 mètres pour croiser un chemin (prendre à droite) qui nous mènera à l'entrée du canyon."
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_b4d10c31e88f9235",
+          "kind": "MAP",
+          "title": "1848 OT Bagneres-de-Luchon (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

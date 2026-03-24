@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:46.116940+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21799,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21799/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21799/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21799/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21799/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21799,
+    "identity": {
+      "nom": "Fours (inférieur)",
+      "nomComplet": "Canyon des Fours (inférieur), Torrent des Fours",
+      "prefixeNom": "Canyon des",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21799/Fours-inferieur.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Haute-Savoie",
+      "communePrincipale": "Sallanches",
+      "communes": [
+        "Sallanches"
+      ],
+      "massif": "Bornes - Aravis",
+      "bassin": "Arve",
+      "coursEau": "Torrent des Fours"
+    },
+    "rating": {
+      "cotation": "v3a3III",
+      "interet": 1.9,
+      "nbVotes": 8
+    },
+    "metrics": {
+      "altitudeDepartM": 1225,
+      "deniveleM": 230,
+      "longueurM": 900,
+      "cascadeMaxM": 15,
+      "cordeMiniM": 17,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h/1h15",
+      "descente": "2h",
+      "retour": "1min"
+    },
+    "topo": {
+      "accesAval": "De Sallanches, prendre la route de Sainte-Anne (direction Est) et poursuivre jusqu'à Lintre (parking et panneau de randonnée, alt. 1020 m). C'est ici qu'on laissera les voitures. NB : avec un 4x4, il est autorisé de poursuivre jusqu'au pont de la Flée, hormis entre 9h et 18h du 15/06 au 31/08.",
+      "accesAmont": null,
+      "approche": "Prendre le chemin en direction du pont de la Flée, sortie du canyon. A ce niveau, suivre la direction de la Pierre Fendue (montée raide). Après moins d'un km, au niveau d'une épingle à gauche (altitude approximative 1230 m), prendre le chemin à droite qui rejoint le ruisseau et le traverse sur une passerelle en bois. (repérage sur carte utile). On peut aussi y accéder après la descente de la partie supérieure, cet accès permet d'éviter la liaison dans la rivière.",
+      "descente": "Cette descente correspond à un succession de cascades entrecoupées de marches plus ou moins longues. L'ensemble s'effectue dans un encaissement parfois encombré d'arbres.",
+      "retour": "La sortie du canyon s'effectue au Pont de la Flée en rive droite, en face d'une ancienne scierie.",
+      "engagement": "Échappatoires possibles entre les sections encaissées. Équipement dangereux sur monopoints de 8mm.",
+      "periode": "Le débit est considérablement augmenté avec l'arrivée du torrent de Cœur.",
+      "geologie": null,
+      "historique": "E. Gelineau et S. Ory, SC Passy - 1998",
+      "remarques": "Mal équipé. La encore, le topo de Haute-Savoie est faux (il n'y a pas de cascade de 30m, mais plusieurs cascade dont le maxi demande 2x17m)"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21799,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.934444,
+        "longitude": 6.579444,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.934444,
+      "longitude": 6.579444,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_af26f7b19d539814",
+          "kind": "MAP",
+          "title": "3430 ET La Clusaz - Le Grand-Bornand (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

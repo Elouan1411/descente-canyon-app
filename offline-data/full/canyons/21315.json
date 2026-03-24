@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:48:56.030698+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21315,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21315/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21315/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21315/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21315/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21315,
+    "identity": {
+      "nom": "Gendarmes",
+      "nomComplet": "Canyon des Gendarmes, Grande Ravine",
+      "prefixeNom": "Canyon des",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21315/Gendarmes.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Saint-Benoît",
+      "departement": "La Réunion",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Massif du cratere",
+      "bassin": "Riviere des Marsoins",
+      "coursEau": "Grande Ravine"
+    },
+    "rating": {
+      "cotation": "v4a2III",
+      "interet": 2.7,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 430,
+      "deniveleM": 319,
+      "longueurM": 750,
+      "cascadeMaxM": 90,
+      "cordeMiniM": 70,
+      "navette": "5.0km"
+    },
+    "timings": {
+      "approche": "45min",
+      "descente": "4h30",
+      "retour": "2h"
+    },
+    "topo": {
+      "accesAval": "A St benoit, prendre la D54, et après avoir traverser Bras Canot, aller déposer un véhicule à Ilet à Coco.",
+      "accesAmont": "Après Bras Canot, poursuivre sur la D54, traverser Le Cratère et aller jusqu'à l'arrêt de bus Safer I. Juste après prendre le chemin Safer qui se transforme ensuite en piste que l'on suite jusqu'à ce qu'elle amorce une descente (Ne plus emprunter cet accès, le chemin est privé et le propriétaire ne veut plus de passage).",
+      "approche": "Poursuivre sur la piste qui se transforme ensuite en sentier. Ce dernier amène à une ravine (d'où l'on entend couler l'eau dans le canyon), la descendre sur environ 30 mètre pour rejoindre le canyon",
+      "descente": "Belle descente. Deux encaissements séparés par une portion de marche de 15 à 20 min. L'équipement en place permet de ne pratiquement pas avoir de frottement à gérer.",
+      "retour": "Arrivé à la fin du canyon il faut ensuite redescendre la rivière des marsoins en passant d'une berge à l'autre. Faire attention au débit dans cette dernière et anticiper pour traverser suffisement tot avant les rapides. Le cadre dans lequel on évolue permet d'oublier la longueur de la marche",
+      "engagement": "L'équipement est trés bon. Attention cependant aux risques de chutes de pierres. On n'a pas remarqué d'échappatoire mais il est possible de se mettre à l'abris dans la partie qui sépare les deux étroitures et également de sortir du fond du canyon au bas de la cascade de 45m qui marque le début du deuxième encaissement (courte escalade en rive gauche)",
+      "periode": null,
+      "geologie": null,
+      "historique": "Marcel Faure et son équipe, 1994",
+      "remarques": "La piste d’accès se trouvant sur une propriété privée et comme il n'est plus possible de demander l'autorisation de l'emprunter (11/2018), ce canyon est fortement déconseillé jusqu'à ce qu'un accès alternatif ait pu être trouvé."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21315,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": -21.062044,
+        "longitude": 55.656338,
+        "label": null
+      },
+      {
+        "canyonId": 21315,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": -21.057411,
+        "longitude": 55.657909,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": -21.062044,
+      "longitude": 55.656338,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_13d26f471caae438",
+          "kind": "MAP",
+          "title": "4403RT Saint-Benoît / Saint-André (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_2f82f50727fdb7d7",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://lrc-ffs.fr/Topographies/Accueil/C.....esentationcanyon.htm",
+          "url": "http://lrc-ffs.fr/Topographies/Accueil/C.....esentationcanyon.htm"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

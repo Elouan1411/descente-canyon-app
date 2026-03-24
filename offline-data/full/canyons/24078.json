@@ -1,0 +1,167 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:59:07.006092+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24078,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24078/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24078/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24078/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24078/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24078,
+    "identity": {
+      "nom": "Cochinos",
+      "nomComplet": "Barranco de los Cochinos",
+      "prefixeNom": "Barranco de los",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24078/Cochinos.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Canarias",
+      "departement": "Santa Cruz de Tenerife",
+      "communePrincipale": "Los Silos",
+      "communes": [
+        "Silos, Los",
+        "Los Silos"
+      ],
+      "massif": "Teno",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2III",
+      "interet": 1.9,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 500,
+      "deniveleM": 180,
+      "longueurM": 1500,
+      "cascadeMaxM": 15,
+      "cordeMiniM": 15,
+      "navette": "5.0km"
+    },
+    "timings": {
+      "approche": "45min",
+      "descente": "1h30",
+      "retour": "50min"
+    },
+    "topo": {
+      "accesAval": "Garer le premier véhicule au centre de Los Silos sur le parking de l'église.\n\nPossibilité de monter sans navette depuis le village mais c'est long.\n\nAvec le deuxième véhicule, monter par de surprenants lacets au village de Tierra del Trigo. De ce dernier, suivre les indications \"Cuevas Negras\". Au bout de 3km, on passe au dessus du barranco de las Cabezadas (sec). Se garer non loin sur la droite (place pour 2 voitures) juste après le panneau \"Cuevas Negras / Tierra del Trigo 1,1km\".",
+      "accesAmont": null,
+      "approche": "Du parking amont, un sentier descend en 10 minutes à des baraquements. De là, prendre à gauche, ca continue de descendre 10 minutes de plus jusqu'à un carrefour (panneau de Cuevas Negras, c'est le même accès jusqu'ici).\n\nPrendre alors le sentier de gauche qui remonte. Au bout d'une dizaine de minutes supplémentaires sur ce sentier pavé, bien regarder sur votre gauche et chercher une sente qui s'enfonce dans les bois. La suivre jusqu'à tomber sur l'entrée d'un tunnel. De l'autre coté de celui ci, descendez dans Los Cochinos.",
+      "descente": "Descente arrosée en sous bois ponctuée d'une dizaine de rappels inférieurs à 15m.",
+      "retour": "Lorsque le barranco s'assèche on tombe sur un escalier, le descendre et on arrive à d'anciennes mines. De là, suivre le bon sentier qui permet de sortir de la gorge. Il serpente au milieu de plantations et nous ramène au village.",
+      "engagement": "Limité, de la place pour beaucoup d'eau.\n\nPas d'échappatoire évidente une fois dans la gorge.",
+      "periode": "Coule tout au long de l'année.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Ne pas oublier sa frontale, le tunnel d'accès fait 700m !\n\nVoir le topo \"35 canyons à Tenerife\" pour la combine avec un seul véhicule."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24078,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 28.340231,
+        "longitude": -16.81815,
+        "label": null
+      },
+      {
+        "canyonId": 24078,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 28.349312,
+        "longitude": -16.817242,
+        "label": null
+      },
+      {
+        "canyonId": 24078,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 28.348532,
+        "longitude": -16.807112,
+        "label": null
+      },
+      {
+        "canyonId": 24078,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 28.364799,
+        "longitude": -16.817436,
+        "label": null
+      },
+      {
+        "canyonId": 24078,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 28.342926,
+        "longitude": -16.811977,
+        "label": "Entrée du tunnel"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 28.348532,
+      "longitude": -16.807112,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_691675baaeb76189",
+          "kind": "TOPOGUIDE",
+          "title": "35 descentes de canyons à Tenerife",
+          "authors": [
+            "Philip Van Den Berge"
+          ],
+          "publicationYear": 2016,
+          "reference": null,
+          "editor": "Autoédition",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1338/topoguide.html"
+        },
+        {
+          "id": "biblio_ea844f75c4fa6780",
+          "kind": "TOPOGUIDE",
+          "title": "Canyoning in Tenerife",
+          "authors": [
+            "Emilio Aguilar Gutiérrez",
+            "Rosa Maria Hernandes Guzman"
+          ],
+          "publicationYear": 2014,
+          "reference": "ISBN 9781494927769",
+          "editor": "Amazon",
+          "status": "stock vide !\n\nSans doute disponible sur commande : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/181/Canyoning-in-Tenerife.html"
+        }
+      ],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_6c1a2f3428b610fd",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://franciscofarina.blogspot.fr/2009/.....co-los-cochinos.html",
+          "url": "http://franciscofarina.blogspot.fr/2009/.....co-los-cochinos.html"
+        },
+        {
+          "id": "resource_0ab3744a0bda0f94",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.andarines.com/canarias/barrancochinos/cochinos.htm",
+          "url": "http://www.andarines.com/canarias/barrancochinos/cochinos.htm"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

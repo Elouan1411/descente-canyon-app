@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:54:49.492151+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22896,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22896/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22896/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22896/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22896/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/22896/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 22896,
+    "identity": {
+      "nom": "Bau",
+      "nomComplet": "Ruisseau du Bau",
+      "prefixeNom": "Ruisseau du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22896/Bau.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-Maritimes",
+      "communePrincipale": "Rigaud",
+      "communes": [
+        "Rigaud"
+      ],
+      "massif": null,
+      "bassin": "Cians",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "",
+      "interet": 950.0,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": 950,
+      "deniveleM": 550,
+      "longueurM": 1000,
+      "cascadeMaxM": null,
+      "cordeMiniM": null,
+      "navette": null
+    },
+    "timings": {
+      "approche": null,
+      "descente": null,
+      "retour": null
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": "Première descente et équipement le 23/12/2012 par 6rn, JC de la Peira, Mitch.83 dit La Tortue & Pascalou83, Boustourou (R.P.).",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22896,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.96405,
+        "longitude": 6.98279,
+        "label": null
+      },
+      {
+        "canyonId": 22896,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.959946,
+        "longitude": 6.991292,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 43.96405,
+      "longitude": 6.98279,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_1b6eca29674d88a9",
+          "kind": "MAP",
+          "title": "3641 ET Moyenne Tinee (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 470,
+          "status": "Actif",
+          "action": "Interdit",
+          "title": "Arrêté municipal (Rigaud) - 29 mars 2022",
+          "summary": "La descente de canyons secs et le barring (descente en rappel de barres rocheuses) est interdit sur la commune.",
+          "remark": null,
+          "details": "Téléchargez le fichier JPEG :\n\nArrêté municipal (Rigaud) n°1-2022 du 29 mars 2022",
+          "effectiveDate": "29 mars 2022",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/470/legislation.html",
+          "attachments": []
+        }
+      ]
+    }
+  }
+}

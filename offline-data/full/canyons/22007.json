@@ -1,0 +1,138 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:30.601691+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22007,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22007/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22007/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22007/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22007/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22007,
+    "identity": {
+      "nom": "Cuestis",
+      "nomComplet": "Rio Cuestis",
+      "prefixeNom": "Rio",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22007/Cuestis.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Frioul-Vénétie julienne",
+      "departement": "Udine",
+      "communePrincipale": "Resiutta",
+      "communes": [
+        "Resiutta"
+      ],
+      "massif": "Alpes Juliennes",
+      "bassin": "Fella",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v5a3III",
+      "interet": 3.3,
+      "nbVotes": 15
+    },
+    "metrics": {
+      "altitudeDepartM": 770,
+      "deniveleM": 420,
+      "longueurM": 1000,
+      "cascadeMaxM": 70,
+      "cordeMiniM": 55,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h15",
+      "descente": "4h",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": "En venant de Chiusaforte en direction de Udine par la SS13, prendre l'embranchement pour Roveredo un peu avant un tunnel et se garer en face de la sortie du torrent Cuestis (grand espace à gauche).",
+      "accesAmont": null,
+      "approche": "Continuer à pieds la route goudronnée en direction de Roveredo et prendre le sentier 425a (indiqué seulement sur les cartes les plus récentes) qui démarre juste avant le dernier virage à droite qui mène au parking aval du Rio Simon. Suivre ce sentier qui monte raide dès le départ jusqu'à rejoindre le torrent au niveau d'un petit barrage.",
+      "descente": "Succession de cascades et de sauts possibles dans une eau d'une couleur émeraude exceptionnelle, jusqu'aux grandes cascades, magnifiques avec de l'eau.\n\nLa grande cascade est fractionnée en 2 avec un relais 20m en dessous du départ, sur une petite terrasse abritée par un surplomb. Pour le rappel suivant ce relais il est conseillé d'utiliser les 2 déviations située en RD.\n\nPour la cascade de 55m suivante, l'amarrage est placé en RD et invisible du seuil; on y accède par un petit rappel (amarrage derrière l'arbre).",
+      "retour": "Rejoindre immédiatement la voiture par une sente en RG sous le pont.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "Exceptionnel lorsqu'il coule. La dernière cascade est visible de la route et permet d'estimer le débit."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22007,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.404488,
+        "longitude": 13.274317,
+        "label": null
+      },
+      {
+        "canyonId": 22007,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.396328,
+        "longitude": 13.271179,
+        "label": "après le pont"
+      },
+      {
+        "canyonId": 22007,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.396198,
+        "longitude": 13.27142,
+        "label": null
+      },
+      {
+        "canyonId": 22007,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 46.397835,
+        "longitude": 13.264436,
+        "label": "depart chemin d'approche (sentiero 425a)"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.396198,
+      "longitude": 13.27142,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_e96372744d4c4932",
+          "kind": "MAP",
+          "title": "018 Alpi Carniche Orientali, Canal de Ferro (Tabacco)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_29edf080c304db26",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.canyoning.it/procanyon/cuestis.htm",
+          "url": "http://www.canyoning.it/procanyon/cuestis.htm"
+        },
+        {
+          "id": "resource_2fd9bef8363e7d0f",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.canyoneast.it/target.php?w=19.....target=Rio%20Cuestis",
+          "url": "http://www.canyoneast.it/target.php?w=19.....target=Rio%20Cuestis"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

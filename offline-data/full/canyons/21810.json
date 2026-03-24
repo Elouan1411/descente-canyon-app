@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:48.863811+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21810,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21810/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21810/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21810/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21810/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21810,
+    "identity": {
+      "nom": "Musa",
+      "nomComplet": "Wadi Musa, Wadi Siyyagh",
+      "prefixeNom": "Wadi",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21810/Musa.html"
+    },
+    "location": {
+      "pays": "Jordanie",
+      "region": null,
+      "departement": "Ma'an Governorate",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": "Dead Sea",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.0,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 800,
+      "deniveleM": 150,
+      "longueurM": 8000,
+      "cascadeMaxM": 35,
+      "cordeMiniM": 40,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h30",
+      "descente": "5h",
+      "retour": "1h30"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": "Basalt/Calcaire/Red Granite",
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21810,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 30.33588,
+        "longitude": 35.426357,
+        "label": null
+      },
+      {
+        "canyonId": 21810,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 30.343176,
+        "longitude": 35.419662,
+        "label": null
+      },
+      {
+        "canyonId": 21810,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 30.355768,
+        "longitude": 35.440693,
+        "label": null
+      },
+      {
+        "canyonId": 21810,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 30.357027,
+        "longitude": 35.451916,
+        "label": "piste de approche vers canyon Wadi Musa (= Siyyagh)"
+      },
+      {
+        "canyonId": 21810,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 30.350861,
+        "longitude": 35.434128,
+        "label": "approche par Wadi Marvan, rive gauche, d'ici \"sentier\" quasi horizontal"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 30.355768,
+      "longitude": 35.440693,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

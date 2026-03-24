@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:23.590651+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23038,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23038/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23038/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23038/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23038/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23038,
+    "identity": {
+      "nom": "Mulins",
+      "nomComplet": "Aua da Mulins",
+      "prefixeNom": "Aua da",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23038/Mulins.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Trin",
+      "departement": "Graubünden/Grigioni/Grischun",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a4III",
+      "interet": 2.6,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 1850,
+      "deniveleM": 150,
+      "longueurM": 400,
+      "cascadeMaxM": 80,
+      "cordeMiniM": 80,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "1h",
+      "descente": "??",
+      "retour": "??"
+    },
+    "topo": {
+      "accesAval": "Se garer à Flims dans un des nombreux parking payant. Prendre ensuite la navette en bus pour Bargis.",
+      "accesAmont": null,
+      "approche": "De Bargis prendre plein nord le même chemin que Surcruns et Tschanonca. Le quitter vers l'altitude 1850m en direction du pont qui coupe le torrent.",
+      "descente": "Amont de Turnigla. Petit encaissement avec une grande cascade finale.\n\nA faire après Tschanonca ou Surcruns.\n\nLe relais intérmédaire de la grande cascade de 80m n'est pas protégé des crues. Descente dans l'actif.",
+      "retour": "Rejoindre Bargis puis rentrer en bus jusqu'à Flims.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": "Timo Stammwitz et un équipier le 30/09/2011.",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23038,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.890934,
+        "longitude": 9.286194,
+        "label": null
+      },
+      {
+        "canyonId": 23038,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.886124,
+        "longitude": 9.289284,
+        "label": null
+      },
+      {
+        "canyonId": 23038,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.838707,
+        "longitude": 9.278812,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.838707,
+      "longitude": 9.278812,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_9179b25820804ecc",
+          "kind": "MAP",
+          "title": "247 Sardona (Carte Nationale Suisse)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

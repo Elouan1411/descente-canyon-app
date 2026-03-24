@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:04.016976+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22448,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22448/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22448/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22448/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22448/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/22448/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 22448,
+    "identity": {
+      "nom": "Niger stream",
+      "nomComplet": "Niger stream",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22448/Niger-stream.html"
+    },
+    "location": {
+      "pays": "Nouvelle Zélande",
+      "region": "Queenstown-Lakes District",
+      "departement": "Otago",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Aspiring",
+      "bassin": null,
+      "coursEau": "Niger stream"
+    },
+    "rating": {
+      "cotation": "",
+      "interet": 540.0,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": 540,
+      "deniveleM": 210,
+      "longueurM": 500,
+      "cascadeMaxM": null,
+      "cordeMiniM": null,
+      "navette": null
+    },
+    "timings": {
+      "approche": null,
+      "descente": null,
+      "retour": null
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22448,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": -44.501938,
+        "longitude": 168.834839,
+        "label": "approximatif"
+      },
+      {
+        "canyonId": 22448,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": -44.499596,
+        "longitude": 168.838531,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": -44.501938,
+      "longitude": 168.834839,
+      "label": "approximatif"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_4c97deb8eb2bbdf3",
+          "kind": "MAP",
+          "title": "CA11 Aspiring Flats (NZTopo50 map)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 284,
+          "status": "Actif",
+          "action": "Interdit",
+          "title": "Information",
+          "summary": "Le canyon est sur un terrain privé. Seule l'autorisation exceptionnelle du propriétaire permettrait de faire le canyon.",
+          "remark": "The Canyons in the Matukituki Valley are on private land. For any private land in NZ, permission must be gained from the land owner before accessing a canyon. (It is possible to see the areas of legal public access and private land by visiting the website \"www.wams.org.nz\" which is a government website for the 'walking access mapping system WAMS')\n\nAlthough some of these canyons are descended by the guiding company 'Deep Canyon' www.deepcanyon.co.nz, the land owners do not grant permission to recreational canyoners.\n\nPlease respect that the canyons are 'Forbidden' until further notice. You can learn more on the KiwiCanyons.org Facebook page. There are many more canyons available in the public land in the nearby areas, with more information on www.KiwiCanyons.org",
+          "details": null,
+          "effectiveDate": null,
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/284/legislation.html",
+          "attachments": []
+        }
+      ]
+    }
+  }
+}

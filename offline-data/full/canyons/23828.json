@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:15.005892+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23828,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23828/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23828/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23828/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23828/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23828,
+    "identity": {
+      "nom": "San Gabriel",
+      "nomComplet": "San Gabriel",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23828/San-Gabriel.html"
+    },
+    "location": {
+      "pays": "Chili",
+      "region": "Región Metropolitana de Santiago",
+      "departement": "Provincia de Cordillera",
+      "communePrincipale": "San Jose de Maipo",
+      "communes": [
+        "San Jose de Maipo"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a3V",
+      "interet": 3.4,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 1740,
+      "deniveleM": 315,
+      "longueurM": 550,
+      "cascadeMaxM": 70,
+      "cordeMiniM": 60,
+      "navette": "2.5km"
+    },
+    "timings": {
+      "approche": "1h20",
+      "descente": "4h",
+      "retour": "15"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": "en revenant de 650m vers San José, une piste part direction NE dans des habitations et s'élève rapidement dans la colline jusqu'à la cote 1660m. L'accès peut se faire à pied ou avec un bon 4x4 franchisseur et un bon chauffeur car la piste est peu commode. Possibilité de louer la prestation : se renseigner par exemple dans les boites de raft de San José.",
+      "approche": "En bout de piste, un chemin (cairn) part direction N-E : il longe par endroit des tuyaux noirs d’irrigation jusqu'à un col (1840m) ramenant sur le ravin de San Gabriel. Laisser les tuyaux pour redescendre vers l'amont jusqu'à une dorsale herbeuse que l'on suit jusqu'au torrent. Suivre le cours d'eau sur 400m. Passer un dernier éboulis RG pour rejoindre la paroi et les premiers amarrages.",
+      "descente": "La première partie est très continue, puis les cascades perdent un peu de leur attrait avec quelques déescalades. Mais le resserrement reste spectaculaire sur la fin.\n\n16 rappels équipés restent à compléter pour faciliter certains rappels de cordes. Longueurs approximatives :\n\nR1+R2 RG : 15m+58m\n\nR3 RD : 12m\n\nR4 RG : 20m\n\nANRD sur bloc : 12m\n\nR6 RD : 7m\n\nR7 RG : 14m\n\nR8 RG 22m\n\nANRD sur lunule : 15m\n\nR10 RG : 30m\n\nR11 RD : enchainement 22+8m\n\nR12 RG : MC12m+R30m\n\ndesesc RG 80m\n\nR13 RG : 18m\n\ndesesc RG 50m\n\nR14 RG : enchainement 22+8m\n\nAN bloc au centre et lunule : 30m\n\ndesesc RG 50m puis RD sous un bloc saillant\n\nR16 RD : 29m",
+      "retour": "Suivre le cours d'eau puis un sentier en RG puis des tuyaux d'irrigation et le lit du ruisseau jusqu'au pont route.",
+      "engagement": "pas d'échappatoire à priori : gorge très encaissée",
+      "periode": "période d'étiage mars",
+      "geologie": null,
+      "historique": "Premiere dans les années 90 : noms à compléter. \"Ré-ouvert\" le 8 mars 2017 (Matthias Rosello Aymeri Dupond Vincent Cazarres Philippe Durand)",
+      "remarques": "Rééquipement de première sur goujons de 8 techniques light ou lunules. Prévoir du matériel en conséquence."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23828,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": -33.766876,
+        "longitude": -70.239677,
+        "label": null
+      },
+      {
+        "canyonId": 23828,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": -33.775867,
+        "longitude": -70.24337,
+        "label": null
+      },
+      {
+        "canyonId": 23828,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": -33.766449,
+        "longitude": -70.243973,
+        "label": null
+      },
+      {
+        "canyonId": 23828,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": -33.779003,
+        "longitude": -70.246552,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": -33.766449,
+      "longitude": -70.243973,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

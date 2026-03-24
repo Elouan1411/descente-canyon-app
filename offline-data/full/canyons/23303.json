@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:29.168380+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23303,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23303/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23303/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23303/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23303/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23303,
+    "identity": {
+      "nom": "Gros Morel",
+      "nomComplet": "Gorges du Gros Morel, Torrent de Courenq, L'Aiguebelle",
+      "prefixeNom": "Gorges du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23303/Gros-Morel-.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Hautes-Alpes",
+      "communePrincipale": "La Piarre",
+      "communes": [
+        "La Piarre"
+      ],
+      "massif": null,
+      "bassin": "Buëch",
+      "coursEau": "L'Aiguebelle"
+    },
+    "rating": {
+      "cotation": "v2a2I",
+      "interet": 0.9,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 1040,
+      "deniveleM": 150,
+      "longueurM": 600,
+      "cascadeMaxM": 15,
+      "cordeMiniM": 15,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "1h00",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": "De Sisteron, passer à Laragne-Montéglin sur la N75, traverser Serre en direction de Grenoble et prendre à gauche avant de passer le pont du Buëch. Rouler sur la D27 pour traverser La Piarre en direction du Château. Stationner sans gêner au départ d'un GR et avant un pont au point 984 IGN.",
+      "accesAmont": null,
+      "approche": "Traverser la route et emprunter le GR montant sur la colline Serre la Croix. Traverser le ruisseau et arriver sur une petite route. Prendre à gauche et se rendre au départ de la descente du torrent de Courenq.",
+      "descente": "Passer un petit toboggan de 3m, s'en suit un C8 (Anneau de corde sur Plaquette et piton en RD) et un C10 sur anneau de corde + maillon en RG.\n\nMarche de 15 min... Sortir en RG par le petit sentier rejoignant très vite le GR pris à l'aller au niveau du gué du ruisseau. Rejoindre la route et la descendre aux Gorges du Gros Morel, départ de la suite du parcours alt 960 m...\n\nT6, C10 (Goujon de 8 sur maillon de chaine) en RG, C4 (main-courante en RG) et C15 plaquette en RG .",
+      "retour": "Sortir en RG, 50 m après la C15 si vous voulez enchaîner par une jonction de 30 min avec le Béal du Château sur une sente passant la barre rocheuse.\n\nSans quoi, continuer de descendre l'Aiguebelle et à la confluence avec le Béal du Château, part un sentier en RD rejoignant la route et le parking.",
+      "engagement": "Aucun .",
+      "periode": "A faire après les pluies.",
+      "geologie": null,
+      "historique": "?\n\nEquipement complété par RV, Tony-13, lolo et ALAIN 13",
+      "remarques": "A enchaîner avec le Béal du Château et le Goutail juste à côté, si le cœur vous en dit..."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23303,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.486622,
+        "longitude": 5.656112,
+        "label": null
+      },
+      {
+        "canyonId": 23303,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.48064,
+        "longitude": 5.659921,
+        "label": null
+      },
+      {
+        "canyonId": 23303,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.485363,
+        "longitude": 5.658355,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.485363,
+      "longitude": 5.658355,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_3dc2c45ee9a0a859",
+          "kind": "MAP",
+          "title": "3338 OT Serres-Veynes (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

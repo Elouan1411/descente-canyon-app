@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:56.352885+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23165,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23165/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23165/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23165/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23165/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23165,
+    "identity": {
+      "nom": "Serre des Buisses",
+      "nomComplet": "Ravin du Serre des Buisses, Sans nom",
+      "prefixeNom": "Ravin du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23165/Serre-des-Buisses.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Drôme",
+      "communePrincipale": "Chauvac-Laux-Montaux",
+      "communes": [
+        "Chauvac-Laux-Montaux"
+      ],
+      "massif": "Massif des Baronnies",
+      "bassin": "Aigues - Aigue - Eygues - Aygues",
+      "coursEau": "Sans nom"
+    },
+    "rating": {
+      "cotation": "v3a1II",
+      "interet": 1.8,
+      "nbVotes": 7
+    },
+    "metrics": {
+      "altitudeDepartM": 827,
+      "deniveleM": 125,
+      "longueurM": 350,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 25,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "25min",
+      "descente": "1h30",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "De Laragne-Montéglin se rendre à Eyguians. Tourner à gauche et poursuivre jusqu'à Orpierre par la D30. Traverser Orpierre, toujours sur la D30, faire 500 m et prendre la D130 au panneau Etoile St-Cyrice. Rester sur la D130 jusqu'à Villebois-les-Pins. Traverser le hameau et emprunter la D116 en direction de Le Laux passant par le Col du Reychasset. Rester sur D116, traverser Le Laux et quelques mètres après dans un virage en épingle à gauche l'on franchit un premier pont. Rouler jusqu'au troisième pont et se garer sans gêner. Le second pont au niveau d'une ferme étant le parking du torrent de Gournier.",
+      "accesAmont": null,
+      "approche": "Emprunter le petit chemin en RG du ruisseau et quitter le après quelques mètres plus loin pour prendre à gauche une sente marquée d'un trait orange (si vous êtes arrivés sur une ruine, c'est que vous êtes allés trop loin). De là, il faut monter et passer sous la barre rocheuse visible depuis le pont toujours en suivant le marquage orange, jusqu'au lit du ruisseau, mais souvent sec. Départ de la descente (alt. 827m).",
+      "descente": "On commence par un mini encaissement à désescalader pour se rendre sur C10 (2 pts en RG), C3 à désescalader et Pi7 (1 pt dans le lit du ruisseau), C7 (1 pt en RG), un peu de marche et on arrive sur une partie qui s'encaisse. C4 + C5 à désescalader, s'enchaîne avec une C4 (1 pt en RD), C3 en désescalade, C5 (1 pt en RD), C25 (2 pts en RD), C10 (2 pts en RD) et C15 (2 pts en RD).",
+      "retour": "Suivre le ruisseau quelques mètres et sortir en RD pour rejoindre votre véhicule.",
+      "engagement": "Engagement total sur les cinq dernières cascades.",
+      "periode": "A faire pendant la saison humide pour y trouver de l'eau.",
+      "geologie": null,
+      "historique": "Équipement terrain d'aventure (goujons 8 mm + maillons de chaîne) mis en place par lolo, François et ALAIN 13.",
+      "remarques": "Descente à enchaîner avec son voisin le torrent de Gournier."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23165,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.333607,
+        "longitude": 5.528031,
+        "label": null
+      },
+      {
+        "canyonId": 23165,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.330837,
+        "longitude": 5.528245,
+        "label": null
+      },
+      {
+        "canyonId": 23165,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.330307,
+        "longitude": 5.527516,
+        "label": null
+      },
+      {
+        "canyonId": 23165,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 44.331104,
+        "longitude": 5.529168,
+        "label": "accés à l'approche"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.330307,
+      "longitude": 5.527516,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_6f1e4c2fdbcb1eb5",
+          "kind": "MAP",
+          "title": "3239 OT Rosans-Orpierre (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:49:58.796036+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21589,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21589/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21589/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21589/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21589/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21589,
+    "identity": {
+      "nom": "Fou",
+      "nomComplet": "Barranc de la Fou",
+      "prefixeNom": "Barranc de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21589/Fou.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Cataluña",
+      "departement": "Tarragona",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.4,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": null,
+      "longueurM": null,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 40,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h15",
+      "descente": "3h30",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "De Tortosa, prendre l'autoroute direction Castello, sortie 42, prendre la CV11 direction El Castell, la Senia, el Moli de l'Abad, passer le barrage d'Ulldeconaet. Prendre a droite. Aller au terminus, parking.",
+      "accesAmont": null,
+      "approche": "Continuer sur la piste, le tout évident.",
+      "descente": "Beau canyon, bien sculpté",
+      "retour": "A la sortie du canyon, reprendre à gauche la piste prise au départ",
+      "engagement": null,
+      "periode": "Automne, après des pluies.",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21589,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 40.749779,
+        "longitude": 0.25672,
+        "label": "Fou direct (approche par la piste)"
+      },
+      {
+        "canyonId": 21589,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 40.748337,
+        "longitude": 0.25187,
+        "label": "Entrée par Ciceres (belle approche par sentier)."
+      },
+      {
+        "canyonId": 21589,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 40.73682,
+        "longitude": 0.255722,
+        "label": null
+      },
+      {
+        "canyonId": 21589,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 40.733364,
+        "longitude": 0.25234,
+        "label": "piste barrée"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 40.733364,
+      "longitude": 0.25234,
+      "label": "piste barrée"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

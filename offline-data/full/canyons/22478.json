@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:10.896833+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22478,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22478/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22478/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22478/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22478/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22478,
+    "identity": {
+      "nom": "Valmola",
+      "nomComplet": "Valmola",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22478/Valmola.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Trimmis",
+      "departement": "Graubünden/Grigioni/Grischun",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": "Rhein",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a1III",
+      "interet": 2.2,
+      "nbVotes": 8
+    },
+    "metrics": {
+      "altitudeDepartM": 880,
+      "deniveleM": 280,
+      "longueurM": 1000,
+      "cascadeMaxM": 60,
+      "cordeMiniM": 40,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "1h30/2h",
+      "retour": "2min"
+    },
+    "topo": {
+      "accesAval": "Se rendre à Trimmis et localiser l'arrivée du ruisseau (près des rues Sträslli et Stafelsweg). Se garer sans gêner sur des emplacements matérialisés au sol. Avec le second véhicule, prendre la direction de Says. Le départ du canyon est au niveau du hameau de Valtanna, mais il y a peu de places de parking. On peut donc se garer sur le bas côté 400/500 m avant les premières maisons.",
+      "accesAmont": null,
+      "approche": "Remonter la route jusqu'à Valtanna et rentrer dans le canyon au niveau du pont par la piste rive droite en amont du pont, après les dernières maisons.",
+      "descente": "La plus grande cascade de 60 m se fractionne en rive droite à environ -20 m (attention ce fractionnement n'est pas très loin de l'actif, pas sûr qu'il ne soit pas malmené par des crues)",
+      "retour": "On arrive aux brise-charges dans le village.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22478,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.899967,
+        "longitude": 9.573169,
+        "label": null
+      },
+      {
+        "canyonId": 22478,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.902168,
+        "longitude": 9.566013,
+        "label": null
+      },
+      {
+        "canyonId": 22478,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 46.899361,
+        "longitude": 9.574832,
+        "label": null
+      },
+      {
+        "canyonId": 22478,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 46.904144,
+        "longitude": 9.563073,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 46.899361,
+      "longitude": 9.574832,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

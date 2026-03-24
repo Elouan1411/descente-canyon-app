@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:38.734910+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21771,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21771/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21771/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21771/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21771/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21771,
+    "identity": {
+      "nom": "Jabali",
+      "nomComplet": "Barranco del Jabali",
+      "prefixeNom": "Barranco del",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21771/Jabali.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Andalucía",
+      "departement": "Provincia de Granada",
+      "communePrincipale": "Capileira",
+      "communes": [
+        "Órgiva",
+        "Capileira"
+      ],
+      "massif": "Sierra Nevada",
+      "bassin": "Rio Trevelez",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.0,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 1750,
+      "deniveleM": 350,
+      "longueurM": 2400,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h40",
+      "descente": "3h30",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "comme Bermejo",
+      "accesAmont": null,
+      "approche": "Du pont sur Bermejo continuer la piste environ 100m vers l'Est. Prenez une piste à gauche et vers le-haut jusqu'à une maison. Ici vous prenez un sentier difficilement visible à gauche et continuer vers le haut toujours sur la rive gauche de Jabali jusqu'à l'altitude 1750m.\n\nIl est possible de rentrer dans le Barranco au niveau une conduite d'eau (milieu du canyon : alt. 1600m - 45min)",
+      "descente": "deux sections (la deuxième est plus attractive)",
+      "retour": "Au confluent avec Bermejo avant le pont sortie à gauche",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "possibilité de continuer dans le Barranco Bermejo (l'encaissement Taja del Cortes)"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21771,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 36.965977,
+        "longitude": -3.317893,
+        "label": "Premier départ"
+      },
+      {
+        "canyonId": 21771,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 36.962494,
+        "longitude": -3.321347,
+        "label": "deuxième départ"
+      },
+      {
+        "canyonId": 21771,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 36.956116,
+        "longitude": -3.325789,
+        "label": null
+      },
+      {
+        "canyonId": 21771,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 36.955997,
+        "longitude": -3.325639,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 36.955997,
+      "longitude": -3.325639,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_96a993c8607bbbda",
+          "kind": "MAP",
+          "title": "1042-II Berchules (IGN)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_97fe9461d79fad0a",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://ropewiki.com/Jabali",
+          "url": "http://ropewiki.com/Jabali"
+        },
+        {
+          "id": "resource_acd4f7e70b096eb7",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/Canyons/JabaliCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/Canyons/JabaliCanyon"
+        },
+        {
+          "id": "resource_113f6f4b01319acd",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.actionman4x4.com/canonesybarr.....ecorridos/jabali.htm",
+          "url": "http://www.actionman4x4.com/canonesybarr.....ecorridos/jabali.htm"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:49:40.333870+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21504,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21504/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21504/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21504/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21504/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21504,
+    "identity": {
+      "nom": "Fayards",
+      "nomComplet": "Fontaine des Fayards, Ruisseau de Chambery",
+      "prefixeNom": "Fontaine des",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21504/Fayards.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Haute-Savoie",
+      "communePrincipale": "Chevaline",
+      "communes": [
+        "Chevaline"
+      ],
+      "massif": "Bauges",
+      "bassin": "Lac d'Annecy",
+      "coursEau": "Ruisseau de Chambery"
+    },
+    "rating": {
+      "cotation": "v4a2III",
+      "interet": 2.0,
+      "nbVotes": 13
+    },
+    "metrics": {
+      "altitudeDepartM": 1148,
+      "deniveleM": 250,
+      "longueurM": 700,
+      "cascadeMaxM": 40,
+      "cordeMiniM": 40,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h00",
+      "descente": "3h00",
+      "retour": "45min"
+    },
+    "topo": {
+      "accesAval": "De Doussard, se rendre à Chevaline, puis prendre la route de la Combe d'Ire jusqu'au parking avant le panneau d'interdiction. Environ 3,3km sur la route de la combe d'Ire à la sortie de Chevaline. Attention présence d'un panneau d'interdiction de circuler sur cette route en juin 2015.",
+      "accesAmont": null,
+      "approche": "Continuer la route à pied, puis le chemin de rando qui monte aux refuges du Planay et du Rosay Le chemin est toujours large et monte de façon continue sur 400m de dénivelé et environ 2km. A la fontaine des Fayards (premier refuge dans la montée), prendre la sente à gauche vers le cours d'eau à 30m.",
+      "descente": "Un encaissement avec de petits obstacles au départ, donc une cascade qui donne dans une partie surcreusée, avec des sources qui jaillissent de la paroi, très joli passage. Quelques embâcles pas très stables. Ensuite, des cascades en foret sans encaissement, dans un rocher pas très sain, culminant avec une C40 inclinée.",
+      "retour": "A la confluence avec l'Ire remonter celui-ci sur environ 250m. Après l'escalade facile de 3 ressauts de faible hauteur, trouver sur la gauche (RD de l'Ire) le départ d'une sente bien marquée qui remonte à la route goudronnée.",
+      "engagement": "Engagé sur de très courtes portions uniquement. Possibilité de se mettre hors crue très simple après le passage encaissé du début. Environ 30min de progression depuis le départ.\n\nPas d'échappatoire le long du parcours, il serait très difficile de retrouver le chemin d'approche RG étant donné le profil en forme d'entonnoir. Le chemin de retour RD de l'ire n'est possible qu’après avoir rejoint la confluence entre le ruisseau de Chambéry et l'Ire.",
+      "periode": "pas au printemps, nombreuses résurgences tout le long du parcours.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Déjà équipé mais c'est vieillot, monopoint (goujons) ou AN. Énormément de bois tout le long du parcours, faire attention au rappel de corde si utilisation des \"relais\" en place. Préférer les ancrages naturels."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21504,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.718056,
+        "longitude": 6.209444,
+        "label": null
+      },
+      {
+        "canyonId": 21504,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.71722,
+        "longitude": 6.216667,
+        "label": "Arrivée au collecteur"
+      },
+      {
+        "canyonId": 21504,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.729721,
+        "longitude": 6.224444,
+        "label": null
+      },
+      {
+        "canyonId": 21504,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 45.728889,
+        "longitude": 6.224167,
+        "label": "Piste, départ de la marche d'approche"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.729721,
+      "longitude": 6.224444,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_24c652994d6d1609",
+          "kind": "MAP",
+          "title": "3432 OT Massif des Bauges (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

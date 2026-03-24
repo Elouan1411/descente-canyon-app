@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:54:28.921851+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22818,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22818/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22818/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22818/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22818/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22818,
+    "identity": {
+      "nom": "Molinera",
+      "nomComplet": "Valle Molinera",
+      "prefixeNom": "Valle",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22818/Molinera.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Lombardia",
+      "departement": "Varese",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": "Lac Majeur",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a4III",
+      "interet": 3.0,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 780,
+      "deniveleM": 587,
+      "longueurM": 3500,
+      "cascadeMaxM": 40,
+      "cordeMiniM": 40,
+      "navette": "21.0km"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "7h",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": "Plus de 30 rappels.",
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22818,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.083286,
+        "longitude": 8.765786,
+        "label": null
+      },
+      {
+        "canyonId": 22818,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.096092,
+        "longitude": 8.753952,
+        "label": "A 1 sortie chez ruines d'un vieux mulin (\"Mulinaccio\" - 370m alt.) et sente vers Bassano"
+      },
+      {
+        "canyonId": 22818,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.102997,
+        "longitude": 8.75351,
+        "label": "A 2"
+      },
+      {
+        "canyonId": 22818,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 46.082237,
+        "longitude": 8.756559,
+        "label": null
+      },
+      {
+        "canyonId": 22818,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 46.103092,
+        "longitude": 8.753405,
+        "label": null
+      },
+      {
+        "canyonId": 22818,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.09586,
+        "longitude": 8.744618,
+        "label": "sans navette et sortie \"Mulinaccio\""
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 46.082237,
+      "longitude": 8.756559,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

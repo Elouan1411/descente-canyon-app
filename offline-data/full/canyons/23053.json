@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:27.458232+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23053,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23053/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23053/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23053/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23053/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23053,
+    "identity": {
+      "nom": "Freycenet",
+      "nomComplet": "Ruisseau de Freycenet",
+      "prefixeNom": "Ruisseau de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23053/Freycenet.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Haute-Loire",
+      "communePrincipale": "Rauret",
+      "communes": [
+        "Rauret"
+      ],
+      "massif": null,
+      "bassin": "Allier",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a2I",
+      "interet": 1.4,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 860,
+      "deniveleM": 70,
+      "longueurM": 200,
+      "cascadeMaxM": 15,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "10min",
+      "descente": "1h",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "Du Puy en Velay, prendre la N88 plein Sud. Passer Costaros puis bifurquer vers Landos. Poursuivre vers Ribians par la D88. Après ce village, prendre la D404 jusqu'à Rauret. A la sortie du village, prendre à droite vers Rauret-bas. Prendre à gauche à la première bifurcation (patte d'oie), puis prendre assez rapidement dans le village la 2eme route à droite. Poursuivre cette petite route qui se transforme rapidement en piste. Garez vous 1400m après le début de la piste en prenant à gauche à la première bifurcation et en gardant ensuite la piste principale. (IGN utile pour s'orienter dans Rauret bas).",
+      "accesAmont": null,
+      "approche": "Du parking, traverser les champs (marcher sur les bords) et les descendre vers la rivière direction sud-est.",
+      "descente": "Succession de ressauts plus ou moins esthétiques débouchant sur l'Allier.\n\nL'équipement est bon.",
+      "retour": "Remonter en RD l'éboulis qui tombe sur la voie ferrée. La traverser (attention au train) puis remonter encore le canyon RD et trouver rapidement une sente que vous suivrez jusqu'aux champs puis au parking.",
+      "engagement": "Canyon très court, on peut s'échapper de partout.",
+      "periode": "A faire de préférence au printemps.",
+      "geologie": null,
+      "historique": "Exploré et topographié par Serge Navarro en 2010",
+      "remarques": "- Roche extrêmement glissante.\n\n- A faire pour de l'initiation ou si vous passez dans le coin.\n\n- Beau paysage"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23053,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.807102,
+        "longitude": 3.771707,
+        "label": null
+      },
+      {
+        "canyonId": 23053,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.807224,
+        "longitude": 3.767158,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.807224,
+      "longitude": 3.767158,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_ba466dbf1c65c0a1",
+          "kind": "MAP",
+          "title": "2737 E Langogne (IGN Top 25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

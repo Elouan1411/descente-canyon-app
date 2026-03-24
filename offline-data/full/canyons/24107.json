@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:59:13.830470+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24107,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24107/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24107/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24107/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24107/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24107,
+    "identity": {
+      "nom": "Vallon Claus",
+      "nomComplet": "Torrent de Vallon Claus",
+      "prefixeNom": "Torrent de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24107/Vallon-Claus.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Hautes-Alpes",
+      "communePrincipale": "Vars",
+      "communes": [
+        "Vars"
+      ],
+      "massif": "Queyras",
+      "bassin": "Durance",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a1III",
+      "interet": 2.6,
+      "nbVotes": 8
+    },
+    "metrics": {
+      "altitudeDepartM": 2260,
+      "deniveleM": 330,
+      "longueurM": 500,
+      "cascadeMaxM": 40,
+      "cordeMiniM": 45,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h10",
+      "descente": "2h30",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": "De Guillestre, emprunter la RN D902 en direction de Vars. Après quelques kilomètres et avoir passer quelques lacets, prendre à gauche la petite route escarpée menant au Val d'Escreins et la Basse Rua. Se garer au parking de la Haute Rua (circulation interdite après).",
+      "accesAmont": null,
+      "approche": "Emprunter à pied la piste de droite se rendant à la cabane des Chalances. Traverser la passerelle du Rif Bel et récupérer le GR. Dès lors, prendre à droite puis tourner à gauche en vue du PR qui indique le Vallon Claus. Le sentier monte via la pente caillouteuse et rejoint quelques sections équipés de câbles et d'échelles métalliques pour passer le secteur rocheux de la montée. L'on atteint par la suite, une zone végétale ornée de mélèzes qui précède la montée d'un grand pierrier à découvert. Monter et passer la crête du pierrier, puis descendre à gauche via la pente à travers les mélèzes pour vous rendre au départ de la descente.",
+      "descente": "Joli torrent de montagne parsemé d'une douzaine de rappels assez continus dans l'ensemble n’excédant pas les 40m de hauteur.",
+      "retour": "Suivre le torrent et récupérer le GR pris à l'aller puis le parking.",
+      "engagement": "Assez encaissé, échappatoire peu évidente.",
+      "periode": "fin juin et début juillet.",
+      "geologie": null,
+      "historique": "Ajout d'un point en RD pour passer dans le trou sur la seconde cascade (en 2018)",
+      "remarques": "- Très bien équipé dans l'ensemble (plaquettes avec anneaux mixées d'inox et de galva sur goujon de 10mm). Attention aux désescalades sur les ressauts non équipés dans l'actif, la roche est assez glissante.\n\n- Descente située dans la réserve naturelle du Val D'Escreins et le PNR du Queyras : respectez la réglementation particulière !"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24107,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.622066,
+        "longitude": 6.745856,
+        "label": null
+      },
+      {
+        "canyonId": 24107,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.619144,
+        "longitude": 6.742257,
+        "label": null
+      },
+      {
+        "canyonId": 24107,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.616154,
+        "longitude": 6.741243,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.616154,
+      "longitude": 6.741243,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_a317eb6118143790",
+          "kind": "MAP",
+          "title": "3537 ET Guillestre (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

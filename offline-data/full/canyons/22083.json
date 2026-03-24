@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:46.190443+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22083,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22083/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22083/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22083/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22083/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22083,
+    "identity": {
+      "nom": "Infernaccio dell’Ambro",
+      "nomComplet": "Infernaccio dell’Ambro",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22083/Infernaccio-dell’Ambro.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Marche",
+      "departement": "Ascoli Piceno",
+      "communePrincipale": "Montemonaco",
+      "communes": [
+        "Montemonaco"
+      ],
+      "massif": "Sibillini",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 3.0,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": null,
+      "longueurM": null,
+      "cascadeMaxM": 55,
+      "cordeMiniM": 60,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "2h30",
+      "descente": "3h",
+      "retour": "1h"
+    },
+    "topo": {
+      "accesAval": "De l’autoroute prenez à Civitanova Marche la direction de Macerata, Foligno, Sarnano puis Armandola. Après la ville suivez la direction de Montefortino. Ne ratez pas la bifurcation pour la Madonna dell’Ambro et de la Gola del Infernacio. Restez sur la route principale et suivez toujours la direction du sanctuaire.",
+      "accesAmont": null,
+      "approche": "Derrière le sanctuaire au niveau des parkings et de la fontaine prenez le chemin non indiqué qui monte dans une ambiance de toilette publique. Le chemin remonte la vallée avant de monter raide et de rejoindre le GR14. On passe le refuge Gualberto et on suit le GR jusqu’à rejoindre la rivière.",
+      "descente": "Le point le plus intéressant est la cascade de 55 m.",
+      "retour": "On suit le lit de la rivière",
+      "engagement": "Une échappatoire",
+      "periode": "Mai-juin",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Peu d’eau l’été. A faire avec un niveau correct"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22083,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.950802,
+        "longitude": 13.237667,
+        "label": null
+      },
+      {
+        "canyonId": 22083,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.95303,
+        "longitude": 13.259768,
+        "label": "fin de la clue, depart du sentier"
+      },
+      {
+        "canyonId": 22083,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 42.956062,
+        "longitude": 13.237903,
+        "label": "navette 55 km - pas necessaire"
+      },
+      {
+        "canyonId": 22083,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 42.951397,
+        "longitude": 13.288372,
+        "label": "navette longue, mais pas necessaire"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 42.956062,
+      "longitude": 13.237903,
+      "label": "navette 55 km - pas necessaire"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:50.065681+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22381,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22381/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22381/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22381/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22381/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22381,
+    "identity": {
+      "nom": "Masca",
+      "nomComplet": "Barranco de Masca",
+      "prefixeNom": "Barranco de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22381/Masca.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Canarias",
+      "departement": "Santa Cruz de Tenerife",
+      "communePrincipale": "Santiago del Teide",
+      "communes": [
+        "Santiago del Teide"
+      ],
+      "massif": "Los gigantes",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v1a1II",
+      "interet": 1.8,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 600,
+      "deniveleM": 600,
+      "longueurM": 4500,
+      "cascadeMaxM": null,
+      "cordeMiniM": null,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "10min",
+      "descente": "2h",
+      "retour": "2h30"
+    },
+    "topo": {
+      "accesAval": "sur la route touristique TF-436 entre Santiago-del-Teide et Buenavista-del-Norte (même route que Los Carrizales), s'arrêter sur un des parkings du hameau de Masca.\n\nDeux possibilités :\n\n- l'option \"sportifs\" en aller-retour\n\n- l'option \"touristes\" avec retour par bateau de la plage jusqu'au port de Los Gigantes et la navette en mini-bus par la route (à réserver à l'avance à Los Gigantes, approximativement 40€). Cette option permet également d'observer les superbes falaises de los Gigantes, et éventuellement les dauphins...",
+      "accesAmont": null,
+      "approche": "Depuis les parkings à touristes, traverser le village et suivre les panneaux pour la randonnée vers le fond du vallon. (10min du village au fond)",
+      "descente": "Durée \"touristes\" : 3h (d'après le panneau du village)\n\nDurée \"sportifs\" : 1h30\n\nRandonnée tranquille en chaussures de rando, bermudas et crème à bronzer, au fond d'un magnifique barranco, cerné de falaises de 400m de haut, jusqu'à la plage.\n\nQuelques vasques avec baignades rafraichissantes possibles.",
+      "retour": "Durée \"touristes\" : 4h30\n\nDurée \"sportifs\" : 2h15\n\nRetour par le chemin de l'aller\n\nIl y a bien sûr l'option \"touristes\" avec le bateau et le mini-bus...",
+      "engagement": "Faible (sec et large), mais aucune échappatoire.",
+      "periode": "Sec. Éviter l'été si on veut voir l'eau couler un peu.",
+      "geologie": "Roches volcaniques",
+      "historique": null,
+      "remarques": "Pourquoi les canyonistes ne feraient-ils pas de superbes randonnées à touristes, et pourquoi les touristes ne pourraient-ils pas parcourir des canyons? Un cours d'eau au fond d'une profonde entaille, n'est-ce-pas une définition correcte pour un canyon? Tant pis pour les obsédés du rappel, des sauts et des toboggans. Ils peuvent toujours aller prospecter les affluents...\n\nBon complément à la descente de Carrizales, si vous avez encore le temps et l'énergie."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22381,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 28.302143,
+        "longitude": -16.840902,
+        "label": null
+      },
+      {
+        "canyonId": 22381,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 28.288956,
+        "longitude": -16.862417,
+        "label": "plage de Masca"
+      },
+      {
+        "canyonId": 22381,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 28.305408,
+        "longitude": -16.839771,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 28.305408,
+      "longitude": -16.839771,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_2790882dc1db3fcd",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://j.garlenq.free.fr/spip.php?article5519",
+          "url": "http://j.garlenq.free.fr/spip.php?article5519"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,228 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:43:29.447868+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 210,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/210/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/210/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/210/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/210/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/210/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 210,
+    "identity": {
+      "nom": "Versoud (partie basse)",
+      "nomComplet": "Le Versoud (partie basse)",
+      "prefixeNom": "Le",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/210/Versoud-partie-basse.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Isère",
+      "communePrincipale": "La Rivière",
+      "communes": [
+        "La Rivière"
+      ],
+      "massif": "Vercors",
+      "bassin": "Isère",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a3III",
+      "interet": 2.7,
+      "nbVotes": 163
+    },
+    "metrics": {
+      "altitudeDepartM": 300,
+      "deniveleM": 80,
+      "longueurM": 400,
+      "cascadeMaxM": 15,
+      "cordeMiniM": 15,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15 à 20min",
+      "descente": "1h30",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "En venant de Saint-Quentin-sur-Isère, quitter la RN532 à gauche pour le Lignet. Longer ensuite le hameau en suivant le fléchage du parking canyon. On arrive à l'entrée d'une ancienne carrière où l'on prend à droite (accès interdit sauf canyonistes et services publics ; https://maps.app.goo.gl/akmqwvkqYkzvJUuH6 ).",
+      "accesAmont": null,
+      "approche": "Revenir sur ses pas à l'entrée de l'ancienne carrière et suivre le fléchage pour le canyon. On traverse le Versoud pour remonter en face le talus au niveau de l'ancienne scierie. Continuer le chemin fléché vers l'amont, en rive droite du canyon, sans traverser sur le vieux pont (aperçu sur les derniers ressauts). On arrive alors à l'ancien captage, début de la course.",
+      "descente": "De nombreuses petites cascades s’enchaînent. Quelques vasques permettent après les vérifications d'usage de jolis sauts dans un bel encaissement :\n\npremière cascade \"majeure\" du parcours qui saute à 9-10 mètres rive gauche\n\nseconde cascade \" majeure\" qui saute depuis la vasque suspendue (saut 13m) ou rive droite en remontant (sauts 4, 6, 8, 15-16 m ).\n\nCourt mais soutenu. Quelques mains courantes sont utiles à installer pour rejoindre les amarrages de tête de cascade.",
+      "retour": "On arrive à l'endroit où l'on avait traversé le canyon pendant la marche d'approche ; le parking est à 5 minutes.",
+      "engagement": "Il existe quelques échappatoires.",
+      "periode": "Attention à ne pas se faire surprendre par le débit variable dû au captage situé bien en amont du départ ! Le débit turbiné par la centrale est visible en temps réel sur un afficheur fixé sur le local transformateur, juste au-dessus de l’ancienne scierie.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Autre départ possible beaucoup plus haut, en-dessous de la route des Monts : long et encombré pour seulement 3 rappels en plus (version décrite dans le topo-guide \"Vercors et alentours\")"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 210,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.218716,
+        "longitude": 5.501103,
+        "label": "Départ de la partie finale (au niveau du captage)"
+      },
+      {
+        "canyonId": 210,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.220078,
+        "longitude": 5.500331,
+        "label": "petit sentier en rive droite"
+      },
+      {
+        "canyonId": 210,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.217091,
+        "longitude": 5.496835,
+        "label": "Parking obligatoire (interdit hors période autorisée du canyon)"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.217091,
+      "longitude": 5.496835,
+      "label": "Parking obligatoire (interdit hors période autorisée du canyon)"
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_774008f93c089927",
+          "kind": "TOPOGUIDE",
+          "title": "100 descentes de canyons autour de Grenoble",
+          "authors": [
+            "Arnaud Astier"
+          ],
+          "publicationYear": 2015,
+          "reference": "978-2-7466-7754-8",
+          "editor": "auto-édition",
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/194/100-Descentes-de-Canyons-autour-de-Grenoble.html"
+        },
+        {
+          "id": "biblio_e7d94bb2f47393ab",
+          "kind": "TOPOGUIDE",
+          "title": "Cascades, Gorges & Canyons : Pré-alpes d'Isère et de Savoie",
+          "authors": [
+            "Bertrand Hauser",
+            "Delphine Baratin"
+          ],
+          "publicationYear": 2007,
+          "reference": "978-2-9529407-0-2",
+          "editor": "Descente-Canyon.com",
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/11/Cascades--Gorges-et-Canyons-:-Pre-alpes-d-Isere-et-de-Savoie.html"
+        },
+        {
+          "id": "biblio_0f06b44eb9a42186",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons du Vercors et Alentours",
+          "authors": [
+            "J-C. Botti",
+            "B. Rosset",
+            "Y. Launay",
+            "C. Larribe",
+            "T. Larribe",
+            "Spéléo Club MJC de Tullins"
+          ],
+          "publicationYear": 1997,
+          "reference": "ISBN 2-7417-0211-X",
+          "editor": "Gap",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/12/topoguide.html"
+        },
+        {
+          "id": "biblio_e2259ea833d03cf8",
+          "kind": "TOPOGUIDE",
+          "title": "Infern'eaux",
+          "authors": [
+            "P. Boiron",
+            "J. Carles",
+            "J-M. Etienne",
+            "R. Vuillot"
+          ],
+          "publicationYear": 1990,
+          "reference": "ISBN 2-7038-0065-7",
+          "editor": "Didier et Richard",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/11/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_f71cf3569cd5f7fc",
+          "kind": "MAP",
+          "title": "3235 OT Autrans - Gorges de La Bourne (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 553,
+          "status": "Obsolète",
+          "action": "Réglemente",
+          "title": "Arrêté - 25 juil 2024",
+          "summary": "Suite à l'éboulement majeur survenu à la carrière du Lignet le 25/07/2024, le canyon du Versoud bas est très fortement déconseillé : parking officiel fermé, très peu de place de parking dans le hameau (accès difficile : déviations routières)",
+          "remark": "Parking de nouveau autorisé car situé en dehors du périmètre de sécurité de l'éboulement.",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.",
+          "effectiveDate": "29 août 2024",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/553/legislation.html",
+          "attachments": []
+        },
+        {
+          "id": 469,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté municipal (La Rivière) - 15 avr 2022",
+          "summary": "Un nouvel arrêté autorise désormais le canyon à compter du 15 avril 2022. La pratique est autorisée du 1er avril au 31 octobre.\n\nEn dehors de cette période, seules les actions de formations seront possibles, mais soumises à autorisation du maire.\n\nA noter que le parking est situé à l'ancienne carrière et réservé aux usagers du canyon. Le stationnement des camping-cars ou véhicules aménagés pour la nuit n'est pas autorisée.",
+          "remark": null,
+          "details": "Arrêté municipal n°022012 du 12 avril 2022 concernant la pratique du canyoning\n\nArrêté municipal n°022013 du 12 avril 2022 concernant le parking de l'ancienne carrière",
+          "effectiveDate": "15 avr 2022",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/469/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté municipal n°022012 du 12 avril 2022 concernant la pratique du canyoning",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem469_pj1.pdf"
+            },
+            {
+              "label": "Arrêté municipal n°022013 du 12 avril 2022 concernant le parking de l'ancienne carrière",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem469_pj2.pdf"
+            }
+          ]
+        },
+        {
+          "id": 394,
+          "status": "Abrogé",
+          "action": "Interdit",
+          "title": "Arrêté municipal (La Rivière) - 10 déc 2019",
+          "summary": "Suite à une tempête de neige lourde qui a déraciné des arbres qui risquent de tomber, le canyon a été interdit.\n\nL'arrêté a été abrogé par le nouvel arrêté n°022012 en date du 12 avril 2022.",
+          "remark": null,
+          "details": "Arrêté municipal (La Rivière) n°01938 du 10 décembre 2019",
+          "effectiveDate": "15 avr 2022",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/394/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté municipal (La Rivière) n°01938 du 10 décembre 2019",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem394_pj1.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

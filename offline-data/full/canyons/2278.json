@@ -1,0 +1,163 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:44:52.372727+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2278,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2278/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2278/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2278/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2278/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/2278/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 2278,
+    "identity": {
+      "nom": "Lanchatra",
+      "nomComplet": "Cascades de Lanchatra, Ruisseau de la Pisse",
+      "prefixeNom": "Cascades de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2278/Lanchatra.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Isère",
+      "communePrincipale": "Saint-Christophe-en-Oisans",
+      "communes": [
+        "Saint-Christophe-en-Oisans"
+      ],
+      "massif": "Ecrins - Oisans - Champsaur",
+      "bassin": "Romanche",
+      "coursEau": "Ruisseau de la Pisse"
+    },
+    "rating": {
+      "cotation": "v5a5III",
+      "interet": 2.8,
+      "nbVotes": 43
+    },
+    "metrics": {
+      "altitudeDepartM": 1450,
+      "deniveleM": 250,
+      "longueurM": 500,
+      "cascadeMaxM": 40,
+      "cordeMiniM": 50,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "35min",
+      "descente": "3-6h",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "Prendre la route de Saint-Christophe depuis Bourg-d'Oisans et se garer à l'auberge faisant face aux cascades.",
+      "accesAmont": null,
+      "approche": "Évidente en tracé mais vraiment raide, on ne compte plus les lacets après 15min de marche...",
+      "descente": "Relatif suivant debit... de 3h jusqu'à 5-6h si l'usage de rappels guidés, fractionnés sont obligatoires à chaque cascade.",
+      "retour": null,
+      "engagement": "Canyon dangereux en temps normal.\n\nLe débit d'étiage idéal et au mois de novembre. L'eau est alors très froide (prévoir l'équipement en fonction : chaussettes, gants 5 mm, combi 7 mm). Possibilité de voir l'avant-dernière vasque en remontant RD jusqu'au sapin. Équipement bon avec un goujon inox par relais (nov 06), mais les crues font le ménage.",
+      "periode": null,
+      "geologie": "Gneiss bien noir, du coup le sable dans les vasques l'est aussi attention pour l'évaluation de la profondeur....",
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2278,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.963055,
+        "longitude": 6.1475,
+        "label": null
+      },
+      {
+        "canyonId": 2278,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.966946,
+        "longitude": 6.153056,
+        "label": null
+      },
+      {
+        "canyonId": 2278,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.968334,
+        "longitude": 6.154167,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.968334,
+      "longitude": 6.154167,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_774008f93c089927",
+          "kind": "TOPOGUIDE",
+          "title": "100 descentes de canyons autour de Grenoble",
+          "authors": [
+            "Arnaud Astier"
+          ],
+          "publicationYear": 2015,
+          "reference": "978-2-7466-7754-8",
+          "editor": "auto-édition",
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/194/100-Descentes-de-Canyons-autour-de-Grenoble.html"
+        },
+        {
+          "id": "biblio_6b7865a698c28634",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons alpins : Le tour de l'Oisans en canyons",
+          "authors": [
+            "Alain Bach",
+            "Marc Brunello",
+            "Christian Chillet",
+            "Philippe Drouin"
+          ],
+          "publicationYear": 1992,
+          "reference": "ISBN 2-7417-0054-0",
+          "editor": "Gap",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/117/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_f06f3bbae647fab7",
+          "kind": "MAP",
+          "title": "3336 ET Les Deux Alpes - Parc des Ecrins (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 559,
+          "status": "Obsolète",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Isère) - 01 juil 2024",
+          "summary": "Suite aux dramatiques crues torrentielles de juin 2024, la D530 est fermée par arrêté préfectoral depuis le Clapier d'Auris ce qui condamne l'accès à la vallée du Vénéon, et donc l'accès à tous les canyons de la vallée (sauf riverains).\n\nDe plus, les crues ont pu causer de très gros dégâts et changements dans certains de ces canyons.",
+          "remark": "Réouverture de la route jusqu'à Saint-Christophe-en-Oisans (\"Ville\") depuis le 12/02/2025. Circulation réglementée au-delà.",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nArrêté préfectoral (Isère) n°38-2024-07 du 1er juillet 2024",
+          "effectiveDate": "12 fév 2025",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/559/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral (Isère) n°38-2024-07 du 1er juillet 2024",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem559_pj1.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

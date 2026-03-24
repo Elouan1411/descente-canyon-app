@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:59:14.997504+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24112,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24112/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24112/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24112/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24112/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24112,
+    "identity": {
+      "nom": "Urets",
+      "nomComplet": "Ruisseau d' Urets",
+      "prefixeNom": "Ruisseau d'",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24112/Urets.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Ariège",
+      "communePrincipale": "Sentein",
+      "communes": [
+        "Sentein"
+      ],
+      "massif": "Haut-Couserans",
+      "bassin": "Salat",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a3III",
+      "interet": 2.4,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 1260,
+      "deniveleM": 160,
+      "longueurM": 350,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "50min",
+      "descente": "2h00-2h30",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "Depuis Saint-Girons, prendre direction Castillon-en-Couserans puis suivre la D4 jusqu'à Sentein. Continuer vers Eylie et, avant le village, suivre la route puis la piste longeant le cours d'eau, jusqu'au parking, juste avant le pont (Bocard d'Eylie, terminus).",
+      "accesAmont": null,
+      "approche": "Du parking, traverser le pont et suivre la piste (15mn) jusqu'à une petite retenue d'eau (arrivée du canyon), traverser le pont puis suivre le sentier direction port d'Urets. D'abord dégagé puis rapidement en forêt, passer quelques lacets pour finalement se rapprocher du ruisseau. Une belle cascade est visible sur l'autre rive, puis un affluent. continuer quelques mètres et rejoindre le lit du ruisseau qui n'est maintenant qu'à une dizaine de mètres sur la gauche.",
+      "descente": "D'abord un ruisseau ouvert avec quelques ressauts, des désescalades et des grandes dalles nous emmène à une gorge qui se resserre et s'encaisse franchement. Les 2 premières cascades se présentent et, par gros débit, peuvent se montrer assez techniques. Ensuite, descente sur des grandes dalles, assez glissantes mais pas très verticales, alternant désescalades, rappels et petits toboggans. Vers la fin, de nombreux petits toboggans où l'attention est nécessaire, nous conduisent aux 2 dernières cascades, ouvertes, pouvant être contournées RG. Quelques mètres dans le lit du ruisseau nous ramènent à la petite retenue d'eau.",
+      "retour": "De la retenue d'eau, reprendre la piste de l'aller jusqu'au parking.",
+      "engagement": "Avant et après l'encaissement, avant les 2 derniers rappels.",
+      "periode": "Torrent de montagne, attention au débit. De juillet à octobre.",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24112,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.818546,
+        "longitude": 0.937507,
+        "label": null
+      },
+      {
+        "canyonId": 24112,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.824715,
+        "longitude": 0.933897,
+        "label": null
+      },
+      {
+        "canyonId": 24112,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 42.833988,
+        "longitude": 0.937749,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 42.833988,
+      "longitude": 0.937749,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_872fe3d6423900b2",
+          "kind": "MAP",
+          "title": "2047 OT Saint-Girons - Couserans (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

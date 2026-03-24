@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:08.121476+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23215,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23215/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23215/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23215/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23215/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23215,
+    "identity": {
+      "nom": "Saint-Géry",
+      "nomComplet": "Cascades de Saint-Géry, La Bonnette",
+      "prefixeNom": "Cascades de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23215/Saint-Gery.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Tarn-et-Garonne",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Causses du Quercy",
+      "bassin": "Aveyron",
+      "coursEau": "La Bonnette"
+    },
+    "rating": {
+      "cotation": "v2a2I",
+      "interet": 0.4,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 295,
+      "deniveleM": 40,
+      "longueurM": 400,
+      "cascadeMaxM": 10,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "45min",
+      "retour": "2min"
+    },
+    "topo": {
+      "accesAval": "Depuis Caylus prendre dans le village la D19 direction Lacapelle, Loze, Saint-Projet. A Loze, prendre à droite pour rentrer dans le village : vous arriverez alors en face l'église. Prendre à droite, sortez du village. Dans le premier virage en épingle, prendre la petite route tout droit qui descend dans la vallée.\n\nEn bas, tourner à gauche, passer devant la station de pompage. Se garer 100 m plus haut à droite (parking) où l'on voit la dernière cascade.",
+      "accesAmont": null,
+      "approche": "Remonter la route sur 400 m, elle surplombe le ruisseau. A hauteur d'une grange sur l'autre rive, descendre dans le ruisseau.",
+      "descente": "3 cascades (C3,C4,C10) entrecoupées de séries de ressauts.",
+      "retour": "Après la C10, continuer dans le lit du ruisseau 50 mètres et remarquer RD une sente qui remonte directement au parking.",
+      "engagement": "Peu engagé, il est facile de remonter sur la route en peu de temps.",
+      "periode": "Sec l'été, il perd alors le peu d'intérêt qu'il a car il est possible de désescalader les deux premiers obstacles.\n\nA faire après les pluies automnales et jusqu'à la fin du printemps.",
+      "geologie": "Tuf. Très fragile, peut se dérober parfois sous les pieds et être dangereux.",
+      "historique": "Peu fréquenté, mais il reste de vieilles sangles sur quelques arbres.Ouverture par Laurent Macary (brevet d'état canyoning) dans les années 90",
+      "remarques": "A faire absolument en eau voire même en crue, sinon il n'a plus aucun intérêt, déjà que c'est pas terrible.\n\nPas de vasques profondes, cadre sauvage."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23215,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.297466,
+        "longitude": 1.794645,
+        "label": null
+      },
+      {
+        "canyonId": 23215,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.294117,
+        "longitude": 1.79458,
+        "label": null
+      },
+      {
+        "canyonId": 23215,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.294853,
+        "longitude": 1.794108,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.294853,
+      "longitude": 1.794108,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_1ea801d51ed9da64",
+          "kind": "MAP",
+          "title": "2139E Limogne-en-Quercy (IGN Série Bleue)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

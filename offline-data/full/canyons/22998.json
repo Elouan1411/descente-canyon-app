@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:12.976237+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22998,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22998/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22998/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22998/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22998/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22998,
+    "identity": {
+      "nom": "Lac Blanc",
+      "nomComplet": "Cascades du Lac Blanc",
+      "prefixeNom": "Cascades du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22998/Lac-Blanc.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Haute-Savoie",
+      "communePrincipale": "Chamonix-Mont-Blanc",
+      "communes": [
+        "Chamonix-Mont-Blanc"
+      ],
+      "massif": "Chablais - Platé - Aiguilles Rouges",
+      "bassin": "Arve",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a2IV",
+      "interet": 2.8,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 2095,
+      "deniveleM": 120,
+      "longueurM": 250,
+      "cascadeMaxM": 40,
+      "cordeMiniM": 40,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h",
+      "descente": "2h",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": "Pour l'accès par le téléphérique de la Flégère, se rendre au village des Praz de Chamonix. Il est aussi possible de monter à pied : départ pour cette option d'Argentière (beaucoup plus long et fatigant).",
+      "accesAmont": null,
+      "approche": "De l'arrivée du téléphérique, suivre le sentier menant au Chalet des Chéserys (on passe devant les cascades). Au niveau du chalet, suivre le sentier indiquant \"Lac blanc bis\". Le sentier coupe le ruisseau au niveau d'un petit pont en bois.",
+      "descente": "Quelques ressauts au départs : R4, R2 (avec saut possible 1.5m), R2, R3, R3. S'ensuit une C27 (relais RD), R2, C28 (relais RG), C40 RG (attention au risque de coincement de corde), C10 RG. Le tout dans un cadre magnifique avec une vue superbe sur l'Aiguille Verte.",
+      "retour": "Retourner par le chemin d'approche au téléphérique de la Flégère. Pour les plus courageux, la descente à pied jusqu'à Argentière est très longue avec le matériel sur le dos.",
+      "engagement": "Canyon engagé, pas d'échappatoire.",
+      "periode": "Période optimale de juillet à septembre.",
+      "geologie": null,
+      "historique": "Première descente le 6 septembre 2013.",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22998,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.97913,
+        "longitude": 6.89735,
+        "label": null
+      },
+      {
+        "canyonId": 22998,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.977886,
+        "longitude": 6.899697,
+        "label": null
+      },
+      {
+        "canyonId": 22998,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.941463,
+        "longitude": 6.885508,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.941463,
+      "longitude": 6.885508,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_c3cfac38474f19c2",
+          "kind": "MAP",
+          "title": "3630 OT Chamonix - Mont-Blanc (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

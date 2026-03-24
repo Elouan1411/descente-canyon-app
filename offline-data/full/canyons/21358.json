@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:49:06.559173+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21358,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21358/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21358/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21358/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21358/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21358,
+    "identity": {
+      "nom": "Verrières",
+      "nomComplet": "Canyon de Verrières, Ruisseau des Pincelles",
+      "prefixeNom": "Canyon de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21358/Verrieres.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Aveyron",
+      "communePrincipale": "Verrières",
+      "communes": [
+        "Verrières"
+      ],
+      "massif": "Causse de Séverac",
+      "bassin": "Lumensonesque",
+      "coursEau": "Ruisseau des Pincelles"
+    },
+    "rating": {
+      "cotation": "v2a1II",
+      "interet": 1.8,
+      "nbVotes": 14
+    },
+    "metrics": {
+      "altitudeDepartM": 400,
+      "deniveleM": 50,
+      "longueurM": 300,
+      "cascadeMaxM": 8,
+      "cordeMiniM": 10,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "1h15",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "Depuis Millau, prendre la direction d'Aguessac, dépasser le village en direction de Sévérac-le-Château (par l'ancienne N9). Après 2km, prendre à droite en direction de Verrières, passer sous le viaduc de 150m de haut. Passer le village, et prendre une route qui descend, juste après le pont se garer.",
+      "accesAmont": null,
+      "approche": "Prendre un chemin qui part plein nord sur la droite et longe une propriété. Le suivre sur environ 1km. Il se met alors à monter raide. Juste avant un replat sur votre droite, passer dans le champ à droite jusqu'à l'entrée. On peut apercevoir le canyon sur la droite, bien caché car semi-souterrain au dernier virage avant le champ.",
+      "descente": "7 ou 8 rappels équipés, pas tous obligatoires selon les conditions ; mains courantes en place.\n\nUne descente courte mais originale car dans les tufs, et semi-souterraine. Quelques cascades s’enchaînent, la plus haute étant d'une petite dizaine de mètres.",
+      "retour": "Sortir rive droite après une petite vasque boueuse, contournable par la gauche, car assez profonde si pleine. Suivre le chemin emprunté pour l'approche.",
+      "engagement": "Faible.",
+      "periode": "Coule exceptionnellement après de gros orages, mais cela ne dure malheureusement pas longtemps.",
+      "geologie": "Tuf",
+      "historique": "Équipement par J.L. Maury et P. Raynaud dans les années 1980.",
+      "remarques": "Très sympa pour amener des enfants."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21358,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.216709,
+        "longitude": 3.05274,
+        "label": null
+      },
+      {
+        "canyonId": 21358,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.214714,
+        "longitude": 3.050953,
+        "label": null
+      },
+      {
+        "canyonId": 21358,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 44.20985,
+        "longitude": 3.048813,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.20985,
+      "longitude": 3.048813,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

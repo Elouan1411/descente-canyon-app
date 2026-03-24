@@ -1,0 +1,157 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:45:21.413766+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2399,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2399/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2399/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2399/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2399/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2399,
+    "identity": {
+      "nom": "Orgon",
+      "nomComplet": "Cascades d' Orgon, Coudoulous",
+      "prefixeNom": "Cascades d'",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2399/Orgon.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Gard",
+      "communePrincipale": "Mandagout",
+      "communes": [
+        "Mandagout"
+      ],
+      "massif": "Mont Aigoual",
+      "bassin": "Hérault",
+      "coursEau": "Coudoulous"
+    },
+    "rating": {
+      "cotation": "v3a3III",
+      "interet": 2.0,
+      "nbVotes": 32
+    },
+    "metrics": {
+      "altitudeDepartM": 1240,
+      "deniveleM": 550,
+      "longueurM": 2000,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 35,
+      "navette": "20.0km"
+    },
+    "timings": {
+      "approche": "2mn / 15mn",
+      "descente": "4-5 h",
+      "retour": "12mn / 1h2"
+    },
+    "topo": {
+      "accesAval": "Du Vigan, prendre la route du col du Minier. On franchit le Coudoulous sur un pont dans une épingle (navette bas). Plus haut, prendre à droite la route des cascades. Se garer sur le petit parking en haut de côte.\n\nVariante : un peu avant, parking évident au point côté 1212m.",
+      "accesAmont": null,
+      "approche": "1 : Départ de la passerelle.\n\n2 : Trouver le départ du sentier derrière le rail de sécurité et rejoindre le cours d'eau. On évite ainsi les 2 premiers rappels et surtout le caca-blocs qui fait suite, pour attaquer par le R28m.",
+      "descente": "Une série de cascades plus ou moins arrosées séparées par des portions fastidieuses dans les blocs. A signaler, en aval de l'affluent principal de l'Abéoradous, le toboggan d'Icare qui éjecte bien (remontée en RG) S5 possible.\n\nQuelques sauts de 2 à 6m.",
+      "retour": "Après la dernière cascade de 8m, continuer environ 200m et sortir en RG car la section jusqu'au pont n'a aucun intérêt. Soit descendre au pont d'arrivée, soit rejoindre en bartassant un peu le sentier qui monte aux anciennes mines. Dans ce cas, ne pas monter jusque sur le plateau, mais suivre le sentier qui se dirige vers le ruisseau et le traverse pour revenir à la route des Cascades.",
+      "engagement": "Limité car peu encaissé, mais s'échapper sera fastidieux.",
+      "periode": "A faire au printemps absolument, pour profiter des nombreux rappels arrosés et du tobbogan d'Icare qui éjecte bien par gros débit.",
+      "geologie": "Granit",
+      "historique": "Ré-équipé en partie par Frédo et Papic en Oct 07 et Avril 08 (goujons et plaquettes inox)",
+      "remarques": "Réputé pour les vols dans les voitures."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2399,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 44.054016,
+        "longitude": 3.579678,
+        "label": "passerelle de départ"
+      },
+      {
+        "canyonId": 2399,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 44.043411,
+        "longitude": 3.589547,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 44.054016,
+      "longitude": 3.579678,
+      "label": "passerelle de départ"
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_1ec3771dffe52076",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons de l'Aveyron et de la Lozère",
+          "authors": [
+            "Roland Pelissier",
+            "Frédéric Louart"
+          ],
+          "publicationYear": 1991,
+          "reference": null,
+          "editor": null,
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/123/topoguide.html"
+        },
+        {
+          "id": "biblio_f62b32e9659a6cea",
+          "kind": "TOPOGUIDE",
+          "title": "Gorges et Canyons en Languedoc Roussillon",
+          "authors": [
+            "Jean-Pierre Lucot et Richard Quintilla"
+          ],
+          "publicationYear": 1990,
+          "reference": "ISBN 2-85744-467-9",
+          "editor": "Édisud",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/124/topoguide.html"
+        },
+        {
+          "id": "biblio_6e9e54ca9d9a5053",
+          "kind": "TOPOGUIDE",
+          "title": "A la découverte des canyons",
+          "authors": [
+            "Francis de Richemond",
+            "Claude Chantemesse"
+          ],
+          "publicationYear": 1988,
+          "reference": "ISBN : 2903696209",
+          "editor": "Les Editions du Pélican",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/154/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_fb5949b340608cd9",
+          "kind": "MAP",
+          "title": "2641 ET Mont-Aigoual (Le Vigan) (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_1d7febbd2a7e2cf1",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://clementdom.free.fr/html/orgon.htm",
+          "url": "http://clementdom.free.fr/html/orgon.htm"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

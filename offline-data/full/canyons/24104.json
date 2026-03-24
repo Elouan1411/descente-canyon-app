@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:59:13.232768+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24104,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24104/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24104/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24104/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24104/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24104,
+    "identity": {
+      "nom": "Raja",
+      "nomComplet": "Barranco de la Raja, Rambla Blanca",
+      "prefixeNom": "Barranco de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24104/Raja.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Andalucía",
+      "departement": "Provincia de Granada",
+      "communePrincipale": "Villanueva de las Torres",
+      "communes": [
+        "Villanueva de las Torres"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.0,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 801,
+      "deniveleM": 93,
+      "longueurM": 450,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "45min",
+      "retour": "5minou 25m"
+    },
+    "topo": {
+      "accesAval": "Depuis Hernan Valle, prendre la route GR610 1 en direction de Banos de Alicun, Villanueva.\n\nJuste avant d’arriver à Alicun, se garer à gauche de la route. On peut mettre une voiture au pont d’arrivée, mais il n’y a que 1,1 km de route entre les deux.",
+      "accesAmont": null,
+      "approche": "Depuis le parking, gagner le départ évident de la gorge.",
+      "descente": "Canyon très court, mais très beau et encaissé, dans une roche blanche joliment sculptée. Normalement sec. Il y a de l’eau dans les vasques au pied des rappels, mais elles ne sont jamais très profondes. On termine la descente avec une courte section thermale avec de l’eau à 38°C\n\n4m, 5m, 15m, 12m, 10m, main courante pour arriver à la C25.\n\nPar un rappel de 7m sous le pont, on arrive dans la courte partie thermale.",
+      "retour": "Sortir en RG quand la gorge s’ouvre.\n\nRetour: 5min avec navette\n\nRetour: 25min sans navette",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24104,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 37.505615,
+        "longitude": -3.108206,
+        "label": null
+      },
+      {
+        "canyonId": 24104,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 37.506218,
+        "longitude": -3.106594,
+        "label": null
+      },
+      {
+        "canyonId": 24104,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 37.505913,
+        "longitude": -3.109764,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 37.506218,
+      "longitude": -3.106594,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

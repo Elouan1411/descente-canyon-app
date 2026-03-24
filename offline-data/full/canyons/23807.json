@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:10.473872+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23807,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23807/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23807/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23807/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23807/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23807,
+    "identity": {
+      "nom": "Sfonderat",
+      "nomComplet": "Rio Sfonderat",
+      "prefixeNom": "Rio",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23807/Sfonderat.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Frioul-Vénétie julienne",
+      "departement": "Udine",
+      "communePrincipale": "Dogna",
+      "communes": [
+        "Dogna"
+      ],
+      "massif": "Alpes Juliennes",
+      "bassin": "Fella",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a3IV",
+      "interet": 2.7,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 850,
+      "deniveleM": 310,
+      "longueurM": 1300,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 35,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "2h",
+      "descente": "3h",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": "03.08.2013 Georg Buol, Thomas Prettner, Anna Mayer",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23807,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.437599,
+        "longitude": 13.36922,
+        "label": null
+      },
+      {
+        "canyonId": 23807,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.446209,
+        "longitude": 13.36476,
+        "label": null
+      },
+      {
+        "canyonId": 23807,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.449165,
+        "longitude": 13.357274,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.449165,
+      "longitude": 13.357274,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

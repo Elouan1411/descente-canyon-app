@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:05.250686+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23202,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23202/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23202/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23202/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23202/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23202,
+    "identity": {
+      "nom": "Forest",
+      "nomComplet": "Torrent du Forest",
+      "prefixeNom": "Torrent du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23202/Forest.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Hautes-Alpes",
+      "communePrincipale": "Champoléon",
+      "communes": [
+        "Champoléon"
+      ],
+      "massif": "Ecrins - Oisans - Champsaur",
+      "bassin": "Drac",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a2III",
+      "interet": 2.5,
+      "nbVotes": 10
+    },
+    "metrics": {
+      "altitudeDepartM": 1660,
+      "deniveleM": 255,
+      "longueurM": 600,
+      "cascadeMaxM": 45,
+      "cordeMiniM": 50,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "55min",
+      "descente": "2h30",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "De Gap prendre la N85 en direction de Grenoble puis la D944 vers le col de Manse. 4km après Pont-du-Fossé, prendre à gauche la D944a. Passer Les Eyrauds, Les Martins et Les Gubias pour prendre la piste à droite juste après avoir franchi le pont qui enjambe le Méollion. Suivre cette piste, qui n'est pas très bonne, sur 450m jusqu'au parking (petit pré).",
+      "accesAmont": null,
+      "approche": "Suivre le sentier du Méollion et 90m après avoir quitter la piste prendre le sentier qui s'élève à gauche par le Poas. Passer le torrent de Champets qui se compose de deux vallons et continuer de monter en laissant la sente partant à droite après Champets. Le départ de la descente se situe sur le prochain vallon qui comporte moins d'eau.",
+      "descente": "Descente de cascades sculptées dans les strates de grès.",
+      "retour": "Sortir à droite et suivre le sentier jusqu'au parking.",
+      "engagement": "Moyen, plusieurs échappatoires possibles rive gauche.",
+      "periode": "A faire absolument à la fonte des neiges ou après plusieurs jours de pluies pour que les conditions soient bonnes.",
+      "geologie": "Grès.",
+      "historique": "Casge05.",
+      "remarques": "Parcours montagne, prévoir du matériel de rééquipement au cas où !"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23202,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.722664,
+        "longitude": 6.277471,
+        "label": null
+      },
+      {
+        "canyonId": 23202,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.718296,
+        "longitude": 6.27583,
+        "label": null
+      },
+      {
+        "canyonId": 23202,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.717571,
+        "longitude": 6.265064,
+        "label": null
+      },
+      {
+        "canyonId": 23202,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 44.719215,
+        "longitude": 6.268867,
+        "label": "Sentier d'approche"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.717571,
+      "longitude": 6.265064,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_b0e951331c704682",
+          "kind": "MAP",
+          "title": "3437 OT Champsaur - Parc des Ecrins (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,149 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:13.951894+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21933,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21933/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21933/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21933/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21933/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21933,
+    "identity": {
+      "nom": "Charminelle",
+      "nomComplet": "Ruisseau de Charminelle",
+      "prefixeNom": "Ruisseau de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21933/Charminelle.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Isère",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Chartreuse",
+      "bassin": "Isère",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a1III",
+      "interet": 2.1,
+      "nbVotes": 14
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": null,
+      "longueurM": 250,
+      "cascadeMaxM": 32,
+      "cordeMiniM": 35,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h/1h15",
+      "descente": "1h",
+      "retour": "45min"
+    },
+    "topo": {
+      "accesAval": "Du centre ville de Voreppe, suivre la petite route qui longe au départ la Roize et conduit au monastère de Chalais. Se garer sur le parking de randonnée surplombant le monastère.",
+      "accesAmont": null,
+      "approche": "Du parking, emprunter la piste forestière interdite à la circulation jusqu'à la cabane forestière de la Roize. De-là, trois possibilités :\n\n1) Descendre le sentier en direction de la prairie de Charminelle, traverser la Roize et remonter en face en rive gauche du ruisseau de Charminelle. Cette option plus fatigante permet d'observer pendant l'approche la dernière cascade de Charminelle ainsi que le débit de la Roize. Le sentier coupe ensuite le ruisseau au niveau de l'entrée intermédiaire, début du véritable encaissement. On peut continuer à monter une dizaine de minutes si l'on veut descendre les deux premières cascades peu intéressantes.\n\n2) ou bien continuer la piste forestière puis un sentier pour arriver (plus long mais certainement moins fatigant, non testé) au niveau des premières cascades.\n\n3) soit réaliser d'abord la descente du saut de la Nonne, affluent de la Roize (cf. fiche)",
+      "descente": "Deux cascades peu intéressantes précèdent un mignon petit encaissement se terminant par une belle cascade d'une trentaine de mètres se jetant dans la Roize.",
+      "retour": "Remonter la Roize (deux petits ressauts à escalader) jusqu'à retrouver le chemin qui la coupe. L'emprunter en rive gauche de la Roize pour remonter jusqu'à la cabane forestière puis le parking.",
+      "engagement": "Pas échappatoire évidente dans l'encaissement",
+      "periode": "Canyon à faire au printemps ou après des pluies. Attention au débit de la Roize qu'il faudra remonter au retour (escalade de deux ressauts) et traverser.",
+      "geologie": null,
+      "historique": "Première descente inconnue.",
+      "remarques": "Le sentier de retour (et éventuellement d'approche, selon l'option choisie) est très dangereux en cas de présence de neige et/ou glace. Toute glissade sur la portion surplombant la Roize aurait évidemment des conséquences dramatiques."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21933,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.304333,
+        "longitude": 5.687861,
+        "label": "Entrée intermédiaire (début de l'encaissement)"
+      },
+      {
+        "canyonId": 21933,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.303082,
+        "longitude": 5.687556,
+        "label": null
+      },
+      {
+        "canyonId": 21933,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.292442,
+        "longitude": 5.677056,
+        "label": null
+      },
+      {
+        "canyonId": 21933,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 45.299694,
+        "longitude": 5.682167,
+        "label": "Abri forestier de la Roize"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.292442,
+      "longitude": 5.677056,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_774008f93c089927",
+          "kind": "TOPOGUIDE",
+          "title": "100 descentes de canyons autour de Grenoble",
+          "authors": [
+            "Arnaud Astier"
+          ],
+          "publicationYear": 2015,
+          "reference": "978-2-7466-7754-8",
+          "editor": "auto-édition",
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/194/100-Descentes-de-Canyons-autour-de-Grenoble.html"
+        },
+        {
+          "id": "biblio_e7d94bb2f47393ab",
+          "kind": "TOPOGUIDE",
+          "title": "Cascades, Gorges & Canyons : Pré-alpes d'Isère et de Savoie",
+          "authors": [
+            "Bertrand Hauser",
+            "Delphine Baratin"
+          ],
+          "publicationYear": 2007,
+          "reference": "978-2-9529407-0-2",
+          "editor": "Descente-Canyon.com",
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/11/Cascades--Gorges-et-Canyons-:-Pre-alpes-d-Isere-et-de-Savoie.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_bf7324fa2ae1510e",
+          "kind": "MAP",
+          "title": "3334 OT Massif de la Chartreuse Sud (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:59:09.063399+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24085,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24085/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24085/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24085/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24085/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24085,
+    "identity": {
+      "nom": "Séveraissette",
+      "nomComplet": "Torrent de la Séveraissette",
+      "prefixeNom": "Torrent de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24085/Severaissette.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Hautes-Alpes",
+      "communePrincipale": "Aubessagne",
+      "communes": [
+        "Saint-Bonnet-en-Champsaur",
+        "Aubessagne"
+      ],
+      "massif": "Ecrins - Oisans - Champsaur",
+      "bassin": "Drac",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a3II",
+      "interet": 1.1,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 970,
+      "deniveleM": 20,
+      "longueurM": 150,
+      "cascadeMaxM": 4,
+      "cordeMiniM": 4,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "40min",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "De Saint-Bonnet-en-Champsaur, prendre la D23 en direction de La Motte-en-Champsaur. Rouler quelques kilomètres, puis tourner à gauche, en prenant la petite route menant sur Le Villard-Saint-Pierre. Faites environ 500m et garez-vous non loin du départ d'une piste (panneau GR).",
+      "accesAmont": null,
+      "approche": "Suivre la piste et passer les hangars agricoles ainsi qu'un champ pour les vaches clôturé de barbelés. Au petit ru, prendre à droite et rejoindre la rivière par un champ en prenant direction sur une partie rocheuse bien visible nommée \"Souchières\" sur l'IGN.",
+      "descente": "Randonnée aquatique improbable, se situant dans un court et étroit encaissement, agrémentée d'un rappel de 4m sur anneau de corde en RG vers le départ de la course et de deux petits sauts.",
+      "retour": "Sortir de suite en RG après l'encaissement. Monter au mieux la courte pente terreuse, puis rejoindre un champ après une courte montée sous couvert forestier.\n\nSuivre la piste pour rejoindre votre véhicule.",
+      "engagement": "Court encaissement.",
+      "periode": "A faire à l'étiage pour éviter tout mouvement d'eau (drossages).",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Pour finir une bonne journée, si vous êtes de passage dans le coin.\n\nEquipement: Terrain d'aventure."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24085,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.710274,
+        "longitude": 6.057029,
+        "label": null
+      },
+      {
+        "canyonId": 24085,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.709595,
+        "longitude": 6.056932,
+        "label": null
+      },
+      {
+        "canyonId": 24085,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.714474,
+        "longitude": 6.057994,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.714474,
+      "longitude": 6.057994,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_b0e951331c704682",
+          "kind": "MAP",
+          "title": "3437 OT Champsaur - Parc des Ecrins (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:49:47.003146+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21533,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21533/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21533/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21533/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21533/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/21533/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 21533,
+    "identity": {
+      "nom": "Xanas",
+      "nomComplet": "Desfiladero de las Xanas",
+      "prefixeNom": "Desfiladero de las",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21533/Xanas.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Asturias",
+      "departement": "Provincia de Asturias",
+      "communePrincipale": "Proaza",
+      "communes": [
+        "Proaza"
+      ],
+      "massif": null,
+      "bassin": "Río Trubia",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "",
+      "interet": 200.0,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": 200,
+      "longueurM": 1000,
+      "cascadeMaxM": null,
+      "cordeMiniM": null,
+      "navette": null
+    },
+    "timings": {
+      "approche": null,
+      "descente": null,
+      "retour": null
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21533,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.267738,
+        "longitude": -5.980682,
+        "label": null
+      },
+      {
+        "canyonId": 21533,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.273987,
+        "longitude": -5.993299,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 43.267738,
+      "longitude": -5.980682,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_5db75ff5d957a4d1",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://es.geocities.com/barranquismospain/xanas.html",
+          "url": "http://es.geocities.com/barranquismospain/xanas.html"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 128,
+          "status": "Indéfini",
+          "action": "Interdit",
+          "title": "Arrêté",
+          "summary": null,
+          "remark": null,
+          "details": null,
+          "effectiveDate": null,
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/128/legislation.html",
+          "attachments": []
+        }
+      ]
+    }
+  }
+}

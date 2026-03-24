@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:54:26.750720+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22808,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22808/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22808/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22808/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22808/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22808,
+    "identity": {
+      "nom": "Bomino",
+      "nomComplet": "Valle di Bomino",
+      "prefixeNom": "Valle di",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22808/Bomino.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Lombardia",
+      "departement": "Sondrio",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a3II",
+      "interet": null,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": 1290,
+      "deniveleM": 190,
+      "longueurM": 900,
+      "cascadeMaxM": 24,
+      "cordeMiniM": null,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h",
+      "descente": "4h",
+      "retour": "gn"
+    },
+    "topo": {
+      "accesAval": "Monter en voiture en direction de Gerola Alta, dans la vallée du même nom.\n\nPeu avant le village, tourner à droite pour atteindre le hameau de Nasoncio où il faut se garer.",
+      "accesAmont": null,
+      "approche": "Du hameau, monter en direction du départ.",
+      "descente": "Parcours facile dans une belle ambiance montagnarde.\n\n12 rappels.",
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22808,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.077515,
+        "longitude": 9.540708,
+        "label": null
+      },
+      {
+        "canyonId": 22808,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.077793,
+        "longitude": 9.551214,
+        "label": null
+      },
+      {
+        "canyonId": 22808,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 46.076073,
+        "longitude": 9.540417,
+        "label": null
+      },
+      {
+        "canyonId": 22808,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.074944,
+        "longitude": 9.554007,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 46.076073,
+      "longitude": 9.540417,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,159 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:45:42.633686+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2490,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2490/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2490/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2490/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2490/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2490,
+    "identity": {
+      "nom": "Serarges",
+      "nomComplet": "Cascades de Serarges, Nant de Sérarges",
+      "prefixeNom": "Cascades de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2490/Serarges.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Savoie",
+      "communePrincipale": "Méry",
+      "communes": [
+        "Méry"
+      ],
+      "massif": "Bauges",
+      "bassin": null,
+      "coursEau": "Nant de Sérarges"
+    },
+    "rating": {
+      "cotation": "v4a1II",
+      "interet": 1.9,
+      "nbVotes": 13
+    },
+    "metrics": {
+      "altitudeDepartM": 890,
+      "deniveleM": null,
+      "longueurM": null,
+      "cascadeMaxM": 75,
+      "cordeMiniM": 55,
+      "navette": "10.0km"
+    },
+    "timings": {
+      "approche": "50min",
+      "descente": "3h",
+      "retour": "15 à 20min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": "Navette jusqu'à Pragondant (De Serarges, reprendre Mery centre puis la D211 ensuite ne pas rater la petite route à gauche qui par un defilé etroit rejoint Verel puis Pragondran, se garer aprés le hameau.), ou montée par le sentier du Malpassant (depuis Mery).",
+      "approche": "Depuis Pragondant, suivre à pied la piste qui monte. Ensuite il sera difficile de trouver les cascades sans une bonne carte ! A chaque bifurquation, prendre toujours le chemin de droite. La difficulté sera de trouver la bonne ravine pour descendre car il n'y a pas de repére évident, \"pomatoire\" (attention de choisir la bonne car celle d'avant débouche sur une falaise) ! A l’aide des applications avec les cartes et point GPS il est plus facile de trouver la bonne ravine, attention c’est glissant ! Ne pas s’inquiéter si il n’y a pas d’eau au départ du sentier, elle apparaît plus bas via dés résurgences sous les herbes.",
+      "descente": "Enchainement de verticales séches sans encaissement, équipement ok (décembre 2023).\n\nLe plus gros cassé fait 32m + 55m avec une vue splendide et une belle ambiance.",
+      "retour": "Un sentier evident RG nous ramène à Serarge",
+      "engagement": "Trés engagés jusqu'au bas de la C75 moins ensuite. Une fois la 1ere cascade franchie, il ne semble pas y avoir d’échappatoire avant un bon moment.",
+      "periode": "Très peu d'eau. A ne faire qu'après une période de pluie.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "L’approche sans navette est longue via le Malpassant (environ 1h45).\n\nMérite le détour après de grosses pluies, ne pas traîner"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2490,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.649166,
+        "longitude": 5.957778,
+        "label": null
+      },
+      {
+        "canyonId": 2490,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.649445,
+        "longitude": 5.953333,
+        "label": null
+      },
+      {
+        "canyonId": 2490,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 45.62389,
+        "longitude": 5.951389,
+        "label": null
+      },
+      {
+        "canyonId": 2490,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 45.650833,
+        "longitude": 5.943611,
+        "label": null
+      },
+      {
+        "canyonId": 2490,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.641945,
+        "longitude": 5.939722,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 45.62389,
+      "longitude": 5.951389,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_da30219dbb4dd176",
+          "kind": "TOPOGUIDE",
+          "title": "Les canyons de Savoie",
+          "authors": [
+            "Patrick Chollot"
+          ],
+          "publicationYear": 2018,
+          "reference": "978-2-95309-39-1-9",
+          "editor": "auto-édition",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/1125/Les-canyons-de-Savoie.html"
+        },
+        {
+          "id": "biblio_e7d94bb2f47393ab",
+          "kind": "TOPOGUIDE",
+          "title": "Cascades, Gorges & Canyons : Pré-alpes d'Isère et de Savoie",
+          "authors": [
+            "Bertrand Hauser",
+            "Delphine Baratin"
+          ],
+          "publicationYear": 2007,
+          "reference": "978-2-9529407-0-2",
+          "editor": "Descente-Canyon.com",
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/11/Cascades--Gorges-et-Canyons-:-Pre-alpes-d-Isere-et-de-Savoie.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_d523e63abd5ebd0d",
+          "kind": "MAP",
+          "title": "3332 OT Chambéry (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

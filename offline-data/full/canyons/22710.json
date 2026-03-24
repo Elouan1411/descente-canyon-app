@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:54:02.983698+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22710,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22710/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22710/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22710/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22710/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22710,
+    "identity": {
+      "nom": "Pissette",
+      "nomComplet": "La Pissette",
+      "prefixeNom": "La",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22710/Pissette.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Hautes-Alpes",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 1.3,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1220,
+      "deniveleM": 40,
+      "longueurM": 100,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 25,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "30min",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "De l'Argentiere la Bessée prendre la D994E en direction de Vallouise. Dans \"Vallouise La casse\" prendre à gauche la D4 vers Puy Saint Vincent. Faire environ 600m et prendre à droite le D504 juste avant d'attaquer les lacets qui montent à la station. Se garer sur un vaste parking juste avant le pont qui enjambe l'Onde.",
+      "accesAmont": null,
+      "approche": "Du parking prendre le sentier qui remonte l'Onde par la RD. Après environ 400m le sentier se transforme en piste (au niveau d'un pont), poursuivre en RD. 400m environ plus loin la piste passe sur la passerelle de la pissette. Immédiatement après cette passerelle prendre le sentier (panneau cascade de la pissette) qui monte RG. on atteint rapidement le bas de la cascade, poursuivre sur le sentier qui monte toujours en RG. Après s’être élevé au dessus de la cascade quitter le sentier et longer le petit encaissement. Rentrer dans le canyon au début de l'encaissement.",
+      "descente": "3 petits ressauts avant d'arriver à la C20 en goulotte.",
+      "retour": "Même itinéraire qu'à l'aller.",
+      "engagement": "canyon très court peu engagé.",
+      "periode": "En eau toute l'année, parfois trop au printemps et en glace l'hiver.",
+      "geologie": null,
+      "historique": "Parcouru en initiation par les glacieristes l'hiver.",
+      "remarques": "Canyon non équipé, se débrouiller avec les AN."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22710,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.838028,
+        "longitude": 6.477281,
+        "label": null
+      },
+      {
+        "canyonId": 22710,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.8395,
+        "longitude": 6.485659,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.8395,
+      "longitude": 6.485659,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_2893447c6d6073b6",
+          "kind": "MAP",
+          "title": "3436 ET Meije - Pelvoux - Parc des Ecrins (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

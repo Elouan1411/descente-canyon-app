@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:54:07.380912+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22728,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22728/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22728/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22728/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22728/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22728,
+    "identity": {
+      "nom": "Erganos",
+      "nomComplet": "Canyon de Erganos",
+      "prefixeNom": "Canyon de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22728/Erganos.html"
+    },
+    "location": {
+      "pays": "Grèce",
+      "region": "Crete",
+      "departement": "Heraklion",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Oros Dikti",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.1,
+      "nbVotes": 5
+    },
+    "metrics": {
+      "altitudeDepartM": 920,
+      "deniveleM": 320,
+      "longueurM": 4000,
+      "cascadeMaxM": null,
+      "cordeMiniM": 9,
+      "navette": "5.0km"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "2h30",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22728,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 35.089039,
+        "longitude": 25.4366,
+        "label": null
+      },
+      {
+        "canyonId": 22728,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 35.091244,
+        "longitude": 25.439068,
+        "label": null
+      },
+      {
+        "canyonId": 22728,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 35.093155,
+        "longitude": 25.414902,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 35.091244,
+      "longitude": 25.439068,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_ca8f719b909427c3",
+          "kind": "MAP",
+          "title": "Eastern Crete (Road editions)",
+          "scale": "1/100000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

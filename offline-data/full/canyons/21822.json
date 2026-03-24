@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:51.258443+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21822,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21822/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21822/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21822/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21822/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21822,
+    "identity": {
+      "nom": "Gimbach",
+      "nomComplet": "Cascades de Gimbach, Gimbach",
+      "prefixeNom": "Cascades de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21822/Gimbach.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Haute-Autriche",
+      "departement": "Gmunden",
+      "communePrincipale": "Bad Ischl",
+      "communes": [
+        "Weißenbach am Attersee",
+        "Bad Ischl"
+      ],
+      "massif": "Höllengebirge",
+      "bassin": "Attersee",
+      "coursEau": "Gimbach"
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 1.5,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 540,
+      "deniveleM": 20,
+      "longueurM": 300,
+      "cascadeMaxM": 3,
+      "cordeMiniM": null,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "25min",
+      "descente": "50min",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": "aquatique",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21822,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.790981,
+        "longitude": 13.59026,
+        "label": null
+      },
+      {
+        "canyonId": 21822,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.786114,
+        "longitude": 13.5882,
+        "label": null
+      },
+      {
+        "canyonId": 21822,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.785538,
+        "longitude": 13.586826,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.785538,
+      "longitude": 13.586826,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_50aebf6034244587",
+          "kind": "MAP",
+          "title": "66 Gmunden (ÖK 50)",
+          "scale": "1:50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_e65cd93fd99c86b9",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cgi-bin/redirect.....action=detailed_desc",
+          "url": "http://canyon.carto.net/cgi-bin/redirect.....action=detailed_desc"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

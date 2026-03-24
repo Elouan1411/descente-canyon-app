@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-03-24T09:42:46.716944+00:00",
+  "counts": {
+    "canyons": 3,
+    "geoPoints": 12,
+    "bibliographyEntries": 15,
+    "canyonBibliographyLinks": 15,
+    "regulationTexts": 2,
+    "canyonRegulations": 2
+  },
+  "files": {
+    "searchIndex": "search-index.json",
+    "bibliographyEntries": "bibliography-entries.json",
+    "canyonBibliographyLinks": "canyon-bibliography-links.json",
+    "regulationTexts": "regulation-texts.json",
+    "canyonRegulations": "canyon-regulations.json",
+    "canyonDetailShards": [
+      {
+        "path": "canyon-details-0001.json",
+        "count": 3
+      }
+    ],
+    "geoPointShards": [
+      {
+        "path": "geo-points-0001.json",
+        "count": 12
+      }
+    ]
+  }
+}

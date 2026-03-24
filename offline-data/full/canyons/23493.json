@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:59.772610+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23493,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23493/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23493/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23493/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23493/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23493,
+    "identity": {
+      "nom": "Weissenbach",
+      "nomComplet": "Weissenbach, Gottschewer Klamm",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23493/Weissenbach.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Tyrol",
+      "departement": "Politischer Bezirk Schwaz",
+      "communePrincipale": "Eben am Achensee",
+      "communes": [
+        "Eben am Achensee"
+      ],
+      "massif": "Karwendel",
+      "bassin": "Inn",
+      "coursEau": "Weissenbach"
+    },
+    "rating": {
+      "cotation": "v3a2III",
+      "interet": 2.4,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 975,
+      "deniveleM": 90,
+      "longueurM": 110,
+      "cascadeMaxM": 26,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "10min",
+      "descente": "1h",
+      "retour": "25min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23493,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.4151,
+        "longitude": 11.738972,
+        "label": null
+      },
+      {
+        "canyonId": 23493,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.415264,
+        "longitude": 11.740475,
+        "label": null
+      },
+      {
+        "canyonId": 23493,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.418118,
+        "longitude": 11.741177,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.418118,
+      "longitude": 11.741177,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_b92e1be774787dcb",
+          "kind": "MAP",
+          "title": "5/3 Karwendel, Östliches Blatt (Alpenvereins (AV) Karte)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

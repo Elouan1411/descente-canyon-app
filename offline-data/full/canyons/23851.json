@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:19.979831+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23851,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23851/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23851/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23851/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23851/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23851,
+    "identity": {
+      "nom": "Faule-Wand-Tal",
+      "nomComplet": "Faule-Wand-Tal",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23851/Faule-Wand-Tal.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Tyrol",
+      "departement": "Politischer Bezirk Reutte",
+      "communePrincipale": "Hinterhornbach",
+      "communes": [
+        "Hinterhornbach"
+      ],
+      "massif": "Allgäuer Alpen",
+      "bassin": "Lech",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": null,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": 1530,
+      "deniveleM": 355,
+      "longueurM": 900,
+      "cascadeMaxM": 55,
+      "cordeMiniM": 60,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h30min",
+      "descente": "4h30min",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": "Première descente réalisée le 30.09.1993 par Jean-Philippe Cavalier, Cathy Caullier, Olivier Courtois",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23851,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.337139,
+        "longitude": 10.42268,
+        "label": null
+      },
+      {
+        "canyonId": 23851,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.343651,
+        "longitude": 10.4225,
+        "label": null
+      },
+      {
+        "canyonId": 23851,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.357819,
+        "longitude": 10.449532,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.357819,
+      "longitude": 10.449532,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_975c78953190e02c",
+          "kind": "MAP",
+          "title": "2/2 Allgäuer-Lechtaler Alpen Ost (Alpenvereins (AV) Karte)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_84411fba474268c6",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.aventurecanyon.com/faulewandtal-description.html",
+          "url": "http://www.aventurecanyon.com/faulewandtal-description.html"
+        },
+        {
+          "id": "resource_d01f078388bfcc37",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/C.....s/FauleWandTalCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/C.....s/FauleWandTalCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

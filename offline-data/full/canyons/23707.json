@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:48.040141+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23707,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23707/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23707/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23707/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23707/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23707,
+    "identity": {
+      "nom": "Choungui",
+      "nomComplet": "Ravin du Choungui, Mroni Antanana",
+      "prefixeNom": "Ravin du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23707/Choungui.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Kani-Kéli",
+      "departement": "Mayotte",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Mont Choungui",
+      "bassin": "Mroni Antanana",
+      "coursEau": "Mroni Antanana"
+    },
+    "rating": {
+      "cotation": "v2a1I",
+      "interet": 2.3,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 160,
+      "deniveleM": 70,
+      "longueurM": 500,
+      "cascadeMaxM": 11,
+      "cordeMiniM": 11,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "20min",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "Du village de Choungui, prendre la route se dirigeant vers le sud-ouest, puis aux deux croisements tourner à chaque fois à gauche. Arrivé sous le stade, prendre la petite route goudronnée qui descend sur la droite, et la suivre jusqu'à son terminus.",
+      "accesAmont": null,
+      "approche": "Du bout de la route, rejoindre rapidement le ruisseau par une petite sente, et le descendre jusqu'à la première cascade.",
+      "descente": "Une cascade de 11m pas si mal, puis un ressaut, et enfin une cascade de 5m. Relais sur arbres, rien en place.",
+      "retour": "Juste avant la C5, un sentier traverse le ruisseau : il est marqué sur la carte IGN et passe par Choungui Keli. Le remonter en rive droite, jusqu'à la route d'accès.",
+      "engagement": "Aucun engagement, tout peut s'éviter.",
+      "periode": "Saison des pluies pour l'avoir en eau.",
+      "geologie": "Phonolites.",
+      "historique": "Ouvert le 14 mai 2016 par Alexandre Darrioulat.",
+      "remarques": "Une bouse mahoraise. Pour affamés de canyons sur une île qui en comporte bien peu."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23707,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": -12.96716,
+        "longitude": 45.134083,
+        "label": null
+      },
+      {
+        "canyonId": 23707,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": -12.969669,
+        "longitude": 45.133076,
+        "label": null
+      },
+      {
+        "canyonId": 23707,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": -12.966355,
+        "longitude": 45.133762,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": -12.966355,
+      "longitude": 45.133762,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_79384aa359aec3d8",
+          "kind": "MAP",
+          "title": "4410S Sada / Mayotte Sud (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:49:32.451603+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21473,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21473/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21473/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21473/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21473/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21473,
+    "identity": {
+      "nom": "Pissa (médian)",
+      "nomComplet": "Ravine Pissa (médian), Pissa",
+      "prefixeNom": "Ravine",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21473/Pissa-median.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Cilaos",
+      "departement": "La Réunion",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Cilaos",
+      "bassin": "Bras Rouge",
+      "coursEau": "Pissa"
+    },
+    "rating": {
+      "cotation": "v3a1I",
+      "interet": 0.8,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 1500,
+      "deniveleM": 300,
+      "longueurM": 500,
+      "cascadeMaxM": 50,
+      "cordeMiniM": 55,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "40min",
+      "descente": "2h",
+      "retour": "??"
+    },
+    "topo": {
+      "accesAval": "De CILAOS, prendre la direction de l'îlet à cordes par la D242. Aller jusqu'au pont qui enjambe \"BRAS ROUGE\" et se garer là.\n\nLe pont de Ravine Pissa, se trouve 200m avant celui qui enjambe Bras Rouge.",
+      "accesAmont": null,
+      "approche": "Remonter tantôt par la rive droite, tantôt par la rive gauche les dalles qui mènent au pieds de la cascade Pissa. Quelques spits permettent de poser des mains courantes sur les dalles délicates à franchir ou glissantes. Arrivée au pied de la cascade Pissa, rejoindre le fil de l’eau pour trouver le 1er amarrage.",
+      "descente": "Une fois aux pieds de la C90, un premier rappel de 32m en RG sur un gros bloc permet de commencer la descente. Un second en RD de 37m enchaîne directement. Par la suite, tout se passe en RG (50 + 24 + 20 + 32 + 39 + 41).\n\nTous ces rappel se font sur dalles inclinées. On pourrait presque les descendre sans cordes. C'est en fait un très bon exercice pour la découverte du rappel.",
+      "retour": "On arrive directement au pont de la D242, tout près de la voiture.",
+      "engagement": "Néant.\n\nPas d'encaissement, pas de grandes verticales. Ce ne sont que des pans inclinés parfois glissants.",
+      "periode": "Un filet d'eau. Lors de gros orages, on voit tout de suite de la route si on peut s'y aventurer. (La marche d'approche se fait le long des rives pas du tout encaissées, pratiquement dans le cours d'eau)",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Ce canyon, sert de sortie à PISSA \"supérieur\" ou d'initiation aux rappels.\n\nAttention aux chutes de pierres lors de pluies."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21473,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": -21.114721,
+        "longitude": 55.460556,
+        "label": null
+      },
+      {
+        "canyonId": 21473,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": -21.115833,
+        "longitude": 55.457779,
+        "label": null
+      },
+      {
+        "canyonId": 21473,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": -21.115278,
+        "longitude": 55.4575,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": -21.115278,
+      "longitude": 55.4575,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_b239997245dc5eb0",
+          "kind": "MAP",
+          "title": "4405RT Saint-Pierre (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_462ef6278cbe0021",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.lrc-ffs.fr/Topos/Accueil/Cany.....esentationcanyon.htm",
+          "url": "http://www.lrc-ffs.fr/Topos/Accueil/Cany.....esentationcanyon.htm"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

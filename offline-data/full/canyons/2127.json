@@ -1,0 +1,279 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:44:09.081939+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2127,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2127/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2127/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2127/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2127/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/2127/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 2127,
+    "identity": {
+      "nom": "Pont du Diable",
+      "nomComplet": "Le Pont du Diable, Ruisseau de Bellecombe",
+      "prefixeNom": "Le",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2127/Pont-du-Diable.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Savoie",
+      "communePrincipale": "Bellecombe-en-Bauges",
+      "communes": [
+        "Lescheraines",
+        "Bellecombe-en-Bauges"
+      ],
+      "massif": "Bauges",
+      "bassin": "Fier",
+      "coursEau": "Ruisseau de Bellecombe"
+    },
+    "rating": {
+      "cotation": "v4a3III",
+      "interet": 3.1,
+      "nbVotes": 131
+    },
+    "metrics": {
+      "altitudeDepartM": 640,
+      "deniveleM": 50,
+      "longueurM": 200,
+      "cascadeMaxM": 10,
+      "cordeMiniM": 11,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "10min",
+      "descente": "1h30",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "Sur le D912 en direction du col de Leschaux, se garer au niveau de l'intersection de Bellecombe-en-Bauges.",
+      "accesAmont": null,
+      "approche": "Descendre le chemin carrossable qui mène au pont (pancarte). Le franchir et remonter quelques mètres en amont pour accéder au lit du ruisseau.",
+      "descente": "Court, très encaissé, très aquatique, il se compose de rappels, sauts éventuels, passages sportifs en main courante, nages. Il ne faut pas espérer y voir beaucoup le soleil !",
+      "retour": "Une sortie rive droite permet de rejoindre le pont du Diable.",
+      "engagement": "Très important",
+      "periode": "Le canyon est déséquipé des mains courantes fixes de septembre à fin mai. Il faut donc savoir poser des MC rappelables.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Ne s'engager qu'avec un débit peu important (plusieurs morts par noyade !)."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2127,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.727741,
+        "longitude": 6.108055,
+        "label": null
+      },
+      {
+        "canyonId": 2127,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.726219,
+        "longitude": 6.109074,
+        "label": null
+      },
+      {
+        "canyonId": 2127,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.731018,
+        "longitude": 6.109428,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.731018,
+      "longitude": 6.109428,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_da30219dbb4dd176",
+          "kind": "TOPOGUIDE",
+          "title": "Les canyons de Savoie",
+          "authors": [
+            "Patrick Chollot"
+          ],
+          "publicationYear": 2018,
+          "reference": "978-2-95309-39-1-9",
+          "editor": "auto-édition",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/1125/Les-canyons-de-Savoie.html"
+        },
+        {
+          "id": "biblio_1101377ae261f2cb",
+          "kind": "TOPOGUIDE",
+          "title": "Activités verticales en Bauges",
+          "authors": [],
+          "publicationYear": 2014,
+          "reference": "978-2-9538878-8-4",
+          "editor": "Parc naturel régional du massif des Bauges",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1285/topoguide.html"
+        },
+        {
+          "id": "biblio_e7d94bb2f47393ab",
+          "kind": "TOPOGUIDE",
+          "title": "Cascades, Gorges & Canyons : Pré-alpes d'Isère et de Savoie",
+          "authors": [
+            "Bertrand Hauser",
+            "Delphine Baratin"
+          ],
+          "publicationYear": 2007,
+          "reference": "978-2-9529407-0-2",
+          "editor": "Descente-Canyon.com",
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/11/Cascades--Gorges-et-Canyons-:-Pre-alpes-d-Isere-et-de-Savoie.html"
+        },
+        {
+          "id": "biblio_6d273ae41f72e178",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons de Savoie",
+          "authors": [
+            "F. Martin",
+            "C. Altazin"
+          ],
+          "publicationYear": 2007,
+          "reference": "978-2-9528935-0-3",
+          "editor": null,
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/15/Descentes-de-canyons-en-Savoie.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_24c652994d6d1609",
+          "kind": "MAP",
+          "title": "3432 OT Massif des Bauges (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 574,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté - 06 fév 2025",
+          "summary": "- La pratique du canyonisme dans le canyon de Pont du Diable (Nant de Bellecombe) est autorisée du 1er avril au 31 octobre de 9h à 19h (heure d'entrée dans le canyon) à 20h30 (heure maximale de sortie du canyon). Le nombre souhaité de pratiquants est de 8 personnes et ne peut excéder 10 personnes, encadrement non compris.\n\n- La pratique du canyonisme dans le Nant de Glapigny (ou canyon du Pont d'Entrêves), les gorges de la Charniaz (ou Chéran amont) et le canyon du Reposoir (Nant de Bellecombe, partie amont) est autorisée toute l'année. Le nombre de pratiquants ne peut excéder 12 personnes, encadrement non compris.",
+          "remark": null,
+          "details": "Arrêté municipal (Bellecombe-en-Bauges) n°2025-02 du 6 février 2025",
+          "effectiveDate": "06 fév 2025",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/574/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté municipal (Bellecombe-en-Bauges) n°2025-02 du 6 février 2025",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem574_pj1.pdf"
+            }
+          ]
+        },
+        {
+          "id": 492,
+          "status": "Obsolète",
+          "action": "Interdit",
+          "title": "Arrêté municipal (Bellecombe-en-Bauges) - 06 sept 2022",
+          "summary": "En raison de travaux routiers, l'accès au Nant de Glapigny (amont du canyon du Pont du Diable) est interdit du 06 septembre au 14 octobre 2022.",
+          "remark": null,
+          "details": "Arrêté municipal (Bellecombe-en-Bauges) du 29 août 2022",
+          "effectiveDate": "14 oct 2022",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/492/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté municipal (Bellecombe-en-Bauges) du 29 août 2022",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem492_pj1.pdf"
+            }
+          ]
+        },
+        {
+          "id": 489,
+          "status": "Abrogé",
+          "action": "Interdit",
+          "title": "Arrêté municipal (Bellecombe-en-Bauges) - 06 août 2022",
+          "summary": "Suite aux orages du 05 août 2022 et la crue dévastatrice qui a généré d'énormes embâcles, le canyon est interdit jusqu'à sa remise en état.",
+          "remark": "Arrêté municipal abrogé par un nouvel arrêté daté du 10 mai 2023.",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nConsultez :\n\nArrêté municipal (Bellecombe en Bauges) du 06 août 2022\n\nArrêté municipal d'abrogation (Bellecombe en Bauges) du 10 mai 2023",
+          "effectiveDate": "09 mai 2023",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/489/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté municipal d'abrogation (Bellecombe en Bauges) du 10 mai 2023",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem489_pj2.pdf"
+            }
+          ]
+        },
+        {
+          "id": 445,
+          "status": "Abrogé",
+          "action": "Réglemente",
+          "title": "Arrêté municipal (Bellecombe-en-Bauges) - 01 sept 2021",
+          "summary": "- La pratique du canyonisme dans le canyon de Pont du Diable (Nant de Bellecombe) est autorisée du 1er avril au 31 octobre de 9h à 19h (heures d'entrée dans le canyon). Le nombre souhaité de pratiquants est de 8 personnes et ne peut excéder 10 personnes, encadrement non compris.\n\n- La pratique du canyonisme dans le Nant de Glapigny (ou canyon du Pont d'Entrêves), les gorges de la Charniaz (ou Chéran amont) et le canyon du Reposoir (Nant de Bellecombe, partie amont) est autorisée toute l'année. Le nombre de pratiquants ne peut excéder 12 personnes, encadrement non compris.",
+          "remark": "Arrêté abrogé par le nouvel arrêté municipal n°2025-02 du 6 février 2025",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nArrêté municipal (Bellecombe-en-Bauges) du 1 septembre 2021",
+          "effectiveDate": "06 fév 2025",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/445/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté municipal (Bellecombe-en-Bauges) du 1 septembre 2021",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem445_pj1.pdf"
+            }
+          ]
+        },
+        {
+          "id": 198,
+          "status": "Abrogé",
+          "action": "Interdit",
+          "title": "Arrêté municipal (Lescheraines) - 15 sept 2009",
+          "summary": "Des arbres tombés en travers de la gorge avait provoqué un premier arrêté municipal d'interdiction. Pendant le nettoyage du canyon, un fayard de grande taille s'est abattu sur le pont, endommageant le parapet et l'assise de l'ouvrage. Des pierres risquant de se déloger du pont endommagé un nouvel arrêté a été pris pour renouveler l'interdiction d'accéder au site, valable jusqu'au 15 septembre. Au 15 septembre un nouvel arrêté prolongeant le précédant en vue des travaux de restauration du pont a été pris. Il prolonge l'interdiction jusqu'au 15 octobre 2009.",
+          "remark": null,
+          "details": "Consultez :\n\nArrêté municipal n°25-2009 du 15 septembre 2009, prolongeant l'arrêté n°22-2009 du 21 juillet 2009",
+          "effectiveDate": "15 sept 2009",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/198/legislation.html",
+          "attachments": []
+        },
+        {
+          "id": 184,
+          "status": "Obsolète",
+          "action": "Interdit",
+          "title": "Arrêté municipal (Bellecombe en Bauges) - 21 juil 2009",
+          "summary": "Des arbres tombés en travers de la gorge avait provoqué un premier arrêté municipal d'interdiction. Pendant le nettoyage du canyon, un fayard de grande taille s'est abattu sur le pont, endommageant le parapet et l'assise de l'ouvrage. Des pierres risquant de se déloger du pont endommagé risquent de chuter dans le canyon. Du coup un nouvel arrêté a été pris pour renouveller l'interdiction d'accéder au site, pour cette raison !\n\nLe nettoyage du site a été effectué conformément au cahier des charges, malheureusement, le site est toujours impraticable. Il a été demandé à la mairie de voir s'il n'est pas possible de sécuriser provisoirement le site (filet de protection sous le pont....) en attendant que le pont soit réparé.",
+          "remark": null,
+          "details": "Arrêté municipal (Bellecombe en Bauges) du 21 juillet 2009",
+          "effectiveDate": "15 sept 2009",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/184/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté municipal (Bellecombe en Bauges) du 21 juillet 2009",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem184_pj1.pdf"
+            }
+          ]
+        },
+        {
+          "id": 180,
+          "status": "Abrogé",
+          "action": "Interdit",
+          "title": "Arrêté municipal (Bellecombe en Bauges) - 28 mai 2009",
+          "summary": "Des arbres sont tombés et d'autres menacent de tomber dans le canyon. Des travaux seraient prévus prochainement pour remédier à la situation...\n\nEn attendant le canyon est interdit.",
+          "remark": null,
+          "details": "Consultez le\n\ntexte (ou extrait)\n\nCANYON DU PONT DU DIABLE : RUISSEAU DE BELLECOMBE\n\nARRETE D’INTERDICTION DE LA PRATIQUE DU CANYONISME\n\nLe Maire de la commune de Lescheraines ;\n\nVu le code général des collectivités territoriales et notamment ses articles L 2212-1, L 2212-2,L 2212-4 et suivants concernant les pouvoirs de police du maire ;\n\nConsidérant qu’en raison de sa situation, de sa nature et de sa configuration, le ruisseau de Bellecombe et ses abords sont adaptés à la pratique du canyonisme,\n\nConsidérant que le canyon dénommé canyon du pont du diable est régulièrement fréquenté par des personnes pratiquant le canyonisme,\n\nConsidérant qu’il a été constaté que des arbres ont été déracinés et se trouvent en équilibre instable en diverses parties du canyon,\n\nConsidérant que certains arbres ont chuté et créent des embâcles dans le cours d’eau,\n\nConsidérant que l’état actuel du canyon constitue un réel danger pour les usagers,\n\nConsidérant qu’il appartient à l’autorité municipale de prendre toutes dispositions relatives à la sécurité des personnes,\n\nARRETE :\n\nArticle 1er : A compter du 29 mai 2009, la pratique du canyonisme dans le ruisseau de Bellecombe (canyon du pont du diable) est interdite.\n\nArticle 2 : Les infractions au présent arrêté municipal seront constatées par procès-verbaux et poursuivis conformément à la législation en vigueur.\n\nArticle 3 : Le Maire de Lescheraines est chargé de l'exécution du présent arrêté. Cet arrêté sera notifié à Monsieur le Préfet de la Savoie, Monsieur le Chef de la Brigade de Gendarmerie du Châtelard. Il sera affiché sur le site et en Mairie.\n\nFait à Lescheraines, le 28 mai 2009\n\nLe Maire,\n\nMichel LE PAVEC",
+          "effectiveDate": "28 mai 2009",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/180/legislation.html",
+          "attachments": []
+        }
+      ]
+    }
+  }
+}

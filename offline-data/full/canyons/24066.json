@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:59:04.193146+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24066,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24066/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24066/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24066/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24066/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24066,
+    "identity": {
+      "nom": "Hoyo",
+      "nomComplet": "Barranco del Hoyo, Barranco Bijagua, Barranco de Abejones, Barranco de Piedra Bermeja",
+      "prefixeNom": "Barranco del",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24066/Hoyo.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Canarias",
+      "departement": "Santa Cruz de Tenerife",
+      "communePrincipale": "Arico",
+      "communes": [
+        "Granadilla de Abona",
+        "Arico"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": "Barranco de Piedra Bermeja"
+    },
+    "rating": {
+      "cotation": "v3a1III",
+      "interet": 2.1,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 295,
+      "deniveleM": 75,
+      "longueurM": 1600,
+      "cascadeMaxM": 15,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "3min",
+      "descente": "??",
+      "retour": "20/30min"
+    },
+    "topo": {
+      "accesAval": "Sortir de l'autoroute TF-1 à la sortie Tajao et prendre la route qui monte en direction de La Cisnera. Se garer à droite de la route après avoir fait environ 4,1 km (réservoir d'eau + pylône électrique à proxilmité, coordonnées UTM/WGS84 28 R 353331 3114571, altitude 323m).",
+      "accesAmont": null,
+      "approche": "Du parking, marcher 100m sur la route vers l'amont et prendre à droite le bout de piste qui descend vers le barranco. Descendre dans le lit (départ coordonnées UTM/WGS84 28 R 353222 3114933 altitude 295m) pour arriver au premier rappel (ne pas prendre la sente RG cairnée qui doit servir aux grimpeurs pour arriver aux voies équipées dans le canyon).",
+      "descente": "5 rappels esthétiques. Canyon peu continu. Le point fort de la descente est l'arrivée dans \"la cathédrale\", salle quasi-souterraine. Fin de la descente aux coordonnées UTM/WGS84 28 R 353741 3113940, altitude 218m.",
+      "retour": "Après la cathédrale, remonter par une sente en rive droite (cairns avec de la peinture blanche) qui serpente dans les anciennes terrasses. On débouche près de propriétés agricoles (suivre toujours les cairns blancs) puis à la route.",
+      "engagement": "Plusieurs voies d'escalade équipées dans le canyon, on doit pouvoir en sortir...",
+      "periode": "Quasi-sec toute l'année",
+      "geologie": null,
+      "historique": null,
+      "remarques": "- Ce barranco est la section aval de Barranco de Piedra Bermeja (lui aussi décrit dans le topo-guide \"35 descentes de canyons à Tenerife\", combinaison possible dans la journée)\n\n- En 2018, sur les cartes en ligne OSM il est nommé \"Barranco de Bijagua o de Abejones\" tandis que sur les IGN c'est bien \"Barranco de Piedra Bermeja\""
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24066,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 28.151901,
+        "longitude": -16.494827,
+        "label": null
+      },
+      {
+        "canyonId": 24066,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 28.142998,
+        "longitude": -16.48942,
+        "label": null
+      },
+      {
+        "canyonId": 24066,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 28.148647,
+        "longitude": -16.493673,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 28.148647,
+      "longitude": -16.493673,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

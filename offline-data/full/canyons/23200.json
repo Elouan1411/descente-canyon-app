@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:04.872541+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23200,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23200/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23200/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23200/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23200/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23200,
+    "identity": {
+      "nom": "Klammenbachl",
+      "nomComplet": "Klammenbachl",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23200/Klammenbachl.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Tyrol",
+      "departement": "Imst",
+      "communePrincipale": "Tarrenz",
+      "communes": [
+        "Tarrenz"
+      ],
+      "massif": null,
+      "bassin": "Gurglbach",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1III",
+      "interet": 2.2,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 1320,
+      "deniveleM": 505,
+      "longueurM": 1000,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 30,
+      "navette": "6.0km"
+    },
+    "timings": {
+      "approche": "1h30 à 2h",
+      "descente": "3h30 à 4h",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": "D'Imst, se rendre à Dollinger en direction du Fernpass. Continuer sur 1,35 km. Se garer au niveau du pont à droite (sortie du canyon).",
+      "accesAmont": null,
+      "approche": "1h30 pour la partie aval sans navette ou 2min avec navette.\n\nAvec navette: retourner à Dollinger puis à Tarrenz. Prendre la direction de Obtarrenz puis Glöck. Continuer sur la piste jusqu'au canyon.\n\nSans navette: longer la route jusqu'à Dollinger. A la croix en bordure de route, prendre le chemin (pancarte) qui monte raide jusqu'au parc à Lama. Longer les prés jusqu'à croiser une route en terre. Suivre cette route en direction du NE jusqu'au canyon.\n\n2h pour la partie haute sans navette ou 2min avec navette.\n\nSans navette: même chemin que pour la partie basse. Au canyon, remonter en RG au mieux jusqu'au pont.\n\nAvec navette: ??",
+      "descente": "Partie haute: pour l'initiation des enfants. Aucun encaissement. C20 max. Equipement sur goujon.\n\nPartie basse: C25 max. 26 cascades. Equipement sur goujon. 2 très belles C25 au départ de l'encaissement. Pas de toboggan ou de saut.",
+      "retour": "Traverser la route.",
+      "engagement": "Partie médiane de la partie basse, encaissement sans échappatoire (C25, C25, C10, C14, C12, C9, C8).",
+      "periode": "Peu aquatique.",
+      "geologie": null,
+      "historique": "??",
+      "remarques": "Attention aux MC vieillissantes."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23200,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.288734,
+        "longitude": 10.800626,
+        "label": "Départ partie haute"
+      },
+      {
+        "canyonId": 23200,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.287163,
+        "longitude": 10.803458,
+        "label": "Partie basse"
+      },
+      {
+        "canyonId": 23200,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.282738,
+        "longitude": 10.808522,
+        "label": null
+      },
+      {
+        "canyonId": 23200,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 47.287106,
+        "longitude": 10.803029,
+        "label": "Partie basse du canyon"
+      },
+      {
+        "canyonId": 23200,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 47.289085,
+        "longitude": 10.800111,
+        "label": "Partie haute du canyon"
+      },
+      {
+        "canyonId": 23200,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 47.282562,
+        "longitude": 10.808522,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 47.287106,
+      "longitude": 10.803029,
+      "label": "Partie basse du canyon"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:37.470572+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23929,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23929/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23929/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23929/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23929/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23929,
+    "identity": {
+      "nom": "Pustertallaine",
+      "nomComplet": "Pustertallaine",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23929/Pustertallaine.html"
+    },
+    "location": {
+      "pays": "Allemagne",
+      "region": "Bayern",
+      "departement": "Oberbayern",
+      "communePrincipale": "Eschenlohe",
+      "communes": [
+        "Landkreis Garmisch-Partenkirchen",
+        "Eschenlohe"
+      ],
+      "massif": "Estergebirge",
+      "bassin": "Loisach",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2III",
+      "interet": 1.4,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1010,
+      "deniveleM": 160,
+      "longueurM": 850,
+      "cascadeMaxM": 15,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h30min",
+      "descente": "1h30min",
+      "retour": "1h05min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "Possible de combiner avec Untere Kessellaine, Gachentodklamm et Asamklamm"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23929,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.57209,
+        "longitude": 11.227665,
+        "label": null
+      },
+      {
+        "canyonId": 23929,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.577023,
+        "longitude": 11.235859,
+        "label": null
+      },
+      {
+        "canyonId": 23929,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.591396,
+        "longitude": 11.205241,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.591396,
+      "longitude": 11.205241,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

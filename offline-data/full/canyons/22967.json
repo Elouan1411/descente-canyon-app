@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:05.799180+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22967,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22967/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22967/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22967/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22967/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22967,
+    "identity": {
+      "nom": "La Parloire",
+      "nomComplet": "La Parloire",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22967/La-Parloire.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Bouches-du-Rhône",
+      "communePrincipale": "Allauch",
+      "communes": [
+        "Allauch"
+      ],
+      "massif": "garlaban",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1II",
+      "interet": 0.5,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 487,
+      "deniveleM": 120,
+      "longueurM": 600,
+      "cascadeMaxM": 18,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h00",
+      "descente": "1h30",
+      "retour": "45min"
+    },
+    "topo": {
+      "accesAval": "D'Allauch,se rendre au logis neuf,puis prendre à droite par la D908 \"avenue Etienne Cucca\" jusqu'à La Fève. Par la suite, juste avant de sortir de La Fève, prendre à droite puis à gauche \"chemin Maurin\" et \"Vallon de l'Oule\" jusqu'au terminus. Garez-vous sans gêner.",
+      "accesAmont": null,
+      "approche": "Suivre le vallon de l'Oule, en passant devant une mine \"fenêtre des Maurins\". Lorsque la route forme un coude,prendre la piste de droite et la suivre (vallon de l'Oule). 350 m après (point 263 sur l'IGN), l'on laisse la piste qui s'élève au niveau d'un coude pour le sentier de gauche qui suit le font du vallon de l'Oule. Faire 950 m au fond du vallon de l'Oule pour se rendre au point 316 de l'IGN. De là un sentier s'élève sur votre gauche (attention,celui-ci n'apparaît pas sur l'IGN) et vous emmène au sommet du vallon au point 425 de l'IGN. Une fois en haut, récupérer le sentier partant à droite (ne surtout pas prendre la piste). Ce sentier (PR) au marquage jaune au sol s'élève un petit moment et passe dans un sous bois, tourne à droite et se stabilise. Prendre alors le sentier descendant à droite (cairn) passant dans un premier temps devant le départ de \"Barre Coupée\" puis,vous emmènera par la suite au départ de \"La Parloire\". Point 487 sur l'IGN.",
+      "descente": "C18 avec point sur un rocher. Passer à travers les broussaille en RG pour tomber sur une C4 sur AN. Deux désescalades suivent et vous emmènent sur une C7 avec un point en RG après un peu de marche. C3 avec une lunule et désescalade d'une C5 un peu inclinée. Marche et quelques petites désescalades pour arriver a un mini-encaissement avec une C3 un point en RG, puis s'en suit une C3 sur AN avec vasque à la réception. L'on passe une autre vasque pour le T4 final sur AN.",
+      "retour": "Suivre le font du vallon de l'Oule jusqu'au parking.",
+      "engagement": "Quelques échappatoires mais la garrigue est assez dense .",
+      "periode": "Après de grosses pluies, peut-être en eau...",
+      "geologie": null,
+      "historique": "Max38 et ALAIN 13",
+      "remarques": "La végétation pousse assez rapidement. Munissez-vous d'un instrument pour couper les broussailles. Parcours pour les marcassins niveau II."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22967,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.350773,
+        "longitude": 5.532045,
+        "label": null
+      },
+      {
+        "canyonId": 22967,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.355644,
+        "longitude": 5.525192,
+        "label": null
+      },
+      {
+        "canyonId": 22967,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.363815,
+        "longitude": 5.509171,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.363815,
+      "longitude": 5.509171,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_c55008676d4d8829",
+          "kind": "MAP",
+          "title": "3245 ET Aubagne - La Ciotat (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

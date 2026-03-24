@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:59:01.567934+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24054,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24054/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24054/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24054/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24054/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24054,
+    "identity": {
+      "nom": "Aubrié",
+      "nomComplet": "Combe de l' Aubrié",
+      "prefixeNom": "Combe de l'",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24054/Aubrie.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Hautes-Alpes",
+      "communePrincipale": "Réallon",
+      "communes": [
+        "Réallon"
+      ],
+      "massif": null,
+      "bassin": "Durance",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1II",
+      "interet": 1.7,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 1410,
+      "deniveleM": 160,
+      "longueurM": 250,
+      "cascadeMaxM": 27,
+      "cordeMiniM": 35,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h00",
+      "descente": "1h30",
+      "retour": "35min"
+    },
+    "topo": {
+      "accesAval": "De Chorges, emprunter la D9 en direction de Réallon. Passer St-Apollinaire ainsi que le pont qui enjambe le torrent de Réallon. Sur Les Méans, prendre à droite sur la direction d'Embrun (D9). Au passage du pont du torrent de Reyssas, faire 700 m et se garer au départ d'une piste sur votre gauche.",
+      "accesAmont": null,
+      "approche": "Emprunter la piste à pied et la suivre jusqu'à l'altitude 1460 m (carrefour de pistes et passage du canal sur l'IGN). Dés lors, prendre à gauche et rejoindre 300 mètres plus loin la combe de l'Aubrié que l'on descendra jusqu'au premier obstacle.",
+      "descente": "Désescalade de la première C5 ou rappel sur AN, D2, C6 sur 1 pt en Rg, C4+C8 (R2x18 m) sur 1pt sur bloc en Rd, Pi11 sur 1pt en Rg, marche, Pi6+C6 (R2x15m) sur 1pt en Rd, C4+Pi12+C8 (R2x26m) sur AN avec anneau de corde en Rd, D4, C27 sur AN avec anneau de corde, marche, C12 sur AN en Rg .",
+      "retour": "Descendre le torrent de Reyssas et sortir par un sentier en RD sur le dernier virage du torrent (100 m avant le pont de la D9). Une fois sur la route, rejoindre votre véhicule.",
+      "engagement": "Aucun",
+      "periode": "A faire au printemps, après la fonte, pour un débit optimal.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Prévoir le nécessaire pour équiper..."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24054,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.585381,
+        "longitude": 6.405248,
+        "label": null
+      },
+      {
+        "canyonId": 24054,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.586369,
+        "longitude": 6.402469,
+        "label": null
+      },
+      {
+        "canyonId": 24054,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.578438,
+        "longitude": 6.398746,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.578438,
+      "longitude": 6.398746,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_83f652e7e3fab667",
+          "kind": "MAP",
+          "title": "3438 ET Embrun (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

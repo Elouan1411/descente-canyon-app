@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:53.353904+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22114,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22114/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22114/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22114/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22114/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22114,
+    "identity": {
+      "nom": "Kammersbach",
+      "nomComplet": "Kammersbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22114/Kammersbach.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Salzbourg",
+      "departement": "Politischer Bezirk Salzburg-Umgebung",
+      "communePrincipale": "Strobl",
+      "communes": [
+        "Strobl"
+      ],
+      "massif": "Salzkammergut",
+      "bassin": "Ischl",
+      "coursEau": "Kammersbach"
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.0,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1070,
+      "deniveleM": 280,
+      "longueurM": 1600,
+      "cascadeMaxM": 40,
+      "cordeMiniM": 45,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h20min",
+      "descente": "4h30min",
+      "retour": "40min"
+    },
+    "topo": {
+      "accesAval": "De Bad Ischl, prendre la direction de Salzburg par la route 158. Au niveau de Strobl, prendre la direction de Postalm. Attention, il s'agit d'une route à péage; il vous en coûtera 5€ (en 2009) par personne, et valable une seule journée! Dans la première épingle, laisser la voiture.",
+      "accesAmont": null,
+      "approche": "La piste vers le sud est interdite à la circulation. Suivre cette piste sur 3 km (traverser le Rußbach et le Kammersbach trois fois). Après la troisieme, pont au-dessus du barrage, prendre la piste á droite, suivre sur 350m et de nouveau la piste á droite jusqu'á la fin(150m).\n\nMaintenant suivre la sente vers sud et vers le-haut (50m), prendre le sentier et poursuivre jusqu'á fin de la vallée et descendre au ruisseau.",
+      "descente": null,
+      "retour": "Sortie au premier ou deuxieme pont (au-dessus ou au-dessous du barrage) et suivre la piste retour",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22114,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.638969,
+        "longitude": 13.474742,
+        "label": null
+      },
+      {
+        "canyonId": 22114,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.652473,
+        "longitude": 13.465472,
+        "label": "si continuer après le barrage"
+      },
+      {
+        "canyonId": 22114,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.672424,
+        "longitude": 13.460162,
+        "label": "prochaine parking"
+      },
+      {
+        "canyonId": 22114,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.670372,
+        "longitude": 13.460773,
+        "label": "Départ de l'approche"
+      },
+      {
+        "canyonId": 22114,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.647064,
+        "longitude": 13.472028,
+        "label": "Départ de la sente"
+      },
+      {
+        "canyonId": 22114,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.648743,
+        "longitude": 13.470826,
+        "label": "Sortie avant le barrage"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.672424,
+      "longitude": 13.460162,
+      "label": "prochaine parking"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

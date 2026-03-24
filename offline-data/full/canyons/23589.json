@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:21.147605+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23589,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23589/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23589/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23589/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23589/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23589,
+    "identity": {
+      "nom": "Ülltobel",
+      "nomComplet": "Ülltobel, Tüfelskuchi, Üll",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23589/Ulltobel.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Malans",
+      "departement": "Graubünden/Grigioni/Grischun",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Rätikon",
+      "bassin": "Rhein",
+      "coursEau": "Üll"
+    },
+    "rating": {
+      "cotation": "v5a3IV",
+      "interet": 1.6,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1210,
+      "deniveleM": 490,
+      "longueurM": 1500,
+      "cascadeMaxM": null,
+      "cordeMiniM": null,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h30min",
+      "descente": "3-4h",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "Sortie A13 Landquart, traverser village de Malans, se garer au parking de la Älplibahn.",
+      "accesAmont": null,
+      "approche": "Monter la piste d'alpage sur Heuberge.",
+      "descente": "Détails inconnus.",
+      "retour": "Attention: Traversé du stand de tir à la sortie.",
+      "engagement": "Descente de grandes verticales.",
+      "periode": "Vallon avec certaines belles cascades. Juin - Novembre.",
+      "geologie": "Schiste",
+      "historique": "Ouverture inconnu.",
+      "remarques": "Attention: À la fin on traverse un stand de tir: Vérifier les programmes de tir."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23589,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.0009,
+        "longitude": 9.58602,
+        "label": null
+      },
+      {
+        "canyonId": 23589,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.992981,
+        "longitude": 9.57502,
+        "label": null
+      },
+      {
+        "canyonId": 23589,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.987011,
+        "longitude": 9.56982,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.987011,
+      "longitude": 9.56982,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_54fc6bbb0c5b3a6f",
+          "kind": "MAP",
+          "title": "1156 Schesaplana (Swisstopo)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,238 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:49:20.892748+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21422,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21422/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21422/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21422/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21422/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21422,
+    "identity": {
+      "nom": "Cebollar",
+      "nomComplet": "Barranco del Cebollar, Salto del Carpin",
+      "prefixeNom": "Barranco del",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21422/Cebollar.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Aragón",
+      "departement": "Huesca",
+      "communePrincipale": "San Nicolas de Bujaruelo",
+      "communes": [
+        "San Nicolas de Bujaruelo"
+      ],
+      "massif": "Mt Perdu (Monte Perdido)",
+      "bassin": "Ara",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a2III",
+      "interet": 3.0,
+      "nbVotes": 20
+    },
+    "metrics": {
+      "altitudeDepartM": 1500,
+      "deniveleM": 300,
+      "longueurM": 500,
+      "cascadeMaxM": 125,
+      "cordeMiniM": 60,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h30",
+      "descente": "3h30",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "De Torla, prendre la route du parc d'Ordesa. Au niveau de la maison du parc et de la route à accès limité, prendre à gauche la piste de San Nicolas de Bujaruelo. Passer le barranco del Cebollar qui se situe en RD du Rio Ara et stationner peu après au niveau du \"puente nuevo\", dit \"puente Santa Helena\". NB : il n'est plus possible de se garer au niveau du puente de los Navarros pour organiser une navette. Peut-être hors-saison en se garant au niveau de la maison du parc ou alors bien plus bas sur la route.",
+      "accesAmont": null,
+      "approche": "Du pont, prendre le sentier qui longe le rio Ara en RD. On revient quasiment au niveau de la route pour prendre un sentier qui monte vers le collado del Cebollar. (On peut aussi depuis le pont revenir au carrefour par la piste). Le sentier monte en longeant le Rio Ara puis finit par traverser le barranco.",
+      "descente": "Une dizaine de rappels avant la grande cascade que l'on peut descendre soit en RG soit en RD. Avec un debit conséquent, la première longueur de la descente en RD doit être difficile et l'équipement semble plus \"rustique\".",
+      "retour": "Prendre en RG le sentier qui longe le Rio Ara juqu'au puente de Santa Elena.",
+      "engagement": null,
+      "periode": "Généralement peu d'eau en été. Bien évaluer le débit.",
+      "geologie": null,
+      "historique": "Ramon Bitrian et Enrique Salamero le 13/10/1989.",
+      "remarques": "Bien consulter les différentes topographies car il existe de nombreuses possibilités de fractionner la grande cascade et toutes ne doivent pas être pratiques pour récupérer les cordes...\n\nIl existe une possibilité d'approche plus directe par un pierrier en RG de Cebollar et une courte \"clavijas\" exposée. Cf topo-guide \"Rio Ara\" et remarques de débit."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21422,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.662113,
+        "longitude": -0.124369,
+        "label": null
+      },
+      {
+        "canyonId": 21422,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.664986,
+        "longitude": -0.120656,
+        "label": null
+      },
+      {
+        "canyonId": 21422,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 42.667339,
+        "longitude": -0.121236,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 42.667339,
+      "longitude": -0.121236,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_e351d4789a0451db",
+          "kind": "TOPOGUIDE",
+          "title": "50 barrancos del Pirineo. Los descensos mas bellos.",
+          "authors": [
+            "José A. Ortega / Miguel A. Cebrian"
+          ],
+          "publicationYear": 2017,
+          "reference": "9788498293890",
+          "editor": "Desnivel",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/140/50-barrancos-del-Pirineo.html"
+        },
+        {
+          "id": "biblio_831c9e6897eebb28",
+          "kind": "TOPOGUIDE",
+          "title": "Senderos de agua del rio Ara",
+          "authors": [
+            "Ricardo Blanco",
+            "Alex Puyo",
+            "David Tresaco"
+          ],
+          "publicationYear": 2014,
+          "reference": "978-84-8321-410-7",
+          "editor": "Prames",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1279/topoguide.html"
+        },
+        {
+          "id": "biblio_7992ba9ac2302817",
+          "kind": "TOPOGUIDE",
+          "title": "Pyrénées en Cascades - Les grandes verticales du canyonisme",
+          "authors": [
+            "Bruno Matéo"
+          ],
+          "publicationYear": 2012,
+          "reference": null,
+          "editor": "Rando éditions",
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/172/Pyrenees-en-Cascades---Les-grandes-verticales-du-canyonisme.html"
+        },
+        {
+          "id": "biblio_c1524b8af0f1815f",
+          "kind": "TOPOGUIDE",
+          "title": "Pirineos - Guia de descenso de canones y barrancos",
+          "authors": [
+            "Eduardo Gomez",
+            "Laura Tejero"
+          ],
+          "publicationYear": 2002,
+          "reference": "84-95744-20-1",
+          "editor": "Barrabes",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1126/topoguide.html"
+        },
+        {
+          "id": "biblio_fcae506cf45f5fdb",
+          "kind": "TOPOGUIDE",
+          "title": "Carte N°3 - Mont Perdu : du rio Gallego au rio Cinca.",
+          "authors": [
+            "Patrick Gimat + Jean-Paul Pontroué"
+          ],
+          "publicationYear": 1999,
+          "reference": null,
+          "editor": null,
+          "status": "en stock\n\n- 7,50 € -\n\nCommandez cet ouvrage dès maintenant !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/122/Carte-n°3-:-Mont-Perdu.html"
+        },
+        {
+          "id": "biblio_728585bf88b0a2ad",
+          "kind": "TOPOGUIDE",
+          "title": "Descentes de canyons dans le Haut Aragon - Tome 2",
+          "authors": [
+            "Patrick Gimat avec la collaboration de J.-P. Pontroué"
+          ],
+          "publicationYear": 1995,
+          "reference": "ISBN 2-85744-813-9",
+          "editor": "Co-édition Gimat/Pontroué/Edisud",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/156/Descentes-de-canyons-dans-le-Haut-Aragon---Tome-2.html"
+        },
+        {
+          "id": "biblio_ac4af1f2594e871a",
+          "kind": "TOPOGUIDE",
+          "title": "Aragon. Gargantas y barrancos. 2 : Pirineo Central",
+          "authors": [
+            "BIARGE Ana. BIARGE Fernando"
+          ],
+          "publicationYear": 1991,
+          "reference": "84-404-8832-7",
+          "editor": "A compte d'auteur",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1134/topoguide.html"
+        },
+        {
+          "id": "biblio_5c6ad370200171ca",
+          "kind": "TOPOGUIDE",
+          "title": "Huesca. Cañones y barrancos. Tomo 2 : Pirineo",
+          "authors": [
+            "Fernado Biarge / Enrique Salamero"
+          ],
+          "publicationYear": 1991,
+          "reference": "404-8832-7",
+          "editor": null,
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1156/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_76f0fdc21c107db9",
+          "kind": "MAP",
+          "title": "146 feuille Bujaruelo SGE 30-8 (IGN)",
+          "scale": null,
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_8c2c3b1336432494",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://ropewiki.com/Cebollar",
+          "url": "http://ropewiki.com/Cebollar"
+        },
+        {
+          "id": "resource_e8c6427e25781155",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/Canyons/CebollarCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/Canyons/CebollarCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

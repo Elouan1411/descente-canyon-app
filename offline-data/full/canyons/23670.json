@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:40.120794+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23670,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23670/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23670/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23670/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23670/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23670,
+    "identity": {
+      "nom": "Bacu Olcoe",
+      "nomComplet": "Bacu Olcoe",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23670/Bacu-Olcoe.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Sardegna",
+      "departement": "Nuoro",
+      "communePrincipale": "Baunei",
+      "communes": [
+        "Baunei"
+      ],
+      "massif": "Plateau de Golgo",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v5a1III",
+      "interet": 1.7,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 530,
+      "deniveleM": 500,
+      "longueurM": 2500,
+      "cascadeMaxM": 80,
+      "cordeMiniM": 80,
+      "navette": "7.0km"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "2h30",
+      "retour": "30"
+    },
+    "topo": {
+      "accesAval": "garer le premier véhicule au parking du bar de Pedra Longa. En venant de Tortoli, la route est indiquée quelques kms avant d'arriver à Baunei.",
+      "accesAmont": "Depuis Baunei, monter les virages en lacet vers le plateau de Golgo. Petit droit d'entrée de 1€ à payer lors de l'accès au plateau pour le nettoyage des ordures. Après le dernier virage, prendre la piste à droite puis la première patte d'oie à gauche pour arriver à la confluence avec le lit sec de Bacu Olcoe. Garer le deuxième véhicule.",
+      "approche": null,
+      "descente": "La descente commence par une marche dans le lit sec du canyon pendant une quarantaine de minute. Au bout de 20min, le lit s'encaisse dans de grandes falaises te le risque de chute de pierres commence. Vous avez trois barrières (pour les chèvres) à passer avant d'arriver au premier rappel. L'équipement est hétéroclite mais correct.\n\nDepuis le deuxième rappel la vue sur la mer est splendide!\n\nLe clou du spectacle arrive à la C80: à diviser en RD C10 + C70,p lein gaz pour éviter les frottements. Le cirque est aussi le paradis des grimpeurs.",
+      "retour": "Longer les sentes des chèvres et des grimpeurs RD jusqu'à retrouver le sentier touristique et d'accès à la mer de Pedra Longa.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23670,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 40.029949,
+        "longitude": 9.686823,
+        "label": null
+      },
+      {
+        "canyonId": 23670,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 40.033478,
+        "longitude": 9.703101,
+        "label": null
+      },
+      {
+        "canyonId": 23670,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 40.028088,
+        "longitude": 9.673124,
+        "label": null
+      },
+      {
+        "canyonId": 23670,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 40.026791,
+        "longitude": 9.705594,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 40.028088,
+      "longitude": 9.673124,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_4c9c86a1f74b08a1",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://catastoforre.aic-canyoning.it/ind.....GNA/pro/OG/cod/OG001",
+          "url": "http://catastoforre.aic-canyoning.it/ind.....GNA/pro/OG/cod/OG001"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

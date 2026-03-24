@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:22.031148+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22250,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22250/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22250/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22250/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22250/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22250,
+    "identity": {
+      "nom": "Chaloupe",
+      "nomComplet": "Ravine de la Chaloupe",
+      "prefixeNom": "Ravine de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22250/Chaloupe.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Saint-Leu",
+      "departement": "La Réunion",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1II",
+      "interet": 1.5,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": null,
+      "longueurM": null,
+      "cascadeMaxM": 27,
+      "cordeMiniM": 30,
+      "navette": "2.0km"
+    },
+    "timings": {
+      "approche": "??",
+      "descente": "2h00",
+      "retour": "??"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": "Très souvent à sec. Enchainement de cascades quasiment sans temps mort.",
+      "retour": "Continuer dans les blocs jusqu'à la route.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22250,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": -21.155897,
+        "longitude": 55.291439,
+        "label": null
+      },
+      {
+        "canyonId": 22250,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": -21.158951,
+        "longitude": 55.286552,
+        "label": null
+      },
+      {
+        "canyonId": 22250,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": -21.158092,
+        "longitude": 55.292713,
+        "label": "Après ce point, le chemin devient privé, il faut impérativement continuer à pied (pendant à peine 5min)."
+      },
+      {
+        "canyonId": 22250,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": -21.158632,
+        "longitude": 55.286228,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": -21.158092,
+      "longitude": 55.292713,
+      "label": "Après ce point, le chemin devient privé, il faut impérativement continuer à pied (pendant à peine 5min)."
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_9528ae8134f170b8",
+          "kind": "MAP",
+          "title": "4404RT Saint-Leu L'étang sale (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

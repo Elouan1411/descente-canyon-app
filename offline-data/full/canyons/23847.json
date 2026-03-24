@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:18.765021+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23847,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23847/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23847/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23847/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23847/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23847,
+    "identity": {
+      "nom": "Costamolin",
+      "nomComplet": "Val Costamolin",
+      "prefixeNom": "Val",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23847/Costamolin.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Vénétie",
+      "departement": "Belluno",
+      "communePrincipale": "Ospitale di Cadore",
+      "communes": [
+        "Ospitale di Cadore"
+      ],
+      "massif": "Dolomiti di Sinistra Piave",
+      "bassin": "Piave",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a3IV",
+      "interet": 2.7,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 1020,
+      "deniveleM": 520,
+      "longueurM": 2000,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "2h",
+      "descente": "5h",
+      "retour": "15"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": "Dolomit",
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23847,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.329159,
+        "longitude": 12.34879,
+        "label": null
+      },
+      {
+        "canyonId": 23847,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.3302,
+        "longitude": 12.32929,
+        "label": null
+      },
+      {
+        "canyonId": 23847,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.332142,
+        "longitude": 12.32903,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.332142,
+      "longitude": 12.32903,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

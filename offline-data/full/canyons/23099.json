@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:39.859735+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23099,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23099/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23099/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23099/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23099/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23099,
+    "identity": {
+      "nom": "Fischbach (zur Isar)",
+      "nomComplet": "Fischbach (zur Isar), Fischbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23099/Fischbach-zur-Isar.html"
+    },
+    "location": {
+      "pays": "Allemagne",
+      "region": "Bayern",
+      "departement": "Oberbayern",
+      "communePrincipale": "Wallgau",
+      "communes": [
+        "Landkreis Garmisch-Partenkirchen",
+        "Wallgau"
+      ],
+      "massif": "Isarwinkel",
+      "bassin": "Isar",
+      "coursEau": "Fischbach"
+    },
+    "rating": {
+      "cotation": "v3a3III",
+      "interet": 1.4,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 930,
+      "deniveleM": 110,
+      "longueurM": 800,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 25,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "1h20",
+      "retour": "2min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": "7 rappels.",
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23099,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.554321,
+        "longitude": 11.374029,
+        "label": null
+      },
+      {
+        "canyonId": 23099,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.547451,
+        "longitude": 11.373418,
+        "label": null
+      },
+      {
+        "canyonId": 23099,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.547783,
+        "longitude": 11.373691,
+        "label": null
+      },
+      {
+        "canyonId": 23099,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.54567,
+        "longitude": 11.367447,
+        "label": "depart d'approche par la piste"
+      },
+      {
+        "canyonId": 23099,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.5541,
+        "longitude": 11.372769,
+        "label": "descendre vers le lit du ravin"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.547783,
+      "longitude": 11.373691,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

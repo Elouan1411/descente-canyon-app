@@ -1,0 +1,139 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:48.740726+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23137,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23137/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23137/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23137/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23137/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23137,
+    "identity": {
+      "nom": "Schwarzwasserbach",
+      "nomComplet": "Schwarzwasserbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23137/Schwarzwasserbach.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Vorarlberg",
+      "departement": "Bregenz",
+      "communePrincipale": "Mittelberg",
+      "communes": [
+        "Mittelberg"
+      ],
+      "massif": "Allgäuer Alpen",
+      "bassin": "Iller",
+      "coursEau": "Schwarzwasserbach"
+    },
+    "rating": {
+      "cotation": "v3a3II",
+      "interet": 1.9,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 1170,
+      "deniveleM": 160,
+      "longueurM": 1700,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 15,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "10min",
+      "descente": "2h",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": "2 parties: I: 4 rappels - marche long - II nager",
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23137,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.35104,
+        "longitude": 10.156274,
+        "label": "Départ de la première partie"
+      },
+      {
+        "canyonId": 23137,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.357597,
+        "longitude": 10.172512,
+        "label": "Départ de la deuxième partie"
+      },
+      {
+        "canyonId": 23137,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.35321,
+        "longitude": 10.16125,
+        "label": "Arrivée de la première partie"
+      },
+      {
+        "canyonId": 23137,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.359379,
+        "longitude": 10.172837,
+        "label": "Arrivée de la deuxième partie"
+      },
+      {
+        "canyonId": 23137,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.354652,
+        "longitude": 10.165426,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.354652,
+      "longitude": 10.165426,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_0920eac300aaa064",
+          "kind": "MAP",
+          "title": "UK L 8 Allgäuer Alpen (Bayerisches Landesvermessungsamt)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_d460f32b5cb65a2e",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/C.....warzwasserbachCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/C.....warzwasserbachCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

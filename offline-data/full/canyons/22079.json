@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:45.328969+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22079,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22079/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22079/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22079/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22079/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22079,
+    "identity": {
+      "nom": "Tenero",
+      "nomComplet": "Tenero",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22079/Tenero.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Tenero-Contra",
+      "departement": "Tessin",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": "Ticino",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 1.8,
+      "nbVotes": 6
+    },
+    "metrics": {
+      "altitudeDepartM": 350,
+      "deniveleM": 110,
+      "longueurM": 300,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "2min",
+      "descente": "2h",
+      "retour": "25min"
+    },
+    "topo": {
+      "accesAval": "De Tenero, prendre la direction de Contra. Repérer la cascade finale (aspect de C50) sur un virage en lacet à droite. De là compter 5 lacets supplémentaires pour franchir le pont qui servira de départ. Se garer un peu plus loin à droite avant le lacet suivant.",
+      "accesAmont": null,
+      "approche": "Revenir sur le pont précédent le stationnement.",
+      "descente": "Enchaînement continu de cascades de faibles hauteurs pour finir sur une C50 fractionnée en 2 au niveau d'une vasque suspendue.",
+      "retour": "Un sentier longe le ruisseau, après la première traversée de la route, prendre à droite dans le petit village afin de retrouver ce chemin (absence d'indication).",
+      "engagement": "Peu engagé car en plein village.",
+      "periode": "Réalisé après de gros orages, les cascades plombent un peu mais restent joueuses\n\nLes vasques ne sont pas piègeuses.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Équipement bon, commun à ce secteur : mono expansion fréquente, quelques AN\n\net quelques points doublés. Ambiance palmier.\n\nPas de nage, pas ludique, eau polluée."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22079,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.184895,
+        "longitude": 8.843758,
+        "label": null
+      },
+      {
+        "canyonId": 22079,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.18195,
+        "longitude": 8.845346,
+        "label": null
+      },
+      {
+        "canyonId": 22079,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.181141,
+        "longitude": 8.849176,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.181141,
+      "longitude": 8.849176,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_9a9578770c172929",
+          "kind": "MAP",
+          "title": "1313 Bellinzona (Carte Nationale Suisse)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_a3b23e6e9e3ab35d",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.swisscanyon.ch/canyons/descrittivi/tenero.htm",
+          "url": "http://www.swisscanyon.ch/canyons/descrittivi/tenero.htm"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,139 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:49:52.807086+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21558,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21558/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21558/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21558/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21558/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21558,
+    "identity": {
+      "nom": "Fecha",
+      "nomComplet": "Canyon de Fecha",
+      "prefixeNom": "Canyon de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21558/Fecha.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Galicia",
+      "departement": "Orense",
+      "communePrincipale": "Lobios",
+      "communes": [
+        "Lobios"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.9,
+      "nbVotes": 6
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": 350,
+      "longueurM": 1000,
+      "cascadeMaxM": 35,
+      "cordeMiniM": 40,
+      "navette": "6.7km"
+    },
+    "timings": {
+      "approche": "1h",
+      "descente": "4h30",
+      "retour": "25min"
+    },
+    "topo": {
+      "accesAval": "Depuis Orense prendre la N540 qui va à Celanova, continuer jusqu'à Bande et le barrage de las Conchas.\n\nEntre le km 64 et 65 de la N540, prendre à gauche jusqu'à Lobios par la OR312\n\nAprès avoir laissé une station à droite on croise le pont du rio Caldo (entre le pont et la station il y a 6.6km). Laisser un véhicule a cet endroit.\n\nAvec le second véhicule continuer toujours sur la OR312, passer Tomeiros. Entre les km 12 et 13 on croise une voie romaine. Après le km 14 une piste part à gauche. Se garer sans gêner.",
+      "accesAmont": null,
+      "approche": "Prendre la piste qui monte. A 1860m du départ dans une grande courbe qui tourne à droite, part une piste en mauvais état a gauche. Ne pas la prendre. Continuer sur la piste principale jusqu'à ce qu'elle devienne horizontale, et même ensuite qui descend\n\nA 200m environ à gauche, altitude 856m, une piste part a gauche et nous mène au canyon",
+      "descente": "13 rappels, 6 évitables. Sauts toboggans",
+      "retour": "Après la dernière marmite prendre le sentier de gauche qui nous ramène à la voiture.",
+      "engagement": "Canyon assez ouvert",
+      "periode": "Parfait entre juin et septembre",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Certainement le plus beau canyon de Galicie"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21558,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 41.843464,
+        "longitude": -8.105485,
+        "label": null
+      },
+      {
+        "canyonId": 21558,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 41.846996,
+        "longitude": -8.110721,
+        "label": null
+      },
+      {
+        "canyonId": 21558,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 41.858135,
+        "longitude": -8.10585,
+        "label": null
+      },
+      {
+        "canyonId": 21558,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 41.847076,
+        "longitude": -8.111236,
+        "label": "depart du sentier vers le-haut"
+      },
+      {
+        "canyonId": 21558,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 41.843109,
+        "longitude": -8.105872,
+        "label": "sortir du sentier qui monte vers le canyon"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 41.858135,
+      "longitude": -8.10585,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_4b2ad53468f49b60",
+          "kind": "MAP",
+          "title": "301-III (11 26) Lobios (Institu Geographic Nacional)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_beab93cc029de4b2",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.tic.udc.es/~nino/fecha/canon_fecha.htm",
+          "url": "http://www.tic.udc.es/~nino/fecha/canon_fecha.htm"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:33.150642+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23072,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23072/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23072/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23072/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23072/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23072,
+    "identity": {
+      "nom": "Le Gourédon",
+      "nomComplet": "Le Gourédon",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23072/Le-Gouredon.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Vaucluse",
+      "communePrincipale": "Le Barroux",
+      "communes": [
+        "Le Barroux"
+      ],
+      "massif": "Mont Ventoux",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v1a2I",
+      "interet": 0.4,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 270,
+      "deniveleM": 90,
+      "longueurM": 1000,
+      "cascadeMaxM": 8,
+      "cordeMiniM": 10,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "1h30",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "De Carpentras, prenez la D13 pour se rendre à Caromb. Puis prendre en direction de \"Le Barroux\" et \"le Four à chaux\" en faisant 2,2km. Se garer sur le parking non loin du pont qui enjambe le Gourédon en face \"Le Four à Chaux\".",
+      "accesAmont": null,
+      "approche": "Suivre la D938 en direction de Malaucène sur 1 km. Passer sous un petit tunnel et lorsque la route coupe le ruisseau, commencer la descente.",
+      "descente": "C8 et quelques petits bassins sur la partie amont. Progression à travers la végétation et la vase par endroits. Passer sous le pont, C3, C4 (saut possible,mais eau peu appétissante), PI10, C4. Sortie en RG .",
+      "retour": "Rejoindre au mieux la route et le parking .",
+      "engagement": "Aucun",
+      "periode": "Faire la descente après une bonne crue.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Pour les collectionneurs !"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23072,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.138145,
+        "longitude": 5.103052,
+        "label": null
+      },
+      {
+        "canyonId": 23072,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.128498,
+        "longitude": 5.101722,
+        "label": "sortie RG"
+      },
+      {
+        "canyonId": 23072,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.130089,
+        "longitude": 5.101813,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.130089,
+      "longitude": 5.101813,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_f8195a0d9851b7fb",
+          "kind": "MAP",
+          "title": "3040 ET Carpentras (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

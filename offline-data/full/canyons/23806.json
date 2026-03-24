@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:10.483335+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23806,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23806/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23806/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23806/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23806/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23806,
+    "identity": {
+      "nom": "Livinal",
+      "nomComplet": "Rio Livinal",
+      "prefixeNom": "Rio",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23806/Livinal.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Frioul-Vénétie julienne",
+      "departement": "Udine",
+      "communePrincipale": "Chiusaforte",
+      "communes": [
+        "Chiusaforte"
+      ],
+      "massif": "Alpes Carniques - Carniche - Karnischen",
+      "bassin": "Fella",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v5a2IV",
+      "interet": 1.9,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 1100,
+      "deniveleM": 590,
+      "longueurM": 2200,
+      "cascadeMaxM": 55,
+      "cordeMiniM": 60,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "2h",
+      "descente": "5h30min",
+      "retour": "25"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": "par l'approche Rio Cadramazzo (inf.)",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": "14.09.2013 Canyoning Cult Slovenia (David Sefaj, Robert Žirovec), Georg Buol and Thomas Prettner",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23806,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.429989,
+        "longitude": 13.33957,
+        "label": null
+      },
+      {
+        "canyonId": 23806,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.42522,
+        "longitude": 13.32117,
+        "label": null
+      },
+      {
+        "canyonId": 23806,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.425152,
+        "longitude": 13.316667,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.425152,
+      "longitude": 13.316667,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

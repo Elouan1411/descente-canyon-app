@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:32.443618+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22300,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22300/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22300/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22300/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22300/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22300,
+    "identity": {
+      "nom": "Atalaya",
+      "nomComplet": "Barranco Atalaya",
+      "prefixeNom": "Barranco",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22300/Atalaya.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Castilla y León",
+      "departement": "Soria",
+      "communePrincipale": "Beratón",
+      "communes": [
+        "Beratón"
+      ],
+      "massif": "Moncayo - Mont San Miguel",
+      "bassin": "Rio Isuela",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a1I",
+      "interet": 1.3,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1300,
+      "deniveleM": 160,
+      "longueurM": 800,
+      "cascadeMaxM": 13,
+      "cordeMiniM": 15,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "1h",
+      "retour": "??"
+    },
+    "topo": {
+      "accesAval": "Ce Barranco se trouve à la limite des provinces de Zaragoza et de Soria côté sud du Moncayo. Se rendre au village de Purujosa, de là continuer en direction de Beraton sur 3.5 kms. Juste sous les deux barres rocheuses qui sonne le glas de la descente vous pouvez laisser un véhicule et continuer jusqu'à Bératon si vous avez choisi l'option navette.\n\nA l'entrée du village une belle piste part sur la gauche et passe au dessus d'une décharge sauvage que vous aurez repéré en montant par la route. Continuer 50 m et garez vous sans gêner... y'a de la place.",
+      "accesAmont": null,
+      "approche": "Ça y est vous êtes garé. Partir à pied sur une piste moins importante sur la gauche qui part en direction du petit bassin récoltant...suivre: le sentier de los Ladrones.\n\nEn 15 min vous arriverez à un chêne caractéristique entaillé dans sa chair par des croix... humaines... et là un panneau vous indique la direction du Barranco qui part à l'opposé du sentier de los Ladrones. Tout est évident.\n\nPour ceux qui ne feront pas la navette 1km au dessus de l'arrivée du canyon dans une courbe à droite se dessine un petit parking d'où part une sente qui vous amène en 1h vers la décharge.",
+      "descente": "Le début est assez ouvert et peu engagé d'un niveau très facile. Le barranco se resserre peu à peu pour offrir un encaissement assez prononcé mais court. Quatre rappels R4.R6.R13.R3 ainsi que quelques passages en opposition et désescalades.",
+      "retour": "Si pas de navette: 5min",
+      "engagement": "Équipement mono-point.",
+      "periode": "Sec",
+      "geologie": null,
+      "historique": "Première descente: Oscar Lafarga et Alberto Marin.",
+      "remarques": "Parfait pour la demi-journée en famille.\n\nJe vous conseille l'Albergue de Purujosa... Tout pour plaire : prix et qualité."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22300,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 41.701588,
+        "longitude": -1.807297,
+        "label": null
+      },
+      {
+        "canyonId": 22300,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 41.700375,
+        "longitude": -1.799569,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 41.701588,
+      "longitude": -1.807297,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_410f937eb6cebcaa",
+          "kind": "MAP",
+          "title": "Parque del Moncayo (Ed. Pirineo)",
+          "scale": "1/40000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_36d4fdaa4d0928bd",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://ropewiki.com/Atalaya",
+          "url": "http://ropewiki.com/Atalaya"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

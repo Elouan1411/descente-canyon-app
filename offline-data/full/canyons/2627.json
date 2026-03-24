@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:46:14.163167+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2627,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2627/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2627/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2627/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2627/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2627,
+    "identity": {
+      "nom": "Cadière",
+      "nomComplet": "Clue de la Cadière, Gorges de l'Argentesse",
+      "prefixeNom": "Clue de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2627/Cadiere.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Gard",
+      "communePrincipale": "La Cadière-et-Cambo",
+      "communes": [
+        "La Cadière-et-Cambo"
+      ],
+      "massif": "Cévennes",
+      "bassin": "Vidourle",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v1a2I",
+      "interet": 1.0,
+      "nbVotes": 11
+    },
+    "metrics": {
+      "altitudeDepartM": 275,
+      "deniveleM": 25,
+      "longueurM": 400,
+      "cascadeMaxM": 10,
+      "cordeMiniM": null,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "10min",
+      "descente": "30min",
+      "retour": "2min"
+    },
+    "topo": {
+      "accesAval": "Passer le village et prendre la petite route des gorges. Se garer côté gauche, à l'entrée de la clue.",
+      "accesAmont": null,
+      "approche": "Remonter la clue par la route puis prendre un sentier à l'intérieur d' un virage à droite.",
+      "descente": "Quelques belles vasques se prêtant aux sauts et toboggans... La fin est sympathique avec un saut esthétique. Attention, la descente se termine à côté de jardins. En conséquence attention de ne pas s'attirer les foudres des propriétaires : respecter les propriétés privées et les lieux...\n\nLe propriétaire du terrain de la sortie, n'est pas contre le passage par son portail, mais bien le refermer, à cause des sangliers qui viennent dans son jardin.",
+      "retour": "Rejoindre le véhicule en évitant les propriétés privées. Remontée RD sur un petit sentier qui rejoint la route.\n\nLe propriétaire du terrain de la sortie, n'est pas contre le passage par son portail, mais bien le refermer, à cause des sangliers, qui viennent dans son jardin.",
+      "engagement": "Se descend et se remonte. Corde pas nécessaire.",
+      "periode": "Rapidement à sec. A faire au printemps ou aprés les pluies.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Présence de propriétés privés."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2627,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.961315,
+        "longitude": 3.806934,
+        "label": null
+      },
+      {
+        "canyonId": 2627,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.959923,
+        "longitude": 3.807149,
+        "label": null
+      },
+      {
+        "canyonId": 2627,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.960388,
+        "longitude": 3.80687,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.960388,
+      "longitude": 3.80687,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_c0245a1ccc4224fe",
+          "kind": "MAP",
+          "title": "2741 ET Saint-Hippolyte du Fort (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

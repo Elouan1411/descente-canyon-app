@@ -1,0 +1,187 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:45:03.356369+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2323,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2323/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2323/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2323/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2323/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/2323/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 2323,
+    "identity": {
+      "nom": "Spurtellu",
+      "nomComplet": "Spurtellu",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2323/Spurtellu.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Corse",
+      "departement": "Corse-du-Sud",
+      "communePrincipale": "Évisa",
+      "communes": [
+        "Évisa"
+      ],
+      "massif": "Cinto",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a1IV",
+      "interet": 1.1,
+      "nbVotes": 7
+    },
+    "metrics": {
+      "altitudeDepartM": 1150,
+      "deniveleM": 800,
+      "longueurM": 4250,
+      "cascadeMaxM": 70,
+      "cordeMiniM": 70,
+      "navette": "5.0km"
+    },
+    "timings": {
+      "approche": "2h",
+      "descente": "6h",
+      "retour": "1h"
+    },
+    "topo": {
+      "accesAval": "Laisser une voiture à Evisa.\n\nDe là soit sans navette reprendre le mare à mare, sinon remonter en voiture au niveau du village de vacance d'Aitone",
+      "accesAmont": null,
+      "approche": "Prendre la piste forestière qui monte a la \"Bocca a u Saltu\", puis redescendre par un petit ruisseau à sec qui coupe et recoupe la piste.",
+      "descente": "2 rappels, un de soixante-dix un de trente, le reste une succession de désescalade",
+      "retour": "Rejoindre le pont génois et là réccupérer le mare a mare assez raide jusqu'à Evisa et la voiture",
+      "engagement": "Pas d'échappatoire évidente (on m'a parlé d'une juste après celle de 70m)\n\nLes parois de plus de 500m dissuade d'en sortir (rive droite possible mais là prenez des frontales)",
+      "periode": "Fait en septembre, peu d'eau",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Très physique"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2323,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.278057,
+        "longitude": 8.811944,
+        "label": null
+      },
+      {
+        "canyonId": 2323,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.264442,
+        "longitude": 8.794722,
+        "label": null
+      },
+      {
+        "canyonId": 2323,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 42.269722,
+        "longitude": 8.841944,
+        "label": null
+      },
+      {
+        "canyonId": 2323,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 42.254166,
+        "longitude": 8.798889,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 42.269722,
+      "longitude": 8.841944,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_2bafc8e0f7a42d9c",
+          "kind": "TOPOGUIDE",
+          "title": "La Corse en Canyon",
+          "authors": [
+            "Association CorseCanyon"
+          ],
+          "publicationYear": 2018,
+          "reference": null,
+          "editor": "auto-edition",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/1127/La-Corse-en-Canyon-3eme-edition.html"
+        },
+        {
+          "id": "biblio_eeda460e91ce529f",
+          "kind": "TOPOGUIDE",
+          "title": "Corse Canyons (2ème édition)",
+          "authors": [
+            "Franck Jourdan",
+            "Jean-François Fiorina"
+          ],
+          "publicationYear": 2006,
+          "reference": "2-84698-169-8",
+          "editor": "Albiana",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/133/Corse-Canyons.html"
+        },
+        {
+          "id": "biblio_d72ca920b80a45d1",
+          "kind": "TOPOGUIDE",
+          "title": "Corse - Paradis du canyoning",
+          "authors": [
+            "Hubert Ayasse",
+            "Philippe Dubreuil"
+          ],
+          "publicationYear": 2001,
+          "reference": "ISBN 2-9117-9750-7",
+          "editor": "DCL",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/16/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_f6297cc811520604",
+          "kind": "MAP",
+          "title": "4150 OT Porto (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 520,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Corse-du-Sud) - 26 juil 2011",
+          "summary": "- Le canyonisme est interdit la nuit (sauf dérogation)\n\n- Le canyonisme est interdit s'il y a une alerte émise par Météo-France de niveau orange ou rouge en cours.\n\n- Le canyonisme est interdit aux mineurs de moins de 7 ans, sauf canyon évalué égal ou inférieur à V1-A3-E3\n\n- Les groupes auront un effectif maximum de 12 personnes, hors encadrement.",
+          "remark": "L'arrêté du 9 juillet 2019 pris conjointement par les préfectures de Corse-du-Sud et de Haute-Corse harmonise les réglementations existantes pour les deux départements.",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nArrêté préfectoral modificatif (Corse-du-Sud et Haute-Corse) n°R20-2019-07-09-001 du 9 juillet 2019\n\nArrêté préfectoral (Corse-du-Sud) n°2011207-0005 du 26 juillet 2011",
+          "effectiveDate": "26 juil 2011",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/520/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral modificatif (Corse-du-Sud et Haute-Corse) n°R20-2019-07-09-001 du 9 juillet 2019",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem520_pj2.pdf"
+            },
+            {
+              "label": "Arrêté préfectoral (Corse-du-Sud) n°2011207-0005 du 26 juillet 2011",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem520_pj1.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

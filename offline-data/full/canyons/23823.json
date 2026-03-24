@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:13.870339+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23823,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23823/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23823/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23823/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23823/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23823,
+    "identity": {
+      "nom": "Ore Stream",
+      "nomComplet": "Ore Stream",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23823/Ore-Stream.html"
+    },
+    "location": {
+      "pays": "Nouvelle Zélande",
+      "region": "Westland District",
+      "departement": "West Coast",
+      "communePrincipale": "Makarora",
+      "communes": [
+        "Makarora"
+      ],
+      "massif": null,
+      "bassin": "Makarora",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a5III",
+      "interet": 3.2,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 470,
+      "deniveleM": 145,
+      "longueurM": 380,
+      "cascadeMaxM": 31,
+      "cordeMiniM": 40,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h30",
+      "descente": "3h30",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": "Du parking traverser la Makarora River. Depuis la passerelle, suivre au mieux la trace qui monte par la crête en rive droite du canyon. Au niveau d'une sangle rouge, descente un peu raide dans les arbres pour rejoindre le canyon.",
+      "descente": "Saut et rappels. Des mouvement d'eau à gérer selon les conditions.",
+      "retour": "Retraverser la Makarora River pour rejoindre la voiture.",
+      "engagement": "Le débit est toujours conséquent. Les éventuelles échappatoires sont délicates.",
+      "periode": "À faire à l'étiage en février-mars.",
+      "geologie": "Métagreywacke",
+      "historique": "Alain Rohr, Karine et Tristan Godet, Jethro Robinson le 4 février 2008.",
+      "remarques": "L'eau bleue et froide est digne des grands canyons alpins, et pourtant nous sommes à moins de 500m d'altitude... Superbe ambiance, même si l'encaissement n'est pas très fort. Un très beau toboggan sur le parcours.\n\nATTENTION : La Makarora River est infecté par la didymo, une algue introduite et envahissante, alors qu'Ore Stream ne l'est pas. Quelques cellules microscopiques suffisent à propager ce fléau. Il faut donc NETTOYER son équipement (chaussures en l’occurrence) avec de l'eau+liquide vaisselle (5%) avant d'entrer dans le canyon. De même lors de la marche de retour l'équipement peut de nouveau être infecté sans qu'on s'en aperçoive : à nettoyer avec du liquide vaisselle avant de faire d'autres canyons. Ce problème est majeur en Nouvelle Zélande. Le canyon de Cross Creek est déjà infecté. Une fois que l'horrible algue s'est implantée, on ne peut plus vraiment faire quelque chose... Donc SVP limiter le contact avec l'eau de la Makarora et prévoir un peu de liquide vaisselle pour tuer les germes. Un séchage complet de 48h fait aussi l'affaire. Le slogan contre la didymo : CHECK-CLEAN-DRY (vérifier-nettoyer-sécher)."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23823,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": -44.176243,
+        "longitude": 169.244064,
+        "label": null
+      },
+      {
+        "canyonId": 23823,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": -44.183605,
+        "longitude": 169.254074,
+        "label": null
+      },
+      {
+        "canyonId": 23823,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": -44.187309,
+        "longitude": 169.26178,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": -44.187309,
+      "longitude": 169.26178,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_6efc2d1ccb97f2ad",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.kiwicanyons.org/ore-stream-v4a4iii/",
+          "url": "http://www.kiwicanyons.org/ore-stream-v4a4iii/"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

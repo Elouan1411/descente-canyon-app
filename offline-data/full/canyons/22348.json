@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:42.522359+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22348,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22348/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22348/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22348/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22348/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22348,
+    "identity": {
+      "nom": "Dimbiya",
+      "nomComplet": "Oued Dimbiya",
+      "prefixeNom": "Oued",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22348/Dimbiya.html"
+    },
+    "location": {
+      "pays": "Djibouti",
+      "region": null,
+      "departement": "Dimbiya",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a1II",
+      "interet": 2.0,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 460,
+      "deniveleM": 200,
+      "longueurM": 800,
+      "cascadeMaxM": 55,
+      "cordeMiniM": 60,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "10min",
+      "descente": "2h",
+      "retour": "45min"
+    },
+    "topo": {
+      "accesAval": "Quitter Djibouti par la N1 et la suivre jusqu'à l'embranchement qui part vers le lac Assal et Tadjoura. Prendre cette nouvelle direction. A environ 25 km de cet embranchement, vous allez arriver à un belvédère sur votre droite, d'où on peut voir la quasi totalité du parcours. Continuer jusqu'au village de Karta à moins d'un km de là. Se garer dans le village au niveau du radier (petite mosquée à gauche de la route). Vous êtes directement dans l'oued.",
+      "accesAmont": null,
+      "approche": "Suivez le lit sablonneux de l'oued jusqu'au premier rappel, sinon en rive droite un chemin amène à ce même rappel.",
+      "descente": "Après une désescalade aisée, on arrive au premier rappel (55m), équipement au sol à gauche du gros bloc. Au bas de ce rappel, il y a une échappatoire en rive gauche (un peu \"aérien\"). Pour la suite désescalader dans un l'éboulis pour arriver au deuxième rappel, équipé en rive droite (45m), on arrive de suite après au troisième et dernier rappel (35m) équipé au milieu de la dalle. Après il ne reste plus que des obstacles qui se passent en désescalade. Juste avant une courbe marquée à gauche, il y a un affluent rive droite, qui peut se remonter jusqu'au pied d'un cassé qui descend pratiquement à l'aplomb du belvédère en bord de route juste avant le village de Karta. Après cette courbe repérer en rive gauche le chemin de remontée. De là il est possible de faire un aller retour pour aller jusqu'à la confluence avec un autre grand oued. Cette partie ne nécessite pas de corde.",
+      "retour": "Le chemin de retour s'élève progressivement en rive gauche jusqu'à ce que l'on arrive sur le plateau. De là on revient à vue vers le parking (chemin pas toujours très marqué pour cette dernière portion)",
+      "engagement": "L'engagement n'est pas lié à l'eau, mais au risque important de chutes de pierres. Les rappels sont équipés avec des spits de 8mm et des plaquettes de fabrication artisanale (minimum 2 spits par rappel). Peut être a-t-il été refait depuis ? Des frottements importants à gérer.",
+      "periode": "Après une période de pluie, car les rares vasques sont plutôt croupissantes.",
+      "geologie": null,
+      "historique": "Ouverture le 08/05/2008 par Henck Estelle et Paulignan Gérald.",
+      "remarques": "Il y a des pigeons qui viennent toute la journée s'amuser à faire des piqués dans cette faille, et ce faisant, le bruit qui s'en suit, reproduit à la perfection celui d'une pierre en chute libre, rassurant."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22348,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 11.446682,
+        "longitude": 42.568459,
+        "label": "début du chemin de remontée, en haut de la partie basse"
+      },
+      {
+        "canyonId": 22348,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 11.451683,
+        "longitude": 42.558998,
+        "label": null
+      },
+      {
+        "canyonId": 22348,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 11.4509,
+        "longitude": 42.56345,
+        "label": "en haut de la première cascade"
+      },
+      {
+        "canyonId": 22348,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 11.453244,
+        "longitude": 42.569221,
+        "label": "fin de la partie basse"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 11.451683,
+      "longitude": 42.558998,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

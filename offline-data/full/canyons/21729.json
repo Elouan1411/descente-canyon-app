@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:29.389311+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21729,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21729/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21729/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21729/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21729/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21729,
+    "identity": {
+      "nom": "Ribellino",
+      "nomComplet": "Rio Ribellino, Orrido di Botri (ramo est), Torrente Pelago",
+      "prefixeNom": "Rio",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21729/Ribellino.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Toscana",
+      "departement": "Lucca",
+      "communePrincipale": "Rif. Casentini",
+      "communes": [
+        "Tereglio",
+        "Rif. Casentini"
+      ],
+      "massif": null,
+      "bassin": "Serchio",
+      "coursEau": "Torrente Pelago"
+    },
+    "rating": {
+      "cotation": "v2a2IV",
+      "interet": 2.0,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 1060,
+      "deniveleM": 420,
+      "longueurM": 3600,
+      "cascadeMaxM": 21,
+      "cordeMiniM": 25,
+      "navette": "9.2km"
+    },
+    "timings": {
+      "approche": "1h",
+      "descente": "4h30",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": "On peut réaliser le Rio Ribellino en sortant du Rio Mariana. Pour les accès voir la fiche du Rio Mariana (Botri ouest)",
+      "accesAmont": null,
+      "approche": null,
+      "descente": "4 cascades dont 2 intéressantes.",
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21729,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.09375,
+        "longitude": 10.632598,
+        "label": null
+      },
+      {
+        "canyonId": 21729,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.083633,
+        "longitude": 10.60436,
+        "label": null
+      },
+      {
+        "canyonId": 21729,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 44.10244,
+        "longitude": 10.613565,
+        "label": null
+      },
+      {
+        "canyonId": 21729,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 44.083546,
+        "longitude": 10.603105,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 44.10244,
+      "longitude": 10.613565,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_e4110e5edd12fba1",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.cicarudeclan.com/ita/a5_botri.htm",
+          "url": "http://www.cicarudeclan.com/ita/a5_botri.htm"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

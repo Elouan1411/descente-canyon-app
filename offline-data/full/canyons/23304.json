@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:29.627925+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23304,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23304/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23304/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23304/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23304/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23304,
+    "identity": {
+      "nom": "Paturle",
+      "nomComplet": "Vallon de Paturle",
+      "prefixeNom": "Vallon de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23304/Paturle.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Hautes-Alpes",
+      "communePrincipale": "Orpierre",
+      "communes": [
+        "Orpierre"
+      ],
+      "massif": null,
+      "bassin": "Buëch",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1I",
+      "interet": 0.5,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 750,
+      "deniveleM": 50,
+      "longueurM": 60,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "35min",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "De Sisteron, passer à Laragne-Montéglin sur la N75 jusqu'à Eyguians, puis tourner à gauche sur Orpierre. Se garer au parking de gauche du village d'Orpierre, non loin de la rivière.",
+      "accesAmont": null,
+      "approche": "Traverser la rivière, via la passerelle menant sur des jardins en terrasses. Emprunter, le chemin partant à droite montant à une grotte sur la falaise, visible depuis le bas. Ce chemin se transforme en sentier montant et longeant la barre rocheuse. Une fois en haut, suivez une pseudo-sente se rendant sur le vallon à gauche (vallon sous la ruine de Paturle). Progresser à travers quelques broussailles jusqu'au départ de la première cascade.",
+      "descente": "C15 + C5 goujon + maillon de chaîne en RD, puis C30 sur plaquette avec anneau en RD.",
+      "retour": "Sortir en RD et emprunter une sente traversant les jardins en terrasses, la passerelle et retour au parking.",
+      "engagement": "Aucun",
+      "periode": "A faire après les pluies.",
+      "geologie": null,
+      "historique": "lolo, RV, tony-13 et ALAIN 13",
+      "remarques": "Jolie vue sur le village d'Orpierre."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23304,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.310711,
+        "longitude": 5.691547,
+        "label": null
+      },
+      {
+        "canyonId": 23304,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.311291,
+        "longitude": 5.691611,
+        "label": null
+      },
+      {
+        "canyonId": 23304,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.312698,
+        "longitude": 5.691177,
+        "label": null
+      },
+      {
+        "canyonId": 23304,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 44.311592,
+        "longitude": 5.690936,
+        "label": "sentier d'approche"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.312698,
+      "longitude": 5.691177,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_698f23f50a61f9ad",
+          "kind": "MAP",
+          "title": "3339 OT Sisteron (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

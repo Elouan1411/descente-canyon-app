@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:47.531023+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22371,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22371/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22371/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22371/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22371/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/22371/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 22371,
+    "identity": {
+      "nom": "Grand Baou",
+      "nomComplet": "Cascade du Grand Baou, La Ribeirotte",
+      "prefixeNom": "Cascade du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22371/Grand-Baou.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Var",
+      "communePrincipale": "Le Val",
+      "communes": [
+        "Le Val"
+      ],
+      "massif": null,
+      "bassin": "Argens",
+      "coursEau": "La Ribeirotte"
+    },
+    "rating": {
+      "cotation": "v2a3I",
+      "interet": 0.8,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 200,
+      "deniveleM": 20,
+      "longueurM": null,
+      "cascadeMaxM": 15,
+      "cordeMiniM": 15,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "??",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "Autoroute A8 sortie Brignoles et prendre la direction \"Le Val\" D554. Au Val poursuivre en direction de Carcès, Barjols et au carrefour, laisser la D554 pour prendre la D562 toujours en direction de Carcès. Faire quelques kilomètres et tomber sur le petit parking de terre \"Cascade du Baou\" au niveau de la bifurcation de la D562 et la D22.",
+      "accesAmont": null,
+      "approche": "Du parking, prendre la piste menant à la cascade.",
+      "descente": "C15 de tuf sur AN et sortie en RG par une sente.",
+      "retour": "Reprendre la piste de l'aller pour revenir au parking.",
+      "engagement": "Aucun",
+      "periode": "A faire au printemps pour avoir un certain niveau d'eau.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Une simple cascade qui n'a d'intérêt que si vous êtes dans le coin. Cascade à enchainer avec les canyons du secteur: Carcès, Trompines et autres..."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22371,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.454407,
+        "longitude": 6.09944,
+        "label": null
+      },
+      {
+        "canyonId": 22371,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.454491,
+        "longitude": 6.099837,
+        "label": null
+      },
+      {
+        "canyonId": 22371,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.45295,
+        "longitude": 6.096382,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.45295,
+      "longitude": 6.096382,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_28950d7b1e8c3e62",
+          "kind": "MAP",
+          "title": "3444 OT Brignoles - Le Luc (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 579,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Var) - 13 mai 2025",
+          "summary": "- La pratique du canyonisme dans des canyons secs (cotation aquaticité A1 ou habituellement à sec) est autorisée toute l'année\n\n- La pratique du canyonisme dans des canyons aquatiques est interdite du 1er novembre au 31 mars.\n\nPour la période du 1er avril au 30 octobre, il est interdit :\n\n- de pratiquer du coucher du soleil à 9h\n\n- de s'engager dans une descente de canyon aquatique après 17h.\n\n- De manière générale, il est interdit :\n\n- de s'engager si une alerte vigilance météo de niveau orange ou rouge est émise par Météo France, en ce qui concerne le risque \"pluie\", \"orage\", et \"inondation\", sur le secteur concerné.\n\n- de constituer un groupe de plus de 10 personnes (encadrement inclus)",
+          "remark": null,
+          "details": "Arrêté préfectoral (Préfecture du Var) SDJES-SPORTS-2025-12 du 13 mai 2025",
+          "effectiveDate": "13 mai 2025",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/579/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral (Préfecture du Var) SDJES-SPORTS-2025-12 du 13 mai 2025",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem579_pj1.pdf"
+            }
+          ]
+        },
+        {
+          "id": 545,
+          "status": "Abrogé",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Var) - 06 mai 2024",
+          "summary": "La pratique du canyonisme se voit interdite du 1er novembre au 31 mars.\n\nPour la période du 1er avril au 30 octobre, il est interdit :\n\n- de s'engager dans une descente de canyon avant 9h et après 17h.\n\n- de s'engager si une alerte vigilance météo de niveau orange ou rouge est émise par Météo France, en ce qui concerne le risque \"pluie\", \"orage\", et \"inondation\", sur le secteur concerné.\n\n- de constituer un groupe de plus de 10 personnes (encadrement inclus)",
+          "remark": "Arrêté abrogé et remplacé par l'arrêté préfectoral SDJES-SPORTS-2025-12 du 13 mai 2025",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nArrêté préfectoral (Var) n° SDJES-SPORTS-2024-0004 du 06 mai 2024",
+          "effectiveDate": "13 mai 2025",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/545/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral (Var) n° SDJES-SPORTS-2024-0004 du 06 mai 2024",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem545_pj1.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

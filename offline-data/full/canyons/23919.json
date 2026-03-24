@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:35.125580+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23919,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23919/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23919/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23919/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23919/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23919,
+    "identity": {
+      "nom": "Pau Branco",
+      "nomComplet": "Córrego do Pau Branco",
+      "prefixeNom": "Córrego do",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23919/Pau-Branco.html"
+    },
+    "location": {
+      "pays": "Portugal",
+      "region": "Madeira",
+      "departement": "Machico Municipality",
+      "communePrincipale": "Porto da Cruz",
+      "communes": [
+        "Porto da Cruz"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1I",
+      "interet": 1.8,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 895,
+      "deniveleM": 365,
+      "longueurM": 650,
+      "cascadeMaxM": 55,
+      "cordeMiniM": 55,
+      "navette": "9.0km"
+    },
+    "timings": {
+      "approche": "35min",
+      "descente": "3h",
+      "retour": "1min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": "11 rappels.",
+      "retour": "Ouvert par Antoine Florin, L. Castelbranco, E. Minnamd et J. Sugliani en novembre 2001?",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23919,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 32.737789,
+        "longitude": -16.894098,
+        "label": null
+      },
+      {
+        "canyonId": 23919,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 32.741791,
+        "longitude": -16.895979,
+        "label": null
+      },
+      {
+        "canyonId": 23919,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 32.73542,
+        "longitude": -16.88632,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 32.73542,
+      "longitude": -16.88632,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_17b8b5b328df12fb",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyoning.camadeira.com/canyons/pau-branco/",
+          "url": "http://canyoning.camadeira.com/canyons/pau-branco/"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

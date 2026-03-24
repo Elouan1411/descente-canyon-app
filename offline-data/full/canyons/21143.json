@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:48:19.899541+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21143,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21143/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21143/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21143/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21143/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21143,
+    "identity": {
+      "nom": "Estouves",
+      "nomComplet": "Les Estouves",
+      "prefixeNom": "Les",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21143/Estouves.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Drôme",
+      "communePrincipale": "Villeperdrix",
+      "communes": [
+        "Villeperdrix"
+      ],
+      "massif": "Drôme provençale",
+      "bassin": "Aigues - Aigue - Eygues - Aygues",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a1I",
+      "interet": 1.2,
+      "nbVotes": 8
+    },
+    "metrics": {
+      "altitudeDepartM": 440,
+      "deniveleM": 65,
+      "longueurM": 500,
+      "cascadeMaxM": 10,
+      "cordeMiniM": 10,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "35min",
+      "descente": "30min",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": "aval : garez vous dans sahune",
+      "accesAmont": "amont : Sur la D94, Nyons-Gap garez vous aprés Sahune à la seconde aire de pique nique à côté de petites cascades.\n\nParking",
+      "approche": "Prenez le GR qui monte à droite à travers les barres rocheuses. Arrêtez vous au deuxième cours d'eau.\n\nAccés sanglier : escaladez tous les obstacles !",
+      "descente": "Quelques ressauts toboggans. Les deux obstacles principaux sont à la fin. Les plaquettes ont été enlevées des chevilles (Plaquettes de 8)",
+      "retour": null,
+      "engagement": "Faible",
+      "periode": "Peu d'eau. vite à sec.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Une bouse, une de plus, mais l'hiver c'est si bon ;-)"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21143,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.432598,
+        "longitude": 5.273738,
+        "label": null
+      },
+      {
+        "canyonId": 21143,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.431099,
+        "longitude": 5.277364,
+        "label": null
+      },
+      {
+        "canyonId": 21143,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 44.431221,
+        "longitude": 5.277386,
+        "label": "Ou parking si vous choissez de remonter le canyon"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.431221,
+      "longitude": 5.277386,
+      "label": "Ou parking si vous choissez de remonter le canyon"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_4e3735bcc40c64f3",
+          "kind": "MAP",
+          "title": "3139 OT Nyons (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

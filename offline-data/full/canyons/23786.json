@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:05.837275+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23786,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23786/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23786/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23786/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23786/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23786,
+    "identity": {
+      "nom": "Carpenada",
+      "nomComplet": "Val Carpenada",
+      "prefixeNom": "Val",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23786/Carpenada.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Vénétie",
+      "departement": "Belluno",
+      "communePrincipale": "Sospirolo",
+      "communes": [
+        "Sospirolo"
+      ],
+      "massif": "Dolomites de Belluno",
+      "bassin": "Mis",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2III",
+      "interet": null,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": 600,
+      "deniveleM": 200,
+      "longueurM": 650,
+      "cascadeMaxM": 28,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "45",
+      "descente": "2h15min",
+      "retour": "60"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": "Dolomie",
+      "historique": "F. Cacace, P. Gastellou, P. Bolis, A. Nadali en 08.2006",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23786,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.167381,
+        "longitude": 12.07902,
+        "label": null
+      },
+      {
+        "canyonId": 23786,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.164669,
+        "longitude": 12.07601,
+        "label": null
+      },
+      {
+        "canyonId": 23786,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.159615,
+        "longitude": 12.086875,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.159615,
+      "longitude": 12.086875,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

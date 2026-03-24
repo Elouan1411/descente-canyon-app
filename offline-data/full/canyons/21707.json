@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:24.260730+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21707,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21707/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21707/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21707/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21707/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21707,
+    "identity": {
+      "nom": "Roi",
+      "nomComplet": "Barranco de Roi",
+      "prefixeNom": "Barranco de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21707/Roi.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Cataluña",
+      "departement": "Lérida",
+      "communePrincipale": "Torre de Capdella",
+      "communes": [
+        "La Plana",
+        "Torre de Capdella"
+      ],
+      "massif": null,
+      "bassin": "Riu Noguera Pallaresa",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 2.3,
+      "nbVotes": 12
+    },
+    "metrics": {
+      "altitudeDepartM": 1010,
+      "deniveleM": 120,
+      "longueurM": 900,
+      "cascadeMaxM": 12,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "30/40min",
+      "descente": "2h00",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "Se garer à la sortie du canyon soit au départ de la marche d'approche qui se situe 200 m avant la fin du canyon.",
+      "accesAmont": null,
+      "approche": "Emprunter le beau sentier \"mirador de Castell Estao\" (panneaux d'explications sur le patrimoine minier) . Au village de Castell, aller en direction du mirador et passer de l'autre côté du versant, une sente apparait au bout de 2-3 minutes.",
+      "descente": "Début inintéressant. L'intérêt croit au fur et à mesure de la descente avec de nombreux ressauts et rappels inférieurs à 12m. Glissant.",
+      "retour": "Évidente.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "Possibilité d'organiser une navette entre le parking aval et le village de Castell Estao (peu utile)."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21707,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.388828,
+        "longitude": 0.953214,
+        "label": null
+      },
+      {
+        "canyonId": 21707,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.388912,
+        "longitude": 0.96206,
+        "label": null
+      },
+      {
+        "canyonId": 21707,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 42.388664,
+        "longitude": 0.962688,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 42.388664,
+      "longitude": 0.962688,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_72501cfca413dafd",
+          "kind": "MAP",
+          "title": "26 Pallars Sobira (Institut cartographic de Catalunya)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_5c67064c209f1ce6",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.barranquismo.net/paginas/barrancos/barranc_de_roi.pdf",
+          "url": "http://www.barranquismo.net/paginas/barrancos/barranc_de_roi.pdf"
+        },
+        {
+          "id": "resource_406965fc8afba5ec",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.terra.es/personal/homellop/roi1.htm",
+          "url": "http://www.terra.es/personal/homellop/roi1.htm"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:45:43.889046+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2501,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2501/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2501/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2501/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2501/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2501,
+    "identity": {
+      "nom": "Orquette",
+      "nomComplet": "Canyon d' Orquette, Ravin d'Orque",
+      "prefixeNom": "Canyon d'",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2501/Orquette.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Hérault",
+      "communePrincipale": "Saint-Geniès-de-Varensal",
+      "communes": [
+        "Saint-Geniès-de-Varensal"
+      ],
+      "massif": "Espinouse",
+      "bassin": "La Mare",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 1.7,
+      "nbVotes": 18
+    },
+    "metrics": {
+      "altitudeDepartM": 600,
+      "deniveleM": 196,
+      "longueurM": null,
+      "cascadeMaxM": 19,
+      "cordeMiniM": 25,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "35min",
+      "descente": "1h30",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "du canyon d'Albès et du canyon de Taradelle (pisciculture de Saint Géniès de Varensal)",
+      "accesAmont": null,
+      "approche": "Première solution aisée : depuis la pisciculture suivre la piste, passer le pont continuer la piste qui monte jusqu'au 8ème lacet. A gauche par un sentier balisé en bleu qui croise le lit du ruiseau sur un gué avec planches de bois. Départ là.\n\n2ème solution : de la pisciculture, descendre au pont qui franchit le ruisseau d'Orque, remonter en rive G, franchir le ravin d'Orque, continuer à monter à la première bifurcation prendre à droite, monter à la bergerie et redescendre à droite vers le gué du ravin. C'est plus court mais ça grimpe plus.",
+      "descente": "Le premier ressaut sous le gué se désescalade ou rappel 4 m sur AN rive D. Quelques ressauts parfois étroits se font en libre sauf 1, suit un bel enchainement de deux cascades emboitées C4 (AN rive D) et C12 (main courrante si débit ++) dans une faille. Le reste se désescalade ou toboggans, on remarque un étroit sous un bloc (Broche rive G, facultatif) puis une superbe C19 en goulotte (amarrage rive D, contourner pour le trouver). Fini.",
+      "retour": "10min depuis le chemin de sortie commun des 3 canyons.",
+      "engagement": "Echappatoires malaisés, à Dte avant la C4/C12. Facile rive G avant la C19.",
+      "periode": "Coule toute l'année..",
+      "geologie": "Comme les autres, d'abord calcaire puis schistes gris.",
+      "historique": null,
+      "remarques": "Il s'agit du troisième canyon affluent du ruisseau d'Orque, affluent du Bouissou et de la Mare, après le ruisseau de Taradelle et le ruisseau d'Albès. A noter que Taradelle et Albès on le même final, Taradelle étant un affluent d' Albès.."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2501,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.689381,
+        "longitude": 2.991071,
+        "label": null
+      },
+      {
+        "canyonId": 2501,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.686993,
+        "longitude": 2.991886,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 43.689381,
+      "longitude": 2.991071,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_fc07aa1bfb96647b",
+          "kind": "MAP",
+          "title": "2543 OT Lamalou-Les-Bains (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

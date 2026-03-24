@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:25.446735+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22545,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22545/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22545/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22545/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22545/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22545,
+    "identity": {
+      "nom": "Weerberg",
+      "nomComplet": "Canyon Weerberg, Pillbach",
+      "prefixeNom": "Canyon",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22545/Weerberg.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Tyrol",
+      "departement": "Politischer Bezirk Schwaz",
+      "communePrincipale": "Pill",
+      "communes": [
+        "Schwaz",
+        "Pill"
+      ],
+      "massif": "Tuxer Alpen",
+      "bassin": "Inn",
+      "coursEau": "Pillbach"
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 0.9,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 790,
+      "deniveleM": 170,
+      "longueurM": 1500,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 30,
+      "navette": "3.2km"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "3h",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "Prendre l'autoroute A12 (E45, E60) Innsbruck - Kufstein et la sortie Vomp.\n\nContinuer à Pill (B 171). De là prendre la route direction Hochpillberg.\n\nA la sortie de Pill quitter la route et prendre la petite route tout droit à côté du Pillbach et la piste suivante cent mètres. Garer une voiture.\n\nAvec l'autre véhicule revenir et prendre la route direction Hochpillberg. Monter 2,1 km et quitter cette route à droite. Suivre la petite route encore 1,1 km et arriver à une pelouse. Après la pelouse garer la 2ème voiture (à gauche).",
+      "accesAmont": null,
+      "approche": "Du parking prendre le chemin vers le pont sur le Pillbach, le suivre encore 100m et arriver au petit barrage (départ).",
+      "descente": "Marches fastidieuses, quelques petits toboggans et rappels. À la fin 2 bons rappels.",
+      "retour": "Sortie après le dernier rappel (tyrolienne) à droite et prendre le sentier jusqu'à la voiture.",
+      "engagement": null,
+      "periode": null,
+      "geologie": "Urgestein",
+      "historique": null,
+      "remarques": "Très glissant et eau polluée (?)"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22545,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.311077,
+        "longitude": 11.698723,
+        "label": null
+      },
+      {
+        "canyonId": 22545,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.316853,
+        "longitude": 11.686074,
+        "label": null
+      },
+      {
+        "canyonId": 22545,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 47.309895,
+        "longitude": 11.702585,
+        "label": null
+      },
+      {
+        "canyonId": 22545,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 47.320271,
+        "longitude": 11.684137,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 47.309895,
+      "longitude": 11.702585,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_b92e1be774787dcb",
+          "kind": "MAP",
+          "title": "5/3 Karwendel, Östliches Blatt (Alpenvereins (AV) Karte)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,169 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:49:34.615039+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21483,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21483/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21483/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21483/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21483/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21483,
+    "identity": {
+      "nom": "Etangs (supérieur)",
+      "nomComplet": "Bras des Etangs (supérieur), Ravine Prudent",
+      "prefixeNom": "Bras des",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21483/Etangs-superieur.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Cilaos",
+      "departement": "La Réunion",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Cilaos",
+      "bassin": "Bras Rouge",
+      "coursEau": "Ravine Prudent"
+    },
+    "rating": {
+      "cotation": "v4a2II",
+      "interet": 1.4,
+      "nbVotes": 8
+    },
+    "metrics": {
+      "altitudeDepartM": 1330,
+      "deniveleM": 190,
+      "longueurM": 550,
+      "cascadeMaxM": 50,
+      "cordeMiniM": 55,
+      "navette": "4.0km"
+    },
+    "timings": {
+      "approche": "10min",
+      "descente": "1h30",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": "De CILAOS, prendre la direction de l'ILET à CORDE par la D242, descendre les rampes et se garer au niveau du pont des anciens thermes.\n\nAvec le second véhicule, remonter sur CILAOS, au niveau des thermes, prendre à Gauche la direction de BRAS SEC, ROCHE MERVEILLEUSE.\n\nPrendre la première route à gauche (chemin des chênes) et monter au plateau des chênes (parcours de santé, circuit de V.T.T.) se garer sur un des parkings.",
+      "accesAmont": null,
+      "approche": "Emprunter le GR.R1 en direction de Bassin Bleu sur 500m et descendre dans les plants de songes jusqu'au canyon dès qu'on apperçoit une sente à gauche.",
+      "descente": "4 rappels de 20, 25, 20 et 55m dans une belle ambiance et sous le soleil.\n\nOn descend ensuite dans des blocs sur 300m avant d'arriver au parking aval.",
+      "retour": "Remonter facilementsur le pont en RG.",
+      "engagement": "Echappatoires sur tout le parcours.",
+      "periode": "Faible débit.",
+      "geologie": null,
+      "historique": "Une équipe de \"Canyon Réunion\" a ouvert ce petit parcours en Octobre 1989. Elle était composée de L. BROISIN, G. DECARLO, O. DESRUE et P. LANDABOUROU.",
+      "remarques": "Parcours à la demi-journée, idéal pour faire de la pédagogie ou une initiation."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21483,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": -21.126389,
+        "longitude": 55.471668,
+        "label": null
+      },
+      {
+        "canyonId": 21483,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": -21.129723,
+        "longitude": 55.471668,
+        "label": null
+      },
+      {
+        "canyonId": 21483,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": -21.126667,
+        "longitude": 55.47361,
+        "label": null
+      },
+      {
+        "canyonId": 21483,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": -21.129723,
+        "longitude": 55.471668,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": -21.126667,
+      "longitude": 55.47361,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_3ed05b9314e97090",
+          "kind": "TOPOGUIDE",
+          "title": "73 canyons à la Réunion et Madagascar",
+          "authors": [
+            "Ric a Ric"
+          ],
+          "publicationYear": 2009,
+          "reference": null,
+          "editor": "Ric a Ric",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/134/73-canyons-a-la-Reunion-et-a-Madagascar.html"
+        },
+        {
+          "id": "biblio_0710f326f5b4b107",
+          "kind": "TOPOGUIDE",
+          "title": "La Réunion : Topocanyon Ricaric",
+          "authors": [
+            "Ric A Ric"
+          ],
+          "publicationYear": 2003,
+          "reference": null,
+          "editor": null,
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/156/topoguide.html"
+        },
+        {
+          "id": "biblio_f02672f3db0c7f65",
+          "kind": "TOPOGUIDE",
+          "title": "Le paradis du canyoning",
+          "authors": [
+            "P. Colas"
+          ],
+          "publicationYear": 1995,
+          "reference": null,
+          "editor": "Maison de la montagne",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1138/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_b239997245dc5eb0",
+          "kind": "MAP",
+          "title": "4405RT Saint-Pierre (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_e421afa5bf23d006",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.canyonreunion.com/les_canyons/bras_des_etangs.htm",
+          "url": "http://www.canyonreunion.com/les_canyons/bras_des_etangs.htm"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

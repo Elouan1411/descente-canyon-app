@@ -1,0 +1,241 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:44:09.256740+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2129,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2129/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2129/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2129/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2129/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/2129/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 2129,
+    "identity": {
+      "nom": "Ternèze",
+      "nomComplet": "Ruisseau de Ternèze, Canyon du Boyat",
+      "prefixeNom": "Ruisseau de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2129/Terneze.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Savoie",
+      "communePrincipale": "Curienne",
+      "communes": [
+        "Curienne"
+      ],
+      "massif": "Bauges",
+      "bassin": "Leysse",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a4I",
+      "interet": 2.7,
+      "nbVotes": 105
+    },
+    "metrics": {
+      "altitudeDepartM": 610,
+      "deniveleM": 30,
+      "longueurM": 160,
+      "cascadeMaxM": 10,
+      "cordeMiniM": 10,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "20min",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "De Curienne, suivre la D11 jusqu'au col (Boyat alt.660m). Prendre la D21 en direction de Puygros. Peu après, se garer au niveau du pont qui enjambe le ruisseau de Ternèze.",
+      "accesAmont": null,
+      "approche": "Emprunter A PIED la piste carrossable qui longe le torrent (en direction aval). Le départ se trouve quelques dizaines mètres après avoir passé le panneau descriptif du canyon.",
+      "descente": "Hyper-court, mais hyper concentré : on y rencontre, selon les choix techniques : toboggan, rappel, saut, nage, une arche naturelle (possible tyrolienne) et un siphon sous bloc ! Le tout en moins de 200m !",
+      "retour": "Une fois l'encaissement terminé rejoindre le départ par les berges.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "A faire et refaire..."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2129,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.56699,
+        "longitude": 6.019286,
+        "label": null
+      },
+      {
+        "canyonId": 2129,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.568516,
+        "longitude": 6.018597,
+        "label": null
+      },
+      {
+        "canyonId": 2129,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.56028,
+        "longitude": 6.023889,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.56028,
+      "longitude": 6.023889,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_da30219dbb4dd176",
+          "kind": "TOPOGUIDE",
+          "title": "Les canyons de Savoie",
+          "authors": [
+            "Patrick Chollot"
+          ],
+          "publicationYear": 2018,
+          "reference": "978-2-95309-39-1-9",
+          "editor": "auto-édition",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/1125/Les-canyons-de-Savoie.html"
+        },
+        {
+          "id": "biblio_1101377ae261f2cb",
+          "kind": "TOPOGUIDE",
+          "title": "Activités verticales en Bauges",
+          "authors": [],
+          "publicationYear": 2014,
+          "reference": "978-2-9538878-8-4",
+          "editor": "Parc naturel régional du massif des Bauges",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1285/topoguide.html"
+        },
+        {
+          "id": "biblio_e7d94bb2f47393ab",
+          "kind": "TOPOGUIDE",
+          "title": "Cascades, Gorges & Canyons : Pré-alpes d'Isère et de Savoie",
+          "authors": [
+            "Bertrand Hauser",
+            "Delphine Baratin"
+          ],
+          "publicationYear": 2007,
+          "reference": "978-2-9529407-0-2",
+          "editor": "Descente-Canyon.com",
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/11/Cascades--Gorges-et-Canyons-:-Pre-alpes-d-Isere-et-de-Savoie.html"
+        },
+        {
+          "id": "biblio_6d273ae41f72e178",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons de Savoie",
+          "authors": [
+            "F. Martin",
+            "C. Altazin"
+          ],
+          "publicationYear": 2007,
+          "reference": "978-2-9528935-0-3",
+          "editor": null,
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/15/Descentes-de-canyons-en-Savoie.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_24c652994d6d1609",
+          "kind": "MAP",
+          "title": "3432 OT Massif des Bauges (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 523,
+          "status": "Obsolète",
+          "action": "Interdit",
+          "title": "Arrêté municipal (Curienne) - 25 août 2023",
+          "summary": "Suite au signalement de suspicion de cyanobactéries, en attendant le retour des analyses, le canyon est interdit jusqu'à nouvel ordre (à compter du 25 aout 2023, 12h).\n\nLa pratique d'activités de loisirs aquatiques sur la Ternèze est de nouveau autorisée à partir du 30 mai 2024.",
+          "remark": "Le site web de la mairie de Curienne confirme le 14/09/2023 la présence de cyanobactéries. L'arrêté d'interdiction des activités aquatiques est donc maintenu.\n\nLe canyon de Ternèze 2 (\"la Salamandre\") est également concerné par l'interdiction car située en aval et à cheval entre les communes de Curienne et Thoiry.",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nArrêté municipal n°2023-109 du 25 aout 2023\n\nConsultez :\n\nArrêté municipal n°2024-59 du 30 mai 2024",
+          "effectiveDate": "30 mai 2024",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/523/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté municipal n°2023-109 du 25 aout 2023",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem523_pj1.pdf"
+            }
+          ]
+        },
+        {
+          "id": 522,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté municipal (Curienne) - 22 juin 2023",
+          "summary": "Un arrêté municipal limite pour la période du 1er juillet au 31 août 2023 la taille des groupes à 10 personnes + encadrant. Matériel adapté à l'activité obligatoire et à minima : chaussures, vêtements isothermes et casque aux normes \"montagne\". Les EPI doivent être portés par tous pendant toute l'activité.\n\nLe CDPC73, via une charte d'engagement moral, précise :\n\n- Les professionnels doivent se garer sur le parking dédié qui fait l’objet d’aménagements et de commodités offertes par la commune. Il se trouve chemin du Moulin, à Curienne : https://goo.gl/maps/4PXwCC9kHuNcBTme6\n\nLes clients, quant à eux, doivent se garer sur le parking situé derrière la mairie.\n\n- Les parkings du bas sont à usage des amateurs et des visiteurs du site.. Si possible, favoriser le covoiturage pour venir sur site.\n\n- Utiliser le calendrier partagé (toute l’année). Le calendrier se décline chaque jour de la saison de 08h à 18h par créneaux de 20 minutes (l’heure étant celle d’entrée dans l’eau). Chaque groupe se positionnera sur un créneau. Le calendrier sera communiqué et rendu opérationnel pour le début de saison par le CDPC. Le surbooking est interdit, merci de penser aux autres. Libérer au plus tôt les créneaux annulés par tout moyen.\n\n- Constituer des groupes de 10 clients maximum + le guide (période des vacances scolaires estivales).\n\n- Limiter son temps dans l’eau à 1h30 après le début de son créneau horaire (période des vacances scolaires estivales).\n\n- Avoir une attention forte et particulière à l’environnement et au voisinage en sensibilisant tous les pratiquants.\n\n- Pour les professionnels, le sentier d'accès à emprunter sera celui qui arrive par gravité sur le canyon depuis le village.\n\n- L'auberge de la commune étant de nouveau ouverte, nous invitons ceux qui le souhaitent à la fréquenter. Si notre activité est appréciée par le commerçant, ça ne peut être que favorable à notre présence.",
+          "remark": null,
+          "details": "Arrêté municipal (Curienne) n°2023-87 du 22 juin 2023\n\nEngagement moral d'intérêt commun pour l'usage du canyon de Curienne \"Ternèze\" - CDPCanyon73",
+          "effectiveDate": "22 juin 2023",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/522/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté municipal (Curienne) n°2023-87 du 22 juin 2023",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem522_pj1.pdf"
+            },
+            {
+              "label": "Engagement moral d'intérêt commun pour l'usage du canyon de Curienne",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem522_pj2.pdf"
+            }
+          ]
+        },
+        {
+          "id": 408,
+          "status": "Obsolète",
+          "action": "Réglemente",
+          "title": "Arrêté municipal (Curienne) - 29 mai 2020",
+          "summary": "Charte à l'usage de la pratique + Information du CDPCanyon73 :\n\nLe vendredi 05 juin s'est tenue une reunion en mairie de Curienne, entre les élus dont le maire, et le CDPCanyon73.Il a été décidé deux temps pour cette saison :\n\nTemps 1 jusqu'au 10 juillet (crise sanitaire) :\n\nUn arrêté municipal impose une restriction temporaire de la taille des groupes à 8 personnes (soit 7 clients + 1 guide pour les groupes pros). Les engagements de la charte du CDPCanyon73 compléteront cette disposition.\n\nTemps 2 (après le 10 juillet) : fonctionnement sur la base de la charte (engagement moral). Le nombre de participants est défini par cette dernière.\n\nLa charte précise :\n\nSe stationner et/ou faire stationner ses clients/participants sur le parking qui sera défini en début de saison par la commune de Curienne en concertation avec les représentants du CDPC 73 (toute l’année). Si possible, favoriser le covoiturage pour venir sur site.\n\nUtiliser le calendrier partagé (toute l’année). Le calendrier se déclinera chaque jour de la saison de 08h à 18h par créneaux de 20 minutes (l’heure étant celle d’entrée dans l’eau). Chaque groupe se positionnera sur un créneau. Le calendrier sera communiqué et rendu opérationnel pour le début de saison par le CDPC. Le surbooking est interdit, merci de penser aux autres. Libérer au plus tôt les créneaux annulés par tout moyen.\n\nConstituer des groupes de 10 clients maximum + le guide (période des vacances scolaires estivales).\n\nLimiter son temps dans l’eau à 1h30 après le début de son créneau horaire (période des vacances scolaires estivales).\n\nAvoir une attention forte et particulière à l’environnement et au voisinage en sensibilisant tous les pratiquants.\n\nLe stationnement devra se faire sur le parking du haut. (Un agrandissement est à l'étude).\n\nLe sentier d'accès à emprunter sera celui qui arrive par gravité sur le canyon depuis le village.\n\nL'auberge de la commune étant de nouveau ouverte, nous invitons ceux qui le souhaitent à la fréquenter. Si notre activité est appréciée par le commerçant, ça ne peut être que favorable à notre présence.\n\nLa pérennité de l'activité et l'amélioration des conditions d'exercice à prévoir dépendent aussi de notre capacité à nous engager collectivement. Il est donc capital que chacun respecte les engagements décrits dans la charte.\n\nMerci aux futurs utilisateurs professionnels qui ne l'auraient pas fait de retourner l'engagement signé au CDPCanyon73 qui transmettra en retour l'accès au calendrier partagé.\n\nLe canyon de Ternèze est particulier sur de multiples sujets. Nous avons cœur de faire qu'il reste accessible à tous, ce dans un esprit de partage et de respect collectif.\n\nFrédéric Michel-Villaz,\n\nPrésident du Comité de Pilotage du Canyonisme en Savoie",
+          "remark": null,
+          "details": "Consultez :\n\nArrêté municipal (Curienne) n°2020-40 du 29 mai 2020\n\nEngagement moral d'intérêt commun pour l'usage du canyon de Curienne \"Ternèze\" - CDPCanyon73",
+          "effectiveDate": "31 déc 2020",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/408/legislation.html",
+          "attachments": [
+            {
+              "label": "Engagement moral d'intérêt commun pour l'usage du canyon de Curienne",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem408_pj1.pdf"
+            }
+          ]
+        },
+        {
+          "id": 405,
+          "status": "Obsolète",
+          "action": "Interdit",
+          "title": "Arrêté municipal (Curienne) - 15 mai 2020",
+          "summary": "La pratique est interdite du 11 mai au 02 juin 2020.",
+          "remark": "Arrêté municipal d'interdiction officiellement motivé pour des raisons sanitaires... alors que ce canyon est totalement compatible avec les recommandations fédérales, ministérielles ou l'arrêté préfectoral du déconfinement du 11 mai 2020, visiblement ignorées.",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nPhoto de l'arrêté municipal (Curienne) du 15 mai 2020",
+          "effectiveDate": "02 juin 2020",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/405/legislation.html",
+          "attachments": [
+            {
+              "label": "Photo de l'arrêté municipal (Curienne) du 15 mai 2020",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem405_pj1.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

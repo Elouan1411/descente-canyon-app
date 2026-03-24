@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:46:26.011412+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2680,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2680/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2680/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2680/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2680/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2680,
+    "identity": {
+      "nom": "Sementina (inférieur)",
+      "nomComplet": "Valle di Sementina (inférieur)",
+      "prefixeNom": "Valle di",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2680/Sementina-inferieur.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": null,
+      "departement": "Tessin",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a2I",
+      "interet": 2.5,
+      "nbVotes": 10
+    },
+    "metrics": {
+      "altitudeDepartM": 520,
+      "deniveleM": 110,
+      "longueurM": 100,
+      "cascadeMaxM": 90,
+      "cordeMiniM": 90,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "25min",
+      "descente": "1h",
+      "retour": "25"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2680,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.193676,
+        "longitude": 8.977504,
+        "label": null
+      },
+      {
+        "canyonId": 2680,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.190765,
+        "longitude": 8.990507,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.190765,
+      "longitude": 8.990507,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_9a9578770c172929",
+          "kind": "MAP",
+          "title": "1313 Bellinzona (Carte Nationale Suisse)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_5b05071148bf67be",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.swisscanyon.ch/canyons/descrittivi/sementina-inf.htm",
+          "url": "http://www.swisscanyon.ch/canyons/descrittivi/sementina-inf.htm"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

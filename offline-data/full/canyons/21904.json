@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:09.868160+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21904,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21904/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21904/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21904/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21904/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/21904/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 21904,
+    "identity": {
+      "nom": "Troncas",
+      "nomComplet": "Brèche du Troncas",
+      "prefixeNom": "Brèche du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21904/Troncas.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Bouches-du-Rhône",
+      "communePrincipale": "Rousset",
+      "communes": [
+        "Rousset"
+      ],
+      "massif": "Montagne Ste Victoire",
+      "bassin": "Arc",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 0.8,
+      "nbVotes": 5
+    },
+    "metrics": {
+      "altitudeDepartM": 450,
+      "deniveleM": 2,
+      "longueurM": 150,
+      "cascadeMaxM": null,
+      "cordeMiniM": null,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "10min",
+      "descente": "20min",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "Depuis Rousset prendre la D56C qui monte vers la Sainte victoire. Arriver sur le plateau (point IGN 460 pylône \"pas du Magnan\") puis se garer 250m plus loin juste avant une piste fermée qui part sur la droite.",
+      "accesAmont": null,
+      "approche": "Prendre la piste (peut être un problème de propriété privée, à vérifier) pendant une dizaine de minute jusqu'au point IGN 456 au niveau de la brèche. Prendre le sentier à gauche pour remonter au départ de la brèche une petite centaine de mètre plus loin.",
+      "descente": "Marche dans une étroiture (les épaules passent juste par endroit) deux trois passages sous blocs puis grotte d'une vingtaine de mètres à traverser à 4 pattes (frontale utile).\n\nIl peut facilement y avoir une flaque d'eau dans le passage de la grotte (prévoir de se mouiller les pieds) .\n\nEn fait la grotte passe sous la piste.",
+      "retour": "A la sortie de la grotte prendre rapidement une sente sur la gauche qui remonte sur la piste.",
+      "engagement": null,
+      "periode": "SEC et flaques de pluies",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Etroiture vraiment étonnante, à voir si vous passez dans le coin.\n\nCordes baudards inutiles, casques frontales et habits sales suffisent."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21904,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.512295,
+        "longitude": 5.626234,
+        "label": null
+      },
+      {
+        "canyonId": 21904,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.510811,
+        "longitude": 5.62735,
+        "label": null
+      },
+      {
+        "canyonId": 21904,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.506119,
+        "longitude": 5.618686,
+        "label": null
+      },
+      {
+        "canyonId": 21904,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 43.505802,
+        "longitude": 5.618885,
+        "label": "Départ de la piste"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.506119,
+      "longitude": 5.618686,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_96163e753595ca69",
+          "kind": "MAP",
+          "title": "3244 ET Montagne Sainte-Victoire (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 208,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Information",
+          "summary": "Attention, le canyon est situé sur une chasse privée. Ne pas le fréquenter en période de chasse, risque de se faire tirer dessus et de conflits avec le propriétaire et les chasseurs.",
+          "remark": null,
+          "details": null,
+          "effectiveDate": null,
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/208/legislation.html",
+          "attachments": []
+        }
+      ]
+    }
+  }
+}

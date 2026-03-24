@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:29.640588+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23895,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23895/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23895/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23895/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23895/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23895,
+    "identity": {
+      "nom": "Pas de Lauzens",
+      "nomComplet": "Cascade du Pas de Lauzens, Ruisseau de Lausens",
+      "prefixeNom": "Cascade du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23895/Pas-de-Lauzens.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Drôme",
+      "communePrincipale": "Piégros-la-Clastre",
+      "communes": [
+        "Piégros-la-Clastre"
+      ],
+      "massif": "Massif de Saou",
+      "bassin": "Drôme",
+      "coursEau": "Ruisseau de Lausens"
+    },
+    "rating": {
+      "cotation": "v2a1I",
+      "interet": 0.6,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 416,
+      "deniveleM": 50,
+      "longueurM": 100,
+      "cascadeMaxM": 13,
+      "cordeMiniM": null,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1min",
+      "descente": "20min",
+      "retour": "7min"
+    },
+    "topo": {
+      "accesAval": "De Crest, prendre la direction de Die par la D164 et prendre à droite sur Saou par la D70. Se rendre au Pas de Lauzens (petit parking pour deux trois voitures).",
+      "accesAmont": null,
+      "approche": "Du parking, descendre la route sur 20 m et enjamber le parapet de la route pour équiper la cascade.",
+      "descente": "C13 sur 2 pts en RG à équiper avec une corde de 15 m en fixe (deux plaquettes sans maillon rapide), Pi10 en désescalade, passer un ou deux petits gours et sortir en RD.",
+      "retour": "Remonter le long du pierrier jusqu'à la route et retour à la cascade pour la déséquiper.",
+      "engagement": "Pas d'échappatoire sur les 50 premiers mètres (encaissé).",
+      "periode": null,
+      "geologie": null,
+      "historique": "?",
+      "remarques": "Pour finir une bonne journée, si vous êtes sur la vallée de la Drôme."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23895,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.665573,
+        "longitude": 5.069131,
+        "label": null
+      },
+      {
+        "canyonId": 23895,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.665241,
+        "longitude": 5.069319,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.665241,
+      "longitude": 5.069319,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_96185c6be3bf2bcf",
+          "kind": "MAP",
+          "title": "3138 OT Dieulefit (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

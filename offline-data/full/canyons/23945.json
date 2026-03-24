@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:40.916450+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23945,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23945/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23945/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23945/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23945/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23945,
+    "identity": {
+      "nom": "Sélette",
+      "nomComplet": "Ravin de la Sélette",
+      "prefixeNom": "Ravin de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23945/Selette.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-de-Haute-Provence",
+      "communePrincipale": "Allos",
+      "communes": [
+        "Allos"
+      ],
+      "massif": "Massif des 3 Evêchés - Estrop",
+      "bassin": "Verdon",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1I",
+      "interet": 3.0,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 1730,
+      "deniveleM": 130,
+      "longueurM": 250,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "1h00",
+      "retour": "25min"
+    },
+    "topo": {
+      "accesAval": "D'Allos, suivre la D908 en direction de la Foux d'Allos. Se garer sans gêner sur Les Gays.",
+      "accesAmont": null,
+      "approche": "A pied, suivre la piste jusqu'au pont traversant le Verdon. Monter au mieux, droit dans la pente. Arrivé au petit plateau non loin de la ruine de Pleynet, prendre à droite et se rendre au départ de la descente.",
+      "descente": "Deux, trois petites désescalades vous mènent sur une C5 sur AN en RD, puis une C22 sur AN en RG (anneau de corde + maillon rapide), D5, C25 sur An en RD (anneau de corde), courte marche, Pi 10 en désescalade, Pi 5 en désescalade, désescalade Pi 4, prendre à droite au Verdon.",
+      "retour": "Descendre le Verdon jusqu'au pont et remonter sur Les Gays.",
+      "engagement": "Échappatoire très délicate au niveau des trois rappels.",
+      "periode": "En eau toute l'année, mais à faire en début de saison.",
+      "geologie": null,
+      "historique": "??",
+      "remarques": "Il est possible d'enchaîner cette descente après la partie amont du Haut-Verdon. Approche en 20 min depuis la confluence avec le Verdon. Remonter droit dans la pente raide sous couvert de forêt en RD du ravin de la Sélette."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23945,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.274216,
+        "longitude": 6.574088,
+        "label": null
+      },
+      {
+        "canyonId": 23945,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.274815,
+        "longitude": 6.576663,
+        "label": null
+      },
+      {
+        "canyonId": 23945,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.26849,
+        "longitude": 6.580279,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.26849,
+      "longitude": 6.580279,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

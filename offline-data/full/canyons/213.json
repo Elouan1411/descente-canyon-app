@@ -1,0 +1,160 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:43:30.927681+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 213,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/213/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/213/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/213/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/213/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/213/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 213,
+    "identity": {
+      "nom": "Gorgonnets",
+      "nomComplet": "Les Gorgonnets, Ecouges III, La Drevenne",
+      "prefixeNom": "Les",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/213/Gorgonnets.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Isère",
+      "communePrincipale": "Rovon",
+      "communes": [
+        "Saint-Gervais",
+        "Rovon"
+      ],
+      "massif": "Vercors",
+      "bassin": "Isère",
+      "coursEau": "La Drevenne"
+    },
+    "rating": {
+      "cotation": "",
+      "interet": 50.0,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": 50,
+      "longueurM": 150,
+      "cascadeMaxM": null,
+      "cordeMiniM": null,
+      "navette": null
+    },
+    "timings": {
+      "approche": null,
+      "descente": null,
+      "retour": null
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 213,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.190277,
+        "longitude": 5.472071,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "SORTIE",
+      "latitude": 45.190277,
+      "longitude": 5.472071,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_0f06b44eb9a42186",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons du Vercors et Alentours",
+          "authors": [
+            "J-C. Botti",
+            "B. Rosset",
+            "Y. Launay",
+            "C. Larribe",
+            "T. Larribe",
+            "Spéléo Club MJC de Tullins"
+          ],
+          "publicationYear": 1997,
+          "reference": "ISBN 2-7417-0211-X",
+          "editor": "Gap",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/12/topoguide.html"
+        },
+        {
+          "id": "biblio_e2259ea833d03cf8",
+          "kind": "TOPOGUIDE",
+          "title": "Infern'eaux",
+          "authors": [
+            "P. Boiron",
+            "J. Carles",
+            "J-M. Etienne",
+            "R. Vuillot"
+          ],
+          "publicationYear": 1990,
+          "reference": "ISBN 2-7038-0065-7",
+          "editor": "Didier et Richard",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/11/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_f71cf3569cd5f7fc",
+          "kind": "MAP",
+          "title": "3235 OT Autrans - Gorges de La Bourne (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 105,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Isère) - 16 déc 1996",
+          "summary": "Par arrêt préfectoral n° 96-8519 du 16/12/1996 l'accès à la Drevenne a été règlementé comme suit :\n\nDescente :\n\n- autorisée toute l'année entre le pont Chabert et la cascade\n\n- du Pont de la Cascade au Trou du Fond autorisée du 1er mai au 15 septembre.\n\n- du \"Trou du fond\" à l'Isère interdite toute l'année",
+          "remark": null,
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.",
+          "effectiveDate": "16 déc 1996",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/105/legislation.html",
+          "attachments": []
+        },
+        {
+          "id": 6,
+          "status": "Obsolète",
+          "action": "Interdit",
+          "title": "Arrêté municipal",
+          "summary": "Descente du canyon interdite toute l'année.",
+          "remark": null,
+          "details": null,
+          "effectiveDate": null,
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/6/legislation.html",
+          "attachments": []
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:36.100694+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22032,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22032/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22032/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22032/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22032/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22032,
+    "identity": {
+      "nom": "Servan",
+      "nomComplet": "Canyon du Servan, Le Servan",
+      "prefixeNom": "Canyon du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22032/Servan.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Aveyron",
+      "communePrincipale": "Villecomtal",
+      "communes": [
+        "Villecomtal"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": "Le Servan"
+    },
+    "rating": {
+      "cotation": "v3a1II",
+      "interet": 1.0,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 510,
+      "deniveleM": 200,
+      "longueurM": 2000,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 25,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "40min",
+      "descente": "1h",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "De Rodez, suivre Onet-le-chateau, puis Sébazac, puis Muret-le-Château, puis Villecomtal.\n\nA Villecomtal, se garer dans le respect de la propriété privée et en respectant l'intimité des riverains.",
+      "accesAmont": null,
+      "approche": "Depuis la route principale (D22), monter devant la mairie, tourner à gauche pour franchir le Servan, puis à droite direction l'amont. Sentier évident. Première patte d'oie : prendre en haut à gauche. Puis après une clairière avec bergerie, prendre le petit sentier qui monte raide à droite. Chemin faisant, on se retrouve au village de Polissal, en haut des cascades.",
+      "descente": "Depuis la rambarde, atteindre le seul relais RD (chaîne) : C15. Puis C20 sur AN RD, puis C10 sur AN RG. La suite est d'abord une série de désescalades entre blocs pendant 10min, puis une marche dans ou le long du ruisseau pendant 800m.",
+      "retour": "On atteint une clairière RG où se trouve une bergerie abandonnée. Au fond du pré se trouve le sentier de retour qui ramène à Villecomtal.",
+      "engagement": "Tout est contournable, mais le fond du vallon a un caractère sauvage et isolé.",
+      "periode": "Dès les beaux jours, les cascades s'assèchent, donc à pratiquer en milieu de printemps. Par gros débit, il semble possible d'éviter le flux sans problème.",
+      "geologie": null,
+      "historique": "Roland Pelissier, Frédéric Louart, Patrick Hernandez, le 21 mai 1988.",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22032,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.551964,
+        "longitude": 2.552626,
+        "label": null
+      },
+      {
+        "canyonId": 22032,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.539574,
+        "longitude": 2.56284,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.539574,
+      "longitude": 2.56284,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_a603aa4818255d95",
+          "kind": "MAP",
+          "title": "2438 O Estaing - Gorges du Lot (IGN S?rie Bleue)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:43:33.470262+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 222,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/222/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/222/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/222/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/222/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/222/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 222,
+    "identity": {
+      "nom": "Brize",
+      "nomComplet": "Les gorges de la Brize",
+      "prefixeNom": "Les gorges de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/222/Brize.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Ain",
+      "communePrincipale": "Lochieu",
+      "communes": [
+        "Champagne-en-Valromey",
+        "Lochieu"
+      ],
+      "massif": "Bugey",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2I",
+      "interet": 1.8,
+      "nbVotes": 24
+    },
+    "metrics": {
+      "altitudeDepartM": 650,
+      "deniveleM": 140,
+      "longueurM": 800,
+      "cascadeMaxM": 15,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "2h",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "Après Champagne en Valmorey, possibilité d'accès au niveau d'un panneau \"pain de sucre\" (parking), mais moins de marche de retour si vous vous garer au parking du \"banc des dames\" (panneau 500m avant)",
+      "accesAmont": null,
+      "approche": "Juste aprés le panneau \"pain de sucre\", descendre dans la foret sur 20 m, vous trouverez la rivière au dessus de la première cascade.",
+      "descente": "Début par descente à côté du pain de sucre (C10), un tob, un ressaut, vous atteignez une C15 ou vous choisirez l'arbre le plus au bord (risque de coincement de corde avec l'autre arbre), après un peu de marche et deux petits tob, une nouvelle C15, ensuite de nouveau deux tob de 5 et 7m qui valent bien le coup, une C8 jolie, et finalement un enchainement T3, T5, c'est fini...",
+      "retour": "Sortie aprés T5 rive droite sur un petit sentier, au croisement à gauche (montée), au prochain à droite, puis arrivé au champs où il y a un banc en pierre longer sur la droite, enfin suivre le chemin.",
+      "engagement": "aucun",
+      "periode": "Se fait facilement en petite crue",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 222,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.938946,
+        "longitude": 5.71377,
+        "label": null
+      },
+      {
+        "canyonId": 222,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.931698,
+        "longitude": 5.717697,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 45.938946,
+      "longitude": 5.71377,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_640a5be2c102fcb1",
+          "kind": "MAP",
+          "title": "3230 E",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 103,
+          "status": "Obsolète",
+          "action": "Interdit",
+          "title": "Arrêté préfectoral (Ain) - 10 août 2005",
+          "summary": "La pratique du canyonisme est interdite pour des raisons de sécheresse, jusqu'au 15 septembre, sauf évolution.\n\nPour infos, l'amende est de 1500 €, 3000 € en cas de récidive...",
+          "remark": null,
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.",
+          "effectiveDate": "15 sept 2005",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/103/legislation.html",
+          "attachments": []
+        },
+        {
+          "id": 8,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté municipal",
+          "summary": "La descente sur le \" pain de sucre \" est interdite par arrêté Municipal",
+          "remark": null,
+          "details": null,
+          "effectiveDate": null,
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/8/legislation.html",
+          "attachments": []
+        }
+      ]
+    }
+  }
+}

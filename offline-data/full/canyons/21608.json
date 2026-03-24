@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:02.482618+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21608,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21608/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21608/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21608/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21608/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21608,
+    "identity": {
+      "nom": "Lordelo",
+      "nomComplet": "Rio Lordelo",
+      "prefixeNom": "Rio",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21608/Lordelo.html"
+    },
+    "location": {
+      "pays": "Portugal",
+      "region": "Aveiro",
+      "departement": "Sever do Vouga Municipality",
+      "communePrincipale": "Couto de Esteves",
+      "communes": [
+        "Couto de Esteves"
+      ],
+      "massif": "Serra da Freita",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a4II",
+      "interet": 1.8,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": 160,
+      "longueurM": 2000,
+      "cascadeMaxM": 24,
+      "cordeMiniM": null,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "??",
+      "descente": "??",
+      "retour": "??"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "Affluent côté droit du Rio Vouga.\n\nLa partie la plus intéressante étant de Ponte de Estrada jusqu'au Rio Vouga.\n\nTrès ludique !"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21608,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 40.764095,
+        "longitude": -8.29619,
+        "label": null
+      },
+      {
+        "canyonId": 21608,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 40.759281,
+        "longitude": -8.29965,
+        "label": "Lagoa da barragem. Nadar até à estrada (200m)"
+      },
+      {
+        "canyonId": 21608,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 40.764095,
+        "longitude": -8.29619,
+        "label": null
+      },
+      {
+        "canyonId": 21608,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 40.7551,
+        "longitude": -8.297621,
+        "label": "chemin de terre"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 40.764095,
+      "longitude": -8.29619,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

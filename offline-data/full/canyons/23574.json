@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:17.385147+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23574,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23574/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23574/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23574/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23574/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23574,
+    "identity": {
+      "nom": "Fuenfria y Sierra",
+      "nomComplet": "Barrancos de Fuenfria y Sierra",
+      "prefixeNom": "Barrancos de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23574/Fuenfria-y-Sierra.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Aragón",
+      "departement": "Huesca",
+      "communePrincipale": "Aínsa-Sobrarbe",
+      "communes": [
+        "Aínsa-Sobrarbe"
+      ],
+      "massif": "Sierra de Olsón",
+      "bassin": "Rio Susia",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 1.4,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 740,
+      "deniveleM": 200,
+      "longueurM": 4000,
+      "cascadeMaxM": 12,
+      "cordeMiniM": 15,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "1h15",
+      "descente": "3h",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "Depuis Arcusa, prendre la première route à gauche vers Mondot puis Olson. Peu avant Olson, prendre à gauche vers Jabierre de Olson. 200 m avant Jabierre, piste à droite. Après 1km de piste environ, se garer peu après la borne géodésique sur notre droite (beau panorama sur les Pyrénées).\n\nAutre possibilité d'accès à Jabierre de Olson depuis el Embalse del Grado I (Meson de Liguerre vers Lamata et Jabierre).\n\nPossibilité de faire une navette en déposant une voiture au pont d'arrivée et une autre en passant par le village d'Olson et la piste qui va vers \"Los Planos\" (non parcouru).",
+      "accesAmont": null,
+      "approche": "Descendre la piste sur 600m environ et prendre à droite à travers champs (attention aux cultures). Rejoindre 500m plus loin plus au sud une piste que nous suivons jusqu'au départ (toujours prendre à gauche). Après 1h environ la piste descend et traverse un cours d'eau (affluent), remonte et redescend vers le départ (passage à gué).",
+      "descente": "Le parcours est constitué d'une dizaine de petits verrous, estrechos entrecoupés de zones de marche parfois assez longues mais de progression facile. La longueur de chaque estrecho ne dépasse pas 50m. 3 rappels dont un sur un spit et les 2 autres sur amarrages naturels (maxi 14m).\n\nBonus (intérêt ?) : en amont, l'affluent de droite qui arrive au départ (piste traversant le cours d'eau) est constitué de 8 petits ressauts (maxi 3m) et un rappel sur spit de 5m.",
+      "retour": "Au pont, remonter par la route au village de Jabierre de Olson, le traverser puis emprunter la piste à gauche menant à la voiture.\n\nSi navette, pas de marche de retour.",
+      "engagement": "Il est facile de se mettre à l'abri en cas de crue. Le terrain sur les côtés est parfois constitué de marnes gris donc pas toujours facile de sortir du ravin.",
+      "periode": "Après les pluies. Printemps et automne",
+      "geologie": "Conglomérats et calcaire pour les deux derniers estrechos.",
+      "historique": "Le 12/11/2015 par Matthieu Biarneix et Mickaël Ménager",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23574,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.257366,
+        "longitude": 0.134536,
+        "label": null
+      },
+      {
+        "canyonId": 23574,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.283798,
+        "longitude": 0.155474,
+        "label": null
+      },
+      {
+        "canyonId": 23574,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 42.282364,
+        "longitude": 0.143624,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 42.282364,
+      "longitude": 0.143624,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_63f4693f522666a3",
+          "kind": "MAP",
+          "title": "11 L'Aínsa - Sobrarbe (Prames edition)",
+          "scale": "1/40000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

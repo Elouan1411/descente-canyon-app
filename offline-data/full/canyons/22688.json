@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:56.295117+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22688,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22688/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22688/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22688/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22688/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22688,
+    "identity": {
+      "nom": "Tschanonca",
+      "nomComplet": "Tschanonca",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22688/Tschanonca.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Flims",
+      "departement": "Graubünden/Grigioni/Grischun",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Piz Segnas",
+      "bassin": "Vorderrhein",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a5IV",
+      "interet": 3.2,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 2100,
+      "deniveleM": 210,
+      "longueurM": 1100,
+      "cascadeMaxM": 75,
+      "cordeMiniM": 50,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h",
+      "descente": "3h30",
+      "retour": "1h"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": "Descente du Fil Cassons (télésiège et télécabine de Flims) 1h, monter de Barghis (autobus de Flims) 1.75h",
+      "descente": "Partie I petits encaissements et grandes vasques, partie II après le pont le grand encaissement très étroit qui sort sur la cascade finale (C75) dans la cathedrale de Barghis",
+      "retour": "De la cathedrale à Barghis (autobus retour à Flims, la route Fidaz - Barghis est interdit aux vehicules privés)",
+      "engagement": null,
+      "periode": "Saison après la fonte de neige (normalement juillet - septembre)",
+      "geologie": "Calcaire (passages étroites) avec couches de schiste (passages ouvertes)",
+      "historique": "Ouverture 31.07.2010 par Pascal Van Duin, Timo Stammwitz",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22688,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.885509,
+        "longitude": 9.276001,
+        "label": null
+      },
+      {
+        "canyonId": 22688,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.885239,
+        "longitude": 9.291708,
+        "label": null
+      },
+      {
+        "canyonId": 22688,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.845356,
+        "longitude": 9.320762,
+        "label": null
+      },
+      {
+        "canyonId": 22688,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 46.885574,
+        "longitude": 9.284603,
+        "label": "D2 depart 2iême partie"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.845356,
+      "longitude": 9.320762,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_9179b25820804ecc",
+          "kind": "MAP",
+          "title": "247 Sardona (Carte Nationale Suisse)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_9ec289c50717840a",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.grandcanyons.ch/de/imgGallery_79_0_pictList.html",
+          "url": "http://www.grandcanyons.ch/de/imgGallery_79_0_pictList.html"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

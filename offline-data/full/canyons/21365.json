@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:49:08.136853+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21365,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21365/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21365/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21365/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21365/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21365,
+    "identity": {
+      "nom": "Garona (inférieur)",
+      "nomComplet": "Garona (inférieur)",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21365/Garona-inferieur.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Aragón",
+      "departement": "Huesca",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Cotiella",
+      "bassin": "Iruès",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 1.1,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 1050,
+      "deniveleM": 150,
+      "longueurM": 2500,
+      "cascadeMaxM": 4,
+      "cordeMiniM": 15,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "2h",
+      "retour": "40min"
+    },
+    "topo": {
+      "accesAval": "par la piste (vérifier la législation) : Entre Bielsa et Ainsa, prenez la direction de Laspuña. Juste après le village prenez la petite route à gauche vers Socasteillo. 10,8km plus loin dont 8,5 km sur piste (risque de barrière fermée) garez-vous sur un petit parking à gauche au niveau du panneau de randonnée : Fuente Forros 50’.",
+      "accesAmont": null,
+      "approche": "Empruntez le chemin qui descend. Vous pouvez suivre sur un antique chemin les marques oranges. Sinon, par le GR prenez à droite 10min plus bas. Remontez Garona jusqu’à le rejoindre.",
+      "descente": "Quelques passages sous blocs. Vérifiez bien que le bas ne soit pas bouché.",
+      "retour": "A la passerelle métallique remontez par le même chemin à la piste.",
+      "engagement": "Tout peut s’éviter.",
+      "periode": "juin-octobre",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21365,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.507381,
+        "longitude": 0.222859,
+        "label": null
+      },
+      {
+        "canyonId": 21365,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.524082,
+        "longitude": 0.218868,
+        "label": null
+      },
+      {
+        "canyonId": 21365,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 42.542206,
+        "longitude": 0.197067,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 42.542206,
+      "longitude": 0.197067,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_d901da6b05383bbf",
+          "kind": "TOPOGUIDE",
+          "title": "Carte N°4 - Cotiella Ribagorza : du rio Cinca à la Noguera Ribagorzana.",
+          "authors": [
+            "Patrick Gimat"
+          ],
+          "publicationYear": 1999,
+          "reference": "2-9503199-4-7",
+          "editor": null,
+          "status": "en stock\n\n- 7,50 € -\n\nCommandez cet ouvrage dès maintenant !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/123/Carte-n°4-:-Cotiella---Ribogorca.html"
+        },
+        {
+          "id": "biblio_728585bf88b0a2ad",
+          "kind": "TOPOGUIDE",
+          "title": "Descentes de canyons dans le Haut Aragon - Tome 2",
+          "authors": [
+            "Patrick Gimat avec la collaboration de J.-P. Pontroué"
+          ],
+          "publicationYear": 1995,
+          "reference": "ISBN 2-85744-813-9",
+          "editor": "Co-édition Gimat/Pontroué/Edisud",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/156/Descentes-de-canyons-dans-le-Haut-Aragon---Tome-2.html"
+        }
+      ],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

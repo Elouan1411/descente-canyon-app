@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:25.410897+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23607,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23607/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23607/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23607/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23607/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23607,
+    "identity": {
+      "nom": "Tuile",
+      "nomComplet": "Ruisseau du Tuile",
+      "prefixeNom": "Ruisseau du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23607/Tuile.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Drôme",
+      "communePrincipale": "Glandage",
+      "communes": [
+        "Glandage"
+      ],
+      "massif": "Diois",
+      "bassin": "Drôme",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1II",
+      "interet": 0.6,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 1250,
+      "deniveleM": 210,
+      "longueurM": 500,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 30,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "55min",
+      "descente": "1h30",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "De Châtillon-en-Diois, emprunter la D120 et la D539 en passant les gorges des Gâts pour se rendre à Borne. Traverser le hameau de Borne et prendre la piste menant aux Sucettes. Se garer sans gêner sur le petit parking de droite, 100 m avant le gué du ruisseau du Tuile et les Sucettes de Borne.",
+      "accesAmont": null,
+      "approche": "Continuer la piste et traverser le petit ruisseau du Tuile. Poursuivre la piste jusqu'au prochain gué. 150 m après, prendre à gauche sur le refuge de \"La Tour\". Le sentier s'élève après 400m de marche . Une sente coupe les deux prochains lacets avant de récupérer la piste. Prendre alors, à gauche et quitter de nouveau cette piste juste avant le virage en tête d'épingle. Une sente passe un petit col à travers les pins (alt 1298) et poursuit après avoir passé un affluent jusqu'aux ruines des Granges de Joucous. Des ruines, descendre la pente d'herbe avant de rejoindre une autre petite sente menant au ruisseau du Tuile.",
+      "descente": "Quelques petites cascades marneuses se désescalades et mènent aux premiers rappels, C4 AN en RD, C4 AN en RG, désescalade d'un Pi10 en RG, C15 sur plaquettes reliées en RD, désescalade, C30 sur plaquettes reliées en RD, marche et quelques désescalades, C15 sur 1pt en RG (goujon de 8 + maillon de chaîne), désescalade, Pi6 sur deux points sur la cascade de derrière, Pi6 sur AN en RD, C6 1pt en RD (goujon de 8+maillon de chaîne).",
+      "retour": "Suivre le ruisseau et sortir en rive droite en arrivant à la piste.",
+      "engagement": null,
+      "periode": "Période optimale : au printemps.",
+      "geologie": null,
+      "historique": "??? (plaquettes artisanales).\n\nAnneaux de corde changés + ajout de points sur deux cascades (goujons de 8 + maillons de chaîne) par Denis, Link, Emsud et ALAIN 13 .",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23607,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.726318,
+        "longitude": 5.609086,
+        "label": null
+      },
+      {
+        "canyonId": 23607,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.722137,
+        "longitude": 5.610867,
+        "label": null
+      },
+      {
+        "canyonId": 23607,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.721207,
+        "longitude": 5.609509,
+        "label": null
+      },
+      {
+        "canyonId": 23607,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 44.726505,
+        "longitude": 5.614943,
+        "label": "sente d'accès"
+      },
+      {
+        "canyonId": 23607,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 44.727745,
+        "longitude": 5.610909,
+        "label": "Ruines des granges de Joucous"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.721207,
+      "longitude": 5.609509,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_897a81a84c493147",
+          "kind": "MAP",
+          "title": "3237 OT Glandasse - Col de La Croix (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

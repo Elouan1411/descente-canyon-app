@@ -1,0 +1,173 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:45:11.875046+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2356,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2356/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2356/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2356/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2356/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/2356/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 2356,
+    "identity": {
+      "nom": "Lonca",
+      "nomComplet": "Lonca",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2356/Lonca.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Corse",
+      "departement": "Corse-du-Sud",
+      "communePrincipale": "Ota",
+      "communes": [
+        "Ota"
+      ],
+      "massif": "Cinto",
+      "bassin": "Porto",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a3II",
+      "interet": 1.7,
+      "nbVotes": 6
+    },
+    "metrics": {
+      "altitudeDepartM": 340,
+      "deniveleM": 50,
+      "longueurM": 150,
+      "cascadeMaxM": null,
+      "cordeMiniM": null,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "1h00",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "Du village d'Ota descendre la D124 jusqu'au pont de la Lonca. Se garer sans gêner le long de la route.",
+      "accesAmont": null,
+      "approche": "Juste avant le pont (RD de la Lonca) partent deux sentiers. Prendre celui qui s'élève et le suivre, pour prendre un peu plus loin un autre sentier qui s'élève à gauche. Lorsque le sentier entame le contournement d'une colline, se mettre à l'eau sans aller plus loin. La partie amont n'a que très peu d'interêt (désescalades de blocs).",
+      "descente": "Quelques sauts dans une petite partie encaissée.",
+      "retour": "Sortir au petit barrage. Suivre la canalisation jusqu'au pont.",
+      "engagement": null,
+      "periode": "Toujours en eau.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Pas d'équipement."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2356,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.262554,
+        "longitude": 8.769716,
+        "label": null
+      },
+      {
+        "canyonId": 2356,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.257782,
+        "longitude": 8.766884,
+        "label": null
+      },
+      {
+        "canyonId": 2356,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 42.256092,
+        "longitude": 8.764904,
+        "label": null
+      },
+      {
+        "canyonId": 2356,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 42.25827,
+        "longitude": 8.760931,
+        "label": "départ du sentier d'approche"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 42.256092,
+      "longitude": 8.764904,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_2bafc8e0f7a42d9c",
+          "kind": "TOPOGUIDE",
+          "title": "La Corse en Canyon",
+          "authors": [
+            "Association CorseCanyon"
+          ],
+          "publicationYear": 2018,
+          "reference": null,
+          "editor": "auto-edition",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/1127/La-Corse-en-Canyon-3eme-edition.html"
+        },
+        {
+          "id": "biblio_d72ca920b80a45d1",
+          "kind": "TOPOGUIDE",
+          "title": "Corse - Paradis du canyoning",
+          "authors": [
+            "Hubert Ayasse",
+            "Philippe Dubreuil"
+          ],
+          "publicationYear": 2001,
+          "reference": "ISBN 2-9117-9750-7",
+          "editor": "DCL",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/16/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_f6297cc811520604",
+          "kind": "MAP",
+          "title": "4150 OT Porto (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 520,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Corse-du-Sud) - 26 juil 2011",
+          "summary": "- Le canyonisme est interdit la nuit (sauf dérogation)\n\n- Le canyonisme est interdit s'il y a une alerte émise par Météo-France de niveau orange ou rouge en cours.\n\n- Le canyonisme est interdit aux mineurs de moins de 7 ans, sauf canyon évalué égal ou inférieur à V1-A3-E3\n\n- Les groupes auront un effectif maximum de 12 personnes, hors encadrement.",
+          "remark": "L'arrêté du 9 juillet 2019 pris conjointement par les préfectures de Corse-du-Sud et de Haute-Corse harmonise les réglementations existantes pour les deux départements.",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nArrêté préfectoral modificatif (Corse-du-Sud et Haute-Corse) n°R20-2019-07-09-001 du 9 juillet 2019\n\nArrêté préfectoral (Corse-du-Sud) n°2011207-0005 du 26 juillet 2011",
+          "effectiveDate": "26 juil 2011",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/520/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral modificatif (Corse-du-Sud et Haute-Corse) n°R20-2019-07-09-001 du 9 juillet 2019",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem520_pj2.pdf"
+            },
+            {
+              "label": "Arrêté préfectoral (Corse-du-Sud) n°2011207-0005 du 26 juillet 2011",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem520_pj1.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

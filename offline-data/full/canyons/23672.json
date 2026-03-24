@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:40.656448+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23672,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23672/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23672/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23672/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23672/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23672,
+    "identity": {
+      "nom": "Aubres",
+      "nomComplet": "Cascade d' Aubres, L'Enfernet",
+      "prefixeNom": "Cascade d'",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23672/Aubres.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Drôme",
+      "communePrincipale": "Aubres",
+      "communes": [
+        "Aubres"
+      ],
+      "massif": null,
+      "bassin": "Aigues - Aigue - Eygues - Aygues",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a1I",
+      "interet": 0.7,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 350,
+      "deniveleM": 20,
+      "longueurM": null,
+      "cascadeMaxM": 15,
+      "cordeMiniM": 15,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "25min",
+      "descente": "20min",
+      "retour": "15"
+    },
+    "topo": {
+      "accesAval": "De Nyons, suivre la D94 en direction de Rémuzat jusqu'à Aubres. Au village, à la place du Mopas, prendre à gauche la petite route. Passer un pont et tourner à droite au petit panneau en bois (col d'Aubres). Suivre la petite route et se garer sans gêner au niveau du quartier de La Rochette, avant l'interdiction de la route (sauf aux riverains).",
+      "accesAmont": null,
+      "approche": "Poursuivre à pied jusqu'à une bifurcation de la route avant la cascade. Entre les deux routes, au petit pont, un sentier monte jusqu'au sommet de la cascade. Prendre de suite à gauche après le petit champ, dans les hautes herbes pour éviter de se faire remarquer depuis la propriété privée à proximité de l'amont de la cascade.",
+      "descente": "Jolie C15 en tuf à descendre sur amarrage naturel (arbustes en rive gauche). Cascade de tuf fragile, attention en descendant ! Discrétion de rigueur, propriétés privées à proximité immédiate.",
+      "retour": "Suivre la route.",
+      "engagement": "Aucun",
+      "periode": "La cascade peut être sèche en été .",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Repérer l'axe de votre descente pour éviter de détériorer le tuf (voir photo)."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23672,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.38673,
+        "longitude": 5.16548,
+        "label": null
+      },
+      {
+        "canyonId": 23672,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.382553,
+        "longitude": 5.165605,
+        "label": null
+      },
+      {
+        "canyonId": 23672,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 44.385311,
+        "longitude": 5.165428,
+        "label": "Sentier d'approche"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.382553,
+      "longitude": 5.165605,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_4e3735bcc40c64f3",
+          "kind": "MAP",
+          "title": "3139 OT Nyons (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

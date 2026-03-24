@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:48:04.584215+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21081,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21081/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21081/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21081/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21081/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21081,
+    "identity": {
+      "nom": "Rolletto",
+      "nomComplet": "Rio Rolletto",
+      "prefixeNom": "Rio",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21081/Rolletto.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Piemonte",
+      "departement": "Verbano-Cusio-Ossola",
+      "communePrincipale": "Rolletto",
+      "communes": [
+        "Rolletto"
+      ],
+      "massif": null,
+      "bassin": "Ossola",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 0.5,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 900,
+      "deniveleM": 190,
+      "longueurM": 500,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 25,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "1h30",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": "De Piedimulera, remonter la vallée Anza jusqu'à Vanzone par la SS 549. Dans le village, prendre à droite direction rolletto. Contourner le village par la droite et continuer jusqu'au pont (environ 500 m plus loin) enjambant le rio rolletto. Se garer juste après le pont à gauche contre la talus.",
+      "accesAmont": null,
+      "approche": "A pied, continuer la route et prendre à gauche un sentier balisé en rouge et jaune qui monte raide dans une chataigneraie jusqu'a atteindre une prise d'eau. Là, quitter le sentier sur la gauche pour rejoindre la crête surplombant le rio. Cheminer en descendant cette crête (marches taillées par endroits) et atteindre au mieux le lit du rio (blocs instables).",
+      "descente": "Quelques cascades mais rien de transcendant surtout vu tous les supers canyons à côté. A faire pour tuer une après-midi !",
+      "retour": "Au pont, rejoindre le véhicule.",
+      "engagement": "faible. Pas d'encaissements sérieux.",
+      "periode": "Peu aquatique",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21081,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.988464,
+        "longitude": 8.116708,
+        "label": null
+      },
+      {
+        "canyonId": 21081,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.985065,
+        "longitude": 8.118939,
+        "label": null
+      },
+      {
+        "canyonId": 21081,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.985153,
+        "longitude": 8.119497,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.985153,
+      "longitude": 8.119497,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

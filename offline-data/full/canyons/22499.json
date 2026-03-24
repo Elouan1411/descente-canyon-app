@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:15.383090+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22499,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22499/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22499/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22499/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22499/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22499,
+    "identity": {
+      "nom": "Grande Ravine",
+      "nomComplet": "Grande Ravine",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22499/Grande-Ravine.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Saint-Paul",
+      "departement": "La Réunion",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": null,
+      "coursEau": "Grande Ravine"
+    },
+    "rating": {
+      "cotation": "v5a1III",
+      "interet": 2.3,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 777,
+      "deniveleM": 389,
+      "longueurM": 900,
+      "cascadeMaxM": 220,
+      "cordeMiniM": 85,
+      "navette": "2.5km"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "4h00",
+      "retour": "35"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": "Lisible dans l'ensemble. Sauf au R5, où il y a 3 relais possibles. Le bon est le plus aval, un peu caché par la végétation.",
+      "retour": "Seul point litigieux, lorsque le sentier bute sur une barre-rocheuse, il faut chercher le passage sur la gauche, par une succession de vires.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "Ravine sèche typique de l'ouest.\n\nL'intérêt se trouve dans le grand cassé avec quelques belles verticales. Et point original, la possible visite d'un tube de lave."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22499,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": -21.110605,
+        "longitude": 55.301189,
+        "label": null
+      },
+      {
+        "canyonId": 22499,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": -21.113894,
+        "longitude": 55.294796,
+        "label": null
+      },
+      {
+        "canyonId": 22499,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": -21.111551,
+        "longitude": 55.292316,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": -21.111551,
+      "longitude": 55.292316,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

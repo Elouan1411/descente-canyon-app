@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:54:56.977390+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22929,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22929/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22929/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22929/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22929/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22929,
+    "identity": {
+      "nom": "Seerenbachfäll",
+      "nomComplet": "Seerenbachfäll, Seerenbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22929/Seerenbachfall.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Amden",
+      "departement": "Saint Gallen",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": "Walensee",
+      "coursEau": "Seerenbach"
+    },
+    "rating": {
+      "cotation": "v7a4IV",
+      "interet": 3.2,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 1190,
+      "deniveleM": 610,
+      "longueurM": 600,
+      "cascadeMaxM": 190,
+      "cordeMiniM": 190,
+      "navette": "12.0km"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "4h-6h",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "De Weesen, prendre la route en direction de Beltis.\n\nGarer la voiture avant l'interdiction.\n\nParking",
+      "accesAmont": "Avec la deuxième voiture, aller au pont du départ en passant par Amden.",
+      "approche": "Départ du pont, au point 1190m.",
+      "descente": "Jolies petites cascades, des toboggans et des sauts au début de la verticale.\n\nEnsuite, 80m-100m plus loin, arrivée à la dernière cascade de 190 m.\n\nCela peut aussi être contournée latéralement.",
+      "retour": "Retour à la voiture à Beetlis par le sentier.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22929,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.140972,
+        "longitude": 9.172447,
+        "label": null
+      },
+      {
+        "canyonId": 22929,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.137836,
+        "longitude": 9.164502,
+        "label": null
+      },
+      {
+        "canyonId": 22929,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 47.141037,
+        "longitude": 9.172339,
+        "label": null
+      },
+      {
+        "canyonId": 22929,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 47.136158,
+        "longitude": 9.157582,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 47.141037,
+      "longitude": 9.172339,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

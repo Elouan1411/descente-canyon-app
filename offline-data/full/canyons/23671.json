@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:40.295829+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23671,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23671/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23671/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23671/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23671/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23671,
+    "identity": {
+      "nom": "Fallenbach",
+      "nomComplet": "Fallenbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23671/Fallenbach.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Oberiberg",
+      "departement": "Schwyz",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Alpes glaronaises",
+      "bassin": null,
+      "coursEau": "Fallenbach"
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.5,
+      "nbVotes": 5
+    },
+    "metrics": {
+      "altitudeDepartM": 1246,
+      "deniveleM": 120,
+      "longueurM": 300,
+      "cascadeMaxM": 55,
+      "cordeMiniM": 60,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "1h00",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23671,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.034229,
+        "longitude": 8.75857,
+        "label": null
+      },
+      {
+        "canyonId": 23671,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.0331,
+        "longitude": 8.77054,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.0331,
+      "longitude": 8.77054,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

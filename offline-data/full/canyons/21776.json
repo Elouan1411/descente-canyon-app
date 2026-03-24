@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:40.165676+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21776,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21776/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21776/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21776/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21776/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21776,
+    "identity": {
+      "nom": "Eglantines",
+      "nomComplet": "Vallat des Eglantines, Les Grands Tines",
+      "prefixeNom": "Vallat des",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21776/Eglantines.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Vaucluse",
+      "communePrincipale": "Crestet",
+      "communes": [
+        "Crestet"
+      ],
+      "massif": "Dentelles de Montmirail",
+      "bassin": "Ouvèze",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2I",
+      "interet": 2.1,
+      "nbVotes": 39
+    },
+    "metrics": {
+      "altitudeDepartM": 360,
+      "deniveleM": 60,
+      "longueurM": 150,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "10min",
+      "descente": "1h",
+      "retour": "2min"
+    },
+    "topo": {
+      "accesAval": "De Malaucène, prendre la D938 en direction de Vaison la Romaine. 600m avant la bifurcation vers Crestet-village, prendre la petite route goudronnée à gauche (Chemin du Soublon, panneau Les logis du Pablan). A la première bifurcation de routes goudronnées, prendre celle de gauche ; à la deuxième bifurcation de routes goudronnées prendre celle de droite. Poursuivre et traverser (silencieusement) un petit hameau (4/5 maisons). A la sortie du hameau se garer dans l'épingle gauche (la dernière cascade est juste en contrebas)",
+      "accesAmont": null,
+      "approche": "De l'épingle emprunter une sente (plus ou moins marquée) qui remonte tout le canyon en RD.",
+      "descente": "La descente est une succession de petits ressauts avec vasques souvent profondes.\n\nRappels, petit bief, toboggans, petits sauts tout y est .\n\nL'eau est très très claire.\n\nPour le dernier rappel, il y a un relais non visible du haut en RG quelques mètres plus bas (MC possible pour y accéder)",
+      "retour": "Du pied du dernier rappel faire 10 mètres dans le lit puis remonter directement à la voiture en RD.",
+      "engagement": "Beaucoup d'échappatoires.",
+      "periode": "A faire en hiver ou après une période de pluie.",
+      "geologie": null,
+      "historique": "Ré-équipé par un membre des Sudcanyon",
+      "remarques": "L'approche par la RD serait peut être privée (???? à vérifier car on est en pleine forêt), en tout cas ne roulez pas trop vite en traversant le hameau et restez discret quand vous vous équipez et déséquipez.\n\nCanyon vraiment sympa pour le 84 mais hélas trop court, à coupler avec ceux du Toulourenc.\n\nLe toponyme Églantines transcrit sur l'IGN est une aberration (voire un parisianisme). Il n'y a d'ailleurs jamais eu de ces fleurs roses à 5 pétales dans ce vallon. Il s'agit en fait des \"Grands Tines\" du provençal \"lei grands tinas\". Une \"tina\" en provençal est une cuve à vin ou une marmite de géant. Cela vient du latin \"tina (ae)\" (vase à vin)(cf : Les noms de l'eau en Vaucluse : toponymie et hydronymie de Gilles Fossat / Toponymie du Ventoux de Paul Peyre, Éditions du Toulourenc)"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21776,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.197578,
+        "longitude": 5.091126,
+        "label": null
+      },
+      {
+        "canyonId": 21776,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.198097,
+        "longitude": 5.092967,
+        "label": null
+      },
+      {
+        "canyonId": 21776,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.19783,
+        "longitude": 5.093338,
+        "label": null
+      },
+      {
+        "canyonId": 21776,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 44.197773,
+        "longitude": 5.092574,
+        "label": "Approche"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.19783,
+      "longitude": 5.093338,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_f8195a0d9851b7fb",
+          "kind": "MAP",
+          "title": "3040 ET Carpentras (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

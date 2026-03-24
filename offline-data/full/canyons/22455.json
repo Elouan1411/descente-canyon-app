@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:04.899362+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22455,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22455/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22455/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22455/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22455/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22455,
+    "identity": {
+      "nom": "Rappinschlucht",
+      "nomComplet": "Rappinschlucht, Rappinlaine",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22455/Rappinschlucht.html"
+    },
+    "location": {
+      "pays": "Allemagne",
+      "region": "Bayern",
+      "departement": "Oberbayern",
+      "communePrincipale": "Jachenau",
+      "communes": [
+        "Landkreis Bad Tölz-Wolfratshausen",
+        "Lenggries",
+        "Jachenau"
+      ],
+      "massif": "Walchenseeberge",
+      "bassin": "Isar",
+      "coursEau": "Rappinlaine"
+    },
+    "rating": {
+      "cotation": "v4a3III",
+      "interet": 1.9,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 970,
+      "deniveleM": 60,
+      "longueurM": 500,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h35",
+      "descente": "45min",
+      "retour": "1h15"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22455,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.63192,
+        "longitude": 11.42724,
+        "label": null
+      },
+      {
+        "canyonId": 22455,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.631672,
+        "longitude": 11.435577,
+        "label": null
+      },
+      {
+        "canyonId": 22455,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.606155,
+        "longitude": 11.432691,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.606155,
+      "longitude": 11.432691,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

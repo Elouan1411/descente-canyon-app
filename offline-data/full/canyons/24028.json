@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:55.955481+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24028,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24028/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24028/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24028/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24028/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24028,
+    "identity": {
+      "nom": "Ubaye",
+      "nomComplet": "Sources de l' Ubaye, Les Oullas",
+      "prefixeNom": "Sources de l'",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24028/Ubaye.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-de-Haute-Provence",
+      "communePrincipale": "Saint-Paul-sur-Ubaye",
+      "communes": [
+        "Saint-Paul-sur-Ubaye"
+      ],
+      "massif": "Massif de Chambeyron",
+      "bassin": "Ubaye",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a4II",
+      "interet": 2.2,
+      "nbVotes": 5
+    },
+    "metrics": {
+      "altitudeDepartM": 2440,
+      "deniveleM": 110,
+      "longueurM": 600,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "2h30",
+      "descente": "1h30",
+      "retour": "2h"
+    },
+    "topo": {
+      "accesAval": "Remonter la D25 jusqu'au bout de la route à Maurin tout au fond de la Haute-Ubaye (parking).",
+      "accesAmont": null,
+      "approche": "Suivre la vallée et l'Ubaye jusqu'à sa source et monter par le chemin de la vallée jusqu'à la cabane du Peyron (départ de la descente).",
+      "descente": "Petites vasques, toboggans, sauts et vasques turbulentes s’enchaînent dans un petit creusement.",
+      "retour": "Sortir de la vallée isolée par le chemin d'approche.",
+      "engagement": "Souvent beaucoup d'eau, vasques turbulentes, rappels dans l'actif.",
+      "periode": "Après la fin de la fonte en août ou septembre.",
+      "geologie": "Marbre sableux, calcaire, couches de schiste",
+      "historique": "18.09.2016 Patrick Chollot, Jeff Delhom, Timo Stammwitz",
+      "remarques": "Possible de monter jusqu'au pont qui enjambe l'Ubaye en VTT, cela permet de rendre moins monotone approche /retour et surtout de gagner du temps."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24028,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.636112,
+        "longitude": 6.917222,
+        "label": null
+      },
+      {
+        "canyonId": 24028,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.63039,
+        "longitude": 6.915,
+        "label": null
+      },
+      {
+        "canyonId": 24028,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.59203,
+        "longitude": 6.840583,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.59203,
+      "longitude": 6.840583,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

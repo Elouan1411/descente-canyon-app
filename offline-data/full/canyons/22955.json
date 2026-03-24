@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:03.200542+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22955,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22955/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22955/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22955/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22955/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22955,
+    "identity": {
+      "nom": "Lavanche",
+      "nomComplet": "Ruisseau de la Lavanche",
+      "prefixeNom": "Ruisseau de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22955/Lavanche.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Savoie",
+      "communePrincipale": "Lescheraines",
+      "communes": [
+        "Lescheraines"
+      ],
+      "massif": "Bauges",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 1.0,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": null,
+      "longueurM": null,
+      "cascadeMaxM": null,
+      "cordeMiniM": 45,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "??",
+      "retour": "??"
+    },
+    "topo": {
+      "accesAval": "Sur la D206 entre Aillon le vieux et le Chatelard, parking au pont dans l'épingle avant le hameau \"La Lavanche\".",
+      "accesAmont": null,
+      "approche": "Remonter dans le lit du cours d'eau jusqu'à la dernière cascade, puis dans les pentes RD tant que ça monte jusqu'au départ du vallon (option qui peut être compliquée si s'est humide).\n\nA la fin, on récupère une sente qui nous dépose au départ.\n\nIl existe aussi une sente : voir IGN.",
+      "descente": "On attaque par la cascade d'environ 35m : 2 points rg (un correct, un tordu), puis une C26 : 1 point doublé sur lunule puis le reste s'enchaine sur AN.",
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "Equipement vieillissant."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22955,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.667282,
+        "longitude": 6.103439,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.667282,
+      "longitude": 6.103439,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_da30219dbb4dd176",
+          "kind": "TOPOGUIDE",
+          "title": "Les canyons de Savoie",
+          "authors": [
+            "Patrick Chollot"
+          ],
+          "publicationYear": 2018,
+          "reference": "978-2-95309-39-1-9",
+          "editor": "auto-édition",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/1125/Les-canyons-de-Savoie.html"
+        },
+        {
+          "id": "biblio_e7d94bb2f47393ab",
+          "kind": "TOPOGUIDE",
+          "title": "Cascades, Gorges & Canyons : Pré-alpes d'Isère et de Savoie",
+          "authors": [
+            "Bertrand Hauser",
+            "Delphine Baratin"
+          ],
+          "publicationYear": 2007,
+          "reference": "978-2-9529407-0-2",
+          "editor": "Descente-Canyon.com",
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/11/Cascades--Gorges-et-Canyons-:-Pre-alpes-d-Isere-et-de-Savoie.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_24c652994d6d1609",
+          "kind": "MAP",
+          "title": "3432 OT Massif des Bauges (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

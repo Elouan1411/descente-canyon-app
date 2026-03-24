@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:37.454465+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23928,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23928/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23928/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23928/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23928/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23928,
+    "identity": {
+      "nom": "Möserkargraben",
+      "nomComplet": "Möserkargraben",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23928/Moserkargraben.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Tyrol",
+      "departement": "Politischer Bezirk Schwaz",
+      "communePrincipale": "Vomp",
+      "communes": [
+        "Vomp"
+      ],
+      "massif": "Karwendel",
+      "bassin": "Isar",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2III",
+      "interet": 1.7,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1340,
+      "deniveleM": 220,
+      "longueurM": 800,
+      "cascadeMaxM": 23,
+      "cordeMiniM": 25,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h40min",
+      "descente": "2h45min",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "approche difficile à repérer"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23928,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.429733,
+        "longitude": 11.545212,
+        "label": null
+      },
+      {
+        "canyonId": 23928,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.432781,
+        "longitude": 11.538989,
+        "label": null
+      },
+      {
+        "canyonId": 23928,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.446033,
+        "longitude": 11.561268,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.446033,
+      "longitude": 11.561268,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

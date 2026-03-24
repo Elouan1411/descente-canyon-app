@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:16.181865+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23833,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23833/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23833/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23833/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23833/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23833,
+    "identity": {
+      "nom": "Totengraben-Kirchwandgraben",
+      "nomComplet": "Totengraben-Kirchwandgraben",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23833/Totengraben-Kirchwandgraben.html"
+    },
+    "location": {
+      "pays": "Allemagne",
+      "region": "Bayern",
+      "departement": "Oberbayern",
+      "communePrincipale": "Kreuth",
+      "communes": [
+        "Landkreis Miesbach",
+        "Kreuth"
+      ],
+      "massif": "Mangfallgebirge",
+      "bassin": "Weißach-Tegernsee",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a3III",
+      "interet": 1.5,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1120,
+      "deniveleM": 440,
+      "longueurM": 3000,
+      "cascadeMaxM": 28,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h10min",
+      "descente": "4h30min",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23833,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.593731,
+        "longitude": 11.68602,
+        "label": null
+      },
+      {
+        "canyonId": 23833,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.612331,
+        "longitude": 11.69317,
+        "label": null
+      },
+      {
+        "canyonId": 23833,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.618462,
+        "longitude": 11.691962,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.618462,
+      "longitude": 11.691962,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

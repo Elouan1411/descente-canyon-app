@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:35.593172+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22319,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22319/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22319/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22319/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22319/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22319,
+    "identity": {
+      "nom": "Chesselbach",
+      "nomComplet": "Canyon du Chesselbach, Pechflue, Chesselbach",
+      "prefixeNom": "Canyon du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22319/Chesselbach.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Oberdorf (SO)",
+      "departement": "Soleure",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Weissenstein",
+      "bassin": "Aar - Aare",
+      "coursEau": "Chesselbach"
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.5,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 960,
+      "deniveleM": 280,
+      "longueurM": 450,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 35,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "??",
+      "descente": "2h30",
+      "retour": "??"
+    },
+    "topo": {
+      "accesAval": "Il y a 3 possibilités de stationner son vehicule:\n\n1. Accès en téléphérique, donc stationnement au parking du téléphérique du Weissenstein;\n\n2. En haut du canyon à Nesselboden sur la route du col du Weissenstein (Route à horaire spécifique pour montée et pour descendre);\n\n3. En bas du canyon dans Oberdorf (Rue Bellevue) ou dans Oberrüttenen (Chuchigrabenstrasse ou Bergstrasse).",
+      "accesAmont": null,
+      "approche": "Si on se gare en bas dans Oberdorf ou Oberrüttenen prenez le sentier de rando en direction de Chesselbach en RD. Après vers Nesselboden, à un croisement (alt. 1000m), prenez le chemin vers gauche pendant 150m, puis sans chemin à droite vers le ruisseau (40min depuis le bas).\n\nSi stationnement au téléphérique: Prenez la cabine (16Fr.) pour Nesselboden. De la prenez la piste en bas sur 50m. Le sentier de randonner commence à droite. Suivre jusqu'à un croisement (alt. 1000m). Prenez le chemin vers gauche pendant 150m, puis sans chemin à droite vers le ruisseau (20min de Nesselboden).",
+      "descente": "Canyon composé d'une quinzaine de ressauts dont les 2 plus grands font dans les 30 mètres. Canyon du même genre que son voisin du jura \"le Chenau de l'envers\".",
+      "retour": "Retour par chemin de randonnée passant par le \"Stigeloss\" si on est garé en haut.\n\nPour aller au téléphérique, après le canyon en arrivent au Forsthaus (620m alt.). Prenez le sentier vers la droit eet suivre les panneaux Weissenstein. (35min).\n\nPour aller à Oberrüttenen tout droit 10 Min.",
+      "engagement": null,
+      "periode": "Comme pour \"le Chenau de l'envers\", peu d'eau l'été, voir sec. Se remonte en glace l'hiver.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Exploité par les guides de la région(Bienne). Approche possible par le télésiège!"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22319,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.245121,
+        "longitude": 7.51504,
+        "label": null
+      },
+      {
+        "canyonId": 22319,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.241379,
+        "longitude": 7.517277,
+        "label": "chez passerelle"
+      },
+      {
+        "canyonId": 22319,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 47.23476,
+        "longitude": 7.508595,
+        "label": "Oberdorf (P3a)"
+      },
+      {
+        "canyonId": 22319,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.24514,
+        "longitude": 7.508992,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.23476,
+      "longitude": 7.508595,
+      "label": "Oberdorf (P3a)"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_3bcefb548805bf63",
+          "kind": "MAP",
+          "title": "1107 Balsthal (Swisstopo)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

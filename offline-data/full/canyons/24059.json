@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:59:02.524659+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24059,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24059/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24059/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24059/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24059/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24059,
+    "identity": {
+      "nom": "Rio de Punta del Hidalgo",
+      "nomComplet": "Barranco del Rio de Punta del Hidalgo, Barranco del Tomadero",
+      "prefixeNom": "Barranco del",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24059/Rio-de-Punta-del-Hidalgo.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Canarias",
+      "departement": "Santa Cruz de Tenerife",
+      "communePrincipale": "San Cristóbal de La Laguna",
+      "communes": [
+        "San Cristóbal de La Laguna"
+      ],
+      "massif": "Anaga",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2IV",
+      "interet": null,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": 305,
+      "deniveleM": 145,
+      "longueurM": 1600,
+      "cascadeMaxM": 23,
+      "cordeMiniM": 25,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "30mn",
+      "descente": "2h45-3h15",
+      "retour": "1h05"
+    },
+    "topo": {
+      "accesAval": "Se rendre au hameau de Batán de Abajo au sud-est de Punta del Hidalgo. Sur les panneaux de direction, on peut trouver indiqué \"Los Batanes\" ou \"El Batán\". Celui qui nous intéresse est celui situé le plus bas, au terminus de la route. Se garer sans gêner à l'entrée du hameau, avant le bar (coordonnées UTM/WGS84 28 R 373099 3158578).",
+      "accesAmont": null,
+      "approche": "Monter un peu dans le village et prendre le sentier qui suit la crête en descendant par des terrasses agricoles vers le Rio (au premier croisement non loin du hameau, prendre à gauche). Une fois dans le barranco, des sentes permettent d'avancer jusqu'au premier rappel, départ de la descente (coordonnées UTM/WGS84 28 R 373602 3159046).",
+      "descente": "Des beaux passages bien creusés. Ça pourrait être une descente classique de l'île si elle coulait en permanence... Vasques croupies en dehors des périodes pluvieuses, combinaison obligatoire.",
+      "retour": "A la fin du canyon, juste avant un petit barrage et un canal au lieu-dit \"El Tomadero\", le sentier reliant Batán de Abajo à Punta del Hidalgo arrive de la rive gauche (coordonnées UTM/WGS84 28 R 372774 3159591). Le remonter jusqu'à Batán de Abajo. Attention sur un ou deux passages avec des personnes peu aguerries.",
+      "engagement": null,
+      "periode": "Même s'il ne coule pas, la combinaison est nécessaire (vasques parfois grandes...). Coule après des pluies.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Sur les cartes, on trouve \"Barranco del Rio\" comme nom pour ce barranco. Le nom complet apparaît sur un panneau d'information à Batan de Abojo et permet de ne pas le confondre avec le Rio homonyme du sud de l'île.\n\nLe coin est encore une région agricole avec peu de terrasses abandonnées, contrairement au sud de l'île. C'est un ancien centre de production de lin pour l'industrie textile, cf. panneau au village."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24059,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 28.552109,
+        "longitude": -16.29213,
+        "label": "Premier rappel"
+      },
+      {
+        "canyonId": 24059,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 28.556946,
+        "longitude": -16.300653,
+        "label": "Départ du sentier de retour rive gauche"
+      },
+      {
+        "canyonId": 24059,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 28.547836,
+        "longitude": -16.297218,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 28.547836,
+      "longitude": -16.297218,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_9142873c6225a8d1",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://ropewiki.com/Tomadero",
+          "url": "http://ropewiki.com/Tomadero"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

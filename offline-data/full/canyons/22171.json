@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:06.039418+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22171,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22171/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22171/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22171/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22171/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22171,
+    "identity": {
+      "nom": "Hühnerbach",
+      "nomComplet": "Hühnerbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22171/Huhnerbach.html"
+    },
+    "location": {
+      "pays": "Allemagne , Autriche",
+      "region": "Tyrol",
+      "departement": "Politischer Bezirk Schwaz , Oberbayern",
+      "communePrincipale": "Lenggries",
+      "communes": [
+        "Bayern",
+        "Politischer Bezirk Schwaz",
+        "Oberbayern",
+        "Landkreis Bad Tölz-Wolfratshausen",
+        "Achenkirch",
+        "Lenggries"
+      ],
+      "massif": "Karwendel",
+      "bassin": "Walchen - Sylvensteinsee",
+      "coursEau": "Hühnerbach"
+    },
+    "rating": {
+      "cotation": "v3a4III",
+      "interet": 2.0,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 865,
+      "deniveleM": 85,
+      "longueurM": 1400,
+      "cascadeMaxM": 9,
+      "cordeMiniM": 15,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "25min",
+      "descente": "2h",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "Comme Pitzbach.",
+      "accesAmont": null,
+      "approche": "Comme Pitzbach, mais à la première bifurcation prendre la piste herbeuse à droite vers le ruisseau.",
+      "descente": "Au debut un canyon sombre et puis de la marche et quelques petits rappels. Sortie: nager à travers rivière Walchen et tourner à gauche vers l'échelle des eaux: sentier vers la route.",
+      "retour": "Par la route (à droite) retour vers parking.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "habituellement lié à la descente de Pitzbach"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22171,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.567463,
+        "longitude": 11.601155,
+        "label": null
+      },
+      {
+        "canyonId": 22171,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.581787,
+        "longitude": 11.606929,
+        "label": null
+      },
+      {
+        "canyonId": 22171,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.582256,
+        "longitude": 11.617259,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.582256,
+      "longitude": 11.617259,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

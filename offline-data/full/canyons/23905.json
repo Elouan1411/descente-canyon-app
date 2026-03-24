@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:32.066321+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23905,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23905/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23905/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23905/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23905/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23905,
+    "identity": {
+      "nom": "Rüschbach Gross Chessel",
+      "nomComplet": "Rüschbach Gross Chessel, Rüschgraben",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23905/Ruschbach-Gross-Chessel.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": null,
+      "departement": "Soleure",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Weissenstein",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a2II",
+      "interet": 1.3,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 900,
+      "deniveleM": 80,
+      "longueurM": 250,
+      "cascadeMaxM": 10,
+      "cordeMiniM": 15,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "25min",
+      "descente": "1h",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "Idem Rüschbach Schli Chessel",
+      "accesAmont": null,
+      "approche": null,
+      "descente": "Plusieurs petits obstacles dans un petit encaissement.",
+      "retour": null,
+      "engagement": null,
+      "periode": "A faire après des pluies.",
+      "geologie": null,
+      "historique": "Pas d’infos sur l’historique, je n’ai pas vu de point lors de ma descente mais je l’ai descendu entièrement sur AN.",
+      "remarques": "A faire avant Rüschbach Schli Chessel"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23905,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.252682,
+        "longitude": 7.46301,
+        "label": null
+      },
+      {
+        "canyonId": 23905,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.260948,
+        "longitude": 7.46461,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.260948,
+      "longitude": 7.46461,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:34.411193+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22584,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22584/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22584/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22584/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22584/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22584,
+    "identity": {
+      "nom": "Brändbach",
+      "nomComplet": "Brändbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22584/Brandbach.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Glarus Nord",
+      "departement": "Glaris",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": "Linth",
+      "coursEau": "Brändbach"
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 1.1,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 950,
+      "deniveleM": 120,
+      "longueurM": 350,
+      "cascadeMaxM": 16,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "1h30min",
+      "retour": "35min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22584,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.099133,
+        "longitude": 9.041555,
+        "label": null
+      },
+      {
+        "canyonId": 22584,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.097542,
+        "longitude": 9.04428,
+        "label": "à droite vers parking aval par la piste ou à gauche vers le sentier à le haut"
+      },
+      {
+        "canyonId": 22584,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 47.096203,
+        "longitude": 9.042263,
+        "label": "navette possible, mais pas necessaire"
+      },
+      {
+        "canyonId": 22584,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.09914,
+        "longitude": 9.041387,
+        "label": "navette possible, mais pas necessaire"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.096203,
+      "longitude": 9.042263,
+      "label": "navette possible, mais pas necessaire"
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_ee92621b53de3c8c",
+          "kind": "TOPOGUIDE",
+          "title": "Canyoning : Swiss Alps / Alpes Suisse",
+          "authors": [
+            "Association Openbach"
+          ],
+          "publicationYear": 2015,
+          "reference": "9782746679450",
+          "editor": "auto-edition",
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/195/Canyoning-:-Swiss-alps---Alpes-suisses-Vol-1.html"
+        },
+        {
+          "id": "biblio_818da916075bb17b",
+          "kind": "TOPOGUIDE",
+          "title": "Canyoning en Suisse 2",
+          "authors": [
+            "Franz Baumgartner",
+            "Andreas Brunner",
+            "Daniel Zimmermann"
+          ],
+          "publicationYear": 2010,
+          "reference": "9783033024694",
+          "editor": null,
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/158/Canyoning-en-Suisse-2.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_df9d5b12dad39189",
+          "kind": "MAP",
+          "title": "236 Lachen (Swisstopo)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_6de52c6677136543",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.schlucht.ch/canyoning-touren-.....-108-braendbach.html",
+          "url": "http://www.schlucht.ch/canyoning-touren-.....-108-braendbach.html"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:12.177946+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22203,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22203/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22203/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22203/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22203/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/22203/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 22203,
+    "identity": {
+      "nom": "Agua d'Alto",
+      "nomComplet": "Canyon de Agua d'Alto",
+      "prefixeNom": "Canyon de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22203/Agua-d-Alto.html"
+    },
+    "location": {
+      "pays": "Portugal",
+      "region": "Madeira",
+      "departement": "São Vicente Municipality",
+      "communePrincipale": "São Vicente",
+      "communes": [
+        "São Vicente"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v5a2II",
+      "interet": 2.3,
+      "nbVotes": 8
+    },
+    "metrics": {
+      "altitudeDepartM": 125,
+      "deniveleM": 110,
+      "longueurM": 100,
+      "cascadeMaxM": 90,
+      "cordeMiniM": 80,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "25min",
+      "descente": "45min",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": "Juste après Sao Vicente, sur la route de bord de mer menant à Porto Moniz, c'est la cascade qui se situe juste avant le 1er tunnel (parking).",
+      "accesAmont": null,
+      "approche": "Marcher 250m vers Sao Vicente, passer la maison blanche et prendre un sentier perpendiculaire à la route à travers des cultures. Après 100m tourner à droite pour longer la falaise qui va vers le canyon. On passe une citerne puis un tuyau. Le sentier s'élève petit à petit tout le long de ce tuyau. De nombreuses marches et mains courantes sont installées le long de ce sentier. A l'altitude 125m dans un virage à gauche, rejoindre le canyon qui se situe en contrebas à droite.",
+      "descente": "Deux cascades: une 1ere C15 puis c'est la C90 avec vue pleine mer.\n\nElle se négocie de plusieurs façons:\n\n- soit main courante de 2m et R90\n\n- ou bien en 2 longueurs (10+80).",
+      "retour": "On passe sous le pont, puis on remonte sur la route par un escalier situé à droite.",
+      "engagement": "Faible, débit observable depuis la route.",
+      "periode": "Coule toute l'année.\n\nVue splendide.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Idéal pour compléter une journée.\n\nTopo d'Antoine Florin très utile pour l'approche même si elle est courte, le sentier se voit peu."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22203,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 32.808975,
+        "longitude": -17.060129,
+        "label": null
+      },
+      {
+        "canyonId": 22203,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 32.809769,
+        "longitude": -17.059736,
+        "label": null
+      },
+      {
+        "canyonId": 22203,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 32.809727,
+        "longitude": -17.059568,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 32.809727,
+      "longitude": -17.059568,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 204,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté",
+          "summary": "Demande d'autorisation auprès du service forestier qui se situe au jardin botanique de Funchal (demande possible par mail dsfrn.sra@gov-madeira.pt). Demande à faire 48h à l'avance.",
+          "remark": null,
+          "details": null,
+          "effectiveDate": null,
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/204/legislation.html",
+          "attachments": []
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,138 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:44:54.701441+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2288,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2288/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2288/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2288/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2288/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/2288/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 2288,
+    "identity": {
+      "nom": "Saut du Loup",
+      "nomComplet": "Le Saut du Loup",
+      "prefixeNom": "Le",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2288/Saut-du-Loup.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-Maritimes",
+      "communePrincipale": "Gourdon",
+      "communes": [
+        "Courmes",
+        "Gourdon"
+      ],
+      "massif": "Montagne Ste Victoire",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "",
+      "interet": 478.0,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": 478,
+      "deniveleM": 18,
+      "longueurM": null,
+      "cascadeMaxM": null,
+      "cordeMiniM": null,
+      "navette": null
+    },
+    "timings": {
+      "approche": null,
+      "descente": null,
+      "retour": null
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": "Aucun équipement et AN difficile à trouver.",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2288,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.747768,
+        "longitude": 6.997744,
+        "label": null
+      },
+      {
+        "canyonId": 2288,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.746891,
+        "longitude": 6.998457,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 43.747768,
+      "longitude": 6.997744,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_96163e753595ca69",
+          "kind": "MAP",
+          "title": "3244 ET Montagne Sainte-Victoire (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 349,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Alpes-Maritimes) - 27 oct 2016",
+          "summary": "La pratique du canyonisme est autorisée du 1er avril au 31 octobre inclus à l'exception des canyons figurant dans les articles 2 et 3, où s'applique une réglementation spécifique (périodes plus réduites, interdiction...).\n\nLes canyons secs ou habituellement à sec sont autorisés toute l'année.\n\nTous les canyons situés en zone centrale du Parc du Mercantour sont interdits.\n\nTout groupe de pratiquants ne peut excéder 8 personnes, encadrement non compris.",
+          "remark": null,
+          "details": "Arrêté préfectoral n°2016-852 du 27 octobre 2016",
+          "effectiveDate": "27 oct 2016",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/349/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral n°2016-852 du 27 octobre 2016",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem349_pj1.pdf"
+            }
+          ]
+        },
+        {
+          "id": 114,
+          "status": "Actif",
+          "action": "Interdit",
+          "title": "Information",
+          "summary": "Ce parcours est situé sur une propriété privée.",
+          "remark": null,
+          "details": null,
+          "effectiveDate": null,
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/114/legislation.html",
+          "attachments": []
+        }
+      ]
+    }
+  }
+}

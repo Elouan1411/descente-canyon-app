@@ -1,0 +1,171 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:46.778400+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21800,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21800/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21800/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21800/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21800/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/21800/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 21800,
+    "identity": {
+      "nom": "Espantaperros",
+      "nomComplet": "Barranco de Espantaperros, Barranco del Salar, Tajo del Espantaperros",
+      "prefixeNom": "Barranco de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21800/Espantaperros.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Andalucía",
+      "departement": "Provincia de Granada",
+      "communePrincipale": "Alhama de Granada",
+      "communes": [
+        "Alhama de Granada"
+      ],
+      "massif": null,
+      "bassin": "Salar",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.6,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": 250,
+      "longueurM": 2500,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "3h",
+      "retour": "1h20"
+    },
+    "topo": {
+      "accesAval": "Attention le topo de Gomez est faux\n\nDepuis Salar prendre la route en direction de Alhama. Après 19.7km prendre une piste à gauche. Après 1.7km, on rencontre un carrefour : continuer tout droit pour arriver après 1.8km au pont.",
+      "accesAmont": null,
+      "approche": "Suivre le lit du cours d'eau",
+      "descente": "Canyon n'ayant pas coulé depuis quelques années apparemment.\n\nUne vasque au départ incitant à faire demi-tour (eau putride même après quelques pluies).\n\nLa suite vaut la peine de la traverser: beau canyon encaissé avec de jolies formes. Mais quel dommage qu'il ne coule plus! On imagine quelques sauts dans des marmites gigantesques et l'intérêt s'envolant...",
+      "retour": "Après le dernier rappel, monter à gauche (traces de sente) pour atteindre le sommet (ça monte très raide) puis rejoindre une ferme (50 min) et suivre la piste (toujours à gauche) jusqu'à la voiture.",
+      "engagement": "Pas d'échappatoires dans les encaissements",
+      "periode": "Canyon sec. A faire après des pluies diluviennes ou après l'été pour que les vasques soient sèches.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Village sympathique de Alhama de Grenada tout proche.\n\nSi vous y passez, arrêtez vous au bar El Tigre en haut de la place. Commandez une canya et Antonio le barman vous fera défiler un festival de tapas le tout pour une somme plus que modique!"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21800,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 37.043018,
+        "longitude": -4.056487,
+        "label": null
+      },
+      {
+        "canyonId": 21800,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 37.059185,
+        "longitude": -4.045844,
+        "label": null
+      },
+      {
+        "canyonId": 21800,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 37.045963,
+        "longitude": -4.061873,
+        "label": "navette possible, mais pas necessaire; voir la belle source"
+      },
+      {
+        "canyonId": 21800,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 37.030823,
+        "longitude": -4.022713,
+        "label": "sortir la route Salar - Alhama de Granada (A 4155)"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 37.045963,
+      "longitude": -4.061873,
+      "label": "navette possible, mais pas necessaire; voir la belle source"
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_05f7a8dc05e74833",
+          "kind": "TOPOGUIDE",
+          "title": "Asturias, Cuenca, Granada, Mallorca, Tarragona y Terruel - Guia de descenso de cañones y barrancos",
+          "authors": [
+            "Eduardo Gomez",
+            "Laura Tejero"
+          ],
+          "publicationYear": 2004,
+          "reference": "8495744-37-6",
+          "editor": "Barrabes",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1123/topoguide.html"
+        },
+        {
+          "id": "biblio_d3958643a7e21bee",
+          "kind": "TOPOGUIDE",
+          "title": "Descenso de cañones - Granada - Tomo 1",
+          "authors": [
+            "Eduardo Gómez"
+          ],
+          "publicationYear": 1997,
+          "reference": null,
+          "editor": "Eduardo Gómez",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1299/topoguide.html"
+        }
+      ],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_93a19ec563ee7ee0",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.actionman4x4.com/canonesybarr.....os/espantaperros.htm",
+          "url": "http://www.actionman4x4.com/canonesybarr.....os/espantaperros.htm"
+        },
+        {
+          "id": "resource_e4f8f76f80bd94a3",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://ropewiki.com/Espantaperro",
+          "url": "http://ropewiki.com/Espantaperro"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 145,
+          "status": "Indéfini",
+          "action": "Réglemente",
+          "title": "Information",
+          "summary": "Canyon non autorisé pendant la nidification d'aigles!",
+          "remark": null,
+          "details": null,
+          "effectiveDate": null,
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/145/legislation.html",
+          "attachments": []
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:37.905248+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23090,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23090/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23090/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23090/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23090/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23090,
+    "identity": {
+      "nom": "Peyroutilles",
+      "nomComplet": "Ravin de Peyroutilles, Rec de la Piche",
+      "prefixeNom": "Ravin de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23090/Peyroutilles.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Ariège",
+      "communePrincipale": "Mercus-Garrabet",
+      "communes": [
+        "Mercus-Garrabet"
+      ],
+      "massif": null,
+      "bassin": "Ariège",
+      "coursEau": "Rec de la Piche"
+    },
+    "rating": {
+      "cotation": "v4a1II",
+      "interet": 1.3,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 850,
+      "deniveleM": 250,
+      "longueurM": 500,
+      "cascadeMaxM": 55,
+      "cordeMiniM": 60,
+      "navette": "5.8km"
+    },
+    "timings": {
+      "approche": "40min",
+      "descente": "2h30",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "Garer un premier véhicule à Amplaing (entre Tarascon-sur-Ariège et Foix) à l'aire de pique-nique (source) au lieu-dit Montanabie indiqué sur la carte IGN. Emprunter le \"chemin du communal\" pour y arriver. Laisser l'autre véhicule au parking de l'entrée du village de Seignaux.",
+      "accesAmont": null,
+      "approche": "A partir de Seignaux, emprunter le sentier balisé en jaune (circuit du Taus et de la Cabane des Gardes, panneau d’indication au village). Compter 30 minutes de progression sur une piste (interdite à la circulation). Peu avant que la piste ne forme un grand virage à 180° (point coté 893 mètres sur la carte) quitter la piste principale et partir à gauche sur une autre piste en suivant le panneau « chemin de Tournac » (marquée comme sentier sur la carte). On croise très vite le ruisseau qui coupe la piste. Descendre dans le thalweg d’abord large, et qui s’encaisse au cours de la descente. On rejoint le cours d’eau au niveau d’un gros arbre et d’un bloc rocheux.",
+      "descente": "Canyon de type ravin à profil vertical. Tous les rappels sont installés sur des arbres. Premier rappel de 8 mètres sur rampe inclinée avec beaucoup de végétation. On peut l’éviter en rive droite en descendant dans une pente boisée. On enchaîne alors sur un ressaut de 3 mètres, puis un de 4 mètres (passage sous des racines d’arbres).\n\nOn arrive au premier ressaut important, 35 mètres vertical (attention, un gros bloc parait instable).\n\nUn peu de marche amène à un rappel de 20 mètres. Puis c’est le 55 mètres (rampe inclinée suivi d’un grand ressaut vertical, superbe !). Enfin, un 25 mètres, et c’est la fin des difficultés.",
+      "retour": "Après le rappel de 25 mètres, la progression n'est plus intéressante (végétation). Il faut alors marcher dans la forêt en rive gauche hors sentier jusqu’à buter sur une clôture (chevaux) qu’il faut contourner pour arriver à l’aire de pique-nique où on a laissé le véhicule.",
+      "engagement": "Peu encaissé, mais les grandes verticales peuvent poser problème à cause de la végétation et de quelques blocs instables.",
+      "periode": "Sec l'été. Intéressant au printemps ou en période de pluie.",
+      "geologie": null,
+      "historique": "Ouvert le 25 avril 2013 par Yann Dutheil, Pierre Parent et Jérôme Servaire.",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23090,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.885937,
+        "longitude": 1.611608,
+        "label": null
+      },
+      {
+        "canyonId": 23090,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.884235,
+        "longitude": 1.615471,
+        "label": null
+      },
+      {
+        "canyonId": 23090,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 42.884167,
+        "longitude": 1.618389,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 42.884167,
+      "longitude": 1.618389,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_69a7ee2ce1663b8b",
+          "kind": "MAP",
+          "title": "2147 ET Foix - Tarascon-sur-Ariege (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

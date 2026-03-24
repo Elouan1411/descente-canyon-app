@@ -1,0 +1,138 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:05.563952+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22168,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22168/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22168/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22168/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22168/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22168,
+    "identity": {
+      "nom": "Mocanes",
+      "nomComplet": "Barranco de Los Mocanes",
+      "prefixeNom": "Barranco de Los",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22168/Mocanes.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Canarias",
+      "departement": "Las Palmas",
+      "communePrincipale": "Valsequillo de Gran Canaria",
+      "communes": [
+        "Valsequillo de Gran Canaria"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 1.6,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1120,
+      "deniveleM": 370,
+      "longueurM": 1500,
+      "cascadeMaxM": 27,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "??",
+      "descente": "3h",
+      "retour": "40min"
+    },
+    "topo": {
+      "accesAval": "De GC 1 (Las Palmas - Maspalomas) sortir vers GC 10 et Telde. Passer Telde au nord et tourner au bout de la route à gauche (GC 41; direction Valsequillo). De Valsequillo continuer jusqu´a Las Vegas. environ 200 m après la prochaine courbe à droite tourner de GC 41 à gauche. Prendre la petite route et arriver après 300 m au Baraanco de Los Mocanes. Garer la voiture avant le pont à droite.",
+      "accesAmont": null,
+      "approche": "Traverser le pont, prendre la piste toujours vers le haut. Ensuite arriver à quelques maisons (chiens !), 4,5 km de la voiture. Continuer la piste, ne pas prendre le sentier à droite dans le bois, arriver à la vallée haute (1210 m alt., 6,5 km de la voiture).\n\nDescendre vers nord-est jusqu'au cours d'eau.",
+      "descente": "Succession de rappels, désescalades et marches dans une ambiance tropicale.",
+      "retour": "Environ 100m après le dernier rappel de 8 m (contourner à droite) arriver à un grand rocher. Au-dessous du rocher commence une conduite d'eau. Suivre cette conduite d'eau (herbeux) jusqu'en haut de la rive gauche du canyon. Ici prendre une sente, enfin sentier vers la-bas. Arriver à une petite route et aller directement à la voiture.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "Navette possible, mais délicate sans véhicule 4x4."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22168,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 27.969351,
+        "longitude": -15.513597,
+        "label": null
+      },
+      {
+        "canyonId": 22168,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 27.974842,
+        "longitude": -15.504783,
+        "label": null
+      },
+      {
+        "canyonId": 22168,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 27.968489,
+        "longitude": -15.512888,
+        "label": "avec 4x4 voiture"
+      },
+      {
+        "canyonId": 22168,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 27.98082,
+        "longitude": -15.497568,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 27.968489,
+      "longitude": -15.512888,
+      "label": "avec 4x4 voiture"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_c3bd5d203187ac5f",
+          "kind": "MAP",
+          "title": "237 Gran Canaria (Kompass)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_442aa7f9af7f1458",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://ropewiki.com/Mocanes",
+          "url": "http://ropewiki.com/Mocanes"
+        },
+        {
+          "id": "resource_224e54676cb601f6",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/Canyons/MocanesCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/Canyons/MocanesCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,167 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:16.644493+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22225,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22225/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22225/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22225/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22225/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22225,
+    "identity": {
+      "nom": "Sant Pere (inferior)",
+      "nomComplet": "Barranc de Sant Pere (inferior)",
+      "prefixeNom": "Barranc de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22225/Sant-Pere-inferior.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Cataluña",
+      "departement": "Lérida",
+      "communePrincipale": "la Pobla de Segur",
+      "communes": [
+        "la Pobla de Segur"
+      ],
+      "massif": "Rocs de Queralt",
+      "bassin": "Riu Noguera Pallaresa",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a2II",
+      "interet": 2.1,
+      "nbVotes": 8
+    },
+    "metrics": {
+      "altitudeDepartM": 620,
+      "deniveleM": 80,
+      "longueurM": 820,
+      "cascadeMaxM": 15,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "45 min",
+      "descente": "2h",
+      "retour": "5 min"
+    },
+    "topo": {
+      "accesAval": "Même accès que l'Infern : depuis Lleida, suivre la C-13 jusqu'à la Pobla de Segur, puis la N260 en direction de Sort. Entre la Pobla de Segur et Sort, vous entrez dans une zone encaissée, le Congost de Collegats. N'entrez pas dans le tunnel mais garez-vous sur le grand parking aménagé et ombragé à droite 400 m avant le tunnel. Il y a également des tables et une fontaine.\n\nAttention la police verbalise les véhicules stationnés en dehors de ce parking.",
+      "accesAmont": null,
+      "approche": "Depuis le parking, prendre la route de l'autre côté de la route principale, qui monte doucement. La prendre sur environ 400m (10 min), et sur la droite, prendre le chemin bien tracé (panneau Cova del Serpent) raide (au tout début) pendant 15 minutes.\n\nLe sentier part a droite sur une sorte de vire et arrive sur un plateau. Suivre toujours le chemin sur le plateau (petites montées et descentes). A l'approche du canyon, prendre a droite (panneau Cova del Serpent) et redescendre rapidement jusqu'au départ du canyon.",
+      "descente": "Quelques petits rappels, sauts et toboggans. Très bon équipement. Rappels arrosés si il y a un bon niveau d'eau. On a pieds dans toutes les vasques. Très belles falaises du Congost.",
+      "retour": "Sortir au niveau du pont sur votre gauche. Revenir au parking du départ en longeant en toute sécurité la route principale.",
+      "engagement": "Faible, méfiez vous des montées d'eau en cas d'orage.",
+      "periode": "Après la pluie, printemps.",
+      "geologie": "Calcaire",
+      "historique": null,
+      "remarques": "Il existe un autre accès en RG du barranc de Sant Pere qui part juste après le tunnel, monte à une grande falaise d'escalade, la longe et redescend dans le canyon : clairement plus long mais très joli. Possibilité de faire également la course intégrale décrite dans les vieux topos catalans (navette dans ce cas-là).\n\nTrès fréquenté par les professionnels.\n\nLongueurs de cordes à vérifier"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22225,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.279984,
+        "longitude": 1.025602,
+        "label": null
+      },
+      {
+        "canyonId": 22225,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.274395,
+        "longitude": 1.029662,
+        "label": null
+      },
+      {
+        "canyonId": 22225,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 42.271076,
+        "longitude": 1.027926,
+        "label": "Parking obligatoire"
+      },
+      {
+        "canyonId": 22225,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 42.281006,
+        "longitude": 1.038144,
+        "label": "afflux de l'Infern"
+      },
+      {
+        "canyonId": 22225,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 42.286037,
+        "longitude": 1.036706,
+        "label": "debut du sentier"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 42.271076,
+      "longitude": 1.027926,
+      "label": "Parking obligatoire"
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_8b07a987718e9f50",
+          "kind": "TOPOGUIDE",
+          "title": "Guia pràctica del descens de barrancs i engorjats de Catalunya",
+          "authors": [
+            "Pere Miralles"
+          ],
+          "publicationYear": 1994,
+          "reference": null,
+          "editor": "Institut d'Estudis Espeleològics Sabadell",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1219/topoguide.html"
+        },
+        {
+          "id": "biblio_83c09fd9dcf427c9",
+          "kind": "TOPOGUIDE",
+          "title": "Gorgas y barrancos de Cataluña - Mallorca y Alto Esera",
+          "authors": [
+            "Eduardo Gomez",
+            "Miquel Soro"
+          ],
+          "publicationYear": 1993,
+          "reference": null,
+          "editor": null,
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1128/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_72501cfca413dafd",
+          "kind": "MAP",
+          "title": "26 Pallars Sobira (Institut cartographic de Catalunya)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_fce0dc2cce14d27f",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.terra.es/personal/homellop/spere1.htm",
+          "url": "http://www.terra.es/personal/homellop/spere1.htm"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

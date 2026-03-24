@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:50.823323+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23457,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23457/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23457/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23457/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23457/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23457,
+    "identity": {
+      "nom": "Pielungo",
+      "nomComplet": "Rio Pielungo, Rio Carlo Gasparini, Pielungo",
+      "prefixeNom": "Rio",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23457/Pielungo.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Frioul-Vénétie julienne",
+      "departement": "Ex provincia di Pordenone",
+      "communePrincipale": "Vito d'Asio",
+      "communes": [
+        "Vito d'Asio"
+      ],
+      "massif": null,
+      "bassin": "Arzino",
+      "coursEau": "Pielungo"
+    },
+    "rating": {
+      "cotation": "v3a4III",
+      "interet": 2.4,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 370,
+      "deniveleM": 70,
+      "longueurM": 150,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 25,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "10min",
+      "descente": "1h10min",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23457,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.276279,
+        "longitude": 12.936982,
+        "label": null
+      },
+      {
+        "canyonId": 23457,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.276966,
+        "longitude": 12.938838,
+        "label": "arrivée dans rivière Arzino - encore 200m nager dans Arzino jusqu'à sortie"
+      },
+      {
+        "canyonId": 23457,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.276352,
+        "longitude": 12.938442,
+        "label": null
+      },
+      {
+        "canyonId": 23457,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 46.275032,
+        "longitude": 12.940845,
+        "label": "sortie rivière Arzino vers le-haut"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.276352,
+      "longitude": 12.938442,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_0a2b9a921ab5babd",
+          "kind": "MAP",
+          "title": "028 Val Tramontina-Val Cosa-Val d'Arzino (Tabacco)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_bdea6ea64b3307f0",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/C.....CarloGaspariniCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/C.....CarloGaspariniCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:54:33.692860+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22834,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22834/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22834/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22834/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22834/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22834,
+    "identity": {
+      "nom": "Crealla",
+      "nomComplet": "Rio Crealla",
+      "prefixeNom": "Rio",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22834/Crealla.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Piemonte",
+      "departement": "Verbano-Cusio-Ossola",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a4IV",
+      "interet": 2.9,
+      "nbVotes": 5
+    },
+    "metrics": {
+      "altitudeDepartM": 710,
+      "deniveleM": 300,
+      "longueurM": 1300,
+      "cascadeMaxM": 25,
+      "cordeMiniM": null,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h",
+      "descente": "4h30",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "De Domodossola, remonter le val Vigezzo par la route nationale 337 qui mène à Locarno. De Malesco, poursuivre vers Finero et descendre le Val Cannobina. Atteindre la fraction de Ponte Falmenta et se garer.",
+      "accesAmont": null,
+      "approche": null,
+      "descente": "18 cascades.\n\nCanyon en deux parties, séparée par une zone de marche.",
+      "retour": "Le vallon se termine au pont, sur le chemin d'accès.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22834,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.060753,
+        "longitude": 8.591228,
+        "label": "depart partie inf."
+      },
+      {
+        "canyonId": 22834,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.071514,
+        "longitude": 8.600562,
+        "label": "pont"
+      },
+      {
+        "canyonId": 22834,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.072605,
+        "longitude": 8.602552,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.072605,
+      "longitude": 8.602552,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:29.293639+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22557,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22557/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22557/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22557/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22557/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22557,
+    "identity": {
+      "nom": "Chedde",
+      "nomComplet": "Cascade de Chedde, Cascade de Coeur, L'Ugine",
+      "prefixeNom": "Cascade de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22557/Chedde.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Haute-Savoie",
+      "communePrincipale": "Passy",
+      "communes": [
+        "Passy"
+      ],
+      "massif": null,
+      "bassin": "Arve",
+      "coursEau": "L'Ugine"
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.1,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 730,
+      "deniveleM": 100,
+      "longueurM": 180,
+      "cascadeMaxM": 35,
+      "cordeMiniM": 60,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "1h30",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "De Sallanches, rejoindre Chedde.\n\nContinuer tout droit jusqu'à tourner à droite en direction de l'église puis à gauche au niveau de l'aire d'atterrissage des parapentes.\n\nContinuer jusqu'à se garer sur la zone de point de vue de la cascade.",
+      "accesAmont": null,
+      "approche": "Poursuivre la route (! route étroite! ) pour rejoindre la D13 et continuer à gauche jusqu'au pont en amont.",
+      "descente": "C20\n\nC10\n\nC9\n\nC35\n\nC4\n\nC7",
+      "retour": null,
+      "engagement": "Une échappatoire RG en haut de la 35m.\n\nL'accès en haut de la C35 est difficile en cas de fort débit.\n\nOn peut estimer que le débit est trop gros si la cascade au dessus de la C35 coule dru, au mieux elle doit être quasi sèche.",
+      "periode": "A l'étiage le plus complet (fin d'été, automne).\n\nLe début est sec mais une prise d'eau recrache sur la 35m la flotte captée plus haut, et la ça peut envoyer méchant pendant la descente et surtout à l'arrivée.",
+      "geologie": null,
+      "historique": "première ??\n\nrééquipé en mono plaquette artisanale le 6/11/10",
+      "remarques": "Le relai en haut de la C35 est trop en retrait pour pouvoir rappeler la corde sans perdre 1h. Prévoir pour l'instant des cordes plus longues."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22557,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.932571,
+        "longitude": 6.717214,
+        "label": null
+      },
+      {
+        "canyonId": 22557,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.93166,
+        "longitude": 6.720078,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.93166,
+      "longitude": 6.720078,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_15a6dbda97b38ace",
+          "kind": "MAP",
+          "title": "3530 ET Samoens - Haut-Giffre (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:49:43.173480+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21516,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21516/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21516/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21516/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21516/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21516,
+    "identity": {
+      "nom": "Simpl Bach",
+      "nomComplet": "Simpl Bach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21516/Simpl-Bach.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Haute-Autriche",
+      "departement": "Gmunden",
+      "communePrincipale": "Bad Goisern",
+      "communes": [
+        "Bad Goisern"
+      ],
+      "massif": "Salzkammergut",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.0,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 720,
+      "deniveleM": 170,
+      "longueurM": 600,
+      "cascadeMaxM": 45,
+      "cordeMiniM": 45,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "1h30",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "De Bad Ischl, prendre la direction de Bad Goisern par la route 145. Rester sur celle-ci. A Stambach, suivre sur la droite la direction Hallstatt. Traverser le hameau et tourner immédiatement à droite. Se garer au niveau du petit pont.",
+      "accesAmont": null,
+      "approche": "Prendre le chemin juste après le ruisseau, puis tourner à gauche sur un large chemin. Prendre alors un sentier qui part derrière un mémorial, jusqu'à une centrale électrique. Poursuivre à droite. Des cable aident à la progression jusqu'à une faille descendante, où l'on rentre dans le canyon. Inutile de continuer plus haut.",
+      "descente": "Le milieu est très ouvert. Dans la 40 m, il faut faire attention aux frottements. La gorge commence à être plus marquée et un rappel se descend dans une petite étroiture qui peut poser problème en cas de débit. Le reste n’a pas de grandes difficultés avec des rappels réguliers.",
+      "retour": "Suivre le ruisseau",
+      "engagement": "2 échappatoires",
+      "periode": "Le niveau est vite faible. Il peut-être envisagé après les pluies, mais il faut bien vérifier que le niveau est bas !\n\nMai-Octobre",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21516,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.607368,
+        "longitude": 13.6266,
+        "label": null
+      },
+      {
+        "canyonId": 21516,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.609055,
+        "longitude": 13.62751,
+        "label": null
+      },
+      {
+        "canyonId": 21516,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.611053,
+        "longitude": 13.630214,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.611053,
+      "longitude": 13.630214,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_48f062d8573a5fe8",
+          "kind": "MAP",
+          "title": "20 Dachstein (Kompass)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

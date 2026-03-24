@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:21.355998+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23590,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23590/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23590/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23590/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23590/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23590,
+    "identity": {
+      "nom": "Drögh Grand",
+      "nomComplet": "Drögh Grand, Carrogia, Carrogia",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23590/Drogh-Grand.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Bregaglia",
+      "departement": "Graubünden/Grigioni/Grischun",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Bregaglia",
+      "bassin": "Maira",
+      "coursEau": "Carrogia"
+    },
+    "rating": {
+      "cotation": "v3a2III",
+      "interet": 2.0,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1147,
+      "deniveleM": 100,
+      "longueurM": 200,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "10min",
+      "descente": "1h30min",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "Monter de Promontogno au village de Soglio, se garer au parking à l'entré du village.",
+      "accesAmont": null,
+      "approche": "Suivre le chemin balisé vers Passo Prasgnola.",
+      "descente": "Canyon vertical bien ensolleilé, petites vasques.",
+      "retour": "Sortir au deuxième pont (après eau pourri du village), suivre la route par RG au parking.",
+      "engagement": "Enchainement de beaux rappels, Petit parcours vertical, échappatoire au pont au millieu. Bien ensolleilé.",
+      "periode": "Cascades concentrées, faible fonte de neige, possible dès le printemps.",
+      "geologie": "Contact des couches de Gneis au Granite du Bergell.",
+      "historique": "Non connu.",
+      "remarques": "Soglio est un site classique et un des plus beaux villages de Suisse, le panorame sur le Piz Badile et les autres grandes montagnes de granite est unique. En tout cas à découvrir avant ou après la descente."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23590,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.344299,
+        "longitude": 9.53262,
+        "label": null
+      },
+      {
+        "canyonId": 23590,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.34219,
+        "longitude": 9.53281,
+        "label": null
+      },
+      {
+        "canyonId": 23590,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.342461,
+        "longitude": 9.53603,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.342461,
+      "longitude": 9.53603,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_b74adb5ca4b745e6",
+          "kind": "MAP",
+          "title": "1276 Val Bregaglia (Swisstopo)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:48:47.875686+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21285,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21285/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21285/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21285/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21285/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21285,
+    "identity": {
+      "nom": "Casselouvre",
+      "nomComplet": "Torrent du Casselouvre, Le Casselouvre",
+      "prefixeNom": "Torrent du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21285/Casselouvre.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Hérault",
+      "communePrincipale": "Saint-Gervais-sur-Mare",
+      "communes": [
+        "Saint-Gervais-sur-Mare"
+      ],
+      "massif": "Espinouse",
+      "bassin": "La Mare",
+      "coursEau": "Le Casselouvre"
+    },
+    "rating": {
+      "cotation": "v1a2II",
+      "interet": 1.5,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": null,
+      "longueurM": null,
+      "cascadeMaxM": 4,
+      "cordeMiniM": null,
+      "navette": "3.0km"
+    },
+    "timings": {
+      "approche": "1h30",
+      "descente": "3h00",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "Une voiture a St Gervais, l'autre entre les hameau de Cours le Bas et Cours le haut. Parking sur la gauche.",
+      "accesAmont": null,
+      "approche": "De St Gervais prendre le GR qui amène au \"portail de roquendouïre\" Descendre a vue dans le torrent.",
+      "descente": "Randonnée aquatique pour toute la famille. Pas d'encaissement mais de belles vasques propisces aux sauts. Quelques toboggans.\n\nLe début est languissant, pas mal de marche...",
+      "retour": "Sortie RG avant la dernière marmite. Ne pas aller plus loin : terrain privé et source ferrigineuse captée.. Déjà des problèmes...",
+      "engagement": "aucun... Si ce n'est que la boucle est longue....",
+      "periode": "De l'eau toute l'année mais sale l'été.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Respectez les pêcheurs, nombreux sur ce cours d'eau à l'ouverture et le mois qui suit...(Avril, Mai... Mais c'est valable aussi pour les autres mois.)\n\nL'endroit est sauvage.. Préservez le...\n\nN'hésitez pas a boire un coup au bar de St Gervais.\n\nIl y a un gite à cours : \"le refuge du Nébuzon\""
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21285,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.649677,
+        "longitude": 3.010597,
+        "label": null
+      },
+      {
+        "canyonId": 21285,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.643963,
+        "longitude": 3.024845,
+        "label": "belle vasque avec captage"
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 43.649677,
+      "longitude": 3.010597,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_fc07aa1bfb96647b",
+          "kind": "MAP",
+          "title": "2543 OT Lamalou-Les-Bains (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

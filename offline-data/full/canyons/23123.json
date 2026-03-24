@@ -1,0 +1,140 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:45.681756+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23123,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23123/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23123/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23123/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23123/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23123,
+    "identity": {
+      "nom": "Zieggraben",
+      "nomComplet": "Zieggraben",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23123/Zieggraben.html"
+    },
+    "location": {
+      "pays": "Allemagne",
+      "region": "Bayern",
+      "departement": "Oberbayern",
+      "communePrincipale": "Garmisch-Partenkirchen",
+      "communes": [
+        "Landkreis Garmisch-Partenkirchen",
+        "Garmisch-Partenkirchen"
+      ],
+      "massif": "Ammergauer Alpen",
+      "bassin": "Loisach",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a4III",
+      "interet": 1.6,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 1040,
+      "deniveleM": 200,
+      "longueurM": 500,
+      "cascadeMaxM": 48,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "45min",
+      "descente": "2h30",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "C49 avec relais (17+30)"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23123,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.488674,
+        "longitude": 11.007164,
+        "label": null
+      },
+      {
+        "canyonId": 23123,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.484787,
+        "longitude": 11.005769,
+        "label": null
+      },
+      {
+        "canyonId": 23123,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.481976,
+        "longitude": 11.01197,
+        "label": null
+      },
+      {
+        "canyonId": 23123,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.482685,
+        "longitude": 11.011369,
+        "label": "1 : départ de l'approche par piste forestière"
+      },
+      {
+        "canyonId": 23123,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.483974,
+        "longitude": 11.008816,
+        "label": "2 : prendre la sente vers le haut"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.481976,
+      "longitude": 11.01197,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_003da29f948341fb",
+          "kind": "MAP",
+          "title": "UK L 31 Werdenfelser Land (Bayerisches Landesvermessungsamt)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_b81e665a7efdcc5b",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://youtu.be/4SL8dWZcG0w",
+          "url": "http://youtu.be/4SL8dWZcG0w"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

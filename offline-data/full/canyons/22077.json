@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:44.771980+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22077,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22077/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22077/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22077/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22077/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22077,
+    "identity": {
+      "nom": "Valiri",
+      "nomComplet": "Garganta de Valiri",
+      "prefixeNom": "Garganta de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22077/Valiri.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Aragón",
+      "departement": "Huesca",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Cotiella",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.2,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 1360,
+      "deniveleM": 130,
+      "longueurM": 2000,
+      "cascadeMaxM": null,
+      "cordeMiniM": 20,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "??",
+      "descente": "??",
+      "retour": "??"
+    },
+    "topo": {
+      "accesAval": "Entre Castejon de Sos et Pont de Suert prendre la direction de Castanesa. Laissez un véhicule à ce village.\n\nParking",
+      "accesAmont": "Continuez la piste jusqu’à l’église de San Silvestre.",
+      "approche": null,
+      "descente": "Sur la carte à Gimat il a mit 3 cœurs. De loin, ça semble vraiment laid. En conséquence, c’est à voir !",
+      "retour": null,
+      "engagement": null,
+      "periode": "Fort débit en début de saison. Sensible aux orages.\n\nAoût-octobre",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22077,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.526718,
+        "longitude": 0.650468,
+        "label": null
+      },
+      {
+        "canyonId": 22077,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.512806,
+        "longitude": 0.650468,
+        "label": null
+      },
+      {
+        "canyonId": 22077,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 42.526993,
+        "longitude": 0.65197,
+        "label": "La navette n'est pas obligatoire"
+      },
+      {
+        "canyonId": 22077,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 42.510536,
+        "longitude": 0.655564,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 42.526993,
+      "longitude": 0.65197,
+      "label": "La navette n'est pas obligatoire"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

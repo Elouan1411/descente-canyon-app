@@ -1,0 +1,140 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:50.105441+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23454,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23454/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23454/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23454/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23454/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23454,
+    "identity": {
+      "nom": "Guscha",
+      "nomComplet": "Guscha, Ansrüfi",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23454/Guscha.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Maienfeld",
+      "departement": "Graubünden/Grigioni/Grischun",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Rätikon",
+      "bassin": "Rhein",
+      "coursEau": "Ansrüfi"
+    },
+    "rating": {
+      "cotation": "v4a3III",
+      "interet": 2.7,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 1160,
+      "deniveleM": 400,
+      "longueurM": 800,
+      "cascadeMaxM": 75,
+      "cordeMiniM": 50,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h15min",
+      "descente": "4-5h",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "Sur l'autoroute A13 en direction de Bregenz, prendre la sortie Trübbach et continuer en direction de Balzers puis St. Luziensteig. Se garer à coté de la rue ou vous croisez le torrent (Alt. 533m). La route qui monte au point 768m sur la carte est interdite, attention aux amendes.\n\nTake the highway A13 in direction Bregenz.\n\nExit in Trübbach and drive in direction Balzers and after St. Luziensteig.\n\nPark the car just next to the street where you cross the Ansrüfi river (Pont 533Hm). if you dare you can drive to the point 768Hm, but you risk a fine.",
+      "accesAmont": null,
+      "approche": "Contineuer à pied sur la route et traverser le torrent sur un pont (alt 628m), continuer jusqu'à atteindre un sentier de rando en zig-zag. De là, monter jusqu'à la passerelle qui traverse le canyon (alt. 1090m). Apr^s la passerelle continuer une dizaine de minute jusqu'à atteindre l'altitude de 1160m.\n\nWalk first on the road, crossing the bridge at 628Hm and continnue until you reach the zig-zag hiking-path. From there steep up to the bridge crossing the Ansrüfi at 1090Hm. After the bride continue for another 10min until you reach the riverbed at 1160Hm.",
+      "descente": "La première partie est plutôt plate avec des desescalades et des petits toboggans jusqu'à atteindre \"la cathédrale\", une belle cascade de 30m. De là le canyon est plus vertical et plus technique avec des cascades bien sculptées.\n\nThe first part is rather flat with some downclimbs or small slides until you reach the Cathedral, a very nice 30m waterfall. From there the canyon is steeper and more technical with some high and nice formed waterfalls.",
+      "retour": "Continuer dans le lit du torrent jusqu'au pont (alt. 628m) ou traverser le cours d'eau après la dernière cascade pour remonter Rd pour rejoindre le parking alt 768m.\n\nWallk down in the riverbed until you reach the bridge at 628Hm or cross short after the last waterfall right to reach your car parked at 768Hm.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23454,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.054932,
+        "longitude": 9.530201,
+        "label": null
+      },
+      {
+        "canyonId": 23454,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.053349,
+        "longitude": 9.523029,
+        "label": null
+      },
+      {
+        "canyonId": 23454,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.050014,
+        "longitude": 9.513974,
+        "label": null
+      },
+      {
+        "canyonId": 23454,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.053867,
+        "longitude": 9.520829,
+        "label": "parking 2 if you will risk a fine"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.050014,
+      "longitude": 9.513974,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_ee92621b53de3c8c",
+          "kind": "TOPOGUIDE",
+          "title": "Canyoning : Swiss Alps / Alpes Suisse",
+          "authors": [
+            "Association Openbach"
+          ],
+          "publicationYear": 2015,
+          "reference": "9782746679450",
+          "editor": "auto-edition",
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/195/Canyoning-:-Swiss-alps---Alpes-suisses-Vol-1.html"
+        },
+        {
+          "id": "biblio_b440b623b8f939ea",
+          "kind": "TOPOGUIDE",
+          "title": "GRand CANYONS",
+          "authors": [
+            "Timo Stammwitz"
+          ],
+          "publicationYear": 2010,
+          "reference": "978-3-9523369-5-3",
+          "editor": null,
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/155/GRand-CANYONS.html"
+        }
+      ],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

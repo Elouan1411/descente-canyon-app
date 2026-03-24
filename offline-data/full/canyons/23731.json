@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:54.198323+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23731,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23731/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23731/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23731/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23731/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23731,
+    "identity": {
+      "nom": "Afra",
+      "nomComplet": "Wadi Afra",
+      "prefixeNom": "Wadi",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23731/Afra.html"
+    },
+    "location": {
+      "pays": "Jordanie",
+      "region": null,
+      "departement": "Tafilah",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v1a2II",
+      "interet": 1.8,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 270,
+      "deniveleM": 130,
+      "longueurM": 2300,
+      "cascadeMaxM": null,
+      "cordeMiniM": null,
+      "navette": "1.8km"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "3h",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": "La canyon se remonte",
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23731,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 30.984739,
+        "longitude": 35.639706,
+        "label": "de la-bas vers le-haut"
+      },
+      {
+        "canyonId": 23731,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 30.97081,
+        "longitude": 35.640377,
+        "label": "amont"
+      },
+      {
+        "canyonId": 23731,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 30.970484,
+        "longitude": 35.641235,
+        "label": null
+      },
+      {
+        "canyonId": 23731,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 30.980736,
+        "longitude": 35.645615,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 30.970484,
+      "longitude": 35.641235,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_d879921f3ee61443",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/Canyons/AfraCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/Canyons/AfraCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

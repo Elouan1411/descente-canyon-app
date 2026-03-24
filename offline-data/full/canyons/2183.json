@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:44:26.164894+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2183,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2183/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2183/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2183/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2183/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/2183/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 2183,
+    "identity": {
+      "nom": "Sémine [Marmites de la]",
+      "nomComplet": "Sémine [Marmites de la], Marmites de la Sémine",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2183/Semine-Marmites-de-la.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Ain",
+      "communePrincipale": "Saint-Germain-de-Joux",
+      "communes": [
+        "Saint-Germain-de-Joux"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a3I",
+      "interet": 1.3,
+      "nbVotes": 9
+    },
+    "metrics": {
+      "altitudeDepartM": 495,
+      "deniveleM": 35,
+      "longueurM": 700,
+      "cascadeMaxM": 8,
+      "cordeMiniM": 8,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "10min",
+      "descente": "1h",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": "Se garer au parking des marmites (lieu touristique) à l'entrée de St Germain de Joux. Pour y accéder prendre la route qui descend en face de l'hôtel restaurant Reygrobellet.",
+      "accesAmont": null,
+      "approche": "En partant du parking des marmites, remonter au centre ville (direction de l'église) et prendre la direction de Giron. A la sortie du village, prendre le chemin à droite après le pont qui enjambe la Sémine. Descendre dans le canyon par la deuxième échelle. Merci de rester discret.",
+      "descente": "Canyon composé d'énormes marmites creusées par l'eau et entrecoupées de petite cascade.",
+      "retour": "Après la succession de marmites, remonter rive gauche pour reprendre la passerelle et emprunter le chemin qui rejoint le parking où le véhicule est stationné. (300 mètres de marche)",
+      "engagement": "Partie engagée en amont jusqu'à mi parcours.",
+      "periode": "Périodes idéales de début avril à fin octobre",
+      "geologie": null,
+      "historique": "Canyon déjà nettoyé par la Tribu Canyon qui a permis d'aborder cette descente.",
+      "remarques": "ATTENTION : Canyon non équipé et arbres mal disposés dans la première partie.\n\nCe magnifique canyon souffre de sa situation sous le village de St Germain De Joux (01), il sert plus ou moins de dépotoir aux habitants.\n\nBien repérer les vasques avant de sauter.\n\nBarrage situé au dessus du parcours."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2183,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.182384,
+        "longitude": 5.738318,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 46.182384,
+      "longitude": 5.738318,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_eaf169d7ab65904c",
+          "kind": "MAP",
+          "title": "3229 E",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 297,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Convention - 20 déc 2011",
+          "summary": "Une convention a été signée entre les pêcheurs et les canyonistes. Concernant la pratique du canyonisme, il convient de respecter les règles suivantes :\n\n- entrée après 9h30 et sortie avant 18h.\n\n- marche sur les berges dès que la flottaison n'est plus possible.\n\n- respect des propriétés traversées (pas de détritus ni d'abandon de cordes), ni d'intervention sur les arbres tombés sans concertation.",
+          "remark": null,
+          "details": "Convention entre les pratiquants de la pêche et ceux du canyoning",
+          "effectiveDate": "20 déc 2011",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/297/legislation.html",
+          "attachments": [
+            {
+              "label": "Convention entre les pratiquants de la pêche et ceux du canyoning",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem297_pj1.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:49:56.641672+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21578,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21578/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21578/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21578/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21578/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21578,
+    "identity": {
+      "nom": "Font Bordonera",
+      "nomComplet": "Barranco de la Font Bordonera, Muntanya",
+      "prefixeNom": "Barranco de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21578/Font-Bordonera.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Cataluña",
+      "departement": "Lérida",
+      "communePrincipale": "Organyà",
+      "communes": [
+        "Organyà"
+      ],
+      "massif": "Alt Urgell",
+      "bassin": "Rio Segre",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a2I",
+      "interet": 1.6,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 1240,
+      "deniveleM": 102,
+      "longueurM": 1240,
+      "cascadeMaxM": 18,
+      "cordeMiniM": 20,
+      "navette": "6.0km"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "1h30",
+      "retour": "25min"
+    },
+    "topo": {
+      "accesAval": "A Organya prenez la route vers Lérida. Prenez avant la sortie du village la rue avec les panneaux : Alberg Santa Fe ; Centre BTT, FCC ; escola miret i sons ; 100 m plus loin prendre à gauche. Engagez la piste. 300 m après le début de la piste, au transformateur prenez la piste de droite. 100 m plus loin prenez tout droit. Aux bâtiment d’élevage continuez la piste et garez vous devant le panneau : Abocador Clausurat.\n\nParking",
+      "accesAmont": "retournez dans Organya. Prenez la direction Montanisell. A la bifurcation prenez à gauche : Montanisell. Dépassez la résurgence et arrêtez vous à la zone de pique nique de la Fuente Bardonera.",
+      "approche": "Rejoignez la fontaine",
+      "descente": "Le premier obstacle intéressant est la cascade qui tombe dans le Barranco Muntanya. Il faut à présent marcher et ce n’est qu’à la fin que les obstacles que les plus intéressants se présentent !\n\nIl est préférable de le faire au printemps lorsque l'eau coule fortement.",
+      "retour": "Sortez RG et suivez une sente qui serpente jusqu’en vue du parking aval.",
+      "engagement": "Pas d’encaissement.",
+      "periode": "Le débit peut s’arrêter l’été",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21578,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.201637,
+        "longitude": 1.299396,
+        "label": null
+      },
+      {
+        "canyonId": 21578,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.198189,
+        "longitude": 1.313778,
+        "label": null
+      },
+      {
+        "canyonId": 21578,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 42.203461,
+        "longitude": 1.299332,
+        "label": null
+      },
+      {
+        "canyonId": 21578,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 42.199299,
+        "longitude": 1.319928,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 42.203461,
+      "longitude": 1.299332,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_cf874754f06ca22e",
+          "kind": "MAP",
+          "title": "04 Alt Urgell (Cartografic de Catalunya)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

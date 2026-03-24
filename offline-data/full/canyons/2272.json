@@ -1,0 +1,155 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:44:50.590125+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2272,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2272/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2272/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2272/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2272/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/2272/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 2272,
+    "identity": {
+      "nom": "Ascension",
+      "nomComplet": "Torrent de l' Ascension, Trou du Diable",
+      "prefixeNom": "Torrent de l'",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2272/Ascension.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Hautes-Alpes",
+      "communePrincipale": "La Roche-de-Rame",
+      "communes": [
+        "La Roche-de-Rame"
+      ],
+      "massif": "Queyras",
+      "bassin": "Durance",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "",
+      "interet": 1248.0,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": 1248,
+      "deniveleM": 242,
+      "longueurM": 1000,
+      "cascadeMaxM": null,
+      "cordeMiniM": null,
+      "navette": null
+    },
+    "timings": {
+      "approche": null,
+      "descente": null,
+      "retour": null
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2272,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.769722,
+        "longitude": 6.58,
+        "label": null
+      },
+      {
+        "canyonId": 2272,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.763611,
+        "longitude": 6.5775,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 44.769722,
+      "longitude": 6.58,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_0062918c2f446d19",
+          "kind": "TOPOGUIDE",
+          "title": "Les canyons des Hautes-Alpes",
+          "authors": [
+            "Henri VINCENS"
+          ],
+          "publicationYear": 2007,
+          "reference": "9782952944502",
+          "editor": "auto-édition",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/12/Canyons-des-Hautes-Alpes.html"
+        },
+        {
+          "id": "biblio_6b7865a698c28634",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons alpins : Le tour de l'Oisans en canyons",
+          "authors": [
+            "Alain Bach",
+            "Marc Brunello",
+            "Christian Chillet",
+            "Philippe Drouin"
+          ],
+          "publicationYear": 1992,
+          "reference": "ISBN 2-7417-0054-0",
+          "editor": "Gap",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/117/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_a317eb6118143790",
+          "kind": "MAP",
+          "title": "3537 ET Guillestre (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 519,
+          "status": "Actif",
+          "action": "Interdit",
+          "title": "Arrêté municipal (La Roche-de-Rame) - 07 mars 2022",
+          "summary": "Le canyoning, ainsi que l'escalade sous toutes ses formes et la high-line, sont interdits sur le site du \"Trou du Diable\" pour la protection entre autres d'un couple de hiboux grand-duc.",
+          "remark": null,
+          "details": "Arrêté municipal (La Roche-de-Rame) n°2022-03-07-004 du 7 mars 2022",
+          "effectiveDate": "07 mars 2022",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/519/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté municipal (La Roche-de-Rame) n°2022-03-07-004 du 7 mars 2022",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem519_pj1.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

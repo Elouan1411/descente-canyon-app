@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:54:03.532388+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22712,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22712/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22712/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22712/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22712/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22712,
+    "identity": {
+      "nom": "Brayes",
+      "nomComplet": "Cascades des Brayes",
+      "prefixeNom": "Cascades des",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22712/Brayes.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Bouches-du-Rhône",
+      "communePrincipale": "Auriol",
+      "communes": [
+        "Auriol"
+      ],
+      "massif": "Sainte Baume",
+      "bassin": "Huveaune",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 0.5,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 300,
+      "deniveleM": 50,
+      "longueurM": 400,
+      "cascadeMaxM": 8,
+      "cordeMiniM": 15,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "40min",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "Du péage d'Auriol,prendre la direction de St Zacharie jusqu'au rond point avec une petite éolienne .De là,suivre la D45a en direction du Plan d'Aups sur 2,7 km,puis prendre à gauche au pont des Encanaux .Parking obligatoire à gauche,ouvert de 6h00 à 20h00 .",
+      "accesAmont": null,
+      "approche": "Reprendre à pieds la D45a en direction du Plan d'Aups sur 500 m et au virage avec une petite falaise sur votre gauche,quitté la route pour monter au dessus de cette petite falaise et rejoindre la cascade en contre bas de celle-ci .",
+      "descente": "C8 de départ sur AN RD ,marche et C6 sur AN avec quelques minis cascades sculptées par le tuf travertin.",
+      "retour": "Sortez du ruisseau avant le pont des Encanaux et rejoignez votre véhicule .",
+      "engagement": "Aucun ,mais échappatoire compliquée du fait des propriétés privés qui longent le ruisseau .",
+      "periode": null,
+      "geologie": "tuf travertin",
+      "historique": null,
+      "remarques": "A faire après les Encanaux ... Aucun équipement ."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22712,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.346043,
+        "longitude": 5.658828,
+        "label": null
+      },
+      {
+        "canyonId": 22712,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.349461,
+        "longitude": 5.660663,
+        "label": null
+      },
+      {
+        "canyonId": 22712,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.350773,
+        "longitude": 5.660019,
+        "label": null
+      },
+      {
+        "canyonId": 22712,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 43.346249,
+        "longitude": 5.658174,
+        "label": "accés départ"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.350773,
+      "longitude": 5.660019,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_c55008676d4d8829",
+          "kind": "MAP",
+          "title": "3245 ET Aubagne - La Ciotat (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

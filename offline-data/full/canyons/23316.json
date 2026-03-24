@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:32.383677+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23316,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23316/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23316/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23316/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23316/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23316,
+    "identity": {
+      "nom": "Cine",
+      "nomComplet": "Ravin de la Cine",
+      "prefixeNom": "Ravin de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23316/Cine.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-de-Haute-Provence",
+      "communePrincipale": "Moustiers-Sainte-Marie",
+      "communes": [
+        "Moustiers-Sainte-Marie"
+      ],
+      "massif": null,
+      "bassin": "Verdon",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 0.3,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 1260,
+      "deniveleM": 100,
+      "longueurM": 350,
+      "cascadeMaxM": 8,
+      "cordeMiniM": 10,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "1h00",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "De Moustiers Sainte Marie, prendre la direction de Riez par la D952, puis tournez à droite en direction du site de vol libre du Montdenier. Passez la ferme de Vincel puis prendre une piste à gauche. Se garer au croisement de la piste et du sentier de randonnée (PR-balisage jaune).",
+      "accesAmont": null,
+      "approche": "Suivre le PR jusqu’à que celui-ci longe le ravin. Descendre au mieux dans le ravin avant que le chemin ne croise celui-ci.",
+      "descente": "Petite descente dans une petite gorge marquée, malheureusement très encombrée par la végétation (buis ...). N'oubliez pas votre sécateur...",
+      "retour": "A la sortie du verrou rocheux, ne pas continuer à descendre mais suivre au mieux la barre rocheuse, puis traverser la petite pinède en direction du parking.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "Bouse pour les collectionneurs. Attention les buis sont particulierement agressifs ... ;-)"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23316,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.856834,
+        "longitude": 6.256113,
+        "label": null
+      },
+      {
+        "canyonId": 23316,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 43.857952,
+        "longitude": 6.263409,
+        "label": "Quitter le sentier pour rejoindre le ravin."
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.856834,
+      "longitude": 6.256113,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_371b2a24e7aa2a73",
+          "kind": "MAP",
+          "title": "3442 OT Gorges du Verdon (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

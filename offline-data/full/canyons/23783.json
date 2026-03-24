@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:04.998439+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23783,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23783/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23783/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23783/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23783/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23783,
+    "identity": {
+      "nom": "Sorico",
+      "nomComplet": "Val(le) Sorico",
+      "prefixeNom": "Val(le)",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23783/Sorico.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Lombardia",
+      "departement": "Como",
+      "communePrincipale": "Sorico",
+      "communes": [
+        "Sorico"
+      ],
+      "massif": "Alpi Lepontine",
+      "bassin": "Lac de Come",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 1.5,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 460,
+      "deniveleM": 245,
+      "longueurM": 600,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 25,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "40min",
+      "descente": "2h15min",
+      "retour": "5"
+    },
+    "topo": {
+      "accesAval": "navette 4,7 km",
+      "accesAmont": null,
+      "approche": "sans navette",
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23783,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.179741,
+        "longitude": 9.38191,
+        "label": null
+      },
+      {
+        "canyonId": 23783,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.173859,
+        "longitude": 9.38286,
+        "label": null
+      },
+      {
+        "canyonId": 23783,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 46.179455,
+        "longitude": 9.381391,
+        "label": null
+      },
+      {
+        "canyonId": 23783,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 46.172714,
+        "longitude": 9.381565,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 46.179455,
+      "longitude": 9.381391,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_75ec6f53a91dde62",
+          "kind": "MAP",
+          "title": "17 I-SE Novate Mezzola (IGMI 25/V)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_f0ef93bfaf713e8c",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/Canyons/SoricoCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/Canyons/SoricoCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

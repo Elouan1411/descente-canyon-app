@@ -1,0 +1,145 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:49:58.464722+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21586,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21586/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21586/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21586/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21586/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/21586/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 21586,
+    "identity": {
+      "nom": "Irusta",
+      "nomComplet": "Cascades d' Irusta",
+      "prefixeNom": "Cascades d'",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21586/Irusta.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "País Vasco",
+      "departement": "Guipúzcoa",
+      "communePrincipale": "Irún",
+      "communes": [
+        "Irún"
+      ],
+      "massif": "Aiako Harria",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "",
+      "interet": 175.0,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": 175,
+      "longueurM": 300,
+      "cascadeMaxM": null,
+      "cordeMiniM": null,
+      "navette": null
+    },
+    "timings": {
+      "approche": null,
+      "descente": null,
+      "retour": null
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": "Descente réalisé par les gens de la province.",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21586,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.305725,
+        "longitude": -1.774437,
+        "label": null
+      },
+      {
+        "canyonId": 21586,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.307693,
+        "longitude": -1.771417,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 43.305725,
+      "longitude": -1.774437,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_e4c8c4f70fecf6cb",
+          "kind": "TOPOGUIDE",
+          "title": "Barrancos y Cañones de Euskal Herria",
+          "authors": [
+            "Javier ITURRITXA"
+          ],
+          "publicationYear": 2012,
+          "reference": "978-84-615-5658-8",
+          "editor": null,
+          "status": "en stock\n\n- 24,90 € -\n\nCommandez cet ouvrage dès maintenant !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/166/Barrancos-y-Canones-de-Euskal-Herria.html"
+        },
+        {
+          "id": "biblio_c1524b8af0f1815f",
+          "kind": "TOPOGUIDE",
+          "title": "Pirineos - Guia de descenso de canones y barrancos",
+          "authors": [
+            "Eduardo Gomez",
+            "Laura Tejero"
+          ],
+          "publicationYear": 2002,
+          "reference": "84-95744-20-1",
+          "editor": "Barrabes",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1126/topoguide.html"
+        }
+      ],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 340,
+          "status": "Actif",
+          "action": "Interdit",
+          "title": "Arrêté (País Vasco) - 11 avr 1995",
+          "summary": "- le P.O.R.N. du parc Aiako Harria Interdit toute activité sportive dans le lit des rivières sans la permission de l'organe de gestion du parc (article 18.– Actividades recreativas, C.– NORMAS, paragraphe 6).\n\n- le barranco de Aitzondo est une \"zone de conservation active\" dans laquelle sont interdites toutes les activités non déjà présentes. Le canyoning n'est pas listé dans les activités récréatives \"traditionnelles\" présentes (article 30)",
+          "remark": null,
+          "details": "Consultez le\n\ntexte (ou extrait)\n\nTodo lo referente al parque lo regulan los 240/95 y 241/95 del 11 de Abril de 1995, y publicados en el Boletín Oficial del País Vasco nº 105 del 5 de Junio de 1995. El articulo 18, Apratado C, norma nº 6 : \"Se prohibe toda actividad deportiva que se desarrolle en el cauce de los ríos, sin el permiso del Órgano Gestor del Parque excepto la pesca deportiva con caña.\"\n\nDécret (Gobierno del Pais Vasco) n°240/1995 du 11 avril 1995",
+          "effectiveDate": "11 avr 1995",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/340/legislation.html",
+          "attachments": [
+            {
+              "label": "Décret (Gobierno del Pais Vasco) n°240/1995 du 11 avril 1995",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem340_pj1.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

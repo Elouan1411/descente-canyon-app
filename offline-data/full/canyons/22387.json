@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:51.084586+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22387,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22387/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22387/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22387/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22387/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22387,
+    "identity": {
+      "nom": "Rabenwinkelgraben",
+      "nomComplet": "Rabenwinkelgraben",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22387/Rabenwinkelgraben.html"
+    },
+    "location": {
+      "pays": "Allemagne",
+      "region": "Bayern",
+      "departement": "Oberbayern",
+      "communePrincipale": "Jachenau",
+      "communes": [
+        "Landkreis Bad Tölz-Wolfratshausen",
+        "Lenggries",
+        "Jachenau"
+      ],
+      "massif": "Isarwinkel",
+      "bassin": "Isar",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a2II",
+      "interet": 1.7,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 920,
+      "deniveleM": 140,
+      "longueurM": 900,
+      "cascadeMaxM": 22,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "45min",
+      "descente": "2h",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22387,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.574604,
+        "longitude": 11.488153,
+        "label": null
+      },
+      {
+        "canyonId": 22387,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.569839,
+        "longitude": 11.487585,
+        "label": null
+      },
+      {
+        "canyonId": 22387,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.55883,
+        "longitude": 11.489763,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.55883,
+      "longitude": 11.489763,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

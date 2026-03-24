@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:42.807256+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23112,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23112/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23112/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23112/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23112/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23112,
+    "identity": {
+      "nom": "Feientobel",
+      "nomComplet": "Feientobel, Feienbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23112/Feientobel.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Vorarlberg",
+      "departement": "Dornbirn",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Bregenzer Wald",
+      "bassin": "Dornbirner Ach",
+      "coursEau": "Feienbach"
+    },
+    "rating": {
+      "cotation": "v3a2III",
+      "interet": 1.2,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 840,
+      "deniveleM": 80,
+      "longueurM": 700,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "25min",
+      "descente": "1h30",
+      "retour": "1h"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": "5 rappels",
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "combiner avec Fallbach: continuer dans Feienbach, ensuite grand rappel (C100)"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23112,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.378075,
+        "longitude": 9.742412,
+        "label": "E1 depart Feienbach"
+      },
+      {
+        "canyonId": 23112,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.384251,
+        "longitude": 9.743999,
+        "label": "Depart pour Feienbach inf. (Fallbach) - C110"
+      },
+      {
+        "canyonId": 23112,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.383465,
+        "longitude": 9.745287,
+        "label": "A1 fin du Feienbach sup."
+      },
+      {
+        "canyonId": 23112,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.385994,
+        "longitude": 9.740652,
+        "label": "Arrivée Feienbach inf. (Fallbach)"
+      },
+      {
+        "canyonId": 23112,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 47.388363,
+        "longitude": 9.738002,
+        "label": null
+      },
+      {
+        "canyonId": 23112,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.373775,
+        "longitude": 9.73444,
+        "label": "Parking (amont pour integral)"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.388363,
+      "longitude": 9.738002,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

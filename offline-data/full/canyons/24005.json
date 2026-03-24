@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:51.060435+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24005,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24005/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24005/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24005/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24005/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24005,
+    "identity": {
+      "nom": "Pou de la Portella",
+      "nomComplet": "Barranc del Pou de la Portella",
+      "prefixeNom": "Barranc del",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24005/Pou-de-la-Portella.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Cataluña",
+      "departement": "Barcelona",
+      "communePrincipale": "Monistrol de Montserrat",
+      "communes": [
+        "Monistrol de Montserrat"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.0,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": null,
+      "longueurM": 100,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 35,
+      "navette": "5.7km"
+    },
+    "timings": {
+      "approche": "35min",
+      "descente": "1h",
+      "retour": "35min"
+    },
+    "topo": {
+      "accesAval": "est le même que pour Clot de Caragols. Parking",
+      "accesAmont": "parking de Can Maçana.\n\nSans navette : le même accès que pour Clot de Caragols, mais continuer jusqu’au refuge de Viceng Barbé. Le passer et continuer jusqu’au rocher caractéristique de Pou de Portella.",
+      "approche": "Du parking de Can Maçana, prendre le chemin vers le refuge de Viceng Barbé jusqu’au \"Pas de la Portella\" (voir photo). Juste après, quitter le sentier et contourner le rocher Portella Gran, par le haut, ou - plus sûr et moins dangereux - par le bas. Puis descendre vers le premier rappel, qui est caché derrière le rocher à gauche. Ce passage nécessite une main courante fixe, ou des installations pour arriver en toute sécurité vers le premier rappel.",
+      "descente": "Trois rappels : le premier de 16 m, pour arriver sur un rocher au-dessus la faille. Ce n’est confortable que pour deux personnes. Descendre dans la fissure par un rappel d’environ 30 m. Frontale obligatoire. On arrive sur un plan incliné. Vieille corde de main courante sur place pour arriver au troisième et dernier rappel de 12 m. Attention aussi sur ce plan incliné, le dernier rappel ne se voit pas vraiment, et il n’est pas confortable d’y être à plusieurs, dû à son inclinaison.",
+      "retour": "On sort de l’obsurité et on prend une sente à droite, qui vous ramène au sentier pris à l'aller, juste avant le « Pas de la Portella »\n\nPour le combiner avec Clot de Caragols : continuer le chemin jusqu’au refuge, le passer, puis prendre le sentier à droite et entrer dans le lit de Clot de Caragols.\n\nSinon pour le retour vers la voiture amont:même sentier pris à l'aller.",
+      "engagement": "Bien que la descente ne soit pas vraiment difficile, certains passages nécessitent d’être attentif.",
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24005,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 41.60511,
+        "longitude": 1.780753,
+        "label": null
+      },
+      {
+        "canyonId": 24005,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 41.609432,
+        "longitude": 1.767653,
+        "label": null
+      },
+      {
+        "canyonId": 24005,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 41.592159,
+        "longitude": 1.780381,
+        "label": null
+      },
+      {
+        "canyonId": 24005,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 41.605652,
+        "longitude": 1.781111,
+        "label": "Point où on quitte le sentier pour aller au départ du canyon"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 41.609432,
+      "longitude": 1.767653,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

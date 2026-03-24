@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:26.149068+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21986,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21986/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21986/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21986/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21986/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21986,
+    "identity": {
+      "nom": "Greffe",
+      "nomComplet": "Tine de la Greffe",
+      "prefixeNom": "Tine de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21986/Greffe.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Vionnaz",
+      "departement": "Valais/Wallis",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Chablais - Platé - Aiguilles Rouges",
+      "bassin": "Rhône (amont du Lac Léman)",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 1.9,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 670,
+      "deniveleM": 130,
+      "longueurM": 400,
+      "cascadeMaxM": null,
+      "cordeMiniM": 25,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "1h",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "A la sortie de Vionnaz direction Torgon, laisser la voiture dans la première épingle. (Place de parking dans l'épingle).\n\nMême accès que pour Tine des Places.",
+      "accesAmont": null,
+      "approche": "Juste un plus par rapport à l'approche bien décrite dans le site internet disponible dans la partie \"Biblio\" : pour l'approche, au début pour trouver le chemin qui part de l'autre coté du torrent, la cabane à repérer pour le départ du sentier est cachée dans les arbres, le sentier démarre entre 2 arbres avec des points de peinture rose.",
+      "descente": "Canyon très court, mais qui présente un bon encaissement. 2 jolies cascades sont suivies par un tronçon de petits ressauts qui conduit à une partie finale composée de 3 cascades en toboggans. L'arrivée se situe au confluent avec la Tine des Places. Les 2 canyons peuvent d'ailleurs s'enchaîner, mais il est recommandé de commencer par la Tine des Places, nettement moins intéressante.",
+      "retour": "A la confluence avec la Tine des Places, suivre le torrent par un chemin RG qui ramène à la voiture en 5min.",
+      "engagement": null,
+      "periode": "Mars à Octobre, en fonction de la fonte des neiges.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "A enchainer avec la Tine des Places, et la Tine de Mayen."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21986,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.302048,
+        "longitude": 6.892031,
+        "label": null
+      },
+      {
+        "canyonId": 21986,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.306309,
+        "longitude": 6.895501,
+        "label": null
+      },
+      {
+        "canyonId": 21986,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.307777,
+        "longitude": 6.897922,
+        "label": null
+      },
+      {
+        "canyonId": 21986,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 46.306473,
+        "longitude": 6.896007,
+        "label": "depart du chemin d'approche"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.307777,
+      "longitude": 6.897922,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_eb3772ac826f21d7",
+          "kind": "MAP",
+          "title": "1284 Monthey (Carte Nationale Suisse)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_ad9fac05b6d4b13e",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.homepage.bluewin.ch/swestcany.....ns/Greffe/Greffe.htm",
+          "url": "http://www.homepage.bluewin.ch/swestcany.....ns/Greffe/Greffe.htm"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

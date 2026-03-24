@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:33.359901+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22305,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22305/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22305/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22305/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22305/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22305,
+    "identity": {
+      "nom": "Launa",
+      "nomComplet": "Ruisseau de la Launa, La launa",
+      "prefixeNom": "Ruisseau de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22305/Launa.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-Maritimes",
+      "communePrincipale": "Peillon",
+      "communes": [
+        "Peillon"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": "La launa"
+    },
+    "rating": {
+      "cotation": "v3a1I",
+      "interet": 0.7,
+      "nbVotes": 6
+    },
+    "metrics": {
+      "altitudeDepartM": 500,
+      "deniveleM": 150,
+      "longueurM": 850,
+      "cascadeMaxM": 15,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "1h00",
+      "retour": "45min"
+    },
+    "topo": {
+      "accesAval": "De Peille prendre la D53 en direction de La Turbie et après une grande épingle à cheveu (rien d'intéressant dans ce vallon), prendre à droite une route au niveau du quartier des Lacs. Après un virage à gauche, se garer sur un excellent parking à droite près de la balise de randonnée.",
+      "accesAmont": null,
+      "approche": "Pas de navette. Suivre le chemin de petite randonnée jusqu'au premier petit pont, puis continuez sur le chemin jusqu'au deuxième pont, point de départ de la course.",
+      "descente": "Petit vallon sec sans aucune prétention et sans obstacle valant vraiment le détour. A faire si vous habitez dans le coin. Quelques jolis passages néanmoins.",
+      "retour": "Sortir au pont suivant (le troisième donc) sans essayer de continuer jusqu'au Paillon car la suite ne présente vraiment aucun intérêt (on y croise un chaos de blocs, des vasques croupies mais aucun obstacle ni passage intéressant). Du pont, remontez la Launa en rive droite, le chemin s'éloigne du ruisseau. Aux deux intersections suivantes, prenez à droite à chaque fois pour retrouver au bout d'une petite trentaine de minutes le pont de départ. Remontez alors à la voiture par le chemin pris à l'aller.",
+      "engagement": "Faible.",
+      "periode": "Canyon sec sauf après une très forte période de pluie. Des traces de crues impressionnantes sont visibles dans le vallon.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Il y a la possibilité d'enchaîner le ruisseau de Galambert avec celui de la Launa. Pour ça, descendez dans le ruisseau au premier pont rencontré sur le chemin de l'aller. Cela rallonge la course d'une petite heure. Les deux ruisseaux sont assez similaires."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22305,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.781666,
+        "longitude": 7.393889,
+        "label": null
+      },
+      {
+        "canyonId": 22305,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.778332,
+        "longitude": 7.386111,
+        "label": null
+      },
+      {
+        "canyonId": 22305,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.781944,
+        "longitude": 7.397778,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.781944,
+      "longitude": 7.397778,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_65daf1ce5e444805",
+          "kind": "MAP",
+          "title": "3742 OT Nice-Menton (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

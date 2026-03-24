@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:17.995162+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21675,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21675/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21675/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21675/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21675/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21675,
+    "identity": {
+      "nom": "White river",
+      "nomComplet": "White river, Victoria falls",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21675/White-river.html"
+    },
+    "location": {
+      "pays": "Dominique (île)",
+      "region": null,
+      "departement": "Saint Patrick",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": null,
+      "coursEau": "White river"
+    },
+    "rating": {
+      "cotation": "v4a5V",
+      "interet": null,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": 560,
+      "longueurM": 2500,
+      "cascadeMaxM": 70,
+      "cordeMiniM": 70,
+      "navette": "70.0km"
+    },
+    "timings": {
+      "approche": "??",
+      "descente": "7h",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "De Délices prendre la route raide face au Lolo (petite boutique), la route devient piste. Se garer au bout de la piste à hauteur de la buvette tenue par les rastas.",
+      "accesAmont": "Se rendre à Titou georges",
+      "approche": "Monter au boiling lake par le chemin de randonnée. Arrivé dans la vallée de la désolation, le collecteur principal est la White river",
+      "descente": "L'eau est chaude et teintée en blanc ce qui rend la progression difficile (pas de saut possible et marches en rivière hésitante)",
+      "retour": "Suivre la rivière par les sentiers en berge jusqu'à arriver à la voiture",
+      "engagement": "Très engagé. Enorme bassin versant. En débit d'étiage (de l'ordre de 500 à 1000l/s), la largeur de l'étroiture permet de progresser hors d'eau. Hors étiage ou en cas de forte pluie, il vaut mieux ne pas être là.",
+      "periode": "Beaucoup d'eau même à l'étiage, eau teinté. A faire au carême, par temps stable.",
+      "geologie": null,
+      "historique": "En 1995 par Recart, Tisne, Paillassa, Cesse.",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21675,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 15.294617,
+        "longitude": -61.271008,
+        "label": "Approximatif"
+      },
+      {
+        "canyonId": 21675,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 15.289774,
+        "longitude": -61.271172,
+        "label": "Victoria Fall"
+      },
+      {
+        "canyonId": 21675,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 15.290757,
+        "longitude": -61.268307,
+        "label": "On peut aller plus haut, mais la piste est vraiment mauvaise"
+      },
+      {
+        "canyonId": 21675,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 15.284589,
+        "longitude": -61.267803,
+        "label": null
+      },
+      {
+        "canyonId": 21675,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 15.292889,
+        "longitude": -61.269238,
+        "label": "Départ de la trace, dans le virage de la piste"
+      },
+      {
+        "canyonId": 21675,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 15.290953,
+        "longitude": -61.271687,
+        "label": "Confluence avec la White River"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 15.290757,
+      "longitude": -61.268307,
+      "label": "On peut aller plus haut, mais la piste est vraiment mauvaise"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_3409e5ab25e10fef",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://ankanionla-madinina.com/Dominique.....hite%20River.htm#3-1",
+          "url": "http://ankanionla-madinina.com/Dominique.....hite%20River.htm#3-1"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

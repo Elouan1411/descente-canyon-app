@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:20.340221+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22522,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22522/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22522/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22522/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22522/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22522,
+    "identity": {
+      "nom": "Moleno",
+      "nomComplet": "Moleno",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22522/Moleno.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Moleno",
+      "departement": "Tessin",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": "Ticino",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a4III",
+      "interet": 3.0,
+      "nbVotes": 15
+    },
+    "metrics": {
+      "altitudeDepartM": 520,
+      "deniveleM": 240,
+      "longueurM": 1000,
+      "cascadeMaxM": 50,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "50min",
+      "descente": "4h",
+      "retour": "3min"
+    },
+    "topo": {
+      "accesAval": "Juste à côté Lodrino vers Bellinzona,parking sur le côté gauche de la rivière.",
+      "accesAmont": null,
+      "approche": "Du parking, empruntez le sentier RG qui serpente au milieu des arbres.\n\nMonter jusqu'à 655m. De là, un sentier qui descend fortement rejoint le torrent. Depuis la voiture, présence de points bleus, dont à la bifurcation entre le chemin principal et la sente, permettent de repérer l'itinéraire. Attention, sentier très raide et glissant. Utilisation de la corde en place sur les derniers cents mètres.",
+      "descente": "Des rappels et de la marche dans les blocs... mais beaucoup trop de rappels hors d'eau et de cascades contournées.\n\nCanyon à équiper pour devenir sympa (faudrait descendre avec le perfo.).\n\nUn beau saut en partie finale vers la retenue d'eau (bien 10 m), après vérification d'usage, puis après la retenue un saut dans beau passage.",
+      "retour": null,
+      "engagement": "Se mettre hors d'eau est toujours possible, mais pour ce qui est de regagner le chemin... c'est une autre histoire. Beaucoup de broussailles, très raides, des barres rocheuses, ça serait une sacrée galère de type escalade en terrain d'aventure facile mais péteux (...)",
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22522,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.263115,
+        "longitude": 8.985186,
+        "label": null
+      },
+      {
+        "canyonId": 22522,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.266232,
+        "longitude": 8.992739,
+        "label": null
+      },
+      {
+        "canyonId": 22522,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.266689,
+        "longitude": 8.993425,
+        "label": null
+      },
+      {
+        "canyonId": 22522,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 46.265839,
+        "longitude": 8.992385,
+        "label": "Check point"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.266689,
+      "longitude": 8.993425,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_32104c8d93e1fde1",
+          "kind": "MAP",
+          "title": "1293 Osogna (Carte Nationale Suisse)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

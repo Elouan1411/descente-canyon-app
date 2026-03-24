@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:03.986785+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23506,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23506/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23506/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23506/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23506/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23506,
+    "identity": {
+      "nom": "Asamklamm",
+      "nomComplet": "Asamklamm, Eschenlaine",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23506/Asamklamm.html"
+    },
+    "location": {
+      "pays": "Allemagne",
+      "region": "Bayern",
+      "departement": "Oberbayern",
+      "communePrincipale": "Eschenlohe",
+      "communes": [
+        "Landkreis Garmisch-Partenkirchen",
+        "Eschenlohe"
+      ],
+      "massif": "Estergebirge",
+      "bassin": "Loisach",
+      "coursEau": "Eschenlaine"
+    },
+    "rating": {
+      "cotation": "v2a2II",
+      "interet": 1.8,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 700,
+      "deniveleM": 55,
+      "longueurM": 1400,
+      "cascadeMaxM": 10,
+      "cordeMiniM": 15,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "1h15min",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "au-dessous du Gachentodklamm"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23506,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.588333,
+        "longitude": 11.211185,
+        "label": null
+      },
+      {
+        "canyonId": 23506,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.591171,
+        "longitude": 11.200695,
+        "label": null
+      },
+      {
+        "canyonId": 23506,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.591206,
+        "longitude": 11.205681,
+        "label": null
+      },
+      {
+        "canyonId": 23506,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.59108,
+        "longitude": 11.201245,
+        "label": "passarelle pour marche retour"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.591206,
+      "longitude": 11.205681,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_748267f4e119d571",
+          "kind": "MAP",
+          "title": "8433 Eschenlohe (TK25 Bay. Landesvermessungsamt)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

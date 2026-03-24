@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:59:03.443156+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24064,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24064/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24064/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24064/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24064/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24064,
+    "identity": {
+      "nom": "Tamadaya",
+      "nomComplet": "Barranco de Tamadaya",
+      "prefixeNom": "Barranco de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24064/Tamadaya.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Canarias",
+      "departement": "Santa Cruz de Tenerife",
+      "communePrincipale": "Arico",
+      "communes": [
+        "Granadilla de Abona",
+        "Arico"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1II",
+      "interet": 2.0,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 110,
+      "deniveleM": 90,
+      "longueurM": 1000,
+      "cascadeMaxM": 22,
+      "cordeMiniM": 25,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "40min",
+      "descente": "1h/1h15",
+      "retour": "2min"
+    },
+    "topo": {
+      "accesAval": "Sur l'autoroute TF1, sortir à Las Eras. Suivre ensuite sur environ 1 km la direction Icor par la TF-622 qui suit l'autoroute vers le sud et prendre une piste à gauche que l'on suit jusqu'à son terminus carrossable, à la fin des barrancos Tamadaya et Jurado (600m environ depuis l’embranchement).",
+      "accesAmont": null,
+      "approche": "Continuer la piste et prendre à droite la piste défoncée qui remonte la croupe rive droite du barranco de Tamadaya. Aux trois carrefours suivants, prendre à droite. On arrive en vue du plateau (ligne électrique) et d'une chèvrerie. Très vite, au niveau d'un cairn avec de la peinture blanche et avant un ancien canal horizontal en contrebas de la chèvrerie), descendre la piste défoncée qui mème sur des terrasses dominant un affluent du barranco de Tamadaya (\"Hoya Los Melones\"). On peut alors rejoindre le lit du barranco au mieux (ça passe par exemple en toute rive droite) et l'on avance ensuite dans le très large lit jusqu'au premier obstacle, départ de la descente (coordonnées UTM/WGS84 28 R 358451 3118645, altitude 110 m).\n\nNB : repérage préalable sur carte en ligne OSM pas inutile...)",
+      "descente": "Quelques jolis obstacles dans un beau rocher. Le clou du spectacle est la C22 qui commence dans un beau basalte gris pour finir dans des strates alternées multicolores. Quelques vasques à éviter ensuite par un passage en hauteur en RG puis un rappel sur un vieil équipement d'escalade (des farfelus ont eu l'idée d'aller équiper un site d'escalade en collant des prises en résine immondes dans le barranco...)",
+      "retour": "Suivre le lit jusqu'à la voiture.",
+      "engagement": null,
+      "periode": "Quasi tout le temps sec. Quelques vasques...",
+      "geologie": null,
+      "historique": null,
+      "remarques": "- Il est possible d'organiser une navette peu utile, cf. biblio. Parking amont près d'un champ de panneaux solaires orientables et une grande ferme (coordonnées UTM/WGS84 28 R 357881 3118048 , altitude 203 m).\n\n- Randonnée verticale pour les amateurs de géologie et les contemplatifs..."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24064,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 28.18597,
+        "longitude": -16.442038,
+        "label": "Premier obstacle"
+      },
+      {
+        "canyonId": 24064,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 28.187164,
+        "longitude": -16.431644,
+        "label": "Fin et chemin de retour"
+      },
+      {
+        "canyonId": 24064,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 28.180521,
+        "longitude": -16.447769,
+        "label": "Parking amont possible si navette"
+      },
+      {
+        "canyonId": 24064,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 28.188745,
+        "longitude": -16.432453,
+        "label": "Parking aval ou unique"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 28.180521,
+      "longitude": -16.447769,
+      "label": "Parking amont possible si navette"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

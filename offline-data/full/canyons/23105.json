@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:41.072633+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23105,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23105/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23105/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23105/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23105/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23105,
+    "identity": {
+      "nom": "Bärenfallklamm",
+      "nomComplet": "Bärenfallklamm, Kühbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23105/Barenfallklamm.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Tyrol",
+      "departement": "Politischer Bezirk Reutte",
+      "communePrincipale": "Reutte",
+      "communes": [
+        "Reutte"
+      ],
+      "massif": "Tannheimer",
+      "bassin": "Lech",
+      "coursEau": "Kühbach"
+    },
+    "rating": {
+      "cotation": "v4a1IV",
+      "interet": 1.9,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 1080,
+      "deniveleM": 200,
+      "longueurM": 350,
+      "cascadeMaxM": 37,
+      "cordeMiniM": 40,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "2h10",
+      "retour": "7min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": "Normalement sec.",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23105,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.510559,
+        "longitude": 10.686905,
+        "label": null
+      },
+      {
+        "canyonId": 23105,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.513199,
+        "longitude": 10.688557,
+        "label": null
+      },
+      {
+        "canyonId": 23105,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.51667,
+        "longitude": 10.688633,
+        "label": null
+      },
+      {
+        "canyonId": 23105,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.516239,
+        "longitude": 10.679116,
+        "label": "bifurcation: prendre la piste à gauche et tout droit jusqu'à ruisseau"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.51667,
+      "longitude": 10.688633,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

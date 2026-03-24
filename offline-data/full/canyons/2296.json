@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:44:56.116974+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2296,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2296/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2296/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2296/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2296/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2296,
+    "identity": {
+      "nom": "Dourdou",
+      "nomComplet": "Le Dourdou",
+      "prefixeNom": "Le",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2296/Dourdou.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Tarn",
+      "communePrincipale": "Boissezon",
+      "communes": [
+        "Boissezon"
+      ],
+      "massif": "Mont de Lacaune",
+      "bassin": "Tarn",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a3II",
+      "interet": 1.5,
+      "nbVotes": 9
+    },
+    "metrics": {
+      "altitudeDepartM": 750,
+      "deniveleM": 100,
+      "longueurM": 1100,
+      "cascadeMaxM": 6,
+      "cordeMiniM": 10,
+      "navette": "5.0km"
+    },
+    "timings": {
+      "approche": "10min",
+      "descente": "2h30",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "Prendre la route de Lacaune, la D622 entre St Gervais/Mare et Murat/Vèbre, 5 km après avoir dépassé le col de la croix de Mounis, la route descend vers la rivière.\n\n300 m après le pont qui sépare l'Hérault du Tarn, se garer à droite sur une portion de route désaffectée.\n\nRejoindre par le sentier en contrebas la rivière que l'on longe jusqu'au premier ressaut.\n\nSi vous venez à deux véhicules, il faudra aller se garer pour le retour sur la route de Boissezon à Canac : passez Boissezon en direction de Canac. Au bout d'un km ou deux, il y a un grand virage (épingle) à gauche, avec à droite un parking.\n\nPour se situer, il y à deux poteaux électrique remarquable (avec écrit Monique dessus).\n\nGarez vous ici pour la navette et vous remarquerez un sentier qui remonte du bas de la vallée (sentier du retour).",
+      "accesAmont": null,
+      "approche": "Longer le ruisseau jusqu'au 2 premiers toboggans",
+      "descente": "Canyon d'initiation :\n\nBeaucoup de marche dans des blocs glissants, eau froide avec débit régulier. 2 passages intéressants : la cascade de 6m qui se saute (palier à 8m) et la grotte, quasi à la fin (passage sous blocs sympa).\n\nDe la marche entre chaque passage intéressant, canyon peu pratiqué, végétation importante.\n\nPour les cascades et les lieux où vous voulez placer des rappels, c'est essentiellement sur AN, sauf quelques endroits équipés en simple gougeon ou plaquette.\n\nQuelques vasques (5-6) où le saut est possible après sondage.\n\nLa partie la plus jolie est une courte gorge peu encaissée, avec quelques vasques, cela peut présenter un problème en cas de fort débit. La dernière vasque se déverse directement dans une énorme vasque où le saut est peut-être possible.\n\nSi vous ne sautez pas, sur RD , dans une vasque vide au dessus il y a un point, où l'on peut s'assurer.",
+      "retour": "Lorsque la rivière est rejointe par un affluent RG, un sentier remonte raide à la route de Boissezon.\n\nAprès le croisement avec l'affluent en RG, montez sur la roche face à vous, monter au dessus dans une clairière et prenez le sentier devant vous pour remonter.\n\nSi vous n'avez pas de navette il est possible de remonter par le sentier de la grotte des fées.",
+      "engagement": "Faible. il est facile de se mettre hors crue sauf dans certaines gorges.",
+      "periode": "Souvent bon débit, froid...",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2296,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.683514,
+        "longitude": 2.918029,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.683514,
+      "longitude": 2.918029,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_fc07aa1bfb96647b",
+          "kind": "MAP",
+          "title": "2543 OT Lamalou-Les-Bains (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_4dad2a2049097876",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://clementdom.free.fr/html/dourdou.htm",
+          "url": "http://clementdom.free.fr/html/dourdou.htm"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

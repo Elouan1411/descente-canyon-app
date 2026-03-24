@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:01.505165+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21863,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21863/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21863/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21863/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21863/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21863,
+    "identity": {
+      "nom": "Rudach",
+      "nomComplet": "Rudach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21863/Rudach.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Vorarlberg",
+      "departement": "Dornbirn",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Bregenzer Wald",
+      "bassin": "Rhein",
+      "coursEau": "Rudach"
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.9,
+      "nbVotes": 7
+    },
+    "metrics": {
+      "altitudeDepartM": 980,
+      "deniveleM": 150,
+      "longueurM": 300,
+      "cascadeMaxM": 64,
+      "cordeMiniM": 70,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "1h30min",
+      "retour": "40min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": "la piste vers sud, traversez 3 fois le Kobelache. Avant le 4e pont prenez la piste à gauche, traversez 2 fois un ruisseau. Maintenant vous avez une vue sur le Kobelalpe à gauche. Vous atteindrez un petit plateau (990m üNN) et garez votre voiture ici (ca. 2,5km de parking Kobelache amont)",
+      "approche": "Continuez la piste forestière 30m et descendrez à gauche vers le ruisseau Rudach",
+      "descente": "Un encaissement (250m) avec plusieurs cascades (10-30m) et la cascade finale de 65m",
+      "retour": "Après la cascade finale (65m) sortir à gauche et sans trace vers le-haut (direction ouest). Au-dessous le crête vous atteindrez un sentier. Prenez le à gauche jusqu'à parking.",
+      "engagement": "Pas d’échappatoires.",
+      "periode": "A faire à l’étiage, il y a des passages obligatoires dans l’actif. Les crues ont coincé un arbre dans la C20 ce qui la rend plus facile.\n\nJuillet-octobre",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Equipement bon, mais le relais de la grande cascade finale a été abîmé par les crues."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21863,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.366211,
+        "longitude": 9.792123,
+        "label": null
+      },
+      {
+        "canyonId": 21863,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.368683,
+        "longitude": 9.790063,
+        "label": null
+      },
+      {
+        "canyonId": 21863,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.365719,
+        "longitude": 9.791028,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.365719,
+      "longitude": 9.791028,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

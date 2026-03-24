@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:47.662150+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23705,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23705/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23705/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23705/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23705/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23705,
+    "identity": {
+      "nom": "Vitelli",
+      "nomComplet": "Valle del Vitelli",
+      "prefixeNom": "Valle del",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23705/Vitelli.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Lombardia",
+      "departement": "Sondrio",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1II",
+      "interet": 3.3,
+      "nbVotes": 8
+    },
+    "metrics": {
+      "altitudeDepartM": 2450,
+      "deniveleM": 450,
+      "longueurM": 1600,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 25,
+      "navette": "2.0km"
+    },
+    "timings": {
+      "approche": "45min",
+      "descente": "3h30",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": "De Bormio, prendre la direction du passo del Stelvio. L'arrivée se situe au niveau d'une réserve d'eau au pied des cascades de Broglio évidentes sur la gauche. Une place de parking sur la droite a cet endroit. Trois épingles plus tard on rencontre un snack.",
+      "accesAmont": "continuer la route et passer une série d'épingles, s'arrêter au niveau d'un gros parking sur la gauche et d'un départ de sentier sur la droite qui passe sous une falaise. Un autre sentier existe 1km plus bas mais il ne mène qu'à l'intermédiaire.\n\nSans navette le stop marche très bien sur cette route très fréquentée. Se garer au départ de préférence et remonter ensuite.",
+      "approche": "Prendre le sentier n° 531 en face du parking, direction Lago del Mot. Il y a 2 tranchées dans le pierrier pour retenir les éventuelles chutes de pierres. Prendre la tranchée qui monte et non celle horizontale. A la 1ère bifurcation, prendre le sentier de gauche n° 505.2, toujours direction Lago del Mot, à coté duquel on passe 10 ou 15 minutes plus tard. Lorsque le sentier s'arrête , suivre les cairns pour accéder au départ du canyon en contre-bas.\n\nLa marche d'approche est magnifique avec le glacier de Vitelli en toile de fond.",
+      "descente": "Plusieurs encaissements très etroits, sombres avec de nombreuses arches rocheuses séparés par des parties plus ouvertes où il est facile de s'échapper.\n\nCertains relais couvrent plusieurs cascades bien faire attention avant de tirer la corde !",
+      "retour": null,
+      "engagement": "Encaissements très fort mais courts",
+      "periode": "Éviter les périodes trop chaudes pour la fonte du glacier. Débit vite très faible voir nul au départ.",
+      "geologie": "Calcaire gris bleu très résistant.\n\nGros karst qui absorbe une grosse partie de la fonte du glacier",
+      "historique": "Pascal Van Duin en 2015",
+      "remarques": "Semble couler de manière binaire. Des mètres cube sous l'orage et sec quelques heures après.\n\nEquipement intégralement sur monopoints, mais le rocher est d'excellente qualité."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23705,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.509884,
+        "longitude": 10.424839,
+        "label": null
+      },
+      {
+        "canyonId": 23705,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 46.519505,
+        "longitude": 10.408547,
+        "label": null
+      },
+      {
+        "canyonId": 23705,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 46.515011,
+        "longitude": 10.405768,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 46.519505,
+      "longitude": 10.408547,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

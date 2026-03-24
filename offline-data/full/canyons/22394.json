@@ -1,0 +1,160 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:52.652209+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22394,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22394/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22394/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22394/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22394/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22394,
+    "identity": {
+      "nom": "Kreuzklamm",
+      "nomComplet": "Kreuzklamm, Kreuzbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22394/Kreuzklamm.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Tyrol",
+      "departement": "Kufstein",
+      "communePrincipale": "Brandenberg",
+      "communes": [
+        "Kramsach",
+        "Brandenberg"
+      ],
+      "massif": "Nordtirol Alpen",
+      "bassin": "Inn",
+      "coursEau": "Kreuzbach"
+    },
+    "rating": {
+      "cotation": "v5a2IV",
+      "interet": null,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": 1280,
+      "deniveleM": 660,
+      "longueurM": 2000,
+      "cascadeMaxM": 40,
+      "cordeMiniM": 45,
+      "navette": "6.0km"
+    },
+    "timings": {
+      "approche": "1h",
+      "descente": "6h",
+      "retour": "3min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22394,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.483803,
+        "longitude": 11.839469,
+        "label": null
+      },
+      {
+        "canyonId": 22394,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.481705,
+        "longitude": 11.864569,
+        "label": null
+      },
+      {
+        "canyonId": 22394,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 47.504593,
+        "longitude": 11.862654,
+        "label": null
+      },
+      {
+        "canyonId": 22394,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 47.481544,
+        "longitude": 11.864711,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 47.504593,
+      "longitude": 11.862654,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_80a52b6e4b57f154",
+          "kind": "TOPOGUIDE",
+          "title": "Tiroler Canyoningführer - The Canyoning guide for Tyrol",
+          "authors": [
+            "Alexander Riml",
+            "Gunnar Amor"
+          ],
+          "publicationYear": 2012,
+          "reference": "978-3-200-02343-7",
+          "editor": null,
+          "status": "en stock\n\n- 44,90 € -\n\nCommandez cet ouvrage dès maintenant !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/170/Tiroler-Canyoningfuhrer---The-Canyoning-guide-for-Tyrol.html"
+        },
+        {
+          "id": "biblio_a216ca92fa29ca51",
+          "kind": "TOPOGUIDE",
+          "title": "Canyoning in Bayern und Tirol",
+          "authors": [
+            "Werner Baumgarten"
+          ],
+          "publicationYear": 2010,
+          "reference": null,
+          "editor": null,
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1226/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_c2b38c747b3abaec",
+          "kind": "MAP",
+          "title": "6 Rofan (Alpenvereins (AV) Karte)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_d9cf771730ecc24f",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/Canyons/KreuzklammCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/Canyons/KreuzklammCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

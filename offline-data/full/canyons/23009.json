@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:16.020372+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23009,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23009/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23009/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23009/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23009/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23009,
+    "identity": {
+      "nom": "Tombeau",
+      "nomComplet": "Torrent du Tombeau",
+      "prefixeNom": "Torrent du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23009/Tombeau.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Hautes-Alpes",
+      "communePrincipale": "Saint-André-d'Embrun",
+      "communes": [
+        "Saint-André-d'Embrun"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 1.3,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1250,
+      "deniveleM": 120,
+      "longueurM": 200,
+      "cascadeMaxM": 15,
+      "cordeMiniM": 40,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "45min",
+      "retour": "3min"
+    },
+    "topo": {
+      "accesAval": "D'Embrun, prendre la route des Orres D40, puis la D39A et D39 à gauche vers Crévoux. Après le hameau du Villard, passer sur le pont enjambant le torrent et prendre à gauche la route menant au hameau des Leydons. On repasse sur le torrent (fin du canyon) et se garer soit là soit sans gêner à la fin de cette route goudronnée (parking 2 places sur la droite).",
+      "accesAmont": null,
+      "approche": "Poursuivre par la piste qui monte très raide, passer devant un réservoir et à la bifurcation prendre la piste à droite jusqu'au torrent. De là descendre au mieux (broussailles) jusqu'à la 1ère cascade.",
+      "descente": "C5+C15 dans resserrement (AN haut RG, cordelette + maillon), C7 AN haut, C5, T5+C10 AN haut cordelette RD.",
+      "retour": "De la route remonter au parking.",
+      "engagement": "Seule la double cascade du début est encaissée, sortie possible partout ailleurs.",
+      "periode": "A faire à la fonte ou après les pluies pour que le canyon soit intéressant.",
+      "geologie": null,
+      "historique": "Pose d'anneaux de cordes en avril 2012.",
+      "remarques": "Nombreux rochers très instables. Superbe vue sur Embrun et le lac."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23009,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.565777,
+        "longitude": 6.553372,
+        "label": null
+      },
+      {
+        "canyonId": 23009,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.56464,
+        "longitude": 6.550539,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.56464,
+      "longitude": 6.550539,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:18.828100+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21952,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21952/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21952/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21952/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21952/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/21952/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 21952,
+    "identity": {
+      "nom": "Peyruis",
+      "nomComplet": "Pas de Peyruis, Ruisseau de Peyruis",
+      "prefixeNom": "Pas de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21952/Peyruis-.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Var",
+      "communePrincipale": "Plan-d'Aups-Sainte-Baume",
+      "communes": [
+        "Plan-d'Aups-Sainte-Baume"
+      ],
+      "massif": "Sainte Baume",
+      "bassin": "Huveaune",
+      "coursEau": "Ruisseau de Peyruis"
+    },
+    "rating": {
+      "cotation": "v1a1I",
+      "interet": 0.5,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 428,
+      "deniveleM": 40,
+      "longueurM": 100,
+      "cascadeMaxM": 4,
+      "cordeMiniM": null,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "20min",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "De St-Zackarie prendre la D480 en direction du Plan d'Aups de la Ste Baume sur 5km. Après avoir passé deux ponts, se garer sur un parking au niveau du troisième pont (pas de Peyruis).",
+      "accesAmont": null,
+      "approche": "Le départ se fait à 20m en aval du pont.",
+      "descente": "Un saut possible de 2m, un plan incliné de 4m et quelques cascatelles à désescalader.",
+      "retour": "Le retour s'effectue en remontant le ruisseau.",
+      "engagement": "Aucun",
+      "periode": "Ne coule plus l'été.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Quelques jolis bénitiers."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21952,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.357807,
+        "longitude": 5.734799,
+        "label": null
+      },
+      {
+        "canyonId": 21952,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.359612,
+        "longitude": 5.733007,
+        "label": null
+      },
+      {
+        "canyonId": 21952,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.357571,
+        "longitude": 5.735689,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.357571,
+      "longitude": 5.735689,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_c55008676d4d8829",
+          "kind": "MAP",
+          "title": "3245 ET Aubagne - La Ciotat (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 579,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Var) - 13 mai 2025",
+          "summary": "- La pratique du canyonisme dans des canyons secs (cotation aquaticité A1 ou habituellement à sec) est autorisée toute l'année\n\n- La pratique du canyonisme dans des canyons aquatiques est interdite du 1er novembre au 31 mars.\n\nPour la période du 1er avril au 30 octobre, il est interdit :\n\n- de pratiquer du coucher du soleil à 9h\n\n- de s'engager dans une descente de canyon aquatique après 17h.\n\n- De manière générale, il est interdit :\n\n- de s'engager si une alerte vigilance météo de niveau orange ou rouge est émise par Météo France, en ce qui concerne le risque \"pluie\", \"orage\", et \"inondation\", sur le secteur concerné.\n\n- de constituer un groupe de plus de 10 personnes (encadrement inclus)",
+          "remark": null,
+          "details": "Arrêté préfectoral (Préfecture du Var) SDJES-SPORTS-2025-12 du 13 mai 2025",
+          "effectiveDate": "13 mai 2025",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/579/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral (Préfecture du Var) SDJES-SPORTS-2025-12 du 13 mai 2025",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem579_pj1.pdf"
+            }
+          ]
+        },
+        {
+          "id": 545,
+          "status": "Abrogé",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Var) - 06 mai 2024",
+          "summary": "La pratique du canyonisme se voit interdite du 1er novembre au 31 mars.\n\nPour la période du 1er avril au 30 octobre, il est interdit :\n\n- de s'engager dans une descente de canyon avant 9h et après 17h.\n\n- de s'engager si une alerte vigilance météo de niveau orange ou rouge est émise par Météo France, en ce qui concerne le risque \"pluie\", \"orage\", et \"inondation\", sur le secteur concerné.\n\n- de constituer un groupe de plus de 10 personnes (encadrement inclus)",
+          "remark": "Arrêté abrogé et remplacé par l'arrêté préfectoral SDJES-SPORTS-2025-12 du 13 mai 2025",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nArrêté préfectoral (Var) n° SDJES-SPORTS-2024-0004 du 06 mai 2024",
+          "effectiveDate": "13 mai 2025",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/545/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral (Var) n° SDJES-SPORTS-2024-0004 du 06 mai 2024",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem545_pj1.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

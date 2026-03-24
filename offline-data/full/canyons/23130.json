@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:47.001946+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23130,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23130/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23130/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23130/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23130/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23130,
+    "identity": {
+      "nom": "Pré-Menu",
+      "nomComplet": "Ravin de Pré-Menu",
+      "prefixeNom": "Ravin de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23130/Pre-Menu.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-de-Haute-Provence",
+      "communePrincipale": "Chaudon-Norante",
+      "communes": [
+        "Chaudon-Norante"
+      ],
+      "massif": "Montagne de Coupe",
+      "bassin": "Asse",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1I",
+      "interet": 1.2,
+      "nbVotes": 6
+    },
+    "metrics": {
+      "altitudeDepartM": 847,
+      "deniveleM": 120,
+      "longueurM": 600,
+      "cascadeMaxM": 15,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "1h",
+      "retour": "25min"
+    },
+    "topo": {
+      "accesAval": "De Digne les Bains, suivre la N85 en direction de Nice jusqu'à Norante. Au village de Norante, prendre à gauche la D20 en direction du col de Carobin et Chaudon. Faire 2,4 km et passer le pont qui enjambe le Ravin de Pré-Menu pour vous garez sur le petit parking à droite. Départ de la descente.",
+      "accesAmont": null,
+      "approche": "Suivre le ruisseau jusqu'au premier obstacle.",
+      "descente": "Quelques petits rappels n'excédant pas les 15m sur amarrages naturels.",
+      "retour": "A la confluence, sortir en rive gauche et monter au mieux à travers bois en parallèle du ravin de Pré-Menu, jusqu'aux pylônes électriques qui vous mèneront à la route. Descendre la route et se rendre au parking .",
+      "engagement": "Possibilité de se mettre à l'habrit à tout moment en RD.",
+      "periode": "Sûrement sec l'été.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Pas d'équipement. Seul un anneau de corde posé sur petit pin en RG au deuxième rappel (C12)."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23130,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.989891,
+        "longitude": 6.322293,
+        "label": null
+      },
+      {
+        "canyonId": 23130,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.984943,
+        "longitude": 6.321671,
+        "label": null
+      },
+      {
+        "canyonId": 23130,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.989994,
+        "longitude": 6.322304,
+        "label": null
+      },
+      {
+        "canyonId": 23130,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 43.986149,
+        "longitude": 6.322422,
+        "label": "Marche de retour (pylônes)"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.989994,
+      "longitude": 6.322304,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_680c62deb49de2a2",
+          "kind": "MAP",
+          "title": "3441 OT Barreme (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

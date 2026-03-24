@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:31.263126+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23902,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23902/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23902/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23902/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23902/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23902,
+    "identity": {
+      "nom": "Fenbruan",
+      "nomComplet": "Cascades de la source de Fenbruan",
+      "prefixeNom": "Cascades de la source de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23902/Fenbruan.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-de-Haute-Provence",
+      "communePrincipale": "Prads-Haute-Bléone",
+      "communes": [
+        "Prads-Haute-Bléone"
+      ],
+      "massif": null,
+      "bassin": "Bléone",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1II",
+      "interet": 1.4,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 1320,
+      "deniveleM": 180,
+      "longueurM": 220,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 30,
+      "navette": "4.7km"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "1h45",
+      "retour": "40min"
+    },
+    "topo": {
+      "accesAval": "laisser un premier véhicule au parking de la via-ferrata vers le départ de la piste.\n\nParking",
+      "accesAmont": "monter la piste jusqu'à la bifurcation avec les panneaux en bois à droite où il est noté (VTT). A cet endroit, prendre la piste de droite et rouler environ 2 km tout droit en ignorant la piste de gauche. Une fois passé le pierrier de la descente qui se trouve sous la piste, garez-vous sans gêner. (voir carte IGN pour la localisation de la source de Fenbruan).",
+      "approche": "A pied, revenir sur ses pas sur la piste, dépasser le pierrier et descendre au niveau des arbres qui longent le pierrier jusqu'à la source . (Attention !! descente très très délicate, risque de glissade).",
+      "descente": "En RD de la source, un arbuste avec anneau de corde sans maillon pour le départ, R15 sur AN en RD jusqu'à un petit pin plus bas sans anneau de corde en RD, puis rappel sur une C23 sur AN (petit pin) en RD, désescalade en RG jusqu'à un vieux relais un peu rouillé au niveau des plaquettes (vieille chaîne), Pi20 sur chaîne en RG, désescalade en RG, C23 sur 1 pt en RG, désescalade en RG, Pi12 sur 1 pt en RG, C20 sur un 1 pt en RG dans l'actif (attention ce point prend l'eau, à vérifier absolument avant de descendre dessus !...).",
+      "retour": "Descendre le riou de l'Aune jusqu'au parking aval.",
+      "engagement": "Descente très ouverte, mais le terrain aux alentours est très instable et peu approprié pour s'échapper.",
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "Attention aux chutes de pierres, le terrain est très instable. Prévoir de quoi ré-équiper (terrain d'aventure)."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23902,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.207752,
+        "longitude": 6.456324,
+        "label": null
+      },
+      {
+        "canyonId": 23902,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.207672,
+        "longitude": 6.454602,
+        "label": null
+      },
+      {
+        "canyonId": 23902,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 44.207165,
+        "longitude": 6.45722,
+        "label": null
+      },
+      {
+        "canyonId": 23902,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 44.215073,
+        "longitude": 6.446577,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 44.207165,
+      "longitude": 6.45722,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_a84f388c53925654",
+          "kind": "MAP",
+          "title": "3440 ET Digne-Les-Bains - La Javie (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

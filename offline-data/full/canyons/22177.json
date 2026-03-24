@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:07.411168+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22177,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22177/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22177/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22177/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22177/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22177,
+    "identity": {
+      "nom": "Agnello-Varaita",
+      "nomComplet": "Canyon d' Agnello-Varaita",
+      "prefixeNom": "Canyon d'",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22177/Agnello-Varaita.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Piemonte",
+      "departement": "Cuneo",
+      "communePrincipale": "Pontechianale",
+      "communes": [
+        "Pontechianale"
+      ],
+      "massif": null,
+      "bassin": "Varaita",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2I",
+      "interet": 2.3,
+      "nbVotes": 9
+    },
+    "metrics": {
+      "altitudeDepartM": 2135,
+      "deniveleM": 275,
+      "longueurM": 840,
+      "cascadeMaxM": 23,
+      "cordeMiniM": 25,
+      "navette": "2.8km"
+    },
+    "timings": {
+      "approche": "0mn ou 40m",
+      "descente": "2h45",
+      "retour": "2min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": "remonter sur 2,8km pour se garer aux abords du petit pont sur Agnello à l'altitude 2135m. Possibilité de garer 3 véhicules.",
+      "approche": "Départ immédiat en amont du pont.\n\nSans navette : du parking aval, monter par la route sur une bonne centaine de mètres, prendre le GR à main droite, qui sort sur la route près du 1° pont intermédiaire (alt. 1965m). Traverser la route pour continuer rive G du canyon pour le 2° pont intermédiaire (alt. 2075m), et enfin poursuivre rive D. 40 minutes.",
+      "descente": "Parcours relativement facile sans encaissement (contrairement à Fiutrusa), mais avec quelques belles cascades, parfaitement adapté pour l'initiation à la descente sous le bouillon. Dés le départ une C8 suivie de la C23 arrosée d'une eau bien froide, les plus frileux apprécieront gants et cagoule...\n\nLa roche est néanmoins glissante.\n\nBeaucoup d'équipement sur monopoint dans les petits rappels de quelques mètres sinon équipements doublés partout avec chaines ou sangles.",
+      "retour": "De la dernière vasque, quelques dizaines de mètres pour le pont.",
+      "engagement": "Très peu engagé, on peut sortir au niveau des 2 ponts intermédiaires, mais aussi en de nombreux endroits, le parcours n'étant pas encaissé.",
+      "periode": "Eté et automne.",
+      "geologie": "Calcschiste.",
+      "historique": null,
+      "remarques": "A éviter en début de saison ou à la fonte des neiges, car le volume plus que généreux peut s'avérer très problématique."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22177,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.660095,
+        "longitude": 6.986119,
+        "label": null
+      },
+      {
+        "canyonId": 22177,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.654873,
+        "longitude": 6.990802,
+        "label": null
+      },
+      {
+        "canyonId": 22177,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 44.660282,
+        "longitude": 6.986253,
+        "label": null
+      },
+      {
+        "canyonId": 22177,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 44.654751,
+        "longitude": 6.991038,
+        "label": null
+      },
+      {
+        "canyonId": 22177,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 44.657776,
+        "longitude": 6.991001,
+        "label": "confluence Agnello/Varaita"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 44.660282,
+      "longitude": 6.986253,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_d077bf79f60b4790",
+          "kind": "TOPOGUIDE",
+          "title": "Canyoning nelle Alpi Occidentali",
+          "authors": [
+            "Daniele Geuna/Dino Ruotolo"
+          ],
+          "publicationYear": 2010,
+          "reference": "978-88-87890-94-5",
+          "editor": "Versante Sud",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1232/topoguide.html"
+        },
+        {
+          "id": "biblio_0062918c2f446d19",
+          "kind": "TOPOGUIDE",
+          "title": "Les canyons des Hautes-Alpes",
+          "authors": [
+            "Henri VINCENS"
+          ],
+          "publicationYear": 2007,
+          "reference": "9782952944502",
+          "editor": "auto-édition",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/12/Canyons-des-Hautes-Alpes.html"
+        }
+      ],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

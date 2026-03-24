@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:58.770921+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23489,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23489/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23489/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23489/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23489/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23489,
+    "identity": {
+      "nom": "Rogne",
+      "nomComplet": "Canyon de la Rogne, La Rogne",
+      "prefixeNom": "Canyon de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23489/Rogne.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Conthey",
+      "departement": "Valais/Wallis",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Alpes Bernoises",
+      "bassin": null,
+      "coursEau": "La Rogne"
+    },
+    "rating": {
+      "cotation": "v4a4IV",
+      "interet": 2.4,
+      "nbVotes": 11
+    },
+    "metrics": {
+      "altitudeDepartM": 960,
+      "deniveleM": 200,
+      "longueurM": 800,
+      "cascadeMaxM": 28,
+      "cordeMiniM": 30,
+      "navette": "4.0km"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "2h30",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "De Conthey, prendre la route en direction de Erde puis Sanetsch.\n\nAprès Pomeiron, continuer la route, et prendre à droite à la première bifurcation.\n\nPasser le pont du Diable et continuer en direction de Chandolin/Saviese.\n\nEnviron 500 m après le pont du Diable, se garer sur un des petits parkings à droite (petit cairn).\n\nC'est le même parking que Morge.",
+      "accesAmont": "Revenir à la bifurcation, la dépasser et se garer sur le parking au niveau du pont sur le canyon.",
+      "approche": "Du pont, rejoindre le canyon par la RG. petit sentier raide au départ puis on rejoint le torrent en 5-10min de marche avant le premier obstacle.",
+      "descente": "Le canyon commence par 5-10 minutes de marche dans la rivière où il y a un certain nombre de carcasses de voiture.\n\nLe canyon s'encaisse ensuite et présente deux encaissements coupé d'une marche de 200m, plusieurs sauts et toboggan avec de très beaux passages dont une cascade toboggan de 18m avec une très belle vasque suspendue et profonde. Attention chute d'arbre et de branches fréquente donc à sonder régulièrement, quelques amarrages doublés et récents MC possibles dans les passages techniques.",
+      "retour": "A la confluence avec la Morge, la traverser immédiatement et prendre le chemin qui débute là en RG juste avant un dernier toboggan de la Morge obstrué par un galet!",
+      "engagement": "Echappatoires possibles entre les deux encaissements et compliquées demandant des techniques d'escalade et d'alpinisme le terrain est plutôt scabreux!",
+      "periode": "Le débit est fort au printemps et non négociable dans les encaissements!",
+      "geologie": "Marnes schistes et calcaire",
+      "historique": null,
+      "remarques": "Canyon glissant en été !"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23489,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.268711,
+        "longitude": 7.312982,
+        "label": "D1 pont"
+      },
+      {
+        "canyonId": 23489,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.267128,
+        "longitude": 7.316147,
+        "label": "D2 (par rappel - 20m - vers le lit)"
+      },
+      {
+        "canyonId": 23489,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.265308,
+        "longitude": 7.319702,
+        "label": null
+      },
+      {
+        "canyonId": 23489,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 46.268929,
+        "longitude": 7.313306,
+        "label": null
+      },
+      {
+        "canyonId": 23489,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 46.263889,
+        "longitude": 7.320278,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 46.268929,
+      "longitude": 7.313306,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

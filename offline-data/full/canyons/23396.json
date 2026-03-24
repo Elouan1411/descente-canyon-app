@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:42.624586+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23396,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23396/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23396/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23396/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23396/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23396,
+    "identity": {
+      "nom": "Mina",
+      "nomComplet": "Barranco de la Mina",
+      "prefixeNom": "Barranco de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23396/Mina.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Canarias",
+      "departement": "Las Palmas",
+      "communePrincipale": "Vega de San Mateo",
+      "communes": [
+        "Vega de San Mateo"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 1.4,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": null,
+      "longueurM": null,
+      "cascadeMaxM": 40,
+      "cordeMiniM": 25,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "45min",
+      "retour": "3min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": "Prendre le sentier de randonnée qui démarre dans l'épingle de la route. Après a dernière maison rester en rive gauche, puis quelques centaines de mètres après le sentier traverse le torrent (sortie du canyon). Le sentier remonte ensuite la rive droite, plusieurs sentes permettent de revenir vers le torrent. ON arrive à une bifurcation avec des panneaux de randonnée, continuer en direction de DGDA. BECERRA, peu après, vers une ancienne maison en ruine rejoindre au mieu le torrent situé à 30m du sentier.",
+      "descente": "Enchainement de quelques obstacles dans une végétation assez épaisse. La première cascade de 40m peut se fractionner sur un bloc avec 2 points à -25m.",
+      "retour": "Après le dernier obstacle reprendre le sentier d'approche en RG pour revenir à la route.",
+      "engagement": "Les sentiers de randonée permettent de sortir à presque tous les obstacles",
+      "periode": "Apparement en eau toute l'année.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Le topo Barranquismo en Gran Canaria suggère une approche avec une navette, mais vu la longueur de l'approche 25-30min il n'est vraiment pas utile de faire une navette."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23396,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 27.995316,
+        "longitude": -15.588959,
+        "label": null
+      },
+      {
+        "canyonId": 23396,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 28.000689,
+        "longitude": -15.584369,
+        "label": "Se garer sans gêner"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 28.000689,
+      "longitude": -15.584369,
+      "label": "Se garer sans gêner"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_c3bd5d203187ac5f",
+          "kind": "MAP",
+          "title": "237 Gran Canaria (Kompass)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_726ac39144f1fd52",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://barrancoscanarios.com/barrancos/g.....barranco-de-la-mina/",
+          "url": "http://barrancoscanarios.com/barrancos/g.....barranco-de-la-mina/"
+        },
+        {
+          "id": "resource_b17546f9ebb6aec0",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://senderismoymontana.blogspot.com.e.....anco-de-la-mina.html",
+          "url": "http://senderismoymontana.blogspot.com.e.....anco-de-la-mina.html"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

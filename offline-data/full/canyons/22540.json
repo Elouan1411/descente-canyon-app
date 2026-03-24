@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:24.296317+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22540,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22540/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22540/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22540/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22540/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22540,
+    "identity": {
+      "nom": "Torre",
+      "nomComplet": "Barranco de la Torre, Barranco del Aderno",
+      "prefixeNom": "Barranco de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22540/Torre.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Canarias",
+      "departement": "Santa Cruz de Tenerife",
+      "communePrincipale": "Buenavista del Norte",
+      "communes": [
+        "Buenavista del Norte"
+      ],
+      "massif": "Teno",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1III",
+      "interet": 1.9,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 655,
+      "deniveleM": 430,
+      "longueurM": 900,
+      "cascadeMaxM": 28,
+      "cordeMiniM": 30,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "30min/1h15",
+      "descente": "2h30/3h",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": "Parking de départ : N28 20.871 W16 52.733\n\nParking d'arrivée (ou parking unique si pas de navette) : N28 21.658 W16 52.213. De Buenavista del Norte, prendre la route côtière de la Punta de Teno. Se garer à gauche au PK 2,4, au niveau du lieu-dit Casa Blanca (parking de randonnée avec panneau décrivant le PR TF-58 + panneau \"attention aux vols\" + réservoirs d'eau). Ce parking est situé juste avant une petite ferme ainsi qu'une barrière permettant de fermer la route.",
+      "accesAmont": null,
+      "approche": "Avec 2 voitures : du parking de départ (720m), suivre un chemin direction Nord en laissant la Montaña de la Mulata par la gauche et arriver au départ du canyon qui situe juste avant le sentier de randonnée qui rejoint également le parking d'arrivée, en-dessous d'un cercle de pierres (Tagoro de Teno, coordonnées UTM/WGS84 28 R 315820 3137952, 662m).\n\nAvec une seule voiture : se garer au parking d'arrivée (N28 21.658 W16 52.213 à coté du gros réservoir) puis remonter le canyon par l'ouest par le chemin PR TF-58 \"Camino del Risco\" direction Teno Alto pendant environ 1h. 200m avant d'arriver au plateau où se croisent les différents chemins, on peut quitter le PR et descendre dans le barranco qui est bien visible. Dans le doute, on peut aussi continuer jusqu'au Tagoro de Teno et rentrer dans le barranco quelques mètres en-dessous.",
+      "descente": "Si on est rentré par le Tagoro, R0 7m (1 point RG).\n\nDescendre dans le canyon pendant une bonne demi-heure avant d'arriver au premier rappel.\n\nR1 28M\n\nR2 14 M\n\nR3 18M\n\nR4 20M\n\nR5 25M\n\nR6 27M\n\nR7 25M\n\nR8 8M (optionnel)",
+      "retour": "Arrivé à l'altitude 225 m, rejoindre le chemin de PR qui longe le canyon par la gauche.",
+      "engagement": null,
+      "periode": "Sec ou quasi, toute l'année",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Descente longue et délicate jusqu'au premier rappel.\n\nÉquipement vétuste dans sa majorité mais tout à fait suffisant.\n\nPas d'échappatoire. Barranco peu connu et de difficulté médiane.\n\nRavin inclus en majorité dans le Parque rural de Teno ; il n'est donc pas certain qu'il ne faille pas un permis pour le descendre ?\n\nLa marche d'approche par le Camino del Risco ainsi que l'arrivée sur le plateau de Teno est une randonnée magnifique : il serait dommage de s'en priver !"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22540,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 28.354897,
+        "longitude": -16.87923,
+        "label": "Cercle de pierres (Tagoro de Teno), départ du barranco."
+      },
+      {
+        "canyonId": 22540,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 28.347857,
+        "longitude": -16.879503,
+        "label": null
+      },
+      {
+        "canyonId": 22540,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 28.361048,
+        "longitude": -16.870859,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 28.347857,
+      "longitude": -16.879503,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_1a8176c9c53027a3",
+          "kind": "MAP",
+          "title": "1091-I Buenavista del Norte (Institu Geographic Nacional)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_484a8284de84c145",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://ropewiki.com/Torre_(Tenerife)",
+          "url": "http://ropewiki.com/Torre_(Tenerife)"
+        },
+        {
+          "id": "resource_ab001993a611e70b",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/Canyons/TorreCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/Canyons/TorreCanyon"
+        },
+        {
+          "id": "resource_39d4563f20e611ac",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://senderosdemitierra.blogspot.fr/20.....nco-de-la-torre.html",
+          "url": "http://senderosdemitierra.blogspot.fr/20.....nco-de-la-torre.html"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

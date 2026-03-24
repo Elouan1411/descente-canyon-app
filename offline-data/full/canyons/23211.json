@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:07.245531+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23211,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23211/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23211/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23211/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23211/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23211,
+    "identity": {
+      "nom": "Gandolfi",
+      "nomComplet": "Rio Gandolfi",
+      "prefixeNom": "Rio",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23211/Gandolfi.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Ligurie",
+      "departement": "Genova",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Monte Penello",
+      "bassin": "Varenna",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 2.3,
+      "nbVotes": 5
+    },
+    "metrics": {
+      "altitudeDepartM": 475,
+      "deniveleM": 222,
+      "longueurM": 1350,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 25,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "45min",
+      "descente": "2h30",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "Quitter l'autoroute A10 à Genova Pegli.\n\nPrendre la SS1 direction Savona, traverser le pont sur le Varenna et peu après tourner à droite en direction Val Varenna / San Carlo di Cese.\n\nRemonter la vallée Varenna pendant presque 7,4 km et, à proximité de maisons isolées, on trouve sur la gauche un panneau \"Itinerario n° 2 Ecologia in città\", balisé X rouge. On peut se garer là en contre-bas ou une centaine de mètres plus haut, sur la droite, juste avant l'arrêt de bus (max 3 voitures).",
+      "accesAmont": null,
+      "approche": "Descendre vers le Varenna que l'on traverse à gué, puis la passerelle sur Gandolfi et remonter le sentier X rouge. Au 3eme gué on aperçoit la cascade de 25 mètres, passer ce gué et continuer à monter (assez raide) jusqu'à des ruines. De là poursuivre encore un peu jusqu'à un très gros bloc derrière lequel on entre aisément dans le lit du ruisseau.\n\nTout le long, suivre scrupuleusement le sentier X rouge.",
+      "descente": "Un premier passage de gros blocs de 7m a désescalader mène à une goulotte de 11m (3 spits rive G). 5/10min de marche, le parcours s'encaisse un peu, qq beaux rappels (6 + une petite goulotte de 3 m). On rejoint le 2° gué. Poursuivre par le sentier jusqu'au 1° gué (rien d'intéressant dans le canyon), ou l'on repique pour parcourir un dernier petit encaissement avec une C10.",
+      "retour": "Evident.",
+      "engagement": "Faible, on peut sortir plusieurs fois.",
+      "periode": "L'eau coule toute l’année, préférer le printemps et l'automne.\n\nAu coeur de l'été, il est possible de le parcourir avec pantalon et top manches courtes.",
+      "geologie": "Serpentine.",
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23211,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.477886,
+        "longitude": 8.816143,
+        "label": null
+      },
+      {
+        "canyonId": 23211,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.475285,
+        "longitude": 8.830949,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.475285,
+      "longitude": 8.830949,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_366fd969e486c19c",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.cicarudeclan.com/ita/a5_gandolfi.htm",
+          "url": "http://www.cicarudeclan.com/ita/a5_gandolfi.htm"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

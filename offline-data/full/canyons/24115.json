@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:59:16.031087+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24115,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24115/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24115/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24115/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24115/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/24115/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 24115,
+    "identity": {
+      "nom": "Pyramides",
+      "nomComplet": "Ravin des Pyramides, Non nommé sur IGN",
+      "prefixeNom": "Ravin des",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24115/Pyramides.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-Maritimes",
+      "communePrincipale": "Rigaud",
+      "communes": [
+        "Rigaud"
+      ],
+      "massif": null,
+      "bassin": "Cians",
+      "coursEau": "Non nommé sur IGN"
+    },
+    "rating": {
+      "cotation": "",
+      "interet": 920.0,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": 920,
+      "deniveleM": 540,
+      "longueurM": 600,
+      "cascadeMaxM": null,
+      "cordeMiniM": null,
+      "navette": null
+    },
+    "timings": {
+      "approche": null,
+      "descente": null,
+      "retour": null
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": "Ouvert le 17 Mars 2016 par Dany (Le Lion), Sylvain (Peluchette) et Florence (Flo).",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24115,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.965961,
+        "longitude": 6.996644,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 43.965961,
+      "longitude": 6.996644,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_f5a5c0f3b7f39109",
+          "kind": "MAP",
+          "title": "3641 OT Moyen Var (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_eae564fefe9f894f",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.canyon-apero.com/ravin-des-pyramides-2/",
+          "url": "http://www.canyon-apero.com/ravin-des-pyramides-2/"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 470,
+          "status": "Actif",
+          "action": "Interdit",
+          "title": "Arrêté municipal (Rigaud) - 29 mars 2022",
+          "summary": "La descente de canyons secs et le barring (descente en rappel de barres rocheuses) est interdit sur la commune.",
+          "remark": null,
+          "details": "Téléchargez le fichier JPEG :\n\nArrêté municipal (Rigaud) n°1-2022 du 29 mars 2022",
+          "effectiveDate": "29 mars 2022",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/470/legislation.html",
+          "attachments": []
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,138 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:32.738072+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22576,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22576/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22576/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22576/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22576/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22576,
+    "identity": {
+      "nom": "Novelli",
+      "nomComplet": "Rio Novelli",
+      "prefixeNom": "Rio",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22576/Novelli.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Ligurie",
+      "departement": "Genova",
+      "communePrincipale": "Ne",
+      "communes": [
+        "Ne"
+      ],
+      "massif": "Alpi Liguri - Alpes ligures",
+      "bassin": "Val Graveglia",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a3II",
+      "interet": 2.4,
+      "nbVotes": 6
+    },
+    "metrics": {
+      "altitudeDepartM": 350,
+      "deniveleM": 120,
+      "longueurM": 1200,
+      "cascadeMaxM": 10,
+      "cordeMiniM": 30,
+      "navette": "3.0km"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "2h",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "Aval: retourner sur la SP26 et aller à droite vers Reppia. Après 600 m un pont (Ponte Lagoscuro) enjambe le Graveglia. Sur la gauche il y a le parking.",
+      "accesAmont": "Amont: quitter la A12 Genova-Rosignano à Lavagna et tourner à droite en direction de Carasco. Après quelques km bifurcation à droite, SP26, pour Conscenti. Après Conscenti poursuivre vers Reppia pour environ 7 km et prendre à droite direction Nascio. 400 m après le village parking en proximité du beau pont en pierre qui enjambe le canyon.",
+      "approche": "Passer sur le pont en RD, après 10 mètres une vague sente à droite descend vers le lit du ruisseau",
+      "descente": "Intéressant pour la géologie très particulière.\n\nLe 2 étroitures sont jolies.",
+      "retour": "A la confluence avec le Graveglia on remonte la rivière sur une centaine de mètres et puis on remonte sur la RG jusqu'à une vieille mine et à la route.",
+      "engagement": "Faible. Deux encaissements étroits entrecoupés de 20 minutes de marche.",
+      "periode": "Première partie souvent sec, avant le 2eme encaissement une résurgence (restitution d'un captage?) rends la descente aquatique.",
+      "geologie": "Diaspro",
+      "historique": null,
+      "remarques": "Dans la 2eme partie, après de fortes pluies, il y a une marmite qui peut être dangereuse."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22576,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.339626,
+        "longitude": 9.463863,
+        "label": null
+      },
+      {
+        "canyonId": 22576,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.344936,
+        "longitude": 9.457254,
+        "label": null
+      },
+      {
+        "canyonId": 22576,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 44.339245,
+        "longitude": 9.464223,
+        "label": null
+      },
+      {
+        "canyonId": 22576,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 44.345688,
+        "longitude": 9.458606,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 44.339245,
+      "longitude": 9.464223,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_0aa6647f3e104bf5",
+          "kind": "MAP",
+          "title": "Il Parco Naturale Regionale dell'Aveto (Studio Cartografico Italiano Genova)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_c4445aa42b112a67",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.canyoning.it/procanyon/novelli.htm",
+          "url": "http://www.canyoning.it/procanyon/novelli.htm"
+        },
+        {
+          "id": "resource_5edd881e1e30270e",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.cicarudeclan.com/ita/a5_novelli.htm",
+          "url": "http://www.cicarudeclan.com/ita/a5_novelli.htm"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

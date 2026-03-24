@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:57.087932+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22413,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22413/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22413/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22413/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22413/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22413,
+    "identity": {
+      "nom": "Marienbergbach",
+      "nomComplet": "Marienbergbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22413/Marienbergbach.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Tyrol",
+      "departement": "Imst",
+      "communePrincipale": "Obsteig",
+      "communes": [
+        "Obsteig"
+      ],
+      "massif": "Mieminger Gebirge",
+      "bassin": "Inn",
+      "coursEau": "Marienbergbach"
+    },
+    "rating": {
+      "cotation": "v3a3II",
+      "interet": 1.6,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 1380,
+      "deniveleM": 200,
+      "longueurM": 1400,
+      "cascadeMaxM": 14,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "40min",
+      "descente": "1h35",
+      "retour": "8min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22413,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.328739,
+        "longitude": 10.898438,
+        "label": null
+      },
+      {
+        "canyonId": 22413,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.318726,
+        "longitude": 10.897515,
+        "label": null
+      },
+      {
+        "canyonId": 22413,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.316925,
+        "longitude": 10.897303,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.316925,
+      "longitude": 10.897303,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:09.757199+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23222,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23222/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23222/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23222/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23222/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23222,
+    "identity": {
+      "nom": "Colombaz",
+      "nomComplet": "Torrent Colombaz",
+      "prefixeNom": "Torrent",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23222/Colombaz.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Valle d'Aosta",
+      "departement": "Aosta",
+      "communePrincipale": "Morgex",
+      "communes": [
+        "La Salle",
+        "Morgex"
+      ],
+      "massif": "Col du Grand Saint Bernard",
+      "bassin": "Dora Baltea",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a4IV",
+      "interet": 3.0,
+      "nbVotes": 5
+    },
+    "metrics": {
+      "altitudeDepartM": 1510,
+      "deniveleM": 490,
+      "longueurM": 2300,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 35,
+      "navette": "10.8km"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "4h30",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "Aller à Villair et laisser la voiture au bout de la route proche du pont qui enjambe le canyon de Colomba. Alt. 975m.\n\nAccès",
+      "accesAmont": "redescendre à Morgex puis suivre La Salle et rouler vers Morge dessus. Se garer sur un vaste parking avant une épingle à droite (poubelles tri). Alt. 1675m.",
+      "approche": "Remonter à pied sur la route sur une centaine de mètres et prendre un sentier à gauche vers le vallon. Suivre le sentier qui part vers la droite, épingle à gauche direction Grassey et continuer jusqu'à une sente peu marquée à droite. Vous arrivez en vue du départ du canyon avec un vestige d'un ancien pont.",
+      "descente": "Le canyon se présente d'abord comme une longue marche entre blocs et troncs d'arbres (environ 30min) puis un premier obstacle à descendre sur un amarrage naturel en rive gauche. S'ensuit à nouveau une marche, présence d'un affluent. On arrive en vue de la plus grande cascade et en vue du torrent Licony qui rejoint le Colomba augmentant sensiblement le débit. La suite est plus technique mais beaucoup plus intéressante avec une superbe C15. Le canyon s'encaisse de plus en plus et les rappels nombreux. Un air du final d'Isorno. Nombreux points de main-courante et équipement ancien doivent permettre de descendre le canyon en très gros débit mais certains sont difficiles d'accès.",
+      "retour": "Après la prise d'eau, prendre le chemin RD qui vous mène à la voiture en 5 minutes.",
+      "engagement": "Échappatoire possible rive gauche avant le rappel en vue du Licony.",
+      "periode": "Mi-août et automne.",
+      "geologie": "Calcschistes",
+      "historique": null,
+      "remarques": "Débit toujours important. A faire par météo stable.\n\nLa partie intéressante du canyon se situe après la confluence avec le Licony. Aussi, pour éviter de longues marches avant cette confluence, il semble judicieux d'entrer dans Colombaz par son affluent, le Licony dont la partie basse est elle-même non dénuée d'intérêt (voir la fiche). En outre la course Licony / Colombaz peut se faire sans navette."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23222,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.774448,
+        "longitude": 7.070143,
+        "label": "E1 (1620m alt.)"
+      },
+      {
+        "canyonId": 23222,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.773769,
+        "longitude": 7.063985,
+        "label": "E2 - avant l'encaisement (vielle passarelle)"
+      },
+      {
+        "canyonId": 23222,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.761154,
+        "longitude": 7.047079,
+        "label": null
+      },
+      {
+        "canyonId": 23222,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 45.770939,
+        "longitude": 7.068086,
+        "label": null
+      },
+      {
+        "canyonId": 23222,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 45.761131,
+        "longitude": 7.046891,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 45.770939,
+      "longitude": 7.068086,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_83fcecfa5db7e3bf",
+          "kind": "MAP",
+          "title": "N°4 Massicio del Monte Bianco (IGC)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

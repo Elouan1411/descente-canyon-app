@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:54.428671+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23732,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23732/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23732/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23732/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23732/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23732,
+    "identity": {
+      "nom": "Umruq",
+      "nomComplet": "Wadi Umruq",
+      "prefixeNom": "Wadi",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23732/Umruq.html"
+    },
+    "location": {
+      "pays": "Jordanie",
+      "region": "Al Maamura",
+      "departement": "Tafilah",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v1a1II",
+      "interet": 1.0,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 250,
+      "deniveleM": 35,
+      "longueurM": 300,
+      "cascadeMaxM": null,
+      "cordeMiniM": null,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15",
+      "descente": "1h40min",
+      "retour": "15"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23732,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 30.908941,
+        "longitude": 35.470715,
+        "label": "de arrivée du canyon vers le-haut et depart et retour"
+      },
+      {
+        "canyonId": 23732,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 30.910587,
+        "longitude": 35.466961,
+        "label": null
+      },
+      {
+        "canyonId": 23732,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 30.913363,
+        "longitude": 35.464039,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 30.913363,
+      "longitude": 35.464039,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_b6d52b8c393a4395",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/Canyons/UmruqCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/Canyons/UmruqCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

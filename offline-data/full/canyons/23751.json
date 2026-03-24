@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:58.160907+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23751,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23751/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23751/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23751/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23751/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23751,
+    "identity": {
+      "nom": "Glacière",
+      "nomComplet": "Vallon de la Glacière",
+      "prefixeNom": "Vallon de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23751/Glaciere.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Vaucluse",
+      "communePrincipale": "Cucuron",
+      "communes": [
+        "Cucuron"
+      ],
+      "massif": "Luberon",
+      "bassin": "Durance",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a1I",
+      "interet": 0.6,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 560,
+      "deniveleM": 60,
+      "longueurM": 150,
+      "cascadeMaxM": 12,
+      "cordeMiniM": 12,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "10min",
+      "descente": "35min",
+      "retour": "15 à 20min"
+    },
+    "topo": {
+      "accesAval": "Depuis Pertuis, prendre la D9 et tourner à gauche sur la D27 à l'étang de la Bonde en direction de Cucuron. Contourner le village de Cucuron par une rue périphérique à l'Est (cours St victor) et aller au bout pour prendre à droite en direction de la Cabrières-d'Aigues. Au rond point, laisser la route menant à la Cabrières-d'Aigues pour prendre plutôt la petite route de gauche. Aller tout au bout de cette petite route et deux pistes se présentent à vous. Prendre celle de gauche (GR97 sur la carte IGN) et faire 900 m. 10 m avant le petit panneau blanc GL31, descendre par la piste à droite, puis emprunter celle à gauche des gros plots en béton. Rouler et dépasser la propriété de La Tuillière pour vous garer 300 m après, via un large parking à gauche (sablière). (Piste à éviter après les pluies).",
+      "accesAmont": null,
+      "approche": "Marcher 150 m et descendre à droite au niveau de la barre rocheuse pour rejoindre le lit du petit ruisseau.",
+      "descente": "L'on rentre dans un encaissement plutôt large qui donne suite sur une C4 sur 1pt en RG, puis l'on enchaîne avec une jolie C12 en forme de goulotte sur 1pt en RD. Deux petites désescalades mènent à une marche et une C5 sur un AN en RD. De là, l'on sort de l'encaissement rocheux et il faut alors marcher 50 m pour sortir du petit ruisseau en RD pour rejoindre au mieux le parking.",
+      "retour": "De la rive droite, monter dans la pente parfois broussailleuse en suivant quelques sentes d'animaux jusqu'à la piste et votre véhicule.",
+      "engagement": "Pas d'échappatoire évidente pendant la descente.",
+      "periode": "Doit couler après les pluies.",
+      "geologie": null,
+      "historique": "lolo et ALAIN 13",
+      "remarques": "La piste peut ne pas être carrossable après les pluies. Il est possible de se garer avant de passer La Tuillière. Courte descente à enchaîner avec les deux autres du coin (ravins du Méchant Pas et de l'Escalette) sur Cabrières-d'Aigues.\n\nDeux cascades équipées sur mono-points (goujons de 8mm + maillons de chaîne)."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23751,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.80003,
+        "longitude": 5.448693,
+        "label": null
+      },
+      {
+        "canyonId": 23751,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.797897,
+        "longitude": 5.448339,
+        "label": null
+      },
+      {
+        "canyonId": 23751,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.79892,
+        "longitude": 5.447223,
+        "label": null
+      },
+      {
+        "canyonId": 23751,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 43.799911,
+        "longitude": 5.448371,
+        "label": "Descendre ici"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.79892,
+      "longitude": 5.447223,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_3cea02269723b911",
+          "kind": "MAP",
+          "title": "3243 OT Pertuis - Lourmarin (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

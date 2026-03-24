@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:11.346918+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23810,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23810/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23810/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23810/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23810/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23810,
+    "identity": {
+      "nom": "Terra Rossa",
+      "nomComplet": "Rio Terra Rossa",
+      "prefixeNom": "Rio",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23810/Terra-Rossa.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Frioul-Vénétie julienne",
+      "departement": "Udine",
+      "communePrincipale": "Dogna",
+      "communes": [
+        "Dogna"
+      ],
+      "massif": "Alpes Juliennes",
+      "bassin": "Fella",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a2III",
+      "interet": 1.9,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 830,
+      "deniveleM": 630,
+      "longueurM": 430,
+      "cascadeMaxM": 45,
+      "cordeMiniM": 50,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "1h10min",
+      "descente": "2h30min",
+      "retour": "25min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": "10.4.2015 David Sefaj, Bob Žirovec, Tom Prettner, Georg Buol",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23810,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.458801,
+        "longitude": 13.33039,
+        "label": null
+      },
+      {
+        "canyonId": 23810,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.455959,
+        "longitude": 13.3298,
+        "label": null
+      },
+      {
+        "canyonId": 23810,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 46.452648,
+        "longitude": 13.323817,
+        "label": null
+      },
+      {
+        "canyonId": 23810,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 46.449417,
+        "longitude": 13.32773,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 46.452648,
+      "longitude": 13.323817,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:54:20.380393+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22781,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22781/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22781/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22781/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22781/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/22781/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 22781,
+    "identity": {
+      "nom": "Lataricciu",
+      "nomComplet": "Lataricciu",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22781/Lataricciu.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Corse",
+      "departement": "Corse-du-Sud",
+      "communePrincipale": "Porto-Vecchio",
+      "communes": [
+        "Porto-Vecchio"
+      ],
+      "massif": "Alta rocca",
+      "bassin": null,
+      "coursEau": "Lataricciu"
+    },
+    "rating": {
+      "cotation": "v2a5II",
+      "interet": 1.3,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 150,
+      "deniveleM": 50,
+      "longueurM": 200,
+      "cascadeMaxM": 8,
+      "cordeMiniM": null,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "10min",
+      "descente": "45min",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "De porto Vecchio, emprunter la D368 en direction de L'Ospedale. Après Palavese effectuer un peu plus de 2 km. La route monte est devient plus sinueuse.\n\nParking sur la gauche de la route sur une ligne droite.\n\nLes cascades sont indiquées sur l'IGN.",
+      "accesAmont": null,
+      "approche": "Suivre le sentier menant aux cascades. Prendre toujours à droite jusqu'au ruisseau.",
+      "descente": "Petit parcours ludique où les sauts s'enchainent dans quelques vasques profondes.",
+      "retour": "Reprendre la sente en rg vous ramenant au parking au bord de la D368.",
+      "engagement": "Aucun.",
+      "periode": "Peut se descendre pendant la période estivale. Le coin est assez connu des jeunes habitants locaux.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "L'équipement des cascades a été supprimé .Seuls d'anciens spits sont présents."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22781,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 41.632088,
+        "longitude": 9.229068,
+        "label": null
+      },
+      {
+        "canyonId": 22781,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 41.629967,
+        "longitude": 9.229825,
+        "label": null
+      },
+      {
+        "canyonId": 22781,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 41.631901,
+        "longitude": 9.2302,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 41.631901,
+      "longitude": 9.2302,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 520,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Corse-du-Sud) - 26 juil 2011",
+          "summary": "- Le canyonisme est interdit la nuit (sauf dérogation)\n\n- Le canyonisme est interdit s'il y a une alerte émise par Météo-France de niveau orange ou rouge en cours.\n\n- Le canyonisme est interdit aux mineurs de moins de 7 ans, sauf canyon évalué égal ou inférieur à V1-A3-E3\n\n- Les groupes auront un effectif maximum de 12 personnes, hors encadrement.",
+          "remark": "L'arrêté du 9 juillet 2019 pris conjointement par les préfectures de Corse-du-Sud et de Haute-Corse harmonise les réglementations existantes pour les deux départements.",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nArrêté préfectoral modificatif (Corse-du-Sud et Haute-Corse) n°R20-2019-07-09-001 du 9 juillet 2019\n\nArrêté préfectoral (Corse-du-Sud) n°2011207-0005 du 26 juillet 2011",
+          "effectiveDate": "26 juil 2011",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/520/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral modificatif (Corse-du-Sud et Haute-Corse) n°R20-2019-07-09-001 du 9 juillet 2019",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem520_pj2.pdf"
+            },
+            {
+              "label": "Arrêté préfectoral (Corse-du-Sud) n°2011207-0005 du 26 juillet 2011",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem520_pj1.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

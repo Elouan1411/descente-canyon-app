@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:54:15.563775+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22763,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22763/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22763/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22763/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22763/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22763,
+    "identity": {
+      "nom": "Viniani",
+      "nomComplet": "Viniani",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22763/Viniani.html"
+    },
+    "location": {
+      "pays": "Grèce",
+      "region": "Central Greece",
+      "departement": "Nomós Evrytanías",
+      "communePrincipale": "Agrafa",
+      "communes": [
+        "Agrafa"
+      ],
+      "massif": null,
+      "bassin": "Tavropos",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a3III",
+      "interet": 1.2,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 520,
+      "deniveleM": 170,
+      "longueurM": 1000,
+      "cascadeMaxM": 12,
+      "cordeMiniM": 20,
+      "navette": "2.5km"
+    },
+    "timings": {
+      "approche": "10min",
+      "descente": "2h",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "De Karpenisi par la \"38\" (E952) 30 km vers Ouest-Nord-Ouest (voir geolocalisation).",
+      "accesAmont": null,
+      "approche": "De Nea Viniani par un sentier direction Viniani.",
+      "descente": null,
+      "retour": "par la rivière Tavropos jusqu' à pont.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22763,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 38.979107,
+        "longitude": 21.671701,
+        "label": "pont ancien"
+      },
+      {
+        "canyonId": 22763,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 38.979645,
+        "longitude": 21.698427,
+        "label": "Pont ancien sur Tavropos rivière"
+      },
+      {
+        "canyonId": 22763,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 38.978542,
+        "longitude": 21.674019,
+        "label": null
+      },
+      {
+        "canyonId": 22763,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 38.979328,
+        "longitude": 21.698599,
+        "label": null
+      },
+      {
+        "canyonId": 22763,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 38.981915,
+        "longitude": 21.69521,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 38.978542,
+      "longitude": 21.674019,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_29b721f00859dbe3",
+          "kind": "MAP",
+          "title": "2.4/2.5 Mountains of Evritania (Anavasi)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

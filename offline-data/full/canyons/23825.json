@@ -1,0 +1,145 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:14.550141+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23825,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23825/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23825/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23825/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23825/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23825,
+    "identity": {
+      "nom": "Fredda",
+      "nomComplet": "Valle Fredda, Val Fredda",
+      "prefixeNom": "Valle",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23825/Fredda.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Trentino-Alto Adige",
+      "departement": "Trento",
+      "communePrincipale": "Mezzocorona",
+      "communes": [
+        "Mezzocorona"
+      ],
+      "massif": "Nonsberggruppe/Alpi della Val di Non",
+      "bassin": "Adige",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v5a3VI",
+      "interet": null,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": 1000,
+      "deniveleM": 750,
+      "longueurM": 1600,
+      "cascadeMaxM": 130,
+      "cordeMiniM": 100,
+      "navette": "3.0km"
+    },
+    "timings": {
+      "approche": "45min",
+      "descente": "5h",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23825,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.232761,
+        "longitude": 11.13183,
+        "label": null
+      },
+      {
+        "canyonId": 23825,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.232761,
+        "longitude": 11.14083,
+        "label": null
+      },
+      {
+        "canyonId": 23825,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 46.218674,
+        "longitude": 11.118578,
+        "label": null
+      },
+      {
+        "canyonId": 23825,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 46.229965,
+        "longitude": 11.141052,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 46.218674,
+      "longitude": 11.118578,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_fdbea29c5eeaa8ab",
+          "kind": "MAP",
+          "title": "21 IV-SE Mezzolombardo (IGMI 25/V)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_f6ea1441043e9d25",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/Canyons/ValleFreddaCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/Canyons/ValleFreddaCanyon"
+        },
+        {
+          "id": "resource_721911c94cf80bdb",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.sercantadventures.it/it/valle.....da/info-valle-fredda",
+          "url": "http://www.sercantadventures.it/it/valle.....da/info-valle-fredda"
+        },
+        {
+          "id": "resource_0169d67b81c184c7",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://catastoforre.aic-canyoning.it/ind.....IGE/pro/TN/cod/TN031",
+          "url": "http://catastoforre.aic-canyoning.it/ind.....IGE/pro/TN/cod/TN031"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

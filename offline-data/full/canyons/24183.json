@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:59:28.790596+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24183,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24183/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24183/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24183/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24183/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24183,
+    "identity": {
+      "nom": "Coume Longue",
+      "nomComplet": "Ruisseau de Coume Longue",
+      "prefixeNom": "Ruisseau de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24183/Coume-Longue.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Ariège",
+      "communePrincipale": "Sentein",
+      "communes": [
+        "Sentein"
+      ],
+      "massif": "Haut-Couserans",
+      "bassin": "Salat",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a3III",
+      "interet": 2.3,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 1500,
+      "deniveleM": 210,
+      "longueurM": 300,
+      "cascadeMaxM": 55,
+      "cordeMiniM": 60,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "2h",
+      "descente": "2h-2h30",
+      "retour": "40min"
+    },
+    "topo": {
+      "accesAval": "Depuis Saint-Girons, prendre direction Castillon-en-Couserans puis suivre la D4 jusqu'à Sentein. Continuer vers Eylie et, avant le village, suivre la route puis la piste longeant le cours d'eau, jusqu'au parking, juste avant le pont (Bocard d'Eylie, terminus). Parking de départ pour le Port d'Urets.",
+      "accesAmont": null,
+      "approche": "Du parking, traverser le pont et suivre la piste (15mn) jusqu'à une petite retenue d'eau. Peu après, laisser le chemin du port d'Urets sur la gauche (point coté 1076m) et continuer la piste vers le cirque de La Plagne. On a une vue sur le canyon, à la droite du cirque. Au premier lacet de la piste, continuer sur la gauche, traverser le ruisseau et monter sur le sentier (peu marqué) allant à la cabane de Sans, qui passe RD de la cascade de Tartereau. Suivre ce sentier qui recoupe le ruisseau de Tartereau au-dessus de la cascade et part d'abord en forêt puis en vire jusqu'à la cabane (attention, le sentier est peu fréquenté, et en cas de brouillard, comme le jour de l'ouverture, c'est pas évident de le repérer...). Un petit passage nécessite l'usage des mains, peu avant la cabane. De la cabane, descendre à flanc, derrière, jusqu'au cours d'eau, point de départ du canyon.",
+      "descente": "Enchainement de cascades, assez austères, avec une roche assez agressive. Première C35 (non équipée), contournable RG, C20 (relais à ré-équiper, plaquettes branlantes), C18 avec arrivée dans une grotte de mousse derrière le filet d'eau, balcon de départ de la C55, la grande cascade (attention à la corde au niveau du décrochement, nous avons tonché jusqu'à l'âme !!), C25, C30 et C25.",
+      "retour": "Du bas du dernier rappel, longer le cours d'eau RD jusqu'au lacet de la piste empruntée à l'aller, la redescendre jusqu'au parking.",
+      "engagement": "échappatoire RD en bas de la C55.",
+      "periode": "Torrent de montagne, à faire à l'étiage, de juillet-août à octobre.",
+      "geologie": null,
+      "historique": "ouverture le 20/10/2018 par Mickaël Menager et Yan Surguet.",
+      "remarques": "Équipement refait totalement en 2021 sur double points inox 12mm, avec sangles et maillon répartiteur de charge. Prévoir de pouvoir changer les sangles ."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24183,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.821007,
+        "longitude": 0.908652,
+        "label": null
+      },
+      {
+        "canyonId": 24183,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.821701,
+        "longitude": 0.915816,
+        "label": null
+      },
+      {
+        "canyonId": 24183,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 42.833927,
+        "longitude": 0.937717,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 42.833927,
+      "longitude": 0.937717,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_b47ddf7c75871d57",
+          "kind": "MAP",
+          "title": "1947 OT Aspet - Pic de Mauberme (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

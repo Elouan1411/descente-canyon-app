@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:34.261718+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22308,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22308/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22308/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22308/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22308/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22308,
+    "identity": {
+      "nom": "Pié Lombard",
+      "nomComplet": "Vallon de Pié Lombard, Pié Lombard",
+      "prefixeNom": "Vallon de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22308/Pie-Lombard.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-Maritimes",
+      "communePrincipale": "Tourettes-sur-Loup",
+      "communes": [
+        "Tourettes-sur-Loup"
+      ],
+      "massif": "Préalpes de Grasse",
+      "bassin": "Loup",
+      "coursEau": "Pié Lombard"
+    },
+    "rating": {
+      "cotation": "v4a1II",
+      "interet": 1.7,
+      "nbVotes": 10
+    },
+    "metrics": {
+      "altitudeDepartM": 350,
+      "deniveleM": 260,
+      "longueurM": 1000,
+      "cascadeMaxM": 45,
+      "cordeMiniM": 50,
+      "navette": "8.0km"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "3h00",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": "Depuis Cagnes sur Mer, aller à La Colle-sur-Loup puis suivre la direction de Pont du Loup. Après le croisement de la D7 et de la D6 (sur laquelle on doit rester), au bout d'environ 4km, on croise l'arrivée du vallon à droite. On se gare au mieux sans gêner.\n\nAccès",
+      "accesAmont": "en 15min: avec le second véhicule, continuer la route sur 3,7 km et au premier carrefour, monter à droite avant la chapelle une route raide et sinueuse. La suivre sur 1,5 km puis, aller à droite sur une route étroite jusqu'au pont grillagé que l'on traverse pour se garer à droite 500m plus loin, au bout de la tranchée.",
+      "approche": "Du parking, traverser la route et descendre la pente boisée qui rejoint le vallon puis passer dans le tunnel sous la route. Le vallon est assez horizontal sur une centaine de mètres.",
+      "descente": "Canyon intéressant pour l'initiation aux grands rappels.",
+      "retour": "La sortie se fait sur la D6.\n\nNOTA: il est possible d'éviter la navette par une marche de retour de 45min: Immédiatement en rive gauche du vallon de Pie Lombard, suivre le sentier qui remonte au plateau des Claus (200m de dénivelée) ou l’on arrive sur un sentier PR balisé en jaune et une route revêtue en cul-de-sac. Suivre cette route qui longe le camping de La Camassade et, quand elle rejoint le chemin de Pié Lombard, aller à gauche sur 800m pour arriver au parking amont.",
+      "engagement": "Pas d'échappatoires évidentes.",
+      "periode": "Canyon souvent à sec. A faire de préférence après une période de pluies.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "NOTA: il est possible d'éviter la navette par une marche de retour de 45min: Immédiatement en rive gauche du vallon de Pie Lombard, suivre le sentier qui remonte au plateau des Claus (200m de dénivelée) ou l’on arrive sur un sentier PR balisé en jaune et une route revêtue en cul-de-sac. Suivre cette route qui longe le camping de La Camassade et, quand elle rejoint le chemin de Pié Lombard, aller à gauche sur 800m pour arriver au parking amont."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22308,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.705067,
+        "longitude": 7.042159,
+        "label": null
+      },
+      {
+        "canyonId": 22308,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.699593,
+        "longitude": 7.044243,
+        "label": null
+      },
+      {
+        "canyonId": 22308,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 43.705013,
+        "longitude": 7.041859,
+        "label": null
+      },
+      {
+        "canyonId": 22308,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 43.699444,
+        "longitude": 7.044444,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 43.705013,
+      "longitude": 7.041859,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_320b97347a970faa",
+          "kind": "MAP",
+          "title": "3543 ET Haute-Siagne (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

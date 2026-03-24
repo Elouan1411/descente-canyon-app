@@ -1,0 +1,181 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:44.352247+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21790,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21790/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21790/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21790/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21790/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/21790/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 21790,
+    "identity": {
+      "nom": "Ambra (inférieur)",
+      "nomComplet": "Val d' Ambra (inférieur), Rierna, Rierna",
+      "prefixeNom": "Val d'",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21790/Ambra-inferieur.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Biasca",
+      "departement": "Tessin",
+      "communePrincipale": "Personico",
+      "communes": [
+        "Personico"
+      ],
+      "massif": null,
+      "bassin": "Val Leventina",
+      "coursEau": "Rierna"
+    },
+    "rating": {
+      "cotation": "",
+      "interet": 590.0,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": 590,
+      "deniveleM": 270,
+      "longueurM": 500,
+      "cascadeMaxM": null,
+      "cordeMiniM": null,
+      "navette": null
+    },
+    "timings": {
+      "approche": null,
+      "descente": null,
+      "retour": null
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21790,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.362038,
+        "longitude": 8.924028,
+        "label": null
+      },
+      {
+        "canyonId": 21790,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.365402,
+        "longitude": 8.925549,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 46.362038,
+      "longitude": 8.924028,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_1e5c67cde732c20d",
+          "kind": "TOPOGUIDE",
+          "title": "Eldorado Ticino",
+          "authors": [
+            "Anna & Luca Nizzola"
+          ],
+          "publicationYear": 2010,
+          "reference": "978-88-905017-7-7",
+          "editor": "SwissCanyon",
+          "status": "en stock\n\n- 39,90 € -\n\nCommandez cet ouvrage dès maintenant !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/157/Eldorado-Ticino.html"
+        },
+        {
+          "id": "biblio_a9e8ab63fe4e5775",
+          "kind": "TOPOGUIDE",
+          "title": "Canyoning en Suisse",
+          "authors": [
+            "Andreas Brunner et Frédéric Bétrisey"
+          ],
+          "publicationYear": 2001,
+          "reference": "ISBN 3-85902-195-8",
+          "editor": "Club Alpin Suisse CAS",
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/160/Canyoning-en-Suisse-1.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_2e0d8fdac3706471",
+          "kind": "MAP",
+          "title": "1273 Biasca (Carte Nationale Suisse)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 588,
+          "status": "Actif",
+          "action": "Interdit",
+          "title": "Information - 01 jan 2023",
+          "summary": "\"Interdiction permanente en raison de la présence d’installations hydroélectriques lâchant automatiquement et de manière imprévisible de grandes quantité d’eau. Danger de fortes crues soudaines, même par beau temps\".",
+          "remark": null,
+          "details": "Information - 01 jan 2023",
+          "effectiveDate": "01 jan 2023",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/588/legislation.html",
+          "attachments": [
+            {
+              "label": "Information - 01 jan 2023",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem588_pj1.pdf"
+            }
+          ]
+        },
+        {
+          "id": 176,
+          "status": "Obsolète",
+          "action": "Interdit",
+          "title": "Information - 29 mars 2009",
+          "summary": "En raison de travaux effectués sur les ouvrages hydro-électriques (prise d'eau de Val d'Ambra), le débit du cours d'eau est susceptible de varier à tout moment, quelque soit les conditions météorologiques. Aussi l'accès au cours d'eau est déconseillé du 29 mars au 1er avril 2009 inclus.",
+          "remark": null,
+          "details": "Document fournis par l'exploitant hydroélectrique (AET)",
+          "effectiveDate": "01 avr 2009",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/176/legislation.html",
+          "attachments": [
+            {
+              "label": "Document fournis par l'exploitant hydroélectrique (AET)",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/information176.pdf"
+            }
+          ]
+        },
+        {
+          "id": 144,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Convention",
+          "summary": "http://www.aet.ch/news/news_details.cfm?id=23",
+          "remark": null,
+          "details": null,
+          "effectiveDate": null,
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/144/legislation.html",
+          "attachments": []
+        }
+      ]
+    }
+  }
+}

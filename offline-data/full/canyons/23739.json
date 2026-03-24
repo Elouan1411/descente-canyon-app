@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:55.787571+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23739,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23739/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23739/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23739/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23739/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23739,
+    "identity": {
+      "nom": "Tines",
+      "nomComplet": "Puits des Tines, Le Séran",
+      "prefixeNom": "Puits des",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23739/Tines.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Ain",
+      "communePrincipale": "Haut-Valromey",
+      "communes": [
+        "Haut-Valromey"
+      ],
+      "massif": "Jura",
+      "bassin": "Rhône",
+      "coursEau": "Le Séran"
+    },
+    "rating": {
+      "cotation": "v2a2I",
+      "interet": 1.3,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 742,
+      "deniveleM": 10,
+      "longueurM": 100,
+      "cascadeMaxM": 6,
+      "cordeMiniM": 10,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "5",
+      "descente": "15min",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "Du hameau de Lilignod prendre la route qui descend raide (route du pré Rosset). Dépasser le pont qui enjambe le Seran et se garer sur la gauche (un panneau indique les puits).\n\nPoint GPS: 45° 57′ 07″ Nord, 5° 40′ 42″ Est",
+      "accesAmont": null,
+      "approche": "Suivre le sentier depuis le parking",
+      "descente": "Une jolie cascade de 7m suivie de plusieurs jolies vasques.\n\nAttention au niveau d'eau : s'il est trop bas, il devient compliqué de sortir des vasques.",
+      "retour": "Sortie en rive droite et retour par le même sentier que l'approche.",
+      "engagement": "Aucun engagement.",
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "Attention il arrive qu'il manque les plaquettes au départ."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23739,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.952221,
+        "longitude": 5.677833,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.952221,
+      "longitude": 5.677833,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

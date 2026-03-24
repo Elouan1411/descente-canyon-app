@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:49:41.114473+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21507,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21507/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21507/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21507/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21507/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21507,
+    "identity": {
+      "nom": "Pinyana",
+      "nomComplet": "Estrets de Pinyana, Estrets de l'Estany Obert, Barranc de Pinyana",
+      "prefixeNom": "Estrets de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21507/Pinyana.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Cataluña",
+      "departement": "Lérida",
+      "communePrincipale": "Pinyana",
+      "communes": [
+        "Pinyana"
+      ],
+      "massif": "Serrat de Montagut",
+      "bassin": "Rio Cadolla",
+      "coursEau": "Barranc de Pinyana"
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 2.4,
+      "nbVotes": 11
+    },
+    "metrics": {
+      "altitudeDepartM": 995,
+      "deniveleM": 50,
+      "longueurM": 400,
+      "cascadeMaxM": 14,
+      "cordeMiniM": 20,
+      "navette": "3.0km"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "1h",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "Sur la N260 entre Pont de Suert et la Pobla de Segur, au niveau du village de Senterada monter en direction de Naens. Passer ce dernier et continuer de monter vers Cadolla(piste). Se garer à l'entrée du village (2/3 places max).",
+      "accesAmont": null,
+      "approche": "1/ Sans navette:\n\nSuivre la piste qui traverse le village et continuer de monter jusqu'à arriver à Pinyana ( 3 km 220 m D+).\n\nRentrer dans le village (portail) passer l' église, prendre la rue Cami de la font (à droite) et le sentier qui va vers l'oratoire (passage \"anti-vache\"). Continuer quelques centaines de mètres, passer un petit bâtiment avec un abreuvoir derrière, continuer et un peu et avant la statue de Saint Antoine, prendre a gauche une petite trace puis descendre dans les prés (accès évident).\n\nCompter 1h d'approche si pas de navette.\n\n2/ Avec navette:\n\nPrendre la piste et se garer sur la place de l'église de Pinyana puis même accès que ci dessus.",
+      "descente": null,
+      "retour": "A la fin de l'étroiture, marcher dans la rivière pendant 10min (passer 2 cairns) puis prendre en rive gauche un sentier qui remonte dans un pré, bien aller au fond du pré pour trouver un sentier (peu visible au milieu des arbustes), continuer à vue parallèlement à la rivière 15 min (en tirant un peu vers la gauche) et rejoindre la piste sous la ligne haute tension. Descendre à droite pour retrouver Cadolla en 5 mn.",
+      "engagement": "Très encaissé. Pas d'échappatoire.",
+      "periode": "Printemps/automne. Très froid en hiver.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Court mais de toute beauté. Idéal pour de l'initiation.\n\nIntéressant car dans la region beaucoup de petits et très beaux canyons."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21507,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.327538,
+        "longitude": 0.881806,
+        "label": null
+      },
+      {
+        "canyonId": 21507,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.327084,
+        "longitude": 0.888692,
+        "label": null
+      },
+      {
+        "canyonId": 21507,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 42.329788,
+        "longitude": 0.884657,
+        "label": null
+      },
+      {
+        "canyonId": 21507,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 42.331013,
+        "longitude": 0.894565,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 42.329788,
+      "longitude": 0.884657,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_0ba463ff2f63037f",
+          "kind": "MAP",
+          "title": "25 Pallars Jusa (Institut cartographic de Catalunya)",
+          "scale": "1:50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_8c7d6f4537a1c9f7",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.barranquismo.net/paginas/barrancos/estanyobert.htm",
+          "url": "http://www.barranquismo.net/paginas/barrancos/estanyobert.htm"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

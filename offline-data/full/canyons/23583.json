@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:20.052299+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23583,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23583/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23583/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23583/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23583/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23583,
+    "identity": {
+      "nom": "Brüggentobel supérieur",
+      "nomComplet": "Brüggentobel supérieur, Platschtobel, Brüggentobelbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23583/Bruggentobel-superieur.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Davos",
+      "departement": "Graubünden/Grigioni/Grischun",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": "Landwasser",
+      "coursEau": "Brüggentobelbach"
+    },
+    "rating": {
+      "cotation": "v3a1I",
+      "interet": 1.1,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1960,
+      "deniveleM": 370,
+      "longueurM": 1400,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 25,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h",
+      "descente": "2h",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "Se garer au village Davos Wiesen.",
+      "accesAmont": null,
+      "approche": "Suivre le chemin balisé vers l'alpage Heinisch Alp, Alteiner Fürggli.",
+      "descente": "Vallon d'avalanches bien ensolleilé, possible avec un shorty. Descente envisageable avec enfants.",
+      "retour": "Suivre le ruisseau jusqu'au pont de la piste sur son bord RG.",
+      "engagement": "Facile",
+      "periode": null,
+      "geologie": "Dolomite, flysch rouge, très beaux cailloux de toutes couleurs.",
+      "historique": "09.08.2009: Timo Stammwitz.",
+      "remarques": "Possible aussi de remonter le torrent pour se baigner dans les petites belles vasques."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23583,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.728821,
+        "longitude": 9.71388,
+        "label": null
+      },
+      {
+        "canyonId": 23583,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.71682,
+        "longitude": 9.70911,
+        "label": null
+      },
+      {
+        "canyonId": 23583,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.71122,
+        "longitude": 9.71686,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.71122,
+      "longitude": 9.71686,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_1db776ee9890d9c5",
+          "kind": "MAP",
+          "title": "1216 Filisur (Carte Nationale Suisse)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

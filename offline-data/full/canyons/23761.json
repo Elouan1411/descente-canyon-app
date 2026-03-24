@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:00.067350+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23761,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23761/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23761/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23761/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23761/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23761,
+    "identity": {
+      "nom": "Torto",
+      "nomComplet": "Rio Torto",
+      "prefixeNom": "Rio",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23761/Torto.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Frioul-Vénétie julienne",
+      "departement": "Udine",
+      "communePrincipale": "Chiusaforte",
+      "communes": [
+        "Chiusaforte"
+      ],
+      "massif": "Alpes Juliennes",
+      "bassin": "Slizza",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a4IV",
+      "interet": 2.0,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 1405,
+      "deniveleM": 420,
+      "longueurM": 2300,
+      "cascadeMaxM": 33,
+      "cordeMiniM": 40,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h20min",
+      "descente": "4h30min",
+      "retour": "10"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": "17 rappels",
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23761,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.415482,
+        "longitude": 13.506605,
+        "label": null
+      },
+      {
+        "canyonId": 23761,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.402122,
+        "longitude": 13.518541,
+        "label": null
+      },
+      {
+        "canyonId": 23761,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.402065,
+        "longitude": 13.519093,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.402065,
+      "longitude": 13.519093,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_437cfbba0cc56e85",
+          "kind": "MAP",
+          "title": "19 Alpi Giulie Occidentali - Tarvisiano (Tabacco)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_0c2994e47e49185d",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/Canyons/RioTortoCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/Canyons/RioTortoCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,139 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:08.927727+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23218,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23218/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23218/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23218/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23218/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23218,
+    "identity": {
+      "nom": "Scioperen",
+      "nomComplet": "Scioperen",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23218/Scioperen.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Lombardia",
+      "departement": "Como",
+      "communePrincipale": "Sorico",
+      "communes": [
+        "Sorico"
+      ],
+      "massif": "Alpi Lepontine",
+      "bassin": "Lago di Mezzola",
+      "coursEau": "Scioperen"
+    },
+    "rating": {
+      "cotation": "v4a3II",
+      "interet": 1.7,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 440,
+      "deniveleM": 235,
+      "longueurM": 700,
+      "cascadeMaxM": 50,
+      "cordeMiniM": 55,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "3h",
+      "retour": "1h"
+    },
+    "topo": {
+      "accesAval": "de Chiavenna 23,6 km direction Lecco; prendre SS340dir (2,3 km) à droite direction Lago di Como (rive ouvest). Traverser Fiume Mera et après le pont à droite et ensuite à gauche. Monter à Albonico.",
+      "accesAmont": null,
+      "approche": "de Albonico prendre le sentier à (Chiesetta di) San Fedelino jusqu'à pont sur Scioperen",
+      "descente": "3 parties: partie I: 2 rappels (20m + 31m); partie II: marcher et desescalader dans une riviere ouverte: partie III: 5 rappels avec vue sur le lac",
+      "retour": "au rive gauche monter sans sentier jusqu'a sentier vers Albonico",
+      "engagement": null,
+      "periode": "printemps ou après pluies",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23218,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.20396,
+        "longitude": 9.419215,
+        "label": null
+      },
+      {
+        "canyonId": 23218,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.200905,
+        "longitude": 9.426141,
+        "label": null
+      },
+      {
+        "canyonId": 23218,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.202339,
+        "longitude": 9.419527,
+        "label": null
+      },
+      {
+        "canyonId": 23218,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 46.200932,
+        "longitude": 9.426294,
+        "label": "sortie à droite (sans sentier) vers le-haut et au sentier vers Albonico"
+      },
+      {
+        "canyonId": 23218,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 46.195259,
+        "longitude": 9.425068,
+        "label": "sortie à la sente privée (après nager) vers la villa au-dessus"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.202339,
+      "longitude": 9.419527,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_9088ca1f6cfd9d03",
+          "kind": "MAP",
+          "title": "CNS 277 kompas 91/92",
+          "scale": null,
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_b3aab6174fefc80c",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://lnx.canyoning.it/index/forra/cod/CO024",
+          "url": "http://lnx.canyoning.it/index/forra/cod/CO024"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

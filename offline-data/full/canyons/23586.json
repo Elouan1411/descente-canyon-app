@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:20.486482+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23586,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23586/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23586/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23586/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23586/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23586,
+    "identity": {
+      "nom": "Moulinières",
+      "nomComplet": "Ravin des Moulinières",
+      "prefixeNom": "Ravin des",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23586/Moulinieres.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-Maritimes",
+      "communePrincipale": "Ascros",
+      "communes": [
+        "Touët-sur-Var",
+        "Ascros"
+      ],
+      "massif": null,
+      "bassin": "Var",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1II",
+      "interet": 1.4,
+      "nbVotes": 5
+    },
+    "metrics": {
+      "altitudeDepartM": 877,
+      "deniveleM": 561,
+      "longueurM": 1300,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 25,
+      "navette": "25.0km"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "3h",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "laisser une voiture à la gare de Touët-sur-Var.",
+      "accesAmont": "de Touët prendre la D6202 jusqu'à Puget-Théniers. Prendre à gauche la D2211A en direction de col de St-Raphaël puis au col à gauche la D27 direction Ascros. A la Baisse de Rourebel, 100m après le village de Rourebel, prendre à gauche à une croix une piste descendante.",
+      "approche": "Un sentier quitte cette piste 200m à gauche après la croix, il coupe le vallon très rapidement mais ne pas s'engager tout de suite, longer sur le sentier la RG et rentrer dans le ravin quand celui ci devient vertical.",
+      "descente": "1ère moitié très verticale, succession de rappels (max 25m) et de désescalades. Ensuite partie plus plate. Très beau dernier rappel avec arrivée dans le lit du Var.\n\nRappels : 25 , 8 , 25 , 25 , 15 , 15 , 4 , 25",
+      "retour": "Aval : traverser le Var a gué (200m en amont) et retrouver la voiture à la gare. Si le débit du Var est trop important, rejoindre le pont à 1km direction Nice",
+      "engagement": "Échappatoires aléatoires sur le 1er tiers, attention au nombreuses chutes de pierres, ensuite nombreuses possibilités de sortie sur les deux rives.",
+      "periode": "1ère partie sèche, 2ème partie en eau après une résurgence. Petit débit, néoprène inutile. Risque de crue très faible (minuscule bassin d'alimentation)",
+      "geologie": null,
+      "historique": "Première descente Club Martel de Nice : Letenneur Jean-Pierre, Jullien Jean-Luc, Laurent Olive Dalmais, Bessueil Patrick - Juillet 1993",
+      "remarques": "Dans l'enchainement des deux 25m, il y a deux relais pour la 2eme longueur, un dans le lit (cordes abimées) et un monopoint très propre en RD et en retrait caché un peu sous les herbes, pas de soucis pour ravaler en prenant ce dernier.\n\nLa navette est certainement facultative : un sentier balisé permet de rejoindre le départ de la descente depuis Touët-sur-Var."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23586,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.933395,
+        "longitude": 7.00013,
+        "label": null
+      },
+      {
+        "canyonId": 23586,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.94379,
+        "longitude": 7.003083,
+        "label": null
+      },
+      {
+        "canyonId": 23586,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 43.928192,
+        "longitude": 6.999057,
+        "label": null
+      },
+      {
+        "canyonId": 23586,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 43.946625,
+        "longitude": 7.003331,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 43.928192,
+      "longitude": 6.999057,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_f5a5c0f3b7f39109",
+          "kind": "MAP",
+          "title": "3641 OT Moyen Var (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:20.881871+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23025,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23025/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23025/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23025/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23025/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/23025/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 23025,
+    "identity": {
+      "nom": "Plan Pinet",
+      "nomComplet": "Ruisseau de Plan Pinet, Maraval",
+      "prefixeNom": "Ruisseau de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23025/Plan-Pinet.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Var",
+      "communePrincipale": "Saint-Raphaël",
+      "communes": [
+        "Saint-Raphaël"
+      ],
+      "massif": "Esterel",
+      "bassin": null,
+      "coursEau": "Maraval"
+    },
+    "rating": {
+      "cotation": "v2a2II",
+      "interet": 1.0,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 420,
+      "deniveleM": 220,
+      "longueurM": 800,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "45min",
+      "descente": "2h15",
+      "retour": "1h15"
+    },
+    "topo": {
+      "accesAval": "Depuis la RN7 en venant de Fréjus, passer l'auberge des Adrets sur 450m et se garer dans un virage à gauche côte 233m sur l'IGN (Pont de l'Estérel).",
+      "accesAmont": null,
+      "approche": "Prendre la piste qui monte à la maison forestière de la Duchesse, de là prendre à gauche jusqu'à un petit col situé à la côte 465m de l'IGN. Prendre le chemin à droite qui descend à un lac. Le contourner par la gauche et suivre au mieux le ruisseau qui en découle jusqu'à la première cascade.",
+      "descente": "Désescalade de 5m, C8 amarrage RG haut ou piton dans le lit du ruisseau, s'en suit quelques plans inclinés avant de tomber sur un GR, qui sera emprunté pour le retour.\n\nC6 AN RD, C4, PI35m, passage étroit à travers quelques broussailles, C7 amarrage RD ou désescalade suivant le débit pour tomber sur un affluent RG et après 50m sortir RD (cairn) et, à un pin, redescendre dans le vallon (cairn)\n\nPI20m, vasque profonde 1m20, long couloir étroit de fougères pour arriver sur une belle C12 avec amarrage en RG.\n\n20m plus loin sortir RG (cairn et rubalise).",
+      "retour": "Suivre une sente bien marquée pour sortir de la forêt de pins et prendre à gauche pour remonter au mieux le gros pierrier \"Le Caneiret\" bien visible jusqu'à un bon sentier que l'on empruntera par la gauche pour rejoindre le GR. Au GR, ne pas prendre à droite car cela rallonge, mais plutôt continuer tout droit pour traverser le ruisseau de Plan Pinet et rejoindre la maison forestière de la Duchesse. Prendre la piste de droite, puis à gauche pour se rendre au parking.",
+      "engagement": "Faible. Pas de sentier à proximité du vallon.",
+      "periode": "Après une période pluvieuse.\n\nBas de combi largement suffisant.",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23025,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.505089,
+        "longitude": 6.844751,
+        "label": null
+      },
+      {
+        "canyonId": 23025,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.501282,
+        "longitude": 6.840588,
+        "label": null
+      },
+      {
+        "canyonId": 23025,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.510525,
+        "longitude": 6.830835,
+        "label": null
+      },
+      {
+        "canyonId": 23025,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 43.499802,
+        "longitude": 6.841146,
+        "label": "Eboulis de retour"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.510525,
+      "longitude": 6.830835,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_2a760926b6d90e9e",
+          "kind": "MAP",
+          "title": "3544 ET Frejus - Saint-Raphael (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 579,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Var) - 13 mai 2025",
+          "summary": "- La pratique du canyonisme dans des canyons secs (cotation aquaticité A1 ou habituellement à sec) est autorisée toute l'année\n\n- La pratique du canyonisme dans des canyons aquatiques est interdite du 1er novembre au 31 mars.\n\nPour la période du 1er avril au 30 octobre, il est interdit :\n\n- de pratiquer du coucher du soleil à 9h\n\n- de s'engager dans une descente de canyon aquatique après 17h.\n\n- De manière générale, il est interdit :\n\n- de s'engager si une alerte vigilance météo de niveau orange ou rouge est émise par Météo France, en ce qui concerne le risque \"pluie\", \"orage\", et \"inondation\", sur le secteur concerné.\n\n- de constituer un groupe de plus de 10 personnes (encadrement inclus)",
+          "remark": null,
+          "details": "Arrêté préfectoral (Préfecture du Var) SDJES-SPORTS-2025-12 du 13 mai 2025",
+          "effectiveDate": "13 mai 2025",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/579/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral (Préfecture du Var) SDJES-SPORTS-2025-12 du 13 mai 2025",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem579_pj1.pdf"
+            }
+          ]
+        },
+        {
+          "id": 545,
+          "status": "Abrogé",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Var) - 06 mai 2024",
+          "summary": "La pratique du canyonisme se voit interdite du 1er novembre au 31 mars.\n\nPour la période du 1er avril au 30 octobre, il est interdit :\n\n- de s'engager dans une descente de canyon avant 9h et après 17h.\n\n- de s'engager si une alerte vigilance météo de niveau orange ou rouge est émise par Météo France, en ce qui concerne le risque \"pluie\", \"orage\", et \"inondation\", sur le secteur concerné.\n\n- de constituer un groupe de plus de 10 personnes (encadrement inclus)",
+          "remark": "Arrêté abrogé et remplacé par l'arrêté préfectoral SDJES-SPORTS-2025-12 du 13 mai 2025",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nArrêté préfectoral (Var) n° SDJES-SPORTS-2024-0004 du 06 mai 2024",
+          "effectiveDate": "13 mai 2025",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/545/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral (Var) n° SDJES-SPORTS-2024-0004 du 06 mai 2024",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem545_pj1.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

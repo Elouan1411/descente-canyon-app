@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:46:25.715365+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2678,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2678/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2678/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2678/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2678/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2678,
+    "identity": {
+      "nom": "Progero (inférieur)",
+      "nomComplet": "Val Progero (inférieur), Riale delle Palme, Gudo, Riale delle Palme",
+      "prefixeNom": "Val",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2678/Progero-inferieur.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Bellinzona",
+      "departement": "Tessin",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": "Ticino",
+      "coursEau": "Riale delle Palme"
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.6,
+      "nbVotes": 23
+    },
+    "metrics": {
+      "altitudeDepartM": 460,
+      "deniveleM": 250,
+      "longueurM": 400,
+      "cascadeMaxM": 45,
+      "cordeMiniM": 50,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "40min",
+      "descente": "2h30",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "De Locarno prenez la direction de Lugano. Rapidement au rond point sortez à Gordola, Gudo. A Gudo, après l’entrée du camping prenez à gauche vers le centre. Garez vous sur les parkings autorisés (marques blanches)\n\nAccès",
+      "accesAmont": "ou approche : Continuez la route qui monte (marques blanches et rouges). Dans une épingle juste avant de prendre le GR on peut encore se garer (marques blanches). Prenez le GR pour le Monti del Laghetto. Restez sur le chemin qui monte et la descente commence à la passerelle en fer. Il y a 3 – 4 cascades encore au-dessus de la passerelle.",
+      "approche": null,
+      "descente": "Après quelques obstacles on tombe sur la belle cascade de 45m. On continue la descente et on rejoint la 30m délicate à passer en cas de débit important. Les petits obstacles continuent et la partie finale se caractérise par l’apparition de palmiers créant une ambiance unique dans les dernières cascades d’ampleur.",
+      "retour": "On rejoint le village à la fin du canyon.",
+      "engagement": "Échappatoires difficiles.",
+      "periode": "Attention aux crues\n\nÉté.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Appelé aussi Ri del Palmes, les palmiers sont effectivement très présent dans la 2eme partie de cette très agréable descente."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2678,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.175789,
+        "longitude": 8.941728,
+        "label": null
+      },
+      {
+        "canyonId": 2678,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.176182,
+        "longitude": 8.945124,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.176182,
+      "longitude": 8.945124,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_1e5c67cde732c20d",
+          "kind": "TOPOGUIDE",
+          "title": "Eldorado Ticino",
+          "authors": [
+            "Anna & Luca Nizzola"
+          ],
+          "publicationYear": 2010,
+          "reference": "978-88-905017-7-7",
+          "editor": "SwissCanyon",
+          "status": "en stock\n\n- 39,90 € -\n\nCommandez cet ouvrage dès maintenant !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/157/Eldorado-Ticino.html"
+        },
+        {
+          "id": "biblio_818da916075bb17b",
+          "kind": "TOPOGUIDE",
+          "title": "Canyoning en Suisse 2",
+          "authors": [
+            "Franz Baumgartner",
+            "Andreas Brunner",
+            "Daniel Zimmermann"
+          ],
+          "publicationYear": 2010,
+          "reference": "9783033024694",
+          "editor": null,
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/158/Canyoning-en-Suisse-2.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_9a9578770c172929",
+          "kind": "MAP",
+          "title": "1313 Bellinzona (Carte Nationale Suisse)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_617013f2c2952d42",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.swisscanyon.ch/canyons/descrittivi/palme.htm",
+          "url": "http://www.swisscanyon.ch/canyons/descrittivi/palme.htm"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

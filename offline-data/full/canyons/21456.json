@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:49:28.544817+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21456,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21456/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21456/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21456/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21456/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21456,
+    "identity": {
+      "nom": "Echalance",
+      "nomComplet": "Ruisseau de l' Echalance",
+      "prefixeNom": "Ruisseau de l'",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21456/Echalance.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Isère",
+      "communePrincipale": "Montaud",
+      "communes": [
+        "Montaud"
+      ],
+      "massif": "Vercors",
+      "bassin": "Isère",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 0.6,
+      "nbVotes": 5
+    },
+    "metrics": {
+      "altitudeDepartM": 1050,
+      "deniveleM": 350,
+      "longueurM": 750,
+      "cascadeMaxM": 39,
+      "cordeMiniM": 40,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "45min",
+      "descente": "2h",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "De Veurey prendre la D3 vers Montaud. Au niveau de \"La cote Maillet\" prendre un chemin à gauche direction \" La Charriere\" puis tout droit un chemin carrossable vers \"L'Egalen\". Laisser la voiture à la cote 718m (parking sur la gauche).",
+      "accesAmont": null,
+      "approche": "A \"L'Egalen\" deux options: à gauche pour rejoindre le ruisseau et remonter en rive gauche au niveau des cascades,(façon sanglier) ou continuer tout droit pour rejoindre une piste forestiere que l'on suivra à gauche jusqu'a la resurgence debut de la descente. Cote 1026m sous \"LA BUFFE\".",
+      "descente": "On suit le ruisseau entrecoupé de ressauts et de 4 cascades. La deuxieme et la troisième se situe au meme endroit et nécessitent de remonter si l'on veut faire les deux !!!",
+      "retour": "Environ 100m apres la derniere cascade rejoindre une piste remontante à gauche. A la premiere bifurcation prendre à gauche, puis à droite pour rejoindre une prairie. Longer la cloture sur la droite qui menera à la voiture",
+      "engagement": "Echappatoires possibles tout le long de la descente, pas d'encaissement. Equipement minimaliste sur arbres. Un point au dernier palier de la premiere cascade",
+      "periode": "à faire avec de l'eau !!",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Premiere partie agreable si on veut faire aussi \"L'Etroit des colombieres\" situé à 15mn"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21456,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.247955,
+        "longitude": 5.579959,
+        "label": null
+      },
+      {
+        "canyonId": 21456,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.259476,
+        "longitude": 5.574647,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.259476,
+      "longitude": 5.574647,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_f71cf3569cd5f7fc",
+          "kind": "MAP",
+          "title": "3235 OT Autrans - Gorges de La Bourne (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,185 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:43:06.424095+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22,
+    "identity": {
+      "nom": "Pellas",
+      "nomComplet": "Ruisseau des Pellas",
+      "prefixeNom": "Ruisseau des",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22/Pellas.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Isère",
+      "communePrincipale": "Saint-Michel-les-Portes",
+      "communes": [
+        "Saint-Michel-les-Portes"
+      ],
+      "massif": "Vercors",
+      "bassin": "Drac",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 1.5,
+      "nbVotes": 14
+    },
+    "metrics": {
+      "altitudeDepartM": 1061,
+      "deniveleM": 86,
+      "longueurM": 450,
+      "cascadeMaxM": 8,
+      "cordeMiniM": 10,
+      "navette": "1.2km"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "45min",
+      "retour": "7min"
+    },
+    "topo": {
+      "accesAval": "De Saint-Michel-les-Portes, prendre la direction du Col de l'Allimas (D8a). Se garer au pont pointé 965m sur la carte IGN, qui traverse le ruisseau.",
+      "accesAmont": "Continuer sur la D8a jusqu'au prochain pont (pointé 1061m).",
+      "approche": null,
+      "descente": "Pour entrer dans le canyon, le plus pratique (et sympa) est de poser un petit rappel du pont.\n\nMoins intéressant que son voisin, il se compose d'une seule véritable cascade suivie d'un bel encaissement.\n\nEn débit correct, convient aux enfants et personnes peu sportives pour une première descente.",
+      "retour": "Quand le canyon ne présente visiblement plus d'intérêt, sortir rive droite pour une bonne sente.",
+      "engagement": "Quelques possibilités de sortir de l'encaissement.",
+      "periode": "Relativement peu aquatique, on se méfiera néanmoins d'un gros débit au printemps ou après de fortes pluies. Juin/octobre.",
+      "geologie": "Calcaire.",
+      "historique": null,
+      "remarques": "Le Ravin de Mouna\n\n, affluent de ce canyon, présente plus de ressauts."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.864243,
+        "longitude": 5.562141,
+        "label": null
+      },
+      {
+        "canyonId": 22,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.869392,
+        "longitude": 5.566256,
+        "label": null
+      },
+      {
+        "canyonId": 22,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 44.863918,
+        "longitude": 5.562347,
+        "label": null
+      },
+      {
+        "canyonId": 22,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 44.870495,
+        "longitude": 5.567967,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 44.863918,
+      "longitude": 5.562347,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_774008f93c089927",
+          "kind": "TOPOGUIDE",
+          "title": "100 descentes de canyons autour de Grenoble",
+          "authors": [
+            "Arnaud Astier"
+          ],
+          "publicationYear": 2015,
+          "reference": "978-2-7466-7754-8",
+          "editor": "auto-édition",
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/194/100-Descentes-de-Canyons-autour-de-Grenoble.html"
+        },
+        {
+          "id": "biblio_e7d94bb2f47393ab",
+          "kind": "TOPOGUIDE",
+          "title": "Cascades, Gorges & Canyons : Pré-alpes d'Isère et de Savoie",
+          "authors": [
+            "Bertrand Hauser",
+            "Delphine Baratin"
+          ],
+          "publicationYear": 2007,
+          "reference": "978-2-9529407-0-2",
+          "editor": "Descente-Canyon.com",
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/11/Cascades--Gorges-et-Canyons-:-Pre-alpes-d-Isere-et-de-Savoie.html"
+        },
+        {
+          "id": "biblio_0f06b44eb9a42186",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons du Vercors et Alentours",
+          "authors": [
+            "J-C. Botti",
+            "B. Rosset",
+            "Y. Launay",
+            "C. Larribe",
+            "T. Larribe",
+            "Spéléo Club MJC de Tullins"
+          ],
+          "publicationYear": 1997,
+          "reference": "ISBN 2-7417-0211-X",
+          "editor": "Gap",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/12/topoguide.html"
+        },
+        {
+          "id": "biblio_e2259ea833d03cf8",
+          "kind": "TOPOGUIDE",
+          "title": "Infern'eaux",
+          "authors": [
+            "P. Boiron",
+            "J. Carles",
+            "J-M. Etienne",
+            "R. Vuillot"
+          ],
+          "publicationYear": 1990,
+          "reference": "ISBN 2-7038-0065-7",
+          "editor": "Didier et Richard",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/11/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_f0377a11ac3d5a01",
+          "kind": "MAP",
+          "title": "3236 OT Villard-de-Lans (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

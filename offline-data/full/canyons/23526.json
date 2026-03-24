@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:08.409822+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23526,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23526/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23526/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23526/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23526/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23526,
+    "identity": {
+      "nom": "Falmenta",
+      "nomComplet": "Rio Falmenta",
+      "prefixeNom": "Rio",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23526/Falmenta.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Piemonte",
+      "departement": "Verbano-Cusio-Ossola",
+      "communePrincipale": "Comune di Cannobio",
+      "communes": [
+        "Comune di Cannobio"
+      ],
+      "massif": null,
+      "bassin": "Cannobino",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a3III",
+      "interet": null,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": 200,
+      "longueurM": null,
+      "cascadeMaxM": 16,
+      "cordeMiniM": null,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "3h30",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "De Verbania rejoindre Cannobio et continuer par la Val Cannobina jusqu'à Ponte Falmenta, se garer. En descendant par le sentier vers Crealla on rejoint en 5mn deux ponts d'où on peut évaluer le débit.",
+      "accesAmont": "Continuer la route et tourner à gauche pour Falmenta. Dépasser le village, continuer vers Crealla et se garer près du pont sur le torrent, immédiatement après un virage.\n\nAccès sans navette : Du parking aval continuer sur la route. Un peu avant l'embranchement pour Falmenta part le sentier muletier qui monte au village. De Falmenta suivre la route jusqu'au pont (environ 1h30).",
+      "approche": "Revenir au niveau du virage et emprunter une sente qui entre dans les bois. Rejoindre au mieux le torrent.",
+      "descente": "Torrent un peu discontinu et à dominante horizontale mais qui comporte quelques passages encaissés et un beau toboggan.",
+      "retour": "Arrivés à la confluence avec le Crealla à droite, remonter sur le petit pont bien visible, prendre à gauche et remonter à la voiture (même retour que pour le Crealla).",
+      "engagement": "Pour atteindre l'amarrage de la C16, la roche peut-être très glissante.\n\nSeules 2 cascades sont équipées, les autres doivent être désescaladées, évitées ou toboggan obligatoire.",
+      "periode": "Juin-Octobre.\n\nLe débit est toujours conséquent, éviter le début de saison.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Échappatoire : A mi-parcours on rencontre un pont, d'où on peut sortir et remonter à Falmenta (gauche). Nombreuses zones de mise en sécurité."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23526,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.070137,
+        "longitude": 8.573428,
+        "label": "pont"
+      },
+      {
+        "canyonId": 23526,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.071754,
+        "longitude": 8.600539,
+        "label": "confluence avec Crealla"
+      },
+      {
+        "canyonId": 23526,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 46.070107,
+        "longitude": 8.57347,
+        "label": null
+      },
+      {
+        "canyonId": 23526,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 46.072247,
+        "longitude": 8.603101,
+        "label": "Ponte Falmenta"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 46.070107,
+      "longitude": 8.57347,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

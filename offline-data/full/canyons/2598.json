@@ -1,0 +1,144 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:46:07.334059+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2598,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2598/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2598/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2598/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2598/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2598,
+    "identity": {
+      "nom": "Patoc",
+      "nomComplet": "Rio Patoc",
+      "prefixeNom": "Rio",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2598/Patoc.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Frioul-Vénétie julienne",
+      "departement": "Udine",
+      "communePrincipale": "Chiusaforte",
+      "communes": [
+        "Chiusaforte"
+      ],
+      "massif": "Alpes Juliennes",
+      "bassin": "Fella",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.5,
+      "nbVotes": 16
+    },
+    "metrics": {
+      "altitudeDepartM": 750,
+      "deniveleM": 350,
+      "longueurM": 2500,
+      "cascadeMaxM": 18,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "2h30",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "D'Udine, prenez la direction de Tarvisio par l'A23 et sortez à Carnia-Tolmezzo. Prenez la direction d'Amaro puis de Tarvisio par la SS13. A Chiusaforte, tournez à droite vers les lotissements de Roccalana. Prenez la route qui contourne le lotissement vers l’extérieur et garez-vous à proximité du GR 620.",
+      "accesAmont": null,
+      "approche": "Suivez le GR 620 qui monte tranquillement vers le Rio Patoc. Vous pouvez entrer dès que vous le pouvez le haut n'ayant pas un grand intérêt.",
+      "descente": "Quelques beaux creusements sans sauts, mais l’ensemble manque de caractère.",
+      "retour": "Pour le retour au véhicule, inutile de passer le gué. Remontez RG à travers les arbres vers l’ancienne voie ferrée jusqu’au grand pont. Puis prendre à gauche le chemin jusqu’au village (En cas de problème suivre la digue)",
+      "engagement": "Pas d'échappatoires. Encaissement court",
+      "periode": "Milieu et fin de saison",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2598,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.418304,
+        "longitude": 13.323948,
+        "label": null
+      },
+      {
+        "canyonId": 2598,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.419102,
+        "longitude": 13.320107,
+        "label": null
+      },
+      {
+        "canyonId": 2598,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.408897,
+        "longitude": 13.314443,
+        "label": "navette (deuxieme voiture sue la SS13 deconseillée)"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.408897,
+      "longitude": 13.314443,
+      "label": "navette (deuxieme voiture sue la SS13 deconseillée)"
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_41402b7e45455e7d",
+          "kind": "TOPOGUIDE",
+          "title": "Tour de l'Europe en Canyon - T1 - Suisse, Autriche, Italie du Nord, Slovénie",
+          "authors": [
+            "Caracal et les Sancho Panza"
+          ],
+          "publicationYear": 2008,
+          "reference": "978-2-9526064-2-4",
+          "editor": null,
+          "status": "en stock\n\n- 25,90 € -\n\nCommandez cet ouvrage dès maintenant !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/130/Tour-de-l-Europe-en-Canyon---T1---Suisse--Autriche--Italie-du-Nord--Slovenie.html"
+        },
+        {
+          "id": "biblio_9a587136e3eea5ef",
+          "kind": "TOPOGUIDE",
+          "title": "Italia Nord-Est - Gole e Canyon Vol.2",
+          "authors": [
+            "Maurizio Biondi",
+            "Francesco Cacae",
+            "Roberto Schenone"
+          ],
+          "publicationYear": 2000,
+          "reference": "88-900260-0-6",
+          "editor": "Associazione Italiana Canyoning",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/114/Gole---Canyons-2-:-Italia-Nord-Est.html"
+        }
+      ],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_228ed5e90262190b",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.canyoneast.it/target.php?w=19.....t⌖=Rio%20Patoc",
+          "url": "http://www.canyoneast.it/target.php?w=19.....t⌖=Rio%20Patoc"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

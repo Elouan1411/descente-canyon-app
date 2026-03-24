@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:05.517831+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22966,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22966/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22966/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22966/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22966/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22966,
+    "identity": {
+      "nom": "Beaume noire",
+      "nomComplet": "Saut du vallon de la Beaume noire",
+      "prefixeNom": "Saut du vallon de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22966/Beaume-noire.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Bouches-du-Rhône",
+      "communePrincipale": "La Ciotat",
+      "communes": [
+        "La Ciotat"
+      ],
+      "massif": "Falaises Soubeyrannes",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1I",
+      "interet": 0.8,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 250,
+      "deniveleM": 40,
+      "longueurM": 50,
+      "cascadeMaxM": 35,
+      "cordeMiniM": 35,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "30min",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "Depuis Cassis, prendre en direction de La Ciotat puis la route des crêtes. Monter jusqu'à que la route se sépare en deux et prendre celle de droite qui monte en lacets. Passer le premier lacet et garez-vous au second lacet sur le parking sans gêner (Belvédère avec vue sur la baie de Cassis).",
+      "accesAmont": null,
+      "approche": "Du parking,remonter sur 50 m la route et emprunter le premier sentier partant sur votre droite. Suivre le sentier jusqu'à ce qu'il surplombe le vallon. La piste forme alors un replat où l'on ignore un cairn et l'on descend un peu plus loin par une petite sente le long des éboulis à votre droite, conduisant au fond du vallon puis sur l'unique verticale de 35 m.",
+      "descente": "C35 sur deux broches scellées suivit d'une broche en forme de queue de cochon pour minimiser les frottements .",
+      "retour": "Sortie en RD. Une sente peu marquée vous ramènera au parking.",
+      "engagement": null,
+      "periode": "Très souvent sec, voire jamais en eau.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Pour clôturer ou attaquer une bonne journée sur les canyons de La Ciotat."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22966,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.204441,
+        "longitude": 5.55596,
+        "label": null
+      },
+      {
+        "canyonId": 22966,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.2071,
+        "longitude": 5.560509,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.2071,
+      "longitude": 5.560509,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_c55008676d4d8829",
+          "kind": "MAP",
+          "title": "3245 ET Aubagne - La Ciotat (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

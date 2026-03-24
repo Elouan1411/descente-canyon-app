@@ -1,0 +1,140 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:46:06.214754+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2591,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2591/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2591/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2591/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2591/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2591,
+    "identity": {
+      "nom": "Côtes",
+      "nomComplet": "Les Côtes",
+      "prefixeNom": "Les",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2591/Cotes.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Isère",
+      "communePrincipale": "Chichilianne",
+      "communes": [
+        "Chichilianne"
+      ],
+      "massif": "Vercors",
+      "bassin": "Drac",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1II",
+      "interet": 1.2,
+      "nbVotes": 10
+    },
+    "metrics": {
+      "altitudeDepartM": 970,
+      "deniveleM": 93,
+      "longueurM": 200,
+      "cascadeMaxM": 14,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "45min",
+      "retour": "25min"
+    },
+    "topo": {
+      "accesAval": "Depuis Clelles, prendre la direction du col de Menée par la D7. Au premier carrefour prendre à droite en direction du hameau de Trésanne. A l'entrée du hameau se garer sans gêner.",
+      "accesAmont": null,
+      "approche": "Prendre un sentier en RG du ruisseau en direction du Pas de l'Escalier. Quand le sentier l'éloigne du ruisseau le rejoindre, s'en suit une marche en rivière jusqu'au début de l'encaissement.",
+      "descente": "Successions de plans inclinées dans un encaissement assez large, jusqu'à la cascade finale assez esthétique (C12)",
+      "retour": "A la sortie de l'encaissement, remonter au mieux en RG pour atteindre le sentier qui retourne à Trésanne.",
+      "engagement": "Encaissement large mais sans échappatoires aisées.",
+      "periode": "Debit faible à nul en été, préférer les périodes humides.",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2591,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.835796,
+        "longitude": 5.582261,
+        "label": null
+      },
+      {
+        "canyonId": 2591,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.833286,
+        "longitude": 5.582751,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 44.835796,
+      "longitude": 5.582261,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_e7d94bb2f47393ab",
+          "kind": "TOPOGUIDE",
+          "title": "Cascades, Gorges & Canyons : Pré-alpes d'Isère et de Savoie",
+          "authors": [
+            "Bertrand Hauser",
+            "Delphine Baratin"
+          ],
+          "publicationYear": 2007,
+          "reference": "978-2-9529407-0-2",
+          "editor": "Descente-Canyon.com",
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/11/Cascades--Gorges-et-Canyons-:-Pre-alpes-d-Isere-et-de-Savoie.html"
+        },
+        {
+          "id": "biblio_0f06b44eb9a42186",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons du Vercors et Alentours",
+          "authors": [
+            "J-C. Botti",
+            "B. Rosset",
+            "Y. Launay",
+            "C. Larribe",
+            "T. Larribe",
+            "Spéléo Club MJC de Tullins"
+          ],
+          "publicationYear": 1997,
+          "reference": "ISBN 2-7417-0211-X",
+          "editor": "Gap",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/12/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_f0377a11ac3d5a01",
+          "kind": "MAP",
+          "title": "3236 OT Villard-de-Lans (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

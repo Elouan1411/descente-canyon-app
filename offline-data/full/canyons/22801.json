@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:54:24.987534+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22801,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22801/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22801/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22801/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22801/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22801,
+    "identity": {
+      "nom": "Cervio",
+      "nomComplet": "Cervio, Val Cervia",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22801/Cervio.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Lombardia",
+      "departement": "Sondrio",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": null,
+      "coursEau": "Val Cervia"
+    },
+    "rating": {
+      "cotation": "v6a5V",
+      "interet": 3.2,
+      "nbVotes": 7
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": null,
+      "longueurM": null,
+      "cascadeMaxM": null,
+      "cordeMiniM": 25,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "3h",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": "Du parking amont, suivre une sente qui descends raide dans la forêt vers le vallon. Arrivé en vue d'un casse-vague (mur de plusieurs mètres de hauteur en travers du vallon), descendre le plus en aval possible pour éviter la marche en bloc très glissante.",
+      "descente": "Vallon très aquatique, mais présentant peu de danger liés aux mouvements d'eau (les vasques sont majoritairement pleines de blocs et de gravier). Peu de nage, pas de biefs, mais de nombreuses cascades arrosées.\n\nIl y a quelques sauts possibles. Il y a quelques rappels TRES arrosés ou dont l'arrivée est très vivifiante (bain de mousse assuré).\n\nLa toute première difficulté se désescalade en RD, en passant derrière la cascade (pas de point).",
+      "retour": "A la sortie de l'encaissement, suivre 20 m plus loin, en RD, une sente qui mène à un captage, puis à un bon chemin qui conduit au parking aval.",
+      "engagement": "Engagement très important dans la seconde partie.\n\nL'équipement est extrêmement minimaliste (monopoints de qualité variable, quelques AN). Quand il n'y a pas de points, c'est que cela se désescalade (sous réserve qu'il n'y ai pas trop d'eau).\n\nCe très beau canyon mériterait un re-équipement complet avec des mains courantes (accès aux amarrages parfois dangereux).\n\nLe canyon est EXTREMEMENT glissant, quelques soit les chaussures (Guara, Adidas, 10-5...).",
+      "periode": "Toujours beaucoup d'eau (environ 150 l/s mi-aout 2012 après 5 jours sans pluies).",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Bon canyon pour l'initiation aux gros débits."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22801,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.140331,
+        "longitude": 9.768047,
+        "label": null
+      },
+      {
+        "canyonId": 22801,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.150391,
+        "longitude": 9.764294,
+        "label": null
+      },
+      {
+        "canyonId": 22801,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 46.140881,
+        "longitude": 9.770392,
+        "label": null
+      },
+      {
+        "canyonId": 22801,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 46.148109,
+        "longitude": 9.765708,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 46.140881,
+      "longitude": 9.770392,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

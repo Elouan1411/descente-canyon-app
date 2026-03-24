@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:38.139160+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22601,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22601/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22601/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22601/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22601/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22601,
+    "identity": {
+      "nom": "Vésubie 1",
+      "nomComplet": "Vésubie 1, La Vésubie",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22601/Vesubie-1.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-Maritimes",
+      "communePrincipale": "St Jean de la Riviere",
+      "communes": [
+        "St Jean de la Riviere"
+      ],
+      "massif": null,
+      "bassin": "Vésubie",
+      "coursEau": "La Vésubie"
+    },
+    "rating": {
+      "cotation": "v1a3III",
+      "interet": 0.6,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 338,
+      "deniveleM": 30,
+      "longueurM": 700,
+      "cascadeMaxM": null,
+      "cordeMiniM": null,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "1h",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "De Nice remonter la vallée de la Vésubie. 1,5Km après St Jean la Rivière, juste après un pont, garer sa voiture sur une aire de repos (table).",
+      "accesAmont": null,
+      "approche": "Continuer à pieds sur la route (600m) jusqu'à un barrage-captage sur la Vésubie. Descendre par le chemin EDF.",
+      "descente": "Rando aquatique avec des sauts (en escaladant), des petits rapides, un magnifique resserrement. Idéal pour sortie familiale.\n\nSortir 30m après le 2ieme pont",
+      "retour": "20-30m après le 2ieme pont une petite sente remonte sur la route (10m au dessus) . De la retourner à la voiture (250m).",
+      "engagement": "Possibilité de sortir juste avant le premier pont.",
+      "periode": "A faire à l' étiage.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Faire attention aux voitures surtout pour l' accès."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22601,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.936195,
+        "longitude": 7.271801,
+        "label": null
+      },
+      {
+        "canyonId": 22601,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.932549,
+        "longitude": 7.265664,
+        "label": null
+      },
+      {
+        "canyonId": 22601,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.934528,
+        "longitude": 7.264951,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.934528,
+      "longitude": 7.264951,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

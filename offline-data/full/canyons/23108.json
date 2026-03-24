@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:41.757480+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23108,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23108/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23108/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23108/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23108/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23108,
+    "identity": {
+      "nom": "Seiergraben",
+      "nomComplet": "Seiergraben, Seier",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23108/Seiergraben.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Tyrol",
+      "departement": "Politischer Bezirk Schwaz",
+      "communePrincipale": "Stans",
+      "communes": [
+        "Stans"
+      ],
+      "massif": "Karwendel",
+      "bassin": "Inn",
+      "coursEau": "Seier"
+    },
+    "rating": {
+      "cotation": "v4a2IV",
+      "interet": 1.2,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1350,
+      "deniveleM": 510,
+      "longueurM": 1800,
+      "cascadeMaxM": 36,
+      "cordeMiniM": 40,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h45",
+      "descente": "3h",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "pas de sauts, pas de toboggans"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23108,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.385548,
+        "longitude": 11.685562,
+        "label": null
+      },
+      {
+        "canyonId": 23108,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.376736,
+        "longitude": 11.693254,
+        "label": null
+      },
+      {
+        "canyonId": 23108,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.364201,
+        "longitude": 11.702642,
+        "label": null
+      },
+      {
+        "canyonId": 23108,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.376781,
+        "longitude": 11.691339,
+        "label": "1 prendre le sentier 234 vers Plattenalm (1490m alt.)"
+      },
+      {
+        "canyonId": 23108,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.384495,
+        "longitude": 11.683711,
+        "label": "2 : traverser la crête (Plattenalm, 1490m alt.)"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.364201,
+      "longitude": 11.702642,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

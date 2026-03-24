@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:55.350967+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22407,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22407/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22407/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22407/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22407/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22407,
+    "identity": {
+      "nom": "Schellbach",
+      "nomComplet": "Schellbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22407/Schellbach.html"
+    },
+    "location": {
+      "pays": "Allemagne",
+      "region": "Bayern",
+      "departement": "Oberbayern",
+      "communePrincipale": "Garmisch-Partenkirchen",
+      "communes": [
+        "Landkreis Garmisch-Partenkirchen",
+        "Garmisch-Partenkirchen"
+      ],
+      "massif": "Ammergauer Alpen",
+      "bassin": "Loisach",
+      "coursEau": "Schellbach"
+    },
+    "rating": {
+      "cotation": "v5a2V",
+      "interet": null,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": 1560,
+      "deniveleM": 630,
+      "longueurM": 5600,
+      "cascadeMaxM": 40,
+      "cordeMiniM": 50,
+      "navette": "9.5km"
+    },
+    "timings": {
+      "approche": "2h",
+      "descente": "8h",
+      "retour": "1h"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22407,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.510784,
+        "longitude": 10.905063,
+        "label": null
+      },
+      {
+        "canyonId": 22407,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.480961,
+        "longitude": 10.87374,
+        "label": null
+      },
+      {
+        "canyonId": 22407,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 47.536633,
+        "longitude": 10.889023,
+        "label": null
+      },
+      {
+        "canyonId": 22407,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 47.486835,
+        "longitude": 10.844091,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 47.536633,
+      "longitude": 10.889023,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_dd856261b45f9cc6",
+          "kind": "MAP",
+          "title": "8431 Linderhof (TK25 Bayerisches Landesvermessungsamt)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_35403de48de67a7a",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.geodaten.bayern.de/BayernView.....3220&layer=TK&step=8",
+          "url": "http://www.geodaten.bayern.de/BayernView.....3220&layer=TK&step=8"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

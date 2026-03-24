@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:48:08.089072+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21096,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21096/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21096/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21096/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21096/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21096,
+    "identity": {
+      "nom": "Druise",
+      "nomComplet": "Cascade de la Druise, Saut de la Druise, La Gervanne",
+      "prefixeNom": "Cascade de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21096/Druise.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Drôme",
+      "communePrincipale": "Omblèze",
+      "communes": [
+        "Omblèze"
+      ],
+      "massif": "Vercors",
+      "bassin": "Drôme",
+      "coursEau": "La Gervanne"
+    },
+    "rating": {
+      "cotation": "v4a2II",
+      "interet": 2.2,
+      "nbVotes": 9
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": 80,
+      "longueurM": null,
+      "cascadeMaxM": 72,
+      "cordeMiniM": 80,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "1h",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "D'Omblèze, longer les gorges du même nom par la D 578. Tourner à gauche sur la D 578A direction Ansage. On passe devant le gite du Moulin de la Pipe avant d'arriver au parking du site touristique de la cascade.",
+      "accesAmont": null,
+      "approche": "Du parking, emprunter le sentier touristique qui descend à la cascade. Au panneau \"accès dangereux\", descendre vers la droite pour se rendre au sommet de la cascade.",
+      "descente": "La cascade (donnée entre 72 m et 78 m) n'est pas équipée. Il faut donc l'équiper en fixe : il faut prévoir 2 à 3 plaquettes de 8 mm + 80 m de corde pour la cascade + 20 m à 30 m de corde pour approcher les chevilles, qui se situent en RG légèrement en contrebas et hors d'eau. Attention : l'état des chevilles est moyen (utiliser un répartiteur en sangle ou un noeud de mickey).\n\nLors de notre dernier passage, 2 goujons permettant la descente hors d'eau avaient été installés. Les frottement se gèrent facilement. Espérons qu'ils resteront longtemps.",
+      "retour": "Remonter par un sentier évident en RG en haut de la cascade pour la déséquiper puis au parking.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "Bien maîtriser les techniques de corde et d'équipement.\n\nUne des plus belles cascades du secteur. Il est regrettable qu'elle soit si seule :-(\n\nLe plateau en haut de cascade est large et permet de s'équiper en toute tranquilité.\n\nUne vire se trouve 14 mètres avant la fin. Celle-ci permet de se détacher et de sauter pour ceux qui veulent (après avoir sondé bien sûr)"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21096,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.828335,
+        "longitude": 5.192778,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.828335,
+      "longitude": 5.192778,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_774008f93c089927",
+          "kind": "TOPOGUIDE",
+          "title": "100 descentes de canyons autour de Grenoble",
+          "authors": [
+            "Arnaud Astier"
+          ],
+          "publicationYear": 2015,
+          "reference": "978-2-7466-7754-8",
+          "editor": "auto-édition",
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/194/100-Descentes-de-Canyons-autour-de-Grenoble.html"
+        },
+        {
+          "id": "biblio_0f06b44eb9a42186",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons du Vercors et Alentours",
+          "authors": [
+            "J-C. Botti",
+            "B. Rosset",
+            "Y. Launay",
+            "C. Larribe",
+            "T. Larribe",
+            "Spéléo Club MJC de Tullins"
+          ],
+          "publicationYear": 1997,
+          "reference": "ISBN 2-7417-0211-X",
+          "editor": "Gap",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/12/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_4c66ec3c98484f0c",
+          "kind": "MAP",
+          "title": "3136 ET Combe-Laval (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

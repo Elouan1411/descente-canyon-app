@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:49:15.960714+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21401,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21401/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21401/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21401/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21401/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21401,
+    "identity": {
+      "nom": "Lago",
+      "nomComplet": "Fosso del Lago",
+      "prefixeNom": "Fosso del",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21401/Lago.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Abruzzes",
+      "departement": "Teramo",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.2,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 804,
+      "deniveleM": 333,
+      "longueurM": 3500,
+      "cascadeMaxM": 18,
+      "cordeMiniM": 20,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "??",
+      "descente": "??",
+      "retour": "??"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": "Quelques court encaissements esthétiques.",
+      "retour": null,
+      "engagement": "Faible, le GR suit le canyon.",
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21401,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.74995,
+        "longitude": 13.589026,
+        "label": "sentier vers Ripe traverse le Lago"
+      },
+      {
+        "canyonId": 21401,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.751259,
+        "longitude": 13.633701,
+        "label": "sortie après Salinello final"
+      },
+      {
+        "canyonId": 21401,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 42.747437,
+        "longitude": 13.580818,
+        "label": null
+      },
+      {
+        "canyonId": 21401,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 42.752552,
+        "longitude": 13.637069,
+        "label": "au fin du Salinello"
+      },
+      {
+        "canyonId": 21401,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 42.75288,
+        "longitude": 13.62412,
+        "label": "depart du sentier de Ripe à l'entrée Lago (sans navette)"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 42.747437,
+      "longitude": 13.580818,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

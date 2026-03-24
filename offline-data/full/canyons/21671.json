@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:17.206907+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21671,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21671/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21671/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21671/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21671/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21671,
+    "identity": {
+      "nom": "Mylopotamos",
+      "nomComplet": "Mylopotamos",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21671/Mylopotamos.html"
+    },
+    "location": {
+      "pays": "Grèce",
+      "region": "Thessaly",
+      "departement": "of Magnesia",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Pelion",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.7,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 180,
+      "deniveleM": 180,
+      "longueurM": 2000,
+      "cascadeMaxM": 17,
+      "cordeMiniM": 25,
+      "navette": "3.0km"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "2h30",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "aller au parking de la plage de Mylopotamos. Le canyon arrive a droite a la chapelle, quand vous regardez la mer. Laisser une voiture la.",
+      "accesAmont": "Remonter la route sur 3.1km et prendre une piste à gauche, montante. Poursuivre jusqu'à la propriété aux murs oranges et se garer là.",
+      "approche": "Prendre la piste descendante a droite. elle se transforme en sentier qui emmène au début du canyon.",
+      "descente": "Beau cadre, quelques sauts et toboggans sympa Il est possible d'en refaire plusieurs. arrivée a la mer très jolie, bien pour se mettre en jambe.",
+      "retour": "Remonter a la chapelle par un escalier.",
+      "engagement": "Peu engagé.",
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21671,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 39.363434,
+        "longitude": 23.16081,
+        "label": "premier départ de la route"
+      },
+      {
+        "canyonId": 21671,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 39.37352,
+        "longitude": 23.20364,
+        "label": "arrivée 2nde partie"
+      },
+      {
+        "canyonId": 21671,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 39.363235,
+        "longitude": 23.159866,
+        "label": null
+      },
+      {
+        "canyonId": 21671,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 39.373985,
+        "longitude": 23.203897,
+        "label": null
+      },
+      {
+        "canyonId": 21671,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 39.371796,
+        "longitude": 23.176003,
+        "label": "parking pour arrivée 1ère partie/départ 2nde partie"
+      },
+      {
+        "canyonId": 21671,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 39.369675,
+        "longitude": 23.176689,
+        "label": "arrivée 1ère partie et départ 2nde partie"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 39.363235,
+      "longitude": 23.159866,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_80a95364882638d9",
+          "kind": "MAP",
+          "title": "33 Mont Pelion (Road editions)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,143 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:35.573914+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21756,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21756/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21756/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21756/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21756/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21756,
+    "identity": {
+      "nom": "Sababach",
+      "nomComplet": "Sababach, Reintalbach, Reintalschlucht",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21756/Sababach.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Tyrol",
+      "departement": "Politischer Bezirk Reutte",
+      "communePrincipale": "Reutte",
+      "communes": [
+        "Reutte"
+      ],
+      "massif": "Tannheimer",
+      "bassin": "Lech",
+      "coursEau": "Sababach"
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.5,
+      "nbVotes": 5
+    },
+    "metrics": {
+      "altitudeDepartM": 1080,
+      "deniveleM": 250,
+      "longueurM": 900,
+      "cascadeMaxM": 42,
+      "cordeMiniM": 45,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h",
+      "descente": "5h",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "De Kempten (Bavière) par autoroute A7 et un tunnel vers Reutte (Autriche, Tirol). Après le tunnel (frontière Allemagne/Autriche) vous partirez sur la vieille route vers Reutte (A314). Vous passez Musau (2,5km) et le pont sur Sababach (3,5km). 500m après le pont (Brandstatt) la piste à droite (Gasthaus Bärenfalle). Ici vous garez la voiture.",
+      "accesAmont": null,
+      "approche": "De Bärenfalle la piste forestier vers l'Est et le haut. Vous arrivez une autre piste (environ 35min). Ici à droite jusqu'à la riviere.",
+      "descente": null,
+      "retour": "Après l'encaissement vous sortirez de la rivière à droite et emprunter la route vers Bärenfalle.",
+      "engagement": null,
+      "periode": "très aquatique",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21756,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.518303,
+        "longitude": 10.670042,
+        "label": null
+      },
+      {
+        "canyonId": 21756,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.522419,
+        "longitude": 10.676136,
+        "label": null
+      },
+      {
+        "canyonId": 21756,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.517086,
+        "longitude": 10.689483,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.517086,
+      "longitude": 10.689483,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_80a52b6e4b57f154",
+          "kind": "TOPOGUIDE",
+          "title": "Tiroler Canyoningführer - The Canyoning guide for Tyrol",
+          "authors": [
+            "Alexander Riml",
+            "Gunnar Amor"
+          ],
+          "publicationYear": 2012,
+          "reference": "978-3-200-02343-7",
+          "editor": null,
+          "status": "en stock\n\n- 44,90 € -\n\nCommandez cet ouvrage dès maintenant !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/170/Tiroler-Canyoningfuhrer---The-Canyoning-guide-for-Tyrol.html"
+        },
+        {
+          "id": "biblio_a216ca92fa29ca51",
+          "kind": "TOPOGUIDE",
+          "title": "Canyoning in Bayern und Tirol",
+          "authors": [
+            "Werner Baumgarten"
+          ],
+          "publicationYear": 2010,
+          "reference": null,
+          "editor": null,
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1226/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_1264c301e3a70952",
+          "kind": "MAP",
+          "title": "4 Füssen-Ausserfern (Kompass)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

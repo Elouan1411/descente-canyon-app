@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:44:58.608331+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2304,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2304/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2304/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2304/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2304/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/2304/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 2304,
+    "identity": {
+      "nom": "San Guivanni",
+      "nomComplet": "San Guivanni",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2304/San-Guivanni.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Corse",
+      "departement": "Haute-Corse",
+      "communePrincipale": "U Guadu Grande",
+      "communes": [
+        "U Guadu Grande"
+      ],
+      "massif": "Monte Stello",
+      "bassin": "Olcani",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 1.5,
+      "nbVotes": 6
+    },
+    "metrics": {
+      "altitudeDepartM": 605,
+      "deniveleM": 316,
+      "longueurM": 2000,
+      "cascadeMaxM": 28,
+      "cordeMiniM": 30,
+      "navette": "1.5km"
+    },
+    "timings": {
+      "approche": "1h15",
+      "descente": "2h",
+      "retour": "5mn"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": "La piste d'accès en haut du canyon est officiellement interdite à la circulation bien qu'elle soit dans un état potable.",
+      "descente": "Attention aux frottements dans les rappels. Dans le rappel de 30m, il y a un relais peu visible avec moins de frottements.",
+      "retour": null,
+      "engagement": "Moyen, la fuite est difficile dans les cascades.",
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "Bien que trouver des vasques pleines de truite est agréable, les cascades manquent de caractères. Au mois de juillet, l'eau coule un peu. Mais après l'encaissement l'eau disparaît dans les blocs rendant l'ensemble fastidieux. Il semblerait qu'aprés le pont le cours d'eau soit parcouru (A vérifier)"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2304,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.805279,
+        "longitude": 9.390278,
+        "label": null
+      },
+      {
+        "canyonId": 2304,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.805,
+        "longitude": 9.384444,
+        "label": null
+      },
+      {
+        "canyonId": 2304,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 42.80722,
+        "longitude": 9.387222,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 42.80722,
+      "longitude": 9.387222,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_e078ea6264eda2fb",
+          "kind": "MAP",
+          "title": "4347 OT Cap Corse (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 232,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Corse) - 08 juin 2011",
+          "summary": "- Le canyonisme est interdit la nuit (sauf dérogation)\n\n- Le canyonisme est interdit s'il y a une alerte émise par Météo-France de niveau orange ou rouge en cours.\n\n- Le canyonisme est interdit aux mineurs de moins de 7 ans, sauf canyon évalué égal ou inférieur à V1-A3-E3\n\n- Les groupes auront un effectif maximum de 12 personnes, hors encadrement.",
+          "remark": "L'arrêté du 9 juillet 2019 pris conjointement par les préfectures de Corse-du-Sud et de Haute-Corse harmonise les réglementations existantes pour les deux départements.",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nArrêté préfectoral (Haute-Corse) n°2011-159-0008 du 8 juin 2011\n\nArrêté préfectoral modificatif (Corse-du-Sud et Haute-Corse) n°R20-2019-07-09-001 du 9 juillet 2019",
+          "effectiveDate": "08 juin 2011",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/232/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral (Haute-Corse) n°2011-159-0008 du 8 juin 2011",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem232_pj1.pdf"
+            },
+            {
+              "label": "Arrêté préfectoral modificatif (Corse-du-Sud et Haute-Corse) n°R20-2019-07-09-001 du 9 juillet 2019",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem232_pj2.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

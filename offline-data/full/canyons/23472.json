@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:54.360910+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23472,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23472/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23472/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23472/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23472/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23472,
+    "identity": {
+      "nom": "Gaoube",
+      "nomComplet": "Pich de Gaoube, La Gaoube",
+      "prefixeNom": "Pich de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23472/Gaoube.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Hautes-Pyrénées",
+      "communePrincipale": "Campan",
+      "communes": [
+        "Campan"
+      ],
+      "massif": "Montarrouye",
+      "bassin": "Adour",
+      "coursEau": "La Gaoube"
+    },
+    "rating": {
+      "cotation": "v5a4III",
+      "interet": 2.5,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 1380,
+      "deniveleM": 30,
+      "longueurM": 80,
+      "cascadeMaxM": 7,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "1h",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "Depuis Bagnères de Bigorre, suivre la route du col d'Aspin jusqu'au hameau de Payolle. Emprunter la route de la Hourquette d'Ancizan puis après 300m prendre une route goudronnée à droite qui se prolonge par une piste. Suivre la piste à gauche (ne pas prendre celle de droite interdite à la circulation). Elle est accidentée mais praticable. Elle amène non loin du Courtaou des Esclozes. Se garer au mieux pour ne pas gêner les bergers.",
+      "accesAmont": null,
+      "approche": "Suivre à pied le sentier en rive droite du cours d'eau pour arriver rapidement à l'encaissement.",
+      "descente": "3 rappels.\n\nLe premier R12 (rive gauche) se fait directement depuis un bosquet d'arbres.\n\nLe deuxième R8 (rive droite) demande une petite escalade facile mais exposée pour atteindre le relais (1 spit). 1 autre spit pour s'assurer au départ de l'escalade et installer une main courante pour les suivants.\n\nLe 3° R14 (1 spit rive gauche) franchit une vasque suspendue (mouvements d'eau). Franchissement au moyen d'une ancre flottante et en envoyant plusieurs sacs afin de s'aider pour sortir de la vasque. Guidé pour les suivants.\n\nPossibilité d'équiper une main courante et rappel en rive droite au dessus du bloc suspendu afin d'éviter la vasque et l'actif.",
+      "retour": "Suivre la gorge sur 100m pour sortir rive droite et suivre le sentier de l'aller.",
+      "engagement": "Court mais engagé.\n\nUne fois passé le 1° rappel, pas d'échappatoire.",
+      "periode": "Attention débit toujours conséquent avec un gros bassin d'alimentation.\n\nPréférer l'automne et l'étiage.\n\nDébit estimé entre 400 et 500 l/s le 11/07/2015.",
+      "geologie": null,
+      "historique": "Le 11/07/2015 par Matthieu Biarneix, Bernard Javerzat, Jean-Pierre Rullier et Mickaël Ménager.",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23472,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.920845,
+        "longitude": 0.247176,
+        "label": null
+      },
+      {
+        "canyonId": 23472,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 42.933258,
+        "longitude": 0.254149,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 42.933258,
+      "longitude": 0.254149,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_2be2581234231e7f",
+          "kind": "MAP",
+          "title": "1747 ET Bagneres-de-Bigorre (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

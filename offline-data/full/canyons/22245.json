@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:20.734230+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22245,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22245/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22245/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22245/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22245/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22245,
+    "identity": {
+      "nom": "Bras Piton",
+      "nomComplet": "Bras Piton",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22245/Bras-Piton.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Bras-Panon",
+      "departement": "La Réunion",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Eden",
+      "bassin": "Plaine des Lianes",
+      "coursEau": "Bras Piton"
+    },
+    "rating": {
+      "cotation": "v5a4IV",
+      "interet": 3.0,
+      "nbVotes": 16
+    },
+    "metrics": {
+      "altitudeDepartM": 860,
+      "deniveleM": 540,
+      "longueurM": 3750,
+      "cascadeMaxM": 160,
+      "cordeMiniM": 80,
+      "navette": "3.0km"
+    },
+    "timings": {
+      "approche": "45min",
+      "descente": "6h30",
+      "retour": "1h"
+    },
+    "topo": {
+      "accesAval": "de la Cascade du Chien (difficile à visualiser).",
+      "accesAmont": null,
+      "approche": "Suivre l'un ou l'autre des sentiers qui se rejoignent juste avant le barrage qui matérialise le début du canyon.",
+      "descente": "Voir topo Ricaric ou le site de la ligue réunionnaise.\n\nUne nouvelle ligne a été ouverte fin 2009 en RG du grand cassé. C'est une ligne propre et qui évite les problèmes de coincement de corde de la RD.\n\nR1 sur arbre (évident) - 42m mesurés\n\nR2 - environ 55m\n\nR3 - environ 70m avec frottements a gérer - relais et rappel bien exposés aux embruns!",
+      "retour": "Difficile à trouver !!\n\nVoir topos",
+      "engagement": "échappatoire RD avant le R7.\n\nUne fois dans le cassé, il n'y a plus beaucoup de possibilités de se mettre à l'abri.",
+      "periode": null,
+      "geologie": null,
+      "historique": "1992 : Frédéric et Marcel Faure, Dominique Dumesnil et Vincent Kuhmmunch.\n\nSeptembre 2009 : Nouvelle ligne en RG du cassé par les membres du Club FFS de CASCARUN",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22245,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": -21.030045,
+        "longitude": 55.593597,
+        "label": "le point je l'ai identifié à partir du barrage de bras piton. à droite du GR pas trés visible du GR point à identifier une grosse canalisation d'eau sur le GR puis environ 200m petit plateau avec une petite dalle de beton c'est là à droite."
+      },
+      {
+        "canyonId": 22245,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": -21.008465,
+        "longitude": 55.613609,
+        "label": "lon=-21.008465, lat=55.613611 Affluent en rive gauche, sortie rive droite au niveau d'une mini plage de sable/galets."
+      },
+      {
+        "canyonId": 22245,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": -21.030312,
+        "longitude": 55.611324,
+        "label": null
+      },
+      {
+        "canyonId": 22245,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": -21.009596,
+        "longitude": 55.619026,
+        "label": null
+      },
+      {
+        "canyonId": 22245,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": -21.025414,
+        "longitude": 55.606575,
+        "label": "échappatoire RD"
+      },
+      {
+        "canyonId": 22245,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": -21.029354,
+        "longitude": 55.603817,
+        "label": "Echappatoire RD"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": -21.030312,
+      "longitude": 55.611324,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_13d26f471caae438",
+          "kind": "MAP",
+          "title": "4403RT Saint-Benoît / Saint-André (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:32.166340+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23904,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23904/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23904/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23904/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23904/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23904,
+    "identity": {
+      "nom": "Baisse de Vachière",
+      "nomComplet": "Ravin de Baisse de Vachière, Aucun nom",
+      "prefixeNom": "Ravin de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23904/Baisse-de-Vachiere.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-de-Haute-Provence",
+      "communePrincipale": "Prads-Haute-Bléone",
+      "communes": [
+        "Prads-Haute-Bléone"
+      ],
+      "massif": null,
+      "bassin": "Bléone",
+      "coursEau": "Aucun nom"
+    },
+    "rating": {
+      "cotation": "v3a1I",
+      "interet": 1.5,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 1840,
+      "deniveleM": 140,
+      "longueurM": 500,
+      "cascadeMaxM": 18,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "10min",
+      "descente": "1h15",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": "De Digne-les-Bains, prendre la direction de Barcelonnette et remonter la Bléone par la D900 jusqu'à La Javie, puis prendre à droite la D107 jusqu'à Prads-Haute-Bléone. De là, emprunter la petite route qui traverse La Blèone direction la via-ferrata après Le Moulin. La route se transforme vite en piste, qu'il faudra emprunter sur 9,5 km . Donc, remonter la piste et rester à gauche à l'intersection au niveau des panneaux en bois (VTT). Rouler environ 1 km et ignorer la piste qui descend à gauche. on continue toujours sur cette même piste sur environ 3 km pour prendre celle de gauche qui se rend en fond de vallée. 1,5 km plus loin, rester sur la piste de droite pour vous rendre et vous garer au col (Baisse de Vachière Alt 1884 m).",
+      "accesAmont": null,
+      "approche": "Descendre vers le talweg au milieu du pré. Le suivre un court moment avant de le quitter au niveau d'une barre rocheuse et quelques mélèzes pour vous rendre sur le ruisseau à gauche (départ de la descente).",
+      "descente": "C4 sur 1 pt (bloc dans lit du ruisseau), C18 sur 1 pt en RD, C5 sur anneau de corde sans maillon en RD, C5 sur AN en RG, C13 sur 1 pt en RG, marche, D3 au chaos de blocs, marche et sortir en RG.",
+      "retour": "A ce niveau, il est possible d'enchaîner avec les trois cascades de la barre rocheuse de Basse Vachière plus bas en RG. Sans quoi, remonter la pente herbeuse en RG jusqu'à la piste de la cabane de Vachière et rejoindre le parking.",
+      "engagement": "Aucun.",
+      "periode": "Sec à la période estivale.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Equipement : terrain d'aventure\n\nDescente à enchaîner avec les trois cascades de basse Vachière. Jonction en 5 min depuis la sortie de la descente."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23904,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.194706,
+        "longitude": 6.517688,
+        "label": null
+      },
+      {
+        "canyonId": 23904,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.191597,
+        "longitude": 6.515671,
+        "label": null
+      },
+      {
+        "canyonId": 23904,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.197826,
+        "longitude": 6.517173,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.197826,
+      "longitude": 6.517173,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_a84f388c53925654",
+          "kind": "MAP",
+          "title": "3440 ET Digne-Les-Bains - La Javie (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

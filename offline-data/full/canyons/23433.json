@@ -1,0 +1,157 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:47.294768+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23433,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23433/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23433/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23433/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23433/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/23433/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 23433,
+    "identity": {
+      "nom": "Tassi",
+      "nomComplet": "Torrent de Tassi, Cascade de l'Undella, Tassi",
+      "prefixeNom": "Torrent de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23433/Tassi.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Corse",
+      "departement": "Haute-Corse",
+      "communePrincipale": "San-Gavino-di-Fiumorbo",
+      "communes": [
+        "San-Gavino-di-Fiumorbo"
+      ],
+      "massif": null,
+      "bassin": "Abatesco",
+      "coursEau": "Tassi"
+    },
+    "rating": {
+      "cotation": "v4a1II",
+      "interet": 1.8,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 1170,
+      "deniveleM": 160,
+      "longueurM": 250,
+      "cascadeMaxM": 40,
+      "cordeMiniM": 40,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h30",
+      "descente": "1h30",
+      "retour": "1h"
+    },
+    "topo": {
+      "accesAval": "Parking identique au ruisseau de Macini et au ruisseau de Benacciola :\n\nDe GHISONACCIA, aller à SAN GAVINO DI FIUMORBO par la D244, la D145, et la D45.\n\nContinuer après le village jusqu'à la fin de la route.\n\nPasser devant le gîte de CATASTAGHJU puis les terrains de tennis et le stand de tir.\n\nSe garer sur le petit parking sur la gauche avant la passerelle en béton (voie sans issue).",
+      "accesAmont": null,
+      "approche": "Depuis le parking, suivre le chemin qui traverse le pont et remonte sur la droite en direction de \"Bocca di Bianca Usciolu\".\n\nPasser un petit portail en métal (ne pas nobler de le refermé après votre passage) et suivre ce bon chemin, balisé de point jaune et de cairns.\n\nAprès environ 1 h et 2,6 km de chemin presque plat, vous trouverez l'intersection avec le chemin de retour qui part tout droit(flèche et point jaune sur un rocher).\n\nMonter sur la droite le chemin qui devient plus raide et qui fait plusieurs épingles sur 850 m.\n\nLe chemin devient plat. Passer le ruisseau de Benacciola (assez bien marqué) et passer un espace ouvert sur la gauche avec un grand arbre en plein milieu.\n\nAu bout de cet espace, quand le chemin repart sur une épingle à droite, descendre au mieux dans le vallon en face en traversant une petit forêt (présence de ronce).\n\nLa première cascade commence 50 m plus loin.",
+      "descente": "- C18 (AN RD)\n\n- C30, 2g + 1m RG (attention : frottement!)\n\n- C24, AN RD\n\n- C15, AN RG\n\n- C10, 2 sangles, 1g + 1m (attention: 2 sangles anciennes anciennes)\n\n- C40, 2g + 1m (attention: ancien et frottement)\n\n- C10 non équipée. La désescalade étant dangereuse, il est conseillé de mettre une sangle sur sur une pointe rocheuse.\n\n- 2 x 10 m de désescalade pouvant se schuter.",
+      "retour": "Poursuivre quelques dizaines de mètre jusqu'à retrouver le chemin balisé de point jaune qui traverse le ruisseau.\n\nLe suivre sur la gauche jusqu'à retrouver l'intersection avec le chemin d'approche (5 min).\n\nRetour à la voiture en 1 h.",
+      "engagement": "Faible. Vallon assez ouvert.\n\nCependant, plusieurs rappels se font dans l'actif.\n\nCela peut être dangereux avec beaucoup d'eau.",
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "Possibilité d'enchaîner avec le ruisseau de Benacciola (pour les collectionneurs seulement), vu que cela évite de refaire les 2 x 1 heure d'approche et de retour.\n\nBelle vue en haut des cascades."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23433,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 41.94043,
+        "longitude": 9.23688,
+        "label": null
+      },
+      {
+        "canyonId": 23433,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 41.941391,
+        "longitude": 9.23907,
+        "label": null
+      },
+      {
+        "canyonId": 23433,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 41.96006,
+        "longitude": 9.256614,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 41.96006,
+      "longitude": 9.256614,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_2bafc8e0f7a42d9c",
+          "kind": "TOPOGUIDE",
+          "title": "La Corse en Canyon",
+          "authors": [
+            "Association CorseCanyon"
+          ],
+          "publicationYear": 2018,
+          "reference": null,
+          "editor": "auto-edition",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/1127/La-Corse-en-Canyon-3eme-edition.html"
+        },
+        {
+          "id": "biblio_eeda460e91ce529f",
+          "kind": "TOPOGUIDE",
+          "title": "Corse Canyons (2ème édition)",
+          "authors": [
+            "Franck Jourdan",
+            "Jean-François Fiorina"
+          ],
+          "publicationYear": 2006,
+          "reference": "2-84698-169-8",
+          "editor": "Albiana",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/133/Corse-Canyons.html"
+        }
+      ],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 232,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Corse) - 08 juin 2011",
+          "summary": "- Le canyonisme est interdit la nuit (sauf dérogation)\n\n- Le canyonisme est interdit s'il y a une alerte émise par Météo-France de niveau orange ou rouge en cours.\n\n- Le canyonisme est interdit aux mineurs de moins de 7 ans, sauf canyon évalué égal ou inférieur à V1-A3-E3\n\n- Les groupes auront un effectif maximum de 12 personnes, hors encadrement.",
+          "remark": "L'arrêté du 9 juillet 2019 pris conjointement par les préfectures de Corse-du-Sud et de Haute-Corse harmonise les réglementations existantes pour les deux départements.",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nArrêté préfectoral (Haute-Corse) n°2011-159-0008 du 8 juin 2011\n\nArrêté préfectoral modificatif (Corse-du-Sud et Haute-Corse) n°R20-2019-07-09-001 du 9 juillet 2019",
+          "effectiveDate": "08 juin 2011",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/232/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral (Haute-Corse) n°2011-159-0008 du 8 juin 2011",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem232_pj1.pdf"
+            },
+            {
+              "label": "Arrêté préfectoral modificatif (Corse-du-Sud et Haute-Corse) n°R20-2019-07-09-001 du 9 juillet 2019",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem232_pj2.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

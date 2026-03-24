@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:44.791254+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21793,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21793/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21793/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21793/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21793/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21793,
+    "identity": {
+      "nom": "Dufour",
+      "nomComplet": "Ravine Dufour, Confluence",
+      "prefixeNom": "Ravine",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21793/Dufour.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Vieux-Habitants",
+      "departement": "Guadeloupe",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.3,
+      "nbVotes": 8
+    },
+    "metrics": {
+      "altitudeDepartM": 350,
+      "deniveleM": 120,
+      "longueurM": 700,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 25,
+      "navette": "1.0km"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "1h30",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": "En voiture (ou à pieds, 1km en forte montée) prendre la route de droite jusqu'à son extrémité, puis emprunter le sentier qui conduit immédiatement à la ravine.",
+      "approche": "On croise la ravine 50m après que la route se soit transformée en sentier.",
+      "descente": "Le début de la ravine est encombré de végétation, un peu de marche entrecoupée par quelques rappels.",
+      "retour": "Un peu avant la jonction avec la rivière Beaugendre, prendre une trace en RG au niveau d'un bosquet de bambous qui rejoint le bout de la route où vous avez laissé la voiture.",
+      "engagement": "Faible, quelques traces en RG au niveau des bassins semblent être utilisés pour la baignade et la pêche.",
+      "periode": "Ravine faiblement alimentée.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Merci de respecter les cultures que vous traverserez lors des marches d'approche et de retour."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21793,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 16.104328,
+        "longitude": -61.729904,
+        "label": null
+      },
+      {
+        "canyonId": 21793,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 16.106474,
+        "longitude": -61.736469,
+        "label": null
+      },
+      {
+        "canyonId": 21793,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 16.10565,
+        "longitude": -61.738316,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 16.10565,
+      "longitude": -61.738316,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_823671d200a5451f",
+          "kind": "MAP",
+          "title": "4605GT Basse-Terre / La Soufrière / Les Saintes / Parc National de la Guadeloupe (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

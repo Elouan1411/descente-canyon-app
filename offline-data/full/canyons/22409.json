@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:56.194322+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22409,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22409/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22409/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22409/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22409/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22409,
+    "identity": {
+      "nom": "Zonari + Sarakina [+ Right]",
+      "nomComplet": "Zonari + Sarakina [+ Right]",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22409/Zonari--Sarakina--Right.html"
+    },
+    "location": {
+      "pays": "Grèce",
+      "region": "Crete",
+      "departement": "Lasithi",
+      "communePrincipale": "Metaxochori",
+      "communes": [
+        "Metaxochori"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 1.5,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": 500,
+      "longueurM": 3500,
+      "cascadeMaxM": 35,
+      "cordeMiniM": 35,
+      "navette": "20.0km"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "3h30",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "Depuis Viannos prendre la direction de Ierapietra puis quitter la nationale en prenant la direction de Males. On arrive assez rapidement au village de Mithi poursuivre la route environ 2km et juste avant de traverser le collecteur prendre à gauche et garer la voiture sur un grand parking à la sortie des gorges de Sarakina ( barrage ).\n\nAvec le second véhicule, poursuivre vers la route et suivre la direction de Hristos (ne plus suivre Males). Poursuivre la route principale goudronnée jusqu'au village de Metaxohori, la route se transforme en piste, garder la piste principale, vous passez un portail et garez vous vous au panneau en bois écrit en grec (voir photo).",
+      "accesAmont": null,
+      "approche": "Du panneau descendre directement dans le lit.",
+      "descente": "La descente se décompose en 4 parties:\n\nTout d'abord suivre le lit de Zonari (qq désescalades) jusqu'à arriver à un affluent en eau et étroit en RD.\n\nPasser la confluence et remonter tout de suite à droite en suivant au départ un sentier. Vous remontez alors jusqu'au départ de l'encaissement de l'affluent appelé \"canyon Right\" (10 min).\n\nTrès bel encaissement avec plusieurs ressauts nécessitant la corde (maxi 15m)..\n\nPuis de nouveau dans Zonari ou l'eau se perd très vite, poursuivre la ballade (marches entrecoupées de quelques rappels mais surtout beaucoup de désescalades).\n\nA la fin de Zonari vous tombez sur Sarakina toujours en eau: très belle gorge touristique qui peut se faire sans corde si on shunte la C8 (ca serait dommage).",
+      "retour": "Au captage prendre le sentier RD qui ramène au parking.",
+      "engagement": null,
+      "periode": "Sarakina toujours en eau, Zonari souvent sec mais des traces de crues bien visibles, Canyon Right doit couler assez facilement au printemps.",
+      "geologie": null,
+      "historique": "Canyon Right équipé (spits et piton) par lolo B, lolo F et Arno, il manquerait un point pour le 2eme ressaut qui peut être difficile à désescalader.",
+      "remarques": "Le kilométrage sur la carte du topo de Crête est faux, il y a un décalage de quelques km."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22409,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 35.06089,
+        "longitude": 25.552139,
+        "label": null
+      },
+      {
+        "canyonId": 22409,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 35.047756,
+        "longitude": 25.579336,
+        "label": null
+      },
+      {
+        "canyonId": 22409,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 35.053501,
+        "longitude": 25.577276,
+        "label": "confluence Zonari Sarakina"
+      },
+      {
+        "canyonId": 22409,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 35.05574,
+        "longitude": 25.555582,
+        "label": "Arrivée \"Canyon Right\""
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 35.06089,
+      "longitude": 25.552139,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

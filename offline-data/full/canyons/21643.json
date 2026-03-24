@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:10.549249+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21643,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21643/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21643/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21643/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21643/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21643,
+    "identity": {
+      "nom": "Navedo",
+      "nomComplet": "Cañon de Navedo",
+      "prefixeNom": "Cañon de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21643/Navedo.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Cantabria",
+      "departement": "Provincia de Cantabria",
+      "communePrincipale": "Peñarrubia",
+      "communes": [
+        "Peñarrubia"
+      ],
+      "massif": null,
+      "bassin": "Rio Deva",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.3,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": 130,
+      "longueurM": 650,
+      "cascadeMaxM": 22,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "1h30",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21643,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.249222,
+        "longitude": -4.58117,
+        "label": null
+      },
+      {
+        "canyonId": 21643,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.246391,
+        "longitude": -4.583874,
+        "label": null
+      },
+      {
+        "canyonId": 21643,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.245327,
+        "longitude": -4.584818,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.245327,
+      "longitude": -4.584818,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_6b4e9496806367ff",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://ropewiki.com/Navedo",
+          "url": "http://ropewiki.com/Navedo"
+        },
+        {
+          "id": "resource_3ecba88a72c26475",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/Canyons/NavedoCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/Canyons/NavedoCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

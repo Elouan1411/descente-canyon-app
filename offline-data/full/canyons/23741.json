@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:56.107773+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23741,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23741/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23741/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23741/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23741/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23741,
+    "identity": {
+      "nom": "Chillar",
+      "nomComplet": "Barranco de Chillar",
+      "prefixeNom": "Barranco de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23741/Chillar.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Andalucía",
+      "departement": "Málaga",
+      "communePrincipale": "Nerja",
+      "communes": [
+        "Nerja"
+      ],
+      "massif": "Sierra Almijara",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v1a2II",
+      "interet": 1.3,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 430,
+      "deniveleM": 365,
+      "longueurM": 6500,
+      "cascadeMaxM": null,
+      "cordeMiniM": null,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "??",
+      "descente": "3h",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": "avec navette (voir Sanchez) ou sans navette de la-bas vers le-haut et retour",
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23741,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 36.814682,
+        "longitude": -3.862258,
+        "label": "depart pour integragral ou point of return: captage d'eau"
+      },
+      {
+        "canyonId": 23741,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 36.775074,
+        "longitude": -3.879654,
+        "label": "sans navette: depart et sortie"
+      },
+      {
+        "canyonId": 23741,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 36.799778,
+        "longitude": -3.854747,
+        "label": "pour Chillar integral: Collado de los Apretaderos (livre Sanchez)"
+      },
+      {
+        "canyonId": 23741,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 36.771088,
+        "longitude": -3.878077,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 36.799778,
+      "longitude": -3.854747,
+      "label": "pour Chillar integral: Collado de los Apretaderos (livre Sanchez)"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_6a80b30c208de07b",
+          "kind": "MAP",
+          "title": "1040 (18-43) Zafarraya (IGN MTN50)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_de2c9f78a6728be1",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://utreruta.blogspot.de/2012/07/rio-chillar.html",
+          "url": "http://utreruta.blogspot.de/2012/07/rio-chillar.html"
+        },
+        {
+          "id": "resource_c1599c227abd535b",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://wandern-in-andalusien.de/html/iman.html",
+          "url": "http://wandern-in-andalusien.de/html/iman.html"
+        },
+        {
+          "id": "resource_b92e0cca3564cad2",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://es.wikiloc.com/wikiloc/view.do?id=3082698",
+          "url": "http://es.wikiloc.com/wikiloc/view.do?id=3082698"
+        },
+        {
+          "id": "resource_0db7efe810cbf24a",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.wikiloc.com/wikiloc/view.do?id=10346777",
+          "url": "http://www.wikiloc.com/wikiloc/view.do?id=10346777"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

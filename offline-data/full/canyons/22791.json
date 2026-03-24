@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:54:22.692375+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22791,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22791/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22791/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22791/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22791/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22791,
+    "identity": {
+      "nom": "Springbach Hinterer",
+      "nomComplet": "Springbach Hinterer, Springbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22791/Springbach-Hinterer.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Haute-Autriche",
+      "departement": "Gmunden",
+      "communePrincipale": "Grünau im Almtal",
+      "communes": [
+        "Grünau im Almtal"
+      ],
+      "massif": "Totes Gebirge - Massif Mort",
+      "bassin": "Traun",
+      "coursEau": "Springbach"
+    },
+    "rating": {
+      "cotation": "v3a3III",
+      "interet": 2.0,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 720,
+      "deniveleM": 100,
+      "longueurM": 300,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "25min",
+      "descente": "1h20",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "Sortir de la A9 à Ried im Traunkreis et aller à Grünau an der Alm.\n\nContinuer et tourner à gauche (Habernau - Gasthof Jagersimmerl) ca. 3 km.\n\nGarer la voiture avant le pont sur le Straneggbach.",
+      "accesAmont": null,
+      "approche": "Monter sans sente en rive gauche, prendre la piste à gauche et, 100m au-dessus du pont, rejoindre le cours d'eau.",
+      "descente": "Quelques beaux rappels, encaissements.",
+      "retour": "Retour rive gauche du Straneggbach.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22791,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.76532,
+        "longitude": 13.989158,
+        "label": null
+      },
+      {
+        "canyonId": 22791,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.769474,
+        "longitude": 13.987699,
+        "label": null
+      },
+      {
+        "canyonId": 22791,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.772026,
+        "longitude": 13.982849,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.772026,
+      "longitude": 13.982849,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_c993737a59dcd424",
+          "kind": "MAP",
+          "title": "15/2 Totes Gebirge Mitte (Alpenvereins (AV) Karte)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_2201c87162f25160",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/C.....ererSpringbachCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/C.....ererSpringbachCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,170 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:45:41.704039+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2482,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2482/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2482/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2482/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2482/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/2482/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 2482,
+    "identity": {
+      "nom": "Pont du Diable - Creux Billard",
+      "nomComplet": "Cascades du Pont du Diable - Creux Billard, Lison du haut, Lison",
+      "prefixeNom": "Cascades du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2482/Pont-du-Diable---Creux-Billard.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Bourgogne-Franche-Comté",
+      "departement": "Doubs",
+      "communePrincipale": "Sainte-Anne",
+      "communes": [
+        "Sainte-Anne"
+      ],
+      "massif": "Jura",
+      "bassin": "Lison",
+      "coursEau": "Lison"
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 1.0,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 550,
+      "deniveleM": null,
+      "longueurM": null,
+      "cascadeMaxM": 90,
+      "cordeMiniM": null,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "??",
+      "descente": "??",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": ", prendre direction Nant /s St Anne jusqu'à Crouzet Migette. Prendre à gauche direction Pont du Diable-St Anne.",
+      "approche": null,
+      "descente": "Ça commence par la cascade du pont du diable d'une trentaine de mètres. Ensuite longue marche en rivière (>2kms) pour arriver à la cascade du Creux Billard (~90m, plusieurs relais intermédiaire)\n\nLe Creux Billard coule rarement, par contre peu être très gros en crue",
+      "retour": "Arrivée sur le site touristique des sources du Lison",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "Le pont du diable se pratique en cascade de glace l'hiver la descente en rappel depuis le pont est interdite"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2482,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.949718,
+        "longitude": 5.998471,
+        "label": null
+      },
+      {
+        "canyonId": 2482,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 46.963612,
+        "longitude": 6.0125,
+        "label": "Creux billard"
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 46.949718,
+      "longitude": 5.998471,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_876e7cdf8cadfc42",
+          "kind": "TOPOGUIDE",
+          "title": "Inventaire canyons, gorges et cascades du Doubs",
+          "authors": [
+            "Christian Jeannoutot"
+          ],
+          "publicationYear": 2006,
+          "reference": null,
+          "editor": "Comité Départemental de Spéléologie du Doubs",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1153/topoguide.html"
+        },
+        {
+          "id": "biblio_8b7dbaf76b9aec2d",
+          "kind": "TOPOGUIDE",
+          "title": "Escalade en Haut Lieu - Loue/Lison",
+          "authors": [
+            "Philippe Gleizes"
+          ],
+          "publicationYear": 1999,
+          "reference": "9782951355408",
+          "editor": "Escalade dans le Doubs",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1195/topoguide.html"
+        }
+      ],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_dab365ac896d5427",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://clubmontagne.epfl.ch/images/generale/diabler.jpg",
+          "url": "http://clubmontagne.epfl.ch/images/generale/diabler.jpg"
+        },
+        {
+          "id": "resource_44d4d3a0eb66b39e",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.juraspeleo.com/docu/photos/archives/1969/69_05.htm",
+          "url": "http://www.juraspeleo.com/docu/photos/archives/1969/69_05.htm"
+        },
+        {
+          "id": "resource_e395e58d306be26e",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.juraspeleo.com/divers/vrac/ca...../doubs/n/billard.htm",
+          "url": "http://www.juraspeleo.com/divers/vrac/ca...../doubs/n/billard.htm"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 132,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté",
+          "summary": null,
+          "remark": null,
+          "details": "Consultez le\n\ntexte (ou extrait)\n\nCes sites sont concernées par une procédure Natura 2000. La pratique est interdite pour certains et autorisée pour d'autres. Plus d'informations dans les fiches d'objectifs ci-joint.\n\nFiche Action N°46 Lison - Natura 2000\n\nFiche Action N°60 Loue - Natura 2000",
+          "effectiveDate": null,
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/132/legislation.html",
+          "attachments": [
+            {
+              "label": "Fiche Action N°46 Lison - Natura 2000",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/arrete132-lison-46.pdf"
+            },
+            {
+              "label": "Fiche Action N°60 Loue - Natura 2000",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/arrete132-loue-60.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

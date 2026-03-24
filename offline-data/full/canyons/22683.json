@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:54.696923+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22683,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22683/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22683/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22683/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22683/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22683,
+    "identity": {
+      "nom": "Lavandignas",
+      "nomComplet": "Lavandignas",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22683/Lavandignas.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Flims",
+      "departement": "Graubünden/Grigioni/Grischun",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Piz Segnas",
+      "bassin": "Vorderrhein",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v5a5V",
+      "interet": 2.8,
+      "nbVotes": 14
+    },
+    "metrics": {
+      "altitudeDepartM": 2110,
+      "deniveleM": 520,
+      "longueurM": 2000,
+      "cascadeMaxM": 18,
+      "cordeMiniM": 25,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "2h",
+      "descente": "7h",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": "De Barghis à la partie amont 2h, à la partie avale 1h15",
+      "descente": "Partie amont premier encaissement 20-30m de profondeur, étroit et sculpté magnifique, deuxième encaissement sous l'alpe escalier de vasques. Partie aval start 100m au dessus le pont (où on a un bon accès), de là, passages très étroits avec tunnels, canyon bien sculpté. Au passage ouvert au genou il est conseillé de sortir RG - la suite est plein de bois (sans la masse de troncs, serait aussi superbe).",
+      "retour": "15min à Barghis",
+      "engagement": null,
+      "periode": "L'eau bleue, saison après la principale fonte de neige (juillet - octobre), restes de neige tout l'année au versant. 24h après pluie forte normalement débit correct.",
+      "geologie": "Scié au Calcaire du Verrucano au-dessus.",
+      "historique": "18.07.2010 ouverture du pont à la plaine de Barghis par Patrick Chollot, Timo Stammwitz; partie en haut par Andreas Senn et camarades.",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22683,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.87693,
+        "longitude": 9.324759,
+        "label": "Départ amont"
+      },
+      {
+        "canyonId": 22683,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.863457,
+        "longitude": 9.321545,
+        "label": null
+      },
+      {
+        "canyonId": 22683,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.845352,
+        "longitude": 9.320687,
+        "label": "Parking à payer, arret du bus"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.845352,
+      "longitude": 9.320687,
+      "label": "Parking à payer, arret du bus"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_9179b25820804ecc",
+          "kind": "MAP",
+          "title": "247 Sardona (Carte Nationale Suisse)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_3ed0531ae37e8ffb",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.grandcanyons.ch/de/imgGallery_82_0_pictList.html",
+          "url": "http://www.grandcanyons.ch/de/imgGallery_82_0_pictList.html"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

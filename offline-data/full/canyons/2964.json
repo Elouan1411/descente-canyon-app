@@ -1,0 +1,203 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:47:38.003230+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2964,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2964/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2964/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2964/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2964/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2964,
+    "identity": {
+      "nom": "Trasito (inférieur)",
+      "nomComplet": "Barranco de Trasito (inférieur)",
+      "prefixeNom": "Barranco de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2964/Trasito-inferieur.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Aragón",
+      "departement": "Huesca",
+      "communePrincipale": "Tella-Sin",
+      "communes": [
+        "Tella-Sin"
+      ],
+      "massif": "Mt Perdu (Monte Perdido)",
+      "bassin": "Cinca",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 2.6,
+      "nbVotes": 32
+    },
+    "metrics": {
+      "altitudeDepartM": 1060,
+      "deniveleM": 230,
+      "longueurM": 1200,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 30,
+      "navette": "9.0km"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "3h30",
+      "retour": "5 ou 45min"
+    },
+    "topo": {
+      "accesAval": ", sur le parking d'Estaronillo.",
+      "accesAmont": null,
+      "approche": "Immédiat, on attaque au niveau du petit pont qui enjambe le Trasito. Fin de la partie sup, début du inf.",
+      "descente": "Une succession de petits encaissements avec des vasques intéressantes.",
+      "retour": "A la fin du canyon, poursuivre dans le lit pour retrouver le véhicule aval si on a fait la navette.\n\nSinon, au niveau de la ruine, un sentier s'élève rive droite pour atteindre en 30 minutes la route de Revilla. De là, descendre à droite sur le goudron pour retrouver la bergerie.\n\nAutre retour, il est possible de remonter en rive droite depuis Estaronillo en prenant toujours à gauche. Ce sentier ramène directement sous la bergerie du parking amont.",
+      "engagement": "Les encaissements ne sont pas continus.",
+      "periode": "Canyon rapidement à sec. Même si la crue met du temps à arriver le niveau peut monter violemment en cas d'orage.\n\nA faire au printemps ou après des pluies.",
+      "geologie": null,
+      "historique": "24 mars 1991 par R. Bitrian, M. Casanova, E Salamero & R. Larma.",
+      "remarques": "A faire avec de l'eau, le canyon perdant sinon beaucoup d'intérêt.\n\nS'assèche tout de même moins vite que son voisin le Consusa."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2964,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.590523,
+        "longitude": 0.164022,
+        "label": null
+      },
+      {
+        "canyonId": 2964,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.585651,
+        "longitude": 0.15339,
+        "label": null
+      },
+      {
+        "canyonId": 2964,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 42.590595,
+        "longitude": 0.166147,
+        "label": null
+      },
+      {
+        "canyonId": 2964,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 42.585255,
+        "longitude": 0.152586,
+        "label": "La navette n'est pas obligatoire"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 42.590595,
+      "longitude": 0.166147,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_e351d4789a0451db",
+          "kind": "TOPOGUIDE",
+          "title": "50 barrancos del Pirineo. Los descensos mas bellos.",
+          "authors": [
+            "José A. Ortega / Miguel A. Cebrian"
+          ],
+          "publicationYear": 2017,
+          "reference": "9788498293890",
+          "editor": "Desnivel",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/140/50-barrancos-del-Pirineo.html"
+        },
+        {
+          "id": "biblio_85cf80a1f73bc50a",
+          "kind": "TOPOGUIDE",
+          "title": "Barranquismo en el Pirineo : Ainsa y alrededores",
+          "authors": [
+            "Federaciones de Espeologia y Montanismo de Aragon"
+          ],
+          "publicationYear": 2010,
+          "reference": null,
+          "editor": "Prames",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1256/topoguide.html"
+        },
+        {
+          "id": "biblio_c1524b8af0f1815f",
+          "kind": "TOPOGUIDE",
+          "title": "Pirineos - Guia de descenso de canones y barrancos",
+          "authors": [
+            "Eduardo Gomez",
+            "Laura Tejero"
+          ],
+          "publicationYear": 2002,
+          "reference": "84-95744-20-1",
+          "editor": "Barrabes",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1126/topoguide.html"
+        },
+        {
+          "id": "biblio_fcae506cf45f5fdb",
+          "kind": "TOPOGUIDE",
+          "title": "Carte N°3 - Mont Perdu : du rio Gallego au rio Cinca.",
+          "authors": [
+            "Patrick Gimat + Jean-Paul Pontroué"
+          ],
+          "publicationYear": 1999,
+          "reference": null,
+          "editor": null,
+          "status": "en stock\n\n- 7,50 € -\n\nCommandez cet ouvrage dès maintenant !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/122/Carte-n°3-:-Mont-Perdu.html"
+        },
+        {
+          "id": "biblio_728585bf88b0a2ad",
+          "kind": "TOPOGUIDE",
+          "title": "Descentes de canyons dans le Haut Aragon - Tome 2",
+          "authors": [
+            "Patrick Gimat avec la collaboration de J.-P. Pontroué"
+          ],
+          "publicationYear": 1995,
+          "reference": "ISBN 2-85744-813-9",
+          "editor": "Co-édition Gimat/Pontroué/Edisud",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/156/Descentes-de-canyons-dans-le-Haut-Aragon---Tome-2.html"
+        },
+        {
+          "id": "biblio_5c6ad370200171ca",
+          "kind": "TOPOGUIDE",
+          "title": "Huesca. Cañones y barrancos. Tomo 2 : Pirineo",
+          "authors": [
+            "Fernado Biarge / Enrique Salamero"
+          ],
+          "publicationYear": 1991,
+          "reference": "404-8832-7",
+          "editor": null,
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1156/topoguide.html"
+        }
+      ],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_a303cb03e53b3e11",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.descensodebarrancos.com/barra.....trasito/trasito.html",
+          "url": "http://www.descensodebarrancos.com/barra.....trasito/trasito.html"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

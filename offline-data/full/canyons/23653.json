@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:36.068159+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23653,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23653/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23653/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23653/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23653/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23653,
+    "identity": {
+      "nom": "Bidon",
+      "nomComplet": "Combe de Bidon",
+      "prefixeNom": "Combe de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23653/Bidon.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Hautes-Alpes",
+      "communePrincipale": "Champoléon",
+      "communes": [
+        "Champoléon"
+      ],
+      "massif": "Ecrins - Oisans - Champsaur",
+      "bassin": "Drac Blanc",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a2II",
+      "interet": 0.6,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 1550,
+      "deniveleM": 200,
+      "longueurM": 250,
+      "cascadeMaxM": 40,
+      "cordeMiniM": 40,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h",
+      "descente": "1h15",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "De Gap prendre la N85 en direction de Grenoble puis la D944 vers le col de Manse. 4km après Pont-du-Fossé, prendre à gauche la D944a. Il y a un grand parking en face du hameau \"Les Borels\".",
+      "accesAmont": null,
+      "approche": "Prends le GR \"le tour du Vieux Chaillol\" en direction sud. Monter les lacets assez raides. À l'embranchement avec le \"belvédère\", prendre un vague sentier dans le direction du canyon. Il y a un panneau jaune \"sentier sans issue\". On traverse à flanc et arrive au début du canyon.",
+      "descente": "Pi 40 rg / R4 / R10 contourner par la gauche / C15 rg / C17 rd / R8 / C18 rd / C40 rg 2pt / R4 / C4 amarrage naturel à gauche.",
+      "retour": "Descendre le lit du torrent jusqu'à ce qu'on croise le sentier de retour.",
+      "engagement": "Ça parpaille pas mal. Faire attention aux cordes.",
+      "periode": "Printemps, automne.",
+      "geologie": "Grès",
+      "historique": "Ouverture 30 juin 2016 par Michiel van der Lans et Maaike Kramer.",
+      "remarques": "A enchaîner après le canyon de Méollion, Forest pour compléter la journée.\n\nÉquipement très sombre, monopoints de 10. Souvent les ressauts ne sont pas équipés."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23653,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.712692,
+        "longitude": 6.254278,
+        "label": null
+      },
+      {
+        "canyonId": 23653,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.713055,
+        "longitude": 6.257194,
+        "label": null
+      },
+      {
+        "canyonId": 23653,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.720722,
+        "longitude": 6.258611,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.720722,
+      "longitude": 6.258611,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_b0e951331c704682",
+          "kind": "MAP",
+          "title": "3437 OT Champsaur - Parc des Ecrins (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

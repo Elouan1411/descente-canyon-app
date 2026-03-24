@@ -1,0 +1,155 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:27.820009+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22275,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22275/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22275/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22275/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22275/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22275,
+    "identity": {
+      "nom": "Rumbau",
+      "nomComplet": "Barranc de Rumbau",
+      "prefixeNom": "Barranc de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22275/Rumbau.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Cataluña",
+      "departement": "Lérida",
+      "communePrincipale": "Peramola",
+      "communes": [
+        "Basella",
+        "Peramola"
+      ],
+      "massif": null,
+      "bassin": "Rio Segre",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1I",
+      "interet": 1.5,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 850,
+      "deniveleM": 300,
+      "longueurM": 1400,
+      "cascadeMaxM": 15,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h",
+      "descente": "2h30min",
+      "retour": "25min"
+    },
+    "topo": {
+      "accesAval": "De La Seu d'Urgell sur la C 14 direction Lleida sur environ 40 km. Après avoir passé le lac de barrage de Panta d'Oliana tourner à droite (avant le pont sur le Rio Segre et environ 8 km avant Oliana) sur la LV 5118 en direction du Peramola. Passer après 2 km la bifurcation à Trago et un peu plus de 1 km après cette bifurcation tourner à droite à l'Hostal del Boix. Se garer à l'hôtel.",
+      "accesAmont": null,
+      "approche": "Derrière de l'hôtel prendre le sentier (à gauche) direction Roca del Corb (panneau) et plus tard la piste. Au croisement des pistes tourner à droite direction Roca del Corb. Passer au-dessous de Sant Salvador del Corb (direction nord-est), continuer la piste et contourner l'Agulla del Corb.\n\nLa piste tourne direction nord. Descendre alors vers le lit du canyon.",
+      "descente": "Quelques petits rappels, de la marche, plus tard une source et une petite grotte",
+      "retour": "Sortie à gauche sur le sentier et revenir jusqu'à l'hôtel.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22275,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.077766,
+        "longitude": 1.260992,
+        "label": null
+      },
+      {
+        "canyonId": 22275,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.074226,
+        "longitude": 1.271136,
+        "label": null
+      },
+      {
+        "canyonId": 22275,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 42.069862,
+        "longitude": 1.277209,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 42.069862,
+      "longitude": 1.277209,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_d624b36bbe2e13ec",
+          "kind": "TOPOGUIDE",
+          "title": "Gorgs Organya. Guia de barrancs. Alt Urgell",
+          "authors": [],
+          "publicationYear": 2014,
+          "reference": "978-84-942504-6-0",
+          "editor": "Editions Saloria",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/190/Gorgs-Organya--Guia-de-barrancs--Alt-Urgell.html"
+        },
+        {
+          "id": "biblio_c1524b8af0f1815f",
+          "kind": "TOPOGUIDE",
+          "title": "Pirineos - Guia de descenso de canones y barrancos",
+          "authors": [
+            "Eduardo Gomez",
+            "Laura Tejero"
+          ],
+          "publicationYear": 2002,
+          "reference": "84-95744-20-1",
+          "editor": "Barrabes",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1126/topoguide.html"
+        },
+        {
+          "id": "biblio_8171fd8210e06c28",
+          "kind": "TOPOGUIDE",
+          "title": "Pyrenäen",
+          "authors": [
+            "Büdeler/Flitner"
+          ],
+          "publicationYear": 1997,
+          "reference": "3-7633-3014-3",
+          "editor": "Rother",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1223/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_cf874754f06ca22e",
+          "kind": "MAP",
+          "title": "04 Alt Urgell (Cartografic de Catalunya)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

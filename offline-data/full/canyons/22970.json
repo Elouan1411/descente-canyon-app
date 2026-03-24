@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:06.257412+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22970,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22970/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22970/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22970/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22970/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22970,
+    "identity": {
+      "nom": "Barasse",
+      "nomComplet": "Vallon de la Barasse",
+      "prefixeNom": "Vallon de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22970/Barasse.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Bouches-du-Rhône",
+      "communePrincipale": "Marseille",
+      "communes": [
+        "Marseille"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 0.3,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 152,
+      "deniveleM": 20,
+      "longueurM": 100,
+      "cascadeMaxM": 6,
+      "cordeMiniM": 10,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "15min",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "Dans Marseille se rendre au cinéma Les 3 Palmes. Puis dans le quartier de la Barasse prendre la route qui s'enfonce vers la colline entre le lycée professionnel et le collège. Passer le parking de la Barasse (voir IGN) et se garer au parking du stand de tir.",
+      "accesAmont": null,
+      "approche": "Du parking poursuivre la piste qui après quelques minutes s'élève au dessus de l'encaissement et démarrer la descente quand la piste recroise le vallon.",
+      "descente": "Marche puis encaissement avec une belle goulotte de 6 mètre bien polie (AN RG) puis 2 ressauts qui se désescaladent.",
+      "retour": "Reprendre la piste de l'aller.",
+      "engagement": null,
+      "periode": "Canyon sec qui doit couler après de fortes pluies.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Partie amont avec une cascade mais il faut rajouter 25 min de marche."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22970,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.272945,
+        "longitude": 5.487193,
+        "label": null
+      },
+      {
+        "canyonId": 22970,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.273556,
+        "longitude": 5.487279,
+        "label": null
+      },
+      {
+        "canyonId": 22970,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.277969,
+        "longitude": 5.484119,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.277969,
+      "longitude": 5.484119,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_c6befd0557fd0f65",
+          "kind": "MAP",
+          "title": "3145 ET Marseille (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:49:45.262873+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21525,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21525/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21525/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21525/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21525/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21525,
+    "identity": {
+      "nom": "Briançon",
+      "nomComplet": "Torrent de Briançon, Plan de Vitrolles, La Déoule",
+      "prefixeNom": "Torrent de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21525/Briancon.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Hautes-Alpes",
+      "communePrincipale": "Vitrolles",
+      "communes": [
+        "Lardier-et-Valença",
+        "Vitrolles"
+      ],
+      "massif": "Ceuse",
+      "bassin": "Durance",
+      "coursEau": "La Déoule"
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 1.4,
+      "nbVotes": 13
+    },
+    "metrics": {
+      "altitudeDepartM": 660,
+      "deniveleM": 60,
+      "longueurM": 1000,
+      "cascadeMaxM": 14,
+      "cordeMiniM": 20,
+      "navette": "1.5km"
+    },
+    "timings": {
+      "approche": "5/30min",
+      "descente": "45min",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "A partir du pont, faire 800m et prendre la route qui descend à droite vers le ruisseau. Au bout de 200m, se garer sur le terrain qui est à votre gauche.\n\n- Parking",
+      "accesAmont": "Du parking aval, remonter par la route d'arrivée sur 200m, prendre à droite (donc direction \"Vitrolles\") sur 1300 m. environ. Se garer au mieux dans un virage à gauche (une place de voiture sur la droite).",
+      "approche": "Suivant qu'on fait la navette ou non, il faudra entre 5 et 30 min.\n\nDu \"parking\" amont, descendre au mieux vers le cours d'eau à droite (donc à gauche dans le sens de la descente). (vestiges de sentiers).",
+      "descente": "Cette courte descente d'initiation est ponctuée de 3 ou 4 obstacles, avec une cascade finale de 15m.",
+      "retour": "Quand le cours d'eau s'ouvre, sortir en RD et poursuivre jusqu'à la voiture aval.",
+      "engagement": "Engagement faible, avec possibilité de se mettre à l'abris relativement facilement.\n\nPar contre, compte tenu de la nature détritique de la roche, il est assez délicat voire impossible de s'échapper surtout dans la partie finale.",
+      "periode": "Canyon d'initiation avec très peu d'eau. a faire au printemps... pas sûr qu'il y ait de l'eau en été.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Equipement rustique et sommaire..."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21525,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.427776,
+        "longitude": 5.956667,
+        "label": null
+      },
+      {
+        "canyonId": 21525,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.423611,
+        "longitude": 5.956667,
+        "label": null
+      },
+      {
+        "canyonId": 21525,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 44.428612,
+        "longitude": 5.956667,
+        "label": null
+      },
+      {
+        "canyonId": 21525,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 44.421112,
+        "longitude": 5.96,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 44.428612,
+      "longitude": 5.956667,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_28e68141a286bb81",
+          "kind": "MAP",
+          "title": "3338 ET Gap (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:52.783120+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23465,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23465/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23465/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23465/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23465/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23465,
+    "identity": {
+      "nom": "Los Corners",
+      "nomComplet": "Los Corners, Calcil",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23465/Los-Corners.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Aragón",
+      "departement": "Huesca",
+      "communePrincipale": "Parzan",
+      "communes": [
+        "Bielsa",
+        "Parzan"
+      ],
+      "massif": "Circo de Barrosa",
+      "bassin": "Cinca",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a3III",
+      "interet": 2.5,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 2200,
+      "deniveleM": 400,
+      "longueurM": 1000,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 40,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "2h00",
+      "descente": "4h00",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "Se rendre à Hospital de Parzan (Parking près des anciennes installations minières) et poursuivre par la piste qui remonte la vallée du Barrosa (4x4 obligatoire) jusqu'à la prise d'eau de Mallata Gabas.",
+      "accesAmont": null,
+      "approche": "Continuer à pied vers le fond du cirque par le sentier bien tracé qui monte au Port de Barroude (HRP). Passer au dessus du refuge (non gardé) et continuer vers le nord pour dépasser les cascades de la Neveras. Quitter le sentier dans un dernier lacet avant que le sentier monter en écharpe direction nord-ouest. En évitant les éboulis, suivre en s'élevant progressivement une direction sud-est pour rejoindre un petit éperon rocheux (La Atalayeta) sur la crête qui sépare le cirque de Barrosa de l'impluvium de los Corners. Sans chercher à descendre, rejoindre l'entrée dans un vague ravin (42° 42' 37.50 N - 0° 09' 58.80 E).",
+      "descente": "Première partie en ravin puis un enchaînement continu d'une dizaine de cascades creusées dans le granite.",
+      "retour": "Atteindre la confluence avec le Barrosa qu'on traverse. Le sentier pris à l'aller se trouve sur l'autre rive.",
+      "engagement": "Parcours de montagne.",
+      "periode": "Ravin intermittent. Bien alimenté en général avant l'été et à l'automne. Juin et octobre semblent les meilleures périodes.",
+      "geologie": "Ampélites et granite.",
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23465,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.708244,
+        "longitude": 0.167666,
+        "label": null
+      },
+      {
+        "canyonId": 23465,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.703812,
+        "longitude": 0.168975,
+        "label": null
+      },
+      {
+        "canyonId": 23465,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 42.700371,
+        "longitude": 0.201489,
+        "label": "Parking voiture pas tout terrain"
+      },
+      {
+        "canyonId": 23465,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 42.701088,
+        "longitude": 0.182381,
+        "label": "Parking 4x4"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 42.700371,
+      "longitude": 0.201489,
+      "label": "Parking voiture pas tout terrain"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

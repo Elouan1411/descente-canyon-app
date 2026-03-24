@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:59.882003+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24048,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24048/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24048/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24048/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24048/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24048,
+    "identity": {
+      "nom": "Champ d'Auribelle (ouest)",
+      "nomComplet": "Cascade du Champ d'Auribelle (ouest)",
+      "prefixeNom": "Cascade du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24048/Champ-d-Auribelle-ouest.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-de-Haute-Provence",
+      "communePrincipale": "Demandolx",
+      "communes": [
+        "Demandolx"
+      ],
+      "massif": "Verdon",
+      "bassin": "Verdon",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a1II",
+      "interet": 1.5,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 900,
+      "deniveleM": 80,
+      "longueurM": 50,
+      "cascadeMaxM": 45,
+      "cordeMiniM": 50,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "1h",
+      "retour": "1h"
+    },
+    "topo": {
+      "accesAval": "De Castellane prendre la D955 vers Saint-Julien-du-Verdon. Passer le barrage de Castillon-Demandolx puis prendre à droite la route vers Demandolx. Faire environ 1 km et prendre une piste (peu visible) à droite (dans un virage à gauche). Descendre cette piste (environ 400m) et garez-vous juste avant une ruine.",
+      "accesAmont": null,
+      "approche": "Passez la ruine et prendre le sentier qui descend à gauche, il coupe rapidement notre ravin. Le suivre jusqu'au cassé final (seule partie intéressante).",
+      "descente": "Désescalade 10m puis C10 (un point RG) puis C15 un point RD puis C45 (deux points sur le bombé RD) et on termine par un saut dans le lac (+ ou - 5m selon hauteur du lac) ou rappel sur AN RG",
+      "retour": "Nager vers l'aval environ 800m dans le lac (palmes conseillées) pour atteindre une plage RG. De la remonter vers votre gauche pour tomber rapidement sur une piste. A la station de pompage poursuivre à gauche. Puis prendre le chemin à gauche dans la 1ere épingle à droite de la piste. Suivre ce sentier qui recoupe notre ravin et reprendre l'itinéraire de l'aller.",
+      "engagement": "Engagement total dans le cassé final",
+      "periode": "Sec mais doit couler après de fortes pluies.",
+      "geologie": null,
+      "historique": "Descendu par Lionel C. en mode spéléo ;-) .\n\nPoints en 8mm posés le 18/02/2018.",
+      "remarques": "Superbe vue sur le lac et belles photos à prendre."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24048,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.871834,
+        "longitude": 6.546607,
+        "label": null
+      },
+      {
+        "canyonId": 24048,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.877323,
+        "longitude": 6.546099,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.877323,
+      "longitude": 6.546099,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_76b8fd482efafa05",
+          "kind": "MAP",
+          "title": "3542 OT Castellane (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:49:33.151761+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21476,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21476/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21476/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21476/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21476/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21476,
+    "identity": {
+      "nom": "Segudet",
+      "nomComplet": "Riu Segudet",
+      "prefixeNom": "Riu",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21476/Segudet.html"
+    },
+    "location": {
+      "pays": "Andorre",
+      "region": null,
+      "departement": "Ordino",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2I",
+      "interet": 2.2,
+      "nbVotes": 8
+    },
+    "metrics": {
+      "altitudeDepartM": 1500,
+      "deniveleM": 75,
+      "longueurM": 400,
+      "cascadeMaxM": 12,
+      "cordeMiniM": 15,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "1h",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "Dans Ordino, monter vers les quartiers résidentiels en direction Segudet.\n\nLa route se trouve rive droite du ruisseau.\n\nSe garer devant un transfo à la fin de la route goudronnée. Possibilité de garer 4/5 voitures.",
+      "accesAmont": null,
+      "approche": "Depuis la voiture, suivre la piste 4x4 pendant une vingtaine de minutes.\n\nAu niveau d'un col se trouve un champ en contrebas à droite. Le traverser.\n\nLe départ du canyon se situe en contrebas du champ.",
+      "descente": "Joli petit canyon d'initiation composé de quelques toboggans et 4 petits rappels.",
+      "retour": "Prendre le sentier rive droite qui amène en 2 minutes au chemin 4x4 que l'on descend jusqu'à la voiture.",
+      "engagement": "Nombreux échappatoires possibles avant l'encaissement final.",
+      "periode": "Peut se faire toute l'année. Attention à l'eau très froide et au débit à la fonte des neiges.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "A la marche d'approche, au bout de 5 minutes si l'on suit l'indication parcours aventure, on peut alors aller analyser le débit en sortie du canyon."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21476,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.560883,
+        "longitude": 1.544929,
+        "label": null
+      },
+      {
+        "canyonId": 21476,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.55975,
+        "longitude": 1.544373,
+        "label": null
+      },
+      {
+        "canyonId": 21476,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 42.557934,
+        "longitude": 1.539822,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 42.557934,
+      "longitude": 1.539822,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_ecc5d6d55ae68c85",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://ropewiki.com/Segudet",
+          "url": "http://ropewiki.com/Segudet"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

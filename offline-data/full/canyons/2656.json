@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:46:20.679811+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2656,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2656/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2656/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2656/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2656/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2656,
+    "identity": {
+      "nom": "Carcale",
+      "nomComplet": "Val Carcale, Riale Carcale",
+      "prefixeNom": "Val",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2656/Carcale.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Gordola",
+      "departement": "Tessin",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": "Lago Maggiore",
+      "coursEau": "Riale Carcale"
+    },
+    "rating": {
+      "cotation": "v4a3II",
+      "interet": 1.7,
+      "nbVotes": 5
+    },
+    "metrics": {
+      "altitudeDepartM": 500,
+      "deniveleM": 230,
+      "longueurM": 650,
+      "cascadeMaxM": 33,
+      "cordeMiniM": 35,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "45min",
+      "descente": "2h30-3h",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "Dans la ville de Gorgola, se garer dans la rue \"Via Cecchino\" au niveau de l'épingle.",
+      "accesAmont": null,
+      "approche": "Depuis la voiture, suivre la route qui monte vers des maisons et, 400 m après, trouver un sentier qui part a droite entre les maisons .\n\nQuelques épingles au dessus prendre le sentier à droite qui suit la courbe de niveau tranquillement.\n\nJuste après avoir traversé un premier ruisseau , vous allez en traverser un 2eme .\n\nC'est le début du canyon .",
+      "descente": "Descente sans intérêt majeur quand on connaît les autres musts du Tessin, mais un bon plan b quand tous les canyons classiques sont pleins d'eau...",
+      "retour": "Le ruisseau arrive au niveau de l'épingle où l'on a garé la voiture",
+      "engagement": null,
+      "periode": "A faire après des pluies.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Personne ne viendra au Tessin pour faire Val Carcale : pas de nage, pas de saut, juste des cascades dans la végétation quasi-tropicale de ce secteur particulier.\n\nPossibilité de voir le débit depuis l'épingle où l'on se gare."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2656,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.18663,
+        "longitude": 8.87986,
+        "label": null
+      },
+      {
+        "canyonId": 2656,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.182831,
+        "longitude": 8.875933,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.182831,
+      "longitude": 8.875933,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_9a9578770c172929",
+          "kind": "MAP",
+          "title": "1313 Bellinzona (Carte Nationale Suisse)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_4de2f0c8e227686e",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.swisscanyon.ch/canyons/descrittivi/carcale.htm",
+          "url": "http://www.swisscanyon.ch/canyons/descrittivi/carcale.htm"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

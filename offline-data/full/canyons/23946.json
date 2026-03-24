@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:41.187499+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23946,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23946/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23946/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23946/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23946/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23946,
+    "identity": {
+      "nom": "Ribions",
+      "nomComplet": "Ravin de Ribions",
+      "prefixeNom": "Ravin de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23946/Ribions.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-de-Haute-Provence",
+      "communePrincipale": "Allos",
+      "communes": [
+        "Allos"
+      ],
+      "massif": "Massif du Pelat",
+      "bassin": "Verdon",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1I",
+      "interet": 0.7,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 1480,
+      "deniveleM": 80,
+      "longueurM": 100,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 25,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "35min",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "Depuis Colmars-les-Alpes, suivre la D908 jusqu'au cimetière d'Allos, puis prendre à droite la D226 en direction de Villard Bas. faire 500 m et se garer à gauche après le premier virage en tête d'épingle.",
+      "accesAmont": null,
+      "approche": "Suivre la route et traverser un pré jusqu'au torrent après le second virage.",
+      "descente": "Marche jusqu'à une C4 en désescalade en RD (départ d'un captage) et une C20 sur 1 pt en RG (goujon de 8 mm + maillon de chaîne).",
+      "retour": "Depuis le bas de la C20, remonter via la pente rocheuse en RD vers le tuyau de captage et passer la barre rocheuse 5 m au dessus du tuyau pour trouver une pseudo sente ramenant à la route.",
+      "engagement": null,
+      "periode": "En eau toute l'année",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Très court. Peut contribuer à finir une journée canyon si l'on se trouve dans le coin."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23946,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.234718,
+        "longitude": 6.635801,
+        "label": null
+      },
+      {
+        "canyonId": 23946,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.233597,
+        "longitude": 6.634741,
+        "label": null
+      },
+      {
+        "canyonId": 23946,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.233875,
+        "longitude": 6.632885,
+        "label": null
+      },
+      {
+        "canyonId": 23946,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 44.233448,
+        "longitude": 6.634342,
+        "label": "Retour via le captage"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.233875,
+      "longitude": 6.632885,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

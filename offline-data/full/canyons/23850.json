@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:19.937857+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23850,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23850/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23850/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23850/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23850/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23850,
+    "identity": {
+      "nom": "Karlestal",
+      "nomComplet": "Karlestal",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23850/Karlestal.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Tyrol",
+      "departement": "Politischer Bezirk Reutte",
+      "communePrincipale": "Hinterhornbach",
+      "communes": [
+        "Hinterhornbach"
+      ],
+      "massif": "Allgäuer Alpen",
+      "bassin": "Lech",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": null,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": 1325,
+      "deniveleM": 180,
+      "longueurM": 600,
+      "cascadeMaxM": 38,
+      "cordeMiniM": 40,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h10min",
+      "descente": "4h",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23850,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.337139,
+        "longitude": 10.42268,
+        "label": null
+      },
+      {
+        "canyonId": 23850,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.343651,
+        "longitude": 10.4225,
+        "label": null
+      },
+      {
+        "canyonId": 23850,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.357819,
+        "longitude": 10.449526,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.357819,
+      "longitude": 10.449526,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_975c78953190e02c",
+          "kind": "MAP",
+          "title": "2/2 Allgäuer-Lechtaler Alpen Ost (Alpenvereins (AV) Karte)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_22846d3cf0e7669b",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.aventurecanyon.com/karlestal-description.html",
+          "url": "http://www.aventurecanyon.com/karlestal-description.html"
+        },
+        {
+          "id": "resource_dfeaf105f9eda867",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/Canyons/KarlestalCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/Canyons/KarlestalCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

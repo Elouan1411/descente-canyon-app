@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:02.728011+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21610,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21610/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21610/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21610/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21610/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21610,
+    "identity": {
+      "nom": "Ancora",
+      "nomComplet": "Rio Ancora",
+      "prefixeNom": "Rio",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21610/Ancora.html"
+    },
+    "location": {
+      "pays": "Portugal",
+      "region": "Viana do Castelo",
+      "departement": "Viana do Castelo Municipality",
+      "communePrincipale": "Montaria",
+      "communes": [
+        "Montaria"
+      ],
+      "massif": "Serra de arga",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1II",
+      "interet": 1.7,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 282,
+      "deniveleM": 126,
+      "longueurM": 2300,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 25,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "4h30",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": "passer Amonde, prendre à gauche direction Montaria ou St Lourenzo da Montaria et aller au viviero forestal de Portodeira.",
+      "approche": "De là descendre dans le canyon.",
+      "descente": "Belle succession de rappels, sauts, toboggans.",
+      "retour": "Retour au niveau de la piscine de Pincho.\n\nEn cas de sortie à la cascade de Pincho, compter 45 min pour accéder à la voiture (il doit être possible de monter une voiture vers la sortie mais attention, la route s'apparente souvent à une piste et les GPS donnent pour route des chemins à peine praticables en 4x4).",
+      "engagement": null,
+      "periode": "Eté",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Canyon avec quelques rappels mais beaucoup de marche en rivière (possible via des sentes en bord).\n\nÀ réserver à une sortie débutant, pour le reste l'intérêt intrinsèque reste faible."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21610,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 41.796696,
+        "longitude": -8.733476,
+        "label": null
+      },
+      {
+        "canyonId": 21610,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 41.796223,
+        "longitude": -8.758303,
+        "label": null
+      },
+      {
+        "canyonId": 21610,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 41.795738,
+        "longitude": -8.733648,
+        "label": null
+      },
+      {
+        "canyonId": 21610,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 41.794567,
+        "longitude": -8.76621,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 41.795738,
+      "longitude": -8.733648,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_9d8f05a2e5be646e",
+          "kind": "MAP",
+          "title": "27 Vila Praia de Ancora",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

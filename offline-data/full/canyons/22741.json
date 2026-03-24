@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:54:10.852168+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22741,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22741/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22741/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22741/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22741/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22741,
+    "identity": {
+      "nom": "Méga",
+      "nomComplet": "Canyon de la Méga, Ribeira da Agua Do Vento",
+      "prefixeNom": "Canyon de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22741/Mega.html"
+    },
+    "location": {
+      "pays": "Portugal",
+      "region": "Madeira",
+      "departement": "Porto Moniz Municipality",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": "Ribeira do Seixal",
+      "coursEau": "Ribeira da Agua Do Vento"
+    },
+    "rating": {
+      "cotation": "v6a3III",
+      "interet": 2.9,
+      "nbVotes": 6
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": 845,
+      "longueurM": 1600,
+      "cascadeMaxM": 170,
+      "cordeMiniM": 160,
+      "navette": "30.2km"
+    },
+    "timings": {
+      "approche": "45min",
+      "descente": "7h45",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": "Ouverture : Silvain Présumey, David Rodier, Damien Bayon et Antoine Florin\n\nPartie supérieure : 03/05/2004\n\nPartie inférieure : 06-08/05/2004",
+      "remarques": "Mise à jour datant de mai 2008, du topo d'Antoine Florin, provenant de son site Internet :\n\nObservations :\n\nLa grande cascade est en fait une C160.\n\nEn partant du r2, on peut rejoindre sans aucun frottement le pied de la cascade avec un rappel de 140 mètres. Depuis mai 2008, il y a un relai supplémentaire r3 environ 40 mètres en dessous.\n\nCependant pour rejoindre cet r3 (dans le surplomb), le premier doit utiliser 3 fractionnements pour se rapprocher de la paroi.\n\nDepuis le r2 avec une corde de 50 mètres, il descend en simple en technique spéléo pour poser les fractionnements et atteindre le r3.\n\nReste alors un rappel de 100 mètres sans aucun frottement.\n\nLe second peut ensuite descendre en enlevant les fractionnements et rejoindre le r3 (corde attachée au r3 par le premier)..."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22741,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 32.788403,
+        "longitude": -17.098558,
+        "label": null
+      },
+      {
+        "canyonId": 22741,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 32.793835,
+        "longitude": -17.112774,
+        "label": null
+      },
+      {
+        "canyonId": 22741,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 32.765099,
+        "longitude": -17.101437,
+        "label": null
+      },
+      {
+        "canyonId": 22741,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 32.796684,
+        "longitude": -17.11404,
+        "label": null
+      },
+      {
+        "canyonId": 22741,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 32.790291,
+        "longitude": -17.104521,
+        "label": "Levada Do Norte: apporche partie basse ou échappatoire"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 32.765099,
+      "longitude": -17.101437,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_f2de84c51d6a7bd1",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyoning.camadeira.com/canyons/agua-do-vento/",
+          "url": "http://canyoning.camadeira.com/canyons/agua-do-vento/"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

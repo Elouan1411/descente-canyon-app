@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:10.929030+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23809,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23809/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23809/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23809/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23809/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23809,
+    "identity": {
+      "nom": "Forchia",
+      "nomComplet": "Rio della Forchia, Rio Bieliga",
+      "prefixeNom": "Rio della",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23809/Forchia.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Frioul-Vénétie julienne",
+      "departement": "Udine",
+      "communePrincipale": "Dogna",
+      "communes": [
+        "Dogna"
+      ],
+      "massif": "Alpes Juliennes",
+      "bassin": "Fella",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": null,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": 770,
+      "deniveleM": 180,
+      "longueurM": 950,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 25,
+      "navette": "4.2km"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "1h30min",
+      "retour": "45"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": "26.09.2013 Canyoning Cult Slovenia",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23809,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.455669,
+        "longitude": 13.37972,
+        "label": null
+      },
+      {
+        "canyonId": 23809,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.44883,
+        "longitude": 13.37755,
+        "label": null
+      },
+      {
+        "canyonId": 23809,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 46.449181,
+        "longitude": 13.357248,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.449181,
+      "longitude": 13.357248,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

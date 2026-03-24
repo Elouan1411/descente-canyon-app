@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:46:15.842696+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2634,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2634/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2634/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2634/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2634/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2634,
+    "identity": {
+      "nom": "Aubaga Negra",
+      "nomComplet": "Barranc de l' Aubaga Negra, Riu de Pujals",
+      "prefixeNom": "Barranc de l'",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2634/Aubaga-Negra.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Cataluña",
+      "departement": "Lérida",
+      "communePrincipale": "Coll de Nargó",
+      "communes": [
+        "Coll de Nargó"
+      ],
+      "massif": null,
+      "bassin": "Riu Rialb",
+      "coursEau": "Riu de Pujals"
+    },
+    "rating": {
+      "cotation": "v2a2I",
+      "interet": 1.9,
+      "nbVotes": 5
+    },
+    "metrics": {
+      "altitudeDepartM": 1409,
+      "deniveleM": 29,
+      "longueurM": 150,
+      "cascadeMaxM": 10,
+      "cordeMiniM": 10,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "30min",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": "De Coll de Nargo, rendez-vous au col de Boixols. Aprés le col ne ratez pas la piste qui monte à droite vers Montanisell (et les canyons de Fenollet). Suivez la direction d'Als Prats et garez-vous au niveau du pont sans gêner, à la fin de l'encaissement.",
+      "accesAmont": null,
+      "approche": "Un sentier part du parking et remonte le long d'un champ. Passé un petit mamelon, on redescend sur un autre champ. A l'extrémité sud de celui-ci, on rejoint le cours d'eau.",
+      "descente": "Jolie petite descente d'initiation. Les sauts sont possibles mais vérifiez la profondeur des vasques. Les 2 cascades finales sont esthétiques.",
+      "retour": "Au pont rejoignez le véhicule.",
+      "engagement": "Des échappatoires existent avant les cascades finales.",
+      "periode": "A faire au printemps et aprés les pluies.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Très court, bien pour compléter une journée."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2634,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.197296,
+        "longitude": 1.177883,
+        "label": null
+      },
+      {
+        "canyonId": 2634,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.196762,
+        "longitude": 1.176942,
+        "label": null
+      },
+      {
+        "canyonId": 2634,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 42.196739,
+        "longitude": 1.176551,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 42.196739,
+      "longitude": 1.176551,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_d624b36bbe2e13ec",
+          "kind": "TOPOGUIDE",
+          "title": "Gorgs Organya. Guia de barrancs. Alt Urgell",
+          "authors": [],
+          "publicationYear": 2014,
+          "reference": "978-84-942504-6-0",
+          "editor": "Editions Saloria",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/190/Gorgs-Organya--Guia-de-barrancs--Alt-Urgell.html"
+        },
+        {
+          "id": "biblio_cea7eadf1be0593f",
+          "kind": "TOPOGUIDE",
+          "title": "Aigua, Roca i Penombra, El Descens d'Engorjats a Catalunya : Geomorfologia, tècnica i seguretat",
+          "authors": [
+            "J.M. Concernau",
+            "A Civit",
+            "X. Boltà"
+          ],
+          "publicationYear": 2000,
+          "reference": "84-89890-52-8",
+          "editor": "Cossetània",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1125/topoguide.html"
+        }
+      ],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_ca1d8e7c6d45ad31",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.barranquismo.net/paginas/barr.....nco_aubaga_negra.htm",
+          "url": "http://www.barranquismo.net/paginas/barr.....nco_aubaga_negra.htm"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

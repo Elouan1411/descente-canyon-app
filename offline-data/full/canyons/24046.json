@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:59.596716+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24046,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24046/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24046/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24046/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24046/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24046,
+    "identity": {
+      "nom": "Rejerasses",
+      "nomComplet": "Ravin des Rejerasses",
+      "prefixeNom": "Ravin des",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24046/Rejerasses.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-de-Haute-Provence",
+      "communePrincipale": "Ubaye-Serre-Ponçon",
+      "communes": [
+        "Ubaye-Serre-Ponçon"
+      ],
+      "massif": null,
+      "bassin": "Ubaye",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1I",
+      "interet": 1.3,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 880,
+      "deniveleM": 120,
+      "longueurM": 250,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "25min",
+      "descente": "1h",
+      "retour": "1min"
+    },
+    "topo": {
+      "accesAval": "De Tallard prendre la D900B vers Espinasses, traverser ce village, passer sur le pont et garez vous juste à la sortie du tunnel de Chaussetive.",
+      "accesAmont": null,
+      "approche": "Marcher 50 m sur la route et monter dés que possible en RD au mieux (mode sanglier niveau II, quelques sentes d'animaux) sur la \"crête\". Après 15/20 min on croise un sentier, prendre à droite et on coupe rapidement notre ravin.",
+      "descente": "Succession quasi ininterrompue de rappels (AN ou monopoint en 8mm), quelques désescalades avec une vue unique sur les deux lacs.",
+      "retour": "Remonter RD avant de passer sous la route.",
+      "engagement": "Ravin peu encaissé, des échappatoires possibles (terrain instable)",
+      "periode": "Après les pluies ou à la fonte",
+      "geologie": null,
+      "historique": "Quelques goujons de 8mm avec plaquette ou maillons de chaine posés le 03/02/2018",
+      "remarques": "Possibilité d'éviter l'approche sanglier avec une navette et un accès pédestre par une piste puis le sentier que l'on recoupe (voir IGN)."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24046,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.459621,
+        "longitude": 6.258255,
+        "label": null
+      },
+      {
+        "canyonId": 24046,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.461655,
+        "longitude": 6.259306,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.461655,
+      "longitude": 6.259306,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_f6542a442811df8f",
+          "kind": "MAP",
+          "title": "3439 ET Seyne - Chabanon-Grand-Puy (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

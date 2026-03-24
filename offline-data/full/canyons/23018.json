@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:18.198804+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23018,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23018/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23018/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23018/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23018/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23018,
+    "identity": {
+      "nom": "Grünseeschlucht",
+      "nomComplet": "Grünseeschlucht, Angerbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23018/Grunseeschlucht.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Carinthie",
+      "departement": "Hermagor",
+      "communePrincipale": "Kötschach-Mauthen",
+      "communes": [
+        "Kötschach-Mauthen"
+      ],
+      "massif": "Alpes Carniques - Carniche - Karnischen",
+      "bassin": "Gail",
+      "coursEau": "Angerbach"
+    },
+    "rating": {
+      "cotation": "v4a4IV",
+      "interet": 2.0,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 900,
+      "deniveleM": 130,
+      "longueurM": 600,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 30,
+      "navette": "2.8km"
+    },
+    "timings": {
+      "approche": "10 min",
+      "descente": "2h30",
+      "retour": "7 min"
+    },
+    "topo": {
+      "accesAval": "De Kötschach-Mauthen prendre la B110 vers le sud-ouest en direction de Plöckenpass.\n\nAprès environ 8,5 kilomètres au niveau du cimetière militaire et de la centrale phovoltaïque AAE, garez un véhicule sr le parking à votre gauche.\n\nAvec le deuxième véhicule continuer vers Plöckenpass pendant 2,8 km jusqu'à l'hôtel Plöckenhaus. En face de l'hôtel, sur votre gauche, déposez le deuxième véhicule",
+      "accesAmont": null,
+      "approche": "Du parking prenez le chemin rural qui monte en direction de Grünsee. D'abord à gauche, puis bientôt passer une barrière (à la main gauche) et aller vers la forêt. Suivre une bonne trace qui descend vers le ruisseau lorsque vous passez à proximité.",
+      "descente": "Au début, la descente est fastidieuse, puis devient plus intéressante à partir du funiculaire (ne doit pas être utilisé) et intense.",
+      "retour": "Dans le lac artificiel le long du bord de rocher droit au mur prénager (le domaine d'épreuve d'eau évitent) et monter la mur. Un sente mène à droite le long du bord de gorge. Arriver à la piste aller à gauche, traverser le lit de ruisseau et continuer le long du cimetière de héros au parking.",
+      "engagement": "Avec beaucoup d'eau, la gorge est exigeante.",
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "Eau très froide, roche très glissante.\n\nUne autorisation doit être demandée chez Headquarter der Alpen Adria Energie, Kötschach Nr. 66, Mo.-Fr. 8:00-17:00 Uhr (http://www.aae.at)"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23018,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.616489,
+        "longitude": 12.956218,
+        "label": null
+      },
+      {
+        "canyonId": 23018,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.622559,
+        "longitude": 12.950099,
+        "label": null
+      },
+      {
+        "canyonId": 23018,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 46.616005,
+        "longitude": 12.952334,
+        "label": null
+      },
+      {
+        "canyonId": 23018,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 46.622944,
+        "longitude": 12.947474,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 46.616005,
+      "longitude": 12.952334,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_c53735ebffb796f9",
+          "kind": "MAP",
+          "title": "223 Naturarena Kärnten-Gailtal, Gitschtal, Lesachtal, Weissensee, Oberes Drautal (Freytag & Berndt)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_0a8483f4729952ca",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/C.....uenseeschluchtCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/C.....uenseeschluchtCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

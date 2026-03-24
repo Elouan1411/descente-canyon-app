@@ -1,0 +1,161 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:01.140445+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22151,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22151/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22151/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22151/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22151/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22151,
+    "identity": {
+      "nom": "Pedra Branca",
+      "nomComplet": "Canyon de Pedra Branca, Fajã da Parreira",
+      "prefixeNom": "Canyon de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22151/Pedra-Branca.html"
+    },
+    "location": {
+      "pays": "Portugal",
+      "region": "Madeira",
+      "departement": "Porto Moniz Municipality",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": null,
+      "coursEau": "Fajã da Parreira"
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 2.5,
+      "nbVotes": 21
+    },
+    "metrics": {
+      "altitudeDepartM": 190,
+      "deniveleM": 180,
+      "longueurM": 350,
+      "cascadeMaxM": 50,
+      "cordeMiniM": 50,
+      "navette": "1.0km"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "1h30",
+      "retour": "2min"
+    },
+    "topo": {
+      "accesAval": "garée à l'entrée est du tunnel Contreiras sur un petit parking. Poursuivre la route vers Seixal pendant 500m puis tourner à droite et monter pendant 100m (très raide) afin d'arriver au parking",
+      "accesAmont": ".",
+      "approche": "Le sentier face au parking monte à travers les cultures puis les fougères. Le suivre toujours tout droit en direction du canyon.",
+      "descente": "Rappel sec depuis le sentier d'approche puis joli R50. Quelques courts rappels avant la sortie par un R27 face à la mer.",
+      "retour": "Marcher vers l'est jusqu'à retrouver la voiture.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": "Ouvert en juin 2003 par Francisco Silva.",
+      "remarques": "Les 2 premiers rappels se font sur arbres."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22151,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 32.825977,
+        "longitude": -17.125324,
+        "label": null
+      },
+      {
+        "canyonId": 22151,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 32.827091,
+        "longitude": -17.124146,
+        "label": null
+      },
+      {
+        "canyonId": 22151,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 32.825706,
+        "longitude": -17.120726,
+        "label": null
+      },
+      {
+        "canyonId": 22151,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 32.826252,
+        "longitude": -17.122395,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 32.825706,
+      "longitude": -17.120726,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_d4559c6470527679",
+          "kind": "TOPOGUIDE",
+          "title": "Meeting Canyoning Madeira 2016",
+          "authors": [
+            "Duarte Silva e colaboradores"
+          ],
+          "publicationYear": 2016,
+          "reference": null,
+          "editor": "Clube Naval do Seixal",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1343/topoguide.html"
+        },
+        {
+          "id": "biblio_2714eb823c608ae0",
+          "kind": "TOPOGUIDE",
+          "title": "Meeting Canyoning Madeira 2015",
+          "authors": [
+            "Duarte Silva"
+          ],
+          "publicationYear": 2015,
+          "reference": null,
+          "editor": "Clube Naval do Seixal",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1342/topoguide.html"
+        },
+        {
+          "id": "biblio_9fee8e80e3298324",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons de Madère - Descentes Sportives et Randonnées",
+          "authors": [
+            "Antoine Florin"
+          ],
+          "publicationYear": 2007,
+          "reference": "978-2-9529227-0-8",
+          "editor": "auto-édition",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1194/topoguide.html"
+        }
+      ],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_c9d6a3155ca80182",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyoning.camadeira.com/canyons/pedra-branca/",
+          "url": "http://canyoning.camadeira.com/canyons/pedra-branca/"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

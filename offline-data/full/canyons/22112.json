@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:52.631349+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22112,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22112/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22112/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22112/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22112/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22112,
+    "identity": {
+      "nom": "Saut du Moine",
+      "nomComplet": "Cascade du Saut du Moine, Nant de Craz",
+      "prefixeNom": "Cascade du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22112/Saut-du-Moine.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Haute-Savoie",
+      "communePrincipale": "Talloires-Montmin",
+      "communes": [
+        "Talloires-Montmin"
+      ],
+      "massif": "Bornes - Aravis",
+      "bassin": "Lac d'Annecy",
+      "coursEau": "Nant de Craz"
+    },
+    "rating": {
+      "cotation": "v4a1III",
+      "interet": 2.3,
+      "nbVotes": 16
+    },
+    "metrics": {
+      "altitudeDepartM": 695,
+      "deniveleM": 210,
+      "longueurM": 500,
+      "cascadeMaxM": 45,
+      "cordeMiniM": 50,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "2h",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "D'Annecy, rejoindre Talloires. Garer la voiture au parking à gauche avant le dernier sens giratoire avant le lac.\n\nAvec navette : retour et prendre la route vers Col de Forclaz. Environ 350m après le 2nd tunnel traverser le Nant de Craz. Garer la voiture après le pont.",
+      "accesAmont": null,
+      "approche": "Sans navette : du parking aval, remonter la route, et avant le rond point suivant, prendre à droite (panneau cascade d'Angon) puis tout de suite à gauche (un panneau indiquant l'ermitage est présent plus haut). Suivre le sentier jusqu'en haut à la route puis partir sur la gauche jusqu'au pont qui enjambe le cours d'eau.",
+      "descente": "La descente commence par une C4 shuntable en RG. On arrive ensuite sur un petit enchainement équipé de deux C3. La grande cascade suit : on y accède par une main courante en câble soit en RD soit en RG (le relais en RG est beaucoup mieux). Attention, la cascade commence en goulotte en pente (glissante : attention avec du débit !) pour finir par s'ouvrir sur une partie verticale. Ensuite, désescalades et rappels pas supérieurs à une vingtaine de mètres.",
+      "retour": "Sortir à gauche avant la route.",
+      "engagement": null,
+      "periode": "Si Angon pas possible (beaucoup d'eau)",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Quelques carcasses de voitures. Très encombrés de troncs (attention). Assez glissant."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22112,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.841766,
+        "longitude": 6.225257,
+        "label": null
+      },
+      {
+        "canyonId": 22112,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.840084,
+        "longitude": 6.217521,
+        "label": null
+      },
+      {
+        "canyonId": 22112,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 45.841427,
+        "longitude": 6.225386,
+        "label": null
+      },
+      {
+        "canyonId": 22112,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 45.837528,
+        "longitude": 6.217232,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 45.841427,
+      "longitude": 6.225386,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_68c3d089c92edd13",
+          "kind": "MAP",
+          "title": "3431 OT Lac d'Annecy (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_b7999be304850223",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://clementdom.free.fr/html/annecy.htm",
+          "url": "http://clementdom.free.fr/html/annecy.htm"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

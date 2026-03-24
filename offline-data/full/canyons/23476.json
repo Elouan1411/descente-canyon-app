@@ -1,0 +1,145 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:55.831542+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23476,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23476/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23476/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23476/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23476/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/23476/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 23476,
+    "identity": {
+      "nom": "Gaglioli",
+      "nomComplet": "Ruisseau de Gaglioli",
+      "prefixeNom": "Ruisseau de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23476/Gaglioli.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Corse",
+      "departement": "Corse-du-Sud",
+      "communePrincipale": "Sari-Solenzara",
+      "communes": [
+        "Sari-Solenzara"
+      ],
+      "massif": null,
+      "bassin": "Solenzara",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2I",
+      "interet": 1.8,
+      "nbVotes": 9
+    },
+    "metrics": {
+      "altitudeDepartM": 190,
+      "deniveleM": 90,
+      "longueurM": 1000,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "35min",
+      "descente": "2h00",
+      "retour": "2min"
+    },
+    "topo": {
+      "accesAval": "De Solenzara, empruntez la D268 vous conduisant au col de Bavella. Passer le camping Rosumarinu et le snack (U Gaglioli) et garez-vous au pont qui suit sans gêner (alt 99m sur l'IGN) .",
+      "accesAmont": null,
+      "approche": "Du pont, descendre sur le côté gauche dans le lit du ruisseau et remonter celui-ci sur environ 300m. Emprunter l'affluent sec l'été arrivant en rive droite du Gaglioli sur une centaine de mètres. Dés lors, vous trouverez à droite un petit sentier discret menant au départ de la descente.",
+      "descente": "Joli petit canyon où l'on alterne sauts et nages dans un cadre sauvage...",
+      "retour": "Sortir au pont et rejoindre votre véhicule.",
+      "engagement": "jamais vraiment encaissé, il est possible de sortir à tout moment du lit du ruisseau.",
+      "periode": "Débit faible en été.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Convient à l'initiation aux sauts après vérification systématique de la profondeur des vasques."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23476,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 41.828297,
+        "longitude": 9.334558,
+        "label": null
+      },
+      {
+        "canyonId": 23476,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 41.836735,
+        "longitude": 9.331452,
+        "label": null
+      },
+      {
+        "canyonId": 23476,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 41.833599,
+        "longitude": 9.334531,
+        "label": "approche en remontant l'affluent"
+      },
+      {
+        "canyonId": 23476,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 41.830315,
+        "longitude": 9.334756,
+        "label": "sentier d'accès"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 41.836735,
+      "longitude": 9.331452,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_b6fb73f30bb7590c",
+          "kind": "MAP",
+          "title": "4253 ET Aiguilles-de-Bavella (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 520,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Corse-du-Sud) - 26 juil 2011",
+          "summary": "- Le canyonisme est interdit la nuit (sauf dérogation)\n\n- Le canyonisme est interdit s'il y a une alerte émise par Météo-France de niveau orange ou rouge en cours.\n\n- Le canyonisme est interdit aux mineurs de moins de 7 ans, sauf canyon évalué égal ou inférieur à V1-A3-E3\n\n- Les groupes auront un effectif maximum de 12 personnes, hors encadrement.",
+          "remark": "L'arrêté du 9 juillet 2019 pris conjointement par les préfectures de Corse-du-Sud et de Haute-Corse harmonise les réglementations existantes pour les deux départements.",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nArrêté préfectoral modificatif (Corse-du-Sud et Haute-Corse) n°R20-2019-07-09-001 du 9 juillet 2019\n\nArrêté préfectoral (Corse-du-Sud) n°2011207-0005 du 26 juillet 2011",
+          "effectiveDate": "26 juil 2011",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/520/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral modificatif (Corse-du-Sud et Haute-Corse) n°R20-2019-07-09-001 du 9 juillet 2019",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem520_pj2.pdf"
+            },
+            {
+              "label": "Arrêté préfectoral (Corse-du-Sud) n°2011207-0005 du 26 juillet 2011",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem520_pj1.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

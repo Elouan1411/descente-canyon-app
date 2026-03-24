@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:59:26.512351+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24170,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24170/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24170/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24170/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24170/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/24170/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 24170,
+    "identity": {
+      "nom": "L'Etrier du Diable",
+      "nomComplet": "Ravin L'Etrier du Diable",
+      "prefixeNom": "Ravin",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24170/L-Etrier-du-Diable.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-Maritimes",
+      "communePrincipale": "Rigaud",
+      "communes": [
+        "Rigaud"
+      ],
+      "massif": null,
+      "bassin": "Cians",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "",
+      "interet": 900.0,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": 900,
+      "deniveleM": 520,
+      "longueurM": 750,
+      "cascadeMaxM": null,
+      "cordeMiniM": null,
+      "navette": null
+    },
+    "timings": {
+      "approche": null,
+      "descente": null,
+      "retour": null
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": "Ouvert le 09 Avril 2017 par Dany (Le Lion), Christophe (Cactus) et Dominique (Dom)",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24170,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.965874,
+        "longitude": 6.996622,
+        "label": "Entrée commune à \"l’Étrier du Diable\" et au \"Ravin des Pyramides\""
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 43.965874,
+      "longitude": 6.996622,
+      "label": "Entrée commune à \"l’Étrier du Diable\" et au \"Ravin des Pyramides\""
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_f5a5c0f3b7f39109",
+          "kind": "MAP",
+          "title": "3641 OT Moyen Var (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_b5c2c005b1cdec0d",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.canyon-apero.com/letrier-du-diable/",
+          "url": "http://www.canyon-apero.com/letrier-du-diable/"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 470,
+          "status": "Actif",
+          "action": "Interdit",
+          "title": "Arrêté municipal (Rigaud) - 29 mars 2022",
+          "summary": "La descente de canyons secs et le barring (descente en rappel de barres rocheuses) est interdit sur la commune.",
+          "remark": null,
+          "details": "Téléchargez le fichier JPEG :\n\nArrêté municipal (Rigaud) n°1-2022 du 29 mars 2022",
+          "effectiveDate": "29 mars 2022",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/470/legislation.html",
+          "attachments": []
+        }
+      ]
+    }
+  }
+}

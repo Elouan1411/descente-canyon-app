@@ -1,0 +1,164 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:59:21.390040+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24144,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24144/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24144/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24144/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24144/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24144,
+    "identity": {
+      "nom": "Schmiedlaine",
+      "nomComplet": "Schmiedlaine",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24144/Schmiedlaine.html"
+    },
+    "location": {
+      "pays": "Allemagne",
+      "region": "Bayern",
+      "departement": "Oberbayern",
+      "communePrincipale": "Benediktbeuern",
+      "communes": [
+        "Landkreis Bad Tölz-Wolfratshausen",
+        "Benediktbeuern"
+      ],
+      "massif": "Kocheler Berge",
+      "bassin": "Loisach",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a3II",
+      "interet": 1.2,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 940,
+      "deniveleM": 170,
+      "longueurM": 2200,
+      "cascadeMaxM": 26,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h20min",
+      "descente": "2h30min",
+      "retour": "40min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24144,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.673828,
+        "longitude": 11.44305,
+        "label": null
+      },
+      {
+        "canyonId": 24144,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.68462,
+        "longitude": 11.44316,
+        "label": null
+      },
+      {
+        "canyonId": 24144,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.6982,
+        "longitude": 11.415813,
+        "label": null
+      },
+      {
+        "canyonId": 24144,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.685005,
+        "longitude": 11.44395,
+        "label": "parking bike"
+      },
+      {
+        "canyonId": 24144,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.685329,
+        "longitude": 11.44335,
+        "label": "depart sente d'approche de parking bike"
+      },
+      {
+        "canyonId": 24144,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.68465,
+        "longitude": 11.44252,
+        "label": "waypoint 2 sur lasente de parking bike"
+      },
+      {
+        "canyonId": 24144,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.683762,
+        "longitude": 11.43571,
+        "label": "waypoint 3 sur la sente de parking bike"
+      },
+      {
+        "canyonId": 24144,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.685032,
+        "longitude": 11.432365,
+        "label": "waypoint 6 arrivée approche normal par la sente de parking bike"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.6982,
+      "longitude": 11.415813,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_f0123ff97c2bfded",
+          "kind": "MAP",
+          "title": "8334 Kochel am See (Bayerisches Landesvermessungsamt)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_4d106c98a8134b60",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/C.....s/SchmiedlaineCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/C.....s/SchmiedlaineCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

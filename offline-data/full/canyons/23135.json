@@ -1,0 +1,149 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:48.592307+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23135,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23135/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23135/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23135/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23135/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23135,
+    "identity": {
+      "nom": "Altgraben",
+      "nomComplet": "Altgraben",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23135/Altgraben.html"
+    },
+    "location": {
+      "pays": "Allemagne",
+      "region": "Bayern",
+      "departement": "Oberbayern",
+      "communePrincipale": "Wallgau",
+      "communes": [
+        "Landkreis Garmisch-Partenkirchen",
+        "Krün",
+        "Wallgau"
+      ],
+      "massif": "Estergebirge",
+      "bassin": "Isar",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a3III",
+      "interet": 1.2,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1290,
+      "deniveleM": 200,
+      "longueurM": 1800,
+      "cascadeMaxM": 10,
+      "cordeMiniM": 15,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h30min",
+      "descente": "3h",
+      "retour": "1h"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": "Marche et succession de petits rappels",
+      "retour": "Il est possible de continuer et sortir par Finzbachklamm (rappel 35m, corde 2x40m nécessaire)",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23135,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.53627,
+        "longitude": 11.23235,
+        "label": null
+      },
+      {
+        "canyonId": 23135,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.519054,
+        "longitude": 11.226111,
+        "label": "sortie au sentier (alternatif continuer et sortir par Finzbach - rappel 35m)"
+      },
+      {
+        "canyonId": 23135,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.506969,
+        "longitude": 11.271199,
+        "label": "dans le village Krün"
+      },
+      {
+        "canyonId": 23135,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.510506,
+        "longitude": 11.263549,
+        "label": "1 prendre la piste à droite"
+      },
+      {
+        "canyonId": 23135,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.517452,
+        "longitude": 11.230772,
+        "label": "2 prendre sentier à droite \"AV 453\" (direction Krüner Alm)"
+      },
+      {
+        "canyonId": 23135,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.517414,
+        "longitude": 11.225828,
+        "label": "arriver Finzbach (au-dessous du 35m-rappel)"
+      },
+      {
+        "canyonId": 23135,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.514519,
+        "longitude": 11.251896,
+        "label": "sortie par Finzbachklamm"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.506969,
+      "longitude": 11.271199,
+      "label": "dans le village Krün"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_003da29f948341fb",
+          "kind": "MAP",
+          "title": "UK L 31 Werdenfelser Land (Bayerisches Landesvermessungsamt)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

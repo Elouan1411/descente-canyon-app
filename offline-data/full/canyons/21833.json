@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:54.239739+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21833,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21833/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21833/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21833/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21833/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21833,
+    "identity": {
+      "nom": "Strubklamm",
+      "nomComplet": "Strubklamm, Almbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21833/Strubklamm.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Salzbourg",
+      "departement": "Politischer Bezirk Salzburg-Umgebung",
+      "communePrincipale": "Faistenau",
+      "communes": [
+        "Faistenau"
+      ],
+      "massif": "Osterhorngruppe",
+      "bassin": "Salzach",
+      "coursEau": "Almbach"
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 3.0,
+      "nbVotes": 8
+    },
+    "metrics": {
+      "altitudeDepartM": 670,
+      "deniveleM": 100,
+      "longueurM": 1400,
+      "cascadeMaxM": 12,
+      "cordeMiniM": 15,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h",
+      "descente": "3h",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "Piste en",
+      "accesAmont": "du lac de Wiestal\n\nAmont : A côté du barrage du lac Seewirt\n\nPossibilité de monter sans navette par un bon chemin.",
+      "approche": "par le \"Metzgersteig\" à la RG (orograf.)",
+      "descente": "Petits obstacles et long biefs. La 2ème partie est la plus belle.",
+      "retour": null,
+      "engagement": "Fort. Une échappatoire",
+      "periode": "Le barrage en amont capte l'intégralité du débit. Attention aux surverses.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Selon un panneau, il faudrait être accompagné d'un professionnel (???)"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21833,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.775215,
+        "longitude": 13.208485,
+        "label": null
+      },
+      {
+        "canyonId": 21833,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.767139,
+        "longitude": 13.18428,
+        "label": null
+      },
+      {
+        "canyonId": 21833,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.769157,
+        "longitude": 13.181791,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.769157,
+      "longitude": 13.181791,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_b021caf8b1429c77",
+          "kind": "TOPOGUIDE",
+          "title": "Tour de l'Europe en Canyon - Les plus belles descentes",
+          "authors": [
+            "Caracal et les Sancho Panza"
+          ],
+          "publicationYear": 2007,
+          "reference": "978-2-9526024-1-7",
+          "editor": null,
+          "status": "en stock\n\n- 25,90 € -\n\nCommandez cet ouvrage dès maintenant !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/13/Le-Tour-de-l-Europe-en-Canyon-:-les-plus-belles-descentes.html"
+        },
+        {
+          "id": "biblio_e6999a504a929a33",
+          "kind": "TOPOGUIDE",
+          "title": "Canyoning",
+          "authors": [
+            "Zaunhuber"
+          ],
+          "publicationYear": 1996,
+          "reference": null,
+          "editor": "Pollner Verlag",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1177/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_f3d52fb39dcb22f1",
+          "kind": "MAP",
+          "title": "94 Hallein (ÖK 50)",
+          "scale": "1:50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_e65cd93fd99c86b9",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cgi-bin/redirect.....action=detailed_desc",
+          "url": "http://canyon.carto.net/cgi-bin/redirect.....action=detailed_desc"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

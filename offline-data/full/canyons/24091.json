@@ -1,0 +1,188 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:59:10.346762+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24091,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24091/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24091/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24091/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24091/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/24091/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 24091,
+    "identity": {
+      "nom": "Pruniccia",
+      "nomComplet": "Ruisseau de Pruniccia",
+      "prefixeNom": "Ruisseau de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24091/Pruniccia.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Corse",
+      "departement": "Corse-du-Sud",
+      "communePrincipale": "Bocognano",
+      "communes": [
+        "Bocognano"
+      ],
+      "massif": "Monte Rotondo",
+      "bassin": "Gravona",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a3IV",
+      "interet": 1.8,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 990,
+      "deniveleM": 500,
+      "longueurM": 3300,
+      "cascadeMaxM": 32,
+      "cordeMiniM": 35,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "2h30min",
+      "descente": "4h30min",
+      "retour": "45min"
+    },
+    "topo": {
+      "accesAval": "comme Richiusa",
+      "accesAmont": null,
+      "approche": null,
+      "descente": "E1: 990m\n\nE2: 700m (cascade max. 20m; approche: 1h30min; descente 2h45min)",
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24091,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.109638,
+        "longitude": 9.049901,
+        "label": "E1: integrale"
+      },
+      {
+        "canyonId": 24091,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.098625,
+        "longitude": 9.052993,
+        "label": "E2: partie aval"
+      },
+      {
+        "canyonId": 24091,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.090603,
+        "longitude": 9.048208,
+        "label": null
+      },
+      {
+        "canyonId": 24091,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 42.091801,
+        "longitude": 9.066469,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 42.091801,
+      "longitude": 9.066469,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_2bafc8e0f7a42d9c",
+          "kind": "TOPOGUIDE",
+          "title": "La Corse en Canyon",
+          "authors": [
+            "Association CorseCanyon"
+          ],
+          "publicationYear": 2018,
+          "reference": null,
+          "editor": "auto-edition",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/1127/La-Corse-en-Canyon-3eme-edition.html"
+        },
+        {
+          "id": "biblio_eeda460e91ce529f",
+          "kind": "TOPOGUIDE",
+          "title": "Corse Canyons (2ème édition)",
+          "authors": [
+            "Franck Jourdan",
+            "Jean-François Fiorina"
+          ],
+          "publicationYear": 2006,
+          "reference": "2-84698-169-8",
+          "editor": "Albiana",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/133/Corse-Canyons.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_11609288f76c61fe",
+          "kind": "MAP",
+          "title": "4252 OT Monte-Renoso - Bastelica (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_18ca1b6d9d3f78bf",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/Canyons/PrunicciaCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/Canyons/PrunicciaCanyon"
+        },
+        {
+          "id": "resource_3ff6df2f7864cf93",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.ffme.info/canyon/CANYON_fiche.php?id=138",
+          "url": "http://www.ffme.info/canyon/CANYON_fiche.php?id=138"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 520,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Corse-du-Sud) - 26 juil 2011",
+          "summary": "- Le canyonisme est interdit la nuit (sauf dérogation)\n\n- Le canyonisme est interdit s'il y a une alerte émise par Météo-France de niveau orange ou rouge en cours.\n\n- Le canyonisme est interdit aux mineurs de moins de 7 ans, sauf canyon évalué égal ou inférieur à V1-A3-E3\n\n- Les groupes auront un effectif maximum de 12 personnes, hors encadrement.",
+          "remark": "L'arrêté du 9 juillet 2019 pris conjointement par les préfectures de Corse-du-Sud et de Haute-Corse harmonise les réglementations existantes pour les deux départements.",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nArrêté préfectoral modificatif (Corse-du-Sud et Haute-Corse) n°R20-2019-07-09-001 du 9 juillet 2019\n\nArrêté préfectoral (Corse-du-Sud) n°2011207-0005 du 26 juillet 2011",
+          "effectiveDate": "26 juil 2011",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/520/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral modificatif (Corse-du-Sud et Haute-Corse) n°R20-2019-07-09-001 du 9 juillet 2019",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem520_pj2.pdf"
+            },
+            {
+              "label": "Arrêté préfectoral (Corse-du-Sud) n°2011207-0005 du 26 juillet 2011",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem520_pj1.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

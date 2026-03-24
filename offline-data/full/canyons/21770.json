@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:38.683457+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21770,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21770/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21770/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21770/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21770/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21770,
+    "identity": {
+      "nom": "Fontanelles",
+      "nomComplet": "Cascades des Fontanelles, L'Ognon",
+      "prefixeNom": "Cascades des",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21770/Fontanelles.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Hérault",
+      "communePrincipale": "Félines-Minervois",
+      "communes": [
+        "Félines-Minervois"
+      ],
+      "massif": "Minervois",
+      "bassin": "Ognon",
+      "coursEau": "L'Ognon"
+    },
+    "rating": {
+      "cotation": "v4a1I",
+      "interet": 1.9,
+      "nbVotes": 11
+    },
+    "metrics": {
+      "altitudeDepartM": 520,
+      "deniveleM": 130,
+      "longueurM": 300,
+      "cascadeMaxM": 35,
+      "cordeMiniM": 35,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "1h30",
+      "retour": "35min"
+    },
+    "topo": {
+      "accesAval": "un peu avant le pont d'arrivée (IGN conseillée pour prendre la bonne piste).",
+      "accesAmont": null,
+      "approche": "Repérer en face du parking un petit sentier qui nous mène en 5 min au départ du canyon.",
+      "descente": "Belle descente continue.\n\nA faire bien sûr avec de l'eau, mais même sec, agréable.\n\nTrès très bien équipé !!",
+      "retour": "Du pont, suivre la piste en RD du ruisseau jusqu'à la piste que l'on remontera jusqu'à la voiture.\n\nCeux qui auront posé une navette atteindront la voiture en 2 minutes.",
+      "engagement": "Equipements école\n\nGlissant par temps humide",
+      "periode": "Après de grosses pluies automne ou printemps principalement",
+      "geologie": "Limite schistes/calcaires\n\nDes calcaires métamorphisés donnent naissance à des passages en marbre rose dans le canyons.",
+      "historique": "Thierry Achmetoff",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21770,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.371071,
+        "longitude": 2.585692,
+        "label": null
+      },
+      {
+        "canyonId": 21770,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 43.369839,
+        "longitude": 2.582195,
+        "label": null
+      },
+      {
+        "canyonId": 21770,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 43.371616,
+        "longitude": 2.583311,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 43.369839,
+      "longitude": 2.582195,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_f02bfa1accc09c17",
+          "kind": "MAP",
+          "title": "2445 O Peyrac Minervois (IGN TOP 25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_b441967f28aefa1e",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://congres2005.ffspeleo.fr/index.php.....scades-de-fontanelle",
+          "url": "http://congres2005.ffspeleo.fr/index.php.....scades-de-fontanelle"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

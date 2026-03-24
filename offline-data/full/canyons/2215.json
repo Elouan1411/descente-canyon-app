@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:44:36.432875+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2215,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2215/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2215/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2215/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2215/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/2215/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 2215,
+    "identity": {
+      "nom": "Gardon d'Alès",
+      "nomComplet": "Etroits du Gardon d'Alès",
+      "prefixeNom": "Etroits du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2215/Gardon-d-Ales.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Lozère",
+      "communePrincipale": "Saint-Hilaire-de-Lavit",
+      "communes": [
+        "Saint-Privat-de-Vallongue",
+        "Saint-Hilaire-de-Lavit"
+      ],
+      "massif": "Cévennes",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 1.2,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 360,
+      "deniveleM": 10,
+      "longueurM": 500,
+      "cascadeMaxM": 1,
+      "cordeMiniM": null,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "10min",
+      "descente": "30min",
+      "retour": "??"
+    },
+    "topo": {
+      "accesAval": "sur la route d'Ales vers Florac en passant par la Grande Combe tjs tout droit vers Florac sur la N106 apres st hillaire vous passer sur un pont de pierre qui tourne sur la gauche en montant, de suite apres un parking sur la gauche vous prenez le sentier decouverte sur env 300m et entrez dans l'eau a hauteur de la passerelle de bois.",
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": "Quasiment aucun",
+      "periode": "Beaucoup d'eau, vous êtes dans le Gardon.",
+      "geologie": "Schiste-Gneiss",
+      "historique": null,
+      "remarques": "C'est plus un coin de baignade qu'une descente de canyon."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2215,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.266376,
+        "longitude": 3.869956,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.266376,
+      "longitude": 3.869956,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_3f1dc2b70b91eb16",
+          "kind": "MAP",
+          "title": "2740 ET Corniches Des Cevennes (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 508,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Lozère) - 26 oct 2016",
+          "summary": "La pratique du canyonisme est autorisée sur le département de la Lozère du lever au coucher du soleil. Il est cependant interdit de s’engager dans un canyon après 17 heures.\n\nL'arrêté préfectoral réglemente également la pratique du canyonisme en Lozère sur les points suivants : les équipements obligatoires, la prise d’information préalable, l'accès aux sites, l’effectif des groupes, l’encadrement, le respect du milieu naturel, des équipements et des autres usagers, le retour d’expérience et les contrôles.",
+          "remark": null,
+          "details": "Arrêté préfectoral (Lozère) n°DDCSPP-JESEP-2016-300-001 du 26 octobre 2016",
+          "effectiveDate": "26 oct 2016",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/508/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral (Lozère) n°DDCSPP-JESEP-2016-300-001 du 26 octobre 2016",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem508_pj1.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

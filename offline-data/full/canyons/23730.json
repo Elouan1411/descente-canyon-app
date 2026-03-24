@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:54.056480+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23730,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23730/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23730/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23730/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23730/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23730,
+    "identity": {
+      "nom": "Neva",
+      "nomComplet": "Rio Neva",
+      "prefixeNom": "Rio",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23730/Neva.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Trentino-Alto Adige",
+      "departement": "Trento",
+      "communePrincipale": "Mezzano",
+      "communes": [
+        "Mezzano"
+      ],
+      "massif": null,
+      "bassin": "Brenta",
+      "coursEau": "Rio Neva"
+    },
+    "rating": {
+      "cotation": "v3a3III",
+      "interet": 3.1,
+      "nbVotes": 7
+    },
+    "metrics": {
+      "altitudeDepartM": 1100,
+      "deniveleM": 1015,
+      "longueurM": 400,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 25,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "1h",
+      "retour": "10-15min"
+    },
+    "topo": {
+      "accesAval": "Depuis Feltre (30km au sud-ouest de Belluno) prendre la SS50 vers l'ouest. Suivre la direction de Mezzano-Fiera di Primiera. A l'entrée de Mezzano, prendre au rond-point avec la sculpture métallique, la direction de Val Noana (2ème sortie). Attention, la route est étroite et sinueuse. Aller jusqu'au refuge Fonteghi et se garer sans gêner.",
+      "accesAmont": null,
+      "approche": "Sans traverser le pont, entrer dans le ruisseau en amont du refuge",
+      "descente": "Dès le départ, le ton est donné, un étroit, le rocher est magnifique. Rapidement le canyon s'encaisse. Goulotte, arche naturelle, belles vasques.",
+      "retour": "Arrivé au dessus du lac, une courte via ferrata vous permet de sortir du canyon. Une fois au dessus du canyon, une sente évidente vous ramène à la voiture",
+      "engagement": "Pas d'échappatoire, mais le canyon est court",
+      "periode": "Le bassin est étendu, des traces de crues importantes.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Belle surprise\n\nDommage que ce soit si court\n\nN'hésiter pas à profiter de l'auberge, les propriétaires sont super sympa"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23730,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.13945,
+        "longitude": 11.857183,
+        "label": null
+      },
+      {
+        "canyonId": 23730,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.140484,
+        "longitude": 11.853862,
+        "label": null
+      },
+      {
+        "canyonId": 23730,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.139397,
+        "longitude": 11.857156,
+        "label": "Rifugio Fonteghi"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.139397,
+      "longitude": 11.857156,
+      "label": "Rifugio Fonteghi"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_df5c88bb731be852",
+          "kind": "MAP",
+          "title": "023 Alpi Feltrine - La Vètte - Cimònega (Tabacco)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

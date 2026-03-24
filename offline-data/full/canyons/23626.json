@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:30.762532+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23626,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23626/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23626/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23626/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23626/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/23626/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 23626,
+    "identity": {
+      "nom": "Echelles",
+      "nomComplet": "La Grotte des Echelles",
+      "prefixeNom": "La Grotte des",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23626/Echelles.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Savoie",
+      "communePrincipale": "Saint-Christophe",
+      "communes": [
+        "Saint-Christophe"
+      ],
+      "massif": "Chartreuse",
+      "bassin": "Guiers Vif",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1I",
+      "interet": 1.8,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 470,
+      "deniveleM": 50,
+      "longueurM": 200,
+      "cascadeMaxM": 15,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "45min",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "Se garer sur le parking des grottes au lieu-dit \"La Grotte\" au nord de Saint-Christophe-sur-Guiers.",
+      "accesAmont": null,
+      "approche": "Du parking, prendre la rampe qui mène à la voie Sarde et monter jusqu'à l'entrée de la grotte inférieure en empruntant le \"Grand Goulet\".",
+      "descente": "Du chemin pavé, il faudra enjamber le mur romain pour descendre dans le canal, 30m en amont de la porte d'entrée grillagée.\n\nUn premier ressaut de 1.5m permet de rentrer dans la cavité. On circule dans un joli méandre plus ou moins étroit. Une petite vasque ponctuelle précède la première cascade : une C15 équipée de deux broches pour la main courante et d'un relais triangulé avec anneau. En bas de cette cascade, un lac de 15m permet de faire quelques petits sauts depuis les berges.\n\nEncore quelques mètres et on aperçoit les lueurs du jour. Quelques ressauts défendent la sortie au soleil avant de retrouver deux C15 peu esthétiques et équipées de quelques goujons sans maillon.",
+      "retour": "Continuer dans le ruisseau jusqu'au pont et retrouver la voiture à 100 mètres sur la gauche.",
+      "engagement": "Le parcours est relativement rapide et ne comporte qu'une cascade souterraine. Une échappatoire existe en sortant de la grotte en rive gauche avant les deux dernières C15.\n\nCependant, une crue sous terre pourrait être problématique malgré la présence des passerelles qui sont la plupart du temps inatteignables.",
+      "periode": "Cette grotte est totalement sèche la plupart du temps. Seules de très grosses pluies permettent de la trouver en eau. Cependant, le ruisseau est alors alimenté par un très gros réseau souterrain qui peut déborder par la grotte supérieure et faire monter le ruisseau à plus d'un mètre de haut (https://www.youtube.com/watch?v=Gn13-Y1fkO0). C’est plus de 5m3/s qui pleuvent arriver sans prévenir lorsque la grotte supérieure crève.",
+      "geologie": "Calcaire urgonien",
+      "historique": "Connue de très longue date. La grotte a probablement été parcourue en première par les romains !!!",
+      "remarques": "Le site de St Christophe est un site privé sur lequel il y a une interdiction d’entrée. Il s’agit de grottes touristiques appartenant à la commune de St Christophe. Il y a une délégation de service public pour la gestion touristique et une convention sur la partie spéléo avec la société Isère Sport Nature.\n\nToute personne entrant dans les grottes sans autorisation d’un des gestionnaires du site touristiques ou de la partie spéléo se retrouverait malheureusement en infraction.\n\nLe site est ouvert aux professionnels de la spéléo ainsi qu’aux fédérés spéléo APRES EN AVOIR INFORMÉ des membres de la société Isère Sport Nature.\n\nIl convient donc de respecter scrupuleusement cette procédure sous peine de ne plus pouvoir y accéder. De plus, les membres de la société Isère Sport Nature sauront vous conseiller sur les risques particuliers que présentent cette grotte."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23626,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.44976,
+        "longitude": 5.788396,
+        "label": null
+      },
+      {
+        "canyonId": 23626,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.449158,
+        "longitude": 5.785993,
+        "label": null
+      },
+      {
+        "canyonId": 23626,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.44809,
+        "longitude": 5.784738,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.44809,
+      "longitude": 5.784738,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_07737b47737fa6b4",
+          "kind": "MAP",
+          "title": "3333 OT Massif de la Chartreuse Nord (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 332,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté",
+          "summary": "Le site historique des Grottes de Saint-Christophe est un site privé sur lequel il y a une interdiction d’entrée. Il s’agit de grottes touristiques appartenant à la commune de St Christophe. Il y a une délégation de service public pour la gestion touristique et une convention sur la partie spéléo avec la société \"Cordéo\".\n\nToute personne entrant dans les grottes sans autorisation d’un des gestionnaires du site touristique ou de la partie spéléo se retrouverait malheureusement en infraction.\n\nLe site est ouvert aux professionnels de la spéléo ainsi qu’aux fédérés spéléo APRES EN AVOIR INFORMÉ des membres de la société Cordéo.\n\nIl convient donc de respecter scrupuleusement cette procédure sous peine de ne plus pouvoir y accéder. De plus, les membres de la société Cordéo sauront vous conseiller sur les risques particuliers que présentent cette grotte. Contact :\n\ncontact[@]cordeo.fr ou www.cordeo.fr",
+          "remark": "Nota : changement de prestataire pour le parcours acrospéléo, société Cordéo à la place de Isère Sport Nature.",
+          "details": null,
+          "effectiveDate": null,
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/332/legislation.html",
+          "attachments": []
+        }
+      ]
+    }
+  }
+}

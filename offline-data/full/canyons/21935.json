@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:14.793619+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21935,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21935/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21935/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21935/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21935/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21935,
+    "identity": {
+      "nom": "Roche",
+      "nomComplet": "Nant de la Roche",
+      "prefixeNom": "Nant de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21935/Roche.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Savoie",
+      "communePrincipale": "Montagny",
+      "communes": [
+        "Montagny"
+      ],
+      "massif": "Vanoise",
+      "bassin": "Isère",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a1II",
+      "interet": 0.6,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 1100,
+      "deniveleM": 260,
+      "longueurM": 470,
+      "cascadeMaxM": 40,
+      "cordeMiniM": 40,
+      "navette": "2.7km"
+    },
+    "timings": {
+      "approche": "2/25min",
+      "descente": "1h30",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": "NB : Navette facultative\n\nDe Bozel, prendre la D 89 en direction de Montagny et Villemartin. Très vite, dans une épingle, laisser à droite la D 89 a et poursuivre la D 89 vers Montagny. A environ 2 km depuis l'épingle, la route coupe le ruisseau sur un pont (cote 984 IGN). Stationner peu avant à gauche sur un petit parking. L’enchaînement final est visible depuis le pont.",
+      "accesAmont": null,
+      "approche": "Monter à pied jusqu'au hameau des Villards (si on choisit de faire une navette, il faut se garer sur le parking fléché situé en hauteur\n\ndu hameau, à 2 minutes du départ de la descente). Gagner ensuite le ruisseau au niveau d'une sorte de petite scierie ; on rejoint alors au mieux le cours d'eau par un rappel sur les côtés.",
+      "descente": "Le début est sans intérêt et parsemé d'ordures. La partie correcte débute après la C40 et se termine à la route. La deuxième partie est surtout composée de blocs et est très peu intéressante.",
+      "retour": "Prendre le sentier RD au niveau de la passerelle et remonter\n\njusqu'au hameau de La Roche. On rejoint ensuite la D89 puis la voiture.",
+      "engagement": "Pentes boisées, un peu d'encaissement rocheux au niveau de la C40 et de la fin de la deuxième partie.",
+      "periode": "Début de l'été",
+      "geologie": null,
+      "historique": "Première descente inconnue. Topographié le 07/07/2007 par Patrick\n\nChollot, Yves Daniou & Emmanuelle Fleck.",
+      "remarques": "Ne faire que la première partie (0,5/4). La C40 est équipée en RG pour éviter la végétation (2 goujons 8mm) et le reste sur arbres (cordes + maillons)."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21935,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.45182,
+        "longitude": 6.613855,
+        "label": null
+      },
+      {
+        "canyonId": 21935,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.449837,
+        "longitude": 6.61231,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 45.45182,
+      "longitude": 6.613855,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_41d94fc71141bb59",
+          "kind": "MAP",
+          "title": "3534 OT Les Trois-Vallees (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_a90eb78e2285feeb",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "https://yd.marmitologue.net/topos/nant_de_la_roche_73.pdf",
+          "url": "https://yd.marmitologue.net/topos/nant_de_la_roche_73.pdf"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

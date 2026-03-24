@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:32.575217+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23070,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23070/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23070/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23070/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23070/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23070,
+    "identity": {
+      "nom": "Lianes (médian)",
+      "nomComplet": "Bras des Lianes (médian), Bras des lianes",
+      "prefixeNom": "Bras des",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23070/Lianes-median.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Bras-Panon",
+      "departement": "La Réunion",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Eden",
+      "bassin": "Riviere du Mât",
+      "coursEau": "Bras des lianes"
+    },
+    "rating": {
+      "cotation": "v3a3II",
+      "interet": 2.4,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 768,
+      "deniveleM": 70,
+      "longueurM": 600,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 30,
+      "navette": "0.8km"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "2h00",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "De St André, prendre la D48 en direction de Salazie. Au pont de la rivière du Mât ne pas continuer dans le cirque, mais prendre la direction de Bras-Panon. Suivre alors les panneaux en bleu clair qui indiquent la Plaine des Lianes et la Cascades du Chien. La route monte au milieu des champs de canne. Dépasser le point de vue sur la Cascade du Chien et monter jusqu'à la fin de la route bétonnée jusqu'à un kiosque, c’est le point de départ du sentier qui monte à bélouve.",
+      "accesAmont": null,
+      "approche": "Emprunter le sentier direction bélouve pendant environ 15 mn jusqu'à une ravine active et large",
+      "descente": null,
+      "retour": "après 300 m de marche en bloc suivre une sente évidente en rive droite (ancien sentier de bélouve) qui ramène à la route bétonnée puis remonter celle ci jusqu’au kiosque de départ",
+      "engagement": "canyon d'initiation",
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23070,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": -21.03513,
+        "longitude": 55.602005,
+        "label": "E1 (E2 est difficile à trouver)"
+      },
+      {
+        "canyonId": 23070,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": -21.034262,
+        "longitude": 55.606068,
+        "label": "E2 (entrée meilleur, mais difficile à trouver)"
+      },
+      {
+        "canyonId": 23070,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": -21.02721,
+        "longitude": 55.610798,
+        "label": "A1 (grand arbre rive droite, depart sente au rive)"
+      },
+      {
+        "canyonId": 23070,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": -21.024727,
+        "longitude": 55.612236,
+        "label": "A2 (au captage rive droite vers la piste -GPSpointe - parallèle avec la rivière)"
+      },
+      {
+        "canyonId": 23070,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": -21.030392,
+        "longitude": 55.611206,
+        "label": null
+      },
+      {
+        "canyonId": 23070,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": -21.02602,
+        "longitude": 55.61264,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": -21.030392,
+      "longitude": 55.611206,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_13d26f471caae438",
+          "kind": "MAP",
+          "title": "4403RT Saint-Benoît / Saint-André (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

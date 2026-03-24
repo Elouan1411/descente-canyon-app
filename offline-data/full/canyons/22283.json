@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:29.496328+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22283,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22283/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22283/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22283/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22283/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22283,
+    "identity": {
+      "nom": "Wirtatobel (inférieur)",
+      "nomComplet": "Wirtatobel (inférieur), Rickenbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22283/Wirtatobel-inferieur.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Vorarlberg",
+      "departement": "Bregenz",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Bregenzer Wald",
+      "bassin": "Bregenzer Ache",
+      "coursEau": "Rickenbach"
+    },
+    "rating": {
+      "cotation": "v4a3III",
+      "interet": 2.4,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 650,
+      "deniveleM": 115,
+      "longueurM": 500,
+      "cascadeMaxM": 40,
+      "cordeMiniM": 50,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "1h30",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "anche et traverse le ruisseau Rickenbach dans une virage à droite. Garer la voiture après le pont sur le côte gauche de la route.",
+      "accesAmont": null,
+      "approche": "Descendre à côte du pont dans le lit de ruisseau en rive droite.",
+      "descente": "Après une C25, on descend en rappel la C40 suivante depuis l'arbre (à gauche); encore une C25 et on marche jusqu'à des carcasses.",
+      "retour": "Sortir après les premières carcasses (blanche, pneu de voiture) à droite. Monter hors sentier jusqu'à la route. Passer (à droite) la galerie d'avalanche et arriver à la voiture.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22283,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.501999,
+        "longitude": 9.793732,
+        "label": null
+      },
+      {
+        "canyonId": 22283,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.49791,
+        "longitude": 9.794548,
+        "label": null
+      },
+      {
+        "canyonId": 22283,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.501648,
+        "longitude": 9.794247,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.501648,
+      "longitude": 9.794247,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_11c4163492754279",
+          "kind": "MAP",
+          "title": "WK 364 Bregenzerwald (Freytag & Berndt)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_3309a215d3e84f89",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/C.....pic=WirtatobelCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/C.....pic=WirtatobelCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

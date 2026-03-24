@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:26.785800+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23881,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23881/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23881/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23881/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23881/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23881,
+    "identity": {
+      "nom": "Evis",
+      "nomComplet": "Rio d' Evis, Rio Neves, Nevesbach, Klomme, Zösenklamm, LappacherKlamm, Mühlwalder Bach, Lappacher Klamm",
+      "prefixeNom": "Rio d'",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23881/Evis.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Trentino-Alto Adige",
+      "departement": "Bolzano",
+      "communePrincipale": "Lappach/Lapago",
+      "communes": [
+        "Lappach/Lapago"
+      ],
+      "massif": "Zillertaler Alpen",
+      "bassin": "Aurino/Ahr",
+      "coursEau": "Lappacher Klamm"
+    },
+    "rating": {
+      "cotation": "v4a4II",
+      "interet": null,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": 1550,
+      "deniveleM": 170,
+      "longueurM": 860,
+      "cascadeMaxM": 40,
+      "cordeMiniM": 40,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "2h",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "Navette possible (4 km)",
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "Présence en amont d'une retenue artificielle (Lago di Neves). En cas de lâcher, une sirène se déclenche qui s'entend jusque dans le canyon."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23881,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.92318,
+        "longitude": 11.79065,
+        "label": null
+      },
+      {
+        "canyonId": 23881,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.920502,
+        "longitude": 11.79597,
+        "label": "A1 - sans navette"
+      },
+      {
+        "canyonId": 23881,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.920311,
+        "longitude": 11.798933,
+        "label": "A2 avec navette"
+      },
+      {
+        "canyonId": 23881,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 46.920284,
+        "longitude": 11.799166,
+        "label": "P2"
+      },
+      {
+        "canyonId": 23881,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.923195,
+        "longitude": 11.790927,
+        "label": "P = parking amont"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.920284,
+      "longitude": 11.799166,
+      "label": "P2"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

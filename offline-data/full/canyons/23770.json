@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:02.220832+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23770,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23770/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23770/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23770/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23770/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23770,
+    "identity": {
+      "nom": "Larga",
+      "nomComplet": "Val Larga",
+      "prefixeNom": "Val",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23770/Larga.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Lombardia",
+      "departement": "Lecco",
+      "communePrincipale": "Tremenico",
+      "communes": [
+        "Tremenico"
+      ],
+      "massif": "Alpi Bergamasche",
+      "bassin": "Lac de Come",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a3IV",
+      "interet": null,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": 720,
+      "deniveleM": 290,
+      "longueurM": 1000,
+      "cascadeMaxM": 35,
+      "cordeMiniM": 40,
+      "navette": "23.3km"
+    },
+    "timings": {
+      "approche": "1h40min",
+      "descente": "3h20min",
+      "retour": "1h"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23770,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.067242,
+        "longitude": 9.352511,
+        "label": null
+      },
+      {
+        "canyonId": 23770,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.071564,
+        "longitude": 9.352812,
+        "label": null
+      },
+      {
+        "canyonId": 23770,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 46.060966,
+        "longitude": 9.333913,
+        "label": null
+      },
+      {
+        "canyonId": 23770,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 46.074715,
+        "longitude": 9.365965,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 46.060966,
+      "longitude": 9.333913,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

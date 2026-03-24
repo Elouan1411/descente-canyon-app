@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:46.710245+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23129,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23129/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23129/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23129/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23129/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23129,
+    "identity": {
+      "nom": "Orino",
+      "nomComplet": "Orino",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23129/Orino.html"
+    },
+    "location": {
+      "pays": "Grèce",
+      "region": "Crete",
+      "departement": "Lasithi",
+      "communePrincipale": "Lerapetra",
+      "communes": [
+        "Lerapetra"
+      ],
+      "massif": "Oros Thriptis",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2I",
+      "interet": 1.8,
+      "nbVotes": 6
+    },
+    "metrics": {
+      "altitudeDepartM": 512,
+      "deniveleM": 110,
+      "longueurM": 500,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 25,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "45min",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "De Héraklion, se rendre à Oreino par EO Irakliou Agiou Nikolaou/VOAK/E75/EO90. 1,6km avant le village, se garer sur le parking à gauche.",
+      "accesAmont": null,
+      "approche": "Descendre au mieux dans le torrent un peu en aval du parking.",
+      "descente": "Quelques jolis obstacles dans un très beau cadre. L'eau y coule abondamment par rapport aux autres canyons de Crète.\n\nrappels: 4 de faible hauteur puis 3 beaux rappels arrosés.",
+      "retour": "Sortir RD et remonter la rive en suivant une sente peu marquée qui remonte d'abord vers l'aval puis qui tourne rapidement en épingle pour suivre une canalisation. On rejoint ensuite une piste qui mène à la route que l'on suit jusqu'au parking de départ.",
+      "engagement": null,
+      "periode": "Printemps",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23129,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 35.071705,
+        "longitude": 25.913742,
+        "label": null
+      },
+      {
+        "canyonId": 23129,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 35.067707,
+        "longitude": 25.915363,
+        "label": null
+      },
+      {
+        "canyonId": 23129,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 35.072094,
+        "longitude": 25.91308,
+        "label": null
+      },
+      {
+        "canyonId": 23129,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 35.064465,
+        "longitude": 25.916651,
+        "label": "P 4x4"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 35.072094,
+      "longitude": 25.91308,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_dfd20302c6152ce4",
+          "kind": "MAP",
+          "title": "4 Lasithi (Selena)",
+          "scale": "1/100000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

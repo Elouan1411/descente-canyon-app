@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:59:04.751543+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24069,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24069/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24069/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24069/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24069/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24069,
+    "identity": {
+      "nom": "Bécabot",
+      "nomComplet": "Bécabot",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24069/Becabot.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Salazie",
+      "departement": "La Réunion",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Cirque de Salazie-Bélouve",
+      "bassin": "Rivière des Fleurs Jaunes",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a3III",
+      "interet": 2.7,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 730,
+      "deniveleM": 190,
+      "longueurM": 550,
+      "cascadeMaxM": 57,
+      "cordeMiniM": 60,
+      "navette": "12.8km"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "3h30min",
+      "retour": "1h30"
+    },
+    "topo": {
+      "accesAval": "Aller à Salazie, et aller jusqu’au terminal de la route qui mène à Bé Cabot les Bas. Se garer (attention pas beaucoup de places de parking).",
+      "accesAmont": null,
+      "approche": "Prendre le sentier qui mène à la passerelle.",
+      "descente": "8 rappels avec un final de toute beauté dans une vasque suspendue.",
+      "retour": "Rejoindre le pont qui enjambe Fleurs jaunes.",
+      "engagement": "L'étroiture finale peut être délicate par gros débit\n\nA cet endroit les relais souffrent souvent des crues.",
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "Pour la tyrolienne C55 finale prévoir une corde de 80m"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24069,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": -21.016428,
+        "longitude": 55.505203,
+        "label": null
+      },
+      {
+        "canyonId": 24069,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": -21.018549,
+        "longitude": 55.508274,
+        "label": null
+      },
+      {
+        "canyonId": 24069,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": -21.015308,
+        "longitude": 55.50547,
+        "label": null
+      },
+      {
+        "canyonId": 24069,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": -21.034155,
+        "longitude": 55.493263,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": -21.015308,
+      "longitude": 55.50547,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_55f7e7495ecc3070",
+          "kind": "MAP",
+          "title": "4402RT Saint-Denis (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_57ac4a865dc408a9",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/Canyons/BeCabotCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/Canyons/BeCabotCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

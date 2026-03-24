@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:30.107704+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23624,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23624/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23624/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23624/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23624/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23624,
+    "identity": {
+      "nom": "Gorgate (aval)",
+      "nomComplet": "Vallon de Gorgate (aval)",
+      "prefixeNom": "Vallon de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23624/Gorgate-aval.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-Maritimes",
+      "communePrincipale": "Utelle",
+      "communes": [
+        "Utelle"
+      ],
+      "massif": "Vallée de la Vésubie",
+      "bassin": "Vésubie",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2III",
+      "interet": 1.3,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 650,
+      "deniveleM": 150,
+      "longueurM": 300,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 20,
+      "navette": "4.0km"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "1h",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": "de Nice suivre la Vallée du Var jusqu’à Plan du Var puis tourner à droite dans la vallée de la Vésubie jusqu’au Suquet. Suivre alors à gauche la M 373 vers Pélasque pour se garer au pied de la balise 19, avant de passer sur le pont de Riou du Figaret.\n\nAccès",
+      "accesAmont": "avec navette de 4km : passer le pont et monter à Figaret ou, à la balise 16, on tourne à droite jusqu’au hameau des Bourgougnou* et la chapelle Sainte-Anne.",
+      "approche": "De la chapelle, suivre le sentier, qui traverse le hameau des Bourgougnou*, puis sa branche de gauche qui descend au vallon (merci de respecter la tranquillité des lieux).",
+      "descente": "une progression rapide conduit dans l'encaissement ou s'enchainent 5 cascades avec des vasques au pied C12, C8, C12, C6 et C8. Le vallon passe sous le pont du canal. Puis C8, C10, C6, C20 et C15 finale avec un beau bassin (toboggan ou saut possible).",
+      "retour": "Arrivé dans le collecteur, le suivre à droite par ses berges en préférant sa rive gauche jusqu’au pont de la route.",
+      "engagement": "échappatoire possible au canal qui enjambe le vallon.\n\nEquipement : généralement sur arbres avec corde & maillon.",
+      "periode": "toujours en eau. Toboggans et sauts possibles.",
+      "geologie": null,
+      "historique": "Descente du 31 octobre 2015 par 6rn, JC de la Peira & Boustourou (RP).",
+      "remarques": "Boustou a enfanté d’une jolie Bouse, mignon vallon encaissé qui offre une dizaine de cascades avec vasques aux pieds.\n\nCarte IGN : 3741 OT, pli I2.\n\n* N.B. : le nom du hameau ne s’invente pas, ses fondateurs étaient des Bourguignons !"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23624,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.955544,
+        "longitude": 7.26163,
+        "label": null
+      },
+      {
+        "canyonId": 23624,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.956627,
+        "longitude": 7.267016,
+        "label": null
+      },
+      {
+        "canyonId": 23624,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 43.9464,
+        "longitude": 7.274076,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.9464,
+      "longitude": 7.274076,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_db1d7a85b782a57f",
+          "kind": "MAP",
+          "title": "3741 OT Vallée de La Vésubie (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

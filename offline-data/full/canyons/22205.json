@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:12.399612+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22205,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22205/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22205/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22205/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22205/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22205,
+    "identity": {
+      "nom": "Campredon",
+      "nomComplet": "Combe de Campredon, Combe de Capellan",
+      "prefixeNom": "Combe de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22205/Campredon.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Vaucluse",
+      "communePrincipale": "Venasque",
+      "communes": [
+        "Venasque"
+      ],
+      "massif": "Monts de Vaucluse",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1III",
+      "interet": 1.8,
+      "nbVotes": 19
+    },
+    "metrics": {
+      "altitudeDepartM": 406,
+      "deniveleM": 116,
+      "longueurM": 550,
+      "cascadeMaxM": 18,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "25min",
+      "descente": "1h30",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "- De Gordes, empruntez la D177 passant à l'Abbaye de Sénanque en direction de Venasque. Lorsque vous croisez la D4, suivez-là sur la gauche pendant 800m en direction de Venasque et garez-vous au mieux, non loin de \"Camp long\" (GR 91). Il y a un parking visible au bout d'une petite piste juste avant.\n\n- De Carpentras empruntez la D4 en direction de Venasque. Dépassez le village de Venasque en restant toujours sur la D4 et rendez-vous à \"Camp Long\" (GR 91). Se garer sans gêner.",
+      "accesAmont": null,
+      "approche": "A l'entrée de la petite route de \"Camp long\" (hameau avec un joli mas), la route (piste) se divise en deux. Prendre direction l'Agas en descendant par la piste (balisage jaune). Faire 150 mètres en passant devant une maison et arriver jusqu'à une barrière.\n\nJuste avant à l'Agas ,prendre la direction La Pouraque et Mont Serein Sud, en bas à droite(balisage jaune).\n\nLe PR démarre puis monte progressivement en direction de la combe de Campredon.\n\nDescendre dans la combe lorsque celle-ci atteint à peu prés le même niveau que le PR. Une sente avec un gros cairn vous indique l'entrée.",
+      "descente": "4 rappels (dont les deux derniers sont obligatoires 10m et 18m), sans presque aucun temps mort, dans un encaissement soutenu où il n'existe aucune échappatoire. Après le site d'escalade, le parcours devient horizontal et moins encaissé. Quelques ressauts se désescaladent sans trop de souci par la suite.",
+      "retour": "A la sortie de la combe, on rejoint le GR 91. Prenez à droite pour se rendre au parking.",
+      "engagement": "Pas d'échappatoire",
+      "periode": "Peut-être en eau après de grosses pluies.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "La combe est assez esthétique.\n\nSur les anciennes cartes IGN, la combe est appelée Campredon, alors que sur les nouvelles séries (géoportail) elle est appelée Capellan."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22205,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.976357,
+        "longitude": 5.173166,
+        "label": null
+      },
+      {
+        "canyonId": 22205,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.979736,
+        "longitude": 5.170248,
+        "label": null
+      },
+      {
+        "canyonId": 22205,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.985683,
+        "longitude": 5.173767,
+        "label": "Garez-vous au mieux autour de ce point"
+      },
+      {
+        "canyonId": 22205,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 43.982563,
+        "longitude": 5.175526,
+        "label": "Départ du PR \"tracé jaune\""
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.985683,
+      "longitude": 5.173767,
+      "label": "Garez-vous au mieux autour de ce point"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_e25ee273ce98550a",
+          "kind": "MAP",
+          "title": "3142 OT Cavaillon (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

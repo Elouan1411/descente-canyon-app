@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:08.134910+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21632,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21632/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21632/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21632/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21632/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/21632/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 21632,
+    "identity": {
+      "nom": "Montagnette 1 (inférieur)",
+      "nomComplet": "Cascades de la Montagnette 1 (inférieur), Ruisseau de la Montagnette",
+      "prefixeNom": "Cascades de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21632/Montagnette-1-inferieur.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Haute-Garonne",
+      "communePrincipale": "Astau (les Granges de)",
+      "communes": [
+        "Astau (les Granges de)"
+      ],
+      "massif": null,
+      "bassin": "Espingo",
+      "coursEau": "Ruisseau de la Montagnette"
+    },
+    "rating": {
+      "cotation": "v4a2III",
+      "interet": 2.4,
+      "nbVotes": 11
+    },
+    "metrics": {
+      "altitudeDepartM": 1700,
+      "deniveleM": 200,
+      "longueurM": 200,
+      "cascadeMaxM": 80,
+      "cordeMiniM": 52,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h30",
+      "descente": "2h00",
+      "retour": "1h10"
+    },
+    "topo": {
+      "accesAval": "Parking aux granges d'Astau.",
+      "accesAmont": null,
+      "approche": "Chemin vers refuge d'Espingo.\n\nAttention, quand le sentier redevient plat, vers la cote 1650-1700m, c'est le 1er des 2 cours d'eau : le suivant est aussi équipé (Montagnette 2 Inf qui offre une vue sur le barrage du Lac d'Oô du chemin), mais est moins intéressant...",
+      "descente": "MC10+R28+R23+R29 suivi de R12+R51 suivi de C20 + Rvariable ou Saut suivant niveau du Lac d'Oô.",
+      "retour": "Suivre berge du lac vers le N sur 400m jusqu'à un affluent du lac dans une zone dégagée continuer le long des berges et juste avant la prochaine falaise, remonter en sous bois et récupérer à flan le GR qui ramène au barrage.\n\nPossibilité de poursuivre par Neste d'Oô Inf : quitter le GR à 300m du barrage (en direction d'un transformateur) et prendre à flan un petit sentier qui mêne à la fenêtre de restitution EDF.",
+      "engagement": null,
+      "periode": "début d'été, automne",
+      "geologie": "Granite + schistes",
+      "historique": "P.Gimat 10/1998",
+      "remarques": "Attention aux chutes de pierres..."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21632,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.738869,
+        "longitude": 0.499296,
+        "label": "Désescalade dans les blocs du torrent sur 100m avant de trouver la main courante rivé gauche (à installer)."
+      },
+      {
+        "canyonId": 21632,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.738842,
+        "longitude": 0.496686,
+        "label": null
+      },
+      {
+        "canyonId": 21632,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 42.764034,
+        "longitude": 0.501562,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 42.764034,
+      "longitude": 0.501562,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_b4d10c31e88f9235",
+          "kind": "MAP",
+          "title": "1848 OT Bagneres-de-Luchon (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 266,
+          "status": "Abrogé",
+          "action": "Interdit",
+          "title": "Arrêté préfectoral (Haute-Garonne) - 28 juin 2013",
+          "summary": "\"La crue de la Garonne et de ses affluents a considérablement endommagé les rives et les installations liées aux activités aquatiques et nautiques\"... Et voilà la pratique du canyoning interdite dans toute la vallée du Lys et de la Neste d'Oo.",
+          "remark": null,
+          "details": "Arrêté préfectoral du 28 juin 2013 (abrogé)\n\nArrêté préfectoral du 5 août 2013",
+          "effectiveDate": "28 juin 2013",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/266/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral du 28 juin 2013 (abrogé)",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem266_pj1.pdf"
+            },
+            {
+              "label": "Arrêté préfectoral du 5 août 2013",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem266_pj2.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

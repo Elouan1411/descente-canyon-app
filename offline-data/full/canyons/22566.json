@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:31.206105+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22566,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22566/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22566/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22566/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22566/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22566,
+    "identity": {
+      "nom": "Grande Montagne",
+      "nomComplet": "Ravin de la Grande Montagne",
+      "prefixeNom": "Ravin de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22566/Grande-Montagne.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Vaucluse",
+      "communePrincipale": "Lafare",
+      "communes": [
+        "Lafare"
+      ],
+      "massif": "Dentelles de Montmirail",
+      "bassin": "Ouvèze",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1III",
+      "interet": 0.6,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 430,
+      "deniveleM": 80,
+      "longueurM": 100,
+      "cascadeMaxM": 17,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "45min",
+      "retour": "25min"
+    },
+    "topo": {
+      "accesAval": "De Carpentras, prenez la D7 en direction de Bollène. Dans le village d’Aubignan, prenez à droite vers Beaumes-de-Venise par la D90. Traversez le village en restant sur la D90 pour traverser le village de Lafare et poursuivre sur Suzette. Aprés une succession de virages,prendre la petite route de gauche (Château neuf Redortier) 500 m avant Suzette,puis une piste à gauche (vue sur le portail rocheux) vous menant au parking.",
+      "accesAmont": null,
+      "approche": "Du parking, prendre la piste de droite et le sentier descendant sur le portail rocheux. Vous tombez alors sur quelques carcasses de voitures toutes rouillées. Départ de la descente ...",
+      "descente": "Suivre le talweg pour tomber sur une C9 avec 1G en RG et C17 sur AN à la barre rocheuse.Puis, plus rien...",
+      "retour": "Sortie possible par l'éboulis en RG, puis passer la barre rocheuse par une petite escalade dans une faille de 20 m de hauteur (3a ou 3b) sur votre gauche pour vous rendre au départ du parcours .Reprendre l'itinéraire pris à l'aller dans le sens inverse pour retrouver le parking .",
+      "engagement": "L'engagement est assez court .Juste la durée des rappels.",
+      "periode": "Sec la plupart de l'année .A faire après de grosses pluies.",
+      "geologie": "Quelques restes d'ammonites dans le coin",
+      "historique": null,
+      "remarques": "Très court, à coupler avec Eglantines,Lafare,le Lauron et St Amand qui ne sont pas très loin. Belle entaille dans la montagne!"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22566,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.177879,
+        "longitude": 5.049993,
+        "label": null
+      },
+      {
+        "canyonId": 22566,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.178513,
+        "longitude": 5.048583,
+        "label": null
+      },
+      {
+        "canyonId": 22566,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.176647,
+        "longitude": 5.050364,
+        "label": null
+      },
+      {
+        "canyonId": 22566,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 44.178276,
+        "longitude": 5.048422,
+        "label": "Retour avec une petite escalade en 3b sur 25 m"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.176647,
+      "longitude": 5.050364,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_f8195a0d9851b7fb",
+          "kind": "MAP",
+          "title": "3040 ET Carpentras (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

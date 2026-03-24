@@ -1,0 +1,140 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:28.072008+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21722,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21722/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21722/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21722/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21722/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21722,
+    "identity": {
+      "nom": "Lisore (supérieur)",
+      "nomComplet": "Rio Lisore (supérieur)",
+      "prefixeNom": "Rio",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21722/Lisore-superieur.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Émilie-Romagne",
+      "departement": "Piacenza",
+      "communePrincipale": "Lisore",
+      "communes": [
+        "Marsaglia",
+        "Lisore"
+      ],
+      "massif": null,
+      "bassin": "Trebbia",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 1.0,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 900,
+      "deniveleM": 550,
+      "longueurM": 1600,
+      "cascadeMaxM": 35,
+      "cordeMiniM": 50,
+      "navette": "2.5km"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "4h",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21722,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.640812,
+        "longitude": 9.383612,
+        "label": null
+      },
+      {
+        "canyonId": 21722,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.635834,
+        "longitude": 9.404941,
+        "label": null
+      },
+      {
+        "canyonId": 21722,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 44.640995,
+        "longitude": 9.383483,
+        "label": null
+      },
+      {
+        "canyonId": 21722,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 44.633942,
+        "longitude": 9.405842,
+        "label": null
+      },
+      {
+        "canyonId": 21722,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 44.635986,
+        "longitude": 9.399254,
+        "label": "Fin partie sup./début partie inf."
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 44.640995,
+      "longitude": 9.383483,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_9707222a86c89bed",
+          "kind": "MAP",
+          "title": "197-III Ferriere (IGM)",
+          "scale": "!/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_d689739cbf6b457a",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.robadatori.it/canyoning/torre.....veto/lisore-alto.htm",
+          "url": "http://www.robadatori.it/canyoning/torre.....veto/lisore-alto.htm"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

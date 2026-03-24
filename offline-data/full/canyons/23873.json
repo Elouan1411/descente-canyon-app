@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:24.925978+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23873,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23873/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23873/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23873/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23873/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23873,
+    "identity": {
+      "nom": "Ardo, Val di Botte",
+      "nomComplet": "Torrente Ardo, Val di Botte, Val di Botte + Brent Rizzo + Brent Grande, Brent de l'Art, Ardo",
+      "prefixeNom": "Torrente",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23873/Ardo--Val-di-Botte.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Vénétie",
+      "departement": "Belluno",
+      "communePrincipale": "Trichiana",
+      "communes": [
+        "Trichiana"
+      ],
+      "massif": "Prealpi Bellunesi",
+      "bassin": "Piave",
+      "coursEau": "Ardo"
+    },
+    "rating": {
+      "cotation": "v2a2II",
+      "interet": 2.1,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 470,
+      "deniveleM": 50,
+      "longueurM": 1500,
+      "cascadeMaxM": null,
+      "cordeMiniM": 10,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "45",
+      "descente": "1h30min",
+      "retour": "15"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": "par le sentier à parking",
+      "engagement": null,
+      "periode": null,
+      "geologie": "calcaire shisteux",
+      "historique": null,
+      "remarques": "Voir lien"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23873,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.03476,
+        "longitude": 12.15583,
+        "label": null
+      },
+      {
+        "canyonId": 23873,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.03384,
+        "longitude": 12.14644,
+        "label": "Val di Botte"
+      },
+      {
+        "canyonId": 23873,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.038952,
+        "longitude": 12.14464,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 46.03476,
+      "longitude": 12.15583,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

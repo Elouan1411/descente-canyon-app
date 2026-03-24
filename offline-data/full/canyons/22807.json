@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:54:26.558250+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22807,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22807/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22807/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22807/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22807/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22807,
+    "identity": {
+      "nom": "Venina",
+      "nomComplet": "Val Venina",
+      "prefixeNom": "Val",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22807/Venina.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Lombardia",
+      "departement": "Sondrio",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a5III",
+      "interet": null,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": 610,
+      "deniveleM": 300,
+      "longueurM": 2500,
+      "cascadeMaxM": 14,
+      "cordeMiniM": null,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "40min",
+      "descente": "6h",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": "laisser une voiture à la sortie.\n\nAccès",
+      "accesAmont": "aller jusqu'à Faedo, d'où l'on rejoint à pied le départ du vallon.",
+      "approche": null,
+      "descente": "Vallon long et profond, avec des portions de canyons intéressantes.\n\nBeaucoup de désescalades obligatoires.\n\n5 rappels.",
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "Equipement insuffisant en 2008."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22807,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.141273,
+        "longitude": 9.909106,
+        "label": null
+      },
+      {
+        "canyonId": 22807,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.160007,
+        "longitude": 9.914425,
+        "label": null
+      },
+      {
+        "canyonId": 22807,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 46.148651,
+        "longitude": 9.910156,
+        "label": null
+      },
+      {
+        "canyonId": 22807,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 46.160084,
+        "longitude": 9.914474,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 46.148651,
+      "longitude": 9.910156,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:44:22.815029+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2172,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2172/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2172/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2172/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2172/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2172,
+    "identity": {
+      "nom": "Bief à la Dame",
+      "nomComplet": "Gorges du Bief à la Dame",
+      "prefixeNom": "Gorges du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2172/Bief-a-la-Dame.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Ain",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Bugey",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 0.8,
+      "nbVotes": 7
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": null,
+      "longueurM": 1200,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 25,
+      "navette": "5.7km"
+    },
+    "timings": {
+      "approche": "10min",
+      "descente": "1h30",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "de Lalleyriat, prendre la D 55b. A 2.5 kms du carrefour, juste avant de rejoindre la N84, on coupe le mythique Bief à la Dame. Stationner au mieux.\n\nAccès",
+      "accesAmont": "revenir à Lalleyriat et prendre la D55 jusqu'au Poizat. A l'entrée du vaillage, prendre une route à droite qui descend dans le village. Au bout de 350 m, prendre une piste et stationner sans gêner. La station d'épuration doit être en vue...",
+      "approche": "De la station d'épuration, rejoindre le bief dans le lequel se déversent les effluents (épurés en théorie !) de la station. Descendre dans la pente jusqu'à arriver au premier obstacle intéressant.",
+      "descente": "Une petite succession de cascades bien équipées au départ puis de la marche et quelques obstacles peu intéressants.",
+      "retour": "Sortir au mieux RG et rejoindre une piste forestière qui mène à la voiture.",
+      "engagement": "Peu engagé.",
+      "periode": "Il faut qu'il y ait assez d'eau pour que la dillution des effluents de la station soit suffisante...",
+      "geologie": null,
+      "historique": "Denis Gritti et Bruno Hugon du GSHL et Joël Mercier de la Tribu Canyon.",
+      "remarques": "Descente à éviter."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2172,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.14703,
+        "longitude": 5.69006,
+        "label": null
+      },
+      {
+        "canyonId": 2172,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.159279,
+        "longitude": 5.692871,
+        "label": null
+      },
+      {
+        "canyonId": 2172,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 46.145828,
+        "longitude": 5.691851,
+        "label": null
+      },
+      {
+        "canyonId": 2172,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 46.160187,
+        "longitude": 5.692828,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 46.145828,
+      "longitude": 5.691851,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_eaf169d7ab65904c",
+          "kind": "MAP",
+          "title": "3229 E",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

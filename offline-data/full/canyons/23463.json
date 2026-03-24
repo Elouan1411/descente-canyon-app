@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:52.384337+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23463,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23463/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23463/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23463/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23463/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23463,
+    "identity": {
+      "nom": "Ortas",
+      "nomComplet": "Cascade d' Ortas",
+      "prefixeNom": "Cascade d'",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23463/Ortas.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-Maritimes",
+      "communePrincipale": "Roquebrune-Cap-Martin",
+      "communes": [
+        "Roquebrune-Cap-Martin"
+      ],
+      "massif": "Mont Agel",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a1I",
+      "interet": 1.1,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 485,
+      "deniveleM": 100,
+      "longueurM": 160,
+      "cascadeMaxM": 60,
+      "cordeMiniM": 65,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "10min",
+      "descente": "1h00",
+      "retour": "10"
+    },
+    "topo": {
+      "accesAval": "Depuis la RD 67 au niveau de cap Martin, remonter la RD 51 vers la Turbie sur 2.5km. A l'intérieur d'une grande courbe, prendre à droite la RD 50 menant à Gorbio; suivre celle-ci sur 1 km et bifurquer à gauche pour prendre l'étroit et raide chemin asphalté de la Coupière qui conduit au parking du col (440m). parking sur la gauche.",
+      "accesAmont": null,
+      "approche": "Au départ du col de la Coupière (440m), remonter vers le Sud la piste DFCI des Trois Monts (GR 51) pendant environ 400 mètres. de là, rejoindre le vallon à travers la broussaille pour arriver à la cascade.",
+      "descente": "Le départ de la descente démarre en haut de la cascade de 60 mètres. Un premier relais en rive droite permet d'atteindre le relai principal en rive gauche qui se situe une quinzaine de mètre en aval. le bas de la cascade marque la fin de la descente. La suite du vallon est à découvrir mais ne laisse pas rêveur au vu de la végétation et le faible dénivelé jusqu'à l'autoroute.",
+      "retour": "remonter à travers la broussaille en rive gauche par des sentes à moitiés marquées.",
+      "engagement": null,
+      "periode": "le canyon est la plupart du temps à sec mais attention il y a un risque de crue lors de forte précipitation. Amarrages arrachées du relais principal à cause des crues mais respité en juin 2015 !!",
+      "geologie": null,
+      "historique": "Respitage du relais principal en juin 2015.",
+      "remarques": "Le relais principal est placé dans la zone de crue. Il serait favorable de remettre un nouveau relais hors crue en rive droite. Avis aux amateurs ...\n\nce parcours permet de faire des manips de corde en grande hauteur sans pour autant effecteur une descente à la journée."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23463,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.772076,
+        "longitude": 7.443841,
+        "label": null
+      },
+      {
+        "canyonId": 23463,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.775139,
+        "longitude": 7.446465,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.775139,
+      "longitude": 7.446465,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_65daf1ce5e444805",
+          "kind": "MAP",
+          "title": "3742 OT Nice-Menton (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

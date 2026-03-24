@@ -1,0 +1,138 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:04.072362+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23196,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23196/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23196/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23196/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23196/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/23196/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 23196,
+    "identity": {
+      "nom": "Melaghia",
+      "nomComplet": "Ruisseau de Melaghia",
+      "prefixeNom": "Ruisseau de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23196/Melaghia.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Corse",
+      "departement": "Haute-Corse",
+      "communePrincipale": "Calvi",
+      "communes": [
+        "Calenzana",
+        "Calvi"
+      ],
+      "massif": "Cinto",
+      "bassin": "Figarella",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a3III",
+      "interet": 2.1,
+      "nbVotes": 8
+    },
+    "metrics": {
+      "altitudeDepartM": 730,
+      "deniveleM": 120,
+      "longueurM": 800,
+      "cascadeMaxM": 14,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "50min",
+      "descente": "2h00",
+      "retour": "35min"
+    },
+    "topo": {
+      "accesAval": "De Calvi, prendre la N197 en direction de Lumio et tourner à droite sur Porto, l'aéroport de Ste Catherine et la forêt de Bonifatu sur la D81. Aller tout droit et se rendre au Cirque de Bonifatu. Sur le parking, se garer non loin de la barrière d'accés aux pompiers (ne pas descendre au bas du parking). Parking payant l'été.",
+      "accesAmont": null,
+      "approche": "Franchir la barrière d'accès aux pompiers et suivre la piste en RG de la Figarella (fleuve) jusqu'au bout. Au départ du sentier (GR), franchir le gué de la Figarella et remonter le GR se rendant au refuge de l'Ortu di U Piobbu. Suivre ce GR jusqu'à que celui-ci rejoigne la rivière de la Melaghia (départ de la descente).",
+      "descente": "Quelques jolies cascades équipées sur la partie amont. En aval, les cascades se descendent sur amarrages naturels.",
+      "retour": "Après un saut, il est possible de sortir en RG pour suivre une sente munie de caïrns rejoignant le GR pris à l'aller, ou rejoindre la Figarella, la remonter jusqu'au gué pris à l'aller et suivre la piste jusqu'au parking.",
+      "engagement": "Possibilité de sortir à tout moment en RG.",
+      "periode": "En eau l'été.",
+      "geologie": null,
+      "historique": "?",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23196,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.448486,
+        "longitude": 8.866879,
+        "label": null
+      },
+      {
+        "canyonId": 23196,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.44313,
+        "longitude": 8.866804,
+        "label": null
+      },
+      {
+        "canyonId": 23196,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 42.441174,
+        "longitude": 8.855142,
+        "label": null
+      },
+      {
+        "canyonId": 23196,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 42.441299,
+        "longitude": 8.868682,
+        "label": "Accés au départ et au retour"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 42.441174,
+      "longitude": 8.855142,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 232,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Corse) - 08 juin 2011",
+          "summary": "- Le canyonisme est interdit la nuit (sauf dérogation)\n\n- Le canyonisme est interdit s'il y a une alerte émise par Météo-France de niveau orange ou rouge en cours.\n\n- Le canyonisme est interdit aux mineurs de moins de 7 ans, sauf canyon évalué égal ou inférieur à V1-A3-E3\n\n- Les groupes auront un effectif maximum de 12 personnes, hors encadrement.",
+          "remark": "L'arrêté du 9 juillet 2019 pris conjointement par les préfectures de Corse-du-Sud et de Haute-Corse harmonise les réglementations existantes pour les deux départements.",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nArrêté préfectoral (Haute-Corse) n°2011-159-0008 du 8 juin 2011\n\nArrêté préfectoral modificatif (Corse-du-Sud et Haute-Corse) n°R20-2019-07-09-001 du 9 juillet 2019",
+          "effectiveDate": "08 juin 2011",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/232/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral (Haute-Corse) n°2011-159-0008 du 8 juin 2011",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem232_pj1.pdf"
+            },
+            {
+              "label": "Arrêté préfectoral modificatif (Corse-du-Sud et Haute-Corse) n°R20-2019-07-09-001 du 9 juillet 2019",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem232_pj2.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

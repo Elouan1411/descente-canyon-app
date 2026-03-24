@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:09.598904+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23802,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23802/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23802/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23802/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23802/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23802,
+    "identity": {
+      "nom": "Kreuzgraben",
+      "nomComplet": "Kreuzgraben",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23802/Kreuzgraben.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Carinthie",
+      "departement": "Hermagor",
+      "communePrincipale": "Hermagor-Pressegger See",
+      "communes": [
+        "Hermagor-Pressegger See"
+      ],
+      "massif": "Alpes Carniques - Carniche - Karnischen",
+      "bassin": "Gail",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a3IV",
+      "interet": 2.5,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 1390,
+      "deniveleM": 315,
+      "longueurM": 1000,
+      "cascadeMaxM": 40,
+      "cordeMiniM": 45,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "45min",
+      "descente": "3h",
+      "retour": "45min"
+    },
+    "topo": {
+      "accesAval": "navette possible (2 km)",
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": "(sans navette)",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23802,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.5797,
+        "longitude": 13.35915,
+        "label": null
+      },
+      {
+        "canyonId": 23802,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.58873,
+        "longitude": 13.36279,
+        "label": null
+      },
+      {
+        "canyonId": 23802,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.586948,
+        "longitude": 13.374226,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.586948,
+      "longitude": 13.374226,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_c53735ebffb796f9",
+          "kind": "MAP",
+          "title": "223 Naturarena Kärnten-Gailtal, Gitschtal, Lesachtal, Weissensee, Oberes Drautal (Freytag & Berndt)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_de2ac6410bb09a7e",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/Canyons/KreuzgrabenCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/Canyons/KreuzgrabenCanyon"
+        },
+        {
+          "id": "resource_f30fa74d9aeb47a0",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://win.aic-canyoning.it/Public/data/.....710_Kreutzgraben.pdf",
+          "url": "http://win.aic-canyoning.it/Public/data/.....710_Kreutzgraben.pdf"
+        },
+        {
+          "id": "resource_fad37fdb3469ba54",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://ropewiki.com/Kreuzgraben",
+          "url": "http://ropewiki.com/Kreuzgraben"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

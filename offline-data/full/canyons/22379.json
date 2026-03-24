@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:49.373963+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22379,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22379/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22379/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22379/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22379/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22379,
+    "identity": {
+      "nom": "Plattengraben - Albertsbach",
+      "nomComplet": "Plattengraben - Albertsbach, Albertsbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22379/Plattengraben---Albertsbach.html"
+    },
+    "location": {
+      "pays": "Allemagne",
+      "region": "Bayern",
+      "departement": "Oberbayern",
+      "communePrincipale": "Kreuth",
+      "communes": [
+        "Landkreis Miesbach",
+        "Kreuth"
+      ],
+      "massif": "Mangfallgebirge",
+      "bassin": "Weißach-Tegernsee",
+      "coursEau": "Albertsbach"
+    },
+    "rating": {
+      "cotation": "v4a2III",
+      "interet": 1.7,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1060,
+      "deniveleM": 200,
+      "longueurM": 1000,
+      "cascadeMaxM": 60,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h20",
+      "descente": "2h",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22379,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.601048,
+        "longitude": 11.705541,
+        "label": null
+      },
+      {
+        "canyonId": 22379,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.61274,
+        "longitude": 11.692672,
+        "label": null
+      },
+      {
+        "canyonId": 22379,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 47.622028,
+        "longitude": 11.713491,
+        "label": null
+      },
+      {
+        "canyonId": 22379,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 47.618038,
+        "longitude": 11.692328,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 47.622028,
+      "longitude": 11.713491,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_3d7a2ebd5efa6d2b",
+          "kind": "MAP",
+          "title": "UK L 12 Mangfallgebirge (1/50000)",
+          "scale": "Bayersches L",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_0abb49c2b2309803",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.geodaten.bayern.de/BayernView.....4870&layer=TK&step=4",
+          "url": "http://www.geodaten.bayern.de/BayernView.....4870&layer=TK&step=4"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

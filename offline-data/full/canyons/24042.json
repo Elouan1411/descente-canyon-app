@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:58.777219+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24042,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24042/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24042/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24042/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24042/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24042,
+    "identity": {
+      "nom": "Siccu",
+      "nomComplet": "Riu Siccu",
+      "prefixeNom": "Riu",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24042/Siccu.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Sardegna",
+      "departement": "Nuoro",
+      "communePrincipale": "Siniscola",
+      "communes": [
+        "Siniscola"
+      ],
+      "massif": "Monte Albo",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a1III",
+      "interet": null,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": 750,
+      "deniveleM": 595,
+      "longueurM": 1800,
+      "cascadeMaxM": 105,
+      "cordeMiniM": 50,
+      "navette": "17.5km"
+    },
+    "timings": {
+      "approche": "25",
+      "descente": "4h",
+      "retour": "20"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": "sec",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24042,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 40.555187,
+        "longitude": 9.639791,
+        "label": null
+      },
+      {
+        "canyonId": 24042,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 40.54686,
+        "longitude": 9.655587,
+        "label": null
+      },
+      {
+        "canyonId": 24042,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 40.560349,
+        "longitude": 9.633499,
+        "label": null
+      },
+      {
+        "canyonId": 24042,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 40.539272,
+        "longitude": 9.656394,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 40.560349,
+      "longitude": 9.633499,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_167b85904ec9af3c",
+          "kind": "MAP",
+          "title": "483 IV Siniscola (IGMI)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_3d2cbfbb2628a985",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/Canyons/SiccuCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/Canyons/SiccuCanyon"
+        },
+        {
+          "id": "resource_019b3db2c369142a",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://win.aic-canyoning.it/forum/topic.asp?TOPIC_ID=2057",
+          "url": "http://win.aic-canyoning.it/forum/topic.asp?TOPIC_ID=2057"
+        },
+        {
+          "id": "resource_b8f388726cf50f0a",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.edizionisegnavia.it/aggiornam.....orrentismo/index.htm",
+          "url": "http://www.edizionisegnavia.it/aggiornam.....orrentismo/index.htm"
+        },
+        {
+          "id": "resource_d96ed12e600f0a98",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://catastoforre.aic-canyoning.it/ind.....GNA/pro/NU/cod/NU009",
+          "url": "http://catastoforre.aic-canyoning.it/ind.....GNA/pro/NU/cod/NU009"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

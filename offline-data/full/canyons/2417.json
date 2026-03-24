@@ -1,0 +1,165 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:45:25.553864+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2417,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2417/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2417/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2417/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2417/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2417,
+    "identity": {
+      "nom": "Aspre",
+      "nomComplet": "Gorge de l' Aspre",
+      "prefixeNom": "Gorge de l'",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2417/Aspre.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Cantal",
+      "communePrincipale": "Le Fau",
+      "communes": [
+        "Le Fau"
+      ],
+      "massif": "Monts du Cantal",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a2II",
+      "interet": 1.1,
+      "nbVotes": 5
+    },
+    "metrics": {
+      "altitudeDepartM": 1300,
+      "deniveleM": 300,
+      "longueurM": 2500,
+      "cascadeMaxM": 15,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h15",
+      "descente": "3-4h",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "Se rendre au village de La Bastide.",
+      "accesAmont": null,
+      "approche": "Suivre le GR 400 depuis La Bastide. Rentrer dans la gorge à la lisière des bois noirs vers 1300 m",
+      "descente": null,
+      "retour": "Suivre le cours d'eau jusqu'au pont du village de la Bastide",
+      "engagement": null,
+      "periode": "Eté",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2417,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.115597,
+        "longitude": 2.629794,
+        "label": null
+      },
+      {
+        "canyonId": 2417,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.104408,
+        "longitude": 2.596917,
+        "label": null
+      },
+      {
+        "canyonId": 2417,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 45.109913,
+        "longitude": 2.604443,
+        "label": null
+      },
+      {
+        "canyonId": 2417,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 45.113663,
+        "longitude": 2.616093,
+        "label": "Echappatoire"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 45.109913,
+      "longitude": 2.604443,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_daf9041e16b163a9",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons cantalous",
+          "authors": [
+            "Philippe VIETTE-COSTE"
+          ],
+          "publicationYear": 2018,
+          "reference": "97829563881-0-4",
+          "editor": "Auto-édition",
+          "status": "en stock\n\n- 14,00 € -\n\nCommandez cet ouvrage dès maintenant !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/1124/Canyons-cantalous.html"
+        },
+        {
+          "id": "biblio_0ada102a5dea7773",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons arvernes",
+          "authors": [
+            "Philippe Viette-Coste",
+            "Serge Navarro",
+            "Pierre-Marie Orblin"
+          ],
+          "publicationYear": 2012,
+          "reference": "978-2-7466-3647-7",
+          "editor": "auto-édition",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/165/Canyons-arvernes.html"
+        },
+        {
+          "id": "biblio_f62b32e9659a6cea",
+          "kind": "TOPOGUIDE",
+          "title": "Gorges et Canyons en Languedoc Roussillon",
+          "authors": [
+            "Jean-Pierre Lucot et Richard Quintilla"
+          ],
+          "publicationYear": 1990,
+          "reference": "ISBN 2-85744-467-9",
+          "editor": "Édisud",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/124/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_dca64d22e699a24f",
+          "kind": "MAP",
+          "title": "2435 OT Monts du Cantal (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

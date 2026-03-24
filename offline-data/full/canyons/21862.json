@@ -1,0 +1,179 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:01.122588+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21862,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21862/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21862/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21862/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21862/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/21862/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 21862,
+    "identity": {
+      "nom": "Orsoni",
+      "nomComplet": "Ruisseau d' Orsoni",
+      "prefixeNom": "Ruisseau d'",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21862/Orsoni.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Corse",
+      "departement": "Haute-Corse",
+      "communePrincipale": "Muro",
+      "communes": [
+        "Muro"
+      ],
+      "massif": "Cinto",
+      "bassin": "Regino",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 1.5,
+      "nbVotes": 6
+    },
+    "metrics": {
+      "altitudeDepartM": 498,
+      "deniveleM": 300,
+      "longueurM": 1000,
+      "cascadeMaxM": 28,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "45min",
+      "descente": "2h30",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "A la sortie (ouest) de l'Ile Rousse prendre la D13 (superbe route des villages de Balgne) jusqu'à Muro. Se garer sans gêner à l'entrée du village, à l'intersection D13-D71 (petit emplacement).",
+      "accesAmont": null,
+      "approche": "A quelques mètres du croisement (sur la D71) monte une piste (attention: respecter la barrière et bien la refermer). Suivre cette piste qui grimpe assez sérieusement par moments. La piste redescend ensuite jusqu'à une espèce de plateau. Ne pas suivre la piste évidente qui monte sur la droite, mais continuer sur la piste tout droit, jusqu'à croiser le ruisseau peu après. Suivre le cours d'eau tant bien que mal (ronces et autre végétation à gogo) sur les berges, jusqu'aux premiers obstacles (C12). Le ruisseau suit une ancienne ligne électrique (vestiges de câbles et poteaux).",
+      "descente": "Succession de cascades plus ou moins importantes (max 28m) et de petites périodes de marche, avec une jolie série d'obstacles sur le final en particulier.\n\nProgression rendue difficile par la végétation et roche extrêmement glissante par endroits (se méfier en particulier de l'accès aux cascades finales qui peut être très glissant). Eau trouble ou noire, peut être plus claire après une crue (?).",
+      "retour": "après la grande cascade finale, remonter sur le pont de la D71, la voiture est à quelques centaines de mètres à gauche.",
+      "engagement": "Difficile de s'échapper une fois engagé (première C12).\n\nLa principale difficulté reste la végétation et la roche glissante.",
+      "periode": "A parcourir en hiver ou après une période de pluie.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "équipement à renforcer (sangles en particulier).\n\nRemarquables lys de San Ghjuvanni (a ne pas cueillir bien entendu).\n\nSuperbe vue sur la balagne.\n\nDonnées techniques reprises du topoguide J.F Fiorina/F.Joudan"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21862,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.541111,
+        "longitude": 8.921111,
+        "label": null
+      },
+      {
+        "canyonId": 21862,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.544445,
+        "longitude": 8.919167,
+        "label": null
+      },
+      {
+        "canyonId": 21862,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 42.544167,
+        "longitude": 8.916944,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 42.544167,
+      "longitude": 8.916944,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_2bafc8e0f7a42d9c",
+          "kind": "TOPOGUIDE",
+          "title": "La Corse en Canyon",
+          "authors": [
+            "Association CorseCanyon"
+          ],
+          "publicationYear": 2018,
+          "reference": null,
+          "editor": "auto-edition",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/1127/La-Corse-en-Canyon-3eme-edition.html"
+        },
+        {
+          "id": "biblio_eeda460e91ce529f",
+          "kind": "TOPOGUIDE",
+          "title": "Corse Canyons (2ème édition)",
+          "authors": [
+            "Franck Jourdan",
+            "Jean-François Fiorina"
+          ],
+          "publicationYear": 2006,
+          "reference": "2-84698-169-8",
+          "editor": "Albiana",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/133/Corse-Canyons.html"
+        },
+        {
+          "id": "biblio_fab33759293ad66d",
+          "kind": "TOPOGUIDE",
+          "title": "Corse Canyons",
+          "authors": [
+            "Franck Jourdan",
+            "Jean-François Fiorina"
+          ],
+          "publicationYear": 2004,
+          "reference": "ISBN : 2-9520630-5-2",
+          "editor": "Corsecanyon",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1119/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_bb06aa3b5f560c9a",
+          "kind": "MAP",
+          "title": "4249 OT L'Ile Rousse (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 232,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Corse) - 08 juin 2011",
+          "summary": "- Le canyonisme est interdit la nuit (sauf dérogation)\n\n- Le canyonisme est interdit s'il y a une alerte émise par Météo-France de niveau orange ou rouge en cours.\n\n- Le canyonisme est interdit aux mineurs de moins de 7 ans, sauf canyon évalué égal ou inférieur à V1-A3-E3\n\n- Les groupes auront un effectif maximum de 12 personnes, hors encadrement.",
+          "remark": "L'arrêté du 9 juillet 2019 pris conjointement par les préfectures de Corse-du-Sud et de Haute-Corse harmonise les réglementations existantes pour les deux départements.",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nArrêté préfectoral (Haute-Corse) n°2011-159-0008 du 8 juin 2011\n\nArrêté préfectoral modificatif (Corse-du-Sud et Haute-Corse) n°R20-2019-07-09-001 du 9 juillet 2019",
+          "effectiveDate": "08 juin 2011",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/232/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral (Haute-Corse) n°2011-159-0008 du 8 juin 2011",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem232_pj1.pdf"
+            },
+            {
+              "label": "Arrêté préfectoral modificatif (Corse-du-Sud et Haute-Corse) n°R20-2019-07-09-001 du 9 juillet 2019",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem232_pj2.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

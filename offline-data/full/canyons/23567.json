@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:16.279035+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23567,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23567/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23567/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23567/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23567/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23567,
+    "identity": {
+      "nom": "Ponta Ruiva",
+      "nomComplet": "Funda Da Ponta Ruiva",
+      "prefixeNom": "Funda Da",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23567/Ponta-Ruiva.html"
+    },
+    "location": {
+      "pays": "Portugal",
+      "region": "Açores",
+      "departement": "Santa Cruz das Flores Municipality",
+      "communePrincipale": "Cedros",
+      "communes": [
+        "Cedros"
+      ],
+      "massif": "Morro Alto",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a4IV",
+      "interet": 2.7,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 200,
+      "deniveleM": 190,
+      "longueurM": 1400,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "20",
+      "descente": "3h",
+      "retour": "40min"
+    },
+    "topo": {
+      "accesAval": "Se garer sur le petit parking du village de Ponta Ruiva, à côté du Museu.",
+      "accesAmont": null,
+      "approche": "Suive le sentier Cedros-Ponta Ruiva, un peu pavé. Il se situe à droite du Museu, à côté d'une maison avec un toit plat. Le continuer jusqu'à la confluence avec le canyon de Funda Superior Esquerda. Il y a un petit pont juste après, le canyon démarre dessous (c'est la fin d'Esguilao).",
+      "descente": "Canyon ludique avec 7 rappels pas toujours équipés (amarrages naturels). De belles vasques se sautent ou passent en tob. Canyon encaissé. Pas d'échappatoire. Contrairement à de nombreux canyons sur l'île, celui-ci glisse nettement moins! Belle arrivée sur l'océan avec plage de galet, mais dernière cascade de 10m non équipée",
+      "retour": "Avant la dernière cascade de 10m (non équipée) qui arrive à la mer, des escaliers assez exposés montent RG. MC en fixe installée par les pêcheurs du coin. Attention, une partie s'est éboulée. Monter par la forêt (15') vers le Nord pour retomber sur le sentier d'accès.",
+      "engagement": "Pas d’échappatoire. Possibilité de se mettre hors crue rapidement.",
+      "periode": "Après les pluies le débit gonfle vite (colleteur de deux canyons en amont et nombreux petits affluents). Pas de danger aquatique particulier mais deux rappels concentrent tout le débit (un au milieu et un à la fin).",
+      "geologie": null,
+      "historique": "Ouvert par Francisco Silva le 31 août 2006",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23567,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 39.489574,
+        "longitude": -31.164886,
+        "label": null
+      },
+      {
+        "canyonId": 23567,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 39.492977,
+        "longitude": -31.155029,
+        "label": null
+      },
+      {
+        "canyonId": 23567,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 39.495029,
+        "longitude": -31.157518,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 39.495029,
+      "longitude": -31.157518,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

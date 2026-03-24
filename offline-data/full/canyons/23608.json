@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:25.731481+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23608,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23608/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23608/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23608/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23608/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23608,
+    "identity": {
+      "nom": "Plainie",
+      "nomComplet": "Ruisseau de Plainie",
+      "prefixeNom": "Ruisseau de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23608/Plainie.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Drôme",
+      "communePrincipale": "Glandage",
+      "communes": [
+        "Glandage"
+      ],
+      "massif": "Diois",
+      "bassin": "Drôme",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2I",
+      "interet": 0.7,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 1171,
+      "deniveleM": 150,
+      "longueurM": 900,
+      "cascadeMaxM": 18,
+      "cordeMiniM": 25,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "25min",
+      "descente": "1h00",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "De Châtillon-en-Diois, suivre la D120 et la D539 par les gorges du Gâts, puis prendre à gauche la D624 menant au petit hameau de Borne . Traverser Borne et garez-vous sans gêner au bord du ruisseau de Plainie.",
+      "accesAmont": null,
+      "approche": "Suivre le sentier remontant le ruisseau par la RD jusqu'aux dernières cascades de Plainie. A gauche, une petite sente remonte et rejoint le chemin d'accès à suivre jusqu'à une passerelle en bois. On passe dès lors en rive gauche du ruisseau, restez-y jusqu'à la première cascade que vous jugerez bon de descendre.",
+      "descente": "Succession de plans-inclinés et de cascades visibles depuis le sentier d'accès . C5 sur AN, C18 sur AN, C6 sur AN, C18 sur AN avec anneau de corde+maillon, C5 sur AN, C15 sur deux points en RG (goujon de 8 + maillon de chaîne) reliés d'un anneau de corde + maillon .",
+      "retour": "Reprendre le sentier pris à l'aller.",
+      "engagement": "Aucun",
+      "periode": "En eau toute l'année.",
+      "geologie": null,
+      "historique": "Pose d'un anneau de corde + maillon et de deux points reliés avec maillon sur la dernière cascade. Denis, Link, Emsud et ALAIN 13.",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23608,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.728168,
+        "longitude": 5.594516,
+        "label": null
+      },
+      {
+        "canyonId": 23608,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.721287,
+        "longitude": 5.592021,
+        "label": null
+      },
+      {
+        "canyonId": 23608,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.717869,
+        "longitude": 5.591254,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.717869,
+      "longitude": 5.591254,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_897a81a84c493147",
+          "kind": "MAP",
+          "title": "3237 OT Glandasse - Col de La Croix (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

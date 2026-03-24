@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:00.763327+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23496,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23496/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23496/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23496/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23496/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23496,
+    "identity": {
+      "nom": "Gittaz",
+      "nomComplet": "Torrent de la Gittaz",
+      "prefixeNom": "Torrent de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23496/Gittaz.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Savoie",
+      "communePrincipale": "Beaufort",
+      "communes": [
+        "Beaufort"
+      ],
+      "massif": "Beaufortain",
+      "bassin": "Arly",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a4III",
+      "interet": 2.5,
+      "nbVotes": 6
+    },
+    "metrics": {
+      "altitudeDepartM": 1950,
+      "deniveleM": 300,
+      "longueurM": 1000,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 35,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "35min",
+      "descente": "2h30",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "Depuis Beaufort, prendre direction du lac de la Gittaz. Passer le lac et aller se garer au parking tout au fond, juste avant le hameau de la Gittaz",
+      "accesAmont": null,
+      "approche": "Prendre le chemin du \"Pas du curé\" en rive gauche. Une fois le pas passé, descendre quand le sentier traverse le torrent",
+      "descente": "Une première partie encaissée sans trop d'obstacles. Deux sauts possibles (dont un de 4m environ). Un passage très joli très étroit avec une D6+C8 qui doit probablement se sauter. Attention le rappel de corde depuis la C8 peut être problématique (on n'a pas pied).\n\nEnsuite quatre cascades plutôt joliment sculptées dans un décor qui s'ouvre. Puis un ressaut de 4m, un saut possible de 3m. Équipement en rive gauche sur AN pour descendre jusqu'à l'arche et la vasque suspendue. Devrait être équipée dans l’actif prochainement.\n\nUne C17 équipée en rive droite après l'arche.",
+      "retour": "Sortir du canyon et reprendre le sentier. Très évident.",
+      "engagement": "Quelques échappatoires dans la deuxième partie. Quasiment pas dans la première.",
+      "periode": "été. Attention, il y a toujours un peu d'eau",
+      "geologie": "Gneiss",
+      "historique": "Quelques points de glaciéristes\n\nOuvert le 26/07/2015 par Cédric L, Olivier B, Olivier L (Asar) et Johan B (Asar, Speleus)",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23496,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.723057,
+        "longitude": 6.691944,
+        "label": null
+      },
+      {
+        "canyonId": 23496,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.723057,
+        "longitude": 6.681944,
+        "label": null
+      },
+      {
+        "canyonId": 23496,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.718334,
+        "longitude": 6.665556,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.718334,
+      "longitude": 6.665556,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_bf97d8efb10efc46",
+          "kind": "MAP",
+          "title": "3531 OT Megève - Col des Aravis (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

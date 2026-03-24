@@ -1,0 +1,236 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:29.359451+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22552,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22552/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22552/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22552/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22552/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/22552/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 22552,
+    "identity": {
+      "nom": "Oo (inférieur)",
+      "nomComplet": "Oo (inférieur), Neste d'Oo",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22552/Oo-inferieur.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Haute-Garonne",
+      "communePrincipale": "Astau (les Granges de)",
+      "communes": [
+        "Astau (les Granges de)"
+      ],
+      "massif": null,
+      "bassin": "Espingo",
+      "coursEau": "Neste d'Oo"
+    },
+    "rating": {
+      "cotation": "v3a3II",
+      "interet": 2.5,
+      "nbVotes": 14
+    },
+    "metrics": {
+      "altitudeDepartM": 1450,
+      "deniveleM": 240,
+      "longueurM": 1000,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 27,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h",
+      "descente": "2h30",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "Depuis Bagnère de luchon, prendre en direction de Peyresourde. Suivre la route du Lac d'Oo (bien indiquée) et se garer au parking.",
+      "accesAmont": null,
+      "approche": "Depuis le parking du lac d'Oo, suivre le chemin qui mène à celui-ci. A une intersection bien marquée (panonceau Lac d'Oo vers la gauche), prendre la courbe de niveau partant vers les bâtiments d'EDF (ancien chemin de fer). Prendre le chemin entre les maisons, 20m après celles-ci, puis prendre la sente qui part sur votre droite vers le trop-plein. Une fenêtre de restitution renvoie le débit réservé : c'est le départ du canyon.",
+      "descente": "Une corde peut être posée sur arbre pour entrer dans le canyon dans le cas où la conduite projette un trop fort jet (beaucoup de pression, installation à revoir côté EDF) : dans de cas, un rappel sur arbre de 25m permet d'atteindre le lit. Si la conduite coule normalement, il y a une MC pour enjamber la conduite et 2 ressauts à passer sur corde au départ (blocs instables si un seul jet).\n\nDébut très esthétique avec la conduite du trop plein du barrage et fin agréable. Beaucoup de sauts possibles dans le canyon + 2 tyroliennes (prévoir mousqueton en acier ou poulie). La fin se situe en haut de la dernière C15. Possibilité de faire un dernier rappel soit RG (chercher 2 broches au ras au centre dans l'axe de la cascade) ou RD à sécuriser par MC, remontée en RD de cette dernière cascade. Puis retraverser en amont de la cascade et retour en RG jusqu'à redescendre dans la plaine puis traverser la rivière pour regagner la piste en fond de vallon qui ramène aux granges.",
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22552,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.749634,
+        "longitude": 0.492664,
+        "label": null
+      },
+      {
+        "canyonId": 22552,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.752857,
+        "longitude": 0.497197,
+        "label": null
+      },
+      {
+        "canyonId": 22552,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 42.764004,
+        "longitude": 0.501662,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 42.764004,
+      "longitude": 0.501662,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 515,
+          "status": "Obsolète",
+          "action": "Réglemente",
+          "title": "Information - 06 juil 2023",
+          "summary": "Information de l’exploitant : Ne pas pratiquer le canyon le 6 juillet 2023 car des essais hydro-électriques réglementaires entraineront des variations du débit.",
+          "remark": null,
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.",
+          "effectiveDate": "07 juil 2023",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/515/legislation.html",
+          "attachments": []
+        },
+        {
+          "id": 480,
+          "status": "Obsolète",
+          "action": "Réglemente",
+          "title": "Information - 26 juin 2022",
+          "summary": "ALERTE : Modification débit dans canyon Neste d'Oo le 29 juin 2022 :\n\nInformation reçue d'EDF le 15 juin 2022 :\n\nBonjour Mesdames, Messieurs,\n\nJe vous informe que dans le cadre du remplacement de la vanne de fond du Barrage du Lac d’Oo réalisé en 2021 et de sa requalification finale en eau nous allons procéder à un essai d’ouverture complète de la vanne le 29/06 de 9h à 10h. A cette occasion, nous allons faire une ouverture complète de la vanne de fond (70%) puis nous la refermerons en suivant, nous nous autorisons à réaliser cet essais à plusieurs reprises si les résultats obtenus ne sont pas conformes entre 9h et 10h. Dans le cadre de cet essai, nous mettrons en place des surveillants de sécurité à plusieurs endroits entre la vanne de fond du barrage et l’aval du pont. Merci donc de votre vigilance\n\nA votre disposition si besoin de plus de renseignements,\n\nCordialement,\n\nSOFIENE BEN SALEM\n\nCadre Exploitation EDF - DPIH - UPSO - GEH Adour et Gaves GU Luchon-Cierp\n\n74 avenue Jean Jaurés, 31110 Bagnères de Luchon",
+          "remark": null,
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.",
+          "effectiveDate": "26 juin 2022",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/480/legislation.html",
+          "attachments": []
+        },
+        {
+          "id": 419,
+          "status": "Obsolète",
+          "action": "Réglemente",
+          "title": "Information - 22 juin 2021",
+          "summary": "Information d'EDF\n\nLa manœuvre de la vanne pour vidanger la galerie le 21/06 n’a pas été concluante. Nous allons donc retenter une manœuvre demain matin, le 23/06/2021 afin de tenter de l’étancher.\n\nNous utiliserons donc à nouveau la vanne F0 (débit réservé actuel) pour vidanger la partie amont de la galerie. Actuellement nous avons transféré le débit réservé par les vannes de fond barrage (environ 150L/S), a ce débit viendra s’ajouter 220l/s pendant les manœuvre de F0.\n\nMerci donc de bien vouloir informer vos pratiquant de ce risque d’augmentation de débit dans le Canyon de la Neste d’Oo.\n\nNous mettrons à jour l’affichage sur site afin d’informer de cette variation de débits.",
+          "remark": null,
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.",
+          "effectiveDate": "24 juin 2021",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/419/legislation.html",
+          "attachments": []
+        },
+        {
+          "id": 381,
+          "status": "Obsolète",
+          "action": "Interdit",
+          "title": "Arrêté municipal (Oô) - 30 mai 2018",
+          "summary": "Arrêté municipal du 30 mai 2018\n\nUn arrêté municipal vient compléter l'information du 25 mai dernier. Le canyon est désormais officiellement interdit, jusqu'au 13 juillet 2018 inclus.\n\nInformation transmise par EDF le 25 mai 2018\n\nEDF réalise depuis le mois de décembre 2017 des travaux de remplacement du contrôle-commande de l'usine du Lac d'Oô. Il s'avère que du fait de la longue indisponibilité de l'usine en résultant et du fort enneigement cette année, on va très probablement aboutir à un déversement du Lac d'Oô en juin malgré le fait qu'EDF avait quasiment vidé le lac en mars pour stocker la fonte. Le canyon de la Neste d’Oo sera alors en débit naturel.\n\nLa cote actuelle du barrage du Lac d'Oo est de 1493.82. Le barrage peut encore stocker 5 millions de m3 d'eau. Depuis la semaine dernière, il a été stocké 1,9 millions de m3 d'eau. Le débit entrant est supérieur à 4 m3/s.\n\nOn estime à environ 11 jours la durée avant le déversement si le débit entrant se maintient dans les valeurs actuelles. Compte tenu des orages prévus la semaine prochaine, il est peut-être possible que le déversement soit atteint avant la fin de la semaine. Ce serait le cas si nous avons un débit moyen entrant de 8m3/s d’ici vendredi prochain.",
+          "remark": null,
+          "details": "Arrêté municipal du 30 mai 2018",
+          "effectiveDate": "13 juil 2018",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/381/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté municipal du 30 mai 2018",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem381_pj1.pdf"
+            }
+          ]
+        },
+        {
+          "id": 281,
+          "status": "Abrogé",
+          "action": "Interdit",
+          "title": "Arrêté préfectoral (Haute-Garonne) - 09 sept 2013",
+          "summary": "L'activité canyoning est interdite dans la vallée de Neste d'Oo depuis le barrage du lac d'Oo au lieu dit les \"granges d'Astau\".\n\nNote : un nouvel arrêté publié le 28 juillet 2014 a ré-autorisé la descente du canyon",
+          "remark": null,
+          "details": "Arrêté préfectoral du 9 septembre 2013\n\nArrêté préfectoral du 28 juillet 2014",
+          "effectiveDate": "28 juil 2014",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/281/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral du 9 septembre 2013",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem281_pj1.pdf"
+            },
+            {
+              "label": "Arrêté préfectoral du 28 juillet 2014",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem281_pj2.pdf"
+            }
+          ]
+        },
+        {
+          "id": 280,
+          "status": "Abrogé",
+          "action": "Interdit",
+          "title": "Arrêté préfectoral (Haute-Garonne) - 05 août 2013",
+          "summary": "L'activité canyoning est interdite dans la vallée de Neste d'Oo depuis le barrage du lac d'Oo au lieu dit les \"granges d'Astau\". L'activité canyoning est interdite sur le Lys.",
+          "remark": null,
+          "details": "Arrêté préfectoral du 5 août 2013 (abrogé)\n\nArrêté préfectoral du 9 septembre 2013",
+          "effectiveDate": "05 août 2013",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/280/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral du 5 août 2013 (abrogé)",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem280_pj1.pdf"
+            },
+            {
+              "label": "Arrêté préfectoral du 9 septembre 2013",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem280_pj2.pdf"
+            }
+          ]
+        },
+        {
+          "id": 266,
+          "status": "Abrogé",
+          "action": "Interdit",
+          "title": "Arrêté préfectoral (Haute-Garonne) - 28 juin 2013",
+          "summary": "\"La crue de la Garonne et de ses affluents a considérablement endommagé les rives et les installations liées aux activités aquatiques et nautiques\"... Et voilà la pratique du canyoning interdite dans toute la vallée du Lys et de la Neste d'Oo.",
+          "remark": null,
+          "details": "Arrêté préfectoral du 28 juin 2013 (abrogé)\n\nArrêté préfectoral du 5 août 2013",
+          "effectiveDate": "28 juin 2013",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/266/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral du 28 juin 2013 (abrogé)",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem266_pj1.pdf"
+            },
+            {
+              "label": "Arrêté préfectoral du 5 août 2013",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem266_pj2.pdf"
+            }
+          ]
+        },
+        {
+          "id": 263,
+          "status": "Obsolète",
+          "action": "Indéfini",
+          "title": "Information - 13 juin 2013",
+          "summary": "Le barrage du Lac d'Oô est actuellement à l'arrêt jusqu'à la mi-septembre pour des travaux de rénovation. Selon les prévisions d'EDF, le lac devrait déverser à partir du 17 juin 2013 jusqu'à la mi-septembre. En terme d'impact à l’aval, les apports naturels du bassin versant du Lac d’Oô seront répercutés directement dans la Neste d’Oô.",
+          "remark": null,
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.",
+          "effectiveDate": "13 juin 2013",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/263/legislation.html",
+          "attachments": []
+        }
+      ]
+    }
+  }
+}

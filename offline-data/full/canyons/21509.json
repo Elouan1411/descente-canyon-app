@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:49:41.577717+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21509,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21509/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21509/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21509/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21509/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21509,
+    "identity": {
+      "nom": "Estavill",
+      "nomComplet": "Barranco de Estavill, Allau de Sant Feliu",
+      "prefixeNom": "Barranco de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21509/Estavill.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Cataluña",
+      "departement": "Lérida",
+      "communePrincipale": "Estavill",
+      "communes": [
+        "Estavill"
+      ],
+      "massif": "Serrat dels Solans",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.0,
+      "nbVotes": 8
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": null,
+      "longueurM": null,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 40,
+      "navette": "6.5km"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "2h",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "Pour arriver a Senterada :\n\n- soit depuis Viehla aller à la Pobla de Segur\n\n- soit Pont de Suert\n\nDe Senterada prendre la direction Pobleta de Bellveil, passer l'embranchement qui monte à Estavill. 2km plus loin la route coupe la rivière Flamicell. Se garer sur la piste qui part de là.\n\nRevenir en arrière prendre la route qui monte à Estavill. De cet embranchement au départ du chemin 4.5km exactement.",
+      "accesAmont": null,
+      "approche": "Du parking prendre la piste qui monte légèrement et qui redescend après avoir croisé une piste qui part à gauche. On arrive dans un champ. Descendre dans le lit de la rivière.",
+      "descente": "Canyon très encaisse dans le conglomérat. Attention après des périodes de pluie aux chutes de pierres.",
+      "retour": "A la fin du canyon, juste avant la confluence avec le Flamisell, un bon chemin nous ramène en 20min à la voiture.",
+      "engagement": "très encaissé\n\npas d’échappatoires",
+      "periode": "toute l'année",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21509,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.352589,
+        "longitude": 0.946069,
+        "label": null
+      },
+      {
+        "canyonId": 21509,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.347347,
+        "longitude": 0.957184,
+        "label": null
+      },
+      {
+        "canyonId": 21509,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 42.35041,
+        "longitude": 0.945876,
+        "label": null
+      },
+      {
+        "canyonId": 21509,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 42.341091,
+        "longitude": 0.954309,
+        "label": "P 2 alternatif"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 42.35041,
+      "longitude": 0.945876,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

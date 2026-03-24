@@ -1,0 +1,163 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:54:22.122338+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22789,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22789/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22789/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22789/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22789/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22789,
+    "identity": {
+      "nom": "Guerna",
+      "nomComplet": "Torrente Guerna, Guerna",
+      "prefixeNom": "Torrente",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22789/Guerna.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Lombardia",
+      "departement": "Bergamo",
+      "communePrincipale": "Comune di Adrara San Rocco",
+      "communes": [
+        "Comune di Adrara San Rocco"
+      ],
+      "massif": "Alpi Orobie",
+      "bassin": "Oglio",
+      "coursEau": "Guerna"
+    },
+    "rating": {
+      "cotation": "v3a3III",
+      "interet": 2.7,
+      "nbVotes": 10
+    },
+    "metrics": {
+      "altitudeDepartM": 640,
+      "deniveleM": 120,
+      "longueurM": 800,
+      "cascadeMaxM": 24,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "55min",
+      "descente": "1h35",
+      "retour": "25min"
+    },
+    "topo": {
+      "accesAval": "A4 (Brescia-Milano) prendre sortie Ponte Oglio et aller à Sarnico (sud-ouest di Lago d'Iseo).\n\nContinuer vers Adrara San Rocco.\n\nGarer la voiture à la fin d'Adrara San Rocco (Campo Sportivo).",
+      "accesAmont": null,
+      "approche": "Prendre, au cours d'eau, le sentier \"744 Cucche\" au rive gauche (orograf.).\n\nMonter ca. 35 min, traverser un petit pont, continuer ca. 10min.\n\nPasser au dessus d'une ruine et descendre là, vers le cours d'eau.",
+      "descente": "Marche jusqu'à encaisement, quelques sauts, toboggans, rappels.",
+      "retour": "Après l'encaissement, sortir à droite et prendre le sentier et la route vers Adrara.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "Approche par l'autre rive (avec navette) : voir lien Internet et livre du P.V.Duin"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22789,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.731079,
+        "longitude": 9.977002,
+        "label": "approche par rive gauche (orograf.)"
+      },
+      {
+        "canyonId": 22789,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.733356,
+        "longitude": 9.976315,
+        "label": "approche par rive droite (P.v.D. p.204)"
+      },
+      {
+        "canyonId": 22789,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.72356,
+        "longitude": 9.969149,
+        "label": null
+      },
+      {
+        "canyonId": 22789,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 45.728397,
+        "longitude": 9.967904,
+        "label": "en cas de navette et accés de rive droite (orograf.) - P.v.D. p. 204"
+      },
+      {
+        "canyonId": 22789,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.718292,
+        "longitude": 9.962591,
+        "label": "ou parking aval pour accés de rive droite (P.v. Duin \"B\"-p.204)"
+      },
+      {
+        "canyonId": 22789,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 45.719837,
+        "longitude": 9.964546,
+        "label": "depart sentier \"744 cucche\" (approche par rive gauche - orograf.)"
+      },
+      {
+        "canyonId": 22789,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 45.726704,
+        "longitude": 9.979277,
+        "label": "petit pont"
+      },
+      {
+        "canyonId": 22789,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 45.72913,
+        "longitude": 9.978794,
+        "label": "ruine (descendre vers le cours d'eau)"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 45.728397,
+      "longitude": 9.967904,
+      "label": "en cas de navette et accés de rive droite (orograf.) - P.v.D. p. 204"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_9f5252956e5fbfc3",
+          "kind": "MAP",
+          "title": "104 Alpi Orobie Bergamasche (Kompass)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_e83a41d7260032b7",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://fallocefali.altervista.org/torren.....drara-s.-rocco-.html",
+          "url": "http://fallocefali.altervista.org/torren.....drara-s.-rocco-.html"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

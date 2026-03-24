@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:09.081004+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21637,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21637/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21637/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21637/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21637/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21637,
+    "identity": {
+      "nom": "Grand Canyon",
+      "nomComplet": "Grand Canyon",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21637/Grand-Canyon.html"
+    },
+    "location": {
+      "pays": "Australie",
+      "region": "Nouvelle Galles du Sud",
+      "departement": "Sydney",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Blue mountain",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a3IV",
+      "interet": 2.1,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 880,
+      "deniveleM": 100,
+      "longueurM": 1500,
+      "cascadeMaxM": 17,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "1h30",
+      "retour": "1h"
+    },
+    "topo": {
+      "accesAval": "De Katoomba, prendre la direction de Lithgow (great western highway). Quelques km plus loin, juste avant Blackheath, suivre à droite la direction de Evans Lookout. Au bout de 3km environ, se garer à Neates Glen carpark à droite (évident). Attention, 500m plus loin, il y a un parking avec une piste; ce n'est pas le bon.",
+      "accesAmont": null,
+      "approche": "Prendre le chemin touristique de Neates Glen qui descend au cours d'eau (Katoomba map 1/25000). On suit le ruisseau; on passe un tunnel. Peu après, le canyon s'enfonce en s'encaissant. On rejoint le canyon à cet endroit par un rappel de 17m sur arbre juste à côté du chemin (impossible à louper).",
+      "descente": "Le rappel d'accès de 17m donne l'impression d'un \"billet sans retour\". La suite est une randonnée entre des parois au creusement unique, où les voûtes nous accompagnent tout le long de la descente. Quelques biefs, dont le dernier d'une bonne vingtaine de mètres. On rejoint le sentier juste après, rive droite.",
+      "retour": "Une fois sur le sentier, soit on revient en arrière pour remonter par l'approche, soit on continue le sentier vers l'aval pour finir le circuit touristique (meilleure option). On suit donc le sentier vers l'aval; à la bifurcation suivante, on prend, à gauche, le sentier qui remonte à Evans Lookout (belvédère); il y a un panneau indicateur. Une fois à Evans Lookout (terminus de la route goudronnée), rejoindre la voiture en longeant la route (compter 20min).",
+      "engagement": "La présence du sentier touristique juste au dessus apporte un sentiment de sécurité; mais attention, le canyon est toujours encaissé; je n'ai pas le souvenir d'avoir vu une zone hors crue sur le parcours. En cas de risque, on peut finir le canyon assez rapidement en accélérant. De plus, le bassin versant n'est pas très grand, et le canyon toujours large. Mais comme dit le dicton, \"on n'est jamais trop prudent\".\n\nLes retenues d'eau ne sont pas un danger; ce sont surtout des réservoirs d'eau.",
+      "periode": "été",
+      "geologie": "Sandstone (mélange de calcaire ,de grès et de sable)",
+      "historique": null,
+      "remarques": "Canyon trés esthétique tant dans l'approche (végétation type rainforest, subtropicale) que dans le canyon lui-même. Assez court et facile d'accès; on ne peut normalement pas se perdre: (sinon, changer d'activité!). A programmer pour une petite journée de canyon."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21637,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": -33.659325,
+        "longitude": 150.315979,
+        "label": null
+      },
+      {
+        "canyonId": 21637,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": -33.658279,
+        "longitude": 150.323013,
+        "label": null
+      },
+      {
+        "canyonId": 21637,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": -33.651436,
+        "longitude": 150.31456,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": -33.651436,
+      "longitude": 150.31456,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_745552a39a318bd6",
+          "kind": "MAP",
+          "title": "8930-1s Katoomba (Topographic Map NSW)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

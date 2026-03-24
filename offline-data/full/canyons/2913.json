@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:47:25.380356+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2913,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2913/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2913/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2913/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2913/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/2913/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 2913,
+    "identity": {
+      "nom": "Rif",
+      "nomComplet": "Torrent du Rif",
+      "prefixeNom": "Torrent du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2913/Rif.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Hautes-Alpes",
+      "communePrincipale": "Val Buëch-Méouge",
+      "communes": [
+        "Val Buëch-Méouge"
+      ],
+      "massif": "Montagne de Chabre",
+      "bassin": "Méouge",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 1.7,
+      "nbVotes": 16
+    },
+    "metrics": {
+      "altitudeDepartM": 660,
+      "deniveleM": 85,
+      "longueurM": 470,
+      "cascadeMaxM": 22,
+      "cordeMiniM": 25,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "1h00",
+      "retour": "1min"
+    },
+    "topo": {
+      "accesAval": "Sortez de la A51 à Sisteron et rejoignez Ribiers par la D948. Après le village au Hameau du Plan prenez la direction de la vallée de la Méouge. Après le carrefour vers le hameau du Pomet, passez le tunnel et garez-vous prés du pont passant sur le cours d'eau.",
+      "accesAmont": null,
+      "approche": "Du pont de stationnement, prendre le sentier RG du Rif. Très vite, le quitter pour suivre une sente moins claire qui monte raide en direction de la route de Pomet et la rejoint après une partie un peu plus plane. On continue ensuite la montée sur la route jusqu'au pont de départ, juste en dessous-de la bifurcation montant au hameau de Pomet. Rejoindre le Rif par la RD, en amont du pont.",
+      "descente": "Descente plus aquatique avec une belle cascade.\n\nDès le départ sous le pont, une goulotte de 4 mètres mérite un amarrage naturel en RG sur un gros arbre (saut possible après vérifs) On trouve assez vite un T6 et une C8 suivie d'une C20 (la plus grande cascade de cette descente que l'on descendra hors d'eau en RG sur des petits arbustes...). Tout de suite après, un T4 précède une C13. Puis un T10 donne accès à un saut de 3m. possible en RD. Un T4 se glisse et on aperçoit un affluent à sec qui arrive en RD. On approche de la fin de cette descente, mais il serait dommage de sortir tout de suite par le sentier en RD car un ou deux sauts de 2 à 4m en RD sont toujours possible (après vérifs). On arrive ainsi au pont ou est garé le véhicule.",
+      "retour": "Sortir avant le pont en R.D.",
+      "engagement": "Quelques échappatoires avant la C20 après le T4.",
+      "periode": "En début de saison le débit peut-être optimal. Respectez les baigneurs dans la partie aval.",
+      "geologie": null,
+      "historique": "Maurice Hachet, Olivier Courtois, Thierry Saunier",
+      "remarques": "- Une navette est possible entre les ponts de départ et d'arrivée mais elle est inutile (2x2,5km).\n\n- Canyon ré-équipé sur broches inox, mains-courantes, plus rappels ! Equipement double pour la C20 en RD (main-courante rappelable à poser pour se saisir du relais C20).\n\nNote du 28 août 2015 : \"Nous vous informons de la destruction / vandalisme des amarrages du canyon du Rif. Ce canyon a bénéficié l'an dernier d'un rééquipement complet. Environ une quinzaine d'ancrages ont été détruits à la masse il y a environ 2 semaines (MC + relais), les lunules ont été fracturées... Une enquête de la Gendarmerie est en cours\" (source : GTCanyon05)."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2913,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.281464,
+        "longitude": 5.789537,
+        "label": null
+      },
+      {
+        "canyonId": 2913,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.279713,
+        "longitude": 5.786126,
+        "label": null
+      },
+      {
+        "canyonId": 2913,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 44.281509,
+        "longitude": 5.789752,
+        "label": null
+      },
+      {
+        "canyonId": 2913,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 44.279743,
+        "longitude": 5.785847,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 44.281509,
+      "longitude": 5.789752,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_698f23f50a61f9ad",
+          "kind": "MAP",
+          "title": "3339 OT Sisteron (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 457,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté municipal (Val Buëch-Méouge) - 10 mars 2021",
+          "summary": "La pratique d'activités de pleine nature est interdite dans le lit vif du Rif de Pomet en dehors de l'itinéraire tracé.\n\nLa descente du canyon est autorisée tous les jours de la semaine en matinée, sauf dimanche et mardi, avec une sortie du Rif à l'aval au plus tard à 13h30. Le nombre de pratiquants est limité à 9 par groupe.",
+          "remark": null,
+          "details": "Arrêté municipal (Val Buëch-Méouge) n°P 2021-01 du 10 mars 2021",
+          "effectiveDate": "10 mars 2021",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/457/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté municipal (Val Buëch-Méouge) n°P 2021-01 du 10 mars 2021",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem457_pj1.pdf"
+            }
+          ]
+        },
+        {
+          "id": 401,
+          "status": "Obsolète",
+          "action": "Réglemente",
+          "title": "Arrêté municipal (Val Buëch-Méouge) - 03 juil 2019",
+          "summary": "La pratique d'activités de pleine nature est interdite dans le lit vif du Rif de Pomet en dehors de l'itinéraire tracé.\n\nLa descente du canyon est autorisée tous les jours de la semaine sauf dimanche et mardi en matinée avec une sortie du Rif à l'aval au plus tard à 13h30. Ceci pour la tranquillité des baigneurs et le partage de l'espace.",
+          "remark": null,
+          "details": "Arrêté municipal (Val Buech-Méouge) n° R-2019-01 du 3 juillet 2019",
+          "effectiveDate": "03 juil 2019",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/401/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté municipal (Val Buech-Méouge) n° R-2019-01 du 3 juillet 2019",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem401_pj1.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

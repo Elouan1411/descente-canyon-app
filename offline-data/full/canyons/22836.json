@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:54:34.369486+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22836,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22836/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22836/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22836/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22836/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22836,
+    "identity": {
+      "nom": "Pogallo",
+      "nomComplet": "Rio Pogallo",
+      "prefixeNom": "Rio",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22836/Pogallo.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Piemonte",
+      "departement": "Verbano-Cusio-Ossola",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.0,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 505,
+      "deniveleM": null,
+      "longueurM": null,
+      "cascadeMaxM": 12,
+      "cordeMiniM": null,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "??",
+      "descente": "2h30",
+      "retour": "??"
+    },
+    "topo": {
+      "accesAval": "De Domodossola, descendre vers le sud par la SS33 qui devient ensuite l'autoroute A26.\n\nLa quitter à la sortie Verbania. Continuer jusqu'à Fondotoce.\n\nImmédiatement après le rond point, tourner à gauche pour Bieno. Dépasser le village et après 1 kilomètre, tourner à gauche vers Santino et Rovegro. Après Rovegro, continuer la route jusqu'à Cicogna. Se garer dans le village.",
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": "Arrivée à la confluence avec le Rio Valgrande, le remonter sur une courte distance et prendre un sentier sur la gauche, presque sous le pont Castello, qui remonte dans les bois.\n\nSi le débit empêche la remontée du rio Valgrande, continuer à descendre et 200 m après, sortir sur la droite.\n\nPour évaluer le débit, un peu avant Ponte Castello, un sentier à droite descend à un pont en pierre d'où on peut voir le dernier toboggan (non équipé).",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22836,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.004421,
+        "longitude": 8.500591,
+        "label": "pont"
+      },
+      {
+        "canyonId": 22836,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.992634,
+        "longitude": 8.484186,
+        "label": null
+      },
+      {
+        "canyonId": 22836,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.003193,
+        "longitude": 8.491573,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.003193,
+      "longitude": 8.491573,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:40.087034+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23101,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23101/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23101/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23101/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23101/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23101,
+    "identity": {
+      "nom": "Baccu Farrucciu",
+      "nomComplet": "Baccu Farrucciu, Baccu'e Farrucciu, Baccu Farucciu",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23101/Baccu-Farrucciu.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Sardegna",
+      "departement": "Nuoro",
+      "communePrincipale": "Gairo",
+      "communes": [
+        "Gairo"
+      ],
+      "massif": "Gennargentu",
+      "bassin": "Fiume Pelau",
+      "coursEau": "Baccu Farucciu"
+    },
+    "rating": {
+      "cotation": "v4a1III",
+      "interet": 1.4,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 835,
+      "deniveleM": 760,
+      "longueurM": 80,
+      "cascadeMaxM": 55,
+      "cordeMiniM": 60,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "35min",
+      "descente": "1h5min",
+      "retour": "35min"
+    },
+    "topo": {
+      "accesAval": "Comme pour Baccu Ois.",
+      "accesAmont": null,
+      "approche": "Comme pour Baccu Ois jusqu'au son départ. Continuer la piste encore 20min jusqu'à l’encaissement rocheux du Baccu Farrucciu.",
+      "descente": null,
+      "retour": "Après la C55 vers droite et remonter à la piste. Par celle-ci, retour à la voiture.",
+      "engagement": null,
+      "periode": "Printemps.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "A combiner avec Baccu Ois."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23101,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 39.875977,
+        "longitude": 9.480978,
+        "label": null
+      },
+      {
+        "canyonId": 23101,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 39.874268,
+        "longitude": 9.47923,
+        "label": null
+      },
+      {
+        "canyonId": 23101,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 39.884056,
+        "longitude": 9.466564,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 39.884056,
+      "longitude": 9.466564,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_1d1c0596388950bf",
+          "kind": "MAP",
+          "title": "531-III Ussassai (IGM)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

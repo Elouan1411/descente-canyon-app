@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:59:15.165806+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24113,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24113/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24113/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24113/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24113/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24113,
+    "identity": {
+      "nom": "Jargeatte",
+      "nomComplet": "Combe Jargeatte",
+      "prefixeNom": "Combe",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24113/Jargeatte.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Isère",
+      "communePrincipale": "Chantelouve",
+      "communes": [
+        "Chantelouve"
+      ],
+      "massif": "Taillefer",
+      "bassin": "Romanche",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1II",
+      "interet": 2.5,
+      "nbVotes": 10
+    },
+    "metrics": {
+      "altitudeDepartM": 1840,
+      "deniveleM": 566,
+      "longueurM": 1000,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h",
+      "descente": "4 à 5h",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "De Grenoble vers le Bourg d'Oisans, tourner à droite direction le Col d'Ornon (D526). Se garer à gauche aux tables de la petite station de ski du col d'Ornon.",
+      "accesAmont": null,
+      "approche": "Traverser la route et partir plein Est, franchir la combe et monter dans la forêt par un très bon sentier (au départ peu marqué puis excellent). En haut, on sort de la forêt et on continue une centaine de mètres en direction des premières cascades.",
+      "descente": "Après les petites cascades du début se présentent environ 25 cascades de 5m à 30m presque sans marche intermédiaire. Deux grands rappels arrosés en fil d'araignée sont particulièrement jolis. Les trois rappels de 30m sont fractionnés. Beau rocher, paysage grandiose, et cascades de caractères dont certaines présentant un geyser.",
+      "retour": "Au débouché de la forêt RD, partir à droite à courbe de niveau (champ de vaches placides, voire très placides). En restant toujours à niveau, mille sentiers dont chacun vaut l'autre ramènent à la voiture.",
+      "engagement": "Il semble possible de sortir fréquemment par la forêt environnante (non testé).",
+      "periode": "Fin de printemps, été, automne.",
+      "geologie": "Cristallin",
+      "historique": "Équipement sans doute datant des années 2010, présence de points un peu plus récents (peut-être 2016), et ré-équipement en juillet 2018.",
+      "remarques": "Purge impérative, et trousse à spits obligatoire car les avalanches sont fréquentes et l'équipement en pâtira."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24113,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.022636,
+        "longitude": 5.958314,
+        "label": null
+      },
+      {
+        "canyonId": 24113,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.017517,
+        "longitude": 5.970964,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.017517,
+      "longitude": 5.970964,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_bd24b285ad0fb3d2",
+          "kind": "MAP",
+          "title": "3335 ET Le Bourg-d'Oisans (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:33.880845+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23913,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23913/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23913/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23913/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23913/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23913,
+    "identity": {
+      "nom": "Maratrache",
+      "nomComplet": "Torrent de Maratrache",
+      "prefixeNom": "Torrent de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23913/Maratrache.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Hautes-Alpes",
+      "communePrincipale": "Val Buëch-Méouge",
+      "communes": [
+        "Val Buëch-Méouge"
+      ],
+      "massif": null,
+      "bassin": "Durance",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 0.9,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 1050,
+      "deniveleM": 100,
+      "longueurM": 750,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h30",
+      "descente": "1h",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "De Sisteron se rendre à Ribiers (commune de Val Buëch-Méouge) par la D948. Juste à la sortie du village prendre la route à gauche direction Villaret, poursuivre jusqu'au hameau de l'Adrech. La route se transforme en piste, passer Sanorgues et garez-vous dans l'épingle juste au-dessus de la Chapelle de Clarescombes (panneau d'indication Grouvac).",
+      "accesAmont": null,
+      "approche": "Redescendre un peu la piste et rejoindre au mieux le ruisseau en contrebas, passer en RD et remonter dans les prés. En s'orientant vers la gauche en montant vous tomberez sur une ancienne piste. la suivre elle se transforme en sentier et monte jusqu'à la crête. Redescendre de l'autre coté pour retomber sur de bons chemins, les prendre à gauche pour arriver jusqu'au ruisseau (carte IGN utile pour cette approche).",
+      "descente": "On démarre par une marche en sous-bois jusqu'au début du canyon.\n\nS'en suit alors un joli encaissement bien sculpté mais assez court avec un rappel obligatoire (2 points) puis une partie plus ouverte avec des plans inclinés et des vasques peu profondes et le torrent se resserre une dernière fois avec une C20 (MC sur arbre puis un point RD), on termine par une marche en bloc jusqu'au canal de sortie.",
+      "retour": "Du canal suivre le sentier RG qui devient piste et ramène au véhicule.",
+      "engagement": "Mises hors-crue faciles",
+      "periode": "A faire à la fonte des neiges ou après de fortes pluies.",
+      "geologie": null,
+      "historique": "Ouvert par ??? en ???, deux points rajoutés et un peu de jardinage 5/6/17",
+      "remarques": "Le débit rencontré quand vous traversez le ruisseau pendant l'approche est beaucoup plus gros que le débit du canyon."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23913,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.224178,
+        "longitude": 5.792571,
+        "label": null
+      },
+      {
+        "canyonId": 23913,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.226425,
+        "longitude": 5.799803,
+        "label": null
+      },
+      {
+        "canyonId": 23913,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.224766,
+        "longitude": 5.808402,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.224766,
+      "longitude": 5.808402,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_698f23f50a61f9ad",
+          "kind": "MAP",
+          "title": "3339 OT Sisteron (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

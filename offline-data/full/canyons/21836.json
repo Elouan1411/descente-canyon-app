@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:54.941675+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21836,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21836/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21836/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21836/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21836/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21836,
+    "identity": {
+      "nom": "Rosittenbach",
+      "nomComplet": "Rosittenbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21836/Rosittenbach.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Salzbourg",
+      "departement": "Politischer Bezirk Salzburg-Umgebung",
+      "communePrincipale": "Grödig",
+      "communes": [
+        "Grödig"
+      ],
+      "massif": "Untersberg",
+      "bassin": "Salzach",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.0,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 600,
+      "deniveleM": 130,
+      "longueurM": 900,
+      "cascadeMaxM": 16,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15/30min",
+      "descente": "2h",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "Tauern-autoroute sortir á Salzburg-Süd vers Berchtesgaden/Grödig. Deuxième feux à droite vers Grödig, continuer vers Glanegg (direction Fürstenbrunn). 100m après Glanegg (aprés une virage de 90 Grad) suivre une piste forestière à gauche et garer la voiture.",
+      "accesAmont": null,
+      "approche": "Continuer la piste. Aprés le pont sur le Rosittenbach suivre le sentier à droite ca. 150m. En haut vous pouvez descendre directement vers le commencement de L'encaisement ou continuer dans le sentier ca. 800m et descendre ici vers le ruisseau.",
+      "descente": null,
+      "retour": "sortir 50m avant le pont á droite",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21836,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.742229,
+        "longitude": 13.012522,
+        "label": null
+      },
+      {
+        "canyonId": 21836,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.744072,
+        "longitude": 13.011739,
+        "label": null
+      },
+      {
+        "canyonId": 21836,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.746071,
+        "longitude": 13.012329,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.746071,
+      "longitude": 13.012329,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_247ac38449729a1b",
+          "kind": "MAP",
+          "title": "UK L4 Berchtesgadener Alpen (1/50000)",
+          "scale": "Bayerisches",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_e65cd93fd99c86b9",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cgi-bin/redirect.....action=detailed_desc",
+          "url": "http://canyon.carto.net/cgi-bin/redirect.....action=detailed_desc"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

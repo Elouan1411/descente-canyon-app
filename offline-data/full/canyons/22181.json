@@ -1,0 +1,161 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:08.243884+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22181,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22181/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22181/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22181/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22181/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/22181/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 22181,
+    "identity": {
+      "nom": "Ayguets et Enfer",
+      "nomComplet": "Gorges de l' Ayguets et Enfer",
+      "prefixeNom": "Gorges de l'",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22181/Ayguets-et-Enfer.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Savoie",
+      "communePrincipale": "Valloire",
+      "communes": [
+        "Valloire"
+      ],
+      "massif": null,
+      "bassin": "Arc",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a2III",
+      "interet": 1.7,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 1835,
+      "deniveleM": 335,
+      "longueurM": 1000,
+      "cascadeMaxM": 40,
+      "cordeMiniM": 45,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h",
+      "descente": "2h",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "Se rendre à Valloire, entre les cols du Télégraphe et du Galibier.\n\nStationner dans le village sans gêner à proximité de l'arrivée du torrent.",
+      "accesAmont": null,
+      "approche": "Prendre en RG du torrent le sentier balisé qui monte aux Solèdes.\n\nOn passe devant le pont du Diable (sortie).\n\nJuste avant d'arriver aux Solèdes, prendre dans une épingle une sente très discrète à flanc qui rejoint deux petits impluviums.\n\nDescendre à ce niveau en restant prudent (une corde est utile, arbres).\n\nIl est peut-être possible de continuer un peu à flanc pour trouver une descente moins raide ?",
+      "descente": "Quelques cascades ensoleillées dans du schiste parfois sculpté pour le haut.\n\nUne série presque encaissée pour le bas, mais dans du rocher pourri.",
+      "retour": "Du pont du Diable, prendre en RG le bon sentier emprunté à l'aller qui rejoint Valloire.",
+      "engagement": "Échappatoires possibles. Un chemin sépare en 2 le canyon.",
+      "periode": "Etiage.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "On peut aller se garer au joli hameau de Poingt Ravier pour faire la course. Cela rajoute cependant quelques kilomètres de voiture.\n\nC'est bizarrement l'accès préconisé dans les topos.\n\nIl est aussi possible de partir plus haut dans les gorges de l'Ayguest : voir l'accès dans le topo \"Descentes de canyons en Savoie\"."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22181,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.166176,
+        "longitude": 6.405657,
+        "label": null
+      },
+      {
+        "canyonId": 22181,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.163742,
+        "longitude": 6.422565,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.163742,
+      "longitude": 6.422565,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_da30219dbb4dd176",
+          "kind": "TOPOGUIDE",
+          "title": "Les canyons de Savoie",
+          "authors": [
+            "Patrick Chollot"
+          ],
+          "publicationYear": 2018,
+          "reference": "978-2-95309-39-1-9",
+          "editor": "auto-édition",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/1125/Les-canyons-de-Savoie.html"
+        },
+        {
+          "id": "biblio_0062918c2f446d19",
+          "kind": "TOPOGUIDE",
+          "title": "Les canyons des Hautes-Alpes",
+          "authors": [
+            "Henri VINCENS"
+          ],
+          "publicationYear": 2007,
+          "reference": "9782952944502",
+          "editor": "auto-édition",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/12/Canyons-des-Hautes-Alpes.html"
+        },
+        {
+          "id": "biblio_6d273ae41f72e178",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons de Savoie",
+          "authors": [
+            "F. Martin",
+            "C. Altazin"
+          ],
+          "publicationYear": 2007,
+          "reference": "978-2-9528935-0-3",
+          "editor": null,
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/15/Descentes-de-canyons-en-Savoie.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_9bc1f5cdf66d62ac",
+          "kind": "MAP",
+          "title": "3435 ET Valloire (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 555,
+          "status": "Indéfini",
+          "action": "Indéfini",
+          "title": "Arrêté municipal (Valloire)",
+          "summary": "Renseignements pris l'été 2024 auprès d'un guide local :\n\nLa partie inférieure (Enfer) serait actuellement interdite par arrêté municipal.\n\nLes équipements de la partie supérieure (Ayguets) ont été détruits par les crues printanières...",
+          "remark": null,
+          "details": null,
+          "effectiveDate": null,
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/555/legislation.html",
+          "attachments": []
+        }
+      ]
+    }
+  }
+}

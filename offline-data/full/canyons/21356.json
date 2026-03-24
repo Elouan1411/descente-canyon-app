@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:49:06.028057+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21356,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21356/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21356/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21356/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21356/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21356,
+    "identity": {
+      "nom": "Touzes",
+      "nomComplet": "Canyon des Touzes, Boralde de St Chely",
+      "prefixeNom": "Canyon des",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21356/Touzes.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Aveyron",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Secteur Nord Aveyron",
+      "bassin": "Lot",
+      "coursEau": "Boralde de St Chely"
+    },
+    "rating": {
+      "cotation": "v2a4I",
+      "interet": 1.8,
+      "nbVotes": 5
+    },
+    "metrics": {
+      "altitudeDepartM": 1000,
+      "deniveleM": 160,
+      "longueurM": 2000,
+      "cascadeMaxM": 10,
+      "cordeMiniM": 15,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "3h",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": "Depuis St Chely d'Aubrac prendre la direction d'Aubrac sur la D533, faire environ 3.5 km jusqu'à un croisement d'où part la \"TransAubrac\" sur la droite. La prendre, traverser le pont et se garer de suite sur le parking de gauche.",
+      "accesAmont": null,
+      "approche": "Le départ est au niveau du pont",
+      "descente": "Le canyon des Touzes est un canyon d'initiation idéal pour découvrir l'activité.\n\nIl se compose de trois parties distinctes séparées par de courtes marches. Il se compose de 7 rappels et de quelques vasques où des sauts sont possibles après sondage. La partie terminale est encaissée et agréable. La première partie fait 300 à 400 m séparée de l'autre par 400 m de marche, après la deuxième il faut marcher environ 600 à 700 m pour atteindre la dernière partie qui est la plus belle et la plus encaissée du canyon, pour la cascade MC en RG.",
+      "retour": "Sortir après l'encaissement final, soit en RD et revenir par la route au niveau du parking, soit en RG et rejoindre un peu plus haut une piste qui revient egalement au parking.",
+      "engagement": "Le canyon des Touzes est un canyon d'initiation, des echappatoires tout le long excepté dans la derniere partie.",
+      "periode": "D'avril à octobre",
+      "geologie": null,
+      "historique": "Ouverture : mai 2002 Galibert Olivier, Francois Daniel",
+      "remarques": "Canyon broché, mise en place d'une MC rappelable sur la dernière cascade"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21356,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.598141,
+        "longitude": 2.963353,
+        "label": null
+      },
+      {
+        "canyonId": 21356,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.594212,
+        "longitude": 2.946203,
+        "label": "Sortie en rive gauche et retour par un chemin de randonnée jusqu'au parking amont."
+      },
+      {
+        "canyonId": 21356,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 44.598148,
+        "longitude": 2.963605,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.598148,
+      "longitude": 2.963605,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_c44f5ac653cd0eb6",
+          "kind": "MAP",
+          "title": "2437 ET Laguiole (IGN S?rie Bleue)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_4022be6855382ecb",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://mjcrodezspel.free.fr/photos/canyo.....uzes/index/index.htm",
+          "url": "http://mjcrodezspel.free.fr/photos/canyo.....uzes/index/index.htm"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

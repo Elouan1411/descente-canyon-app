@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:47:20.849118+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2900,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2900/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2900/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2900/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2900/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2900,
+    "identity": {
+      "nom": "Belle Inconnue",
+      "nomComplet": "Cascades de la Belle Inconnue",
+      "prefixeNom": "Cascades de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2900/Belle-Inconnue.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Haute-Savoie",
+      "communePrincipale": "Thônes",
+      "communes": [
+        "Thônes"
+      ],
+      "massif": "Bornes - Aravis",
+      "bassin": "Fier",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a1III",
+      "interet": 2.8,
+      "nbVotes": 73
+    },
+    "metrics": {
+      "altitudeDepartM": 830,
+      "deniveleM": 200,
+      "longueurM": 700,
+      "cascadeMaxM": 32,
+      "cordeMiniM": 35,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "40min",
+      "descente": "2h",
+      "retour": "15mins"
+    },
+    "topo": {
+      "accesAval": "Sortir de Thônes direction Annecy (Est, D909), se garer à gauche au parking de la nécropole/cimetière militaire de Morette (\"musée de la résistance\").",
+      "accesAmont": null,
+      "approche": "Prendre le chemin carrossable (dépasser le petit bâtiment des toilettes publiques) puis à droite le chemin vers le refuge, par le GR96. Suivre jusqu'à trouver un chemin qui part à droite au milieu d'une forêt de pins juste après la deuxième épingle. Laisser un chalet à gauche (une fontaine y coule) et descendre (pas trop) jusqu'au ruisseau.",
+      "descente": "On démarre par 3 petites verticales non encaissées de 6m maxi. Vient une C15 (C5+C6) (ATTENTION aux trous dans ces cascades) qui se descend d'une traite jusqu'à la lèvre d'une C20 marquant l'entrée dans la partie souterraine. On prend pied dans la grotte. 2 possibilités s'offrent au visiteur: soit rappel de 25m environ incliné ou désescalade jusqu'au porche de la grotte.\n\nIl est possible de shunter la partie souterraine active par un rappel de 20 m environ qui débouche à la sortie de la grotte.\n\nSuit une C30 inclinée. Enfin, une C20 donne accès à une C32 passant sous une arche (remarquable). Passage RD hors crue. Sortir RD où il y a encore possibilité de descendre 2 cascades non encaissés sans intérêts C25 et C10.\n\nCanyon très court mais unique par son passage souterrain et l'arche à voir. A combiner avec Morette en face de la route.",
+      "retour": "Le ruisseau mène à la route.",
+      "engagement": "S'engager dans la grotte avec un débit pas trop important car ça devient vite engagé et la C20 avant la grotte peut être dangereuse.",
+      "periode": "Pas de saut - une brasse pour sortir de la C32",
+      "geologie": null,
+      "historique": "S.C. ANNECY - années 70",
+      "remarques": "A combiner avec les cascades de Morette"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2900,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.89389,
+        "longitude": 6.280556,
+        "label": null
+      },
+      {
+        "canyonId": 2900,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.896667,
+        "longitude": 6.278889,
+        "label": null
+      },
+      {
+        "canyonId": 2900,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.898335,
+        "longitude": 6.286667,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.898335,
+      "longitude": 6.286667,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_68c3d089c92edd13",
+          "kind": "MAP",
+          "title": "3431 OT Lac d'Annecy (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:42.868131+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23400,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23400/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23400/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23400/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23400/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23400,
+    "identity": {
+      "nom": "Aguila",
+      "nomComplet": "Barranco del Aguila",
+      "prefixeNom": "Barranco del",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23400/Aguila.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Canarias",
+      "departement": "Las Palmas",
+      "communePrincipale": "San Bartolomé de Tirajana",
+      "communes": [
+        "San Bartolomé de Tirajana"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2III",
+      "interet": 2.0,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 320,
+      "deniveleM": 60,
+      "longueurM": 400,
+      "cascadeMaxM": 35,
+      "cordeMiniM": 40,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15min/40mi",
+      "descente": "1h",
+      "retour": "25min/40mi"
+    },
+    "topo": {
+      "accesAval": "De San Augustin à l'est de Maspalomas, prendre la route à gauche de l'hôtel Gloria Palace. La piste d'accès et d'approche est privée et son propriétaire annonce clairement, dès le virage suivant l'hôtel, que le passage est interdit. Idem au niveau de la barrière plus haut y compris à pied... Accès donc à négocier avec le propriétaire... !! La route se transforme en piste et monte à un élevage de chèvres. La piste traverse ensuite cet élevage, donc soit se garer un peu avant sans gêner ou soit demander au propriétaire de l'exploitation l'autorisation de traverser l'exploitation, sachant qu'ensuite la piste n'est plus très carrossable en véhicule normal et que se garer avant la ferme ne rajoute que 15-20min de marche d'approche et de retour.",
+      "accesAmont": null,
+      "approche": "Depuis la ferme continuer sur la piste pour passer l'exploitation et soit rester sur la piste pendant 600 m puis prendre la piste à droite qui part au plat soit couper hors sentier direction nord est pour retrouver la piste et aller jusqu'au parking 4x4. Du parking 4x4, prendre le sentier situé 50 m plus bas direction nord, jusqu'à une ruine / mur en pierre, de la se diriger hors sentier nord est pour rejoindre la crête qui surplombe le canyon et descendre au mieux jusqu'au cours d'eau en utilisant les sentiers de chèvres / chasseurs.",
+      "descente": "Enchaînement de plusieurs petits obstacles jusqu'à la cascade finale de 35 m. Si le canyon coule des sauts peuvent être envisagés dans les vasques. Si le canyon est sec et que les vasques ne donnent pas envie de faire trempette, il est possible de toutes les éviter moyennant un peu d'escalade.",
+      "retour": "Après la C35, monter un couloir sur des sentes de chèvres / chasseurs en RD du torrent puis utiliser une vire pour remonter le canyon en RD. Puis passer au mieux la crête et revenir à travers la végétation jusqu'au sentier puis la piste jusqu'au véhicule.",
+      "engagement": "Il est possible de contourner assez facilement chaque obstacle. En haut de la C35 une échappatoire RD semble possible.",
+      "periode": "A faire en période humide s'assèche rapidement au printemps.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Voisin du canyon de Toro qui est le barranco situé à l'ouest."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23400,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 27.803097,
+        "longitude": -15.548979,
+        "label": null
+      },
+      {
+        "canyonId": 23400,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 27.800543,
+        "longitude": -15.547302,
+        "label": null
+      },
+      {
+        "canyonId": 23400,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 27.797125,
+        "longitude": -15.548936,
+        "label": "Parking accessible avec un véhicule tout terrain et après avoir demandé l'autorisation au fermier de traverser son exploitation."
+      },
+      {
+        "canyonId": 23400,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 27.787222,
+        "longitude": -15.54912,
+        "label": "PArking avec voiture location standard et sans traverser la ferme aux chèvres en voiture."
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 27.797125,
+      "longitude": -15.548936,
+      "label": "Parking accessible avec un véhicule tout terrain et après avoir demandé l'autorisation au fermier de traverser son exploitation."
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_c3bd5d203187ac5f",
+          "kind": "MAP",
+          "title": "237 Gran Canaria (Kompass)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_dbf3da2638e0f5a9",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://barrancoscanarios.com/barrancos/g.....barranco-del-aguila/",
+          "url": "http://barrancoscanarios.com/barrancos/g.....barranco-del-aguila/"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

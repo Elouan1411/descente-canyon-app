@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:00.511784+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21599,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21599/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21599/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21599/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21599/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21599,
+    "identity": {
+      "nom": "Kremastos",
+      "nomComplet": "Canyon Kremastos",
+      "prefixeNom": "Canyon",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21599/Kremastos.html"
+    },
+    "location": {
+      "pays": "Grèce",
+      "region": "East Macedonia and Thrace Region",
+      "departement": "Evros",
+      "communePrincipale": "Tskia",
+      "communes": [
+        "Tskia"
+      ],
+      "massif": "Samothraki (île)",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v5a2II",
+      "interet": 3.4,
+      "nbVotes": 11
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": null,
+      "longueurM": null,
+      "cascadeMaxM": 70,
+      "cordeMiniM": 80,
+      "navette": "8.0km"
+    },
+    "timings": {
+      "approche": "3h",
+      "descente": "4h",
+      "retour": "3h"
+    },
+    "topo": {
+      "accesAval": "passer toutes les pistes et aller jusqu'à la fin de la route au niveau de la plage de Pachia Amnos.",
+      "accesAmont": null,
+      "approche": "Partir plein est, et descendre dans un canyon ouvert au départ, et qui se referme au fur et a mesure de la descente. Avec quelques beaux passages, rappel, sauts. Arrivée sur une petite plage de rêve. De là, prendre un chemin bien marqué qui s'élève.\n\nAu niveau d'un portail caractéristique prendre a droite et ce chemin, de toute beauté, surplombe la mer et nous mène au départ du canyon.",
+      "descente": "Une des 3 plus belles descentes de l'île. Succession ininterrompue de rappels. Exceptionnel.",
+      "retour": "Le dernier rappel se jette en mer ! Donc prévoir ce canyon un jour de mer calme, et un bateau pour se faire récupérer. Le top !\n\nSinon le chemin de retour (très aérien) part du relais de la dernière cascade.",
+      "engagement": "Aucune échappatoire",
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "Une bonne alternative pour réduire le temps d'approche à 1h30 est de se faire déposer en bateau à la plage de Vatos, puis de rejoindre le sentier d'approche balisé d'un point rouge."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21599,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 40.405636,
+        "longitude": 25.629274,
+        "label": null
+      },
+      {
+        "canyonId": 21599,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 40.404797,
+        "longitude": 25.630669,
+        "label": null
+      },
+      {
+        "canyonId": 21599,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 40.398079,
+        "longitude": 25.592222,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 40.398079,
+      "longitude": 25.592222,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

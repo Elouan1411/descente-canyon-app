@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:11.615209+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21922,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21922/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21922/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21922/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21922/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21922,
+    "identity": {
+      "nom": "Chasau",
+      "nomComplet": "Ruisseau de Chasau",
+      "prefixeNom": "Ruisseau de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21922/Chasau.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Isère",
+      "communePrincipale": "Engins",
+      "communes": [
+        "Engins"
+      ],
+      "massif": "Vercors",
+      "bassin": "Isère",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v5a1I",
+      "interet": 1.6,
+      "nbVotes": 8
+    },
+    "metrics": {
+      "altitudeDepartM": 1260,
+      "deniveleM": 260,
+      "longueurM": 890,
+      "cascadeMaxM": 100,
+      "cordeMiniM": 70,
+      "navette": "6.9km"
+    },
+    "timings": {
+      "approche": "0/15min",
+      "descente": "1h30",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "De Grenoble, dépasser Engins et se garer sur le bord de la route à droite (2 ou 3 places) au niveau d'une piste forestière discrète, 400 mètres environ avant la confluence du Furon et du Bruyant. La piste est fermée par un câble. Attention à bien repérer sur la carte, il est facile de confondre avec le parking aval de la combe de Chenevoye.",
+      "accesAmont": "Continuer en direction du lieu-dit l'Olette et prendre à sa sortie la route des Aigaux et des Merciers. Se garer au pont enjambant le canyon juste après la sortie des Aigaux.",
+      "approche": "On peut soit commencer le canyon au niveau du pont soit remonter plus en amont 15 min par la rive gauche pour réaliser la descente du petit encaissement situé juste au-dessus du pont.",
+      "descente": "Petites cascades peu équipées avant la grande cascade fractionnée (15+65+30) et bien équipée en rive droite.",
+      "retour": "Des sentes permettent de rejoindre la piste forestière puis la voiture du pied de la grande cascade.",
+      "engagement": "Des échappatoires sont possibles entre les petits encaissements.",
+      "periode": "Ruisseau temporaire à sec hormis périodes de fonte des neiges ou très pluvieuses.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Le premier fractionnement de la grande cascade est inconfortable et un peu technique à aller chercher."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21922,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.164635,
+        "longitude": 5.594015,
+        "label": "Départ de la partie en amont du pont"
+      },
+      {
+        "canyonId": 21922,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 45.163898,
+        "longitude": 5.597287,
+        "label": null
+      },
+      {
+        "canyonId": 21922,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 45.157356,
+        "longitude": 5.607051,
+        "label": null
+      },
+      {
+        "canyonId": 21922,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 45.159058,
+        "longitude": 5.603494,
+        "label": "La grande verticale"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 45.163898,
+      "longitude": 5.597287,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_f71cf3569cd5f7fc",
+          "kind": "MAP",
+          "title": "3235 OT Autrans - Gorges de La Bourne (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

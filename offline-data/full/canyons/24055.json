@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:59:01.616036+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24055,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24055/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24055/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24055/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24055/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24055,
+    "identity": {
+      "nom": "Laus",
+      "nomComplet": "Torrent du Laus",
+      "prefixeNom": "Torrent du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24055/Laus.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Hautes-Alpes",
+      "communePrincipale": "Saint-Étienne-le-Laus",
+      "communes": [
+        "Saint-Étienne-le-Laus"
+      ],
+      "massif": null,
+      "bassin": "Durance",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1II",
+      "interet": 0.8,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 850,
+      "deniveleM": 60,
+      "longueurM": 100,
+      "cascadeMaxM": 12,
+      "cordeMiniM": 15,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "40min",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "De Tallard, suivre la D942 en direction de Barcelonnette. Puis, prendre à gauche en direction de Chorges tout en restant sur la D942. Passer Le Château, Valserres, Saint-Étienne-le-Laus, puis prendre à gauche sur Notre-Dame du Laus par la D111. Rouler jusqu'au parking situé à l'entrée du petit village.",
+      "accesAmont": null,
+      "approche": "Traverser le pâté de maisons en suivant la route et emprunter un sentier à votre droite au début du parking situé avant le cimetière. Celui-ci se rend, par un sous-bois, au torrent.",
+      "descente": "Suivre le torrent jusqu'à la première C5 équipée sur 1 pt en Rg sur la paroi (R2 x 12m), court encaissement, Mc7 sur AN en RD, C12 sur 1 pt en RG (plaquette en RD, mais sans maillon rapide) .",
+      "retour": "A la sortie de la C12, remonter en Rd via le talweg et sortir au mieux jusqu'au parking.",
+      "engagement": null,
+      "periode": "Débit optimal après les orages.",
+      "geologie": null,
+      "historique": "??? Quelques vielles plaquettes sans maillon rapide. Mise en place d'une plaquette avec anneau en RG sur la C12 (17 mars 2018)",
+      "remarques": "Lieu de culte, rester très discret... A faire si vous êtes dans le coin. La C12 est plutôt sympathique à descendre."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24055,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.5224,
+        "longitude": 6.155601,
+        "label": null
+      },
+      {
+        "canyonId": 24055,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.522106,
+        "longitude": 6.156851,
+        "label": null
+      },
+      {
+        "canyonId": 24055,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.520927,
+        "longitude": 6.156261,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.520927,
+      "longitude": 6.156261,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_28e68141a286bb81",
+          "kind": "MAP",
+          "title": "3338 ET Gap (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

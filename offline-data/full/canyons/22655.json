@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:49.393899+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22655,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22655/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22655/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22655/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22655/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22655,
+    "identity": {
+      "nom": "Lavencou 2",
+      "nomComplet": "Lavencou 2",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22655/Lavencou-2.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Aveyron",
+      "communePrincipale": "Saint-Georges-de-Luzençon",
+      "communes": [
+        "Saint-Georges-de-Luzençon"
+      ],
+      "massif": "Causse du Larzac",
+      "bassin": "Tarn",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1II",
+      "interet": 0.9,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 687,
+      "deniveleM": 150,
+      "longueurM": 400,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 40,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "??",
+      "descente": "2h",
+      "retour": "??"
+    },
+    "topo": {
+      "accesAval": "Même accès que pour le Lavencou.",
+      "accesAmont": null,
+      "approche": "Comme pour le Lavencou, mais au lieu de suivre la clôture, emprunter le chemin qui remonte sur la colline d'en face pour arriver à un embranchement. Dans l'épingle, prendre à droite : sentier balisé en direction du ravin.",
+      "descente": "Descendre de 50m dans le lit du ruisseau jusqu'à arriver au R25 AN RG. Il y a une vieille corde (prévoir de quoi la changer), suivie de 3 petites cascades. Les shunter R25 AN. Là, on progresse pendant quelques mètres R5 AN et nous voici sur R30 AN RG (pour ceux qui raboutent les cordes : attention). Fin de la descente et arrivée à l'entrée de la grotte.",
+      "retour": "Même que pour le Lavencou.",
+      "engagement": "aucun mais pas échappatoire",
+      "periode": "sec",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Équipement vieillot, préférer les amarrages naturels."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22655,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.038292,
+        "longitude": 3.035222,
+        "label": "haut de barre rocheuse"
+      },
+      {
+        "canyonId": 22655,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.043804,
+        "longitude": 3.039139,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.043804,
+      "longitude": 3.039139,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_6ec0961689028659",
+          "kind": "MAP",
+          "title": "2641 OT Millau (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

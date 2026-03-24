@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:21.742949+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23030,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23030/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23030/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23030/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23030/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23030,
+    "identity": {
+      "nom": "Doserbach",
+      "nomComplet": "Doserbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23030/Doserbach.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Tyrol",
+      "departement": "Politischer Bezirk Reutte",
+      "communePrincipale": "Vorderhornbach",
+      "communes": [
+        "Vorderhornbach"
+      ],
+      "massif": "Lechtaler Alpen",
+      "bassin": "Lech",
+      "coursEau": "Doserbach"
+    },
+    "rating": {
+      "cotation": "v5a3IV",
+      "interet": 1.9,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 1560,
+      "deniveleM": 505,
+      "longueurM": 1200,
+      "cascadeMaxM": 50,
+      "cordeMiniM": 50,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "2h",
+      "descente": "5h",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "Voir info sur le site en biblio.",
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": "Première descente: 10/11 Octobre 1993 par Jean Philippe Cavalier, Olivier Courtois et Catherine Caullier.",
+      "remarques": "Attention au débit de la rivière Hornbach qu'il faut traverser à la fin du canyon!"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23030,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.352547,
+        "longitude": 10.474563,
+        "label": "D 1 pour canyon integral"
+      },
+      {
+        "canyonId": 23030,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.356777,
+        "longitude": 10.473189,
+        "label": "D 2 départ pour les guides - échappatoire possible (résurgence RD)"
+      },
+      {
+        "canyonId": 23030,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.359756,
+        "longitude": 10.471644,
+        "label": "D 3 de la piste - (echappatoire poss.)"
+      },
+      {
+        "canyonId": 23030,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.361732,
+        "longitude": 10.469284,
+        "label": null
+      },
+      {
+        "canyonId": 23030,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.364956,
+        "longitude": 10.482759,
+        "label": null
+      },
+      {
+        "canyonId": 23030,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.36446,
+        "longitude": 10.481649,
+        "label": "sortie alternatif"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.364956,
+      "longitude": 10.482759,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

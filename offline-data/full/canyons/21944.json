@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:16.590860+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21944,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21944/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21944/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21944/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21944/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21944,
+    "identity": {
+      "nom": "Alzeau",
+      "nomComplet": "Canyon de l' Alzeau",
+      "prefixeNom": "Canyon de l'",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21944/Alzeau.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Aude",
+      "communePrincipale": "Saint-Denis",
+      "communes": [
+        "Saint-Denis"
+      ],
+      "massif": "Montagne Noire",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 1.6,
+      "nbVotes": 5
+    },
+    "metrics": {
+      "altitudeDepartM": 600,
+      "deniveleM": 50,
+      "longueurM": 800,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "25min",
+      "descente": "1h30",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "Depuis Carcassonne ou Mazamet monter par la D118 jusqu'à Cuxac Cabardès puis suivre direction Saissac / Saint Denis. Traverser le village de Saint Denis en direction de Saissac et à environ 1km après la sortie du village se garer sur une aire aménagée ( table pique nique) à 100m avant un pont enjambant l'Alzeau.",
+      "accesAmont": null,
+      "approche": "Traverser la rivière sur le pont pour passer en rive droite et prendre le chemin évident qui remonte le ruisseau. Etre discret à ce niveau ou des panneaux de propriété privé sont visibles même si le ruisseau sert de limite de parcelle donc appartient à la commune. Après 10 minutes de marche, le chemin s'élève et l'on peut apercevoir à travers les arbres la cascade finale. Après 10 minutes de plus, le chemin se divise en deux, une partie qui plonge nettement vers le ruisseau et une partie qui reste à flanc de colline et vous amène au barrage de Saint-Denis si vous le suivez jusqu'au bout. Prendre donc la branche de droite et après 5 minutes rejoindre le ruisseau.",
+      "descente": "La descente commence par une désescalade délicate ou un rappel arrosé sur un arbre rive gauche ( sangle ). Ensuite vient la première cascade de 25m avec deux options : rappel rive gauche sur sec ( équipé top) ou rappel rive droite en spéléo + actif ( équipé plus soft ). Deux ressauts et on arrive à la fin de la première partie. Sortir du ruisseau et marcher 100m rive droite. La seconde partie commence par quelques ressauts avant d'arriver à un saut de 2m (possibilité saut rive droite mais bien sonder!). S'ensuit un tobbogan très délicat ou un rappel (équipement vieux) avant la dernière difficulté une C20 rappel rive droite arrosé par gros débit. Une marche de 100m rive gauche vous amène à une dernière vasque ou le chemin de retour (le même que l'aller) vous attend 50m au dessus du ruisseau.",
+      "retour": "Reprendre le même chemin qu'à l'aller pour rejoindre la voiture.",
+      "engagement": "Peu d'engagement au vu des rives boisés.",
+      "periode": "Le ruisseau coule toute l'année mais le top reste quand le déversoir du barrage surverse un peu soit avril à juin et septembre à novembre.",
+      "geologie": "schiste de la montagne noire",
+      "historique": "non connu...",
+      "remarques": "Comme souvent dans les canyons, restez discret. Le ruisseau est propice à la pêche. Le propriétaire de la parcelle au départ du chemin est tatillon..."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21944,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.369617,
+        "longitude": 2.212543,
+        "label": null
+      },
+      {
+        "canyonId": 21944,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.366623,
+        "longitude": 2.20808,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 43.369617,
+      "longitude": 2.212543,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_06c10e90df551f42",
+          "kind": "MAP",
+          "title": "2345 O Alzonne (IGN Série Bleue)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:45:17.718509+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2380,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2380/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2380/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2380/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2380/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2380,
+    "identity": {
+      "nom": "Gourlong",
+      "nomComplet": "Ruisseau du Gourlong",
+      "prefixeNom": "Ruisseau du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2380/Gourlong.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Haute-Loire",
+      "communePrincipale": "Alleyras",
+      "communes": [
+        "Alleyras"
+      ],
+      "massif": "Massif du Velay",
+      "bassin": "Allier",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1II",
+      "interet": 1.6,
+      "nbVotes": 9
+    },
+    "metrics": {
+      "altitudeDepartM": 1000,
+      "deniveleM": 340,
+      "longueurM": 3000,
+      "cascadeMaxM": 18,
+      "cordeMiniM": 25,
+      "navette": "7.0km"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "3h",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "Aval : au hameau du Gourlong, à droite en venant du Villard, juste avant Pont d'Alleyras. Court d'eau visible du pont dans le premier virage, où on se garer.",
+      "accesAmont": "Amont : se garer au hameau du Villard,",
+      "approche": "Avec navette : Du Villard, prendre le sentier jusqu'au vallon. (20min)\n\nAccès sans navette : dans le sens de la montée, on passe le hameau d'Aussac, puis se garer après l'épingle sur un tronçon de route abandonnée (44.915869 , 3.684798).\n\nPrendre la sente qui se transforme en chemin, en direction de Prébreaud en passant par la cote \"945\" puis \"1068\" indiquées sur la carte IGN. On tombe sur une piste forestière, à suivre en direction de \"Le Villard\", on arrive à un croisement avec une croix en pierre, on prend le chemin descendant vers le \"Mont Chant\". On quitte ce chemin au point indiqué sur la carte. (1h d'approche sans navette)",
+      "descente": "Marche, goulotte 10m, marche, T2, C5, marche, goulotte, C18, C15, C15, marche 1h, C6, marche, C3, très jolie C18, marche",
+      "retour": "Quitter le cours d'eau en RD peu après une épave de voiture, pour rejoindre un sentier vers Gourlong.",
+      "engagement": "Pas de long encaissements mais le vallon est isolé, les échappatoires sont possibles mais c'est raide et long",
+      "periode": "Avec pas mal d'eau, aucun intérêt l'été.",
+      "geologie": null,
+      "historique": "Pêcheurs",
+      "remarques": "Pas super... malgré de belles cascades quand le débit est bon. A noter 3 sauts, ou il faut bien viser des fois !! Pas mal de plaquettes... sans maillon. Les marches sont longues, du genre 1h de balade en neoprene en foret..."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2380,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.926723,
+        "longitude": 3.704646,
+        "label": null
+      },
+      {
+        "canyonId": 2380,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.920506,
+        "longitude": 3.684568,
+        "label": null
+      },
+      {
+        "canyonId": 2380,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 44.923904,
+        "longitude": 3.707585,
+        "label": null
+      },
+      {
+        "canyonId": 2380,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 44.9202,
+        "longitude": 3.676804,
+        "label": null
+      },
+      {
+        "canyonId": 2380,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 44.925705,
+        "longitude": 3.697114,
+        "label": "Approche : quitter le chemin ici et descendre dans les bois par une sente."
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 44.923904,
+      "longitude": 3.707585,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

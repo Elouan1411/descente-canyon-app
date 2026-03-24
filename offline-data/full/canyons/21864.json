@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:01.685001+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21864,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21864/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21864/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21864/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21864/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21864,
+    "identity": {
+      "nom": "Roussargue",
+      "nomComplet": "Roussargue",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21864/Roussargue.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Bouches-du-Rhône",
+      "communePrincipale": "Auriol",
+      "communes": [
+        "Auriol"
+      ],
+      "massif": "Sainte Baume",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a1I",
+      "interet": 0.4,
+      "nbVotes": 6
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": null,
+      "longueurM": null,
+      "cascadeMaxM": 10,
+      "cordeMiniM": 15,
+      "navette": "5.0km"
+    },
+    "timings": {
+      "approche": "1min",
+      "descente": "1h30",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": "que les Encanaux, se garer au pont des Encanaux.\n\nparking",
+      "accesAmont": "poursuivre la départementale et se garer au bord de la route entre les points IGN 534 et 544.",
+      "approche": "Descendre directement dans le ruisseau.",
+      "descente": "De la marche, des petites désescalades et rappels, un petit encaissement, une C8 en partie en araignée, puis confluence avec moule sèche, puis marche et petits ressauts puis confluence avec les infernets puis rando aqua sèche jusqu'à la voiture.",
+      "retour": "Si vous restez tout le temps dans le ruisseau pas de marche retour.Il est aussi possible de prendre le GR au niveau de la confluence avec l'infernet qui le longe jusqu'au parking aval.\n\nSi vous avez qu'une seule caisse il existe un chemin RG qui remonte au parking aval (voir IGN, compter 45 min)",
+      "engagement": null,
+      "periode": "Toujours sec (sauf conditions exceptionnelles), vous trouverez plus facilement de l'eau dans le vallon des infernets.\n\nFaisable toute l'année.",
+      "geologie": null,
+      "historique": "Equipements des suds canyons.",
+      "remarques": "A enchaîner avec Moule sèche et/ou les Encanaux."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21864,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 43.328411,
+        "longitude": 5.65799,
+        "label": null
+      },
+      {
+        "canyonId": 21864,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 43.34959,
+        "longitude": 5.66099,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 43.328411,
+      "longitude": 5.65799,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_c55008676d4d8829",
+          "kind": "MAP",
+          "title": "3245 ET Aubagne - La Ciotat (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

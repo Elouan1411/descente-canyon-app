@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:57.931550+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24037,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24037/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24037/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24037/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24037/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24037,
+    "identity": {
+      "nom": "Lettret",
+      "nomComplet": "Riou de Lettret",
+      "prefixeNom": "Riou de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24037/Lettret.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Hautes-Alpes",
+      "communePrincipale": "Lettret",
+      "communes": [
+        "Lettret"
+      ],
+      "massif": null,
+      "bassin": "Durance",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a1II",
+      "interet": 0.8,
+      "nbVotes": 5
+    },
+    "metrics": {
+      "altitudeDepartM": 720,
+      "deniveleM": 120,
+      "longueurM": 300,
+      "cascadeMaxM": 60,
+      "cordeMiniM": 50,
+      "navette": "1.5km"
+    },
+    "timings": {
+      "approche": "3min",
+      "descente": "1h",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "Parking de Lettret au bord de la route\n\nParking",
+      "accesAmont": "de Lettret retourner dans Tallard et prendre la D46 à droite puis rapidement la D45 à droite. Prendre encore à droite la petite route vers ville-vieille. Garez vous dans l'épingle juste avant la fin de la route.",
+      "approche": "Descendre le chemin de randonnée \"Lettret\" jusqu'au pont.",
+      "descente": "Marche avec quelques arbustes puis 1 rappel quelques désescalades avant le cassé final qui se négocie avec un An RD puis un relais sur deux points en RG à environ -10m puis C50. Encore deux ressauts (monopoint et An) et c'est fini.",
+      "retour": "Sortir RD juste après le pont. Descendre la route jusqu'au parking (ne vous faites pas écraser en traversant la route ;-) )",
+      "engagement": "Pas d'échappatoire.",
+      "periode": "En eau après de fortes pluies ou à la fonte si le bassin versant est enneigé.",
+      "geologie": null,
+      "historique": "Quelques points posés en 8mm non inox le 14/01/18",
+      "remarques": "Relais de la C60 non protégé des crues (difficile de trouver du bon rocher hors crue pour un relais bien placé."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24037,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.471359,
+        "longitude": 6.059401,
+        "label": null
+      },
+      {
+        "canyonId": 24037,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.468815,
+        "longitude": 6.061338,
+        "label": null
+      },
+      {
+        "canyonId": 24037,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 44.470104,
+        "longitude": 6.058801,
+        "label": null
+      },
+      {
+        "canyonId": 24037,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 44.467789,
+        "longitude": 6.061552,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 44.470104,
+      "longitude": 6.058801,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

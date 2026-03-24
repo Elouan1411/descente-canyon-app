@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:44.675658+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22630,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22630/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22630/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22630/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22630/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22630,
+    "identity": {
+      "nom": "Sestrière (amont)",
+      "nomComplet": "Vallon de Sestrière (amont), Sestrière",
+      "prefixeNom": "Vallon de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22630/Sestriere-amont.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-Maritimes",
+      "communePrincipale": "Saint-Dalmas-le-Selvage",
+      "communes": [
+        "Saint-Dalmas-le-Selvage"
+      ],
+      "massif": null,
+      "bassin": "Tinée",
+      "coursEau": "Sestrière"
+    },
+    "rating": {
+      "cotation": "v5a5III",
+      "interet": 1.0,
+      "nbVotes": 7
+    },
+    "metrics": {
+      "altitudeDepartM": 1950,
+      "deniveleM": 150,
+      "longueurM": 600,
+      "cascadeMaxM": 35,
+      "cordeMiniM": 40,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "1h30",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": "De Nice se rendre à St Dalmas le Selvage. Continuer vers Sestrière. Se garer juste avant le pi1ier pont. Point de départ",
+      "accesAmont": null,
+      "approche": "Descendre dans le vallon",
+      "descente": "Descente de cascades dans l'actif dans un vallon toujours en gros débit. L'étroit, le bassin suspendu qui rappèle sous cascade dans la C35 sont des moments intenses.",
+      "retour": "Après la C35 remonter au mieux à la route 50m au dessus, puis à la voiture.",
+      "engagement": "AN, sangle-maillon, mono pts. Pas de sortie évidente.",
+      "periode": "A ne faire que à l'étiage",
+      "geologie": null,
+      "historique": "Ouvert et équipé le 15 08 2010 par Annie, Pierre et Roland",
+      "remarques": "Court mais intense. Prévoir du matos de rééquipement"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22630,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.293098,
+        "longitude": 6.827544,
+        "label": null
+      },
+      {
+        "canyonId": 22630,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.29015,
+        "longitude": 6.840293,
+        "label": null
+      },
+      {
+        "canyonId": 22630,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 44.292656,
+        "longitude": 6.828271,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.292656,
+      "longitude": 6.828271,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

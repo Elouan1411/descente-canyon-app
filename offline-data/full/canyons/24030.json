@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:56.548393+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24030,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24030/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24030/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24030/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24030/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24030,
+    "identity": {
+      "nom": "Mazzeo",
+      "nomComplet": "Torrente Mazzeo",
+      "prefixeNom": "Torrente",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24030/Mazzeo.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Sicilia",
+      "departement": "Messina",
+      "communePrincipale": "Letojanni",
+      "communes": [
+        "Letojanni"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 1.7,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 197,
+      "deniveleM": 120,
+      "longueurM": 500,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "1h30",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": "Juste avant une canalisation qui croise le canyon, sortir RG.\n\nIl n’y a pas de chemin et beaucoup de ronces les 10 premiers mètres.\n\nContinuer de monter la pente. On arrive très vite sur une piste. La monter jusqu’à la route. Puis continuer jusqu’à la voiture amont.",
+      "engagement": null,
+      "periode": "A faire en début de saison : avril-mai",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24030,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 37.876495,
+        "longitude": 15.290994,
+        "label": null
+      },
+      {
+        "canyonId": 24030,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 37.877781,
+        "longitude": 15.294761,
+        "label": null
+      },
+      {
+        "canyonId": 24030,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 37.876892,
+        "longitude": 15.290925,
+        "label": null
+      },
+      {
+        "canyonId": 24030,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 37.879295,
+        "longitude": 15.295189,
+        "label": "parking aval non obligatoire"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 37.876892,
+      "longitude": 15.290925,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

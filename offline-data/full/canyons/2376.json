@@ -1,0 +1,151 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:45:16.584241+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2376,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2376/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2376/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2376/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2376/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2376,
+    "identity": {
+      "nom": "Rieutord",
+      "nomComplet": "Le Rieutord, Rieutort",
+      "prefixeNom": "Le",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2376/Rieutord.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Hérault",
+      "communePrincipale": "Hameau de Douch",
+      "communes": [
+        "Mons",
+        "Hameau de Douch"
+      ],
+      "massif": "Caroux",
+      "bassin": "Orb",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1III",
+      "interet": 1.9,
+      "nbVotes": 13
+    },
+    "metrics": {
+      "altitudeDepartM": 800,
+      "deniveleM": 350,
+      "longueurM": 1500,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h",
+      "descente": "4h30",
+      "retour": "1h45"
+    },
+    "topo": {
+      "accesAval": "Se rendre au hameau de Douch et se garer au parking aménagé.",
+      "accesAmont": null,
+      "approche": "Depuis Douch prendre le GR7 en direction du plateau du Caroux (plein sud). Au bout de 20 minutes de marche (montée faible), un sentier balisé jaune part à droite, le prendre et arrivé à un ruisseau avec une petite retenue artificielle bifurquer pour longer au mieux ce ruisseau (le rieutord). 30 mn pour arrivée à ce gué puis 30 mn pour arriver au pied du ravin.",
+      "descente": "2 parties assez distinctes.\n\nLa première est une longue progression en sous bois avec de nombreuses désescalades nécessiatant parfois l'usage de la corde sur de nombreux amarrages naturels (max 15 m.). Nombreux échappatoires balisés.\n\nLa seconde partie est la plus intéressante car elle comprend un anchaînement de 5 rappels (max 25 m.) avec pas d'échappatoires évidents.\n\nOn termine par des désescalade en sous bois pour arriver sur un pont que l'on prendra pour le sentier de reour (route qui mène au hameau d'Héric)",
+      "retour": "Remonter jusqu'au village d'Héric (30 mn) puis par le GR à Douch (ça grimpe pendant 1h15).",
+      "engagement": "Nombreux échappatoires dans la guarrigue dans sa première partie",
+      "periode": "Pas ou Peu de vasques. 1 seule devra être traverser à la nage.\n\nTabler sur Avril-Mai\n\nBas de combinaison suffisant et shorty seulement si vous le faites fin mai début juin",
+      "geologie": null,
+      "historique": null,
+      "remarques": "A faire seulement au printemps ou après de fortes pluies. Déconseillé l'été.\n\nAttention toutefois au débit après les pluies. C'est du canyon sauvage..."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2376,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.58263,
+        "longitude": 2.964334,
+        "label": null
+      },
+      {
+        "canyonId": 2376,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 43.610477,
+        "longitude": 2.973347,
+        "label": "facultatif (grosse navette obligatoire)"
+      },
+      {
+        "canyonId": 2376,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.57206,
+        "longitude": 2.967081,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 43.610477,
+      "longitude": 2.973347,
+      "label": "facultatif (grosse navette obligatoire)"
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_f62b32e9659a6cea",
+          "kind": "TOPOGUIDE",
+          "title": "Gorges et Canyons en Languedoc Roussillon",
+          "authors": [
+            "Jean-Pierre Lucot et Richard Quintilla"
+          ],
+          "publicationYear": 1990,
+          "reference": "ISBN 2-85744-467-9",
+          "editor": "Édisud",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/124/topoguide.html"
+        },
+        {
+          "id": "biblio_64902f846ef24776",
+          "kind": "TOPOGUIDE",
+          "title": "Randonnée au Caroux",
+          "authors": [
+            "CAF Béziers"
+          ],
+          "publicationYear": null,
+          "reference": null,
+          "editor": null,
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/160/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_fc07aa1bfb96647b",
+          "kind": "MAP",
+          "title": "2543 OT Lamalou-Les-Bains (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_28fc4453e6015660",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://clementdom.free.fr/html/rieutord%20Caroux.htm",
+          "url": "http://clementdom.free.fr/html/rieutord%20Caroux.htm"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

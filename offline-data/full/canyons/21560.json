@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:49:53.245994+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21560,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21560/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21560/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21560/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21560/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21560,
+    "identity": {
+      "nom": "Quincoajo",
+      "nomComplet": "Cañon del Quincoajo, Pincuejo",
+      "prefixeNom": "Cañon del",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21560/Quincoajo.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Castilla y León",
+      "departement": "León",
+      "communePrincipale": "Sena de Luna",
+      "communes": [
+        "Sena de Luna"
+      ],
+      "massif": "Sierra de la Filera",
+      "bassin": "Rio Luna",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2III",
+      "interet": 2.6,
+      "nbVotes": 6
+    },
+    "metrics": {
+      "altitudeDepartM": 1350,
+      "deniveleM": 190,
+      "longueurM": 500,
+      "cascadeMaxM": 12,
+      "cordeMiniM": 15,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h30",
+      "descente": "2h",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "Depuis Léon prendre la N120 direction Aztorga, et la nouvelle autoroute direction Mieres, Oviedo. Après avoir passé le tunnel à la hauteur du barrage de Barios de Luna, prendre la sortie de la C623 Caldas de Luna. Dans le village tournez à gauche et longez l'église. Garez-vous au terminus avant l'aire de pique-nique, près de la sortie du canyon.",
+      "accesAmont": null,
+      "approche": "Passer le pont et RD prendre le sentier bien marqué qui démarre. Le quitter assez vite pour monter à vue vers une grande brèche. Ne pas s'engager dans cette brèche mais continuer à monter en ascendance à gauche puis traverser à l'horizontale en longeant la falaise. On arrive ainsi dans un vallon assez large en demi cercle. Le remonter par un sentier bien marqué avec de nombreux cairns. Passer le col et s'engager dans le vallon suivant. Rester sur le haut de ce vallon et gagner une brèche en haut à gauche. La franchir et traverser à l'horizontale le vallon qui suit. Passer a nouveau un petit col. La rivière est visible en contrebas : descendre au mieux, soit directement par un éboulis (plus raide mais plus rapide) soit en traversant pour gagner une épaule herbeuse.",
+      "descente": "Succession de petits rappels, sauts, toboggans.",
+      "retour": "Immédiat",
+      "engagement": "Très bel encaissement, sans échappatoire évidente.",
+      "periode": "Sec l'été, à faire au printemps. Attention au débit.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Joli encaissement, canyon sympa à faire si vous êtes dans le coin."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21560,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.937698,
+        "longitude": -5.870218,
+        "label": null
+      },
+      {
+        "canyonId": 21560,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.931526,
+        "longitude": -5.867665,
+        "label": null
+      },
+      {
+        "canyonId": 21560,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 42.927017,
+        "longitude": -5.866957,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 42.927017,
+      "longitude": -5.866957,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:10.673386+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23808,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23808/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23808/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23808/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23808/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23808,
+    "identity": {
+      "nom": "Rondolon",
+      "nomComplet": "Rio Rondolon",
+      "prefixeNom": "Rio",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23808/Rondolon.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Frioul-Vénétie julienne",
+      "departement": "Udine",
+      "communePrincipale": "Dogna",
+      "communes": [
+        "Dogna"
+      ],
+      "massif": "Alpes Juliennes",
+      "bassin": "Fella",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a3III",
+      "interet": 1.9,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 850,
+      "deniveleM": 300,
+      "longueurM": 1250,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 25,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "2h5min",
+      "descente": "3h",
+      "retour": "20"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": "12.7.2014 Canyoning Cult Slovenia (Urška Bricelj, David Sefaj, Roman Udir), Andi Aichholzer, Georg Buol",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23808,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.440212,
+        "longitude": 13.376796,
+        "label": null
+      },
+      {
+        "canyonId": 23808,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.446384,
+        "longitude": 13.369945,
+        "label": null
+      },
+      {
+        "canyonId": 23808,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.449169,
+        "longitude": 13.357285,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.449169,
+      "longitude": 13.357285,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

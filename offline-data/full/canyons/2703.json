@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:46:31.676521+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2703,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2703/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2703/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2703/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2703/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2703,
+    "identity": {
+      "nom": "Susec",
+      "nomComplet": "Gorge de Susec",
+      "prefixeNom": "Gorge de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2703/Susec.html"
+    },
+    "location": {
+      "pays": "Slovénie",
+      "region": "Bovec",
+      "departement": "Goriška",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Alpes Juliennes",
+      "bassin": "Soca",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a3I",
+      "interet": 2.5,
+      "nbVotes": 14
+    },
+    "metrics": {
+      "altitudeDepartM": 550,
+      "deniveleM": 150,
+      "longueurM": 1000,
+      "cascadeMaxM": 18,
+      "cordeMiniM": 15,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "1h30",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": "Grand parking juste à l'arrivée du canyon, à partager avec les dizaines de pros locaux et leurs clients.",
+      "accesAmont": null,
+      "approche": "Sentier évident rive droite, puis rive gauche.",
+      "descente": "Il est court, mignon et assez ludique. Le chemin est indiqué comme privé, en août 2024 la cabane était fermée et aucune information tarifaire ou autre. Les panneaux indiquent des horaires de pratique de 9h à 18h, même si les pros débordent allégrement.\n\nLa coupe (très approximative) est disponible sur le panneau à l'arrivée.\n\nLes deux plus grandes cascades peuvent se contourner par des MC câblés, attention toutefois, si l'on souhaite tout de même descendre la plus grande depuis le relais chainé, il faut un gros 2*25m !",
+      "retour": "Sortie évidente en fin du canyon (possibilité de sortir avant le dernier obstacle par un sentier RD qui rejoint le parking).",
+      "engagement": "Engagement faible ; pas mal d’échappatoires évidentes.",
+      "periode": "Niveau faible l'été. Attention aux crues.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Canyon trés fréquenté l'été par les pros locaux. Mieux vaut le faire au mois de juin ou septembre. Canyon trés ludique, esthétique avec des sauts et des toboggans. Vu qu'il est trés court, c'est un canyon à faire avant l'apéro pour ce mettre en appétit.\n\nOn peut le faire sans utiliser la corde en passant rive gauche au niveau de la cascade de 18m. (main courante)"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2703,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.290745,
+        "longitude": 13.486404,
+        "label": null
+      },
+      {
+        "canyonId": 2703,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.29512,
+        "longitude": 13.489366,
+        "label": null
+      },
+      {
+        "canyonId": 2703,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.295406,
+        "longitude": 13.489714,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.295406,
+      "longitude": 13.489714,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

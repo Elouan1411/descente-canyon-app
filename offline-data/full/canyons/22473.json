@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:09.443385+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22473,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22473/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22473/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22473/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22473/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22473,
+    "identity": {
+      "nom": "Mega Rema",
+      "nomComplet": "Canyon Mega Rema",
+      "prefixeNom": "Canyon",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22473/Mega-Rema.html"
+    },
+    "location": {
+      "pays": "Grèce",
+      "region": "Thessaly",
+      "departement": "Karditsa",
+      "communePrincipale": "Mouzaki",
+      "communes": [
+        "Mouzaki"
+      ],
+      "massif": null,
+      "bassin": "Pamisos",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 2.1,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 340,
+      "deniveleM": 150,
+      "longueurM": 650,
+      "cascadeMaxM": 11,
+      "cordeMiniM": 20,
+      "navette": "4.0km"
+    },
+    "timings": {
+      "approche": "10 min",
+      "descente": "1 h 10min",
+      "retour": "10 min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22473,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 39.414108,
+        "longitude": 21.674803,
+        "label": null
+      },
+      {
+        "canyonId": 22473,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 39.415543,
+        "longitude": 21.669846,
+        "label": null
+      },
+      {
+        "canyonId": 22473,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 39.414539,
+        "longitude": 21.678171,
+        "label": null
+      },
+      {
+        "canyonId": 22473,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 39.417233,
+        "longitude": 21.668901,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 39.414539,
+      "longitude": 21.678171,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

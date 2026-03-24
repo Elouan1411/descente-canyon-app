@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:48:19.479882+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21141,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21141/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21141/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21141/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21141/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21141,
+    "identity": {
+      "nom": "Folie",
+      "nomComplet": "Cascades de la Folie",
+      "prefixeNom": "Cascades de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21141/Folie.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Bouches-du-Rhône",
+      "communePrincipale": "Allauch",
+      "communes": [
+        "Allauch"
+      ],
+      "massif": "garlaban",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a1I",
+      "interet": 1.1,
+      "nbVotes": 12
+    },
+    "metrics": {
+      "altitudeDepartM": 390,
+      "deniveleM": 130,
+      "longueurM": 500,
+      "cascadeMaxM": 27,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "1h30",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "D'allauch prendre la route menant au Logis Neuf. Après une descente, au premier rond-point, prendre à droite puis la première à gauche (quartier des Sembles et de la Folie). Suivre ce chemin goudronné qui se transforme en piste, montant à un moment, jusqu'au bout. Se garer sans gêner au niveau de la barrière pour la protection des incendies et d'une habitation.",
+      "accesAmont": null,
+      "approche": "Du parking, continuer le chemin menant à un portail accessible. Prendre,le chemin montant de gauche et faire 500 m. De là, on domine un ruisseau sec. Le départ se situe en amont de la barre rocheuse de ce ruisseau, au niveau d'un petit champ aménagé, à gauche du chemin.",
+      "descente": "- 2 ressauts à désescalader\n\n- C5 ARG\n\n- C7 + C3 ARG\n\n- désescalade de 3m\n\n- marche 300m\n\n-désescalade 2m\n\n-C5 ARG\n\n- mini-encaissement avec MC ARG ou désescalade de 3m\n\n- C27 ARG,dont 22 m en fil d'araignée.",
+      "retour": "Prendre un petit sentier sur la droite revenant sur le lit du ruisseau. Le suivre jusqu’à observer une maisonnette en RG. De là, quitter le ruisseau pour rejoindre le chemin de retour.",
+      "engagement": null,
+      "periode": "Sec la plupart du temps",
+      "geologie": null,
+      "historique": "Équipé par sudcanyon.",
+      "remarques": "Il est possible de remonter en haut de la C25 par la RD. Voir même de refaire le parcours si l'on veut..."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21141,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.343372,
+        "longitude": 5.511773,
+        "label": null
+      },
+      {
+        "canyonId": 21141,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.346264,
+        "longitude": 5.50679,
+        "label": null
+      },
+      {
+        "canyonId": 21141,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.348057,
+        "longitude": 5.497123,
+        "label": null
+      },
+      {
+        "canyonId": 21141,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 43.347,
+        "longitude": 5.496871,
+        "label": "Hameau de la Folie"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.348057,
+      "longitude": 5.497123,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_c55008676d4d8829",
+          "kind": "MAP",
+          "title": "3245 ET Aubagne - La Ciotat (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

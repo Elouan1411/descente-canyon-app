@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:27.744691+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23613,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23613/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23613/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23613/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23613/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23613,
+    "identity": {
+      "nom": "Gias delle Vacche",
+      "nomComplet": "Gias delle Vacche",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23613/Gias-delle-Vacche.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Ligurie",
+      "departement": "Genova",
+      "communePrincipale": "Arenzano",
+      "communes": [
+        "Arenzano"
+      ],
+      "massif": "Mont Beigua",
+      "bassin": "Lerone",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1III",
+      "interet": 1.6,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 320,
+      "deniveleM": 140,
+      "longueurM": 400,
+      "cascadeMaxM": 35,
+      "cordeMiniM": 35,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h20",
+      "descente": "1h45",
+      "retour": "45min"
+    },
+    "topo": {
+      "accesAval": "Idem Lerone et Cü du Mündu.",
+      "accesAmont": null,
+      "approche": "Du parking suivre la route. A la sortie du virage à gauche et alors que celle-ci entre dans une propriété, un sentier continue en légère montée. Il devient horizontal, ne pas le quitter, rejoindre une maisonnette avec fontaine, puis descendre (ruines) jusqu'au croisement de sentiers \"Case Freghee\". A droite, rejoindre le ponte Negrone. A la sortie du pont deux sentiers se séparent: à droite le sentier \"dell'Ingegnere\". Continuer tout droit, petit canal, 30 m rive G, traverser le ruisseau Negrone. En face une sente grimpe raide, balisée à la peinture blanche. Suivre (assez facilement) cette mauvaise sente qui, après une montée à peu près directe, traverse à gauche, passe une crête, descend derrière (câbles en place). Encore qq minutes de montée, on rejoint le sentier dell'Ingegnere (qui arrive d'en bas de la vallée et continue vers Cü du Mündu), que l'on descend jusqu'à croiser notre ruisseau.",
+      "descente": "Le 1° rappel se fait sur arbre rive D non équipé... 6 rappels sur cascades déclives, très glissant.\n\nÉquipement \"limite\" ; prendre au moins un peu de sangle.",
+      "retour": "Au niveau d'un câble tendu en travers, repérer une bonne sente rive G qui monte un peu puis descend en diagonal vers l'amont de Lerone. Un fois la rive D rejointe, monter une trentaine de mètres, traverser, puis en face une sente monte vers la droite. Celle-ci rejoint le bon sentier que l'on suit à droite jusqu'à \"Case Freghee\". Puis le sentier pris à l'aller.\n\nPossible de descendre à la confluence avec le rio Lerone. Il faudra alors remonter 200m pour la sente de remontée rive G.",
+      "engagement": null,
+      "periode": "A faire vraiment après une bonne période de pluie avec un pantalon + top, les cascades ne sont quasiment pas arrosées.",
+      "geologie": "Serpentine.",
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23613,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.424587,
+        "longitude": 8.649886,
+        "label": null
+      },
+      {
+        "canyonId": 23613,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.421169,
+        "longitude": 8.653646,
+        "label": null
+      },
+      {
+        "canyonId": 23613,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.409153,
+        "longitude": 8.654411,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.409153,
+      "longitude": 8.654411,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_008c3698db96fe1f",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.cicarudeclan.com/ita/a5_giasvacche.htm",
+          "url": "http://www.cicarudeclan.com/ita/a5_giasvacche.htm"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

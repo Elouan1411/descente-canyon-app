@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:13.032707+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23237,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23237/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23237/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23237/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23237/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23237,
+    "identity": {
+      "nom": "Fazenda",
+      "nomComplet": "Fazenda",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23237/Fazenda.html"
+    },
+    "location": {
+      "pays": "Portugal",
+      "region": "Açores",
+      "departement": "Santa Cruz das Flores Municipality",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a4III",
+      "interet": 2.5,
+      "nbVotes": 7
+    },
+    "metrics": {
+      "altitudeDepartM": 75,
+      "deniveleM": 65,
+      "longueurM": 1000,
+      "cascadeMaxM": 22,
+      "cordeMiniM": 22,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "1h30",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": ". Se garer après le virage en épingle qui passe sur un pont en contre bas du village. Petite route qui part en direction de la centrale hydroélectrique. Se garer le long des murets des maisons avoisinantes (attention à ne pas déranger).",
+      "approche": "Aller en direction du pont (passé précédemment en voiture). Le traverser puis accès rive droit en amont du pont (panneau Canyon de Fazenda)",
+      "descente": "Jolie petite descente. Très aquatique à comparer à l'ensemble des canyons de l'île. Beaucoup de nage sur le début puis enchaînement de plusieurs verticales.\n\nRoche très glissante, et eau très noire ! Cependant de nombreux sauts sont possibles (après vérifications d'usage). Il est possible de finir à l'océan avec un dernier saut (après sondage) sur la cascade en contre bas de l'usine hyrdo. Magnifique panorama de fin.",
+      "retour": "Après avoir fait trempette à l'océan remonter en direction de l'usine hydroélectrique où vous trouverez la route pour aller en direction de la voiture.",
+      "engagement": "Il doit être possible de s'en échapper sur le début du parcours cependant roche et berges très glissantes.",
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23237,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 39.467865,
+        "longitude": -31.14959,
+        "label": null
+      },
+      {
+        "canyonId": 23237,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 39.469707,
+        "longitude": -31.141693,
+        "label": null
+      },
+      {
+        "canyonId": 23237,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 39.469124,
+        "longitude": -31.147518,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 39.469124,
+      "longitude": -31.147518,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_6791f42b9091629c",
+          "kind": "MAP",
+          "title": "01 Island of Flores (North) (Instituto Geográfico do Exército - Série M889)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

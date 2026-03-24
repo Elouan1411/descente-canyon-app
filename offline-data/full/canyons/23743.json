@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:56.554537+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23743,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23743/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23743/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23743/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23743/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23743,
+    "identity": {
+      "nom": "Baïle Vieil",
+      "nomComplet": "Ravin de Baïle Vieil",
+      "prefixeNom": "Ravin de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23743/Baile-Vieil.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-de-Haute-Provence",
+      "communePrincipale": "Châteaufort",
+      "communes": [
+        "Châteaufort"
+      ],
+      "massif": null,
+      "bassin": "Asse",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a2I",
+      "interet": 0.5,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 630,
+      "deniveleM": 50,
+      "longueurM": 300,
+      "cascadeMaxM": 10,
+      "cordeMiniM": 15,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "30min",
+      "retour": "25min"
+    },
+    "topo": {
+      "accesAval": "De Sisteron prendre la D951 en direction de La Motte-du-Caire. Environ 8 km avant ce village, prendre à droite la D454 vers Châteaufort. Garez-vous sur la place de ce village.",
+      "accesAmont": null,
+      "approche": "De la place s'enfoncer dans le village et suivre le chemin balisé en direction de \"les Mayols\". Ce chemin descend jusqu'au ruisseau de la Pène, le traverse et remonte. Le prochain vallon rencontré est notre ravin.",
+      "descente": "Marche en rivière jusqu'au resserrement final constitué de 3 ressauts dont seul le deuxième nécessite une corde (un point RD).",
+      "retour": "Le ravin tombe dans la Sasse. Remonter cette rivière jusqu'au ruisseau de la Pène et le remonter en RG ou RD jusqu'à récupérer le chemin pris à l'aller.",
+      "engagement": "Aucun.",
+      "periode": "Coule après les fortes pluies ou la fonte des neiges.",
+      "geologie": null,
+      "historique": "Un point artisanal en 8mm posé le 05/11/16",
+      "remarques": "Pour collectionneur passant dans le coin."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23743,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.268372,
+        "longitude": 6.013745,
+        "label": null
+      },
+      {
+        "canyonId": 23743,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.274086,
+        "longitude": 6.017084,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.274086,
+      "longitude": 6.017084,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_ec844e72d95ece0e",
+          "kind": "MAP",
+          "title": "3339 ET La Motte-Du-Caire (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

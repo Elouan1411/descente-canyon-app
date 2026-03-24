@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:06.971072+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22176,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22176/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22176/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22176/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22176/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22176,
+    "identity": {
+      "nom": "Dente",
+      "nomComplet": "Rio del Dente",
+      "prefixeNom": "Rio del",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22176/Dente.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Ligurie",
+      "departement": "Genova",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Mont Beigua",
+      "bassin": "Cerusa",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 1.7,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 670,
+      "deniveleM": 285,
+      "longueurM": 800,
+      "cascadeMaxM": 23,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h15",
+      "descente": "2h",
+      "retour": "45min"
+    },
+    "topo": {
+      "accesAval": "Quittez l'autoroute A10 à Genova Voltri. Prendre à droite la SS1 Aurelia en direction de Savona, traverser Voltri et avant le pont sur le Cerusa, tourner à droite vers Fabbriche. La route monte la vallée pendant quelques kilomètres. Après Fabbriche on poursuit jusqu'au village de Fiorino. Se garer peu après la place et avant une usine (papeterie)",
+      "accesAmont": null,
+      "approche": "Monter sur la route goudronnée à droite de l'usine. Au bout suivre le balisage “+ +” rouge. Poursuivre sur le chemin jusqu'à l'altitude 750 m et le quitter vers l'ouest, traverser vers le ravin, juste dessous la petite résurgence qui alimente le rio.\n\nLe chemin se déroule en val Cerusa, qui est très belle.",
+      "descente": "Succession de petits rappels (8 au total) et courtes marches, parcours idéal pour l'initiation.",
+      "retour": "A la confluence avec le Cerusa le suivre rive droite et après une autre confluence passer rive gauche. Ici il y a un encaissement où, en cas de petit débit du Cerusa, quelques sauts et glissades sont possibles. En cas de gros débit suivre le chemin.",
+      "engagement": "Faible",
+      "periode": "Printemps et automne.",
+      "geologie": null,
+      "historique": "11/11/2007 – S. Morando, M. Parmeggiani, G. Pizzorni, R. Schenone",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22176,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.47617,
+        "longitude": 8.68186,
+        "label": null
+      },
+      {
+        "canyonId": 22176,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.470249,
+        "longitude": 8.685465,
+        "label": null
+      },
+      {
+        "canyonId": 22176,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.463451,
+        "longitude": 8.706386,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.463451,
+      "longitude": 8.706386,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_bc57889a262fd788",
+          "kind": "MAP",
+          "title": "Il Parco Naturale Regionale del Beigua (Studio Cartografico Italiano Genova)",
+          "scale": "1/30000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_2938778284834763",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.cicarudeclan.com/ita/a5_dente.htm",
+          "url": "http://www.cicarudeclan.com/ita/a5_dente.htm"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

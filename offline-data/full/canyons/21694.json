@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:21.510812+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21694,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21694/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21694/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21694/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21694/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/21694/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 21694,
+    "identity": {
+      "nom": "Poto",
+      "nomComplet": "Rio Poto",
+      "prefixeNom": "Rio",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21694/Poto.html"
+    },
+    "location": {
+      "pays": "Chili",
+      "region": "Los Lagos Region",
+      "departement": "Provincia de Llanquihue",
+      "communePrincipale": "Puerto Varas",
+      "communes": [
+        "Puerto Varas"
+      ],
+      "massif": "Cerro Quemado",
+      "bassin": "Calbuco",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a3II",
+      "interet": 3.8,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 400,
+      "deniveleM": 100,
+      "longueurM": 500,
+      "cascadeMaxM": 18,
+      "cordeMiniM": 40,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "2h30",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "Ce canyon se situe dans un immense domaine privé : le \"fundo de los volcanes\" situé juste à la sortie d'Ensenada en venant de Puerto Varas.\n\nL'accès est règlementé et il convient de se mettre en rapport avec les agences de tourisme qui ont une convention d'accès avec le propriétaire.\n\nDepuis la maison des gardes de la propriété, il y a un quart d'heure de piste jusqu'au parking de départ.",
+      "accesAmont": null,
+      "approche": "20 mn de marche d'approche facile dans des paysages de carte postale, face au majestueux volcan Osorno.",
+      "descente": "Une partie encaissée, aquatique et très ludique. Avec option adrénalinique (possibilités de sauts jusqu'a 16 metres). Nombreux toboggans et toboggans-sauts (7m).",
+      "retour": "Belle montée jusqu'au mirador en face de la cascade de sortie.",
+      "engagement": "Deux échappatoires possibles. Un au début et un aux trois quarts.\n\nÉquipé en main courante fixe et rappel rive gauche: trois points + chaîne.",
+      "periode": "Très aquatique.\n\nDe novembre a avril.",
+      "geologie": "Volcanique",
+      "historique": "Ouvert et équipé en 2001",
+      "remarques": "Le lieu est magique, au-dessus du lac Llanquihue, au milieu de trois volcans enneigés toute l'année. Puis, entrée en pleine jungle avec les rayons du soleil qui reflètent dans l'eau bleue turquoise."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21694,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": -41.287422,
+        "longitude": -72.551903,
+        "label": "altitude 345m"
+      },
+      {
+        "canyonId": 21694,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": -41.284386,
+        "longitude": -72.552269,
+        "label": "altitude 285m"
+      },
+      {
+        "canyonId": 21694,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": -41.289806,
+        "longitude": -72.557343,
+        "label": null
+      },
+      {
+        "canyonId": 21694,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": -41.283962,
+        "longitude": -72.554428,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": -41.289806,
+      "longitude": -72.557343,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_793dfff21dec252c",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://aguasverticales1.e-monsite.com/me.....ago-llanquihue-1.pdf",
+          "url": "http://aguasverticales1.e-monsite.com/me.....ago-llanquihue-1.pdf"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 226,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Information",
+          "summary": "Prendre contact avec les agences de tourisme d'Ensenada qui ont une convention d'accès auprès du propriétaire.",
+          "remark": null,
+          "details": null,
+          "effectiveDate": null,
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/226/legislation.html",
+          "attachments": []
+        }
+      ]
+    }
+  }
+}

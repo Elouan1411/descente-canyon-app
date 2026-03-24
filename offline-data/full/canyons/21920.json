@@ -1,0 +1,143 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:11.341904+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21920,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21920/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21920/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21920/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21920/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21920,
+    "identity": {
+      "nom": "Hospital",
+      "nomComplet": "Barranco Hospital, Siresa",
+      "prefixeNom": "Barranco",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21920/Hospital.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Aragón",
+      "departement": "Huesca",
+      "communePrincipale": "Valle de Hecho",
+      "communes": [
+        "Valle de Hecho"
+      ],
+      "massif": "Sierra de Alano",
+      "bassin": "Aragon Subordàn",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a3II",
+      "interet": 2.6,
+      "nbVotes": 13
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": 150,
+      "longueurM": 1200,
+      "cascadeMaxM": 15,
+      "cordeMiniM": 15,
+      "navette": "4.0km"
+    },
+    "timings": {
+      "approche": "45min",
+      "descente": "1h30",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "Depuis Jaca, prendre direction Pampelune. A Puente-la-Reina prendre à droite direction Hecho. Passer Hecho. Deux kilomètres plus loin, on arrive au village de Siresa. Se garer au niveau du pont à l'entrée du village. Il existe également un plus grand parking 100m plus loin.",
+      "accesAmont": "traverser Siresa puis 800m après la sortie du village, prendre à gauche une route qui se transforme en piste (virage serré). Après un virage à gauche à 90°, parcourir 500m puis se garer au niveau d'une maison sur la gauche.\n\nRemarque : Il est possible d'éviter la navette en prenant un sentier dans le bourg de Siresa (calle Reclusa) qui rejoint ensuite la piste, puis la maison. Compter alors 45 minutes d'approche.",
+      "approche": "Entrer dans le champ, à gauche après la maison, longer le champ par la gauche, pour rejoindre au bout du champ, un sentier qui rejoint le cours d'eau.",
+      "descente": "Quelques rappels de 17m maxi et quelques sauts, dans une gorge esthétique (plissements de flysch) mais peu encaissée.\n\nTous les rappels peuvent se faire dans l'actif ou hors d'eau.\n\nCanyon ludique (sauts, toboggans) mais attention au niveau d'eau (sonder surtout si l'eau est laiteuse et attention aux toboggans si peu d'eau)",
+      "retour": "Suivre le cours d'eau puis sortir par un sentier RD au niveau d'une canalisation.",
+      "engagement": "Canyon bien équipé, dans l'actif ou hors d'eau.\n\nAttention aux chutes de pierres.",
+      "periode": "Du printemps (avril) à l'automne",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Descente idéale pour l'initiation. Canyon très parcouru par les guides locaux."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21920,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.764626,
+        "longitude": -0.766125,
+        "label": null
+      },
+      {
+        "canyonId": 21920,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.754559,
+        "longitude": -0.756919,
+        "label": null
+      },
+      {
+        "canyonId": 21920,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 42.755882,
+        "longitude": -0.753572,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 42.755882,
+      "longitude": -0.753572,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_b4c9f8b89ab25817",
+          "kind": "TOPOGUIDE",
+          "title": "Randonnées aquatiques et canyons faciles des Pyrénées",
+          "authors": [
+            "Bruno Matéo"
+          ],
+          "publicationYear": 2010,
+          "reference": "978-2-84182-454-0",
+          "editor": "Rando Editions",
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/164/Randonnees-aquatiques--canyons-faciles-des-Pyrenees.html"
+        },
+        {
+          "id": "biblio_c1524b8af0f1815f",
+          "kind": "TOPOGUIDE",
+          "title": "Pirineos - Guia de descenso de canones y barrancos",
+          "authors": [
+            "Eduardo Gomez",
+            "Laura Tejero"
+          ],
+          "publicationYear": 2002,
+          "reference": "84-95744-20-1",
+          "editor": "Barrabes",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1126/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_9bbbe80d983d5476",
+          "kind": "MAP",
+          "title": "25 25 Anso-Hecho (Rando editions (Institut Cartografic de Catalunya))",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

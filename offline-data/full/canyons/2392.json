@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:45:20.019001+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2392,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2392/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2392/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2392/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2392/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2392,
+    "identity": {
+      "nom": "Cloches",
+      "nomComplet": "Gorge des Cloches, Gouffre des Cloches, Le Bervezou",
+      "prefixeNom": "Gorge des",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2392/Cloches.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Lot",
+      "communePrincipale": "Saint-Cirgues",
+      "communes": [
+        "Sabadel-Latronquière",
+        "Saint-Cirgues"
+      ],
+      "massif": null,
+      "bassin": "Célé",
+      "coursEau": "Le Bervezou"
+    },
+    "rating": {
+      "cotation": "v4a2I",
+      "interet": 1.6,
+      "nbVotes": 12
+    },
+    "metrics": {
+      "altitudeDepartM": 490,
+      "deniveleM": 90,
+      "longueurM": 750,
+      "cascadeMaxM": 12,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15/20min",
+      "descente": "45min/1h30",
+      "retour": "35min"
+    },
+    "topo": {
+      "accesAval": "De Brive prendre la D140, puis D940 direction St Céré puis D653 direction Latronquière. A la Vitarelle, se rendre à Sabadel-Latronquière. De ce village au hameau de Cabriès, la route est interdite sauf riverains : il faut donc se garer au parking de l'église de Sabadel-Latronquière (départ rando Gouffre des Cloches).",
+      "accesAmont": null,
+      "approche": "Prendre le sentier de PR balisé jaune jusqu'au hameau des Cabriès (route). A l'entrée du hameau au niveau d'une sapinière, le prendre à l'envers (car c'est une boucle balisée dans le sens hameau -> aval > amont -> hameau) au niveau du second chemin à gauche. Le suivre jusqu'à traverser le cours d'eau.",
+      "descente": "4 rappels de 6 à 12 m et quelques toboggans.\n\nLes 2 premiers rappels peuvent devenir problématiques en cas de débit important.\n\nLe premier peut s'équiper hors actif.\n\nSur le second la mise en place d'un guidé est possible.\n\nSur le 4ème 2 options : tob ou S3 dans la vasque puis R4 ou R12 sur amarrage naturel sur RD.",
+      "retour": "Au niveau du dernier toboggan avant le pré (ne pas aller jusqu'au pré, propriété privée), le sentier jaune remonte rive droite et vous ramène aux Cabriès. De-là, reprendre la route jusqu'au parking de l'église.",
+      "engagement": "Débit souvent important.",
+      "periode": "Période d'étiage. Sinon certains obstacles seront à contourner par prudence.",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2392,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.743961,
+        "longitude": 2.071025,
+        "label": null
+      },
+      {
+        "canyonId": 2392,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.74242,
+        "longitude": 2.070208,
+        "label": "2 pl maxi attention de ne pas gener les riverains"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.74242,
+      "longitude": 2.070208,
+      "label": "2 pl maxi attention de ne pas gener les riverains"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_e863ce252ea9c544",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://g.s.r.free.fr/canyon/Topos/Topos%20canyons%20du%20Lot.doc",
+          "url": "http://g.s.r.free.fr/canyon/Topos/Topos%20canyons%20du%20Lot.doc"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

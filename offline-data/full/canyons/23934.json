@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:38.575666+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23934,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23934/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23934/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23934/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23934/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23934,
+    "identity": {
+      "nom": "Combaras",
+      "nomComplet": "Ravin des Combaras",
+      "prefixeNom": "Ravin des",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23934/Combaras.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Hautes-Alpes",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Ecrins - Oisans - Champsaur",
+      "bassin": "Durance",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a2II",
+      "interet": 1.5,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 2160,
+      "deniveleM": 360,
+      "longueurM": 600,
+      "cascadeMaxM": 70,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h15",
+      "descente": "1h30",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "De Vallouise, monter vers Pelvoux et prendre la D421T en direction de l'Eychauda. Garez vous au bout du grand parking de randonnée au niveau des Chalets de Chambran.",
+      "accesAmont": null,
+      "approche": "Du parking , traverser le collecteur et dirigez vous vers la cascade terminale bien visible. Vous tomberez sur un sentier (non mentionné sur l'IGN) qui remonte cette cascade par la RG. Au dessus de celle-ci le sentier passe RD, restez en RG et remonter au mieux jusqu'à l'amont de la première cascade intéressante.",
+      "descente": "6 cascades entrecoupées de zones de marche.\n\nLa cascade terminale se négocie en 3 longueurs (1 point RD puis un autre RD sur le palier et 2 points RG pour le dernier jet)",
+      "retour": "Du pied de la cascade terminale rejoindre le parking en contrebas.",
+      "engagement": "Faible, on peut s'échapper entre les cascades",
+      "periode": "Printemps (pour profiter de beaux rideaux blancs) ou l'été (moins fun)",
+      "geologie": null,
+      "historique": "Equipement minimaliste en goujons de 8mm posés le 21/07/17",
+      "remarques": "Ravin qui délimite le Parc National des Ecrins par sa RG."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23934,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.907593,
+        "longitude": 6.483348,
+        "label": null
+      },
+      {
+        "canyonId": 23934,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.903774,
+        "longitude": 6.487279,
+        "label": null
+      },
+      {
+        "canyonId": 23934,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.901928,
+        "longitude": 6.492944,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.901928,
+      "longitude": 6.492944,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_2893447c6d6073b6",
+          "kind": "MAP",
+          "title": "3436 ET Meije - Pelvoux - Parc des Ecrins (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

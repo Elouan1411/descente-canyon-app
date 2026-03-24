@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:32.978895+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23910,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23910/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23910/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23910/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23910/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23910,
+    "identity": {
+      "nom": "Siggern",
+      "nomComplet": "Siggern",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23910/Siggern.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": null,
+      "departement": "Soleure",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Weissenstein",
+      "bassin": "Aar - Aare",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2I",
+      "interet": 0.8,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 730,
+      "deniveleM": 30,
+      "longueurM": 80,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 30,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "20min",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "Entre les villages de Balm bei Gunsberg et Gunsberg, se garer vers le pont qui enjambe le torrent de Siggern (alt. 630 m). Pour info, la route qui monte au départ du torrent est très carrossable mais interdite à la circulation.",
+      "accesAmont": null,
+      "approche": "Suivre la sente qui longe le torrent pour récupérer la route.",
+      "descente": "Une C5 suivi d'une belle C20-25 encaissée. Pas vue de point \"canyon\" j'ai posé une corde en fixe depuis l'arbre vers la route pour la C25.",
+      "retour": "Redescendre à la voiture en suivant la sente qui longe le torrent.",
+      "engagement": "Pas d'échappatoire une fois au pied de la C5 mais canyon extrêmement court !",
+      "periode": "Comme toutes les descentes du coin, préférer une période humide pour aller descendre cette cascade. Bassin versant de 6 km2.",
+      "geologie": null,
+      "historique": "Pas vu de point \"canyon\" mais il y a des plaquettes de bois vissées par endroit !",
+      "remarques": "A faire après Chesselbach pour completer la journée. Faie aussi Gschlifbach juste à coté."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23910,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.258671,
+        "longitude": 7.5568,
+        "label": null
+      },
+      {
+        "canyonId": 23910,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.255852,
+        "longitude": 7.56012,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.255852,
+      "longitude": 7.56012,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_3bcefb548805bf63",
+          "kind": "MAP",
+          "title": "1107 Balsthal (Swisstopo)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

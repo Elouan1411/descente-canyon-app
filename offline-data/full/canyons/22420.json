@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:58.072795+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22420,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22420/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22420/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22420/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22420/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22420,
+    "identity": {
+      "nom": "Coutronne",
+      "nomComplet": "Ravin de la Coutronne",
+      "prefixeNom": "Ravin de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22420/Coutronne.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Bouches-du-Rhône",
+      "communePrincipale": "Auriol",
+      "communes": [
+        "Auriol"
+      ],
+      "massif": "Sainte Baume",
+      "bassin": "Huveaune",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1II",
+      "interet": 0.4,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 598,
+      "deniveleM": 100,
+      "longueurM": 1000,
+      "cascadeMaxM": 18,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "40min",
+      "retour": "35min"
+    },
+    "topo": {
+      "accesAval": "D'Auriol prendre la direction St-Zacharie puis à droite par la route D45a direction Plan d'Aups. Avant d'arriver sur la D2 direction Plan d'Aups (150m), se garer juste après un pont sur la gauche.",
+      "accesAmont": null,
+      "approche": "Redescendre la D45a pour passer le pont de la Coutronne et récupérer le GR (tracé jaune), 100 m plus loin à droite, direction Pont des Encanaux 1h00.\n\nPrendre le premier sentier à droite.\n\nOn arrive devant une bergerie sur notre droite (rester discret).\n\nOn prendra à gauche pour finir par tomber sur le départ du petit canyon.",
+      "descente": "T6 sur AN ou désescalade possible si sec, C3 avec vasque en eau, C1, courte marche puis C18 sur AN.\n\nMarche de 100m qui nous amène au départ du cassé. C4 AN en RG. Marche.\n\nOn passe devant le chaudron de la Coutronne sur la droite, puis l'on finit par arriver sur le crux du canyon.\n\nEnchaînement C2 (la vasque des marseillais) C1 (ronces), C18 que l'on contournera en rd pour prendre un AN et franchir la C18.\n\nPuis l'on recroisera de nouveau 2-3 autres chaudrons.",
+      "retour": "Un peu avant la confluence avec le ravin des Infernets (qui est en fait un GR), remontez par le GR en RG jusqu'à la voiture.",
+      "engagement": null,
+      "periode": "Sec une majeure partie de l'année.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "A faire après de gros orages.\n\nPossibilité d’enchaîner avec Moule Sèche, Roussargue et les Encanaux juste à côté."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22420,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.332912,
+        "longitude": 5.680007,
+        "label": null
+      },
+      {
+        "canyonId": 22420,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.333668,
+        "longitude": 5.677829,
+        "label": null
+      },
+      {
+        "canyonId": 22420,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.329346,
+        "longitude": 5.679106,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.329346,
+      "longitude": 5.679106,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_c55008676d4d8829",
+          "kind": "MAP",
+          "title": "3245 ET Aubagne - La Ciotat (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

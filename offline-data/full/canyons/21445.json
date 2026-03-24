@@ -1,0 +1,134 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:49:26.435623+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21445,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21445/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21445/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21445/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21445/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/21445/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 21445,
+    "identity": {
+      "nom": "Thurignin",
+      "nomComplet": "Gorge de Thurignin, Turignin, Canyons du Séran, Séran",
+      "prefixeNom": "Gorge de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21445/Thurignin.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Ain",
+      "communePrincipale": "Belmont-Luthézieu",
+      "communes": [
+        "Vieu",
+        "Belmont-Luthézieu"
+      ],
+      "massif": "Valromey",
+      "bassin": null,
+      "coursEau": "Séran"
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.3,
+      "nbVotes": 19
+    },
+    "metrics": {
+      "altitudeDepartM": 410,
+      "deniveleM": 10,
+      "longueurM": 700,
+      "cascadeMaxM": 3,
+      "cordeMiniM": 5,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "20min",
+      "retour": "??"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": "des cascades de Cerveyrieu. Poursuivre la route vars Belmont. Tournez à droite sur la D8 et tournez à droite, dans une éinglke à gauche, juste avant le cimetiere, une route carrossable vous emmène à un \"parking\".",
+      "approche": "Un petit chemin sur la droite donne l'accès à l'encaissement.",
+      "descente": null,
+      "retour": null,
+      "engagement": "Très court, mais engagé.",
+      "periode": "Eviter les gros débits (mouvements d'eau).",
+      "geologie": null,
+      "historique": null,
+      "remarques": "A faire après Pont à Fabre et avant les cascades de Cerveyrieu. Les trois encaissements sont distant de 1km... avec de l'eau, c'est vraiment très bien en complément du Groin (très proche). Compter 3 à 4h pour enchainer les 3 encaissements. Prévoir une navette dans ce cas."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21445,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.892876,
+        "longitude": 5.670598,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 45.892876,
+      "longitude": 5.670598,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_3e478b1678d6811f",
+          "kind": "MAP",
+          "title": "3231 OT Amberieu-en-Bugey (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 103,
+          "status": "Obsolète",
+          "action": "Interdit",
+          "title": "Arrêté préfectoral (Ain) - 10 août 2005",
+          "summary": "La pratique du canyonisme est interdite pour des raisons de sécheresse, jusqu'au 15 septembre, sauf évolution.\n\nPour infos, l'amende est de 1500 €, 3000 € en cas de récidive...",
+          "remark": null,
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.",
+          "effectiveDate": "15 sept 2005",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/103/legislation.html",
+          "attachments": []
+        },
+        {
+          "id": 77,
+          "status": "Obsolète",
+          "action": "Interdit",
+          "title": "Arrêté préfectoral (Ain) - 02 août 2004",
+          "summary": "NOTE : ABROGE PAR LA PREFECTURE.\n\nLes gorges de Pont à Favre, les gorges de Thurignin et les cascades de Cerveyrieu sont interdites pour des raisons de sécheresse.\n\nJusqu'au 15 septembre 2004, sauf changement.\n\nAmende de 5ème classe : 1500 € et 3000 € en cas de récidive !",
+          "remark": null,
+          "details": "Communiqué de la préfecture de l'Ain, mettant fin à l'interdiction\n\nArrêté Préfectoral du 02(?) août 2004, interdisant notamment la pratique du canyoning sur le Séran",
+          "effectiveDate": "24 août 2004",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/77/legislation.html",
+          "attachments": [
+            {
+              "label": "Communiqué de la préfecture de l'Ain, mettant fin à l'interdiction",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/abrogeAin2004.pdf"
+            },
+            {
+              "label": "Arrêté Préfectoral du 02(?) août 2004, interdisant notamment la pratique du canyoning sur le Séran",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/arrete77.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

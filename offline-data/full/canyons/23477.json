@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:55.705667+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23477,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23477/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23477/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23477/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23477/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23477,
+    "identity": {
+      "nom": "Pont Saint Bruno",
+      "nomComplet": "Pont Saint Bruno, Guiers Mort",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23477/Pont-Saint-Bruno.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Isère",
+      "communePrincipale": "Saint-Laurent-du-Pont",
+      "communes": [
+        "Saint-Laurent-du-Pont"
+      ],
+      "massif": "Chartreuse",
+      "bassin": "Guiers Mort",
+      "coursEau": "Guiers Mort"
+    },
+    "rating": {
+      "cotation": "v2a5II",
+      "interet": 1.6,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 574,
+      "deniveleM": 15,
+      "longueurM": 300,
+      "cascadeMaxM": 5,
+      "cordeMiniM": 10,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "2min",
+      "descente": "1h",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "De Saint Laurent du Pont, prendre la D520b en direction de Saint Pierre de Chartreuse. Se garer à droite juste avant le pont Saint Bruno (RG du Guiers Mort).",
+      "accesAmont": null,
+      "approche": "Suivre les peintures de poissons bleus (sentier évident qui descend), lire les panneaux touristiques. On croise l'arrivée de la Petite Vache via une passerelle en bois. Se mettre à l'eau un peu en amont du pont en pierre.",
+      "descente": "Le premier passage sous blocs se remonte et offre un saut RD (5m). Nage dans un bief. Le passage suivant (non équipé en 2015) est le plus critique. Même par fort étiage, son franchissement est délicat : ce n'est plus siphonnant, mais c'est un coude suivi d'une arche, très piégeux et qu'on préférera éviter facilement par 3 vieux points RG (SP après sondage). La suite présente une autre arche (coude RD) suivie de magnifiques biefs qui raviront les amateurs de deep water soloing et de sauts dans une eau fraîche et turquoise.",
+      "retour": "3mn après la sortie de l'encaissement, un raide pierrier RG ramène à la voiture.",
+      "engagement": "Seul le bief qui suit la première arche n'offre pas d’échappatoire. Sinon, nombreuses escalades faciles pour s'échapper. Encaissements très ponctuels.",
+      "periode": "Comme le dit le topo papier, un étiage prononcé est impératif pour envisager d'aborder le passage sous l'arche. Et même dans ce cas, il reste réservé aux canyoneurs aguerris. Eau relativement froide.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Remarquer les marches d'escalier contemporain en diagonal sur le gros bloc écroulé RG !"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23477,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.354019,
+        "longitude": 5.757669,
+        "label": null
+      },
+      {
+        "canyonId": 23477,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.355129,
+        "longitude": 5.75739,
+        "label": null
+      },
+      {
+        "canyonId": 23477,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.35461,
+        "longitude": 5.7571,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.35461,
+      "longitude": 5.7571,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_bf7324fa2ae1510e",
+          "kind": "MAP",
+          "title": "3334 OT Massif de la Chartreuse Sud (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

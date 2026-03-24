@@ -1,0 +1,138 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:45:46.903931+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2528,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2528/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2528/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2528/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2528/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2528,
+    "identity": {
+      "nom": "Tiarno",
+      "nomComplet": "Canyon de Tiarno, Gorg de l'Abyss, Val di Croina, Torrente Massanglia",
+      "prefixeNom": "Canyon de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2528/Tiarno.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Trentino-Alto Adige",
+      "departement": "Trento",
+      "communePrincipale": "Ledro",
+      "communes": [
+        "Ledro"
+      ],
+      "massif": "Alpi di Ledro",
+      "bassin": "Lago di Ledro",
+      "coursEau": "Torrente Massanglia"
+    },
+    "rating": {
+      "cotation": "v3a3II",
+      "interet": 1.8,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 860,
+      "deniveleM": 740,
+      "longueurM": 1000,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 20,
+      "navette": "1.0km"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "1h30",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "Après le lac Ledro continuez à Tiarno di Sotto. Vers l’Eglise, au niveau d’une fontaine prendre la Via alla Sega. Il y a un grand panneau en bois mal placé qui indique le chemin n°415 et la Gorg de l’Abiss. Suivez la route, après le pont et une fontaine prendre la via S Giorgio et le panneau Gorge Abiss. Laissez la voiture au terminus.\n\nParking",
+      "accesAmont": "Retournez au niveau du pont et prenez la route raide - Via Lavan - qui est indiquée par le chemin 415 Croina. Suivez la route puis la piste jusqu’au pont qui passe la rivière.",
+      "approche": null,
+      "descente": "Plusieurs passages enclavés pourraient nécessiter une lampe en cas de faible luminosité.\n\nUne vasque présente un drossage puissant, prudence.\n\nL'intérêt est surtout la cascade finale cavernicole. Un très beau tuf.",
+      "retour": "Prenez la piste qui ramène au véhicule",
+      "engagement": null,
+      "periode": "Attention au niveau d'eau (voir la dernière cascade - suivre le chemin \"Gorg d'Abiss\" - 7min)",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2528,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.901909,
+        "longitude": 10.672853,
+        "label": null
+      },
+      {
+        "canyonId": 2528,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.898266,
+        "longitude": 10.67296,
+        "label": null
+      },
+      {
+        "canyonId": 2528,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 45.90197,
+        "longitude": 10.672853,
+        "label": null
+      },
+      {
+        "canyonId": 2528,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 45.895504,
+        "longitude": 10.67899,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 45.90197,
+      "longitude": 10.672853,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_de2e0aeecb2c2407",
+          "kind": "MAP",
+          "title": "071 Alpi di Ledro, Valli Giudicarie (Kompass)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_265a59de0a86b6ac",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.cicarudeclan.com/ita/a5_gorgabiss.htm",
+          "url": "http://www.cicarudeclan.com/ita/a5_gorgabiss.htm"
+        },
+        {
+          "id": "resource_fc6954bffd41a49f",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/Canyons/MassangliaCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/Canyons/MassangliaCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

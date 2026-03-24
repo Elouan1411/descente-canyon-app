@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:53.633281+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22675,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22675/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22675/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22675/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22675/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22675,
+    "identity": {
+      "nom": "Fournet et Orme",
+      "nomComplet": "Cascades du Fournet et Orme, La Reysse",
+      "prefixeNom": "Cascades du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22675/Fournet-et-Orme.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Savoie",
+      "communePrincipale": "Puygros",
+      "communes": [
+        "Puygros"
+      ],
+      "massif": "Bauges",
+      "bassin": null,
+      "coursEau": "La Reysse"
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 0.9,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": null,
+      "longueurM": null,
+      "cascadeMaxM": null,
+      "cordeMiniM": 35,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "3min",
+      "descente": "40min",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "Parking point IGN 1043 sur la D206 entre Thoiry et Aillons-le-jeune.",
+      "accesAmont": null,
+      "approche": "Prendre le chemin sur la droite qui descend pour récupérer le ruisseau.\n\nLe suivre jusqu'à la Cascade du Fournet.",
+      "descente": "Cascade du Fournet - C20 AN RG.\n\nPetit ressaut à désescalader en RD.\n\nUne sente coupe le ruisseau au niveau d'un affluent rg, la suivre sur la gauche pour arriver dans la Combe de l'Orme.\n\nCascade de l'Orme - C33 environ AN RD.\n\nPetit ressaut à désescalader avec petite vasque de réception et l'on rejoint le collecteur.",
+      "retour": "Traverser le collecteur et remonter en RD dans la pente jusqu'à la route.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22675,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.580856,
+        "longitude": 6.061985,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.580856,
+      "longitude": 6.061985,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_da30219dbb4dd176",
+          "kind": "TOPOGUIDE",
+          "title": "Les canyons de Savoie",
+          "authors": [
+            "Patrick Chollot"
+          ],
+          "publicationYear": 2018,
+          "reference": "978-2-95309-39-1-9",
+          "editor": "auto-édition",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/1125/Les-canyons-de-Savoie.html"
+        },
+        {
+          "id": "biblio_e7d94bb2f47393ab",
+          "kind": "TOPOGUIDE",
+          "title": "Cascades, Gorges & Canyons : Pré-alpes d'Isère et de Savoie",
+          "authors": [
+            "Bertrand Hauser",
+            "Delphine Baratin"
+          ],
+          "publicationYear": 2007,
+          "reference": "978-2-9529407-0-2",
+          "editor": "Descente-Canyon.com",
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/11/Cascades--Gorges-et-Canyons-:-Pre-alpes-d-Isere-et-de-Savoie.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_24c652994d6d1609",
+          "kind": "MAP",
+          "title": "3432 OT Massif des Bauges (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

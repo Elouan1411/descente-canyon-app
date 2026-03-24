@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:03.600980+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22450,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22450/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22450/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22450/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22450/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22450,
+    "identity": {
+      "nom": "Parlitobel",
+      "nomComplet": "Parlitobel",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22450/Parlitobel.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Pfäfers",
+      "departement": "Saint Gallen",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": "Tamina",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a2IV",
+      "interet": 2.8,
+      "nbVotes": 10
+    },
+    "metrics": {
+      "altitudeDepartM": 1560,
+      "deniveleM": 180,
+      "longueurM": 400,
+      "cascadeMaxM": 50,
+      "cordeMiniM": 50,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "50min",
+      "descente": "2h30",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "Se rendre à Vättis puis au bout du village prendre une route en direction de Sankt Martin / Gigerwaldsee. Suivre la route et franchir le barrage pour continuer sur la route étroite de la rive sud du lac (autorisée 20 min par heure dans chaque sens en fonction de créneaux horaires définis sur un panneau : cf photo). Se garer sur un grand parking au bout de la route, une centaine de mètres avant le village de Sankt Martin. L'arrivée du canyon est juste derrière le parking ; checkpoint en remontant le canyon en RD (5 minutes) jusqu'à la dernière cascade.",
+      "accesAmont": null,
+      "approche": "Traverser Parlitobel et suivre le bon sentier sur environ 300 mètres jusqu'à un gros bloc avec balisage (cf photo) avec un pré en contre-haut. De là, monter à vue en tirant légèrement à gauche (s'élever d'environ 50 mètres) pour rejoindre un bon sentier en haut du pré, en lisière de la forêt (cf photo). Le sentier franchit une première clôture électrique puis s'élève en lacets (marches en bois) jusqu'à une seconde clôture et une clairière. On suit alors la clôture le long du canyon avant de la traverser à l'endroit ou elle remonte pour éviter le ravin affluent qui donne accès au canyon : on se trouve alors environ à l'altitude 1660 m. On descend alors environ 40 m dans le ravin affluent peu marqué jusqu'à trouver en RG un arbre pour terminer par un rappel de 50 m jusqu'au fond de Parlitobel.",
+      "descente": "Au départ, l'encaissement est assez large.\n\nC6 (un point RD sur bloc) - C25 (un point RD) - C6 (tronc) - deux C8 successives (à chaque fois un point exposé aux crues RG) - ressaut de 5m - 200 m de marche et désescalade.\n\nOn rentre alors dans la partie plus encaissée et intéressante.\n\nRessauts - C6 + C2 enchaînées - C20 en goulotte - deux C6 enchaînées - C 40 (deux points RG, accès avec corde précédente) - C15 + C10 enchaînées (R30) - Deux C7 enchaînées - C20 - C4",
+      "retour": "On marche jusqu'au parking du départ",
+      "engagement": "Pas d'échappatoires.",
+      "periode": "Eté, automne en fonction de la fonte des névés",
+      "geologie": null,
+      "historique": "Patrick Chollot, Eric Frézal et Yves Daniou le 16 juillet 2010",
+      "remarques": "Attention : en 2010 un névé recouvrait 50 m du canyon : prévoir équipement adéquat."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22450,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.916241,
+        "longitude": 9.350835,
+        "label": null
+      },
+      {
+        "canyonId": 22450,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.920357,
+        "longitude": 9.354043,
+        "label": null
+      },
+      {
+        "canyonId": 22450,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.920284,
+        "longitude": 9.355019,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.920284,
+      "longitude": 9.355019,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

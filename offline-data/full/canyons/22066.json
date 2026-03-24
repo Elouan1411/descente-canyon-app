@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:42.601287+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22066,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22066/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22066/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22066/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22066/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22066,
+    "identity": {
+      "nom": "Saiherbach",
+      "nomComplet": "Saiherbach, Aqua-Cowboy",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22066/Saiherbach.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Haute-Autriche",
+      "departement": "Gmunden",
+      "communePrincipale": "Bad Ischl",
+      "communes": [
+        "Bad Ischl"
+      ],
+      "massif": "Salzkammergut",
+      "bassin": "Ischl",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a3III",
+      "interet": 2.3,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 640,
+      "deniveleM": 90,
+      "longueurM": 300,
+      "cascadeMaxM": 34,
+      "cordeMiniM": 35,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "1h30",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "de Salzbourg prendre l’A10 vers Linz. Sortez pour Gmunden et rejoignez Bad Ischl. Prenez la direction de Strobl et sortez quasiment tout de suite après le pont. Tournez à gauche et suivez la direction de Jainzen. Après avoir tourné à droite dans le village apparaissent les panneaux pour la cascade (Wasserfall). Garez vous 800m plus loin sur un parking à droite\n\nRemarque : attention ne vous garez pas dans le village, il n’y a pas de place.",
+      "accesAmont": null,
+      "approche": "Du bas de la cascade un chemin remonte RD. Mais le mieux du parking, c’est de suivre la route qui se transforme en piste. Rapidement, dans un virage, part à gauche une petite piste barrée (GR). Dès qu’elle commence à tourner, descendez au mieux vers le cours d’eau que vous voyez en bas.",
+      "descente": "Les obstacles commencent tout de suite dans un bel encaissement. En particulier au niveau de la double cascade. L’ensemble se réouvre juste avant le dernier enchaînement qui se réencaisse vite. Les amarrages sont nombreux et permettent de descendre dans l’actif ou hors d’eau.",
+      "retour": "Prenez le chemin qui ramène dans le village et de là rejoignez les véhicules.",
+      "engagement": "Encaissement court et sans échappatoire.",
+      "periode": "A faire après une période de pluie. Attention aux crues\n\nAvril-Novmbre",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22066,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.727085,
+        "longitude": 13.616095,
+        "label": null
+      },
+      {
+        "canyonId": 22066,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.726242,
+        "longitude": 13.616245,
+        "label": null
+      },
+      {
+        "canyonId": 22066,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.72105,
+        "longitude": 13.607833,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.72105,
+      "longitude": 13.607833,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_4efa32b3285a258d",
+          "kind": "MAP",
+          "title": "96 Bad Ischl (ÖK50 (BEV))",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_e635b495e93e940b",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/C.....pic=AquaCowboyCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/C.....pic=AquaCowboyCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

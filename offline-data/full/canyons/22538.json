@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:24.453156+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22538,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22538/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22538/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22538/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22538/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/22538/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 22538,
+    "identity": {
+      "nom": "Cascade",
+      "nomComplet": "Vallon de la Cascade",
+      "prefixeNom": "Vallon de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22538/Cascade.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Var",
+      "communePrincipale": "Collobrières",
+      "communes": [
+        "Collobrières"
+      ],
+      "massif": "Les Maures",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1I",
+      "interet": 0.5,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 420,
+      "deniveleM": 60,
+      "longueurM": 100,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "10min",
+      "descente": "40min",
+      "retour": "2min"
+    },
+    "topo": {
+      "accesAval": "De Collobrières, prendre la direction de Grimaud et Cogolin sur la D14. Après quelques kilomètres, tounez à droite (direction Vernes, Grimaud, Cogolin) en restant toujours sur la D14.\n\nPasser le Col de taillude. La cascade se situe à 1,7 km aprés ce col, au bord de la D14. Garez-vous 100 m après, sur le petit parking .",
+      "accesAmont": null,
+      "approche": "En rive gauche de la cascade. Petite grimpette jusqu'au départ...",
+      "descente": "C5 avec plaquette en RD ou AN dans l'axe ; et C25 avec sangle, sur deux points en RD.",
+      "retour": "Retour au parking.",
+      "engagement": "aucun",
+      "periode": "Sec l'été.",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22538,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.252144,
+        "longitude": 6.384709,
+        "label": null
+      },
+      {
+        "canyonId": 22538,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.250954,
+        "longitude": 6.385331,
+        "label": null
+      },
+      {
+        "canyonId": 22538,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.251297,
+        "longitude": 6.386662,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.251297,
+      "longitude": 6.386662,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 579,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Var) - 13 mai 2025",
+          "summary": "- La pratique du canyonisme dans des canyons secs (cotation aquaticité A1 ou habituellement à sec) est autorisée toute l'année\n\n- La pratique du canyonisme dans des canyons aquatiques est interdite du 1er novembre au 31 mars.\n\nPour la période du 1er avril au 30 octobre, il est interdit :\n\n- de pratiquer du coucher du soleil à 9h\n\n- de s'engager dans une descente de canyon aquatique après 17h.\n\n- De manière générale, il est interdit :\n\n- de s'engager si une alerte vigilance météo de niveau orange ou rouge est émise par Météo France, en ce qui concerne le risque \"pluie\", \"orage\", et \"inondation\", sur le secteur concerné.\n\n- de constituer un groupe de plus de 10 personnes (encadrement inclus)",
+          "remark": null,
+          "details": "Arrêté préfectoral (Préfecture du Var) SDJES-SPORTS-2025-12 du 13 mai 2025",
+          "effectiveDate": "13 mai 2025",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/579/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral (Préfecture du Var) SDJES-SPORTS-2025-12 du 13 mai 2025",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem579_pj1.pdf"
+            }
+          ]
+        },
+        {
+          "id": 545,
+          "status": "Abrogé",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Var) - 06 mai 2024",
+          "summary": "La pratique du canyonisme se voit interdite du 1er novembre au 31 mars.\n\nPour la période du 1er avril au 30 octobre, il est interdit :\n\n- de s'engager dans une descente de canyon avant 9h et après 17h.\n\n- de s'engager si une alerte vigilance météo de niveau orange ou rouge est émise par Météo France, en ce qui concerne le risque \"pluie\", \"orage\", et \"inondation\", sur le secteur concerné.\n\n- de constituer un groupe de plus de 10 personnes (encadrement inclus)",
+          "remark": "Arrêté abrogé et remplacé par l'arrêté préfectoral SDJES-SPORTS-2025-12 du 13 mai 2025",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nArrêté préfectoral (Var) n° SDJES-SPORTS-2024-0004 du 06 mai 2024",
+          "effectiveDate": "13 mai 2025",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/545/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral (Var) n° SDJES-SPORTS-2024-0004 du 06 mai 2024",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem545_pj1.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

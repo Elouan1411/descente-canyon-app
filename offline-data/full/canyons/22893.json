@@ -1,0 +1,144 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:54:48.956230+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22893,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22893/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22893/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22893/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22893/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22893,
+    "identity": {
+      "nom": "Livernade",
+      "nomComplet": "Livernade, Le Brezons",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22893/Livernade.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Cantal",
+      "communePrincipale": "Brezons",
+      "communes": [
+        "Brezons"
+      ],
+      "massif": "Monts du Cantal",
+      "bassin": "Le Brezons",
+      "coursEau": "Le Brezons"
+    },
+    "rating": {
+      "cotation": "v3a3II",
+      "interet": 1.8,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1080,
+      "deniveleM": 170,
+      "longueurM": 1300,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "2h15",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": "Dans la vallée du Brezons, se rendre au Bourguet puis à la Dolvadenche où l'on stationne après le pont du ruisseau de Livernade.",
+      "accesAmont": null,
+      "approche": "Au panneau \"cascade du saut de la Truite\" suivre l'itinéraire brièvement, passer une barrière à bovins et suivre le chemin le plus large qui s'élèvent vers le Plomb-du-Cantal, en suivant de loin la RD du ruisseau. Après 30 mn, repérer un sentier qui descend vers une passerelle. Départ du canyon.",
+      "descente": "Quelques belles cascades et beaux passages mais le tout manque de continuité.",
+      "retour": "Après la cascade du saut de la Truite, avec son belvédère touristique, ne pas sortir mais continuer par le lit de la rivière pour profiter d'un dernier rappel arrosé et d'un beau toboggan. Sortie au pont.",
+      "engagement": null,
+      "periode": "Ruisseau permanent et abondant au printemps.",
+      "geologie": "Brèches volcaniques",
+      "historique": "Première descente par Ph. Viette et P-M. Orblin le 2 octobre 2010.",
+      "remarques": "La partie amont, au dessus du départ indiqué, a été descendue mais présente peu d'intérêt ( 2 rappels, quelques tobs...) et est très glissante."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22893,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.038555,
+        "longitude": 2.767194,
+        "label": null
+      },
+      {
+        "canyonId": 22893,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.027748,
+        "longitude": 2.770116,
+        "label": "Sortie au pont."
+      },
+      {
+        "canyonId": 22893,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.0275,
+        "longitude": 2.768833,
+        "label": null
+      },
+      {
+        "canyonId": 22893,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 45.032368,
+        "longitude": 2.771323,
+        "label": "Cascade du Saut de la Truite"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.0275,
+      "longitude": 2.768833,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_daf9041e16b163a9",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons cantalous",
+          "authors": [
+            "Philippe VIETTE-COSTE"
+          ],
+          "publicationYear": 2018,
+          "reference": "97829563881-0-4",
+          "editor": "Auto-édition",
+          "status": "en stock\n\n- 14,00 € -\n\nCommandez cet ouvrage dès maintenant !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/1124/Canyons-cantalous.html"
+        },
+        {
+          "id": "biblio_0ada102a5dea7773",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons arvernes",
+          "authors": [
+            "Philippe Viette-Coste",
+            "Serge Navarro",
+            "Pierre-Marie Orblin"
+          ],
+          "publicationYear": 2012,
+          "reference": "978-2-7466-3647-7",
+          "editor": "auto-édition",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/165/Canyons-arvernes.html"
+        }
+      ],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

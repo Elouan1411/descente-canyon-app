@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:12.546590+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22486,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22486/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22486/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22486/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22486/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22486,
+    "identity": {
+      "nom": "Serchio di Gramolazzo",
+      "nomComplet": "Serchio di Gramolazzo, Serchio di Minucciano",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22486/Serchio-di-Gramolazzo.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Toscana",
+      "departement": "Lucca",
+      "communePrincipale": "Minucciano",
+      "communes": [
+        "Minucciano"
+      ],
+      "massif": "Alpes apuanes - Alpi Apuane",
+      "bassin": "Serchio",
+      "coursEau": "Serchio di Gramolazzo"
+    },
+    "rating": {
+      "cotation": "v3a3II",
+      "interet": 2.2,
+      "nbVotes": 8
+    },
+    "metrics": {
+      "altitudeDepartM": 960,
+      "deniveleM": 285,
+      "longueurM": 2700,
+      "cascadeMaxM": 18,
+      "cordeMiniM": 25,
+      "navette": "2.5km"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "5h30min",
+      "retour": "1h"
+    },
+    "topo": {
+      "accesAval": "Gramolazzo - minucciano - tunel - direction Ref. Donegani - 1 km: Rifugiola (ici sentier GT 189 de Gramolazzo).Garer une voiture.\n\nAvec l'autre continuer jusqu'à Ref. Val Serenaia (1100m alt.). 200m devant la Ref. départ.",
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": "sortie: 675m alt. sentier ancien vers NNE jusqu'à GT 189 (balisée rouge) suivre le GT 682 vers le-haut (à gauche) jusqu'à la route et Rifugiola.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22486,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.137508,
+        "longitude": 10.196713,
+        "label": null
+      },
+      {
+        "canyonId": 22486,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.157654,
+        "longitude": 10.206041,
+        "label": null
+      },
+      {
+        "canyonId": 22486,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 44.137539,
+        "longitude": 10.196203,
+        "label": null
+      },
+      {
+        "canyonId": 22486,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 44.161911,
+        "longitude": 10.205848,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 44.137539,
+      "longitude": 10.196203,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_dda017973552eb75",
+          "kind": "MAP",
+          "title": "101/102 Alpi Apuane (MULTIGRAPHIC - Carta dei sentieri e dei rifugi)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

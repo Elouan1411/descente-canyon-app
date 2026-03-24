@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:26.519214+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23049,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23049/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23049/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23049/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23049/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23049,
+    "identity": {
+      "nom": "Ruschein",
+      "nomComplet": "Ual Ruschein, Val da Siat",
+      "prefixeNom": "Ual",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23049/Ruschein.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Ilanz/Glion",
+      "departement": "Graubünden/Grigioni/Grischun",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Alpes glaronaises",
+      "bassin": "Vorderrhein",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 2.6,
+      "nbVotes": 5
+    },
+    "metrics": {
+      "altitudeDepartM": 2460,
+      "deniveleM": 660,
+      "longueurM": 1800,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1.5h",
+      "descente": "4 - 6h",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "De Ilanz/Glion monter à Ruschein, y acheter le permis pour la route d'alpage au Val Ruschein. Parking conseillé vers la vieille station de télésiège au fond de la vallée.\n\nAvec un bon 4x4 possible de faire une navette (prendre piste à Fops (2120m)).",
+      "accesAmont": null,
+      "approche": "Suivre le ruisseau en RD jusqu'au départ.",
+      "descente": "Plusieurs petites encaissements de differents calcaires. Des parties très étroites.",
+      "retour": "Suivre le ruisseau jusqu'au parking.",
+      "engagement": "Souvent bonnes possibilités de sortir, bonne vu au S - SW, ca permet de bien voir la météo qui s'approche.",
+      "periode": "Juillet - octobre",
+      "geologie": "Calcaire",
+      "historique": "03-04.06.2011: Partie intérmediaire et sup, Timo Stammwitz.\n\n05.06.2011: Partie aval, Andi Senn et Timo Stammwitz.\n\n01.08.2012: Parties sup sup et l'affluent RD, Patrick Chollot, Timo Stammwitz.",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23049,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.86412,
+        "longitude": 9.16321,
+        "label": null
+      },
+      {
+        "canyonId": 23049,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.839191,
+        "longitude": 9.15442,
+        "label": null
+      },
+      {
+        "canyonId": 23049,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.832989,
+        "longitude": 9.15827,
+        "label": null
+      },
+      {
+        "canyonId": 23049,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 46.858219,
+        "longitude": 9.15841,
+        "label": "Entrée affluent RD"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.832989,
+      "longitude": 9.15827,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_9179b25820804ecc",
+          "kind": "MAP",
+          "title": "247 Sardona (Carte Nationale Suisse)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

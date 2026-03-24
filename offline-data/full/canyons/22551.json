@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:27.926558+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22551,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22551/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22551/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22551/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22551/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/22551/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 22551,
+    "identity": {
+      "nom": "Juzet",
+      "nomComplet": "Cascade de Juzet",
+      "prefixeNom": "Cascade de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22551/Juzet.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Haute-Garonne",
+      "communePrincipale": "Juzet-de-Luchon",
+      "communes": [
+        "Juzet-de-Luchon"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "",
+      "interet": 730.0,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": 730,
+      "deniveleM": 80,
+      "longueurM": null,
+      "cascadeMaxM": null,
+      "cordeMiniM": null,
+      "navette": null
+    },
+    "timings": {
+      "approche": null,
+      "descente": null,
+      "retour": null
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22551,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.808861,
+        "longitude": 0.611587,
+        "label": null
+      },
+      {
+        "canyonId": 22551,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.808659,
+        "longitude": 0.610385,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 42.808861,
+      "longitude": 0.611587,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_b4d10c31e88f9235",
+          "kind": "MAP",
+          "title": "1848 OT Bagneres-de-Luchon (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 589,
+          "status": "Actif",
+          "action": "Interdit",
+          "title": "Arrêté municipal (Juzet-de-Luchon) - 01 déc 1999",
+          "summary": "La descente en rappel de la Cascade de Juzet est interdite.",
+          "remark": null,
+          "details": "Arrêté municipal (Juzet-de-Luchon) du 1er décembre 1999",
+          "effectiveDate": "01 déc 1999",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/589/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté municipal (Juzet-de-Luchon) du 1er décembre 1999",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem589_pj1.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

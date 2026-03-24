@@ -1,0 +1,144 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:08.928241+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21636,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21636/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21636/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21636/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21636/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21636,
+    "identity": {
+      "nom": "Fallbach",
+      "nomComplet": "Fallbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21636/Fallbach.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Tyrol",
+      "departement": "Innsbruck-Land",
+      "communePrincipale": "Hall",
+      "communes": [
+        "Absam",
+        "Hall"
+      ],
+      "massif": "Karwendel",
+      "bassin": "Inn",
+      "coursEau": "Fallbach"
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.6,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 1300,
+      "deniveleM": 310,
+      "longueurM": 1100,
+      "cascadeMaxM": 90,
+      "cordeMiniM": 60,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h",
+      "descente": "2h30",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": "Seulement une série de cascades",
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "C90: 2xC45"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21636,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.324295,
+        "longitude": 11.530194,
+        "label": null
+      },
+      {
+        "canyonId": 21636,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.322113,
+        "longitude": 11.530559,
+        "label": null
+      },
+      {
+        "canyonId": 21636,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.312351,
+        "longitude": 11.531353,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.312351,
+      "longitude": 11.531353,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_80a52b6e4b57f154",
+          "kind": "TOPOGUIDE",
+          "title": "Tiroler Canyoningführer - The Canyoning guide for Tyrol",
+          "authors": [
+            "Alexander Riml",
+            "Gunnar Amor"
+          ],
+          "publicationYear": 2012,
+          "reference": "978-3-200-02343-7",
+          "editor": null,
+          "status": "en stock\n\n- 44,90 € -\n\nCommandez cet ouvrage dès maintenant !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/170/Tiroler-Canyoningfuhrer---The-Canyoning-guide-for-Tyrol.html"
+        },
+        {
+          "id": "biblio_a216ca92fa29ca51",
+          "kind": "TOPOGUIDE",
+          "title": "Canyoning in Bayern und Tirol",
+          "authors": [
+            "Werner Baumgarten"
+          ],
+          "publicationYear": 2010,
+          "reference": null,
+          "editor": null,
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1226/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_70082f17ce0f94d1",
+          "kind": "MAP",
+          "title": "WK 323 Karwendel (Freytag & Berdt)",
+          "scale": "1.50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

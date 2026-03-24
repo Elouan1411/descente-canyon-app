@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:03.986458+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23778,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23778/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23778/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23778/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23778/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23778,
+    "identity": {
+      "nom": "Auerlingbach, Dorfbach",
+      "nomComplet": "Auerlingbach, Dorfbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23778/Auerlingbach--Dorfbach.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Tyrol",
+      "departement": "Lienz",
+      "communePrincipale": "Lavant",
+      "communes": [
+        "Lavant"
+      ],
+      "massif": "Gailtaler Alpen",
+      "bassin": "Drau",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1III",
+      "interet": 1.0,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 960,
+      "deniveleM": 140,
+      "longueurM": 400,
+      "cascadeMaxM": 18,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "45",
+      "descente": "2h",
+      "retour": "10"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23778,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.791599,
+        "longitude": 12.83038,
+        "label": null
+      },
+      {
+        "canyonId": 23778,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.793549,
+        "longitude": 12.83265,
+        "label": null
+      },
+      {
+        "canyonId": 23778,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.795906,
+        "longitude": 12.835792,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.795906,
+      "longitude": 12.835792,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_379b0b70a332bc00",
+          "kind": "MAP",
+          "title": "3109 Oberdrauburg (ÖK50 BEV )",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_86e8d9451bd5189c",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/C.....s/AuerlingbachCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/C.....s/AuerlingbachCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:45.091865+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23974,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23974/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23974/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23974/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23974/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23974,
+    "identity": {
+      "nom": "Brudour",
+      "nomComplet": "Le Brudour",
+      "prefixeNom": "Le",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23974/Brudour.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Hautes-Alpes",
+      "communePrincipale": "Saint-Jean-Saint-Nicolas",
+      "communes": [
+        "Saint-Jean-Saint-Nicolas"
+      ],
+      "massif": "Ecrins - Oisans - Champsaur",
+      "bassin": "Drac",
+      "coursEau": "Le Brudour"
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 1.7,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 1400,
+      "deniveleM": 150,
+      "longueurM": 500,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 25,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "1h",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "De Gap se rendre à Pont-du-Fossé par le col de Manse. Dans le village, tourner à gauche vers Montorcier et se garer sans gêner.",
+      "accesAmont": null,
+      "approche": "Au lavoir, le sentier monte à gauche de la maison et serpente dans les bois jusqu'à la piste que l'on prend à droite. Peu après prendre le sentier à droite, panneau : \"Tour du Frustel, Cabane de la Baumette\". 500 m après un sentier descendre à droite vers l'eau.",
+      "descente": "Quelques cascades jusqu'à 20 m, certaines esthétiques, une MC, des ressauts et des zones de marche.",
+      "retour": "Sortir dans les champs RD et emprunter la piste qui vous ramène au lavoir.",
+      "engagement": "Quelques zones encaissées mais possibilité de sortir RD souvent. Equipements vétustes mais utilisables.",
+      "periode": "juillet/Août",
+      "geologie": null,
+      "historique": "Equipé, décrit comme canyon possible dans le topo d'Henri Vincens",
+      "remarques": "Terrain d'aventure"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23974,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.680401,
+        "longitude": 6.228,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 44.680401,
+      "longitude": 6.228,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_b0e951331c704682",
+          "kind": "MAP",
+          "title": "3437 OT Champsaur - Parc des Ecrins (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

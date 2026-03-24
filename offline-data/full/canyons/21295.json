@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:48:50.506711+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21295,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21295/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21295/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21295/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21295/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21295,
+    "identity": {
+      "nom": "Roquefavour",
+      "nomComplet": "Cascades de Roquefavour",
+      "prefixeNom": "Cascades de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21295/Roquefavour.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Bouches-du-Rhône",
+      "communePrincipale": "Ventabren",
+      "communes": [
+        "Ventabren"
+      ],
+      "massif": null,
+      "bassin": "Arc",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 0.4,
+      "nbVotes": 6
+    },
+    "metrics": {
+      "altitudeDepartM": 200,
+      "deniveleM": 100,
+      "longueurM": 150,
+      "cascadeMaxM": 35,
+      "cordeMiniM": 35,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "25min",
+      "descente": "1h",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "Autoroute A7, sortie Berre sur étang /Rognac, prendre la direction de Velaux, puis derection Aix/Aix les milles (D65). Passer l'aqueduc de Roquefavour et le pont de l'arc. Garez vous juste après celui-ci à gauche ou à droite.",
+      "accesAmont": null,
+      "approche": "Retraverser le pont de l'arc et prendre la route en direction d'Aix en provence (D64) à droite. 300m plus loin l'on passe devant la cascade finale. Prendre à gauche un chemin en terre menant sur une propriété privée et 15m avant le portail prendre à gauche une sente trés trés mal marquée vous menant à travers les broussailles jusqu'au niveau du canal de l'aqueduc. Longer d'abord une barre rocheuse puis le grillage du canal .",
+      "descente": "Plan incliné de 35m prendre pour amarrage les barres métalliques traversants le beton. Descendre un vingtaine de m et prendre l'arbre en AN pour le reste de la descente T15+C6(2x25m). Désèscalade jusqu'à un grand Pin RG C35 AN (attention gros frottement, aucun équipement correct n'est en place, donc avis aux amateurs du perfo).",
+      "retour": "Sortie RG vous menant sur la D64,puis au parking.",
+      "engagement": "Barrage en amont.",
+      "periode": "Toujours en eau. Faible débit",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Equipement à poser correctement pour la dernière cascade .Se faire discret sur le chemin qui mène à la propriété privé (non loin de la route). Le silence est de rigueur. Encore merci..."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21295,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.518486,
+        "longitude": 5.313896,
+        "label": "Sous les vannes du canal de Marseille"
+      },
+      {
+        "canyonId": 21295,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.517879,
+        "longitude": 5.314722,
+        "label": "Derrière un mur protégeant la route"
+      },
+      {
+        "canyonId": 21295,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.516335,
+        "longitude": 5.314282,
+        "label": null
+      },
+      {
+        "canyonId": 21295,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 43.517815,
+        "longitude": 5.316015,
+        "label": "Départ du chemin de terre depuis la route"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.516335,
+      "longitude": 5.314282,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

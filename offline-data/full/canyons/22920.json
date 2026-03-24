@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:54:54.637949+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22920,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22920/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22920/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22920/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22920/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22920,
+    "identity": {
+      "nom": "Hérault",
+      "nomComplet": "Gorges de l' Hérault",
+      "prefixeNom": "Gorges de l'",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22920/Herault.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Hérault",
+      "communePrincipale": "Saint-Jean-de-Fos",
+      "communes": [
+        "Saint-Guilhem-le-Désert",
+        "Saint-Jean-de-Fos"
+      ],
+      "massif": "Garrigues",
+      "bassin": "Hérault",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v1a4II",
+      "interet": 1.5,
+      "nbVotes": 6
+    },
+    "metrics": {
+      "altitudeDepartM": 68,
+      "deniveleM": 16,
+      "longueurM": 2000,
+      "cascadeMaxM": 2,
+      "cordeMiniM": null,
+      "navette": "2.0km"
+    },
+    "timings": {
+      "approche": "2min",
+      "descente": "2h",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": ".",
+      "approche": "Rattraper le GR qui passe à proximité de l'autre côte de la route (côté cours d'eau), le prendre sur quelques mètres, puis rattraper l’Hérault (nombreuses sentes).",
+      "descente": "Descente dans la partie la plus encaissée des gorges de l’Hérault. Le parcours, très aquatique, fait environ 2km de long. C’est une succession de (très) longs biefs, entrecoupés de rapides et de petits ressauts. On préférera contourner sagement la plupart des rapides, qui n’inspirent généralement pas confiance (présence de blocs dans la veine d’eau). Sinon, gare à votre coccyx !\n\nOn nage quasiment tout le temps, mais l’eau est généralement bonne. De nombreux sauts (jusqu’à plus de 15m) sont possibles depuis les berges, mais méfiance ! L’eau est peu transparente, donc difficile de voir le fond. De nombreux accidents se sont hélas produits (le pont du Diable est l’un des coins les plus accidentogènes de l’Hérault).\n\nSortie au niveau du pont du Diable.",
+      "retour": "Évident : on remonte sur l’une des deux rives, pour rattraper la route et revenir au parking aval.",
+      "engagement": "Avec un petit débit, il est relativement facile de sortir du canyon, moyennant souvent un peu d’escalade. Avec un débit plus fort, ça devient beaucoup moins évident...",
+      "periode": "La descente est toujours en eau. A faire absolument en étiage (2-3m3/s), sinon hydrospeed recommandé...",
+      "geologie": null,
+      "historique": null,
+      "remarques": "1. La navette n’est évidemment pas obligatoire compte tenu de sa brièveté. Par contre, la marche le long de la route n’est vraiment pas agréable et peut s’avérer dangereuse (zones parfois peu larges, voitures roulant vite). Une alternative pourrait consister à passer par la rive gauche, en suivant le canal d’irrigation. Non testé\n\n2. Descente à n’entreprendre que par petit débit : à plus fort débit, présence de forts mouvements d’eau (drossages siphonnants notamment). De plus, le passage de certains ressauts et parties étroites peut s’avérer particulièrement problématique.\n\n3. Préférer descendre tôt le matin ou en fin de journée, car présence de nombreux baigneurs, qui vous regardent passer avec des yeux ahuris, en vous demandant ce que vous faites. C’est rigolo au début, après, ça saoule un peu… Le coin est vraiment très fréquenté en été.\n\n4. A part les baigneurs, le site est sympa, et relativement encaissé. De nombreuses résurgences sont présentes, dont une avec de magnifiques concrétions de tufs surplombant l’Hérault."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22920,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.725056,
+        "longitude": 3.550837,
+        "label": null
+      },
+      {
+        "canyonId": 22920,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.707207,
+        "longitude": 3.55736,
+        "label": null
+      },
+      {
+        "canyonId": 22920,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 43.72419,
+        "longitude": 3.550569,
+        "label": null
+      },
+      {
+        "canyonId": 22920,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 43.710587,
+        "longitude": 3.552897,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 43.72419,
+      "longitude": 3.550569,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_d688f7d883caff2f",
+          "kind": "MAP",
+          "title": "2642 ET Saint-Guilhem-Le-Desert (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:56.915384+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23168,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23168/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23168/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23168/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23168/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23168,
+    "identity": {
+      "nom": "Molino Inferiore",
+      "nomComplet": "Val Molino Inferiore",
+      "prefixeNom": "Val",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23168/Molino-Inferiore.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Vogorno",
+      "departement": "Tessin",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": "Val Verzasca",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2III",
+      "interet": 2.2,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 620,
+      "deniveleM": 170,
+      "longueurM": 500,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "20",
+      "descente": "1h30",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "En montant la Valle Verzaca, se garer à gauche à la sortie du Tunnel juste à l'entrée du village de Vogorno.",
+      "accesAmont": null,
+      "approche": null,
+      "descente": "Enchainement de cascades en sous bois se jettant dans le collecteur, le canyon de Val Porta.",
+      "retour": "Il faut passer les derniers obstacles du canyon de Val Porta, donc bien vérifier le débit de ce dernier qui est nettement supérieur au débit dans Molino. Sortie idem fiche Val Porta",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "Bien vérifier que le canyon de Val Porta est praticable avant de s'engager dans la descente de Molino Inferiore."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23168,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.22229,
+        "longitude": 8.86665,
+        "label": null
+      },
+      {
+        "canyonId": 23168,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.219193,
+        "longitude": 8.863153,
+        "label": "sortie vers le lac"
+      },
+      {
+        "canyonId": 23168,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.221199,
+        "longitude": 8.85956,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.221199,
+      "longitude": 8.85956,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_9a9578770c172929",
+          "kind": "MAP",
+          "title": "1313 Bellinzona (Carte Nationale Suisse)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

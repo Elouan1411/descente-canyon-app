@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:46:37.570364+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2729,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2729/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2729/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2729/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2729/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/2729/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 2729,
+    "identity": {
+      "nom": "Bernède",
+      "nomComplet": "Barrancou de Bernède, Ruisseau de Bernède",
+      "prefixeNom": "Barrancou de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2729/Bernede.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Hautes-Pyrénées",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Luz Saint Sauveur",
+      "bassin": "Gave de Pau",
+      "coursEau": "Ruisseau de Bernède"
+    },
+    "rating": {
+      "cotation": "",
+      "interet": 850.0,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": 850,
+      "deniveleM": 170,
+      "longueurM": 500,
+      "cascadeMaxM": null,
+      "cordeMiniM": null,
+      "navette": null
+    },
+    "timings": {
+      "approche": null,
+      "descente": null,
+      "retour": null
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": "Ouverture 1990 par A. Rivier, P. Garrigues et J.-P. Rouby.",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2729,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.901669,
+        "longitude": -0.018056,
+        "label": null
+      },
+      {
+        "canyonId": 2729,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.901009,
+        "longitude": -0.025609,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 42.901669,
+      "longitude": -0.018056,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_af9b5816fe0efd72",
+          "kind": "TOPOGUIDE",
+          "title": "PVC n°2 - Hautes Pyrénées",
+          "authors": [
+            "Collectif : Groupe Spéléologique des Pyrénées"
+          ],
+          "publicationYear": 2007,
+          "reference": "9782852722612",
+          "editor": null,
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/127/Plastic-Visuel-Canyon-:-Hautes-Pyrenees.html"
+        },
+        {
+          "id": "biblio_8219a16db3ce5bff",
+          "kind": "TOPOGUIDE",
+          "title": "Carte N°5 - Hautes Pyrénées",
+          "authors": [
+            "Patrick Gimat"
+          ],
+          "publicationYear": 2000,
+          "reference": null,
+          "editor": null,
+          "status": "en stock\n\n- 9,00 € -\n\nCommandez cet ouvrage dès maintenant !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/124/Carte-n°5-:-Hautes-Pyrenees.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_66d5328512d1b5a5",
+          "kind": "MAP",
+          "title": "1748 OT Gavarnie (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 311,
+          "status": "Actif",
+          "action": "Interdit",
+          "title": "Arrêté municipal (Saligos) - 19 juin 2015",
+          "summary": "En raison des avalanches de l'hiver 2014/2015 qui \"créent un risque important pour l'activité\" de descente du canyon, le canyon est INTERDIT TEMPORAIREMENT (sans date précise de fin d'interdiction).",
+          "remark": null,
+          "details": "Arrêté municipal du 19 juin 2015",
+          "effectiveDate": "19 juin 2015",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/311/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté municipal du 19 juin 2015",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem311_pj1.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

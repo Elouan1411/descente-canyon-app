@@ -1,0 +1,145 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:30.458802+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23625,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23625/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23625/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23625/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23625/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/23625/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 23625,
+    "identity": {
+      "nom": "Artoli (amont)",
+      "nomComplet": "Ruisseau d' Artoli (amont)",
+      "prefixeNom": "Ruisseau d'",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23625/Artoli-amont.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Corse",
+      "departement": "Corse-du-Sud",
+      "communePrincipale": "Porto-Vecchio",
+      "communes": [
+        "Porto-Vecchio"
+      ],
+      "massif": "Alta rocca",
+      "bassin": "Stabiacciu",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a3II",
+      "interet": 1.3,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 890,
+      "deniveleM": 270,
+      "longueurM": 900,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 25,
+      "navette": "5.1km"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "2h30",
+      "retour": "25min"
+    },
+    "topo": {
+      "accesAval": ").\n\nAvec le second véhicule, traverser le village de l'Ospedale et garez-vous à gauche, 200m après la sortie du village au départ du sentier Mare a Mare.",
+      "accesAmont": null,
+      "approche": "Prendre le sentier Mare a Mare qui descend au ruisseau et commencer la descente.",
+      "descente": "Le départ se constitue de désescalades pour arriver sur une C10 sur 1pt en RD (attention ! risque de blocage de corde si celle-ci passe par dessus le bloc coincé au fond dans l'encaissement), C4 1pt en RG dans l'encaissement, Pi25 sur AN en RD avec anneau de corde et maillon, Pi22 (R18 + désescalade) 1 pt en RG, Pi12 sur lunule avec anneau en RD dans la faille de la paroi, désescalades sous gros pin mort par la RD, C15 1pt en RG, C8 1pt en RD, Désescalades, C5 sur An en RG. La suite n'est qu'une progression dans le lit de rivière par quelques désescalades jusqu'au captage (1 petit saut possible avant le captage). C8 via la rambarde acier du barrage, courte marche et l'on passe sous la passerelle de sortie, Pi10 avec saut possible de 5m en RD dans une belle vasque et sortir en RG pour rejoindre la passerelle juste au-dessus.",
+      "retour": "Suivre la piste jusqu'au parking et la route.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": "Équipement : Frédéric Venel et ALAIN 13 / Première descente effectuée le 27 juillet 2010 : Jourdan, Argouse",
+      "remarques": "Équipement de première (goujons de 8 + maillons de chaîne) et quelques anneaux de corde avec maillon.\n\nAttention au blocage de corde sur la première C10 et le Pi22 avec le passage sous le tronc mort.\n\nPossibilité de prospecter la partie aval."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23625,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 41.650963,
+        "longitude": 9.189541,
+        "label": null
+      },
+      {
+        "canyonId": 23625,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 41.643887,
+        "longitude": 9.192303,
+        "label": null
+      },
+      {
+        "canyonId": 23625,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 41.651314,
+        "longitude": 9.189766,
+        "label": null
+      },
+      {
+        "canyonId": 23625,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 41.643055,
+        "longitude": 9.205441,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 41.651314,
+      "longitude": 9.189766,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_3c89130e796573da",
+          "kind": "MAP",
+          "title": "4254 ET Porto-Vecchio (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 520,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Corse-du-Sud) - 26 juil 2011",
+          "summary": "- Le canyonisme est interdit la nuit (sauf dérogation)\n\n- Le canyonisme est interdit s'il y a une alerte émise par Météo-France de niveau orange ou rouge en cours.\n\n- Le canyonisme est interdit aux mineurs de moins de 7 ans, sauf canyon évalué égal ou inférieur à V1-A3-E3\n\n- Les groupes auront un effectif maximum de 12 personnes, hors encadrement.",
+          "remark": "L'arrêté du 9 juillet 2019 pris conjointement par les préfectures de Corse-du-Sud et de Haute-Corse harmonise les réglementations existantes pour les deux départements.",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nArrêté préfectoral modificatif (Corse-du-Sud et Haute-Corse) n°R20-2019-07-09-001 du 9 juillet 2019\n\nArrêté préfectoral (Corse-du-Sud) n°2011207-0005 du 26 juillet 2011",
+          "effectiveDate": "26 juil 2011",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/520/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral modificatif (Corse-du-Sud et Haute-Corse) n°R20-2019-07-09-001 du 9 juillet 2019",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem520_pj2.pdf"
+            },
+            {
+              "label": "Arrêté préfectoral (Corse-du-Sud) n°2011207-0005 du 26 juillet 2011",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem520_pj1.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

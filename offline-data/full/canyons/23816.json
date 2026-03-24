@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:12.333299+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23816,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23816/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23816/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23816/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23816/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23816,
+    "identity": {
+      "nom": "Pricotic",
+      "nomComplet": "Rio Pricotic",
+      "prefixeNom": "Rio",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23816/Pricotic.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Frioul-Vénétie julienne",
+      "departement": "Udine",
+      "communePrincipale": "Pontebba",
+      "communes": [
+        "Pontebba"
+      ],
+      "massif": "Alpes Carniques - Carniche - Karnischen",
+      "bassin": "Fella",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a2II",
+      "interet": 2.5,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1080,
+      "deniveleM": 320,
+      "longueurM": 800,
+      "cascadeMaxM": 60,
+      "cordeMiniM": 60,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h",
+      "descente": "3h",
+      "retour": "10"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": "17.04.2013 : Canyoning Cult Slovenia",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23816,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.532551,
+        "longitude": 13.2444,
+        "label": null
+      },
+      {
+        "canyonId": 23816,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.527691,
+        "longitude": 13.24721,
+        "label": null
+      },
+      {
+        "canyonId": 23816,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.526394,
+        "longitude": 13.250909,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.526394,
+      "longitude": 13.250909,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

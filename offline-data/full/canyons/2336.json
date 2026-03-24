@@ -1,0 +1,194 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:45:06.769241+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2336,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2336/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2336/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2336/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2336/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/2336/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 2336,
+    "identity": {
+      "nom": "Vivaggio",
+      "nomComplet": "Vivaggio",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2336/Vivaggio.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Corse",
+      "departement": "Corse-du-Sud",
+      "communePrincipale": "Pianottoli-Caldarello",
+      "communes": [
+        "Figari",
+        "Pianottoli-Caldarello"
+      ],
+      "massif": "Cagna",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.4,
+      "nbVotes": 24
+    },
+    "metrics": {
+      "altitudeDepartM": 448,
+      "deniveleM": 343,
+      "longueurM": 4500,
+      "cascadeMaxM": 40,
+      "cordeMiniM": 45,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h30",
+      "descente": "4h",
+      "retour": "15mn"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": "Le sentier peu évident décris par Ayasse et qui mène au canyon est toujours signalé par un cairn. Le chemin est suivable sans trop de problème.",
+      "descente": null,
+      "retour": "Une première sortie, après une longue marche en rivière, indiquée par des flèches vertes fluo. Préférez continuer dans la rivière pour faire encore quelques cascades. Sortie après les cascades encore indiquée par des flèches fluo.",
+      "engagement": "Moyen, encaissement faible mais les échappatoires sont délicates.",
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "Selon Ayasse, il n'y a pas beaucoup d'eau au mois d'aout. En réalité, dès le 1er juillet le canyon dans sa partie centrale se résume à des vasques putrides. Il y a des petites résurgences dans la fin du parcours.\n\nA part ça, avec de l'eau au printemps ce parcours peut-être intéressant, même si les cascades manquent de caractère (intérêt 2/4 avec de l'eau)."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2336,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 41.545834,
+        "longitude": 9.068333,
+        "label": null
+      },
+      {
+        "canyonId": 2336,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 41.525833,
+        "longitude": 9.067778,
+        "label": null
+      },
+      {
+        "canyonId": 2336,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 41.528889,
+        "longitude": 9.076667,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 41.528889,
+      "longitude": 9.076667,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_2bafc8e0f7a42d9c",
+          "kind": "TOPOGUIDE",
+          "title": "La Corse en Canyon",
+          "authors": [
+            "Association CorseCanyon"
+          ],
+          "publicationYear": 2018,
+          "reference": null,
+          "editor": "auto-edition",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/1127/La-Corse-en-Canyon-3eme-edition.html"
+        },
+        {
+          "id": "biblio_eeda460e91ce529f",
+          "kind": "TOPOGUIDE",
+          "title": "Corse Canyons (2ème édition)",
+          "authors": [
+            "Franck Jourdan",
+            "Jean-François Fiorina"
+          ],
+          "publicationYear": 2006,
+          "reference": "2-84698-169-8",
+          "editor": "Albiana",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/133/Corse-Canyons.html"
+        },
+        {
+          "id": "biblio_daf50138213870b8",
+          "kind": "TOPOGUIDE",
+          "title": "Acqua é Petra",
+          "authors": [
+            "Jean-Paul Quilici",
+            "Francis Thibaudeau"
+          ],
+          "publicationYear": 2005,
+          "reference": null,
+          "editor": null,
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1142/topoguide.html"
+        },
+        {
+          "id": "biblio_d72ca920b80a45d1",
+          "kind": "TOPOGUIDE",
+          "title": "Corse - Paradis du canyoning",
+          "authors": [
+            "Hubert Ayasse",
+            "Philippe Dubreuil"
+          ],
+          "publicationYear": 2001,
+          "reference": "ISBN 2-9117-9750-7",
+          "editor": "DCL",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/16/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_81849f9697c8835c",
+          "kind": "MAP",
+          "title": "4254 OT Sartene (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 520,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Corse-du-Sud) - 26 juil 2011",
+          "summary": "- Le canyonisme est interdit la nuit (sauf dérogation)\n\n- Le canyonisme est interdit s'il y a une alerte émise par Météo-France de niveau orange ou rouge en cours.\n\n- Le canyonisme est interdit aux mineurs de moins de 7 ans, sauf canyon évalué égal ou inférieur à V1-A3-E3\n\n- Les groupes auront un effectif maximum de 12 personnes, hors encadrement.",
+          "remark": "L'arrêté du 9 juillet 2019 pris conjointement par les préfectures de Corse-du-Sud et de Haute-Corse harmonise les réglementations existantes pour les deux départements.",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nArrêté préfectoral modificatif (Corse-du-Sud et Haute-Corse) n°R20-2019-07-09-001 du 9 juillet 2019\n\nArrêté préfectoral (Corse-du-Sud) n°2011207-0005 du 26 juillet 2011",
+          "effectiveDate": "26 juil 2011",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/520/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral modificatif (Corse-du-Sud et Haute-Corse) n°R20-2019-07-09-001 du 9 juillet 2019",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem520_pj2.pdf"
+            },
+            {
+              "label": "Arrêté préfectoral (Corse-du-Sud) n°2011207-0005 du 26 juillet 2011",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem520_pj1.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

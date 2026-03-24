@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:21.755165+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23032,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23032/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23032/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23032/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23032/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23032,
+    "identity": {
+      "nom": "Runal",
+      "nomComplet": "Torrente Runal",
+      "prefixeNom": "Torrente",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23032/Runal.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Vénétie",
+      "departement": "Belluno",
+      "communePrincipale": "Alpago",
+      "communes": [
+        "Alpago"
+      ],
+      "massif": "Prealpi Bellunesi",
+      "bassin": null,
+      "coursEau": "Torrente Runal"
+    },
+    "rating": {
+      "cotation": "v3a3III",
+      "interet": 1.8,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 650,
+      "deniveleM": 200,
+      "longueurM": 1000,
+      "cascadeMaxM": 22,
+      "cordeMiniM": 25,
+      "navette": "1.8km"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "1h45min",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "De Venise prendre l’autoroute A 27 pour Vittorio Veneto et Belluno. Au nord de Vittorio Veneto prenez la sortie de Santa Croce. Remontez le lac par la SS 51. Au nord du lac (lieu dit Secca) prendre la SP 422 vers est, passer Puos d'Alpago et arriver à Farra d'Alpago. Devant le pont sur Torrente Runal prendre la Via Venezia à gauche et continuer la Via Buscole jusqu'à 1er virage à gauche (90 degrés) - 1,3 km. Garer la voiture.\n\nAvec la 2nde voiture continuer vers le haut (1,8 km). Dans une virage à gauche garer la 2nde voiture (ascenseur de material).",
+      "accesAmont": null,
+      "approche": "Prendre la piste forestière jusqu'à pont de pierre.",
+      "descente": "ravin relativement ouvert avec certains passages intéressants.",
+      "retour": "à la sortie de l'encaissement, on peut reconnaître à gauche au-dessus une piste. Prendre la jusqu'au gué, où on traverse à l'autre rive (parking).",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23032,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.112888,
+        "longitude": 12.384467,
+        "label": null
+      },
+      {
+        "canyonId": 23032,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.1134,
+        "longitude": 12.372869,
+        "label": null
+      },
+      {
+        "canyonId": 23032,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 46.113529,
+        "longitude": 12.383373,
+        "label": null
+      },
+      {
+        "canyonId": 23032,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 46.113869,
+        "longitude": 12.370906,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 46.113529,
+      "longitude": 12.383373,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_e95ec646f577736e",
+          "kind": "MAP",
+          "title": "012 Alpago - Cansiglio - Piancavallo (Tabacco)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_331079f58c6951c1",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://lnx.canyoning.it/index/forra/cod/BL054",
+          "url": "http://lnx.canyoning.it/index/forra/cod/BL054"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

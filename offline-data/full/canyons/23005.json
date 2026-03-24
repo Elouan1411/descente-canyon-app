@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:15.056668+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23005,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23005/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23005/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23005/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23005/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/23005/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 23005,
+    "identity": {
+      "nom": "Taillude - Treps",
+      "nomComplet": "Vallon de Taillude - Treps",
+      "prefixeNom": "Vallon de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23005/Taillude---Treps.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Var",
+      "communePrincipale": "Collobrières",
+      "communes": [
+        "Collobrières"
+      ],
+      "massif": "Les Maures",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1II",
+      "interet": 0.9,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 530,
+      "deniveleM": 170,
+      "longueurM": 450,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 25,
+      "navette": "3.2km"
+    },
+    "timings": {
+      "approche": "10min",
+      "descente": "1h30",
+      "retour": "2min"
+    },
+    "topo": {
+      "accesAval": ").\n\nParking",
+      "accesAmont": "suivre la piste sur 3kms jusqu'à rejoindre la piste de la Taillude (point 537 sur l'IGN), prendre à gauche et se garer un peu avant le petit ruisseau.",
+      "approche": "Passer le ruisseau et récupérer une pseudo sente en RD pour éviter la végétation épineuse du départ. La descente commence au niveau du cassé.",
+      "descente": "Belle vue sur le massif des Maures :\n\nCertaines cascades peuvent se shunter en RD ainsi qu'en RG.\n\nNous commençons par une C4, D3, D3, C15 en Pi, C15 en Pi, D4, C5, D3, mini encaissement de 50 m , D, C20 en Pi, C5, D3, D3.\n\nSortir en RG avant de rejoindre de nouveau le ruisseau et sortir sur la piste.",
+      "retour": "Prendre la piste vers la droite pour rejoindre le parking aval.",
+      "engagement": "Aucun",
+      "periode": "En eau l'hiver et au printemps",
+      "geologie": "micaschiste",
+      "historique": null,
+      "remarques": "Équipement sur amarrages naturels"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23005,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.255253,
+        "longitude": 6.384108,
+        "label": null
+      },
+      {
+        "canyonId": 23005,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.25272,
+        "longitude": 6.38634,
+        "label": null
+      },
+      {
+        "canyonId": 23005,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 43.256058,
+        "longitude": 6.384977,
+        "label": null
+      },
+      {
+        "canyonId": 23005,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 43.251919,
+        "longitude": 6.387182,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 43.256058,
+      "longitude": 6.384977,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 579,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Var) - 13 mai 2025",
+          "summary": "- La pratique du canyonisme dans des canyons secs (cotation aquaticité A1 ou habituellement à sec) est autorisée toute l'année\n\n- La pratique du canyonisme dans des canyons aquatiques est interdite du 1er novembre au 31 mars.\n\nPour la période du 1er avril au 30 octobre, il est interdit :\n\n- de pratiquer du coucher du soleil à 9h\n\n- de s'engager dans une descente de canyon aquatique après 17h.\n\n- De manière générale, il est interdit :\n\n- de s'engager si une alerte vigilance météo de niveau orange ou rouge est émise par Météo France, en ce qui concerne le risque \"pluie\", \"orage\", et \"inondation\", sur le secteur concerné.\n\n- de constituer un groupe de plus de 10 personnes (encadrement inclus)",
+          "remark": null,
+          "details": "Arrêté préfectoral (Préfecture du Var) SDJES-SPORTS-2025-12 du 13 mai 2025",
+          "effectiveDate": "13 mai 2025",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/579/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral (Préfecture du Var) SDJES-SPORTS-2025-12 du 13 mai 2025",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem579_pj1.pdf"
+            }
+          ]
+        },
+        {
+          "id": 545,
+          "status": "Abrogé",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Var) - 06 mai 2024",
+          "summary": "La pratique du canyonisme se voit interdite du 1er novembre au 31 mars.\n\nPour la période du 1er avril au 30 octobre, il est interdit :\n\n- de s'engager dans une descente de canyon avant 9h et après 17h.\n\n- de s'engager si une alerte vigilance météo de niveau orange ou rouge est émise par Météo France, en ce qui concerne le risque \"pluie\", \"orage\", et \"inondation\", sur le secteur concerné.\n\n- de constituer un groupe de plus de 10 personnes (encadrement inclus)",
+          "remark": "Arrêté abrogé et remplacé par l'arrêté préfectoral SDJES-SPORTS-2025-12 du 13 mai 2025",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nArrêté préfectoral (Var) n° SDJES-SPORTS-2024-0004 du 06 mai 2024",
+          "effectiveDate": "13 mai 2025",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/545/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral (Var) n° SDJES-SPORTS-2024-0004 du 06 mai 2024",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem545_pj1.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

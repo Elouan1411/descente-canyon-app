@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:54:27.715982+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22812,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22812/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22812/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22812/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22812/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22812,
+    "identity": {
+      "nom": "Esino (supérieur)",
+      "nomComplet": "Esino (supérieur)",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22812/Esino-superieur.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Lombardia",
+      "departement": "Lecco",
+      "communePrincipale": "Varenna",
+      "communes": [
+        "Varenna"
+      ],
+      "massif": null,
+      "bassin": "Lac de Come",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2IV",
+      "interet": 2.2,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 570,
+      "deniveleM": 240,
+      "longueurM": 2000,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 30,
+      "navette": "7.5km"
+    },
+    "timings": {
+      "approche": "40min",
+      "descente": "4h",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": "après le 1er rappel: marche longue",
+      "retour": null,
+      "engagement": "Présence d'échappatoires par les versants escarpés en RD, pendant la première partie uniquement.",
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22812,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.997478,
+        "longitude": 9.314964,
+        "label": null
+      },
+      {
+        "canyonId": 22812,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 45.99794,
+        "longitude": 9.318617,
+        "label": null
+      },
+      {
+        "canyonId": 22812,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 46.011356,
+        "longitude": 9.293842,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 45.99794,
+      "longitude": 9.318617,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

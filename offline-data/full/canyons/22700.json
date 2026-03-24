@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:54:00.469698+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22700,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22700/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22700/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22700/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22700/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22700,
+    "identity": {
+      "nom": "Dudu Sup",
+      "nomComplet": "Dudu Sup, Grande Ravine",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22700/Dudu-Sup.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Saint-Benoît",
+      "departement": "La Réunion",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Piton Papangue",
+      "bassin": "Riviere des Marsoins",
+      "coursEau": "Grande Ravine"
+    },
+    "rating": {
+      "cotation": "v5a3IV",
+      "interet": 2.9,
+      "nbVotes": 6
+    },
+    "metrics": {
+      "altitudeDepartM": 1050,
+      "deniveleM": 400,
+      "longueurM": 1200,
+      "cascadeMaxM": 140,
+      "cordeMiniM": 80,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "2h",
+      "descente": "4h00",
+      "retour": "10"
+    },
+    "topo": {
+      "accesAval": "En arrivant de St Denis, à l'entrée de St Benoit prendre la D53 en direction d'Abondance et continuer en direction de la centrale de Takamaka. Se garer peu avant le pont qui enjambe le canyon, près des kiosques. Cascade finale de Dudu Sup visible depuis le parking, un panneau indique grande ravine.",
+      "accesAmont": null,
+      "approche": "Cf topo Ric à Ric.\n\nLe sentier suit presque en permanence l'arrête qui borde le canyon en RD.",
+      "descente": "Cf topo Ric à Ric.\n\nL'équipement est globalement correct sur relais chainés à tous les relais, l'ancien équipement très rouillé est parfois resté en place...\n\nLes différences avec le topo en date du 05/08/11:\n\nR3 - le mono pt est doublé\n\nR8 - 1 mono pt de MC a été judicieusement placé juste pour se vacher et atteindre le relais en sécurité.\n\nR9 - + 1pt de MC et 1 au relais. Beaucoup des anciens pts sont rouillés et écrasés, malheureusement indémontables, il y en a dans tous les sens !\n\nR13 - + 1 pt\n\nR14 - + 1pt il y en avait déjà plusieurs, mais comme expliqué plus haut, les goujons acier font la gueule.",
+      "retour": "sentier évident en RG pour retourner aux kiosques",
+      "engagement": null,
+      "periode": "équipement du grand cassé un peu loin de l'eau.",
+      "geologie": null,
+      "historique": "Equipe Marcel Faure dans les années 90",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22700,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": -21.074591,
+        "longitude": 55.623436,
+        "label": null
+      },
+      {
+        "canyonId": 22700,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": -21.07069,
+        "longitude": 55.631523,
+        "label": null
+      },
+      {
+        "canyonId": 22700,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": -21.074547,
+        "longitude": 55.632313,
+        "label": "Départ sentier d'approche"
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": -21.074591,
+      "longitude": 55.623436,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

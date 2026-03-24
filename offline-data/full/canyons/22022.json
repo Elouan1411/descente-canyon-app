@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:33.926926+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22022,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22022/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22022/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22022/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22022/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22022,
+    "identity": {
+      "nom": "Schilstobel",
+      "nomComplet": "Schilstobel",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22022/Schilstobel.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Flums",
+      "departement": "Saint Gallen",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.0,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 740,
+      "deniveleM": 259,
+      "longueurM": null,
+      "cascadeMaxM": null,
+      "cordeMiniM": null,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "2-3h",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "De l’Autoroute menant de Zurich vers Chur, après le lac de Walensee, sortez à Flums. Dirigez vous vers Flumsberg et garez-vous sur le parking autorisé prés de l’usine électrique et le commissariat.\n\nAccès",
+      "accesAmont": "Du pont sur le Schilstobel à gauche prenez la route qui monte vers Portels. Traversez les hameaux et dans un virage prenez à droite une route/piste. Arrêtez-vous quelques centaines de mètres plus loin dans un prés.",
+      "approche": "Rejoignez le cours d’eau.",
+      "descente": "Marchez, passez le barrage anticrue, marchez et après des ressauts découvrez le très bel étroit joliment sculpté.\n\nPassez l’ancienne prise d’eau et marchez encore. La gorge se resserre de nouveau. Deux obstacles sont intéressants. L’un de 10 m, l’autre dans un chaos. La fin est marqué par quelques obstacles et désescalades.",
+      "retour": "Sortez RD au niveau du pont.",
+      "engagement": "Canyon peu encaissé.",
+      "periode": "Attendre l’étiage. Prise d’eau possible.\n\nFin août – oct.",
+      "geologie": "Schiste rouge",
+      "historique": null,
+      "remarques": "Quelques broches. Équipement insuffisant"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22022,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.079971,
+        "longitude": 9.325891,
+        "label": null
+      },
+      {
+        "canyonId": 22022,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.086311,
+        "longitude": 9.333787,
+        "label": null
+      },
+      {
+        "canyonId": 22022,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 47.081718,
+        "longitude": 9.330236,
+        "label": null
+      },
+      {
+        "canyonId": 22022,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 47.088711,
+        "longitude": 9.341093,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 47.081718,
+      "longitude": 9.330236,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

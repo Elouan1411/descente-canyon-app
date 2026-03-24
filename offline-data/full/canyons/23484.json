@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:57.717696+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23484,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23484/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23484/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23484/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23484/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23484,
+    "identity": {
+      "nom": "Haut Couleau",
+      "nomComplet": "Cascade du Haut Couleau",
+      "prefixeNom": "Cascade du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23484/Haut-Couleau.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Hautes-Alpes",
+      "communePrincipale": "Saint-Clément-sur-Durance",
+      "communes": [
+        "Saint-Clément-sur-Durance"
+      ],
+      "massif": "Ecrins - Oisans - Champsaur",
+      "bassin": "Durance",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a4II",
+      "interet": 0.8,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1708,
+      "deniveleM": 120,
+      "longueurM": 150,
+      "cascadeMaxM": 38,
+      "cordeMiniM": 40,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "25min",
+      "descente": "1h00",
+      "retour": "25min"
+    },
+    "topo": {
+      "accesAval": "De Saint-Clément-sur-Durance, emprunter la D638 partant du village sur 2,7 km pour récupérer la piste partant à gauche . Rouler en longeant le Couleau jusqu'au bout de cette piste pour se rendre sur le parking de Beauregard ou Pré du Play ( Alt 1532 sur l'IGN ) .",
+      "accesAmont": null,
+      "approche": "Traverser le petit torrent du ravin de Chambe et continuez votre progression sur la piste. Celle-ci se transforme en sentier et s'élève en direction de la cabane de Saint-Clément . Quitter le sentier après avoir repéré l'amont de la cascade .",
+      "descente": "Seule la jolie 38 m se descend en rappel (anneau de corde + Maillon sur l'arbre en rd), le reste des ressauts se désescalade par la rd .",
+      "retour": "Après les désescalades, le plus simple est de continuer la descente du torrent et sortir en rg lorsqu'il n'y a plus de dénivelé pour rejoindre la piste à travers le bois qui mène au parking .",
+      "engagement": "Après la C38, aucune échappatoire sur 250 m .",
+      "periode": "A descendre pendant la période estivale .",
+      "geologie": null,
+      "historique": "Anneau de corde + maillon, posé par lolo et ALAIN 13 en Août 2015",
+      "remarques": "A faire, après avoir descendu le torren du Méan ."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23484,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.676842,
+        "longitude": 6.511406,
+        "label": null
+      },
+      {
+        "canyonId": 23484,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.66885,
+        "longitude": 6.51662,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.66885,
+      "longitude": 6.51662,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_d3ba8daa244cabe2",
+          "kind": "MAP",
+          "title": "3437 ET Orcieres-Merlette (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

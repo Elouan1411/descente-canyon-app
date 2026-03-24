@@ -1,0 +1,155 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:33.840167+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22583,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22583/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22583/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22583/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22583/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22583,
+    "identity": {
+      "nom": "Caddaris",
+      "nomComplet": "Riu Caddaris",
+      "prefixeNom": "Riu",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22583/Caddaris.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Sardegna",
+      "departement": "Nuoro",
+      "communePrincipale": "Dorgali",
+      "communes": [
+        "Dorgali"
+      ],
+      "massif": "Supramonte",
+      "bassin": "Riu Flumineddu",
+      "coursEau": "Riu Caddaris"
+    },
+    "rating": {
+      "cotation": "v3a3IV",
+      "interet": 1.2,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 200,
+      "deniveleM": 100,
+      "longueurM": 800,
+      "cascadeMaxM": 11,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "1h30min",
+      "retour": "1h15min"
+    },
+    "topo": {
+      "accesAval": "Dorgali. prendre la rocade ouest direction Baunei, la Gonone. Devant le supermarket \"Beritta\" prendre la route vers l'ouest, passer le cimetière et traverser le Riu Caddaris. 100m après le pont garer la voiture dans un virage devant une porte en fer.",
+      "accesAmont": null,
+      "approche": "Passer la porte en fer, suivre la piste. 50m jusqu'à la première épingle (à gauche), sortir la piste vers l'ouest et descendre vers nord jusqu'au cours d'eau.",
+      "descente": "Quelques petits rappels, désescalade, nage dans les vasques, marche jusqu'au Riu Flumineddu. Possible de faire le Riu Fiumineddu.",
+      "retour": "Marcher le Riu Flumineddu. 500m vers le-haut (20min) jusqu'au prochain ruisseau de droite. Monter dans le lit du ruisseau jusqu'à paroi, au-dessous à droite (sans sente en 2010) et monter vers l'est (crête ou après la crête). Arriver à une piste, prendre à gauche (nord) et continuer jusqu'a la porte de fer.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22583,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 40.282879,
+        "longitude": 9.553843,
+        "label": null
+      },
+      {
+        "canyonId": 22583,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 40.281612,
+        "longitude": 9.548755,
+        "label": "possible de continuer quelques cents metres dans Flumineddu vers la-bas et retour"
+      },
+      {
+        "canyonId": 22583,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 40.282505,
+        "longitude": 9.555638,
+        "label": null
+      },
+      {
+        "canyonId": 22583,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 40.27626,
+        "longitude": 9.545869,
+        "label": "sortie de Flumine, du (ruisseau vers le-haut)"
+      },
+      {
+        "canyonId": 22583,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 40.275417,
+        "longitude": 9.546674,
+        "label": "Monter maintenant vers l'Est"
+      },
+      {
+        "canyonId": 22583,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 40.275318,
+        "longitude": 9.547752,
+        "label": "Arriver à la piste et continuer vers le Nord"
+      },
+      {
+        "canyonId": 22583,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 40.275738,
+        "longitude": 9.546996,
+        "label": "traverser au-dessous de parois vers sud (à droite)"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 40.282505,
+      "longitude": 9.555638,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_b78a2c894921938b",
+          "kind": "MAP",
+          "title": "502 Dorgali (IGM)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_0b1e5ef86a654519",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.micheleangileri.com/cgi-bin/schedap.cgi?caddaris-en",
+          "url": "http://www.micheleangileri.com/cgi-bin/schedap.cgi?caddaris-en"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

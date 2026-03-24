@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:59:22.047356+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24146,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24146/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24146/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24146/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24146/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24146,
+    "identity": {
+      "nom": "Auche",
+      "nomComplet": "Ravin de l' Auche",
+      "prefixeNom": "Ravin de l'",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24146/Auche.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-de-Haute-Provence",
+      "communePrincipale": "Jausiers",
+      "communes": [
+        "Jausiers"
+      ],
+      "massif": null,
+      "bassin": "Ubaye",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 1.6,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 2150,
+      "deniveleM": 200,
+      "longueurM": 300,
+      "cascadeMaxM": 70,
+      "cordeMiniM": 45,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "40",
+      "descente": "1h15",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "De Jausiers prendre la route vers le col de la Bonnette puis rapidement la piste à gauche menant au lac des Sagnes. (10km de piste praticable avec véhicule standard). Garez-vous au lac.",
+      "accesAmont": null,
+      "approche": "Du parking on voit la cascade finale (cascade de Pisson) ; remonter dans les pâturages en rive gauche pour contourner la barre rocheuse. Un sentier démarre, on arrive rapidement en haut du cassé final, poursuivre sur le sentier qui monte en lacet par la rive droite sur environ 100m de dénivelé. Quitter ce sentier pour rejoindre à travers la forêt le ravin (inutile de monter plus haut il n'y a que de la désescalade dans le ravin.",
+      "descente": "Des désescalades et 5 ou 6 rappels (selon débit) à négocier avant d'arriver sur le cassé final qui se négocie en 3 fois (désescalade 20m AN si gros débit puis relais RD pour 10/15m jusqu'à relais RG pour longueur finale 40m (attention frottements).",
+      "retour": "Rejoindre la voiture dans les pâturages.",
+      "engagement": "Petit encaissement dans la partie \"amont\" sinon échappatoires de partout.",
+      "periode": "A faire quand il n'y a plus de neige sur la piste ; le début d'été parait intéressant pour avoir un bon débit et ainsi donner plus d'intérêt à la descente.",
+      "geologie": null,
+      "historique": "Équipement terrain d'aventure.",
+      "remarques": "La cadre est vraiment superbe, bivouac 4 étoiles au parking."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24146,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.387081,
+        "longitude": 6.839806,
+        "label": null
+      },
+      {
+        "canyonId": 24146,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.387234,
+        "longitude": 6.832897,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.387234,
+      "longitude": 6.832897,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_9fef9ac144920dd2",
+          "kind": "MAP",
+          "title": "3538 ET Aiguille de Chambeyron (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:59.749735+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24047,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24047/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24047/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24047/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24047/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24047,
+    "identity": {
+      "nom": "Fourniat",
+      "nomComplet": "Ruisseau de la Fourniat",
+      "prefixeNom": "Ruisseau de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24047/Fourniat.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Savoie",
+      "communePrincipale": "Saint-Thibaud-de-Couz",
+      "communes": [
+        "Saint-Thibaud-de-Couz"
+      ],
+      "massif": "Chartreuse",
+      "bassin": "Leysse",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 1.9,
+      "nbVotes": 9
+    },
+    "metrics": {
+      "altitudeDepartM": 970,
+      "deniveleM": 370,
+      "longueurM": 1000,
+      "cascadeMaxM": 28,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h00",
+      "descente": "2h00",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "Depuis Saint Thibaut-de-Couz, se rendre au petit hameau de \"Les Simon\" et se garer au mieux au niveau du pont qui enjambe le ruisseau.",
+      "accesAmont": null,
+      "approche": "Du pont, une bonne piste part plein nord sur 800m et revient après un lacet vers le ruisseau. Une première option consiste à descendre l'affluent rive gauche de Fourniat permettant d'arriver directement aux plus beaux obstacles de la descente.\n\nLe seconde option est de suivre le sentier jusqu'au point coté 982 et de rejoindre le ruisseau dré dans le pentu.",
+      "descente": "La première partie est constituée de quelques ressauts et cascades sans grandes valeurs esthétiques malgré quelques beaux creusements.\n\nUne fois atteint l'affluent croisé à la montée, les cascades se verticalisent et s’enchaînent d'avantage.",
+      "retour": "Il suffit de rejoindre, par la rive gauche, la voiture en vue de la dernière cascade.",
+      "engagement": "Très faible engagement au début, l'engagement reste faible dans la seconde moitié car il est toujours possible de s’échapper par les bords.",
+      "periode": "Faible alimentation, il vaut mieux y venir après de fortes pluies ou à la fonte des neiges.",
+      "geologie": "Calcaire urgonien",
+      "historique": null,
+      "remarques": "L'équipement est sur AN ou sur des points doublés, 1 broche/1 goujon avec anneaux, pour la partie en aval de l'affluent (équipement à vérifier sur la partie en amont de l'affluent).\n\nRéalisable lorsque le débit à la station Chambéry Pont d'Hyères est entre 1 et 3 m3/s : https://www.vigicrues.gouv.fr/station/V1318239016 .\n\nDébit à vérifier sur place au départ."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24047,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.495937,
+        "longitude": 5.82063,
+        "label": null
+      },
+      {
+        "canyonId": 24047,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.496586,
+        "longitude": 5.828634,
+        "label": null
+      },
+      {
+        "canyonId": 24047,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.496357,
+        "longitude": 5.829339,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.496357,
+      "longitude": 5.829339,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

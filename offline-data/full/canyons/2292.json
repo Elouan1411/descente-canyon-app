@@ -1,0 +1,151 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:44:55.225030+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2292,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2292/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2292/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2292/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2292/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2292,
+    "identity": {
+      "nom": "Aiguilles",
+      "nomComplet": "Ruisseau des Aiguilles",
+      "prefixeNom": "Ruisseau des",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2292/Aiguilles.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Savoie",
+      "communePrincipale": "Saint-Jean-d'Arves",
+      "communes": [
+        "Saint-Jean-d'Arves"
+      ],
+      "massif": "Gdes Rousses - Arves - Emparis",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.3,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 1700,
+      "deniveleM": 230,
+      "longueurM": null,
+      "cascadeMaxM": 65,
+      "cordeMiniM": 50,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h",
+      "descente": "2h30",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": "De St Jean de Maurienne prendre la direction de la vallée de l’Arvan puis St Jean d’Arves. Environ 5km avant St Jean d’Arves prendre le hameau d’Entraigues, traverser le village et se garer 200m après le pont traversant l’Arvette.",
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": "A la confluence avec l’Arvette suivre le torrent en direction de l’aval jusqu'au ruisseau du Rochasson (rive droite), remonter le alors sur 200 mètres jusqu’au chemin du départ.",
+      "engagement": "Assez engagé au début,très engagé à partir de la C20",
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "Le ruisseau des Aiguilles est un canyon vertical ou tout s’enchaîne dés les premières verticales. Le bon débit pour la descente sera après la fonte des neiges, suivant les années juin ou juillet . Les cascades terminales, avant d’arriver dans l’Arvette à l’endroit où elle est la plus encaissée, sont impressionnantes. Les crues, sous forme de vagues, sont très violentes dans ces zones de montagne où la végétation est très réduite en dessus des canyons donc temps stable impératif."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2292,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.162224,
+        "longitude": 6.288889,
+        "label": null
+      },
+      {
+        "canyonId": 2292,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.163612,
+        "longitude": 6.283333,
+        "label": null
+      },
+      {
+        "canyonId": 2292,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.175556,
+        "longitude": 6.282222,
+        "label": "Parking haut route peu carossable"
+      },
+      {
+        "canyonId": 2292,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.18639,
+        "longitude": 6.284722,
+        "label": "parking bas"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.175556,
+      "longitude": 6.282222,
+      "label": "Parking haut route peu carossable"
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_da30219dbb4dd176",
+          "kind": "TOPOGUIDE",
+          "title": "Les canyons de Savoie",
+          "authors": [
+            "Patrick Chollot"
+          ],
+          "publicationYear": 2018,
+          "reference": "978-2-95309-39-1-9",
+          "editor": "auto-édition",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/1125/Les-canyons-de-Savoie.html"
+        },
+        {
+          "id": "biblio_6d273ae41f72e178",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons de Savoie",
+          "authors": [
+            "F. Martin",
+            "C. Altazin"
+          ],
+          "publicationYear": 2007,
+          "reference": "978-2-9528935-0-3",
+          "editor": null,
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/15/Descentes-de-canyons-en-Savoie.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_9bc1f5cdf66d62ac",
+          "kind": "MAP",
+          "title": "3435 ET Valloire (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

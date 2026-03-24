@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:09.775112+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21640,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21640/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21640/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21640/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21640/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21640,
+    "identity": {
+      "nom": "Fobie",
+      "nomComplet": "Ruisseau de la Fobie, Canyon de Caladon",
+      "prefixeNom": "Ruisseau de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21640/Fobie.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Gard",
+      "communePrincipale": "Aumessas",
+      "communes": [
+        "Aumessas"
+      ],
+      "massif": "Mont Aigoual",
+      "bassin": "Arre",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a2II",
+      "interet": 2.3,
+      "nbVotes": 20
+    },
+    "metrics": {
+      "altitudeDepartM": 740,
+      "deniveleM": 160,
+      "longueurM": 550,
+      "cascadeMaxM": 24,
+      "cordeMiniM": 25,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "25min",
+      "descente": "1h",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "Du Vigan, prendre la D999 en direction d'Alzon. Après le Pont d'Arre, on rejoint Aumessas par la D232. On passe le village en suivant les panneaux et l'on poursuit la D299 jusqu'à une bifurcation où l'on continue tout droit. Avant le hameau du Caladon perché sur son rocher, on franchit le pont sous lequel passe le ruisseau (point IGN coté 568m). Attention stationnement malaisé. Se garer donc 350m après, sur le bord gauche de la route, en face de l'accès à une maison (3 à 4 places). Attention aux chiens et à ne pas gêner les riverains de la maison en contrebas...",
+      "accesAmont": null,
+      "approche": "On continue cette route peu fréquentée à pied environ 900m jusqu'au hameau de Caladon (petit parking à gauche). On prend ensuite le sentier muletier qui monte dans le village entre les maisons. A la bifurcation tout en haut du hameau, prendre à gauche le sentier de PR (balises jaunes) qui redescend au ruisseau de la Fobie (passerelle au départ).",
+      "descente": "Faille étroite, peu sculptée, potentiellement dangereuse par gros débit dans 2 cascades étroites. Très bien équipé.",
+      "retour": "Suivre le ruisseau jusqu'à la confluence avec le Bavezon (qui se descend aussi), et jusqu'au pont et la voiture",
+      "engagement": null,
+      "periode": "Après des pluies. Printemps. Bien évaluer. Filet d'eau l'été.",
+      "geologie": null,
+      "historique": "Certainement les guides d'Aumessas.",
+      "remarques": "Possibilité d'organiser une courte navette entre le parking aval et le petit parking à gauche au niveau du hameau de Caladon."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21640,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.00359,
+        "longitude": 3.527946,
+        "label": null
+      },
+      {
+        "canyonId": 21640,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.001171,
+        "longitude": 3.524336,
+        "label": null
+      },
+      {
+        "canyonId": 21640,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 44.0005,
+        "longitude": 3.527178,
+        "label": null
+      },
+      {
+        "canyonId": 21640,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 43.99884,
+        "longitude": 3.525353,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 44.0005,
+      "longitude": 3.527178,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_fb5949b340608cd9",
+          "kind": "MAP",
+          "title": "2641 ET Mont-Aigoual (Le Vigan) (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

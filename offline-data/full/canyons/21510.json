@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:49:41.662205+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21510,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21510/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21510/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21510/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21510/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21510,
+    "identity": {
+      "nom": "Jou",
+      "nomComplet": "Canyon de Jou",
+      "prefixeNom": "Canyon de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21510/Jou.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Cataluña",
+      "departement": "Lérida",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Serrat de Marcolis",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 1.5,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": null,
+      "longueurM": null,
+      "cascadeMaxM": 60,
+      "cordeMiniM": 65,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "2h",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "De Viehla prendre Esterri d'Aneu et Guingueta d'Aneu. Dans le village se garer sur un bon parking. Les cascades sont visibles de là.\n\nAu bout de cette petite route se trouve le depart d'un bon chemin de randonnée.",
+      "accesAmont": null,
+      "approche": "Prendre ce chemin de randonnée. Longer le canyon et y descendre dès que possible.",
+      "descente": "Canyon encaissé au départ et ouvert ensuite avec une succession de très belles cascades, dont la plus haute de 60 m",
+      "retour": "Revenir a la voiture : c'est tout !",
+      "engagement": null,
+      "periode": "Toute l'annee. Eviter quand meme les grosses crues !",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21510,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.596153,
+        "longitude": 1.120863,
+        "label": null
+      },
+      {
+        "canyonId": 21510,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.5938,
+        "longitude": 1.12494,
+        "label": null
+      },
+      {
+        "canyonId": 21510,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 42.594105,
+        "longitude": 1.128888,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 42.594105,
+      "longitude": 1.128888,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_72501cfca413dafd",
+          "kind": "MAP",
+          "title": "26 Pallars Sobira (Institut cartographic de Catalunya)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

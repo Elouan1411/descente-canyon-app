@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:13.284392+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22209,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22209/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22209/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22209/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22209/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22209,
+    "identity": {
+      "nom": "Travesseres",
+      "nomComplet": "Travesseres",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22209/Travesseres.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Cataluña",
+      "departement": "Lérida",
+      "communePrincipale": "Travesseres",
+      "communes": [
+        "Travesseres"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 1.5,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1200,
+      "deniveleM": 90,
+      "longueurM": 500,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "1h",
+      "retour": "25min"
+    },
+    "topo": {
+      "accesAval": "Sur la N260 de Puigcerda à la Seu d'Urgell, prendre à la sortie du village de Martinet la direction Lles. La route grimpe pendant environ 4km jusqu'au village de Travesseres.\n\n100m après la sortie dudit village, prendre la piste 4*4 qui descend. Au bout de 50m, prendre à droite et se garer encore 50m plus loin à coté d'un cabanon.",
+      "accesAmont": null,
+      "approche": "Revenir de 50m en arrière et prendre l'autre piste 4*4 (celle qui montait à gauche). Elle se divise plusieurs fois, rester sur la plus large de toutes. Au bout de 10 minutes, on rentre dans un champ. Un petit sentier conduit en amont du champ. Puis prendre à droite un gros sentier à flan de montagne qui descend faiblement jusqu'au canyon.",
+      "descente": "8 cascades de 8 à 20m bien équipées entrecoupées de courtes marches. Belle queue de cheval à la C20.",
+      "retour": "Suivre le petit canal d'irrigation RD pendant 2 minutes pour rejoindre une piste qui monte tranquillement au village de Travesseres. Chemin jonché de mûres pour la récup!",
+      "engagement": "Possibilité de se mettre hors crue facilement sur les bords du canyon.\n\nAttention glissant à l'approche de certains relais.",
+      "periode": "Peut se faire toute l'année. Au maximum de l'eau à la taille. 2 tobs.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Si l'on possède un 4x4, descendre directement avec à l'aval du canyon. De là, monter à l'arrache dans le maquis RG pour accéder au canyon. On supprime ainsi la marche de retour.\n\nPrévoir un peu de sangle pour changer 2/3 points."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22209,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.385204,
+        "longitude": 1.700398,
+        "label": null
+      },
+      {
+        "canyonId": 22209,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.382626,
+        "longitude": 1.70302,
+        "label": null
+      },
+      {
+        "canyonId": 22209,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 42.376842,
+        "longitude": 1.690513,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 42.376842,
+      "longitude": 1.690513,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

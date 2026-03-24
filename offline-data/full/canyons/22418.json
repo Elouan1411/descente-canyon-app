@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:58.376885+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22418,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22418/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22418/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22418/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22418/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/22418/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 22418,
+    "identity": {
+      "nom": "Giraut",
+      "nomComplet": "Ravin de Giraut, Vallon du moulin d'Ilonse (Amont)",
+      "prefixeNom": "Ravin de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22418/Giraut.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-Maritimes",
+      "communePrincipale": "Ilonse",
+      "communes": [
+        "Ilonse"
+      ],
+      "massif": null,
+      "bassin": "Tinée",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "",
+      "interet": 1090.0,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": 1090,
+      "deniveleM": 410,
+      "longueurM": 1200,
+      "cascadeMaxM": null,
+      "cordeMiniM": null,
+      "navette": null
+    },
+    "timings": {
+      "approche": null,
+      "descente": null,
+      "retour": null
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22418,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.035095,
+        "longitude": 7.100644,
+        "label": null
+      },
+      {
+        "canyonId": 22418,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.034142,
+        "longitude": 7.114677,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 44.035095,
+      "longitude": 7.100644,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 212,
+          "status": "Actif",
+          "action": "Interdit",
+          "title": "Information",
+          "summary": "Cette partie (qui est l'amont du Moulin d'Illonse), est interdite en raison de la présence d'un captage d'eau potable.",
+          "remark": null,
+          "details": null,
+          "effectiveDate": null,
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/212/legislation.html",
+          "attachments": []
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:57.228846+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23482,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23482/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23482/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23482/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23482/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23482,
+    "identity": {
+      "nom": "Gottardo",
+      "nomComplet": "Torrente Gottardo",
+      "prefixeNom": "Torrente",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23482/Gottardo.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Lombardia",
+      "departement": "Varese",
+      "communePrincipale": "Duno",
+      "communes": [
+        "Cuveglio",
+        "Duno"
+      ],
+      "massif": "Prealpi Luganesi",
+      "bassin": "Lac Majeur",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2III",
+      "interet": 2.4,
+      "nbVotes": 6
+    },
+    "metrics": {
+      "altitudeDepartM": 506,
+      "deniveleM": 180,
+      "longueurM": 720,
+      "cascadeMaxM": 17,
+      "cordeMiniM": 20,
+      "navette": "3.2km"
+    },
+    "timings": {
+      "approche": "6min",
+      "descente": "2h45",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": "revenir sur la route, monter à Duno. Se garer sur un grand parking à l'entrée du village.",
+      "approche": "Du parking, continuer un peu sur la route, prendre celle de gauche, puis au niveau d'une borne d'incendie à gauche par un bon sentier.",
+      "descente": "Une multitude de petites cascades entre 3 et 17 mètres. Très bien équipé.\n\nLa seconde moitié glissante et encombrée d'arbre.",
+      "retour": "50m après le pont sortir par une échelle rive D.",
+      "engagement": "Moyen. Une sente rive G vers le milieu qui ramène probablement à la route.",
+      "periode": "A faire au printemps de préférence. De rares biefs ou vasques profondes. On a souvent pied en réception de rappel. Le fond des vasques est volontiers rempli de blocs.",
+      "geologie": "Gneiss ancien.",
+      "historique": null,
+      "remarques": "Super resto à la sortie du canyon: Grotto S. Anna: tranquille, accueil chaleureux, bouffe variée maison, pas très cher... Tél. 0332 62 45 26."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23482,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.914082,
+        "longitude": 8.735083,
+        "label": null
+      },
+      {
+        "canyonId": 23482,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.908955,
+        "longitude": 8.734446,
+        "label": "passer le pont sortir a gauche"
+      },
+      {
+        "canyonId": 23482,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 45.912853,
+        "longitude": 8.738395,
+        "label": null
+      },
+      {
+        "canyonId": 23482,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 45.908867,
+        "longitude": 8.734562,
+        "label": null
+      },
+      {
+        "canyonId": 23482,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 45.913364,
+        "longitude": 8.73693,
+        "label": "depart sentier"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 45.912853,
+      "longitude": 8.738395,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:53.721335+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24018,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24018/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24018/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24018/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24018/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24018,
+    "identity": {
+      "nom": "Gascon",
+      "nomComplet": "Riou de Gascon",
+      "prefixeNom": "Riou de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24018/Gascon.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-de-Haute-Provence",
+      "communePrincipale": "Val-d'Oronaye",
+      "communes": [
+        "Val-d'Oronaye"
+      ],
+      "massif": "Mercantour",
+      "bassin": "Ubayette",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a1I",
+      "interet": 1.6,
+      "nbVotes": 5
+    },
+    "metrics": {
+      "altitudeDepartM": 1835,
+      "deniveleM": 330,
+      "longueurM": 1000,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 30,
+      "navette": "2.0km"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "1h30min",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "Monter la D225 jusqu'à Saint-Ours et se garer au parking du village.",
+      "accesAmont": null,
+      "approche": "Suivre les piste agricoles et traverser au ruisseau (chemin rando).",
+      "descente": "Valle ouvert avec quelques cascades.",
+      "retour": "Sortir la piste vers le centre de vacances.",
+      "engagement": "Descente facile.",
+      "periode": "Après pluie ou avec encore un peu de fonte, sinon peu d'eau.",
+      "geologie": "Schiste à part très instable.",
+      "historique": "11.06.2016 Patrick Chollot, Timo Stammwitz",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24018,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.487446,
+        "longitude": 6.790722,
+        "label": null
+      },
+      {
+        "canyonId": 24018,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.479389,
+        "longitude": 6.795194,
+        "label": null
+      },
+      {
+        "canyonId": 24018,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 44.48164,
+        "longitude": 6.807306,
+        "label": null
+      },
+      {
+        "canyonId": 24018,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 44.477943,
+        "longitude": 6.795278,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 44.48164,
+      "longitude": 6.807306,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

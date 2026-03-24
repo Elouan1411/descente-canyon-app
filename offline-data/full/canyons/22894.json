@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:54:49.340440+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22894,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22894/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22894/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22894/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22894/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22894,
+    "identity": {
+      "nom": "Besse",
+      "nomComplet": "Ruisseau de Besse, Riou Nigre",
+      "prefixeNom": "Ruisseau de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22894/Besse.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Cantal",
+      "communePrincipale": "Le Falgoux",
+      "communes": [
+        "Le Falgoux"
+      ],
+      "massif": "Monts du Cantal",
+      "bassin": "Le Mars",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 1.4,
+      "nbVotes": 10
+    },
+    "metrics": {
+      "altitudeDepartM": 1110,
+      "deniveleM": 175,
+      "longueurM": 400,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "35min",
+      "descente": "1h15",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": "Route du col d'Aulac. Stationner près d'une aire de pique-nique près de la sortie du canyon.",
+      "descente": "Ce mini-canyon présente un bel enchaînement de 4 cascades relativement encaissées. Idéal pour l'initiation et l'apprentissage du rappel.",
+      "retour": null,
+      "engagement": "Modéré. Après une première partie ouverte, le ravin s'encaisse à partir de la c20.",
+      "periode": "C'est un des affluents du Mars le plus permanent. Rarement à sec.",
+      "geologie": "Brèche volcanique",
+      "historique": "Première descente par Ph. Viette, s. Navarro et P-M. Orblin le 9 octobre 2009.",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22894,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.166668,
+        "longitude": 2.614444,
+        "label": null
+      },
+      {
+        "canyonId": 22894,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.165489,
+        "longitude": 2.609181,
+        "label": null
+      },
+      {
+        "canyonId": 22894,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.165558,
+        "longitude": 2.608417,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.165558,
+      "longitude": 2.608417,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_daf9041e16b163a9",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons cantalous",
+          "authors": [
+            "Philippe VIETTE-COSTE"
+          ],
+          "publicationYear": 2018,
+          "reference": "97829563881-0-4",
+          "editor": "Auto-édition",
+          "status": "en stock\n\n- 14,00 € -\n\nCommandez cet ouvrage dès maintenant !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/1124/Canyons-cantalous.html"
+        },
+        {
+          "id": "biblio_0ada102a5dea7773",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons arvernes",
+          "authors": [
+            "Philippe Viette-Coste",
+            "Serge Navarro",
+            "Pierre-Marie Orblin"
+          ],
+          "publicationYear": 2012,
+          "reference": "978-2-7466-3647-7",
+          "editor": "auto-édition",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/165/Canyons-arvernes.html"
+        }
+      ],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

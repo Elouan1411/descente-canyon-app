@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:45.731420+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23125,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23125/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23125/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23125/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23125/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23125,
+    "identity": {
+      "nom": "Fluh-Fälle",
+      "nomComplet": "Fluh-Fälle",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23125/Fluh-Falle.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Vorarlberg",
+      "departement": "Bregenz",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Bregenzer Wald",
+      "bassin": "Bregenzer Ache",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 1.3,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 700,
+      "deniveleM": 120,
+      "longueurM": 300,
+      "cascadeMaxM": 16,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "3min",
+      "descente": "1h",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "via Bregenz",
+      "accesAmont": null,
+      "approche": null,
+      "descente": "4 rappels",
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23125,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.494083,
+        "longitude": 9.77722,
+        "label": "descendre du parking la route raide jusqu'à puits \"Wendelin\""
+      },
+      {
+        "canyonId": 23125,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.492455,
+        "longitude": 9.777548,
+        "label": "100m devant l'arrivée à la route (reservoir de l'eau) sortir à gauche vers le haut et le sentier"
+      },
+      {
+        "canyonId": 23125,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.494053,
+        "longitude": 9.775797,
+        "label": null
+      },
+      {
+        "canyonId": 23125,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.492817,
+        "longitude": 9.77913,
+        "label": "arriver le sentier retour"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.494053,
+      "longitude": 9.775797,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_11c4163492754279",
+          "kind": "MAP",
+          "title": "WK 364 Bregenzerwald (Freytag & Berndt)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

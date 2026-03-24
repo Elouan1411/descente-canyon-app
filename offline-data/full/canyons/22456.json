@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:05.498194+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22456,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22456/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22456/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22456/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22456/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22456,
+    "identity": {
+      "nom": "Staffelbach",
+      "nomComplet": "Staffelbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22456/Staffelbach.html"
+    },
+    "location": {
+      "pays": "Allemagne",
+      "region": "Bayern",
+      "departement": "Oberbayern",
+      "communePrincipale": "Jachenau",
+      "communes": [
+        "Landkreis Bad Tölz-Wolfratshausen",
+        "Jachenau"
+      ],
+      "massif": "Walchenseeberge",
+      "bassin": "Isar",
+      "coursEau": "Staffelbach"
+    },
+    "rating": {
+      "cotation": "v3a3III",
+      "interet": 1.7,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1020,
+      "deniveleM": 80,
+      "longueurM": 500,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h45",
+      "descente": "1h30",
+      "retour": "1h20"
+    },
+    "topo": {
+      "accesAval": "Comme Glasbach et Rappinlaine",
+      "accesAmont": null,
+      "approche": "Comme Glasbach et Rappinlaine. Ensuite, de Lain-Alm, continuer la piste encore 800m. Au troisième virage (à gauche), prendre le sentier à gauche (\"Rabenkopf - Fahrweg bis Staffelalm\") jusqu'au ruisseau.",
+      "descente": null,
+      "retour": "Comme Glasbach et Rappinschlucht.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22456,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.638805,
+        "longitude": 11.430427,
+        "label": null
+      },
+      {
+        "canyonId": 22456,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.634136,
+        "longitude": 11.435673,
+        "label": null
+      },
+      {
+        "canyonId": 22456,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.606194,
+        "longitude": 11.432599,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.606194,
+      "longitude": 11.432599,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

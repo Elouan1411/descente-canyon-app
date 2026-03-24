@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:12.453399+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21926,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21926/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21926/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21926/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21926/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21926,
+    "identity": {
+      "nom": "Labach",
+      "nomComplet": "Ruisseau de Labach",
+      "prefixeNom": "Ruisseau de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21926/Labach.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Haute-Garonne",
+      "communePrincipale": "Arlos",
+      "communes": [
+        "Fos",
+        "Arlos"
+      ],
+      "massif": null,
+      "bassin": "Garonne",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a2I",
+      "interet": 1.6,
+      "nbVotes": 9
+    },
+    "metrics": {
+      "altitudeDepartM": 650,
+      "deniveleM": 50,
+      "longueurM": 300,
+      "cascadeMaxM": 6,
+      "cordeMiniM": 10,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "20min",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "Sur la RN135, entre Arlos et Fos, prendre une route à droite au niveau du cimetière. Se garer au bout de la route (départ de randonnées).",
+      "accesAmont": null,
+      "approche": "Depuis le parking, prendre la piste vers le SO de l'autre côté des parcs à bestiaux. Prendre le GR10 à droite après le pont et le remonter sur 200 mètres environ.",
+      "descente": "La première partie de la descente comprend une succession de petits toboggans. L'enchainement finl, situé sous le pont comprend 3 cascades joliment sculptées.\n\nLa corde n'est nécessaire que par gros débit.",
+      "retour": "Après la dernière cascade, rejoindre le sentier d'approche par un ancien canal en RG.",
+      "engagement": "Les toboggans peuvent tus s'éviter par les berges. L'encaissement final peut s'éviter en sortant au niveau du pont.",
+      "periode": "Par fort débit, les cascades finales peuvent être délicates à passer. Débit visible depuis l'approche.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Idéal pour une découverte de l'activité ou avec des tout petits."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21926,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.879494,
+        "longitude": 0.706408,
+        "label": null
+      },
+      {
+        "canyonId": 21926,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.882217,
+        "longitude": 0.710109,
+        "label": null
+      },
+      {
+        "canyonId": 21926,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 42.88549,
+        "longitude": 0.707964,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 42.88549,
+      "longitude": 0.707964,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_b47ddf7c75871d57",
+          "kind": "MAP",
+          "title": "1947 OT Aspet - Pic de Mauberme (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

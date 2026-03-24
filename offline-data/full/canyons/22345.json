@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:41.468240+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22345,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22345/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22345/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22345/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22345/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22345,
+    "identity": {
+      "nom": "Maluna",
+      "nomComplet": "Vallon de Maluna, Maluna",
+      "prefixeNom": "Vallon de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22345/Maluna.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-Maritimes",
+      "communePrincipale": "Saint-Martin-Vésubie",
+      "communes": [
+        "Roquebillière",
+        "Saint-Martin-Vésubie"
+      ],
+      "massif": "Vallée de la Vésubie",
+      "bassin": "Vésubie",
+      "coursEau": "Maluna"
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 0.8,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 941,
+      "deniveleM": 223,
+      "longueurM": 1200,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "45min",
+      "descente": "2h",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "De Nice aller vers St martin Vésubie, passer Roquebilliere et 200m après l'embranchement pour Bertemont prendre une piste qui descend à l' hélistation. Se garer avant le pont balise 277",
+      "accesAmont": null,
+      "approche": "Traverser le pont, prendre à droite une piste sur 30m et en dessous le GR (marques jaunes). A mi-chemin on traverse un canal (seul échappatoire, testé mais un passage hard). Continuer sur le GR , traverser un 1er vallon sec ou très peu d'eau et arriver à la jonction de 2 vallons : point de départ de la descente (100m avant balise 41b).",
+      "descente": "Quelques troncs sur le départ (100m) puis dans le vallon très encaissé désescalades, petits rappels (AN) et petits tobs . Les équipements sangles maillons ou plaquettes sont pour descendre 2 cascades à la fois.",
+      "retour": "Traverser la Vésubie, prendre un sentier sous la route qui vous ramène à la voiture. Ou descendre en longeant la Vésubie.",
+      "engagement": "Canyon plus ludique que technique. Un échappatoire délicat et exposé en rive droite au niveau du gros éboulement qui a détruit le vieux barrage qui alimentait le canal croisé sur la marche d'approche. Juste avant l'encaissement final, un sentier traverse le vallon: ne pas le suivre en rive droite car il monte puis redescend à la Vésubie!",
+      "periode": "Aucun risque de crue. A faire le printemps avec un maximum d'eau (fonte des neige ou grosses pluies). Rares vasques profondes. Combinaison intégrale recommandée.",
+      "geologie": "Belle faille dans les marnes noires de l'Aptien-Albien.",
+      "historique": "Ouvert et équipé par Pierre et Roland le 20 03 2010",
+      "remarques": "La marche d'approche surplombant la Vésubie est très belle et le canyon très encaissé en sous bois a des couleurs magnifiques."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22345,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.037033,
+        "longitude": 7.276728,
+        "label": "Arrivée"
+      },
+      {
+        "canyonId": 22345,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.040878,
+        "longitude": 7.285564,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 44.037033,
+      "longitude": 7.276728,
+      "label": "Arrivée"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_db1d7a85b782a57f",
+          "kind": "MAP",
+          "title": "3741 OT Vallée de La Vésubie (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

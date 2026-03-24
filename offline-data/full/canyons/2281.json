@@ -1,0 +1,166 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:44:53.482501+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2281,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2281/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2281/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2281/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2281/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/2281/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 2281,
+    "identity": {
+      "nom": "Grand Gaudin",
+      "nomComplet": "Ravin du Grand Gaudin, Haut Caramy",
+      "prefixeNom": "Ravin du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2281/Grand-Gaudin.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Var",
+      "communePrincipale": "Mazaugues",
+      "communes": [
+        "Mazaugues"
+      ],
+      "massif": "Sainte Baume",
+      "bassin": "Argens",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a2II",
+      "interet": 1.5,
+      "nbVotes": 16
+    },
+    "metrics": {
+      "altitudeDepartM": 611,
+      "deniveleM": 150,
+      "longueurM": 1500,
+      "cascadeMaxM": 12,
+      "cordeMiniM": 15,
+      "navette": "2.0km"
+    },
+    "timings": {
+      "approche": "1 min",
+      "descente": "2h",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "D’Aubagne prenez les directions d’Auriol, St Zacharie N560,Nans les Pins et Rougiers par la RN. Aprés Rougiers, prenez la D64 vers Mazaugues. Juste avant Mazaugues, prendre à droite sur le Plan d'Aups par la D95. Roulez 4km sur cette route, le parking est sur la droite avec un grande citerne bien visible.\n\nParking",
+      "accesAmont": "Continuez la D95 sur environ 2km en direction du Plan d'Aups. Après quelques virages et une montée, le parking amont se présente sur votre droite au bord du ruisseau et de la route. Garez-vous sur le parking aménagé sans géner.",
+      "approche": "Se rendre au départ.",
+      "descente": "C3 (chaine sous le cassé de la cascade)\n\nRessaut et cascade de 10 m (chaine dans l'axe de la descente aux pieds d'un arbre au bord du ruisseau)\n\nC5 ( 2 pts+chaine RD )\n\nBloc coincé\n\n5 mn de ressauts ( dont 1 petit siphon et 1 petit tobog. )\n\nM 10 mn\n\nC3 ( 1 petit saut est possible )\n\nM inférieur à 10 mn\n\nRessaut 2 m\n\nTob-Casc 12 m ( Chaine en RG à 2 m du ruisseau )\n\nBloc avec siphon\n\nC3 ( 2 pts RD )\n\nC5 ( 2 pts puis plus bas 2 autres points avec chaîne ) Saut 3 m possible avec un gros amorti.\n\nC3 ( 10 m de corde ), 2 pts RD+chaîne\n\nMarche\n\nC4 sur AN en RD et 2 ressauts de 2 m.",
+      "retour": "De là, une sente RG commence et rejoint rapidement une piste menant à Mazaugues . Traversez le ruisseau au niveau d'une sente remontant à la route en RD.",
+      "engagement": "Faible",
+      "periode": "Sec,mais se charge rapidement aprés quelques pluies.",
+      "geologie": null,
+      "historique": "Canyon tout équipé à sa descente.",
+      "remarques": "Ce canyon est sec pendant la saison estivale. Il peut-être agréable pour une demie journée printanière.\n\nIl est possible de n'éffectuer que la partie amont et de revenir en une vingtaine de minutes au parking par la RD façon sanglier jusqu'à la barre rocheuse. Sous la barre rocheuse le cheminement est beaucoup plus facile."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2281,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.353745,
+        "longitude": 5.853642,
+        "label": null
+      },
+      {
+        "canyonId": 2281,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.359318,
+        "longitude": 5.862641,
+        "label": null
+      },
+      {
+        "canyonId": 2281,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 43.353596,
+        "longitude": 5.854093,
+        "label": null
+      },
+      {
+        "canyonId": 2281,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 43.359581,
+        "longitude": 5.868888,
+        "label": null
+      },
+      {
+        "canyonId": 2281,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 43.360649,
+        "longitude": 5.869617,
+        "label": "sente de retour"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 43.353596,
+      "longitude": 5.854093,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_172d0b15123f0bba",
+          "kind": "MAP",
+          "title": "3345 OT Signes - Tourves (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 579,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Var) - 13 mai 2025",
+          "summary": "- La pratique du canyonisme dans des canyons secs (cotation aquaticité A1 ou habituellement à sec) est autorisée toute l'année\n\n- La pratique du canyonisme dans des canyons aquatiques est interdite du 1er novembre au 31 mars.\n\nPour la période du 1er avril au 30 octobre, il est interdit :\n\n- de pratiquer du coucher du soleil à 9h\n\n- de s'engager dans une descente de canyon aquatique après 17h.\n\n- De manière générale, il est interdit :\n\n- de s'engager si une alerte vigilance météo de niveau orange ou rouge est émise par Météo France, en ce qui concerne le risque \"pluie\", \"orage\", et \"inondation\", sur le secteur concerné.\n\n- de constituer un groupe de plus de 10 personnes (encadrement inclus)",
+          "remark": null,
+          "details": "Arrêté préfectoral (Préfecture du Var) SDJES-SPORTS-2025-12 du 13 mai 2025",
+          "effectiveDate": "13 mai 2025",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/579/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral (Préfecture du Var) SDJES-SPORTS-2025-12 du 13 mai 2025",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem579_pj1.pdf"
+            }
+          ]
+        },
+        {
+          "id": 545,
+          "status": "Abrogé",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Var) - 06 mai 2024",
+          "summary": "La pratique du canyonisme se voit interdite du 1er novembre au 31 mars.\n\nPour la période du 1er avril au 30 octobre, il est interdit :\n\n- de s'engager dans une descente de canyon avant 9h et après 17h.\n\n- de s'engager si une alerte vigilance météo de niveau orange ou rouge est émise par Météo France, en ce qui concerne le risque \"pluie\", \"orage\", et \"inondation\", sur le secteur concerné.\n\n- de constituer un groupe de plus de 10 personnes (encadrement inclus)",
+          "remark": "Arrêté abrogé et remplacé par l'arrêté préfectoral SDJES-SPORTS-2025-12 du 13 mai 2025",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nArrêté préfectoral (Var) n° SDJES-SPORTS-2024-0004 du 06 mai 2024",
+          "effectiveDate": "13 mai 2025",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/545/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral (Var) n° SDJES-SPORTS-2024-0004 du 06 mai 2024",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem545_pj1.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:17.229818+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22226,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22226/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22226/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22226/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22226/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/22226/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 22226,
+    "identity": {
+      "nom": "Saint-Marcellin",
+      "nomComplet": "Ravin de Saint-Marcellin",
+      "prefixeNom": "Ravin de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22226/Saint-Marcellin.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Aveyron",
+      "communePrincipale": "Mostuéjouls",
+      "communes": [
+        "Mostuéjouls"
+      ],
+      "massif": null,
+      "bassin": "Tarn",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "",
+      "interet": 870.0,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": 870,
+      "deniveleM": 170,
+      "longueurM": 500,
+      "cascadeMaxM": null,
+      "cordeMiniM": null,
+      "navette": null
+    },
+    "timings": {
+      "approche": null,
+      "descente": null,
+      "retour": null
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": "Rééquipé par Thierry Martin et Patrick Raynaud en 2000.",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22226,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.229252,
+        "longitude": 3.215428,
+        "label": null
+      },
+      {
+        "canyonId": 22226,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.22451,
+        "longitude": 3.218867,
+        "label": "hameau de St Marcellin"
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 44.229252,
+      "longitude": 3.215428,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_3bf86c23b7e29bf2",
+          "kind": "MAP",
+          "title": "2640 OT Gorges du Tarn (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 460,
+          "status": "Actif",
+          "action": "Interdit",
+          "title": "Arrêté municipal (Mostuéjouls) - 02 août 2021",
+          "summary": "Canyon sec interdit par arrête municipal.",
+          "remark": "Arrêté municipal motivé par le risque pour la sécurité des pratiquants, le potentiel engagement de responsabilité des propriétaires riverains et de la Communauté de Communes Millau Grand Causses et le risque d'atteinte à l’intégrité du site et à sa biodiversité.",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nArrêté municipal (Mostuéjouls) n°2021/17 du 2 août 2021",
+          "effectiveDate": "02 août 2021",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/460/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté municipal (Mostuéjouls) n°2021/17 du 2 août 2021",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem460_pj1.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:30.515800+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23899,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23899/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23899/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23899/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23899/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23899,
+    "identity": {
+      "nom": "Pé das Voltas",
+      "nomComplet": "Afluente Pé das Voltas",
+      "prefixeNom": "Afluente",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23899/Pe-das-Voltas.html"
+    },
+    "location": {
+      "pays": "Portugal",
+      "region": "Madeira",
+      "departement": "Porto Moniz Municipality",
+      "communePrincipale": "Porto Moniz",
+      "communes": [
+        "Porto Moniz"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a2II",
+      "interet": 0.6,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 750,
+      "deniveleM": 180,
+      "longueurM": null,
+      "cascadeMaxM": 17,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "50",
+      "descente": "2h15",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "Il est nécessaire de monter un peu le chemin des \"Voltas\", qui relie Châo à Ribeira Fanal.\n\nLe chemin commence à côté du restaurant Laurissilva.",
+      "accesAmont": null,
+      "approche": "300 m plus loin, la montée devient raide.\n\nEnviron 30 minutes plus tard et après plusieurs courbes du chemin se présente une grande ligne droite.\n\nContinuer à monter.\n\nAprès 5 minutes, trouver une marque sur un tronc d'arbre à droite (trois lignes horizontales), Suivre le petit chemin pour atteindre la rivière.",
+      "descente": "9 rappels.\n\nAprès la dernière cascade, sortir par la gauche pour atteindre encore le chemin des \"Voltas\" (au début de la montée).",
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "Sources : http://canyoning.camadeira.com"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23899,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 32.800751,
+        "longitude": -17.11573,
+        "label": "Début du chemin"
+      }
+    ],
+    "representativePoint": {
+      "type": "POINT_REMARQUABLE",
+      "latitude": 32.800751,
+      "longitude": -17.11573,
+      "label": "Début du chemin"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_762e917003d26131",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyoning.camadeira.com/canyons/afluente-pe-das-voltas/",
+          "url": "http://canyoning.camadeira.com/canyons/afluente-pe-das-voltas/"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:52.428725+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24011,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24011/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24011/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24011/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24011/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24011,
+    "identity": {
+      "nom": "Aiguille",
+      "nomComplet": "Torrent de l' Aiguille",
+      "prefixeNom": "Torrent de l'",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24011/Aiguille.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Hautes-Alpes",
+      "communePrincipale": "La Bâtie-Neuve",
+      "communes": [
+        "La Bâtie-Neuve"
+      ],
+      "massif": "Ecrins - Oisans - Champsaur",
+      "bassin": "L'Avance",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a1II",
+      "interet": 1.9,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 1940,
+      "deniveleM": 305,
+      "longueurM": 800,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "55min",
+      "descente": "2h20",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "Quitter la D213T (route du Col de Moissière) au niveau du lacet à 1464 m et prendre la piste jusqu'au pont sur le Sapet (petit parking après le pont).",
+      "accesAmont": null,
+      "approche": "Suivre le chemin balisé vers le Piolit, quitter celui-ci à 1923m dans un lacet et suivre un vieux chemin horizontal pas balisé jusqu'au Torrent de l'Aiguille. Un peu aérien vers la fin; très belle vue.",
+      "descente": "Au départ une petite désescalade puis quelques rappels qui s'enchainent assez bien.",
+      "retour": "Sortir à la piste que l'on remonte quelques minutes.",
+      "engagement": "Course alpine avec grand panorama et des rappels qui s'enchainent.",
+      "periode": "Après pluie ou avec fonte des derniers névés pour avoir assez d'eau, ou après nouvelle neige au-dessus du départ (si pas de risque d'avalanche). En été probablement sec.",
+      "geologie": "Calcaire.",
+      "historique": "Le 05.06.2017: Jaysson Lambert et Timo Stammwitz.",
+      "remarques": "Lors de la première, Jaysson et Timo sont montés au delà du croisement ruisseau/sentier. Ceci pour deux cascades visiblement peu attrayantes. Désormais continuer comme ils le firent est déconseillé, la sente est très fine dans du schiste, très exposée, la MC en câble est détruite.\n\nA coupler éventuellement avec le ruisseau du Sapet en totalité (3 parties: amont: qq cascades déclives en goulet, médian: 2 cascades dont la belle C40, aval: 2 petites cascades) ou seulement sa partie médiane."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24011,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.605862,
+        "longitude": 6.25175,
+        "label": null
+      },
+      {
+        "canyonId": 24011,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.598583,
+        "longitude": 6.245194,
+        "label": null
+      },
+      {
+        "canyonId": 24011,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.597805,
+        "longitude": 6.245722,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.597805,
+      "longitude": 6.245722,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_28e68141a286bb81",
+          "kind": "MAP",
+          "title": "3338 ET Gap (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

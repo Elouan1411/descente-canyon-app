@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:48:31.583312+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21208,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21208/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21208/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21208/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21208/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21208,
+    "identity": {
+      "nom": "Rio Cabrão",
+      "nomComplet": "Cascatas do Rio Cabrão Rio Cabrão, Rio Cabrão",
+      "prefixeNom": "Cascatas do",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21208/Rio-Cabrao.html"
+    },
+    "location": {
+      "pays": "Portugal",
+      "region": null,
+      "departement": "Nord",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Serra de alvao",
+      "bassin": "Rio Olo",
+      "coursEau": "Rio Cabrão"
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 1.6,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 750,
+      "deniveleM": 670,
+      "longueurM": 800,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 35,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "1h",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": "Vila Real, 90km a l'est de Porto.\n\nDe Vila Real suivre parc nacional par Borbelo, Lamas de Olo, Anta, Bobal, et Bilho. 500m apres le village se garer dans un virage prononcé la route passe sur le canyon.",
+      "accesAmont": null,
+      "approche": "Du parking remonter le canyon rive droite jusqu'à rentrer dans le canyon.",
+      "descente": "Parcours dans les blocs. Un tob au mieux. Puis enchaînement de cascades peu intéressantes. Une grande vasque à la fin !",
+      "retour": "immédiat.",
+      "engagement": "Aucun encaissement. Faible engagement.",
+      "periode": "Niveau vite correct. Mai-oct",
+      "geologie": null,
+      "historique": "Aberto em 1996, por empresas de Portugal",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21208,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 41.39658,
+        "longitude": -7.847714,
+        "label": "depart vers amont"
+      },
+      {
+        "canyonId": 21208,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 41.396725,
+        "longitude": -7.848036,
+        "label": null
+      },
+      {
+        "canyonId": 21208,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 41.39724,
+        "longitude": -7.844667,
+        "label": "pointe du retour vers la-bas"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 41.396725,
+      "longitude": -7.848036,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_2a2f3575b7315b7b",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.ecdcportugal.com/pdf.php",
+          "url": "http://www.ecdcportugal.com/pdf.php"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

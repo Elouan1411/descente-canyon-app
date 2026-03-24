@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:34.682726+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23324,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23324/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23324/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23324/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23324/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23324,
+    "identity": {
+      "nom": "Collettes",
+      "nomComplet": "Ruisseau des Collettes, Auriéras",
+      "prefixeNom": "Ruisseau des",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23324/Collettes.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-Maritimes",
+      "communePrincipale": "Lucéram",
+      "communes": [
+        "Lucéram"
+      ],
+      "massif": "Collines niçoises",
+      "bassin": "Paillon",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1II",
+      "interet": 1.4,
+      "nbVotes": 5
+    },
+    "metrics": {
+      "altitudeDepartM": 1000,
+      "deniveleM": 250,
+      "longueurM": 500,
+      "cascadeMaxM": 35,
+      "cordeMiniM": 40,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "45min",
+      "descente": "2h",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": "du ruisseau de Planfaé.\n\nAvec le second véhicule (ou à pied) continuer la route sur 3,2 km en direction du Col St Roch et se garer au col de Savel, sur un petit emplacement à droite, face à la balise n° 232 \"Col du Savel 980 - Tour de l’Auriéras\". Suivre alors le sentier pendant 20 mn et descendre dans le premier vallon qu’il traverse.",
+      "approche": "A pied (ou navette), continuer la route sur 3,2 km en direction du Col St Roch jusqu'au col de Savel. De la balise n° 232 \"Col du Savel 980 - Tour de l’Auriéras\", suivre le sentier pendant 20 mn et descendre dans le premier vallon qu’il traverse.",
+      "descente": "Après avoir quitter le chemin on progresse en rive droite sur les flancs car au début le vallon est encombré de végétation. Après 15 mn de progression la végétation s’atténue, le vallon devient plus large, et l’on arrive enfin à la partie intéressante où on enchaîne une succession de cascades dont une de 35 m.",
+      "retour": "On sort directement sur la route.\n\nSi l’on veut effectuer la descente de la dernière cascade qui est sous la route, sortir par le chemin qui traverse le vallon 5 mn après la dernière cascade.",
+      "engagement": "Peu d'engagement.",
+      "periode": "Coule toute l’année avec un faible débit en été.",
+      "geologie": null,
+      "historique": "Descente du 24/11/2007 par le Petit Prince (Luc Guidi) et Jean-Claude Juda.",
+      "remarques": "Autre nom et emplacement erronés par les protagonistes: Ravin de l’Auriéras à Coaraze! Carte IGN : 3741 ET, pli C4.\n\nDe nombreuses bouses de vache jonchent le fond du ruisseau dans la partie du haut, les vaches qui passent sur les flancs du mont Auriéras viennent se désaltérer dans le vallon.\n\nCe petit vallon peut facilement s’enchaîner avec les affluents du Paillon de Contes dans la vallée de Coaraze: Planfaé, Campon, Riou Fred ou Gaya, ou bien avec les jolis ruisseaux du bassin du Paillon à Lucéram: Falavel ou La Pinéa."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23324,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.891075,
+        "longitude": 7.324008,
+        "label": null
+      },
+      {
+        "canyonId": 23324,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.891575,
+        "longitude": 7.317864,
+        "label": null
+      },
+      {
+        "canyonId": 23324,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.892315,
+        "longitude": 7.316896,
+        "label": null
+      },
+      {
+        "canyonId": 23324,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 43.885616,
+        "longitude": 7.329143,
+        "label": "Balise 232 au Col de SAVEL, départ du sentier."
+      },
+      {
+        "canyonId": 23324,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 43.891754,
+        "longitude": 7.316585,
+        "label": "Sortie après la route sur le sentier qui ramène au parking amont de Planfaé."
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.892315,
+      "longitude": 7.316896,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_b3be246eedf8e406",
+          "kind": "MAP",
+          "title": "3741 ET Vallée de La Bevera (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

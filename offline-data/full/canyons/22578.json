@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:33.505081+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22578,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22578/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22578/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22578/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22578/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/22578/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 22578,
+    "identity": {
+      "nom": "Baousse del Biel",
+      "nomComplet": "Ravin de la Baousse del Biel",
+      "prefixeNom": "Ravin de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22578/Baousse-del-Biel.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Lozère",
+      "communePrincipale": "Les Vignes",
+      "communes": [
+        "Les Vignes"
+      ],
+      "massif": "Causse Méjean",
+      "bassin": "Tarn",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "",
+      "interet": 876.0,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": 876,
+      "deniveleM": 200,
+      "longueurM": 400,
+      "cascadeMaxM": null,
+      "cordeMiniM": null,
+      "navette": null
+    },
+    "timings": {
+      "approche": null,
+      "descente": null,
+      "retour": null
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": "JL Maury et des potes pour la faille ; M. Galzin et Papic pour la partie sup et le saut .",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22578,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.23402,
+        "longitude": 3.239344,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 44.23402,
+      "longitude": 3.239344,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_3bf86c23b7e29bf2",
+          "kind": "MAP",
+          "title": "2640 OT Gorges du Tarn (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 425,
+          "status": "Actif",
+          "action": "Interdit",
+          "title": "Information - 26 juin 2020",
+          "summary": "Merci de ne pas effectuer la descente, en raison d'une concertation à venir avec le propriétaire du foncier. Cette recommandation sera levée dès que possible.",
+          "remark": null,
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.",
+          "effectiveDate": "26 juin 2020",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/425/legislation.html",
+          "attachments": []
+        },
+        {
+          "id": 508,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Lozère) - 26 oct 2016",
+          "summary": "La pratique du canyonisme est autorisée sur le département de la Lozère du lever au coucher du soleil. Il est cependant interdit de s’engager dans un canyon après 17 heures.\n\nL'arrêté préfectoral réglemente également la pratique du canyonisme en Lozère sur les points suivants : les équipements obligatoires, la prise d’information préalable, l'accès aux sites, l’effectif des groupes, l’encadrement, le respect du milieu naturel, des équipements et des autres usagers, le retour d’expérience et les contrôles.",
+          "remark": null,
+          "details": "Arrêté préfectoral (Lozère) n°DDCSPP-JESEP-2016-300-001 du 26 octobre 2016",
+          "effectiveDate": "26 oct 2016",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/508/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral (Lozère) n°DDCSPP-JESEP-2016-300-001 du 26 octobre 2016",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem508_pj1.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

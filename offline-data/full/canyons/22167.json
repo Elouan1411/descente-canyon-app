@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:05.092706+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22167,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22167/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22167/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22167/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22167/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22167,
+    "identity": {
+      "nom": "Horno",
+      "nomComplet": "Barranco del Horno, Barranco de Hornos",
+      "prefixeNom": "Barranco del",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22167/Horno.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Canarias",
+      "departement": "Las Palmas",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": "Arguineguin",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 1.6,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 450,
+      "deniveleM": 250,
+      "longueurM": 500,
+      "cascadeMaxM": 95,
+      "cordeMiniM": 60,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h",
+      "descente": "2h45min",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "Prendre la GC 1 Maspalomas - Arguineguin et sortir vers le centre ville de Arguineguin. A la prochaine route à gauche et vers l'autre rive de la rivière Arguineguin, prendre la GC 505 environ 8 km vers lenord.\n\nAu panneau \"El Horno\" tourner à gauche, continuer encore environ 150 m et garer la voiture.",
+      "accesAmont": null,
+      "approche": "Monter raide en RD du canyon jusqu'à 360m alt. Ensuite horizontal à gauche et contourner la barrière de pierre. Au-dessus de la paroi rocheuse aller (horizontal) vers le nord et descendre dans le canyon.",
+      "descente": "Succession de rappels dans un canyon sec.",
+      "retour": "Après le dernière rappel (8m) sortir à droite.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "Sec."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22167,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 27.843678,
+        "longitude": -15.667738,
+        "label": null
+      },
+      {
+        "canyonId": 22167,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 27.844702,
+        "longitude": -15.663854,
+        "label": null
+      },
+      {
+        "canyonId": 22167,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 27.844893,
+        "longitude": -15.662491,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 27.844893,
+      "longitude": -15.662491,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_c3bd5d203187ac5f",
+          "kind": "MAP",
+          "title": "237 Gran Canaria (Kompass)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_73e8c9626540781e",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.barranquismo.net/paginas/barr.....anco_de_el_horno.htm",
+          "url": "http://www.barranquismo.net/paginas/barr.....anco_de_el_horno.htm"
+        },
+        {
+          "id": "resource_f5fe995dd6b99268",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://barrancoscanarios.com/barrancos/g.....-barranco-de-hornos/",
+          "url": "http://barrancoscanarios.com/barrancos/g.....-barranco-de-hornos/"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

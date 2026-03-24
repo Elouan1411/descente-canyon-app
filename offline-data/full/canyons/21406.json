@@ -1,0 +1,140 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:49:17.238423+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21406,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21406/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21406/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21406/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21406/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21406,
+    "identity": {
+      "nom": "Voile de la mariée",
+      "nomComplet": "Le Voile de la mariée",
+      "prefixeNom": "Le",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21406/Voile-de-la-mariee.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Salazie",
+      "departement": "La Réunion",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Cirque de Salazie-Bélouve",
+      "bassin": "Cirque de Salazie",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a3II",
+      "interet": 2.3,
+      "nbVotes": 26
+    },
+    "metrics": {
+      "altitudeDepartM": 700,
+      "deniveleM": 200,
+      "longueurM": 250,
+      "cascadeMaxM": 50,
+      "cordeMiniM": 60,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "3h",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "De Salazie prendre la direction d'Illet bananiers.Se garer, juste après avoir passer un chemin de terre, dans un virage à droite descendant.",
+      "accesAmont": null,
+      "approche": "Prendre ce chemin de terre qui traverse des cultures puis se transforme en sente. Passer le canyon et un autre ruisseau puis suivre la sente qui s'effonce droit dans la pente . La sente mene au départ du canyon par sa rive gauche.",
+      "descente": "Enchainement presque continu de 7 cascades arrosées.",
+      "retour": "Bas de la C50 reprendre le chemin pris à l'aller.",
+      "engagement": "Canyon peu encaissé mais pas d'échappatoire évident.",
+      "periode": "A éviter en crue.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Canyon \"végétatif\", avec presque tous ses amarrages sur arbres.\n\nLa grande cascade finale à été mesurée à 50 m.\n\nOn peut faire des photos de la cascade finale en prenat la voiture et en se dirigeant vers HELL BOURG."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21406,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": -21.040812,
+        "longitude": 55.539162,
+        "label": null
+      },
+      {
+        "canyonId": 21406,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": -21.039833,
+        "longitude": 55.538017,
+        "label": null
+      },
+      {
+        "canyonId": 21406,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": -21.03714,
+        "longitude": 55.538422,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": -21.03714,
+      "longitude": 55.538422,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_3ed05b9314e97090",
+          "kind": "TOPOGUIDE",
+          "title": "73 canyons à la Réunion et Madagascar",
+          "authors": [
+            "Ric a Ric"
+          ],
+          "publicationYear": 2009,
+          "reference": null,
+          "editor": "Ric a Ric",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/134/73-canyons-a-la-Reunion-et-a-Madagascar.html"
+        },
+        {
+          "id": "biblio_0710f326f5b4b107",
+          "kind": "TOPOGUIDE",
+          "title": "La Réunion : Topocanyon Ricaric",
+          "authors": [
+            "Ric A Ric"
+          ],
+          "publicationYear": 2003,
+          "reference": null,
+          "editor": null,
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/156/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_55f7e7495ecc3070",
+          "kind": "MAP",
+          "title": "4402RT Saint-Denis (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

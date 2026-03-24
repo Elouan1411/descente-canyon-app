@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:49:46.409800+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21530,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21530/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21530/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21530/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21530/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21530,
+    "identity": {
+      "nom": "Cuasacas",
+      "nomComplet": "Foz de Cuasacas, Causacas, Arroyo Serandi",
+      "prefixeNom": "Foz de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21530/Cuasacas.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Asturias",
+      "departement": "Provincia de Asturias",
+      "communePrincipale": "Proaza",
+      "communes": [
+        "Proaza"
+      ],
+      "massif": null,
+      "bassin": "Río Trubia",
+      "coursEau": "Arroyo Serandi"
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 2.9,
+      "nbVotes": 11
+    },
+    "metrics": {
+      "altitudeDepartM": 655,
+      "deniveleM": 250,
+      "longueurM": 1200,
+      "cascadeMaxM": 23,
+      "cordeMiniM": 25,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "45min",
+      "descente": "3h",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "Depuis Proaza, prendre la route qui mène à Villamejin. Se garer au niveau d'un pont juste après San Martin (grand virage à gauche).",
+      "accesAmont": null,
+      "approche": "Depuis le pont, un sentier remonte en rive droite du cours d'eau. Traverser au niveau d'un moulin puis continuer sur un sentier de mules. Laisser les bifurcations à droite. Sortir de la foret, suivre la sente vers la gauche en longeant des cabanes pour arriver au début du canyon.",
+      "descente": "Enchainement soutenu de beaux rappels et de vasques dans une ambiance qui rappelle le Pays Basque, se terminant par les rappels de 23m et de 20m. On peut continuer ensuite, et on rencontre à la fin un encaissement avec de nouveaux des cascades sympathiques.",
+      "retour": "Après le dernier rappel (20m), sortir en rive gauche pour retrouver le sentier d'approche.\n\nSi vous continuez, vous trouverez après le dernier encaissement une sente Rd puis RG qui rejoint le chemin de l'aller.",
+      "engagement": null,
+      "periode": "Vasques profondes à la réception de quelques rappels. Éviter les forts débits.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Echappatoire sur la gauche dans la partie ouverte"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21530,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.244358,
+        "longitude": -5.983214,
+        "label": null
+      },
+      {
+        "canyonId": 21530,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.248516,
+        "longitude": -5.99227,
+        "label": null
+      },
+      {
+        "canyonId": 21530,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.249172,
+        "longitude": -5.994265,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.249172,
+      "longitude": -5.994265,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_f5c73c40e76292c8",
+          "kind": "TOPOGUIDE",
+          "title": "40 barrancos de Asturias",
+          "authors": [
+            "Pablo Solares"
+          ],
+          "publicationYear": 2008,
+          "reference": "978-84-9829-128-5",
+          "editor": "Desnivel",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1220/topoguide.html"
+        },
+        {
+          "id": "biblio_05f7a8dc05e74833",
+          "kind": "TOPOGUIDE",
+          "title": "Asturias, Cuenca, Granada, Mallorca, Tarragona y Terruel - Guia de descenso de cañones y barrancos",
+          "authors": [
+            "Eduardo Gomez",
+            "Laura Tejero"
+          ],
+          "publicationYear": 2004,
+          "reference": "8495744-37-6",
+          "editor": "Barrabes",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1123/topoguide.html"
+        }
+      ],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_d03a8d118ae4378f",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/Canyons/CausacasCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/Canyons/CausacasCanyon"
+        },
+        {
+          "id": "resource_9af25abebea6cf8d",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://ropewiki.com/Cuasacas",
+          "url": "http://ropewiki.com/Cuasacas"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

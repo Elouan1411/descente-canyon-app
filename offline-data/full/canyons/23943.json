@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:40.360345+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23943,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23943/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23943/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23943/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23943/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23943,
+    "identity": {
+      "nom": "Valletta",
+      "nomComplet": "Rio della Valletta, Bognanco (terme di), rio di Barca",
+      "prefixeNom": "Rio della",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23943/Valletta.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Piemonte",
+      "departement": "Verbano-Cusio-Ossola",
+      "communePrincipale": "Comune di Bognanco",
+      "communes": [
+        "Comune di Bognanco"
+      ],
+      "massif": null,
+      "bassin": "Ossola",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a2II",
+      "interet": 2.3,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 760,
+      "deniveleM": 130,
+      "longueurM": 320,
+      "cascadeMaxM": 32,
+      "cordeMiniM": 35,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "40min",
+      "descente": "1h30",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "de Rasiga.",
+      "accesAmont": null,
+      "approche": "Sans navette : Continuer à pied par la route sur 200m, et après être passé devant l'ancien hôtel Magenta, prendre à gauche une ruelle (panneau cascata la Valletta). Après le pont sur Bogna (vue sur la cascade finale), remonter vers la droite le bon chemin sur 160 m jusqu'à un banc en pierre. Monter droit dans la forêt par une sente à peine marquée sans chercher a rejoindre trop tôt le canyon (monter donc très légèrement vers la droite). Rejoindre une bâtisse de laquelle part un meilleur sentier en diagonale montante vers la gauche qui mène au barrage (brise vague), départ du canyon.\n\nDu parking amont, prendre un sentier devant l'oratoire en direction du ruisseau, puis descendre au mieux le long du torrent jusqu'au barrage brise-charge.",
+      "descente": "8 rappels de 3 à 32m; les 2 plus grandes cascades sont jolies et un peu arrosées. MC possibles pour rejoindre les relais (utiles pour l'initiation), seule celle de la C32 finale (avec 1 point intermédiaire) est obligatoire et un peu aérienne...",
+      "retour": "Quelques mètres après la C8 qui passe sous le pont, sortir rive droite par une raide petite sente qui amène jusqu'à l'ancien chemin, à quelques mètres du pont, franchir le torrent sur ledit pont et rejoindre le village, puis le parking.",
+      "engagement": "Modéré, des sentes (très raides néanmoins) permettent de sortir souvent.",
+      "periode": "De petits biefs, pas de vasque, les cascades arrosées obligent au port de la combi intégrale.",
+      "geologie": "Gneiss.",
+      "historique": "SCVV.",
+      "remarques": "Navette possible : du parking aval redescendre un peu en direction de Domodossola pour monter à droite vers les hameaux Bosco-Pioi. Se garer sans gêner dans une épingle à gauche bien dégagée juste avant Bosco (environ 2,5 km)."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23943,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.119267,
+        "longitude": 8.208912,
+        "label": null
+      },
+      {
+        "canyonId": 23943,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.121601,
+        "longitude": 8.210422,
+        "label": null
+      },
+      {
+        "canyonId": 23943,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.121868,
+        "longitude": 8.213177,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.121868,
+      "longitude": 8.213177,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

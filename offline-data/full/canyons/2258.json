@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:44:46.752530+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2258,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2258/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2258/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2258/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2258/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2258,
+    "identity": {
+      "nom": "Queyrieres",
+      "nomComplet": "Torrent de Queyrieres",
+      "prefixeNom": "Torrent de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2258/Queyrieres.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Hautes-Alpes",
+      "communePrincipale": "Saint-Martin-de-Queyrières",
+      "communes": [
+        "Saint-Martin-de-Queyrières"
+      ],
+      "massif": "Queyras",
+      "bassin": "Durance",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2III",
+      "interet": 1.3,
+      "nbVotes": 5
+    },
+    "metrics": {
+      "altitudeDepartM": 1680,
+      "deniveleM": 480,
+      "longueurM": 1650,
+      "cascadeMaxM": 17,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "1h30",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": "De Briançon, par la RN94 en direction de Gap, dépasser St Martin de Queyrières et, en haut de la montée, laisser le véhicule sur le parking aménagé à droite avant le virage à droite.\n\nOption avec navette :\n\nParking",
+      "accesAmont": "Revenir sur St Martin de Queyrières et prendre à droite la direction de Roche Baron, puis par une petite route en lacets arriver au hameau du Poux (30 minutes). De là, approche pédestre sur un sentier qui franchit le torrent de Queyrières (20 minutes).",
+      "approche": "Approche sans navette: du parking aval, descendre à St Martin de Queyrières puis prendre le sentier qui monte au hameau du Poux, le traverse pour arriver au torrent (1h30).\n\nSi on a fait la navette, approche pédestre de 20 minutes à partir du hameau du Poux sur un sentier qui franchit le torrent de Queyrières.",
+      "descente": "On y rencontre 7 rappels sans difficulté notable: C17, C12, C17, marche, C5+C10, marche, C15, marche, C12, C9.\n\nCette descente ne possède pas de caractère aquatique mais ses rappels, parfois arrosés, apportent la fraîcheur nécessaire à l'activité.",
+      "retour": "On arrive directement à la voiture.",
+      "engagement": "L'équipement y est délicat par la nature de la roche, très dure et peu fracturée. Pas d'échappatoire. Emporter de quoi rééquiper.",
+      "periode": "Cette descente ne possède pas de caractère aquatique mais ses rappels,\n\nparfois arrosés, apportent la fraîcheur nécessaire à l'activité.",
+      "geologie": "Quartzite et schistes",
+      "historique": "Henri Vincens",
+      "remarques": "Petite descente sans grand intérêt.\n\nCarte IGN Top25-Briançon n°3536OT - pli D4."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2258,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.825001,
+        "longitude": 6.592222,
+        "label": null
+      },
+      {
+        "canyonId": 2258,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.829723,
+        "longitude": 6.583333,
+        "label": null
+      },
+      {
+        "canyonId": 2258,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.830002,
+        "longitude": 6.583056,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.830002,
+      "longitude": 6.583056,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_0062918c2f446d19",
+          "kind": "TOPOGUIDE",
+          "title": "Les canyons des Hautes-Alpes",
+          "authors": [
+            "Henri VINCENS"
+          ],
+          "publicationYear": 2007,
+          "reference": "9782952944502",
+          "editor": "auto-édition",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/12/Canyons-des-Hautes-Alpes.html"
+        },
+        {
+          "id": "biblio_2b1a799bf16617f5",
+          "kind": "TOPOGUIDE",
+          "title": "Les Canyons du Haut Val Durance",
+          "authors": [
+            "Henri Vincens"
+          ],
+          "publicationYear": null,
+          "reference": null,
+          "editor": null,
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/120/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_dfde5fc7c645a6ab",
+          "kind": "MAP",
+          "title": "3536 OT Briancon (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_70392787652270f4",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://alpes-guide.com/sources/topo/fiche.asp?pitineraire=236",
+          "url": "http://alpes-guide.com/sources/topo/fiche.asp?pitineraire=236"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

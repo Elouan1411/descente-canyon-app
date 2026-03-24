@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:49:36.240270+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21489,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21489/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21489/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21489/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21489/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21489,
+    "identity": {
+      "nom": "Dégoutoire",
+      "nomComplet": "Ravin du Dégoutoire",
+      "prefixeNom": "Ravin du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21489/Degoutoire.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Hautes-Alpes",
+      "communePrincipale": "Val Buëch-Méouge",
+      "communes": [
+        "Val Buëch-Méouge"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1II",
+      "interet": 1.0,
+      "nbVotes": 8
+    },
+    "metrics": {
+      "altitudeDepartM": 650,
+      "deniveleM": 110,
+      "longueurM": 365,
+      "cascadeMaxM": 26,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "35min",
+      "descente": "1h15",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "Par le nord sortir de l'autoroute à Sisteron nord.\n\nPar le sud sortir à Sisteron centre, rester rive gauche, rejoindre Sisteron par le pont au niveau de la falaise.\n\nSe rendre au pont sur le Buëch puis la D 948 direction Ribiers.\n\nTourner à gauche juste après la déchèterie, 5km depuis le pont sur le Buëch. Devant l'usine \"OvinAlp\" tourner à gauche, rejoindre les Chabanons. Bons emplacements à gauche.",
+      "accesAmont": null,
+      "approche": "Continuer la route goudronnée. Tout de suite prendre un sentier à droite, ne pas continuer la piste qui continue droit. Au sommet de la clairière, prendre le sentier qui part à gauche (Alt. 588 sur IGN), revenant ainsi vers le canyon. C'est un petit sentier, mais meilleur que les multiples sentes qui partent dans tous les sens. A la fin on passe la falaise par un point faible, le départ est en contrebas.",
+      "descente": "Succession de rappels et de désescalades.\n\nPrévoir MC rappelable pour l’accès au R1.\n\nÉquipement bon (le 21/10/06).",
+      "retour": "Ne pas prendre les premières sentes rive G, mais continuer pour un petit ressaut. Dépasser la confluence avec pas de Peynier, puis une petite centaine de mètres sortir par une sente rive G, très légère montée au départ puis bon sentier puis piste.",
+      "engagement": "Possibilité de se mettre hors crue rapidement, échappatoires possibles.",
+      "periode": "A faire après de grosses pluies pour que cela devienne plus intéressant.\n\nPas de vasques, seule la C26 est légèrement arrosée.",
+      "geologie": "Calcaire.",
+      "historique": null,
+      "remarques": "A enchaîner avec Pas de Peynier (même parking)."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21489,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.193611,
+        "longitude": 5.882778,
+        "label": null
+      },
+      {
+        "canyonId": 21489,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.196945,
+        "longitude": 5.882222,
+        "label": null
+      },
+      {
+        "canyonId": 21489,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.199165,
+        "longitude": 5.881667,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.199165,
+      "longitude": 5.881667,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_698f23f50a61f9ad",
+          "kind": "MAP",
+          "title": "3339 OT Sisteron (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

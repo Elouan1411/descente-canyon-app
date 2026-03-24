@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:36.503111+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22034,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22034/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22034/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22034/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22034/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22034,
+    "identity": {
+      "nom": "Faby",
+      "nomComplet": "Ruisseau du Faby",
+      "prefixeNom": "Ruisseau du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22034/Faby.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Aveyron",
+      "communePrincipale": "Salles-la-Source",
+      "communes": [
+        "Salles-la-Source"
+      ],
+      "massif": null,
+      "bassin": "Lot",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v1a2I",
+      "interet": 0.9,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 454,
+      "deniveleM": 100,
+      "longueurM": 1500,
+      "cascadeMaxM": 3,
+      "cordeMiniM": 5,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "1h",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": "En venant de Rodez, prendre la D901 jusqu'à Salles-la-Source. Juste après l'entrée dans le village, descendre à gauche dans un rue étroite en forte pente. Se garer convenablement après avoir franchi le pont.",
+      "accesAmont": null,
+      "approche": "A pied, poursuivre sur la même route en montant. 50m plus loin, s'engager sur un sentier à gauche en passant au dessus d'une maison d'architecture très moderne. Cet agréable sentier nous ramène sur une petite route et au pont du départ amont.",
+      "descente": "Randonnée aquatique à faire avec des enfants. Des cascades de tufs et jolis gours agrémentent la descente.",
+      "retour": "Sortir RG et rejoindre la voiture.",
+      "engagement": "Aucun",
+      "periode": "Préférer les périodes humides pour bénéficier d'un bon débit. A noter que la désescalade d'une C3 peut poser problème par gros débit (contournable).",
+      "geologie": "Tuf",
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22034,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.428493,
+        "longitude": 2.519474,
+        "label": null
+      },
+      {
+        "canyonId": 22034,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.433716,
+        "longitude": 2.512881,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.433716,
+      "longitude": 2.512881,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_4be1f1b8e762accf",
+          "kind": "MAP",
+          "title": "2339 E Moyrazes (IGN Série Bleue)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_dcd34d13e9d610c9",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://mjcrodezspel.free.fr/topos/aveyro...../topos.php?id_news=6",
+          "url": "http://mjcrodezspel.free.fr/topos/aveyro...../topos.php?id_news=6"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

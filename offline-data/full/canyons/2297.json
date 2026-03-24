@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:44:56.632466+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2297,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2297/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2297/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2297/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2297/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2297,
+    "identity": {
+      "nom": "Banquet",
+      "nomComplet": "Gorges du Banquet, Arn",
+      "prefixeNom": "Gorges du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2297/Banquet.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Tarn",
+      "communePrincipale": "Le Vintrou",
+      "communes": [
+        "Le Vintrou"
+      ],
+      "massif": "Mont de Lacaune",
+      "bassin": null,
+      "coursEau": "Arn"
+    },
+    "rating": {
+      "cotation": "v1a3I",
+      "interet": 2.3,
+      "nbVotes": 19
+    },
+    "metrics": {
+      "altitudeDepartM": 500,
+      "deniveleM": 50,
+      "longueurM": 2000,
+      "cascadeMaxM": 5,
+      "cordeMiniM": 5,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "10min",
+      "descente": "3h",
+      "retour": "20"
+    },
+    "topo": {
+      "accesAval": "De Mazamet prendre la D54 en direction du Vintrou traverser le village et continuer sur la D53. On passe le panneau gorges du banquet (superbe belvédère avec des voies d'escalade juste dessous) continuer jusqu'à une épingle peu après un barrage. Se garer et de là prendre le sentier qui amene au barrage ou débute la descente. Le virage en question se situe 500 mètres environ avant le pont enjambant le canyon en venant de Vintrou (virage à gauche)",
+      "accesAmont": null,
+      "approche": "A partir de l'épingle, descendre vers le petit barrage par le sentier",
+      "descente": "La corde peut être necessaire à la double cascade car présence de roche glissante en bas de la dernière cascade si les conditions de débit ne permettent pas une désescalade en rive droite.",
+      "retour": "Aprés le dernier saut dans la percée, c'est un chemin forestier qui remonte bien qui donne sur la route.\n\nIl vous faudra 20 minutes supplémentaires pour rejoindre le véhicule garé au départ du canyon en prenant à droite à la sortie du chemin forestier.",
+      "engagement": "Canyon granitique donc asssez ouvert avec une végétation fournie.\n\nSe compose de 3 parties. La première la plus encaissée débouche sur une vasque qui s'apparente à un petit lac situé au dessous du belvèdère. La deuxième partie est une marche le long des berges. La troisième et dernière partie est un encaissement plus large que le premier comprenant de nombreuses désescalades pour se terminer à une derniere casquade avec le saut dans la percée.",
+      "periode": "L'eau est froide donc l'été c'est parfait pour une bonne descente. Canyon très gissant et eau très trouble. Quelques sauts possibles mais sonder impérativement avant à cause de la tubidité de l'eau.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Beaucoup de voie d'escalade sont répértoriée. Pour avoir plus de renseignement contactez la section escalade du CAF de Mazamet"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2297,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.512974,
+        "longitude": 2.476878,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.512974,
+      "longitude": 2.476878,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_facf4ebf8b58d908",
+          "kind": "MAP",
+          "title": "2443 ET Monts de Lacaune (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_527dc06b11db7f4e",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://clementdom.free.fr/html/banquet.htm",
+          "url": "http://clementdom.free.fr/html/banquet.htm"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

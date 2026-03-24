@@ -1,0 +1,167 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:49.209166+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22377,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22377/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22377/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22377/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22377/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22377,
+    "identity": {
+      "nom": "Bergleintal (obere)",
+      "nomComplet": "Bergleintal (obere)",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22377/Bergleintal-obere.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Tyrol",
+      "departement": "Innsbruck-Land",
+      "communePrincipale": "Leutasch",
+      "communes": [
+        "Leutasch"
+      ],
+      "massif": "Wettersteingebitge",
+      "bassin": "Isar",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a1VI",
+      "interet": 2.0,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1600,
+      "deniveleM": 380,
+      "longueurM": 1600,
+      "cascadeMaxM": 38,
+      "cordeMiniM": 40,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h30",
+      "descente": "4h",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22377,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.41357,
+        "longitude": 11.157861,
+        "label": null
+      },
+      {
+        "canyonId": 22377,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.409344,
+        "longitude": 11.167388,
+        "label": "mais possible continuer Bergleintal inf."
+      },
+      {
+        "canyonId": 22377,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.401951,
+        "longitude": 11.187279,
+        "label": null
+      },
+      {
+        "canyonId": 22377,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.408516,
+        "longitude": 11.17065,
+        "label": "départ Bergleintal inf."
+      },
+      {
+        "canyonId": 22377,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.407238,
+        "longitude": 11.175982,
+        "label": "sortie Bergleintal inf."
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.401951,
+      "longitude": 11.187279,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_80a52b6e4b57f154",
+          "kind": "TOPOGUIDE",
+          "title": "Tiroler Canyoningführer - The Canyoning guide for Tyrol",
+          "authors": [
+            "Alexander Riml",
+            "Gunnar Amor"
+          ],
+          "publicationYear": 2012,
+          "reference": "978-3-200-02343-7",
+          "editor": null,
+          "status": "en stock\n\n- 44,90 € -\n\nCommandez cet ouvrage dès maintenant !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/170/Tiroler-Canyoningfuhrer---The-Canyoning-guide-for-Tyrol.html"
+        },
+        {
+          "id": "biblio_a216ca92fa29ca51",
+          "kind": "TOPOGUIDE",
+          "title": "Canyoning in Bayern und Tirol",
+          "authors": [
+            "Werner Baumgarten"
+          ],
+          "publicationYear": 2010,
+          "reference": null,
+          "editor": null,
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1226/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_2c90eacc867a9456",
+          "kind": "MAP",
+          "title": "4/3 Wetterstein und Mieminger Gebirge (Alpenvereins (AV) Karte)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_23f81cc19a9e6cef",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/C.....gleintaloberesCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/C.....gleintaloberesCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

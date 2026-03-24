@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:49:43.967684+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21519,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21519/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21519/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21519/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21519/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21519,
+    "identity": {
+      "nom": "Autoire",
+      "nomComplet": "Cascade d' Autoire, Ruisseau de Goutal",
+      "prefixeNom": "Cascade d'",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21519/Autoire.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Lot",
+      "communePrincipale": "Autoire",
+      "communes": [
+        "Autoire"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a1II",
+      "interet": 2.2,
+      "nbVotes": 7
+    },
+    "metrics": {
+      "altitudeDepartM": 300,
+      "deniveleM": 70,
+      "longueurM": 60,
+      "cascadeMaxM": 50,
+      "cordeMiniM": 60,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "2min/30min",
+      "descente": "30min",
+      "retour": "15min/20mi"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": "de la cascade est maintenant condamné par des blocs de rochers (2018). Deux possibilités :\n\n1- Petit parking en amont (deux places au mieux pour des petits véhicules) le long de la route sur une dalle rocheuse un peu déclive juste après le pont (point coté IGN 321m) sur le ruisseau de Goutal et le carrefour vers Caveroque. En pleine saison touristique, ça peut être difficile...\n\n2- Descendre à Autoire et se garer sur le grand parking à l'entrée (payant, au moins en saison). Cette option permet de visiter le joli village.",
+      "approche": "1- Du parking en amont, gagner le départ du sentier en rive droite qui descend vers le belvédère. Très vite, descendre dans le ruisseau (2min)\n\n2- D'Autoire, prendre le sentier en rive droite vers la cascade. Aux embranchements, suivre le sentier du belvédère en restant en rive droite (1,3km, 120m de dénivelé, 30 min ?)",
+      "descente": "Un rappel de 10m depuis un AN rive droite pour s'échauffer puis main-courante ou rappel d'accès obligatoire à la cascade. L'équipement en rive droite n'existe plus (broche pliée). Un arbre un peu chétif pousse au milieu de la cascade (enraciné dans le tuf...) mais il n'inspire pas totalement confiance (attention !).",
+      "retour": "1- Après la cascade, prendre le chemin en rive droite qui redescend vers Autoire. Au second carrefour (de mémoire), prendre le sentier qui remonte au belvédère. (15min)\n\n2- Après la cascade, prendre le chemin en rive droite qui redescend vers Autoire (20 min ?)",
+      "engagement": null,
+      "periode": null,
+      "geologie": "Cirque calcaire",
+      "historique": null,
+      "remarques": "La cascade, suite à une utilisation massive et sûrement des problèmes, a été interdite quelques années ; l’arrêté municipal n’est plus en place (11/2004) et il semble qu’un seul lieu de descente soit aménagé, épargnant la mousse et garantissant la beauté de la cascade de type « voile de mariée »"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21519,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.844658,
+        "longitude": 1.810427,
+        "label": null
+      },
+      {
+        "canyonId": 21519,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.844124,
+        "longitude": 1.810942,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.844124,
+      "longitude": 1.810942,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_e863ce252ea9c544",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://g.s.r.free.fr/canyon/Topos/Topos%20canyons%20du%20Lot.doc",
+          "url": "http://g.s.r.free.fr/canyon/Topos/Topos%20canyons%20du%20Lot.doc"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

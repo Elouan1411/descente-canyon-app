@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:48:31.930054+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21209,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21209/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21209/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21209/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21209/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21209,
+    "identity": {
+      "nom": "Ermelo",
+      "nomComplet": "Fisga do Ermelo, Rio Olo",
+      "prefixeNom": "Fisga do",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21209/Ermelo.html"
+    },
+    "location": {
+      "pays": "Portugal",
+      "region": "Mondim de Basto",
+      "departement": "Vila Real",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Serra de alvao",
+      "bassin": "Rio Olo",
+      "coursEau": "Rio Olo"
+    },
+    "rating": {
+      "cotation": "v4a4V",
+      "interet": 3.0,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 680,
+      "deniveleM": 330,
+      "longueurM": 1000,
+      "cascadeMaxM": 48,
+      "cordeMiniM": 50,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "3-4h",
+      "retour": "45min"
+    },
+    "topo": {
+      "accesAval": "De Vila Real, prenez la direction de Mondim de Basto. Après Pioledo, Tournez à gauche. Ne suivez plus Mondim de Basto. Vous traversez Cavernnelhe. Juste après le village tournez à droite vers Fajo (panneau bois, Fisgas 4 km). Au croisement suivant prenez à gauche (Flèche en pierre Fisgas peu visible. Aire de pique-nique). Garez vous au terminus au belvédère.",
+      "accesAmont": null,
+      "approche": "Au dessus du parking commence une bonne piste qui plus haut est asphaltée. A un replat prendre à droite. La piste à horizontale. Elle rejoint la rivière au niveau des grandes marmites.",
+      "descente": "Les cascades arrivent rapidement. Après celle visible du belvédère, le torrent s’encaisse dans une diaclase impressionnante. Le relais est difficile à aller chercher loin RD. On arrive 30m plus bas sur une vire glissante qu’il faut suivre jusqu’au bout pour trouver le relais peu visible. On descend hors d’eau sur un plan incliné. Le relais suivant est 25 m au dessus de la belle marmite loin à droite. Il y a encore quelques cascades sympathiques. Juste avant l’immense chaos qu’il faut désescalader et la marche. Elle est coupée par une courte partie encaissée avec 2 obstacles (signature avec sortie possible avant). Après de nouveaux 20-30 minutes de marche la gorge s’ouvre. Trouvez au mieux de quoi remonter en sanglier dans les genêts.",
+      "retour": "La remontée n’est pas trop pénible. Trouvez dans la petite falaise supérieure un passage dans une de ses faiblesses (petite sente, 2 cairns). Suivez la crête, on arrive rapidement au parking.",
+      "engagement": "Fort, pas d’échappatoires",
+      "periode": "Gros débit. Encaissement large.\n\nMai – octobre.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Voire les autorités du parc d’Alvaõ si le canyon n’est pas interdit."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21209,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 41.379738,
+        "longitude": -7.863293,
+        "label": null
+      },
+      {
+        "canyonId": 21209,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 41.375378,
+        "longitude": -7.877648,
+        "label": null
+      },
+      {
+        "canyonId": 21209,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 41.376553,
+        "longitude": -7.870288,
+        "label": "bellevue"
+      },
+      {
+        "canyonId": 21209,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 41.375603,
+        "longitude": -7.882497,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 41.376553,
+      "longitude": -7.870288,
+      "label": "bellevue"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_90f54566952dcfdf",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://4.bp.blogspot.com/-MYHkbVb6fZc/UD.....54ZelI/s1600/OLO.jpg",
+          "url": "http://4.bp.blogspot.com/-MYHkbVb6fZc/UD.....54ZelI/s1600/OLO.jpg"
+        },
+        {
+          "id": "resource_a6415799c1c93c15",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://pt.wikipedia.org/wiki/Cascata_de_Fisgas_do_Ermelo",
+          "url": "http://pt.wikipedia.org/wiki/Cascata_de_Fisgas_do_Ermelo"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

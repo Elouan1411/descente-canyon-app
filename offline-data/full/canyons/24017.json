@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:53.273630+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24017,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24017/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24017/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24017/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24017/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24017,
+    "identity": {
+      "nom": "Aiguille",
+      "nomComplet": "Ravin d' Aiguille",
+      "prefixeNom": "Ravin d'",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24017/Aiguille.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-de-Haute-Provence",
+      "communePrincipale": "La Robine-sur-Galabre",
+      "communes": [
+        "La Robine-sur-Galabre"
+      ],
+      "massif": "Mont Roudelau",
+      "bassin": "Bès",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1II",
+      "interet": 1.3,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 1470,
+      "deniveleM": 100,
+      "longueurM": 200,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h15",
+      "descente": "1h00",
+      "retour": "40min"
+    },
+    "topo": {
+      "accesAval": "Depuis Digne-Les-Bains, emprunter la D900a qui suit la vallée du Bès et prendre à gauche en arrivant au pont du Galabre par la D103 en direction du Forest. Se rendre en fond de vallée du Galabre (Ainac). Garez-vous au monument aux morts sans gêner.",
+      "accesAmont": null,
+      "approche": "Revenir sur ses pas de quelques mètres depuis la route et emprunter à pied la piste de droite se rendant sur l'Espinasse sur environ 350 m. Tourner à droite de nouveau à la vue d'un bon chemin. Celui-ci remonte la vallée du Galabre jusqu'au col de Saint Antoine (alt. 1451 m). Au panneau du PR, quitter le sentier en prenant à gauche à travers les pins et franchir un petit col entre deux collines. Une fois le col franchit, descendre au mieux sur le ravin d'Aiguille à travers la forêt.",
+      "descente": "Descente jonchée de trois, quatre rappels dans un joli petit ravin sculpté et orné de petites vasques en forme de gours jusqu'à une C30 finale.\n\nEn RG de la C30, arrive aussi une C22 qu'il est possible de descendre en contournant la barre rocheuse par la RG via la pente herbeuse.",
+      "retour": "Suivre le ru à travers les pins et regagner le sentier pris à l'aller.",
+      "engagement": "Aucun",
+      "periode": "A faire au printemps ou après une grosse averse.",
+      "geologie": null,
+      "historique": "16 décembre 2017. RV, tony-13, David (davestnaw) et ALAIN 13.",
+      "remarques": "Équipement minimaliste sur quelques mono-points de 8mm + maillons de chaîne."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24017,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.227863,
+        "longitude": 6.205736,
+        "label": null
+      },
+      {
+        "canyonId": 24017,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.228317,
+        "longitude": 6.208343,
+        "label": null
+      },
+      {
+        "canyonId": 24017,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.215748,
+        "longitude": 6.213869,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.215748,
+      "longitude": 6.213869,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_a84f388c53925654",
+          "kind": "MAP",
+          "title": "3440 ET Digne-Les-Bains - La Javie (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

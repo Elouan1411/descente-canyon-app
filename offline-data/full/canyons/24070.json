@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:59:05.186436+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24070,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24070/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24070/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24070/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24070/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24070,
+    "identity": {
+      "nom": "Champ d'Auribelle (est)",
+      "nomComplet": "Cascade du Champ d'Auribelle (est)",
+      "prefixeNom": "Cascade du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24070/Champ-d-Auribelle-est.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-de-Haute-Provence",
+      "communePrincipale": "Demandolx",
+      "communes": [
+        "Demandolx"
+      ],
+      "massif": "Verdon",
+      "bassin": "Verdon",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a1II",
+      "interet": 1.3,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 900,
+      "deniveleM": 70,
+      "longueurM": 30,
+      "cascadeMaxM": 55,
+      "cordeMiniM": 60,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "30min",
+      "retour": "1h"
+    },
+    "topo": {
+      "accesAval": "De Castellane prendre la D955 vers Saint-Julien-du-Verdon. Passer le barrage de Castillon-Demandolx puis prendre à droite la route vers Demandolx. Faire environ 1 km et prendre une piste (peu visible) à droite (dans un virage à gauche). Descendre cette piste (environ 400m) et garez-vous juste avant une ruine.",
+      "accesAmont": null,
+      "approche": "Passez la ruine et prendre le sentier qui descend à gauche, il coupe rapidement Auribelle (ouest) , poursuivre par une sente (plus ou moins marquée), on coupe un petit d'affluent d'Auribelle (ouest) puis on arrive rapidement sur notre ravin Auribelle (Est).",
+      "descente": "C3 C5 qui se négocient par un rappel AN avec anneau de corde en RD puis relais RG en un peu en hauteur (deux points), C60, frottement à surveiller à -2m.",
+      "retour": "Nager vers l'aval environ 800m dans le lac (palmes conseillées) pour atteindre une plage RG. De la remonter vers votre gauche pour tomber rapidement sur une piste. A la station de pompage poursuivre à gauche. Puis prendre le chemin à gauche dans la 1ere épingle à droite de la piste. Suivre ce sentier, mal marqué et plus entretenu qui recoupe notre ravin et reprendre l'itinéraire de l'aller.",
+      "engagement": "Engagement total dans le cassé final",
+      "periode": "Sec mais coule après de fortes pluies",
+      "geologie": null,
+      "historique": "Anneau de corde et deux points posés (goujons 8 mm avec plaquettes et anneaux) le 15/04/18",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24070,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.871578,
+        "longitude": 6.547069,
+        "label": null
+      },
+      {
+        "canyonId": 24070,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.877373,
+        "longitude": 6.546232,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.877373,
+      "longitude": 6.546232,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_76b8fd482efafa05",
+          "kind": "MAP",
+          "title": "3542 OT Castellane (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

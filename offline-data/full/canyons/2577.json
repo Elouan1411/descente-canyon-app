@@ -1,0 +1,202 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:46:02.533370+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2577,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2577/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2577/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2577/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2577/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2577,
+    "identity": {
+      "nom": "Cubars (superior)",
+      "nomComplet": "Barranc dels Cubars (superior)",
+      "prefixeNom": "Barranc dels",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2577/Cubars-superior.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Cataluña",
+      "departement": "Tarragona",
+      "communePrincipale": "La Horta de San Juan",
+      "communes": [
+        "La Horta de San Juan"
+      ],
+      "massif": "El Port",
+      "bassin": "El Canaletes",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a1III",
+      "interet": 1.1,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 800,
+      "deniveleM": 250,
+      "longueurM": 1500,
+      "cascadeMaxM": 40,
+      "cordeMiniM": 45,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h30",
+      "descente": "2h30",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "suivez les indication du topo d'Edouardo Gomez.\n\nParking",
+      "accesAmont": "garez-vous au parking Amont du canyon d'En Piqué.",
+      "approche": "Suivez le GR bien tracé dans la forêt. Au col ne descendez pas vers le canyon d'En Piqué, mais suivez les traces blanches et jaunes qui suivent la crête. Au second col, prenez une bifurcation peu visible sur la gauche. Le chemin est marqué d'une peinture rouge qui a bien vieilli (peu visible). Passez les barres rocheuses sur un chemin aérien. Suivez la crête qui finit par retomber sur un chemin marqué de traces blanche et jaunes. Rejoignez le cours d'eau (à sec)",
+      "descente": "Voilà une vraie grande bouse :\n\nChemin long et complexe (mais beau il faut reconnaître)\n\nPas d'eau\n\nPeu de sculpture de la roche\n\nDes cascades avec peu de caractère.\n\nUn retour merdique.\n\nEt en plus je me suis pris des rafales de vent à plus de 120 km/h rendant la descente extrême. (Lester sa corde d'un sac plein de caillou afin qu'elle ne remonte pas 40 m plus haut c'est hard, voir voler mon sac comme s'il était rempli d'hélium c'est déprimant ;-) )\n\nTout pour plaire.",
+      "retour": "Rejoignez au mieux la piste, en évitant les propriétés privées !",
+      "engagement": "Echappatoires difficiles. Equipement moyen.",
+      "periode": "Pas d'eau. Au mieux on se mouille jusqu'aux genoux.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Possible de continuer le Barranc del Cubars inf."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2577,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 40.922333,
+        "longitude": 0.354395,
+        "label": null
+      },
+      {
+        "canyonId": 2577,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 40.925579,
+        "longitude": 0.328281,
+        "label": "Il s'agit du départ de la partie inf."
+      },
+      {
+        "canyonId": 2577,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 40.922852,
+        "longitude": 0.349331,
+        "label": null
+      },
+      {
+        "canyonId": 2577,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 40.9277,
+        "longitude": 0.325159,
+        "label": "Il s'agit de l'arrivée de la partie inf."
+      },
+      {
+        "canyonId": 2577,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 40.922874,
+        "longitude": 0.324547,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 40.922874,
+      "longitude": 0.324547,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_44ffe35baf28d251",
+          "kind": "TOPOGUIDE",
+          "title": "Gorgs 2008 : barrancs als Ports",
+          "authors": [
+            "David Tomàs",
+            "Joan Sabater",
+            "Albert Ortiz"
+          ],
+          "publicationYear": 2008,
+          "reference": null,
+          "editor": "Federacio Catalan d'Espeleologia (FCE) et Federacio d'Entitats Excursionistes de Catalunya (FEEC)",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1336/topoguide.html"
+        },
+        {
+          "id": "biblio_05f7a8dc05e74833",
+          "kind": "TOPOGUIDE",
+          "title": "Asturias, Cuenca, Granada, Mallorca, Tarragona y Terruel - Guia de descenso de cañones y barrancos",
+          "authors": [
+            "Eduardo Gomez",
+            "Laura Tejero"
+          ],
+          "publicationYear": 2004,
+          "reference": "8495744-37-6",
+          "editor": "Barrabes",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1123/topoguide.html"
+        },
+        {
+          "id": "biblio_8b07a987718e9f50",
+          "kind": "TOPOGUIDE",
+          "title": "Guia pràctica del descens de barrancs i engorjats de Catalunya",
+          "authors": [
+            "Pere Miralles"
+          ],
+          "publicationYear": 1994,
+          "reference": null,
+          "editor": "Institut d'Estudis Espeleològics Sabadell",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1219/topoguide.html"
+        },
+        {
+          "id": "biblio_83c09fd9dcf427c9",
+          "kind": "TOPOGUIDE",
+          "title": "Gorgas y barrancos de Cataluña - Mallorca y Alto Esera",
+          "authors": [
+            "Eduardo Gomez",
+            "Miquel Soro"
+          ],
+          "publicationYear": 1993,
+          "reference": null,
+          "editor": null,
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1128/topoguide.html"
+        },
+        {
+          "id": "biblio_a29a0c20dbef239c",
+          "kind": "TOPOGUIDE",
+          "title": "El Port (Piolet) - 1/30000",
+          "authors": [],
+          "publicationYear": null,
+          "reference": null,
+          "editor": null,
+          "status": null,
+          "detailUrl": null
+        },
+        {
+          "id": "biblio_fd9124c74f05a796",
+          "kind": "TOPOGUIDE",
+          "title": "Els Ports (Alpina) - 1/40000",
+          "authors": [],
+          "publicationYear": null,
+          "reference": null,
+          "editor": null,
+          "status": null,
+          "detailUrl": null
+        }
+      ],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

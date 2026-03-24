@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:48:42.025739+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21249,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21249/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21249/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21249/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21249/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21249,
+    "identity": {
+      "nom": "Cap Ragnon",
+      "nomComplet": "Cascade de Cap Ragnon",
+      "prefixeNom": "Cascade de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21249/Cap-Ragnon.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Bouches-du-Rhône",
+      "communePrincipale": "Le Rove",
+      "communes": [
+        "Le Rove"
+      ],
+      "massif": "Estaque",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a1I",
+      "interet": 0.6,
+      "nbVotes": 5
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": null,
+      "longueurM": 30,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "20min",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "De Marseille prendre la route vers l'Estaque puis vers le Rove. Se garer juste avant le tunnel du Rove (soit sur le parking à droite soit à gauche au départ de la route qui longe la voie ferrée et qui contourne le tunnel).",
+      "accesAmont": null,
+      "approche": "Du parking emprunter la route qui contourne le tunnel, elle suit au départ la voie ferrée puis s'en éloigne. La quitter en prenant à gauche au niveau d'un petit pont betonné : départ des sentiers de randonnée (marques jaune et bleu).\n\nLe ravin qui nous interesse n'est pas le premier vallon rencontré après le pont, c'est le deuxième).\n\nAu bout de 10 min de marche les sentiers se séparent au niveau du premier vallon (le bleu s'enfonce dans le vallon pour passer par le bord de mer), choisissez celui que vous voulez car les deux sentiers vont se rejoindre au niveau de notre ravin.",
+      "descente": "Une seule cascade pour 2 rappels si on fractionne.\n\nL'amarrage de départ est exposé, il faut s'assurer pour l'atteindre ce qui justifie le v4 (cotation) je pense\n\nLa présence de deux point de tête de main courante sécurise cet accès qui reste \"aérien\"\n\nPossibilité de faire 20+10.",
+      "retour": "Remonter par l'éboulis en RG, retrouver le chemin marqué en bleu",
+      "engagement": "Faible vu la longueur",
+      "periode": "Sec",
+      "geologie": null,
+      "historique": "Déjà très bien équipé lors de mon passage.",
+      "remarques": "Faire attention aux trains et aux vols dans les voitures.\n\nL'accés et le retour (plus rapide) par la voie ferrée est strictement interdit."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21249,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.349197,
+        "longitude": 5.27421,
+        "label": null
+      },
+      {
+        "canyonId": 21249,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.348713,
+        "longitude": 5.27399,
+        "label": null
+      },
+      {
+        "canyonId": 21249,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.354408,
+        "longitude": 5.282042,
+        "label": null
+      },
+      {
+        "canyonId": 21249,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 43.353737,
+        "longitude": 5.277831,
+        "label": "Départ du sentier depuis la route"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.354408,
+      "longitude": 5.282042,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_c6befd0557fd0f65",
+          "kind": "MAP",
+          "title": "3145 ET Marseille (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_61b04d9a1037e122",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.efcanyon.net/files/display.ph.....ascade-du-Cap-Ragnon",
+          "url": "http://www.efcanyon.net/files/display.ph.....ascade-du-Cap-Ragnon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

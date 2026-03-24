@@ -1,0 +1,180 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:45:54.747253+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2546,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2546/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2546/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2546/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2546/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2546,
+    "identity": {
+      "nom": "Moulin Marquis",
+      "nomComplet": "Cascade de Moulin Marquis",
+      "prefixeNom": "Cascade de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2546/Moulin-Marquis.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Drôme",
+      "communePrincipale": "Saint-Julien-en-Vercors",
+      "communes": [
+        "Saint-Julien-en-Vercors"
+      ],
+      "massif": "Vercors",
+      "bassin": "Bourne",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v6a2IV",
+      "interet": 2.8,
+      "nbVotes": 27
+    },
+    "metrics": {
+      "altitudeDepartM": 780,
+      "deniveleM": 380,
+      "longueurM": 40,
+      "cascadeMaxM": 360,
+      "cordeMiniM": 80,
+      "navette": "15.0km"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "4h00",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "De la centrale, monter à la Balme de Rencurel et continuer sur la D531 jusqu'au pont de Goule Noire. De là, emprunter la D103 jusqu'à Saint-Julien en Vercors, tourner à droite dans le village et prendre la route qui va au quartier des Ponsons. Continuer le chemin carrossable et se garer à une bifurcation (avant le panneau circulation interdite).",
+      "accesAmont": null,
+      "approche": "Continuer le chemin à pied, emprunter le sentier (marquage rouge et jaune) qui part dans un bosquet d'arbres entouré de 2 prairies. Un peu plus loin, laisser à droite le sentier qui va à la grotte des Gaulois et continuer le sentier jusqu'au porche d'une grotte d'où sort la source à l'origine de la cascade (marquage bleu).",
+      "descente": "Succession de cascades pour un total de 360m ; le premier rappel se situe sur un arbre plein vide RD.",
+      "retour": "Rejoindre le chemin qui mène a la grotte de Bournillon et le descendre pour rejoindre le parking en contrebas.",
+      "engagement": "Aucune échappatoire à partir du deuxième relais, on peut éviter la dernière cascade en rejoignant le chemin de montée RD.",
+      "periode": "La source protège des variations subites de débit. Éviter la période de fonte des neiges.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Du fait de la largeur des relais, une équipe de trois est recommandé, ni plus ni moins. La plus grande cascade de la région."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2546,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.055229,
+        "longitude": 5.436387,
+        "label": null
+      },
+      {
+        "canyonId": 2546,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.056194,
+        "longitude": 5.434278,
+        "label": null
+      },
+      {
+        "canyonId": 2546,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 45.050083,
+        "longitude": 5.445222,
+        "label": null
+      },
+      {
+        "canyonId": 2546,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 45.060501,
+        "longitude": 5.426667,
+        "label": null
+      },
+      {
+        "canyonId": 2546,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 45.054306,
+        "longitude": 5.4325,
+        "label": "Grotte de Bournillon (grand porche)"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 45.050083,
+      "longitude": 5.445222,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_e7d94bb2f47393ab",
+          "kind": "TOPOGUIDE",
+          "title": "Cascades, Gorges & Canyons : Pré-alpes d'Isère et de Savoie",
+          "authors": [
+            "Bertrand Hauser",
+            "Delphine Baratin"
+          ],
+          "publicationYear": 2007,
+          "reference": "978-2-9529407-0-2",
+          "editor": "Descente-Canyon.com",
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/11/Cascades--Gorges-et-Canyons-:-Pre-alpes-d-Isere-et-de-Savoie.html"
+        },
+        {
+          "id": "biblio_0f06b44eb9a42186",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons du Vercors et Alentours",
+          "authors": [
+            "J-C. Botti",
+            "B. Rosset",
+            "Y. Launay",
+            "C. Larribe",
+            "T. Larribe",
+            "Spéléo Club MJC de Tullins"
+          ],
+          "publicationYear": 1997,
+          "reference": "ISBN 2-7417-0211-X",
+          "editor": "Gap",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/12/topoguide.html"
+        },
+        {
+          "id": "biblio_e2259ea833d03cf8",
+          "kind": "TOPOGUIDE",
+          "title": "Infern'eaux",
+          "authors": [
+            "P. Boiron",
+            "J. Carles",
+            "J-M. Etienne",
+            "R. Vuillot"
+          ],
+          "publicationYear": 1990,
+          "reference": "ISBN 2-7038-0065-7",
+          "editor": "Didier et Richard",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/11/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_f0377a11ac3d5a01",
+          "kind": "MAP",
+          "title": "3236 OT Villard-de-Lans (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

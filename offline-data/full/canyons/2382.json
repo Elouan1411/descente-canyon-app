@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:45:17.825787+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2382,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2382/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2382/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2382/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2382/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2382,
+    "identity": {
+      "nom": "Oule",
+      "nomComplet": "Cascade de l' Oule, Ruisseau de Montfort",
+      "prefixeNom": "Cascade de l'",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2382/Oule.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Isère",
+      "communePrincipale": "Lumbin",
+      "communes": [
+        "Crolles",
+        "Saint-Hilaire",
+        "Lumbin"
+      ],
+      "massif": "Chartreuse",
+      "bassin": "Isère",
+      "coursEau": "Ruisseau de Montfort"
+    },
+    "rating": {
+      "cotation": "v6a2I",
+      "interet": 2.1,
+      "nbVotes": 11
+    },
+    "metrics": {
+      "altitudeDepartM": 900,
+      "deniveleM": 250,
+      "longueurM": 200,
+      "cascadeMaxM": 110,
+      "cordeMiniM": 120,
+      "navette": "14.0km"
+    },
+    "timings": {
+      "approche": "5mn",
+      "descente": "2h",
+      "retour": "20mn"
+    },
+    "topo": {
+      "accesAval": "Garez vous à la gare de départ du funiculaire. Si vous ne voulez pas faire de navette prenez le funiculaire ou remonter par la via ferrata...\n\nParking",
+      "accesAmont": "Garez vous à la gare supérieur du funiculaire.",
+      "approche": "De la gare supérieure prenez le chemin qui mène à la sortie de la via ferrata. Attaquez les premières cascades dès que vous les rencontrez.",
+      "descente": "Succesions de cascades sympathiques.\n\nLe Canyon commence par plusieurs petites cascades (Attention aux frottements).\n\nPuis vous tombez sur la première grande cascade de 100 m. Elle peut-être divisée en 2 parties, un rappel de 80 m, un autre de 20 m à partir d'un relais RD\n\nsuivez le ruisseau pour attaquer la dernière grande cascade de 110 m. Faîtes une MC à partir de la via ferrata sans géner les promeneurs et vérifiez la qualité des amarrages.",
+      "retour": "En bas de la cascade rejoignez le chemin menant à la via ferrata. Si vous êtes hyper motivés remontez la !",
+      "engagement": "Pas d'encaissement. En revanche, il faut absolument maîtriser les trés grands rappels et savoir rééquiper.",
+      "periode": null,
+      "geologie": "Roche de qualité différente entre le haut et la bas",
+      "historique": null,
+      "remarques": "Vérifier que les cascades ne sont pas interdites à la descente en raison de la présence de la via ferrata.\n\nLa descente est plus intéressante au printemps avec de l'eau (Attention toutefois au gros débit)"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2382,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.305832,
+        "longitude": 5.888333,
+        "label": null
+      },
+      {
+        "canyonId": 2382,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.305,
+        "longitude": 5.89,
+        "label": null
+      },
+      {
+        "canyonId": 2382,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 45.307777,
+        "longitude": 5.886667,
+        "label": null
+      },
+      {
+        "canyonId": 2382,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 45.299721,
+        "longitude": 5.898333,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 45.307777,
+      "longitude": 5.886667,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_bf7324fa2ae1510e",
+          "kind": "MAP",
+          "title": "3334 OT Massif de la Chartreuse Sud (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

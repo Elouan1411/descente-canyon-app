@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:54:01.226283+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22703,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22703/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22703/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22703/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22703/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22703,
+    "identity": {
+      "nom": "Sarenne",
+      "nomComplet": "Ruisseau de Sarenne",
+      "prefixeNom": "Ruisseau de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22703/Sarenne.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Isère",
+      "communePrincipale": "Le Bourg-d'Oisans",
+      "communes": [
+        "Le Bourg-d'Oisans"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 1.8,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": null,
+      "longueurM": null,
+      "cascadeMaxM": null,
+      "cordeMiniM": 30,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "10min",
+      "descente": "50min",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": "Bourg d'Oisans avant la monté de l'Alpe d'Huez (D211) se garer prêt du camping.",
+      "accesAmont": null,
+      "approche": "Prendre le GR rive gauche du ruisseau (on passe devant les cascades finales) puis la main courante câblée sur la gauche qui nous amène rapidement dans le ruisseau.",
+      "descente": "Enchainement continue de cascade (5 ou 6).\n\nEquipement sur AN et monopoint de 10mm.\n\nEn fonction du débit, l'avant dernière vasque peut être problématique pour sa sortie, il est possible de la contourner en restant RD lors du rappel.",
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "- Présence d'un captage en amont qui alimente la centrale au pied de la cascade. Penser à bien vérifier le débit avant de vous engager.\n\n- La partie décrite est la partie finale : peut être qu'il est intéressant de démarrer plus en amont (non testé).\n\n- Idéal pour terminer une journée dans le secteur."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22703,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.064308,
+        "longitude": 6.039047,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.064308,
+      "longitude": 6.039047,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_bd24b285ad0fb3d2",
+          "kind": "MAP",
+          "title": "3335 ET Le Bourg-d'Oisans (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

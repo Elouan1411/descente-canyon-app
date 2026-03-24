@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:19.852577+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23024,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23024/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23024/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23024/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23024/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23024,
+    "identity": {
+      "nom": "Garcinets",
+      "nomComplet": "Ravin des Garcinets",
+      "prefixeNom": "Ravin des",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23024/Garcinets.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Hautes-Alpes",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": "Durance",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 0.8,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 960,
+      "deniveleM": 50,
+      "longueurM": 250,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 35,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "45min",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": "D'Espinasse (barrage de Serre Ponçon),traversez la Durance par la D900b et prenez à droite en direction de Selonnet et Seyne (D900c). Longez les gorges de la Blanche et prendre à droite la route montant au col des garcinets par la D1. Suivre cette route pour passer de l'autre côté de la montagne de Chabaud. Apercevoir l'encaissement du Ravin des Garcinets et garez-vous le long de la route sans gêner, 500m avant la piste des Garcinets .",
+      "accesAmont": null,
+      "approche": "Descendre à travers la forêt en se dirigeant vers le nord jusqu'au ruisseau.",
+      "descente": "Marche, C2 et belle C30 en goulotte.",
+      "retour": "Suivre le ruisseau et sortir dès que possible en RD et récupérer le cheminement de l'aller.",
+      "engagement": "Echappatoires en RD",
+      "periode": "En eau toute l'année",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Rappel de corde délicat, du fait du retrait de l'amarrage sur le haut de la C30."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23024,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.409782,
+        "longitude": 6.255684,
+        "label": null
+      },
+      {
+        "canyonId": 23024,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.406441,
+        "longitude": 6.25474,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.406441,
+      "longitude": 6.25474,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_f6542a442811df8f",
+          "kind": "MAP",
+          "title": "3439 ET Seyne - Chabanon-Grand-Puy (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

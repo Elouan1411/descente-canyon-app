@@ -1,0 +1,160 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:24.649030+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21708,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21708/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21708/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21708/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21708/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21708,
+    "identity": {
+      "nom": "Espones",
+      "nomComplet": "Barranco de les Espones",
+      "prefixeNom": "Barranco de les",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21708/Espones.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Cataluña",
+      "departement": "Lérida",
+      "communePrincipale": "Capdella",
+      "communes": [
+        "Mont Ros",
+        "Capdella"
+      ],
+      "massif": null,
+      "bassin": "Noguera Ribagorzana",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a3III",
+      "interet": 2.2,
+      "nbVotes": 8
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": 310,
+      "longueurM": 2200,
+      "cascadeMaxM": 12,
+      "cordeMiniM": 20,
+      "navette": "3.2km"
+    },
+    "timings": {
+      "approche": "1h10",
+      "descente": "3-4h",
+      "retour": "??"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21708,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.409771,
+        "longitude": 0.998511,
+        "label": "départ partie supérieure"
+      },
+      {
+        "canyonId": 21708,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.407234,
+        "longitude": 0.98038,
+        "label": null
+      },
+      {
+        "canyonId": 21708,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 42.401611,
+        "longitude": 0.98667,
+        "label": "Parking obligatoire"
+      },
+      {
+        "canyonId": 21708,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 42.406982,
+        "longitude": 0.980079,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 42.401611,
+      "longitude": 0.98667,
+      "label": "Parking obligatoire"
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_e6317f9e08c0b314",
+          "kind": "TOPOGUIDE",
+          "title": "Els 30 millors barrancs del Pirineu",
+          "authors": [
+            "Alexandre Battlori I Lagueva"
+          ],
+          "publicationYear": 2006,
+          "reference": "978-497-91-073-7",
+          "editor": "Cossetania",
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/151/Els-30-millors-barrancs-del-Pirineu.html"
+        },
+        {
+          "id": "biblio_83c09fd9dcf427c9",
+          "kind": "TOPOGUIDE",
+          "title": "Gorgas y barrancos de Cataluña - Mallorca y Alto Esera",
+          "authors": [
+            "Eduardo Gomez",
+            "Miquel Soro"
+          ],
+          "publicationYear": 1993,
+          "reference": null,
+          "editor": null,
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1128/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_4166dc06aa2ecadf",
+          "kind": "MAP",
+          "title": "Montsent de Pallars (Alpina)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_c2daab68a1ea7ceb",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://aecbarrancs.iespana.es/fitxes_bar.....arranc_espones_1.htm",
+          "url": "http://aecbarrancs.iespana.es/fitxes_bar.....arranc_espones_1.htm"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

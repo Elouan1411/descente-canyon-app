@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:56.534521+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22130,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22130/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22130/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22130/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22130/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22130,
+    "identity": {
+      "nom": "Taxabach",
+      "nomComplet": "Taxabach, Daxabach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22130/Taxabach.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Tyrol",
+      "departement": "Kitzbühel",
+      "communePrincipale": "Wohlmuting",
+      "communes": [
+        "St. Johann i. Tirol",
+        "Wohlmuting"
+      ],
+      "massif": "Kaisergebirge - massif de l'Empereur",
+      "bassin": "Tiroler Achen",
+      "coursEau": "Taxabach"
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.4,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 680,
+      "deniveleM": 60,
+      "longueurM": 150,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 25,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "30min",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "De Kitzbühel le B312, passer St.Johann/Tirol jusqu'á Erpfendorf. Ici á gauche (direction Kössen) 2,5 km et arriver a Wohlmuting.\n\nLa petite route á gauche et une courbe á droite, traverser le Taxabach. Après le pont á gauche et la piste á gauche jusqu'un parking á droite.",
+      "accesAmont": null,
+      "approche": "Suivre la piste (ou la sente) vers le-haut, traverser le Taxabach par un pont et arriver la rivière ouverte.",
+      "descente": "Quelques rappels et pools, court, mais attractif",
+      "retour": "Après l'encaissement sortir á gauche",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "Peut être combiné avec Teufelsklamm"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22130,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.597919,
+        "longitude": 12.46297,
+        "label": null
+      },
+      {
+        "canyonId": 22130,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.598904,
+        "longitude": 12.464638,
+        "label": null
+      },
+      {
+        "canyonId": 22130,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.599331,
+        "longitude": 12.465051,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.599331,
+      "longitude": 12.465051,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_15d27179021ef213",
+          "kind": "MAP",
+          "title": "09 Kufstein-Walchsee, St.Johann in Tirol (Kompass)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,163 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:39.871407+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23100,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23100/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23100/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23100/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23100/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23100,
+    "identity": {
+      "nom": "Istrampu de su Segnore",
+      "nomComplet": "Riu Istrampu de su Segnore",
+      "prefixeNom": "Riu",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23100/Istrampu-de-su-Segnore.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Sardegna",
+      "departement": "Sassari",
+      "communePrincipale": "Villanova Monteleone",
+      "communes": [
+        "Villanova Monteleone"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": "Riu Istrampu de su Segnore"
+    },
+    "rating": {
+      "cotation": "v3a1III",
+      "interet": 1.8,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 250,
+      "deniveleM": 120,
+      "longueurM": 750,
+      "cascadeMaxM": 28,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h05",
+      "descente": "1h30",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "Navette possible, mais non recommandé."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23100,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 40.43644,
+        "longitude": 8.413836,
+        "label": null
+      },
+      {
+        "canyonId": 23100,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 40.435219,
+        "longitude": 8.406347,
+        "label": "Sortie au pont"
+      },
+      {
+        "canyonId": 23100,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 40.433395,
+        "longitude": 8.394975,
+        "label": "Sortie à la mer"
+      },
+      {
+        "canyonId": 23100,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 40.43766,
+        "longitude": 8.42354,
+        "label": "Navette pas nécessaire"
+      },
+      {
+        "canyonId": 23100,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 40.434696,
+        "longitude": 8.406433,
+        "label": "navette possible, mais pas necessaire"
+      },
+      {
+        "canyonId": 23100,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 40.436916,
+        "longitude": 8.399358,
+        "label": "Départ de l'approche"
+      },
+      {
+        "canyonId": 23100,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 40.438396,
+        "longitude": 8.405285,
+        "label": "2 : Piste à droite"
+      },
+      {
+        "canyonId": 23100,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 40.437809,
+        "longitude": 8.408735,
+        "label": "3 : continuer vers l'est"
+      },
+      {
+        "canyonId": 23100,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 40.435059,
+        "longitude": 8.396069,
+        "label": "4 : Retour vers route (sortie 2)"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 40.43766,
+      "longitude": 8.42354,
+      "label": "Navette pas nécessaire"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_dcc06bf1651d3a17",
+          "kind": "MAP",
+          "title": "479-III Pedra Ettori (IGM)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

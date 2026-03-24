@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:44:51.371279+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2276,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2276/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2276/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2276/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2276/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2276,
+    "identity": {
+      "nom": "Besse",
+      "nomComplet": "Torrent de Besse, Ruisseau de la Salse",
+      "prefixeNom": "Torrent de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2276/Besse.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Isère",
+      "communePrincipale": "Besse",
+      "communes": [
+        "Besse"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": "Ruisseau de la Salse"
+    },
+    "rating": {
+      "cotation": "v4a1III",
+      "interet": 1.4,
+      "nbVotes": 9
+    },
+    "metrics": {
+      "altitudeDepartM": 1392,
+      "deniveleM": 107,
+      "longueurM": 500,
+      "cascadeMaxM": 35,
+      "cordeMiniM": 35,
+      "navette": "1.3km"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "1h30",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": "Parking au pont inferieur coté 1285. Voiture ou à pied sur la route jusqu'au parking supérieur juste avant le pont coté 1392",
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": "Canyon court mais peu d'échapatoire evidente.",
+      "periode": "Présence de neige jusqu'au mois de d'Avril, mais pas forcement de gros debit.\n\nEviter les crues, car certains amarrages sont délicat à atteindre, et n'evite pas l'eau.\n\nJuin à Oct",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Broches en bon état meme si elles ne sont que rarement doublées, et que les crues les agressent regulièrement.\n\nmateriels de rééquipement dans le sac indispensable"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2276,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.068333,
+        "longitude": 6.163889,
+        "label": null
+      },
+      {
+        "canyonId": 2276,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.06889,
+        "longitude": 6.158889,
+        "label": null
+      },
+      {
+        "canyonId": 2276,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.069168,
+        "longitude": 6.158333,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.069168,
+      "longitude": 6.158333,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_774008f93c089927",
+          "kind": "TOPOGUIDE",
+          "title": "100 descentes de canyons autour de Grenoble",
+          "authors": [
+            "Arnaud Astier"
+          ],
+          "publicationYear": 2015,
+          "reference": "978-2-7466-7754-8",
+          "editor": "auto-édition",
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/194/100-Descentes-de-Canyons-autour-de-Grenoble.html"
+        },
+        {
+          "id": "biblio_6b7865a698c28634",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons alpins : Le tour de l'Oisans en canyons",
+          "authors": [
+            "Alain Bach",
+            "Marc Brunello",
+            "Christian Chillet",
+            "Philippe Drouin"
+          ],
+          "publicationYear": 1992,
+          "reference": "ISBN 2-7417-0054-0",
+          "editor": "Gap",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/117/topoguide.html"
+        }
+      ],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:15.048399+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21937,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21937/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21937/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21937/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21937/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21937,
+    "identity": {
+      "nom": "Gi (inférieur)",
+      "nomComplet": "Ribeira de Gi (inférieur)",
+      "prefixeNom": "Ribeira de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21937/Gi-inferieur.html"
+    },
+    "location": {
+      "pays": "Cap-Vert",
+      "region": null,
+      "departement": "Gi (inférieur)",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2III",
+      "interet": 1.7,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 200,
+      "deniveleM": 170,
+      "longueurM": 800,
+      "cascadeMaxM": 18,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "45min",
+      "descente": "1h",
+      "retour": "10/15min"
+    },
+    "topo": {
+      "accesAval": "Depuis Ribeira Grande, prendre la route de la côte vers le sud. Dépasser Paùl puis Pombas et se garer sans gêner un peu après le pont sur la ribeira de Gi.",
+      "accesAmont": null,
+      "approche": "Du pont, part un sentier avec quelques balises bleues. Quelques passages un peu aériens (marches en construction) après un carrefour auquel on aura pris à droite permettent de descendre à l'entrée intermédiaire de la rivière (palmiers et bananiers), point de départ de la descente",
+      "descente": "Quelques obstacles modestes mais sympas car en eau.",
+      "retour": "Après le dernier obstacle et le bassin du captage, suivre la rivière jusqu'au pont. Une sente part en rive droite peu avant le pont.",
+      "engagement": null,
+      "periode": "En eau toute l'année",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Description volontairement brève. Pour canyonner à Santo Antão, une carte est indispensable. N'hésitez pas à prendre des informations précises auprès d'Eduardo Gomez ; des amarrages peuvent avoir été détruits ou volés par les habitants dans certains canyons."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21937,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 17.126284,
+        "longitude": -25.012617,
+        "label": null
+      },
+      {
+        "canyonId": 21937,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 17.128477,
+        "longitude": -25.008171,
+        "label": null
+      },
+      {
+        "canyonId": 21937,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 17.129595,
+        "longitude": -25.002962,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 17.129595,
+      "longitude": -25.002962,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_a0b95353ed9c3736",
+          "kind": "MAP",
+          "title": "Santo Antâo (Goldstadt-Wanderkarte)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_6f904f2c7e599cc6",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.caboverdenolimits.com/cuadros_barrancos.html",
+          "url": "http://www.caboverdenolimits.com/cuadros_barrancos.html"
+        },
+        {
+          "id": "resource_27bfd07d236c0cb6",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://web.archive.org/web/2006020308152.....cja.com/CV03Dogi.htm",
+          "url": "http://web.archive.org/web/2006020308152.....cja.com/CV03Dogi.htm"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

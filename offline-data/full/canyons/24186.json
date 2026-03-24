@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:59:29.539879+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24186,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24186/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24186/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24186/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24186/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24186,
+    "identity": {
+      "nom": "Châtel",
+      "nomComplet": "Ruisseau du Châtel",
+      "prefixeNom": "Ruisseau du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24186/Chatel.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Savoie",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.4,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 2250,
+      "deniveleM": 600,
+      "longueurM": 1500,
+      "cascadeMaxM": 90,
+      "cordeMiniM": 35,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "20min/1h30",
+      "descente": "5h",
+      "retour": "1min/30min"
+    },
+    "topo": {
+      "accesAval": "Différents parking possibles si vous faites l'intégrale ou pas (voir IGN)",
+      "accesAmont": null,
+      "approche": "Si parking à l'Arcelle neuve, 20 min d'approche en suivant le sentier qui mène au mini lac de l'Arcelle.\n\nSi parking à Chantelouve d'en Bas, 1h30 d'approche par sentiers et pistes.",
+      "descente": "Succession de passages sculptés entrecoupés de zone ouvertes, la fin est beaucoup moins sympa.",
+      "retour": "Retour variable en fonction de votre parking voiture.",
+      "engagement": "Des sentiers et piste coupent le canyon.",
+      "periode": "Fin été automne.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Il paraît intéressant de garer une voiture à l'amont et de sortir avant la C90 (échappatoire RD juste avant) , cela permet d'éviter la partie finale de blocs et de ne pas faire de navette."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24186,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 45.290131,
+        "longitude": 6.943942,
+        "label": "parking intermédiaire si on ne fait pas la C90"
+      },
+      {
+        "canyonId": 24186,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 45.276203,
+        "longitude": 6.93499,
+        "label": null
+      },
+      {
+        "canyonId": 24186,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 45.293163,
+        "longitude": 6.93935,
+        "label": "pour faire l'intégrale"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 45.290131,
+      "longitude": 6.943942,
+      "label": "parking intermédiaire si on ne fait pas la C90"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

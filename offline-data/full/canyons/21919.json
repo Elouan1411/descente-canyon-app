@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:11.333251+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21919,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21919/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21919/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21919/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21919/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21919,
+    "identity": {
+      "nom": "Gaillarde",
+      "nomComplet": "Ravin de la Gaillarde",
+      "prefixeNom": "Ravin de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21919/Gaillarde.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Ain",
+      "communePrincipale": "Tenay",
+      "communes": [
+        "Chaley",
+        "Tenay"
+      ],
+      "massif": "Bugey",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a1III",
+      "interet": 1.2,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 800,
+      "deniveleM": 260,
+      "longueurM": 300,
+      "cascadeMaxM": 38,
+      "cordeMiniM": 40,
+      "navette": "11.0km"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "3h",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "De Tenay, remonter la D21 direction Hauteville. Garer un véhicule à droite après le pont de la Violette qui enjambe l'Albarine. Continuer la D21 et prendre un virage en épingle à droite direction Longecombe par la D53, puis poursuivre et se garer discrètement hameau de Chappe.",
+      "accesAmont": null,
+      "approche": "S'engager dans la \"Combe Ferrouge\" qui ne cesse de descendre dans la forêt. Au moment où la pente devient raide, chercher un sentier traversant vers la gauche et le suivre jusqu'à une coulée de tuf.",
+      "descente": "Succession de pentes déclives et finale dans la C38 presque surplombante. Une forte pente toujours très marquée et un accès aux têtes de cascades à envisager prudemment (main-courantes nécessaires).",
+      "retour": "Le ravin rejoint l'exurgence de la grotte de la Violette d'où descend un modeste sentier jusqu'à la route et au pont éponyme.",
+      "engagement": "Tous les obstacles sont contournables par les arbres. D'ailleurs, en 2008, seules deux cascades disposaient d'un équipement (anneau+maillon sur AN), mais le ravin est très fortement pentu et très isolé.",
+      "periode": "Une humidité permanente mais peu d'eau même en pleine fonte nivéale. Peut-être un vrai débit au cœur du printemps?",
+      "geologie": null,
+      "historique": "11/07/1999 par Bruno Hugon et D. Gritti du GSHL",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21919,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 45.926826,
+        "longitude": 5.542603,
+        "label": null
+      },
+      {
+        "canyonId": 21919,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 45.937138,
+        "longitude": 5.53241,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 45.926826,
+      "longitude": 5.542603,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_640a5be2c102fcb1",
+          "kind": "MAP",
+          "title": "3230 E",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

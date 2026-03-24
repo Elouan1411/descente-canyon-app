@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:28.834664+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23891,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23891/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23891/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23891/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23891/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23891,
+    "identity": {
+      "nom": "Imp Grotto",
+      "nomComplet": "Imp Grotto",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23891/Imp-Grotto.html"
+    },
+    "location": {
+      "pays": "Nouvelle Zélande",
+      "region": "Westland District",
+      "departement": "West Coast",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a3II",
+      "interet": 3.0,
+      "nbVotes": 5
+    },
+    "metrics": {
+      "altitudeDepartM": 240,
+      "deniveleM": 80,
+      "longueurM": 150,
+      "cascadeMaxM": 40,
+      "cordeMiniM": 45,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "1h30",
+      "retour": "1"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": "Suivre le petit sentier en rive droite du canyon.",
+      "descente": "Un beau saut au départ depuis la rive gauche. Puis l'encaissement devient plus franc et on arrive sur la superbe C40. Mais encore un petit saut (ou tob) et c'est déjà fini.",
+      "retour": "Sortir juste après le pont.",
+      "engagement": "Sans échappatoire mais très court.",
+      "periode": "Débit raisonnable pour le secteur. De janvier à avril.",
+      "geologie": "Métagreywacke",
+      "historique": "?",
+      "remarques": "Petit bijou dans la vallée de Haast. Dommage que ce soit si court. Gare au sandflies avant et après le canyon !"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23891,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": -43.955025,
+        "longitude": 169.255356,
+        "label": null
+      },
+      {
+        "canyonId": 23891,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": -43.952068,
+        "longitude": 169.247238,
+        "label": null
+      },
+      {
+        "canyonId": 23891,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": -43.952026,
+        "longitude": 169.247742,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": -43.952026,
+      "longitude": 169.247742,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_aade77e15403770d",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.kiwicanyons.org/imp-grotto-v4a3ii/",
+          "url": "http://www.kiwicanyons.org/imp-grotto-v4a3ii/"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

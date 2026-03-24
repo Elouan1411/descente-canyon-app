@@ -1,0 +1,153 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:44.197335+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21789,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21789/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21789/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21789/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21789/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/21789/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 21789,
+    "identity": {
+      "nom": "Tejas",
+      "nomComplet": "Barranco de Las Tejas",
+      "prefixeNom": "Barranco de Las",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21789/Tejas.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Andalucía",
+      "departement": "Málaga",
+      "communePrincipale": "Canillas de Aceituno",
+      "communes": [
+        "Canillas de Aceituno"
+      ],
+      "massif": "Sierra Almijara",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.4,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": 550,
+      "longueurM": 3500,
+      "cascadeMaxM": 35,
+      "cordeMiniM": 35,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h30",
+      "descente": "3h",
+      "retour": "1h"
+    },
+    "topo": {
+      "accesAval": "Se garer au niveau du terrain de football en haut du village de Canillas de Aceituno.",
+      "accesAmont": null,
+      "approche": "Suivre la piste à droite du terrain de football. La quitter après 45 min pour un sentier à gauche (panneau randonnée vers sommet du Maroma). Passer un réservoir d'eau, continuer le sentier jusqu'à arriver au cours d'eau (source).",
+      "descente": "6 rappels max : 35m. De belles dalles de calcaire dans le lit du cours d'eau.\n\nCanyon sec mis à part une vasque à la fin à traverser.\n\nBeaucoup de pierres dans le lit (attention aux chutes).\n\nÉquipement ok.",
+      "retour": "Depuis la grotte remonter par le sentier à la route (20 min) puis vers le village.\n\nNavette possible",
+      "engagement": "Pas d'échappatoires évident",
+      "periode": "A faire après les pluies",
+      "geologie": null,
+      "historique": null,
+      "remarques": "- Permis à solliciter pour parcourir le barranco (période réglementée, cf. onglet réglementation)\n\n- Beau paysage. Canyon à faire dans un esprit de randonnée.\n\n- La cueva de Fajara qui se trouve à la fin du canyon est à visiter (prévoyez les frontales ou l'acéto- Attention à nos amies les chauves souris)"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21789,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 36.89159,
+        "longitude": -4.067699,
+        "label": null
+      },
+      {
+        "canyonId": 21789,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 36.882668,
+        "longitude": -4.096765,
+        "label": null
+      },
+      {
+        "canyonId": 21789,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 36.879383,
+        "longitude": -4.086027,
+        "label": null
+      },
+      {
+        "canyonId": 21789,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 36.881718,
+        "longitude": -4.102083,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 36.879383,
+      "longitude": -4.086027,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_80ba6367da737bf8",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.actionman4x4.com/canonesybarr.....recorridos/tejas.htm",
+          "url": "http://www.actionman4x4.com/canonesybarr.....recorridos/tejas.htm"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 143,
+          "status": "Indéfini",
+          "action": "Indéfini",
+          "title": "Information",
+          "summary": "Dans le Parc Naturel. Soyez discrets.\n\nPour l'instant pas de législation.",
+          "remark": null,
+          "details": null,
+          "effectiveDate": null,
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/143/legislation.html",
+          "attachments": []
+        },
+        {
+          "id": 366,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté",
+          "summary": "Le barranco de Las Tejas est interdit chaque année entre le 15 janvier et le 15 juin inclus pour cause de nidification de l'aigle de Bonelli. Hors de cette période, un permis est nécessaire pour le parcourir. Il faut le solliciter auprès du parc naturel des Sierras de Tejeda, Almijara y Alhama : pn.tejeda.cmaot@juntadeandalucia.es",
+          "remark": null,
+          "details": "Formulaire de demande de permis",
+          "effectiveDate": null,
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/366/legislation.html",
+          "attachments": [
+            {
+              "label": "Formulaire de demande de permis",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem366_pj1.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

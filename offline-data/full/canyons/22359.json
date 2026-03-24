@@ -1,0 +1,147 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:45.071204+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22359,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22359/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22359/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22359/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22359/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22359,
+    "identity": {
+      "nom": "Seca",
+      "nomComplet": "Ribeira Seca",
+      "prefixeNom": "Ribeira",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22359/Seca.html"
+    },
+    "location": {
+      "pays": "Portugal",
+      "region": "Madeira",
+      "departement": "Santana Municipality",
+      "communePrincipale": "Faial",
+      "communes": [
+        "Faial"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a3III",
+      "interet": 2.6,
+      "nbVotes": 10
+    },
+    "metrics": {
+      "altitudeDepartM": 640,
+      "deniveleM": 360,
+      "longueurM": 4200,
+      "cascadeMaxM": 13,
+      "cordeMiniM": 15,
+      "navette": "5.7km"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "4h",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": "Par le tunnel",
+      "descente": null,
+      "retour": "Sortie à gauche, vers la levada, quelques mètres avant le pont.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22359,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 32.74884,
+        "longitude": -16.900343,
+        "label": null
+      },
+      {
+        "canyonId": 22359,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 32.762478,
+        "longitude": -16.877403,
+        "label": "200m devant le pont de la route = 100m devant la passarelle à gauche vers la levada"
+      },
+      {
+        "canyonId": 22359,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 32.757641,
+        "longitude": -16.882751,
+        "label": "Sortie alternative pour parking alternative (50m vers le haut, herbeux)"
+      },
+      {
+        "canyonId": 22359,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 32.74342,
+        "longitude": -16.904902,
+        "label": null
+      },
+      {
+        "canyonId": 22359,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 32.763279,
+        "longitude": -16.876219,
+        "label": null
+      },
+      {
+        "canyonId": 22359,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 32.758671,
+        "longitude": -16.882414,
+        "label": "alternative Parking aval (mais sortie vers le haut 50m herbeux)"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 32.74342,
+      "longitude": -16.904902,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_f00ce1512c259c48",
+          "kind": "MAP",
+          "title": "Madeira, Tour & Trail (Discovery Walking Guides Ltd. Northampton)",
+          "scale": "1/40000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_1adf1e4bc2d5d102",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyoning.camadeira.com/canyons/ribeira-seca/",
+          "url": "http://canyoning.camadeira.com/canyons/ribeira-seca/"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:59:09.833660+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24089,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24089/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24089/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24089/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24089/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24089,
+    "identity": {
+      "nom": "Boussaz (amont)",
+      "nomComplet": "Torrent de Boussaz (amont)",
+      "prefixeNom": "Torrent de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24089/Boussaz-amont.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Haute-Savoie",
+      "communePrincipale": "Passy",
+      "communes": [
+        "Passy"
+      ],
+      "massif": "Chablais - Platé - Aiguilles Rouges",
+      "bassin": "Arve",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v5a2III",
+      "interet": 2.5,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1720,
+      "deniveleM": 530,
+      "longueurM": 800,
+      "cascadeMaxM": 115,
+      "cordeMiniM": 80,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h15",
+      "descente": "5h",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "Depuis Passy, monter jusqu'au hameau de Bay (D43). Au village, tourner à gauche en direction du Coudray, et aller se garer au parking de Varan (alt. 1140m).",
+      "accesAmont": null,
+      "approche": "Du parking, suivre le chemin 4x4 qui monte en direction des chalets de Varan. A l'altitude 1635m, prendre une sente à gauche et continuer à monter jusqu'à l'altitude 1740m environ en direction du torrent (à gauche du point coté 1736m sur la carte IGN). Descendre au mieux dans le torrent.",
+      "descente": "Descendre dans le torrent (attention, présence d'un ou plusieurs névés au printemps, se méfier d'éventuelles cavités). L'enchainement supérieur commence avec une main courante de 5m (utile pour accéder au relais en sécurité), suivie d'une cascade de 20m. S'ensuivent R2, C10 et on arrive à la grande cascade de 115m !!! (présence d'un relais intermédiaire à 75m). Tous les relais rive droite pour la partie haute. Quelques ressauts et toboggans contournables avant d'arriver au chemin des chalets du Zéta (échappatoire).\n\nDébute alors la 2ème partie un peu moins intéressante dans du rocher délité. Après une petite progression, on arrive sur une cascade de 15m (relais RG), puis un toboggan cascade de 90m (relais intermédiaire à 45m RD). R2 puis C6 (RG) où l'on reste sur la corde pour atteindre une déviation (1 spit RD) puis le relais RD à 4m en contrebas du départ de la cascade finale de 45m.\n\nOn termine avec une progression un peu laborieuse de 10 à 15 minutes dans le torrent.",
+      "retour": "Vers l'altitude 1190m, repérer dans le torrent un cairn sur un gros rocher. A ce niveau, une sente rive gauche ramène au parking.",
+      "engagement": "Échappatoire possible au chemin qui mène aux chalets du Zéta.\n\nAttention, l'équipement peut souffrir des crues et de l'hiver, mais aussi des chutes de pierres, prendre une trousse de rééquipement.",
+      "periode": "Suivant le sens du vent, la descente de la grande cascade peut se faire sous l'eau, et on sera bien arrosé au relais intermédiaire.\n\nPériode idéale au printemps (mai ?) avec la fonte des neiges (se méfier de l'augmentation du débit en cours de journée). Probablement sec en plein été.",
+      "geologie": null,
+      "historique": "1ère descente et équipement le 12 mai 2018 par Mimile74, Corbi et Antoine B.",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24089,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.948158,
+        "longitude": 6.68079,
+        "label": null
+      },
+      {
+        "canyonId": 24089,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.942051,
+        "longitude": 6.67603,
+        "label": null
+      },
+      {
+        "canyonId": 24089,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.93726,
+        "longitude": 6.68238,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.93726,
+      "longitude": 6.68238,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_15a6dbda97b38ace",
+          "kind": "MAP",
+          "title": "3530 ET Samoens - Haut-Giffre (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

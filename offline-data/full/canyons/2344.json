@@ -1,0 +1,229 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:45:08.755777+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2344,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2344/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2344/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2344/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2344/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/2344/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 2344,
+    "identity": {
+      "nom": "Arega",
+      "nomComplet": "Ruisseau d' Arega",
+      "prefixeNom": "Ruisseau d'",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2344/Arega.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Corse",
+      "departement": "Haute-Corse",
+      "communePrincipale": "Lavasina",
+      "communes": [
+        "Brando",
+        "Lavasina"
+      ],
+      "massif": "Cap Corse",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 1.9,
+      "nbVotes": 5
+    },
+    "metrics": {
+      "altitudeDepartM": 420,
+      "deniveleM": 325,
+      "longueurM": 1500,
+      "cascadeMaxM": 22,
+      "cordeMiniM": 25,
+      "navette": "3.1km"
+    },
+    "timings": {
+      "approche": "45min",
+      "descente": "2h30",
+      "retour": "10mn"
+    },
+    "topo": {
+      "accesAval": "près du pont qui enjambe le ruisseau au point côté 95 sur la carte IGN.\n\nAvec la voiture",
+      "accesAmont": ", monter au hameau de PORETTO. A la sortie de celui-çi, stationner la voiture sur un parking à gauche dans un virage en épingle d'ou démarre une piste.",
+      "approche": "A pied, prendre la piste qui devient vite un sentier et descendre dans le ruisseau au niveau des éboulis avant la barre rocheuse.",
+      "descente": "Succession de cascades de 10 à 15 mètres avec un pan incliné qui se termine par une C22 qui fait suite à deux petits toboggans.\n\nIl est possible de remonter au dessus des barres rocheuses du départ et de profiter ainsi de 3 cascades suplementaires.",
+      "retour": "Suivre un sentier en RG qui se situe 100m après un captage d'eau.",
+      "engagement": "Faible. Attention aux crues toutefois. Une partie est un peu encaissée ( joli rocher rouge )",
+      "periode": "Préferer le printemps pour avoir un maximum d'eau. Sec dans sa partie haute, l'eau réaparrait après un captage.",
+      "geologie": null,
+      "historique": "Guy Cau",
+      "remarques": "Descente presque intéressante, mais la marche intermédiaire gache un peu la descente.\n\nLe descente est bien plus intéressante au printemps. Mais au mois de juillet, il y a encore de l'eau là où il le faut."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2344,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.767223,
+        "longitude": 9.436944,
+        "label": null
+      },
+      {
+        "canyonId": 2344,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.758331,
+        "longitude": 9.448333,
+        "label": null
+      },
+      {
+        "canyonId": 2344,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 42.762222,
+        "longitude": 9.457222,
+        "label": null
+      },
+      {
+        "canyonId": 2344,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 42.758057,
+        "longitude": 9.450556,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 42.762222,
+      "longitude": 9.457222,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_2bafc8e0f7a42d9c",
+          "kind": "TOPOGUIDE",
+          "title": "La Corse en Canyon",
+          "authors": [
+            "Association CorseCanyon"
+          ],
+          "publicationYear": 2018,
+          "reference": null,
+          "editor": "auto-edition",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/1127/La-Corse-en-Canyon-3eme-edition.html"
+        },
+        {
+          "id": "biblio_eeda460e91ce529f",
+          "kind": "TOPOGUIDE",
+          "title": "Corse Canyons (2ème édition)",
+          "authors": [
+            "Franck Jourdan",
+            "Jean-François Fiorina"
+          ],
+          "publicationYear": 2006,
+          "reference": "2-84698-169-8",
+          "editor": "Albiana",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/133/Corse-Canyons.html"
+        },
+        {
+          "id": "biblio_fab33759293ad66d",
+          "kind": "TOPOGUIDE",
+          "title": "Corse Canyons",
+          "authors": [
+            "Franck Jourdan",
+            "Jean-François Fiorina"
+          ],
+          "publicationYear": 2004,
+          "reference": "ISBN : 2-9520630-5-2",
+          "editor": "Corsecanyon",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1119/topoguide.html"
+        },
+        {
+          "id": "biblio_d72ca920b80a45d1",
+          "kind": "TOPOGUIDE",
+          "title": "Corse - Paradis du canyoning",
+          "authors": [
+            "Hubert Ayasse",
+            "Philippe Dubreuil"
+          ],
+          "publicationYear": 2001,
+          "reference": "ISBN 2-9117-9750-7",
+          "editor": "DCL",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/16/topoguide.html"
+        },
+        {
+          "id": "biblio_8a8df6e04c56edf0",
+          "kind": "TOPOGUIDE",
+          "title": "Corse - 15 canyons Haute-Corse...",
+          "authors": [
+            "Jean-Paul Quilici"
+          ],
+          "publicationYear": 2001,
+          "reference": null,
+          "editor": null,
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/17/topoguide.html"
+        },
+        {
+          "id": "biblio_243e67424adc1ef3",
+          "kind": "TOPOGUIDE",
+          "title": "4347 OT Cap Corse (IGN TOP25) - 1/25000",
+          "authors": [],
+          "publicationYear": null,
+          "reference": null,
+          "editor": null,
+          "status": null,
+          "detailUrl": null
+        },
+        {
+          "id": "biblio_37004208f5e1338f",
+          "kind": "TOPOGUIDE",
+          "title": "4348 OT Bastia (IGN TOP25) - 1/25000",
+          "authors": [],
+          "publicationYear": null,
+          "reference": null,
+          "editor": null,
+          "status": null,
+          "detailUrl": null
+        }
+      ],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 232,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Corse) - 08 juin 2011",
+          "summary": "- Le canyonisme est interdit la nuit (sauf dérogation)\n\n- Le canyonisme est interdit s'il y a une alerte émise par Météo-France de niveau orange ou rouge en cours.\n\n- Le canyonisme est interdit aux mineurs de moins de 7 ans, sauf canyon évalué égal ou inférieur à V1-A3-E3\n\n- Les groupes auront un effectif maximum de 12 personnes, hors encadrement.",
+          "remark": "L'arrêté du 9 juillet 2019 pris conjointement par les préfectures de Corse-du-Sud et de Haute-Corse harmonise les réglementations existantes pour les deux départements.",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nArrêté préfectoral (Haute-Corse) n°2011-159-0008 du 8 juin 2011\n\nArrêté préfectoral modificatif (Corse-du-Sud et Haute-Corse) n°R20-2019-07-09-001 du 9 juillet 2019",
+          "effectiveDate": "08 juin 2011",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/232/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral (Haute-Corse) n°2011-159-0008 du 8 juin 2011",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem232_pj1.pdf"
+            },
+            {
+              "label": "Arrêté préfectoral modificatif (Corse-du-Sud et Haute-Corse) n°R20-2019-07-09-001 du 9 juillet 2019",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem232_pj2.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

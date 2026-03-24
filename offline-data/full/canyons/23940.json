@@ -1,0 +1,139 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:39.952566+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23940,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23940/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23940/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23940/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23940/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23940,
+    "identity": {
+      "nom": "Gaismoosbach",
+      "nomComplet": "Gaismoosbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23940/Gaismoosbach.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Tyrol",
+      "departement": "Politischer Bezirk Schwaz",
+      "communePrincipale": "Achenkirch",
+      "communes": [
+        "Achenkirch"
+      ],
+      "massif": "Brandenberger Alpen",
+      "bassin": "Inn",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a4III",
+      "interet": 1.6,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1200,
+      "deniveleM": 280,
+      "longueurM": 3600,
+      "cascadeMaxM": 23,
+      "cordeMiniM": 25,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h30min",
+      "descente": "3h30min",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "pas d’amarrages ou mauvais amarrages ; amarrages suffisants sur les 4 dernières rappels"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23940,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.499035,
+        "longitude": 11.766708,
+        "label": "E1 (Riml/Amor)"
+      },
+      {
+        "canyonId": 23940,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.501884,
+        "longitude": 11.802601,
+        "label": null
+      },
+      {
+        "canyonId": 23940,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 47.497902,
+        "longitude": 11.77409,
+        "label": "E2"
+      },
+      {
+        "canyonId": 23940,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.5084,
+        "longitude": 11.798117,
+        "label": null
+      },
+      {
+        "canyonId": 23940,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.49789,
+        "longitude": 11.774031,
+        "label": "E2"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 47.497902,
+      "longitude": 11.77409,
+      "label": "E2"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_c2b38c747b3abaec",
+          "kind": "MAP",
+          "title": "6 Rofan (Alpenvereins (AV) Karte)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_9fb67e8b07394f11",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/C.....s/GaismoosbachCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/C.....s/GaismoosbachCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

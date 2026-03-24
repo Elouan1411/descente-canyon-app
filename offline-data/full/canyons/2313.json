@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:45:00.445281+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2313,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2313/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2313/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2313/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2313/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2313,
+    "identity": {
+      "nom": "Fattes",
+      "nomComplet": "Nant des Fattes",
+      "prefixeNom": "Nant des",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2313/Fattes.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Savoie",
+      "communePrincipale": "Cohennoz",
+      "communes": [
+        "Cohennoz"
+      ],
+      "massif": "Beaufortain",
+      "bassin": "Arly",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 0.5,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": null,
+      "longueurM": null,
+      "cascadeMaxM": 15,
+      "cordeMiniM": 30,
+      "navette": "10.0km"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "??",
+      "retour": "??"
+    },
+    "topo": {
+      "accesAval": "dans les gorges de l'Arly, en venant d'Ugine, laisser un véhicule sur le parking du lieu-dit \"les metraux\".",
+      "accesAmont": "revenir vers Ugine, et prendre a droite vers Cohennoz. Apres Cohennoz, se garer aux \"Panissats\".",
+      "approche": "Prendre à pied la route forestière, puis le chemin de randonnée (balises jaunes, 2eme chemin rencontre à droite vers le Cernix). Début à la passerelle.",
+      "descente": "Début fastidieux et sans grand intérêt. Ravine encombrée d'arbres, entrecoupée de quelques cascades très glissantes (c12, c6, c6, c12, c15, c10). Un premier encaissement juste avant un pont, avec c5, t3, c5. La suite est plus intéressant : C5, R2, C12, R3, C15, affluent RG qui amène pas mal d'eau, c3, c5, c3, c10, c5, c10, c5, arrivée dans l'Arly.",
+      "retour": "Descendre l'Arly (s'assurer au depart que cela est faisable !!) sur 500m. Lorsqu'il devient difficile de progresser en RG (plus vraiment de rive), remonter au mieux vers la route en RD. Le parking est au dessus. Environ 20mn.\n\nLa navette peut s'éviter : du parking, descendre vers Ugine jusqu'à la passerelle qui traverse l'Arly. Ce chemin remonte à la voiture (1h30 au total)",
+      "engagement": "Faible dans la première partie, c'est très large. Bel encaissement a partir de la C12 dans la deuxieme partie.",
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "La descente de l'Arly est peut-être interdite, à cause de retenue EDF..."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2313,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 45.772583,
+        "longitude": 6.484294,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.772583,
+      "longitude": 6.484294,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_bf97d8efb10efc46",
+          "kind": "MAP",
+          "title": "3531 OT Megève - Col des Aravis (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

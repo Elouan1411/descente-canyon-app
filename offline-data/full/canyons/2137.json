@@ -1,0 +1,169 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:44:12.137585+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2137,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2137/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2137/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2137/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2137/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/2137/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 2137,
+    "identity": {
+      "nom": "Belle au Bois",
+      "nomComplet": "La Belle au Bois, Le Planay",
+      "prefixeNom": "La",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2137/Belle-au-Bois.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Haute-Savoie",
+      "communePrincipale": "Megève",
+      "communes": [
+        "Megève"
+      ],
+      "massif": "Beaufortain",
+      "bassin": "Arly",
+      "coursEau": "Le Planay"
+    },
+    "rating": {
+      "cotation": "v3a4II",
+      "interet": 2.7,
+      "nbVotes": 39
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": 80,
+      "longueurM": 1000,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "1h30",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "Suivre la route du Mont d'Arbois, puis prendre en direction de Le Maz. Se garer au niveau du pont qui enjambe le torrent.\n\nUn nouveau parking à été aménagé près du ruisseau : depuis le pont suivre Le Maz, dans le hameau à droite toute pour revenir le long du ruisseau, en direction des Mouilles, un chemin à droite fléché parking canyon et on vient se garer derrière un hangar agricole, à deux pas du ruisseau. Le canyon perd un peu en longueur, mais dans une partie sans intérêt.\n\nMerci la commune si elle est à l'initiative de cet aménagement.",
+      "accesAmont": null,
+      "approche": null,
+      "descente": "Série de cascades / toboggans / désescalades.\n\nAttention aux mouvements d'eau surtout sous le toboggan/saut qui précède la C30 (on la repère par une main courante-via ferrata rive gauche et le gouffre... !).",
+      "retour": "Sortir après les cascades C18 et la C8 par la sente / via ferrata RG.",
+      "engagement": "II y a plusieurs possibilités de sortie",
+      "periode": "Été",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2137,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.848026,
+        "longitude": 6.632892,
+        "label": null
+      },
+      {
+        "canyonId": 2137,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.85442,
+        "longitude": 6.625099,
+        "label": "des que vous voyer une ptite chapelle ces la"
+      },
+      {
+        "canyonId": 2137,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 45.847427,
+        "longitude": 6.632953,
+        "label": "signale pas une pencarte cayonning a cote du depot"
+      },
+      {
+        "canyonId": 2137,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 45.856422,
+        "longitude": 6.622181,
+        "label": "premier a droite rte edmond de rotchild pis suiver la route j usque au bout devant les immeuble"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 45.847427,
+      "longitude": 6.632953,
+      "label": "signale pas une pencarte cayonning a cote du depot"
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_87a84633f292e5a0",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons de Haute-Savoie (réédition)",
+          "authors": [
+            "Ch. Charletty",
+            "G. Gudefin",
+            "B. Hugon",
+            "J-P. Beaudoin"
+          ],
+          "publicationYear": 2004,
+          "reference": "ISBN: 2741702888",
+          "editor": "GAP",
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/128/Canyons-de-Haute-Savoie.html"
+        },
+        {
+          "id": "biblio_1e61b240bec55aed",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons de Haute Savoie",
+          "authors": [
+            "Christian Charletty",
+            "Gérard Gudefin",
+            "Bruno Hugon",
+            "Comité Départemental de Spéléologie 74"
+          ],
+          "publicationYear": 1997,
+          "reference": "ISBN 2-7417-0202-0",
+          "editor": "Gap",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/19/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_bf97d8efb10efc46",
+          "kind": "MAP",
+          "title": "3531 OT Megève - Col des Aravis (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 428,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Convention - 01 juil 2021",
+          "summary": "Accord passé entre le référent local du CDPC 74 et l'exploitant agricole du hangar, du parking et des champs environnants :\n\n- Se garer sans gêner la sortie du hangar agricole, sous peine avérée de se voir emmené en fourrière. La sortie du hangar doit être très largement dégagée, la taille des engins étant très surprenante !\n\n- La remontée du canyon doit se faire par le chemin et non dans le pré.\n\n- Pour les accompagnants, ne pas suivre le canyon dans les prés.\n\n- En cas d'échappatoire rive gauche en haut de la 25 mètre, rejoindre au plus court le chemin ( par la droite du bâtiment agricole) pour éviter de piétiner les prés.",
+          "remark": null,
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.",
+          "effectiveDate": "01 juil 2021",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/428/legislation.html",
+          "attachments": []
+        }
+      ]
+    }
+  }
+}

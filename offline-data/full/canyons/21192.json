@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:48:29.140308+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21192,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21192/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21192/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21192/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21192/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21192,
+    "identity": {
+      "nom": "Maillet",
+      "nomComplet": "Caouba du Maillet, Le Maillet",
+      "prefixeNom": "Caouba du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21192/Maillet.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Hautes-Pyrénées",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Cirque de Troumouse",
+      "bassin": null,
+      "coursEau": "Le Maillet"
+    },
+    "rating": {
+      "cotation": "v4a3I",
+      "interet": 2.5,
+      "nbVotes": 15
+    },
+    "metrics": {
+      "altitudeDepartM": 1810,
+      "deniveleM": 180,
+      "longueurM": 1000,
+      "cascadeMaxM": 40,
+      "cordeMiniM": 50,
+      "navette": "3.0km"
+    },
+    "timings": {
+      "approche": "??",
+      "descente": "2h",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "De Gedre prendre la route qui monte au cirque de Troumousse jusqu'a l'hostellerie du Maillet.\n\nOn peut laisser, si on a 2 vehicules, une voiture juste avant la cabane \"péage\" afin d'éviter de faire payer deux voitures \"Grrrrrrr\".",
+      "accesAmont": null,
+      "approche": "Immediat de l'hostellerie\n\nou dans l'enchainement des cascades du Cot.",
+      "descente": "Descente équipé, bien juger les tobogans avant de s'engager dedans par fort débit.",
+      "retour": "avec 2 voitures, descendre jusqu'à la cabane Péage. Si une seule, remonter à la fin des difficultes à l'hostellerie",
+      "engagement": "Possibilité de sortir à tous moments",
+      "periode": "Attendre l'étiage d'été... ou pas complètement mais alors ça bouge...",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21192,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.735573,
+        "longitude": 0.087676,
+        "label": null
+      },
+      {
+        "canyonId": 21192,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.741371,
+        "longitude": 0.092826,
+        "label": null
+      },
+      {
+        "canyonId": 21192,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 42.735634,
+        "longitude": 0.086453,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 42.735634,
+      "longitude": 0.086453,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_66d5328512d1b5a5",
+          "kind": "MAP",
+          "title": "1748 OT Gavarnie (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

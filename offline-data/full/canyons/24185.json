@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:59:29.406745+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24185,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24185/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24185/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24185/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24185/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24185,
+    "identity": {
+      "nom": "Ré Bruyant",
+      "nomComplet": "Ré Bruyant",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24185/Re-Bruyant.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Savoie",
+      "communePrincipale": "Bessans",
+      "communes": [
+        "Bessans"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.6,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 2050,
+      "deniveleM": 220,
+      "longueurM": 300,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "35min",
+      "descente": "1h30",
+      "retour": "3min"
+    },
+    "topo": {
+      "accesAval": "De Lanslevillard, monter vers Bonneval et prendre à droite la route vers Goulaz. Poursuivre cette route et garez vous au parking obligatoire (après la route est réservée aux riverains).",
+      "accesAmont": null,
+      "approche": "Poursuivre à pied la route qui traverse le Ré Bruyant, puis arrive rapidement au hameau de Vincendières. Monter à travers les granges et alpages et rentrer dans le canyon au niveau de la prise d'eau à 2050m.",
+      "descente": "Quelques obstacles au départ puis un encaissement final de toute beauté.",
+      "retour": "Rejoindre la route et le parking.",
+      "engagement": "Pas d'échappatoire dans l’enchaînement final.",
+      "periode": "Automne (glacier dans le bassin versant).",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Attention canyon sous prise d'eau, DANGER."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24185,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.311817,
+        "longitude": 7.040135,
+        "label": null
+      },
+      {
+        "canyonId": 24185,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.30875,
+        "longitude": 7.036204,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.30875,
+      "longitude": 7.036204,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

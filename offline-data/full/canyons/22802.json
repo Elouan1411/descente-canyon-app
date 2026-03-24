@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:54:25.020232+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22802,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22802/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22802/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22802/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22802/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22802,
+    "identity": {
+      "nom": "Madrasco",
+      "nomComplet": "Madrasco",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22802/Madrasco.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Lombardia",
+      "departement": "Sondrio",
+      "communePrincipale": "Fusine",
+      "communes": [
+        "Fusine"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a4IV",
+      "interet": 2.3,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 810,
+      "deniveleM": 490,
+      "longueurM": 2100,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 25,
+      "navette": "7.0km"
+    },
+    "timings": {
+      "approche": "40min",
+      "descente": "4h30",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "de la SS38 en direction de Sondrio, tourner au niveau de Berbenno en direction de Fusine. Se garer près du torrent.\n\nAccès",
+      "accesAmont": "prendre la petite route en lacets qui grimpe en direction de la Val Madre jusqu'à l'indication Dosso di Sopra (départ du sentier) où on garera la voiture sans gêner.",
+      "approche": "Emprunter le sentier, traverser à plat au niveau des maisons, puis continuer à descendre vers Dosso di Sotto par un bon sentier bien marqué. Suivre la piste muletière en direction de l'amont puis un peu après la fin des barrières, au niveau d'un promontoire rocheux, descendre au mieux (pas de trace) en direction du torrent.",
+      "descente": "Après le passage des 3 brise-crues (non équipées), quelques petits ressauts et une marche d'1,5 km avant la partie finale malheureusement très courte, beaux passages avec toboggans, rappels arrosés et mouvements d'eau.",
+      "retour": "Sortir du torrent au niveau des voies d'escalade en RG et suivre le sentier jusqu'à rejoindre le parking.",
+      "engagement": "Pas d'échappatoire.",
+      "periode": "Eté - Automne",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Débit soutenu et équipements sommaires en 2008. L'équipement est volontairement minimaliste, merci de respecter ce choix."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22802,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.130245,
+        "longitude": 9.747864,
+        "label": null
+      },
+      {
+        "canyonId": 22802,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.149162,
+        "longitude": 9.746219,
+        "label": null
+      },
+      {
+        "canyonId": 22802,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 46.131615,
+        "longitude": 9.753894,
+        "label": null
+      },
+      {
+        "canyonId": 22802,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 46.149857,
+        "longitude": 9.74659,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 46.131615,
+      "longitude": 9.753894,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

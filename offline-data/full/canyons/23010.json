@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:16.226147+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23010,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23010/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23010/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23010/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23010/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23010,
+    "identity": {
+      "nom": "Rate",
+      "nomComplet": "Ravin de la Rate, Ravin de l' Abreuvage",
+      "prefixeNom": "Ravin de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23010/Rate.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-de-Haute-Provence",
+      "communePrincipale": "Le Fugeret",
+      "communes": [
+        "Le Fugeret"
+      ],
+      "massif": null,
+      "bassin": "Vaïre",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2III",
+      "interet": 2.2,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 1350,
+      "deniveleM": 400,
+      "longueurM": 1500,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h10",
+      "descente": "3h30",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": "Rejoindre Annot, puis se rendre au village du Fugeret. Prendre à droite direction la gare puis à gauche en traversant la voie ferrée à deux reprises. Continuer jusqu'au pont (point 949m sur IGN).",
+      "accesAmont": null,
+      "approche": "Continuer la route sur 340m pour la 3° piste à droite, strictement perpendiculaire à la route. Poursuivre par un sentier balisé discrètement en jaune, jusqu'à un panneau. Prendre à droite. Après être passé par des ruines (le collet Gouiran), rejoindre facilement le départ, confluence des ravins de l' Abreuvage et de la Loubachière.",
+      "descente": "Belle descente dans le grès d'Annot. A la suite du dernier rappel (C4), 20 minutes a bartasser pour rejoindre un petit pont de bois. Puis, soit par les rives, soit par de belles dalles de schiste, rejoindre assez facilement le pont.",
+      "retour": "Sortir au pont.",
+      "engagement": null,
+      "periode": "Pas de vasque, choisir une période pendant laquelle les cascades seront bien formées.",
+      "geologie": "Grès.",
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23010,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.017818,
+        "longitude": 6.662221,
+        "label": null
+      },
+      {
+        "canyonId": 23010,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.008842,
+        "longitude": 6.652415,
+        "label": null
+      },
+      {
+        "canyonId": 23010,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 44.011738,
+        "longitude": 6.647072,
+        "label": "Le Chastel"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.008842,
+      "longitude": 6.652415,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_46895baacb4925db",
+          "kind": "MAP",
+          "title": "3541 OT Annot (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

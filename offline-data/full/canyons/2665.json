@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:46:23.016222+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2665,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2665/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2665/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2665/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2665/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2665,
+    "identity": {
+      "nom": "Cugnasco (inferieur)",
+      "nomComplet": "Val Cugnasco (inferieur), Piano di Magadino",
+      "prefixeNom": "Val",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2665/Cugnasco-inferieur.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Cugnasco-Gerra",
+      "departement": "Tessin",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": "Ticino",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a3II",
+      "interet": 2.7,
+      "nbVotes": 23
+    },
+    "metrics": {
+      "altitudeDepartM": 440,
+      "deniveleM": 200,
+      "longueurM": null,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 45,
+      "navette": "4.0km"
+    },
+    "timings": {
+      "approche": "10min",
+      "descente": "3h",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "Loin d'être le plus ludique, Cugnasco est une classique assez agréable à parcourir."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2665,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.182232,
+        "longitude": 8.916736,
+        "label": null
+      },
+      {
+        "canyonId": 2665,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.177773,
+        "longitude": 8.917685,
+        "label": null
+      },
+      {
+        "canyonId": 2665,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 46.181206,
+        "longitude": 8.914204,
+        "label": null
+      },
+      {
+        "canyonId": 2665,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 46.177238,
+        "longitude": 8.917454,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 46.181206,
+      "longitude": 8.914204,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_1e5c67cde732c20d",
+          "kind": "TOPOGUIDE",
+          "title": "Eldorado Ticino",
+          "authors": [
+            "Anna & Luca Nizzola"
+          ],
+          "publicationYear": 2010,
+          "reference": "978-88-905017-7-7",
+          "editor": "SwissCanyon",
+          "status": "en stock\n\n- 39,90 € -\n\nCommandez cet ouvrage dès maintenant !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/157/Eldorado-Ticino.html"
+        },
+        {
+          "id": "biblio_818da916075bb17b",
+          "kind": "TOPOGUIDE",
+          "title": "Canyoning en Suisse 2",
+          "authors": [
+            "Franz Baumgartner",
+            "Andreas Brunner",
+            "Daniel Zimmermann"
+          ],
+          "publicationYear": 2010,
+          "reference": "9783033024694",
+          "editor": null,
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/158/Canyoning-en-Suisse-2.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_9a9578770c172929",
+          "kind": "MAP",
+          "title": "1313 Bellinzona (Carte Nationale Suisse)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_fa9cfd3bd9380845",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.swisscanyon.ch/canyons/descrittivi/cugnasco-inf.htm",
+          "url": "http://www.swisscanyon.ch/canyons/descrittivi/cugnasco-inf.htm"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

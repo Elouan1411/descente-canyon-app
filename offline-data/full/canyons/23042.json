@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:24.594145+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23042,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23042/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23042/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23042/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23042/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23042,
+    "identity": {
+      "nom": "Fuby",
+      "nomComplet": "Ravin de Fuby",
+      "prefixeNom": "Ravin de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23042/Fuby.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-de-Haute-Provence",
+      "communePrincipale": "Entrages",
+      "communes": [
+        "Entrages"
+      ],
+      "massif": "Montagne de Coupe",
+      "bassin": "Asse",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 0.3,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 811,
+      "deniveleM": 100,
+      "longueurM": 500,
+      "cascadeMaxM": 10,
+      "cordeMiniM": 15,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h00",
+      "descente": "1h00",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "De Digne ou Mézel prenez la N85 vers Barrême. Avant la Clue de Chabrières, rendez vous à la gare de St Michel de Cousson (petite route qui part à gauche, juste avant la clue et un pont). Empruntez la piste et garez vous (patte d'oie à gauche) sans gêner dès qu’elle est interdite.",
+      "accesAmont": null,
+      "approche": "Emprunter la piste forestière des Brégaires puis direction N-E vers le point IGN 811 avant une épingle à droite (accès évident sur la carte IGN)",
+      "descente": "Partie aval du ravin des Condamines et du ravin de Bédejun.",
+      "retour": "Récupérer la piste en RD vous ramenant au parking.",
+      "engagement": "Aucun",
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "Descente à faire absolument après Condamines ou bédejun, pour un retour au parking. L’intérêt est vraiment limité pour ne faire que cela ."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23042,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.032227,
+        "longitude": 6.276927,
+        "label": null
+      },
+      {
+        "canyonId": 23042,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.026012,
+        "longitude": 6.268387,
+        "label": null
+      },
+      {
+        "canyonId": 23042,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.018589,
+        "longitude": 6.26019,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.018589,
+      "longitude": 6.26019,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_680c62deb49de2a2",
+          "kind": "MAP",
+          "title": "3441 OT Barreme (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:26.279082+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23610,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23610/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23610/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23610/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23610/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/23610/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 23610,
+    "identity": {
+      "nom": "Barraonse",
+      "nomComplet": "Barranc de Barraonse",
+      "prefixeNom": "Barranc de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23610/Barraonse.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Cataluña",
+      "departement": "Lérida",
+      "communePrincipale": "La Guingueta d'Àneu",
+      "communes": [
+        "La Guingueta d'Àneu"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a2II",
+      "interet": 2.6,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1150,
+      "deniveleM": 250,
+      "longueurM": 900,
+      "cascadeMaxM": 40,
+      "cordeMiniM": 45,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "1h",
+      "descente": "2h",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23610,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.558338,
+        "longitude": 1.158419,
+        "label": null
+      },
+      {
+        "canyonId": 23610,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.555721,
+        "longitude": 1.153966,
+        "label": null
+      },
+      {
+        "canyonId": 23610,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 42.553753,
+        "longitude": 1.153097,
+        "label": "à côté d' une ferme"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 42.553753,
+      "longitude": 1.153097,
+      "label": "à côté d' une ferme"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_6cb3c2c2c65d13a9",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.barranquismo.net/paginas/barr.....anc_de_barraonse.htm",
+          "url": "http://www.barranquismo.net/paginas/barr.....anc_de_barraonse.htm"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 432,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté - 20 fév 2003",
+          "summary": "En application des décrets 56/2003 et 148/1992, la descente de canyons et l'ouverture de nouveaux canyons à l'intérieur du Parque Natural del Alt Pirineu sont soumises à autorisation de son organe de gestion, à l'exception du barranco de la Patera (ou de las Aubagues ou Estaron) qui ne nécessite pas d'autorisation.\n\nLa demande d’autorisation est à formuler au moins 15 jours à l’avance. Pour plus d’informations et faire une demande, se reporter au site officiel : http://parcsnaturals.gencat.cat/es/xarxa-de-parcs/alt-pirineu/gaudeix-del-parc/consells/regulacio-activitats/",
+          "remark": null,
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.",
+          "effectiveDate": "20 fév 2003",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/432/legislation.html",
+          "attachments": []
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,138 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:46:32.746585+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2706,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2706/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2706/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2706/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2706/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/2706/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 2706,
+    "identity": {
+      "nom": "Kozjak",
+      "nomComplet": "Kozjak, Kožjak",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2706/Kozjak-.html"
+    },
+    "location": {
+      "pays": "Slovénie",
+      "region": "Kobarid",
+      "departement": "Goriška",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Alpes Juliennes",
+      "bassin": "Soca",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "",
+      "interet": 440.0,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": 440,
+      "deniveleM": 65,
+      "longueurM": 750,
+      "cascadeMaxM": null,
+      "cordeMiniM": null,
+      "navette": null
+    },
+    "timings": {
+      "approche": null,
+      "descente": null,
+      "retour": null
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2706,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.263115,
+        "longitude": 13.597791,
+        "label": null
+      },
+      {
+        "canyonId": 2706,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.257748,
+        "longitude": 13.588285,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 46.263115,
+      "longitude": 13.597791,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_41402b7e45455e7d",
+          "kind": "TOPOGUIDE",
+          "title": "Tour de l'Europe en Canyon - T1 - Suisse, Autriche, Italie du Nord, Slovénie",
+          "authors": [
+            "Caracal et les Sancho Panza"
+          ],
+          "publicationYear": 2008,
+          "reference": "978-2-9526064-2-4",
+          "editor": null,
+          "status": "en stock\n\n- 25,90 € -\n\nCommandez cet ouvrage dès maintenant !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/130/Tour-de-l-Europe-en-Canyon---T1---Suisse--Autriche--Italie-du-Nord--Slovenie.html"
+        },
+        {
+          "id": "biblio_d20cf66336b9060d",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons Slovènes",
+          "authors": [
+            "Franck Jourdan",
+            "Jean-François Fiorina"
+          ],
+          "publicationYear": 2003,
+          "reference": "2-9520630-0-1",
+          "editor": "Association Corse Canyon",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1120/topoguide.html"
+        }
+      ],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 525,
+          "status": "Actif",
+          "action": "Interdit",
+          "title": "Arrêté municipal (Kobarid)",
+          "summary": "Canyon interdit par la municipalité pour cause de protection de l'environnement.",
+          "remark": null,
+          "details": "Consultez :\n\nPanneau d'interdiction (Kobarid)",
+          "effectiveDate": null,
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/525/legislation.html",
+          "attachments": []
+        }
+      ]
+    }
+  }
+}

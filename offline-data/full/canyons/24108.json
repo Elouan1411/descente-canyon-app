@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:59:14.123849+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24108,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24108/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24108/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24108/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24108/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24108,
+    "identity": {
+      "nom": "Pis (par l'affluent RG)",
+      "nomComplet": "Torrent du Pis (par l'affluent RG)",
+      "prefixeNom": "Torrent du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24108/Pis-par-l-affluent-RG.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Hautes-Alpes",
+      "communePrincipale": "Vars",
+      "communes": [
+        "Vars"
+      ],
+      "massif": "Queyras",
+      "bassin": "Durance",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a1III",
+      "interet": 2.0,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 2080,
+      "deniveleM": 280,
+      "longueurM": 450,
+      "cascadeMaxM": 40,
+      "cordeMiniM": 45,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "45min",
+      "descente": "2h15",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": "De Guillestre, emprunter la RN D902 en direction de Vars. La route monte et passe quelques lacets avant de tourner à gauche via la petite route menant au Val d'Escreins et la Basse Rua. Garez-vous sur le parking de la Haute Rua.",
+      "accesAmont": null,
+      "approche": "A la sortie du parking, prendre à pied la piste de gauche. Celle-ci emprunte un pont passant sur Rif Bel et rejoint un panneau indiquant l'itinéraire Ceillac et le Pic d'Escreins par un GR. Suivre un balisage mauve dans un premier temps, puis jaune et rouge. Laisser de côté, le sentier de gauche (mauve) rejoignant la Basse Rua et continuer de monter jusqu'à une nouvelle intersection. Prendre dès lors à droite, le sentier monte parfois équipé de câbles et d'échelles métalliques pour rejoindre un petit sentier indiqué d'une croix menant au départ de la descente.",
+      "descente": "La progression sur l'affluent du torrent du Pis s'effectue par quelques rappels de petites cascades parfois sculptées ainsi que de quelques désescalades glissantes avant d'arriver sur une partie finale plutôt esthétique du torrent du Pis où le plus haut rappel s’effectuera (C40).",
+      "retour": "Sortir en RG à la vue du sentier lorsque le dénivelé n'est plus. Celui-ci rejoint le GR pris à l'aller.",
+      "engagement": "Court encaissement au torrent du Pis. Échappatoire possible en RG en bas de la C40.",
+      "periode": "A faire absolument en début de saison lorsque les neiges ont fondu.",
+      "geologie": null,
+      "historique": "??\n\nQuelques mono-points posés sur l'affluent le 16 juin 2018 (maillons de chaîne sur goujons de 8 et 10mm). Le torrent du Pis est équipé de plaquettes avec anneaux en inox sur goujons de 10mm.",
+      "remarques": "- A enchaîner sur la journée avec le torrent de Vallon Claus.\n\n- Descente située dans la réserve naturelle du Val D'Escreins et le PNR du Queyras : respectez la réglementation particulière !"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24108,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.631893,
+        "longitude": 6.716384,
+        "label": null
+      },
+      {
+        "canyonId": 24108,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.631084,
+        "longitude": 6.712329,
+        "label": null
+      },
+      {
+        "canyonId": 24108,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.621525,
+        "longitude": 6.720332,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.621525,
+      "longitude": 6.720332,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_a317eb6118143790",
+          "kind": "MAP",
+          "title": "3537 ET Guillestre (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

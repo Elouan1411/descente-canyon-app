@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:54:57.225149+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22930,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22930/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22930/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22930/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22930/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22930,
+    "identity": {
+      "nom": "Omprio (inférieur)",
+      "nomComplet": "Barranco Omprio (inférieur), Barranco de la Fuente de la Salud",
+      "prefixeNom": "Barranco",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22930/Omprio-inferieur.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Aragón",
+      "departement": "Huesca",
+      "communePrincipale": "Tella-Sin",
+      "communes": [
+        "Tella-Sin"
+      ],
+      "massif": "Punta Llerga",
+      "bassin": "Cinca",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 1.5,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1065,
+      "deniveleM": 375,
+      "longueurM": 1000,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 70,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "1h00",
+      "descente": "3h30",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": "aval sur un ancien virage recoupé entre Lafortunada et le tunnel de Las Devotas, d'où l'on voit la dernière cascade qui se jette dans le Cinca.",
+      "accesAmont": "amont à Lafortunada.\n\nParking",
+      "approche": "De Badain, suivre le GR15 en direction de Saravillo et passer sous les conduites forcées de la centrale électrique.\n\nLe sentier balisé traverse le ravin une vingtaine de minutes de marche plus loin.\n\nRevenir sur ses pas d'une cinquantaine de mètres et chercher un vague sentier, vers l'Est, qui grimpe dans les bois jusqu'à la résurgence en une quinzaine de minutes.",
+      "descente": "La première partie est une suite de rappels de 10 à 15m et de petits ressauts, encombrée de blocs, dans un ravin peu encaissé. Une belle C13 retient quand même l'attention.\n\nOn recoupe le GR15. La suite est un peu mieux creusée sans beaucoup s'encaisser dans un terrain schisteux peu propice.\n\nDeux toboggans précèdent une grande rampe inclinée de 80m de longueur. Mieux vaut la descendre en rappel à l'aide d'un équipement placé au sommet d'un gros bloc en RG, ce qui justifie d'emporter 2x70m de cordes.\n\nLa rampe conduit à un petit resserrement avec trois rappels de 10, 17m et 18m. Des dalles et un plan incliné en goulet (rappel de 30m) débouchent sur une zone plus ouverte où un sentier traverse le barranco.\n\nLa dernière partie commence par une C15. Une petite dizaine de petits tobbogans, entrecoupés de belles dalles, mènent au deux derniers rappels de 11 et 15m, en balcon sur le Cinca.\n\nOmprio inférieur peut aussi faire partie de l'enchainement \"Omprio intégral\" avec un dénivelé de 1475m dont 1210m en canyon.",
+      "retour": "Il suffit de traverser le Cinca pour trouver la route et le parking en face.",
+      "engagement": "Peu encaissé, nombreuses échappatoires.",
+      "periode": "Toujours bien alimenté par une résurgence au départ. Le débit peut facilement s'estimer en observant la dernière cascade à la confluence avec le Cinca, visible depuis le parking aval. On en profitera pour vérifier aussi le débit du Cinca qu'il faudra traverser au retour.",
+      "geologie": "Calcaire feuilleté, schisteux.",
+      "historique": "Explo partielle par C. Bona (1994) et intégralement par C. Laurent, B. et P. Gimat (1998).",
+      "remarques": "Rééquipement en 2012 par l'équipe d'ouverture de la partie supérieure."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22930,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.547028,
+        "longitude": 0.211036,
+        "label": "Résurgence Fuente de la Salud"
+      },
+      {
+        "canyonId": 22930,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.549538,
+        "longitude": 0.202861,
+        "label": "Confluence Rio Cinca"
+      },
+      {
+        "canyonId": 22930,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 42.543129,
+        "longitude": 0.195147,
+        "label": "Lafortunada"
+      },
+      {
+        "canyonId": 22930,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 42.549225,
+        "longitude": 0.20108,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 42.543129,
+      "longitude": 0.195147,
+      "label": "Lafortunada"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

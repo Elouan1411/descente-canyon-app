@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:43.074734+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23681,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23681/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23681/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23681/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23681/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23681,
+    "identity": {
+      "nom": "Baumasse",
+      "nomComplet": "Ravin de la Baumasse",
+      "prefixeNom": "Ravin de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23681/Baumasse.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Hautes-Alpes",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Ecrins - Oisans - Champsaur",
+      "bassin": "Durance",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1II",
+      "interet": 0.7,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 1850,
+      "deniveleM": 300,
+      "longueurM": 400,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 25,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "40min",
+      "descente": "1h",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "De l'Argentière-la-Bessée se rendre à Pelvoux par le D994E. Dans ce village prendre à droite la D421T en direction de l'Eychauda. Environ 500m après la 4ème épingle prendre à droite la piste en direction de la Condamine. A la première bifurcation prendre la piste de gauche et aller jusqu'à son terminus (4 places).",
+      "accesAmont": null,
+      "approche": "Du parking prendre le sentier \"Condamine\". Rapidement vous tombez sur le sentier de retour ; poursuivre la montée à droite. A la prochaine bifurcation prendre à gauche (grand panneau en bois \"Condamine\" \"Par la forêt\" ). Le chemin monte alors paisiblement à flanc. A partir de là il faudra quitter le sentier au niveau de la 2ème ou 3ème épingle à droite (voir IGN) et descendre au mieux dans le vallon peu marqué (barre rocheuse de la RD visible à travers la forêt).",
+      "descente": "Descendre dans la végétation pour atteindre le verrou rocheux.\n\nUn premier rappel sur AN qui vous mène dans une partie polie par l'eau (un point RG pour un rappel de 15m) Puis un peu de marche pour arriver au \"grand cassé\" qui se négocie en deux longueurs : AN RD 15m puis relais 2 points RG pour environ 20/25m. Encore deux rappels sur AN entrecoupés de marches pour arriver sur un sentier.",
+      "retour": "Prendre au sentier à gauche, rejoindre le sentier pris pour l'approche et retrouver rapidement votre véhicule.",
+      "engagement": "Pas d'échappatoires évidentes une fois engagé dans le ravin.",
+      "periode": "A faire à la fonte des neiges ou après les pluies pour avoir de l'eau.",
+      "geologie": null,
+      "historique": "Équipé sur goujons de 8mm par Serge et Lolo le 27/07/2016",
+      "remarques": "Pour collectionneurs passant par là."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23681,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.878685,
+        "longitude": 6.499142,
+        "label": null
+      },
+      {
+        "canyonId": 23681,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.871826,
+        "longitude": 6.496274,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.871826,
+      "longitude": 6.496274,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_2893447c6d6073b6",
+          "kind": "MAP",
+          "title": "3436 ET Meije - Pelvoux - Parc des Ecrins (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

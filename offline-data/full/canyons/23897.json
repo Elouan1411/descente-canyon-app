@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:30.333404+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23897,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23897/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23897/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23897/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23897/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23897,
+    "identity": {
+      "nom": "Elias",
+      "nomComplet": "Canyon de Elias, Ribeira da Quebrada",
+      "prefixeNom": "Canyon de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23897/Elias.html"
+    },
+    "location": {
+      "pays": "Portugal",
+      "region": "Madeira",
+      "departement": "Porto Moniz Municipality",
+      "communePrincipale": "Porto Moniz",
+      "communes": [
+        "Porto Moniz"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": "Ribeira da Quebrada"
+    },
+    "rating": {
+      "cotation": "v3a1III",
+      "interet": null,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": 950,
+      "deniveleM": 500,
+      "longueurM": 1200,
+      "cascadeMaxM": 70,
+      "cordeMiniM": 30,
+      "navette": "5.0km"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "4h",
+      "retour": "1h"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": "19 rappels.",
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": "Ouvert par Filipe Ferreira, João Apolinário, Ricardo Freitas, Rui Dantas et Tiago Freitas en mai 2015.",
+      "remarques": "Sources : canyoning.camadeira.com"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23897,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 32.82346,
+        "longitude": -17.1915,
+        "label": null
+      },
+      {
+        "canyonId": 23897,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 32.824478,
+        "longitude": -17.1807,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 32.82346,
+      "longitude": -17.1915,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_95e6337c0af6de40",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyoning.camadeira.com/canyons/canyon-elias/",
+          "url": "http://canyoning.camadeira.com/canyons/canyon-elias/"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

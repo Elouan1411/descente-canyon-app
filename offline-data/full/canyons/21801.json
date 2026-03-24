@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:46.490648+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21801,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21801/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21801/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21801/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21801/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21801,
+    "identity": {
+      "nom": "Zarqa Ma'in (supérieur)",
+      "nomComplet": "Wadi Zarqa Ma'in (supérieur)",
+      "prefixeNom": "Wadi",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21801/Zarqa-Ma-in-superieur.html"
+    },
+    "location": {
+      "pays": "Jordanie",
+      "region": null,
+      "departement": "Madaba",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Moab",
+      "bassin": "Dead Sea",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a2IV",
+      "interet": 2.3,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 180,
+      "deniveleM": 165,
+      "longueurM": 2000,
+      "cascadeMaxM": 35,
+      "cordeMiniM": 40,
+      "navette": "3.0km"
+    },
+    "timings": {
+      "approche": "1h30",
+      "descente": "2h30min",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "accès RD (orograf.)3 km navette\n\naccès RG (orograf.)2,8 km",
+      "accesAmont": null,
+      "approche": "accès RD (orograf.) 1h30min\n\naccès RG (orograf.) 40min",
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21801,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 31.600615,
+        "longitude": 35.642052,
+        "label": "point non sûr, descendre au lit du ruisseau"
+      },
+      {
+        "canyonId": 21801,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 31.608292,
+        "longitude": 35.616432,
+        "label": null
+      },
+      {
+        "canyonId": 21801,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 31.624334,
+        "longitude": 35.616386,
+        "label": null
+      },
+      {
+        "canyonId": 21801,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 31.608253,
+        "longitude": 35.613792,
+        "label": "Hammamad Ma'In"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 31.624334,
+      "longitude": 35.616386,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_9ca8ed087396e408",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/Canyons/ZarqaMainCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/Canyons/ZarqaMainCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

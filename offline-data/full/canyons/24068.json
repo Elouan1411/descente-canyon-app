@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:59:04.383274+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24068,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24068/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24068/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24068/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24068/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24068,
+    "identity": {
+      "nom": "Rouret",
+      "nomComplet": "Ravin de Rouret",
+      "prefixeNom": "Ravin de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24068/Rouret.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-de-Haute-Provence",
+      "communePrincipale": "Castellane",
+      "communes": [
+        "Castellane"
+      ],
+      "massif": "Basses-Alpes",
+      "bassin": "Verdon",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1II",
+      "interet": 0.9,
+      "nbVotes": 6
+    },
+    "metrics": {
+      "altitudeDepartM": 1070,
+      "deniveleM": 230,
+      "longueurM": 1500,
+      "cascadeMaxM": 12,
+      "cordeMiniM": 15,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "35min",
+      "descente": "1h30",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "De Castellane, prendre la D4085 en direction de Digne-les-Bains jusqu'à Plan de la Palud (environ 1 km) et prendre à droite la D602 jusqu'à La Palud. Traverser le hameau pour se rendre au point à l'alt. 863 m de l'IGN.",
+      "accesAmont": null,
+      "approche": "Faire quelques mètres à pied vers le nord et emprunter une piste à gauche. Celle-ci se transforme vite en sentier en arrivant sur un enclos à pâturage pour chevaux. Traverser en prenant soin de remettre en place les fils électrifiés avant de poursuivre jusqu'à une bifurcation. De là, prendre à gauche sur le sentier restant en parallèle avec notre ravin. Marcher jusqu'à que celui-ci traverse le petit ruisseau du Ravin du Rouret.",
+      "descente": "Descendre le petit ruisseau jusqu'à une première C6 sur AN en RD, s'en suit une C12 sur 1 pt en RD, marche avec quelques désescalades sur 300 m, C6 sur AN en RG avec anneau de corde, marche avec quelques petites désescalades sur 300 m, C12 sur An avec anneau de corde en RD, C7 sur 1 pt en RG, marche avec quelques désescalades...",
+      "retour": "Il est possible de sortir en RG 400 m plus bas et rejoindre le sentier pris à l'aller (chose que nous avons faite) où poursuite par le petit ruisseau et sortir en RG un peu avant les maisons de La Palud ...",
+      "engagement": "Aucun",
+      "periode": "A faire au printemps ou après de grosses averses.",
+      "geologie": null,
+      "historique": "Équipement datant du 2 avril 2018",
+      "remarques": "Attention danger !!!... Sur la seconde C12 (avant-dernier rappel) au niveau du cassé de la cascade, des gros blocs en RG menacent de s’effondrer. Ceux-ci sont en équilibre et ne demandent qu'à partir..."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24068,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.877087,
+        "longitude": 6.47918,
+        "label": null
+      },
+      {
+        "canyonId": 24068,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.867714,
+        "longitude": 6.495209,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.867714,
+      "longitude": 6.495209,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_76b8fd482efafa05",
+          "kind": "MAP",
+          "title": "3542 OT Castellane (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

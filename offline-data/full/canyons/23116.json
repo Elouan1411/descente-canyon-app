@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:43.920316+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23116,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23116/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23116/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23116/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23116/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23116,
+    "identity": {
+      "nom": "Fallbach (zur Malta)",
+      "nomComplet": "Fallbach (zur Malta), Fallbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23116/Fallbach-zur-Malta.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Carinthie",
+      "departement": "Spittal an der Drau District",
+      "communePrincipale": "Malta",
+      "communes": [
+        "Malta"
+      ],
+      "massif": "Hohe Tauern",
+      "bassin": "Malta",
+      "coursEau": "Fallbach"
+    },
+    "rating": {
+      "cotation": "v6a5IV",
+      "interet": 2.0,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1100,
+      "deniveleM": 195,
+      "longueurM": 200,
+      "cascadeMaxM": 105,
+      "cordeMiniM": 120,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "35min",
+      "descente": "1h30",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "A8, Gmünd, Maltatal.",
+      "accesAmont": null,
+      "approche": "Par rive gauche : \"Schlüsselsteig\".\n\nAccès alternatif par la via ferrata \"Fallbach-Klettersteig\" (1h45) : voir description dans les liens (page biblio).",
+      "descente": "C25-C65-C30-C105",
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23116,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.985092,
+        "longitude": 13.471104,
+        "label": null
+      },
+      {
+        "canyonId": 23116,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.983364,
+        "longitude": 13.469773,
+        "label": null
+      },
+      {
+        "canyonId": 23116,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.982113,
+        "longitude": 13.465471,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.982113,
+      "longitude": 13.465471,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_5e456f1fa55157d6",
+          "kind": "MAP",
+          "title": "182 Spittal an der Drau (ÖK50 - BEV)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_b4c80f5ed5910d6b",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.bergsteigen.com/sites/default.....83fe002_fallbach.pdf",
+          "url": "http://www.bergsteigen.com/sites/default.....83fe002_fallbach.pdf"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

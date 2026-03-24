@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:29.259205+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23060,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23060/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23060/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23060/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23060/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23060,
+    "identity": {
+      "nom": "Régalon",
+      "nomComplet": "Gorges de Régalon",
+      "prefixeNom": "Gorges de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23060/Regalon.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Vaucluse",
+      "communePrincipale": "Mérindol",
+      "communes": [
+        "Mérindol"
+      ],
+      "massif": "Luberon",
+      "bassin": "Durance",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v1a1III",
+      "interet": 1.5,
+      "nbVotes": 9
+    },
+    "metrics": {
+      "altitudeDepartM": 180,
+      "deniveleM": 50,
+      "longueurM": 700,
+      "cascadeMaxM": 4,
+      "cordeMiniM": null,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "10min",
+      "descente": "1h30",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "D'Aix en Provence prendre la N7 sur Celony, St Cannat, Lambesc, Pont Royal, Mallemort. Quittez la N7 pour la D23e en direction de Mérindol et traversez la Durance. Au rond point, laissez de côté, la direction de Mérindol, pour plutôt emprunter la D973 sur Cheval Blanc et Cavaillon. Rouler sur 2 km et un panneau à droite vous indique les gorges de Régalon. Garez-vous sans géner sur le parking de droite .",
+      "accesAmont": null,
+      "approche": "Du parking, part une piste rejoignant les gorges .",
+      "descente": "C'est une belle balade familliale en aller retour, dans un ruisseau parfois sec et trés encaissé par endroits, où le peu d'obstacles s'escaladent et se désescaladent sans trop de difficulté .",
+      "retour": "Même chemin qu'à l'aller .",
+      "engagement": "Pas d'échappatoire et un encaissement trés prononcé sur 50 m .",
+      "periode": "Coule souvant sur les 200 derniers mètres aprés les pluies . Le niveau d'eau pouvant atteindre alors, au plus haut, de l'eau jusqu'aux jenoux .",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Balade à faire en famille dans un canyon pour le plaisir des yeux . Attention tout de même a ne pas glisser, car la roche est bien patinée par endroits ."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23060,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.765347,
+        "longitude": 5.156965,
+        "label": null
+      },
+      {
+        "canyonId": 23060,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.76033,
+        "longitude": 5.157459,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.76033,
+      "longitude": 5.157459,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_e25ee273ce98550a",
+          "kind": "MAP",
+          "title": "3142 OT Cavaillon (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

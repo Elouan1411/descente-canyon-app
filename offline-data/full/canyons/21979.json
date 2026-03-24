@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:25.317265+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21979,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21979/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21979/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21979/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21979/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21979,
+    "identity": {
+      "nom": "Garrafo",
+      "nomComplet": "Rio Garrafo",
+      "prefixeNom": "Rio",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21979/Garrafo.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Marche",
+      "departement": "Ascoli Piceno",
+      "communePrincipale": "Acquasanta Terme",
+      "communes": [
+        "Acquasanta Terme"
+      ],
+      "massif": "Monti della Laga",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.3,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 477,
+      "deniveleM": 103,
+      "longueurM": 2800,
+      "cascadeMaxM": null,
+      "cordeMiniM": 20,
+      "navette": "8.3km"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "2h- 2h30",
+      "retour": "5 ou 20min"
+    },
+    "topo": {
+      "accesAval": "Garrafo: De l’A14 Ancone-Bari, sortez pour Ascoli Piceno. Restez sur la SS4 en direction de Roma. A la fin d’Acquasanta Terme, juste avant le pont prenez la petite route à gauche en dessous d’un restaurant qui mène à Matera et Vallecchia. Garez-vous sur la petite esplanade plus bas.\n\nParking",
+      "accesAmont": "Garrafo (qui correspond au parking aval de Pito) : Revenez sur vos pas et prenez à droite la route pour Pito. 6,3 km plus loin après un hameau. Garez-vous à droite dans un virage juste à côté d’une piste.\n\nIl est possible d'enchaîner Pito et Garrafo si le niveau le permet. Reportez vous à la fiche de Pito pour les accès amont.",
+      "approche": "Descendez la piste.",
+      "descente": "Garrafo commence par une marche glissante et fastidieuse. Mais les choses changent complètement avec une première cascade formée par un bloc. Si vous avez trop de mal à la passer faîtes demi-tour. Juste après il y a d’autres obstacles techniques dont un toboggan cascade qui se passe en opposition.\n\nAprès une marche, on arrive à un nouvel encaissement que l’on peut éviter par des sentes et des cables en mauvais état. Il offre un ludique toboggan. Le reste est moins marquant et au niveau d’un chaos de bloc, on peut sortir RG définitivement. Si vous revenez dans le lit il y a encore deux encaissements dont un sous le pont du chemin de retour. Ils sont séparés par des marches usantes.",
+      "retour": "Si vous sortez au niveau des blocs vous rejoignez le GR qui passe un pont sur la Gole et rejoint par une bonne piste le village. Sinon, à la confluence avec le collecteur central un chemin remonte RG.",
+      "engagement": "Pas d’échappatoire dans l’encaissement rose pour Garrafo qui est le plus technique. Le reste est équipé de câbles.",
+      "periode": "toujours en eau. Évitez absolument la période de fonte des neiges.",
+      "geologie": null,
+      "historique": "G. Antonini, P. Grillantini, 14 janvier 1989.",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21979,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.74799,
+        "longitude": 13.412204,
+        "label": "confluence Pito/Garrafo - fin du Pito"
+      },
+      {
+        "canyonId": 21979,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.759106,
+        "longitude": 13.407633,
+        "label": null
+      },
+      {
+        "canyonId": 21979,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 42.751171,
+        "longitude": 13.411539,
+        "label": "même parking pour Pito aval"
+      },
+      {
+        "canyonId": 21979,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 42.767811,
+        "longitude": 13.406925,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 42.751171,
+      "longitude": 13.411539,
+      "label": "même parking pour Pito aval"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_30751fb996155c79",
+          "kind": "MAP",
+          "title": "Laga (CAI)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

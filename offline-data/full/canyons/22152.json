@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:01.858673+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22152,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22152/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22152/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22152/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22152/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22152,
+    "identity": {
+      "nom": "Malanotte",
+      "nomComplet": "Rio Malanotte, Gava",
+      "prefixeNom": "Rio",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22152/Malanotte.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Ligurie",
+      "departement": "Genova",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Mont Beigua",
+      "bassin": "Cerusa",
+      "coursEau": "Gava"
+    },
+    "rating": {
+      "cotation": "v2a2II",
+      "interet": 2.3,
+      "nbVotes": 8
+    },
+    "metrics": {
+      "altitudeDepartM": 650,
+      "deniveleM": 320,
+      "longueurM": 2100,
+      "cascadeMaxM": 18,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "40min",
+      "descente": "3h00",
+      "retour": "25min"
+    },
+    "topo": {
+      "accesAval": "Quitter l'autoroute A10 à Genova Voltri.\n\nPrendre à droite la SS1 Aurelia en direction de Savona, traverser Voltri et avant le pont sur le Cerusa, tourner à droite vers Fabbriche.\n\nMonter cette vallée sur 4,7 km.\n\nAprès Fabbriche et un viaduc de l'autoroute virer à gauche pour Sambuco, traverser le Cerusa et monter à droite (lacets) jusqu'au hameau de Sambuco.\n\nParking sur la place de l'église.",
+      "accesAmont": null,
+      "approche": "Suivre la balise vers \"Passo della Gava\".\n\nAprès une rampe goudronnée et les dernières maisons du village, passer un petit portail, suivre un chemin horizontal et à la première bifurcation monter à droite dans la pinède. Au niveau d'un effondrement (tuyau de captage) prendre le sentier (moins marqué au début) qui monte droit dans la pente. Une fois hors de la pinède, on rejoint un petit col, d'où l'on aperçoit le rio. Continuer à monter quelques mètres, puis traverser à flanc et rejoindre après un petite descente le lit du torrent.\n\nTraverser, puis une centaine de mètres en rive droite pour arriver à la 1ère cascade.",
+      "descente": "Parcours assez glissant et qui manque un peu de \"consistance\".\n\nNéanmoins, quelques passages beaux et/ou intéressants avec de belles et profondes vasques.\n\nC8, C9, C18 (rive gauche hors d'eau) , C10, premier captage.\n\nT8, C9, C9, C12 avec MC, C9, deuxième captage rive gauche qui ramène probablement au village...\n\nT4, C13, C11.",
+      "retour": "La fin est un peu pénible.\n\nContinuer jusqu'à un pont, sortir et remonter au village par un chemin muletier.",
+      "engagement": "Faible",
+      "periode": "Printemps et automne, l'eau coule aussi en juin et juillet.",
+      "geologie": null,
+      "historique": "11/02/2007 – S. Gabellani, G. Pizzorni, R. Schenone, E. Trasforini",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22152,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.448254,
+        "longitude": 8.685164,
+        "label": null
+      },
+      {
+        "canyonId": 22152,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.44809,
+        "longitude": 8.696923,
+        "label": null
+      },
+      {
+        "canyonId": 22152,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 44.450939,
+        "longitude": 8.695593,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.450939,
+      "longitude": 8.695593,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_bc57889a262fd788",
+          "kind": "MAP",
+          "title": "Il Parco Naturale Regionale del Beigua (Studio Cartografico Italiano Genova)",
+          "scale": "1/30000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_2712ab5f7eecb445",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.cicarudeclan.com/ita/a5_malanottegava.htm",
+          "url": "http://www.cicarudeclan.com/ita/a5_malanottegava.htm"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

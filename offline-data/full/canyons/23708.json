@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:48.522780+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23708,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23708/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23708/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23708/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23708/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23708,
+    "identity": {
+      "nom": "Colombier",
+      "nomComplet": "Torrent du Colombier",
+      "prefixeNom": "Torrent du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23708/Colombier.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Hautes-Alpes",
+      "communePrincipale": "La Motte-en-Champsaur",
+      "communes": [
+        "La Motte-en-Champsaur"
+      ],
+      "massif": "Ecrins - Oisans - Champsaur",
+      "bassin": "Drac",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a5III",
+      "interet": 2.7,
+      "nbVotes": 7
+    },
+    "metrics": {
+      "altitudeDepartM": 1800,
+      "deniveleM": 400,
+      "longueurM": 1700,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "2h00",
+      "descente": "3h00 à 4h0",
+      "retour": "35min"
+    },
+    "topo": {
+      "accesAval": "De Gap, prendre la N85 (route Napoléon) menant à Grenoble . Traverser les petits villages de Laye, Brutinel, puis au rond-point sur Les Baraques, emprunter la D945 jusqu'à Saint-Bonnet-en-Champsaur. Suivre la D23, sur La Motte-en-Champsaur, puis Molines-en-Champsaur. Dans le petit hameau des Molines, prendre à droite pour se rendre au parking (la piste qui suit est interdite à la circulation).",
+      "accesAmont": null,
+      "approche": "Suivre la piste à pied pendant 35min (à vélo 25min) jusqu'au panneau indiquant le sentier du Jas de Jartier 1h30. Emprunter le sentier montant en lacets et tourner à droite à la jonction d'un autre sentier, toujours en direction du Jas de Jartier. Sur la portion un peu plus horizontale, au \"Sellon\", laisser le sentier descendant à droite vers le torrent, pour suivre plutôt celui qui monte à gauche. Passer deux clôtures électrifiées et sortir du couvert de la forêt. Après, une courte montée en lacets, l'on peut observer les premières cascades du départ de la descente, ceci bien avant la cabane du Jas de Jartier (alt 1800m). Dès lors, quitter le sentier, traverser horizontalement la pente herbeuse, un petit ravin terreux délicat à passer et vous rendre au départ de la descente .",
+      "descente": "Descente d'une vingtaine de rappels équipés sur mono-points. La partie supérieure de la descente est constituée de petits toboggans ludiques et de jolies cascades sculptées dans un schiste vert rainuré n'excédant pas les 20m de hauteur. Cette partie demeure assez ouverte et la roche assez bien adhérente sur les zones de marche.\n\nAu sentier (échappatoire possible en RD), la partie inférieure est beaucoup plus marqué par l'encaissement. les cascades sont plus esthétiques et les vasques d'une jolie couleur, plus profondes. Une roche schisteuse plus glissante et les cascades n’excédant pas une hauteur de 15m. Sortir en vue de la piste.",
+      "retour": "Suivre la piste empruntée à l'aller. (A vélo, retour en 10min).",
+      "engagement": "Partie sup. plus ou moins encaissée. Échappatoire possible par un sentier en RD, après l'affluent du torrent de la Selle. La partie inf. reste la plus engagée par son encaissement, mais avec quelques possibilités de se mettre à l'abri .",
+      "periode": "La période d'août à octobre semble la plus optimale.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Équipement minimaliste sur mono-points, plaquettes avec anneaux et goujons de 10mm inox pour la majorité des rappels. Toutes les cascades ne sont pas équipées (trousse à spits conseillée) ."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23708,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.735809,
+        "longitude": 6.167,
+        "label": null
+      },
+      {
+        "canyonId": 23708,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.725594,
+        "longitude": 6.155488,
+        "label": null
+      },
+      {
+        "canyonId": 23708,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.746723,
+        "longitude": 6.122626,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.746723,
+      "longitude": 6.122626,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_b0e951331c704682",
+          "kind": "MAP",
+          "title": "3437 OT Champsaur - Parc des Ecrins (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:51.481036+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23143,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23143/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23143/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23143/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23143/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23143,
+    "identity": {
+      "nom": "Latterbach",
+      "nomComplet": "Latterbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23143/Latterbach.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Erlenbach im Simmental",
+      "departement": "Bern/Berne",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Alpes Bernoises",
+      "bassin": "Simme",
+      "coursEau": "Latterbach"
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.0,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1030,
+      "deniveleM": 130,
+      "longueurM": 230,
+      "cascadeMaxM": 32,
+      "cordeMiniM": 35,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "1h30",
+      "retour": "3min"
+    },
+    "topo": {
+      "accesAval": "Dans Latterbach monter vers les alpages de Allmede puis Stuel.",
+      "accesAmont": null,
+      "approche": null,
+      "descente": "Enchainement de cascades en sous-bois. En face sud, donc le soleil durant toute la descente. L'avant dernière cascade est dangereuse à cause de troncs coincés.",
+      "retour": "Prendre le sentier rive droite pour redescendre à la voiture.",
+      "engagement": "Peu d'échappatoires évidentes",
+      "periode": null,
+      "geologie": null,
+      "historique": "13.05.2012 Timo Stammwiz, Olivier Courtois et Gérald Drieux.",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23143,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.672791,
+        "longitude": 7.57066,
+        "label": null
+      },
+      {
+        "canyonId": 23143,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.669491,
+        "longitude": 7.57067,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.669491,
+      "longitude": 7.57067,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_43af3771977dc8eb",
+          "kind": "MAP",
+          "title": "1227 Niesen (Carte Nationale Suisse)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_7ed7135b6757cead",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.aventurecanyon.com/topo-latterbach.html",
+          "url": "http://www.aventurecanyon.com/topo-latterbach.html"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

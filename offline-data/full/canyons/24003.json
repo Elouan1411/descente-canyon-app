@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:50.687623+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24003,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24003/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24003/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24003/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24003/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24003,
+    "identity": {
+      "nom": "Dard",
+      "nomComplet": "Ruisseau du Dard",
+      "prefixeNom": "Ruisseau du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24003/Dard.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Haute-Savoie",
+      "communePrincipale": "Cordon",
+      "communes": [
+        "Cordon"
+      ],
+      "massif": "Bornes - Aravis",
+      "bassin": "Arve",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a1II",
+      "interet": 1.8,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1520,
+      "deniveleM": 320,
+      "longueurM": 1000,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 40,
+      "navette": "2.0km"
+    },
+    "timings": {
+      "approche": "40min",
+      "descente": "3h",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "De Sallanches ou de Combloux prendre la route vers Cordon, suivre vers les Pontets et se garer au grand lacet vers 1250 m. Monter ou rouler avec la deuxième voiture au parking les Plaines.",
+      "accesAmont": null,
+      "approche": "Prendre la première piste du parking qui monte vers le Torrent du Dard, à la fin traverser sans chemin au lit du torrent.",
+      "descente": "Descente souvent en terrain ouvert (cascades larges, parties de marche) avec un joli encaissement au milieu.",
+      "retour": "Au niveau 1200 m sortir du ruisseau et prendre la piste qui remonte à la route forestière / parking aval.",
+      "engagement": "Descente facile assez isolée dans des grandes forêts.",
+      "periode": "Dernière phase de fonte ou après pluie sympa, en periode sèche peu d'eau.",
+      "geologie": "Schiste noir pas très dur.",
+      "historique": "26.05.2017 Timo Stammwitz",
+      "remarques": "Prévoir des ancrages longs s'il faut remplacer les relais."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24003,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.900082,
+        "longitude": 6.569056,
+        "label": null
+      },
+      {
+        "canyonId": 24003,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.903641,
+        "longitude": 6.582806,
+        "label": null
+      },
+      {
+        "canyonId": 24003,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 45.895279,
+        "longitude": 6.581861,
+        "label": null
+      },
+      {
+        "canyonId": 24003,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 45.903473,
+        "longitude": 6.580667,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 45.895279,
+      "longitude": 6.581861,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_bf97d8efb10efc46",
+          "kind": "MAP",
+          "title": "3531 OT Megève - Col des Aravis (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:03.368981+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23776,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23776/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23776/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23776/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23776/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23776,
+    "identity": {
+      "nom": "Helltal",
+      "nomComplet": "Helltal, Peterberg",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23776/Helltal.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Tyrol",
+      "departement": "Politischer Bezirk Reutte",
+      "communePrincipale": "Hinterhornbach",
+      "communes": [
+        "Hinterhornbach"
+      ],
+      "massif": "Allgäuer Alpen",
+      "bassin": "Lech",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": null,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": 1640,
+      "deniveleM": 280,
+      "longueurM": 800,
+      "cascadeMaxM": 70,
+      "cordeMiniM": 75,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "3h",
+      "descente": "5h",
+      "retour": "1h20min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": "Première descente réaliaée le 05.10.1993 par Jean-Philippe Cavalier, Cathy Caullier et Olivier Courtois.",
+      "remarques": "L'accès à la partie amont est dangereux"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23776,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.33691,
+        "longitude": 10.37517,
+        "label": null
+      },
+      {
+        "canyonId": 23776,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.332779,
+        "longitude": 10.37751,
+        "label": null
+      },
+      {
+        "canyonId": 23776,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.357819,
+        "longitude": 10.449457,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.357819,
+      "longitude": 10.449457,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_975c78953190e02c",
+          "kind": "MAP",
+          "title": "2/2 Allgäuer-Lechtaler Alpen Ost (Alpenvereins (AV) Karte)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_7002f6dd602b83ec",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.aventurecanyon.com/petersberg-description.html",
+          "url": "http://www.aventurecanyon.com/petersberg-description.html"
+        },
+        {
+          "id": "resource_786a992581eedb5e",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/Canyons/HelltalCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/Canyons/HelltalCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

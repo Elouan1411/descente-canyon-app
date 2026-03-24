@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:37.979636+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22600,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22600/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22600/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22600/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22600/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22600,
+    "identity": {
+      "nom": "Clai",
+      "nomComplet": "Riou de Clai, Vallon de Clai",
+      "prefixeNom": "Riou de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22600/Clai.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-Maritimes",
+      "communePrincipale": "Saint-Étienne-de-Tinée",
+      "communes": [
+        "Saint-Étienne-de-Tinée"
+      ],
+      "massif": null,
+      "bassin": "Tinée",
+      "coursEau": "Riou de Clai"
+    },
+    "rating": {
+      "cotation": "v4a4IV",
+      "interet": 1.8,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 1500,
+      "deniveleM": 240,
+      "longueurM": 600,
+      "cascadeMaxM": 26,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "45min",
+      "descente": "2h",
+      "retour": "3min"
+    },
+    "topo": {
+      "accesAval": "Se rendre à St Etienne de Tinée, continuer vers St Dalmas sur 1,8Km. Se garer à coté d' un hangar en planches au bord de la Tinée (balise 117).",
+      "accesAmont": null,
+      "approche": "A pied on monte 100m par une route puis le GR en lacets jusqu'à un jardin clôturé avec un beau portail. A droite, un chemin part dans des prés puis passe au bas d' une ravine pour rejoindre le vallon.",
+      "descente": "Des petites cascades encaissées dans un vallon souvent en gros débit.",
+      "retour": "Au captage sortir sur la route.",
+      "engagement": "Aucune échappatoire avant le bas du canyon.\n\nToutes les cascades sont équipées pour pouvoir descendre dans l' actif.",
+      "periode": "Toujours en bon ou gros débit il vaut mieux attendre l' étiage.",
+      "geologie": null,
+      "historique": "Pas mal d' équipement ancien dans le resserrement.\n\nNous avons rajouté des points pour tout passer dans l'actif",
+      "remarques": "La course peut démarrer beaucoup plus haut mais la partie haute est comblée de troncs et branches d' avalanches. La descente en est limite infernale. Attendre......"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22600,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.278728,
+        "longitude": 6.918715,
+        "label": null
+      },
+      {
+        "canyonId": 22600,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.274837,
+        "longitude": 6.915566,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 44.278728,
+      "longitude": 6.918715,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

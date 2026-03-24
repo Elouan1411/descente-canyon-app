@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:23.627111+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23039,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23039/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23039/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23039/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23039/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23039,
+    "identity": {
+      "nom": "Pez Grisch",
+      "nomComplet": "Ual ault Pez Grisch",
+      "prefixeNom": "Ual ault",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23039/Pez-Grisch.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Flims",
+      "departement": "Graubünden/Grigioni/Grischun",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Piz Segnas",
+      "bassin": "Vorderrhein",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a1I",
+      "interet": 2.4,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 2300,
+      "deniveleM": 200,
+      "longueurM": 500,
+      "cascadeMaxM": 12,
+      "cordeMiniM": 15,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "40min",
+      "descente": "2h",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": "Se garer à Flims dans un des nombreux parkings payant. Prendre la navette de bus pour Nagens.",
+      "accesAmont": null,
+      "approche": "Du terminus à Nagens, prendre une piste plein ouest qui monte légèrement. Au croisement prendre à droite et rester sur la piste principale (ne pas suivre l'accès Vorab). Une fois passé sous la remontée mécanique, s'engager dans le ruisseau. Ca sert à rien de chercher une vallée il n'y en a pas, on est au milieu des champs.\n\n(Il me semble que ça peut commencer plus haut, mais il vaut mieux demander à Timo, le local).",
+      "descente": "Méandre miniature très étroit et très peu profond. Le \"canyon\" dépasse rarement 3/4 mètres de profondeur mais il est tellement étroit qu'il arrive à disparaître sous l'herbe. C'est un peu de la spéléo à ciel ouvert. A éviter aux bien portant et il est même conseillé de sortir des encaissements pour poser le sac plus bas avant de remonter franchir les étroitures.\n\nLe ruisseau fini par disparaître dans une perte qui a semble t'il été visité par les spéléos. En prévoyant de la corde et des plaquettes, il est certainement possible d'aller voir plus loin en aller retour, mais sans matos ni connaissance spéléo, ne pas s'engager dans la perte!!!",
+      "retour": "De la perte, remonter dans les champs jusqu'à retrouver une piste (accès vorab) la prendre et rentrer à Nagens reprendre le bus (ou descendre à pied, à vélo ou autre moyen de locomotion).",
+      "engagement": "Très limité, il est possible de remonter \"à la surface\" presque tout le temps.",
+      "periode": "A éviter à la fonte des neiges, après une pluie, le débit devient vite résiduel. Vu la configuration, il est sur que ça ne supporterait pas un gros débit!!",
+      "geologie": "Tous types de calcaires.",
+      "historique": "25.06.2011, 03.07.2011, 04.10.2011 Timo Stammwitz",
+      "remarques": "Peut être plus adapté à la morphologie des gamins que des adultes!! il est peut être plus intelligent de prendre une surcombi spéléo et des genouillères!!"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23039,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.867996,
+        "longitude": 9.205813,
+        "label": null
+      },
+      {
+        "canyonId": 23039,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.858082,
+        "longitude": 9.209032,
+        "label": null
+      },
+      {
+        "canyonId": 23039,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.82156,
+        "longitude": 9.265423,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.82156,
+      "longitude": 9.265423,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_9179b25820804ecc",
+          "kind": "MAP",
+          "title": "247 Sardona (Carte Nationale Suisse)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

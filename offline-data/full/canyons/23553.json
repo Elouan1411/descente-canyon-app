@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:13.467648+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23553,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23553/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23553/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23553/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23553/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/23553/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 23553,
+    "identity": {
+      "nom": "Serpente",
+      "nomComplet": "Cascate del Serpente, Torrente Masone",
+      "prefixeNom": "Cascate del",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23553/Serpente.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Ligurie",
+      "departement": "Genova",
+      "communePrincipale": "Masone",
+      "communes": [
+        "Masone"
+      ],
+      "massif": "Mont Beigua",
+      "bassin": "Stura",
+      "coursEau": "Torrente Masone"
+    },
+    "rating": {
+      "cotation": "v2a2I",
+      "interet": 2.1,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 450,
+      "deniveleM": 40,
+      "longueurM": 200,
+      "cascadeMaxM": 12,
+      "cordeMiniM": 15,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "10min",
+      "descente": "45min",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "Autoroute A26 Genova-Alessandria, sortir à Masone (première sortie après Gênes en montant). Prendre à droite au rond point et faire environ 300 m et au niveau du panneau \"MASONE\" tourner à droite. A la sortie du pont prendre la 1° à gauche (via Volpara) puis au bout à droite (panneau cascate del serpente). La petite route passe sous l'autoroute et en qq minutes rejoindre une épingle à gauche ou l'on se gare (panneau).",
+      "accesAmont": null,
+      "approche": "Prendre le sentier qui monte et rejoint très vite la route. Qq mètres pour le belvédère. Descendre au belvédère de gauche (amont) et prendre un sentier mal marqué d'abord horizontal puis en descente.",
+      "descente": "4 obstacles séparés par de belles vasques. C12, C3, C12 et C12.\n\nTout le monde y trouvera son compte: les plus téméraires pourront réaliser ce parcours sans corde (saut de 10m obligatoire), les débutants pourront utiliser les excellents amarrages pour faire leur premiers rappels...",
+      "retour": "De la dernière vasque sortir à droite et monter à vue par un vague cheminement puis un petit sentier, la voiture est toute proche.",
+      "engagement": "Aucun, on peut sortir partout (chaine à la 2° vasque).",
+      "periode": null,
+      "geologie": "Gneiss",
+      "historique": null,
+      "remarques": "Le canyon est interdit du 1° mars au 15 juin."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23553,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.498192,
+        "longitude": 8.703574,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.498192,
+      "longitude": 8.703574,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 316,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté",
+          "summary": "La pratique du canyonisme est interdit du 1er mars au 15 juin, en raison de la protection de la nidification de certaines espèces.",
+          "remark": null,
+          "details": "Consultez :\n\nPanneau d'information",
+          "effectiveDate": null,
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/316/legislation.html",
+          "attachments": []
+        }
+      ]
+    }
+  }
+}

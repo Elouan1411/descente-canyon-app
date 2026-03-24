@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:17.076804+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22227,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22227/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22227/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22227/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22227/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22227,
+    "identity": {
+      "nom": "Berberust",
+      "nomComplet": "Barrancou de Berberust",
+      "prefixeNom": "Barrancou de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22227/Berberust.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Hautes-Pyrénées",
+      "communePrincipale": "Ger",
+      "communes": [
+        "Ger"
+      ],
+      "massif": "Bigorre",
+      "bassin": "Gave de Pau",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a1I",
+      "interet": 0.5,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 480,
+      "deniveleM": 80,
+      "longueurM": 250,
+      "cascadeMaxM": 10,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "10min",
+      "descente": "30min",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "De Lourdes prendre après le Pic du Ger la direction de Lugagnan et après ce village vous arrivez à Ger. De là, prendre une petite route jusqu'à la ferme \"Trêmé\" où vous vous garez sans gêner.",
+      "accesAmont": null,
+      "approche": "Suivre le chemin qui monte à droite de la ferme.",
+      "descente": "2 cascades sur AN dont une qui peut se passer en désescalade et la deuxième de 10m.",
+      "retour": "Arrivé à la route, la suivre par la gauche pour retourner à la ferme et à la voiture.",
+      "engagement": "Aucun, tellement c'est court.",
+      "periode": "Très peu d'eau.",
+      "geologie": "Dernière cascade en tuf.",
+      "historique": null,
+      "remarques": "C'est une bouse, une vraie !\n\nPetit spot d'escalade au pied de la dernière cascade."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22227,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.049461,
+        "longitude": -0.037905,
+        "label": null
+      },
+      {
+        "canyonId": 22227,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.050262,
+        "longitude": -0.038527,
+        "label": null
+      },
+      {
+        "canyonId": 22227,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.051296,
+        "longitude": -0.039305,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.051296,
+      "longitude": -0.039305,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_e78b5c28099e408b",
+          "kind": "MAP",
+          "title": "1647 ET Lourdes (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

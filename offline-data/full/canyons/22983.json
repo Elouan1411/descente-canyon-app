@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:09.140876+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22983,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22983/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22983/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22983/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22983/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22983,
+    "identity": {
+      "nom": "Vorderberger Klamm",
+      "nomComplet": "Vorderberger Klamm, Vorderbergklamm, Vorderberger Wildbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22983/Vorderberger-Klamm.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Carinthie",
+      "departement": "Hermagor",
+      "communePrincipale": "Sankt Stefan im Gailtal",
+      "communes": [
+        "St. Stefan im Gailtal",
+        "Sankt Stefan im Gailtal"
+      ],
+      "massif": "Alpes Carniques - Carniche - Karnischen",
+      "bassin": "Gail",
+      "coursEau": "Vorderberger Wildbach"
+    },
+    "rating": {
+      "cotation": "v4a5IV",
+      "interet": 2.9,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 740,
+      "deniveleM": 140,
+      "longueurM": 1600,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 25,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "40min",
+      "descente": "2h30min",
+      "retour": "7min"
+    },
+    "topo": {
+      "accesAval": "De l'autoroute du Sud A2 (Salzbourg - Villach) à la sortie 364, suivre vers l'ouest la B111 en direction de Hermagor (vallée de la Gail) pendant environ 7 km. Quittez la B111 pour prendre la L27A en direction du sud vers Feistritz an der Gail pendant environ 1,2 km. Dans le village, prendre à droite la L27 sur le ruisseau Feistritz et sur la route \"Vorderberger Landstraße\" vers l'ouest jusqu'à Vorderberg (7,4 km de ruisseau Feistritz). Maintenant au choix, dirigez-vous vers le sud par la rive gauche ou la rive droite du ruisseau en direction de l'église Maria Graben. Garez la voiture sans gêner, près du pont qui enjambe le ruisseau.",
+      "accesAmont": null,
+      "approche": "Depuis le pont, suivre la route qui descend sur 270 m en direction du NNO (RD). A l'embranchement, prenez à droite la route qui monte. Au prochain embranchement, 800 m après, prendre encore à droite par la piste forestière qui remonter le ruisseau pendant 350 m puis encore à droite pendant 900 m, avant de prendre une sente raide qui descend vers le lit du ruisseau.\n\nDescente en rappel envisageable dans les pentes raides d'accès.",
+      "descente": "Succession de rappels dans l'actif. Arbres dans le lit.",
+      "retour": "A la fin de la gorge, suivre le chemin à gauche qui conduit à l'église et à la voiture.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22983,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.585201,
+        "longitude": 13.510491,
+        "label": null
+      },
+      {
+        "canyonId": 22983,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.586826,
+        "longitude": 13.518934,
+        "label": null
+      },
+      {
+        "canyonId": 22983,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.587875,
+        "longitude": 13.519406,
+        "label": null
+      },
+      {
+        "canyonId": 22983,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 46.584587,
+        "longitude": 13.519535,
+        "label": "bifurcation: prendre le chemin de forêt raide à droite"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.587875,
+      "longitude": 13.519406,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_dfcf3e8720c80bf2",
+          "kind": "MAP",
+          "title": "199 Hermagor (ÖK 25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_d941b53bc2ba837f",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/C.....orderbergklammCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/C.....orderbergklammCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

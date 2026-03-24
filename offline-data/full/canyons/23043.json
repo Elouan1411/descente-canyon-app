@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:24.563317+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23043,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23043/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23043/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23043/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23043/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23043,
+    "identity": {
+      "nom": "Reichenbachklamm",
+      "nomComplet": "Reichenbachklamm, Reichenbachfälle, Reichenbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23043/Reichenbachklamm.html"
+    },
+    "location": {
+      "pays": "Allemagne",
+      "region": "Bayern",
+      "departement": "Schwaben",
+      "communePrincipale": "Pfronten",
+      "communes": [
+        "Landkreis Ostallgäu",
+        "Pfronten"
+      ],
+      "massif": "Tannheimer",
+      "bassin": "Vils",
+      "coursEau": "Reichenbach"
+    },
+    "rating": {
+      "cotation": "v4a4III",
+      "interet": 1.8,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1010,
+      "deniveleM": 70,
+      "longueurM": 300,
+      "cascadeMaxM": 35,
+      "cordeMiniM": 40,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h",
+      "descente": "1h30min",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "Depuis l'Allemagne, à Kempten/Allgäu, prendre l'autoroute A7 en direction de Füssen-Reutte-Fernpass. Passer Füssen en direction de l'Autriche et un tunnel (frontière Allemagne/Autriche). En Autriche, prenez la première sortie après le tunnel en direction de Vils (vers l'ouest). Passer Vils (L 69) et continuer 3 km jusqu'à hameau Schönbichl. Après Schönbichl garez-vous sur un parking à droite.",
+      "accesAmont": null,
+      "approche": "Continuez la route à pied (500 m), traversez la frontière (vous vous trouvez alors en Allamagne) et quittez la route après le prochain hameau (\"Altes Zollhaus\" - vieille maison de douane) sur votre gauche. Suivre cette piste pendant 950 m jusqu'à un un virage à droite (près d'une grange sous un arbre à votre droite). Quelques mètres plus loin prendre le chemin sur votre gauche en direction de l'Aggenstein qui remonte le ruisseau Reichenbach. Quittez le chemin lorsqu'il se met à grimper fort en quittant le bord du ruisseau, et rejoignez l'entrée du canyon au mieux.",
+      "descente": "Après une courte marche dans le lit du ruisseau, on trouve le premier rappel (5 m). Un peu plus tard la cascade de 35 m. Les petites désescalades suivantes peuvent être désagréables à fort débit. Quelques petits rappels et la courte gorge termine déjà. La dernière partie peut passer sur une via ferrata.",
+      "retour": "Sortie et retour au parking par le chemin d'approche.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "Parking en Autriche, majorité de la marche d'approche en Allemagne et descente sur la frontière Allemagne (RG) et Autriche (RD)"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23043,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.552055,
+        "longitude": 10.580134,
+        "label": null
+      },
+      {
+        "canyonId": 23043,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.55394,
+        "longitude": 10.579662,
+        "label": null
+      },
+      {
+        "canyonId": 23043,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.559208,
+        "longitude": 10.593755,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.559208,
+      "longitude": 10.593755,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_6355ae1f4f0e8930",
+          "kind": "MAP",
+          "title": "TK 8429 Pfronten (Bayerisches Vermessungsamt)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

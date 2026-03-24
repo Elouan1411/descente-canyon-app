@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:26.773082+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21988,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21988/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21988/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21988/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21988/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21988,
+    "identity": {
+      "nom": "Entraix",
+      "nomComplet": "Cascade d' Entraix",
+      "prefixeNom": "Cascade d'",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21988/Entraix.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-de-Haute-Provence",
+      "communePrincipale": "Valavoire",
+      "communes": [
+        "Valavoire"
+      ],
+      "massif": "Massif des Monges",
+      "bassin": "Sasse",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a3IV",
+      "interet": 1.9,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 1050,
+      "deniveleM": 100,
+      "longueurM": 50,
+      "cascadeMaxM": 85,
+      "cordeMiniM": 90,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "40min",
+      "retour": "1h00"
+    },
+    "topo": {
+      "accesAval": "De Sisteron prenez la direction de la Motte-du-Caire. A un carrefour peu visible prenez la direction de Clamesane et Bayons. A une autre intersection encore plus discrète prenez la direction de Valavoire (D104). Avant Valavoire dans un virage en épingle ou 400m plus haut au niveau du panneau du village prenez une piste ouverte à partir du 15 mars (Si vous êtes passés par Authon ce message n’est pas visible CQFD). Garez vous au niveau du gué sans gêner.",
+      "accesAmont": null,
+      "approche": "Suivre le cours d'eau jusqu'à la cascade.",
+      "descente": "C85 ...Laissez les cordes en fixe et récupérez les au retour.",
+      "retour": "Remonter au mieux l'éboulis en RG pour passer la crête de la colline et redescendre sur le cours d'eau.\"N'oubliez pas vos cordes\".",
+      "engagement": "Pas d'échappatoire jusqu'en bas .Équipement bon",
+      "periode": "Débit visible depuis la piste .",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Rester discret.Les habitants du coin aiment le calme."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21988,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.270908,
+        "longitude": 6.070869,
+        "label": null
+      },
+      {
+        "canyonId": 21988,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.27108,
+        "longitude": 6.070054,
+        "label": null
+      },
+      {
+        "canyonId": 21988,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.270035,
+        "longitude": 6.077027,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.270035,
+      "longitude": 6.077027,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_ec844e72d95ece0e",
+          "kind": "MAP",
+          "title": "3339 ET La Motte-Du-Caire (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

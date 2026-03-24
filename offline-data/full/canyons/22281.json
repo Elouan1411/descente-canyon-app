@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:29.127848+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22281,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22281/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22281/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22281/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22281/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22281,
+    "identity": {
+      "nom": "Vautes",
+      "nomComplet": "Ravin des Vautes",
+      "prefixeNom": "Ravin des",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22281/Vautes.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-de-Haute-Provence",
+      "communePrincipale": "Entrepierres",
+      "communes": [
+        "Entrepierres"
+      ],
+      "massif": null,
+      "bassin": "Vançon",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a2IV",
+      "interet": 1.7,
+      "nbVotes": 5
+    },
+    "metrics": {
+      "altitudeDepartM": 1100,
+      "deniveleM": 280,
+      "longueurM": 850,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 40,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "2h00",
+      "descente": "3h00",
+      "retour": "1h00"
+    },
+    "topo": {
+      "accesAval": "A51, sortie Sisteron sud, après le péage, au rond-point prendre la première à droite (D4).Faire 900 m, puis tourner à gauche en direction de Valhosc et le pont de la Reine Jeanne (D217). Au pont de la Reine Jeanne, garez-vous sans gêner.",
+      "accesAmont": null,
+      "approche": "Traverser le pont et emprunter la piste menant à St Symphorien (tracé jaune). A St Symphorien, laisser la piste de gauche pour prendre celle de droite menant aux Vautes. De là,le plus simple est de rester sur la piste jusqu'à traverser un gué et monter au réservoir. Au dessus du réservoir part un PR,10 m avant une clôture électrique traversant la piste. Ce PR monte en lacets de façon assez raide. Après 20 à 25 mn de grimpette, la montée s'adoucit. Attention ! ne monter pas trop haut car le départ s'effectue à la base de la falaise du pouding. Donc,quitter le PR par la droite, pour vous rendre au mieux au fond du vallon (pierrier de galets).",
+      "descente": "Descente avec une quinzaine de rappels, sur un secteur où les roches sont très instables (pouding).\n\nDans un premier temps, l'on dévale un éboulis de galets et l'on tombe sur une première cascade de faible hauteur ne ressemblant pas à grand chose. La suite devient un peu plus intéressante, en arrivant sur une C25. Quelques cascades s'espacent et une cascade s'enchaine avec une autre (pour le rappel de corde, 2x40 utile). Quelques zones plus ou moins encaissées font suite... Puis le petit ruisseau s'encaisse avec quelques passages sous blocs et des cascades de plus en plus esthétiques. La fin du parcours se clôture par une jolie C25 et une ou deux désescalades.",
+      "retour": "Suivre le ruisseau jusqu'à passer une clôture électrique et sortir en RD 10 m après lorsque la berge devient plus dégagée. Rejoindre la piste montant au réservoir et la suivre jusqu'au pont de la Reine Jeanne .",
+      "engagement": "Ce ravin reste assez encaissé, surtout sur sa partie aval et les échappatoires ne sont pas évidentes du fait d'une roche très instable.",
+      "periode": "A faire après les pluies pour y trouver un débit correct.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Les chutes de pierres sont fréquentes et 98% des cascades se passent sur AN (le port du casque est vivement conseillé). La marche d'approche peut sembler longue mais elle reste plutôt agréable. Attention ! l'approche traverse une réserve de chasse, soyez prudent...\n\nÉquipement : terrain d'aventure"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22281,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.172031,
+        "longitude": 6.082006,
+        "label": null
+      },
+      {
+        "canyonId": 22281,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.175232,
+        "longitude": 6.073165,
+        "label": null
+      },
+      {
+        "canyonId": 22281,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.187004,
+        "longitude": 6.043768,
+        "label": null
+      },
+      {
+        "canyonId": 22281,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 44.177547,
+        "longitude": 6.072607,
+        "label": "Départ du PR"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.187004,
+      "longitude": 6.043768,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_7eb38f4b8b40c5de",
+          "kind": "MAP",
+          "title": "3340 ET Digne-Les-Bains - Sisteron (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

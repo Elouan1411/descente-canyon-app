@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:42.031962+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22617,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22617/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22617/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22617/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22617/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/22617/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 22617,
+    "identity": {
+      "nom": "Coulié",
+      "nomComplet": "Vallon de Coulié, Coulié",
+      "prefixeNom": "Vallon de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22617/Coulie.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-Maritimes",
+      "communePrincipale": "Pierlas",
+      "communes": [
+        "Pierlas"
+      ],
+      "massif": null,
+      "bassin": "Cians",
+      "coursEau": "Coulié"
+    },
+    "rating": {
+      "cotation": "",
+      "interet": 1188.0,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": 1188,
+      "deniveleM": 100,
+      "longueurM": 350,
+      "cascadeMaxM": null,
+      "cordeMiniM": null,
+      "navette": null
+    },
+    "timings": {
+      "approche": null,
+      "descente": null,
+      "retour": null
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": "Ouvert Le 1 05 2011 Robert et Pilou",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22617,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.031418,
+        "longitude": 7.048373,
+        "label": null
+      },
+      {
+        "canyonId": 22617,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.031315,
+        "longitude": 7.038299,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 44.031418,
+      "longitude": 7.048373,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 543,
+          "status": "Actif",
+          "action": "Interdit",
+          "title": "Arrêté municipal (Pierlas) - 21 mai 2024",
+          "summary": "La pratique de l'escalade et du canyoning sont interdit sur toute la commune...",
+          "remark": "La raison invoquée est simplement... un risque d'accident majeur. (?)",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nArrêté municipal n°2024-01 du 21 mai 2024 (commune de Pierlas)",
+          "effectiveDate": "21 mai 2024",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/543/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté municipal n°2024-01 du 21 mai 2024 (commune de Pierlas)",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem543_pj1.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

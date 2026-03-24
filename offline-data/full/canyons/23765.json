@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:00.945521+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23765,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23765/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23765/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23765/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23765/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23765,
+    "identity": {
+      "nom": "Trincea",
+      "nomComplet": "Canale della Trincea",
+      "prefixeNom": "Canale della",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23765/Trincea.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Frioul-Vénétie julienne",
+      "departement": "Udine",
+      "communePrincipale": "Tarvisio",
+      "communes": [
+        "Tarvisio"
+      ],
+      "massif": "Alpes Juliennes",
+      "bassin": "Slizza",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 0.5,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1170,
+      "deniveleM": 170,
+      "longueurM": 500,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 25,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "25min",
+      "descente": "1h15min",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23765,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.410049,
+        "longitude": 13.5272,
+        "label": null
+      },
+      {
+        "canyonId": 23765,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.408611,
+        "longitude": 13.533375,
+        "label": null
+      },
+      {
+        "canyonId": 23765,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.408878,
+        "longitude": 13.534131,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.408878,
+      "longitude": 13.534131,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_437cfbba0cc56e85",
+          "kind": "MAP",
+          "title": "19 Alpi Giulie Occidentali - Tarvisiano (Tabacco)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_16622a6ad15d1058",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/C.....leDellaTrinceaCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/C.....leDellaTrinceaCanyon"
+        },
+        {
+          "id": "resource_eeaf51fd9943df90",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://catastoforre.aic-canyoning.it/ind.....LIA/pro/UD/cod/UD054",
+          "url": "http://catastoforre.aic-canyoning.it/ind.....LIA/pro/UD/cod/UD054"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:44.193487+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23967,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23967/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23967/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23967/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23967/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23967,
+    "identity": {
+      "nom": "Touron",
+      "nomComplet": "Ravin du Touron",
+      "prefixeNom": "Ravin du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23967/Touron.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-de-Haute-Provence",
+      "communePrincipale": "Thorame-Haute",
+      "communes": [
+        "Thorame-Haute"
+      ],
+      "massif": "Montagne de Cordeil",
+      "bassin": "Verdon",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1I",
+      "interet": 0.7,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 990,
+      "deniveleM": 50,
+      "longueurM": 150,
+      "cascadeMaxM": 15,
+      "cordeMiniM": 15,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "50min",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "De Saint-André-les-Alpes suivre la D955 en direction de Colmars. Passer en RG du Verdon et tourner à gauche 1300 m après la gare de Thorame-Haute. Traverser le pont et se garer sans gêner non loin d'un enclot à chevaux.",
+      "accesAmont": null,
+      "approche": "Poursuivre sur la piste quelques mètres et pénétrer dans l'enclot en prenant soin de bien le refermer correctement le fil électrifié. Suivre la sente jusqu'au ruisseau (captage).",
+      "descente": "Une courte marche suit après avoir descendu en désescalade un petit barrage servant de captage pour un canal, D2, D3, C15 sur AN en RG, D3, C2+C4 sur AN en RG (R2x8m).",
+      "retour": "Traverser le Verdon pour se rendre en RG et remonter à la petite route juste avant le pont. Traverser le pont pour se rendre à votre véhicule.",
+      "engagement": null,
+      "periode": "En eau",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Pour finir une journée canyon, si vous vous trouvez dans le coin."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23967,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.055298,
+        "longitude": 6.569962,
+        "label": null
+      },
+      {
+        "canyonId": 23967,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.054817,
+        "longitude": 6.571775,
+        "label": null
+      },
+      {
+        "canyonId": 23967,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.053471,
+        "longitude": 6.571925,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.053471,
+      "longitude": 6.571925,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_46895baacb4925db",
+          "kind": "MAP",
+          "title": "3541 OT Annot (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

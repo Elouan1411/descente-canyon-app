@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:11.355521+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21921,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21921/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21921/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21921/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21921/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21921,
+    "identity": {
+      "nom": "Fusil",
+      "nomComplet": "Ruisseau du Fusil",
+      "prefixeNom": "Ruisseau du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21921/Fusil.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Isère",
+      "communePrincipale": "Engins",
+      "communes": [
+        "Engins"
+      ],
+      "massif": "Vercors",
+      "bassin": "Isère",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a1I",
+      "interet": 1.0,
+      "nbVotes": 9
+    },
+    "metrics": {
+      "altitudeDepartM": 1092,
+      "deniveleM": 160,
+      "longueurM": 560,
+      "cascadeMaxM": 10,
+      "cordeMiniM": 15,
+      "navette": "4.1km"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "1h",
+      "retour": "2min"
+    },
+    "topo": {
+      "accesAval": "de Grenoble, dépasser Engins puis les gorges du Bruyant. 700/800 m après la confluence Bruyant/Furon, se garer à droite sur un grand parking goudronné.",
+      "accesAmont": "continuer en direction du lieu-dit l'Olette et prendre à sa sortie la route des Aigaux et des Merciers. Se garer au pont enjambant le canyon (point coté 1091m sur la carte IGN), environ 1 km avant les Aigaux.",
+      "approche": "On commence le canyon au niveau du pont.",
+      "descente": "Du pont de la route à la piste qui coupe le canyon, il n'y a pas d'obstacles. Ensuite petit encaissement forestier parfois étroit parsemé de petits obstacles.",
+      "retour": "On arrive le long de la route que l'on continue direction l'Olette pour retrouver le grand parking.",
+      "engagement": "Des échappatoires sont possibles entre les petits encaissements.",
+      "periode": "Ruisseau temporaire quasi à sec hormis périodes de fonte des neiges ou très pluvieuses. Toujours un peu d'eau au niveau des deux derniers rappels.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Canyon bien équipé (deux goujons 8mm à chaque cascade avec répartiteurs), peut-être par des spéléos ? (scialet au début du canyon). Il n'est donc pas impossible que cet équipement soit démonté à certaines périodes ?"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21921,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.151028,
+        "longitude": 5.6005,
+        "label": null
+      },
+      {
+        "canyonId": 21921,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 45.154888,
+        "longitude": 5.596722,
+        "label": null
+      },
+      {
+        "canyonId": 21921,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 45.149307,
+        "longitude": 5.599583,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 45.154888,
+      "longitude": 5.596722,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_f71cf3569cd5f7fc",
+          "kind": "MAP",
+          "title": "3235 OT Autrans - Gorges de La Bourne (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

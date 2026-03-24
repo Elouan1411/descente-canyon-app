@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:48:32.317202+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21210,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21210/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21210/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21210/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21210/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21210,
+    "identity": {
+      "nom": "Arado",
+      "nomComplet": "Cascata da Arado, Barranco del Arado",
+      "prefixeNom": "Cascata da",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21210/Arado.html"
+    },
+    "location": {
+      "pays": "Portugal",
+      "region": "Braga",
+      "departement": "Terras de Bouro Municipality",
+      "communePrincipale": "Vilar da Veiga",
+      "communes": [
+        "Vilar da Veiga"
+      ],
+      "massif": "Sierra do Gerês",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.8,
+      "nbVotes": 15
+    },
+    "metrics": {
+      "altitudeDepartM": 920,
+      "deniveleM": 220,
+      "longueurM": 1300,
+      "cascadeMaxM": 48,
+      "cordeMiniM": 50,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h",
+      "descente": "2h30",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "Si vous venez de France, sortez de l’autoroute A52 pour rejoindre Xinzo de Limia. Prenez la direction de Bande et sur l’OU540 prenez la direction du Portugal. Ne ratez pas la bifurcation à gauche pour Lobios. Suivez la OU312 jusqu’au Portela do Homem puis Geres.\n\nSi vous venez du Portugal, de Braga prendre la N103 puis ne ratez pas la bifurcation pour Gerês.\n\nJuste avant Gerês en venant de la frontière espagnole, prendre à gauche la route en direction de la cascade d'Arado. Faire 9km, la route se transforme en piste, se garer au pont d’Arado.",
+      "accesAmont": null,
+      "approche": "Prendre les marches RG jusqu'au point de vue. Continuez à monter par un sentier RG. On arrive a un replat, avec un affluent RG (souvent à sec). Le traverser et monter sur l’épaule qui sépare cet affluent du rio Arado (nombreux cairns). On contourne le sommet en haut de cette épaule par son flanc droit puis en remontant un petit vallon toujours vers la droite (encore de nombreux cairns). Gagner ainsi un col puis descendre de l'autre côté pour rejoindre le canyon.",
+      "descente": "Marche en rivière puis 1er encaissement marqué, ponctué de 2 grandes cascades. Débute alors une marche de liaison avec quelques obstacles que l’on peut éviter par des sentes RD ou RG. La dernière section commence au niveau d’un gros bloc en dessous duquel il faut passer afin de rejoindre le relais RD.",
+      "retour": "Quelques blocs et une sortie immédiate au pont.",
+      "engagement": "Peu d’échappatoire dans les parties verticales mais possibilité de se mettre hors crue facilement.",
+      "periode": "Peu de mouvements d’eau. Le dernier rappel de 22m de la première partie et le départ de la seconde partie peuvent poser problème en cas de gros débit.\n\nMai – oct.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Superbe parcours qui mérite le détour. Parc national de Gerês (les autorités du parc autorise la descente d’Arado et de Fafiõa)."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21210,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 41.734699,
+        "longitude": -8.130907,
+        "label": null
+      },
+      {
+        "canyonId": 21210,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 41.722996,
+        "longitude": -8.129668,
+        "label": null
+      },
+      {
+        "canyonId": 21210,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 41.722534,
+        "longitude": -8.12966,
+        "label": null
+      },
+      {
+        "canyonId": 21210,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 41.735134,
+        "longitude": -8.158422,
+        "label": "depart de la piste"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 41.722534,
+      "longitude": -8.12966,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_368ad3953b19fdf3",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.tic.udc.es/~nino/arado/canon_do_arado.htm",
+          "url": "http://www.tic.udc.es/~nino/arado/canon_do_arado.htm"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,160 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:42.502646+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22349,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22349/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22349/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22349/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22349/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22349,
+    "identity": {
+      "nom": "Cedros",
+      "nomComplet": "Ribeira dos Cedros",
+      "prefixeNom": "Ribeira dos",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22349/Cedros.html"
+    },
+    "location": {
+      "pays": "Portugal",
+      "region": "Madeira",
+      "departement": "Calheta Municipality , Porto Moniz Municipality",
+      "communePrincipale": "Calheta",
+      "communes": [
+        "Calheta Municipality",
+        "Porto Moniz Municipality",
+        "Calheta"
+      ],
+      "massif": "Paul da Serra",
+      "bassin": "Ribeira da Janela",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a3III",
+      "interet": 2.0,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 970,
+      "deniveleM": 125,
+      "longueurM": 500,
+      "cascadeMaxM": 26,
+      "cordeMiniM": 30,
+      "navette": "2.0km"
+    },
+    "timings": {
+      "approche": "1h15min",
+      "descente": "1h15min",
+      "retour": "1h10min"
+    },
+    "topo": {
+      "accesAval": "Par Rabacal",
+      "accesAmont": null,
+      "approche": "De Rabacal par la levada 25 Fontes; continuer jusqu'à Cedros.",
+      "descente": "De levada 25 Fontes jusqu'à levada da Roche Vermelha; possible continuer Agua Negra inf. jusqu'à confluence avec Rib. Janela (voir Agua Negra)",
+      "retour": "De Levada da Rocha Vermelha",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22349,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 32.768467,
+        "longitude": -17.125957,
+        "label": null
+      },
+      {
+        "canyonId": 22349,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 32.768024,
+        "longitude": -17.129166,
+        "label": null
+      },
+      {
+        "canyonId": 22349,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 32.754311,
+        "longitude": -17.133244,
+        "label": null
+      },
+      {
+        "canyonId": 22349,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 32.761642,
+        "longitude": -17.134418,
+        "label": "(Parking - Rabacal avec shuttlebus)"
+      },
+      {
+        "canyonId": 22349,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 32.768024,
+        "longitude": -17.133566,
+        "label": "sortie de Agua Negra inf. (confluence avec Janela)"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 32.754311,
+      "longitude": -17.133244,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_2714eb823c608ae0",
+          "kind": "TOPOGUIDE",
+          "title": "Meeting Canyoning Madeira 2015",
+          "authors": [
+            "Duarte Silva"
+          ],
+          "publicationYear": 2015,
+          "reference": null,
+          "editor": "Clube Naval do Seixal",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1342/topoguide.html"
+        },
+        {
+          "id": "biblio_9fee8e80e3298324",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons de Madère - Descentes Sportives et Randonnées",
+          "authors": [
+            "Antoine Florin"
+          ],
+          "publicationYear": 2007,
+          "reference": "978-2-9529227-0-8",
+          "editor": "auto-édition",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1194/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_f00ce1512c259c48",
+          "kind": "MAP",
+          "title": "Madeira, Tour & Trail (Discovery Walking Guides Ltd. Northampton)",
+          "scale": "1/40000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:07.035954+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23790,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23790/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23790/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23790/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23790/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23790,
+    "identity": {
+      "nom": "Campiviei",
+      "nomComplet": "Rio Campiviei, Val di Faè",
+      "prefixeNom": "Rio",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23790/Campiviei.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Vénétie",
+      "departement": "Belluno",
+      "communePrincipale": "Lozzo di Cadore",
+      "communes": [
+        "Lozzo di Cadore"
+      ],
+      "massif": "Dolomites de Belluno",
+      "bassin": "Piave",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a3IV",
+      "interet": 2.5,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1460,
+      "deniveleM": 440,
+      "longueurM": 1700,
+      "cascadeMaxM": 50,
+      "cordeMiniM": 50,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "2h15min",
+      "descente": "5-7h",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "Depuis Belluno, sur la route SS51 bis, une fois Lozzo di Cadore dépassé, la route rejoint la SS52. On arrive alors à Tre ponti ; juste avant le pont sur le Piavé et le panneau Auronzo di Cadore, on prend à gauche une petite route sur un pont. Cette route/piste (carrossable facilement) mène au parking Vara de la Scola.",
+      "accesAmont": null,
+      "approche": "De là, on continue la piste à pied jusqu'à la sortie du canyon (dernière cascade visible et prise d'eau). On a choisi l'approche en RD (contrairement à l'approche décrite dans le topo de Matteo Bortot). Quelques mètres avant la prise d'eau, on repère une micro sente avec un balisage Vert/Blanc. Cette sente remonte assez raide en RD (balisage très présent), tire à un moment bien à gauche (direction opposée au canyon) pour ensuite repartir dans la bonne direction. Après un petit moment, on arrive sur une vire à niveau au-dessus du canyon. On continue et on arrive rapidement sur une zone plate où l'on peut se mettre à l'eau (alt 1480m environ).",
+      "descente": "Alternance de passages encaissés et d’autres plus ouverts. Descente assez longue avec 37 rappels sur le papier. Quelques-uns peuvent se désescalader selon le niveau d’eau et la présence d’embâcles.",
+      "retour": "Après la dernière cascade au niveau de la prise d’eau, on reprend la piste empruntée à l’aller, jusqu’au parking.",
+      "engagement": "Engagement assez important sur la totalité du parcours une fois le premier encaissement. Les échappatoires semblent très compliquées (quelques-unes possibles peut être selon les pentes, entre les encaissements ?)\n\nÉquipement hétéroclite mais convenable en septembre 2021 : maillons de chaînes directement sur goujon, plaquettes sur spits ou goujon. Pas mal de monopoints mais sur les plus petites longueurs, en général, au moins un bon point quand il y en a 2.",
+      "periode": "Certainement à partir de juin. Principalement des cascades, qui pourront être arrosée en cas de débit conséquent. Très peu de vasques.",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23790,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.52861,
+        "longitude": 12.43926,
+        "label": null
+      },
+      {
+        "canyonId": 23790,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.524239,
+        "longitude": 12.45381,
+        "label": null
+      },
+      {
+        "canyonId": 23790,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 46.509972,
+        "longitude": 12.45244,
+        "label": "P"
+      },
+      {
+        "canyonId": 23790,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 46.519047,
+        "longitude": 12.459718,
+        "label": "P2"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 46.509972,
+      "longitude": 12.45244,
+      "label": "P"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

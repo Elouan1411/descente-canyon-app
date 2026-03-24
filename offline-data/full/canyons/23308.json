@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:30.529679+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23308,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23308/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23308/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23308/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23308/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23308,
+    "identity": {
+      "nom": "RICA",
+      "nomComplet": "Ravin du RICA",
+      "prefixeNom": "Ravin du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23308/RICA.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Cantal",
+      "communePrincipale": "Anglards-de-Salers",
+      "communes": [
+        "Anglards-de-Salers"
+      ],
+      "massif": "Monts du Cantal",
+      "bassin": "Le Mars",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a1II",
+      "interet": 1.1,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 940,
+      "deniveleM": 210,
+      "longueurM": null,
+      "cascadeMaxM": 50,
+      "cordeMiniM": 50,
+      "navette": "13.8km"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "1h30",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "Accès (même accès que le ravin des Inquirades)\n\nSe rendre à Anglards-de-Salers, puis Espinasolles et Joncoux. Dans ce dernier hameau, suivre la route à droite (Nord) qui se transforme vite en piste en terre qui passer devant la ferme des Inquirades (à gauche) : la suivre jusqu’au bout et se garer à droite juste avant l'entrée d'un pré.",
+      "accesAmont": null,
+      "approche": "Passer la barrière qui est au bout de la piste, pénétrer dans le pré et le traverser en tirant légèrement à droite par rapport à l’alignement de la piste en terre pour rejoindre un léger vallon qui capte les eaux marécageuses des prairies. Suivre le cours d’eau en passant une clôture jusqu’en haut de la falaise.",
+      "descente": "Descente secondaire caractérisée par un enchaînement d’instables cascades basaltiques : C30 (précautions) sur arbre, une piste passe en RG à côté du second amarrage C35 sur arbre (corde + maillon) dont le rappel arrive en rive droite. Au pied, un sentier traverse le ravin au-dessus d’arbres morts en travers. Aller en RG et descendre pour rejoindre un bosquet qui domine un gros rocher isolé pour C35 qui descend dans une ravine jusqu’à une énorme souche qui fait barrage; puis D10. Relais RD (corde + maillon) avec déviation pour ce Pi50. C25 (corde) sur une grosse racine puis C30 RG (corde sur arbre). C30 sur arbre RG. Marche 100m. C10 (corde RD sur arbre) puis l’eau se perd. Descendre au mieux pendant 15 minutes jusqu’au sentier qui traverse le bois.",
+      "retour": "Suivre le sentier à gauche qui ramène au parking jusqu'au pré de Lafarge et au hameau près du pont sur le Mars.",
+      "engagement": "Équipement de première descente.",
+      "periode": "De l'eau par intermittence. Faisable toute l'année.",
+      "geologie": "Basalte puis brèches volcaniques et orgues basaltiques fragiles.",
+      "historique": "Première descente le 30 mai 2014 lors du RICA par Boustourou, CathErrard, Bruno, La Sardine, Mathieu.",
+      "remarques": "Vallon sans nom.\n\nDescente secondaire caractérisée par un enchaînement d’instables cascades basaltiques."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23308,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.201305,
+        "longitude": 2.509927,
+        "label": null
+      },
+      {
+        "canyonId": 23308,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.203934,
+        "longitude": 2.512837,
+        "label": null
+      },
+      {
+        "canyonId": 23308,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 45.201496,
+        "longitude": 2.506183,
+        "label": null
+      },
+      {
+        "canyonId": 23308,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 45.209759,
+        "longitude": 2.506569,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 45.201496,
+      "longitude": 2.506183,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_7abfe81e68c46ec1",
+          "kind": "MAP",
+          "title": "2334 ET Ydes (IGN Série Bleue)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

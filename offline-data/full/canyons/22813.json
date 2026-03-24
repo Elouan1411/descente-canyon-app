@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:54:27.864804+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22813,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22813/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22813/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22813/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22813/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22813,
+    "identity": {
+      "nom": "Gallavesa",
+      "nomComplet": "Gallavesa",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22813/Gallavesa.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Lombardia",
+      "departement": "Lecco",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": "Lago di Lecco",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v6a2IV",
+      "interet": null,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": 550,
+      "deniveleM": 200,
+      "longueurM": null,
+      "cascadeMaxM": 65,
+      "cordeMiniM": null,
+      "navette": "4.6km"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "3h",
+      "retour": "45min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": "Court mais très profond canyon. Situé aux portes de Lecco, à proximité de Calolziocorte.\n\nLa descente se distingue par sa continuité, quelques beaux encaissements et un rappel initial plutôt impressionnant.\n\nLe départ de ce rappel est technique.",
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22813,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.819775,
+        "longitude": 9.451147,
+        "label": null
+      },
+      {
+        "canyonId": 22813,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.815361,
+        "longitude": 9.44395,
+        "label": null
+      },
+      {
+        "canyonId": 22813,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 45.819931,
+        "longitude": 9.450894,
+        "label": null
+      },
+      {
+        "canyonId": 22813,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 45.807537,
+        "longitude": 9.437986,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 45.819931,
+      "longitude": 9.450894,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

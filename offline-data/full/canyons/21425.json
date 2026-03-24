@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:49:21.211371+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21425,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21425/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21425/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21425/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21425/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21425,
+    "identity": {
+      "nom": "Fontana Santa",
+      "nomComplet": "Fontana Santa",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21425/Fontana-Santa.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Trentino-Alto Adige",
+      "departement": "Trento",
+      "communePrincipale": "Storo",
+      "communes": [
+        "Storo"
+      ],
+      "massif": null,
+      "bassin": "Chiese",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a1IV",
+      "interet": 1.5,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1050,
+      "deniveleM": 640,
+      "longueurM": 900,
+      "cascadeMaxM": 80,
+      "cordeMiniM": 90,
+      "navette": "3.0km"
+    },
+    "timings": {
+      "approche": "1h",
+      "descente": "4h",
+      "retour": "??"
+    },
+    "topo": {
+      "accesAval": "De Brescia, suivre la direction lago d'Idro jusqu'à Ponte Caffaro, poursuivre jusqu'à trouver sur la droite la direction Storo. Prendre à droite donc en suivant Storo, traverser le Fiume Chiese et prendre juste après à gauche une étroite route goudronnée qui longe la rivière jusqu'à une aire de pique-nique et de jeux d'enfants, terminus de la route. Les cascades finales sont bien visibles, juste au-dessus.\n\nVoiture",
+      "accesAmont": "reprendre la route et prendre à gauche une autre étroite route goudronnée en direction de la chapelle San Lorenzo (même accès que Rio Val). La route monte rapidement en épingles serrées. Se garer au niveau d'une bifurcation sur la gauche (stationnement exigu).",
+      "approche": "Prendre la route sur la gauche interdite à la circulation pendant environ une demi-heure jusqu'au hameau de Verdura. Passer devant les maisons et emprunter une sente qui monte sans lacets, peu marquée par endroit, assez aérienne parfois jusqu'à la côte 1050. Le départ du canyon est peu évident. Le seul repère est la présence d'une cabane située en aval du sentier et qui domine le canyon.",
+      "descente": "La première partie est très fastidieuse et ne présente aucun intérêt. Elle est émaillée d'une cascade de 50 m dans un cirque. L'intérêt du canyon réside donc dans l'enchaînement des 5 cascades finales sur un dénivellé d'environ 200 mètres. Elles sont séparées par des vasques suspendues. Attention aux frottements sur la cascade de 85 mètres. Il existe d'ailleurs un relais rive gauche.",
+      "retour": "Accès direct aux voitures.",
+      "engagement": "Faible au début : possibilité de se mettre hors crue très facilement mais fort dans les cascades finales.",
+      "periode": "A faire après une période pluvieuse par exemple.",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21425,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.862461,
+        "longitude": 10.591035,
+        "label": null
+      },
+      {
+        "canyonId": 21425,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.860218,
+        "longitude": 10.57771,
+        "label": null
+      },
+      {
+        "canyonId": 21425,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 45.849758,
+        "longitude": 10.587344,
+        "label": null
+      },
+      {
+        "canyonId": 21425,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 45.860188,
+        "longitude": 10.576358,
+        "label": null
+      },
+      {
+        "canyonId": 21425,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 45.856544,
+        "longitude": 10.582581,
+        "label": "\"Verdura\" - alt. 908m"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 45.849758,
+      "longitude": 10.587344,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_2ae5774461284b58",
+          "kind": "MAP",
+          "title": "102 Lago di Garda Monte Baldo (Kompass)",
+          "scale": "1:50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

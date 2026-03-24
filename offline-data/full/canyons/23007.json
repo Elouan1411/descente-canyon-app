@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:15.213224+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23007,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23007/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23007/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23007/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23007/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23007,
+    "identity": {
+      "nom": "Agnielles",
+      "nomComplet": "Cascade des gorges d' Agnielles, Torrent de Combe Noire",
+      "prefixeNom": "Cascade des gorges d'",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23007/Agnielles.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Hautes-Alpes",
+      "communePrincipale": "Aspre-sur-Buëch",
+      "communes": [
+        "Aspre-sur-Buëch"
+      ],
+      "massif": null,
+      "bassin": "Buëch",
+      "coursEau": "Torrent de Combe Noire"
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 1.2,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 950,
+      "deniveleM": 100,
+      "longueurM": 400,
+      "cascadeMaxM": 35,
+      "cordeMiniM": 45,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "40mln",
+      "descente": "1h",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "Entre Aspres-sur-Buëch et La Faurie sur la N75, prendre la piste des gorges d'Agnielles sur 3,2km en passant devant la cascade des Tourons (parfois en eau) et la cascade d'Agnielles (en eau). Se garer sans gêner non loin du GR de pays \"Autour du grand Buëch\" (pont en bois).",
+      "accesAmont": null,
+      "approche": "Prendre le GR montant au col de l'Angelus. Au col prendre la piste de droite \"Pont à l’âne\", faire 10m et emprunter la sente descendant à droite en direction du ruisseau. Suivre le ruisseau...",
+      "descente": "C1, C1, marche 100m, T4, C35, T2, C1, C3, C5, C4 et l'on débouche sur le Rif d'Agnielles. Rejoindre un peu plus haut la piste et prendre à droite pour se rendre à votre véhicule.",
+      "retour": "Suivre la piste ...",
+      "engagement": "Aucun",
+      "periode": "A faire au printemps pour trouver un débit correct.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Équipement sur amarrages naturels.\n\nA côté, il y a aussi le...\n\n- Ravin des Tourons :\n\nCascade finale visible depuis la piste, en face de la via ferrata.\n\nParking : Depuis l'entrée des Gorges, faire 500m de piste. Grand parking sur la gauche (site d'escalade) 100m avant le départ de la via ferrata.\n\nInt : 0,3/4\n\nLong : 500m\n\nDéniv : 150m\n\nCasc max : 35m\n\nCorde : 2X45m\n\n- Approche : 1h\n\nDepuis le parking, traverser l'Agnielles en descendant par une piste en face du parking (gros tuyaux) et se diriger vers la sortie des gorges sur 250m. Un large sentier avec un cairn à gauche monte pour se rendre au sommet de la barre rocheuse et rejoindre une piste. Prendre à gauche (col de l'Angelus) jusqu'à une citerne. Descendre dans le ruisseau et le suivre jusqu'au premier obstacle.\n\n- Descente : 40min\n\nC5, marche, C4, C35 (1sp+an en RD)\n\n- Retour : 15min\n\nRemonter sur la piste et rejoindre le parking.\n\n- Remarque :\n\nEn eau après les pluies."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23007,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.568611,
+        "longitude": 5.785568,
+        "label": null
+      },
+      {
+        "canyonId": 23007,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.568092,
+        "longitude": 5.781673,
+        "label": null
+      },
+      {
+        "canyonId": 23007,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.574726,
+        "longitude": 5.78413,
+        "label": null
+      },
+      {
+        "canyonId": 23007,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 44.573082,
+        "longitude": 5.787907,
+        "label": "sente d'accés"
+      },
+      {
+        "canyonId": 23007,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 44.56118,
+        "longitude": 5.780354,
+        "label": "ravin des Toufons"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.574726,
+      "longitude": 5.78413,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_3dc2c45ee9a0a859",
+          "kind": "MAP",
+          "title": "3338 OT Serres-Veynes (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:34.956387+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23917,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23917/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23917/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23917/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23917/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23917,
+    "identity": {
+      "nom": "Paúl do Inferno",
+      "nomComplet": "Canyon Paúl do Inferno, Inferno Supérieur, Ribeira do Inferno",
+      "prefixeNom": "Canyon",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23917/Paul-do-Inferno.html"
+    },
+    "location": {
+      "pays": "Portugal",
+      "region": "Madeira",
+      "departement": "São Vicente Municipality",
+      "communePrincipale": "São Vicente",
+      "communes": [
+        "São Vicente"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": "Ribeira do Inferno"
+    },
+    "rating": {
+      "cotation": "v3a2III",
+      "interet": null,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": 400,
+      "longueurM": 1300,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 28,
+      "navette": "3.7km"
+    },
+    "timings": {
+      "approche": "40min",
+      "descente": "3h30",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": "19 rappels.",
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23917,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 32.782265,
+        "longitude": -17.083248,
+        "label": null
+      },
+      {
+        "canyonId": 23917,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 32.788078,
+        "longitude": -17.076918,
+        "label": null
+      },
+      {
+        "canyonId": 23917,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 32.778419,
+        "longitude": -17.04826,
+        "label": "Parking pour véhicule normal"
+      },
+      {
+        "canyonId": 23917,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 32.774147,
+        "longitude": -17.05592,
+        "label": "Parking pour véhicule 4x4 (Llevada do Norte)"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 32.778419,
+      "longitude": -17.04826,
+      "label": "Parking pour véhicule normal"
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_d4559c6470527679",
+          "kind": "TOPOGUIDE",
+          "title": "Meeting Canyoning Madeira 2016",
+          "authors": [
+            "Duarte Silva e colaboradores"
+          ],
+          "publicationYear": 2016,
+          "reference": null,
+          "editor": "Clube Naval do Seixal",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1343/topoguide.html"
+        },
+        {
+          "id": "biblio_2714eb823c608ae0",
+          "kind": "TOPOGUIDE",
+          "title": "Meeting Canyoning Madeira 2015",
+          "authors": [
+            "Duarte Silva"
+          ],
+          "publicationYear": 2015,
+          "reference": null,
+          "editor": "Clube Naval do Seixal",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1342/topoguide.html"
+        }
+      ],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_0b20aee58de3499d",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyoning.camadeira.com/canyons/ribeira-do-inferno-sup/",
+          "url": "http://canyoning.camadeira.com/canyons/ribeira-do-inferno-sup/"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

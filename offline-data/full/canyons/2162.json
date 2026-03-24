@@ -1,0 +1,173 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:44:20.869331+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2162,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2162/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2162/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2162/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2162/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/2162/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 2162,
+    "identity": {
+      "nom": "Tayrac",
+      "nomComplet": "Le Tayrac, Haute-Dourbie",
+      "prefixeNom": "Le",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2162/Tayrac.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Aveyron",
+      "communePrincipale": "Saint-Jean-du-Bruel",
+      "communes": [
+        "Saint-Jean-du-Bruel"
+      ],
+      "massif": "Mont Aigoual",
+      "bassin": "Dourbie",
+      "coursEau": "Haute-Dourbie"
+    },
+    "rating": {
+      "cotation": "v1a3I",
+      "interet": 1.3,
+      "nbVotes": 6
+    },
+    "metrics": {
+      "altitudeDepartM": 617,
+      "deniveleM": 40,
+      "longueurM": 1100,
+      "cascadeMaxM": null,
+      "cordeMiniM": 5,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15mn",
+      "descente": "1h / 1h30",
+      "retour": "15mn"
+    },
+    "topo": {
+      "accesAval": "A St Jean de Bruel, après le terrain de sport, prendre la D114 direction le Bruel-le Viala. Faire 3km et se garer à gauche sur un grand parking.",
+      "accesAmont": null,
+      "approche": "Du parking, se diriger vers l'amont sur la route sur 400m et prendre tout droit dans le virage : panneau. Une sente raide et boisée mène à la rivière.",
+      "descente": "C'est une rando aquatique qui demande juste un rataillon de corde pour la sécu d'un petit tob : attention, le rappel d'eau peut être très puissant selon le débit.\n\nLe premier grand toboggan est hyper ludique : sur le dos, pieds ou tête en avant, sur le ventre pieds ou tête en avant, à 2/3/4 ou + ...\n\nSauts jamais obligatoires mais il y en a plusieurs de 1 à 8m. 2 mains courantes fixes sont en place.",
+      "retour": "Continuer 200m après le dernier saut et trouver au dessus de la rivière en RG un bon sentier qui mène à la route. Revenir à gauche vers le parking par 400m sur la route.",
+      "engagement": "Aucun.",
+      "periode": "Au printemps, le débit peut être énorme.\n\nEn été, l'eau est souvent chaude : shorty, sauf pour les enfants.",
+      "geologie": null,
+      "historique": "Depuis toujours par les pêcheurs, car tout peut se faire par les berges.",
+      "remarques": "Très fréquentée par les pros locaux : à faire entre 12 et 14h.\n\nAttention aux vols dans les véhicules, et ce malgré la surveillance de la gendarmerie locale."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2162,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.042007,
+        "longitude": 3.394861,
+        "label": null
+      },
+      {
+        "canyonId": 2162,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.03812,
+        "longitude": 3.383617,
+        "label": null
+      },
+      {
+        "canyonId": 2162,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 44.041019,
+        "longitude": 3.394861,
+        "label": null
+      },
+      {
+        "canyonId": 2162,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 44.035404,
+        "longitude": 3.383102,
+        "label": null
+      },
+      {
+        "canyonId": 2162,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.035404,
+        "longitude": 3.389756,
+        "label": "attention aux vols"
+      },
+      {
+        "canyonId": 2162,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 44.0396,
+        "longitude": 3.389454,
+        "label": "parking intermédiaire"
+      },
+      {
+        "canyonId": 2162,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 44.039726,
+        "longitude": 3.389633,
+        "label": "accès à la rivière"
+      },
+      {
+        "canyonId": 2162,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 44.042934,
+        "longitude": 3.387909,
+        "label": "echappatoire ou accès alternatif"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 44.041019,
+      "longitude": 3.394861,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_6ec0961689028659",
+          "kind": "MAP",
+          "title": "2641 OT Millau (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 49,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Convention - 03 août 2001",
+          "summary": "Les professionnels s’engagent à ne pas pratiquer la descente des gorges supérieures de la Dourbie de façon permanente, en dehors de la zone délimitée par panneaux. Dans la zone,\n\nils s’engagent à ne pas pratiquer du 15 septembre au 15 juin.\n\nDurant la période autorisée la descente est interdite avant 10 heures et après 17 h 30, ainsi que les mardis et les jeudis toute la journée.",
+          "remark": null,
+          "details": "Convention entre les professionnels APPN, les pécheurs et les propriétaires",
+          "effectiveDate": "03 août 2001",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/49/legislation.html",
+          "attachments": [
+            {
+              "label": "Convention entre les professionnels APPN, les pécheurs et les propriétaires",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/arrete49.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

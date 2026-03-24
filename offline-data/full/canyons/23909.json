@@ -1,0 +1,134 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:33.082642+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23909,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23909/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23909/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23909/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23909/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23909,
+    "identity": {
+      "nom": "Folhado",
+      "nomComplet": "Ribeira do Folhado",
+      "prefixeNom": "Ribeira do",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23909/Folhado.html"
+    },
+    "location": {
+      "pays": "Portugal",
+      "region": "Madeira",
+      "departement": "Porto Moniz Municipality",
+      "communePrincipale": "Porto Moniz",
+      "communes": [
+        "Porto Moniz"
+      ],
+      "massif": null,
+      "bassin": "Ribeira do Seixal",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 2.1,
+      "nbVotes": 7
+    },
+    "metrics": {
+      "altitudeDepartM": 840,
+      "deniveleM": 300,
+      "longueurM": 700,
+      "cascadeMaxM": 33,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h15min",
+      "descente": "3h30",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "De Seixal, remonter la vallée jusqu'au bout de la route, continuer sur la bonne piste jusqu'au centre d'aquaculture. S'y garer.",
+      "accesAmont": null,
+      "approche": "Continuer à monter le rio Seixal en rive gauche par un bon chemin.\n\nLorsque celui-ci traverse le rio (au bout de 10 min. environ), suivre les cairns qui indique une montée très raide (marche en rondins) pendant une heure environ.\n\nArrivé à la llevada, prendre à droite et la suivre jusqu'à rencontrer le départ du canyon au bout de 5 min. (2 point en rive gauche).",
+      "descente": "14 rappels qui s'enchainent.\n\nVers la fin, on rejoint la fin de Hortela, puis Seixal après 3-4 rappels.\n\nLe descendre pendant 10 min. avant de rejoindre le chemin du retour en RG (même endroit que la traversée à l'aller).",
+      "retour": "Suivre le même chemin qu'à l'allée.",
+      "engagement": null,
+      "periode": null,
+      "geologie": "Volcanique",
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23909,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 32.784557,
+        "longitude": -17.110422,
+        "label": null
+      },
+      {
+        "canyonId": 23909,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 32.788185,
+        "longitude": -17.115662,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 32.784557,
+      "longitude": -17.110422,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_d4559c6470527679",
+          "kind": "TOPOGUIDE",
+          "title": "Meeting Canyoning Madeira 2016",
+          "authors": [
+            "Duarte Silva e colaboradores"
+          ],
+          "publicationYear": 2016,
+          "reference": null,
+          "editor": "Clube Naval do Seixal",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1343/topoguide.html"
+        },
+        {
+          "id": "biblio_2714eb823c608ae0",
+          "kind": "TOPOGUIDE",
+          "title": "Meeting Canyoning Madeira 2015",
+          "authors": [
+            "Duarte Silva"
+          ],
+          "publicationYear": 2015,
+          "reference": null,
+          "editor": "Clube Naval do Seixal",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1342/topoguide.html"
+        }
+      ],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_4688d4e28ae08779",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyoning.camadeira.com/canyons/folhado/",
+          "url": "http://canyoning.camadeira.com/canyons/folhado/"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

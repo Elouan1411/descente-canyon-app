@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:02.687162+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22444,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22444/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22444/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22444/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22444/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22444,
+    "identity": {
+      "nom": "Levigliese",
+      "nomComplet": "Canale Levigliese",
+      "prefixeNom": "Canale",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22444/Levigliese.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Toscana",
+      "departement": "Lucca",
+      "communePrincipale": "Fabbriche di Vergemoli",
+      "communes": [
+        "Fabbriche di Vergemoli"
+      ],
+      "massif": "Alpes apuanes - Alpi Apuane",
+      "bassin": "Serchio",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a3IV",
+      "interet": 2.3,
+      "nbVotes": 5
+    },
+    "metrics": {
+      "altitudeDepartM": 445,
+      "deniveleM": 150,
+      "longueurM": 1200,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 25,
+      "navette": "5.0km"
+    },
+    "timings": {
+      "approche": "45min",
+      "descente": "1h",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": "De lucca, prendre la destination de Castelnuovo de Garfagnana. A gallicano, quitter la route principale en direction de Vergemoli sur quelques kilomètres. Ne pas suivre la route qui monte au village mais poursuivre jusqu'à un parc d'attraction pour enfants avec le nom du canyon.",
+      "accesAmont": "revenir au croisement et monter au village. Prendre ensuite à gauche en direction de Fornovolasco-grotta del vento. S'arrêter au premier vallon.",
+      "approche": "Marcher dans le cours d'eau jusqu'aux premiers obstacles.",
+      "descente": "La descente commence après une vieille installation hydraulique. On trouve deux belles cascades avant de rencontrer une via ferrata qui remonte depuis l'aval. Il reste 5/6 cascades à corde dans une espèce d'attraction touristique avec mur d'escalade à prise collées, des tables et chaises, des licornes, épouvantail, ours en plastique... Puis on arrive dans le parc proprement dit. On vous aura prévenu!!",
+      "retour": "Sortir sur la droite pour rejoindre la voiture aval.",
+      "engagement": "On peut facilement s'échapper sur les rives ou par la via ferrata.",
+      "periode": "Toujours en eau. à partir de mai après la fonte.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Partie finale privatisée transformée en parc touristique pour enfant. Plus vraiment d'intérêt à se balader là bas dedans"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22444,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.053234,
+        "longitude": 10.373122,
+        "label": "Depart 1"
+      },
+      {
+        "canyonId": 22444,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.050274,
+        "longitude": 10.378947,
+        "label": "Depart 2 (sente jusqu'à hameau, continuer sans sente)"
+      },
+      {
+        "canyonId": 22444,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.045094,
+        "longitude": 10.387316,
+        "label": null
+      },
+      {
+        "canyonId": 22444,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 44.044937,
+        "longitude": 10.387487,
+        "label": null
+      },
+      {
+        "canyonId": 22444,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 44.051369,
+        "longitude": 10.381501,
+        "label": "hameau"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.044937,
+      "longitude": 10.387487,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_dda017973552eb75",
+          "kind": "MAP",
+          "title": "101/102 Alpi Apuane (MULTIGRAPHIC - Carta dei sentieri e dei rifugi)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_8d93477cccf54df8",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.openspeleo.org/openspeleo/canyons-view-72.fr.html",
+          "url": "http://www.openspeleo.org/openspeleo/canyons-view-72.fr.html"
+        },
+        {
+          "id": "resource_f739ff717301b38e",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://catastoforre.aic-canyoning.it/index/forra/cod/LU004",
+          "url": "http://catastoforre.aic-canyoning.it/index/forra/cod/LU004"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

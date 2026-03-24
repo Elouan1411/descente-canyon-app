@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:47:53.981653+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21031,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21031/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21031/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21031/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21031/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21031,
+    "identity": {
+      "nom": "Dore",
+      "nomComplet": "La Dore, Dore",
+      "prefixeNom": "La",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21031/Dore.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Puy-de-Dôme",
+      "communePrincipale": "Le Mont-Dore",
+      "communes": [
+        "Mont-Dore",
+        "Le Mont-Dore"
+      ],
+      "massif": "Massif du Sancy",
+      "bassin": null,
+      "coursEau": "Dore"
+    },
+    "rating": {
+      "cotation": "v4a1I",
+      "interet": 1.5,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 1645,
+      "deniveleM": 230,
+      "longueurM": 600,
+      "cascadeMaxM": 50,
+      "cordeMiniM": 50,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "45min",
+      "descente": "1h20",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "Se rendre au Mont Dore, ensuite suivre la direction \"Sancy\". Au bout de la route, à la station de ski du Mont Dore, se garer près du téléphérique n°1.",
+      "accesAmont": null,
+      "approche": "Du parking, remonter les pistes de ski en direction du Puy de Sancy. Quand vous arrivez sur le plateau du Sancy, le canyon démarre sur la droite, juste avant le téléski du plateau.\n\nAutre possibilité, prendre le téléphérique n°2 (5,4 € l'aller simple) et à l'arrivée descendre le long des crêtes (10min de descente).",
+      "descente": "La descente démarre par un plan incliné de 50m environ. Au milieu de ce plan (au niveau d'un bloc) en rive gauche, il y a plusieurs pitons permettant d'accéder au relais de la grande cascade. Un rappel de 15m (corde de 30) est obligatoire pour rejoindre l'amarrage de la cascade de la Dore. Il y a 3 plaquettes reliées en rive droite. Deux cordes de 50 m sont obligatoires pour descendre cette cascade (frottements importants et chutes de pierres).\n\nEnsuite, il y a plusieurs petits ressauts (de 4 à 12m) nécessitant l'usage de la corde (toutes les cascades ont 2 plaquettes non reliées).\n\nOn arrive alors à un petit encaissement avec 3 cascades (6, 12 et 12m) équipées elles aussi de plaquettes doublées.\n\nIl y a une petite vasque à la fin du canyon.",
+      "retour": "Suivre la piste jusqu'au téléphérique.",
+      "engagement": "L'engagement est limité, il est possible de sortir du canyon à de nombreux endroits.La partie médiane de ce parcours est en terrain très instable, style ravine de montagne.Pour toute la descente l'équipement en place n'est pas au mieux pour éviter les frottements mais il n'y a pas toujours le choix vu l'état de la roche (Mieux vaut débrayer mais être sûr que ça tienne). Testez et emmenez de la rechange.",
+      "periode": "Cette descente coule tout le temps, c'est la source de la Dordogne mais elle n'est pas très aquatique sauf à la fonte des neiges. Attention, il y a des névés assez tard dans la saison du fait que ce soit en face nord.",
+      "geologie": "Roche basaltique",
+      "historique": null,
+      "remarques": "Se fait en hiver en cascade de glace."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21031,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.532928,
+        "longitude": 2.819066,
+        "label": null
+      },
+      {
+        "canyonId": 21031,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.538567,
+        "longitude": 2.818315,
+        "label": null
+      },
+      {
+        "canyonId": 21031,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.54211,
+        "longitude": 2.815933,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.54211,
+      "longitude": 2.815933,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_1c4d8b89387c4da5",
+          "kind": "MAP",
+          "title": "2432 ET Massif du Sancy - Auvergne (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

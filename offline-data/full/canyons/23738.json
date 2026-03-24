@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:55.733179+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23738,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23738/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23738/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23738/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23738/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23738,
+    "identity": {
+      "nom": "Gippières",
+      "nomComplet": "Ravin des Gippières",
+      "prefixeNom": "Ravin des",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23738/Gippieres.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-de-Haute-Provence",
+      "communePrincipale": "Nibles",
+      "communes": [
+        "Nibles"
+      ],
+      "massif": null,
+      "bassin": "Asse",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a2I",
+      "interet": 0.5,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 640,
+      "deniveleM": 70,
+      "longueurM": 400,
+      "cascadeMaxM": 10,
+      "cordeMiniM": 15,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "40min",
+      "retour": "30min/2min"
+    },
+    "topo": {
+      "accesAval": "De Sisteron, prendre la direction de La Motte-du-Caire. Environ 8 km avant La Motte-du-Caire prendre à gauche la route en direction de Clans (à droite c'est la direction Châteaufort). 250m après la 2ème épingle à gauche, garez-vous à gauche, à proximité d'un champ, en sortie d'un large virage à droite.",
+      "accesAmont": null,
+      "approche": "Descendre le champ par la droite puis suivre la piste qui s'arrête vite et rejoindre au mieux le fond du ravin.",
+      "descente": "4 ressauts, entrecoupés de marche, à négocier en rappel ou en désescalade en fonction du débit pour arriver à la cascade terminale équipée d'un point un RD.",
+      "retour": "Après la dernière cascade suivre une sente qui vous mène jusqu'à un grand parking en bord de la D951. De là rejoindre votre véhicule, garé à l'amont par la route.",
+      "engagement": "Engagement très faible.",
+      "periode": "Coule après les fortes pluies.",
+      "geologie": null,
+      "historique": "Un point artisanal en 8mm posé le 25/11/16 pour la C10.",
+      "remarques": "Pour collectionneur qui passe dans le coin.\n\nNavette possible."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23738,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.274189,
+        "longitude": 6.005356,
+        "label": null
+      },
+      {
+        "canyonId": 23738,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.274757,
+        "longitude": 6.006729,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.274757,
+      "longitude": 6.006729,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_ec844e72d95ece0e",
+          "kind": "MAP",
+          "title": "3339 ET La Motte-Du-Caire (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

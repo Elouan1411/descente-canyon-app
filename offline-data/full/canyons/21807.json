@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:48.277305+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21807,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21807/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21807/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21807/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21807/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21807,
+    "identity": {
+      "nom": "Hasa (supérieur)",
+      "nomComplet": "Wadi Hasa (supérieur)",
+      "prefixeNom": "Wadi",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21807/Hasa-superieur.html"
+    },
+    "location": {
+      "pays": "Jordanie",
+      "region": "Al-Mazar",
+      "departement": "Karak",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Moab",
+      "bassin": "Dead Sea",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a3IV",
+      "interet": 2.1,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 230,
+      "deniveleM": 90,
+      "longueurM": 3000,
+      "cascadeMaxM": 5,
+      "cordeMiniM": 15,
+      "navette": "4.0km"
+    },
+    "timings": {
+      "approche": "10min",
+      "descente": "3h",
+      "retour": "35min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": "A la confluence Wadi Hasa/Wadi Afra (Alti. 100m) Wadi Afra (eau chaude) vers le-haut jusqu'à la route.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21807,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 30.988169,
+        "longitude": 35.658607,
+        "label": null
+      },
+      {
+        "canyonId": 21807,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 30.985151,
+        "longitude": 35.641537,
+        "label": null
+      },
+      {
+        "canyonId": 21807,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 30.985888,
+        "longitude": 35.661621,
+        "label": null
+      },
+      {
+        "canyonId": 21807,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 30.980764,
+        "longitude": 35.645687,
+        "label": null
+      },
+      {
+        "canyonId": 21807,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 30.981546,
+        "longitude": 35.640335,
+        "label": "alternative: montant par Wadi Afra (eau chaude)"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 30.985888,
+      "longitude": 35.661621,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_24188446bcbbc9d9",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/Canyons/HasaUpperCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/Canyons/HasaUpperCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:45:56.651523+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2553,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2553/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2553/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2553/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2553/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2553,
+    "identity": {
+      "nom": "Bondone",
+      "nomComplet": "Torrente Bondone",
+      "prefixeNom": "Torrente",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2553/Bondone.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Lombardia",
+      "departement": "Sondrio",
+      "communePrincipale": "Luscio",
+      "communes": [
+        "Tresenda",
+        "Luscio"
+      ],
+      "massif": "Alpi Orobie",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a3II",
+      "interet": 2.1,
+      "nbVotes": 8
+    },
+    "metrics": {
+      "altitudeDepartM": 927,
+      "deniveleM": 427,
+      "longueurM": 1000,
+      "cascadeMaxM": 48,
+      "cordeMiniM": 50,
+      "navette": "12.0km"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "5h",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "De nombreux détritus et eau douteuse"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2553,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.142525,
+        "longitude": 10.070944,
+        "label": null
+      },
+      {
+        "canyonId": 2553,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.151237,
+        "longitude": 10.073304,
+        "label": null
+      },
+      {
+        "canyonId": 2553,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 46.142437,
+        "longitude": 10.071888,
+        "label": null
+      },
+      {
+        "canyonId": 2553,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 46.151283,
+        "longitude": 10.073647,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 46.142437,
+      "longitude": 10.071888,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_3813ed43a35207fd",
+          "kind": "TOPOGUIDE",
+          "title": "Canyoning in Lombardia",
+          "authors": [
+            "Pascal van Duin"
+          ],
+          "publicationYear": 2005,
+          "reference": "ISBN 88-901753-0-3",
+          "editor": "Edizioni TopCanyon",
+          "status": "en stock\n\n- 24,90 € -\n\nCommandez cet ouvrage dès maintenant !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/18/Canyoning-in-Lombardia.html"
+        },
+        {
+          "id": "biblio_60029af297dac6c3",
+          "kind": "TOPOGUIDE",
+          "title": "Italia Nord-Ovest - Gole e Canyon Vol.3",
+          "authors": [
+            "Franscesco Cacace",
+            "Roberto Jarre",
+            "Dino Ruotolo",
+            "Roberto Schenone. Traduit en français par Thierry Achmetoff"
+          ],
+          "publicationYear": 2003,
+          "reference": "88-900260-2-2",
+          "editor": "Adriambiente",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/153/topoguide.html"
+        }
+      ],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

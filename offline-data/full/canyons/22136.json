@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:57.774017+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22136,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22136/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22136/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22136/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22136/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22136,
+    "identity": {
+      "nom": "Papuos",
+      "nomComplet": "Garganta de los Papuos",
+      "prefixeNom": "Garganta de los",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22136/Papuos.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Extremadura",
+      "departement": "Cáceres",
+      "communePrincipale": "Jerte",
+      "communes": [
+        "Jerte"
+      ],
+      "massif": null,
+      "bassin": "Valle del Jerte",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.5,
+      "nbVotes": 6
+    },
+    "metrics": {
+      "altitudeDepartM": 1080,
+      "deniveleM": 230,
+      "longueurM": 500,
+      "cascadeMaxM": 28,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h15min",
+      "descente": "2h",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "De Avila par N 110 vers Plasenica, passer El Barco de Avila et continuer 28 km jusqu'á Jerte. Garer la voiture a l'information touristique (pont sur ruisseau).",
+      "accesAmont": null,
+      "approche": "Monter la route en rive droite du ruisseau et prendre le sentier á gauche.\n\nPossible aussi de monter au canyon en rive gauche mais dernier mètres très raide sans sente.",
+      "descente": "Canyon ouvert, mais jolis rappels, toboggans et sauts",
+      "retour": "Sortir avant la passerelle en béton á gauche et descendre le sentier en rive gauche, enfin traverser le ruisseau et retour par la route.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "Canyon pour initiation"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22136,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 40.251068,
+        "longitude": -5.746708,
+        "label": null
+      },
+      {
+        "canyonId": 22136,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 40.242344,
+        "longitude": -5.746697,
+        "label": null
+      },
+      {
+        "canyonId": 22136,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 40.224041,
+        "longitude": -5.74792,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 40.224041,
+      "longitude": -5.74792,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_3c04743922c0b4a5",
+          "kind": "MAP",
+          "title": "576-III Hoja (I.G.N.)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_e58c7defc4afbd91",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://ropewiki.com/Papuos",
+          "url": "http://ropewiki.com/Papuos"
+        },
+        {
+          "id": "resource_a51585fae2d6ff9b",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/Canyons/PapuosCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/Canyons/PapuosCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

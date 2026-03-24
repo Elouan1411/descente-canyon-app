@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:01.833088+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22443,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22443/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22443/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22443/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22443/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22443,
+    "identity": {
+      "nom": "Gey",
+      "nomComplet": "Gorge de Gey, L'Aygue Bère",
+      "prefixeNom": "Gorge de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22443/Gey.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Nouvelle-Aquitaine",
+      "departement": "Pyrénées-Atlantiques",
+      "communePrincipale": "Sarrance",
+      "communes": [
+        "Sarrance"
+      ],
+      "massif": null,
+      "bassin": "Aspe",
+      "coursEau": "L'Aygue Bère"
+    },
+    "rating": {
+      "cotation": "v1a1I",
+      "interet": 1.0,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 480,
+      "deniveleM": 80,
+      "longueurM": null,
+      "cascadeMaxM": null,
+      "cordeMiniM": null,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "45",
+      "retour": "??"
+    },
+    "topo": {
+      "accesAval": "Après avoir passé le pont se garer le canyon est visible en contre bas.",
+      "accesAmont": null,
+      "approche": null,
+      "descente": "Marche aquatique, sans rappel. Si bon débit des mouvements d'eaux peuvent devenir intéressant pour ce canyon eaux vives.",
+      "retour": "Reprendre la route prise à l'aller.\n\nUne navette est possible.",
+      "engagement": "Aucun,des échappatoires se présentent à chaque instant",
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22443,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.033325,
+        "longitude": -0.596781,
+        "label": "Entrée dans le canyon sous le pont."
+      },
+      {
+        "canyonId": 22443,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.03455,
+        "longitude": -0.605407,
+        "label": "Le ruisseau L'Aygue Bere fini dans le Gave d'Aspe. Traverser se dernier et couper le champs pour rejoindre le parking aval."
+      },
+      {
+        "canyonId": 22443,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 43.033386,
+        "longitude": -0.59648,
+        "label": "Après le passage du pont, se garer sur le bord de route."
+      },
+      {
+        "canyonId": 22443,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 43.03513,
+        "longitude": -0.606126,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 43.033386,
+      "longitude": -0.59648,
+      "label": "Après le passage du pont, se garer sur le bord de route."
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_6e0de7f20dd30ca8",
+          "kind": "MAP",
+          "title": "1546 OT Oloron-Sainte-Marie (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

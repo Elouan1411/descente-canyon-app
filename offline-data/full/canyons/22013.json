@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:31.964615+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22013,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22013/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22013/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22013/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22013/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22013,
+    "identity": {
+      "nom": "Crétian",
+      "nomComplet": "Torrent du Crétian",
+      "prefixeNom": "Torrent du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22013/Cretian.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Troistorrents",
+      "departement": "Valais/Wallis",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Chablais - Platé - Aiguilles Rouges",
+      "bassin": "Vièze",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 1.7,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 960,
+      "deniveleM": 180,
+      "longueurM": 400,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 25,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "1h30",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": "Canyon \"forestier\", peu engagé qui comprend une succession de cascades de hauteurs comprises entre 6 et 24 m. L'enchaînement final est esthétique dans une roche joliment sculptée.\n\nLes départs des rappels sont toutefois plutôt malaisés et présentent pour la plupart des mauvais frottements.",
+      "retour": null,
+      "engagement": "Possibilité de se mettre hors d'eau à tous moment. Nombreux échappatoires en dessous de la route en RG",
+      "periode": "Après la fonte des neiges. Avril à Octobre",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Toutes les informations nécessaire disponible dans le site en lien dans la partie \"biblio\"\n\nLes 100m sous la route sont bien encombrés."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22013,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.226768,
+        "longitude": 6.928383,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.226768,
+      "longitude": 6.928383,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_2cbe04e8e4c810d5",
+          "kind": "MAP",
+          "title": "1304 Val d'Illiez (Carte Nationale Suisse)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_e8acbe1f1fe1fb0a",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.homepage.bluewin.ch/swestcany...../Cretian/Cretian.htm",
+          "url": "http://www.homepage.bluewin.ch/swestcany...../Cretian/Cretian.htm"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

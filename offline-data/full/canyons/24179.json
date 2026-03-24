@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:59:28.666888+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24179,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24179/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24179/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24179/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24179/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24179,
+    "identity": {
+      "nom": "Chifflet",
+      "nomComplet": "Ravin de Chifflet, Ruisseau de Combe Large",
+      "prefixeNom": "Ravin de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24179/Chifflet.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Drôme",
+      "communePrincipale": "Plan-de-Baix",
+      "communes": [
+        "Plan-de-Baix"
+      ],
+      "massif": "Vercors",
+      "bassin": "Gervanne",
+      "coursEau": "Ruisseau de Combe Large"
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 0.3,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 637,
+      "deniveleM": 120,
+      "longueurM": 500,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 25,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "45min",
+      "retour": "1h"
+    },
+    "topo": {
+      "accesAval": "De Plan-de-baix, prendre la D70 vers le nord/col de Bacchus\n\nAprès 1km prendre à Gauche la D70b et se garer après le talweg situé avant les Massots.",
+      "accesAmont": null,
+      "approche": "Suivre la piste carrossable, passer Combelarge puis longer le pré en rive droite du ravin. Départ descente (44.818108, 5.151366), petite sente descend dans le ravin en face de ruches : sortez vos sécateurs!",
+      "descente": "C9 sur AN, R6, C8 & C9 (en 1 rappel sur AN), C9 mono-point acier 10mm en retrait, C20 fil d'araignée mono-point acier 10mm en retrait, Pi8 -> ruine en rive droite, R4,arrivée dans le collecteur. Marche 100m, puis C15 sur AN (belle margelle en tuf).\n\nCreusement faible mais surprenant au regard de la taille (minuscule) du bassin versant. Tuf sur le parcours -> il doit y avoir de l'eau qui coule parfois ?",
+      "retour": "Après la C15 finale (44.814935, 5.151374), bartassage rive droite au mieux sur la crête, une sente claire sur la crête part au point (44.814986 , 5.149614) et revient au départ du \"canyon\".",
+      "engagement": "Faible",
+      "periode": "A faire après pluies/fonte, résurgence(s) sur le parcours à prendre en compte.",
+      "geologie": null,
+      "historique": "SGCAF Grenoble?",
+      "remarques": "Intérêt canyon (très très) limité, vous êtes avertis"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24179,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.818108,
+        "longitude": 5.151366,
+        "label": null
+      },
+      {
+        "canyonId": 24179,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.814934,
+        "longitude": 5.151374,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 44.818108,
+      "longitude": 5.151366,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_975a457aea808247",
+          "kind": "MAP",
+          "title": "3137 OT Die-Crest (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

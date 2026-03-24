@@ -1,0 +1,161 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:43:32.796682+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 219,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/219/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/219/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/219/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/219/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/219/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 219,
+    "identity": {
+      "nom": "Bourne",
+      "nomComplet": "La Bourne",
+      "prefixeNom": "La",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/219/Bourne.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Isère",
+      "communePrincipale": "Rencurel",
+      "communes": [
+        "Rencurel"
+      ],
+      "massif": "Vercors",
+      "bassin": "Bourne",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "",
+      "interet": 136.0,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": 136,
+      "longueurM": 1000,
+      "cascadeMaxM": null,
+      "cordeMiniM": null,
+      "navette": null
+    },
+    "timings": {
+      "approche": null,
+      "descente": null,
+      "retour": null
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 219,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.083767,
+        "longitude": 5.459006,
+        "label": "Au niveau du barrage"
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 45.083767,
+      "longitude": 5.459006,
+      "label": "Au niveau du barrage"
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_e7d94bb2f47393ab",
+          "kind": "TOPOGUIDE",
+          "title": "Cascades, Gorges & Canyons : Pré-alpes d'Isère et de Savoie",
+          "authors": [
+            "Bertrand Hauser",
+            "Delphine Baratin"
+          ],
+          "publicationYear": 2007,
+          "reference": "978-2-9529407-0-2",
+          "editor": "Descente-Canyon.com",
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/11/Cascades--Gorges-et-Canyons-:-Pre-alpes-d-Isere-et-de-Savoie.html"
+        },
+        {
+          "id": "biblio_0f06b44eb9a42186",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons du Vercors et Alentours",
+          "authors": [
+            "J-C. Botti",
+            "B. Rosset",
+            "Y. Launay",
+            "C. Larribe",
+            "T. Larribe",
+            "Spéléo Club MJC de Tullins"
+          ],
+          "publicationYear": 1997,
+          "reference": "ISBN 2-7417-0211-X",
+          "editor": "Gap",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/12/topoguide.html"
+        },
+        {
+          "id": "biblio_e2259ea833d03cf8",
+          "kind": "TOPOGUIDE",
+          "title": "Infern'eaux",
+          "authors": [
+            "P. Boiron",
+            "J. Carles",
+            "J-M. Etienne",
+            "R. Vuillot"
+          ],
+          "publicationYear": 1990,
+          "reference": "ISBN 2-7038-0065-7",
+          "editor": "Didier et Richard",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/11/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_f71cf3569cd5f7fc",
+          "kind": "MAP",
+          "title": "3235 OT Autrans - Gorges de La Bourne (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 4,
+          "status": "Actif",
+          "action": "Interdit",
+          "title": "Arrêté préfectoral (Isère)",
+          "summary": "Descente interdite du canyon",
+          "remark": "Suite à l'accident du Drac, un arrêté préfectoral a interdit le parcours des cours d'eau placés sous un barrage.",
+          "details": null,
+          "effectiveDate": null,
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/4/legislation.html",
+          "attachments": []
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:09.929893+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22984,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22984/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22984/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22984/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22984/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22984,
+    "identity": {
+      "nom": "Fiutrusa",
+      "nomComplet": "Torrente Fiutrusa",
+      "prefixeNom": "Torrente",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22984/Fiutrusa.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Piemonte",
+      "departement": "Cuneo",
+      "communePrincipale": "Pontechianale",
+      "communes": [
+        "Pontechianale"
+      ],
+      "massif": null,
+      "bassin": "Varaita",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 2.2,
+      "nbVotes": 6
+    },
+    "metrics": {
+      "altitudeDepartM": 1805,
+      "deniveleM": 155,
+      "longueurM": 650,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 25,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "40min",
+      "descente": "2h00",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "De France par le col Agnel ou d'Italie en remontant le val Varaita, se garer dans l'épingle large juste au dessus du village de Pontechianale (panneau d'itinéraires de randonnée).",
+      "accesAmont": null,
+      "approche": "Descendre la petite route qui passe à gauche d'une maison puis la piste à droite. Petit pont sur Varaita puis quelques mètres pour la sortie du canyon en rive G (visualiser le débit au passage). Suivre la piste qui se transforme en sentier, à gauche à l'intersection. Quelques minutes a dominer le canyon, quitter le sentier au niveau d'une ruine; une sente dans les herbes mène au canyon. Cette ruine se situe environ 150m avant les granges indiquées dans le topo H. Vincens. La section de canyon correspondante n'a pas d'intérêt.",
+      "descente": "Deux T3 dont le second avec une étroite à l'arrivée dans l'eau... Une C4 avec mono-point rive G assez bas, le bel enchainement C5-C10 puis une C12 un peu arrosée. La grande cascade suivante se négocie par une MC rive D (vire, corde en place) et un rappel de 16 qui aboutit dans un éboulis (pas de relais dans l'actif: dommage). Le final arrive vite: petit encaissement: câble en place + rappel de 5, un petit ressaut facile en désescalade (câble détruit) et enfin une C4 non équipée avec aussi câble détruit. Quelques dizaines de mètres de marche pour la sortie.",
+      "retour": "A la fin de l'encaissement prendre à gauche pour rejoindre le départ du sentier de l'aller.",
+      "engagement": "Engagé sur quelques rappels et quelques encaissements avec un échappatoire après la C10.",
+      "periode": "Canyon souvent en eau (froide) à pratiquer à partir de mi-juillet en fonction de la saison d'hiver passée. Quelques passages en tobog et goulottes pourraient se révéler bien délicats avec un fort débit.",
+      "geologie": "Phyllite.",
+      "historique": null,
+      "remarques": "A enchaîner (si possible) avec Agnello-Varaita tout proche pour agrémenter la journée."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22984,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.621216,
+        "longitude": 7.015111,
+        "label": null
+      },
+      {
+        "canyonId": 22984,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.62413,
+        "longitude": 7.021869,
+        "label": null
+      },
+      {
+        "canyonId": 22984,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.624508,
+        "longitude": 7.024367,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.624508,
+      "longitude": 7.024367,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_d077bf79f60b4790",
+          "kind": "TOPOGUIDE",
+          "title": "Canyoning nelle Alpi Occidentali",
+          "authors": [
+            "Daniele Geuna/Dino Ruotolo"
+          ],
+          "publicationYear": 2010,
+          "reference": "978-88-87890-94-5",
+          "editor": "Versante Sud",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1232/topoguide.html"
+        },
+        {
+          "id": "biblio_0062918c2f446d19",
+          "kind": "TOPOGUIDE",
+          "title": "Les canyons des Hautes-Alpes",
+          "authors": [
+            "Henri VINCENS"
+          ],
+          "publicationYear": 2007,
+          "reference": "9782952944502",
+          "editor": "auto-édition",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/12/Canyons-des-Hautes-Alpes.html"
+        }
+      ],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

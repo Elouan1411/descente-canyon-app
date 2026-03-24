@@ -1,0 +1,153 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:45:17.479313+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2379,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2379/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2379/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2379/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2379/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2379,
+    "identity": {
+      "nom": "Conil",
+      "nomComplet": "Ruisseau du Conil",
+      "prefixeNom": "Ruisseau du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2379/Conil.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Haute-Loire",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": "Allier",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a1I",
+      "interet": 1.4,
+      "nbVotes": 8
+    },
+    "metrics": {
+      "altitudeDepartM": 1080,
+      "deniveleM": 280,
+      "longueurM": 1000,
+      "cascadeMaxM": 18,
+      "cordeMiniM": 25,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "45min",
+      "descente": "2h30",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "Laisser voiture de réception à St Didier d'Allier vers petit bac bord de route.\n\nEn cas de navette il faudra remonter au hameau de Conil par St Privas d'Allier(15Km)",
+      "accesAmont": null,
+      "approche": "Laisser voiture de réception à St Didier d'Allier vers petit bac bord de route; un chemin goudronné balisé jaune monte vers une maison et un château d'eau (700m); continuer la partie goudron jusqu'à trouver une croix en pierre, prendre à droite. Attention à un moment laisser la balise jaune pour prendre la croix peinture jaune, couper la ravine, continuer de monter, laisser un chemin sur la gauche et vous y êtes presque... Dés que l'on voit le hameau descendre vers le cours d'eau... (le chemin est interdit aux véhicules moteurs). Le ravin est en bas, en coupant par le pré. Il s'agit du ruisseau de Saint Didier.",
+      "descente": "Entre canyon et descente de rivière, pas très intéressant : marche, C2,C18... C15... des bricoles... C10, C18, C15 puis marche (courte !) jusqu'à la route\n\nTroncs et branchages pendant marche intermédiaire.",
+      "retour": "Arrivée sur la route, à droite toute, direction la maison.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "Eau très polluée"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2379,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.967007,
+        "longitude": 3.709775,
+        "label": null
+      },
+      {
+        "canyonId": 2379,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.969486,
+        "longitude": 3.699787,
+        "label": null
+      },
+      {
+        "canyonId": 2379,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.971577,
+        "longitude": 3.690903,
+        "label": null
+      },
+      {
+        "canyonId": 2379,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 44.968204,
+        "longitude": 3.709056,
+        "label": "Quitter la piste et descendre à travers le champ vers le ruisseau"
+      },
+      {
+        "canyonId": 2379,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 44.972374,
+        "longitude": 3.694467,
+        "label": "Réservoir (sur l'approche)"
+      },
+      {
+        "canyonId": 2379,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 44.974121,
+        "longitude": 3.697502,
+        "label": "Croix. Prenez à droite!"
+      },
+      {
+        "canyonId": 2379,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 44.974167,
+        "longitude": 3.702778,
+        "label": "Couper la ravine"
+      },
+      {
+        "canyonId": 2379,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 44.971668,
+        "longitude": 3.705833,
+        "label": "Laisser un chemin sur la gauche"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.971577,
+      "longitude": 3.690903,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_8c05ada0dc970307",
+          "kind": "MAP",
+          "title": "2736 O Monistrol d'Allier (IGN S?rie Bleue)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,141 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:24.348721+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23870,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23870/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23870/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23870/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23870/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/23870/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 23870,
+    "identity": {
+      "nom": "Mian",
+      "nomComplet": "Ravin de Mian",
+      "prefixeNom": "Ravin de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23870/Mian.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-Maritimes",
+      "communePrincipale": "Daluis",
+      "communes": [
+        "Daluis"
+      ],
+      "massif": null,
+      "bassin": "Var",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 1.4,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 1070,
+      "deniveleM": 190,
+      "longueurM": 350,
+      "cascadeMaxM": 26,
+      "cordeMiniM": 30,
+      "navette": "3.0km"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "2h",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": ". Du village de Daluis: 1km.\n\nParking",
+      "accesAmont": "continuer la route sur 2,9km et la quitter pour une piste qui forme épingle à droite. Rejoindre l'épingle à la balise 53.",
+      "approche": "De la balise supérieure 53, prendre une sente horizontale sur 130m et descendre la ravine jusqu'au premier rappel (assez raide).",
+      "descente": "C26, C12, ravine, C6, C22 puis trois C6.",
+      "retour": "Sortir rive D au niveau d'un petit épaulement. Une sente bien marquée remonte légèrement vers les habitations. La sente débouche sur une route que l'on quitte pour le sentier PR marqué de jaune à gauche. Puis la petite route goudronnée qui mène à 50m de la voiture.",
+      "engagement": null,
+      "periode": "Peu aquatique, pas de vasque. A faire au printemps.",
+      "geologie": "Calcaire + schiste.",
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23870,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.036629,
+        "longitude": 6.798525,
+        "label": null
+      },
+      {
+        "canyonId": 23870,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.034885,
+        "longitude": 6.802325,
+        "label": null
+      },
+      {
+        "canyonId": 23870,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 44.035889,
+        "longitude": 6.796218,
+        "label": null
+      },
+      {
+        "canyonId": 23870,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 44.030006,
+        "longitude": 6.80435,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 44.035889,
+      "longitude": 6.796218,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_3056ffa51a1c0246",
+          "kind": "MAP",
+          "title": "3540 ET Haute Vallée du Var (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 349,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Alpes-Maritimes) - 27 oct 2016",
+          "summary": "La pratique du canyonisme est autorisée du 1er avril au 31 octobre inclus à l'exception des canyons figurant dans les articles 2 et 3, où s'applique une réglementation spécifique (périodes plus réduites, interdiction...).\n\nLes canyons secs ou habituellement à sec sont autorisés toute l'année.\n\nTous les canyons situés en zone centrale du Parc du Mercantour sont interdits.\n\nTout groupe de pratiquants ne peut excéder 8 personnes, encadrement non compris.",
+          "remark": null,
+          "details": "Arrêté préfectoral n°2016-852 du 27 octobre 2016",
+          "effectiveDate": "27 oct 2016",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/349/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral n°2016-852 du 27 octobre 2016",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem349_pj1.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

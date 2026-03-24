@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:09.712305+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21639,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21639/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21639/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21639/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21639/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21639,
+    "identity": {
+      "nom": "Selleta del Pinell",
+      "nomComplet": "Canal de la Selleta del Pinell, Canal de la Portella",
+      "prefixeNom": "Canal de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21639/Selleta-del-Pinell.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Cataluña",
+      "departement": "Tarragona",
+      "communePrincipale": "Tortosa",
+      "communes": [
+        "Mas de Barberans",
+        "Tortosa"
+      ],
+      "massif": "El Port",
+      "bassin": "Rio Ebre",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.3,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 680,
+      "deniveleM": 200,
+      "longueurM": 500,
+      "cascadeMaxM": 23,
+      "cordeMiniM": 25,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "45min",
+      "descente": "1h45",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21639,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 40.721722,
+        "longitude": 0.315337,
+        "label": null
+      },
+      {
+        "canyonId": 21639,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 40.72261,
+        "longitude": 0.314095,
+        "label": null
+      },
+      {
+        "canyonId": 21639,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 40.727196,
+        "longitude": 0.323507,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 40.727196,
+      "longitude": 0.323507,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_fdb0009fe813bd66",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.barranquismo.net/paginas/barr.....elleta_del_pinel.htm",
+          "url": "http://www.barranquismo.net/paginas/barr.....elleta_del_pinel.htm"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

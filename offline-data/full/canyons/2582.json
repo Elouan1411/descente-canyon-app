@@ -1,0 +1,147 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:46:03.940991+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2582,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2582/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2582/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2582/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2582/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2582,
+    "identity": {
+      "nom": "Brochéron",
+      "nomComplet": "Ravin de Brochéron, Ravin de Brocheyron",
+      "prefixeNom": "Ravin de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2582/Brocheron.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Drôme",
+      "communePrincipale": "Saint-Benoit-en-Diois",
+      "communes": [
+        "Saint-Benoit-en-Diois"
+      ],
+      "massif": "Diois",
+      "bassin": "Drôme",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 0.8,
+      "nbVotes": 9
+    },
+    "metrics": {
+      "altitudeDepartM": 490,
+      "deniveleM": 50,
+      "longueurM": 150,
+      "cascadeMaxM": 14,
+      "cordeMiniM": 17,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "0h30",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "Attention, la cascade est difficile à voir selon les indications du topo sur le Vercors.",
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": "Peu engagé",
+      "periode": "A faire quand tout le reste est en crue",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Même si les 2 cascades ne sont pas laides, la descente n'a pas grand intérêt."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2582,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.62875,
+        "longitude": 5.300253,
+        "label": null
+      },
+      {
+        "canyonId": 2582,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.62859,
+        "longitude": 5.30134,
+        "label": null
+      },
+      {
+        "canyonId": 2582,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.628471,
+        "longitude": 5.302645,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.628471,
+      "longitude": 5.302645,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_774008f93c089927",
+          "kind": "TOPOGUIDE",
+          "title": "100 descentes de canyons autour de Grenoble",
+          "authors": [
+            "Arnaud Astier"
+          ],
+          "publicationYear": 2015,
+          "reference": "978-2-7466-7754-8",
+          "editor": "auto-édition",
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/194/100-Descentes-de-Canyons-autour-de-Grenoble.html"
+        },
+        {
+          "id": "biblio_0f06b44eb9a42186",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons du Vercors et Alentours",
+          "authors": [
+            "J-C. Botti",
+            "B. Rosset",
+            "Y. Launay",
+            "C. Larribe",
+            "T. Larribe",
+            "Spéléo Club MJC de Tullins"
+          ],
+          "publicationYear": 1997,
+          "reference": "ISBN 2-7417-0211-X",
+          "editor": "Gap",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/12/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_96185c6be3bf2bcf",
+          "kind": "MAP",
+          "title": "3138 OT Dieulefit (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

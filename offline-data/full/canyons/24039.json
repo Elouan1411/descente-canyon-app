@@ -1,0 +1,163 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:58.528820+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24039,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24039/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24039/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24039/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24039/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24039,
+    "identity": {
+      "nom": "Punta Camedda",
+      "nomComplet": "Gola di Punta Camedda, Punta Cammedda",
+      "prefixeNom": "Gola di",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24039/Punta-Camedda.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Sardegna",
+      "departement": "Sud Sardegna",
+      "communePrincipale": "Gonnosfanadiga",
+      "communes": [
+        "Gonnosfanadiga"
+      ],
+      "massif": "Massiccio del Linas",
+      "bassin": "Flumini Bellu",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a1III",
+      "interet": 1.3,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1025,
+      "deniveleM": 255,
+      "longueurM": 600,
+      "cascadeMaxM": 35,
+      "cordeMiniM": 40,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "3h",
+      "descente": "3h",
+      "retour": "1h"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": "sec - en eau en hiver et après de fortes pluies",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24039,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 39.443768,
+        "longitude": 8.636861,
+        "label": null
+      },
+      {
+        "canyonId": 24039,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 39.446579,
+        "longitude": 8.63354,
+        "label": null
+      },
+      {
+        "canyonId": 24039,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 39.470032,
+        "longitude": 8.641456,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 39.470032,
+      "longitude": 8.641456,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_7eceecd7e0d2e77b",
+          "kind": "TOPOGUIDE",
+          "title": "Torrentismo in Sardegna",
+          "authors": [
+            "Corrado Conca"
+          ],
+          "publicationYear": 2009,
+          "reference": "978-88-88776-04-X",
+          "editor": "Segnavia",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1227/topoguide.html"
+        },
+        {
+          "id": "biblio_c574a587f0904006",
+          "kind": "TOPOGUIDE",
+          "title": "Canyoning en Sardaigne",
+          "authors": [
+            "Franck Jourdan et Jean-François Fiorina"
+          ],
+          "publicationYear": 2009,
+          "reference": null,
+          "editor": "auto-édition",
+          "status": "stock très réduit !\n\n- 18,50 € -\n\nCommandez cet ouvrage dès maintenant !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/137/Canyoning-en-Sardaigne.html"
+        },
+        {
+          "id": "biblio_a8fb4084ada5d3af",
+          "kind": "TOPOGUIDE",
+          "title": "Guida al Torrentismo in Sardegna",
+          "authors": [
+            "Conca"
+          ],
+          "publicationYear": 1993,
+          "reference": null,
+          "editor": "Soluzioni Grafiche",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1170/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_d24ac48e97c4a1a4",
+          "kind": "MAP",
+          "title": "546 II Gonnosfanadiga (IGM)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_c2cd62a31f4d4bde",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/C.....s/PuntaCameddaCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/C.....s/PuntaCameddaCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

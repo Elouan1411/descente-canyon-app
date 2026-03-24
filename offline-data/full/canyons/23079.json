@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:35.720951+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23079,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23079/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23079/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23079/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23079/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23079,
+    "identity": {
+      "nom": "Rieu sec",
+      "nomComplet": "Rieu sec",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23079/Rieu-sec.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Vaucluse",
+      "communePrincipale": "Murs",
+      "communes": [
+        "Gordes",
+        "Murs"
+      ],
+      "massif": "Monts de Vaucluse",
+      "bassin": "Calavon",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v1a1I",
+      "interet": 0.4,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 440,
+      "deniveleM": 100,
+      "longueurM": 1000,
+      "cascadeMaxM": 4,
+      "cordeMiniM": 6,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "20 min",
+      "descente": "1h00",
+      "retour": "5 min"
+    },
+    "topo": {
+      "accesAval": "De Cavaillon, suivre la D2 passant par Coustellet en direction de Gordes. Peu avant Gordes, rester sur la D2, direction Joucas et Lioux. Quitter la D2 pour la D102 en prenant à gauche, toujours en direction de Joucas. Au niveau de Joucas, garder le même cap en continuant sur 2,8 km sur la D60, puis prendre à gauche la D4 en direction de Murs. Faire 2,2 km et se garer à gauche sur un bon parking, non loin d'une citerne d'eau.",
+      "accesAmont": null,
+      "approche": "Traverser la route et passer sur le petit pont qui enjambe le Rieu Sec. Emprunter le chemin de gauche menant à Murs. Après quelques lacés, on arrive à La Bertrannette, départ de la descente .",
+      "descente": "Le départ s'effectue au dessous d'une petite station d'épuration avec de bonnes effluves nauséabondes. La végétation est assez dense sur les premiers mètres avec un accès moins aisé sur la rive droite. Par la suite, on arrive à se faufiler plus ou moins bien entre les buis, le long du cours d'eau sec. Quelques petites marmites se dessinent avec de petits obstacles ne dépassant pas les quatre mètres. Le clou du spectacle: trois à quatre petites cascades qui s'enchainent dans un mini encaissement avec quelques ronces.",
+      "retour": "A la vue du pont, sortir et rejoindre le parking .",
+      "engagement": "Aucun",
+      "periode": "Sec",
+      "geologie": null,
+      "historique": null,
+      "remarques": "L'utilisation d'une corde est facultative et prendre avec soi un instrument pour couper le bois, peut s'avérer utile !"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23079,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.953255,
+        "longitude": 5.257097,
+        "label": null
+      },
+      {
+        "canyonId": 23079,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.946121,
+        "longitude": 5.263626,
+        "label": null
+      },
+      {
+        "canyonId": 23079,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.945576,
+        "longitude": 5.263154,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.945576,
+      "longitude": 5.263154,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_e25ee273ce98550a",
+          "kind": "MAP",
+          "title": "3142 OT Cavaillon (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

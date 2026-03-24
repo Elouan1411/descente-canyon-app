@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:51.843679+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22389,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22389/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22389/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22389/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22389/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22389,
+    "identity": {
+      "nom": "Schwarzbach",
+      "nomComplet": "Schwarzbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22389/Schwarzbach.html"
+    },
+    "location": {
+      "pays": "Allemagne",
+      "region": "Bayern",
+      "departement": "Oberbayern",
+      "communePrincipale": "Wallgau",
+      "communes": [
+        "Landkreis Garmisch-Partenkirchen",
+        "Wallgau"
+      ],
+      "massif": "Estergebirge",
+      "bassin": "Walchensee",
+      "coursEau": "Schwarzbach"
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 1.8,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 1010,
+      "deniveleM": 160,
+      "longueurM": 1700,
+      "cascadeMaxM": 15,
+      "cordeMiniM": 20,
+      "navette": "1.9km"
+    },
+    "timings": {
+      "approche": "50mim",
+      "descente": "2h30",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22389,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.543308,
+        "longitude": 11.268239,
+        "label": null
+      },
+      {
+        "canyonId": 22389,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.545582,
+        "longitude": 11.286349,
+        "label": null
+      },
+      {
+        "canyonId": 22389,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 47.530552,
+        "longitude": 11.283034,
+        "label": null
+      },
+      {
+        "canyonId": 22389,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 47.541924,
+        "longitude": 11.289654,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 47.530552,
+      "longitude": 11.283034,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

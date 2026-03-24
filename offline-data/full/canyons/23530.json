@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:09.326192+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23530,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23530/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23530/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23530/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23530/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23530,
+    "identity": {
+      "nom": "Brunnibach",
+      "nomComplet": "Brunnibach, Stäuber",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23530/Brunnibach.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Gurtnellen",
+      "departement": "Uri",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": "Reuss",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v5a5IV",
+      "interet": 3.1,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 2033,
+      "deniveleM": 700,
+      "longueurM": 3000,
+      "cascadeMaxM": 70,
+      "cordeMiniM": 70,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "2h",
+      "descente": "5-6h",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": "La descente se compose de petits encaissements avec beaucoup de petits obstacles, dont de nombreux toboggans et des sauts allant jusqu’à 10m. On trouve plusieurs arches naturelles. Entre chaque encaissement on peut sortir facilement et récupérer le sentier.\n\nAprès l’encaissement, sous les chalets de Hinterbalm, il faut reprendre le chemin de monté RD afin d’éviter une zone de blocs de 200m de dénivelé pour arriver aux cascades finales.\n\nDans un dernier encaissement, on enchaine 6 rappels de 15 à 60m. Les cascades sont sympas avec des départs encaissés, des geysers…\n\nEncore 3 petits toboggans et la descente est terminée !",
+      "retour": null,
+      "engagement": "Mis à part l'encaissement des cascades finales, on peut sortir très régulièrement des encaissements.",
+      "periode": "Le canyon est alimenté par 2 glaciers et un gros bassin versant, alors il faut attendre les températures fraiches de l’automne pour envisager la descente.",
+      "geologie": null,
+      "historique": "Première descente le 25/10/2015 par Matthias Holzinger, Pascal Van Duin, Alex Arnold, Andi Seen et Thomas Guigon.",
+      "remarques": "Equipement de première à compléter, nous avons beaucoup désescaladé, sauté (jusqu’à 8-10m) ou passé en toboggan sans poser de point sur certains obstacles."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23530,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.766148,
+        "longitude": 8.806333,
+        "label": null
+      },
+      {
+        "canyonId": 23530,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.782635,
+        "longitude": 8.786852,
+        "label": null
+      },
+      {
+        "canyonId": 23530,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 46.766315,
+        "longitude": 8.711788,
+        "label": null
+      },
+      {
+        "canyonId": 23530,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 46.780388,
+        "longitude": 8.775549,
+        "label": "Fin du Alpentaxi"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.766315,
+      "longitude": 8.711788,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

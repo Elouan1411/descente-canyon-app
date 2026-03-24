@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:44.850353+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23119,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23119/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23119/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23119/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23119/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23119,
+    "identity": {
+      "nom": "Ostertal Tobel",
+      "nomComplet": "Ostertal Tobel, Ostertaler Tobel, Ostertaler Bach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23119/Ostertal-Tobel.html"
+    },
+    "location": {
+      "pays": "Allemagne",
+      "region": "Bayern",
+      "departement": "Schwaben",
+      "communePrincipale": "Blaichach",
+      "communes": [
+        "Sonthofen",
+        "Blaichach"
+      ],
+      "massif": "Allgäuer Alpen",
+      "bassin": "Iller",
+      "coursEau": "Ostertaler Bach"
+    },
+    "rating": {
+      "cotation": "v3a3II",
+      "interet": 1.2,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 990,
+      "deniveleM": 30,
+      "longueurM": 600,
+      "cascadeMaxM": 10,
+      "cordeMiniM": 15,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "25min",
+      "descente": "45min",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": "quelques sauts possibles",
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "très fréquenté des professionnel"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23119,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.499271,
+        "longitude": 10.194405,
+        "label": "fin de la partie ouverte du cours d'eau"
+      },
+      {
+        "canyonId": 23119,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.50642,
+        "longitude": 10.194121,
+        "label": "sortie vers droite"
+      },
+      {
+        "canyonId": 23119,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.520775,
+        "longitude": 10.221072,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.520775,
+      "longitude": 10.221072,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_0920eac300aaa064",
+          "kind": "MAP",
+          "title": "UK L 8 Allgäuer Alpen (Bayerisches Landesvermessungsamt)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_3b02ffe9a1fa4929",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/C...../OstertaltobelCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/C...../OstertaltobelCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:09.806022+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23804,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23804/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23804/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23804/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23804/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23804,
+    "identity": {
+      "nom": "Bianco",
+      "nomComplet": "Rio Bianco",
+      "prefixeNom": "Rio",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23804/Bianco.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Frioul-Vénétie julienne",
+      "departement": "Udine",
+      "communePrincipale": "Chiusaforte",
+      "communes": [
+        "Chiusaforte"
+      ],
+      "massif": "Alpes Carniques - Carniche - Karnischen",
+      "bassin": "Fella",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v5a3IV",
+      "interet": 2.3,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 1200,
+      "deniveleM": 560,
+      "longueurM": 1000,
+      "cascadeMaxM": 60,
+      "cordeMiniM": 60,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h20min",
+      "descente": "4h",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": "23.03.2016 Bob, David, Gebu, Tom (Canyoning Cult)",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23804,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.41787,
+        "longitude": 13.34353,
+        "label": null
+      },
+      {
+        "canyonId": 23804,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.413059,
+        "longitude": 13.33455,
+        "label": null
+      },
+      {
+        "canyonId": 23804,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.40588,
+        "longitude": 13.35243,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.40588,
+      "longitude": 13.35243,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

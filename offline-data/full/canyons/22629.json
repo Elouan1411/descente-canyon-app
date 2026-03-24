@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:44.668383+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22629,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22629/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22629/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22629/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22629/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22629,
+    "identity": {
+      "nom": "Tarwali Khola",
+      "nomComplet": "Tarwali Khola",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22629/Tarwali-Khola.html"
+    },
+    "location": {
+      "pays": "Nepal",
+      "region": "Western Development Region",
+      "departement": "Gandaki",
+      "communePrincipale": "Ghermu",
+      "communes": [
+        "Lamjung",
+        "Ghermu"
+      ],
+      "massif": "Massif des Annapurnas",
+      "bassin": "Marsyanghi",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 2.0,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 1200,
+      "deniveleM": 80,
+      "longueurM": 200,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 35,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "35min",
+      "descente": "1h",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "De Besi Sahar monter la vallée de Marsyangdi jusqu'à Syange. Garer la voiture à l'entrée de village.",
+      "accesAmont": null,
+      "approche": "De Syange (1100m alt.) traverser sur une passarelle le Marsyangdi vers rive gauche et poursuivre le trek d'Annapurna direction Guermu vers le-haut. Arrivée à le-haut (\"Hotel Rainbow\") prendre après Hotel Rainbow la sente vers l'est et ensuite vers nord. Continuer jusqu'à passerelle et traverser le Tarwali Khola. Après la passerelle prendre la sente à droite (sud-est) et descendre au cours d'eau.",
+      "descente": "50m marcher dans le ruisseau jusqu'à première cascade (25m - avec tyrolienne 35m); après quelques mètres la petite 2. casc. et encore quelques mètres (petit saut) les trois cascades finales.",
+      "retour": "Après les cascades finales prendre la sente au rive gauche et aller retour à passerelle sur Marsyangdi.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22629,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 28.388527,
+        "longitude": 84.405907,
+        "label": null
+      },
+      {
+        "canyonId": 22629,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 28.390192,
+        "longitude": 84.405746,
+        "label": null
+      },
+      {
+        "canyonId": 22629,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 28.386705,
+        "longitude": 84.401878,
+        "label": null
+      },
+      {
+        "canyonId": 22629,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 28.384449,
+        "longitude": 84.403343,
+        "label": "Hotel Rainbow"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 28.386705,
+      "longitude": 84.401878,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_496ae5f72ac7ee83",
+          "kind": "MAP",
+          "title": "Annapurna (Nepa Maps by Himalayan Maphouse)",
+          "scale": "1/125000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

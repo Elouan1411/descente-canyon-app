@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:54:22.232062+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22790,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22790/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22790/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22790/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22790/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22790,
+    "identity": {
+      "nom": "Rotmoosbach",
+      "nomComplet": "Rotmoosbach, Rothmoosbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22790/Rotmoosbach.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Basse-Autriche",
+      "departement": "Bezirk Scheibbs",
+      "communePrincipale": "Gemeinde Göstling an der Ybbs",
+      "communes": [
+        "Gemeinde Göstling an der Ybbs"
+      ],
+      "massif": "Styrian-Lower Austrian Limestone Alps",
+      "bassin": "Ybbs",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a3II",
+      "interet": 1.6,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 630,
+      "deniveleM": 70,
+      "longueurM": 350,
+      "cascadeMaxM": 18,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "10min",
+      "descente": "1h",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "De Göstling, suivre pendant 2 km la B25 vers le sud (direction Hochkar/Palfau).\n\nAprès le pont sur Rotbach, garer la voiture sur la droite.",
+      "accesAmont": null,
+      "approche": "Monter la piste et rentrer dans le cours d'eau, quand cela est possible.",
+      "descente": "Sauts et toboggans, quelques rappels, marche.",
+      "retour": "Sortie à moulin vielle à droite et prendre la sente.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22790,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.794044,
+        "longitude": 14.910979,
+        "label": null
+      },
+      {
+        "canyonId": 22790,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.793526,
+        "longitude": 14.916344,
+        "label": "moulin vieux à droite (sente)"
+      },
+      {
+        "canyonId": 22790,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.792904,
+        "longitude": 14.918581,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.792904,
+      "longitude": 14.918581,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_304b64058931a2bb",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/C.....ic=RotmoosbachCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/C.....ic=RotmoosbachCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

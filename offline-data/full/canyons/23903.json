@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:31.390034+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23903,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23903/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23903/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23903/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23903/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23903,
+    "identity": {
+      "nom": "Basse Vachière",
+      "nomComplet": "Les trois cascades de Basse Vachière",
+      "prefixeNom": "Les trois cascades de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23903/Basse-Vachiere.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-de-Haute-Provence",
+      "communePrincipale": "Prads-Haute-Bléone",
+      "communes": [
+        "Prads-Haute-Bléone"
+      ],
+      "massif": null,
+      "bassin": "Bléone",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1I",
+      "interet": 1.6,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 1740,
+      "deniveleM": 30,
+      "longueurM": 20,
+      "cascadeMaxM": 28,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "25min-1h20",
+      "descente": "1h00",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": "De Digne-les-Bains, prendre la direction de Barcelonnette et remonter la Bléone par la D900 jusqu'à La Javie, puis prendre à droite la D107 jusqu'à Prads-Haute-Bléone . De là, emprunter la petite route qui traverse La Blèone direction la via-ferrata après Le Moulin. La route se transforme vite en piste, qu'il faudra emprunter sur 9,5 km. Donc, remonter la piste et rester à gauche à l'intersection au niveau des panneaux en bois (VTT). Rouler environ 1 km et ignorer la piste qui descend à gauche. on continue toujours sur cette même piste sur environ 3 km pour prendre celle de gauche qui se rend en fond de vallée. 1,5 km plus loin, rester sur la piste de droite pour vous rendre et vous garer au col (Baisse de Vachière alt. 1884 m).",
+      "accesAmont": null,
+      "approche": "- Deux solutions :\n\n- Solution sans faire le ravin de Baisse de Vachière : 25 min\n\nDepuis le parking suivre la piste vers la cabane de Vachière et descendre une fois contourné le ravin de Baisse de Vachière (sans nom sur l'IGN).\n\nSeconde solution par le ravin de Baisse de Vachière : 1h20\n\nLes cascades se situent plus bas en sortant en RG.",
+      "descente": "- Cascade n°1 :\n\nUne C20 sur 1pt en RG + protège corde (possibilité de laisser la corde en fixe et de la récupérer au retour pour enchaîner avec la cascade d'à côté).\n\nRetour 8 min .\n\n- Cascade n°2 :\n\nUne C28 sur AN en RD (petit pin) + protège corde (possibilité de laisser la corde en fixe et de la récupérer au retour et enchaîner avec la cascade d'à côté).\n\nRetour 11 min.\n\n- Cascade n°3 :\n\nUne C25 sur 1pt en RG .\n\nCorde utile 2x30 m",
+      "retour": "Récupérer l'affluent en RD des deux autres cascades et remonter la pente herbeuse jusqu'à la piste de la cabane de Vachière, puis le parking.",
+      "engagement": "Aucun",
+      "periode": "Les cascades peuvent-être sèches en saison estivale. La meilleure période reste après la fonte des neiges (attention de pas sous-estimer le débit de la cascade n°3 pendant la période des fontes).",
+      "geologie": null,
+      "historique": "????\n\nPrésence de vieux spits\n\nAjout de deux mono-points (goujons de 10 mm + maillons de chaîne) sur la cascade n°1 et 3. Mai 2017 (Max38 et ALAIN 13).",
+      "remarques": "A enchaîner après avoir descendu le ravin de Baisse de Vachière."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23903,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.191029,
+        "longitude": 6.518053,
+        "label": null
+      },
+      {
+        "canyonId": 23903,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.197845,
+        "longitude": 6.517344,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.197845,
+      "longitude": 6.517344,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_a84f388c53925654",
+          "kind": "MAP",
+          "title": "3440 ET Digne-Les-Bains - La Javie (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:36.632797+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21760,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21760/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21760/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21760/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21760/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/21760/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 21760,
+    "identity": {
+      "nom": "Gravet",
+      "nomComplet": "Canyon de Gravet, riera de Gravet",
+      "prefixeNom": "Canyon de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21760/Gravet.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Cataluña",
+      "departement": "Barcelona",
+      "communePrincipale": "Rupit i Pruit",
+      "communes": [
+        "Rupit i Pruit"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": "riera de Gravet"
+    },
+    "rating": {
+      "cotation": "v3a1II",
+      "interet": 1.8,
+      "nbVotes": 7
+    },
+    "metrics": {
+      "altitudeDepartM": 790,
+      "deniveleM": 120,
+      "longueurM": 300,
+      "cascadeMaxM": 28,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "1h30",
+      "retour": "40min"
+    },
+    "topo": {
+      "accesAval": "Depuis Figueras, prendre direction Olot puis Les Preses/Vic par la C153. Sur cette route, avant Vic prendre à gauche direction Rupit. Arrivé au centre du village touristique, vous remarquez une boulangerie à gauche et un grand parking à droite. Sous le parking un pont enjambe à votre droite un des deux bras de la riera de Rupit et la route/piste continue à droite en traversant entre les maisons. Continuez par cette route pendant 2.5 km. A la bifurcation, laissez à votre droite la route pour le refuge de Sant Joan de Fabregues pour prendre la route de gauche qui descend et immédiatement la piste à gauche qui descend dans des prés et retourne en arrière. Cette piste commence peu après une maison de pierre située sur la gauche. Continuez cette piste et vous serez en face d'une belle et grande cascade (Salt de la Salent de Rupit). Descendez par la piste la plus à gauche qui vous amène au ruisseau de Rupit. Juste avant le gué un bon parking à gauche vous permet de stationner sans géner.",
+      "accesAmont": null,
+      "approche": "Du parking, suivez la piste qui traverse à gué et continuez tout droit sur le plateau. Vous passerez devant un gros bloc à gauche et un sentier peu après à droite vous amène au départ de la course.",
+      "descente": "Petite course d'initiation encaissée et bien équipée, au débit modeste et présentant un rappel final original car creusé et avec passage sous-bloc (non-obligatoire).",
+      "retour": "Desescaladez le chaos de blocs et prenez le bon sentier à droite qui vous ramène au sentier touristique de la cascade de Rupit et donc en prenant à gauche sur le plateau jusqu'à la voiture.",
+      "engagement": "C'est encaissé, sans échapatoire évidente mais très court et avec peu d'eau, donc sans souci majeur.",
+      "periode": "Printemps",
+      "geologie": null,
+      "historique": null,
+      "remarques": "A faire après avoir descendu Rupit pour compléter une demi-journée ou une journée suivant votre rythme, la taille du groupe et le débit de Rupit.\n\nLe plateau permet de s'installer tranquillement pour manger. Beau paysage.\n\nVisitez le village."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21760,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.021275,
+        "longitude": 2.483296,
+        "label": null
+      },
+      {
+        "canyonId": 21760,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.01693,
+        "longitude": 2.484283,
+        "label": null
+      },
+      {
+        "canyonId": 21760,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 42.010098,
+        "longitude": 2.473329,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 42.010098,
+      "longitude": 2.473329,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 596,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté municipal (Rupit i Pruit) - 19 oct 2021",
+          "summary": "L'article 15.2 interdit le canyonisme dans la rivière de Rupit et ses affluents sauf pour des projets scientifiques, techniques ou de volontariat environnemental pour lesquels il faut une autorisation de la commune.",
+          "remark": null,
+          "details": "Ordenança municipal (Rupit i Pruit)",
+          "effectiveDate": "19 oct 2021",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/596/legislation.html",
+          "attachments": [
+            {
+              "label": "Ordenança municipal (Rupit i Pruit)",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem596_pj1.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,147 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:02.083927+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22155,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22155/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22155/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22155/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22155/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22155,
+    "identity": {
+      "nom": "Rezzo",
+      "nomComplet": "Rezzo",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22155/Rezzo.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Lombardia",
+      "departement": "Como",
+      "communePrincipale": "Porlezza",
+      "communes": [
+        "Porlezza"
+      ],
+      "massif": null,
+      "bassin": "Lac de Lugano",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a4III",
+      "interet": 2.1,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 720,
+      "deniveleM": 430,
+      "longueurM": 2300,
+      "cascadeMaxM": 28,
+      "cordeMiniM": 30,
+      "navette": "5.3km"
+    },
+    "timings": {
+      "approche": "10min",
+      "descente": "5h",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": "De Lugano (Lago di Lugano), aller vers Lago di Como par la route SS 340. Aller ensuite à Porlezza (Lago di Lugano - est).\n\nDans le centre de la ville, prendre la route vers Val di Rezzo à gauche.\n\nA la route suivante, prendre à gauche, traverser le Rezzo et tourner à droite (Via Rezzo).\n\nContinuer jusqu'à la fin et garer la voiture.\n\nAvec l'autre voiture, retourner jusqu'à la route vers Val di Rezzo.\n\nLa suivre toujours en direction de Val di Rezzo (in Carlazzo à gauche). Environ 4,5 km après Porlezza et après le bois, garer la 2ème voiture à gauche près d'un champ avec des maisons.",
+      "accesAmont": null,
+      "approche": "Dans le virage suivant à droite, prendre la piste à gauche et rejoindre la prise d'eau.",
+      "descente": "20 rappels et de la marche.\n\nCanyon le plus souvent ouvert.",
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "Vérifier le niveau du cours d'eau au-dessus de la prise d'eau avant de s'engager."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22155,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.054413,
+        "longitude": 9.116893,
+        "label": null
+      },
+      {
+        "canyonId": 22155,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.04031,
+        "longitude": 9.122676,
+        "label": "à la fin (entre les premièrs maisons de Porlezza)"
+      },
+      {
+        "canyonId": 22155,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 46.05212,
+        "longitude": 9.117617,
+        "label": null
+      },
+      {
+        "canyonId": 22155,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 46.040218,
+        "longitude": 9.122665,
+        "label": "á la fin (entre les premières maisons)"
+      },
+      {
+        "canyonId": 22155,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 46.04142,
+        "longitude": 9.126281,
+        "label": "Parking aval pour la première sortie"
+      },
+      {
+        "canyonId": 22155,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 46.04184,
+        "longitude": 9.124119,
+        "label": "première sortie (vielle moulin devant les dernières cascades vers Porlezza)"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 46.05212,
+      "longitude": 9.117617,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_9dbf5ccfa8e5f5c5",
+          "kind": "MAP",
+          "title": "287 Menaggio (Swisstopo)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_add1feeb473e65db",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.x-gatt.com/rezzo/scheda.htm",
+          "url": "http://www.x-gatt.com/rezzo/scheda.htm"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

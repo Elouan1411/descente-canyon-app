@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:54:30.801554+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22825,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22825/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22825/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22825/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22825/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22825,
+    "identity": {
+      "nom": "Rosso",
+      "nomComplet": "Rio Rosso, Torrente Croto",
+      "prefixeNom": "Rio",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22825/Rosso.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Piemonte",
+      "departement": "Verbano-Cusio-Ossola",
+      "communePrincipale": "Vanzone con San Carlo",
+      "communes": [
+        "Vanzone con San Carlo"
+      ],
+      "massif": null,
+      "bassin": "Anza",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 1.9,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 830,
+      "deniveleM": 200,
+      "longueurM": 350,
+      "cascadeMaxM": 33,
+      "cordeMiniM": 35,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "50min",
+      "descente": "2h",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": "De Domodossola, descendre vers le sud par la SS33 et sortir à Piedimulera. De Piedimulera remonter la Valle Anzasca en suivant les indications pour Macugnada. Immédiatement après le village de San Carlo, tourner à droite vers Pianezza, passer sur le pont, monter quelques mètres pour se garer dans la large épingle à droite juste avant le village.",
+      "accesAmont": null,
+      "approche": "Monter à Pianezza que l'on traverse en montant, en suivant les indications fournies par les panneaux et la signalisation peinture jaune et rouge. L'excellent sentier amène à la Madonna del Ronco. Traverser horizontalement d'abord puis en légère montée vers un chalet. Passer derrière et monter à la crête toute proche (WC). Descendre derrière une pente très raide par une vague sente plus facile qu'il n'y parait vu d'en haut.",
+      "descente": "Torrent court et vaguement vertical, creusé dans une roche rouge et jaune caractéristique.\n\n10 cascades. Vraiment pas terrible, l'eau est jaune, il y a souvent une gangue jaunâtre qui parait non soluble dans l'eau... Les 2 grandes cascades (C33 et C31) sont équipées hors d'eau...\n\nEquipement très vieux dans l'amont.",
+      "retour": "Au dessus de la dernière petite cascade, sortir rive G et traverser une dalle peu inclinée. 5-6m pour un relais, rappel d'environ 5m qui dépose sur le fil d'un mur en béton à quelques mètres de la voiture. Ce relais est visible de la voiture.",
+      "engagement": "Peu engagé, sortie entre les 2 grandes cascades puis à la passerelle au niveau du bas de la 2ième grande cascade (C31).",
+      "periode": "Pas de vasque. Vaguement encaissé dans l'amont.\n\nQuasiment toute l'année, l'équipement en place fait que l'on ne se mouille que très peu avec environ 100l...",
+      "geologie": "Gneiss.",
+      "historique": "SCVV en 1996.",
+      "remarques": "Difficile de ne pas penser aux tonnes de mercure et de cyanure qui ont dû être utilisées pour extraire le précieux métal."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22825,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.991257,
+        "longitude": 8.125425,
+        "label": null
+      },
+      {
+        "canyonId": 22825,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.988819,
+        "longitude": 8.126436,
+        "label": null
+      },
+      {
+        "canyonId": 22825,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.988674,
+        "longitude": 8.128617,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.988674,
+      "longitude": 8.128617,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_70bc70b2c3a00775",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://catastoforre.aic-canyoning.it/index/forra/cod/VB027",
+          "url": "http://catastoforre.aic-canyoning.it/index/forra/cod/VB027"
+        },
+        {
+          "id": "resource_780b69ab23814c29",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.cicarudeclan.com/ita/a5_crotorosso.htm",
+          "url": "http://www.cicarudeclan.com/ita/a5_crotorosso.htm"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

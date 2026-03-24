@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:36.937755+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22036,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22036/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22036/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22036/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22036/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22036,
+    "identity": {
+      "nom": "Planhe",
+      "nomComplet": "Planhe",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22036/Planhe.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Aveyron",
+      "communePrincipale": "Bozouls",
+      "communes": [
+        "Bozouls"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a1I",
+      "interet": 0.7,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 540,
+      "deniveleM": 80,
+      "longueurM": 675,
+      "cascadeMaxM": 7,
+      "cordeMiniM": 10,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "1h",
+      "retour": "1h30"
+    },
+    "topo": {
+      "accesAval": "De Bozouls, prendre vers le sud-ouest direction Bezonnes par la D581. Avant d'arriver au hameau de la Planhe, prendre sur 100m la route qui part à droite.",
+      "accesAmont": null,
+      "approche": "Chercher à perdre de l'altitude au fond du talweg.",
+      "descente": "Randonnée aquatique avec deux jolies C6. Végétation luxuriante.",
+      "retour": "Remonter en contournant les obstacles, ou remonter par le canyon du Gibrou.",
+      "engagement": "Aucun",
+      "periode": "Pas d'eau en été, et relativement bien alimenté en hiver. Pas de problème en crue, tout est contournable.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Jérôme et Roland Pelissier, 1982"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22036,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 44.460896,
+        "longitude": 2.675214,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 44.460896,
+      "longitude": 2.675214,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_a603aa4818255d95",
+          "kind": "MAP",
+          "title": "2438 O Estaing - Gorges du Lot (IGN S?rie Bleue)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_478fa9771b24863a",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.descente-canyon.com/forums/vi.....p?pid=103710#p103710",
+          "url": "http://www.descente-canyon.com/forums/vi.....p?pid=103710#p103710"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,179 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:42.003563+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23109,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23109/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23109/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23109/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23109/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23109,
+    "identity": {
+      "nom": "Weißgriesgraben",
+      "nomComplet": "Weißgriesgraben",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23109/Weißgriesgraben.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Tyrol",
+      "departement": "Kufstein",
+      "communePrincipale": "Kramsach",
+      "communes": [
+        "Kramsach"
+      ],
+      "massif": "Brandenberger Alpen",
+      "bassin": "Inn",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a3IV",
+      "interet": 1.6,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1400,
+      "deniveleM": 750,
+      "longueurM": 8000,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 30,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "1h45",
+      "descente": "7h30",
+      "retour": "35min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": "marche et quelques rappels",
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23109,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.567295,
+        "longitude": 11.952583,
+        "label": null
+      },
+      {
+        "canyonId": 23109,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.54792,
+        "longitude": 11.910547,
+        "label": null
+      },
+      {
+        "canyonId": 23109,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 47.557724,
+        "longitude": 12.003577,
+        "label": null
+      },
+      {
+        "canyonId": 23109,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 47.53698,
+        "longitude": 11.913841,
+        "label": null
+      },
+      {
+        "canyonId": 23109,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.557255,
+        "longitude": 11.991883,
+        "label": "1 : marcher sur sentier/piste au-dessus de Karnergraben"
+      },
+      {
+        "canyonId": 23109,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.560322,
+        "longitude": 11.988546,
+        "label": "2 : de la piste à droite prendre le sentier vers Riedenbergalm"
+      },
+      {
+        "canyonId": 23109,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.566563,
+        "longitude": 11.971154,
+        "label": "3 : passer Riedenbergalm (1400m alt.) et chercher la sente vers Thaleralm"
+      },
+      {
+        "canyonId": 23109,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.568062,
+        "longitude": 11.959964,
+        "label": "4 : passer Thaleralm (1435m alt) et prendre la piste vers l'ouest"
+      },
+      {
+        "canyonId": 23109,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.567585,
+        "longitude": 11.956102,
+        "label": "5 : traverser la crete (pas de sente)"
+      },
+      {
+        "canyonId": 23109,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.547527,
+        "longitude": 11.909946,
+        "label": "traverser la rivière Brandenburger Ache"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 47.557724,
+      "longitude": 12.003577,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_21deba3bbbef91d3",
+          "kind": "MAP",
+          "title": "28 Vorderes Zillertal (Kompass)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_776e093bd66aacc0",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/C.....issgriesgrabenCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/C.....issgriesgrabenCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

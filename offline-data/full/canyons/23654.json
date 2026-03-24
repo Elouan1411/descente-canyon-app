@@ -1,0 +1,155 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:35.942173+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23654,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23654/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23654/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23654/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23654/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23654,
+    "identity": {
+      "nom": "Zarqa Ma'In (inférieur)",
+      "nomComplet": "Wadi Zarqa Ma'In (inférieur)",
+      "prefixeNom": "Wadi",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23654/Zarqa-Ma-In-inferieur.html"
+    },
+    "location": {
+      "pays": "Jordanie",
+      "region": null,
+      "departement": "Madaba",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Moab",
+      "bassin": "Dead Sea",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a3V",
+      "interet": 2.0,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 5,
+      "deniveleM": 380,
+      "longueurM": 3800,
+      "cascadeMaxM": 4,
+      "cordeMiniM": 5,
+      "navette": "18.4km"
+    },
+    "timings": {
+      "approche": "20",
+      "descente": "4h10min",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23654,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 31.608479,
+        "longitude": 35.603592,
+        "label": null
+      },
+      {
+        "canyonId": 23654,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 31.617664,
+        "longitude": 35.568516,
+        "label": null
+      },
+      {
+        "canyonId": 23654,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 31.608316,
+        "longitude": 35.615356,
+        "label": null
+      },
+      {
+        "canyonId": 23654,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 31.617655,
+        "longitude": 35.567268,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 31.608316,
+      "longitude": 35.615356,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_e73561c6eef5faa5",
+          "kind": "TOPOGUIDE",
+          "title": "Walking in Jordan",
+          "authors": [
+            "Taylor/Howard"
+          ],
+          "publicationYear": 2002,
+          "reference": "1-56656-379-8",
+          "editor": "Interlink Books",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1176/topoguide.html"
+        },
+        {
+          "id": "biblio_1a056ec74c5c542b",
+          "kind": "TOPOGUIDE",
+          "title": "Trekking and Canyoning in the Jordanian Dead Sea Rift",
+          "authors": [
+            "Itai Haviv"
+          ],
+          "publicationYear": 2000,
+          "reference": "965-90315-0-5",
+          "editor": "Desert Breeze Press",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1175/topoguide.html"
+        }
+      ],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_631a6fbdd8c1e0c0",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/C.....ZarqaMainLowerCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/C.....ZarqaMainLowerCanyon"
+        },
+        {
+          "id": "resource_d7c6cf54ccf0e346",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "https://climbing7.wordpress.com/2014/07/09/wadi-zerqa-main-moab/",
+          "url": "https://climbing7.wordpress.com/2014/07/09/wadi-zerqa-main-moab/"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

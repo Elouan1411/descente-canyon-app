@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:49:59.311091+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21590,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21590/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21590/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21590/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21590/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21590,
+    "identity": {
+      "nom": "Cardo",
+      "nomComplet": "Fou de Cardo",
+      "prefixeNom": "Fou de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21590/Cardo.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Cataluña",
+      "departement": "Tarragona",
+      "communePrincipale": "Cardo",
+      "communes": [
+        "Cardo"
+      ],
+      "massif": "Sierra de Boix",
+      "bassin": "Rio Ebre",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 1.9,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": 120,
+      "longueurM": 150,
+      "cascadeMaxM": 53,
+      "cordeMiniM": 60,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "1h-1h30",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": "De Tortosa prendre la C12 jusqu'à Rasquera. De là, la TV3021. Au km 6, après un petit tunnel, se garer (parking large).",
+      "accesAmont": null,
+      "approche": "Prendre la piste en mauvais état qui se dirige en descendant vers le canyon.",
+      "descente": null,
+      "retour": "A la sortie du canyon prendre a droite la piste qui nous ramène a la voiture, ou remonter direct à droite (mais pente forte et instable) après le grand rappel.",
+      "engagement": null,
+      "periode": "A faire après une période de pluies. En général complètement sec.",
+      "geologie": null,
+      "historique": "Première descente : \"Collectif Natrix\" = Josep M., Jordi Ferrer, Edu Ulldemolins et Manel Concernau, janvier 1997.",
+      "remarques": "2 marmites pièges, surtout la 2eme : penduler pour sortir de la 2eme marmite."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21590,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 40.956627,
+        "longitude": 0.570661,
+        "label": "Altitude 340m"
+      },
+      {
+        "canyonId": 21590,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 40.957565,
+        "longitude": 0.569605,
+        "label": null
+      },
+      {
+        "canyonId": 21590,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 40.958202,
+        "longitude": 0.576375,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 40.958202,
+      "longitude": 0.576375,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_07a1f571024f2987",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.barrancos.org/Cardo.htm",
+          "url": "http://www.barrancos.org/Cardo.htm"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

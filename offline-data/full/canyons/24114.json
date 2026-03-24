@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:59:15.289144+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24114,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24114/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24114/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24114/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24114/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24114,
+    "identity": {
+      "nom": "Reyssas",
+      "nomComplet": "Torrent de Reyssas",
+      "prefixeNom": "Torrent de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24114/Reyssas.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Hautes-Alpes",
+      "communePrincipale": "Réallon",
+      "communes": [
+        "Réallon"
+      ],
+      "massif": null,
+      "bassin": "Durance",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a3III",
+      "interet": 1.3,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 1850,
+      "deniveleM": 670,
+      "longueurM": 2500,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 25,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h50",
+      "descente": "3h00",
+      "retour": "35min"
+    },
+    "topo": {
+      "accesAval": "De Chorges, emprunter la D9 en direction de Réallon. Passer Saint-Apollinaire ainsi que le pont qui enjambe le torrent de Réallon. Sur Les Méans, prendre à droite sur la direction d'Embrun (D9). Au passage du pont du torrent de Reyssas, faire 700m et se garer au départ d'une piste sur votre gauche.",
+      "accesAmont": null,
+      "approche": "Emprunter la piste à pied et la suivre jusqu'à l'altitude 1460m (carrefour de pistes et passage du canal sur l'IGN). Puis prendre prendre en face, l'une des deux pistes qui montent. Lorsque ces deux pistes se rejoignent, emprunter celle qui monte en lacets à droite, celle-ci est beaucoup mieux marquée. On rejoint dès lors une piste carrossable qu'il faudra suivre en prenant à gauche. Passer la Combe de l'Aubrié et poursuivre à la cabane du Clôt Bouffier. A Bouffier, l'itinéraire n'est plus qu'un sentier qu'il faut suivre à droite de la cabane. Celui-ci s'élève brièvement par marquage (GR barré) pour se rendre sous un joli couvert de mélèzes. Passer deux, trois ravins secs et rejoignez le torrent de Reyssas.",
+      "descente": "Le souci de cette descente est qu'elle est composée de deux courtes parties canyon. La première se situe sur les 200 premiers mètres en début de course (trois jolis rappels) et la seconde sur les 200 derniers mètres (deux beaux rappels bien arrosés) avant la confluence de la combe de l'Aubrié. La partie intermédiaire est assez fastidieuse et n'a aucun intérêt canyon, puisqu'il ne s'y trouve que quelques petites désescalades et de la marche sur une multitude de blocs glissants et instables. Il est donc conseillé, de sortir à mi-course au départ du canal en RG (voir carte IGN) et poursuivre à pied sur un petit sentier, puis descendre par une piste pour rejoindre la partie inférieure.",
+      "retour": "Descendre le torrent de Reyssas et sortir par un sentier en RD sur le dernier virage du torrent (100m avant le pont de la D9). Une fois sur la route, rejoindre votre véhicule.",
+      "engagement": "Aucun, sauf sur les 300 derniers mètres.",
+      "periode": "Débit conséquent en début de saison.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "La marche intermédiaire est très très fastidieuse. Dommage, car les cascades à descendre en rappel sont plutôt très belles et bien arrosées en début de saison."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24114,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.604431,
+        "longitude": 6.412781,
+        "label": null
+      },
+      {
+        "canyonId": 24114,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.586575,
+        "longitude": 6.402524,
+        "label": null
+      },
+      {
+        "canyonId": 24114,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.57811,
+        "longitude": 6.398479,
+        "label": null
+      },
+      {
+        "canyonId": 24114,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 44.589279,
+        "longitude": 6.41247,
+        "label": "sentier d'approche"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.57811,
+      "longitude": 6.398479,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_83f652e7e3fab667",
+          "kind": "MAP",
+          "title": "3438 ET Embrun (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

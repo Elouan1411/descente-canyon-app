@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:59:31.355869+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24198,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24198/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24198/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24198/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24198/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24198,
+    "identity": {
+      "nom": "Red Granit Creek",
+      "nomComplet": "Red Granit Creek",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24198/Red-Granit-Creek.html"
+    },
+    "location": {
+      "pays": "Nouvelle Zélande",
+      "region": null,
+      "departement": "Canterbury",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a4III",
+      "interet": null,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": 370,
+      "deniveleM": 270,
+      "longueurM": null,
+      "cascadeMaxM": 40,
+      "cordeMiniM": 40,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "2h",
+      "descente": "4h30",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": "Canyon très ludique pouvant se découper en deux parties.",
+      "retour": null,
+      "engagement": "Beaucoup d'échappatoires, surtout dans la partie basse. Faible risque de crue.",
+      "periode": null,
+      "geologie": null,
+      "historique": "Ouvert intégralement le 28/11/2017 par Lee Den Haan et Richard Bramley.",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24198,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": -43.001389,
+        "longitude": 170.833328,
+        "label": null
+      },
+      {
+        "canyonId": 24198,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": -43.001999,
+        "longitude": 170.858521,
+        "label": null
+      },
+      {
+        "canyonId": 24198,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": -42.99889,
+        "longitude": 170.837494,
+        "label": "Entrée intermédiaire possible"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": -43.001999,
+      "longitude": 170.858521,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_2052aaa1c49c30c3",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.kiwicanyons.org",
+          "url": "http://www.kiwicanyons.org"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

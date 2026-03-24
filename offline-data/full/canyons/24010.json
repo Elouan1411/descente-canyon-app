@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:52.142713+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24010,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24010/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24010/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24010/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24010/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24010,
+    "identity": {
+      "nom": "Fraches",
+      "nomComplet": "Ravin des Fraches",
+      "prefixeNom": "Ravin des",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24010/Fraches.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-de-Haute-Provence",
+      "communePrincipale": "Seyne",
+      "communes": [
+        "Seyne"
+      ],
+      "massif": "Massif des 3 Evêchés - Estrop",
+      "bassin": "Bès",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a2II",
+      "interet": 3.0,
+      "nbVotes": 6
+    },
+    "metrics": {
+      "altitudeDepartM": 1750,
+      "deniveleM": 300,
+      "longueurM": 1000,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "2h30min",
+      "retour": "1h00"
+    },
+    "topo": {
+      "accesAval": "Depuis Seyne par la D900, se rendre Couloubroux et emprunter la petite route montant au cimetière, puis la piste jusqu'à La Vière. Se garer sans gêner.",
+      "accesAmont": null,
+      "approche": "Suivre la piste jusqu'à la grange (alt. 1503m) puis un petit sentier montant au GR. Sur le GR, se rendre sur les pâturages de la cabane de Couloubroux (alt 1762m) (voir carte IGN).",
+      "descente": "Descendre l'affluent (quelques désescalades, 1 point, 2 rappels), puis prendre dans le ravin principal pour commencer la descente.",
+      "retour": "RD ou RG, quelques courtes sentes dans une épaisse végétation épineuse ... Le lit du torrent est aussi encombré, malheureusement. Après le Ravin de Pra Jaret, la rive droite reste un peu plus accessible (quelques traces). Dés que cela semble possible, monter la pente vers les champs (attention aux clôtures et refermer systématiquement les barrières ) et votre véhicule.",
+      "engagement": "Le lit du torrent est assez large, mais les échappatoires sont peu évidentes.",
+      "periode": "Au printemps, à la fonte, ravin intéressant à descendre avec un certain volume d'eau . Seul le final reste légèrement encaissé ...",
+      "geologie": "Calcaire en strates, schiste.",
+      "historique": "08.06.2017 Patrick Chollot, Timo Stammwitz",
+      "remarques": "Parois instables et bassin exposé aux orages. A faire uniquement avec une bonne météo ."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24010,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.309502,
+        "longitude": 6.43475,
+        "label": "Départ affluent"
+      },
+      {
+        "canyonId": 24010,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.307529,
+        "longitude": 6.438333,
+        "label": "Départ principal"
+      },
+      {
+        "canyonId": 24010,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.306221,
+        "longitude": 6.425083,
+        "label": null
+      },
+      {
+        "canyonId": 24010,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 44.319111,
+        "longitude": 6.424556,
+        "label": null
+      },
+      {
+        "canyonId": 24010,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 44.306362,
+        "longitude": 6.409333,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 44.319111,
+      "longitude": 6.424556,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_f6542a442811df8f",
+          "kind": "MAP",
+          "title": "3439 ET Seyne - Chabanon-Grand-Puy (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

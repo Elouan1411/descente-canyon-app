@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:59.723016+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22429,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22429/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22429/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22429/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22429/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22429,
+    "identity": {
+      "nom": "La Gironde",
+      "nomComplet": "Vallon de La Gironde, La Gironde",
+      "prefixeNom": "Vallon de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22429/La-Gironde.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-Maritimes",
+      "communePrincipale": "Le Mas",
+      "communes": [
+        "Le Mas"
+      ],
+      "massif": "Mont Saint Sauveur",
+      "bassin": "Estéron",
+      "coursEau": "La Gironde"
+    },
+    "rating": {
+      "cotation": "v1a3II",
+      "interet": 1.1,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 727,
+      "deniveleM": 200,
+      "longueurM": 4000,
+      "cascadeMaxM": 8,
+      "cordeMiniM": 5,
+      "navette": "4.0km"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "4h",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "De Nice se rendre à Aiglun puis vers Le Mas. Au Tardon se garer dans l' épingle à la balise 95. Avec l'autre voiture continuer vers Le Mas et juste avant prendre direction Les Sausses sur 1Km (D110). Se garer au pont de l'Arsiane balise 101.",
+      "accesAmont": null,
+      "approche": "Marche dans la rivière que l' on fera le maximum sur les berges jusqu'au resserrement.",
+      "descente": "Des toboggans dans des goulottes plates, des sauts, 3 longs biefs bien sculptés. Tout cela s' enchaine de façon continue jusqu'à 200m du pont de sortie et fin du parcours.",
+      "retour": "Traverser le pont et remonter aux Tardons et à la voiture.",
+      "engagement": "Randonnée aquatique, 10m de corde de sécurité. Peu glissant. A faire avec un bon débit pour profiter des toboggans presque plats dans les goulottes. Presque tous les obstacles peuvent se shunter sur les cotés.",
+      "periode": "En début de saison ou à l'étiage (moins de toboggans)",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Se garer sans gêner les riverains aux Tardons."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22429,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.838333,
+        "longitude": 6.860189,
+        "label": null
+      },
+      {
+        "canyonId": 22429,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.84697,
+        "longitude": 6.893213,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 43.838333,
+      "longitude": 6.860189,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

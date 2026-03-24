@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:42.127774+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22065,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22065/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22065/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22065/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22065/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22065,
+    "identity": {
+      "nom": "Alpbach",
+      "nomComplet": "Alpbach, Waterworld",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22065/Alpbach.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Vorarlberg",
+      "departement": "Bregenz",
+      "communePrincipale": "Mellau",
+      "communes": [
+        "Mellau"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.5,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 1450,
+      "deniveleM": 650,
+      "longueurM": 1000,
+      "cascadeMaxM": 65,
+      "cordeMiniM": 65,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15minou 2h",
+      "descente": "5h",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": "De Dornbirn prés de la frontière Suisse, prendre la direction de Bezau, puis de Mellau. Dans ce village passez à droite le pont et suivez la direction de la télécabine (Panneau : Bergbahnen). Garez-vous sur le grand parking.\n\nVous pouvez accéder en deux heures au départ du canyon sans prendre la télécabine. Le chemin commence à gauche du parking et monte vers Kanisalpe.",
+      "accesAmont": null,
+      "approche": "Prenez la télécabine. A sa sortie suivez à gauche les panneaux de randonnée pour Kanisalpe. Rapidement vous croisez le pont sur l’Alpbach.",
+      "descente": "La descente commence par des grandes cascades semi horizontales. Ne coincez pas les cordes lors du tirage. Les points sont parfois peu visibles ou abîmés par les crues. Après la C40 (attention aux frottements) commence une partie de marche pénible dans les blocs. La descente reprend au niveau de la première échappatoire. A présent, il n’y a pas de temps mort mais l’ensemble manque de caractère. Ce n’est qu’avant la grande cascade que le cours d’eau commence à s’encaisser. La C19 est très belle et technique en cas de gros débit. La C62 s’attaque par une MC RG pour rejoindre le premier relais très aérien. Le deuxième relais se trouve juste en dessous. On peut de là faire un rappel unique de 54 m jusqu’en bas. Un relais très décalé RG existe. Attention de ne pas coincer la corde au tirage. Il reste encore 4 rappels après cette cascade. Dans la dernière partie les points pour les MC et les relais peuvent être endommagées ou arrachées.",
+      "retour": "Juste après la dernière cascade commence un chemin RG. Il faut éviter à la fin les propriétés privées. Pour cela restez bien au bord de la rivière. A la route partez à gauche jusqu’à la télécabine.",
+      "engagement": "Quelques échappatoires. Peu d’encaissement.",
+      "periode": "Canyon sensible aux crues. Niveau correct l’été après la fonte des dernières neiges.\n\nJuillet - Septembre",
+      "geologie": null,
+      "historique": "Première descente: Schranz Thomas, Walter Gmeiner und Meusburger Martin le 17.10.98",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22065,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.328236,
+        "longitude": 9.897695,
+        "label": null
+      },
+      {
+        "canyonId": 22065,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.340714,
+        "longitude": 9.900141,
+        "label": null
+      },
+      {
+        "canyonId": 22065,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.345802,
+        "longitude": 9.888039,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.345802,
+      "longitude": 9.888039,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_11c4163492754279",
+          "kind": "MAP",
+          "title": "WK 364 Bregenzerwald (Freytag & Berndt)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_8d67a090f1958a82",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/C.....pic=WaterworldCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/C.....pic=WaterworldCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

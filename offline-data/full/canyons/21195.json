@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:48:29.731907+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21195,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21195/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21195/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21195/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21195/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21195,
+    "identity": {
+      "nom": "Cot",
+      "nomComplet": "Cascades du Cot, (Amont de l'Escherugue), Ruisseau du Cot",
+      "prefixeNom": "Cascades du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21195/Cot.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Hautes-Pyrénées",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Cirque de Troumouse",
+      "bassin": null,
+      "coursEau": "Ruisseau du Cot"
+    },
+    "rating": {
+      "cotation": "v5a2III",
+      "interet": 2.5,
+      "nbVotes": 6
+    },
+    "metrics": {
+      "altitudeDepartM": 2030,
+      "deniveleM": 200,
+      "longueurM": 500,
+      "cascadeMaxM": 60,
+      "cordeMiniM": 70,
+      "navette": "3.0km"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "2h",
+      "retour": "35min"
+    },
+    "topo": {
+      "accesAval": "Par la D922 depuis Gèdre, aller au cirque de Troumouse.\n\nSi vous disposez de 2 voitures garez-en une à l'hotellerie du Maillet, et montez avec l'autre jusqu'à la dernière épingle de la route avant le parking final.",
+      "accesAmont": null,
+      "approche": "Par une sente, descendre en 5mn dans le canyon",
+      "descente": "Pas de difficulté majeure.\n\nCascade de 60m.\n\nCependant vous êtes dans le parc national alors merci de respecter l'environnement.",
+      "retour": "A pied ou navette",
+      "engagement": null,
+      "periode": "Attention au débit d'eau à la fonte des neiges, la grande cascade finale est néanmoins très diffuse.\n\nAttention aux orages vous êtes dans un gigantesque collecteur, un cirque quoi !",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21195,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.72974,
+        "longitude": 0.096989,
+        "label": null
+      },
+      {
+        "canyonId": 21195,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 42.729488,
+        "longitude": 0.097675,
+        "label": "Le départ se situe à 5 min du parking du cirque de Troumouse"
+      },
+      {
+        "canyonId": 21195,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 42.727722,
+        "longitude": 0.09613,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 42.729488,
+      "longitude": 0.097675,
+      "label": "Le départ se situe à 5 min du parking du cirque de Troumouse"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

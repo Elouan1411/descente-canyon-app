@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:36.943928+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23658,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23658/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23658/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23658/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23658/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23658,
+    "identity": {
+      "nom": "Oustaus",
+      "nomComplet": "Torrent des Oustaus, Torrent de Bonsecours",
+      "prefixeNom": "Torrent des",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23658/Oustaus.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Hautes-Alpes",
+      "communePrincipale": "Ventavon",
+      "communes": [
+        "Ventavon"
+      ],
+      "massif": "Montagne d'Aujour",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2I",
+      "interet": 1.6,
+      "nbVotes": 5
+    },
+    "metrics": {
+      "altitudeDepartM": 1040,
+      "deniveleM": 140,
+      "longueurM": 400,
+      "cascadeMaxM": 35,
+      "cordeMiniM": 35,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "1h",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "De Laragne-Montéglin, direction Gap par la D942. Juste après Ventavon, prendre à gauche la route de Bonsecours, et ce, (sur IGN), au carrefour \"Champ Gerbaud\", Alt: 613. Peu après être passé devant \"la Machotte\", la route se sépare en deux; continuer droit, panneau: piste C117 / ONF Beynon, jusqu'à la maison forestière de Bonsecours.",
+      "accesAmont": null,
+      "approche": "Dans le virage, attaquer le sentier en direction du \"Pas\" / Oustaus. Le chemin s'estompe très vite, descendre une centaine de m par une clairière. Le sentier devient très visible, passe devant une stèle. Traverser le ruisseau, monter rive G, retraverser pour une montée sympathique qui mène au \"Pas\". Le départ est juste derrière.",
+      "descente": "La partie canyon est très courte (mais intense): R2, T3, C35, C25, C15. S'en suit 300m de blocs.",
+      "retour": "Retrouver le sentier de montée.",
+      "engagement": null,
+      "periode": "Printemps, automne, après de bonnes pluies.",
+      "geologie": "Calcaire.",
+      "historique": "Ouverture le 27 mai 2016 par Michiel van der Lans.",
+      "remarques": "Équipé en mono-points de 10mm.\n\nIl y a une autre cascade juste à coté, que l'on voit quand on monte le sentier vers le canyon. Pour l'accès, il faut remonter un peu plus jusqu'au deuxième collet et descendre à gauche. C'est une seule cascade de tuf de 35m : MC 3 RG puis C35 RD."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23658,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.421192,
+        "longitude": 5.872667,
+        "label": null
+      },
+      {
+        "canyonId": 23658,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.420471,
+        "longitude": 5.872556,
+        "label": null
+      },
+      {
+        "canyonId": 23658,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.416084,
+        "longitude": 5.866639,
+        "label": null
+      },
+      {
+        "canyonId": 23658,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 44.422611,
+        "longitude": 5.870861,
+        "label": "Le bouse de C35"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.416084,
+      "longitude": 5.866639,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

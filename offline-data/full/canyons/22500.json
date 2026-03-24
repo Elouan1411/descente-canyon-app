@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:15.583470+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22500,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22500/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22500/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22500/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22500/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22500,
+    "identity": {
+      "nom": "Pesta",
+      "nomComplet": "Valle della Pesta",
+      "prefixeNom": "Valle della",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22500/Pesta.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Cugnasco-Gerra",
+      "departement": "Tessin",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": "Ticino",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 2.1,
+      "nbVotes": 8
+    },
+    "metrics": {
+      "altitudeDepartM": 390,
+      "deniveleM": 170,
+      "longueurM": 570,
+      "cascadeMaxM": 26,
+      "cordeMiniM": 30,
+      "navette": "2.7km"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "2h",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "De Riazzino vers Bugaro, 100m devant Piandessio garer la 2ème voiture",
+      "accesAmont": null,
+      "approche": "la route 100m retour et prendre le sentier vers \"Peross\". 30m après une porte à droite vers le ruisseau.",
+      "descente": "Succession de rappels et marche, belles cascades finales",
+      "retour": "Après les cascades finales sortie à droite et aller à la 1ère voiture au parking publique",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22500,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.180244,
+        "longitude": 8.897982,
+        "label": null
+      },
+      {
+        "canyonId": 22500,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.176491,
+        "longitude": 8.8987,
+        "label": null
+      },
+      {
+        "canyonId": 22500,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 46.17905,
+        "longitude": 8.898089,
+        "label": null
+      },
+      {
+        "canyonId": 22500,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 46.176025,
+        "longitude": 8.897569,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 46.17905,
+      "longitude": 8.898089,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_9a9578770c172929",
+          "kind": "MAP",
+          "title": "1313 Bellinzona (Carte Nationale Suisse)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

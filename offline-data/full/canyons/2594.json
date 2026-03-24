@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:46:06.509337+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2594,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2594/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2594/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2594/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2594/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2594,
+    "identity": {
+      "nom": "Voroize",
+      "nomComplet": "La Voroize",
+      "prefixeNom": "La",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2594/Voroize.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Isère",
+      "communePrincipale": "Veurey-Voroize",
+      "communes": [
+        "Veurey-Voroize"
+      ],
+      "massif": "Vercors",
+      "bassin": "Isère",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2I",
+      "interet": 0.8,
+      "nbVotes": 8
+    },
+    "metrics": {
+      "altitudeDepartM": 325,
+      "deniveleM": 75,
+      "longueurM": 500,
+      "cascadeMaxM": 18,
+      "cordeMiniM": 25,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "45min",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "A Veurey monter dans le village en voiture, passer entre 2 maisons (très étroit : panneau routier 2m par 2m maxi), puis se garer sur le parking en terre à gauche.",
+      "accesAmont": null,
+      "approche": "Depuis le parking, monter à pied le chemin qui traverse le ruisseau puis le longe, jusqu'à dépasser la grande cascade et la C4. Descendre dans le ruisseau.",
+      "descente": "C4 sur AN .\n\nC18 D23\n\nPC4 D8",
+      "retour": null,
+      "engagement": "Trés faible",
+      "periode": "De l'eau. Attention au débit au printemps.",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2594,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.272724,
+        "longitude": 5.611233,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.272724,
+      "longitude": 5.611233,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_e7d94bb2f47393ab",
+          "kind": "TOPOGUIDE",
+          "title": "Cascades, Gorges & Canyons : Pré-alpes d'Isère et de Savoie",
+          "authors": [
+            "Bertrand Hauser",
+            "Delphine Baratin"
+          ],
+          "publicationYear": 2007,
+          "reference": "978-2-9529407-0-2",
+          "editor": "Descente-Canyon.com",
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/11/Cascades--Gorges-et-Canyons-:-Pre-alpes-d-Isere-et-de-Savoie.html"
+        },
+        {
+          "id": "biblio_0f06b44eb9a42186",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons du Vercors et Alentours",
+          "authors": [
+            "J-C. Botti",
+            "B. Rosset",
+            "Y. Launay",
+            "C. Larribe",
+            "T. Larribe",
+            "Spéléo Club MJC de Tullins"
+          ],
+          "publicationYear": 1997,
+          "reference": "ISBN 2-7417-0211-X",
+          "editor": "Gap",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/12/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_f71cf3569cd5f7fc",
+          "kind": "MAP",
+          "title": "3235 OT Autrans - Gorges de La Bourne (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

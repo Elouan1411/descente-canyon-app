@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:59:10.803097+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24093,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24093/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24093/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24093/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24093/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24093,
+    "identity": {
+      "nom": "Mas Clave",
+      "nomComplet": "Riera de Mas Clave",
+      "prefixeNom": "Riera de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24093/Mas-Clave.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Cataluña",
+      "departement": "Gerona",
+      "communePrincipale": "Sant Hilari Sacalm",
+      "communes": [
+        "Sant Hilari Sacalm"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.5,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 730,
+      "deniveleM": 140,
+      "longueurM": 500,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 40,
+      "navette": "3.4km"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "1h30",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "aval: de l’endroit où on a pris la piste, continuer en direction d’Anglès pendant 1,8km. Parking à droite de la route, là ou arrive le sentier de retour",
+      "accesAmont": "amont : de Sant Hilari Sacalm, faire 7,3km en direction d’Anglès, puis prendre une piste à gauche. C’est en face d’une piste à droite. La suivre pendant 1,6 km et se garer à droite sur un espace ouvert. Descendre vers le lit, en bas. Attention de ne pas prendre un sentier un peu avant avec des cairns.\n\nParking",
+      "approche": null,
+      "descente": "Bien équipé, mais canyon très très glissant.\n\n12m, 28m, 3m, 25m, plan incliné de 30m, 30m et 20m.",
+      "retour": "Après le dernier rappel, continuer jusqu’à la rivière. La descendre en rive gauche pendant 150m, rubalisé FEEC. Croiser la rivière et monter par une sente, de nouveau rubalisée FEEC, jusqu’à la route.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24093,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 41.925426,
+        "longitude": 2.503025,
+        "label": null
+      },
+      {
+        "canyonId": 24093,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 41.926998,
+        "longitude": 2.512719,
+        "label": null
+      },
+      {
+        "canyonId": 24093,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 41.916862,
+        "longitude": 2.511894,
+        "label": "départ de la piste vers le P amont"
+      },
+      {
+        "canyonId": 24093,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 41.92622,
+        "longitude": 2.510706,
+        "label": "point d'où l'on peut observer le débit des cascades"
+      },
+      {
+        "canyonId": 24093,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 41.926891,
+        "longitude": 2.5102,
+        "label": "point où croiser la rivière"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 41.925426,
+      "longitude": 2.503025,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

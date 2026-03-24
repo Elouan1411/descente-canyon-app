@@ -1,0 +1,145 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:49:49.111788+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21543,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21543/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21543/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21543/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21543/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21543,
+    "identity": {
+      "nom": "Divon",
+      "nomComplet": "Ravine Divon",
+      "prefixeNom": "Ravine",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21543/Divon.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Saint-Paul",
+      "departement": "La Réunion",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Grand Bénare",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a2III",
+      "interet": 1.8,
+      "nbVotes": 5
+    },
+    "metrics": {
+      "altitudeDepartM": 366,
+      "deniveleM": 360,
+      "longueurM": 1800,
+      "cascadeMaxM": 85,
+      "cordeMiniM": 60,
+      "navette": "5.0km"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "5h",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": "Aval : A St Paul, en face de la gare routière, prendre la D5 direction Crève Coeur / Bois Rouge. Une fois le pont à la sortie de St Paul franchii, prendre à gauche en direction du Tour des Roches. Se garer après un radier trés marqué (passerelle piétone).\n\nAmont : Suivre la D5 direction Crève Coeur / Bois Rouge. A Bois Rouge, prendre à gauche direction Bellemène. Se garer à gauche sur un petit parking juste après le pont enjambant la ravine.",
+      "descente": "Enchainement de rappel dont la hauteur va crescendo : 20, 30, 25+55 (aller chercher le relais en Rg), 35, 20, et 25+60 pour finir.",
+      "retour": "Suivre le lit jusqu'au radier.",
+      "engagement": null,
+      "periode": "Canyon peu aquatique, mais sauvage.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Canyon propice à la découverte des grandes verticales de la Réunion."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21543,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": -21.023579,
+        "longitude": 55.293465,
+        "label": null
+      },
+      {
+        "canyonId": 21543,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": -21.009712,
+        "longitude": 55.285015,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": -21.023579,
+      "longitude": 55.293465,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_3ed05b9314e97090",
+          "kind": "TOPOGUIDE",
+          "title": "73 canyons à la Réunion et Madagascar",
+          "authors": [
+            "Ric a Ric"
+          ],
+          "publicationYear": 2009,
+          "reference": null,
+          "editor": "Ric a Ric",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/134/73-canyons-a-la-Reunion-et-a-Madagascar.html"
+        },
+        {
+          "id": "biblio_0710f326f5b4b107",
+          "kind": "TOPOGUIDE",
+          "title": "La Réunion : Topocanyon Ricaric",
+          "authors": [
+            "Ric A Ric"
+          ],
+          "publicationYear": 2003,
+          "reference": null,
+          "editor": null,
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/156/topoguide.html"
+        },
+        {
+          "id": "biblio_f02672f3db0c7f65",
+          "kind": "TOPOGUIDE",
+          "title": "Le paradis du canyoning",
+          "authors": [
+            "P. Colas"
+          ],
+          "publicationYear": 1995,
+          "reference": null,
+          "editor": "Maison de la montagne",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1138/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_c90940801a6e504a",
+          "kind": "MAP",
+          "title": "4401RT Saint-Paul Le port (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

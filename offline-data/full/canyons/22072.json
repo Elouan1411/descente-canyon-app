@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:43.508415+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22072,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22072/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22072/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22072/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22072/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22072,
+    "identity": {
+      "nom": "Ant",
+      "nomComplet": "Nant d' Ant",
+      "prefixeNom": "Nant d'",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22072/Ant.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Haute-Savoie",
+      "communePrincipale": "Samoëns",
+      "communes": [
+        "Samoëns"
+      ],
+      "massif": "Chablais - Platé - Aiguilles Rouges",
+      "bassin": "Giffre",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a3III",
+      "interet": 1.9,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 899,
+      "deniveleM": 170,
+      "longueurM": null,
+      "cascadeMaxM": 112,
+      "cordeMiniM": 75,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "25min",
+      "descente": "1h20",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "Du camping de Samoëns, prendre le chemin à gauche après le pont du Giffre pour aller se garer au départ du sentier de rando.",
+      "accesAmont": null,
+      "approche": "Suivre le sentier de rando qui monte jusqu'à \"les Rots\".\n\nAu village prendre à gauche jusqu'au pont, point de départ de la course.\n\nDépart en RD en amont.",
+      "descente": "C25 : prendre les 2 exp° RG (les chercher un peu)\n\nmarche, en cas de gros débit, afin d'éviter les vasques suivantes, un point RD sans maillon permet de passer un ressaut.\n\nC112 : MC possible via le gros arbre tombé.\n\nEn RD, 3 spits reliés permettent de faire un premier jet de 70m et passer 2 ressauts (ainsi que qq relais intermédiaires) puis toujours en RD, 2 points permettent de finir les 32m environ.\n\nLe canyon se termine par une désescalade et un peu de marche.",
+      "retour": "Rejoindre en RG un poste électrique par un sentier qui mène ensuite a la voiture.",
+      "engagement": "Court, peut-être une échappatoire RD avant la grande cascade (non testé). Zone hors crue possible a ce niveau.\n\nQuelques passages de vasque évitables.\n\nDescentes hors crues.",
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22072,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.069721,
+        "longitude": 6.725833,
+        "label": null
+      },
+      {
+        "canyonId": 22072,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.071945,
+        "longitude": 6.728056,
+        "label": null
+      },
+      {
+        "canyonId": 22072,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.074165,
+        "longitude": 6.7225,
+        "label": null
+      },
+      {
+        "canyonId": 22072,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 46.071564,
+        "longitude": 6.727667,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.074165,
+      "longitude": 6.7225,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_15a6dbda97b38ace",
+          "kind": "MAP",
+          "title": "3530 ET Samoens - Haut-Giffre (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:55.236968+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22684,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22684/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22684/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22684/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22684/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22684,
+    "identity": {
+      "nom": "Surcruns",
+      "nomComplet": "Surcruns",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22684/Surcruns.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Flims",
+      "departement": "Graubünden/Grigioni/Grischun",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Piz Segnas",
+      "bassin": "Vorderrhein",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a4IV",
+      "interet": 3.2,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 2390,
+      "deniveleM": 490,
+      "longueurM": 1500,
+      "cascadeMaxM": 40,
+      "cordeMiniM": 45,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "2h",
+      "descente": "4h",
+      "retour": "1h"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": "Du Fil Cassons (télésiège et télécabine de Flims) en 2h, de Barghis (autobus de Flims) en 2h30.",
+      "descente": "4 parties différentes. Première partie très étroite et formes magnifiques, partie II et III scié par le bord des plateaux (jusqu'à 100m profond), partie IV rampes avec un encaissement à la fin.",
+      "retour": "1h à Barghis (autobus à Flims).",
+      "engagement": null,
+      "periode": "L'eau bleue-grise, saison après la fonte principale de neige (aout - octobre), restes de neige tout l'année au versant.",
+      "geologie": "Couches du calcaire solide (encaissements) et moins solides (parties ouvertes). La suite des couches est bien visible au paroi nord du Flimserstein vis-à-vis. Canyon scie par le verrucano au calcaire.",
+      "historique": "04.08.2010 ouvert par Eric Frézal, Patrick Steffen, Timo Stammwitz",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22684,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.896595,
+        "longitude": 9.30306,
+        "label": null
+      },
+      {
+        "canyonId": 22684,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.885494,
+        "longitude": 9.293854,
+        "label": null
+      },
+      {
+        "canyonId": 22684,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.845356,
+        "longitude": 9.32073,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.845356,
+      "longitude": 9.32073,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_9179b25820804ecc",
+          "kind": "MAP",
+          "title": "247 Sardona (Carte Nationale Suisse)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_700849c5c85141f1",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.grandcanyons.ch/de/imgGallery_80_0_pictList.html",
+          "url": "http://www.grandcanyons.ch/de/imgGallery_80_0_pictList.html"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

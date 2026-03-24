@@ -1,0 +1,151 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:36.597501+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23330,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23330/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23330/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23330/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23330/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/23330/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 23330,
+    "identity": {
+      "nom": "Cinq Sèdes",
+      "nomComplet": "Vallon des Cinq Sèdes",
+      "prefixeNom": "Vallon des",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23330/Cinq-Sedes.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Var",
+      "communePrincipale": "Les Mayons",
+      "communes": [
+        "Gonfaron",
+        "Les Mayons"
+      ],
+      "massif": "Les Maures",
+      "bassin": "Argens",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v1a2I",
+      "interet": 0.6,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 350,
+      "deniveleM": 100,
+      "longueurM": 1000,
+      "cascadeMaxM": 17,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "45min",
+      "descente": "1h20",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "Autoroute A8, puis A57 en direction de Toulon. Sortir sur Le Cannet des Maures et emprunter la D558 en direction de La Garde-Freinet . Touner à droite sur la D75 lorsque le panneau indiquera Gonfaron, Les Mayons . De là, rouler 2,1 km et garez-vous à gauche non loin d'une citerne et du départ de la piste de St Daumas fermée à la circulation .",
+      "accesAmont": null,
+      "approche": "Passer la barrière et emprunter la piste, lorsque celle-ci se coupe en deux, prendre celle de droite et rester en RD du ruisseau . Passer au pied des ruines de St Daumas, on longe toujours le ruisseau en RD. Un peu plus loin, la piste se transforme en sentier pour s'élever, nous quittons le ruisseau toujours en RD pour un court moment . lors de la progression, laisser de côté les deux bifurcations partant à gauche et commencer la descente lorsque le sentier rejoint le Vallon des cinq Sèdes.",
+      "descente": "Vallon plutôt esthétique par son érosion sur sa partie amont où tous les obstacles se désescalades,se toboggues ... La corde étant facultative pour les adultes. Seule une Pi17 est équipée d'un point en RG... Une descente pouvant faire office d'initiation pour les enfants .",
+      "retour": "Emprunter la piste et le chemin de retour ...",
+      "engagement": "Il est possible de s'extraire du ruisseau à tout moment, mais la progression se fera dans végétation plutôt agressive .",
+      "periode": "Doit-être sec l'été",
+      "geologie": "micaschiste",
+      "historique": "lolo et ALAIN 13",
+      "remarques": "Descente pour une initiation . Corde facultative pour les grands ."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23330,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.307777,
+        "longitude": 6.405959,
+        "label": null
+      },
+      {
+        "canyonId": 23330,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.312725,
+        "longitude": 6.401219,
+        "label": null
+      },
+      {
+        "canyonId": 23330,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.326668,
+        "longitude": 6.404652,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.326668,
+      "longitude": 6.404652,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_ac6e7b50c0c5df84",
+          "kind": "MAP",
+          "title": "3545 OT Saint-Tropez - Sainte-Maxime (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 579,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Var) - 13 mai 2025",
+          "summary": "- La pratique du canyonisme dans des canyons secs (cotation aquaticité A1 ou habituellement à sec) est autorisée toute l'année\n\n- La pratique du canyonisme dans des canyons aquatiques est interdite du 1er novembre au 31 mars.\n\nPour la période du 1er avril au 30 octobre, il est interdit :\n\n- de pratiquer du coucher du soleil à 9h\n\n- de s'engager dans une descente de canyon aquatique après 17h.\n\n- De manière générale, il est interdit :\n\n- de s'engager si une alerte vigilance météo de niveau orange ou rouge est émise par Météo France, en ce qui concerne le risque \"pluie\", \"orage\", et \"inondation\", sur le secteur concerné.\n\n- de constituer un groupe de plus de 10 personnes (encadrement inclus)",
+          "remark": null,
+          "details": "Arrêté préfectoral (Préfecture du Var) SDJES-SPORTS-2025-12 du 13 mai 2025",
+          "effectiveDate": "13 mai 2025",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/579/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral (Préfecture du Var) SDJES-SPORTS-2025-12 du 13 mai 2025",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem579_pj1.pdf"
+            }
+          ]
+        },
+        {
+          "id": 545,
+          "status": "Abrogé",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Var) - 06 mai 2024",
+          "summary": "La pratique du canyonisme se voit interdite du 1er novembre au 31 mars.\n\nPour la période du 1er avril au 30 octobre, il est interdit :\n\n- de s'engager dans une descente de canyon avant 9h et après 17h.\n\n- de s'engager si une alerte vigilance météo de niveau orange ou rouge est émise par Météo France, en ce qui concerne le risque \"pluie\", \"orage\", et \"inondation\", sur le secteur concerné.\n\n- de constituer un groupe de plus de 10 personnes (encadrement inclus)",
+          "remark": "Arrêté abrogé et remplacé par l'arrêté préfectoral SDJES-SPORTS-2025-12 du 13 mai 2025",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nArrêté préfectoral (Var) n° SDJES-SPORTS-2024-0004 du 06 mai 2024",
+          "effectiveDate": "13 mai 2025",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/545/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral (Var) n° SDJES-SPORTS-2024-0004 du 06 mai 2024",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem545_pj1.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

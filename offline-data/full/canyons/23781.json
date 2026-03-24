@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:04.551929+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23781,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23781/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23781/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23781/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23781/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23781,
+    "identity": {
+      "nom": "Stranigbach",
+      "nomComplet": "Stranigbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23781/Stranigbach.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Carinthie",
+      "departement": "Hermagor",
+      "communePrincipale": "Kirchbach",
+      "communes": [
+        "Kirchbach"
+      ],
+      "massif": "Gailtaler Alpen",
+      "bassin": "Gail",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a4III",
+      "interet": 2.4,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 1020,
+      "deniveleM": 340,
+      "longueurM": 2200,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h",
+      "descente": "180",
+      "retour": "15"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": "16 rappels",
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "Il y a aussi une partie sup. (départ alt. 1370m) : voir http://canyon.carto.net/cwiki/bin/view/Canyons/StraningbachCanyon"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23781,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.601608,
+        "longitude": 13.14061,
+        "label": null
+      },
+      {
+        "canyonId": 23781,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.62558,
+        "longitude": 13.1633,
+        "label": null
+      },
+      {
+        "canyonId": 23781,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 46.601788,
+        "longitude": 13.140596,
+        "label": null
+      },
+      {
+        "canyonId": 23781,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 46.630096,
+        "longitude": 13.164698,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 46.601788,
+      "longitude": 13.140596,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

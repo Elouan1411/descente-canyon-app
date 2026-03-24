@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:25.144669+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23875,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23875/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23875/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23875/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23875/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23875,
+    "identity": {
+      "nom": "Chaudun",
+      "nomComplet": "Torrent de Chaudun, Les sources du Petit Buëch, Petit Buëch",
+      "prefixeNom": "Torrent de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23875/Chaudun.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Hautes-Alpes",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Dévoluy",
+      "bassin": "Buëch",
+      "coursEau": "Petit Buëch"
+    },
+    "rating": {
+      "cotation": "v4a2III",
+      "interet": 2.2,
+      "nbVotes": 7
+    },
+    "metrics": {
+      "altitudeDepartM": 1570,
+      "deniveleM": 200,
+      "longueurM": 700,
+      "cascadeMaxM": 50,
+      "cordeMiniM": 55,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h30",
+      "descente": "2h",
+      "retour": "1h35"
+    },
+    "topo": {
+      "accesAval": "Depuis Gap prendre la route Napoleon (N85) direction Grenoble. Passer le col Bayard et peu après tourner à gauche vers le col de Gleize (panneau en bois). Poursuivre la route jusqu'au parking du col.",
+      "accesAmont": null,
+      "approche": "Depuis le parking prendre la route forestière direction Chaudun (ouest). Passer le col du Milieu et peu après prendre le sentier de Ronde. Au prés des Clos descendre vers le torrent.\n\nAu printemps quand il reste de la neige un bâton ou piolet peut être utile pour les traversées des ravins orientés nord.",
+      "descente": "C4 (plus d'amarrage en RD) / C5 (plus d'amarrage en RD) / C15 (plus d'amarrage en RD, AN RG) / Pi 15 RD / C50 RG 2 pts vieillots (les neufs ont été volés) / C8 RG / C20 RD 2 pts / C20 RG 2 pts / traversée du sentier / C15 RG 2 pts / C6 RG / C5 RG / D3 / D3... un point intermédiaire RG de la C50 donne un C30 + C20.\n\nNB : la seconde partie après le sentier est clairement moins intéressante.",
+      "retour": "Depuis Chaudun prendre la route forestière qui vous ramène au parking. C'est un peu long... ;)",
+      "engagement": "On peut se mettre hors-crue presque partout.",
+      "periode": "Printemps à la fonte des neiges soit l'automne après une bonne pluie.",
+      "geologie": null,
+      "historique": "- Inconnu, équipé depuis un bon moment (une dizaine d'années). Le 29 avril 2017, équipement complété par Michiel van der Lans, Amandine Bonhomme et Timo Stammwitz.\n\n- En juin 2018, nous avons constaté que les amarrages d'au moins 4 obstacle ont été volés.",
+      "remarques": "Il faut une attention particulière lors des rappels de la deuxième partie du canyon (après le sentier) pour préserver la flore extrêmement fragile et si particulière."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23875,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.644081,
+        "longitude": 6.034215,
+        "label": null
+      },
+      {
+        "canyonId": 23875,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.641006,
+        "longitude": 6.027163,
+        "label": null
+      },
+      {
+        "canyonId": 23875,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.622623,
+        "longitude": 6.048082,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.622623,
+      "longitude": 6.048082,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:46:04.772944+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2586,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2586/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2586/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2586/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2586/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2586,
+    "identity": {
+      "nom": "Indiens",
+      "nomComplet": "Les Indiens",
+      "prefixeNom": "Les",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2586/Indiens.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Drôme",
+      "communePrincipale": "Treschenu-Creyers",
+      "communes": [
+        "Treschenu-Creyers"
+      ],
+      "massif": "Diois",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1I",
+      "interet": 0.3,
+      "nbVotes": 14
+    },
+    "metrics": {
+      "altitudeDepartM": 750,
+      "deniveleM": 50,
+      "longueurM": 100,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 25,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "0h30",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "De Châtillon en Diois ,prendre laD539 en direction du col de Grimone.Dans les gorges des Gats ,se garer au niveau du tournant de Vachère (1,7km après le tunnel).",
+      "accesAmont": null,
+      "approche": "Prendre le sentier qui monte à droite du ruisseau.\n\nAu niveau d'une cabane en ruine,prendre à gauche un sentier qui mène au ruisseau.",
+      "descente": "C10.T20.C12.C10.C5\n\nEquipement sur arbre .",
+      "retour": null,
+      "engagement": "Echappatoires faciles. Terrain d'aventure.",
+      "periode": "Souvent à sec",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Une bouse monumentale. Aucun intérêt. Les cascades sont laides et les bonnes conditions aquatiques sont rares. Ami canyoneur fais demi tour."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2586,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.679138,
+        "longitude": 5.561109,
+        "label": null
+      },
+      {
+        "canyonId": 2586,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.676918,
+        "longitude": 5.562263,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 44.679138,
+      "longitude": 5.561109,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_897a81a84c493147",
+          "kind": "MAP",
+          "title": "3237 OT Glandasse - Col de La Croix (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

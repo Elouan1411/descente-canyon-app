@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:34.989481+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23918,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23918/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23918/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23918/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23918/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23918,
+    "identity": {
+      "nom": "Moinhos",
+      "nomComplet": "Ribeira dos Moinhos",
+      "prefixeNom": "Ribeira dos",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23918/Moinhos.html"
+    },
+    "location": {
+      "pays": "Portugal",
+      "region": "Madeira",
+      "departement": "Calheta Municipality",
+      "communePrincipale": "Calheta",
+      "communes": [
+        "Calheta"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v5a2V",
+      "interet": null,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": 330,
+      "longueurM": 900,
+      "cascadeMaxM": 140,
+      "cordeMiniM": 80,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "3h",
+      "retour": "1h"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": "11 rappels.",
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": "Ouvert par Francisco Silva en 2009.",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23918,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 32.817574,
+        "longitude": -17.250628,
+        "label": null
+      },
+      {
+        "canyonId": 23918,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 32.819729,
+        "longitude": -17.256153,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 32.817574,
+      "longitude": -17.250628,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_51541010c8e54489",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyoning.camadeira.com/canyons/moinhos/",
+          "url": "http://canyoning.camadeira.com/canyons/moinhos/"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

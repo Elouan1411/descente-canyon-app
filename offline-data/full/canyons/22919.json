@@ -1,0 +1,144 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:54:54.451417+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22919,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22919/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22919/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22919/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22919/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22919,
+    "identity": {
+      "nom": "Las Costes",
+      "nomComplet": "Cascades de Las Costes",
+      "prefixeNom": "Cascades de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22919/Las-Costes.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Cantal",
+      "communePrincipale": "Le Vaulmier",
+      "communes": [
+        "Le Vaulmier"
+      ],
+      "massif": "Monts du Cantal",
+      "bassin": "Le Mars",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 1.3,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 1190,
+      "deniveleM": 330,
+      "longueurM": 650,
+      "cascadeMaxM": 28,
+      "cordeMiniM": 40,
+      "navette": "4.2km"
+    },
+    "timings": {
+      "approche": "10min",
+      "descente": "2h30",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": "Le ruisseau recoupe la route du col d'Aulac à mi-parcours entre ses deux parties : supérieure et inférieure.",
+      "accesAmont": null,
+      "approche": "Approche peu évidente, dans les bois au-dessus de la route. Le départ est derrière un vieux buron délabré en remontant durement un grand pré.",
+      "descente": "La partie supérieure est une succession de rampes et de toboggans qui mènent à une grande cascade inclinée d'une cinquantaine de mètres, en deux longueurs, et d'un dernier saut de 10m. On traverse la route, après 100m de blocs la suite est un bon enchaînement de verticales de 15 à 25m toujours sans encaissement et dans un cadre boisé.",
+      "retour": "Traverser un pré jusqu'à l'intersection du chemin du Maynial avec la D12.",
+      "engagement": "Equipement minimaliste, terrain d'aventure.",
+      "periode": "Une descente à réserver pour le printemps car elle ne prendra de l'intérêt qu'avec un certain débit.",
+      "geologie": "Brèches volcaniques",
+      "historique": "Explo par Ph. Viette et P.-M. Orblin le 19 mai 2010.",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22919,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.177402,
+        "longitude": 2.603867,
+        "label": null
+      },
+      {
+        "canyonId": 22919,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.174927,
+        "longitude": 2.595788,
+        "label": "Chemin du Maynial"
+      },
+      {
+        "canyonId": 22919,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 45.176395,
+        "longitude": 2.598953,
+        "label": "Chemin de la Grise : accès 2 pour la partie finale uniquement."
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 45.177402,
+      "longitude": 2.603867,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_daf9041e16b163a9",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons cantalous",
+          "authors": [
+            "Philippe VIETTE-COSTE"
+          ],
+          "publicationYear": 2018,
+          "reference": "97829563881-0-4",
+          "editor": "Auto-édition",
+          "status": "en stock\n\n- 14,00 € -\n\nCommandez cet ouvrage dès maintenant !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/1124/Canyons-cantalous.html"
+        },
+        {
+          "id": "biblio_0ada102a5dea7773",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons arvernes",
+          "authors": [
+            "Philippe Viette-Coste",
+            "Serge Navarro",
+            "Pierre-Marie Orblin"
+          ],
+          "publicationYear": 2012,
+          "reference": "978-2-7466-3647-7",
+          "editor": "auto-édition",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/165/Canyons-arvernes.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_dca64d22e699a24f",
+          "kind": "MAP",
+          "title": "2435 OT Monts du Cantal (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

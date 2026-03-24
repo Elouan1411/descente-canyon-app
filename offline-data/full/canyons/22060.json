@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:41.233323+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22060,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22060/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22060/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22060/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22060/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22060,
+    "identity": {
+      "nom": "Trafoi",
+      "nomComplet": "Rio Trafoi, Trafoierbach",
+      "prefixeNom": "Rio",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22060/Trafoi.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Trentino-Alto Adige",
+      "departement": "Bolzano",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a3IV",
+      "interet": 3.3,
+      "nbVotes": 7
+    },
+    "metrics": {
+      "altitudeDepartM": 1890,
+      "deniveleM": 280,
+      "longueurM": 1100,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 25,
+      "navette": "5.5km"
+    },
+    "timings": {
+      "approche": "3min",
+      "descente": "3h30 - 4h",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": "en faisant l'ascension du col du Stelvio par l'est, c'est à dire en venant de Mérano, prendre la 1ère petite route à gauche après la sortie du hameau de Trafoi (panneau direction Drei Brunnen/Tre Fontane). Vous passez à coté d'un camping et au bout d'environ 1.8 km, la route enjambe le torrent à la fin de l'encaissement, juste avant de nouvelles maisons.\n\nParking",
+      "accesAmont": "revenez sur vos pas et reprenez l'ascension du Stelvio. Se garer au départ d'un chemin carrossable fermé par une barrière, 600/700 m à gauche après le restaurant Rocca Bianca (panneau GR 13 Gletscheweg/Sent. Ghiacciao et GR 10 Bärenbrucke/Ponte dell Orso)",
+      "approche": "Continuer le chemin à pied pendant 3'.\n\nIl est possible de ne pas faire de navette. En effet le GR 13 descend en RD jusqu'à l'arrivée du canyon. Pour des raisons d'horaire, il vaut mieux faire la montée après le canyon. En milieu de montée, au croisement avec le GR 10, tourner à droite sur une vingtaine de m pour voir le Bärenbrucke (le pont de l'Ours) avant de reprendre le GR 13. Le Bärenbrucke enjambe le torrent quand l'encaissement est maximal et étroit. Spectaculaire.",
+      "descente": "Très bel encaissement.",
+      "retour": null,
+      "engagement": "Fort, une échappatoire avant le grand encaissement.",
+      "periode": "Attention, le canyon est alimenté par les glaciers. L'été la crue journalière est forte. Si vous comptez vous engager dedans au mois d'août comme indiqué sur le topo de Pascal, entrez dedans à 6 ou 7 h et sortez impérativement avant 12 h. Sinon, le niveau d'eau, quasi nul à l'entrée, passera à la sortie de 60 l/s à 200 l/s (voire beaucoup plus) .",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Équipement minimaliste, mais acceptable. En début de saison, prévoir de changer l'anneau de corde sur le seul AN de la descente (sur arbustes) ou poser un amarrage fixe."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22060,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.532448,
+        "longitude": 10.492884,
+        "label": null
+      },
+      {
+        "canyonId": 22060,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.534451,
+        "longitude": 10.503514,
+        "label": null
+      },
+      {
+        "canyonId": 22060,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 46.534084,
+        "longitude": 10.494805,
+        "label": null
+      },
+      {
+        "canyonId": 22060,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 46.533436,
+        "longitude": 10.504471,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 46.534084,
+      "longitude": 10.494805,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

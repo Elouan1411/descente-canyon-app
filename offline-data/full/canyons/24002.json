@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:50.449712+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24002,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24002/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24002/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24002/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24002/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24002,
+    "identity": {
+      "nom": "Pointe Percée",
+      "nomComplet": "Canyon de la Pointe Percée, Torrent du Lanchéron bras est",
+      "prefixeNom": "Canyon de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24002/Pointe-Percee.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Haute-Savoie",
+      "communePrincipale": "Sallanches",
+      "communes": [
+        "Sallanches"
+      ],
+      "massif": "Bornes - Aravis",
+      "bassin": "Arve",
+      "coursEau": "Torrent du Lanchéron bras est"
+    },
+    "rating": {
+      "cotation": "v4a2III",
+      "interet": 3.0,
+      "nbVotes": 17
+    },
+    "metrics": {
+      "altitudeDepartM": 1710,
+      "deniveleM": 310,
+      "longueurM": 600,
+      "cascadeMaxM": 52,
+      "cordeMiniM": 45,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h",
+      "descente": "3h",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": "De Sallanches par le Mayens les \"Houches\" au Chalet de Mayères. Au-dessus le parking à 960 m piste à 4x4 très raide. Se garer au niveau de la piste de l'altisurface.",
+      "accesAmont": null,
+      "approche": "Suivre le chemin balisé par \"Pas de Monthieu\" vers l'alpage du Lanchéron.",
+      "descente": "Descente constituée de petits encaissements qui offrent une vue majeure sur la massif du Mont Blanc et la vallée de l'Arve.",
+      "retour": "Suivre le GR Pays Mont Blanc retour au Chalet de Mayères.",
+      "engagement": "Descente verticale, en période de fonte les cascades sont bien arrosées.",
+      "periode": "Juin - octobre, après le gros de la fonte (si plus de risques d'avalanches plus haut). Après période sèche très peu d'eau.",
+      "geologie": null,
+      "historique": "05.06.2015 Patrick Chollot, Yves Daniou, Timo Stammwitz",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24002,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.944637,
+        "longitude": 6.565944,
+        "label": null
+      },
+      {
+        "canyonId": 24002,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.941612,
+        "longitude": 6.566889,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 45.944637,
+      "longitude": 6.565944,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_bf97d8efb10efc46",
+          "kind": "MAP",
+          "title": "3531 OT Megève - Col des Aravis (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

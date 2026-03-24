@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:07.900525+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23794,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23794/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23794/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23794/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23794/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23794,
+    "identity": {
+      "nom": "Wika-Tobel",
+      "nomComplet": "Wika-Tobel, Rehmer Bach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23794/Wika-Tobel.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Vorarlberg",
+      "departement": "Bregenz",
+      "communePrincipale": "Au",
+      "communes": [
+        "Au"
+      ],
+      "massif": "Bregenzer Wald",
+      "bassin": "Bregenzer Ache",
+      "coursEau": "Rehmer Bach"
+    },
+    "rating": {
+      "cotation": "v4a3III",
+      "interet": 1.9,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1150,
+      "deniveleM": 650,
+      "longueurM": 700,
+      "cascadeMaxM": 40,
+      "cordeMiniM": 40,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "45min",
+      "descente": "3h",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23794,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.332241,
+        "longitude": 10.0029,
+        "label": null
+      },
+      {
+        "canyonId": 23794,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.327309,
+        "longitude": 10.00005,
+        "label": null
+      },
+      {
+        "canyonId": 23794,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 47.332012,
+        "longitude": 10.001433,
+        "label": null
+      },
+      {
+        "canyonId": 23794,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 47.32431,
+        "longitude": 9.999115,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 47.332012,
+      "longitude": 10.001433,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_11c4163492754279",
+          "kind": "MAP",
+          "title": "WK 364 Bregenzerwald (Freytag & Berndt)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_5fcd64ee5ae1a398",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/Canyons/RehmerBachCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/Canyons/RehmerBachCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

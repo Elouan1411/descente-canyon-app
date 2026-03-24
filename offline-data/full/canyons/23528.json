@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:08.447824+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23528,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23528/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23528/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23528/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23528/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23528,
+    "identity": {
+      "nom": "Suy",
+      "nomComplet": "Ravin du Suy, L'Adoux",
+      "prefixeNom": "Ravin du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23528/Suy.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-de-Haute-Provence",
+      "communePrincipale": "Beynes",
+      "communes": [
+        "Beynes"
+      ],
+      "massif": "Montagne de Beynes",
+      "bassin": "Asse",
+      "coursEau": "L'Adoux"
+    },
+    "rating": {
+      "cotation": "v3a1I",
+      "interet": 0.7,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 1010,
+      "deniveleM": 200,
+      "longueurM": 350,
+      "cascadeMaxM": 70,
+      "cordeMiniM": 35,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "2h00",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "De Digne les bains, emprunter la route Napoléon en direction de Nice par la N85, jusqu'à la clue de Chabrières. Quelques mètres après le tunnel, prendre à droite sur le petit hameau de St Pierre en passant sur le pont qui enjambe l'Asse. Dés lors, emprunter la piste qui monte à droite et rouler sur 3 km. Après quelques virages, rendre la piste qui descend à gauche et rouler encore un peu plus d'un km avant de vous garez non loin d'un petit sentier montant à droite indiqué par un panneau en bois.",
+      "accesAmont": null,
+      "approche": "Suivre le sentier parfois balisé de vert, jusqu'à une zone plane et un ancien ru sec à gauche indiquant le départ, ceci après une bonne trentaine de minutes de marche.",
+      "descente": "L'ancien ru sec s'encaisse dès le départ, mais la végétation a repris ses droits (buis). L'on y trouve, sur ce court tronçon du parcours, deux petits plans inclinés qui se dés-escaladent. Une fois sortis du petit encaissement on arrive sur un R12 1pt en rg, puis un R10 An sur anneau de corde en rd donnant sur un large encaissement. Deux désescalades, puis les rappels s'enchaînent depuis le grand Pi70 sans interruption, jusqu'à la source de l'Adoux (fin du parcours, sortir en rg).",
+      "retour": "Suivre la piste en partant à gauche, pour rejoindre votre véhicule.",
+      "engagement": "Échappatoire peu évidente du fait du dénivelé et de la végétation dense.",
+      "periode": "Sec toute l'année",
+      "geologie": null,
+      "historique": "lolo, ALAIN 13",
+      "remarques": "Progression dans un très ancien ru qui a sculpté quelques vasques et 3 mimis encaissements, le tout agrémenté de quelques rappels qui s'enchaînent, parfois dans une végétation encombrante. Avis aux jardiniers !"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23528,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.992168,
+        "longitude": 6.249522,
+        "label": null
+      },
+      {
+        "canyonId": 23528,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.993931,
+        "longitude": 6.252043,
+        "label": null
+      },
+      {
+        "canyonId": 23528,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.000828,
+        "longitude": 6.251142,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.000828,
+      "longitude": 6.251142,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_680c62deb49de2a2",
+          "kind": "MAP",
+          "title": "3441 OT Barreme (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:58.970831+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21852,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21852/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21852/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21852/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21852/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21852,
+    "identity": {
+      "nom": "Starzlachklamm",
+      "nomComplet": "Starzlachklamm, Starzlach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21852/Starzlachklamm.html"
+    },
+    "location": {
+      "pays": "Allemagne",
+      "region": "Bayern",
+      "departement": "Schwaben",
+      "communePrincipale": "Burgberg",
+      "communes": [
+        "Sonthofen",
+        "Burgberg"
+      ],
+      "massif": "Allgäuer Alpen",
+      "bassin": "Iller",
+      "coursEau": "Starzlach"
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.0,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 950,
+      "deniveleM": 120,
+      "longueurM": 1200,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "35min",
+      "descente": "1h30",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "De Kempten/Allgäu autoroute B 19 direction Oberstdorf jusqu'à Sonthofen. Prenez la route vers Hindelang, Oberjoch et sortir la route à gauche avant la fin de la ville Sonthofen. Continuer vers Winkel, Starzlachklamm.",
+      "accesAmont": null,
+      "approche": "de la voiture (dans la parking Winkel) prenez le sentier Starzlachklamm (2007: 2,50 Euro) et continuer jusqu'à une bifurcation. Traverser le pont et chercher l'accès optimale.",
+      "descente": "le première cascade (12m) est dans l'eau.\n\n20m toboggan au fin (prenez le petit canal à droite: départ de lu très petit bassin à nager - côté gauche): 13m toboggan et 7m voler",
+      "retour": "après la bassin au-dessous de toboggan sortir à droite et prenez le sentier vers Winkel.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "usage commercial, visiteurs du sentier\n\nRéglementation : pas de traversée avant le 15 mai (merle d'eau couve)\n\nPrix d’entrée : 3,50 €"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21852,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.533257,
+        "longitude": 10.314145,
+        "label": null
+      },
+      {
+        "canyonId": 21852,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.531227,
+        "longitude": 10.309424,
+        "label": null
+      },
+      {
+        "canyonId": 21852,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.530762,
+        "longitude": 10.299339,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.530762,
+      "longitude": 10.299339,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_0920eac300aaa064",
+          "kind": "MAP",
+          "title": "UK L 8 Allgäuer Alpen (Bayerisches Landesvermessungsamt)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

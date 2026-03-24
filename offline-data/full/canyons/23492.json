@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:59.853905+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23492,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23492/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23492/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23492/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23492/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23492,
+    "identity": {
+      "nom": "Falzthurnbach",
+      "nomComplet": "Falzthurnbach, Gramai(alm)bach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23492/Falzthurnbach.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Tyrol",
+      "departement": "Politischer Bezirk Schwaz",
+      "communePrincipale": "Eben am Achensee",
+      "communes": [
+        "Eben am Achensee"
+      ],
+      "massif": "Karwendel",
+      "bassin": "Achensee",
+      "coursEau": "Falzthurnbach"
+    },
+    "rating": {
+      "cotation": "v3a3II",
+      "interet": 2.1,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 1410,
+      "deniveleM": 70,
+      "longueurM": 300,
+      "cascadeMaxM": 12,
+      "cordeMiniM": 15,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "35min",
+      "descente": "1h",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23492,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.399666,
+        "longitude": 11.604948,
+        "label": "D2 - partie inferieure"
+      },
+      {
+        "canyonId": 23492,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.398849,
+        "longitude": 11.606638,
+        "label": null
+      },
+      {
+        "canyonId": 23492,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.403057,
+        "longitude": 11.617093,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.403057,
+      "longitude": 11.617093,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

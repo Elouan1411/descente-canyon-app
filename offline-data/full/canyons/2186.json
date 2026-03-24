@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:44:27.121095+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2186,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2186/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2186/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2186/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2186/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/2186/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 2186,
+    "identity": {
+      "nom": "Valouse",
+      "nomComplet": "Bief de la Valouse",
+      "prefixeNom": "Bief de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2186/Valouse.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Ain",
+      "communePrincipale": "La Burbanche",
+      "communes": [
+        "La Burbanche"
+      ],
+      "massif": "Bugey",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a1III",
+      "interet": 2.7,
+      "nbVotes": 27
+    },
+    "metrics": {
+      "altitudeDepartM": 650,
+      "deniveleM": 250,
+      "longueurM": 250,
+      "cascadeMaxM": 68,
+      "cordeMiniM": 60,
+      "navette": "8.3km"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "2h",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "Depuis le village de La Burbanche, dans la Cluse des Hôpitaux, prendre la N504 en direction de Tenay. Tourner ensuite à droite dans le village des Hôpitaux. Se garer à proximité de la voie ferrée sans gêner.",
+      "accesAmont": "Retourner à Burbance, et prendre dans le village la route qui monte aux lieux-dits \"la Grange des Prés\" et \"Tare\". 800mètres après avoir dépassé \"Grand Tare\" et juste avant \"Tare\", la route franchit le bief sur un pont discret. Stationner au mieux sans gêner les agriculteurs.\n\nA noter qu'il est possible de faire ce parcours sans navette, par une jolie marche d'approche en RG. Pour cela, traverser la voie ferrée et suivre la piste en face. Lorsqu'on butte contre la montagne, à l'intersection de plusieurs chemin, prendre le petit sentier qui monte à droite (balise jaune sur un arbre). Le suivre jusqu'à déboucher sur le plateau. On arrive sur la route, à 5 minute du pont.",
+      "approche": "Suivre la piste en refermant les clôtures, puis le ruisseau pour arriver au premier obstacle intéressant. (autre option : une C35 existe bien plus en amont)\n\nSinon il y a la solution sans navette 45min, prendre le chemin balisé en jaune qui part à droite après le chenil en bas vers la voie ferrée, il monte pendant 30min, faire attention à l'intersection où il y a un panneau \"Les Hopitaux 20min\" il faut prendre à gauche puis vous arrivez sur la route de la navette, prendre à gauche et retrouver le bief.",
+      "descente": "Quelques obstacles et deux grandes cascades. La première est fractionnée à -22m en RD (bon relais sous une ancienne protection en bois) : L1 = 22m, L2 = 35m. Pour la C68, descente en une fois possible avec 2x75 par un arbre en retrait RG ou prendre le relais suspendu à 20 m sous l'arbre en RG. Encore quelques rappels dont une cascade d'environ 30m amène à des résurgences au tuf généreux.\n\nSortie par un sentier rive droite.",
+      "retour": "Regagner la voiture à vue au mieux.",
+      "engagement": "Des échappatoires raides sont possibles assez fréquemment.",
+      "periode": "Généralement à sec à l'étiage. A faire après des pluies.",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2186,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 45.869335,
+        "longitude": 5.542774,
+        "label": null
+      },
+      {
+        "canyonId": 2186,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 45.869514,
+        "longitude": 5.53432,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 45.869335,
+      "longitude": 5.542774,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_4b545689f5cb37fe",
+          "kind": "MAP",
+          "title": "3231 O",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 103,
+          "status": "Obsolète",
+          "action": "Interdit",
+          "title": "Arrêté préfectoral (Ain) - 10 août 2005",
+          "summary": "La pratique du canyonisme est interdite pour des raisons de sécheresse, jusqu'au 15 septembre, sauf évolution.\n\nPour infos, l'amende est de 1500 €, 3000 € en cas de récidive...",
+          "remark": null,
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.",
+          "effectiveDate": "15 sept 2005",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/103/legislation.html",
+          "attachments": []
+        }
+      ]
+    }
+  }
+}

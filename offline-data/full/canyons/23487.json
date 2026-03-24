@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:58.285650+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23487,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23487/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23487/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23487/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23487/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23487,
+    "identity": {
+      "nom": "Vorderer Steinbach",
+      "nomComplet": "Vorderer Steinbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23487/Vorderer-Steinbach.html"
+    },
+    "location": {
+      "pays": "Allemagne",
+      "region": "Bayern",
+      "departement": "Oberbayern",
+      "communePrincipale": "Schneizlreuth",
+      "communes": [
+        "Landkreis Berchtesgadener Land",
+        "Schneizlreuth"
+      ],
+      "massif": "Chiemgauer Alpen - Alpes de Chiemgau",
+      "bassin": "Saalach",
+      "coursEau": "Vorderer Steinbach"
+    },
+    "rating": {
+      "cotation": "v3a3III",
+      "interet": 1.8,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 840,
+      "deniveleM": 210,
+      "longueurM": 1600,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 25,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h30min",
+      "descente": "3h30min",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23487,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.691605,
+        "longitude": 12.741204,
+        "label": null
+      },
+      {
+        "canyonId": 23487,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.678516,
+        "longitude": 12.741172,
+        "label": "sur une sente à droite"
+      },
+      {
+        "canyonId": 23487,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.669617,
+        "longitude": 12.751214,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.669617,
+      "longitude": 12.751214,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_45ed5c702bacadc4",
+          "kind": "MAP",
+          "title": "8342 SchSchneizlreuthneizlreuth (Bayerisches Landesvermessungsamt)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_5c8b981f5ba51d24",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/C.....dererSteinbachCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/C.....dererSteinbachCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

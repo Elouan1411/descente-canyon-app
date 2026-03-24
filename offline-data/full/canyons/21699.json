@@ -1,0 +1,169 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:22.364757+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21699,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21699/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21699/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21699/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21699/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21699,
+    "identity": {
+      "nom": "Fornazos",
+      "nomComplet": "Barranco d'os Fornazos",
+      "prefixeNom": "Barranco d'os",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21699/Fornazos.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Aragón",
+      "departement": "Huesca",
+      "communePrincipale": "Bierge",
+      "communes": [
+        "Bierge"
+      ],
+      "massif": "Sierra de Guara",
+      "bassin": "Mascún",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.4,
+      "nbVotes": 7
+    },
+    "metrics": {
+      "altitudeDepartM": 1080,
+      "deniveleM": 250,
+      "longueurM": 350,
+      "cascadeMaxM": 40,
+      "cordeMiniM": 50,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "2h30",
+      "descente": "3h",
+      "retour": "2h"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21699,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.307755,
+        "longitude": -0.066197,
+        "label": null
+      },
+      {
+        "canyonId": 21699,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.308102,
+        "longitude": -0.068944,
+        "label": "Confluence avec Mascùn"
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 42.307755,
+      "longitude": -0.066197,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_008a478db03d7fff",
+          "kind": "TOPOGUIDE",
+          "title": "Canyonisme La sierra de Guara",
+          "authors": [
+            "P Gimat"
+          ],
+          "publicationYear": 2005,
+          "reference": "978-2952-4376-0-8",
+          "editor": "Pyrenees Aventure",
+          "status": "stock très réduit !\n\n- 24,99 € -\n\nCommandez cet ouvrage dès maintenant !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/119/Canyonisme-:-La-Sierra-de-Guara.html"
+        },
+        {
+          "id": "biblio_5b46f4873260c770",
+          "kind": "TOPOGUIDE",
+          "title": "Sierras de piedra y agua",
+          "authors": [
+            "Salamero Enrique"
+          ],
+          "publicationYear": 2002,
+          "reference": null,
+          "editor": "Camping Mascùn",
+          "status": "derniers exemplaires !\n\n- 18,99 € -\n\nCommandez cet ouvrage dès maintenant !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/148/Guia-de-Barrancos-de-la-Sierra-de-Guara.html"
+        },
+        {
+          "id": "biblio_b7235102860436db",
+          "kind": "TOPOGUIDE",
+          "title": "Carte N°1 - Sierra de Guara",
+          "authors": [
+            "Patrick Gimat + Jean-Paul Pontroué"
+          ],
+          "publicationYear": 2000,
+          "reference": null,
+          "editor": null,
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/120/Carte-n°1-:-Sierra-de-Guara.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_be093fce7a83faac",
+          "kind": "MAP",
+          "title": "249-I Rodellar (IGN)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_239e2bf6fec6b5f5",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://ropewiki.com/Fornazos",
+          "url": "http://ropewiki.com/Fornazos"
+        },
+        {
+          "id": "resource_e8df4066f1d856ba",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.latrencanous.com/barrancos/fornazos/topo.pdf",
+          "url": "http://www.latrencanous.com/barrancos/fornazos/topo.pdf"
+        },
+        {
+          "id": "resource_56a7863026f8108c",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/Canyons/FornazosCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/Canyons/FornazosCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

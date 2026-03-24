@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:48:59.212688+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21327,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21327/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21327/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21327/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21327/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21327,
+    "identity": {
+      "nom": "Pylône",
+      "nomComplet": "Ravin du Pylône, Franchironnette, Ravin du Pas de Saint-Pensier",
+      "prefixeNom": "Ravin du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21327/Pylone.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Hautes-Alpes",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a1I",
+      "interet": 1.7,
+      "nbVotes": 14
+    },
+    "metrics": {
+      "altitudeDepartM": 690,
+      "deniveleM": 105,
+      "longueurM": 300,
+      "cascadeMaxM": 55,
+      "cordeMiniM": 65,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "1h",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "De sisteron prendre la D948. Quelques kilomètres plus loin, prendre à gauche FRANCHIRONNETTE. Se garer près de l'usine d'engrais.\n\nNe pas se garer près des dernières maisons où les propriétaires sont peu avenants.",
+      "accesAmont": null,
+      "approche": "Se diriger vers les dernières maisons. 20 m avant la dernière (après un hangar), une piste peu marquée monte sur la droite et permet de rejoindre la balise 380 \"Pas de St Pensier\" en 5 min.\n\nContinuer le sentier dans cette direction.\n\nOn atteint le départ du vallon en 15 min.",
+      "descente": "Continuer à marcher dans le vallon pendant 5 min.\n\nAprès 2-3 rappels de quelques mètres, le vallon s'encaisse et l'on rejoint le grand rappel.",
+      "retour": "A la sortie, longer un champs en se dirigeant vers la maison et rejoindre une bonne piste qui mène à la voiture !",
+      "engagement": "Attention au vent en haut du grand rappel qui peut emmêler les cordes pendant la descente.",
+      "periode": "Seul un filet d'eau coulait en mai.\n\nNécessite le bas de combinaison seulement, et encore....\n\nEn hiver, c'est un site connu pour sa cascade de glace.\n\nEn été, de nombreux grimpeurs viennent escalader les bords de la grande cascade (bien équipés).",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Canyon décrit dans le livre de Fiorina, Jourdan et Tordjman. Cette approche et ce retour permettent de le descendre dans d'autres conditions."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21327,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.19405,
+        "longitude": 5.868952,
+        "label": null
+      },
+      {
+        "canyonId": 21327,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.195282,
+        "longitude": 5.868802,
+        "label": null
+      },
+      {
+        "canyonId": 21327,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.199249,
+        "longitude": 5.869939,
+        "label": null
+      },
+      {
+        "canyonId": 21327,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 44.198189,
+        "longitude": 5.865347,
+        "label": "Col"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.199249,
+      "longitude": 5.869939,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_698f23f50a61f9ad",
+          "kind": "MAP",
+          "title": "3339 OT Sisteron (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

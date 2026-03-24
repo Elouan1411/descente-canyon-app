@@ -1,0 +1,151 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:28.032030+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23887,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23887/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23887/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23887/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23887/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23887,
+    "identity": {
+      "nom": "Acquetta",
+      "nomComplet": "Torrente Acquetta",
+      "prefixeNom": "Torrente",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23887/Acquetta.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Toscana",
+      "departement": "Massa-Carrara",
+      "communePrincipale": "Bagnone",
+      "communes": [
+        "Bagnone"
+      ],
+      "massif": "Alpes apuanes - Alpi Apuane",
+      "bassin": "Magra",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a3III",
+      "interet": 2.8,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 910,
+      "deniveleM": 270,
+      "longueurM": 1600,
+      "cascadeMaxM": 22,
+      "cordeMiniM": 25,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h30min",
+      "descente": "3h30min",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": "R. Vigiani",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23887,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.369381,
+        "longitude": 10.02442,
+        "label": null
+      },
+      {
+        "canyonId": 23887,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.357979,
+        "longitude": 10.01512,
+        "label": null
+      },
+      {
+        "canyonId": 23887,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.346661,
+        "longitude": 10.010128,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.346661,
+      "longitude": 10.010128,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_60a2226d8855e9f5",
+          "kind": "MAP",
+          "title": "85 III-SO Monte Orsaro (IGMI 25/V)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_8f035c8fd44e51ac",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/Canyons/AcquettaCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/Canyons/AcquettaCanyon"
+        },
+        {
+          "id": "resource_bc00929dbae04b7d",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.cicarudeclan.com/ita/a5_acquetta.htm",
+          "url": "http://www.cicarudeclan.com/ita/a5_acquetta.htm"
+        },
+        {
+          "id": "resource_bf9c902220f72285",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.gruppospeleologicopistoiese.i.....entismo/Acquetta.pdf",
+          "url": "http://www.gruppospeleologicopistoiese.i.....entismo/Acquetta.pdf"
+        },
+        {
+          "id": "resource_150aadfcb609dabb",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.openspeleo.org/openspeleo/canyons-view-81.html",
+          "url": "http://www.openspeleo.org/openspeleo/canyons-view-81.html"
+        },
+        {
+          "id": "resource_26f374b6d38ee8a5",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://catastoforre.aic-canyoning.it/ind.....ANA/pro/LU/cod/LU019",
+          "url": "http://catastoforre.aic-canyoning.it/ind.....ANA/pro/LU/cod/LU019"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

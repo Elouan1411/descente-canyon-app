@@ -1,0 +1,170 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:46:05.314606+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2587,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2587/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2587/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2587/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2587/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2587,
+    "identity": {
+      "nom": "Combau",
+      "nomComplet": "Ruisseau de Combau",
+      "prefixeNom": "Ruisseau de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2587/Combau.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Drôme",
+      "communePrincipale": "Treschenu-Creyers",
+      "communes": [
+        "Treschenu-Creyers"
+      ],
+      "massif": "Diois",
+      "bassin": "Drôme",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 1.7,
+      "nbVotes": 13
+    },
+    "metrics": {
+      "altitudeDepartM": 1300,
+      "deniveleM": 230,
+      "longueurM": 1000,
+      "cascadeMaxM": 16,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "2h",
+      "retour": "25min"
+    },
+    "topo": {
+      "accesAval": "Emprunter la D120 entre le col de Menée et Châtillon-en-Diois. Au dessus des Nonières, quitter cette route (dans une épingle, Alt. 939) pour la D515. Dépasser Bénevise de 2,5km, stationner à gauche.",
+      "accesAmont": null,
+      "approche": "Continuer par la route sur 1,5km pour une grosse piste à droite. Par une petite piste descendre une centaine de mètres.",
+      "descente": "Descente modeste agrémentée de quelques passages sous blocs. Très belle région.",
+      "retour": "Après la dernière cascade, continuer sur les bords du ruisseau. Avant une grange rénovée, sortir en RD pour rattraper une sente (attention propriété privée, éviter la prairie). Après avoir longé ce pré aux pierres peintes en bleu, le sentier monte et débouche à la voiture.",
+      "engagement": "Les échappatoires sont nombreuses. Équipement école.",
+      "periode": "A sec l'été, peut avoir trop d'eau après les pluies. A faire avec un beau débit pour y trouver un minimum d’intérêt. Pas de vasque.",
+      "geologie": "Calcaire.",
+      "historique": null,
+      "remarques": "Il est possible de faire une navette entre le pont D120/ruisseau (Alt.979) et la piste Alt.1310... Et enfin pour économiser 2x4,7km, sans navette donc, avec parking au pont 979."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2587,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.75312,
+        "longitude": 5.556414,
+        "label": null
+      },
+      {
+        "canyonId": 2587,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.750267,
+        "longitude": 5.542366,
+        "label": null
+      },
+      {
+        "canyonId": 2587,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 44.753513,
+        "longitude": 5.556912,
+        "label": null
+      },
+      {
+        "canyonId": 2587,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 44.746483,
+        "longitude": 5.544376,
+        "label": "facultatif"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 44.753513,
+      "longitude": 5.556912,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_774008f93c089927",
+          "kind": "TOPOGUIDE",
+          "title": "100 descentes de canyons autour de Grenoble",
+          "authors": [
+            "Arnaud Astier"
+          ],
+          "publicationYear": 2015,
+          "reference": "978-2-7466-7754-8",
+          "editor": "auto-édition",
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/194/100-Descentes-de-Canyons-autour-de-Grenoble.html"
+        },
+        {
+          "id": "biblio_d2d847b6c80065cf",
+          "kind": "TOPOGUIDE",
+          "title": "Diois : escalade et canyons (2° édition)",
+          "authors": [
+            "Véronique Pitte",
+            "Grégory Woodhouse",
+            "Vincent Gruart"
+          ],
+          "publicationYear": 2002,
+          "reference": "2-908730-68-5",
+          "editor": "A Die",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1278/topoguide.html"
+        },
+        {
+          "id": "biblio_0f06b44eb9a42186",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons du Vercors et Alentours",
+          "authors": [
+            "J-C. Botti",
+            "B. Rosset",
+            "Y. Launay",
+            "C. Larribe",
+            "T. Larribe",
+            "Spéléo Club MJC de Tullins"
+          ],
+          "publicationYear": 1997,
+          "reference": "ISBN 2-7417-0211-X",
+          "editor": "Gap",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/12/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_897a81a84c493147",
+          "kind": "MAP",
+          "title": "3237 OT Glandasse - Col de La Croix (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

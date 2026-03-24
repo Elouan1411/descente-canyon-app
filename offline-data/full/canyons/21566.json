@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:49:54.541943+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21566,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21566/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21566/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21566/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21566/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/21566/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 21566,
+    "identity": {
+      "nom": "Medassoles",
+      "nomComplet": "Ruisseau de Medassoles",
+      "prefixeNom": "Ruisseau de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21566/Medassoles.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Haute-Garonne",
+      "communePrincipale": "Astau (les Granges de)",
+      "communes": [
+        "Astau (les Granges de)"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.2,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 1530,
+      "deniveleM": 360,
+      "longueurM": 900,
+      "cascadeMaxM": 40,
+      "cordeMiniM": 55,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "45min",
+      "descente": "??",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "Se garer au parking des granges d'Astau",
+      "accesAmont": null,
+      "approche": "Du parking, prendre la direction du lac d'Oo et rapidement à gauche remonter le canyon au mieux en rive droite.",
+      "descente": null,
+      "retour": null,
+      "engagement": "Légèrement encaissé au début, très encaissé ensuite",
+      "periode": "Peu d'eau en été",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Prévoir pour ce canyon tout le matériel comme pour une ouverture"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21566,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.757435,
+        "longitude": 0.511669,
+        "label": null
+      },
+      {
+        "canyonId": 21566,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.760689,
+        "longitude": 0.505157,
+        "label": null
+      },
+      {
+        "canyonId": 21566,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 42.763977,
+        "longitude": 0.501761,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 42.763977,
+      "longitude": 0.501761,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_b4d10c31e88f9235",
+          "kind": "MAP",
+          "title": "1848 OT Bagneres-de-Luchon (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 266,
+          "status": "Abrogé",
+          "action": "Interdit",
+          "title": "Arrêté préfectoral (Haute-Garonne) - 28 juin 2013",
+          "summary": "\"La crue de la Garonne et de ses affluents a considérablement endommagé les rives et les installations liées aux activités aquatiques et nautiques\"... Et voilà la pratique du canyoning interdite dans toute la vallée du Lys et de la Neste d'Oo.",
+          "remark": null,
+          "details": "Arrêté préfectoral du 28 juin 2013 (abrogé)\n\nArrêté préfectoral du 5 août 2013",
+          "effectiveDate": "28 juin 2013",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/266/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral du 28 juin 2013 (abrogé)",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem266_pj1.pdf"
+            },
+            {
+              "label": "Arrêté préfectoral du 5 août 2013",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem266_pj2.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

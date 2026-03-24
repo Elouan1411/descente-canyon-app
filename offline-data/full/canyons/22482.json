@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:11.722193+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22482,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22482/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22482/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22482/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22482/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22482,
+    "identity": {
+      "nom": "Wiesbach",
+      "nomComplet": "Wiesbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22482/Wiesbach.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Tyrol",
+      "departement": "Politischer Bezirk Reutte",
+      "communePrincipale": "Stanzach",
+      "communes": [
+        "Stanzach"
+      ],
+      "massif": "Lechtaler Alpen",
+      "bassin": "Lech",
+      "coursEau": "Wiesbach"
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 2.0,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 1030,
+      "deniveleM": 930,
+      "longueurM": 400,
+      "cascadeMaxM": 17,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "1h",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22482,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.390533,
+        "longitude": 10.551971,
+        "label": null
+      },
+      {
+        "canyonId": 22482,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.391312,
+        "longitude": 10.556263,
+        "label": null
+      },
+      {
+        "canyonId": 22482,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.380642,
+        "longitude": 10.551692,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.380642,
+      "longitude": 10.551692,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

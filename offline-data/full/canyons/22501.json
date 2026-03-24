@@ -1,0 +1,140 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:15.709443+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22501,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22501/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22501/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22501/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22501/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22501,
+    "identity": {
+      "nom": "Barougia",
+      "nomComplet": "Barougia",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22501/Barougia.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Faido",
+      "departement": "Tessin",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": "Ticino",
+      "coursEau": "Barougia"
+    },
+    "rating": {
+      "cotation": "v3a4III",
+      "interet": 2.6,
+      "nbVotes": 13
+    },
+    "metrics": {
+      "altitudeDepartM": 776,
+      "deniveleM": 110,
+      "longueurM": 500,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 35,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "1h30",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": "du pont Valle d'Usèdi, point coté 776m)",
+      "approche": "On commence au pont.",
+      "descente": "Les premiers obstacles sont peu esthétiques et pas équipés (désescalades ou AN). La partie intéressante mais courte débute au niveau de la C30 au niveau d'une passerelle.",
+      "retour": "Au niveau de la prise d'eau, emprunter en rive droite un escalier puis une sente parfois très peu marquée en direction de l'amont et qui rejoint finalement un bon sentier puis la route.",
+      "engagement": "Des échappatoires jusqu'à la passerelle. Après, plus encaissé et engagé.",
+      "periode": "Etiage",
+      "geologie": "Gneis",
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22501,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.409588,
+        "longitude": 8.849798,
+        "label": null
+      },
+      {
+        "canyonId": 22501,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.409306,
+        "longitude": 8.854347,
+        "label": null
+      },
+      {
+        "canyonId": 22501,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.409561,
+        "longitude": 8.849026,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.409561,
+      "longitude": 8.849026,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_b98de8eadeb3ed89",
+          "kind": "TOPOGUIDE",
+          "title": "Canyoning in the Alps : Northern Italy and Ticino",
+          "authors": [
+            "Simon Flower"
+          ],
+          "publicationYear": 2012,
+          "reference": "978 1 85284 683 1",
+          "editor": "Cicerone",
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/1105/Canyoning-in-the-Alps-:-Northern-Italy-and-Ticino.html"
+        },
+        {
+          "id": "biblio_1e5c67cde732c20d",
+          "kind": "TOPOGUIDE",
+          "title": "Eldorado Ticino",
+          "authors": [
+            "Anna & Luca Nizzola"
+          ],
+          "publicationYear": 2010,
+          "reference": "978-88-905017-7-7",
+          "editor": "SwissCanyon",
+          "status": "en stock\n\n- 39,90 € -\n\nCommandez cet ouvrage dès maintenant !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/157/Eldorado-Ticino.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_2e0d8fdac3706471",
+          "kind": "MAP",
+          "title": "1273 Biasca (Carte Nationale Suisse)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

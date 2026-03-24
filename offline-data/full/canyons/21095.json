@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:48:07.778437+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21095,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21095/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21095/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21095/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21095/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21095,
+    "identity": {
+      "nom": "Beaume",
+      "nomComplet": "Cascade de la Beaume",
+      "prefixeNom": "Cascade de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21095/Beaume.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Haute-Loire",
+      "communePrincipale": "Solignac-sur-Loire",
+      "communes": [
+        "Solignac-sur-Loire"
+      ],
+      "massif": "Massif du Velay",
+      "bassin": "Loire",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a3I",
+      "interet": 1.3,
+      "nbVotes": 7
+    },
+    "metrics": {
+      "altitudeDepartM": 815,
+      "deniveleM": 40,
+      "longueurM": 50,
+      "cascadeMaxM": 28,
+      "cordeMiniM": 40,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "10min",
+      "descente": "30min",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "De Solignac vers la cascade :\n\nne pas se garer au 1er panneau (en haut), il s'agit du point de vue , mais redescendre un peu (poursuivre la route sur 200m)jusqu'au pont, où se trouve en contre-bas le parking de Reynardon , où l'on se gare.",
+      "accesAmont": null,
+      "approche": "Suivre les panneaux pour aller vers la cascade.\n\nAvant de poursuivre le chemin qui descend, descendre dans le lit de la rivière, au niveau d'un panneau danger falaise. On se retrouve alors au dessus de la cascade.",
+      "descente": "C28, C5.\n\nC'est une cascade large, le problème c'est que l'on a du basalte et on ne peut donc pas équiper ça en fixe (friable). Les AN sont éloignés et il faut protéger un frottement ou bien choisir son endroit de descente.\n\nEn fonction de son niveau on peut choisir une descente peu ou très arrosée.",
+      "retour": "Par le même sentier qu'à l'aller, très emprunté.",
+      "engagement": "Nul",
+      "periode": "On peu pratiquer ici toute l'année de toute manière l'eau est glaciale.\n\nL'été me semble le mieux quand même.",
+      "geologie": null,
+      "historique": "Descendu par Mickael T. en 2003 et 2005",
+      "remarques": "Attention aux chutes de pierres !\n\nVous évoluerez tel des gladiateurs dans l'arène (nombreux spectateurs)"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21095,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.94278,
+        "longitude": 3.891389,
+        "label": null
+      },
+      {
+        "canyonId": 21095,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 44.94278,
+        "longitude": 3.885,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.94278,
+      "longitude": 3.885,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

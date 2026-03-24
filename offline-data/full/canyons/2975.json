@@ -1,0 +1,163 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:47:41.123504+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2975,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2975/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2975/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2975/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2975/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/2975/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 2975,
+    "identity": {
+      "nom": "Leccia Rossa",
+      "nomComplet": "Leccia Rossa",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2975/Leccia-Rossa.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Corse",
+      "departement": "Corse-du-Sud",
+      "communePrincipale": "Bocognano",
+      "communes": [
+        "Bocognano"
+      ],
+      "massif": "Vizzavona",
+      "bassin": "Gravona",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a2III",
+      "interet": 2.4,
+      "nbVotes": 24
+    },
+    "metrics": {
+      "altitudeDepartM": 800,
+      "deniveleM": 180,
+      "longueurM": 1000,
+      "cascadeMaxM": 13,
+      "cordeMiniM": 15,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h10",
+      "descente": "2h30",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "Se rendre à Bocognano depuis Ajaccio et suivre les indications pour la Richiusa.",
+      "accesAmont": null,
+      "approche": "Prendre un chemin qui se rend vers le cours d'eau, emprunter une passerelle et suivre le sentier tout de suite à droite (balisage jaune) qui monte en rive droite du cour d'eau.\n\nContinuer sur le chemin jusqu'à ce que le balisage jaune se divise en 2, descendre vers la rivière et prendre une deuxième passerelle qui enjambe le bas du canyon. Suivre le chemin toujours balisé jaune jusqu'à un promontoire dominant la vallée. Ici prendre à droite et suivre la sente marquée au sol pendant 30-40 min au dessus du ruisseau dans le maquis (ça griffe les gambettes) et descendre au mieux vers le ruisseau quand on rejoint 830 m d'altitude (petit barre rocheuse sortant du maquis).",
+      "descente": "Belle descente d'initiation avec de beaux toboggans et quelques petits rappels.",
+      "retour": "Descendre au mieux la Gravone jusqu’au pont d'approche. Ne pas prendre le sentier rive gauche de la Gravone, il se perd et oblige à un large détour.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2975,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.096001,
+        "longitude": 9.0752,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "SORTIE",
+      "latitude": 42.096001,
+      "longitude": 9.0752,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_2bafc8e0f7a42d9c",
+          "kind": "TOPOGUIDE",
+          "title": "La Corse en Canyon",
+          "authors": [
+            "Association CorseCanyon"
+          ],
+          "publicationYear": 2018,
+          "reference": null,
+          "editor": "auto-edition",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/1127/La-Corse-en-Canyon-3eme-edition.html"
+        },
+        {
+          "id": "biblio_eeda460e91ce529f",
+          "kind": "TOPOGUIDE",
+          "title": "Corse Canyons (2ème édition)",
+          "authors": [
+            "Franck Jourdan",
+            "Jean-François Fiorina"
+          ],
+          "publicationYear": 2006,
+          "reference": "2-84698-169-8",
+          "editor": "Albiana",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/133/Corse-Canyons.html"
+        },
+        {
+          "id": "biblio_fab33759293ad66d",
+          "kind": "TOPOGUIDE",
+          "title": "Corse Canyons",
+          "authors": [
+            "Franck Jourdan",
+            "Jean-François Fiorina"
+          ],
+          "publicationYear": 2004,
+          "reference": "ISBN : 2-9520630-5-2",
+          "editor": "Corsecanyon",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1119/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_11609288f76c61fe",
+          "kind": "MAP",
+          "title": "4252 OT Monte-Renoso - Bastelica (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 520,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Corse-du-Sud) - 26 juil 2011",
+          "summary": "- Le canyonisme est interdit la nuit (sauf dérogation)\n\n- Le canyonisme est interdit s'il y a une alerte émise par Météo-France de niveau orange ou rouge en cours.\n\n- Le canyonisme est interdit aux mineurs de moins de 7 ans, sauf canyon évalué égal ou inférieur à V1-A3-E3\n\n- Les groupes auront un effectif maximum de 12 personnes, hors encadrement.",
+          "remark": "L'arrêté du 9 juillet 2019 pris conjointement par les préfectures de Corse-du-Sud et de Haute-Corse harmonise les réglementations existantes pour les deux départements.",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nArrêté préfectoral modificatif (Corse-du-Sud et Haute-Corse) n°R20-2019-07-09-001 du 9 juillet 2019\n\nArrêté préfectoral (Corse-du-Sud) n°2011207-0005 du 26 juillet 2011",
+          "effectiveDate": "26 juil 2011",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/520/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral modificatif (Corse-du-Sud et Haute-Corse) n°R20-2019-07-09-001 du 9 juillet 2019",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem520_pj2.pdf"
+            },
+            {
+              "label": "Arrêté préfectoral (Corse-du-Sud) n°2011207-0005 du 26 juillet 2011",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem520_pj1.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

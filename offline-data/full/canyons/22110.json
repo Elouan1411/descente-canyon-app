@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:52.458491+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22110,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22110/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22110/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22110/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22110/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22110,
+    "identity": {
+      "nom": "Lhéris",
+      "nomComplet": "Ruisseau du Lhéris",
+      "prefixeNom": "Ruisseau du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22110/Lheris.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Hautes-Pyrénées",
+      "communePrincipale": "Asté",
+      "communes": [
+        "Asté"
+      ],
+      "massif": "Bigorre",
+      "bassin": "Adour",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a1II",
+      "interet": 2.0,
+      "nbVotes": 9
+    },
+    "metrics": {
+      "altitudeDepartM": 880,
+      "deniveleM": 60,
+      "longueurM": 200,
+      "cascadeMaxM": 7,
+      "cordeMiniM": 10,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "1h",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "D'Asté, suivre la route de la Fontaine de Crastes. Passer devant cette dernière et continuer la piste carrossable jusqu'au bout. Se garer 100m après le gros bloc d'escalade.",
+      "accesAmont": null,
+      "approche": "Remonter le chemin vers le SE qui longe le ruisseau du Lhéris en rive gauche (sentier montant au Casque du Lhéris). Au bout de 10 minutes le sentier passe en RD. A l'intersection après le raidillon prendre à droite pour arriver au canyon au bout de 100m.",
+      "descente": "Enchainement de 5 petits rappels bien équipés.\n\nApparition de l'eau en aval du premier rappel. Bel encaissement.\n\nDescriptif de la descente: R7, R6, R7, R3 et R6.",
+      "retour": "Après le dernier rappel, on rejoint le sentier d'approche en RD. De là, 10 minutes de descente jusqu'à la voiture.",
+      "engagement": "Canyon de faible durée sans échappatoire.",
+      "periode": "Faisable toute l'année. Au maximum de l'eau jusqu'aux genoux.\n\nCanyon en eau à la fonte des neiges sinon sec à partir du mois de mai.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Idéal pour l'initiation au rappel.\n\nLe débit du canyon correspond au débit du ruisseau qui borde le parking.\n\nCanyon de faible durée à combiner avec celui du Taillat situé 15km plus loin sur la route de Payolle."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22110,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.028946,
+        "longitude": 0.200328,
+        "label": null
+      },
+      {
+        "canyonId": 22110,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.02977,
+        "longitude": 0.198795,
+        "label": null
+      },
+      {
+        "canyonId": 22110,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.033375,
+        "longitude": 0.193847,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.033375,
+      "longitude": 0.193847,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_2be2581234231e7f",
+          "kind": "MAP",
+          "title": "1747 ET Bagneres-de-Bigorre (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

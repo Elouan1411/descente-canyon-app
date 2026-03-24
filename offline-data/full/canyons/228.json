@@ -1,0 +1,208 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:43:36.489305+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 228,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/228/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/228/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/228/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/228/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/228/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 228,
+    "identity": {
+      "nom": "Giffre",
+      "nomComplet": "Le Giffre",
+      "prefixeNom": "Le",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/228/Giffre.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Haute-Savoie",
+      "communePrincipale": "Mieussy",
+      "communes": [
+        "Mieussy"
+      ],
+      "massif": "Chablais - Platé - Aiguilles Rouges",
+      "bassin": "Giffre",
+      "coursEau": "Le Giffre"
+    },
+    "rating": {
+      "cotation": "v2a5III",
+      "interet": 3.0,
+      "nbVotes": 41
+    },
+    "metrics": {
+      "altitudeDepartM": 590,
+      "deniveleM": 90,
+      "longueurM": 1500,
+      "cascadeMaxM": 11,
+      "cordeMiniM": 15,
+      "navette": "5.0km"
+    },
+    "timings": {
+      "approche": "5min.",
+      "descente": "1h30",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "se garer en face de l'ancienne usine du Giffre, sur une grande aire en bordure de route.",
+      "accesAmont": "A Mieussy, prendre la direction Dessy-Ivoray. Peu après, tourner à droite pour Le Pont Du Diable, s'y garer.",
+      "approche": "Longer le Giffre, dépasser le barrage et descendre dans le canyon par une sente quelques mètres plus loin.",
+      "descente": "Canyon très aquatique avec de nombreux mouvements d'eau. Quelques sauts possibles (SP13 du pont du diable, SP5, SP8...), il faut bien vérifier le fond avant de sauter.le saut depuis le pont est interdit par arrêté municipal.",
+      "retour": "Sortir rive gauche.\n\nPossibilité de laisser une voiture à l'ancienne usine de Giffre devant la centrale et le monument aux morts. Sinon, il faut remonter par le petit chemin dans les bois amenant à un petit village et reprendre la route (45 min env.)",
+      "engagement": "Ce canyon est assez engagé,avec des risques dus au barrage EDF. 1 seule échappatoire possible. Il est obligatoire de téléphoner au 04 50 43 19 12 avant d'entreprendre la descente.",
+      "periode": "La période optimale est Juillet, Août, Septembre, Octobre.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "les négociations avec EDF nécessitent de connaitre le plus précisément possible le nombre de pratiquants au cours de l'année : en renseignant les conditions de descente précisez bien le nombre de participants."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 228,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.128918,
+        "longitude": 6.512348,
+        "label": null
+      },
+      {
+        "canyonId": 228,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.12257,
+        "longitude": 6.492673,
+        "label": "Sortie RG"
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 46.128918,
+      "longitude": 6.512348,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_87a84633f292e5a0",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons de Haute-Savoie (réédition)",
+          "authors": [
+            "Ch. Charletty",
+            "G. Gudefin",
+            "B. Hugon",
+            "J-P. Beaudoin"
+          ],
+          "publicationYear": 2004,
+          "reference": "ISBN: 2741702888",
+          "editor": "GAP",
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/128/Canyons-de-Haute-Savoie.html"
+        },
+        {
+          "id": "biblio_1e61b240bec55aed",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons de Haute Savoie",
+          "authors": [
+            "Christian Charletty",
+            "Gérard Gudefin",
+            "Bruno Hugon",
+            "Comité Départemental de Spéléologie 74"
+          ],
+          "publicationYear": 1997,
+          "reference": "ISBN 2-7417-0202-0",
+          "editor": "Gap",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/19/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_0e7ca75ede9890e1",
+          "kind": "MAP",
+          "title": "3429 ET Bonneville-Cluses (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 580,
+          "status": "Obsolète",
+          "action": "Interdit",
+          "title": "Arrêté municipal (Mieussy) - 01 juil 2025",
+          "summary": "La pratique du canyoning est interdite du 1er juillet au 31 août 2025 dans les Gorges du Giffre (expérimentation EDF sur les débits de réserve)",
+          "remark": "Interdiction levée par AM n°2025-74 à partir du lundi 18 août 2025 suite à fin des expérimentations EDF.",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nArrêté municipal (Mieussy) n°2025-53 du 22 mai 2025\n\nArrêté municipal d'abrogation (Mieussy) n°2025-74 du 18 août 2025",
+          "effectiveDate": "17 août 2025",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/580/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté municipal (Mieussy) n°2025-53 du 22 mai 2025",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem580_pj1.pdf"
+            },
+            {
+              "label": "Arrêté municipal d'abrogation (Mieussy) n°2025-74 du 18 août 2025",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem580_pj2.pdf"
+            }
+          ]
+        },
+        {
+          "id": 549,
+          "status": "Obsolète",
+          "action": "Interdit",
+          "title": "Arrêté municipal (Mieussy) - 01 juil 2024",
+          "summary": "Le canyon du Giffre à Mieussy sera interdit du 1er juillet au 31 août 2024.\n\nEn effet, des débits réservés plus importants seront lâchés pour mesurer l'impact sur la qualité et la température de l'eau.",
+          "remark": "Canyon autorisé à nouveau depuis le 1er août 2024 : l'essai de débits augmentés est reporté à 2025, les conditions hydro-météorologiques n'étant pas réunies sur le début de saison 2024.",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nArrêté municipal (Mieussy) n°2024-35 du 28 mai 2024\n\nConsultez :\n\nArrêté municipal (Mieussy) n°2024-52 du 3 août 2024",
+          "effectiveDate": "31 juil 2024",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/549/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté municipal (Mieussy) n°2024-35 du 28 mai 2024",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem549_pj1.pdf"
+            }
+          ]
+        },
+        {
+          "id": 362,
+          "status": "Obsolète",
+          "action": "Interdit",
+          "title": "Arrêté municipal (Mieussy) - 25 août 2017",
+          "summary": "Suite à des travaux sur la conduite forcée de la centrale, la pratique du canyoning est interdite dans le Giffre à Mieussy du 25 août au 1er décembre 2017",
+          "remark": null,
+          "details": "Consultez :\n\nArrêté municipal n°2017-08-08/01 du 08 août 2017",
+          "effectiveDate": "01 déc 2017",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/362/legislation.html",
+          "attachments": []
+        },
+        {
+          "id": 294,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté - 20 mai 2014",
+          "summary": "Le débit de réserve du giffre à Taninges a été augmenté. Désormais il est de :\n\n- 1,125m3/s du 1er mai au 31 octobre\n\n- 1,406m3/s du 1er novembre au 30 avril.\n\nA ce débit, s'ajoute le debits des affluents naturels du Giffre entre la prise d'eau de Taninges et le début du canyon (ruisseau de Mieussy, etc...).\n\nUne nouvelle procédure pour la validation de la descente via le numéro de téléphone est en cours.",
+          "remark": null,
+          "details": "Arrêté préfectoral n°2014140-0002 du 20 mai 2014",
+          "effectiveDate": "20 mai 2014",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/294/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral n°2014140-0002 du 20 mai 2014",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem294_pj1.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

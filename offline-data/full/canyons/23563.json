@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:15.168480+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23563,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23563/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23563/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23563/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23563/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23563,
+    "identity": {
+      "nom": "Côtes Chaudes",
+      "nomComplet": "Ravin des Côtes Chaudes, Aucun nom",
+      "prefixeNom": "Ravin des",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23563/Cotes-Chaudes.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-de-Haute-Provence",
+      "communePrincipale": "Mallemoisson",
+      "communes": [
+        "Mallemoisson"
+      ],
+      "massif": null,
+      "bassin": "Bléone",
+      "coursEau": "Aucun nom"
+    },
+    "rating": {
+      "cotation": "v3a1I",
+      "interet": 0.8,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 670,
+      "deniveleM": 130,
+      "longueurM": 600,
+      "cascadeMaxM": 22,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "40min",
+      "descente": "1h30",
+      "retour": "45min"
+    },
+    "topo": {
+      "accesAval": "Sortir de l'autoroute et prendre la direction Les Mées et Digne les Bains par la D4 . Au rond point de Malijai, prendre à droite sur Puimichel et Le Chaffaut et à gauche sur Le Chaffaut par la D8. Rouler 5,5 km et garez-vous sur le parking de gauche juste avant la petite route menant à Espinouse .",
+      "accesAmont": null,
+      "approche": "Prendre la piste en rg du ruisseau sec, puis partir à droite sur le départ de la piste menant au lieu dit \"Chaudes\". Prendre à droite aux maisons en restant discret et poursuivre jusqu'à un carrefour de pistes . Prendre à gauche, la piste monte progressivement et longe un premier champ. Un peu plus haut, l'on débouche sur un second champ et la piste se perd.\n\nSuivre alors le champ sur un très court moment par l'amont et rentrer dans le bois où il faudra trouver un pseudo reste de sentier mal entretenu vous menant vers le sommet des Côtes Chaudes .(Voir IGN pour le Départ de la descente (Alt 694 m) .",
+      "descente": "Descendre au mieux le début du ravin qui ne comporte aucun intérêt jusqu'à la première cascade Pi8 An en rg, s'en suit, une marche pour arriver sur une C15 An en rg, marche, Pi10 An en rd. A la confluence, sortir en rg pour rejoindre l'autre ruisseau qui comporte une C15 plus intéressante (An en rg) .Marche et une sympatique C22 s'en suit sur An en rg . Le reste est un cheminement à travers\n\nles blocs pour sortir en rd 100 m avant le collecteur .",
+      "retour": "Suivre en surplombant le collecteur en direction de la route par une pseudo sente menant à une ravine avec un captage . Passer la ravine et descendre au mieux dans le collecteur (Ruisseau) . Suivre celui-ci, jusqu'à la route (D8) où l'on prendra à droite pour rejoindre le parking .",
+      "engagement": "Aucun, mais le rocher est plutôt instable du fait de sa nature . Attention, aux chutes de pierres .",
+      "periode": "Peut-être en eau après quelques pluies .",
+      "geologie": null,
+      "historique": null,
+      "remarques": "A faire pour les deux derniers rappels . Aucun équipement en place. Tout se descend sur amarrages naturels ."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23563,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.016724,
+        "longitude": 6.080874,
+        "label": null
+      },
+      {
+        "canyonId": 23563,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.020233,
+        "longitude": 6.075295,
+        "label": null
+      },
+      {
+        "canyonId": 23563,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.023632,
+        "longitude": 6.089594,
+        "label": null
+      },
+      {
+        "canyonId": 23563,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 44.018581,
+        "longitude": 6.083931,
+        "label": "Approche"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.023632,
+      "longitude": 6.089594,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_680c62deb49de2a2",
+          "kind": "MAP",
+          "title": "3441 OT Barreme (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

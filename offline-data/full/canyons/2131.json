@@ -1,0 +1,153 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:44:09.894939+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2131,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2131/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2131/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2131/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2131/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/2131/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 2131,
+    "identity": {
+      "nom": "Pussy (2ème partie)",
+      "nomComplet": "Torrent de Pussy (2ème partie)",
+      "prefixeNom": "Torrent de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2131/Pussy-2eme-partie.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Savoie",
+      "communePrincipale": "La Léchère",
+      "communes": [
+        "La Léchère"
+      ],
+      "massif": "Vanoise",
+      "bassin": "Tarentaise",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v5a3IV",
+      "interet": 2.8,
+      "nbVotes": 15
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": 180,
+      "longueurM": 300,
+      "cascadeMaxM": 75,
+      "cordeMiniM": 60,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "??",
+      "descente": "3h",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": "Prendre la direction du Feissonnet. Se garer après avoir traverser le torrent.",
+      "accesAmont": "Prendre la D97, puis la D94 en direction de Pussy. Se garer dans l'épingle cotée 634m.",
+      "approche": null,
+      "descente": "La seconde partie, beaucoup plus technique est marqué par la fantastique C75, dont le fractionnement (-20m)copieusement aspergé évite les frottements très dangeureux. La C25 suivante demande un soin particulier en cas de débit important...",
+      "retour": "Après le dernier obstacle, sortir en rive droite et retrouver un chemin qui ramène à la route",
+      "engagement": "pas d'échapatoire avant d'être sorti de la gorge.",
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "L'équipement vétuste en place, ainsi que la technicité du canyon réserve le parcours intégral à des équipes confirmées."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2131,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.550037,
+        "longitude": 6.461506,
+        "label": "Fin de la première partie"
+      },
+      {
+        "canyonId": 2131,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.548843,
+        "longitude": 6.465325,
+        "label": null
+      },
+      {
+        "canyonId": 2131,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 45.549473,
+        "longitude": 6.460995,
+        "label": null
+      },
+      {
+        "canyonId": 2131,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 45.548443,
+        "longitude": 6.466453,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 45.549473,
+      "longitude": 6.460995,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_30a1a7d4e8445846",
+          "kind": "MAP",
+          "title": "3532 OT Massif du Beaufortin (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 398,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté municipal (La Léchère) - 26 avr 2019",
+          "summary": "Ce nouvel arrêté met fin à l'interdiction de pratique sur la seconde partie du canyon, qui était en place depuis 2002. Désormais la descente est autorisée, sous réserve de ne pas faire de rappel depuis le pont.\n\nMerci d'adopter une attitude respectueuse des populations locales (comme partout d'ailleurs !)",
+          "remark": null,
+          "details": "Arrêté municipal (La Léchère) n°ARR-2019-089 du 26 avril 2019",
+          "effectiveDate": "26 avr 2019",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/398/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté municipal (La Léchère) n°ARR-2019-089 du 26 avril 2019",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem398_pj1.pdf"
+            }
+          ]
+        },
+        {
+          "id": 63,
+          "status": "Abrogé",
+          "action": "Interdit",
+          "title": "Arrêté municipal (La Léchère - Pussy) - 23 oct 2002",
+          "summary": "- Rappel interdit du pont.\n\n- sortie obligatoire avant le rejet (à la fin de la première partie).\n\n- 2nde partie interdite.",
+          "remark": null,
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.",
+          "effectiveDate": "26 avr 2019",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/63/legislation.html",
+          "attachments": []
+        }
+      ]
+    }
+  }
+}

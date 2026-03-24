@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:46.327649+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23979,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23979/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23979/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23979/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23979/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23979,
+    "identity": {
+      "nom": "Walenbach",
+      "nomComplet": "Walenbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23979/Walenbach.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Glarus Süd",
+      "departement": "Glaris",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": "Linth",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a3III",
+      "interet": 2.3,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 1260,
+      "deniveleM": 150,
+      "longueurM": 235,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 35,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h30",
+      "descente": "1h",
+      "retour": "1h"
+    },
+    "topo": {
+      "accesAval": "Idem Oberstafelbach, au fond de la vallée de Glaris.",
+      "accesAmont": null,
+      "approche": "1 h sur la route interdite, 30 min sur le sentier depuis la route.",
+      "descente": "Petit canyon sympathique en sous-bois. D'abord quelques petits obstacles pour arriver en haut des 2 grandes cascades, C30 puis C25. Ensuite on trouve un très beau petit encaissement, puis encore quelques cascades et c'est la C18 finale.",
+      "retour": "Sortir RD pour récupérer le sentier puis la route.",
+      "engagement": "Modéré : des échappatoires semblent possibles.",
+      "periode": "Bassin versant de 4 km2 avec des névés, mais une prise d'eau prend presque tout le débit, 200 m avant le début du canyon. Cette prise d'eau est manuelle, le désengravement est réalisé environ une fois par semaine lors de la fonte des neiges puis plus occasionnellement. Le moyen le plus sûr pour effectuer le canyon semble être de laisser un mot sur la prise d'eau en indiquant le jour de rentrée dans le canyon et l'heure + toute info qui vous semblera utile et de remonter enlever le mot après votre descente. Ainsi les personnes qui vont désengraver seront informées.",
+      "geologie": null,
+      "historique": "25/08/2017 : Mélanie Marti, Matthias Holzinger, Thomas Guigon et Andi Senn.",
+      "remarques": "Prise d'eau en amont du barrage, voir § période optimale."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23979,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.865791,
+        "longitude": 8.97455,
+        "label": null
+      },
+      {
+        "canyonId": 23979,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.86372,
+        "longitude": 8.97735,
+        "label": null
+      },
+      {
+        "canyonId": 23979,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.87896,
+        "longitude": 8.97994,
+        "label": null
+      },
+      {
+        "canyonId": 23979,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 46.866711,
+        "longitude": 8.97338,
+        "label": "Prise d'eau"
+      },
+      {
+        "canyonId": 23979,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 46.862709,
+        "longitude": 8.97818,
+        "label": "Départ du sentier d'accès."
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.87896,
+      "longitude": 8.97994,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

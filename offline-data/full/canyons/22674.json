@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:53.079324+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22674,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22674/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22674/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22674/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22674/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22674,
+    "identity": {
+      "nom": "Bussonière",
+      "nomComplet": "Ruisseau de Bussonière",
+      "prefixeNom": "Ruisseau de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22674/Bussoniere.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Savoie",
+      "communePrincipale": "Saint-Béron",
+      "communes": [
+        "Saint-Béron"
+      ],
+      "massif": "Chartreuse",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 1.3,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": null,
+      "longueurM": null,
+      "cascadeMaxM": null,
+      "cordeMiniM": 40,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "3min",
+      "descente": "1h",
+      "retour": "??"
+    },
+    "topo": {
+      "accesAval": "Laisser un véhicule au niveau du cimetière sur la gauche de la N6 lorsque la route fait un virage à gauche à 90°.\n\nParking",
+      "accesAmont": "Avec le 2ème véhicule, revenir sur la N6 et prendre la D38 sur la gauche en direction de St Franc. Au lieu dit \"Le Chateau\" prendre à gauche l'impasse qui amène sur les Antes. On passe devant le hameau \"La Combe\", on fait 500 m et l'on se gare (la piste fait un mini virage à gauche).",
+      "approche": "Rejoindre le ruisseau en contrebas.",
+      "descente": "Une descente sauvage qui se pratique à l'aide des différents amarrages naturels.",
+      "retour": "Après la cascade de 40m, on franchit quelques petits ressauts, et l'on sort sur la gauche pour récupérer la voiture que l'on a en visuel.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22674,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 45.493763,
+        "longitude": 5.738233,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 45.493763,
+      "longitude": 5.738233,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_da30219dbb4dd176",
+          "kind": "TOPOGUIDE",
+          "title": "Les canyons de Savoie",
+          "authors": [
+            "Patrick Chollot"
+          ],
+          "publicationYear": 2018,
+          "reference": "978-2-95309-39-1-9",
+          "editor": "auto-édition",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/1125/Les-canyons-de-Savoie.html"
+        },
+        {
+          "id": "biblio_e7d94bb2f47393ab",
+          "kind": "TOPOGUIDE",
+          "title": "Cascades, Gorges & Canyons : Pré-alpes d'Isère et de Savoie",
+          "authors": [
+            "Bertrand Hauser",
+            "Delphine Baratin"
+          ],
+          "publicationYear": 2007,
+          "reference": "978-2-9529407-0-2",
+          "editor": "Descente-Canyon.com",
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/11/Cascades--Gorges-et-Canyons-:-Pre-alpes-d-Isere-et-de-Savoie.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_07737b47737fa6b4",
+          "kind": "MAP",
+          "title": "3333 OT Massif de la Chartreuse Nord (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

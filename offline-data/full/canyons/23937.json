@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:39.222621+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23937,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23937/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23937/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23937/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23937/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23937,
+    "identity": {
+      "nom": "Guillemore",
+      "nomComplet": "Gouffre de Guillemore, Orrido di Guillemore, La Lys",
+      "prefixeNom": "Gouffre de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23937/Guillemore.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Valle d'Aosta",
+      "departement": "Aosta",
+      "communePrincipale": "Issime",
+      "communes": [
+        "Fontainemore",
+        "Issime"
+      ],
+      "massif": null,
+      "bassin": "Lys",
+      "coursEau": "La Lys"
+    },
+    "rating": {
+      "cotation": "v4a4IV",
+      "interet": 2.7,
+      "nbVotes": 6
+    },
+    "metrics": {
+      "altitudeDepartM": 900,
+      "deniveleM": 65,
+      "longueurM": 400,
+      "cascadeMaxM": 12,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "1h30",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "A Pont St Martin, prendre vers le nord la vallée de Gressoney. Un peu plus de 2 km après Fontainemore, il y a un barrage sur la Lys en bordure de la route. Se garer sur un petit parking 100 m avant le barrage.\n\nAvant de descendre le canyon, faites une petite reconnaissance à pied : redescendre la route sur 200 m pour trouver sur la gauche un sentier touristique qui mène rapidement à un pont qui enjambe la gorge (encaissement de 40 m environ).",
+      "accesAmont": null,
+      "approche": "Du parking, descendre tout de suite dans le torrent.",
+      "descente": "Après une courte marche en rivière (R4 avec une corde à noeuds en RD pour les pécheurs), le torrent s'encaisse. Dans une gorge étroite aux parois verticales, se suivent 6 rappels techniques (mains courantes multipoints) avec un débit du torrent non négligeable. Après le pont touristique, il n'y a plus de rappel : se succèdent avant la sortie 3 biefs avec une eau turquoise du plus bel effet.",
+      "retour": "Sortir en RG dès que possible. Trouver un sentier de pécheurs peu marqué qui remonte raide en zigzags, puis oblique vers la gauche et rejoint rapidement le sentier touristique qui passe sur le pont.",
+      "engagement": "Aucune échappatoire possible, le 1er rappel franchi.",
+      "periode": "Le niveau d'eau est régulé par le barrage en amont. Grâce à la prise d'eau, la descente de la gorge est rendue possible en période d'étiage (de juillet à septembre). Le débit d'eau reste cependant assez important. Le canyon est réservé aux personnes expérimentées d'un bon niveau technique et capables d'estimer la difficulté liée au débit à sa juste valeur. En outre, en cas de pluviométrie importante ou d'orage, le barrage peut automatiquement augmenter le lâcher d'eau. Cette augmentation est annoncée par une sirène. Toutefois, le délai d'avertissement ne permet pas de sortir du canyon. Il faut donc, non seulement être en période d'étiage, mais aussi avoir une météo favorable et stable.\n\nVous êtes seuls responsables de votre décision de faire ce canyon.",
+      "geologie": "Micaschistes éclogitiques (métamorphisme de profondeur haute pression)",
+      "historique": "1ère descente effectuée le 15/07/2017 par E Dommergues, E Doze, F Lété, JM Aguilar, J Jacquet et L Zucherri.",
+      "remarques": "Très belle gorge, agréable à descendre, hélas trop courte."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23937,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.668919,
+        "longitude": 7.858534,
+        "label": null
+      },
+      {
+        "canyonId": 23937,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.665554,
+        "longitude": 7.859098,
+        "label": null
+      },
+      {
+        "canyonId": 23937,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.669003,
+        "longitude": 7.858365,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.669003,
+      "longitude": 7.858365,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_8ee11bb573ccf370",
+          "kind": "MAP",
+          "title": "N°9 Ivrea Biella Bassa Valle d'Aosta (IGC)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

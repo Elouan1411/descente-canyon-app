@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:10.506315+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21917,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21917/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21917/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21917/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21917/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21917,
+    "identity": {
+      "nom": "Dardanet",
+      "nomComplet": "Le Dardanet",
+      "prefixeNom": "Le",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21917/Dardanet.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Loire",
+      "communePrincipale": "Boën",
+      "communes": [
+        "Débats Rivière d'Orpra",
+        "Boën"
+      ],
+      "massif": "Les Monts du Forez",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 2.1,
+      "nbVotes": 20
+    },
+    "metrics": {
+      "altitudeDepartM": 440,
+      "deniveleM": 150,
+      "longueurM": 1450,
+      "cascadeMaxM": 38,
+      "cordeMiniM": 40,
+      "navette": "3.0km"
+    },
+    "timings": {
+      "approche": "35min",
+      "descente": "2h00",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "aval :\n\nA la patte d'oie (vieux pressoir) prendre à gauche direction Débats Rivière d'Orpra sur environ 700 mètres afin de rejoindre un parking qui se trouve sur la rive gauche avant de traverser le ruisseau du Dardanet.",
+      "accesAmont": "amont :\n\nDepuis Boen, emprunter la D1089 en direction de Noiretable. Environ 1 km après le lieu dit \"La Fabrique\", tourner à gauche en direction \"Débats Rivière d'Orpra\" par la D118.\n\nPasser la voie ferrée et arrivé à une patte d'oie (vieux pressoir), prendre à droite direction Boissel.\n\nMonter sur 3 kilomètres et stationner sur un parking à gauche dans un virage à droite juste avant la lisière du bois.\n\nEn",
+      "approche": "Sans navette, stationner le véhicule sur l'accès aval : Suivre le chemin qui remonte le ruisseau, traverser une petite passerelle, et remonter le ruisseau du Dardanet par la rive droite. Compter environ 35 minutes dans les bois. Le sentier est équipé par la commune de mains courantes.\n\nDepuis le parking amont : Descendre à pied le chemin coté gauche qui suit la lisière (bien refermer la clôture), puis traverser le champ afin de rejoindre en contre-bas le ruisseau. Un gros bloc signale le départ du canyon.",
+      "descente": "Enchaînement de cascades (max 38m avec un relais intermédiaire à 20m). Un toboggan possible (environ 3.5m). Aucun saut possible.",
+      "retour": "Il suffit de suivre le sentier qui vous ramène au parking.",
+      "engagement": "Équipements neufs. Échappatoires en RD et RG selon l'endroit. Attention en cas de fortes pluies.\n\nDe nombreux rappels à effectuer. Une jolie étroiture bien arrosée.",
+      "periode": "Canyon peu aquatique, mais peu devenir dangereux si beaucoup d'eau.\n\nLes périodes optimales sont le printemps et l'automne",
+      "geologie": null,
+      "historique": "Canyon équipé en 2007 par le club \"cascadecanyoning\", basé dans le département de la Loire.",
+      "remarques": "C'est le seul canyon de la Loire qui est idéal pour une initiation."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21917,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.758621,
+        "longitude": 3.925523,
+        "label": null
+      },
+      {
+        "canyonId": 21917,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 45.759872,
+        "longitude": 3.937719,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.759872,
+      "longitude": 3.937719,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_25efac401cc8fed2",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.cascadecanyoning.fr/portail/?page_id=28",
+          "url": "http://www.cascadecanyoning.fr/portail/?page_id=28"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

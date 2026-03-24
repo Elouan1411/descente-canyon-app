@@ -1,0 +1,135 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:45:01.295803+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2316,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2316/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2316/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2316/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2316/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2316,
+    "identity": {
+      "nom": "Grand Vallon",
+      "nomComplet": "Ruisseau du Grand Vallon, Indiana Jones",
+      "prefixeNom": "Ruisseau du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2316/Grand-Vallon.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Savoie",
+      "communePrincipale": "Modane",
+      "communes": [
+        "Modane"
+      ],
+      "massif": "Cerces - Galibier - Thabor",
+      "bassin": "Maurienne",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v5a4III",
+      "interet": 2.8,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 1712,
+      "deniveleM": 170,
+      "longueurM": 750,
+      "cascadeMaxM": 40,
+      "cordeMiniM": 45,
+      "navette": "3.0km"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "2h30",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "laisser une voiture au pont qui se situe 500m avant Valfréjus.",
+      "accesAmont": "Depuis Valfréjus, continuer la route en direction du Seuil et se garer au 1er pont à gauche après la gare supérieure du télésiège de Charmasson. Il est possible de monter a pied en 30mn.",
+      "approche": "30mn par la route(facultatif), ou par les chemins de rando qui montent au hameau du seuil(indiqué dans Valfréjus).",
+      "descente": "On rentre dans le canyon par un rappel depuis la passerelle ou par une courte piste qui descend sur la gauche 50m plus loin. Ensuite les cascades s’enchaînent tout de suite et sont très belles. Attention au débit, qui est important, la descente de la C40 s'effectuant dans la cascade. Après les cascades, une marche de 30-40min avec quelques obstacles ramène a la voiture.",
+      "retour": "Sortie en RG avant le pont de la départementale",
+      "engagement": "Aucun échappatoire.",
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2316,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.173889,
+        "longitude": 6.664722,
+        "label": null
+      },
+      {
+        "canyonId": 2316,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.176388,
+        "longitude": 6.661111,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 45.173889,
+      "longitude": 6.664722,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_da30219dbb4dd176",
+          "kind": "TOPOGUIDE",
+          "title": "Les canyons de Savoie",
+          "authors": [
+            "Patrick Chollot"
+          ],
+          "publicationYear": 2018,
+          "reference": "978-2-95309-39-1-9",
+          "editor": "auto-édition",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/1125/Les-canyons-de-Savoie.html"
+        },
+        {
+          "id": "biblio_6d273ae41f72e178",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons de Savoie",
+          "authors": [
+            "F. Martin",
+            "C. Altazin"
+          ],
+          "publicationYear": 2007,
+          "reference": "978-2-9528935-0-3",
+          "editor": null,
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/15/Descentes-de-canyons-en-Savoie.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_ab1bfc77f4662d40",
+          "kind": "MAP",
+          "title": "3535 OT Nevache (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

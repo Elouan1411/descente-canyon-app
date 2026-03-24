@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:00.535696+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23763,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23763/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23763/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23763/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23763/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23763,
+    "identity": {
+      "nom": "Brison",
+      "nomComplet": "Canyon de Brison, Breuson",
+      "prefixeNom": "Canyon de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23763/Brison.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Valle d'Aosta",
+      "departement": "Aosta",
+      "communePrincipale": "Valpelline",
+      "communes": [
+        "Valpelline"
+      ],
+      "massif": "Col du Grand Saint Bernard",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a2II",
+      "interet": 2.7,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 1395,
+      "deniveleM": 295,
+      "longueurM": 850,
+      "cascadeMaxM": 65,
+      "cordeMiniM": 40,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "50min",
+      "descente": "2h30",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "D'Aoste, prendre la direction du col du Grand St Bernard. Au bout de quelques kilomètres, tourner à droite direction Valpelline.\n\nAu carrefour à la sortie de Valpelline, prendre tout droit direction Oyace (à gauche : direction Ollomont).\n\n150 m après ce carrefour, tourner à gauche pour aller à Semon.\n\nGarez vous au mieux à coté de l'église au milieu du village.",
+      "accesAmont": null,
+      "approche": "De l'église, prendre la route qui monte vers le nord.\n\nLa route se transforme rapidement en piste, puis en sentier.\n\nOn voit très bien la cascade terminale sur la droite.\n\nAprès le dernier champ, le sentier tourne vers la gauche.\n\nA la 1ère bifurcation, tourner à droite et entamer la montée en lacets vers le canyon.\n\nSur le haut, le sentier en faux plat et plus rectiligne domine le canyon.\n\nAprès une bergerie (\"Chez la Ville\"), prendre à droite à la 1ère intersection.\n\nRejoindre rapidement le canyon au niveau du 1er talweg rencontré (à l'endroit où on voit au sol un tuyau métallique abandonné).\n\nIl est sans doute plus court de rejoindre le canyon plus tôt. Mais nous ne l'avons pas testé.",
+      "descente": "Le canyon commence par une marche qui pourrait peut-être être shuntée (cf. observation précédente).\n\nOn rencontre quelques ressauts espacés, puis le canyon s'encaisse.\n\nLes rappels deviennent plus hauts et plus rapprochés. Une MC sur chaîne en RG domine une belle cascade avec vasque perchée (C14 + C28).\n\nLa cascade terminale de 65 m est coupée par un relais aérien donnant à peu près 2 longueurs de 38 et 27 m.",
+      "retour": "En bas de la cascade terminale, il y a un ouvrage hydraulique pour protéger le village, puis tout de suite après, une passerelle qu'il faut emprunter pour sortir en RD du canyon.\n\nAller tout droit le long du champ rencontré pour rejoindre le chemin d'accès (évident).",
+      "engagement": "Pas d'échappatoire dans le canyon, toutefois il semble facile d'en sortir dans la 1ère partie et beaucoup plus difficile dans la seconde. Toutefois, on peut se mettre assez facilement hors crue.",
+      "periode": "Débit important au printemps, tout à fait acceptable en été.\n\nLa période idéale va de fin juin à septembre.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Equipement très moyen, soumis aux crues. Il semble prudent de prendre de quoi rééquiper."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23763,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.838249,
+        "longitude": 7.341249,
+        "label": null
+      },
+      {
+        "canyonId": 23763,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.830853,
+        "longitude": 7.343453,
+        "label": null
+      },
+      {
+        "canyonId": 23763,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.828773,
+        "longitude": 7.342647,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.828773,
+      "longitude": 7.342647,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_6d61ebd3926d2c01",
+          "kind": "MAP",
+          "title": "N°5 Cervino Matterhorn e Monte Rosa (IGC)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

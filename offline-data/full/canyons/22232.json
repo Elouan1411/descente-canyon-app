@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:18.762861+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22232,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22232/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22232/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22232/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22232/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22232,
+    "identity": {
+      "nom": "Pie",
+      "nomComplet": "Saut de la Pie, La grave",
+      "prefixeNom": "Saut de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22232/Pie.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-de-Haute-Provence",
+      "communePrincipale": "Barles",
+      "communes": [
+        "Barles"
+      ],
+      "massif": "Massif des Monges",
+      "bassin": "Bès",
+      "coursEau": "La grave"
+    },
+    "rating": {
+      "cotation": "v2a4I",
+      "interet": 0.6,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 1100,
+      "deniveleM": 12,
+      "longueurM": null,
+      "cascadeMaxM": 12,
+      "cordeMiniM": 35,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "15min",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": "De Digne les bains, passez la clue de Barles et de Verdaches sur la D900a,puis tournez à gauche en direction de Auzet sur la D7 sur 250 m pour arriver à la cascade.Garez-vous sans géner.",
+      "accesAmont": null,
+      "approche": null,
+      "descente": "C12 sur AN à 15 m de la cascade .",
+      "retour": null,
+      "engagement": "Aucun",
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "une seule cascade de faible hauteur"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22232,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.273544,
+        "longitude": 6.300541,
+        "label": null
+      },
+      {
+        "canyonId": 22232,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.273659,
+        "longitude": 6.300359,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.273659,
+      "longitude": 6.300359,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_f6542a442811df8f",
+          "kind": "MAP",
+          "title": "3439 ET Seyne - Chabanon-Grand-Puy (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

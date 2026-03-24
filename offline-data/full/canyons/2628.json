@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:46:14.210386+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2628,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2628/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2628/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2628/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2628/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2628,
+    "identity": {
+      "nom": "Cézas",
+      "nomComplet": "Clue de Cézas",
+      "prefixeNom": "Clue de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2628/Cezas.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Gard , Hérault",
+      "communePrincipale": "Moulès-et-Baucels",
+      "communes": [
+        "Gard",
+        "Hérault",
+        "Sumène",
+        "Moulès-et-Baucels"
+      ],
+      "massif": "Cévennes",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 0.6,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 406,
+      "deniveleM": 55,
+      "longueurM": 1000,
+      "cascadeMaxM": 7,
+      "cordeMiniM": 10,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "??",
+      "descente": "45min",
+      "retour": "??"
+    },
+    "topo": {
+      "accesAval": "aval parait plus facile (moins de dénivelé).",
+      "accesAmont": "amont décrit dans l'ancien topo-guide \"Gorges et canyons en Languedoc Roussillon\" est à oublier : la ruine située à la confluence des deux ruisseaux en amont a été rénovée et la piste y descendant est fermée (propriété privée). Étudier sur carte un accès par l'",
+      "approche": "Cf accès. Depuis l'aval, une piste puis un sentier en RD permettent certainement d'approcher facilement la partie intéressante.",
+      "descente": "Marche en rivière au milieu des crapauds si c'est au mois de mars. Quelques obstacles esthétiques et intéressants.",
+      "retour": null,
+      "engagement": "Faible, pas d'encaissements dignes de ce nom",
+      "periode": "Peu d'eau, à sec l'été. Attention aux crues.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Sans intérêt sans eau."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2628,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.970951,
+        "longitude": 3.763504,
+        "label": null
+      },
+      {
+        "canyonId": 2628,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.949512,
+        "longitude": 3.758183,
+        "label": null
+      },
+      {
+        "canyonId": 2628,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 43.948586,
+        "longitude": 3.757067,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.948586,
+      "longitude": 3.757067,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_c0245a1ccc4224fe",
+          "kind": "MAP",
+          "title": "2741 ET Saint-Hippolyte du Fort (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

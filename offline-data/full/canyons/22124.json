@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:55.089039+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22124,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22124/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22124/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22124/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22124/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22124,
+    "identity": {
+      "nom": "Teufelsklamm",
+      "nomComplet": "Teufelsklamm, Steinberggraben",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22124/Teufelsklamm.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Tyrol",
+      "departement": "Kitzbühel",
+      "communePrincipale": "Waidring",
+      "communes": [
+        "St. Ulrich am Pillersee",
+        "Waidring"
+      ],
+      "massif": "Loferer Steinberge",
+      "bassin": "Saalach",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 1.8,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1020,
+      "deniveleM": 850,
+      "longueurM": 1900,
+      "cascadeMaxM": 23,
+      "cordeMiniM": 25,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "40min",
+      "descente": "2h",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "De Kitzbühl prendre la B309 vers Lofer, passer St. Johann/Tirol et continuer jusqu'à Waidring. De là, prendre vers le sud et St. Ulrich/Pillersee. Avant la Pillersee et un pont, on trouve à gauche un grand parking.",
+      "accesAmont": null,
+      "approche": "Du parking, prendre la piste vers l'Est et la suivre, raide vers le haut. Passer le sentier à gauche (\"Teufelsklamm\"). Quelques épingles et arriver dans le ruisseau ouvert.",
+      "descente": "Rappels, désescalade, marches.",
+      "retour": "Avant le pont (route) sortie à gauche.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22124,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.554867,
+        "longitude": 12.578788,
+        "label": null
+      },
+      {
+        "canyonId": 22124,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.557495,
+        "longitude": 12.569175,
+        "label": null
+      },
+      {
+        "canyonId": 22124,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.557873,
+        "longitude": 12.567109,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.557873,
+      "longitude": 12.567109,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_acfb30e4a6f8e59c",
+          "kind": "MAP",
+          "title": "9 Loferer Steinberge-Leoganger Steinberge (Alpenvereinskarte)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

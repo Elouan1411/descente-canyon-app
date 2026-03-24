@@ -1,0 +1,179 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:49:39.692509+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21501,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21501/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21501/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21501/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21501/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21501,
+    "identity": {
+      "nom": "Diablozulo",
+      "nomComplet": "Barranco de Diablozulo, Ixostia",
+      "prefixeNom": "Barranco de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21501/Diablozulo.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Navarra",
+      "departement": "Provincia de Navarra",
+      "communePrincipale": "Monreal",
+      "communes": [
+        "Monreal/Elo",
+        "Monreal"
+      ],
+      "massif": "Sierra de Alaiz",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1III",
+      "interet": 2.7,
+      "nbVotes": 19
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": 300,
+      "longueurM": 800,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 35,
+      "navette": "5.0km"
+    },
+    "timings": {
+      "approche": "1h15",
+      "descente": "3-4h",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "Parking : De Pampelune prenez la direction de Jaca par l'autoroute. Prendre la sortie 16 vers Monreal. Roulez environ 1,4 km en parallèle de l'autoroute puis prenez une piste à droite (on voit l'échancrure du canyon dans cette direction). Garez-vous quasiment à son terminus, après le cours d'eau venant du canyon. On peut vérifier le débit en se rendant à la dernière cascade par la rive gauche et par le bord du champ.\n\nNavette : Revenez à la route, tournez à droite et allez jusqu'à Monreal. Prenez la route qui mène au centre de télécommunication puis la première piste à droite. L'accès au canyon se situe environ 2km plus loin, lorsque la piste bifurque franchement à gauche. Il faut se garer avant, sur la gauche, sans gêner.",
+      "accesAmont": null,
+      "approche": "Du parking aval, re-traverser le cours d'eau puis tourner à droite dans le champ puis le contourner vers l'est. Prendre un sentier ascendant mal tracé direction sud. Montez pour rejoindre la piste supérieure. Remontez la piste à droite, jusqu’à surplomber le canyon. Au niveau des cairns part un mauvais chemin très raide qui descend vers le canyon. Un rappel de 20 m est nécessaire.",
+      "descente": "La première partie est mieux avec quelques passages joliment encaissés. La seconde partie hormis la C35 a moins de caractère.",
+      "retour": "Sortez RG et rejoignez le véhicule sans piétiner le champ.",
+      "engagement": "Échappatoires difficiles",
+      "periode": "Quasiment toujours à sec. Pas de vasques croupies.\n\nToute l’année",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Canyon sec sans vasques putrides. Quelques beaux rappels."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21501,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.703491,
+        "longitude": -1.538826,
+        "label": null
+      },
+      {
+        "canyonId": 21501,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.708931,
+        "longitude": -1.538472,
+        "label": null
+      },
+      {
+        "canyonId": 21501,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 42.703789,
+        "longitude": -1.538472,
+        "label": null
+      },
+      {
+        "canyonId": 21501,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 42.708679,
+        "longitude": -1.538515,
+        "label": null
+      },
+      {
+        "canyonId": 21501,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 42.705658,
+        "longitude": -1.538585,
+        "label": "accès rapide (par 1 rappel)"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 42.703789,
+      "longitude": -1.538472,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_e351d4789a0451db",
+          "kind": "TOPOGUIDE",
+          "title": "50 barrancos del Pirineo. Los descensos mas bellos.",
+          "authors": [
+            "José A. Ortega / Miguel A. Cebrian"
+          ],
+          "publicationYear": 2017,
+          "reference": "9788498293890",
+          "editor": "Desnivel",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/140/50-barrancos-del-Pirineo.html"
+        },
+        {
+          "id": "biblio_5c03797f9eed9b4e",
+          "kind": "TOPOGUIDE",
+          "title": "Barrancos, errekas, cascadas y foces navarrensis",
+          "authors": [
+            "Francisco José Padilla González"
+          ],
+          "publicationYear": 2016,
+          "reference": "978-84-608-7003-6",
+          "editor": "Auto-édition",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1307/topoguide.html"
+        },
+        {
+          "id": "biblio_e4c8c4f70fecf6cb",
+          "kind": "TOPOGUIDE",
+          "title": "Barrancos y Cañones de Euskal Herria",
+          "authors": [
+            "Javier ITURRITXA"
+          ],
+          "publicationYear": 2012,
+          "reference": "978-84-615-5658-8",
+          "editor": null,
+          "status": "en stock\n\n- 24,90 € -\n\nCommandez cet ouvrage dès maintenant !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/166/Barrancos-y-Canones-de-Euskal-Herria.html"
+        }
+      ],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_544ea61a16b3f37b",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://ropewiki.com/Diablozulo",
+          "url": "http://ropewiki.com/Diablozulo"
+        },
+        {
+          "id": "resource_14633d1b51629787",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/Canyons/DiablozuloCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/Canyons/DiablozuloCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

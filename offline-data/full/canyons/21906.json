@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:10.517666+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21906,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21906/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21906/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21906/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21906/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/21906/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 21906,
+    "identity": {
+      "nom": "Le Moucan",
+      "nomComplet": "Le Moucan",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21906/Le-Moucan.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Lozère",
+      "communePrincipale": "Saint-Étienne-Vallée-Française",
+      "communes": [
+        "Saint-Étienne-Vallée-Française"
+      ],
+      "massif": "Cévennes",
+      "bassin": "Gardon de Mialet",
+      "coursEau": "Le Moucan"
+    },
+    "rating": {
+      "cotation": "v1a3I",
+      "interet": 1.6,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": null,
+      "longueurM": null,
+      "cascadeMaxM": null,
+      "cordeMiniM": 5,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "??",
+      "descente": "??",
+      "retour": "??"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": "descente dans une gorge schisteuse qui offre de jolis encaissements.\n\ncorde facultative (saut et toboggans )\n\nun toboggan raide est facilité par la pose d'une corde\n\nle site a souffert d'un incendie , il y a qq années (certaines vasques se serait comblées )",
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21906,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.153931,
+        "longitude": 3.852961,
+        "label": null
+      },
+      {
+        "canyonId": 21906,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.151886,
+        "longitude": 3.853143,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.151886,
+      "longitude": 3.853143,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_3f1dc2b70b91eb16",
+          "kind": "MAP",
+          "title": "2740 ET Corniches Des Cevennes (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_cf9ef268837e9ab7",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://clementdom.free.fr/html/moucan.htm",
+          "url": "http://clementdom.free.fr/html/moucan.htm"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 508,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Lozère) - 26 oct 2016",
+          "summary": "La pratique du canyonisme est autorisée sur le département de la Lozère du lever au coucher du soleil. Il est cependant interdit de s’engager dans un canyon après 17 heures.\n\nL'arrêté préfectoral réglemente également la pratique du canyonisme en Lozère sur les points suivants : les équipements obligatoires, la prise d’information préalable, l'accès aux sites, l’effectif des groupes, l’encadrement, le respect du milieu naturel, des équipements et des autres usagers, le retour d’expérience et les contrôles.",
+          "remark": null,
+          "details": "Arrêté préfectoral (Lozère) n°DDCSPP-JESEP-2016-300-001 du 26 octobre 2016",
+          "effectiveDate": "26 oct 2016",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/508/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral (Lozère) n°DDCSPP-JESEP-2016-300-001 du 26 octobre 2016",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem508_pj1.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,145 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:01.496705+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23498,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23498/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23498/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23498/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23498/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/23498/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 23498,
+    "identity": {
+      "nom": "Volpajola et San Petru",
+      "nomComplet": "Ruisseaux de Volpajola et San Petru",
+      "prefixeNom": "Ruisseaux de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23498/Volpajola-et-San-Petru.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Corse",
+      "departement": "Corse-du-Sud",
+      "communePrincipale": "Zonza",
+      "communes": [
+        "Zonza"
+      ],
+      "massif": "Bavella",
+      "bassin": "Solenzara",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 1.6,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1000,
+      "deniveleM": 400,
+      "longueurM": 2300,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 30,
+      "navette": "4.0km"
+    },
+    "timings": {
+      "approche": "25min",
+      "descente": "3h30",
+      "retour": "25min"
+    },
+    "topo": {
+      "accesAval": "De Solenzara prendre la D268 en direction du col de Bavella. Passer le col \"Bocca di Laronu\" et les ponts de la Purcaraccia, Polischellu, Renaju. Continuer sur quelques virages et garer un premier véhicule non loin de la piste de la maison forestière d'Arza (alt 670m sur l'IGN).\n\nAvec un second véhicule, continuer la route, toujours en direction du col de Bavella sur environ 3,5km et garez-vous sans gêner non loin du départ d'une piste partant sur votre gauche sous le village de Bavella.",
+      "accesAmont": null,
+      "approche": "Emprunter la piste en laissant celle partant à gauche. Traverser un premier gué bétonné pour vous rendre au second (ravin de Valpajola) . Descendre sur 200m le petit cours d'eau avant de vous mettre en tenue.",
+      "descente": "Ravin de Valpajola se compose de cascades formées par de gros blocs de granite, se descendant sur amarrages naturels ou en désescalade. A l'arrivée du ruisseau de San Petru, le cours d'eau s'élargit pour former quelques plans-inclinés et de jolies cascades dans un bon schiste jusqu'à une piste.",
+      "retour": "A la piste, prendre à gauche et se rendre au parking non loin de la maison forestière.",
+      "engagement": "Hormis quelques courts encaissements, il est possible de se mettre à l'abri en sécurité en sortant du ruisseau en cas de gros orages.",
+      "periode": "A l'étiage, il coule un filet d'eau pour Valpajola et un petit débit correct sur San Petru. Période optimale pour descendre le canyon : juin, début juillet.",
+      "geologie": null,
+      "historique": "Première le 5/8/2007 : Jourdan, Pacaud, Tomasini,",
+      "remarques": "La plupart des cascades se descendent sur amarrages naturels. Apparemment, seules trois cascades restent équipées."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23498,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 41.789253,
+        "longitude": 9.240396,
+        "label": null
+      },
+      {
+        "canyonId": 23498,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 41.801033,
+        "longitude": 9.248893,
+        "label": null
+      },
+      {
+        "canyonId": 23498,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 41.797352,
+        "longitude": 9.234216,
+        "label": null
+      },
+      {
+        "canyonId": 23498,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 41.811398,
+        "longitude": 9.245889,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 41.797352,
+      "longitude": 9.234216,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_b6fb73f30bb7590c",
+          "kind": "MAP",
+          "title": "4253 ET Aiguilles-de-Bavella (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 520,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Corse-du-Sud) - 26 juil 2011",
+          "summary": "- Le canyonisme est interdit la nuit (sauf dérogation)\n\n- Le canyonisme est interdit s'il y a une alerte émise par Météo-France de niveau orange ou rouge en cours.\n\n- Le canyonisme est interdit aux mineurs de moins de 7 ans, sauf canyon évalué égal ou inférieur à V1-A3-E3\n\n- Les groupes auront un effectif maximum de 12 personnes, hors encadrement.",
+          "remark": "L'arrêté du 9 juillet 2019 pris conjointement par les préfectures de Corse-du-Sud et de Haute-Corse harmonise les réglementations existantes pour les deux départements.",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nArrêté préfectoral modificatif (Corse-du-Sud et Haute-Corse) n°R20-2019-07-09-001 du 9 juillet 2019\n\nArrêté préfectoral (Corse-du-Sud) n°2011207-0005 du 26 juillet 2011",
+          "effectiveDate": "26 juil 2011",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/520/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral modificatif (Corse-du-Sud et Haute-Corse) n°R20-2019-07-09-001 du 9 juillet 2019",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem520_pj2.pdf"
+            },
+            {
+              "label": "Arrêté préfectoral (Corse-du-Sud) n°2011207-0005 du 26 juillet 2011",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem520_pj1.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

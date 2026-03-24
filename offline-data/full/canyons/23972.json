@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:45.079571+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23972,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23972/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23972/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23972/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23972/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23972,
+    "identity": {
+      "nom": "Rinconcillo",
+      "nomComplet": "Barranco del Rinconcillo",
+      "prefixeNom": "Barranco del",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23972/Rinconcillo.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Andalucía",
+      "departement": "Provincia de Granada",
+      "communePrincipale": "Güéjar Sierra",
+      "communes": [
+        "Güéjar Sierra"
+      ],
+      "massif": "Sierra Nevada",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a1III",
+      "interet": 2.0,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 1652,
+      "deniveleM": 317,
+      "longueurM": 1280,
+      "cascadeMaxM": 34,
+      "cordeMiniM": 40,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h",
+      "descente": "1h15min",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": "Il est en eau à priori toute l'année.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Petit canyon sans prétention mais qui est en eau même en période de sécheresse."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23972,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 37.122002,
+        "longitude": -3.39035,
+        "label": null
+      },
+      {
+        "canyonId": 23972,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 37.127419,
+        "longitude": -3.38718,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 37.127419,
+      "longitude": -3.38718,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

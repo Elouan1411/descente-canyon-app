@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:54.162788+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24021,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24021/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24021/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24021/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24021/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24021,
+    "identity": {
+      "nom": "Serenne",
+      "nomComplet": "La Serenne",
+      "prefixeNom": "La",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24021/Serenne.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-de-Haute-Provence",
+      "communePrincipale": "Saint-Paul-sur-Ubaye",
+      "communes": [
+        "Saint-Paul-sur-Ubaye"
+      ],
+      "massif": "Massif de Chambeyron",
+      "bassin": "Ubaye",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a2I",
+      "interet": 1.9,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 2000,
+      "deniveleM": 300,
+      "longueurM": 1000,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 25,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h30min",
+      "descente": "2h30min",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "Se garer sur la D25 au niveau du pont sur la Serenne.",
+      "accesAmont": null,
+      "approche": "Suivre le chemin de rando balisé vers le Col de la Serenne. A 2000 m traverser par quelques traces vers le ruisseau.",
+      "descente": "Une première partie se compose de cascades de schiste, la deuxième de ressauts calcaires. Descente 100 % ensoleillée, eau cristalline. En periode de fin fonte, les cascades sont bien \"actives\".",
+      "retour": "A 1700m (bloc marbre rose taillé), monter en RG jusqu'au chemin.",
+      "engagement": "Facile, on aime bien un gros débit.",
+      "periode": "Juin - Octobre, après pluie et à la fin de la fonte joli quantité d'eau.",
+      "geologie": "Une première partie de schiste, la deuxième en calcaire.",
+      "historique": "10.06.2017 Timo Stammwitz",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24021,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.54575,
+        "longitude": 6.772806,
+        "label": null
+      },
+      {
+        "canyonId": 24021,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.541473,
+        "longitude": 6.780056,
+        "label": null
+      },
+      {
+        "canyonId": 24021,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.54047,
+        "longitude": 6.784,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.54047,
+      "longitude": 6.784,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

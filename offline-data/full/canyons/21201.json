@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:48:30.228440+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21201,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21201/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21201/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21201/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21201/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21201,
+    "identity": {
+      "nom": "Ransol",
+      "nomComplet": "Gorga de Ransol, Riu de la Coma",
+      "prefixeNom": "Gorga de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21201/Ransol.html"
+    },
+    "location": {
+      "pays": "Andorre",
+      "region": null,
+      "departement": "Canillo",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": null,
+      "coursEau": "Riu de la Coma"
+    },
+    "rating": {
+      "cotation": "v3a1II",
+      "interet": 1.9,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 1700,
+      "deniveleM": 80,
+      "longueurM": 220,
+      "cascadeMaxM": 16,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "1h",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "Entre Soldeu et Canillo au km 13, prendre la route qui monte vers le village de Ransol et Els Plan. Dans le village de Ransol, lorsque la route passe au dessus du cours d'eau, prendre le pont de gauche qui descend et conduit en 50m à un grand parking. Se garer.",
+      "accesAmont": null,
+      "approche": "Le canyon démarre là, au pied du parking.",
+      "descente": "Courte descente encaissée composée de 5 rappels.",
+      "retour": "Lorsqu'on aperçoit la station service et un pont, remonter par un petit sentier raide RG. Monter pendant 15 minutes dans les hautes herbes pour rejoindre la route principale au coeur du village de Ransol.",
+      "engagement": "Pas d'échappatoire possible du fait de l'encaissement de la gorge.",
+      "periode": "Etiage. Attention au débit à la fonte des neiges, le bassin versant part de 2900m.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Descente hélas ponctuée de déchets."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21201,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.580917,
+        "longitude": 1.637541,
+        "label": null
+      },
+      {
+        "canyonId": 21201,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.579426,
+        "longitude": 1.639144,
+        "label": null
+      },
+      {
+        "canyonId": 21201,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 42.58091,
+        "longitude": 1.637325,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 42.58091,
+      "longitude": 1.637325,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_cf9c73d17be9d571",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.latrencanous.com/barrancos/coma_de_ransol/topo.pdf",
+          "url": "http://www.latrencanous.com/barrancos/coma_de_ransol/topo.pdf"
+        },
+        {
+          "id": "resource_25c11f14f1920fc4",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://ropewiki.com/Ransol",
+          "url": "http://ropewiki.com/Ransol"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

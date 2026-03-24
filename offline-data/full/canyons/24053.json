@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:59:01.075239+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24053,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24053/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24053/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24053/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24053/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24053,
+    "identity": {
+      "nom": "Ronchi",
+      "nomComplet": "Rio del Ronchi",
+      "prefixeNom": "Rio del",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24053/Ronchi.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Ligurie",
+      "departement": "Genova",
+      "communePrincipale": "Lorsica",
+      "communes": [
+        "Lorsica"
+      ],
+      "massif": "Alpi Liguri - Alpes ligures",
+      "bassin": "Entella",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 2.4,
+      "nbVotes": 5
+    },
+    "metrics": {
+      "altitudeDepartM": 675,
+      "deniveleM": 274,
+      "longueurM": 970,
+      "cascadeMaxM": 26,
+      "cordeMiniM": 30,
+      "navette": "1.4km"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "2h30",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": "continuer la route jusqu'à l'épingle à droite d'où part le sentier.",
+      "approche": "De l'épingle de la route attaquer le sentier à plat (peinture orange). Après une brève montée : une ruine, prendre le sentier de droite. Encore une brève montée qui mène à une crête à partir de laquelle le sentier monte très peu. Passer tous les affluents, rejoindre un petit pré avec les restes d'un téléphérique (câbles). Encore 2 minutes de montée, le sentier coupe le rio par un mur de soutènement.",
+      "descente": "Départ direct, relais équipé sur arbre rive G. Une douzaine de rappels, des goulottes, des vasques, des biefs...\n\nSi l'arbre la \"tête en bas\" est toujours au pied de la belle C26 en goulotte, il est préférable de rappeler la corde en ayant pris pied sur la racine; sinon la corde s'emmêlera très certainement dedans...",
+      "retour": "Sortir au pont par la rive D.",
+      "engagement": "Moyen, pas mal de sentes coupent le canyon.",
+      "periode": "Printemps, début d'été, automne après quelques pluies. Débit modéré. Néanmoins ne pas y aller après de fortes pluies ; il y des traces de crues... Combi intégrale indispensable.",
+      "geologie": "Schiste.",
+      "historique": "L. Anghileri, M. Bozzo, C. Milesi. R. Sivori et L. Zuccheri le 20.03.2010.",
+      "remarques": "A Lorsica : un excellent agriturismo au tarif abordable : \"Il Sogno\"."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24053,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.442837,
+        "longitude": 9.289549,
+        "label": null
+      },
+      {
+        "canyonId": 24053,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 44.436981,
+        "longitude": 9.287215,
+        "label": null
+      },
+      {
+        "canyonId": 24053,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 44.438007,
+        "longitude": 9.282774,
+        "label": "fin du canyon"
+      },
+      {
+        "canyonId": 24053,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 44.442322,
+        "longitude": 9.289383,
+        "label": "petit pré avec téléphérique"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 44.436981,
+      "longitude": 9.287215,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_043510a7fa84cb58",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.cicarudeclan.com/ita/a5_ronchi.htm",
+          "url": "http://www.cicarudeclan.com/ita/a5_ronchi.htm"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

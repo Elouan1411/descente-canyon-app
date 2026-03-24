@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:55.884570+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24027,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24027/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24027/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24027/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24027/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24027,
+    "identity": {
+      "nom": "Pont",
+      "nomComplet": "Vallon du Pont",
+      "prefixeNom": "Vallon du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24027/Pont.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-de-Haute-Provence",
+      "communePrincipale": "Saint-Paul-sur-Ubaye",
+      "communes": [
+        "Saint-Paul-sur-Ubaye"
+      ],
+      "massif": "Massif de Chambeyron",
+      "bassin": "Ubaye",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a1III",
+      "interet": 2.4,
+      "nbVotes": 5
+    },
+    "metrics": {
+      "altitudeDepartM": 2130,
+      "deniveleM": 340,
+      "longueurM": 800,
+      "cascadeMaxM": 40,
+      "cordeMiniM": 45,
+      "navette": "1.0km"
+    },
+    "timings": {
+      "approche": "1h30",
+      "descente": "2h30",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "Remonter par la D25 la vallée de la Haute-Ubaye, passer la Grande Serenne et se garer environ 200m avant le Pont Voûté au bord de la route. Avec la deuxième voiture, continuer 1 km plus haut dans la vallée et se garer au ruisseau du Vallon du Pont à l'endroit où il traverse la route.",
+      "accesAmont": null,
+      "approche": "Suivre le chemin bien entretenu, mais pas balisé (pas bien visible au départ) qu'on trouve marqué sur la carte IGN. Du plateau à 2130m le chemin traverse jusqu'au départ de la descente.",
+      "descente": "Après un rappel et une marche dans les blocs le canyon commence à 2030m. Suite de cascades en partie encaissées. Au milieu de la descente, très beau geyser qui lance de l'eau à une grande distance dans le vide.",
+      "retour": "Après la confluence avec le torrent des Sainfoins (souvent sec) sortir RG et descendre par les prés jusqu'à la route.",
+      "engagement": "Descente verticale de belles cascades, sans vasques.",
+      "periode": "Faisable après la fonte jusqu'en automne. En plein été peu d'eau. Eau cristalline.",
+      "geologie": "calcaire, schiste, calcaire sableux / marbre",
+      "historique": "18.06.2017 Jaysson Lambert, Pascal Tran, Timo Stammwitz",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24027,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.563,
+        "longitude": 6.799361,
+        "label": null
+      },
+      {
+        "canyonId": 24027,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.562305,
+        "longitude": 6.806389,
+        "label": null
+      },
+      {
+        "canyonId": 24027,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 44.560112,
+        "longitude": 6.809278,
+        "label": null
+      },
+      {
+        "canyonId": 24027,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.552334,
+        "longitude": 6.801306,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.560112,
+      "longitude": 6.809278,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:28.955324+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23620,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23620/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23620/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23620/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23620/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23620,
+    "identity": {
+      "nom": "Chlingentobel",
+      "nomComplet": "Chlingentobel",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23620/Chlingentobel.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": null,
+      "departement": "Schwyz",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": "Muota",
+      "coursEau": "Chlingentobel"
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 1.4,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 805,
+      "deniveleM": 75,
+      "longueurM": 200,
+      "cascadeMaxM": 35,
+      "cordeMiniM": 40,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "45min-1h",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": "De Schwyz, prendre la direction du col de Ibergeregg. 750m après le restaurent windstock, se garer dans l’épingle (alt. 915m).",
+      "accesAmont": null,
+      "approche": "Il est conseillé de commencer par le canyon de CHLOTERLIBACH puis d’enchainer avec CHLINGENTOBEL. Néanmoins, pour rejoindre le départ de CHLINGENTOBEL, depuis le parking continuer sur la piste, après le pont prendre à droite le chemin de randonnée descendant. Vers l’alt. 830m, prendre à gauche un sente qui va en direction du torrent et le rejoindre au mieux.",
+      "descente": "Enchainement de petits obstacles dans un encaissement, puis après un virage le canyon s’ouvre sur une dalle creusée de petits ressauts et toboggans, qui se termine par une C20+C35 équipées RG.",
+      "retour": "Au pied de la cascade, remonter RD au mieux puis traverser pour venir croiser le canyon de CHLOTERLIBACH juste en haut de la grande dalle à hauteur de la cabane à foin.\n\nDe la cabane à foin remonter à la lisière de la forêt en longeant le canyon RD jusqu’à la passerelle de la partie 2. La traverser puis rester sur le sentier de randonnée qui monte jusqu’au pont (alt. 910m) et prendre la piste à gauche revenant au parking.",
+      "engagement": "Descente courte mais sans vraiment d'échappatoires.",
+      "periode": "Bassin versant de 2.7km2 avec des marais. Possible au printemps et rapidement après des pluies.",
+      "geologie": null,
+      "historique": "Timo Stammwitz et Mauro le 22.07.2014.",
+      "remarques": "A faire après Chloterlibach juste à coté."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23620,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.004459,
+        "longitude": 8.69278,
+        "label": null
+      },
+      {
+        "canyonId": 23620,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.003239,
+        "longitude": 8.69175,
+        "label": "Sortie après la cascade"
+      },
+      {
+        "canyonId": 23620,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.008869,
+        "longitude": 8.6958,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.008869,
+      "longitude": 8.6958,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_0d74531459b8c03f",
+          "kind": "MAP",
+          "title": "1152 Ibergeregg (Swisstopo)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:41.847922+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23382,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23382/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23382/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23382/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23382/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/23382/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 23382,
+    "identity": {
+      "nom": "Moure Blanc",
+      "nomComplet": "Ravin de Moure Blanc, Ravin du Mourre Blanc",
+      "prefixeNom": "Ravin de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23382/Moure-Blanc.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Drôme",
+      "communePrincipale": "Omblèze",
+      "communes": [
+        "Omblèze"
+      ],
+      "massif": "Vercors",
+      "bassin": "Drôme",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "",
+      "interet": null,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": null,
+      "longueurM": null,
+      "cascadeMaxM": null,
+      "cordeMiniM": null,
+      "navette": null
+    },
+    "timings": {
+      "approche": null,
+      "descente": null,
+      "retour": null
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23382,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.827736,
+        "longitude": 5.202707,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 44.827736,
+      "longitude": 5.202707,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_4c66ec3c98484f0c",
+          "kind": "MAP",
+          "title": "3136 ET Combe-Laval (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 429,
+          "status": "Actif",
+          "action": "Interdit",
+          "title": "Information - 13 avr 2015",
+          "summary": "Rencontre avec le propriétaire (agriculteur de l'exploitation quasi en face du départ) le 13/04/2015 à la sortie du canyon : opposé formellement au parcours de ce canyon sur sa propriété.",
+          "remark": null,
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.",
+          "effectiveDate": "13 avr 2015",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/429/legislation.html",
+          "attachments": []
+        }
+      ]
+    }
+  }
+}

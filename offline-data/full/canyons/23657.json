@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:36.882201+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23657,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23657/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23657/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23657/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23657/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23657,
+    "identity": {
+      "nom": "Hidan (supérieur-I)",
+      "nomComplet": "Wadi el Hidan (supérieur-I), Wadi al Wala",
+      "prefixeNom": "Wadi el",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23657/Hidan-superieur-I.html"
+    },
+    "location": {
+      "pays": "Jordanie",
+      "region": "Dhiban",
+      "departement": "Madaba",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Moab",
+      "bassin": "Dead Sea",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v1a3IV",
+      "interet": 2.3,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 100,
+      "deniveleM": 80,
+      "longueurM": 2500,
+      "cascadeMaxM": null,
+      "cordeMiniM": null,
+      "navette": "1.2km"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "3h",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23657,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 31.505678,
+        "longitude": 35.685078,
+        "label": null
+      },
+      {
+        "canyonId": 23657,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 31.485107,
+        "longitude": 35.677685,
+        "label": null
+      },
+      {
+        "canyonId": 23657,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 31.506531,
+        "longitude": 35.686214,
+        "label": null
+      },
+      {
+        "canyonId": 23657,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 31.489819,
+        "longitude": 35.674126,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 31.506531,
+      "longitude": 35.686214,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_2a99973795d48cd4",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "https://climbing7.wordpress.com/2014/06/27/hidan-superieur-moab/",
+          "url": "https://climbing7.wordpress.com/2014/06/27/hidan-superieur-moab/"
+        },
+        {
+          "id": "resource_6c5e3862d0070425",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/Canyons/HidanUpperCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/Canyons/HidanUpperCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

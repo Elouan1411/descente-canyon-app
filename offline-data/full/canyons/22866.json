@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:54:41.972865+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22866,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22866/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22866/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22866/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22866/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22866,
+    "identity": {
+      "nom": "Tummlibach",
+      "nomComplet": "Tummlibach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22866/Tummlibach.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Sachseln",
+      "departement": "Obwald",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a3IV",
+      "interet": 2.7,
+      "nbVotes": 9
+    },
+    "metrics": {
+      "altitudeDepartM": 985,
+      "deniveleM": 90,
+      "longueurM": 130,
+      "cascadeMaxM": 17,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "25min",
+      "descente": "1h",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "Parking has changed. Use one near Hotel Alpenhof in Melchtal.",
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": "Court mais engagé.",
+      "periode": "Juillet-octobre.",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22866,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.82671,
+        "longitude": 8.27773,
+        "label": null
+      },
+      {
+        "canyonId": 22866,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.82703,
+        "longitude": 8.28256,
+        "label": "l'entrée en 985m alt."
+      },
+      {
+        "canyonId": 22866,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.827278,
+        "longitude": 8.28411,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 46.82671,
+      "longitude": 8.27773,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_191151af4e8aa8f6",
+          "kind": "MAP",
+          "title": "1190 Melchtal (Swisstopo)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

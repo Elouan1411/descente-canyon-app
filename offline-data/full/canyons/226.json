@@ -1,0 +1,145 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:43:34.908317+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 226,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/226/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/226/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/226/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/226/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/226/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 226,
+    "identity": {
+      "nom": "Diosaz",
+      "nomComplet": "La Diosaz",
+      "prefixeNom": "La",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/226/Diosaz.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Haute-Savoie",
+      "communePrincipale": "Servoz",
+      "communes": [
+        "Servoz"
+      ],
+      "massif": "Chablais - Platé - Aiguilles Rouges",
+      "bassin": "Arve",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "",
+      "interet": 3500.0,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": null,
+      "longueurM": 3500,
+      "cascadeMaxM": null,
+      "cordeMiniM": null,
+      "navette": null
+    },
+    "timings": {
+      "approche": null,
+      "descente": null,
+      "retour": null
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 226,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.932499,
+        "longitude": 6.806667,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 45.932499,
+      "longitude": 6.806667,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_87a84633f292e5a0",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons de Haute-Savoie (réédition)",
+          "authors": [
+            "Ch. Charletty",
+            "G. Gudefin",
+            "B. Hugon",
+            "J-P. Beaudoin"
+          ],
+          "publicationYear": 2004,
+          "reference": "ISBN: 2741702888",
+          "editor": "GAP",
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/128/Canyons-de-Haute-Savoie.html"
+        },
+        {
+          "id": "biblio_1e61b240bec55aed",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons de Haute Savoie",
+          "authors": [
+            "Christian Charletty",
+            "Gérard Gudefin",
+            "Bruno Hugon",
+            "Comité Départemental de Spéléologie 74"
+          ],
+          "publicationYear": 1997,
+          "reference": "ISBN 2-7417-0202-0",
+          "editor": "Gap",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/19/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_4ae9f5c9017bad6d",
+          "kind": "MAP",
+          "title": "3531 ET Saint-Gervais-Les-Bains (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 12,
+          "status": "Actif",
+          "action": "Interdit",
+          "title": "Arrêté municipal (Servoz)",
+          "summary": "La Diosaz est un torrent utilisé pour la production hydroélectrique depuis 1953. Il est équipé de deux barrages:\n\n- le barrage de Bajulaz, situé en amont des gorges, dont les eaux sont dérivées en galerie pour être turbinées à la centrale souterraine de Montvauthier, puis soit restituées à la Diosaz, soit réacheminées en galerie vers la centrale de Passy pour y être turbinées une seconde fois et restituées dans l’Arve.\n\n- le barrage de la Diosaz, situé dans les gorges, dont les eaux sont dérivées en galerie pour être turbinées à la centrale de Passy.\n\nL’exploitation de ces aménagements peut à tout moment et automatiquement provoquer une variation de débit importante : par exemple, en cas d’arrêt d’urgence de la centrale de Montvauthier, un débit de l’ordre de 5 m3/s est immédiatement déversé au barrage de Bajulaz.",
+          "remark": null,
+          "details": "Consultez :\n\nArrêté Municipal du 28-06-1993 interdisant la pratique de descente de canyon\n\nConsultez :\n\nExemple de panneau explicatif",
+          "effectiveDate": null,
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/12/legislation.html",
+          "attachments": []
+        }
+      ]
+    }
+  }
+}

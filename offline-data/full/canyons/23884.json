@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:27.684089+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23884,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23884/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23884/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23884/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23884/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23884,
+    "identity": {
+      "nom": "Ribons",
+      "nomComplet": "Torrent de Ribons",
+      "prefixeNom": "Torrent de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23884/Ribons.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Hautes-Alpes",
+      "communePrincipale": "Crévoux",
+      "communes": [
+        "Crévoux"
+      ],
+      "massif": "Parpaillon",
+      "bassin": "Durance",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a2III",
+      "interet": 2.2,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 1650,
+      "deniveleM": 160,
+      "longueurM": 500,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h",
+      "descente": "1h30",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": "Prendre direction Crévoux par la D39. Juste avant Crévoux (1km), se garer au hameau de Praveyral.",
+      "accesAmont": null,
+      "approche": "Monter au village et chercher le sentier qui vous emmène vers le point 1530 m sur la carte IGN. On arrive sur un plateau boueux. On suit le sentier qui monte à droite (cairn). Celui-ci vous emmène par le dessus des rochers et on passe différents endroits où à l'époque les gens avaient récupéré de l'ardoise.\n\nContinuer à monter sur l'épaule qui vous emmène au vallon du canyon. On suit toujours le petit sentier qui traverse quelques pierriers (cairns). Les traces deviennent de moins en moins marquées mais il faut simplement longer le flanc de la montagne jusqu'à l'entrée du canyon à l'altitude 1650 m.",
+      "descente": "C5 rg / C18 rd / R3 / C10 rd / C7 rd / C5 rd / C12 rd / C7 rd / C5 rd / C12 rd / C22 rd / C25 rd 2pts / Mc 6 rd / C30 rd 2pts / C6 rd / C15 rd / Pi 6 / C15 rd/ marche / C5 rg.",
+      "retour": "Suivre le torrent jusqu'à la D39 et tourner à gauche pour retourner à Praveyral.",
+      "engagement": "On peut se mettre hors-crue presque partout. Néanmoins vous êtes en haute montagne dans un endroit paumé. Il n'y a pas de chemins, que des flancs des montagnes bien raides. Même la marche d'approche demande un bon sens de la montagne et de l'orientation.",
+      "periode": "Printemps pendant la fonte des neiges soit l'automne après une bonne pluie.",
+      "geologie": "Au départ du canyon on voit une super belle strate de schiste verticale et presque décollée de la paroi.",
+      "historique": "Ouverture 25 mai 2016 par Michiel van der Lans et Timo Stammwitz.",
+      "remarques": "Équipé en mono-points de 10 mm sauf les grandes verticales."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23884,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.559185,
+        "longitude": 6.582796,
+        "label": null
+      },
+      {
+        "canyonId": 23884,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.55489,
+        "longitude": 6.575972,
+        "label": null
+      },
+      {
+        "canyonId": 23884,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.549587,
+        "longitude": 6.596626,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.549587,
+      "longitude": 6.596626,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_83f652e7e3fab667",
+          "kind": "MAP",
+          "title": "3438 ET Embrun (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:51.269954+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21821,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21821/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21821/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21821/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21821/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/21821/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 21821,
+    "identity": {
+      "nom": "Scopamene",
+      "nomComplet": "Canyon de Scopamene",
+      "prefixeNom": "Canyon de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21821/Scopamene.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Corse",
+      "departement": "Corse-du-Sud",
+      "communePrincipale": "Zérubia",
+      "communes": [
+        "Cargiaca",
+        "Zérubia"
+      ],
+      "massif": "Uncinellu",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.0,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 500,
+      "deniveleM": 240,
+      "longueurM": 3000,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 30,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "5h30",
+      "retour": "35min"
+    },
+    "topo": {
+      "accesAval": "laisser une voiture à Cargiaca.",
+      "accesAmont": null,
+      "approche": "Descendre dans la rivière.",
+      "descente": null,
+      "retour": "Prendre le sentier qui monte au village au niveau d'un moulin.",
+      "engagement": null,
+      "periode": "A l'étiage\n\nTrès aquatique.",
+      "geologie": null,
+      "historique": "Intégrale par i toppi pinutti en aout 93",
+      "remarques": "très beau canyon à découvrir"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21821,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 41.74361,
+        "longitude": 9.060833,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 41.74361,
+      "longitude": 9.060833,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_81849f9697c8835c",
+          "kind": "MAP",
+          "title": "4254 OT Sartene (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 520,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Corse-du-Sud) - 26 juil 2011",
+          "summary": "- Le canyonisme est interdit la nuit (sauf dérogation)\n\n- Le canyonisme est interdit s'il y a une alerte émise par Météo-France de niveau orange ou rouge en cours.\n\n- Le canyonisme est interdit aux mineurs de moins de 7 ans, sauf canyon évalué égal ou inférieur à V1-A3-E3\n\n- Les groupes auront un effectif maximum de 12 personnes, hors encadrement.",
+          "remark": "L'arrêté du 9 juillet 2019 pris conjointement par les préfectures de Corse-du-Sud et de Haute-Corse harmonise les réglementations existantes pour les deux départements.",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nArrêté préfectoral modificatif (Corse-du-Sud et Haute-Corse) n°R20-2019-07-09-001 du 9 juillet 2019\n\nArrêté préfectoral (Corse-du-Sud) n°2011207-0005 du 26 juillet 2011",
+          "effectiveDate": "26 juil 2011",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/520/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral modificatif (Corse-du-Sud et Haute-Corse) n°R20-2019-07-09-001 du 9 juillet 2019",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem520_pj2.pdf"
+            },
+            {
+              "label": "Arrêté préfectoral (Corse-du-Sud) n°2011207-0005 du 26 juillet 2011",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem520_pj1.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

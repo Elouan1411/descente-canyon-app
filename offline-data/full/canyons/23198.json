@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:04.319802+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23198,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23198/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23198/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23198/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23198/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23198,
+    "identity": {
+      "nom": "D'enfer",
+      "nomComplet": "Ravin D'enfer",
+      "prefixeNom": "Ravin",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23198/D-enfer.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Aveyron",
+      "communePrincipale": "Maleville",
+      "communes": [
+        "Maleville"
+      ],
+      "massif": "Rouergue",
+      "bassin": "Aveyron",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1I",
+      "interet": 0.6,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 345,
+      "deniveleM": 65,
+      "longueurM": 150,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "45min",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": "du ruisseau des Aymerits.",
+      "accesAmont": null,
+      "approche": "Depuis la cascade finale visible de la route, remonter 200 m environ. Remarquer un sentier, le prendre : il conduit en une dizaine de minutes au départ.",
+      "descente": "Quelques ressauts puis 3 rappels dont le dernier sur amarrage naturel.",
+      "retour": "On arrive directement à la route.",
+      "engagement": "Trés court donc peu engagé.",
+      "periode": "Coule toute l'année mais préférer le printemps ou l'automne.",
+      "geologie": "Gorges de l'Aveyron",
+      "historique": "Canyon équipé et baptisé par le club Villefranche Pyrénées au début des années 2000.",
+      "remarques": "A faire avec le ruisseau des Aymerits qui se trouve à environ 1 km.\n\nL'équipement de la dernière cascade est introuvable (vol ?), il faut équiper sur les arbres."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23198,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.363533,
+        "longitude": 2.08207,
+        "label": null
+      },
+      {
+        "canyonId": 23198,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.362614,
+        "longitude": 2.082714,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 44.363533,
+      "longitude": 2.08207,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_b4487ea586ad82da",
+          "kind": "MAP",
+          "title": "2239E Villefranche-De-Rouergue (IGN Série Bleue)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

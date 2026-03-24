@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:58.748444+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23488,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23488/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23488/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23488/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23488/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23488,
+    "identity": {
+      "nom": "Mares",
+      "nomComplet": "Rio Mares",
+      "prefixeNom": "Rio",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23488/Mares.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Piemonte",
+      "departement": "Torino",
+      "communePrincipale": "Sparone",
+      "communes": [
+        "Sparone"
+      ],
+      "massif": "Gran Paradiso",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 2.3,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 760,
+      "deniveleM": 160,
+      "longueurM": 500,
+      "cascadeMaxM": 28,
+      "cordeMiniM": 30,
+      "navette": "0.5km"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "2h",
+      "retour": "3min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": "continuer la route, parking dans la seconde épingle à gauche.",
+      "approche": "De l'épingle prendre le bon sentier, traverser le ruisseau sur le petit pont de bois \"rustique\" mais facile. Continuer le sentier évident et 5 mètres sous l'oratoire, traverser à flan horizontalement.",
+      "descente": "Petit parcours sans prétention mais bien sympathique.\n\nA la nouvelle passerelle, continuer pour une jolie C15 avec relais rive D un peu caché.",
+      "retour": "Sortir rive D et remonter très vite à la voiture.",
+      "engagement": "Faible.",
+      "periode": null,
+      "geologie": "Gneiss.",
+      "historique": "C. Chiriotti, A. Dalla Vittoria, L. Deambrogio, D. Geuna et J. Granero en octobre 2006.",
+      "remarques": "Sans navette, du parking aval : monter à pied par la route ou traverser le nouveau pont pour une montée rive gauche."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23488,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.401943,
+        "longitude": 7.5425,
+        "label": null
+      },
+      {
+        "canyonId": 23488,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.405556,
+        "longitude": 7.542222,
+        "label": null
+      },
+      {
+        "canyonId": 23488,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 45.404999,
+        "longitude": 7.543889,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 45.404999,
+      "longitude": 7.543889,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

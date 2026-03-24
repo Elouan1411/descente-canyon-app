@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:46.733559+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23431,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23431/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23431/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23431/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23431/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23431,
+    "identity": {
+      "nom": "Champets",
+      "nomComplet": "Torrent du Champets",
+      "prefixeNom": "Torrent du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23431/Champets.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Hautes-Alpes",
+      "communePrincipale": "Champoléon",
+      "communes": [
+        "Champoléon"
+      ],
+      "massif": "Ecrins - Oisans - Champsaur",
+      "bassin": "Drac",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1I",
+      "interet": 1.2,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 1620,
+      "deniveleM": 190,
+      "longueurM": 430,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 35,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "45min",
+      "descente": "1h40",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "De Gap prendre la N85 en direction de Grenoble puis la D944 vers le col de Manse. 4km après Pont-du-Fossé, prendre à gauche la D944a. Passer Les Eyrauds, Les Martins et Les Gubias pour prendre la piste à droite juste après avoir franchi le pont qui enjambe le Méollion. Suivre cette piste jusqu'au parking (petit pré).",
+      "accesAmont": null,
+      "approche": "Suivre le GR en direction du hameau du Méollion sur quelques mètres ; au panneau en bois, prendre le sentier qui s'élève à gauche par le Poas. Passer le premier vallon de Champets pour se rendre au second. Départ de la descente.",
+      "descente": "Succession d'une dizaine de rappels sur AN et mono-points (goujons + maillons de chaîne) .",
+      "retour": "Descendre au mieux qq dizaines de mètres puis, sur le sentier, prendre à droite et regagner le parking.",
+      "engagement": "Vallon assez ouvert.",
+      "periode": "A faire vraiment au printemps et/ou après de fortes pluies pour garder un certain intérêt à cette descente. Encore moins d'eau que dans Forest, canyon voisin...",
+      "geologie": "Grès.",
+      "historique": null,
+      "remarques": "A enchaîner avec les autres canyons du coin. Terrain d'aventure ..."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23431,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.722809,
+        "longitude": 6.27495,
+        "label": null
+      },
+      {
+        "canyonId": 23431,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.718952,
+        "longitude": 6.273837,
+        "label": null
+      },
+      {
+        "canyonId": 23431,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.717678,
+        "longitude": 6.265734,
+        "label": null
+      },
+      {
+        "canyonId": 23431,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 44.7192,
+        "longitude": 6.268309,
+        "label": "sentier d'approche"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.717678,
+      "longitude": 6.265734,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_b0e951331c704682",
+          "kind": "MAP",
+          "title": "3437 OT Champsaur - Parc des Ecrins (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

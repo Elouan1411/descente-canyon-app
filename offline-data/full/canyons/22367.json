@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:46.428971+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22367,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22367/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22367/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22367/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22367/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22367,
+    "identity": {
+      "nom": "Petite Vache",
+      "nomComplet": "La Petite Vache",
+      "prefixeNom": "La",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22367/Petite-Vache.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Isère",
+      "communePrincipale": "Saint-Laurent-du-Pont",
+      "communes": [
+        "Saint-Laurent-du-Pont"
+      ],
+      "massif": "Chartreuse",
+      "bassin": "Guiers Mort",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 1.2,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 1210,
+      "deniveleM": 239,
+      "longueurM": 620,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 25,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "45min",
+      "descente": "1h",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "De St Laurent-du-Pont, prendre la D520b en direction de St-Pierre-de-Chartreuse. Au bout d'environ 800m, prendre la première à droite (route forestière Charmette) jusqu'à son terminus (Parking).",
+      "accesAmont": null,
+      "approche": "Accès 1 (estival) : On continue la route interdite à la circulation sur 50m et on prend le premier chemin sur la droite (sentier des Agneaux). ça monte doucement au départ, mais qu'au départ. Une fois franchi la barre rocheuse, on suit plus ou moins la courbe de niveau sur le sentier à flanc de montagne. On coupe une première fois le ruisseau (puis un affluent en RD). On rejoint une piste forestière que l'on prend à droite jusqu'à recouper l'affluent puis le ruisseau.\n\nAccès 2 (hivernal) : On continue la route interdite à la circulation, on passe le tunnel des Agneaux puis celui de la Galère... Au bout de 500m on arrive à un pont (arrivé de la descente). On continue la piste pour prendre à droite le chemin de la petite vache. On franchit un premier affluent, puis au bout de 200m on arrive au ruisseau en question.",
+      "descente": "2 spits en RG pour la partie \"encaissée\", encore 2 spits en RG à la sortie de la vasque profonde (garder la corde pour y accèder si ça glisse)... Et par la suite une petite cascade sur 1 piton + maillon en RD.\n\nSinon, c'est tout sur les arbres...",
+      "retour": "A la jonction avec la route, prendre à gauche la route interdite à la circulation (traverser les tunnels de la Galère et des Agneaux) jusqu'au parking de départ.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "Une seule vasque profonde où la baignade est obligatoire...\n\n- Possibilité d’enchaîner avec la partie aval (cf fiche Petite Vache aval) ou de coupler avec le Tenaison qui est le ruisseau parallèle à l'est (à l'arrivée prendre la route à droite sur 1km jusqu'à tomber sur le ruisseau du Tenaison, liaison en 10min)."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22367,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.348534,
+        "longitude": 5.744165,
+        "label": null
+      },
+      {
+        "canyonId": 22367,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.357983,
+        "longitude": 5.74439,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.357983,
+      "longitude": 5.74439,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_6be70abfe2b7f333",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://bouzeland.over-blog.com/pages/La_.....e_vache-2078565.html",
+          "url": "http://bouzeland.over-blog.com/pages/La_.....e_vache-2078565.html"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

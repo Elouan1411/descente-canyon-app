@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:03.748260+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22160,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22160/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22160/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22160/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22160/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22160,
+    "identity": {
+      "nom": "Vinha (supérieur)",
+      "nomComplet": "Ribeira da Vinha (supérieur)",
+      "prefixeNom": "Ribeira da",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22160/Vinha-superieur.html"
+    },
+    "location": {
+      "pays": "Cap-Vert",
+      "region": null,
+      "departement": "Vinha (supérieur)",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v5a3IV",
+      "interet": 2.7,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 1080,
+      "deniveleM": 500,
+      "longueurM": 1400,
+      "cascadeMaxM": 80,
+      "cordeMiniM": 60,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "50min",
+      "descente": "5h",
+      "retour": "1h30min"
+    },
+    "topo": {
+      "accesAval": "De Ribeira Grande direction Porto Novo, traverser les habitations de Corda. Après Corda quelques épingles, ensuite tout à droit vers l'est. Dans la prochaine épingle il y a à gauche une maison (village Châ de Mato - 1130m alt.). À côté de cette maison il y a le départ du sentier (direction Losná et Ribeira de Torre).",
+      "accesAmont": null,
+      "approche": "Prendre le sentier vers la-bas et après deux virages (30m) tout de suite à la bifurcation tourner à droite. Continuer la sente 300 mètres environ horizontal jusqu'aux maisons. Après les maisons tourner à gauche et continuer. Traverser un ravin et continuer. Voir un barrage et à la bifurcation prendre le sentier à gauche. Accéder au barrage et traverser un autre ravin. Environ 50 m après tourner à gauche vers la-bas par une sente, contourner le barrage et continuer dans ce ravin jusqu'au départ des rappels (environ 100m).",
+      "descente": "Succession de (grands) rappels ; un nouveau sentier à gauche (2009); l'eau commence. Après les C20/C54 marcher dans les champs jusqu'au sentier, qui viens de droite (Losná).",
+      "retour": "Sortir vers le sentier et monter à gauche ; beaucoup de virages ; au-dessus des virages le sentier conduit vers le sud-ouest et la-haut jusqu'à Châ de Mato et la voiture.",
+      "engagement": null,
+      "periode": null,
+      "geologie": "Vulkan-Conglomerat",
+      "historique": null,
+      "remarques": "Intéressant à la fin de la partie supérieure. Continuer par les parties médian et inférieure."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22160,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 17.124392,
+        "longitude": -25.077694,
+        "label": null
+      },
+      {
+        "canyonId": 22160,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 17.130892,
+        "longitude": -25.073219,
+        "label": "ou le depart pour partie med. (et inf.)"
+      },
+      {
+        "canyonId": 22160,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 17.126575,
+        "longitude": -25.080044,
+        "label": "c'est aussi le Parking amont pou integrale"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 17.126575,
+      "longitude": -25.080044,
+      "label": "c'est aussi le Parking amont pou integrale"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_a0b95353ed9c3736",
+          "kind": "MAP",
+          "title": "Santo Antâo (Goldstadt-Wanderkarte)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_6f904f2c7e599cc6",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.caboverdenolimits.com/cuadros_barrancos.html",
+          "url": "http://www.caboverdenolimits.com/cuadros_barrancos.html"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

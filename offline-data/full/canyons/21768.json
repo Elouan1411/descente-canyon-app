@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:38.129718+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21768,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21768/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21768/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21768/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21768/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21768,
+    "identity": {
+      "nom": "Débousadou",
+      "nomComplet": "Débousadou",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21768/Debousadou.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Bouches-du-Rhône",
+      "communePrincipale": "La Mède",
+      "communes": [
+        "La Mède"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a1I",
+      "interet": 0.4,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": 25,
+      "longueurM": 30,
+      "cascadeMaxM": 13,
+      "cordeMiniM": 15,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "20min",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "De Marseille prendre la direction de Martigues (A55)\n\nSortir à La Mède, puis prendre à droite (La Mède) au rond point, 50 m plus loin prendre à gauche et traverser la voie ferrée. Prendre alors encore une fois tout de suite à gauche. Vous longez d'abord la voie ferrée (passer devant un chantier) puis l'autoroute. Aller au bout de la route et garez vous sur un grand parking en terre.",
+      "accesAmont": null,
+      "approche": "Du parking prendre la piste fermée par une barrière, faire 200 petits mètres et prendre la 2èeme sente à gauche (quand la piste tourne à droite). Commencer à vous enfoncer dans les bois (si vous continuez tout droit vous tombez sur la fin du ravin et le pied de la C13) puis prendre assez rapidement une autre sente à gauche: le but est de contourner la barre rocheuse pour pouvoir accéder au départ du ravin.\n\nL'approche peut (peut être) se faire plus facilement en RG du ravin, à vérifier.",
+      "descente": "Deux ressauts: un de 2 mètres (goujons sans plaquettes) puis la verticale de 13 mètres (relais avec chaine) .",
+      "retour": "Du pied de la C13 prendre la sente qui rejoint directement la piste.",
+      "engagement": null,
+      "periode": "Sec, pratiquable toute l'année.",
+      "geologie": null,
+      "historique": "Grimpeurs du coin et des membres des sudcanyon.",
+      "remarques": "Il est interessant de faire un petit tour dans la pseudo grotte en RD du ravin.\n\nAccés possible pendant l'approche ou avant de descendre le premier ressaut (MC à mettre en place pour sécuriser la traversée, plaquettes en place)."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21768,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.381432,
+        "longitude": 5.147218,
+        "label": null
+      },
+      {
+        "canyonId": 21768,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.381744,
+        "longitude": 5.147245,
+        "label": null
+      },
+      {
+        "canyonId": 21768,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.384689,
+        "longitude": 5.149391,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.384689,
+      "longitude": 5.149391,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

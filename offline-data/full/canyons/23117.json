@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:44.082098+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23117,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23117/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23117/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23117/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23117/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23117,
+    "identity": {
+      "nom": "Maltaklamm",
+      "nomComplet": "Maltaklamm, Malta",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23117/Maltaklamm.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Carinthie",
+      "departement": "Spittal an der Drau District",
+      "communePrincipale": "Malta",
+      "communes": [
+        "Malta"
+      ],
+      "massif": "Hohe Tauern",
+      "bassin": "Malta",
+      "coursEau": "Malta"
+    },
+    "rating": {
+      "cotation": "v3a4II",
+      "interet": 1.4,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 950,
+      "deniveleM": 50,
+      "longueurM": 850,
+      "cascadeMaxM": 7,
+      "cordeMiniM": 15,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "1h10",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "A10, Gmünd, Maltatal",
+      "accesAmont": null,
+      "approche": "par un sentier jusqu'à la passerelle",
+      "descente": "toboggans, sauts, nager",
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "voir debit !"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23117,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.014477,
+        "longitude": 13.430978,
+        "label": null
+      },
+      {
+        "canyonId": 23117,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.008476,
+        "longitude": 13.43646,
+        "label": null
+      },
+      {
+        "canyonId": 23117,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.009647,
+        "longitude": 13.437801,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.009647,
+      "longitude": 13.437801,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_593806870824c8ca",
+          "kind": "MAP",
+          "title": "221 Liesertal, Maltatal, Millstätter See, Spittal, Nockalmstraße (Freytag & Berndt)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_8288720c7d7201cb",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/Canyons/MaltaCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/Canyons/MaltaCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

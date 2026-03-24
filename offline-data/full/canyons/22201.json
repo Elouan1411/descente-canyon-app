@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:11.234911+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22201,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22201/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22201/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22201/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22201/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22201,
+    "identity": {
+      "nom": "Vrajzi Prolav",
+      "nomComplet": "Vrajzi Prolav",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22201/Vrajzi-Prolav.html"
+    },
+    "location": {
+      "pays": "Croatie",
+      "region": "Skrad",
+      "departement": "Primorsko-Goranska Županija",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Gorski Kotar",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": null,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": 350,
+      "deniveleM": 50,
+      "longueurM": 800,
+      "cascadeMaxM": null,
+      "cordeMiniM": 50,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "45min",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "De l’autoroute reliant Zaghreb à Rijeka sortez à Ravna Gora. Prenez la direction de Delnice puis tournez à droite vers Kupjak et Skrad. Suivez ensuite les indications pour l’auberge: Zeleni Vir. Garez-vous devant.",
+      "accesAmont": null,
+      "approche": "Il faut payer un droit de passage à l’auberge. L’ensemble se divise en deux parties. Tout d’abord le Vrajzi Prolav que l’on remonte par une passerelle aménagée. Si vous continuez jusqu’au bout, vous arrivez dans une grotte que l’on peut remonter jusqu’à ce qu’il y ait trop d’eau. Pour la cascade (Vodopad), remontez aussi le chemin aménagé qui part à gauche de l’auberge. On peut accéder en haut RD (Pas d’équipement). Admirez la résurgence qui jaillit à ses pieds.",
+      "descente": "Le plus intéressant se situe à partir du deuxième pont avec une cascade de 8m. A ce niveau la rivière s’encaisse bien et forme quelques ressauts qui peuvent être ludiques lorsque les vasques sont profondes. Passé cet encaissement, il n’y a plus d’obstacles d’intérêt.",
+      "retour": "Reprenez le chemin aménagé.",
+      "engagement": "Echappatoires tout le long.",
+      "periode": "Attention aux crues.\n\nJuin-septembre",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22201,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.421009,
+        "longitude": 14.889033,
+        "label": null
+      },
+      {
+        "canyonId": 22201,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.424774,
+        "longitude": 14.89208,
+        "label": null
+      },
+      {
+        "canyonId": 22201,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.425896,
+        "longitude": 14.892423,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.425896,
+      "longitude": 14.892423,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

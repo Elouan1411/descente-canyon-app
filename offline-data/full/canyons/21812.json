@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:49.365785+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21812,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21812/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21812/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21812/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21812/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21812,
+    "identity": {
+      "nom": "Auerklamm",
+      "nomComplet": "Auerklamm, Jurassic Park, Nedarbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21812/Auerklamm.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Tyrol",
+      "departement": "Imst",
+      "communePrincipale": "Ötz",
+      "communes": [
+        "Ötz"
+      ],
+      "massif": "Stubaier Alpen - Alpes Breonies",
+      "bassin": "Inn",
+      "coursEau": "Nedarbach"
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 3.0,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 1040,
+      "deniveleM": 240,
+      "longueurM": 1500,
+      "cascadeMaxM": 42,
+      "cordeMiniM": 50,
+      "navette": "7.0km"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "4h",
+      "retour": "10"
+    },
+    "topo": {
+      "accesAval": "Privilégiez de vous garer en bas du canyon, car il n'y a pas beaucoup de places, voire aucune, dans le village du haut.",
+      "accesAmont": null,
+      "approche": "Il est possible de le faire sans navette. Depuis le bas de la cascade Auer-Krell, vous pouvez rejoindre un chemin qui remonte en rive droite (RD) ou en rive gauche (RG).\n\nComptez 45 min par la RD, qui vous amène au pont d’où vous pouvez descendre en rappel.",
+      "descente": "Rappel du pont possible. Vous pouvez également trouver un sentier en rive droite (RD) qui part du pont et vous amène à un rappel d’environ 20 m, lequel vous mène dans le canyon. Là, vous bénéficiez d’un saut d’environ 6 m.",
+      "retour": null,
+      "engagement": null,
+      "periode": "Attention : il y a deux gros blocs immergés à la sortie de deux toboggans, l’un dans la partie avant la C40, l’autre après.\n\nIl y a également un siphon dans une vasque entourée de corde. Bien visible par temps clair, avec le soleil qui passe au travers.",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21812,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.217644,
+        "longitude": 10.877237,
+        "label": null
+      },
+      {
+        "canyonId": 21812,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.214088,
+        "longitude": 10.870628,
+        "label": null
+      },
+      {
+        "canyonId": 21812,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 47.216244,
+        "longitude": 10.880241,
+        "label": null
+      },
+      {
+        "canyonId": 21812,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 47.215897,
+        "longitude": 10.866423,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 47.216244,
+      "longitude": 10.880241,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_223eef3bd7bbfcc1",
+          "kind": "MAP",
+          "title": "146 Imst (ÖK 50)",
+          "scale": "1:50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_e65cd93fd99c86b9",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cgi-bin/redirect.....action=detailed_desc",
+          "url": "http://canyon.carto.net/cgi-bin/redirect.....action=detailed_desc"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:47.349882+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22368,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22368/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22368/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22368/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22368/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/22368/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 22368,
+    "identity": {
+      "nom": "Kramerlaine",
+      "nomComplet": "Kramerlaine",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22368/Kramerlaine.html"
+    },
+    "location": {
+      "pays": "Allemagne",
+      "region": "Bayern",
+      "departement": "Oberbayern",
+      "communePrincipale": "Garmisch-Partenkirchen",
+      "communes": [
+        "Landkreis Garmisch-Partenkirchen",
+        "Garmisch-Partenkirchen"
+      ],
+      "massif": "Ammergauer Alpen",
+      "bassin": "Loisach",
+      "coursEau": "Kramerlaine"
+    },
+    "rating": {
+      "cotation": "v3a3III",
+      "interet": 2.2,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1090,
+      "deniveleM": 760,
+      "longueurM": 2500,
+      "cascadeMaxM": 26,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h15",
+      "descente": "6h",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22368,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.497719,
+        "longitude": 11.022951,
+        "label": null
+      },
+      {
+        "canyonId": 22368,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.484032,
+        "longitude": 11.02448,
+        "label": null
+      },
+      {
+        "canyonId": 22368,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.480736,
+        "longitude": 11.047171,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.480736,
+      "longitude": 11.047171,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_003da29f948341fb",
+          "kind": "MAP",
+          "title": "UK L 31 Werdenfelser Land (Bayerisches Landesvermessungsamt)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 209,
+          "status": "Indéfini",
+          "action": "Indéfini",
+          "title": "Arrêté - 19 juin 1986",
+          "summary": "Cette règlementation ne concernerait pas directement la pratique du canyoning (?).",
+          "remark": null,
+          "details": "Consultez le\n\ntexte (ou extrait)\n\nGVBl 1986, S.163\n\nhttp://www.gesetze-bayern.de/jportal/portal/page/bsbayprod.psml;?showdoccase=1&doc.id=jlr-NatSchGeb150VBYrahmen&doc.part=X&doc.origin=bs",
+          "effectiveDate": "19 juin 1986",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/209/legislation.html",
+          "attachments": []
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:14.613679+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23004,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23004/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23004/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23004/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23004/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23004,
+    "identity": {
+      "nom": "Barre Coupée",
+      "nomComplet": "Barre Coupée",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23004/Barre-Coupee.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Bouches-du-Rhône",
+      "communePrincipale": "Allauch",
+      "communes": [
+        "Allauch"
+      ],
+      "massif": "garlaban",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1II",
+      "interet": 0.5,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 500,
+      "deniveleM": 180,
+      "longueurM": 650,
+      "cascadeMaxM": 18,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "50min",
+      "descente": "1h30",
+      "retour": "45min"
+    },
+    "topo": {
+      "accesAval": "D'Allauch, se rendre au Logis Neuf, puis prendre à droite par la D908 \"avenue Etienne Cucca\" jusqu'à La Fève. Par la suite, juste avant de sortir de La Fève, prendre à droite puis à gauche \"chemin Maurin\" et \"Vallon de l'Oule\" jusqu'au terminus. Garez-vous sans gêner.",
+      "accesAmont": null,
+      "approche": "Suivre le vallon de l'Oule, en passant devant une mine \"Fenêtre des Maurins\". Lorsque la route forme un coude, prendre la piste de droite et la suivre (vallon de l'Oule). 350 m après (point 263 sur l'IGN), on laisse la piste qui s'élève au niveau d'un coude pour le sentier de gauche qui suit le font du vallon de l'Oule. Faire 950 m au fond du vallon de l'Oule pour se rendre au point 316 de l'IGN. De là un sentier s'élève sur votre gauche (attention, celui-ci n'apparaît pas sur l'IGN) et vous emmène au sommet du vallon au point 425 de l'IGN. Une fois en haut, récupérer le sentier partant à droite (ne surtout pas prendre la piste). Ce sentier (PR) au marquage jaune au sol s'élève un petit moment et passe dans un sous-bois, tourne à droite et se stabilise. Prendre alors le sentier descendant à droite (cairn) pour arriver sur \"Barre coupée\".",
+      "descente": "3 à 4 rappels, dont le plus haut n'excède pas les 18 m. Végétation dense par endroits.",
+      "retour": "Le dernier obstacle passé, récupérer au mieux le sentier pris à l'aller, en rejoignant par le sommet de la barre rocheuse en RD.",
+      "engagement": "Les échappatoires ne sont pas très évidentes, dû à une végétation assez agressive par endroits.",
+      "periode": "Peut couler aprés de groses pluies.",
+      "geologie": null,
+      "historique": "Max38 et ALAIN 13",
+      "remarques": "Pour les marcassins niveau VI. Avis aux jardiniers ..."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23004,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.352638,
+        "longitude": 5.533097,
+        "label": null
+      },
+      {
+        "canyonId": 23004,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.356888,
+        "longitude": 5.529106,
+        "label": null
+      },
+      {
+        "canyonId": 23004,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.364002,
+        "longitude": 5.508871,
+        "label": null
+      },
+      {
+        "canyonId": 23004,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 43.356853,
+        "longitude": 5.529771,
+        "label": "retour et jonction piste"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.364002,
+      "longitude": 5.508871,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_c55008676d4d8829",
+          "kind": "MAP",
+          "title": "3245 ET Aubagne - La Ciotat (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

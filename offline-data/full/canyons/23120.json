@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:44.772007+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23120,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23120/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23120/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23120/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23120/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23120,
+    "identity": {
+      "nom": "Dürrach",
+      "nomComplet": "Dürrach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23120/Durrach.html"
+    },
+    "location": {
+      "pays": "Allemagne",
+      "region": "Bayern",
+      "departement": "Oberbayern",
+      "communePrincipale": "Lenggries",
+      "communes": [
+        "Landkreis Bad Tölz-Wolfratshausen",
+        "Lenggries"
+      ],
+      "massif": "Karwendel",
+      "bassin": "Isar",
+      "coursEau": "Dürrach"
+    },
+    "rating": {
+      "cotation": "v1a3IV",
+      "interet": 1.4,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 870,
+      "deniveleM": 80,
+      "longueurM": 1000,
+      "cascadeMaxM": 2,
+      "cordeMiniM": 5,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "50min",
+      "descente": "1h45",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23120,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.537262,
+        "longitude": 11.546293,
+        "label": null
+      },
+      {
+        "canyonId": 23120,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.558331,
+        "longitude": 11.541604,
+        "label": null
+      },
+      {
+        "canyonId": 23120,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.568802,
+        "longitude": 11.534352,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.568802,
+      "longitude": 11.534352,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

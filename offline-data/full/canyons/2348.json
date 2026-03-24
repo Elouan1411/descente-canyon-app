@@ -1,0 +1,187 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:45:09.794144+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2348,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2348/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2348/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2348/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2348/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/2348/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 2348,
+    "identity": {
+      "nom": "Fiumicelli",
+      "nomComplet": "Ruisseau de Fiumicelli, Fiumicelli",
+      "prefixeNom": "Ruisseau de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2348/Fiumicelli.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Corse",
+      "departement": "Haute-Corse",
+      "communePrincipale": "Solaro",
+      "communes": [
+        "Solaro"
+      ],
+      "massif": "Bavella",
+      "bassin": "Solenzara",
+      "coursEau": "Fiumicelli"
+    },
+    "rating": {
+      "cotation": "v1a2II",
+      "interet": 2.1,
+      "nbVotes": 38
+    },
+    "metrics": {
+      "altitudeDepartM": 292,
+      "deniveleM": 135,
+      "longueurM": 2400,
+      "cascadeMaxM": 3,
+      "cordeMiniM": null,
+      "navette": "3.0km"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "2h30",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": "Sur la N198 entre Solenzara et le col de Bavella, se garer au pont de Fiumicelli.\n\nAccès",
+      "accesAmont": "Poursuivre vers le col de Bavella et se garer près d'une ruine au niveau du Rocchiu Pinzutu.",
+      "approche": "Le sentier part du parking à gauche de la ruine.",
+      "descente": "Rando aquatique avec 1 seul saut obligatoire de 3m.\n\nAutres sauts possibles en montant sur les rives.\n\nQuelques passages en désescalade.\n\nDe nombreux rochers qui freinent la marche en rivière.",
+      "retour": "Sortie directement au pont du Fiumicelli",
+      "engagement": "Aucun échappatoire, attention au gros débit.",
+      "periode": "Par gros débit, ce canyon peut présenter quelques pièges.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Rando aquatique ponctuée de quelques sauts."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2348,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 41.845554,
+        "longitude": 9.288056,
+        "label": null
+      },
+      {
+        "canyonId": 2348,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 41.83889,
+        "longitude": 9.308611,
+        "label": null
+      },
+      {
+        "canyonId": 2348,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 41.842499,
+        "longitude": 9.301389,
+        "label": null
+      },
+      {
+        "canyonId": 2348,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 41.838333,
+        "longitude": 9.308611,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 41.842499,
+      "longitude": 9.301389,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_2bafc8e0f7a42d9c",
+          "kind": "TOPOGUIDE",
+          "title": "La Corse en Canyon",
+          "authors": [
+            "Association CorseCanyon"
+          ],
+          "publicationYear": 2018,
+          "reference": null,
+          "editor": "auto-edition",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/1127/La-Corse-en-Canyon-3eme-edition.html"
+        },
+        {
+          "id": "biblio_eeda460e91ce529f",
+          "kind": "TOPOGUIDE",
+          "title": "Corse Canyons (2ème édition)",
+          "authors": [
+            "Franck Jourdan",
+            "Jean-François Fiorina"
+          ],
+          "publicationYear": 2006,
+          "reference": "2-84698-169-8",
+          "editor": "Albiana",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/133/Corse-Canyons.html"
+        },
+        {
+          "id": "biblio_daf50138213870b8",
+          "kind": "TOPOGUIDE",
+          "title": "Acqua é Petra",
+          "authors": [
+            "Jean-Paul Quilici",
+            "Francis Thibaudeau"
+          ],
+          "publicationYear": 2005,
+          "reference": null,
+          "editor": null,
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1142/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_b6fb73f30bb7590c",
+          "kind": "MAP",
+          "title": "4253 ET Aiguilles-de-Bavella (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 232,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Corse) - 08 juin 2011",
+          "summary": "- Le canyonisme est interdit la nuit (sauf dérogation)\n\n- Le canyonisme est interdit s'il y a une alerte émise par Météo-France de niveau orange ou rouge en cours.\n\n- Le canyonisme est interdit aux mineurs de moins de 7 ans, sauf canyon évalué égal ou inférieur à V1-A3-E3\n\n- Les groupes auront un effectif maximum de 12 personnes, hors encadrement.",
+          "remark": "L'arrêté du 9 juillet 2019 pris conjointement par les préfectures de Corse-du-Sud et de Haute-Corse harmonise les réglementations existantes pour les deux départements.",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nArrêté préfectoral (Haute-Corse) n°2011-159-0008 du 8 juin 2011\n\nArrêté préfectoral modificatif (Corse-du-Sud et Haute-Corse) n°R20-2019-07-09-001 du 9 juillet 2019",
+          "effectiveDate": "08 juin 2011",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/232/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral (Haute-Corse) n°2011-159-0008 du 8 juin 2011",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem232_pj1.pdf"
+            },
+            {
+              "label": "Arrêté préfectoral modificatif (Corse-du-Sud et Haute-Corse) n°R20-2019-07-09-001 du 9 juillet 2019",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem232_pj2.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:42.685306+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23680,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23680/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23680/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23680/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23680/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23680,
+    "identity": {
+      "nom": "Pissa",
+      "nomComplet": "Ravin du Pissa",
+      "prefixeNom": "Ravin du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23680/Pissa.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Hautes-Alpes",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Ecrins - Oisans - Champsaur",
+      "bassin": "Durance",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2I",
+      "interet": 1.0,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1930,
+      "deniveleM": 120,
+      "longueurM": 100,
+      "cascadeMaxM": 35,
+      "cordeMiniM": 35,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "25min",
+      "descente": "45min",
+      "retour": "3min"
+    },
+    "topo": {
+      "accesAval": "De Briançon se rendre à Vallouise puis à Pelvoux par la D994E. Avant Pelvoux-Saint-Antoine, prendre à droite la D421T direction l'Eychauda puis garez-vous au bout de la route sur le grand parking de randonnée au niveau des chalets de Chambran.",
+      "accesAmont": null,
+      "approche": "Juste après les chalets (en RG de l'Eychauda) on voit le ravin du Pissa. L'approche consiste à monter à vue en RD pour contourner la barre rocheuse (raide) pour arriver en haut de la première cascade visible de la route.",
+      "descente": "AN 15m, un point RD 10m, un point RG pour une MC de 5m et point RG pour rappel de 10m. Marche 30m puis point RD et rappel terminal 35m.",
+      "retour": "Rejoindre à vue la voiture.",
+      "engagement": "Échappatoires à chamois plus ou moins faciles entre les cascades.",
+      "periode": "A faire à la fonte pour profiter des cascades arrosées et d'un bon débit, sinon filet d'eau l'été.",
+      "geologie": null,
+      "historique": "Parcouru par les glaciéristes, 4 points rajoutés le 17/07/2016",
+      "remarques": "Descente pour les collectionneurs passant par là."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23680,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.90118,
+        "longitude": 6.495869,
+        "label": null
+      },
+      {
+        "canyonId": 23680,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.900921,
+        "longitude": 6.492896,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.900921,
+      "longitude": 6.492896,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_2893447c6d6073b6",
+          "kind": "MAP",
+          "title": "3436 ET Meije - Pelvoux - Parc des Ecrins (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

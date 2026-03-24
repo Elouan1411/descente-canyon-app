@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:14.316744+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23558,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23558/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23558/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23558/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23558/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23558,
+    "identity": {
+      "nom": "Chevelure de la Madeleine",
+      "nomComplet": "Chevelure de la Madeleine, Ruisseau d'Esquierry",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23558/Chevelure-de-la-Madeleine.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Haute-Garonne",
+      "communePrincipale": "Oô",
+      "communes": [
+        "Oô"
+      ],
+      "massif": "Espingo",
+      "bassin": "Neste d'Oô",
+      "coursEau": "Ruisseau d'Esquierry"
+    },
+    "rating": {
+      "cotation": "v4a2II",
+      "interet": 2.6,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 1650,
+      "deniveleM": 450,
+      "longueurM": 1000,
+      "cascadeMaxM": 130,
+      "cordeMiniM": 60,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h05",
+      "descente": "3h30",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "Se garer sur le grand parking des Granges d'Astau sur la commune d'Oo (point de départ du chemin d'accès au lac d'Oo) ou sur les quelques places de parking juste avant le pont qui traverse la rivière.",
+      "accesAmont": null,
+      "approche": "Du parking, revenir sur 300m par la route vers le village d'Oo pour trouver un pont qui traverse la rivière. Depuis le pont, suivre le GR 10 qui monte jusqu'à la cabane du val d'Esquierry. 100m avant la cabane, vous atteignez le ruisseau d'Esquierry.",
+      "descente": "Canyon de haute-montagne en forêt, partie supérieure peu intéressante (C1 à C3), belles rampes et belle cascade finale, glissant, aérien sur le final, roche type gneiss avec risque de chute de pierre.\n\nC1 - 7m\n\nC2 - 6m\n\nC3 - 7m\n\nC4 - 15m, rappel ou toboggan sur plan incliné\n\nC5 - 20m\n\nC6 - 25m, rappel RG -> beau pendulaire dans petit cirque\n\nPartie de marche sur 300m avec un affluent en RD au bas de la C6 (eau ferrugineuse) et un affluent au bout de 100m en RG\n\nC7 - 15m, rappel RD\n\nAffluent en RD au pieds de la C7\n\n\"Partie inférieure\"\n\nC8 - 30m, rappel RD -> belle rampe\n\nC9 - 20m, rappel RG -> belle rampe\n\nC10 - 20m, rappel RD -> belle rampe\n\nC11 - 25m, rappel dans l'actif -> belle rampe\n\nC12 - \"Chevelure de la Madeleine\", 130m\n\na - 30m, rappel , 2 broches dans l'actif au centre\n\nb - 55m, 2 broches au centre dans l'actif ou rappel RD sur AN à 45m\n\nc - 45m, rappel , 2 goujons de 8 dans l'actif au centre\n\nC13 - 15m, rappel RD -> belle cascade",
+      "retour": "Longer la rivière en rive gauche sur 700m en descendant jusqu'au niveau du parking et la traverser.",
+      "engagement": "Faible",
+      "periode": "Peut supporter beaucoup d'eau.\n\nParcours idéal au printemps.",
+      "geologie": "Gneiss",
+      "historique": "Patrick Gimat",
+      "remarques": "Canyon de montagne. Nombreux échappatoires possibles sur les rives"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23558,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.758949,
+        "longitude": 0.486213,
+        "label": null
+      },
+      {
+        "canyonId": 23558,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.758678,
+        "longitude": 0.49674,
+        "label": null
+      },
+      {
+        "canyonId": 23558,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 42.764183,
+        "longitude": 0.501598,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 42.764183,
+      "longitude": 0.501598,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_b4d10c31e88f9235",
+          "kind": "MAP",
+          "title": "1848 OT Bagneres-de-Luchon (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

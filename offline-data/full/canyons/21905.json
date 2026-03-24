@@ -1,0 +1,155 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:09.620538+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21905,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21905/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21905/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21905/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21905/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21905,
+    "identity": {
+      "nom": "Trasito (supérieur)",
+      "nomComplet": "Barranco de Trasito (supérieur)",
+      "prefixeNom": "Barranco de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21905/Trasito-superieur.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Aragón",
+      "departement": "Huesca",
+      "communePrincipale": "Tella-Sin",
+      "communes": [
+        "Tella-Sin"
+      ],
+      "massif": "Mt Perdu (Monte Perdido)",
+      "bassin": "Cinca",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 2.3,
+      "nbVotes": 15
+    },
+    "metrics": {
+      "altitudeDepartM": 1500,
+      "deniveleM": 400,
+      "longueurM": 1000,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 35,
+      "navette": "7.0km"
+    },
+    "timings": {
+      "approche": "25min",
+      "descente": "3h00",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": "Retourner vers Tella et prendre la piste à gauche, à l'entrée du village, à la hauteur du Dolmen et face au réservoir d'eau. Continuer la piste jusqu'à la barrière.",
+      "approche": "Poursuivre la piste pendant environ 20 min et la quitter dans un lacet en prenant le sentier à gauche (cote 1425 m, 400 m avant le chemin vers la cueva del Oso). Se diriger vers l'ouest vers un captage d'eau (petit bâtiment), poursuivre vers l'Ouest en restant au niveau du bâtiment. Le départ est dans le ravin 50 m plus bas.",
+      "descente": "R5, R7, R20, R5, R5, R4, R8, R22, R30, et très belle R25 finale, petite grotte à gauche à visiter. La suite est sans intérêt, mieux vaut couper par les bois jusqu'à la piste.",
+      "retour": "Sortez par les bois dès la dernière grande cascade.\n\nSortie sans navette : Après la dernière cascade sortez RG côté grotte, sentier évident. D'abord à flanc puis plutôt descendant. A une intersection évidente en vue de la bergerie, prendre la piste de gauche, puis peu de temps après, celle qui descend légèrement (évident). Elle traverse à flanc, remonte légèrement et rejoint la piste de l’aller (25min).",
+      "engagement": "Faiblement encaissé.",
+      "periode": "Préférer la période printanière ou l'automne. Sec en été.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Très beau canyon quand il y a de l'eau. A faire après les pluies."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21905,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.594433,
+        "longitude": 0.175931,
+        "label": null
+      },
+      {
+        "canyonId": 21905,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.590782,
+        "longitude": 0.166941,
+        "label": null
+      },
+      {
+        "canyonId": 21905,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 42.579205,
+        "longitude": 0.179536,
+        "label": null
+      },
+      {
+        "canyonId": 21905,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 42.590706,
+        "longitude": 0.166093,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 42.579205,
+      "longitude": 0.179536,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_fcae506cf45f5fdb",
+          "kind": "TOPOGUIDE",
+          "title": "Carte N°3 - Mont Perdu : du rio Gallego au rio Cinca.",
+          "authors": [
+            "Patrick Gimat + Jean-Paul Pontroué"
+          ],
+          "publicationYear": 1999,
+          "reference": null,
+          "editor": null,
+          "status": "en stock\n\n- 7,50 € -\n\nCommandez cet ouvrage dès maintenant !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/122/Carte-n°3-:-Mont-Perdu.html"
+        },
+        {
+          "id": "biblio_ac4af1f2594e871a",
+          "kind": "TOPOGUIDE",
+          "title": "Aragon. Gargantas y barrancos. 2 : Pirineo Central",
+          "authors": [
+            "BIARGE Ana. BIARGE Fernando"
+          ],
+          "publicationYear": 1991,
+          "reference": "84-404-8832-7",
+          "editor": "A compte d'auteur",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1134/topoguide.html"
+        },
+        {
+          "id": "biblio_5c6ad370200171ca",
+          "kind": "TOPOGUIDE",
+          "title": "Huesca. Cañones y barrancos. Tomo 2 : Pirineo",
+          "authors": [
+            "Fernado Biarge / Enrique Salamero"
+          ],
+          "publicationYear": 1991,
+          "reference": "404-8832-7",
+          "editor": null,
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1156/topoguide.html"
+        }
+      ],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

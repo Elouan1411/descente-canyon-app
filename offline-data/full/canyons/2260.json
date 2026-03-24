@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:44:47.584339+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2260,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2260/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2260/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2260/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2260/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2260,
+    "identity": {
+      "nom": "Pisse",
+      "nomComplet": "Torrent de la Pisse",
+      "prefixeNom": "Torrent de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2260/Pisse.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Hautes-Alpes",
+      "communePrincipale": "Le Monêtier-les-Bains",
+      "communes": [
+        "Le Monêtier-les-Bains"
+      ],
+      "massif": "Cerces - Galibier - Thabor",
+      "bassin": "Durance",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a2II",
+      "interet": 2.3,
+      "nbVotes": 31
+    },
+    "metrics": {
+      "altitudeDepartM": 1775,
+      "deniveleM": 180,
+      "longueurM": 1000,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h15",
+      "descente": "2h30",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "En venant de Briançon, dépasser le village de Monetier de 2km environ, passer le pont qui enjambe le cours d'eau et se garer à droite, juste après le pont. Les dernières cascades sont visibles du parking.",
+      "accesAmont": null,
+      "approche": "Du parking aval, prendre le sentier qui monte en RD en s'éloignant du canyon pour contourner la barre rocheuse. Arrivé sur le plateau, laisser la bergerie à droite et continuer à flan en se dirigeant vers le bord du ravin en montant très légèrement ; s'engager dans un couloir en éboulis assez raide (petits cairns) par un sentier à peine marqué qui commence jusqu'au cours d'eau. Descente délicate surtout en groupe à cause des pierres très instables.",
+      "descente": "Succession de rappels bien équipés.",
+      "retour": "A la fin du dernier enchaînement, prendre une sente en RD qui rejoint rapidement le sentier de montée et de là le parking.",
+      "engagement": "Qq rares échappatoires délicates en RD dans les éboulis.",
+      "periode": "Canyon alpin, peu aquatique, à effectuer de préférence en début de saison, après le gros de la fonte des neiges ou après une période de pluies.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Eviter d'effectuer la descente un jour de pluie à cause de la roche très délitée au dessus et dans le canyon, parpinage assuré !"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2260,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.994438,
+        "longitude": 6.493357,
+        "label": null
+      },
+      {
+        "canyonId": 2260,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.991982,
+        "longitude": 6.491487,
+        "label": null
+      },
+      {
+        "canyonId": 2260,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.988941,
+        "longitude": 6.489028,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.988941,
+      "longitude": 6.489028,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_0062918c2f446d19",
+          "kind": "TOPOGUIDE",
+          "title": "Les canyons des Hautes-Alpes",
+          "authors": [
+            "Henri VINCENS"
+          ],
+          "publicationYear": 2007,
+          "reference": "9782952944502",
+          "editor": "auto-édition",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/12/Canyons-des-Hautes-Alpes.html"
+        },
+        {
+          "id": "biblio_2b1a799bf16617f5",
+          "kind": "TOPOGUIDE",
+          "title": "Les Canyons du Haut Val Durance",
+          "authors": [
+            "Henri Vincens"
+          ],
+          "publicationYear": null,
+          "reference": null,
+          "editor": null,
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/120/topoguide.html"
+        }
+      ],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_02c142dfd92304f2",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://alpes-guide.com/sources/topo/fiche.asp?pitineraire=267",
+          "url": "http://alpes-guide.com/sources/topo/fiche.asp?pitineraire=267"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

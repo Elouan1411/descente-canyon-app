@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:54:24.088719+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22798,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22798/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22798/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22798/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22798/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22798,
+    "identity": {
+      "nom": "Rotbach",
+      "nomComplet": "Rotbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22798/Rotbach.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Basse-Autriche",
+      "departement": "Bezirk Scheibbs",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Ybbstaler Alpen - Alpes d'Ybbstal",
+      "bassin": "Salza",
+      "coursEau": "Rotbach"
+    },
+    "rating": {
+      "cotation": "v2a4II",
+      "interet": 1.9,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 900,
+      "deniveleM": 130,
+      "longueurM": 2000,
+      "cascadeMaxM": 12,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h",
+      "descente": "2h",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": "Depuis Erzhalden, prendre la route B64 (Vallée du Salza) et aller à gauche au hameau Fachwerk. Monter jusqu'à Lassingtal.\n\nPrendre ensuite prendre la piste jusqu'à Taleralm (alt. 725m).\n\nAvant le pont sur Rotbach prendre la piste forestière jusqu'à la barrière.",
+      "accesAmont": null,
+      "approche": "Suivre la piste.\n\nA la bifurcation, aller à gauche et monter. Arrivée en haut, prendre la deuxième piste à droite jusqu'au cours d'eau.",
+      "descente": "Sauts, toboggans, petits rappels, marche.",
+      "retour": "Après le dernier encaissement, rejoindre la piste en rive droite.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22798,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.766014,
+        "longitude": 15.088456,
+        "label": null
+      },
+      {
+        "canyonId": 22798,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.754009,
+        "longitude": 15.082812,
+        "label": null
+      },
+      {
+        "canyonId": 22798,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.744392,
+        "longitude": 15.068666,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.744392,
+      "longitude": 15.068666,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_68515980dc71e94b",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/C.....?topic=RotbachCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/C.....?topic=RotbachCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

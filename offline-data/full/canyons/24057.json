@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:59:01.963527+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24057,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24057/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24057/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24057/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24057/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24057,
+    "identity": {
+      "nom": "Chimoche",
+      "nomComplet": "Barranco de Chimoche, Barranco de la Arena o de Llarena o de Los Llanos",
+      "prefixeNom": "Barranco de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24057/Chimoche.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Canarias",
+      "departement": "Santa Cruz de Tenerife",
+      "communePrincipale": "Orotava",
+      "communes": [
+        "Orotava, La",
+        "Orotava"
+      ],
+      "massif": "Le Teide",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1II",
+      "interet": 1.0,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 1445,
+      "deniveleM": 245,
+      "longueurM": 1200,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 35,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "40min",
+      "descente": "1h/1h45",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "De La Orotava, prendre la TF-21 en direction du Teide. Après Aguamansa, au PK 16,3, prendre à gauche la route de l'aire de repos de la Caldera et s'y garer (superbe site bien équipé avec tables, bancs, jeux pour enfants, sanitaires, bar, barbecues, eau potable...).",
+      "accesAmont": null,
+      "approche": "Du parking, prendre le sentier \"Camino de los Guanches\" (panneau discret sur un arbre en hauteur). Quand il recoupe la large piste de Chimoche, on la suit à gauche. On arrive ainsi à un abri nommé \"Choza Chimoche\" : la descente commence juste en contrebas ! (si si... !)",
+      "descente": "Quelques rappels assez peu esthétiques, on arrive à la galeria Chimoche en bas d'un rappel de 25/30m, 2 rappels encore et sortie possible à gauche. On peut continuer encore un peu jusqu'à un pont pour être à niveau avec le parking et sortir à ce niveau-là.\n\nAttention : en 2018, un rappel dans la descente est équipé sur un relais d'escalade de type Moulinox avec un seul mousqueton sans vis : danger !\n\nNB : il est encore possible de descendre plus bas (cf. biblio) mais ça n'a pas l'air plus joli qu'avant et en plus il faudra remonter jusqu'au parking pour le retour au lieu d'être à plat...",
+      "retour": "Avant le pont, sortir en rive gauche pour regagner la pista de Mamio qu'on suit à gauche jusqu'à La Caldera.",
+      "engagement": null,
+      "periode": "Quasi tout le temps sec.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Ce barranco peut être enchaîné facilement à la suite du barranco Arco de Chimoche/Los Arcos, mais attention il a bien moins d'intérêt que ce dernier !... Peut-être combiné également avec le barranco de Los Brezos."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24057,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 28.346428,
+        "longitude": -16.499043,
+        "label": "Choza Chimoche"
+      },
+      {
+        "canyonId": 24057,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 28.355886,
+        "longitude": -16.497766,
+        "label": "Pont"
+      },
+      {
+        "canyonId": 24057,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 28.357958,
+        "longitude": -16.50222,
+        "label": "Aire de La Caldera"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 28.357958,
+      "longitude": -16.50222,
+      "label": "Aire de La Caldera"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

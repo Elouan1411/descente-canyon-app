@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:38.369906+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23663,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23663/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23663/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23663/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23663/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23663,
+    "identity": {
+      "nom": "Hidan (inferieur-I)",
+      "nomComplet": "Wadi el Hidan (inferieur-I), Barta waterfall, Wadi Wala",
+      "prefixeNom": "Wadi el",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23663/Hidan-inferieur-I.html"
+    },
+    "location": {
+      "pays": "Jordanie",
+      "region": "Dhiban",
+      "departement": "Madaba",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Moab",
+      "bassin": "Dead Sea",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a4IV",
+      "interet": 3.0,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 100,
+      "deniveleM": 200,
+      "longueurM": 2000,
+      "cascadeMaxM": 60,
+      "cordeMiniM": 60,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h30min",
+      "descente": "3h30min",
+      "retour": "2h15min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23663,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 31.480824,
+        "longitude": 35.676258,
+        "label": "D1 - via Hidan sup. II"
+      },
+      {
+        "canyonId": 23663,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 31.476286,
+        "longitude": 35.657967,
+        "label": "D2 - entrée direct (à la sortie du Hidan sup. II)"
+      },
+      {
+        "canyonId": 23663,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 31.470766,
+        "longitude": 35.642136,
+        "label": "au-dessous de coulees basaltes (reperer sans guide une problem)"
+      },
+      {
+        "canyonId": 23663,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 31.489822,
+        "longitude": 35.674141,
+        "label": null
+      },
+      {
+        "canyonId": 23663,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 31.474401,
+        "longitude": 35.645596,
+        "label": "retour par cette point"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 31.489822,
+      "longitude": 35.674141,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_cd16a125c7e5f081",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/Canyons/HidanMiddleCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/Canyons/HidanMiddleCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:37.174066+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21764,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21764/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21764/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21764/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21764/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21764,
+    "identity": {
+      "nom": "Gerstenrieder Graben",
+      "nomComplet": "Gerstenrieder Graben",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21764/Gerstenrieder-Graben.html"
+    },
+    "location": {
+      "pays": "Allemagne",
+      "region": "Bayern",
+      "departement": "Oberbayern",
+      "communePrincipale": "Kreuth",
+      "communes": [
+        "Landkreis Bad Tölz-Wolfratshausen",
+        "Lenggries",
+        "Landkreis Miesbach",
+        "Kreuth"
+      ],
+      "massif": "Mangfallgebirge",
+      "bassin": "Walchen - Sylvensteinsee",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 2.0,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 970,
+      "deniveleM": 180,
+      "longueurM": 1300,
+      "cascadeMaxM": 15,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "50min",
+      "descente": "2h",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "de Bad Tölz par B13 vers le sud, en passant par Leggries jusqu'à Sylvensteinspeicher. Sur la barrage à gauche vers Achensee (Autriche). Après environ 4km vous arrivez au pont sur le canyon. Après le pont se garer à la droite sur une grande place de parking.",
+      "accesAmont": null,
+      "approche": "100m retour et avant une autre place de parking vous prenez à droite une piste. Elle conduit - croisement avec le Gerstenrieder Graben - vers le haut. Après 100m de dénivelé, vous arrivez une petite plaine. Maintenant à gauche dans une cuvette vers l'ouest et puis jusqu'au lit du canyon.",
+      "descente": "marche, desescalade et plusieurs sauts",
+      "retour": "50m avant le pont sortie à droite (après le pont commence une parque naturelle - canyoning interdit)",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21764,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.592518,
+        "longitude": 11.598237,
+        "label": null
+      },
+      {
+        "canyonId": 21764,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.584991,
+        "longitude": 11.600533,
+        "label": null
+      },
+      {
+        "canyonId": 21764,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.584705,
+        "longitude": 11.601069,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.584705,
+      "longitude": 11.601069,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

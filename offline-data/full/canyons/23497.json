@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:00.820697+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23497,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23497/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23497/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23497/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23497/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23497,
+    "identity": {
+      "nom": "Cartayrade",
+      "nomComplet": "Ruisseau de Cartayrade",
+      "prefixeNom": "Ruisseau de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23497/Cartayrade.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Gard",
+      "communePrincipale": "Arphy",
+      "communes": [
+        "Arphy"
+      ],
+      "massif": "Mont Aigoual",
+      "bassin": "Arre",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a2II",
+      "interet": 1.4,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 774,
+      "deniveleM": 250,
+      "longueurM": 1100,
+      "cascadeMaxM": 30,
+      "cordeMiniM": null,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "3h",
+      "retour": "1h"
+    },
+    "topo": {
+      "accesAval": "Du Vigan, prendre la D48 qui monte sur l'Aigoual, passer Arphy et traverser le Coudoulous (cours d'eau qui descend des cascades d'Orgon) pour s'arrêter juste après le pont à la cote 774m NGF, point de départ.",
+      "accesAmont": null,
+      "approche": "Immédiat, à partir du pont.",
+      "descente": "On peut s'amuser à remonter au dessus du pont pour descendre une cascade d'environ 15m, avec un petit saut possible dans la vasque de réception.\n\nSinon, on part du pont, en passant dessous via un rappel d'une vingtaine de mètres. Un peu de bloc puis les petits obstacles s'enchainent, plutôt en sous-bois. Quelques passages sympathiques, dont un enchainement TC10 - C30 avec vue sur la vallée. De (tout) petits sauts sont possibles, avec les précautions d'usage.\n\nGlobalement, 5 à 6 obstacles notables, de plus d'une dizaine de mètres. Tout se descend sur AN.",
+      "retour": "On arrive à une passerelle sur le ruisseau, qui marque la sortie, en rive gauche.\n\nVia un petit sentier, on rejoint le Coudoulous (saut possible au niveau de la passerelle d'Arphy) que l'on traverse pour récupérer la D190 que l'on suit jusqu'au hameau de Bions. De là, on suit le chemin qui retraverse le Coudoulous pour rejoindre le lieu-dit Grimal, avant de rattraper la D48 que l'on remonte jusqu'au pont du départ. Prévoir grosso modo 1h de remontée.",
+      "engagement": "Engagement limité, descente relativement \"ouverte\" comme toutes celles du coin.",
+      "periode": "Faire la descente si possible au printemps, quand ça coule bien.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "1) Pour les hauteurs, c’est pas du précis ; ça dépendra notamment de l’AN auquel on s’accroche! Lors de notre \"ouverture\", on avait une corde de 60, et une autre de 30, et aucun souci.\n\nPetit côté \"aventure\" fort sympathique.\n\n2) On peut faire une navette en garant une voiture à Arphy"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23497,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.035278,
+        "longitude": 3.581933,
+        "label": null
+      },
+      {
+        "canyonId": 23497,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.029331,
+        "longitude": 3.589368,
+        "label": null
+      },
+      {
+        "canyonId": 23497,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.034939,
+        "longitude": 3.581804,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.034939,
+      "longitude": 3.581804,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_fb5949b340608cd9",
+          "kind": "MAP",
+          "title": "2641 ET Mont-Aigoual (Le Vigan) (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

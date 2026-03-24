@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:54:14.453536+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22758,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22758/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22758/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22758/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22758/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22758,
+    "identity": {
+      "nom": "Abelheira",
+      "nomComplet": "Canyon de Abelheira, Ribeira da Abelheira",
+      "prefixeNom": "Canyon de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22758/Abelheira.html"
+    },
+    "location": {
+      "pays": "Portugal",
+      "region": "Madeira",
+      "departement": "Santana Municipality",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v5a2III",
+      "interet": 2.1,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 605,
+      "deniveleM": 370,
+      "longueurM": 1400,
+      "cascadeMaxM": 150,
+      "cordeMiniM": 70,
+      "navette": "4.0km"
+    },
+    "timings": {
+      "approche": "10min",
+      "descente": "3h",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": "8 rappels.",
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": "Ouvert le 17 mai 2002 par Silvain Présumey et Antoine Florin.",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22758,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 32.775906,
+        "longitude": -16.883051,
+        "label": null
+      },
+      {
+        "canyonId": 22758,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 32.775253,
+        "longitude": -16.872555,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 32.775906,
+      "longitude": -16.883051,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_9c49b896c468d2d0",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyoning.camadeira.com/canyons/abelheiro/",
+          "url": "http://canyoning.camadeira.com/canyons/abelheiro/"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

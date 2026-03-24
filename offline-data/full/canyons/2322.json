@@ -1,0 +1,193 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:45:03.288124+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2322,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2322/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2322/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2322/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2322/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/2322/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 2322,
+    "identity": {
+      "nom": "Agnone",
+      "nomComplet": "Agnone",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2322/Agnone.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Corse",
+      "departement": "Haute-Corse",
+      "communePrincipale": "Vivario",
+      "communes": [
+        "Vivario"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 1.3,
+      "nbVotes": 16
+    },
+    "metrics": {
+      "altitudeDepartM": 1400,
+      "deniveleM": 255,
+      "longueurM": 1600,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 15,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h30",
+      "descente": "2h30",
+      "retour": "0h30"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": "Voir topo",
+      "retour": null,
+      "engagement": "Quasi nul, tout se contourne par le GR. Au pire vous sortirez 2 ou 3 fois la corde.\n\nL'eau au départ du canyon est froide même l'été.\n\nLes sauts sont nombreux. Vérifiez bien les vasques",
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "Cette descente serait trés intéressante s'il n'y avait pas autour de vous plusieurs centaines de touristes. En conséquence, toute forme d'équipement a disparu ou presque. Enfin, la cascade des anglais n'a rien d'exceptionnelle. Je l'ai même raté tellement elle ressemblait à rien."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2322,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.121666,
+        "longitude": 9.091111,
+        "label": null
+      },
+      {
+        "canyonId": 2322,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.118057,
+        "longitude": 9.108889,
+        "label": null
+      },
+      {
+        "canyonId": 2322,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 42.113888,
+        "longitude": 9.120278,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 42.113888,
+      "longitude": 9.120278,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_2bafc8e0f7a42d9c",
+          "kind": "TOPOGUIDE",
+          "title": "La Corse en Canyon",
+          "authors": [
+            "Association CorseCanyon"
+          ],
+          "publicationYear": 2018,
+          "reference": null,
+          "editor": "auto-edition",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/1127/La-Corse-en-Canyon-3eme-edition.html"
+        },
+        {
+          "id": "biblio_eeda460e91ce529f",
+          "kind": "TOPOGUIDE",
+          "title": "Corse Canyons (2ème édition)",
+          "authors": [
+            "Franck Jourdan",
+            "Jean-François Fiorina"
+          ],
+          "publicationYear": 2006,
+          "reference": "2-84698-169-8",
+          "editor": "Albiana",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/133/Corse-Canyons.html"
+        },
+        {
+          "id": "biblio_d72ca920b80a45d1",
+          "kind": "TOPOGUIDE",
+          "title": "Corse - Paradis du canyoning",
+          "authors": [
+            "Hubert Ayasse",
+            "Philippe Dubreuil"
+          ],
+          "publicationYear": 2001,
+          "reference": "ISBN 2-9117-9750-7",
+          "editor": "DCL",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/16/topoguide.html"
+        },
+        {
+          "id": "biblio_941c7cb0700df101",
+          "kind": "TOPOGUIDE",
+          "title": "4251 OT Monte-d'Oro - Monte-Rotondo (IGN TOP25) - 1/25000",
+          "authors": [],
+          "publicationYear": null,
+          "reference": null,
+          "editor": null,
+          "status": null,
+          "detailUrl": null
+        },
+        {
+          "id": "biblio_eabd9e89ff341c7c",
+          "kind": "TOPOGUIDE",
+          "title": "4252 OT Monte-Renoso - Bastelica (IGN TOP25) - 1/25000",
+          "authors": [],
+          "publicationYear": null,
+          "reference": null,
+          "editor": null,
+          "status": null,
+          "detailUrl": null
+        }
+      ],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 232,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Corse) - 08 juin 2011",
+          "summary": "- Le canyonisme est interdit la nuit (sauf dérogation)\n\n- Le canyonisme est interdit s'il y a une alerte émise par Météo-France de niveau orange ou rouge en cours.\n\n- Le canyonisme est interdit aux mineurs de moins de 7 ans, sauf canyon évalué égal ou inférieur à V1-A3-E3\n\n- Les groupes auront un effectif maximum de 12 personnes, hors encadrement.",
+          "remark": "L'arrêté du 9 juillet 2019 pris conjointement par les préfectures de Corse-du-Sud et de Haute-Corse harmonise les réglementations existantes pour les deux départements.",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nArrêté préfectoral (Haute-Corse) n°2011-159-0008 du 8 juin 2011\n\nArrêté préfectoral modificatif (Corse-du-Sud et Haute-Corse) n°R20-2019-07-09-001 du 9 juillet 2019",
+          "effectiveDate": "08 juin 2011",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/232/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral (Haute-Corse) n°2011-159-0008 du 8 juin 2011",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem232_pj1.pdf"
+            },
+            {
+              "label": "Arrêté préfectoral modificatif (Corse-du-Sud et Haute-Corse) n°R20-2019-07-09-001 du 9 juillet 2019",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem232_pj2.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

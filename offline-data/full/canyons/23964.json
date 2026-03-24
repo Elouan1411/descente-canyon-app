@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:43.646968+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23964,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23964/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23964/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23964/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23964/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23964,
+    "identity": {
+      "nom": "Terche",
+      "nomComplet": "Rio Terche, Grotta Azzurra",
+      "prefixeNom": "Rio",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23964/Terche.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Vénétie",
+      "departement": "Belluno",
+      "communePrincipale": "Mel",
+      "communes": [
+        "Mel"
+      ],
+      "massif": "Prealpi Bellunesi",
+      "bassin": "Cordevole",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 2.2,
+      "nbVotes": 5
+    },
+    "metrics": {
+      "altitudeDepartM": 450,
+      "deniveleM": 80,
+      "longueurM": 300,
+      "cascadeMaxM": 22,
+      "cordeMiniM": 25,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15",
+      "descente": "1h30min",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": "- Avec navette :\n\nAval : parking au Castello di Zumelle.\n\nAmont : juste au sud du hameau de Tiago, à une sorte de petit col, une piste en très bon état part à flanc (bien visible sur OSM). Au bout de 1900 m environ, place pour se garer. On descend dans un champ qui mène à la rivière, probablement à sec à cet endroit. En la suivant par la gauche on rencontre le brise-crue qui marque le début du canyon.\n\n- Sans navette :\n\nParking du Castello di Zumelle. En bas du parking, un sentier ramène sur la route puis au niveau du pont. Au pont, en rive gauche on voit le sentier de sortie du canyon, fléché \"Grotta Azzurra\". Juste du début, un autre sentier monte raide : il *doit* rejoindre la piste décrite dans l'accès avec navette.",
+      "descente": null,
+      "retour": "- Après la Grotta Azzura, on suit le sentier qui longe le cours d'eau et ramène au pont.\n\n- Il existe peut-être un sentier qui remonte en rive gauche au parking amont juste après Grotta Azzurra ?",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "A combiner avec Maor di Mel."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23964,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.034008,
+        "longitude": 12.077853,
+        "label": null
+      },
+      {
+        "canyonId": 23964,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 46.026909,
+        "longitude": 12.083917,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 46.026909,
+      "longitude": 12.083917,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_0dcee14cdc13db79",
+          "kind": "MAP",
+          "title": "024 Prealpi e Dolomiti Bellunesi (Tabacco)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_ce16fd9da9f10d48",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/Canyons/TercheCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/Canyons/TercheCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

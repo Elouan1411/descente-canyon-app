@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:47.261908+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22643,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22643/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22643/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22643/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22643/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22643,
+    "identity": {
+      "nom": "Tessens",
+      "nomComplet": "Nant de Tessens",
+      "prefixeNom": "Nant de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22643/Tessens.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Savoie",
+      "communePrincipale": "Aime-la-Plagne",
+      "communes": [
+        "Aime-la-Plagne"
+      ],
+      "massif": "Beaufortain",
+      "bassin": "Isère",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a3III",
+      "interet": 2.2,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 1052,
+      "deniveleM": 675,
+      "longueurM": null,
+      "cascadeMaxM": 35,
+      "cordeMiniM": 40,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "40",
+      "descente": "4h30",
+      "retour": "10"
+    },
+    "topo": {
+      "accesAval": "Depuis la N90 peu avant Aime en arrivant de Moutiers prendre la D85 au hameau de Villette. Monter la rue principale jusqu'à trouver, sur la gauche, un parking et une place avec un abreuvoir.",
+      "accesAmont": null,
+      "approche": "Revenir quelques mètres en arrière puis prendre à gauche la route des vignes (grande croix en bois). Poursuivre le sentier (balisage bleu peu fréquent) qui vous mènera au hameau de Charvaz (35mn d'approche) Traverser le hameau en prenant à droite en direction de Tessens (route goudronnée) jusqu'au pont du Nant du Tessens, point de départ de la descente.",
+      "descente": "Début encombré par des détritus en tout genre, les premiers rappels d'une quinzaine de mètres débouchent sur une partie encaissée se terminant par la plus haute cascade de la descente.\n\nUne belle partie intermédiaire qui se termine à la hauteur d'un captage en rive gauche (échappatoire probable en direction de Tessens). S'enchainent par la suite de nombreux ressauts nécessitant l'usage de la corde entrecoupés de marche plus ou moins entravée par des éboulements et une végétation omniprésente.\n\nAttention : une micro-centrale hydroélectrique est en fonction depuis le printemps 2016. Bien contrôler le débit à la sortie de la centrale.",
+      "retour": "Lorsque les rappels laissent place à une progression horizontale dans un lit encombré de végétation, vous tomberez rapidement sur un second captage et un chemin en rive droite qui mène dans un champs et une route qui rejoint le pont de la Tour et la N90.",
+      "engagement": "Canyon aquatique mal voir pas équipé. Quelques rings et pitons et des anneaux de cordes pour le reste. 2 spits dans la cascade principale (1 en RG et 1 en RD). Les échappatoires dans la partie engagée sont inexistants. Joli canyon, eau claire.",
+      "periode": "Le débit est important toute l'année aussi éviter la fonte des neiges et une période de pluie.",
+      "geologie": null,
+      "historique": "Déjà descendu par des guides mais pas d'historique précis.",
+      "remarques": "Trousse de rééquipement obligatoire.\n\nUne navette est possible. il faut alors laisser un véhicule au parking aval et pour la partie amont, prendre la direction de Aime puis de Tessens et enfin la direction de Charvaz pour se garer sur un large parking à proximité du pont."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22643,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.558926,
+        "longitude": 6.61377,
+        "label": null
+      },
+      {
+        "canyonId": 22643,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.551964,
+        "longitude": 6.618844,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 45.558926,
+      "longitude": 6.61377,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_30a1a7d4e8445846",
+          "kind": "MAP",
+          "title": "3532 OT Massif du Beaufortin (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

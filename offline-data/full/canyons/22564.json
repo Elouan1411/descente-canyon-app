@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:31.007312+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22564,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22564/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22564/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22564/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22564/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22564,
+    "identity": {
+      "nom": "Lauron",
+      "nomComplet": "Ravin du Lauron",
+      "prefixeNom": "Ravin du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22564/Lauron.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Vaucluse",
+      "communePrincipale": "Malaucène",
+      "communes": [
+        "Malaucène"
+      ],
+      "massif": "Dentelles de Montmirail",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v1a1IV",
+      "interet": 0.5,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 280,
+      "deniveleM": 60,
+      "longueurM": 500,
+      "cascadeMaxM": 4,
+      "cordeMiniM": 15,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "1h00",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": "non loin d'une citerne et du barrage du Paty .",
+      "approche": "Du parking part une sente remontant au barrage (autre option :possibilité de se garer non loin du barrage et d'une citerne.Parking plus spacieux). Au barrage,descendre au mieux dans le ravin.",
+      "descente": "Petit ravin encaissé ,où les obstacles ne dépassent pas les 4 m dans une végétation épineuse assez dense par endroits.Sortie conseillée en RD au niveau d'un tuyau de captage .",
+      "retour": "Si parking aval:Remonter jusqu'au sentier parcouru pour l'accès et retourner au parking aval.\n\nSi parking amont:Remonter jusqu'à un sentier,puis vous rendre au barrage et au parking amont.",
+      "engagement": "Peu d'échappatoires .",
+      "periode": "Une ou deux nages ...",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Par endroits, la progression reste assez encombrer par la végétation. Surpris de rencontrer quelques truites et autres dans les vasques restantes."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22564,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.129955,
+        "longitude": 5.112998,
+        "label": null
+      },
+      {
+        "canyonId": 22564,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.128227,
+        "longitude": 5.10905,
+        "label": null
+      },
+      {
+        "canyonId": 22564,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 44.130478,
+        "longitude": 5.111475,
+        "label": null
+      },
+      {
+        "canyonId": 22564,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 44.128376,
+        "longitude": 5.108213,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 44.130478,
+      "longitude": 5.111475,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_f8195a0d9851b7fb",
+          "kind": "MAP",
+          "title": "3040 ET Carpentras (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

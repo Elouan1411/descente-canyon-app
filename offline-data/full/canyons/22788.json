@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:54:21.963920+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22788,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22788/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22788/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22788/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22788/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22788,
+    "identity": {
+      "nom": "Panäratobel",
+      "nomComplet": "Panäratobel",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22788/Panaratobel.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Pfäfers",
+      "departement": "Saint Gallen",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Alpes glaronaises",
+      "bassin": "Tamina",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v5a3IV",
+      "interet": 3.2,
+      "nbVotes": 12
+    },
+    "metrics": {
+      "altitudeDepartM": 1860,
+      "deniveleM": 525,
+      "longueurM": 950,
+      "cascadeMaxM": 50,
+      "cordeMiniM": 50,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "40min",
+      "descente": "4h",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "De Bad Ragaz, aller à Vättis.\n\nContinuer en direction de Gigerwaldsee/St. Martin.\n\nParking 500m après le barrage.",
+      "accesAmont": null,
+      "approche": "Prendre le chemin vers Stegensässli.\n\nVous avez deux options pour commencer le canyon : Au pont à 1800 m, ou légèrement au dessus de 1860 m.",
+      "descente": null,
+      "retour": "Retour sur la route.",
+      "engagement": null,
+      "periode": "Août à Novembre",
+      "geologie": null,
+      "historique": "Ouverture le 10/08/2011 par Andreas Senn, Matthias Holzinger, Timo Stammwitz",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22788,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.908375,
+        "longitude": 9.36563,
+        "label": null
+      },
+      {
+        "canyonId": 22788,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.913864,
+        "longitude": 9.369321,
+        "label": null
+      },
+      {
+        "canyonId": 22788,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.91114,
+        "longitude": 9.383848,
+        "label": null
+      },
+      {
+        "canyonId": 22788,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 46.90855,
+        "longitude": 9.368774,
+        "label": "Départ II"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.91114,
+      "longitude": 9.383848,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

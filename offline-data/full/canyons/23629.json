@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:31.325255+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23629,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23629/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23629/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23629/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23629/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23629,
+    "identity": {
+      "nom": "Allerheiligen",
+      "nomComplet": "Allerheiligen, Lierbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23629/Allerheiligen.html"
+    },
+    "location": {
+      "pays": "Allemagne",
+      "region": "Bade-Wurtemberg",
+      "departement": "Freiburg",
+      "communePrincipale": "Oppenau",
+      "communes": [
+        "Ottenhöfen im Schwarzwald",
+        "Oppenau"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": "Lierbach"
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 1.4,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 625,
+      "deniveleM": 90,
+      "longueurM": 500,
+      "cascadeMaxM": 18,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "10 à 15min",
+      "descente": "45min",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "des cascades d'Allerheiligen.",
+      "accesAmont": null,
+      "approche": "Prendre le sentier qui longe les cascades.\n\nLe départ est juste avant le pont qui croise pour la troisième fois le lit de la rivière.",
+      "descente": "7 rappels pas plus haut que 18m.",
+      "retour": null,
+      "engagement": null,
+      "periode": "Début de saison pour y trouver un bon débit.",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23629,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 48.53812,
+        "longitude": 8.196781,
+        "label": null
+      },
+      {
+        "canyonId": 23629,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 48.528008,
+        "longitude": 8.188206,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 48.53812,
+      "longitude": 8.196781,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

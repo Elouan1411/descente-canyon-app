@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:54:24.080718+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22795,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22795/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22795/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22795/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22795/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/22795/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 22795,
+    "identity": {
+      "nom": "Salza Stauseeabfluss",
+      "nomComplet": "Salza Stauseeabfluss, Salza",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22795/Salza-Stauseeabfluss.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Styrie",
+      "departement": "Bezirk Liezen",
+      "communePrincipale": "Mitterberg-Sankt Martin",
+      "communes": [
+        "Mitterberg-Sankt Martin"
+      ],
+      "massif": "Dachsteingebirge - Massif du Dachstein",
+      "bassin": "Salza",
+      "coursEau": "Salza"
+    },
+    "rating": {
+      "cotation": "v4a4III",
+      "interet": 2.5,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 750,
+      "deniveleM": 50,
+      "longueurM": 300,
+      "cascadeMaxM": 26,
+      "cordeMiniM": 30,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "??",
+      "descente": "1h",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "Navette possible, mais pas nécessaire.\n\nGarer la voiture près du barrage (navette) ou près de \"Kraftwerk\".",
+      "accesAmont": null,
+      "approche": "Avec navette : 5 min\n\nSans navette : 35 min",
+      "descente": "désescalader la sente et descendre en rappel jusqu'à \"cours d'eau\".\n\nSauts (4,5 m et 6 ou 9 m) ; au final : C 27.",
+      "retour": "Prendre le sentier rive gauche.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22795,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.495518,
+        "longitude": 13.952057,
+        "label": null
+      },
+      {
+        "canyonId": 22795,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.493893,
+        "longitude": 13.95372,
+        "label": "relevant est \"Sat\""
+      },
+      {
+        "canyonId": 22795,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.490093,
+        "longitude": 13.95872,
+        "label": "parking sans navette"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.490093,
+      "longitude": 13.95872,
+      "label": "parking sans navette"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_4efa32b3285a258d",
+          "kind": "MAP",
+          "title": "96 Bad Ischl (ÖK50 (BEV))",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_60cd03a7628276b2",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/C.....StauseeabflussCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/C.....StauseeabflussCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 236,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Information",
+          "summary": "l''accÈs par les constructions du barrage est interdit.",
+          "remark": null,
+          "details": null,
+          "effectiveDate": null,
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/236/legislation.html",
+          "attachments": []
+        }
+      ]
+    }
+  }
+}

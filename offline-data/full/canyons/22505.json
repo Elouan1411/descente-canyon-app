@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:16.521678+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22505,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22505/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22505/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22505/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22505/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22505,
+    "identity": {
+      "nom": "Tearm (inférieur)",
+      "nomComplet": "Tearm (inférieur), Schmittener Bach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22505/Tearm-inferieur.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Schmitten (GR)",
+      "departement": "Graubünden/Grigioni/Grischun",
+      "communePrincipale": "Schmitten",
+      "communes": [
+        "Schmitten"
+      ],
+      "massif": null,
+      "bassin": "Albula",
+      "coursEau": "Schmittener Bach"
+    },
+    "rating": {
+      "cotation": "v5a3IV",
+      "interet": 1.7,
+      "nbVotes": 5
+    },
+    "metrics": {
+      "altitudeDepartM": 1270,
+      "deniveleM": 270,
+      "longueurM": 1000,
+      "cascadeMaxM": 50,
+      "cordeMiniM": 50,
+      "navette": "10.0km"
+    },
+    "timings": {
+      "approche": "10min",
+      "descente": "4h",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "au pont de l'Albulapassstrasse sur le Landwasser.\n\nParking",
+      "accesAmont": "sur la grande place en graviers coté Davos de Schmitten (au centre du village près du ruisseau aucune possibilité).",
+      "approche": "Depuis le parking à travers le village jusqu'au pont de la route principale. Accès meilleur au ruisseau : 40m au dessus du pont (suivre un chemin RD), ne pas traverser les jardins privés.",
+      "descente": "Au dessus du village, le petit filet de Tearm Supérieur se mêle avec la source calcaire d'eau potable du village (mini-usine électrique qui enlève 40L/s). Eau froide et très propre.\n\nDans l'encaissement beaucoup de petites vasques rondes et profondes, une grande cascade quasi finale en plein soleil (25m + 50m) qui sort de l'encaissement.",
+      "retour": "15min jusqu'au parking aval.\n\nChemin de retour au village (signalé) en 1h (sans navette)",
+      "engagement": "Cascades avec rappels arrosés.",
+      "periode": "Période optimale fin juin - octobre",
+      "geologie": "Calcaire en strates qui descendent vers la vallée.",
+      "historique": "2009 ouverture par Andreas Senn, Timo Stammwitz.",
+      "remarques": "Il y a un \"Livre du canyon\" (cahier sur lequels les pratiquants signalent leur descente comme on trouve parfois dans les refuges en montagne) au départ de la grande cascade 25m + 50m en RG.\n\nLa sortie passe sous le viaduct de Tearm, 500m du Landwasserviadukt (batiment le plus fameux des lignes ferrovières rhetiques, ayant reçu en 2009 un label de l'UNESCO)."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22505,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.689022,
+        "longitude": 9.671499,
+        "label": null
+      },
+      {
+        "canyonId": 22505,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.679813,
+        "longitude": 9.670951,
+        "label": null
+      },
+      {
+        "canyonId": 22505,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 46.688213,
+        "longitude": 9.679245,
+        "label": null
+      },
+      {
+        "canyonId": 22505,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 46.675514,
+        "longitude": 9.671295,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 46.688213,
+      "longitude": 9.679245,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_ee92621b53de3c8c",
+          "kind": "TOPOGUIDE",
+          "title": "Canyoning : Swiss Alps / Alpes Suisse",
+          "authors": [
+            "Association Openbach"
+          ],
+          "publicationYear": 2015,
+          "reference": "9782746679450",
+          "editor": "auto-edition",
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/195/Canyoning-:-Swiss-alps---Alpes-suisses-Vol-1.html"
+        },
+        {
+          "id": "biblio_b440b623b8f939ea",
+          "kind": "TOPOGUIDE",
+          "title": "GRand CANYONS",
+          "authors": [
+            "Timo Stammwitz"
+          ],
+          "publicationYear": 2010,
+          "reference": "978-3-9523369-5-3",
+          "editor": null,
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/155/GRand-CANYONS.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_1db776ee9890d9c5",
+          "kind": "MAP",
+          "title": "1216 Filisur (Carte Nationale Suisse)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

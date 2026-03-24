@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:53.122777+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23726,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23726/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23726/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23726/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23726/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/23726/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 23726,
+    "identity": {
+      "nom": "Carangas (inférieur)",
+      "nomComplet": "Riu Carangas (inférieur), Carangres",
+      "prefixeNom": "Riu",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23726/Carangas-inferieur.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Asturias",
+      "departement": "Provincia de Asturias",
+      "communePrincipale": "Ponga",
+      "communes": [
+        "Ponga"
+      ],
+      "massif": null,
+      "bassin": "Rio Ponga",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a3III",
+      "interet": 2.6,
+      "nbVotes": 5
+    },
+    "metrics": {
+      "altitudeDepartM": 620,
+      "deniveleM": 280,
+      "longueurM": 600,
+      "cascadeMaxM": 45,
+      "cordeMiniM": 45,
+      "navette": "3.0km"
+    },
+    "timings": {
+      "approche": "10min",
+      "descente": "4 à 5h",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": "A partir de Cangas de Onis, prendre la N-625 direction Puerto del Ponton. Juste avant Santiyan, tourner à droite direction Sellanu.\n\nAprès Los Correderos, laisser la voiture, lorsque la canyon arrive à la route. Le canyon est difficile à voir sous les arbres : il est 400 m avant la route à gauche qui monte à Carangas. Avec la 2ème voiture, prendre la route de Carangas. Après 3 km de montée, au 1er lacet qui borde le canyon, se garer à droite (2 petites place).\n\nS’il n’y a pas de places, se garer à l'entrée du village de Carangas sans gêner et redescendre au 1er lacet.",
+      "accesAmont": null,
+      "approche": "Du 1er lacet, prendre directement une sente, direction Nord, qui descend doucement vers le canyon (marche de retour du Carangas supérieur).",
+      "descente": "Belle descente avec plus de 20 rappels qui ont une superbe vue plongeante sur la vallée.\n\nOn commence tout de suite par une série de rappels successifs.\n\nAu milieu du canyon : on a 3 rappels successifs pour une descente de 80 m. le 2ème rappel sur un arbre est assez difficile d'accès.\n\nLe rappel maxi de 41 m se fait sur sur une belle dalle inclinée.\n\nCertains rappels sont assez techniques, mains courantes, gestion des frottement et non visibilité du bas et arrivée dans une vasque.\n\nCertains rappels ont une vasque intermédiaire sans relais.",
+      "retour": "La fin du canyon coupe directement la route où on a garé la voiture.",
+      "engagement": "Assez engagé car il n'y a pas d’échappatoire et les rives sont très pentues.",
+      "periode": "Quand l'eau coule.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "A été très bien rééquipé en 2016 et se fait maintenant plus rapidement.\n\nIl peut se faire à la suite du Carangas supérieur (voir topo).\n\nBien vérifier le débit, certains rappels sont sous cascade et beaucoup de rappels arrivent dans des vasques.\n\nIl est préférable d'avoir un topo avec le schéma des différents rappels."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23726,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.224884,
+        "longitude": -5.20155,
+        "label": null
+      },
+      {
+        "canyonId": 23726,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.223717,
+        "longitude": -5.20735,
+        "label": null
+      },
+      {
+        "canyonId": 23726,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 43.223583,
+        "longitude": -5.201467,
+        "label": null
+      },
+      {
+        "canyonId": 23726,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 43.223267,
+        "longitude": -5.2079,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 43.223583,
+      "longitude": -5.201467,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 533,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté - 29 déc 2014",
+          "summary": "Toute activité aquatique, dont le canyoning, est interdite dans les rivières du parc naturel de Panga à l'exception des canyons de Viboli et de Carangas pour lesquels une autorisation peut être demandée.\n\nLa demande d'autorisation peut être faite :\n\n- soit électroniquement : https://sede.asturias.es/-/dboid-6269000008485291807573\n\n- soit physiquement en présentant ce formulaire rempli : https://sede.asturias.es/o/sede/serviciosytramites/download/12431315730612320145",
+          "remark": null,
+          "details": "Décret (Principado de Asturias) n°163/2014 du 29 décembre 2014",
+          "effectiveDate": "29 déc 2014",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/533/legislation.html",
+          "attachments": [
+            {
+              "label": "Décret (Principado de Asturias) n°163/2014 du 29 décembre 2014",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem533_pj1.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:49.549084+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23995,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23995/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23995/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23995/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23995/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23995,
+    "identity": {
+      "nom": "Buffalora",
+      "nomComplet": "Ri di Buffalora",
+      "prefixeNom": "Ri di",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23995/Buffalora.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": null,
+      "departement": "Graubünden/Grigioni/Grischun",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": "Moesa",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v5a3V",
+      "interet": 2.6,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 1055,
+      "deniveleM": 540,
+      "longueurM": 960,
+      "cascadeMaxM": 145,
+      "cordeMiniM": 80,
+      "navette": "6.5km"
+    },
+    "timings": {
+      "approche": "25min",
+      "descente": "3-4h",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "autoroute A13, sortie 37 Lostallo, prendre la route cantonale en direction du col du San Bernardino, 4 km après la sortie d'autoroute il y a une pizzeria au pied des cascades finales de Buffalora. Se garer 300 m plus loin sans gêner.",
+      "accesAmont": null,
+      "approche": "Du parking amont, alt. 985 m, prendre le sentier de randonnée qui arrive au torrent au niveau d'une passerelle.",
+      "descente": "Le canyon commence par une zone en forêt peu intéressante. Puis on enchaîne des rappels (8-9) dans un petit encaissement pour arriver en haut de la grande cascade. L1 : 2 pts RG, 70 m ; L2 : 2pts RD juste vers le cassé, 75 m. L3 2 pts juste à l'aplomb de R2, 30 m pour arriver en haut des dalles + 30 m pour arriver au dernier relais, R4 1 pt, 50 m pour arriver en bas des dalles.",
+      "retour": "Sortir RD sur un sentier et descendre à la pizzeria.",
+      "engagement": "Aucunes échappatoires évidentes possibles.",
+      "periode": "Barrages en amont, bien appeler le barrage avant se s'engager dans le canyon.",
+      "geologie": null,
+      "historique": "12.11.2017: Franz Baumgartner, Thomas Guigon, Matthias Holzinger et Andi Seen. Pas vu de points lors de notre descente.",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23995,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.350239,
+        "longitude": 9.20219,
+        "label": null
+      },
+      {
+        "canyonId": 23995,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 46.353039,
+        "longitude": 9.21142,
+        "label": null
+      },
+      {
+        "canyonId": 23995,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 46.350769,
+        "longitude": 9.21643,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 46.353039,
+      "longitude": 9.21142,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

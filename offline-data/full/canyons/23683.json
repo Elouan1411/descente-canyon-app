@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:43.613914+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23683,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23683/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23683/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23683/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23683/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/23683/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 23683,
+    "identity": {
+      "nom": "Puntillo",
+      "nomComplet": "Puntillo, Final de la Peonera",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23683/Puntillo.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Aragón",
+      "departement": "Huesca",
+      "communePrincipale": "Bierge",
+      "communes": [
+        "Bierge"
+      ],
+      "massif": "Sierra de Guara",
+      "bassin": "Alcanadre",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v1a3II",
+      "interet": 1.8,
+      "nbVotes": 9
+    },
+    "metrics": {
+      "altitudeDepartM": 470,
+      "deniveleM": 15,
+      "longueurM": 600,
+      "cascadeMaxM": 3,
+      "cordeMiniM": 10,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "45min",
+      "descente": "1h",
+      "retour": "40min"
+    },
+    "topo": {
+      "accesAval": "Se garer sur le grand parking touristique de l'ancien barrage de Bierge.",
+      "accesAmont": null,
+      "approche": "Du début du parking prendre la piste qui monte puis serpente entre les champs d'oliviers et d'amandiers (en RG du canyon). Au bout de 20 minutes, ne pas prendre la piste qui descend au canyon mais poursuivre tout droit. Cette piste se transforme alors en chemin aménagé betonné, puis en chemin classique. Quitter ce chemin pour descendre dans un ravin sec avant une grosse montée et au niveau d'une barrière métallique cablée. On arrive alors au début d'un encaissement. Superbes vues sur les biefs pendant l'approche.",
+      "descente": "Sauts, nages dans des biefs et des bassins vraiment beaux.",
+      "retour": "Après le dernier bief, marcher dans la rivière (ou les sentes) jusqu'au barrage puis remonter au parking.",
+      "engagement": "Aucun, on peut se mettre hors d'eau de partout.",
+      "periode": "A l'étiage.\n\nAttention au début du premier encaissement, ca siphonne sous des troncs, sauter en aval de ce piège.",
+      "geologie": "Mélange de calcaire et de conglomérat",
+      "historique": null,
+      "remarques": "Beaucoup de groupes venant de Tamara.\n\nAttention, il est interdit de sauter du barrage depuis 2016."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23683,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 42.172611,
+        "longitude": -0.090486,
+        "label": null
+      },
+      {
+        "canyonId": 23683,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 42.192074,
+        "longitude": -0.086579,
+        "label": "on quitte le sentier"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 42.172611,
+      "longitude": -0.090486,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 350,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté (Aragón) - 02 déc 2014",
+          "summary": "Depuis le 02 décembre 2014, un nouveau décret du gouvernement d'Aragon définit les modalités de pratique pour les canyons de Sierra de Guara.\n\nAccès : Certains canyons ont des accès restreints ou sont même interdit. D'autres sont autorisés toute l'année. Voir la liste ci-dessous.\n\nMatériel obligatoire : L’utilisation d’un baudrier par personne, avec descendeur et mousqueton, est obligatoire pour les canyons avec rappels, ainsi qu’une corde de longueur appropriée. La combinaison néoprène complète est obligatoire dans les canyons suivants: Palomeras del Flumen, Formiga, Gorgonchón, Gorgas Negras, Barrasil, Peonera, Balcés Superior, Oscuros de Balcés, Estrechos del Balcés, Vero, Fornocal.\n\nTaille des groupes : Un intervalle minimum de dix minutes entre chaque groupe doit être respecté dans tous les canyons.\n\nLes groupes (hors guide) sont limités à:\n\no 10 personnes pour les canyons de Vero, Barrasil, Peonera, Balcés Superior et Estrechos de Balcés.\n\no 4 personnes pour le canyon de Gorgonchón.\n\no 8 personnes pour tous les autres canyons.\n\nListes des canyons faisant l'objet de dispositions particulières\n\nLes canyons ou portions de canyons suivants sont INTERDIT TOUTE L'ANNÉE : Barranco de San Martín, sur 100 mètres en aval de la cascade de l’Hermitage de San Martín de la Val d’Onsera. “La Canaleta” et “las cuevas de la Reina” dans la Peña de San Cosme. Barranco de la Choca. Une autorisation spéciale peut être potentiellement obtenue pour Barranco de la Choca.\n\nLes canyons ou portions de canyons suivants sont INTERDIT du 1er décembre au 30 juin : Barrancos de Lazas, Escomatué, San Chinés, Piedra Foratata. Les canyons de Yara et Formiga en amont de leur confluence. Barranco del Diablo.\n\nUne autorisation spéciale peut être potentiellement obtenue pour Barranco del Diablo pour le pratiquer durant cette période.\n\nLes canyons ou portions de canyons suivants sont INTERDIT du 15 février au 30 juin : Palomeras del Flumen. Une autorisation spéciale peut être potentiellement obtenue pour le pratiquer durant cette période.\n\nLes canyons ou portions de canyons suivants sont INTERDIT du 1er mars au 30 juin : Barranco de Otín. Une autorisation spéciale peut être potentiellement obtenue pour le pratiquer durant cette période.\n\nLes autres canyons sont accessibles toute l'année, sans autorisation.\n\nPour demander l'autorisation de parcours d'un canyon durant la période d'interdiction, il faut soumettre une demande sur le site du Gobierno de Aragon : https://www.aragon.es/tramites/registro-electronico-general",
+          "remark": null,
+          "details": "Décret n°204/2014 du gouvernement d'Aragon\n\nRésumé en français de la réglementation",
+          "effectiveDate": "02 déc 2014",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/350/legislation.html",
+          "attachments": [
+            {
+              "label": "Décret n°204/2014 du gouvernement d'Aragon",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem350_pj2.pdf"
+            },
+            {
+              "label": "Résumé en français de la réglementation",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem350_pj1.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

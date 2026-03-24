@@ -1,0 +1,184 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:46:22.513892+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2663,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2663/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2663/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2663/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2663/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2663,
+    "identity": {
+      "nom": "Cresciano (supérieur)",
+      "nomComplet": "Val Cresciano (supérieur), Riale Boggera",
+      "prefixeNom": "Val",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2663/Cresciano-superieur.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Riviera",
+      "departement": "Tessin",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": "Ticino",
+      "coursEau": "Riale Boggera"
+    },
+    "rating": {
+      "cotation": "v4a4IV",
+      "interet": 3.4,
+      "nbVotes": 67
+    },
+    "metrics": {
+      "altitudeDepartM": 1030,
+      "deniveleM": 550,
+      "longueurM": 1400,
+      "cascadeMaxM": 35,
+      "cordeMiniM": 40,
+      "navette": "10.0km"
+    },
+    "timings": {
+      "approche": "1h30/20 mi",
+      "descente": "5h/7h",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "Quittez l’autoroute Bellinzona nord. Prenez la direction de Biasca. Juste avant la bifurcation pour Osogna et après le garage Mitsubishi (depuis 2011) qui est sur la gauche, prendre à droite (pas de panneau). Vous passez sous la ligne de chemin de fer. Juste après, tournez à droite, faites 200m et garez vous sur le parking de départ des chemins GR a gauche.\n\nAttention, récemment le stationnement semble interdit (amande reçu sur plusieurs véhicules) sur le parking de départ des chemins GR a gauche. Il y a des emplacements réservés aux canyoneurs au parking de la gare de l’autre côté des rails.",
+      "accesAmont": null,
+      "approche": "Sans navette : prenez le sentier qui passe à côté des blockhaus. Vous atteignez la rivière que vous traversez. Continuez le chemin RG qui monte. Vous suivez un long bout qui part sur la droite. A une nouvelle bifurcation suivez celui de gauche qui traverse les chalets de Camexxei (ou Camezei) et qui vers les chalets du Piano di vent. Continuez sur le chemin de droite qui monte vers le vallon. Au point coté 865 m de la carte on longe le vallon en s’y rapprochant. La descente commence au niveau de la prise d’eau.\n\nAvec navette : prendre la route payante (10 CHF ou 8€, à payer à la machine devant la barrière) à Claro, en direction du monasterio di S. Maria. Après 2 épingles, prendre sur la gauche en direction de Maruso/Moncrino. Prendre ensuite une bonne piste à gauche (barrière métallique) vers Censo, piste parfois goudronnée. Rester sur la piste principale qui descend puis remonte sur la droite en devenant goudronnée. Se garer dans un virage à droite en montée. Un chemin bien visible part sur la gauche, rejoint la conduite d'eau puis le canyon en 20 min.",
+      "descente": "Une succession d’un grand nombre de petites cascades bien sculptées. Il peut manquer de l’eau dans la partie haute. Faire bien attention aux frottements dans certaines cascades.",
+      "retour": "Enchainement dans Cresciano inférieur (2h) ou sortir RD après la C18 pour récuperer un chemin qui amène au parking aval.",
+      "engagement": "Fort. Peu d’échappatoires",
+      "periode": "Présence d’un barrage en amont. Il est impératif de téléphoner à l’infoline 00 41 91 756 66 15.\n\nA la dernière cascade de la partie basse, il ne doit y avoir qu’un seul jet à droite. Il ne doit pas y avoir de jets RG.\n\nÉté.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Extraordinaire enchaînement d'obstacles en tout genre, qui dure et qui dure ! bref un \"must\". A noter, que lorsqu'il est parcouru lors de période trop séche il peut décevoir."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2663,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.300049,
+        "longitude": 9.016708,
+        "label": null
+      },
+      {
+        "canyonId": 2663,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.302452,
+        "longitude": 8.999253,
+        "label": null
+      },
+      {
+        "canyonId": 2663,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 46.295612,
+        "longitude": 9.009022,
+        "label": null
+      },
+      {
+        "canyonId": 2663,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 46.303501,
+        "longitude": 8.992328,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 46.295612,
+      "longitude": 9.009022,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_b98de8eadeb3ed89",
+          "kind": "TOPOGUIDE",
+          "title": "Canyoning in the Alps : Northern Italy and Ticino",
+          "authors": [
+            "Simon Flower"
+          ],
+          "publicationYear": 2012,
+          "reference": "978 1 85284 683 1",
+          "editor": "Cicerone",
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/1105/Canyoning-in-the-Alps-:-Northern-Italy-and-Ticino.html"
+        },
+        {
+          "id": "biblio_818da916075bb17b",
+          "kind": "TOPOGUIDE",
+          "title": "Canyoning en Suisse 2",
+          "authors": [
+            "Franz Baumgartner",
+            "Andreas Brunner",
+            "Daniel Zimmermann"
+          ],
+          "publicationYear": 2010,
+          "reference": "9783033024694",
+          "editor": null,
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/158/Canyoning-en-Suisse-2.html"
+        },
+        {
+          "id": "biblio_1e5c67cde732c20d",
+          "kind": "TOPOGUIDE",
+          "title": "Eldorado Ticino",
+          "authors": [
+            "Anna & Luca Nizzola"
+          ],
+          "publicationYear": 2010,
+          "reference": "978-88-905017-7-7",
+          "editor": "SwissCanyon",
+          "status": "en stock\n\n- 39,90 € -\n\nCommandez cet ouvrage dès maintenant !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/157/Eldorado-Ticino.html"
+        },
+        {
+          "id": "biblio_41402b7e45455e7d",
+          "kind": "TOPOGUIDE",
+          "title": "Tour de l'Europe en Canyon - T1 - Suisse, Autriche, Italie du Nord, Slovénie",
+          "authors": [
+            "Caracal et les Sancho Panza"
+          ],
+          "publicationYear": 2008,
+          "reference": "978-2-9526064-2-4",
+          "editor": null,
+          "status": "en stock\n\n- 25,90 € -\n\nCommandez cet ouvrage dès maintenant !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/130/Tour-de-l-Europe-en-Canyon---T1---Suisse--Autriche--Italie-du-Nord--Slovenie.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_32104c8d93e1fde1",
+          "kind": "MAP",
+          "title": "1293 Osogna (Carte Nationale Suisse)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_7e5feb815b14cc85",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.swisscanyon.ch/canyons/descrittivi/cresciano-sup.htm",
+          "url": "http://www.swisscanyon.ch/canyons/descrittivi/cresciano-sup.htm"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,144 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:46:07.812452+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2599,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2599/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2599/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2599/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2599/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2599,
+    "identity": {
+      "nom": "Favarinis",
+      "nomComplet": "Torrente Favarinis",
+      "prefixeNom": "Torrente",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2599/Favarinis.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Frioul-Vénétie julienne",
+      "departement": "Udine",
+      "communePrincipale": "Carnia",
+      "communes": [
+        "Carnia"
+      ],
+      "massif": "Dolomites, Carnia",
+      "bassin": "Fella",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.6,
+      "nbVotes": 16
+    },
+    "metrics": {
+      "altitudeDepartM": 520,
+      "deniveleM": 252,
+      "longueurM": 1300,
+      "cascadeMaxM": 50,
+      "cordeMiniM": 50,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "50min",
+      "descente": "2h30",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "D’Udine prenez la direction de Tarvisio par l’A23 et sortez à Carnia-Tolmezzo. Dépassez par la SS52, Amaro en direction de Tarvisio. Juste avant le pont sous l’autoroute et le Fiume Fella (le collecteur principal), prenez à gauche une petite route qui mène au Torrente Favarinis. La bifurcation est peu visible. Garez-vous là où il y a de la place.",
+      "accesAmont": null,
+      "approche": "Prenez le GR jusqu’à rejoindre des ruines, après environ 40 mn de montée. De là, au mieux descendez vers le cours d’eau, d’abord dans un champ, puis dans les bois (petite sente). Respectez bien les propriétés privées.",
+      "descente": "Le début est pénible avec une marche dans les blocs. Mais les obstacles commencent vite avec des cascades agréables. Le plus intéressant est la cascade de 50 m.",
+      "retour": null,
+      "engagement": "Échappatoires délicates.",
+      "periode": "Beaucoup d’eau au printemps. Après la fonte des neiges le débit descend rapidement.\n\nJuin- octobre",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Cascade touristique"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2599,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.390663,
+        "longitude": 13.112354,
+        "label": null
+      },
+      {
+        "canyonId": 2599,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.385204,
+        "longitude": 13.120122,
+        "label": null
+      },
+      {
+        "canyonId": 2599,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.384743,
+        "longitude": 13.121109,
+        "label": "danger de cambriolage"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.384743,
+      "longitude": 13.121109,
+      "label": "danger de cambriolage"
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_41402b7e45455e7d",
+          "kind": "TOPOGUIDE",
+          "title": "Tour de l'Europe en Canyon - T1 - Suisse, Autriche, Italie du Nord, Slovénie",
+          "authors": [
+            "Caracal et les Sancho Panza"
+          ],
+          "publicationYear": 2008,
+          "reference": "978-2-9526064-2-4",
+          "editor": null,
+          "status": "en stock\n\n- 25,90 € -\n\nCommandez cet ouvrage dès maintenant !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/130/Tour-de-l-Europe-en-Canyon---T1---Suisse--Autriche--Italie-du-Nord--Slovenie.html"
+        },
+        {
+          "id": "biblio_9a587136e3eea5ef",
+          "kind": "TOPOGUIDE",
+          "title": "Italia Nord-Est - Gole e Canyon Vol.2",
+          "authors": [
+            "Maurizio Biondi",
+            "Francesco Cacae",
+            "Roberto Schenone"
+          ],
+          "publicationYear": 2000,
+          "reference": "88-900260-0-6",
+          "editor": "Associazione Italiana Canyoning",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/114/Gole---Canyons-2-:-Italia-Nord-Est.html"
+        }
+      ],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_d209c825f81ded5e",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.canyoneast.it/target.php?w=19.....rget=Rio%20Favarinis",
+          "url": "http://www.canyoneast.it/target.php?w=19.....rget=Rio%20Favarinis"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

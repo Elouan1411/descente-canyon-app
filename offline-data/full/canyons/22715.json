@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:54:04.877059+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22715,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22715/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22715/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22715/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22715/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/22715/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 22715,
+    "identity": {
+      "nom": "Ciaudans",
+      "nomComplet": "Ravin de Ciaudans",
+      "prefixeNom": "Ravin de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22715/Ciaudans.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-Maritimes",
+      "communePrincipale": "Rigaud",
+      "communes": [
+        "Rigaud"
+      ],
+      "massif": null,
+      "bassin": "Cians",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "",
+      "interet": 879.0,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": 879,
+      "deniveleM": 510,
+      "longueurM": 860,
+      "cascadeMaxM": null,
+      "cordeMiniM": null,
+      "navette": null
+    },
+    "timings": {
+      "approche": null,
+      "descente": null,
+      "retour": null
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": "Ouvert le 22/12/2011 par Mitch83 à la perceuse, Coin-coin aux directives, Glouglou aux photos, Tiboug à l'assurage et Boustourou au tamponnoir.",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22715,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.965881,
+        "longitude": 6.996694,
+        "label": null
+      },
+      {
+        "canyonId": 22715,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.959366,
+        "longitude": 6.995958,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 43.965881,
+      "longitude": 6.996694,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_f5a5c0f3b7f39109",
+          "kind": "MAP",
+          "title": "3641 OT Moyen Var (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 470,
+          "status": "Actif",
+          "action": "Interdit",
+          "title": "Arrêté municipal (Rigaud) - 29 mars 2022",
+          "summary": "La descente de canyons secs et le barring (descente en rappel de barres rocheuses) est interdit sur la commune.",
+          "remark": null,
+          "details": "Téléchargez le fichier JPEG :\n\nArrêté municipal (Rigaud) n°1-2022 du 29 mars 2022",
+          "effectiveDate": "29 mars 2022",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/470/legislation.html",
+          "attachments": []
+        }
+      ]
+    }
+  }
+}

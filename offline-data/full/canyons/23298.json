@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:27.414194+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23298,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23298/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23298/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23298/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23298/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23298,
+    "identity": {
+      "nom": "Chessiloch",
+      "nomComplet": "Chessiloch, Seebebach, Grönbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23298/Chessiloch.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Flühli",
+      "departement": "Lucerne",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Alpes Uranaises",
+      "bassin": "Kleine Emme",
+      "coursEau": "Grönbach"
+    },
+    "rating": {
+      "cotation": "v4a4III",
+      "interet": 2.4,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1150,
+      "deniveleM": 80,
+      "longueurM": 200,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "1h",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "De Flühli, en direction du col de Glaubenbielen, prendre à gauche en suivant la direction Chessiloch. Se garer au bout de la route.",
+      "accesAmont": null,
+      "approche": "Du parking prendre en direction de Chessiloch, puis continuer en direction de Stäldili. Le chemin prend de l'altitude en longeant le canyon sur la RG, puis lorsque l'on surplombe le torrent en amont de l'encaissement, le rejoindre en descendant au mieux.\n\nIl est possible de continuer sur le sentier, pour descendre 2-3 cascades supplémentaires dans le torrent de Seebebach, mais elles sont peu intéressantes et cela rajoute de la marche en rivière et 20-30min d'approche. Pour cela continuer sur le sentier, puis dans une clairière alt 1300m, descendre au mieux pour rejoindre le torrent de Seebebach.",
+      "descente": "Enchainement de petits rappels dans un bel encaissement large.",
+      "retour": "Sortir au niveau des passerelles et revenir au parking par le sentier de randonné.",
+      "engagement": "Pas d'échappatoire évidente, mais encaissement très court.",
+      "periode": "Bassin versant important, de plus il y a des marais en amont, qui font éponges et alimentent en continu le torrent même plusieurs jours après des pluies. Attendre une période bien sèche avant d'envisager le canyon. L'équipement en place n'est pas optimal pour du très gros débit.",
+      "geologie": null,
+      "historique": "08/07/2013: Partick Chollot, Timo Stammwitz.",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23298,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.870911,
+        "longitude": 8.04727,
+        "label": null
+      },
+      {
+        "canyonId": 23298,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.870441,
+        "longitude": 8.03837,
+        "label": null
+      },
+      {
+        "canyonId": 23298,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 46.873459,
+        "longitude": 8.0505,
+        "label": "Départ Seebebach"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.870441,
+      "longitude": 8.03837,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

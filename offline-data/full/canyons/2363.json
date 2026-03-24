@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:45:13.748493+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2363,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2363/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2363/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2363/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2363/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2363,
+    "identity": {
+      "nom": "Pra Dieu",
+      "nomComplet": "Pra Dieu, Balade en eau mineure, Ruisseau du Fréjus",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2363/Pra-Dieu.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Savoie",
+      "communePrincipale": "Modane",
+      "communes": [
+        "Modane"
+      ],
+      "massif": "Cerces - Galibier - Thabor",
+      "bassin": "Maurienne",
+      "coursEau": "Ruisseau du Fréjus"
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 1.6,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 1960,
+      "deniveleM": 100,
+      "longueurM": null,
+      "cascadeMaxM": 18,
+      "cordeMiniM": 22,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15mn",
+      "descente": "1h",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": "De Valfrejus, prendre la route en terre vers \"le Lavoir\". Se garer au niveau au pont de la glaire, après une serie de lacets après l'ancienne gare militaire de téléphérique (3km environ)",
+      "accesAmont": null,
+      "approche": "Depuis le parking, continuer pendant 150m la route, puis prendre à gauche le chemin qui monte en lacet, vers l'entrée du canyon",
+      "descente": "Succession de petites cascades avec quelques creusements et des bassins jamais profonds",
+      "retour": "On arrive au pont",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2363,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.152637,
+        "longitude": 6.642115,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "SORTIE",
+      "latitude": 45.152637,
+      "longitude": 6.642115,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_ab1bfc77f4662d40",
+          "kind": "MAP",
+          "title": "3535 OT Nevache (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_d981b70a25e08eec",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.savoie-maurienne.com/sites/canyoning/index.html",
+          "url": "http://www.savoie-maurienne.com/sites/canyoning/index.html"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

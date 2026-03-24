@@ -1,0 +1,144 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:46:09.604841+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2608,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2608/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2608/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2608/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2608/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2608,
+    "identity": {
+      "nom": "Bianca",
+      "nomComplet": "Torrente Bianca, Fontana Bianca",
+      "prefixeNom": "Torrente",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2608/Bianca.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Trentino-Alto Adige",
+      "departement": "Trento",
+      "communePrincipale": "Storo",
+      "communes": [
+        "Storo"
+      ],
+      "massif": null,
+      "bassin": "Chiese",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a2III",
+      "interet": 1.2,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 665,
+      "deniveleM": 270,
+      "longueurM": 1500,
+      "cascadeMaxM": 50,
+      "cordeMiniM": 50,
+      "navette": "3.5km"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "2h",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "De Storo suivre la route SP69 vers le sud en direction Baitone-Bondone et se garer 2,6km après à gauche sur l'aire de pique-nique de Fontana Bianca, d'où on peut voir la fin du canyon.",
+      "accesAmont": "Continuer la route quelques centaines de mètres et prendre la petite route qui monte à Nar-Piola. 18 virages et environs 3,5km jusqu'au pont sur le torrent dans un virage à gauche, point de départ du canyon. Attention, il y a peu de place au parking amont.",
+      "approche": null,
+      "descente": "11 cascades, peu intéressantes hormis les deux grandes, parcours à faire quand tous les autres canyons de la zone sont en crue. Vous pouvez pique-niquer à l'arrivée.",
+      "retour": null,
+      "engagement": "Pas d'échappatoires.",
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2608,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.826107,
+        "longitude": 10.567045,
+        "label": null
+      },
+      {
+        "canyonId": 2608,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.829037,
+        "longitude": 10.560758,
+        "label": null
+      },
+      {
+        "canyonId": 2608,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 45.826153,
+        "longitude": 10.567496,
+        "label": null
+      },
+      {
+        "canyonId": 2608,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 45.829727,
+        "longitude": 10.560243,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 45.826153,
+      "longitude": 10.567496,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_3587d0b8faf4b102",
+          "kind": "TOPOGUIDE",
+          "title": "Canyoning valle Sabbia (fascicule)",
+          "authors": [
+            "collectif - Rassemblement AIC 2006"
+          ],
+          "publicationYear": 2006,
+          "reference": null,
+          "editor": null,
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1157/topoguide.html"
+        },
+        {
+          "id": "biblio_9a587136e3eea5ef",
+          "kind": "TOPOGUIDE",
+          "title": "Italia Nord-Est - Gole e Canyon Vol.2",
+          "authors": [
+            "Maurizio Biondi",
+            "Francesco Cacae",
+            "Roberto Schenone"
+          ],
+          "publicationYear": 2000,
+          "reference": "88-900260-0-6",
+          "editor": "Associazione Italiana Canyoning",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/114/Gole---Canyons-2-:-Italia-Nord-Est.html"
+        }
+      ],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

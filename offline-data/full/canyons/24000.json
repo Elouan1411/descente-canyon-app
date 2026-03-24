@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:49.990575+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24000,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24000/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24000/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24000/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24000/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24000,
+    "identity": {
+      "nom": "Brusc",
+      "nomComplet": "Ravin du Brusc",
+      "prefixeNom": "Ravin du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24000/Brusc.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-de-Haute-Provence",
+      "communePrincipale": "La Palud-sur-Verdon",
+      "communes": [
+        "La Palud-sur-Verdon"
+      ],
+      "massif": "Verdon",
+      "bassin": "Verdon",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1II",
+      "interet": 0.5,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 1150,
+      "deniveleM": 300,
+      "longueurM": 500,
+      "cascadeMaxM": 40,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "40min",
+      "descente": "1h30",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "De la Palud-sur-Verdon prendre la D952 vers Moustiers. Passez le Col d'Ayen et garez-vous, sans gêner, au bord de la route au point IGN 949 m.",
+      "accesAmont": null,
+      "approche": "Du coté droit de la route (quand on va vers Moustiers) prendre la piste (celle qui part à gauche pas celle qui monte le long du champs) sur 50m environ puis un cairn matérialise le début peu visible d'un sentier dans les buis. Suivre alors ce sentier (bien marqué ensuite, ancienne peinture rose, pointillé noir sur l'IGN) qui monte vers le plateau de Barbin. Au bout de 30 min environ vous passez la crête et arrivez sur le plateau. De là descendre à vue dans la forêt pour rejoindre le ravin.",
+      "descente": "10 min de marche dans un lit encombré de buis (ca passe assez bien dans l'ensemble pour arriver au premier ressaut. La barre rocheuse forestière se négocie sur AN en 4 ou 5 rappels puis marche encore dans les buis (ca passe beaucoup moins bien par moment) on arrive à un sentier qui ramène à une épingle de la route. On peut poursuivre si l'on veut faire un rappel de plus à 100 m en dessous.",
+      "retour": "Du sentier, rejoindre la route puis remonter à la voiture. Si l'on a fait la cascade après le sentier, il faudra faire le sanglier pour rejoindre le sentier.",
+      "engagement": "Peu engagé, on peut sortir de partout dans les buis.",
+      "periode": "Sec",
+      "geologie": null,
+      "historique": "Tout se descend sur AN.",
+      "remarques": "Réservé aux acharnés de la bouse."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24000,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.782516,
+        "longitude": 6.291409,
+        "label": null
+      },
+      {
+        "canyonId": 24000,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.771919,
+        "longitude": 6.299199,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.771919,
+      "longitude": 6.299199,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_371b2a24e7aa2a73",
+          "kind": "MAP",
+          "title": "3442 OT Gorges du Verdon (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

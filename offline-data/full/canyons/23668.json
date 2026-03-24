@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:39.801816+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23668,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23668/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23668/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23668/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23668/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23668,
+    "identity": {
+      "nom": "Dham",
+      "nomComplet": "Wadi Dham, Damm",
+      "prefixeNom": "Wadi",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23668/Dham.html"
+    },
+    "location": {
+      "pays": "Oman",
+      "region": null,
+      "departement": "Ad Dakhiliyah",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": "Wadi Al Ayn",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a3III",
+      "interet": 1.8,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 810,
+      "deniveleM": 40,
+      "longueurM": 1600,
+      "cascadeMaxM": 3,
+      "cordeMiniM": null,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h",
+      "descente": "1h30min",
+      "retour": "3min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23668,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 23.232861,
+        "longitude": 57.08152,
+        "label": "D2 lower part - from the cave downstream"
+      },
+      {
+        "canyonId": 23668,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 23.236116,
+        "longitude": 57.093407,
+        "label": "D1 upper part"
+      },
+      {
+        "canyonId": 23668,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 23.229212,
+        "longitude": 57.06752,
+        "label": null
+      },
+      {
+        "canyonId": 23668,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 23.229019,
+        "longitude": 57.067581,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 23.229019,
+      "longitude": 57.067581,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_17d0022ebd25b7e9",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/Canyons/WadiDhamCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/Canyons/WadiDhamCanyon"
+        },
+        {
+          "id": "resource_bdf5d92ab17223f3",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://home.kpn.nl/~janm_schreurs/WDamm.htm",
+          "url": "http://home.kpn.nl/~janm_schreurs/WDamm.htm"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

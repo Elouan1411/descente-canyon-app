@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:46:09.878910+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2609,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2609/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2609/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2609/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2609/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2609,
+    "identity": {
+      "nom": "Rio Val",
+      "nomComplet": "Torrente Rio Val",
+      "prefixeNom": "Torrente",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2609/Rio-Val.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Trentino-Alto Adige",
+      "departement": "Trento",
+      "communePrincipale": "Storo",
+      "communes": [
+        "Storo"
+      ],
+      "massif": null,
+      "bassin": "Chiese",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.3,
+      "nbVotes": 5
+    },
+    "metrics": {
+      "altitudeDepartM": 830,
+      "deniveleM": 260,
+      "longueurM": 700,
+      "cascadeMaxM": 40,
+      "cordeMiniM": 40,
+      "navette": "12.5km"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "2h30",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": "Il y a quelques cascades esthétiques encaissées avec bloc coincé.",
+      "retour": null,
+      "engagement": "Pas d'échappatoires",
+      "periode": "Niveau d'eau moyen. A faire l'été.",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2609,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.848755,
+        "longitude": 10.608094,
+        "label": null
+      },
+      {
+        "canyonId": 2609,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.845425,
+        "longitude": 10.60775,
+        "label": null
+      },
+      {
+        "canyonId": 2609,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 45.84901,
+        "longitude": 10.606785,
+        "label": null
+      },
+      {
+        "canyonId": 2609,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 45.845333,
+        "longitude": 10.607922,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 45.84901,
+      "longitude": 10.606785,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

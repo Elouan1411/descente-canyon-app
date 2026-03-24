@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:48.070171+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23988,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23988/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23988/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23988/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23988/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23988,
+    "identity": {
+      "nom": "Vallette",
+      "nomComplet": "Torrent de Vallette, Valette",
+      "prefixeNom": "Torrent de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23988/Vallette.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Hautes-Alpes",
+      "communePrincipale": "La Motte-en-Champsaur",
+      "communes": [
+        "La Motte-en-Champsaur"
+      ],
+      "massif": "Ecrins - Oisans - Champsaur",
+      "bassin": "Drac",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a1III",
+      "interet": 2.0,
+      "nbVotes": 5
+    },
+    "metrics": {
+      "altitudeDepartM": 1600,
+      "deniveleM": 330,
+      "longueurM": 650,
+      "cascadeMaxM": 40,
+      "cordeMiniM": 40,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h10",
+      "descente": "2h30",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "De Gap, prendre la N85 (route Napoléon) menant à Grenoble. Traverser les petits villages de Laye, Brutinel. Au rond-point sur Les Baraques, emprunter la D945 jusqu'à Saint-Bonnet-en-Champsaur et suivre la D23 sur La Motte-en-Champsaur. Après le village de La Motte-en-Champsaur, rouler 2 km en direction des Molines-en-Champsaur et juste avant le petit pont du torrent de Vallette, emprunter la piste de gauche menant au champ de Chastelas. Garez-vous au dessus de l'antenne au départ d'un sentier.",
+      "accesAmont": null,
+      "approche": "En haut du champ, emprunter le sentier de gauche en direction de la maison du Chastelas (à droite, sentier de retour). Celui-ci prend une posture horizontale dans un premier temps, avant de s'élever en lacets au dessus d'une ruine. Il parcourt un sous-bois et passe aux pieds de quelques barres rocheuses. Traverser par la suite un grand pierrier, continuer à monter et dépasser deux, trois lacets avant de se rendre sur un petit affluent qu'il faudra descendre en désescalade pour vous rendre au départ du canyon.",
+      "descente": "Quelques petites désescalades vous emmènent sur une C9, marche de 100m avec quelques petites désescalades,\n\nC7+C10 (R2x20m), C6, marche avec quelques petites désescalades, C10+C10 (R2x30m), C16, Mc7 +C35, Pi14+C4 (R2x20), marche avec quelques désescalades sur 100 m, C12, marche, C5 sur An avec anneau de corde en Rg, C40 fractionnée (R2x20 m sur An avec anneau de corde en Rg et R2x16m . marche de 5min via le torrent, puis sortir en Rd pour trouver une sorte de sente longeant le torrent .",
+      "retour": "Suivre la sente en RD du torrent, passer un captage et regagner le champ du Chastelas où est garé votre véhicule.",
+      "engagement": "De courts passages restent encaissés, mais il reste possible de se mettre à l'abri assez rapidement.",
+      "periode": "A faire pendant la saison estivale.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Attention, roche très glissante."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23988,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.750149,
+        "longitude": 6.092392,
+        "label": null
+      },
+      {
+        "canyonId": 23988,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.743538,
+        "longitude": 6.094205,
+        "label": null
+      },
+      {
+        "canyonId": 23988,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.739956,
+        "longitude": 6.094752,
+        "label": null
+      },
+      {
+        "canyonId": 23988,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 44.743313,
+        "longitude": 6.091566,
+        "label": "Sentier d'approche"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.739956,
+      "longitude": 6.094752,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_b0e951331c704682",
+          "kind": "MAP",
+          "title": "3437 OT Champsaur - Parc des Ecrins (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

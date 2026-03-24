@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:28.862872+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22000,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22000/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22000/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22000/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22000/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22000,
+    "identity": {
+      "nom": "Tscholboden",
+      "nomComplet": "Tscholboden",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22000/Tscholboden.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Glarus",
+      "departement": "Glaris",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v5a2V",
+      "interet": 2.9,
+      "nbVotes": 5
+    },
+    "metrics": {
+      "altitudeDepartM": 1449,
+      "deniveleM": 389,
+      "longueurM": null,
+      "cascadeMaxM": 82,
+      "cordeMiniM": 100,
+      "navette": "2.6km"
+    },
+    "timings": {
+      "approche": "1h-1h15",
+      "descente": "4h",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "de l’autoroute reliant Zurich à Sargans, sortez pour Glarus que vous rejoignez. Juste avant à Netstal prenez la direction du lac de Klöntal et Richisau. Montez jusqu’au lac et à la digue prenez à gauche. Traversez-la et juste après prenez à droite vers le camping (parking payant l’été)\n\nAccès",
+      "accesAmont": "retournez vers la digue et prenez aussitôt à droite vers Glarus et Schwammhöchi. Montez pendant 2,2km et garez-vous au milieu d’un plateau herbeux juste au niveau de la piste barrée qui part à droite.",
+      "approche": "Suivez le très bon chemin qui part à droite. Il s’élève rapidement dans les falaises en passant côté d’un chalet en ruine. La montée est rude mais sans difficulté jusqu’à arriver aux chalets de Mittelstafel. Continuez encore 150 m et vous rejoignez le collecteur.",
+      "descente": "Après une première cascade à l’intérêt relatif, vous marchez moins de 5min et vous débouchez au-dessus de la première grande cascade bien encaissée. Les obstacles de hauteur moyenne se suivent alors sans discontinuer. L’encaissement ne cesse qu’au niveau de l’impressionnante C82 en partie en fil d’Araignée. Il faut d’ailleurs gérer un mauvais frottement 20m après le relais. Il y a des risques de chutes de pierres, ne restez pas au pied de la cascade après le rappel !",
+      "retour": "On sort RD dans une prairie. Un chemin se dessine et retourne au camping. Attention vous êtes dans un espace privé.",
+      "engagement": "Fort, pas d’échappatoires.",
+      "periode": "Le canyon est alimenté par des glaciers. Le débit est très fort aux mois de juillet – août (300 l/s). Il baisse dès le retour du froid. Il est alors très faible de l’ordre de 3 l/S\n\nPériode : (fin août) – oct.",
+      "geologie": null,
+      "historique": "Evan Jenkins et Caracal, le 25 octobre 2008 en descente sportive de type canyon. Probablement déjà remonté en cascade de glace. Mesure possible par les géologues.",
+      "remarques": "Incomplet, équipement de première. Il y a de nombreux goujon 10 mm en monopoint. La descente a été effectuée à l’étiage et l’équipement est prévu pour des rappels dans l’actif. Certains points risquent d’être vite dégradés par les crues."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22000,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.021183,
+        "longitude": 9.007952,
+        "label": null
+      },
+      {
+        "canyonId": 22000,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.023838,
+        "longitude": 9.006654,
+        "label": null
+      },
+      {
+        "canyonId": 22000,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 47.029827,
+        "longitude": 9.015344,
+        "label": null
+      },
+      {
+        "canyonId": 22000,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 47.03072,
+        "longitude": 9.003661,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 47.029827,
+      "longitude": 9.015344,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

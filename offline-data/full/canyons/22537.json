@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:23.526879+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22537,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22537/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22537/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22537/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22537/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22537,
+    "identity": {
+      "nom": "Rages",
+      "nomComplet": "Ruisseau des Rages, Canyon des Farges",
+      "prefixeNom": "Ruisseau des",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22537/Rages.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Isère",
+      "communePrincipale": "Rencurel",
+      "communes": [
+        "Rencurel"
+      ],
+      "massif": "Vercors",
+      "bassin": "Bourne",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 1.5,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 1100,
+      "deniveleM": 170,
+      "longueurM": 300,
+      "cascadeMaxM": 56,
+      "cordeMiniM": 60,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "25min",
+      "descente": "1h30/2h",
+      "retour": "50min"
+    },
+    "topo": {
+      "accesAval": "De Villard-de-Lans, prendre la route des Gorges de la Bourne. 100m après le hameau des Jarrands, prendre à droite une route qui mène aux hameaux de Méaudret puis Haut Méaudret. Se garer sans gêner soit peu après la dernière maison quand la route cesse d'être goudronnée soit un plus loin sur la piste principale (celle de gauche) quand elle devient interdite (à partir d'une barrière au niveau du Pas de la Ferrière, 2 ou 3 places).",
+      "accesAmont": null,
+      "approche": "Suivre le sentier jusqu'au pas des Rages. De là, continuer à flanc en suivant une piste puis rapidement on traverse le ruisseau.",
+      "descente": "C13 (AN), C25 (RG), Pi13 (RD), C56 (relais aérien et suspendu RD), C18 (AN), C25 (AN ?), C15 (RD).",
+      "retour": "Sortir en RG pour retrouver le sentier du Pas des Rages (ou une vielle piste encombrée qui le rejoint ensuite). De là, retourner au parking.",
+      "engagement": "Échappatoire peu évidente dans les encaissements. On peut rejoindre le sentier du Pas des Rages au pied de la C56 en RG en moins d'une minute (évident).",
+      "periode": null,
+      "geologie": null,
+      "historique": "Équipement et première descente effectués le 25 mai 1999 : Carine Lazaroni, Stéphanie et Alain Gairoard, Olivier Herr et Olivier Courtois.",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22537,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.083916,
+        "longitude": 5.49207,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "SORTIE",
+      "latitude": 45.083916,
+      "longitude": 5.49207,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_f71cf3569cd5f7fc",
+          "kind": "MAP",
+          "title": "3235 OT Autrans - Gorges de La Bourne (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_e7230742395ab373",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://groupespeleoalsace.free.fr/",
+          "url": "http://groupespeleoalsace.free.fr/"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

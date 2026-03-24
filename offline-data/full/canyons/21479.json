@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:49:33.727037+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21479,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21479/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21479/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21479/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21479/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21479,
+    "identity": {
+      "nom": "Flon",
+      "nomComplet": "Canyon du Flon",
+      "prefixeNom": "Canyon du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21479/Flon.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Savoie",
+      "communePrincipale": "Ugine",
+      "communes": [
+        "Ugine"
+      ],
+      "massif": "Bornes - Aravis",
+      "bassin": "Arly",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a3II",
+      "interet": 2.0,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 1078,
+      "deniveleM": 320,
+      "longueurM": 2700,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 25,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h45",
+      "descente": "3h",
+      "retour": "5"
+    },
+    "topo": {
+      "accesAval": "A Ugine prendre la direction de Megéve environ 1km aprés le pont du Flon prendre à gauche direction le Passieu. Garer le véhicule à Le Passieu au carrefour du chemin montant vers les Rochats.",
+      "accesAmont": null,
+      "approche": "La marche d'approche correspond exactement au retour du Nant de l'Enfer (affluent principal du Flon).",
+      "descente": null,
+      "retour": "On arrive au pont où est garée la voiture.",
+      "engagement": "Peu de possibilités de sorties, peut-être une non testée à la fin de la partie intéressante.",
+      "periode": "La fin de saison est la bonne période.",
+      "geologie": null,
+      "historique": "Fred Lete & Laurent Yvelin",
+      "remarques": "Les cascades de la partie intéressante sont peut-être faisables avec plus d'eau, pour les amateurs. Cependant ensuite il faudra se battre avec la longue série des barrages de troncs incontournables très dangereux en cas de débit important. 2h de marche"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21479,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.807777,
+        "longitude": 6.4525,
+        "label": null
+      },
+      {
+        "canyonId": 21479,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.798058,
+        "longitude": 6.475278,
+        "label": null
+      },
+      {
+        "canyonId": 21479,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 45.800175,
+        "longitude": 6.479487,
+        "label": "allez au passieu prendre le chemin carrossable jule rumbo"
+      },
+      {
+        "canyonId": 21479,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 45.794937,
+        "longitude": 6.483307,
+        "label": "garer vous devant le retaurant de flon le nant passe juste a cote"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 45.800175,
+      "longitude": 6.479487,
+      "label": "allez au passieu prendre le chemin carrossable jule rumbo"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_bf97d8efb10efc46",
+          "kind": "MAP",
+          "title": "3531 OT Megève - Col des Aravis (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:03.151486+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23774,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23774/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23774/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23774/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23774/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23774,
+    "identity": {
+      "nom": "Griestal",
+      "nomComplet": "Griestal, Griestalbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23774/Griestal.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Tyrol",
+      "departement": "Politischer Bezirk Reutte",
+      "communePrincipale": "Steeg",
+      "communes": [
+        "Steeg"
+      ],
+      "massif": "Lechtaler Alpen",
+      "bassin": "Lech",
+      "coursEau": "Griestalbach"
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": null,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": 1840,
+      "deniveleM": 720,
+      "longueurM": 3200,
+      "cascadeMaxM": 55,
+      "cordeMiniM": 60,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "2h30min",
+      "descente": "6h",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23774,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.232601,
+        "longitude": 10.31942,
+        "label": null
+      },
+      {
+        "canyonId": 23774,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.243992,
+        "longitude": 10.306707,
+        "label": null
+      },
+      {
+        "canyonId": 23774,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 47.232391,
+        "longitude": 10.293296,
+        "label": null
+      },
+      {
+        "canyonId": 23774,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 47.242622,
+        "longitude": 10.296984,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 47.232391,
+      "longitude": 10.293296,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

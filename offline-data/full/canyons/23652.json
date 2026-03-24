@@ -1,0 +1,139 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:35.960657+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23652,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23652/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23652/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23652/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23652/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23652,
+    "identity": {
+      "nom": "Kalbelekarbach",
+      "nomComplet": "Kalbelekarbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23652/Kalbelekarbach.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Tyrol",
+      "departement": "Politischer Bezirk Reutte",
+      "communePrincipale": "Reutte",
+      "communes": [
+        "Reutte"
+      ],
+      "massif": "Ammergauer Alpen",
+      "bassin": "Lech",
+      "coursEau": "Kalbelekarbach"
+    },
+    "rating": {
+      "cotation": "v3a3III",
+      "interet": 1.5,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1420,
+      "deniveleM": 325,
+      "longueurM": 800,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h30min",
+      "descente": "2h30min",
+      "retour": "10"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23652,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.518124,
+        "longitude": 10.826321,
+        "label": "Entrée 1: au-dessus de C25 et C15 (1360m alt. environ)."
+      },
+      {
+        "canyonId": 23652,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.518185,
+        "longitude": 10.832281,
+        "label": "Entrée 2 : au-dessous de C25 et C15, traverse du sentier, 1290m altitude."
+      },
+      {
+        "canyonId": 23652,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.52005,
+        "longitude": 10.837763,
+        "label": null
+      },
+      {
+        "canyonId": 23652,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.518967,
+        "longitude": 10.839619,
+        "label": null
+      },
+      {
+        "canyonId": 23652,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.51899,
+        "longitude": 10.83823,
+        "label": "debut du \"sentier\" vers le nord-ouvest"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.518967,
+      "longitude": 10.839619,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_44f4bed9fa5619d5",
+          "kind": "MAP",
+          "title": "2215 Reutte (ÖK)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_e68e55591f8213a4",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/C.....KalbelekarbachCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/C.....KalbelekarbachCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:50.148068+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23715,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23715/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23715/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23715/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23715/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23715,
+    "identity": {
+      "nom": "Gurre",
+      "nomComplet": "Canyon de la Gurre, Gurre du Bois",
+      "prefixeNom": "Canyon de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23715/Gurre-.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Savoie",
+      "communePrincipale": "Champagny-en-Vanoise",
+      "communes": [
+        "Champagny-en-Vanoise"
+      ],
+      "massif": "Vanoise",
+      "bassin": "Isère",
+      "coursEau": "Gurre du Bois"
+    },
+    "rating": {
+      "cotation": "v5a3III",
+      "interet": 2.7,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 2120,
+      "deniveleM": 600,
+      "longueurM": 1500,
+      "cascadeMaxM": 80,
+      "cordeMiniM": 60,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h30",
+      "descente": "4h",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": "De Champagny-en-Vanoise, prendre à gauche la D91b qui monte vers Champagny-le-Haut. Dépasser La Chiserette et se garer juste après la bifurcation pour \"les Bois\" (route interdite \"sauf riverains\") sur le coté droit de la route.",
+      "accesAmont": null,
+      "approche": "Prendre le GR \"Tour de la Plagne\" et monter direction le Col de la Frête/Chiaupe. Dépasser \"Le Tovet\" puis une fois sur le replat vers 2150m, continuer et se diriger vers le ruisseau des qu'il est en vue.",
+      "descente": "Un peu de marche avant les premières cascades, de petits obstacles bien sculptés dans une roche atypique avec des coulées d'oxyde. S'ensuit un encaissement peu profond mais assez étroit qui posera problème par fort débit. Le canyon se ré-ouvre et après quelques cascades on arrive à un grand pan incliné équipé en 3 longueurs (RD 25m, RG en retrait 25m passage sous le jet, puis D55 dans l'axe. La suite se ré-encaisse un peu et présente des cascades bien sympas équipées dans l'actif.",
+      "retour": "Après la dernière cascade, continuer dans le cours d'eau (désescalade dans les blocs) jusqu’à la route (15mn). Ne pas sortir plus haut en RG : terrain privé !",
+      "engagement": "Hors-crue et échappatoires RG possibles à plusieurs endroits (non testées). Équipement mono-point inox .",
+      "periode": "Bassin versant de 8km2 alimenté par des sommets de plus de 3000 mètres (Sommet de Bellecôte, 3400m) et le glacier de la Chiaupe. Probablement pas avant mi-août.",
+      "geologie": null,
+      "historique": "Ouvert par le club Spéléo-Canyon ASAR (Aix-les-Bains) en 09/2016.",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23715,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.471245,
+        "longitude": 6.746616,
+        "label": null
+      },
+      {
+        "canyonId": 23715,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.462234,
+        "longitude": 6.742684,
+        "label": null
+      },
+      {
+        "canyonId": 23715,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.460564,
+        "longitude": 6.73983,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.460564,
+      "longitude": 6.73983,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_4f31ad7390f928f9",
+          "kind": "MAP",
+          "title": "3532 ET Les Arcs - La Plagne (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

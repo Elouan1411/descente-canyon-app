@@ -1,0 +1,157 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:46:21.181389+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2658,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2658/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2658/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2658/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2658/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2658,
+    "identity": {
+      "nom": "Combra",
+      "nomComplet": "Val Combra, Malvaglia",
+      "prefixeNom": "Val",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2658/Combra.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Serravalle",
+      "departement": "Tessin",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": "Brenno",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 3.1,
+      "nbVotes": 41
+    },
+    "metrics": {
+      "altitudeDepartM": 1135,
+      "deniveleM": 145,
+      "longueurM": 450,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "35min",
+      "descente": "2h",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "De Biasca, prendre la direction de Malvaglia puis du lac artificiel d'Orino (Alt. 990m), monter et se garer sur le parking du barrage. Le parking après le barrage est réservé aux locaux.",
+      "accesAmont": null,
+      "approche": "Du lac artificiel, traverser le barrage et le tunnel puis prendre directement a gauche pour suivre une piste qui monte jusqu'à arriver a un pont qui traverse le canyon qui marque le départ",
+      "descente": "Enchainement de cascades avec des sauts, des toboggans (jusqu'à 20m réservé aux expérimentés), avec un peu de marche dans des blocs pour arriver au lac",
+      "retour": "environ 100m avant le lac artificiel (alt. 1030m) sortir RG vers le sentier",
+      "engagement": "Fort. Quelques échappatoires mais le risque reste élevé.",
+      "periode": "Faire attention aux quelques mouvements d'eau.\n\nJuillet-Septembre",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Se situant plus haut que la plupart des canyons tessinois l'eau est plus froide, il est court mais assez technique."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2658,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.418499,
+        "longitude": 9.026531,
+        "label": null
+      },
+      {
+        "canyonId": 2658,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.420612,
+        "longitude": 9.023469,
+        "label": null
+      },
+      {
+        "canyonId": 2658,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.424385,
+        "longitude": 9.019454,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.424385,
+      "longitude": 9.019454,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_b98de8eadeb3ed89",
+          "kind": "TOPOGUIDE",
+          "title": "Canyoning in the Alps : Northern Italy and Ticino",
+          "authors": [
+            "Simon Flower"
+          ],
+          "publicationYear": 2012,
+          "reference": "978 1 85284 683 1",
+          "editor": "Cicerone",
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/1105/Canyoning-in-the-Alps-:-Northern-Italy-and-Ticino.html"
+        },
+        {
+          "id": "biblio_818da916075bb17b",
+          "kind": "TOPOGUIDE",
+          "title": "Canyoning en Suisse 2",
+          "authors": [
+            "Franz Baumgartner",
+            "Andreas Brunner",
+            "Daniel Zimmermann"
+          ],
+          "publicationYear": 2010,
+          "reference": "9783033024694",
+          "editor": null,
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/158/Canyoning-en-Suisse-2.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_2e0d8fdac3706471",
+          "kind": "MAP",
+          "title": "1273 Biasca (Carte Nationale Suisse)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_58f8eee3cbd92088",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.cicarudeclan.com/ita/a5_combra.htm",
+          "url": "http://www.cicarudeclan.com/ita/a5_combra.htm"
+        },
+        {
+          "id": "resource_8b483c81aa999759",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.swisscanyon.ch/canyons/descrittivi/combra.htm",
+          "url": "http://www.swisscanyon.ch/canyons/descrittivi/combra.htm"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

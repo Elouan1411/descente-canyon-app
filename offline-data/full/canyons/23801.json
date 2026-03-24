@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:09.173978+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23801,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23801/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23801/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23801/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23801/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23801,
+    "identity": {
+      "nom": "Crealla (Alto)",
+      "nomComplet": "Torrent di Crealla (Alto)",
+      "prefixeNom": "Torrent di",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23801/Crealla-Alto.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Piemonte",
+      "departement": "Verbano-Cusio-Ossola",
+      "communePrincipale": "Falmenta",
+      "communes": [
+        "Falmenta"
+      ],
+      "massif": null,
+      "bassin": "Cannobino",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a3III",
+      "interet": 2.5,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 1020,
+      "deniveleM": 320,
+      "longueurM": 1100,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 35,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "1h5min",
+      "descente": "3h",
+      "retour": "20"
+    },
+    "topo": {
+      "accesAval": "navette pour l'integrale",
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23801,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.049911,
+        "longitude": 8.58076,
+        "label": null
+      },
+      {
+        "canyonId": 23801,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.060822,
+        "longitude": 8.59132,
+        "label": null
+      },
+      {
+        "canyonId": 23801,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.066383,
+        "longitude": 8.592292,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.066383,
+      "longitude": 8.592292,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_be3cb40604ac0381",
+          "kind": "MAP",
+          "title": "16 III-SE Cannobio (IGMI 25/V)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_fe76606ee45bfeca",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/Canyons/CreallasupCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/Canyons/CreallasupCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:46:43.900992+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2757,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2757/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2757/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2757/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2757/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2757,
+    "identity": {
+      "nom": "Joncas",
+      "nomComplet": "Ravin du Joncas, Affluent Hérault",
+      "prefixeNom": "Ravin du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2757/Joncas.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Hérault",
+      "communePrincipale": "Arboras",
+      "communes": [
+        "Arboras"
+      ],
+      "massif": "Garrigues",
+      "bassin": "Hérault",
+      "coursEau": "Affluent Hérault"
+    },
+    "rating": {
+      "cotation": "v2a1I",
+      "interet": 0.5,
+      "nbVotes": 5
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": null,
+      "longueurM": 250,
+      "cascadeMaxM": 7,
+      "cordeMiniM": 10,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "10min",
+      "descente": "30min",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "Montpellier -> Gignac -> Montpeyroux. Entre Montpeyroux et Arboras prendre à droite la D122 qui monte direction St Jean de Buèges. Environ 500m après cette birfurcation, se garer au niveau du virage quand on s'approche du ravin (bosquet)",
+      "accesAmont": null,
+      "approche": "Prendre le sentier plein qui demarre dans le bosquet en direction du ravin puis remonter vers le nord (tournez à gauche!), le long du ravin en cherchant à descendre (sentier mal tracé, quelques cairns) vers le fond du ravin (où l'on aperçoit plusieurs carcasses de voiture visibles!)",
+      "descente": "La descente commence par un court encaissement avec rappel de 6m avec 2 spit (prendre boulon de 8 et plaquette ). Amarrage naturel ou sur carcasse de voiture. Désescalade possible (très bonnes poignées...).\n\nArrivée dans une vasque sèche dont il faut ressortir (escalade 2m...)\n\nla gorge s'élargit et l'on peut explorer une grotte sur la RD (en cours de déblaiement, presence de cordes spéléo...) puis s'encaisse à nouveau (petites marmites profondes avec qq centimètres d'eau (qq galets bien placés permettent de ne pas se mouiller...) à désescalader avant d'arriver à un ressaut de 7m qui s'ouvre dans un petit cirque (spits de 8 sans plaquette). Désescalade possible mais un peu exposée.\n\nPresence de grottes (avec quelques concretions) en RG dont une sortie débouche en paroie (petit rappel de 5 m possible...)\n\nLe ravin se poursuit par une marche d'une centaine de mètres à travers quelques blocs...",
+      "retour": "Chercher à remonter immédiatement à droite (petit sentier) qui ramène directement à la voiture",
+      "engagement": "2 encaissements très très courts ! (mais pas d'échapatoires...)",
+      "periode": "très sec...",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Sympatique petite ballade pour amener des enfants : initiation canyon sec, visite de grotte et petite rando dans la garrigue; le tout en moins de 2 heures..."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2757,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.708496,
+        "longitude": 3.497238,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.708496,
+      "longitude": 3.497238,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_d688f7d883caff2f",
+          "kind": "MAP",
+          "title": "2642 ET Saint-Guilhem-Le-Desert (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_668202259a7dc569",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://clementdom.free.fr/html/joncas.htm",
+          "url": "http://clementdom.free.fr/html/joncas.htm"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

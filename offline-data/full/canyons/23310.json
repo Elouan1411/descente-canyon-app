@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:30.888597+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23310,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23310/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23310/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23310/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23310/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23310,
+    "identity": {
+      "nom": "Lauves",
+      "nomComplet": "Ravin des Lauves, Ravin des Laouves",
+      "prefixeNom": "Ravin des",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23310/Lauves.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-de-Haute-Provence",
+      "communePrincipale": "La Palud-sur-Verdon",
+      "communes": [
+        "La Palud-sur-Verdon"
+      ],
+      "massif": "Verdon",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 0.7,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 690,
+      "deniveleM": 40,
+      "longueurM": 50,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "20min",
+      "retour": "40min"
+    },
+    "topo": {
+      "accesAval": "De la Palud-sur-Verdon prendre la D952 en direction de Castellane. Garez-vous à droite sur le parking du \"Point Sublime\" au niveau de la bifurcation vers Rougon.",
+      "accesAmont": null,
+      "approche": "Aller au fond du parking et suivre la sente du point sublime. La quitter très rapidement pour descendre au mieux dans les marnes pour rejoindre un ruisseau peu creusé. Suivre alors ce ravin au mieux en direction du Baou. On tombe sur une sente RD qui longe notre ravin, qui ne présente pas d'intérêt au début, jusqu'au cassé final qui tombe dans le Baou.",
+      "descente": "C3 (un goujon RD), R5, R3, C4 sur buis RG, C20 (un goujon RG) et C5 AN RD qui tombe dans le Baou.",
+      "retour": "Descendre le Baou (partie interdite au canyoning) par une sente RD puis RG en montant sur une large vire (attention passage de 5m exposé si c'est humide) puis suivre le sentier balisé qui remonte au parking amont.",
+      "engagement": "Pas d'échappatoire sur l'enchainement des rappels.",
+      "periode": "Affluent du Baou qui doit être en eau quand le Baou est énorme.",
+      "geologie": null,
+      "historique": "Sommairement équipé par Alain, Tony et lolo le 10/01/2015",
+      "remarques": "- débit du Baou à vérifier (il faudra le traverser une ou deux fois)\n\n- retour peut être possible en restant sur la sente RD qui rejoint peut être le sentier des gorges du Verdon ???\n\n- navette possible pour les fainéants."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23310,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.791435,
+        "longitude": 6.393896,
+        "label": null
+      },
+      {
+        "canyonId": 23310,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.790218,
+        "longitude": 6.393478,
+        "label": null
+      },
+      {
+        "canyonId": 23310,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.793549,
+        "longitude": 6.398177,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.793549,
+      "longitude": 6.398177,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_371b2a24e7aa2a73",
+          "kind": "MAP",
+          "title": "3442 OT Gorges du Verdon (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

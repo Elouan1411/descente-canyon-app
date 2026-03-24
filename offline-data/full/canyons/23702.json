@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:47.042435+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23702,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23702/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23702/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23702/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23702/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23702,
+    "identity": {
+      "nom": "Helltobel",
+      "nomComplet": "Helltobel",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23702/Helltobel.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Pfäfers",
+      "departement": "Saint Gallen",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": "Tamina",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a3II",
+      "interet": 2.2,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1767,
+      "deniveleM": 191,
+      "longueurM": 400,
+      "cascadeMaxM": 48,
+      "cordeMiniM": 50,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h",
+      "descente": "1h30",
+      "retour": "35min"
+    },
+    "topo": {
+      "accesAval": "Monter la route jusqu'au fond du Calfeisental, grand parking au bout du Gigerwaldsee.",
+      "accesAmont": null,
+      "approche": "Suivre le chemin rando RG de la Tamina et passer la Schräawislihütte.",
+      "descente": "Le canyon commence par une grande cascade suivi de plusieurs désescalades et plus petites cascades. Vers la fin on retrouve une série de belles cascades.\n\nIl est intéressant de combiner Helltobel avec le canyon de Glasbach juste à coté, il y a seulement 25min de marche pour rejoindre le départ de Glasbach depuis la fin de Helltobel.",
+      "retour": "Suivre le chemin rando au bord de la Tamina jusqu'au parking.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": "09.09.2016: Andreas Senn, Matthias Holzinger",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23702,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.919968,
+        "longitude": 9.323077,
+        "label": null
+      },
+      {
+        "canyonId": 23702,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.923325,
+        "longitude": 9.324137,
+        "label": null
+      },
+      {
+        "canyonId": 23702,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.920418,
+        "longitude": 9.354521,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.920418,
+      "longitude": 9.354521,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

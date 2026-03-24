@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:09.643891+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21897,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21897/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21897/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21897/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21897/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/21897/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 21897,
+    "identity": {
+      "nom": "Tramouillon (supérieur)",
+      "nomComplet": "Torrent de Tramouillon (supérieur)",
+      "prefixeNom": "Torrent de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21897/Tramouillon-superieur.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Hautes-Alpes",
+      "communePrincipale": "Champcella",
+      "communes": [
+        "Champcella"
+      ],
+      "massif": "Ecrins - Oisans - Champsaur",
+      "bassin": "Durance",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a3II",
+      "interet": 2.3,
+      "nbVotes": 29
+    },
+    "metrics": {
+      "altitudeDepartM": 1735,
+      "deniveleM": 85,
+      "longueurM": 110,
+      "cascadeMaxM": 23,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1min",
+      "descente": "1h30",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "de ce canyon et continuer sur la piste principale pendant environ 2kms.\n\nSe garer sans gêner au niveau de la 3° épingle à gauche, à l'endroit ou la piste frôle le ruisseau et où se trouve une passerelle en bois.",
+      "accesAmont": null,
+      "approche": "Rejoindre le cours d'eau facilement.",
+      "descente": "Au niveau de la passerelle, on passe un premier ressaut de 2 m. Après une courte marche, on arrive à une désescalade de 4 m. qui nous amène à la première cascade de 20 m.\n\nArrivée dans une belle vasque qui s'ouvre immédiatement sur une C. 23 (encore belle vasque).\n\nAprès deux ressauts de 4 m., on arrive à la C.17 finale.",
+      "retour": "Après ce rappel arrosé, on sort en R.G. et remonter par l'éboulis. Slalomer entre les mélèzes jusqu'à trouver un sentier.\n\nLe suivre jusqu'à la passerelle et rejoindre la voiture rapidement.",
+      "engagement": "Canyon court mais engagé dès l'instant où l'on franchit la première cascade.\n\nLe rocher y est glissant et les relais ne sont pas prévus pour plus de 5 personnes.",
+      "periode": "L'eau y est fraîche toute l'année.\n\nL'hiver, ce canyon est souvent en glace et le niveau est important toute l'année.\n\nBassin versant de 7 km2",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Exposé plein EST sous le couvert de mélèzes.\n\nPas de contacts visuels dans les rappels.\n\nL'équipement est très bon, jumelé avec des lunules."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21897,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.709167,
+        "longitude": 6.553056,
+        "label": null
+      },
+      {
+        "canyonId": 21897,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.709999,
+        "longitude": 6.555833,
+        "label": null
+      },
+      {
+        "canyonId": 21897,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.709167,
+        "longitude": 6.552778,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.709167,
+      "longitude": 6.552778,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 422,
+          "status": "Actif",
+          "action": "Autorise",
+          "title": "Arrêté municipal (Champcella) - 17 juin 2021",
+          "summary": "Après un long travail réalisé auprès des différents acteurs locaux, le GTC05 a obtenu la ré-ouverture officielle de ce canyon, interdit depuis près de 25 ans.",
+          "remark": null,
+          "details": "Arrêté municipal n°08-2021 du 17 juin 2021\n\nCompte-rendu des travaux d'aménagement raisonné et durable menés par le GTC05 et la mairie de Champcella",
+          "effectiveDate": "17 juin 2021",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/422/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté municipal n°08-2021 du 17 juin 2021",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem422_pj1.pdf"
+            },
+            {
+              "label": "Compte-rendu des travaux d'aménagement raisonné et durable menés par le GTC05 et la mairie de Champcella",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem422_pj2.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

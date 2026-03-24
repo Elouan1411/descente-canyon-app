@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:56.227787+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23478,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23478/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23478/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23478/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23478/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23478,
+    "identity": {
+      "nom": "Ambin",
+      "nomComplet": "Ruisseau d' Ambin",
+      "prefixeNom": "Ruisseau d'",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23478/Ambin.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Savoie",
+      "communePrincipale": "Val-Cenis",
+      "communes": [
+        "La Bridoire",
+        "Val-Cenis"
+      ],
+      "massif": "Vanoise",
+      "bassin": "Maurienne",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a7III",
+      "interet": null,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": 1540,
+      "deniveleM": 200,
+      "longueurM": 600,
+      "cascadeMaxM": 40,
+      "cordeMiniM": null,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "??",
+      "retour": "??"
+    },
+    "topo": {
+      "accesAval": "Depuis Bramans, monter en direction du Planey et se garer 4km après au mieux au niveau du Cernay (présence de toilettes sèches)",
+      "accesAmont": null,
+      "approche": "Rejoindre le cours d'eau par une vieille piste abandonnée.",
+      "descente": null,
+      "retour": null,
+      "engagement": "Le canyon se situe sous une énorme galerie de vidange du barrage du Mont-Cenis. Cette conduite peut aléatoirement et plusieurs fois par jour envoyer plusieurs mètres-cube d'eau dans le canyon.\n\nSi vous avez survécu dans le canyon, sachez que ce n'est pas fini, puisque la sortie du canyon se fait sous 600m de dalles de gypse plus qu'instable.\n\nLes anciens disent que si les chamois se baladent dedans, c'est que ça ne craint rien (mais ils vous envoient des pierres dessus); s'il n'y a pas de chamois, c'est que ça va tomber ! :)",
+      "periode": "Toujours trop d'eau malgré les apparences.\n\nAucune période.",
+      "geologie": null,
+      "historique": "Présence d'un point en haut de la première grande cascade (glaciairistes ?)",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23478,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.220425,
+        "longitude": 6.80825,
+        "label": null
+      },
+      {
+        "canyonId": 23478,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.222736,
+        "longitude": 6.802378,
+        "label": null
+      },
+      {
+        "canyonId": 23478,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.220039,
+        "longitude": 6.806675,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.220039,
+      "longitude": 6.806675,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_d5d39b4425eaeae8",
+          "kind": "MAP",
+          "title": "3634 OT Val-Cenis - Charbonnel (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

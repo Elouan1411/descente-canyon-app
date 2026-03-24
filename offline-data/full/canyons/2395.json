@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:45:20.601518+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2395,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2395/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2395/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2395/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2395/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2395,
+    "identity": {
+      "nom": "Vezoles",
+      "nomComplet": "Saut de Vezoles, Ruisseau de Bureau",
+      "prefixeNom": "Saut de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2395/Vezoles.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Hérault",
+      "communePrincipale": "Prémian",
+      "communes": [
+        "Prémian"
+      ],
+      "massif": "Caroux",
+      "bassin": "Jaur",
+      "coursEau": "Ruisseau de Bureau"
+    },
+    "rating": {
+      "cotation": "v4a2II",
+      "interet": 2.2,
+      "nbVotes": 32
+    },
+    "metrics": {
+      "altitudeDepartM": 940,
+      "deniveleM": 200,
+      "longueurM": 250,
+      "cascadeMaxM": 45,
+      "cordeMiniM": 45,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "3h",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": "Prendre la direction du Lac du Saut de Vézoles au départ de St-Pons-de-Thomières.\n\nArrivé au lac, se garer un peu avant le barrage en rive droite. On distingue des panneaux directionnels du GR qui n'est autre que le sentier de retour !.",
+      "accesAmont": null,
+      "approche": "Au bout de la route se trouvent une dizaine de marches qui mènent à un sentier pour désescalader jusqu'au bord de l'eau.",
+      "descente": "Descente assez verticale mais l'eau peu présente se disperse vite sur la largeur.\n\nC25, C8, C35, C25, C30, rappel de main courant 5m de la rive droite pour accéder à la C30, le relais de la C45 se situe en plein milieu de la largeur du canyon, C15, C45",
+      "retour": "Après la dernière C45, prendre le GR RD qui remonte au barrage. Le très beau sentier des milles marches mais bien raide. Compter 30 bonnes minutes.\n\nDes marques de GR sont portée sur les rochers de gneiss. Indications visuelles : une poutre métallique est en travers à la fin de la dernière 45.\n\nSi on poursuit on retrouve plus bas le GR qui amène au sentier des Gardes et qui débouche à Rouvials sur la piste reliant Prémian au lac (navette possible pour ceux que la montée rebute mais 25min de marche quand même).",
+      "engagement": null,
+      "periode": "Barrage en amont. Débit régulé a 9L sec ou 20L sec suivant la saison. Lâchers d'eau automatique si le lac est trop plein : 15m3 sec. Source EDF.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Suréquipé.\n\nAttention aux rappels de cordes !"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2395,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.551174,
+        "longitude": 2.794046,
+        "label": null
+      },
+      {
+        "canyonId": 2395,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.549015,
+        "longitude": 2.794261,
+        "label": null
+      },
+      {
+        "canyonId": 2395,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.551735,
+        "longitude": 2.792351,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.551735,
+      "longitude": 2.792351,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_f62b32e9659a6cea",
+          "kind": "TOPOGUIDE",
+          "title": "Gorges et Canyons en Languedoc Roussillon",
+          "authors": [
+            "Jean-Pierre Lucot et Richard Quintilla"
+          ],
+          "publicationYear": 1990,
+          "reference": "ISBN 2-85744-467-9",
+          "editor": "Édisud",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/124/topoguide.html"
+        },
+        {
+          "id": "biblio_64902f846ef24776",
+          "kind": "TOPOGUIDE",
+          "title": "Randonnée au Caroux",
+          "authors": [
+            "CAF Béziers"
+          ],
+          "publicationYear": null,
+          "reference": null,
+          "editor": null,
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/160/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_2fd30d5b49129102",
+          "kind": "MAP",
+          "title": "2444 ET Somail Minervois (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_86fc37d0215e8ed6",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://clementdom.free.fr/html/saut_de_vesoles.htm",
+          "url": "http://clementdom.free.fr/html/saut_de_vesoles.htm"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

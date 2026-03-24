@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:46:53.800103+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2795,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2795/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2795/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2795/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2795/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/2795/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 2795,
+    "identity": {
+      "nom": "Boussoule",
+      "nomComplet": "Ravin de la Boussoule",
+      "prefixeNom": "Ravin de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2795/Boussoule.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Lozère",
+      "communePrincipale": "Villefort",
+      "communes": [
+        "Villefort"
+      ],
+      "massif": "Cévennes",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2I",
+      "interet": 1.5,
+      "nbVotes": 16
+    },
+    "metrics": {
+      "altitudeDepartM": 650,
+      "deniveleM": 50,
+      "longueurM": 150,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 25,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "45min",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": "De Villefort vers Altier, la D901 longe le lac de Villefort et passe sous un viaduc ferroviaire. 800m après ce dernier, la route franchit un bras du lac, c'est l'arrivée de la \"Boussoule\". Se garer sur le parking juste après le pont.",
+      "accesAmont": null,
+      "approche": "Rive droite, entre la rambarde du pont et la signalisation bleue du virage, un sentier remonte jusqu'au sommet des cascades bien visibles.",
+      "descente": "Descente courte mais belle avec vue sur le lac de Villefort. Bel enchainement de cascades, légèrement encaissées avec des marmites profondes.",
+      "retour": "Arrivé sous le pont, remonter à la route.",
+      "engagement": "Canyon possédant de nombreux échappatoires sur les berges. Très bien équipé.",
+      "periode": "Intéressant par gros débit.",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2795,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.454029,
+        "longitude": 3.9111,
+        "label": null
+      },
+      {
+        "canyonId": 2795,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.452457,
+        "longitude": 3.911321,
+        "label": null
+      },
+      {
+        "canyonId": 2795,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.451385,
+        "longitude": 3.911144,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.451385,
+      "longitude": 3.911144,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_0acbab812fc8ce3c",
+          "kind": "MAP",
+          "title": "2739 OT Mont-Lozere (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 508,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Lozère) - 26 oct 2016",
+          "summary": "La pratique du canyonisme est autorisée sur le département de la Lozère du lever au coucher du soleil. Il est cependant interdit de s’engager dans un canyon après 17 heures.\n\nL'arrêté préfectoral réglemente également la pratique du canyonisme en Lozère sur les points suivants : les équipements obligatoires, la prise d’information préalable, l'accès aux sites, l’effectif des groupes, l’encadrement, le respect du milieu naturel, des équipements et des autres usagers, le retour d’expérience et les contrôles.",
+          "remark": null,
+          "details": "Arrêté préfectoral (Lozère) n°DDCSPP-JESEP-2016-300-001 du 26 octobre 2016",
+          "effectiveDate": "26 oct 2016",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/508/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral (Lozère) n°DDCSPP-JESEP-2016-300-001 du 26 octobre 2016",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem508_pj1.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

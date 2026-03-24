@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:50.056231+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22380,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22380/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22380/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22380/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22380/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22380,
+    "identity": {
+      "nom": "Zemmschlucht",
+      "nomComplet": "Zemmschlucht, Zemmbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22380/Zemmschlucht.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Tyrol",
+      "departement": "Politischer Bezirk Schwaz",
+      "communePrincipale": "Finkenberg",
+      "communes": [
+        "Mayrhofen",
+        "Finkenberg"
+      ],
+      "massif": "Zillertaler Alpen",
+      "bassin": "Ziller",
+      "coursEau": "Zemmbach"
+    },
+    "rating": {
+      "cotation": "v5a3III",
+      "interet": 2.3,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 860,
+      "deniveleM": 210,
+      "longueurM": 1100,
+      "cascadeMaxM": 14,
+      "cordeMiniM": 25,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "45min",
+      "descente": "3h",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22380,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.136635,
+        "longitude": 11.821093,
+        "label": null
+      },
+      {
+        "canyonId": 22380,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.146023,
+        "longitude": 11.829464,
+        "label": null
+      },
+      {
+        "canyonId": 22380,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 47.13665,
+        "longitude": 11.820838,
+        "label": null
+      },
+      {
+        "canyonId": 22380,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 47.153751,
+        "longitude": 11.836336,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 47.13665,
+      "longitude": 11.820838,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_80a52b6e4b57f154",
+          "kind": "TOPOGUIDE",
+          "title": "Tiroler Canyoningführer - The Canyoning guide for Tyrol",
+          "authors": [
+            "Alexander Riml",
+            "Gunnar Amor"
+          ],
+          "publicationYear": 2012,
+          "reference": "978-3-200-02343-7",
+          "editor": null,
+          "status": "en stock\n\n- 44,90 € -\n\nCommandez cet ouvrage dès maintenant !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/170/Tiroler-Canyoningfuhrer---The-Canyoning-guide-for-Tyrol.html"
+        },
+        {
+          "id": "biblio_a216ca92fa29ca51",
+          "kind": "TOPOGUIDE",
+          "title": "Canyoning in Bayern und Tirol",
+          "authors": [
+            "Werner Baumgarten"
+          ],
+          "publicationYear": 2010,
+          "reference": null,
+          "editor": null,
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1226/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_b5c6025112066b63",
+          "kind": "MAP",
+          "title": "35/2 Zillertaler Alpen (Alpenvereins (AV) Karte)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

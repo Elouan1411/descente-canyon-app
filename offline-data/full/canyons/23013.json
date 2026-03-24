@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:17.036276+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23013,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23013/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23013/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23013/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23013/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23013,
+    "identity": {
+      "nom": "Claps",
+      "nomComplet": "Claps, La Cause",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23013/Claps.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Bouches-du-Rhône",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Montagne Ste Victoire",
+      "bassin": "Arc",
+      "coursEau": "La Cause"
+    },
+    "rating": {
+      "cotation": "v1a1II",
+      "interet": 0.4,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 520,
+      "deniveleM": 70,
+      "longueurM": 650,
+      "cascadeMaxM": 5,
+      "cordeMiniM": 5,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "25min",
+      "descente": "1h00",
+      "retour": "3min"
+    },
+    "topo": {
+      "accesAval": "D'Aix en Provence, prendre la D10 en direction de Vauvenargues. Dépasser le village et poursuivre sur la D10 sur 2 km en direction du col de Claps. Le parking est visible à droite, non loin du point 462 sur l'IGN (Adrechs de Mouret).",
+      "accesAmont": null,
+      "approche": "Suivre la D10 en direction du col de Claps.\n\nAprès la montée du col, prendre à gauche et se rendre au petit pont.",
+      "descente": "Deux encaissements, des vasques peu profondes et quelques petites cascades.",
+      "retour": "Une fois sorti du verrou rocheux, monter sur la route et rejoindre le parking.",
+      "engagement": "Quelques échappatoires",
+      "periode": "A faire après les pluies, pour que la balade soit ludique.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Balade aquatique à faire en famille avec quelques jolis passages.\n\nA jumeler avec la cascade de Vauvenargues .Corde utile 2X15 m.\n\nA noter les voies d'escalades au niveau du verrou rocheux à la sortie du canyon."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23013,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.554581,
+        "longitude": 5.640213,
+        "label": null
+      },
+      {
+        "canyonId": 23013,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.55315,
+        "longitude": 5.633165,
+        "label": null
+      },
+      {
+        "canyonId": 23013,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.552757,
+        "longitude": 5.631105,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.552757,
+      "longitude": 5.631105,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_96163e753595ca69",
+          "kind": "MAP",
+          "title": "3244 ET Montagne Sainte-Victoire (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

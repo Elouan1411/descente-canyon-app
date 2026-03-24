@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:46:03.650068+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2580,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2580/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2580/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2580/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2580/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/2580/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 2580,
+    "identity": {
+      "nom": "Chortales",
+      "nomComplet": "Barranco de los Chortales",
+      "prefixeNom": "Barranco de los",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2580/Chortales.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Andalucía",
+      "departement": "Provincia de Granada",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Costa del Sol",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "",
+      "interet": null,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": null,
+      "longueurM": null,
+      "cascadeMaxM": null,
+      "cordeMiniM": null,
+      "navette": null
+    },
+    "timings": {
+      "approche": null,
+      "descente": null,
+      "retour": null
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2580,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 36.860943,
+        "longitude": -3.734837,
+        "label": null
+      },
+      {
+        "canyonId": 2580,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 36.85442,
+        "longitude": -3.738399,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 36.860943,
+      "longitude": -3.734837,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 87,
+          "status": "Actif",
+          "action": "Interdit",
+          "title": "Arrêté",
+          "summary": "La descente du canyon de Chortales est interdite.",
+          "remark": null,
+          "details": null,
+          "effectiveDate": null,
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/87/legislation.html",
+          "attachments": []
+        }
+      ]
+    }
+  }
+}

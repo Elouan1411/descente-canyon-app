@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:20.734897+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23027,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23027/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23027/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23027/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23027/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23027,
+    "identity": {
+      "nom": "Chiandola",
+      "nomComplet": "Torrente Chiandola, Ciarfurle, Chiadola, Valle Ciadola",
+      "prefixeNom": "Torrente",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23027/Chiandola.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Frioul-Vénétie julienne",
+      "departement": "Ex provincia di Pordenone",
+      "communePrincipale": "Claut",
+      "communes": [
+        "Claut"
+      ],
+      "massif": "Dolomites du Frioul",
+      "bassin": "Cellina",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a3III",
+      "interet": 2.4,
+      "nbVotes": 7
+    },
+    "metrics": {
+      "altitudeDepartM": 650,
+      "deniveleM": 50,
+      "longueurM": 200,
+      "cascadeMaxM": 15,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "10min",
+      "descente": "50min",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "Monter le Val Cellina par SS 251; passer le Lago di Barcis et continuer 13 km. Alors prendre la route vers Val Settimana et continuer jusqu'à Claut. Dans le village, traverser le Torrente Chiadola et prendre prochaine la première route à gauche (Via Grava Ruggiero). Aller 350 m vers le nord et arriver au pont sur Chiadola. Garer la voiture.\n\nParking meilleur après le grand pont à droite.",
+      "accesAmont": null,
+      "approche": "Monter le sentier rive gauche (orograf.) jusqu'à barrage (depart).",
+      "descente": "5 petits rappels, peu de marche, encaissement.",
+      "retour": "Sortir le lit vers gauche quand c'est possible, et retourner à la voiture.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23027,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.272141,
+        "longitude": 12.513406,
+        "label": null
+      },
+      {
+        "canyonId": 23027,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.270889,
+        "longitude": 12.514211,
+        "label": null
+      },
+      {
+        "canyonId": 23027,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.271236,
+        "longitude": 12.514114,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.271236,
+      "longitude": 12.514114,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_ff21942f4e737548",
+          "kind": "MAP",
+          "title": "021 Dolomiti di Sinistra Piave (Tabacco)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_2121fa9a28090940",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://lnx.canyoning.it/index/forra/reg/.....LIA/pro/PN/cod/PN012",
+          "url": "http://lnx.canyoning.it/index/forra/reg/.....LIA/pro/PN/cod/PN012"
+        },
+        {
+          "id": "resource_4c16d44783590aa1",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.canyoneast.it/target.php?w=12.....rget=Rio%20Chiandola",
+          "url": "http://www.canyoneast.it/target.php?w=12.....rget=Rio%20Chiandola"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

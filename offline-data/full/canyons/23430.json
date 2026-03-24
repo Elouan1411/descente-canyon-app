@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:46.296901+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23430,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23430/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23430/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23430/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23430/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23430,
+    "identity": {
+      "nom": "Combe de Méollion",
+      "nomComplet": "Torrent de la Combe de Méollion",
+      "prefixeNom": "Torrent de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23430/Combe-de-Meollion.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Hautes-Alpes",
+      "communePrincipale": "Champoléon",
+      "communes": [
+        "Champoléon"
+      ],
+      "massif": "Ecrins - Oisans - Champsaur",
+      "bassin": "Drac",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1III",
+      "interet": 2.3,
+      "nbVotes": 7
+    },
+    "metrics": {
+      "altitudeDepartM": 2200,
+      "deniveleM": 560,
+      "longueurM": 1300,
+      "cascadeMaxM": 37,
+      "cordeMiniM": 40,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "2h30",
+      "descente": "3h30",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": "De Gap prendre la N85 en direction de Grenoble puis la D944 vers le col de Manse. 4km, après Pont-du-Fossé, prendre à gauche la D944a. 500m après le hameau des Gubias, la route traverse le Torrent de Méollion ; prendre alors juste après, la piste de droite qui longe le Méollion sur 500m. Se garer lorsque la piste finit .",
+      "accesAmont": null,
+      "approche": "Prendre le sentier qui mène au hameau de Méollion. De ce hameau il faut monter à vue par la rive gauche de la combe de Méollion dans des pentes plus ou moins raides (pas de passages de barres si votre cheminement est bon). Vers l'altitude 2100 deux bras se rejoignent (c'est le 2ème qui est équipé). Juste en amont de cette confluence, traverser les deux bras et remonter encore un peu quelques dizaines de mètres de dénivelé par la rive droite pour trouver les premières cascades équipées.",
+      "descente": "Belle succession continue de cascades sculptées dans du grès. Quelques marches en bloc sur le dernier tiers du parcours.",
+      "retour": "Reprendre le sentier pris à l'aller.",
+      "engagement": "De nombreuses échappatoires (hors sentier) tout le long du parcours.",
+      "periode": "A faire quand le Méollion est très gros en début de saison avril mai (juin si l'hiver a été très enneigé) ou après une période de pluie pour espérer avoir un débit correct.",
+      "geologie": "Grès",
+      "historique": "Ouvert à partir de 2100m par l'équipe du topo \"100 canyons autour de Grenoble\". Équipement complété le 14 mai 2015 sur mono-points d'une dizaine de cascades à partir des 2200m d'altitude.",
+      "remarques": "- le débit observé pendant l'approche est trompeur car deux résurgences rajoutent de l'eau 500m en amont.\n\n- l'équipement artisanal présent est à surveiller de très près.\n\n- équipement de 4 cascades supplémentaires en amont du départ du topo \"100 canyons autour de Grenoble\".\n\n- névés possibles dans la partie haute.\n\n- attention on ne peut pas avoir un débit idéal dans Combe de Méollion et Méollion le même jour.\n\n- la partie en aval du sentier est peu intéressante et la cascade finale tombe dans le Méollion."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23430,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.731621,
+        "longitude": 6.291213,
+        "label": "1ere cascade équipée"
+      },
+      {
+        "canyonId": 23430,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.721733,
+        "longitude": 6.288795,
+        "label": null
+      },
+      {
+        "canyonId": 23430,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.717453,
+        "longitude": 6.264747,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.717453,
+      "longitude": 6.264747,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_b0e951331c704682",
+          "kind": "MAP",
+          "title": "3437 OT Champsaur - Parc des Ecrins (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

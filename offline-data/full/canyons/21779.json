@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:41.682378+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21779,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21779/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21779/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21779/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21779/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/21779/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 21779,
+    "identity": {
+      "nom": "Bruire",
+      "nomComplet": "Cascade de Bruire, Cascade d'Oncieu, Le Buinand",
+      "prefixeNom": "Cascade de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21779/Bruire.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Ain",
+      "communePrincipale": "Oncieu",
+      "communes": [
+        "Oncieu"
+      ],
+      "massif": "Bugey",
+      "bassin": null,
+      "coursEau": "Le Buinand"
+    },
+    "rating": {
+      "cotation": "v4a1II",
+      "interet": 1.4,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": null,
+      "longueurM": 50,
+      "cascadeMaxM": 85,
+      "cordeMiniM": 60,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "40min",
+      "descente": "45min/1h",
+      "retour": "8min"
+    },
+    "topo": {
+      "accesAval": "De St-Rambert-en-Bugey, se rendre à Oncieu par la N504 puis la D34. Continuer par la même route en direction du village de Résinand. Environ 2,7km après Oncieu, après avoir fait le tour d'une grande falaise (\"la cathédrale\"), on aperçoit la cascade qui coule du haut d'une falaise et on coupe le ruisseau du Buinand au niveau d'un pont. Se garer moins de 200 mètres après le pont sur la droite, au niveau d'un petit ravin et de l'amorce d'une sente.",
+      "accesAmont": null,
+      "approche": "A pied, poursuivre la route sur environ 800 mètres et prendre la première piste à droite. Au premier embranchement, poursuivre à droite. On arrive enfin sur un plateau, très près de la route du col d'Esvoges et juste avant une piste qui part à gauche (2.6km depuis le parking aval). S'engager dans le pré à droite (respecter les troupeaux et les clôtures) et suivre jusqu'au début de l'encaissement le ruisseau du Buinand qui borde le pré sur la gauche .",
+      "descente": "Un premier rappel en RG (départ sur arbre) pour aller chercher juste sous le seuil de la cascade le premier relais situé dans une niche. Rappel de 35 mètres environ pour arriver sur une grande plate-forme. Le deuxième relais se situe sous le jet un peu en hauteur (rappel d'une cinquantaine de mètres).",
+      "retour": "Une centaine de mètres après le pied de la cascade, suivre une sente en RD à peu prés à flanc qui amène à la voiture.",
+      "engagement": "Pas d'échappatoires.",
+      "periode": "Certainement peu d'eau en été. Ne pas s'engager par trop gros débit, un relais étant situé sous le jet.",
+      "geologie": null,
+      "historique": "Première descente inconnue. Rééquipé par Pascal Lambert le 08/03/2000",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21779,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.972687,
+        "longitude": 5.480547,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.972687,
+      "longitude": 5.480547,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 467,
+          "status": "Actif",
+          "action": "Indéfini",
+          "title": "Arrêté préfectoral (Ain) - 04 déc 2002",
+          "summary": "Le statut de cette descente est flou car l'escalade et la descente en rappel sont interdites sur le site de la cascade de la Bruire (\"falaises de la cathédrale\" d'Oncieu, site n° 17d) mais \"l'activité de canyoning n'est pas concernée par le le présent arrêté\".",
+          "remark": "En 2023, un couple de faucons niche en rive droite de la cascade. Il est donc demandé pour leur tranquillité de ne pas parcourir cette cascade avant juillet 2023.",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nArrêté préfectoral (Ain) du 4 décembre 2002",
+          "effectiveDate": "04 déc 2002",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/467/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral (Ain) du 4 décembre 2002",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem467_pj1.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

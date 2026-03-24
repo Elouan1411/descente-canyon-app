@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:13.955564+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22211,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22211/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22211/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22211/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22211/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22211,
+    "identity": {
+      "nom": "Minster",
+      "nomComplet": "Minster",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22211/Minster.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Oberiberg",
+      "departement": "Schwyz",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": "Sihl",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a3III",
+      "interet": 1.8,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1060,
+      "deniveleM": 80,
+      "longueurM": 1500,
+      "cascadeMaxM": 26,
+      "cordeMiniM": 30,
+      "navette": "1.9km"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "3h30",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "De Euthal (voir Chilentobel) vers le sud (direction Schwyz, Oberiberg) jusqu'à Stöcken (4,5 km). 1,75 km après Stöcken garer la première voiture (à droite une ferme).\n\nAvec la seconde voiture continuer jusqu'à Oberiberg (1,3 km) et là vers sud-ouest jusqu'à Tschalun (station de Bus). Garer la seconde voiture.",
+      "accesAmont": null,
+      "approche": "De la voiture accéder au cours d'eau.",
+      "descente": "La première partie (environ 900m) est de la marche avec quelques sauts. La deuxième partie présente quelques encaissements et est plus intéressante.",
+      "retour": "Après l'encaissement, poursuivre encore 100m dans le lit de Minster : sortir à droite et prendre la piste vers le-haut jusqu'à la ferme et la voiture.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22211,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.037781,
+        "longitude": 8.77747,
+        "label": null
+      },
+      {
+        "canyonId": 22211,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.049023,
+        "longitude": 8.777733,
+        "label": null
+      },
+      {
+        "canyonId": 22211,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 47.03746,
+        "longitude": 8.777561,
+        "label": null
+      },
+      {
+        "canyonId": 22211,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 47.048912,
+        "longitude": 8.781466,
+        "label": null
+      },
+      {
+        "canyonId": 22211,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.043129,
+        "longitude": 8.775212,
+        "label": "l'entrée pour la 2. partie"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 47.03746,
+      "longitude": 8.777561,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_ee92621b53de3c8c",
+          "kind": "TOPOGUIDE",
+          "title": "Canyoning : Swiss Alps / Alpes Suisse",
+          "authors": [
+            "Association Openbach"
+          ],
+          "publicationYear": 2015,
+          "reference": "9782746679450",
+          "editor": "auto-edition",
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/195/Canyoning-:-Swiss-alps---Alpes-suisses-Vol-1.html"
+        },
+        {
+          "id": "biblio_818da916075bb17b",
+          "kind": "TOPOGUIDE",
+          "title": "Canyoning en Suisse 2",
+          "authors": [
+            "Franz Baumgartner",
+            "Andreas Brunner",
+            "Daniel Zimmermann"
+          ],
+          "publicationYear": 2010,
+          "reference": "9783033024694",
+          "editor": null,
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/158/Canyoning-en-Suisse-2.html"
+        }
+      ],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_9970c68ef1ed18ba",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.schluchttour.ch/canyons/Minster/Topo_Minster.pdf",
+          "url": "http://www.schluchttour.ch/canyons/Minster/Topo_Minster.pdf"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

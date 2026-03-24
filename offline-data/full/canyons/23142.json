@@ -1,0 +1,134 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:50.516042+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23142,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23142/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23142/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23142/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23142/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/23142/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 23142,
+    "identity": {
+      "nom": "Rousset",
+      "nomComplet": "Vallon du Rousset",
+      "prefixeNom": "Vallon du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23142/Rousset.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Var",
+      "communePrincipale": "La Motte",
+      "communes": [
+        "La Motte"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a1I",
+      "interet": 0.9,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 150,
+      "deniveleM": 30,
+      "longueurM": 150,
+      "cascadeMaxM": 10,
+      "cordeMiniM": 15,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "30min",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "Du village de La Motte, prendre la D47 vers Trans en Provence. Faire environ 1500m et se garer sur la droite au point IGN 94 sur un parking au départ d'une ancienne piste fermée par une barrière.",
+      "accesAmont": null,
+      "approche": "Prendre le sentier derrière la barrière. Il longe un ruisseau en RD (vallon des Prouits) puis le traverse sur un gué. Poursuivre en montée jusqu'à déboucher sur une belle piste. La prendre sur votre droite sur environ 600m. Rejoindre alors au mieux à travers la foret le vallon du Rousset qui se trouve sur votre droite.",
+      "descente": "Un C3, puis une progression à travers les branchages, puis on arrive sur le final très joli comportant une petite série de gours avec quelques bassins peu profonds. On termine la descente avec une belle C10 (AN RD).",
+      "retour": "Du pied de la C10 remonter RD par un chemin sur 30m et dès que possible remonter droit dans la foret par des sentes qui vous ramènent à la piste prise pour l'approche. Refaire le chemin inverse jusqu'au parking.",
+      "engagement": "On peut s'échapper partout.",
+      "periode": "Surement sec l'été (ou en micro filet d'eau), à faire après des pluies pour avoir un débit intéressant qui ne rendra que plus jolie la fin.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Soyez très discret à l'approche de la dernière cascade car elle se trouve en bordure d'une propriété privée.\n\nMême discrétion pour le début du retour."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23142,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.499409,
+        "longitude": 6.522037,
+        "label": null
+      },
+      {
+        "canyonId": 23142,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.497864,
+        "longitude": 6.519135,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.497864,
+      "longitude": 6.519135,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 579,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Var) - 13 mai 2025",
+          "summary": "- La pratique du canyonisme dans des canyons secs (cotation aquaticité A1 ou habituellement à sec) est autorisée toute l'année\n\n- La pratique du canyonisme dans des canyons aquatiques est interdite du 1er novembre au 31 mars.\n\nPour la période du 1er avril au 30 octobre, il est interdit :\n\n- de pratiquer du coucher du soleil à 9h\n\n- de s'engager dans une descente de canyon aquatique après 17h.\n\n- De manière générale, il est interdit :\n\n- de s'engager si une alerte vigilance météo de niveau orange ou rouge est émise par Météo France, en ce qui concerne le risque \"pluie\", \"orage\", et \"inondation\", sur le secteur concerné.\n\n- de constituer un groupe de plus de 10 personnes (encadrement inclus)",
+          "remark": null,
+          "details": "Arrêté préfectoral (Préfecture du Var) SDJES-SPORTS-2025-12 du 13 mai 2025",
+          "effectiveDate": "13 mai 2025",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/579/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral (Préfecture du Var) SDJES-SPORTS-2025-12 du 13 mai 2025",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem579_pj1.pdf"
+            }
+          ]
+        },
+        {
+          "id": 545,
+          "status": "Abrogé",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Var) - 06 mai 2024",
+          "summary": "La pratique du canyonisme se voit interdite du 1er novembre au 31 mars.\n\nPour la période du 1er avril au 30 octobre, il est interdit :\n\n- de s'engager dans une descente de canyon avant 9h et après 17h.\n\n- de s'engager si une alerte vigilance météo de niveau orange ou rouge est émise par Météo France, en ce qui concerne le risque \"pluie\", \"orage\", et \"inondation\", sur le secteur concerné.\n\n- de constituer un groupe de plus de 10 personnes (encadrement inclus)",
+          "remark": "Arrêté abrogé et remplacé par l'arrêté préfectoral SDJES-SPORTS-2025-12 du 13 mai 2025",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nArrêté préfectoral (Var) n° SDJES-SPORTS-2024-0004 du 06 mai 2024",
+          "effectiveDate": "13 mai 2025",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/545/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral (Var) n° SDJES-SPORTS-2024-0004 du 06 mai 2024",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem545_pj1.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

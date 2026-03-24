@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:58.169736+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21849,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21849/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21849/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21849/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21849/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21849,
+    "identity": {
+      "nom": "Para",
+      "nomComplet": "Valle Para",
+      "prefixeNom": "Valle",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21849/Para.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Ligurie",
+      "departement": "Imperia",
+      "communePrincipale": "Comune di Airole",
+      "communes": [
+        "Comune di Airole"
+      ],
+      "massif": "Monte Abellio",
+      "bassin": "Roya",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a2II",
+      "interet": 2.3,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 280,
+      "deniveleM": 190,
+      "longueurM": 1600,
+      "cascadeMaxM": 12,
+      "cordeMiniM": 15,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "50min",
+      "descente": "1h30",
+      "retour": "3min"
+    },
+    "topo": {
+      "accesAval": "Voir le canyon Abellio.",
+      "accesAmont": null,
+      "approche": "Voir le canyon Abellio.",
+      "descente": "Fiche doublon. Il s'agit du canyon Abellio. Son attaque se situe au croisement du sentier \"balcone Méditerranéo\" et de l'affluent rive droite du valle Para, issu du Mont Abellio (Alt. 1015m). Puis l'itinéraire suit le valle Para.\n\nMême si l'on emprunte ce vallon sur 80% du parcours l'usage est d'appeler ce canyon Abellio.\n\nA noter que le topo Geuna-Ruotolo décrit ce canyon sous le nom \"valle Para\".",
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21849,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.87793,
+        "longitude": 7.564344,
+        "label": null
+      },
+      {
+        "canyonId": 21849,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.869049,
+        "longitude": 7.563894,
+        "label": null
+      },
+      {
+        "canyonId": 21849,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.868896,
+        "longitude": 7.564044,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.868896,
+      "longitude": 7.564044,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

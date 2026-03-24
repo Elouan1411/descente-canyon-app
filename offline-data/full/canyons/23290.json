@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:25.053148+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23290,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23290/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23290/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23290/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23290/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23290,
+    "identity": {
+      "nom": "Jarretière",
+      "nomComplet": "Jarretière, Rivière du mat",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23290/Jarretiere.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Salazie",
+      "departement": "La Réunion",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Cirque de Salazie-Bélouve",
+      "bassin": "Riviere du Mât",
+      "coursEau": "Rivière du mat"
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 2.0,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 740,
+      "deniveleM": 210,
+      "longueurM": 200,
+      "cascadeMaxM": 31,
+      "cordeMiniM": 40,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h",
+      "descente": "3h",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "idem voile de la mariée",
+      "accesAmont": null,
+      "approche": "même accès que voile de la mariée . Sur le sentier arrivé a la bifurcation juste avant le 1er rappel du voile de la mariée continuer sur le sentier a droite pendant 50 m repérer un arbre plus gros que les autres sur votre G a cet endroit quitter le sentier pour rejoindre la jarretière sur votre droite (rubalise en place)",
+      "descente": "enchainement de rappels sans temps mort dont l'essentiel est sur arbre",
+      "retour": "arrivé au pied du dernier rappel desescalader pendant 5 mn pour retrouver le sentier d’accès",
+      "engagement": "canyon accessible a tous",
+      "periode": "c'est une résurgence, débit plus faible que le voile de la mariée",
+      "geologie": null,
+      "historique": null,
+      "remarques": "un canyon interessant pour de l’initiation, et qui offre une solution de repli si le voile de la mariée coule trop fort\n\nau niveau de R6 un arbre s'est déraciné avec un éboulis, le relais existant n'est plus accessible il faut donc mettre une corde sur arbre en RG"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23290,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": -21.042082,
+        "longitude": 55.540058,
+        "label": null
+      },
+      {
+        "canyonId": 23290,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": -21.039768,
+        "longitude": 55.537647,
+        "label": null
+      },
+      {
+        "canyonId": 23290,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": -21.037134,
+        "longitude": 55.538418,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": -21.037134,
+      "longitude": 55.538418,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

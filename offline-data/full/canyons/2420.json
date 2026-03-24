@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:45:26.107122+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2420,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2420/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2420/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2420/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2420/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2420,
+    "identity": {
+      "nom": "En Mathieu",
+      "nomComplet": "Cascades En Mathieu, Blanque",
+      "prefixeNom": "Cascades",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2420/En-Mathieu.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Aude",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": null,
+      "coursEau": "Blanque"
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 0.8,
+      "nbVotes": 6
+    },
+    "metrics": {
+      "altitudeDepartM": 560,
+      "deniveleM": 90,
+      "longueurM": 400,
+      "cascadeMaxM": 15,
+      "cordeMiniM": 15,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "10min",
+      "descente": "1h",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": "Très peu engagé, échappatoire possible en rive gauche de la cascade des Mathieux.",
+      "periode": "Toujours en eau, le premier rappel coule moins que toute la partie aval grâce à un affluent en rive droite dans le même cirque de la première casacade.\n\nÀ faire absolument après les grosses averses et au printemps.",
+      "geologie": "Calcaire.",
+      "historique": "Ouvert et équipé par Jean-Pierre Lucot et Richard Quintilla en 1980.",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2420,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.854664,
+        "longitude": 2.366662,
+        "label": null
+      },
+      {
+        "canyonId": 2420,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.855873,
+        "longitude": 2.364334,
+        "label": "arrivée approximative"
+      },
+      {
+        "canyonId": 2420,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 42.855911,
+        "longitude": 2.367404,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 42.855911,
+      "longitude": 2.367404,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_edfcdd6b9590258b",
+          "kind": "MAP",
+          "title": "2347 OT Quillan - Alet-Les-Bains (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

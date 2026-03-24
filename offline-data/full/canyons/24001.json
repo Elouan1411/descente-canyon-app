@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:50.236877+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24001,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24001/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24001/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24001/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24001/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24001,
+    "identity": {
+      "nom": "Rai",
+      "nomComplet": "Ravin du Rai, Ravin de la Fontaine",
+      "prefixeNom": "Ravin du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24001/Rai.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-de-Haute-Provence",
+      "communePrincipale": "Castellane",
+      "communes": [
+        "Castellane"
+      ],
+      "massif": "Verdon",
+      "bassin": "Verdon",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1II",
+      "interet": 1.1,
+      "nbVotes": 5
+    },
+    "metrics": {
+      "altitudeDepartM": 1150,
+      "deniveleM": 300,
+      "longueurM": 500,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 25,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "50min",
+      "descente": "2h",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "Entre la Palud-sur-Verdon et Castellane monter à Chasteuil. Garez-vous sur le parking obligatoire au bout de la route juste avant le village.",
+      "accesAmont": null,
+      "approche": "Prendre la route et emprunter le chemin qui part à droite dans la première épingle. Rejoindre rapidement le GR et descendre jusqu'à l'arrivée du ravin (ancien lavoir). Poursuivre et prendre le sentier à gauche (Blieux). Le sentier monte en lacets puis débouche sur le \"plateau\". Quitter le sentier par une sente en vous dirigeant vers l'entrée du verrou (50 mètres de végétation très dense si vous perdez la sente).",
+      "descente": "Partie 1 ravin du Rai : départ sous une arche étonnante, ca s'enchaine bien mais très court (3 rappels)\n\nprendre une sente à droite après le cassé, quittez donc le canyon pour rejoindre la naissance du ravin de la Fontaine.\n\nPartie 2 ravin de la Fontaine : plus broussailleux, toujours sec sauf le bas (résurgence)",
+      "retour": "On arrive au lavoir, rejoindre la voiture par le même chemin.",
+      "engagement": "Pas d'échappatoire sur la partie 1, partie 2 peu engagée.",
+      "periode": "Faisable toute l'année, la partie 1 est facilement en eau, la partie 2 est sèche (la dernière cascade peut couler)",
+      "geologie": null,
+      "historique": "Ouverture et equipement en 2017 par Cascade04 (Florent Baghioni, Marie-line et Lionel Catsoyannis, Julien et Morgan Lafeuille).\n\nMatos correct en 10 mm zingué mais peu durable (nous ne pensions pas que ça mérite plus qu'un passage).",
+      "remarques": "le ratio marche/canyon est un peu défavorable mais l'endroit joli."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24001,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.844131,
+        "longitude": 6.423458,
+        "label": null
+      },
+      {
+        "canyonId": 24001,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.835674,
+        "longitude": 6.423645,
+        "label": null
+      },
+      {
+        "canyonId": 24001,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 43.841164,
+        "longitude": 6.422566,
+        "label": "Début partie 2 (ravin de la Fontaine)"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.835674,
+      "longitude": 6.423645,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_371b2a24e7aa2a73",
+          "kind": "MAP",
+          "title": "3442 OT Gorges du Verdon (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_16fe3a0e77b98a83",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://cascade04.over-blog.com/2017/03/o.....de-peire-grosse.html",
+          "url": "http://cascade04.over-blog.com/2017/03/o.....de-peire-grosse.html"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

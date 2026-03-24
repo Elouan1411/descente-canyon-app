@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:05.843526+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21884,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21884/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21884/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21884/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21884/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21884,
+    "identity": {
+      "nom": "Val Canale",
+      "nomComplet": "Foce di Val Canale, Foce de la Val Petrone",
+      "prefixeNom": "Foce di",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21884/Val-Canale.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Marche",
+      "departement": "Pesaro e Urbino",
+      "communePrincipale": "Petrara",
+      "communes": [
+        "Petrara"
+      ],
+      "massif": "Monte Catria",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 0.5,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 660,
+      "deniveleM": 120,
+      "longueurM": 400,
+      "cascadeMaxM": 14,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h",
+      "descente": "35min",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": "sec",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21884,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.490383,
+        "longitude": 12.733755,
+        "label": null
+      },
+      {
+        "canyonId": 21884,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.494026,
+        "longitude": 12.735558,
+        "label": null
+      },
+      {
+        "canyonId": 21884,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.500999,
+        "longitude": 12.740278,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.500999,
+      "longitude": 12.740278,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_99087de92a3c343e",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.geocities.com/Pipeline/Ramp/7716/catasto/valca.html",
+          "url": "http://www.geocities.com/Pipeline/Ramp/7716/catasto/valca.html"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

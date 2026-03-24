@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:36.756403+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23085,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23085/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23085/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23085/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23085/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23085,
+    "identity": {
+      "nom": "Nanfs",
+      "nomComplet": "Ravin des Nanfs, Argoire",
+      "prefixeNom": "Ravin des",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23085/Nanfs.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Drôme",
+      "communePrincipale": "Échevis",
+      "communes": [
+        "Échevis"
+      ],
+      "massif": "Vercors",
+      "bassin": "Bourne",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1II",
+      "interet": 0.8,
+      "nbVotes": 6
+    },
+    "metrics": {
+      "altitudeDepartM": 536,
+      "deniveleM": 164,
+      "longueurM": 400,
+      "cascadeMaxM": 38,
+      "cordeMiniM": 50,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "35min",
+      "descente": "1h30",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "De Pont-en-Royans, prendre à droite la RN-RD 518 vers St-Jean-en-Royans. A Ste Eulalie, aller à gauche en direction de La Chapelle-en-Vercors D518. Dépasser le pont d’Echevis, puis prendre la 1ère route à droite RD 585 vers Echevis et se garer juste avant le pont sur la Vernaison.",
+      "accesAmont": null,
+      "approche": "Traverser le pont sur la rivière Vernaison puis le village d’Echevis. Au 2ème croisement (carrefour des chèvres altitude 382m)), aller à droite jusqu'à la ferme de l’Argoire, ou ferme d'Odoyer, direction Audemas.\n\nLa traverser (départ de sentier) puis le sentier descend au 1er ravin.",
+      "descente": "Succession de cascades de 38m maxi (corde 2*50m).",
+      "retour": "Avant de s'engager, vérifier si le débit de la rivière Vernaison permettra sa traversée !\n\nSortie : traverser la rivière Vernaison puis à travers champs, on rejoint la voiture.",
+      "engagement": "Un sentier coupe le ravin à la côte 383 IGN - sortir RD\n\nl'échappatoire permet uniquement de shunter le dernier rappel\n\nÉquipement de première, roche délicate !",
+      "periode": "Le ravin ne coule qu'après la fonte des neiges ou après de très fortes pluies sinon, c'est sec !",
+      "geologie": null,
+      "historique": "Re-découverte le 25/01/2009 par Link, YD & Eric.",
+      "remarques": "Issu des Rochers des Mines (1051m) de la montagne de l’Arp à la forêt communale de Côte-Belle sur la commune d’Echevis, cet affluent - en rive gauche de la Vernaison (rivière des Grands et des Petits Goulets) - est le seul ravin de la vallée qui présente un intérêt !"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23085,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.027309,
+        "longitude": 5.376713,
+        "label": null
+      },
+      {
+        "canyonId": 23085,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.028656,
+        "longitude": 5.381286,
+        "label": null
+      },
+      {
+        "canyonId": 23085,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.028244,
+        "longitude": 5.385205,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.028244,
+      "longitude": 5.385205,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_4c66ec3c98484f0c",
+          "kind": "MAP",
+          "title": "3136 ET Combe-Laval (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

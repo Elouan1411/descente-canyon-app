@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:21.744461+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22528,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22528/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22528/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22528/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22528/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22528,
+    "identity": {
+      "nom": "Fakistra",
+      "nomComplet": "Canyon Fakistra",
+      "prefixeNom": "Canyon",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22528/Fakistra.html"
+    },
+    "location": {
+      "pays": "Grèce",
+      "region": "Thessaly",
+      "departement": "of Magnesia",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Pelion",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": null,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": 160,
+      "deniveleM": 160,
+      "longueurM": 750,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 20,
+      "navette": "2.0km"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "1h30",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "ou il y a une rotonde en bois pour se changer.",
+      "accesAmont": null,
+      "approche": "Du parking aval, remonter 5 minutes la route et prendre le 1er embranchement à gauche, vers Mylopotamos, qui coupe le ravin juste après. Accès direct au canyon depuis la route.",
+      "descente": "Environ 14 rappels dans un petit encaissement.",
+      "retour": "A la sortie du canyon, 5 m avant la plage, suivre un petit sentier qui monte en RG.\n\nMême s'il y a beaucoup de houle en mer, la sortie ne pose aucun problème.",
+      "engagement": "Engagement faible. Possibilité de se mettre en sécurité très facilement dans la forêt proche.",
+      "periode": "En eau toute l'année. Neige en hiver !",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Canyon qui serait sympa sans tous les déchets présents dedans.\n\nBons restaurants et gites traditionnels au village."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22528,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 39.389584,
+        "longitude": 23.193254,
+        "label": null
+      },
+      {
+        "canyonId": 22528,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 39.387543,
+        "longitude": 23.184832,
+        "label": null
+      },
+      {
+        "canyonId": 22528,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 39.390587,
+        "longitude": 23.192535,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 39.387543,
+      "longitude": 23.184832,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_80a95364882638d9",
+          "kind": "MAP",
+          "title": "33 Mont Pelion (Road editions)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:12.589531+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22487,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22487/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22487/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22487/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22487/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22487,
+    "identity": {
+      "nom": "Servia",
+      "nomComplet": "Canyon Servia",
+      "prefixeNom": "Canyon",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22487/Servia.html"
+    },
+    "location": {
+      "pays": "Grèce",
+      "region": "West Macedonia Region",
+      "departement": "of Kozani",
+      "communePrincipale": "Servia-Velventos",
+      "communes": [
+        "Servia-Velventos"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2III",
+      "interet": 1.8,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 640,
+      "deniveleM": 150,
+      "longueurM": 400,
+      "cascadeMaxM": 11,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "35min",
+      "descente": "1h20min",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22487,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 40.175495,
+        "longitude": 21.996473,
+        "label": null
+      },
+      {
+        "canyonId": 22487,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 40.179626,
+        "longitude": 21.994886,
+        "label": null
+      },
+      {
+        "canyonId": 22487,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 40.180725,
+        "longitude": 21.994564,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 40.180725,
+      "longitude": 21.994564,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

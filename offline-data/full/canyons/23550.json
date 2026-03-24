@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:12.089943+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23550,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23550/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23550/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23550/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23550/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23550,
+    "identity": {
+      "nom": "Aua dil Mer",
+      "nomComplet": "Aua dil Mer",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23550/Aua-dil-Mer.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Ilanz/Glion",
+      "departement": "Graubünden/Grigioni/Grischun",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Alpes glaronaises",
+      "bassin": "Vorderrhein",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v5a5IV",
+      "interet": 3.7,
+      "nbVotes": 16
+    },
+    "metrics": {
+      "altitudeDepartM": 2120,
+      "deniveleM": 670,
+      "longueurM": 2000,
+      "cascadeMaxM": 100,
+      "cordeMiniM": 55,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h15min/ 2",
+      "descente": "6h-8h",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "From Chur drive all the way to Ilanz. Just after Ilanz go right to Rueuns/Pigniu. Continue and park before the waterdam.",
+      "accesAmont": null,
+      "approche": "Just before you reach the waterdam hike the steep slope on your right for 150m of elevation, between a small water stream and a rock barrier until you reach the officia hiking path. From there hike further to the left until the bridge at 2049m. Either start here or continue for the upper part which starts at 2130m.",
+      "descente": "From the top there are in total four different section where exits are possible. The very remakable high waterfall marks the third section with nice and exposed abseils in the waterstream.",
+      "retour": "Walk along the waterdam back to the car.",
+      "engagement": null,
+      "periode": "Canyon alimenté par un glacier. A faire envisager à l'automne (Octobre-Novembre).",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23550,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.851242,
+        "longitude": 9.096792,
+        "label": null
+      },
+      {
+        "canyonId": 23550,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.836639,
+        "longitude": 9.099673,
+        "label": null
+      },
+      {
+        "canyonId": 23550,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.823856,
+        "longitude": 9.111201,
+        "label": null
+      },
+      {
+        "canyonId": 23550,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 46.834473,
+        "longitude": 9.120513,
+        "label": "Parking if you have a permit"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.823856,
+      "longitude": 9.111201,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

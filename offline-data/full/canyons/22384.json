@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:50.982756+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22384,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22384/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22384/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22384/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22384/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22384,
+    "identity": {
+      "nom": "Finzbachklamm",
+      "nomComplet": "Finzbachklamm, Finzbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22384/Finzbachklamm.html"
+    },
+    "location": {
+      "pays": "Allemagne",
+      "region": "Bayern",
+      "departement": "Oberbayern",
+      "communePrincipale": "Krün",
+      "communes": [
+        "Landkreis Garmisch-Partenkirchen",
+        "Krün"
+      ],
+      "massif": "Estergebirge",
+      "bassin": "Isar",
+      "coursEau": "Finzbach"
+    },
+    "rating": {
+      "cotation": "v6a4III",
+      "interet": 1.9,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1040,
+      "deniveleM": 140,
+      "longueurM": 2000,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h15",
+      "descente": "3h",
+      "retour": "25min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22384,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.518021,
+        "longitude": 11.224433,
+        "label": "gros débit: entrée par Altgraben !"
+      },
+      {
+        "canyonId": 22384,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.518604,
+        "longitude": 11.225442,
+        "label": "gros débit dans Finzbach: départ ici (Altgraben)"
+      },
+      {
+        "canyonId": 22384,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.514725,
+        "longitude": 11.254903,
+        "label": null
+      },
+      {
+        "canyonId": 22384,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.507874,
+        "longitude": 11.267885,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.507874,
+      "longitude": 11.267885,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

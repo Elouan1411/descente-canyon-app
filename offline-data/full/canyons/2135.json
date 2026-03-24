@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:44:10.779834+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2135,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2135/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2135/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2135/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2135/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2135,
+    "identity": {
+      "nom": "Rio La Forêt",
+      "nomComplet": "Le Rio La Forêt",
+      "prefixeNom": "Le",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2135/Rio-La-Foret.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Drôme",
+      "communePrincipale": "Treschenu-Creyers",
+      "communes": [
+        "Treschenu-Creyers"
+      ],
+      "massif": "Diois",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a1II",
+      "interet": 1.6,
+      "nbVotes": 12
+    },
+    "metrics": {
+      "altitudeDepartM": 1030,
+      "deniveleM": 250,
+      "longueurM": 750,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h30",
+      "descente": "2h",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": "Suivre la D539 en direction du col de Grimone. Une fois dans les gorges du Gâts, se garer au niveau des dernières cascades du Rio la Forêt.",
+      "accesAmont": null,
+      "approche": "Même approche que pour\n\nle Rio Sourd\n\n. Continuer le chemin jusqu'au hameau du Reychas (magnifique). De là, rejoindre la combe du Rio La Forêt.",
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2135,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.690777,
+        "longitude": 5.574527,
+        "label": null
+      },
+      {
+        "canyonId": 2135,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.687462,
+        "longitude": 5.575679,
+        "label": "Arrivée contre la voiture!"
+      },
+      {
+        "canyonId": 2135,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.687462,
+        "longitude": 5.575667,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.687462,
+      "longitude": 5.575667,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_897a81a84c493147",
+          "kind": "MAP",
+          "title": "3237 OT Glandasse - Col de La Croix (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

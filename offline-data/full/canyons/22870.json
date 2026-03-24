@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:54:43.081337+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22870,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22870/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22870/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22870/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22870/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22870,
+    "identity": {
+      "nom": "Petit Mont",
+      "nomComplet": "Petit Mont, Klein Montbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22870/Petit-Mont.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": null,
+      "departement": "Fribourg/Freiburg",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": null,
+      "coursEau": "Klein Montbach"
+    },
+    "rating": {
+      "cotation": "v3a2III",
+      "interet": 2.8,
+      "nbVotes": 11
+    },
+    "metrics": {
+      "altitudeDepartM": 1300,
+      "deniveleM": 100,
+      "longueurM": 400,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "25min",
+      "descente": "1h30-2h",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "Du village d’Im Fang, prendre la route qui monte en direction de Schäni.\n\nSe garer dans une épingle en face des cascades finales (peu de places, possible de laisser des véhicules plus bas)",
+      "accesAmont": null,
+      "approche": "Continuer à pied jusqu’à la sortie du 2ème tunnel où il faut descendre vers le torrent.\n\nPeu de place vers le second tunnel pour garer une voiture pour faire une navette.",
+      "descente": "Beau petit canyon dans lequel les obstacles s’enchainent sans gros temps mort. Plusieurs obstacles ludiques dans la première section.",
+      "retour": "Après les 2 longs rappels, suivre le lit de la rivière 50m et remonter une ravine rive gauche qui ramène à la voiture.",
+      "engagement": "Pas d’échappatoires évidentes.",
+      "periode": "Bassin versant important 14km2.\n\nFaisable au début de l'été et après une période sèche.\n\nAttention phénomène de crue déjà observé en période orageuse.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "D’autres infos avec coupe et accès sur le site de SwestCanyon.ch\n\nhttp://www.swestcanyon.ch/Canyons/Petit_Mont/Petit_Mont.htm"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22870,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.581951,
+        "longitude": 7.24851,
+        "label": null
+      },
+      {
+        "canyonId": 22870,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.584812,
+        "longitude": 7.243215,
+        "label": null
+      },
+      {
+        "canyonId": 22870,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.584751,
+        "longitude": 7.242517,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.584751,
+      "longitude": 7.242517,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

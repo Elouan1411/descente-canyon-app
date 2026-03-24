@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:59:06.534352+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24077,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24077/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24077/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24077/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24077/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24077,
+    "identity": {
+      "nom": "Inferno",
+      "nomComplet": "Rio dell' Inferno",
+      "prefixeNom": "Rio dell'",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24077/Inferno.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Piemonte",
+      "departement": "Verbano-Cusio-Ossola",
+      "communePrincipale": "Omegna",
+      "communes": [
+        "Omegna"
+      ],
+      "massif": "Monte Mottarone",
+      "bassin": "Ossola",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2I",
+      "interet": 1.7,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 480,
+      "deniveleM": 150,
+      "longueurM": 450,
+      "cascadeMaxM": 28,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "35min",
+      "descente": "1h",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "De Gravellona, prendre direction Omegna. Au rond-point, à l'entrée de la ville (supermarché Tigros), prendre à gauche. La route passe sous la voie rapide, puis à l'entrée du lieu-dit Brughiere, prendre à gauche direction Granerolo. Tourner très vite à droite, petite montée, parking au bout à droite.",
+      "accesAmont": null,
+      "approche": "Continuer par l'ancienne piste qui fait suite à la route jusqu'à ce qu'elle rencontre les restes d'une canalisation. Poursuivre quelques minutes jusqu'à découvrir le ruisseau, que l'on domine, au niveau d'une crête. Continuer quelques mètres pour un bon sentier qui rejoint le lit du Rio. Descendre facilement dans les blocs jusqu'à un mur.",
+      "descente": "Passer ce mur, un premier enchainement C6-C28, un second T15-C26, puis le passage dans un mur anti-crues en pierres de taille C3-C7.",
+      "retour": "La sortie du ruisseau se fait au niveau du barrage anti-crues en béton, en rive D, puis la piste prise à l'aller.",
+      "engagement": null,
+      "periode": "Printemps ou après quelques pluies. Les rappels sont quasiment hors d'eau.\n\nPas de vasque.",
+      "geologie": null,
+      "historique": "Armaroli et Carminati le 9.11.2013.",
+      "remarques": "Parcours \"très light\", pour collectionneur ou débutants. A coupler avec Bertogna et/ou Pescone."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24077,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.892025,
+        "longitude": 8.426213,
+        "label": null
+      },
+      {
+        "canyonId": 24077,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.893463,
+        "longitude": 8.422172,
+        "label": null
+      },
+      {
+        "canyonId": 24077,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.89489,
+        "longitude": 8.419962,
+        "label": null
+      },
+      {
+        "canyonId": 24077,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 45.891251,
+        "longitude": 8.427054,
+        "label": "Entrée dans le ruisseau"
+      },
+      {
+        "canyonId": 24077,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 45.89415,
+        "longitude": 8.421252,
+        "label": "Sortie du ruisseau"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.89489,
+      "longitude": 8.419962,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_95d6f7123eb0ea1e",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://catastoforre.aic-canyoning.it/index/forra/cod/VB067",
+          "url": "http://catastoforre.aic-canyoning.it/index/forra/cod/VB067"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

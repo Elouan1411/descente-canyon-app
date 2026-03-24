@@ -1,0 +1,139 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:48:26.590777+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21182,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21182/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21182/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21182/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21182/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21182,
+    "identity": {
+      "nom": "Ha canyon",
+      "nomComplet": "Ha canyon",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21182/Ha-canyon.html"
+    },
+    "location": {
+      "pays": "Grèce",
+      "region": "Crete",
+      "departement": "Lasithi",
+      "communePrincipale": "Vassiliki",
+      "communes": [
+        "Vassiliki"
+      ],
+      "massif": "Oros Thriptis",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a3III",
+      "interet": 3.3,
+      "nbVotes": 24
+    },
+    "metrics": {
+      "altitudeDepartM": 480,
+      "deniveleM": 325,
+      "longueurM": 700,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 50,
+      "navette": "15.0km"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "4h30",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": "De Agio Nikolaos prendre la route d'Ierapetra, à la sortie du village de Pacheia Ammos faire environ 3km et prendre une petite route sur la gauche vers le canyon (pancarte). Se diriger en direction d'une magnifique petite chapelle évidente depuis la route et située près d'un bâtiment industriel. La montagne est là, coupée en 2.\n\nLaisser une voiture a cet endroit\n\nPour ceux qui n'ont qu'une voiture chercher un point faible dans la falaise et il y a un chemin qui remonte jusqu'au départ du canyon.\n\nAvec la seconde voiture retourner direction Ierapetra. A KATO HORIO prendre à gauche direction Thripti. Ne pas suivre la route jusqu'à Thripti mais chercher à l'altitude de 800m une piste a gauche qui arrive a un petit oratoire. Parking",
+      "accesAmont": null,
+      "approche": "De là, descendre dans la canyon.\n\nOn peut aussi le longer sur quelques centaines de mètres et arriver ainsi au premier rappel.",
+      "descente": "Encaissement total du début au dernier rappel\n\naucun échappatoire.",
+      "retour": null,
+      "engagement": "Encaissement total",
+      "periode": "Mars, avril. Sec ensuite.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Extraordinaire. Un des 3 plus beaux de l’île\n\net certainement de Grèce."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21182,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 35.084309,
+        "longitude": 25.848352,
+        "label": "entrée superieur"
+      },
+      {
+        "canyonId": 21182,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 35.084061,
+        "longitude": 25.842762,
+        "label": "entrée inferieure"
+      },
+      {
+        "canyonId": 21182,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 35.085224,
+        "longitude": 25.834513,
+        "label": null
+      },
+      {
+        "canyonId": 21182,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 35.082367,
+        "longitude": 25.846437,
+        "label": null
+      },
+      {
+        "canyonId": 21182,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 35.086914,
+        "longitude": 25.832682,
+        "label": null
+      },
+      {
+        "canyonId": 21182,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 35.083035,
+        "longitude": 25.842632,
+        "label": "descendre ici pour l'entrée inférieure"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 35.082367,
+      "longitude": 25.846437,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_dfd20302c6152ce4",
+          "kind": "MAP",
+          "title": "4 Lasithi (Selena)",
+          "scale": "1/100000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:36.018456+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23081,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23081/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23081/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23081/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23081/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23081,
+    "identity": {
+      "nom": "Pescone",
+      "nomComplet": "Torrente Pescone, Il Pescone",
+      "prefixeNom": "Torrente",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23081/Pescone.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Piemonte",
+      "departement": "Verbano-Cusio-Ossola",
+      "communePrincipale": "Omegna",
+      "communes": [
+        "Omegna"
+      ],
+      "massif": "Monte Mottarone",
+      "bassin": "Ossola",
+      "coursEau": "Il Pescone"
+    },
+    "rating": {
+      "cotation": "v3a3II",
+      "interet": 2.4,
+      "nbVotes": 9
+    },
+    "metrics": {
+      "altitudeDepartM": 550,
+      "deniveleM": 110,
+      "longueurM": 450,
+      "cascadeMaxM": 35,
+      "cordeMiniM": 40,
+      "navette": "2.5km"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "1h",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "En venant du Nord (Gravellona Toce A26), rejoindre Omegna et prendre la route qui longe le lac en direction de Orta S. Giulio. A la sortie de la ville d'Omegna, au niveau d'une station service ENI, prendre la route qui monte à gauche en direction d'Agrano.\n\nEn venant du Sud (Borgomanero A26) prendre la route pour le Lago d'Orta, en suivant les indications pour Gozzano, Orta S. Giulio, Omagna, un peu avant cette dernière au niveau d'une station service ENI, prendre la route qui monte à droite en direction d'Agrano.\n\nDépasser le village d'Agrano et rejoindre le hameau Pescone, se garer à proximité du pont qui franchit le torrent (quelques places à droite avant le virage à gauche de l'entrée du village). Il existe également un bon parking à Agrano.",
+      "accesAmont": "Reprendre la route en direction d'Agrano et au niveau du monument aux morts prendre à droite la Via Mottarone, en direction de l'Alpe Selviana. Attention, la route est étroite, mais il est possible de l'emprunter avec prudence avec un fourgon type Traffic. A l'Alpe Selviana, se garer près du portail d'entrée de l'Agriturismo Il Glicine, où il est d'ailleurs conseillé de réserver pour un casse-croûte au retour ou, au minimum, de se présenter pour indiquer que vous allez descendre le torrent.",
+      "approche": "Entrer dans la propriété de l'Agriturismo jusqu'au restaurant et prendre à gauche en direction de la vallée. Dépasser les maisons et continuer par le sentier qui vous mènera en 5 minutes au départ du torrent.",
+      "descente": "6 cascades dont un beau toboggan. La cascade de 35m est fractionnée à -10m.",
+      "retour": "Après la vasque de la dernière cascade, un sentier à droite vous ramène en 5 minutes dans le village au niveau du pont sur le Pescone.",
+      "engagement": "Faible. Échappatoires fréquents. La prise d'eau est sans danger.",
+      "periode": "Mars à Octobre.",
+      "geologie": null,
+      "historique": "Partie haute : Albricci, G. Amaroli, M. Carminati (01/04/2013).\n\nPartie basse : Inconnu.",
+      "remarques": "Jamais à sec même en plein été, malgré un bassin versant très modeste. Probablement alimenté par capillarité par le massif voisin du Mont Rose.\n\nUn sympathique parcours à effectuer quand les autres descentes du Val d'Ossola sont en crues !"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23081,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.841808,
+        "longitude": 8.429103,
+        "label": null
+      },
+      {
+        "canyonId": 23081,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 45.843082,
+        "longitude": 8.425619,
+        "label": null
+      },
+      {
+        "canyonId": 23081,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 45.840218,
+        "longitude": 8.421164,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 45.843082,
+      "longitude": 8.425619,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_1814864d2c622941",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://lnx.canyoning.it/index/forra/cod/VB056",
+          "url": "http://lnx.canyoning.it/index/forra/cod/VB056"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

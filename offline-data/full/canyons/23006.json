@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:15.367560+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23006,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23006/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23006/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23006/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23006/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/23006/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 23006,
+    "identity": {
+      "nom": "Inguillième",
+      "nomComplet": "Vallon d' Inguillième",
+      "prefixeNom": "Vallon d'",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23006/Inguillieme.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Var",
+      "communePrincipale": "Collobrières",
+      "communes": [
+        "Collobrières"
+      ],
+      "massif": "Les Maures",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a3II",
+      "interet": 0.8,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 520,
+      "deniveleM": 200,
+      "longueurM": 1000,
+      "cascadeMaxM": 17,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h00",
+      "descente": "2h00",
+      "retour": "25min"
+    },
+    "topo": {
+      "accesAval": "Sur la D14 en direction de Collobrières, tournez à droite en direction de Bormes-les-Mimosas sur la D41. Passez un pont et 600m après prendre la piste à gauche. Suivre la piste en allant à droite, on longue le ruisseau jusqu'à passer un gué et l'on se retrouve en RD de ce ruisseau. Passez le gué du Destéou et garez-vous au niveau du départ du GR sans gêner (Point 220 su r l'IGN).\n\nS'il y a eu de grosses pluies, vous ne passerez pas les gués. Il est possible de se garer juste avant le premier gué du ruisseau de la Malière. Cela rajoute 20mn de marche sur l'approche et le retour.",
+      "accesAmont": null,
+      "approche": "Prendre le GR en RG du Destéou qui monte sur la piste Lambert. En haut, prendre à droite en direction du point IGN 573. De là, descendre au niveau d'une coupe de foret anti-feu vers l'étranglement rocheux, départ de la course.",
+      "descente": "Série de plans inclinés se descendant en rappels ou en désescalades. Suivant le débit, le rappel sera préféré...\n\nPar petit filet d'eau, 2 à 3 rappels sont obligatoires.",
+      "retour": "Sortir en RG par un sentier, lorsque le dénivelé devient horizontal. Puis suivre la piste jusqu'au véhicule.",
+      "engagement": "Aucun",
+      "periode": "Souvent le même débit que le Destéou.",
+      "geologie": "Micaschiste",
+      "historique": null,
+      "remarques": "A faire après les pluies."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23006,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.204918,
+        "longitude": 6.333243,
+        "label": null
+      },
+      {
+        "canyonId": 23006,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.208603,
+        "longitude": 6.327739,
+        "label": null
+      },
+      {
+        "canyonId": 23006,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.215591,
+        "longitude": 6.321301,
+        "label": null
+      },
+      {
+        "canyonId": 23006,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 43.216156,
+        "longitude": 6.326087,
+        "label": "piste d'accés"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.215591,
+      "longitude": 6.321301,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_a53b6bc4be4ff83b",
+          "kind": "MAP",
+          "title": "3446 ET Le Lavandou (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 579,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Var) - 13 mai 2025",
+          "summary": "- La pratique du canyonisme dans des canyons secs (cotation aquaticité A1 ou habituellement à sec) est autorisée toute l'année\n\n- La pratique du canyonisme dans des canyons aquatiques est interdite du 1er novembre au 31 mars.\n\nPour la période du 1er avril au 30 octobre, il est interdit :\n\n- de pratiquer du coucher du soleil à 9h\n\n- de s'engager dans une descente de canyon aquatique après 17h.\n\n- De manière générale, il est interdit :\n\n- de s'engager si une alerte vigilance météo de niveau orange ou rouge est émise par Météo France, en ce qui concerne le risque \"pluie\", \"orage\", et \"inondation\", sur le secteur concerné.\n\n- de constituer un groupe de plus de 10 personnes (encadrement inclus)",
+          "remark": null,
+          "details": "Arrêté préfectoral (Préfecture du Var) SDJES-SPORTS-2025-12 du 13 mai 2025",
+          "effectiveDate": "13 mai 2025",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/579/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral (Préfecture du Var) SDJES-SPORTS-2025-12 du 13 mai 2025",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem579_pj1.pdf"
+            }
+          ]
+        },
+        {
+          "id": 545,
+          "status": "Abrogé",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Var) - 06 mai 2024",
+          "summary": "La pratique du canyonisme se voit interdite du 1er novembre au 31 mars.\n\nPour la période du 1er avril au 30 octobre, il est interdit :\n\n- de s'engager dans une descente de canyon avant 9h et après 17h.\n\n- de s'engager si une alerte vigilance météo de niveau orange ou rouge est émise par Météo France, en ce qui concerne le risque \"pluie\", \"orage\", et \"inondation\", sur le secteur concerné.\n\n- de constituer un groupe de plus de 10 personnes (encadrement inclus)",
+          "remark": "Arrêté abrogé et remplacé par l'arrêté préfectoral SDJES-SPORTS-2025-12 du 13 mai 2025",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nArrêté préfectoral (Var) n° SDJES-SPORTS-2024-0004 du 06 mai 2024",
+          "effectiveDate": "13 mai 2025",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/545/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral (Var) n° SDJES-SPORTS-2024-0004 du 06 mai 2024",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem545_pj1.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

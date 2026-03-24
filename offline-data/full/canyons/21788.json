@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:43.845711+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21788,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21788/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21788/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21788/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21788/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/21788/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 21788,
+    "identity": {
+      "nom": "Tabernillas",
+      "nomComplet": "Tabernillas",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21788/Tabernillas.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Andalucía",
+      "departement": "Provincia de Granada",
+      "communePrincipale": "Castril",
+      "communes": [
+        "Castril"
+      ],
+      "massif": "Sierra Castril",
+      "bassin": "Rio Castril",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "",
+      "interet": null,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": null,
+      "longueurM": null,
+      "cascadeMaxM": null,
+      "cordeMiniM": null,
+      "navette": null
+    },
+    "timings": {
+      "approche": null,
+      "descente": null,
+      "retour": null
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21788,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 37.847816,
+        "longitude": -2.767611,
+        "label": null
+      },
+      {
+        "canyonId": 21788,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 37.845715,
+        "longitude": -2.772975,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 37.847816,
+      "longitude": -2.767611,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 142,
+          "status": "Indéfini",
+          "action": "Interdit",
+          "title": "Arrêté",
+          "summary": "Selon Medio Ambiente: no esta habile pour cause de propriété privée traversée",
+          "remark": null,
+          "details": null,
+          "effectiveDate": null,
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/142/legislation.html",
+          "attachments": []
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:44:45.275514+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2240,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2240/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2240/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2240/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2240/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/2240/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 2240,
+    "identity": {
+      "nom": "Lergue",
+      "nomComplet": "Gorges de la Lergue",
+      "prefixeNom": "Gorges de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2240/Lergue.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Hérault",
+      "communePrincipale": "Saint-Félix-de-l'Héras",
+      "communes": [
+        "Saint-Félix-de-l'Héras"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "",
+      "interet": 630.0,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": 630,
+      "deniveleM": 300,
+      "longueurM": null,
+      "cascadeMaxM": null,
+      "cordeMiniM": null,
+      "navette": null
+    },
+    "timings": {
+      "approche": null,
+      "descente": null,
+      "retour": null
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2240,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.830441,
+        "longitude": 3.305597,
+        "label": null
+      },
+      {
+        "canyonId": 2240,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.806782,
+        "longitude": 3.321133,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 43.830441,
+      "longitude": 3.305597,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 51,
+          "status": "Actif",
+          "action": "Interdit",
+          "title": "Arrêté (Réserve du Pas de l'Escalette)",
+          "summary": null,
+          "remark": null,
+          "details": null,
+          "effectiveDate": null,
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/51/legislation.html",
+          "attachments": []
+        }
+      ]
+    }
+  }
+}

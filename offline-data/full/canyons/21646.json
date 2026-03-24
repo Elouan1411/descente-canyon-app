@@ -1,0 +1,145 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:11.335507+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21646,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21646/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21646/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21646/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21646/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21646,
+    "identity": {
+      "nom": "Amanaderos",
+      "nomComplet": "Barranco de Amanaderos, Rio Turia",
+      "prefixeNom": "Barranco de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21646/Amanaderos.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Aragón",
+      "departement": "Teruel",
+      "communePrincipale": "Riodeva",
+      "communes": [
+        "Camarena de la Sierra",
+        "Riodeva"
+      ],
+      "massif": "Sierra Javalambre",
+      "bassin": "Riodeva",
+      "coursEau": "Rio Turia"
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.4,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": 270,
+      "longueurM": 2500,
+      "cascadeMaxM": 48,
+      "cordeMiniM": 50,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "2h30",
+      "retour": "45min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21646,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 40.11108,
+        "longitude": -1.089594,
+        "label": null
+      },
+      {
+        "canyonId": 21646,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 40.115742,
+        "longitude": -1.098139,
+        "label": null
+      },
+      {
+        "canyonId": 21646,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 40.109966,
+        "longitude": -1.096219,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 40.109966,
+      "longitude": -1.096219,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_17b2bb33cf165b86",
+          "kind": "TOPOGUIDE",
+          "title": "Ramblas, barrancos y rincones perdidos de la provincia de Teruel",
+          "authors": [
+            "Amor Polo",
+            "Luis Torrijo"
+          ],
+          "publicationYear": 2008,
+          "reference": "9788483212400",
+          "editor": "Prames",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1335/topoguide.html"
+        },
+        {
+          "id": "biblio_05f7a8dc05e74833",
+          "kind": "TOPOGUIDE",
+          "title": "Asturias, Cuenca, Granada, Mallorca, Tarragona y Terruel - Guia de descenso de cañones y barrancos",
+          "authors": [
+            "Eduardo Gomez",
+            "Laura Tejero"
+          ],
+          "publicationYear": 2004,
+          "reference": "8495744-37-6",
+          "editor": "Barrabes",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1123/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_c1b6697891553a3c",
+          "kind": "MAP",
+          "title": "613 Camarena de la Sierra (IGC)",
+          "scale": null,
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

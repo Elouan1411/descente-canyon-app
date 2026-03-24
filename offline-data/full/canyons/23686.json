@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:43.886807+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23686,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23686/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23686/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23686/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23686/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23686,
+    "identity": {
+      "nom": "Cerni Potock",
+      "nomComplet": "Cerni Potock, Rio Nero",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23686/Cerni-Potock.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Frioul-Vénétie julienne",
+      "departement": "Udine",
+      "communePrincipale": "Resia",
+      "communes": [
+        "Resiutta",
+        "Resia"
+      ],
+      "massif": null,
+      "bassin": "Resia",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a4IV",
+      "interet": 3.1,
+      "nbVotes": 12
+    },
+    "metrics": {
+      "altitudeDepartM": 705,
+      "deniveleM": 358,
+      "longueurM": 2500,
+      "cascadeMaxM": 18,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h30",
+      "descente": "4h",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "Depuis Moggio Udinese, emprunter la SS13 en direction de Tarvisio, prendre à droite après un tunnel en direction de Resiutta/Val Resia.\n\nAprès le pont sur le Resia, tourner à nouveau à droite en direction de Val Resia (SP42).\n\nAprès environ 4,5km, juste après un espace à gauche (parking possible), part à contre-sens une piste en terre qui mène au bord de la rivière Resia.\n\nSe garer là, ou sur l'espace à gauche de la route.",
+      "accesAmont": null,
+      "approche": "Traverser à gué la rivière Resia en suivant la piste évidente puis obliquer vers la gauche en passant à proximité d'une maison pour trouver le sentier CAI n°703 qui mène à \"Casera Rio Nero\".\n\nLe sentier grimpe raide en RG du torrent jusqu'à un pont de bois qui le traverse (départ partie basse).\n\nPour l'intégrale, continuer en traversant le pont et en remontant l'éboulis raide RD par une sente en lacets et traverse un affluent avant de continuer par une pente moins prononcée puis en légère descente.\n\nLe sentier se rapproche du torrent, le rejoindre avant le premier ressaut.",
+      "descente": "Succession de vasques émeraude, de rappels techniques arrosés, de parties étroites alternant avec des zones de marche et de désescalade.",
+      "retour": "Après le dernier ressaut, continuer en RG jusqu'à retrouver le sentier CAI N°703 emprunté à l'aller.",
+      "engagement": "Échappatoire évidente au niveau du pont, nombreux points de mise en sécurité durant le parcours.",
+      "periode": "Eau froide, torrent toujours bien alimenté (150l/s minimum).",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Le bassin versant est étendu et de nombreux affluents alimentent le canyon. Bien évaluer le débit et n'entreprendre la descente que par temps stable."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23686,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.356071,
+        "longitude": 13.25225,
+        "label": null
+      },
+      {
+        "canyonId": 23686,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.37022,
+        "longitude": 13.258723,
+        "label": null
+      },
+      {
+        "canyonId": 23686,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.379215,
+        "longitude": 13.255909,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.379215,
+      "longitude": 13.255909,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_1814dc130d071e86",
+          "kind": "MAP",
+          "title": "27 Canin - Val Resia (Tabacco)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_98f84d85aebe0c1b",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://catastoforre.aic-canyoning.it/index/forra/cod/UD032",
+          "url": "http://catastoforre.aic-canyoning.it/index/forra/cod/UD032"
+        },
+        {
+          "id": "resource_fae4d86c99937a5c",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.canyoneast.it/target.php?w=19.....target=Cerni%20potok",
+          "url": "http://www.canyoneast.it/target.php?w=19.....target=Cerni%20potok"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

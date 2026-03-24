@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:48:05.113875+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21083,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21083/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21083/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21083/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21083/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/21083/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 21083,
+    "identity": {
+      "nom": "Soffia (amont)",
+      "nomComplet": "Gole del Soffia (amont)",
+      "prefixeNom": "Gole del",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21083/Soffia-amont.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Vénétie",
+      "departement": "Belluno",
+      "communePrincipale": "Sospirolo",
+      "communes": [
+        "Sospirolo"
+      ],
+      "massif": "Dolomites de Belluno",
+      "bassin": "Mis",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "",
+      "interet": 1200.0,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": 1200,
+      "deniveleM": 400,
+      "longueurM": 1700,
+      "cascadeMaxM": null,
+      "cordeMiniM": null,
+      "navette": null
+    },
+    "timings": {
+      "approche": null,
+      "descente": null,
+      "retour": null
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": "1200m a 900m : Première réalisée par Brunon izard et Caracal (Stéphane Coté)\n\nDe 900 a 800m, descente en condition de première.",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21083,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.209297,
+        "longitude": 12.05698,
+        "label": null
+      },
+      {
+        "canyonId": 21083,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.197269,
+        "longitude": 12.054362,
+        "label": "depart pour Soffia inf."
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 46.209297,
+      "longitude": 12.05698,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 182,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté (Parc National des Dolomites de Belluno) - 21 nov 2000",
+          "summary": "ART. 19 – DISCIPLINE DES ACTIVITES SPORTIVES ET RECREATIVES\n\nSont admises les activités sportives traditionnelles, comme la randonnée, l'alpinisme et le ski de randonnée, dans des périodes et selon des modalités qui ne causent aucun dérangement ou dégât à la végétation, à la faune et au paysage, selon ce qui a été établi par le Règlement à ce sujet.\n\nIl est toutefois interdit d'ouvrir de nouvelles via ferrata, excepté la réalisation et l'entretien de courtes portions équipées, exclusivement sur le réseau de sentiers C.A.I., ainsi que de pratiquer le canyonisme.\n\nSont également acceptés, dans le respect des modalités et des périodes fixées par le Règlement du Parc :\n\n- La pratique du ski de fond ;\n\n- L'utilisation de VTT, en plus du réseau routier national, provincial et communal, exclusivement sur les routes forestières ou pastorales, en ce qui concerne les zones C et D, et exclusivement sur les parcours indiqués sur la cartographie du Plan, dans les zones B1 ;\n\n- La randonnée à cheval dans les zones C et D et, en ce qui concerne les zones B1, uniquement sur les itinéraires indiqués sur la cartographie du Plan.",
+          "remark": null,
+          "details": "Arrêté (Parc National des Dolomites de Belluno) du 21 novembre 2000",
+          "effectiveDate": "21 nov 2000",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/182/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté (Parc National des Dolomites de Belluno) du 21 novembre 2000",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem182_pj1.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

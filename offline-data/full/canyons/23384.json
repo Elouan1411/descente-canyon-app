@@ -1,0 +1,139 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:41.287764+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23384,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23384/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23384/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23384/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23384/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23384,
+    "identity": {
+      "nom": "Grand Serre",
+      "nomComplet": "Ravin du Grand Serre",
+      "prefixeNom": "Ravin du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23384/Grand-Serre.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Hautes-Alpes",
+      "communePrincipale": "Val Buëch-Méouge",
+      "communes": [
+        "Val Buëch-Méouge"
+      ],
+      "massif": "Montagne de Chabre",
+      "bassin": "Buëch",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a1I",
+      "interet": 0.8,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 710,
+      "deniveleM": 100,
+      "longueurM": 300,
+      "cascadeMaxM": 12,
+      "cordeMiniM": 15,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "1h30",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "De Sisteron, emprunter la D948 passant par Ribiers en direction de Laragne-Montéglin. Dépasser les gorges de la Méouge en restant toujours sur la même route et tourner à gauche, un peu plus loin au panneau \"La Grange Neuve\". Faire quelques mètres, prendre encore à gauche. Dépasser une ferme à droite et se garer non loin au départ du GR (départ de piste).",
+      "accesAmont": null,
+      "approche": "Suivre la piste montant au Grand Serre et Les Boisses (GR). Cette large piste monte sur quelques lacets et nous la laisserons pour récupérer le sentier balisé partant à droite (marquage GR sur un pin). Presqu'au sommet, ce sentier devient plus horizontal et suit la barre rocheuse du sommet. Lorsque celui-ci dépasse cette barre rocheuse, quitter le sentier (GR) pour une sente peu marquée à droite. Cette sente suit la crête et rejoint le départ de la descente",
+      "descente": "C10, désescalade, C10, C9, C12, C6, désescalade, C8.",
+      "retour": "Suivre le lit du ruisseau et sortir en RG dés que possible après un petit barrage pour rejoindre le parking.",
+      "engagement": "Pas d'échappatoire évidente lors de la descente .",
+      "periode": "A faire après les pluies .",
+      "geologie": null,
+      "historique": "lolo, tony-13, Max38 et ALAIN 13",
+      "remarques": "Équipement sur mono-points (goujons de 8 et maillons de chaîne) .\n\nA enchaîner avec ses voisins ."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23384,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.280552,
+        "longitude": 5.808545,
+        "label": null
+      },
+      {
+        "canyonId": 23384,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.280399,
+        "longitude": 5.81053,
+        "label": null
+      },
+      {
+        "canyonId": 23384,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.278694,
+        "longitude": 5.814725,
+        "label": null
+      },
+      {
+        "canyonId": 23384,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 44.278706,
+        "longitude": 5.809227,
+        "label": "Sente d'approche"
+      },
+      {
+        "canyonId": 23384,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 44.277657,
+        "longitude": 5.807923,
+        "label": "Sente d'approche"
+      },
+      {
+        "canyonId": 23384,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 44.279716,
+        "longitude": 5.809007,
+        "label": "Sente d'approche"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.278694,
+      "longitude": 5.814725,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_698f23f50a61f9ad",
+          "kind": "MAP",
+          "title": "3339 OT Sisteron (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

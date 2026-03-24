@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:59:17.714602+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24126,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24126/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24126/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24126/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24126/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24126,
+    "identity": {
+      "nom": "Réortie (amont)",
+      "nomComplet": "Torrent de la Réortie (amont)",
+      "prefixeNom": "Torrent de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24126/Reortie-amont.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Hautes-Alpes",
+      "communePrincipale": "Guillestre",
+      "communes": [
+        "Ceillac",
+        "Guillestre"
+      ],
+      "massif": "Queyras",
+      "bassin": "Guil",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a1II",
+      "interet": 2.0,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 1850,
+      "deniveleM": 200,
+      "longueurM": 250,
+      "cascadeMaxM": 35,
+      "cordeMiniM": 40,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "50min",
+      "descente": "2h00",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "De Guillestre, prendre la D902 sur quelques kilomètres, puis la D60 en direction de Ceillac sur environ 3,5 km. Dès lors, prendre à droite la passerelle carrossable qui traverse le torrent de Cristillan, puis suivre une piste qui monte et passe quelques lacets. Se garer sans gêner lorsque cette piste se sépare en deux directions. Panneau (piste interdite à la circulation, alt. 1630m sur l'IGN).",
+      "accesAmont": null,
+      "approche": "A pied, suivre la piste interdite à la circulation. Passer un premier torrent et se rendre sur le second moins alimenté en eau. Trente mètres avant le second torrent, emprunter au mieux la pente terreuse et grimper une sorte de talweg. Après une centaines de mètres de progression, prendre à droite en quittant le talweg. Grimper toujours dans la pente à travers les arbres et les buissons afin de rejoindre le bord de la falaise du canyon. De là, continuer toujours de grimper et passer au dessus de la grande dalle rocheuse visible depuis la piste. Rejoindre le départ de la descente via une pente terreuse et caillouteuse (utiliser une corde, si nécessaire).",
+      "descente": "Descente comprenant 9 rappels sur petit torrent de montagne peu alimenté en eau.\n\nC7, C3+C11 (R2x18 m), C4, C35, C4+C5 (R2x20m) ou désescalade en Rd, C2+C10+C9 (R2x27m), C5, C16, C25, désescalades et rejoindre la piste.",
+      "retour": "Suivre la piste afin de rejoindre votre véhicule.",
+      "engagement": "Quelques encaissements. Attention aux chutes de pierres !!",
+      "periode": "A faire en début de saison pour y trouver les conditions idéales.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Possibilité de compléter votre journée par la descente du torrent du Vallon des Pelouses, se situant juste à côté en empruntant l'autre piste (voir fiche).\n\nÉquipement : terrain d'aventure."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24126,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.65847,
+        "longitude": 6.71137,
+        "label": null
+      },
+      {
+        "canyonId": 24126,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.661049,
+        "longitude": 6.712035,
+        "label": null
+      },
+      {
+        "canyonId": 24126,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.667137,
+        "longitude": 6.717292,
+        "label": null
+      },
+      {
+        "canyonId": 24126,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 44.660797,
+        "longitude": 6.713011,
+        "label": "Talweg d'approche"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.667137,
+      "longitude": 6.717292,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

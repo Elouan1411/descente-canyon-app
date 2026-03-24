@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:09.157231+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22982,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22982/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22982/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22982/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22982/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22982,
+    "identity": {
+      "nom": "Wunzenbach",
+      "nomComplet": "Wunzenbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22982/Wunzenbach.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Carinthie",
+      "departement": "Spittal an der Drau District",
+      "communePrincipale": "Obervellach",
+      "communes": [
+        "Obervellach"
+      ],
+      "massif": "Hohe Tauern",
+      "bassin": "Möll",
+      "coursEau": "Wunzenbach"
+    },
+    "rating": {
+      "cotation": "v4a3IV",
+      "interet": 2.0,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 880,
+      "deniveleM": 150,
+      "longueurM": 300,
+      "cascadeMaxM": 35,
+      "cordeMiniM": 40,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "35min",
+      "descente": "1h30min",
+      "retour": "7min"
+    },
+    "topo": {
+      "accesAval": "A partir de l'A10 (Salzbourg - Villach) sortez au niveau de Spittal et dirigez-vous vers l'ouest pendant 27,5 km jusqu'à Obervellach dans la vallée de Möll. Au centre-ville suivre la direction du camping et du centre sportif, vers sud de l'autre côté du Möll et garer la voiture au niveau du terrain de camping.",
+      "accesAmont": null,
+      "approche": "Depuis le terrain de camping, suivre la direction SSO. Suivre un chemin en forêt jusqu'à une petite centrale électrique. Ici vous trouverez un grand barrage de béton construit en 2013. La sente commence en bas directement à l'arête entre le chemin forestier et le barrage de béton et mène au bord de gorge vers l'entrée.",
+      "descente": "Succession des petits rappels. A la cascade de fin (Polinikfall) comprendrait à environ -20 m une relais mauvais (2 x 25 m suffiraient alors).\n\nLe bord aiguisé est \"désamorcé\" par un cintre de métal.",
+      "retour": "Devant le barrage de béton à gauche dehors sur le chemin qui mène d'en bas vers Polinikfall. Sur celui-ci le long du barrage de béton et sur le chemin rural en arrière à la voiture.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22982,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.918938,
+        "longitude": 13.202391,
+        "label": null
+      },
+      {
+        "canyonId": 22982,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.920986,
+        "longitude": 13.203807,
+        "label": null
+      },
+      {
+        "canyonId": 22982,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.926262,
+        "longitude": 13.20186,
+        "label": null
+      },
+      {
+        "canyonId": 22982,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 46.925919,
+        "longitude": 13.203818,
+        "label": "depart d'approche"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.926262,
+      "longitude": 13.20186,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

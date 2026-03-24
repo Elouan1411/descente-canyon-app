@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:15.951400+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23832,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23832/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23832/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23832/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23832/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23832,
+    "identity": {
+      "nom": "Klammbach",
+      "nomComplet": "Klammbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23832/Klammbach.html"
+    },
+    "location": {
+      "pays": "Allemagne",
+      "region": "Bayern",
+      "departement": "Oberbayern",
+      "communePrincipale": "Kreuth",
+      "communes": [
+        "Landkreis Miesbach",
+        "Kreuth"
+      ],
+      "massif": "Mangfallgebirge",
+      "bassin": "Weißach-Tegernsee",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2III",
+      "interet": 1.5,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1070,
+      "deniveleM": 230,
+      "longueurM": 2350,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h10min",
+      "descente": "2h50min",
+      "retour": "10"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23832,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.60577,
+        "longitude": 11.71427,
+        "label": null
+      },
+      {
+        "canyonId": 23832,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.62051,
+        "longitude": 11.71672,
+        "label": null
+      },
+      {
+        "canyonId": 23832,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.621811,
+        "longitude": 11.713908,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.621811,
+      "longitude": 11.713908,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

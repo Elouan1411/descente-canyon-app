@@ -1,0 +1,139 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:42.886868+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23955,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23955/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23955/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23955/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23955/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23955,
+    "identity": {
+      "nom": "Törlergraben",
+      "nomComplet": "Törlergraben, Thaleralmgraben",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23955/Torlergraben.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Tyrol",
+      "departement": "Kufstein",
+      "communePrincipale": "Thiersee",
+      "communes": [
+        "Thiersee"
+      ],
+      "massif": "Brandenberger Alpen",
+      "bassin": "Inn",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a3III",
+      "interet": 1.5,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1330,
+      "deniveleM": 430,
+      "longueurM": 3000,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 25,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "2h",
+      "descente": "5h",
+      "retour": "50min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23955,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.564072,
+        "longitude": 11.960497,
+        "label": "E 1 (entrée direct, les armarrages pour 5 rappels equipées 23.08.2017)"
+      },
+      {
+        "canyonId": 23955,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.540817,
+        "longitude": 11.964446,
+        "label": null
+      },
+      {
+        "canyonId": 23955,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.537163,
+        "longitude": 11.914578,
+        "label": "P 2 ( à Kaiserhaus pour approche Amor/Riml)"
+      },
+      {
+        "canyonId": 23955,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.55595,
+        "longitude": 12.004491,
+        "label": "P 1 (Parking alternatif: Riedenberg)"
+      },
+      {
+        "canyonId": 23955,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.562344,
+        "longitude": 11.960746,
+        "label": "E 2 (l'entrée par Riml/Amor)"
+      },
+      {
+        "canyonId": 23955,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.553661,
+        "longitude": 11.961163,
+        "label": "E 3 (l'entrée partie aval)"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.537163,
+      "longitude": 11.914578,
+      "label": "P 2 ( à Kaiserhaus pour approche Amor/Riml)"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_5c64da7a039944f6",
+          "kind": "MAP",
+          "title": "2218 Kundl (ÖK25V (BEV))",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

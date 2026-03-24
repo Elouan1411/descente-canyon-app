@@ -1,0 +1,172 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:45.742921+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23124,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23124/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23124/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23124/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23124/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23124,
+    "identity": {
+      "nom": "Deiningschlucht",
+      "nomComplet": "Deiningschlucht, Deiningbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23124/Deiningschlucht.html"
+    },
+    "location": {
+      "pays": "Allemagne",
+      "region": "Bayern",
+      "departement": "Oberbayern",
+      "communePrincipale": "Kochel",
+      "communes": [
+        "Landkreis Bad Tölz-Wolfratshausen",
+        "Kochel"
+      ],
+      "massif": "Estergebirge",
+      "bassin": "Walchensee",
+      "coursEau": "Deiningbach"
+    },
+    "rating": {
+      "cotation": "v4a3III",
+      "interet": 1.1,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1170,
+      "deniveleM": 240,
+      "longueurM": 4000,
+      "cascadeMaxM": 40,
+      "cordeMiniM": 40,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "2h",
+      "descente": "4h",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23124,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.606289,
+        "longitude": 11.301124,
+        "label": null
+      },
+      {
+        "canyonId": 23124,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.599281,
+        "longitude": 11.302836,
+        "label": null
+      },
+      {
+        "canyonId": 23124,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.59383,
+        "longitude": 11.314837,
+        "label": null
+      },
+      {
+        "canyonId": 23124,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.593838,
+        "longitude": 11.314501,
+        "label": "1 : prendre sentier \"445\" direction \"Heimgarten\""
+      },
+      {
+        "canyonId": 23124,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.595791,
+        "longitude": 11.304116,
+        "label": "2 : bifurcation: à droite (\"445\" - \"Heimgarten\")"
+      },
+      {
+        "canyonId": 23124,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.596081,
+        "longitude": 11.303952,
+        "label": "3 : bifurcation: à droite vers ruisseau (Deiningbach) - sortir \"445\""
+      },
+      {
+        "canyonId": 23124,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.600216,
+        "longitude": 11.303469,
+        "label": "4 : traverser Deiningbach et prendre la sente zig-zag vers le haut"
+      },
+      {
+        "canyonId": 23124,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.602436,
+        "longitude": 11.303019,
+        "label": "5 : vers nord-ouest - passer la hut de chasse et continuer quasi horizontal"
+      },
+      {
+        "canyonId": 23124,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.605309,
+        "longitude": 11.299406,
+        "label": "6 : autre sente de la bas - continuer vers le-haut (nord)"
+      },
+      {
+        "canyonId": 23124,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.604733,
+        "longitude": 11.294232,
+        "label": "Approche alternative (sente : longer au dessus du ruisseau) ici à droite vers le haut"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.59383,
+      "longitude": 11.314837,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_748267f4e119d571",
+          "kind": "MAP",
+          "title": "8433 Eschenlohe (TK25 Bay. Landesvermessungsamt)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

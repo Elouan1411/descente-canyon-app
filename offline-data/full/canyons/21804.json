@@ -1,0 +1,149 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:47.754749+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21804,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21804/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21804/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21804/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21804/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/21804/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 21804,
+    "identity": {
+      "nom": "Hidan Siq (inférieur-III)",
+      "nomComplet": "Wadi el Hidan Siq (inférieur-III)",
+      "prefixeNom": "Wadi el",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21804/Hidan-Siq-inferieur-III.html"
+    },
+    "location": {
+      "pays": "Jordanie",
+      "region": "Mazra`a",
+      "departement": "Madaba",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Moab",
+      "bassin": "Dead Sea",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a3III",
+      "interet": 3.4,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 200,
+      "deniveleM": 30,
+      "longueurM": 200,
+      "cascadeMaxM": null,
+      "cordeMiniM": null,
+      "navette": "2.0km"
+    },
+    "timings": {
+      "approche": "1h15",
+      "descente": "40min",
+      "retour": "1h05"
+    },
+    "topo": {
+      "accesAval": "comme Mujib inf.",
+      "accesAmont": null,
+      "approche": null,
+      "descente": "de la confluence Mujib-Hidan (=\"malaqi\") Hidan Siq (Siq = clue) vers le haut et retours",
+      "retour": "comme l'approche ou combination avec Mujib inf. (\"Malaqi Trail\")",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "Dernière partie du interdit Hidan inf. , possible avec guide de RSCN (Mujib Bridge)"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21804,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 31.455692,
+        "longitude": 35.594063,
+        "label": "vers amont"
+      },
+      {
+        "canyonId": 21804,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 31.46727,
+        "longitude": 35.57296,
+        "label": null
+      },
+      {
+        "canyonId": 21804,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 31.452097,
+        "longitude": 35.566444,
+        "label": "depart de la piste d'approche"
+      },
+      {
+        "canyonId": 21804,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 31.45649,
+        "longitude": 35.584995,
+        "label": "arrivée dans le3 lit du Mujib á l'entrée du Mujib Siq (Siq=clue)"
+      },
+      {
+        "canyonId": 21804,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 31.457834,
+        "longitude": 35.595058,
+        "label": "pointe du retour"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 31.46727,
+      "longitude": 35.57296,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_f8a93134b0f783d2",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.rscn.org.jo/AdventuresActivitiesMujib.asp?ID=ctr3_2",
+          "url": "http://www.rscn.org.jo/AdventuresActivitiesMujib.asp?ID=ctr3_2"
+        },
+        {
+          "id": "resource_cd16a125c7e5f081",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/Canyons/HidanMiddleCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/Canyons/HidanMiddleCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 147,
+          "status": "Indéfini",
+          "action": "Réglemente",
+          "title": "Arrêté",
+          "summary": "possible avec guide de RSCN",
+          "remark": null,
+          "details": null,
+          "effectiveDate": null,
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/147/legislation.html",
+          "attachments": []
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:49:14.634689+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21394,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21394/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21394/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21394/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21394/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21394,
+    "identity": {
+      "nom": "Ayerne",
+      "nomComplet": "Torrent d' Ayerne, Le Torrent des Diablerets, Le Torrent",
+      "prefixeNom": "Torrent d'",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21394/Ayerne.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Ormont-Dessus",
+      "departement": "Vaud",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": null,
+      "coursEau": "Le Torrent"
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 2.1,
+      "nbVotes": 6
+    },
+    "metrics": {
+      "altitudeDepartM": 1450,
+      "deniveleM": 240,
+      "longueurM": 700,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 30,
+      "navette": "4.0km"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "1h30",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": "Depuis Le P amont (attention proprieté privé, mais départ d'un sentier...) une sente se dirige vers une passerelle.Point de départ",
+      "descente": null,
+      "retour": "Après le grand rappel, il y a encore un toboggan, (pas beaucoup de fond et glisser bien à droite) au niveau de la première passerelle. Sortie RD au niveau de la deuxième passerelle.",
+      "engagement": null,
+      "periode": "Juin-Octobre",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21394,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 46.361137,
+        "longitude": 7.156361,
+        "label": null
+      },
+      {
+        "canyonId": 21394,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 46.356293,
+        "longitude": 7.156072,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 46.361137,
+      "longitude": 7.156361,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:15.947614+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23565,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23565/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23565/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23565/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23565/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23565,
+    "identity": {
+      "nom": "Uregn",
+      "nomComplet": "Uregn",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23565/Uregn.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Acquarossa",
+      "departement": "Tessin",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": "Brenno",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a3IV",
+      "interet": 3.0,
+      "nbVotes": 6
+    },
+    "metrics": {
+      "altitudeDepartM": 1009,
+      "deniveleM": 390,
+      "longueurM": 1150,
+      "cascadeMaxM": 35,
+      "cordeMiniM": 35,
+      "navette": "4.9km"
+    },
+    "timings": {
+      "approche": "10s",
+      "descente": "3-4h",
+      "retour": "1min"
+    },
+    "topo": {
+      "accesAval": "Navette bien pratique, car sur la carte, il n’y a pas vraiment de chemin de rando sans faire de détour pour éviter la navette.",
+      "accesAmont": null,
+      "approche": "Le canyon commence à 5m du parking supérieur !",
+      "descente": "Enchainement de beaucoup de petits rappels parfois bien sculptés, dans une gorge de 10-30m de profondeur. Peu de vasques profondes (en 2015).",
+      "retour": "On sort directement à la route à 100m de la voiture aval (alt. 618m).",
+      "engagement": "Peu d’échappatoires évidentes.",
+      "periode": null,
+      "geologie": null,
+      "historique": "Première descente entre alt. 1009m et le pont à alt. 810m, Patrick Chollot et Timo Stammwitz, le 02/08/2012.\n\nPremière descente entre le pont à 810m et le pont à 618m, inconnus ?",
+      "remarques": "Equipement monopoint bon état, mais peut souffrir des crues, prévoir la trousse de rééquipement."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23565,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.4687,
+        "longitude": 8.915594,
+        "label": null
+      },
+      {
+        "canyonId": 23565,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.466209,
+        "longitude": 8.928971,
+        "label": null
+      },
+      {
+        "canyonId": 23565,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 46.466953,
+        "longitude": 8.928603,
+        "label": null
+      },
+      {
+        "canyonId": 23565,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 46.468758,
+        "longitude": 8.915508,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 46.466953,
+      "longitude": 8.928603,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

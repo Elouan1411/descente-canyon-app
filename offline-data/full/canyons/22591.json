@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:36.433556+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22591,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22591/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22591/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22591/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22591/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/22591/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 22591,
+    "identity": {
+      "nom": "Las Trancas",
+      "nomComplet": "Cascadas Las Trancas",
+      "prefixeNom": "Cascadas",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22591/Las-Trancas.html"
+    },
+    "location": {
+      "pays": "Chili",
+      "region": "Región del Biobío",
+      "departement": "Provincia de Ñuble",
+      "communePrincipale": "Chillian",
+      "communes": [
+        "Chillian"
+      ],
+      "massif": "Nevados de Chillán",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.0,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1435,
+      "deniveleM": 110,
+      "longueurM": 400,
+      "cascadeMaxM": 60,
+      "cordeMiniM": 60,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "2h",
+      "descente": "1h",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "L'accès se fait à pied ou à cheval depuis le village de las Trancas.",
+      "accesAmont": null,
+      "approche": "Prendre la piste de Shangrilla et la suivre en direction de la zone de captage qui marque l'amont des cascades. Deux bonnes heures de marche à pied ou une heure de cheval.",
+      "descente": "Il s'agit d'une succession de trois cascades dont les deux dernières sont visibles depuis le village. Essentiellement de la descente en rappel arrosé. .",
+      "retour": "Au pied de la dernière cascade un sentier bien marqué ramène au village.",
+      "engagement": "Le canyon n'est pas encore équipé. Tout en naturel. Prudence.",
+      "periode": "De novembre à mars.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Le torrent est utilisé pour l'alimentation en eau potable du village."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22591,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": -36.90646,
+        "longitude": -71.473557,
+        "label": null
+      },
+      {
+        "canyonId": 22591,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": -36.90715,
+        "longitude": -71.474327,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": -36.90646,
+      "longitude": -71.473557,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 227,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Information",
+          "summary": "Il convient de se signaler auprès du poste de carabiniers situé juste en face des cascades !!",
+          "remark": null,
+          "details": null,
+          "effectiveDate": null,
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/227/legislation.html",
+          "attachments": []
+        }
+      ]
+    }
+  }
+}

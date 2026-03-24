@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:49.809711+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23453,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23453/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23453/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23453/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23453/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23453,
+    "identity": {
+      "nom": "Salette",
+      "nomComplet": "Ruisseau de la Salette",
+      "prefixeNom": "Ruisseau de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23453/Salette.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Hautes-Alpes",
+      "communePrincipale": "Aspres-lès-Corps",
+      "communes": [
+        "Aspres-lès-Corps"
+      ],
+      "massif": "Ecrins - Oisans - Champsaur",
+      "bassin": "Drac",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a2I",
+      "interet": 1.1,
+      "nbVotes": 8
+    },
+    "metrics": {
+      "altitudeDepartM": 1100,
+      "deniveleM": 70,
+      "longueurM": 600,
+      "cascadeMaxM": 7,
+      "cordeMiniM": 10,
+      "navette": "2.4km"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "1h",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": "reprendre la D212C, passez le cimetière canadien, prendre la première à droite. Quelques mètres pour une bonne place à gauche.",
+      "approche": "Immédiat.",
+      "descente": "Marche entrecoupée de quelques ressauts ou cascades parfois ludiques.",
+      "retour": "Sente rive G.",
+      "engagement": "Aucun engagement , on peut se mettre à l'abris tout le temps. De nombreuses sentes de pêcheurs le long du parcours.",
+      "periode": "En eau toute l'année. Éviter tout de même la période de fonte des neiges (bassin versant assez important) mais pas très haut (2400m).",
+      "geologie": null,
+      "historique": null,
+      "remarques": "- Beaucoup de pêcheurs très étonnés de voir des canyonistes : normal :-)\n\n- La première moitié du parcours est la moins inintéressante, il est possible de remonter à la route par une sente de pêcheur (peu visible) après l’enchaînement C6 C4 C4 ce qui permet d'éviter la navette et les 10 minutes de marche finale."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23453,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 44.837982,
+        "longitude": 5.974027,
+        "label": null
+      },
+      {
+        "canyonId": 23453,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 44.831738,
+        "longitude": 5.972791,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 44.837982,
+      "longitude": 5.974027,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_f06f3bbae647fab7",
+          "kind": "MAP",
+          "title": "3336 ET Les Deux Alpes - Parc des Ecrins (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

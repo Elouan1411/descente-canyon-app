@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:48:59.416611+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21330,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21330/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21330/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21330/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21330/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21330,
+    "identity": {
+      "nom": "Farga",
+      "nomComplet": "Salt de la Farga, El Llobregat",
+      "prefixeNom": "Salt de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21330/Farga.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Cataluña",
+      "departement": "Barcelona",
+      "communePrincipale": "Castellar'n'hug",
+      "communes": [
+        "La Pobla de Lillet",
+        "Castellar'n'hug"
+      ],
+      "massif": null,
+      "bassin": "Rio Llobregat",
+      "coursEau": "El Llobregat"
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 2.0,
+      "nbVotes": 9
+    },
+    "metrics": {
+      "altitudeDepartM": 1200,
+      "deniveleM": 60,
+      "longueurM": 120,
+      "cascadeMaxM": 18,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "45min",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "A Campdevanol (entre Ribes de Freser et Ripoll), prendre la direction de Gombrèn et aller jusqu'à La Pobla de Lillet. A l'entrée du village, tourner à droite en direction de Castellar de n'Hug. Après 8km, se garer devant l’hôtel \"Fonts del Llobregat\". Le canyon se situe sous le pont.",
+      "accesAmont": null,
+      "approche": "On entre dans le canyon juste derrière l’hôtel.",
+      "descente": "4 rappels arrosés dans de la pélite. Faire attention dans le dernier (trou sous la veine d'eau). Ce dernier est équipé également hors actif.",
+      "retour": "Après le dernier rappel, sortir de suite en rive droite. Une sente raide nous amène à un captage et à la route.",
+      "engagement": "Pas d'échappatoire dans cette courte gorge. Bien équipé.",
+      "periode": "Bien observer le débit depuis la route. A faire à l'étiage voir fin du printemps.",
+      "geologie": "Pélite",
+      "historique": "?",
+      "remarques": "Canyon dangereux : danger par gros débit dans le dernier rappel. A faire à l'étiage donc l'été..."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21330,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.278629,
+        "longitude": 2.004659,
+        "label": null
+      },
+      {
+        "canyonId": 21330,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.278545,
+        "longitude": 2.004065,
+        "label": null
+      },
+      {
+        "canyonId": 21330,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 42.278473,
+        "longitude": 2.004597,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 42.278473,
+      "longitude": 2.004597,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_6ce49fda1ac7e652",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://ropewiki.com/Farga",
+          "url": "http://ropewiki.com/Farga"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

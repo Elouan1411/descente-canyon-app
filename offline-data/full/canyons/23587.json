@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:20.935877+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23587,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23587/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23587/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23587/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23587/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23587,
+    "identity": {
+      "nom": "Saar",
+      "nomComplet": "Saar, Saartobel, Saarfall",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23587/Saar.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Vilters-Wangs",
+      "departement": "Saint Gallen",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Alpes glaronaises",
+      "bassin": "Rhein",
+      "coursEau": "Saar"
+    },
+    "rating": {
+      "cotation": "v5a2II",
+      "interet": 1.5,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 700,
+      "deniveleM": 210,
+      "longueurM": 800,
+      "cascadeMaxM": null,
+      "cordeMiniM": null,
+      "navette": "2.0km"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "2h",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": "Sortie autoroute A13 Sargans, suivre Vilters, se garer sur Vilterser Berg proche du canyon.",
+      "accesAmont": null,
+      "approche": null,
+      "descente": "Suite de cascades inclinées en forêt qui donnent sur la grande cascade finale.",
+      "retour": null,
+      "engagement": "Quelques sauts et tobs possible, descente à priori verticale.",
+      "periode": "Mai - Décembre, souvent débit faible.",
+      "geologie": "Calcaire - Schiste.",
+      "historique": "Inconnu.",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23587,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.01572,
+        "longitude": 9.45832,
+        "label": null
+      },
+      {
+        "canyonId": 23587,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.017689,
+        "longitude": 9.4669,
+        "label": null
+      },
+      {
+        "canyonId": 23587,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 47.016171,
+        "longitude": 9.4593,
+        "label": null
+      },
+      {
+        "canyonId": 23587,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 47.018398,
+        "longitude": 9.46678,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 47.016171,
+      "longitude": 9.4593,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_41373e153daf03ee",
+          "kind": "MAP",
+          "title": "1155 Sargans (Swisstopo)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

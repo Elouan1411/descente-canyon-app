@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:22.689461+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23036,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23036/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23036/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23036/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23036/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23036,
+    "identity": {
+      "nom": "Rif Cros",
+      "nomComplet": "Torrent de Rif Cros",
+      "prefixeNom": "Torrent de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23036/Rif-Cros.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Hautes-Alpes",
+      "communePrincipale": "Les Vigneaux",
+      "communes": [
+        "Les Vigneaux"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 0.8,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 1560,
+      "deniveleM": 100,
+      "longueurM": 200,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 25,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "45min",
+      "descente": "1h",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "De l'Argentière la Bessée prendre la D944E vers les Vigneaux. Poursuivre et prendre à droite la D4 vers Briançon.\n\nFaire 150m et prendre à gauche la petite route qui monte à travers le village, passer une épingle, laisser une route à gauche, et juste après une petite chapelle, prendre à gauche la route qui monte et qui se transforme rapidement en piste. La suivre (nombreux lacets) jusqu'à une barrière et un réservoir, se garer.",
+      "accesAmont": null,
+      "approche": "Du parking prendre le sentier (piste au début) qui vous mènera jusqu'au départ du torrent.\n\nPrendre à gauche à chaque intersections (et deux affluents à traverser).",
+      "descente": "Une petite dizaine de rappels s'enchainent dans un milieu rocheux très instable.",
+      "retour": "Après l'arrivée du 2eme affluent remonter au mieux dans la foret pour rejoindre la piste prise à l'aller.",
+      "engagement": "Des échappatoires en RG tout le long",
+      "periode": "A faire à la fonte des neiges ou après des pluies.",
+      "geologie": null,
+      "historique": "Equipé de cordelettes sur blocs coincés en février 2012.\n\nCet équipement disparaitra surement en partie à la prochaine avalanche.",
+      "remarques": "Attention, ce torrent est un gros couloir d'avalanche.\n\nLa configuration change chaque année, tous les blocs rocheux sont très instables."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23036,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.839058,
+        "longitude": 6.536973,
+        "label": null
+      },
+      {
+        "canyonId": 23036,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.834538,
+        "longitude": 6.538968,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.834538,
+      "longitude": 6.538968,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_dfde5fc7c645a6ab",
+          "kind": "MAP",
+          "title": "3536 OT Briancon (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

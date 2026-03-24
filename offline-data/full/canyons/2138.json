@@ -1,0 +1,178 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:44:12.340409+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2138,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2138/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2138/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2138/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2138/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/2138/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 2138,
+    "identity": {
+      "nom": "Bellevaux",
+      "nomComplet": "Cascades de Bellevaux, Ruisseau des Nants",
+      "prefixeNom": "Cascades de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2138/Bellevaux.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Haute-Savoie",
+      "communePrincipale": "Bellevaux",
+      "communes": [
+        "Bellevaux"
+      ],
+      "massif": "Chablais - Platé - Aiguilles Rouges",
+      "bassin": "Drance",
+      "coursEau": "Ruisseau des Nants"
+    },
+    "rating": {
+      "cotation": "v4a2II",
+      "interet": 2.2,
+      "nbVotes": 20
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": 100,
+      "longueurM": 250,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 35,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "1h30",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": "Au village de Bellevaux, prendre la deuxième route à droite en venant de Mégevette (tabac) puis descendre derrière l'église, se garer avant le pont sur le Brévon, à droite après le parking de l'accrobranche.\n\nPossibilité de garer une voiture en montant vers le Frêne à gauche juste après le sentier qui monte au départ.",
+      "accesAmont": null,
+      "approche": "A PIED prendre la route en direction des cascades et emprunter un sentier 250m à gauche, fléché Chatelard jusqu'au départ du canyon.\n\nAutre possibilité depuis l'été 2014 : emprunter la via-ferrata qui arrive juste sous le départ du canyon (matériel spécifique de via-ferrata à prévoir).\n\nA noter que la via est interdite l'hiver du premier novembre au 31 mars par arrêté municipal.",
+      "descente": "Canyon d'initiation par excellence avec un belle cascade de 30m et un saut possible dans la dernière vasque. Très bien équipé. Bien sonder la dernière vasque très encombrée depuis les travaux de la via ferrata.",
+      "retour": "On rejoint la route en empruntant le départ de la via en sens inverse sur quelques mètres.\n\nUn ancrage a été ajouté pour descendre jusqu'en bas du nant en évitant l'entrée de la via.",
+      "engagement": "La via ferrata vous permet plein d'échappatoire.",
+      "periode": "On ne doit nager que dans la dernière vasque. Les vasques suspendues sont peu profondes et engravées.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Attention les équipeurs de la via-ferrata ont disqué un relais ! Celui avec la main courante multipoints après la grande cascade.\n\nDe plus, il serait peut-être judicieux d'équiper les 2 derniers ressauts pour sortir directement. C'est fait."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2138,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.251583,
+        "longitude": 6.533972,
+        "label": null
+      },
+      {
+        "canyonId": 2138,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.251694,
+        "longitude": 6.531972,
+        "label": null
+      },
+      {
+        "canyonId": 2138,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.252117,
+        "longitude": 6.530945,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.252117,
+      "longitude": 6.530945,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_87a84633f292e5a0",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons de Haute-Savoie (réédition)",
+          "authors": [
+            "Ch. Charletty",
+            "G. Gudefin",
+            "B. Hugon",
+            "J-P. Beaudoin"
+          ],
+          "publicationYear": 2004,
+          "reference": "ISBN: 2741702888",
+          "editor": "GAP",
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/128/Canyons-de-Haute-Savoie.html"
+        },
+        {
+          "id": "biblio_1e61b240bec55aed",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons de Haute Savoie",
+          "authors": [
+            "Christian Charletty",
+            "Gérard Gudefin",
+            "Bruno Hugon",
+            "Comité Départemental de Spéléologie 74"
+          ],
+          "publicationYear": 1997,
+          "reference": "ISBN 2-7417-0202-0",
+          "editor": "Gap",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/19/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_0e7ca75ede9890e1",
+          "kind": "MAP",
+          "title": "3429 ET Bonneville-Cluses (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 288,
+          "status": "Obsolète",
+          "action": "Réglemente",
+          "title": "Arrêté municipal (Bellevaux) - 14 avr 2014",
+          "summary": "En raison de travaux de purge sur le tracé de la nouvelle via ferrata, interdiction du 14 avril au 14 juin de 7h à 18h du lundi au vendredi inclus (arrêté n°25-2014).",
+          "remark": null,
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.",
+          "effectiveDate": "14 juin 2014",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/288/legislation.html",
+          "attachments": []
+        },
+        {
+          "id": 279,
+          "status": "Obsolète",
+          "action": "Interdit",
+          "title": "Arrêté municipal (Bellevaux) - 30 sept 2013",
+          "summary": "Dans le cadre de l’installation d’une via-ferrata, la commune mène des opérations de purge et de déroctage, et a pris un arrêté interdisant l’accès au chantier pour des raisons de sécurité.\n\nLa fin des travaux est prévu au plus tard pour le vendredi 13 décembre 2013. L'interdiction d'accès à l'enceinte des travaux est maintenue hors des périodes de travaux (lundi-vendredi 7h-18h)",
+          "remark": null,
+          "details": "Arrêté municipal n°23/2013 du 30 septembre 2013",
+          "effectiveDate": "14 déc 2013",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/279/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté municipal n°23/2013 du 30 septembre 2013",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem279_pj1.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

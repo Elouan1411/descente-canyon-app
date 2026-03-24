@@ -1,0 +1,155 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:43.380974+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23962,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23962/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23962/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23962/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23962/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23962,
+    "identity": {
+      "nom": "Cueva del Oso",
+      "nomComplet": "Barranco de la Cueva del Oso",
+      "prefixeNom": "Barranco de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23962/Cueva-del-Oso.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Aragón",
+      "departement": "Huesca",
+      "communePrincipale": "Aragüés del Puerto",
+      "communes": [
+        "Aragüés del Puerto"
+      ],
+      "massif": null,
+      "bassin": "Aragon Subordàn",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 1.5,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": null,
+      "longueurM": null,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 35,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "45min/1h",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "D'Aragües del Puerto, remonter la vallée de l'Osia en direction de Lizara (nord). Se stationner au niveau du puente de las Corralones et du refuge du même nom (aire de détente).",
+      "accesAmont": null,
+      "approche": "Remonter la route à pied et prendre dans la première épingle à droite le sentier fléché vers le refuge de Lizara qui remonte le barranco par sa rive gauche. On débute la descente quand le sentier traverse le barranco.",
+      "descente": "Quelques obstacles originaux joliment sculptés. Descente modeste.",
+      "retour": "De la dernière cascade, marcher jusqu'au petit pont et sortir en rive gauche au niveau de l'aire de détente.",
+      "engagement": null,
+      "periode": "Peu d'eau en été.",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23962,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.75676,
+        "longitude": -0.63516,
+        "label": null
+      },
+      {
+        "canyonId": 23962,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.754509,
+        "longitude": -0.63193,
+        "label": "Petit pont"
+      },
+      {
+        "canyonId": 23962,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 42.754978,
+        "longitude": -0.631948,
+        "label": null
+      },
+      {
+        "canyonId": 23962,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 42.755703,
+        "longitude": -0.63267,
+        "label": "Début sentier d'approche"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 42.754978,
+      "longitude": -0.631948,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_b4c9f8b89ab25817",
+          "kind": "TOPOGUIDE",
+          "title": "Randonnées aquatiques et canyons faciles des Pyrénées",
+          "authors": [
+            "Bruno Matéo"
+          ],
+          "publicationYear": 2010,
+          "reference": "978-2-84182-454-0",
+          "editor": "Rando Editions",
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/164/Randonnees-aquatiques--canyons-faciles-des-Pyrenees.html"
+        },
+        {
+          "id": "biblio_f98bab071a8a9693",
+          "kind": "TOPOGUIDE",
+          "title": "Carte N°2 - Pays Basque, Béarn, Navarre, Jacetania",
+          "authors": [
+            "Patrick Gimat + Bernard Trouvé"
+          ],
+          "publicationYear": 1999,
+          "reference": null,
+          "editor": null,
+          "status": "en stock\n\n- 7,50 € -\n\nCommandez cet ouvrage dès maintenant !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/121/Carte-n°2-:-Pays-Basque--Bearn--Navarre--Jacetania.html"
+        },
+        {
+          "id": "biblio_ac4af1f2594e871a",
+          "kind": "TOPOGUIDE",
+          "title": "Aragon. Gargantas y barrancos. 2 : Pirineo Central",
+          "authors": [
+            "BIARGE Ana. BIARGE Fernando"
+          ],
+          "publicationYear": 1991,
+          "reference": "84-404-8832-7",
+          "editor": "A compte d'auteur",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1134/topoguide.html"
+        }
+      ],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

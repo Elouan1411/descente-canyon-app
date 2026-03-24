@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:47:32.579576+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2943,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2943/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2943/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2943/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2943/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2943,
+    "identity": {
+      "nom": "Alauzon",
+      "nomComplet": "Ruisseau de l' Alauzon",
+      "prefixeNom": "Ruisseau de l'",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2943/Alauzon.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Drôme",
+      "communePrincipale": "Buis-les-Baronnies",
+      "communes": [
+        "Buis-les-Baronnies"
+      ],
+      "massif": null,
+      "bassin": "Ouvèze",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 0.9,
+      "nbVotes": 6
+    },
+    "metrics": {
+      "altitudeDepartM": 680,
+      "deniveleM": 90,
+      "longueurM": 800,
+      "cascadeMaxM": 10,
+      "cordeMiniM": 10,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "1h",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "De Buis les Baronnies, rendez vous à la Roche–sur-le-Buis. Arrêtez vous 1,7 km plus loin au niveau d’un pont. Ne génez pas.",
+      "accesAmont": null,
+      "approche": "Retournez sur vos pas et empruntez la piste interdite aux véhicules. Dépassez le pont et commencez la descente au niveau du virage en épingle.",
+      "descente": "Le début est à sec, mais très vite les résurgences remplissent le cours d’eau.\n\nLe principal obstacle est une cascade de 10m avec une belle vasque (Attention prise d’eau). Continuez en empruntant les chemins RG et RD (Respectez les installations hydrauliques). Passez le pont de la route pour arriver aux derniers obstacles dont une cascade de 7m. Faîtes vous discret, il y a des habitations.",
+      "retour": "Remontez la dernière cascade grâce à la corde fixe et par le cours d’eau rejoignez la route.",
+      "engagement": "Ensemble peu encaissé.",
+      "periode": "De l'eau aprés les résurgences.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Quelques obstacles ludiques. Attention aux propriétés privées."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2943,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.271664,
+        "longitude": 5.343196,
+        "label": null
+      },
+      {
+        "canyonId": 2943,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.270908,
+        "longitude": 5.334721,
+        "label": null
+      },
+      {
+        "canyonId": 2943,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.271816,
+        "longitude": 5.335643,
+        "label": null
+      },
+      {
+        "canyonId": 2943,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 44.271172,
+        "longitude": 5.340943,
+        "label": "Pont"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.271816,
+      "longitude": 5.335643,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_2f6c53ae7f1abe4d",
+          "kind": "MAP",
+          "title": "3140 ET Mont-Ventoux (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:08.385635+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22468,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22468/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22468/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22468/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22468/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22468,
+    "identity": {
+      "nom": "Ursprungsbach",
+      "nomComplet": "Ursprungsbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22468/Ursprungsbach.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Davos",
+      "departement": "Graubünden/Grigioni/Grischun",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": "Landwasser",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a2II",
+      "interet": 1.4,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 1495,
+      "deniveleM": 135,
+      "longueurM": 250,
+      "cascadeMaxM": 55,
+      "cordeMiniM": 60,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "25min",
+      "descente": "1h30",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": "Se rendre à Wiesen puis chercher dans le haut du village le départ de la randonnée de la cascade (\"Wasserfall Wanderweg\"). Se garer avant le pont en bois sur le Brüggentobel, au niveau où la piste devient interdite à la circulation.",
+      "accesAmont": null,
+      "approche": "Continuer à pied la piste, passer sur un affluent RG du Brüggentobel, le long de deux maisons puis descendre dans le ravin juste avant le point 1500 m sur la carte, avant que la piste ne le coupe. (NB : on ne descend pas par le chemin de la cascade, c'est le chemin de retour)",
+      "descente": "Quelques cascades peu intéressantes avant la C55 (1 point + 1 An en RG). Il y a un palier 5m en dessous du départ. Encore une cascatelle, un peu de marche et on sort en RD au niveau d'une passerelle.",
+      "retour": "En rive droite par le chemin de la cascade qui finit par aboutir sur la piste empruntée à l'aller.",
+      "engagement": null,
+      "periode": "Attendre l'étiage. Niveau d'eau un peu conséquent (source : \"Ursprung\") et eau froide.",
+      "geologie": "Dolomite",
+      "historique": "Timo Stammwitz, Patrick Chollot, Eric Frézal et Yves Daniou le 17 juillet 2010.",
+      "remarques": "Source karstique qui alimente le ruisseau."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22468,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.711536,
+        "longitude": 9.726344,
+        "label": null
+      },
+      {
+        "canyonId": 22468,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.709206,
+        "longitude": 9.727095,
+        "label": null
+      },
+      {
+        "canyonId": 22468,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 46.711384,
+        "longitude": 9.716763,
+        "label": null
+      },
+      {
+        "canyonId": 22468,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 46.703606,
+        "longitude": 9.723008,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 46.711384,
+      "longitude": 9.716763,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

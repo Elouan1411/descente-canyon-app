@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:19.870461+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23852,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23852/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23852/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23852/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23852/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23852,
+    "identity": {
+      "nom": "Scheidbach",
+      "nomComplet": "Scheidbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23852/Scheidbach.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Tyrol",
+      "departement": "Politischer Bezirk Reutte",
+      "communePrincipale": "Häselgehr",
+      "communes": [
+        "Häselgehr"
+      ],
+      "massif": "Allgäuer Alpen",
+      "bassin": "Lech",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": null,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": 1250,
+      "deniveleM": 170,
+      "longueurM": 450,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "45min",
+      "descente": "1h40min",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": "Première descente effectuée le 25.09.92 par Catherine Caullier et Olivier Courtois.",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23852,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.301262,
+        "longitude": 10.45021,
+        "label": null
+      },
+      {
+        "canyonId": 23852,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.297291,
+        "longitude": 10.451464,
+        "label": null
+      },
+      {
+        "canyonId": 23852,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.297127,
+        "longitude": 10.45122,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.297127,
+      "longitude": 10.45122,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

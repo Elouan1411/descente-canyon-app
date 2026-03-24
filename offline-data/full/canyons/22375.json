@@ -1,0 +1,177 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:48.533281+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22375,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22375/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22375/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22375/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22375/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22375,
+    "identity": {
+      "nom": "Rosengartenschlucht (obere)",
+      "nomComplet": "Rosengartenschlucht (obere), King Size, Schinderbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22375/Rosengartenschlucht-obere.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Tyrol",
+      "departement": "Imst",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Lechtaler Alpen",
+      "bassin": "Inn",
+      "coursEau": "Schinderbach"
+    },
+    "rating": {
+      "cotation": "v4a2III",
+      "interet": 2.9,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 1190,
+      "deniveleM": 140,
+      "longueurM": 500,
+      "cascadeMaxM": 45,
+      "cordeMiniM": 50,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "2h",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "De Imst, prendre la petite route raide qui monte à Hochimst (station de ski de la ville).\n\nA Hochimst, passer le rond-point et prendre la route en face à gauche.\n\nSe garer très vite sur le grand parking en contrebas, non loin des cours de tennis.",
+      "accesAmont": null,
+      "approche": "Remonter au niveau de la route et prendre la piste forestière fermée à la circulation direction plein ouest (\"Ursprungweg\"). Cette piste mène à un captage d'eau mais aussi à la piste de luge de la station (\"Alpine coaster\").\n\nElle se transforme en sentier, passe à proximité d'une source puis se rapproche du cours d'eau que l'on rejoint alors aisément par des petites sentes.",
+      "descente": null,
+      "retour": "Sortir au niveau du captage et suivre la sente jusqu'au parking.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22375,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.242481,
+        "longitude": 10.709943,
+        "label": null
+      },
+      {
+        "canyonId": 22375,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.239628,
+        "longitude": 10.716136,
+        "label": null
+      },
+      {
+        "canyonId": 22375,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.241066,
+        "longitude": 10.71991,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.241066,
+      "longitude": 10.71991,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_80a52b6e4b57f154",
+          "kind": "TOPOGUIDE",
+          "title": "Tiroler Canyoningführer - The Canyoning guide for Tyrol",
+          "authors": [
+            "Alexander Riml",
+            "Gunnar Amor"
+          ],
+          "publicationYear": 2012,
+          "reference": "978-3-200-02343-7",
+          "editor": null,
+          "status": "en stock\n\n- 44,90 € -\n\nCommandez cet ouvrage dès maintenant !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/170/Tiroler-Canyoningfuhrer---The-Canyoning-guide-for-Tyrol.html"
+        },
+        {
+          "id": "biblio_a216ca92fa29ca51",
+          "kind": "TOPOGUIDE",
+          "title": "Canyoning in Bayern und Tirol",
+          "authors": [
+            "Werner Baumgarten"
+          ],
+          "publicationYear": 2010,
+          "reference": null,
+          "editor": null,
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1226/topoguide.html"
+        },
+        {
+          "id": "biblio_62ea7c9c13b902fd",
+          "kind": "TOPOGUIDE",
+          "title": "146 Imst (ÖK 50) - 1:50000",
+          "authors": [],
+          "publicationYear": null,
+          "reference": null,
+          "editor": null,
+          "status": null,
+          "detailUrl": null
+        },
+        {
+          "id": "biblio_d4232c1ca7906fe7",
+          "kind": "TOPOGUIDE",
+          "title": "3/4 Lechtaler Alpen, Heiterwang - und Muttekopfgebiet (Alpenvereins (AV) Karte) - 1/25000",
+          "authors": [],
+          "publicationYear": null,
+          "reference": null,
+          "editor": null,
+          "status": null,
+          "detailUrl": null
+        },
+        {
+          "id": "biblio_6366f40dc50535b5",
+          "kind": "TOPOGUIDE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/C.....ereRosengartenCanyon",
+          "authors": [],
+          "publicationYear": null,
+          "reference": null,
+          "editor": null,
+          "status": null,
+          "detailUrl": "http://canyon.carto.net/cwiki/bin/view/Canyons/ObereRosengartenCanyon"
+        },
+        {
+          "id": "biblio_0484386377e493d9",
+          "kind": "TOPOGUIDE",
+          "title": "https://www.alpinesicherheit.com/2008/ob.....g-schluchtenfuehrer/",
+          "authors": [],
+          "publicationYear": null,
+          "reference": null,
+          "editor": null,
+          "status": null,
+          "detailUrl": "https://www.alpinesicherheit.com/2008/obere-rosengartenschlucht-canyoning-schluchtenfuehrer/"
+        }
+      ],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,156 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:44:12.570939+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2139,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2139/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2139/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2139/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2139/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2139,
+    "identity": {
+      "nom": "Crève-Coeur",
+      "nomComplet": "Torrent de Crève-Coeur",
+      "prefixeNom": "Torrent de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2139/Creve-Coeur.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Haute-Savoie",
+      "communePrincipale": "Sallanches",
+      "communes": [
+        "Sallanches"
+      ],
+      "massif": "Chablais - Platé - Aiguilles Rouges",
+      "bassin": "Arve",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v6a2V",
+      "interet": 2.8,
+      "nbVotes": 28
+    },
+    "metrics": {
+      "altitudeDepartM": 1250,
+      "deniveleM": 670,
+      "longueurM": 2700,
+      "cascadeMaxM": 90,
+      "cordeMiniM": 50,
+      "navette": "6.5km"
+    },
+    "timings": {
+      "approche": "45min",
+      "descente": "6h30",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "Sur la N205 en direction de Sallanches, tourner à gauche pour Luzier. Au village, se garer au pont.",
+      "accesAmont": "De Sallanches, suivre St Martin sur Arve, puis Reninge. Peu après les Chalets du Grand Arvet, se garer sur un parking.",
+      "approche": "Rejoindre le torrent par une sente très raide.\n\nPour le deuxième départ avec navette, poursuivre la piste en direction du refuge de Véran. Au bout de 3min, suivre un chemin qui monte droit à droite avec un « J » matérialisé sur un arbre. La direction du panneau est le Planet.\n\nPour la suite, suivre le balisage \"J\" apposé sous forme de plaques sur les arbres. Le sentier monte parfois très raide. On arrive à une main courante en gaine électrique. On redescend pour traverser un premier torrent, l’affluent en RG. On continue le chemin toujours matérialisé. En vue du torrent et de la C90, abandonner le marquage \"J\" pour descendre à gauche vers le départ.",
+      "descente": "De belles cascades et de beaux encaissements dans un roche parfois d’une rare beauté. Équipement ok dans la partie haute (05/2025)",
+      "retour": "Après la C65, longue marche dans le torrent avec quelques désescalades puis sortir au gué d'un coté ou de l'autre en longant le torrent pour arriver au pont de Luzier en 5min.",
+      "engagement": null,
+      "periode": null,
+      "geologie": "calcaire sur le haut puis schistes et calcaire schisteux",
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2139,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.962528,
+        "longitude": 6.662944,
+        "label": null
+      },
+      {
+        "canyonId": 2139,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 45.958862,
+        "longitude": 6.648861,
+        "label": null
+      },
+      {
+        "canyonId": 2139,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 45.966396,
+        "longitude": 6.6363,
+        "label": null
+      },
+      {
+        "canyonId": 2139,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 45.963638,
+        "longitude": 6.6535,
+        "label": "échappatoire, fin de la partie 1"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 45.958862,
+      "longitude": 6.648861,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_87a84633f292e5a0",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons de Haute-Savoie (réédition)",
+          "authors": [
+            "Ch. Charletty",
+            "G. Gudefin",
+            "B. Hugon",
+            "J-P. Beaudoin"
+          ],
+          "publicationYear": 2004,
+          "reference": "ISBN: 2741702888",
+          "editor": "GAP",
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/128/Canyons-de-Haute-Savoie.html"
+        },
+        {
+          "id": "biblio_1e61b240bec55aed",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons de Haute Savoie",
+          "authors": [
+            "Christian Charletty",
+            "Gérard Gudefin",
+            "Bruno Hugon",
+            "Comité Départemental de Spéléologie 74"
+          ],
+          "publicationYear": 1997,
+          "reference": "ISBN 2-7417-0202-0",
+          "editor": "Gap",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/19/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_15a6dbda97b38ace",
+          "kind": "MAP",
+          "title": "3530 ET Samoens - Haut-Giffre (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

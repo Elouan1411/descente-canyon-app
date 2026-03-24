@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:54.838487+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24022,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24022/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24022/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24022/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24022/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/24022/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 24022,
+    "identity": {
+      "nom": "Cavacciole",
+      "nomComplet": "Ruisseau de Cavacciole, U Fiascu",
+      "prefixeNom": "Ruisseau de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24022/Cavacciole.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Corse",
+      "departement": "Haute-Corse",
+      "communePrincipale": "Corte",
+      "communes": [
+        "Corte"
+      ],
+      "massif": "Monte Rotondo",
+      "bassin": "Restonica",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a4III",
+      "interet": 2.8,
+      "nbVotes": 10
+    },
+    "metrics": {
+      "altitudeDepartM": 1680,
+      "deniveleM": 360,
+      "longueurM": 1200,
+      "cascadeMaxM": 40,
+      "cordeMiniM": 40,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h10min",
+      "descente": "3h30min",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "Corte - fin de la vallée de la Restonica (Bergerie Grotelle).",
+      "accesAmont": null,
+      "approche": "Sente rive gauche, qui débute environ 50m à l'ouest du ruisseau.",
+      "descente": "20 rappels.",
+      "retour": null,
+      "engagement": "Canyon ouvert, plusieurs échappatoires.",
+      "periode": null,
+      "geologie": null,
+      "historique": "31 Juin 2016 - Jan u. Honza Bouček, Richard Chalupník, Leona Kubešová, Veronika Kadlecová, Libor Souček, Kateřina Šestáková (\"U Fiascu\")",
+      "remarques": "Attention aux frottements dans la C40."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24022,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.225616,
+        "longitude": 9.036962,
+        "label": null
+      },
+      {
+        "canyonId": 24022,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.229534,
+        "longitude": 9.033479,
+        "label": null
+      },
+      {
+        "canyonId": 24022,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 42.229469,
+        "longitude": 9.031334,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 42.229469,
+      "longitude": 9.031334,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_9e844b589d47ef86",
+          "kind": "MAP",
+          "title": "4250 OT Corte - Monte-Cinto (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_c4a764f28a41d3fc",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/Canyons/UFiascuCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/Canyons/UFiascuCanyon"
+        },
+        {
+          "id": "resource_a659290f581a9316",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://ufiascu.rajce.idnes.cz/U_Fiascu_2.....se/#UFiascu-Topo.jpg",
+          "url": "http://ufiascu.rajce.idnes.cz/U_Fiascu_2.....se/#UFiascu-Topo.jpg"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 232,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Corse) - 08 juin 2011",
+          "summary": "- Le canyonisme est interdit la nuit (sauf dérogation)\n\n- Le canyonisme est interdit s'il y a une alerte émise par Météo-France de niveau orange ou rouge en cours.\n\n- Le canyonisme est interdit aux mineurs de moins de 7 ans, sauf canyon évalué égal ou inférieur à V1-A3-E3\n\n- Les groupes auront un effectif maximum de 12 personnes, hors encadrement.",
+          "remark": "L'arrêté du 9 juillet 2019 pris conjointement par les préfectures de Corse-du-Sud et de Haute-Corse harmonise les réglementations existantes pour les deux départements.",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nArrêté préfectoral (Haute-Corse) n°2011-159-0008 du 8 juin 2011\n\nArrêté préfectoral modificatif (Corse-du-Sud et Haute-Corse) n°R20-2019-07-09-001 du 9 juillet 2019",
+          "effectiveDate": "08 juin 2011",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/232/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral (Haute-Corse) n°2011-159-0008 du 8 juin 2011",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem232_pj1.pdf"
+            },
+            {
+              "label": "Arrêté préfectoral modificatif (Corse-du-Sud et Haute-Corse) n°R20-2019-07-09-001 du 9 juillet 2019",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem232_pj2.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

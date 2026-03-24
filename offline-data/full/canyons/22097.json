@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:49.451655+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22097,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22097/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22097/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22097/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22097/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22097,
+    "identity": {
+      "nom": "Valtschiel",
+      "nomComplet": "Valtschiel",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22097/Valtschiel.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Zillis-Reischen",
+      "departement": "Graubünden/Grigioni/Grischun",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.2,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": null,
+      "longueurM": null,
+      "cascadeMaxM": null,
+      "cordeMiniM": 15,
+      "navette": "3.0km"
+    },
+    "timings": {
+      "approche": "??",
+      "descente": "??",
+      "retour": "??"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": "Une belle série de cascades au début. Le reste est ensuite moins continu.",
+      "retour": null,
+      "engagement": null,
+      "periode": "Barrage en amont. Attention à la chasse. Le surplus en cas de surverse est canalisé sur un autre versant.",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22097,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.629585,
+        "longitude": 9.41524,
+        "label": null
+      },
+      {
+        "canyonId": 22097,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.627087,
+        "longitude": 9.427943,
+        "label": null
+      },
+      {
+        "canyonId": 22097,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 46.631313,
+        "longitude": 9.418759,
+        "label": null
+      },
+      {
+        "canyonId": 22097,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 46.628029,
+        "longitude": 9.425862,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 46.631313,
+      "longitude": 9.418759,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

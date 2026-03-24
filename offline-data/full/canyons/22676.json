@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:53.772857+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22676,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22676/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22676/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22676/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22676/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22676,
+    "identity": {
+      "nom": "Santa Giulia",
+      "nomComplet": "Val di Santa Giulia",
+      "prefixeNom": "Val di",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22676/Santa-Giulia.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Lombardia",
+      "departement": "Como",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Alpi Orobie",
+      "bassin": "Lac de Lugano",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a3III",
+      "interet": 2.5,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 440,
+      "deniveleM": 170,
+      "longueurM": 1100,
+      "cascadeMaxM": 60,
+      "cordeMiniM": 70,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "40",
+      "descente": "2 à 3h",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": "Depuis Come (Italie) ou Lugano (Suisse), gagner la ville de Porlezza.\n\nSuivre ensuite la direction de Osteno/Claino et passer dans Rescia devant la grotte du même nom. Garer le véhicule sur un emplacement à gauche juste après avoir traversé le val di Santa Giulia, passé l'accès à la grotte de Rescia et juste avant les panneaux \"Cascata\" visible sur la gauche de la route (on voit des conduites forcées qui prennent toute l'eau de ces cascata qui n'ont rien à voir avec le canyon).",
+      "accesAmont": null,
+      "approche": "Depuis le parking continuer 50m et juste après les 2 panneaux Cascata prendre un sentier qui démarre dans le mur au bord de la route. Le chemin escarpé s'élève en lacets en parallèle des cascades sans eau et des conduites forcées pour rejoindre ensuite des marches en béton qui longe la conduite et nous mène à une piste et un grand parking de terre où se garent les locaux pour aller à la chapelle de Santa Giulia (accessible par Claino). Tourner à gauche pour reprendre cette piste jusque à passer sur le canyon puis atteindre en montant la chapelle. Prendre la piste qui part à droite au dessus de la fontaine (pas le sentier balisé qui monte tout droit) et le suivre jusqu'à atteindre une prise d'eau à la confluence de 2 affluents (on passe une conduite forcée qui coupe le canyon 5min avant le point de départ).",
+      "descente": "Amarrages de bonne qualité (la plupart doublé), Main courante pour la C60 mais pas la C40 (ou alors pas trouvée alors que ça le mériterai).\n\nQuelques sauts possibles avant le pont.",
+      "retour": "Si la grotte de Rescia est ouverte, possibilité de sortir au niveau de l'accès à la Grotte, sinon sortie par le camping juste en dessous.",
+      "engagement": "Très ouvert sur la partie haute.\n\nDevient encaissé à partir du pont du chemin qui mène à la chapelle de Santa Giulia et de la C40 (plus d’échappatoire possible à priori).",
+      "periode": "Peu d'eau, conseillé en mai ou juin ou après une période de pluie.\n\nLa C60 semble arrosée en fin de descente.",
+      "geologie": null,
+      "historique": "Bolis, Geraci, Gnecchi, Manzoni & C. 29/07/04",
+      "remarques": "Nous n'avons pas trouvé la marche d'approche proposée sur le site x-gatt (le sentier semblait interrompu ou plus utilisé)."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22676,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.009987,
+        "longitude": 9.110904,
+        "label": null
+      },
+      {
+        "canyonId": 22676,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.014008,
+        "longitude": 9.106029,
+        "label": null
+      },
+      {
+        "canyonId": 22676,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.013351,
+        "longitude": 9.105174,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.013351,
+      "longitude": 9.105174,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

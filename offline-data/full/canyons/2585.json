@@ -1,0 +1,149 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:46:04.550380+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2585,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2585/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2585/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2585/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2585/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2585,
+    "identity": {
+      "nom": "Trois Cascades",
+      "nomComplet": "Les Trois Cascades, Les Sagnes",
+      "prefixeNom": "Les",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2585/Trois-Cascades.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Drôme",
+      "communePrincipale": "Treschenu-Creyers",
+      "communes": [
+        "Treschenu-Creyers"
+      ],
+      "massif": "Diois",
+      "bassin": null,
+      "coursEau": "Les Sagnes"
+    },
+    "rating": {
+      "cotation": "v3a1I",
+      "interet": 1.2,
+      "nbVotes": 17
+    },
+    "metrics": {
+      "altitudeDepartM": 770,
+      "deniveleM": 80,
+      "longueurM": 100,
+      "cascadeMaxM": 16,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "10",
+      "descente": "45min",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": "De Chatillon-en-Diois, prendre la D539 en direction du col de Grimone. Dans les gorges des Gats, se garer au niveau du tournant de Vachère (1,7km après le tunnel).",
+      "accesAmont": null,
+      "approche": "Prendre le sentier qui monte à gauche du ruisseau.\n\nUne fois la barre rocheuse franchie, continuer le sentier principal et laisser un chemin qui part sur la droite.\n\nCouper à travers bois et rejoindre le ruisseau.",
+      "descente": null,
+      "retour": null,
+      "engagement": "Faible, bon équipement",
+      "periode": "Faible débit",
+      "geologie": null,
+      "historique": null,
+      "remarques": "3 jolies petites cascades idéales pour l'initiation. A faire dans la foulée des Indiens."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2585,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.675797,
+        "longitude": 5.559516,
+        "label": null
+      },
+      {
+        "canyonId": 2585,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.67506,
+        "longitude": 5.561515,
+        "label": null
+      },
+      {
+        "canyonId": 2585,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.674442,
+        "longitude": 5.561667,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.674442,
+      "longitude": 5.561667,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_d2d847b6c80065cf",
+          "kind": "TOPOGUIDE",
+          "title": "Diois : escalade et canyons (2° édition)",
+          "authors": [
+            "Véronique Pitte",
+            "Grégory Woodhouse",
+            "Vincent Gruart"
+          ],
+          "publicationYear": 2002,
+          "reference": "2-908730-68-5",
+          "editor": "A Die",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1278/topoguide.html"
+        },
+        {
+          "id": "biblio_0f06b44eb9a42186",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons du Vercors et Alentours",
+          "authors": [
+            "J-C. Botti",
+            "B. Rosset",
+            "Y. Launay",
+            "C. Larribe",
+            "T. Larribe",
+            "Spéléo Club MJC de Tullins"
+          ],
+          "publicationYear": 1997,
+          "reference": "ISBN 2-7417-0211-X",
+          "editor": "Gap",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/12/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_897a81a84c493147",
+          "kind": "MAP",
+          "title": "3237 OT Glandasse - Col de La Croix (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

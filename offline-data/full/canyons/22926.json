@@ -1,0 +1,144 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:54:56.271571+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22926,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22926/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22926/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22926/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22926/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22926,
+    "identity": {
+      "nom": "Péhèmo",
+      "nomComplet": "Ravine Péhèmo, Ravine Peyre-Arse 3",
+      "prefixeNom": "Ravine",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22926/Pehemo.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Cantal",
+      "communePrincipale": "Lavigerie",
+      "communes": [
+        "Lavigerie"
+      ],
+      "massif": "Monts du Cantal",
+      "bassin": "Santoire",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a1II",
+      "interet": 1.7,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1540,
+      "deniveleM": 280,
+      "longueurM": 500,
+      "cascadeMaxM": 65,
+      "cordeMiniM": 70,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "55min",
+      "descente": "2h30",
+      "retour": "40min"
+    },
+    "topo": {
+      "accesAval": "Stationner au parking des burons d'Eylac sur la route du Pas-de-Peyrol.",
+      "accesAmont": null,
+      "approche": "Une des nombreuses ravines du versant ouest du Peyre-Arse. Suivre le sentier qui fait le tour du cirque de l'Impradine en passant sous la \"Brèche de Roland\". Au col, avant de basculer dans la vallée de la Santoire, poursuivre 25 min à flanc de versant en passant sous le Peyre-Arse. Départ peu évident dans une combe en contrebas.",
+      "descente": "Une douzaine de rappels de 12 à 65m, dont les grands sont plutôt en plans inclinés, quelques encaissements. Comme pour toutes les ravines du secteur, attention aux départs dans les pentes herbeuses et glissantes.",
+      "retour": "Retrouver la sortie du canyon de l'Impradine par un bon chemin et rejoindre la route à travers prés.",
+      "engagement": null,
+      "periode": "Intermittent. Actif à la fonte des neiges ou après de bons épisodes pluvieux.",
+      "geologie": "Brèches volcaniques",
+      "historique": "Première descente par P-M. Orblin, P. Viette, K. Herida et P. Saint-Etienne le 19 mai 2011.",
+      "remarques": "4 premiers rappels sur AN puis la suite sur goujons et plaquettes. Certains amarrages sont à chercher au sol du fait de la mauvaise qualité du rocher."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22926,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.11137,
+        "longitude": 2.705249,
+        "label": null
+      },
+      {
+        "canyonId": 22926,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.115913,
+        "longitude": 2.701414,
+        "label": null
+      },
+      {
+        "canyonId": 22926,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.112347,
+        "longitude": 2.686372,
+        "label": "Parking des burons d'Eylac"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.112347,
+      "longitude": 2.686372,
+      "label": "Parking des burons d'Eylac"
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_daf9041e16b163a9",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons cantalous",
+          "authors": [
+            "Philippe VIETTE-COSTE"
+          ],
+          "publicationYear": 2018,
+          "reference": "97829563881-0-4",
+          "editor": "Auto-édition",
+          "status": "en stock\n\n- 14,00 € -\n\nCommandez cet ouvrage dès maintenant !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/1124/Canyons-cantalous.html"
+        },
+        {
+          "id": "biblio_0ada102a5dea7773",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons arvernes",
+          "authors": [
+            "Philippe Viette-Coste",
+            "Serge Navarro",
+            "Pierre-Marie Orblin"
+          ],
+          "publicationYear": 2012,
+          "reference": "978-2-7466-3647-7",
+          "editor": "auto-édition",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/165/Canyons-arvernes.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_dca64d22e699a24f",
+          "kind": "MAP",
+          "title": "2435 OT Monts du Cantal (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

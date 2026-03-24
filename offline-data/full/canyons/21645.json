@@ -1,0 +1,144 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:11.520745+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21645,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21645/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21645/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21645/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21645/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/21645/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 21645,
+    "identity": {
+      "nom": "Xallas",
+      "nomComplet": "Barranco del rio Xallas, Rio Xallas",
+      "prefixeNom": "Barranco del rio",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21645/Xallas.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Galicia",
+      "departement": "La Coruña",
+      "communePrincipale": "Carnota",
+      "communes": [
+        "Carnota"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": "Rio Xallas"
+    },
+    "rating": {
+      "cotation": "v4a4II",
+      "interet": 2.8,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 200,
+      "deniveleM": 198,
+      "longueurM": 800,
+      "cascadeMaxM": 70,
+      "cordeMiniM": 50,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "10/25min",
+      "descente": "2-3h",
+      "retour": "5/35min"
+    },
+    "topo": {
+      "accesAval": "à l'embouchure du rio Xallas, juste à l'entrée d'Ezaro, par la route de Santa Uixa, près de la centrale hydroélectrique, au niveau de la mer.\n\nAvec l'autre voiture revenir 50m en arrière et tourner à droite pour la route de Santa Uixa, et suivre les panneaux \"Mirador d'Ezaro\". Le dépasser et continuer jusqu'à l'embranchement suivant où vous prendrez à droite vers le barrage (\"embalse\"). Là garez vous au barrage mais un peu en",
+      "accesAmont": "(l'eau monte parfois) et ne prenez pas la route qui descend à droite vers un tunnel (les voitures y sont \"visitées\").\n\nSans navette, garez vous au mirador d'Ezaro.",
+      "approche": "Soit vous descendez la route à droite du barrage jusqu'au tunnel et prenez le sentier à gauche qui mène au lit du fleuve si vous avez la navette.\n\nSoit vous montez depuis le mirador par la route jusqu'à cette même route et redescendez par le même chemin.",
+      "descente": "4 cascades. Les deux premières se descendent en rappel (35 et 30 m), la suivante se saute ou se contourne RG. De nombreux sauts dans les \"trous\". 2 siphons. Un dernière cascade équipée en 2 lignes. Le relais est situé à mi-hauteur (35 m).",
+      "retour": "Retournez au parking en traversant à la nage la dernière vasque jusqu'au ponton en bois. Si vous n'avez pas de navette, reprenez alors la route jusqu'au mirador. Ça grimpe sec.",
+      "engagement": "De nombreuses échappatoires rive droite.",
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "Pas vraiment un canyon, mais plutôt une curiosité naturelle. A faire toutefois.\n\nPour faire cette descente, téléphoner obligatoirement au 981706300 pour connaitre les heures d'ouverture des vannes du barrage en amont. En été ils ouvrent pour les spectacles le samedi de 23h à 23h30 et le dimanche de 12h à 14h (voir onglet \"Règlementation\")."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21645,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.914165,
+        "longitude": -9.108181,
+        "label": null
+      },
+      {
+        "canyonId": 21645,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.912655,
+        "longitude": -9.118867,
+        "label": null
+      },
+      {
+        "canyonId": 21645,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 42.916851,
+        "longitude": -9.104769,
+        "label": null
+      },
+      {
+        "canyonId": 21645,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 42.912811,
+        "longitude": -9.121313,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 42.916851,
+      "longitude": -9.104769,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_d8684d1f78e52a5f",
+          "kind": "MAP",
+          "title": "93 Outes (Institu Geographic Nacional)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_ec6cb7805cdcbd0a",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.tic.udc.es/~nino/fotos/canones_xallas_galicia.html",
+          "url": "http://www.tic.udc.es/~nino/fotos/canones_xallas_galicia.html"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 221,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Information",
+          "summary": "Pour faire cette descente, téléphoner obligatoirement au 981706300 pour connaitre les heures d'ouverture des vannes du barrage en amont.\n\nEn 2008, les dates suivantes étaient interdites :\n\nDu 21 juin au 21 septembre :\n\n- les samedis, de 23h à 23h30\n\n- les dimanches, de 12h30 à 13h30.\n\nLa semaine sainte :\n\n- Vendredi, Samedi et Dimanche de 12h30 à 13h30.\n\nJours spéciaux :\n\n- 1er mai de 12h30 à 13h30.\n\n- 24 juin\n\n- 16 et 25 Juillet\n\n- 15 aout\n\n- 12 octobre\n\n- 1er novembre",
+          "remark": null,
+          "details": null,
+          "effectiveDate": null,
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/221/legislation.html",
+          "attachments": []
+        }
+      ]
+    }
+  }
+}

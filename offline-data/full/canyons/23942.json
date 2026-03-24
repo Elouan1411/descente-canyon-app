@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:40.379112+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23942,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23942/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23942/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23942/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23942/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23942,
+    "identity": {
+      "nom": "Taschbach",
+      "nomComplet": "Taschbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23942/Taschbach.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Tyrol",
+      "departement": "Politischer Bezirk Schwaz",
+      "communePrincipale": "Achenkirch",
+      "communes": [
+        "Achenkirch"
+      ],
+      "massif": "Karwendel",
+      "bassin": "Walchen - Sylvensteinsee",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a3II",
+      "interet": 1.4,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 920,
+      "deniveleM": 90,
+      "longueurM": 800,
+      "cascadeMaxM": 9,
+      "cordeMiniM": 15,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "1h30min",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "adapté aux enfants et aux débutants"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23942,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.569382,
+        "longitude": 11.644332,
+        "label": null
+      },
+      {
+        "canyonId": 23942,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.572262,
+        "longitude": 11.653261,
+        "label": "A2"
+      },
+      {
+        "canyonId": 23942,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.570633,
+        "longitude": 11.659978,
+        "label": null
+      },
+      {
+        "canyonId": 23942,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.57111,
+        "longitude": 11.653675,
+        "label": "A1"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.570633,
+      "longitude": 11.659978,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

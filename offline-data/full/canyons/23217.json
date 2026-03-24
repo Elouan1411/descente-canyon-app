@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:08.644921+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23217,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23217/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23217/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23217/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23217/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23217,
+    "identity": {
+      "nom": "Froda (superiore)",
+      "nomComplet": "Torrente Froda (superiore), Cuvignone superiore, Froda",
+      "prefixeNom": "Torrente",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23217/Froda-superiore.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Lombardia",
+      "departement": "Varese",
+      "communePrincipale": "Castelveccana",
+      "communes": [
+        "Castelveccana"
+      ],
+      "massif": "Prealpi Luganesi",
+      "bassin": "Lac Majeur",
+      "coursEau": "Froda"
+    },
+    "rating": {
+      "cotation": "v4a3III",
+      "interet": 2.4,
+      "nbVotes": 6
+    },
+    "metrics": {
+      "altitudeDepartM": 720,
+      "deniveleM": 145,
+      "longueurM": 400,
+      "cascadeMaxM": 40,
+      "cordeMiniM": 40,
+      "navette": "1.7km"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "1h30min",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": ".\n\nAvec 2eme voiture continuer 550 m et sortir la SP 7 à droite sur SP 8 (Passo Cuvignone). De la continuer encore 1150 m et garer la 2eme Voiture - Parking",
+      "accesAmont": "45.93012, 8.68449.",
+      "approche": "De Parking amont aller vers le Torrente Froda.",
+      "descente": "100 m dans le bois jusqu'à une partie verticale et le 1er rappel. Quelques petits cascades (C6-C5-C4C6-C8) et ensuite d'autres plus hautes (C10-C15-C40) et encore C15-C5 et C12. Arriver à la passerelle.\n\nAu-dessous du passaralle commence Torrente Froda inf. avec une cascade de ca. 120 m haut (Cascata della Froda) - voir description \"Torrente Froda inf.\".",
+      "retour": "Sortir à droite vers le sentier et la Parking aval.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23217,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.931255,
+        "longitude": 8.685375,
+        "label": null
+      },
+      {
+        "canyonId": 23217,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.932941,
+        "longitude": 8.687725,
+        "label": null
+      },
+      {
+        "canyonId": 23217,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 45.930958,
+        "longitude": 8.685386,
+        "label": null
+      },
+      {
+        "canyonId": 23217,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 45.932793,
+        "longitude": 8.688615,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 45.930958,
+      "longitude": 8.685386,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_06c8098ac789b4b2",
+          "kind": "MAP",
+          "title": "296 Chiasso (CNS (Carta Nazionale Svizzera))",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:40.809549+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23104,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23104/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23104/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23104/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23104/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23104,
+    "identity": {
+      "nom": "Gnaupenloch",
+      "nomComplet": "Gnaupenloch, Ehnbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23104/Gnaupenloch.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Tyrol",
+      "departement": "Innsbruck-Land",
+      "communePrincipale": "Zirl",
+      "communes": [
+        "Zirl"
+      ],
+      "massif": "Karwendel",
+      "bassin": "Inn",
+      "coursEau": "Ehnbach"
+    },
+    "rating": {
+      "cotation": "v3a2IV",
+      "interet": 3.3,
+      "nbVotes": 6
+    },
+    "metrics": {
+      "altitudeDepartM": 1590,
+      "deniveleM": 460,
+      "longueurM": 1650,
+      "cascadeMaxM": 17,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "2h",
+      "descente": "3h",
+      "retour": "1h/1h30"
+    },
+    "topo": {
+      "accesAval": "Sortir de l'autoroute A12 à \"Zirl west\" puis prendre la petite route en direction de Hochzirl et de l'hôpital (\"Landeskrankenhaus Hochzirl\").\n\nPoursuivre la route jusqu'au bout et se garer sur un petit parking de randonnée juste après l'entrée de l'hôpital, avant que la route forestière ne devienne interdite.",
+      "accesAmont": null,
+      "approche": "Prendre la piste forestière et suivre la direction \"Solsteinhaus\". On passe 4 ou 5 petits téléphériques puis on arrive le long de l'affluent de Gnaupenloch nommé Oberbach, que l'on longe vers l'amont.\n\nOn le traverse et on prend à droite au niveau d'un crucifix et d'un banc toujours la direction de \"Solsteinhaus\".\n\nLe sentier monte plus raide en lacet et on arrive au niveau d'un petit chalet d'alpage (\"Solnalm\").\n\nIci, à proximité d'un grand crucifix, on quitte le sentier principal de \"Solsteinhaus\" pour prendre une petite sente évidente à droite qui rejoint bientôt le cours d'eau.",
+      "descente": "On marche au début dans le large lit de la rivière où l'on croise quelques ouvrages anti-crue défoncés avant de commencer le canyon par quelques rappels assez ouverts.\n\nLe magnifique encaissement commence ensuite, magnifiquement sculpté, parfois blanc.\n\n5 ou 6 rappels avant la fin, le canyon se désencaisse et l'affluent RD Oberbach apparait : échappatoire possible (ou variante de retour ramenant sur la piste forestière de l'approche) mais ça vaut le coup de continuer encore dans la partie finale moins spectaculaire mais tout de même valable.",
+      "retour": "On sort à droite au niveau d'une piste forestière que l'on suit jusqu'à la route de Hochzirl.\n\nOn arrive en contrebas de la petite gare ferroviaire et donc de l’hôpital. Remonter ensuite la route à moins d'avoir prévu une courte navette.\n\nOn peut aussi sur carte étudier un retour sur sentier qui ramènera directement au parking amont.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23104,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.305454,
+        "longitude": 11.282262,
+        "label": null
+      },
+      {
+        "canyonId": 23104,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.291836,
+        "longitude": 11.281257,
+        "label": null
+      },
+      {
+        "canyonId": 23104,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 47.285431,
+        "longitude": 11.243749,
+        "label": "parkink clinic - navette possible"
+      },
+      {
+        "canyonId": 23104,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.278473,
+        "longitude": 11.25171,
+        "label": "navette possible, mais pas necessaire (mountain bike utile)"
+      },
+      {
+        "canyonId": 23104,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.294907,
+        "longitude": 11.278242,
+        "label": "bifurcation: à droite (\"Solsteinhaus\")"
+      },
+      {
+        "canyonId": 23104,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.303581,
+        "longitude": 11.280844,
+        "label": "Solen-Alm: bifurcation: sente à droite vers le lit du Ehnbach (\"Lärchensteig\")"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 47.285431,
+      "longitude": 11.243749,
+      "label": "parkink clinic - navette possible"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

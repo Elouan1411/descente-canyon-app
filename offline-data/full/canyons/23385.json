@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:41.279762+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23385,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23385/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23385/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23385/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23385/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23385,
+    "identity": {
+      "nom": "Devès",
+      "nomComplet": "Torrent du Devès",
+      "prefixeNom": "Torrent du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23385/Deves.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Hautes-Alpes",
+      "communePrincipale": "Val Buëch-Méouge",
+      "communes": [
+        "Val Buëch-Méouge"
+      ],
+      "massif": "Montagne de Chabre",
+      "bassin": "Buëch",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a1I",
+      "interet": 1.2,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 810,
+      "deniveleM": 170,
+      "longueurM": 500,
+      "cascadeMaxM": 15,
+      "cordeMiniM": 15,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "35min",
+      "descente": "1h30",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": "Même accès que le torrent des Vignes...\n\nDe Sisteron, emprunter la D948 passant par Ribiers en direction de Laragne-Montéglin. Rester sur cette route D948 et 1,5km après le \"Quartier de l'école\" - toujours en direction de Laragne-Montéglin - prenez la piste A66 à gauche. Garez-vous à gauche juste après le champ et avant que la piste ne monte (parking). Ne montez cette piste que si vous avez un 4x4, parking au réservoir.",
+      "accesAmont": null,
+      "approche": "Suivre la piste qui monte dans un premier temps et emprunter le GR qui monte avec quelques lacets. Au sommet, le sentier devient plus horizontal et rejoint une petite piste partant à droite. A ce moment, descendre à gauche à travers la forêt en suivant un talweg puis un petit ru, jusqu'à la première cascade.",
+      "descente": "L'on débute par une C4, une autre C4. S'en suivent une C8, C7, un peu de marche... R12 (C5+C5), marche et désescalades, Pi8 + C7, désescalades, C12, C10, C5.",
+      "retour": "A la dernière cascade, sortir en RG pour rejoindre au mieux le parking à travers la pinède et quelques coulées de terre caillouteuses.",
+      "engagement": "Aucun",
+      "periode": "A faire après les pluies.",
+      "geologie": null,
+      "historique": "lolo",
+      "remarques": "Équipement terrain d'aventure : AN, mono-points (goujons de 8mm + maillon de chaîne) et 1 anneau de corde.\n\nA enchaîner avec ses voisins."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23385,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.296082,
+        "longitude": 5.806625,
+        "label": null
+      },
+      {
+        "canyonId": 23385,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.294537,
+        "longitude": 5.811571,
+        "label": null
+      },
+      {
+        "canyonId": 23385,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.296303,
+        "longitude": 5.81907,
+        "label": "Parking avec un 4x4"
+      },
+      {
+        "canyonId": 23385,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.297672,
+        "longitude": 5.820765,
+        "label": "Parking sans 4x4"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.296303,
+      "longitude": 5.81907,
+      "label": "Parking avec un 4x4"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_698f23f50a61f9ad",
+          "kind": "MAP",
+          "title": "3339 OT Sisteron (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

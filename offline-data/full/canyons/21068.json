@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:48:01.929461+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21068,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21068/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21068/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21068/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21068/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21068,
+    "identity": {
+      "nom": "Larguis (amont)",
+      "nomComplet": "Canyon du Larguis (amont), Le larguis",
+      "prefixeNom": "Canyon du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21068/Larguis-amont.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Ariège",
+      "communePrincipale": "Mérens-les-Vals",
+      "communes": [
+        "Mérens-les-Vals"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": "Le larguis"
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 0.6,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": 120,
+      "longueurM": 260,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 30,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "2h",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": "a la sortie de Merens les Vals dans le sens Ax Andorre prendre a gauche une route et suivre la direction gite d'etape\n\nsortir du village et atteindre la premiere epingle a cheveu a droite\n\ndans ce virage prendre a gauche une petite route forestiere\n\nla suivre sur 2km jusqu'au pont qui enjambe le Larguis\n\nse garer",
+      "accesAmont": null,
+      "approche": "remonter rive gauche le torrent\n\npasser au plus facile dans la foret en gardant a main gauche le ruisseau",
+      "descente": null,
+      "retour": null,
+      "engagement": "canyon d'initiation\n\nfaile posibilité de s'echapper en permanence",
+      "periode": "pas de nage\n\npraticable de mai a octobre",
+      "geologie": null,
+      "historique": null,
+      "remarques": "a descendre l'apres midi vu son orientation"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21068,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.673626,
+        "longitude": 1.844261,
+        "label": "approximatif"
+      },
+      {
+        "canyonId": 21068,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.674187,
+        "longitude": 1.842091,
+        "label": null
+      },
+      {
+        "canyonId": 21068,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 42.674488,
+        "longitude": 1.84165,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 42.674488,
+      "longitude": 1.84165,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

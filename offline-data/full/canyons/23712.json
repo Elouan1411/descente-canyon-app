@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:49.582659+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23712,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23712/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23712/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23712/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23712/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23712,
+    "identity": {
+      "nom": "Grande inferior",
+      "nomComplet": "Ribeira Grande inferior, Salto do Cabrito",
+      "prefixeNom": "Ribeira",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23712/Grande-inferior.html"
+    },
+    "location": {
+      "pays": "Portugal",
+      "region": "Açores",
+      "departement": "Ribeira Grande Municipality , São Miguel",
+      "communePrincipale": "Ribiera Grande",
+      "communes": [
+        "Ribeira Grande Municipality",
+        "São Miguel",
+        "Ribeira Grande (Conceição)",
+        "Ribiera Grande"
+      ],
+      "massif": null,
+      "bassin": "Ribeira Grande",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 2.5,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 275,
+      "deniveleM": 115,
+      "longueurM": 160,
+      "cascadeMaxM": 15,
+      "cordeMiniM": 15,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "5",
+      "descente": "2h30",
+      "retour": "20"
+    },
+    "topo": {
+      "accesAval": "Sur la route EN 1-1A, prendre la sortie Ribeirinha, puis direction de Gramas. Ne pas aller a Gramas mais prendre la direction du Sud, laisser la route à droite et continuer tout droit sur une allée bordée d'arbres.\n\nAu hameau, prendre à droite et passer devant les fours (vous pouvez essayer de mettre votre boite de cassoulet attachée à une ficelle au chaud dans les trous;-)).\n\nFaire 800m, et se garer au niveau de la piste qui descend sur la droite bordée d'une conduite forcée. Ne dépasser pas le captage.\n\nPoint GPS du parking : 37.79387N 25.48627W",
+      "accesAmont": null,
+      "approche": "Une sente démarre sous la conduite forcée, juste à gauche du cabanon.\n\nCelle-ci descend jusqu'à un pont, point départ du canyon.\n\nPoint GPS d'entrée du canyon : 37.79331N 25.48598W",
+      "descente": "Une jolie descente facile avec des sources d'eau chaude au départ et une descente composée de 3 rappels de 10m, une marche dans la rivière avec peu d'intérêt et le salto do cabrito en final décomposé en deux cascades de 15m chacune et qui se fera sous les flashs des touristes. Le débit d'eau varie selon le barrage mais il semble que les rappels ne sautent jamais.\n\nLa vasque finale du salto do cabrito ne permet pas un saut de 15m mais elle est assez profonde pour un saut de 5m que l'on peut effectuer à partir d'une plate forme dans la paroi en rive droite dans le dernier rappel.\n\nSi l'on décide de se faire les deux derniers rappels du salto do cabrito rive gauche (c'est le plus joli) il faudra poser une main courante à chaque fois pour atteindre les nouveaux relais qui sont moins accessibles mais mieux placés que les anciens afin de rappeler la corde plus facilement. Faire attention surtout au premier rappel du salto do cabrito où il y a plusieurs relais plus ancien en arrière de la cascade mais qui feront coincer la corde plus facilement.",
+      "retour": "A la centrale hydraulique en RG, remonter pour rejoindre la passerelle métallique, atteindre l'ancienne centrale en traversant RD par le pont. Passer devant les bâtiments, puis monter jusqu'à rejoindre la piste principale. Prendre à droite et continuer à monter jusqu'à atteindre la voiture.\n\nPoint GPS de la sortie : 37.79630N 25.49481W",
+      "engagement": "Échappatoire dans la marche centrale",
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "Il est possible d'appeler le 296 202 000 pour savoir s'il n'y a pas de lâcher, le gros problème est que la personne que nous avions eu ne parlait ni anglais, ni espagnol :-( essayez peut-être l'email : eeg@eda.pt\n\nSinon passez par les agences touristiques de canyoning locales (Acores Adventures Island par exemple) qui sont au courant dès que le barrage a une activité."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23712,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 37.793308,
+        "longitude": -25.485979,
+        "label": "Entrer dans le canyon au Niveau du pont"
+      },
+      {
+        "canyonId": 23712,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 37.796299,
+        "longitude": -25.49481,
+        "label": "Sortie à la centrale hydroélectrique"
+      },
+      {
+        "canyonId": 23712,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 37.7939,
+        "longitude": -25.486309,
+        "label": "Se garer au niveau de la conduite forcée"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 37.7939,
+      "longitude": -25.486309,
+      "label": "Se garer au niveau de la conduite forcée"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

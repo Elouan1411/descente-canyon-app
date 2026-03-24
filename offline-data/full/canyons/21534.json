@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:49:47.591831+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21534,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21534/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21534/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21534/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21534/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/21534/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 21534,
+    "identity": {
+      "nom": "Viboli",
+      "nomComplet": "Viboli, Rio Porciles",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21534/Viboli.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Asturias",
+      "departement": "Provincia de Asturias",
+      "communePrincipale": "Viboli",
+      "communes": [
+        "Cangas de Onís",
+        "Viboli"
+      ],
+      "massif": "Covadonga",
+      "bassin": "Rio Sella",
+      "coursEau": "Rio Porciles"
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 2.5,
+      "nbVotes": 10
+    },
+    "metrics": {
+      "altitudeDepartM": 750,
+      "deniveleM": 300,
+      "longueurM": 3000,
+      "cascadeMaxM": 18,
+      "cordeMiniM": 20,
+      "navette": "3.0km"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "3h",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "Depuis Cangas de Onis, suivre la direction de Leon par le Puerto del Ponton. Dans le defilé de los Beyos, se garer au niveau pont de Aguera (il y a un bar).",
+      "accesAmont": "Prendre la direction de Viboli. Se garer au niveau des épingles.\n\nAttention, le topo parle de se garer au niveau du 3eme pont rencontré, c'est trop haut.",
+      "approche": "Descendre dans le cours d'eau.",
+      "descente": "2 parties distinctes : il faut remonter sur la route pour éviter la partie médiane sans intérêt.\n\nQuelques parties très encaissées et obscures.",
+      "retour": "A la confluence avec le rio Sella, remonter en rive droite sous le pont.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "Ce canyon fait l'objet d'une fiche dans le topo d'Edouardo Gomes, mais de deux fiches dans le topo de Pablo Solares. Le deuxième tronçon est décrit comme la \"Foz de los Andamios\"."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21534,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.182678,
+        "longitude": -5.098321,
+        "label": null
+      },
+      {
+        "canyonId": 21534,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.187405,
+        "longitude": -5.079932,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 43.182678,
+      "longitude": -5.098321,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 533,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté - 29 déc 2014",
+          "summary": "Toute activité aquatique, dont le canyoning, est interdite dans les rivières du parc naturel de Panga à l'exception des canyons de Viboli et de Carangas pour lesquels une autorisation peut être demandée.\n\nLa demande d'autorisation peut être faite :\n\n- soit électroniquement : https://sede.asturias.es/-/dboid-6269000008485291807573\n\n- soit physiquement en présentant ce formulaire rempli : https://sede.asturias.es/o/sede/serviciosytramites/download/12431315730612320145",
+          "remark": null,
+          "details": "Décret (Principado de Asturias) n°163/2014 du 29 décembre 2014",
+          "effectiveDate": "29 déc 2014",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/533/legislation.html",
+          "attachments": [
+            {
+              "label": "Décret (Principado de Asturias) n°163/2014 du 29 décembre 2014",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem533_pj1.pdf"
+            }
+          ]
+        },
+        {
+          "id": 129,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté - 26 avr 2002",
+          "summary": "La pratique du canyoning est interdite dans le parc : \"Las actividades deportivas tales como el descenso de cañones, hidrospeed, canoa, rafting, y demás deportes extremos se consideran incompatibles con los objetivos de conservación del parque nacional y, salvo excepción debidamente justificada, están prohibidas.\"",
+          "remark": null,
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.",
+          "effectiveDate": "26 avr 2002",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/129/legislation.html",
+          "attachments": []
+        }
+      ]
+    }
+  }
+}

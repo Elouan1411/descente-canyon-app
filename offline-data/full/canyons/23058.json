@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:28.601242+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23058,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23058/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23058/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23058/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23058/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23058,
+    "identity": {
+      "nom": "Costechal",
+      "nomComplet": "Garganta del Costechal, Rio Gallego",
+      "prefixeNom": "Garganta del",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23058/Costechal.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Aragón",
+      "departement": "Huesca",
+      "communePrincipale": "Escarilla",
+      "communes": [
+        "Escarilla"
+      ],
+      "massif": null,
+      "bassin": "Gallego",
+      "coursEau": "Rio Gallego"
+    },
+    "rating": {
+      "cotation": "v3a3II",
+      "interet": 2.1,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 1160,
+      "deniveleM": 40,
+      "longueurM": 700,
+      "cascadeMaxM": 19,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "1h",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "Entre le Pourtalet et Biescas, se garer à la sortie Nord du village d'Escarilla. Un vaste parking se trouve juste avant le tunnel.",
+      "accesAmont": null,
+      "approche": "Prendre l'ancienne route à droite du tunnel qui fait face au parking. Au bout de 5 minutes, la route décrit un virage marqué à gauche. Derrière la glissière de sécurité se trouve le sentier d'approche qui descend jusqu'au canyon (ce sentier est également la marche retour du canyon d'Escarilla). Marcher dans le lit de la rivière Gallego et passer l'affluent qui arrive en rd. Une centaine de mètre plus loin on rencontre l'encaissement qui marque le début du canyon.",
+      "descente": "Courte descente esthétique présentant peu de difficultés; 3 rappels 19m max, de courts tobs et quelques petits sauts.",
+      "retour": "Dès la fin de l'encaissement, ne pas manquer une sente raide en rive droite agrémentée de mains courantes en corde et cable. C'est la marche retour qui ramène au village d'Escarilla. Une fois au village, le traverser pour retrouver le véhicule à la sortie.",
+      "engagement": "Court sans échappatoire. Bien équipé.\n\nComme son voisin Escarilla, descente sous le barrage de Lanuza. Téléphone du barrage avant de s'engager: 0034 974487075",
+      "periode": "Très aquatique, attendre l'étiage.\n\nIl est possible d'observer le débit du Costechal en aval du village en s'avancant 200m sur la route de Panticosa (le canyon est sous le pont).\n\nOn peut également observer le débit de l'affluent le Rio Escarra depuis le parking.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Des déchets sous le village d'Escarilla, mais très joli défilé.\n\nQuoique très court, idéal pour compléter une journée voire une 1/2 journée!\n\nN'est pas mentionné dans la carte numéro 3 de Gimat mais se situe dans la continuité du canyon numéro 6."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23058,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.735382,
+        "longitude": -0.310621,
+        "label": null
+      },
+      {
+        "canyonId": 23058,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.731884,
+        "longitude": -0.309463,
+        "label": null
+      },
+      {
+        "canyonId": 23058,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 42.737778,
+        "longitude": -0.318196,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 42.737778,
+      "longitude": -0.318196,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

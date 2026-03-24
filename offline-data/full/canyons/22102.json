@@ -1,0 +1,145 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:50.716713+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22102,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22102/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22102/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22102/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22102/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22102,
+    "identity": {
+      "nom": "Tatzelwurm",
+      "nomComplet": "Tatzelwurm, Auerbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22102/Tatzelwurm.html"
+    },
+    "location": {
+      "pays": "Allemagne",
+      "region": "Bayern",
+      "departement": "Oberbayern",
+      "communePrincipale": "Oberaudorf",
+      "communes": [
+        "Landkreis Rosenheim",
+        "Kiefersfelden",
+        "Oberaudorf"
+      ],
+      "massif": "Mangfallgebirge",
+      "bassin": "Inn",
+      "coursEau": "Auerbach"
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 3.3,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 800,
+      "deniveleM": 740,
+      "longueurM": 150,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "45min",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "Autoroute München - Innsbruck (A93/E45) jusqu'à la sortie Oberaudorf (5 km avant la frontière Allemagne/Autriche). De là, la route \"Deutsche Alpenstraße\" vers Tatzelwurm (ouest).\n\nAprès Tatzelwurm (restaurant) continuer - un lacet - environ 1 km. Nous prenons ici une piste à gauche et traversons le Auerbach. Grand parking.",
+      "accesAmont": null,
+      "approche": "Du parking la piste à droite de Auerbach vers l'est pendant environ 100m.",
+      "descente": "3 cascades et quelque sauts.",
+      "retour": "Après la 3ème cascade à gauche jusqu'à un sentier et la piste retour vers le haut.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "Remous après la 3ème cascade !"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22102,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.671143,
+        "longitude": 12.081388,
+        "label": null
+      },
+      {
+        "canyonId": 22102,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.671341,
+        "longitude": 12.08355,
+        "label": null
+      },
+      {
+        "canyonId": 22102,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.670418,
+        "longitude": 12.080133,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.670418,
+      "longitude": 12.080133,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_80a52b6e4b57f154",
+          "kind": "TOPOGUIDE",
+          "title": "Tiroler Canyoningführer - The Canyoning guide for Tyrol",
+          "authors": [
+            "Alexander Riml",
+            "Gunnar Amor"
+          ],
+          "publicationYear": 2012,
+          "reference": "978-3-200-02343-7",
+          "editor": null,
+          "status": "en stock\n\n- 44,90 € -\n\nCommandez cet ouvrage dès maintenant !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/170/Tiroler-Canyoningfuhrer---The-Canyoning-guide-for-Tyrol.html"
+        },
+        {
+          "id": "biblio_a216ca92fa29ca51",
+          "kind": "TOPOGUIDE",
+          "title": "Canyoning in Bayern und Tirol",
+          "authors": [
+            "Werner Baumgarten"
+          ],
+          "publicationYear": 2010,
+          "reference": null,
+          "editor": null,
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1226/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_3d7a2ebd5efa6d2b",
+          "kind": "MAP",
+          "title": "UK L 12 Mangfallgebirge (1/50000)",
+          "scale": "Bayersches L",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

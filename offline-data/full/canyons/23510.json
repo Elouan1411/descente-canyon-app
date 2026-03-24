@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:05.149787+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23510,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23510/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23510/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23510/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23510/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23510,
+    "identity": {
+      "nom": "Verraillon",
+      "nomComplet": "Ravin de Verraillon",
+      "prefixeNom": "Ravin de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23510/Verraillon.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-de-Haute-Provence",
+      "communePrincipale": "Soleilhas",
+      "communes": [
+        "Soleilhas"
+      ],
+      "massif": null,
+      "bassin": "Estéron",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 0.9,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 1280,
+      "deniveleM": 200,
+      "longueurM": 1100,
+      "cascadeMaxM": 10,
+      "cordeMiniM": 15,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h",
+      "descente": "1h15",
+      "retour": "40min"
+    },
+    "topo": {
+      "accesAval": "Depuis Saint Auban, prendre la D305 vers Soleilhas. Dans ce village, prendre à droite une petite rue qui se transforme en piste. Suivre cette dernière jusqu'au point IGN 1148 (petit oratoire et panneau indiquant \"les Coulettes\"). Se garer sans gêner.",
+      "accesAmont": null,
+      "approche": "Prendre la piste vers les Coulettes qui se transforme rapidement en sentier. Suivre les panneaux Coulettes et peu avant d'arriver à ce Hameau prendre à gauche en direction de la barre rocheuse (panneau \"cascade\"). On coupe alors rapidement notre ravin, 40 min (départ de la partie aval). Traverser le ruisseau et suivre le sentier direction Verraillon (montée raide puis à gauche quand on recoupe le sentier principal). On remonte alors le Verraillon en RG jusqu'au départ de la partie amont, 20 min.",
+      "descente": "Deux creusements entrecoupés d'une portion de marche parfois très encombrés d'arbustes (dommage): 4 rappels dans partie haute et de nombreux plans inclinés et 2 rappels dans la partie basse avec UNE très belle vasque.",
+      "retour": "La belle vasque tombe sur un sentier avec un petit canal. De là vous pouvez faire un dernier rappel puis remonter RG jusqu'au sentier puis un petit cheminement dans la barre (point orange) vous ramène sur le sentier d'approche. Refaire tout le chemin inverse.",
+      "engagement": "Quasi nul",
+      "periode": "A faire après des pluies",
+      "geologie": null,
+      "historique": "Aucune trace d'équipement",
+      "remarques": "- Avec un bon débit et un gros débroussaillage ça pourrait avoir de la gueule.\n\n- Attention au rappel qui tombe dans la belle vasque car de celle ci part un canal (qui alimente Coulettes) dont le débit est réglé par une pierre qu'il ne faut pas déplacer. Le saut (possible) est donc à éviter."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23510,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.869644,
+        "longitude": 6.671694,
+        "label": null
+      },
+      {
+        "canyonId": 23510,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.863773,
+        "longitude": 6.680242,
+        "label": null
+      },
+      {
+        "canyonId": 23510,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.852856,
+        "longitude": 6.661566,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.852856,
+      "longitude": 6.661566,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_bc1a79af779fa40c",
+          "kind": "MAP",
+          "title": "3542 ET Haut Esteron (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

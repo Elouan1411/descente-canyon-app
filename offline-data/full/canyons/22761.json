@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:54:15.233645+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22761,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22761/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22761/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22761/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22761/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22761,
+    "identity": {
+      "nom": "Ribeiro Bonito",
+      "nomComplet": "Canyon de Ribeiro Bonito",
+      "prefixeNom": "Canyon de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22761/Ribeiro-Bonito.html"
+    },
+    "location": {
+      "pays": "Portugal",
+      "region": "Madeira",
+      "departement": "Santana Municipality",
+      "communePrincipale": "São Jorge",
+      "communes": [
+        "São Jorge"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a4III",
+      "interet": 2.7,
+      "nbVotes": 9
+    },
+    "metrics": {
+      "altitudeDepartM": 1005,
+      "deniveleM": 400,
+      "longueurM": 2000,
+      "cascadeMaxM": 50,
+      "cordeMiniM": 30,
+      "navette": "6.5km"
+    },
+    "timings": {
+      "approche": "50min",
+      "descente": "4h",
+      "retour": "40min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": "Ouverture le 8 décembre 2005 par Duarte Silva, Vivaldo Lucas, Nuno Cunha et Antoine Florin.",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22761,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 32.785088,
+        "longitude": -16.949898,
+        "label": null
+      },
+      {
+        "canyonId": 22761,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 32.795151,
+        "longitude": -16.936834,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 32.785088,
+      "longitude": -16.949898,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_12f33d7f03fbf993",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyoning.camadeira.com/canyons/ribeiro-bonito/",
+          "url": "http://canyoning.camadeira.com/canyons/ribeiro-bonito/"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

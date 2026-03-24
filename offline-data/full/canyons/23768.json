@@ -1,0 +1,160 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:01.625544+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23768,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23768/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23768/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23768/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23768/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23768,
+    "identity": {
+      "nom": "Toscolano",
+      "nomComplet": "Torrente, Fiume Toscolano",
+      "prefixeNom": "Torrente, Fiume",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23768/Toscolano.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Lombardia",
+      "departement": "Brescia",
+      "communePrincipale": "Toscolano-Maderno",
+      "communes": [
+        "Toscolano-Maderno"
+      ],
+      "massif": null,
+      "bassin": "Lac de Garde",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a3III",
+      "interet": 2.4,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 290,
+      "deniveleM": 190,
+      "longueurM": 2500,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 25,
+      "navette": "6.1km"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "3h",
+      "retour": "25min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23768,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.672756,
+        "longitude": 10.614135,
+        "label": null
+      },
+      {
+        "canyonId": 23768,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.659492,
+        "longitude": 10.611045,
+        "label": null
+      },
+      {
+        "canyonId": 23768,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 45.672726,
+        "longitude": 10.614114,
+        "label": null
+      },
+      {
+        "canyonId": 23768,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 45.649879,
+        "longitude": 10.60449,
+        "label": null
+      },
+      {
+        "canyonId": 23768,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.661839,
+        "longitude": 10.61254,
+        "label": "one car only - short trip"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 45.672726,
+      "longitude": 10.614114,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_e7ce3098eeb59aba",
+          "kind": "MAP",
+          "title": "48 IV-NE Toscolano-Maderno (IGMI 25/V)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_eb4c4f60f81e634d",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/Canyons/ToscolanoCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/Canyons/ToscolanoCanyon"
+        },
+        {
+          "id": "resource_30345e5db4663e43",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://catastoforre.aic-canyoning.it/ind.....DIA/pro/BS/cod/BS023",
+          "url": "http://catastoforre.aic-canyoning.it/ind.....DIA/pro/BS/cod/BS023"
+        },
+        {
+          "id": "resource_bab27734c99346ea",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://fallocefali.altervista.org/torren.....--toscolano-m.-.html",
+          "url": "http://fallocefali.altervista.org/torren.....--toscolano-m.-.html"
+        },
+        {
+          "id": "resource_8089358914f4d971",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.tntcanyoning.it/canyon-percor.....te-toscolano-maderno",
+          "url": "http://www.tntcanyoning.it/canyon-percor.....te-toscolano-maderno"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

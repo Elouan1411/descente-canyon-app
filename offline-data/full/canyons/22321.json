@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:35.962876+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22321,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22321/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22321/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22321/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22321/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22321,
+    "identity": {
+      "nom": "Ferrière",
+      "nomComplet": "La Ferrière",
+      "prefixeNom": "La",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22321/Ferriere.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Isère",
+      "communePrincipale": "Villard-de-Lans",
+      "communes": [
+        "Villard-de-Lans"
+      ],
+      "massif": "Vercors",
+      "bassin": "Isère",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a1II",
+      "interet": 1.7,
+      "nbVotes": 5
+    },
+    "metrics": {
+      "altitudeDepartM": 1150,
+      "deniveleM": 150,
+      "longueurM": 400,
+      "cascadeMaxM": 75,
+      "cordeMiniM": 40,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "2h30",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": "De Villard-de-Lans, aller au hameau des Jarrands et au niveau du pont des Olivets prendre la route qui monte au hameau de Méaudret puis de Haut Méaudret. Suivre la route qui se transforme en piste et se garer sans gêner, peu près la dernière maison.",
+      "accesAmont": null,
+      "approche": "Continuer la piste jusqu'à un panneau d'interdiction de circulation et une barrière. La première cascade est là, en contrebas dans le thalweg.",
+      "descente": "La première cascade et un petite encaissement vous mettent dans l'ambiance. Après une centaine de mètres de marche, on arrive en haut de l'encaissement principal. Les 3 premières cascades d'une dizaine de mètres s'enchaînent pour arriver en haut de la C75. Le fractionnement se fait en RD : 8+27+40",
+      "retour": "On arrive au niveau de la grotte et de la falaise de la Balme Noire, interdite à l'escalade (tranquillité des faucons pèlerin y nichant). De là, suivre le pied de la falaise et la sente vers la droite. Au bout d'environ 200m, prendre encore à droite au petit carrefour pour suivre une sente qui remonte jusqu'à la piste. Suivre celle-ci à droite jusqu'au véhicule.",
+      "engagement": "Échappatoire impossible dans l'encaissement.",
+      "periode": "Rarement en eau, certainement à la fonte des neiges.",
+      "geologie": null,
+      "historique": "Ouverture réalisée le 14/05/1999 par Olivier Herr et Olivier Courtois",
+      "remarques": "Pour les jours de grosses pluie... Il serait possible de continuer la descente plus en aval jusqu'à la route des Gorges de la Bourne : quelques plans inclinés et une C30 parait-il."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22321,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 45.07058,
+        "longitude": 5.504832,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.07058,
+      "longitude": 5.504832,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_f71cf3569cd5f7fc",
+          "kind": "MAP",
+          "title": "3235 OT Autrans - Gorges de La Bourne (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_a65c8c5841e66ac4",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.aventurecanyon.com/ferriere-description.html",
+          "url": "http://www.aventurecanyon.com/ferriere-description.html"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

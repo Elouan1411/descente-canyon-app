@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:49:24.505675+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21437,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21437/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21437/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21437/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21437/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21437,
+    "identity": {
+      "nom": "Sorba",
+      "nomComplet": "Gole del Sorba, Sorba",
+      "prefixeNom": "Gole del",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21437/Sorba.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Piemonte",
+      "departement": "Vercelli",
+      "communePrincipale": "Rassa",
+      "communes": [
+        "Rassa"
+      ],
+      "massif": null,
+      "bassin": "Valsesia",
+      "coursEau": "Sorba"
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.8,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 800,
+      "deniveleM": 750,
+      "longueurM": 1000,
+      "cascadeMaxM": 15,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "2h",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "Sortir de l'autoroute a26 à Romagnano Sesia et continuer sur la N299 Borgosesia, Alagna. suivre les indications pour Alagna et passer les villes de Borgosesia et de Varallo et continuer sur la même route jusqu'au pays de Piode, approximativement 40 kilomètres de Romagnano. Tourner sur un pont du côté gauche dans la direction de Rassa et continuer approximativement 1.5 kilomètres. Depasser le carrefour pour Dughera et se garer a la côté gauche avant une courbe vers la droite, à proximité d'un pont piétonnier ancien qui enjambe le Sorba.",
+      "accesAmont": null,
+      "approche": "Descendre en rive droite à côté du pont",
+      "descente": "Jolie descente avec ressauts et nage. verifier le debit",
+      "retour": "Sortie a la droite du pont, apres tourner à gauche sur le pont et prendre le sentier en face.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21437,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.77401,
+        "longitude": 8.029321,
+        "label": null
+      },
+      {
+        "canyonId": 21437,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.773197,
+        "longitude": 8.044717,
+        "label": null
+      },
+      {
+        "canyonId": 21437,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.774193,
+        "longitude": 8.02901,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.774193,
+      "longitude": 8.02901,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_a9041d20d126f712",
+          "kind": "TOPOGUIDE",
+          "title": "Canyoning Nord Italia",
+          "authors": [
+            "Pascal Van Duin"
+          ],
+          "publicationYear": 2009,
+          "reference": "978-88-901753-1-2",
+          "editor": "TopCanyon",
+          "status": "en stock\n\n- 25,90 € -\n\nCommandez cet ouvrage dès maintenant !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/135/Canyoning-Nord-Italia.html"
+        },
+        {
+          "id": "biblio_60029af297dac6c3",
+          "kind": "TOPOGUIDE",
+          "title": "Italia Nord-Ovest - Gole e Canyon Vol.3",
+          "authors": [
+            "Franscesco Cacace",
+            "Roberto Jarre",
+            "Dino Ruotolo",
+            "Roberto Schenone. Traduit en français par Thierry Achmetoff"
+          ],
+          "publicationYear": 2003,
+          "reference": "88-900260-2-2",
+          "editor": "Adriambiente",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/153/topoguide.html"
+        }
+      ],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_a71d8d32e6b40429",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.cicarudeclan.com/ita/a5_sorba.htm",
+          "url": "http://www.cicarudeclan.com/ita/a5_sorba.htm"
+        },
+        {
+          "id": "resource_9cd40382af6e413e",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.piemonte-emozioni.it/sport_be.....ri_sport/sorba.shtml",
+          "url": "http://www.piemonte-emozioni.it/sport_be.....ri_sport/sorba.shtml"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:47:53.517510+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21029,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21029/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21029/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21029/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21029/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21029,
+    "identity": {
+      "nom": "Masino",
+      "nomComplet": "Val Masino",
+      "prefixeNom": "Val",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21029/Masino.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Lombardia",
+      "departement": "Sondrio",
+      "communePrincipale": "Ardenno",
+      "communes": [
+        "Ardenno"
+      ],
+      "massif": null,
+      "bassin": "Val Masino",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a6II",
+      "interet": 2.1,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 550,
+      "deniveleM": 100,
+      "longueurM": 900,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 25,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "2h30",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "aval se trouve au niveau d'une piste arrivant à 100m de la bifurcation pour Biolo.\n\nOn peut faire une navette mais pour 1 km faut pas déconner....",
+      "accesAmont": "amont, Monter de Ardenno vers le Val Masino et se garer environ 300m avant le ponte del Baffo (571m)\n\nL'",
+      "approche": null,
+      "descente": "Les difficutés peuvent s'éviter ou se protéger facilement. L'équipement principal est hors crue. Cette descente est interessante comme école d'eau vive.",
+      "retour": "Sortir à gauche au niveau de blocs indiquant une ancienne carrière et rejoindre un sentier qui se transforme en piste.",
+      "engagement": "On peut se mettre facilement hors crue. Quelques échappatoires possibles dans les bois.",
+      "periode": "Juillet, Août.",
+      "geologie": null,
+      "historique": "1ère descente par C Gianatti et M Crottogini en 1996",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21029,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.18417,
+        "longitude": 9.624538,
+        "label": null
+      },
+      {
+        "canyonId": 21029,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.17601,
+        "longitude": 9.619131,
+        "label": null
+      },
+      {
+        "canyonId": 21029,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 46.185505,
+        "longitude": 9.625783,
+        "label": null
+      },
+      {
+        "canyonId": 21029,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 46.171211,
+        "longitude": 9.620805,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 46.185505,
+      "longitude": 9.625783,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_4744433c393a25aa",
+          "kind": "MAP",
+          "title": "CNS 279 kompass 93",
+          "scale": null,
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

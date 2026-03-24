@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:52.934037+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22113,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22113/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22113/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22113/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22113/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22113,
+    "identity": {
+      "nom": "Gei superieur",
+      "nomComplet": "Val di Gei superieur, Gei",
+      "prefixeNom": "Val di",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22113/Gei-superieur.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Avegno Gordevio",
+      "departement": "Tessin",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": "Valle Maggia",
+      "coursEau": "Gei"
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 1.5,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 650,
+      "deniveleM": 480,
+      "longueurM": 800,
+      "cascadeMaxM": 58,
+      "cordeMiniM": 60,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h15min",
+      "descente": "2h30min",
+      "retour": "2h30min"
+    },
+    "topo": {
+      "accesAval": "Remontez le Val Maggia. Après le panneau de Gordevio, au niveau d’une maison orange qui se trouve à gauche et d’un sculpteur à droite, prenez la route à droite qui monte dans le village. Au mieux, en vous repérant sur la gorge, montez sur le haut pour vous garer à côté de la chapelle (comme Gei inf.).",
+      "accesAmont": null,
+      "approche": "Depuis l'église et le puits (345m) suivre le sentier vers le N-Ouest, traverser une rigole d'eau (ce n'est ne pas un chemin) et prendre ensuite le sentier á droite vers le-haut. Après 5 épingles le sentier arrive au bord du canyon (500m). Continuer et monter jusqu'aux maisons de Cortasell (705m). Passer les maisons et après quelques mètres traverser par une sente á droite (Est) vers une maison seule (730m). Passer la maison et poursuivre le sente, ensuite raide jusqu'áu cours d'eau.",
+      "descente": "Marche et désescalade, 2 rappel avec une 60 M",
+      "retour": "continuer Gei inf.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22113,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.236824,
+        "longitude": 8.748121,
+        "label": null
+      },
+      {
+        "canyonId": 22113,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.228928,
+        "longitude": 8.745632,
+        "label": "fin du canyon integrale ( = fin du Gei inf.)"
+      },
+      {
+        "canyonId": 22113,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.228779,
+        "longitude": 8.745149,
+        "label": null
+      },
+      {
+        "canyonId": 22113,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 46.230591,
+        "longitude": 8.747778,
+        "label": "possible sortie á l'entrée Gei inf."
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.228779,
+      "longitude": 8.745149,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_0cb1ef89bee0ed0d",
+          "kind": "MAP",
+          "title": "1312 Locarno (Carte Nationale Suisse)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

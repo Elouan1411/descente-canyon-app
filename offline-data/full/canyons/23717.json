@@ -1,0 +1,134 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:50.820228+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23717,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23717/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23717/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23717/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23717/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23717,
+    "identity": {
+      "nom": "Badanela (inferior)",
+      "nomComplet": "Badanela (inferior), Badanela",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23717/Badanela-inferior.html"
+    },
+    "location": {
+      "pays": "Portugal",
+      "region": "Açores",
+      "departement": "Santa Cruz das Flores Municipality , Ilha das Flores",
+      "communePrincipale": "Lajes das Flores",
+      "communes": [
+        "Santa Cruz das Flores Municipality",
+        "Ilha das Flores",
+        "Santa Cruz das Flores",
+        "Lajes das Flores"
+      ],
+      "massif": "Morro Alto",
+      "bassin": null,
+      "coursEau": "Badanela"
+    },
+    "rating": {
+      "cotation": "v4a3III",
+      "interet": 2.7,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 265,
+      "deniveleM": 145,
+      "longueurM": 2000,
+      "cascadeMaxM": 19,
+      "cordeMiniM": 20,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "1h",
+      "descente": "2h30",
+      "retour": "7min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23717,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 39.466248,
+        "longitude": -31.172276,
+        "label": null
+      },
+      {
+        "canyonId": 23717,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 39.461617,
+        "longitude": -31.161709,
+        "label": null
+      },
+      {
+        "canyonId": 23717,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 39.459785,
+        "longitude": -31.16498,
+        "label": null
+      },
+      {
+        "canyonId": 23717,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 39.462833,
+        "longitude": -31.158628,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 39.459785,
+      "longitude": -31.16498,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_6791f42b9091629c",
+          "kind": "MAP",
+          "title": "01 Island of Flores (North) (Instituto Geográfico do Exército - Série M889)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_1f65b7539d3323b1",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/C.....danelainferiorCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/C.....danelainferiorCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

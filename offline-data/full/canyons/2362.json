@@ -1,0 +1,156 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:45:13.937888+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2362,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2362/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2362/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2362/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2362/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/2362/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 2362,
+    "identity": {
+      "nom": "Ecot",
+      "nomComplet": "L' Ecot, Arc",
+      "prefixeNom": "L'",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2362/Ecot.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Savoie",
+      "communePrincipale": "Bonneval-sur-Arc",
+      "communes": [
+        "Bonneval-sur-Arc"
+      ],
+      "massif": "Vanoise",
+      "bassin": "Maurienne",
+      "coursEau": "Arc"
+    },
+    "rating": {
+      "cotation": "v2a3II",
+      "interet": 3.0,
+      "nbVotes": 42
+    },
+    "metrics": {
+      "altitudeDepartM": 2025,
+      "deniveleM": 125,
+      "longueurM": null,
+      "cascadeMaxM": 22,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "2h30",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "De Bonneval-sur-Arc, monter au hameau de l'Ecot. Se garer au parking au niveau du barrage.",
+      "accesAmont": null,
+      "approche": "On commence au pont.",
+      "descente": "C'est un très beau canyon dans le granit. Tres beau rocher bien sculpte dans la première partie, et de belles vasques. On passe le pont de la Lama (échappatoire facile) avant de s'engager dans la deuxième partie courte mais qui forme un magnifique canyon. Sortie en RG vers la route des que l'encaissement se termine",
+      "retour": "Soit vous laissez une voiture au pont de la Lama, soit vous remontez par la route jusqu'au parking de départ (1km)",
+      "engagement": null,
+      "periode": "Eau froide, gants et chaussons néoprène indispensables",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Attention barrage : canyon interdit après 14h et jeudi : lâchers d'eau !"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2362,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.379974,
+        "longitude": 7.089915,
+        "label": null
+      },
+      {
+        "canyonId": 2362,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.380939,
+        "longitude": 7.090302,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.380939,
+      "longitude": 7.090302,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_da30219dbb4dd176",
+          "kind": "TOPOGUIDE",
+          "title": "Les canyons de Savoie",
+          "authors": [
+            "Patrick Chollot"
+          ],
+          "publicationYear": 2018,
+          "reference": "978-2-95309-39-1-9",
+          "editor": "auto-édition",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/1125/Les-canyons-de-Savoie.html"
+        },
+        {
+          "id": "biblio_6d273ae41f72e178",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons de Savoie",
+          "authors": [
+            "F. Martin",
+            "C. Altazin"
+          ],
+          "publicationYear": 2007,
+          "reference": "978-2-9528935-0-3",
+          "editor": null,
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/15/Descentes-de-canyons-en-Savoie.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_f89e0e75ced047aa",
+          "kind": "MAP",
+          "title": "3633 ET Tignes - Val-d'Isere (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_d981b70a25e08eec",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.savoie-maurienne.com/sites/canyoning/index.html",
+          "url": "http://www.savoie-maurienne.com/sites/canyoning/index.html"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 66,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté municipal (Bonneval sur Arc) - 19 juin 1999",
+          "summary": "- Interdit le jeudi (chasse du barrage).\n\n- Autorisé les autres jours, sortie obligatoire avant 14h (débordement du barrage)",
+          "remark": null,
+          "details": "Consultez le document\n\nArrêté municipal du 19 juin 1999\n\nLe Maire de la Commune de Bonneval sur Arc,\n\nVu le Code Général des Collectivités territoriales et notamment les articles L2211.1, L2212.2 et suivants, L2213.23,\n\nConsidérant qu'il importe de reglementer, dans l'intérêt de la sécurité publique, l'accès au cours d'eau et les activités dont la pratique est sujette à risques,\n\nConsidérant les risques engendrés par les lâchés d'eau et les débordements à l'aval de la prise d'eau de l'Ecot,\n\nL'arrêté N°15/98 est abrogé.\n\nARRETE\n\nArticle 1 :\n\nLa présente de toute personne et la pratique de toute activité est interdite dans le cours d'eau de l'Arc sur le territoire de la commune de Bonneval sur Arc sur la partie située entre le hameau de l'Ecot et le hameau de Tralenta le jeudi de 6h à 20h.\n\nLa chasse EDF de la prise d'eau de l'Ecot permettant le dessablage de cet ouvrage devra être actionnée tous les jeudis matin de 6h à 10h.\n\nPar ailleurs, en raison du débordement du barrage de l'Ecot pouvant survenir de façon impromptue l'après-midi, la pratique du canyoning ou de toute autre activité et la présence de toute personne est interdite dans les gorges du Pont St Clair à Faudan tous les jours de 14h à 24h.\n\nArticle 2 :\n\nTout groupe de mineurs pratiquant un sport en eau vive ou une activité aux abords du torrent devra obligatoirement être encadré par des professionnels ou des personnes dûment qualifiées pour cette activité, et sera tenu de signaler sa présence dans les gorges au Syndicat d'initiative ou à la Mairie avant de s'y rendre.\n\nArticle 3 :\n\nLa pratique de tout sport en eau vive est interdite lors des orages.\n\nArticle 4 :\n\nLes panneaux de signalisation nécessaires seront apposés pour permettre l'application des présentes dispositions\n\nArticle 5 :\n\nLe commandant de la BRigade de gendarmerie de Lanslebourg est chargé de l'application du présent arrêté qui fera l'objet d'un affichage en Mairie.\n\nFait à Bonneval sur Arc,\n\nLe 19 juin 1999,\n\nLe Maire.\n\nConsultez :\n\nPhoto du panneau d'information au départ du canyon\n\nConsultez :\n\nPhoto du barrage juste en amont du canyon",
+          "effectiveDate": "19 juin 1999",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/66/legislation.html",
+          "attachments": []
+        }
+      ]
+    }
+  }
+}

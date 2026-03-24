@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:54:02.400958+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22708,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22708/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22708/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22708/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22708/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22708,
+    "identity": {
+      "nom": "Kessellaine",
+      "nomComplet": "Kessellaine",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22708/Kessellaine.html"
+    },
+    "location": {
+      "pays": "Allemagne",
+      "region": "Bayern",
+      "departement": "Oberbayern",
+      "communePrincipale": "Eschenlohe",
+      "communes": [
+        "Landkreis Garmisch-Partenkirchen",
+        "Eschenlohe"
+      ],
+      "massif": "Estergebirge",
+      "bassin": "Loisach",
+      "coursEau": "Kessellaine"
+    },
+    "rating": {
+      "cotation": "v4a4III",
+      "interet": 2.2,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 850,
+      "deniveleM": 70,
+      "longueurM": 1200,
+      "cascadeMaxM": 15,
+      "cordeMiniM": 15,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h",
+      "descente": "2h",
+      "retour": "45min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "Enchainez avec Gachentodklamm."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22708,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.577839,
+        "longitude": 11.236117,
+        "label": null
+      },
+      {
+        "canyonId": 22708,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.58136,
+        "longitude": 11.240516,
+        "label": null
+      },
+      {
+        "canyonId": 22708,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.591209,
+        "longitude": 11.205642,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.591209,
+      "longitude": 11.205642,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_623202a1f26e240b",
+          "kind": "MAP",
+          "title": "UK L 18 Bad Tölz - Lenggries (Bayerisches Landesvermessungsamt)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

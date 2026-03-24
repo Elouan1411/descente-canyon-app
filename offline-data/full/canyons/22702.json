@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:54:01.001987+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22702,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22702/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22702/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22702/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22702/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22702,
+    "identity": {
+      "nom": "Ronda",
+      "nomComplet": "Tajo de Ronda, Barranco de Guadalevin, Rio Grande",
+      "prefixeNom": "Tajo de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22702/Ronda.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Andalucía",
+      "departement": "Málaga",
+      "communePrincipale": "Ronda",
+      "communes": [
+        "Ronda"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": "Rio Grande"
+    },
+    "rating": {
+      "cotation": "v4a2III",
+      "interet": 2.3,
+      "nbVotes": 5
+    },
+    "metrics": {
+      "altitudeDepartM": 645,
+      "deniveleM": 130,
+      "longueurM": 600,
+      "cascadeMaxM": 37,
+      "cordeMiniM": 45,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "25min",
+      "descente": "1h30-2h",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "Aller à Ronda. Au niveau de la plaza Ruedo Alameda, prendre la Calle del Prado (avant d’entrer dans le village touristique de Ronda). Faire 550m et se garer dans un virage en épingle à gauche.",
+      "accesAmont": null,
+      "approche": "Remonter à pied la Calle del Prado jusqu'à la plaza Ruedo Alameda et s'engager dans le centre ancien (calle Armiñan) en passant sous la porte monumentale. Avancer dans la rue principale et assez vite prendre à droite un sentier descendant fléché qui amène aux \"Baños arabes\" et \"Puente viejo\". Traverser le pont sur le canyon et 50m après prendre à droite au niveau d'une petite maison pour gagner la rivière.",
+      "descente": "randonnée aquatique de 10 min, puis après être passé sous le “Puente Nuevo”, c’est le grand rappel d’environ 37m (équipement RD dans l'eau après une main-courante ou bien RG hors-d'eau) ; puis 5 min de marche entre les gros blocs et on arrive à la seconde et dernière cascade. Choix de l’amarrage RG ou RD, la cascade se descend en une ou deux fois, 25m ou 35m selon le point de départ.",
+      "retour": "Rester dans le lit et sortir au niveau d’une bâtisse que l'on aperçoit en RG. Passer en contrebas de la terrasse de cette auberge (Los Molinos) et rejoindre la route sans passer dans la propriété privée. Remonter ensuite la route jusqu'à la voiture.",
+      "engagement": "Le captage au début du canyon peut aspirer une grande partie du débit. En cas d'arrêt, cela peut être très problématique, surtout en période de hautes-eaux.",
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "Note : possibilité d'une autre entrée grâce un sentier au niveau d’une petite ruine pour arriver à la première cascade. Mais ce qui fait le charme de la descente, c’est d’abord l’accès à pied dans le village avec ses petites rues, ainsi que les 10 minutes de randonnée aquatique au cœur du village."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22702,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 36.739326,
+        "longitude": -5.162855,
+        "label": null
+      },
+      {
+        "canyonId": 22702,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 36.73991,
+        "longitude": -5.168401,
+        "label": null
+      },
+      {
+        "canyonId": 22702,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 36.739765,
+        "longitude": -5.162143,
+        "label": null
+      },
+      {
+        "canyonId": 22702,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 36.740005,
+        "longitude": -5.169867,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 36.739765,
+      "longitude": -5.162143,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_73685e204855c93c",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/Canyons/TajodeRondaCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/Canyons/TajodeRondaCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

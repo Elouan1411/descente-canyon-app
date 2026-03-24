@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:54:16.923254+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22769,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22769/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22769/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22769/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22769/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22769,
+    "identity": {
+      "nom": "Kaputas",
+      "nomComplet": "Kaputas",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22769/Kaputas.html"
+    },
+    "location": {
+      "pays": "Turquie",
+      "region": "Kaş",
+      "departement": "Antalya",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Akdağlar",
+      "bassin": "Mer méditerranée",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a3IV",
+      "interet": 2.7,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 620,
+      "deniveleM": 610,
+      "longueurM": 2300,
+      "cascadeMaxM": 33,
+      "cordeMiniM": 35,
+      "navette": "13.0km"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "4h30min",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "De Kalkan prendre la \"400\" (E90) direction Kas et continuer 7 km jusqu'à Kaputas Beach. Garer la voiture pour la sortie.\n\nAvec la deuxième voiture, retourner jusqu'au carrefour giratoire au-dessus de Kalkan. Prendre à droite la \"07-53\", direction Sütlegen, Elmali.\n\nMonter 6,1 km et garer la deuxième voiture au-dessus de Kaputas ruisseau.",
+      "accesAmont": null,
+      "approche": "Prendre le sentier de la route vers le sud qui descends jusqu'à ruisseau.",
+      "descente": null,
+      "retour": "De Kaputas Beach, monter l'escalier jusqu'à la route.",
+      "engagement": "Très long parcours.",
+      "periode": "Sec en été.",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22769,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 36.242428,
+        "longitude": 29.46501,
+        "label": null
+      },
+      {
+        "canyonId": 22769,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 36.229843,
+        "longitude": 29.449202,
+        "label": null
+      },
+      {
+        "canyonId": 22769,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 36.246418,
+        "longitude": 29.466661,
+        "label": null
+      },
+      {
+        "canyonId": 22769,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 36.229336,
+        "longitude": 29.449507,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 36.246418,
+      "longitude": 29.466661,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:19.326305+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22517,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22517/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22517/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22517/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22517/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22517,
+    "identity": {
+      "nom": "Platanaki",
+      "nomComplet": "Canyon Platanaki",
+      "prefixeNom": "Canyon",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22517/Platanaki.html"
+    },
+    "location": {
+      "pays": "Grèce",
+      "region": "Central Greece",
+      "departement": "of Evrytania",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": "Krikelopotamos",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v1a2IV",
+      "interet": 2.3,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 740,
+      "deniveleM": 140,
+      "longueurM": 3000,
+      "cascadeMaxM": 2,
+      "cordeMiniM": null,
+      "navette": "4.0km"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "2h",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "sans 4x4 possible (année 2010)",
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22517,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 38.730301,
+        "longitude": 21.717772,
+        "label": null
+      },
+      {
+        "canyonId": 22517,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 38.742863,
+        "longitude": 21.71615,
+        "label": null
+      },
+      {
+        "canyonId": 22517,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 38.73365,
+        "longitude": 21.719103,
+        "label": null
+      },
+      {
+        "canyonId": 22517,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 38.742722,
+        "longitude": 21.716194,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 38.73365,
+      "longitude": 21.719103,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_29b721f00859dbe3",
+          "kind": "MAP",
+          "title": "2.4/2.5 Mountains of Evritania (Anavasi)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:43:06.988937+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22090,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22090/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22090/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22090/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22090/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22090,
+    "identity": {
+      "nom": "Brussine",
+      "nomComplet": "Rio Brussine, Macile",
+      "prefixeNom": "Rio",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22090/Brussine.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Frioul-Vénétie julienne",
+      "departement": "Udine",
+      "communePrincipale": "Chiusaforte",
+      "communes": [
+        "Chiusaforte"
+      ],
+      "massif": "Alpes Juliennes",
+      "bassin": "Fella",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a3III",
+      "interet": 2.8,
+      "nbVotes": 14
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": 240,
+      "longueurM": 650,
+      "cascadeMaxM": null,
+      "cordeMiniM": 60,
+      "navette": "1.0km"
+    },
+    "timings": {
+      "approche": "1h",
+      "descente": "2h30",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "peut être laissée à proximité du terrain de sport de Chiusaforte.",
+      "accesAmont": null,
+      "approche": "Approche par le nouvel accès balisé AIC : suivre le sentier 632 et, avant le croisement avec le sentier 638, prendre une discrète sente à droite (panneau + point bleu) qui descend pour traverser un ravin habituellement sec et remonte en face jusqu'à atteindre le canyon quasiment au niveau du premier obstacle.",
+      "descente": null,
+      "retour": "Évident, en traversant à gué le Fella à l'endroit le plus commode.",
+      "engagement": null,
+      "periode": "Caractérisé par un débit assez conséquent.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Le dernier rappel mène directement dans le fleuve Fella. Il est nécessaire que son débit en autorise la traversée sans risque.\n\nLes cascades terminales sont visibles depuis Chiusaforte et permettent d'évaluer le débit."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22090,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.398125,
+        "longitude": 13.306203,
+        "label": null
+      },
+      {
+        "canyonId": 22090,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.402473,
+        "longitude": 13.303328,
+        "label": null
+      },
+      {
+        "canyonId": 22090,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 46.404144,
+        "longitude": 13.316976,
+        "label": null
+      },
+      {
+        "canyonId": 22090,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 46.405048,
+        "longitude": 13.306417,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 46.404144,
+      "longitude": 13.316976,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

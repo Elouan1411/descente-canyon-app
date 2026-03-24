@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:04.232650+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23509,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23509/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23509/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23509/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23509/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23509,
+    "identity": {
+      "nom": "Diomaz",
+      "nomComplet": "Cascades de Diomaz",
+      "prefixeNom": "Cascades de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23509/Diomaz.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Haute-Savoie",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Chablais - Platé - Aiguilles Rouges",
+      "bassin": "Drance",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a1I",
+      "interet": 1.6,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1250,
+      "deniveleM": 50,
+      "longueurM": 130,
+      "cascadeMaxM": 15,
+      "cordeMiniM": 15,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "40min",
+      "descente": "40min",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": "Sur la route de Saint Joire en direction Bellevaux, avant Bellevaux prendre à droite, virage en épingle (D236), la direction de La Chèvrerie - Lac de Vallon. Se garer sur le parking à droite juste après le lac de Vallon.",
+      "accesAmont": null,
+      "approche": "Depuis le parking prendre le chemin qui passe au dessus du torrent et continuer jusqu'à la Chapelle Saint-Bruno. De là continuer sur le sentier en RD du torrent en suivant les panneaux Cascade de Diomaz et Croix des Chartreux. Les cascades sont signalées sur la carte IGN arrivée 1197m",
+      "descente": "Enchainement de petits obstacles sculptés.",
+      "retour": "Utiliser le même sentier en sens inverse.",
+      "engagement": "On peut sortir facilement presque à chaque obstacle.",
+      "periode": null,
+      "geologie": null,
+      "historique": "canyon mini pouce parcourue avec ses affluents (tout 2 sans intérêt) en initiation cascade de glace par des locaux depuis fort longtemps. La Croix des Chartreux selon une légende locale aurait un rapport avec le trésors des templiers.",
+      "remarques": "Équipement vieux et amarrages naturels"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23509,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.207397,
+        "longitude": 6.558209,
+        "label": null
+      },
+      {
+        "canyonId": 23509,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.207275,
+        "longitude": 6.558124,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 46.207397,
+      "longitude": 6.558209,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_0e7ca75ede9890e1",
+          "kind": "MAP",
+          "title": "3429 ET Bonneville-Cluses (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

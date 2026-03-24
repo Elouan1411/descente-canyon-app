@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:21.856193+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23591,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23591/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23591/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23591/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23591/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23591,
+    "identity": {
+      "nom": "Pendlatobel",
+      "nomComplet": "Pendlatobel, Pendlabach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23591/Pendlatobel.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Grüsch",
+      "departement": "Graubünden/Grigioni/Grischun",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Alpes de Plessur",
+      "bassin": "Prättigau",
+      "coursEau": "Pendlabach"
+    },
+    "rating": {
+      "cotation": "v6a2V",
+      "interet": 1.8,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1173,
+      "deniveleM": 573,
+      "longueurM": 1500,
+      "cascadeMaxM": 100,
+      "cordeMiniM": 80,
+      "navette": "4.0km"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "4h",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": "Prendre sortie Grüsch de l'autoroute A28, traverser la Landquart et suivre la route aux Mayens de Cavadura et la piste jusqu'au torrent.",
+      "accesAmont": null,
+      "approche": null,
+      "descente": "Après certains petits et moyens rappels, on arrive à un succession de grandes cascades.",
+      "retour": null,
+      "engagement": "Parcours vertical, peu de vasques. Dès le départ, plus de possibilités de sortir.",
+      "periode": "Grandes cascades, on prend souvent toute le débit sur toute la longueur des rappels.\n\nJuin - Octobre.",
+      "geologie": "Schiste du Prättigau, pas très dur.",
+      "historique": "Ouverture Timo Stammwitz, Samuel Zürcher 23.05.2010",
+      "remarques": "Matériel de rééquipement nécessaire, schiste souvent instable et il y a souvent de grandes crues. Prévoir points de > 10cm longueur, rocher solide seulement dans les veines blanches. Ne pas aller en phase de fonte de neige ou après la pluie."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23591,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.958229,
+        "longitude": 9.6545,
+        "label": null
+      },
+      {
+        "canyonId": 23591,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.970249,
+        "longitude": 9.6445,
+        "label": null
+      },
+      {
+        "canyonId": 23591,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 46.958141,
+        "longitude": 9.65373,
+        "label": null
+      },
+      {
+        "canyonId": 23591,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 46.970249,
+        "longitude": 9.6445,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 46.958141,
+      "longitude": 9.65373,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_70fb813b807aff2d",
+          "kind": "MAP",
+          "title": "1176 Schiers (Swisstopo)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

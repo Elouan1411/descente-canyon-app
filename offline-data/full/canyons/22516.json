@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:18.928645+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22516,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22516/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22516/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22516/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22516/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22516,
+    "identity": {
+      "nom": "Chavos",
+      "nomComplet": "Canyon Chavos, Havos",
+      "prefixeNom": "Canyon",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22516/Chavos.html"
+    },
+    "location": {
+      "pays": "Grèce",
+      "region": "West Macedonia Region",
+      "departement": "of Kozani",
+      "communePrincipale": "Servia-Velventos",
+      "communes": [
+        "Servia-Velventos"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a2IV",
+      "interet": 1.7,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 440,
+      "deniveleM": 60,
+      "longueurM": 750,
+      "cascadeMaxM": 7,
+      "cordeMiniM": 10,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "1h15min",
+      "retour": "40min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "très pollué"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22516,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 40.15649,
+        "longitude": 21.946135,
+        "label": null
+      },
+      {
+        "canyonId": 22516,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 40.161148,
+        "longitude": 21.949526,
+        "label": null
+      },
+      {
+        "canyonId": 22516,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 40.159019,
+        "longitude": 21.950727,
+        "label": "ici eau pour les neoprenes"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 40.159019,
+      "longitude": 21.950727,
+      "label": "ici eau pour les neoprenes"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

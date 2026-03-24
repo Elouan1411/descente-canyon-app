@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:59.151299+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22142,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22142/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22142/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22142/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22142/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22142,
+    "identity": {
+      "nom": "Hortela (partie 3)",
+      "nomComplet": "Ribeira da Hortela (partie 3)",
+      "prefixeNom": "Ribeira da",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22142/Hortela-partie-3.html"
+    },
+    "location": {
+      "pays": "Portugal",
+      "region": "Madeira",
+      "departement": "Porto Moniz Municipality",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": "Ribeira do Seixal",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a2IV",
+      "interet": 2.8,
+      "nbVotes": 19
+    },
+    "metrics": {
+      "altitudeDepartM": 840,
+      "deniveleM": 300,
+      "longueurM": 900,
+      "cascadeMaxM": 55,
+      "cordeMiniM": 50,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h",
+      "descente": "3h",
+      "retour": "15 min"
+    },
+    "topo": {
+      "accesAval": "Depuis l'ER101 prendre une route qui monte vers Chao da Ribeira. Remonter la petite vallée et se garer sur un parking au bout de la route, en face d'une pisciculture.\n\nOn peut observer le débit de la Ribeira do Seixal, qui coule en contrebas du parking (confluence des canyons Seixal et Hortela).",
+      "accesAmont": null,
+      "approche": "Prendre le sentier qui longe le court d'au (panneau présentant les canyons du secteur). On suit une conduite d'eau qui traverses des pelouses et nous amène à une retenue. Continuer à suivre le sentier, qui longe d'abord le cours d'eau en RG dans la forêt, puis qui le traverse. C'est la fin du canyon.\n\nIl faut alors repérer rapidement dans la forêt une sente qui monte fort en lacets (marches taillées, pas de balisage). On la suit pendant une petite demi-heure jusqu'à arriver à la Levada do Seixal, où on peut s'équiper. On suivra la Levada sur la droite jusqu'à arriver à la magnifique cascade de 75 mètres.",
+      "descente": "Beau canyon dans un cadre sauvage, présentant une dizaine d'obstacles (dont deux rappels de 50 mètres, et deux de 20). Une belle étroiture au milieu du parcours.\n\nOn rentre dans le canyon au milieu de la cascade de 75 mètre, qui est coupée en deux par la Levada do Seixal (si on la suit en RG par le tunnel, on arrive en 15 minutes à la sortie entre Seixal sup et inf).\n\nOn commence donc le canyon par un rappel de 50 mètre en RD (MC 7 haut au dessus de la Levada, R 50 sans frottements). La réception se fait dans une grande vasque profonde).",
+      "retour": "Après la confluence avec la Ribeira do Seixal RG et un petit ressaut, on retrouve le chemin d'accès.",
+      "engagement": "Canyon très encaissé.",
+      "periode": null,
+      "geologie": null,
+      "historique": "Ouvert en mai 2003 par l'équipe composée de Silvain Présumey, Frédéric Boisson, David Rodier et Antoine Florin.",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22142,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 32.782211,
+        "longitude": -17.111256,
+        "label": "Entrée au milieu de la C76 sur la Levada do Seixal"
+      },
+      {
+        "canyonId": 22142,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 32.788193,
+        "longitude": -17.115662,
+        "label": null
+      },
+      {
+        "canyonId": 22142,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 32.765106,
+        "longitude": -17.10144,
+        "label": null
+      },
+      {
+        "canyonId": 22142,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 32.79668,
+        "longitude": -17.114059,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 32.765106,
+      "longitude": -17.10144,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_e0c587b1a50be946",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyoning.camadeira.com/canyons/r.....da-hortela-inferior/",
+          "url": "http://canyoning.camadeira.com/canyons/r.....da-hortela-inferior/"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

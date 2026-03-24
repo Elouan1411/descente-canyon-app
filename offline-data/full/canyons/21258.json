@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:48:43.978775+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21258,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21258/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21258/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21258/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21258/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21258,
+    "identity": {
+      "nom": "Havgas",
+      "nomComplet": "Havgas",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21258/Havgas.html"
+    },
+    "location": {
+      "pays": "Grèce",
+      "region": "Crete",
+      "departement": "Lasithi",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Oros Thriptis",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a2III",
+      "interet": 2.0,
+      "nbVotes": 6
+    },
+    "metrics": {
+      "altitudeDepartM": 235,
+      "deniveleM": 115,
+      "longueurM": 1000,
+      "cascadeMaxM": 10,
+      "cordeMiniM": 15,
+      "navette": "3.8km"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "1h30",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "De Ierapetra, aller en direction d'Agios Nikolaos et Sitia.\n\nAvant Pachia Ammos, tourner à droite en direction de Kavousi.\n\nA la sortie de Kavousi, tourner à droite avant le pont qui traverse le Mesomas (panneau \"archeaological Site\") avant un grand virage à gauche.\n\nOn laisse une petite maison sur la gauche et on se gare 20 m plus loin sur la gauche.\n\nAccès",
+      "accesAmont": "Continuer la piste bétonnée au milieu des oliviers.\n\nA l'intersection suivante, aller à gauche (en direction du site archéologique). Passer devant un olivier tri-millénaire.\n\nLa piste descend et on atteint le départ du canyon (15 minutes de voiture après le départ) quand on voit le canyon de Mesonas déboucher sur le droite.",
+      "approche": null,
+      "descente": "Après 600m de marche, on arrive dans l'encaissement du canyon. Enchaînement de petits rappels avec tyroliennes possibles. La fin est marquée par le plus grand rappel (23m) en plan incliné avec transformateur éléctrique pas loin.",
+      "retour": "300m de marche pour arriver au parking",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "C'est l'aval de Mesonas"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21258,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 35.117283,
+        "longitude": 25.871616,
+        "label": null
+      },
+      {
+        "canyonId": 21258,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 35.12191,
+        "longitude": 25.865404,
+        "label": null
+      },
+      {
+        "canyonId": 21258,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 35.11742,
+        "longitude": 25.872116,
+        "label": null
+      },
+      {
+        "canyonId": 21258,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 35.122238,
+        "longitude": 25.8601,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 35.11742,
+      "longitude": 25.872116,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

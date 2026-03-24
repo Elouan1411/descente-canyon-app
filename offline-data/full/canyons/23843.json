@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:18.613384+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23843,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23843/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23843/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23843/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23843/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23843,
+    "identity": {
+      "nom": "Barbianer Wasserfälle",
+      "nomComplet": "Barbianer Wasserfälle, Cascate di Barbiano, Ganderbach, Rio Ganda",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23843/Barbianer-Wasserfalle.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Trentino-Alto Adige",
+      "departement": "Bolzano",
+      "communePrincipale": "Comune di Barbiano",
+      "communes": [
+        "Comune di Barbiano"
+      ],
+      "massif": "Alpi Sarentini - Sarntaler Alpen - Alpes Sarentine",
+      "bassin": "Isarco",
+      "coursEau": "Ganderbach, Rio Ganda"
+    },
+    "rating": {
+      "cotation": "v5a5III",
+      "interet": null,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": 1215,
+      "deniveleM": 365,
+      "longueurM": 800,
+      "cascadeMaxM": 80,
+      "cordeMiniM": 80,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h",
+      "descente": "2h30min",
+      "retour": "10"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23843,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.60181,
+        "longitude": 11.50009,
+        "label": null
+      },
+      {
+        "canyonId": 23843,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.60128,
+        "longitude": 11.50188,
+        "label": null
+      },
+      {
+        "canyonId": 23843,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.60014,
+        "longitude": 11.511415,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.60014,
+      "longitude": 11.511415,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_fb9e37eef667c82b",
+          "kind": "MAP",
+          "title": "040 Sarntaler Alpen - Monti Sarentini (Tabacco)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_e3715cfdd235a085",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/Canyons/GandaCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/Canyons/GandaCanyon"
+        },
+        {
+          "id": "resource_ba11e9f60d856989",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.ctgernstein.com/schluchten/barbian",
+          "url": "http://www.ctgernstein.com/schluchten/barbian"
+        },
+        {
+          "id": "resource_fb4540d9398fd6e1",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.map-erlebnis.de/canyoning-top.....-barbian-ganderbach/",
+          "url": "http://www.map-erlebnis.de/canyoning-top.....-barbian-ganderbach/"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

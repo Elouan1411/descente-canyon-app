@@ -1,0 +1,140 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:45.257231+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23122,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23122/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23122/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23122/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23122/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23122,
+    "identity": {
+      "nom": "Gießenbach (zur Loisach)",
+      "nomComplet": "Gießenbach (zur Loisach), Gießenbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23122/Gießenbach-zur-Loisach.html"
+    },
+    "location": {
+      "pays": "Allemagne",
+      "region": "Bayern",
+      "departement": "Oberbayern",
+      "communePrincipale": "Oberau",
+      "communes": [
+        "Landkreis Garmisch-Partenkirchen",
+        "Oberau"
+      ],
+      "massif": "Ammergauer Alpen",
+      "bassin": "Loisach",
+      "coursEau": "Gießenbach"
+    },
+    "rating": {
+      "cotation": "v2a2III",
+      "interet": 1.5,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 780,
+      "deniveleM": 70,
+      "longueurM": 300,
+      "cascadeMaxM": 10,
+      "cordeMiniM": 15,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "1h15",
+      "retour": "25min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": "10 petits rappels",
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "variante de départ à l'altitude 920m (voir dans les liens de l'onglet Biblio : vidéo)."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23122,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.557297,
+        "longitude": 11.106908,
+        "label": "Deuxième entrée : au barrage"
+      },
+      {
+        "canyonId": 23122,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.559631,
+        "longitude": 11.108324,
+        "label": null
+      },
+      {
+        "canyonId": 23122,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.561562,
+        "longitude": 11.101061,
+        "label": null
+      },
+      {
+        "canyonId": 23122,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.560753,
+        "longitude": 11.102616,
+        "label": "départ de l'approche vers la seconde entrée (sentier vers barrage)"
+      },
+      {
+        "canyonId": 23122,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.560642,
+        "longitude": 11.108346,
+        "label": "sentier de retour"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.561562,
+      "longitude": 11.101061,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_8e0f9e60214ac273",
+          "kind": "MAP",
+          "title": "8432 Oberammergau (TK25 Bayerisches Landesvermessungsamt)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_7aa1ea53cf956988",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://youtu.be/cMjGVQ4Vv5M",
+          "url": "http://youtu.be/cMjGVQ4Vv5M"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

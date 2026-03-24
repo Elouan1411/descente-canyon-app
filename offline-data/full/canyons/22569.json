@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:32.103837+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22569,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22569/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22569/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22569/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22569/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22569,
+    "identity": {
+      "nom": "Gorgette",
+      "nomComplet": "La Gorgette",
+      "prefixeNom": "La",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22569/Gorgette.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-Maritimes",
+      "communePrincipale": "Malaussène",
+      "communes": [
+        "Malaussène"
+      ],
+      "massif": null,
+      "bassin": "Var",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1III",
+      "interet": 1.2,
+      "nbVotes": 7
+    },
+    "metrics": {
+      "altitudeDepartM": 420,
+      "deniveleM": 120,
+      "longueurM": 200,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "1h",
+      "retour": "45min"
+    },
+    "topo": {
+      "accesAval": "De Nice se rendre à Malaussène, vallée du Var.",
+      "accesAmont": null,
+      "approche": "Par une petite ruelle face au restaurant, descendre la rue jusqu'au chemin (canal) prendre à gauche sur le canal qui mène à l'aqueduc (de dessus, repérer une sente qui serra le chemin de sortie).\n\nTraverser, au moulin prendre le chemin qui monte. Au pont : point de départ.",
+      "descente": "Petites cascades dans un petit vallon bien encaissé jusqu'à sa confluence avec le vallon du Serse.",
+      "retour": "Jolie remontée par le vallon du Serse, depuis la tempête Alex, le vallon en fin de Gorgette est complètement transformé. Traverser en direction de l'aqueduc puis petite grimpe jusqu'à l'aqueduc en RD du vallon du serse et prendre la sente qui reviens à Malaussène\n\nPossibilité de descendre le vallon plat par des sentes de chasseurs jusqu'à la RN 202 (prévoir une navette, plus long et surtout moins beau).",
+      "engagement": "Échappatoire au niveau d'un pont du canal.\n\nMono points , 2 chaines dans la grande cascade.",
+      "periode": "Vallon sec à l'étiage. A faire au printemps ou en hiver.",
+      "geologie": "Calcaire et marne",
+      "historique": "Ouvert et équipé par Pierre et Roland le 11/12/2010.",
+      "remarques": "Le charme de cette descente continue par la remontée du vallon voisin."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22569,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.923367,
+        "longitude": 7.127745,
+        "label": null
+      },
+      {
+        "canyonId": 22569,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 43.925743,
+        "longitude": 7.128367,
+        "label": "début de la remontée dans le Serse"
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 43.923367,
+      "longitude": 7.127745,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

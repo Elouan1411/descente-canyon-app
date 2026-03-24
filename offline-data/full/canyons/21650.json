@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:12.369042+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21650,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21650/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21650/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21650/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21650/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21650,
+    "identity": {
+      "nom": "Trescares",
+      "nomComplet": "Barranco de Trescares, Garganta de Rubo",
+      "prefixeNom": "Barranco de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21650/Trescares.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Asturias",
+      "departement": "Provincia de Asturias",
+      "communePrincipale": "Peñamellera Alta",
+      "communes": [
+        "Peñamellera Alta"
+      ],
+      "massif": "Picos de Europa",
+      "bassin": "Rio Cares",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.3,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 320,
+      "deniveleM": 200,
+      "longueurM": 600,
+      "cascadeMaxM": 12,
+      "cordeMiniM": 15,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h",
+      "descente": "2h",
+      "retour": "25min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21650,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.307022,
+        "longitude": -4.706912,
+        "label": null
+      },
+      {
+        "canyonId": 21650,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.313499,
+        "longitude": -4.706569,
+        "label": null
+      },
+      {
+        "canyonId": 21650,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.315357,
+        "longitude": -4.71704,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.315357,
+      "longitude": -4.71704,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_a184eba3c0df2c4a",
+          "kind": "MAP",
+          "title": "16-5 (56) Carrera-Cabrales (Cartografia Militar de Espana)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_5dcd94e24f8ca78f",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://ropewiki.com/Trescares",
+          "url": "http://ropewiki.com/Trescares"
+        },
+        {
+          "id": "resource_c4046115b5a01f81",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/Canyons/RuboCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/Canyons/RuboCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

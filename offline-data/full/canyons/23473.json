@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:54.574802+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23473,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23473/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23473/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23473/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23473/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23473,
+    "identity": {
+      "nom": "Muret-le-Château",
+      "nomComplet": "Cascade de Muret-le-Château, Ruisseau des Douzes",
+      "prefixeNom": "Cascade de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23473/Muret-le-Chateau.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Aveyron",
+      "communePrincipale": "Muret-le-Château",
+      "communes": [
+        "Muret-le-Château"
+      ],
+      "massif": "Causse de Lanhac",
+      "bassin": "Dourdou",
+      "coursEau": "Ruisseau des Douzes"
+    },
+    "rating": {
+      "cotation": "v3a2I",
+      "interet": 1.2,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 420,
+      "deniveleM": 50,
+      "longueurM": 100,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "10min",
+      "descente": "20min",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "De Rodez, se rendre à Sébazac-Concourès et suivre la D904 jusqu'à Muret-le-Château. Au village, prendre la seconde rue à droite menant sur un parking.",
+      "accesAmont": null,
+      "approche": "Emprunter le chemin au dessus du parking menant à la cascade.",
+      "descente": "Une jolie et unique cascade de tuf de 25 m à descendre sur amarrage naturel en RD. Lieu pouvant servir d'initiation au rappel.",
+      "retour": "Sortir en RD pour récupérer la sente remontant au chemin pris à l'aller.",
+      "engagement": "Aucun",
+      "periode": "En eau toute l'année",
+      "geologie": null,
+      "historique": null,
+      "remarques": "A enchaîner avec les descentes du coin, Salles la Source et autres..."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23473,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.493568,
+        "longitude": 2.57837,
+        "label": null
+      },
+      {
+        "canyonId": 23473,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.493851,
+        "longitude": 2.576246,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.493851,
+      "longitude": 2.576246,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

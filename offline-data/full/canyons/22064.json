@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:42.085403+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22064,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22064/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22064/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22064/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22064/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22064,
+    "identity": {
+      "nom": "Secco",
+      "nomComplet": "Rio Secco",
+      "prefixeNom": "Rio",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22064/Secco.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Ligurie",
+      "departement": "Genova",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Mont Beigua",
+      "bassin": "Cerusa",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2III",
+      "interet": 2.3,
+      "nbVotes": 7
+    },
+    "metrics": {
+      "altitudeDepartM": 700,
+      "deniveleM": 410,
+      "longueurM": 1800,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h30",
+      "descente": "3h30",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": "Quittez l'autoroute A10 à Genova Voltri. Prendre a droite la SS1 Aurelia en direction de Savona, traverser Voltri et avant le pont sur le Cerusa, tourner à droite vers Fabbriche. La route monte la vallée pendant quelques kilomètres. Après Fabbriche on poursuit jusqu'à la bifurcation pour Sambugo sur la gauche. Traverser le Cerusa et monter à droite (lacets). On enjambe le Rio Secco, 100 mètres après un parking dans un virage (panneau Pro Canyon).",
+      "accesAmont": null,
+      "approche": "Suivre le balisage Pro Canyon (rond bleu dans un carré blanc).",
+      "descente": null,
+      "retour": null,
+      "engagement": "Faible, première partie ouverte, deuxième plus engagée, mais il est toujours possible trouver des zones de sécurité.",
+      "periode": "Printemps, automne.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Toutes les infos (en italien) détaillées avec coupe et carte topo sur le site AIC section Procanyon référencé dessous"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22064,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.455837,
+        "longitude": 8.680916,
+        "label": null
+      },
+      {
+        "canyonId": 22064,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 44.45673,
+        "longitude": 8.699884,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.45673,
+      "longitude": 8.699884,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_bc57889a262fd788",
+          "kind": "MAP",
+          "title": "Il Parco Naturale Regionale del Beigua (Studio Cartografico Italiano Genova)",
+          "scale": "1/30000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_b1675c7776cbc341",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.canyoning.it/procanyon/secco.htm",
+          "url": "http://www.canyoning.it/procanyon/secco.htm"
+        },
+        {
+          "id": "resource_90580f07d094a664",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.cicarudeclan.com/ita/a5_secco.htm",
+          "url": "http://www.cicarudeclan.com/ita/a5_secco.htm"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

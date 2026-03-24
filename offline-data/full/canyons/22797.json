@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:54:23.891129+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22797,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22797/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22797/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22797/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22797/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22797,
+    "identity": {
+      "nom": "Ri del Boschetto",
+      "nomComplet": "Ri del Boschetto",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22797/Ri-del-Boschetto.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Cevio",
+      "departement": "Tessin",
+      "communePrincipale": "Vogorno",
+      "communes": [
+        "Vogorno"
+      ],
+      "massif": "Pizzo Alzasca",
+      "bassin": "Valle Maggia",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v5a3III",
+      "interet": 2.7,
+      "nbVotes": 6
+    },
+    "metrics": {
+      "altitudeDepartM": 1120,
+      "deniveleM": 580,
+      "longueurM": 1200,
+      "cascadeMaxM": 80,
+      "cordeMiniM": 65,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h15",
+      "descente": "4h30min",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "Remontez la vallée Maggia et entrez dans Cevio.\n\nTraversez le village et continuer en direction Boschetto.\n\nAprès le pont, suivez la route sur 100m-150m.\n\nGarez-vous sur le parking.",
+      "accesAmont": null,
+      "approche": "Prenez la route qui monte jusqu’à Morella di Sotto et continuer jusqu’à la pont du Valle.\n\nC'est le départ.",
+      "descente": "Une petite marche au début, suivi de beaux toboggans et sauts.\n\nVers la fin, il y a de grandes et spectaculaires cascades.",
+      "retour": "Après la captage, suivre un sentier jusqu'à Boschetto.\n\nDe là, prendre la route jusqu’au parking.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": "15.06.2012 : ouverture par Fred Soustre, Manu, Matthias Holzinger et Timo Stammwitz",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22797,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.294987,
+        "longitude": 8.593819,
+        "label": null
+      },
+      {
+        "canyonId": 22797,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.303154,
+        "longitude": 8.603902,
+        "label": null
+      },
+      {
+        "canyonId": 22797,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.306267,
+        "longitude": 8.604709,
+        "label": null
+      },
+      {
+        "canyonId": 22797,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 46.312168,
+        "longitude": 8.598631,
+        "label": "Début hiking trail"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.306267,
+      "longitude": 8.604709,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_41eee2d1444c8192",
+          "kind": "MAP",
+          "title": "1292 Maggia (Carte Nationale Suisse)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

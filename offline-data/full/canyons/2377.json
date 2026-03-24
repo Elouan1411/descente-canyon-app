@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:45:16.775230+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2377,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2377/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2377/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2377/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2377/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2377,
+    "identity": {
+      "nom": "Rec Grand",
+      "nomComplet": "Le Rec Grand, Canyon des Pradals",
+      "prefixeNom": "Le",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2377/Rec-Grand.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Hérault",
+      "communePrincipale": "Mons",
+      "communes": [
+        "Colombières-sur-Orb",
+        "Mons"
+      ],
+      "massif": "Caroux",
+      "bassin": "Orb",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a3III",
+      "interet": 2.5,
+      "nbVotes": 83
+    },
+    "metrics": {
+      "altitudeDepartM": 420,
+      "deniveleM": 180,
+      "longueurM": 2400,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 20,
+      "navette": "4.0km"
+    },
+    "timings": {
+      "approche": "10min",
+      "descente": "2-3h",
+      "retour": "5min/1h"
+    },
+    "topo": {
+      "accesAval": "se garer à la station EDF de Montahut.\n\nAccès",
+      "accesAmont": "passer les Pradals, et monter au col de Cazagat (490m), au sud du lac de l'Airette (qui n'est plus un lac). Continuer 500m pour trouver le parking à gauche.\n\nPour la version courte (sans navette) : se garer à ce parking.",
+      "approche": "Depuis le parking, redescendre par la route au col de Cazagat.\n\nAu col (ancien parking), on trouve une route en béton puis un panneau d'accès permettant de rejoindre la rivière et l'ancien barrage.",
+      "descente": "Première partie encaissée avec 2 toboggans dont le premier rappelle si le débit est important. Un court parcours de liaison agréable, un méandre puis un toboggan en 2 parties qui drosse à G (si on ne peut pas traverser la vasque il faut renoncer à continuer). 1er rappel 20m sur dalle inclinée avec broches, étroiture puis un rappel toboggan de 10m à faire sur 1 brin, un nouveau toboggan libre (à faire par la G en gardant de la vitesse : dalle sur la D en bas). Vient ensuite une dalle saut RG ou tob RD, puis une belle C10 avec fin de descente arrosée (1 brin au fil de l'eau obligatoire par fort débit, drossage à droite). Il y a aussi une main courante RD, avec possibilité de faire un joli toboggan ou des sauts RD et RG, à volonté.\n\nUne partie de marche un peu fastidieuse puis un saut de 3/4 m d'un gros bloc dans une belle vasque, si elle est pleine. Plus loin, un rappel toboggan sur 1 brin au fil de l'eau par gros débit car rappel d'eau (on fait cul par dessus tête) : avec peu d'eau, tob possible sans corde. Sortie 20m après RG pour l'option sans navette.\n\nVersion longue : on continue (fastidieux, peu d'obstacles mais un beau saut)",
+      "retour": "version longue : après le dernier rappel ou saut (évitable en rive droite par une propriété) un béal bien visible se suit jusqu'à la centrale de Montahut\n\nversion courte (sans navette) : après le toboggan mentionné, se déséquiper sur les larges dalles en RD. Puis, traverser le court d'eau pour remonter en face, au plus près de l'affluent RG généralement sec. on remonte le tallut de terre raide (si le terrain est très humide, il vaudra mieux serpenter dans la petite barre rocheuse RG de l'affluent), en restant en visuel du petit ravin, qu'il faudra traverser pour rejoindre des murettes. Remonter en devers en sous bois en s'écartant du fond et en obliquant sur la droite, on contourne une maisonnette en ruine, pour suivre à gauche un sentier bien marqué (traces rouges) qui débouche (tant bien que mal) sur une piste remontant à la route.",
+      "engagement": "On peut tout contourner, parfois difficilement.",
+      "periode": "Lorsque le débit est faible, l'eau est brune, croupissante avec des traces blanches peu appétissantes. Par bon débit, c'est super.",
+      "geologie": "Gneiss",
+      "historique": null,
+      "remarques": "Beaucoup de monde en été...\n\nLe barrage en amont a été détruit en 2013 : tous les morceaux sont partis dans la première partie du canyon (gravier, ferraillage du béton armé...).\n\nAvril 2015 : les vasques ne sont plus obstruées par les sédiments/sable mais il reste quelques petits blocs de béton ferraillé qui traînent ...\n\nJuin 2017 : Assez peu de débris dans le lit, quelques restes de béton et de ferraille."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2377,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.584999,
+        "longitude": 2.939722,
+        "label": null
+      },
+      {
+        "canyonId": 2377,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.579468,
+        "longitude": 2.941423,
+        "label": "sortie version courte"
+      },
+      {
+        "canyonId": 2377,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 43.583412,
+        "longitude": 2.94093,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 43.583412,
+      "longitude": 2.94093,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_fc07aa1bfb96647b",
+          "kind": "MAP",
+          "title": "2543 OT Lamalou-Les-Bains (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

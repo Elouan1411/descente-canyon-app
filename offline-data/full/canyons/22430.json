@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:59.924157+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22430,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22430/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22430/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22430/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22430/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22430,
+    "identity": {
+      "nom": "Coxinas",
+      "nomComplet": "Riu Coxinas",
+      "prefixeNom": "Riu",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22430/Coxinas.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Sardegna",
+      "departement": "Sud Sardegna",
+      "communePrincipale": "Villacidro",
+      "communes": [
+        "Villacidro"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2I",
+      "interet": 1.9,
+      "nbVotes": 5
+    },
+    "metrics": {
+      "altitudeDepartM": 300,
+      "deniveleM": 90,
+      "longueurM": 500,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 60,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h",
+      "descente": "1h30",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": "Depuis Villacidro, prendre la direction de la \"Cascata su Spendula\", très bien indiquée. Se garer sur le parking touristique d'où l'on aperçoit la cascade finale.\n\nUne navette est possible en allant se garer sous les grandes antennes de télécommunication bien visibles en remontant vers Villacidro (~2km) : A l'entrée du village, au niveau de la grande place avec la croix, prendre à droite la route très raide. La suivre jusqu'aux antennes, sur la droite.",
+      "accesAmont": null,
+      "approche": "Du parking,\n\n- soit vous faites le tour par la route en direction des antennes de communications.\n\n- soit vous partez vers la cascade. Laissez le petit chemin à gauche puis trouvez votre itinéraire dans le talweg pour rejoindre le parking des antennes (pas de chemin).\n\nArrivés à ce parking, poursuivre sur un beau chemin bien visible au pied de la falaise pendant 15min. 50m avant un affluent, descendre en direction du ruisseau (petits cairns au départ) et poursuivre jusqu'au départ du canyon.",
+      "descente": "Après une courte marche de 10min, nous arrivons aux premiers obstacles : petites cascades et désescalades. S'en suivent C5 RG puis C5 RD. Une nouvelle marche de 10min vous amène à l'enchainement final : C17 RD, C10 RG, C25 RD ou RG.",
+      "retour": "Retour évident par le sentier touristique (1min)",
+      "engagement": "Faible engagement. Plusieurs échappatoires possibles.",
+      "periode": "Quelques cascades arrosées.",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22430,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 39.462513,
+        "longitude": 8.710957,
+        "label": "Entrée 1"
+      },
+      {
+        "canyonId": 22430,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 39.465134,
+        "longitude": 8.721192,
+        "label": "Entrée 2 (départ Sa Spendula - approche rive droite orograf.)"
+      },
+      {
+        "canyonId": 22430,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 39.467331,
+        "longitude": 8.72462,
+        "label": "Entrée 3 (approche rive gauche orograf. depuis parking aval)"
+      },
+      {
+        "canyonId": 22430,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 39.468044,
+        "longitude": 8.725151,
+        "label": "c'est la même arrivée comme Sa Spendula"
+      },
+      {
+        "canyonId": 22430,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 39.465816,
+        "longitude": 8.726331,
+        "label": "navette n'est pas necessaire"
+      },
+      {
+        "canyonId": 22430,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 39.468884,
+        "longitude": 8.725226,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 39.465816,
+      "longitude": 8.726331,
+      "label": "navette n'est pas necessaire"
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_c574a587f0904006",
+          "kind": "TOPOGUIDE",
+          "title": "Canyoning en Sardaigne",
+          "authors": [
+            "Franck Jourdan et Jean-François Fiorina"
+          ],
+          "publicationYear": 2009,
+          "reference": null,
+          "editor": "auto-édition",
+          "status": "stock très réduit !\n\n- 18,50 € -\n\nCommandez cet ouvrage dès maintenant !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/137/Canyoning-en-Sardaigne.html"
+        },
+        {
+          "id": "biblio_7eceecd7e0d2e77b",
+          "kind": "TOPOGUIDE",
+          "title": "Torrentismo in Sardegna",
+          "authors": [
+            "Corrado Conca"
+          ],
+          "publicationYear": 2009,
+          "reference": "978-88-88776-04-X",
+          "editor": "Segnavia",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1227/topoguide.html"
+        }
+      ],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:06.986068+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22175,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22175/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22175/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22175/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22175/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22175,
+    "identity": {
+      "nom": "Praia Lisboa (inferieur)",
+      "nomComplet": "Ribeira de Praia Lisboa (inferieur)",
+      "prefixeNom": "Ribeira de Praia Lisboa (inferieur) (Ribeira Grande)",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22175/Praia-Lisboa--inferieur.html"
+    },
+    "location": {
+      "pays": "Cap-Vert",
+      "region": null,
+      "departement": "Ribeira Grande",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.4,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 160,
+      "deniveleM": 155,
+      "longueurM": 500,
+      "cascadeMaxM": 32,
+      "cordeMiniM": 35,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "1h20min",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "De Ribeira Grande 4 km vers ouest direction Ponta do Sol. Traverser Ponta do Sol jusqu'à le petit havre. Quelques mètres à gauche et garer la voiture.\n\nVue sur rocher \"Boca da Pistola\".\n\nAu dernières maisons de Ponta do Sol. Passer l'église blanche direction Fontainhas. Après 1,5 km accéder au lit du Canyon.",
+      "accesAmont": null,
+      "approche": null,
+      "descente": "Désescalader de la route a la rive droite au-dessus de l'arbre. 8 rappels.\n\nMagnifiques couleurs. Dernièr rappel sur le plage de sable.",
+      "retour": "Prendre le sentier á droite vers nord-nord-est et Ponta do Sol. Entre les premières maisons et vers nord jusqu'à la voiture.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22175,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 17.188683,
+        "longitude": -25.101786,
+        "label": null
+      },
+      {
+        "canyonId": 22175,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 17.190775,
+        "longitude": -25.105433,
+        "label": null
+      },
+      {
+        "canyonId": 22175,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 17.188437,
+        "longitude": -25.101871,
+        "label": null
+      },
+      {
+        "canyonId": 22175,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 17.201946,
+        "longitude": -25.094629,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 17.188437,
+      "longitude": -25.101871,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_a0b95353ed9c3736",
+          "kind": "MAP",
+          "title": "Santo Antâo (Goldstadt-Wanderkarte)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_6f904f2c7e599cc6",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.caboverdenolimits.com/cuadros_barrancos.html",
+          "url": "http://www.caboverdenolimits.com/cuadros_barrancos.html"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:32.204815+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23315,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23315/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23315/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23315/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23315/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23315,
+    "identity": {
+      "nom": "Duc",
+      "nomComplet": "Vallon du Duc",
+      "prefixeNom": "Vallon du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23315/Duc.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-Maritimes",
+      "communePrincipale": "Èze",
+      "communes": [
+        "Èze"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1III",
+      "interet": 0.8,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 282,
+      "deniveleM": 252,
+      "longueurM": 700,
+      "cascadeMaxM": 17,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "45min",
+      "descente": "3h",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "Accès routier\n\nDe Nice par l'autoroute A8 en direction de l'Italie, sortir à La Turbie. Remonter la route en direction de la Turbie, au rond-point tourner à droite sur la M2564 sur 1km pour descendre ensuite à gauche sur la M45, au carrefour suivant bifurquer à gauche en direction du cap d’Ail pour ensuite au carrefour suivant prendre à droite toujours sur la M45 qui descend en zigzag jusqu’à la route M6098 du bord de mer, au stop aller à droite sur la M6098 en direction de Eze-bord-de-mer ; après avoir traversé le long tunnel poursuivre sur 1km pour se garer à gauche de la route sur les emplacements de parking.",
+      "accesAmont": null,
+      "approche": "Du parking, de la balise suivre le beau « chemin de Nietsche » aux marches empierrées qui offre de magnifiques vues sur le bord de mer puis traverse vers l’Est pour dominer la rive droite du vallon du Duc. Plus haut, le chemin contourne le mur d’une maison et monte plus raide jusqu’à une marque jaune peinte sur le rocher. Quitter le chemin pour suivre alors une sente qui s’enfonce à droite dans la forêt jusqu’au vallon, près d’une ruine, départ du vallon.",
+      "descente": "Le vallon forestier débute par une belle cascade concrétionnée en eau pour en enchaîner de nombreuses autres qui s’assèchent au fil de la descente. Quelques marches roncières, au 2/3 du parcours, entravent la progression au sens propre !",
+      "retour": "A la dernière cascade, on arrive sur route pavée privée qui n’est pas interdite à la circulation piétonne ; la suivre à gauche pour arriver sur la route du bord de mer ; suivre alors le trottoir de gauche pour retourner au parking.",
+      "engagement": "Equipement en terrain d'aventure sur arbres; emporter des bouts de corde pour rééquiper et, votre sécateur!",
+      "periode": "Le vallon coule d’octobre à juin avec un petit débit en début de parcours, beaucoup plus intéressant après une période de pluie prolongée ou la combinaison intégrale est alors préférable. Sinon, 1 pantalon ou une combi légère suffisent car l’eau n’excède pas la mi-cuisse.",
+      "geologie": "Calcaire concretionné.",
+      "historique": "1ère descente de 18/06/2013 par V. LIVREAU & J. MOURLON.",
+      "remarques": "Après une approche grandiose au-dessus de la mer Méditerranée, c’est un réel canyon qui se faufile dans les petits resserrements dominant la mer, sous le magnifique village d’Eze. Avec son exposition plein sud, la descente est à éviter en période estivale."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23315,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.728279,
+        "longitude": 7.3653,
+        "label": null
+      },
+      {
+        "canyonId": 23315,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.722015,
+        "longitude": 7.366328,
+        "label": null
+      },
+      {
+        "canyonId": 23315,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.722862,
+        "longitude": 7.358608,
+        "label": null
+      },
+      {
+        "canyonId": 23315,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 43.728115,
+        "longitude": 7.364591,
+        "label": "Point ou l'on quitte le chemin pour suivre un sentier à droite (marque jaune sur le rocher)."
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.722862,
+      "longitude": 7.358608,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_65daf1ce5e444805",
+          "kind": "MAP",
+          "title": "3742 OT Nice-Menton (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

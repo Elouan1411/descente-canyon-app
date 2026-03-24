@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:46:37.943285+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2733,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2733/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2733/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2733/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2733/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2733,
+    "identity": {
+      "nom": "Tourettes (Amont)",
+      "nomComplet": "Barrancou des Tourettes (Amont), Gave des Tourettes",
+      "prefixeNom": "Barrancou des",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2733/Tourettes-Amont.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Hautes-Pyrénées",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Gavarnie",
+      "bassin": "Gave de Pau",
+      "coursEau": "Gave des Tourettes"
+    },
+    "rating": {
+      "cotation": "v3a3II",
+      "interet": 2.9,
+      "nbVotes": 30
+    },
+    "metrics": {
+      "altitudeDepartM": 1770,
+      "deniveleM": 140,
+      "longueurM": 1200,
+      "cascadeMaxM": 21,
+      "cordeMiniM": 25,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h40",
+      "descente": "2h30",
+      "retour": "55min"
+    },
+    "topo": {
+      "accesAval": "Possibilité d'accès par le col des Tentes : navette de 12 km. Parking à Gavarnie village possible, mais très hypothétique en saison (foule). Préférer le parking à la Grange de Holle, au pied du refuge CAF. Sortir de Gavarnie direction les Espécières et se garer au niveau de la plateforme au pied du refuge.",
+      "accesAmont": null,
+      "approche": "Redescendre par la route puis prendre à droite le chemin balisé qui se dirige vers le village, à courbe de niveau. A une croisée de chemin, ne pas descendre et suivre le chemin du Plateau de Bellevue. Vers 1700 m, laisser à gauche le chemin du pont de la Planette et poursuivre jusqu'au pied des falaises de Peyre Nère. La descente débute en contrebas des falaises par de petits ressauts.",
+      "descente": "Le parcours se divise en trois parties. Première partie, petits ressauts, toboggans et sauts, à faire et refaire, dans un encaissement très limité. Seconde partie dans un étroit défilé avec une C18, une C12, une C20 et des vasques de grandes tailles. Attention à la grande goulotte de la partie 2 (1p RD) la descente est très arrosée, glissante, on prend tout ledébit dans les jambes et le rappel de la corde est problematique. Preferer un relais en contrebas RG.\n\nTroisième partie, un chaos encaissé où la desescalade est variée, qui se termine par une belle C21 en éventail. Arrivé à la passerelle de la Planette, possibilité de revenir au chemin de montée en prenant le chemin en rive gauche. Possibilité d'enchaîner avec la partie aval (voir fiche).",
+      "retour": "Du pont, rejoindre le sentier et faire le trajet inverse de l'aller.",
+      "engagement": "Sortie très facile dans la première partie. Echappatoire rive gauche à la C20 dans la seconde partie. Troisème partie totalement encaissée.",
+      "periode": "Eau sous glacière abondante, froide et laiteuse. Température toujours inférieure à 10°. Accès possisble à partir de mi juillet environ.",
+      "geologie": "Calcaire, d'un blanc intense qui rend l'atmosphère du canyon lumineuse.",
+      "historique": "Ouverture 1991 par S. Boyer, S. Clément et F. Flandin.",
+      "remarques": "La vue sur la grande cascade de Gavarnie vaut à elle seule le coup."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2733,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.713612,
+        "longitude": -0.026111,
+        "label": null
+      },
+      {
+        "canyonId": 2733,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.713612,
+        "longitude": -0.020833,
+        "label": null
+      },
+      {
+        "canyonId": 2733,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 42.73806,
+        "longitude": -0.019269,
+        "label": null
+      },
+      {
+        "canyonId": 2733,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 42.739307,
+        "longitude": -0.022337,
+        "label": "Refuge CAF \"Grange de Holle\""
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 42.73806,
+      "longitude": -0.019269,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_66d5328512d1b5a5",
+          "kind": "MAP",
+          "title": "1748 OT Gavarnie (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

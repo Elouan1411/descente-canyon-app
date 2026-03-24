@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:18.670475+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22513,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22513/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22513/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22513/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22513/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/22513/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 22513,
+    "identity": {
+      "nom": "Scharnbach",
+      "nomComplet": "Scharnbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22513/Scharnbach.html"
+    },
+    "location": {
+      "pays": "Allemagne",
+      "region": "Bayern",
+      "departement": "Oberbayern",
+      "communePrincipale": "Inzell",
+      "communes": [
+        "Landkreis Berchtesgadener Land",
+        "Schneizlreuth",
+        "Inzell"
+      ],
+      "massif": "Chiemgauer Alpen - Alpes de Chiemgau",
+      "bassin": "Saalach",
+      "coursEau": "Scharnbach"
+    },
+    "rating": {
+      "cotation": "v3a3IV",
+      "interet": 1.9,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 845,
+      "deniveleM": 150,
+      "longueurM": 800,
+      "cascadeMaxM": 27,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "45min",
+      "descente": "2h30",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "Depuis Inzell suivre la direction de Lofer, Saalfelden jusqu'à Weißbach an der Alpenstraße",
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22513,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.705017,
+        "longitude": 12.775522,
+        "label": null
+      },
+      {
+        "canyonId": 22513,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.708179,
+        "longitude": 12.782813,
+        "label": null
+      },
+      {
+        "canyonId": 22513,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.714981,
+        "longitude": 12.772969,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.714981,
+      "longitude": 12.772969,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_d045c8489aa926b0",
+          "kind": "MAP",
+          "title": "8242 Inzell (Bayerisches Landesvermessungsamt)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 217,
+          "status": "Actif",
+          "action": "Autorise",
+          "title": "Arrêté - 12 juil 1954",
+          "summary": "Il existe une réserve naturelle \"Est Alpes bavaroises» définie par GVBl 12/07/1954. Nr.28/1954. Cependant le canyoning ne semble pas concerné.",
+          "remark": null,
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.",
+          "effectiveDate": "12 juil 1954",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/217/legislation.html",
+          "attachments": []
+        }
+      ]
+    }
+  }
+}

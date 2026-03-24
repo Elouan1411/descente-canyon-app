@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:45.939266+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23697,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23697/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23697/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23697/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23697/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23697,
+    "identity": {
+      "nom": "Kapellbach",
+      "nomComplet": "Kapellbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23697/Kapellbach.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Hinterrhein",
+      "departement": "Graubünden/Grigioni/Grischun",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": "Hinterrhein",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a3III",
+      "interet": 2.7,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 1925,
+      "deniveleM": 345,
+      "longueurM": 1550,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h10min",
+      "descente": "3h",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "Driving on the A13 (San Bernardino), take the exit 31 or 32 and park the car in the village Hinterrhein.",
+      "accesAmont": null,
+      "approche": "Walk underneath the A13 and cross on a hiking path the Hinterrhein river. Walk in flow direction on the right river side until you cross after 10min of walking the end of Kapellbach. From there continue for another 500m and just before the forest ends go right on a small path up the hill. The path is small but good visible and leads in several turns up to the Alp Cadriola. From the alp continue for another 250m until you can easily reach the river bed.",
+      "descente": "The first part is very nice, polished rock with several slides up to 10m. The Equipment is rare but sufficient. After the first part there are several longer walking sections interrupted with more slides/jumps or short abseils.\n\nThe last part is again really nice with six final abseils to the very end.",
+      "retour": "Walk the same way back which you came from.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23697,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.518021,
+        "longitude": 9.216111,
+        "label": null
+      },
+      {
+        "canyonId": 23697,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.530415,
+        "longitude": 9.212205,
+        "label": null
+      },
+      {
+        "canyonId": 23697,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.531021,
+        "longitude": 9.202737,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.531021,
+      "longitude": 9.202737,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,139 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:54.481139+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21835,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21835/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21835/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21835/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21835/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21835,
+    "identity": {
+      "nom": "Rußbach",
+      "nomComplet": "Rußbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21835/Rußbach.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Haute-Autriche",
+      "departement": "Gmunden",
+      "communePrincipale": "Bad Ischl",
+      "communes": [
+        "Bad Ischl"
+      ],
+      "massif": "Osterhorngruppe",
+      "bassin": "Ischl",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.9,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 1060,
+      "deniveleM": 330,
+      "longueurM": 1800,
+      "cascadeMaxM": 45,
+      "cordeMiniM": 50,
+      "navette": "5.0km"
+    },
+    "timings": {
+      "approche": "25min",
+      "descente": "4h30",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "dans encaissement danger par Klettersteig; arbres dans la clue (2007)"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21835,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.651688,
+        "longitude": 13.435249,
+        "label": null
+      },
+      {
+        "canyonId": 21835,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.661747,
+        "longitude": 13.460655,
+        "label": null
+      },
+      {
+        "canyonId": 21835,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 47.652439,
+        "longitude": 13.434649,
+        "label": null
+      },
+      {
+        "canyonId": 21835,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 47.670185,
+        "longitude": 13.460913,
+        "label": null
+      },
+      {
+        "canyonId": 21835,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.653709,
+        "longitude": 13.450527,
+        "label": "derniere echappatoire (à gauche) avant l'encaissement"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 47.652439,
+      "longitude": 13.434649,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_99ee332e44c434c8",
+          "kind": "MAP",
+          "title": "95 Sankt Wolfgang (ÖK50 (BEV))",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_e65cd93fd99c86b9",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cgi-bin/redirect.....action=detailed_desc",
+          "url": "http://canyon.carto.net/cgi-bin/redirect.....action=detailed_desc"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

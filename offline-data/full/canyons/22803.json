@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:54:25.679391+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22803,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22803/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22803/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22803/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22803/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22803,
+    "identity": {
+      "nom": "Lemma",
+      "nomComplet": "Lemma",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22803/Lemma.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Lombardia",
+      "departement": "Sondrio",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a4III",
+      "interet": 2.3,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 1400,
+      "deniveleM": 140,
+      "longueurM": 500,
+      "cascadeMaxM": 20,
+      "cordeMiniM": null,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "40min",
+      "descente": "2h",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": "11 rappels.",
+      "retour": null,
+      "engagement": null,
+      "periode": "Eau plutôt fraiche.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Canyon court et peu encaissé du Haut Val Tartano.\n\nIl présente quelques difficultés à ne pas sous-évaluer.\n\n0uvrage hydraulique Centrale Veniva en amont.\n\nEquipement correct en 2008."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22803,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.075947,
+        "longitude": 9.679931,
+        "label": null
+      },
+      {
+        "canyonId": 22803,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.09029,
+        "longitude": 9.669431,
+        "label": null
+      },
+      {
+        "canyonId": 22803,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.103752,
+        "longitude": 9.676766,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.103752,
+      "longitude": 9.676766,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

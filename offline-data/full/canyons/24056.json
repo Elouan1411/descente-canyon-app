@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:59:01.681864+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24056,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24056/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24056/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24056/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24056/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24056,
+    "identity": {
+      "nom": "Aigle",
+      "nomComplet": "Ravin de l' Aigle, Affluent RG du torrent du Laus",
+      "prefixeNom": "Ravin de l'",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24056/Aigle.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Hautes-Alpes",
+      "communePrincipale": "Saint-Étienne-le-Laus",
+      "communes": [
+        "Saint-Étienne-le-Laus"
+      ],
+      "massif": null,
+      "bassin": "Durance",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1I",
+      "interet": 0.4,
+      "nbVotes": 5
+    },
+    "metrics": {
+      "altitudeDepartM": 872,
+      "deniveleM": 70,
+      "longueurM": 200,
+      "cascadeMaxM": 15,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "10min",
+      "descente": "30min",
+      "retour": "25min"
+    },
+    "topo": {
+      "accesAval": "De Tallard prendre la D942 vers Briançon. Passez Saint Etienne le Laus (attention au radar) et tourner à gauche sur la D111 vers Notre-Dame de Laus. Garez-vous sur le terre-plein à droite avant le cimetière.",
+      "accesAmont": null,
+      "approche": "Poursuivre la route et prendre la piste vers le col de l'Ange, traverser le Torrent de Laus, 50m après ne pas prendre le sentier qui monte au col de l'Ange mais rester sur la piste, elle passe un premier ravin (ravin de l'Ange) puis coupe notre affluent (ce dernier possède deux bras au départ de la piste, préférez le deuxième 100m plus loin sur la piste)",
+      "descente": "Marche en sous-bois puis on arrive sur l'encaissement sinueux (désescalades) puis sur les deux rappels.",
+      "retour": "A la confluence remonter le collecteur jusqu'à la cascade de Laus puis remonter dans les bois en suivant un talweg en RD. On tombe alors sur une piste puis un champs et on retrouve la route qui mène au parking.",
+      "engagement": "Roche très délitée, échappatoire aléatoire.",
+      "periode": "En eau après de fortes pluies ou à la fonte s'il y a de la neige sur le petit bassin versant.",
+      "geologie": null,
+      "historique": "Un point posé le 17/03/18",
+      "remarques": "Soyez très discrets sur la marche retour et au parking (lieu de culte)."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24056,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.524097,
+        "longitude": 6.156228,
+        "label": null
+      },
+      {
+        "canyonId": 24056,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.522243,
+        "longitude": 6.157376,
+        "label": null
+      },
+      {
+        "canyonId": 24056,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.522114,
+        "longitude": 6.152709,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.522114,
+      "longitude": 6.152709,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_28e68141a286bb81",
+          "kind": "MAP",
+          "title": "3338 ET Gap (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

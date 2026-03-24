@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:21.427341+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23853,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23853/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23853/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23853/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23853/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23853,
+    "identity": {
+      "nom": "Simms Fall",
+      "nomComplet": "Simms Fall, Höhenbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23853/Simms-Fall.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Tyrol",
+      "departement": "Politischer Bezirk Reutte",
+      "communePrincipale": "Holzgau",
+      "communes": [
+        "Holzgau"
+      ],
+      "massif": "Allgäuer Alpen",
+      "bassin": "Lech",
+      "coursEau": "Höhenbach"
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": null,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": 1230,
+      "deniveleM": 80,
+      "longueurM": 150,
+      "cascadeMaxM": 23,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "1h",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": "Première descente le 21.09.92 par Catherine Caullier et Olivier Courtois.",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23853,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.271603,
+        "longitude": 10.338826,
+        "label": null
+      },
+      {
+        "canyonId": 23853,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.269596,
+        "longitude": 10.339818,
+        "label": null
+      },
+      {
+        "canyonId": 23853,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.260517,
+        "longitude": 10.343579,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.260517,
+      "longitude": 10.343579,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_d272647b9e202c89",
+          "kind": "MAP",
+          "title": "114 Holzgau (ÖK 50)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_d46c59ed748b83b5",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.aventurecanyon.com/simms-description.html",
+          "url": "http://www.aventurecanyon.com/simms-description.html"
+        },
+        {
+          "id": "resource_78f9040849a276d6",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/Canyons/HoehenbachCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/Canyons/HoehenbachCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

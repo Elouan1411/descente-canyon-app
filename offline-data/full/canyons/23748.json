@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:57.505042+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23748,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23748/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23748/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23748/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23748/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23748,
+    "identity": {
+      "nom": "Vieyres",
+      "nomComplet": "Saut de Vieyres, Cascades de Lamativie, Escalmels, Escaumels",
+      "prefixeNom": "Saut de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23748/Vieyres.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Lot",
+      "communePrincipale": "Sousceyrac-en-Quercy",
+      "communes": [
+        "Sousceyrac-en-Quercy"
+      ],
+      "massif": null,
+      "bassin": "Cère",
+      "coursEau": "Escaumels"
+    },
+    "rating": {
+      "cotation": "v2a3I",
+      "interet": 1.3,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 330,
+      "deniveleM": 30,
+      "longueurM": 100,
+      "cascadeMaxM": 6,
+      "cordeMiniM": null,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "45",
+      "descente": "10min",
+      "retour": "45"
+    },
+    "topo": {
+      "accesAval": "Parking à l'ancienne gare de Lamativie.",
+      "accesAmont": null,
+      "approche": "Prendre le GR652 qui longe en RG la Cère vers l'aval, dépasser un barrage, un tunnel puis traverser le ruisseau d'Escaumels au niveau de l'imposant aqueduc. Quitter alors le GR pour remonter le ruisseau en RG d'abord puis en RD ensuite au niveau d'une prise d'eau ; plus loin on vient buter contre la grosse vasque que l'on peut franchir en escaladant un peu des rochers (bout de cordes en place en RG ou sente en RD un peu après la vasque : attention avec des personnes peu aguerries).\n\n(NB : approche possible balisée depuis le hameau de Vieyres mais avec plus de dénivelé).",
+      "descente": "Très court, 2 obstacles : un toboggan sur une longue dalle glissante et le 2ème toboggan majeur (le but de la visite) que l'on peut refaire à volonté (remontée par sente RD ou escalade RG), des sauts de hauteur sont aussi possibles depuis les côtés dans cette immense vasque.",
+      "retour": "Prendre le même chemin qu'à l'aller.",
+      "engagement": "Ce n'est pas un canyon sportif mais bien une randonnée aquatique. Cependant beaucoup de parcours bien plus prestigieux ne possède pas ce superbe toboggan éjectable naturel hyper-ludique.",
+      "periode": "Toujours de l'eau, appréciable par fortes chaleurs.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Attention la baignade est interdite sur le site par arrêté municipal affiché au départ du sentier d'accès. A aborder comme un parcours de canyonisme à part entière."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23748,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.973152,
+        "longitude": 2.016733,
+        "label": null
+      },
+      {
+        "canyonId": 23748,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.98032,
+        "longitude": 2.029806,
+        "label": null
+      },
+      {
+        "canyonId": 23748,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.98032,
+        "longitude": 2.029806,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.98032,
+      "longitude": 2.029806,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

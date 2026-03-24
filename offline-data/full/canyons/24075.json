@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:59:06.377179+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24075,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24075/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24075/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24075/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24075/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24075,
+    "identity": {
+      "nom": "Schreiabach",
+      "nomComplet": "Schreiabach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24075/Schreiabach.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Flums",
+      "departement": "Saint Gallen",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Préalpes appenzelloises",
+      "bassin": "Walensee",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a2II",
+      "interet": 1.5,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 600,
+      "deniveleM": 90,
+      "longueurM": 50,
+      "cascadeMaxM": 70,
+      "cordeMiniM": 60,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "1h",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "Sur l'autoroute A3 sortir à Flums (sortie 49). Puis au rond-point prendre la direction de Sargans pendant 2.5km et tourner à gauche dans le hameau de Halbmil. Se garer 150m plus loin.",
+      "accesAmont": null,
+      "approche": "Du parking, prendre le sentier de randonnée qui monte assez raide (160m de dénivelé) et qui rejoint la piste. Continuer en direction du canyon à travers le champs, bien longer le long de la forêt pour ne pas abimer l'herbe ! Se mettre à l'eau en haut de la grande cascade.",
+      "descente": "Une C75, arbre RG 20m jusqu'à un relais RG 2 pts puis rappel de 60m. Encore une C20 et s'est fini ! Par gros débit, le rappel de 60m se fait derrière la gerbe puis on peut descendre loin de l'eau en RD.",
+      "retour": "Sortir RD à travers la forêt jusqu'à la piste qui ramène au parking.",
+      "engagement": "Au pied de la C75, il y a une cabane d'enfants ! et un entier RD qui semble dangereux qui évite la C20.",
+      "periode": "Bassin versant de moins d'1 km2, à faire à la fonte des neiges pour profiter d'un bon débit.",
+      "geologie": null,
+      "historique": "21/04/2016 : Emmanuel Belut, Thomas Guigon et Nicolas Verdon",
+      "remarques": "A faire avec de l'eau sinon il y a peu d'intérêt. Une partie haute semble intéressante."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24075,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.084381,
+        "longitude": 9.37992,
+        "label": null
+      },
+      {
+        "canyonId": 24075,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.084042,
+        "longitude": 9.37937,
+        "label": null
+      },
+      {
+        "canyonId": 24075,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.08215,
+        "longitude": 9.37965,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.08215,
+      "longitude": 9.37965,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_41373e153daf03ee",
+          "kind": "MAP",
+          "title": "1155 Sargans (Swisstopo)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:48.978377+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23992,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23992/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23992/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23992/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23992/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23992,
+    "identity": {
+      "nom": "Grand Riou",
+      "nomComplet": "Le Grand Riou, Ruisseau de Villard-Reymond",
+      "prefixeNom": "Le",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23992/Grand-Riou.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Isère",
+      "communePrincipale": "Villard-Reymond",
+      "communes": [
+        "Villard-Reymond"
+      ],
+      "massif": "Taillefer",
+      "bassin": "Romanche",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2IV",
+      "interet": 1.0,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1421,
+      "deniveleM": 501,
+      "longueurM": 4000,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 20,
+      "navette": "5.0km"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "3h30",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "à l'entrée du Villaret (quelques bonnes places à gauche). La voiture",
+      "accesAmont": "continue de monter en direction de Villard-Reymond, et 5 kms plus loin, on se gare dans la seule épingle à gauche qui présente une très bonne piste (parfois goudronnée).",
+      "approche": "Emprunter la piste, franchir un petit affluent (large pont), et poursuivre jusqu'au radier de départ.",
+      "descente": "Ce canyon se caractérise par deux sections encaissées, séparées par une marche intermédiaire, et suivies d'une très longue marche dans un beau cadre montagnard. Attention : certains rappels franchissent plusieurs cascades (pas de point intermédiaire).",
+      "retour": "Après avoir rejoint le collecteur (La Lignarre), on passe sous le pont et on grimpe raide en RG, ou un peu plus loin en RD (raide également). Puis quelques minutes sur la route nous ramènent à la voiture.",
+      "engagement": "Ce vallon est très profond, et en sortir paraît très compliqué. Se mettre hors-crue est possible presque partout. Attention aux chamois qui parpinent les canyoneurs (si si !). Il semblerait qu'un sentier permet de sortir du vallon à l'altitude 980 (non testé).\n\nOn a observé que le réseau GSM fonctionnait en certains endroits du vallon.",
+      "periode": "Juillet à novembre",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Une bonne partie des rochers sont extrêmement glissants. L'équipement est parfois très bon (deux bons points protégés), parfois absent. S'équiper en conséquence."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23992,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.028088,
+        "longitude": 6.010639,
+        "label": null
+      },
+      {
+        "canyonId": 23992,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 45.031464,
+        "longitude": 6.0128,
+        "label": null
+      },
+      {
+        "canyonId": 23992,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 45.047993,
+        "longitude": 5.987018,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 45.031464,
+      "longitude": 6.0128,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

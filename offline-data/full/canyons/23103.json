@@ -1,0 +1,147 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:40.796535+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23103,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23103/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23103/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23103/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23103/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23103,
+    "identity": {
+      "nom": "Valle de Zima Montagna + Val del Bosco Belo",
+      "nomComplet": "Valle de Zima Montagna + Val del Bosco Belo, Ru de Zima Montagna - Ru del Bosco del Belo",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23103/Valle-de-Zima-Montagna--Val-del-Bosco-Belo.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Vénétie",
+      "departement": "Belluno",
+      "communePrincipale": "Perarolo di Cadore",
+      "communes": [
+        "Perarolo di Cadore"
+      ],
+      "massif": "Dolomites du Frioul",
+      "bassin": "Piave",
+      "coursEau": "Ru de Zima Montagna - Ru del Bosco del Belo"
+    },
+    "rating": {
+      "cotation": "v5a3IV",
+      "interet": 3.2,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 920,
+      "deniveleM": 695,
+      "longueurM": 1150,
+      "cascadeMaxM": 75,
+      "cordeMiniM": 60,
+      "navette": "4.0km"
+    },
+    "timings": {
+      "approche": "1h45min",
+      "descente": "3h30",
+      "retour": "35min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": "C 75: relais 55/25",
+      "retour": "Sortie avant passerelle sur la gauche avant la Valmontina. Il est possible aussi de continuer dans l'eau en fonction du débit du collecteur(1h45min).",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "Il s'agit de l’enchaînement logique de deux cours d'eau dont le premier est le plus intéressant.\n\nIl est possible de continuer encore dans la Valmontina"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23103,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.370735,
+        "longitude": 12.381508,
+        "label": null
+      },
+      {
+        "canyonId": 23103,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.366135,
+        "longitude": 12.37351,
+        "label": "A1 sortie au-dessus du Torrente Valmontina à gauche vers passarelle et sentier"
+      },
+      {
+        "canyonId": 23103,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.371014,
+        "longitude": 12.359386,
+        "label": "Sortie à la fin du Valmontina"
+      },
+      {
+        "canyonId": 23103,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 46.388878,
+        "longitude": 12.370828,
+        "label": null
+      },
+      {
+        "canyonId": 23103,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 46.372272,
+        "longitude": 12.358667,
+        "label": null
+      },
+      {
+        "canyonId": 23103,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 46.37442,
+        "longitude": 12.374234,
+        "label": "1 arriver point plus haut (1260m alt.) et depart descendre vers le canyon sans sentier (direction SE)"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 46.388878,
+      "longitude": 12.370828,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_ff21942f4e737548",
+          "kind": "MAP",
+          "title": "021 Dolomiti di Sinistra Piave (Tabacco)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_8139da9015fdcb90",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/C.....aldiBoscoBelloCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/C.....aldiBoscoBelloCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

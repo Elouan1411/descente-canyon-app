@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:49:26.583995+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21447,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21447/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21447/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21447/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21447/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21447,
+    "identity": {
+      "nom": "Barbaira (amont)",
+      "nomComplet": "Rio Barbaira (amont), Rio del Grugni",
+      "prefixeNom": "Rio",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21447/Barbaira-amont.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Ligurie",
+      "departement": "Imperia",
+      "communePrincipale": "Pigna",
+      "communes": [
+        "Rocchetta Nervina",
+        "Pigna"
+      ],
+      "massif": "Mont Scarassan",
+      "bassin": "Nervia",
+      "coursEau": "Rio del Grugni"
+    },
+    "rating": {
+      "cotation": "v3a3IV",
+      "interet": 2.0,
+      "nbVotes": 23
+    },
+    "metrics": {
+      "altitudeDepartM": 1101,
+      "deniveleM": 676,
+      "longueurM": 7080,
+      "cascadeMaxM": 28,
+      "cordeMiniM": 30,
+      "navette": "28.0km"
+    },
+    "timings": {
+      "approche": "3min",
+      "descente": "6h",
+      "retour": "45min"
+    },
+    "topo": {
+      "accesAval": "Se garer au village de Rocchetta Nervina.\n\nEnsuite avec le second véhicule, prendre direction Pigna puis, environ 1 km avant le village, tourner à gauche direction Gouta sur la s.p.69.\n\nAu col (sella di Gouta 1212m) continuer sur la route pendant environ 2 kilomètres jusqu'à l'altitude 1101m (grand pré et fin de la route goudronnée).",
+      "accesAmont": null,
+      "approche": "Poursuivre par la route et avant le premier virage à droite, descendre dans le lit sec du \"rio del Grugni\".",
+      "descente": "La première partie est constituée d'une zone de marche, de désescalade et de petits rappels dans un ruisseau sec en période d'étiage (1 h).\n\nPuis l'eau apparaît. Une première vasque (saut possible) mène rapidement à la + haute cascade du canyon (28m).\n\nEnsuite alternent zones de marche (assez longue parfois) et superbes vasques (beaucoup de saut possible) jusqu'au ponte di Pau (Alt. 561 m) puis au ponte di Cin (Alt. 435 m), départ de la partie aval (rajouter 3 bonnes heures pour descendre celle-ci).",
+      "retour": "Soit par l'accés amont du canyon de barbaira environ 45 min, soit pour les + sportifs avec l'enchaînement de la partie aval, du barrage par le sentier de retour de la Barbaira aval en rive droite.",
+      "engagement": "Assez engagé et physique de part sa longueur et son isolement.\n\nCependant avec ses flancs boisés, ce parcours peu encaissé est à priori à l'abri de crues en cas d'orage.",
+      "periode": "Sec au début puis assez aquatique à partir de la cascade de 28m.",
+      "geologie": null,
+      "historique": "Par Les Doigts Déglingués.",
+      "remarques": "Equipement un peu léger. Prévoir des sangles (nombreux arbres sur les berges) et le matos de rééquipement."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21447,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.943966,
+        "longitude": 7.60299,
+        "label": null
+      },
+      {
+        "canyonId": 21447,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.90097,
+        "longitude": 7.580357,
+        "label": null
+      },
+      {
+        "canyonId": 21447,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 43.947617,
+        "longitude": 7.604631,
+        "label": null
+      },
+      {
+        "canyonId": 21447,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 43.889721,
+        "longitude": 7.599299,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 43.947617,
+      "longitude": 7.604631,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_a3482111c0bd004f",
+          "kind": "MAP",
+          "title": "ASF n°2 Moyenne Roya - Val Nervia e Argentina (Alpes sans fronti?res)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_366cda9f3ecfdb8d",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.altisud.com/forum/index.php?showtopic=584",
+          "url": "http://www.altisud.com/forum/index.php?showtopic=584"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

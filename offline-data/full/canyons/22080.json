@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:45.486590+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22080,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22080/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22080/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22080/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22080/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22080,
+    "identity": {
+      "nom": "Treccio",
+      "nomComplet": "Val di Treccio",
+      "prefixeNom": "Val di",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22080/Treccio.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Monteceneri",
+      "departement": "Tessin",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": "Ticino",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 1.5,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 763,
+      "deniveleM": 165,
+      "longueurM": 700,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 40,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "2h",
+      "retour": "30-40min"
+    },
+    "topo": {
+      "accesAval": "A Medeglia, prendre a gauche direction Canedo une route dont le virage doit être bien négocié. Poursuivre tout droit jusqu'à franchir un pont, point de départ de la descente.\n\nSe garer quelques dizaines de mètres plus loin.",
+      "accesAmont": null,
+      "approche": "Partir du pont (s'amarrer au pont).",
+      "descente": "Succession de cascades de moyennes hauteurs sur la première partie suivie d'une partie composée essentiellement de marche au milieu de détritus.\n\nLa sortie peut se faire sur la gauche dès que la rambarde de la route est visible mais il est plus aisée, de sortir un peu après, par la droite.",
+      "retour": "Poursuivre la route jusqu'à la voiture.",
+      "engagement": "Échappatoires difficiles. Mise hors crue facile.",
+      "periode": "Réalisé en crue, ne pas emmener de débutants. Toutes les cascades se contournent (avec la corde) aisément.\n\nLa première cascade est la seule possiblement problématique en cas de descente dans l'axe (grosse vasque avec rappel d'eau). La C30 qui parait d'en haut en goulotte passe (possibilité d'utiliser les arbres RD pour l'éviter). Saut à son pied de 5m envisageable (après sondage).",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Canyon gâché par la vilaine marche finale. Peu ludique. Équipement sur expansion mono point."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22080,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.120636,
+        "longitude": 8.962891,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 46.120636,
+      "longitude": 8.962891,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_8556a44003873232",
+          "kind": "MAP",
+          "title": "1333 Tesserete (Carte Nationale Suisse)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_102ae1116fe4de5b",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.swisscanyon.ch/canyons/descrittivi/medeglia.htm",
+          "url": "http://www.swisscanyon.ch/canyons/descrittivi/medeglia.htm"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

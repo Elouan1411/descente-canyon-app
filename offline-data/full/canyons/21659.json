@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:14.721940+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21659,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21659/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21659/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21659/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21659/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21659,
+    "identity": {
+      "nom": "Alarrieta",
+      "nomComplet": "Barranco de Alarrieta, Cañón de Alarrieta",
+      "prefixeNom": "Barranco de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21659/Alarrieta.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "País Vasco",
+      "departement": "Vizcaya",
+      "communePrincipale": "Orozco",
+      "communes": [
+        "Orozco"
+      ],
+      "massif": "Itxina",
+      "bassin": "Rio Arratia",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 1.0,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 720,
+      "deniveleM": 420,
+      "longueurM": 2200,
+      "cascadeMaxM": 26,
+      "cordeMiniM": 30,
+      "navette": "3.2km"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "4h",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21659,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.063667,
+        "longitude": -2.843736,
+        "label": null
+      },
+      {
+        "canyonId": 21659,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.082001,
+        "longitude": -2.848479,
+        "label": null
+      },
+      {
+        "canyonId": 21659,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 43.064781,
+        "longitude": -2.840416,
+        "label": null
+      },
+      {
+        "canyonId": 21659,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 43.083981,
+        "longitude": -2.849622,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 43.064781,
+      "longitude": -2.840416,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_6f819de4ae726b0a",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://ropewiki.com/Alarrieta",
+          "url": "http://ropewiki.com/Alarrieta"
+        },
+        {
+          "id": "resource_3c59428e3bb123dc",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/Canyons/AlarrietaCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/Canyons/AlarrietaCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

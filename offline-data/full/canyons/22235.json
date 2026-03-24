@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:19.572172+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22235,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22235/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22235/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22235/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22235/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22235,
+    "identity": {
+      "nom": "Tenasses",
+      "nomComplet": "Canyon des Tenasses, Ruisseau des Tenasses",
+      "prefixeNom": "Canyon des",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22235/Tenasses.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Château-d'Oex",
+      "departement": "Vaud",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": "La Sarine - Saane",
+      "coursEau": "Ruisseau des Tenasses"
+    },
+    "rating": {
+      "cotation": "v3a2IV",
+      "interet": 2.6,
+      "nbVotes": 15
+    },
+    "metrics": {
+      "altitudeDepartM": 1485,
+      "deniveleM": 265,
+      "longueurM": 550,
+      "cascadeMaxM": 40,
+      "cordeMiniM": 40,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "2h-2h30",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "Accès bien décrit avec une carte dans le site internet disponible dans la partie \"Biblio\".",
+      "accesAmont": null,
+      "approche": "Prendre le sentier derrière le chalet qui part en direction du canyon (balisage blanc rouge blanc). Après 10min, le sentier traverse le ruisseau (possibilité de se mettre à l'eau ici, la partie haute ne comprend que quelques cascades moins intéressante).\n\nPour l'accès à la partie haute, remonter RD jusqu'à se rapprocher du ruisseau et descendre dans le lit.(10min)",
+      "descente": "Canyon alpin composé d'une succession de cascades principalement de hauteur entre 20 et 40m. L'eau a sculpté de très beaux passages dans un calcaire très pur. Pas de vasques profondes.",
+      "retour": "Retour en mode sanglier...Lorsque le canyon devient rouge! (la couleur du rocher change d'un coup), remonter RG (raide), pour arriver dans un champ en contrebas de la route. Remonter ensuite à la voiture.\n\n(cf carte du site internet dans la partie \"Biblio\".)",
+      "engagement": "Pas d'échappatoire évidente.",
+      "periode": "Avril - Novembre.\n\nAprès la fonte des neiges et avant les nouvelles chutes.\n\nAttention, des névés peuvent rester longtemps et peuvent être gros au vu des traces.",
+      "geologie": "Sur la fin le rocher du canyon devient Rouge d'un coup!!",
+      "historique": null,
+      "remarques": "Jolie descente de montagne plein soleil, cadre magnifique, vue superbe. Equipement ok principalement sur mono point. Quelques désescalades un peu haute sur la fin. A enchainer avec Ruisseau de la Leyvra à 500m et /ou canyon de Ramaclé à 5min."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22235,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.48819,
+        "longitude": 7.127389,
+        "label": null
+      },
+      {
+        "canyonId": 22235,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.485054,
+        "longitude": 7.129255,
+        "label": null
+      },
+      {
+        "canyonId": 22235,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.487926,
+        "longitude": 7.132997,
+        "label": null
+      },
+      {
+        "canyonId": 22235,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 46.490036,
+        "longitude": 7.126425,
+        "label": "Départ de la partie haute"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.487926,
+      "longitude": 7.132997,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_2c43e3db298a4f10",
+          "kind": "MAP",
+          "title": "1245 Château d'Oex (Swisstopo)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_3be70f6502b6ef39",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.homepage.bluewin.ch/swestcany.....enasses/Tenasses.htm",
+          "url": "http://www.homepage.bluewin.ch/swestcany.....enasses/Tenasses.htm"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

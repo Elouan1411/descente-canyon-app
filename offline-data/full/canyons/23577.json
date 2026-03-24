@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:18.324034+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23577,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23577/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23577/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23577/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23577/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23577,
+    "identity": {
+      "nom": "Flaz",
+      "nomComplet": "Canyon de Flaz, Flaz",
+      "prefixeNom": "Canyon de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23577/Flaz.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Pontresina",
+      "departement": "Graubünden/Grigioni/Grischun",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Bernina",
+      "bassin": "Inn",
+      "coursEau": "Flaz"
+    },
+    "rating": {
+      "cotation": "v3a7IV",
+      "interet": 2.8,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 1800,
+      "deniveleM": 50,
+      "longueurM": 1000,
+      "cascadeMaxM": 12,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "2min",
+      "descente": "4h",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "Rappel du pont chez Café Grond, au centre du village.",
+      "accesAmont": null,
+      "approche": "Parking souterrain à 100m du pont.",
+      "descente": "Descente acquatique à effectuer seulement plein hiver (janvier, fevrier). Le débit doit etre sous 1.5 m3/s. Dans ces conditions, il y a souvent des syphons de glace et de neige. Au passage de cascade de glace sortie possible. Piolet et crampons obligatoire.\n\nDifficulté selon situation et quantité de neige.",
+      "retour": "Monter les bords rg ou rd, retour par les chemins du village. Durée selon profondeur de la neige ...",
+      "engagement": "Difficile - extrème, seulement en plein hiver (glace et neige).",
+      "periode": "Aquatique, quelques sauts, vasques profondes. Plusieurs syphons de glace possible, selon conditions il faut équiper des cordes fixes avant la descente.",
+      "geologie": "Glimmergneis",
+      "historique": "Première 01.03.2014 Timo Stammwitz, Berni Nees",
+      "remarques": "Descente au milieu du village de Pontresina, bien visible de plusieurs ponts, les spectateurs sont garantis.\n\nEau très propre, avec de belles couleurs, pas sales du village.\n\nPassage du parc cascade de glace (championats de cascade de glace, cascade de glace nocturne) et son acces / sortie permet de remonter au milieu du canyon au village au bistro au bord du canyon pour se rechauffer.\n\nAttention au dépot de neige de la commune: Pontresina fait tomber tout la neige ramassée des routes et places dans la zone de l'éscalade de glace."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23577,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.487801,
+        "longitude": 9.90507,
+        "label": null
+      },
+      {
+        "canyonId": 23577,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.492161,
+        "longitude": 9.90049,
+        "label": null
+      },
+      {
+        "canyonId": 23577,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.489159,
+        "longitude": 9.90473,
+        "label": null
+      },
+      {
+        "canyonId": 23577,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 46.489941,
+        "longitude": 9.90308,
+        "label": "Parc cascade de glace (sortie)"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.489159,
+      "longitude": 9.90473,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_77cc1146127e76d6",
+          "kind": "MAP",
+          "title": "1257 St. Moritz (Swisstopo)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

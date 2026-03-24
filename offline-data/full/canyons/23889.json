@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:28.578174+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23889,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23889/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23889/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23889/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23889/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23889,
+    "identity": {
+      "nom": "Corgel",
+      "nomComplet": "Corgel",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23889/Corgel.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Corippo",
+      "departement": "Tessin",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Alpi Lepontine",
+      "bassin": "Val Verzasca",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a2II",
+      "interet": 2.3,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 780,
+      "deniveleM": 200,
+      "longueurM": 475,
+      "cascadeMaxM": null,
+      "cordeMiniM": 60,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "2h",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": "du village.",
+      "approche": "Face à l'église, prendre les ruelles qui montent à gauche dans Corippo. Suivre ensuite le sentier qui monte Nord-Ouest sur l'arete arrondie qui descend sur le village (sentier parfois peu marqué mais cheminement évident, voir carte sur map.geo.admin.ch). Après environ 200m de dénivelé, rejoindre le ruisseau à gauche.",
+      "descente": "Sans grand intéret au début, puis on rejoint une zone plus ouverte avec des cascades en toboggan en face sud. On finit par rejoindre la passerelle sur le chemin venant de Corippo qui conduit au canyon du même nom. Si on reste dans le ruisseau, un dernier rappel conduit au bord du torrent de Corippo.",
+      "retour": "Remonter RG sur le chemin qui conduit à Corippo.",
+      "engagement": "Faible",
+      "periode": "Printemps, ou après des pluies",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23889,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.239109,
+        "longitude": 8.833996,
+        "label": null
+      },
+      {
+        "canyonId": 23889,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.235428,
+        "longitude": 8.838524,
+        "label": null
+      },
+      {
+        "canyonId": 23889,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.236191,
+        "longitude": 8.841198,
+        "label": null
+      },
+      {
+        "canyonId": 23889,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 46.235641,
+        "longitude": 8.838585,
+        "label": "Petit pont sur la fin du canyon avant la confluence avec Corippo. Sortie possible"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.236191,
+      "longitude": 8.841198,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

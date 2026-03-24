@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:49:24.858783+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21439,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21439/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21439/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21439/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21439/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21439,
+    "identity": {
+      "nom": "Boucharo",
+      "nomComplet": "Canyon de Boucharo, Gave des Tourettes",
+      "prefixeNom": "Canyon de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21439/Boucharo.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Hautes-Pyrénées",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Gavarnie",
+      "bassin": "Gave de Pau",
+      "coursEau": "Gave des Tourettes"
+    },
+    "rating": {
+      "cotation": "v4a2II",
+      "interet": 2.3,
+      "nbVotes": 5
+    },
+    "metrics": {
+      "altitudeDepartM": 2320,
+      "deniveleM": 290,
+      "longueurM": 600,
+      "cascadeMaxM": 60,
+      "cordeMiniM": 65,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "45min",
+      "descente": "1h",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": "Depuis Gavarnie, prendre la route menant à la station de ski. Se garrer au terminus, le Col des Tentes.",
+      "accesAmont": null,
+      "approche": "Prendre la route vers le Port de Boucharo.\n\nArrivé à celui-ci, prendre le chemin menant vers le cirque/refuge de la breche.\n\nLe départ est à l'intersection chemin/ruisseau, sous le gacier des Gabiettous.",
+      "descente": "On commence par une succession de tobboggans, plus ou moins longs, contournables.\n\nL'encaissement, bien marqué, mais court, se termine par la \"grande\" cascade, avec 40 metres plein vide.\n\nL'eau vennant du glacier au dessus, n'oubliez pas vos néoprènes ;-) ...",
+      "retour": "Le retour se fait en grimpant vers la route empruntée à l'aller, droit devant.\n\nIl est possible (et conseillé) d'enchainer avec les Tourettes, en aval, dans ce cas prévoir une navette laissée à Gavarnie.",
+      "engagement": "Total dans la coute partie encaissée.\n\nIl est possible de contourner les toboggans du début par une pente herbeuse glissante.",
+      "periode": "En été, de toute façon innaccessible avec la neige l'hiver.",
+      "geologie": null,
+      "historique": "Première descente le 2 septembre 2006 : BARRAGUE Stéphane, ZIMMERMANN Alain, LECLERCQ Cyril",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21439,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.70536,
+        "longitude": -0.055444,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 42.70536,
+      "longitude": -0.055444,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_66d5328512d1b5a5",
+          "kind": "MAP",
+          "title": "1748 OT Gavarnie (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_7c69cab664b942ce",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://perso.orange.fr/cyril.leclercq/topoboucharo.jpg",
+          "url": "http://perso.orange.fr/cyril.leclercq/topoboucharo.jpg"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

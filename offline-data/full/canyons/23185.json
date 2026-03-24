@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:00.896846+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23185,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23185/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23185/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23185/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23185/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23185,
+    "identity": {
+      "nom": "Luquenac",
+      "nomComplet": "Canyon de Luquenac, Ruisseau de Caussou",
+      "prefixeNom": "Canyon de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23185/Luquenac.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Ariège",
+      "communePrincipale": "Unac",
+      "communes": [
+        "Unac"
+      ],
+      "massif": null,
+      "bassin": "Ariège",
+      "coursEau": "Ruisseau de Caussou"
+    },
+    "rating": {
+      "cotation": "v3a3II",
+      "interet": 2.0,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": null,
+      "longueurM": null,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 25,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "??",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "Depuis Unac remonter au cimetière et se garer après le chemin devant le moulin. !! Actuellement (07/2014) le chemin est éboulé mais se retrouve un peu plus haut !!",
+      "accesAmont": null,
+      "approche": "Descendre sous le pont.",
+      "descente": null,
+      "retour": "Longer la rivière jusqu'à retrouver les champs rive gauche. Sentier visible dans les ardoises concassées.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": "Adrien Paris, Rodolphe Sturm le 22 juillet 2013",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23185,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.761932,
+        "longitude": 1.781088,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 42.761932,
+      "longitude": 1.781088,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_e3f7c7a57334483e",
+          "kind": "MAP",
+          "title": "2148 ET Ax-Les-Thermes (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_550d56753993b587",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.efcanyon.net/index.php/fr/85-.....0-canyon-de-luquenac",
+          "url": "http://www.efcanyon.net/index.php/fr/85-.....0-canyon-de-luquenac"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

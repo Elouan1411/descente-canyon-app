@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:48:07.208569+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21092,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21092/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21092/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21092/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21092/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/21092/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 21092,
+    "identity": {
+      "nom": "Muzelle",
+      "nomComplet": "Cascade de la Muzelle, Ruisseau de la Pisse",
+      "prefixeNom": "Cascade de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21092/Muzelle.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Isère",
+      "communePrincipale": "Les Deux Alpes",
+      "communes": [
+        "Les Deux Alpes"
+      ],
+      "massif": "Ecrins - Oisans - Champsaur",
+      "bassin": null,
+      "coursEau": "Ruisseau de la Pisse"
+    },
+    "rating": {
+      "cotation": "v4a4III",
+      "interet": 2.4,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 1540,
+      "deniveleM": 500,
+      "longueurM": 1400,
+      "cascadeMaxM": 60,
+      "cordeMiniM": 65,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h30",
+      "descente": "3h30",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "De Bourg-d'Oisans rendez-vous à Vénosc. Continuez vers La Bérarde et juste après le pont dirigez-vous vers le camping. Garez-vous avant le hameau de l'Alleau sans gêner.",
+      "accesAmont": null,
+      "approche": "Suivez le GR54 qui monte vers le lac de la Muzelle. Dépassez les ruines du Pleynet où vous allez rencontrer des cascades. La descente commence lorsque le ruisseau redevient horizontal.",
+      "descente": "Le haut est une succession de cascades plus ou moins esthétiques et techniques.\n\nApres une marche, vous tombez sur la belle 60m juste au dessus duhameau de Bourg d'Arud. Utilisez l'arbre RG pour descendre.",
+      "retour": "Rejoignez le GR et de là la voiture.",
+      "engagement": "Les échappatoires sont nombreuses. Mais la descente peut-être compliquée par le débit d'autant plus que l'équipement est aléatoire et pas toujours facile à trouver.",
+      "periode": "Beaucoup d'eau en début de saison. L'alimentation est glacière.",
+      "geologie": "Gneiss, Schiste",
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21092,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 44.984592,
+        "longitude": 6.121831,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.984592,
+      "longitude": 6.121831,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_f06f3bbae647fab7",
+          "kind": "MAP",
+          "title": "3336 ET Les Deux Alpes - Parc des Ecrins (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 559,
+          "status": "Obsolète",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Isère) - 01 juil 2024",
+          "summary": "Suite aux dramatiques crues torrentielles de juin 2024, la D530 est fermée par arrêté préfectoral depuis le Clapier d'Auris ce qui condamne l'accès à la vallée du Vénéon, et donc l'accès à tous les canyons de la vallée (sauf riverains).\n\nDe plus, les crues ont pu causer de très gros dégâts et changements dans certains de ces canyons.",
+          "remark": "Réouverture de la route jusqu'à Saint-Christophe-en-Oisans (\"Ville\") depuis le 12/02/2025. Circulation réglementée au-delà.",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nArrêté préfectoral (Isère) n°38-2024-07 du 1er juillet 2024",
+          "effectiveDate": "12 fév 2025",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/559/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral (Isère) n°38-2024-07 du 1er juillet 2024",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem559_pj1.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,193 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:46:15.430113+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2633,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2633/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2633/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2633/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2633/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2633,
+    "identity": {
+      "nom": "Pas de l'Escalell",
+      "nomComplet": "Barranco del Pas de l'Escalell, Pas de l'Escanell, Ribera del Castell",
+      "prefixeNom": "Barranco del",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2633/Pas-de-l-Escalell.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Cataluña",
+      "departement": "Barcelona",
+      "communePrincipale": "Vilada",
+      "communes": [
+        "Vilada"
+      ],
+      "massif": null,
+      "bassin": "Rio Llobregat",
+      "coursEau": "Ribera del Castell"
+    },
+    "rating": {
+      "cotation": "v3a2IV",
+      "interet": 2.9,
+      "nbVotes": 25
+    },
+    "metrics": {
+      "altitudeDepartM": 1150,
+      "deniveleM": 250,
+      "longueurM": 700,
+      "cascadeMaxM": 27,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "3h",
+      "retour": "35min"
+    },
+    "topo": {
+      "accesAval": "Depuis Ripoll, prendre la C17 en direction de Vic. Peu de km après la sortie de Ripoll, prendre à droite la C26 en direction de Les Lloses/Borreda et Berga. Passé Borreda, et juste à l'entrée de Vilada après les premières maisons, part une route au niveau d'un virage marqué à droite. Elle indique Castell de l'Areny Peu avant le Castell, prendre à gauche une piste, puis au croisement suivant celle de droite, La piste longe bientôt le canyon pour arriver au plateau où on se gare près d'un petit pont marquant le départ.",
+      "accesAmont": null,
+      "approche": null,
+      "descente": "Le ruisseau s'encaisse immédiatement et on arrive à une succession de rappels de hauteurs moyennes mais dont certains peuvent être délicats en cas de gros débit (rare), mais dont certains peuvent alors s'équiper sur des arbres (prévoir alors 2X40 en cordes). Le 4ème rappel peut être délicat et se saute si il y a de l'eau. Dans la 2ème partie de la course, les marmites de géant se succèdent et permettent souvent sauts ou toboggans (une fois de plus si il y a de l'eau). La fin plus tranquille amène au dernier rappel de 27m.",
+      "retour": "Suivre le bon sentier évident en rive droite au pied de la C27. A une bifurcation, continuer à monter jusqu'à la piste et rejoindre la voiture.",
+      "engagement": "Assez engagé. Une seule échappatoire à mi-parcours en rive droite entre les deux encaissements. Une crue serait mortelle.",
+      "periode": "Printemps, à la fonte des neiges et après les pluies.",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2633,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.177765,
+        "longitude": 1.929043,
+        "label": null
+      },
+      {
+        "canyonId": 2633,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.173576,
+        "longitude": 1.930751,
+        "label": null
+      },
+      {
+        "canyonId": 2633,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 42.178234,
+        "longitude": 1.927736,
+        "label": null
+      },
+      {
+        "canyonId": 2633,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 42.173576,
+        "longitude": 1.928331,
+        "label": "parking primaire aval"
+      },
+      {
+        "canyonId": 2633,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 42.168468,
+        "longitude": 1.937107,
+        "label": "parking aval alternativ"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 42.178234,
+      "longitude": 1.927736,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_6deba974c3fa69bb",
+          "kind": "TOPOGUIDE",
+          "title": "Espeleo & Canyons. Canyons i Cavitats de l'alt Bergueda. Mapa 1:50.000",
+          "authors": [],
+          "publicationYear": 2012,
+          "reference": "978-84-15075-66-0",
+          "editor": "Editorial Piolet",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1306/topoguide.html"
+        },
+        {
+          "id": "biblio_c1524b8af0f1815f",
+          "kind": "TOPOGUIDE",
+          "title": "Pirineos - Guia de descenso de canones y barrancos",
+          "authors": [
+            "Eduardo Gomez",
+            "Laura Tejero"
+          ],
+          "publicationYear": 2002,
+          "reference": "84-95744-20-1",
+          "editor": "Barrabes",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1126/topoguide.html"
+        },
+        {
+          "id": "biblio_4c6dadc4f2dba0fd",
+          "kind": "TOPOGUIDE",
+          "title": "20 Puigmal Costabona (Mapa excursionista Piruneus) - 1/50000",
+          "authors": [],
+          "publicationYear": null,
+          "reference": null,
+          "editor": null,
+          "status": null,
+          "detailUrl": null
+        },
+        {
+          "id": "biblio_f09613ef40d42b47",
+          "kind": "TOPOGUIDE",
+          "title": "21 Andorra-Cadi (Mapa excursionista Piruneus) - 1/50000",
+          "authors": [],
+          "publicationYear": null,
+          "reference": null,
+          "editor": null,
+          "status": null,
+          "detailUrl": null
+        },
+        {
+          "id": "biblio_9e7401e9c3ed4348",
+          "kind": "TOPOGUIDE",
+          "title": "http://ropewiki.com/Pas_de_l%27Escalell",
+          "authors": [],
+          "publicationYear": null,
+          "reference": null,
+          "editor": null,
+          "status": null,
+          "detailUrl": "http://ropewiki.com/Pas_de_l%27Escalell"
+        },
+        {
+          "id": "biblio_5086dee2197b7861",
+          "kind": "TOPOGUIDE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/Canyons/EscalellCanyon",
+          "authors": [],
+          "publicationYear": null,
+          "reference": null,
+          "editor": null,
+          "status": null,
+          "detailUrl": "http://canyon.carto.net/cwiki/bin/view/Canyons/EscalellCanyon"
+        }
+      ],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

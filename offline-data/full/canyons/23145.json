@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:51.560057+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23145,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23145/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23145/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23145/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23145/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/23145/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 23145,
+    "identity": {
+      "nom": "Prouits",
+      "nomComplet": "Vallon des Prouits, Source du Merle",
+      "prefixeNom": "Vallon des",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23145/Prouits.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Var",
+      "communePrincipale": "La Motte",
+      "communes": [
+        "La Motte"
+      ],
+      "massif": null,
+      "bassin": "Argens",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "V2A1I",
+      "interet": 0.4,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 160,
+      "deniveleM": 20,
+      "longueurM": 30,
+      "cascadeMaxM": 8,
+      "cordeMiniM": 10,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "10mim",
+      "descente": "20min",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "Autoroute A8 (La provence), sortie Le Muy. Prendre la direction de Draguignan par la N555 jusqu'au deuxième rond point. Tourner à droite pour emprunter la D54 vers Trans en Provence sur 1,8 km et encore à droite en direction de La Motte par la D47 sur 1 km. Garez-vous, à gauche, à côté du petit pont (ancienne piste fermée par une barrière).",
+      "accesAmont": null,
+      "approche": "Suivre le sentier en RD pour passer un gué pour entamer la courte descente.",
+      "descente": "C4+ une sympathique C8 (amarrages naturels pour les deux cascades).",
+      "retour": "Récupérer le sentier pris à l'aller en RD.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "A enchainer après avoir fait le Vallon du Rousset juste à côté."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23145,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.499813,
+        "longitude": 6.517536,
+        "label": null
+      },
+      {
+        "canyonId": 23145,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.497913,
+        "longitude": 6.518985,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.497913,
+      "longitude": 6.518985,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_7e0885449ad16b9f",
+          "kind": "MAP",
+          "title": "3544 OT Le Muy - Lorgues (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 579,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Var) - 13 mai 2025",
+          "summary": "- La pratique du canyonisme dans des canyons secs (cotation aquaticité A1 ou habituellement à sec) est autorisée toute l'année\n\n- La pratique du canyonisme dans des canyons aquatiques est interdite du 1er novembre au 31 mars.\n\nPour la période du 1er avril au 30 octobre, il est interdit :\n\n- de pratiquer du coucher du soleil à 9h\n\n- de s'engager dans une descente de canyon aquatique après 17h.\n\n- De manière générale, il est interdit :\n\n- de s'engager si une alerte vigilance météo de niveau orange ou rouge est émise par Météo France, en ce qui concerne le risque \"pluie\", \"orage\", et \"inondation\", sur le secteur concerné.\n\n- de constituer un groupe de plus de 10 personnes (encadrement inclus)",
+          "remark": null,
+          "details": "Arrêté préfectoral (Préfecture du Var) SDJES-SPORTS-2025-12 du 13 mai 2025",
+          "effectiveDate": "13 mai 2025",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/579/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral (Préfecture du Var) SDJES-SPORTS-2025-12 du 13 mai 2025",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem579_pj1.pdf"
+            }
+          ]
+        },
+        {
+          "id": 545,
+          "status": "Abrogé",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Var) - 06 mai 2024",
+          "summary": "La pratique du canyonisme se voit interdite du 1er novembre au 31 mars.\n\nPour la période du 1er avril au 30 octobre, il est interdit :\n\n- de s'engager dans une descente de canyon avant 9h et après 17h.\n\n- de s'engager si une alerte vigilance météo de niveau orange ou rouge est émise par Météo France, en ce qui concerne le risque \"pluie\", \"orage\", et \"inondation\", sur le secteur concerné.\n\n- de constituer un groupe de plus de 10 personnes (encadrement inclus)",
+          "remark": "Arrêté abrogé et remplacé par l'arrêté préfectoral SDJES-SPORTS-2025-12 du 13 mai 2025",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nArrêté préfectoral (Var) n° SDJES-SPORTS-2024-0004 du 06 mai 2024",
+          "effectiveDate": "13 mai 2025",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/545/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral (Var) n° SDJES-SPORTS-2024-0004 du 06 mai 2024",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem545_pj1.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

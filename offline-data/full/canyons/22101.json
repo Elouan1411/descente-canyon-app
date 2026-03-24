@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:50.277457+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22101,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22101/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22101/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22101/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22101/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22101,
+    "identity": {
+      "nom": "Altersbach",
+      "nomComplet": "Altersbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22101/Altersbach.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": null,
+      "departement": "Haute-Autriche",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Salzkammergut",
+      "bassin": "Attersee",
+      "coursEau": "Altersbach"
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.7,
+      "nbVotes": 5
+    },
+    "metrics": {
+      "altitudeDepartM": 860,
+      "deniveleM": 280,
+      "longueurM": 1200,
+      "cascadeMaxM": 50,
+      "cordeMiniM": 50,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h20min",
+      "descente": "3h",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "De Salzbourg prendre l’A10 vers Linz. Sortez à Mondsee et prenez la direction de St-Gilgen. Après Schafling, suivez à gauche le lac Attersee. 900m après un tunnel commence une piste à droite. Garer la voiture là.",
+      "accesAmont": null,
+      "approche": "Suivre la piste, traverser l'Altersbach et poursuivre jusqu'à une autre piste (820m). Prenez cette piste à droite jusqu'à Altersbach.",
+      "descente": "18 rappels; vue sur le lac.",
+      "retour": "Après la dernière cascade sortir à gauche et suivre la piste jusqu'au parking",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22101,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.791786,
+        "longitude": 13.431258,
+        "label": null
+      },
+      {
+        "canyonId": 22101,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.798901,
+        "longitude": 13.426462,
+        "label": null
+      },
+      {
+        "canyonId": 22101,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.799206,
+        "longitude": 13.421634,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.799206,
+      "longitude": 13.421634,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_5686a14ecd53c5d4",
+          "kind": "MAP",
+          "title": "65 Mondsee (ÖK 50)",
+          "scale": "1:50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_0d13acebeadf5ff3",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/C.....pic=AltersbachCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/C.....pic=AltersbachCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

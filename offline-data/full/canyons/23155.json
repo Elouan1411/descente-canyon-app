@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:53.712590+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23155,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23155/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23155/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23155/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23155/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23155,
+    "identity": {
+      "nom": "Salvadon",
+      "nomComplet": "Torrent de Salvadon",
+      "prefixeNom": "Torrent de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23155/Salvadon.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Haute-Savoie",
+      "communePrincipale": "Sixt-Fer-à-Cheval",
+      "communes": [
+        "Sixt-Fer-à-Cheval"
+      ],
+      "massif": "Chablais - Platé - Aiguilles Rouges",
+      "bassin": "Giffre",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v5a3IV",
+      "interet": 3.0,
+      "nbVotes": 17
+    },
+    "metrics": {
+      "altitudeDepartM": 1200,
+      "deniveleM": 400,
+      "longueurM": 750,
+      "cascadeMaxM": 60,
+      "cordeMiniM": 70,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "45min",
+      "descente": "5h",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "De Samoëns, prendre la route (D907) qui va vers le Fer-à-Cheval. Peu après Sixt-Fer-à-Cheval, prendre à gauche direction l'Echarny puis le Crot. Se garer au bout de la route près d'une fontaine ou au bout de la route du hameau de l'Echarny (très peu de place)",
+      "accesAmont": null,
+      "approche": "Remonter en direction des chalets de Salvadon. Après une longue traversée vers la droite, compter 2 épingles ; à la troisième continuer dans l'axe de la piste dans les bois (ancien chemin et trace de vieux pont quand on traverse l'affluent tout de suite en sortant du chemin principal) et continuer jusqu'à une cascade.",
+      "descente": "Départ sur amarrage naturel rive droite. Succession de rappels et de marmites suspendues : on ne marche que 2x30m entre des ressauts sinon on ne range pas la corde. Descente à faire au printemps ou après de fortes précipitations. Prévoir éventuellement de la corde à couper pour les relais et des maillons. Par fort débit après le deuxième geyser (c55 que l'on peut fractionner) et donc la première marche de 30m, partir à droite sur une petite sente pour faire un relais depuis un gros arbre afin d'éviter l'actif d'une C10 déversante avec un arbre : gros danger de coincement entre l'arbre et la cascade.",
+      "retour": "Après la dernière cascade, traverser le champ pour trouver un chemin puis une route qui vous mènera à la voiture.",
+      "engagement": "Plusieurs échappatoires au début et à la fin. L’échappatoire rive droite au milieu du canyon nécessite un petit pas d'escalade.",
+      "periode": "Printemps si on le fait dans des conditions sympas. Presque sec en été.",
+      "geologie": "Calcaire tithonique veiné de quartz blanc",
+      "historique": "Ouvert dans les années 90 en cascade de glace et seulement au printemps 2013 en version canyon par Plouf le canyoneur.",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23155,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.071053,
+        "longitude": 6.796293,
+        "label": null
+      },
+      {
+        "canyonId": 23155,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.066273,
+        "longitude": 6.795392,
+        "label": null
+      },
+      {
+        "canyonId": 23155,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.061584,
+        "longitude": 6.791056,
+        "label": "3 voitures max."
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.061584,
+      "longitude": 6.791056,
+      "label": "3 voitures max."
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_15a6dbda97b38ace",
+          "kind": "MAP",
+          "title": "3530 ET Samoens - Haut-Giffre (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_03708605fe40e80e",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://leblogaplouflecanyoneur.blogspot......n-dans-la-yaute.html",
+          "url": "http://leblogaplouflecanyoneur.blogspot......n-dans-la-yaute.html"
+        },
+        {
+          "id": "resource_7c97cec9f206e876",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://saintjeoireescalade.wordpress.com.....s/sixt-fer-a-cheval/",
+          "url": "http://saintjeoireescalade.wordpress.com.....s/sixt-fer-a-cheval/"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

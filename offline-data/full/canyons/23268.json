@@ -1,0 +1,143 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:21.211258+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23268,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23268/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23268/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23268/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23268/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23268,
+    "identity": {
+      "nom": "Charbonnet",
+      "nomComplet": "Le Charbonnet",
+      "prefixeNom": "Le",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23268/Charbonnet.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Savoie",
+      "communePrincipale": "Bourg-Saint-Maurice",
+      "communes": [
+        "Bourg-Saint-Maurice"
+      ],
+      "massif": "Beaufortain",
+      "bassin": "Isère",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v5a4IV",
+      "interet": 2.2,
+      "nbVotes": 9
+    },
+    "metrics": {
+      "altitudeDepartM": 1333,
+      "deniveleM": 450,
+      "longueurM": 1300,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 40,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h",
+      "descente": "4-5h",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "Se rendre à Bourg-Saint-Maurice. Prendre la D902 direction Cormet de Roselend et se garer juste avant le torrent et la petite chapelle (parking en épis).",
+      "accesAmont": null,
+      "approche": "Un sentier par juste à coté de l'arrivée du canyon et monte au départ en à peine 1h en recoupant la route plusieurs fois.\n\nDépart au pont de la piste (point coté 1333m IGN) au nord-ouest du hameau des Echines-Dessus.",
+      "descente": "Canyon aquatique très agréable, l'équipement est minimaliste mais suffisant. Lignes de rappels arrosées voir très arrosées et quelques mouvements d'eau sont présents même à l'étiage (gros bassin versant). La C20 peut être problématique (rappel guidé possible).",
+      "retour": "Sortie RG après la prise d'eau, retour au parking en 5min.",
+      "engagement": "Quelques échappatoires début et fin de canyon, à partir de la C20,\n\n(plaquage voir rappel d'eau possible en réception) l'encaissement ne permet pas de sortir, mise hors crue possible .\n\nPrévoir trousse de rééquipement et corde plus longue pour passer plusieurs obstacles.",
+      "periode": "Pas avant mi-Aout\n\nÉtiage : septembre / octobre",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23268,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.634808,
+        "longitude": 6.760211,
+        "label": null
+      },
+      {
+        "canyonId": 23268,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.624035,
+        "longitude": 6.768064,
+        "label": null
+      },
+      {
+        "canyonId": 23268,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 45.623554,
+        "longitude": 6.771411,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.623554,
+      "longitude": 6.771411,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_da30219dbb4dd176",
+          "kind": "TOPOGUIDE",
+          "title": "Les canyons de Savoie",
+          "authors": [
+            "Patrick Chollot"
+          ],
+          "publicationYear": 2018,
+          "reference": "978-2-95309-39-1-9",
+          "editor": "auto-édition",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/1125/Les-canyons-de-Savoie.html"
+        },
+        {
+          "id": "biblio_6d273ae41f72e178",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons de Savoie",
+          "authors": [
+            "F. Martin",
+            "C. Altazin"
+          ],
+          "publicationYear": 2007,
+          "reference": "978-2-9528935-0-3",
+          "editor": null,
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/15/Descentes-de-canyons-en-Savoie.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_4f31ad7390f928f9",
+          "kind": "MAP",
+          "title": "3532 ET Les Arcs - La Plagne (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

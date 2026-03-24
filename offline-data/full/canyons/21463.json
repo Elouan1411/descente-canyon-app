@@ -1,0 +1,154 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:49:30.325043+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21463,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21463/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21463/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21463/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21463/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21463,
+    "identity": {
+      "nom": "Trobiolo",
+      "nomComplet": "Val Trobiolo",
+      "prefixeNom": "Val",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21463/Trobiolo.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Lombardia",
+      "departement": "Brescia",
+      "communePrincipale": "Ossimo",
+      "communes": [
+        "Cigno",
+        "Ossimo"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.9,
+      "nbVotes": 6
+    },
+    "metrics": {
+      "altitudeDepartM": 510,
+      "deniveleM": 251,
+      "longueurM": 1000,
+      "cascadeMaxM": 22,
+      "cordeMiniM": 25,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "50min",
+      "descente": "5h",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": "Se garer à Cogno",
+      "accesAmont": null,
+      "approche": "Remonter par le chemin RG",
+      "descente": null,
+      "retour": "Sortie au village.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "Ce canyon est un collecteur d'égout (précisé sur gole et canyon 3, et souligné par la discrète étoile en rouge dans Canyoning in Lombardia). Eau neauséabonde, marron cacabeurk"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21463,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.936317,
+        "longitude": 10.234687,
+        "label": null
+      },
+      {
+        "canyonId": 21463,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.93623,
+        "longitude": 10.243421,
+        "label": null
+      },
+      {
+        "canyonId": 21463,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 45.935543,
+        "longitude": 10.237155,
+        "label": null
+      },
+      {
+        "canyonId": 21463,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 45.936092,
+        "longitude": 10.243442,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 45.935543,
+      "longitude": 10.237155,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_3813ed43a35207fd",
+          "kind": "TOPOGUIDE",
+          "title": "Canyoning in Lombardia",
+          "authors": [
+            "Pascal van Duin"
+          ],
+          "publicationYear": 2005,
+          "reference": "ISBN 88-901753-0-3",
+          "editor": "Edizioni TopCanyon",
+          "status": "en stock\n\n- 24,90 € -\n\nCommandez cet ouvrage dès maintenant !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/18/Canyoning-in-Lombardia.html"
+        },
+        {
+          "id": "biblio_60029af297dac6c3",
+          "kind": "TOPOGUIDE",
+          "title": "Italia Nord-Ovest - Gole e Canyon Vol.3",
+          "authors": [
+            "Franscesco Cacace",
+            "Roberto Jarre",
+            "Dino Ruotolo",
+            "Roberto Schenone. Traduit en français par Thierry Achmetoff"
+          ],
+          "publicationYear": 2003,
+          "reference": "88-900260-2-2",
+          "editor": "Adriambiente",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/153/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_791230ae0143f2bf",
+          "kind": "MAP",
+          "title": "103 (Kompass)",
+          "scale": null,
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

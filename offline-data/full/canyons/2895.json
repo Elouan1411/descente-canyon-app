@@ -1,0 +1,164 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:47:19.662377+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2895,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2895/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2895/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2895/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2895/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2895,
+    "identity": {
+      "nom": "Haraska",
+      "nomComplet": "Ravin d' Haraska",
+      "prefixeNom": "Ravin d'",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2895/Haraska.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Nouvelle-Aquitaine",
+      "departement": "Pyrénées-Atlantiques",
+      "communePrincipale": "Mendive",
+      "communes": [
+        "Mendive"
+      ],
+      "massif": null,
+      "bassin": "Arbailles",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2III",
+      "interet": 2.4,
+      "nbVotes": 6
+    },
+    "metrics": {
+      "altitudeDepartM": 950,
+      "deniveleM": 450,
+      "longueurM": 1300,
+      "cascadeMaxM": 15,
+      "cordeMiniM": 50,
+      "navette": "12.0km"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "3h",
+      "retour": "??"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": "1er tiers à tendance verticale. Ensuite le canyon s'ouvre et la tendance devient horinzontale.",
+      "retour": "10 min si voiture tout terrain\n\n45 a 50 min autrement",
+      "engagement": "Équipement à reconsidérer : prévoir sangle et trousse à spits",
+      "periode": "de la fonte des neige à l'été (sec dès fin juin)",
+      "geologie": "poudingue",
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2895,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.069111,
+        "longitude": -1.071806,
+        "label": null
+      },
+      {
+        "canyonId": 2895,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.079556,
+        "longitude": -1.069722,
+        "label": null
+      },
+      {
+        "canyonId": 2895,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 43.073002,
+        "longitude": -1.078703,
+        "label": null
+      },
+      {
+        "canyonId": 2895,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 43.08989,
+        "longitude": -1.089194,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 43.073002,
+      "longitude": -1.078703,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_e4c8c4f70fecf6cb",
+          "kind": "TOPOGUIDE",
+          "title": "Barrancos y Cañones de Euskal Herria",
+          "authors": [
+            "Javier ITURRITXA"
+          ],
+          "publicationYear": 2012,
+          "reference": "978-84-615-5658-8",
+          "editor": null,
+          "status": "en stock\n\n- 24,90 € -\n\nCommandez cet ouvrage dès maintenant !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/166/Barrancos-y-Canones-de-Euskal-Herria.html"
+        },
+        {
+          "id": "biblio_f98bab071a8a9693",
+          "kind": "TOPOGUIDE",
+          "title": "Carte N°2 - Pays Basque, Béarn, Navarre, Jacetania",
+          "authors": [
+            "Patrick Gimat + Bernard Trouvé"
+          ],
+          "publicationYear": 1999,
+          "reference": null,
+          "editor": null,
+          "status": "en stock\n\n- 7,50 € -\n\nCommandez cet ouvrage dès maintenant !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/121/Carte-n°2-:-Pays-Basque--Bearn--Navarre--Jacetania.html"
+        },
+        {
+          "id": "biblio_428b51c54d72659f",
+          "kind": "TOPOGUIDE",
+          "title": "Les canyons du Pays Basque. Promenades, randonnées, descentes sportives.",
+          "authors": [
+            "Michel Douat",
+            "Jean-François Pernette"
+          ],
+          "publicationYear": 1986,
+          "reference": "2-905181-05-2",
+          "editor": "Profils & Couleurs",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1334/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_f161ab530cb81c94",
+          "kind": "MAP",
+          "title": "1346 ET Foret d'Irati - Pic d'Orhy (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

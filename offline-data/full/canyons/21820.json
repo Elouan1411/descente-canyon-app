@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:50.832057+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21820,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21820/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21820/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21820/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21820/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21820,
+    "identity": {
+      "nom": "Burggrabenklamm",
+      "nomComplet": "Burggrabenklamm, Burgbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21820/Burggrabenklamm.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": null,
+      "departement": "Haute-Autriche",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Salzkammergut",
+      "bassin": "Attersee",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.2,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 610,
+      "deniveleM": 100,
+      "longueurM": 700,
+      "cascadeMaxM": 18,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "1h30",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "De Salzbourg prendre l’A10 vers Linz. Sortez à Mondsee et prenez la direction de St-Gilgen. Après Schafling, suivez le lac Attersee et Burgabachau. Au bord du lac, garez-vous à droite dans la forêt en face de maisons imposantes. 20 m plus haut, il y a une vierge et une chapelle naturelle.",
+      "accesAmont": null,
+      "approche": "Au niveau de la vierge, prenez à droite. Ne prenez pas le chemin qui mène en bas de la cascade. Un chemin bien aménagé monte jusqu’à un pont. Passez-le et descendez RD vers la rivière.",
+      "descente": "Les obstacles avant la cascade finale sont formés par des blocs peu esthétiques. L’ensemble prend du caractère uniquement avec la belle C18. On peut faire un rappel dans l’actif RG, soit passer RD par une tyrolienne et descendre tranquillement hors d’eau RD. Il y a encore quelques obstacles, mais l’essentiel a été franchi.",
+      "retour": "Suivez le chemin aménagé ou sortez en bas, au niveau de la chapelle.",
+      "engagement": "Canyon court sans échappatoires malgré le chemin au dessus.",
+      "periode": "Mai-Octobre",
+      "geologie": null,
+      "historique": null,
+      "remarques": "La cascade finale pose problème en cas de gros débit. Utilisez bien l'équipement hors d'eau.\n\nIl y a une partie supérieur, approche : Continuer le sentier, prendre a droite à la bifurcation.Descendre quelques mètres et monter). Après une passerelle de bois descendre au cours d'eau."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21820,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.781845,
+        "longitude": 13.487692,
+        "label": null
+      },
+      {
+        "canyonId": 21820,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.787209,
+        "longitude": 13.45984,
+        "label": "entrée sup. Burggraben"
+      },
+      {
+        "canyonId": 21820,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.788593,
+        "longitude": 13.493357,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 47.781845,
+      "longitude": 13.487692,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_5686a14ecd53c5d4",
+          "kind": "MAP",
+          "title": "65 Mondsee (ÖK 50)",
+          "scale": "1:50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_e65cd93fd99c86b9",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cgi-bin/redirect.....action=detailed_desc",
+          "url": "http://canyon.carto.net/cgi-bin/redirect.....action=detailed_desc"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

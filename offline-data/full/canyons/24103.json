@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:59:12.959518+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24103,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24103/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24103/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24103/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24103/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24103,
+    "identity": {
+      "nom": "Beyrou",
+      "nomComplet": "Le Riou Beyrou",
+      "prefixeNom": "Le Riou",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24103/Beyrou.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Hautes-Alpes",
+      "communePrincipale": "La Motte-en-Champsaur",
+      "communes": [
+        "La Motte-en-Champsaur"
+      ],
+      "massif": "Ecrins - Oisans - Champsaur",
+      "bassin": "Drac",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2III",
+      "interet": 1.5,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 2150,
+      "deniveleM": 400,
+      "longueurM": 940,
+      "cascadeMaxM": 35,
+      "cordeMiniM": 40,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "2h30",
+      "descente": "3h",
+      "retour": "1h30"
+    },
+    "topo": {
+      "accesAval": "Aller à la Motte-en-Champsaur.",
+      "accesAmont": null,
+      "approche": "Remonter le torrent de la Muande par sa rive droite, puis prendre à droite à la confluence avec le Riou Beyrou. Suivre le sentier en direction du col de la Pisse, rentrer dans le canyon à environ 2170m pour l'intégrale.",
+      "descente": null,
+      "retour": "Prendre le chemin de l'aller.",
+      "engagement": "Aucun engagement sur la partie sup. jusqu'au resserrement (échappatoire ou entrée aval). Aucune échappatoire possible dans l'encaissement.",
+      "periode": "début automne",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24103,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.716309,
+        "longitude": 6.173914,
+        "label": "départ intégrale"
+      },
+      {
+        "canyonId": 24103,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.714912,
+        "longitude": 6.164891,
+        "label": null
+      },
+      {
+        "canyonId": 24103,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.746792,
+        "longitude": 6.122683,
+        "label": null
+      },
+      {
+        "canyonId": 24103,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 44.71479,
+        "longitude": 6.16849,
+        "label": "départ aval"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.746792,
+      "longitude": 6.122683,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

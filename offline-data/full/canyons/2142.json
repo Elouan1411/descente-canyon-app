@@ -1,0 +1,211 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:44:14.176199+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2142,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2142/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2142/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2142/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2142/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/2142/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 2142,
+    "identity": {
+      "nom": "Montmin",
+      "nomComplet": "Nant de Montmin",
+      "prefixeNom": "Nant de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2142/Montmin.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Haute-Savoie",
+      "communePrincipale": "Faverges-Seythenex",
+      "communes": [
+        "Faverges-Seythenex"
+      ],
+      "massif": "Bornes - Aravis",
+      "bassin": "Lac d'Annecy",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a3III",
+      "interet": 2.7,
+      "nbVotes": 105
+    },
+    "metrics": {
+      "altitudeDepartM": 710,
+      "deniveleM": 200,
+      "longueurM": 1200,
+      "cascadeMaxM": 10,
+      "cordeMiniM": 15,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "2h30 à 3h",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": "(peu utile) : continuer sur la D42 qui monte à Montmin (500 m). Il est interdit de se garer proche de l'oratoire (réservé aux secours et dépose-minute) Poursuivre la route, vous trouverez une grande esplanade à droite, qui se trouve à moins de 10 minutes à pied de l'oratoire.\n\nVeillez à vous garer afin d'optimiser les places et de respecter la propreté des lieux.",
+      "approche": "Du parking aval obligatoire, remonter la D42 à pied jusqu'à l'oratoire (15min, moins d'1km). Au niveau de l'oratoire, une sente très raide permet de rejoindre le canyon en contrebas (cordes fixes).",
+      "descente": null,
+      "retour": "Pour sortir, il faut poursuivre en rive droite sur un sentier qui longe le canyon, puis rejoint le cours d’eau après le barrage. Puis une sente en RG longe la rivière jusqu’à trouver un sentier RD qui remonte au parking d'accueil (15 minutes). Ne pas rejoindre le village.",
+      "engagement": "Sortie possible par un sentier à mi-parcours RD face à la cascade (affluent RG)",
+      "periode": "Attendre la fin de la fonte. Il y a toujours de l'eau.",
+      "geologie": "Calcaire",
+      "historique": "Juan Espejo en 1985",
+      "remarques": "Le plan de secours a évolué en 2024. Les obstacles sont numérotés de R15 à R1, correspondant à un relevé GPS.\n\nEn cas d'alerte, indiquer le numéro du médaillon, ce qui rendra la localisation et l'intervention des secours plus rapide."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2142,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.779446,
+        "longitude": 6.261111,
+        "label": null
+      },
+      {
+        "canyonId": 2142,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.770557,
+        "longitude": 6.26,
+        "label": null
+      },
+      {
+        "canyonId": 2142,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 45.787495,
+        "longitude": 6.259557,
+        "label": "Parking possible si navette"
+      },
+      {
+        "canyonId": 2142,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 45.771603,
+        "longitude": 6.258353,
+        "label": "Parking aval obligatoire"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 45.787495,
+      "longitude": 6.259557,
+      "label": "Parking possible si navette"
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_1101377ae261f2cb",
+          "kind": "TOPOGUIDE",
+          "title": "Activités verticales en Bauges",
+          "authors": [],
+          "publicationYear": 2014,
+          "reference": "978-2-9538878-8-4",
+          "editor": "Parc naturel régional du massif des Bauges",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1285/topoguide.html"
+        },
+        {
+          "id": "biblio_e7d94bb2f47393ab",
+          "kind": "TOPOGUIDE",
+          "title": "Cascades, Gorges & Canyons : Pré-alpes d'Isère et de Savoie",
+          "authors": [
+            "Bertrand Hauser",
+            "Delphine Baratin"
+          ],
+          "publicationYear": 2007,
+          "reference": "978-2-9529407-0-2",
+          "editor": "Descente-Canyon.com",
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/11/Cascades--Gorges-et-Canyons-:-Pre-alpes-d-Isere-et-de-Savoie.html"
+        },
+        {
+          "id": "biblio_87a84633f292e5a0",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons de Haute-Savoie (réédition)",
+          "authors": [
+            "Ch. Charletty",
+            "G. Gudefin",
+            "B. Hugon",
+            "J-P. Beaudoin"
+          ],
+          "publicationYear": 2004,
+          "reference": "ISBN: 2741702888",
+          "editor": "GAP",
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/128/Canyons-de-Haute-Savoie.html"
+        },
+        {
+          "id": "biblio_1e61b240bec55aed",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons de Haute Savoie",
+          "authors": [
+            "Christian Charletty",
+            "Gérard Gudefin",
+            "Bruno Hugon",
+            "Comité Départemental de Spéléologie 74"
+          ],
+          "publicationYear": 1997,
+          "reference": "ISBN 2-7417-0202-0",
+          "editor": "Gap",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/19/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_68c3d089c92edd13",
+          "kind": "MAP",
+          "title": "3431 OT Lac d'Annecy (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 271,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté - 23 mai 2013",
+          "summary": null,
+          "remark": null,
+          "details": "Consultez :\n\nArrêté municipal n°2013.G.111 du 23 mai 2013 - Page 1\n\nConsultez :\n\nArrêté municipal n°2013.G.111 du 23 mai 2013 - Page 2\n\nConsultez :\n\nArrêté municipal n°2013.G.111 du 23 mai 2013 - Page 3\n\nConsultez :\n\nArrêté municipal n°2013.G.111 du 23 mai 2013 - Page 4",
+          "effectiveDate": "23 mai 2013",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/271/legislation.html",
+          "attachments": []
+        },
+        {
+          "id": 58,
+          "status": "Obsolète",
+          "action": "Interdit",
+          "title": "Arrêté préfectoral (Haute-Savoie) - 21 juil 2003",
+          "summary": "En raison de la sécheresse, le canyon de Montmin, les Rots de Balme et les gorges du Bronze sont interdits à la pratique pour une durée de 3 mois, sauf changement des conditions météo permettant un retour à une situation normale.",
+          "remark": "Pris sans concertation, cet arrêté est dénoncé par les professionnels.",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nConsultez le\n\ntexte (ou extrait)\n\n[Extrait]\n\nArticle 5 : Sports d’eau vive et baignade\n\nAfin de préserver la faune et la flore aquatique, la pratique du canyoning est interdite dans les cours d’eau\n\nsuivants :\n\n- ruisseau des ROTS ou de BALME (affluent de l’Arve) ;\n\n- ruisseau du BRONZE (affluent de l’Arve) ;\n\n- ruisseau de MONTMIN (affluent de l’Eau Morte).\n\nLe Fier, la Filière et le Chéran feront l’objet d’un suivi bactériologique. Des mesures d’interdiction de la baignade\n\npourront être prises ultérieurement par arrêté préfectoral.\n\nArrêté préfectoral du 21 juillet 2003",
+          "effectiveDate": "21 oct 2003",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/58/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral du 21 juillet 2003",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/arrete58.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

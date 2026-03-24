@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:17.336236+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22509,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22509/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22509/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22509/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22509/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22509,
+    "identity": {
+      "nom": "Gribbiasca",
+      "nomComplet": "Gribbiasca",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22509/Gribbiasca.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Chironico",
+      "departement": "Tessin",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": "Val Leventina",
+      "coursEau": "Gribbiasca"
+    },
+    "rating": {
+      "cotation": "v5a3IV",
+      "interet": 2.8,
+      "nbVotes": 8
+    },
+    "metrics": {
+      "altitudeDepartM": 955,
+      "deniveleM": 315,
+      "longueurM": 680,
+      "cascadeMaxM": 40,
+      "cordeMiniM": 45,
+      "navette": "9.0km"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "2h45",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "De Chironico 4,8 km vers nord (Gribbio)",
+      "accesAmont": null,
+      "approche": "Départ du sentier au pylône d'électricité, chemin bien tracé jusqu'au captage",
+      "descente": "Canyon joli.\n\nA la fin, la grande cascade commence par une succession de goulotte très encaissées.\n\nPuis l'ambiance s'ouvre et on accède à une grande terrasse où on peut se décorder. On trouve sur la gauche un départ de main courante menant à un relais limitant les frottements.\n\n45 mètres plus bas on trouve dans l'axe un relais avec plusieurs points assez confortable\n\nLa longueur suivante pose sur une grande terrasse de nouveau, un monopoint peu visible permet de mettre une corde pour le dernier grand plan incliné. La désescalade reste exposée.",
+      "retour": "Au-dessous de R/D 40 aller à la route",
+      "engagement": "Quelques échappatoires difficiles possibles.",
+      "periode": "Peu d'eau après le captage.",
+      "geologie": "Gneis",
+      "historique": null,
+      "remarques": "Attention Barrage dangereux. Bien appeler l'infoline."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22509,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.450897,
+        "longitude": 8.820922,
+        "label": null
+      },
+      {
+        "canyonId": 22509,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.45274,
+        "longitude": 8.826528,
+        "label": null
+      },
+      {
+        "canyonId": 22509,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 46.448589,
+        "longitude": 8.820605,
+        "label": null
+      },
+      {
+        "canyonId": 22509,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 46.453396,
+        "longitude": 8.827558,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 46.448589,
+      "longitude": 8.820605,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_1e5c67cde732c20d",
+          "kind": "TOPOGUIDE",
+          "title": "Eldorado Ticino",
+          "authors": [
+            "Anna & Luca Nizzola"
+          ],
+          "publicationYear": 2010,
+          "reference": "978-88-905017-7-7",
+          "editor": "SwissCanyon",
+          "status": "en stock\n\n- 39,90 € -\n\nCommandez cet ouvrage dès maintenant !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/157/Eldorado-Ticino.html"
+        },
+        {
+          "id": "biblio_818da916075bb17b",
+          "kind": "TOPOGUIDE",
+          "title": "Canyoning en Suisse 2",
+          "authors": [
+            "Franz Baumgartner",
+            "Andreas Brunner",
+            "Daniel Zimmermann"
+          ],
+          "publicationYear": 2010,
+          "reference": "9783033024694",
+          "editor": null,
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/158/Canyoning-en-Suisse-2.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_7d5d55d6169f885c",
+          "kind": "MAP",
+          "title": "1272 Pizzo Campo Tencia (Carte Nationale Suisse)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,147 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:16.447905+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21667,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21667/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21667/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21667/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21667/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21667,
+    "identity": {
+      "nom": "Jucar",
+      "nomComplet": "Rio Jucar, Cortados de Villalba",
+      "prefixeNom": "Rio",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21667/Jucar.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Castilla-La Mancha",
+      "departement": "Provincia de Cuenca",
+      "communePrincipale": "Una",
+      "communes": [
+        "Una"
+      ],
+      "massif": "Serriana de cuenca",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v1a4I",
+      "interet": 2.0,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1000,
+      "deniveleM": 20,
+      "longueurM": null,
+      "cascadeMaxM": null,
+      "cordeMiniM": 10,
+      "navette": "11.5km"
+    },
+    "timings": {
+      "approche": "2min",
+      "descente": "4 - 6h",
+      "retour": "2min"
+    },
+    "topo": {
+      "accesAval": "Madrid vers Cuenca. Avant la ville suivre Villalba de la Sierra. Continuez vers Uña. 2,1 km après le pont de Villalba sur le Jucar tournez à gauche pour prendre une piste (Panneau vitesse carré et bleu : 40). Suivez-la sur 1,1 km.\n\nAccès",
+      "accesAmont": "si on veut faire l'intégrale : Retournez sur vos pas et tournez à gauche ( km 1,1). 800 m plus loin vous passez à côté du Ventano del Diablo (km 1,9). Garez vous beaucoup plus loin avant Uña, sur un parking à gauche 100 m avant le pont.",
+      "approche": "Rejoignez la rivière en contre bas, au dessous du premier encaissement.",
+      "descente": "Le plus intéressant est de ne faire que la partie aval. Du parking aval, avec les frontales, suivez les tunnels. Vous remontez ainsi rapidement la rivière et vous pouvez choisir votre lieu de descente !\n\nPartie Aval : durée 1h30, nombreux sauts possibles",
+      "retour": "Remontez au parking RG sans difficulté à côté de l’usine électrique.",
+      "engagement": "De nombreux chemins longent le Rio.",
+      "periode": "Collecteur au débit important. A faire à l’étiage\n\nPrintemps-été",
+      "geologie": null,
+      "historique": null,
+      "remarques": "A faire quand on y est pour Arroyo de la Dehesa et ne pas oublier de prendre une petite corde de 20m."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21667,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 40.244495,
+        "longitude": -2.057199,
+        "label": "Départ canyon partie aval, la plus intéressante et pas de navette en passant par les tunnels, départ après le 3ème tunnel."
+      },
+      {
+        "canyonId": 21667,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 40.248501,
+        "longitude": -2.049014,
+        "label": null
+      },
+      {
+        "canyonId": 21667,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 40.240543,
+        "longitude": -2.066688,
+        "label": "Sortie remonter par le chemin et prendre le 1er Tunnel jusqu'au Parking"
+      },
+      {
+        "canyonId": 21667,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 40.236443,
+        "longitude": -2.073,
+        "label": null
+      },
+      {
+        "canyonId": 21667,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 40.236771,
+        "longitude": -2.072758,
+        "label": "1er Tunnel"
+      },
+      {
+        "canyonId": 21667,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 40.240711,
+        "longitude": -2.065776,
+        "label": "2ème Tunnel aller"
+      },
+      {
+        "canyonId": 21667,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 40.24622,
+        "longitude": -2.053039,
+        "label": "3ème Tunnel aller"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 40.236443,
+      "longitude": -2.073,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_8e99df4643d0bc4b",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.barranquismo.net/paginas/barr.....ados_de_villalba.htm",
+          "url": "http://www.barranquismo.net/paginas/barr.....ados_de_villalba.htm"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

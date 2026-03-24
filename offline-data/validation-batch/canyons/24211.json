@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:43:07.680261+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24211,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24211/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24211/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24211/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24211/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/24211/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 24211,
+    "identity": {
+      "nom": "Bellestil",
+      "nomComplet": "Torrent de Bellestil",
+      "prefixeNom": "Torrent de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24211/Bellestil.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Cataluña",
+      "departement": "Gerona",
+      "communePrincipale": "Camprodon",
+      "communes": [
+        "Camprodon"
+      ],
+      "massif": "Alta Garrotxa",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.3,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": null,
+      "longueurM": null,
+      "cascadeMaxM": null,
+      "cordeMiniM": null,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "??",
+      "descente": "??",
+      "retour": "??"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24211,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.331764,
+        "longitude": 2.513473,
+        "label": null
+      },
+      {
+        "canyonId": 24211,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.323593,
+        "longitude": 2.501278,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 42.331764,
+      "longitude": 2.513473,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 434,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté - 09 mars 2020",
+          "summary": "Réglementation de la descente de canyons dans l'EIN de l'Alta Garrotxa :\n\n- La descente de canyons est régie dans la zone d'intérêt naturel (EIN) de l'Alta Garrotxa par le règlement du 9 mars 2020, qui vise à préserver le milieu naturel des canyons de l'Alta Garrotxa.\n\n- Le règlement établit que l'activité peut être effectuée par un maximum de 10 personnes par jour dans chaque canyon autorisé (50 personnes dans le cas de la randonnée aquatique de la Muga). Les canyons ou portions de canyons autorisés sont (cf. carte) :\n\n- Torrent de Bellestil\n\n- Torrent de Monars / Les Valls\n\n- Barranc del Toll\n\n- Barranc de Sant Aniol\n\n- Torrent de la Comella / Gorgues de les Canals\n\n- Torrent de Monteia\n\n- Barranc del Clot Fosc\n\n- Barranc d'Espinau\n\n- Torrent de Ferreros\n\n- La Muga (portion de randonnée aquatique, cf. carte)\n\n=> Tous les autres canyons sont donc interdits à l'activité ainsi que l’équipement de nouveaux itinéraires. De même, il est interdit de modifier les équipements existants ou d'en ajouter.\n\n- Il est obligatoire de réserver à l'avance au moins 2 jours ouvrés à l'avance. Pour faire la descente, il faudra se munir de l'autorisation correspondante et de la carte d'identité du demandeur. Les demandes d'autorisation ne peuvent maintenant se faire qu'en ligne auprès du Consorci de l’Alta Garrotxa. Pour l'instant (06/2022), il est obligatoire de posséder un certificat numérique idCAT afin de pouvoir accéder au formulaire de demande (http://www.altagarrotxa.org/normatives/regulacions-activitats/)",
+          "remark": null,
+          "details": "Réglementation et portions de canyons autorisées (espagnol)\n\nPortions de canyons autorisées (catalan)\n\nRéglementation (catalan)",
+          "effectiveDate": "09 mars 2020",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/434/legislation.html",
+          "attachments": [
+            {
+              "label": "Réglementation et portions de canyons autorisées (espagnol)",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem434_pj1.pdf"
+            },
+            {
+              "label": "Portions de canyons autorisées (catalan)",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem434_pj2.pdf"
+            },
+            {
+              "label": "Réglementation (catalan)",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem434_pj3.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

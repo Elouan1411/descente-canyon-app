@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:46:22.443502+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2664,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2664/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2664/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2664/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2664/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2664,
+    "identity": {
+      "nom": "Cramosina",
+      "nomComplet": "Val Cramosina, Giornico",
+      "prefixeNom": "Val",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2664/Cramosina.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Biasca",
+      "departement": "Tessin",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": "Val Leventina",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v6a1II",
+      "interet": 2.7,
+      "nbVotes": 5
+    },
+    "metrics": {
+      "altitudeDepartM": 590,
+      "deniveleM": 230,
+      "longueurM": 200,
+      "cascadeMaxM": 133,
+      "cordeMiniM": 70,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "45",
+      "descente": "3h30",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "A côté du village de Giornico, se garer sur le parking en face de l'arrivée du canyon, de l'autre côté de l'autoroute.\n\nSi navette, laisser l'autre voiture dans la \"zona gallinascia\" (nom sur gps) , en prenant soin de ne pas gêner.\n\nFaire ça à pied si pas de navette .",
+      "accesAmont": null,
+      "approche": "Passer sous l'autoroute et rejoindre le sentier qui monte vers \"Catto\" .\n\nPasser le lieu dit et rejoindre le pont qui passe au-dessus d'un ruisseau. C'est le début du canyon.",
+      "descente": "Canyon à caractère vertical, normalement avec très peu d'eau (captage !). A faire après des périodes de pluie pour ne pas trouver de l'eau croupie.",
+      "retour": "Passer sous l'autoroute une fois le canyon fini et regagner la voiture.",
+      "engagement": "Une échappatoire possible entre les 2 grandes verticales",
+      "periode": "D'avril à octobre .\n\nCanyon à caractère vertical, normalement avec très peu d'eau",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2664,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.389687,
+        "longitude": 8.877597,
+        "label": "voir sur http://www.mapplus.ch/ les coordonnées 710720 138640"
+      },
+      {
+        "canyonId": 2664,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.396969,
+        "longitude": 8.872018,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.396969,
+      "longitude": 8.872018,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_2e0d8fdac3706471",
+          "kind": "MAP",
+          "title": "1273 Biasca (Carte Nationale Suisse)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_129f74715e422e5e",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.swisscanyon.ch/canyons/descrittivi/cramosina.htm",
+          "url": "http://www.swisscanyon.ch/canyons/descrittivi/cramosina.htm"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:53.031078+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24016,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24016/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24016/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24016/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24016/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24016,
+    "identity": {
+      "nom": "Guadajana",
+      "nomComplet": "Barranco de Guadajana",
+      "prefixeNom": "Barranco de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24016/Guadajana.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Andalucía",
+      "departement": "Provincia de Granada",
+      "communePrincipale": "Lentegí",
+      "communes": [
+        "Lentegí"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 1.4,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": null,
+      "longueurM": null,
+      "cascadeMaxM": null,
+      "cordeMiniM": null,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "??",
+      "descente": "??",
+      "retour": "??"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": "Alternative d'entrée à Lenteji. Cf. fiche Lenteji.",
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24016,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 36.849518,
+        "longitude": -3.682013,
+        "label": null
+      },
+      {
+        "canyonId": 24016,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 36.84584,
+        "longitude": -3.68757,
+        "label": "arrivée Palomas"
+      },
+      {
+        "canyonId": 24016,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 36.850964,
+        "longitude": -3.680602,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 36.850964,
+      "longitude": -3.680602,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_d0732e62d8823e91",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://ropewiki.com/Guadajana",
+          "url": "http://ropewiki.com/Guadajana"
+        },
+        {
+          "id": "resource_b3e6fca385eee4b9",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/Canyons/GuadajanaCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/Canyons/GuadajanaCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

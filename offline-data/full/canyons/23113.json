@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:43.049603+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23113,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23113/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23113/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23113/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23113/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23113,
+    "identity": {
+      "nom": "Fluhbach-Fall",
+      "nomComplet": "Fluhbach-Fall, Rainbowfall, Fluhbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23113/Fluhbach-Fall.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Vorarlberg",
+      "departement": "Bregenz",
+      "communePrincipale": "Mellau",
+      "communes": [
+        "Mellau"
+      ],
+      "massif": "Bregenzer Wald",
+      "bassin": "Bregenzer Ache",
+      "coursEau": "Fluhbach"
+    },
+    "rating": {
+      "cotation": "v5a3III",
+      "interet": 1.0,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 800,
+      "deniveleM": 150,
+      "longueurM": 150,
+      "cascadeMaxM": 110,
+      "cordeMiniM": 120,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "25min",
+      "descente": "1h",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": "C110 seulement (pas de relais - 2013)",
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23113,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.366085,
+        "longitude": 9.872788,
+        "label": null
+      },
+      {
+        "canyonId": 23113,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.365219,
+        "longitude": 9.875181,
+        "label": null
+      },
+      {
+        "canyonId": 23113,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.366611,
+        "longitude": 9.879414,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.366611,
+      "longitude": 9.879414,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_08eaa20e6e4398b0",
+          "kind": "MAP",
+          "title": "22 Bregenzer Wald (Kompass)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

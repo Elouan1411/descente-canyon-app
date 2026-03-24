@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:53.294244+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23467,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23467/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23467/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23467/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23467/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23467,
+    "identity": {
+      "nom": "Souffles",
+      "nomComplet": "Ruisseau des Souffles",
+      "prefixeNom": "Ruisseau des",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23467/Souffles.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Isère",
+      "communePrincipale": "Valjouffrey",
+      "communes": [
+        "Valjouffrey"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a2IV",
+      "interet": 2.5,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 1750,
+      "deniveleM": 300,
+      "longueurM": 700,
+      "cascadeMaxM": 40,
+      "cordeMiniM": 40,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "2h",
+      "descente": "3h",
+      "retour": "40min"
+    },
+    "topo": {
+      "accesAval": "Depuis la Mure se rendre à Valbonnais puis à Entraigues. De là prendre la D117 jusqu'au hameau terminus \"Le Désert en Valjouffrey\". Garez-vous 200m avant ce village sur le parking de randonnée au niveau de la dernière épingle.",
+      "accesAmont": null,
+      "approche": "Du parking se rendre au village par la route puis suivre la direction du refuge \"Font Turbat\". Après 1km de piste environ on arrive au panneau concernant la réglementation du parc, poursuivre sur cette piste jusqu'à une croix sur votre droite (canyon visible en face). Poursuivre encore une centaine de mètres puis traverser le collecteur et monter à vue sur une croupe jusqu'à buter sur la falaise en rive droite de notre canyon. A partir de là un tout petit pas d'escalade vous fait découvrir une sente peu visible sous la végétation (qu'il ne faudra jamais perdre). Suivre cette sente grâce aux nombreux arbustes coupés qui feront office de balisage. Cette sente s'élève et serpente dans les barres, une barre se négocie avec 3 vieux échelons scellés. De là, la sente s'éloigne du cours d'eau puis s'en rapprochera en atteignant en vaste replat. A partir de là, la sente disparait , rejoindre à vue (en montant) le canyon vers l'altitude 1750m en dessous d'une barre rocheuse dans laquelle coulent plusieurs bras de rivières",
+      "descente": "Succession assez continue de cascades plus ou moins esthétiques dans un très beau cadre de montagne.",
+      "retour": "Reprendre le même itinéraire qu'à l'aller.",
+      "engagement": "Après les 3 premiers rappels plus d'échappatoire.",
+      "periode": "A partir de Juillet.\n\nPas de vasques profondes mais des passages arrosés.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "- Prévoir trousse à spit car les crues et la neige font beaucoup de dégâts.\n\n- Altimètre et IGN utiles.\n\n- Pour les acharnés, possibilité d'équiper les affluents en amont du départ."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23467,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.872078,
+        "longitude": 6.119302,
+        "label": null
+      },
+      {
+        "canyonId": 23467,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.874763,
+        "longitude": 6.114227,
+        "label": null
+      },
+      {
+        "canyonId": 23467,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.868904,
+        "longitude": 6.087158,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.868904,
+      "longitude": 6.087158,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_45fe654f05c1ff3a",
+          "kind": "MAP",
+          "title": "3336 OT La Mure Valbonnais (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

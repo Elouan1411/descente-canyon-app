@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:27.338360+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22550,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22550/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22550/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22550/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22550/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22550,
+    "identity": {
+      "nom": "Planque",
+      "nomComplet": "Cascade de Planque",
+      "prefixeNom": "Cascade de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22550/Planque.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Haute-Garonne",
+      "communePrincipale": "Arbas",
+      "communes": [
+        "Arbas"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a2I",
+      "interet": 1.9,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 800,
+      "deniveleM": 150,
+      "longueurM": null,
+      "cascadeMaxM": 80,
+      "cordeMiniM": 80,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "45min",
+      "descente": "1h30",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": "période : janvier à décembre",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Attention : dans les premiers tirages du topo-guide \"PVC Haute-Garonne\" de 2006, il y a des erreurs. Après contact en 2011 de Stéphane Boyer,\n\nvoici les correctifs par rapport aux premiers exemplaires du topo (à priori ; à vérifier sur le terrain) :\n\n- il n'y pas 300m de marche entre la C1 et la C2\n\n- la C1 n'est pas fractionnée à -20m\n\n- le sentier d'approche ne coupe pas la cascade entre la C1 et la C2\n\n- de la fin de la descente, l'approche se fait en rive droite"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22550,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.982502,
+        "longitude": 0.865216,
+        "label": null
+      },
+      {
+        "canyonId": 22550,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.982746,
+        "longitude": 0.865914,
+        "label": null
+      },
+      {
+        "canyonId": 22550,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 42.988529,
+        "longitude": 0.881776,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 42.988529,
+      "longitude": 0.881776,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_7992ba9ac2302817",
+          "kind": "TOPOGUIDE",
+          "title": "Pyrénées en Cascades - Les grandes verticales du canyonisme",
+          "authors": [
+            "Bruno Matéo"
+          ],
+          "publicationYear": 2012,
+          "reference": null,
+          "editor": "Rando éditions",
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/172/Pyrenees-en-Cascades---Les-grandes-verticales-du-canyonisme.html"
+        },
+        {
+          "id": "biblio_1b6c437b64d9f869",
+          "kind": "TOPOGUIDE",
+          "title": "PVC n°1 - Haute Garonne",
+          "authors": [
+            "Collectif : Groupe Spéléologique des Pyrénées"
+          ],
+          "publicationYear": 2006,
+          "reference": "9782952722605",
+          "editor": "auto-édition",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/125/Plastic-Visuel-Canyon-:-Haute-Garonne.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_b47ddf7c75871d57",
+          "kind": "MAP",
+          "title": "1947 OT Aspet - Pic de Mauberme (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:44:50.150926+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2270,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2270/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2270/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2270/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2270/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2270,
+    "identity": {
+      "nom": "La Chalp",
+      "nomComplet": "Gorges de La Chalp, Ruisseau des Roberts",
+      "prefixeNom": "Gorges de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2270/La-Chalp.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Isère",
+      "communePrincipale": "La Chalp",
+      "communes": [
+        "La Mure",
+        "La Chalp"
+      ],
+      "massif": "Ecrins - Oisans - Champsaur",
+      "bassin": "Drac",
+      "coursEau": "Ruisseau des Roberts"
+    },
+    "rating": {
+      "cotation": "v4a3III",
+      "interet": 1.9,
+      "nbVotes": 12
+    },
+    "metrics": {
+      "altitudeDepartM": 1070,
+      "deniveleM": 50,
+      "longueurM": 30,
+      "cascadeMaxM": 12,
+      "cordeMiniM": 15,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "10min",
+      "descente": "30min",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "De la MURE, par la RN85, rejoindre le village d'ENTRAIGUES puis prendre la RD117 jusqu'au village de La CHALP.\n\nSe garer au mieux à l'entrée du village sur un \"parking\" à droite.",
+      "accesAmont": null,
+      "approche": "Rejoindre à pieds les maisons les plus hautes puis prendre un sentier qui monte raide vers la gauche et qui mêne le haut des gorges.",
+      "descente": "Enchaînement de trois cascades de 11 mètres chacune, précédées d'une première C12 équipée dans l'actif (2 gougeons rive gauche (ou on ne trainera pas...).\n\npas de sauts, pas de nage, juste 4 rappels...",
+      "retour": "Au pied de la dernière cascade, prendre en RG; un vague sentier qui mêne à la digue rencontrée à l'aller.",
+      "engagement": "Une fois rentré dans le canyon, pas d'échapatoire... Mais on peut le descendre rapidement (15 min.)",
+      "periode": "Beaucoup d'eau en tout début de saison, plus pratiquable par la suite (initiation possible en été.)",
+      "geologie": null,
+      "historique": "Le 04/08/1991 par A. Maurice et R. Vuillot",
+      "remarques": "Très court."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2270,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.875,
+        "longitude": 6.032222,
+        "label": null
+      },
+      {
+        "canyonId": 2270,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.874168,
+        "longitude": 6.030278,
+        "label": null
+      },
+      {
+        "canyonId": 2270,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.871944,
+        "longitude": 6.028056,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.871944,
+      "longitude": 6.028056,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_774008f93c089927",
+          "kind": "TOPOGUIDE",
+          "title": "100 descentes de canyons autour de Grenoble",
+          "authors": [
+            "Arnaud Astier"
+          ],
+          "publicationYear": 2015,
+          "reference": "978-2-7466-7754-8",
+          "editor": "auto-édition",
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/194/100-Descentes-de-Canyons-autour-de-Grenoble.html"
+        },
+        {
+          "id": "biblio_6b7865a698c28634",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons alpins : Le tour de l'Oisans en canyons",
+          "authors": [
+            "Alain Bach",
+            "Marc Brunello",
+            "Christian Chillet",
+            "Philippe Drouin"
+          ],
+          "publicationYear": 1992,
+          "reference": "ISBN 2-7417-0054-0",
+          "editor": "Gap",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/117/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_f06f3bbae647fab7",
+          "kind": "MAP",
+          "title": "3336 ET Les Deux Alpes - Parc des Ecrins (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

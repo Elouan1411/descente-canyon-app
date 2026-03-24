@@ -1,0 +1,151 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:59:02.441638+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24058,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24058/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24058/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24058/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24058/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24058,
+    "identity": {
+      "nom": "Volcán",
+      "nomComplet": "Barranco del Volcán, Barranco del Cuchillo o Achacay",
+      "prefixeNom": "Barranco del",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24058/Volcan.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Canarias",
+      "departement": "Santa Cruz de Tenerife",
+      "communePrincipale": "Fasnia",
+      "communes": [
+        "Fasnia"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a1II",
+      "interet": 2.6,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 400,
+      "deniveleM": 120,
+      "longueurM": 1000,
+      "cascadeMaxM": 55,
+      "cordeMiniM": 60,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1mn",
+      "descente": "1h",
+      "retour": "40mn"
+    },
+    "topo": {
+      "accesAval": "Île de Tenerife, se garer au stade de football de la ville de Fasnia.",
+      "accesAmont": null,
+      "approche": "Du parking du stade, prendre la petite route direction Est et descendre immédiatement dans le premier barranco coupé par cette route. Il est bien visible et longe le stade en contrebas.",
+      "descente": "Des ordures au départ puis de petits obstacles bien sculptés principalement dans un beau basalte gris. Le clou du spectacle est le beau rappel final de 55 m, équipable au choix sur deux amarrages en retrait ou deux anneaux de levage plus dans l'axe de la descente, le tout en RG.",
+      "retour": "Au pied du grand rappel, repérer en RD une arche rocheuse caractéristique en hauteur. Il faut la rejoindre au mieux (attention, c'est très raide) afin de la traverser et récupérer derrière un vieux chemin plus très carrossable qui remonte au cimetière de Fasnia. De là, rejoindre le stade.",
+      "engagement": null,
+      "periode": "Certainement quasiment tout le temps sec. Attention tout de même aux crues (traces visibles).",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Le début de la descente passe en contrebas de propriétés, discrétion de rigueur."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24058,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 28.239117,
+        "longitude": -16.435265,
+        "label": null
+      },
+      {
+        "canyonId": 24058,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 28.233364,
+        "longitude": -16.428925,
+        "label": null
+      },
+      {
+        "canyonId": 24058,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 28.238619,
+        "longitude": -16.435179,
+        "label": null
+      },
+      {
+        "canyonId": 24058,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 28.235006,
+        "longitude": -16.435659,
+        "label": "Arrivée du chemin de retour à Fasnia"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 28.238619,
+      "longitude": -16.435179,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_691675baaeb76189",
+          "kind": "TOPOGUIDE",
+          "title": "35 descentes de canyons à Tenerife",
+          "authors": [
+            "Philip Van Den Berge"
+          ],
+          "publicationYear": 2016,
+          "reference": null,
+          "editor": "Autoédition",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1338/topoguide.html"
+        },
+        {
+          "id": "biblio_ea844f75c4fa6780",
+          "kind": "TOPOGUIDE",
+          "title": "Canyoning in Tenerife",
+          "authors": [
+            "Emilio Aguilar Gutiérrez",
+            "Rosa Maria Hernandes Guzman"
+          ],
+          "publicationYear": 2014,
+          "reference": "ISBN 9781494927769",
+          "editor": "Amazon",
+          "status": "stock vide !\n\nSans doute disponible sur commande : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/181/Canyoning-in-Tenerife.html"
+        }
+      ],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_469c771d20247017",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://ropewiki.com/Volcan",
+          "url": "http://ropewiki.com/Volcan"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

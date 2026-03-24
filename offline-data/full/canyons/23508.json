@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:04.209648+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23508,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23508/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23508/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23508/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23508/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23508,
+    "identity": {
+      "nom": "Crupillouse",
+      "nomComplet": "Torrent de Crupillouse",
+      "prefixeNom": "Torrent de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23508/Crupillouse.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Hautes-Alpes",
+      "communePrincipale": "Champoléon",
+      "communes": [
+        "Champoléon"
+      ],
+      "massif": "Ecrins - Oisans - Champsaur",
+      "bassin": "Drac",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v5a3IV",
+      "interet": 2.6,
+      "nbVotes": 7
+    },
+    "metrics": {
+      "altitudeDepartM": 2650,
+      "deniveleM": 1000,
+      "longueurM": 1600,
+      "cascadeMaxM": 65,
+      "cordeMiniM": 60,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "3h/4h",
+      "descente": "4h/7h",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": "Quitter la R.N. 85 Gap-Grenoble et prendre la direction d'Orcières-Merlette. 4km après Pont-du-Fossé, remonter la vallée du Drac Blanc (vallée du Champoléon).\n\nPoursuivre jusqu'au hameau des Baumes et se garer sans gêner à la sortie de celui-ci au niveau d'un gros bloc et d'une barrière.",
+      "accesAmont": null,
+      "approche": "Faire quelques pas en arrière et emprunter le sentier qui monte en lacets aux lacs de Crupillouse.\n\nMarche longue mais facile dans un cadre magnifique. Arrivée au lac superbe.",
+      "descente": "1ère partie (de 2650m à 2300m) : 13 rappels (la plupart dans l'actif) dont 1 fantastique dans une faille très étroite entrecoupés par des petites marches et désescalades.\n\nMarche de liaison 10 min\n\n2ème partie (2300m à 1700m) : 16 rappels (souvent dans l'actif) sans temps mort et même un saut.",
+      "retour": "Après le gros affluent RD, poursuivre dans le lit et sortir par une sente en RD (avant le départ du canyon d'Amblard) qui rejoint très vite le sentier pris pour l'approche.",
+      "engagement": "Gros et long canyon mais quelques échappatoires possibles dans la partie 1 et deux échappatoires possibles en mode chamois (non testées) dans la partie 2.",
+      "periode": "A faire à l'étiage en fin d'été.",
+      "geologie": null,
+      "historique": "Partie 1 : Equipement terrain d'aventure (prévoir perfo)\n\nPartie 2 : Equipée sur lunules et goujons.",
+      "remarques": "Partie 1 : la cascade faille se négocie en trois fois (un point RD en retrait permet d'accéder à un point RG dans une niche peu confort, puis un point environ 30m plus bas en RG au niveau du replat dans les embruns).\n\nPartie 2 : pour la dernière grande cascade il y a un relais à -20m entre les deux jets (arrosé par gros débit), pas sûr qu'il passe l'hiver...\n\nOn peut bien sur enchainer avec les cascades finales d'Amblard pour réaliser l'intégrale de ce torrent."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23508,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.769627,
+        "longitude": 6.250963,
+        "label": null
+      },
+      {
+        "canyonId": 23508,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.753258,
+        "longitude": 6.249435,
+        "label": null
+      },
+      {
+        "canyonId": 23508,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.739017,
+        "longitude": 6.248336,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.739017,
+      "longitude": 6.248336,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_b0e951331c704682",
+          "kind": "MAP",
+          "title": "3437 OT Champsaur - Parc des Ecrins (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

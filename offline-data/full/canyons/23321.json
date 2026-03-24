@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:34.088908+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23321,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23321/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23321/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23321/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23321/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23321,
+    "identity": {
+      "nom": "Evigno",
+      "nomComplet": "Torrente Evigno",
+      "prefixeNom": "Torrente",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23321/Evigno.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Ligurie",
+      "departement": "Imperia",
+      "communePrincipale": "Diano Arentino",
+      "communes": [
+        "Diano Arentino"
+      ],
+      "massif": "Alpi Liguri - Alpes ligures",
+      "bassin": "San Pietro",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1I",
+      "interet": 0.7,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 390,
+      "deniveleM": 170,
+      "longueurM": 1100,
+      "cascadeMaxM": 50,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "1h",
+      "retour": "40min"
+    },
+    "topo": {
+      "accesAval": "Par l'autoroute A10, rejoindre Diano Marina. Depuis Ventimiglia sortir à Imperia Est; depuis Genova sortir à Bartolomeo al mare.\n\nMonter direction Diano Castello, dans le premier rond-point tourner à droite pour la via San Pietro. Rejoindre Diano Evigno.\n\n(La route qui passe au pied de Diano San Pietro est meilleure que celle qui passe au pied de Diano Castello et Diano Borello).\n\nSe garer sous l'église, dans une épingle à gauche (poubelles, jardin d'enfant).",
+      "accesAmont": null,
+      "approche": "La route qui part à droite traverse le vallon.",
+      "descente": "Une petite cascade au départ, puis un grand pan très incliné qui nécessite la corde dans sa partie médiane.",
+      "retour": "Remonter l'affluent rive droite sur environ 150m, sortir à droite (rive G) facilement sur des restanques avec oliviers. Monter qq mètres pour trouver très vite une piste bétonnée qui remonte à la route, puis à la voiture.",
+      "engagement": null,
+      "periode": "Printemps, de préférence après une période de pluie. Débit très modeste jusqu'au pied du pan incliné, puis plus rien.",
+      "geologie": null,
+      "historique": "F. Lanteri et M.F. Lepre.",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23321,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.968513,
+        "longitude": 8.036191,
+        "label": null
+      },
+      {
+        "canyonId": 23321,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.961502,
+        "longitude": 8.037242,
+        "label": null
+      },
+      {
+        "canyonId": 23321,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.966751,
+        "longitude": 8.034538,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.966751,
+      "longitude": 8.034538,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_8e12bfd7120e4092",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://catastoforre.aic-canyoning.it/index/forra/cod/IM022",
+          "url": "http://catastoforre.aic-canyoning.it/index/forra/cod/IM022"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

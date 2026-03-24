@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:28.257840+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22278,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22278/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22278/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22278/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22278/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22278,
+    "identity": {
+      "nom": "Wöllaschlucht",
+      "nomComplet": "Wöllaschlucht, Wöllabach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22278/Wollaschlucht.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Carinthie",
+      "departement": "Spittal an der Drau District",
+      "communePrincipale": "Flattach",
+      "communes": [
+        "Stall",
+        "Flattach"
+      ],
+      "massif": "Kreuzeckgruppe",
+      "bassin": "Möll",
+      "coursEau": "Wöllabach"
+    },
+    "rating": {
+      "cotation": "v4a4III",
+      "interet": 2.0,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 970,
+      "deniveleM": 170,
+      "longueurM": 1400,
+      "cascadeMaxM": 28,
+      "cordeMiniM": 35,
+      "navette": "4.5km"
+    },
+    "timings": {
+      "approche": "10min",
+      "descente": "3h",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "Wöllatratten. Avec la 2nde voiture prendre la RN 106 1,7km vers le sud-ouest jusqu'à Pußtratten. Prendre la route goudronnée vers Steinwandalm (direction nord-est). Après 1500m bifurcation; continuer direction nord-est encore 1200m : Parking",
+      "accesAmont": "(panneau : \"Achtung, Flutwelle, Lebensgefahr\").",
+      "approche": "Du parking amont descendre (sente) au cours d'eau.",
+      "descente": "Des sauts, toboggans et rappels; après la dernière cascade (C28) marcher.",
+      "retour": "Sortie à droite, prendre la piste, traverser Wöllabach et aller au parking aval.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22278,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.892139,
+        "longitude": 13.073623,
+        "label": null
+      },
+      {
+        "canyonId": 22278,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.895599,
+        "longitude": 13.06931,
+        "label": null
+      },
+      {
+        "canyonId": 22278,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 46.891171,
+        "longitude": 13.072443,
+        "label": null
+      },
+      {
+        "canyonId": 22278,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 46.89592,
+        "longitude": 13.064375,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 46.891171,
+      "longitude": 13.072443,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_898c3ffd04ddaf84",
+          "kind": "MAP",
+          "title": "180 Winklern (ÖK 50 (BEV))",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_ddabefa154dbad35",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/C...../?topic=WoellaCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/C...../?topic=WoellaCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

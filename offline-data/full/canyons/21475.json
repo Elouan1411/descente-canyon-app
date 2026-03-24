@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:49:32.884320+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21475,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21475/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21475/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21475/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21475/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21475,
+    "identity": {
+      "nom": "Canaleta",
+      "nomComplet": "La Canaleta, Riu de Tristaina",
+      "prefixeNom": "La",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21475/Canaleta.html"
+    },
+    "location": {
+      "pays": "Andorre",
+      "region": null,
+      "departement": "Ordino",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Arcalis",
+      "bassin": null,
+      "coursEau": "Riu de Tristaina"
+    },
+    "rating": {
+      "cotation": "v3a1I",
+      "interet": 2.0,
+      "nbVotes": 7
+    },
+    "metrics": {
+      "altitudeDepartM": 2100,
+      "deniveleM": 150,
+      "longueurM": 700,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "1h30",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": "Depuis Ordino, continuer la route en direction de la station de ski d'Ordino Arcalis.\n\nSe garer sur le premier grand parking en contrebas de la station.\n\nOn voit la cascade finale de 20m juste devant le parking.",
+      "accesAmont": null,
+      "approche": "Remonter la route goudronnée pendant 5 minutes. Lorsqu'une piste de ski passe sous la route, remonter la pendant 1/4h jusqu'au barrage.\n\nVous êtes RD du canyon, l'entendez et l'apercevez de temps en temps.",
+      "descente": "La descente commence au barrage. Possibilité d'effectuer un rappel vertical de 10 m sur celui-ci.\n\nPuis succession de 8 cascades plus ou moins encaissées.",
+      "retour": "Après la grande cascade de 20 m, continuer dans le torrent pour rejoindre la voiture.",
+      "engagement": "Nombreux échappatoires possibles tout le long du canyon.",
+      "periode": "A faire l'été. Attention à l'eau très froide et au débit à la fonte des neiges.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Canyon froid et très glissant. Des déchets en tous genres de la station. Beurk!"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21475,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.634193,
+        "longitude": 1.497818,
+        "label": null
+      },
+      {
+        "canyonId": 21475,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.632885,
+        "longitude": 1.50066,
+        "label": null
+      },
+      {
+        "canyonId": 21475,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 42.632618,
+        "longitude": 1.500077,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 42.632618,
+      "longitude": 1.500077,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_f46405397e30eb7a",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://ropewiki.com/Canaleta_(Ordino)",
+          "url": "http://ropewiki.com/Canaleta_(Ordino)"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

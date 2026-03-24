@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:47:47.455677+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21003,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21003/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21003/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21003/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21003/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21003,
+    "identity": {
+      "nom": "Sers",
+      "nomComplet": "Caouba de Sers, Le bastan de Sers",
+      "prefixeNom": "Caouba de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21003/Sers.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Hautes-Pyrénées",
+      "communePrincipale": "Sers",
+      "communes": [
+        "Sers"
+      ],
+      "massif": "Bigorre",
+      "bassin": "Gave de Pau",
+      "coursEau": "Le bastan de Sers"
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 1.6,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 1070,
+      "deniveleM": 80,
+      "longueurM": 250,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 25,
+      "navette": "2.0km"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "40min",
+      "retour": "3min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": "avant le village.",
+      "approche": null,
+      "descente": "4 rappels",
+      "retour": "piste rive gauche.",
+      "engagement": "Equipement bon.",
+      "periode": "court.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Prise d'eau d'Esterre en amont (seuil déversant régime normal en cas de problème)"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21003,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.888039,
+        "longitude": 0.039954,
+        "label": null
+      },
+      {
+        "canyonId": 21003,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.885368,
+        "longitude": 0.040984,
+        "label": null
+      },
+      {
+        "canyonId": 21003,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 42.888008,
+        "longitude": 0.039611,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 42.888008,
+      "longitude": 0.039611,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_66d5328512d1b5a5",
+          "kind": "MAP",
+          "title": "1748 OT Gavarnie (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

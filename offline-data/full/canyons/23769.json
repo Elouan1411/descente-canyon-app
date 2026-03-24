@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:01.757353+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23769,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23769/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23769/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23769/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23769/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23769,
+    "identity": {
+      "nom": "Scarione",
+      "nomComplet": "Torrente Scarione, Valle Trebecca, Scarione",
+      "prefixeNom": "Torrente",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23769/Scarione.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Lombardia",
+      "departement": "Sondrio",
+      "communePrincipale": "Samolaco",
+      "communes": [
+        "Samolaco"
+      ],
+      "massif": "Alpi Orobie",
+      "bassin": "Mera",
+      "coursEau": "Scarione"
+    },
+    "rating": {
+      "cotation": "v5a1V",
+      "interet": null,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": 840,
+      "deniveleM": 600,
+      "longueurM": 1200,
+      "cascadeMaxM": 120,
+      "cordeMiniM": 75,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "2h30min",
+      "descente": "6h",
+      "retour": "10"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": "15 cascades",
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23769,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.271751,
+        "longitude": 9.426023,
+        "label": null
+      },
+      {
+        "canyonId": 23769,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.266865,
+        "longitude": 9.411711,
+        "label": null
+      },
+      {
+        "canyonId": 23769,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.26823,
+        "longitude": 9.408814,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.26823,
+      "longitude": 9.408814,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

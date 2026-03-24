@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:54.428092+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23156,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23156/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23156/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23156/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23156/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23156,
+    "identity": {
+      "nom": "Etroit",
+      "nomComplet": "Torrent de l' Etroit",
+      "prefixeNom": "Torrent de l'",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23156/Etroit.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Hautes-Alpes",
+      "communePrincipale": "Chateauroux les Alpes",
+      "communes": [
+        "Saint-Clément-sur-Durance",
+        "Saint-André-d'Embrun",
+        "Chateauroux les Alpes"
+      ],
+      "massif": null,
+      "bassin": "Durance",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 1.3,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 1125,
+      "deniveleM": 145,
+      "longueurM": 350,
+      "cascadeMaxM": 15,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "2min",
+      "descente": "1h10",
+      "retour": "35min"
+    },
+    "topo": {
+      "accesAval": "De Briançon prendre le N94 vers Embrun. Quelques kilomètres après Saint Clément prendre à droite la N2094 vers Saint Marcellin. Juste avant ce village prendre à droite en direction de Fonfourane. Passer Fonfourane puis à l'intersection suivante continuer soit droit mais à la sortie des Chamousses on poursuit par une piste caillouteuse, soit prendre à gauche en montée, passer par les hameaux Touisse par une route goudronnée. A la jonction des deux se garer (point coté: 1126m).",
+      "accesAmont": null,
+      "approche": "On s'équipe à la voiture, on monte qq m puis on descend au ruisseau.",
+      "descente": "Enchainement assez continu de 6 cascades (C3, Pi10, C12, C10, C15, C3)\n\nLes 4 dernières sont bien équipées.",
+      "retour": "Après la dernière C3 descendre dans le chaos de blocs (la montagne s'est effondrée). Ne pas sortir trop tôt, une fois dans la forêt traverser vers un bidon bleu, à partir duquel une sente mène sur la croupe à suivre jusqu'à un bon sentier, qui, vers la gauche, rejoint la piste.",
+      "engagement": "Un sentier coupe le torrent après les deux premiers ressauts, ensuite pas d'échappatoires évidents.",
+      "periode": "A faire après des fortes pluies (débit généreux) ou à la fonte des neiges pour profiter d'un bon débit. Aucun intérêt l'été.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Pour la C15 un mono goujon dans le lit RD permet de tirer un petit rappel pour tomber sur un bon relais RG 3 m plus bas."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23156,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.632687,
+        "longitude": 6.54389,
+        "label": null
+      },
+      {
+        "canyonId": 23156,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 44.634918,
+        "longitude": 6.543203,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 44.634918,
+      "longitude": 6.543203,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

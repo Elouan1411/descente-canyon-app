@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:54.993306+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23735,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23735/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23735/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23735/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23735/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23735,
+    "identity": {
+      "nom": "Himara lower",
+      "nomComplet": "Wadi Himara lower",
+      "prefixeNom": "Wadi",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23735/Himara-lower.html"
+    },
+    "location": {
+      "pays": "Jordanie",
+      "region": null,
+      "departement": "Madaba",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Moab",
+      "bassin": "Dead Sea",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v1a1II",
+      "interet": 1.6,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 185,
+      "deniveleM": 195,
+      "longueurM": 1100,
+      "cascadeMaxM": null,
+      "cordeMiniM": null,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "3h30min",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": "Descente aller retour",
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23735,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 31.642275,
+        "longitude": 35.585583,
+        "label": null
+      },
+      {
+        "canyonId": 23735,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 31.646019,
+        "longitude": 35.574512,
+        "label": null
+      },
+      {
+        "canyonId": 23735,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 31.645508,
+        "longitude": 35.573963,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 31.645508,
+      "longitude": 35.573963,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_4ee2daab641b9426",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/Canyons/HimaraLowerCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/Canyons/HimaraLowerCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

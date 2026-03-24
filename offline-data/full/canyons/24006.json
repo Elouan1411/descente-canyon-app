@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:51.315144+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24006,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24006/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24006/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24006/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24006/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24006,
+    "identity": {
+      "nom": "Oy",
+      "nomComplet": "Nant d' Oy",
+      "prefixeNom": "Nant d'",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24006/Oy.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Haute-Savoie",
+      "communePrincipale": "Talloires-Montmin",
+      "communes": [
+        "Talloires-Montmin"
+      ],
+      "massif": "Bornes - Aravis",
+      "bassin": "Lac d'Annecy",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2IV",
+      "interet": 2.5,
+      "nbVotes": 8
+    },
+    "metrics": {
+      "altitudeDepartM": 1330,
+      "deniveleM": 380,
+      "longueurM": 1100,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 30,
+      "navette": "6.0km"
+    },
+    "timings": {
+      "approche": "10min",
+      "descente": "4h",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": "Prendre la route jusqu'au village de Montmin et suivre la piste jusqu'au Chalet de l'Aulp (parking). Si la piste n'est pas en bon état, parking plus bas aux Prés Ronds (40 min de marche supplémentaire).",
+      "accesAmont": null,
+      "approche": "Du Chalet de l'Aulp suivre le chemin de randonnée jusqu'au troisième couloir (ruisseau principal).",
+      "descente": "Trois sections : vallon d'avalanches avec rocher assez pourri et quelques rappels, encaissement au calcaire blanc, après un passage de marche (quelque troncs à descendre) 4 ressauts encore en calcaire compact.",
+      "retour": "Descendre à Vérel (30 min) ou remonter en RD (1 h 20 min) au Chalet de l'Aulp.",
+      "engagement": "Descente longue, entre les sections principales sortie en RD possible. Terrain sauvage, encaissement central sans sortie.",
+      "periode": "Tout l’année si pas de risque d'avalanches. Avec fonte intéressant et sportif.",
+      "geologie": "Plusieurs couches différentes (calcaire, schiste)",
+      "historique": "20.05.2017 Rémy Villanova, Patrick Chollot, Timo Stammwitz",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24006,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.835361,
+        "longitude": 6.265861,
+        "label": null
+      },
+      {
+        "canyonId": 24006,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.835419,
+        "longitude": 6.253778,
+        "label": null
+      },
+      {
+        "canyonId": 24006,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 45.83239,
+        "longitude": 6.263583,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 45.83239,
+      "longitude": 6.263583,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_68c3d089c92edd13",
+          "kind": "MAP",
+          "title": "3431 OT Lac d'Annecy (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

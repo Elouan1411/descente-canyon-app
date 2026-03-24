@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:24.525671+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23287,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23287/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23287/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23287/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23287/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23287,
+    "identity": {
+      "nom": "Casse Gueule",
+      "nomComplet": "Ravine Casse Gueule",
+      "prefixeNom": "Ravine",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23287/Casse-Gueule.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Saint-Benoît",
+      "departement": "La Réunion",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Piton Papangue",
+      "bassin": "Riviere des Marsoins",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v5a4IV",
+      "interet": 2.5,
+      "nbVotes": 6
+    },
+    "metrics": {
+      "altitudeDepartM": 724,
+      "deniveleM": 283,
+      "longueurM": null,
+      "cascadeMaxM": 36,
+      "cordeMiniM": 40,
+      "navette": "2.0km"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "2h + 4h",
+      "retour": "2h"
+    },
+    "topo": {
+      "accesAval": "Se garer au parking de sortie du canyon de Dudu inf.",
+      "accesAmont": "La ravine débute au premier pont après l'ancienne cité PK12 (point 724 sur IGN).",
+      "approche": "Descendre dans la ravine par un rappel depuis le poteau électrique.",
+      "descente": "Voir topo Ricaric, ravine permettant l'accès au canyon de Bras Sec en aval du premier cassé de Bras Sec.",
+      "retour": "Il faut finir le canyon de Bras Sec, puis remonter par la sortie du canyon de Dudu Inf.",
+      "engagement": "Une échappatoire à la confluence avec Bras Sec. - Attention présence d'abeilles signalée sur cette échappatoire, de plus ce sentier arrive dans une propriété privée ; à n'utiliser qu'en cas d'urgence donc.",
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23287,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": -21.080589,
+        "longitude": 55.626698,
+        "label": "Départ rappel sur poteau téléphone RG"
+      },
+      {
+        "canyonId": 23287,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": -21.075857,
+        "longitude": 55.636826,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": -21.080589,
+      "longitude": 55.626698,
+      "label": "Départ rappel sur poteau téléphone RG"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

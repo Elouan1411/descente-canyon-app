@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:59:00.146959+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24049,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24049/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24049/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24049/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24049/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24049,
+    "identity": {
+      "nom": "Rus",
+      "nomComplet": "Ravin de Rus",
+      "prefixeNom": "Ravin de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24049/Rus.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-de-Haute-Provence",
+      "communePrincipale": "Demandolx",
+      "communes": [
+        "Demandolx"
+      ],
+      "massif": "Verdon",
+      "bassin": "Verdon",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1I",
+      "interet": 0.8,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 900,
+      "deniveleM": 100,
+      "longueurM": 200,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 25,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "40min",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "De Castellane prendre la D4085 en direction de Grasse. Dans Chaudanne prendre la D102 en direction de Demandolx. Garez vous 150 m avant le 3eme tunnel (parking en bord de route en face d'un départ de piste impraticable en voiture).",
+      "accesAmont": null,
+      "approche": "Emprunter cette piste puis rapidement un sentier qui se perd un peu dans la coupe de bois. Ce sentier (mal marqué au sol) monte raide jusqu'à la crête à 1300m , il ne faudra donc pas rater la bifurcation qui permet de trouver un sentier qui part plus ou moins à flanc, traverse un premier ravin puis coupe notre ravin au départ de la partie intéressante (environ 100m de dénivelé au dessus de la route).",
+      "descente": "5 ou 6 rappels entrecoupés par de courte marches en blocs. Le rocher est propre et un peu sculpté dans les rappels.",
+      "retour": "Marcher sur la route pour rejoindre le parking.",
+      "engagement": "Court peu engagé mais pas d'échappatoire balisée.",
+      "periode": "A sec en dehors des périodes de pluie.",
+      "geologie": null,
+      "historique": "Un point posé le 18/02/2018",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24049,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.856834,
+        "longitude": 6.557985,
+        "label": null
+      },
+      {
+        "canyonId": 24049,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.852425,
+        "longitude": 6.548788,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.852425,
+      "longitude": 6.548788,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_76b8fd482efafa05",
+          "kind": "MAP",
+          "title": "3542 OT Castellane (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

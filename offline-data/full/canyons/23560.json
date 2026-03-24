@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:14.788942+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23560,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23560/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23560/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23560/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23560/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23560,
+    "identity": {
+      "nom": "Bozudere (inférieur)",
+      "nomComplet": "Bozudere (inférieur), Monstercanyon",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23560/-Bozudere-inferieur.html"
+    },
+    "location": {
+      "pays": "Turquie",
+      "region": "Fethiye",
+      "departement": "Muğla",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Monts Taurus",
+      "bassin": "Eşen Çayı - Xanthos River",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v5a4V",
+      "interet": 3.7,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 400,
+      "deniveleM": 300,
+      "longueurM": 800,
+      "cascadeMaxM": 60,
+      "cordeMiniM": 40,
+      "navette": "18.5km"
+    },
+    "timings": {
+      "approche": "10min",
+      "descente": "4",
+      "retour": "15"
+    },
+    "topo": {
+      "accesAval": "De la zone touristique de Saklikent, remonter vers Arsaköy. Prendre une des nombreuses routes qui descendent vers le pont qui enjambe le canyon. Parking conseillé.\n\nEn poursuivant la piste jusqu'au terminus , vous pouvez ne marcher que 10 minutes au lieu d'1h15 (véhicule haut okay). Par contre si il pleut, c'est un bourbier et vous laisserez le véhicule en bas.",
+      "accesAmont": null,
+      "approche": "Descendre dans les oliviers vers Saklikent puis trouver une trace qui par vers un collet. Passer un portail puis descendre au mieux vers le lit du cours d'eau",
+      "descente": "Le lit est assez large au début et arrive dans une zone de gros blocs où le relais est difficile à trouver. A partir de là ça devient super encaissé et engagé.\n\nLe canyon s'ouvre dans la C60 et fini dans Saklikent qui est de nouveau très encaissé sur 100 mètres",
+      "retour": "On suit le collecteur de Saklikent jusqu'aux passerelles touristiques. il n'y a pas d'obstacles et on l'a parcouru à environ 1m3s en se laissant flotter par endroit",
+      "engagement": "C'est dur de faire plus engagé. Aucune mise à l'abri pendant 3 heures. Une échappatoire possible en bas de la C60, on a vu des traces de pas, mais on sait pas par où ça passe",
+      "periode": "Beaucoup d'eau en début de saison avec la fonte, sec en fin de saison. Le canyon se prête mal au franchissement par gros débit.\n\nPrendre en compte le débit du collecteur Saklikent\n\nIl est possible de remonter depuis les passerelles touristiques dans le collecteur pour s'assurer du débit à l'arrivée",
+      "geologie": "calcaire-marbre de Marmara",
+      "historique": null,
+      "remarques": "L'équipement n'est pas toujours bien placé à l'abri des crues, il peut-être détruit. Le perfo est clairement utile"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23560,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 36.471256,
+        "longitude": 29.414589,
+        "label": null
+      },
+      {
+        "canyonId": 23560,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 36.469009,
+        "longitude": 29.409611,
+        "label": "arrivée Saklikent Gorge"
+      },
+      {
+        "canyonId": 23560,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 36.471039,
+        "longitude": 29.418869,
+        "label": "pour accés partie inferieur"
+      },
+      {
+        "canyonId": 23560,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 36.473133,
+        "longitude": 29.402765,
+        "label": null
+      },
+      {
+        "canyonId": 23560,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 36.470551,
+        "longitude": 29.415747,
+        "label": "crête - de la vers nord.ouvest direction Monstercanyon"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 36.471039,
+      "longitude": 29.418869,
+      "label": "pour accés partie inferieur"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

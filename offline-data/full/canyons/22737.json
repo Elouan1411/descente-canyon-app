@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:54:09.811366+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22737,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22737/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22737/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22737/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22737/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/22737/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 22737,
+    "identity": {
+      "nom": "Chaulière",
+      "nomComplet": "Ravin de Chaulière",
+      "prefixeNom": "Ravin de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22737/Chauliere.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Var",
+      "communePrincipale": "Trigance",
+      "communes": [
+        "Trigance"
+      ],
+      "massif": "Verdon",
+      "bassin": "Artuby",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a1IV",
+      "interet": 1.4,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 715,
+      "deniveleM": 180,
+      "longueurM": 250,
+      "cascadeMaxM": 50,
+      "cordeMiniM": 50,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "1h30",
+      "retour": "2h00"
+    },
+    "topo": {
+      "accesAval": "De Comps sur Artuby, prendre la direction d'Aiguines par la D71. Passer le pont de l'Artuby et roulez 1,6 km avant d'apercevoir le petit parking à droite pour une ou deux voitures (peinture bleu visible).",
+      "accesAmont": null,
+      "approche": "Deux possibilités :\n\n- Prendre la D71 en direction du pont sur l'Artuby sur 400 m avant de descendre sur le ravin de Chaulière au niveau de trois pilônes bien visibles,\n\n- Suivre le sentier aménagé de rubalises au départ des marques bleus du parking et bifurquer à droite aprés une courte descente de celui-ci en direction du pont de l'Artuby.",
+      "descente": "Le clou du spectacle est un rappel de 50 m d'une cascade sèche par une grande arche. Mais la végétation est assez luxuriante (buis et autres arbustes) et encombre donc la descente des cascades sèches.\n\nQuelques petites désescalades vous mènes à une C6, puis (C3 + C4) R10, C15, C18, C10, C50 rappel dans l'arche, C20, D2, D2, D2, C20, D4 et C10 ou SP suivant le niveau d'eau de l'Artuby .",
+      "retour": "Retour (Artuby+sortie bis) 2h15 :\n\nSuivre le canyon de l'Artuby en direction de la Mescla, passer le dernier verrou rocheux et emprunter le petit sentier en RG de l'Artuby (peinture bleu et rubalises), 150 m avant la confluence avec le Verdon. Suivre les marquages bleu et les rubalises pour arriver sur un grand pierrier à remonter, équipé d'un cable noir. Dés lors, on bute sur une petite falaise à escalader, en s'aidant d'une corde, du cable noir ou d'une chainette.\n\nAu dessus, un autre pierrer à remonter et l'on bifurque à gauche en suivant les rubalises. La sente devient moins pénible et l'on rejoint le parking.\n\nAttention de ne pas rejoindre le départ du Ravin de chaulière en suivant les rubalises !",
+      "engagement": "Engagement quasi total après la C15.\n\nDans l'Artuby aucune échappatoire jusqu'à la sortie.\n\nPassages en escalade du retour en 4b + câble et chaine.",
+      "periode": "Descente sèche, mais pas pour l'Artuby.\n\nQuelques vasques à traverser si celui-ci ne coule pas.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Un nettoyage lui ferait un grand bien (en se rappelant que l'on se trouve dans un parc naturel national).\n\nAvis aux jardiniers !!!...\n\nObservez le débit de l'Artuby depuis le pont,avant de vous-y engager."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22737,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.733833,
+        "longitude": 6.378679,
+        "label": null
+      },
+      {
+        "canyonId": 22737,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.735477,
+        "longitude": 6.379795,
+        "label": null
+      },
+      {
+        "canyonId": 22737,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.737724,
+        "longitude": 6.376169,
+        "label": null
+      },
+      {
+        "canyonId": 22737,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 43.740746,
+        "longitude": 6.376555,
+        "label": "Retour au parking"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.737724,
+      "longitude": 6.376169,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_371b2a24e7aa2a73",
+          "kind": "MAP",
+          "title": "3442 OT Gorges du Verdon (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 579,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Var) - 13 mai 2025",
+          "summary": "- La pratique du canyonisme dans des canyons secs (cotation aquaticité A1 ou habituellement à sec) est autorisée toute l'année\n\n- La pratique du canyonisme dans des canyons aquatiques est interdite du 1er novembre au 31 mars.\n\nPour la période du 1er avril au 30 octobre, il est interdit :\n\n- de pratiquer du coucher du soleil à 9h\n\n- de s'engager dans une descente de canyon aquatique après 17h.\n\n- De manière générale, il est interdit :\n\n- de s'engager si une alerte vigilance météo de niveau orange ou rouge est émise par Météo France, en ce qui concerne le risque \"pluie\", \"orage\", et \"inondation\", sur le secteur concerné.\n\n- de constituer un groupe de plus de 10 personnes (encadrement inclus)",
+          "remark": null,
+          "details": "Arrêté préfectoral (Préfecture du Var) SDJES-SPORTS-2025-12 du 13 mai 2025",
+          "effectiveDate": "13 mai 2025",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/579/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral (Préfecture du Var) SDJES-SPORTS-2025-12 du 13 mai 2025",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem579_pj1.pdf"
+            }
+          ]
+        },
+        {
+          "id": 545,
+          "status": "Abrogé",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Var) - 06 mai 2024",
+          "summary": "La pratique du canyonisme se voit interdite du 1er novembre au 31 mars.\n\nPour la période du 1er avril au 30 octobre, il est interdit :\n\n- de s'engager dans une descente de canyon avant 9h et après 17h.\n\n- de s'engager si une alerte vigilance météo de niveau orange ou rouge est émise par Météo France, en ce qui concerne le risque \"pluie\", \"orage\", et \"inondation\", sur le secteur concerné.\n\n- de constituer un groupe de plus de 10 personnes (encadrement inclus)",
+          "remark": "Arrêté abrogé et remplacé par l'arrêté préfectoral SDJES-SPORTS-2025-12 du 13 mai 2025",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nArrêté préfectoral (Var) n° SDJES-SPORTS-2024-0004 du 06 mai 2024",
+          "effectiveDate": "13 mai 2025",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/545/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral (Var) n° SDJES-SPORTS-2024-0004 du 06 mai 2024",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem545_pj1.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

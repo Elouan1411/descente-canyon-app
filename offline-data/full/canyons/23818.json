@@ -1,0 +1,139 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:13.031517+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23818,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23818/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23818/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23818/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23818/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23818,
+    "identity": {
+      "nom": "Lisore (inferiore)",
+      "nomComplet": "Rio Lisore (inferiore)",
+      "prefixeNom": "Rio",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23818/Lisore-inferiore.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Émilie-Romagne",
+      "departement": "Piacenza",
+      "communePrincipale": "Lisore",
+      "communes": [
+        "Marsaglia",
+        "Lisore"
+      ],
+      "massif": "Appennino Piacentino",
+      "bassin": "Val d'Aveto",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 2.2,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 550,
+      "deniveleM": 160,
+      "longueurM": 640,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 30,
+      "navette": "4.0km"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "2h",
+      "retour": "20"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": "T3 - C30 - C10 - S1,5 - S2 - S2 - C12 - C3",
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": "25.03.2001 A.Nani, R.Bettinardi, A.Chiappini, P.Gatti, M. Bettinardi, Francesco",
+      "remarques": "prise d'eau : pas problème"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23818,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.636227,
+        "longitude": 9.399099,
+        "label": null
+      },
+      {
+        "canyonId": 23818,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.637726,
+        "longitude": 9.405445,
+        "label": null
+      },
+      {
+        "canyonId": 23818,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 44.636227,
+        "longitude": 9.399075,
+        "label": null
+      },
+      {
+        "canyonId": 23818,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 44.638214,
+        "longitude": 9.40629,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 44.636227,
+      "longitude": 9.399075,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_9707222a86c89bed",
+          "kind": "MAP",
+          "title": "197-III Ferriere (IGM)",
+          "scale": "!/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_3af46c92b82e7524",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/Canyons/LisoreCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/Canyons/LisoreCanyon"
+        },
+        {
+          "id": "resource_b6bd04634ce1d3b1",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://catastoforre.aic-canyoning.it/ind.....GNA/pro/PC/cod/PC008",
+          "url": "http://catastoforre.aic-canyoning.it/ind.....GNA/pro/PC/cod/PC008"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

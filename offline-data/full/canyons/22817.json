@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:54:28.876475+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22817,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22817/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22817/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22817/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22817/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22817,
+    "identity": {
+      "nom": "Ranciga",
+      "nomComplet": "Ranciga",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22817/Ranciga.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Lombardia",
+      "departement": "Sondrio",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 1.1,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 490,
+      "deniveleM": 170,
+      "longueurM": null,
+      "cascadeMaxM": 28,
+      "cordeMiniM": null,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "2h",
+      "retour": "??"
+    },
+    "topo": {
+      "accesAval": "Village de Talamona.",
+      "accesAmont": null,
+      "approche": null,
+      "descente": "6 rappels.",
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22817,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.128052,
+        "longitude": 9.608874,
+        "label": null
+      },
+      {
+        "canyonId": 22817,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.131672,
+        "longitude": 9.607265,
+        "label": null
+      },
+      {
+        "canyonId": 22817,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 46.132965,
+        "longitude": 9.60808,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.132965,
+      "longitude": 9.60808,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

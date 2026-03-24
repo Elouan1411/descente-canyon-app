@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:12.156609+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21649,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21649/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21649/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21649/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21649/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21649,
+    "identity": {
+      "nom": "Almanchares",
+      "nomComplet": "Barranco de Almanchares, Rio Almanchares",
+      "prefixeNom": "Barranco de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21649/Almanchares.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Andalucía",
+      "departement": "Málaga",
+      "communePrincipale": "Canillas de Aceituno",
+      "communes": [
+        "Canillas de Aceituno"
+      ],
+      "massif": "Sierra Almijara",
+      "bassin": null,
+      "coursEau": "Rio Almanchares"
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.2,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 790,
+      "deniveleM": 180,
+      "longueurM": 800,
+      "cascadeMaxM": 10,
+      "cordeMiniM": 15,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "45min",
+      "descente": "2h",
+      "retour": "2min"
+    },
+    "topo": {
+      "accesAval": "Entre Canillas et Sedella sur la MA126 se garer au niveau de l'air récréative \"Rahige\" à coté\" du grand panneau Sierra de Tejeda.",
+      "accesAmont": null,
+      "approche": "Prendre le sentier de l'aire sur 30m puis prendre les escalier à gauche, on tombe sur une petite baraque, une sente qui devient vite un bon sentier monte droit en face. Le suivre pour tomber sur une canalisation qu'il faut suivre (passages un peu vertigineux) jusqu'à ce qu'elle tombe dans le canyon.",
+      "descente": "8 rappels Max: 8m\n\n3 rappels puis marche puis encaissement avec 5 rappels, toboggans et ressauts\n\nBien pour l'initiation",
+      "retour": "De la retenue d'eau prendre le sentier en RD qui tombe sur l'aire.",
+      "engagement": "Engagé dans la dernière partie",
+      "periode": "Le petit barrage prend une bonne partie de l'eau.\n\nPrintemps , après les pluies.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Partie supérieure interdite car conduite d'eau. Présence de bouquetins.\n\nSoyez discrets car inclus dans le Parque Naturel et pour l'instant pas de législation."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21649,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 36.879242,
+        "longitude": -4.05683,
+        "label": null
+      },
+      {
+        "canyonId": 21649,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 36.872601,
+        "longitude": -4.062259,
+        "label": null
+      },
+      {
+        "canyonId": 21649,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 36.872017,
+        "longitude": -4.064362,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 36.872017,
+      "longitude": -4.064362,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_7390d09084f81bc3",
+          "kind": "TOPOGUIDE",
+          "title": "Cañones y barrancos de Andalucia. Sevilla, Cadiz y Malaga",
+          "authors": [
+            "Francisco José Garcia Algaba"
+          ],
+          "publicationYear": 2016,
+          "reference": "978-84-15030-72-0",
+          "editor": "Editorial La Serrania",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/1113/Canones-y-Barrancos-de-Andalucia.html"
+        },
+        {
+          "id": "biblio_5f9d5d522371041b",
+          "kind": "TOPOGUIDE",
+          "title": "Descenso de Canones y Barrancos en Andalucia",
+          "authors": [
+            "Sanchez"
+          ],
+          "publicationYear": 1997,
+          "reference": null,
+          "editor": "Federacion Andaluza Espeleogia",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1165/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_89e730458eb9a643",
+          "kind": "MAP",
+          "title": "1040-3 (Institu Geographic Nacional)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_ede9ae718d036f28",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.actionman4x4.com/canonesybarr.....idos/almanchares.htm",
+          "url": "http://www.actionman4x4.com/canonesybarr.....idos/almanchares.htm"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

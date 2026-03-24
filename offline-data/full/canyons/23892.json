@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:29.471702+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23892,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23892/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23892/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23892/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23892/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23892,
+    "identity": {
+      "nom": "Descoure",
+      "nomComplet": "La Descoure",
+      "prefixeNom": "La",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23892/Descoure.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-de-Haute-Provence",
+      "communePrincipale": "Barles",
+      "communes": [
+        "Barles"
+      ],
+      "massif": "Massif des Monges",
+      "bassin": "Bès",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 1.6,
+      "nbVotes": 7
+    },
+    "metrics": {
+      "altitudeDepartM": 1280,
+      "deniveleM": 90,
+      "longueurM": 280,
+      "cascadeMaxM": 18,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "25min",
+      "descente": "1h00",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "De Digne-les-bains, suivre la D900a jusqu'à Barles. Juste avant le pont de la Descoure à Barles, prendre à gauche et au second lacet emprunter la piste de droite en direction de Vaux et le col de Clapouse. Suivre la piste plus ou moins carrossable jusqu'au petit panneau indiquant le parking du hameau de Vaux.",
+      "accesAmont": null,
+      "approche": "Suivre la piste à pied, traverser le torrent de Fontarasse et se rendre au hameau de Vaux en suivant un balisage jaune. Passer le hameau de Vaux et prendre à gauche au calvaire sur un gros rocher pour se rendre au torrent et au départ du canyon.",
+      "descente": "C3 sur AN en rd donnant sur un petit encaissement avec une C2 sur 1pt en rg (émulsion dans la vasque, en rg on passe en ayant pied) et une jolie C18 sur 1pt avec anneau de corde pour se longer en rd. Fin du petit encaissement. D2, C4 sur 1pt en rg ou désescalade en rg, encaissement avec une C2+C3 (R7) sur 1pt en rd, marche de 50 m dans l'encaissement, C3 sur 1pt en rd (fin de l'encaissement), passer une vasque, T5 en désescalade. Marche de 100m en rivière, puis sortie évidente en rg.",
+      "retour": "Une pseudo sente remonte en rg sur le hameau de Vaux. Reprendre l'itinéraire pris à l'aller.",
+      "engagement": "Peu d'échappatoire.",
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "Équipement minimaliste : terrain d'aventure"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23892,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.272366,
+        "longitude": 6.234255,
+        "label": null
+      },
+      {
+        "canyonId": 23892,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.272289,
+        "longitude": 6.237635,
+        "label": null
+      },
+      {
+        "canyonId": 23892,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.276283,
+        "longitude": 6.242591,
+        "label": null
+      },
+      {
+        "canyonId": 23892,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 44.27306,
+        "longitude": 6.239094,
+        "label": "Pseudo sente de retour"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.276283,
+      "longitude": 6.242591,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_f6542a442811df8f",
+          "kind": "MAP",
+          "title": "3439 ET Seyne - Chabanon-Grand-Puy (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

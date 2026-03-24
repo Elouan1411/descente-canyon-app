@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:23.946934+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23285,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23285/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23285/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23285/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23285/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23285,
+    "identity": {
+      "nom": "Rascrouset",
+      "nomComplet": "Rif du Rascrouset",
+      "prefixeNom": "Rif du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23285/Rascrouset.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Hautes-Alpes",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Ecrins - Oisans - Champsaur",
+      "bassin": "Durance",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.1,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 2100,
+      "deniveleM": 400,
+      "longueurM": 500,
+      "cascadeMaxM": 70,
+      "cordeMiniM": 50,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h",
+      "descente": "2h",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "De Briançon se rendre à Vallouise, puis prendre la direction du Villard puis d'Entre les Aygues.\n\nSe garer sur le grand parking au terminus de la route.",
+      "accesAmont": null,
+      "approche": "Au fond du parking sur la droite se trouve une maison abandonnée.\n\nJuste après cette maison, prendre le sentier non balisé qui monte vers le collet du Rascrouset (voir IGN). Ce sentier, bien marqué, monte raide, coupe le Riou du Gerna puis arrive juste au dessus d'une belle croix. Au niveau de la croix, poursuivre encore quelques mètres le sentier qui domine alors la rive gauche du Rif du Rascrouset. Descendre au mieux dans le canyon par les pentes herbeuses quand celles-ci sont moins raides.",
+      "descente": "11 ou 12 rappels plus ou moins esthétiques qui s'enchainent très bien (seulement deux sections de marches en blocs de 100m) dans un cadre magnifique. La dernière cascade, de 70m, est fractionnée.",
+      "retour": "Du bas du dernier rappel, remonter le talus RD puis descendre en pente douce jusqu'à couper le sentier bien visible du refuge des Bans. Prendre à gauche sur ce sentier et rejoindre très vite le parking.",
+      "engagement": "Pas vraiment d'encaissement mais les échappatoires ne pourront se trouver que par des cheminements très engagés.",
+      "periode": "A faire l'été (ou au printemps ??) pour profiter d'un bon débit qui rendra la descente très sympathique.\n\nPas de vasques profondes.",
+      "geologie": null,
+      "historique": "Équipement terrain d'aventure (prévoir perfo).\n\nÉquipé sur goujons (mono-points de 8mm) par Serge et Lolo le 30/10/2014",
+      "remarques": "Le Rif du Rascrouset se trouve sur la frontière du Parc National des Ecrins."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23285,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.83884,
+        "longitude": 6.400362,
+        "label": null
+      },
+      {
+        "canyonId": 23285,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.831169,
+        "longitude": 6.401964,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.831169,
+      "longitude": 6.401964,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_2893447c6d6073b6",
+          "kind": "MAP",
+          "title": "3436 ET Meije - Pelvoux - Parc des Ecrins (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

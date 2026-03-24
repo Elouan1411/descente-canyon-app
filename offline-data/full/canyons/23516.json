@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:06.552994+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23516,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23516/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23516/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23516/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23516/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23516,
+    "identity": {
+      "nom": "Genilla",
+      "nomComplet": "Barranco de Genilla, Arroyo de Jaula",
+      "prefixeNom": "Barranco de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23516/Genilla.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Andalucía",
+      "departement": "Córdoba",
+      "communePrincipale": "Priego de Córdoba",
+      "communes": [
+        "Priego de Córdoba"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 1.8,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": null,
+      "longueurM": null,
+      "cascadeMaxM": 15,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "1h",
+      "retour": "15"
+    },
+    "topo": {
+      "accesAval": "De Priego de Cordoba prendre la A339 vers Cabra. S’arrêter au pont de la Genilla (panneau Rio Genilla), à la borne Km 22",
+      "accesAmont": null,
+      "approche": null,
+      "descente": "Pour l’instant la seule descente de la Province de Cordoba. L’autre descente, le bco de la Hoz en Rute, est désormais interdite.\n\nFaire un rappel depuis le pont - le mieux c’est en RG. A cause de problèmes avec les riverains, il n’est plus possible de commencer un peu plus haut (2 petits rappels supplémentaires).\n\nDés, marche, C15, C8+C5,marche C5",
+      "retour": "Immédiatement après la C5, remonter en RG sur les rochers puis suivre la sente sous la végétation dense. Arrivé sur une route goudronnée la suivre jusqu’à la route.",
+      "engagement": null,
+      "periode": "La rivière coule toute l’année mais avec seulement un petit filet d’eau l’été.\n\nAttention quand même au debit en début de saison !",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23516,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 37.438961,
+        "longitude": -4.237322,
+        "label": null
+      },
+      {
+        "canyonId": 23516,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 37.441463,
+        "longitude": -4.237642,
+        "label": null
+      },
+      {
+        "canyonId": 23516,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 37.438782,
+        "longitude": -4.236669,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 37.438782,
+      "longitude": -4.236669,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_d83796856de12b50",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://ropewiki.com/Genilla",
+          "url": "http://ropewiki.com/Genilla"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

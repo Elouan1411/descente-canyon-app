@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:18.733010+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23020,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23020/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23020/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23020/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23020/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23020,
+    "identity": {
+      "nom": "Bernitzbach",
+      "nomComplet": "Bernitzbach, Fuchsfarm",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23020/Bernitzbach.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Carinthie",
+      "departement": "Spittal an der Drau District",
+      "communePrincipale": "Reißeck",
+      "communes": [
+        "Reißeck"
+      ],
+      "massif": "Kreuzeckgruppe",
+      "bassin": "Möll",
+      "coursEau": "Bernitzbach"
+    },
+    "rating": {
+      "cotation": "v4a3III",
+      "interet": 1.7,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 880,
+      "deniveleM": 150,
+      "longueurM": 400,
+      "cascadeMaxM": 50,
+      "cordeMiniM": 50,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "35 min",
+      "descente": "1h45",
+      "retour": "10 min"
+    },
+    "topo": {
+      "accesAval": "Quitter l' A10 à Spittal. Suivre la B106 vers le nord. Entre Kolbnitz et Napplach au niveau d'une une maison, quitter la B106 à gauche sur une piste, et la suivre jusqu'à une barrière.",
+      "accesAmont": null,
+      "approche": "Du parking (640 m d'altitude) monter la piste forestière environ 30 minutes. Dans un virage à droite, (760 m d'altitude) prendre une sente à gauche peu marquée au début, qui grimpe jusqu'à l'entrée du canyon.",
+      "descente": "Court canyon avec une belle vue, orienté nord-est.\n\nLa C50 comprend un relai en RD à environ -15m (juillet 2013).",
+      "retour": "Après la dernière cascade sortir à droite, traverser la passerelle vers nord et retourner par le sentier jusqu'à la voiture.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23020,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.875359,
+        "longitude": 13.282943,
+        "label": "au-dessus de C 40"
+      },
+      {
+        "canyonId": 23020,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.877518,
+        "longitude": 13.284531,
+        "label": null
+      },
+      {
+        "canyonId": 23020,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.879055,
+        "longitude": 13.281505,
+        "label": null
+      },
+      {
+        "canyonId": 23020,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 46.876884,
+        "longitude": 13.280754,
+        "label": "de la piste vers gauche et la sente"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.879055,
+      "longitude": 13.281505,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_53a428a748b6dd8e",
+          "kind": "MAP",
+          "title": "181 Obervellach (ÖK 50)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_15920125c99f187e",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/Canyons/BernitzbachCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/Canyons/BernitzbachCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

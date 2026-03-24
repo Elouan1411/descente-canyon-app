@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:21.251226+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22527,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22527/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22527/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22527/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22527/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22527,
+    "identity": {
+      "nom": "Mavri Spilia",
+      "nomComplet": "Canyon Mavri Spilia",
+      "prefixeNom": "Canyon",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22527/Mavri-Spilia.html"
+    },
+    "location": {
+      "pays": "Grèce",
+      "region": "Central Greece",
+      "departement": "of Evrytania",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": "Karpenisiotis",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a3III",
+      "interet": 2.2,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 980,
+      "deniveleM": 210,
+      "longueurM": 1400,
+      "cascadeMaxM": 15,
+      "cordeMiniM": 25,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h10min",
+      "descente": "1h30min",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": "Du pont final, monter par un sentier qui monte jusqu'à caverne. Ensuite continuer par une via ferrata. Départ du canyon à la fin de via ferrata.",
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22527,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 38.730953,
+        "longitude": 21.643108,
+        "label": "au fin de la via ferrata"
+      },
+      {
+        "canyonId": 22527,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 38.734116,
+        "longitude": 21.650942,
+        "label": null
+      },
+      {
+        "canyonId": 22527,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 38.738411,
+        "longitude": 21.650555,
+        "label": "pour faire l'approche de George Andreou"
+      },
+      {
+        "canyonId": 22527,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 38.734215,
+        "longitude": 21.650738,
+        "label": "pour prendre via ferrata; pour l'autre approche parking aval"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 38.738411,
+      "longitude": 21.650555,
+      "label": "pour faire l'approche de George Andreou"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_94152460610294ef",
+          "kind": "MAP",
+          "title": "13 Karpensi Proussos",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

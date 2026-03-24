@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:59:20.930614+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24141,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24141/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24141/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24141/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24141/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24141,
+    "identity": {
+      "nom": "Staffelgraben sup.",
+      "nomComplet": "Staffelgraben sup.",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24141/Staffelgraben-sup-.html"
+    },
+    "location": {
+      "pays": "Allemagne",
+      "region": "Bayern",
+      "departement": "Oberbayern",
+      "communePrincipale": "Lenggries",
+      "communes": [
+        "Landkreis Bad Tölz-Wolfratshausen",
+        "Lenggries"
+      ],
+      "massif": "Isarwinkel",
+      "bassin": "Isar",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2III",
+      "interet": 1.3,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1063,
+      "deniveleM": 188,
+      "longueurM": 2500,
+      "cascadeMaxM": 15,
+      "cordeMiniM": 15,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "2h15min",
+      "descente": "2h30",
+      "retour": "1h"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": "alternative : continuer Staffelgraben (inf.)",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24141,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.581245,
+        "longitude": 11.453522,
+        "label": null
+      },
+      {
+        "canyonId": 24141,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.572239,
+        "longitude": 11.4745,
+        "label": null
+      },
+      {
+        "canyonId": 24141,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.558773,
+        "longitude": 11.490106,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.558773,
+      "longitude": 11.490106,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_b90bfbbeeb59d6dc",
+          "kind": "MAP",
+          "title": "8434 Vorderriß (TK25 Bay. Landesvermessungsamt)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_e1b469356290a223",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/C.....elgrabenobererCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/C.....elgrabenobererCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

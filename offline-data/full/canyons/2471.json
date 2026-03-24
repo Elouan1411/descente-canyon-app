@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:45:38.973703+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2471,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2471/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2471/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2471/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2471/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2471,
+    "identity": {
+      "nom": "Bout du monde",
+      "nomComplet": "Cascade du Bout du monde, Cascade de la Cozanne ou du Cul de Menevault, Cozanne",
+      "prefixeNom": "Cascade du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2471/Bout-du-monde.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Bourgogne-Franche-Comté",
+      "departement": "Côte-d'Or",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": "Cozanne",
+      "coursEau": "Cozanne"
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 1.2,
+      "nbVotes": 5
+    },
+    "metrics": {
+      "altitudeDepartM": 460,
+      "deniveleM": 28,
+      "longueurM": 28,
+      "cascadeMaxM": 28,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "5min",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "De Beaune, prendre la direction d'Autun par la D973. A Nolay, prendre à droite la direction du hameau de Cormot le grand et du hameau de Vauchignon (D111e). A la sortie de Vauchignon, prendre à gauche vers le Bout du Monde (D111F). Laissez la voiture au parking.",
+      "accesAmont": null,
+      "approche": "Du parking, rendez-vous à pied, en suivant la route, jusqu'au bas de la cascade (côté droit).",
+      "descente": "Une seule et unique cascade d'environ 28m souvent à sec sur amarrage naturel.",
+      "retour": "le même qu'à l'aller.",
+      "engagement": null,
+      "periode": null,
+      "geologie": "calcaire bajocien",
+      "historique": null,
+      "remarques": "L'escalade est interdite dans le cirque (surtout en période de reproduction des rapaces)... Il est possible que la descente de cascade le soit aussi.\n\nJe la donne à titre anecdotique car c'est la seule cascade notoire que je connais en Bourgogne."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2471,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.986958,
+        "longitude": 4.653697,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 46.986958,
+      "longitude": 4.653697,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_02017e58ab24e5b9",
+          "kind": "MAP",
+          "title": "3025 OT Beaune - Chagny (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_af278768ae2aa48b",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.chez.com/lieuxinsolites/cotedor/nolay/nolay.php",
+          "url": "http://www.chez.com/lieuxinsolites/cotedor/nolay/nolay.php"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

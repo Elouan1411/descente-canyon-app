@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:07.115173+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22972,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22972/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22972/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22972/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22972/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22972,
+    "identity": {
+      "nom": "Mallunes",
+      "nomComplet": "Ravin de Mallunes",
+      "prefixeNom": "Ravin de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22972/Mallunes.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-de-Haute-Provence",
+      "communePrincipale": "Saint-Benoît",
+      "communes": [
+        "Sausses",
+        "Saint-Benoît"
+      ],
+      "massif": null,
+      "bassin": "Var",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1II",
+      "interet": 1.6,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 730,
+      "deniveleM": 190,
+      "longueurM": 1200,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h",
+      "descente": "1h30",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "De Nice, remonter la vallée du Var par la RD 6202, dépasser Entrevaux et, au pont de Gueydan, prendre à droite la RD 2202 en direction de Guillaume et après environ 700 m, s’arrêter sur un grand parking à gauche entouré de glissières de sécurité.",
+      "accesAmont": null,
+      "approche": "Du parking aval, continuer la route sur 500m vers le village d’Enriez. Passer le pont du ravin du Riou du Castellet, dépasser la grande bergerie et après le grand mur en pierres, monter à gauche sur le talus par un vague sentier qui passe au-dessus de la bergerie précitée. Le suivre à flanc sur 500m et, après la courbe à droite du ravin du Riou, quitter ce sentier pour prendre celui qui descend, traverse le ruisseau et remonte en rive droite dans un bois de pins -dominant les ravins du Clot Garnier et de la Bourgassière- pour sortir à un collet. Continuer au sud-ouest jusqu’au col coté 751m sur la carte IGN. De là, descendre plein sud et trouver le lit du ravin de Mallunes (1h).\n\nUne autre solution bien plus sympa est de descendre le Riou du Castellet, juste avant la sortie de celui-ci recupérer le sentier RD, et d'enchaîner avec le Ravin de Mallunes.",
+      "descente": "Très joli vallon avec de beaux passages.\n\nLe lit, large et dégagé, franchit des barres de rochers et s’encaisse dans des resserrements dont un oscuros végétal !",
+      "retour": "à la fin de l’encaissement, rester dans le lit jusqu’au pont de sortie que l’on rejoint facilement en 10 min.",
+      "engagement": null,
+      "periode": "Le débit est très faible sans saut ni nage. L’eau arrive au maximum à la taille dans la vasque suspendue ; le bas de combinaison est suffisant, l’eau n’est pas froide.",
+      "geologie": "Calcaire, grès & marne.",
+      "historique": null,
+      "remarques": "Mieux vaut enchainer la descente de ce Ravin aprés la descente du Riou du Castellet-\"petit Riolan\". Dans le même secteur, il y a les ravins des Trabucs, de Reynier et de Farnet.\n\nAccès amont avec navette: Revenir au pont de Geydan et prendre à droite la direction d’Annot. Après 2,5km, prendre le 1er embranchement à droite vers Saint Benoît. A la chapelle de l’entrée du village, prendre à droite la petite route qui se transformera en piste après 1 km. La suivre encore sur 1 km et, se garer à droite sur un petit parking (altitude 730m sur la carte IGN).\n\nAccès pédestre amont en 20 min, après la navette:\n\nDu parking 730m, prendre à droite un sentier qui remonte à gauche un vallon -balisé pour un parcours moto-. Arrivé sur la vague croupe, rejoindre le vallon par des ravines."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22972,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.979668,
+        "longitude": 6.745359,
+        "label": null
+      },
+      {
+        "canyonId": 22972,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.976162,
+        "longitude": 6.758851,
+        "label": null
+      },
+      {
+        "canyonId": 22972,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.976166,
+        "longitude": 6.758873,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.976166,
+      "longitude": 6.758873,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_46895baacb4925db",
+          "kind": "MAP",
+          "title": "3541 OT Annot (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

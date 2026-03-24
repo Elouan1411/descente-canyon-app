@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:04.179154+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22960,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22960/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22960/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22960/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22960/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22960,
+    "identity": {
+      "nom": "Roche Rousse",
+      "nomComplet": "Ruisseau de Roche Rousse",
+      "prefixeNom": "Ruisseau de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22960/Roche-Rousse.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Isère",
+      "communePrincipale": "Saint-Gervais",
+      "communes": [
+        "Saint-Gervais"
+      ],
+      "massif": "Vercors",
+      "bassin": "Isère",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a1I",
+      "interet": 0.7,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1080,
+      "deniveleM": 80,
+      "longueurM": 200,
+      "cascadeMaxM": 70,
+      "cordeMiniM": 75,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "35min",
+      "descente": "1h",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "De St-Gervais, prendre la D35 route des Ecouges/col de Romeyères et se garer au Pont Chabert (cf parking Ecouges 1)",
+      "accesAmont": null,
+      "approche": "Du parking, prendre le chemin qui monte à l'ancien couvent puis les pistes jusqu'à Roche Rousse, la cascade (visible de la route) est juste au sud du point IGN coté 1092m.",
+      "descente": "Ca commence par une petite cascade AN, puis une courte marche et l'on arrive sur la cascade d'environ 60m (AN RG accès par un petit rappel sur AN RG)",
+      "retour": "A la confluence de la Drevenne, la suivre sur une centaine de mètre pour trouver une piste en RG qui nous ramène sur la D35, puis le parking.",
+      "engagement": null,
+      "periode": "Peut se faire toute l'année.\n\nEn glace l'hiver, en eau après les grosses pluies ou à la fonte, sinon sec en été.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Une jolie cascade connue de nos amis glaciairistes."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22960,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.163761,
+        "longitude": 5.495993,
+        "label": null
+      },
+      {
+        "canyonId": 22960,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.163303,
+        "longitude": 5.489921,
+        "label": null
+      },
+      {
+        "canyonId": 22960,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.177151,
+        "longitude": 5.498579,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.177151,
+      "longitude": 5.498579,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_f71cf3569cd5f7fc",
+          "kind": "MAP",
+          "title": "3235 OT Autrans - Gorges de La Bourne (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

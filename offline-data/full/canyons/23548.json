@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:11.686353+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23548,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23548/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23548/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23548/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23548/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23548,
+    "identity": {
+      "nom": "Canal de la Chalp",
+      "nomComplet": "Cascade du Canal de la Chalp, Cascade du plateau de Simoust, Cascade de Guillestre, La Chalp",
+      "prefixeNom": "Cascade du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23548/Canal-de-la-Chalp.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Hautes-Alpes",
+      "communePrincipale": "Guillestre",
+      "communes": [
+        "Guillestre"
+      ],
+      "massif": null,
+      "bassin": "Guil",
+      "coursEau": "La Chalp"
+    },
+    "rating": {
+      "cotation": "v4a3I",
+      "interet": 0.6,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 1055,
+      "deniveleM": 60,
+      "longueurM": 10,
+      "cascadeMaxM": 50,
+      "cordeMiniM": 60,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "25min",
+      "descente": "30min",
+      "retour": "25min"
+    },
+    "topo": {
+      "accesAval": "De Saint-Clément-sur-Durance, emprunter la N94 en direction de Briançon sur 3 km. Au rond point, prendre la direction à droite de Guillestre. Passer la zone artisanale du Villard et le pont de la Chagne, pour tourner à gauche et prendre une voie sans issue. Aller au bout de cette voie et garez-vous sans gêner, un peu avant le pont du Guil, non loin du départ du sentier (parking en herbe sur la droite) .",
+      "accesAmont": null,
+      "approche": "Du parking, prendre le sentier indiqué par un panneau en bois (Guillestre) suivre le tracé jaune. Le sentier mène sur le plateau et longe la falaise jusqu'à un canal. Départ de la descente.",
+      "descente": "Joli rappel arrosé sur cette sympathique cascade de 50 m, dont 40 m en fil d'araignée. Équipé en retrait de celle-ci par un anneau de corde et un mousqueton sur un amarrage naturel .",
+      "retour": "Descendre le monticule de galets en partant sur la RG de la cascade, pour trouver un sentier marqué de peinture fluo orange jusqu'à la jonction d'un autre sentier plus bas. Prendre à gauche et suivre ce sentier (tracé vert) jusqu'au parking.",
+      "engagement": "Descente d'une seule et jolie cascade .",
+      "periode": "Attention au débit, s'il a plu. Il faudra prévoir de changer la situation du rappel en fonction du niveau d'eau de la chute .",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Impossible de poser des points, du fait de la nature de la roche (conglomérat assez friable). L'emplacement de l'amarrage actuel ne favorisant pas le rappel de corde, 2x60 m de corde seront utiles car cela frotte assez fort sur les premiers mètres de la descente. Du coup, nous conseillons l'utilisation d'une poignée ou autre pour le rappel de corde.\n\nSi le débit est trop important, penser à changer le lieu du rappel... 10m de corde seront utile pour former un anneau de corde depuis un pin situé en rive droite, par exemple..."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23548,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.666965,
+        "longitude": 6.631105,
+        "label": null
+      },
+      {
+        "canyonId": 23548,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.663654,
+        "longitude": 6.626695,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.663654,
+      "longitude": 6.626695,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_a317eb6118143790",
+          "kind": "MAP",
+          "title": "3537 ET Guillestre (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:56.560849+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23167,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23167/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23167/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23167/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23167/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23167,
+    "identity": {
+      "nom": "Porta",
+      "nomComplet": "Val Porta, Vogorno",
+      "prefixeNom": "Val",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23167/Porta.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Vogorno",
+      "departement": "Tessin",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": "Val Verzasca",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a3III",
+      "interet": 2.5,
+      "nbVotes": 6
+    },
+    "metrics": {
+      "altitudeDepartM": 645,
+      "deniveleM": 175,
+      "longueurM": 1000,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "35min",
+      "descente": "3h",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "En montant la Valle Verzaca, se garer à gauche à la sortie du Tunnel juste à l'entrée du village de Vogorno.",
+      "accesAmont": null,
+      "approche": "Monter en direction de Costapiana. Au niveau d'un virage en épingle a gauche, prendre le GR qui part sur la droite, le suivre, passer sur un pont, puis devant une église (alt 671m), prendre a droite un chemin qui descent pour arriver au départ",
+      "descente": "Enchainement de petits obstacles et de marches.",
+      "retour": "Selon la hauteur du lac de Vogorno, on peut sortir dans le lac et escalader RD ou sortir avant la dernière C20 en prenant RD le sentier de l'ancienne prise d'eau.",
+      "engagement": "Canyon large, peu d'échappatoires évidentes.",
+      "periode": "Juin-Octobre",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23167,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.220531,
+        "longitude": 8.8736,
+        "label": null
+      },
+      {
+        "canyonId": 23167,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.219166,
+        "longitude": 8.863005,
+        "label": "sortie vers Lago di Vogorno"
+      },
+      {
+        "canyonId": 23167,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.221199,
+        "longitude": 8.85956,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.221199,
+      "longitude": 8.85956,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_9a9578770c172929",
+          "kind": "MAP",
+          "title": "1313 Bellinzona (Carte Nationale Suisse)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

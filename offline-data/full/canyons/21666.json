@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:16.379853+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21666,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21666/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21666/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21666/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21666/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21666,
+    "identity": {
+      "nom": "Chaliko Rema",
+      "nomComplet": "Canyon Chaliko Rema",
+      "prefixeNom": "Canyon",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21666/Chaliko-Rema.html"
+    },
+    "location": {
+      "pays": "Grèce",
+      "region": "Central Greece",
+      "departement": "Nomós Evrytanías , of Evrytania",
+      "communePrincipale": "Karpenisi",
+      "communes": [
+        "Nomós Evrytanías",
+        "of Evrytania",
+        "Karpenisi"
+      ],
+      "massif": "Triantafillia",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.2,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 750,
+      "deniveleM": 100,
+      "longueurM": 1200,
+      "cascadeMaxM": 6,
+      "cordeMiniM": 10,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "2h",
+      "retour": "40min"
+    },
+    "topo": {
+      "accesAval": "De Karpenisi prendre la direction Proussos. Se garer au niveau d'une chapelle qq km avant Proussos.\n\nAvec l'autre voiture aller à Tornos",
+      "accesAmont": null,
+      "approche": "De Tornos descendre dans le canyon",
+      "descente": "Exceptionnel encaissement",
+      "retour": "Après les étroitures de la rivière Prousos remonter au mieux à gauche et retrouver la route",
+      "engagement": null,
+      "periode": "A l'étiage",
+      "geologie": null,
+      "historique": "ouvert par Frank Jourdan, JF Fiorina, G Andreou et des amis en 2005",
+      "remarques": "A faire la visite du monastère millénaire de Proussos"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21666,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 38.745846,
+        "longitude": 21.673172,
+        "label": null
+      },
+      {
+        "canyonId": 21666,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 38.751724,
+        "longitude": 21.666735,
+        "label": "sortie devant la 2ième encaissement dans le Prousos Canyon"
+      },
+      {
+        "canyonId": 21666,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 38.741104,
+        "longitude": 21.674427,
+        "label": null
+      },
+      {
+        "canyonId": 21666,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 38.752708,
+        "longitude": 21.66954,
+        "label": "fin descente Tornos et depart d'aller le Prousos Canyon vers le-haut"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 38.741104,
+      "longitude": 21.674427,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_94152460610294ef",
+          "kind": "MAP",
+          "title": "13 Karpensi Proussos",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

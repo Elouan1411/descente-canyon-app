@@ -1,0 +1,187 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:06.764747+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22463,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22463/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22463/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22463/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22463/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22463,
+    "identity": {
+      "nom": "Mengasca",
+      "nomComplet": "Mengasca",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22463/Mengasca.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Lombardia",
+      "departement": "Sondrio",
+      "communePrincipale": "Samolaco",
+      "communes": [
+        "Samolaco"
+      ],
+      "massif": null,
+      "bassin": "Mera",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a4IV",
+      "interet": 2.9,
+      "nbVotes": 15
+    },
+    "metrics": {
+      "altitudeDepartM": 580,
+      "deniveleM": 255,
+      "longueurM": 1100,
+      "cascadeMaxM": 54,
+      "cordeMiniM": 55,
+      "navette": "1.6km"
+    },
+    "timings": {
+      "approche": "1h20",
+      "descente": "2h45",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "San Pietro - Monastero",
+      "accesAmont": null,
+      "approche": "Monastero - Alpe dei Damiani",
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22463,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.252819,
+        "longitude": 9.366059,
+        "label": null
+      },
+      {
+        "canyonId": 22463,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.256737,
+        "longitude": 9.375801,
+        "label": null
+      },
+      {
+        "canyonId": 22463,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 46.254677,
+        "longitude": 9.379148,
+        "label": null
+      },
+      {
+        "canyonId": 22463,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 46.259876,
+        "longitude": 9.379567,
+        "label": null
+      },
+      {
+        "canyonId": 22463,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 46.252659,
+        "longitude": 9.366767,
+        "label": "Alpe Motto dei Damiani (670m alt.)"
+      },
+      {
+        "canyonId": 22463,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 46.251011,
+        "longitude": 9.364042,
+        "label": "début de la descente à pied (anciennes balises rouges)"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 46.254677,
+      "longitude": 9.379148,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_b98de8eadeb3ed89",
+          "kind": "TOPOGUIDE",
+          "title": "Canyoning in the Alps : Northern Italy and Ticino",
+          "authors": [
+            "Simon Flower"
+          ],
+          "publicationYear": 2012,
+          "reference": "978 1 85284 683 1",
+          "editor": "Cicerone",
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/1105/Canyoning-in-the-Alps-:-Northern-Italy-and-Ticino.html"
+        },
+        {
+          "id": "biblio_a9041d20d126f712",
+          "kind": "TOPOGUIDE",
+          "title": "Canyoning Nord Italia",
+          "authors": [
+            "Pascal Van Duin"
+          ],
+          "publicationYear": 2009,
+          "reference": "978-88-901753-1-2",
+          "editor": "TopCanyon",
+          "status": "en stock\n\n- 25,90 € -\n\nCommandez cet ouvrage dès maintenant !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/135/Canyoning-Nord-Italia.html"
+        },
+        {
+          "id": "biblio_3813ed43a35207fd",
+          "kind": "TOPOGUIDE",
+          "title": "Canyoning in Lombardia",
+          "authors": [
+            "Pascal van Duin"
+          ],
+          "publicationYear": 2005,
+          "reference": "ISBN 88-901753-0-3",
+          "editor": "Edizioni TopCanyon",
+          "status": "en stock\n\n- 24,90 € -\n\nCommandez cet ouvrage dès maintenant !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/18/Canyoning-in-Lombardia.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_e20f7eb27f3865c5",
+          "kind": "MAP",
+          "title": "92 Chiavenna-Val Bregaglia (Kompass)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_7de1dab635100c1f",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.x-gatt.com/mengasca/scheda.htm",
+          "url": "http://www.x-gatt.com/mengasca/scheda.htm"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:05.969587+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22459,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22459/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22459/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22459/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22459/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22459,
+    "identity": {
+      "nom": "Toparlar Canyon",
+      "nomComplet": "Toparlar Canyon",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22459/Toparlar-Canyon.html"
+    },
+    "location": {
+      "pays": "Turquie",
+      "region": "Toparlar",
+      "departement": "Muğla",
+      "communePrincipale": "Köycegiz",
+      "communes": [
+        "Köycegiz"
+      ],
+      "massif": null,
+      "bassin": "Lac Köyceğiz",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a3I",
+      "interet": 0.5,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 150,
+      "deniveleM": 40,
+      "longueurM": 200,
+      "cascadeMaxM": 8,
+      "cordeMiniM": 10,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "1h",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": "dans le lit du ruisseau vers le-haut",
+      "descente": "1 rappel (joli saut possible) et randonnée aquatique",
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22459,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 37.000256,
+        "longitude": 28.635263,
+        "label": "evtl. plus haut"
+      },
+      {
+        "canyonId": 22459,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 36.996658,
+        "longitude": 28.63447,
+        "label": null
+      },
+      {
+        "canyonId": 22459,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 36.994053,
+        "longitude": 28.632452,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 36.994053,
+      "longitude": 28.632452,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

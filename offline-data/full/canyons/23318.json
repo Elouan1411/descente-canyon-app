@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:32.889247+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23318,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23318/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23318/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23318/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23318/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23318,
+    "identity": {
+      "nom": "Carpasina",
+      "nomComplet": "Rio Carpasina",
+      "prefixeNom": "Rio",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23318/Carpasina.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Ligurie",
+      "departement": "Imperia",
+      "communePrincipale": "Montalto Carpasio",
+      "communes": [
+        "Montalto Carpasio"
+      ],
+      "massif": "Alpi Liguri - Alpes ligures",
+      "bassin": "Argentina",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a2II",
+      "interet": 1.7,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 760,
+      "deniveleM": 170,
+      "longueurM": 1500,
+      "cascadeMaxM": 10,
+      "cordeMiniM": 15,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "40min",
+      "descente": "2h00",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "Autoroute A10 Ventimiglia/Genova, sortie Arma di Taggia. 2,6 km après le péage prendre la 2° à droite: SS1bis direction Imperia-Taggia. Un petit tronçon de voie rapide, puis au rond-point monter vers Taggia-Triora. Peu après Badalucco, prendre à droite vers Montalto-Carpasio, 7,5km pour Carpasio. A l'entrée du village (la route fait une épingle à gauche), continuer tout droit et traverser entre les maisons pour rejoindre un bon parking.",
+      "accesAmont": null,
+      "approche": "Direction \"chiesa San Sebastiano\" par une rampe descendante empierrée puis à gauche. Passer un premier ravin, une première croupe avec ruine, une deuxième avec un hameau aussi en ruine \"C.se di Villa\", un second ravin bien marqué. Monter par qq petites épingles pour une crête avec une ruine. 250m un petit ravin sec, continuer encore environ 250m pour un 2° ravin sec. Une bonne sente mène au ruisseau.",
+      "descente": "Une C4 (saut de 2 ou 4), un toboggan incliné mène à un joli petit encaissement. C10 rappel à gauche ou désescalade rive D, bief avec bloc coincé. Le parcours devient très ouvert, ponctué de nombreux ressauts de 2 à 10m. Sous un premier pont (Alt.626m) un joli passage, continuer encore 300m pour un second pont.\n\nUn seul point pour la C10, les autres rappels corde direct sur arbre.\n\nParcours agréable, ouvert et ensoleillé qui peut convenir aux familles.",
+      "retour": "Sortir juste avant le 2° pont rive D, un petit passage permets de sortir sur le pont. Suivre le bon sentier qui devient empierré jusqu'à la voiture.",
+      "engagement": "Peu engagé, présence de nombreuses sentes.",
+      "periode": "Quelques jolies petites vasques. Débit modeste.",
+      "geologie": null,
+      "historique": "M. et N. Costantini, M.F. Lepre, M.G. Sasso, P. Spreafico et M. Valentino.",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23318,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.973118,
+        "longitude": 7.865607,
+        "label": null
+      },
+      {
+        "canyonId": 23318,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.961563,
+        "longitude": 7.870456,
+        "label": null
+      },
+      {
+        "canyonId": 23318,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.960499,
+        "longitude": 7.866057,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.960499,
+      "longitude": 7.866057,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_a3482111c0bd004f",
+          "kind": "MAP",
+          "title": "ASF n°2 Moyenne Roya - Val Nervia e Argentina (Alpes sans fronti?res)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_d159d5903e4f6346",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://catastoforre.aic-canyoning.it/index/forra/cod/IM016",
+          "url": "http://catastoforre.aic-canyoning.it/index/forra/cod/IM016"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:54:54.008737+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22917,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22917/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22917/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22917/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22917/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22917,
+    "identity": {
+      "nom": "Tourte",
+      "nomComplet": "Ravine de la Tourte",
+      "prefixeNom": "Ravine de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22917/Tourte.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Cantal",
+      "communePrincipale": "Le Claux",
+      "communes": [
+        "Le Claux"
+      ],
+      "massif": "Monts du Cantal",
+      "bassin": "Rhue de Cheylade",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 1.4,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1280,
+      "deniveleM": 150,
+      "longueurM": 350,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 35,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "2h",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "Descendre du col de Serre vers le Claux et stationner comme pour le canyon de Ricou-la-Peyre.",
+      "accesAmont": null,
+      "approche": "Prendre la piste qui sert de marche d'approche du Ricou. Départ évident, sous le Puy de la Tourte, au niveau d'un ouvrage busé en béton où le ruisseau franchit le chemin.",
+      "descente": "Descente voisine du Ricou-la-Peyre mais de moindre intérêt. Six cascades de 5 à 30m, relativement encaissé.",
+      "retour": "Comme pour le Ricou.",
+      "engagement": null,
+      "periode": "Rarement à sec, sauf au coeur de l'été.",
+      "geologie": "Brèches volcaniques",
+      "historique": "Explo par Ph. Viette et P.-M. Orblin le 7 juillet 2009.",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22917,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.12558,
+        "longitude": 2.68145,
+        "label": "Passage busé en béton"
+      },
+      {
+        "canyonId": 22917,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.125713,
+        "longitude": 2.685771,
+        "label": "Chemin forestier"
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 45.12558,
+      "longitude": 2.68145,
+      "label": "Passage busé en béton"
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_daf9041e16b163a9",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons cantalous",
+          "authors": [
+            "Philippe VIETTE-COSTE"
+          ],
+          "publicationYear": 2018,
+          "reference": "97829563881-0-4",
+          "editor": "Auto-édition",
+          "status": "en stock\n\n- 14,00 € -\n\nCommandez cet ouvrage dès maintenant !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/1124/Canyons-cantalous.html"
+        },
+        {
+          "id": "biblio_0ada102a5dea7773",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons arvernes",
+          "authors": [
+            "Philippe Viette-Coste",
+            "Serge Navarro",
+            "Pierre-Marie Orblin"
+          ],
+          "publicationYear": 2012,
+          "reference": "978-2-7466-3647-7",
+          "editor": "auto-édition",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/165/Canyons-arvernes.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_dca64d22e699a24f",
+          "kind": "MAP",
+          "title": "2435 OT Monts du Cantal (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

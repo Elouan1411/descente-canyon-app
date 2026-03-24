@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:46:24.917421+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2675,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2675/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2675/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2675/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2675/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2675,
+    "identity": {
+      "nom": "Minusio",
+      "nomComplet": "Riale di Minusio, Minusio",
+      "prefixeNom": "Riale di",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2675/Minusio.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": null,
+      "departement": "Tessin",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.3,
+      "nbVotes": 6
+    },
+    "metrics": {
+      "altitudeDepartM": 700,
+      "deniveleM": 560,
+      "longueurM": 1100,
+      "cascadeMaxM": 48,
+      "cordeMiniM": 50,
+      "navette": "5.0km"
+    },
+    "timings": {
+      "approche": "5min / 1h3",
+      "descente": "4h30",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": "Quelques passages difficiles par fort débit d’eau.\n\nJuin à septembre",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2675,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.190315,
+        "longitude": 8.823695,
+        "label": "barrage"
+      },
+      {
+        "canyonId": 2675,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.180233,
+        "longitude": 8.82436,
+        "label": null
+      },
+      {
+        "canyonId": 2675,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 46.189999,
+        "longitude": 8.824875,
+        "label": null
+      },
+      {
+        "canyonId": 2675,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 46.179085,
+        "longitude": 8.824505,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 46.189999,
+      "longitude": 8.824875,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_1e5c67cde732c20d",
+          "kind": "TOPOGUIDE",
+          "title": "Eldorado Ticino",
+          "authors": [
+            "Anna & Luca Nizzola"
+          ],
+          "publicationYear": 2010,
+          "reference": "978-88-905017-7-7",
+          "editor": "SwissCanyon",
+          "status": "en stock\n\n- 39,90 € -\n\nCommandez cet ouvrage dès maintenant !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/157/Eldorado-Ticino.html"
+        },
+        {
+          "id": "biblio_818da916075bb17b",
+          "kind": "TOPOGUIDE",
+          "title": "Canyoning en Suisse 2",
+          "authors": [
+            "Franz Baumgartner",
+            "Andreas Brunner",
+            "Daniel Zimmermann"
+          ],
+          "publicationYear": 2010,
+          "reference": "9783033024694",
+          "editor": null,
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/158/Canyoning-en-Suisse-2.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_0cb1ef89bee0ed0d",
+          "kind": "MAP",
+          "title": "1312 Locarno (Carte Nationale Suisse)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_ca0baef70ab92025",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.swisscanyon.ch/canyons/descrittivi/navegna.htm",
+          "url": "http://www.swisscanyon.ch/canyons/descrittivi/navegna.htm"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

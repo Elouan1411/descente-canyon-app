@@ -1,0 +1,141 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:32.078143+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23066,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23066/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23066/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23066/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23066/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/23066/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 23066,
+    "identity": {
+      "nom": "Sablière",
+      "nomComplet": "Ravin de la Sablière",
+      "prefixeNom": "Ravin de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23066/Sabliere.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Lozère",
+      "communePrincipale": "Saint-Pierre-des-Tripiers",
+      "communes": [
+        "Saint-Pierre-des-Tripiers"
+      ],
+      "massif": "Causse Méjean",
+      "bassin": "Tarn",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1II",
+      "interet": 1.0,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 790,
+      "deniveleM": 160,
+      "longueurM": 200,
+      "cascadeMaxM": 45,
+      "cordeMiniM": 45,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "50min",
+      "descente": "1h30/2h",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": "du hameau, au lieu-dit St Peyre del Bouys limite Aveyron-Lozère, cote IGN 404. C'est par ailleurs le débouché du ravin du Cros, dry qui est la partie inférieure du ravin de St Marcellin. Traverser au niveau du chemin qui descend au bord de la rivière.",
+      "approche": "Du haut du hameau (propriété privée), prendre un escalier en pierres vers le rocher de Cinglegros. Bon sentier mais parfois très raide avec, au-dessus du col, présence de vieux barreaux scellés et de 3 échelles pour franchir le Pas des 3 Fondus. Au débouché sur le sentier des Corniches, partir 5min à gauche vers l'amont et repérer un arbre à G avec une entaille bien visible.",
+      "descente": "Succession de 6 rappels dans une faille très étroite. Équipement bon à excellent sur goujons et broches; quelques courtes MC.\n\nR1 : 15M / R2 : 25M / R3 : 5m / R4 : 45M avec une dévia qui limite le ruissellement sur la corde -et le bonhomme- / R5 : 27m avec une dévia sur AN et une barre pour éviter un frottement important.\n\nArrivée sur un palier; R6 : 45m avec 2 barres.",
+      "retour": "Du pied du dernier rappel, rejoindre le sentier Gaupillat et le suivre à gauche (aval). Rejoindre le sentier de montée, et redescendre à la Sablière.",
+      "engagement": "Pas d'échappatoire avant le R6.",
+      "periode": "A faire en saison sèche car la faille collecte un petit ruissellement désagréable lorsque le descendeur essore la corde !",
+      "geologie": null,
+      "historique": "Équipé début des années 80 par JL.Maury , F.Aragon , JF Escudié et Papic.",
+      "remarques": "Le rocher de Cinglegros est la plus belle citadelle rocheuse des Gorges du Tarn. Ce haut lieu caussenard a été équipé d'échelles et d'escaliers métalliques après guerre par le Club Alpin de Millau et le TCF. Il mérite l'ascension en A/R à la montée si vous venez du bas, ou après la faille si vous venez du causse.\n\nUn accès par le causse permet de ne pas avoir à traverser le Tarn : se rendre au hameau de Cassagnes et prendre le GR6A à droite. Après 1,8km, suivre à gauche le sentier qui remonte légèrement; on rejoint au bas d'une descente le sentier des corniches : Cinglegros est tout proche à droite ."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23066,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.221497,
+        "longitude": 3.232789,
+        "label": "sur le sentier des corniches du Tarn"
+      },
+      {
+        "canyonId": 23066,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.222202,
+        "longitude": 3.232978,
+        "label": "en pied de falaise"
+      },
+      {
+        "canyonId": 23066,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.230015,
+        "longitude": 3.230106,
+        "label": "parking en fond de vallée : rivière à traverser"
+      },
+      {
+        "canyonId": 23066,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.207668,
+        "longitude": 3.239556,
+        "label": "parking sur le causse : pas de traversée de rivière"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.230015,
+      "longitude": 3.230106,
+      "label": "parking en fond de vallée : rivière à traverser"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_3bf86c23b7e29bf2",
+          "kind": "MAP",
+          "title": "2640 OT Gorges du Tarn (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 508,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Lozère) - 26 oct 2016",
+          "summary": "La pratique du canyonisme est autorisée sur le département de la Lozère du lever au coucher du soleil. Il est cependant interdit de s’engager dans un canyon après 17 heures.\n\nL'arrêté préfectoral réglemente également la pratique du canyonisme en Lozère sur les points suivants : les équipements obligatoires, la prise d’information préalable, l'accès aux sites, l’effectif des groupes, l’encadrement, le respect du milieu naturel, des équipements et des autres usagers, le retour d’expérience et les contrôles.",
+          "remark": null,
+          "details": "Arrêté préfectoral (Lozère) n°DDCSPP-JESEP-2016-300-001 du 26 octobre 2016",
+          "effectiveDate": "26 oct 2016",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/508/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral (Lozère) n°DDCSPP-JESEP-2016-300-001 du 26 octobre 2016",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem508_pj1.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

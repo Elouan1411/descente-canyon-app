@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:59:29.825107+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24189,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24189/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24189/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24189/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24189/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24189,
+    "identity": {
+      "nom": "Tiefer Graben",
+      "nomComplet": "Tiefer Graben, Tuwaldbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24189/Tiefer-Graben.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Tyrol",
+      "departement": "Politischer Bezirk Schwaz",
+      "communePrincipale": "Vomp",
+      "communes": [
+        "Vomp"
+      ],
+      "massif": "Karwendel",
+      "bassin": "Inn",
+      "coursEau": "Tuwaldbach"
+    },
+    "rating": {
+      "cotation": "v4a2IV",
+      "interet": 1.8,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1670,
+      "deniveleM": 690,
+      "longueurM": 1500,
+      "cascadeMaxM": 55,
+      "cordeMiniM": 55,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "2h30min",
+      "descente": "4h",
+      "retour": "45min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": "sentier à \"Karwendelrast\" ou continuer Tuwaldbach inf. (\"Kühsoachgraben\")",
+      "engagement": null,
+      "periode": "au-dessous du départ à 1670m alt. restes d'avalanches toute l'année\n\n- periode optimale automne",
+      "geologie": null,
+      "historique": null,
+      "remarques": "emporter du matériel pour les restes d'avalanches (éventuellement crampons, piolet, broches à glace), trousse à spits"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24189,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.358398,
+        "longitude": 11.623,
+        "label": null
+      },
+      {
+        "canyonId": 24189,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.349339,
+        "longitude": 11.62648,
+        "label": "fin de partie sup (Tuwaldbach I), debut partie inf. (Tuwaldbach II)"
+      },
+      {
+        "canyonId": 24189,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.345829,
+        "longitude": 11.655753,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.345829,
+      "longitude": 11.655753,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

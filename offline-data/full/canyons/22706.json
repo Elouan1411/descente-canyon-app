@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:54:01.962535+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22706,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22706/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22706/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22706/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22706/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22706,
+    "identity": {
+      "nom": "Fardeloup",
+      "nomComplet": "Vallon de Fardeloup",
+      "prefixeNom": "Vallon de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22706/Fardeloup.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Bouches-du-Rhône",
+      "communePrincipale": "La Ciotat",
+      "communes": [
+        "La Ciotat"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a1II",
+      "interet": 0.4,
+      "nbVotes": 6
+    },
+    "metrics": {
+      "altitudeDepartM": 130,
+      "deniveleM": 30,
+      "longueurM": 100,
+      "cascadeMaxM": 12,
+      "cordeMiniM": 15,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "15min",
+      "retour": "25min"
+    },
+    "topo": {
+      "accesAval": "Parking quartier Fardeloup : De La Ciotat prendre la D141 passant devant un hypermarché, la piscine municipale et menant à la route des Crêtes au nord-ouest de La Ciotat. Dans la montée, juste après la piscine, on tombe sur un rond point où il est indiqué le quartier de \"Fardeloup\". Garez-vous bien avant la citée HLM au niveau des containers de poubelles à droite (point IGN 71).\n\nOu Parking route des Crêtes : De la Ciotat, prendre la route des Crêtes, après les 2 premières épingles de droite, la route fait un premier virage à gauche, puis un grand virage à droite. Se garer en sortie de ce virage (jute avant l'épingle de gauche) (parking : 50m avant le point IGN 236).",
+      "accesAmont": null,
+      "approche": "Accés quartier fardeloup : Juste avant le parking part une piste à gauche de la route. La suivre en laissant celle de droite (c'est le retour). Celle-ci s'élève au dessus d'une barre rocheuse, jusqu'au départ de la petite course.\n\nAccés route des Crêtes : Monter 50 m sur la route des crêtes et prendre le chemin de droite qui descend. Le suivre jusqu'à un réservoir d'eau. 100m avant le réservoir, une sente part sur la droite. La suivre et rejoindre au mieux le vallon qui franchit la barre rocheuse en contrebas.\n\nGrotte de Fardeloup sur la carte IGN.",
+      "descente": "On arrive très vite au sommet de la barre rocheuse.\n\nMC RG avec un câble très fin qui nous amène à la grotte de Fardeloup.\n\n2 broches pour un rappel de 13m.",
+      "retour": "Parking route des crêtes : Au pied du rappel, on remonte la barre en rd (petit pas d'escalade facile qu'on peut sécuriser à l'aide de broches).\n\nParking quartier Fardeloup : suivre le ruisseau sur 200 m et prendre la piste partant en RD, rejoignant votre véhicule.",
+      "engagement": "aucun",
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "Une curiosité géologique ciotadenne.\n\nA enchainer avec les autres parcours du coin."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22706,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.18372,
+        "longitude": 5.584338,
+        "label": null
+      },
+      {
+        "canyonId": 22706,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.183907,
+        "longitude": 5.584319,
+        "label": null
+      },
+      {
+        "canyonId": 22706,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.184605,
+        "longitude": 5.590737,
+        "label": "Parking du quartier Fardeloup."
+      },
+      {
+        "canyonId": 22706,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.181961,
+        "longitude": 5.584509,
+        "label": "Parking de la route des crêtes."
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.184605,
+      "longitude": 5.590737,
+      "label": "Parking du quartier Fardeloup."
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_c55008676d4d8829",
+          "kind": "MAP",
+          "title": "3245 ET Aubagne - La Ciotat (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

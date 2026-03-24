@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:46:42.644641+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2751,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2751/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2751/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2751/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2751/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2751,
+    "identity": {
+      "nom": "Muratone",
+      "nomComplet": "Rio di Muratone",
+      "prefixeNom": "Rio di",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2751/Muratone.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Ligurie",
+      "departement": "Imperia",
+      "communePrincipale": "Pigna",
+      "communes": [
+        "Pigna"
+      ],
+      "massif": "Alpi Liguri - Alpes ligures",
+      "bassin": "Nervia",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a3II",
+      "interet": 1.4,
+      "nbVotes": 6
+    },
+    "metrics": {
+      "altitudeDepartM": 440,
+      "deniveleM": 150,
+      "longueurM": 890,
+      "cascadeMaxM": 10,
+      "cordeMiniM": 15,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "35min",
+      "descente": "1h30",
+      "retour": "3min"
+    },
+    "topo": {
+      "accesAval": "De Vintimille par la SP 64 vers Pigna. A l'entrée du village, repérer sur la gauche une pancarte \"Carabinieri\". Emprunter cette route puis de suite à gauche une piste cimentée qui remonte sur environ 600 mètres le Rio di Muratone. Se garer dans la première épingle, au niveau d'un pont nommé \"Ponte di Carne\".",
+      "accesAmont": null,
+      "approche": "Traverser le \"ponte de Carne\" et prendre de suite à droite. Suivre le sentier en épingle par une vague croupe, puis, moins raide qui domine le ruisseau d'assez haut. Quand le chemin se rapproche d'une cinquantaine de mètres, descendre par une sente et une petite ravine.",
+      "descente": "Le point fort de la descente est, après les vérifications habituelles, un beau saut de 8 mètres dans un beau resserement.",
+      "retour": "Quelques dizaines de mètres après la jonction avec Campali (on le voit malgré les arbres), sortir rive droite au niveau d'un vieux moulin.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "Attention dans un petit toboggan de 2/3 m avec de mauvais blocs à la réception. C'est le 2° obstacle."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2751,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.940243,
+        "longitude": 7.651978,
+        "label": null
+      },
+      {
+        "canyonId": 2751,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.937206,
+        "longitude": 7.654864,
+        "label": null
+      },
+      {
+        "canyonId": 2751,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.936649,
+        "longitude": 7.654231,
+        "label": "Pone di carne"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.936649,
+      "longitude": 7.654231,
+      "label": "Pone di carne"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_a3482111c0bd004f",
+          "kind": "MAP",
+          "title": "ASF n°2 Moyenne Roya - Val Nervia e Argentina (Alpes sans fronti?res)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

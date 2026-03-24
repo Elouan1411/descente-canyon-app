@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:41.016723+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22615,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22615/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22615/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22615/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22615/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22615,
+    "identity": {
+      "nom": "Ermitage Saint-Michel",
+      "nomComplet": "Ermitage Saint-Michel",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22615/Ermitage-Saint-Michel.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Aveyron",
+      "communePrincipale": "Veyreau",
+      "communes": [
+        "Veyreau"
+      ],
+      "massif": "Causse Noir",
+      "bassin": "Jonte",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 1.3,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 776,
+      "deniveleM": 120,
+      "longueurM": 200,
+      "cascadeMaxM": 40,
+      "cordeMiniM": 50,
+      "navette": "15.0km"
+    },
+    "timings": {
+      "approche": "30mn ou 1h",
+      "descente": "2h",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": "De Peyreleau se diriger vers Saint André de Vézines : aller jusqu'au prieuré de Saint Jean de Balmés et se garer (grand parking).\n\nUn accès ne nécessitant pas de navette est possible : belle rando D+350m .",
+      "accesAmont": null,
+      "approche": "* Passer devant la chapelle et suivre le chemin toujours tout droit, jusqu'à un panneau \"Réserve naturelle\" 1km.\n\nDe là, suivre à gauche la direction \"Ermitage\".\n\n* Se garer à Peyreleau et suivre la piste carrossable qui longe la Jonte vers l'amont. A la fin de celle-ci, rude montée par un single jusqu'à St Michel : 3,6kms , D+350m.",
+      "descente": "Entrer dans l'ermitage par l'échelle, puis se référer au plan sur les photos.\n\nUne fois l'ancien bassin passé, continuer sur quelques mètres. Au niveau du rétrécissement, regarder sur la gauche. On aperçoit une petite plate-forme : RG12. Longer les rochers jusqu'à arriver à une faille RD20.\n\nArrive sur une plate-forme : RG10 ou tyrolienne. Passer dans la faille. Au bout : RG40 avec fractionnement, R10 sur AN.\n\nDescendre dans les buis jusqu'à RG15. Rester sur la corde jusqu'au RD25.\n\nDe là, se diriger vers la gauche : RAN 10.\n\nPrévoir une corde de 20 m pour faire les mains courantes peut s'avérer utile.",
+      "retour": "Rejoindre au mieux le chemin qui longe la Jonte jusqu'à Peyreleau (2,4km).",
+      "engagement": "Pas d'échappatoire.",
+      "periode": "Faille toujours sèche.",
+      "geologie": "Dolomie",
+      "historique": "Ouvert par steph et luc",
+      "remarques": "A faire : visite de l'ermitage, nid d'aigle d'origine Carolingienne (9ième siècle). Monter par une échelle sur la table sommitale : vue somptueuse. Ces équipement d'accès sont l’œuvre du Club Alpin de Millau en 1888 ! rénovés en 1930."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22615,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.188641,
+        "longitude": 3.244611,
+        "label": null
+      },
+      {
+        "canyonId": 22615,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 44.172138,
+        "longitude": 3.245306,
+        "label": null
+      },
+      {
+        "canyonId": 22615,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.189327,
+        "longitude": 3.210778,
+        "label": "village de Peyreleau"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.172138,
+      "longitude": 3.245306,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_6ec0961689028659",
+          "kind": "MAP",
+          "title": "2641 OT Millau (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

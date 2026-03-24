@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:24.948762+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22264,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22264/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22264/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22264/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22264/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22264,
+    "identity": {
+      "nom": "La Marive",
+      "nomComplet": "Canyon de La Marive, Gorges de l'Evi, La Marive",
+      "prefixeNom": "Canyon de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22264/La-Marive.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": null,
+      "departement": "Fribourg/Freiburg",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": null,
+      "coursEau": "La Marive"
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.3,
+      "nbVotes": 10
+    },
+    "metrics": {
+      "altitudeDepartM": 896,
+      "deniveleM": 100,
+      "longueurM": null,
+      "cascadeMaxM": 15,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "2min",
+      "descente": "1h",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "A la sortie du village de Neirivue direction Albeuve, prendre la route à droite, direction l'Evi.\n\nSe garer sur le parking 100m avant la carrière.",
+      "accesAmont": null,
+      "approche": "2 Possibilités pour se mettre à l'eau: Remonter la route jusqu'à la carrière et prendre un chemin pour se mettre à l'eau ou faire un rappel depuis le pont qui enjambe le ruisseau à l'entrée de la carrière (rappel de 50m).",
+      "descente": "Descente dans une gorge assez profonde.Peu d'obstacles, possibilité de sauts, mais attention aux arbres dans les vasques.",
+      "retour": "A la sortie de la gorge, continuer dans le ruisseau puis sortir RG sur le chemin en bord du ruisseau. Remonté à la voiture en 10mn.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22264,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.519936,
+        "longitude": 7.045211,
+        "label": "Passerelle au dessus du canyon (entrée possible)"
+      },
+      {
+        "canyonId": 22264,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.520756,
+        "longitude": 7.042794,
+        "label": "E1 - sans rappel"
+      },
+      {
+        "canyonId": 22264,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.520115,
+        "longitude": 7.051262,
+        "label": null
+      },
+      {
+        "canyonId": 22264,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.519592,
+        "longitude": 7.047362,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.519592,
+      "longitude": 7.047362,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

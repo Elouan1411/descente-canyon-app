@@ -1,0 +1,178 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:17.798888+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23840,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23840/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23840/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23840/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23840/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23840,
+    "identity": {
+      "nom": "Räbloch",
+      "nomComplet": "Räbloch, Emme",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23840/Rabloch.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": null,
+      "departement": "Bern/Berne",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": "Aar",
+      "coursEau": "Emme"
+    },
+    "rating": {
+      "cotation": "v1a3III",
+      "interet": null,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": 830,
+      "deniveleM": 50,
+      "longueurM": 5300,
+      "cascadeMaxM": null,
+      "cordeMiniM": null,
+      "navette": "10.4km"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "3h",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23840,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.821671,
+        "longitude": 7.83664,
+        "label": null
+      },
+      {
+        "canyonId": 23840,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.848339,
+        "longitude": 7.80572,
+        "label": null
+      },
+      {
+        "canyonId": 23840,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 46.821201,
+        "longitude": 7.83984,
+        "label": null
+      },
+      {
+        "canyonId": 23840,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 46.857288,
+        "longitude": 7.80933,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 46.821201,
+      "longitude": 7.83984,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_ee92621b53de3c8c",
+          "kind": "TOPOGUIDE",
+          "title": "Canyoning : Swiss Alps / Alpes Suisse",
+          "authors": [
+            "Association Openbach"
+          ],
+          "publicationYear": 2015,
+          "reference": "9782746679450",
+          "editor": "auto-edition",
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/195/Canyoning-:-Swiss-alps---Alpes-suisses-Vol-1.html"
+        },
+        {
+          "id": "biblio_818da916075bb17b",
+          "kind": "TOPOGUIDE",
+          "title": "Canyoning en Suisse 2",
+          "authors": [
+            "Franz Baumgartner",
+            "Andreas Brunner",
+            "Daniel Zimmermann"
+          ],
+          "publicationYear": 2010,
+          "reference": "9783033024694",
+          "editor": null,
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/158/Canyoning-en-Suisse-2.html"
+        },
+        {
+          "id": "biblio_d3fcf40613d2c3c5",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons in Europa",
+          "authors": [
+            "Zaunhuber"
+          ],
+          "publicationYear": 1994,
+          "reference": "3-7634-1107-0",
+          "editor": "Berg",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1171/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_a0de2dd3ee0c01c1",
+          "kind": "MAP",
+          "title": "1188 Eggiwil (CNS (Carta Nazionale Svizzera))",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_6a4d96b3463c0fc3",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/Canyons/RaeblochCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/Canyons/RaeblochCanyon"
+        },
+        {
+          "id": "resource_993cc1429c9ee5e3",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://ropewiki.com/Emme_/_Rabloch",
+          "url": "http://ropewiki.com/Emme_/_Rabloch"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

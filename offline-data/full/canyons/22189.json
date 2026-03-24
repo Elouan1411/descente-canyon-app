@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:09.396734+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22189,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22189/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22189/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22189/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22189/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22189,
+    "identity": {
+      "nom": "Tapume de Verissimo",
+      "nomComplet": "Ribeira de Tapume de Verissimo, Tapume",
+      "prefixeNom": "Ribeira de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22189/Tapume-de-Verissimo.html"
+    },
+    "location": {
+      "pays": "Cap-Vert",
+      "region": null,
+      "departement": "Tapume de Verissimo",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Plateau de Lagoa",
+      "bassin": null,
+      "coursEau": "Tapume"
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.8,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1150,
+      "deniveleM": 600,
+      "longueurM": 2500,
+      "cascadeMaxM": 103,
+      "cordeMiniM": 60,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "6h",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": "Quitter la route entre Porto Nuovo - Ribeira Grande (à environ 1230m alt.) entre les maisons de Espongeiro et partir 5,5 km vers ouest, direction Lagedos. Environ 100 m avant Lagedos (à droite une station météo) tourner à droite et prendre la piste à gauche de station météo (vers le nord-ouest). Poursuivre la piste environ 4 km jusqu'à la fin de la partie carrossable et quitter la voiture à Matinho (1200 m alt.).\n\nAvec l'autre voiture venir de Ville Ribeira Grande par la vallée de la rivière Ribeira Grande vers Boca de Ambas as Ribeiras. Ici continuer la piste à gauche, monter la vallée de Caibros jusqu'à fin de la route goudronnée, peut-être encore 400m jusqu'au parking carré (environ 440 m alt., environ 2 km de Boca de Ambas Ribeiras).",
+      "accesAmont": null,
+      "approche": "Continuer la piste (mauvais état) à peu près horizontale jusqu'à sa fin (maison en ruine à gauche), balise bleue. Continuer le sentier et arriver dans le lit de Tapume Verissimo (petit barrage ; 15min).",
+      "descente": "Marcher, succession de (grands)rappels, ensuite marcher et désescalader.",
+      "retour": "Ensuite arriver dans une partie ou le lit de la rivière s'élargit. Le sentier monte quelques mètres en rive droite. Suivre le sentier, qui monte. En haut passer au-dessus de la Clue Tarref d`'Cima. Descendre vers la rivière et suivre la jusqu'au parking.\n\nAlternative : Pas monter, mais continuer la Clue Tarref d'Cima.",
+      "engagement": null,
+      "periode": "Première partie à sec, 2ème partie peu d'eau",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Le site internet de Secja n'est pas actualisé (plusieurs relais sont différents), mais il est utile pour l'accès, la description de la descente (rappels) et la description de retour."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22189,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 17.123587,
+        "longitude": -25.130154,
+        "label": null
+      },
+      {
+        "canyonId": 22189,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 17.107109,
+        "longitude": -25.123741,
+        "label": null
+      },
+      {
+        "canyonId": 22189,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 17.138914,
+        "longitude": -25.126328,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 17.107109,
+      "longitude": -25.123741,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_a0b95353ed9c3736",
+          "kind": "MAP",
+          "title": "Santo Antâo (Goldstadt-Wanderkarte)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_5ca6323a3116686d",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://web.archive.org/web/2006020308153.....a.com/CV02Tapsup.htm",
+          "url": "http://web.archive.org/web/2006020308153.....a.com/CV02Tapsup.htm"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

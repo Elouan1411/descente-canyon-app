@@ -1,0 +1,143 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:54.415603+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22403,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22403/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22403/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22403/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22403/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22403,
+    "identity": {
+      "nom": "Eilegger Graben",
+      "nomComplet": "Eilegger Graben",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22403/Eilegger-Graben.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Tyrol",
+      "departement": "Kufstein",
+      "communePrincipale": "Brandenberg",
+      "communes": [
+        "Brandenberg"
+      ],
+      "massif": "Brandenberger Alpen",
+      "bassin": "Inn",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a2V",
+      "interet": 1.9,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1070,
+      "deniveleM": 340,
+      "longueurM": 2500,
+      "cascadeMaxM": 60,
+      "cordeMiniM": 60,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h30",
+      "descente": "4h",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22403,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.556713,
+        "longitude": 11.933867,
+        "label": null
+      },
+      {
+        "canyonId": 22403,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.547943,
+        "longitude": 11.910532,
+        "label": null
+      },
+      {
+        "canyonId": 22403,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.546471,
+        "longitude": 11.909115,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.546471,
+      "longitude": 11.909115,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_80a52b6e4b57f154",
+          "kind": "TOPOGUIDE",
+          "title": "Tiroler Canyoningführer - The Canyoning guide for Tyrol",
+          "authors": [
+            "Alexander Riml",
+            "Gunnar Amor"
+          ],
+          "publicationYear": 2012,
+          "reference": "978-3-200-02343-7",
+          "editor": null,
+          "status": "en stock\n\n- 44,90 € -\n\nCommandez cet ouvrage dès maintenant !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/170/Tiroler-Canyoningfuhrer---The-Canyoning-guide-for-Tyrol.html"
+        },
+        {
+          "id": "biblio_a216ca92fa29ca51",
+          "kind": "TOPOGUIDE",
+          "title": "Canyoning in Bayern und Tirol",
+          "authors": [
+            "Werner Baumgarten"
+          ],
+          "publicationYear": 2010,
+          "reference": null,
+          "editor": null,
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1226/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_7df4a172e3cded43",
+          "kind": "MAP",
+          "title": "8 Tegernsee, Schliersee (Kompass)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

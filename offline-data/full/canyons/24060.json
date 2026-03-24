@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:59:02.576938+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24060,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24060/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24060/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24060/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24060/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24060,
+    "identity": {
+      "nom": "Azeri",
+      "nomComplet": "Cascades d' Azeri, Hiru Iturri Erreka, Ruisseau des Trois Fontaines",
+      "prefixeNom": "Cascades d'",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24060/Azeri.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Nouvelle-Aquitaine",
+      "departement": "Pyrénées-Atlantiques",
+      "communePrincipale": "Ascain",
+      "communes": [
+        "Ascain"
+      ],
+      "massif": "Rhune",
+      "bassin": "Nivelle",
+      "coursEau": "Ruisseau des Trois Fontaines"
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 1.9,
+      "nbVotes": 6
+    },
+    "metrics": {
+      "altitudeDepartM": 350,
+      "deniveleM": 130,
+      "longueurM": 500,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 35,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "1h30",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "Depuis l'église d'Ascain, monter en 5 min au parking des carrières.",
+      "accesAmont": null,
+      "approche": "Depuis le parking, monter en rive gauche, soit par le chemin en zigzag, soit par le sentier qui coupe tout. On a souvent vue sur les carrières qui sont à gauche. Au bout de 20 min, on aperçoit sur la gauche les 2 cascades majeures de 25 et 30 m. Continuer 5 min puis un discret sentier part sur la gauche pour rejoindre le torrent, c'est le commencement.",
+      "descente": "Un peu de marche, des petites désescalades, des petites rampes, 2 fois 10 m de nage et on arrive sur une C8 qui enchaîne directement sur une C25. Vient ensuite la C30 qui peut se descendre de plusieurs façons : en rive droite dans l'actif ou en rive gauche avec ou sans un guidé.",
+      "retour": "En bas de la C30 sortir en RG, un sentier + ou - clair selon la saison. Le retour au parking est assez évident. On peut aussi continuer le ruisseau à travers une forêt (intéressant si gros débit) jusqu'aux carrières (1 heure) : on arrive alors à un tunnel qui passe sous celles-ci et on sort en RG pour rejoindre le parking.",
+      "engagement": "\"canyon\" idéal pour initier, ça échappe sans danger entre chaque obstacle.",
+      "periode": "De préférence après ou pendant une grosse pluie.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "On est ici sur la Rhune, une des + belles montagnes de pays basque. Vue sur l'océan."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24060,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.323704,
+        "longitude": -1.626992,
+        "label": null
+      },
+      {
+        "canyonId": 24060,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.333797,
+        "longitude": -1.623634,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.333797,
+      "longitude": -1.623634,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_792ffc61599fe42d",
+          "kind": "MAP",
+          "title": "1245 OT Hendaye - Saint-Jean-de-Luz (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

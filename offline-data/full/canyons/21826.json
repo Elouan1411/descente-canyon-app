@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:52.158031+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21826,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21826/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21826/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21826/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21826/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21826,
+    "identity": {
+      "nom": "Lascara",
+      "nomComplet": "Barranco Lascara",
+      "prefixeNom": "Barranco",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21826/Lascara.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Aragón",
+      "departement": "Huesca",
+      "communePrincipale": "Puértolas",
+      "communes": [
+        "Puértolas"
+      ],
+      "massif": "Mt Perdu (Monte Perdido)",
+      "bassin": "Cinca",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1I",
+      "interet": 1.1,
+      "nbVotes": 6
+    },
+    "metrics": {
+      "altitudeDepartM": 770,
+      "deniveleM": 100,
+      "longueurM": 500,
+      "cascadeMaxM": 33,
+      "cordeMiniM": 35,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "45min",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": "Sur la route de Bielsa à Ainsa, se garer juste à la sortie du village d'Hospital de Tella sur l’ancienne route à droite. Vous êtes juste en face de la grande cascade de 33m.",
+      "accesAmont": null,
+      "approche": "Prenez le GR (peinture jaune et blanche) vers Santa Justa qui commence entre le Barranco Lascara et le Bar Quino. Pour faire uniquement la grande cascade, compter 10min d'approche. Le GR coupe le canyon juste au départ de la C33. De cet endroit on peut remonter le barranco pour escalader 2 ressauts de 4m et trouver une ruelle glissante de 15m.",
+      "descente": "Ruelle, ressauts, 250m de marche puis arrive la grande cascade suivie de R4 et R6 sur AN (possibilité de désescalade).",
+      "retour": "Immédiat.",
+      "engagement": "Pas de vrais encaissements.",
+      "periode": null,
+      "geologie": null,
+      "historique": "1ère par P. Gimat à l'automne 92.",
+      "remarques": "Bon équipement pour la C33. Très rapide, à combiner avec les autres canyons du secteur."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21826,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.548798,
+        "longitude": 0.158701,
+        "label": null
+      },
+      {
+        "canyonId": 21826,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.546646,
+        "longitude": 0.159645,
+        "label": null
+      },
+      {
+        "canyonId": 21826,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 42.546822,
+        "longitude": 0.159838,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 42.546822,
+      "longitude": 0.159838,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_fcae506cf45f5fdb",
+          "kind": "TOPOGUIDE",
+          "title": "Carte N°3 - Mont Perdu : du rio Gallego au rio Cinca.",
+          "authors": [
+            "Patrick Gimat + Jean-Paul Pontroué"
+          ],
+          "publicationYear": 1999,
+          "reference": null,
+          "editor": null,
+          "status": "en stock\n\n- 7,50 € -\n\nCommandez cet ouvrage dès maintenant !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/122/Carte-n°3-:-Mont-Perdu.html"
+        },
+        {
+          "id": "biblio_728585bf88b0a2ad",
+          "kind": "TOPOGUIDE",
+          "title": "Descentes de canyons dans le Haut Aragon - Tome 2",
+          "authors": [
+            "Patrick Gimat avec la collaboration de J.-P. Pontroué"
+          ],
+          "publicationYear": 1995,
+          "reference": "ISBN 2-85744-813-9",
+          "editor": "Co-édition Gimat/Pontroué/Edisud",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/156/Descentes-de-canyons-dans-le-Haut-Aragon---Tome-2.html"
+        }
+      ],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_bd2b7a5e30e7a462",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://ropewiki.com/Lascara",
+          "url": "http://ropewiki.com/Lascara"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

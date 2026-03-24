@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:54:38.511589+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22854,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22854/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22854/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22854/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22854/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22854,
+    "identity": {
+      "nom": "Purple Creek",
+      "nomComplet": "Purple Creek",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22854/Purple-Creek.html"
+    },
+    "location": {
+      "pays": "Nouvelle Zélande",
+      "region": "Westland District",
+      "departement": "West Coast",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": null,
+      "coursEau": "Purple Creek"
+    },
+    "rating": {
+      "cotation": "v3a3IV",
+      "interet": null,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": 480,
+      "deniveleM": null,
+      "longueurM": null,
+      "cascadeMaxM": null,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "4h",
+      "descente": "3h",
+      "retour": "1h40"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": "Ouverture le 8 janvier 2012 par Jethro Robinson, Alain Rohr, Annette Phillips, Dan Clearwater, Pip Furness, Toine Houtenbos, Zac et Stu Matheson.",
+      "remarques": "Informations de Daniel Clearwater provenant du site www.kiwicanyons.org."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22854,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": -43.938141,
+        "longitude": 169.467545,
+        "label": null
+      },
+      {
+        "canyonId": 22854,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": -44.006668,
+        "longitude": 169.396393,
+        "label": null
+      },
+      {
+        "canyonId": 22854,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": -43.949444,
+        "longitude": 169.491669,
+        "label": "Camping"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": -44.006668,
+      "longitude": 169.396393,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:59.567057+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23759,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23759/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23759/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23759/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23759/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23759,
+    "identity": {
+      "nom": "Chiampeit",
+      "nomComplet": "Rio Chiampeit",
+      "prefixeNom": "Rio",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23759/Chiampeit.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Frioul-Vénétie julienne",
+      "departement": "Udine",
+      "communePrincipale": "Moggio Udinese",
+      "communes": [
+        "Moggio Udinese"
+      ],
+      "massif": "Alpes Juliennes",
+      "bassin": "Fella",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v5a2IV",
+      "interet": 2.7,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 630,
+      "deniveleM": 330,
+      "longueurM": 1600,
+      "cascadeMaxM": 70,
+      "cordeMiniM": 70,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "1h15min",
+      "descente": "3h15min",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "C 70 fract. possible: 25/45"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23759,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.386028,
+        "longitude": 13.181154,
+        "label": null
+      },
+      {
+        "canyonId": 23759,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.397972,
+        "longitude": 13.178783,
+        "label": null
+      },
+      {
+        "canyonId": 23759,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.398121,
+        "longitude": 13.178837,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.398121,
+      "longitude": 13.178837,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

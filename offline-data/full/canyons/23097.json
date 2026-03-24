@@ -1,0 +1,139 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:39.108621+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23097,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23097/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23097/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23097/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23097/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23097,
+    "identity": {
+      "nom": "Schwarzenbach",
+      "nomComplet": "Schwarzenbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23097/Schwarzenbach.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Tyrol",
+      "departement": "Politischer Bezirk Reutte",
+      "communePrincipale": "Forchach",
+      "communes": [
+        "Forchach"
+      ],
+      "massif": "Lechtaler Alpen",
+      "bassin": "Lech",
+      "coursEau": "Schwarzenbach"
+    },
+    "rating": {
+      "cotation": "v4a3II",
+      "interet": 1.4,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 1200,
+      "deniveleM": 280,
+      "longueurM": 1000,
+      "cascadeMaxM": 26,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "50min",
+      "descente": "2h20min",
+      "retour": "7min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23097,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.427963,
+        "longitude": 10.57593,
+        "label": null
+      },
+      {
+        "canyonId": 23097,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.425777,
+        "longitude": 10.581051,
+        "label": null
+      },
+      {
+        "canyonId": 23097,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.422588,
+        "longitude": 10.583154,
+        "label": null
+      },
+      {
+        "canyonId": 23097,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.426029,
+        "longitude": 10.581252,
+        "label": "1. départ du sentier d'approche"
+      },
+      {
+        "canyonId": 23097,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.428482,
+        "longitude": 10.579396,
+        "label": "2 : ...jusqu'à refuge."
+      },
+      {
+        "canyonId": 23097,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.427872,
+        "longitude": 10.577942,
+        "label": "3 : de la piste, tirer vers le-haut jusqu'à l'entrée"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.422588,
+      "longitude": 10.583154,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_9d490de171192867",
+          "kind": "MAP",
+          "title": "WK 351 Lechtaler - Allgäuer Alpen (Freytag & Berndt)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

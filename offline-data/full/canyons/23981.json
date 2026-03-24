@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:46.775452+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23981,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23981/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23981/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23981/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23981/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23981,
+    "identity": {
+      "nom": "Torcas",
+      "nomComplet": "Barranco de las Torcas, Río Arcos",
+      "prefixeNom": "Barranco de las",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23981/Torcas.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Comunidad Valenciana",
+      "departement": "Valencia",
+      "communePrincipale": "Aras de los Olmos",
+      "communes": [
+        "Aras de los Olmos"
+      ],
+      "massif": null,
+      "bassin": "Turia",
+      "coursEau": "Río Arcos"
+    },
+    "rating": {
+      "cotation": "v2a2III",
+      "interet": 2.6,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": null,
+      "longueurM": 1500,
+      "cascadeMaxM": 5,
+      "cordeMiniM": 10,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "25min",
+      "descente": "1h30",
+      "retour": "45min"
+    },
+    "topo": {
+      "accesAval": "Prendre la route qui va de Losilla en direction de la Puebla de San Miguel. Après avoir descendu les virages et passé le pont qui traverse le río Arcos, tourner un peu plus loin à gauche sur la piste qui va au moulin abandonné de Tío Juan Miguel. Laisser la voiture en haut sur le replat (piste praticable aux 4x4).",
+      "accesAmont": null,
+      "approche": "Descendre la piste qui va au moulin et trouver une sente qui longe le cours d'eau (PR).",
+      "descente": "Quelques petits ressauts équipés en corde fixe et avec échelle de spéléo permettent de descendre et de remonter le parcours. Attention toutefois au débit car le lit est parfois étroit (1 m). Prévoir matériel de rééquipement au cas ou.",
+      "retour": "Lorsque le barranco s'ouvre, juste après les peupliers, trouver un pommier. Un sentier débute rive droite en face du pommier et nous amène vers une ancienne piste qui descend au moulin. Reste à remonter la piste empruntée à l'aller.",
+      "engagement": "Canyon étroit sans possibilité d'échappatoires. Bien analyser le débit.",
+      "periode": "Eté, automne",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23981,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 39.976807,
+        "longitude": -1.116593,
+        "label": null
+      },
+      {
+        "canyonId": 23981,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 39.980572,
+        "longitude": -1.107356,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 39.980572,
+      "longitude": -1.107356,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_efd0fbdce0f3c92f",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://ropewiki.com/Torcas",
+          "url": "http://ropewiki.com/Torcas"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

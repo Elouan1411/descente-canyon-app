@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:32.745894+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23637,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23637/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23637/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23637/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23637/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23637,
+    "identity": {
+      "nom": "La Tinde",
+      "nomComplet": "La Tinde, Triège partie haute, Triège",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23637/La-Tinde.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Salvan",
+      "departement": "Valais/Wallis",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Chablais - Platé - Aiguilles Rouges",
+      "bassin": "Rhône (amont du Lac Léman)",
+      "coursEau": "Triège"
+    },
+    "rating": {
+      "cotation": "v3a3I",
+      "interet": 2.1,
+      "nbVotes": 9
+    },
+    "metrics": {
+      "altitudeDepartM": 1667,
+      "deniveleM": 125,
+      "longueurM": 250,
+      "cascadeMaxM": null,
+      "cordeMiniM": 40,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h30",
+      "descente": "2h30",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": "identique au parking",
+      "accesAmont": "du canyon des Marécottes/Triège : de Lausanne ou Berne, prendre la direction du Simplon. Sortez à Martiny Fully. Au centre-ville, prenez la direction de Salvan. Après Salvan, montez aux Marécottes et suivez le panneau Cergneux. Après les dernières maisons et un grand virage, tournez à gauche sur une piste qui monte raide et se termine sur un parking (croix et fontaine, alt. 1226m, coordonnées 46.10867, 6.99925)",
+      "approche": "Du parking, (alt. 1226m, coordonnées 46.10867, 6.99925) suivre le réseau de chemin de randonnée bien visible sur map.geo.admin.ch qui permet de rejoindre la piste interdite (alt. 1406m, coordonnées 46.10777, 6.99300). La piste fait un grand virage: 500m plus loin, prendre le sentier de randonnée à gauche qui permet de rejoindre la piste (alt. 1509m, coordonnées 46.11069, 6.99218) conduisant à la Tinde en passant sous la baraque du Temeley. Restez sur la piste qui entre dans la grande vallée du Triège pendant 1,4km. Lorsque la piste se rapproche du ruisseau, une vague piste enherbée descend à gauche vers la rivière (passerelle et baraque). Départ à la passerelle (pont de la Tinde alt. 1662 m, coordonnées 46.10951, 6.97609)",
+      "descente": "Sauts/Toboggans/Rappels",
+      "retour": "Après le plus grand obstacle, ne pas continuer dans la rivière qui est toujours équipée mais peu intéressante. Sortir RG au mieux pour rejoindre une trace RG qui suit d'abord la rive avant de rejoindre une trace encore plus nette qui descend vers l'aval jusque au pont sur le Triège (alt 1249 m, coordonnées 46.10516, 6.99058). De là suivre le sentier à gauche qui remonte au parking (10min).\n\nIl est plus judicieux d'enchaîner la descente avec le Triège, dès le pont (alt 1249 m). Dans ce cas poser une voiture au parking aval du Triège.",
+      "engagement": "Canyon très ouvert",
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "Canyon très parcouru par les professionnels du coin, d'où les différents sentiers de liaison non visibles sur la carte mais bien marqués."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23637,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.109501,
+        "longitude": 6.976,
+        "label": null
+      },
+      {
+        "canyonId": 23637,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.106266,
+        "longitude": 6.985774,
+        "label": "sortie canyon intégral"
+      },
+      {
+        "canyonId": 23637,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.108635,
+        "longitude": 6.999084,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.108635,
+      "longitude": 6.999084,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

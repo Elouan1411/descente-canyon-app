@@ -1,0 +1,166 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:11.375100+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22481,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22481/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22481/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22481/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22481/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22481,
+    "identity": {
+      "nom": "Rosengartenschlucht (untere)",
+      "nomComplet": "Rosengartenschlucht (untere), Silver Slide, Green Deep Creek, Splish-Splash, Schinderbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22481/Rosengartenschlucht-untere.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Tyrol",
+      "departement": "Imst",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Lechtaler Alpen",
+      "bassin": "Inn",
+      "coursEau": "Schinderbach"
+    },
+    "rating": {
+      "cotation": "v2a1II",
+      "interet": 2.0,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 1015,
+      "deniveleM": 55,
+      "longueurM": 400,
+      "cascadeMaxM": 5,
+      "cordeMiniM": 5,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "30min/1h",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "De Imst, prendre la petite route raide qui monte à Hochimst (station de ski de la ville).\n\nSe garer sur le premier grand parking (grande esplanade).",
+      "accesAmont": null,
+      "approche": "Prendre dans l'angle sud-ouest du parking, un petit sentier qui passe près du petit lac (\"Badesee\") et conduit au ruisseau au niveau de la \"Blaue Grotte\".\n\nA ce niveau, on peut rejoindre le canyon en aval de l'ouvrage brise-crue, infranchissable sinon.",
+      "descente": "Quelques mignons petits ressauts. Beaucoup sont équipés de cordes fixes...",
+      "retour": "A la fin du canyon, en vue des passerelles du sentier touristique, sortir par une sente en rive gauche.\n\nAvant de rejoindre la route, continuer par le sentier qui longe le canyon et remonte au parking amont.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "Il existe une partie aval encore en dessous qui serait interdite (attraction Rosengartenschlucht avec sentier et passerelles). Techniquement on fait donc la partie médiane (\"Mittlere\") mais qui est appelée basse (untere) dans le topo-guide du Tyrol."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22481,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.239399,
+        "longitude": 10.722903,
+        "label": null
+      },
+      {
+        "canyonId": 22481,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.239098,
+        "longitude": 10.727677,
+        "label": null
+      },
+      {
+        "canyonId": 22481,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.241055,
+        "longitude": 10.72401,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.241055,
+      "longitude": 10.72401,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_80a52b6e4b57f154",
+          "kind": "TOPOGUIDE",
+          "title": "Tiroler Canyoningführer - The Canyoning guide for Tyrol",
+          "authors": [
+            "Alexander Riml",
+            "Gunnar Amor"
+          ],
+          "publicationYear": 2012,
+          "reference": "978-3-200-02343-7",
+          "editor": null,
+          "status": "en stock\n\n- 44,90 € -\n\nCommandez cet ouvrage dès maintenant !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/170/Tiroler-Canyoningfuhrer---The-Canyoning-guide-for-Tyrol.html"
+        },
+        {
+          "id": "biblio_a216ca92fa29ca51",
+          "kind": "TOPOGUIDE",
+          "title": "Canyoning in Bayern und Tirol",
+          "authors": [
+            "Werner Baumgarten"
+          ],
+          "publicationYear": 2010,
+          "reference": null,
+          "editor": null,
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1226/topoguide.html"
+        },
+        {
+          "id": "biblio_62ea7c9c13b902fd",
+          "kind": "TOPOGUIDE",
+          "title": "146 Imst (ÖK 50) - 1:50000",
+          "authors": [],
+          "publicationYear": null,
+          "reference": null,
+          "editor": null,
+          "status": null,
+          "detailUrl": null
+        },
+        {
+          "id": "biblio_d4232c1ca7906fe7",
+          "kind": "TOPOGUIDE",
+          "title": "3/4 Lechtaler Alpen, Heiterwang - und Muttekopfgebiet (Alpenvereins (AV) Karte) - 1/25000",
+          "authors": [],
+          "publicationYear": null,
+          "reference": null,
+          "editor": null,
+          "status": null,
+          "detailUrl": null
+        },
+        {
+          "id": "biblio_bb9d747dcbbdff0a",
+          "kind": "TOPOGUIDE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/C.....ereRosengartenCanyon",
+          "authors": [],
+          "publicationYear": null,
+          "reference": null,
+          "editor": null,
+          "status": null,
+          "detailUrl": "http://canyon.carto.net/cwiki/bin/view/Canyons/MittlereRosengartenCanyon"
+        }
+      ],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

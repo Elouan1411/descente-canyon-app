@@ -1,0 +1,167 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:36.247392+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21759,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21759/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21759/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21759/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21759/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21759,
+    "identity": {
+      "nom": "Frondizzon",
+      "nomComplet": "Rio Frondizzon",
+      "prefixeNom": "Rio",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21759/Frondizzon.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Frioul-Vénétie julienne",
+      "departement": "Udine",
+      "communePrincipale": "Tolmezzo",
+      "communes": [
+        "Tolmezzo"
+      ],
+      "massif": "Alpes Carniques - Carniche - Karnischen",
+      "bassin": "Tagliamento",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 3.0,
+      "nbVotes": 18
+    },
+    "metrics": {
+      "altitudeDepartM": 540,
+      "deniveleM": 170,
+      "longueurM": 2000,
+      "cascadeMaxM": 35,
+      "cordeMiniM": 40,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "45min",
+      "descente": "2h",
+      "retour": "3min"
+    },
+    "topo": {
+      "accesAval": "D’Udine, prenez la direction de Tarvisio par l’A23 et sortez à Carnia-Tolmezzo. Dépassez Tolmezzo et prenez la direction de l’Autriche (SS52B). A la sortie nord de la ville, vous passez devant la prison avec une station service en face. 2km après, tournez à droite au niveau d’une maison et continuez sur la petite route pour aller garer la voiture sans gêner au niveau de la centrale électrique.",
+      "accesAmont": null,
+      "approche": "L'approche est entièrement balisée AIC (points bleus). Derrière l'usine hydroélectrique, traverser la rivière puis prendre une petite sente raide au niveau de la conduite forcée qui évite les tunnels (strictement interdits) mais mène au même endroit. On suit ensuite en haut à plat un sentier bien marqué le long de la conduite et de l'affluent du Rio Tambre. On passe ensuite à proximité du bassin du captage, on traverse et ensuite il ne faut pas manquer une sente peu visible à gauche (points bleus dans les arbres, avant un petit pont sur le Rio Tambre) qui permet de monter dans la forêt puis redescendre dans le bon vallon.",
+      "descente": "Le canyon commence par une belle verticale. Les belles vasques continuent et on rejoint un oscuro. On arrive ensuite à l'affluent rive gauche qui peut largement doubler ou tripler le débit s'il n'est pas capté. La fin se termine par quelques obstacles du même acabit.",
+      "retour": "Dès la sortie de l’encaissement, on rejoint rapidement la centrale électrique et la voiture.",
+      "engagement": "Pas d’échappatoires",
+      "periode": "Le débit peut poser problème en début de saison ou en cas d'arrêt de la centrale.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Appeler le N° de téléphone du gestionnaire (Edison EDF) du barrage +39 042 786 129 pour savioir si il y a des manœuvres de la \"central idroelettrica Tramba\".\n\nPossibilité de faire une navette (11km).\n\nAccès aval : idem que version sans navette\n\nAccès amont : retournez à Tolmezzo et prenez la direction du village d’Illegio. Dans celui-ci, passez devant l’église. Descendez la rue étroite sur la gauche, en suivant la direction de « Pieve di San Floriano ». Continuez jusqu’au cimetière où l’on se garera sans gêner.\n\nApproche pédestre : prenez le sentier en face du parking sans prendre le chemin à gauche. Il vous amène rapidement au ruisseau. Suivez-le pendant 500m jusqu’au barrage avec sa prise d’eau. Désescaladez facilement l’ouvrage et continuez encore 500m dans le lit du ruisseau. Vous voilà au sommet du premier et plus haut obstacle."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21759,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.432297,
+        "longitude": 13.052487,
+        "label": null
+      },
+      {
+        "canyonId": 21759,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.431026,
+        "longitude": 13.039677,
+        "label": null
+      },
+      {
+        "canyonId": 21759,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.431423,
+        "longitude": 13.03884,
+        "label": "recommendée (approche par sentier)"
+      },
+      {
+        "canyonId": 21759,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 46.432606,
+        "longitude": 13.037488,
+        "label": "ici commence le sentier vers Illegio"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.431423,
+      "longitude": 13.03884,
+      "label": "recommendée (approche par sentier)"
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_41402b7e45455e7d",
+          "kind": "TOPOGUIDE",
+          "title": "Tour de l'Europe en Canyon - T1 - Suisse, Autriche, Italie du Nord, Slovénie",
+          "authors": [
+            "Caracal et les Sancho Panza"
+          ],
+          "publicationYear": 2008,
+          "reference": "978-2-9526064-2-4",
+          "editor": null,
+          "status": "en stock\n\n- 25,90 € -\n\nCommandez cet ouvrage dès maintenant !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/130/Tour-de-l-Europe-en-Canyon---T1---Suisse--Autriche--Italie-du-Nord--Slovenie.html"
+        },
+        {
+          "id": "biblio_9a587136e3eea5ef",
+          "kind": "TOPOGUIDE",
+          "title": "Italia Nord-Est - Gole e Canyon Vol.2",
+          "authors": [
+            "Maurizio Biondi",
+            "Francesco Cacae",
+            "Roberto Schenone"
+          ],
+          "publicationYear": 2000,
+          "reference": "88-900260-0-6",
+          "editor": "Associazione Italiana Canyoning",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/114/Gole---Canyons-2-:-Italia-Nord-Est.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_519d6acfc47e762b",
+          "kind": "MAP",
+          "title": "013 Prealpi Carniche, Val Tagliamento (Tabacco)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_9faa5457f59b9490",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.canyoning.it/procanyon/frondizzon.htm",
+          "url": "http://www.canyoning.it/procanyon/frondizzon.htm"
+        },
+        {
+          "id": "resource_ed51574dfcaad9a0",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.canyoneast.it/target.php?w=19.....get=Rio%20Frondizzon",
+          "url": "http://www.canyoneast.it/target.php?w=19.....get=Rio%20Frondizzon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

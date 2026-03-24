@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:03.560273+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23777,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23777/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23777/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23777/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23777/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23777,
+    "identity": {
+      "nom": "Pazüel",
+      "nomComplet": "Pazüel, Paziel, Pazüelbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23777/Pazuel.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Vorarlberg",
+      "departement": "Bludenz",
+      "communePrincipale": "Lech",
+      "communes": [
+        "Lech"
+      ],
+      "massif": "Lechtaler Alpen",
+      "bassin": "Lech",
+      "coursEau": "Pazüelbach"
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": null,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": 1880,
+      "deniveleM": 200,
+      "longueurM": 600,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "50min",
+      "descente": "2h",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": "Première descente réalisée le 02.10.1993 par Jean-Philippe Cavalier, Cathy Caullier, Olivier Courtois.",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23777,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.17852,
+        "longitude": 10.17255,
+        "label": null
+      },
+      {
+        "canyonId": 23777,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.17691,
+        "longitude": 10.16245,
+        "label": null
+      },
+      {
+        "canyonId": 23777,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.176094,
+        "longitude": 10.162155,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.176094,
+      "longitude": 10.162155,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_1a56fa47dbb7da32",
+          "kind": "MAP",
+          "title": "3/2 Lechtaler Alpen - Arlberggebiet (AV (Alpenverein) Karte)",
+          "scale": "1:25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_462753eb648571ba",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.aventurecanyon.com/pazuel-description.html",
+          "url": "http://www.aventurecanyon.com/pazuel-description.html"
+        },
+        {
+          "id": "resource_9120eb2cd4575590",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/Canyons/PazueelCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/Canyons/PazueelCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

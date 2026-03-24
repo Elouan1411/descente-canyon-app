@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:56.135678+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24029,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24029/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24029/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24029/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24029/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24029,
+    "identity": {
+      "nom": "Rolland",
+      "nomComplet": "Torrent de Rolland",
+      "prefixeNom": "Torrent de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24029/Rolland.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Hautes-Alpes",
+      "communePrincipale": "Rousset",
+      "communes": [
+        "Rousset"
+      ],
+      "massif": null,
+      "bassin": "Durance",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1I",
+      "interet": 0.7,
+      "nbVotes": 5
+    },
+    "metrics": {
+      "altitudeDepartM": 880,
+      "deniveleM": 50,
+      "longueurM": 100,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 25,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "10min",
+      "descente": "30min",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "De Chorges, emprunter la D3 en direction d'Espinasses, le muséoscope et le barrage de Serre-Ponçon. Passer un long tunnel et garez-vous non loin de la piste partant à droite avec une barrière.",
+      "accesAmont": null,
+      "approche": "A pied, prendre la piste jusqu'au saut de Rolland.",
+      "descente": "Prendre l'amarrage naturel pour tirer une MC 15 jusqu'au relais positionné côté RD, derrière la masse rocheuse au milieu du lit du torrent. C25 sur plaquette avec anneau. Marche sur 100m avec une petite désescalade. Remonter l'affluent arrivant en RD pour regagner au mieux le chemin.",
+      "retour": "Récupérer le chemin pris à l'aller.",
+      "engagement": "Encaissement en bas de la cascade.",
+      "periode": "Après les saisons humides.",
+      "geologie": null,
+      "historique": "Relais C25 placé le 13 janv 2018",
+      "remarques": "A enchaîner avec d'autres descentes se situant dans le coin.\n\nLieu d'entraînement à la slackline."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24029,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.489399,
+        "longitude": 6.270175,
+        "label": null
+      },
+      {
+        "canyonId": 24029,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.487171,
+        "longitude": 6.270405,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.487171,
+      "longitude": 6.270405,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

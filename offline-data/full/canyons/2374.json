@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:45:15.889258+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2374,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2374/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2374/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2374/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2374/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2374,
+    "identity": {
+      "nom": "Verdus",
+      "nomComplet": "Le Verdus",
+      "prefixeNom": "Le",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2374/Verdus.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Hérault",
+      "communePrincipale": "Saint-Guilhem-le-Désert",
+      "communes": [
+        "Saint-Guilhem-le-Désert"
+      ],
+      "massif": null,
+      "bassin": "Hérault",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1IV",
+      "interet": 1.9,
+      "nbVotes": 30
+    },
+    "metrics": {
+      "altitudeDepartM": 250,
+      "deniveleM": 100,
+      "longueurM": 400,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "50min",
+      "descente": "1h30",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "Depuis Montpellier prendre la route de Ganges, tourner à Gignac, direction Aniane puis St-Guilhem-le-Désert. Se garer au parking payant en haut du village.",
+      "accesAmont": null,
+      "approche": "Du fond du parking remonter sur la gauche pour prendre le chemin de St Jacques de Compostelle. Franchissez le lit du ruisseau (vous vous trouvez alors en RG), et remontez-le sur une centaine de mètres. Puis, suivez le GR qui part sur votre gauche en RD du ruisseau (traversez à nouveau le ruisseau). Le quitter au premier embranchement pour prendre à droite vers la vire sous falaise en direction d'un ouvrage bâti \"les fenestrelles\". Après avoir passé les lacets qui grimpent sur les fenestrelles redescendre 5min, localiser un éboulis avec une sente, descendre dans le vallon encombré par la végétation.",
+      "descente": "Un premier rappel de 4m puis une désescalade jusqu'au rappel de 30m en rive droite (25 à gauche). Quelques rappels dans une belle partie surcreusée dont la fameuse \"vasque des poissons rouges\" qui s'évite en RG puis c'est la fin avec deux derniers rappels de 12/13 m et un ressaut qui se shunte par une vire en rive gauche. Le chemin de retour suit le lit en rive gauche.",
+      "retour": "Retour aisé en rive gauche le plus souvent (passer 2 gués).",
+      "engagement": "Il est impossible de sortir de l'encaissement, surtout dans les parties encaissées finales.",
+      "periode": "Faisable toute l'année.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Tarif parking/navette \"https://www.saintguilhem-valleeherault.fr/parkings-et-navettes\". Canyon sec. Super après les inondations d'automne cette année car en eau ou sous la glace l'hiver d'avant. Canyon d'initiation."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2374,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.74044,
+        "longitude": 3.530506,
+        "label": null
+      },
+      {
+        "canyonId": 2374,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.739464,
+        "longitude": 3.531606,
+        "label": null
+      },
+      {
+        "canyonId": 2374,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.736492,
+        "longitude": 3.547569,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.736492,
+      "longitude": 3.547569,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_d688f7d883caff2f",
+          "kind": "MAP",
+          "title": "2642 ET Saint-Guilhem-Le-Desert (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_8a69d12eaf31b736",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://clementdom.free.fr/html/verdus.htm",
+          "url": "http://clementdom.free.fr/html/verdus.htm"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

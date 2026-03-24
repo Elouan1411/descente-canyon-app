@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:33.442448+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23320,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23320/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23320/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23320/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23320/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23320,
+    "identity": {
+      "nom": "Bouisse",
+      "nomComplet": "Torrent de la Bouisse",
+      "prefixeNom": "Torrent de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23320/Bouisse.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Hautes-Alpes",
+      "communePrincipale": "Montclus",
+      "communes": [
+        "Montclus"
+      ],
+      "massif": null,
+      "bassin": "Buëch",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1I",
+      "interet": 0.7,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 830,
+      "deniveleM": 90,
+      "longueurM": 400,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "35min",
+      "descente": "1h00",
+      "retour": "8min"
+    },
+    "topo": {
+      "accesAval": "De Sisteron, prendre la direction de Grenoble par la N75 jusqu'à Serres. Au rond-point du village, prendre à gauche, direction Montclus. Rouler 2,5km sur la D994 et garez-vous à droite après avoir passé un pont, juste à côté d'une stèle et du ruisseau.",
+      "accesAmont": null,
+      "approche": "Marcher 400m en direction de Montclus sur la D994 et prendre le sentier à droite indiquant Col du Barret. Suivre ce sentier jusqu'à surplomber le ravin. De là, descendre au mieux à travers la végétation pour rejoindre le départ .",
+      "descente": "Une ou deux désescalades, une C15, de nouvelles désescalades de plans-inclinés, C4 sur AN , C30, C4 évitable par la RG.",
+      "retour": "A la route, prendre à droite jusqu'au parking.",
+      "engagement": "Aucun",
+      "periode": "A faire après les pluies.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Deux cascades équipées sur mono-point (goujon de 8mm)"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23320,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.421936,
+        "longitude": 5.691589,
+        "label": null
+      },
+      {
+        "canyonId": 23320,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.419636,
+        "longitude": 5.693684,
+        "label": null
+      },
+      {
+        "canyonId": 23320,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.417583,
+        "longitude": 5.692979,
+        "label": null
+      },
+      {
+        "canyonId": 23320,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 44.417397,
+        "longitude": 5.690259,
+        "label": "sentier d'approche"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.417583,
+      "longitude": 5.692979,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

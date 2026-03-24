@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:15.812834+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22221,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22221/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22221/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22221/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22221/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22221,
+    "identity": {
+      "nom": "Gourniers",
+      "nomComplet": "Marmite des Gourniers, Torrent de Réallon",
+      "prefixeNom": "Marmite des",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22221/Gourniers.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Hautes-Alpes",
+      "communePrincipale": "Réallon",
+      "communes": [
+        "Réallon"
+      ],
+      "massif": "Ecrins - Oisans - Champsaur",
+      "bassin": "Durance",
+      "coursEau": "Torrent de Réallon"
+    },
+    "rating": {
+      "cotation": "v3a3I",
+      "interet": 1.6,
+      "nbVotes": 6
+    },
+    "metrics": {
+      "altitudeDepartM": 1515,
+      "deniveleM": 15,
+      "longueurM": 50,
+      "cascadeMaxM": 15,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "10min",
+      "descente": "30min",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "Accès: De Gap, prendre la direction de Savines-le-Lac, et juste avant de passer le pont sur le lac de Serre Ponçon, prendre la route à gauche qui mène au village de Réallon (ne pas suivre la direction station de Réallon). Passez le village de Réallon, continuez jusqu'au petit hameau des Gourniers, et garez-vous juste avant le pont sur le seul parking à droite.",
+      "accesAmont": null,
+      "approche": "Du parking remontez le lit de la rivière jusqu'au début de l'encaissement (que l'on peut remonter pour aller vérifier le niveau d'eau). De là, prenez la sente en rive droite qui permet de retomber sur le chemin qui mène à un pont en bois. Du pont, rejoignez le cours d'eau (petite désescalade juste avant le pont à droite).",
+      "descente": "Descente très courte, avec une cascade (je vous laisse la surprise !). Le temps de descente dépendra de votre plaisir à faire et refaire (et re-re-...) cet obstacle !!! Rappel, toboggan qui arrache, sauts... pour refaire la descente, sortez de l'encaissement et remontez à droite (5min).",
+      "retour": "A la sortie de l'encaissement, suivre le lit de la rivière jusqu'au parking.",
+      "engagement": "Très très court, mais vérifiez bien le débit, il doit probablement y avoir des gros mouvements d'eau dans la vasque principale suivant le débit.\n\nLe R15 est hors d'eau et bien équipé.\n\nNombreuses MC et têtes de rappels en fixe autour de la vasque ; ce micro-canyon doit être utilisé par les pros du coin...",
+      "periode": "Gros débit et eau froide.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Vraiment un superbe site, très ludique mais malheureusement très (trop) court ! Ne faites pas le déplacement que pour ça, mais ça peut être un bon complément après le canyon de Réallon pour terminer la journée en beauté."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22221,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.617973,
+        "longitude": 6.335634,
+        "label": null
+      },
+      {
+        "canyonId": 22221,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.617355,
+        "longitude": 6.335058,
+        "label": null
+      },
+      {
+        "canyonId": 22221,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.615063,
+        "longitude": 6.334715,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.615063,
+      "longitude": 6.334715,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_d3ba8daa244cabe2",
+          "kind": "MAP",
+          "title": "3437 ET Orcieres-Merlette (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

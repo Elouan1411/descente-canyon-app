@@ -1,0 +1,159 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:53.626728+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22399,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22399/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22399/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22399/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22399/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22399,
+    "identity": {
+      "nom": "Gehrebach",
+      "nomComplet": "Gehrebach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22399/Gehrebach.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Tyrol",
+      "departement": "Politischer Bezirk Reutte",
+      "communePrincipale": "Reutte",
+      "communes": [
+        "Reutte"
+      ],
+      "massif": "Ammergauer Alpen",
+      "bassin": "Lech",
+      "coursEau": "Gehrebach"
+    },
+    "rating": {
+      "cotation": "v3a2III",
+      "interet": 1.9,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1120,
+      "deniveleM": 240,
+      "longueurM": 900,
+      "cascadeMaxM": 22,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h",
+      "descente": "2h30",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22399,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.505417,
+        "longitude": 10.768004,
+        "label": null
+      },
+      {
+        "canyonId": 22399,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.496761,
+        "longitude": 10.756243,
+        "label": null
+      },
+      {
+        "canyonId": 22399,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.494942,
+        "longitude": 10.749108,
+        "label": null
+      },
+      {
+        "canyonId": 22399,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.499664,
+        "longitude": 10.771376,
+        "label": "arrivée à Zwieselbach"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.494942,
+      "longitude": 10.749108,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_80a52b6e4b57f154",
+          "kind": "TOPOGUIDE",
+          "title": "Tiroler Canyoningführer - The Canyoning guide for Tyrol",
+          "authors": [
+            "Alexander Riml",
+            "Gunnar Amor"
+          ],
+          "publicationYear": 2012,
+          "reference": "978-3-200-02343-7",
+          "editor": null,
+          "status": "en stock\n\n- 44,90 € -\n\nCommandez cet ouvrage dès maintenant !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/170/Tiroler-Canyoningfuhrer---The-Canyoning-guide-for-Tyrol.html"
+        },
+        {
+          "id": "biblio_a216ca92fa29ca51",
+          "kind": "TOPOGUIDE",
+          "title": "Canyoning in Bayern und Tirol",
+          "authors": [
+            "Werner Baumgarten"
+          ],
+          "publicationYear": 2010,
+          "reference": null,
+          "editor": null,
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1226/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_1264c301e3a70952",
+          "kind": "MAP",
+          "title": "4 Füssen-Ausserfern (Kompass)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_16df11a94043c768",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.geodaten.bayern.de/BayernView.....3390&layer=TK&step=4",
+          "url": "http://www.geodaten.bayern.de/BayernView.....3390&layer=TK&step=4"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

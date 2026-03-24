@@ -1,0 +1,151 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:59:27.916870+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24176,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24176/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24176/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24176/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24176/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24176,
+    "identity": {
+      "nom": "Pflerscherbach",
+      "nomComplet": "Pflerscherbach, Jabron, Rio Fleres",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24176/Pflerscherbach.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Trentino-Alto Adige",
+      "departement": "Bolzano",
+      "communePrincipale": "Brennero",
+      "communes": [
+        "Brennero"
+      ],
+      "massif": "Stubaier Alpen - Alpes Breonies",
+      "bassin": "Isarco",
+      "coursEau": "Rio Fleres"
+    },
+    "rating": {
+      "cotation": "v3a3III",
+      "interet": 1.0,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1375,
+      "deniveleM": 100,
+      "longueurM": 350,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "2h",
+      "retour": "10"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": "aquatique, eté",
+      "geologie": null,
+      "historique": null,
+      "remarques": "eau froide"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24176,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.965931,
+        "longitude": 11.32586,
+        "label": null
+      },
+      {
+        "canyonId": 24176,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.966042,
+        "longitude": 11.32984,
+        "label": null
+      },
+      {
+        "canyonId": 24176,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.966091,
+        "longitude": 11.33772,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.966091,
+      "longitude": 11.33772,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_a05b3e69d2d03cd4",
+          "kind": "MAP",
+          "title": "038 Vipiteno - Alpi Breonie - Sterzing - Stubaier Alpen (Tabacco)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_16d60789924f6be3",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/C.....PflerscherbachCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/C.....PflerscherbachCanyon"
+        },
+        {
+          "id": "resource_44dfcbf4bb450641",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "https://www.map-erlebnis.de/canyoning-to.....ch-jabron-suedtirol/",
+          "url": "https://www.map-erlebnis.de/canyoning-to.....ch-jabron-suedtirol/"
+        },
+        {
+          "id": "resource_ee0d9b3ea4aec869",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.ctgernstein.com/schluchten/fernerbach",
+          "url": "http://www.ctgernstein.com/schluchten/fernerbach"
+        },
+        {
+          "id": "resource_3573774e39669715",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://catastoforre.aic-canyoning.it/ind.....IGE/pro/BZ/cod/BZ028",
+          "url": "http://catastoforre.aic-canyoning.it/ind.....IGE/pro/BZ/cod/BZ028"
+        },
+        {
+          "id": "resource_726472a9af78c65e",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://ropewiki.com/Fleres",
+          "url": "http://ropewiki.com/Fleres"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

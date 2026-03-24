@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:39.323850+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23667,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23667/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23667/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23667/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23667/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23667,
+    "identity": {
+      "nom": "Bani Khalid (supérieur)",
+      "nomComplet": "Wadi Bani Khalid (supérieur)",
+      "prefixeNom": "Wadi",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23667/Bani-Khalid-superieur.html"
+    },
+    "location": {
+      "pays": "Oman",
+      "region": null,
+      "departement": "Ash Sharqiyah",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a3II",
+      "interet": 1.6,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 700,
+      "deniveleM": 50,
+      "longueurM": 700,
+      "cascadeMaxM": 2,
+      "cordeMiniM": null,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "3h",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "headlamp for the cave"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23667,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 22.623337,
+        "longitude": 59.095627,
+        "label": null
+      },
+      {
+        "canyonId": 23667,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 22.619711,
+        "longitude": 59.093418,
+        "label": null
+      },
+      {
+        "canyonId": 23667,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 22.615423,
+        "longitude": 59.093761,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 22.615423,
+      "longitude": 59.093761,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_19b8b8fc8ae1cbd0",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/C.....aniKhalidUpperCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/C.....aniKhalidUpperCanyon"
+        },
+        {
+          "id": "resource_2bd065f1d431df9a",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://home.kpn.nl/lilian_jan_schreurs/oman/khawah.htm",
+          "url": "http://home.kpn.nl/lilian_jan_schreurs/oman/khawah.htm"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

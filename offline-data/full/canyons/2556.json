@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:45:57.474099+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2556,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2556/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2556/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2556/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2556/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2556,
+    "identity": {
+      "nom": "Froda (inferieur)",
+      "nomComplet": "Ri della Froda (inferieur), Valle Santa Petronilla.",
+      "prefixeNom": "Ri della",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2556/Froda-inferieur.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Biasca",
+      "departement": "Tessin",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": "Val Blenio",
+      "coursEau": "Valle Santa Petronilla."
+    },
+    "rating": {
+      "cotation": "v4a3III",
+      "interet": 3.3,
+      "nbVotes": 8
+    },
+    "metrics": {
+      "altitudeDepartM": 840,
+      "deniveleM": 540,
+      "longueurM": 1000,
+      "cascadeMaxM": 120,
+      "cordeMiniM": 120,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h30",
+      "descente": "5h",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": "Dans le village de Chiggiogna, se garer dans la rue Fusnengo ; quelques places disponibles .",
+      "accesAmont": null,
+      "approche": "Une piste part vers la forêt sur la droite d'un chalet.\n\nAller au fond de cette piste, puis prendre le sentier qui monte à droite. Garder la droite au prochain sentier que l'on croise jusqu'à trouver une passerelle qui indique le début du canyon .",
+      "descente": "Le canyon commence à la passerelle par une petite marche et se verticalise rapidement.\n\nCanyon relativement court, mais difficile techniquement car frottements dangereux sur grandes verticales.\n\nLa grande cascade de 120 m est fractionnée en 3 : c20, c50 et c50.\n\nAttention aux frottements !",
+      "retour": "Après la 120 regagner le village.",
+      "engagement": "Échappatoires possibles avant la 120m",
+      "periode": "Juin a septembre.\n\nQuelques passages délicats par moyen et fort débit .",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Attention aux frottements, arêtes vives, en particulier au dernier rappel (C50).\n\nAdmirez la maison au dessus du premier rappel, un vrai petit paradis !!"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2556,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.352032,
+        "longitude": 8.985994,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 46.352032,
+      "longitude": 8.985994,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_1e5c67cde732c20d",
+          "kind": "TOPOGUIDE",
+          "title": "Eldorado Ticino",
+          "authors": [
+            "Anna & Luca Nizzola"
+          ],
+          "publicationYear": 2010,
+          "reference": "978-88-905017-7-7",
+          "editor": "SwissCanyon",
+          "status": "en stock\n\n- 39,90 € -\n\nCommandez cet ouvrage dès maintenant !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/157/Eldorado-Ticino.html"
+        },
+        {
+          "id": "biblio_a9e8ab63fe4e5775",
+          "kind": "TOPOGUIDE",
+          "title": "Canyoning en Suisse",
+          "authors": [
+            "Andreas Brunner et Frédéric Bétrisey"
+          ],
+          "publicationYear": 2001,
+          "reference": "ISBN 3-85902-195-8",
+          "editor": "Club Alpin Suisse CAS",
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/160/Canyoning-en-Suisse-1.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_2e0d8fdac3706471",
+          "kind": "MAP",
+          "title": "1273 Biasca (Carte Nationale Suisse)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_3251eb3ccc0cca3d",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.swisscanyon.ch/canyons/descrittivi/biasca.htm",
+          "url": "http://www.swisscanyon.ch/canyons/descrittivi/biasca.htm"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

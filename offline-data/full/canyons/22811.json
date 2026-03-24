@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:54:27.507047+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22811,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22811/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22811/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22811/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22811/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22811,
+    "identity": {
+      "nom": "Giuf",
+      "nomComplet": "Giuf, Valle di Villa",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22811/Giuf.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Lombardia",
+      "departement": "Como",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": null,
+      "coursEau": "Valle di Villa"
+    },
+    "rating": {
+      "cotation": "v3a3II",
+      "interet": 2.4,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 350,
+      "deniveleM": 130,
+      "longueurM": 500,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "1h40",
+      "retour": "6min"
+    },
+    "topo": {
+      "accesAval": "De Côme par la SS583, direction Bellagio, rejoindre la commune de Lezzeno, qui est donc le dernier village avant la célèbre cité. Lezzeno se compose de plusieurs hameaux: le premier traversé est Pescau (panneau à gauche parallèle à la route), puis Sossano, puis Sostra. De là faire encore 180m pour tourner à droite direction: Madonna dei Ceppi; on est alors à 100m de la sortie de notre canyon. Le parking est après la large épingle à gauche.",
+      "accesAmont": null,
+      "approche": "Continuer la route qui devient vite raide, étroite et empierrée, jusqu'a la chapelle. Puis la piste jusqu'au pont.",
+      "descente": "Attaquer rive D (échelle ou rappel). Canyon aussi court que mignon, continu et jamais trop fermé.\n\nRappels qui alternent avec des sauts, désescalades et toboggans dans un bel enchaînement.\n\nLe tout à peu de distance du célèbre Bellagio.",
+      "retour": "Sortir rive D au niveau de la SS583. Revenir à la voiture.",
+      "engagement": null,
+      "periode": "Peut être un peu plus d'eau que Cairo... Avril-octobre.",
+      "geologie": "Calcaire.",
+      "historique": "M. Miragoli, Murgolo, D. Basola et Filipazzi en 1993.",
+      "remarques": "De Bellagio, des bateaux traversent avec voitures et passagers vers Menaggio ou Varenna, afin d'aller voir plus au nord..."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22811,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.945831,
+        "longitude": 9.207631,
+        "label": null
+      },
+      {
+        "canyonId": 22811,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.94809,
+        "longitude": 9.206794,
+        "label": null
+      },
+      {
+        "canyonId": 22811,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 45.946331,
+        "longitude": 9.206658,
+        "label": null
+      },
+      {
+        "canyonId": 22811,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 45.949833,
+        "longitude": 9.207733,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 45.946331,
+      "longitude": 9.206658,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

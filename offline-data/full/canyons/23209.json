@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:07.041790+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23209,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23209/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23209/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23209/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23209/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23209,
+    "identity": {
+      "nom": "Morge",
+      "nomComplet": "Canyon de la Morge",
+      "prefixeNom": "Canyon de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23209/Morge.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Conthey",
+      "departement": "Valais/Wallis",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": "Rhône (amont du Lac Léman)",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a3IV",
+      "interet": 2.9,
+      "nbVotes": 11
+    },
+    "metrics": {
+      "altitudeDepartM": 930,
+      "deniveleM": 170,
+      "longueurM": 2000,
+      "cascadeMaxM": 15,
+      "cordeMiniM": 20,
+      "navette": "4.0km"
+    },
+    "timings": {
+      "approche": "10min",
+      "descente": "3h",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "suivre la même route, passer le pont du Diable et continuer en direction de Chandolin/Saviese. 800m aprés le pont du Diable, il y a un petit parking à droite.",
+      "accesAmont": null,
+      "approche": "Du virage prendre la piste qui descend en lacets jusqu'à une passerelle surplombant le départ du canyon. Juste avant cette passerelle, descendre au mieux rive droite vers le torrent, à gauche de la piste (raide en sous bois).",
+      "descente": "Après une petite marche, les premiers obstacles arrivent. L'ambiance est grandiose sous le pont naturel. Après quelques ressauts on entre dans l'encaissement sous le pont du Diable. La progression est quasiment obscure et la sortie de l'encaissement est grandiose. Après, le canyon est plus ouvert avec quelques petits obstacles que l'on peut parfois sauter.",
+      "retour": "A la sortie de la gorge principale, un affluent arrive RD (cascade). S'ensuit une petite gorge évitable RG (cordes fixes). 500m après cet affluent RD on rencontre un second affluent RD, la Rogne. De la confluence, un petit sentier part RG et monte directement à la route (cordes).",
+      "engagement": "Trés fort! L'encaissement est très impressionnant. Juste la dernière partie est plus ouverte.",
+      "periode": "Gros niveau d'eau en période de fonte des neiges et de crue.",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23209,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.2738,
+        "longitude": 7.32428,
+        "label": "Descendre en amont du Pont Rouge, en rive droite"
+      },
+      {
+        "canyonId": 23209,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.26535,
+        "longitude": 7.319744,
+        "label": null
+      },
+      {
+        "canyonId": 23209,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 46.27393,
+        "longitude": 7.323025,
+        "label": null
+      },
+      {
+        "canyonId": 23209,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 46.263889,
+        "longitude": 7.320278,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 46.27393,
+      "longitude": 7.323025,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_5db7aef8008d8a46",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.swestcanyon.ch/Sommaire_canyons.htm",
+          "url": "http://www.swestcanyon.ch/Sommaire_canyons.htm"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

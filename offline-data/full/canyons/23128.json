@@ -1,0 +1,164 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:46.720009+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23128,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23128/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23128/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23128/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23128/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23128,
+    "identity": {
+      "nom": "Paternale",
+      "nomComplet": "Fosso della Paternale, Rio Strozzavolpe",
+      "prefixeNom": "Fosso della",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23128/Paternale.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Lazio",
+      "departement": "Viterbo",
+      "communePrincipale": "Ischia di Castro",
+      "communes": [
+        "Farnese",
+        "Ischia di Castro"
+      ],
+      "massif": null,
+      "bassin": "Fiora",
+      "coursEau": "Rio Strozzavolpe"
+    },
+    "rating": {
+      "cotation": "v2a3III",
+      "interet": 1.0,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 215,
+      "deniveleM": 120,
+      "longueurM": 4000,
+      "cascadeMaxM": 7,
+      "cordeMiniM": 15,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "3h30",
+      "retour": "50min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": "Marche. A la fin 2 rappels facultatifs (5m, 7m).",
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23128,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.517963,
+        "longitude": 11.663228,
+        "label": null
+      },
+      {
+        "canyonId": 23128,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.507099,
+        "longitude": 11.626664,
+        "label": "au-dessus de la cascade à droite ou au-dessous de la cascade à gauche"
+      },
+      {
+        "canyonId": 23128,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 42.501316,
+        "longitude": 11.636701,
+        "label": "pour navette"
+      },
+      {
+        "canyonId": 23128,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 42.518021,
+        "longitude": 11.663142,
+        "label": null
+      },
+      {
+        "canyonId": 23128,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 42.506432,
+        "longitude": 11.630043,
+        "label": "retour vers parking aval"
+      },
+      {
+        "canyonId": 23128,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 42.508732,
+        "longitude": 11.6294,
+        "label": "1 : retour au rive droite"
+      },
+      {
+        "canyonId": 23128,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 42.512444,
+        "longitude": 11.634946,
+        "label": "2 : retour par la piste"
+      },
+      {
+        "canyonId": 23128,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 42.517769,
+        "longitude": 11.64722,
+        "label": "3 : retour, ensuite traverser Prades ou prendre la SP116 et les pistes."
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 42.501316,
+      "longitude": 11.636701,
+      "label": "pour navette"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_f256aed40df16879",
+          "kind": "MAP",
+          "title": "136-IV-SE Ponte S. Pietro (Instituto Geografico Militare Italiano (IGMI))",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_6f5495e350ceab9b",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.youtube.com/watch?v=b69tDd558UY",
+          "url": "http://www.youtube.com/watch?v=b69tDd558UY"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

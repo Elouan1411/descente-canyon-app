@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:47:46.888939+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21001,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21001/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21001/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21001/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21001/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21001,
+    "identity": {
+      "nom": "Lodrino (supérieur)",
+      "nomComplet": "Val Lodrino (supérieur), Lodrino",
+      "prefixeNom": "Val",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21001/Lodrino-superieur.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Riviera",
+      "departement": "Tessin",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": "Ticino",
+      "coursEau": "Lodrino"
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.9,
+      "nbVotes": 15
+    },
+    "metrics": {
+      "altitudeDepartM": 1142,
+      "deniveleM": 490,
+      "longueurM": 3200,
+      "cascadeMaxM": 45,
+      "cordeMiniM": 45,
+      "navette": "6.0km"
+    },
+    "timings": {
+      "approche": "1h30",
+      "descente": "4h30",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": "est payant. Il est impératif d'acheter un ticket pour monter. Ca coûte 10 CHF. Le distributeur se trouve au village de Lodrino à la caserne des pompiers, via Vetreria, (à droite avant le cours d'eau en remontant la route vers le nord). Le distributeur accepte des pièces de 10 centimes à 2 CHF maxi. A noter que le ticket est valable 24h. Il est aussi valable pour l'accès au canyon de Lodrino. A coupler intelligemment avec Iragna Sup (même route d'accès) car coupon valable 24H.\n\nATTENTION, sur le parking amont, il est important de respecter l'emplacement de la drop-zone pour l'hélicoptère des secours.",
+      "approche": "Avec navette : on remonte le chemin sur la crête juste au dessus du parking. Rapidement, on prend le chemin à gauche puis on continue le chemin pour rejoindre le pont qui traverse Lodrino. (20min du parking). On continue sur le GR jusqu'à arriver à une autre ravine. On continue encore jusqu'à apercevoir un pont qui traverse Lodrino (départ de la partie sup).",
+      "descente": "Très belle descente, gorge très ouverte, quelques marches dans les blocs.\n\nBeaucoup de monopoints même dans les 40m.",
+      "retour": "ON sort à la partie avant la partie intermédiaire en RD (cairn).",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "De longues marches entrecoupés de passages parfois trés resserés dans un milieu assez ouvert et sauvage. L'intégral du Lodrino est une course hors norme !"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21001,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.274097,
+        "longitude": 8.940439,
+        "label": null
+      },
+      {
+        "canyonId": 21001,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.293823,
+        "longitude": 8.962142,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 46.274097,
+      "longitude": 8.940439,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_32104c8d93e1fde1",
+          "kind": "MAP",
+          "title": "1293 Osogna (Carte Nationale Suisse)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_1aaa7d97939ca873",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.swisscanyon.ch/canyons/descrittivi/lodrino-sup.htm",
+          "url": "http://www.swisscanyon.ch/canyons/descrittivi/lodrino-sup.htm"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

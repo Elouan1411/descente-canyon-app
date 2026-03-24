@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:45:39.524372+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2475,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2475/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2475/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2475/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2475/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2475,
+    "identity": {
+      "nom": "Valette",
+      "nomComplet": "Torrent de la Valette",
+      "prefixeNom": "Torrent de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2475/Valette.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Hautes-Alpes",
+      "communePrincipale": "Eygliers",
+      "communes": [
+        "Eygliers"
+      ],
+      "massif": "Queyras",
+      "bassin": "Guil",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2IV",
+      "interet": 1.9,
+      "nbVotes": 14
+    },
+    "metrics": {
+      "altitudeDepartM": 1510,
+      "deniveleM": 430,
+      "longueurM": 1600,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h35",
+      "descente": "3h",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "Remonter la Vallée du Queyras jusqu'à La Maison du Roy. Franchir le Guil au niveau de la retenue d'eau et se garer juste après le pont.",
+      "accesAmont": null,
+      "approche": "A partir du pont sur le Guil, suivre le sentier bien tracé (indications pour Gros - Furfande) qui monte jusqu'à rejoindre une piste carrossable après une bonne quarantaine de minutes. La suivre vers la droite jusqu'à son extrémité (parking pour la navette), dénivelée: 550m. Puis continuer le large sentier qui descend jusqu'à croiser le cours d'eau, au niveau du reste du pont arraché par une crue il y a quelques années.",
+      "descente": "Quelques cascades entrecoupées de marche dans un cadre sauvage et une belle ambiance montagne.",
+      "retour": "Retour jusqu'à la voiture en redescendant à droite par la route.",
+      "engagement": "Fort, les échappatoires sont quasiment inexistants.",
+      "periode": "A faire à la fonte des neiges pour profiter d'un bon débit, ou après une période de pluie. Le niveau est visible à l'arrivée du torrent. Au mois d'août il n'y a quasiment plus d'eau.",
+      "geologie": "Calcaire.",
+      "historique": "1ère descente et équipement : Corinne et Max Imbert.",
+      "remarques": "La descente serait plus intéressante s'il n'y avait pas autant de marche entre les obstacle et en particulier les belles cascades finales.\n\nLe canyon est peu parcouru et l'équipement souffre régulièrement des crues et des chutes de pierres, le matériel de rééquipement est plus que conseillé...\n\nAvec navette: parking aval: à la sortie du canyon. Parking amont: revenir vers Guillestre, contourner Mont Dauphin, monter pour Eygliers. Continuer à monter pour le hameau: Gros, qu'on laisse à droite, poursuivre droit par une bonne piste jusqu'au terminus (pylône), Alt: 1586m. 20 kms."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2475,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.692501,
+        "longitude": 6.686667,
+        "label": null
+      },
+      {
+        "canyonId": 2475,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.686943,
+        "longitude": 6.698333,
+        "label": null
+      },
+      {
+        "canyonId": 2475,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.686668,
+        "longitude": 6.698333,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.686668,
+      "longitude": 6.698333,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_0062918c2f446d19",
+          "kind": "TOPOGUIDE",
+          "title": "Les canyons des Hautes-Alpes",
+          "authors": [
+            "Henri VINCENS"
+          ],
+          "publicationYear": 2007,
+          "reference": "9782952944502",
+          "editor": "auto-édition",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/12/Canyons-des-Hautes-Alpes.html"
+        },
+        {
+          "id": "biblio_2b1a799bf16617f5",
+          "kind": "TOPOGUIDE",
+          "title": "Les Canyons du Haut Val Durance",
+          "authors": [
+            "Henri Vincens"
+          ],
+          "publicationYear": null,
+          "reference": null,
+          "editor": null,
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/120/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_a317eb6118143790",
+          "kind": "MAP",
+          "title": "3537 ET Guillestre (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_4cf24c4111428730",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://alpes-guide.com/sources/topo/fiche.asp?pitineraire=266",
+          "url": "http://alpes-guide.com/sources/topo/fiche.asp?pitineraire=266"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

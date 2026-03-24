@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:27.748256+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23886,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23886/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23886/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23886/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23886/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23886,
+    "identity": {
+      "nom": "Hongrin",
+      "nomComplet": "Hongrin",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23886/Hongrin.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Château-d'Oex",
+      "departement": "Vaud",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Préalpes vaudoises",
+      "bassin": "La Sarine - Saane",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a3II",
+      "interet": 1.7,
+      "nbVotes": 5
+    },
+    "metrics": {
+      "altitudeDepartM": 1325,
+      "deniveleM": 50,
+      "longueurM": 500,
+      "cascadeMaxM": 5,
+      "cordeMiniM": 15,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "1h",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "Depuis Aigle, prendre la direction Châteaux-d'Oex.\n\nDans la commune de la Lécherette, suivre la direction (panneau) Hongrin.\n\nContinuer sur la route de la caserne militaire.\n\nPossibilité de se garer 200m après avant un panneau interdiction de circuler.",
+      "accesAmont": null,
+      "approche": "Depuis là, vous allez entendre la rivière de l'Hongrin.\n\nVous êtes à 150 m de la rivière en RG.\n\nTraverser comme possible la forêt pour arriver dans le canyon.",
+      "descente": "Un canyon horizontal, plutôt large, bordé de sapins.\n\nUne descente ludique avec des mouvements d'eau intéressants.",
+      "retour": "Sortir RG, 50m après le trou dans le chaos de bloc (siphon).\n\nMonter comme possible droit dans la forêt sur une centaine de mètres pour rejoindre une route qui vous ramène en 10 min à la voiture.",
+      "engagement": "Plusieurs échappatoires possibles en RG.",
+      "periode": "L'Hongrin prend sa source au lac Lioson 1848m. Régime Nival.\n\nLa surface du bassin versant naturel de l'Hongrin est de 81,8km2",
+      "geologie": null,
+      "historique": "En aval du canyon à 1255m d'altitude le lac artificiel de l'Hongrin, retenu par un barrage créé en 1969.\n\nLes installations hydroélectriques du barrage d'Hongrin fonctionnent par pompage-turbinage avec les eaux du Léman.",
+      "remarques": "Affluent sur le parcours."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23886,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.421452,
+        "longitude": 7.08979,
+        "label": null
+      },
+      {
+        "canyonId": 23886,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.420959,
+        "longitude": 7.08858,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.420959,
+      "longitude": 7.08858,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_f30d4f4b8c669194",
+          "kind": "MAP",
+          "title": "1265 Les Mosses (Carte Nationale Suisse)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

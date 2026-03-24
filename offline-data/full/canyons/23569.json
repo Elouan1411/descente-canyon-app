@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:16.497658+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23569,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23569/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23569/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23569/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23569/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23569,
+    "identity": {
+      "nom": "Fourchette",
+      "nomComplet": "Ruisseau de la Fourchette",
+      "prefixeNom": "Ruisseau de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23569/Fourchette.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Isère",
+      "communePrincipale": "Barraux",
+      "communes": [
+        "Chapareillan",
+        "Barraux"
+      ],
+      "massif": "Chartreuse",
+      "bassin": "Isère",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a1I",
+      "interet": 0.6,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 750,
+      "deniveleM": 50,
+      "longueurM": 100,
+      "cascadeMaxM": 40,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "15min",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": "Se garer dans le hameau de Saint-Marcel d'en bas (commune de Chapareillan) au mieux sans gêner.",
+      "accesAmont": null,
+      "approche": "Rejoindre le ruisseau par le chemin de rando balisé. Progresser au mieux dans le lit du ruisseau jusqu'au premier obstacle.",
+      "descente": "Une première cascade légèrement sculptée d'environ 15m (à équiper sur AN) suivie d'une seconde de 40m (AN très en retrait). Cette dernière est fractionnée au niveau de la micro vasque suspendue (deux spits) qui la divisent en 15m+25m.",
+      "retour": "Suivre le chemin marqué sur IGN qui ramène dans le hameau par la rive gauche ; ou couper en mode sanglier en suivant la dernière barre rocheuse en rive gauche (sans garantie d'aller plus vite)",
+      "engagement": "Parcours très court",
+      "periode": "Très rarement en eau. A faire à la fonte des neiges après une tempête tropicale",
+      "geologie": null,
+      "historique": "Descente probablement effectuée sur AN à la même période que les parcours voisins",
+      "remarques": "Le parcours débute sous un entrepôt agricole, et le ruisseau sert à évacuer les carcasses de nombreux moutons (on compte une quinzaine de cranes)"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23569,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.451706,
+        "longitude": 5.965056,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.451706,
+      "longitude": 5.965056,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_07737b47737fa6b4",
+          "kind": "MAP",
+          "title": "3333 OT Massif de la Chartreuse Nord (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

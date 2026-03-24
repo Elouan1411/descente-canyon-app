@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:58.566575+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23752,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23752/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23752/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23752/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23752/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/23752/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 23752,
+    "identity": {
+      "nom": "Cargols",
+      "nomComplet": "Torrent dels Cargols, Clot de Caragols",
+      "prefixeNom": "Torrent dels",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23752/Cargols.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Cataluña",
+      "departement": "Barcelona",
+      "communePrincipale": "El Bruc",
+      "communes": [
+        "El Bruc"
+      ],
+      "massif": "Montserrat",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a1II",
+      "interet": 1.1,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 920,
+      "deniveleM": 300,
+      "longueurM": 750,
+      "cascadeMaxM": 40,
+      "cordeMiniM": 45,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h30",
+      "descente": "1h-1h30",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": "Même parking que le Torrente de Lloro.",
+      "accesAmont": null,
+      "approche": "L'accès est le même que celui du Torrent Lloro. Lorsqu'on arrive en haut de celui-ci, on prendra à gauche sur le chemin del Pas de Princep/coll de Porc(Port) en direction du refuge Vicenç Barbé. On passe un premier petit vallon puis on s'arrètera au suivant. Un cairn indique l'entrée.",
+      "descente": "Quelques petits rappels avant d'accéder au dessus de la falaise finale, fermée par un chaos de blocs où on trouvera diverses possibilités de descente (dans le chaos ou par une main-courante, en dehors permettant un grand rappel). On continue après celui-ci pour rejoindre le \"collecteur\" de Clot de Tambor.",
+      "retour": "Même chemin qu'à l'aller depuis Clot de Tambor/Grutes",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23752,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 41.600143,
+        "longitude": 1.7881,
+        "label": null
+      },
+      {
+        "canyonId": 23752,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 41.592201,
+        "longitude": 1.780378,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 41.592201,
+      "longitude": 1.780378,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_3808617980b46492",
+          "kind": "MAP",
+          "title": "N°2 Oest Caminant a Montserrat El Massis (Guia d'itineraris. Publication de l'Abadia de Montserrat. Ramon Ribera-Marine)",
+          "scale": "1/7500",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 509,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté (Catalunya) - 12 juin 2008",
+          "summary": "L'accord sur la réglementation de l'escalade, des via ferratas et des canaux équipés de la Montagne de Montserrat permet uniquement le parcours des descentes citées dans l'article 8, soit :\n\n- Canal del Pou de Glaç\n\n- Torrent de Santa María (ou de Vallmala) : seulement la partie basse, depuis la gare de funiculaire de la Santa Cova jusqu'à la route de Collbato (B-112)\n\n- Torrent Fondo (seulement jusqu'au chemin de les Feixades ou GR 5)\n\n- Torrent de Santa Caterina et Torrent de la Font Seca\n\n- El Joc de l'Oca (ou Can Jorba)\n\n- Tres en Raya (ou Tres en Ratlla)\n\n- Torrent de la Coma Alta (seulement la partie finale non incluse dans la zone d’intérêt environnemental maximal A3, cf. carte)\n\n- Clot dels Caragols\n\n- Torrent del Lloro - Trago",
+          "remark": null,
+          "details": "Réglementation de l'escalade, des via-ferratas et des canaux équipés (Parc Naturel de la Muntanya de Montserrat) du 12 juin 2008",
+          "effectiveDate": "12 juin 2008",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/509/legislation.html",
+          "attachments": [
+            {
+              "label": "Réglementation de l'escalade, des via-ferratas et des canaux équipés (Parc Naturel de la Muntanya de Montserrat) du 12 juin 2008",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem509_pj1.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

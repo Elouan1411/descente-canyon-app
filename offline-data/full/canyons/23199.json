@@ -1,0 +1,147 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:04.719371+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23199,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23199/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23199/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23199/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23199/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23199,
+    "identity": {
+      "nom": "Tschingelsbach",
+      "nomComplet": "Tschingelsbach, Tschenglsbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23199/Tschingelsbach.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Tyrol",
+      "departement": "Landeck",
+      "communePrincipale": "Pfunds",
+      "communes": [
+        "Pfunds"
+      ],
+      "massif": "Ötztaler",
+      "bassin": "Inn",
+      "coursEau": "Tschingelsbach"
+    },
+    "rating": {
+      "cotation": "v4a3III",
+      "interet": 1.6,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1340,
+      "deniveleM": 330,
+      "longueurM": 650,
+      "cascadeMaxM": 35,
+      "cordeMiniM": 35,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "??",
+      "descente": "??",
+      "retour": "??"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23199,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.941555,
+        "longitude": 10.50499,
+        "label": "D 1 (1150 m alt.)"
+      },
+      {
+        "canyonId": 23199,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.940918,
+        "longitude": 10.508659,
+        "label": "D (1340 m alt.)"
+      },
+      {
+        "canyonId": 23199,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.942978,
+        "longitude": 10.504786,
+        "label": null
+      },
+      {
+        "canyonId": 23199,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 46.931034,
+        "longitude": 10.488017,
+        "label": "pour D"
+      },
+      {
+        "canyonId": 23199,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.943554,
+        "longitude": 10.50617,
+        "label": "pour D 2 = Parking aval pour D 1; ca. 200m avant Tschinglsbach"
+      },
+      {
+        "canyonId": 23199,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 46.937885,
+        "longitude": 10.500848,
+        "label": "1395 m alt. - prendre la piste forestière à gauche"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 46.931034,
+      "longitude": 10.488017,
+      "label": "pour D"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_bd219646e968c54c",
+          "kind": "MAP",
+          "title": "30/4 Ötztaler Alpen, Nauderer Berge (Alpenvereins (AV) Karte)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_3774043dcbe69f3a",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.alpinesicherheit.com/canyonin...../tschingelsbach.html",
+          "url": "http://www.alpinesicherheit.com/canyonin...../tschingelsbach.html"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

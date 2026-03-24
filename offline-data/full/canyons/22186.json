@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:08.711804+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22186,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22186/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22186/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22186/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22186/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22186,
+    "identity": {
+      "nom": "Seinsbach",
+      "nomComplet": "Seinsbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22186/Seinsbach.html"
+    },
+    "location": {
+      "pays": "Allemagne",
+      "region": "Bayern",
+      "departement": "Oberbayern",
+      "communePrincipale": "Mittenwald",
+      "communes": [
+        "Landkreis Garmisch-Partenkirchen",
+        "Krün",
+        "Mittenwald"
+      ],
+      "massif": "Karwendel",
+      "bassin": "Isar",
+      "coursEau": "Seinsbach"
+    },
+    "rating": {
+      "cotation": "v5a4III",
+      "interet": 1.7,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1040,
+      "deniveleM": 60,
+      "longueurM": 400,
+      "cascadeMaxM": 35,
+      "cordeMiniM": 40,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h10min",
+      "descente": "45min",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "Comme Seinsbachklamm: De Garmisch-Partenkirchen par la B2 direction Mittenwald jusqu'au Camping Isarhorn (1,3 km avant Mittenwald)Avant le pont à gauche et encore à gauche. Après 200m, garer la voiture à droite devant le panneau d'interdiction.",
+      "accesAmont": null,
+      "approche": "Suivre le chemin forestier vers l'Est, la Seinsbachklamm est maintenant à droite. Le prochain chemin forestier à droite (après environ 20min) jusqu'à la Seinsbach 980m\n\nPoursuivre la piste, après environ 200m à une chapelle, dans une angle aigu tourner à gauche. Devant la ferme prendre le sentier à droite vers le haut. On traverse un ruisseau après environ 15 Min et revenir sur un bord de pente. Une trace tourne vers 1120m à gauche.",
+      "descente": "Aprés quelques mètres nous arrivons à la cascade. Après la cascade marcher jusqu'à piste forestiere.",
+      "retour": "Sur la piste forestiere à droite et retour vers la voiture.\n\nPour la section supérieur, (seulement en complément du Seinsbachklamm) continuer à travers celle ci (1h15min).",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22186,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.472279,
+        "longitude": 11.298076,
+        "label": null
+      },
+      {
+        "canyonId": 22186,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.471561,
+        "longitude": 11.291263,
+        "label": "commence identiquement le Seinsbachklamm"
+      },
+      {
+        "canyonId": 22186,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.475014,
+        "longitude": 11.280813,
+        "label": null
+      },
+      {
+        "canyonId": 22186,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.472015,
+        "longitude": 11.297786,
+        "label": "la seule cascade"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.475014,
+      "longitude": 11.280813,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

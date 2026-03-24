@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:44:27.592309+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2189,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2189/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2189/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2189/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2189/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2189,
+    "identity": {
+      "nom": "Ochons",
+      "nomComplet": "Les Ochons, Nant du mort",
+      "prefixeNom": "Les",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2189/Ochons.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Ain",
+      "communePrincipale": "Giron",
+      "communes": [
+        "Échallon",
+        "Giron"
+      ],
+      "massif": "Jura",
+      "bassin": null,
+      "coursEau": "Nant du mort"
+    },
+    "rating": {
+      "cotation": "v3a1I",
+      "interet": 1.2,
+      "nbVotes": 7
+    },
+    "metrics": {
+      "altitudeDepartM": 900,
+      "deniveleM": 250,
+      "longueurM": null,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 30,
+      "navette": "7.0km"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "??",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "Aval : se garer à la Côte Druet (Echallon) ou essayer de descendre le chemin jusqu'à son terminus en direction de la scierie.",
+      "accesAmont": "Amont : à Giron, après 500m en direction de Belleydoux, se garer dans la deuxième épingle et repérer la piste forestière qui part à gauche.",
+      "approche": "Prendre le chemin forestier jusqu'à rejoindre le Nant du Mort sans trop perdre de dénivelé.",
+      "descente": "Franchir les quelques cascades jamais bien hautes (8m max), pas équipées mais il y a de nombreux arbres permettant la pose d'un rappel. Arrivé au pont, R5 à gauche puis R10. La descente se termine par une R30 (rappel à gauche sur l'arbre).",
+      "retour": "Scierie à 10 min",
+      "engagement": "I. Échappatoires faciles présentes sur toutes les portions du parcours.",
+      "periode": "Absence d’eau ou marche en eau calme. A faire pendant ou après de grosses pluies sinon totalement sec.",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2189,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.229443,
+        "longitude": 5.760278,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.229443,
+      "longitude": 5.760278,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_c4f28cfc9b67c2f0",
+          "kind": "MAP",
+          "title": "3328 OT Cret de La Neige (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

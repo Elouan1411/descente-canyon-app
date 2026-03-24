@@ -1,0 +1,151 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:59:27.771874+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24174,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24174/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24174/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24174/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24174/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/24174/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 24174,
+    "identity": {
+      "nom": "Latreinbach",
+      "nomComplet": "Latreinbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24174/Latreinbach.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Tyrol",
+      "departement": "Kufstein",
+      "communePrincipale": "Wörgl",
+      "communes": [
+        "Wörgl"
+      ],
+      "massif": "Kitzbühler Alpen",
+      "bassin": "Inn",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2IV",
+      "interet": 1.2,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1050,
+      "deniveleM": 485,
+      "longueurM": 1600,
+      "cascadeMaxM": 27,
+      "cordeMiniM": 30,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "1h40min",
+      "descente": "4h45min",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "navette possible: 4,2 km",
+      "accesAmont": null,
+      "approche": "sans navette. 40min jusqu'à E2\n\navec navette: 1h jusqu'à E1, 15min jusqu'à E2",
+      "descente": "3h partie sup. + 1h45min partie inf.",
+      "retour": null,
+      "engagement": null,
+      "periode": "bon après pluies",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24174,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.465141,
+        "longitude": 12.0631,
+        "label": "E1"
+      },
+      {
+        "canyonId": 24174,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.473221,
+        "longitude": 12.06223,
+        "label": "E2"
+      },
+      {
+        "canyonId": 24174,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 47.474621,
+        "longitude": 12.06889,
+        "label": "pour E1"
+      },
+      {
+        "canyonId": 24174,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 47.477749,
+        "longitude": 12.06005,
+        "label": "pour E1, Parking pour E2"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 47.474621,
+      "longitude": 12.06889,
+      "label": "pour E1"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_8226180747fc81e7",
+          "kind": "MAP",
+          "title": "34/1 Kitzbühler Alpen West (Alpenvereinskarte (AV))",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_08b80405b9a56b8f",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/Canyons/LatreinbachCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/Canyons/LatreinbachCanyon"
+        },
+        {
+          "id": "resource_ec35994fec5f9f24",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.alpinesicherheit.com/2018/lat.....g-schluchtenfuehrer/",
+          "url": "http://www.alpinesicherheit.com/2018/lat.....g-schluchtenfuehrer/"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 387,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Information",
+          "summary": "La pratique ne serait autorisée seulement que du 15 juin au 16 septembre, entre 10h et 16h.",
+          "remark": null,
+          "details": null,
+          "effectiveDate": null,
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/387/legislation.html",
+          "attachments": []
+        }
+      ]
+    }
+  }
+}

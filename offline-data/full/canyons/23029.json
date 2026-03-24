@@ -1,0 +1,139 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:21.500892+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23029,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23029/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23029/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23029/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23029/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23029,
+    "identity": {
+      "nom": "Dürrekopf",
+      "nomComplet": "Dürrekopf",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23029/Durrekopf.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Tyrol",
+      "departement": "Politischer Bezirk Reutte",
+      "communePrincipale": "Stanzach",
+      "communes": [
+        "Stanzach"
+      ],
+      "massif": "Lechtaler Alpen",
+      "bassin": "Lech",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a5III",
+      "interet": 2.0,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1250,
+      "deniveleM": 160,
+      "longueurM": 400,
+      "cascadeMaxM": 27,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h10min",
+      "descente": "1h30min",
+      "retour": "35min"
+    },
+    "topo": {
+      "accesAval": "Voir info sur le site internet en biblio.",
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": "Première descente réalisée le 06.10.93, par Jean-Philippe Cavalier, Cathy Caullier et Olivier Courtois.",
+      "remarques": "Attention au débit du Namloser Bach, qu'il faut traverser à la sortie du canyon!!"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23029,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.375511,
+        "longitude": 10.61657,
+        "label": null
+      },
+      {
+        "canyonId": 23029,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.37347,
+        "longitude": 10.614241,
+        "label": null
+      },
+      {
+        "canyonId": 23029,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.369633,
+        "longitude": 10.617916,
+        "label": null
+      },
+      {
+        "canyonId": 23029,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.370613,
+        "longitude": 10.620338,
+        "label": "Traversez Namloserbach (Bien verifier debit avant de faire le canyon!)"
+      },
+      {
+        "canyonId": 23029,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.374935,
+        "longitude": 10.617519,
+        "label": "Schretterhütte"
+      },
+      {
+        "canyonId": 23029,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.373528,
+        "longitude": 10.613713,
+        "label": "Sortie Namloser Bach à gauche vers le-haut (difficile)."
+      },
+      {
+        "canyonId": 23029,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.371246,
+        "longitude": 10.621226,
+        "label": "Bifurcation: prendre sente à gauche"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.369633,
+      "longitude": 10.617916,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

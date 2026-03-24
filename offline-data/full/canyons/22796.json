@@ -1,0 +1,155 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:54:23.855251+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22796,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22796/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22796/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22796/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22796/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22796,
+    "identity": {
+      "nom": "Bruckgraben",
+      "nomComplet": "Bruckgraben",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22796/Bruckgraben.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Styrie",
+      "departement": "Bezirk Liezen",
+      "communePrincipale": "Admont",
+      "communes": [
+        "Admont"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a3V",
+      "interet": 2.8,
+      "nbVotes": 6
+    },
+    "metrics": {
+      "altitudeDepartM": 880,
+      "deniveleM": 280,
+      "longueurM": 1200,
+      "cascadeMaxM": 26,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "2h",
+      "descente": "3h",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "En train : de Graz via Bruck a.d. Mur, aller en direction de Liezen jusqu'à Jonsbach (Gesäuse) ou\n\nEn voiture : de Graz via Sankt Michael aller endirection Admont jusqu'à Gstatterboden (commune Weng).",
+      "accesAmont": null,
+      "approche": "De Jonsbach station (Gare) faire 1 km en direction de l'est (piste). Ensuite prendre le sentier (bleu/blanc) vers nord et monter jusqu'à Brucksattel.\n\nDe la prendre une sente vers l'ouest et descendre dans le lit du Bruckgraben.",
+      "descente": "Succession de rappels dans quelques encaissements.",
+      "retour": "Nager dans l'Ènns jusqu'à la passerelle (ou 20 min à pied sur un sentier rive gauche).",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22796,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.595196,
+        "longitude": 14.581819,
+        "label": null
+      },
+      {
+        "canyonId": 22796,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.581966,
+        "longitude": 14.578171,
+        "label": null
+      },
+      {
+        "canyonId": 22796,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.581455,
+        "longitude": 14.595573,
+        "label": null
+      },
+      {
+        "canyonId": 22796,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.585991,
+        "longitude": 14.607353,
+        "label": "1 Départ. Prendre la piste à gauche (640m alt.) et ensuite la sente qui monte vers \"Kühgraben\" - (marques bleu/blanche)."
+      },
+      {
+        "canyonId": 22796,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.593979,
+        "longitude": 14.601903,
+        "label": "2 Fin de la piste forestière (Alt. 950m). Continuer le sentier qui monte."
+      },
+      {
+        "canyonId": 22796,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.595081,
+        "longitude": 14.593191,
+        "label": "3 Passer à \"Brucksattel\" (Alt. 1115m) et continuer en direction de l'ouest en descendant."
+      },
+      {
+        "canyonId": 22796,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.596413,
+        "longitude": 14.588642,
+        "label": "4 Passer le lit ouvert et sec d'un ravin (Bruckgraben ?) (Alt. 1040m) et continuer le ravin jusqu'à Bruckgraben."
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.581455,
+      "longitude": 14.595573,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_3a8ba2f2c753755b",
+          "kind": "MAP",
+          "title": "99 Rottenmann (ÖK 50)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_24191c763b0faf3e",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/C.....ic=BruckgrabenCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/C.....ic=BruckgrabenCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

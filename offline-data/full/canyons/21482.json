@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:49:34.567309+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21482,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21482/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21482/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21482/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21482/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21482,
+    "identity": {
+      "nom": "Pissa (inférieur)",
+      "nomComplet": "Ravine Pissa (inférieur), Pissa",
+      "prefixeNom": "Ravine",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21482/Pissa-inferieur.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Cilaos",
+      "departement": "La Réunion",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Cilaos",
+      "bassin": "Bras Rouge",
+      "coursEau": "Pissa"
+    },
+    "rating": {
+      "cotation": "v3a1II",
+      "interet": 1.2,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 1200,
+      "deniveleM": 200,
+      "longueurM": 200,
+      "cascadeMaxM": 28,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "45min",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": "De CILAOS, prendre la D242 en direction de l'ILET à CORDES. Se garer au pont de BRAS ROUGE sans gêner.",
+      "accesAmont": null,
+      "approche": "Du pont, remonter en direction de CILAOS sur 200m et prendre la première ravine qui descend à droite (elle passe sous un pont).",
+      "descente": "6 rappels de 8 à 25m sans temps mort, avec peu d'eau et une arrivée dans BRAS ROUGE.",
+      "retour": "Arrivée dans Bras Rouge, descendre sur 100m et prendre le sentier mal marqué rive droite juste avant le toboggan (escalade 2m, corde fixe). Suivre le sentier dans la forêt. Il débouche sur une ravine, monter alors tout droit.\n\nIl existe aussi une autre possibilité de sortie en remontant par le GR après avoir descendu Bras Rouge.",
+      "engagement": "Peu engagé.\n\nRisque de chutes de pierres.\n\nAttention au débit de BRAS ROUGE qu'il faudra traverser pour ressortir",
+      "periode": "Faible débit.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Très court et sans grand interrêt."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21482,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": -21.115833,
+        "longitude": 55.457779,
+        "label": null
+      },
+      {
+        "canyonId": 21482,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": -21.116388,
+        "longitude": 55.45639,
+        "label": null
+      },
+      {
+        "canyonId": 21482,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": -21.115278,
+        "longitude": 55.4575,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": -21.115278,
+      "longitude": 55.4575,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_b239997245dc5eb0",
+          "kind": "MAP",
+          "title": "4405RT Saint-Pierre (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_462ef6278cbe0021",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.lrc-ffs.fr/Topos/Accueil/Cany.....esentationcanyon.htm",
+          "url": "http://www.lrc-ffs.fr/Topos/Accueil/Cany.....esentationcanyon.htm"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

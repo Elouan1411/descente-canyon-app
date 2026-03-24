@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:45:18.758541+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2385,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2385/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2385/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2385/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2385/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2385,
+    "identity": {
+      "nom": "Toulourenc",
+      "nomComplet": "Le Toulourenc, Combe Couranche, Gorges d'Aulan",
+      "prefixeNom": "Le",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2385/Toulourenc.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Drôme",
+      "communePrincipale": "Montbrun-les-Bains",
+      "communes": [
+        "Montbrun-les-Bains"
+      ],
+      "massif": "Drôme provençale",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v1a1I",
+      "interet": 1.5,
+      "nbVotes": 16
+    },
+    "metrics": {
+      "altitudeDepartM": 750,
+      "deniveleM": 90,
+      "longueurM": 1500,
+      "cascadeMaxM": 10,
+      "cordeMiniM": 10,
+      "navette": "1.5km"
+    },
+    "timings": {
+      "approche": "1mn",
+      "descente": "1h30-2h",
+      "retour": "2mn"
+    },
+    "topo": {
+      "accesAval": "de Montbrun-les-Bains prendre la direction du château d’Aulan. Garez vous avant le resserrement lorsque la vallée est encore large aprés le carrefour de Vergol.",
+      "accesAmont": "remontez les gorges. Garez-vous au niveau du pont qui traverse le Toulourenc ou plus haut au niveau du château.",
+      "approche": "Rejoignez le cours d'eau.",
+      "descente": "Du pont marchez 200m\n\n- C3 saut possible au milieu de la vasque (rebord)\n\n- M 150 m\n\n- C7, saut possible, testez bien la vasque dont le fond bouge selon les crues. Désescalade possible RG.\n\n- M 100m\n\n- Bief 30 m\n\n- M 100 m\n\n- C2+bief 20m\n\n- M\n\n- Toboggan : 10-15 m. Il se descend malgré le rebord et les bosses. Le prendre RG est finir doucement RD.\n\n- M 400m\n\n- Ressauts dans un petit encaissement. Un des ressauts se descend en toboggan.\n\n- M 150 m\n\n- Encaissement : T2, C2, T2. Comme, il y avait du débit nous n’avons pas pu tester si le dernier toboggan passait bien.\n\n- Rejoindre les voitures en s’amusant dans les multiples vasques.",
+      "retour": null,
+      "engagement": "Randonnée aquatique. Il est quasiment possible de rejoindre la route tout le long de la descente.",
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "Jolie petite descente d'aprés-midi aves les enfants. La corde n'est pas obligatoire. Possibilité de sauter des rochers à 4-5 mètres de haut, parcours génial pour des non-initiés au canyoning. Faîtes tout de même attention aux crues et aux sauts.\n\nAttention, la rivière est fréquentée par les baigneurs et les pêcheurs."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2385,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.218815,
+        "longitude": 5.427268,
+        "label": "Sous la voiture"
+      },
+      {
+        "canyonId": 2385,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.203835,
+        "longitude": 5.419564,
+        "label": "Le dernier obstacle interessant est un peu plus haut, mais c'est plus facile de sortir au niveau de la voiture"
+      },
+      {
+        "canyonId": 2385,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 44.218906,
+        "longitude": 5.427332,
+        "label": "Juste en aval du pont"
+      },
+      {
+        "canyonId": 2385,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 44.204037,
+        "longitude": 5.419586,
+        "label": "Sur le bord de la route"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 44.218906,
+      "longitude": 5.427332,
+      "label": "Juste en aval du pont"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_76c1acc5dfa57a75",
+          "kind": "MAP",
+          "title": "3240 OT Banon - Sault - Plateau de St-Christol (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

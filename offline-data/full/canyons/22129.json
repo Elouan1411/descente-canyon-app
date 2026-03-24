@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:56.307431+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22129,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22129/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22129/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22129/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22129/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22129,
+    "identity": {
+      "nom": "Lassingbach",
+      "nomComplet": "Lassingbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22129/Lassingbach.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Basse-Autriche",
+      "departement": "Bezirk Lilienfeld",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 2.3,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 790,
+      "deniveleM": 170,
+      "longueurM": null,
+      "cascadeMaxM": null,
+      "cordeMiniM": 40,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "30-45min",
+      "descente": "1h- 1h15",
+      "retour": "1h-1h15"
+    },
+    "topo": {
+      "accesAval": "Des autoroutes prenez la direction de Mariazell. Si vous venez du sud continuez vers Annaberg. Dans le village de Wienerbruck tourez à gauche vers Banhof et Ötschergräben. Ne partez pas à droite vers la gare mais continuez tout droit. Dépassez l’aire d’activité sportive t garez vous près du barrage sur les zones autorisées.",
+      "accesAmont": null,
+      "approche": "Allez vers le barrage et à gauche suivez le chemin pour Lassingfall après avoir payé son dû (Petite boite). Le chemin est très bien aménagé. Avant le pont qui passe RG vous apercevez les premières vasques et une cascade RG. Vous pouvez entrez à ce niveau ou accéder aux cascades affluentes de Kienbach. Pour cela passez par le pont RG. Suivez une toute petite sente qui monte en sanglier (Grade II) et passe au dessus des cascades.",
+      "descente": "Les cascades de Kienbach ne sont équipés que par des anneaux de cordes. On arrive sur une grande piscine où l’on peut sauter. On arrive à la grande cascade dont une vasque qui peut se sauter. En bas on entame une marche dans les blocs qui se terminent par de petits obstacles dont une vasque qui se saute.",
+      "retour": "Sortez au pont au niveau de la centrale électrique et remontez le chemin de gauche.",
+      "engagement": "Canyon peu encaissé.",
+      "periode": "Le niveau est vite faible. Présence d’un barrage en amont.",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22129,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.848869,
+        "longitude": 15.29909,
+        "label": null
+      },
+      {
+        "canyonId": 22129,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.850147,
+        "longitude": 15.296166,
+        "label": null
+      },
+      {
+        "canyonId": 22129,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.855473,
+        "longitude": 15.306358,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.855473,
+      "longitude": 15.306358,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_7d5ce425f0e23a8c",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/Canyons/LassingfallCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/Canyons/LassingfallCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

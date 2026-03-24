@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:59:15.845718+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24116,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24116/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24116/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24116/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24116/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24116,
+    "identity": {
+      "nom": "Monja",
+      "nomComplet": "Barranco de la Monja, Las Lajas",
+      "prefixeNom": "Barranco de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24116/Monja.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Canarias",
+      "departement": "Santa Cruz de Tenerife",
+      "communePrincipale": "Buenavista del Norte",
+      "communes": [
+        "Buenavista del Norte"
+      ],
+      "massif": "Teno",
+      "bassin": null,
+      "coursEau": "Las Lajas"
+    },
+    "rating": {
+      "cotation": "v7a5V",
+      "interet": 2.1,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 515,
+      "deniveleM": 515,
+      "longueurM": 850,
+      "cascadeMaxM": 300,
+      "cordeMiniM": null,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "25min",
+      "descente": "5h",
+      "retour": "variable"
+    },
+    "topo": {
+      "accesAval": "A Teno Alto, prendre la première piste à droite pour prendre la petite route de La Mulata, puis à gauche et se garer plus ensuite vers un corral (vaches). 2kms environ du croisement de Teno.",
+      "accesAmont": null,
+      "approche": "Du corral, continuez le long du chemin de terre vers la droite, puis dans une déviation vers la gauche. Puis marcher à vue à travers les collines pour atteindre le départ du barranco.",
+      "descente": "C'est le canyon le plus extrême de Tenerife. Début très varié, avec des rappels moyens et de belles formations. La fin est une cascade de 300 mètres avec un palier intermédiaire.\n\nAu total, il y a 14 rappels. La grande cascade fractionnée en 6 sections: 46m + 50m + 60m + 16m et après le grand palier 40m + 82m.\n\nVous devez faire un pendule de 6 mètres dans le premier rappel de la grande cascade, à gauche orographique, le rappel suivant un pendule de 3 mètres vers la droite.",
+      "retour": "Il n'y a pas de sortie terrestre possible. Il est impératif que quelqu'un vienne en bateau vous chercher : il faut d'abord réserver un bateau.\n\nIl existe 3 options de retour différentes : Punta de Teno, Buenavista del Norte o Puerto de los Gigantes.\n\nA5 pour la partie de nager dans la mer jusqu'au bateau. A1 pour le canyon.",
+      "engagement": "Extrême",
+      "periode": "Sec. Toute l'année",
+      "geologie": "Volcanique.",
+      "historique": null,
+      "remarques": "- Canyon très technique. Frottements agressifs pour les cordes.\n\n- Faire très attention à l'état de la mer : il faut qu'elle soit très calme pour pouvoir nager jusqu'au bateau. Bien prendre la météo marine et se mettre d'accord avec le capitaine du bateau.\n\n- Attention au vent fort lors du dernier rappel, risque d'emmêlement de la corde.\n\n- Bien vérifier la réglementation du parc de Teno"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24116,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 28.360624,
+        "longitude": -16.88689,
+        "label": null
+      },
+      {
+        "canyonId": 24116,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 28.364845,
+        "longitude": -16.887201,
+        "label": null
+      },
+      {
+        "canyonId": 24116,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 28.352997,
+        "longitude": -16.886742,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 28.352997,
+      "longitude": -16.886742,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_1a8176c9c53027a3",
+          "kind": "MAP",
+          "title": "1091-I Buenavista del Norte (Institu Geographic Nacional)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_16e89ce947bf3918",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.wildcanarias.com/la-monja-tenerife/",
+          "url": "http://www.wildcanarias.com/la-monja-tenerife/"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

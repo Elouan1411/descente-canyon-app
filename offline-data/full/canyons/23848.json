@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:18.813323+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23848,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23848/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23848/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23848/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23848/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23848,
+    "identity": {
+      "nom": "Loobigtal",
+      "nomComplet": "Loobigtal",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23848/Loobigtal.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Tyrol",
+      "departement": "Politischer Bezirk Reutte",
+      "communePrincipale": "Bach",
+      "communes": [
+        "Bach"
+      ],
+      "massif": "Lechtaler Alpen",
+      "bassin": "Lech",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": null,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": 1450,
+      "deniveleM": 320,
+      "longueurM": 650,
+      "cascadeMaxM": 55,
+      "cordeMiniM": 60,
+      "navette": "2.6km"
+    },
+    "timings": {
+      "approche": "1h",
+      "descente": "4h",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": "Première descente réalisée le 09.10.93 par Jean-Philippe Cavalier, Cathy Caullier, Olivier Courtois.",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23848,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.253948,
+        "longitude": 10.41935,
+        "label": null
+      },
+      {
+        "canyonId": 23848,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.250408,
+        "longitude": 10.41467,
+        "label": null
+      },
+      {
+        "canyonId": 23848,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 47.263252,
+        "longitude": 10.406186,
+        "label": "pour approche ou 1 voiture seulement"
+      },
+      {
+        "canyonId": 23848,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 47.262913,
+        "longitude": 10.405553,
+        "label": null
+      },
+      {
+        "canyonId": 23848,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 47.25164,
+        "longitude": 10.41132,
+        "label": "parking aval variante"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 47.263252,
+      "longitude": 10.406186,
+      "label": "pour approche ou 1 voiture seulement"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_3f375dd2b26ea036",
+          "kind": "MAP",
+          "title": "3/3 Lechtaler Alpen - Parseierspitze (Alpenvereins (AV) Karte)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_7e8d0cef6c245c8b",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.aventurecanyon.com/loobigtal-description.html",
+          "url": "http://www.aventurecanyon.com/loobigtal-description.html"
+        },
+        {
+          "id": "resource_c60d0407c25f60f3",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/Canyons/LoobigtalCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/Canyons/LoobigtalCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

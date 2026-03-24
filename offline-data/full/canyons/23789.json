@@ -1,0 +1,138 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:06.373672+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23789,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23789/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23789/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23789/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23789/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23789,
+    "identity": {
+      "nom": "Anfela",
+      "nomComplet": "Valle Anfela, Val Anfela",
+      "prefixeNom": "Valle",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23789/Anfela.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Vénétie",
+      "departement": "Belluno",
+      "communePrincipale": "Pieve di Cadore",
+      "communes": [
+        "Pieve di Cadore"
+      ],
+      "massif": "Dolomiti di Sinistra Piave",
+      "bassin": "Piave",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a4IV",
+      "interet": 2.2,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 1150,
+      "deniveleM": 450,
+      "longueurM": 1800,
+      "cascadeMaxM": 26,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h20min",
+      "descente": "4h",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": "Hauptdolomit",
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23789,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.413582,
+        "longitude": 12.40767,
+        "label": null
+      },
+      {
+        "canyonId": 23789,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.426041,
+        "longitude": 12.39352,
+        "label": null
+      },
+      {
+        "canyonId": 23789,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 46.416031,
+        "longitude": 12.3921,
+        "label": null
+      },
+      {
+        "canyonId": 23789,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 46.425941,
+        "longitude": 12.39255,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 46.416031,
+      "longitude": 12.3921,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_8fb1574b05a5ff89",
+          "kind": "MAP",
+          "title": "016 Dolomiti del Centro Cadore (Tabacco)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_47f694dac48f40cb",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/Canyons/AnfelaCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/Canyons/AnfelaCanyon"
+        },
+        {
+          "id": "resource_d05686df68802bf6",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://catastoforre.aic-canyoning.it/ind.....ETO/pro/BL/cod/BL066",
+          "url": "http://catastoforre.aic-canyoning.it/ind.....ETO/pro/BL/cod/BL066"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

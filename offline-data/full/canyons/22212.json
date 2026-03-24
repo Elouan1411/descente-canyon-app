@@ -1,0 +1,139 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:14.118852+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22212,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22212/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22212/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22212/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22212/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22212,
+    "identity": {
+      "nom": "Etry",
+      "nomComplet": "Ravin d' Etry",
+      "prefixeNom": "Ravin d'",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22212/Etry.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Haute-Savoie",
+      "communePrincipale": "Verchaix",
+      "communes": [
+        "Verchaix"
+      ],
+      "massif": "Giffre",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 1.1,
+      "nbVotes": 5
+    },
+    "metrics": {
+      "altitudeDepartM": 1000,
+      "deniveleM": 300,
+      "longueurM": 700,
+      "cascadeMaxM": 28,
+      "cordeMiniM": 35,
+      "navette": "6.0km"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "3h",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": "de Taninges, suivre la D907 direction Samoëns, avant d'arriver sur Verchaix, prendre l'avant dernière route à gauche (à la croix, avant Luche) avant son croisement avec le cours d'eau. Poursuivre et se garer à proximité du ruisseau.",
+      "accesAmont": "reprendre la D907 pour rejoindre Verchaix, dans le haut du village (à l'église) prendre 2 fois à gauche pour monter jusqu'au Pralliou.",
+      "approche": "A condition de trouver où se garer et en l'absence de travaux, un chemin forestier partant vers l'ouest mène rapidement au ruisseau.",
+      "descente": "Séries de cascades de faibles et moyennes hauteurs, sans difficultés, entrecoupées d'une marche à travers un nombre important d'embâcles et de tas de bois.\n\nla C 28 est très mal équipée (système alu artisanal planté dans un tuf délité). Le premier AN est placé loin en retrait.\n\nUne seule cascade, en période d'eau est visuellement appréciable",
+      "retour": null,
+      "engagement": "Aucun",
+      "periode": "Réalisé après une grosse période pluvieuse (Clévieux en crue), aucune difficulté aquatique.\n\nAucun aspect ludique, pas de nage.",
+      "geologie": null,
+      "historique": "1991 : Groupe Spéléo Gaillard",
+      "remarques": "Apres la C28, la C12 du topo semble plutôt être une C18."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22212,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.104027,
+        "longitude": 6.665583,
+        "label": "Départ partie basse"
+      },
+      {
+        "canyonId": 22212,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.105057,
+        "longitude": 6.666167,
+        "label": "Départ partie haute"
+      },
+      {
+        "canyonId": 22212,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.098999,
+        "longitude": 6.664083,
+        "label": null
+      },
+      {
+        "canyonId": 22212,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 46.10247,
+        "longitude": 6.665889,
+        "label": "parking secondaire"
+      },
+      {
+        "canyonId": 22212,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 46.103832,
+        "longitude": 6.667,
+        "label": "Parking haut"
+      },
+      {
+        "canyonId": 22212,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 46.098305,
+        "longitude": 6.663056,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 46.10247,
+      "longitude": 6.665889,
+      "label": "parking secondaire"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_15a6dbda97b38ace",
+          "kind": "MAP",
+          "title": "3530 ET Samoens - Haut-Giffre (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

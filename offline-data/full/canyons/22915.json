@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:54:53.621774+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22915,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22915/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22915/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22915/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22915/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22915,
+    "identity": {
+      "nom": "Haut-Alagnon",
+      "nomComplet": "Gorges du Haut-Alagnon, L'Alagnon",
+      "prefixeNom": "Gorges du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22915/Haut-Alagnon.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Cantal",
+      "communePrincipale": "Laveissière",
+      "communes": [
+        "Laveissière"
+      ],
+      "massif": "Monts du Cantal",
+      "bassin": "Alagnon",
+      "coursEau": "L'Alagnon"
+    },
+    "rating": {
+      "cotation": "v2a3III",
+      "interet": 1.5,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 1115,
+      "deniveleM": 135,
+      "longueurM": 1900,
+      "cascadeMaxM": 6,
+      "cordeMiniM": 15,
+      "navette": "1.5km"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "??",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": "Départ sous le pont de la route de la Maison du Buronnier.",
+      "accesAmont": null,
+      "approche": null,
+      "descente": "Rando aquatique agrémentée de 2 petits rappels, toboggans et petits sauts. Un peu long et glissant.",
+      "retour": null,
+      "engagement": "Gorge relativement large mais encaissée n'offrant guère d'échappatoire. Une sortie en via cordata existe néanmoins en RD à mi-parcours après le dernier rappel.",
+      "periode": "L'Alagnon est une rivière abondante en dehors de l'étiage, à débit permanent. Attendre l'étiage.",
+      "geologie": "Brèches volcaniques",
+      "historique": null,
+      "remarques": "Fréquenté en été par la compagnie des guides du Lioran."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22915,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.093929,
+        "longitude": 2.759435,
+        "label": null
+      },
+      {
+        "canyonId": 22915,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.105412,
+        "longitude": 2.771784,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 45.093929,
+      "longitude": 2.759435,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_daf9041e16b163a9",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons cantalous",
+          "authors": [
+            "Philippe VIETTE-COSTE"
+          ],
+          "publicationYear": 2018,
+          "reference": "97829563881-0-4",
+          "editor": "Auto-édition",
+          "status": "en stock\n\n- 14,00 € -\n\nCommandez cet ouvrage dès maintenant !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/1124/Canyons-cantalous.html"
+        },
+        {
+          "id": "biblio_0ada102a5dea7773",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons arvernes",
+          "authors": [
+            "Philippe Viette-Coste",
+            "Serge Navarro",
+            "Pierre-Marie Orblin"
+          ],
+          "publicationYear": 2012,
+          "reference": "978-2-7466-3647-7",
+          "editor": "auto-édition",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/165/Canyons-arvernes.html"
+        }
+      ],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

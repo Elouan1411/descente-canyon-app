@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:49:21.058702+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21424,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21424/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21424/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21424/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21424/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21424,
+    "identity": {
+      "nom": "Re",
+      "nomComplet": "Torrente Re",
+      "prefixeNom": "Torrente",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21424/Re.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Lombardia",
+      "departement": "Brescia",
+      "communePrincipale": "Comune di Anfo",
+      "communes": [
+        "Comune di Anfo"
+      ],
+      "massif": null,
+      "bassin": "Chiese",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 1.5,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 320,
+      "deniveleM": 120,
+      "longueurM": 500,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 25,
+      "navette": "2.5km"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "1h",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "De Brescia, prendre la direction du lac d'Idro par le val Sabbia (S337), dépasser la localité d'Idro et longer le lac jusqu'à Anfo. Se garer après avoir traversé le torrent sur un parking à droite (attention très exigu).\n\nAvec l'autre voiture, continuer sur la S237 et prendre à la sortie du village à gauche direction Passo del Maniva. Au bout de la troisième épingle, se garer à gauche dans le virage, peu avant une maison.",
+      "accesAmont": null,
+      "approche": "De la voiture, descendre directement par un sentier bien marqué jusqu'au torrent. On attaque la descente juste en dessous d'un barrage.",
+      "descente": "Court mais bel encaissement avec à la clé 4 cascades plus ou moins arrosées selon le débit. Quelques glissades sont possibles après vérification.",
+      "retour": "A la dernière vasque, sortir en rive droite, passer une porte en bois pour rentrer dans le village, retraverser le torrent sur un pont et regagner la voiture située plus loin à gauche.",
+      "engagement": "Faible engagement (faible longueur) mais petit canyon très encaissé. Peut-être des possibilités de dégagement en rive gauche.\n\nPeut convenir à une sortie d'initiation à condition que le débit soit correct.\n\nEntièrement rééquipé en 2006 sur scellements sauf une cascade à descendre sur arbre.",
+      "periode": "Attention, bassin-versant important. Le canyon met quelques jours à retrouver un débit correct.",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21424,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.766983,
+        "longitude": 10.486965,
+        "label": null
+      },
+      {
+        "canyonId": 21424,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.766537,
+        "longitude": 10.490549,
+        "label": null
+      },
+      {
+        "canyonId": 21424,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 45.768703,
+        "longitude": 10.488939,
+        "label": null
+      },
+      {
+        "canyonId": 21424,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 45.766506,
+        "longitude": 10.491343,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 45.768703,
+      "longitude": 10.488939,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_2ae5774461284b58",
+          "kind": "MAP",
+          "title": "102 Lago di Garda Monte Baldo (Kompass)",
+          "scale": "1:50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

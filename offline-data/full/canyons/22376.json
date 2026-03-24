@@ -1,0 +1,157 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:49.233194+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22376,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22376/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22376/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22376/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22376/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22376,
+    "identity": {
+      "nom": "Salvesenklamm - Hinteres Bachl",
+      "nomComplet": "Salvesenklamm - Hinteres Bachl",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22376/Salvesenklamm---Hinteres-Bachl.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Tyrol",
+      "departement": "Imst",
+      "communePrincipale": "Tarrenz",
+      "communes": [
+        "Tarrenz"
+      ],
+      "massif": "Lechtaler Alpen",
+      "bassin": "Inn",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2III",
+      "interet": 1.6,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1220,
+      "deniveleM": 370,
+      "longueurM": 2300,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h",
+      "descente": "3h30min",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22376,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.286419,
+        "longitude": 10.740187,
+        "label": null
+      },
+      {
+        "canyonId": 22376,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.269272,
+        "longitude": 10.753555,
+        "label": null
+      },
+      {
+        "canyonId": 22376,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.26815,
+        "longitude": 10.755197,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.26815,
+      "longitude": 10.755197,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_80a52b6e4b57f154",
+          "kind": "TOPOGUIDE",
+          "title": "Tiroler Canyoningführer - The Canyoning guide for Tyrol",
+          "authors": [
+            "Alexander Riml",
+            "Gunnar Amor"
+          ],
+          "publicationYear": 2012,
+          "reference": "978-3-200-02343-7",
+          "editor": null,
+          "status": "en stock\n\n- 44,90 € -\n\nCommandez cet ouvrage dès maintenant !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/170/Tiroler-Canyoningfuhrer---The-Canyoning-guide-for-Tyrol.html"
+        },
+        {
+          "id": "biblio_a216ca92fa29ca51",
+          "kind": "TOPOGUIDE",
+          "title": "Canyoning in Bayern und Tirol",
+          "authors": [
+            "Werner Baumgarten"
+          ],
+          "publicationYear": 2010,
+          "reference": null,
+          "editor": null,
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1226/topoguide.html"
+        },
+        {
+          "id": "biblio_62ea7c9c13b902fd",
+          "kind": "TOPOGUIDE",
+          "title": "146 Imst (ÖK 50) - 1:50000",
+          "authors": [],
+          "publicationYear": null,
+          "reference": null,
+          "editor": null,
+          "status": null,
+          "detailUrl": null
+        },
+        {
+          "id": "biblio_d4232c1ca7906fe7",
+          "kind": "TOPOGUIDE",
+          "title": "3/4 Lechtaler Alpen, Heiterwang - und Muttekopfgebiet (Alpenvereins (AV) Karte) - 1/25000",
+          "authors": [],
+          "publicationYear": null,
+          "reference": null,
+          "editor": null,
+          "status": null,
+          "detailUrl": null
+        }
+      ],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

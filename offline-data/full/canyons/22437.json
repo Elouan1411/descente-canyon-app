@@ -1,0 +1,143 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:01.007919+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22437,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22437/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22437/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22437/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22437/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22437,
+    "identity": {
+      "nom": "St Même",
+      "nomComplet": "Cascades de St Même, Le guiers vif",
+      "prefixeNom": "Cascades de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22437/St-Meme.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Savoie",
+      "communePrincipale": "Saint-Pierre-d'Entremont",
+      "communes": [
+        "Saint-Pierre-d'Entremont"
+      ],
+      "massif": "Chartreuse",
+      "bassin": null,
+      "coursEau": "Le guiers vif"
+    },
+    "rating": {
+      "cotation": "v3a1I",
+      "interet": 1.0,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 1100,
+      "deniveleM": 250,
+      "longueurM": 600,
+      "cascadeMaxM": 45,
+      "cordeMiniM": 50,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "45min",
+      "descente": "2h",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "De st Pierre d'Entremont, prendre la route du cirque de St Même. Se garer au bout de la route sur le parking.",
+      "accesAmont": null,
+      "approche": "Chemin bien balisé qui monte en RD, jusqu'au pas de Ruat et les sources du Guiers.",
+      "descente": "Première cascade au niveau des sources du Guiers d'une trentaine de mètre, une broche RD. Ensuite C30 avec relais RD derrière un bloc. Après la passerelle, plan incliné d'une cinquantaine de mètre, jusqu'au seuil de la C35 suivante. la dernière cascade est une C35, AN RG.",
+      "retour": "Suivre le ruisseau jusqu'au parking",
+      "engagement": "Engagement faible, échappatoire nombreux et possibilité de descendre hors d'eau.",
+      "periode": "En dehors des périodes de fontes.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Un péage est en place pour l'accès au cirque de St Même de mai a septembre (3€ par véhicule)"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22437,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.390675,
+        "longitude": 5.89158,
+        "label": null
+      },
+      {
+        "canyonId": 22437,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.394211,
+        "longitude": 5.891864,
+        "label": null
+      },
+      {
+        "canyonId": 22437,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.400875,
+        "longitude": 5.890517,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.400875,
+      "longitude": 5.890517,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_da30219dbb4dd176",
+          "kind": "TOPOGUIDE",
+          "title": "Les canyons de Savoie",
+          "authors": [
+            "Patrick Chollot"
+          ],
+          "publicationYear": 2018,
+          "reference": "978-2-95309-39-1-9",
+          "editor": "auto-édition",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/1125/Les-canyons-de-Savoie.html"
+        },
+        {
+          "id": "biblio_e7d94bb2f47393ab",
+          "kind": "TOPOGUIDE",
+          "title": "Cascades, Gorges & Canyons : Pré-alpes d'Isère et de Savoie",
+          "authors": [
+            "Bertrand Hauser",
+            "Delphine Baratin"
+          ],
+          "publicationYear": 2007,
+          "reference": "978-2-9529407-0-2",
+          "editor": "Descente-Canyon.com",
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/11/Cascades--Gorges-et-Canyons-:-Pre-alpes-d-Isere-et-de-Savoie.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_07737b47737fa6b4",
+          "kind": "MAP",
+          "title": "3333 OT Massif de la Chartreuse Nord (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:51.599264+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22665,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22665/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22665/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22665/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22665/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/22665/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 22665,
+    "identity": {
+      "nom": "Muntanya",
+      "nomComplet": "Torrent de Muntanya",
+      "prefixeNom": "Torrent de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22665/Muntanya.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Islas Baleares",
+      "departement": "Provincia de las Islas Baleares",
+      "communePrincipale": "Pollensa",
+      "communes": [
+        "Escorca",
+        "Pollensa"
+      ],
+      "massif": "Serra de Tramuntana",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1II",
+      "interet": 2.0,
+      "nbVotes": 6
+    },
+    "metrics": {
+      "altitudeDepartM": 360,
+      "deniveleM": 240,
+      "longueurM": 1600,
+      "cascadeMaxM": 15,
+      "cordeMiniM": 15,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h10",
+      "descente": "2h30",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "De Polenca, prendre la C710. Au kilomètre 5,3, prendre à gauche Vall d'en Marc. Après Son Marc, continuer la route (le camil Vell de Lluc) et se garer juste avant la propriété Can Melcion.",
+      "accesAmont": null,
+      "approche": "Suivre le GR 221 pendant 50 min. Puis au niveau du canyon: à l'altitude 440m, prendre un chemin sur la droite pour se diriger en suivant la courbe de niveau vers l'entrée du canyon (on passe à gauche d'une ferme avec des jardins en terrasse).",
+      "descente": "Beau canyon court pour l'initiation. Le paysage est très beau : calcaire découpé avec des formes étranges et marches sur des rochers sculptés par l'eau. Quelques beaux rappels faciles dont le plus grand ne fait que 15m.",
+      "retour": "Continuer le canyon en restant au maximum près de son lit, passer sous des barrières à bascule en fer qui sont dans le torrent. Sortir quand on est à 100m de la route (à l'altitude 130m) et rejoindre la voiture.",
+      "engagement": null,
+      "periode": "A faire après des pluies.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Multitude d'accès possibles."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22665,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 39.855133,
+        "longitude": 2.9293,
+        "label": null
+      },
+      {
+        "canyonId": 22665,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 39.861351,
+        "longitude": 2.946533,
+        "label": null
+      },
+      {
+        "canyonId": 22665,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 39.861118,
+        "longitude": 2.946767,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 39.861118,
+      "longitude": 2.946767,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 478,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Balearic Islands) - 11 avr 2007",
+          "summary": "Pour pratiquer le canyoning dans le Parc Naturel de la Serra de Tramuntana, il est nécessaire de demander une autorisation.\n\n- l'autorisation est soit individuelle soit peut être demandée pour un groupe par son représentant\n\n- l'autorisation est gratuite et valable jusqu'au 31 décembre de l'année de demande. Elle est renouvelable.\n\n- l’autorisation doit être en possession des canyonistes lors de la sortie\n\n- l'autorisation permet la pratique des canyons règlementés mais pas de ceux situés dans les éventuelles zones d'accès limité pour des raisons de conservation.\n\n- les demandes peuvent être formulées directement en ligne sur le site du gouvernement des Iles Baléares. Plus d'informations : https://www.caib.es/sites/espaisnaturalsprotegits/es/8_at_escalada_pn_tramontana/.\n\nAccès direct au formulaire de demande : https://www.caib.es/seucaib/es/200/persones%20/tramites/tramite/6283050/\n\n- il est également possible de faire la demande en se présentant physiquement à un bureau ou bien par courrier postal adressé à la \"Dirección General de Medio Natural y Gestión Forestal de la Consejería de Medio Ambiente y Territorio\". Plus d'informations sur https://montanaregulada.org/en/pages/como-solicitar-autorizacion-para-realizar-actividades-en-la-serra-de-tramuntana",
+          "remark": "Réglementation en référence : article 63 du \"Pla d'ordenació dels recursos naturals\" (PORN) de la Serra de Tramuntana (BOIB nº54 EXT, du 11 avril 2007). Consultable sur https://www.caib.es/sites/espaisnaturalsprotegits/es/n_paraje_natural_de_la_sierra_de_tramuntana/",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nListe des torrents interdits situés en zone d'exclusion (Govern de les Illes Balears)\n\nLimites du Parc Naturel de la Serra de Tramuntana\n\nFormulaire de demande d'autorisation pour le canyonisme ou l'escalade\n\nPla d'ordenació dels recursos naturals de la Serra de Tramuntana (Comunitat Autònoma Illes Balears) du 11 avril 2007 (extrait)\n\nListe des torrents interdits ou à période de pratique limitée pour raison de conservation (Govern de les Illes Balears) du 6 février 2020",
+          "effectiveDate": "11 avr 2007",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/478/legislation.html",
+          "attachments": [
+            {
+              "label": "Liste des torrents interdits situés en zone d'exclusion (Govern de les Illes Balears)",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem478_pj4.pdf"
+            },
+            {
+              "label": "Limites du Parc Naturel de la Serra de Tramuntana",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem478_pj1.pdf"
+            },
+            {
+              "label": "Formulaire de demande d'autorisation pour le canyonisme ou l'escalade",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem478_pj5.pdf"
+            },
+            {
+              "label": "Pla d'ordenació dels recursos naturals de la Serra de Tramuntana (Comunitat Autònoma Illes Balears) du 11 avril 2007 (extrait)",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem478_pj2.pdf"
+            },
+            {
+              "label": "Liste des torrents interdits ou à période de pratique limitée pour raison de conservation (Govern de les Illes Balears) du 6 février 2020",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem478_pj3.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:55.552113+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22685,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22685/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22685/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22685/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22685/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22685,
+    "identity": {
+      "nom": "Cretan",
+      "nomComplet": "Ruisseau de Cretan",
+      "prefixeNom": "Ruisseau de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22685/Cretan.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Savoie",
+      "communePrincipale": "Montailleur",
+      "communes": [
+        "Montailleur"
+      ],
+      "massif": "Bauges",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 1.0,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 750,
+      "deniveleM": null,
+      "longueurM": null,
+      "cascadeMaxM": 45,
+      "cordeMiniM": 50,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "35min",
+      "descente": "1h",
+      "retour": "??"
+    },
+    "topo": {
+      "accesAval": "Sur la D201 entre \"Grésy sur Isère\" et \"Frontenex\", prendre à gauche à \"Montailleur\" la route qui monte, puis à droite au croisement. Passer le \"Château\" et se garer au pont en face des cascades.",
+      "accesAmont": null,
+      "approche": "Revenir au \"Château\" via la route et emprunter une sente qui nous amène au départ du ruisseau vers l'altitude 750m (l'IGN peut être utile).",
+      "descente": "Descente sauvage sur arbres avec 2 jolies cascades.\n\nLa partie aval (sous le pont) est moins intéressante.",
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22685,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.625141,
+        "longitude": 6.274643,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.625141,
+      "longitude": 6.274643,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_24c652994d6d1609",
+          "kind": "MAP",
+          "title": "3432 OT Massif des Bauges (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_dd00287b45a53267",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://teckel73.free.fr/tmp/topos/toposup.pdf",
+          "url": "http://teckel73.free.fr/tmp/topos/toposup.pdf"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

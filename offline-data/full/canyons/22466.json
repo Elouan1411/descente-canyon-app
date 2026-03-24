@@ -1,0 +1,140 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:07.640208+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22466,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22466/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22466/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22466/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22466/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22466,
+    "identity": {
+      "nom": "Chaucisse",
+      "nomComplet": "Nant de Chaucisse",
+      "prefixeNom": "Nant de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22466/Chaucisse.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Savoie",
+      "communePrincipale": "Flumet",
+      "communes": [
+        "Saint-Nicolas-la-Chapelle",
+        "Flumet"
+      ],
+      "massif": "Bornes - Aravis",
+      "bassin": "Arly",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.0,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1278,
+      "deniveleM": 320,
+      "longueurM": 2700,
+      "cascadeMaxM": 15,
+      "cordeMiniM": 15,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "5h",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": "garez votre voiture vers le plan d'eau de Flumet vers le moulin, grand parking. Le Nant se jette dans l Arrondine.",
+      "accesAmont": null,
+      "approche": null,
+      "descente": "Le début et un peu long, peu de cascade,quelque gouilles après une bonne heure commence cascade sur cascades petites et grandes. Attention quand même au barrage de tronc.",
+      "retour": null,
+      "engagement": "Très peu échappatoire, au début vous pouvez remonter a Chaucisse quand vous allez passer vers un pont en bois (début de course). Mais après plus rien. S\n\nOn trouve une ligne électrique que l'on peut suivre jusqu'à la route prise pour monter a Chaucisse (non testé).",
+      "periode": "de bonnes gouilles sous les cascades",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22466,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.826286,
+        "longitude": 6.477985,
+        "label": null
+      },
+      {
+        "canyonId": 22466,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.81612,
+        "longitude": 6.488457,
+        "label": "possibilite de descendre ici pour rejoindre le nant de chaucisse"
+      },
+      {
+        "canyonId": 22466,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.822338,
+        "longitude": 6.508884,
+        "label": "descendre j usqu a arrive vers un chemin sur la droite ou possibilite de descendres la derniere cascade courant devier pour alimenter un moulin"
+      },
+      {
+        "canyonId": 22466,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 45.81588,
+        "longitude": 6.488371,
+        "label": null
+      },
+      {
+        "canyonId": 22466,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 45.826347,
+        "longitude": 6.477385,
+        "label": "2eme depart du nant de chaucisse"
+      },
+      {
+        "canyonId": 22466,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 45.822102,
+        "longitude": 6.509314,
+        "label": "descendre au plan d eau de flumet ce garer sur le parking"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 45.81588,
+      "longitude": 6.488371,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_bf97d8efb10efc46",
+          "kind": "MAP",
+          "title": "3531 OT Megève - Col des Aravis (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

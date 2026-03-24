@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:14.747727+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21660,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21660/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21660/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21660/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21660/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21660,
+    "identity": {
+      "nom": "Corzán",
+      "nomComplet": "Barranco del Corzán, Rio Corzán",
+      "prefixeNom": "Barranco del",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21660/Corzan.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Galicia",
+      "departement": "La Coruña",
+      "communePrincipale": "Negreira",
+      "communes": [
+        "Brión",
+        "Negreira"
+      ],
+      "massif": null,
+      "bassin": "Rio Tambre",
+      "coursEau": "Rio Corzán"
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 1.0,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": 230,
+      "longueurM": 1800,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "3h",
+      "retour": "1h"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21660,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.877663,
+        "longitude": -8.810005,
+        "label": null
+      },
+      {
+        "canyonId": 21660,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.865395,
+        "longitude": -8.806293,
+        "label": null
+      },
+      {
+        "canyonId": 21660,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 42.865646,
+        "longitude": -8.797646,
+        "label": "pour la navette"
+      },
+      {
+        "canyonId": 21660,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 42.876328,
+        "longitude": -8.809619,
+        "label": "à noter une navette possible, mais très longue"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 42.865646,
+      "longitude": -8.797646,
+      "label": "pour la navette"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_d8684d1f78e52a5f",
+          "kind": "MAP",
+          "title": "93 Outes (Institu Geographic Nacional)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

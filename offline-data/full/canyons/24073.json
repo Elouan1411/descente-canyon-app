@@ -1,0 +1,194 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:59:06.386353+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24073,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24073/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24073/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24073/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24073/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/24073/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 24073,
+    "identity": {
+      "nom": "Lomo Morin",
+      "nomComplet": "Barranco de Lomo Morin, Mantuba",
+      "prefixeNom": "Barranco de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24073/Lomo-Morin.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Canarias",
+      "departement": "Santa Cruz de Tenerife",
+      "communePrincipale": "Los Silos",
+      "communes": [
+        "Silos, Los",
+        "Los Silos"
+      ],
+      "massif": "Teno",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a2III",
+      "interet": 2.6,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 510,
+      "deniveleM": null,
+      "longueurM": 550,
+      "cascadeMaxM": 32,
+      "cordeMiniM": 35,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h30/1h45",
+      "descente": "1h30/2h15",
+      "retour": "35min"
+    },
+    "topo": {
+      "accesAval": "Se rendre à Los Silos et se garer sur le parking public à côté de l'église toute blanche immanquable, \"Nuestra señora de la Luz\".",
+      "accesAmont": null,
+      "approche": "Traverser la grande route et prendre presque en face du parking la calle Susana que l'on remonte : on rejoint le chemin de PR TF-53 balisé direction \"Cuevas Negras\". Au premier carrefour (panneaux), on suit toujours \"Cuevas Negras\", le sentier longeant le barranco du même nom par sa rive droite. Au carrefour suivant, avant que le chemin ne coupe le barranco (lieu-dit Cuevas Negras, ruines, panneaux, environ 1h depuis le départ), on prend alors la direction Est, Tierra del Trigo par le PR 53.1. Quand le sentier recoupe le canal qui alimente le barranco, on suit le canal à gauche jusqu'au bout, départ de la descente (grande cascade concrétionnée en plan incliné).\n\nNB : il est conseillé d'étudier l'approche sur les cartes OSM sur lesquelles figurent tous ces sentiers (aucun ne figure sur les cartes en ligne IGN). Il existe des sentes qui permettent de raccourcir l'approche sur la fin.",
+      "descente": "On désescalade au mieux sans abîmer le tuf le plan incliné avant d'arriver aux premiers obstacles peu esthétiques. Tout l'intérêt de la descente réside dans les deux dernières grandes cascades qu'il faudra descente soit dans le jet soit derrière après l'avoir traversé ! Très beaux rappels ! Après le dernier grand rappel, désescalader au mieux les obstacles moches jusqu'à une petite retenue, fin de la descente. Un petite sente RG peut aider à shunter la fin des obstacles si elle est dégagée de la végétation.",
+      "retour": "Prendre en-dessous de la petite retenue la sente vers la gauche longeant la canalisation (\"Canal de las Cabezadas\"). Quand elle rencontre une autre canalisation, prendre encore à gauche jusqu'à rejoindre le sentier emprunté à l'aller. On descend alors la calle Susana jusqu'au parking.",
+      "engagement": null,
+      "periode": "Ce petit barranco servait à acheminer de l'eau depuis le petit plateau de la Tierra del Trigo jusqu'en bas : le débit était alors constant et parfois sportif (ou plus).\n\nDepuis 2021 ou 2022, il semblerait que l'eau ait été déviée et que le barranco soit donc maintenant le plus souvent à sec.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Possibilité d'organiser une navette entre Los Silos et la Tierra del Trigo, cf. biblio."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24073,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 28.35442,
+        "longitude": -16.808475,
+        "label": null
+      },
+      {
+        "canyonId": 24073,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 28.357183,
+        "longitude": -16.812317,
+        "label": null
+      },
+      {
+        "canyonId": 24073,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 28.352579,
+        "longitude": -16.803213,
+        "label": null
+      },
+      {
+        "canyonId": 24073,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 28.364826,
+        "longitude": -16.817436,
+        "label": "Parking unique (ou aval si navette)"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 28.352579,
+      "longitude": -16.803213,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_691675baaeb76189",
+          "kind": "TOPOGUIDE",
+          "title": "35 descentes de canyons à Tenerife",
+          "authors": [
+            "Philip Van Den Berge"
+          ],
+          "publicationYear": 2016,
+          "reference": null,
+          "editor": "Autoédition",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1338/topoguide.html"
+        },
+        {
+          "id": "biblio_ea844f75c4fa6780",
+          "kind": "TOPOGUIDE",
+          "title": "Canyoning in Tenerife",
+          "authors": [
+            "Emilio Aguilar Gutiérrez",
+            "Rosa Maria Hernandes Guzman"
+          ],
+          "publicationYear": 2014,
+          "reference": "ISBN 9781494927769",
+          "editor": "Amazon",
+          "status": "stock vide !\n\nSans doute disponible sur commande : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/181/Canyoning-in-Tenerife.html"
+        }
+      ],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_8f8418db80408ebb",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://ropewiki.com/Lomo_Morin",
+          "url": "http://ropewiki.com/Lomo_Morin"
+        },
+        {
+          "id": "resource_f5b7887f06b1e9b0",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.barrancoscanarios.com/barranc.....ranco-de-lomo-morin/",
+          "url": "http://www.barrancoscanarios.com/barranc.....ranco-de-lomo-morin/"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 458,
+          "status": "Temporairement abrogé",
+          "action": "Interdit",
+          "title": "Arrêté - 15 mai 2021",
+          "summary": "Depuis la mi-mai 2021, il n'est plus délivré de permis de descente du barranco de Lomo Morin par le Parque Rural de Teno, les propriétaires des terrains et du canal s'y opposant.\n\nSource officielle : https://centralreservas.tenerife.es/actividad/29",
+          "remark": "En avril 2023, il est de nouveau possible de demander une autorisation pour descendre le barranco de Lomo Morin.",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nInformation - Cabildo de Tenerife",
+          "effectiveDate": "15 mai 2021",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/458/legislation.html",
+          "attachments": [
+            {
+              "label": "Information - Cabildo de Tenerife",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem458_pj1.pdf"
+            }
+          ]
+        },
+        {
+          "id": 365,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté",
+          "summary": "La descente est incluse dans l'espace protégé du Parque rural de Teno. Il faut demander l'autorisation de descente à cette adresse : https://centralreservas.tenerife.es/actividad/29 (lien mis à jour en 04/2023)",
+          "remark": null,
+          "details": "Fiche d'activité : barranco de Lomo Morin (Cabildo de Tenerife - Medio Ambiante)",
+          "effectiveDate": null,
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/365/legislation.html",
+          "attachments": [
+            {
+              "label": "Fiche d'activité : barranco de Lomo Morin (Cabildo de Tenerife - Medio Ambiante)",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem365_pj2.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

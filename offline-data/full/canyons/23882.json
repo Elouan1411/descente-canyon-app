@@ -1,0 +1,145 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:27.077808+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23882,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23882/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23882/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23882/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23882/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/23882/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 23882,
+    "identity": {
+      "nom": "Salvatica",
+      "nomComplet": "Ruisseau de Salvatica",
+      "prefixeNom": "Ruisseau de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23882/Salvatica.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Corse",
+      "departement": "Corse-du-Sud",
+      "communePrincipale": "Levie",
+      "communes": [
+        "Levie"
+      ],
+      "massif": "Uncinellu",
+      "bassin": "Rizzanese",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a2II",
+      "interet": 2.5,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 440,
+      "deniveleM": 170,
+      "longueurM": 900,
+      "cascadeMaxM": 45,
+      "cordeMiniM": 50,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "2h00",
+      "retour": "45min"
+    },
+    "topo": {
+      "accesAval": "De Porto-Vecchio, emprunter la D859 jusqu'à Sotta. Après Sotta, prendre à droite la D259 et la D59 en direction de Carbini par le col de Bacinu. Traverser Carbini et rouler approximativement 6 km après le cimetière du village en passant les ponts de Calamone et Pargula. Garez-vous à gauche sur le petit parking au bord de la D59 allant sur Levie en face d'un portail.",
+      "accesAmont": null,
+      "approche": "Faire 50m en direction de Levie sur D59 et descendre via la pente à gauche pour récupérer le sentier Mare et Mare que l'on traverse pour descendre plus bas sur le départ du canyon.",
+      "descente": "Enchaînement d'une quinzaine de cascades suivant le départ. Canyon se divisant en 2 parties entrecoupées d'une courte marche. La première est plutôt ouverte et la seconde plus encaissée avec une C45.",
+      "retour": "Lorsque le canyon s'ouvre après une C25, sortir en rive gauche via un petit talweg menant à une ancienne charbonnière, puis remonter en direction du point (alt 458 m sur l'IGN) en suivant d'anciens sentiers sous un couvert de chênes, jusqu'au sentier Mare et Mare et la route.",
+      "engagement": "Encaissé sur la fin de parcours.",
+      "periode": "En dehors de la période estivale, le débit n'est pas à sous-estimé. Descente à éviter par risque d'orange. Attention aux crues.",
+      "geologie": null,
+      "historique": "2011 : membres de Corsecanyon",
+      "remarques": "Qualité de l'eau plutôt douteuse (station d'épuration en amont). Quelques détritus jonchent les berges. Le tout n'invite pas à la baignade ."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23882,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 41.694515,
+        "longitude": 9.127617,
+        "label": null
+      },
+      {
+        "canyonId": 23882,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 41.688404,
+        "longitude": 9.123433,
+        "label": null
+      },
+      {
+        "canyonId": 23882,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 41.693787,
+        "longitude": 9.128985,
+        "label": null
+      },
+      {
+        "canyonId": 23882,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 41.689659,
+        "longitude": 9.125814,
+        "label": "Retour"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 41.693787,
+      "longitude": 9.128985,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_3c89130e796573da",
+          "kind": "MAP",
+          "title": "4254 ET Porto-Vecchio (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 520,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Corse-du-Sud) - 26 juil 2011",
+          "summary": "- Le canyonisme est interdit la nuit (sauf dérogation)\n\n- Le canyonisme est interdit s'il y a une alerte émise par Météo-France de niveau orange ou rouge en cours.\n\n- Le canyonisme est interdit aux mineurs de moins de 7 ans, sauf canyon évalué égal ou inférieur à V1-A3-E3\n\n- Les groupes auront un effectif maximum de 12 personnes, hors encadrement.",
+          "remark": "L'arrêté du 9 juillet 2019 pris conjointement par les préfectures de Corse-du-Sud et de Haute-Corse harmonise les réglementations existantes pour les deux départements.",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nArrêté préfectoral modificatif (Corse-du-Sud et Haute-Corse) n°R20-2019-07-09-001 du 9 juillet 2019\n\nArrêté préfectoral (Corse-du-Sud) n°2011207-0005 du 26 juillet 2011",
+          "effectiveDate": "26 juil 2011",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/520/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral modificatif (Corse-du-Sud et Haute-Corse) n°R20-2019-07-09-001 du 9 juillet 2019",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem520_pj2.pdf"
+            },
+            {
+              "label": "Arrêté préfectoral (Corse-du-Sud) n°2011207-0005 du 26 juillet 2011",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem520_pj1.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

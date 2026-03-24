@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:15.558475+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21663,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21663/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21663/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21663/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21663/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21663,
+    "identity": {
+      "nom": "Twister Canyon",
+      "nomComplet": "Twister Canyon, Sheep Dip",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21663/Twister-Canyon.html"
+    },
+    "location": {
+      "pays": "Australie",
+      "region": "Lithgow City Council",
+      "departement": "Nouvelle Galles du Sud",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Blue mountain",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a2II",
+      "interet": 2.4,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 880,
+      "deniveleM": 60,
+      "longueurM": 300,
+      "cascadeMaxM": 7,
+      "cordeMiniM": 10,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "45min",
+      "retour": "45min"
+    },
+    "topo": {
+      "accesAval": "Même accès que Rocky creek canyon.\n\nLithgow map 1/25000 (8931-3s) et Cullen Bullen map 1/25000 (8931-3n) utiles.\n\nDe Katoomba, rejoindre Lithgow (great western highway). Dans Lithgow (Lithgow map 1/25000), traverser le chemin de fer par Bridge st, puis prendre tout de suite à droite Inch st; 1km après, suivre à gauche Atkinson st (c'est la route du \"glowworm tunnel\"). La route laisse place à une bonne piste. 17km environ après Lithgow, on laisse sur la droite Bungleboori area picnic. 3km après cet aire de picnic, on observe à droite la Waratah road qui mène à une serie de canyons dont Hole in the wall. Continuer tout droit la piste principale qui devient un petit peu plus difficile. 13km après l'aire de picnic, à la fin de la double piste (on avait 2 pistes côte à côte), prendre à droite Galah road (Cullen Bullen map 1/25000).\n\n400m après, à une bifucation en Y, prendre à gauche la piste principale (Galah road), la suivre jusqu'à Rocky Creek carpark ( Galah mountain carpark), le terminus , soit 20km depuis l'aire de picnic. Le dernier km est difficile, mais empruntable par des voitures classiques.\n\nLe long des 2 derniers km de cette piste on aura observé des pistes barrées aux véhicules, sur la gauche, qui mènent à des canyons (ex: Surfire, Heart attack, Galah...).",
+      "accesAmont": null,
+      "approche": "Passer la barrière, 100m plus loin, quitter la piste principale pour suivre un chemin à droite qui descend au cours d'eau (Rock Hill map 1/25000).",
+      "descente": "succession de sauts et toboggans dans un cadre très esthétique; tout est faisable, mais rester vigilant sur la profondeur, surtout au début de la descente. Le dernier obstacle qui suit un saut très encaissé, se descend à la corde (normalement corde fixe présente).\n\nIl convient d'enchaîner avec Rocky creek canyon 500m en aval; on a alors un ensemble exceptionnel (3,4 sur 4).",
+      "retour": "Suivre la berge en rive droite, puis 100m plus loin, traverser le ruisseau pour retrouver le chemin de Rocky creek qui sert à la fois d'accès et de sortie à Rocky creek. Là , pour remonter, suivre le chemin rive gauche du petit affluent (donc chemin que l'on cherche à droite du petit affluent en regardant vers le haut; cet affluent est donc situé en rive gauche du ruisseau que l'on a descendu); peu visible sur les 30 premiers mètres (végétation et troncs d'arbre à passer),le chemin devient ensuite évident.",
+      "engagement": "peu engagé",
+      "periode": "été",
+      "geologie": "Sandstone (mélange de calcaire, grès et sable)",
+      "historique": null,
+      "remarques": "A enchaîner avec Rocky creek : exceptionnel.\n\nTwister Canyon est appelé parfois Sheep Dip"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21663,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": -33.287975,
+        "longitude": 150.285873,
+        "label": null
+      },
+      {
+        "canyonId": 21663,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": -33.289322,
+        "longitude": 150.288162,
+        "label": null
+      },
+      {
+        "canyonId": 21663,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": -33.285446,
+        "longitude": 150.285248,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": -33.285446,
+      "longitude": 150.285248,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_a20243775714e378",
+          "kind": "MAP",
+          "title": "8931-2n Rock Hill (Topographic Map NSW)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

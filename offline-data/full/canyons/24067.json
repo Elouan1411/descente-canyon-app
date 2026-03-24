@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:59:04.402396+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24067,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24067/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24067/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24067/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24067/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24067,
+    "identity": {
+      "nom": "Corombière",
+      "nomComplet": "Torrent de Corombière",
+      "prefixeNom": "Torrent de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24067/Corombiere.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Hautes-Alpes",
+      "communePrincipale": "Val Buëch-Méouge",
+      "communes": [
+        "Val Buëch-Méouge"
+      ],
+      "massif": "Montagne de Chabre",
+      "bassin": "Méouge",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1I",
+      "interet": 0.6,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 720,
+      "deniveleM": 80,
+      "longueurM": 250,
+      "cascadeMaxM": 17,
+      "cordeMiniM": 20,
+      "navette": "3.0km"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "35min",
+      "retour": "0min/20min"
+    },
+    "topo": {
+      "accesAval": "Rejoindre Châteauneuf-de-Chabre, direction la vallée de la Méouge, prendre le carrefour vers le hameau de Pomet, continuer en passant sur le pont qui enjambe le Rif sur environ 500m. Se garer sur deux places à gauche avant un virage à gauche.",
+      "accesAmont": null,
+      "approche": "A 60 m de la voiture en revenant sur la route côté sud, descendre à droite pour rejoindre la première cascade.",
+      "descente": "Première c10 sur point de 12mm avec plaquette et anneau, puis c17, c3 , c9, c4, c9, et on arrive dans le Rif. Continuer la descente jusqu'au pont.",
+      "retour": "Si pas fait de navette, le retour se fait en 20min par le sentier rive gauche, puis suivre la route qui monte à Pomet jusqu’à la voiture\n\nSi la navette a été faite, la voiture se trouve au pont du Rif.",
+      "engagement": "Moyen.",
+      "periode": "A faire après des orages ou en période de pluie.",
+      "geologie": null,
+      "historique": "Quelques anciens points étaient en place.",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24067,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.281723,
+        "longitude": 5.783409,
+        "label": null
+      },
+      {
+        "canyonId": 24067,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.280876,
+        "longitude": 5.785984,
+        "label": null
+      },
+      {
+        "canyonId": 24067,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 44.279678,
+        "longitude": 5.78607,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 44.281723,
+      "longitude": 5.783409,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_698f23f50a61f9ad",
+          "kind": "MAP",
+          "title": "3339 OT Sisteron (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

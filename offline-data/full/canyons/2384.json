@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:45:18.687363+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2384,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2384/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2384/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2384/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2384/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2384,
+    "identity": {
+      "nom": "Saulce",
+      "nomComplet": "La Saulce",
+      "prefixeNom": "La",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2384/Saulce.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Drôme",
+      "communePrincipale": "Eygalayes",
+      "communes": [
+        "Eygalayes"
+      ],
+      "massif": null,
+      "bassin": "Méouge",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a2II",
+      "interet": 0.8,
+      "nbVotes": 6
+    },
+    "metrics": {
+      "altitudeDepartM": 950,
+      "deniveleM": 190,
+      "longueurM": 800,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "1h30",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "Après Lachau en direction de Séderon, prendre à gauche la direction de St-Jaume (seul pont sur la Méouge dans le secteur en dehors de la D542). Garer votre véhicule un peu avant le hameau de St-Jaume le long de la Saulce, sans gêner la circulation (2 places dans le virage).",
+      "accesAmont": null,
+      "approche": "Traverser le hameau et à la fin de la route goudronnée prendre à droite une piste en direction d’une grosse ferme. Avant cette dernière prendre à gauche une piste qui commence à côté d’un champ. Après un moment assez long prendre la piste à gauche qui monte plus raide. S’arrêter à un petit plateau, parking de chasse. Prendre alors le chemin peu visible de loin qui descend vers le canyon (4 cairns au départ en 2016) et descendre vers la rivière au mieux au niveau d'un pierrier, juste avant que le chemin ne la recoupe.",
+      "descente": "Pour éviter les buissons vous pouvez prendre un chemin RD mal tracé. N’allez pas trop loin vous risquez de rater le seul micro-encaissement.\n\n- encaissement, T6 (AN RD) : profitez du paysage, 15m après l’encaissement est terminé.\n\n- 5 ressauts évitables, on peut utiliser la corde pour certains (AN RD), le 4ème peut se descendre comme un toboggan\n\n- marche\n\n- C4, AN RG\n\n- ressauts\n\n- marche, quelques buissons\n\n- série de plans inclinés. Un de ces Pi mesure prés de 40m. La corde n’est pas nécessaire. Ils peuvent se glisser s’il y a assez d’eau et d’algues.\n\n- marche\n\n- T20m, C’est un toboggan divisée en 4 parties beaucoup plus raides que précédemment. Seul le départ nécessite une corde par débit raisonnable. J’ai installé sur un pauvre petit arbre qui a poussé au milieu du cours d’eau (quelle idée où est la rive ?) une sangle avec un vieux maillon rapide. La fin peut se faire en toboggan classique (pas très confortable).",
+      "retour": "La sortie se trouve rive droite après une résurgence et avant un canal RG. Suivre le chemin RD qui vous ramène à la voiture, en respectant clôtures, bétail et propriétés.",
+      "engagement": "Faible, la gorge est large sauf au niveau du rappel de 6m.",
+      "periode": null,
+      "geologie": null,
+      "historique": "Inconnu.",
+      "remarques": "Petite bouse très peu intéressante à faire entre la vallée de la Méouge et le Malancon."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2384,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.206036,
+        "longitude": 5.580733,
+        "label": null
+      },
+      {
+        "canyonId": 2384,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.213108,
+        "longitude": 5.584939,
+        "label": null
+      },
+      {
+        "canyonId": 2384,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 44.216,
+        "longitude": 5.583823,
+        "label": null
+      },
+      {
+        "canyonId": 2384,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 44.210278,
+        "longitude": 5.57863,
+        "label": "approche"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.216,
+      "longitude": 5.583823,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_76c1acc5dfa57a75",
+          "kind": "MAP",
+          "title": "3240 OT Banon - Sault - Plateau de St-Christol (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

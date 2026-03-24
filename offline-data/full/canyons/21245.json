@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:48:40.900985+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21245,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21245/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21245/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21245/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21245/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21245,
+    "identity": {
+      "nom": "Coll del Port",
+      "nomComplet": "Rasa de Coll del Port",
+      "prefixeNom": "Rasa de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21245/Coll-del-Port.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Cataluña",
+      "departement": "Lérida",
+      "communePrincipale": "la Coma i la Pedra",
+      "communes": [
+        "la Coma i la Pedra"
+      ],
+      "massif": null,
+      "bassin": "Rio Cardener",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1III",
+      "interet": 1.7,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": 100,
+      "longueurM": 400,
+      "cascadeMaxM": 11,
+      "cordeMiniM": 12,
+      "navette": "2.6km"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "1h",
+      "retour": "??"
+    },
+    "topo": {
+      "accesAval": "De Berga prendre la BV4241 direction Sant Llorenç de Morunys et Coll de Nargo. Dans Sant Llorenç continuer à droite vers La Coma/La Pedra/Tuixen.\n\nPassé la Coma en direction de Tuixen et faire peu de km avant de passer sur un pont qui enjambe un torrent souvent sec dont l'encaissement au dessus à droite et bien visible (Rasa del Saltant). Continuer 1km et dans une courbe à gauche vous verrez un autre encaissement à droite. Garez le véhicule avant à gauche. De là faites 2.6km par la route avec un second véhicule ou à pied. Dans un tournant à gauche un bas-côté bien large avec du gravier et une glissière de sécurité vous permet de vous garer.",
+      "accesAmont": null,
+      "approche": "Enjambez la glissière et descendez par une petite sente.",
+      "descente": "Descente bien encaissée dans le calcaire mais avec malheureusement peu de caractère excepté un passage avec de joli concressions. Canyon d'initiation.",
+      "retour": "Sortir par la conduite puis à gauche.",
+      "engagement": "Pas d'échapatoire visible mais canyon très court.",
+      "periode": "Printemps",
+      "geologie": null,
+      "historique": null,
+      "remarques": "A faire en supplément d'une journée dans le coin ou à enchainer avec son voisin Rasa del Saltant."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21245,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.192062,
+        "longitude": 1.573124,
+        "label": null
+      },
+      {
+        "canyonId": 21245,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.190468,
+        "longitude": 1.573483,
+        "label": null
+      },
+      {
+        "canyonId": 21245,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 42.191391,
+        "longitude": 1.572359,
+        "label": null
+      },
+      {
+        "canyonId": 21245,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 42.190132,
+        "longitude": 1.573695,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 42.191391,
+      "longitude": 1.572359,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:26.373786+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21715,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21715/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21715/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21715/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21715/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21715,
+    "identity": {
+      "nom": "Cairo",
+      "nomComplet": "Valle di Cairo",
+      "prefixeNom": "Valle di",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21715/Cairo.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Lombardia",
+      "departement": "Como",
+      "communePrincipale": "Palanzo",
+      "communes": [
+        "Faggeto Lario",
+        "Palanzo"
+      ],
+      "massif": null,
+      "bassin": "Lac de Come",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 1.9,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 370,
+      "deniveleM": 170,
+      "longueurM": 600,
+      "cascadeMaxM": 18,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "25min",
+      "descente": "2h",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": "De Côme prendre la SP583 direction: Bellagio. Environ 2km après être sorti de Torno, virer à gauche, en épingle: panneaux: lago / hotel ristorante Vapore.\n\nIdéalement se garer sur le parking de cet hôtel-restaurant au bord du ruisseau, en demandant évidement l'autorisation et en dehors des heures de service. Sinon il y a des parkings avant et après, sur lesquels il faudra se garer sur les emplacements matérialisés au sol.",
+      "accesAmont": null,
+      "approche": "Juste après cet hôtel restaurant, monter par la ruelle pavée \" Via per Palanzo\". Elle passe sous la route principale puis continue. La quitter dans une épingle à gauche, au niveau d'une maison. Passer devant puis continuer par un ancien canal jusqu'à notre ruisseau.",
+      "descente": "Jusqu'au lac.",
+      "retour": "Evident.",
+      "engagement": null,
+      "periode": "Quelques immersions... A faire à peu près toute l'année en évitant au plus chaud de l'été (petit filet) et les périodes froides de l'hiver.",
+      "geologie": "Calcaire.",
+      "historique": "S. Mantonico, D. Bassani, M. Zambelli '90.",
+      "remarques": "En attaquant plus haut on gagne une C30 déclive, mais ce n'est pas très beau et un peu sale...\n\nC'est assez étrange que P. Van Duin, dans son topo référencé ici, propose une navette vraiment inutile... Il n'avait probablement pas repéré cette ancienne ruelle muletière qui reliait anciennement (de toute évidence) Riva di Faggeto à Palanzo..."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21715,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.861893,
+        "longitude": 9.158006,
+        "label": null
+      },
+      {
+        "canyonId": 21715,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.865391,
+        "longitude": 9.149594,
+        "label": null
+      },
+      {
+        "canyonId": 21715,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 45.864136,
+        "longitude": 9.161096,
+        "label": null
+      },
+      {
+        "canyonId": 21715,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 45.864971,
+        "longitude": 9.150646,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 45.864136,
+      "longitude": 9.161096,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_9088ca1f6cfd9d03",
+          "kind": "MAP",
+          "title": "CNS 277 kompas 91/92",
+          "scale": null,
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_adb7d26583398bf8",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.x-gatt.com/cairo/scheda.htm",
+          "url": "http://www.x-gatt.com/cairo/scheda.htm"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

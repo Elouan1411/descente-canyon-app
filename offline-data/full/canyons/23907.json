@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:32.185990+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23907,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23907/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23907/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23907/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23907/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23907,
+    "identity": {
+      "nom": "Brügglibach",
+      "nomComplet": "Brügglibach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23907/Brugglibach.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": null,
+      "departement": "Soleure",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Weissenstein",
+      "bassin": "Aar - Aare",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a2II",
+      "interet": 0.5,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 920,
+      "deniveleM": 70,
+      "longueurM": 130,
+      "cascadeMaxM": 15,
+      "cordeMiniM": 25,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "30min",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "De Selzbach, prendre la Brügglistrasse et continuer sur la piste pour se garer juste après le verrou rocheux.",
+      "accesAmont": null,
+      "approche": "La descente commence en aval de la route.",
+      "descente": "3-4 cascades inintéressantes à descendre sur AN.",
+      "retour": "Après la dernière cascade, rejoindre en RG un sentier qui remonte sur la route en suivant un autre torrent.",
+      "engagement": "Peu engagé.",
+      "periode": "Bassin verssant de 0.7km2, à faire rapidement après des pluies.",
+      "geologie": null,
+      "historique": "Pas vu de point lors de ma descente, mais j'en ai pas laissé non plus !",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23907,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.226589,
+        "longitude": 7.42301,
+        "label": null
+      },
+      {
+        "canyonId": 23907,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.226719,
+        "longitude": 7.42266,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.226719,
+      "longitude": 7.42266,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

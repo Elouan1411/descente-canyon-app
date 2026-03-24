@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:54:20.518932+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22782,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22782/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22782/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22782/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22782/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/22782/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 22782,
+    "identity": {
+      "nom": "Velo de la Novia",
+      "nomComplet": "El Velo de la Novia, Salto de Aguas",
+      "prefixeNom": "El",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22782/Velo-de-la-Novia.html"
+    },
+    "location": {
+      "pays": "Chili",
+      "region": "Región Metropolitana de Santiago",
+      "departement": "Provincia de Cordillera",
+      "communePrincipale": "San Jose de Maipo",
+      "communes": [
+        "San Jose de Maipo"
+      ],
+      "massif": "Cajon del Maipo",
+      "bassin": "Rio Maipo",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.5,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1900,
+      "deniveleM": 150,
+      "longueurM": 200,
+      "cascadeMaxM": 80,
+      "cordeMiniM": 80,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h",
+      "descente": "30min",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": "Sur la route camino al Volcan, 5km après le village de San Gabriel del Maipo, sur la droite, le chemin qui mène au pied de la grande cascade est signalé par un panneau \"Salto de aguas\"",
+      "accesAmont": null,
+      "approche": "Face à la grande cascade sur la droite, remonter les éboulis sur un dénivelé de 200m jusqu'à un affluent qui redescend sur le canyon.",
+      "descente": "Il s'agit d'une descente arrosée à caractère vertical. Une première cascade de 15 m donne sur la grande cascade de 80 m appelée \"El Velo de la Novia\"\n\nLes ancrages au départ de la grande cascades ne sont pas hors d'eau et peuvent avoir souffert des crues.\n\nA vérifier et prévoir rééquipement éventuel !",
+      "retour": null,
+      "engagement": "Grande verticale - risque important de chute de pierres.",
+      "periode": "Torrent alimenté par des eaux de fonte glaciaire.\n\nLa période optimale est de décembre à février.",
+      "geologie": "Le canyon en amont des cascades se développe dans une zone d'éboulis glaciaires.",
+      "historique": "C'est le trio \"Chili con canyon\" lauréat des bourses Expé en 2011 qui a ouvert ce canyon en janvier 2011.",
+      "remarques": "La grande cascade est un site fréquenté par les touristes qui se baignent juste en dessous.\n\nEn raison du risque important de chute de pierres, il est prudent de laisser une personne en bas de la cascade avec un poste radio pour faire écarter les touristes avant toute descente.\n\n(un touriste qui se rafraichissait sous la cascade est décédé suite a un embâcle ayant cédé en amont de la cascade 48 heures après un orage)"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22782,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": -33.83445,
+        "longitude": -70.116341,
+        "label": null
+      },
+      {
+        "canyonId": 22782,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": -33.831551,
+        "longitude": -70.116829,
+        "label": null
+      },
+      {
+        "canyonId": 22782,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": -33.833336,
+        "longitude": -70.116508,
+        "label": "grande cascade"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": -33.831551,
+      "longitude": -70.116829,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 233,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté",
+          "summary": "Il est obligatoire de s’enregistrer auprès du poste de gendarmerie de San Gabriel situé au bord de la route del camino al volcan.",
+          "remark": null,
+          "details": null,
+          "effectiveDate": null,
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/233/legislation.html",
+          "attachments": []
+        }
+      ]
+    }
+  }
+}

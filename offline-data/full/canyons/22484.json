@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:12.201160+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22484,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22484/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22484/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22484/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22484/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22484,
+    "identity": {
+      "nom": "Herzogwartschlucht",
+      "nomComplet": "Herzogwartschlucht, Herzogtal",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22484/Herzogwartschlucht.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Tyrol",
+      "departement": "Politischer Bezirk Reutte",
+      "communePrincipale": "Elmen",
+      "communes": [
+        "Elmen"
+      ],
+      "massif": "Lechtaler Alpen",
+      "bassin": "Lech",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a5III",
+      "interet": 1.0,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1190,
+      "deniveleM": 120,
+      "longueurM": 250,
+      "cascadeMaxM": 13,
+      "cordeMiniM": 15,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "45min",
+      "descente": "2h",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": "Herzogwartschlucht: 5 rappels\n\ncontinuer Gstreinbach (ruisseau pour kayak) 1 km",
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22484,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.317104,
+        "longitude": 10.540711,
+        "label": null
+      },
+      {
+        "canyonId": 22484,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.320213,
+        "longitude": 10.542798,
+        "label": "continuer le Gstreinbach (obligat.)"
+      },
+      {
+        "canyonId": 22484,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.32642,
+        "longitude": 10.529902,
+        "label": null
+      },
+      {
+        "canyonId": 22484,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.326263,
+        "longitude": 10.530889,
+        "label": "sortie de Gstreinbach"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.32642,
+      "longitude": 10.529902,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_975c78953190e02c",
+          "kind": "MAP",
+          "title": "2/2 Allgäuer-Lechtaler Alpen Ost (Alpenvereins (AV) Karte)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

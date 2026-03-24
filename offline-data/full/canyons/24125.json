@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:59:17.573909+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24125,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24125/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24125/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24125/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24125/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24125,
+    "identity": {
+      "nom": "Pelouses",
+      "nomComplet": "Torrent du Vallon des Pelouses",
+      "prefixeNom": "Torrent du Vallon des",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24125/Pelouses.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Hautes-Alpes",
+      "communePrincipale": "Ceillac",
+      "communes": [
+        "Ceillac"
+      ],
+      "massif": "Queyras",
+      "bassin": "Guil",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a1II",
+      "interet": 1.7,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 2100,
+      "deniveleM": 1900,
+      "longueurM": 200,
+      "cascadeMaxM": 40,
+      "cordeMiniM": 45,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "1h45",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "De Guillestre, prendre la direction de Ceillac par la D902, puis à droite la D60 longeant le torrent du Cristillan, toujours en direction de Ceillac. Rouler environ 3,5 km avant d'emprunter la piste à droite. Traverser le torrent par une passerelle, la piste monte alors par plusieurs lacets avant d'arrivée à une bifurcation (panneau circulation interdite sur la piste de droite). Prendre la piste de gauche pour continuer de monter... Depuis la piste, au loin, le débit de la cascade finale devient visible. Garez-vous sans gêner lorsque vous arrivez au troisième lacet (alt 1853m sur l'IGN).",
+      "accesAmont": null,
+      "approche": "Continuer la piste à pied sur 150m, puis prendre à gauche une piste (GR) dont le tracé monte raide jusqu'à atteindre le torrent du vallon des Pelouses.",
+      "descente": "Après une série de petites désescalades dans le torrent, l'on parvient au premier rappel sur une C7, C6, C14, C10, C7, C2, C40. Sortir en rive gauche 50m plus bas à travers la forêt.",
+      "retour": "Traverser la forêt assez horizontalement de façon à rejoindre une piste de bûcherons (voir IGN), accédant directement au parking où est stationné votre véhicule.",
+      "engagement": "Peu d'échappatoire une fois le premier rappel effectué.",
+      "periode": "Juin, juillet.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Équipement : terrain d'aventure.\n\nPossibilité d'enchaîner avec le torrent de la Réortie se situant à deux pas sur la piste interdite à la circulation ..."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24125,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.652393,
+        "longitude": 6.732153,
+        "label": null
+      },
+      {
+        "canyonId": 24125,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.65485,
+        "longitude": 6.731016,
+        "label": null
+      },
+      {
+        "canyonId": 24125,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.65752,
+        "longitude": 6.727797,
+        "label": null
+      },
+      {
+        "canyonId": 24125,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 44.656498,
+        "longitude": 6.728913,
+        "label": "Retour à travers la forêt et une piste de coupeurs de bois"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.65752,
+      "longitude": 6.727797,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

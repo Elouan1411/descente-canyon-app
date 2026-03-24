@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:04.851834+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22454,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22454/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22454/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22454/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22454/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22454,
+    "identity": {
+      "nom": "Glasbachgraben",
+      "nomComplet": "Glasbachgraben, Glasbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22454/Glasbachgraben.html"
+    },
+    "location": {
+      "pays": "Allemagne",
+      "region": "Bayern",
+      "departement": "Oberbayern",
+      "communePrincipale": "Jachenau",
+      "communes": [
+        "Landkreis Bad Tölz-Wolfratshausen",
+        "Lenggries",
+        "Jachenau"
+      ],
+      "massif": "Walchenseeberge",
+      "bassin": "Isar",
+      "coursEau": "Glasbach"
+    },
+    "rating": {
+      "cotation": "v4a3III",
+      "interet": 1.8,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1050,
+      "deniveleM": 130,
+      "longueurM": 1000,
+      "cascadeMaxM": 35,
+      "cordeMiniM": 40,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h45",
+      "descente": "2h",
+      "retour": "1h15"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22454,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.643337,
+        "longitude": 11.444224,
+        "label": null
+      },
+      {
+        "canyonId": 22454,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.636875,
+        "longitude": 11.440925,
+        "label": null
+      },
+      {
+        "canyonId": 22454,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.606236,
+        "longitude": 11.432691,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.606236,
+      "longitude": 11.432691,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:29.917189+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23306,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23306/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23306/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23306/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23306/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23306,
+    "identity": {
+      "nom": "Grand Béal",
+      "nomComplet": "Ravin du Grand Béal",
+      "prefixeNom": "Ravin du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23306/Grand-Beal.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Hautes-Alpes",
+      "communePrincipale": "Orpierre",
+      "communes": [
+        "Orpierre"
+      ],
+      "massif": null,
+      "bassin": "Buëch",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 0.8,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 780,
+      "deniveleM": 40,
+      "longueurM": 300,
+      "cascadeMaxM": 10,
+      "cordeMiniM": 10,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "40min",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "De Sisteron, passer à Laragne-Montéglin sur la N75 jusqu'à Eyguians, puis tourner à gauche sur Orpierre. Se garer au parking du cimetière, a droite dans le village d'Orpierre.",
+      "accesAmont": null,
+      "approche": "Suivre le sentier botanique jusqu'en bas de la C10 terminale puis remonté en RD (escalade facile). De là plusieurs solutions pour accéder au départ. La meilleure est de remonter le cours d'eau...",
+      "descente": "Suivre le cours d'eau en aller/retour. 2 petits toboggans et la C10 terminale. Pas la peine de remonter très haut, il n'y a rien d’intéressant...",
+      "retour": "Idem qu'à l'aller.",
+      "engagement": "aucun",
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "La vasque en bas de la C10 est le lieu de baignade de tous les grimpeurs du coin quand il fait chaud ..."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23306,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.319633,
+        "longitude": 5.690646,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 44.319633,
+      "longitude": 5.690646,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_698f23f50a61f9ad",
+          "kind": "MAP",
+          "title": "3339 OT Sisteron (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

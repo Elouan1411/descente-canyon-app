@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:48.691242+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21809,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21809/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21809/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21809/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21809/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21809,
+    "identity": {
+      "nom": "Assal",
+      "nomComplet": "Wadi Assal",
+      "prefixeNom": "Wadi",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21809/Assal.html"
+    },
+    "location": {
+      "pays": "Jordanie",
+      "region": "Kathrabba",
+      "departement": "Karak",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Moab",
+      "bassin": "Dead Sea",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.5,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 700,
+      "deniveleM": 1000,
+      "longueurM": 15000,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 30,
+      "navette": "45.0km"
+    },
+    "timings": {
+      "approche": "45min",
+      "descente": "8h",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21809,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 31.153543,
+        "longitude": 35.631149,
+        "label": null
+      },
+      {
+        "canyonId": 21809,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 31.194962,
+        "longitude": 35.542187,
+        "label": null
+      },
+      {
+        "canyonId": 21809,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 31.137346,
+        "longitude": 35.621796,
+        "label": null
+      },
+      {
+        "canyonId": 21809,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 31.190062,
+        "longitude": 35.532337,
+        "label": null
+      },
+      {
+        "canyonId": 21809,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 31.139898,
+        "longitude": 35.621925,
+        "label": "depart de le piste pour descendre"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 31.137346,
+      "longitude": 35.621796,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

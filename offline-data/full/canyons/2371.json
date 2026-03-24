@@ -1,0 +1,135 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:45:15.384551+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2371,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2371/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2371/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2371/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2371/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2371,
+    "identity": {
+      "nom": "Saint Joseph",
+      "nomComplet": "Ruisseau de Saint Joseph",
+      "prefixeNom": "Ruisseau de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2371/Saint-Joseph.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Savoie",
+      "communePrincipale": "Villarodin-Bourget",
+      "communes": [
+        "Villarodin-Bourget"
+      ],
+      "massif": "Cerces - Galibier - Thabor",
+      "bassin": "Maurienne",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 1.9,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 1380,
+      "deniveleM": 130,
+      "longueurM": null,
+      "cascadeMaxM": 38,
+      "cordeMiniM": 45,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "5mn",
+      "descente": "2h",
+      "retour": "40mn"
+    },
+    "topo": {
+      "accesAval": "3km après Modane sur la RN6, prendre en direction de La Norma et se garer sur le dernier parking en haut des chalets. Le canyon est le premier ruisseau rencontre en prenant la route en terre au bout du parking.",
+      "accesAmont": null,
+      "approche": "Faire les 100m sur la route en terre.",
+      "descente": "Il s'agit de deux cascades, la premieres est fractionnee en 3 rappels, la deuxieme est d'un seul jet. Il y a peu d'eau, mais c'est assez joli.",
+      "retour": "A la passerelle, sortir en RG sur un petit sentier qui ramene a la route de la Norma.\n\nAutre option, descendre le sentier RD qui mène à la \"fontaine La Norma\" sur la N6 (5min). Dans ce cas avoir laissé une voiture en bas pour une navette.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2371,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 45.202221,
+        "longitude": 6.704444,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 45.202221,
+      "longitude": 6.704444,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_da30219dbb4dd176",
+          "kind": "TOPOGUIDE",
+          "title": "Les canyons de Savoie",
+          "authors": [
+            "Patrick Chollot"
+          ],
+          "publicationYear": 2018,
+          "reference": "978-2-95309-39-1-9",
+          "editor": "auto-édition",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/1125/Les-canyons-de-Savoie.html"
+        },
+        {
+          "id": "biblio_6d273ae41f72e178",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons de Savoie",
+          "authors": [
+            "F. Martin",
+            "C. Altazin"
+          ],
+          "publicationYear": 2007,
+          "reference": "978-2-9528935-0-3",
+          "editor": null,
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/15/Descentes-de-canyons-en-Savoie.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_41d94fc71141bb59",
+          "kind": "MAP",
+          "title": "3534 OT Les Trois-Vallees (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_d981b70a25e08eec",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.savoie-maurienne.com/sites/canyoning/index.html",
+          "url": "http://www.savoie-maurienne.com/sites/canyoning/index.html"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

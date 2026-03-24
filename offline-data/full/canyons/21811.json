@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:49.130066+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21811,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21811/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21811/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21811/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21811/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21811,
+    "identity": {
+      "nom": "Almbachklamm",
+      "nomComplet": "Almbachklamm, Almbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21811/Almbachklamm.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Salzbourg",
+      "departement": "Hallein",
+      "communePrincipale": "Puch bei Hallein",
+      "communes": [
+        "Puch bei Hallein"
+      ],
+      "massif": "Osterhorngruppe",
+      "bassin": "Salzach",
+      "coursEau": "Almbach"
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.3,
+      "nbVotes": 6
+    },
+    "metrics": {
+      "altitudeDepartM": 560,
+      "deniveleM": 70,
+      "longueurM": 1300,
+      "cascadeMaxM": 5,
+      "cordeMiniM": 10,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "1h30min",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21811,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.733971,
+        "longitude": 13.152695,
+        "label": null
+      },
+      {
+        "canyonId": 21811,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.72541,
+        "longitude": 13.142803,
+        "label": null
+      },
+      {
+        "canyonId": 21811,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 47.734329,
+        "longitude": 13.153296,
+        "label": null
+      },
+      {
+        "canyonId": 21811,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 47.724026,
+        "longitude": 13.142824,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 47.734329,
+      "longitude": 13.153296,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_41402b7e45455e7d",
+          "kind": "TOPOGUIDE",
+          "title": "Tour de l'Europe en Canyon - T1 - Suisse, Autriche, Italie du Nord, Slovénie",
+          "authors": [
+            "Caracal et les Sancho Panza"
+          ],
+          "publicationYear": 2008,
+          "reference": "978-2-9526064-2-4",
+          "editor": null,
+          "status": "en stock\n\n- 25,90 € -\n\nCommandez cet ouvrage dès maintenant !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/130/Tour-de-l-Europe-en-Canyon---T1---Suisse--Autriche--Italie-du-Nord--Slovenie.html"
+        },
+        {
+          "id": "biblio_e6999a504a929a33",
+          "kind": "TOPOGUIDE",
+          "title": "Canyoning",
+          "authors": [
+            "Zaunhuber"
+          ],
+          "publicationYear": 1996,
+          "reference": null,
+          "editor": "Pollner Verlag",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1177/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_f3d52fb39dcb22f1",
+          "kind": "MAP",
+          "title": "94 Hallein (ÖK 50)",
+          "scale": "1:50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_e65cd93fd99c86b9",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cgi-bin/redirect.....action=detailed_desc",
+          "url": "http://canyon.carto.net/cgi-bin/redirect.....action=detailed_desc"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

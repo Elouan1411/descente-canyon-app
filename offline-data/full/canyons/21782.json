@@ -1,0 +1,134 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:42.467332+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21782,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21782/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21782/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21782/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21782/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/21782/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 21782,
+    "identity": {
+      "nom": "Latay (inférieur)",
+      "nomComplet": "Ruisseau du Latay (inférieur)",
+      "prefixeNom": "Ruisseau du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21782/Latay-inferieur.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Var",
+      "communePrincipale": "Signes",
+      "communes": [
+        "Signes"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 0.2,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 400,
+      "deniveleM": 50,
+      "longueurM": 200,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "30min",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": "D'Aubagne prendre la N8 vers Toulon, passer Cuges, Ok Coral; Au hameau Le Camp prendre à gauche la D2 en direction de Signes.Garez vous sur le pont qui enjambe le Latay (300m environ après la bifurquation vers le Plateau de Siou Blanc).",
+      "accesAmont": null,
+      "approche": "Du pont, descendre dans le Ruisseau par la RD.",
+      "descente": "Marcher une centaine de mètres dans le ruisseau pour tomber sur l'unique cascade.",
+      "retour": "Descendre le ruisseau et remonter sanglier en RG dés que vous le sentez bien pour rejoindre assez rapidement la route.\n\nUn chemin existe peut être (d'après l'IGN) en RG si on descend plus bas dans le ruisseau (non testé).",
+      "engagement": null,
+      "periode": "A sec, praticable toute l'année. Doit couler après de forte pluie.",
+      "geologie": null,
+      "historique": "Equipé par les Sud canyon.",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21782,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.286854,
+        "longitude": 5.847937,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 43.286854,
+      "longitude": 5.847937,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_172d0b15123f0bba",
+          "kind": "MAP",
+          "title": "3345 OT Signes - Tourves (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 579,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Var) - 13 mai 2025",
+          "summary": "- La pratique du canyonisme dans des canyons secs (cotation aquaticité A1 ou habituellement à sec) est autorisée toute l'année\n\n- La pratique du canyonisme dans des canyons aquatiques est interdite du 1er novembre au 31 mars.\n\nPour la période du 1er avril au 30 octobre, il est interdit :\n\n- de pratiquer du coucher du soleil à 9h\n\n- de s'engager dans une descente de canyon aquatique après 17h.\n\n- De manière générale, il est interdit :\n\n- de s'engager si une alerte vigilance météo de niveau orange ou rouge est émise par Météo France, en ce qui concerne le risque \"pluie\", \"orage\", et \"inondation\", sur le secteur concerné.\n\n- de constituer un groupe de plus de 10 personnes (encadrement inclus)",
+          "remark": null,
+          "details": "Arrêté préfectoral (Préfecture du Var) SDJES-SPORTS-2025-12 du 13 mai 2025",
+          "effectiveDate": "13 mai 2025",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/579/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral (Préfecture du Var) SDJES-SPORTS-2025-12 du 13 mai 2025",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem579_pj1.pdf"
+            }
+          ]
+        },
+        {
+          "id": 545,
+          "status": "Abrogé",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Var) - 06 mai 2024",
+          "summary": "La pratique du canyonisme se voit interdite du 1er novembre au 31 mars.\n\nPour la période du 1er avril au 30 octobre, il est interdit :\n\n- de s'engager dans une descente de canyon avant 9h et après 17h.\n\n- de s'engager si une alerte vigilance météo de niveau orange ou rouge est émise par Météo France, en ce qui concerne le risque \"pluie\", \"orage\", et \"inondation\", sur le secteur concerné.\n\n- de constituer un groupe de plus de 10 personnes (encadrement inclus)",
+          "remark": "Arrêté abrogé et remplacé par l'arrêté préfectoral SDJES-SPORTS-2025-12 du 13 mai 2025",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nArrêté préfectoral (Var) n° SDJES-SPORTS-2024-0004 du 06 mai 2024",
+          "effectiveDate": "13 mai 2025",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/545/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral (Var) n° SDJES-SPORTS-2024-0004 du 06 mai 2024",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem545_pj1.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

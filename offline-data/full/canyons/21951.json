@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:18.585122+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21951,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21951/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21951/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21951/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21951/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21951,
+    "identity": {
+      "nom": "Pecotanas",
+      "nomComplet": "Barranco de las Pecotanas, Barranco inf d'Irues, Irues",
+      "prefixeNom": "Barranco de las",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21951/Pecotanas.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Aragón",
+      "departement": "Huesca",
+      "communePrincipale": "Plan",
+      "communes": [
+        "Plan"
+      ],
+      "massif": "Mt Perdu (Monte Perdido)",
+      "bassin": "Iruès",
+      "coursEau": "Irues"
+    },
+    "rating": {
+      "cotation": "v4a1I",
+      "interet": 2.8,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 1550,
+      "deniveleM": 400,
+      "longueurM": 900,
+      "cascadeMaxM": 38,
+      "cordeMiniM": 40,
+      "navette": "20.0km"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "4h",
+      "retour": "1h30"
+    },
+    "topo": {
+      "accesAval": "Entre le col de Santa Isabel et le village de Badain",
+      "accesAmont": null,
+      "approche": "Depuis le refuge du Col de Santa Isabel",
+      "descente": "Succession de 18 rappels, entrecoupée sur la fin de passage en désescalade, joli terrain d'aventure",
+      "retour": "Remontée vers le refuge Santa Isabel ou 1h de liaison vers Garganta d'Irues",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "Equipement vieillot et sangles cuites par le soleil"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21951,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.53104,
+        "longitude": 0.255818,
+        "label": null
+      },
+      {
+        "canyonId": 21951,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.525917,
+        "longitude": 0.245347,
+        "label": null
+      },
+      {
+        "canyonId": 21951,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 42.536598,
+        "longitude": 0.252814,
+        "label": "Refugio Santa Isabel"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 42.536598,
+      "longitude": 0.252814,
+      "label": "Refugio Santa Isabel"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

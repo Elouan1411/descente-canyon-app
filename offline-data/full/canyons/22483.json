@@ -1,0 +1,143 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:11.780394+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22483,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22483/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22483/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22483/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22483/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22483,
+    "identity": {
+      "nom": "Höllwiesenklamm",
+      "nomComplet": "Höllwiesenklamm, Nederbach I (sup.); Alpenrosenklamm, Alpenkönig, Stopfer, Nederbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22483/Hollwiesenklamm.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Tyrol",
+      "departement": "Imst",
+      "communePrincipale": "Ötz",
+      "communes": [
+        "Ötz"
+      ],
+      "massif": "Stubaier Alpen - Alpes Breonies",
+      "bassin": "Ötztaler Ache",
+      "coursEau": "Nederbach"
+    },
+    "rating": {
+      "cotation": "v3a4III",
+      "interet": 1.8,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1740,
+      "deniveleM": 1620,
+      "longueurM": 900,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 25,
+      "navette": "1.2km"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "1h15min",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "Sur Ötztal la direction Kühtai. Devant le pont (vers Marail). Ou plus loin parking dans le village Kühtai.\n\n1,2 km retour après le pont garer l'autre voiture.",
+      "accesAmont": null,
+      "approche": "Au pont suivre la sente jusqu'à ruisseau.",
+      "descente": "8 rappels, 1 toboggan",
+      "retour": "Devant le pont sortir à droite et sur la piste jusqu'à voiture.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22483,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.225704,
+        "longitude": 10.973099,
+        "label": null
+      },
+      {
+        "canyonId": 22483,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.228218,
+        "longitude": 10.961748,
+        "label": null
+      },
+      {
+        "canyonId": 22483,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 47.22913,
+        "longitude": 10.959527,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.22913,
+      "longitude": 10.959527,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_80a52b6e4b57f154",
+          "kind": "TOPOGUIDE",
+          "title": "Tiroler Canyoningführer - The Canyoning guide for Tyrol",
+          "authors": [
+            "Alexander Riml",
+            "Gunnar Amor"
+          ],
+          "publicationYear": 2012,
+          "reference": "978-3-200-02343-7",
+          "editor": null,
+          "status": "en stock\n\n- 44,90 € -\n\nCommandez cet ouvrage dès maintenant !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/170/Tiroler-Canyoningfuhrer---The-Canyoning-guide-for-Tyrol.html"
+        },
+        {
+          "id": "biblio_a216ca92fa29ca51",
+          "kind": "TOPOGUIDE",
+          "title": "Canyoning in Bayern und Tirol",
+          "authors": [
+            "Werner Baumgarten"
+          ],
+          "publicationYear": 2010,
+          "reference": null,
+          "editor": null,
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1226/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_223eef3bd7bbfcc1",
+          "kind": "MAP",
+          "title": "146 Imst (ÖK 50)",
+          "scale": "1:50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

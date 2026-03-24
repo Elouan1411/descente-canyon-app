@@ -1,0 +1,184 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:49:29.419676+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21457,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21457/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21457/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21457/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21457/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/21457/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 21457,
+    "identity": {
+      "nom": "Saint Gilles",
+      "nomComplet": "Ravine Saint Gilles, Les Aigrettes, Ravine St Gilles",
+      "prefixeNom": "Ravine",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21457/Saint-Gilles.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Saint Gilles les Bains",
+      "departement": "La Réunion",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Grand Bénare",
+      "bassin": null,
+      "coursEau": "Ravine St Gilles"
+    },
+    "rating": {
+      "cotation": "v3a3II",
+      "interet": 2.1,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 190,
+      "deniveleM": 140,
+      "longueurM": 650,
+      "cascadeMaxM": 46,
+      "cordeMiniM": 30,
+      "navette": "2.0km"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "2h",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "Quitter la N1 de ST GILLES au niveau de la pointe des Aigrettes. Prendre la direction de BASSIN CORMORANT, ST GILLES LES HAUTS. A la sortie d'une courbe à gauche, on voit différents parkings et un petit snack sur la droite. Demander l'autorisation de se garer sur ce parking ou un des bords de routes alentours.\n\nDe là, avec la seconde voiture, continuer de remonter la route. Suivre en direction du village artisanal de L'éperon et se garer sur un parking au pieds de ce village.\n\nIl semble, que dans un avenir assez proche, la nouvelle route des TAMARINS passe au dessus de cette ravine. L'accès se fera alors directement sous le pont (en construction actuellement, 2006) qui enjambera cette ravine.",
+      "accesAmont": null,
+      "approche": "De ce parking, aller en direction du canyon, descendre par une échelle puis par des marches jusqu'au cours d'eau souvent à sec.\n\nLonger le lit du cours d'eau vers l'aval dans les blocs.",
+      "descente": "Juste après pont de la route des TAMARINS (en construction en 2006) se trouve le premier obstacle: Un rappel de 38 mètres. ( fractionnable en 8 + 30 des deux rives) Main courante rappelable en R.D. et saut de 5 m. possible au pieds.\n\nOn arrive en bas dans le bassin Malheur, ou l'eau limpide nous attends.\n\nOn va alors suivre une canalisation en RD qui va nous mener en amont du bassin des aigrettes. Deux rappels de 23 mètres seront nésséssaires pour arriver à ses pieds. Equipement possible dans l'actif ou hors deau.\n\nSuivre alors une nouvelle fois la canalisation en RD et redescendre dans la ravine au bout de 300m de marche pour arriver au bassin des cormorans (rappel de 20m et saut possible de 5m)",
+      "retour": "Du bassin des cormorants, remonter en RD jusqu'à la canalisation, puis remonter jusqu'à la route en franchissant ce canal au niveau d'une petite chapelle.",
+      "engagement": "Echapatoires possibles pratiquement en permanence.",
+      "periode": "Le début est sec ou croupi et se remplit dès le premier obstacle.",
+      "geologie": null,
+      "historique": "Ouverture par le spéléo club des laves en techniques spéléo courrant 1988. Rééquipement en avril 1989 par Pascal COLAS (Canyon Réunion).",
+      "remarques": "Canyon d'initiation, facile d'accès et de pratique.\n\nAttention à l'arrêté d'interdiction qui n'est respecté de personne, inconnu de la Gendarmerie et des services de L'Office National de la Pêche..."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21457,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": -21.045279,
+        "longitude": 55.251945,
+        "label": null
+      },
+      {
+        "canyonId": 21457,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": -21.045555,
+        "longitude": 55.243057,
+        "label": null
+      },
+      {
+        "canyonId": 21457,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": -21.045555,
+        "longitude": 55.254723,
+        "label": null
+      },
+      {
+        "canyonId": 21457,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": -21.045,
+        "longitude": 55.240555,
+        "label": null
+      },
+      {
+        "canyonId": 21457,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": -21.045279,
+        "longitude": 55.246944,
+        "label": "Bassin malheur"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": -21.045555,
+      "longitude": 55.254723,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_0710f326f5b4b107",
+          "kind": "TOPOGUIDE",
+          "title": "La Réunion : Topocanyon Ricaric",
+          "authors": [
+            "Ric A Ric"
+          ],
+          "publicationYear": 2003,
+          "reference": null,
+          "editor": null,
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/156/topoguide.html"
+        },
+        {
+          "id": "biblio_f02672f3db0c7f65",
+          "kind": "TOPOGUIDE",
+          "title": "Le paradis du canyoning",
+          "authors": [
+            "P. Colas"
+          ],
+          "publicationYear": 1995,
+          "reference": null,
+          "editor": "Maison de la montagne",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1138/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_c90940801a6e504a",
+          "kind": "MAP",
+          "title": "4401RT Saint-Paul Le port (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_0d037852922ca1e3",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.canyoning-reunion.com/3bassins.htm",
+          "url": "http://www.canyoning-reunion.com/3bassins.htm"
+        },
+        {
+          "id": "resource_2d5485af7b95a597",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.canyonreunion.com/les_canyons/aigrettes.htm",
+          "url": "http://www.canyonreunion.com/les_canyons/aigrettes.htm"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 124,
+          "status": "Indéfini",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Réunion) - oct 2000",
+          "summary": "Il semble qu'il y ait deux arrêtés Préfectoraux interdisant cette descente. l'un datant d' octobre 2000 pour la baignade et le second d'avril 2002 pour les \"chutes de pierres\"!!!\n\nLe jour ou je suis passé, la gendarmerie n'était pas au courant et \"autorisait\" ce canyon. Contact pris auprès des l'Office National de la Pêche, ces derniers \"autorisaient \"également la descente...\n\nLors de la descente, nous nous sommes aperçu que de nombreuses personnes se baignaient dans les différents bassins.",
+          "remark": null,
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.",
+          "effectiveDate": "oct 2000",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/124/legislation.html",
+          "attachments": []
+        }
+      ]
+    }
+  }
+}

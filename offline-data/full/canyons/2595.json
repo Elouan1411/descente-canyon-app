@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:46:07.003289+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2595,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2595/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2595/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2595/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2595/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2595,
+    "identity": {
+      "nom": "Monts",
+      "nomComplet": "Les Monts",
+      "prefixeNom": "Les",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2595/Monts.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Isère",
+      "communePrincipale": "Saint-Gervais",
+      "communes": [
+        "Saint-Gervais"
+      ],
+      "massif": "Vercors",
+      "bassin": "Isère",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 0.3,
+      "nbVotes": 8
+    },
+    "metrics": {
+      "altitudeDepartM": 400,
+      "deniveleM": 86,
+      "longueurM": 150,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 40,
+      "navette": "2.0km"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "30min",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": "De St-Gervais emprunter la D35 en direction des Ecouges.\n\nAprès l'épingle de droite on arrive à l'arrivé du ruisseau : point IGN314.",
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": "Faible",
+      "periode": "Souvent à sec",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Encore une bouse monumentale. Cascades de Tuff peu intéressantes.\n\nUne solution de replie lorsque les Ecouges débordent."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2595,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 45.205627,
+        "longitude": 5.490761,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.205627,
+      "longitude": 5.490761,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_e7d94bb2f47393ab",
+          "kind": "TOPOGUIDE",
+          "title": "Cascades, Gorges & Canyons : Pré-alpes d'Isère et de Savoie",
+          "authors": [
+            "Bertrand Hauser",
+            "Delphine Baratin"
+          ],
+          "publicationYear": 2007,
+          "reference": "978-2-9529407-0-2",
+          "editor": "Descente-Canyon.com",
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/11/Cascades--Gorges-et-Canyons-:-Pre-alpes-d-Isere-et-de-Savoie.html"
+        },
+        {
+          "id": "biblio_0f06b44eb9a42186",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons du Vercors et Alentours",
+          "authors": [
+            "J-C. Botti",
+            "B. Rosset",
+            "Y. Launay",
+            "C. Larribe",
+            "T. Larribe",
+            "Spéléo Club MJC de Tullins"
+          ],
+          "publicationYear": 1997,
+          "reference": "ISBN 2-7417-0211-X",
+          "editor": "Gap",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/12/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_f71cf3569cd5f7fc",
+          "kind": "MAP",
+          "title": "3235 OT Autrans - Gorges de La Bourne (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

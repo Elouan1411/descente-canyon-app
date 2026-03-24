@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:48.218761+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23134,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23134/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23134/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23134/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23134/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23134,
+    "identity": {
+      "nom": "Hirschwängbach-Schafblassenbach",
+      "nomComplet": "Hirschwängbach-Schafblassenbach, Hirschwängbach, Schafblassenbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23134/Hirschwangbach-Schafblassenbach.html"
+    },
+    "location": {
+      "pays": "Allemagne",
+      "region": "Bayern",
+      "departement": "Schwaben",
+      "communePrincipale": "Schwangau",
+      "communes": [
+        "Landkreis Ostallgäu",
+        "Schwangau"
+      ],
+      "massif": "Ammergauer Alpen",
+      "bassin": "Lech",
+      "coursEau": "Hirschwängbach, Schafblassenbach"
+    },
+    "rating": {
+      "cotation": "v3a3III",
+      "interet": 1.6,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 1350,
+      "deniveleM": 240,
+      "longueurM": 1200,
+      "cascadeMaxM": 15,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "50min",
+      "descente": "2h45min",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "Depuis Reutte (Lech, Autriche) via Plansee jusqu'à Hôtel Ammerwald (\"BMW\")",
+      "accesAmont": null,
+      "approche": "Prendre sentier \"Schützensteig-Hochplatte\" jusqu'à passerelle Hirschwängbach",
+      "descente": "5 rappels dans Hirschwängbach, 7 rappels dans Schafblassenbach",
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23134,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.530956,
+        "longitude": 10.829698,
+        "label": "sentier (\"Schützensteig\") traverse Hirschwängbach"
+      },
+      {
+        "canyonId": 23134,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.527699,
+        "longitude": 10.839788,
+        "label": "captage d'eau à droite vers la piste"
+      },
+      {
+        "canyonId": 23134,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.525089,
+        "longitude": 10.843983,
+        "label": "Hotel Ammerwald (BMW)"
+      },
+      {
+        "canyonId": 23134,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.526436,
+        "longitude": 10.840542,
+        "label": "prendre le sentier \"Schützensteig-Hochplatte\""
+      },
+      {
+        "canyonId": 23134,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.531658,
+        "longitude": 10.832753,
+        "label": "arriver Schafblassenbach"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.525089,
+      "longitude": 10.843983,
+      "label": "Hotel Ammerwald (BMW)"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_d12cfaad67e26bc1",
+          "kind": "MAP",
+          "title": "Füssen und Umgebung (Bayerisches Landesvermessungsamt)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

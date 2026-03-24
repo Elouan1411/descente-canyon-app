@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:44:25.080798+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2179,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2179/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2179/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2179/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2179/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/2179/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 2179,
+    "identity": {
+      "nom": "Pointay",
+      "nomComplet": "Ruisseau du Pointay",
+      "prefixeNom": "Ruisseau du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2179/Pointay.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Ain",
+      "communePrincipale": "Rossillon",
+      "communes": [
+        "Rossillon"
+      ],
+      "massif": "Bugey",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a1II",
+      "interet": 1.6,
+      "nbVotes": 17
+    },
+    "metrics": {
+      "altitudeDepartM": 690,
+      "deniveleM": 340,
+      "longueurM": 1000,
+      "cascadeMaxM": 43,
+      "cordeMiniM": 50,
+      "navette": "4.7km"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "3h",
+      "retour": "1mn"
+    },
+    "topo": {
+      "accesAval": "Sur la D1504, se garer au grand parking du cimetière à l'ouest de Rossillon.\n\nParking",
+      "accesAmont": "De Rossillon, monter par la D103 vers Armix. Dans un coude de la route à gauche, se garer (s'aider de la carte IGN).\n\nAutre variante pour faire le final et éviter la partie forestière de rando aquatique, se garer plus bas que le parking amont indiqué, au niveau du chemin de rando alt. 480m\n\nPrendre ce chemin et en arrivant à un petit lavoir continuer tout droit pour rejoindre le ruisseau du Pointay et son affluent la Chana\n\nCela vous amènera très vite aux cascades de la fin, les plus intéressantes à partir de la C15",
+      "approche": "Si l'on veut, on peut remonter (plutôt RG) le cours d'eau et trouver ainsi 3 cascades en amont du pont. Sinon, démarrer au pont.",
+      "descente": "Pas d'équipement, sauf à la dernière grande cascade, mais possibilité d'AN partout.",
+      "retour": "Le parking se trouve en RG à 1min du pied de la grande cascade finale.",
+      "engagement": "Aucun engagement, tout est large, on sort quand on veut.",
+      "periode": "Le ruisseau coule toute l'année, mais sous forme d'un petit filet en été. Ne pas tenter le diable par gros débit, un certain nombre d'affluents grossissent le flux et la fin peut remuer.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Quelques portions de marche intermédiaires plutôt longues."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2179,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.843487,
+        "longitude": 5.590045,
+        "label": null
+      },
+      {
+        "canyonId": 2179,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.837479,
+        "longitude": 5.586194,
+        "label": null
+      },
+      {
+        "canyonId": 2179,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 45.843517,
+        "longitude": 5.590281,
+        "label": null
+      },
+      {
+        "canyonId": 2179,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 45.836948,
+        "longitude": 5.585979,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 45.843517,
+      "longitude": 5.590281,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_c47b1f85c6cee4e2",
+          "kind": "MAP",
+          "title": "3231 E",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 103,
+          "status": "Obsolète",
+          "action": "Interdit",
+          "title": "Arrêté préfectoral (Ain) - 10 août 2005",
+          "summary": "La pratique du canyonisme est interdite pour des raisons de sécheresse, jusqu'au 15 septembre, sauf évolution.\n\nPour infos, l'amende est de 1500 €, 3000 € en cas de récidive...",
+          "remark": null,
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.",
+          "effectiveDate": "15 sept 2005",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/103/legislation.html",
+          "attachments": []
+        }
+      ]
+    }
+  }
+}

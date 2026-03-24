@@ -1,0 +1,187 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:46:32.328028+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2705,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2705/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2705/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2705/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2705/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/2705/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 2705,
+    "identity": {
+      "nom": "Artuby de Comps",
+      "nomComplet": "Canyon de l' Artuby de Comps, L'Artuby",
+      "prefixeNom": "Canyon de l'",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2705/Artuby-de-Comps.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Var",
+      "communePrincipale": "Comps-sur-Artuby",
+      "communes": [
+        "Comps-sur-Artuby"
+      ],
+      "massif": null,
+      "bassin": "Verdon",
+      "coursEau": "L'Artuby"
+    },
+    "rating": {
+      "cotation": "v1a5IV",
+      "interet": 1.4,
+      "nbVotes": 14
+    },
+    "metrics": {
+      "altitudeDepartM": 1000,
+      "deniveleM": 20,
+      "longueurM": 800,
+      "cascadeMaxM": 2,
+      "cordeMiniM": 5,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "1h",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "Depuis la D955 en provenance de Draguignan, prendre la petite route à droite juste dans le virage en épingle (avec parking camping-car sur la gauche).\n\nTourner ensuite à gauche (direction du village) puis à droite (direction \"le mauvais pont\") et se garer dans un virage avant une station d'épuration, soit au bout de la route (100 m après).",
+      "accesAmont": null,
+      "approche": "100 m avant la station, un bon sentier part sur la gauche. Le suivre et descendre jusqu'au bas du vallon.\n\nArrivé à la route, traverser un pré au niveau d'une propriété privée, et descendre en sous bois au bord de l'Artuby. Rejoindre le départ par la RG (RD propriété privée).",
+      "descente": "Rando aquatique sur un parcours horizontal et un peu encaissé.\n\nUn siphon non obligatoire et un bief de 100 m de nage, agrémentés de nombreux sauts en escaladant les parois du canyon.",
+      "retour": "Sortie par une petite escalade en RG, juste avant le pont d'où le sentier mène à la route et au parking.",
+      "engagement": "Pas d'échappatoire évidente dans l'encaissement.",
+      "periode": "Parcours aquatique toujours en eau à ne faire qu'à un niveau d'étiage à la belle saison, car les pièges sont bien présents (siphons, drossages...). La tenue néoprène complète est conseillée même en été (sauf très grosses chaleurs).",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Bien se renseigner sur la météo avant de s'engager sur ce parcours."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2705,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.709618,
+        "longitude": 6.518819,
+        "label": null
+      },
+      {
+        "canyonId": 2705,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.705631,
+        "longitude": 6.513133,
+        "label": null
+      },
+      {
+        "canyonId": 2705,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.707798,
+        "longitude": 6.513771,
+        "label": null
+      },
+      {
+        "canyonId": 2705,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 43.708252,
+        "longitude": 6.51434,
+        "label": "la sente d'approche"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.707798,
+      "longitude": 6.513771,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_fef4ae0a96dc33ed",
+          "kind": "MAP",
+          "title": "3543 OT Draguignan (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_09cc9e00c22f4d0f",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.altisud.com/canyoning/france/.....l_detail-canyon.html",
+          "url": "http://www.altisud.com/canyoning/france/.....l_detail-canyon.html"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 579,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Var) - 13 mai 2025",
+          "summary": "- La pratique du canyonisme dans des canyons secs (cotation aquaticité A1 ou habituellement à sec) est autorisée toute l'année\n\n- La pratique du canyonisme dans des canyons aquatiques est interdite du 1er novembre au 31 mars.\n\nPour la période du 1er avril au 30 octobre, il est interdit :\n\n- de pratiquer du coucher du soleil à 9h\n\n- de s'engager dans une descente de canyon aquatique après 17h.\n\n- De manière générale, il est interdit :\n\n- de s'engager si une alerte vigilance météo de niveau orange ou rouge est émise par Météo France, en ce qui concerne le risque \"pluie\", \"orage\", et \"inondation\", sur le secteur concerné.\n\n- de constituer un groupe de plus de 10 personnes (encadrement inclus)",
+          "remark": null,
+          "details": "Arrêté préfectoral (Préfecture du Var) SDJES-SPORTS-2025-12 du 13 mai 2025",
+          "effectiveDate": "13 mai 2025",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/579/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral (Préfecture du Var) SDJES-SPORTS-2025-12 du 13 mai 2025",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem579_pj1.pdf"
+            }
+          ]
+        },
+        {
+          "id": 545,
+          "status": "Abrogé",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Var) - 06 mai 2024",
+          "summary": "La pratique du canyonisme se voit interdite du 1er novembre au 31 mars.\n\nPour la période du 1er avril au 30 octobre, il est interdit :\n\n- de s'engager dans une descente de canyon avant 9h et après 17h.\n\n- de s'engager si une alerte vigilance météo de niveau orange ou rouge est émise par Météo France, en ce qui concerne le risque \"pluie\", \"orage\", et \"inondation\", sur le secteur concerné.\n\n- de constituer un groupe de plus de 10 personnes (encadrement inclus)",
+          "remark": "Arrêté abrogé et remplacé par l'arrêté préfectoral SDJES-SPORTS-2025-12 du 13 mai 2025",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nArrêté préfectoral (Var) n° SDJES-SPORTS-2024-0004 du 06 mai 2024",
+          "effectiveDate": "13 mai 2025",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/545/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral (Var) n° SDJES-SPORTS-2024-0004 du 06 mai 2024",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem545_pj1.pdf"
+            }
+          ]
+        },
+        {
+          "id": 424,
+          "status": "Abrogé",
+          "action": "Réglemente",
+          "title": "Arrêté municipal (Comps-sur-Artuby) - 30 juin 2021",
+          "summary": "La pratique de la descente de canyon est autorisée :\n\n- du 1er juin au 30 septembre,\n\n- de 9 h à 17 h, les lundi, mardi, jeudi et vendredi, hors jours fériés et journée de manifestation de pêche,\n\nLa pratique nocturne est interdite.\n\nIl est interdit de souiller l'eau et de porter atteinte à la faune, la flore et au milieu naturel.\n\nIl est obligatoire de respecter l'aire de stationnement prévu à cet effet (matérialisé avant l'écluse).\n\nIl est demandé aux pratiquants de ne pas crier et de s'informer des conditions météorologiques avant toutes sorties.",
+          "remark": "Arrêté municipal annulé par décision du tribunal administratif de Toulon en date du 6 juillet 2023.",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nArrêté municipal (Comps-sur-Artuby) n°2021_29 du 30 juin 2021\n\nDécision d'annulation (Tribunal administratif de Toulon) du 6 juillet 2023",
+          "effectiveDate": "06 juil 2023",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/424/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté municipal (Comps-sur-Artuby) n°2021_29 du 30 juin 2021",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem424_pj1.pdf"
+            },
+            {
+              "label": "Décision d'annulation (Tribunal administratif de Toulon) du 6 juillet 2023",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem424_pj2.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

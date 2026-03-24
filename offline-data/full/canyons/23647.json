@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:35.088933+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23647,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23647/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23647/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23647/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23647/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23647,
+    "identity": {
+      "nom": "Rogin",
+      "nomComplet": "Nant de Rogin",
+      "prefixeNom": "Nant de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23647/Rogin.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Haute-Savoie",
+      "communePrincipale": "Thônes",
+      "communes": [
+        "Thônes"
+      ],
+      "massif": "Bornes - Aravis",
+      "bassin": "Lac d'Annecy",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a1III",
+      "interet": 1.7,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 1430,
+      "deniveleM": 650,
+      "longueurM": 1000,
+      "cascadeMaxM": 55,
+      "cordeMiniM": 60,
+      "navette": "0.8km"
+    },
+    "timings": {
+      "approche": "1h15",
+      "descente": "3h",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "De Thônes suivre la route de Montremont et laisser une voiture avant la chapelle au village \"le Pesets\".\n\nAvec l'autre voiture se garer au parking (alt. 773m) au départ de la randonnée vers le refuge de Larrieux.",
+      "accesAmont": null,
+      "approche": "Prendre le sentier bien marqué qui conduit au refuge de Larrieux. Après une heure de marche, laisser un affluent du Nant de Rogin et sortir de la forêt jusqu'à la côte 1430. De ce champ tirer à droite en traversée pendant environ 1/4 d'heure pour rejoindre le canyon.",
+      "descente": "La 1ère partie se compose de beaux creusements dans un calcaire urgonien de belle qualité, plusieurs cascades de 30 à 40m puis on rejoint l'affluent que l'on avait laissé à la fin de la marche. Le débit double alors dans un calcaire de moins belle qualité et plus glissant.",
+      "retour": "Une dernière étroiture avant un rappel de 15m puis revenir à la voiture en restant dans le canyon devenu rivière.",
+      "engagement": "Relativement faible, possibilité de se mettre hors d'eau assez souvent.\n\nAttention ! Équipement de 1 ère sur mono-points. Canyon terrain d'aventure avec beaucoup de relais sur arbres.",
+      "periode": "Canyon à faire au printemps ou après de grosses pluies.",
+      "geologie": null,
+      "historique": "Ouverture Alexis Vildard et Remy Vilanova. 12 juin 2016",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23647,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.871288,
+        "longitude": 6.272292,
+        "label": null
+      },
+      {
+        "canyonId": 23647,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.868694,
+        "longitude": 6.286056,
+        "label": null
+      },
+      {
+        "canyonId": 23647,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 45.860764,
+        "longitude": 6.2826,
+        "label": null
+      },
+      {
+        "canyonId": 23647,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 45.868607,
+        "longitude": 6.286021,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 45.860764,
+      "longitude": 6.2826,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_68c3d089c92edd13",
+          "kind": "MAP",
+          "title": "3431 OT Lac d'Annecy (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

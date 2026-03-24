@@ -1,0 +1,147 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:59.241628+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23491,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23491/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23491/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23491/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23491/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23491,
+    "identity": {
+      "nom": "Fischbach (im Heutal)",
+      "nomComplet": "Fischbach (im Heutal), Fischbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23491/Fischbach-im-Heutal.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Salzbourg",
+      "departement": "Politischer Bezirk Zell am See",
+      "communePrincipale": "Lofer",
+      "communes": [
+        "Lofer"
+      ],
+      "massif": "Chiemgauer Alpen - Alpes de Chiemgau",
+      "bassin": "Weiße Traun",
+      "coursEau": "Fischbach"
+    },
+    "rating": {
+      "cotation": "v3a3II",
+      "interet": 3.0,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 945,
+      "deniveleM": 135,
+      "longueurM": 1200,
+      "cascadeMaxM": 28,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "10min",
+      "descente": "1h45min",
+      "retour": "45min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": "1 rappel ~18m soit à droite arrosé ou au centre sec. 200m marche puis toboggan incliné 3m rive gauche. Désescalade puis saut 5 m rive droite ou toboggan rive droite suivi de saut rive gauche 4 m, Macher 50m saut 2 mètres. Toboggan rive gauche 2 mètres. Rappel rive droite avec toboggan depuis la mi hauteur ou possible saut 5 ou 7 mètres rive gauche ou rappel rive gauche sec.\n\nMarche 50m, désescalade 5m rive droite, marche 20 mètres toboggan 2 mètre ou saut 3m rive gauche. Rappel 12m rive gauche ou désescalade rive droite toboggan incliné rive gauche. Marche puis désescalade rive gauche. Saut 3/5m ou 8m rappel arc de triomphe rive gauche 10 m puis saut 5m. Marche 300m puis rappel rive droite 27m arrosé (toboggan possible les 5 dernier mètres) ou rive gauche sec 32m. Désescalade rive gauche puis saut 3 mètres 100m marche/nage puis rappel 4 m rive gauche ou saut (difficile) 7m rive gauche 50 m nage puis saut 3 mètres",
+      "retour": "devant Staubfall sur la droite monter 30m hors chemin puis à droite à l'horizontale pour prendre une sente qui monte jusqu'à un sentier. Prendre le sentier à droite vers le parking",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "première sortie : 870m"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23491,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.665421,
+        "longitude": 12.651913,
+        "label": null
+      },
+      {
+        "canyonId": 23491,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.668831,
+        "longitude": 12.648657,
+        "label": "D1 - sortie à droite et quelques metres sans sente vers la-haut jusqu'à sentier"
+      },
+      {
+        "canyonId": 23491,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.670055,
+        "longitude": 12.648164,
+        "label": "D2 - devant Staubfall sortir à droite (recommandable)"
+      },
+      {
+        "canyonId": 23491,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.661415,
+        "longitude": 12.650975,
+        "label": null
+      },
+      {
+        "canyonId": 23491,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.670158,
+        "longitude": 12.648518,
+        "label": "diriger horizontal vers droite"
+      },
+      {
+        "canyonId": 23491,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.669327,
+        "longitude": 12.648775,
+        "label": "suivre D1 vers le-haut jusqu'à sentier"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.661415,
+      "longitude": 12.650975,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_c49372f2d240738f",
+          "kind": "MAP",
+          "title": "92 Lofer (ÖK 50)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_18ae2554c42cd337",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/C.....ischbachHeutalCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/C.....ischbachHeutalCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

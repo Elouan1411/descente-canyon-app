@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:05.489861+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23514,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23514/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23514/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23514/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23514/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23514,
+    "identity": {
+      "nom": "Puerto de Ramos",
+      "nomComplet": "Barranco del Puerto de Ramos",
+      "prefixeNom": "Barranco del",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23514/Puerto-de-Ramos.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Andalucía",
+      "departement": "Málaga",
+      "communePrincipale": "Campillos",
+      "communes": [
+        "Campillos"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.2,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": null,
+      "longueurM": null,
+      "cascadeMaxM": 26,
+      "cordeMiniM": 30,
+      "navette": "1.8km"
+    },
+    "timings": {
+      "approche": "??",
+      "descente": "1hà 1h30",
+      "retour": "45min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": "Depuis le parking amont: prendre 50m tout droit dans la végétation pour tomber sur un sentier qu'on suit à gauche pendant 300m jusqu'au départ de la descente",
+      "descente": "Canyon sec, très populaire. Ne coule que très rarement . Tous les rappels se suivent. Descente agréable.\n\nC6 ou dés, C10 ,2min de marche, C5, C 22, C7, C5, C20, puis par un petit rappel, gagner la main courante sur la corniche pour faire un dernier rappel de 26m.",
+      "retour": "Suivre le lit de la rivière pendant 100m, puis suivre la sente évidente en RG jusqu’à la route et la voiture.\n\n10 min ou 45 min si pas de navette. Entre la fin du canyon, au niveau de la route et le parking amont il y a 1850 m, dont 1600 sur piste",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23514,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 36.961784,
+        "longitude": -4.742978,
+        "label": null
+      },
+      {
+        "canyonId": 23514,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 36.961319,
+        "longitude": -4.739933,
+        "label": null
+      },
+      {
+        "canyonId": 23514,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 36.966156,
+        "longitude": -4.743864,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 36.961319,
+      "longitude": -4.739933,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_0bad76e38cad92eb",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.actionman4x4.com/canonesybarr.....s/puerto_de_ramo.htm",
+          "url": "http://www.actionman4x4.com/canonesybarr.....s/puerto_de_ramo.htm"
+        },
+        {
+          "id": "resource_0acfc5f542fa5cb3",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://ropewiki.com/Puerto_de_Ramos",
+          "url": "http://ropewiki.com/Puerto_de_Ramos"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

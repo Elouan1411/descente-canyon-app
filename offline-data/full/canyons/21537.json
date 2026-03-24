@@ -1,0 +1,143 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:49:47.893160+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21537,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21537/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21537/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21537/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21537/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21537,
+    "identity": {
+      "nom": "Pelada",
+      "nomComplet": "Pelada, Barranco de la Sierra Pelada",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21537/Pelada.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Aragón",
+      "departement": "Huesca",
+      "communePrincipale": "Hospital de Parzan",
+      "communes": [
+        "Bielsa",
+        "Hospital de Parzan"
+      ],
+      "massif": "Sierra Pelada",
+      "bassin": "Cinca",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a1III",
+      "interet": 2.5,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 1830,
+      "deniveleM": 350,
+      "longueurM": 600,
+      "cascadeMaxM": 90,
+      "cordeMiniM": 60,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "1h30",
+      "descente": "4h",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "Sur la route France - Bielsa, se garer 100m avant le pont du rio Barrosa (virage marqué à gauche).",
+      "accesAmont": null,
+      "approche": "Du parking, un sentier suit le rio Pinara en rive gauche puis le traverse (env. 50m plus loin). Le suivre ensuite en rive droite jusqu'à traverser le barranco Pelada. C'est là que ça se complique : remonter un éboulis en rive gauche du barranco puis se diriger légèrement sur la gauche (SO) pour trouver le lit du barranco.",
+      "descente": "Enchaînement de rappels de 10 à 60m. La grande cascade se fractionne en 35+55.",
+      "retour": "Emprunter le même chemin qu'a l'aller où descendre par l'arroyo Pinara Inférieur (500m, 2 ressauts) jusqu'à la passerelle.",
+      "engagement": "Canyon très peu couru, équipé en terrain d'aventure. Matériel de rééquipement obligatoire.",
+      "periode": "Canyon pratiquement toujours à sec, il peu être en eau après de 3 à 4 jours de fortes pluies.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Le chemin d'approche est tracé sur la carte Pirineo, mais l'approche requiert un bon sens de l'orientation et le pied sûr."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21537,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.710129,
+        "longitude": 0.195823,
+        "label": null
+      },
+      {
+        "canyonId": 21537,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.708931,
+        "longitude": 0.201015,
+        "label": null
+      },
+      {
+        "canyonId": 21537,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 42.703854,
+        "longitude": 0.199599,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 42.703854,
+      "longitude": 0.199599,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_fcae506cf45f5fdb",
+          "kind": "TOPOGUIDE",
+          "title": "Carte N°3 - Mont Perdu : du rio Gallego au rio Cinca.",
+          "authors": [
+            "Patrick Gimat + Jean-Paul Pontroué"
+          ],
+          "publicationYear": 1999,
+          "reference": null,
+          "editor": null,
+          "status": "en stock\n\n- 7,50 € -\n\nCommandez cet ouvrage dès maintenant !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/122/Carte-n°3-:-Mont-Perdu.html"
+        },
+        {
+          "id": "biblio_728585bf88b0a2ad",
+          "kind": "TOPOGUIDE",
+          "title": "Descentes de canyons dans le Haut Aragon - Tome 2",
+          "authors": [
+            "Patrick Gimat avec la collaboration de J.-P. Pontroué"
+          ],
+          "publicationYear": 1995,
+          "reference": "ISBN 2-85744-813-9",
+          "editor": "Co-édition Gimat/Pontroué/Edisud",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/156/Descentes-de-canyons-dans-le-Haut-Aragon---Tome-2.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_870014ac9ee0f26d",
+          "kind": "MAP",
+          "title": "Bielsa - Bal de Chitau (Carta Excursionista de los Pyrineos)",
+          "scale": "1/40000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

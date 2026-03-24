@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:49:55.269272+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21571,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21571/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21571/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21571/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21571/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/21571/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 21571,
+    "identity": {
+      "nom": "Coume (supérieur)",
+      "nomComplet": "Ruisseau de Coume (supérieur), Coume",
+      "prefixeNom": "Ruisseau de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21571/Coume-superieur.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Haute-Garonne",
+      "communePrincipale": "Bourdales (les Granges de)",
+      "communes": [
+        "Bourdales (les Granges de)"
+      ],
+      "massif": null,
+      "bassin": "Lys",
+      "coursEau": "Coume"
+    },
+    "rating": {
+      "cotation": "v4a1I",
+      "interet": 2.7,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 2012,
+      "deniveleM": 270,
+      "longueurM": 1000,
+      "cascadeMaxM": 35,
+      "cordeMiniM": 35,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "2h",
+      "descente": "??",
+      "retour": "45min"
+    },
+    "topo": {
+      "accesAval": "De St Mamet prendre la D46A jusqu'au terminus : parking.",
+      "accesAmont": null,
+      "approche": "du parking prendre le GR. Passer la cabane de la Coume. Au croisement Col de Pinata, prendre à droite lac des Graues. Descendre dans le canyon dès que possible.",
+      "descente": "7 cascades",
+      "retour": "Au niveau de la passerelle du ruisseau de la Coume reprendre le chemin de l'aller, ou enchainer (grosse journée) sur la Coume inférieure (cascade de Coume et Houradade), ou bien Calahoure inférieur.",
+      "engagement": "Equipement de 1ere",
+      "periode": "Été-automne",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Possibilité (mais grosse journée) d'enchaîner avec les cascades de la Coume inf, Calahoure inf et de Houradade (Cau et Coeur)."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21571,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.71217,
+        "longitude": 0.578949,
+        "label": null
+      },
+      {
+        "canyonId": 21571,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.720058,
+        "longitude": 0.569471,
+        "label": null
+      },
+      {
+        "canyonId": 21571,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 42.735535,
+        "longitude": 0.557186,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 42.735535,
+      "longitude": 0.557186,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_b4d10c31e88f9235",
+          "kind": "MAP",
+          "title": "1848 OT Bagneres-de-Luchon (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 266,
+          "status": "Abrogé",
+          "action": "Interdit",
+          "title": "Arrêté préfectoral (Haute-Garonne) - 28 juin 2013",
+          "summary": "\"La crue de la Garonne et de ses affluents a considérablement endommagé les rives et les installations liées aux activités aquatiques et nautiques\"... Et voilà la pratique du canyoning interdite dans toute la vallée du Lys et de la Neste d'Oo.",
+          "remark": null,
+          "details": "Arrêté préfectoral du 28 juin 2013 (abrogé)\n\nArrêté préfectoral du 5 août 2013",
+          "effectiveDate": "28 juin 2013",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/266/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral du 28 juin 2013 (abrogé)",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem266_pj1.pdf"
+            },
+            {
+              "label": "Arrêté préfectoral du 5 août 2013",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem266_pj2.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

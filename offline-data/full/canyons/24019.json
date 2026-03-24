@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:53.888977+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24019,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24019/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24019/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24019/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24019/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/24019/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 24019,
+    "identity": {
+      "nom": "Clue",
+      "nomComplet": "Ravin de la Clue",
+      "prefixeNom": "Ravin de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24019/Clue.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-Maritimes",
+      "communePrincipale": "Rigaud",
+      "communes": [
+        "Rigaud"
+      ],
+      "massif": null,
+      "bassin": "Cians",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "",
+      "interet": 900.0,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": 900,
+      "deniveleM": 450,
+      "longueurM": 700,
+      "cascadeMaxM": null,
+      "cordeMiniM": null,
+      "navette": null
+    },
+    "timings": {
+      "approche": null,
+      "descente": null,
+      "retour": null
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": "Ouverture en 2016 par la team Canyon-apéro : www.canyon-apero.com",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24019,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.979691,
+        "longitude": 6.996382,
+        "label": "En haut du cassé"
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 43.979691,
+      "longitude": 6.996382,
+      "label": "En haut du cassé"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_e6a4bc592b45ac21",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.canyon-apero.com/ravin-de-la-clue-2/",
+          "url": "http://www.canyon-apero.com/ravin-de-la-clue-2/"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 470,
+          "status": "Actif",
+          "action": "Interdit",
+          "title": "Arrêté municipal (Rigaud) - 29 mars 2022",
+          "summary": "La descente de canyons secs et le barring (descente en rappel de barres rocheuses) est interdit sur la commune.",
+          "remark": null,
+          "details": "Téléchargez le fichier JPEG :\n\nArrêté municipal (Rigaud) n°1-2022 du 29 mars 2022",
+          "effectiveDate": "29 mars 2022",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/470/legislation.html",
+          "attachments": []
+        }
+      ]
+    }
+  }
+}

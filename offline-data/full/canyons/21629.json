@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:07.104150+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21629,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21629/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21629/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21629/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21629/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21629,
+    "identity": {
+      "nom": "Trono",
+      "nomComplet": "Rio Trono",
+      "prefixeNom": "Rio",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21629/Trono.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Ligurie",
+      "departement": "Imperia",
+      "communePrincipale": "Triora",
+      "communes": [
+        "Triora"
+      ],
+      "massif": "Saccarello",
+      "bassin": "Argentina",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a1II",
+      "interet": 1.1,
+      "nbVotes": 9
+    },
+    "metrics": {
+      "altitudeDepartM": 750,
+      "deniveleM": 100,
+      "longueurM": 500,
+      "cascadeMaxM": 36,
+      "cordeMiniM": 40,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "40min",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": "De l'autoroute A10 Vintimille-gênes, sortir à Arma di Taggia et remonter la vallée de l'Argentina par la SS548 jusqu'à Molini di Triora. Continuer par la SP52 jusqu'à Triora puis jusqu'à Loreto. Dépasser Loreto (250m) et se garer au niveau du pont sur Trono.",
+      "accesAmont": null,
+      "approche": "Revenir à Loreto, après le virage à gauche, prendre un bon sentier qui débouche sur une piste. La suivre à gauche, elle amène à une grosse maison. De là, ne pas traverser immédiatement à flanc à gauche mais monter quelques mètres pour une meilleure restanque. Rejoindre facilement la rive G, descendre un peu pour le départ du parcours.",
+      "descente": "Une C10 puis la belle C38 encaissée, un 3° rappel dépose à qq mètres de la voiture.\n\nParcours \"mal noté\" parce que très court, mais a faire au printemps avec un débit correct en complément d'un autre dans la vallée.",
+      "retour": null,
+      "engagement": null,
+      "periode": "Souvent à sec.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Possibilité d'enchaîner dans la journée avec Argentina/Grognardo, sauf que si le débit est correct dans Trono il pourrait y avoir un (très) gros débit dans Argentina.\n\nPourquoi pas une journée \"petit canyon\" (bouse day), il y a Bregalla à côté, puis d'autres plus bas dans la vallée au débit modeste: Balsaire, Boetto, Armetta..."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21629,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.995438,
+        "longitude": 7.739047,
+        "label": null
+      },
+      {
+        "canyonId": 21629,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.99316,
+        "longitude": 7.739675,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.99316,
+      "longitude": 7.739675,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_a3482111c0bd004f",
+          "kind": "MAP",
+          "title": "ASF n°2 Moyenne Roya - Val Nervia e Argentina (Alpes sans fronti?res)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:59.896823+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23760,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23760/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23760/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23760/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23760/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23760,
+    "identity": {
+      "nom": "Sbrici",
+      "nomComplet": "Rio Sbrici",
+      "prefixeNom": "Rio",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23760/Sbrici.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Frioul-Vénétie julienne",
+      "departement": "Udine",
+      "communePrincipale": "Chiusaforte",
+      "communes": [
+        "Chiusaforte"
+      ],
+      "massif": "Alpes Juliennes",
+      "bassin": "Val Raccolana",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a2V",
+      "interet": 2.2,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1095,
+      "deniveleM": 545,
+      "longueurM": 2000,
+      "cascadeMaxM": 35,
+      "cordeMiniM": 50,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h30min",
+      "descente": "5h30min",
+      "retour": "20"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23760,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.418423,
+        "longitude": 13.356685,
+        "label": null
+      },
+      {
+        "canyonId": 23760,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.405758,
+        "longitude": 13.364941,
+        "label": null
+      },
+      {
+        "canyonId": 23760,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 46.405735,
+        "longitude": 13.352619,
+        "label": "depart du sentier \"620\""
+      },
+      {
+        "canyonId": 23760,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 46.403976,
+        "longitude": 13.358971,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 46.405735,
+      "longitude": 13.352619,
+      "label": "depart du sentier \"620\""
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

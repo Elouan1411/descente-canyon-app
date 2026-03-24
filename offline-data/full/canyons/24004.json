@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:50.799424+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24004,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24004/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24004/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24004/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24004/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24004,
+    "identity": {
+      "nom": "Foron [Megève]",
+      "nomComplet": "Le Foron [Megève]",
+      "prefixeNom": "Le",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24004/Foron-Megeve.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Haute-Savoie",
+      "communePrincipale": "Megève",
+      "communes": [
+        "Megève"
+      ],
+      "massif": "Bornes - Aravis",
+      "bassin": "Arve",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a2I",
+      "interet": 1.1,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 1200,
+      "deniveleM": 100,
+      "longueurM": 300,
+      "cascadeMaxM": 18,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "1h",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "Sortir sur la D1212 de Mégève vers Praz-sur-Arly, prendre la route secondaire à la Mottaz (parking au départ chemin rando vers le Mont de la Mottaz).",
+      "accesAmont": null,
+      "approche": "Suivre le chemin jusqu'au lacet à coté du Foron (env. 1220 m), y prendre le vieux chemin qui descend au ruisseau (pas balisé).",
+      "descente": "4 cascades arrosées selon le débit, quelques troncs dans les vasques. Après les blocs, suivre le ruisseau, ce qui est plus facile que de sortir.",
+      "retour": "Dans le lit du ruisseau jusqu'au pont à la Mottaz.",
+      "engagement": "Courte descente facile, si le rocher est propre.",
+      "periode": "Hors fonte principale tout l'année.",
+      "geologie": "Gneiss",
+      "historique": "30.04.2017 Timo Stammwitz",
+      "remarques": "Éviter de traverser les prés et les jardins à la sortie."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24004,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.859417,
+        "longitude": 6.600417,
+        "label": null
+      },
+      {
+        "canyonId": 24004,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.856556,
+        "longitude": 6.601667,
+        "label": null
+      },
+      {
+        "canyonId": 24004,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.855862,
+        "longitude": 6.604833,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.855862,
+      "longitude": 6.604833,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_bf97d8efb10efc46",
+          "kind": "MAP",
+          "title": "3531 OT Megève - Col des Aravis (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

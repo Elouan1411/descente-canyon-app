@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:28.485616+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23617,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23617/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23617/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23617/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23617/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23617,
+    "identity": {
+      "nom": "Rotas",
+      "nomComplet": "Ruisseau du Rotas",
+      "prefixeNom": "Ruisseau du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23617/Rotas.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Drôme",
+      "communePrincipale": "Eyroles",
+      "communes": [
+        "Sahune",
+        "Eyroles"
+      ],
+      "massif": null,
+      "bassin": "Aigues - Aigue - Eygues - Aygues",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a2I",
+      "interet": 0.7,
+      "nbVotes": 5
+    },
+    "metrics": {
+      "altitudeDepartM": 480,
+      "deniveleM": 100,
+      "longueurM": 500,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 20,
+      "navette": "3.2km"
+    },
+    "timings": {
+      "approche": "10min",
+      "descente": "1h20",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": ").\n\nParking",
+      "accesAmont": "toujours suivre la D94, passer La Casse et prendre à gauche la D567 en direction d'Eyroles (attention route étroite). Faire 1,9km et se garer à droite.",
+      "approche": "Rejoindre le ruisseau par la pente.",
+      "descente": "Quelques désescalades de cascades vous amènent sur le rappel d'un plan-incliné de 20m. S'en suivent une courte nage avec le passage de deux trois vasques et quelques désescalades parfois délicates, avant d'arriver sur le dernier rappel d'une C9. Désescalades d'une série de cascades marneuses et sortir au mieux en rive gauche.",
+      "retour": "Rejoindre un champ d'oliviers derrière la crête. En bas du champ, une courte piste rejoint le parking.",
+      "engagement": "Engagement faible.",
+      "periode": null,
+      "geologie": null,
+      "historique": "Emsud et ALAIN 13",
+      "remarques": "A enchaîner avec les cascades de Romezelier, Grand Ubac, Les Estouves et Pibou."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23617,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.407539,
+        "longitude": 5.239981,
+        "label": null
+      },
+      {
+        "canyonId": 23617,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.403324,
+        "longitude": 5.240047,
+        "label": null
+      },
+      {
+        "canyonId": 23617,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 44.408134,
+        "longitude": 5.23987,
+        "label": null
+      },
+      {
+        "canyonId": 23617,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 44.401413,
+        "longitude": 5.240821,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 44.408134,
+      "longitude": 5.23987,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_4e3735bcc40c64f3",
+          "kind": "MAP",
+          "title": "3139 OT Nyons (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

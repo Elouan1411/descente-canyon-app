@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:30.618403+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22563,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22563/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22563/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22563/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22563/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22563,
+    "identity": {
+      "nom": "Pize",
+      "nomComplet": "La Pize",
+      "prefixeNom": "La",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22563/Pize.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Isère",
+      "communePrincipale": "Saint-Pierre-de-Chérennes",
+      "communes": [
+        "Saint-Pierre-de-Chérennes"
+      ],
+      "massif": "Vercors",
+      "bassin": "Isère",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v5a1IV",
+      "interet": 1.0,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 820,
+      "deniveleM": 400,
+      "longueurM": 400,
+      "cascadeMaxM": 55,
+      "cordeMiniM": 60,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "10min",
+      "descente": "2h",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": "Sur la N532 entre Izeron et St Romans, prendre la D31 en direction de St Pierre de Chérennes puis continuer jusqu'au Guillon et se garer à l'entrée d'une piste dans une épingle à droite (piste qui amène au parking amont du Ruzand). Point IGN 819.",
+      "approche": "Du parking, descendre dans la pente sous la piste/sentier en laissant sur la gauche la barre rocheuse en vue. Puis descendre au mieux en diagonale vers la droite.",
+      "descente": "Très vite on arrive au départ d'une petite barre rocheuse.\n\nC20 (anneau de corde sur AN)\n\nAprès une rapide progression en sanglier où l'on pourra se servir de la corde une fois sur les différents AN, on arrive au départ du grand vide.\n\nC50 équipée sur AN (anneau de corde + maillon).\n\nR5 (arbuste)\n\nC55 - AN (2 petites grottes au pied du rappel en RG et RD)",
+      "retour": "Une centaine de mètre après le pied du dernier rappel, on trouve une sente en RD qui nous ramène à la piste.",
+      "engagement": null,
+      "periode": "Ruisseau principalement à sec, qui peut se faire toute l'année, même lorsque tout est crue.\n\nIl parait qu'il coule quelques jours de l'année mais s'est plutôt rare.",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22563,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 45.11639,
+        "longitude": 5.379138,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 45.11639,
+      "longitude": 5.379138,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_f71cf3569cd5f7fc",
+          "kind": "MAP",
+          "title": "3235 OT Autrans - Gorges de La Bourne (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:17.796161+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23015,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23015/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23015/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23015/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23015/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/23015/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 23015,
+    "identity": {
+      "nom": "Entraygues",
+      "nomComplet": "Pont Naturel d' Entraygues, Pont naturel de l'Argens, Argens",
+      "prefixeNom": "Pont Naturel d'",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23015/Entraygues.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Var",
+      "communePrincipale": "Vidauban",
+      "communes": [
+        "Vidauban"
+      ],
+      "massif": null,
+      "bassin": "Argens",
+      "coursEau": "Argens"
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 1.4,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 70,
+      "deniveleM": 20,
+      "longueurM": 200,
+      "cascadeMaxM": 10,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "1h00",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "De l'autoroute A8 (La Provençale), récupérer l'autoroute A57 en direction de Toulon et prendre la première sortie (n°13 Vidauban, Le Cannet des Maures, Le Luc). Au premier rond point après le péage,se diriger vers Vidauban par la N7 sur 6 km. Prendre à gauche rond point suivant pour suivre la D84 en direction \"Le Thoronet\". Après 4,5 km, au niveau de l'usine électrique d'Entraygues (virage assez étroit), prendre la piste à droite à la sortie du virage et se garer non loin du \"pont Naturel de l'Argens\". Voir IGN ! Pont Naturel et Grotte de St Michel.",
+      "accesAmont": null,
+      "approche": "Se diriger vers le barrage en amont du pont naturel. Au départ du grillage, descend une pseudo sente jusqu'au bord de l'Argens, \"attention de ne pas glisser\". Sinon, un rappel de 20 m par un AN est faisable pour se rendre au bord de l'eau .",
+      "descente": "Un saut possible de 4 m sous l'arche naturelle en tuf et deux rappels de 10m.",
+      "retour": "Sortie en RD après l'arche, à la grotte de St Michel, suivre la sente bien marquée pour rejoindre le parking .",
+      "engagement": "Pas d'échappatoire évident jusqu'à la sortie de l'arche en RD.",
+      "periode": "A faire absolument à l'étiage.",
+      "geologie": "Tuf",
+      "historique": null,
+      "remarques": "Bien évaluer le débit avant de s'engager. Barrage électrique en amont."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23015,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.424694,
+        "longitude": 6.381125,
+        "label": null
+      },
+      {
+        "canyonId": 23015,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.423283,
+        "longitude": 6.382155,
+        "label": null
+      },
+      {
+        "canyonId": 23015,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.423336,
+        "longitude": 6.381678,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.423336,
+      "longitude": 6.381678,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_7e0885449ad16b9f",
+          "kind": "MAP",
+          "title": "3544 OT Le Muy - Lorgues (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 579,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Var) - 13 mai 2025",
+          "summary": "- La pratique du canyonisme dans des canyons secs (cotation aquaticité A1 ou habituellement à sec) est autorisée toute l'année\n\n- La pratique du canyonisme dans des canyons aquatiques est interdite du 1er novembre au 31 mars.\n\nPour la période du 1er avril au 30 octobre, il est interdit :\n\n- de pratiquer du coucher du soleil à 9h\n\n- de s'engager dans une descente de canyon aquatique après 17h.\n\n- De manière générale, il est interdit :\n\n- de s'engager si une alerte vigilance météo de niveau orange ou rouge est émise par Météo France, en ce qui concerne le risque \"pluie\", \"orage\", et \"inondation\", sur le secteur concerné.\n\n- de constituer un groupe de plus de 10 personnes (encadrement inclus)",
+          "remark": null,
+          "details": "Arrêté préfectoral (Préfecture du Var) SDJES-SPORTS-2025-12 du 13 mai 2025",
+          "effectiveDate": "13 mai 2025",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/579/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral (Préfecture du Var) SDJES-SPORTS-2025-12 du 13 mai 2025",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem579_pj1.pdf"
+            }
+          ]
+        },
+        {
+          "id": 545,
+          "status": "Abrogé",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Var) - 06 mai 2024",
+          "summary": "La pratique du canyonisme se voit interdite du 1er novembre au 31 mars.\n\nPour la période du 1er avril au 30 octobre, il est interdit :\n\n- de s'engager dans une descente de canyon avant 9h et après 17h.\n\n- de s'engager si une alerte vigilance météo de niveau orange ou rouge est émise par Météo France, en ce qui concerne le risque \"pluie\", \"orage\", et \"inondation\", sur le secteur concerné.\n\n- de constituer un groupe de plus de 10 personnes (encadrement inclus)",
+          "remark": "Arrêté abrogé et remplacé par l'arrêté préfectoral SDJES-SPORTS-2025-12 du 13 mai 2025",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nArrêté préfectoral (Var) n° SDJES-SPORTS-2024-0004 du 06 mai 2024",
+          "effectiveDate": "13 mai 2025",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/545/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral (Var) n° SDJES-SPORTS-2024-0004 du 06 mai 2024",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem545_pj1.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

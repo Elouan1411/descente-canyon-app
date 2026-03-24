@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:34.765133+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22026,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22026/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22026/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22026/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22026/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22026,
+    "identity": {
+      "nom": "Chevaline",
+      "nomComplet": "Cascades Chevaline, Ruisseau chevaline",
+      "prefixeNom": "Cascades",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22026/Chevaline.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Isère",
+      "communePrincipale": "Choranche",
+      "communes": [
+        "Choranche"
+      ],
+      "massif": "Vercors",
+      "bassin": "Bourne",
+      "coursEau": "Ruisseau chevaline"
+    },
+    "rating": {
+      "cotation": "v4a1I",
+      "interet": 1.8,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 660,
+      "deniveleM": 360,
+      "longueurM": 300,
+      "cascadeMaxM": 42,
+      "cordeMiniM": 50,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "10min",
+      "descente": "2h15",
+      "retour": "45min"
+    },
+    "topo": {
+      "accesAval": "Se garer sur le parking des grottes de Choranche après le pylône et le relais.",
+      "accesAmont": null,
+      "approche": "Prendre le chemin qui monte à la grotte Chevaline et au site d'escalade. A une bifurcation prendre à gauche.",
+      "descente": "Première partie boisée et moussue jusqu'au parking, un oscuro de 25m pour les passionnés (équipé sur AN), les autres préféreront traverser la route. Possibilité de faire le rappel suivant sur la barrière du parking et d'enchaîner le reste de la descente.",
+      "retour": "Juste avant de rejoindre le ruisseau de Gournier (interdit) il faut remonter dans les buis façon sanglier en rive droite. Le mieux et de remonter la dernière cascade (en ayant auparavant laissé la corde.)",
+      "engagement": "Échappatoire possible tout le long ou presque, en rive gauche avant la C42 pendulaire, puis en rive droite.",
+      "periode": "La meilleur période semble être mars/avril à la fonte des neiges. Sec à partir de juin. Plus il y a d'eau mieux c'est..",
+      "geologie": "Résurgence du réseau Couffin/Chevaline.",
+      "historique": "Premier équipement par le Padawan et Yoda en mars 2009.",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22026,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.0709,
+        "longitude": 5.398772,
+        "label": null
+      },
+      {
+        "canyonId": 22026,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.069611,
+        "longitude": 5.392656,
+        "label": "arrivée et depart de la remontée"
+      },
+      {
+        "canyonId": 22026,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.071156,
+        "longitude": 5.397677,
+        "label": null
+      },
+      {
+        "canyonId": 22026,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 45.072609,
+        "longitude": 5.397651,
+        "label": "une p'tite mousse apres la remontée ???"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.071156,
+      "longitude": 5.397677,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_f71cf3569cd5f7fc",
+          "kind": "MAP",
+          "title": "3235 OT Autrans - Gorges de La Bourne (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_e18854c30285f99e",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://bouzeland.over-blog.com/pages/Rui.....evaline-1284464.html",
+          "url": "http://bouzeland.over-blog.com/pages/Rui.....evaline-1284464.html"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

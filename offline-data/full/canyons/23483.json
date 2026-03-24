@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:57.299050+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23483,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23483/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23483/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23483/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23483/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23483,
+    "identity": {
+      "nom": "Vaudaine",
+      "nomComplet": "Ruisseau de Vaudaine",
+      "prefixeNom": "Ruisseau de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23483/Vaudaine.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Isère",
+      "communePrincipale": "Livet-et-Gavet",
+      "communes": [
+        "Livet-et-Gavet"
+      ],
+      "massif": "Belledonne",
+      "bassin": "Romanche",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a1IV",
+      "interet": 2.5,
+      "nbVotes": 10
+    },
+    "metrics": {
+      "altitudeDepartM": 1385,
+      "deniveleM": 400,
+      "longueurM": null,
+      "cascadeMaxM": 40,
+      "cordeMiniM": 40,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h30",
+      "descente": "3h00",
+      "retour": "45min"
+    },
+    "topo": {
+      "accesAval": "De Grenoble, se rendre en direction de Bourg-d'Oisans en passant par Vizille. On dépasse livet et juste avant de traverser la Romanche, on se gare au niveau d'un monument aux morts (bien visible dans une épingle).\n\nAttention à bien stationner, sorties de camions fréquentes.",
+      "accesAmont": null,
+      "approche": "Juste derrière le monument aux morts, on emprunte une piste qui monte sur 200m de dénivelé en longeant le cours d'eau en RG.\n\nA la fin de la piste, il y a un sentier qui part à droite et qui arrive de suite à une cabane. De là, un sentier monte sur 500m de dénivelé.\n\nOn arrive à un premier cours d'eau sec, on continue pour en traverser un deuxième pour arriver ensuite à un troisième. On pourra vérifier aisément qu'on est sur le bon affluent, le relais est bien visible (en RD).",
+      "descente": "Canyon typé alpin. Les cascades s'enchainent quasi sans temps mort, il y a quelques ressauts non équipés.\n\nAu milieu du parcours on trouve une cascade de 90m fractionnée en 3 relais : 40m RD, 30m RG, 22m RG.\n\nSeulement la dernière cascade peut être difficile à passer en cas de gros débit.",
+      "retour": "La fin du canyon se situe au niveau de deux barrages brise-charge. On les évite en RG. On continue à descendre pour arriver sur un \"captage\" artisanal (tuyau jaune) qui permet d'alimenter en eau les gens de la cabane. De là, une micro-sente rejoins la fin de la piste empruntée à la montée.\n\nEn automne/hiver, en fonction du débit, pas sûr de trouver le \"captage\".\n\nDe là en 20min la piste nous ramène à la voiture.",
+      "engagement": "Après le 1er affluent, il est quasiment impossible de s'échapper du canyon. On peut en revanche se mettre hors crue à certains moments.\n\nÉquipements en place : relais doublés par des goujons de 10mm. Seulement 2 ressauts sont équipés en mono-point.\n\nPrendre de quoi ré-équiper.",
+      "periode": "Seulement des rappels, aucune vasques.",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23483,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.131161,
+        "longitude": 5.943161,
+        "label": null
+      },
+      {
+        "canyonId": 23483,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.121441,
+        "longitude": 5.951787,
+        "label": null
+      },
+      {
+        "canyonId": 23483,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.114353,
+        "longitude": 5.958181,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.114353,
+      "longitude": 5.958181,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:45.086830+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23693,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23693/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23693/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23693/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23693/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23693,
+    "identity": {
+      "nom": "Cadramazzo (inferiore)",
+      "nomComplet": "Rio Cadramazzo (inferiore)",
+      "prefixeNom": "Rio",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23693/Cadramazzo-inferiore.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Frioul-Vénétie julienne",
+      "departement": "Udine",
+      "communePrincipale": "Chiusaforte",
+      "communes": [
+        "Chiusaforte"
+      ],
+      "massif": "Alpes Juliennes",
+      "bassin": "Fella",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.9,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": null,
+      "longueurM": null,
+      "cascadeMaxM": 75,
+      "cordeMiniM": 80,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "20/30min",
+      "descente": "1h",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "De Chiusaforte, prendre la route nationale en direction du nord (Tarvisio). On dépasse bientôt la route du parking du Rio Patoc (Raccolana) et le Rio Patoc lui-même. Surveiller le côté droit; on aperçoit ensuite une grande cascade notable à droite : c'est le rio Cadramazzo. Se garer juste après avoir vu la grande cascade, sur un parking à gauche le long de la route nationale.",
+      "accesAmont": null,
+      "approche": "Du parking, longer très prudemment la route vers le nord jusqu'à une passerelle piétonne à droite que l'on traverse puis suivre le sentier qui passe au raz d'une aire d'autoroute. On arrive au hameau abandonné et on prend le chemin balisé qui monte au niveau de la piste cyclable. Rapidement, on trouve une bifurcation à droite non loin d'un petit calvaire : on suit la sente de droite jusqu'à une petite prise d'eau.",
+      "descente": "Deux cascades : la première est fractionnée en RG à environ un tiers de la hauteur mais selon le niveau d'eau le relais pourra être invisible et/ou inaccessible voire détruit... (déjà en très mauvais état en 08/2016). Il est donc raisonnable de prévoir de la descendre d'un seul jet. La seconde cascade est équipée soit dans l'actif (attention : faille qui semble dangereuse par débit important) soit hors d'eau en RD.",
+      "retour": "Traverser le collecteur et le longer en direction du parking. Remonter ensuite au mieux pour retrouver la route puis la voiture.",
+      "engagement": null,
+      "periode": "Étiage",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23693,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.42506,
+        "longitude": 13.32103,
+        "label": "Source CanyoningWiki"
+      },
+      {
+        "canyonId": 23693,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.424438,
+        "longitude": 13.31985,
+        "label": "Source CanyoningWiki"
+      },
+      {
+        "canyonId": 23693,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.425129,
+        "longitude": 13.31667,
+        "label": "Source CanyoningWiki"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.425129,
+      "longitude": 13.31667,
+      "label": "Source CanyoningWiki"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_26f6380c8e937ba4",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/C...../RioCadramazzoCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/C...../RioCadramazzoCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

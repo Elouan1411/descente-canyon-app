@@ -1,0 +1,179 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:54:59.513624+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22938,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22938/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22938/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22938/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22938/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/22938/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 22938,
+    "identity": {
+      "nom": "Chéran (amont)",
+      "nomComplet": "Le Chéran (amont), Gorges de la Charniaz",
+      "prefixeNom": "Le",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22938/Cheran-amont.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Savoie",
+      "communePrincipale": "Arith",
+      "communes": [
+        "Bellecombe-en-Bauges",
+        "Arith"
+      ],
+      "massif": "Bauges",
+      "bassin": "Fier",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v1a4II",
+      "interet": 1.7,
+      "nbVotes": 6
+    },
+    "metrics": {
+      "altitudeDepartM": 579,
+      "deniveleM": 10,
+      "longueurM": 700,
+      "cascadeMaxM": null,
+      "cordeMiniM": null,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "30min",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "Depuis Lescheraines, emprunter la D912 vers le nord (direction Annecy). Passer le Pont-de-Lescheraines puis, 50 m avant le carrefour avec la D911, emprunter devant la chocolaterie un bout d'ancienne route qui se termine tout de suite en cul-de-sac. Stationner ici (parking de rando) au plus loin et non pas sur le parking situé immédiatement devant la chocolaterie.",
+      "accesAmont": null,
+      "approche": "Redescendre à pied la D912 jusqu'à la seconde épingle depuis laquelle plusieurs sentes mènent au ruisseau (près d'une station de mesure du débit et d'une petite dalle rocheuse)",
+      "descente": "Il s'agit de la partie du Chéran située entre la confluence avec le ruisseau de Bellecombe et les grottes de Prérouge. C'est une randonnée aquatique dans une belle gorge. De la nage et quelques sauts possibles.",
+      "retour": "A la fin de l'encaissement, avant une maison bien visible en rive gauche, des sentes permettent de rejoindre le bon sentier balisé (GR de pays Tour des Bauges) qui remonte au parking.",
+      "engagement": null,
+      "periode": "A faire plutôt en période estivale à cause de la fraîcheur de l'eau. Attention au débit : le Chéran est un collecteur du massif.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Il existe une autre partie descendable en aval du pont de Bange (cf Haute-Savoie)"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22938,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.724728,
+        "longitude": 6.094258,
+        "label": null
+      },
+      {
+        "canyonId": 22938,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 45.719006,
+        "longitude": 6.102905,
+        "label": null
+      },
+      {
+        "canyonId": 22938,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 45.745155,
+        "longitude": 6.094322,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 45.719006,
+      "longitude": 6.102905,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_da30219dbb4dd176",
+          "kind": "TOPOGUIDE",
+          "title": "Les canyons de Savoie",
+          "authors": [
+            "Patrick Chollot"
+          ],
+          "publicationYear": 2018,
+          "reference": "978-2-95309-39-1-9",
+          "editor": "auto-édition",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/1125/Les-canyons-de-Savoie.html"
+        },
+        {
+          "id": "biblio_e7d94bb2f47393ab",
+          "kind": "TOPOGUIDE",
+          "title": "Cascades, Gorges & Canyons : Pré-alpes d'Isère et de Savoie",
+          "authors": [
+            "Bertrand Hauser",
+            "Delphine Baratin"
+          ],
+          "publicationYear": 2007,
+          "reference": "978-2-9529407-0-2",
+          "editor": "Descente-Canyon.com",
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/11/Cascades--Gorges-et-Canyons-:-Pre-alpes-d-Isere-et-de-Savoie.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_24c652994d6d1609",
+          "kind": "MAP",
+          "title": "3432 OT Massif des Bauges (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 574,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté - 06 fév 2025",
+          "summary": "- La pratique du canyonisme dans le canyon de Pont du Diable (Nant de Bellecombe) est autorisée du 1er avril au 31 octobre de 9h à 19h (heure d'entrée dans le canyon) à 20h30 (heure maximale de sortie du canyon). Le nombre souhaité de pratiquants est de 8 personnes et ne peut excéder 10 personnes, encadrement non compris.\n\n- La pratique du canyonisme dans le Nant de Glapigny (ou canyon du Pont d'Entrêves), les gorges de la Charniaz (ou Chéran amont) et le canyon du Reposoir (Nant de Bellecombe, partie amont) est autorisée toute l'année. Le nombre de pratiquants ne peut excéder 12 personnes, encadrement non compris.",
+          "remark": null,
+          "details": "Arrêté municipal (Bellecombe-en-Bauges) n°2025-02 du 6 février 2025",
+          "effectiveDate": "06 fév 2025",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/574/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté municipal (Bellecombe-en-Bauges) n°2025-02 du 6 février 2025",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem574_pj1.pdf"
+            }
+          ]
+        },
+        {
+          "id": 445,
+          "status": "Abrogé",
+          "action": "Réglemente",
+          "title": "Arrêté municipal (Bellecombe-en-Bauges) - 01 sept 2021",
+          "summary": "- La pratique du canyonisme dans le canyon de Pont du Diable (Nant de Bellecombe) est autorisée du 1er avril au 31 octobre de 9h à 19h (heures d'entrée dans le canyon). Le nombre souhaité de pratiquants est de 8 personnes et ne peut excéder 10 personnes, encadrement non compris.\n\n- La pratique du canyonisme dans le Nant de Glapigny (ou canyon du Pont d'Entrêves), les gorges de la Charniaz (ou Chéran amont) et le canyon du Reposoir (Nant de Bellecombe, partie amont) est autorisée toute l'année. Le nombre de pratiquants ne peut excéder 12 personnes, encadrement non compris.",
+          "remark": "Arrêté abrogé par le nouvel arrêté municipal n°2025-02 du 6 février 2025",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nArrêté municipal (Bellecombe-en-Bauges) du 1 septembre 2021",
+          "effectiveDate": "06 fév 2025",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/445/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté municipal (Bellecombe-en-Bauges) du 1 septembre 2021",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem445_pj1.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

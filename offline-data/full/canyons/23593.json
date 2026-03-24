@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:22.071624+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23593,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23593/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23593/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23593/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23593/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23593,
+    "identity": {
+      "nom": "Hagerbach",
+      "nomComplet": "Cascades de Hagerbach, Hagerbachfälle, Hagerbach",
+      "prefixeNom": "Cascades de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23593/Hagerbach.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Flums",
+      "departement": "Saint Gallen",
+      "communePrincipale": "Mels",
+      "communes": [
+        "Mels"
+      ],
+      "massif": "Préalpes appenzelloises",
+      "bassin": "Walensee",
+      "coursEau": "Hagerbach"
+    },
+    "rating": {
+      "cotation": "v5a2IV",
+      "interet": 1.8,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 1400,
+      "deniveleM": 550,
+      "longueurM": 600,
+      "cascadeMaxM": null,
+      "cordeMiniM": 80,
+      "navette": "1.0km"
+    },
+    "timings": {
+      "approche": "1h",
+      "descente": "3h",
+      "retour": "1h"
+    },
+    "topo": {
+      "accesAval": "Se garer à la station de la télécabine à Hinterspina.",
+      "accesAmont": null,
+      "approche": "De la gare d'arrivée de la télécabine, descendre et traverser le torrent de Ragnatscherbach puis remonter sur Lärchenboden.",
+      "descente": "Parcours vertical, la vallée est quasiment sous les pieds!",
+      "retour": "Sortir à environs alt. 800m en RD pour prendre un petit chemin.",
+      "engagement": "Pas d'échappatoires.",
+      "periode": "Après fin de la fonte des neiges. Mai-Novembre.",
+      "geologie": null,
+      "historique": "12.07.2010: Matthias Holzinger et Timo Stammwitz.",
+      "remarques": "Belles douches dans les grandes verticales."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23593,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.084759,
+        "longitude": 9.4026,
+        "label": null
+      },
+      {
+        "canyonId": 23593,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.079128,
+        "longitude": 9.39787,
+        "label": null
+      },
+      {
+        "canyonId": 23593,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 47.067719,
+        "longitude": 9.40197,
+        "label": null
+      },
+      {
+        "canyonId": 23593,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 47.075191,
+        "longitude": 9.38784,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 47.067719,
+      "longitude": 9.40197,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_41373e153daf03ee",
+          "kind": "MAP",
+          "title": "1155 Sargans (Swisstopo)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

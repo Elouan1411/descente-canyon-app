@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:59:10.356761+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24092,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24092/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24092/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24092/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24092/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24092,
+    "identity": {
+      "nom": "Greixot",
+      "nomComplet": "Torrent del Greixot, Font del Castell",
+      "prefixeNom": "Torrent del",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24092/Greixot.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Cataluña",
+      "departement": "Barcelona",
+      "communePrincipale": "Guardiola de Berguedà",
+      "communes": [
+        "Guardiola de Berguedà"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.1,
+      "nbVotes": 6
+    },
+    "metrics": {
+      "altitudeDepartM": 890,
+      "deniveleM": 140,
+      "longueurM": 380,
+      "cascadeMaxM": 35,
+      "cordeMiniM": 40,
+      "navette": "2.4km"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "1h15",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "prendre la route qui monte vers Sant Julià de Cerdanyola, et se garer après la première épingle à gauche. Panneau “Les Nou Fonts”.\n\nParking",
+      "accesAmont": "continuer pendant 2,4 km et se garer sur la droite de la route.",
+      "approche": "Du parking amont, descendre vers la chapelle et la rivière en bas.",
+      "descente": "Très bien équipée.\n\nLa descente commence tout de suite avec une C35 qu’on descend hors de la veine d’eau.\n\nC12, C3, C8, C25 et une dernière C25.\n\nCanyon à 20min de Forat Negre.",
+      "retour": "Immédiatement après la C25, remonter la pente en rive gauche pour atteindre le sentier touristique de retour.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24092,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.22599,
+        "longitude": 1.886514,
+        "label": null
+      },
+      {
+        "canyonId": 24092,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 42.226562,
+        "longitude": 1.885992,
+        "label": null
+      },
+      {
+        "canyonId": 24092,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 42.227791,
+        "longitude": 1.881094,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 42.226562,
+      "longitude": 1.885992,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

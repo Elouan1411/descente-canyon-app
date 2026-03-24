@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:47:23.048057+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2906,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2906/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2906/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2906/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2906/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/2906/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 2906,
+    "identity": {
+      "nom": "Isorno (Inférieur)",
+      "nomComplet": "Isorno (Inférieur)",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2906/Isorno-Inferieur.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Centovalli",
+      "departement": "Tessin",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": "Val Onsernone",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "",
+      "interet": 406.0,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": 406,
+      "deniveleM": 210,
+      "longueurM": 3500,
+      "cascadeMaxM": null,
+      "cordeMiniM": null,
+      "navette": null
+    },
+    "timings": {
+      "approche": null,
+      "descente": null,
+      "retour": null
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2906,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.19875,
+        "longitude": 8.676636,
+        "label": null
+      },
+      {
+        "canyonId": 2906,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.179653,
+        "longitude": 8.700635,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 46.19875,
+      "longitude": 8.676636,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_0cb1ef89bee0ed0d",
+          "kind": "MAP",
+          "title": "1312 Locarno (Carte Nationale Suisse)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_1cce8a1a753382ec",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.swisscanyon.ch/",
+          "url": "http://www.swisscanyon.ch/"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 588,
+          "status": "Actif",
+          "action": "Interdit",
+          "title": "Information - 01 jan 2023",
+          "summary": "\"Interdiction permanente en raison de la présence d’installations hydroélectriques lâchant automatiquement et de manière imprévisible de grandes quantité d’eau. Danger de fortes crues soudaines, même par beau temps\".",
+          "remark": null,
+          "details": "Information - 01 jan 2023",
+          "effectiveDate": "01 jan 2023",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/588/legislation.html",
+          "attachments": [
+            {
+              "label": "Information - 01 jan 2023",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem588_pj1.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

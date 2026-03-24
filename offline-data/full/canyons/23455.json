@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:50.359995+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23455,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23455/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23455/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23455/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23455/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23455,
+    "identity": {
+      "nom": "Jésus-Christ",
+      "nomComplet": "Ravin de Jésus-Christ",
+      "prefixeNom": "Ravin de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23455/Jesus-Christ.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-de-Haute-Provence",
+      "communePrincipale": "La Mure-Argens",
+      "communes": [
+        "La Mure-Argens"
+      ],
+      "massif": "Montagne de Maurel",
+      "bassin": "Verdon",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1II",
+      "interet": 0.4,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 1470,
+      "deniveleM": 450,
+      "longueurM": 1600,
+      "cascadeMaxM": 15,
+      "cordeMiniM": 20,
+      "navette": "20.0km"
+    },
+    "timings": {
+      "approche": "45min",
+      "descente": "2h30",
+      "retour": "25min"
+    },
+    "topo": {
+      "accesAval": "De Saint-André-les-Alpes prendre la direction de Lambruisse, Thorame-Basse par la D2. Roulez 6,5km et garez-vous au bord de la piste de droite interdite à la circulation. Parking et piste, 50m avant le pont de la Moulière.\n\nParking",
+      "accesAmont": "Reprendre la D2 en sens inverse et emprunter la D955 depuis Saint-André-les-Alpes en direction de Colmars-les-Alpes, Allos. Passer La Mure et après quelques kilomètres, prendre à gauche en direction du hameau d'Argens par la D34. A Argens, emprunter la piste jusqu'au col de la Coulette et garez-vous non loin de la barrière sans gêner.",
+      "approche": "Prendre la piste partant à gauche en suivant un tuyau d'alimentation d'eau. Passer une maison à droite et suivre la piste qui monte tout droit dans la pente herbeuse. Au sommet, une autre piste part à droite (ne pas l'emprunter), mais descendre plutôt dans le vallon où se situent les arbres. Suivre le fond du vallon jusqu'au premier rappel.",
+      "descente": "Série de cascades à descendre sur amarrage naturel jusqu'au ravin de la Moulière.",
+      "retour": "Suivre la piste menant au véhicule .",
+      "engagement": "Pas de réel encaissement, mais difficile de trouver une échappatoire.",
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "Rocher très instable. Risque de chute de pierres ."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23455,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.036518,
+        "longitude": 6.507214,
+        "label": null
+      },
+      {
+        "canyonId": 23455,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.032452,
+        "longitude": 6.495767,
+        "label": null
+      },
+      {
+        "canyonId": 23455,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 44.057785,
+        "longitude": 6.514692,
+        "label": null
+      },
+      {
+        "canyonId": 23455,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 44.022881,
+        "longitude": 6.495729,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 44.057785,
+      "longitude": 6.514692,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_46895baacb4925db",
+          "kind": "MAP",
+          "title": "3541 OT Annot (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

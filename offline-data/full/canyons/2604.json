@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:46:08.779839+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2604,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2604/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2604/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2604/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2604/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2604,
+    "identity": {
+      "nom": "Leno di Terragnolo",
+      "nomComplet": "Torrente Leno di Terragnolo",
+      "prefixeNom": "Torrente",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2604/Leno-di-Terragnolo.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Trentino-Alto Adige",
+      "departement": "Trento",
+      "communePrincipale": "Rovereto",
+      "communes": [
+        "Rovereto"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a4III",
+      "interet": 1.9,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 285,
+      "deniveleM": 65,
+      "longueurM": 750,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 25,
+      "navette": "1.1km"
+    },
+    "timings": {
+      "approche": "25min",
+      "descente": "1h30",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "Sur l’A22, Vérone—Brenner, sortez à Rovereto. Prenez la SS46 vers Vallarsa, Vicenza. A l’ermitage de San Colombano prenez à droite et descendez pour vous garer sur le parking de la \"centrale San Colombano\"\n\nParking",
+      "accesAmont": "Remontez et prenez la route en face en direction de Fontanelle-san Nicolo. Vous pouvez de la route voir le canyon. La route est fermée pour éboulement (parking avant le tunnel possible mais inutile). Parking aval plus efficace.\n\nMàj mai 2016: A noter qu'il y a eu un éboulement de terrain à la sortie du tunnel et que la navette fait maintenant 5km en attendant d'éventuels travaux.\n\nPour ceux qui voudraient faire l'approche à pied, il n'est pas prudent de s'y aventurer car le terrain semble instable, mais si les précaution d'usage sont prises, il n'y a aucuns risques.",
+      "approche": "Du parking aval, remontée au pont de la route d'ou l'on voit le canyon, allé en direction du tunnel, puis passé plus au que le barrage de la centrale pour apercevoir en aval l'ancien parking touristique (baigneurs). Départ du barrage.",
+      "descente": "Le premier encaissement est esthétique. Les deux cascades sont équipées RG et RD. A jour (vu que des pro tournent dedans).\n\nLa partie la plus encaissée et avec des rappels est au début. Ensuite, après une petite marche vous tombez sur les derniers obstacles.\n\nPlusieurs sauts sont possibles ! Toujours après sondages ! (barrages ok, rappel n°2 ok en RD) tobbogan 20m final ok.",
+      "retour": "Sortez à gauche échelle en barreau pour rejoindre le parking.",
+      "engagement": "Échappatoires difficiles. RD au niveau du deuxième rappel.",
+      "periode": "Printemps, été",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Présence d'un barrage en amont.\n\nUn canyon court mais ludique, si on y est aux bonnes heures, une superbe lumière y entre."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2604,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.878761,
+        "longitude": 11.069707,
+        "label": null
+      },
+      {
+        "canyonId": 2604,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.879368,
+        "longitude": 11.06261,
+        "label": null
+      },
+      {
+        "canyonId": 2604,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 45.878807,
+        "longitude": 11.070399,
+        "label": null
+      },
+      {
+        "canyonId": 2604,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 45.878834,
+        "longitude": 11.062288,
+        "label": "Eremo di San Colombano (parking)"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 45.878807,
+      "longitude": 11.070399,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

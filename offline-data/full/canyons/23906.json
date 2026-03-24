@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:32.173339+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23906,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23906/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23906/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23906/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23906/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23906,
+    "identity": {
+      "nom": "Rüschbach Schli Chessel",
+      "nomComplet": "Rüschbach Schli Chessel, Rüschgraben",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23906/Ruschbach-Schli-Chessel.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": null,
+      "departement": "Soleure",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Weissenstein",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a2II",
+      "interet": 1.0,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 900,
+      "deniveleM": 80,
+      "longueurM": 300,
+      "cascadeMaxM": 15,
+      "cordeMiniM": 15,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "30min",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "Dans le gros virage en épingle à Gansbrunnen, prendre la route tout droit qui devient après 300 m interdite aux voitures.",
+      "accesAmont": null,
+      "approche": null,
+      "descente": "Quelques desescalade, puis une C15 et on arrive à la confluence avec Rüschgraben Gross Chessel. Après la confluence, on retrouve un mini-encaissement avec un petit rappel et des désescalades et on arrive à la sortie du canyon.",
+      "retour": "Redescendre la route jusqu'au parking.",
+      "engagement": "Peu engagé.",
+      "periode": "A faire après des pluies.",
+      "geologie": null,
+      "historique": "Présence d'un équipement en haut de la C15, au vu des marques de crampons et de l'emplacement je dirais pour de la cascade de glace.",
+      "remarques": "A faire après son voisin Rüschgraben Gross Chessel."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23906,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.253559,
+        "longitude": 7.46656,
+        "label": null
+      },
+      {
+        "canyonId": 23906,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.260948,
+        "longitude": 7.46461,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.260948,
+      "longitude": 7.46461,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

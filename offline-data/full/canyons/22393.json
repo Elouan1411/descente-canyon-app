@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:52.664762+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22393,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22393/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22393/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22393/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22393/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22393,
+    "identity": {
+      "nom": "Krottenbach",
+      "nomComplet": "Krottenbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22393/Krottenbach.html"
+    },
+    "location": {
+      "pays": "Allemagne",
+      "region": "Bayern",
+      "departement": "Oberbayern",
+      "communePrincipale": "Lenggries",
+      "communes": [
+        "Landkreis Bad Tölz-Wolfratshausen",
+        "Lenggries"
+      ],
+      "massif": "Karwendel",
+      "bassin": "Isar",
+      "coursEau": "Krottenbach"
+    },
+    "rating": {
+      "cotation": "v2a3III",
+      "interet": null,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": 860,
+      "deniveleM": 100,
+      "longueurM": 4000,
+      "cascadeMaxM": 4,
+      "cordeMiniM": 10,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h15",
+      "descente": "2h",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22393,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.543076,
+        "longitude": 11.507514,
+        "label": null
+      },
+      {
+        "canyonId": 22393,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.557785,
+        "longitude": 11.541368,
+        "label": null
+      },
+      {
+        "canyonId": 22393,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.568851,
+        "longitude": 11.534277,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.568851,
+      "longitude": 11.534277,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

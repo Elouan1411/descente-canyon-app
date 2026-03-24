@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:22.908860+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23865,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23865/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23865/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23865/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23865/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23865,
+    "identity": {
+      "nom": "Dala amont (I+II)",
+      "nomComplet": "Dala amont (I+II), Dala",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23865/Dala-amont-III.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Leukerbad",
+      "departement": "Valais/Wallis",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Alpes Bernoises",
+      "bassin": "Rhône (amont du Lac Léman)",
+      "coursEau": "Dala"
+    },
+    "rating": {
+      "cotation": "v4a4III",
+      "interet": 2.9,
+      "nbVotes": 5
+    },
+    "metrics": {
+      "altitudeDepartM": 2120,
+      "deniveleM": 470,
+      "longueurM": 2800,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h30",
+      "descente": "4h",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": "Octobre",
+      "geologie": null,
+      "historique": "15/10/2011: Angélique Tinguely, Natacha et Thomas Guigon, Emmanuel Belut, Fred Soustre, Timo Stammwitz.",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23865,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.403728,
+        "longitude": 7.67889,
+        "label": null
+      },
+      {
+        "canyonId": 23865,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.3899,
+        "longitude": 7.65324,
+        "label": "arrivée Dala amont"
+      },
+      {
+        "canyonId": 23865,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.382305,
+        "longitude": 7.632241,
+        "label": "parking payant"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.382305,
+      "longitude": 7.632241,
+      "label": "parking payant"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_128e8ea1073e9f8a",
+          "kind": "MAP",
+          "title": "1267 Gemmi (Swisstopo)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_10592f36c85d5963",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/Canyons/DalaCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/Canyons/DalaCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

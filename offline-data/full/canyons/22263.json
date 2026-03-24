@@ -1,0 +1,141 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:24.901594+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22263,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22263/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22263/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22263/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22263/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22263,
+    "identity": {
+      "nom": "Enfer [Rière Bellevaux]",
+      "nomComplet": "Ruisseau de l' Enfer [Rière Bellevaux]",
+      "prefixeNom": "Ruisseau de l'",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22263/Enfer-Riere-Bellevaux.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Savoie",
+      "communePrincipale": "Jarsy",
+      "communes": [
+        "Jarsy"
+      ],
+      "massif": "Bauges",
+      "bassin": "Fier",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a1II",
+      "interet": 1.6,
+      "nbVotes": 9
+    },
+    "metrics": {
+      "altitudeDepartM": 1070,
+      "deniveleM": 90,
+      "longueurM": 400,
+      "cascadeMaxM": 15,
+      "cordeMiniM": 15,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "30min",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "Depuis la commune d'Ecole, prendre la route forestière en direction de Notre-Dame-de-Bellevaux. Au niveau du carrefour qui dessert l'oratoire, continuer tout droit en remontant la vallée du Chéran. On se garera en contrebas du hameau de Rière Bellevaux, le long de la route juste avant un gué (parking déconseillé au hameau car très paisible).",
+      "accesAmont": null,
+      "approche": "Montez au hameau et prenez à droite le bon sentier à droite entre les maisons. Suivre le chemin qui passe près du ruisseau (partie intermédiaire du canyon). Ensuite montez encore un peu jusqu'au départ d'une petite sente (balisée par un morceau de tuyau PVC jaune) jusqu'au départ (captage d'eau). A cet endroit, il y a 3 petites cascades accessibles en contournant le gros rocher par le haut (gros câble en place).",
+      "descente": "Un bel encaissement insoupçonnable dans les bois. La C15 peut se fractionner en deux.\n\nCanyon glissant mais bien équipé.",
+      "retour": "Descendre le lit du ruisseau, puis rattraper peu avant le hameau une petite sente en RD (balisage tuyau PVC jaune) pour rejoindre la voiture.",
+      "engagement": null,
+      "periode": "Printemps ou après une période pluie. Vraisemblablement peu d'eau à l'étiage.",
+      "geologie": null,
+      "historique": "?",
+      "remarques": "Attention à la C5 vers la fin qui tourbillonne par fort débit."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22263,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.645115,
+        "longitude": 6.222124,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.645115,
+      "longitude": 6.222124,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_da30219dbb4dd176",
+          "kind": "TOPOGUIDE",
+          "title": "Les canyons de Savoie",
+          "authors": [
+            "Patrick Chollot"
+          ],
+          "publicationYear": 2018,
+          "reference": "978-2-95309-39-1-9",
+          "editor": "auto-édition",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/1125/Les-canyons-de-Savoie.html"
+        },
+        {
+          "id": "biblio_e7d94bb2f47393ab",
+          "kind": "TOPOGUIDE",
+          "title": "Cascades, Gorges & Canyons : Pré-alpes d'Isère et de Savoie",
+          "authors": [
+            "Bertrand Hauser",
+            "Delphine Baratin"
+          ],
+          "publicationYear": 2007,
+          "reference": "978-2-9529407-0-2",
+          "editor": "Descente-Canyon.com",
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/11/Cascades--Gorges-et-Canyons-:-Pre-alpes-d-Isere-et-de-Savoie.html"
+        },
+        {
+          "id": "biblio_6d273ae41f72e178",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons de Savoie",
+          "authors": [
+            "F. Martin",
+            "C. Altazin"
+          ],
+          "publicationYear": 2007,
+          "reference": "978-2-9528935-0-3",
+          "editor": null,
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/15/Descentes-de-canyons-en-Savoie.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_24c652994d6d1609",
+          "kind": "MAP",
+          "title": "3432 OT Massif des Bauges (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

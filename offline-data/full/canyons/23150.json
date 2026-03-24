@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:52.545762+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23150,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23150/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23150/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23150/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23150/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23150,
+    "identity": {
+      "nom": "Kourtaliotiko",
+      "nomComplet": "Kourtaliotiko",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23150/Kourtaliotiko.html"
+    },
+    "location": {
+      "pays": "Grèce",
+      "region": "Crete",
+      "departement": "Rethymno",
+      "communePrincipale": "Spili",
+      "communes": [
+        "Spili"
+      ],
+      "massif": "Kouroupa",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.7,
+      "nbVotes": 5
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": null,
+      "longueurM": null,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 25,
+      "navette": "0.6km"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "1h",
+      "retour": "10/30min"
+    },
+    "topo": {
+      "accesAval": "Aval : Près du virage, prendre une piste escarpée qui descend au fond du canyon.",
+      "accesAmont": "Amont : Garer la voiture dans le grand virage avant d'arriver à Asomatos.",
+      "approche": "Remonter la route sur 300m jusqu'à trouver des escaliers qui descendent au petit ermitage de Agios Nikolaos.\n\nLa descente commence au bas de l'escalier.",
+      "descente": "Canyon très court mais beau et bien formé, et toujours en eau.\n\nJoli vasques, Sans doute le plus aquatique de l'île!!!",
+      "retour": "Remonter la piste a pied, ou en voiture, si on a fait la navette.",
+      "engagement": null,
+      "periode": "Toute l'année mais meilleur en Février, Mars et Avril.",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23150,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 35.197094,
+        "longitude": 24.466188,
+        "label": null
+      },
+      {
+        "canyonId": 23150,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 35.19342,
+        "longitude": 24.46493,
+        "label": null
+      },
+      {
+        "canyonId": 23150,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 35.188709,
+        "longitude": 24.463299,
+        "label": null
+      },
+      {
+        "canyonId": 23150,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 35.191322,
+        "longitude": 24.46524,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 35.188709,
+      "longitude": 24.463299,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

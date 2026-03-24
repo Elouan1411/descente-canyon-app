@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:33.653307+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22021,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22021/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22021/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22021/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22021/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22021,
+    "identity": {
+      "nom": "Margherita",
+      "nomComplet": "Rio Margherita, Rienzn Bach",
+      "prefixeNom": "Rio",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22021/Margherita-.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Trentino-Alto Adige",
+      "departement": "Bolzano",
+      "communePrincipale": "Terlano",
+      "communes": [
+        "Terlano"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v5a1III",
+      "interet": 2.6,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 574,
+      "deniveleM": 274,
+      "longueurM": 700,
+      "cascadeMaxM": 61,
+      "cordeMiniM": 50,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "??",
+      "descente": "1h30 - 2h",
+      "retour": "5minou 50m"
+    },
+    "topo": {
+      "accesAval": "Sortez de l’autoroute Modena-Brenner à Bolzano Sud. Continuez la route vers Merano et prenez la sortie de Terlano.\n\nAprès Settequerce, se garer sur le parking du petit centre commercial.\n\nPossibilité de navette (2ième voiture au Moarhof) peu intéressant.",
+      "accesAmont": null,
+      "approche": "Depuis le parking, remonter dans la rivière sur 200m. Sortir rive gauche et rattraper une route privée macadamée qui vous amène sur le sentier balisé \"Moarhof\".\n\nContinuer sur le sentier jusqu'à un barrage avec échelle.\n\nLe départ est au pied du barrage.",
+      "descente": "Le départ a peu d’intérêt. Ce n’est qu’avec la C15 surplombant la C61 que l’ensemble prend des couleurs uniques. La grande cascade est divisée en deux rappels un petit de 16 m (Prévoyez 2x20 m) et un second de 46 m. Il y a encore deux rappels, une sorte de MC RD puis un rappel sous gerbe de 25 m. Tous les relais sont scellés et de très bonne qualité (club canyoning d'Italie).",
+      "retour": "Descendre encore 10 min des blocs et sortir RD au niveau d’un tuyau menant à une grosse « boite » verte.\n\nPrendre la piste et rejoindre les véhicules par la petite route.",
+      "engagement": "Pas d’échappatoires dans les grandes cascades.",
+      "periode": "Le niveau d’eau baisse assez vite après les pluies. Les crues peuvent être terribles. Il y a quelques passages dans l’actif.\n\nJuin - octobre",
+      "geologie": "Granite orangé",
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22021,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 46.525269,
+        "longitude": 11.26957,
+        "label": "chiedere ai rivieranti permesso di parcheggio"
+      },
+      {
+        "canyonId": 22021,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 46.5144,
+        "longitude": 11.26887,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 46.525269,
+      "longitude": 11.26957,
+      "label": "chiedere ai rivieranti permesso di parcheggio"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_ea43182e8e3c72f2",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.canyoning.it/procanyon/settequerce.htm",
+          "url": "http://www.canyoning.it/procanyon/settequerce.htm"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:59.120877+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23178,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23178/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23178/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23178/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23178/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23178,
+    "identity": {
+      "nom": "Sein",
+      "nomComplet": "Barranco de Sein, Barranco del Sen",
+      "prefixeNom": "Barranco de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23178/Sein.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Aragón",
+      "departement": "Huesca",
+      "communePrincipale": "San Juan de Plan",
+      "communes": [
+        "Plan",
+        "San Juan de Plan"
+      ],
+      "massif": "Agujas del Sen",
+      "bassin": "Cinqueta",
+      "coursEau": "Barranco del Sen"
+    },
+    "rating": {
+      "cotation": "v3a3II",
+      "interet": 2.3,
+      "nbVotes": 11
+    },
+    "metrics": {
+      "altitudeDepartM": 1290,
+      "deniveleM": 110,
+      "longueurM": 500,
+      "cascadeMaxM": 12,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "17min",
+      "descente": "1h",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": "A San Juan de Plan prendre une piste sur le dessus du village, entre les maisons rive droite. La piste traverse le pont sur le rio Cinqueta (final de la Garganta de los Pecadores) puis quelques mètres plus loin, on arrive au pont marquant la fin du barranco de Sein. Se garer sans gêner la circulation et l'accès aux prés (2 à 3 places maximum). Si ce parking est saturé, on doit pouvoir se garer au village et suivre un sentier balisé qui débouche près du pont.",
+      "accesAmont": null,
+      "approche": "A 20 m en rive droite du pont prendre un chemin qui monte, d'abord loin\n\ndu canyon puis ensuite parallèle à ce dernier. Dans un virage, quitter le chemin principal pour se rendre par un canal d'eau et une petite descente entre les arbres jusqu'au départ.",
+      "descente": "Beau petit canyon encaissé avec des rappels aquatiques. De sympathiques tobs et quelques vasques profondes avec possibilités de sauts après vérifications d'usage. Très glissant par endroits.",
+      "retour": "Passer sous le pont et sortir à droite.",
+      "engagement": "Encaissé mais court.",
+      "periode": "Débit très sportif au printemps, correct en été.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Bien équipé. Idéal pour compléter une journée."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23178,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.594841,
+        "longitude": 0.349877,
+        "label": null
+      },
+      {
+        "canyonId": 23178,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.592667,
+        "longitude": 0.349855,
+        "label": null
+      },
+      {
+        "canyonId": 23178,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 42.592613,
+        "longitude": 0.349679,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 42.592613,
+      "longitude": 0.349679,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

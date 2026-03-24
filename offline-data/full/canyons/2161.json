@@ -1,0 +1,145 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:44:19.833475+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2161,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2161/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2161/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2161/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2161/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/2161/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 2161,
+    "identity": {
+      "nom": "Haute Dourbie",
+      "nomComplet": "Haute Dourbie, Dourbie",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2161/Haute-Dourbie.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Gard",
+      "communePrincipale": "Dourbies",
+      "communes": [
+        "Dourbies"
+      ],
+      "massif": "Cévennes",
+      "bassin": "Dourbie",
+      "coursEau": "Dourbie"
+    },
+    "rating": {
+      "cotation": "v2a3II",
+      "interet": 2.0,
+      "nbVotes": 18
+    },
+    "metrics": {
+      "altitudeDepartM": 800,
+      "deniveleM": 70,
+      "longueurM": 2000,
+      "cascadeMaxM": null,
+      "cordeMiniM": 10,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "10min",
+      "descente": "1h30/2h",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "Prendre la D151 étroite et sinueuse en montant depuis Saint-Jean-du-Bruel direction Dourbies, ou en descendant depuis l'Espérou ou Dourbies. Parking au niveau d'un délaissé de route (panneau).",
+      "accesAmont": null,
+      "approche": "Du parking, un sentier boisé descend vers la rivière. On peut ensuite la longer un peu en rive gauche vers l'aval sur un sentier et rentrer rapidement par une sente quand on voit le premier obstacle intéressant.",
+      "descente": "Succession de belles marmites et de cascatelles ; rocher glissant.\n\nPartie appelée Grande Gorge par les kayakistes, ouverte pour la première fois en 1976. Un concentré de passages mythiques : les 5 chutes, la Mitraillette, l’Équerre, le seuil à Paul, le Fer à cheval, les Bains-douche, le Bazar à bulles...\n\nQuelques sauts à trouver ; le dernier peut faire jusqu'à 12m (prudence).",
+      "retour": "Après une grande vasque caractéristique, avant un méandre de la rivière.\n\nDépart du sentier en RG peu évident, puis mieux marqué sur une crête.\n\nPrendre le premier embranchement évident à gauche : le sentier serpente à niveau en remontant la rivière jusque sous le parking.",
+      "engagement": "Aucun",
+      "periode": "Alimentation pluvio-nivale.\n\nAu printemps, selon la pluviométrie, cette partie est un des spots de kayak de haute rivière le plus pointue de France (passages en VI ex infrans) .\n\nAu-delà de 40cm à l'échelle de Le Mazet, certains passages sont à éviter en rando aqua.",
+      "geologie": "Granit et gneiss.",
+      "historique": null,
+      "remarques": "La fiche de Dom est assez complète :\n\n- bien sûr, la réglementation a changé depuis sa fiche\n\n- pour le chemin du retour : sur la carte 25000°, on voit très bien la courbe que fait la Dourbie sous Le Mourier. Un chemin est indiqué jusqu'à ce méandre. Quand on descend la rivière, on termine par un grand Saut RD dans une immense vasque : on voit très bien le col en face RG qu'il faut rejoindre pour sortir. L'embranchement pour le sentier de retour se fait après un petit raidillon où l'on peut admirer le reste de la Gorge. Le retour est vraiment court et il n'y a pas besoin de faire de navette.\n\nC'est aussi un parcours de kayak difficile et vous trouverez la topo et de belles images à cet endroit :\n\nhttp://www.eauxvives.org/fr/rivieres/voir/dourbie à noter qu'on a accès aux niveaux d'eau sur la Dourbie en Temps Réels (voir topo) : pour le canyon, des cotes de 25cm à Le Mazet conviennent très bien, je ne connais pas les limites supérieures raisonnables en rando aqua, mais ce serait intéressant de les calibrer : à l'occasion, si vous le faite avec un peu d'eau, merci d'indiquer la valeur temps réel de votre descente (historique sur 30 jours accessible)"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2161,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.066601,
+        "longitude": 3.435508,
+        "label": null
+      },
+      {
+        "canyonId": 2161,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.062263,
+        "longitude": 3.419608,
+        "label": "grande vasque sous le Mourrier"
+      },
+      {
+        "canyonId": 2161,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.064804,
+        "longitude": 3.43655,
+        "label": "ancienne décharge"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.064804,
+      "longitude": 3.43655,
+      "label": "ancienne décharge"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_fb5949b340608cd9",
+          "kind": "MAP",
+          "title": "2641 ET Mont-Aigoual (Le Vigan) (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_f60ff76c99d2d061",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://clementdom.free.fr/html/dourbie.htm",
+          "url": "http://clementdom.free.fr/html/dourbie.htm"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 48,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Gard) - 11 avr 2003",
+          "summary": "- la pratique du canyoning et de l'aquarandonnée n'est autorisée qu'à partir du 1er juin et jusqu'au 30 septembre 2003 .\n\n- ces activités ne peuvent être pratiquées qu'entre 10 h et 17 h à l'exception des mardi et jeudi de chaque semaine, jours durant lesquels la pratique de ces activités est effectivement interdite.\n\n- Des limitations en taille et nombre de groupes par heure et par jour concerne les groupes encadrés (par des professionnels ?).",
+          "remark": null,
+          "details": "Arrêté Prefectoral du 11 avril 2003\n\nArrêté Prefectoral du 31 mai 2002",
+          "effectiveDate": "11 avr 2003",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/48/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté Prefectoral du 11 avril 2003",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/arrete48-2.pdf"
+            },
+            {
+              "label": "Arrêté Prefectoral du 31 mai 2002",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/arrete48.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

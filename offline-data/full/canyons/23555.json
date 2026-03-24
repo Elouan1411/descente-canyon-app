@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:13.964536+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23555,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23555/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23555/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23555/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23555/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/23555/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 23555,
+    "identity": {
+      "nom": "Riou d'Authon",
+      "nomComplet": "Le Riou d'Authon",
+      "prefixeNom": "Le",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23555/Riou-d-Authon.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-de-Haute-Provence",
+      "communePrincipale": "Authon",
+      "communes": [
+        "Authon"
+      ],
+      "massif": null,
+      "bassin": "Vançon",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "",
+      "interet": 1230.0,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": 1230,
+      "deniveleM": 80,
+      "longueurM": 250,
+      "cascadeMaxM": null,
+      "cordeMiniM": null,
+      "navette": null
+    },
+    "timings": {
+      "approche": null,
+      "descente": null,
+      "retour": null
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": "lolo, tony-13 et ALAIN 13",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23555,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.252045,
+        "longitude": 6.111393,
+        "label": null
+      },
+      {
+        "canyonId": 23555,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.250546,
+        "longitude": 6.111057,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 44.252045,
+      "longitude": 6.111393,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_ec844e72d95ece0e",
+          "kind": "MAP",
+          "title": "3339 ET La Motte-Du-Caire (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 344,
+          "status": "Actif",
+          "action": "Interdit",
+          "title": "Information - 13 sept 2016",
+          "summary": "Monsieur Vincent PERGOLIZZI, propriétaire du site, a contacté Descente-Canyon.com pour signaler que le site était sur sa propriété privée. Il ne veut pas que la descente de canyon y soit pratiquée.\n\nMerci de respecter cette interdiction.",
+          "remark": null,
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.",
+          "effectiveDate": "13 sept 2016",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/344/legislation.html",
+          "attachments": []
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,145 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:44:50.082832+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2269,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2269/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2269/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2269/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2269/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2269,
+    "identity": {
+      "nom": "Valsenestre",
+      "nomComplet": "Cascades de Valsenestre, Ruisseau des Gorges",
+      "prefixeNom": "Cascades de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2269/Valsenestre.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Isère",
+      "communePrincipale": "Valjouffrey",
+      "communes": [
+        "Valjouffrey"
+      ],
+      "massif": "Ecrins - Oisans - Champsaur",
+      "bassin": "Drac",
+      "coursEau": "Ruisseau des Gorges"
+    },
+    "rating": {
+      "cotation": "v4a2III",
+      "interet": 2.1,
+      "nbVotes": 8
+    },
+    "metrics": {
+      "altitudeDepartM": 1490,
+      "deniveleM": 330,
+      "longueurM": 850,
+      "cascadeMaxM": 45,
+      "cordeMiniM": 45,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h",
+      "descente": "3h",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "De la Mure, se rendre à Valbonnais puis Entraigues. Ensuite prendre la direction de la Chapelle en Valjouffrey. De la prendre la D117a en direction de Valsenestre. Il faut stationner a proximité du deuxième pont, appelé \"pont de la scie\" (alt. 1167m).",
+      "accesAmont": null,
+      "approche": "Remonter la route sur environs 500m, pour prendre un chemin qui monte en direction de la fontaine juliane. Le sentier monte en foret, puis revient en direction du canyon. Le chemin entre dans le bon vallon (alt. 1485m environ).On arrive a une épingle à droite, il faut revenir sur ces pas sur une dizaine de mètre pour trouver une sente peu marquée. Cette sente horizontale, vous emmène au ruisseau qui faudra suivre quelques minutes pour arriver à la première cascade.",
+      "descente": "On entre dans le canyon par une première C45. Puis une portion de marche, vous emmènent dans la partie encaissée qui se finit par la C40.",
+      "retour": "Sortir au mieux par la forêt en RG.",
+      "engagement": "Échappatoires peu évidentes dans les parties encaissés.",
+      "periode": "Pas de vasques profonde, ni de nage.",
+      "geologie": null,
+      "historique": "Le 11/08/1990 par A.Maurice et Vuillot.",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2269,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.905277,
+        "longitude": 6.025,
+        "label": null
+      },
+      {
+        "canyonId": 2269,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.900555,
+        "longitude": 6.031111,
+        "label": null
+      },
+      {
+        "canyonId": 2269,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.900833,
+        "longitude": 6.033056,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.900833,
+      "longitude": 6.033056,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_774008f93c089927",
+          "kind": "TOPOGUIDE",
+          "title": "100 descentes de canyons autour de Grenoble",
+          "authors": [
+            "Arnaud Astier"
+          ],
+          "publicationYear": 2015,
+          "reference": "978-2-7466-7754-8",
+          "editor": "auto-édition",
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/194/100-Descentes-de-Canyons-autour-de-Grenoble.html"
+        },
+        {
+          "id": "biblio_6b7865a698c28634",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons alpins : Le tour de l'Oisans en canyons",
+          "authors": [
+            "Alain Bach",
+            "Marc Brunello",
+            "Christian Chillet",
+            "Philippe Drouin"
+          ],
+          "publicationYear": 1992,
+          "reference": "ISBN 2-7417-0054-0",
+          "editor": "Gap",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/117/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_f06f3bbae647fab7",
+          "kind": "MAP",
+          "title": "3336 ET Les Deux Alpes - Parc des Ecrins (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

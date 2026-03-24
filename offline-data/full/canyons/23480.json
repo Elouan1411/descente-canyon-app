@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:56.668050+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23480,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23480/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23480/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23480/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23480/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23480,
+    "identity": {
+      "nom": "Merdarel",
+      "nomComplet": "Torrent de Merdarel",
+      "prefixeNom": "Torrent de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23480/Merdarel.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Hautes-Alpes",
+      "communePrincipale": "Le Monêtier-les-Bains",
+      "communes": [
+        "Le Monêtier-les-Bains"
+      ],
+      "massif": null,
+      "bassin": "Guisane",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a1I",
+      "interet": 0.5,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 1630,
+      "deniveleM": 30,
+      "longueurM": 50,
+      "cascadeMaxM": 10,
+      "cordeMiniM": 15,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "30min",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "De Briançon prendre la direction du Grenoble. Juste après le hameau des Guibertes et juste avant Monêtier garez vous à proximité de la caserne de pompiers sur votre droite.",
+      "accesAmont": null,
+      "approche": "De la caserne, monter la nationale sur moins de 100m pour trouver une piste discrète qui monte dans les champs. Ne pas prendre la piste qui démarre à 20m de la caserne mais celle juste après. La suivre jusqu'à son terminus. Puis poursuivre par le sentier jusqu'au pied de la dernière cascade.",
+      "descente": "Il faut d'abord remonter les 3 ressauts (rg puis rd , cordes fixes en place ou escalade facile). 3 rappels à la descente.",
+      "retour": "Même itinéraire qu'à l'aller.",
+      "engagement": "Très limité.",
+      "periode": "Encore de l'eau l'été pour se rafraîchir un peu. Probablement gros débit à la fonte.",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23480,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.967712,
+        "longitude": 6.531108,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.967712,
+      "longitude": 6.531108,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_dfde5fc7c645a6ab",
+          "kind": "MAP",
+          "title": "3536 OT Briancon (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

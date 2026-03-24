@@ -1,0 +1,144 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:25.988324+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23879,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23879/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23879/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23879/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23879/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23879,
+    "identity": {
+      "nom": "Nero",
+      "nomComplet": "Rio Nero, Schwarzenbach, Des Teufels Wasserhahn, Il Rubinetto del Diavolo, Schwarzenbach, Rio Nero",
+      "prefixeNom": "Rio",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23879/Nero.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Trentino-Alto Adige",
+      "departement": "Bolzano",
+      "communePrincipale": "Lutago/Luttach",
+      "communes": [
+        "Lutago/Luttach"
+      ],
+      "massif": "Zillertaler Alpen",
+      "bassin": "Aurino/Ahr",
+      "coursEau": "Schwarzenbach, Rio Nero"
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": null,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": 1200,
+      "deniveleM": 170,
+      "longueurM": 1000,
+      "cascadeMaxM": 35,
+      "cordeMiniM": 40,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "40mn",
+      "descente": "2h",
+      "retour": "5mn"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23879,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.96154,
+        "longitude": 11.90965,
+        "label": null
+      },
+      {
+        "canyonId": 23879,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.95887,
+        "longitude": 11.91414,
+        "label": null
+      },
+      {
+        "canyonId": 23879,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.95834,
+        "longitude": 11.915356,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.95834,
+      "longitude": 11.915356,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_6691f7b9249adcf1",
+          "kind": "MAP",
+          "title": "036 Sand in Taufers - Campo Tures (Tabacco)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_61a09e920c0c72e2",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/C.....bachbeiBruneckCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/C.....bachbeiBruneckCanyon"
+        },
+        {
+          "id": "resource_31a2332bc606a2c2",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.ctgernstein.com/schluchten/schwarzbach",
+          "url": "http://www.ctgernstein.com/schluchten/schwarzbach"
+        },
+        {
+          "id": "resource_05a168416d352546",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.map-erlebnis.de/canyoning-top.....chwarzbach-trentino/",
+          "url": "http://www.map-erlebnis.de/canyoning-top.....chwarzbach-trentino/"
+        },
+        {
+          "id": "resource_05afd2a1d0b4ed18",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://catastoforre.aic-canyoning.it/ind.....IGE/pro/BZ/cod/BZ024",
+          "url": "http://catastoforre.aic-canyoning.it/ind.....IGE/pro/BZ/cod/BZ024"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:23.643117+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23040,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23040/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23040/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23040/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23040/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23040,
+    "identity": {
+      "nom": "Camatschera",
+      "nomComplet": "Val Camatschera",
+      "prefixeNom": "Val",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23040/Camatschera.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Trin",
+      "departement": "Graubünden/Grigioni/Grischun",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Ringelspitz",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2IV",
+      "interet": 3.0,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 2180,
+      "deniveleM": 400,
+      "longueurM": 600,
+      "cascadeMaxM": 40,
+      "cordeMiniM": 45,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "2h15min",
+      "descente": "3h",
+      "retour": "45min"
+    },
+    "topo": {
+      "accesAval": "Se garer à Flims dans un des nombreux parking payant. Prendre ensuite la navette en bus pour Bargis.",
+      "accesAmont": null,
+      "approche": "De Bargis prendre plein nord le même chemin que Lavadignas. Mais le quitter après le pont alt 1872 pour monter nord ouest jusqu'à croiser le cours d'eau.",
+      "descente": "Suite d'encaissements typiques du coin.",
+      "retour": "Redescendre prendre le bus à Bargis.",
+      "engagement": null,
+      "periode": "Semble avoir moins d'eau que ses voisins Surcruns et Lavadignas.",
+      "geologie": null,
+      "historique": "Timo Stammwitz, Matthias Holzinger, Warren Verboom 2011",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23040,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.883514,
+        "longitude": 9.310012,
+        "label": null
+      },
+      {
+        "canyonId": 23040,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.876564,
+        "longitude": 9.303274,
+        "label": null
+      },
+      {
+        "canyonId": 23040,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.83847,
+        "longitude": 9.279327,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.83847,
+      "longitude": 9.279327,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_9179b25820804ecc",
+          "kind": "MAP",
+          "title": "247 Sardona (Carte Nationale Suisse)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

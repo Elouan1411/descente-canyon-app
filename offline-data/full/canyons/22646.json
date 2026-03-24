@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:47.681633+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22646,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22646/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22646/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22646/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22646/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22646,
+    "identity": {
+      "nom": "Baccu Ois",
+      "nomComplet": "Baccu Ois",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22646/Baccu-Ois.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Sardegna",
+      "departement": "Nuoro",
+      "communePrincipale": "Gairo",
+      "communes": [
+        "Gairo"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 1.5,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 780,
+      "deniveleM": 180,
+      "longueurM": null,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 35,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "40min",
+      "descente": "45min",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": "Navette possible.",
+      "descente": "Vallon forestier peu encaissé avec des cascades et des roches bien colorés.",
+      "retour": "Dès que le dénivelé est fini, remonter RG sur la piste à quelques mètres de là et continuer jusqu'au guet (parking aval).",
+      "engagement": "Engagement faible.",
+      "periode": "En eau au printemps.",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22646,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 39.881943,
+        "longitude": 9.471389,
+        "label": null
+      },
+      {
+        "canyonId": 22646,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 39.878056,
+        "longitude": 9.466389,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 39.878056,
+      "longitude": 9.466389,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

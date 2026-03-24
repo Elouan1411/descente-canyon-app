@@ -1,0 +1,148 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:45:31.308552+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2441,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2441/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2441/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2441/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2441/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2441,
+    "identity": {
+      "nom": "Aiguières",
+      "nomComplet": "Les Aiguières, Valat de Séguissous",
+      "prefixeNom": "Les",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2441/Aiguieres.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Gard",
+      "communePrincipale": "Navacelles",
+      "communes": [
+        "Bouquet",
+        "Navacelles"
+      ],
+      "massif": "Garrigues",
+      "bassin": "Ceze",
+      "coursEau": "Valat de Séguissous"
+    },
+    "rating": {
+      "cotation": "v1a2I",
+      "interet": 1.9,
+      "nbVotes": 16
+    },
+    "metrics": {
+      "altitudeDepartM": 230,
+      "deniveleM": 50,
+      "longueurM": 1200,
+      "cascadeMaxM": 5,
+      "cordeMiniM": 10,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "5/15min",
+      "descente": "1-2h",
+      "retour": "0 / 45 min"
+    },
+    "topo": {
+      "accesAval": ", garez-vous sans gêner au hameau de Cal (au nord de Navacelles).\n\nAvec la voiture",
+      "accesAmont": ", redescendez à Navacelles, dirigez-vous vers l'est sur la D147 et garez-vous au point coté sur l'IGN 247.",
+      "approche": "Marche d'approche sans navette (15 minutes):\n\nDu parking sans navette, dirigez-vous vers l'est par la D147 pendant environ 200 m, puis prenez une piste à gauche qui descend vers le ruisseau. Gagnez le lit, ou essayez de descendre au maximum par des sentes RG.\n\nMarche d'approche avec navette (5 minutes): Du parking amont, rejoignez au mieux le ruisseau.",
+      "descente": "Descente composée de marche en rivières, marmites sculptées, encaissements.\n\nBien choisir la période pour avoir de l'eau, mais pas trop.",
+      "retour": "Retour sans navette:\n\nDès que vous arrivez à la civilisation, rejoignez un très bon chemin en RG et remontez le ruisseau en sa rive gauche. Rejoignez la voiture en passant par le Mont Lansac (la carte IGN peut être utile, même si les chemins sont bons)\n\nRetour avec navette: Arrivés à la civilisation, rejoignez la voiture discrètement (arrivée dans un hameau)",
+      "engagement": "Canyon sans difficulté.\n\nPrudence, les crues peuvent être très fortes!",
+      "periode": "A parcourir en eau (après période pluvieuse), mais pas trop (éviter les temps trop instables, notamment les orages de fin d'été)",
+      "geologie": "Beaux creusements",
+      "historique": null,
+      "remarques": "Impérativement peu après une période pluvieuse si on veut de l'eau... car sans eau = sans intéret ! les zones interessantes sont très courtes et séparés par de longues marches."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2441,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.174683,
+        "longitude": 4.264336,
+        "label": null
+      },
+      {
+        "canyonId": 2441,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.177616,
+        "longitude": 4.240281,
+        "label": null
+      },
+      {
+        "canyonId": 2441,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.177574,
+        "longitude": 4.257039,
+        "label": "Variante retour afin d'éviter la marche vers Cal"
+      },
+      {
+        "canyonId": 2441,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 44.170757,
+        "longitude": 4.266703,
+        "label": null
+      },
+      {
+        "canyonId": 2441,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 44.177219,
+        "longitude": 4.238869,
+        "label": "centre village"
+      },
+      {
+        "canyonId": 2441,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 44.169186,
+        "longitude": 4.258122,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 44.170757,
+      "longitude": 4.266703,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_d3ed1a39b8ab2a1b",
+          "kind": "MAP",
+          "title": "2840 OT Ales (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_1c2e1cf6c1160027",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://clementdom.free.fr/html/aiguieres.htm",
+          "url": "http://clementdom.free.fr/html/aiguieres.htm"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

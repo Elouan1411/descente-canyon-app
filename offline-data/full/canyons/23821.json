@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:13.724820+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23821,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23821/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23821/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23821/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23821/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23821,
+    "identity": {
+      "nom": "Malborghetto",
+      "nomComplet": "Rio Malborghetto, Malborgether Graben",
+      "prefixeNom": "Rio",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23821/Malborghetto.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Frioul-Vénétie julienne",
+      "departement": "Udine",
+      "communePrincipale": "Malborghetto Valbruna",
+      "communes": [
+        "Malborghetto Valbruna"
+      ],
+      "massif": "Alpes Carniques - Carniche - Karnischen",
+      "bassin": "Fella",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a3III",
+      "interet": null,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": 1245,
+      "deniveleM": 305,
+      "longueurM": 3100,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 25,
+      "navette": "65.0km"
+    },
+    "timings": {
+      "approche": "1h30min",
+      "descente": "3h",
+      "retour": "2h"
+    },
+    "topo": {
+      "accesAval": "Navette Malborghetto - Eggeralm",
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": "Décembre 2015 : Canyoning Cult Slovenia",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23821,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.55695,
+        "longitude": 13.39048,
+        "label": null
+      },
+      {
+        "canyonId": 23821,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.54237,
+        "longitude": 13.41436,
+        "label": null
+      },
+      {
+        "canyonId": 23821,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 46.586922,
+        "longitude": 13.374218,
+        "label": null
+      },
+      {
+        "canyonId": 23821,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 46.505714,
+        "longitude": 13.436938,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 46.586922,
+      "longitude": 13.374218,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

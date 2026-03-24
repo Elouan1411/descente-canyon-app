@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:46:46.067724+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2766,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2766/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2766/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2766/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2766/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2766,
+    "identity": {
+      "nom": "Devotas",
+      "nomComplet": "Barranco de las Devotas, Barranco de San Sebastian",
+      "prefixeNom": "Barranco de las",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2766/Devotas.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Aragón",
+      "departement": "Huesca",
+      "communePrincipale": "Tella-Sin",
+      "communes": [
+        "Tella-Sin"
+      ],
+      "massif": "Mt Perdu (Monte Perdido)",
+      "bassin": "Cinca",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a1II",
+      "interet": 2.4,
+      "nbVotes": 6
+    },
+    "metrics": {
+      "altitudeDepartM": 920,
+      "deniveleM": 200,
+      "longueurM": 400,
+      "cascadeMaxM": 55,
+      "cordeMiniM": 55,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "45min",
+      "descente": "2h",
+      "retour": "2min"
+    },
+    "topo": {
+      "accesAval": "du tunnel (large parking)\n\nAutre possibilité, se garer sur le dernier parking à droite avant Lafortunada (environ 100 m après le début du chemin d'accès) ce qui permet une marche sur la route moins longue avec les sacs sur le dos.",
+      "accesAmont": null,
+      "approche": "Continuer la route à pied vers l'aval sur 500 bons m.\n\nUn sentier facile à identifier car empierré sur les premiers mètres, montant raide sur les premiers mètres, puis en pente douce vous fait revenir vers l'amont.\n\nSuivre les cairns, il faut passer la croupe (montée dans les pierriers), passer par un petit col pour basculer sur le vallon du Devotas) puis suivre à flan jusqu'à une petite prairie au bord du cours d'eau au niveau d'une confluence (Rappel de 10m env. sur gros arbre RG).\n\nIl y a moyen de s'égarer si on reste trop en aval dans la marche d'approche...",
+      "descente": "Au moins 3 gros rappels sympas.\n\nJoli point de vue sur la gorge du Cinca\n\nAttention au dernier rappel (cf. retour) : il faut chercher l'amarrage en rive droite près d'une canalisation en pierre. Un nouveau rappel (hors veine d'eau) a été équipé en RG qui permet d'arriver sur la route.",
+      "retour": "C'est la qu'il faut être vigilant : avant on sortait sur les balustrades d'une des fenêtres du tunnel : ATTENTION, ça n'est plus conseillé car des tôles de protection on été installées et la tonche de la corde serait assurée.\n\nOn peut soit descendre à la rivière (bien estimer le débit du Cinca : l'arrivée se fait entre la dernière et l'avant-dernière arche = près de la partie obscure du tunnel) : possibilité de rentrer au parking à la nage (sac en position d'hydro) ou remonter à la route 300m en amont du tunnel.\n\nUne autre solution, si le débit du Cinca est trop important, consisterait à installer une main-courante avant la descente entre les 2 fenêtres (devrait être posée en fixe d'ailleurs depuis qu'ils ont mis ces satanées tôles !)",
+      "engagement": null,
+      "periode": "Après de fortes pluies, quand il y a gras d'eau dans le secteur",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Le canyon présente 3 cassés intéressants quand l'eau y coule : quand il y a gras d'eau dans Foz, c'est une bonne alternative pour occuper une demi-journée, à l'aller ou au retour d'un séjour en Sierra.\n\nSi l'eau ne coule pas au niveau du tunnel, c'est nettement moins intéressant comme descente, sauf en stage de perf."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2766,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.560341,
+        "longitude": 0.197957,
+        "label": null
+      },
+      {
+        "canyonId": 2766,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.558502,
+        "longitude": 0.204542,
+        "label": null
+      },
+      {
+        "canyonId": 2766,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 42.555923,
+        "longitude": 0.204631,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 42.555923,
+      "longitude": 0.204631,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

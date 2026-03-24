@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:51.963048+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24009,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24009/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24009/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24009/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24009/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24009,
+    "identity": {
+      "nom": "Bridon",
+      "nomComplet": "Torrent du Bridon",
+      "prefixeNom": "Torrent du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24009/Bridon.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Hautes-Alpes",
+      "communePrincipale": "Montgardin",
+      "communes": [
+        "Avançon",
+        "Montgardin"
+      ],
+      "massif": "Mont Colombis",
+      "bassin": "L'Avance",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2III",
+      "interet": 2.3,
+      "nbVotes": 12
+    },
+    "metrics": {
+      "altitudeDepartM": 890,
+      "deniveleM": 80,
+      "longueurM": 480,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 28,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15/20min",
+      "descente": "1h30",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "Entre Chorges et la Bâtie-Neuve, quitter la N94 pour prendre la D942 direction Tallard. 1,4 km après le carrefour, prendre la petite route à gauche (point coté 790 m) en direction du gîte \"La Source des Aroncis\" et la suivre sur 1,3 km jusqu'à la première épingle à gauche, avant le lieu-dit \"Les Bridons\". Se garer-là sans gêner (1 à 2 places).",
+      "accesAmont": null,
+      "approche": "Continuer à suivre la route principale pour passer au-dessus de la petite barre rocheuse. Vers l'altitude 880m, suivre le sentier de PR (panneaux) à droite en direction du ruisseau. On passe un petit affluent et on continue jusqu'au ruisseau principal (passerelle en bois).",
+      "descente": "Le canyon se compose de deux sections, un premier petit encaissement avec des petits ressauts puis l'encaissement final.\n\nPremier encaissement : R2+R1+R1 (1 point RG), R3 (1 point RD), R2 (1 point RD), affluent RG (tuf) puis C5 (1 point RG), R3 (1 point RD).\n\nMarche 200/250m.\n\nDeuxième encaissement : enchaînement C5 + vasque + C3 (1 point RG), C1 + C4 (1 point RG ou MC + 2 points RD pour éviter l'eau), rappel/main-courante 12/15m (2 points RD) pour aller chercher le départ de la C20/25 finale bien arrosée (3 points RG, palier au milieu du rappel).",
+      "retour": "Après la cascade finale suivre facilement le canal d'eau en RD qui retourne à l'épingle de la route où est stationnée la voiture.",
+      "engagement": "Deux encaissements courts ; vite faisable après la pluie. Entre les deux encaissements sortie en RD faisable.",
+      "periode": "Eau claire avec sédimentation de tuf ; débit qui ne bouge pas beaucoup ; sources dans la forêt qui apportent de l'eau également en période sèche.",
+      "geologie": "Schiste très friable",
+      "historique": "06.06.2017 : Jaysson Lambert, Timo Stammwitz",
+      "remarques": "Rocher friable, parois très instables de schiste : à ne pas faire pendant ou juste après la pluie. Venir avec quelques points longs si l'équipement a souffert."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24009,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.536362,
+        "longitude": 6.213611,
+        "label": null
+      },
+      {
+        "canyonId": 24009,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.539639,
+        "longitude": 6.211444,
+        "label": null
+      },
+      {
+        "canyonId": 24009,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 44.539001,
+        "longitude": 6.213306,
+        "label": null
+      },
+      {
+        "canyonId": 24009,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 44.541695,
+        "longitude": 6.211694,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 44.539001,
+      "longitude": 6.213306,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_28e68141a286bb81",
+          "kind": "MAP",
+          "title": "3338 ET Gap (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

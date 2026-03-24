@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:32.775608+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22301,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22301/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22301/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22301/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22301/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22301,
+    "identity": {
+      "nom": "Gorge",
+      "nomComplet": "Ruisseau de la Gorge",
+      "prefixeNom": "Ruisseau de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22301/Gorge.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Isère",
+      "communePrincipale": "Noyarey",
+      "communes": [
+        "Noyarey"
+      ],
+      "massif": "Vercors",
+      "bassin": "Isère",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a1IV",
+      "interet": 1.6,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 1170,
+      "deniveleM": 400,
+      "longueurM": 600,
+      "cascadeMaxM": 60,
+      "cordeMiniM": 45,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h15",
+      "descente": "2h30",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "De Noyarey prendre la D74 direction Ezy puis tourner à gauche alt.659 direction \"Les Veillères\". Se garer sans gêner dans le dernier tournant à droite avant une grande ferme, terminus de la route.",
+      "accesAmont": null,
+      "approche": "Prendre une piste qui part vers la falaise et se transforme en sentier. Couper le ruisseau de la Gorge et suivre les points bleus (au premier carrefour prendre le sentier qui monte) qui mènent à la cascade du \"Pas de l'Eyrard\" (raide). Remonter la cascade rive gauche (via ferrata) et poursuivre par le sentier à droite. Après une raide montée dans les bois on arrive au \"Chemin des Bœufs\". Il traverse une première bouse \"Les Bœufs\" puis arrive au départ de la descente.",
+      "descente": "Une quinzaine de rappels. Une partie aérienne et dégagée donnant sur la vallée de l'Isère et la Chartreuse. Attention aux chutes de pierres.",
+      "retour": "Suivre le ruisseau jusqu'à recouper le sentier de montée et sortir RG.",
+      "engagement": "Pas d'encaissement. Relais parfois mono-points de 8mm ou 10mm",
+      "periode": "A faire à la fonte des neiges ou après une longue période de pluie.",
+      "geologie": null,
+      "historique": "ré-équipement par CCF38, 2020, et le Padawan de Yoda 2ème semestre 2009",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22301,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.24437,
+        "longitude": 5.58791,
+        "label": null
+      },
+      {
+        "canyonId": 22301,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 45.244949,
+        "longitude": 5.58099,
+        "label": "depart des parapentes"
+      },
+      {
+        "canyonId": 22301,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 45.246826,
+        "longitude": 5.599251,
+        "label": "navette facultative"
+      },
+      {
+        "canyonId": 22301,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 45.24226,
+        "longitude": 5.595989,
+        "label": "cascade du \"pas de l'eyrard\""
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 45.244949,
+      "longitude": 5.58099,
+      "label": "depart des parapentes"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_f71cf3569cd5f7fc",
+          "kind": "MAP",
+          "title": "3235 OT Autrans - Gorges de La Bourne (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_c30fe493e23e2406",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://bouzeland.over-blog.com/pages/Rui.....a_Gorge-1385601.html",
+          "url": "http://bouzeland.over-blog.com/pages/Rui.....a_Gorge-1385601.html"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

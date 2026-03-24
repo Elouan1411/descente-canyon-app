@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:37.794636+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22039,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22039/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22039/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22039/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22039/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22039,
+    "identity": {
+      "nom": "Lanhac II",
+      "nomComplet": "Lanhac II",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22039/Lanhac-II.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Aveyron",
+      "communePrincipale": "Rodelle",
+      "communes": [
+        "Rodelle"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v1a1I",
+      "interet": 0.1,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 520,
+      "deniveleM": 160,
+      "longueurM": 450,
+      "cascadeMaxM": null,
+      "cordeMiniM": null,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "??",
+      "descente": "1h",
+      "retour": "1h30"
+    },
+    "topo": {
+      "accesAval": "Même accès que Lanhac.",
+      "accesAmont": null,
+      "approche": "Même accès que Lanhac. Sur le chemin, bifurquer plus tôt dans une combe. Le talweg est plus marqué que Lanhac (au départ).",
+      "descente": "Marche en forêt, quelques ressauts.",
+      "retour": "Reprendre le chemin inverse.",
+      "engagement": "Aucun",
+      "periode": "Pour y voir de l'eau, préférer une crue millénaire, ou amener sa propre citerne en amont.",
+      "geologie": null,
+      "historique": "Roland et Jérôme Pelissier - 1984",
+      "remarques": "Ce canyon sert plutôt à remonter du canyon de Lanhac. A noter qu'il est cité pour rendre hommage à Roland Pelissier, explorateur aveyronnais et auteur du topo concerné."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22039,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 44.49176,
+        "longitude": 2.61215,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 44.49176,
+      "longitude": 2.61215,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_a603aa4818255d95",
+          "kind": "MAP",
+          "title": "2438 O Estaing - Gorges du Lot (IGN S?rie Bleue)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_9c8c1a9db0efec7a",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.descente-canyon.com/forums/vi.....p?pid=123468#p123468",
+          "url": "http://www.descente-canyon.com/forums/vi.....p?pid=123468#p123468"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

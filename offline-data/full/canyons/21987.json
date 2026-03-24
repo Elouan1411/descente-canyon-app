@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:26.382402+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21987,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21987/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21987/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21987/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21987/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21987,
+    "identity": {
+      "nom": "Places",
+      "nomComplet": "Tine des Places",
+      "prefixeNom": "Tine des",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21987/Places.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Vionnaz",
+      "departement": "Valais/Wallis",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Chablais - Platé - Aiguilles Rouges",
+      "bassin": "Rhône (amont du Lac Léman)",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 0.5,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 595,
+      "deniveleM": 55,
+      "longueurM": 200,
+      "cascadeMaxM": null,
+      "cordeMiniM": 25,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "30min",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "A la sortie de Vionnaz direction Torgon, laisser la voiture dans la première épingle. (Place de parking dans l'épingle).\n\nMême accès que pour Tine de la Greffe",
+      "accesAmont": null,
+      "approche": null,
+      "descente": "Tout petit canyon peu encaissé comportant juste 3 cascades dont une jolie de 12 m. Le faire en complément de la Tine de la Greffe mais avant cette dernière. Joli cadre.",
+      "retour": "A la confluence avec la Tine de la greffe, suivre le torrent par un chemin RG qui ramène à la voiture en 5mn.",
+      "engagement": null,
+      "periode": "Mars à Octobre, en fonction de la fonte des neiges.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Le site internet (accessible dans la partie \"Biblio\") comporte toute les informations utiles.\n\nA enchainer avec la Tine de la Greffe, et la Tine de Mayen."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21987,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.30492,
+        "longitude": 6.891367,
+        "label": null
+      },
+      {
+        "canyonId": 21987,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.307777,
+        "longitude": 6.897922,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.307777,
+      "longitude": 6.897922,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_eb3772ac826f21d7",
+          "kind": "MAP",
+          "title": "1284 Monthey (Carte Nationale Suisse)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_5243058780ed3d84",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.homepage.bluewin.ch/swestcany.....ns/Places/Places.htm",
+          "url": "http://www.homepage.bluewin.ch/swestcany.....ns/Places/Places.htm"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

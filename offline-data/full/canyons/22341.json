@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:40.345308+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22341,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22341/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22341/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22341/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22341/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22341,
+    "identity": {
+      "nom": "Grmecica",
+      "nomComplet": "Grmecica",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22341/Grmecica-.html"
+    },
+    "location": {
+      "pays": "Slovénie",
+      "region": "Bohinj",
+      "departement": "Gorenjska",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Alpes Juliennes",
+      "bassin": "Sava Bohinjka",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a4IV",
+      "interet": 2.6,
+      "nbVotes": 5
+    },
+    "metrics": {
+      "altitudeDepartM": 680,
+      "deniveleM": 180,
+      "longueurM": 1400,
+      "cascadeMaxM": 15,
+      "cordeMiniM": 20,
+      "navette": "10.0km"
+    },
+    "timings": {
+      "approche": "10min",
+      "descente": "2h40",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "De Bled prenez la route 209 en direction de Bohinjska Bistrica. Après environ 14km vous atteignez la partie plus large de la vallée près de Nomenj. Environ 300m avant la petite gare ferroviaire de Nomenj, tournez à gauche brusquement pour atteindre un petit chemin de terre qui suit la voie ferrée. Passez sous la voie ferrée, tournez à droite et suivez ce chemin de terre étroit pendant environ 500m jusqu'à ce que vous atteigniez le Sava Bohinjka près d'un pont détruit. Garez la voiture aval.\n\nParking",
+      "accesAmont": "De Nomenj suivez la route 209 jusqu'à ce que vous atteigniez Bohinjska Bistrica. Dans le village prenez la route 909. Montez sur la massif, passez la hameau de Nemski Rovt. Une fois que vous voyez les quelques maisons de Lomé sur votre gauche, garez-vous au début d'une petite route située sur votre gauche.",
+      "approche": "Suivez la route forestière. Au carrefour, tournez à gauche jusqu'à ce que vous trouviez une route forestière envahie qui descend vars loa bas de la vallée. Suivez cette route jusqu'à ce que vous atteigniez la rivière près de sa source karstique.\n\nRemarque, pour effectuer seulement la partie inférieure :\n\nCroisez le Sava Bohinjka près du pont détruit (si le fleuve est trop haut pour le traverser, garez-vous près du pont 1,5 kilomètres d'en amont) et suivez la route jusqu'à ce qu'il tourne vars un chemin qui mène à la sortie de la gorge. Suivez un autre chemin sur la partie occidentale de la gorge jusqu'à ce que vous atteigniez la rivière au dessous d'un grand rocher délité.",
+      "descente": "Après une toute petite gorge au-dessous de la source karstique, suivez le cours d’eau par une longue et fastidieuse marche. Au bout d’1/4 d’heure, on atteint finalement le début de la gorge.\n\nLa gorge est une série de vasques profondes séparées par des toboggans et des sauts. L’eau est particulièrement froide.\n\nAprès un grand ébouli (le côté droit de la gorge s'est entièrement effondré il y a quelques années) vous trouvez la seule échappatoire en RG (qui est aussi l’accès pour la partie inférieure dérit dans la rubrique approche)\n\nLes dernières cascades sont plus étroites et sont habituellement bien équipées.",
+      "retour": "Continuez à descendre jusqu’à atteindre le Sava Bohinjka et desecndez-le jusqu’à atteindre le pont détruit et la voiture.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22341,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.27866,
+        "longitude": 14.001281,
+        "label": null
+      },
+      {
+        "canyonId": 22341,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.285007,
+        "longitude": 13.996196,
+        "label": null
+      },
+      {
+        "canyonId": 22341,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 46.272491,
+        "longitude": 13.994179,
+        "label": null
+      },
+      {
+        "canyonId": 22341,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 46.285542,
+        "longitude": 14.004736,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 46.272491,
+      "longitude": 13.994179,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_8396ffc8aa7f3259",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/Canyons/GrmecicaCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/Canyons/GrmecicaCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

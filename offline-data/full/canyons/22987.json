@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:10.213144+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22987,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22987/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22987/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22987/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22987/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22987,
+    "identity": {
+      "nom": "Steinerne Rinne",
+      "nomComplet": "Steinerne Rinne",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22987/Steinerne-Rinne.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Carinthie",
+      "departement": "Hermagor",
+      "communePrincipale": "Kötschach-Mauthen",
+      "communes": [
+        "Kötschach-Mauthen"
+      ],
+      "massif": "Alpes Carniques - Carniche - Karnischen",
+      "bassin": "Gail",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a3IV",
+      "interet": 2.4,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 950,
+      "deniveleM": 200,
+      "longueurM": 2400,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 35,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h",
+      "descente": "3h",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": "Dans Kötschach-Mauthen dans le quartier Mauthen (au sud de la rivière Gail) aller au parc de loisir nature (Naturschwimmbad Waldbad Mauthen).",
+      "accesAmont": null,
+      "approche": "A pied, traverser le Valentinbach (pont) et prendre en sa rive droite la piste forestière nommée \"Römerweg\" vers Plöckenpass. À la bifurcation prenez à droite. ce serait le premier affluent notable rencontré en montant.",
+      "descente": "Succession des rappels jusqu'à grande gorge (Mauthener Klamm), ensuite désescaler et marcher.",
+      "retour": "S'il est possible monter le sentier et aller retour au parc de nature.",
+      "engagement": null,
+      "periode": "Voir debit du Valentinbach !",
+      "geologie": null,
+      "historique": null,
+      "remarques": "C'est un affluent de la gorge principale du secteur: \"Mauthener Klamm\""
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22987,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.643242,
+        "longitude": 12.972794,
+        "label": null
+      },
+      {
+        "canyonId": 22987,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.657169,
+        "longitude": 12.986902,
+        "label": null
+      },
+      {
+        "canyonId": 22987,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 46.636448,
+        "longitude": 12.9553,
+        "label": "navette facultatif"
+      },
+      {
+        "canyonId": 22987,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.659378,
+        "longitude": 12.998478,
+        "label": "navette possible"
+      },
+      {
+        "canyonId": 22987,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 46.635735,
+        "longitude": 12.956089,
+        "label": "passarelle sur Valentinbach utilisé si on remonte à la confluence"
+      },
+      {
+        "canyonId": 22987,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 46.643398,
+        "longitude": 12.971066,
+        "label": "arrivée dans Valantinbach (Mauthener Klamm)"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 46.636448,
+      "longitude": 12.9553,
+      "label": "navette facultatif"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:51.870847+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23723,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23723/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23723/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23723/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23723/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23723,
+    "identity": {
+      "nom": "Echaillon",
+      "nomComplet": "Pas de l' Echaillon, Ruisseau de Champanin",
+      "prefixeNom": "Pas de l'",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23723/Echaillon.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Drôme",
+      "communePrincipale": "Chalancon",
+      "communes": [
+        "Chalancon"
+      ],
+      "massif": "Drôme provençale",
+      "bassin": "Aigues - Aigue - Eygues - Aygues",
+      "coursEau": "Ruisseau de Champanin"
+    },
+    "rating": {
+      "cotation": "v2a1I",
+      "interet": 0.5,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 880,
+      "deniveleM": 70,
+      "longueurM": 200,
+      "cascadeMaxM": 12,
+      "cordeMiniM": 15,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "45min",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": "De La Motte-Chalancon, emprunter la D135. Traverser Chalancon et aller tout droit après la via ferrata du Pas de l'Echelle en empruntant la D627. Stationner votre véhicule sans gêner à la ferme Bertrant (alt. 893m sur l'IGN).",
+      "accesAmont": null,
+      "approche": "Remonter la route jusqu'à la tête d'épingle et prendre à droite le sentier en direction du Pas de l'Echaillon. Descendre vers le petit ruisseau lorsque l'on aperçoit la zone rocheuse.",
+      "descente": "De petites désescalades et traversées de vasques vous mènent sur une C3 (1pt en RG). S'en suit un Pi6, une C5 (anneau de corde sur AN en RG) et une C12 (1 pt en RD). Sortir en RG via un petit pierrier après la C12.",
+      "retour": "Remonter au mieux le petit pierrier jusqu'à un petit col et cheminer en montant par la droite, jusqu'à atteindre le sentier de retour.",
+      "engagement": "Peu encaissé, mais la végétation est bien présente.",
+      "periode": "Petit, mais débit continu.",
+      "geologie": null,
+      "historique": "?? Un point avec plaquette déjà présent sur le Pi6.",
+      "remarques": "Descente pour collectionneurs. A proximité, la via ferrata du Pas de l'Echelle."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23723,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.511467,
+        "longitude": 5.336146,
+        "label": null
+      },
+      {
+        "canyonId": 23723,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.509735,
+        "longitude": 5.336883,
+        "label": null
+      },
+      {
+        "canyonId": 23723,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.513981,
+        "longitude": 5.334636,
+        "label": null
+      },
+      {
+        "canyonId": 23723,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 44.512436,
+        "longitude": 5.336245,
+        "label": "accès aller et retour"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.513981,
+      "longitude": 5.334636,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_96185c6be3bf2bcf",
+          "kind": "MAP",
+          "title": "3138 OT Dieulefit (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

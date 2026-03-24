@@ -1,0 +1,321 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:43:55.500613+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 269,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/269/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/269/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/269/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/269/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/269/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 269,
+    "identity": {
+      "nom": "Marc",
+      "nomComplet": "Canyon de Marc, L'Artigue",
+      "prefixeNom": "Canyon de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/269/Marc.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Ariège",
+      "communePrincipale": "Auzat",
+      "communes": [
+        "Auzat"
+      ],
+      "massif": "Montcalm",
+      "bassin": "Vicdessos",
+      "coursEau": "L'Artigue"
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 2.8,
+      "nbVotes": 85
+    },
+    "metrics": {
+      "altitudeDepartM": 1070,
+      "deniveleM": 70,
+      "longueurM": 300,
+      "cascadeMaxM": 19,
+      "cordeMiniM": 25,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "1h30",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": "Depuis Vicdessos prendre la direction de Marc. Se Garer sur le parking à l'entrée du village (à droite avant l'église - Parking - Panneau d'information du canyon)",
+      "accesAmont": null,
+      "approche": "Suivre la route, puis dans le virage a gauche prendre tout droit le sentier qui monte en sous bois ( rive droite ). Après avoir retrouvé la route, la poursuivre sur 100 m environ juisqu'à un sentier bien marqué sur la droite qui descend jusqu'au ruisseau.",
+      "descente": "Magnifique mais très courte descente. Prévoir un mousqueton en acier ou une poulie pour la tyrolienne.",
+      "retour": "Après le dernier saut et la dernière vasque, continuer dans le lit du ruisseau jusqu'à un sentier sur la droite qui monte directement au parking. NE PAS SORTIR DIRECTEMENT APRÈS LA VASQUE POUR REJOINDRE LA ROUTE !",
+      "engagement": "Course très courte ne présentant pas d'échappatoire",
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "ATTENTION: A proximité du village, éviter de faire du bruit en criant ! Restez discret par respect pour les habitants !"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 269,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.716644,
+        "longitude": 1.444983,
+        "label": null
+      },
+      {
+        "canyonId": 269,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.716541,
+        "longitude": 1.448723,
+        "label": null
+      },
+      {
+        "canyonId": 269,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 42.71677,
+        "longitude": 1.44998,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 42.71677,
+      "longitude": 1.44998,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_e58cde58d063e1f8",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons Pyrénées. 50 descentes.",
+          "authors": [
+            "Christian Perilhou"
+          ],
+          "publicationYear": 2014,
+          "reference": "9782954865706",
+          "editor": null,
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/186/Canyons-Pyreneens-:-50-Descentes-Canyons.html"
+        },
+        {
+          "id": "biblio_794c6164c09a8f92",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons et cascades en pays d'Auzat et du Vicdessos",
+          "authors": [
+            "collectif"
+          ],
+          "publicationYear": 1999,
+          "reference": null,
+          "editor": null,
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/197/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_90c31be1b182c05b",
+          "kind": "MAP",
+          "title": "2148 OT Vicdessos (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 572,
+          "status": "Obsolète",
+          "action": "Réglemente",
+          "title": "Information - 06 juin 2025",
+          "summary": "EDF signale qu’un débit inhabituel va être lâché depuis les aménagements EDF dans le Canyon de Marc du lundi 09 juin 2025 à partir de 22h et ce jusqu’au samedi 14 juin 6h.\n\nCe lâcher est à caractère permanent. Les débits varieront pendant la journée en fonction du débit naturel du ruisseau d’Artigues.\n\nEDF attire votre vigilance sur ces débits inhabituels dans le canyon de Marc qui peuvent y rendre sa pratique dangereuse.\n\nCette configuration temporaire est liée aux débits importants dus à la fonte des neiges.",
+          "remark": null,
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.",
+          "effectiveDate": "14 juin 2025",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/572/legislation.html",
+          "attachments": []
+        },
+        {
+          "id": 473,
+          "status": "Obsolète",
+          "action": "Réglemente",
+          "title": "Information - 13 mai 2022",
+          "summary": "(Cette information a été remise à jour suite à l'info du 13 mai à 10h14, prolongeant la période de lâché)\n\nEDF signale qu’un débit inhabituel va être lâché depuis les aménagements EDF dans le Canyon de Marc du Dimanche 08 Mai 2022 à partir de 06h et ce jusqu’au samedi 21 Mai 6h.\n\nCe lâcher est à caractère permanent. Les débits varieront pendant la journée en fonction du débit naturel du ruisseau d’Artigues.\n\nEDF attire votre vigilance sur ces débits inhabituels dans le canyon de Marc qui peuvent y rendre sa pratique dangereuse.\n\nCette configuration temporaire est liée aux débits importants dus à la fonte des neiges.",
+          "remark": null,
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.",
+          "effectiveDate": "21 mai 2022",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/473/legislation.html",
+          "attachments": []
+        },
+        {
+          "id": 442,
+          "status": "Obsolète",
+          "action": "Réglemente",
+          "title": "Information - 23 sept 2021",
+          "summary": "EDF signale qu'un débit inhabituel va être lâché depuis les aménagements EDF dans le Canyon de Marc du jeudi 23 septembre à partir de 22h et ce jusqu’au vendredi 1er octobre 2021, 06h.\n\nCe lâcher est à caractère permanent. Les débits varieront pendant la journée en fonction du débit naturel du ruisseau d’Artigues.\n\nEDF attire votre vigilance sur ces débits inhabituels dans le canyon de Marc qui peuvent y rendre sa pratique dangereuse.",
+          "remark": null,
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.",
+          "effectiveDate": "01 oct 2021",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/442/legislation.html",
+          "attachments": []
+        },
+        {
+          "id": 399,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté municipal (Auzat) - 16 nov 2018",
+          "summary": "Pratique nocturne interdite. Des périodes (dates, horaires) sont fixés en fonction des canyons, à l'exception de l'Argensou aval, autorisé toute l'année entre 9h et 17h.\n\nPar ailleurs, il faut :\n\n- ne pas dépasser 10 personnes max par groupe\n\n- se conformer aux balisages (accès et sortie en particulier) et consignes mises en place.\n\n- utiliser exclusivement les aires de stationnement prévues à cet effet\n\n- laisser les lieux propres\n\n- observer un comportement discret (pas de cris, pas de bruits dans les villages...)",
+          "remark": null,
+          "details": "Arrêté municipal (Auzat) n°030.18.052 du 16 novembre 2018",
+          "effectiveDate": "16 nov 2018",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/399/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté municipal (Auzat) n°030.18.052 du 16 novembre 2018",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem399_pj1.pdf"
+            }
+          ]
+        },
+        {
+          "id": 388,
+          "status": "Abrogé",
+          "action": "Réglemente",
+          "title": "Arrêté municipal (Auzat) - 29 août 2018",
+          "summary": "Pratique autorisée du 1er mai au 30 septembre. Pour certains canyons, il y a aussi des restrictions horaires.\n\nGroupe maximum 8 personnes + 2 encadrants.",
+          "remark": null,
+          "details": "Arrêté municipal (Auzat) n°38.18.048 du 29 août 2018",
+          "effectiveDate": "16 nov 2018",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/388/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté municipal (Auzat) n°38.18.048 du 29 août 2018",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem388_pj1.pdf"
+            }
+          ]
+        },
+        {
+          "id": 357,
+          "status": "Obsolète",
+          "action": "Réglemente",
+          "title": "Information - 31 mai 2017",
+          "summary": "Message d'EDF :\n\nNous vous informons qu’un débit inhabituel va être lâché depuis nos aménagements EDF dans le Canyon de Marc à partir du 31 mai 2017 et ce jusqu’à nouvel avis.\n\nCe lâcher de l’ordre de 7 m3/s (maximum) est à caractère permanent. Les débits lâchés varieront cependant pendant la journée en fonction du débit naturel du ruisseau d’Artigues.\n\nNous attirons votre vigilance et celle des professionnels du canyoning sur ces débits inhabituels dans le canyon de Marc qui peuvent y rendre sa pratique dangereuse.\n\nCette configuration temporaire est liée aux débits importants dans le ruisseau d’Artigues qui nous conduisent à ouvrir la vanne de la prise d’eau d’Artigues située à l’amont du Canyon de Marc.",
+          "remark": null,
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.",
+          "effectiveDate": "31 mai 2017",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/357/legislation.html",
+          "attachments": []
+        },
+        {
+          "id": 355,
+          "status": "Obsolète",
+          "action": "Réglemente",
+          "title": "Information - 11 mai 2017",
+          "summary": "Information du 11 mai 2017 fournie par EDF.\n\nEn vertu de la convention du 8 octobre 2010 entre EDF et l’Office de Tourisme de Tarascon-Vicdessos, EDF nous informe qu’un débit inhabituel va être lâché depuis les aménagements EDF dans le Canyon de Marc à partir du 11 mai 2017 et ce jusqu’à nouvel avis.\n\nCe lâcher de l’ordre de 9 m3/s est à caractère permanent. Les débits lâchés varieront cependant pendant la journée en fonction du débit naturel du ruisseau d’Artigues.\n\nNous attirons votre vigilance et celle des professionnels du canyoning sur ces débits inhabituels dans le canyon de Marc qui peuvent y rendre sa pratique dangereuse.\n\nCette configuration temporaire est liée aux débits importants dans le ruisseau d’Artigues qui nous conduisent à ouvrir la vanne de la prise d’eau d’Artigues située à l’amont du Canyon de Marc.\n\n== MISE A JOUR DU 11 MAI 17h24 ==\n\nNous vous informons de la fin des lâchers dans le Canyon de Marc à compter du 11 mai 2017 à 17h.\n\nA partir de cette date la prise d’eau d’Artigues et l’usine de Soulcem seront à nouveau exploitées dans la configuration habituelle limitant les débits dans le Canyon de Marc.",
+          "remark": null,
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.",
+          "effectiveDate": "11 mai 2017",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/355/legislation.html",
+          "attachments": []
+        },
+        {
+          "id": 305,
+          "status": "Obsolète",
+          "action": "Réglemente",
+          "title": "Information - 04 mai 2015",
+          "summary": null,
+          "remark": null,
+          "details": "Consultez le\n\ntexte (ou extrait)\n\nMise à jour du 11 mai 2015\n\nNous vous informons de la fin des lâchers dans le Canyon de Marc à compter du mercredi 13 mai.\n\nA partir de cette date la prise d'eau de l'Artigue et l'usine de Soulcem seront à nouveau exploitées dans la configuration habituelle limitant les débits dans le Canyon de Marc.\n\nMessage d'EDF du 04 mai 2015\n\nNous observons depuis ce week-end une augmentation significative des débits des cours d'eau de la vallée, liée au démarrage de la fonte.\n\nCette situation va vraisemblablement être durable sur les prochaines semaines. Nous devons donc prendre des dispositions sur les aménagements, de façon à sécuriser la pratique du Canyon de Marc notamment pour la période estivale !\n\nNous vous tiendrons informé de l'évolution de la situation.\n\nRemplissage important de la retenue de Soulcem (turbinés non limités sur Soulcem) et besoins énergétiques\n\nNous vous informons qu’un débit inhabituel va être lâché depuis nos aménagements EDF dans le Canyon de Marc à partir du 05/05/2015 et ce jusqu’à nouvel avis.\n\nCe lâcher de l’ordre de 7 m3/s est à caractère permanent. Les débits lâchés varieront cependant pendant la journée en fonction du débit naturel du ruisseau d’Artigues.\n\nNous attirons votre vigilance et celle des professionnels du canyoning sur ces débits inhabituels dans le canyon de Marc qui peuvent y rendre sa pratique dangereuse.\n\nCette configuration temporaire est liée à la sécurité ou à une demande importante qui nous contraint à des turbinés permanents à l'usine de Soulcem située à l'amont du Canyon de Marc.",
+          "effectiveDate": "13 mai 2015",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/305/legislation.html",
+          "attachments": []
+        },
+        {
+          "id": 293,
+          "status": "Obsolète",
+          "action": "Réglemente",
+          "title": "Information - 08 août 2014",
+          "summary": "Information d'EDF du vendredi 08 août.\n\nPoint météo :\n\nSemaine 32 : Temps plûtot clément, avec quelques faibles précipitations.\n\n=> La conséquence : les débits naturels en baisse, localement influencés sous orage.\n\nPrévision WE et Semaine 33 : Des orages en soirées. Une perturbation atlantique dimanche, et retour au beau temps en début de semaine prochaine.\n\n=> Vigilance sur la variation des débits naturels sous orages.\n\nCanyon / SpéléoNiveau de risqueCommentairesMarcmodéréApports naturels à la prise d'eau de l'Artigue faibles à modérés (entre 1,5 à 2 m3/s), mais influencés sous orages.\n\nCote de retenue du barrage de Soulcem haute.\n\n=> interdiction de déversement au point triple en coursArtiguemodéréApports naturels à la prise d'eau de l'Artigue faibles à modérés (entre 1,5 à 2 m3/s), mais influencés sous orages.\n\nPas d'impact des aménagements EDF sur le canyon.ArgensoufaiblePas d'impact des aménagements EDF (prise d'eau Argesou) sur le canyon.SubrafaiblePas d'impact des aménagements EDF sur le canyon.EscalesfaiblePas d'impact des aménagements EDF sur le canyon.GniourefaiblePas d'impact des aménagements EDF sur le canyon.Aval prise d'eau de Montréal\n\n(spéléo)modéréRisque de déversement par le clapet en fonction des débits entrants.\n\nPrise d'eau de Montréal hors d'eau en début de semaine 33.\n\nVigilance, des varations de débits à l'aval de la prise d'eau (grotte spéléo) peuvent avoir lieu à tout moment de la journée.\n\nMerci de relayer le message aux pratiquants.",
+          "remark": null,
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.",
+          "effectiveDate": "08 août 2014",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/293/legislation.html",
+          "attachments": []
+        },
+        {
+          "id": 291,
+          "status": "Obsolète",
+          "action": "Réglemente",
+          "title": "Information - 05 mai 2014",
+          "summary": "Apports importants à la prise d’eau d’Artigues\n\nMessage d'EDF\n\nNous vous informons qu’un débit inhabituel va être lâché depuis nos aménagements EDF dans le Canyon de Marc à partir du 25/04/2014 après-midi et se maintient jusqu’à nouvel avis.\n\nCe lâcher de l’ordre de 2 à 3 m3/s est à caractère permanent. Les débits lâchés varieront cependant pendant la journée en fonction du débit naturel du ruisseau d’Artigues.\n\nNous attirons votre vigilance et celle des professionnels du canyoning sur ces débits inhabituels dans le canyon de Marc qui peuvent y rendre sa pratique dangereuse.\n\nCette configuration temporaire est liée aux débits importants dans le ruisseau d’Artigues qui nous conduisent à ouvrir la vanne de la prise d’eau d’Artigues située à l’amont du Canyon de Marc.\n\nDes panneaux rouge avec la mention \"Lachers inhabituels\" vont être installés à proximité du Canyon de Marc cette semaine. Ils seront déposés lorsque la contrainte sera levée.\n\n=> information du 27 mai 2014 : la contrainte relative aux lâchers inhabituels à la prise d'eau de l'Artigues est levée.",
+          "remark": null,
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.",
+          "effectiveDate": "27 mai 2014",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/291/legislation.html",
+          "attachments": []
+        },
+        {
+          "id": 272,
+          "status": "Obsolète",
+          "action": "Autorise",
+          "title": "Information - 16 août 2013",
+          "summary": "Point météo :\n\nSemaine 33 : une fin de semaine notamment vendredi et samedi sous un risque d'orage un peu plus marqué\n\nPrévision Semaine 34 : semaine chaude et estivale => conséquence : débits naturel lente récession\n\nMarc : Niveau de risque modéré à faible\n\nL'autorisation de déversement au point triple est levée depuis le 25/07, le canyon est désormais praticable. Il faut toutefois rester vigilant car les apports naturels peuvent être importants par rapport aux risques orageux. Merci de plus de bien respecter les prérequis indispensables relatifs à l'arrêté municipal qui réglemente la pratique du Canyon, notamment l'échelle de couleur à la prise d'eau de Lartigues ainsi que les horaires.\n\nArtigue : Niveau de risque modéré à faible\n\nPas d'impact des aménagements EDF sur le canyon. Débits naturels en lente récession, amplitude faible en journée.\n\nArgensou : Niveau de risque modéré à faible\n\nPas d'impact des aménagements EDF (prise d'eau Argesou) sur le canyon. Débits naturels en récession\n\nSubra : Niveau de risque modéré à faible\n\nPas d'impact des aménagements EDF sur le canyon. Débits naturels en récession\n\nEscales : Niveau de risque modéré\n\nPrise d'eau de Peyregrand en amont hors d'eau (adduction vers Gnioure). Tout le débit naturel transite dans le Brouquenat et le ruisseau des Escales, lente récession des débits.\n\nGnioure : Niveau de risque modéré à faible\n\nFin des Lâchers d'eau par la vanne de fond de Gnioure, apports en récession.\n\nAval prise d'eau de Montréal (spéléo) : Niveau de risque modéré\n\nBaisse des débits (notamment ceux turbinés par Soulcem). Vigilance, des varations de débits à l'aval de la prise d'eau (grotte spéléo) peuvent avoir lieu à tout moment de la journée..",
+          "remark": null,
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.",
+          "effectiveDate": "16 août 2013",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/272/legislation.html",
+          "attachments": []
+        },
+        {
+          "id": 251,
+          "status": "Obsolète",
+          "action": "Réglemente",
+          "title": "Information - 26 juil 2013",
+          "summary": "Source : EDF - 28 juin 2013\n\nAPPEL à la vigilance !\n\nApports importants à la prise d’eau d’Artigues\n\nEn vertu de la convention entre EDF et l’Office de Tourisme de Tarascon-Vicdessos, nous vous informons qu’un débit inhabituel va être lâché depuis nos aménagements EDF dans le Canyon de Marc à partir du 13/06/2013 et ce jusqu’à nouvel avis.\n\nCe lâcher de l’ordre de 6m3/s est à caractère permanent. Les débits lâchés varieront cependant pendant la journée en fonction du débit naturel du ruisseau d’Artigues.\n\nNous attirons votre vigilance et celle des professionnels du canyoning sur ces débits inhabituels dans le canyon de Marc qui peuvent y rendre sa pratique dangereuse. Cette configuration temporaire liée aux débits importants dans le ruisseau d’Artigues et au fort enneigement, nous contraint à des turbinés permanents à l’usine de Soulcem située à l’amont du Canyon de Marc.\n\nNous vous tiendrons informés de l’évolution de la situation ainsi que du retour prochain à la configuration normale.\n\n--- PLUS D'INFOS DU 26 JUILLET 2013 ---\n\nSemaine 30 : semaine chaude, quelques précipitations en soirée sur apparition d'orage. Une dégradation orageuse est annoncée pour ce week-end\n\n=> La conséquence : les débits naturels restent soutenus par la fonte des neige, les débits naturels se maintiennent depuis la semaine dernière.\n\nLes amplitudes journalières de débits (simple au double),\n\nPrévision Semaine 31 : retour à un temps estival.\n\nLes débits naturels devraient être en récession la semaine prochaine (diminution de la fonte des neiges).\n\nMarc : Niveau de risque modéré\n\nGrâce aux programmes de production élevés de ces dernières semaines et une diminution des débits naturels, nous avons pu diminuer la cote de la retenue de Soulcem. Par conséquent, nous avons levé ce jour (25/07) à 14:00 l'autorisation de déversement au point triple.\n\nLe canyon pourra désormais être praticable. Il faut toutefois rester vigilant car les apports naturels restent importants pour la saison.\n\nMerci de nous tenir informé en cas de soucis.\n\nArtigue : Niveau de risque modéré\n\nPas d'impact des aménagements EDF sur le canyon. Débits naturels soutenus avec amplitudes journalières importante\n\nArgensou : Niveau de risque modéré\n\nPas d'impact des aménagements EDF (prise d'eau Argesou) sur le canyon. Débits naturels soutenus avec amplitudes journalières importante\n\nSubra : Niveau de risque modéré\n\nPas d'impact des aménagements EDF sur le canyon. Débits naturels soutenus avec amplitudes journalières importante\n\nEscales : Niveau de risque modéré\n\nPrise d'eau de Peyregrand en amont hors d'eau (adduction vers Gnioure). Tout le débit naturel transite dans le Brouquenat et le ruisseau des Escales\n\nGnioure : Niveau de risque élevé\n\nLachers d'eau en cours par la vanne de fond de Gnioure. Débit beaucoup plus important que le débit naturel.\n\nAval prise d'eau de Montréal (spéléo) : Niveau de risque modéré\n\nBaisse des débits (notamment ceux turbinés par Soulcem). Lachers en cours par une vanne de la prise d'eau, ouverture de la vanne ajustée en fonction des apports. Vigilance, des varations de débits à l'aval de la prise d'eau (grotte spéléo) peuvent avoir lieu à tout moment de la journée. Merci de relayer le message aux pratiquants.",
+          "remark": null,
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.",
+          "effectiveDate": "26 juil 2013",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/251/legislation.html",
+          "attachments": []
+        },
+        {
+          "id": 181,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté municipal (Auzat) - 29 juin 2009",
+          "summary": "La pratique est autorisée sous certaines conditions :\n\n- si le niveau de l'Artigue ne dépasse pas la zone rouge de l'échelle situé à proximité du barrage de l'Artigue\n\n- OU s'il n'est pas supérieur au trait de couleur orange présent à l'amont de l'avalanche côté rive droite.\n\nDes panonceaux disposés aux aires de l'Artigue, de Marc, d'Emperrot et sur le lieu de l'avalanche informeront sur l'autorisation ou non chaque jour.",
+          "remark": null,
+          "details": "Consultez :\n\nArrêté municipal du 29 juin 2009",
+          "effectiveDate": "29 juin 2009",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/181/legislation.html",
+          "attachments": []
+        },
+        {
+          "id": 32,
+          "status": "Abrogé",
+          "action": "Réglemente",
+          "title": "Arrêté municipal (Auzat) - 24 juin 1997",
+          "summary": null,
+          "remark": "- L'arrêté municipal est renouvelé chaque année par la commune d'Auzat.\n\n- Il existe un risque important de lâchers d'eau par EDF. Une échelle limnigrapique avec code de couleur conventionnel installé au barrage de l'Artigue (indication donnée sur place) informe de leur importance.",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nConsultez :\n\nArrêté municipal du 24 juin 1997 (1ère partie)\n\nConsultez :\n\nArrêté municipal du 24 juin 1997 (2ème partie)\n\nConsultez :\n\nArrêté municipal du 24 juin 1997 (3ème partie)",
+          "effectiveDate": "24 juin 1997",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/32/legislation.html",
+          "attachments": []
+        }
+      ]
+    }
+  }
+}

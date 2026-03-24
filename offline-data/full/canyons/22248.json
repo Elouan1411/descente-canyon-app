@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:21.616321+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22248,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22248/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22248/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22248/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22248/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22248,
+    "identity": {
+      "nom": "Cap de l'Aigle",
+      "nomComplet": "Faille du Cap de l'Aigle",
+      "prefixeNom": "Faille du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22248/Cap-de-l-Aigle.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Bouches-du-Rhône",
+      "communePrincipale": "La Ciotat",
+      "communes": [
+        "La Ciotat"
+      ],
+      "massif": "Falaises Soubeyrannes",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a1II",
+      "interet": 0.8,
+      "nbVotes": 5
+    },
+    "metrics": {
+      "altitudeDepartM": 150,
+      "deniveleM": 150,
+      "longueurM": 300,
+      "cascadeMaxM": 45,
+      "cordeMiniM": 50,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "35min",
+      "descente": "2h00",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "Depuis La Ciotat, suivre les panneaux indiquants \"La Garde et Figuerolles\", puis \"Le Mugel\".\n\nSe garer non loin du parking payant, à 200 m de la plage du Mugel.",
+      "accesAmont": null,
+      "approche": "Descendre sur les plages du Mugel et poursuivre jusqu'au parc du Mugel.\n\nDans le parc, prenez au gauche et rendez-vous à une villa désaffectée face au Bec de l'aigle.\n\nDe là, un impluvium (muret de collecte des eaux) est bien visible le long de la paroie rocheuse.\n\nEmpruntez le muret de droite, puis suivez une sente plus au moins visible menant au sommet.\n\nPar la suite, l'encordement peut-être nécessaire pour longer la cime (quelques points bleu).\n\nSe rendre sur l'équipement de départ du parcours (deux broches assez espacées + 1 mousqueton).",
+      "descente": "Un rappel de 50 m donne sur un équipement assez excentré en RG (deux bon mètres du talweg).\n\nLe second, d'une quarantaine de mètre, vous mènera sur deux broches dans le talweg à environ 6 m avant le cassé.\n\nLa suite, un R25, s'effectue pour simplifier le rappel de corde, car il y a un frottement important au niveau du cassé. Un R25 RG permet d'éviter les broussailles plus bas.\n\nLe rappel suivant (R20) se situe un peu plus bas, non loin d'une trainée noire, donnant sur le bas des broussailles ...",
+      "retour": "Longez le bord de l'eau, pour arriver au \" mouille pieds \" (passage d'escalade, les pieds presque dans l'eau) pour remonter, par la suite, la coulée noire menant à la villa désaffectée.",
+      "engagement": null,
+      "periode": "Sec . A faire sûrement pendant les pluies pour une descente en eau.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Descente d'une voie d'escalade. Equipement trés mal placé.\n\nTrès jolie vue sur La Ciotat et le parc du Mugel. Fermeture du parc du Mugel à 18h00 l'hiver."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22248,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.161411,
+        "longitude": 5.604594,
+        "label": null
+      },
+      {
+        "canyonId": 22248,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.162384,
+        "longitude": 5.605602,
+        "label": null
+      },
+      {
+        "canyonId": 22248,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.167206,
+        "longitude": 5.604755,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.167206,
+      "longitude": 5.604755,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_c55008676d4d8829",
+          "kind": "MAP",
+          "title": "3245 ET Aubagne - La Ciotat (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

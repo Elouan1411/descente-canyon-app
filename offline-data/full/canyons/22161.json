@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:03.765958+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22161,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22161/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22161/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22161/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22161/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22161,
+    "identity": {
+      "nom": "Vinha (median et inférieur)",
+      "nomComplet": "Ribeira da Vinha (median et inférieur), Ribeira de Losná",
+      "prefixeNom": "Ribeira da",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22161/Vinha-median-et-inferieur.html"
+    },
+    "location": {
+      "pays": "Cap-Vert",
+      "region": null,
+      "departement": "Vinha (median et inférieur)",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v5a3IV",
+      "interet": 2.6,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 580,
+      "deniveleM": 380,
+      "longueurM": 1400,
+      "cascadeMaxM": 85,
+      "cordeMiniM": 60,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h20min",
+      "descente": "3h30min",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "De ville Ribeira Grande prendre la route - au début une piste dans le lit de Ribeira de Torre - vers le sud (Vallée de Ribeira de Torre et Cirque de Rabo Curto). Continuer environ 5 km jusqu'à un conteneur vert à droite de la route avant la montée vers Xôxo. Garer la voiture (200 m alt.).",
+      "accesAmont": null,
+      "approche": "Monter la route vers Rabo Curto jusqu'á un réservoir d'eau ouvert. Tourner à droite vers Lombo de Pico et enfin vers Losná (695 m alt.). Suivre le sentier vers nord jusqu'au cours d'eau (580m alt.).",
+      "descente": "Au début marcher en RD par les champs jusqu'à la 1ère cascade (15m). Après la cascade \"Vitoria\" (42m) il est possible de tourner à droite et environ 200m marcher sur la conduite d'eau. Enfin descendre au cours d'eau.",
+      "retour": "Après la dernière cascade sortir à gauche et prendre le sentier (en béton) vers la-bas, traverser le Vinha et continuer jusqu'à la voiture.",
+      "engagement": null,
+      "periode": null,
+      "geologie": "Vulkan-Conglomerat",
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22161,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 17.130892,
+        "longitude": -25.073219,
+        "label": "fin de la partie supérieure"
+      },
+      {
+        "canyonId": 22161,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 17.148777,
+        "longitude": -25.070875,
+        "label": null
+      },
+      {
+        "canyonId": 22161,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 17.149731,
+        "longitude": -25.069572,
+        "label": "ou parking aval pour l'integrale"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 17.149731,
+      "longitude": -25.069572,
+      "label": "ou parking aval pour l'integrale"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_a0b95353ed9c3736",
+          "kind": "MAP",
+          "title": "Santo Antâo (Goldstadt-Wanderkarte)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_6f904f2c7e599cc6",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.caboverdenolimits.com/cuadros_barrancos.html",
+          "url": "http://www.caboverdenolimits.com/cuadros_barrancos.html"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

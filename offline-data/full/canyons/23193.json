@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:03.102736+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23193,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23193/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23193/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23193/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23193/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23193,
+    "identity": {
+      "nom": "Otal",
+      "nomComplet": "Barranco de Otal",
+      "prefixeNom": "Barranco de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23193/Otal.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Aragón",
+      "departement": "Huesca",
+      "communePrincipale": "San Nicolas de Bujaruelo",
+      "communes": [
+        "San Nicolas de Bujaruelo"
+      ],
+      "massif": "Mt Perdu (Monte Perdido)",
+      "bassin": "Ara",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a5III",
+      "interet": 2.2,
+      "nbVotes": 8
+    },
+    "metrics": {
+      "altitudeDepartM": 1586,
+      "deniveleM": 174,
+      "longueurM": 705,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 25,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "45min",
+      "descente": "1h30",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "De Torla, prendre la route du parc d'Ordesa. Au rond-point avant l'entrée du parc, prendre la piste qui remonte le rio Ara. Se garer au parking de San Nicolas de Bujaruelo (refuge, camping).",
+      "accesAmont": null,
+      "approche": "Du Puente de Bujaruelo, prendre la piste qui longe le rio Ara en rive droite et se dirige vers le Puente de Oncins. Au bout d'environ 900m, prendre à gauche un bon sentier kairné qui monte en direction du refuge d'Otal en coupant les lacets d'une piste. On rejoint finalement la piste un peu avant le Collado de Otal (barrière, bien la refermer). On aperçoit alors le ruisseau en contrebas que l'on rejoint à travers la prairie (Llano de Otal).",
+      "descente": "Ravin de montagne large et très bien alimenté affluent RD de la Garganta de Ordiso. Cascades peu sculptées et grandes vasques d'eau limpide. Équipement en bon état mais pas toujours doublé.\n\nUne fois dans la Garganta de Ordiso : marche en rivière à fort débit, un peu de nage, une série de petits ressauts émulsionnés évitables par un rappel en rive gauche, gorge finale de 100m (nage)",
+      "retour": "On sort au niveau du Puente de Oncins où l'on reprend la piste en rive droite qui ramène au Puente de Bujaruelo et au parking.",
+      "engagement": null,
+      "periode": "Étiage. Attention au débit du rio Ara, bien l'évaluer. La cotation proposée tient compte de la descente de la partie finale de la Garganta de Ordiso.",
+      "geologie": null,
+      "historique": "Alex Battlori, P. Farré et F. Pelegrin le 20 août 1995.",
+      "remarques": "Attention au débit du rio Ara : on doit descendre la partie finale de la garganta de Ordiso pour sortir."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23193,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.699234,
+        "longitude": -0.130396,
+        "label": null
+      },
+      {
+        "canyonId": 23193,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 42.694386,
+        "longitude": -0.106828,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 42.694386,
+      "longitude": -0.106828,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_aedff91e4dafa6dd",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://ropewiki.com/Otal",
+          "url": "http://ropewiki.com/Otal"
+        },
+        {
+          "id": "resource_4e120c5b88dbf028",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.latrencanous.com/barrancos/otal/topo.pdf",
+          "url": "http://www.latrencanous.com/barrancos/otal/topo.pdf"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

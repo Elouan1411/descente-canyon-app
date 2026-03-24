@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:16.231588+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21665,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21665/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21665/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21665/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21665/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21665,
+    "identity": {
+      "nom": "Karitsa",
+      "nomComplet": "Canyon de Karitsa",
+      "prefixeNom": "Canyon de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21665/Karitsa.html"
+    },
+    "location": {
+      "pays": "Grèce",
+      "region": "Central Greece",
+      "departement": "Nomós Evrytanías",
+      "communePrincipale": "Karpenisi",
+      "communes": [
+        "Karpenisi"
+      ],
+      "massif": "Panetoliko",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.4,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 750,
+      "deniveleM": 150,
+      "longueurM": 800,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 30,
+      "navette": "3.7km"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "2h",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": "aller à Karitsa, au centre du village se garer sur la place du monument aux morts.",
+      "approche": "Traverser le village a pied, passer derrière un bassin, prendre le chemin qui longe le canyon et y rentrer des que possible.",
+      "descente": "Canyon très encaisse et sculpté.",
+      "retour": "Traverser la rivière, Karpenisiotis, et revenir a la voiture",
+      "engagement": null,
+      "periode": "A ne faire qu'à l'étiage",
+      "geologie": null,
+      "historique": "ouvert par Frank Jourdan, JF Fiorina, G. Andreou en 2005",
+      "remarques": "Obligation de traverser une grosse rivière pour revenir a la voiture. En tenir compte !"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21665,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 38.803463,
+        "longitude": 21.72394,
+        "label": "Description George Andreou"
+      },
+      {
+        "canyonId": 21665,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 38.80159,
+        "longitude": 21.722803,
+        "label": "Alternatif pour accès direct"
+      },
+      {
+        "canyonId": 21665,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 38.805386,
+        "longitude": 21.71982,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 38.803463,
+      "longitude": 21.72394,
+      "label": "Description George Andreou"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_94152460610294ef",
+          "kind": "MAP",
+          "title": "13 Karpensi Proussos",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

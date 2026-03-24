@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:21.563621+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23854,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23854/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23854/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23854/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23854/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23854,
+    "identity": {
+      "nom": "Prouve",
+      "nomComplet": "Torrente Prouve, Valeille des Prouves",
+      "prefixeNom": "Torrente",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23854/Prouve.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Valle d'Aosta",
+      "departement": "Aosta",
+      "communePrincipale": "Arnad",
+      "communes": [
+        "Arnad"
+      ],
+      "massif": null,
+      "bassin": "Dora Baltea",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a2II",
+      "interet": 2.3,
+      "nbVotes": 7
+    },
+    "metrics": {
+      "altitudeDepartM": 800,
+      "deniveleM": 385,
+      "longueurM": 1500,
+      "cascadeMaxM": 40,
+      "cordeMiniM": 45,
+      "navette": "5.0km"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "3h30",
+      "retour": "2min"
+    },
+    "topo": {
+      "accesAval": ". Redescendre un peu, tourner à gauche direction Vacheres. Dépasser Champgraffion, et dans l'épingle à droite suivante continuer droit. Parking",
+      "accesAmont": "juste avant le pont sur le torrent.",
+      "approche": null,
+      "descente": "L'amont jusqu'au premier pont (Alt; 660m) n'est vraiment pas terrible, des cascades très déclives. Puis une C22 sous le pont, le parcours s'améliore, un second petit pont de bois, puis le point fort: MC, C16, vasque suspendue, C40. Puis 2 petites cascades et une C34. Sente rive D, bassin artificiel duquel il faut descendre au mieux (rappel environ 20m) pour rejoindre le lit du torrent.",
+      "retour": "Au niveau du parking et d'une plate-forme métallique suspendue rive gauche, sortir rive droite par 2m d'escalade facile sur le mur.",
+      "engagement": "Moyen, 2 échappatoires au niveau des ponts qui mènent à la route vers la gauche, pas d'encaissement.",
+      "periode": "Très petit bassin versant orienté sud-ouest et culminant au Monte dell Aquila, 2580m. Donc débit moyen, canyon faisable d'avril à octobre. Quelques vasques.",
+      "geologie": "Roche métamorphique proche du granit.",
+      "historique": null,
+      "remarques": "Possible d'éviter la 1° partie: dans la première épingle à droite en montant, prendre la petite route à gauche qui passe au pied du castello en ruine, parking au bout. Suivre à pied la piste une dizaine de minutes pour le pont à 660m d'altitude.\n\nBon emplacement de bivouac peu après la sortie d'Arnad entre la route et le ruisseau (valle del Va)."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23854,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 45.647503,
+        "longitude": 7.739763,
+        "label": null
+      },
+      {
+        "canyonId": 23854,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 45.641769,
+        "longitude": 7.726698,
+        "label": null
+      },
+      {
+        "canyonId": 23854,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 45.644825,
+        "longitude": 7.734605,
+        "label": "1° pont (Alt: 660)"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 45.647503,
+      "longitude": 7.739763,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_0fc41c1cd4753bef",
+          "kind": "MAP",
+          "title": "Feuille n° 9 Mont Avic (IGC)",
+          "scale": null,
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

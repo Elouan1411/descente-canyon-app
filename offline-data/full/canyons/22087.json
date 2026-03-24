@@ -1,0 +1,135 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:47.033568+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22087,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22087/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22087/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22087/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22087/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22087,
+    "identity": {
+      "nom": "Häselgehrbach",
+      "nomComplet": "Häselgehrbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22087/Haselgehrbach.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Tyrol",
+      "departement": "Politischer Bezirk Reutte",
+      "communePrincipale": "Ehrwald",
+      "communes": [
+        "Ehrwald"
+      ],
+      "massif": "Ammergauer Alpen",
+      "bassin": "Loisach",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.4,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 1075,
+      "deniveleM": 150,
+      "longueurM": 500,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "45min",
+      "descente": "2h- 2h30",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "Au nord d’Ehrwald sur la route menant à Garmisch Pardenkirchen, prenez à gauche un petit pont et garez-vous aussitôt sans gêner. Si vous passez RG du cours d’eau vous avez raté le pont. On peut évaluer le débit en marchant 5 mn sur la piste qui part à droite.",
+      "accesAmont": null,
+      "approche": "Suivez la route goudronnée pour Daniel. La route passe sur le canyon et continue. Après un lacet elle revient frôler le cours d’eau. On entre à ce niveau.",
+      "descente": "Rapidement les cascades commencent. Elles s’enchaînent jusqu’en bas au niveau d’une zone de loisir/aventure avec de nombreuses tyroliennes.",
+      "retour": "Suivez la piste à droite.",
+      "engagement": "Canyon peu encaissé, traversé par des ponts.",
+      "periode": "Le parcours est sensible aux crues. Mais le niveau revient rapidement à la normal.\n\njuillet - octobre",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22087,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.420872,
+        "longitude": 10.914745,
+        "label": null
+      },
+      {
+        "canyonId": 22087,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.420292,
+        "longitude": 10.91699,
+        "label": null
+      },
+      {
+        "canyonId": 22087,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.418804,
+        "longitude": 10.915926,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.418804,
+      "longitude": 10.915926,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_80a52b6e4b57f154",
+          "kind": "TOPOGUIDE",
+          "title": "Tiroler Canyoningführer - The Canyoning guide for Tyrol",
+          "authors": [
+            "Alexander Riml",
+            "Gunnar Amor"
+          ],
+          "publicationYear": 2012,
+          "reference": "978-3-200-02343-7",
+          "editor": null,
+          "status": "en stock\n\n- 44,90 € -\n\nCommandez cet ouvrage dès maintenant !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/170/Tiroler-Canyoningfuhrer---The-Canyoning-guide-for-Tyrol.html"
+        },
+        {
+          "id": "biblio_a216ca92fa29ca51",
+          "kind": "TOPOGUIDE",
+          "title": "Canyoning in Bayern und Tirol",
+          "authors": [
+            "Werner Baumgarten"
+          ],
+          "publicationYear": 2010,
+          "reference": null,
+          "editor": null,
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1226/topoguide.html"
+        }
+      ],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

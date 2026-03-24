@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:45:27.729026+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2426,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2426/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2426/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2426/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2426/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2426,
+    "identity": {
+      "nom": "Senaris",
+      "nomComplet": "Ruisseau de Senaris",
+      "prefixeNom": "Ruisseau de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2426/Senaris.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Drôme",
+      "communePrincipale": "Plaisians",
+      "communes": [
+        "Plaisians"
+      ],
+      "massif": "Drôme provençale",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a1I",
+      "interet": 1.3,
+      "nbVotes": 10
+    },
+    "metrics": {
+      "altitudeDepartM": 580,
+      "deniveleM": 50,
+      "longueurM": 200,
+      "cascadeMaxM": 9,
+      "cordeMiniM": 12,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "2min",
+      "descente": "30min",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "- De Nyons ou de Vaison-la-Romaine dépasser Mollans sur Ouvèze de 6kms pour la D72 à droite, direction le col de Fontaube. 8,2kms pour une épingle à droite au hameau de Fontaube (point côté 577m). A l'entrée de l'épingle prendre la très bonne piste à gauche sur 500m pour un bon emplacement à gauche (point côté 580m, visible sur GE).\n\n- De Montbrun-les-Bains, direction vallée du Toulourenc / Buis les Baronnies. Quitter la D72 pour la D41 à droite direction: col de Fontaube. Du col 1,3km pour l'épingle du hameau de Fontaube et la piste juste à la sortie du virage.",
+      "accesAmont": null,
+      "approche": "Continuez la piste jusqu’à prendre facilement pied dans le cours d’eau.",
+      "descente": "Après 2 ressauts vous tombez sur une C4 peu commode et légèrement arrosée par débit correct.\n\nSuivront 3 cascades (8, 5 et 7m) et qq petits ressauts.",
+      "retour": "De la C7, qq mètres et dans le virage à gauche, repérez rive G la piste qui débouche à la voiture.",
+      "engagement": "Pas d’encaissement, engagement faible vu la brièveté du parcours.\n\nCaractère aquatique : Le bassin hydrographique est conséquent, donc attention aux crues.",
+      "periode": "Qq vasques peu profondes. Printemps, automne et hiver; l'été, le canyon alors sec perdra beaucoup de son intérêt.",
+      "geologie": "Calcaire.",
+      "historique": null,
+      "remarques": "2 points sur les 2 premières cascades, mono-point sur les 2 suivantes."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2426,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.212666,
+        "longitude": 5.320108,
+        "label": null
+      },
+      {
+        "canyonId": 2426,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.214066,
+        "longitude": 5.319486,
+        "label": null
+      },
+      {
+        "canyonId": 2426,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.2174,
+        "longitude": 5.313939,
+        "label": "Dans l'extérieur du virage, attention peu de place!"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.2174,
+      "longitude": 5.313939,
+      "label": "Dans l'extérieur du virage, attention peu de place!"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_2f6c53ae7f1abe4d",
+          "kind": "MAP",
+          "title": "3140 ET Mont-Ventoux (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

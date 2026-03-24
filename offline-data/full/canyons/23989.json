@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:48.080170+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23989,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23989/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23989/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23989/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23989/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23989,
+    "identity": {
+      "nom": "Aiguebelle",
+      "nomComplet": "L' Aiguebelle",
+      "prefixeNom": "L'",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23989/Aiguebelle.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Hautes-Alpes",
+      "communePrincipale": "Montbrand",
+      "communes": [
+        "La Faurie",
+        "Montbrand"
+      ],
+      "massif": null,
+      "bassin": "Buëch",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a2II",
+      "interet": 1.0,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 910,
+      "deniveleM": 25,
+      "longueurM": 180,
+      "cascadeMaxM": 6,
+      "cordeMiniM": 10,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1min",
+      "descente": "20-45min",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": "du petit encaissement (lieu-dit Malpasset, cf. carte IGN). Se stationner à gauche (plusieurs places) ; on voit le ruisseau quelques mètres en contrebas.",
+      "approche": "Du parking, descendre le talus au plus évident.",
+      "descente": "Descente très modeste, quelques obstacles miniatures assez sympas. T3 (désescalade) puis on arrive dans des blocs avec T1, passage sous blocs (ramping) donnant sur un plan incliné de 2m, ressaut de 1m puis premier obstacle équipé : C6 avec un passage sous bloc facultatif en RG depuis la vasque juste avant l'arrivée. T2 (piton RG, désescalade possible selon conditions), T1 dans les blocs et on arrive sur un ressaut de 2,5 m à désescalader au pied duquel on trouve un amarrage RG pour descendre une C5. Suivent une petite vasque et une C4 équipée.",
+      "retour": "Longer un peu la rivière après le dernier obstacle pour trouver rapidement en rive gauche une petite sente qui mène à un champ. Le longer sur son bord gauche pour trouver une piste qui remonte à la D28. Le parking est encore à 400 m en amont.",
+      "engagement": null,
+      "periode": "Ruisseau toujours bien alimenté, attendre l’étiage. A combiner avec les Marmites du Diable toutes proches et bien plus intéressantes !",
+      "geologie": null,
+      "historique": "? Au vu des amarrages, ouvert il y a quelques années...",
+      "remarques": "Équipement correct mais non doublé en 2017.\n\nDescente proposée à une époque par des professionnels du secteur mais peu intéressante...\n\nIl existe peut-être d'autres obstacles plus en amont ?"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23989,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.573509,
+        "longitude": 5.709416,
+        "label": null
+      },
+      {
+        "canyonId": 23989,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 44.573212,
+        "longitude": 5.714265,
+        "label": "Piste de sortie (arrivée sur la route)"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.573509,
+      "longitude": 5.709416,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_3dc2c45ee9a0a859",
+          "kind": "MAP",
+          "title": "3338 OT Serres-Veynes (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

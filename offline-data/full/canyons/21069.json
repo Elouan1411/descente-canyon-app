@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:48:02.032679+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21069,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21069/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21069/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21069/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21069/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21069,
+    "identity": {
+      "nom": "Larguis (aval)",
+      "nomComplet": "Canyon du Larguis (aval), Le larguis",
+      "prefixeNom": "Canyon du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21069/Larguis-aval.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Ariège",
+      "communePrincipale": "Mérens-les-Vals",
+      "communes": [
+        "Mérens-les-Vals"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": "Le larguis"
+    },
+    "rating": {
+      "cotation": "v3a1II",
+      "interet": 1.3,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 1250,
+      "deniveleM": 250,
+      "longueurM": 375,
+      "cascadeMaxM": 65,
+      "cordeMiniM": 27,
+      "navette": "5.0km"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "2h30",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "à 5km de la sortie d'Ax, petit parking coté rivière pour laisser un véhicule dans une courbe à droite (dans le sens ax merens) face au canyon.",
+      "accesAmont": "même accès que pour Larguis amont.",
+      "approche": "descendre dans le canyon au niveau du pont de sortie de arguis amont",
+      "descente": "14 cascades",
+      "retour": "longer le ruisseau en rive droite, passer sous le pont de la voie ferrée, traverser l'Ariège et quelques mètres en amont de la confluence, rejoindre la RN20 et le parking aval.",
+      "engagement": "Plusieurs échappatoires plus ou moins faciles.",
+      "periode": "A faire après de grosses pluies sur le secteur ou à la fonte\n\nPeut être sec a l'étiage.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "A descendre l'après-midi."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21069,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.674164,
+        "longitude": 1.841601,
+        "label": null
+      },
+      {
+        "canyonId": 21069,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.673721,
+        "longitude": 1.836566,
+        "label": null
+      },
+      {
+        "canyonId": 21069,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 42.674488,
+        "longitude": 1.84165,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 42.674488,
+      "longitude": 1.84165,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_9f78c45ba2e5b5de",
+          "kind": "MAP",
+          "title": "2249 OT Bourg-Madame (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

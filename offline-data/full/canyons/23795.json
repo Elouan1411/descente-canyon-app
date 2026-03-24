@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:07.890942+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23795,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23795/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23795/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23795/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23795/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23795,
+    "identity": {
+      "nom": "Rivis",
+      "nomComplet": "Rio Rivis",
+      "prefixeNom": "Rio",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23795/Rivis.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Frioul-Vénétie julienne",
+      "departement": "Udine",
+      "communePrincipale": "Chiusaforte",
+      "communes": [
+        "Chiusaforte"
+      ],
+      "massif": "Alpes Juliennes",
+      "bassin": "Val Raccolana",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a2II",
+      "interet": 2.2,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 720,
+      "deniveleM": 295,
+      "longueurM": 600,
+      "cascadeMaxM": 45,
+      "cordeMiniM": 50,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "50",
+      "descente": "2h40min",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": "2011 - \"dirtsee\", voir https://youtu.be/SnALbtK1Lj8",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23795,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.393349,
+        "longitude": 13.33253,
+        "label": null
+      },
+      {
+        "canyonId": 23795,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.395851,
+        "longitude": 13.33117,
+        "label": null
+      },
+      {
+        "canyonId": 23795,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.39603,
+        "longitude": 13.33109,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.39603,
+      "longitude": 13.33109,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

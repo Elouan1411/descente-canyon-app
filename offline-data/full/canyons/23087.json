@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:36.982637+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23087,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23087/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23087/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23087/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23087/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23087,
+    "identity": {
+      "nom": "Escalera",
+      "nomComplet": "Gorgo de la Escalera",
+      "prefixeNom": "Gorgo de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23087/Escalera.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Comunidad Valenciana",
+      "departement": "Valencia",
+      "communePrincipale": "Anna",
+      "communes": [
+        "Anna"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 1.8,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": null,
+      "longueurM": 700,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "1h",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "Au rond point, sur la CV580 à la sortie de Anna, prendre la route en direction de Alcudia pendant 700m et se garer au niveau du pont au dessus du baranco Escalera. C'est à 300m d'une pompe à essence Elf/Cepsa.",
+      "accesAmont": null,
+      "approche": "Départ au niveau du pont.",
+      "descente": "Une des rares descentes aquatiques de Valencia.\n\nUne descente avec peu d'obstacles : un saut au départ puis une C10 et une dernière C25 ou C30 ( si équipé hors de l'eau).",
+      "retour": "Après la C25 suivre le lit de la rivière jusqu'à l'endroit où un grand tronc d'arbre est en travers du cours d'eau. Un peu plus loin une sente monte en RG. Elle arrive sur une piste, la suivre jusqu'à une route goudronnée. Cette route abouti sur la CV580 où on prend à gauche.",
+      "engagement": null,
+      "periode": "Le canyon coule toute l'année. Mais pour y trouver de l'eau du début à la fin, la période optimale est le printemps. La première partie est parfois sêche plus tard dans la saison.",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23087,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 39.010845,
+        "longitude": -0.645231,
+        "label": null
+      },
+      {
+        "canyonId": 23087,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 39.015991,
+        "longitude": -0.640664,
+        "label": null
+      },
+      {
+        "canyonId": 23087,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 39.010761,
+        "longitude": -0.645033,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 39.010761,
+      "longitude": -0.645033,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

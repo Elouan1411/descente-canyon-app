@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:10.241305+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22986,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22986/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22986/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22986/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22986/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22986,
+    "identity": {
+      "nom": "MillnatzenKlamm",
+      "nomComplet": "Canyon de MillnatzenKlamm, Millnatzenbach",
+      "prefixeNom": "Canyon de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22986/MillnatzenKlamm.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Carinthie",
+      "departement": "Hermagor",
+      "communePrincipale": "Lesachtal",
+      "communes": [
+        "Lesachtal"
+      ],
+      "massif": "Lienzer Dolomiten",
+      "bassin": "Lesach",
+      "coursEau": "Millnatzenbach"
+    },
+    "rating": {
+      "cotation": "v3a3II",
+      "interet": 1.8,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 1520,
+      "deniveleM": 200,
+      "longueurM": 400,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "25min / 2h",
+      "descente": "1h45",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "Depuis Kötschach-Mauthen, suivre la B111 vers l'ouest, dans la vallée du Gail, jusqu'à lesachtal, au lieu-dit \"Klebas\". Là quitter la B111 vers nord et suivre les indications vers Tscheltsch et plus loin vers le hameau de Ladstatt (petite route de montagne asphaltée)puis une piste de 1,5 km jusqu'au parking.",
+      "accesAmont": null,
+      "approche": "Suivre le chemin de retour de la via ferrata Millnatzenklamm (25 minutes) ou monter par la via ferrata avec l'équipement adéquat (2h30)",
+      "descente": "La descente du canyon commence avec la fin de la via ferrata.\n\nBien équipé avec écusson identifient les ancrages, les ancrages croisent l'équipement de la via ferrata. La cohabitation avec les via ferratiste est bien sympathique. Equipé hors crue la plupart du temps.",
+      "retour": "Après la dernière cascade suivre à proximité du ruisseau jusqu'au parking.",
+      "engagement": "Descente facile",
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "Idéal de le combiner avec la via ferrata"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22986,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.717999,
+        "longitude": 12.821957,
+        "label": null
+      },
+      {
+        "canyonId": 22986,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.712837,
+        "longitude": 12.82245,
+        "label": null
+      },
+      {
+        "canyonId": 22986,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.712391,
+        "longitude": 12.82267,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.712391,
+      "longitude": 12.82267,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_0452d24d53f23ed6",
+          "kind": "MAP",
+          "title": "182 Lienzer Dolomiten - Lesachtal (Freytag & Berndt )",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_c0a4bd70f3320053",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.bergsteigen.com/klettersteig/.....enklamm-klettersteig",
+          "url": "http://www.bergsteigen.com/klettersteig/.....enklamm-klettersteig"
+        },
+        {
+          "id": "resource_6385e393f88ee66a",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/C.....illnatzenKlammCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/C.....illnatzenKlammCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

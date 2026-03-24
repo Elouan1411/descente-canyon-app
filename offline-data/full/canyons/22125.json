@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:55.354299+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22125,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22125/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22125/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22125/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22125/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22125,
+    "identity": {
+      "nom": "San Liberatore",
+      "nomComplet": "Fosso di San Liberatore, Fosso Fontenuova, Sorgenti dell Alento",
+      "prefixeNom": "Fosso di",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22125/San-Liberatore.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Abruzzes",
+      "departement": "Pescara",
+      "communePrincipale": "Serramonacesca",
+      "communes": [
+        "Serramonacesca"
+      ],
+      "massif": "Majella",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 1.3,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 420,
+      "deniveleM": 100,
+      "longueurM": 1200,
+      "cascadeMaxM": null,
+      "cordeMiniM": 15,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "1-1h30",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "Au nord du massif de la Majella dirigez vous vers Manoppello puis Serramonacesca. Dans le village prenez la direction de l’abbatiale San Liberatore. Garez vous côté de la belle église romane.",
+      "accesAmont": null,
+      "approche": "Du parking Suivez la route et la piste qui part à gauche et longe rapidement un grillage. Vous passez un pont et vous continuez RD. Après un affluents, juste avant les panneaux de randonnée. Rentre à droite dans le canyon.",
+      "descente": "Petits encaissements parfois ludique. La marche centrale s’évite par un chemin aménagé. La fin est intéressante.",
+      "retour": "Des 3 dernières cascades, remontez RG par une sente raide. Suivez ensuite le chemin aménagé à droite.",
+      "engagement": "Échappatoires aisées",
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "Peu d’eau même au printemps. Attention aux crues tout de même."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22125,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.226952,
+        "longitude": 14.107856,
+        "label": null
+      },
+      {
+        "canyonId": 22125,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.234467,
+        "longitude": 14.101269,
+        "label": null
+      },
+      {
+        "canyonId": 22125,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 42.235317,
+        "longitude": 14.099391,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 42.235317,
+      "longitude": 14.099391,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

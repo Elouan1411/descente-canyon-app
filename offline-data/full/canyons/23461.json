@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:51.835894+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23461,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23461/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23461/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23461/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23461/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23461,
+    "identity": {
+      "nom": "Mtsapéré II",
+      "nomComplet": "Canyon Mtsapéré II, Grande cascade de Mtsapéré, Mro oua Majimbini",
+      "prefixeNom": "Canyon",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23461/Mtsapere-II.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": null,
+      "departement": "Mayotte",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Mlima Mtsapere",
+      "bassin": "Mro oua Majimbini",
+      "coursEau": "Mro oua Majimbini"
+    },
+    "rating": {
+      "cotation": "v4a1II",
+      "interet": 2.3,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 170,
+      "deniveleM": 80,
+      "longueurM": 200,
+      "cascadeMaxM": 40,
+      "cordeMiniM": 50,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "1h",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "Il faut se garer au départ du GR (la piste se transforme en sentier montant), au bord de la piste qui remonte la rivière Mro oua Majimbini, à 1,5 km environ après le carrefour routier de départ du GR dans Mtsapéré. C’est le même parking que pour le canyon de Mtsapéré I.",
+      "accesAmont": null,
+      "approche": "Depuis le parking, on suit le GR jusqu’à l’altitude 170m où l’on recoupe une barre rocheuse prolongement du cassé du cirque de la cascade que l’on devine sur la droite. Un peu plus haut, quitter le GR pour suivre à droite un chemin qui descend en direction de la rivière. Au gué, la suivre à l’aval sur 150m jusqu’au sommet de la cascade vers l’altitude 170m.",
+      "descente": "Aborder la cascade par la rive droite. Un gros arbre permet d’installer le rappel de 50m. Il n’y a aucun équipement en place et il faut gérer le frottement. On descend tout d’abord une quinzaine de mètres le long d’un plan incliné jusqu’à la rupture de pente. La descente des 30 à 35 mètres se fait contre paroi mais ne permet pas d’éviter les embruns. En saison humide ça doit être carrément plus impressionnant ! Arrivée sur une plateforme au sommet du toboggan suivant.\n\nOn trouve un arbre rive droite pour amarrer la corde et descendre la cascade-toboggan incliné d’une quinzaine de mètres. On pourrait enchaîner les deux cascades.",
+      "retour": "On suit alors la rivière jusqu’à rejoindre une petite sente rive droite qui se transforme en chemin rejoignant la piste qui mène à la voiture en une vingtaine de minutes.",
+      "engagement": "Pas d'échappatoire.\n\nPas d'équipement.",
+      "periode": "Faisable en toute saison.\n\nUn mince filet d'eau à la saison sèche (d'avril à novembre).\n\nFaire attention au débit en saison humide (de décembre à mars).",
+      "geologie": "Phonolites",
+      "historique": "Canyon ouvert en 2009 par Arnauld Malard et collectif Mayotte. Topographie 01/06/2009. Publié dans Spelunca n°115, 2009 et dans le topo d'escalade de Mayotte, téléchargeable à l'adresse suivante : https://sites.google.com/site/mayotteescalade/topos.",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23461,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": -12.774,
+        "longitude": 45.185799,
+        "label": "Départ Canyon sur GR"
+      },
+      {
+        "canyonId": 23461,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": -12.78209,
+        "longitude": 45.206211,
+        "label": null
+      },
+      {
+        "canyonId": 23461,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": -12.7761,
+        "longitude": 45.18681,
+        "label": "Débouché chemin retour sur le GR"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": -12.78209,
+      "longitude": 45.206211,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_da6f1e50320f4a35",
+          "kind": "MAP",
+          "title": "4410N Mamoudzou / Mayotte Nord (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_7552052c0971eea0",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "https://cariboumahore.wordpress.com/2015.....cascade-de-mtsapere/",
+          "url": "https://cariboumahore.wordpress.com/2015.....cascade-de-mtsapere/"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

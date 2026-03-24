@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:15.797849+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23250,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23250/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23250/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23250/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23250/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23250,
+    "identity": {
+      "nom": "Froda (inferieur)",
+      "nomComplet": "Torrente Froda (inferieur), Cascata della Froda, Froda",
+      "prefixeNom": "Torrente",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23250/Froda-inferieur.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Lombardia",
+      "departement": "Varese",
+      "communePrincipale": "Castelveccana",
+      "communes": [
+        "Castelveccana"
+      ],
+      "massif": "Prealpi Luganesi",
+      "bassin": "Lac Majeur",
+      "coursEau": "Froda"
+    },
+    "rating": {
+      "cotation": "v4a2I",
+      "interet": 2.7,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 585,
+      "deniveleM": 200,
+      "longueurM": 320,
+      "cascadeMaxM": 100,
+      "cordeMiniM": 60,
+      "navette": "2.7km"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "2h",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "de Luino prendre la SP69 à Castello Castellveccana (9.4km), sortir à gauche vers Nasca et Sant Antonio (SP7 - Via Galileo Galilei), traverser Nasca et continuer 2.1 km vers Sant Antonio, Arcumeggia. A l'altitude 360m prendre à droite direction \"Cascata Froda\" et Casone Froda. Continuer avec voiture, si c'est possible et garer la première voiture.",
+      "accesAmont": "avec la deuxième voiture continuer sur la SP7 vers le haut (1,7 km) et arriver à un virage à gauche (sentier à droite). C'est le parking amont.",
+      "approche": "Du parking amont prendre le sentier jusqu'à la passerelle. L'entrée est au-dessous de la passerelle.",
+      "descente": "Quelques rappels jusqu'à la grande verticale (100m, 2 relais en rive gauche).",
+      "retour": "Prendre la piste à Casone Froda et continuer jusqu'au parking aval.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "Amarrages vérifiés en 2015."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23250,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.932961,
+        "longitude": 8.687687,
+        "label": "partie inf."
+      },
+      {
+        "canyonId": 23250,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.935146,
+        "longitude": 8.689334,
+        "label": null
+      },
+      {
+        "canyonId": 23250,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 45.932743,
+        "longitude": 8.688604,
+        "label": "pour partie inferieure"
+      },
+      {
+        "canyonId": 23250,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 45.939026,
+        "longitude": 8.688264,
+        "label": null
+      },
+      {
+        "canyonId": 23250,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 45.943203,
+        "longitude": 8.687043,
+        "label": "sortir la SP7 à droite"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 45.932743,
+      "longitude": 8.688604,
+      "label": "pour partie inferieure"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_06c8098ac789b4b2",
+          "kind": "MAP",
+          "title": "296 Chiasso (CNS (Carta Nazionale Svizzera))",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

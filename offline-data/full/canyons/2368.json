@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:45:15.025535+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2368,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2368/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2368/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2368/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2368/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/2368/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 2368,
+    "identity": {
+      "nom": "Dard",
+      "nomComplet": "Cascades du Dard",
+      "prefixeNom": "Cascades du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2368/Dard.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Savoie",
+      "communePrincipale": "Cevins",
+      "communes": [
+        "Cevins"
+      ],
+      "massif": "Beaufortain",
+      "bassin": "Tarentaise",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "",
+      "interet": 1700.0,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": 1700,
+      "deniveleM": 300,
+      "longueurM": 300,
+      "cascadeMaxM": null,
+      "cordeMiniM": null,
+      "navette": null
+    },
+    "timings": {
+      "approche": null,
+      "descente": null,
+      "retour": null
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2368,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.626389,
+        "longitude": 6.511389,
+        "label": null
+      },
+      {
+        "canyonId": 2368,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.628334,
+        "longitude": 6.505,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 45.626389,
+      "longitude": 6.511389,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_30a1a7d4e8445846",
+          "kind": "MAP",
+          "title": "3532 OT Massif du Beaufortin (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_aef56219544d1d57",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://caf.albertville.online.fr/canyon_dard.htm",
+          "url": "http://caf.albertville.online.fr/canyon_dard.htm"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 200,
+          "status": "Actif",
+          "action": "Interdit",
+          "title": "Arrêté municipal (Cevins) - 1998",
+          "summary": null,
+          "remark": null,
+          "details": "Consultez le\n\ntexte (ou extrait)\n\nLa présence de toute personne et la pratique de toute activité est interdite dans le cours d'eau du Dard sur le territoire de la commune de Cevins sur la partie située entre la prise d'eau et 100m à l'aval de la cascade. (Extrait de l'arrêté municipal N°012/1998).",
+          "effectiveDate": "1998",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/200/legislation.html",
+          "attachments": []
+        }
+      ]
+    }
+  }
+}

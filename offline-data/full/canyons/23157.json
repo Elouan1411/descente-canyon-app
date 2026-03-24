@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:54.292007+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23157,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23157/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23157/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23157/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23157/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23157,
+    "identity": {
+      "nom": "Pichoux",
+      "nomComplet": "Gorges du Pichoux, La Sorne",
+      "prefixeNom": "Gorges du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23157/Pichoux.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Petit-Val",
+      "departement": "Bern/Berne",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Jura",
+      "bassin": "Sorne",
+      "coursEau": "La Sorne"
+    },
+    "rating": {
+      "cotation": "v2a2II",
+      "interet": 1.0,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 720,
+      "deniveleM": 90,
+      "longueurM": 420,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 25,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "1min",
+      "descente": "45min",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "Se rendre au lieu-dit du Pichoux, puis prendre la direction de Châtelat et se garer à droite juste après avoir traversé le torrent.",
+      "accesAmont": null,
+      "approche": "Rejoindre le cours d'eau en aval du pont.",
+      "descente": "La descente commence par un petit encaissement avec une C10 (descente 15m, AN RG) suivi d'une C12 (2 points très haut RD). Ensuite enchainement de marche et désescalade lorsque le torrent longe la route (300m, quelques petits toboggans possibles) et on arrive à la C20 finale (2 points RD).",
+      "retour": "Continuer dans le lit du cours d'eau, prendre un sentier RG pour rejoindre la route, puis revenir à la voiture par la route.",
+      "engagement": "La descente est courte et suit la route sur une grande partie, mais il n'est pas forcement facile de monter sur la route.",
+      "periode": null,
+      "geologie": null,
+      "historique": "Équipé depuis longtemps en technique spéléo pour des entrainements. Puis équipé en mode canyon par GSA, le 01/05/2008.",
+      "remarques": "Descente peu intéressante car trop proche de la route !"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23157,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.279758,
+        "longitude": 7.2274,
+        "label": null
+      },
+      {
+        "canyonId": 23157,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.279739,
+        "longitude": 7.22695,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.279739,
+      "longitude": 7.22695,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_72a5b0f29f66ded9",
+          "kind": "MAP",
+          "title": "1105 Bellelay (Carte Nationale Suisse)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_e85db8dae6674e16",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.aventurecanyon.com/pichoux-topo.html",
+          "url": "http://www.aventurecanyon.com/pichoux-topo.html"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

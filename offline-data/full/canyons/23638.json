@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:33.003713+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23638,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23638/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23638/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23638/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23638/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23638,
+    "identity": {
+      "nom": "Neuciora",
+      "nomComplet": "Vallon de Neuciora",
+      "prefixeNom": "Vallon de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23638/Neuciora.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-Maritimes",
+      "communePrincipale": "La Brigue",
+      "communes": [
+        "La Brigue"
+      ],
+      "massif": "Mercantour",
+      "bassin": "Roya",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a1III",
+      "interet": 1.8,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 1300,
+      "deniveleM": 495,
+      "longueurM": 1200,
+      "cascadeMaxM": 60,
+      "cordeMiniM": 70,
+      "navette": "10.5km"
+    },
+    "timings": {
+      "approche": "10min",
+      "descente": "3h30",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "Remonter la vallée de la Roya, passer Breil.\n\nA Saint Dalmas de Tende, avant la sortie du village prendre à droite une voie communale en pente passant rapidement sur un pont étroit et tournez à droite juste après (balise 40).\n\nFaire 2 km et se garer au niveau des panneaux touristiques et d'une table de pique-nique.",
+      "accesAmont": "Traverser le village de La Brigue et juste à sa sortie tournez à droite.\n\nLa voie remonte (balise 48), passe sur un pont enjambant le Ru Sec et tourne à gauche. A la balise 249, prenez à droite; à la balise 247 tournez à droite et continuer vers la balise 245.",
+      "approche": "Prendre la piste de gauche en face de l'oratoire sur 650 m et prendre une sente à droite traversant des petites restanques avec des genêts pour descendre dans le vallon.",
+      "descente": "Après un peu de marche, il y a principalement une C11, C33 après un affluent, une C17, une C22, un affluent puis la C60.",
+      "retour": "Le retour se fait sur la piste (sentier valléen).",
+      "engagement": "Les amarrages sont corrects, ils sont parfois reliés par des sangles.\n\nLa particularité est un rappel de 60m dont les 50 derniers mètres sont en plein gaz.",
+      "periode": "Le vallon est quasiment sec, seul un pantalon néoprène suffit.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Les 10 premiers mètres formant une casquette du rappel de 60 m génère un frottement nécessitant de protéger la corde, typiquement avec un sac rembourré lié au brin de rappel."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23638,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.037117,
+        "longitude": 7.603814,
+        "label": "A confirmer"
+      },
+      {
+        "canyonId": 23638,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.040436,
+        "longitude": 7.589266,
+        "label": null
+      },
+      {
+        "canyonId": 23638,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 44.043186,
+        "longitude": 7.606603,
+        "label": null
+      },
+      {
+        "canyonId": 23638,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 44.052685,
+        "longitude": 7.590049,
+        "label": "Approximatif"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 44.043186,
+      "longitude": 7.606603,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

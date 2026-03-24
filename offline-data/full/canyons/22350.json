@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:42.757973+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22350,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22350/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22350/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22350/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22350/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22350,
+    "identity": {
+      "nom": "Clausis-Fournel",
+      "nomComplet": "Ravin du Clausis-Fournel, Grand Clausis et Fournel amont",
+      "prefixeNom": "Ravin du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22350/Clausis-Fournel.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Hautes-Alpes",
+      "communePrincipale": "L'Argentière-la-Bessée",
+      "communes": [
+        "L'Argentière-la-Bessée"
+      ],
+      "massif": null,
+      "bassin": "Durance",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a2III",
+      "interet": 2.3,
+      "nbVotes": 8
+    },
+    "metrics": {
+      "altitudeDepartM": 2000,
+      "deniveleM": null,
+      "longueurM": null,
+      "cascadeMaxM": 40,
+      "cordeMiniM": 45,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h30/1h45",
+      "descente": "2h30/3h",
+      "retour": "1h"
+    },
+    "topo": {
+      "accesAval": "De l'Argentière-la-Bessée, prendre la route du Fournel (D423). On la continue jusqu'à son terminus, le parking de départ de randonnée situé à l'altitude 1560m.",
+      "accesAmont": null,
+      "approche": "Remonter la vallée du Fournel par le GR541 (carte indispensable, on coupe de nombreux torrents..). Peu avant que le chemin ne recoupe le ravin du Grand Clausis, on descend au mieux vers lui jusqu'au départ (altitude 2000m d'après Henri Vincens)",
+      "descente": "Il s'agit de l'enchaînement du ravin du Grand Clausis et de la partie haute du Fournel, avant la partie basse très fréquentée. Quelques cascades pas désagréables dans le ravin du Grand Clausis avant la jonction avec le Haut Fournel. Eau d'une très belle couleur, fraiche et abondante, dans celui-ci. Les obstacles sont esthétiques.",
+      "retour": "Marche en rivière et sur les berges (RG puis RD) après le dernier obstacle (longuet...)",
+      "engagement": null,
+      "periode": "Étiage estival",
+      "geologie": null,
+      "historique": "?",
+      "remarques": "A faire impérativement à l'étiage."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22350,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.782799,
+        "longitude": 6.402928,
+        "label": null
+      },
+      {
+        "canyonId": 22350,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.777225,
+        "longitude": 6.413097,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 44.782799,
+      "longitude": 6.402928,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_d3ba8daa244cabe2",
+          "kind": "MAP",
+          "title": "3437 ET Orcieres-Merlette (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

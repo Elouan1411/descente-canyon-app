@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:58.535489+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22139,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22139/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22139/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22139/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22139/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22139,
+    "identity": {
+      "nom": "Gerlette",
+      "nomComplet": "Cascade de la Gerlette",
+      "prefixeNom": "Cascade de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22139/Gerlette.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Isère",
+      "communePrincipale": "Malleval-en-Vercors",
+      "communes": [
+        "Malleval-en-Vercors"
+      ],
+      "massif": "Vercors",
+      "bassin": "Isère",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a1II",
+      "interet": 1.5,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 1000,
+      "deniveleM": 90,
+      "longueurM": 100,
+      "cascadeMaxM": 60,
+      "cordeMiniM": 50,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "12min",
+      "descente": "30min",
+      "retour": "45min"
+    },
+    "topo": {
+      "accesAval": "De Cognin-les-Gorges, rejoindre Malleval par la D22. Dans ce village, prendre à droite pour continuer la D22 sur 750 m avant de tourner à gauche sur la route forestière. Se garer peu après une épingle à gauche sans gêner au niveau de la piste qui descend à Tonnière (panneaux et boite aux lettres)",
+      "accesAmont": null,
+      "approche": "Descendre la piste, dépasser la maison puis un vague ravin sec avant de rejoindre le ruisseau.",
+      "descente": "Une désescalade, une cascade d'une quinzaine de mètres (AN RG) puis la grande cascade : départ AN RG (attention au frottement), fractionnement RG sur une terrasse à -10m environ sur relais chaîné.",
+      "retour": "Poursuivre le ruisseau (quelques petits ressauts) en shuntant au mieux sur des sentes RG puis un chemin RD avant d'en retrouver un autre RG. On arrive à un gué / pont caractéristique (dalle de calcaire) et on prend le bon sentier en gauche qui monte doucement. A un carrefour, on prend à gauche le sentier balisé jaune et vert qui remonte le long d'une combe jusqu'à site d'escalade (panneaux) puis la route forestière que l'on continuera à gauche jusqu'à la voiture.",
+      "engagement": null,
+      "periode": "Printemps, automne en évitant les crues. Aucun intérêt si le débit est faible.",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22139,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.155224,
+        "longitude": 5.457639,
+        "label": null
+      },
+      {
+        "canyonId": 22139,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.149612,
+        "longitude": 5.451028,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.149612,
+      "longitude": 5.451028,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_f71cf3569cd5f7fc",
+          "kind": "MAP",
+          "title": "3235 OT Autrans - Gorges de La Bourne (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

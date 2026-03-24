@@ -1,0 +1,170 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:48:41.802534+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21248,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21248/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21248/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21248/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21248/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21248,
+    "identity": {
+      "nom": "Garouille",
+      "nomComplet": "Combe Garouille",
+      "prefixeNom": "Combe",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21248/Garouille.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Drôme",
+      "communePrincipale": "Romeyer",
+      "communes": [
+        "Romeyer"
+      ],
+      "massif": "Diois",
+      "bassin": "Drôme",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a1IV",
+      "interet": 1.4,
+      "nbVotes": 8
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": 600,
+      "longueurM": null,
+      "cascadeMaxM": 40,
+      "cordeMiniM": 45,
+      "navette": "3.0km"
+    },
+    "timings": {
+      "approche": "2h",
+      "descente": "3h",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": "Se garer au hameau des Planeaux et prendre \"à pied\" le Chemin des Tournillons qui longe la crête jusqu'à la combe. (carte IGN 3237OT)",
+      "accesAmont": null,
+      "approche": "La marche est longue mais pas soutenue, de longues périodes de plat accentuées de deux trois coup de cul sans grande violence.\n\nAttention prendre la bonne combe nous on s'est fait avoir !!!! C'est celle après le promontoire, on peut l'associer à un point de vue !\n\nSur la carte IGN, le trait bleu de la ravine a été oubliée !!!",
+      "descente": "C'est un canyon qui ramasse des crues prévoir de quoi planter du spit. L'ensemble est une succession de cascades sauvages peu encaissées.",
+      "retour": "30min pour rejoindre les Planeaux si on n'a pas laissé de voiture.",
+      "engagement": "Encaissé à donf sauf à la fin.",
+      "periode": "A ne faire qu'avec de l'eau.",
+      "geologie": "Merdique calcaire marneux équipement avec tige filetée bien profonde à mon avis",
+      "historique": null,
+      "remarques": "Faire gaffe aux chutes de cailloux surtout à la fonte des neiges. La paroi est bien daubée..."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21248,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.824524,
+        "longitude": 5.431221,
+        "label": null
+      },
+      {
+        "canyonId": 21248,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.814758,
+        "longitude": 5.434568,
+        "label": null
+      },
+      {
+        "canyonId": 21248,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 44.806747,
+        "longitude": 5.44675,
+        "label": null
+      },
+      {
+        "canyonId": 21248,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 44.812588,
+        "longitude": 5.4322,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 44.806747,
+      "longitude": 5.44675,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_774008f93c089927",
+          "kind": "TOPOGUIDE",
+          "title": "100 descentes de canyons autour de Grenoble",
+          "authors": [
+            "Arnaud Astier"
+          ],
+          "publicationYear": 2015,
+          "reference": "978-2-7466-7754-8",
+          "editor": "auto-édition",
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/194/100-Descentes-de-Canyons-autour-de-Grenoble.html"
+        },
+        {
+          "id": "biblio_d2d847b6c80065cf",
+          "kind": "TOPOGUIDE",
+          "title": "Diois : escalade et canyons (2° édition)",
+          "authors": [
+            "Véronique Pitte",
+            "Grégory Woodhouse",
+            "Vincent Gruart"
+          ],
+          "publicationYear": 2002,
+          "reference": "2-908730-68-5",
+          "editor": "A Die",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1278/topoguide.html"
+        },
+        {
+          "id": "biblio_0f06b44eb9a42186",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons du Vercors et Alentours",
+          "authors": [
+            "J-C. Botti",
+            "B. Rosset",
+            "Y. Launay",
+            "C. Larribe",
+            "T. Larribe",
+            "Spéléo Club MJC de Tullins"
+          ],
+          "publicationYear": 1997,
+          "reference": "ISBN 2-7417-0211-X",
+          "editor": "Gap",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/12/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_897a81a84c493147",
+          "kind": "MAP",
+          "title": "3237 OT Glandasse - Col de La Croix (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

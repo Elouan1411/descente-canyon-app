@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:46:01.610439+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2573,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2573/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2573/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2573/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2573/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2573,
+    "identity": {
+      "nom": "Cause (amont)",
+      "nomComplet": "La Cause (amont), Infernet, Aval du Barrage de Bimont, La Cause",
+      "prefixeNom": "La",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2573/Cause-amont.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Bouches-du-Rhône",
+      "communePrincipale": "Saint-Marc-Jaumegarde",
+      "communes": [
+        "Saint-Marc-Jaumegarde"
+      ],
+      "massif": "Montagne Ste Victoire",
+      "bassin": null,
+      "coursEau": "La Cause"
+    },
+    "rating": {
+      "cotation": "v2a2III",
+      "interet": 0.4,
+      "nbVotes": 7
+    },
+    "metrics": {
+      "altitudeDepartM": 350,
+      "deniveleM": 330,
+      "longueurM": 400,
+      "cascadeMaxM": 5,
+      "cordeMiniM": 8,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "30min",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "Dans Aix-en-Provence prenez la direction de Vauvenargues. Après St Marc de Jaumegarde tournez à droite vers le Barrage de Bimont. Garez vous sur le grand parking.",
+      "accesAmont": null,
+      "approche": "Discrètement accédez au mieux à la rivière. Au niveau du parking, il y a un vallon (repérable grâce à quelques ordures jetées depuis le parking...) dans lequel la descente est facile.",
+      "descente": "Il y a 2 obstacles pouvant être des lieux de baignades.\n\nAprès un petit bief ou vous êtes obligés de vous mouiller entièrement (Possibilité de contour RD). De là passez la cascade de 5m (2x7m de corde) grâce au point RD.\n\nPassez les blocs. Après une courte progression vous arrivez à un mini chaos de blocs avec siphon. Il est possible de sauter dans la vasque en faisant attention.\n\nEnsuite, et bien rien, le reste est une marche en rivière.",
+      "retour": "Lorsque le resserrement disparaît vous verrez un canal RG vous pouvez tenter de remonter au mieux RD vers le GR.\n\nNota YD : tant que vous avez le canal en vue en RG, observez attentivement la RD. Une vague sente (raide) existe et un cairn a été mis en place à son départ en 03/2007 (qui ne résistera pas aux chasses du barrage) et qui amène directement au parking sans rejoindre de sentier.",
+      "engagement": "Il y a un chemin de randonnée au dessus RD. Pas d’obstacles infranchissables à la descente comme à la remontée mais il est difficile de s’échapper dans le resserrement.",
+      "periode": "Attention au barrage. Il y a des pertes.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Présence d'un gros barrage en Amont"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2573,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.540577,
+        "longitude": 5.533698,
+        "label": null
+      },
+      {
+        "canyonId": 2573,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.538921,
+        "longitude": 5.532367,
+        "label": null
+      },
+      {
+        "canyonId": 2573,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.541836,
+        "longitude": 5.532973,
+        "label": "Parking touristique du barrage du Bimont"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.541836,
+      "longitude": 5.532973,
+      "label": "Parking touristique du barrage du Bimont"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_96163e753595ca69",
+          "kind": "MAP",
+          "title": "3244 ET Montagne Sainte-Victoire (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

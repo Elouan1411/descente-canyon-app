@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:17.964173+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22510,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22510/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22510/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22510/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22510/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22510,
+    "identity": {
+      "nom": "Verzasca",
+      "nomComplet": "Verzasca",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22510/Verzasca.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Tenero-Contra",
+      "departement": "Tessin",
+      "communePrincipale": "Gordola",
+      "communes": [
+        "Gordola"
+      ],
+      "massif": null,
+      "bassin": "Lac Majeur",
+      "coursEau": "Verzasca"
+    },
+    "rating": {
+      "cotation": "v4a4IV",
+      "interet": 1.5,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 255,
+      "deniveleM": 50,
+      "longueurM": 3500,
+      "cascadeMaxM": 50,
+      "cordeMiniM": 60,
+      "navette": "3.7km"
+    },
+    "timings": {
+      "approche": "1h20",
+      "descente": "2h",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "1ère voiture garer à Tenero (pont sur la Verzasca) avec la 2ème voiture direction Valle di Verzasca et garer au-dessus du barrage (parking payant, max. 3h)",
+      "accesAmont": null,
+      "approche": "Traverser le barrage 475m alt (bungee-jumping) et prendre le sentier à la rive droite. 125m vers sud. Maintenant prendre (à la bifurcation) la sente gauche vers la-bas. À la prochaine bifurcation (425m alt.) la sente à droite et continuer vers la-bas jusqu'au pylône (360m alt.). La sente est fini. Continuer sans sente (rappel) ver nord jusqu'au ruisseau sec. Désescalader (direction NNE) jusqu'au bord du canyon. Rappel sur arbre(50 - 60 m) jusqu'au fond du canyon(255m alt.).",
+      "descente": "aller, nager",
+      "retour": "Après l'encaissement du canyon sortir à droite.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22510,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.194698,
+        "longitude": 8.848377,
+        "label": null
+      },
+      {
+        "canyonId": 22510,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.181602,
+        "longitude": 8.854361,
+        "label": null
+      },
+      {
+        "canyonId": 22510,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 46.193245,
+        "longitude": 8.850174,
+        "label": "devant le parking payant (seulement 3 h)"
+      },
+      {
+        "canyonId": 22510,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 46.180424,
+        "longitude": 8.852223,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 46.193245,
+      "longitude": 8.850174,
+      "label": "devant le parking payant (seulement 3 h)"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_0cb1ef89bee0ed0d",
+          "kind": "MAP",
+          "title": "1312 Locarno (Carte Nationale Suisse)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

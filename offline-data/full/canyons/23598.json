@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:23.062473+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23598,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23598/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23598/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23598/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23598/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23598,
+    "identity": {
+      "nom": "Glasbach",
+      "nomComplet": "Glasbach, Wislitöbeli, Schräabach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23598/Glasbach.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Pfäfers",
+      "departement": "Saint Gallen",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Alpes glaronaises",
+      "bassin": "Tamina",
+      "coursEau": "Schräabach"
+    },
+    "rating": {
+      "cotation": "v5a3III",
+      "interet": 2.9,
+      "nbVotes": 5
+    },
+    "metrics": {
+      "altitudeDepartM": 1660,
+      "deniveleM": 160,
+      "longueurM": 320,
+      "cascadeMaxM": 53,
+      "cordeMiniM": 55,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "50min",
+      "descente": "1h-1h30",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": "Monter la route jusqu'au fond du Calfeisental, grand parking au bout du Gigerwaldsee.",
+      "accesAmont": null,
+      "approche": "Suivre le chemin rando RG de la Tamina.",
+      "descente": "Après une première partie peu inclinée, on trouve une grande cascade qui forme un geyser, au pied de la cascade petit encaissement. Parcours vertical, belles cascades qui poussent dans les rappels.",
+      "retour": "Suivre le chemin rando au bord de la Tamina jusqu'au parking.",
+      "engagement": "Court et engagé. Cascades qui poussent assez fort même vers la fin de l'année.",
+      "periode": "Août - Octobre",
+      "geologie": null,
+      "historique": "09.09.2011: Luciano Boesel, Matthias Holzinger, Pascal Van Duin, Timo Stammwitz.",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23598,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.920349,
+        "longitude": 9.33341,
+        "label": null
+      },
+      {
+        "canyonId": 23598,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.922642,
+        "longitude": 9.33342,
+        "label": null
+      },
+      {
+        "canyonId": 23598,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.920311,
+        "longitude": 9.35469,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.920311,
+      "longitude": 9.35469,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_308d304bac950947",
+          "kind": "MAP",
+          "title": "1175 Vättis (Swisstopo)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

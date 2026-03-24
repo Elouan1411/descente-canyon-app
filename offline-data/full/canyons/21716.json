@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:26.596572+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21716,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21716/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21716/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21716/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21716/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21716,
+    "identity": {
+      "nom": "Armisa",
+      "nomComplet": "Torrente Armisa",
+      "prefixeNom": "Torrente",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21716/Armisa.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Lombardia",
+      "departement": "Sondrio",
+      "communePrincipale": "Ponte in Valtellina",
+      "communes": [
+        "Ponte in Valtellina"
+      ],
+      "massif": null,
+      "bassin": "Adda",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.5,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 750,
+      "deniveleM": 180,
+      "longueurM": 1200,
+      "cascadeMaxM": 17,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "3h30",
+      "retour": "45min"
+    },
+    "topo": {
+      "accesAval": "Du lac de Côme remonter le Valtellina, passer Sondrio et continuer qq km. Juste après le panneau \"Ponte in Valtellina\", prendre à droite: direction Arigna. Juste avant le hameau, et en vue du panneau \"Fontaniva\", se garer contre le mur au niveau d'un élargissement tout près d'un oratoire \"Avé Maria\"... Sinon continuer par la route de droite et se garer dans l'épingle (1 place).",
+      "accesAmont": null,
+      "approche": "Traverser le village et rejoindre le ruisseau.",
+      "descente": "Quelques cascades, des sauts, des biefs...",
+      "retour": "Peu après une C4 formée de blocs et quand le ruisseau ne présente plus beaucoup d'intérêt, sortir rive D. Remonter par cette rive, traverser et continuer par la rive opposée.\n\nA noter que qq dizaines de mètres après cette sortie les cartes Italiennes et Suisses mentionnent un pont par lequel il serait possible de revenir par les 2 rives...",
+      "engagement": null,
+      "periode": "Débit relativement généreux; parcours estival.",
+      "geologie": "Gneiss.",
+      "historique": "P. van Duin and Co le 27/08/1994.",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21716,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.139938,
+        "longitude": 9.992666,
+        "label": null
+      },
+      {
+        "canyonId": 21716,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.150539,
+        "longitude": 9.986122,
+        "label": null
+      },
+      {
+        "canyonId": 21716,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.141483,
+        "longitude": 9.990156,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.141483,
+      "longitude": 9.990156,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_bab495774c6020bc",
+          "kind": "MAP",
+          "title": "CNS 279 Compas 104 CNS",
+          "scale": null,
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_cd0cb1983734be23",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.x-gatt.com/armisa/scheda.htm",
+          "url": "http://www.x-gatt.com/armisa/scheda.htm"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

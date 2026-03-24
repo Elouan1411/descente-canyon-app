@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:07.442966+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23522,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23522/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23522/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23522/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23522/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23522,
+    "identity": {
+      "nom": "Gavirolas",
+      "nomComplet": "Gavirolas",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23522/Gavirolas.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Andiast",
+      "departement": "Graubünden/Grigioni/Grischun",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": "Rhein",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a3III",
+      "interet": 3.4,
+      "nbVotes": 8
+    },
+    "metrics": {
+      "altitudeDepartM": 2320,
+      "deniveleM": 280,
+      "longueurM": 770,
+      "cascadeMaxM": 50,
+      "cordeMiniM": 50,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h15",
+      "descente": "3h",
+      "retour": "2h"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": "Beaucoup d'échappatoires, sauf dans l'encaissement avant la C50.",
+      "periode": "Canyon alimenté par un glacier, à faire à l’automne en période froide et tôt le matin.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Attention à la fonte du glacier. On peut continuer dans les premiers encaissements de Fluaz."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23522,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.84388,
+        "longitude": 9.07121,
+        "label": null
+      },
+      {
+        "canyonId": 23522,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.823608,
+        "longitude": 9.09562,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.823608,
+      "longitude": 9.09562,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

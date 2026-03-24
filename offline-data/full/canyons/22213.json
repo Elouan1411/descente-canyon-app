@@ -1,0 +1,147 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:14.166989+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22213,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22213/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22213/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22213/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22213/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22213,
+    "identity": {
+      "nom": "Mühltobel",
+      "nomComplet": "Mühltobel, Dafinser Bach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22213/Muhltobel.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Vorarlberg",
+      "departement": "Feldkirch",
+      "communePrincipale": "Zwischenwasser",
+      "communes": [
+        "Zwischenwasser"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": "Dafinser Bach"
+    },
+    "rating": {
+      "cotation": "v4a3III",
+      "interet": 1.7,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 840,
+      "deniveleM": 310,
+      "longueurM": 2300,
+      "cascadeMaxM": 53,
+      "cordeMiniM": 60,
+      "navette": "3.4km"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "4h30min",
+      "retour": "??"
+    },
+    "topo": {
+      "accesAval": "De l'autoroute Bregenz - Feldkirch prendre la sortie \"Klaus\" (sortie la plus proche vers \"le Götzis\"), ensuite à droite au rond-point, parallèle à l'autoroute environ 1 km, puis 90 degrés vers la gauche et en direction du sud. Suivre l'indicateur à gauche à Dafins. Sous l'autoroute, après environ 2,5 km de la route fédérale 190 en direction de l'est, à travers le village entre Röthis et Sulz. la rue traverse le ruisseau Frödisch. Garer le premier véhicule ici.\n\nAvec le deuxième véhicule en haut à Dafins, traversé le village. Devant le virage à gauche le plus proche(station de bus)garer la voiture. On peut certes conduire encore plus loin mais il ne sera pas évident de se garer ensuite sans gêner les riverains.",
+      "accesAmont": null,
+      "approche": "Du virage à gauche(depuis la station de bus)prendre le chemin forestier, qui mène en montant en direction du sud et atteindre la petite rue de goudron. Suivre celle ci jusqu'à la fin des maisons. De la et après quelques mètres vers le sud on prend le chemin à droite et à la ramification suivre celui ci en descendant jusqu'à la passerelle sur le ruisseau .",
+      "descente": "Au début ravin intéressant avec des rappels, cependant 30 min. après il faut marcher une longue distance jusqu'au début de la section du milieu (à la passerelle 630m)\n\nLa section de fin (commence 590m) et est bien.",
+      "retour": "Après l'encaissement(530m) la sortie est à droite vers la route.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22213,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.286453,
+        "longitude": 9.696076,
+        "label": null
+      },
+      {
+        "canyonId": 22213,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.290321,
+        "longitude": 9.67402,
+        "label": "entrée inf."
+      },
+      {
+        "canyonId": 22213,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.290508,
+        "longitude": 9.671445,
+        "label": null
+      },
+      {
+        "canyonId": 22213,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 47.292545,
+        "longitude": 9.692237,
+        "label": null
+      },
+      {
+        "canyonId": 22213,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 47.290562,
+        "longitude": 9.667765,
+        "label": null
+      },
+      {
+        "canyonId": 22213,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.291237,
+        "longitude": 9.674814,
+        "label": "vers l'entrée inf."
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 47.292545,
+      "longitude": 9.692237,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_08eaa20e6e4398b0",
+          "kind": "MAP",
+          "title": "22 Bregenzer Wald (Kompass)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_d7d92893871fdf86",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/C.....pic=MuehltobelCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/C.....pic=MuehltobelCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

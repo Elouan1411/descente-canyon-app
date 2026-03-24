@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:54:12.292614+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22748,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22748/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22748/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22748/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22748/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22748,
+    "identity": {
+      "nom": "Vatos",
+      "nomComplet": "Canyon de Vatos",
+      "prefixeNom": "Canyon de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22748/Vatos.html"
+    },
+    "location": {
+      "pays": "Grèce",
+      "region": "East Macedonia and Thrace Region",
+      "departement": "Evros",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Samothraki (île)",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v1a1I",
+      "interet": 1.8,
+      "nbVotes": 7
+    },
+    "metrics": {
+      "altitudeDepartM": 270,
+      "deniveleM": 270,
+      "longueurM": 3500,
+      "cascadeMaxM": 7,
+      "cordeMiniM": null,
+      "navette": "5.0km"
+    },
+    "timings": {
+      "approche": "1h",
+      "descente": "2h",
+      "retour": "1h"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": "Marche en rivière agrémentée de quelques sauts.\n\nSortie possible pour Karagiannaki.\n\nL'intégrale est TRES long.",
+      "retour": "Retour par une vire aérienne peu évidente avec un sac lourd.\n\nFaire attention de ne pas perdre le marquage sous peine de se retrouver vite en difficulté.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22748,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 40.420536,
+        "longitude": 25.586794,
+        "label": null
+      },
+      {
+        "canyonId": 22748,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 40.395222,
+        "longitude": 25.602703,
+        "label": null
+      },
+      {
+        "canyonId": 22748,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 40.396408,
+        "longitude": 25.585608,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 40.396408,
+      "longitude": 25.585608,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

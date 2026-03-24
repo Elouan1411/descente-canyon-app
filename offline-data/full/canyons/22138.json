@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:58.287480+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22138,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22138/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22138/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22138/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22138/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22138,
+    "identity": {
+      "nom": "Saint Martin",
+      "nomComplet": "Canyon de Saint Martin",
+      "prefixeNom": "Canyon de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22138/Saint-Martin.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-de-Haute-Provence",
+      "communePrincipale": "Saint-Martin-lès-Seyne",
+      "communes": [
+        "Saint-Martin-lès-Seyne"
+      ],
+      "massif": null,
+      "bassin": "Durance",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.4,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": 40,
+      "longueurM": 200,
+      "cascadeMaxM": 12,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "2min",
+      "descente": "1h",
+      "retour": "25min"
+    },
+    "topo": {
+      "accesAval": "Prendre la D900B vers Barcelonnette, après Espinasses prendre à droite la D900C vers Seyne-les-Alpes. Faire environ 7km, vous surplombez alors l'encaissement : petit parking possible au-dessus de l'encaissement sur la droite ou un peu plus loin à gauche (plus grand).",
+      "accesAmont": null,
+      "approche": "Du parking descendre dans le torrent en contournant les clôtures.",
+      "descente": "Descente très courte mais qui peut devenir très intense par fort débit.\n\n4 ressauts qui s'enchainent avec rappels arrosés, encaissement très fort, et vasques profondes.\n\nSur le R1 une C12 les points sont en RG peut-être cachés sous des pierres (roche pourrie au dessus).",
+      "retour": "A la sortie de l'encaissement remonter en RG le talus jusqu'à un petit col, puis retourner à travers la forêt peu dense au départ du canyon puis sur la route.",
+      "engagement": "Aucun échappatoire",
+      "periode": "La meilleure période se situe en été début d'automne.\n\nAttention au débit, les rappels sont dans l'actif, l'eau est froide, les vasques sont profondes avec des mouvements d'eau, surtout la 1ère vasque qui tourne et qui plaque (prévoir ancre si débit trop fort ou faites demi tour)",
+      "geologie": null,
+      "historique": null,
+      "remarques": "A enchainer avec la Blanche quelques km en Aval."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22138,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.38699,
+        "longitude": 6.278241,
+        "label": null
+      },
+      {
+        "canyonId": 22138,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.387043,
+        "longitude": 6.275999,
+        "label": null
+      },
+      {
+        "canyonId": 22138,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.38765,
+        "longitude": 6.277592,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.38765,
+      "longitude": 6.277592,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

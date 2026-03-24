@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:48:43.707819+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21257,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21257/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21257/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21257/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21257/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21257,
+    "identity": {
+      "nom": "Bras de Jeanne supérieur",
+      "nomComplet": "Bras de Jeanne supérieur, Canyon de Tévelave",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21257/Bras-de-Jeanne-superieur.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Les Avirons",
+      "departement": "La Réunion",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Grand Bénare",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a3II",
+      "interet": 2.0,
+      "nbVotes": 12
+    },
+    "metrics": {
+      "altitudeDepartM": 1250,
+      "deniveleM": 160,
+      "longueurM": 600,
+      "cascadeMaxM": 45,
+      "cordeMiniM": 50,
+      "navette": "1.2km"
+    },
+    "timings": {
+      "approche": "20 min",
+      "descente": "3h",
+      "retour": "15 mn"
+    },
+    "topo": {
+      "accesAval": "Après le Village de Tévelave se garer ay environ 2.4 km après le début de la route forestière.\n\nAccès au Bras de Jeanne par le sentier des ouvriers en 20 minutes. Possibilité d'allonger la course en entrant par le bras Vera affluent rg du bras de Jeanne (2 rappels de plus)",
+      "accesAmont": null,
+      "approche": null,
+      "descente": "Succession de rappels. Un saut de 8m dans une belle vasque\n\nPossibilité de mettre une tyrolienne.\n\n10 rappels\n\nEquipement en place correct de type aventure.\n\nA faire après une période de pluie.",
+      "retour": "Prévoir un sécateur pour couper la vigne marrone sur le sentier de sortie rd après le captage en béton . Ce sentier rejoint la route au niveau du radier.",
+      "engagement": null,
+      "periode": null,
+      "geologie": "Roche très friable et très mauvaise pour les cordes en cas de frottements.",
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21257,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": -21.200001,
+        "longitude": 55.356388,
+        "label": null
+      },
+      {
+        "canyonId": 21257,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": -21.209167,
+        "longitude": 55.34111,
+        "label": null
+      },
+      {
+        "canyonId": 21257,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": -21.200556,
+        "longitude": 55.356388,
+        "label": null
+      },
+      {
+        "canyonId": 21257,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": -21.209167,
+        "longitude": 55.34111,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": -21.200556,
+      "longitude": 55.356388,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_9528ae8134f170b8",
+          "kind": "MAP",
+          "title": "4404RT Saint-Leu L'étang sale (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

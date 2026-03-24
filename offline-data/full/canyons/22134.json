@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:57.421461+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22134,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22134/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22134/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22134/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22134/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22134,
+    "identity": {
+      "nom": "Tengelgraben",
+      "nomComplet": "Tengelgraben",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22134/Tengelgraben.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Haute-Autriche",
+      "departement": "Gmunden",
+      "communePrincipale": "Bad Ischl",
+      "communes": [
+        "Bad Goisern",
+        "Bad Ischl"
+      ],
+      "massif": null,
+      "bassin": "Traun",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 1.3,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 600,
+      "deniveleM": 540,
+      "longueurM": 300,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "50min",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "De Bad Ischl, direction Bad Goisern. Quelques cents métres avant Bad Goisern á droite (Weißenbach). Traverser le pont et suivre la petite route.\n\n-bifurcation : á droite, traverser Tengelgraben jusqu'á fin de la route (transformation route/piste). Ici garer la voiture.",
+      "accesAmont": null,
+      "approche": "Retour de quelques mètres et après le pont á droite, suivre la piste et ensuite le sentier vers le-haut. Prendre la sente á gauche (bifurcation) et sur la piste au-dessus á droite.Environ 100m et une sente descend.",
+      "descente": "Rappel 30m (2 cascades) - avec tyrolienne fixe 40m - quelques petits rappels et marche",
+      "retour": "Sortie á droite et sentier de retour",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "A faire en passant ou pour initiation"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22134,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.667278,
+        "longitude": 13.597601,
+        "label": null
+      },
+      {
+        "canyonId": 22134,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.666019,
+        "longitude": 13.599706,
+        "label": null
+      },
+      {
+        "canyonId": 22134,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.666004,
+        "longitude": 13.601316,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.666004,
+      "longitude": 13.601316,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_4efa32b3285a258d",
+          "kind": "MAP",
+          "title": "96 Bad Ischl (ÖK50 (BEV))",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_58ab4a9ccc13eac2",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/C.....c=TengelgrabenCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/C.....c=TengelgrabenCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

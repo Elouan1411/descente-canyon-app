@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:48:03.914749+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21077,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21077/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21077/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21077/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21077/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21077,
+    "identity": {
+      "nom": "Freser (sup)",
+      "nomComplet": "Freser (sup), Freser",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21077/Freser-sup.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Cataluña",
+      "departement": "Gerona",
+      "communePrincipale": "Queralbs",
+      "communes": [
+        "Queralbs"
+      ],
+      "massif": "Ripollès",
+      "bassin": "Rio Freser",
+      "coursEau": "Freser"
+    },
+    "rating": {
+      "cotation": "v4a5III",
+      "interet": 2.9,
+      "nbVotes": 12
+    },
+    "metrics": {
+      "altitudeDepartM": 1990,
+      "deniveleM": 330,
+      "longueurM": 1500,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 25,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "3h",
+      "descente": "3h30",
+      "retour": "1h"
+    },
+    "topo": {
+      "accesAval": "De Ribes de Freser, monter plein Nord vers Queralbs. A l'épingle (la Farga), continuer à longer le Freser jusqu'à la centrale Daio de Baix (arrivée de Nuria)",
+      "accesAmont": null,
+      "approche": "Remontée en Rive D du Freser, passer devant Salt del Grill, puis monter raide en suivant le Freser. On passe en Rive G par une passerelle (on devine la prise d'eau dans le prolongement du canal de dérivation, point d'arrivée du Freser Sup ), puis on passe bien audessus du canyon dont on peut voir certaines cascades, pour arriver au refuge de Manelic, point de départ de la descente.",
+      "descente": "Très aquatique et esthétique dans sa première partie.\n\nPlus ouvert dans la 2ième partie, moins bien équipée. Mériterait un sérieux rééquipement.",
+      "retour": "Sortir Rive G dans le bois après la prise d'eau pour rejoindre le chemin de l'aller",
+      "engagement": "Longue course, mais les échappatoires sont nombreuses RG, surtout en 2ième partie.",
+      "periode": "très aquatique, plus que Nuria, car le parcours se fait en débit naturel en amont de la prise d'eau (le niveau au parking n'est donc pas représentatif), alors que Nuria se fait en aval de a prise d'eau. Autrement dit, si le canyon Nuria a un gros débit, c'est pas la peine d'y aller...\n\nPériode idéale : septembre, aout si saison seche...",
+      "geologie": "gneiss",
+      "historique": null,
+      "remarques": "Il y a surement moyen de raccourcir la rando d'acces et de retour (très belle au demeurant), en remontant la piste forestiere Rive G (accès au torrent de Calç)"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21077,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.38448,
+        "longitude": 2.218887,
+        "label": null
+      },
+      {
+        "canyonId": 21077,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.376743,
+        "longitude": 2.204808,
+        "label": null
+      },
+      {
+        "canyonId": 21077,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 42.364227,
+        "longitude": 2.174928,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 42.364227,
+      "longitude": 2.174928,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_1c1e046792ce7e5b",
+          "kind": "TOPOGUIDE",
+          "title": "Barrancs, Torrents, Canyons i Cavitats del Pirineu de Girona",
+          "authors": [
+            "Crisi Gonzalez",
+            "Mari Nivera",
+            "Enric Peradalta",
+            "Damià Pérez i Lluis Domnigo"
+          ],
+          "publicationYear": 2015,
+          "reference": "978-84-606-8896-9",
+          "editor": null,
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/1109/Barrancs--Torrents--Canyons-i-Cavitats-del-Pirineu-de-Girona.html"
+        },
+        {
+          "id": "biblio_c1524b8af0f1815f",
+          "kind": "TOPOGUIDE",
+          "title": "Pirineos - Guia de descenso de canones y barrancos",
+          "authors": [
+            "Eduardo Gomez",
+            "Laura Tejero"
+          ],
+          "publicationYear": 2002,
+          "reference": "84-95744-20-1",
+          "editor": "Barrabes",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1126/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_62922203b8628e40",
+          "kind": "MAP",
+          "title": "20 Puigmal Costabona (Mapa excursionista Piruneus)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

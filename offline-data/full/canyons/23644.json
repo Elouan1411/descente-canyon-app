@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:34.219474+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23644,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23644/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23644/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23644/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23644/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23644,
+    "identity": {
+      "nom": "Font Froide",
+      "nomComplet": "Torrent de Font Froide, Amont du Riou de Buissard",
+      "prefixeNom": "Torrent de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23644/Font-Froide.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Hautes-Alpes",
+      "communePrincipale": "Saint-Michel-de-Chaillol",
+      "communes": [
+        "Saint-Michel-de-Chaillol"
+      ],
+      "massif": "Ecrins - Oisans - Champsaur",
+      "bassin": "Drac",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a2III",
+      "interet": 1.4,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 2200,
+      "deniveleM": 350,
+      "longueurM": 850,
+      "cascadeMaxM": 60,
+      "cordeMiniM": 60,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h30",
+      "descente": "1h30",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "Se rendre à Chaillol 1600. Dans la station, au niveau d'un grand virage à gauche, prendre un bonne piste sur la droite (proximité remonté mécaniques). La suivre pour se garer au niveau d'un panneau d'interdiction (même parking que Buissard).",
+      "accesAmont": null,
+      "approche": "Du parking, suivre la piste qui longe Buissard jusqu'au gué qui le traverse. Le traverser et prendre le GR qui monte en direction des cols de la Pisse, Venasque. Au bout d'une trentaine de minutes le sentier coupe Font Froide en amont des deux dernières cascades. Poursuivre paisiblement ce sentier, à la première bifurcation (au lieu dit \"grand Baume\") prendre à droite puis à la suivante prendre tout droit (col de Venasque). Le sentier monte progressivement et se rapproche de Font Froide. Deux bras sont \"canyonables\". Nous avons choisi de descendre le premier et de l'attaquer en aval des deux premiers ressauts (neige au dessus). Pour cela, quitter le sentier et poursuivre à flanc jusqu'à couper le ruisseau à l'altitude 2200m environ.",
+      "descente": "Succession de grandes dalles plus ou moins inclinées qui se négocient soit en rappels (cherchez les points) soit en désescalades.\n\n1er rappel équipé en RD puis deuxième rappel équipé en deux fois (environ deux longueurs de 25m, relais intermédiaire non protégé) en RD. Le grand toboggan suivant de 60m est équipé sur AN RG. Arrivé au sentier, il y a un point sur un bloc dans le lit du cours d'eau. Pour la dernière belle cascade, relais avec cordelette et maillon sur arbuste à surveiller (descente dans l'actif).",
+      "retour": "Même retour que pour le torrent de la Pisse.",
+      "engagement": "Pas d'échappatoire facile avant de couper le GR.",
+      "periode": "Mêmes conditions que pour le torrent de la Pisse mais avec un bassin versant qui garde de la neige un peu plus longtemps. Un peu plus d'eau que son voisin.",
+      "geologie": null,
+      "historique": "Équipé sommairement par Jérôme, Alain13 et Lolo le 28 mai 2016.",
+      "remarques": "- Équipement sur mono-points avec goujons de 8mm (alternance de points faits maison et de plaquettes starfix avec anneau), prévoir de quoi doubler les relais.\n\n- A enchainer avec Buissard et/ou Pisse"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23644,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.704624,
+        "longitude": 6.18698,
+        "label": null
+      },
+      {
+        "canyonId": 23644,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.702904,
+        "longitude": 6.178272,
+        "label": null
+      },
+      {
+        "canyonId": 23644,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.694485,
+        "longitude": 6.170207,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.694485,
+      "longitude": 6.170207,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_b0e951331c704682",
+          "kind": "MAP",
+          "title": "3437 OT Champsaur - Parc des Ecrins (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

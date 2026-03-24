@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:49:02.209835+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21341,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21341/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21341/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21341/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21341/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/21341/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 21341,
+    "identity": {
+      "nom": "Lozerette",
+      "nomComplet": "Cascade de Lozerette, Lozerette",
+      "prefixeNom": "Cascade de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21341/Lozerette.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Lozère",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Mont Lozère",
+      "bassin": null,
+      "coursEau": "Lozerette"
+    },
+    "rating": {
+      "cotation": "v3a1I",
+      "interet": 0.6,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 950,
+      "deniveleM": 100,
+      "longueurM": 300,
+      "cascadeMaxM": 40,
+      "cordeMiniM": 40,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "2min",
+      "descente": "1h",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "De Mende, N88 puis N106 jusqu'au Col de Montmirat. Au Col, tournez à gauche et prenez la D35 jusqu'au village des Bondons. Passer le village et continuer vers Lozerette. Se garer au niveau du pont sur le ruisseau 200m avant le hameau de Lozerette.",
+      "accesAmont": null,
+      "approche": "Marcher dans le pré rive droite du ruisseau pendant 100m et vous êtes à la 1ère cascade.",
+      "descente": "6 obstacles: C25 en dalle, belle C30 verticale, C40 en dalle avec jolie queue de cheval par gros débit, tob 2m puis C20 et C30 peu inclinées. La C30 se descend plein axe, c'est très arrosé en hiver par exemple.",
+      "retour": "Après la dernière cascade, un petit sentier (emprunté par les vaches) remonte rive droite à travers les prés et 2/3 terrasses jusqu'à arriver à hauteur de la première cascade. Vous êtes dans le pré du départ, de là regagnez la voiture.",
+      "engagement": "Faible, le canyon est peu voir pas du tout encaissé. Possibilité de s'échapper du cours d'eau tout le long.",
+      "periode": "Intéressant à faire avec beaucoup d'eau, la C30 est large.",
+      "geologie": null,
+      "historique": "Aucune trace d'équipement en 2003, pas de marques sur les arbres.",
+      "remarques": "Équipement à l'arrache pour les 3 premiers rappels et AN pour les 2 derniers."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21341,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.384014,
+        "longitude": 3.638508,
+        "label": null
+      },
+      {
+        "canyonId": 21341,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.381817,
+        "longitude": 3.638234,
+        "label": null
+      },
+      {
+        "canyonId": 21341,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 44.384941,
+        "longitude": 3.638449,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.384941,
+      "longitude": 3.638449,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_0acbab812fc8ce3c",
+          "kind": "MAP",
+          "title": "2739 OT Mont-Lozere (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 508,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Lozère) - 26 oct 2016",
+          "summary": "La pratique du canyonisme est autorisée sur le département de la Lozère du lever au coucher du soleil. Il est cependant interdit de s’engager dans un canyon après 17 heures.\n\nL'arrêté préfectoral réglemente également la pratique du canyonisme en Lozère sur les points suivants : les équipements obligatoires, la prise d’information préalable, l'accès aux sites, l’effectif des groupes, l’encadrement, le respect du milieu naturel, des équipements et des autres usagers, le retour d’expérience et les contrôles.",
+          "remark": null,
+          "details": "Arrêté préfectoral (Lozère) n°DDCSPP-JESEP-2016-300-001 du 26 octobre 2016",
+          "effectiveDate": "26 oct 2016",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/508/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral (Lozère) n°DDCSPP-JESEP-2016-300-001 du 26 octobre 2016",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem508_pj1.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

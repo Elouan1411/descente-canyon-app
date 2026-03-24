@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:49.944377+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21815,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21815/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21815/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21815/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21815/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21815,
+    "identity": {
+      "nom": "Arritzaga",
+      "nomComplet": "Barranco de Arritzaga",
+      "prefixeNom": "Barranco de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21815/Arritzaga.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "País Vasco",
+      "departement": "Guipúzcoa",
+      "communePrincipale": "Amezketa",
+      "communes": [
+        "Amezketa"
+      ],
+      "massif": "Sierra de Aralar",
+      "bassin": "Rio Oria",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2III",
+      "interet": 2.0,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": null,
+      "longueurM": null,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h",
+      "descente": "3h30",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "D'Amezketa, suivre San Martin de Amezketa (quartier Altunegi). Suivre le panneau \"Aralar\" et monter par une piste d'abord cimentée puis gravée.\n\nMonter en zigzags jusqu'à un pont de bois à gauche (le parking se situe un peu avant). On peut aussi prendre plus bas le chemin de rando des mines de Aralar qui est une très belle randonnée en soi et qui longe le canyon.",
+      "accesAmont": null,
+      "approche": "Traverser la passerelle et continuer le chemin des mines qui remonte le canyon en RD.",
+      "descente": "Une très belle première partie. La suite est moins intéressante.",
+      "retour": null,
+      "engagement": null,
+      "periode": "Printemps, automne.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Descente située dans le parc naturel d'Aralar, vérifier la réglementation en vigueur."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21815,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.037136,
+        "longitude": -2.067815,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.037136,
+      "longitude": -2.067815,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_e4c8c4f70fecf6cb",
+          "kind": "TOPOGUIDE",
+          "title": "Barrancos y Cañones de Euskal Herria",
+          "authors": [
+            "Javier ITURRITXA"
+          ],
+          "publicationYear": 2012,
+          "reference": "978-84-615-5658-8",
+          "editor": null,
+          "status": "en stock\n\n- 24,90 € -\n\nCommandez cet ouvrage dès maintenant !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/166/Barrancos-y-Canones-de-Euskal-Herria.html"
+        },
+        {
+          "id": "biblio_c1524b8af0f1815f",
+          "kind": "TOPOGUIDE",
+          "title": "Pirineos - Guia de descenso de canones y barrancos",
+          "authors": [
+            "Eduardo Gomez",
+            "Laura Tejero"
+          ],
+          "publicationYear": 2002,
+          "reference": "84-95744-20-1",
+          "editor": "Barrabes",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1126/topoguide.html"
+        }
+      ],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_926ad23e9cd3fe96",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://ropewiki.com/Arritzaga",
+          "url": "http://ropewiki.com/Arritzaga"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

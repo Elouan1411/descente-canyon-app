@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:59:17.116935+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24122,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24122/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24122/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24122/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24122/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/24122/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 24122,
+    "identity": {
+      "nom": "Rioudard",
+      "nomComplet": "Ruisseau de Rioudard",
+      "prefixeNom": "Ruisseau de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24122/Rioudard.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Ardèche",
+      "communePrincipale": "Mauves",
+      "communes": [
+        "Glun",
+        "Mauves"
+      ],
+      "massif": null,
+      "bassin": "Rhône",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1II",
+      "interet": 0.9,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 230,
+      "deniveleM": 110,
+      "longueurM": 850,
+      "cascadeMaxM": 22,
+      "cordeMiniM": 25,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "25min",
+      "descente": "1h30",
+      "retour": "1min"
+    },
+    "topo": {
+      "accesAval": "Mauves -> Glun. Direction sud sur le d86 (direction Chateaubourg), on croise après Glun (150m plus loin) le ruisseau. Se garer immédiatement à droite de la route, au niveau d'un petit parking jouxtant un verger et des vignes.",
+      "accesAmont": null,
+      "approche": "On prend la piste en rive droite du ruisseau vers le verger. 100m plus loin, prenez le sentier à gauche derrière la barrière. Abandonnez-le une trentaine de mètres plus loin pour prendre un nouveau sentier à droite. Il longe le ruisseau. Il effectue 2 lacets et poursuit le long du ruisseau. Une montée plus raide et vous coupez un premier affluent temporaire. Poursuivez le sentier. Descendez au mieux (mode sanglier) une vingtaine de mètres avant de couper un 2ème affluent temporaire.",
+      "descente": "Une première cascade précède une courte marche. Un enchaînement sympathique puis des obstacles plus disséminés précèdent la sortie",
+      "retour": "Sente en rive droite qui rejoint rapidement le sentier puis le parking au niveau du verger.",
+      "engagement": "limité",
+      "periode": "A faire en début de saison ou après les pluies.",
+      "geologie": "Migmatite",
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24122,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.017151,
+        "longitude": 4.820993,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 45.017151,
+      "longitude": 4.820993,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 453,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté - 11 juin 2019",
+          "summary": "Cet arrêté modifie en partie l'arrêté préfectoral du 22 mars 2016.\n\nLes périodes et horaires de pratique sont désormais uniquement fixés par des plans de gestion locaux (municipaux), canyon par canyon.\n\nSi une alerte de vigilance orange (ou plus) est émise par Météo France, concernant le risque de pluies, d'orages ou d'inondations, la pratique du canyonisme est toujours interdite pour les secteurs concernés par l'alerte. En cas de vigilance orange, il existe néanmoins des dérogations à cette interdiction pour certains \"établissements publics habilités à organiser des formations qualifiantes canyonisme\".\n\nLa taille des groupes ne peut dépasser 10 personnes, encadrants compris.",
+          "remark": "Arrêté préfectoral modificatif pris suite au jugement du tribunal administratif de Lyon du 6 juin 2018 qui a annulé les articles 3-1, 3-2 et 5-1 de l'arrêté n°07-2016-07-05-002 du 5 juillet 2016.",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nArrêté préfectoral modificatif (Ardèche) n°07-2019-06-11-003 du 11 juin 2019",
+          "effectiveDate": "11 juin 2019",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/453/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral modificatif (Ardèche) n°07-2019-06-11-003 du 11 juin 2019",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem453_pj1.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

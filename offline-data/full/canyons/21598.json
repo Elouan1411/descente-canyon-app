@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:00.268846+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21598,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21598/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21598/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21598/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21598/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21598,
+    "identity": {
+      "nom": "Fonias",
+      "nomComplet": "Canyon Fonias",
+      "prefixeNom": "Canyon",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21598/Fonias.html"
+    },
+    "location": {
+      "pays": "Grèce",
+      "region": "East Macedonia and Thrace Region",
+      "departement": "Evros",
+      "communePrincipale": "Perasmata",
+      "communes": [
+        "Perasmata"
+      ],
+      "massif": "Samothraki (île)",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.9,
+      "nbVotes": 11
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": null,
+      "longueurM": null,
+      "cascadeMaxM": 60,
+      "cordeMiniM": 65,
+      "navette": "10.0km"
+    },
+    "timings": {
+      "approche": "40min",
+      "descente": "5h",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": ", continuer, laisser une première piste, prendre la route suivante et à gauche la 1ere piste. Se garer au point 800m à peu près.",
+      "approche": "Se là, trouver un départ de chemin, de mieux en mieux marqué, plein ouest, qui nous mène au départ du canyon. On aperçoit tout le long du chemin la cascade de 60m (repère).",
+      "descente": "Magnifique départ, succession de toboggans dans une eau !!!! Très belle cascade de 45m. Magnifique :-)",
+      "retour": "Reprendre le chemin des touristes",
+      "engagement": "encaissé par moments",
+      "periode": "Eté automne. Coule toute l'année",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Possibilité de ne faire que la partie basse : du parking aval prendre le chemin des touristes. Un peu avant la dernière cascade à droite un chemin bien marqué nous mène au départ."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21598,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 40.461643,
+        "longitude": 25.626297,
+        "label": null
+      },
+      {
+        "canyonId": 21598,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 40.461349,
+        "longitude": 25.647154,
+        "label": null
+      },
+      {
+        "canyonId": 21598,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 40.490253,
+        "longitude": 25.654751,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 40.461349,
+      "longitude": 25.647154,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_cd36008cf4c8fcc9",
+          "kind": "MAP",
+          "title": "215 Samothraki (Road editions)",
+          "scale": "1/30000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

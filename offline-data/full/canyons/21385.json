@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:49:12.091200+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21385,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21385/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21385/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21385/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21385/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21385,
+    "identity": {
+      "nom": "Grimsel",
+      "nomComplet": "Grimsel",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21385/Grimsel.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": null,
+      "departement": "Bern/Berne",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 1.0,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": null,
+      "longueurM": 400,
+      "cascadeMaxM": 55,
+      "cordeMiniM": null,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "10min",
+      "descente": "1h",
+      "retour": "??"
+    },
+    "topo": {
+      "accesAval": "Après une première gorge on arrive à une seconde la route fait une épingle à gauche avant de passer sous un tunnel. Garez vous en bas avant le pont.",
+      "accesAmont": null,
+      "approche": "Remontez la route et prenez à droite l’ancienne (route). Le rappel de 55m se fait à partir des rambardes 200m plus haut sur de grandes dalles.",
+      "descente": "Un grand rappel, une marche et un petit encaissement suréquipé pour le rendre ludique pour les clients !",
+      "retour": "Retour immédiat au pont.",
+      "engagement": "Pas d’échappatoire dans l’encaissement.",
+      "periode": "Barrage en amont.",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21385,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.602722,
+        "longitude": 8.317019,
+        "label": null
+      },
+      {
+        "canyonId": 21385,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.605213,
+        "longitude": 8.313301,
+        "label": null
+      },
+      {
+        "canyonId": 21385,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.60561,
+        "longitude": 8.31255,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.60561,
+      "longitude": 8.31255,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_ee92621b53de3c8c",
+          "kind": "TOPOGUIDE",
+          "title": "Canyoning : Swiss Alps / Alpes Suisse",
+          "authors": [
+            "Association Openbach"
+          ],
+          "publicationYear": 2015,
+          "reference": "9782746679450",
+          "editor": "auto-edition",
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/195/Canyoning-:-Swiss-alps---Alpes-suisses-Vol-1.html"
+        },
+        {
+          "id": "biblio_a9e8ab63fe4e5775",
+          "kind": "TOPOGUIDE",
+          "title": "Canyoning en Suisse",
+          "authors": [
+            "Andreas Brunner et Frédéric Bétrisey"
+          ],
+          "publicationYear": 2001,
+          "reference": "ISBN 3-85902-195-8",
+          "editor": "Club Alpin Suisse CAS",
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/160/Canyoning-en-Suisse-1.html"
+        }
+      ],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

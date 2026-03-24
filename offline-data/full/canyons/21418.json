@@ -1,0 +1,198 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:49:19.933355+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21418,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21418/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21418/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21418/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21418/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/21418/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 21418,
+    "identity": {
+      "nom": "Bras Rouge (Inferieur)",
+      "nomComplet": "Canyon de Bras Rouge (Inferieur), Rivière St Etienne, Bras de Cilaos",
+      "prefixeNom": "Canyon de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21418/Bras-Rouge-Inferieur.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Cilaos",
+      "departement": "La Réunion",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Cilaos",
+      "bassin": "Bras Rouge",
+      "coursEau": "Bras de Cilaos"
+    },
+    "rating": {
+      "cotation": "v3a3III",
+      "interet": 2.9,
+      "nbVotes": 22
+    },
+    "metrics": {
+      "altitudeDepartM": 1180,
+      "deniveleM": 80,
+      "longueurM": 300,
+      "cascadeMaxM": 16,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "2h",
+      "retour": "10mn"
+    },
+    "topo": {
+      "accesAval": "Depuis Cilaos se rendre au pont qui enjambe le BRAS ROUGE par la RD242 .",
+      "accesAmont": null,
+      "approche": "En amont du pont, descendre dans le canyon par les mains courantes de sortie de la partie \"médian\"",
+      "descente": "Depuis le pont, après quelques désescalades on va enchaîner 6 rappels d'une quinzaine de mètres dans une gorge assez serrée.\n\nLa partie du canyon la plus fréquentée s'arrête au niveau d'un toboggan éjectable qu'on peu répéter plusieurs fois (possibilité d'équiper une corde sur des lunules rg en place pour sécuriser)\n\nAprès ce toboggan il est possible de poursuivre par 3 rappels (max 17 m) quelques saut et toboggans moins intéressants\n\nOn arrive alors à l' échappatoire qui nous ramène par la RD à l'arrivée de GOBERT (par le GR R1), au niveau du bassin \"Alfred\" très fréquenté par les randonneurs .\n\nLe canyon s'arrête ici puisque l'accès au bassin \"Fouquet\" est interdit par arrêté préfectoral suite à un éboulis qui a tué une randonneuse.",
+      "retour": "Juste avant le toboggan éjectable repérer une sente rd (cordes fixes) qui ramène à la route puis à la voiture laissée près du pont .\n\nSi on poursuit en aval du toboggan éjectable sortir par le GR en rd qui ramène à la route au niveau du sentier du Taibit puis marcher 800m sur la route pour retrouver la voiture.",
+      "engagement": "encaissement prononcé, aucun échappatoire",
+      "periode": "Eviter fin décembre / mars et toutes les périodes de grosses pluies. Gros bassin versant sur le massif du Piton des Neiges à prendre en compte.",
+      "geologie": null,
+      "historique": "Fin 1988 par deux frères de la famille DELPECH du Spéléo Club des Laves.",
+      "remarques": "Section un peu courte à coupler avec la partie \"médian\""
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21418,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": -21.114445,
+        "longitude": 55.4575,
+        "label": null
+      },
+      {
+        "canyonId": 21418,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": -21.137777,
+        "longitude": 55.449444,
+        "label": null
+      },
+      {
+        "canyonId": 21418,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": -21.115,
+        "longitude": 55.456944,
+        "label": null
+      },
+      {
+        "canyonId": 21418,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": -21.136389,
+        "longitude": 55.470001,
+        "label": null
+      },
+      {
+        "canyonId": 21418,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": -21.133612,
+        "longitude": 55.455002,
+        "label": "lieu dit \"la chapelle\""
+      },
+      {
+        "canyonId": 21418,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": -21.118334,
+        "longitude": 55.454166,
+        "label": "échapatoire GR R1 sortie de GOBERT en R.D."
+      },
+      {
+        "canyonId": 21418,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": -21.124166,
+        "longitude": 55.452499,
+        "label": "lieu dit Champs Elysees, échapatoire par le GR R 2 en R.G et R.D. en haut de cascade"
+      },
+      {
+        "canyonId": 21418,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": -21.131666,
+        "longitude": 55.455002,
+        "label": "arrivée canyon \"BRAS des ETANGS\" en R.G."
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": -21.115,
+      "longitude": 55.456944,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_3ed05b9314e97090",
+          "kind": "TOPOGUIDE",
+          "title": "73 canyons à la Réunion et Madagascar",
+          "authors": [
+            "Ric a Ric"
+          ],
+          "publicationYear": 2009,
+          "reference": null,
+          "editor": "Ric a Ric",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/134/73-canyons-a-la-Reunion-et-a-Madagascar.html"
+        },
+        {
+          "id": "biblio_f02672f3db0c7f65",
+          "kind": "TOPOGUIDE",
+          "title": "Le paradis du canyoning",
+          "authors": [
+            "P. Colas"
+          ],
+          "publicationYear": 1995,
+          "reference": null,
+          "editor": "Maison de la montagne",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1138/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_b239997245dc5eb0",
+          "kind": "MAP",
+          "title": "4405RT Saint-Pierre (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 535,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (La Réunion) - 10 nov 2003",
+          "summary": "La falaise de \"Bras Rouge\" étant une zone à risque majeur de chute de pierres, le canyon de « Bras Rouge Inférieur » est autorisé uniquement depuis le pont de la RD 242 jusqu’à la cascade du bassin Fouquet. La partie en aval jusqu’au GRR2 reste interdite au public.\n\nCompte tenu qu'il n'est pas possible de sortir par une échappatoire en aval du bassin Fouquet, il faut considérer que cet arrêté interdit de descendre le rappel du bassin Fouquet.",
+          "remark": "Suite à un éboulis ayant tué une randonneuse en aval du bassin Fouquet, la section du canyon située entre ce bassin et le GR \"sentier cascade Bras Rouge\" est interdite : une zone très instable avec risque élevé de chutes de pierres est toujours présente à cet endroit.\n\nCet arrêté porte modification de l'arrêté n° 1014 du 4 avril 2022.",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nArrêté préfectoral (La Réunion) n°002608 du 10 novembre 2003",
+          "effectiveDate": "10 nov 2003",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/535/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral (La Réunion) n°002608 du 10 novembre 2003",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem535_pj1.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

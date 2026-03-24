@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:29.713888+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23305,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23305/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23305/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23305/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23305/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23305,
+    "identity": {
+      "nom": "Béal",
+      "nomComplet": "Béal, Béal de Château",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23305/Beal.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Hautes-Alpes",
+      "communePrincipale": "La Piarre",
+      "communes": [
+        "La Piarre"
+      ],
+      "massif": null,
+      "bassin": "Buëch",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1II",
+      "interet": 0.6,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 980,
+      "deniveleM": 100,
+      "longueurM": 300,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "1h00",
+      "retour": "35min"
+    },
+    "topo": {
+      "accesAval": "De Sisteron, passer à Laragne_Montéglin sur la N75, traverser Serre en direction de Grenoble et prendre à gauche avant de passer le pont du Buëch. Rouler sur la D27 pour traverser La Piarre en direction de Château. Stationner sans gêner au départ d'un GR et avant un pont au point 984 IGN .",
+      "accesAmont": null,
+      "approche": "Descendre la route de quelques mètres le long du cours d'eau et passer la petite passerelle à gauche se rendant au Château par le GR. Du village, descendre dans le vallon et se diriger vers les petites Gorges du Béal .",
+      "descente": "Dans un premier temps, il faut suivre le ruisseau à travers une végétation assez danse pour se rendre sur le premier rappel.\n\nC12 avec anneau de corde et maillon en RG, C4 sous un bloc, Pi10 sur AN en RD, C30 sur anneau de corde et maillon en RG, Pi5 à travers quelques branches, C5 sur AN en RG.",
+      "retour": "Rejoindre au mieux les gorges du Gros Morel par la RD en cheminant sur quelques pentes terreuses. Traverser l'Aiguebelle (gorges du Gros Morel) et emprunter le sentier remontant à la route et au parking.",
+      "engagement": "Pas d'échappatoire possible après le premier rappel... Sortie envisageable après la C30.",
+      "periode": "A faire après les pluies.",
+      "geologie": null,
+      "historique": "?\n\nÉquipement complété principalement sur anneaux de corde et maillons par RV, lolo, tony-13, ALAIN 13.",
+      "remarques": "Peut-être enchaîné après les gorges du Gros Morel par une sente traversant la barre rocheuse.\n\nVégétation encombrante sur certains endroits."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23305,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.483421,
+        "longitude": 5.662464,
+        "label": null
+      },
+      {
+        "canyonId": 23305,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.481056,
+        "longitude": 5.662131,
+        "label": null
+      },
+      {
+        "canyonId": 23305,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.485229,
+        "longitude": 5.658451,
+        "label": null
+      },
+      {
+        "canyonId": 23305,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 44.479877,
+        "longitude": 5.66005,
+        "label": "sente de retour"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.485229,
+      "longitude": 5.658451,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_3dc2c45ee9a0a859",
+          "kind": "MAP",
+          "title": "3338 OT Serres-Veynes (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

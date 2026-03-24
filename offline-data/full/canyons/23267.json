@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:21.197285+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23267,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23267/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23267/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23267/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23267/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23267,
+    "identity": {
+      "nom": "Agro",
+      "nomComplet": "Val d' Agro, Agro",
+      "prefixeNom": "Val d'",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23267/Agro.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Lavertezzo",
+      "departement": "Tessin",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": "Val Verzasca",
+      "coursEau": "Agro"
+    },
+    "rating": {
+      "cotation": "v4a4IV",
+      "interet": 2.8,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 1150,
+      "deniveleM": 350,
+      "longueurM": 1500,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 25,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "2h",
+      "descente": "3h",
+      "retour": "45"
+    },
+    "topo": {
+      "accesAval": "Parking à Lavertezzo.",
+      "accesAmont": null,
+      "approche": "Se rendre au départ juste sous le hameau de Agro.",
+      "descente": "De belles piscines mais un manque d'encaissement.",
+      "retour": "Utiliser le chemin d'approche.",
+      "engagement": "Assez difficile, repère de débit, la station de Pincascia doit être sous 800 l/s.",
+      "periode": "Longues vasques\n\nJuillet - octobre",
+      "geologie": "Gneis de haute et moyenne métamorphose.",
+      "historique": "Ouvert 20.08.2011 (Timo, Cime, Toche).",
+      "remarques": "Siphon au pied de la première grande cascade (absolument à éviter sur petite vire RD au bord de la vasque). Pour cette escalade le premier doit y arriver sans sac à dos.\n\nVers midi bien ensoleillé, de belles couleurs de rocher et d'eau. Un des plus esthétiques Canyons du Tessin, même si pas très étroit."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23267,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.288929,
+        "longitude": 8.84888,
+        "label": null
+      },
+      {
+        "canyonId": 23267,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.274429,
+        "longitude": 8.85697,
+        "label": null
+      },
+      {
+        "canyonId": 23267,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.259499,
+        "longitude": 8.83764,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.259499,
+      "longitude": 8.83764,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_32104c8d93e1fde1",
+          "kind": "MAP",
+          "title": "1293 Osogna (Carte Nationale Suisse)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

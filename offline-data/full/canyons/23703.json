@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:47.081203+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23703,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23703/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23703/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23703/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23703/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23703,
+    "identity": {
+      "nom": "Crottes",
+      "nomComplet": "Les Crottes, Le Lauchun",
+      "prefixeNom": "Les",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23703/Crottes.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Vaucluse",
+      "communePrincipale": "Beaumes-de-Venise",
+      "communes": [
+        "Beaumes-de-Venise"
+      ],
+      "massif": "Dentelles de Montmirail",
+      "bassin": null,
+      "coursEau": "Le Lauchun"
+    },
+    "rating": {
+      "cotation": "v2a2I",
+      "interet": 0.6,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 120,
+      "deniveleM": 20,
+      "longueurM": 50,
+      "cascadeMaxM": 12,
+      "cordeMiniM": 15,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1min",
+      "descente": "10min",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "De Beaumes de Venise prendre la D81, puis la D7 en direction de Vacqueyras. Passer deux aires de pique-nique au bord de la route et tourner à la seconde à droite sur le chemin des Crottes (panneau interdit aux véhicules de plus de 8 tonnes). Rouler quelques mètres et se garer à droite au début du chemin de Payard.",
+      "accesAmont": null,
+      "approche": "Faire 15m sur le chemin de Payard et descendre à droite sur la cascade.",
+      "descente": "C12 sur AN en rg ou saut possible après vérification habituelle. Passer l'encaissement et sortir en rd.",
+      "retour": "Remonter la petite falaise pour rejoindre la route.",
+      "engagement": "Très court.",
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "A enchaîner avec les descentes du coin ou pour finir une journée."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23703,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.130386,
+        "longitude": 4.999399,
+        "label": null
+      },
+      {
+        "canyonId": 23703,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.130489,
+        "longitude": 4.999458,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.130489,
+      "longitude": 4.999458,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_f8195a0d9851b7fb",
+          "kind": "MAP",
+          "title": "3040 ET Carpentras (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

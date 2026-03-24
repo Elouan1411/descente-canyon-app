@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:18.650715+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23844,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23844/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23844/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23844/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23844/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23844,
+    "identity": {
+      "nom": "Wörschachklamm",
+      "nomComplet": "Wörschachklamm, Wörschachbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23844/Worschachklamm.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Styrie",
+      "departement": "Bezirk Liezen",
+      "communePrincipale": "Wörschach",
+      "communes": [
+        "Wörschach"
+      ],
+      "massif": "Totes Gebirge - Massif Mort",
+      "bassin": "L'Enns",
+      "coursEau": "Wörschachbach"
+    },
+    "rating": {
+      "cotation": "v5a4II",
+      "interet": 2.0,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 800,
+      "deniveleM": 100,
+      "longueurM": 400,
+      "cascadeMaxM": 10,
+      "cordeMiniM": 15,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "30",
+      "descente": "1h",
+      "retour": "10"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23844,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.564388,
+        "longitude": 14.14649,
+        "label": null
+      },
+      {
+        "canyonId": 23844,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.561771,
+        "longitude": 14.14791,
+        "label": null
+      },
+      {
+        "canyonId": 23844,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.555752,
+        "longitude": 14.149266,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.555752,
+      "longitude": 14.149266,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_4f8703bf29ebce10",
+          "kind": "MAP",
+          "title": "19 Almtal, Totes Gebirge (Kompass)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_ba556f6060b607fb",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/C.....oerschachklammCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/C.....oerschachklammCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

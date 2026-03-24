@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:12.569970+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23552,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23552/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23552/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23552/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23552/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23552,
+    "identity": {
+      "nom": "Chabretière",
+      "nomComplet": "Ravin de Chabretière, Bramefan amont",
+      "prefixeNom": "Ravin de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23552/Chabretiere.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-de-Haute-Provence",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Massif des Monges",
+      "bassin": "Bléone",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1II",
+      "interet": 1.5,
+      "nbVotes": 5
+    },
+    "metrics": {
+      "altitudeDepartM": 1220,
+      "deniveleM": 100,
+      "longueurM": 500,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "1h00",
+      "retour": "50min"
+    },
+    "topo": {
+      "accesAval": "De Sisteron prenez la direction de la Motte-du-Caire puis de St-Geniez par la D3. Passez St-Giniez et Authon, toujours sur la D3 et rendez-vous 50m après le col de Font Belle. Garez-vous sans gêner sur le petit parking à gauche au départ d'une piste fermée par une barrière .",
+      "accesAmont": null,
+      "approche": "Descendre la piste jusqu'à que celle-ci forme un virage prononcé à gauche. Rejoindre alors le ruisseau, en bas à droite.",
+      "descente": "C3 sur AN ou à désescalader, un peu de marche puis un Pi8 sur AN, marche, T3 sur AN, désescalade d'un Pi6, C17 sur chaîne en RD, désescalade C2, C6 sur 1 pt en RG, C25 sur chaîne en RD, marche et C1 pour passer le portail rocheux final.",
+      "retour": "Faire 200m le long du ruisseau et sortir en RG dés que cela semble évident pour remonter au mieux jusqu'à une première piste d'exploitation forestière que l'on suit à gauche. Elle traverse puis monte sur une crête pour rejoindre la piste principale menant à la voiture.",
+      "engagement": "Court, mais encaissé.",
+      "periode": "A faire pendant la saison humide.",
+      "geologie": null,
+      "historique": "?\n\nÉquipement identique à celui de Bramefan.",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23552,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.211105,
+        "longitude": 6.151414,
+        "label": null
+      },
+      {
+        "canyonId": 23552,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.208103,
+        "longitude": 6.153279,
+        "label": null
+      },
+      {
+        "canyonId": 23552,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.214386,
+        "longitude": 6.148628,
+        "label": null
+      },
+      {
+        "canyonId": 23552,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 44.208317,
+        "longitude": 6.154317,
+        "label": "retour à la piste"
+      },
+      {
+        "canyonId": 23552,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 44.208908,
+        "longitude": 6.154504,
+        "label": "Retour à la piste (suivre la direction du second point remarquable)"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.214386,
+      "longitude": 6.148628,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_7eb38f4b8b40c5de",
+          "kind": "MAP",
+          "title": "3340 ET Digne-Les-Bains - Sisteron (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

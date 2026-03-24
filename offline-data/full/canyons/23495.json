@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:00.526644+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23495,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23495/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23495/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23495/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23495/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23495,
+    "identity": {
+      "nom": "Groumot",
+      "nomComplet": "Torrent du Groumot",
+      "prefixeNom": "Torrent du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23495/Groumot.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Haute-Savoie",
+      "communePrincipale": "Chamonix-Mont-Blanc",
+      "communes": [
+        "Chamonix-Mont-Blanc"
+      ],
+      "massif": "Mont Blanc",
+      "bassin": "Arve",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a1II",
+      "interet": 2.1,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1850,
+      "deniveleM": 500,
+      "longueurM": 900,
+      "cascadeMaxM": 45,
+      "cordeMiniM": 50,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "2h30",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "Se garer au parking des Grands Montets (Argentière)",
+      "accesAmont": null,
+      "approche": "Accéder à la gare intermédiaire du téléphérique (par le sentier, la piste ou par le téléphérique). De la gare, prendre la direction de la Mer de Glace par la piste. Descendre à la deuxième ravine. La première cascade se trouve après une dizaine de minute de marche en blocs.\n\nEn marchant, comptez 1h30 d'approche max.",
+      "descente": "Succession d'une quinzaine de cascades pas très encaissées. Attention, la roche n'est pas bonne et ça parpine.",
+      "retour": "Lorsque le torrent amorce un grand virage vers la gauche sortir dans la moraine du glacier d'Argentière et retourner au parking par la piste.",
+      "engagement": "Limité, des échappatoires partout.",
+      "periode": "Période de fonte assez forte.\n\nAttention en dessous de 20°C presque plus rien de coule.",
+      "geologie": "Gneiss",
+      "historique": "Ouvert le 14/09/2014 par l'ASAR et Speleus",
+      "remarques": "A faire pour les collectionneurs ou quand plus grand chose ne passe."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23495,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.966667,
+        "longitude": 6.939444,
+        "label": null
+      },
+      {
+        "canyonId": 23495,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.974998,
+        "longitude": 6.935,
+        "label": null
+      },
+      {
+        "canyonId": 23495,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 45.978889,
+        "longitude": 6.925833,
+        "label": null
+      },
+      {
+        "canyonId": 23495,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.978889,
+        "longitude": 6.925833,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.978889,
+      "longitude": 6.925833,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_c3cfac38474f19c2",
+          "kind": "MAP",
+          "title": "3630 OT Chamonix - Mont-Blanc (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

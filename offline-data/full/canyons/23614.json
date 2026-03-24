@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:27.605068+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23614,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23614/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23614/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23614/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23614/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23614,
+    "identity": {
+      "nom": "Izon-la-Bruisse",
+      "nomComplet": "Clue d' Izon-la-Bruisse",
+      "prefixeNom": "Clue d'",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23614/Izon-la-Bruisse.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Drôme",
+      "communePrincipale": "Izon-la-Bruisse",
+      "communes": [
+        "Izon-la-Bruisse"
+      ],
+      "massif": "Massif des Baronnies",
+      "bassin": "Méouge",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v1a2II",
+      "interet": 1.5,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 1030,
+      "deniveleM": 20,
+      "longueurM": 50,
+      "cascadeMaxM": 7,
+      "cordeMiniM": 7,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "30min",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "De la vallée de la Méouge par la D542, se rendre au village d'Eygalayes. Au village tourner à gauche et emprunter la petite route étroite (D592) menant à Izon-la-Bruisse. Dépasser Izon-la-Bruisse de 250m et garez-vous à droite au bord de la route.",
+      "accesAmont": null,
+      "approche": "Longer un peu la route et emprunter la sente menant derrière la barre rocheuse jusqu'à l'entrée de la clue.",
+      "descente": "Désescalade et progression dans un encaissement étroit menant à une C3 (1pt en RD, désescaladable selon débit), marche et C7 sur 1pt en RD à la sortie de la clue. Quelques blocs en désescalade et T2 pour finir.",
+      "retour": "Une sente en RG suit le ruisseau dans un premier temps et passe en RD pour remonter à la route ou refaire la descente.",
+      "engagement": "Court, mais engagé.",
+      "periode": "Vasque profonde au pied de la C7.",
+      "geologie": null,
+      "historique": "Emsud, lolo et ALAIN 13",
+      "remarques": "Equipement de première sur mono-point (goujons de 8 + maillons de chaîne).\n\nCanyon très court, mais esthétique. Il est possible de descendre la clue plusieurs fois dans la journée. Idéal pour effectuer une découverte ou une initiation à l'activité."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23614,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.258678,
+        "longitude": 5.597059,
+        "label": null
+      },
+      {
+        "canyonId": 23614,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.257877,
+        "longitude": 5.596652,
+        "label": null
+      },
+      {
+        "canyonId": 23614,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.257732,
+        "longitude": 5.595225,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.257732,
+      "longitude": 5.595225,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_6f1e4c2fdbcb1eb5",
+          "kind": "MAP",
+          "title": "3239 OT Rosans-Orpierre (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

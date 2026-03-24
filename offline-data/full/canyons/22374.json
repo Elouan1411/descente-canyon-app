@@ -1,0 +1,164 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:48.328823+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22374,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22374/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22374/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22374/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22374/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22374,
+    "identity": {
+      "nom": "Rötenbach",
+      "nomComplet": "Rötenbach, Roetenbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22374/Rotenbach.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Tyrol",
+      "departement": "Lienz",
+      "communePrincipale": "Leisach",
+      "communes": [
+        "Leisach"
+      ],
+      "massif": "Lienzer Dolomiten",
+      "bassin": "Drau",
+      "coursEau": "Rötenbach"
+    },
+    "rating": {
+      "cotation": "v4a2V",
+      "interet": null,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": 1100,
+      "deniveleM": 730,
+      "longueurM": 900,
+      "cascadeMaxM": 56,
+      "cordeMiniM": 60,
+      "navette": "1.0km"
+    },
+    "timings": {
+      "approche": "1h",
+      "descente": "5h",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22374,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.786045,
+        "longitude": 12.73015,
+        "label": null
+      },
+      {
+        "canyonId": 22374,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.792618,
+        "longitude": 12.726642,
+        "label": null
+      },
+      {
+        "canyonId": 22374,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 46.795109,
+        "longitude": 12.740525,
+        "label": null
+      },
+      {
+        "canyonId": 22374,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 46.794872,
+        "longitude": 12.732865,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 46.795109,
+      "longitude": 12.740525,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_b98de8eadeb3ed89",
+          "kind": "TOPOGUIDE",
+          "title": "Canyoning in the Alps : Northern Italy and Ticino",
+          "authors": [
+            "Simon Flower"
+          ],
+          "publicationYear": 2012,
+          "reference": "978 1 85284 683 1",
+          "editor": "Cicerone",
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/1105/Canyoning-in-the-Alps-:-Northern-Italy-and-Ticino.html"
+        },
+        {
+          "id": "biblio_80a52b6e4b57f154",
+          "kind": "TOPOGUIDE",
+          "title": "Tiroler Canyoningführer - The Canyoning guide for Tyrol",
+          "authors": [
+            "Alexander Riml",
+            "Gunnar Amor"
+          ],
+          "publicationYear": 2012,
+          "reference": "978-3-200-02343-7",
+          "editor": null,
+          "status": "en stock\n\n- 44,90 € -\n\nCommandez cet ouvrage dès maintenant !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/170/Tiroler-Canyoningfuhrer---The-Canyoning-guide-for-Tyrol.html"
+        },
+        {
+          "id": "biblio_a216ca92fa29ca51",
+          "kind": "TOPOGUIDE",
+          "title": "Canyoning in Bayern und Tirol",
+          "authors": [
+            "Werner Baumgarten"
+          ],
+          "publicationYear": 2010,
+          "reference": null,
+          "editor": null,
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1226/topoguide.html"
+        }
+      ],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_f5f17ce94bcf4b8d",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/Canyons/RoetenbachCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/Canyons/RoetenbachCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

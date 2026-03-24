@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:33.016411+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23911,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23911/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23911/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23911/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23911/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23911,
+    "identity": {
+      "nom": "Gschlifbach",
+      "nomComplet": "Gschlifbach, Wasserfallenbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23911/Gschlifbach.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": null,
+      "departement": "Soleure",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Weissenstein",
+      "bassin": "Aar - Aare",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a2I",
+      "interet": 0.7,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 730,
+      "deniveleM": 30,
+      "longueurM": 50,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 25,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "20min",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "De Günsberg, prendre la direction de Balmberg, après 1 km se garer au bord de la route sur une place juste avant de passer au dessus du torrent de Gschlifbach.",
+      "accesAmont": null,
+      "approche": "Suivre le sentier qui longe le torrent et se mettre à l'eau juste avant la cascade.",
+      "descente": "Une belle C20 encaissée. Pas vu de point j'ai posé une corde en fixe sur un arbre en retrait que j'ai récupéré au retour.",
+      "retour": "Au pied de la cascade remonter le champ en rive gauche pour récupérer le sentier.",
+      "engagement": "Pas d'échappatoire mais canyon composé que d'une cascade !",
+      "periode": "Bassin versant de 0.8 km2, préférer une période humide pour envisager cette cascade.",
+      "geologie": null,
+      "historique": "?? Pas vu de point lors de ma descente mais je suis descendu sur AN.",
+      "remarques": "A faire après Chesselbach pour completer la journée et à faire avec Siggern.\n\nPour le nom Gschlifbach, rien n'apparait sur les cartes de rando Suisse, je l'ai trouvé sur une internet sur une carte des noms de lieux autour de Günsberg."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23911,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.262161,
+        "longitude": 7.56669,
+        "label": null
+      },
+      {
+        "canyonId": 23911,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.263,
+        "longitude": 7.56535,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.263,
+      "longitude": 7.56535,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_3bcefb548805bf63",
+          "kind": "MAP",
+          "title": "1107 Balsthal (Swisstopo)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

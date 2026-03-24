@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:35.200393+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22028,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22028/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22028/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22028/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22028/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22028,
+    "identity": {
+      "nom": "Mère sup",
+      "nomComplet": "Cascades de la Mère sup, Courbière",
+      "prefixeNom": "Cascades de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22028/Mere-sup.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Isère",
+      "communePrincipale": "Saint-Laurent-du-Pont",
+      "communes": [
+        "Saint-Laurent-du-Pont"
+      ],
+      "massif": "Chartreuse",
+      "bassin": "Guiers Mort",
+      "coursEau": "Courbière"
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 1.8,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 972,
+      "deniveleM": 316,
+      "longueurM": 513,
+      "cascadeMaxM": 87,
+      "cordeMiniM": 50,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "45min",
+      "descente": "1h30",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "De St-Laurent-du-Pont (38), prendre la direction de l'hôpital, le contourner en faisant un virage sur la droite, direction Provenches (non indiquée) jusqu'au parking du Monastère de Notre-dame-du-Désert.",
+      "accesAmont": null,
+      "approche": "Continuez sur la route interdite aux véhicules, puis prendre une piste tout droit dans la première épingle à droite (chemin balisé en jaune). Après 15min de marche on traverse le ruisseau, et un peu plus loin un panneau indique le chemin : prendre à droite direction pas du Pertuis (balisage jaune). En haut de la barre rocheuse prendre à droite, (on passe un premier ruisseau, pancarte sur arbre n°20), continuer toujours tout droit environ 10 min et on arrive au départ. Pancarte sur arbre n°22 point de départ de la descente.",
+      "descente": "Succession de 3 cascades. Relais assez \"technique\" plein gaz, arrosé, ou éloigné de la paroi nécessitant un petit pendule dans l'axe de la corde...",
+      "retour": "Descendre le ruisseau pour rejoindre le chemin. Celui qui trouvera mon marteau pourra le garder... Cadeau... Bien que..",
+      "engagement": "Une échappatoire.",
+      "periode": "A peu près sec de juin à septembre",
+      "geologie": null,
+      "historique": "Équipement par le Padawan et Laurent Hy",
+      "remarques": "Pour descendeurs confirmés et maitrisant les relais pleins gaz.\n\nPour les collectionneurs, on pourra descendre le ruisseau juste avant sans nom sur la carte IGN : \"Le Burdin\" (pancarte sur arbre n°20 et cordelette sur arbre en RG). Compter 2*50m de corde et tout fractionner en RG sur les arbres (aucun équipement, prévoir une ou deux sangles pour s'amarrer aux arbres) jusqu'à retomber sur le chemin... possibilité de continuer la descente sur les arbres jusqu'à retomber sur un autre chemin qui nous ramène à gauche à la voiture en 15 min."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22028,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.395088,
+        "longitude": 5.769002,
+        "label": null
+      },
+      {
+        "canyonId": 22028,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.392799,
+        "longitude": 5.75763,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.392799,
+      "longitude": 5.75763,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_07737b47737fa6b4",
+          "kind": "MAP",
+          "title": "3333 OT Massif de la Chartreuse Nord (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_b53302b2d3a0ddb4",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://bouzeland.over-blog.com/pages/la_mere_sup-1258637.html",
+          "url": "http://bouzeland.over-blog.com/pages/la_mere_sup-1258637.html"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

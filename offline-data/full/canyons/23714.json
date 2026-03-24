@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:49.914648+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23714,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23714/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23714/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23714/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23714/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23714,
+    "identity": {
+      "nom": "Selle",
+      "nomComplet": "Torrent de la Selle",
+      "prefixeNom": "Torrent de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23714/Selle.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Hautes-Alpes",
+      "communePrincipale": "La Motte-en-Champsaur",
+      "communes": [
+        "La Motte-en-Champsaur"
+      ],
+      "massif": "Ecrins - Oisans - Champsaur",
+      "bassin": "Drac",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v5a3III",
+      "interet": 2.2,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 2000,
+      "deniveleM": 350,
+      "longueurM": 850,
+      "cascadeMaxM": 65,
+      "cordeMiniM": 65,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "3h",
+      "descente": "3h",
+      "retour": "1h"
+    },
+    "topo": {
+      "accesAval": "Aller à Molines-en-Champsaur et se garer au parking 100m à droite après le cimetière.",
+      "accesAmont": null,
+      "approche": "Du parking, prendre la route forestière au fond du parking (3.5 km). Prendre le sentier (PR) à gauche direction Jas de Jartier, puis suivre l'itinéraire \"le Sellon\". Passer les ruines du Sellon sur votre gauche et croiser le torrent du Colombier. Poursuivre le sentier pour arriver au torrent de la Selle. Le remonter en rive gauche au mieux. Recroiser le torrent en amont de la grande cascade pour remonter le torrent. Traverser l'affluent, le remonter par les sentes des chamois jusqu'à 2000m d’altitude.",
+      "descente": "De nombreuses cascades qui s’enchaînent, souvent avec des vasques intermédiaire,. de jolies passages dont un trou, esthétique pour un torrent de montagne.",
+      "retour": "Soit enchaîner avec le colombier + (2h30) soit remonter par le sentier d'approche.",
+      "engagement": "Si vous voulez vous échappez, soit redescendre par la sente d'approche, soit arrivé à la cascade finale, vous pouvez prendre rive droite. Longez les barres rocheuses jusqu'à atteindre quelques feuillus isolés en bord de falaise. Une MC est est visible. Un rappel de 30m est nécessaire.",
+      "periode": "Juillet - octobre",
+      "geologie": null,
+      "historique": "Jaysson et Murray Lambert",
+      "remarques": "L'équipement en place est systématiquement à contrôler, voir le restaurer, avant chaque descente"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23714,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.727856,
+        "longitude": 6.175486,
+        "label": null
+      },
+      {
+        "canyonId": 23714,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.729542,
+        "longitude": 6.166559,
+        "label": null
+      },
+      {
+        "canyonId": 23714,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.746735,
+        "longitude": 6.122839,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.746735,
+      "longitude": 6.122839,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_b0e951331c704682",
+          "kind": "MAP",
+          "title": "3437 OT Champsaur - Parc des Ecrins (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

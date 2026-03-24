@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:58.401338+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23754,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23754/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23754/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23754/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23754/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23754,
+    "identity": {
+      "nom": "Calandrino (inférieur)",
+      "nomComplet": "Rio Calandrino (inférieur)",
+      "prefixeNom": "Rio",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23754/Calandrino-inferieur.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Ligurie",
+      "departement": "Genova",
+      "communePrincipale": "Borzonasca",
+      "communes": [
+        "Borzonasca"
+      ],
+      "massif": "Monte Aiona",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 1.9,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 400,
+      "deniveleM": 100,
+      "longueurM": 300,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "1h30",
+      "retour": "45min"
+    },
+    "topo": {
+      "accesAval": "Autoroute A12 Genova-Rosignano, sortir à Lavagna et suivre la SP586 vers Carasco.\n\nA l'entrée de Borzonasca, juste avant le pont au niveau d’une église, prenez à droite vers Pratosopralacroce. Environ 3,7km pour le petit viaduc qui passe sur le canyon. Continuer un peu moins de 300m pour se garer dans un virage à gauche.",
+      "accesAmont": null,
+      "approche": "Redescendre au viaduc, suivre rive D vers l'amont un ancien canal qui mène très vite au départ. A noter un petit effondrement équipé d'un fer à béton pour faciliter le passage.",
+      "descente": "Quelques cascades (5 à 20m) dont certaines un peu arrosées. La C20 est fractionnée rive G au milieu.",
+      "retour": "Remonter le collecteur sur 400m. En vue d'un ouvrage en béton (à environ 100m), prendre une ravine rive droite et la remonter sur sa rive droite sur une petite centaine de m jusqu'à un bon sentier qui coupe. Le suivre sur la gauche. A la 2° bifurcation (quand à gauche ça descend), prendre à 180° à droite en légère montée diagonale, le sentier est large. On vient buter sur une clôture; monter un peu puis continuer par une sente en diagonale à gauche. Elle passe par des ruines et sort à 20m de la voiture.",
+      "engagement": "Equipement vieillissant.",
+      "periode": "Débit assez généreux. Quelques vasques.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Glissant. Parcours néanmoins sympathique qui peut se caser en une petite demi-journée en montant faire Poragine."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23754,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.43861,
+        "longitude": 9.403879,
+        "label": null
+      },
+      {
+        "canyonId": 23754,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.437012,
+        "longitude": 9.406175,
+        "label": null
+      },
+      {
+        "canyonId": 23754,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.438309,
+        "longitude": 9.407028,
+        "label": null
+      },
+      {
+        "canyonId": 23754,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 44.437664,
+        "longitude": 9.410687,
+        "label": "Retour: ravine en sortie du collecteur."
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.438309,
+      "longitude": 9.407028,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_01a7d50c43a1118c",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.cicarudeclan.com/ita/a5_calandrinoinf.htm",
+          "url": "http://www.cicarudeclan.com/ita/a5_calandrinoinf.htm"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

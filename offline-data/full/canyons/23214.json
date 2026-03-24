@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:08.093453+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23214,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23214/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23214/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23214/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23214/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23214,
+    "identity": {
+      "nom": "Hinterrhein",
+      "nomComplet": "Hinterrhein",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23214/Hinterrhein.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Hinterrhein",
+      "departement": "Graubünden/Grigioni/Grischun",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Zapport",
+      "bassin": "Hinterrhein",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a6III",
+      "interet": 3.5,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 2290,
+      "deniveleM": 290,
+      "longueurM": 1650,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "2h15min",
+      "descente": "4h",
+      "retour": "1h25min"
+    },
+    "topo": {
+      "accesAval": "From Ticino take the A13 in direction San Bernardino. Just after the tunnel exit and park just in front of the military area.\n\nFrom Chur take the A13 in direction San Bernardino and exit just before the tunnel.",
+      "accesAmont": null,
+      "approche": "The best thing is to take a bicycle for passing the flat 4km of the military area so you save at least 40min of walking each way. Then walk up all along the hiking path in direction Zapporthütte SAC. From there continue another 500m until you reach the Rhein.",
+      "descente": "The descent is really fun and aquatic. A lot uf jumps and small slides are possible with some walking sections trough very nice washed gneis. The abseils are not high but sometimes in the waterstream. Most pools are deep enought to jump.\n\nThe end of the canyon is amazing. One side of the canyon is called hell and the other side paradise. When you pass trough this last narrow section you definetly feel in paradise when the waterlevel is not too high. The water looks dangerous and white as it will be always high at that point, but the abseils are possible without too much risk or even out of the water.",
+      "retour": "Walk for 300m downstream and then climb up to join the hiking path.",
+      "engagement": null,
+      "periode": "September-November\n\nThe watel level of the measurement point must be below 1000l/sec\n\nhttp://www.hydrodaten.admin.ch/de/2631.html",
+      "geologie": null,
+      "historique": "First descent: Andy Allemann, Timo Stammwitz, Matthias Holzinger 21.09.2012",
+      "remarques": "Check if there are no maneuvers of the military: http://www.he.admin.ch/internet/heer/de/home/themen/wpl/hinterrhein/schiessanzeigen.html"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23214,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.501499,
+        "longitude": 9.085572,
+        "label": null
+      },
+      {
+        "canyonId": 23214,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.497166,
+        "longitude": 9.105839,
+        "label": null
+      },
+      {
+        "canyonId": 23214,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.525101,
+        "longitude": 9.18666,
+        "label": null
+      },
+      {
+        "canyonId": 23214,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 46.508156,
+        "longitude": 9.135462,
+        "label": "Park your bike here to shorten the approach and way-back trough the military startion"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.525101,
+      "longitude": 9.18666,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

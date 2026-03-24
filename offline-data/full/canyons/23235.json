@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:12.685864+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23235,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23235/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23235/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23235/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23235/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23235,
+    "identity": {
+      "nom": "Barrosas",
+      "nomComplet": "Barrosas",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23235/Barrosas.html"
+    },
+    "location": {
+      "pays": "Portugal",
+      "region": "Açores",
+      "departement": "Santa Cruz das Flores Municipality , Ilha das Flores",
+      "communePrincipale": "Ponta Delgada",
+      "communes": [
+        "Santa Cruz das Flores Municipality",
+        "Ilha das Flores",
+        "Cedros",
+        "Santa Cruz das Flores",
+        "Ponta Delgada"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a3III",
+      "interet": 3.0,
+      "nbVotes": 6
+    },
+    "metrics": {
+      "altitudeDepartM": 175,
+      "deniveleM": 175,
+      "longueurM": 1300,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "25min",
+      "descente": "4h",
+      "retour": "1h30/0"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": "De Santa Cruz da Flores, prendre la ER 1-2 en direction de Ponta Delgada, tourner vers Ponta Ruiva, 1km après un chemin de terre, se garer.",
+      "approche": "Continuer la route à pied qui longe la mer qui descend dans la vallée direction SO. Après avoir traversé 3 affluents, le chemin coupe le canyon.",
+      "descente": "Le canyon débute dans la végétation avec quelques rappels, sauts possibles (vérifier le fond de l'eau), puis le canyon perd sa végétation pour arriver sur l'océan avec une très belle cascade qui tombe dans l'eau.\n\nCascades: 30, 18, 15, 20, 11, 11, 10, dernière cascade 10m RG puis C22",
+      "retour": "Si retour par bateau, retour à Flores ou Ponta Delgada (prévoir navette de voiture) donc pas de marche\n\nSi la mer n'est pas trop agitée, nager 400m a gauche autour de Ponta de Barrosas, jusqu'au point 0656572/4374100, quelques marches taillées dans la roche mènent à un chemin qui ramène au départ du canyon puis à la voiture\n\nSi retour à pied et mer agitée, corde en fixe RG avant la dernière cascade de 22m, rejoindre le départ du canyon puis le parking",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23235,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 39.493389,
+        "longitude": -31.178831,
+        "label": null
+      },
+      {
+        "canyonId": 23235,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 39.50074,
+        "longitude": -31.175816,
+        "label": null
+      },
+      {
+        "canyonId": 23235,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 39.493561,
+        "longitude": -31.166203,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 39.493561,
+      "longitude": -31.166203,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

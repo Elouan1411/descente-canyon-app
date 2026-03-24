@@ -1,0 +1,143 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:12.220896+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21925,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21925/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21925/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21925/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21925/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21925,
+    "identity": {
+      "nom": "Mouras",
+      "nomComplet": "Ruisseau de Mouras",
+      "prefixeNom": "Ruisseau de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21925/Mouras.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Haute-Garonne",
+      "communePrincipale": "Fos",
+      "communes": [
+        "Fos"
+      ],
+      "massif": null,
+      "bassin": "Garonne",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 2.0,
+      "nbVotes": 11
+    },
+    "metrics": {
+      "altitudeDepartM": 690,
+      "deniveleM": 130,
+      "longueurM": 400,
+      "cascadeMaxM": 15,
+      "cordeMiniM": 15,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "45min",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "Sur la RN135, après le contournement de Fos, au niveau de la Tour du Seriail (sorte de rond-point caractéristique avec un gros rocher au centre). A la sortie du rond point, prendre à gauche la petite route (panneau mémorial ours). Au bout de 200 m environ, le parking et dans une l'épingle (grand panneau d'informations en bois)",
+      "accesAmont": null,
+      "approche": "Prenez la piste qui continue tout droit (dans l'extérieur de l'épingle). Attention il y à des ruches. Arrivé à la clairière, traversez le ruisseau par le petit pont de Rouéu (arrivée du canyon), et suivez le sentier qui grimpe. Prenez à gauche à la première intersection pour remonter le ruisseau en sa rive gauche. Rejoindre le ruisseau par une large sente bien marquée à flanc au niveau d'un gros arbre.",
+      "descente": "Trois rappels d'une dizaine de mètres, enchainés et encaissés.",
+      "retour": "Après la dernière cascade, suivez le ruisseau pendant quelques minutes jusqu'à atteindre rapidement le pont franchit à l'aller. A partir de là, rejoindre la voiture par le même chemin qu'à l'aller.",
+      "engagement": "Compliqué de sortir de canyon dans l'encaissement, mais c'est si court...",
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "Idéal pour l'initiation."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21925,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.857933,
+        "longitude": 0.756356,
+        "label": null
+      },
+      {
+        "canyonId": 21925,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.860901,
+        "longitude": 0.750203,
+        "label": null
+      },
+      {
+        "canyonId": 21925,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 42.864258,
+        "longitude": 0.749892,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 42.864258,
+      "longitude": 0.749892,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_dcb511a7e9f5f295",
+          "kind": "TOPOGUIDE",
+          "title": "Aran - Valle y barrancos.",
+          "authors": [
+            "Luis Mariano Mateos Marcos",
+            "Adolfo Morais Ezkerro"
+          ],
+          "publicationYear": 2014,
+          "reference": "978-84-8321-402-2",
+          "editor": "Prames",
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/180/Aran-:-Valle-y-Barrancos-.html"
+        },
+        {
+          "id": "biblio_1b6c437b64d9f869",
+          "kind": "TOPOGUIDE",
+          "title": "PVC n°1 - Haute Garonne",
+          "authors": [
+            "Collectif : Groupe Spéléologique des Pyrénées"
+          ],
+          "publicationYear": 2006,
+          "reference": "9782952722605",
+          "editor": "auto-édition",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/125/Plastic-Visuel-Canyon-:-Haute-Garonne.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_b47ddf7c75871d57",
+          "kind": "MAP",
+          "title": "1947 OT Aspet - Pic de Mauberme (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

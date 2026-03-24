@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:47.044885+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23432,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23432/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23432/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23432/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23432/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/23432/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 23432,
+    "identity": {
+      "nom": "Benacciola",
+      "nomComplet": "Ruisseau de Benacciola, Ruisseau de Benacciola",
+      "prefixeNom": "Ruisseau de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23432/Benacciola.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Corse",
+      "departement": "Haute-Corse",
+      "communePrincipale": "San-Gavino-di-Fiumorbo",
+      "communes": [
+        "San-Gavino-di-Fiumorbo"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": "Ruisseau de Benacciola"
+    },
+    "rating": {
+      "cotation": "v3a1I",
+      "interet": 1.5,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1166,
+      "deniveleM": 200,
+      "longueurM": 450,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h20",
+      "descente": "1h15",
+      "retour": "1h"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": "Identique à Tassi (s'arrêter 10-15 minutes avant, dans un vallon bien marqué).\n\nSi vous laissé un arbre grand et massif sur votre gauche, c'est que vous êtes trop loin !",
+      "descente": "Vallon forestier, sauvage et peu équipé avec une dizaine de rappel sur AN (un point et 2 sangles)",
+      "retour": "Descendre jusqu'au sentier balisé de points jaunes caché par le maquis, et qui rejoint le chemin pris à l'aller en 5 minutes (point + flèche jaune à l'intersection) puis revenir au parking (1 h).",
+      "engagement": "Engagement faible. Très peu d'encaissement.",
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "Un peu de maquis à la sortie.\n\nIl reste du débroussaillage à faire dans le vallon."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23432,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 41.942764,
+        "longitude": 9.236197,
+        "label": null
+      },
+      {
+        "canyonId": 23432,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 41.941929,
+        "longitude": 9.239239,
+        "label": null
+      },
+      {
+        "canyonId": 23432,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 41.960079,
+        "longitude": 9.256558,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 41.960079,
+      "longitude": 9.256558,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 232,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Corse) - 08 juin 2011",
+          "summary": "- Le canyonisme est interdit la nuit (sauf dérogation)\n\n- Le canyonisme est interdit s'il y a une alerte émise par Météo-France de niveau orange ou rouge en cours.\n\n- Le canyonisme est interdit aux mineurs de moins de 7 ans, sauf canyon évalué égal ou inférieur à V1-A3-E3\n\n- Les groupes auront un effectif maximum de 12 personnes, hors encadrement.",
+          "remark": "L'arrêté du 9 juillet 2019 pris conjointement par les préfectures de Corse-du-Sud et de Haute-Corse harmonise les réglementations existantes pour les deux départements.",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nArrêté préfectoral (Haute-Corse) n°2011-159-0008 du 8 juin 2011\n\nArrêté préfectoral modificatif (Corse-du-Sud et Haute-Corse) n°R20-2019-07-09-001 du 9 juillet 2019",
+          "effectiveDate": "08 juin 2011",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/232/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral (Haute-Corse) n°2011-159-0008 du 8 juin 2011",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem232_pj1.pdf"
+            },
+            {
+              "label": "Arrêté préfectoral modificatif (Corse-du-Sud et Haute-Corse) n°R20-2019-07-09-001 du 9 juillet 2019",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem232_pj2.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

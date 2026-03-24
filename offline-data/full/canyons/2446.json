@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:45:32.171755+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2446,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2446/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2446/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2446/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2446/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2446,
+    "identity": {
+      "nom": "Orbeil",
+      "nomComplet": "Gorges de l' Orbeil, Orbeil",
+      "prefixeNom": "Gorges de l'",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2446/Orbeil.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Aude",
+      "communePrincipale": "Mas-Cabardès",
+      "communes": [
+        "Mas-Cabardès"
+      ],
+      "massif": "Montagne Noire",
+      "bassin": null,
+      "coursEau": "Orbeil"
+    },
+    "rating": {
+      "cotation": "v3a2I",
+      "interet": 0.9,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 610,
+      "deniveleM": 50,
+      "longueurM": 600,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15",
+      "descente": "1h",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": "De Carcassonne se rendre à Conques/Orbeil par la D201 puis à Mas Cabardès par la D101. A la sortie du village de Mas Cabardès, rester sur la D101 en direction de Mazamet pendant 4kms. On se gare au premier pont franchi au niveau d'une centrale électrique.\n\nS'il y a une navette, continuer sur la route pendant 1,5km et se garer dans le virage sous le rocher équipé de grillage antichute de pierres.",
+      "accesAmont": null,
+      "approche": "Remonter la route. La descente commence au niveau du captage forcé (début du gros tuyau visible de la route) et équipé d'un escalier. La première cascade de 30m (Amarrage RD) commence à ce niveau",
+      "descente": "Un rappel en goulotte en S de 30m qui débute la descente.\n\n2 autres rappels (10 & 12m) entrecoupés de quelques ressauts et vasques dans une végétation parfois fournie.",
+      "retour": "Après le 3ème et dernier rappel, 200 mètres de marche puis on aperçoit le pont enjambant l'arrivée.",
+      "engagement": "Faible si ce n'est la roche très glissante. Sauts interdits par manque de fond, seul le premier rappel présente un caractère esthétique.",
+      "periode": "Toujours en eau. A éviter cependant lorsque le barrage surverse.",
+      "geologie": "Il s'agit d'un ruisseau aurifère d'où son nom ! On est pas loin de l'ancienne mine de Salsigne.",
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2446,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.403175,
+        "longitude": 2.334675,
+        "label": null
+      },
+      {
+        "canyonId": 2446,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.400478,
+        "longitude": 2.337792,
+        "label": null
+      },
+      {
+        "canyonId": 2446,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 43.402241,
+        "longitude": 2.335598,
+        "label": null
+      },
+      {
+        "canyonId": 2446,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 43.400402,
+        "longitude": 2.338458,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 43.402241,
+      "longitude": 2.335598,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_e2760bc81f0747a2",
+          "kind": "MAP",
+          "title": "2344 OT Montagne Noire (Ouest) - Revel (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

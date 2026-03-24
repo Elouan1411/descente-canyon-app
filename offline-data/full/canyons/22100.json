@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:50.057590+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22100,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22100/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22100/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22100/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22100/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22100,
+    "identity": {
+      "nom": "Grand Jet",
+      "nomComplet": "Le Grand Jet",
+      "prefixeNom": "Le",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22100/Grand-Jet.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Isère",
+      "communePrincipale": "Saint-Joseph-de-Rivière",
+      "communes": [
+        "Saint-Joseph-de-Rivière"
+      ],
+      "massif": "Chartreuse",
+      "bassin": "Guiers Mort",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v5a1III",
+      "interet": 1.9,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 900,
+      "deniveleM": 350,
+      "longueurM": 450,
+      "cascadeMaxM": 70,
+      "cordeMiniM": 80,
+      "navette": "15.0km"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "2h",
+      "retour": "20mn"
+    },
+    "topo": {
+      "accesAval": "de Voreppe direction St Laurent du Pont par la D520. Rentrer dans le Hameau Le Demay, première à droite se garer dans un tournant à gauche sous un bosquet après une grande maison avec une Tour\n\nAccès",
+      "accesAmont": "Prendre la direction de St Laurent du Pont. Prendre la première à droite direction le Cotterg après le panneau signalétique de la commune. A partir de là il faut parcourir 9,1km sur la route forestière pour arriver au parking.",
+      "approche": "Descendre à l'aplomb d'un regard bétonné, quelques ressauts shuntables en rive gauche vous amèneront au départ.",
+      "descente": "Deux grande cascades de 65m puis 70m entrecoupées de ressauts où la corde est nécessaire, puis une C25 suivit d'une C6 équipement sur arbre RD pour C65 et C70.. et RG pour C25...lunule et autres sur C6...nécessité d'aller chercher les relais assez haut sur les bords (attention aux glissades..)..mains courantes sur arbres pour rejoindre les relais.",
+      "retour": "Descendre la suite du ruisseau plutôt arborée mais à l'horizontale... rejoindre une piste, la suivre sur la droite... enlever votre neoprène.. 100m après avoir dépassé (à droite) un lopin de terre cultivé (maïs), rentrer dans la forêt à gauche et tirer tout droit... traverser un taillis de ronces et vous arriverez + ou - sains et saufs ainsi que la neop dans un champ en face de votre voiture..après le franchissement de deux clôtures de barbelés..",
+      "engagement": "Total jusqu'au bas de la C70.",
+      "periode": "Coule vraiment très peu en été",
+      "geologie": "Entassement stratonomique de molasse miocenique",
+      "historique": "Ouverture en aout 2009 par le Padawan et Thierry",
+      "remarques": "Le premier qui descend évitera de rester en bas des grandes verticales afin d'éviter les quelques galets décrochés par les suivants ou par la corde au départ. (25 premiers mètres plein gaz puis atterrissage sur \"pains de sucre\" dans les C65 et C70 )"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22100,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.353905,
+        "longitude": 5.690923,
+        "label": null
+      },
+      {
+        "canyonId": 22100,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.357788,
+        "longitude": 5.682367,
+        "label": null
+      },
+      {
+        "canyonId": 22100,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 45.353806,
+        "longitude": 5.690725,
+        "label": null
+      },
+      {
+        "canyonId": 22100,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 45.359943,
+        "longitude": 5.680157,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 45.353806,
+      "longitude": 5.690725,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_bf7324fa2ae1510e",
+          "kind": "MAP",
+          "title": "3334 OT Massif de la Chartreuse Sud (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_31113c55f5371f13",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://bouzeland.over-blog.com/pages/Le_grand_Jet-1654566.html",
+          "url": "http://bouzeland.over-blog.com/pages/Le_grand_Jet-1654566.html"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

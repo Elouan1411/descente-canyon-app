@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:47:51.789279+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21022,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21022/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21022/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21022/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21022/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21022,
+    "identity": {
+      "nom": "La Pez",
+      "nomComplet": "Gorges de La Pez",
+      "prefixeNom": "Gorges de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21022/La-Pez.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Hautes-Pyrénées",
+      "communePrincipale": "Loudenvielle",
+      "communes": [
+        "Loudenvielle"
+      ],
+      "massif": "Estos",
+      "bassin": "La Pez",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a2II",
+      "interet": 2.7,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 1490,
+      "deniveleM": 90,
+      "longueurM": 200,
+      "cascadeMaxM": 11,
+      "cordeMiniM": 15,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "45min",
+      "descente": "1h20",
+      "retour": "25min"
+    },
+    "topo": {
+      "accesAval": "A Loudenvieille prendre la D725 jusqu'au Pont du Prat (centrale de Tramezaygues).",
+      "accesAmont": null,
+      "approche": "Depuis le parking, prendre la direction du vallon de la Pez (itinéraire fléché 19). Après le pont sur la Pez (sortie du canyon), remonter les lacets et continuer sur environ 100 m sur le sentier. Puis repérer un petit kairn sur un bloc au pied de 5 arbres d'où part une sente à gauche (peu marquée) parallèle à la gorge et qui vous mène à la retenue d'eau (depart du canyon juste en dessous).",
+      "descente": "Descente avec 7 rappels parfois arrosés\n\nAttention : en raison des installations hydro-électriques, il est déconseillé de le descendre surtout dans le cas d'augmentation du débit en amont de l'ouvrage (précipitations, fonte des neiges, etc...).",
+      "retour": "Par le même itinéraire qu'à la montée.",
+      "engagement": "Une échappatoire RD avant les deux dernières cascades.",
+      "periode": "Août et mois suivants",
+      "geologie": null,
+      "historique": "Mickael Ménager 09/2003",
+      "remarques": "Canyon sous un ouvrage hydro electrique avec risque de lâcher aléatoire.\n\nLe CDS 65 mène des négociations avec le SHEM local.\n\nDescente FORTEMENT DECONSEILLEE tant qu'un accord de pratique n'a pas été trouvé."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21022,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.738277,
+        "longitude": 0.396392,
+        "label": null
+      },
+      {
+        "canyonId": 21022,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.739788,
+        "longitude": 0.399245,
+        "label": null
+      },
+      {
+        "canyonId": 21022,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 42.745102,
+        "longitude": 0.409492,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 42.745102,
+      "longitude": 0.409492,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_b4d10c31e88f9235",
+          "kind": "MAP",
+          "title": "1848 OT Bagneres-de-Luchon (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

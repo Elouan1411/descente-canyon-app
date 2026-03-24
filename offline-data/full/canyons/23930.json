@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:37.691644+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23930,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23930/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23930/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23930/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23930/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23930,
+    "identity": {
+      "nom": "Korinus Klamm",
+      "nomComplet": "Korinus Klamm, Trainsbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23930/Korinus-Klamm.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Tyrol",
+      "departement": "Kufstein",
+      "communePrincipale": "Thiersee",
+      "communes": [
+        "Thiersee"
+      ],
+      "massif": "Mangfallgebirge",
+      "bassin": "Inn",
+      "coursEau": "Trainsbach"
+    },
+    "rating": {
+      "cotation": "v4a2III",
+      "interet": 1.3,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1060,
+      "deniveleM": 320,
+      "longueurM": 700,
+      "cascadeMaxM": 35,
+      "cordeMiniM": 35,
+      "navette": "2.0km"
+    },
+    "timings": {
+      "approche": "50min",
+      "descente": "2h45min",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23930,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.603802,
+        "longitude": 12.071048,
+        "label": null
+      },
+      {
+        "canyonId": 23930,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.598969,
+        "longitude": 12.074266,
+        "label": null
+      },
+      {
+        "canyonId": 23930,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 47.600941,
+        "longitude": 12.090789,
+        "label": null
+      },
+      {
+        "canyonId": 23930,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 47.594543,
+        "longitude": 12.071699,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 47.600941,
+      "longitude": 12.090789,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_7df56d39cb86b7b5",
+          "kind": "MAP",
+          "title": "3213 Kufstein (ÖK25V)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_0bf779bb717f9832",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/C.....s/KorinusKlammCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/C.....s/KorinusKlammCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:45:42.942603+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2494,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2494/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2494/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2494/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2494/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2494,
+    "identity": {
+      "nom": "Estete",
+      "nomComplet": "Ravin Estete",
+      "prefixeNom": "Ravin",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2494/Estete.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Nouvelle-Aquitaine",
+      "departement": "Pyrénées-Atlantiques",
+      "communePrincipale": "Laruns",
+      "communes": [
+        "Laruns"
+      ],
+      "massif": "Vallée d'Ossau",
+      "bassin": "Béarn",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v5a1III",
+      "interet": 2.5,
+      "nbVotes": 8
+    },
+    "metrics": {
+      "altitudeDepartM": 800,
+      "deniveleM": 200,
+      "longueurM": 300,
+      "cascadeMaxM": 76,
+      "cordeMiniM": 40,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h15",
+      "descente": "2h",
+      "retour": "35min"
+    },
+    "topo": {
+      "accesAval": "Parking des thermes, Eaux Chaudes.",
+      "accesAmont": null,
+      "approche": "Sentier des fenêtres, rive gauche du Gave d'Ossau. Dépasser la prise d'eau de Besse et poursuivre jusqu'au torrent suivant. Départ 20 m en rive gauche",
+      "descente": "7 rappels sur double goujon.\n\nUne petite vasque suspendue.\n\nRelais du fractionnement exigu.\n\nPlacer une déviation sur le noisetier côté Nord au 1er rappel du cassé pour arriver à l'aplomb du relais au milieu du cassé",
+      "retour": "- Si le débit du gave est faible, remonter 200 m et rejoindre le GR108 en rive droite\n\n- Si le débit du gave est fort, descendre 100m et rejoindre la route, remonter la route 300m (dangereux), puis rejoindre le GR108",
+      "engagement": "Encaissement nul. Grandes rampes suivies d'une belle verticale fractionnée. Parcours spécial période à gros débits.",
+      "periode": "souvent sec, à faire après des pluies",
+      "geologie": "Calcaire dolomitique (excessivement dur).",
+      "historique": "Ouvreurs inconnus. Réouverture: Rappin, Demiguel 2001.\n\nRééquipement Seb 2023",
+      "remarques": "Rééquipé à 40 m en 2023"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2494,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.966724,
+        "longitude": -0.441631,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 42.966724,
+      "longitude": -0.441631,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_b1ad86b923439e84",
+          "kind": "TOPOGUIDE",
+          "title": "Gorges et Canyons : Bearn et Pays Basque",
+          "authors": [
+            "Comité départemental de spéléologie des Pyrénées-Atlantiques"
+          ],
+          "publicationYear": 2013,
+          "reference": "978-2-7466-5930-8",
+          "editor": "CDS64",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/169/Gorges-et-Canyons-:-Bearn-et-Pays-Basque.html"
+        },
+        {
+          "id": "biblio_7992ba9ac2302817",
+          "kind": "TOPOGUIDE",
+          "title": "Pyrénées en Cascades - Les grandes verticales du canyonisme",
+          "authors": [
+            "Bruno Matéo"
+          ],
+          "publicationYear": 2012,
+          "reference": null,
+          "editor": "Rando éditions",
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/172/Pyrenees-en-Cascades---Les-grandes-verticales-du-canyonisme.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_1e3ffadad605da6e",
+          "kind": "MAP",
+          "title": "1547 OT Ossau - Vallee d'Aspe (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

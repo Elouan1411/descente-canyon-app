@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:44:53.239869+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2282,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2282/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2282/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2282/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2282/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2282,
+    "identity": {
+      "nom": "Boudène",
+      "nomComplet": "Cascade de la Boudène, Tufs de la Boudène",
+      "prefixeNom": "Cascade de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2282/Boudene.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Gard",
+      "communePrincipale": "Roquedur",
+      "communes": [
+        "Roquedur"
+      ],
+      "massif": "Cévennes",
+      "bassin": "Hérault",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a2II",
+      "interet": 2.1,
+      "nbVotes": 15
+    },
+    "metrics": {
+      "altitudeDepartM": 290,
+      "deniveleM": 100,
+      "longueurM": 200,
+      "cascadeMaxM": 35,
+      "cordeMiniM": 40,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "45min/1h",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "De Ganges, se rendre à Roquedur-le-Bas par la D999 puis la D349. Dépasser le hameau de La Salle et se garer peu après sa sortie au niveau du pont sur la rivière, sans gêner les éventuels travaux forestiers ou agricoles.",
+      "accesAmont": null,
+      "approche": "Marcher jusqu'au hameau du Cabanis. Sur la droite juste avant la première maison, emprunter un discret chemin quasi-horizontal qui conduit à un petit gué en béton sur le ruisseau",
+      "descente": "Quelques obstacles avant une impressionnante cascade de tuf percée de cavités à visiter (cascade appelée \"Tufs de la Boudène\" par E.A. Martel)",
+      "retour": "Un sentier balisé en blanc existerait en RG après les petits obstacles suivants les tufs de la Boudène. Si vous ne le trouvez pas, remontez en mode sanglier en RG au mieux à travers la végétation et les anciennes terrasses.",
+      "engagement": "limité",
+      "periode": "Printemps",
+      "geologie": "tufs",
+      "historique": null,
+      "remarques": "Propriétés privées (vergers), peu de place pour stationner"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2282,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.975521,
+        "longitude": 3.680592,
+        "label": null
+      },
+      {
+        "canyonId": 2282,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.974888,
+        "longitude": 3.674083,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.974888,
+      "longitude": 3.674083,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_fb5949b340608cd9",
+          "kind": "MAP",
+          "title": "2641 ET Mont-Aigoual (Le Vigan) (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_aeaaa7ee834aa627",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://clementdom.free.fr/html/boudene1.htm",
+          "url": "http://clementdom.free.fr/html/boudene1.htm"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

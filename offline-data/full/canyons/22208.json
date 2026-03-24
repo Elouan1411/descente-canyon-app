@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:13.064181+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22208,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22208/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22208/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22208/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22208/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22208,
+    "identity": {
+      "nom": "Hillette",
+      "nomComplet": "Ruisseau de la Hillette, Cagateille supérieur",
+      "prefixeNom": "Ruisseau de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22208/Hillette.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Ariège",
+      "communePrincipale": "Ustou",
+      "communes": [
+        "Ustou"
+      ],
+      "massif": "Haut-Couserans",
+      "bassin": "Salat",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v5a2V",
+      "interet": 2.8,
+      "nbVotes": 14
+    },
+    "metrics": {
+      "altitudeDepartM": 1545,
+      "deniveleM": 230,
+      "longueurM": 415,
+      "cascadeMaxM": 115,
+      "cordeMiniM": 60,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h45",
+      "descente": "4h00",
+      "retour": "45min"
+    },
+    "topo": {
+      "accesAval": "Depuis Saint Girons, prendre la direction de Seix, puis à gauche vers Guzet-Neige. Plus loin, laisser la route de Guzet sur votre gauche et emprunter la D38 à droite. Continuer ainsi jusqu'à Stillon (pâte d'oie) ou l'on prendra à gauche pour rejoindre en bout de route le parking de départ pour le cirque de Cagateille.",
+      "accesAmont": null,
+      "approche": "Du parking, prendre le sentier qui grimpe tranquillement au cirque de Cagateille. Une fois au pied du cirque continuer, sur un bon sentier qui grimpe nettement en sous-bois en direction de l'étang de la Hillette. A la sortie du bois, au point coté 1543m, quitter le sentier et prendre sur la droite en longeant la courbe de niveau. On arrive en surplomb de la falaise qu'on longe en remontant jusqu'aux environs de 1570m. De là, descendre tant bien que mal dans une première ravine, la dépasser pour remonter une croupe, et là vers 1545m se trouve (enfin) l'arbre qui permet le départ de la course.",
+      "descente": "Torrent de montagne à caractère vertical dans un beau cadre (cirque de Cagateille).\n\nDes cordes 45m suffisent si on fait tout en RG dans la grande cascade.\n\nDescente pour techniciens et groupes peu nombreux",
+      "retour": "Après la dernière cascade, marcher 20 mn environ dans la rivière. On retrouve le sentier emprunté à l'aller.",
+      "engagement": "Très encaissé, pas d'échappatoires.\n\nEngagement important sous la C40.",
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "Equipement vieillissant par endroit, mais la grande cascade est équipée sur gougeons. Equipement disparate, AN sur arbre, sur rocher, pitons, doubles anneaux, spits : donc très bien en formation !!"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22208,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.737602,
+        "longitude": 1.302277,
+        "label": null
+      },
+      {
+        "canyonId": 22208,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.740204,
+        "longitude": 1.299434,
+        "label": null
+      },
+      {
+        "canyonId": 22208,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 42.756058,
+        "longitude": 1.287975,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 42.756058,
+      "longitude": 1.287975,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_a74afea2541626fb",
+          "kind": "MAP",
+          "title": "2048 OT Aulus Les Bains (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

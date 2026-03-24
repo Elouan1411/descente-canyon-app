@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:29.726510+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22003,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22003/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22003/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22003/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22003/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22003,
+    "identity": {
+      "nom": "Molinières",
+      "nomComplet": "Vallon des Molinières",
+      "prefixeNom": "Vallon des",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22003/Molinieres.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Aveyron",
+      "communePrincipale": "Rodelle",
+      "communes": [
+        "Bozouls",
+        "Rodelle"
+      ],
+      "massif": null,
+      "bassin": "Dourdou",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a1I",
+      "interet": 0.5,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 400,
+      "deniveleM": 100,
+      "longueurM": 200,
+      "cascadeMaxM": 6,
+      "cordeMiniM": 10,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "10min",
+      "descente": "30min",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "Le parcours proposé se fait en enchaînant le vallon des Molinières (à la montée) et celui de Carrols (à la descente), ce qui permet de faire une boucle qui évite la navette.\n\nDe Bozouls, prendre la D20 jusqu'à Saint-Julien-de-Rodelle. Dans le village, tourner à gauche en direction de l'église. Passer devant l'église et continuer tout droit en direction des Rivaldières. Descendre au fond de la vallée par la route, se garer à droite sans gêner quand celle-ci se rapproche au plus près du Dourdou, quelques centaines de mètres avant la ferme (habitée).",
+      "accesAmont": null,
+      "approche": "Depuis la voiture, poursuivre la route à pieds jusqu'à la ferme des Rivaldières, la contourner par la droite (le vallon de Carrols arrive derrière celle-ci) jusqu'au vallon suivant, qu'on remonte.",
+      "descente": "Depuis le bas, remonter le vallon en escaladant les quelques cascades (déclives, C6 max) ou en passant sur les côtés selon la configuration.",
+      "retour": "Soit on redescend le vallon (20min?), soit on fait la boucle par le vallon de Carrols. Dans ce cas, arrivé en haut du vallon, remonter RG par le talus, suivre la piste à droite sur une centaine de mètres, puis prendre à gauche (nord) sur 250m, puis encore à gauche pour passer à côté du \"château\" des Molinières, jusqu'à croiser le vallon de Carrols. (voir la description sur la fiche correspondante). (20min)",
+      "engagement": "faible : souvent sec, court, peu encaissé.",
+      "periode": "souvent sec",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Peu d'intérêt. Peu esthétique, peu encaissé, broussailleux (ne pas oublier le sécateur), pas ludique."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22003,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.481945,
+        "longitude": 2.673333,
+        "label": "bas du canyon (parcouru à la montée)"
+      },
+      {
+        "canyonId": 22003,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.485279,
+        "longitude": 2.674167,
+        "label": "haut du vallon (parcouru à la montée)"
+      },
+      {
+        "canyonId": 22003,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.482224,
+        "longitude": 2.665833,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.482224,
+      "longitude": 2.665833,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_a603aa4818255d95",
+          "kind": "MAP",
+          "title": "2438 O Estaing - Gorges du Lot (IGN S?rie Bleue)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:19.160475+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23580,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23580/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23580/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23580/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23580/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23580,
+    "identity": {
+      "nom": "Roque",
+      "nomComplet": "Cascade de la Roque",
+      "prefixeNom": "Cascade de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23580/Roque.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Bouches-du-Rhône",
+      "communePrincipale": "Simiane-Collongue",
+      "communes": [
+        "Simiane-Collongue"
+      ],
+      "massif": "Massif de l'Étoile",
+      "bassin": "Arc",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a1I",
+      "interet": 0.6,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 330,
+      "deniveleM": 30,
+      "longueurM": 50,
+      "cascadeMaxM": 10,
+      "cordeMiniM": 10,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "35min",
+      "retour": "25min"
+    },
+    "topo": {
+      "accesAval": "De Marseille, prendre l'autoroute nord E714 et emprunter par la suite l'A51 en direction d'Aix-en-Provence. Passer Plan de Campagne pour sortir à droite en direction de Gardanne par la D6. Après quelques mètres sur la D6, sortir à droite sur Simiane-Collongue et traverser le centre du village par la \"route de Saint-Germain\". Sorti du village, rouler quelques mètres et prendre à gauche sur \"Les Putis\" en passant sur le pont. Aux Putis, prendre la petit route étroite goudronnée à gauche montant entre les villas jusqu'à la barrière incendie. Se garer sans gêner.",
+      "accesAmont": null,
+      "approche": "Derrière la barrière, prendre la piste. Après la descente, emprunter celle qui part à droite. Au ruisseau, contourner celui-ci par la RD et emprunter la petite sente qui le suit, jusqu'à que le ruisseau ne soit plus encombrer de végétation. Départ depuis un pin couché au début du mini encaissement .",
+      "descente": "Rappel sur AN (le pin couché) de la C2, C2 1pt en RD, C4 1pt en RD, un peu de marche dans le ruisseau et l'on arrive sur la cascade de la Roque une C10 souvent sèche avec anneau de corde+maillon en RG. La suite est à éviter, car aucun intérêt et l'on rentre dans une propriété privé .",
+      "retour": "En bas de la C10, sortir en RD en remontant un plan-incliné de tuf alimenté par une source (résurgence). En haut, prendre à gauche sur 5m et passer le petit muret de droite donnant sur un champ. Suivre la sente peu marqué jusqu'au fond du champ. La sente part à droit et continue à travers la forêt pour remonter au départ de la descente. A la piste, suivre le chemin pris à l'aller.",
+      "engagement": "aucun",
+      "periode": "Petit débit correct après les pluies.",
+      "geologie": null,
+      "historique": "ALAIN 13",
+      "remarques": "Les petites cascades sont équipées sur mono-point (goujon de 8 + maillon de chaîne) et d'anneau de corde + maillon pour la dernière .\n\nNe pas suivre le cours d'eau après la C10, vous rentrez dans une propriété privé ."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23580,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.421539,
+        "longitude": 5.463148,
+        "label": null
+      },
+      {
+        "canyonId": 23580,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.422386,
+        "longitude": 5.462649,
+        "label": null
+      },
+      {
+        "canyonId": 23580,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.421078,
+        "longitude": 5.45899,
+        "label": null
+      },
+      {
+        "canyonId": 23580,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 43.421364,
+        "longitude": 5.463201,
+        "label": "Sente d'accès et de retour"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.421078,
+      "longitude": 5.45899,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_c6befd0557fd0f65",
+          "kind": "MAP",
+          "title": "3145 ET Marseille (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

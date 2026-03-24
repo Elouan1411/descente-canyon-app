@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:13.124313+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22489,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22489/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22489/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22489/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22489/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22489,
+    "identity": {
+      "nom": "Hacioğlan",
+      "nomComplet": "Hacioğlan",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22489/Hacioglan.html"
+    },
+    "location": {
+      "pays": "Turquie",
+      "region": "Kaş",
+      "departement": "Antalya",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Akdağlar",
+      "bassin": "Demre",
+      "coursEau": "Hacioğlan"
+    },
+    "rating": {
+      "cotation": "v2a3III",
+      "interet": 2.2,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 535,
+      "deniveleM": 190,
+      "longueurM": 8000,
+      "cascadeMaxM": 7,
+      "cordeMiniM": 10,
+      "navette": "25.0km"
+    },
+    "timings": {
+      "approche": "1h15min",
+      "descente": "4h",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": ".\n\nAvec l'autre, continuer sur la rive gauche de la Hacioglan 6 km en arrière et aller à Ugrar. Ici à gauche et tourner à gauche un peu plus au nord direction Sinneli. Traverser une petite colonie (Cataoluk) à l'extrémité ouest, tournez à gauche avant Sinneli dans la nouvelle route, qui nous amène au versant nord-dessus de la rivière Hacioğlan. Bientôt tourner à gauche de la route nouvelle, atteindre maintenant le village Hacioglan (environ 25 km de Dereköy) et descendre à la rivière. Sur le pont garer la deuxième voiture.",
+      "accesAmont": null,
+      "approche": "Suivre la pente à la rivière à droite, en direction est. Lorsque la pente se détourne de la crique et commence à augmenter, prendre le chemin forestier vers la gauche et suivre toujours la rivière. Plusieurs traversées du ruisseau, suivre le chemin, ensuite le sentier de chèvre qu'on perd finalement. Puis on arrive à une vasque à nager, début du canyon.",
+      "descente": "Nages, marches, désescalades, quelques sauts, 1 rappel (désescalade possible)",
+      "retour": "Au pont sortir à droite",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22489,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 36.283375,
+        "longitude": 29.62472,
+        "label": "du parking 1h 10min jusqu'à l'entrée du cours d'eau"
+      },
+      {
+        "canyonId": 22489,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 36.269554,
+        "longitude": 29.658955,
+        "label": null
+      },
+      {
+        "canyonId": 22489,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 36.286129,
+        "longitude": 29.58625,
+        "label": null
+      },
+      {
+        "canyonId": 22489,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 36.269104,
+        "longitude": 29.658321,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 36.286129,
+      "longitude": 29.58625,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_1c594af2856279f1",
+          "kind": "MAP",
+          "title": "Türkische Riviera-Antalya-Kemer-Fethiye (Freytag & Berndt)",
+          "scale": "1/150000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:39.474415+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23939,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23939/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23939/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23939/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23939/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23939,
+    "identity": {
+      "nom": "Moirin",
+      "nomComplet": "Ruisseau de Moirin, Le Sablier des Roberts",
+      "prefixeNom": "Ruisseau de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23939/Moirin.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Isère",
+      "communePrincipale": "Livet-et-Gavet",
+      "communes": [
+        "Livet-et-Gavet"
+      ],
+      "massif": "Belledonne",
+      "bassin": "Romanche",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a1III",
+      "interet": 2.0,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 920,
+      "deniveleM": 300,
+      "longueurM": 300,
+      "cascadeMaxM": 80,
+      "cordeMiniM": 60,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h",
+      "descente": "2h30",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "Depuis Grenoble, emprunter la route de l'Oisans (D1091), tourner au niveau de la Centrale hydroélectrique des Vernes et se diriger vers Livet.\n\nAprès le pont qui enjambe la Romanche tourner à gauche, passer devant le lavoir, emprunter le chemin de Fontario, tourner de nouveau à gauche et se garer respectueusement sur le parking de La Renardière.",
+      "accesAmont": null,
+      "approche": "Du parking, prendre le chemin goudronné des Sources (le chemin IGN n'existe plus), au bout de 300m, au niveau de la borne à incendie prendre le chemin à gauche. Ça monte raide. On croise un premier ruisseau peu alimenté qu'on dépasse. Celui qu'on vise présente un départ assez évident avec un profil en dalles et une belle ouverture sur la vallée.",
+      "descente": "Départ sur AN RD, et on tombe rapidement sur une série de bons équipements 2016. La grande cascade en goulotte est fractionnée à mi-hauteur en RG. En gros, l'équipement est logique et bien pensé : on trouve les points là où on s'y attend.",
+      "retour": "En arrivant dans la forêt, on trouve une sente RG qui passe sous la ligne HT et ramène au parking.",
+      "engagement": "Le caractère vertical de la descente et des alentours induit un engagement non négligeable.",
+      "periode": "Débit bien souvent faible, voir nul en été. A parcourir en période humide. Se méfier néanmoins du passage en goulotte dans la grande verticale.",
+      "geologie": "Gneiss",
+      "historique": "Ouvreurs inconnus, mais traces de points ancestraux. Équipement moderne en 2016 par Nours et Bergou.",
+      "remarques": "Marche d'approche : ne pas oublier les bâtons de noisetier !"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23939,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.10807,
+        "longitude": 5.931034,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.10807,
+      "longitude": 5.931034,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_bd24b285ad0fb3d2",
+          "kind": "MAP",
+          "title": "3335 ET Le Bourg-d'Oisans (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

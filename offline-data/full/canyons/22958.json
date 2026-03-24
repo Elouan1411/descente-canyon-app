@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:03.381984+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22958,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22958/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22958/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22958/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22958/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22958,
+    "identity": {
+      "nom": "Molard",
+      "nomComplet": "Cascades du Molard",
+      "prefixeNom": "Cascades du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22958/Molard.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Isère",
+      "communePrincipale": "Saint-Laurent-du-Pont",
+      "communes": [
+        "Saint-Laurent-du-Pont"
+      ],
+      "massif": "Chartreuse",
+      "bassin": "Guiers Mort",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 0.8,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": null,
+      "longueurM": null,
+      "cascadeMaxM": null,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "1h",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "Entre St Joseph de Rivière et St Laurent du Pont prendre à droite au Cotterg. Monter jusqu'au cimetière puis emprunter la route forestière.\n\nParking 1 : 1er vallon que l'on croise au niveau du Réservoir.\n\nParking 2 : 2ème vallon.",
+      "accesAmont": null,
+      "approche": null,
+      "descente": "1er vallon : enchaînement de 2 cascades sur AN.\n\n2ème vallon : enchaînement de 2 cascades sur AN.",
+      "retour": "1er vallon : au pied de la 2ème cascade, prendre à droite où l'on récupère un chemin qui nous ramène sur la route forestière que l'on suit jusqu'au parking 1.\n\n2ème vallon : Remonter l'ensemble des cascades en rive gauche jusqu'au parking 2.",
+      "engagement": null,
+      "periode": "A la fonte des neige ou après les fortes pluies.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Il s'agit de la description de 2 vallons différents parallèles : compter 1h de descente pour l'ensemble (30min par vallon)."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22958,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.379929,
+        "longitude": 5.72824,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.379929,
+      "longitude": 5.72824,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_bf7324fa2ae1510e",
+          "kind": "MAP",
+          "title": "3334 OT Massif de la Chartreuse Sud (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

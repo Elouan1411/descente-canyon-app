@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:37.460185+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23659,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23659/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23659/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23659/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23659/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23659,
+    "identity": {
+      "nom": "Audries",
+      "nomComplet": "Ravin des Audries",
+      "prefixeNom": "Ravin des",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23659/Audries.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Drôme",
+      "communePrincipale": "Venterol",
+      "communes": [
+        "Venterol"
+      ],
+      "massif": null,
+      "bassin": "Aigues - Aigue - Eygues - Aygues",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1II",
+      "interet": 1.0,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 830,
+      "deniveleM": 210,
+      "longueurM": 700,
+      "cascadeMaxM": 18,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "35min",
+      "descente": "1h30",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "Depuis Nyons, prendre la direction de Valréas, Venterol sur la D538. Dépasser la route menant au village de Venterol pour emprunter la prochaine à droite, puis en face. Suivre la petite route de la combe de Sauve sur 5km. Grand parking à gauche, 200m après la villa (Burlet, Picker).",
+      "accesAmont": null,
+      "approche": "Suivre la route montant en lacets, jusqu'à la bergerie des Audries. Restez discret et aimable, vous rentrez dans une propriété privé (le passage semble toléré par les propriétaires, panneau \"amis randonneurs, ne partez pas avec nos chiens\"). Se diriger sur la bergerie (second bâtiment) et la contourner par la gauche. Puis suivre, un large sentier emprunté par les brebis s'élevant de suite à droite, pour contourner la grande bâtisse. On surplombe par la suite un pré clôturé duquel part en contre bas de la clôture un sentier menant sur une source captée (refermer l'enclos, svp si vous l'avez ouvert). Commencer la descente sur le second \"talweg\" que traverse le sentier.",
+      "descente": "Succession de plans inclinés plus ou moins abrupts aux vasques peu profondes, entre coupé de courtes marches. Le petit ruisseau est assez propre, certains passages restent parfois encaissés.",
+      "retour": "Sortir sur la route et rejoindre le parking à 200m à droite.",
+      "engagement": "Court bassin versant alimenté par une source captée par la bergerie. Les encaissements sont courts. Il est possible de se mettre à l'abri assez rapidement. Attention aux chutes de pierres, en cas de fortes averses.",
+      "periode": "A faire après de fortes pluies.\n\nIntérêt assez limité, si le petit ruisseau se trouve à sec.",
+      "geologie": null,
+      "historique": "Jean-Claude Digonin, ALAIN 13",
+      "remarques": "Equipement de première sur mono-point (goujon de 8 mm + maillon de chaîne). Pause d'un anneau de corde avec maillon sur un arbre."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23659,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.429283,
+        "longitude": 5.124753,
+        "label": null
+      },
+      {
+        "canyonId": 23659,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.425896,
+        "longitude": 5.119072,
+        "label": null
+      },
+      {
+        "canyonId": 23659,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.427757,
+        "longitude": 5.116339,
+        "label": null
+      },
+      {
+        "canyonId": 23659,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 44.429226,
+        "longitude": 5.124045,
+        "label": "Sentier d'approche"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.427757,
+      "longitude": 5.116339,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_4e3735bcc40c64f3",
+          "kind": "MAP",
+          "title": "3139 OT Nyons (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:09.565216+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22190,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22190/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22190/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22190/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22190/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22190,
+    "identity": {
+      "nom": "Calandrino (supérieur)",
+      "nomComplet": "Rio Calandrino (supérieur)",
+      "prefixeNom": "Rio",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22190/Calandrino-superieur.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Ligurie",
+      "departement": "Genova",
+      "communePrincipale": "Borzonasca",
+      "communes": [
+        "Borzonasca"
+      ],
+      "massif": "Monte Aiona",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2III",
+      "interet": 1.9,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 950,
+      "deniveleM": 355,
+      "longueurM": 2000,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 30,
+      "navette": "17.0km"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "4h",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": "sortez de l’autoroute A12 à Lavagna et suivez la SP586 vers Carasco et Bóbbio. Dans Borzonasca, juste avant le pont au niveau d’une église prenez à droite vers Pratosopralacroce. La route zigue-zague longuement jusqu’à la bifurcation pour Caroso. On suit cette route pendant 2,4 km, à la deuxième bifurcation prendre à droite et après 400 mètres garez-vous au mieux.\n\nAccès",
+      "accesAmont": "Retourner à Borzonasca et prendre la SP586 vers Rezzoaglio-Bobbio, la suivre presque 5km jusqu’à la bifurcation pour Giacopiane-Gazzolo. Quelques km après Gazzolo la route se transforme en piste et quand on aperçoit des lacs, on descend sur la droite au parking qui est au dessus du Lac Inférieur de Pian Sapeio.",
+      "approche": "Descendre au barrage, traverser la première passerelle et descendre dans le lit du torrent",
+      "descente": "Un petit encaissement vertical est suivi d'une longue marche (600 mètres). Le 2eme encaissement est plus aquatique et ludique. Au total 14 rappels.",
+      "retour": "Altitude 595 mètres. 2 cairns rive droite, en haut on aperçoit un panneau \"danger\". Monter sur le sentier qui descend et puis traverse jusqu'à un petit col juste au dessus de Caroso. Du col descendre à gauche.",
+      "engagement": "Faible.",
+      "periode": "Première partie peu aquatique, 2eme bien alimenté.\n\nPrintemps et automne.",
+      "geologie": null,
+      "historique": "1994 G. Pizzorni & C.",
+      "remarques": "Il y a aussi une partie inférieure avec 7 rappels, mais on doit marcher un autre kilomètre jusqu'au pont de la route de Pratosopralacroce."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22190,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.460812,
+        "longitude": 9.400198,
+        "label": null
+      },
+      {
+        "canyonId": 22190,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.447216,
+        "longitude": 9.404259,
+        "label": null
+      },
+      {
+        "canyonId": 22190,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 44.45829,
+        "longitude": 9.398267,
+        "label": null
+      },
+      {
+        "canyonId": 22190,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 44.439171,
+        "longitude": 9.399249,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 44.45829,
+      "longitude": 9.398267,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

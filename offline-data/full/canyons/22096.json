@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:49.124785+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22096,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22096/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22096/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22096/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22096/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22096,
+    "identity": {
+      "nom": "Ladral",
+      "nomComplet": "Val da Ladral, Val Murter",
+      "prefixeNom": "Val da",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22096/Ladral.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Andiast",
+      "departement": "Graubünden/Grigioni/Grischun",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a2III",
+      "interet": 2.1,
+      "nbVotes": 8
+    },
+    "metrics": {
+      "altitudeDepartM": 2010,
+      "deniveleM": 400,
+      "longueurM": 1400,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 25,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "??",
+      "descente": "3h00",
+      "retour": "01h0001"
+    },
+    "topo": {
+      "accesAval": "La route d'accès est interdite. Demander l'autorisation à la mairie (25 F/S) En cas de fraude prévoyez 200 F/S",
+      "accesAmont": null,
+      "approche": null,
+      "descente": "2 parties distinctes. Une première section étonnante. Tout est mini, des creusements jusqu'aux cascades. Les passages sont originaux.\n\nUne 2ème partie plus encaissée et technique.",
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": "Ouverture le 12 août 2009 avec Timo Stammwitz, Patrick Chollot, Yves Daniou, Valérie Félix et Caracal.",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22096,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.818043,
+        "longitude": 9.066435,
+        "label": null
+      },
+      {
+        "canyonId": 22096,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.814453,
+        "longitude": 9.082228,
+        "label": null
+      },
+      {
+        "canyonId": 22096,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.812618,
+        "longitude": 9.085007,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.812618,
+      "longitude": 9.085007,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

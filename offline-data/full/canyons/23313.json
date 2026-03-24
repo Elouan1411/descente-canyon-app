@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:31.848436+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23313,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23313/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23313/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23313/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23313/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23313,
+    "identity": {
+      "nom": "Vicarié",
+      "nomComplet": "Ravin de Vicarié",
+      "prefixeNom": "Ravin de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23313/Vicarie.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-de-Haute-Provence",
+      "communePrincipale": "La Palud-sur-Verdon",
+      "communes": [
+        "La Palud-sur-Verdon"
+      ],
+      "massif": "Verdon",
+      "bassin": "Verdon",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1II",
+      "interet": 1.6,
+      "nbVotes": 7
+    },
+    "metrics": {
+      "altitudeDepartM": 1000,
+      "deniveleM": 200,
+      "longueurM": 400,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "2h00",
+      "retour": "50min"
+    },
+    "topo": {
+      "accesAval": "), puis revenir sur La Palud et effectuer avec votre second véhicule, 1,8 km, dès la sortie du village en direction du Col d'Ayen. De là, emprunter une petite piste sur votre gauche menant à un champ un peu avant le ravin d'Ayen (parking",
+      "accesAmont": ").",
+      "approche": "En direction du Col d'Ayen, au fond du champ, se rendre au départ de la descente.",
+      "descente": "C15 1 pt en RG; (C6+C6+Pi3) R25 1 pt en RD ; D1; D2; C5 1 pt RD ; C17 1pt en RD ; C18 1 pt en RD ; C8 1 pt en RD ; marche de 40m ; C5 1 pt en RD, mini-encaissement avec D5 ; D3 ; sortie du mini-encaissement ; D3 ; C10 1 pt en RG ; C8 1 pt en RD ; C25 1 pt en RG.",
+      "retour": "De la dernière cascade, faire 10m à travers la végétation pour se rendre sur un sentier. Prendre à gauche et suivre ce sentier jusqu'à un gros cairn. De là, ce sentier s'élève vers la barre rocheuse et se perd par la suite... Suivre au mieux en parallèle de cette falaise, 50 m plus bas, des pseudos petites sentes pour rejoindre presque au bout de celle-ci, un sentier bien marqué de cairns. Ce sentier s'élève de nouveau et passe au dessus de la barre rocheuse pour rejoindre votre véhicule.\n\nSi vous avez mis en place une navette pour le retour :\n\nDe la dernière cascade, rejoindre la route en face (façon sanglier +++) et le parking aval (non testé, mais prévoir de quoi couper du bois et des broussailles). Sinon emprunter le sentier partant à droite pour rejoindre le ravin d'Ayen et le parking de Mainmorte (non testé aussi).",
+      "engagement": "Sur goujons mono-points de 8mm + maillons de chaîne",
+      "periode": "Ravin sec la majeure partie du temps.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Équipement : terrain d'aventure.\n\nPossibilité d'enchaîner avec le ravin de Mainmorte."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23313,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.769211,
+        "longitude": 6.320597,
+        "label": null
+      },
+      {
+        "canyonId": 23313,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.767197,
+        "longitude": 6.320554,
+        "label": null
+      },
+      {
+        "canyonId": 23313,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.76981,
+        "longitude": 6.321412,
+        "label": null
+      },
+      {
+        "canyonId": 23313,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 43.767139,
+        "longitude": 6.32233,
+        "label": "sentier de retour"
+      },
+      {
+        "canyonId": 23313,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 43.769066,
+        "longitude": 6.324744,
+        "label": "sentier de retour"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.76981,
+      "longitude": 6.321412,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_371b2a24e7aa2a73",
+          "kind": "MAP",
+          "title": "3442 OT Gorges du Verdon (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

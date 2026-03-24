@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:12.170757+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23233,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23233/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23233/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23233/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23233/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23233,
+    "identity": {
+      "nom": "Schmuer",
+      "nomComplet": "Schmuer",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23233/Schmuer.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": null,
+      "departement": "Graubünden/Grigioni/Grischun",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": "Vorderrhein",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 1.6,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1414,
+      "deniveleM": 140,
+      "longueurM": 700,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1min",
+      "descente": "2h",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "Se garer sous le barrage de Pigniu.",
+      "accesAmont": null,
+      "approche": "Descente sous barrage, bien appeler le barrage avant d'entreprendre la descente.",
+      "descente": null,
+      "retour": "Sortir sur le sentier RG qui remonte à la route puis au parking.",
+      "engagement": "Pas d'échappatoire.",
+      "periode": null,
+      "geologie": null,
+      "historique": "?",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23233,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.823921,
+        "longitude": 9.11039,
+        "label": null
+      },
+      {
+        "canyonId": 23233,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 46.82373,
+        "longitude": 9.11124,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 46.82373,
+      "longitude": 9.11124,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

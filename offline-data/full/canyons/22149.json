@@ -1,0 +1,176 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:01.068837+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22149,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22149/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22149/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22149/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22149/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/22149/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 22149,
+    "identity": {
+      "nom": "Passo (inférieur)",
+      "nomComplet": "Ribeira do Passo (inférieur)",
+      "prefixeNom": "Ribeira do",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22149/Passo-inferieur.html"
+    },
+    "location": {
+      "pays": "Portugal",
+      "region": "Madeira",
+      "departement": "São Vicente Municipality",
+      "communePrincipale": "São Vicente",
+      "communes": [
+        "São Vicente"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a2II",
+      "interet": 2.7,
+      "nbVotes": 19
+    },
+    "metrics": {
+      "altitudeDepartM": 600,
+      "deniveleM": 205,
+      "longueurM": 600,
+      "cascadeMaxM": 55,
+      "cordeMiniM": 55,
+      "navette": "2.3km"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "2h45",
+      "retour": "25"
+    },
+    "topo": {
+      "accesAval": "Laisser la première voiture dans un lacet dans Lanço (voir guide d'Antoine Florin) puis se rendre sur la route 4x4 ER208 (mais ça passe en voiture normale) puis se garer près d'une maison forestière après le premier lacet (présence d'un panneau touristique pour le chemin longeant la levada Da Faja Do Rodriguez)",
+      "accesAmont": null,
+      "approche": "Longer la levada Da Jaja Do Rodriguez, vous y apercevrez le canyon des Pigeons puis après le deuxième tunnel, juste avant d'entrer dans le troisième, un point montre le début du rappel pour accéder au canyon",
+      "descente": "Très bel enchainement de rappels dans un cadre verdoyant. Une très belle cascade de 60 mètres qui est arrosée sur les 20 derniers mètres.",
+      "retour": "La sortie du canyon se fait 5/6 rappels après la C60. Il faudra alors repérer en rive droite une levada qui prend sa source dans le canyon. Cette levada (bien visible) sera à suivre pendant 25 min et mène sur la route où il y aura le véhicule ou alors une petite marche de 20min sur la route pour rejoindre la maison forestière",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": "Ouverture en novembre 2001",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22149,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 32.78511,
+        "longitude": -17.062798,
+        "label": null
+      },
+      {
+        "canyonId": 22149,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 32.785507,
+        "longitude": -17.057991,
+        "label": null
+      },
+      {
+        "canyonId": 22149,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 32.778446,
+        "longitude": -17.048233,
+        "label": null
+      },
+      {
+        "canyonId": 22149,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 32.785633,
+        "longitude": -17.052101,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 32.778446,
+      "longitude": -17.048233,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_d4559c6470527679",
+          "kind": "TOPOGUIDE",
+          "title": "Meeting Canyoning Madeira 2016",
+          "authors": [
+            "Duarte Silva e colaboradores"
+          ],
+          "publicationYear": 2016,
+          "reference": null,
+          "editor": "Clube Naval do Seixal",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1343/topoguide.html"
+        },
+        {
+          "id": "biblio_2714eb823c608ae0",
+          "kind": "TOPOGUIDE",
+          "title": "Meeting Canyoning Madeira 2015",
+          "authors": [
+            "Duarte Silva"
+          ],
+          "publicationYear": 2015,
+          "reference": null,
+          "editor": "Clube Naval do Seixal",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1342/topoguide.html"
+        },
+        {
+          "id": "biblio_9fee8e80e3298324",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons de Madère - Descentes Sportives et Randonnées",
+          "authors": [
+            "Antoine Florin"
+          ],
+          "publicationYear": 2007,
+          "reference": "978-2-9529227-0-8",
+          "editor": "auto-édition",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1194/topoguide.html"
+        }
+      ],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_8d11dea526836ad4",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyoning.camadeira.com/canyons/ribeira-do-passo-inf/",
+          "url": "http://canyoning.camadeira.com/canyons/ribeira-do-passo-inf/"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 204,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté",
+          "summary": "Demande d'autorisation auprès du service forestier qui se situe au jardin botanique de Funchal (demande possible par mail dsfrn.sra@gov-madeira.pt). Demande à faire 48h à l'avance.",
+          "remark": null,
+          "details": null,
+          "effectiveDate": null,
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/204/legislation.html",
+          "attachments": []
+        }
+      ]
+    }
+  }
+}

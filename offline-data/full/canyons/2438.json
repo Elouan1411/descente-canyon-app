@@ -1,0 +1,185 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:45:30.446800+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2438,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2438/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2438/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2438/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2438/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/2438/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 2438,
+    "identity": {
+      "nom": "Belcaire (Aval)",
+      "nomComplet": "Cascades de Belcaire (Aval)",
+      "prefixeNom": "Cascades de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2438/Belcaire-Aval.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Ariège",
+      "communePrincipale": "Auzat",
+      "communes": [
+        "Auzat"
+      ],
+      "massif": "Montcalm",
+      "bassin": "Vicdessos",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 1.8,
+      "nbVotes": 16
+    },
+    "metrics": {
+      "altitudeDepartM": 1440,
+      "deniveleM": 250,
+      "longueurM": 600,
+      "cascadeMaxM": 35,
+      "cordeMiniM": 40,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "25mn",
+      "descente": "2h",
+      "retour": "20mn"
+    },
+    "topo": {
+      "accesAval": "Depuis Vicdessos prendre la direction de Marc puis de l'Artigue. Avant l'Artigue prendre à droite en direction de Toutous et de Tute. Sur cette route prendre deux fois la première à gauche jusqu'à un virage en épingle. Prendre tout droit jusqu'au parking (panneau du canyon - petit ruisseau)",
+      "accesAmont": null,
+      "approche": "Un chemin monte rive gauche du ruisseau jusqu'à une petite prise d'eau. Traverser le ruisseau et suivre le chemin jusqu'à un un grand pré que l'on traverse (point bleu) pour atteindre le depart de la descente.",
+      "descente": "Ruisseau de montagne soumis à tous types d'intempéries et c'est, accessoirement l'hiver, un couloir d'avalanche. Le début de la course est donc délicat et se fait dans un enchevêtrement de troncs et de branches (constaté lors de notre dernière descente : 22 juin 2003). L'intérêt réside dans l'enchainement des deux plus hautes cascades. Le reste n'est qu'une succession de petites cascades et de ressauts sans grand interêt.",
+      "retour": "Au niveau de la passerelle, quitter le lit de la rivière et prendre le sentier vers la gauche pour retourner aux véhicules",
+      "engagement": "Course peu encaissée mais ne présentant toutefois pas de réelles échappatoires",
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "Attention aux orages violents, c'est un ruisseau de haute montagne. De nombreux arbres peuvent compliquer la progression, surtout au bas des cascades."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2438,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.718044,
+        "longitude": 1.427407,
+        "label": null
+      },
+      {
+        "canyonId": 2438,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.715553,
+        "longitude": 1.432815,
+        "label": null
+      },
+      {
+        "canyonId": 2438,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 42.719212,
+        "longitude": 1.438651,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 42.719212,
+      "longitude": 1.438651,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_e58cde58d063e1f8",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons Pyrénées. 50 descentes.",
+          "authors": [
+            "Christian Perilhou"
+          ],
+          "publicationYear": 2014,
+          "reference": "9782954865706",
+          "editor": null,
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/186/Canyons-Pyreneens-:-50-Descentes-Canyons.html"
+        },
+        {
+          "id": "biblio_794c6164c09a8f92",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons et cascades en pays d'Auzat et du Vicdessos",
+          "authors": [
+            "collectif"
+          ],
+          "publicationYear": 1999,
+          "reference": null,
+          "editor": null,
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/197/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_90c31be1b182c05b",
+          "kind": "MAP",
+          "title": "2148 OT Vicdessos (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_bd31a6fb3f8e9823",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.topos-canyon.fr.st/ariege.html",
+          "url": "http://www.topos-canyon.fr.st/ariege.html"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 399,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté municipal (Auzat) - 16 nov 2018",
+          "summary": "Pratique nocturne interdite. Des périodes (dates, horaires) sont fixés en fonction des canyons, à l'exception de l'Argensou aval, autorisé toute l'année entre 9h et 17h.\n\nPar ailleurs, il faut :\n\n- ne pas dépasser 10 personnes max par groupe\n\n- se conformer aux balisages (accès et sortie en particulier) et consignes mises en place.\n\n- utiliser exclusivement les aires de stationnement prévues à cet effet\n\n- laisser les lieux propres\n\n- observer un comportement discret (pas de cris, pas de bruits dans les villages...)",
+          "remark": null,
+          "details": "Arrêté municipal (Auzat) n°030.18.052 du 16 novembre 2018",
+          "effectiveDate": "16 nov 2018",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/399/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté municipal (Auzat) n°030.18.052 du 16 novembre 2018",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem399_pj1.pdf"
+            }
+          ]
+        },
+        {
+          "id": 388,
+          "status": "Abrogé",
+          "action": "Réglemente",
+          "title": "Arrêté municipal (Auzat) - 29 août 2018",
+          "summary": "Pratique autorisée du 1er mai au 30 septembre. Pour certains canyons, il y a aussi des restrictions horaires.\n\nGroupe maximum 8 personnes + 2 encadrants.",
+          "remark": null,
+          "details": "Arrêté municipal (Auzat) n°38.18.048 du 29 août 2018",
+          "effectiveDate": "16 nov 2018",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/388/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté municipal (Auzat) n°38.18.048 du 29 août 2018",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem388_pj1.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

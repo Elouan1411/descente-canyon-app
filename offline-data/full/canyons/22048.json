@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:39.522540+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22048,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22048/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22048/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22048/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22048/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22048,
+    "identity": {
+      "nom": "Le Moine",
+      "nomComplet": "Le Moine",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22048/Le-Moine.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Isère",
+      "communePrincipale": "Saint-Pierre-de-Chartreuse",
+      "communes": [
+        "Saint-Laurent-du-Pont",
+        "Saint-Pierre-de-Chartreuse"
+      ],
+      "massif": "Chartreuse",
+      "bassin": "Guiers Mort",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a1V",
+      "interet": 2.3,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 1620,
+      "deniveleM": 440,
+      "longueurM": 600,
+      "cascadeMaxM": 55,
+      "cordeMiniM": 60,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "2h",
+      "descente": "3h",
+      "retour": "45min"
+    },
+    "topo": {
+      "accesAval": "Se garer au Musée de La Correrie de St Pierre de Chartreuse.",
+      "accesAmont": null,
+      "approche": "Prendre le GR qui monte au Grand Som par le pas de la Suiffière via le col du Frenay. A la bifurcation du Pas de la Suiffière continuer tout droit dans le pierrier en direction de la Combe du Rialet. Au milieu de la combe à l'aplomb d'un bloc descendre à gauche (un point). On rejoint un peu plus bas sur la droite le ruisseau du Rialet.",
+      "descente": "Succession de cascades dans un cadre minéral étonnant et vierge jusqu'à notre passage. Pas d'échappatoire sauf la sortie. Possibilité de shunter les trois dernières cascades en prenant à gauche un sentier de retour 200m après la C32.",
+      "retour": "Si vous avez fait l'intégralité de la descente, 10 min après la dernière cascade repérez un énorme bloc sur votre droite avec une trappe métallique noire (il paraitraît que c'est là que les moine fabriquent leur fameuse Chartreuse Verte et Jaune). Suivre les tuyaux en rive gauche, ils mènent au Monastère.",
+      "engagement": "Pas d'échappatoire dès le premier rappel sur piton. Équipement sur goujons pour la suite.",
+      "periode": "À ne pas faire quand la combe du Rialet est enneigée. La descente est le réceptacle aux avalanches du bassin versant.",
+      "geologie": null,
+      "historique": "Première équipée par le Padawan, Yoda , Thierry V, 2020, en 2007.",
+      "remarques": "Crues phénoménales, avalanches idem. Prévoir de quoi re-équiper."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22048,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.371391,
+        "longitude": 5.807873,
+        "label": null
+      },
+      {
+        "canyonId": 22048,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.368729,
+        "longitude": 5.798936,
+        "label": null
+      },
+      {
+        "canyonId": 22048,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.350666,
+        "longitude": 5.791147,
+        "label": null
+      },
+      {
+        "canyonId": 22048,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 45.370426,
+        "longitude": 5.803957,
+        "label": "sortie intermediaire"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.350666,
+      "longitude": 5.791147,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_bf7324fa2ae1510e",
+          "kind": "MAP",
+          "title": "3334 OT Massif de la Chartreuse Sud (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_44acb8f87aa15c3c",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://bouzeland.over-blog.com/pages/le_moine-1297182.html",
+          "url": "http://bouzeland.over-blog.com/pages/le_moine-1297182.html"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

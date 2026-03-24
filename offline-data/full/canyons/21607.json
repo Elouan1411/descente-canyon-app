@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:01.940295+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21607,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21607/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21607/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21607/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21607/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21607,
+    "identity": {
+      "nom": "Paraduça",
+      "nomComplet": "Ribeira de Paraduça",
+      "prefixeNom": "Ribeira de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21607/Paraduca.html"
+    },
+    "location": {
+      "pays": "Portugal",
+      "region": "Aveiro",
+      "departement": "Vale de Cambra Municipality",
+      "communePrincipale": "Arões",
+      "communes": [
+        "Arões"
+      ],
+      "massif": "Serra da Freita",
+      "bassin": "Rio Vouga",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a2II",
+      "interet": 2.0,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": null,
+      "longueurM": null,
+      "cascadeMaxM": null,
+      "cordeMiniM": null,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "??",
+      "descente": "??",
+      "retour": "??"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": "Plus grand rappel 20 mètres.",
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "La partie la plus intéressante se situe entre le pont du Rio Cabrum et jusqu'au Rio Teixeira."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21607,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 40.80695,
+        "longitude": -8.27105,
+        "label": null
+      },
+      {
+        "canyonId": 21607,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 40.795853,
+        "longitude": -8.25635,
+        "label": null
+      },
+      {
+        "canyonId": 21607,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 40.806782,
+        "longitude": -8.270814,
+        "label": null
+      },
+      {
+        "canyonId": 21607,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 40.795391,
+        "longitude": -8.256774,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 40.806782,
+      "longitude": -8.270814,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

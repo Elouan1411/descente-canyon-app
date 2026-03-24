@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:25.986197+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21985,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21985/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21985/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21985/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21985/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21985,
+    "identity": {
+      "nom": "Beynets",
+      "nomComplet": "Torrent des Beynets",
+      "prefixeNom": "Torrent des",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21985/Beynets.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Hautes-Alpes",
+      "communePrincipale": "Espinasses",
+      "communes": [
+        "Espinasses"
+      ],
+      "massif": null,
+      "bassin": "Durance",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a1IV",
+      "interet": 1.6,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 930,
+      "deniveleM": 250,
+      "longueurM": 650,
+      "cascadeMaxM": 50,
+      "cordeMiniM": 50,
+      "navette": "4.6km"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "2h30",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": ".\n\nPour le parking",
+      "accesAmont": "suivre la D3 sur 3 km et prendre à gauche, par la D103, pour se rendre à 150 m avant le panneau de l'entrée du village de Rousset.",
+      "approche": "Suivre la piste de gauche pour passer sous les lignes haute tension. La piste vous mène sur un champs non loin du départ. Rejoindre au mieux le ruisseau.",
+      "descente": "Les grandes verticales sont équipées (vérifier les sangles ou cordes), le reste se désescalade.",
+      "retour": "Suivre le ruisseau jusqu'au pont (parking aval).",
+      "engagement": "l'encaissement n'est pas trop prononcé, mais les échappatoires sont peu évidents du fait d'une roche très instable.",
+      "periode": "En eau au printemps.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Une belle vue sur la surverse du lac. Roche très instable (chutes de pierres)."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21985,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.471645,
+        "longitude": 6.250942,
+        "label": null
+      },
+      {
+        "canyonId": 21985,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.469025,
+        "longitude": 6.253742,
+        "label": null
+      },
+      {
+        "canyonId": 21985,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 44.477463,
+        "longitude": 6.255662,
+        "label": null
+      },
+      {
+        "canyonId": 21985,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 44.467831,
+        "longitude": 6.254911,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 44.477463,
+      "longitude": 6.255662,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

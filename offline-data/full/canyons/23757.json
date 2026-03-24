@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:59.226317+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23757,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23757/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23757/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23757/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23757/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23757,
+    "identity": {
+      "nom": "Entraix [affluent RD]",
+      "nomComplet": "Affluent rive droite du Riou d' Entraix [affluent RD]",
+      "prefixeNom": "Affluent rive droite du Riou d'",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23757/Entraix-affluent-RD.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-de-Haute-Provence",
+      "communePrincipale": "Valavoire",
+      "communes": [
+        "Valavoire"
+      ],
+      "massif": "Massif des Monges",
+      "bassin": "Asse",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1II",
+      "interet": 0.6,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 1070,
+      "deniveleM": 180,
+      "longueurM": 200,
+      "cascadeMaxM": 15,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "1h",
+      "retour": "1h15"
+    },
+    "topo": {
+      "accesAval": "De Sisteron prenez la direction de la Motte-du-Caire. A un carrefour peu visible prenez la direction de Clamesane et Bayons. A une autre intersection encore plus discrète prenez la direction de Valavoire (D104). Juste avant Valavoire garez-vous dans la dernière épingle à gauche (départ d'une piste en face).",
+      "accesAmont": null,
+      "approche": "Prendre la piste sur 10 m et descendre au mieux dans le ravin en contrebas.",
+      "descente": "Enchaînement d'une quinzaine de ressauts dont 8 nécessiteront la corde. Malheureusement il manque l'esthétique...",
+      "retour": "Remonter le Riou d'Entraix jusqu'à la belle cascade d'Entraix. De là remonter en RG dans l'éboulis en contournant les barres par la droite puis rejoindre la crête sur votre gauche (c'est raide). De là redescendre vers le Riou d'Entraix en amont de la cascade d'Entraix, passer RD et suivre les sentes et champs qui vous ramènent au parking.",
+      "engagement": "Aucune échappatoire.",
+      "periode": "Doit couler après les pluies ou à la fonte des neiges.",
+      "geologie": "Roche délitée",
+      "historique": "Sommairement équipé (mono-points 8 mm) par Tony et lolo en janvier 2017",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23757,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.273869,
+        "longitude": 6.068742,
+        "label": null
+      },
+      {
+        "canyonId": 23757,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.275074,
+        "longitude": 6.067883,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.275074,
+      "longitude": 6.067883,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_ec844e72d95ece0e",
+          "kind": "MAP",
+          "title": "3339 ET La Motte-Du-Caire (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

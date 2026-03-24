@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:59:18.637816+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24130,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24130/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24130/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24130/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24130/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24130,
+    "identity": {
+      "nom": "Rieutord (aval)",
+      "nomComplet": "Le Rieutord (aval)",
+      "prefixeNom": "Le",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24130/Rieutord-aval.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Gard",
+      "communePrincipale": "Saint-Martial",
+      "communes": [
+        "Saint-Martial"
+      ],
+      "massif": "Mont Aigoual",
+      "bassin": "Hérault",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a3II",
+      "interet": 2.0,
+      "nbVotes": 8
+    },
+    "metrics": {
+      "altitudeDepartM": 510,
+      "deniveleM": 100,
+      "longueurM": 800,
+      "cascadeMaxM": 10,
+      "cordeMiniM": 15,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "1h30",
+      "retour": "35min"
+    },
+    "topo": {
+      "accesAval": "De Sumène, se rendre à Saint-Martial par la D20. Puis, emprunter la D290. Passer le col de l'Astric et poursuivre sur le col de la Croisette. Au col de la Croisette, prendre à droite et descendre la route. Se garer sur le parking juste après le pont de l'Amarine (alt. 510m sur l'IGN).",
+      "accesAmont": null,
+      "approche": "Au pont, descendre au bord de l'eau par la rive droite.",
+      "descente": "Descente ludique, jonchée de quelques rappels, petits sauts, toboggans, nage ... Sur large lit de rivière, sculpté de quelques belles marmites ainsi que de petits biefs à passer.",
+      "retour": "Au point (alt. 407m de l'GN), sortir en rive droite via une sorte de sente mal marquée sur une pente. Remonter sur Les Aumèdes, avant de récupérer la route et votre véhicule.",
+      "engagement": "Aucun",
+      "periode": "A faire en début de saison, car presque sec l'été.",
+      "geologie": null,
+      "historique": "?",
+      "remarques": "Equipement sur broches scellées.\n\nPeut se descendre après avoir parcouru le Rieutord amont ou le Valat de Blaquisses, ceux-ci, en complément d'une journée canyoning sur le secteur."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24130,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.036503,
+        "longitude": 3.754817,
+        "label": null
+      },
+      {
+        "canyonId": 24130,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.031681,
+        "longitude": 3.752242,
+        "label": null
+      },
+      {
+        "canyonId": 24130,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.03664,
+        "longitude": 3.754989,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.03664,
+      "longitude": 3.754989,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_c0245a1ccc4224fe",
+          "kind": "MAP",
+          "title": "2741 ET Saint-Hippolyte du Fort (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

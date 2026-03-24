@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:30.263628+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22559,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22559/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22559/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22559/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22559/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/22559/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 22559,
+    "identity": {
+      "nom": "Pas de Souci",
+      "nomComplet": "Ravin du Pas de Souci, Ravin de Lubagne",
+      "prefixeNom": "Ravin du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22559/Pas-de-Souci.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Lozère",
+      "communePrincipale": "Le Massegros",
+      "communes": [
+        "Le Massegros"
+      ],
+      "massif": "Causse Méjean",
+      "bassin": "Tarn",
+      "coursEau": "Ravin de Lubagne"
+    },
+    "rating": {
+      "cotation": "v3a1II",
+      "interet": 1.8,
+      "nbVotes": 10
+    },
+    "metrics": {
+      "altitudeDepartM": 470,
+      "deniveleM": 80,
+      "longueurM": 200,
+      "cascadeMaxM": 19,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15/20min",
+      "descente": "30/45min",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "Dans les gorges du Tarn, aller aux Vignes. Passer le pont et monter en direction du lieu-dit \"Le Ménial\". Très vite, tourner à gauche au niveau du lieu-dit \"Saint-Prejet\" et se garer sur le vaste parking à gauche (réglementé les nuits). La suite de la route vers \"Le Ménial\" est interdite sauf riverains.",
+      "accesAmont": null,
+      "approche": "Du parking, gagner Le Ménial par la route puis emprunter vers l'amont le sentier de GRP du tour du Causse Méjean. Après une montée caillouteuse, passer 2 \"collus\" et repérer, à gauche, une sente qui descend au fond d'un talweg bien marqué (petites désescalades). NB : si sur le sentier vous arrivez à un croisement de sentiers balisés (point coté 561m sur IGN), c'est que vous êtes allés trop loin !",
+      "descente": "Joli ravin bien creusé, notamment au niveau des 2 premiers rappels.\n\nSuccession de 4 rappels avec des MC d'accès en place : R1 14m, R2 19m, R3 10m, R4 10m.",
+      "retour": "Du pied du dernier rappel, rester RD (falaise) et suivre une sente qui descend vers le Tarn et passe en RG plus bas pour longer le Tarn vers l'aval. Plus loin, on arrive à une petite clairière : prendre le sentier qui monte le long d'un petit talweg pour arriver à une grande clairière (énorme bloc au milieu) et la traverser quasi à niveau : on arrive directement au Ménial.",
+      "engagement": null,
+      "periode": "Toujours sec, mais glissant l'hiver (situé versant nord). Agréable l'été avec baignade dans le Tarn tout proche.\n\nRivière profonde à cet endroit (8/9m). Des sauts de 10/11m sont possibles.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Très fréquenté par les pros du coin l'été.\n\nSi baignade, respecter les pêcheurs .\n\nTrès sympa à faire avec des enfants."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22559,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.288055,
+        "longitude": 3.240389,
+        "label": null
+      },
+      {
+        "canyonId": 22559,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.288982,
+        "longitude": 3.238581,
+        "label": null
+      },
+      {
+        "canyonId": 22559,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.284443,
+        "longitude": 3.235461,
+        "label": "hameau du Meynial"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.284443,
+      "longitude": 3.235461,
+      "label": "hameau du Meynial"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_3bf86c23b7e29bf2",
+          "kind": "MAP",
+          "title": "2640 OT Gorges du Tarn (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 508,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Lozère) - 26 oct 2016",
+          "summary": "La pratique du canyonisme est autorisée sur le département de la Lozère du lever au coucher du soleil. Il est cependant interdit de s’engager dans un canyon après 17 heures.\n\nL'arrêté préfectoral réglemente également la pratique du canyonisme en Lozère sur les points suivants : les équipements obligatoires, la prise d’information préalable, l'accès aux sites, l’effectif des groupes, l’encadrement, le respect du milieu naturel, des équipements et des autres usagers, le retour d’expérience et les contrôles.",
+          "remark": null,
+          "details": "Arrêté préfectoral (Lozère) n°DDCSPP-JESEP-2016-300-001 du 26 octobre 2016",
+          "effectiveDate": "26 oct 2016",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/508/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral (Lozère) n°DDCSPP-JESEP-2016-300-001 du 26 octobre 2016",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem508_pj1.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

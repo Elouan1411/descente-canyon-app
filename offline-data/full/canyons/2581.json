@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:46:03.760307+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2581,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2581/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2581/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2581/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2581/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/2581/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 2581,
+    "identity": {
+      "nom": "Madroñales",
+      "nomComplet": "Barenco de los Madroñales",
+      "prefixeNom": "Barenco de los",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2581/Madronales.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Andalucía",
+      "departement": "Provincia de Granada",
+      "communePrincipale": "Lentegí",
+      "communes": [
+        "Lentegí"
+      ],
+      "massif": "Costa del Sol",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "",
+      "interet": null,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": null,
+      "longueurM": null,
+      "cascadeMaxM": null,
+      "cordeMiniM": null,
+      "navette": null
+    },
+    "timings": {
+      "approche": null,
+      "descente": null,
+      "retour": null
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2581,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 36.84956,
+        "longitude": -3.750865,
+        "label": null
+      },
+      {
+        "canyonId": 2581,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 36.848324,
+        "longitude": -3.744256,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 36.84956,
+      "longitude": -3.750865,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 88,
+          "status": "Actif",
+          "action": "Interdit",
+          "title": "Arrêté",
+          "summary": "La descente de Madroñales est interdite",
+          "remark": null,
+          "details": null,
+          "effectiveDate": null,
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/88/legislation.html",
+          "attachments": []
+        }
+      ]
+    }
+  }
+}

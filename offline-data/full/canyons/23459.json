@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:51.344069+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23459,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23459/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23459/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23459/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23459/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23459,
+    "identity": {
+      "nom": "Ambruseit (inférieur)",
+      "nomComplet": "Rio dell' Ambruseit (inférieur), Ambruseit",
+      "prefixeNom": "Rio dell'",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23459/Ambruseit-inferieur.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Frioul-Vénétie julienne",
+      "departement": "Udine",
+      "communePrincipale": "Arta Terme",
+      "communes": [
+        "Arta Terme"
+      ],
+      "massif": "Alpes Carniques - Carniche - Karnischen",
+      "bassin": "But",
+      "coursEau": "Ambruseit"
+    },
+    "rating": {
+      "cotation": "v4a3III",
+      "interet": 2.9,
+      "nbVotes": 7
+    },
+    "metrics": {
+      "altitudeDepartM": 820,
+      "deniveleM": 270,
+      "longueurM": 800,
+      "cascadeMaxM": 40,
+      "cordeMiniM": 45,
+      "navette": "8.5km"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "4h",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23459,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.469437,
+        "longitude": 13.107129,
+        "label": null
+      },
+      {
+        "canyonId": 23459,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.469215,
+        "longitude": 13.076482,
+        "label": "sortie vers piste"
+      },
+      {
+        "canyonId": 23459,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 46.469479,
+        "longitude": 13.106919,
+        "label": null
+      },
+      {
+        "canyonId": 23459,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 46.468914,
+        "longitude": 13.066504,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 46.469479,
+      "longitude": 13.106919,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

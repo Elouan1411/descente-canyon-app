@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:32.362198+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23635,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23635/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23635/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23635/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23635/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23635,
+    "identity": {
+      "nom": "Rabassiés",
+      "nomComplet": "Ravin des Rabassiés",
+      "prefixeNom": "Ravin des",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23635/Rabassies.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Hérault",
+      "communePrincipale": "Lacoste",
+      "communes": [
+        "Lacoste"
+      ],
+      "massif": null,
+      "bassin": "Hérault",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1II",
+      "interet": 0.6,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 215,
+      "deniveleM": 115,
+      "longueurM": 510,
+      "cascadeMaxM": 23,
+      "cordeMiniM": 23,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "2min",
+      "descente": "45min",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "De Lacoste, se rendre à Mas Audran puis emprunter la route qui monte au-dessus du hameau en direction du lac. Se garer sans gêner les agriculteurs au point coté IGN 226 (croisement).\n\nOu garer un véhicule au pont de la sortie si l'on veut faire une navette.",
+      "accesAmont": null,
+      "approche": "Continuer la piste, elle coupe au bout de 200 m le ravin.",
+      "descente": "Une C20 sur orgues basaltiques, amarrage sur chaîne .\n\nPuis des ressauts dans les ruffes et quelques ronces (désescalades plus ou moins aisées selon le débit et les algues). Descente globalement très peu intéressante, surtout s'il y a peu d'eau.",
+      "retour": "Arrivé à la route, prendre la piste juste à droite (barrière) et repérer très vite (3 mn, dans un virage)une petite sente, où passent des VTT, ne figurant pas sur la carte IGN et qui remonte en lacets à la piste du départ.",
+      "engagement": null,
+      "periode": "Printemps ou après de fortes pluies.",
+      "geologie": null,
+      "historique": "?",
+      "remarques": "Préférer le ravin voisin de la Mourade, nettement plus sympa."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23635,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.661751,
+        "longitude": 3.404056,
+        "label": null
+      },
+      {
+        "canyonId": 23635,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.660721,
+        "longitude": 3.40975,
+        "label": null
+      },
+      {
+        "canyonId": 23635,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.663361,
+        "longitude": 3.405667,
+        "label": "Parking possible"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.663361,
+      "longitude": 3.405667,
+      "label": "Parking possible"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_154dee7bea38e356",
+          "kind": "MAP",
+          "title": "2643 OT Lodeve-Bedarieux (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

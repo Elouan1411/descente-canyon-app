@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:04.799008+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22166,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22166/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22166/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22166/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22166/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22166,
+    "identity": {
+      "nom": "Pitzbach",
+      "nomComplet": "Pitzbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22166/Pitzbach.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Tyrol",
+      "departement": "Politischer Bezirk Schwaz",
+      "communePrincipale": "Achenkirch",
+      "communes": [
+        "Achenkirch"
+      ],
+      "massif": "Karwendel",
+      "bassin": "Walchen - Sylvensteinsee",
+      "coursEau": "Pitzbach"
+    },
+    "rating": {
+      "cotation": "v4a4IV",
+      "interet": 2.6,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 975,
+      "deniveleM": 110,
+      "longueurM": 600,
+      "cascadeMaxM": 27,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "40min",
+      "descente": "2h",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "De Bad Tölz (Haute-Bavière) sur Lenggries au Sylvensteinspeicher (lac).Tourner à gauche et traverser la barrage par la B 13 en direction de l'Achenpass. Après environ 4 km traverser le pont sur Gerstenrieder Graben (Markgraben). Après le pont prochain sur la rivière Walchen garer la voiture au parking à droite (panneau).",
+      "accesAmont": null,
+      "approche": "Sur la piste forestière vers sud-ouest monter la vallèe au-dessus de Hühnerbach. À la bifurcation à gauche continuer jusqu'à voir les cascades de Pitzbach. Dans le bois tourner à droite et suivre le chemin jusqu'au le ruisseau.",
+      "descente": "Quelques cascades.",
+      "retour": "Devant l'embouchure avec le ruisseau Hühnerbach, une piste mène à droite sur le chemin ou nous sommes montée avant.\n\nOn peu aussi continuer par le Hühnerbach\n\n(regardez aussi la description de ruisseau Hühnerbach).",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "À la cascade de 27m à gauche il y a une autre cascade à droite, environ 38m."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22166,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.564308,
+        "longitude": 11.605371,
+        "label": null
+      },
+      {
+        "canyonId": 22166,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.567532,
+        "longitude": 11.601482,
+        "label": null
+      },
+      {
+        "canyonId": 22166,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.582272,
+        "longitude": 11.617291,
+        "label": null
+      },
+      {
+        "canyonId": 22166,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.568439,
+        "longitude": 11.600994,
+        "label": "debut de la clue sombre de Hühnerbach"
+      },
+      {
+        "canyonId": 22166,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.5686,
+        "longitude": 11.601208,
+        "label": "sortie de la clue sombre de Hühnerbach; sortir à droite sans sentier vers le-haut (piste retour)"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.582272,
+      "longitude": 11.617291,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_54b6bc3c3362fc67",
+          "kind": "MAP",
+          "title": "8435 Fall (Bayerisches Landesvermessungsamt)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_a076e57e5396ccd5",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.alpenverein-muenchen-oberland.....nyoning_pitzbach.pdf",
+          "url": "http://www.alpenverein-muenchen-oberland.....nyoning_pitzbach.pdf"
+        },
+        {
+          "id": "resource_d9ca6fe1cb65c775",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://wiki.dav-oberland.de/index.php?title=Pitzbach",
+          "url": "http://wiki.dav-oberland.de/index.php?title=Pitzbach"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

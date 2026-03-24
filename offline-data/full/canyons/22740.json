@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:54:10.343798+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22740,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22740/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22740/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22740/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22740/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22740,
+    "identity": {
+      "nom": "Demandols Sud",
+      "nomComplet": "Ravin de Demandols Sud",
+      "prefixeNom": "Ravin de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22740/Demandols-Sud.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-de-Haute-Provence",
+      "communePrincipale": "Saint-Jurs",
+      "communes": [
+        "Saint-Jurs"
+      ],
+      "massif": null,
+      "bassin": "Asse",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a1II",
+      "interet": 1.3,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 1000,
+      "deniveleM": 200,
+      "longueurM": 500,
+      "cascadeMaxM": 38,
+      "cordeMiniM": 40,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "2h00",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": "De Moustiers Sainte Marie, emprunter D952 direction Riez, tourner à droite vers Puimoisson par la D56, puis à droite la D953 direction Digne et enfin la D108 direction Saint Jurs.\n\nA l'entrée du village, au niveau d'un calvaire, prendre à gauche une route étroite qui monte en contournant le village.\n\nSur garer au début de la piste (plusieurs larges esplanades possible sur les 500 premiers mètres).",
+      "accesAmont": null,
+      "approche": "Continuer sur la piste en passant une barrière DFCI et à coté d'un captage.\n\nPeu après, au niveau d'une esplanade où la piste part sur la droite, continuer tout droit sur un bon sentier balisé jaune.\n\nContinuer le sentier qui se transforme parfois en piste.\n\nPasser un premier vallon très peu marqué, puis, au niveau d'un petit plateau, descendre dans le vallon sec qui le traverse.\n\nContinuer pendent 200 m environ dans le vallon assez plat, pour arriver ensuite au départ de la falaise où commence la descente.",
+      "descente": "De nombreux rappels sur des cascades (C 38 max.) dans un ravin trés peu encaissé. Tout se descend sur AN (anneaux de cordes et maillons partout sauf au premier rappel).",
+      "retour": "Après le dernier (et grand) rappel de la descente, continuer sur une centaine de mètres jusqu'à croiser un ravin (RG) qui coule plus régulièrement.\n\nRemonter en crête, rive gauche, derrière le ruisseau.\n\nC'est raide pendant 10-15 min, jusqu'à rejoindre un crête où a eu lieu des coupes de bois (troncs coupés au sol).\n\nContinuer à suivre la crête jusqu'à arriver à l'esplane où commençait le sentier du départ (Grade sanglier I).",
+      "engagement": null,
+      "periode": "Coule seulement lors des gros orages.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Le premier ravin que l'on croise lors de l'approche est une énorme bouse ... 2 C5 dans des éboulis pourris, c'est tout."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22740,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.904976,
+        "longitude": 6.216631,
+        "label": null
+      },
+      {
+        "canyonId": 22740,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.905842,
+        "longitude": 6.210891,
+        "label": null
+      },
+      {
+        "canyonId": 22740,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.897396,
+        "longitude": 6.203735,
+        "label": null
+      },
+      {
+        "canyonId": 22740,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 43.900597,
+        "longitude": 6.209893,
+        "label": "Début du chemin"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.897396,
+      "longitude": 6.203735,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_680c62deb49de2a2",
+          "kind": "MAP",
+          "title": "3441 OT Barreme (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

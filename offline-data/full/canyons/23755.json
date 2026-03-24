@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:58.744199+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23755,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23755/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23755/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23755/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23755/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23755,
+    "identity": {
+      "nom": "Statale",
+      "nomComplet": "Rio di Statale",
+      "prefixeNom": "Rio di",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23755/Statale.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Ligurie",
+      "departement": "Genova",
+      "communePrincipale": "Ne",
+      "communes": [
+        "Ne"
+      ],
+      "massif": "Alpi Liguri - Alpes ligures",
+      "bassin": "Val Graveglia",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 1.4,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 547,
+      "deniveleM": 197,
+      "longueurM": 1570,
+      "cascadeMaxM": 15,
+      "cordeMiniM": 20,
+      "navette": "3.4km"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "2h15",
+      "retour": "4min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": "continuer la route, une fois les premières maisons dépassées ne pas monter au village mais quitter la route principale dans une épingle à gauche. Environ 500 m pour le petit pont sur le rio.",
+      "approche": null,
+      "descente": "Un rappel du pont est bien pratique. Un autre pour le pan incliné suivant. 3 petits goulets puis une section de marche peu plaisante d'environ 45 min. Puis l'encaissement, court mais bien joli.",
+      "retour": "Juste avant une passerelle et l'affluent rive droite, sortir rive droite sur une bonne sente qui rejoint très vite une petite maison délabrée puis le pont.",
+      "engagement": null,
+      "periode": null,
+      "geologie": "Schiste et calcaire.",
+      "historique": null,
+      "remarques": "Avec navette ce parcours peut être jumelé à celui de Novelli, canyon voisin.\n\nA Conscenti un B&B sympa : locanda Barbin."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23755,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.345989,
+        "longitude": 9.48568,
+        "label": null
+      },
+      {
+        "canyonId": 23755,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.350113,
+        "longitude": 9.470252,
+        "label": null
+      },
+      {
+        "canyonId": 23755,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 44.351414,
+        "longitude": 9.470311,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.351414,
+      "longitude": 9.470311,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

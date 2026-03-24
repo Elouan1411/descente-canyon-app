@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:50.264701+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22383,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22383/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22383/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22383/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22383/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22383,
+    "identity": {
+      "nom": "Gachentodklamm",
+      "nomComplet": "Gachentodklamm, Eschenlaine",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22383/Gachentodklamm.html"
+    },
+    "location": {
+      "pays": "Allemagne",
+      "region": "Bayern",
+      "departement": "Oberbayern",
+      "communePrincipale": "Eschenlohe",
+      "communes": [
+        "Landkreis Garmisch-Partenkirchen",
+        "Eschenlohe"
+      ],
+      "massif": "Estergebirge",
+      "bassin": "Loisach",
+      "coursEau": "Eschenlaine"
+    },
+    "rating": {
+      "cotation": "v4a4III",
+      "interet": 2.6,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 780,
+      "deniveleM": 65,
+      "longueurM": 1100,
+      "cascadeMaxM": 35,
+      "cordeMiniM": 40,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "50min",
+      "descente": "2h",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22383,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.583096,
+        "longitude": 11.240392,
+        "label": "depart Gachentodklamm"
+      },
+      {
+        "canyonId": 22383,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.579102,
+        "longitude": 11.236525,
+        "label": "Départ Untere (inf.) Kessellaine"
+      },
+      {
+        "canyonId": 22383,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.58741,
+        "longitude": 11.228886,
+        "label": null
+      },
+      {
+        "canyonId": 22383,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.591347,
+        "longitude": 11.205207,
+        "label": null
+      },
+      {
+        "canyonId": 22383,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.588902,
+        "longitude": 11.207471,
+        "label": "départ Asamklamm"
+      },
+      {
+        "canyonId": 22383,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.591591,
+        "longitude": 11.199338,
+        "label": "sortie Asamklamm"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.591347,
+      "longitude": 11.205207,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:55.526511+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22686,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22686/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22686/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22686/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22686/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22686,
+    "identity": {
+      "nom": "Cocus",
+      "nomComplet": "Canyon des Cocus",
+      "prefixeNom": "Canyon des",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22686/Cocus.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Salazie",
+      "departement": "La Réunion",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Cirque de Salazie-Bélouve",
+      "bassin": "Cirque de Salazie",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a2II",
+      "interet": 1.9,
+      "nbVotes": 5
+    },
+    "metrics": {
+      "altitudeDepartM": 760,
+      "deniveleM": 290,
+      "longueurM": 400,
+      "cascadeMaxM": 45,
+      "cordeMiniM": 50,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "45min",
+      "descente": "3h00",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "Aller jusqu’au village de Salazie, à la sortie du village sur la gauche repérer au niveau d’un arrêt de bus un panneau indiquant «ilet bananes». Se garer.",
+      "accesAmont": null,
+      "approche": "Emprunter le sentier qui franchit la rivière du Mat (passerelle) pour rejoindre l’ilet banane. Emprunter la piste bétonnée jusqu’à un virage marqué à gauche (c’est le point de départ du voile de la mariée) suivre le chemin en terre puis un sentier qui longe les cressonnières après avoir traversé le voile de la mariée monter en direction d’un bosquet de bananiers puis juste au dessus un bouquet de filaos à cet endroit au lieu de prendre à gauche pour aller au voile de la mariée prendre le sentier à droite (rubalise). Après 5 à 10min bifurquer à gauche en quittant le sentier (rubalise) au niveau d’une grande dalle rocheuse (plaquette en place) ensuite suivre les rubalises jusqu’à un carré de chouchous marquant l’arbre d’accès à la ravine.",
+      "descente": "Une petite ravine proche du voile de la mariée avec de superbes points de vue sur le secteur enchainement de rappels sans temps mort.",
+      "retour": "Juste après le R11 chercher une trace en rive droite qui ramène à la route au niveau du parking du point de vue sur le voile de la mariée, puis descendre sur la route jusqu’au parking de départ.\n\nPossibilité de descendre dans la rivière du mat par une MC + 2 rappels RG (chutes de pierres au R12+++) Dans ce cas la sortie s'effectue par la rivière du mat au niveau de la passerelle piéton 900 m en aval RG. Attention de bien évaluer le débit de la rivière du mat avant de s'engager notamment en été où les montées d'eau rapides de la Rivière du Mât peuvent surprendre.",
+      "engagement": "Un petit encaissement de R6 à R8, échappatoires nombreuses.",
+      "periode": "Toute l'année.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Attention aux chutes de pierres au dernier rappel.\n\nAffluent de la Rivière du Mât"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22686,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": -21.042162,
+        "longitude": 55.537952,
+        "label": null
+      },
+      {
+        "canyonId": 22686,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": -21.040136,
+        "longitude": 55.536617,
+        "label": null
+      },
+      {
+        "canyonId": 22686,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": -21.037081,
+        "longitude": 55.53838,
+        "label": "Parking pour le véhicule amont, ou quand on ne fait pas de navette"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": -21.037081,
+      "longitude": 55.53838,
+      "label": "Parking pour le véhicule amont, ou quand on ne fait pas de navette"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_55f7e7495ecc3070",
+          "kind": "MAP",
+          "title": "4402RT Saint-Denis (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

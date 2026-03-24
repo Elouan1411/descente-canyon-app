@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:49:02.217832+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21342,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21342/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21342/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21342/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21342/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21342,
+    "identity": {
+      "nom": "Via Mala",
+      "nomComplet": "Via Mala, Hinterrhein",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21342/Via-Mala.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Thusis",
+      "departement": "Graubünden/Grigioni/Grischun",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": "Hinterrhein",
+      "coursEau": "Hinterrhein"
+    },
+    "rating": {
+      "cotation": "v1a6III",
+      "interet": 2.5,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 820,
+      "deniveleM": 30,
+      "longueurM": 1400,
+      "cascadeMaxM": null,
+      "cordeMiniM": null,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "2h",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "Laisser la voiture à la sortie du canyon avant le tunnel sur la route cantonal de Thusis à Zillis, 1 km avant le Kiosque ou commence le sentier touristique.",
+      "accesAmont": null,
+      "approche": "Descendre le sentier touristique payant (2 SFr.)\n\nCoordonnées: 753.820/169.860",
+      "descente": "Très spectaculaire encaissement, le soleil n'y arrive jamais.\n\nEau très froide, la descente se fait en nageant avec peu d'marche.\n\nAttention qq passages très dangereux si on sort pas le courant d'eau.\n\nPas de verticale.",
+      "retour": "Du point 753.990/171.060 on monte la forêt vers la voiture",
+      "engagement": null,
+      "periode": null,
+      "geologie": "Schiste lustré",
+      "historique": null,
+      "remarques": "ouvrage hydroélectrique www.khr.ch Tel +41 (0)81 635 35 35"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21342,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.663326,
+        "longitude": 9.447384,
+        "label": "Parking de la zone touristique."
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.663326,
+      "longitude": 9.447384,
+      "label": "Parking de la zone touristique."
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_bafe70b335e1d83f",
+          "kind": "MAP",
+          "title": "1215 Thusis (Carte Nationale Suisse)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

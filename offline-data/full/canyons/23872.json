@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:24.889105+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23872,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23872/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23872/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23872/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23872/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23872,
+    "identity": {
+      "nom": "Anguillaia",
+      "nomComplet": "Fosso dell' Anguillaia",
+      "prefixeNom": "Fosso dell'",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23872/Anguillaia.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Toscana",
+      "departement": "Lucca",
+      "communePrincipale": "Stazzema",
+      "communes": [
+        "Stazzema"
+      ],
+      "massif": "Alpes apuanes - Alpi Apuane",
+      "bassin": "Serchio",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a1III",
+      "interet": 1.3,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 1100,
+      "deniveleM": 420,
+      "longueurM": 1600,
+      "cascadeMaxM": 45,
+      "cordeMiniM": 45,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "2h30min",
+      "descente": "3h",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": "par Fosso Fatonero et Foce Contapecore (1472m alt.)",
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": "Marmor",
+      "historique": null,
+      "remarques": "armarrages seulement pour canyon sec"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23872,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.073101,
+        "longitude": 10.28056,
+        "label": null
+      },
+      {
+        "canyonId": 23872,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.073101,
+        "longitude": 10.28056,
+        "label": "E1 (variante longue)"
+      },
+      {
+        "canyonId": 23872,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.067207,
+        "longitude": 10.283395,
+        "label": "E2 (variante courte)"
+      },
+      {
+        "canyonId": 23872,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.06464,
+        "longitude": 10.28636,
+        "label": null
+      },
+      {
+        "canyonId": 23872,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 44.067032,
+        "longitude": 10.249921,
+        "label": "P2 (avec navette P2 - P)"
+      },
+      {
+        "canyonId": 23872,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.06081,
+        "longitude": 10.282268,
+        "label": "P"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 44.067032,
+      "longitude": 10.249921,
+      "label": "P2 (avec navette P2 - P)"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:13.114942+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21928,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21928/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21928/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21928/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21928/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21928,
+    "identity": {
+      "nom": "Buissard",
+      "nomComplet": "Riou de Buissard, Riou de Buissard",
+      "prefixeNom": "Riou de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21928/Buissard.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Hautes-Alpes",
+      "communePrincipale": "Saint-Michel-de-Chaillol",
+      "communes": [
+        "Saint-Michel-de-Chaillol"
+      ],
+      "massif": "Ecrins - Oisans - Champsaur",
+      "bassin": "Drac",
+      "coursEau": "Riou de Buissard"
+    },
+    "rating": {
+      "cotation": "v2a1I",
+      "interet": 1.5,
+      "nbVotes": 9
+    },
+    "metrics": {
+      "altitudeDepartM": 1755,
+      "deniveleM": 90,
+      "longueurM": 285,
+      "cascadeMaxM": 12,
+      "cordeMiniM": 15,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "10min",
+      "descente": "1h",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "Se rendre à Chaillol 1600. Dans la station, au niveau d'un grand virage à gauche, prendre un bonne piste sur la droite (proximité remonté mécaniques). La suivre pour se garer au niveau d'un panneau d'interdiction.",
+      "accesAmont": null,
+      "approche": "Continuer à pied sur la piste qui part tout droit jusqu'à un gué qui enjambe le riou de Buissard.",
+      "descente": "Quelques rappels d'une dizaine de mètres.",
+      "retour": "Après le dernier rappel, remonter en RD dans le bois, raide et glissant, puis chercher toujours sur la gauche pour rejoindre la piste.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21928,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.699486,
+        "longitude": 6.172428,
+        "label": "Au niveau du gué (source potable)"
+      },
+      {
+        "canyonId": 21928,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.696602,
+        "longitude": 6.172192,
+        "label": null
+      },
+      {
+        "canyonId": 21928,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.692486,
+        "longitude": 6.169338,
+        "label": "Parking"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.692486,
+      "longitude": 6.169338,
+      "label": "Parking"
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_774008f93c089927",
+          "kind": "TOPOGUIDE",
+          "title": "100 descentes de canyons autour de Grenoble",
+          "authors": [
+            "Arnaud Astier"
+          ],
+          "publicationYear": 2015,
+          "reference": "978-2-7466-7754-8",
+          "editor": "auto-édition",
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/194/100-Descentes-de-Canyons-autour-de-Grenoble.html"
+        },
+        {
+          "id": "biblio_0062918c2f446d19",
+          "kind": "TOPOGUIDE",
+          "title": "Les canyons des Hautes-Alpes",
+          "authors": [
+            "Henri VINCENS"
+          ],
+          "publicationYear": 2007,
+          "reference": "9782952944502",
+          "editor": "auto-édition",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/12/Canyons-des-Hautes-Alpes.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_b0e951331c704682",
+          "kind": "MAP",
+          "title": "3437 OT Champsaur - Parc des Ecrins (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

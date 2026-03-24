@@ -1,0 +1,159 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:12.798310+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21651,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21651/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21651/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21651/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21651/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/21651/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 21651,
+    "identity": {
+      "nom": "Verde (inferior)",
+      "nomComplet": "Garganta Verde (inferior), Arroyo de Bocaleones",
+      "prefixeNom": "Garganta",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21651/Verde-inferior.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Andalucía",
+      "departement": "Cádiz",
+      "communePrincipale": "Zahara",
+      "communes": [
+        "Zahara"
+      ],
+      "massif": "Sierra Grazalema",
+      "bassin": "Rio Guadalete",
+      "coursEau": "Arroyo de Bocaleones"
+    },
+    "rating": {
+      "cotation": "v2a2III",
+      "interet": 2.7,
+      "nbVotes": 6
+    },
+    "metrics": {
+      "altitudeDepartM": 480,
+      "deniveleM": 165,
+      "longueurM": 2100,
+      "cascadeMaxM": 13,
+      "cordeMiniM": 15,
+      "navette": "8.0km"
+    },
+    "timings": {
+      "approche": "35-45min",
+      "descente": "3h-3h30",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "De Ronda, allez à Zahara soit par Grazalema (beau mais long) soit par l'A-2300 qui passe au sud de l'embalse de Zahara (plus rapide).\n\nAu pied de Zahara (parkings), prenez la direction du centre village et rapidement repérez le départ à droite d'une piste (panneaux ; coordonnées UTM/WGS84 30 S 286631 4079852) au niveau d'un parking en terre battue. Prenez cette petite piste descendante en galets puis en terre rouge qui conduit au ruisseau au bout de 2,5km. Attention : la circulation sur cette piste est interdite en été à cause des risques d'incendie. Cf. dates sur les panneaux bien visibles. Garez-vous ensuite près du pont (arrivée du canyon).\n\nAvec la deuxième voiture remontez la piste jusqu'à Zahara et prenez à gauche pour redescente au pied du village. De là, prendre à droite la route direction sud (Puerto de Las Palomas). Environ 5 km après, garez-vous sur le parking de départ du sentier de la Garganta Verde (point kilométrique 10 ; panneaux indicateurs).",
+      "accesAmont": null,
+      "approche": "Du parking prendre le sentier touristique de la Gargante Verde (portail) direction Nord/Nord-Ouest qui longe le canyon en rive droite à environ 200m d'altitude au dessus. Laisser rapidement une première sente puis une seconde menant à un mirador (panneau) et continuer le sentier touristique jusqu'à rejoindre le cours d'eau à sec puis l'ermitage (grande baume en RG, terminus du sentier touristique).",
+      "descente": "Marche et rappel dans un canyon souvent sec (mais quelques vasques froides). À la fin du canyon, une puissante résurgence permet de finir la descente dans une belle petite clue aquatique.",
+      "retour": "A la fin de la petite clue, juste après l'affluent RG nommé Garganta Seca, on peut rattraper une petite sente RG qui longe le cours d'eau, le traverse puis rejoint la voiture. Sinon on continue dans le ruisseau jusqu'au pont (un peu de végétation).",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "Un permis est nécessaire pour la randonnée servant de marche d'approche et la descente du canyon. Consultez l'onglet réglementation. La partie supérieure de la Garganta Verde est totalement interdite."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21651,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 36.813919,
+        "longitude": -5.403748,
+        "label": null
+      },
+      {
+        "canyonId": 21651,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 36.830185,
+        "longitude": -5.408652,
+        "label": "Sente de sortie RG après affluent"
+      },
+      {
+        "canyonId": 21651,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 36.80846,
+        "longitude": -5.392613,
+        "label": null
+      },
+      {
+        "canyonId": 21651,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 36.831264,
+        "longitude": -5.406716,
+        "label": null
+      },
+      {
+        "canyonId": 21651,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 36.840508,
+        "longitude": -5.392863,
+        "label": "Accès aval : départ piste dans Zahara"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 36.80846,
+      "longitude": -5.392613,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_1c2bc48ef3c7dc01",
+          "kind": "MAP",
+          "title": "Mapa y Guía Excursionista Sierra de Grazalema (Editorial Alpina, Geògraf Salvador Llobet Edicions )",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_9500e9b764bdb4bb",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.actionman4x4.com/canonesybarr.....s/garganta_verde.htm",
+          "url": "http://www.actionman4x4.com/canonesybarr.....s/garganta_verde.htm"
+        },
+        {
+          "id": "resource_954ca3a7b97546e2",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.aljibe.com/actividades/itidesce/itides1.htm",
+          "url": "http://www.aljibe.com/actividades/itidesce/itides1.htm"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 139,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté - 18 déc 1984",
+          "summary": "Un permis est nécessaire. (renseignements complémentaires : office d'information: \"centro del visitantes\" à Zahara. Tel.: 956.727029 - fax: 956. 716339.)\n\nRéférences réglementaires :\n\nDecreto 316/1984, de 18 de diciembre, declaración del Parque Natural.\n\nLey 2/1989, de 18 de julio.\n\nJunta de Andalucia",
+          "remark": null,
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.",
+          "effectiveDate": "18 déc 1984",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/139/legislation.html",
+          "attachments": []
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:13.049831+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22488,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22488/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22488/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22488/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22488/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22488,
+    "identity": {
+      "nom": "Treuil",
+      "nomComplet": "Treuil",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22488/Treuil.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Isère",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Taillefer",
+      "bassin": "Romanche",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a2III",
+      "interet": 2.1,
+      "nbVotes": 11
+    },
+    "metrics": {
+      "altitudeDepartM": 1255,
+      "deniveleM": 600,
+      "longueurM": 1000,
+      "cascadeMaxM": 56,
+      "cordeMiniM": 60,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h30",
+      "descente": "4h",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "De Grenoble prendre la RN 91 en direction de bourg-d'Oisans. Au niveau de Livet, se garer au niveau du site d'escalade en RG de la Romanche.",
+      "accesAmont": null,
+      "approche": "Du parking un sentier monte en direction du hameau du Treuil, le suivre (marquage blanc/vert/blanc). La sente est parfois discrète, carte IGN utile.",
+      "descente": "Enchainement continu de cascades, avec une suite de 3 cascades d'une cinquantaine de mètre au milieu du canyon.",
+      "retour": "Arriver à la Romanche prendre un chemin en RG.",
+      "engagement": "Moyen, nombreux échappatoires possible dans les pentes raides.",
+      "periode": "Une fois les derniers névés fondu le débit devient raisonnable",
+      "geologie": null,
+      "historique": "Topographie en 1991 ; Ph Mesieurz;J-D Mesieurz et P Chiron",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22488,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.100018,
+        "longitude": 5.947155,
+        "label": null
+      },
+      {
+        "canyonId": 22488,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.107479,
+        "longitude": 5.945213,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 45.100018,
+      "longitude": 5.947155,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_bd24b285ad0fb3d2",
+          "kind": "MAP",
+          "title": "3335 ET Le Bourg-d'Oisans (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

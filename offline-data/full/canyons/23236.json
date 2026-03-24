@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:12.887037+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23236,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23236/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23236/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23236/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23236/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23236,
+    "identity": {
+      "nom": "Esguilhão",
+      "nomComplet": "Esguilhão",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23236/Esguilhao.html"
+    },
+    "location": {
+      "pays": "Portugal",
+      "region": "Açores",
+      "departement": "Santa Cruz das Flores Municipality",
+      "communePrincipale": "Cedros",
+      "communes": [
+        "Cedros"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a3IV",
+      "interet": 2.6,
+      "nbVotes": 5
+    },
+    "metrics": {
+      "altitudeDepartM": 415,
+      "deniveleM": 215,
+      "longueurM": 2200,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 30,
+      "navette": "4.0km"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "3h00",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "aval.\n\nParking aval : au village de Ponta Ruiva, près du panneau \"Museu\"",
+      "accesAmont": "amont : pont du cours d'eau. Bien se stationner en bord de route. Place pour une voiture. Sinon, se garer au parking",
+      "approche": "De la route, traverser un champ qui descend dans la canyon",
+      "descente": "Succession de ressauts sur amarrages naturels et points de 10. Pas de danger aquatique particulier. Pas de sauts ni de tob. Sortir au pont juste après la C30, à la confluence avec Funda Sup\n\nEnchainements: C30 RD, C17, C20, C15, C25, C11, C17, C10, ressauts, C12, C10, C30",
+      "retour": "Sortir au pont en RG. Suivre le sentier Cedros-Ponta Ruiva. Sinon voir la fiche de Ponta Ruiva pour la suite qui retourne au même parking aval.",
+      "engagement": "Pas d’échappatoire dans le canyon. Possibilité de se mettre hors crue dans la végétation.",
+      "periode": "Intéressant après les fortes pluies. Attention si vous continuez sur Funda da Ponta Ruiva jusqu'à la mer il y a une confluence puis deux affluents.",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23236,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 39.484104,
+        "longitude": -31.170618,
+        "label": null
+      },
+      {
+        "canyonId": 23236,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 39.489574,
+        "longitude": -31.164886,
+        "label": null
+      },
+      {
+        "canyonId": 23236,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 39.495037,
+        "longitude": -31.15748,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 39.495037,
+      "longitude": -31.15748,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

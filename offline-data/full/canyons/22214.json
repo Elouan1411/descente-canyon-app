@@ -1,0 +1,165 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:14.503172+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22214,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22214/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22214/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22214/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22214/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22214,
+    "identity": {
+      "nom": "Vallençant",
+      "nomComplet": "Bras Vallençant, Grande Rivière",
+      "prefixeNom": "Bras",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22214/Vallencant.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Grand'Rivière",
+      "departement": "Martinique",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Montagne Pelée",
+      "bassin": null,
+      "coursEau": "Grande Rivière"
+    },
+    "rating": {
+      "cotation": "v4a4V",
+      "interet": 3.1,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 1100,
+      "deniveleM": 1050,
+      "longueurM": null,
+      "cascadeMaxM": 50,
+      "cordeMiniM": 60,
+      "navette": "30.0km"
+    },
+    "timings": {
+      "approche": "2h15",
+      "descente": "9h",
+      "retour": "2h"
+    },
+    "topo": {
+      "accesAval": "Option navette: garer une voiture sur le parking de la pelée au bout de la D39, et une autre au stade de de Grand-Riviere (500m avant la fin de la D10 prendre a gauche (avant le pont qui enjambe la Grande Rivière) la voie sans issue qui passe devant le stade, se garer au parking. Navette très longue (voir IGN)",
+      "accesAmont": null,
+      "approche": "Du parking de la pelée prendre le sentier de randonnée qui monte jusqu'au plateau des palmistes puis au Morne Macouba (environ 500m de dénivelée). Poursuivre le sentier qui descend vers Grand-Riviere. Quitter le sentier juste après une échelle en bois bien caractéristique vers 1150m pour se diriger dans vallon sur votre gauche. A partir de là, il n'y a plus de sentier. On progresse au mieux sur le tapis végétal (attention aux trous) pour gagner le fond du ravin sous ce tapis. Quelques désescalade sous ce tapis pour arriver assez rapidement au premier rappel.",
+      "descente": "Canyon très complet: un mix entre la Bendola, la Maglia et le trou de fer.\n\n1h heure de speleo végétale au départ, de belles verticales, des sauts a profusion sur le dernier tiers du parcours.",
+      "retour": "2h de marche en rivière pour arriver au stade.",
+      "engagement": "Engagement très fort, aucun échappatoire simple, rien, pas un sentier, pas une trace évidente sur les 9h de descentes",
+      "periode": "Généralement petit filet d'eau au départ qui termine en gros débit.\n\nConseillé de le faire en saison sèche (décembre à juin). Très gros bassin versant, à faire par temps stable.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Autre approche possible à partir de Macouba (prendre la piste menant à la maison des moines, se garer après les dernières maisons) qui permet de raccourcir la navette (5km) et l'approche (1H30) qui est moins jolie.\n\nCanyon physiquement éprouvant mais qui passe bien à la journée si on a la forme et qu'on part très tôt."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22214,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 14.819886,
+        "longitude": -61.165855,
+        "label": null
+      },
+      {
+        "canyonId": 22214,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 14.867597,
+        "longitude": -61.175556,
+        "label": null
+      },
+      {
+        "canyonId": 22214,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 14.806179,
+        "longitude": -61.151405,
+        "label": null
+      },
+      {
+        "canyonId": 22214,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 14.869494,
+        "longitude": -61.176456,
+        "label": null
+      },
+      {
+        "canyonId": 22214,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 14.813383,
+        "longitude": -61.163639,
+        "label": "suivre trace plein Nord"
+      },
+      {
+        "canyonId": 22214,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 14.817435,
+        "longitude": -61.166519,
+        "label": "station: descendre trace à droite"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 14.806179,
+      "longitude": -61.151405,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_5331934da8946eb4",
+          "kind": "TOPOGUIDE",
+          "title": "L'autre Martinique : le canyoning",
+          "authors": [
+            "Gérard Gsegner",
+            "Pascal Tanguy et André Exbrayat"
+          ],
+          "publicationYear": 2010,
+          "reference": "978-2-915390-41-4",
+          "editor": "Editions Exbrayat",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1328/topoguide.html"
+        },
+        {
+          "id": "biblio_a7df45bfc4bd45d6",
+          "kind": "TOPOGUIDE",
+          "title": "Les canyons de Martinique",
+          "authors": [
+            "Comité Régional FFME Martinique"
+          ],
+          "publicationYear": 2001,
+          "reference": null,
+          "editor": "ARDTM",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/15/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_26889c74b599efbe",
+          "kind": "MAP",
+          "title": "4501MT Fort de France (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

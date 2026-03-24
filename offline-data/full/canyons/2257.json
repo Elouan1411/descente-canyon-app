@@ -1,0 +1,172 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:44:47.228873+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2257,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2257/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2257/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2257/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2257/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/2257/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 2257,
+    "identity": {
+      "nom": "Tramouillon (inférieur)",
+      "nomComplet": "Torrent de Tramouillon (inférieur)",
+      "prefixeNom": "Torrent de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2257/Tramouillon-inferieur.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Hautes-Alpes",
+      "communePrincipale": "Champcella",
+      "communes": [
+        "Champcella"
+      ],
+      "massif": "Ecrins - Oisans - Champsaur",
+      "bassin": "Durance",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 2.0,
+      "nbVotes": 34
+    },
+    "metrics": {
+      "altitudeDepartM": 1400,
+      "deniveleM": 240,
+      "longueurM": 550,
+      "cascadeMaxM": 18,
+      "cordeMiniM": 20,
+      "navette": "4.3km"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "4h",
+      "retour": "2min"
+    },
+    "topo": {
+      "accesAval": "Aller jusqu'à Champcella, le traverser puis prendre la direction Ponteil.\n\nAccès inférieur : juste après Champcella, prendre 1 petite route qui monte à droite. Se garer avant les lacets après une falaise d'escalade à gauche.\n\nAccès supérieur (4h de descente en étant 2 pratiquants expérimentés ): se garer à côté des containers poubelles moloks au Ponteil au niveau du pont enjambant la rivière.\n\nAccès supérieur version courte (1ère cascade et ressauts en moins) : se garer au plus proche du ruisseau, 2 épingles avant le pont.",
+      "accesAmont": null,
+      "approche": "Suivre la sente en RD en aval du pont jusqu'à l'entrée dans le ruisseau.\n\nAccès supérieur version courte : suivre la sente horizontalement jusqu'à rejoindre une main-courante sous un arbre. Après 10m, on rejoint la rivière que l'on rejoint par un beau rappel de 10-15 m.",
+      "descente": "20min de marche dans la rivière entrecoupée de quelques ressauts équipés sur lunules, puis 1h30 de rappels qui s'enchaînent bien.",
+      "retour": "Sentier RG juste après double cascade finale (cairn puis sente bien marquée)",
+      "engagement": "Faible, possibilité de sortir assez facilement dans les bois.",
+      "periode": "Faisable de mai à septembre",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Équipement convenable dans l'ensemble, sur lunules pour la première partie, puis relais chainés (pas toujours placés de manière très pertinente, attention aux frottements)"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2257,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.711666,
+        "longitude": 6.566667,
+        "label": null
+      },
+      {
+        "canyonId": 2257,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.713333,
+        "longitude": 6.573889,
+        "label": null
+      },
+      {
+        "canyonId": 2257,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 44.712223,
+        "longitude": 6.568333,
+        "label": null
+      },
+      {
+        "canyonId": 2257,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 44.71389,
+        "longitude": 6.574722,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 44.712223,
+      "longitude": 6.568333,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_0062918c2f446d19",
+          "kind": "TOPOGUIDE",
+          "title": "Les canyons des Hautes-Alpes",
+          "authors": [
+            "Henri VINCENS"
+          ],
+          "publicationYear": 2007,
+          "reference": "9782952944502",
+          "editor": "auto-édition",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/12/Canyons-des-Hautes-Alpes.html"
+        },
+        {
+          "id": "biblio_2b1a799bf16617f5",
+          "kind": "TOPOGUIDE",
+          "title": "Les Canyons du Haut Val Durance",
+          "authors": [
+            "Henri Vincens"
+          ],
+          "publicationYear": null,
+          "reference": null,
+          "editor": null,
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/120/topoguide.html"
+        }
+      ],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_3c0da8787194e9f8",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.alpes-guide.com/sources/topo/......asp?pitineraire=235",
+          "url": "http://www.alpes-guide.com/sources/topo/......asp?pitineraire=235"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 422,
+          "status": "Actif",
+          "action": "Autorise",
+          "title": "Arrêté municipal (Champcella) - 17 juin 2021",
+          "summary": "Après un long travail réalisé auprès des différents acteurs locaux, le GTC05 a obtenu la ré-ouverture officielle de ce canyon, interdit depuis près de 25 ans.",
+          "remark": null,
+          "details": "Arrêté municipal n°08-2021 du 17 juin 2021\n\nCompte-rendu des travaux d'aménagement raisonné et durable menés par le GTC05 et la mairie de Champcella",
+          "effectiveDate": "17 juin 2021",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/422/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté municipal n°08-2021 du 17 juin 2021",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem422_pj1.pdf"
+            },
+            {
+              "label": "Compte-rendu des travaux d'aménagement raisonné et durable menés par le GTC05 et la mairie de Champcella",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem422_pj2.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

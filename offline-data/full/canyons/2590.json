@@ -1,0 +1,148 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:46:05.627928+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2590,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2590/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2590/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2590/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2590/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2590,
+    "identity": {
+      "nom": "Esparron",
+      "nomComplet": "Cascade d' Esparron, Ruisseau du Prayer",
+      "prefixeNom": "Cascade d'",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2590/Esparron.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Isère",
+      "communePrincipale": "Chichilianne",
+      "communes": [
+        "Chichilianne"
+      ],
+      "massif": "Vercors",
+      "bassin": "Drac",
+      "coursEau": "Ruisseau du Prayer"
+    },
+    "rating": {
+      "cotation": "v3a1I",
+      "interet": 1.2,
+      "nbVotes": 8
+    },
+    "metrics": {
+      "altitudeDepartM": 1100,
+      "deniveleM": 75,
+      "longueurM": 200,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 25,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "20min",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "Entre Saint-Maurice-en-Trièves et les Blancs, quitter la RN75 en direction de Casseire. Monter en direction de l'ermitage d'Esparron sur la route forestière. A environ 3,5km, on arrive sur un vague plan d'herbe situé entre 2 cours d'eau. Se garer.",
+      "accesAmont": null,
+      "approche": "Continuer la route forestière, prendre à droite en direction du col de Prayer (sentier jaune). Passer l'ermitage à droite (peut s'intégrer dans notre approche). Descendre en direction de l'oratoire, passer un vaste lit de rivière, puis le chemin remonte jusqu'à l'oratoire. De là, redescendre jusqu'au petit \"dit\" cours d'eau.",
+      "descente": "Il serait utile d'équiper la 1ère cascade après une courte MC à partir de l'AN RD car bon frottement. La 3ème cascade se fait en toboggan (sondage nécessaire si vous trouvez l'AN).",
+      "retour": "Suivre le sentier emprunté à l'aller.",
+      "engagement": "Faible.",
+      "periode": "Printemps ou après une période de pluie.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Cadre paisible.\n\nIl est également possible de réaliser ce canyon depuis le col du Prayer (pratique quand on vient du Diois). Se garer dans ce cas-là au col du Prayer (entre le col de Menée et Chichilianne).\n\nApproche (15min) : suivre à pied le chemin d'exploitation descendant balisé en jaune en direction de l'oratoire. Au bout de 10/15min, on arrive à la confluence de deux ruisseaux, départ de la descente.\n\nRetour (30min) : à la confluence avec le collecteur, remonter celui-ci sur 200/250 m puis emprunter à droite (en RG donc) le sentier balisé en jaune en direction de l'oratoire. On retrouve ensuite le point de départ de la descente. Restent 15min de remontée jusqu'au col du Prayer."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2590,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.777363,
+        "longitude": 5.603226,
+        "label": null
+      },
+      {
+        "canyonId": 2590,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.776283,
+        "longitude": 5.605423,
+        "label": null
+      },
+      {
+        "canyonId": 2590,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.785233,
+        "longitude": 5.598702,
+        "label": "Col du Prayer"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.785233,
+      "longitude": 5.598702,
+      "label": "Col du Prayer"
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_e7d94bb2f47393ab",
+          "kind": "TOPOGUIDE",
+          "title": "Cascades, Gorges & Canyons : Pré-alpes d'Isère et de Savoie",
+          "authors": [
+            "Bertrand Hauser",
+            "Delphine Baratin"
+          ],
+          "publicationYear": 2007,
+          "reference": "978-2-9529407-0-2",
+          "editor": "Descente-Canyon.com",
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/11/Cascades--Gorges-et-Canyons-:-Pre-alpes-d-Isere-et-de-Savoie.html"
+        },
+        {
+          "id": "biblio_0f06b44eb9a42186",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons du Vercors et Alentours",
+          "authors": [
+            "J-C. Botti",
+            "B. Rosset",
+            "Y. Launay",
+            "C. Larribe",
+            "T. Larribe",
+            "Spéléo Club MJC de Tullins"
+          ],
+          "publicationYear": 1997,
+          "reference": "ISBN 2-7417-0211-X",
+          "editor": "Gap",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/12/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_897a81a84c493147",
+          "kind": "MAP",
+          "title": "3237 OT Glandasse - Col de La Croix (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

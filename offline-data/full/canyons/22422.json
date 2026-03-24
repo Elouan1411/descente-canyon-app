@@ -1,0 +1,144 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:58.495970+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22422,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22422/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22422/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22422/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22422/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22422,
+    "identity": {
+      "nom": "Sagnarade",
+      "nomComplet": "Ruisseau de Sagnarade, Sagnarade",
+      "prefixeNom": "Ruisseau de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22422/Sagnarade.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Cantal",
+      "communePrincipale": "Brezons",
+      "communes": [
+        "Brezons"
+      ],
+      "massif": "Monts du Cantal",
+      "bassin": "Le Brezons",
+      "coursEau": "Sagnarade"
+    },
+    "rating": {
+      "cotation": "v3a3III",
+      "interet": 2.0,
+      "nbVotes": 10
+    },
+    "metrics": {
+      "altitudeDepartM": 1090,
+      "deniveleM": 210,
+      "longueurM": 750,
+      "cascadeMaxM": 16,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "45min",
+      "descente": "3h",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "De Murat prendre la D39 pour monter à Prat de bouc. Continuer jusqu'à Lustrande et 1.5 km après vous traversez la Sagnarade. Petit parking vers le transformateur EDF.",
+      "accesAmont": null,
+      "approche": "Repérer une ligne électrique qui monte en RG. Une sente peu visible amorce dessous et vous dépose sur le pré à vaches du dessus.\n\nContinuer sans vous éloignez de la ligne et du canyon. En 20 mn vous arriverez à des ruines. Continuer en restant sous la ligne EDF. Un chemin bien marqué amorce dans le sous bois. A l'Alt approximative 1135 descendez rejoindre le cours d'eau.",
+      "descente": "Ambiance très végétaloarboricole...dû aux nombreux troncs mis en place par dame Nature.",
+      "retour": "Après la dernière cascade, sente en RG.",
+      "engagement": "C'est du terrain d'aventure. L'instabilité du terrain est permanente et peut créer des dégâts sur les amarrages pour la plupart en amarrage naturel.Emmenez de quoi travailler. De plus par moment l'encaissement ne vous laissera comme échappatoires que de suivre le cours de l'eau.",
+      "periode": "De mai à ......la neige.",
+      "geologie": "Brèche volcanique",
+      "historique": "Inconnu",
+      "remarques": "La marche d'approche décrite passe par des propriétés privées. discrétion et amabilité de rigueur."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22422,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.998436,
+        "longitude": 2.819978,
+        "label": null
+      },
+      {
+        "canyonId": 22422,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.995689,
+        "longitude": 2.809483,
+        "label": null
+      },
+      {
+        "canyonId": 22422,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 44.99662,
+        "longitude": 2.81589,
+        "label": "Approche par les prés en rive gauche : suivre la ligne électrique."
+      },
+      {
+        "canyonId": 22422,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 44.997952,
+        "longitude": 2.817489,
+        "label": "Entrée intermédiaire"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.995689,
+      "longitude": 2.809483,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_daf9041e16b163a9",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons cantalous",
+          "authors": [
+            "Philippe VIETTE-COSTE"
+          ],
+          "publicationYear": 2018,
+          "reference": "97829563881-0-4",
+          "editor": "Auto-édition",
+          "status": "en stock\n\n- 14,00 € -\n\nCommandez cet ouvrage dès maintenant !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/1124/Canyons-cantalous.html"
+        },
+        {
+          "id": "biblio_0ada102a5dea7773",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons arvernes",
+          "authors": [
+            "Philippe Viette-Coste",
+            "Serge Navarro",
+            "Pierre-Marie Orblin"
+          ],
+          "publicationYear": 2012,
+          "reference": "978-2-7466-3647-7",
+          "editor": "auto-édition",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/165/Canyons-arvernes.html"
+        }
+      ],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

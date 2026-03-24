@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:20.396113+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22523,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22523/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22523/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22523/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22523/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22523,
+    "identity": {
+      "nom": "Argent",
+      "nomComplet": "Le gouffre de la rivière d' Argent, Rivière d'Argent",
+      "prefixeNom": "Le gouffre de la rivière d'",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22523/Argent.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Bretagne",
+      "departement": "Finistère",
+      "communePrincipale": "Huelgoat",
+      "communes": [
+        "Huelgoat"
+      ],
+      "massif": "Monts d'Arrée",
+      "bassin": null,
+      "coursEau": "Rivière d'Argent"
+    },
+    "rating": {
+      "cotation": "v2a2I",
+      "interet": 2.0,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 150,
+      "deniveleM": 10,
+      "longueurM": 50,
+      "cascadeMaxM": 5,
+      "cordeMiniM": 10,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "3min",
+      "descente": "20min",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "Depuis Huelgoat, prendre la D769 en direction de Locmaria-Berrien. Suivre la route qui longe la rivière d'Argent jusqu'au parking de \"l'Arquellen\" (panneaux d'informations pour les randonnées) ou (encore plus près) poursuivre 100m et se garer sur le grand parking à gauche.",
+      "accesAmont": null,
+      "approche": "Du 2ème parking, traverser la route et la longer. Descendre dans la rivière 50m avant le panneau \"gouffre\".",
+      "descente": "On commence par la C5 arrosée puis un petit bief. Passage sous bloc et arrivée sur un siphon infranchissable. Remonter sur un bloc glissant à gauche pour atteindre la barrière touristique. C'est déjà fini!",
+      "retour": "Remonter à la route par le sentier touristique et ses escaliers.",
+      "engagement": "En octobre 2014 toujours pas d'équipement. Sangle à mettre en place sur bloc puis à récupérer.",
+      "periode": "A éviter par gros débit car l'eau s'engouffre dans un siphon après le passage sous le bloc.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Remarque 1 : selon les années le passage en siphon est peut-être possible, on pourrait alors continuer sous les blocs sur une petite centaine de mètres jusqu'à la marre aux fées.\n\nRemarque 2 : depuis Huelgoat possibilité de parcourir le chaos de la rivière d'argent. La rivière passe sous d'énormes blocs sur plus de 200m de long, pas sur du tout que ça puisse passer partout sans danger. A priori fait une fois par un groupe de spéléo (plaquettes en place sur un bloc) d'après l'office du tourisme, frontale obligatoire."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22523,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 48.364288,
+        "longitude": -3.730338,
+        "label": null
+      },
+      {
+        "canyonId": 22523,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 48.365208,
+        "longitude": -3.731593,
+        "label": null
+      },
+      {
+        "canyonId": 22523,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 48.363869,
+        "longitude": -3.729938,
+        "label": "le siphon, début de la partie spéléo"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 48.365208,
+      "longitude": -3.731593,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_80b79a110419406c",
+          "kind": "MAP",
+          "title": "0617 OT Huelgoat Monts d'Arrée (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

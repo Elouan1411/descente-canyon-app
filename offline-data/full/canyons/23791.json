@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:06.973000+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23791,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23791/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23791/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23791/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23791/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23791,
+    "identity": {
+      "nom": "Bianch",
+      "nomComplet": "Val Rui Bianch",
+      "prefixeNom": "Val Rui",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23791/Bianch.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Vénétie",
+      "departement": "Belluno",
+      "communePrincipale": "Sospirolo",
+      "communes": [
+        "Sospirolo"
+      ],
+      "massif": "Dolomites de Belluno",
+      "bassin": "Mis",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a3V",
+      "interet": null,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": 850,
+      "deniveleM": 250,
+      "longueurM": 1000,
+      "cascadeMaxM": 46,
+      "cordeMiniM": 50,
+      "navette": "2.7km"
+    },
+    "timings": {
+      "approche": "3h15min",
+      "descente": "4h15min",
+      "retour": "25"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": "Dolomie",
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23791,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.205769,
+        "longitude": 12.04171,
+        "label": null
+      },
+      {
+        "canyonId": 23791,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.20401,
+        "longitude": 12.0328,
+        "label": null
+      },
+      {
+        "canyonId": 23791,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 46.185974,
+        "longitude": 12.045561,
+        "label": null
+      },
+      {
+        "canyonId": 23791,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 46.202553,
+        "longitude": 12.026164,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 46.185974,
+      "longitude": 12.045561,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

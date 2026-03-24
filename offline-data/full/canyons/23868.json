@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:24.006867+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23868,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23868/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23868/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23868/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23868/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/23868/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 23868,
+    "identity": {
+      "nom": "Cianavelle (aval)",
+      "nomComplet": "Ruisseau de Cianavelle (aval)",
+      "prefixeNom": "Ruisseau de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23868/Cianavelle-aval.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-Maritimes",
+      "communePrincipale": "Rigaud",
+      "communes": [
+        "Rigaud"
+      ],
+      "massif": "Dôme de Barrot",
+      "bassin": "Cians",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a3III",
+      "interet": 2.3,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 680,
+      "deniveleM": 139,
+      "longueurM": 1200,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 30,
+      "navette": "3.0km"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "2h",
+      "retour": "??"
+    },
+    "topo": {
+      "accesAval": "Dépasser l'embranchement à gauche pour Rigaud d'1,2 km pour un bon emplacement à gauche juste avant le pont sur le ruisseau (parking aval, Alt. 541, présence d'une balise de rando).",
+      "accesAmont": "Continuer, peu après Pra d'Astier (embranchement à droite pour Pierlas) et après une épingle à droite, virer à gauche pour Rubi. Après les premières maisons, se garer sans gêner aux abords de la balise 215.",
+      "approche": "De la balise, emprunter le sentier valléen direction Teicheiro, collet de la Vigude, sur une cinquantaine de mètres.\n\nSuivre une sente qui part à gauche le long d'une ligne électrique, puis passe à proximité immédiate d'une maison...\n\nContinuer vers un pré que l'on descend vers la gauche pour rejoindre rapidement le ruisseau.",
+      "descente": "Une petite marche mène à la 1e cascade que l'on descend dans l'actif au départ d'un arbre (attention, il y a des creux sous la cascade) ou hors de la goulotte par un relais rive Gauche.\n\nVasque au pied, donc brin de descente au ras de l'eau et brin de rappel plus long pour la récupération.\n\nSuivront 3 cascades dont 1 formée de 3 petits ressauts.",
+      "retour": "Juste après le pont, sortir immédiatement rive gauche.",
+      "engagement": null,
+      "periode": "De nombreuses résurgences alimentent les 7 km de ce grand ruisseau de Cianavelle. Le débit est généreux ; il conviendra de le vérifier au niveau du pont aval.\n\nA faire en été.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Sans navette : du parking aval, passer le pont pour la balise 208 et attaquer un sentier bien marqué mais pas entretenu qui débouche sur la route goudronnée à la balise 209. La suivre à gauche pour la balise 215, puis l'itinéraire décrit précédemment.\n\nRelativement court, il peut être jumelé avec un autre parcours voisin."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23868,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.999474,
+        "longitude": 6.977089,
+        "label": null
+      },
+      {
+        "canyonId": 23868,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 44.001343,
+        "longitude": 6.980985,
+        "label": null
+      },
+      {
+        "canyonId": 23868,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 43.999416,
+        "longitude": 6.98863,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 44.001343,
+      "longitude": 6.980985,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_f5a5c0f3b7f39109",
+          "kind": "MAP",
+          "title": "3641 OT Moyen Var (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 349,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Alpes-Maritimes) - 27 oct 2016",
+          "summary": "La pratique du canyonisme est autorisée du 1er avril au 31 octobre inclus à l'exception des canyons figurant dans les articles 2 et 3, où s'applique une réglementation spécifique (périodes plus réduites, interdiction...).\n\nLes canyons secs ou habituellement à sec sont autorisés toute l'année.\n\nTous les canyons situés en zone centrale du Parc du Mercantour sont interdits.\n\nTout groupe de pratiquants ne peut excéder 8 personnes, encadrement non compris.",
+          "remark": null,
+          "details": "Arrêté préfectoral n°2016-852 du 27 octobre 2016",
+          "effectiveDate": "27 oct 2016",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/349/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral n°2016-852 du 27 octobre 2016",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem349_pj1.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

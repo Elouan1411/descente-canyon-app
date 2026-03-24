@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:36.989274+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22595,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22595/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22595/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22595/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22595/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22595,
+    "identity": {
+      "nom": "Sigrié",
+      "nomComplet": "Ravin de Sigrié",
+      "prefixeNom": "Ravin de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22595/Sigrie.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Vaucluse",
+      "communePrincipale": "Apt",
+      "communes": [
+        "Bonnieux",
+        "Apt"
+      ],
+      "massif": "Luberon",
+      "bassin": "Calavon",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a2II",
+      "interet": 1.3,
+      "nbVotes": 5
+    },
+    "metrics": {
+      "altitudeDepartM": 230,
+      "deniveleM": 55,
+      "longueurM": 900,
+      "cascadeMaxM": 6,
+      "cordeMiniM": 10,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "1h30",
+      "retour": "35min"
+    },
+    "topo": {
+      "accesAval": "D'Apt, prendre la D900 sur au moins 4 km en direction de Goult, puis tourner à gauche pour prendre la D49 (pont Julien) en direction de Bonnieux. Faire 1,5 km et prendre à gauche la petite route direction les Meuniers, le Bonnaud et la Bouquière. Passer devant \"la Bouquière\" et se garer juste après, un peu plus loin qu'un site de tir à l'arc, après avoir fait 100m de piste.",
+      "accesAmont": null,
+      "approche": "Suivre la piste sur 100m, puis prendre à droite. Après 100m de marche, l'on tombe sur une nouvelle bifurcation : prendre de nouveau à droite et suivre le bon sentier pour passer un petit gué (petit ru parfois sec) et se rendre au second, départ de la descente.",
+      "descente": "Quelques petites cascades et un joli petit encaissement.\n\nC2 (gouj. RG), C3 (gouj. RD), passage sous bloc C1 puis C5 (2 gouj. RG), petite marche, T2 (SP), T1 (SP et nage), T1, le ruisseau s'encaisse, nage, S2, nage, marche avec quelques gours, C6 barrage (AN décalé), T2 avec nage et le dernier gour avec nage. Sortir en RD pour rejoindre le sentier en 2 min.",
+      "retour": "Un peu avant la confluence du Calavon, sortir en RD et récupérer le sentier vous ramenant dans un premier temps au niveau d'un verger où l'on retrouve le GRP (panneau) menant au départ du canyon et, par la suite, au parking de \"la Bouquière\" où est garé votre véhicule.",
+      "engagement": "Aucune échappatoire dans l'encaissement.",
+      "periode": "En eau l'hiver",
+      "geologie": null,
+      "historique": "ALAIN 13",
+      "remarques": "Petit ruisseau ludique pour les pin's lorsqu'il est en eau."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22595,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.851997,
+        "longitude": 5.329185,
+        "label": null
+      },
+      {
+        "canyonId": 22595,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.858047,
+        "longitude": 5.323917,
+        "label": null
+      },
+      {
+        "canyonId": 22595,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.850056,
+        "longitude": 5.323359,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.850056,
+      "longitude": 5.323359,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_6705d07209ecbde8",
+          "kind": "MAP",
+          "title": "3242 OT Apt - Parc du Luberon (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

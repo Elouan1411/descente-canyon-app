@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:46:18.781734+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2647,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2647/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2647/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2647/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2647/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2647,
+    "identity": {
+      "nom": "Gava",
+      "nomComplet": "Rio della Gava, Ro Gava Ponente",
+      "prefixeNom": "Rio della",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2647/Gava.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Ligurie",
+      "departement": "Genova",
+      "communePrincipale": "Arenzano",
+      "communes": [
+        "Arenzano"
+      ],
+      "massif": "Mont Beigua",
+      "bassin": "Lerone",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 0.7,
+      "nbVotes": 6
+    },
+    "metrics": {
+      "altitudeDepartM": 640,
+      "deniveleM": 190,
+      "longueurM": 600,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 25,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h25",
+      "descente": "2h",
+      "retour": "40min"
+    },
+    "topo": {
+      "accesAval": "Sortir de l'autoroute à Arenzano (A10). Rejoignez la SS1 direction Cogoletto. Ne ratez pas la première à droite, direction Terralba. Dans le hameau on prend la \"via Pecorara\" (3° à gauche).\n\nCette route est très étroite, aprés un virage à gauche prenez la 1° à droite qui monte au \"ristorante Agueta du Sciria\". Se garer un peu avant le restaurant.\n\nMême parking que pour le rio Léone supérieur.",
+      "accesAmont": null,
+      "approche": "Dans le virage à droite de la route goudronnée commence une piste. Suivre l'approche du rio Léone supérieur jusqu'au gué du rio Gava.",
+      "descente": "\"ne pas à descendre (Bouze avec un rappel)\" dixit Skeno...\n\nIl s'agit de l'affluent supérieur rive gauche du rio Léone.\n\nCette descente a été fichée par erreur. Confondue avec la partie intermédiaire du rio Léone, c.a.d le tronçon qui fait suite à l'amont du rio Léone, (confluence Gava/Léone, altitude 450), et qui se termine après le \"lagu da Tina\".",
+      "retour": null,
+      "engagement": null,
+      "periode": "Généralement sec.",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2647,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.437031,
+        "longitude": 8.674576,
+        "label": null
+      },
+      {
+        "canyonId": 2647,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.434017,
+        "longitude": 8.668903,
+        "label": null
+      },
+      {
+        "canyonId": 2647,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.411438,
+        "longitude": 8.665942,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.411438,
+      "longitude": 8.665942,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

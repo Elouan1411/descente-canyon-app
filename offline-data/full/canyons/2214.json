@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:44:35.528968+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2214,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2214/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2214/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2214/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2214/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2214,
+    "identity": {
+      "nom": "Gourdouze",
+      "nomComplet": "Cascades de la Gourdouze",
+      "prefixeNom": "Cascades de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2214/Gourdouze.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Lozère",
+      "communePrincipale": "Vialas",
+      "communes": [
+        "Vialas"
+      ],
+      "massif": "Mont Lozère",
+      "bassin": "Vallée du Luech",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2III",
+      "interet": 1.7,
+      "nbVotes": 8
+    },
+    "metrics": {
+      "altitudeDepartM": 1230,
+      "deniveleM": 600,
+      "longueurM": null,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 35,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h30",
+      "descente": "5h",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": "Se rendre à Vialas soit en venant de Florac soit en venant d'Alès.\n\nA Vialas, se garer au lieu dit \"la libourette\" au croisement du PR. Prendre celui-ci dans le sens montant.",
+      "accesAmont": null,
+      "approche": "De Vialas prendre le PR \"Tour de la haute vallée du Luech\" (balisage jaune et rouge) qui mène directement au départ du canyon.",
+      "descente": "Première partie aérienne puis succession de blocs.\n\nProgression pénible.\n\nAmarrages très anciens. Quelques relais pour ne pas coincer la corde.\n\nPrésence de quelques vasques propices à la baignade.\n\nPaysages superbes sur la vallée au départ du canyon.",
+      "retour": "Sortir au pont puis reprendre la route en direction de Vialas et le PR qui conduit directement à la voiture.\n\nSi l'on veut éviter la pénible progression en bloc de la dernière partie, on peut sortir azimut en rive droite pour rejoindre un PR après la partie verticale. Compter au moins 1h de marche embroussaillée.",
+      "engagement": "Faible car les cascades sont assez larges.\n\nQuelques encaissements pourraient poser problème en cas de gros débit.",
+      "periode": "De l'eau toute l'année, éviter après la fonte des neiges.",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2214,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 44.357059,
+        "longitude": 3.882337,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 44.357059,
+      "longitude": 3.882337,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_1ec3771dffe52076",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons de l'Aveyron et de la Lozère",
+          "authors": [
+            "Roland Pelissier",
+            "Frédéric Louart"
+          ],
+          "publicationYear": 1991,
+          "reference": null,
+          "editor": null,
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/123/topoguide.html"
+        },
+        {
+          "id": "biblio_f62b32e9659a6cea",
+          "kind": "TOPOGUIDE",
+          "title": "Gorges et Canyons en Languedoc Roussillon",
+          "authors": [
+            "Jean-Pierre Lucot et Richard Quintilla"
+          ],
+          "publicationYear": 1990,
+          "reference": "ISBN 2-85744-467-9",
+          "editor": "Édisud",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/124/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_0acbab812fc8ce3c",
+          "kind": "MAP",
+          "title": "2739 OT Mont-Lozere (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

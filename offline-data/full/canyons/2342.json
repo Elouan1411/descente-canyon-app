@@ -1,0 +1,149 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:45:08.453658+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2342,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2342/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2342/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2342/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2342/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/2342/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 2342,
+    "identity": {
+      "nom": "Vadone",
+      "nomComplet": "Ruisseau de Vadone",
+      "prefixeNom": "Ruisseau de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2342/Vadone.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Corse",
+      "departement": "Haute-Corse",
+      "communePrincipale": "Canavaggia",
+      "communes": [
+        "Canavaggia"
+      ],
+      "massif": null,
+      "bassin": "Golo",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a4IV",
+      "interet": 2.4,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 623,
+      "deniveleM": 373,
+      "longueurM": 2000,
+      "cascadeMaxM": 40,
+      "cordeMiniM": 35,
+      "navette": "11.0km"
+    },
+    "timings": {
+      "approche": "40mn",
+      "descente": "4-7h",
+      "retour": "??"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": "L'engagement est réel. Dans les cascades il est difficile de s'enfuir et l'ensemble reste enserré dans un maquis hostile. Les crues peuvent être violentes.\n\nQuelques mains courantes où une corde de 10m simplifie bien les manœuvres (dans la C40 par ex fractionnée maintenant en 35m+4m)\n\nCertains ressauts sont volontairement non équipés : il faut avoir du bon sens...",
+      "periode": "A 200l/s, ça devient très chaud dans la cascade canalisée sous le bloc coincé.",
+      "geologie": null,
+      "historique": "Guy Cau",
+      "remarques": "L'été il ne reste qu'un microscopique pissot résiduel. L'idéal est de descendre le canyon aux mois de mars-avril. Les cascades et les vasques sont alors très esthétiques dans une ambiance sauvage."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2342,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.4953,
+        "longitude": 9.2353,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 42.4953,
+      "longitude": 9.2353,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_eeda460e91ce529f",
+          "kind": "TOPOGUIDE",
+          "title": "Corse Canyons (2ème édition)",
+          "authors": [
+            "Franck Jourdan",
+            "Jean-François Fiorina"
+          ],
+          "publicationYear": 2006,
+          "reference": "2-84698-169-8",
+          "editor": "Albiana",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/133/Corse-Canyons.html"
+        },
+        {
+          "id": "biblio_8a8df6e04c56edf0",
+          "kind": "TOPOGUIDE",
+          "title": "Corse - 15 canyons Haute-Corse...",
+          "authors": [
+            "Jean-Paul Quilici"
+          ],
+          "publicationYear": 2001,
+          "reference": null,
+          "editor": null,
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/17/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_fc7cd14ea88e299a",
+          "kind": "MAP",
+          "title": "4349 OT Vescovato (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 232,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Corse) - 08 juin 2011",
+          "summary": "- Le canyonisme est interdit la nuit (sauf dérogation)\n\n- Le canyonisme est interdit s'il y a une alerte émise par Météo-France de niveau orange ou rouge en cours.\n\n- Le canyonisme est interdit aux mineurs de moins de 7 ans, sauf canyon évalué égal ou inférieur à V1-A3-E3\n\n- Les groupes auront un effectif maximum de 12 personnes, hors encadrement.",
+          "remark": "L'arrêté du 9 juillet 2019 pris conjointement par les préfectures de Corse-du-Sud et de Haute-Corse harmonise les réglementations existantes pour les deux départements.",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nArrêté préfectoral (Haute-Corse) n°2011-159-0008 du 8 juin 2011\n\nArrêté préfectoral modificatif (Corse-du-Sud et Haute-Corse) n°R20-2019-07-09-001 du 9 juillet 2019",
+          "effectiveDate": "08 juin 2011",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/232/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral (Haute-Corse) n°2011-159-0008 du 8 juin 2011",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem232_pj1.pdf"
+            },
+            {
+              "label": "Arrêté préfectoral modificatif (Corse-du-Sud et Haute-Corse) n°R20-2019-07-09-001 du 9 juillet 2019",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem232_pj2.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

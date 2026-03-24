@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:42.214501+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23679,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23679/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23679/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23679/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23679/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23679,
+    "identity": {
+      "nom": "Serre Reyna",
+      "nomComplet": "Torrent de Serre Reyna",
+      "prefixeNom": "Torrent de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23679/Serre-Reyna.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Hautes-Alpes",
+      "communePrincipale": "Réallon",
+      "communes": [
+        "Réallon"
+      ],
+      "massif": "Ecrins - Oisans - Champsaur",
+      "bassin": "Durance",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2III",
+      "interet": 2.4,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 2090,
+      "deniveleM": 340,
+      "longueurM": 1000,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 25,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "2h",
+      "descente": "2h30",
+      "retour": "50min"
+    },
+    "topo": {
+      "accesAval": "De Savines-le-Lac monter à Réallon par la D41 puis la D9. Poursuivre jusqu'au hameau des Gourniers pour la D241. Grand parking juste avant le village.",
+      "accesAmont": null,
+      "approche": "Traverser le pont, passer en RD du torrent de Réallon puis monter en longeant cette rive dans le hameau. Suivre alors le sentier montant à la chapelle Saint-Marcellin. Après cette chapelle prendre le sentier secondaire à gauche (qui monte davantage) au niveau d'une patte d'oie (flèche sur petit poteau en bois). Suivre alors ce sentier qui monte à la cabane de la Vieille Selle. Quand vous voyez les cascades quitter le sentier (qui monte à la nouvelle cabane plus en hauteur) pour rejoindre l'ancienne cabane (plus proche du ruisseau). De cette cabane monter à vue au-dessus des cascades vues pendant l'approche (vous pouvez ensuite monter encore 20min pour rajouter 4 cascades (moins esthétiques) à votre parcours.",
+      "descente": "3 séries de cascades entrecoupées par deux zones de marches (16 cascades équipées en tout) dans un cadre de montagne de toute beauté.",
+      "retour": "Le ravin coupe le sentier à la fin du dernier encaissement. Prendre à droite et rejoindre le véhicule.",
+      "engagement": "De nombreuses échappatoires.",
+      "periode": "A faire l'été pour profiter de la chaleur et du soleil.",
+      "geologie": null,
+      "historique": "Équipé en mono-points de 10mm probablement en 2016 par ????",
+      "remarques": "Torrent se situant dans le Parc National des Ecrins."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23679,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.648888,
+        "longitude": 6.351378,
+        "label": null
+      },
+      {
+        "canyonId": 23679,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.614815,
+        "longitude": 6.334588,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.614815,
+      "longitude": 6.334588,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_d3ba8daa244cabe2",
+          "kind": "MAP",
+          "title": "3437 ET Orcieres-Merlette (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

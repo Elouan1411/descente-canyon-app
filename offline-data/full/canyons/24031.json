@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:56.739073+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24031,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24031/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24031/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24031/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24031/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24031,
+    "identity": {
+      "nom": "Colimaçons (tronçon 2)",
+      "nomComplet": "Ravine des Colimaçons (tronçon 2)",
+      "prefixeNom": "Ravine des",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24031/Colimacons-troncon-2.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Saint-Leu",
+      "departement": "La Réunion",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a3III",
+      "interet": 2.0,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 845,
+      "deniveleM": 330,
+      "longueurM": 1400,
+      "cascadeMaxM": 42,
+      "cordeMiniM": 45,
+      "navette": "5.0km"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "5h",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": "Sur la route des Tamarins prendre la sortie Colimaçons puis prendre la route qui monte (D12) en direction de la Chaloupe Saint-Leu. Au croisement de la D3 prendre à droite, passer devant le décollage de parapente ; après un premier radier on atteint la ravine reconnaissable par un pont, se garer sur la droite une centaine de mètres après ce pont.",
+      "accesAmont": null,
+      "approche": null,
+      "descente": "Un canyon sec qu'il faut essayer de faire après un épisode pluvieux significatif en saison des pluies pour en apprécier la beauté.",
+      "retour": "En arrivant depuis a route des T.amarins (cf accès) on laisse une voiture navette. Prendre l'intersection à droite direction Bras Mouton (D13), la sortie du canyon se situe au niveau du pont (450 m après l'intersection), se garer au mieux au niveau du panneau de l’entrée de « Bras Mouton » 200 m plus loin.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24031,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": -21.13312,
+        "longitude": 55.310509,
+        "label": null
+      },
+      {
+        "canyonId": 24031,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": -21.141069,
+        "longitude": 55.301079,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": -21.13312,
+      "longitude": 55.310509,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_9528ae8134f170b8",
+          "kind": "MAP",
+          "title": "4404RT Saint-Leu L'étang sale (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

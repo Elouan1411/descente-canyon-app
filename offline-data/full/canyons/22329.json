@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:37.824774+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22329,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22329/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22329/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22329/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22329/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22329,
+    "identity": {
+      "nom": "Chaude",
+      "nomComplet": "Ravine Chaude",
+      "prefixeNom": "Ravine",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22329/Chaude.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": null,
+      "departement": "Guadeloupe",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Soufrière",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2I",
+      "interet": 2.0,
+      "nbVotes": 7
+    },
+    "metrics": {
+      "altitudeDepartM": 700,
+      "deniveleM": 100,
+      "longueurM": 1000,
+      "cascadeMaxM": 15,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "40min",
+      "descente": "1h00",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "Depuis le centre-ville de Gourbeyre, prenez la D10 qui monte vers la \"plateau des Palmistes\" et \"Moscou\". Une fois sur le plateau des Palmistes (maisons, abris-bus...) ne loupez pas la route qui part sur votre gauche indiquée \"bassin bleu\" (point 554 sur IGN). Roulez jusqu'au départ du chemin de randonnées du bassin bleu (panneaux, parking 10 voitures environ sur le bord de la route). Garez-vous sans gêner.",
+      "accesAmont": null,
+      "approche": "Approche d'abord en RG du Galion, puis en RD du Galion et RD de la ravine Chaude:\n\nDepuis le parking, prenez à pied la piste qui descend en direction du \"bassin bleu\". Au bout d'environ 1/4 d'heure, elle atteint le Galion au niveau de carbets (abris).\n\nRemontez en RG du Galion jusqu'à atteindre le bassin bleu (joli bassin profond avec un toboggan). Remontez le Galion toujours en sa RG (tuyaux) jusqu'à l'arrivée de la ravine chaude, premier affluent notoire RD du Galion que vous voyez en montant (environ 5 minutes au dessus du bassin bleu). Parfois, cette ravine ne coule pas à cause de la prise d'eau située en haut de la dernière cascade. Traversez le Galion et remontez la ravine Chaude par la rive droite: cordes en place puis trace assez bien marquée qui finalement vient rejoindre le ruisseau au départ de la course.",
+      "descente": "Succession de ressauts qui se désescaladent ou se passent en rappel, dans une ambiance tropicale et végétale à souhait. Quelques bassins doivent se traverser à la nage.\n\nArrivés au Galion, vous pouvez le descendre jusqu'au \"bassin bleu\" (quelques toboggans sympas).",
+      "retour": "Reprendre alors, comme sur la marche d'approche la trace en RG puis la piste jusqu'à la voiture",
+      "engagement": "Faible vu la longueur",
+      "periode": "Peu d'eau en général, sauf en saison des pluies ou certaines goulottes peuvent être délicates à négocier.Le débit est visible à l'approche, en haut de la dernière cascade (prise d'eau).",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Pratiqué par les professionnels de l'ile. Parcours d'initiation.\n\nPrudence dans le bassin de la prise d'eau. Sortir plutôt à gauche pour éviter les tuyauteries.\n\nLa ravine chaude n'est chaude que par son nom ;-(\n\nLa partie du Galion en aval de la Ravine Chaude est hors-parc donc autorisée. La partie amont est interdite."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22329,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 16.021025,
+        "longitude": -61.668751,
+        "label": null
+      },
+      {
+        "canyonId": 22329,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 16.019417,
+        "longitude": -61.665787,
+        "label": null
+      },
+      {
+        "canyonId": 22329,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 16.011608,
+        "longitude": -61.67128,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 16.011608,
+      "longitude": -61.67128,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_823671d200a5451f",
+          "kind": "MAP",
+          "title": "4605GT Basse-Terre / La Soufrière / Les Saintes / Parc National de la Guadeloupe (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

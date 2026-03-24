@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:28.866114+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22556,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22556/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22556/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22556/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22556/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22556,
+    "identity": {
+      "nom": "Rouget",
+      "nomComplet": "Cascade du Rouget, Sales",
+      "prefixeNom": "Cascade du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22556/Rouget.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Haute-Savoie",
+      "communePrincipale": "Sixt-Fer-à-Cheval",
+      "communes": [
+        "Sixt-Fer-à-Cheval"
+      ],
+      "massif": "Chablais - Platé - Aiguilles Rouges",
+      "bassin": "Giffre",
+      "coursEau": "Sales"
+    },
+    "rating": {
+      "cotation": "v5a4I",
+      "interet": 2.7,
+      "nbVotes": 6
+    },
+    "metrics": {
+      "altitudeDepartM": 1060,
+      "deniveleM": 200,
+      "longueurM": 340,
+      "cascadeMaxM": 55,
+      "cordeMiniM": 65,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "2h",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "Voir accès de la Tine des Fonts.\n\nSe garer à la cascade du Rouget ou près du pont précédent à droite de la route (3 à 4 voitures), plus discret que devant l'auberge et sur le chemin de retour; suivre alors un bon chemin qui monte vers le départ.\n\nvue sur la dernière C30 pour en apprécier le débit.",
+      "accesAmont": null,
+      "approche": "Suivre le sentier RG pour rejoindre le ruisseau sur le plateau.\n\ncouper vers le torrent à la dernière épingle à droite (alt : 1040m.)\n\nSi vous poursuivez sur le chemin vous arriverez près d'un chalet isolé vers 1075m et il vous faudra descendre au départ de la C55 dans le torrent super glissant ; préférez la RG avec rappel sur arbre juste avant le départ et traverser en RD, anneau de sangle sur un des 2 épicéas jumeaux.",
+      "descente": "C55 : départ hors d'eau, arrivée et rappel de corde délicat en cas de longueur limite et de bon débit (goulotte horizontale sur quelques mètres et ça pousse ; arrivée dans une vasque peu profonde.)\n\nC35 : départ sur épicéa excentré en RG : anneau de corde. Peu d'eau à l'arrivée.\n\nC7 : sous le pont routier sur un bout de fer à béton.\n\nMC 30m (indispensable car terrain glissant ++++)\n\npossibilité de shunter la C7 en installant la MC sur la rambarde du parking dans l'axe de la descente.\n\nC30 : 2 goujons chainés en RG, arrivée à la confluence avec le nant sec RG, chemin de retour.",
+      "retour": "Au pied de la C30 suivre le ru RG.\n\nArrivée sur la route, que l'on remonte pour le parking de l'auberge souvent encombré ou bien près des voitures si on a choisi la seconde option parking (plus discret).",
+      "engagement": "Échappatoire en haut et bas de chaque obstacle.",
+      "periode": "Étiage complet (fin d'été, automne).\n\n1 touriste décédé (été 2010) suite à une glissade avant la C7, éjecté jusqu'au pied de la C30.",
+      "geologie": null,
+      "historique": "première ??\n\néquipé le 23/10/2010",
+      "remarques": "Five ten inopérantes"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22556,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.026669,
+        "longitude": 6.771667,
+        "label": null
+      },
+      {
+        "canyonId": 22556,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.028889,
+        "longitude": 6.771944,
+        "label": null
+      },
+      {
+        "canyonId": 22556,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.028057,
+        "longitude": 6.772222,
+        "label": null
+      },
+      {
+        "canyonId": 22556,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 46.028889,
+        "longitude": 6.771111,
+        "label": "retour par la route"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.028057,
+      "longitude": 6.772222,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_15a6dbda97b38ace",
+          "kind": "MAP",
+          "title": "3530 ET Samoens - Haut-Giffre (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

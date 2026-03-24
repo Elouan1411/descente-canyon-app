@@ -1,0 +1,144 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:54:54.969730+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22921,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22921/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22921/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22921/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22921/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22921,
+    "identity": {
+      "nom": "Vezou",
+      "nomComplet": "Gorges du Vezou, Le Vezou",
+      "prefixeNom": "Gorges du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22921/Vezou.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Cantal",
+      "communePrincipale": "Paulhenc",
+      "communes": [
+        "Paulhenc"
+      ],
+      "massif": "Planèze de Pierrefort",
+      "bassin": "Truyere",
+      "coursEau": "Le Vezou"
+    },
+    "rating": {
+      "cotation": "v2a4I",
+      "interet": 1.8,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 815,
+      "deniveleM": 100,
+      "longueurM": 2000,
+      "cascadeMaxM": 8,
+      "cordeMiniM": 15,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "10min",
+      "descente": "2h45",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": "Hameau du Maynial à 3,5 km au sud de Pierrefort.",
+      "accesAmont": null,
+      "approche": "Descendre vers le moulin de Régis.",
+      "descente": "Un peu plus qu'une simple randonnée aquatique dans une gorge sauvage, pimentée de quatre rappels de 5 à 11m. On profitera des sauts et toboggans, trop rares dans la région. Propice à la découverte et l'initiation à condition d'attendre la chaleur de l'été et les plus basses eaux.",
+      "retour": "Sortie en RG à la passerelle près de l'ancienne fontaine minérale.",
+      "engagement": "Peu encaissé mais isolé.",
+      "periode": "Rivière abondante : bien estimer le débit au départ. Attendre l'étiage car certains passages sont très resserrés et des mouvements d'eau dans les vasques existent.",
+      "geologie": "Granite et gneiss",
+      "historique": "Première descente par Serge Navarro, Philippe Viette et Pierre-Marie Orblin le 12 août 2011.",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22921,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.899078,
+        "longitude": 2.840019,
+        "label": "Moulin de Régis"
+      },
+      {
+        "canyonId": 22921,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.888138,
+        "longitude": 2.835615,
+        "label": null
+      },
+      {
+        "canyonId": 22921,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 44.897282,
+        "longitude": 2.842487,
+        "label": "Près d'un hangar en bois"
+      },
+      {
+        "canyonId": 22921,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 44.885895,
+        "longitude": 2.841961,
+        "label": "Hameau de Fontanes"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 44.897282,
+      "longitude": 2.842487,
+      "label": "Près d'un hangar en bois"
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_daf9041e16b163a9",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons cantalous",
+          "authors": [
+            "Philippe VIETTE-COSTE"
+          ],
+          "publicationYear": 2018,
+          "reference": "97829563881-0-4",
+          "editor": "Auto-édition",
+          "status": "en stock\n\n- 14,00 € -\n\nCommandez cet ouvrage dès maintenant !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/1124/Canyons-cantalous.html"
+        },
+        {
+          "id": "biblio_0ada102a5dea7773",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons arvernes",
+          "authors": [
+            "Philippe Viette-Coste",
+            "Serge Navarro",
+            "Pierre-Marie Orblin"
+          ],
+          "publicationYear": 2012,
+          "reference": "978-2-7466-3647-7",
+          "editor": "auto-édition",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/165/Canyons-arvernes.html"
+        }
+      ],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

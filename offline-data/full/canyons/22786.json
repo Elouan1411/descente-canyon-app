@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:54:21.859816+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22786,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22786/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22786/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22786/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22786/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/22786/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 22786,
+    "identity": {
+      "nom": "El Leon",
+      "nomComplet": "Salto El Leon, El Leon",
+      "prefixeNom": "Salto",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22786/El-Leon.html"
+    },
+    "location": {
+      "pays": "Chili",
+      "region": "Los Lagos Region",
+      "departement": "Provincia de Llanquihue",
+      "communePrincipale": "Puerto Varas",
+      "communes": [
+        "Puerto Varas"
+      ],
+      "massif": "Sierra Santo Domingo",
+      "bassin": "Rio el leon",
+      "coursEau": "El Leon"
+    },
+    "rating": {
+      "cotation": "v6a4III",
+      "interet": 2.8,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 310,
+      "deniveleM": 120,
+      "longueurM": 1200,
+      "cascadeMaxM": 70,
+      "cordeMiniM": 60,
+      "navette": "40.0km"
+    },
+    "timings": {
+      "approche": "1h",
+      "descente": "2h30",
+      "retour": "1h15"
+    },
+    "topo": {
+      "accesAval": "Depuis le port de 'Saltos Petrohué' sur le lago todos Santos, il faut compter 45 min de navigation en kayak ou 15 mn de canot à moteur pour atteindre le Rio el Leon.",
+      "accesAmont": null,
+      "approche": "Depuis le débarcadère sur l'embouchure du Rio Leon, prendre un sentier bien tracé qui grimpe pendant trois quart d'heure.\n\nLe sentier mène à 10 minutes du départ du canyon que l'on atteint en se frayant un accès à coups de machette et grâce au GPS.",
+      "descente": "Le canyon débute par une progression de 400 mètres environ avec un passage entre d'énormes tronc d'arbres jusqu'à une vasque qui domine la grande cascade de 70 mètres.\n\nUne main courante sur la rive droite permet de descendre proche de la veine en basses eaux ou au contraire de s'éloigner et descendre en sécurité hors crue.\n\nRelais dans les deux cas à 15 mètres. On poursuit la progression par quelques petits ressaut et une main courante.\n\nLe canyon se termine par une jolie cascade de 15 mètres équipée en rive gauche.",
+      "retour": "On suit le lit du torrent 15 min jusqu'au point de départ (barque ou kayak).",
+      "engagement": "Canyon en terrain d'aventure, avec un accès peu aisé. Pas d'échappatoires.\n\nLe torrent du Leon a un bon débit.",
+      "periode": "La région des lagos est une région bien arrosée. La meilleure période est de janvier à mars.\n\nAttention aux orages fréquents !",
+      "geologie": null,
+      "historique": "Le canyon a été exploré et équipé en janvier 2012 dans le cadre de l'expédition \"Aguasverticales 2011\" par Mathias rosello, Pablo Guzmann et Ingrid Riedel de Patagonia Vertical.",
+      "remarques": "Il y a un vieil équipement en place qui permet de remonter en rando aquatique jusqu'au bas de la grande cascade. Pas entretenu , prudence !\n\nLe torrent du Leon est dans une propriété privée, mais pas de problème avec le propriétaire et le gardien du Fundo."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22786,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": -41.135647,
+        "longitude": -72.34861,
+        "label": null
+      },
+      {
+        "canyonId": 22786,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": -41.130054,
+        "longitude": -72.349022,
+        "label": null
+      },
+      {
+        "canyonId": 22786,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": -41.138596,
+        "longitude": -72.400513,
+        "label": "parking et embarcadère"
+      },
+      {
+        "canyonId": 22786,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": -41.129135,
+        "longitude": -72.347824,
+        "label": "Débarcadère"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": -41.138596,
+      "longitude": -72.400513,
+      "label": "parking et embarcadère"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 238,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Information",
+          "summary": "Au port de Saltos Petrohué il convient de se signaler et de soliciter l'autorisation auprès des services de la CONAF ; gestionnaires du Parque nacional Vicente Perez Rosales ou se situe le massif.",
+          "remark": null,
+          "details": null,
+          "effectiveDate": null,
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/238/legislation.html",
+          "attachments": []
+        }
+      ]
+    }
+  }
+}

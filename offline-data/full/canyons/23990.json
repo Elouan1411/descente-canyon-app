@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:48.476845+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23990,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23990/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23990/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23990/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23990/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23990,
+    "identity": {
+      "nom": "Prelles",
+      "nomComplet": "Torrent de Prelles",
+      "prefixeNom": "Torrent de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23990/Prelles.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Hautes-Alpes",
+      "communePrincipale": "Champoléon",
+      "communes": [
+        "Champoléon"
+      ],
+      "massif": "Ecrins - Oisans - Champsaur",
+      "bassin": "Drac Blanc",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a2III",
+      "interet": 2.0,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 1840,
+      "deniveleM": 200,
+      "longueurM": 200,
+      "cascadeMaxM": 50,
+      "cordeMiniM": 60,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h10",
+      "descente": "2h00",
+      "retour": "45min"
+    },
+    "topo": {
+      "accesAval": "Même accès que les canyons d'Isora, Vallon Long et Vallon Plat.\n\nDepuis la RN 85 Gap-Grenoble et prendre la direction d'Orcières-Merlette. 4 km après Pont-du-Fossé, prendre à gauche et remonter la vallée du Drac Blanc (vallée du Champoléon). Rouler jusqu'au bout de la route et se rendre au parking non loin du torrent d'Isora.",
+      "accesAmont": null,
+      "approche": "Emprunter la piste qui conduit au refuge du Pré de la Chaumette en remontant la RG du Drac Blanc jusqu'aux cascades de Prelles. L'on poursuit 100 m plus loin sur la piste pour trouver à votre droite un petit sentier indiqué d'un petit cairn et d'un bâton planté, celui-ci gravit la pente, traverse la barre rocheuse et accède en quelques minutes au départ de la descente (ce petit sentier n'est pas indiqué sur l'IGN).",
+      "descente": "Rejoindre la première cascade par quelques petits plan-inclinés, C18 sur 1 pt en Rd, C5 sur 1 pt en Rd, marche avec quelques petites désescalades, Mc12 sur 1 pt en Rg+ Mc sur Pi17 sur 1 pt en Rd, C35 sur 1 pt en Rd, Mc10 sur 1pt en Rg+Mc12 sur 1pt en Rd+C50 sur 2pts en Rd (R2x60m pour le rappel de corde), C18 sur 1 pt loin en Rd (R2x23m), C5+Pi10 sur 1 pt en Rg, C15+C5 sur 1pt en Rd (R2x25m).",
+      "retour": "Reprendre la piste prise à l'aller.",
+      "engagement": "Cascades plutôt ouvertes, mais les échappatoires sont peu évidentes.",
+      "periode": "A partir de la mi-août.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Équipement minimaliste principalement sur mono-points de 8 mm avec plaquettes avec anneaux ou maillons de chaîne. Seule la C50 a été doublée avec deux plaquettes-anneaux. L'équipement n'est pas trop exposé aux crues, mais prévoyez tout de même le nécessaire pour équiper ou compléter l'équipement déjà en place, car un gros volume d'eau y descend après la fonte."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23990,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.754456,
+        "longitude": 6.312903,
+        "label": null
+      },
+      {
+        "canyonId": 23990,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.7565,
+        "longitude": 6.311139,
+        "label": null
+      },
+      {
+        "canyonId": 23990,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.76273,
+        "longitude": 6.280647,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.76273,
+      "longitude": 6.280647,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_b0e951331c704682",
+          "kind": "MAP",
+          "title": "3437 OT Champsaur - Parc des Ecrins (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

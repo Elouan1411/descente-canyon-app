@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:21.183472+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22246,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22246/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22246/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22246/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22246/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22246,
+    "identity": {
+      "nom": "Rose et Ruisseau d'Orque",
+      "nomComplet": "Cascade de Rose et Ruisseau d'Orque",
+      "prefixeNom": "Cascade de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22246/Rose-et-Ruisseau-d-Orque.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Hérault",
+      "communePrincipale": "Castanet-le-Haut",
+      "communes": [
+        "Saint-Geniès-de-Varensal",
+        "Castanet-le-Haut"
+      ],
+      "massif": null,
+      "bassin": "La Mare",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a2II",
+      "interet": 1.4,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 800,
+      "deniveleM": 160,
+      "longueurM": null,
+      "cascadeMaxM": 80,
+      "cordeMiniM": 60,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "20",
+      "descente": "1h45",
+      "retour": "1h15"
+    },
+    "topo": {
+      "accesAval": "De Saint-Gervais-sur-Mare, direction Murat-sur-Vèbre/Lacaune par la D922\n\nParking au point de vue de la croix de Mounis (alt 810m) sur la droite en venant de Saint-Gervais-sur-Mare.",
+      "accesAmont": null,
+      "approche": "Un sentier part en direction du causse, il est balisé en jaune, ce sentier rejoint le gite d'étape de \"le Fau\".\n\nS'arrêter au premier cours d'eau sec que l'on traverse et continuer l'approche dans le ruisseau sec jusqu'à la grande verticale.",
+      "descente": "Un premier grand rappel (80 m) fractionné en 50+30 sec, puis quelques cascades du ruisseau d'Orque (celle que l'on voit de la route en montant), quitter le ruisseau dès que les ressauts font place à une marche en bloc assez fastidieuse...",
+      "retour": "Le moins pénible est de poursuivre la descente par la rive jusqu'au moulin d'Orque puis remonter le chemin qui rejoint la D922. Arrivé sur la D922, il reste 1km200 pour rejoindre le parking amont.",
+      "engagement": "C'est un petit Albès avec sa première partie sèche (mais des traces de crue montrent que cette partie amont coule après les fortes pluies saisonnières comme pour Albès). La 80m ne présente pas de difficulté, les frottements sont faciles à gérer et le relais permet un rappel aisé de la corde. La partie aquatique est équipée en mono-points à quelques endroits pour éviter la glissade.",
+      "periode": "Comme pour Albès, le canyon peut être parcouru tant que la partie amont ne coule pas.\n\nA l'instar du canyon voisin d'Albès, la partie en eau ne mérite pas une descente en tant que telle.\n\nA conseiller au printemps ou à l'automne, l'hiver l'eau est très froide...",
+      "geologie": "La grande verticale est calcaire (causse grand) la suite est davantage une roche schisteuse.",
+      "historique": null,
+      "remarques": "Cette descente peut se faire à partir du gite d'étape de \"Le Fau\". La navette voiture n'a pas d'intérêt car il ne reste que 1km environ une fois arrivée sur la D922 lors de la marche de retour.\n\nLa grande verticale est bien abritée du vent.\n\nLa roche est extrêmement glissante."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22246,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.68861,
+        "longitude": 2.963889,
+        "label": null
+      },
+      {
+        "canyonId": 22246,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.68639,
+        "longitude": 2.968333,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 43.68861,
+      "longitude": 2.963889,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

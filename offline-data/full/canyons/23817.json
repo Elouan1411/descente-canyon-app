@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:12.908259+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23817,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23817/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23817/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23817/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23817/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23817,
+    "identity": {
+      "nom": "Weißbach",
+      "nomComplet": "Weißbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23817/Weißbach.html"
+    },
+    "location": {
+      "pays": "Allemagne",
+      "region": "Bayern",
+      "departement": "Oberbayern",
+      "communePrincipale": "Marktschellenberg",
+      "communes": [
+        "Landkreis Berchtesgadener Land",
+        "Marktschellenberg"
+      ],
+      "massif": "Alpes de Berchtesgaden",
+      "bassin": "Saalach",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a3II",
+      "interet": null,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": 720,
+      "deniveleM": 250,
+      "longueurM": 1450,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "1h40min",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23817,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.713669,
+        "longitude": 13.02505,
+        "label": null
+      },
+      {
+        "canyonId": 23817,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.710789,
+        "longitude": 13.03906,
+        "label": null
+      },
+      {
+        "canyonId": 23817,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.710415,
+        "longitude": 13.039325,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.710415,
+      "longitude": 13.039325,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_26247a81ed0b88a1",
+          "kind": "MAP",
+          "title": "8244 Berchtesgaden Ost (Bayerisches Landesvermessungsamt)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_f4d0d05c67c5f11f",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/Canyons/WeissbachCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/Canyons/WeissbachCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

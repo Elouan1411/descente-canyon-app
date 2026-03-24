@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:59:11.256798+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24096,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24096/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24096/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24096/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24096/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24096,
+    "identity": {
+      "nom": "Clara (superior)",
+      "nomComplet": "Riera de Clara (superior)",
+      "prefixeNom": "Riera de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24096/Clara-superior.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Cataluña",
+      "departement": "Barcelona",
+      "communePrincipale": "Berga",
+      "communes": [
+        "Avià",
+        "Berga"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.3,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 1000,
+      "deniveleM": 170,
+      "longueurM": 900,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 25,
+      "navette": "1.4km"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "1h45",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": ". La piste passe avec une voiture de tourisme haute. L’accès en voiture jusqu’au parking",
+      "accesAmont": "est moins bonne. 500m après le parking aval, prendre la piste à droite qui monte pendant 900m.",
+      "approche": "Se garer dans le virage et descendre vers la rivière en bas.",
+      "descente": "Très bien équipé.\n\nC6 C6 C10 C8 C12 C11 C7 C20 C9 saut 3m C10 C9 C10 C6 C11 C5 C8\n\nA faire avec un bon débit. Idéal quand il y a trop d’eau dans le canyon du Pas de l’Escalell.\n\nIl existe aussi une partie inférieure équipée, mais beaucoup moins intéressante et avec très peu de rappels.",
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24096,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.080822,
+        "longitude": 1.781364,
+        "label": null
+      },
+      {
+        "canyonId": 24096,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 42.080051,
+        "longitude": 1.781133,
+        "label": null
+      },
+      {
+        "canyonId": 24096,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 42.075584,
+        "longitude": 1.784944,
+        "label": null
+      },
+      {
+        "canyonId": 24096,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 42.06617,
+        "longitude": 1.795694,
+        "label": "départ de la piste de montée"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 42.080051,
+      "longitude": 1.781133,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

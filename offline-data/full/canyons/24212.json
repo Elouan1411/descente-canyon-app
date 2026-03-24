@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:59:33.579032+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24212,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24212/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24212/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24212/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24212/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/24212/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 24212,
+    "identity": {
+      "nom": "Tosca",
+      "nomComplet": "Clot de la Tosca, Riu Major",
+      "prefixeNom": "Clot de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24212/Tosca.html"
+    },
+    "location": {
+      "pays": "France , Espagne",
+      "region": "Occitanie",
+      "departement": "Pyrénées-Orientales , Gerona",
+      "communePrincipale": "Maçanet de Cabrenys",
+      "communes": [
+        "Cataluña",
+        "Pyrénées-Orientales",
+        "Gerona",
+        "Coustouges",
+        "Maçanet de Cabrenys"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 2.3,
+      "nbVotes": 5
+    },
+    "metrics": {
+      "altitudeDepartM": 800,
+      "deniveleM": 50,
+      "longueurM": 100,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "45min",
+      "descente": "2h",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "Depuis Coustouges, apres le pont du Riu Major, continuer la départementale en direction de la frontière et se garer dans la piste du Can Rogelio qui prend avant Tapies",
+      "accesAmont": null,
+      "approche": "Suivre les pistes qui montent le long de la rive jusqu'au départ.",
+      "descente": "Cascades de travertino",
+      "retour": "Retour sur le chemin puis piste évident qui rejoint la voiture.",
+      "engagement": "Aucun",
+      "periode": "S'assèche l'été, le printemps est une bonne période pour le voir en condition, à faire après un déluge.",
+      "geologie": "Roche sedimentaire calcaire caliza et travertino",
+      "historique": "Historiquement non connu, probablement ouvert et équipé par une équipe espagnole il y a de nombreuses années.",
+      "remarques": "Il y a differentes autres parte de randonnees aquatiques dans la vallèe du riu Major inferior et superior equipado por Kèvin M Trujillo."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24212,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.370594,
+        "longitude": 2.662387,
+        "label": null
+      },
+      {
+        "canyonId": 24212,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.368694,
+        "longitude": 2.661072,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 42.370594,
+      "longitude": 2.662387,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 325,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Pyrénées-Orientales) - 26 mars 2015",
+          "summary": "Sur le département des Pyrénées Orientales, la descente de canyon est interdite du 3ème dimanche de septembre (exclus) au deuxième samedi d'avril (exclus). Il est aussi interdit de commencer une descente avant 7h et après 17h.\n\nLes canyons suivants font l'objets de dispositions particulières :\n\n- Eaux Chaudes\n\n- Llech\n\n- Galamus\n\n- Gourg des Anelles\n\n- Baoussous",
+          "remark": null,
+          "details": "Arrêté préfectoral n°2015085-0005 du 26 mars 2015",
+          "effectiveDate": "26 mars 2015",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/325/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral n°2015085-0005 du 26 mars 2015",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem325_pj1.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

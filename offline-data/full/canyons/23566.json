@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:16.028298+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23566,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23566/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23566/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23566/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23566/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23566,
+    "identity": {
+      "nom": "Costa",
+      "nomComplet": "Ri di Costa",
+      "prefixeNom": "Ri di",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23566/Costa.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": null,
+      "departement": "Tessin",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": "Brenno",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v5a5IV",
+      "interet": 3.2,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 1850,
+      "deniveleM": 515,
+      "longueurM": 2100,
+      "cascadeMaxM": 60,
+      "cordeMiniM": 60,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h30-2h",
+      "descente": "5h",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "Monter la vallée de Malvaglia et continuer tout au fond de la vallée au lieudit Fontané (alt. 1300m).",
+      "accesAmont": null,
+      "approche": "Prendre le sentier de randonnée qui monte dans le pierrier en RG du torrent d’Orino.\n\nOn passe un chalet vers l’altitude 1550m, puis on arrive à un petit hameau vers 1770m. De là prendre un sentier descendant en direction du canyon, jusqu’à la passerelle (alt. 1670m). De la passerelle, continuer sur un sentier peu marqué en RG qui remonte le canyon et atteindre le cours d’eau sur le plateau vers l’altitude 1850m.",
+      "descente": "Première partie (alt 1850m-alt 1670m), 11 rappels dont un très beau toboggan de 10-12m. Encaissement peu profond avec quelques beaux passages.\n\nSeconde partie (alt 1670m-alt 1370m), de la passerelle au pied de la C60, enchaînement de cascades dans un encaissement plus marqué. Les rappels sont plus hauts et plus techniques. Cette partie se termine sur la C60, que l’on peut descendre en une fois ou en la fractionnant avec un relais intermédiaire posé en 2011.\n\nTroisième partie, (alt 1370m alt 1335m), au pied de la C60 soit sortir sur le sentier RD ou continuer avec encore 3 petits obstacles bien ludique, jusqu’à rencontrer le torrent de Orino. Continuer encore 2 obstacles et sortie RD après la passerelle.",
+      "retour": "Continuer sur le sentier en RD du torrent d’Orino jusqu’à revenir au parking.",
+      "engagement": "Peu d'échappatoires évidentes.",
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "Andreas Brunner en 1999.\n\nPremière partie, pas vu d’équipement lors de notre descente en novembre 2015."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23566,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.459373,
+        "longitude": 9.068711,
+        "label": null
+      },
+      {
+        "canyonId": 23566,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.454765,
+        "longitude": 9.048095,
+        "label": null
+      },
+      {
+        "canyonId": 23566,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.449406,
+        "longitude": 9.053814,
+        "label": null
+      },
+      {
+        "canyonId": 23566,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 46.458893,
+        "longitude": 9.058341,
+        "label": "Start for part II"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.449406,
+      "longitude": 9.053814,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

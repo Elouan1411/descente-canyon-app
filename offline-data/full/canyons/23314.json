@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:31.881732+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23314,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23314/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23314/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23314/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23314/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23314,
+    "identity": {
+      "nom": "La Rouvière",
+      "nomComplet": "Ravin de La Rouvière, Affluent RD Baou",
+      "prefixeNom": "Ravin de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23314/La-Rouviere.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-de-Haute-Provence",
+      "communePrincipale": "La Palud-sur-Verdon",
+      "communes": [
+        "La Palud-sur-Verdon"
+      ],
+      "massif": "Verdon",
+      "bassin": "Verdon",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 0.2,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 760,
+      "deniveleM": 700,
+      "longueurM": 500,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 35,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "30min",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "De La Palud-sur-Verdon prenez la D952 vers Castellane et garez-vous dans l'épingle à gauche (environ 600m avant le pont qui traverse le Baou).",
+      "accesAmont": null,
+      "approche": "Du virage prendre la sente qui s'élève en rive gauche du ravin des Conhets (voir IGN). Rapidement cette sente coupe ce ravin, la suivre. Remonter ce ravin (tantôt RD tantôt RG). Arrivé à l'amont d'une cascade de 10m, retraverser RD et monter droit en face sur la butte (point IGN 805). De là, se diriger à vue vers une caravane abandonnée. Derrière cette caravane démarre un sentier qui va rentrer dans notre vallon.",
+      "descente": "Suivre le vallon dans lequel un sentier a été tracé (balisage point vers fluo, probablement pour un accès à un site d'escalade) jusqu'au départ de l'unique cascade de 30m puis spéléo végétale.",
+      "retour": "Trouver un sentier RG 50m avant la confluence avec le Baou qui vous ramène à l'épingle où ce trouve votre véhicule.",
+      "engagement": null,
+      "periode": "Toujours sec.",
+      "geologie": null,
+      "historique": "Un point posé le 25/01/2015 pour l'unique cascade",
+      "remarques": "Faites plutôt de l'escalade ou de la randonnée."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23314,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.785694,
+        "longitude": 6.388149,
+        "label": null
+      },
+      {
+        "canyonId": 23314,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.787094,
+        "longitude": 6.380737,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.787094,
+      "longitude": 6.380737,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_371b2a24e7aa2a73",
+          "kind": "MAP",
+          "title": "3442 OT Gorges du Verdon (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

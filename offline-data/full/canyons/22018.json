@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:32.975772+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22018,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22018/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22018/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22018/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22018/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22018,
+    "identity": {
+      "nom": "Foron [Taninges]",
+      "nomComplet": "Le Foron [Taninges], Foron de Taninges",
+      "prefixeNom": "Le",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22018/Foron-Taninges.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Haute-Savoie",
+      "communePrincipale": "Taninges",
+      "communes": [
+        "Taninges"
+      ],
+      "massif": "Chablais - Platé - Aiguilles Rouges",
+      "bassin": "Giffre",
+      "coursEau": "Foron de Taninges"
+    },
+    "rating": {
+      "cotation": "v4a3II",
+      "interet": 1.9,
+      "nbVotes": 18
+    },
+    "metrics": {
+      "altitudeDepartM": 1187,
+      "deniveleM": 110,
+      "longueurM": 600,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 30,
+      "navette": "3.0km"
+    },
+    "timings": {
+      "approche": "10min",
+      "descente": "1h30",
+      "retour": "1h"
+    },
+    "topo": {
+      "accesAval": "Après le pont des Gets (direction Praz-de-Lys), prendre ensuite la direction Col de l'Encrenaz. Garer la voiture au pont (dans une épingle), au-dessus du torrent de Boutigny. (parking)",
+      "accesAmont": "Continuer la route jusqu'à Bonnavaz. Se garer sur un petit parking à gauche à l'ancienne chapelle de Bonnavaz.",
+      "approche": "Du pont suivre la route jusqu'à la sortie du bois, longer le pré en revenant sur le Foron, un sentier descend en pente douce sur le ruisseau.\n\non peut, en se servant d'une corde en place, apprécier le niveau d'eau dans l'obstacle principal.\n\nOn peut aussi \"profiter\" des 2 petits toboggans en remontant le torrent sur quelques mètres.",
+      "descente": "Bien adapté à l'initiation.\n\nAttention bonne maitrise des techniques de corde indispensable.\n\nSurtout adapté à l'initiation aux mains courantes (en place) sur une paroi très glissante avec utilisation obligatoire de pédales. Deux points bien placés autour de la vasque suspendue permettraient de descendre dans l'actif plus agréablement.\n\nRechercher un point en AN sur un arbre (maillon encastré dans l'écorce) au dessus de la main courante, à hauteur de la vasque.",
+      "retour": "Chemin peu marqué au début en RD puis chemin forestier en RG jusqu'au pont.\n\nOption sans navette : 10mn, assez raide.\n\nAprès la dernière cascade, quelques minutes de marche en blocs, traverser le torrent de Boutigny à la confluence pour remonter sur sa rive droite en sous bois jusqu'au parking.",
+      "engagement": "1ère partie difficile si gros débit, équipement hors crues.",
+      "periode": "Juin à Novembre.",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22018,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 46.155834,
+        "longitude": 6.6175,
+        "label": null
+      },
+      {
+        "canyonId": 22018,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 46.136665,
+        "longitude": 6.623056,
+        "label": null
+      },
+      {
+        "canyonId": 22018,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.151333,
+        "longitude": 6.611583,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 46.155834,
+      "longitude": 6.6175,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

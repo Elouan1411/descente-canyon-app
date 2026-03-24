@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:25.572606+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23047,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23047/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23047/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23047/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23047/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23047,
+    "identity": {
+      "nom": "Amoladoras",
+      "nomComplet": "Barranco de las Amoladoras",
+      "prefixeNom": "Barranco de las",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23047/Amoladoras.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Andalucía",
+      "departement": "Provincia de Granada",
+      "communePrincipale": "Canales",
+      "communes": [
+        "Canales"
+      ],
+      "massif": "Sierra Nevada",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 1.3,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1320,
+      "deniveleM": 350,
+      "longueurM": null,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 30,
+      "navette": "4.0km"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "2h",
+      "retour": "1h"
+    },
+    "topo": {
+      "accesAval": "prendre à gauche la route vers Canales et se garer à son terminus\n\nP",
+      "accesAmont": "regagner le A395, faire 3.2km et se garer à gauche de la route (P devant un restaurant) Ceci juste avant le pont qui croise le bco. Panneau Barranco de Canales.",
+      "approche": "Suivre le lit jusqu’au premier rappel",
+      "descente": "16 rappels de maximum 25m",
+      "retour": "D'abord suivre le lit le mieux possible et dès que c'est plus ou moins possible sortir RG pour trouver en hauteur une sente qui devient beaucoup plus loin un bon sentier.\n\nA la fin, au niveau d'un petit batiment, prendre la piste à gauche qui monte au P aval.",
+      "engagement": null,
+      "periode": "Normalement sec. Peut couler après une intense période de pluie.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Pas facile de trouver au début un bon chemin de retour."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23047,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 37.138935,
+        "longitude": -3.483972,
+        "label": null
+      },
+      {
+        "canyonId": 23047,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 37.139683,
+        "longitude": -3.484247,
+        "label": null
+      },
+      {
+        "canyonId": 23047,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 37.155891,
+        "longitude": -3.477806,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 37.139683,
+      "longitude": -3.484247,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

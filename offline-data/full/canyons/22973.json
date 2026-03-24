@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:07.135761+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22973,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22973/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22973/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22973/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22973/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22973,
+    "identity": {
+      "nom": "Piche",
+      "nomComplet": "Ravin de la Piche, Haute Sasse",
+      "prefixeNom": "Ravin de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22973/Piche.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-de-Haute-Provence",
+      "communePrincipale": "Bayons",
+      "communes": [
+        "Bayons"
+      ],
+      "massif": null,
+      "bassin": "Sasse",
+      "coursEau": "Haute Sasse"
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 1.3,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 1250,
+      "deniveleM": 110,
+      "longueurM": 300,
+      "cascadeMaxM": 35,
+      "cordeMiniM": 40,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "40min",
+      "descente": "1h00",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "De Sisteron, prenez la direction de la Motte du Caire par la D951.Passez le torrent du Sasse et tournez à droite, toujours dans la direction de La Motte du Caire par la D951. Puis empruntez à droite la D1 en direction de Le Forest et Bayons. 800 m après Bayons, quittez la D1 pour une petite route à droite en direction de la Combe. La petite route est goudronnée sur 500 m et se poursuit sur une piste carrossable. Prendre la direction de la Combe sur 6,8 km de piste. Parking à la Haute Combe non loin du point 1097 sur l'IGN.",
+      "accesAmont": null,
+      "approche": "Du parking, prendre la piste qui part à droite en suivant le GR au point 1093 sur l'IGN. Traversez un premier ruisseau (ravin de la Sagne) puis le second (Ravin de la Piche) pour passer en RG de celui-ci. Poursuivre à travers champs en longeant dans un premier temps le ruisseau du Ravin de la Piche. Presque au fond du vallon, s'élever par la droite, lorsqu'il est possible pour vous de le faire et vous rendre au départ en haut des cascades.",
+      "descente": "Les 3 cascades s'enchainent presque, plan incliné 20 sur AN, C20 sur AN et R10+C25+plan incliné 30 amarrage en RD Chaine sur AN. Le R10, rappel 10 m pour atteindre un autre AN encore plus excentré en RD (anneau de corde + maillon rapide qui permet une descente sans frottement et le rappel de corde sans difficulté).",
+      "retour": "Emprunter l'itinéraire de l'aller pour revenir au parking.",
+      "engagement": "Aucun",
+      "periode": "Un joli débit à la fonte des neiges.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "A coupler avec le ravin de la Sagne tout proche, trés court avec 2 cascades dont 1 C 35 ( interêt : 0,6 / 4 )."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22973,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.346134,
+        "longitude": 6.259664,
+        "label": null
+      },
+      {
+        "canyonId": 22973,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.346493,
+        "longitude": 6.255544,
+        "label": null
+      },
+      {
+        "canyonId": 22973,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.345081,
+        "longitude": 6.242622,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.345081,
+      "longitude": 6.242622,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_f6542a442811df8f",
+          "kind": "MAP",
+          "title": "3439 ET Seyne - Chabanon-Grand-Puy (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

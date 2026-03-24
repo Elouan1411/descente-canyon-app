@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:31.529339+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23630,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23630/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23630/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23630/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23630/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23630,
+    "identity": {
+      "nom": "Baga",
+      "nomComplet": "Torrent de la Baga, Affluent rive gauche Forat Negre",
+      "prefixeNom": "Torrent de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23630/Baga.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Cataluña",
+      "departement": "Barcelona",
+      "communePrincipale": "Vallcebre",
+      "communes": [
+        "Vallcebre"
+      ],
+      "massif": null,
+      "bassin": "Rio Llobregat",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 1.3,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 1390,
+      "deniveleM": 180,
+      "longueurM": 900,
+      "cascadeMaxM": 15,
+      "cordeMiniM": 15,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "25min",
+      "descente": "45min",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "Idem que pour Forat Negre.",
+      "accesAmont": null,
+      "approche": "Approche par la route si pas de navette, sinon avec une navette aucune approche. Cet affluent est le ravin qui longe la route à la fin de la navette (ou de la marche d'approche).",
+      "descente": "3 ou 4 rappels sans prétentions, un ou deux sauts et de la marche en blocs",
+      "retour": "L'affluent tombe dans Forat Negre à la fin, sortie identique.",
+      "engagement": "Aucun",
+      "periode": "Printemps, après les pluies.",
+      "geologie": null,
+      "historique": "Équipement sur goujons en plus ou moins bon état.",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23630,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.200989,
+        "longitude": 1.804415,
+        "label": null
+      },
+      {
+        "canyonId": 23630,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.201542,
+        "longitude": 1.80935,
+        "label": null
+      },
+      {
+        "canyonId": 23630,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 42.200382,
+        "longitude": 1.803664,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 42.200382,
+      "longitude": 1.803664,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_71283f3cc9b9f018",
+          "kind": "MAP",
+          "title": "21 Andorra-Cadi (Mapa excursionista Piruneus)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

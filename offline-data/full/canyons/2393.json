@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:45:20.773212+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2393,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2393/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2393/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2393/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2393/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/2393/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 2393,
+    "identity": {
+      "nom": "Auriac",
+      "nomComplet": "Cascades d' Auriac, Ruisseau de Laurio",
+      "prefixeNom": "Cascades d'",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2393/Auriac.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Aude",
+      "communePrincipale": "Auriac",
+      "communes": [
+        "Auriac"
+      ],
+      "massif": "Corbières",
+      "bassin": "Orbieu",
+      "coursEau": "Ruisseau de Laurio"
+    },
+    "rating": {
+      "cotation": "",
+      "interet": 440.0,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": 440,
+      "deniveleM": 50,
+      "longueurM": 200,
+      "cascadeMaxM": null,
+      "cordeMiniM": null,
+      "navette": null
+    },
+    "timings": {
+      "approche": null,
+      "descente": null,
+      "retour": null
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2393,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.932655,
+        "longitude": 2.495619,
+        "label": null
+      },
+      {
+        "canyonId": 2393,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.93362,
+        "longitude": 2.494686,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 42.932655,
+      "longitude": 2.495619,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_aeed5d8911277f60",
+          "kind": "MAP",
+          "title": "2447 OT Tuchan - Massif des Corbieres (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 561,
+          "status": "Actif",
+          "action": "Interdit",
+          "title": "Arrêté municipal (Auriac) - 13 août 2009",
+          "summary": "Canyoning et baignade interdits dans les cascades d'Auriac (Ruisseau du Laurio) pour des raisons de préservation de la faune et de la flore.",
+          "remark": "Classement en ENS, ZNIEFF et Natura 2000.",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nArrêté municipal (Auriac) du 13 août 2009",
+          "effectiveDate": "13 août 2009",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/561/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté municipal (Auriac) du 13 août 2009",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem561_pj1.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

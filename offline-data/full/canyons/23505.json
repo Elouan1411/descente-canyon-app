@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:02.829700+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23505,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23505/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23505/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23505/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23505/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23505,
+    "identity": {
+      "nom": "Rothmannbach",
+      "nomComplet": "Rothmannbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23505/Rothmannbach.html"
+    },
+    "location": {
+      "pays": "Allemagne",
+      "region": "Bayern",
+      "departement": "Oberbayern",
+      "communePrincipale": "Marktschellenberg",
+      "communes": [
+        "Landkreis Berchtesgadener Land",
+        "Marktschellenberg"
+      ],
+      "massif": "Untersberg",
+      "bassin": "Salzach",
+      "coursEau": "Rothmannbach"
+    },
+    "rating": {
+      "cotation": "v2a2III",
+      "interet": 2.3,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 575,
+      "deniveleM": 465,
+      "longueurM": 1350,
+      "cascadeMaxM": 10,
+      "cordeMiniM": 15,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "35min",
+      "descente": "2h",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "aussi par Bachgraben (rive gauche orograf.)"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23505,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.696598,
+        "longitude": 13.025354,
+        "label": "D1 - approche par rive droite (orograf.)"
+      },
+      {
+        "canyonId": 23505,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.699673,
+        "longitude": 13.023739,
+        "label": "D2 - entrée par Bachgraben,approche rive gauche (orograf.)"
+      },
+      {
+        "canyonId": 23505,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.70483,
+        "longitude": 13.038786,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.70483,
+      "longitude": 13.038786,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_26247a81ed0b88a1",
+          "kind": "MAP",
+          "title": "8244 Berchtesgaden Ost (Bayerisches Landesvermessungsamt)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

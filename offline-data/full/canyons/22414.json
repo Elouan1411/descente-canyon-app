@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:57.206434+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22414,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22414/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22414/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22414/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22414/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22414,
+    "identity": {
+      "nom": "Hudeira",
+      "nomComplet": "Wadi Hudeira",
+      "prefixeNom": "Wadi",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22414/Hudeira.html"
+    },
+    "location": {
+      "pays": "Jordanie",
+      "region": null,
+      "departement": "Karak",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": "Dead Sea",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v1a1IV",
+      "interet": 2.7,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 200,
+      "deniveleM": 100,
+      "longueurM": 2000,
+      "cascadeMaxM": null,
+      "cordeMiniM": null,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "10min",
+      "descente": "2/3h",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": ". Depuis le carrefour entre la route de la Mer Morte et la route de Karak (\"Mazra'a junction\"), faire environ 13 km en direction du sud (Aqaba, Ma'an). On quitte la route au niveau d'un mémorial blanc situé sur le bord de la route à droite, juste avant de franchir le wadi. Faire une centaine de mètres sur la piste sablonneuse (attention !) et se garer sans gêner. N'essayez pas de poursuivre jusqu'au camp bédouin.",
+      "accesAmont": null,
+      "approche": "Rejoindre à vue l'encaissement",
+      "descente": "On parcourt le superbe encaissement en grès sans obstacles en 2 bonnes heures A/R sans se presser. La fin est marquée par une cascade de 2m; ce n'est plus intéressant après. Faire demi-tour.",
+      "retour": "Rejoindre le véhicule.",
+      "engagement": null,
+      "periode": "Toujours de l'eau",
+      "geologie": "Grès",
+      "historique": null,
+      "remarques": "Lieu de pique-nique les vendredi d'où de nombreuses saletés à la fin du canyon."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22414,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 31.131372,
+        "longitude": 35.532196,
+        "label": "dans le lit vers le-haut"
+      },
+      {
+        "canyonId": 22414,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 31.125305,
+        "longitude": 35.546329,
+        "label": "fin de l'encaisement - retourner"
+      },
+      {
+        "canyonId": 22414,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 31.134132,
+        "longitude": 35.527565,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 31.134132,
+      "longitude": 35.527565,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

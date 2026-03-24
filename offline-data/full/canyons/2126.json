@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:44:07.257446+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2126,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2126/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2126/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2126/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2126/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2126,
+    "identity": {
+      "nom": "Leysse",
+      "nomComplet": "La Leysse",
+      "prefixeNom": "La",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2126/Leysse.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Savoie",
+      "communePrincipale": "Thoiry",
+      "communes": [
+        "Les Déserts",
+        "Thoiry"
+      ],
+      "massif": "Bauges",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a3III",
+      "interet": 2.4,
+      "nbVotes": 49
+    },
+    "metrics": {
+      "altitudeDepartM": 880,
+      "deniveleM": 225,
+      "longueurM": 1000,
+      "cascadeMaxM": 40,
+      "cordeMiniM": 40,
+      "navette": "8.0km"
+    },
+    "timings": {
+      "approche": "5 à 50min",
+      "descente": "3h",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "Aval : Continuer la D912, puis prendre la D21 en direction de La Fougère. Se garer sur le parking au pont de la Leysse (alt. 548m)",
+      "accesAmont": "Amont : A la Combe, sur la D912, se garer au pont.",
+      "approche": "Sans navette : du parking aval, remonter la D21 sur environ 900m et prendre une piste à droite. On la poursuit jusqu’à ce qu'elle rejoigne la D912 au niveau du point coté IGN 886m. On poursuit sur la route jusqu’au panneau d’entrée du village et juste après celui-ci, prendre une courte piste à droite qui se dirige vers la Leysse. Rejoindre très vite et au mieux le cours d'eau avant la propriété privée.",
+      "descente": "Dans un cadre sauvage, quelques vasques et ressauts ponctuent le parcours par moment encaissé. La cascade finale (cascade du Taureau) vaut le détour (le relais en rive droite de départ de cette cascade est bas et inconfortable, attention avec des débutants).",
+      "retour": "Sortir en rive droite après le dernier obstacle par une sente qui rejoint le pont",
+      "engagement": null,
+      "periode": null,
+      "geologie": "Calcaire",
+      "historique": null,
+      "remarques": "Au soleil l'après-midi...\n\nNavette facultative."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2126,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.6175,
+        "longitude": 6.015,
+        "label": null
+      },
+      {
+        "canyonId": 2126,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 45.619167,
+        "longitude": 6.0125,
+        "label": null
+      },
+      {
+        "canyonId": 2126,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 45.610279,
+        "longitude": 6.018611,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 45.619167,
+      "longitude": 6.0125,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_da30219dbb4dd176",
+          "kind": "TOPOGUIDE",
+          "title": "Les canyons de Savoie",
+          "authors": [
+            "Patrick Chollot"
+          ],
+          "publicationYear": 2018,
+          "reference": "978-2-95309-39-1-9",
+          "editor": "auto-édition",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/1125/Les-canyons-de-Savoie.html"
+        },
+        {
+          "id": "biblio_e7d94bb2f47393ab",
+          "kind": "TOPOGUIDE",
+          "title": "Cascades, Gorges & Canyons : Pré-alpes d'Isère et de Savoie",
+          "authors": [
+            "Bertrand Hauser",
+            "Delphine Baratin"
+          ],
+          "publicationYear": 2007,
+          "reference": "978-2-9529407-0-2",
+          "editor": "Descente-Canyon.com",
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/11/Cascades--Gorges-et-Canyons-:-Pre-alpes-d-Isere-et-de-Savoie.html"
+        },
+        {
+          "id": "biblio_6d273ae41f72e178",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons de Savoie",
+          "authors": [
+            "F. Martin",
+            "C. Altazin"
+          ],
+          "publicationYear": 2007,
+          "reference": "978-2-9528935-0-3",
+          "editor": null,
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/15/Descentes-de-canyons-en-Savoie.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_d523e63abd5ebd0d",
+          "kind": "MAP",
+          "title": "3332 OT Chambéry (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

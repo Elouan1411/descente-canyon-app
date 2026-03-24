@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:57.665701+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22135,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22135/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22135/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22135/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22135/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22135,
+    "identity": {
+      "nom": "Galin Gomez",
+      "nomComplet": "Garganta de Galin Gomez, Barranco de la Nava, Nava",
+      "prefixeNom": "Garganta de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22135/Galin-Gomez.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Castilla y León",
+      "departement": "Provincia de Ávila",
+      "communePrincipale": "Navalonguilla",
+      "communes": [
+        "Nava del Barco",
+        "Navalonguilla"
+      ],
+      "massif": "Sierra de Gredos",
+      "bassin": "Rio Tormes",
+      "coursEau": "Nava"
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.3,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1980,
+      "deniveleM": 440,
+      "longueurM": 1300,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "2h30min",
+      "descente": "4h30min",
+      "retour": "1h15min"
+    },
+    "topo": {
+      "accesAval": "De la ville d'Avila prendre la N 110 vers Plasenica (direction sud-ouest). Rouler pendant 81 km et passer El Barco de Avila. 4km après El Barco de Avila tourner à gauche et passer par Navatejares (!) jusqu'à Nava del Barco. Sortir de Navad del Barco vers le sud-ouest et prendre la direction d'Umbrias. Après quelques mètres tourner à gauche (croix en pierre). Continuer jusqu'à une bifurcation (grande table d'information). Avant la table d'information passer à gauche et une courbe à droite, monter la piste en béton. Continuer cette piste (pas à gauche la-bas!) jusqu'à un pont avant une montée raide.\n\nGarer la voiture avant le pont (1165 m alt).",
+      "accesAmont": null,
+      "approche": "Continuer la piste, passer une porte en fer (après 20min; 1325 m alt.) et poursuivre le sentier vers sud dans la vallée. 1h après la porte arriver à une grande pierre avec croix et Maria (1540 m alt.). C'est la sortie du canyon.\n\nContinuer le sentier ver le-haut jusqu'au barrage de la Laguna de la Nava. Au-dessous du barrage se trouve l'entrée du ruisseau.",
+      "descente": "Succession de rappels (voir le site internet dans la biblio), désescalades et marche.",
+      "retour": "Sortie avant la grande pierre avec croix et Maria à droite. Retour par le sentier et la piste.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "Canyon plutôt ouvert."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22135,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 40.230331,
+        "longitude": -5.574188,
+        "label": null
+      },
+      {
+        "canyonId": 22135,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 40.24979,
+        "longitude": -5.567064,
+        "label": null
+      },
+      {
+        "canyonId": 22135,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 40.273567,
+        "longitude": -5.560048,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 40.273567,
+      "longitude": -5.560048,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_e5bc2899ea3eebac",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://mayayo.blogspot.com/2007/07/garganta-galn-gmez-vila.html",
+          "url": "http://mayayo.blogspot.com/2007/07/garganta-galn-gmez-vila.html"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

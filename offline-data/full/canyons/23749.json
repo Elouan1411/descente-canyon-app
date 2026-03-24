@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:57.542995+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23749,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23749/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23749/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23749/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23749/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23749,
+    "identity": {
+      "nom": "Escalette",
+      "nomComplet": "Ravin de l' Escalette",
+      "prefixeNom": "Ravin de l'",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23749/Escalette.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Vaucluse",
+      "communePrincipale": "Cabrières-d'Aigues",
+      "communes": [
+        "Cabrières-d'Aigues"
+      ],
+      "massif": "Luberon",
+      "bassin": "Durance",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1I",
+      "interet": 0.6,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 570,
+      "deniveleM": 60,
+      "longueurM": 250,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "10min",
+      "descente": "40min",
+      "retour": "40min"
+    },
+    "topo": {
+      "accesAval": "Depuis Pertuis, emprunter la D9 jusqu'à Cabrières-d'Aigues. Traverser le village et récupérer la piste du GR92 à la sortie du village en vous dirigeant vers le massif du Luberon. Rouler 2,5 km sur cette piste et prendre celle qui descend à gauche. Faites quelques mètres et garez-vous au niveau du talweg du ravin de l'Escalette .",
+      "accesAmont": null,
+      "approche": "Suivre vers l'aval le talweg, se transformant vite en un petit collecteur.",
+      "descente": "Vous arrivez sur deux vasques avant le cassé de la C20 équipée en RD (1 pt pour tirer une petite main-courante et un relais avant le cassé sur 2pts reliés sur maillons de chaîne). Deux désescalades s'en suivent, dont une C4, avant de sortir au mieux en RG via la végétation et la pente rocailleuse.",
+      "retour": "Monter au mieux droit dans la pente. Traverser une sente menant probablement à la grotte. Continuer de monter et passer le sommet de la colline pour redescendre de l'autre côté et rejoindre la piste qui vous ramènera à votre véhicule.",
+      "engagement": "Aucun.",
+      "periode": "En eau après les pluies.",
+      "geologie": null,
+      "historique": "? Anciennement équipé de vieux spits.\n\nÉquipement actuel sur goujons de 8mm et maillons de chaîne.",
+      "remarques": "Grotte en RG à proximité de la C20. Parcours à enchaîner avec le ravin du Méchant Pas juste à côté et le vallon de la Glacière au-dessus de Cucuron."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23749,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.802338,
+        "longitude": 5.489501,
+        "label": null
+      },
+      {
+        "canyonId": 23749,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.799828,
+        "longitude": 5.489287,
+        "label": null
+      },
+      {
+        "canyonId": 23749,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.803978,
+        "longitude": 5.488214,
+        "label": null
+      },
+      {
+        "canyonId": 23749,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.803978,
+        "longitude": 5.488214,
+        "label": null
+      },
+      {
+        "canyonId": 23749,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 43.800201,
+        "longitude": 5.490939,
+        "label": "Retour droit dans la pente"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.803978,
+      "longitude": 5.488214,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_3cea02269723b911",
+          "kind": "MAP",
+          "title": "3243 OT Pertuis - Lourmarin (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

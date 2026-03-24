@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:05.420289+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23785,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23785/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23785/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23785/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23785/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23785,
+    "identity": {
+      "nom": "Selva",
+      "nomComplet": "Val della Selva",
+      "prefixeNom": "Val della",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23785/Selva.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Vénétie",
+      "departement": "Belluno",
+      "communePrincipale": "Lamon",
+      "communes": [
+        "Lamon"
+      ],
+      "massif": "Vette Feltrine",
+      "bassin": "Brenta",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2III",
+      "interet": null,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": 700,
+      "deniveleM": 220,
+      "longueurM": 800,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "50min",
+      "descente": "2h50min",
+      "retour": "15"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23785,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.081421,
+        "longitude": 11.75432,
+        "label": null
+      },
+      {
+        "canyonId": 23785,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.081951,
+        "longitude": 11.76333,
+        "label": null
+      },
+      {
+        "canyonId": 23785,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.083897,
+        "longitude": 11.764177,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.083897,
+      "longitude": 11.764177,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_df5c88bb731be852",
+          "kind": "MAP",
+          "title": "023 Alpi Feltrine - La Vètte - Cimònega (Tabacco)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_615fe5c8aff0017c",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/Canyons/SelvaCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/Canyons/SelvaCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

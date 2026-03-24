@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:48.250233+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22093,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22093/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22093/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22093/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22093/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22093,
+    "identity": {
+      "nom": "Chiantone",
+      "nomComplet": "Torrente Chiantone, Affluent RG de Vinadia",
+      "prefixeNom": "Torrente",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22093/Chiantone.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Frioul-Vénétie julienne",
+      "departement": "Udine",
+      "communePrincipale": "Lauco",
+      "communes": [
+        "Tolmezzo",
+        "Lauco"
+      ],
+      "massif": "Dolomites, Carnia",
+      "bassin": "Tagliamento",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 3.2,
+      "nbVotes": 5
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": 450,
+      "longueurM": null,
+      "cascadeMaxM": 52,
+      "cordeMiniM": 55,
+      "navette": "12.0km"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "4h30",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": "D’Udine, prenez la direction de Tarvisio par l’A23 et sortez à Carnia-Tolmezzo. Dépassez Tolmezzo et prenez la direction de Villa Santina. Suivez le panneau « Canyon del torrente Vinadia » et garez-vous près de la gravière.\n\nAccès",
+      "accesAmont": "Revenir sur Caneva, traverser le village et suivre les directions Fusea (à gauche à la sortie d'un tunnel) puis Buttea. La route est étroite. Après une courte descente, on arrive au pont qui enjambe le torrent. Un petit élargissement sur la gauche, juste après le pont, permet de se garer.",
+      "approche": null,
+      "descente": "On descend directement dans le torrent en amont du pont.\n\nCelui ci s'encaisse immédiatement.\n\nOn rejoint ensuite le Torrente Vinadia, avec un débit plus conséquent, mais dans un cours d'eau bien plus large.",
+      "retour": null,
+      "engagement": "Total.\n\nLe parcours est une longue étroiture très encaissée.",
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "La pollution humaine est malheureusement particulièrement présente au niveau du pont.\n\nHeureusement certaines vasques totalement ensablées permettent une certaine filtration qui maintient l'eau claire.\n\nLe parcours reste agréable.\n\nAttention au débit de Vinadia (essentiellement alimenté par le Picchionis.\n\nL'eau se perd peu a peu entre le barrage et le pont de sortie."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22093,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.440044,
+        "longitude": 12.973781,
+        "label": null
+      },
+      {
+        "canyonId": 22093,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.412571,
+        "longitude": 12.963824,
+        "label": null
+      },
+      {
+        "canyonId": 22093,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 46.440132,
+        "longitude": 12.97333,
+        "label": null
+      },
+      {
+        "canyonId": 22093,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 46.411926,
+        "longitude": 12.964125,
+        "label": null
+      },
+      {
+        "canyonId": 22093,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 46.432148,
+        "longitude": 12.964683,
+        "label": "de droite Vinadia"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 46.440132,
+      "longitude": 12.97333,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_9294295c5b5653b6",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.canyoneast.it/target.php?w=19.....rget=Rio%20Chiantone",
+          "url": "http://www.canyoneast.it/target.php?w=19.....rget=Rio%20Chiantone"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

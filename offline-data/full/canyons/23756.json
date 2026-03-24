@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:59.061074+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23756,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23756/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23756/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23756/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23756/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23756,
+    "identity": {
+      "nom": "Rouinon",
+      "nomComplet": "Torrent de Rouinon",
+      "prefixeNom": "Torrent de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23756/Rouinon.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-de-Haute-Provence",
+      "communePrincipale": "Bayons",
+      "communes": [
+        "Bayons"
+      ],
+      "massif": "Massif des Monges",
+      "bassin": "Asse",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v1a1II",
+      "interet": 0.4,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 1080,
+      "deniveleM": 50,
+      "longueurM": 300,
+      "cascadeMaxM": 3,
+      "cordeMiniM": 5,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "30min/45mi",
+      "descente": "30min",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "De Sisteron prendre la D 951 vers la Motte-du-Caire. 2 km avant la Motte prendre à droite la D1 vers Clamensane, dépasser ce village et juste avant celui du Forest-lacour prendre la piste qui remonte le torrent de Rouinon par la RG. Très rapidement on passe un gué puis un autre puis encore un autre. Le but est de remonter cette piste jusqu'à ce que votre véhicule ne passe plus (plus ou moins loin selon l'état de la piste et des gués et de la hauteur de votre voiture).",
+      "accesAmont": null,
+      "approche": "Poursuivre à pied sur la piste qui se transforme en chemin. On passe RG et le chemin s'élève pour surplomber la \"gorge\". Il redescend alors dans le ruisseau point de départ de la descente.",
+      "descente": "Marche en rivière avec un rappel (facultatif) et quelques petites désescalades. Vu de loin c'était prometteur, de l'intérieur ça fait pas rêver.",
+      "retour": "Reprendre le même chemin que pour l'approche.",
+      "engagement": "Aucun échappatoire dans la gorge.",
+      "periode": "En eau toute l'année.",
+      "geologie": null,
+      "historique": "Un point posé par Tony et lolo le 30/11/2016",
+      "remarques": "Pour collectionneurs"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23756,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.353104,
+        "longitude": 6.117761,
+        "label": null
+      },
+      {
+        "canyonId": 23756,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.341274,
+        "longitude": 6.11922,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.341274,
+      "longitude": 6.11922,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_ec844e72d95ece0e",
+          "kind": "MAP",
+          "title": "3339 ET La Motte-Du-Caire (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

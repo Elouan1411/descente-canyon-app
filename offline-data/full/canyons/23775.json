@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:03.100508+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23775,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23775/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23775/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23775/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23775/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23775,
+    "identity": {
+      "nom": "Gemstelbach-Klamm",
+      "nomComplet": "Gemstelbach-Klamm, Gemstelbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23775/Gemstelbach-Klamm.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Vorarlberg",
+      "departement": "Bregenz",
+      "communePrincipale": "Mittelberg",
+      "communes": [
+        "Mittelberg"
+      ],
+      "massif": "Allgäuer Alpen",
+      "bassin": "Iller",
+      "coursEau": "Gemstelbach"
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": null,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": 1590,
+      "deniveleM": 250,
+      "longueurM": 1100,
+      "cascadeMaxM": 40,
+      "cordeMiniM": 40,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h30min",
+      "descente": "2h",
+      "retour": "45"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23775,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.285889,
+        "longitude": 10.15555,
+        "label": null
+      },
+      {
+        "canyonId": 23775,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.290211,
+        "longitude": 10.15451,
+        "label": null
+      },
+      {
+        "canyonId": 23775,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.313251,
+        "longitude": 10.14134,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.313251,
+      "longitude": 10.14134,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:54.654585+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22122,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22122/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22122/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22122/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22122/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22122,
+    "identity": {
+      "nom": "Malinberg",
+      "nomComplet": "Rio Malinberg, Malimberg, Malemberg",
+      "prefixeNom": "Rio",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22122/Malinberg.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Frioul-Vénétie julienne",
+      "departement": "Udine",
+      "communePrincipale": "Chiusaforte",
+      "communes": [
+        "Chiusaforte"
+      ],
+      "massif": "Dolomites du Frioul",
+      "bassin": "Fella",
+      "coursEau": "Rio Malinberg"
+    },
+    "rating": {
+      "cotation": "v3a1II",
+      "interet": 2.3,
+      "nbVotes": 6
+    },
+    "metrics": {
+      "altitudeDepartM": 685,
+      "deniveleM": 185,
+      "longueurM": 400,
+      "cascadeMaxM": 21,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "2h15min",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "De Chiusaforte vers l'est (Val Raccolana) jusqu'à Saletto; prendre à gauche vers Chiout Cali. Garer la voiture après le pont sur le Rio Malinberg.",
+      "accesAmont": null,
+      "approche": "Traverser Chiout Cali et, en restant à droite, emprunter le sentier vers le nord-est qui se dirige vers le Rio Malinberg. Après la passerelle à gauche suivre la sente raide vers le-haut (quelques marquages jaunes). Quand c'est possible à environ 15mn du pont, traverser le parapet et accéder au cours d'eau.",
+      "descente": "Succession de rappels",
+      "retour": "Sortir à droite au niveau du pont.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22122,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.408245,
+        "longitude": 13.371338,
+        "label": null
+      },
+      {
+        "canyonId": 22122,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.406162,
+        "longitude": 13.370839,
+        "label": null
+      },
+      {
+        "canyonId": 22122,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.405853,
+        "longitude": 13.37137,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.405853,
+      "longitude": 13.37137,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_e96372744d4c4932",
+          "kind": "MAP",
+          "title": "018 Alpi Carniche Orientali, Canal de Ferro (Tabacco)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_f042e21db43678c6",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.canyoning.it/forum/topic.asp?TOPIC_ID=402",
+          "url": "http://www.canyoning.it/forum/topic.asp?TOPIC_ID=402"
+        },
+        {
+          "id": "resource_66d66f5e19c0a606",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.canyoneast.it/target.php?w=19.....rget=Rio%20Malimberg",
+          "url": "http://www.canyoneast.it/target.php?w=19.....rget=Rio%20Malimberg"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

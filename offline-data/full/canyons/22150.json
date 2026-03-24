@@ -1,0 +1,163 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:00.855840+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22150,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22150/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22150/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22150/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22150/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22150,
+    "identity": {
+      "nom": "Passo (Supérieur)",
+      "nomComplet": "Ribeira do Passo (Supérieur)",
+      "prefixeNom": "Ribeira do",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22150/Passo-Superieur.html"
+    },
+    "location": {
+      "pays": "Portugal",
+      "region": "Madeira",
+      "departement": "São Vicente Municipality",
+      "communePrincipale": "São Vicente",
+      "communes": [
+        "São Vicente"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a2III",
+      "interet": 2.8,
+      "nbVotes": 12
+    },
+    "metrics": {
+      "altitudeDepartM": 1005,
+      "deniveleM": 405,
+      "longueurM": 900,
+      "cascadeMaxM": 65,
+      "cordeMiniM": 45,
+      "navette": "2.5km"
+    },
+    "timings": {
+      "approche": "1h20",
+      "descente": "4h/4h30",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": "stationnée au hameau de Terça, dans un virage à gauche à l'altitude 370m. Parking pour 2 voitures.\n\nVoiture",
+      "accesAmont": "garée 2km plus haut à la fin de la route goudronnée qui ne cesse de monter. Possibilité de se garer 500m plus loin sur la piste.",
+      "approche": "Pendant une petite heure, emprunter la piste 4*4 qui décrit plusieurs lacets jusqu'à arriver à l'altitude 1005m ou se trouve la Levada Do Norte et une maison. Suivre la levada vers le nord ouest, passer 4 tunnels (frontale et casque obligatoires) et vous êtes au départ du Passo.",
+      "descente": "Très joli, ponctué de quelques sauts. 25 rappels maxi 35m. A niveau d'un grand cassé, possibilité de le descendre en une fois 65m.\n\nBelle ambiance à la fin de la partie sup.\n\nFin du canyon au niveau d'une levada.",
+      "retour": "Enchaîner avec Passo inférieur. sinon prendre à droite la levada pour retrouver le véhicule amont.",
+      "engagement": "Fort, échappatoires peu commodes du fait de la végétation.",
+      "periode": "Coule toute l'année.",
+      "geologie": null,
+      "historique": "Ouverture en novembre 2001.",
+      "remarques": "Belle descente à enchainer avec Passo inf.\n\nConsulter le topo Canyons de madère d'A. Florin, les cartes et coupes y sont bien détaillées."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22150,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 32.778671,
+        "longitude": -17.068003,
+        "label": null
+      },
+      {
+        "canyonId": 22150,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 32.785145,
+        "longitude": -17.06284,
+        "label": null
+      },
+      {
+        "canyonId": 22150,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 32.778427,
+        "longitude": -17.048281,
+        "label": null
+      },
+      {
+        "canyonId": 22150,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 32.78566,
+        "longitude": -17.052076,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 32.778427,
+      "longitude": -17.048281,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_d4559c6470527679",
+          "kind": "TOPOGUIDE",
+          "title": "Meeting Canyoning Madeira 2016",
+          "authors": [
+            "Duarte Silva e colaboradores"
+          ],
+          "publicationYear": 2016,
+          "reference": null,
+          "editor": "Clube Naval do Seixal",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1343/topoguide.html"
+        },
+        {
+          "id": "biblio_2714eb823c608ae0",
+          "kind": "TOPOGUIDE",
+          "title": "Meeting Canyoning Madeira 2015",
+          "authors": [
+            "Duarte Silva"
+          ],
+          "publicationYear": 2015,
+          "reference": null,
+          "editor": "Clube Naval do Seixal",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1342/topoguide.html"
+        },
+        {
+          "id": "biblio_9fee8e80e3298324",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons de Madère - Descentes Sportives et Randonnées",
+          "authors": [
+            "Antoine Florin"
+          ],
+          "publicationYear": 2007,
+          "reference": "978-2-9529227-0-8",
+          "editor": "auto-édition",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1194/topoguide.html"
+        }
+      ],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_f8ff81ca3a895ef9",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyoning.camadeira.com/canyons/passo/",
+          "url": "http://canyoning.camadeira.com/canyons/passo/"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

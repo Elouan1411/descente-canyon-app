@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:59:20.378562+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24138,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24138/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24138/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24138/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24138/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24138,
+    "identity": {
+      "nom": "Arrondine",
+      "nomComplet": "L' Arrondine",
+      "prefixeNom": "L'",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24138/Arrondine.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Haute-Savoie",
+      "communePrincipale": "Cordon",
+      "communes": [
+        "Cordon"
+      ],
+      "massif": "Beaufortain",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a2III",
+      "interet": 2.6,
+      "nbVotes": 5
+    },
+    "metrics": {
+      "altitudeDepartM": 1750,
+      "deniveleM": 180,
+      "longueurM": 250,
+      "cascadeMaxM": 35,
+      "cordeMiniM": 40,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "1h30",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "Environ 2km après la Giettaz en montant prendre à droite la route puis longue piste qui mène à l'alpage de Pététry (plus de 6km de piste). Garez-vous sans gêner (demander si besoin au propriétaire) à l'alpage.",
+      "accesAmont": null,
+      "approche": "Poursuivre la piste et monter en haut du canyon au mieux par la rive droite.",
+      "descente": "Enchaînement de cascades avec un passage vraiment très classe.",
+      "retour": "Rejoindre le gué et le parking",
+      "engagement": null,
+      "periode": "Après le gros de la fonte.",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24138,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.911755,
+        "longitude": 6.527108,
+        "label": null
+      },
+      {
+        "canyonId": 24138,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.908806,
+        "longitude": 6.529262,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.908806,
+      "longitude": 6.529262,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,186 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:48:12.122085+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21112,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21112/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21112/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21112/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21112/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21112,
+    "identity": {
+      "nom": "Sieste",
+      "nomComplet": "Rio Sieste, Barranco San Martin",
+      "prefixeNom": "Rio",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21112/Sieste.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Aragón",
+      "departement": "Huesca",
+      "communePrincipale": "Boltaña",
+      "communes": [
+        "Boltaña"
+      ],
+      "massif": "Mt Perdu (Monte Perdido)",
+      "bassin": "Ara",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2I",
+      "interet": 2.2,
+      "nbVotes": 12
+    },
+    "metrics": {
+      "altitudeDepartM": 860,
+      "deniveleM": 100,
+      "longueurM": 1800,
+      "cascadeMaxM": 27,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h",
+      "descente": "1h30/2h",
+      "retour": "1min"
+    },
+    "topo": {
+      "accesAval": "En venant d'Aïnsa, à l'entrée de Boltaña, prendre à gauche. Au niveau du parking du complexe hôtelier prendre à droite la direction de Sieste. Ne pas se rendre à Sieste, mais continuer tout droit. A un autre carrefour, continuer encore tout droit (ne pas prendre la direction San Velian/Morcat). On se gare peu après sur un grand parking aménagé sur la gauche avant une ferme. On n'a plus la possibilité de se garer dans l'épingle après la ferme, pancarte d'interdiction de stationner.",
+      "accesAmont": null,
+      "approche": "Du parking, rejoindre le rio le long d'une conduite et le traverser. Remonter le long du rio RD (à l'ombre) par un sentier bien marqué en suivant \"Pozas de San Martin\", puis \"Confesonario\". Plus haut on aperçoit en RG le barranco du Rio Sieste. Remonter encore RD et rejoindre l'amont du Rio Sieste en haut des deux grandes cascades.",
+      "descente": "Deux rappels assez jolis (27 m puis 23 m) et c'est la confluence avec le barranco. Un petit rappel et une succession de belles piscines incitant à la baignade.",
+      "retour": "Reprendre le sentier de l'aller le long de la conduite et redescendre à la voiture.",
+      "engagement": "Le lit est trés large.",
+      "periode": "Au printemps voire début d'été ou après des pluies. Débit très réduit l'été.",
+      "geologie": null,
+      "historique": "Pujol & Lacoste à l'été 1987.",
+      "remarques": "Vasques finales fréquentées par de nombreux baigneurs l'été."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21112,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.408031,
+        "longitude": 0.016983,
+        "label": "H 855m point haut du Y rive gauche - traverser sur sentier vers branche rive droite"
+      },
+      {
+        "canyonId": 21112,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.404301,
+        "longitude": 0.017883,
+        "label": "H 861m point haut du Y rive droite - départ des R30 et R15"
+      },
+      {
+        "canyonId": 21112,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.408031,
+        "longitude": 0.034433,
+        "label": "H 718m T5 en bas du canyon"
+      },
+      {
+        "canyonId": 21112,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 42.409668,
+        "longitude": 0.03745,
+        "label": "H 712m"
+      },
+      {
+        "canyonId": 21112,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 42.406933,
+        "longitude": 0.019517,
+        "label": "H 786m embranchement bas du Y - prendre sentier rive gauche - suivre cairns"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 42.409668,
+      "longitude": 0.03745,
+      "label": "H 712m"
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_831c9e6897eebb28",
+          "kind": "TOPOGUIDE",
+          "title": "Senderos de agua del rio Ara",
+          "authors": [
+            "Ricardo Blanco",
+            "Alex Puyo",
+            "David Tresaco"
+          ],
+          "publicationYear": 2014,
+          "reference": "978-84-8321-410-7",
+          "editor": "Prames",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1279/topoguide.html"
+        },
+        {
+          "id": "biblio_008a478db03d7fff",
+          "kind": "TOPOGUIDE",
+          "title": "Canyonisme La sierra de Guara",
+          "authors": [
+            "P Gimat"
+          ],
+          "publicationYear": 2005,
+          "reference": "978-2952-4376-0-8",
+          "editor": "Pyrenees Aventure",
+          "status": "stock très réduit !\n\n- 24,99 € -\n\nCommandez cet ouvrage dès maintenant !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/119/Canyonisme-:-La-Sierra-de-Guara.html"
+        },
+        {
+          "id": "biblio_fcae506cf45f5fdb",
+          "kind": "TOPOGUIDE",
+          "title": "Carte N°3 - Mont Perdu : du rio Gallego au rio Cinca.",
+          "authors": [
+            "Patrick Gimat + Jean-Paul Pontroué"
+          ],
+          "publicationYear": 1999,
+          "reference": null,
+          "editor": null,
+          "status": "en stock\n\n- 7,50 € -\n\nCommandez cet ouvrage dès maintenant !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/122/Carte-n°3-:-Mont-Perdu.html"
+        },
+        {
+          "id": "biblio_728585bf88b0a2ad",
+          "kind": "TOPOGUIDE",
+          "title": "Descentes de canyons dans le Haut Aragon - Tome 2",
+          "authors": [
+            "Patrick Gimat avec la collaboration de J.-P. Pontroué"
+          ],
+          "publicationYear": 1995,
+          "reference": "ISBN 2-85744-813-9",
+          "editor": "Co-édition Gimat/Pontroué/Edisud",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/156/Descentes-de-canyons-dans-le-Haut-Aragon---Tome-2.html"
+        }
+      ],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_18f414619c981187",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://ropewiki.com/Sieste",
+          "url": "http://ropewiki.com/Sieste"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

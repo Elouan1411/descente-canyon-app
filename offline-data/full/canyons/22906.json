@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:54:51.900046+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22906,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22906/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22906/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22906/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22906/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22906,
+    "identity": {
+      "nom": "Vignals",
+      "nomComplet": "Ruisseau des Vignals",
+      "prefixeNom": "Ruisseau des",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22906/Vignals.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Gard",
+      "communePrincipale": "Arphy",
+      "communes": [
+        "Arphy"
+      ],
+      "massif": "Mont Aigoual",
+      "bassin": "Arre",
+      "coursEau": "Ruisseau des Vignals"
+    },
+    "rating": {
+      "cotation": "v4a2III",
+      "interet": 1.5,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 700,
+      "deniveleM": 270,
+      "longueurM": 900,
+      "cascadeMaxM": null,
+      "cordeMiniM": null,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "2-3h",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "Du Vigan, suivre la D48 qui monte sur l'Aigoual. Au bout d'environ 3 km, prendre une petite route à gauche qui descend sur Aulas. Traverser le village vers le nord, puis remonter la vallée du Coudoulous sur sa rive droite vers le lieu-dit \"le Galari\" (D190A), environ 2 km après Aulas.\n\nSe garer sur le parking après le petit pont qui traverse le ruisseau des Vignals, 50 m après un tout petit groupe de maisons. Si la route fait un coude franc à droite, pour rejoindre le hameau du Galari, c'est que vous êtes allé trop loin.",
+      "accesAmont": null,
+      "approche": "De la voiture, traverser le ruisseau pour trouver un chemin qui part de la route, à droite peu après le petit pont et grosso modo plein ouest en remontant la montagne.\n\nAu bout de 20 min environ, on rattrape une piste. La suivre. Après deux épingles à cheveux, on rejoint une bifurcation : continuer à droite en direction du ruisseau des Vignals, que l'on rattrape au bout de 200 m environ. La descente commence là.",
+      "descente": "- Partie amont : on part du gué, en sous-bois, série de mini-toboggans, de petites cascades (8 m grand max je pense). Tout peut se contourner par les deux rives, de façon plus ou moins aisée ; ça glisse pas mal, et on est souvent sur les fesses.\n\n- Ça se dégage, on arrive sur la partie la plus intéressante, relativement continue et encaissée : C4, C4, jolies C20 et C30, un peu de marche, puis C15, re-marche, C15 et arrivée au niveau d’un petit barrage. A l’aval, il y a encore deux petits obstacles (2 C3).\n\nTout se fait sur AN.",
+      "retour": "Sortir du ruisseau et rattraper la route.",
+      "engagement": "Engagement limité, descente relativement \"ouverte\" comme toutes celles du coin.",
+      "periode": "Faire la descente si possible au printemps, quand ça coule bien.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Pour les hauteurs, c’est pas du précis ; ça dépendra notamment de l’AN auquel on s’accroche! Lors de notre \"ouverture\", on avait une corde de 60, et une autre de 40, et aucun souci.\n\nPetit côté \"aventure\" fort sympathique."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22906,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.019192,
+        "longitude": 3.583775,
+        "label": null
+      },
+      {
+        "canyonId": 22906,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.017357,
+        "longitude": 3.592787,
+        "label": null
+      },
+      {
+        "canyonId": 22906,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.017292,
+        "longitude": 3.593817,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.017292,
+      "longitude": 3.593817,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_fb5949b340608cd9",
+          "kind": "MAP",
+          "title": "2641 ET Mont-Aigoual (Le Vigan) (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:55.249275+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23736,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23736/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23736/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23736/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23736/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23736,
+    "identity": {
+      "nom": "Balme",
+      "nomComplet": "Torrent de la Balme",
+      "prefixeNom": "Torrent de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23736/Balme.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Isère",
+      "communePrincipale": "Allemond",
+      "communes": [
+        "Allemond"
+      ],
+      "massif": "Belledonne",
+      "bassin": "Romanche",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1III",
+      "interet": 1.5,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1250,
+      "deniveleM": 450,
+      "longueurM": null,
+      "cascadeMaxM": 26,
+      "cordeMiniM": 40,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "50min",
+      "descente": "3h",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "Se garer au site d'escalade de Baton, proche d'une carrière : de Grenoble à Allemond, quitter la grande ligne droite (D1091) en plein milieu vers la gauche pour rejoindre la carrière.\n\nParking",
+      "accesAmont": "Monter à Allemond, puis par un virage à gauche, suivre \"les Clots\", dépasser \"la Traverse\" et se garer sur un large parking qui suit une épingle à droite (même parking que Baton).",
+      "approche": "Suivre la piste vers l'ouest. Au clos des Ayes, descendre la piste. Franchir un premier affluent, et entrer par le second.",
+      "descente": "Pas mal de désescalades sur un beau rocher adhérent, puis une succession de cascades parfois shuntables.",
+      "retour": "On longe le site d'escalade (sur notre gauche) et on remonte aisément sur la piste et la voiture.",
+      "engagement": "Il semble souvent facile de rejoindre la forêt, ou au moins de s'abriter des crues.",
+      "periode": "Coule rarement. Privilégier les périodes de fonte ou de grosses pluies.",
+      "geologie": "Présence épisodique de serpentine.",
+      "historique": null,
+      "remarques": "Ce torrent est un couloir d'avalanche, qui présente clairement des traces de laves torrentielles jusqu'à 5m de hauteur. Aucun équipement ne semble pouvoir durer. Il était équipé de façon minimale en 2016. Toute répétition IMPOSE de se munir du matériel de ré-équipement adéquat."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23736,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 45.119823,
+        "longitude": 5.983,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.119823,
+      "longitude": 5.983,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_bd24b285ad0fb3d2",
+          "kind": "MAP",
+          "title": "3335 ET Le Bourg-d'Oisans (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

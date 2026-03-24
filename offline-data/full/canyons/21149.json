@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:48:21.382570+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21149,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21149/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21149/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21149/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21149/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21149,
+    "identity": {
+      "nom": "Colombaia (supérieur)",
+      "nomComplet": "Rio Colombaia (supérieur)",
+      "prefixeNom": "Rio",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21149/Colombaia-superieur.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Émilie-Romagne",
+      "departement": "Piacenza",
+      "communePrincipale": "Orezzoli",
+      "communes": [
+        "Orezzoli"
+      ],
+      "massif": null,
+      "bassin": "Val Trebbia",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.3,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 900,
+      "deniveleM": 200,
+      "longueurM": 1000,
+      "cascadeMaxM": 35,
+      "cordeMiniM": 40,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "10min",
+      "descente": "2h30",
+      "retour": "40min"
+    },
+    "topo": {
+      "accesAval": "Depuis Ottone prenez la direction de Cerignale. Suivez la route tortueuse jusqu’à Orrezzoli. 900m après la dernière maison, tournez à gauche vers le hameau de Lenguie. Garez-vous au mieux, sans gêner, à proximité des habitations.",
+      "accesAmont": null,
+      "approche": "Continuez à descendre la piste, jusqu’aux maisons près de la rivière. Suivez alors les marques rouges et blanches, puis dans le lit, rejoignez rapidement les premières cascades.",
+      "descente": "Le début est le plus esthétique avec un enchaînement de 3 belles cascades. La dernière cascade de 30m a un relais intermédiaire. Commence ensuite une marche fastidieuse sur les rochers glissants. Heureusement, vous retrouvez vite des obstacles dont certains sont ludiques.\n\nAttention les dernières cascades ne sont pas équipées. Au niveau du panneau : \"soccorso alpino\" et d’un affluent RG commence une petite sente.",
+      "retour": "Remontez la sente vers un ancien chemin qui part à gauche. Lorsqu’il disparaît suivez la crête. Il y a des antiques points rouges peu visibles. Le chemin redevient correct et suit à flanc de montagne la rivière jusqu’à rencontrer un hameau en ruine. Au-dessus vous retrouvez le GR avec des marques rouges et blanches. Mais elles sont peu utiles puisque vous êtes à 100m de la piste et en peu de temps à la voiture.Vous pouvez enchaîner sur le Rio Grande.",
+      "engagement": "Des échappatoires existent plus ou moins bonnes. Les rochers sont glissants",
+      "periode": "Conditions aquatiques : L’été, le débit devient très faible. Le canyon est plus intéressant au printemps avec du débit mais attention à certains passages qui deviennent alors techniques.",
+      "geologie": "Calcaire noir",
+      "historique": null,
+      "remarques": "1er rappel sur arbre en RG, les autres relais sont parfois vieux mais bon : 2 points reliés par une chaine."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21149,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.597954,
+        "longitude": 9.379771,
+        "label": null
+      },
+      {
+        "canyonId": 21149,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.602829,
+        "longitude": 9.384341,
+        "label": null
+      },
+      {
+        "canyonId": 21149,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.595833,
+        "longitude": 9.37726,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.595833,
+      "longitude": 9.37726,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_b7e0b7682ecdd058",
+          "kind": "MAP",
+          "title": "197-III Ferriere (IGM)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_87c15c787cbe3725",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.provincia.pc.it/vvf/SAF/Schede%20rio%20Colombaia.htm",
+          "url": "http://www.provincia.pc.it/vvf/SAF/Schede%20rio%20Colombaia.htm"
+        },
+        {
+          "id": "resource_01744abcc899b253",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.robadatori.it/canyoning/torre.....o/colombaia-alto.htm",
+          "url": "http://www.robadatori.it/canyoning/torre.....o/colombaia-alto.htm"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:44:24.774012+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2178,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2178/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2178/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2178/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2178/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2178,
+    "identity": {
+      "nom": "Noire Fontaine",
+      "nomComplet": "Noire Fontaine",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2178/Noire-Fontaine.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Ain",
+      "communePrincipale": "Serrières-sur-Ain",
+      "communes": [
+        "Serrières-sur-Ain"
+      ],
+      "massif": "Bugey",
+      "bassin": "Rhône",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1I",
+      "interet": 1.4,
+      "nbVotes": 21
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": null,
+      "longueurM": null,
+      "cascadeMaxM": 17,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "10min",
+      "descente": "1h",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "Après Merpuis prendre a droite Route du Bugey / Challe la montagne, apres 2km environ sur la gauche parcelle de terrain entourée d'ungrillage vert envahi par les herbes, se garer ici.",
+      "accesAmont": null,
+      "approche": "A pied prendre le chemin (LARGE) apres 10 min arrivée au départ.",
+      "descente": "à noter que à la première cascade, C6, il y a, en plus du relais situé qq mètres avant la ligne de fracture, deux relais situés juste en dessous de la ligne de fracture. Accès mal aisé, mais très intéressant en formation.",
+      "retour": "La fin se situe au niveau d'un petit pont en bois, remonter la pente à gauche .",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "Tres glissant a sec"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2178,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.13903,
+        "longitude": 5.460505,
+        "label": null
+      },
+      {
+        "canyonId": 2178,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 46.138035,
+        "longitude": 5.455892,
+        "label": null
+      },
+      {
+        "canyonId": 2178,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 46.14999,
+        "longitude": 5.446472,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 46.138035,
+      "longitude": 5.455892,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_acc4d0a28392879d",
+          "kind": "MAP",
+          "title": "3229 O",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

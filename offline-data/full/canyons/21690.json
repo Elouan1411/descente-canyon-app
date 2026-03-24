@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:21.087457+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21690,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21690/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21690/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21690/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21690/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/21690/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 21690,
+    "identity": {
+      "nom": "Clarabide",
+      "nomComplet": "Gorge de Clarabide, Neste de Clarabide",
+      "prefixeNom": "Gorge de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21690/Clarabide.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Hautes-Pyrénées",
+      "communePrincipale": "Loudenvielle",
+      "communes": [
+        "Loudenvielle"
+      ],
+      "massif": null,
+      "bassin": "Gourgs Blancs",
+      "coursEau": "Neste de Clarabide"
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.2,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": null,
+      "longueurM": null,
+      "cascadeMaxM": null,
+      "cordeMiniM": null,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "??",
+      "descente": "??",
+      "retour": "??"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": "Après plusieurs discussions avec le directeur de la centrale, il s'avère que cette course est quelque peu suicidaire. A tout moment, il peut y avoir un lâcher d'eau jusqu'à 9m3/s sans que cela ne puisse être prévu par la SHEM (infos de 2003).\n\nPour l'avoir reconnu depuis les berges, Clarabide est un très beau canyon qui pour le moment n'est malheureusement pas accessible. Une instance comme les fédérations peut-elle peser dans un aménagement des installations qui pourrait laisser l'accès aux canyonistes (et aussi pour la sécurité des pêcheurs et randonneurs) ?",
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "Depuis 2009, un arrêté préfectoral fixe les zones interdites : cela concerne toutes les zones encaissées sans échappatoires (voir la carte en fin d'arrêté préfectoral)... Bref, tout l'intérêt du canyon. On peut donc considérer que ce canyon est interdit."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21690,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 42.745262,
+        "longitude": 0.409618,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 42.745262,
+      "longitude": 0.409618,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_b4d10c31e88f9235",
+          "kind": "MAP",
+          "title": "1848 OT Bagneres-de-Luchon (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 318,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Hautes-Pyrénées) - 25 nov 2009",
+          "summary": null,
+          "remark": null,
+          "details": "Arrêté Préfectoral n°2009-329-36 du 25 novembre 2009",
+          "effectiveDate": "25 nov 2009",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/318/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté Préfectoral n°2009-329-36 du 25 novembre 2009",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem318_pj1.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:06.934394+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21627,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21627/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21627/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21627/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21627/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/21627/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 21627,
+    "identity": {
+      "nom": "Infierno",
+      "nomComplet": "Barranco del Infierno",
+      "prefixeNom": "Barranco del",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21627/Infierno.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Canarias",
+      "departement": "Santa Cruz de Tenerife",
+      "communePrincipale": "Adeje",
+      "communes": [
+        "Adeje"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "",
+      "interet": 1050.0,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": 1050,
+      "deniveleM": 450,
+      "longueurM": 2500,
+      "cascadeMaxM": null,
+      "cordeMiniM": null,
+      "navette": null
+    },
+    "timings": {
+      "approche": null,
+      "descente": null,
+      "retour": null
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21627,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 28.146471,
+        "longitude": -16.697069,
+        "label": null
+      },
+      {
+        "canyonId": 21627,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 28.133383,
+        "longitude": -16.705484,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 28.146471,
+      "longitude": -16.697069,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_9acfd013cff5d7c6",
+          "kind": "MAP",
+          "title": "1096 III-IV Adeje (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 135,
+          "status": "Actif",
+          "action": "Interdit",
+          "title": "Information - 28 fév 2001",
+          "summary": "Barranco del Infierno (Adeje) - El descenso de cañones, en el barranco del infierno esta prohibido, al tratarse de una reserva natural especial. Boletín Oficial de Canarias BOC con fecha 28 de Febrero de 2001. Dicho barranco y toda la reserva esta protegida y vigilada para su protección.",
+          "remark": null,
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.",
+          "effectiveDate": "28 fév 2001",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/135/legislation.html",
+          "attachments": []
+        }
+      ]
+    }
+  }
+}

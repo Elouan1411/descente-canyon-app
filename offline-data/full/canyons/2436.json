@@ -1,0 +1,222 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:45:30.506693+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2436,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2436/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2436/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2436/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2436/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/2436/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 2436,
+    "identity": {
+      "nom": "Artigue",
+      "nomComplet": "Canyon de l' Artigue",
+      "prefixeNom": "Canyon de l'",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2436/Artigue.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Ariège",
+      "communePrincipale": "Auzat",
+      "communes": [
+        "Auzat"
+      ],
+      "massif": "Montcalm",
+      "bassin": "Vicdessos",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a4III",
+      "interet": 3.2,
+      "nbVotes": 95
+    },
+    "metrics": {
+      "altitudeDepartM": 1400,
+      "deniveleM": 170,
+      "longueurM": 500,
+      "cascadeMaxM": 19,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h",
+      "descente": "3h",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": "Depuis Vicdessos, prendre la direction de Marc puis de l'Artigue. Se garer dans le virage en épingle avant le hameau (parking)",
+      "accesAmont": null,
+      "approche": "Prendre le sentier qui part du fond du parking, passer le petit barrage qui permet de consulter la première échelle limigraphique colorée, peu précise. Si on veut plus de précision sur le débit, prendre 100m plus loin à gauche au premier croisement (direction Montcalm), puis continuer 200m, passer la passerelle, aller au bout à droite de la dalle rocheuse où se trouve la deuxième échelle, plus significative. Revenir sur ses pas jusqu'au croisement et prendre le sentier qui monte (GRT, direction port de l'Artigue). Le sentier reste rive gauche de la rivière pour aboutir à une passerelle, point de départ de la course.",
+      "descente": "Très belle descente dans un superbe paysage de montagne. Il s'agit d'un torrent de montagne, l'eau y est assez froide, et les mouvements peuvent surprendre et poser des problèmes.",
+      "retour": "Après le dernier saut (8m - Rive Droite - Dans une belle vasque) prendre le sentier rive droite, qui nous ramène au barrage puis au parking (chemin de descente du Montcalm)",
+      "engagement": "Course relativement engagée. Une fois dedans difficile d'en sortir. A noter toutefois une échappatoire rive gauche (exposée et délicate) au niveau de la main courante (mi-parcours environ)",
+      "periode": "Attention aux orages (violents) et à la période de fonte des neiges - eaux froides tout le long de l'année. Ne pas hésiter a consulter l'échelle limigraphique :\n\nRouge : descente impossible\n\nJaune : descente très dificile à impossible\n\nVert : OK\n\nMais ce code couleur prête à confusion : cf topic\n\nhttp://www.descente-canyon.com/forums/viewtopic.php?pid=42545 Il vaut mieux lui préférer l'échelle au petit pont 300m en amont (sentier de retour) : gros débits à 45cm",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Par gros débits (sortie problématique de la 1ère vasque), on peut shunter la première partie en RD pour arriver au-dessus du 2ème saut/toboggan. Si cette vasque passe, la suite ne posera pas de problème (équipement hors crue). Faire tout de même attention à la cascade de 19m qui rappelle beaucoup par gros débit... Il vaut mieux faire le rappel totalement et finir bien en rive droite!!"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2436,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.712666,
+        "longitude": 1.402439,
+        "label": null
+      },
+      {
+        "canyonId": 2436,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.708729,
+        "longitude": 1.408272,
+        "label": null
+      },
+      {
+        "canyonId": 2436,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 42.710239,
+        "longitude": 1.425008,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 42.710239,
+      "longitude": 1.425008,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_e58cde58d063e1f8",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons Pyrénées. 50 descentes.",
+          "authors": [
+            "Christian Perilhou"
+          ],
+          "publicationYear": 2014,
+          "reference": "9782954865706",
+          "editor": null,
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/186/Canyons-Pyreneens-:-50-Descentes-Canyons.html"
+        },
+        {
+          "id": "biblio_b021caf8b1429c77",
+          "kind": "TOPOGUIDE",
+          "title": "Tour de l'Europe en Canyon - Les plus belles descentes",
+          "authors": [
+            "Caracal et les Sancho Panza"
+          ],
+          "publicationYear": 2007,
+          "reference": "978-2-9526024-1-7",
+          "editor": null,
+          "status": "en stock\n\n- 25,90 € -\n\nCommandez cet ouvrage dès maintenant !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/13/Le-Tour-de-l-Europe-en-Canyon-:-les-plus-belles-descentes.html"
+        },
+        {
+          "id": "biblio_794c6164c09a8f92",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons et cascades en pays d'Auzat et du Vicdessos",
+          "authors": [
+            "collectif"
+          ],
+          "publicationYear": 1999,
+          "reference": null,
+          "editor": null,
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/197/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_90c31be1b182c05b",
+          "kind": "MAP",
+          "title": "2148 OT Vicdessos (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_bd31a6fb3f8e9823",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.topos-canyon.fr.st/ariege.html",
+          "url": "http://www.topos-canyon.fr.st/ariege.html"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 399,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté municipal (Auzat) - 16 nov 2018",
+          "summary": "Pratique nocturne interdite. Des périodes (dates, horaires) sont fixés en fonction des canyons, à l'exception de l'Argensou aval, autorisé toute l'année entre 9h et 17h.\n\nPar ailleurs, il faut :\n\n- ne pas dépasser 10 personnes max par groupe\n\n- se conformer aux balisages (accès et sortie en particulier) et consignes mises en place.\n\n- utiliser exclusivement les aires de stationnement prévues à cet effet\n\n- laisser les lieux propres\n\n- observer un comportement discret (pas de cris, pas de bruits dans les villages...)",
+          "remark": null,
+          "details": "Arrêté municipal (Auzat) n°030.18.052 du 16 novembre 2018",
+          "effectiveDate": "16 nov 2018",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/399/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté municipal (Auzat) n°030.18.052 du 16 novembre 2018",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem399_pj1.pdf"
+            }
+          ]
+        },
+        {
+          "id": 388,
+          "status": "Abrogé",
+          "action": "Réglemente",
+          "title": "Arrêté municipal (Auzat) - 29 août 2018",
+          "summary": "Pratique autorisée du 1er mai au 30 septembre. Pour certains canyons, il y a aussi des restrictions horaires.\n\nGroupe maximum 8 personnes + 2 encadrants.",
+          "remark": null,
+          "details": "Arrêté municipal (Auzat) n°38.18.048 du 29 août 2018",
+          "effectiveDate": "16 nov 2018",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/388/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté municipal (Auzat) n°38.18.048 du 29 août 2018",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem388_pj1.pdf"
+            }
+          ]
+        },
+        {
+          "id": 293,
+          "status": "Obsolète",
+          "action": "Réglemente",
+          "title": "Information - 08 août 2014",
+          "summary": "Information d'EDF du vendredi 08 août.\n\nPoint météo :\n\nSemaine 32 : Temps plûtot clément, avec quelques faibles précipitations.\n\n=> La conséquence : les débits naturels en baisse, localement influencés sous orage.\n\nPrévision WE et Semaine 33 : Des orages en soirées. Une perturbation atlantique dimanche, et retour au beau temps en début de semaine prochaine.\n\n=> Vigilance sur la variation des débits naturels sous orages.\n\nCanyon / SpéléoNiveau de risqueCommentairesMarcmodéréApports naturels à la prise d'eau de l'Artigue faibles à modérés (entre 1,5 à 2 m3/s), mais influencés sous orages.\n\nCote de retenue du barrage de Soulcem haute.\n\n=> interdiction de déversement au point triple en coursArtiguemodéréApports naturels à la prise d'eau de l'Artigue faibles à modérés (entre 1,5 à 2 m3/s), mais influencés sous orages.\n\nPas d'impact des aménagements EDF sur le canyon.ArgensoufaiblePas d'impact des aménagements EDF (prise d'eau Argesou) sur le canyon.SubrafaiblePas d'impact des aménagements EDF sur le canyon.EscalesfaiblePas d'impact des aménagements EDF sur le canyon.GniourefaiblePas d'impact des aménagements EDF sur le canyon.Aval prise d'eau de Montréal\n\n(spéléo)modéréRisque de déversement par le clapet en fonction des débits entrants.\n\nPrise d'eau de Montréal hors d'eau en début de semaine 33.\n\nVigilance, des varations de débits à l'aval de la prise d'eau (grotte spéléo) peuvent avoir lieu à tout moment de la journée.\n\nMerci de relayer le message aux pratiquants.",
+          "remark": null,
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.",
+          "effectiveDate": "08 août 2014",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/293/legislation.html",
+          "attachments": []
+        },
+        {
+          "id": 272,
+          "status": "Obsolète",
+          "action": "Autorise",
+          "title": "Information - 16 août 2013",
+          "summary": "Point météo :\n\nSemaine 33 : une fin de semaine notamment vendredi et samedi sous un risque d'orage un peu plus marqué\n\nPrévision Semaine 34 : semaine chaude et estivale => conséquence : débits naturel lente récession\n\nMarc : Niveau de risque modéré à faible\n\nL'autorisation de déversement au point triple est levée depuis le 25/07, le canyon est désormais praticable. Il faut toutefois rester vigilant car les apports naturels peuvent être importants par rapport aux risques orageux. Merci de plus de bien respecter les prérequis indispensables relatifs à l'arrêté municipal qui réglemente la pratique du Canyon, notamment l'échelle de couleur à la prise d'eau de Lartigues ainsi que les horaires.\n\nArtigue : Niveau de risque modéré à faible\n\nPas d'impact des aménagements EDF sur le canyon. Débits naturels en lente récession, amplitude faible en journée.\n\nArgensou : Niveau de risque modéré à faible\n\nPas d'impact des aménagements EDF (prise d'eau Argesou) sur le canyon. Débits naturels en récession\n\nSubra : Niveau de risque modéré à faible\n\nPas d'impact des aménagements EDF sur le canyon. Débits naturels en récession\n\nEscales : Niveau de risque modéré\n\nPrise d'eau de Peyregrand en amont hors d'eau (adduction vers Gnioure). Tout le débit naturel transite dans le Brouquenat et le ruisseau des Escales, lente récession des débits.\n\nGnioure : Niveau de risque modéré à faible\n\nFin des Lâchers d'eau par la vanne de fond de Gnioure, apports en récession.\n\nAval prise d'eau de Montréal (spéléo) : Niveau de risque modéré\n\nBaisse des débits (notamment ceux turbinés par Soulcem). Vigilance, des varations de débits à l'aval de la prise d'eau (grotte spéléo) peuvent avoir lieu à tout moment de la journée..",
+          "remark": null,
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.",
+          "effectiveDate": "16 août 2013",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/272/legislation.html",
+          "attachments": []
+        }
+      ]
+    }
+  }
+}

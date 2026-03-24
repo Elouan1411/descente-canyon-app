@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:52.616696+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22392,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22392/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22392/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22392/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22392/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22392,
+    "identity": {
+      "nom": "Stuhlbach",
+      "nomComplet": "Stuhlbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22392/Stuhlbach.html"
+    },
+    "location": {
+      "pays": "Allemagne",
+      "region": "Bayern",
+      "departement": "Oberbayern",
+      "communePrincipale": "Lenggries",
+      "communes": [
+        "Landkreis Bad Tölz-Wolfratshausen",
+        "Lenggries"
+      ],
+      "massif": "Karwendel",
+      "bassin": "Isar",
+      "coursEau": "Stuhlbach"
+    },
+    "rating": {
+      "cotation": "v4a2III",
+      "interet": 1.5,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1300,
+      "deniveleM": 480,
+      "longueurM": 2500,
+      "cascadeMaxM": 40,
+      "cordeMiniM": 50,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h20",
+      "descente": "4h30",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22392,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.527946,
+        "longitude": 11.465414,
+        "label": null
+      },
+      {
+        "canyonId": 22392,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.529099,
+        "longitude": 11.441746,
+        "label": null
+      },
+      {
+        "canyonId": 22392,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.535442,
+        "longitude": 11.441317,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.535442,
+      "longitude": 11.441317,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_29657708abed5d5d",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.radportal-toelzer-land.de/#SI.....709&Z=1197&MAP=Karte",
+          "url": "http://www.radportal-toelzer-land.de/#SI.....709&Z=1197&MAP=Karte"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:07.993225+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21633,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21633/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21633/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21633/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21633/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21633,
+    "identity": {
+      "nom": "Bregalla",
+      "nomComplet": "Rio di Bregalla",
+      "prefixeNom": "Rio di",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21633/Bregalla.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Ligurie",
+      "departement": "Imperia",
+      "communePrincipale": "Triora",
+      "communes": [
+        "Triora"
+      ],
+      "massif": "Saccarello",
+      "bassin": "Argentina",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a2II",
+      "interet": 1.4,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 880,
+      "deniveleM": 160,
+      "longueurM": 1000,
+      "cascadeMaxM": 18,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "45min",
+      "descente": "1h30",
+      "retour": "??"
+    },
+    "topo": {
+      "accesAval": "De Nice, sortir à Arma di Taggia et remonter la vallée de l'Argentina par SS548 jusqu'à Molini di Triora. Continuer jusqu'à Triora par la SP52 et arriver à Loreto. Là, prendre la SP81 vers Réaldo. Se garer à gauche de la route juste avant le pont enjambant le Rio di Bregalla, 2km après Loreto.",
+      "accesAmont": null,
+      "approche": "Traverser le pont et suivre en rive droite un sentier bien tracé qui longe le rio sur environ 400m. Quand il fait un lacet à gauche, le quitter pour suivre tout droit une sente escarpée qui continue à le longer. Elle monte à gauche pour éviter un affluent puis le coupe. Elle se perd en rive gauche de l'affluent! Il faut alors monter au mieux dans la pente pour retrouver une piste 50m plus haut.\n\nLa suivre sur la droite. Au croisement, prendre la branche de droite qui descend vers Triora (marque rouge et blanche) et coupe le rio peu après.",
+      "descente": "Quelques passages jolis, quelques sauts mais très discontinu dans l'ensemble.",
+      "retour": "Après le pont, sortir directement en rive gauche et à la voiture.",
+      "engagement": "On se met facilement à l'abri. Grosses traces de crue à la fonte des neiges. Roche glissante en fin de saison, seulement.",
+      "periode": "Toujours en eau: 0,5 litre le 15/07/2007.",
+      "geologie": null,
+      "historique": "Les amis italiens. Les Doigts Déglingués.",
+      "remarques": "Aucun équipement. On passe directement la corde autour des arbres."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21633,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.011738,
+        "longitude": 7.739718,
+        "label": null
+      },
+      {
+        "canyonId": 21633,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.003292,
+        "longitude": 7.735791,
+        "label": null
+      },
+      {
+        "canyonId": 21633,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.002724,
+        "longitude": 7.735877,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.002724,
+      "longitude": 7.735877,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_a3482111c0bd004f",
+          "kind": "MAP",
+          "title": "ASF n°2 Moyenne Roya - Val Nervia e Argentina (Alpes sans fronti?res)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

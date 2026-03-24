@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:31.196315+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22565,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22565/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22565/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22565/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22565/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22565,
+    "identity": {
+      "nom": "Saint Amand",
+      "nomComplet": "Cirque de Saint Amand, L'Ascle, Riaille de Suzette",
+      "prefixeNom": "Cirque de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22565/Saint-Amand.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Vaucluse",
+      "communePrincipale": "Suzette",
+      "communes": [
+        "Malaucène",
+        "Suzette"
+      ],
+      "massif": "Dentelles de Montmirail",
+      "bassin": null,
+      "coursEau": "Riaille de Suzette"
+    },
+    "rating": {
+      "cotation": "v3a1II",
+      "interet": 0.5,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 420,
+      "deniveleM": 50,
+      "longueurM": 100,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 30,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "25min",
+      "descente": "40min",
+      "retour": "2min"
+    },
+    "topo": {
+      "accesAval": "De Carpentras, prenez la D7 en direction de Bollène. Dans le village d’Aubignan, prenez à droite vers Beaumes-de-Venise par la D90. Traversez le village et passer les villages de Lafare,puis Suzette toujours par la D90.Poursuivre 1,4 km et garez-vous sans gêner.",
+      "accesAmont": null,
+      "approche": "Juste avant le pont,un petit sentier remonte en RD à travers quelques blocs pour buter sur la grande cascade.De là,il est possible d'accédé à l'amont de cette cascade par la gauche (RD)en montant et en longeant la paroi sur quelques mètres ,pour ensuite effectuer une petite escalade et passer cette barre rocheuse.Se rendre au départ de grande cascade à travers les buissons pour commencer la descente.",
+      "descente": "C25 sur AN + C5 sur AN puis quelques désescalades ou rappels sur AN à travers le chaos de blocs.",
+      "retour": "Retour au parking par le sentier pris à l'aller.",
+      "engagement": "Pas d'échappatoire après la C25",
+      "periode": "A faire après de grosses pluies.",
+      "geologie": "Belle entaille !",
+      "historique": null,
+      "remarques": "L'idéal serait un équipement en place sur la C25 pour éviter les frottements.A coupler avec,Eglantines,Lafare,Grande Montagne et le Lauron non loin."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22565,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.179726,
+        "longitude": 5.076048,
+        "label": null
+      },
+      {
+        "canyonId": 22565,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.179142,
+        "longitude": 5.076542,
+        "label": null
+      },
+      {
+        "canyonId": 22565,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.178371,
+        "longitude": 5.076327,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.178371,
+      "longitude": 5.076327,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_f8195a0d9851b7fb",
+          "kind": "MAP",
+          "title": "3040 ET Carpentras (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

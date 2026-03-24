@@ -1,0 +1,145 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:45:56.787805+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2554,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2554/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2554/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2554/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2554/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2554,
+    "identity": {
+      "nom": "Resio",
+      "nomComplet": "Torrente Resio",
+      "prefixeNom": "Torrente",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2554/Resio.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Lombardia",
+      "departement": "Brescia",
+      "communePrincipale": "Esine",
+      "communes": [
+        "Esine"
+      ],
+      "massif": null,
+      "bassin": "Val Camonica",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a3II",
+      "interet": 2.5,
+      "nbVotes": 6
+    },
+    "metrics": {
+      "altitudeDepartM": 500,
+      "deniveleM": 240,
+      "longueurM": 700,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h",
+      "descente": "3h30",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "Au nord du lac d’Iseo suivez la SS42 vers Edolo. A Darfo, prenez la direction à droite vers Pellalepre, Fucine, Montecchio. A Sacca, garez-vous au départ d’une piste permettant de se rendre à la valle dell’Inferno (GR 163)",
+      "accesAmont": null,
+      "approche": "Suivez la piste jusqu’à la rivière. Ne pas traverser le pont rester rive gauche, environ 30 mètres après le pont suivre un chemin qui monte (avec des cordes) avec des marques bleu. En 15/20 minutes le chemin revient dans la rivière, on croise la rivière et on remonte rive droite sur un chemin peu visible mais toujours avec des marques bleues. Continuer 30/35 minutes jusqu'à ce que le chemin redescende dans le canyon (quelques cordes pour descendre). On arrive directement au début du canyon",
+      "descente": "Le canyon commence tout de suite par des rappels et des désescalades pas toujours très intéressants.\n\nAprès que le chemin ait traversé la rivière, la descente devient plus étroite. Les rappels et les passages les plus intéressants sont dans cette partie. Certains obstacles peuvent être techniques.\n\nEn tout il y a 15 obstacles (rappel/saut/toboggan).",
+      "retour": "Rejoignez les véhicules par le chemin.",
+      "engagement": "Échappatoire par le chemin en mi parcours.",
+      "periode": "Débit correct l’été.\n\nÉté.",
+      "geologie": "Conglomérat à vérifier.",
+      "historique": null,
+      "remarques": "A été rééquipé depuis la parution du topo Gole & Canyons Vol.3"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2554,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.892899,
+        "longitude": 10.231967,
+        "label": null
+      },
+      {
+        "canyonId": 2554,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.899685,
+        "longitude": 10.227585,
+        "label": null
+      },
+      {
+        "canyonId": 2554,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.901363,
+        "longitude": 10.222145,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.901363,
+      "longitude": 10.222145,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_3813ed43a35207fd",
+          "kind": "TOPOGUIDE",
+          "title": "Canyoning in Lombardia",
+          "authors": [
+            "Pascal van Duin"
+          ],
+          "publicationYear": 2005,
+          "reference": "ISBN 88-901753-0-3",
+          "editor": "Edizioni TopCanyon",
+          "status": "en stock\n\n- 24,90 € -\n\nCommandez cet ouvrage dès maintenant !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/18/Canyoning-in-Lombardia.html"
+        },
+        {
+          "id": "biblio_60029af297dac6c3",
+          "kind": "TOPOGUIDE",
+          "title": "Italia Nord-Ovest - Gole e Canyon Vol.3",
+          "authors": [
+            "Franscesco Cacace",
+            "Roberto Jarre",
+            "Dino Ruotolo",
+            "Roberto Schenone. Traduit en français par Thierry Achmetoff"
+          ],
+          "publicationYear": 2003,
+          "reference": "88-900260-2-2",
+          "editor": "Adriambiente",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/153/topoguide.html"
+        }
+      ],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_25bfba8ebb31491b",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://fallocefali.altervista.org/torren.....o--sacca-esine-.html",
+          "url": "http://fallocefali.altervista.org/torren.....o--sacca-esine-.html"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

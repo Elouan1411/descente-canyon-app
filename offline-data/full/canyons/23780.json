@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:04.287415+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23780,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23780/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23780/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23780/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23780/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23780,
+    "identity": {
+      "nom": "Nölblinger Graben",
+      "nomComplet": "Nölblinger Graben, Nölblingbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23780/Nolblinger-Graben.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Carinthie",
+      "departement": "Hermagor",
+      "communePrincipale": "Dellach",
+      "communes": [
+        "Dellach"
+      ],
+      "massif": "Gailtaler Alpen",
+      "bassin": "Gail",
+      "coursEau": "Nölblingbach"
+    },
+    "rating": {
+      "cotation": "v4a4III",
+      "interet": 2.4,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 1080,
+      "deniveleM": 350,
+      "longueurM": 1600,
+      "cascadeMaxM": 34,
+      "cordeMiniM": 45,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h05min",
+      "descente": "4h",
+      "retour": "15"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23780,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.62693,
+        "longitude": 13.07931,
+        "label": null
+      },
+      {
+        "canyonId": 23780,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.641762,
+        "longitude": 13.08818,
+        "label": null
+      },
+      {
+        "canyonId": 23780,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.64167,
+        "longitude": 13.088133,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.64167,
+      "longitude": 13.088133,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_ad9bcbeb673fad8f",
+          "kind": "MAP",
+          "title": "198 Weissbriach (ÖK50)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_32ad5fc9a28663b4",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/C.....lblingerGrabenCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/C.....lblingerGrabenCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

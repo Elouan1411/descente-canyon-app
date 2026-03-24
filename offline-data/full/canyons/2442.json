@@ -1,0 +1,189 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:45:31.340819+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2442,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2442/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2442/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2442/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2442/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2442,
+    "identity": {
+      "nom": "Concluses",
+      "nomComplet": "Les Concluses, Concluses de Lussan, L'Aiguillon",
+      "prefixeNom": "Les",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2442/Concluses.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Gard",
+      "communePrincipale": "Lussan",
+      "communes": [
+        "Lussan"
+      ],
+      "massif": "Garrigues",
+      "bassin": "Ceze",
+      "coursEau": "L'Aiguillon"
+    },
+    "rating": {
+      "cotation": "v2a3II",
+      "interet": 2.0,
+      "nbVotes": 13
+    },
+    "metrics": {
+      "altitudeDepartM": 215,
+      "deniveleM": 120,
+      "longueurM": 5000,
+      "cascadeMaxM": 6,
+      "cordeMiniM": 5,
+      "navette": "15.0km"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "2-3h",
+      "retour": "15min/2h30"
+    },
+    "topo": {
+      "accesAval": "de Lussan, rejoindre le hameau de la Bastide en suivant la D23. Dans le même hameau, prendre la petite route qui part vers l'ouest puis, au niveau d'une ferme, le chemin qui descend vers le vallon. Se garer avant le pont sans gêner le passage.",
+      "accesAmont": null,
+      "approche": "rejoindre le lit de l'Aiguillon.",
+      "descente": null,
+      "retour": "Option sans navette : prendre un sentier RG peu avant le confluent avec le Merderis. Au niveau d'une épave prendre le sentier qui remonte sur le plateau vers l'ouest. Le sentier pénètre sous une voute végétale. A un carrefour prendre immédiatement à droite et ne quitter le sentier principal que pour un autre très marqué à droite conduisant rapidement à l'éclaircie du sommet (301m), où l'on trouve le menhir de la Pierre-Plantée. Descendre par un sentier vers le sud dans le combe de la Queue de Bœuf qui ramène vers l'est au Portail (ne pas tourner à droite, prendre bien à gauche, voir une pierre par terre où est inscrit le Portail). Remonter RD au parking touristique, prendre le sentier parallèle aux gorges. Quand devenu chemin, il s'écarte vers le Sud-Est, le quitter pour un sentier qui descend sur Prades. Carte IGN vivement conseillée.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "A faire impérativement après une période pluvieuse si on veut de l'eau... Du fait des pertes il peut y avoir un bon débit au début et la fin de descente etre sèche !\n\nAttention : en eau, présence de blocs siphonants. Notamment un au niveau d'une cascade de 1,50m après le passage du portail. On évite l'(es) autre(s) en ne s'engageant pas dans les passages paraissant risqués."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2442,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.174015,
+        "longitude": 4.389452,
+        "label": null
+      },
+      {
+        "canyonId": 2442,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.189636,
+        "longitude": 4.426037,
+        "label": null
+      },
+      {
+        "canyonId": 2442,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 44.1726,
+        "longitude": 4.384715,
+        "label": null
+      },
+      {
+        "canyonId": 2442,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 44.181522,
+        "longitude": 4.404003,
+        "label": "En cas d'entrée par \"le portail\""
+      },
+      {
+        "canyonId": 2442,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 44.192135,
+        "longitude": 4.432408,
+        "label": null
+      },
+      {
+        "canyonId": 2442,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 44.183102,
+        "longitude": 4.401815,
+        "label": "Beaume des Boeufs"
+      },
+      {
+        "canyonId": 2442,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 44.186008,
+        "longitude": 4.409726,
+        "label": "Le Portail"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 44.1726,
+      "longitude": 4.384715,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_c73c54d72357ab93",
+          "kind": "TOPOGUIDE",
+          "title": "Zoom sur les gorges de l'Ardèche",
+          "authors": [
+            "Jean-Michel Metzger avec la collaboration du Comité Départemental d'Escalade Ardèche"
+          ],
+          "publicationYear": 1994,
+          "reference": "ISBN 2-85744-715-9",
+          "editor": "Edisud",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/115/topoguide.html"
+        },
+        {
+          "id": "biblio_f62b32e9659a6cea",
+          "kind": "TOPOGUIDE",
+          "title": "Gorges et Canyons en Languedoc Roussillon",
+          "authors": [
+            "Jean-Pierre Lucot et Richard Quintilla"
+          ],
+          "publicationYear": 1990,
+          "reference": "ISBN 2-85744-467-9",
+          "editor": "Édisud",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/124/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_ead9641d3960ea88",
+          "kind": "MAP",
+          "title": "2940 OT Bagnols-sur-Ceze (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_6b3844f17bfa917c",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://clementdom.free.fr/html/concluses_de_lussan.htm",
+          "url": "http://clementdom.free.fr/html/concluses_de_lussan.htm"
+        },
+        {
+          "id": "resource_4c78568bfb40adcc",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.yadugaz07.com/canyon-gard.php#concl",
+          "url": "http://www.yadugaz07.com/canyon-gard.php#concl"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

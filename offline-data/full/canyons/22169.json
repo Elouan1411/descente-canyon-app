@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:05.804673+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22169,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22169/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22169/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22169/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22169/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22169,
+    "identity": {
+      "nom": "Strindenbach",
+      "nomComplet": "Strindenbach, Slide Paradise",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22169/Strindenbach.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Tyrol",
+      "departement": "Politischer Bezirk Reutte",
+      "communePrincipale": "Haldensee",
+      "communes": [
+        "Reutte",
+        "Haldensee"
+      ],
+      "massif": "Tannheimer",
+      "bassin": "Lech",
+      "coursEau": "Strindenbach"
+    },
+    "rating": {
+      "cotation": "v3a3III",
+      "interet": 2.2,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 1345,
+      "deniveleM": 190,
+      "longueurM": 1200,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "45min",
+      "descente": "2h",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "De Reutte sur le Gaichtpass dans le vallée Tannheimer vers le village Haldensee. Au bord du lac Haldensee tourner direction du camping et garer la voiture au parkings (distributeurs automatiques de parc).",
+      "accesAmont": null,
+      "approche": "Du Parking sur le chemin de forêt traverser le pont et prendre un chemin étroit à droite. Monter au bord du ruisseau vers le haut jusqu'à la piste forestière. La piste mène au pont sur Strindenbach (départ).",
+      "descente": "Des sauts et toboggans, quelques rappels, désescalade et marche",
+      "retour": "Après la passerelle sortir à gauche et sur la piste de galets en arrière à la voiture.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "Souvent des arbres dans le ruisseau."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22169,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.479988,
+        "longitude": 10.559503,
+        "label": null
+      },
+      {
+        "canyonId": 22169,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.488827,
+        "longitude": 10.56285,
+        "label": null
+      },
+      {
+        "canyonId": 22169,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.490108,
+        "longitude": 10.566434,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.490108,
+      "longitude": 10.566434,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_80a52b6e4b57f154",
+          "kind": "TOPOGUIDE",
+          "title": "Tiroler Canyoningführer - The Canyoning guide for Tyrol",
+          "authors": [
+            "Alexander Riml",
+            "Gunnar Amor"
+          ],
+          "publicationYear": 2012,
+          "reference": "978-3-200-02343-7",
+          "editor": null,
+          "status": "en stock\n\n- 44,90 € -\n\nCommandez cet ouvrage dès maintenant !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/170/Tiroler-Canyoningfuhrer---The-Canyoning-guide-for-Tyrol.html"
+        },
+        {
+          "id": "biblio_a216ca92fa29ca51",
+          "kind": "TOPOGUIDE",
+          "title": "Canyoning in Bayern und Tirol",
+          "authors": [
+            "Werner Baumgarten"
+          ],
+          "publicationYear": 2010,
+          "reference": null,
+          "editor": null,
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1226/topoguide.html"
+        },
+        {
+          "id": "biblio_53b43880fd9bdf35",
+          "kind": "TOPOGUIDE",
+          "title": "4 Füssen-Ausserfern (Kompass) - 1/50000",
+          "authors": [],
+          "publicationYear": null,
+          "reference": null,
+          "editor": null,
+          "status": null,
+          "detailUrl": null
+        },
+        {
+          "id": "biblio_4c5c80fa4c9ac486",
+          "kind": "TOPOGUIDE",
+          "title": "114 (ÖK50 (BEV)) - 1/50000",
+          "authors": [],
+          "publicationYear": null,
+          "reference": null,
+          "editor": null,
+          "status": null,
+          "detailUrl": null
+        }
+      ],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

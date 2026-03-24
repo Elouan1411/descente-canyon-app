@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:59:16.728206+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24120,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24120/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24120/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24120/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24120/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24120,
+    "identity": {
+      "nom": "Enfer",
+      "nomComplet": "Pas d' Enfer, Rivière d'Ars",
+      "prefixeNom": "Pas d'",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24120/Enfer.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Ariège",
+      "communePrincipale": "Aulus-les-Bains",
+      "communes": [
+        "Aulus-les-Bains"
+      ],
+      "massif": "Haut-Couserans",
+      "bassin": "Salat",
+      "coursEau": "Rivière d'Ars"
+    },
+    "rating": {
+      "cotation": "v4a3III",
+      "interet": 2.2,
+      "nbVotes": 6
+    },
+    "metrics": {
+      "altitudeDepartM": 1010,
+      "deniveleM": 150,
+      "longueurM": 750,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "40min",
+      "descente": "1h30 à 2h",
+      "retour": "35min"
+    },
+    "topo": {
+      "accesAval": "A Aulus-les-Bains, prendre la D8 en direction de Guzet-Neige et du col de Latrape. Parking pour la cascade d'Ars dans le premier virage en épingle.",
+      "accesAmont": null,
+      "approche": "Prendre la piste menant à la cascade d'Ars jusqu'à ce quelle se rapproche et surplombe le cours d'eau. Une belle vasque en contrebas constitue le point de départ. On peut aussi commencer à la passerelle d'Artigous (10min de plus, point côte 1060m), cela rajoute 10min de descente dans le ruisseau avant de rejoindre la vasque de départ théorique.",
+      "descente": "Passé la vasque, on arrive rapidement au premier obstacle de 12m : un rappel guidé (tyrolienne parfois en place) ou un saut, quand il n'y a pas d'arbre dans la vasque en contrebas. Ensuite suit un passage de marche ou l'eau se perd parfois, et quelques ressauts pour arriver au Pas d'Enfer, étape clé de la descente : superbe encaissement profond et impressionnant. Plusieurs doubles amarrages et MC possibles, descente câblée RD, ensemble largement suréquipé, ce qui ternit l'aspect sauvage de ce canyon.\n\nQuelques ressauts et un dernier obstacle équipé encore d'une tyrolienne marque la fin de ce parcours.",
+      "retour": "Après le dernier obstacle, prendre le GR10 RG jusqu'à la piste empruntée à l'aller. Redescendre jusqu'à la voiture.",
+      "engagement": "Échappatoires possibles avant le Pas d'Enfer",
+      "periode": "juillet à octobre",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24120,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.772224,
+        "longitude": 1.353369,
+        "label": null
+      },
+      {
+        "canyonId": 24120,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.769718,
+        "longitude": 1.355257,
+        "label": "2éme départ, passerelle d'Artigous"
+      },
+      {
+        "canyonId": 24120,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.777565,
+        "longitude": 1.352344,
+        "label": null
+      },
+      {
+        "canyonId": 24120,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 42.787548,
+        "longitude": 1.33837,
+        "label": null
+      },
+      {
+        "canyonId": 24120,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 42.777046,
+        "longitude": 1.352081,
+        "label": "Pas d'enfer"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 42.787548,
+      "longitude": 1.33837,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_90c31be1b182c05b",
+          "kind": "MAP",
+          "title": "2148 OT Vicdessos (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

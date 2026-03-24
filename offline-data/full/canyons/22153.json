@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:01.837630+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22153,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22153/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22153/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22153/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22153/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22153,
+    "identity": {
+      "nom": "Mesa",
+      "nomComplet": "Ribeira da Mesa, Ribeira da Quebrada",
+      "prefixeNom": "Ribeira da",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22153/Mesa.html"
+    },
+    "location": {
+      "pays": "Portugal",
+      "region": "Madeira",
+      "departement": "Porto Moniz Municipality",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": null,
+      "coursEau": "Ribeira da Quebrada"
+    },
+    "rating": {
+      "cotation": "v5a2III",
+      "interet": 2.5,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 1195,
+      "deniveleM": 670,
+      "longueurM": 1100,
+      "cascadeMaxM": 120,
+      "cordeMiniM": 75,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "??",
+      "descente": "??",
+      "retour": "??"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": "Ouvert en avril 2006 par Nuno Cunha et Antoine Florin.",
+      "remarques": "Informations provenant de l'ex-site Internet d'Antoine FLORIN :\n\nMise à jour novembre 2007 :\n\n---------------\n\nObservations\n\n---------------\n\nR2 : De+ possible.\n\nR11 : 10 / 10 (modifié donc frottement ok).\n\nR14 : Utiliser une DL, longueur à ajuster de 1 mètre. La déviation en fixe observée n'est pas à prendre !, trop courte d'ailleurs.\n\nR18 : 3m."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22153,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 32.799786,
+        "longitude": -17.128778,
+        "label": null
+      },
+      {
+        "canyonId": 22153,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 32.802387,
+        "longitude": -17.120527,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 32.799786,
+      "longitude": -17.128778,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_90bdfb6d02b7f270",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://pagesperso-orange.fr/canyon.madeira/mesa.html",
+          "url": "http://pagesperso-orange.fr/canyon.madeira/mesa.html"
+        },
+        {
+          "id": "resource_fcd2436eb53a9ff5",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyoning.camadeira.com/canyons/quebrada/",
+          "url": "http://canyoning.camadeira.com/canyons/quebrada/"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:00.927167+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23186,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23186/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23186/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23186/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23186/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23186,
+    "identity": {
+      "nom": "Bani Khalid (inférieur)",
+      "nomComplet": "Wadi Bani Khalid (inférieur)",
+      "prefixeNom": "Wadi",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23186/Bani-Khalid-inferieur.html"
+    },
+    "location": {
+      "pays": "Oman",
+      "region": null,
+      "departement": "Ad Dakhiliyah",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a3III",
+      "interet": 2.8,
+      "nbVotes": 6
+    },
+    "metrics": {
+      "altitudeDepartM": 560,
+      "deniveleM": 160,
+      "longueurM": 4500,
+      "cascadeMaxM": 15,
+      "cordeMiniM": null,
+      "navette": "50.0km"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "4h",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": "aval: 22.512369,59.119254\n\nEntrée canyon: 22.545458,59.117854",
+      "accesAmont": "amont: 22.550769,59.117988\n\nParking",
+      "approche": "Du parking rejoindre l'entrée du canyon par le lit de la rivière.",
+      "descente": "Marche et nage en rivière, paysage grandiose! Quelques sauts et toboggans possibles au cours de la descente. La partie amont (la plus intéressante) peut se faire en aller-retour si pas de navette.",
+      "retour": "Suivre le Falaj (canal d'irrigation) en RD jusqu'au village.",
+      "engagement": "Pas d'échappatoire mais le canyon est assez large, possibilité de se mettre hors crue",
+      "periode": "Randonnée aquatique",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Les premières cascades sont maintenant équipées en mono point par les guides locaux, mais tous les obstacles se désescaladent facilement."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23186,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 22.545458,
+        "longitude": 59.117855,
+        "label": null
+      },
+      {
+        "canyonId": 23186,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 22.519615,
+        "longitude": 59.121925,
+        "label": "sortie à gauche ou à droite"
+      },
+      {
+        "canyonId": 23186,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 22.55077,
+        "longitude": 59.117989,
+        "label": null
+      },
+      {
+        "canyonId": 23186,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 22.512369,
+        "longitude": 59.119255,
+        "label": null
+      },
+      {
+        "canyonId": 23186,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 22.510378,
+        "longitude": 59.122505,
+        "label": "Parking alternatif (route goudronnée)"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 22.55077,
+      "longitude": 59.117989,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_c40964a961202e91",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://wp.me/p2RC16-1g8",
+          "url": "http://wp.me/p2RC16-1g8"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

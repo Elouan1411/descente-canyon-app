@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:36.960939+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22035,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22035/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22035/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22035/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22035/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22035,
+    "identity": {
+      "nom": "Gibrou",
+      "nomComplet": "Canyon du Gibrou, Le Gibrou",
+      "prefixeNom": "Canyon du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22035/Gibrou.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Aveyron",
+      "communePrincipale": "Bozouls",
+      "communes": [
+        "Bozouls"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": "Le Gibrou"
+    },
+    "rating": {
+      "cotation": "v2a1I",
+      "interet": 0.9,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 529,
+      "deniveleM": 129,
+      "longueurM": 1900,
+      "cascadeMaxM": 6,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "1h",
+      "retour": "1h30"
+    },
+    "topo": {
+      "accesAval": "De Bozouls, prendre au sud-ouest direction Bezonnes par la D581. Avant de franchir le pont sur le Gibrou au point IGN noté 529, tourner à droite direction le Bruel et se garer peu après à la hauteur d'un sentier sur la gauche.",
+      "accesAmont": null,
+      "approche": null,
+      "descente": "Décor sauvage, végétation luxuriante, beaucoup de marche.",
+      "retour": "Remonter ou contourner les obstacles.",
+      "engagement": "Aucun",
+      "periode": "Le débit devient fort en hiver, ça collecte pas mal.",
+      "geologie": null,
+      "historique": "Jérôme et Roland Pelissier, 11 novembre 1982",
+      "remarques": "Il est possible de descendre par le canyon de la Planhe et de remonter par le Gibrou. Voir le topo de Roland Pelissier."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22035,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 44.459629,
+        "longitude": 2.685932,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 44.459629,
+      "longitude": 2.685932,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_a603aa4818255d95",
+          "kind": "MAP",
+          "title": "2438 O Estaing - Gorges du Lot (IGN S?rie Bleue)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_478fa9771b24863a",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.descente-canyon.com/forums/vi.....p?pid=103710#p103710",
+          "url": "http://www.descente-canyon.com/forums/vi.....p?pid=103710#p103710"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

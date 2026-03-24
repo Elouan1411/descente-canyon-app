@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:14.782371+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23826,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23826/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23826/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23826/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23826/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23826,
+    "identity": {
+      "nom": "Bonnets",
+      "nomComplet": "Torrent des Bonnets",
+      "prefixeNom": "Torrent des",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23826/Bonnets.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Hautes-Alpes",
+      "communePrincipale": "Saint-Jean-Saint-Nicolas",
+      "communes": [
+        "Saint-Jean-Saint-Nicolas"
+      ],
+      "massif": "Ecrins - Oisans - Champsaur",
+      "bassin": "Drac",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a2I",
+      "interet": 1.2,
+      "nbVotes": 6
+    },
+    "metrics": {
+      "altitudeDepartM": 1510,
+      "deniveleM": 150,
+      "longueurM": 250,
+      "cascadeMaxM": 50,
+      "cordeMiniM": 40,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "1h30",
+      "retour": "25min"
+    },
+    "topo": {
+      "accesAval": "Après Pont-du-Fossé, prendre la D481 à gauche vers Saint-Nicolas. Poursuivre après ce hameau et aller jusqu'au hameau des Richards. Garez-vous sans gêner.\n\nSi vous voulez enchainer avec le collecteur Brudour, garer vous plutôt à Montorcier.",
+      "accesAmont": null,
+      "approche": "Traverser les Richards jusqu'au bout, rejoindre le départ de l'envol des parapentes. Passer un portail en bois, le sentier descend doucement vers le canyon, et le traverse à quelques mètres du départ.\n\nDe Montorcier, au bassin, le sentier monte (discrètement au départ) à gauche de la maison et serpente dans les bois jusqu'à la piste que l'on prend à droite. Peu après prendre le sentier à droite, panneau : \"Tour du Frustel, Cabane de la Baumette\". Et là, soit: 500 m après un sentier descend à droite et coupe le Brudour. Remonter RG jusqu'à une crête et prendre à gauche un sentier qui rejoint le haut de la C50 des Bonnets. Soit 500 m après continuer le sentier principal (ne pas descendre au Brudour), récupérer la piste qui assez vite va couper le Brudour plus haut. Continuer le bon sentier rive D (GR50, tour du Vieux Chaillol) qui vient aussi couper le ruisseau quelques mètres au dessus de la C50.",
+      "descente": "C50 en deux longueurs (arbre non équipé RD 10m puis relais sur 2 points hors d'eau en RD, inconfortable, 40m).\n\n100m de marche et désescalades puis c'est l’enchaînement final avec 4 ou 5 rappels maxi 20 m jusqu'à la passerelle de sortie. Le 1° relais de ce final est rive G un peu éloigné (2 goujons, cordelette orange).",
+      "retour": "De la passerelle prendre à gauche le chemin qui remonte au Richards ou enchainer dans Brudour pour sortir à Montorcier.",
+      "engagement": "Nombreuses échappatoires.",
+      "periode": "Printemps pour profiter d'un bon débit, au pire à l'automne après une bonne période de pluie.",
+      "geologie": null,
+      "historique": "Quelques cascades sur le final équipées sur des vieux pitons.\n\nCompléments d'équipement sur goujons le 26/03/2017 par nos amis Marseillais, et le 13/03/2023 par Michiel (mvdlans), notre fameux guide local.",
+      "remarques": "La descente de la grande cascade serait plus sympa si le relais intermédiaire était en RG (mais roche peut-être pourrie, à voir). Les premiers 30m (le 1° rappel + les 20 premiers m de la grande) sont en rocher très médiocre, demandant de l'attention.\n\nPossible d'enchainer directement avec le Brudour. Pour ce faire soit navette, soit montée à pied au départ de Montorcier (1h).\n\nA noter que cet enchainement n'est peut être pas une si bonne idée, car si le débit est correct dans Bonnets, celui dans Brudour risque d'être très sportif... et vice versa. Bonnets n'est qu'un affluent."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23826,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.681702,
+        "longitude": 6.230599,
+        "label": null
+      },
+      {
+        "canyonId": 23826,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.680573,
+        "longitude": 6.228185,
+        "label": null
+      },
+      {
+        "canyonId": 23826,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.683033,
+        "longitude": 6.233018,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.683033,
+      "longitude": 6.233018,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_b0e951331c704682",
+          "kind": "MAP",
+          "title": "3437 OT Champsaur - Parc des Ecrins (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

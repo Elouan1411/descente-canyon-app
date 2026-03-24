@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:00.783332+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21860,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21860/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21860/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21860/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21860/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21860,
+    "identity": {
+      "nom": "Sarrat long",
+      "nomComplet": "Ruisseau de Sarrat long",
+      "prefixeNom": "Ruisseau de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21860/Sarrat-long.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Haute-Garonne",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 1.6,
+      "nbVotes": 11
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": null,
+      "longueurM": null,
+      "cascadeMaxM": null,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h",
+      "descente": "2h",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21860,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.938847,
+        "longitude": 0.634958,
+        "label": null
+      },
+      {
+        "canyonId": 21860,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.939537,
+        "longitude": 0.640576,
+        "label": null
+      },
+      {
+        "canyonId": 21860,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 42.939354,
+        "longitude": 0.644452,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 42.939354,
+      "longitude": 0.644452,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_269df1d6c96b1f97",
+          "kind": "MAP",
+          "title": "1847 OT St-Bertrand de Comminges (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

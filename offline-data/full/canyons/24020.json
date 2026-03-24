@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:53.923221+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24020,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24020/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24020/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24020/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24020/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24020,
+    "identity": {
+      "nom": "Mouzéou",
+      "nomComplet": "Ravin de Mouzéou",
+      "prefixeNom": "Ravin de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24020/Mouzeou.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Hautes-Alpes",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Ecrins - Oisans - Champsaur",
+      "bassin": "Durance",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a2III",
+      "interet": 2.5,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1660,
+      "deniveleM": 260,
+      "longueurM": 400,
+      "cascadeMaxM": 120,
+      "cordeMiniM": 80,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h30min",
+      "descente": "2h30min",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "De Vallouise, monter la route de la vallée de l'Onde. Se garer au niveau de la chapelle à 1472 m.",
+      "accesAmont": null,
+      "approche": "Traverser l'Onde sur le vieux chemin en RD (le Pra du Clot) et remonter, en partie en escalade sur l’éperon RD du Mouzéou. A 1660 m traverser sur des vires vers le ravin.",
+      "descente": "Trois rappels inclinés mènent à la grande cascade de 120 m. Après un deuxième plan incliné avec deux rappels on arrive au petit encaissement final.",
+      "retour": "Remonter le vieux chemin et traverser l'Onde au pont au niveau du grand bloc.",
+      "engagement": "Jusqu'en automne le débit est souvent sportif ; grandes verticales et étroitures dans l'actif. Parcours vertical.",
+      "periode": "Descente dans les chutes des cascades, à faire vers fin de fonte, attention aux avalanches s'il y a encore trop de neige en haut. En bas souvent longtemps gros névés qui bouchent l'encaissement. Saison juillet - septembre.",
+      "geologie": "Schiste et variations calcaire-schistique",
+      "historique": "17.06.2017 Pascal Tran, Timo Stammwitz",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24020,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.830776,
+        "longitude": 6.432917,
+        "label": null
+      },
+      {
+        "canyonId": 24020,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.834499,
+        "longitude": 6.433528,
+        "label": null
+      },
+      {
+        "canyonId": 24020,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.83511,
+        "longitude": 6.427861,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.83511,
+      "longitude": 6.427861,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_2893447c6d6073b6",
+          "kind": "MAP",
+          "title": "3436 ET Meije - Pelvoux - Parc des Ecrins (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

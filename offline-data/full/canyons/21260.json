@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:48:44.698251+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21260,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21260/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21260/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21260/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21260/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21260,
+    "identity": {
+      "nom": "Kalami 1",
+      "nomComplet": "Kalami 1, Panagia",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21260/Kalami-1.html"
+    },
+    "location": {
+      "pays": "Grèce",
+      "region": "Crete",
+      "departement": "Heraklion",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Plateau O Omalos",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 2.3,
+      "nbVotes": 13
+    },
+    "metrics": {
+      "altitudeDepartM": 290,
+      "deniveleM": 170,
+      "longueurM": 700,
+      "cascadeMaxM": 18,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "35min",
+      "descente": "1h20",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": "est déconseillé. Il faut 30 mn de voiture sur des mauvaises pistes. (continuez pistes, suivre marques rouges).",
+      "approche": "Comme pour Kalami 2, rejoindre le lit du ruisseau, descendre 20 mètres (cairn) et suivre un cheminement aisé et raide jusqu'à un bassin. Continuer droit, rejoindre une piste. Suivez cette piste environ 400m (une épingle) descendre par une sente.",
+      "descente": "L’encaissement est très beau.\n\nQuelques cascades séparées par de petites zones de marche aisée.",
+      "retour": "Il est possible de sortir RG au niveau d'un captage et emprunter une piste (3min).",
+      "engagement": null,
+      "periode": "Il y a plus d’eau que dans Kalami 2 / Xerofarago. Le bas peut-être sec alors que le haut coule !\n\nPrintemps.\n\nÉquipé hors d'eau, il passe par gros débit.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Parcours complémentaire de Xerofarago = Kalami 2, les deux parcours étant courts.\n\nAttention, il y a une confusion dans le topoguide \"Canyoning Crête\" sur la toponymie. Le canyon à l'Est (le plus aquatique) est bien Kalami 1 = Panagia. Celui plus à l'Ouest (généralement sec) est Kalami 2 = Xerofarago."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21260,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 35.014099,
+        "longitude": 25.494017,
+        "label": null
+      },
+      {
+        "canyonId": 21260,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 35.008125,
+        "longitude": 25.495453,
+        "label": null
+      },
+      {
+        "canyonId": 21260,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 35.00539,
+        "longitude": 25.495556,
+        "label": "devant l'eglise"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 35.00539,
+      "longitude": 25.495556,
+      "label": "devant l'eglise"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

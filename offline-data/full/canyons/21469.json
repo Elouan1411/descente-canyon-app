@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:49:31.763438+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21469,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21469/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21469/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21469/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21469/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21469,
+    "identity": {
+      "nom": "Roska",
+      "nomComplet": "Roska",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21469/Roska.html"
+    },
+    "location": {
+      "pays": "Grèce",
+      "region": "Central Greece",
+      "departement": "Nomós Evrytanías , of Evrytania",
+      "communePrincipale": "Karpenisi",
+      "communes": [
+        "Nomós Evrytanías",
+        "of Evrytania",
+        "Karpenisi"
+      ],
+      "massif": "Panetoliko",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 3.1,
+      "nbVotes": 8
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": null,
+      "longueurM": null,
+      "cascadeMaxM": null,
+      "cordeMiniM": 25,
+      "navette": "3.0km"
+    },
+    "timings": {
+      "approche": "10min",
+      "descente": "3h",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": "Aval : au pont 3 km après Roska",
+      "accesAmont": "Amont : garez vous vers l'église à Roska, un chemin part en contre-bas de celle ci.\n\nLe suivre puis se diriger vers le canyon (il y a plein de chemins).",
+      "approche": null,
+      "descente": null,
+      "retour": "Remonter la rivière dans laquelle le canyon abouti (vérifier le débit lors de la mise en place de la voiture à l'amont) jusqu'au pont.",
+      "engagement": "Total",
+      "periode": "10l/sec en septembre",
+      "geologie": "Calcaire en strate de 10-15 cm d'épaisseur sculpté par l'eau sur toute la hauteur du canyon. des nombreuses compressions font apparaître des formes \"magiques\".",
+      "historique": null,
+      "remarques": "A faire impérativement.\n\nNécessite au moins un 4x4 pour y aller (25 km de mauvaises pistes pour accéder au village)."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21469,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 38.745983,
+        "longitude": 21.744518,
+        "label": null
+      },
+      {
+        "canyonId": 21469,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 38.761982,
+        "longitude": 21.745462,
+        "label": null
+      },
+      {
+        "canyonId": 21469,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 38.747791,
+        "longitude": 21.755161,
+        "label": null
+      },
+      {
+        "canyonId": 21469,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 38.763519,
+        "longitude": 21.758938,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 38.747791,
+      "longitude": 21.755161,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:20.327560+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21957,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21957/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21957/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21957/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21957/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21957,
+    "identity": {
+      "nom": "Sainte Victoire",
+      "nomComplet": "Cascade de la Sainte Victoire",
+      "prefixeNom": "Cascade de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21957/Sainte-Victoire.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Bouches-du-Rhône",
+      "communePrincipale": "le tholonet",
+      "communes": [
+        "le tholonet"
+      ],
+      "massif": "Montagne Ste Victoire",
+      "bassin": "Arc",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1I",
+      "interet": 0.7,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 530,
+      "deniveleM": 60,
+      "longueurM": 30,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 30,
+      "navette": "2.5km"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "45min",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": "se situe sur la gauche, juste avant qu'elle se sépare pour le hameau \"Le Bouquet\" et la montée en lacée menant à St Antonin sur Bayon.(la cascade est visible au loin depuis ce parking par une trainée noire).\n\nParking",
+      "accesAmont": "reprendre la route menant à St-Antonin-sur-Bayon par la D17. Dépasser ce hameau et 500m après, se garer sur le parking de droite (grand parking).",
+      "approche": "Traverser la route et prendre le sentier menant à l'oppidum d'Untinos (tracé jaune et signe point de vue). Le sentier monte par le léger dénivelé jusqu'à passer un col. De ce col, prendre à droite et à gauche après quelques mètres de marche. Sur 200 m, le sentier descend non loin du départ de la cascade .",
+      "descente": "Paysage vu d'en haut avec un départ de main-courante en RD, où s'en suit une C27 et une C15 .",
+      "retour": "Suivre au mieux la ravine et se diriger en direction d'un champs bien visible. A droite de ce champs, une piste rejoint la route et le parking aval.",
+      "engagement": "Aucun",
+      "periode": "Sec l'été, un filet d'eau l'hiver",
+      "geologie": null,
+      "historique": null,
+      "remarques": "A jumeler avec la cascade du Bayon ,non loin"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21957,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.525402,
+        "longitude": 5.583179,
+        "label": null
+      },
+      {
+        "canyonId": 21957,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.524796,
+        "longitude": 5.582192,
+        "label": null
+      },
+      {
+        "canyonId": 21957,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 43.520733,
+        "longitude": 5.588994,
+        "label": null
+      },
+      {
+        "canyonId": 21957,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 43.523163,
+        "longitude": 5.567944,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 43.520733,
+      "longitude": 5.588994,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_ac936ebab67d83ea",
+          "kind": "MAP",
+          "title": "3143 ET Aix-En-Provence (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

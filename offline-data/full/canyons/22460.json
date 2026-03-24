@@ -1,0 +1,153 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:06.421268+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22460,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22460/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22460/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22460/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22460/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22460,
+    "identity": {
+      "nom": "Kibris",
+      "nomComplet": "Kibris",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22460/Kibris.html"
+    },
+    "location": {
+      "pays": "Turquie",
+      "region": "Sütlegen",
+      "departement": "Antalya",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Akdağlar",
+      "bassin": "Demre",
+      "coursEau": "Kibris"
+    },
+    "rating": {
+      "cotation": "v4a4IV",
+      "interet": 2.0,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1210,
+      "deniveleM": 350,
+      "longueurM": 4500,
+      "cascadeMaxM": 26,
+      "cordeMiniM": 30,
+      "navette": "9.0km"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "6h",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": "2 parties: 1ère: 4h jusqu'au pont (9 rappels)\n\n2ème: 2h (1 rappel - 10m)",
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "Sortie intermédiaire à gauche avant le pont (950m alt.) et remonter par un sentier (25 min)"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22460,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 36.469666,
+        "longitude": 29.640104,
+        "label": "depart sup."
+      },
+      {
+        "canyonId": 22460,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 36.438606,
+        "longitude": 29.63518,
+        "label": null
+      },
+      {
+        "canyonId": 22460,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 36.471542,
+        "longitude": 29.63916,
+        "label": "pour depart sup."
+      },
+      {
+        "canyonId": 22460,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 36.436378,
+        "longitude": 29.629902,
+        "label": null
+      },
+      {
+        "canyonId": 22460,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 36.452713,
+        "longitude": 29.630663,
+        "label": "Parking pour sortie et départ intermédiaire."
+      },
+      {
+        "canyonId": 22460,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 36.438011,
+        "longitude": 29.63533,
+        "label": "depart du sentier à monter"
+      },
+      {
+        "canyonId": 22460,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 36.43631,
+        "longitude": 29.633421,
+        "label": "le sentier arrive à la piste"
+      },
+      {
+        "canyonId": 22460,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 36.448936,
+        "longitude": 29.634001,
+        "label": "sortie partie sup. = depart partie inf. (pont du bois)"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 36.471542,
+      "longitude": 29.63916,
+      "label": "pour depart sup."
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_1c594af2856279f1",
+          "kind": "MAP",
+          "title": "Türkische Riviera-Antalya-Kemer-Fethiye (Freytag & Berndt)",
+          "scale": "1/150000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

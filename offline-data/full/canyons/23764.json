@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:00.815591+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23764,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23764/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23764/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23764/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23764/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23764,
+    "identity": {
+      "nom": "Bouisse",
+      "nomComplet": "Ravin de la Bouisse",
+      "prefixeNom": "Ravin de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23764/Bouisse.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-de-Haute-Provence",
+      "communePrincipale": "Esparron-de-Verdon",
+      "communes": [
+        "Esparron-de-Verdon"
+      ],
+      "massif": "Verdon",
+      "bassin": "Verdon",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1II",
+      "interet": 0.7,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 480,
+      "deniveleM": 120,
+      "longueurM": 450,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "35min",
+      "descente": "1h30 à 2h0",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "Depuis Gréoux-les-Bains, emprunter la D952 en direction de St-Martin-de-Brôme sur environ 1,2 km. Puis tourner à droite, pour vous rendre à Esparron-de-Verdon au bord du lac du même nom. Traverser le centre du village et contourner le château. Puis, quitter la route allant sur Quinson 50 m après le château en prenant à droite en direction du camping « Le Soleil ». Suivre cette petite route jusqu’au bout, où celle-ci se transformera en piste par la suite. Se garer sans gêner juste avant la portion de piste réservée aux pompiers.",
+      "accesAmont": null,
+      "approche": "Faire quelques mètres en descendant vers le lac et emprunter le sentier montant à gauche en direction du sommet de la colline (sentier botanique). Arrivé au sommet, poursuivre sur ce même sentier jusqu’à croiser une piste menant à droite sur une cabane de chasseurs. Derrière cette cabane, part une sente de chasseurs qu’il faudra suivre jusqu’au au fond du ravin de la Bouisse. Il vous est conseillé dans un premier temps de suivre au mieux le ravin via la rive droite du fait de l’encombrement végétal sur une bonne centaine de mètres avant de vous y engager.",
+      "descente": "La descente se compose de 6 ou 7 rappels peu esthétiques pour certains, dans une végétation assez dense ou règne le coupe-coupe, jonché de quelques anciennes traces du passage de l’eau (anciennes vasques, lapiaz, sorties de réseaux fossiles ...). Seul point positif, la vue sur le lac sur son parcours final.",
+      "retour": "A la petite marre finale, au pied du dernier rappel, sortir en rive droite et emprunter les pseudos sentes longeant le lac jusqu’à la piste où est garé votre véhicule.",
+      "engagement": "Pas d'échappatoire sur les derniers rappels",
+      "periode": "sec",
+      "geologie": null,
+      "historique": "Equipement minimaliste sur mono-points (goujons de 8 mm + maillons de chaîne), anneaux de corde + maillons sur amarrages naturels. Fait en janvier 2017 par tony-13 et ALAIN 13.",
+      "remarques": "Accès risqué pendant la période de chasse. Rocher glissant après les pluies. Prévoir de quoi couper quelques branches, la végétation y est reine. Risque de chutes de blocs en rive gauche lors de la désescalade menant au sommet du R30 (roches fissurées à la base de la falaise)."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23764,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.7267,
+        "longitude": 5.973173,
+        "label": null
+      },
+      {
+        "canyonId": 23764,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.727196,
+        "longitude": 5.968409,
+        "label": null
+      },
+      {
+        "canyonId": 23764,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.72937,
+        "longitude": 5.966073,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.72937,
+      "longitude": 5.966073,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_20d8ee5b791cd9b8",
+          "kind": "MAP",
+          "title": "3343 OT Greoux-Les-Bains - Rians (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

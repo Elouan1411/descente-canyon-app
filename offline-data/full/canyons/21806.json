@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:47.611669+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21806,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21806/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21806/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21806/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21806/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21806,
+    "identity": {
+      "nom": "Hasa (inférieur)",
+      "nomComplet": "Wadi Hasa (inférieur)",
+      "prefixeNom": "Wadi",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21806/Hasa-inferieur.html"
+    },
+    "location": {
+      "pays": "Jordanie",
+      "region": null,
+      "departement": "Karak",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Moab",
+      "bassin": "Dead Sea",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a4VI",
+      "interet": 2.8,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 100,
+      "deniveleM": 435,
+      "longueurM": 15000,
+      "cascadeMaxM": null,
+      "cordeMiniM": null,
+      "navette": "99.9km"
+    },
+    "timings": {
+      "approche": "35min",
+      "descente": "8h10min",
+      "retour": "??"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21806,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 30.986357,
+        "longitude": 35.64056,
+        "label": null
+      },
+      {
+        "canyonId": 21806,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 31.015095,
+        "longitude": 35.493801,
+        "label": null
+      },
+      {
+        "canyonId": 21806,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 30.980787,
+        "longitude": 35.645687,
+        "label": null
+      },
+      {
+        "canyonId": 21806,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 31.018139,
+        "longitude": 35.487888,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 30.980787,
+      "longitude": 35.645687,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_ac65ee10d1053916",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/Canyons/HasaLowerCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/Canyons/HasaLowerCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

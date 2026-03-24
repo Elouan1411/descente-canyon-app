@@ -1,0 +1,145 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:44:23.140705+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2173,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2173/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2173/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2173/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2173/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/2173/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 2173,
+    "identity": {
+      "nom": "Faterieu",
+      "nomComplet": "Les cascades de Faterieu, L'arêne",
+      "prefixeNom": "Les cascades de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2173/Faterieu.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Ain",
+      "communePrincipale": "Virieu-le-Grand",
+      "communes": [
+        "Virieu-le-Grand"
+      ],
+      "massif": "Bugey",
+      "bassin": "Rhône",
+      "coursEau": "L'arêne"
+    },
+    "rating": {
+      "cotation": "v3a2I",
+      "interet": 1.8,
+      "nbVotes": 32
+    },
+    "metrics": {
+      "altitudeDepartM": 660,
+      "deniveleM": 70,
+      "longueurM": 400,
+      "cascadeMaxM": 17,
+      "cordeMiniM": 20,
+      "navette": "3.0km"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "1h",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "Aval : Garer une voiture dans la première épingle à gauche après la sortie du village (grand panneau \"Pont de Chanille\")",
+      "accesAmont": "Amont : De Virieu le Grand, prendre la D53 direction Thézillieu. Un peu moins d'un km après la borne 6 vous traversez le tout petit pont, garez-vous là, c'est le départ.",
+      "approche": null,
+      "descente": "Départ du petit pont, marche en rivière sur 400m, une première C8, encore un peu de marche (léger) puis une C6 (qui se désescalade si pas trop d'eau), suivit d'une C3, une autre C8\n\n(enfin si on veut...), un T5 qui passe quand il y a un minimum d'eau.\n\nEnfin vous arriverez à la C17 très jolie, enchainée par la C9 finale.",
+      "retour": "Sortie RD juste aprés la C9, suivez le sentier jusqu'à un chemin carrossable, 2 possibilités :\n\n- sans navette : Prendre le chemin vers la droite (montée), après 250m prendre un petit sentier qui remonte à droite, il vous amènera à la route environ 400m avant le départ\n\n- avec navette : descendre le chemin carrossable (à gauche) jusqu'à la route (épingle avec panneau pont de Chanille) et voiture aval",
+      "engagement": "aucun (possibilité d'éviter toutes les cascades), sauf si petite crue où il faudra faire attention à ne pas se faire prendre par l'eau au sommet des cascades.",
+      "periode": null,
+      "geologie": "Tuf et calcaire plutôt adhérent dans l'ensemble.",
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2173,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.855064,
+        "longitude": 5.628991,
+        "label": null
+      },
+      {
+        "canyonId": 2173,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.856365,
+        "longitude": 5.622683,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.856365,
+      "longitude": 5.622683,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_4b545689f5cb37fe",
+          "kind": "MAP",
+          "title": "3231 O",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 345,
+          "status": "Abrogé",
+          "action": "Interdit",
+          "title": "Arrêté préfectoral (Ain) - 08 sept 2016",
+          "summary": "En raison de la sécheresse, conjugué à l'attaque de pyrale qui attaque les buis, le risque d'incendie est maximal. Aussi, l'accès à tous les massifs forestiers est interdit par arrêté préfectoral sur les voies et chemins non asphaltés. Dans ces conditions, la pratique de la descente de canyon n'est pas possible pour l'ensemble des canyons qui nécessitent d'emprunter un sentier ou une piste, ou encore s'il se trouve au sein d'une forêt.\n\nL'interdiction est valable du 09 septembre jusqu'au 30 septembre 2016, mais cette période pourra être prolongée si les conditions le justifient.\n\nPour info, l'amende est de quatrième classe (750 euros !).",
+          "remark": null,
+          "details": "Arrêté préfectoral du 08 septembre 2016\n\nCarte des communes concernées par l'arrêté préfectoral\n\nArrêté levant l'interdiction au 22 septembre 2016",
+          "effectiveDate": "30 sept 2016",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/345/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral du 08 septembre 2016",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem345_pj1.pdf"
+            },
+            {
+              "label": "Carte des communes concernées par l'arrêté préfectoral",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem345_pj2.pdf"
+            },
+            {
+              "label": "Arrêté levant l'interdiction au 22 septembre 2016",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem345_pj3.pdf"
+            }
+          ]
+        },
+        {
+          "id": 103,
+          "status": "Obsolète",
+          "action": "Interdit",
+          "title": "Arrêté préfectoral (Ain) - 10 août 2005",
+          "summary": "La pratique du canyonisme est interdite pour des raisons de sécheresse, jusqu'au 15 septembre, sauf évolution.\n\nPour infos, l'amende est de 1500 €, 3000 € en cas de récidive...",
+          "remark": null,
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.",
+          "effectiveDate": "15 sept 2005",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/103/legislation.html",
+          "attachments": []
+        }
+      ]
+    }
+  }
+}

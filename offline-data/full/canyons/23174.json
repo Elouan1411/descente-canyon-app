@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:58.262646+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23174,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23174/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23174/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23174/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23174/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23174,
+    "identity": {
+      "nom": "Inquirades",
+      "nomComplet": "Inquirades",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23174/Inquirades.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Cantal",
+      "communePrincipale": "Saint-Vincent-de-Salers",
+      "communes": [
+        "Anglards-de-Salers",
+        "Saint-Vincent-de-Salers"
+      ],
+      "massif": "Monts du Cantal",
+      "bassin": "Le Mars",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a1II",
+      "interet": 1.4,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 930,
+      "deniveleM": 210,
+      "longueurM": null,
+      "cascadeMaxM": 52,
+      "cordeMiniM": 60,
+      "navette": "14.0km"
+    },
+    "timings": {
+      "approche": "3min",
+      "descente": "1h30",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "Se rendre à Anglards-de-Salers, puis Espinasolles et Joncoux. Dans ce dernier hameau, prendre le chemin au nord, passer discrètement devant la ferme des Inquirades, et continuer jusqu'au bout du chemin qui s'arrête à l'entrée d'un parc à vaches. Petit parking.",
+      "accesAmont": null,
+      "approche": "Descendre dans le pré, immédiatement en contrebas, à gauche du chemin et au nord, où le ruisseau prend naissance dans une tourbière. Première cascade, au fond du pré derrière la clôture.",
+      "descente": "Descente secondaire caractérisée par un enchaînement continu de franches verticales dont une belle C52, la plus haute cascade de la vallée. Equipement de première descente.",
+      "retour": "Au pied de la dernière cascade (C15), longer le pied de la barre rocheuse jusqu'à une hêtraie claire. Descendre dans le sous-bois en obliquant vers la gauche, recouper un chemin, et poursuivre vers le fond de la vallée à travers bois jusqu'au prés de Lafarge. Rejoindre le hameau où l'on aura pris soin de laisser une navette près du pont sur le Mars.",
+      "engagement": null,
+      "periode": "Intermittent",
+      "geologie": "Basalte puis brèches volcaniques.",
+      "historique": "Première descente le 10 mai par P. Viette, P-M. orblin, K. Herida et autres membres du Team CanýAuvergnats.",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23174,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.203255,
+        "longitude": 2.506907,
+        "label": "En bas du pré"
+      },
+      {
+        "canyonId": 23174,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 45.209938,
+        "longitude": 2.507165,
+        "label": "Parking à Lafarge juste après le pont sur le Mars"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.209938,
+      "longitude": 2.507165,
+      "label": "Parking à Lafarge juste après le pont sur le Mars"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:50.371291+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23456,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23456/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23456/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23456/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23456/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23456,
+    "identity": {
+      "nom": "Agaviva",
+      "nomComplet": "Rio Agaviva, Agaviva",
+      "prefixeNom": "Rio",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23456/Agaviva.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Frioul-Vénétie julienne",
+      "departement": "Ex provincia di Pordenone",
+      "communePrincipale": "Vito d'Asio",
+      "communes": [
+        "Vito d'Asio"
+      ],
+      "massif": null,
+      "bassin": "Arzino",
+      "coursEau": "Agaviva"
+    },
+    "rating": {
+      "cotation": "v3a2III",
+      "interet": 1.6,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 490,
+      "deniveleM": 150,
+      "longueurM": 1500,
+      "cascadeMaxM": 16,
+      "cordeMiniM": 20,
+      "navette": "2.8km"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "2h",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23456,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.275253,
+        "longitude": 12.917397,
+        "label": "partie sup."
+      },
+      {
+        "canyonId": 23456,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.281441,
+        "longitude": 12.933163,
+        "label": null
+      },
+      {
+        "canyonId": 23456,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 46.276817,
+        "longitude": 12.923115,
+        "label": "place du picnic au fin partie sup. et au depart partie inf,"
+      },
+      {
+        "canyonId": 23456,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 46.281811,
+        "longitude": 12.933957,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 46.276817,
+      "longitude": 12.923115,
+      "label": "place du picnic au fin partie sup. et au depart partie inf,"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_0a2b9a921ab5babd",
+          "kind": "MAP",
+          "title": "028 Val Tramontina-Val Cosa-Val d'Arzino (Tabacco)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_5d5b597be92a93fa",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/Canyons/RioAgavivaCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/Canyons/RioAgavivaCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

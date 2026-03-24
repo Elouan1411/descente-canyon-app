@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:45.339443+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23975,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23975/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23975/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23975/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23975/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23975,
+    "identity": {
+      "nom": "Vallon plat",
+      "nomComplet": "Torrent de Vallon plat",
+      "prefixeNom": "Torrent de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23975/Vallon-plat.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Hautes-Alpes",
+      "communePrincipale": "Champoléon",
+      "communes": [
+        "Champoléon"
+      ],
+      "massif": "Ecrins - Oisans - Champsaur",
+      "bassin": "Drac",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a2III",
+      "interet": 2.5,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 2130,
+      "deniveleM": 350,
+      "longueurM": 750,
+      "cascadeMaxM": 55,
+      "cordeMiniM": 60,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h45",
+      "descente": "2h30",
+      "retour": "1h00"
+    },
+    "topo": {
+      "accesAval": "Même accès que les canyons d'Isora et Vallon Long.\n\nDepuis la RN 85 Gap-Grenoble et prendre la direction d'Orcières-Merlette. 4km après Pont-du-Fossé, prendre à gauche et remonter la vallée du Drac Blanc (vallée du Champoléon). Rouler jusqu'au bout de la route et se rendre au parking non loin du torrent d'Isora.",
+      "accesAmont": null,
+      "approche": "Même approche que pour Vallon Long.\n\nDu parking prendre la piste qui passe le pont du torrent d'Isora, poursuivre et prendre à gauche le sentier qui remonte le vallon d'Isora (GR). Suivre ce sentier jusqu'au point IGN 2046 (voir carte). A ce niveau, vous êtes à proximité du torrent de Vallon Plat. Quitter dès lors le sentier et passer en Rd. Monter la pente herbeuse, une sente peu visible vous permet d'accéder au départ de la descente.",
+      "descente": "Un petit plan incliné de 4m permet une désescalade, puis une autre sur une C7 en Rg dans une zone encaissée, s'en suit un rappel sur une C30, C7+C6 (R20), petite marche, C6+C12 (R30), désescalade, Pi10 + C10+Pi20 (R30), désescalade d'un Pi5 et quelques petits ressauts, C55, marche et désescalades de blocs sur 100m, Pi12 (R20), Pi35, C20, marche de 50 m, C30.",
+      "retour": "Rejoindre le torrent d'Isora et le suivre sur une quinzaine de minutes par une sente en Rd parfois tracée, puis sortir par le sentier peu visible en Rg au niveau d'un pierrier (caïrn) pour rejoindre itinéraire pris à l'aller. Autre option, continuer sur le torrent d'Isora pour descendre par les cascades (voir fiche) ...",
+      "engagement": "Possibilité de sortir pour rejoindre le sentier pris à l'aller avant le Pi10.",
+      "periode": "Pendant la saison estivale, pour y trouver un niveau d'eau conséquent.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Equipement sur mono-points. Goujons de 10 mm + maillons de chaîne. Une plaquette + maillon rapide sur la C10+Pi20.\n\nIl est possible que le point à proximité du sentier d'accès disparaisse, car celui-ci reste en vue des randonneurs une fois le torrent traversé. Prévoir le nécessaire pour ré-équiper."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23975,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.780697,
+        "longitude": 6.276849,
+        "label": null
+      },
+      {
+        "canyonId": 23975,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.778694,
+        "longitude": 6.270229,
+        "label": null
+      },
+      {
+        "canyonId": 23975,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.762672,
+        "longitude": 6.28054,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.762672,
+      "longitude": 6.28054,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_b0e951331c704682",
+          "kind": "MAP",
+          "title": "3437 OT Champsaur - Parc des Ecrins (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

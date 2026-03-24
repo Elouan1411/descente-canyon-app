@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:01.320912+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21603,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21603/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21603/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21603/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21603/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21603,
+    "identity": {
+      "nom": "Teixeira",
+      "nomComplet": "Rio Teixeira",
+      "prefixeNom": "Rio",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21603/Teixeira.html"
+    },
+    "location": {
+      "pays": "Portugal",
+      "region": "São Pedro do Sul",
+      "departement": "Viseu",
+      "communePrincipale": "Manhouce",
+      "communes": [
+        "Manhouce"
+      ],
+      "massif": "Serra da Freita",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a3III",
+      "interet": 2.5,
+      "nbVotes": 8
+    },
+    "metrics": {
+      "altitudeDepartM": 405,
+      "deniveleM": 210,
+      "longueurM": 1500,
+      "cascadeMaxM": 35,
+      "cordeMiniM": 40,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "3h",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": "Par Oliveira de Frades, Sever de Vouga ou Vale de Cambra. A Sao de serra, prendre la 227 et suivre la direction de Cercal (2km). A la sortie de ce village continuer sue la piste en direction de la centrale électrique. Après 2,5km environ, garer la voiture quand la piste commence à descendre.",
+      "accesAmont": null,
+      "approche": "Suivre le chemin le long de la conduite vers l'amont. Apres avoir passer un tunnel prendre le chemin qui descend dans le canyon.",
+      "descente": "2 cascades. Des blocs. Une vasques. Des blocs. Un encaissement avec une superbe C10.",
+      "retour": "Il est possible de sortir après l’immense piscine. Mais il faut demander l’autorisation de passages aux propriétaires. Sinon sortez à la centrale électrique 30min plus loin. A la route on rejoint rapidement les véhicules.",
+      "engagement": "Canyon non encaissé",
+      "periode": "De Mai à Septembre. La prise d’eau régule le régime de la rivière. Attention aux crues.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Un des sites majeurs pour notre pratique : une eau cristalline et de beaux sauts"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21603,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 40.810902,
+        "longitude": -8.232021,
+        "label": null
+      },
+      {
+        "canyonId": 21603,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 40.809254,
+        "longitude": -8.241366,
+        "label": "proprietée privée, demander á depasser"
+      },
+      {
+        "canyonId": 21603,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 40.807461,
+        "longitude": -8.243458,
+        "label": "arrivé alternative"
+      },
+      {
+        "canyonId": 21603,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 40.807053,
+        "longitude": -8.238405,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 40.807053,
+      "longitude": -8.238405,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_5a66995ff95f1b2b",
+          "kind": "MAP",
+          "title": "165 (IGE)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

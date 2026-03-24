@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:23.192519+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22255,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22255/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22255/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22255/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22255/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22255,
+    "identity": {
+      "nom": "Leyvra",
+      "nomComplet": "Canyon de la Leyvra, Leivra, Ruisseau des Coulaytes, Ruisseau de la Leyvra",
+      "prefixeNom": "Canyon de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22255/Leyvra.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Château-d'Oex",
+      "departement": "Vaud",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Préalpes vaudoises",
+      "bassin": "La Sarine - Saane",
+      "coursEau": "Ruisseau de la Leyvra"
+    },
+    "rating": {
+      "cotation": "v4a2IV",
+      "interet": 2.6,
+      "nbVotes": 12
+    },
+    "metrics": {
+      "altitudeDepartM": 1460,
+      "deniveleM": 185,
+      "longueurM": 300,
+      "cascadeMaxM": 40,
+      "cordeMiniM": 40,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "2h",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "Traverser le village de Château-d'Oex et prendre une route qui traverse le chemin de fer, on passe l'hôpital qui est à droite.\n\nPoursuivre cette route pendant 500-600m, puis tourner à droite au premier croisement. On arrive après encore 500-600m par déboucher sur un route dans une épingle, prendre à gauche et continuer à monter jusqu'à arriver dans une épingle qui tourne à droite.\n\nSe garer dans l'épingle sans gêner, une place de voiture 50m avant l'épingle.\n\nPossibilité de continuer tout droit le chemin dans l'épingle et se garer au mieux sans gêner vers la ferme \"L'Eterpaz\".",
+      "accesAmont": null,
+      "approche": "Depuis l'épingle prendre la route qui va vers la ferme de \"L'Eterpaz\", puis continuer sur le sentier pour arriver au canyon. On peut soit se mettre à l'eau ici, ou essayer de remonter au mieux en RD ou RG, pour accéder aux cascades supérieures.",
+      "descente": "Canyon alpin, composé de cascades peu encaissées. Même genre de descente que son voisin le canyon des Tenasses. Cadre magnifique, descente plein soleil, vue superbe durant toute la descente.",
+      "retour": "Quand le rocher devient rouge, sortir RG et traverser le champ en direction de la route (On repère bien le retour au départ du canyon).",
+      "engagement": "Peu d'échappatoire facile.",
+      "periode": "Idem Tenasses.\n\nAprès la fonte des neiges et avant les nouvelles chutes.\n\nAu printemps, possibilité de névés dans le canyon (ils doivent être visibles depuis la route).",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Petit frère du canyon des Tenasses à coté, mais en moins encaissé, à enchaîner après celui-ci.\n\nCadre magnifique.\n\nTous les points sont doublés."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22255,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.494682,
+        "longitude": 7.135908,
+        "label": "Départ intermédiaire"
+      },
+      {
+        "canyonId": 22255,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.492928,
+        "longitude": 7.137854,
+        "label": null
+      },
+      {
+        "canyonId": 22255,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.491711,
+        "longitude": 7.14138,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.491711,
+      "longitude": 7.14138,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_2c43e3db298a4f10",
+          "kind": "MAP",
+          "title": "1245 Château d'Oex (Swisstopo)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

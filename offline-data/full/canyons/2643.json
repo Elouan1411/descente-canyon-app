@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:46:17.722116+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2643,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2643/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2643/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2643/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2643/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2643,
+    "identity": {
+      "nom": "Dresio",
+      "nomComplet": "Rio Dresio",
+      "prefixeNom": "Rio",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2643/Dresio.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Piemonte",
+      "departement": "Verbano-Cusio-Ossola",
+      "communePrincipale": "Dresio",
+      "communes": [
+        "Dresio"
+      ],
+      "massif": null,
+      "bassin": "Ossola",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "V3/A2/II",
+      "interet": 1.8,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 470,
+      "deniveleM": 200,
+      "longueurM": 610,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 30,
+      "navette": "0.8km"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "2h30",
+      "retour": "2min"
+    },
+    "topo": {
+      "accesAval": ") rive D. Parking",
+      "accesAmont": "passer le pont, poursuivre cette via assez étroite pour se garer au niveau de la large esplanade herbeuse devant la chapelle San Zenone. Il n'y a pas de place plus haut.",
+      "approche": "Continuer sur la route pendant 280 mètres, le sentier démarre au ras d'une petite maison en pierre, peinture rouge et blanche, et revient progressivement vers le canyon.",
+      "descente": "Bien sûr ce parcours fait pale figure face aux très beaux de la région. Pas mal de cascades pas toutes esthétiques, néanmoins un beau passage vers le milieu et un final sympa qui aboutit dans une petite vasque profonde, lieu de baignade des locaux.",
+      "retour": "Quitter le canyon rive D pour la route, le parking est en vue.",
+      "engagement": "Relativement faible, une échappatoire au pied de la C30 (chaine) pour une bonne sente qui rejoint vite un gros sentier et la route.",
+      "periode": "Peu d'eau l'été.",
+      "geologie": "Gneiss.",
+      "historique": "SCVV en 1995. L'équipement sur broches scellées était, en 2020, en très mauvais état (broches tordues, voir même cassées, donc inexistantes pour le dernier rappel C15 + Pi8).",
+      "remarques": "Approche sans navette: il y a des tronçons d'excellents sentiers empierrés (avec oratoire) qui coupent les épingles de la route et rejoignent très probablement le sentier plus haut... A voir."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2643,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.01741,
+        "longitude": 8.296738,
+        "label": null
+      },
+      {
+        "canyonId": 2643,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.016205,
+        "longitude": 8.288369,
+        "label": null
+      },
+      {
+        "canyonId": 2643,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 46.015862,
+        "longitude": 8.289957,
+        "label": null
+      },
+      {
+        "canyonId": 2643,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 46.015965,
+        "longitude": 8.287618,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 46.015862,
+      "longitude": 8.289957,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

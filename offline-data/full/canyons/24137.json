@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:59:20.155332+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24137,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24137/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24137/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24137/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24137/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24137,
+    "identity": {
+      "nom": "Laingraben",
+      "nomComplet": "Laingraben, Lainbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24137/Laingraben.html"
+    },
+    "location": {
+      "pays": "Allemagne",
+      "region": "Bayern",
+      "departement": "Oberbayern",
+      "communePrincipale": "Kochel",
+      "communes": [
+        "Landkreis Bad Tölz-Wolfratshausen",
+        "Kochel"
+      ],
+      "massif": "Kocheler Berge",
+      "bassin": null,
+      "coursEau": "Lainbach"
+    },
+    "rating": {
+      "cotation": "v4a2III",
+      "interet": 1.2,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 952,
+      "deniveleM": 157,
+      "longueurM": 2500,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 35,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "60min",
+      "descente": "2h",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24137,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.641682,
+        "longitude": 11.38861,
+        "label": null
+      },
+      {
+        "canyonId": 24137,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.650082,
+        "longitude": 11.38173,
+        "label": null
+      },
+      {
+        "canyonId": 24137,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.649181,
+        "longitude": 11.370318,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.649181,
+      "longitude": 11.370318,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_f0123ff97c2bfded",
+          "kind": "MAP",
+          "title": "8334 Kochel am See (Bayerisches Landesvermessungsamt)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_d474848bda7389c4",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/Canyons/LaingrabenCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/Canyons/LaingrabenCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

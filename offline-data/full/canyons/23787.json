@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:05.818353+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23787,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23787/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23787/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23787/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23787/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23787,
+    "identity": {
+      "nom": "Rimonta",
+      "nomComplet": "Serrai della Rimonta",
+      "prefixeNom": "Serrai della",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23787/Rimonta.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Vénétie",
+      "departement": "Belluno",
+      "communePrincipale": "Mel",
+      "communes": [
+        "Mel"
+      ],
+      "massif": "Prealpi Bellunesi",
+      "bassin": "Piave",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a2III",
+      "interet": null,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": 600,
+      "deniveleM": 260,
+      "longueurM": 4600,
+      "cascadeMaxM": 60,
+      "cordeMiniM": 60,
+      "navette": "2.2km"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "3h15min",
+      "retour": "15"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": "Schichtkalk, Mergelkalk",
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23787,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.984951,
+        "longitude": 12.02979,
+        "label": null
+      },
+      {
+        "canyonId": 23787,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.019562,
+        "longitude": 12.04996,
+        "label": null
+      },
+      {
+        "canyonId": 23787,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 45.987888,
+        "longitude": 12.03179,
+        "label": null
+      },
+      {
+        "canyonId": 23787,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 46.018864,
+        "longitude": 12.051952,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 45.987888,
+      "longitude": 12.03179,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

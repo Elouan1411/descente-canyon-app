@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:22.222401+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23594,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23594/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23594/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23594/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23594/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23594,
+    "identity": {
+      "nom": "Röllbach",
+      "nomComplet": "Röllbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23594/Rollbach.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Flums",
+      "departement": "Saint Gallen",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Alpes glaronaises",
+      "bassin": "Walensee",
+      "coursEau": "Röllbach"
+    },
+    "rating": {
+      "cotation": "v2a3II",
+      "interet": 2.1,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 1350,
+      "deniveleM": 815,
+      "longueurM": 2000,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 30,
+      "navette": "1.0km"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "3h",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": "Sortie autoroute A3 Flums, monter au Kleinberg.",
+      "accesAmont": null,
+      "approche": "Partie aval : Descendre du parking au départ du Canyon.",
+      "descente": "Röllbach peut se décomposer en Röllbach amont et aval:\n\nAmont: entre 1350m et 920m;\n\nAval: entre 840m et 450m.\n\nLa partie aval comporte 3 parties\n\nPartie 1 : (840m-760m), comporte un bel encaissement;\n\nPartie 2 : (700m-650m), encaissement étroit se terminant sur une belle C20;\n\nPartie 3: (570m-450m), série de cascades finissant par les cascades finales.\n\nPour la partie aval, petit canyon bien sculpté dans un rocher de flysch rouge, descente de plusieurs petits encaissements entrecoupés de marche.",
+      "retour": "Aval : Sortir au pont de la route.",
+      "engagement": "Sortie facile entre les encaissements.",
+      "periode": "Après fin de fonte des neiges, pas de grandes difficultés.\n\nPetits resauts avec certaines vasques profondes.",
+      "geologie": "Flysch rouge",
+      "historique": "Partie aval : 13/06/2010: Timo Stammwitz, Christoph et amis.",
+      "remarques": "Descente similaire à Cholschlagerbach, débit souvent un peu plus fort (pas de prise d'eau).\n\nCoupe et cartes des parties amont et de aval disponible sur Schlucht.ch"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23594,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.066959,
+        "longitude": 9.35959,
+        "label": null
+      },
+      {
+        "canyonId": 23594,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.076199,
+        "longitude": 9.357,
+        "label": null
+      },
+      {
+        "canyonId": 23594,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 47.068008,
+        "longitude": 9.35575,
+        "label": null
+      },
+      {
+        "canyonId": 23594,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 47.076199,
+        "longitude": 9.357,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 47.068008,
+      "longitude": 9.35575,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

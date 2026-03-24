@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:55.564391+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23737,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23737/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23737/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23737/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23737/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23737,
+    "identity": {
+      "nom": "Pichas",
+      "nomComplet": "Ravin de Pichas",
+      "prefixeNom": "Ravin de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23737/Pichas.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-de-Haute-Provence",
+      "communePrincipale": "Châteaufort",
+      "communes": [
+        "Châteaufort"
+      ],
+      "massif": null,
+      "bassin": "Asse",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2I",
+      "interet": 0.8,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 1010,
+      "deniveleM": 50,
+      "longueurM": 200,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "35min",
+      "descente": "30min",
+      "retour": "35min"
+    },
+    "topo": {
+      "accesAval": "De Sisteron prendre la D951 en direction de La Motte du Caire. Environ 8km avant La Motte du Caire, prendre à droite la D454 en direction de Châteaufort. Dépasser ce hameau, poursuivre, la route se transforme en piste et garer le véhicule dans une épingle à gauche au départ d'une piste privée avec panneau \"propriété privée, silence\" juste avant le lieu dit \"La Pène\".",
+      "accesAmont": null,
+      "approche": "Emprunter la piste, quand vous apercevez la grange de \"la Pène\" traverser le ruisseau sur votre droite. De là montez au mieux à travers champs et arbustes jusqu'au col en face de vous en suivant plus ou moins des sentes d'animaux. Du col une sente part sur la droite à flanc puis descend vers notre ravin.",
+      "descente": "Marcher 200m dans le lit du ruisseau pour tomber sur l'unique cascade du parcours. Celle-ci se négocie en deux longueurs. MC 5m puis C28, tout en RG.",
+      "retour": "Du pied de la cascade, remonter RD, droit dans la pente, jusqu'à la barre rocheuse, un cheminement équipé d'un câble permet de gravir cette barre et de rejoindre le haut de notre cascade. Refaire ensuite le chemin inverse.",
+      "engagement": "Aucun.",
+      "periode": "Sec la plupart du temps mais coule après les fortes pluies.",
+      "geologie": null,
+      "historique": "Deux points en 8mm posés le 25/11/2016.",
+      "remarques": "Possibilité surement de faire aussi l'approche par le bas (non testé), voir IGN."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23737,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.257889,
+        "longitude": 6.036765,
+        "label": null
+      },
+      {
+        "canyonId": 23737,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.260567,
+        "longitude": 6.048747,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.260567,
+      "longitude": 6.048747,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_ec844e72d95ece0e",
+          "kind": "MAP",
+          "title": "3339 ET La Motte-Du-Caire (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

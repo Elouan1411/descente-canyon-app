@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:17.022437+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23572,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23572/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23572/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23572/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23572/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23572,
+    "identity": {
+      "nom": "Rif Mort",
+      "nomComplet": "Ruisseau du Rif Mort",
+      "prefixeNom": "Ruisseau du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23572/Rif-Mort.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Isère",
+      "communePrincipale": "Barraux",
+      "communes": [
+        "Sainte-Marie-du-Mont",
+        "Barraux"
+      ],
+      "massif": "Chartreuse",
+      "bassin": "Isère",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1I",
+      "interet": 0.2,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 850,
+      "deniveleM": 170,
+      "longueurM": 100,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "10min",
+      "descente": "30min",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "Se garer dans le hameau de Saint-Georges, commune de Sainte-Marie-du-Mont.",
+      "accesAmont": null,
+      "approche": "Prendre le chemin au centre du hameau et qui descend en longeant le ruisseau jusqu'à la première barre rocheuse. Quitter le chemin quand celui ci tourne vers le nord, pour rentrer dans le ruisseau.",
+      "descente": "Après quelques ressauts, on arrive au sommet du premier obstacle : une C25 (MC sur AN vers 1S+AN en RD), suivie immédiatement d'un plan incliné menant à une C10 (AN en RD). Quelques ressauts s'enchainent pendant 10 minutes jusqu'au sentier.",
+      "retour": "Du chemin, remonter vers le hameau de Saint-Georges.",
+      "engagement": "Parcours très court.",
+      "periode": "En eau après les pluies. Sec et sans vasque l'été.",
+      "geologie": null,
+      "historique": "Un spit d'époque marqué SCT.",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23572,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.414177,
+        "longitude": 5.960012,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 45.414177,
+      "longitude": 5.960012,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_07737b47737fa6b4",
+          "kind": "MAP",
+          "title": "3333 OT Massif de la Chartreuse Nord (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:28.600407+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23890,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23890/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23890/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23890/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23890/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23890,
+    "identity": {
+      "nom": "Kostalexi (aval)",
+      "nomComplet": "Kostalexi (aval)",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23890/Kostalexi-aval.html"
+    },
+    "location": {
+      "pays": "Grèce",
+      "region": "Central Greece",
+      "departement": "of Phthiotis",
+      "communePrincipale": "Lamia",
+      "communes": [
+        "Lamia"
+      ],
+      "massif": "Iti",
+      "bassin": "Sperchios",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.3,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 530,
+      "deniveleM": 285,
+      "longueurM": 500,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 25,
+      "navette": "10.0km"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "3h",
+      "retour": "30"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": "Au niveau du parking amont, faire un rappel pour gagner le lit.",
+      "descente": "Joli canyon sec ou les 25 rappels se suivent sans temps mort.",
+      "retour": "Ne pas suivre la description du topo \"50 canyons in central Greece\" mais rester dans le lit jusqu'au moment où cela devient difficile. Puis sortir RG : il y a des sentes qui mènent à un sentier où l'on prend à droite jusqu'à la voiture.",
+      "engagement": null,
+      "periode": "Normalement sec, sauf vraiment tôt dans la saison.\n\nUne vasque \"beurk\" qui n'est pas évitable pour le premier à descendre.",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23890,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 38.844769,
+        "longitude": 22.356297,
+        "label": null
+      },
+      {
+        "canyonId": 23890,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 38.849197,
+        "longitude": 22.362989,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 38.844769,
+      "longitude": 22.356297,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

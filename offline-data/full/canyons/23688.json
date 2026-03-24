@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:44.429495+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23688,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23688/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23688/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23688/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23688/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23688,
+    "identity": {
+      "nom": "Fogliaio",
+      "nomComplet": "Canale Fogliaio",
+      "prefixeNom": "Canale",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23688/Fogliaio.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Toscana",
+      "departement": "Lucca",
+      "communePrincipale": "Vergemoli",
+      "communes": [
+        "Vergemoli"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.8,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 460,
+      "deniveleM": 200,
+      "longueurM": 1200,
+      "cascadeMaxM": 18,
+      "cordeMiniM": 20,
+      "navette": "4.0km"
+    },
+    "timings": {
+      "approche": "10min",
+      "descente": "2h30",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "place pour 2/3 voitures",
+      "accesAmont": null,
+      "approche": "50m après le P amont part un sentier balisé en rouge. A la bifurcation prendre à droite, le sentier qui descent. Encore 15min de marche dans le lit pour trouver le premier rappel",
+      "descente": "Si le débit est trop important il est possible de shunter la grotte. Dans ce cas prévoir une corde de 60m",
+      "retour": "Ne sortez pas au niveau des installations hydrauliques mais restez dans le lit jusqu'au vieux pont en pierres. Sortie RG",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23688,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.050243,
+        "longitude": 10.399258,
+        "label": null
+      },
+      {
+        "canyonId": 23688,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 44.051956,
+        "longitude": 10.386775,
+        "label": null
+      },
+      {
+        "canyonId": 23688,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 44.051102,
+        "longitude": 10.400336,
+        "label": null
+      },
+      {
+        "canyonId": 23688,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 44.052132,
+        "longitude": 10.386489,
+        "label": "départ du sentier d'approche"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 44.051956,
+      "longitude": 10.386775,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

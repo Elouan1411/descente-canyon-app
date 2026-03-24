@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:36.880410+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22325,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22325/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22325/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22325/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22325/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22325,
+    "identity": {
+      "nom": "Figuerolles",
+      "nomComplet": "Ravin de Figuerolles",
+      "prefixeNom": "Ravin de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22325/Figuerolles.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Bouches-du-Rhône",
+      "communePrincipale": "La Ciotat",
+      "communes": [
+        "La Ciotat"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 0.2,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": null,
+      "longueurM": null,
+      "cascadeMaxM": 3,
+      "cordeMiniM": 10,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "30min",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "De la Ciotat prendre la direction de Figuerolles puis tourner à droite vers Notre Dame de la Garde. Se garer au niveau du panneau \"interdit sauf aux riverains\".",
+      "accesAmont": null,
+      "approche": "Prendre à gauche au panneau Notre dame de la Garde, vous rentrez dans le lotissement \"résidence de Notre dame de la Garde\" (panneau à l'entrée). Prendre la route à gauche puis 50m plus loin encore à gauche puis 50m plus loin quitter la route qui termine en cul de sac pour aller dans la pelouse sur votre gauche. Au bout de cette pelouse on descend directement dans le ravin",
+      "descente": "Marche, quelques ressauts qui se désescaladent (rappels possibles sur AN)",
+      "retour": "Sortez du ruisseau par la porte métallique qui coupe la rivière à 30m de la plage de Figuerolles (ne pas chercher à sortir avant, vous tomberez dans des propriétés privées). Prendre alors à gauche les escaliers qui remontent au parking de Figuerolles puis par la route on rejoint notre voiture.",
+      "engagement": null,
+      "periode": "Ravin facilement en eau",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Ruisseau assez sale qui longe des propriétés privées."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22325,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.168221,
+        "longitude": 5.595702,
+        "label": null
+      },
+      {
+        "canyonId": 22325,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.166958,
+        "longitude": 5.597255,
+        "label": null
+      },
+      {
+        "canyonId": 22325,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.170116,
+        "longitude": 5.594053,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.170116,
+      "longitude": 5.594053,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

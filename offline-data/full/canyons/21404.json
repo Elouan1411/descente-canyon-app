@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:49:16.688243+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21404,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21404/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21404/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21404/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21404/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21404,
+    "identity": {
+      "nom": "Caussiste",
+      "nomComplet": "Barrancou du Caussiste, Canyon de Geu, Riou Gros",
+      "prefixeNom": "Barrancou du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21404/Caussiste.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Hautes-Pyrénées",
+      "communePrincipale": "Geu",
+      "communes": [
+        "Geu"
+      ],
+      "massif": "Hautacam",
+      "bassin": "Gave de Pau",
+      "coursEau": "Riou Gros"
+    },
+    "rating": {
+      "cotation": "v3a1I",
+      "interet": 2.1,
+      "nbVotes": 27
+    },
+    "metrics": {
+      "altitudeDepartM": 550,
+      "deniveleM": 130,
+      "longueurM": 560,
+      "cascadeMaxM": 15,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "45min",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": "Se garer au niveau du lavoir de Geu.",
+      "accesAmont": null,
+      "approche": "Pas compliqué: prendre tout droit depuis le lavoir, le chemin qui monte le plus raide. A une intersection, prendre a gauche, pour revenir vers le canyon, que l'on longe a flanc pendant quelques dizaines de mêtres.",
+      "descente": "Enchainement de 6 rappels, esthétiques, bien équipés.",
+      "retour": null,
+      "engagement": "Canyon de faible durée, avec quelques échapatoires.",
+      "periode": "Printemps, Automne.",
+      "geologie": null,
+      "historique": "Première C. Labarrière, X. Lamban, R. Larrieu 7/1982",
+      "remarques": "Patrick Gimat, dans son topo, note: \"Milieu Sensible, à parcourir par petits groupes\". Note pleine de bon sens."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21404,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.036922,
+        "longitude": -0.043512,
+        "label": null
+      },
+      {
+        "canyonId": 21404,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.038097,
+        "longitude": -0.045589,
+        "label": null
+      },
+      {
+        "canyonId": 21404,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.038834,
+        "longitude": -0.049704,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.038834,
+      "longitude": -0.049704,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_af9b5816fe0efd72",
+          "kind": "TOPOGUIDE",
+          "title": "PVC n°2 - Hautes Pyrénées",
+          "authors": [
+            "Collectif : Groupe Spéléologique des Pyrénées"
+          ],
+          "publicationYear": 2007,
+          "reference": "9782852722612",
+          "editor": null,
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/127/Plastic-Visuel-Canyon-:-Hautes-Pyrenees.html"
+        },
+        {
+          "id": "biblio_8219a16db3ce5bff",
+          "kind": "TOPOGUIDE",
+          "title": "Carte N°5 - Hautes Pyrénées",
+          "authors": [
+            "Patrick Gimat"
+          ],
+          "publicationYear": 2000,
+          "reference": null,
+          "editor": null,
+          "status": "en stock\n\n- 9,00 € -\n\nCommandez cet ouvrage dès maintenant !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/124/Carte-n°5-:-Hautes-Pyrenees.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_b4d10c31e88f9235",
+          "kind": "MAP",
+          "title": "1848 OT Bagneres-de-Luchon (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

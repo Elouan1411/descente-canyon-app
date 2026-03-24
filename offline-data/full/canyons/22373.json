@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:48.318452+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22373,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22373/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22373/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22373/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22373/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22373,
+    "identity": {
+      "nom": "Hinter-Tuxer Wasserfälle",
+      "nomComplet": "Hinter-Tuxer Wasserfälle, Hinter-Tuxbach, Schraubenfallklamm, Schraubenfall (Tuxbach)",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22373/Hinter-Tuxer-Wasserfalle.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Tyrol",
+      "departement": "Politischer Bezirk Schwaz",
+      "communePrincipale": "Tux",
+      "communes": [
+        "Mayrhofen",
+        "Tux"
+      ],
+      "massif": "Tuxer Alpen",
+      "bassin": "Ziller",
+      "coursEau": "Schraubenfall (Tuxbach)"
+    },
+    "rating": {
+      "cotation": "v3a3III",
+      "interet": 3.4,
+      "nbVotes": 7
+    },
+    "metrics": {
+      "altitudeDepartM": 1740,
+      "deniveleM": 240,
+      "longueurM": 650,
+      "cascadeMaxM": 18,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "30",
+      "descente": "3h30",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "Arrivé sur le parking des remontées mécaniques de Hintertux.",
+      "accesAmont": null,
+      "approche": "Prendre la direction \"Wasserfall\" et ensuite \"Waldeben\". On longe le canyon et on peu observer à plusieurs endroits les encaissements. On franchit un pont et on continue de remonté le sentier RG. Sortie de la forêt on voie sur la gauche une prise d'eau qui signale le départ du canyon.",
+      "descente": "Plusieurs petits rappels, quelques sauts et passages dans des étroitures magnifiques, attention à l'approche des relais notamment par gros débits. A l'approche de la grotte plusieurs clous et une main courante servent à la désescalade.",
+      "retour": "Rejoindre le parking.",
+      "engagement": "L'eau est de couleur bleu froid.\n\n6 échapatoires dont 3 sous forme de via-ferrata.",
+      "periode": "Peu aquatique, débits pouvant dangereusement augmenter après des pluies et par temps chaud.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Canyon sous-glacière."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22373,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.097675,
+        "longitude": 11.673969,
+        "label": null
+      },
+      {
+        "canyonId": 22373,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.105507,
+        "longitude": 11.675361,
+        "label": null
+      },
+      {
+        "canyonId": 22373,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.1078,
+        "longitude": 11.675699,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.1078,
+      "longitude": 11.675699,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_0192cb86d241802c",
+          "kind": "MAP",
+          "title": "35/1 Zillertaler Alpen (Alpenvereins (AV) Karte)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_027bca83101de4ed",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.alpinesicherheit.com/canyonin.....h/hintertuxbach.html",
+          "url": "http://www.alpinesicherheit.com/canyonin.....h/hintertuxbach.html"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:52.536522+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22111,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22111/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22111/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22111/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22111/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22111,
+    "identity": {
+      "nom": "Ponale",
+      "nomComplet": "Ponale",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22111/Ponale.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Trentino-Alto Adige",
+      "departement": "Trento",
+      "communePrincipale": "Riva del Garda",
+      "communes": [
+        "Riva del Garda"
+      ],
+      "massif": null,
+      "bassin": "Lac de Garde",
+      "coursEau": "Ponale"
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 2.1,
+      "nbVotes": 10
+    },
+    "metrics": {
+      "altitudeDepartM": 240,
+      "deniveleM": 175,
+      "longueurM": 500,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "30",
+      "descente": "1h30min",
+      "retour": "50min"
+    },
+    "topo": {
+      "accesAval": "De Riva del Garda prendre SS240 vers Lago di Ledro. Environ 300 m après le long tunnel tourner à gauche (direction Pregasina) et traverser le torrente Ponale au niveau de la station d'épuration. Environ 300 m après le pont et 100 m avant le tunnel il y a un parking à gauche. Garer la voiture ici.",
+      "accesAmont": null,
+      "approche": "Continuer la route. 5om avant le tunnel tourner à gauche. Suivre la piste et ensuite le sentier. Arrivé à l'ancienne route Riva-Valle di Ledro, la suivre sur la gauche jusqu'au pont.\n\nFaire un rappel du pont (45m) ou franchir la clôture et prendre le sentier en rive gauche (orographique) peu marqué jusqu'à un petit barrage.",
+      "descente": "Quelques rappels originaux dans un encaissement large. Des chemins contournent certaines cascades. Le dernier rappel pose directement dans le lac. Aucun sauts sauf depuis le pont d'arrivée dans le lac.",
+      "retour": "Après la dernière cascade nager dans le lac à gauche (20m) jusqu'à un quai. Sortir et prendre une sente (escalier) jusqu'à la route. Continuer le sentier (rive droite) jusqu'à l'ancienne route prise à l'aller. Attention aux VTTistes qui descendent très rapidement ce chemin !!",
+      "engagement": "Plusieurs chemins suivent le cours d'eau dans la partie basse.",
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "Canyon très pollué : déchets divers : ferrailles, plastiques, pneus, verre, béton, parfois eau puante avec matière en suspension.\n\nIl serait tentant de se garer à l'arrivée et accéder au départ par le sentier. Mais il n'y a aucune place de stationnement."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22111,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.862591,
+        "longitude": 10.827603,
+        "label": null
+      },
+      {
+        "canyonId": 22111,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.861294,
+        "longitude": 10.832745,
+        "label": null
+      },
+      {
+        "canyonId": 22111,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.863956,
+        "longitude": 10.819387,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.863956,
+      "longitude": 10.819387,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_2ae5774461284b58",
+          "kind": "MAP",
+          "title": "102 Lago di Garda Monte Baldo (Kompass)",
+          "scale": "1:50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:29.411777+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23893,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23893/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23893/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23893/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23893/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23893,
+    "identity": {
+      "nom": "Kotzenbach",
+      "nomComplet": "Kotzenbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23893/Kotzenbach.html"
+    },
+    "location": {
+      "pays": "Allemagne",
+      "region": "Bayern",
+      "departement": "Oberbayern",
+      "communePrincipale": "Lenggries",
+      "communes": [
+        "Landkreis Bad Tölz-Wolfratshausen",
+        "Lenggries"
+      ],
+      "massif": "Karwendel",
+      "bassin": "Isar",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a3III",
+      "interet": 1.7,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1010,
+      "deniveleM": 180,
+      "longueurM": 1800,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 25,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h40min",
+      "descente": "2h30min",
+      "retour": "1h10"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": "pour Kotzenbach seulement (sortie vers barrage Dürrach possible)\n\npossible aussi continuer Dürrach (encore 2h)",
+      "retour": "après Dürrach 15 Min.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23893,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.52726,
+        "longitude": 11.53667,
+        "label": "Entrée 1"
+      },
+      {
+        "canyonId": 23893,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.533615,
+        "longitude": 11.538069,
+        "label": "Entrée 2 (au-dessus du rappel 2)"
+      },
+      {
+        "canyonId": 23893,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.540241,
+        "longitude": 11.54279,
+        "label": "Arrivée dans Dürrach"
+      },
+      {
+        "canyonId": 23893,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.568897,
+        "longitude": 11.534212,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.568897,
+      "longitude": 11.534212,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_54b6bc3c3362fc67",
+          "kind": "MAP",
+          "title": "8435 Fall (Bayerisches Landesvermessungsamt)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_eea259965955ab40",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/Canyons/KotzenbachCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/Canyons/KotzenbachCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

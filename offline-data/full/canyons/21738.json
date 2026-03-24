@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:31.631976+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21738,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21738/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21738/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21738/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21738/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21738,
+    "identity": {
+      "nom": "Matassa",
+      "nomComplet": "Fosso della Matassa",
+      "prefixeNom": "Fosso della",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21738/Matassa.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Ombrie",
+      "departement": "Terni",
+      "communePrincipale": "Acquasparta",
+      "communes": [
+        "Acquasparta"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 0.7,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 635,
+      "deniveleM": 125,
+      "longueurM": 700,
+      "cascadeMaxM": 16,
+      "cordeMiniM": 20,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "10min",
+      "descente": "1h",
+      "retour": "1h"
+    },
+    "topo": {
+      "accesAval": "De l’Autoroute Bologne – Rome, sortez à Valdichiana, en direction de Perugia puis de Terni. Sortez à Acquasparta (km 666,6) et suivez Spoleto. 7,5 km plus loin (k 673,9) prenez la piste en direction de Scoppio. A la bifurcation (km 675,2), continuez tout droit. Au pont continuez à droite (km 678,1). Au hameau prenez à droite (679,4) puis à gauche jusqu’au parking avant les ruines (km 679,8)",
+      "accesAmont": null,
+      "approche": "Allez vers Scoppio et au milieu des ruines prenez à gauche (petit panneau : Pian della Noce)",
+      "descente": "Les ressauts et les petits obstacles commencent rapidement. Le seul passage esthétique est la C20 encaissée et bien sculptée !",
+      "retour": "Juste après la dernière cascade arrive RD un affluent. On le remonte, certains obstacles doivent s’éviter par les berges ou s’escaladent. On recoupe un chemin que l’on suit à droite sans difficulté jusqu’aux ruines.",
+      "engagement": "Encaissement ponctuel.",
+      "periode": "Toujours à sec\n\nToute l’année",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21738,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.729126,
+        "longitude": 12.599044,
+        "label": null
+      },
+      {
+        "canyonId": 21738,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.726479,
+        "longitude": 12.598679,
+        "label": null
+      },
+      {
+        "canyonId": 21738,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 42.720882,
+        "longitude": 12.611039,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 42.720882,
+      "longitude": 12.611039,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_659a893bf9c90422",
+          "kind": "MAP",
+          "title": "131 III SE Baiano di Spoleto (IGM)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_f35a375ceda821c8",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.umbriaoutdoor.it/matassa.html",
+          "url": "http://www.umbriaoutdoor.it/matassa.html"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

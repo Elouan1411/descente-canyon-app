@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:24.523728+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23602,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23602/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23602/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23602/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23602/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/23602/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 23602,
+    "identity": {
+      "nom": "Chabrioux",
+      "nomComplet": "Torrent de Chabrioux, Torrent d'Aubard",
+      "prefixeNom": "Torrent de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23602/Chabrioux.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-de-Haute-Provence",
+      "communePrincipale": "Saint-Vincent-sur-Jabron",
+      "communes": [
+        "Saint-Vincent-sur-Jabron"
+      ],
+      "massif": null,
+      "bassin": "Jabron de Sisteron",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "",
+      "interet": 850.0,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": 850,
+      "deniveleM": 300,
+      "longueurM": 750,
+      "cascadeMaxM": null,
+      "cordeMiniM": null,
+      "navette": null
+    },
+    "timings": {
+      "approche": null,
+      "descente": null,
+      "retour": null
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": "Max38, lolo, ALAIN 13",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23602,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.180111,
+        "longitude": 5.721821,
+        "label": null
+      },
+      {
+        "canyonId": 23602,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.175026,
+        "longitude": 5.721896,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 44.180111,
+      "longitude": 5.721821,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 537,
+          "status": "Actif",
+          "action": "Interdit",
+          "title": "Information",
+          "summary": "Le propriétaire/éleveur des deux parcelles (RD et RG) interdit formellement le passage par l'itinéraire (obligatoire) de sortie du canyon (à partir de sa prise d'eau personnelle). Il n'est pas impossible que l'accès se fasse aussi par des propriétés privées...",
+          "remark": null,
+          "details": null,
+          "effectiveDate": null,
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/537/legislation.html",
+          "attachments": []
+        }
+      ]
+    }
+  }
+}

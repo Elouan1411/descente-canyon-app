@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:47:24.637496+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2912,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2912/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2912/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2912/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2912/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2912,
+    "identity": {
+      "nom": "Lauzettes",
+      "nomComplet": "Ravin des Lauzettes",
+      "prefixeNom": "Ravin des",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2912/Lauzettes.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Hautes-Alpes",
+      "communePrincipale": "Val Buëch-Méouge",
+      "communes": [
+        "Val Buëch-Méouge"
+      ],
+      "massif": "Montagne de Chabre",
+      "bassin": "Méouge",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 1.4,
+      "nbVotes": 11
+    },
+    "metrics": {
+      "altitudeDepartM": 690,
+      "deniveleM": 135,
+      "longueurM": 550,
+      "cascadeMaxM": 18,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "1h00",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "Sortez de la A51 à Sisteron et rejoigniez Ribiers par la D948. Après le village au hameau du Plan prenez la direction de la vallée de la Méouge. Garez-vous sans gêner au niveau du carrefour allant au Pomet (2 parkings).",
+      "accesAmont": null,
+      "approche": "De là, rendez-vous au hameau du Pomet par la petite route qui est aussi un sentier balisé puis traversez le hameau jusqu'à un carrefour de pistes après la dernière maison. On prend alors la piste de droite (signalée interdite aux véhicules 700m plus loin) : il n'y a plus que 10 min d'approche. Arrêtez-vous au premier vallon (ruisseau des Lauzettes). La marche d'approche est relativement plate et exposée plein soleil, sans ombre...\n\nMeilleure option : monter par la route direction Pomet. Rapidement un sentier balisé jaune (réserve biologique) apparaît à droite. Le prendre, il longe le canyon des Lauzettes. 10 mètres avant de rejoindre la piste, rejoindre le torrent. 20 min max cette approche.",
+      "descente": "Quelques cascades. Le passage dans la buse est amusant. Après 5min de marche en ruisseau, on arrive à une première C4. On va ensuite enchaîner assez rapidement dans ce canyon à caractère \"vertical\" et pas très encaissé avec un T10 et un T6. En marchant en RG on passera tout près d'une ruine et on arrivera très vite à un T10 qu'il faut désescalader.\n\nUne C8 dispose d'un amarrage naturel sur arbre en RD et précède immédiatement un T12 qui se désescalade en deux ressauts par la RD (8m + 4m). On arrive alors à une buse qui passe sous la route au bout de laquelle on peut installer un rappel (relais chainé en RD, attention pour l'attraper). On peut alors soit sortir à cette cascade soit descendre la dernière C13 (après une seconde buse plus large) directement dans la Méouge par sa RG.",
+      "retour": "Suivant ou l'on sort, plus ou moins 0 ou 5min de retour.",
+      "engagement": "De nombreuses échappatoires. Équipement béton (broches et goujons inox doublés)",
+      "periode": "Peu d'eau. Vite à sec l'été. il faut donc Essayer d'en profiter en hiver ou à la fonte des neiges",
+      "geologie": null,
+      "historique": "Maurice Hachet, Olivier Courtois, Thierry Saunier.",
+      "remarques": "Une navette (2x1,5km) est possible entre le parking aval et Pomet (deux foyers y vivent à l'année, prendre garde de ne pas gêner en stationnant) mais est peu utile. Autant ne pas déranger les habitants de Pomet et monter à pied..."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2912,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.280804,
+        "longitude": 5.795481,
+        "label": null
+      },
+      {
+        "canyonId": 2912,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.277409,
+        "longitude": 5.792649,
+        "label": null
+      },
+      {
+        "canyonId": 2912,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 44.280941,
+        "longitude": 5.789258,
+        "label": null
+      },
+      {
+        "canyonId": 2912,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 44.277962,
+        "longitude": 5.792692,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 44.280941,
+      "longitude": 5.789258,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_698f23f50a61f9ad",
+          "kind": "MAP",
+          "title": "3339 OT Sisteron (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

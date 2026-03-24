@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:23.901376+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23599,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23599/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23599/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23599/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23599/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23599,
+    "identity": {
+      "nom": "Tersolbach aval",
+      "nomComplet": "Tersolbach aval, Tersolbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23599/Tersolbach-aval.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Pfäfers",
+      "departement": "Saint Gallen",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Alpes glaronaises",
+      "bassin": "Tamina",
+      "coursEau": "Tersolbach"
+    },
+    "rating": {
+      "cotation": "v4a1III",
+      "interet": 2.1,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 1380,
+      "deniveleM": 180,
+      "longueurM": 550,
+      "cascadeMaxM": 40,
+      "cordeMiniM": 45,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "1h30min",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": "Monter la route du Taminatal jusqu'à Gigerwald.",
+      "accesAmont": null,
+      "approche": "Chemin rando comme au Tersolbach.",
+      "descente": "Attention, prise d’eau automatique au départ de la partie basse du torrent de Tersol. Cette prise d’eau prend toute l’eau du torrent de Tersol, donc en aval, le canyon est sec ou juste alimenté par les écoulements des côtés.\n\nCette prise d’eau est automatique, il y a un système de désengravement qui ouvre la prise d’eau pour la nettoyer. Ce système est AUTOMATIQUE, le désengravement se fait quand la prise d’eau est trop encombrée de sable, graviers, pierres, bois…\n\nLors de l’ouverture de la prise d’eau, tout le débit du torrent de Tersol, plus les déchets qui encombrent la prise d’eau, plus l’eau dans la prise d’eau s’écoulent dans la partie basse, formant une vague extrêmement dangereuse.\n\nCe système de désengravement automatique ne peut pas être déconnecté à distance, donc appeler l’opérateur de cette prise d’eau n’apporte pas plus de sécurité.\n\nIl est donc fortement conseillé de ne pas s’engager dans cette partie du canyon de Tersol.\n\nGorge profonde avec peu d'eau (sous la prise) et quelques rappels.",
+      "retour": "Remonter au pont de la route.",
+      "engagement": "Attention, prise d’eau AUTOMATIQUE au départ de la partie basse du torrent de Tersol. Filet d'eau sous la prise, parcours vertical.",
+      "periode": "Si vraiment vous voulez le descendre, y aller que quand le débit de Tersol permet de faire la partie haute soit Septembre-Octobre.",
+      "geologie": null,
+      "historique": "09.09.2011: Luciano Boesel, Matthias Holzinger, Pascal Van Duin, Timo Stammwitz.",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23599,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.919079,
+        "longitude": 9.4026,
+        "label": null
+      },
+      {
+        "canyonId": 23599,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.914349,
+        "longitude": 9.40317,
+        "label": null
+      },
+      {
+        "canyonId": 23599,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 46.915722,
+        "longitude": 9.40099,
+        "label": null
+      },
+      {
+        "canyonId": 23599,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 46.914349,
+        "longitude": 9.40317,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 46.915722,
+      "longitude": 9.40099,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_308d304bac950947",
+          "kind": "MAP",
+          "title": "1175 Vättis (Swisstopo)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

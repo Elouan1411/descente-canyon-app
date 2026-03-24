@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:54:23.174405+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22794,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22794/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22794/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22794/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22794/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22794,
+    "identity": {
+      "nom": "Höllgraben",
+      "nomComplet": "Höllgraben",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22794/Hollgraben.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Haute-Autriche",
+      "departement": "Kirchdorf an der Krems",
+      "communePrincipale": "Rosenau am Hengstpass",
+      "communes": [
+        "Windischgarsten",
+        "Rosenau am Hengstpass"
+      ],
+      "massif": "Reichramminger Hintergebirge",
+      "bassin": "Teichl",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a3II",
+      "interet": 1.4,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 860,
+      "deniveleM": 140,
+      "longueurM": 350,
+      "cascadeMaxM": 40,
+      "cordeMiniM": 45,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "40min",
+      "descente": "1h45",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "Sortir de l'A9 vers Windischgarsten. Continuer vers Hengstpass jusqu'à Rosenau.\n\nAprès Rosenau, garer la voiture avant le pont",
+      "accesAmont": null,
+      "approche": "Monter le sentier (rive droite orograf.) prés le cours d'eau. Descendre en rappel d'un arbre, dans le cours d'eau.",
+      "descente": "Canyon ouvert, quelques rappels, sorties avant le dernier le rappel possibles.",
+      "retour": "Prendre le sentier qui descends.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22794,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.71825,
+        "longitude": 14.405308,
+        "label": null
+      },
+      {
+        "canyonId": 22794,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.715767,
+        "longitude": 14.404278,
+        "label": null
+      },
+      {
+        "canyonId": 22794,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.714577,
+        "longitude": 14.402872,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.714577,
+      "longitude": 14.402872,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_77c1c804c4512aea",
+          "kind": "MAP",
+          "title": "WK 5501 Nationalpark Kalkalpen (Freytag & Berndt)",
+          "scale": "1/35000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_610af396bdbef080",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/C.....ic=HoellgrabenCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/C.....ic=HoellgrabenCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

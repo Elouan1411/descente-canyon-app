@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:53.435705+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22396,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22396/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22396/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22396/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22396/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22396,
+    "identity": {
+      "nom": "Karnergraben",
+      "nomComplet": "Karnergraben",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22396/Karnergraben.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Tyrol",
+      "departement": "Kufstein",
+      "communePrincipale": "Thiersee",
+      "communes": [
+        "Thiersee"
+      ],
+      "massif": "Brandenberger Alpen",
+      "bassin": "Inn",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a1II",
+      "interet": 2.4,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 1040,
+      "deniveleM": 190,
+      "longueurM": 1200,
+      "cascadeMaxM": 22,
+      "cordeMiniM": 25,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "2h",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "Passer par Thiersee et Landl vers Riedenberg, se garer devant le Gasthof Wastler contre un repas au retour. (Bon resto avec patisserie et boucherie maison)",
+      "accesAmont": null,
+      "approche": "Longer les maisons sur la droite vers un ravin. Remonter le ravin sur la droite par un petit chemin. à la patte d'oie, prendre à droite et rejoindre une route forestière. Y prendre à gauche et franchir le pont. Descendre dans le ruisseau.",
+      "descente": "Rando aqua avec quelques rappels. Equipement en partie manquant. Utiliser des amarrages naturels difficilement accessibles ou sauter si possible (vasques peu profondes/remplis avec des gravillons).\n\nDans notre cas, des troncs dans le ruisseau permettaient de descendre facilement (05/2013). Après désescalade dans des blocs, on arrive à une partie plate où on sort rive gauche.",
+      "retour": "Rejoindre une piste forestière qui nous ramène à Riedenberg.",
+      "engagement": "Canyon ouvert avec possibilité de sortir en mode chamois partout. De quoi équiper recommandé (matériel peut être récupéré après la descente en installant un rappel à partir du haut).",
+      "periode": "Peu aquatique, praticable même après des pluies.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Pas de réseau GSM dans ce bout de vallée."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22396,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.560734,
+        "longitude": 11.988578,
+        "label": null
+      },
+      {
+        "canyonId": 22396,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.549625,
+        "longitude": 12.000555,
+        "label": null
+      },
+      {
+        "canyonId": 22396,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.557655,
+        "longitude": 12.003545,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.557655,
+      "longitude": 12.003545,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_7df4a172e3cded43",
+          "kind": "MAP",
+          "title": "8 Tegernsee, Schliersee (Kompass)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

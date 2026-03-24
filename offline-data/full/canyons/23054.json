@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:27.601824+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23054,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23054/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23054/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23054/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23054/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23054,
+    "identity": {
+      "nom": "Colle",
+      "nomComplet": "Ravin de la Colle",
+      "prefixeNom": "Ravin de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23054/Colle.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-de-Haute-Provence",
+      "communePrincipale": "Saint-Jurs",
+      "communes": [
+        "Saint-Jurs"
+      ],
+      "massif": null,
+      "bassin": "Asse",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 1.0,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 1260,
+      "deniveleM": 70,
+      "longueurM": 200,
+      "cascadeMaxM": 15,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "1h00",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": "De Riez, prendre la D953 vers Puimoisson. Traverser le village de Puimoisson en direction de Digne-les-Bains en restant sur la D953. Tourner à droite par la D108 en direction de Saint-Jurs et à Saint-Jurs, emprunter la piste jusqu'au col de Saint-Jurs. Se garer sans gêner (point 1318 sur l'IGN).",
+      "accesAmont": null,
+      "approche": "Prendre la direction nord-est à pied. Suivre au mieux le talweg sec en RD descendant sur une piste au point 1270 sur l'IGN. A la piste, prendre à droite sur 10m et reprendre la RD du talweg. Rentrer dans celui-ci, juste avant qu'il ne s'encaisse.",
+      "descente": "Mini encaissement au milieu des buis assez encombrants avec une ou deux C1. S'en suit une C15, C1, C7, rappel ou désescalade de deux C3, C10 et deux petites désescalades pour sortir de l'encaissement.",
+      "retour": "Sortir dés que possible en RG et remonter au mieux en crapahutant jusqu'au départ de la descente pour reprendre l'itinéraire de l'aller.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": "Deniché par Alain13 et Lolo, mes deux idoles de bouzing ...",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23054,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.91267,
+        "longitude": 6.238561,
+        "label": null
+      },
+      {
+        "canyonId": 23054,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.91312,
+        "longitude": 6.240298,
+        "label": null
+      },
+      {
+        "canyonId": 23054,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.909588,
+        "longitude": 6.234204,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.909588,
+      "longitude": 6.234204,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_680c62deb49de2a2",
+          "kind": "MAP",
+          "title": "3441 OT Barreme (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

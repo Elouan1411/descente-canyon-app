@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:38.894275+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23096,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23096/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23096/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23096/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23096/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23096,
+    "identity": {
+      "nom": "Bras de zayonne médian",
+      "nomComplet": "Bras de zayonne médian",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23096/Bras-de-zayonne-median.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Bras-Panon",
+      "departement": "La Réunion",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": "Plaine des Lianes",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a3III",
+      "interet": 2.7,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 910,
+      "deniveleM": 127,
+      "longueurM": 1300,
+      "cascadeMaxM": 29,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "2h00",
+      "descente": "3h00",
+      "retour": "40min"
+    },
+    "topo": {
+      "accesAval": "A l'entrée du Cirque de Salazie, passez sur le pont traversant la Rivière du Mât (D48) et suivre les panneaux indiqués \"Plaine des Lianes\" \"cascade du Chien\". Poursuivre jusqu'au point de vue sur la cascade du Chien et continuez 1,5km jusqu'à un kiosque repéré par le point 745 sur la carte IGN.",
+      "accesAmont": null,
+      "approche": "Du point 745 continuez à pied le sentier assez large qui se rétrécie par la suite. En 20 min vous rejoindrez une ravine qui est la fin de bras de Zayonne Médian et le début de Bras des Lianes Médian. Traversez celle çi et rejoindre le sentier en face. Après environ 40min de marche, vous verrez un ancien panneau d'indication (il ne reste que le poteau !). Ne pas descendre sur votre droite mais continuez en face derrière le poteau. Sente moins fréquentée, marchez encore 10/15 min pour trouver une sente qui descend sur votre gauche. La suite des explications peut vous être envoyer par mail car trop long à expliquer !",
+      "descente": "9 rappels ou 7 si l'on saute ( SP de 5 à 12m).\n\nLongueur des rappels entre 6 et 29m.\n\nLongueurs des marches en blocs : 300m, 80m, 50m. Et 350m pour sortir du canyon.",
+      "retour": "20min de la dernière cascade jusqu'au sentier de la marche d'approche (début Bras des Lianes Médian) + 20min pour rejoindre les voitures.",
+      "engagement": "cotation III",
+      "periode": "cotation 3\n\nil y a de l'eau toute l'année.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Avec beaucoup de débit le R6 peut être délicat pour certaines personnes.\n\nIl y a un équipement hors cascade en RG."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23096,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": -21.039822,
+        "longitude": 55.592072,
+        "label": null
+      },
+      {
+        "canyonId": 23096,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": -21.03521,
+        "longitude": 55.602104,
+        "label": null
+      },
+      {
+        "canyonId": 23096,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": -21.030336,
+        "longitude": 55.611351,
+        "label": null
+      },
+      {
+        "canyonId": 23096,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": -21.03838,
+        "longitude": 55.597523,
+        "label": "Échappatoire RD"
+      },
+      {
+        "canyonId": 23096,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": -21.035601,
+        "longitude": 55.596657,
+        "label": "Départ sente braco vers Bras Zayonne"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": -21.030336,
+      "longitude": 55.611351,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_13d26f471caae438",
+          "kind": "MAP",
+          "title": "4403RT Saint-Benoît / Saint-André (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:56.232957+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22412,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22412/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22412/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22412/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22412/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22412,
+    "identity": {
+      "nom": "Seebach",
+      "nomComplet": "Seebach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22412/Seebach.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Tyrol",
+      "departement": "Politischer Bezirk Reutte",
+      "communePrincipale": "Tannheim",
+      "communes": [
+        "Grän",
+        "Tannheim"
+      ],
+      "massif": "Tannheimer",
+      "bassin": "Lech",
+      "coursEau": "Seebach"
+    },
+    "rating": {
+      "cotation": "v3a3II",
+      "interet": 1.1,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1190,
+      "deniveleM": 75,
+      "longueurM": 400,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 25,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "1h15",
+      "retour": "3min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22412,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.522415,
+        "longitude": 10.553218,
+        "label": null
+      },
+      {
+        "canyonId": 22412,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.521488,
+        "longitude": 10.551134,
+        "label": null
+      },
+      {
+        "canyonId": 22412,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.521164,
+        "longitude": 10.549514,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.521164,
+      "longitude": 10.549514,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_d12cfaad67e26bc1",
+          "kind": "MAP",
+          "title": "Füssen und Umgebung (Bayerisches Landesvermessungsamt)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_872582b933f22894",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.geodaten.bayern.de/BayernView.....6920&layer=TK&step=4",
+          "url": "http://www.geodaten.bayern.de/BayernView.....6920&layer=TK&step=4"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

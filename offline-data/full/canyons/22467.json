@@ -1,0 +1,134 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:07.653529+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22467,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22467/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22467/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22467/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22467/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22467,
+    "identity": {
+      "nom": "Araing",
+      "nomComplet": "Araing, L'Araing",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22467/Araing.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Ariège",
+      "communePrincipale": "Sentein",
+      "communes": [
+        "Sentein"
+      ],
+      "massif": "Haut-Couserans",
+      "bassin": null,
+      "coursEau": "L'Araing"
+    },
+    "rating": {
+      "cotation": "v3a3III",
+      "interet": 2.4,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 1290,
+      "deniveleM": 100,
+      "longueurM": 400,
+      "cascadeMaxM": 13,
+      "cordeMiniM": 25,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h30",
+      "descente": "2h",
+      "retour": "1h15"
+    },
+    "topo": {
+      "accesAval": "St Girons > Castillon en Couserans > Après Sentein prendre à droite vers le hameau de Fréchendech",
+      "accesAmont": null,
+      "approche": "Sentier balisé vers l'étang d'Araing.",
+      "descente": "8 rappels. Rmax : 19 m. Amarrages équipés avec des broches sauf un rappel depuis un arbre.",
+      "retour": "Longer le cours d'eau pour rejoindre en rive gauche les sentier de retour.",
+      "engagement": "Échappatoires possibles avant chaque série de cascades.",
+      "periode": "Bien évaluer le débit car rappels arrosés dans les étroitures.\n\nPrésence d'un barrage en amont. Pas de lâcher automatique. Le seul risque étant la surverse si le barrage est au maximum et qu'il y ait un orage.\n\nJuin à Septembre",
+      "geologie": "Schistes avec présence d'oxyde de fer sur les parois.",
+      "historique": "Ouverture le 20 Juin 2008 par Pascal Caunègre, Damien Charpentier, Stéphane Pireyre et Mickaël Ménager",
+      "remarques": "Esthétique unique due à la forte concentration en fer.\n\nPrésence de nombreux troncs à la fin du canyon."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22467,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 42.867851,
+        "longitude": 0.927572,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 42.867851,
+      "longitude": 0.927572,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_e58cde58d063e1f8",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons Pyrénées. 50 descentes.",
+          "authors": [
+            "Christian Perilhou"
+          ],
+          "publicationYear": 2014,
+          "reference": "9782954865706",
+          "editor": null,
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/186/Canyons-Pyreneens-:-50-Descentes-Canyons.html"
+        },
+        {
+          "id": "biblio_29d8dbb9ae9f9a10",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons du Haut-Couserans - Ariège, Pyrénées",
+          "authors": [
+            "Mickaël Ménager"
+          ],
+          "publicationYear": 2008,
+          "reference": "978-2-7466-0311-0",
+          "editor": null,
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/131/Canyons-du-Haut-Couserans.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_b47ddf7c75871d57",
+          "kind": "MAP",
+          "title": "1947 OT Aspet - Pic de Mauberme (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_aaca16cb2b1beb9d",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.hautcouserans.free.fr/reequipement_araing_575.htm",
+          "url": "http://canyon.hautcouserans.free.fr/reequipement_araing_575.htm"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

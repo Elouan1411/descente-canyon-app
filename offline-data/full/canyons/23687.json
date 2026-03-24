@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:44.237436+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23687,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23687/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23687/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23687/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23687/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/23687/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 23687,
+    "identity": {
+      "nom": "Combre",
+      "nomComplet": "Ravin de Combre",
+      "prefixeNom": "Ravin de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23687/Combre.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Lozère",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 1.0,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 720,
+      "deniveleM": 120,
+      "longueurM": null,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15",
+      "descente": "1h30",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "Depuis Villefort, prendre la direction de Mende par la D901, puis à hauteur du village de Castanet prendre la route qui part à gauche et suivre à chaque fois les panneaux via ferrata. Se garer au niveau du panneau panoramique de la via.",
+      "accesAmont": null,
+      "approche": "L'accès se fait en reprenant le chemin qui permet de quitter la via ferrata de Villefort. Peu après le parking ne pas suivre le chemin qui va au départ de la via (à la patte d'oie en descendant sur la gauche), mais celui qui monte sur la droite.",
+      "descente": "Il faut emprunter la fin de la via ferrata jusqu'au tapis de la tyro en laissant si besoin les ferratistes passer qui - eux - sont dans le bon sens. Au dessous du tapis se trouve un amarrage sur plaquettes et chaine. Il faut installer une main courante pour y arriver. Rappel de 12m. Suivi d'un deuxième amarrage en RD . Rappel de 19m. Faire attention aux chutes de pierres. On est dans une faille.\n\nOn arrive au ruisseau avec un AN. Là commence une goulotte avec deux pans inclinés et deux verticales. Chaque rappel est sur plaquette.\n\nLa descente se termine dans le Lac de Villefort.",
+      "retour": "Pour retourner à la voiture il faut reprendre à l'envers le chemin d'accès de la via.",
+      "engagement": "Plusieurs échappatoires jusqu'au deux derniers rappels.",
+      "periode": "Un filet d'eau en été.\n\nVérifier le débit d'eau en allant au départ de la via avant de s'engager dans la goulotte en période de crue.",
+      "geologie": null,
+      "historique": "Equipé par un petit groupe de personnes d'OVS.",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23687,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.446987,
+        "longitude": 3.907871,
+        "label": null
+      },
+      {
+        "canyonId": 23687,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.447445,
+        "longitude": 3.908665,
+        "label": null
+      },
+      {
+        "canyonId": 23687,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.448872,
+        "longitude": 3.902979,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.448872,
+      "longitude": 3.902979,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 508,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Lozère) - 26 oct 2016",
+          "summary": "La pratique du canyonisme est autorisée sur le département de la Lozère du lever au coucher du soleil. Il est cependant interdit de s’engager dans un canyon après 17 heures.\n\nL'arrêté préfectoral réglemente également la pratique du canyonisme en Lozère sur les points suivants : les équipements obligatoires, la prise d’information préalable, l'accès aux sites, l’effectif des groupes, l’encadrement, le respect du milieu naturel, des équipements et des autres usagers, le retour d’expérience et les contrôles.",
+          "remark": null,
+          "details": "Arrêté préfectoral (Lozère) n°DDCSPP-JESEP-2016-300-001 du 26 octobre 2016",
+          "effectiveDate": "26 oct 2016",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/508/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral (Lozère) n°DDCSPP-JESEP-2016-300-001 du 26 octobre 2016",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem508_pj1.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

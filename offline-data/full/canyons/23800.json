@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:08.921080+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23800,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23800/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23800/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23800/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23800/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23800,
+    "identity": {
+      "nom": "Mulin",
+      "nomComplet": "Rio del Mulin",
+      "prefixeNom": "Rio del",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23800/Mulin.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Frioul-Vénétie julienne",
+      "departement": "Udine",
+      "communePrincipale": "Chiusaforte",
+      "communes": [
+        "Chiusaforte"
+      ],
+      "massif": "Alpes Carniques - Carniche - Karnischen",
+      "bassin": "Fella",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a2III",
+      "interet": 2.3,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 800,
+      "deniveleM": 435,
+      "longueurM": 800,
+      "cascadeMaxM": 55,
+      "cordeMiniM": 60,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "1h15min",
+      "descente": "3h20min",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": "navette possible,voir http://www.canyoning.it/raduni/carnia2009/FR/Rio%20del%20Mulin-fr.pdf",
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": "16.09.2007 Maurizio Biondi, Rosemarie Siegl, Sebastiano Broili, Cristian Vogrig",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23800,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.413158,
+        "longitude": 13.29349,
+        "label": null
+      },
+      {
+        "canyonId": 23800,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.4058,
+        "longitude": 13.29585,
+        "label": null
+      },
+      {
+        "canyonId": 23800,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.404888,
+        "longitude": 13.29439,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.404888,
+      "longitude": 13.29439,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

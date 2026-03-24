@@ -1,0 +1,179 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:45:54.851489+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2545,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2545/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2545/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2545/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2545/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/2545/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 2545,
+    "identity": {
+      "nom": "Foce",
+      "nomComplet": "Ruisseau de Foce, Foce",
+      "prefixeNom": "Ruisseau de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2545/Foce.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Corse",
+      "departement": "Corse-du-Sud",
+      "communePrincipale": "Bocognano",
+      "communes": [
+        "Bocognano"
+      ],
+      "massif": "Vizzavona",
+      "bassin": "Gravona",
+      "coursEau": "Foce"
+    },
+    "rating": {
+      "cotation": "v3a1II",
+      "interet": 1.7,
+      "nbVotes": 11
+    },
+    "metrics": {
+      "altitudeDepartM": 1000,
+      "deniveleM": 190,
+      "longueurM": 1000,
+      "cascadeMaxM": 32,
+      "cordeMiniM": 35,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "1h",
+      "retour": "40min"
+    },
+    "topo": {
+      "accesAval": "De Ajaccio, emprunter la RN193 en direction de Bastia. Dépasser le village de Bocognano et se dirriger vers le col de Vizzavonna. 1.7 km après le pont de Sellola (le pont de la Gravona), stationner le véhicule sur un parking à gauche.",
+      "accesAmont": null,
+      "approche": "Remonter la nationale sur environ 200 m et, au niveau d'un petit parking dans un virage, descendre au mieux dans le lit du ruisseau.",
+      "descente": "Une douzaine de désescalades et petits rappels entre 5 et 11 mètres avant d'arriver au seul interêt de ce canyon: une verticale de 32 mètres que l'on peut refaire à volonté en remontant en rive gauche.",
+      "retour": "Dure marche de retour!\n\nDès la C32 franchie, il faut remonter en rive gauche par un sentier mal entretenu et remonter \"à la corse\" dans les broussailles (on passe tout près du départ de la C32). Se diriger plein Nord jusqu'a l'éperon rocheux où nous attend la voiture... Une bonne suée en perspective!",
+      "engagement": null,
+      "periode": "Peu d'eau en période estivale, il est réceptif aux orages et aux fortes pluies.\n\nComme beaucoup de canyons corse, il mérite d'être parcouru en hiver où il délivre tout son interêt avec un niveau d'eau acceptable",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Toutes ces remarques sont extraites du très bon Topo de Franck JOURDAN et J.F. FIORINA. A \"jumeler\" avec la Richiusa (la Cardiccia) qui est beaucoup plus beau et tout à côté..."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2545,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.104168,
+        "longitude": 9.100278,
+        "label": null
+      },
+      {
+        "canyonId": 2545,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.101944,
+        "longitude": 9.098333,
+        "label": null
+      },
+      {
+        "canyonId": 2545,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 42.103889,
+        "longitude": 9.103056,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 42.103889,
+      "longitude": 9.103056,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_2bafc8e0f7a42d9c",
+          "kind": "TOPOGUIDE",
+          "title": "La Corse en Canyon",
+          "authors": [
+            "Association CorseCanyon"
+          ],
+          "publicationYear": 2018,
+          "reference": null,
+          "editor": "auto-edition",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/1127/La-Corse-en-Canyon-3eme-edition.html"
+        },
+        {
+          "id": "biblio_eeda460e91ce529f",
+          "kind": "TOPOGUIDE",
+          "title": "Corse Canyons (2ème édition)",
+          "authors": [
+            "Franck Jourdan",
+            "Jean-François Fiorina"
+          ],
+          "publicationYear": 2006,
+          "reference": "2-84698-169-8",
+          "editor": "Albiana",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/133/Corse-Canyons.html"
+        },
+        {
+          "id": "biblio_fab33759293ad66d",
+          "kind": "TOPOGUIDE",
+          "title": "Corse Canyons",
+          "authors": [
+            "Franck Jourdan",
+            "Jean-François Fiorina"
+          ],
+          "publicationYear": 2004,
+          "reference": "ISBN : 2-9520630-5-2",
+          "editor": "Corsecanyon",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1119/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_11609288f76c61fe",
+          "kind": "MAP",
+          "title": "4252 OT Monte-Renoso - Bastelica (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 520,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Corse-du-Sud) - 26 juil 2011",
+          "summary": "- Le canyonisme est interdit la nuit (sauf dérogation)\n\n- Le canyonisme est interdit s'il y a une alerte émise par Météo-France de niveau orange ou rouge en cours.\n\n- Le canyonisme est interdit aux mineurs de moins de 7 ans, sauf canyon évalué égal ou inférieur à V1-A3-E3\n\n- Les groupes auront un effectif maximum de 12 personnes, hors encadrement.",
+          "remark": "L'arrêté du 9 juillet 2019 pris conjointement par les préfectures de Corse-du-Sud et de Haute-Corse harmonise les réglementations existantes pour les deux départements.",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nArrêté préfectoral modificatif (Corse-du-Sud et Haute-Corse) n°R20-2019-07-09-001 du 9 juillet 2019\n\nArrêté préfectoral (Corse-du-Sud) n°2011207-0005 du 26 juillet 2011",
+          "effectiveDate": "26 juil 2011",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/520/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral modificatif (Corse-du-Sud et Haute-Corse) n°R20-2019-07-09-001 du 9 juillet 2019",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem520_pj2.pdf"
+            },
+            {
+              "label": "Arrêté préfectoral (Corse-du-Sud) n°2011207-0005 du 26 juillet 2011",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem520_pj1.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:31.042568+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23628,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23628/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23628/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23628/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23628/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23628,
+    "identity": {
+      "nom": "Rey (inferior)",
+      "nomComplet": "Barranco del Rey (inferior)",
+      "prefixeNom": "Barranco del",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23628/Rey-inferior.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Canarias",
+      "departement": "Santa Cruz de Tenerife",
+      "communePrincipale": "Arona",
+      "communes": [
+        "Adeje",
+        "Arona"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.5,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 640,
+      "deniveleM": 280,
+      "longueurM": null,
+      "cascadeMaxM": 55,
+      "cordeMiniM": 60,
+      "navette": "13.2km"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "2h45",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "De Siam Park (Playa de las Américas) après le Burger King au rond-point prendre la première à droite, direction quartier résidentiel. Au suivant petit rond-point prendre la première à droite. Dans une courbe à gauche toujours à droite. C'est une rue tout droite. Après quelques moments en arrive au piste de retour. Stationner le première véhicule ici.\n\nAvec le deuxième véhicule revenir à l'autoroute. Prenez la TF1 direction Santa Cruz seulement pour une sortie ; suivre Arona- Vilaflor. A Arona suivre Vilaflor et un peu après à gauche Vento et Roque del Conde. A Vento à proximité du petit rond-point stationner le deuxième véhicule.",
+      "accesAmont": null,
+      "approche": "Suivre les signes Roque del Conde. El Rey est la deuxième petite vallée.",
+      "descente": "La descente débute avec un rappel de 18m. Au milieu du canyon en doit marcher \"un peut longtemps\". La fin est le rappel de 55m.",
+      "retour": "Quand en arrive à la \"maison\" avec des déchets de jardin, suivre la piste jusqu'à la voiture.",
+      "engagement": "Moyen",
+      "periode": "sec. Il y a une vasque en bas du 4eme rappel",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23628,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 28.100668,
+        "longitude": -16.690613,
+        "label": null
+      },
+      {
+        "canyonId": 23628,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 28.082376,
+        "longitude": -16.705662,
+        "label": null
+      },
+      {
+        "canyonId": 23628,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 28.101515,
+        "longitude": -16.687185,
+        "label": null
+      },
+      {
+        "canyonId": 23628,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 28.082092,
+        "longitude": -16.708151,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 28.101515,
+      "longitude": -16.687185,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_691675baaeb76189",
+          "kind": "TOPOGUIDE",
+          "title": "35 descentes de canyons à Tenerife",
+          "authors": [
+            "Philip Van Den Berge"
+          ],
+          "publicationYear": 2016,
+          "reference": null,
+          "editor": "Autoédition",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1338/topoguide.html"
+        },
+        {
+          "id": "biblio_ea844f75c4fa6780",
+          "kind": "TOPOGUIDE",
+          "title": "Canyoning in Tenerife",
+          "authors": [
+            "Emilio Aguilar Gutiérrez",
+            "Rosa Maria Hernandes Guzman"
+          ],
+          "publicationYear": 2014,
+          "reference": "ISBN 9781494927769",
+          "editor": "Amazon",
+          "status": "stock vide !\n\nSans doute disponible sur commande : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/181/Canyoning-in-Tenerife.html"
+        }
+      ],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_5d911395f92317d8",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://barrancoscanarios.com/de/barranco.....co-del-rey-inferior/",
+          "url": "http://barrancoscanarios.com/de/barranco.....co-del-rey-inferior/"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

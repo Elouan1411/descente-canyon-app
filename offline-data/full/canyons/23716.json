@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:50.466636+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23716,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23716/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23716/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23716/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23716/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23716,
+    "identity": {
+      "nom": "Carminabach",
+      "nomComplet": "Carminabach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23716/Carminabach.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Pfäfers",
+      "departement": "Saint Gallen",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Alpes glaronaises",
+      "bassin": "Tamina",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.6,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1890,
+      "deniveleM": 570,
+      "longueurM": null,
+      "cascadeMaxM": 55,
+      "cordeMiniM": 55,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h",
+      "descente": "4h",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": "Se rendre à Vättis puis au bout du village prendre une route en direction de Sankt Martin / Gigerwaldsee. Suivre la route et franchir le barrage pour continuer sur la route étroite de la rive sud du lac (autorisée 20 min par heure dans chaque sens en fonction de créneaux horaires définis sur un panneau). Garez vous à St. Martin.",
+      "accesAmont": null,
+      "approche": "Prenez le chemin de randonnée orographique à gauche de Tellerbach. Le sentier est très raide. Suivre jusque' à Heuberg puis après vers Stöfeli. De Heuberg on peut chercher le sentier un peu. Arrivé à Stöfeli traverser vers Carminabach.",
+      "descente": "Des rampes à descendre en rappel qui alternent avec des rampes à desescalader.\n\nMalheureusement équipement monopoint sauf pour les grands rappels qui ont 2 points",
+      "retour": "Arrivé au lac tourner à droite et prenez un petit sentier mal visible 10-15 m au-dessus du lac.",
+      "engagement": "1 échappatoire vers droite (voir topo schlucht.ch)",
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23716,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.923931,
+        "longitude": 9.368924,
+        "label": null
+      },
+      {
+        "canyonId": 23716,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.919212,
+        "longitude": 9.364375,
+        "label": null
+      },
+      {
+        "canyonId": 23716,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.920708,
+        "longitude": 9.356543,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.920708,
+      "longitude": 9.356543,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_308d304bac950947",
+          "kind": "MAP",
+          "title": "1175 Vättis (Swisstopo)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

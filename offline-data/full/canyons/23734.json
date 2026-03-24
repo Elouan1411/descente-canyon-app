@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:54.908076+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23734,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23734/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23734/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23734/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23734/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23734,
+    "identity": {
+      "nom": "Dabi",
+      "nomComplet": "Wadi Dabi, Wadi ad Dab'i, Daba', Wadi Abu Irteimeh",
+      "prefixeNom": "Wadi",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23734/Dabi.html"
+    },
+    "location": {
+      "pays": "Jordanie",
+      "region": null,
+      "departement": "Karak",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v1a1II",
+      "interet": 1.7,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 230,
+      "deniveleM": 145,
+      "longueurM": 1100,
+      "cascadeMaxM": null,
+      "cordeMiniM": null,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "2h",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": "Descente aller retour",
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "Eau thermale"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23734,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 31.54484,
+        "longitude": 35.566784,
+        "label": null
+      },
+      {
+        "canyonId": 23734,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 31.545012,
+        "longitude": 35.557518,
+        "label": "remonter de l''arrivée\" vers le-haut jusqu'à \"depart\" et retour"
+      },
+      {
+        "canyonId": 23734,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 31.545391,
+        "longitude": 35.556923,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 31.545391,
+      "longitude": 35.556923,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_01e48379375f210a",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/Canyons/WadiadDabiCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/Canyons/WadiadDabiCanyon"
+        },
+        {
+          "id": "resource_20dbbbafa98c69d6",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "https://web.archive.org/web/201402031020.....Nature-Reserve_B.jpg",
+          "url": "https://web.archive.org/web/201402031020.....Nature-Reserve_B.jpg"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

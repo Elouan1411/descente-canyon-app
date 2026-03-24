@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:02.641400+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23773,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23773/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23773/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23773/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23773/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23773,
+    "identity": {
+      "nom": "Grießbach",
+      "nomComplet": "Grießbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23773/Grießbach.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Tyrol",
+      "departement": "Politischer Bezirk Reutte",
+      "communePrincipale": "Häselgehr",
+      "communes": [
+        "Häselgehr"
+      ],
+      "massif": "Lechtaler Alpen",
+      "bassin": "Lech",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": null,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": 1350,
+      "deniveleM": 275,
+      "longueurM": 2300,
+      "cascadeMaxM": null,
+      "cordeMiniM": null,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "45min",
+      "descente": "70",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23773,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.27718,
+        "longitude": 10.461278,
+        "label": null
+      },
+      {
+        "canyonId": 23773,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.289791,
+        "longitude": 10.466423,
+        "label": null
+      },
+      {
+        "canyonId": 23773,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.290047,
+        "longitude": 10.46558,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.290047,
+      "longitude": 10.46558,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

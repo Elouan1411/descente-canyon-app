@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:46.545405+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22086,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22086/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22086/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22086/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22086/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22086,
+    "identity": {
+      "nom": "Bellaval",
+      "nomComplet": "Ruisseau de Bellaval",
+      "prefixeNom": "Ruisseau de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22086/Bellaval.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Savoie",
+      "communePrincipale": "Bourg-Saint-Maurice",
+      "communes": [
+        "Bourg-Saint-Maurice"
+      ],
+      "massif": "Beaufortain",
+      "bassin": "Isère",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2IV",
+      "interet": 2.7,
+      "nbVotes": 7
+    },
+    "metrics": {
+      "altitudeDepartM": 2080,
+      "deniveleM": null,
+      "longueurM": 700,
+      "cascadeMaxM": 19,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "45min",
+      "descente": "3h30",
+      "retour": "3min"
+    },
+    "topo": {
+      "accesAval": "De Bourg Saint Maurice, monter vers le Cormet de Roselend (D902). Avant le col, prendre à droite la route menant aux Chapieux. et poursuivre la route jusqu’à la Ville des Glaciers (altitude 1790 m) où l'on se garera sur le parking.",
+      "accesAmont": null,
+      "approche": "A pied, poursuivre la piste en rive droite du torrent des glaciers. Au bout de 3 mn, on franchit le ruisseau de Bellaval (arrivée de la course). Poursuivre la piste qui fait 2 lacets et prendre ensuite à gauche une autre piste interdite à la circulation en direction des Chalets de Bellaval. Poursuivre cette piste jusqu'à la dernière épingle peut avant les chalets de Bellaval (cote 2100). Poursuivre à travers la prairie vers l'amont pour rejoindre le torrent.",
+      "descente": "Joli torrent de montagne bien creusé où les rappels et les désescalades s’enchaînent sans discontinuer. Décor superbe avec l’aiguille des glaciers en toile de fond. Attention : plusieurs obstacles se descendent parfois avec le même rappel.",
+      "retour": "Reprendre la piste empruntée à l’aller.",
+      "engagement": null,
+      "periode": "Peu de vasques profondes. La période idéale pour effectuer la descente s’étend de août à novembre. Un petit glacier est situé sur le bassin versant. L'eau est froide et les cascades sont arrosées.",
+      "geologie": null,
+      "historique": "Première descente en 08/2007 par Patrick Chollot et Emmanuelle Fleck.",
+      "remarques": "L'équipement est susceptible d'avoir été fortement détérioré : le perforateur est obligatoire. Les chevilles spit ne tiendraient pas (schiste tendre veiné)."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22086,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.738808,
+        "longitude": 6.764028,
+        "label": null
+      },
+      {
+        "canyonId": 22086,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.731617,
+        "longitude": 6.768909,
+        "label": null
+      },
+      {
+        "canyonId": 22086,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.731407,
+        "longitude": 6.769896,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.731407,
+      "longitude": 6.769896,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:43:34.726198+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 225,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/225/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/225/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/225/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/225/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/225/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 225,
+    "identity": {
+      "nom": "Vezeronce",
+      "nomComplet": "Les gorges de la Vezeronce",
+      "prefixeNom": "Les gorges de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/225/Vezeronce.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Ain",
+      "communePrincipale": "Surjoux",
+      "communes": [
+        "Surjoux"
+      ],
+      "massif": null,
+      "bassin": "Rhône",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 2.6,
+      "nbVotes": 28
+    },
+    "metrics": {
+      "altitudeDepartM": 400,
+      "deniveleM": 140,
+      "longueurM": 1500,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 50,
+      "navette": "3.0km"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "1h30-2h",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "à Surjoux : panneaux indiquant pain de sucre. Se garer a un grand parking.",
+      "accesAmont": "à la sortie de Surjoux prendre à droite route montante, passer devant une ferme, se garer au pylone.",
+      "approche": "Au pylone electrique continuer tout droit sur 300m\n\npuis à droite pour rejoindre le départ.\n\nPossibilité sans navette, départ du parking aval, un chemin part derriére les conteners poubelle.",
+      "descente": "Amarrages corrects. Nombreux petits sauts. Pas d'amarrage intermediaire au c7 et c9 : elle s'enchaine, 2 points RD, attention au coincement de corde.",
+      "retour": "Suivre la Vezeronce jusqu'au parking aval.",
+      "engagement": "Echapatoires possibles souvent tout le long du parcours, bien que parfois peu facile d'accés.",
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "interdit du 1er Mars au 30 Septembre : voir réglementation."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 225,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.025799,
+        "longitude": 5.792928,
+        "label": null
+      },
+      {
+        "canyonId": 225,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 46.020329,
+        "longitude": 5.80739,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.020329,
+      "longitude": 5.80739,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_4fd64cd219e37210",
+          "kind": "MAP",
+          "title": "3330 OT Bellegarde-sur-Valserine (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 11,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Ain) - 14 sept 1999",
+          "summary": "Arrêté de biotope.",
+          "remark": null,
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.",
+          "effectiveDate": "14 sept 1999",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/11/legislation.html",
+          "attachments": []
+        }
+      ]
+    }
+  }
+}

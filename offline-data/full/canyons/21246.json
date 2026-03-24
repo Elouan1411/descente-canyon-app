@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:48:41.127192+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21246,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21246/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21246/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21246/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21246/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21246,
+    "identity": {
+      "nom": "Saltant",
+      "nomComplet": "Rasa de la Saltant",
+      "prefixeNom": "Rasa de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21246/Saltant.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Cataluña",
+      "departement": "Lérida",
+      "communePrincipale": "la Coma i la Pedra",
+      "communes": [
+        "la Coma i la Pedra"
+      ],
+      "massif": null,
+      "bassin": "Rio Cardener",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1III",
+      "interet": 1.5,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": null,
+      "longueurM": null,
+      "cascadeMaxM": 28,
+      "cordeMiniM": 30,
+      "navette": "6.0km"
+    },
+    "timings": {
+      "approche": "30min-1h",
+      "descente": "1h-1h30",
+      "retour": "5-10min"
+    },
+    "topo": {
+      "accesAval": "De Berga prendre la BV4241 direction Sant Llorenç de Morunys et Coll de Nargo. Dans Sant Llorenç continuer à droite vers La Coma/La Pedra/Tuixen.\n\nPassé la Coma en direction de Tuixen et faire peu de km avant de passer sur un pont qui enjambe un torrent souvent sec dont l'encaissement au dessus à droite et bien visible. Se garer au dessus, à droite. Avec le second véhicule continuez la route, passez la Rasa de Coll del Port, continuez et passez le parking de ce canyon puis une piste à droite, continuez pour passer le cours d'eau de la Rasa de Coll del Port à nouveau. Peu après sur votre droite, une bonne piste va au fermes de Cal Fera. Se garer.",
+      "accesAmont": null,
+      "approche": "Si vous faites la navette, continuez la piste qui s'élève pour passer au dessus des prés dans les bois. Passer un col et redescendre vers une petite maison avec des prés et un lit de torrent en général à sec.\n\nSinon, du véhicule aval, remonter la piste en rive droite et tirer au mieux à gauche par des sentes qui coupent à travers et rejoindre un talweg (ruisseau à sec) sous des maisons. S'élever en le longeant au mieux par sa rive droite et vous rejoindrez la piste précitée. L'expérience du terrain vous servira...",
+      "descente": "Cours d'eau généralement sec mais avec de grosses traces de crues. La descente commence par un lit large sous la maison, qui va s'encaisser rapidement. Succession d'une petite dizaine de verticales de taille moyenne.",
+      "retour": "Descendre dans les blocs puis un sentier rive droite ramène à la piste et à la route.",
+      "engagement": "Pas d'échapatoire.",
+      "periode": "C'est un rec, qui doit rarement couler mais qui porte des traces de crues violentes.",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21246,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.190559,
+        "longitude": 1.584955,
+        "label": null
+      },
+      {
+        "canyonId": 21246,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.188419,
+        "longitude": 1.581763,
+        "label": null
+      },
+      {
+        "canyonId": 21246,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 42.196114,
+        "longitude": 1.57333,
+        "label": null
+      },
+      {
+        "canyonId": 21246,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 42.187782,
+        "longitude": 1.580744,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 42.196114,
+      "longitude": 1.57333,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

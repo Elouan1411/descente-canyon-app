@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:57.033506+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23745,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23745/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23745/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23745/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23745/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23745,
+    "identity": {
+      "nom": "Gerle",
+      "nomComplet": "Cascade de la Gerle, L'Epervier",
+      "prefixeNom": "Cascade de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23745/Gerle.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Hautes-Alpes",
+      "communePrincipale": "La Roche-des-Arnauds",
+      "communes": [
+        "La Roche-des-Arnauds"
+      ],
+      "massif": "Dévoluy",
+      "bassin": "Petit Buëch",
+      "coursEau": "L'Epervier"
+    },
+    "rating": {
+      "cotation": "v3a2I",
+      "interet": 1.2,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 1070,
+      "deniveleM": 80,
+      "longueurM": 500,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 35,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15 à 20min",
+      "descente": "50min",
+      "retour": "5 à 10min"
+    },
+    "topo": {
+      "accesAval": "De Gap, emprunter la D994 jusqu'à La-Roche-des-Arnauds. Se garer au centre du village, sur le parking non loin de la mairie par exemple.",
+      "accesAmont": null,
+      "approche": "Gagner le ruisseau au nord du village (vers le lieu-dit \"Le Colombier) et prendre le sentier de PR en rive droite. On arrive en une quinzaine de minutes au départ de la descente.",
+      "descente": "Pi6, courte marche, Pi4, courte marche, Pi6, C30 sur AN en RG, marche, C10 sur AN en RD.",
+      "retour": "Marcher 50 m le long du ruisseau et remonter en rive droite au mieux en grimpant la pente principalement herbeuse. En haut, vers la gauche lorsque la pente s’atténue, repérer au dessus de la cime des arbustes un poteau en bois. Ce poteau se situe dans un champ non loin du sentier emprunté à l'aller.",
+      "engagement": "Aucun",
+      "periode": "A faire avec pas mal d'eau pour rendre la descente assez sympathique.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Aucun équipement en place. La C30 est plutôt jolie."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23745,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.573246,
+        "longitude": 5.96274,
+        "label": null
+      },
+      {
+        "canyonId": 23745,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.570339,
+        "longitude": 5.962987,
+        "label": null
+      },
+      {
+        "canyonId": 23745,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.572128,
+        "longitude": 5.961603,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.572128,
+      "longitude": 5.961603,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_28e68141a286bb81",
+          "kind": "MAP",
+          "title": "3338 ET Gap (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

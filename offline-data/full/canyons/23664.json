@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:38.657541+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23664,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23664/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23664/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23664/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23664/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23664,
+    "identity": {
+      "nom": "Tomül",
+      "nomComplet": "Tomül",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23664/Tomul.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Vals",
+      "departement": "Graubünden/Grigioni/Grischun",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Alpi Lepontine",
+      "bassin": "Rhein",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a3II",
+      "interet": 3.0,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 2158,
+      "deniveleM": 120,
+      "longueurM": 500,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h",
+      "descente": "2h",
+      "retour": "40min"
+    },
+    "topo": {
+      "accesAval": "Dans Vals prendre la route d'alpage jusqu'au point 1876m.",
+      "accesAmont": null,
+      "approche": "Prendre le sentier de randonnée en direction des alpages de Tomül.",
+      "descente": "Enchainement de petits obstacles. Avec un gros débit certains obstacles peuvent compliqués à négocier.",
+      "retour": "Reprendre le sentier en direction de la voiture.",
+      "engagement": "De nombreuses échappatoires peuvent être envisagées.",
+      "periode": "Bassin versant de 5km2, à envisager après la fonte des neiges (Juillet - Octobre).",
+      "geologie": null,
+      "historique": "10/07/2016 : Emmanuel Belut, Thomas Guigon, Matthias Holzinger.",
+      "remarques": "Équipement de première descente : mono-points de Ø10mm inox."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23664,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.604214,
+        "longitude": 9.223078,
+        "label": null
+      },
+      {
+        "canyonId": 23664,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.607624,
+        "longitude": 9.220431,
+        "label": null
+      },
+      {
+        "canyonId": 23664,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.614124,
+        "longitude": 9.197001,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.614124,
+      "longitude": 9.197001,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_512e0ec3a03e8708",
+          "kind": "MAP",
+          "title": "1234 Vals (Carte Nationale Suisse)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

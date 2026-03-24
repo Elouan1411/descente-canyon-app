@@ -1,0 +1,147 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:11.954979+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21648,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21648/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21648/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21648/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21648/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21648,
+    "identity": {
+      "nom": "Vallegón",
+      "nomComplet": "Cañón de Vallegón",
+      "prefixeNom": "Cañón de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21648/Vallegon.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Asturias",
+      "departement": "Provincia de Asturias",
+      "communePrincipale": "Amieva",
+      "communes": [
+        "Cangas de Onís",
+        "Amieva"
+      ],
+      "massif": "Picos de Europa",
+      "bassin": "Rio Sella",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.0,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 450,
+      "deniveleM": 150,
+      "longueurM": 2000,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 30,
+      "navette": "3.0km"
+    },
+    "timings": {
+      "approche": "10min",
+      "descente": "2h30",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21648,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.236168,
+        "longitude": -5.075877,
+        "label": "Départ partie supérieure"
+      },
+      {
+        "canyonId": 21648,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.237576,
+        "longitude": -5.088837,
+        "label": "Départ partie inférieure"
+      },
+      {
+        "canyonId": 21648,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.237389,
+        "longitude": -5.091627,
+        "label": null
+      },
+      {
+        "canyonId": 21648,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 43.235451,
+        "longitude": -5.07607,
+        "label": null
+      },
+      {
+        "canyonId": 21648,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 43.236729,
+        "longitude": -5.092485,
+        "label": null
+      },
+      {
+        "canyonId": 21648,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 43.237419,
+        "longitude": -5.084782,
+        "label": "sortie de la première partie vers la route"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 43.235451,
+      "longitude": -5.07607,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_1f7de60e3bdf7eb8",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://ropewiki.com/Vallegon",
+          "url": "http://ropewiki.com/Vallegon"
+        },
+        {
+          "id": "resource_0b40f908bacfe393",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/Canyons/VallegonCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/Canyons/VallegonCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

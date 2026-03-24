@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:54:28.638008+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22816,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22816/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22816/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22816/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22816/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22816,
+    "identity": {
+      "nom": "Rasga",
+      "nomComplet": "Valle Rasga",
+      "prefixeNom": "Valle",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22816/Rasga.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Lombardia",
+      "departement": "Lecco",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a2II",
+      "interet": 2.6,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1020,
+      "deniveleM": 315,
+      "longueurM": 700,
+      "cascadeMaxM": 50,
+      "cordeMiniM": null,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "50min",
+      "descente": "3h",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": "Torrent alpin de la haute Valvaronne, dans un environnement préservé, avec une eau limpide et un bel enchainement de 14 rappels dans la partie finale.\n\nDescente agréable et intéressante avec un débit correct.",
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22816,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.082741,
+        "longitude": 9.379553,
+        "label": null
+      },
+      {
+        "canyonId": 22816,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.079575,
+        "longitude": 9.372889,
+        "label": null
+      },
+      {
+        "canyonId": 22816,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 46.076054,
+        "longitude": 9.376283,
+        "label": null
+      },
+      {
+        "canyonId": 22816,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.07935,
+        "longitude": 9.37233,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 46.076054,
+      "longitude": 9.376283,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

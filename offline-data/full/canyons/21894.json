@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:08.586279+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21894,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21894/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21894/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21894/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21894/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21894,
+    "identity": {
+      "nom": "Pont de l'Alpe",
+      "nomComplet": "Canyon du Pont de l'Alpe, Torrent du Rif",
+      "prefixeNom": "Canyon du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21894/Pont-de-l-Alpe.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Hautes-Alpes",
+      "communePrincipale": "Le Monêtier-les-Bains",
+      "communes": [
+        "Le Monêtier-les-Bains"
+      ],
+      "massif": "Briançonnais",
+      "bassin": "Guisane",
+      "coursEau": "Torrent du Rif"
+    },
+    "rating": {
+      "cotation": "v2a3II",
+      "interet": 1.6,
+      "nbVotes": 14
+    },
+    "metrics": {
+      "altitudeDepartM": 1800,
+      "deniveleM": 70,
+      "longueurM": 100,
+      "cascadeMaxM": 13,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "25min",
+      "descente": "1h30",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "De Briançon se rendre à Monêtiers-les-Bains, dépasser se village (6km) pour atteindre sur la N91 le Pont de l'Alpe (panneau), se garer avant ou après le pont sur un des parkings en bord de route (souvent beaucoup de randonneurs et de via-ferratistes en été sur ces parkings) .",
+      "accesAmont": null,
+      "approche": "Juste avant de traverser le pont il y a une piste qui longe le canyon en RG, la prendre et au premier virage la quitter pour prendre le sentier à gauche qui longe le canyon. Puis ce sentier s'éloigne un peu du canyon et retombe sur la piste. La reprendre jusqu'au plateau en amont des cascades, descendre au mieux dans le torrent.",
+      "descente": "Succession de rappels avec deux vasques profondes et un rappel assez arrosé.",
+      "retour": "Chemin évident en RG au pied du dernier rappel qui rejoint le chemin pris à l'aller.",
+      "engagement": "Canyon assez court mais les échappatoires sont difficiles.",
+      "periode": "La meilleure période est l'été, canyon très ensoleillé.\n\nAttention le débit peut facilement être gros en début de saison et même en juillet.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Pour une bonne grosse journée il est possible de coupler ce canyon avec la superbe Via du Lauzet situé juste au dessus (bonne condition physique requise)"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21894,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.02,
+        "longitude": 6.469444,
+        "label": null
+      },
+      {
+        "canyonId": 21894,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.018612,
+        "longitude": 6.469167,
+        "label": null
+      },
+      {
+        "canyonId": 21894,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.018612,
+        "longitude": 6.465833,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.018612,
+      "longitude": 6.465833,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

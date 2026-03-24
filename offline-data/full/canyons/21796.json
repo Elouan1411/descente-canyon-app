@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:45.300092+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21796,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21796/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21796/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21796/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21796/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21796,
+    "identity": {
+      "nom": "Rabichol",
+      "nomComplet": "Ruisseau de Rabichol, Micro-canyon de Mouthoumet",
+      "prefixeNom": "Ruisseau de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21796/Rabichol.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Aude",
+      "communePrincipale": "Mouthoumet",
+      "communes": [
+        "Mouthoumet"
+      ],
+      "massif": "Corbières",
+      "bassin": "Orbieu",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1I",
+      "interet": 0.9,
+      "nbVotes": 10
+    },
+    "metrics": {
+      "altitudeDepartM": 475,
+      "deniveleM": 25,
+      "longueurM": 100,
+      "cascadeMaxM": 14,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "15min",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "De Couiza, prenez la D613 en direction de Mouthoumet. 1 kilomètre avant Mouthoumet, au niveau d'un large virage à gauche, garez-vous sur une ancienne courbe de la route.",
+      "accesAmont": null,
+      "approche": "Gagnez à vue le haut des cascades (évident).",
+      "descente": "Une cascade en goulotte de 6m qui tombe dans une vasque relativement profonde (saut possible après vérifs) qui s'enchaîne avec une C14 évasée. Suivent deux/trois ressauts inclinés et une mini zone de marche encaissée et c'est fini.",
+      "retour": "A la sortie du micro encaissement, prenez les sentes RD qui remontent rapidement à la voiture.",
+      "engagement": "Néant, ouvert.\n\nEquipement minimaliste mais suffisant.\n\nLes cascades sont visibles depuis la route, un peu en aval du parking.",
+      "periode": "Printemps, après les pluies. Eviter l'étiage.",
+      "geologie": "Une grotte entre les deux cascades et une autre dans l'encaissement final.",
+      "historique": null,
+      "remarques": "Uniquement pour les collectionneurs, ou pour compléter ou débuter la journée. A enchaîner avec les cascades d'Auriac et le ruisseau d'Espéout tout proches.\n\nA noter que quelques kilomètres en aval, une autre section du ruisseau s'encaisse donnant naissance à des cascades inclinées sous une prise d'eau."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21796,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.955658,
+        "longitude": 2.517955,
+        "label": null
+      },
+      {
+        "canyonId": 21796,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.955853,
+        "longitude": 2.517226,
+        "label": null
+      },
+      {
+        "canyonId": 21796,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 42.956051,
+        "longitude": 2.518155,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 42.956051,
+      "longitude": 2.518155,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

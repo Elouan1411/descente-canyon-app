@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:36.790741+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23656,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23656/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23656/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23656/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23656/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23656,
+    "identity": {
+      "nom": "Teufelstal",
+      "nomComplet": "Teufelstal",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23656/Teufelstal.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Tyrol",
+      "departement": "Politischer Bezirk Reutte",
+      "communePrincipale": "Reutte",
+      "communes": [
+        "Reutte"
+      ],
+      "massif": "Ammergauer Alpen",
+      "bassin": "Lech",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a3V",
+      "interet": 2.1,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1500,
+      "deniveleM": 470,
+      "longueurM": 1000,
+      "cascadeMaxM": 27,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h45min",
+      "descente": "5h",
+      "retour": "10"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23656,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.505993,
+        "longitude": 10.856592,
+        "label": null
+      },
+      {
+        "canyonId": 23656,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.508392,
+        "longitude": 10.842398,
+        "label": null
+      },
+      {
+        "canyonId": 23656,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.508396,
+        "longitude": 10.84044,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.508396,
+      "longitude": 10.84044,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

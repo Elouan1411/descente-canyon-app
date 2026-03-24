@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:20.914930+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21960,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21960/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21960/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21960/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21960/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21960,
+    "identity": {
+      "nom": "Garney",
+      "nomComplet": "Ruisseau de Garney",
+      "prefixeNom": "Ruisseau de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21960/Garney.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Savoie",
+      "communePrincipale": "Villarembert",
+      "communes": [
+        "Villarembert"
+      ],
+      "massif": "Gdes Rousses - Arves - Emparis",
+      "bassin": "Arvan",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 1.7,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 1508,
+      "deniveleM": 100,
+      "longueurM": 500,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 25,
+      "navette": "5.0km"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "1h30",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "En partant de St Jean de Maurienne, prendre la direction de la vallée de l'Arvan, passer Villarembert et monter au Corbier. Dans la station du Corbier se garer sur un des nombreux parkings situés après le centre de secours et descendre en direction du centre équestre le dépasser et rejoindre le ruisseau au niveau du Pont du Garney (pointé sur carte IGN).",
+      "accesAmont": null,
+      "approche": null,
+      "descente": "Le ruisseau s'encaisse rapidement on descend alors 5 petites cascades ne dépassant pas 20m.",
+      "retour": "Au niveau du pont (alt 1400 m) prendre un sentier en rive gauche qui remonte au hameau de Fromentières, de là remonter au Corbier par un sentier à gauche.",
+      "engagement": "Un seul échappatoire en rive droite après les petites vasques successives et avant le rappel de 18m. Possibilités de se mettre hors d'eau à de nombreux endroits.",
+      "periode": "Pas de nage ni de saut. Temps stable impératif dans cette zone.\n\nBien alimenté, il est à pratiquer du printemps à l'automne.",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21960,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.24472,
+        "longitude": 6.268611,
+        "label": null
+      },
+      {
+        "canyonId": 21960,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.243332,
+        "longitude": 6.2725,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 45.24472,
+      "longitude": 6.268611,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_9bc1f5cdf66d62ac",
+          "kind": "MAP",
+          "title": "3435 ET Valloire (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

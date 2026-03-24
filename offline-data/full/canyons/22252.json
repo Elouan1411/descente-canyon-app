@@ -1,0 +1,138 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:22.383075+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22252,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22252/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22252/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22252/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22252/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22252,
+    "identity": {
+      "nom": "Vence (amont)",
+      "nomComplet": "La Vence (amont), Vence",
+      "prefixeNom": "La",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22252/Vence-amont.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Isère",
+      "communePrincipale": "Quaix-en-Chartreuse",
+      "communes": [
+        "Quaix-en-Chartreuse"
+      ],
+      "massif": "Chartreuse",
+      "bassin": "Isère",
+      "coursEau": "Vence"
+    },
+    "rating": {
+      "cotation": "v3a2I",
+      "interet": 1.2,
+      "nbVotes": 8
+    },
+    "metrics": {
+      "altitudeDepartM": 605,
+      "deniveleM": 130,
+      "longueurM": 1200,
+      "cascadeMaxM": 17,
+      "cordeMiniM": 17,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "1h",
+      "retour": "25min"
+    },
+    "topo": {
+      "accesAval": "De Grenoble, se rendre au pont de Vence via la D57. Parking commun au secteur d'escalade du \"Pont de Vence\".",
+      "accesAmont": null,
+      "approche": null,
+      "descente": "On attaque le ruisseau sous le pont de Vence jusqu'au Pont Dormie.\n\nPlusieurs cascades : C6, C10, C10, saut ou tob possible, C17 entrecoupées par des marches fastidieuses. Des sentes en rive gauche permettent d'éviter de cheminer dans le lit.",
+      "retour": "Au pont de Dormie, sortir RG et prendre le chemin qui monte en direction du hameau de Mélattes. Une fois sur la route rejoindre le pont de Vence.",
+      "engagement": null,
+      "periode": "Supporte plus d'eau que l'Infernet (cascades larges)",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Amont de l'Infernet. Malheureusement très encombré de ferrailles en tout genre... Le topo-guide Infern'eaux décrit la course jusqu'au pont de Quaix (30m de dénivelé et 675m de longueur supplémentaires) et précise que la dernière partie pourrait se nager par fort débit. Qui osera tester ?"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22252,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.248337,
+        "longitude": 5.741856,
+        "label": null
+      },
+      {
+        "canyonId": 22252,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 45.248314,
+        "longitude": 5.741877,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 45.248314,
+      "longitude": 5.741877,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_e7d94bb2f47393ab",
+          "kind": "TOPOGUIDE",
+          "title": "Cascades, Gorges & Canyons : Pré-alpes d'Isère et de Savoie",
+          "authors": [
+            "Bertrand Hauser",
+            "Delphine Baratin"
+          ],
+          "publicationYear": 2007,
+          "reference": "978-2-9529407-0-2",
+          "editor": "Descente-Canyon.com",
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/11/Cascades--Gorges-et-Canyons-:-Pre-alpes-d-Isere-et-de-Savoie.html"
+        },
+        {
+          "id": "biblio_e2259ea833d03cf8",
+          "kind": "TOPOGUIDE",
+          "title": "Infern'eaux",
+          "authors": [
+            "P. Boiron",
+            "J. Carles",
+            "J-M. Etienne",
+            "R. Vuillot"
+          ],
+          "publicationYear": 1990,
+          "reference": "ISBN 2-7038-0065-7",
+          "editor": "Didier et Richard",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/11/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_bf7324fa2ae1510e",
+          "kind": "MAP",
+          "title": "3334 OT Massif de la Chartreuse Sud (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

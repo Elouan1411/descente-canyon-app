@@ -1,0 +1,145 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:43:35.574121+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 227,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/227/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/227/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/227/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/227/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/227/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 227,
+    "identity": {
+      "nom": "Fier",
+      "nomComplet": "Le Fier",
+      "prefixeNom": "Le",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/227/Fier.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Haute-Savoie",
+      "communePrincipale": "Lovagny",
+      "communes": [
+        "Lovagny"
+      ],
+      "massif": "Bornes - Aravis",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 3.0,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": 20,
+      "longueurM": 250,
+      "cascadeMaxM": null,
+      "cordeMiniM": null,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "??",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": "De lovagny, se suivre les pancartes touristiques.",
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 227,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 45.895412,
+        "longitude": 6.036944,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 45.895412,
+      "longitude": 6.036944,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_87a84633f292e5a0",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons de Haute-Savoie (réédition)",
+          "authors": [
+            "Ch. Charletty",
+            "G. Gudefin",
+            "B. Hugon",
+            "J-P. Beaudoin"
+          ],
+          "publicationYear": 2004,
+          "reference": "ISBN: 2741702888",
+          "editor": "GAP",
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/128/Canyons-de-Haute-Savoie.html"
+        },
+        {
+          "id": "biblio_1e61b240bec55aed",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons de Haute Savoie",
+          "authors": [
+            "Christian Charletty",
+            "Gérard Gudefin",
+            "Bruno Hugon",
+            "Comité Départemental de Spéléologie 74"
+          ],
+          "publicationYear": 1997,
+          "reference": "ISBN 2-7417-0202-0",
+          "editor": "Gap",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/19/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_68c3d089c92edd13",
+          "kind": "MAP",
+          "title": "3431 OT Lac d'Annecy (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 13,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Information",
+          "summary": "Interdit de mars à novembre à cause d'une exploitation touristique.",
+          "remark": null,
+          "details": null,
+          "effectiveDate": null,
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/13/legislation.html",
+          "attachments": []
+        }
+      ]
+    }
+  }
+}

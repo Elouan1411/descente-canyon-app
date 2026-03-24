@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:43.932087+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23115,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23115/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23115/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23115/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23115/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23115,
+    "identity": {
+      "nom": "Mauthener Klamm",
+      "nomComplet": "Mauthener Klamm, Valentinbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23115/Mauthener-Klamm.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Carinthie",
+      "departement": "Hermagor",
+      "communePrincipale": "Lesachtal",
+      "communes": [
+        "Kötschach-Mauthen",
+        "Lesachtal"
+      ],
+      "massif": "Alpes Carniques - Carniche - Karnischen",
+      "bassin": "Gail",
+      "coursEau": "Valentinbach"
+    },
+    "rating": {
+      "cotation": "v3a4V",
+      "interet": 1.8,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 910,
+      "deniveleM": 110,
+      "longueurM": 4000,
+      "cascadeMaxM": 12,
+      "cordeMiniM": 15,
+      "navette": "6.0km"
+    },
+    "timings": {
+      "approche": "7min",
+      "descente": "2h30",
+      "retour": "40min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": "Il est possible de faire l'approche sans navette par \"Römerweg\" : compter 1h30.",
+      "descente": "Quelques sauts, désescalades, pas de rappel (en 2013) et de la marche.",
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23115,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.637615,
+        "longitude": 12.959651,
+        "label": "au-dessous de la passerelle"
+      },
+      {
+        "canyonId": 23115,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.653069,
+        "longitude": 12.98202,
+        "label": "sortie vers sentier"
+      },
+      {
+        "canyonId": 23115,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 46.636227,
+        "longitude": 12.955209,
+        "label": null
+      },
+      {
+        "canyonId": 23115,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 46.659389,
+        "longitude": 12.998478,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 46.636227,
+      "longitude": 12.955209,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_c53735ebffb796f9",
+          "kind": "MAP",
+          "title": "223 Naturarena Kärnten-Gailtal, Gitschtal, Lesachtal, Weissensee, Oberes Drautal (Freytag & Berndt)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_69f63e4ee6571a0c",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/C...../MauthnerKlammCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/C...../MauthnerKlammCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

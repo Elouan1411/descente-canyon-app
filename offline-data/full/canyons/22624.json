@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:43.117143+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22624,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22624/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22624/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22624/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22624/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22624,
+    "identity": {
+      "nom": "San Andres",
+      "nomComplet": "Barranco San Andres",
+      "prefixeNom": "Barranco",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22624/San-Andres.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Aragón",
+      "departement": "Huesca",
+      "communePrincipale": "Olvena",
+      "communes": [
+        "Olvena"
+      ],
+      "massif": "Sierra de la Carrodilla",
+      "bassin": "Esera",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1II",
+      "interet": 2.4,
+      "nbVotes": 10
+    },
+    "metrics": {
+      "altitudeDepartM": 510,
+      "deniveleM": 120,
+      "longueurM": 320,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "50min",
+      "descente": "2h",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "De Barbastro, prendre la N123 en direction de Benabarre. Peu avant le point kilométrique 17 sur la droite, un GR part au niveau d'une aire d'arrêt (bitume rayé). Le marquage \"GR\" est 20 m plus loin sur le chemin qui monte.",
+      "accesAmont": null,
+      "approche": "Prendre le départ du GR (marquage rouge et blanc). Le suivre pendant 10 min jusqu'à trouver deux pointes rocheuses caractéristiques.\n\nLà, laisser le GR et prendre à gauche une petite sente plus ou moins tracée.\n\n10min plus tard vous arrivez au niveau de ruines qui vous offriront un beau point de vue sur le congosto d'Olvena.\n\nSuivre la sente....quelques rares kairns. De là vous cessez de longez la route et la sente bifurque un peu sur la droite (belle vue sur le premier encaissement du canyon) pour s'enfoncer dans une pinède avec des restanques.\n\nIl vous dépose sous la ligne haute tension.\n\nC'est le départ.",
+      "descente": "Début assez vertical et encaissé. Une partie intermédiaire ouverte blocs et boisée et de nouveau un encaissement qui annonce l'arrivée à la route.\n\nLa salle du 30m est de toute beauté et l'arrivée à la route laisse une sensation de décalage avec le speed des voitures.",
+      "retour": "Ne pas passer sous le pont comme avant.\n\nMais prendre la mini via ferrata qui arrive sur la route.\n\nPossibilité de se garer au niveau du pont (1 place)",
+      "engagement": "Sur le parties encaissées oui mais de courte durée.",
+      "periode": "Très peu d'eau et ceci surement quasi toute l'année.",
+      "geologie": null,
+      "historique": "Intégrale: Club pirineos de Saragosse en 1993.",
+      "remarques": "Niveau d'eau du Congosto d'Olvena à considérer pour la sortie.\n\nS'il est exceptionnellement haut (à s'approcher de très près du pont de sortie), prévoir une corde sur le panneau présent sur le pont pour remonter dessus (ça doit être très rare)."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22624,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.101311,
+        "longitude": 0.286546,
+        "label": null
+      },
+      {
+        "canyonId": 22624,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.105259,
+        "longitude": 0.28513,
+        "label": "passer le tunnel"
+      },
+      {
+        "canyonId": 22624,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 42.104679,
+        "longitude": 0.268489,
+        "label": "depart GR"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 42.104679,
+      "longitude": 0.268489,
+      "label": "depart GR"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

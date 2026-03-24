@@ -1,0 +1,164 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:46.759706+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21802,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21802/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21802/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21802/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21802/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21802,
+    "identity": {
+      "nom": "Hidan (supérieur-II)",
+      "nomComplet": "Wadi el Hidan (supérieur-II)",
+      "prefixeNom": "Wadi el",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21802/Hidan-superieur-II.html"
+    },
+    "location": {
+      "pays": "Jordanie",
+      "region": "Dhiban",
+      "departement": "Madaba",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Moab",
+      "bassin": "Dead Sea",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a4IV",
+      "interet": 2.5,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 70,
+      "deniveleM": 170,
+      "longueurM": 5000,
+      "cascadeMaxM": 10,
+      "cordeMiniM": 15,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "45min",
+      "descente": "4h",
+      "retour": "1h30"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "Hidan sup. jusqu'à la C80. Ici commence el Hidan inf. - interdit (dernière partie du Hidan inf. - Hidan Siq - possible avec guide de RSCN - \"Malaqa Trail\" - 45 JD)"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21802,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 31.503813,
+        "longitude": 35.681438,
+        "label": null
+      },
+      {
+        "canyonId": 21802,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 31.504526,
+        "longitude": 35.680996,
+        "label": null
+      },
+      {
+        "canyonId": 21802,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 31.489779,
+        "longitude": 35.673969,
+        "label": null
+      },
+      {
+        "canyonId": 21802,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 31.484665,
+        "longitude": 35.677071,
+        "label": "deuxième entrée du canyon et échappatoire pour la première partie"
+      },
+      {
+        "canyonId": 21802,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 31.474499,
+        "longitude": 35.652111,
+        "label": "point de retour avant la grande cascade (100m?) - point non sûr"
+      },
+      {
+        "canyonId": 21802,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 31.476454,
+        "longitude": 35.657806,
+        "label": "Sortie du canyon avant la grande cascade (100m?)"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 31.504526,
+      "longitude": 35.680996,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_e73561c6eef5faa5",
+          "kind": "TOPOGUIDE",
+          "title": "Walking in Jordan",
+          "authors": [
+            "Taylor/Howard"
+          ],
+          "publicationYear": 2002,
+          "reference": "1-56656-379-8",
+          "editor": "Interlink Books",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1176/topoguide.html"
+        },
+        {
+          "id": "biblio_1a056ec74c5c542b",
+          "kind": "TOPOGUIDE",
+          "title": "Trekking and Canyoning in the Jordanian Dead Sea Rift",
+          "authors": [
+            "Itai Haviv"
+          ],
+          "publicationYear": 2000,
+          "reference": "965-90315-0-5",
+          "editor": "Desert Breeze Press",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1175/topoguide.html"
+        }
+      ],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_be421fe23184a270",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/viewau.....ons/HidanUpperCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/viewau.....ons/HidanUpperCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

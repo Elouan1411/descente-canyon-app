@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:26.631269+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22547,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22547/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22547/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22547/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22547/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22547,
+    "identity": {
+      "nom": "Lavencou",
+      "nomComplet": "Ravin du Lavencou, Ruisseau de Lavencou",
+      "prefixeNom": "Ravin du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22547/Lavencou.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Aveyron",
+      "communePrincipale": "Saint-Georges-de-Luzençon",
+      "communes": [
+        "Saint-Georges-de-Luzençon"
+      ],
+      "massif": "Causse du Larzac",
+      "bassin": "Tarn",
+      "coursEau": "Ruisseau de Lavencou"
+    },
+    "rating": {
+      "cotation": "v4a1II",
+      "interet": 1.4,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 676,
+      "deniveleM": 113,
+      "longueurM": 210,
+      "cascadeMaxM": 45,
+      "cordeMiniM": 50,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "1h15",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "A St Georges de Luzençon prendre direction Saint Geniez de Bertrand, traverser le village en direction de Brouzes du Larzac. Au premier embranchement dans la côte, se garer. Laisser le véhicule là (il y a un banc).\n\nSi approche directe, descendre l'ancienne route jusqu'à l'éboulement.",
+      "accesAmont": null,
+      "approche": "Remonter la route direction Brouzes. Dans la dernière épingle à gauche, prendre la route à droite puis 500m plus loin, 1er chemin à droite. Longer les barbelés jusqu'à apercevoir le canyon.\n\nDepuis 2013, un accès direct existe : il s'agit d'une sente maintenant bien marquée, ouverte pour le passage de la \"Verticausse\", joli trail local. La prendre 100m en amont du pont : première partie très raide jusqu'à couper le talweg juste au-dessus de la C10. En haut, passer le portillon puis prendre à gauche une piste qui coupe le ravin.",
+      "descente": "Descente en 4 rappels .\n\nR1 45m en RD ou R1 bis caché à G 20m sous une arche + 20m d'un palier .\n\nR2 5m pouvant se schunter par la G .\n\ncourte marche encombrée de végétation\n\nR3 10m .\n\nR4 30m avec MC d'accès en place.\n\nA l'arrivée, possibilité de spéléo dans la grotte du Lavencou : rivière souterraine avec étroitures ...",
+      "retour": "Remonter la route jusqu'à la voiture.",
+      "engagement": "Échappatoires difficiles par les bords du ravin, mais possible par le haut ou le bas juste avant la C10.",
+      "periode": "Toujours sec ; situé en versant Nord .",
+      "geologie": "Bajocien au contact des marnes liasiques .",
+      "historique": null,
+      "remarques": "Le dernier rappel arrive non loin du porche de la grotte du Lavencou , accès à la rivière souterraine qui résurge au pied du ravin . D'un dévelopement de 1250m , elle a été exploré par L.Balsan en 1933."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22547,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.039204,
+        "longitude": 3.035833,
+        "label": "en haut de la falaise"
+      },
+      {
+        "canyonId": 22547,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 44.043938,
+        "longitude": 3.037797,
+        "label": "embranchement"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.043938,
+      "longitude": 3.037797,
+      "label": "embranchement"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_d3e053ba35315a0b",
+          "kind": "MAP",
+          "title": "2541 OT Millau - St Affrique (IGN TOP25 / série bleue)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

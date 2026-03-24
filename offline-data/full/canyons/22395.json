@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:52.765793+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22395,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22395/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22395/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22395/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22395/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22395,
+    "identity": {
+      "nom": "Schoßbach",
+      "nomComplet": "Schoßbach, Schoßrinn-Fall",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22395/Schoßbach.html"
+    },
+    "location": {
+      "pays": "Allemagne",
+      "region": "Bayern",
+      "departement": "Oberbayern",
+      "communePrincipale": "Aschau im Chiemgau",
+      "communes": [
+        "Landkreis Rosenheim",
+        "Aschau im Chiemgau"
+      ],
+      "massif": "Chiemgauer Alpen - Alpes de Chiemgau",
+      "bassin": "Prien-Chiemsee",
+      "coursEau": "Schoßbach"
+    },
+    "rating": {
+      "cotation": "v6a2III",
+      "interet": 3.0,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 960,
+      "deniveleM": 260,
+      "longueurM": 610,
+      "cascadeMaxM": 80,
+      "cordeMiniM": 85,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "50min",
+      "descente": "3h",
+      "retour": "25min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22395,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.740765,
+        "longitude": 12.290783,
+        "label": null
+      },
+      {
+        "canyonId": 22395,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.73941,
+        "longitude": 12.299109,
+        "label": null
+      },
+      {
+        "canyonId": 22395,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.749237,
+        "longitude": 12.306619,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.749237,
+      "longitude": 12.306619,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_ab5503dd3abdeea8",
+          "kind": "MAP",
+          "title": "8239 Aschau im Chiemgau (Bayerisches Landesvermessungsamt)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_819d03fdf33cd2fd",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.geodaten.bayern.de/BayernView.....0070&layer=TK&step=4",
+          "url": "http://www.geodaten.bayern.de/BayernView.....0070&layer=TK&step=4"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

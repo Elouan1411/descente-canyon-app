@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:49:07.488630+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21363,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21363/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21363/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21363/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21363/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21363,
+    "identity": {
+      "nom": "Caou de l'Oule",
+      "nomComplet": "Caou de l'Oule",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21363/Caou-de-l-Oule.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Hautes-Pyrénées",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": "Aure",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a2III",
+      "interet": 2.7,
+      "nbVotes": 9
+    },
+    "metrics": {
+      "altitudeDepartM": 1930,
+      "deniveleM": 350,
+      "longueurM": 1000,
+      "cascadeMaxM": 45,
+      "cordeMiniM": 45,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "50min",
+      "descente": "3h30",
+      "retour": "5-10min"
+    },
+    "topo": {
+      "accesAval": "Traverser Saint-Lary-Soulan en direction de l'Espagne (tunnel de Bielsa). Environ 3 km après Saint-Lary, prendre à gauche vers Tramezaïgues. Traverser le village et continuer en direction de la vallée de Rioumajou. Continuer la route jusqu'à Frédançon puis continuer sur la piste jusqu'à l'Hospice de Rioumajou -terminus (attention, réglementation sur les horaires de circulation sur la piste : interdit de 12h à 16h).",
+      "accesAmont": null,
+      "approche": "De l'Hospice de Rioumajou, 2 chemins possibles :\n\nSoit en commençant par le GR, plus long et moins raide : prendre le vallon qui part vers l'ouest-sud ouest et un sentier au 4ième lacet en épingle. Puis vers 1900m, couper au mieux vers la droite (direction Nord-Ouest) pour rejoindre un ruisseau affluent (sur un devers, viser la confluence de 2 petits ruisseaux vers la cote 1930m).\n\nSoit une approche rapide RD en remontant \"raide\" dans les pentes d'herbes, sentier bien marqué et balisé en jaune, qui vous amène en une heure vers le même point.",
+      "descente": "On commence par un petit ruisseau peu encaissé avec quelques obstacles sur lunules contournables, avant de rejoindre sur de belles dalles le ruisseau d'Arriouère (amarrages à l'abri RG non visibles de l'amont).\n\nEnchaînement d'une quinzaine de rappels sur amarrages naturels, lunules, goujons, avec encore quelques mono-points.\n\nBeau cadre de montagne.\n\nCanyon avec quelques enchaînements peu encaissés.",
+      "retour": "A la fin des difficultés (confluence avec le ruisseau de l'Estat), sortir et rejoindre l'Hospice de Rioumajou.",
+      "engagement": "On peut contourner certains obstacles et s'échapper à de nombreuses reprises...",
+      "periode": "Eté.",
+      "geologie": "Schistes",
+      "historique": null,
+      "remarques": "Prévoir du matériel de ré-équipement, en particulier pour les lunules"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21363,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.706322,
+        "longitude": 0.281288,
+        "label": null
+      },
+      {
+        "canyonId": 21363,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.707291,
+        "longitude": 0.28918,
+        "label": null
+      },
+      {
+        "canyonId": 21363,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 42.708103,
+        "longitude": 0.294464,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 42.708103,
+      "longitude": 0.294464,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_ea58b8fc020a675e",
+          "kind": "MAP",
+          "title": "1748 ET Neouvielle (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

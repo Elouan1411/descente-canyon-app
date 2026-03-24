@@ -1,0 +1,156 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:45.669978+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21797,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21797/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21797/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21797/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21797/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21797,
+    "identity": {
+      "nom": "Oëx",
+      "nomComplet": "Cascades d' Oëx",
+      "prefixeNom": "Cascades d'",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21797/Oex.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Haute-Savoie",
+      "communePrincipale": "Magland",
+      "communes": [
+        "Magland"
+      ],
+      "massif": null,
+      "bassin": "Arve",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a1II",
+      "interet": 1.4,
+      "nbVotes": 14
+    },
+    "metrics": {
+      "altitudeDepartM": 690,
+      "deniveleM": 140,
+      "longueurM": 300,
+      "cascadeMaxM": 40,
+      "cordeMiniM": 40,
+      "navette": "3.5km"
+    },
+    "timings": {
+      "approche": "2min",
+      "descente": "1h15",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "au niveau du hameau d'Oëx, à côté des containers à verre/papier et d'un arrêt de bus.\n\nAvec l'autre véhicule, longez la nationale par la petite route en direction de Magland. Dans la Grangeat, prenez la première route à droite. Lorsque vous atteignez dans une épingle à gauche un stockage de bois et d'engins. Garez-vous au mieux sans gêner le passage des véhicules. Quelques places sont disponibles dans le virage au dessus.",
+      "accesAmont": null,
+      "approche": "Descendez la route une dizaine de mètres et rapidement, gagnez le ruisseau en prenant garde aux clôtures électriques.",
+      "descente": "Faiblement encaissé, le ruisseau comporte des grandes cascades (entre 30 et 40m) entrecoupées de ressauts sculptés et séparés de vasques jamais très profondes.",
+      "retour": "Arrivés à la dernière cascade, sortez dans le village et suivez la première rue à gauche qui conduit rapidement à la voiture.",
+      "engagement": "Un sentier RG avant la dernière cascade. Descente peu engagée.",
+      "periode": "Jamais beaucoup d'eau. Eviter le grand étiage car l'eau est polluée.\n\nPrésence de glace en hiver qui doit recouvrir les relais.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Eau polluée. Présence d'algues."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21797,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.990833,
+        "longitude": 6.638611,
+        "label": null
+      },
+      {
+        "canyonId": 21797,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.988808,
+        "longitude": 6.634056,
+        "label": null
+      },
+      {
+        "canyonId": 21797,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 45.990833,
+        "longitude": 6.638083,
+        "label": null
+      },
+      {
+        "canyonId": 21797,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 45.987499,
+        "longitude": 6.632222,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 45.990833,
+      "longitude": 6.638083,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_87a84633f292e5a0",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons de Haute-Savoie (réédition)",
+          "authors": [
+            "Ch. Charletty",
+            "G. Gudefin",
+            "B. Hugon",
+            "J-P. Beaudoin"
+          ],
+          "publicationYear": 2004,
+          "reference": "ISBN: 2741702888",
+          "editor": "GAP",
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/128/Canyons-de-Haute-Savoie.html"
+        },
+        {
+          "id": "biblio_1e61b240bec55aed",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons de Haute Savoie",
+          "authors": [
+            "Christian Charletty",
+            "Gérard Gudefin",
+            "Bruno Hugon",
+            "Comité Départemental de Spéléologie 74"
+          ],
+          "publicationYear": 1997,
+          "reference": "ISBN 2-7417-0202-0",
+          "editor": "Gap",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/19/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_15a6dbda97b38ace",
+          "kind": "MAP",
+          "title": "3530 ET Samoens - Haut-Giffre (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

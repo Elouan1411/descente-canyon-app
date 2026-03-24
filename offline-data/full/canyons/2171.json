@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:44:22.652464+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2171,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2171/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2171/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2171/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2171/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2171,
+    "identity": {
+      "nom": "Combe Buffière",
+      "nomComplet": "Gorges de la Combe Buffière",
+      "prefixeNom": "Gorges de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2171/Combe-Buffiere.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Ain",
+      "communePrincipale": "Boyeux-Saint-Jérôme",
+      "communes": [
+        "Boyeux-Saint-Jérôme"
+      ],
+      "massif": "Bugey",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1I",
+      "interet": 0.6,
+      "nbVotes": 12
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": null,
+      "longueurM": 1250,
+      "cascadeMaxM": 35,
+      "cordeMiniM": 40,
+      "navette": "8.0km"
+    },
+    "timings": {
+      "approche": "3min",
+      "descente": "2h",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "de la Fouge. Avec l'autre voiture, prendre la D11 en direction de Corlier. Passer Chatillon-de-Cornelle, continuer à monter, et au niveau d'un petit col repérer sur la gauche une piste (ancienne route) à l'entrée de laquelle on stationnera.",
+      "accesAmont": null,
+      "approche": "Du parking, suivre la piste (ancienne route) jusqu'à la clôture d'un pré que l'on franchira (veiller à bien refermer derrière soi). Le départ de la combe est dans la prairie, au fond du thalweg (barbelés).",
+      "descente": "On commence directement par une première série de cascades. Il faut ensuite marcher jusqu'à une prairie où l'on risque de perdre le ruisseau tellement il est peu marqué (!!). Traverser les orties pour bientôt arriver à la deuxième série de cascades. Encore un peu de marche avant la dernière série de cascades (micro-résurgence au pied de la C35)",
+      "retour": "A la confluence avec la Fouge, prendre le sentier des cascades vers la gauche jusqu'au parking.",
+      "engagement": "Peu engagé",
+      "periode": "Certainement jamais d'eau sauf crues exceptionnelles.",
+      "geologie": null,
+      "historique": "GSHL en février 1999",
+      "remarques": "Très peu d'intérêt."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2171,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.040615,
+        "longitude": 5.487552,
+        "label": null
+      },
+      {
+        "canyonId": 2171,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.052338,
+        "longitude": 5.486288,
+        "label": null
+      },
+      {
+        "canyonId": 2171,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 46.040016,
+        "longitude": 5.483472,
+        "label": null
+      },
+      {
+        "canyonId": 2171,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 46.062515,
+        "longitude": 5.466102,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 46.040016,
+      "longitude": 5.483472,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_e9fa736554a413b8",
+          "kind": "MAP",
+          "title": "3230 O",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

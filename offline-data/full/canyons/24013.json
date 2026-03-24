@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:52.813640+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24013,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24013/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24013/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24013/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24013/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24013,
+    "identity": {
+      "nom": "Verdon",
+      "nomComplet": "Sources du Verdon",
+      "prefixeNom": "Sources du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24013/Verdon.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-de-Haute-Provence",
+      "communePrincipale": "Allos",
+      "communes": [
+        "Allos"
+      ],
+      "massif": "Massif des 3 Evêchés - Estrop",
+      "bassin": "Verdon",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a4I",
+      "interet": 3.0,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 2100,
+      "deniveleM": 170,
+      "longueurM": 800,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "1h",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "Se garer au parking au grand lacet du Col d'Allos (D908) à la sortie de Foux d'Allos vers le col. Piste avec barrière.",
+      "accesAmont": null,
+      "approche": "Suivre sur piste au long du Verdon sur l'alpage de Sestrière.",
+      "descente": "Un ressaut du jeune Verdon à 2100 m (départ), après l'alpage de Sestrière plusieurs ressauts en terrain ouvert. Accès et sortie partout possible. Sortie au niveau des lacs d'enneigement artificiel. quelques petits sauts possibles.",
+      "retour": "Piste retour au parking.",
+      "engagement": "En début d'été ca coule bien, rappels arrosés",
+      "periode": "Juin - Octobre, après la fonte de neige (sinon débit trop important)",
+      "geologie": null,
+      "historique": "19.06.2016 Timo Stammwitz",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24013,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.30975,
+        "longitude": 6.553417,
+        "label": null
+      },
+      {
+        "canyonId": 24013,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.304474,
+        "longitude": 6.558111,
+        "label": null
+      },
+      {
+        "canyonId": 24013,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.299667,
+        "longitude": 6.567083,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.299667,
+      "longitude": 6.567083,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_d6e6a467efd43886",
+          "kind": "MAP",
+          "title": "3540 Ouest Allos (IGN S?rie Bleue)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

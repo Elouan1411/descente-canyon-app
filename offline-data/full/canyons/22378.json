@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:49.254809+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22378,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22378/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22378/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22378/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22378/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22378,
+    "identity": {
+      "nom": "Tuxbach (inf.)",
+      "nomComplet": "Tuxbach (inf.), Tuxbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22378/Tuxbach-inf-.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Tyrol",
+      "departement": "Politischer Bezirk Schwaz",
+      "communePrincipale": "Finkenberg",
+      "communes": [
+        "Mayrhofen",
+        "Finkenberg"
+      ],
+      "massif": "Tuxer Alpen",
+      "bassin": "Ziller",
+      "coursEau": "Tuxbach"
+    },
+    "rating": {
+      "cotation": "v4a4V",
+      "interet": 2.8,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 875,
+      "deniveleM": 210,
+      "longueurM": 900,
+      "cascadeMaxM": 22,
+      "cordeMiniM": 30,
+      "navette": "3.0km"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "3h30min",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "automatischer Entsander (ouvrage automatique) en amont - très dangereux"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22378,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.150414,
+        "longitude": 11.817298,
+        "label": null
+      },
+      {
+        "canyonId": 22378,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.156151,
+        "longitude": 11.835279,
+        "label": null
+      },
+      {
+        "canyonId": 22378,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 47.156551,
+        "longitude": 11.838353,
+        "label": null
+      },
+      {
+        "canyonId": 22378,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.153664,
+        "longitude": 11.824658,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.156551,
+      "longitude": 11.838353,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

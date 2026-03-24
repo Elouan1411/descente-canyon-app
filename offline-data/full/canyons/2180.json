@@ -1,0 +1,164 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:44:25.454274+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2180,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2180/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2180/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2180/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2180/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/2180/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 2180,
+    "identity": {
+      "nom": "Sandezanne",
+      "nomComplet": "Cascades de la Sandezanne",
+      "prefixeNom": "Cascades de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2180/Sandezanne.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Ain",
+      "communePrincipale": "Montanges",
+      "communes": [
+        "Montanges"
+      ],
+      "massif": "Jura",
+      "bassin": "Rhône",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a2II",
+      "interet": 2.3,
+      "nbVotes": 18
+    },
+    "metrics": {
+      "altitudeDepartM": 520,
+      "deniveleM": 80,
+      "longueurM": 350,
+      "cascadeMaxM": 45,
+      "cordeMiniM": 50,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15",
+      "descente": "1h15",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "De Montanges, prendre la D14a en direction de Confort. Stationner au niveau du Pont des Pierres sur la Valserine.\n\nGrand parking avant le pont sur la droite en face du chemin d'accès et de retour.",
+      "accesAmont": null,
+      "approche": "Repérer un bon sentier en RD de la Valserine avant le pont. Le suivre puis très vite repérer sur la gauche une pente forestière raide mais dégagée que l'on remonte jusqu'à des prés. Longer les prés en bordure des arbres direction nord/nord-est, sans abîmer les clôtures ni effrayer les troupeaux . On coupe ensuite rapidement le ruisseau de la Sandezanne. (Clôture en barbelés aimablement protégée par des tubes plastiques à l'entrée et à la sortie du parc).\n\nVariante : emprunter le chemin balisé au dessus du mur longeant la route, puis monter à droite une sente dans la forêt jusqu'au champs)",
+      "descente": "Une première petite cascade juste sous le pré donne dans un beau petit couloir. Puis une C25, un passage sous bloc et la C45 (amarrages sur arbre, bien vérifier l'état des sangles).\n\nDépart de main courante sous bloc RG + relais hors d'eau remplacent l'amarrage sur arbre.",
+      "retour": "Peu après la dernière cascade, prendre en RD un bon sentier qui passe devant une grotte et rejoint ensuite la piste empruntée à l'aller puis la voiture, ou bien descendre quelques mètres la Valserine (floating) pour retrouver le sentier en RD (sous réserve d'un arrêté récent interdisant la descente de canyon dans la Valserine).",
+      "engagement": null,
+      "periode": "Généralement sec ou quasi-sec en été.\n\nPar débit important se méfier de la grande vasque en bas de la C25, possibilité de l'éviter par la droite avant d'arriver dans l'eau et de ravaler au même endroit.",
+      "geologie": null,
+      "historique": "Spéléo Club de la MJC de Bellegarde.",
+      "remarques": "Le topo-guide du GSHL est périmé : il est inutile de chercher à traverser la Valserine !!!"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2180,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.168056,
+        "longitude": 5.810278,
+        "label": null
+      },
+      {
+        "canyonId": 2180,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.166943,
+        "longitude": 5.811389,
+        "label": null
+      },
+      {
+        "canyonId": 2180,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.164444,
+        "longitude": 5.810278,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.164444,
+      "longitude": 5.810278,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_856212416a724a24",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons et Cascades de l'Ain",
+          "authors": [
+            "B. Hugon",
+            "D. Gritti",
+            "P. Flochon",
+            "Groupe Spéléo d'Hauteville-Lompnès"
+          ],
+          "publicationYear": 2002,
+          "reference": null,
+          "editor": null,
+          "status": "en stock\n\n- 14,99 € -\n\nCommandez cet ouvrage dès maintenant !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/167/Canyons-et-Cascades-de-l-Ain.html"
+        },
+        {
+          "id": "biblio_bb6feb754aea9b5a",
+          "kind": "TOPOGUIDE",
+          "title": "Cascades, gorges et canyons du Haut Jura",
+          "authors": [
+            "Dominique Guyetand",
+            "Jean-Luc Lacroix"
+          ],
+          "publicationYear": 1992,
+          "reference": "ISBN 2-85744-590-3",
+          "editor": "Edisud",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/119/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_4fd64cd219e37210",
+          "kind": "MAP",
+          "title": "3330 OT Bellegarde-sur-Valserine (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 297,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Convention - 20 déc 2011",
+          "summary": "Une convention a été signée entre les pêcheurs et les canyonistes. Concernant la pratique du canyonisme, il convient de respecter les règles suivantes :\n\n- entrée après 9h30 et sortie avant 18h.\n\n- marche sur les berges dès que la flottaison n'est plus possible.\n\n- respect des propriétés traversées (pas de détritus ni d'abandon de cordes), ni d'intervention sur les arbres tombés sans concertation.",
+          "remark": null,
+          "details": "Convention entre les pratiquants de la pêche et ceux du canyoning",
+          "effectiveDate": "20 déc 2011",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/297/legislation.html",
+          "attachments": [
+            {
+              "label": "Convention entre les pratiquants de la pêche et ceux du canyoning",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem297_pj1.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

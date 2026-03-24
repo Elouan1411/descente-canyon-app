@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:03.348301+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22159,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22159/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22159/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22159/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22159/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22159,
+    "identity": {
+      "nom": "Peregrina",
+      "nomComplet": "Cabouco de Peregrina, Ribeira de Estraga",
+      "prefixeNom": "Cabouco de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22159/Peregrina.html"
+    },
+    "location": {
+      "pays": "Cap-Vert",
+      "region": null,
+      "departement": "Ribeira Grande",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1III",
+      "interet": 2.0,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 600,
+      "deniveleM": 550,
+      "longueurM": 1200,
+      "cascadeMaxM": 49,
+      "cordeMiniM": 50,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "5h",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": "De Ribeira Grande prendre la route en direction de Porto Novo sur environ 4 km. Passer une seule maison à gauche. Il y a une vue sur le cirque avec le canyon Peregrina. Continuer quelques centaines de mètres jusqu'aux maisons de Estraga. Ensuite à la gauche de la route une petite maison avec balise bleue, point de départ de l'approche.\n\nL'autre voiture vient de la ville Ribeira Grande aussi. Monter par la Ribeira de Torre sur environ 2,5 km jusqu'á Longeira.",
+      "accesAmont": null,
+      "approche": "Passer la petite maison avec balise bleue et descendre à droite vers le canyon. Rappel de l'arbre.",
+      "descente": "Départ herbeux ; après 50 m commence une succession de rappels, canyon ouvert.",
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": "Vulkan-Conglomérat",
+      "historique": null,
+      "remarques": "Sec."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22159,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 17.172955,
+        "longitude": -25.073059,
+        "label": null
+      },
+      {
+        "canyonId": 22159,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 17.172703,
+        "longitude": -25.069342,
+        "label": null
+      },
+      {
+        "canyonId": 22159,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 17.172754,
+        "longitude": -25.073317,
+        "label": null
+      },
+      {
+        "canyonId": 22159,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 17.17277,
+        "longitude": -25.06822,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 17.172754,
+      "longitude": -25.073317,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_a0b95353ed9c3736",
+          "kind": "MAP",
+          "title": "Santo Antâo (Goldstadt-Wanderkarte)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_6f904f2c7e599cc6",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.caboverdenolimits.com/cuadros_barrancos.html",
+          "url": "http://www.caboverdenolimits.com/cuadros_barrancos.html"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

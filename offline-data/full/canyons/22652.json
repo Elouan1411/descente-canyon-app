@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:48.832235+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22652,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22652/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22652/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22652/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22652/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22652,
+    "identity": {
+      "nom": "Meisi",
+      "nomComplet": "Meisi, Meisibach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22652/Meisi.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Alpnach",
+      "departement": "Obwald",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Pilatus",
+      "bassin": null,
+      "coursEau": "Meisibach"
+    },
+    "rating": {
+      "cotation": "v4a2II",
+      "interet": 1.4,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 1304,
+      "deniveleM": 514,
+      "longueurM": 1200,
+      "cascadeMaxM": 50,
+      "cordeMiniM": 55,
+      "navette": "4.0km"
+    },
+    "timings": {
+      "approche": "50min",
+      "descente": "4h",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": "Se rendre à Alpnach. Au pont prendre la route rive gauche pour remonter vers Denneten. Après les dernières maisons entrer dans la forêt, au premier pont se garer.",
+      "accesAmont": null,
+      "approche": "2 possibilités:\n\n- l'intégral se fait avec une navette en remontant vers Denneten. Puis rejoindre le ruisseau à pied.\n\n- la partie basse se fait en prenant le sentier qui se trouve en contre bas du pont et longe la rive gauche du canyon (50min). Le sentier est mal tracé en sa fin, mais il rejoint la rivière.",
+      "descente": "Pour l'intégral, l'encaissement est faible dans la partie haute. La vue sur le chaos est superbe.\n\nLa 2ième partie (2h) est plus encaissée et plus continue. Les échappatoires sont nombreux.",
+      "retour": null,
+      "engagement": "Canyon bien équipé (2points)",
+      "periode": "Juin-Septembre",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22652,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.958668,
+        "longitude": 8.241677,
+        "label": null
+      },
+      {
+        "canyonId": 22652,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.948681,
+        "longitude": 8.244209,
+        "label": null
+      },
+      {
+        "canyonId": 22652,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 46.948563,
+        "longitude": 8.244467,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.948563,
+      "longitude": 8.244467,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_e7230742395ab373",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://groupespeleoalsace.free.fr/",
+          "url": "http://groupespeleoalsace.free.fr/"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

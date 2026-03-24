@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:42.289448+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22618,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22618/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22618/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22618/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22618/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/22618/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 22618,
+    "identity": {
+      "nom": "Villette",
+      "nomComplet": "Vallon de la Villette, La Villette",
+      "prefixeNom": "Vallon de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22618/Villette.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-Maritimes",
+      "communePrincipale": "Pierlas",
+      "communes": [
+        "Pierlas"
+      ],
+      "massif": null,
+      "bassin": "Cians",
+      "coursEau": "La Villette"
+    },
+    "rating": {
+      "cotation": "",
+      "interet": 1350.0,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": 1350,
+      "deniveleM": 150,
+      "longueurM": 1800,
+      "cascadeMaxM": null,
+      "cordeMiniM": null,
+      "navette": null
+    },
+    "timings": {
+      "approche": null,
+      "descente": null,
+      "retour": null
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": "Ouvert le 23 04 2011 par Pierre , Robert et Pilou",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22618,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.052711,
+        "longitude": 7.035155,
+        "label": null
+      },
+      {
+        "canyonId": 22618,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.04071,
+        "longitude": 7.034039,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 44.052711,
+      "longitude": 7.035155,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 543,
+          "status": "Actif",
+          "action": "Interdit",
+          "title": "Arrêté municipal (Pierlas) - 21 mai 2024",
+          "summary": "La pratique de l'escalade et du canyoning sont interdit sur toute la commune...",
+          "remark": "La raison invoquée est simplement... un risque d'accident majeur. (?)",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nArrêté municipal n°2024-01 du 21 mai 2024 (commune de Pierlas)",
+          "effectiveDate": "21 mai 2024",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/543/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté municipal n°2024-01 du 21 mai 2024 (commune de Pierlas)",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem543_pj1.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

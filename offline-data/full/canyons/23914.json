@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:33.987476+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23914,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23914/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23914/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23914/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23914/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23914,
+    "identity": {
+      "nom": "Arpil",
+      "nomComplet": "Ravin d' Arpil",
+      "prefixeNom": "Ravin d'",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23914/Arpil.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-de-Haute-Provence",
+      "communePrincipale": "Saint-Geniez",
+      "communes": [
+        "Saint-Geniez"
+      ],
+      "massif": null,
+      "bassin": "Durance",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 0.8,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 950,
+      "deniveleM": 170,
+      "longueurM": 500,
+      "cascadeMaxM": 10,
+      "cordeMiniM": 15,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "10min",
+      "descente": "1h",
+      "retour": "1h"
+    },
+    "topo": {
+      "accesAval": "De Sisteron se rendre à Saint-Geniez par la D3. Juste après ce village prendre à droite vers Sorine. Garez-vous dans ce hameau sans gêner (pas évident).",
+      "accesAmont": null,
+      "approche": "A l'entrée du hameau la route fait un virage à droite à 90°. Sur votre gauche démarre une piste herbeuse la suivre, celle ci descend dans dans des champs. Entrer dans le ravin par l'affluent rencontré.",
+      "descente": "Un passage original sous blocs effondrés dans l'affluent puis 3 ou 4 rappels dans le \"collecteur\".",
+      "retour": "A la fin de la partie verticale sortir à droite pour tomber sur une piste. Remonter cette piste puis par des sentiers jusqu'au hameau des Naux (voir carte IGN) et rejoindre le hameau de Sorine.",
+      "engagement": "Mises hors-crues faciles",
+      "periode": "A faire à la fontes des neiges ou après de fortes pluies pour profiter d'un bon débit",
+      "geologie": null,
+      "historique": "Équipement minimaliste en 8 mm posé le 05/06/2017",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23914,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.21431,
+        "longitude": 6.045258,
+        "label": null
+      },
+      {
+        "canyonId": 23914,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.209461,
+        "longitude": 6.045354,
+        "label": null
+      },
+      {
+        "canyonId": 23914,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.219501,
+        "longitude": 6.046449,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.219501,
+      "longitude": 6.046449,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_ec844e72d95ece0e",
+          "kind": "MAP",
+          "title": "3339 ET La Motte-Du-Caire (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

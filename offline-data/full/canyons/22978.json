@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:08.134498+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22978,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22978/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22978/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22978/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22978/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22978,
+    "identity": {
+      "nom": "Joux",
+      "nomComplet": "Cascades de la Joux",
+      "prefixeNom": "Cascades de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22978/Joux.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Haute-Savoie",
+      "communePrincipale": "Chamonix-Mont-Blanc",
+      "communes": [
+        "Chamonix-Mont-Blanc"
+      ],
+      "massif": "Chablais - Platé - Aiguilles Rouges",
+      "bassin": "Arve",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2IV",
+      "interet": 2.3,
+      "nbVotes": 6
+    },
+    "metrics": {
+      "altitudeDepartM": 1370,
+      "deniveleM": 100,
+      "longueurM": 200,
+      "cascadeMaxM": 18,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "45min",
+      "descente": "2h",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "Aller au Lieu-dit le Grassonnet, sur la route entre Chamonix et Argentière. Se garer sur le petit parking devant l'hébergement de vacances",
+      "accesAmont": null,
+      "approche": "Monter à pied en direction du site d'escalade de la Joux pour rejoindre le petit balcon sud, suivre la direction des Tines, puis prendre le sentier menant à la Flégère sur la droite (10-15min). A l'altitude 1340 dans une épingle à gauche, suivre une sente peu marquée s'enfonçant dans le bois à droite. Suivre la courbe de niveau entre l'altitude 1340 et 1370 jusqu'à couper le ruisseau.",
+      "descente": "Bel enchaînement de cascades dans un superbe cadre. C7 qui se contourne RG, C18, R2, R4, C8, C17, C18. Relais en rive gauche sauf pour la C8, peu de frottements. Le tout se termine avec un enchaînement de C4, C5 et C4 avec le même relais en rive gauche. Sortie rive gauche",
+      "retour": "A la patte d'oie du ruisseau, suivre le sentier qui repasse le long de la falaise d'escalade de la Joux, pour rejoindre ensuite l'itinéraire de montée.",
+      "engagement": "Pas d'échappatoire, relais sur spit en très bon état",
+      "periode": "Peu aquatique, on a quasi toujours pied. Période optimale de juillet à septembre",
+      "geologie": null,
+      "historique": "Equipement le 09 août 2013",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22978,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.971161,
+        "longitude": 6.908542,
+        "label": null
+      },
+      {
+        "canyonId": 22978,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.970509,
+        "longitude": 6.910492,
+        "label": null
+      },
+      {
+        "canyonId": 22978,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.96817,
+        "longitude": 6.913908,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.96817,
+      "longitude": 6.913908,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_c3cfac38474f19c2",
+          "kind": "MAP",
+          "title": "3630 OT Chamonix - Mont-Blanc (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

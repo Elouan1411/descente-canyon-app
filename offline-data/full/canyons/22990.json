@@ -1,0 +1,161 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:11.134655+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22990,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22990/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22990/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22990/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22990/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22990,
+    "identity": {
+      "nom": "Grosse Melchaa",
+      "nomComplet": "Grosse Melchaa",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22990/Grosse-Melchaa.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Sarnen",
+      "departement": "Obwald",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": "Sarnersee - Lac de Sarnen",
+      "coursEau": "Grosse Melchaa"
+    },
+    "rating": {
+      "cotation": "v2a5V",
+      "interet": 2.5,
+      "nbVotes": 5
+    },
+    "metrics": {
+      "altitudeDepartM": 625,
+      "deniveleM": 140,
+      "longueurM": 2700,
+      "cascadeMaxM": 9,
+      "cordeMiniM": 15,
+      "navette": "3.7km"
+    },
+    "timings": {
+      "approche": "25min",
+      "descente": "3h30min",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": "au village de Flüeli",
+      "approche": "De Flüeli un sentier descend vers cours d'eau",
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "Appeler le barrage (0041 416 665 103) avant de s'engager."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22990,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.874973,
+        "longitude": 8.273483,
+        "label": null
+      },
+      {
+        "canyonId": 22990,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.886665,
+        "longitude": 8.262228,
+        "label": null
+      },
+      {
+        "canyonId": 22990,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 46.873695,
+        "longitude": 8.269079,
+        "label": null
+      },
+      {
+        "canyonId": 22990,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 46.889332,
+        "longitude": 8.25438,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 46.873695,
+      "longitude": 8.269079,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_ee92621b53de3c8c",
+          "kind": "TOPOGUIDE",
+          "title": "Canyoning : Swiss Alps / Alpes Suisse",
+          "authors": [
+            "Association Openbach"
+          ],
+          "publicationYear": 2015,
+          "reference": "9782746679450",
+          "editor": "auto-edition",
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/195/Canyoning-:-Swiss-alps---Alpes-suisses-Vol-1.html"
+        },
+        {
+          "id": "biblio_41402b7e45455e7d",
+          "kind": "TOPOGUIDE",
+          "title": "Tour de l'Europe en Canyon - T1 - Suisse, Autriche, Italie du Nord, Slovénie",
+          "authors": [
+            "Caracal et les Sancho Panza"
+          ],
+          "publicationYear": 2008,
+          "reference": "978-2-9526064-2-4",
+          "editor": null,
+          "status": "en stock\n\n- 25,90 € -\n\nCommandez cet ouvrage dès maintenant !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/130/Tour-de-l-Europe-en-Canyon---T1---Suisse--Autriche--Italie-du-Nord--Slovenie.html"
+        },
+        {
+          "id": "biblio_a9e8ab63fe4e5775",
+          "kind": "TOPOGUIDE",
+          "title": "Canyoning en Suisse",
+          "authors": [
+            "Andreas Brunner et Frédéric Bétrisey"
+          ],
+          "publicationYear": 2001,
+          "reference": "ISBN 3-85902-195-8",
+          "editor": "Club Alpin Suisse CAS",
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/160/Canyoning-en-Suisse-1.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_191151af4e8aa8f6",
+          "kind": "MAP",
+          "title": "1190 Melchtal (Swisstopo)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

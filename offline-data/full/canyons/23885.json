@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:27.703972+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23885,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23885/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23885/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23885/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23885/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23885,
+    "identity": {
+      "nom": "Badde Doroné",
+      "nomComplet": "Badde Doroné",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23885/Badde-Dorone.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Sardegna",
+      "departement": "Nuoro",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 1.9,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 440,
+      "deniveleM": 200,
+      "longueurM": 2500,
+      "cascadeMaxM": 15,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h30",
+      "descente": "3h00",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": "Vallée de Lanaitto, par la SP46 depuis Dorgali ou Oliena.\n\nAller au fond de la vallée par une bonne piste. Au fond de la vallée la piste fait un grand virage à gauche (NW) : poursuivre jusqu'au bout du plat jusqu'à quelques emplacements pour se garer.",
+      "accesAmont": null,
+      "approche": "Sentier de Tiscali, balisé.\n\nA un moment, au lieu de bifurquer pour le sentier de Tiscali, continuer à monter vers le SW en direction d'un col, descendre derrière ce col jusqu'à rejoindre le ruisseau.",
+      "descente": "Quelques petits rappels sans difficultés.",
+      "retour": "En continuant toujours dans le lit du ruisseau on rejoint une piste, puis la piste empruntée à l'aller avec le véhicule.",
+      "engagement": null,
+      "periode": "Sec",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Pas incontournable mais peut se combiner avec une balade au site historique de Tiscali. Dans ce cas, depuis Tiscali, prendre un sentier qui rejoint directement le col cité dans le topo (bien visible sur Open Street Map)."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23885,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 40.2285,
+        "longitude": 9.490306,
+        "label": null
+      },
+      {
+        "canyonId": 23885,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 40.250965,
+        "longitude": 9.496,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 40.250965,
+      "longitude": 9.496,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_7eceecd7e0d2e77b",
+          "kind": "TOPOGUIDE",
+          "title": "Torrentismo in Sardegna",
+          "authors": [
+            "Corrado Conca"
+          ],
+          "publicationYear": 2009,
+          "reference": "978-88-88776-04-X",
+          "editor": "Segnavia",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1227/topoguide.html"
+        },
+        {
+          "id": "biblio_c574a587f0904006",
+          "kind": "TOPOGUIDE",
+          "title": "Canyoning en Sardaigne",
+          "authors": [
+            "Franck Jourdan et Jean-François Fiorina"
+          ],
+          "publicationYear": 2009,
+          "reference": null,
+          "editor": "auto-édition",
+          "status": "stock très réduit !\n\n- 18,50 € -\n\nCommandez cet ouvrage dès maintenant !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/137/Canyoning-en-Sardaigne.html"
+        },
+        {
+          "id": "biblio_a8fb4084ada5d3af",
+          "kind": "TOPOGUIDE",
+          "title": "Guida al Torrentismo in Sardegna",
+          "authors": [
+            "Conca"
+          ],
+          "publicationYear": 1993,
+          "reference": null,
+          "editor": "Soluzioni Grafiche",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1170/topoguide.html"
+        }
+      ],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_cc6fbadfeeb729e5",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://ropewiki.com/Badde_Dorone",
+          "url": "http://ropewiki.com/Badde_Dorone"
+        },
+        {
+          "id": "resource_71c3bde8d87694f6",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://catastoforre.aic-canyoning.it/index/forra/cod/NU002",
+          "url": "http://catastoforre.aic-canyoning.it/index/forra/cod/NU002"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:49:18.556484+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21413,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21413/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21413/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21413/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21413/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/21413/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 21413,
+    "identity": {
+      "nom": "Arzenc d'Apcher",
+      "nomComplet": "Canyon d' Arzenc d'Apcher, Arzenc",
+      "prefixeNom": "Canyon d'",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21413/Arzenc-d-Apcher.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Lozère",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": null,
+      "coursEau": "Arzenc"
+    },
+    "rating": {
+      "cotation": "v3a2III",
+      "interet": 1.4,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": null,
+      "longueurM": null,
+      "cascadeMaxM": null,
+      "cordeMiniM": null,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "45min",
+      "retour": "1h30"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": "se garer dans le village d'Arzenc d'Apcher\n\n(On peut faire un navette voiture si on poursuit par la randonnée aquatique du Bès, dans ce cas prendre une carte)",
+      "approche": "Rejoindre l'eau.",
+      "descente": "Seule la partie finale est assez intéressante et belle, 3 rappels encaissés et déclives qui s'enchainent. On arrive directement dans le Bès.",
+      "retour": "Continuer le Bès sur 200m puis remonter en pleine pente en RD (pas de chemin). Je pense qu'il vaut mieux continuer par le Bès et choisir la navette (non testé).",
+      "engagement": "Seul le final est engagé mais il est très court.",
+      "periode": "En été il persiste un filet d'eau, attention le Bès possède un gros débit c'est une rivière (passages obligatoires à schunter).",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21413,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.853725,
+        "longitude": 3.093703,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 44.853725,
+      "longitude": 3.093703,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 508,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Lozère) - 26 oct 2016",
+          "summary": "La pratique du canyonisme est autorisée sur le département de la Lozère du lever au coucher du soleil. Il est cependant interdit de s’engager dans un canyon après 17 heures.\n\nL'arrêté préfectoral réglemente également la pratique du canyonisme en Lozère sur les points suivants : les équipements obligatoires, la prise d’information préalable, l'accès aux sites, l’effectif des groupes, l’encadrement, le respect du milieu naturel, des équipements et des autres usagers, le retour d’expérience et les contrôles.",
+          "remark": null,
+          "details": "Arrêté préfectoral (Lozère) n°DDCSPP-JESEP-2016-300-001 du 26 octobre 2016",
+          "effectiveDate": "26 oct 2016",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/508/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral (Lozère) n°DDCSPP-JESEP-2016-300-001 du 26 octobre 2016",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem508_pj1.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

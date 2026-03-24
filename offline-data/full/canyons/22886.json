@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:54:47.142406+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22886,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22886/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22886/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22886/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22886/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22886,
+    "identity": {
+      "nom": "Biaguin",
+      "nomComplet": "Cascades du Biaguin, Le Mars",
+      "prefixeNom": "Cascades du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22886/Biaguin.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Cantal",
+      "communePrincipale": "Le Falgoux",
+      "communes": [
+        "Le Falgoux"
+      ],
+      "massif": "Monts du Cantal",
+      "bassin": "Le Mars",
+      "coursEau": "Le Mars"
+    },
+    "rating": {
+      "cotation": "v3a4II",
+      "interet": 2.0,
+      "nbVotes": 9
+    },
+    "metrics": {
+      "altitudeDepartM": 1080,
+      "deniveleM": 70,
+      "longueurM": 150,
+      "cascadeMaxM": 28,
+      "cordeMiniM": 40,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "0h45",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "Sur la D12 depuis le Falgoux en direction du Pas de Peyrol. Bien indiqué par une pancarte \"Cascades du Biaguin\".",
+      "accesAmont": null,
+      "approche": null,
+      "descente": "Mini-canyon constitué de 4 cascades dont un beau final pendulaire.",
+      "retour": null,
+      "engagement": "Echappatoires possible en RD après la première cascade, puis en RG ensuite.",
+      "periode": "Débit permanent et abondant. Attendre l'étiage pour s'engager.",
+      "geologie": "Terrain volcanique",
+      "historique": "Première descente par P. Viette et P-M. Orblin le 7 aout 2010.",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22886,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.130249,
+        "longitude": 2.643056,
+        "label": null
+      },
+      {
+        "canyonId": 22886,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.131145,
+        "longitude": 2.643601,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 45.130249,
+      "longitude": 2.643056,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_daf9041e16b163a9",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons cantalous",
+          "authors": [
+            "Philippe VIETTE-COSTE"
+          ],
+          "publicationYear": 2018,
+          "reference": "97829563881-0-4",
+          "editor": "Auto-édition",
+          "status": "en stock\n\n- 14,00 € -\n\nCommandez cet ouvrage dès maintenant !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/1124/Canyons-cantalous.html"
+        },
+        {
+          "id": "biblio_0ada102a5dea7773",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons arvernes",
+          "authors": [
+            "Philippe Viette-Coste",
+            "Serge Navarro",
+            "Pierre-Marie Orblin"
+          ],
+          "publicationYear": 2012,
+          "reference": "978-2-7466-3647-7",
+          "editor": "auto-édition",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/165/Canyons-arvernes.html"
+        }
+      ],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_44a5c70f10ed6f16",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.canyons-arvernes.fr/index.php.....ory&id=86&Itemid=477",
+          "url": "http://www.canyons-arvernes.fr/index.php.....ory&id=86&Itemid=477"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

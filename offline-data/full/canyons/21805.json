@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:47.999435+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21805,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21805/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21805/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21805/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21805/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/21805/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 21805,
+    "identity": {
+      "nom": "Ibn Hammad",
+      "nomComplet": "Wadi Ibn Hammad",
+      "prefixeNom": "Wadi",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21805/Ibn-Hammad.html"
+    },
+    "location": {
+      "pays": "Jordanie",
+      "region": "Batir",
+      "departement": "Karak",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Moab",
+      "bassin": "Dead Sea",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a1III",
+      "interet": 2.6,
+      "nbVotes": 5
+    },
+    "metrics": {
+      "altitudeDepartM": 50,
+      "deniveleM": 100,
+      "longueurM": 2000,
+      "cascadeMaxM": null,
+      "cordeMiniM": null,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "2x1h",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": "Depuis Kerak, prendre la route du roi vers le nord, en direction d'Amman. Après environ 7km depuis la sortie de agglomération de Kerak, tourner à gauche en suivant l'indication \"Wadi bin Hammad, Rakin, Batir\". On rencontre au bout de 2,8km un rond point avec une sculpture pyramidale : prendre en face. 500m après, tourner à droite (c.à.d. ne pas suivre la direction Bathan/Baradan). Continuer sur 4,1km et tourner à droite. Après encore 4,9km, on rencontre une école flanquée d'une mosquée : au croisement qui suit presque immédiatement, tourner à gauche. Prendre la piste au panneau. 700m plus loin, laisser une première piste à droite, et 500m après, laisser encore une piste à droite. La piste continue, descend dans le Wadi et parvient aussitôt après l'avoir traversé au Hammam (2JD/pers). Parking plus départ de la rando, à 21,3km depuis la route du roi.",
+      "accesAmont": null,
+      "approche": null,
+      "descente": "On fait l'aller-retour dans le canyon.",
+      "retour": null,
+      "engagement": "Très faible",
+      "periode": "Marche aisée en rivière très peu profonde\n\npériode optimale : Avril",
+      "geologie": "C'est du grès, pas du calcaire",
+      "historique": null,
+      "remarques": "eau chaude, combi inutile, on ne se mouille que les chaussures"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21805,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 31.300446,
+        "longitude": 35.62553,
+        "label": null
+      },
+      {
+        "canyonId": 21805,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 31.300564,
+        "longitude": 35.626869,
+        "label": null
+      },
+      {
+        "canyonId": 21805,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 31.300436,
+        "longitude": 35.6115,
+        "label": "pointe du retour"
+      },
+      {
+        "canyonId": 21805,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 31.299992,
+        "longitude": 35.626183,
+        "label": "des bains chauds"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 31.300564,
+      "longitude": 35.626869,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 211,
+          "status": "Indéfini",
+          "action": "Réglemente",
+          "title": "Information",
+          "summary": "Les tenanciers du Hammam exigent 2JD / personne pour l'accès au canyon",
+          "remark": null,
+          "details": null,
+          "effectiveDate": null,
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/211/legislation.html",
+          "attachments": []
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,157 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:54.447537+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22402,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22402/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22402/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22402/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22402/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22402,
+    "identity": {
+      "nom": "Stillupklamm",
+      "nomComplet": "Stillupklamm, Stillupbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22402/Stillupklamm.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Tyrol",
+      "departement": "Politischer Bezirk Schwaz",
+      "communePrincipale": "Mayrhofen",
+      "communes": [
+        "Mayrhofen"
+      ],
+      "massif": "Tuxer Alpen",
+      "bassin": "Ziller",
+      "coursEau": "Stillupbach"
+    },
+    "rating": {
+      "cotation": "v5a3III",
+      "interet": null,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": 860,
+      "deniveleM": 210,
+      "longueurM": 2000,
+      "cascadeMaxM": 50,
+      "cordeMiniM": 55,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "45min",
+      "descente": "3h",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22402,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.148293,
+        "longitude": 11.840389,
+        "label": null
+      },
+      {
+        "canyonId": 22402,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.156223,
+        "longitude": 11.845751,
+        "label": null
+      },
+      {
+        "canyonId": 22402,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.158283,
+        "longitude": 11.848878,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.158283,
+      "longitude": 11.848878,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_80a52b6e4b57f154",
+          "kind": "TOPOGUIDE",
+          "title": "Tiroler Canyoningführer - The Canyoning guide for Tyrol",
+          "authors": [
+            "Alexander Riml",
+            "Gunnar Amor"
+          ],
+          "publicationYear": 2012,
+          "reference": "978-3-200-02343-7",
+          "editor": null,
+          "status": "en stock\n\n- 44,90 € -\n\nCommandez cet ouvrage dès maintenant !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/170/Tiroler-Canyoningfuhrer---The-Canyoning-guide-for-Tyrol.html"
+        },
+        {
+          "id": "biblio_a216ca92fa29ca51",
+          "kind": "TOPOGUIDE",
+          "title": "Canyoning in Bayern und Tirol",
+          "authors": [
+            "Werner Baumgarten"
+          ],
+          "publicationYear": 2010,
+          "reference": null,
+          "editor": null,
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1226/topoguide.html"
+        },
+        {
+          "id": "biblio_db04ab2061965eee",
+          "kind": "TOPOGUIDE",
+          "title": "35/2 Zillertaler Alpen (Alpenvereins (AV) Karte) - 1/25000",
+          "authors": [],
+          "publicationYear": null,
+          "reference": null,
+          "editor": null,
+          "status": null,
+          "detailUrl": null
+        },
+        {
+          "id": "biblio_7edc9aee4fa26c98",
+          "kind": "TOPOGUIDE",
+          "title": "037 Mayrhofen/Tuxer Tal/Zillergrund (Kompass) - 1/25000",
+          "authors": [],
+          "publicationYear": null,
+          "reference": null,
+          "editor": null,
+          "status": null,
+          "detailUrl": null
+        }
+      ],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

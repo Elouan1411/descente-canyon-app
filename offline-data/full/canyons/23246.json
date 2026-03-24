@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:14.979766+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23246,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23246/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23246/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23246/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23246/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23246,
+    "identity": {
+      "nom": "José de Fraga Supérior",
+      "nomComplet": "José de Fraga Supérior",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23246/Jose-de-Fraga-Superior.html"
+    },
+    "location": {
+      "pays": "Portugal",
+      "region": "Açores",
+      "departement": "Lajes das Flores Municipality",
+      "communePrincipale": "Fajã Grande",
+      "communes": [
+        "Fajã Grande"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a2III",
+      "interet": 2.5,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 560,
+      "deniveleM": 350,
+      "longueurM": 1000,
+      "cascadeMaxM": 60,
+      "cordeMiniM": 40,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "3h30",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": "Temps annoncé dans le topo surestimé. (Descente intégrale sup+inf en 5h)",
+      "retour": null,
+      "engagement": "Bien équipé. Engagement faible car nombreuses possibilités de se mettre hors d'eau.",
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23246,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 39.469975,
+        "longitude": -31.246088,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 39.469975,
+      "longitude": -31.246088,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_6791f42b9091629c",
+          "kind": "MAP",
+          "title": "01 Island of Flores (North) (Instituto Geográfico do Exército - Série M889)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_e6017b754996f6cf",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://desnivel.pt/canyoning/canyoning-p.....al/canyoning-acores/",
+          "url": "http://desnivel.pt/canyoning/canyoning-p.....al/canyoning-acores/"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

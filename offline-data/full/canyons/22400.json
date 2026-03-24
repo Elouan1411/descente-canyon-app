@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:54.288068+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22400,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22400/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22400/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22400/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22400/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22400,
+    "identity": {
+      "nom": "Widdereggbach",
+      "nomComplet": "Widdereggbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22400/Widdereggbach.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Tyrol",
+      "departement": "Politischer Bezirk Reutte",
+      "communePrincipale": "Reutte",
+      "communes": [
+        "Reutte"
+      ],
+      "massif": "Ammergauer Alpen",
+      "bassin": "Lech",
+      "coursEau": "Widdereggbach"
+    },
+    "rating": {
+      "cotation": "v3a2III",
+      "interet": 1.6,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1150,
+      "deniveleM": 270,
+      "longueurM": 1100,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h",
+      "descente": "3h30",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22400,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.49411,
+        "longitude": 10.793864,
+        "label": null
+      },
+      {
+        "canyonId": 22400,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.49675,
+        "longitude": 10.756264,
+        "label": null
+      },
+      {
+        "canyonId": 22400,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.49379,
+        "longitude": 10.74752,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.49379,
+      "longitude": 10.74752,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_1264c301e3a70952",
+          "kind": "MAP",
+          "title": "4 Füssen-Ausserfern (Kompass)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_24de8eb47ae35cb8",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.geodaten.bayern.de/BayernView.....2790&layer=TK&step=4",
+          "url": "http://www.geodaten.bayern.de/BayernView.....2790&layer=TK&step=4"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

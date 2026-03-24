@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:45:13.005279+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2361,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2361/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2361/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2361/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2361/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2361,
+    "identity": {
+      "nom": "Potty",
+      "nomComplet": "Nant de Potty",
+      "prefixeNom": "Nant de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2361/Potty.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Haute-Savoie",
+      "communePrincipale": "Praz-sur-Arly",
+      "communes": [
+        "Praz-sur-Arly"
+      ],
+      "massif": "Bornes - Aravis",
+      "bassin": "Arly",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 1.2,
+      "nbVotes": 9
+    },
+    "metrics": {
+      "altitudeDepartM": 1450,
+      "deniveleM": 300,
+      "longueurM": 1200,
+      "cascadeMaxM": 40,
+      "cordeMiniM": 40,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h",
+      "descente": "3h30",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "De Praz sur Arly, prendre la route de la Thouvassieres, et se garer sur le parking des Grands Esserts.",
+      "accesAmont": null,
+      "approche": "Prendre le sentier de randonnee vers l'alpage des Bettaz. commencer au fond de l'alpage quand il est facile de descendre dans le ruisseau.",
+      "descente": null,
+      "retour": "Remonter en RD vers la voiture.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": "Canyon ouvert et équipé par les guides de Praz sur Arly : Christophe Jond et Mathieu Campergue",
+      "remarques": "Canyon très encombré par des embacles, parfois imposantes."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2361,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.828411,
+        "longitude": 6.579738,
+        "label": null
+      },
+      {
+        "canyonId": 2361,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.8349,
+        "longitude": 6.575232,
+        "label": "allez jusqu au pont(prendre a gauche) mais il faut remonter toute la route"
+      },
+      {
+        "canyonId": 2361,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 45.836063,
+        "longitude": 6.57506,
+        "label": "vous pouvez vous garer plus bas mais la marche d approche sera plus longue mais l arriver plus vite"
+      },
+      {
+        "canyonId": 2361,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.831669,
+        "longitude": 6.580833,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 45.836063,
+      "longitude": 6.57506,
+      "label": "vous pouvez vous garer plus bas mais la marche d approche sera plus longue mais l arriver plus vite"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_be9d98d752e96ff6",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.prazsurarly.com/fr/echoscanyontopo.html",
+          "url": "http://www.prazsurarly.com/fr/echoscanyontopo.html"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

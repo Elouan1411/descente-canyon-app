@@ -1,0 +1,228 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:44:05.538432+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2113,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2113/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2113/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2113/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2113/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/2113/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 2113,
+    "identity": {
+      "nom": "Infernet",
+      "nomComplet": "L' Infernet, La Vence",
+      "prefixeNom": "L'",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2113/Infernet.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Isère",
+      "communePrincipale": "Quaix-en-Chartreuse",
+      "communes": [
+        "Quaix-en-Chartreuse"
+      ],
+      "massif": "Chartreuse",
+      "bassin": "Isère",
+      "coursEau": "La Vence"
+    },
+    "rating": {
+      "cotation": "v5a4III",
+      "interet": 3.2,
+      "nbVotes": 195
+    },
+    "metrics": {
+      "altitudeDepartM": 400,
+      "deniveleM": 50,
+      "longueurM": 200,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "1h",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "Depuis Saint-Egrève, remonter la D105a. Se garer environ 100m après le carrefour (alt. 528m) : tout petit emplacement pour 2 voitures. Si cet emplacement est pris, continuer sur 500m jusqu'à l'entrée du hameau suivant : large parking à gauche de la route. NE PAS SE GARER AILLEURS : cela gêne les habitants.",
+      "accesAmont": null,
+      "approche": "Emprunter A PIED la piste privée qui mène à la ferme. Continuer tout droit en longeant le champ. Puis prendre à gauche une petite sente qui traverse un pré très raide, on entre alors dans un sous-bois. Suivre les traces qui mènent à l'entrée de la gorge (prudence très raide et glissant).",
+      "descente": "Après un ressaut (siphon sous bloc), la Vence se jette d'une trentaine de mètres, un couloir mène à la seconde cascade. Deux options s'offrent ensuite : passage par la gauche par une longue main courante aérienne (+30m de longueur), ou bien au milieu, relais à droite (attention, le passage est presque siphonant), pour une cascade de 5m.\n\nS'en suit ensuite une cascade de 7m, Mc à droite, puis relais.\n\nUn grand toboggan de 8m, surplombé d'une ambiance claire-obscure offre un passage ludique. Attention de ne pas aller trop à droite, un mouvement d'eau est bien présent dans la vasque.\n\nIl s'en suit une succession de petits toboggans ludiques.",
+      "retour": "Rejoindre le même chemin qu'à l'aller en remontant droit dans la pente rive droite, on revient ainsi directement à la voiture, ce qui permet d'éviter une navette possible en se garant au pont de l'Oule (pour laquelle la marche de retour sur le petit muret est bien jolie, mais un peu dangereuse, notamment en cas de fatigue post-canyon...)",
+      "engagement": "Pas d'échappatoire possible à partir de la C30 (et laisser une corde au premier ressaut pour le remonter si on décide un sage demi-tour...).",
+      "periode": "Selon le débit de nombreux pièges et mouvements d'eau sont dangereux (rappels, vasques tourbillonnantes, barrage de troncs...).",
+      "geologie": "Calcaire",
+      "historique": null,
+      "remarques": "Il est possible de shunter la C30 par une main-courante puis 2 rappels, en passant par le gros bloc suspendu (cordes 2x40m dans ce cas). Pour trouver le départ, avant d'entamer la partie la plus raide de l'accès classique avec les MC fixes, emprunter une sente partant vers l'aval à flanc puis légèrement remontante. La quitter rapidement pour une sente descendante à gauche (attention ! ) qui conduit à des cordes fixes dans les arbres puis au premier relais de départ. De là, MC d'accès de 3m jusqu'à un gros arbre, rappel de 20m avec départ du relais chainé sur l'arbre, rappel de 40m du bloc coincé (2 relais) jusqu'au fond du canyon."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2113,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.250801,
+        "longitude": 5.7119,
+        "label": null
+      },
+      {
+        "canyonId": 2113,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.251564,
+        "longitude": 5.70971,
+        "label": null
+      },
+      {
+        "canyonId": 2113,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.256367,
+        "longitude": 5.712402,
+        "label": "2 places"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.256367,
+      "longitude": 5.712402,
+      "label": "2 places"
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_774008f93c089927",
+          "kind": "TOPOGUIDE",
+          "title": "100 descentes de canyons autour de Grenoble",
+          "authors": [
+            "Arnaud Astier"
+          ],
+          "publicationYear": 2015,
+          "reference": "978-2-7466-7754-8",
+          "editor": "auto-édition",
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/194/100-Descentes-de-Canyons-autour-de-Grenoble.html"
+        },
+        {
+          "id": "biblio_b021caf8b1429c77",
+          "kind": "TOPOGUIDE",
+          "title": "Tour de l'Europe en Canyon - Les plus belles descentes",
+          "authors": [
+            "Caracal et les Sancho Panza"
+          ],
+          "publicationYear": 2007,
+          "reference": "978-2-9526024-1-7",
+          "editor": null,
+          "status": "en stock\n\n- 25,90 € -\n\nCommandez cet ouvrage dès maintenant !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/13/Le-Tour-de-l-Europe-en-Canyon-:-les-plus-belles-descentes.html"
+        },
+        {
+          "id": "biblio_e7d94bb2f47393ab",
+          "kind": "TOPOGUIDE",
+          "title": "Cascades, Gorges & Canyons : Pré-alpes d'Isère et de Savoie",
+          "authors": [
+            "Bertrand Hauser",
+            "Delphine Baratin"
+          ],
+          "publicationYear": 2007,
+          "reference": "978-2-9529407-0-2",
+          "editor": "Descente-Canyon.com",
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/11/Cascades--Gorges-et-Canyons-:-Pre-alpes-d-Isere-et-de-Savoie.html"
+        },
+        {
+          "id": "biblio_e2259ea833d03cf8",
+          "kind": "TOPOGUIDE",
+          "title": "Infern'eaux",
+          "authors": [
+            "P. Boiron",
+            "J. Carles",
+            "J-M. Etienne",
+            "R. Vuillot"
+          ],
+          "publicationYear": 1990,
+          "reference": "ISBN 2-7038-0065-7",
+          "editor": "Didier et Richard",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/11/topoguide.html"
+        },
+        {
+          "id": "biblio_ab823aad5334b948",
+          "kind": "TOPOGUIDE",
+          "title": "3234 E - 1/25000",
+          "authors": [],
+          "publicationYear": null,
+          "reference": null,
+          "editor": null,
+          "status": null,
+          "detailUrl": null
+        },
+        {
+          "id": "biblio_1061e9e156a6f922",
+          "kind": "TOPOGUIDE",
+          "title": "3334 OT Massif de la Chartreuse Sud (IGN TOP25) - 1/25000",
+          "authors": [],
+          "publicationYear": null,
+          "reference": null,
+          "editor": null,
+          "status": null,
+          "detailUrl": null
+        }
+      ],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 61,
+          "status": "Obsolète",
+          "action": "Interdit",
+          "title": "Arrêté municipal (Quaix en Chartreuse) - 03 sept 2003",
+          "summary": "Suite à l'incendie du Néron, l'infernet est interdit pour 18 mois.",
+          "remark": "Plus d'infos dans cette news.",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.",
+          "effectiveDate": "03 mars 2005",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/61/legislation.html",
+          "attachments": []
+        },
+        {
+          "id": 60,
+          "status": "Abrogé",
+          "action": "Interdit",
+          "title": "Arrêté municipal (Quaix en Chartreuse) - 25 août 2003",
+          "summary": "Tout accès, sur le territoire de la commune de Quaix en Chartreuse, aux pentes du Néron et au massif du Néron, par tous moyens, est interdit.",
+          "remark": "Un nouvel arrêté a été pris le 03 septembre 2003, précisant que l'interdiction concernait aussi les gorges de l'infernet.\n\nPlus d'infos dans cette news.",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nArrêté Municipal du 25 août 2003",
+          "effectiveDate": "25 août 2003",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/60/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté Municipal du 25 août 2003",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/arrete60.pdf"
+            }
+          ]
+        },
+        {
+          "id": 56,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté municipal (St Egrève) - 03 juil 2003",
+          "summary": "L'accès à l'infernet par le canal à l'aval est interdit, ainsi que la baignade dans la dernière vasque.",
+          "remark": "Cet arrêté concerne plus particulièrement les nombreux \"touristes\" qui tente la remontée des gorges en maillot de bain... un accident mortel est à déplorer en 2003.\n\nPlus d'infos dans cette info : Coordination des 3 fédérations pour l'Infernet",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nConsultez le document\n\nArrêté Municipal du 03 juillet 2003\n\nMairie de Saint Egrève\n\nArrêté municipal portant interdiction d'accès et de baignade.\n\nLieu dit \" Les Prises \", quartier de Champy.\n\nVu le code pénal, notamment son article R.610-5\n\nVu le code général des collectivités territoriales et plus spécialement ses articles L.2212-1 à L.2212-5,\n\nVu le code de la santé publique,\n\nConsidérant que de nombreuses personnes vont se baigner à l'intersection de la Vence et du Canal des Usiniers, lieu-dit \" Les Prises \",\n\nConsidérant que ce lieu n'est ni aménagé ni surveillé pour la baignade et qu'il s'avère dangereux pour les utilisateurs,\n\nConsidérant que ces personnes doivent emprunter un cheminement dangereux pour y accéder, dans le prolongement de la rue de Champy,\n\nArrête\n\nArticle 1 : L'accès au public est interdit à compter du cheminement prolongeant la rue de Champy.\n\nArticle 2 : La baignade est interdite à l'intersection de la Vence et du Canal des Usiniers au lieu-dit \" Les Prises \", quartier de Champy.\n\nArticle 3 : Des panneaux de signalisation seront mis en place en tout lieux jugés opportuns pour matérialiser la présente interdiction.\n\nArticle 4 : Les infractions au présent arrêté seront constatés et poursuivies conformément aux lois et règlements en vigueur.\n\nArticle 5 : En cas de contestation de ces interdictions, le ou les intéressés disposent d'un délai de 2 mois à dater de l'affichage du présent arrêté pour déposer un recours devant le Tribunal Administratif de Grenoble. Dans ce même délai, le ou les interessés peuvet également déposer un recours gracieux auprès de Madame le Maire ; cette démarche suspendant le délai de recours contentieux.\n\nArticle 6 : Le Directeur Général des Services de la Ville de Saint Egrève, les Policiers Municipaux et la Brigade de Gendarmerie sont chargés de l'exécution du présent arrêté, qui sera affiché en Mairie et en tous lieux jugés opportuns,\n\nFait à Saint Egrève, le 03 juillet 2003,\n\nLe Maire\n\nCatherine Kamowski",
+          "effectiveDate": "03 juil 2003",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/56/legislation.html",
+          "attachments": []
+        }
+      ]
+    }
+  }
+}

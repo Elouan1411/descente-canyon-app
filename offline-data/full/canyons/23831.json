@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:15.908471+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23831,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23831/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23831/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23831/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23831/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23831,
+    "identity": {
+      "nom": "Jenesierbach",
+      "nomComplet": "Jenesierbach, Rio San Genesio",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23831/Jenesierbach.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Trentino-Alto Adige",
+      "departement": "Bolzano",
+      "communePrincipale": "San Genesio Atesino",
+      "communes": [
+        "San Genesio Atesino",
+        "San Genesio Atesino"
+      ],
+      "massif": "Alpi Sarentini - Sarntaler Alpen - Alpes Sarentine",
+      "bassin": "Adige",
+      "coursEau": "Rio San Genesio"
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": null,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": 660,
+      "deniveleM": 350,
+      "longueurM": 1000,
+      "cascadeMaxM": 35,
+      "cordeMiniM": 40,
+      "navette": "3.6km"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "3h",
+      "retour": "10"
+    },
+    "topo": {
+      "accesAval": "voir \"Fotogalerie\"",
+      "accesAmont": null,
+      "approche": "voir \"Fotogalerie\"",
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": "Porphyr",
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23831,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.530079,
+        "longitude": 11.35437,
+        "label": null
+      },
+      {
+        "canyonId": 23831,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.527229,
+        "longitude": 11.36412,
+        "label": null
+      },
+      {
+        "canyonId": 23831,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 46.525936,
+        "longitude": 11.355754,
+        "label": null
+      },
+      {
+        "canyonId": 23831,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 46.526806,
+        "longitude": 11.364056,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 46.525936,
+      "longitude": 11.355754,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_3ff4b8de57f13fb8",
+          "kind": "MAP",
+          "title": "034 Bolzano-Renon/Bozen-Ritten (Tabacco)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_c8ccb1c000b5fd8f",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/C.....s/JenesierbachCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/C.....s/JenesierbachCanyon"
+        },
+        {
+          "id": "resource_cf8a6a9a80d80217",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.ctgernstein.com/schluchten/jenesier-bach",
+          "url": "http://www.ctgernstein.com/schluchten/jenesier-bach"
+        },
+        {
+          "id": "resource_1ec110040b06eb5d",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://catastoforre.aic-canyoning.it/ind.....IGE/pro/BZ/cod/BZ013",
+          "url": "http://catastoforre.aic-canyoning.it/ind.....IGE/pro/BZ/cod/BZ013"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

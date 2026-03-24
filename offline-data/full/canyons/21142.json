@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:48:19.616619+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21142,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21142/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21142/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21142/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21142/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21142,
+    "identity": {
+      "nom": "Saint-May",
+      "nomComplet": "Saint-May, Canyon du pas de l'Echaillon, Ruisseau de Léoux",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21142/Saint-May.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Drôme",
+      "communePrincipale": "Saint-May",
+      "communes": [
+        "Saint-May"
+      ],
+      "massif": "Drôme provençale",
+      "bassin": "Aigues - Aigue - Eygues - Aygues",
+      "coursEau": "Ruisseau de Léoux"
+    },
+    "rating": {
+      "cotation": "v2a2I",
+      "interet": 1.4,
+      "nbVotes": 16
+    },
+    "metrics": {
+      "altitudeDepartM": 735,
+      "deniveleM": 300,
+      "longueurM": 4000,
+      "cascadeMaxM": 6,
+      "cordeMiniM": 10,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "35",
+      "descente": "2h00",
+      "retour": "10"
+    },
+    "topo": {
+      "accesAval": "Se garer à l'entrée du village de Saint- May et redescendre vers l'Eygue. Prendre le sentier baliser en jaune (chemin de pays) suivre le Léoux puis remonter sur la ferme de l'Echaillon. Suivre ensuite le chemin juste au dessus du canyon et rentrer dans l'eau dans la redescente.",
+      "accesAmont": null,
+      "approche": "Montée fatigante surtout l'été prévoir de l'eau",
+      "descente": "Très joli canyon (plutôt randonnée aquatique !!!)",
+      "retour": null,
+      "engagement": "Très peu d'engagement, plaquette sur toutes les cascades.\n\nTrès peu de sauts mais superbe décor !!!!!",
+      "periode": "deux trois nages\n\nmai juin",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21142,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.441807,
+        "longitude": 5.319057,
+        "label": "Positionnement approximatif"
+      },
+      {
+        "canyonId": 21142,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.429703,
+        "longitude": 5.318584,
+        "label": null
+      },
+      {
+        "canyonId": 21142,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.427986,
+        "longitude": 5.318767,
+        "label": "Dans les places amenagées à l'entrée du village"
+      },
+      {
+        "canyonId": 21142,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 44.42733,
+        "longitude": 5.317533,
+        "label": "Départ de l'approche (piste au départ, balisages + panneau sens interdit)"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.427986,
+      "longitude": 5.318767,
+      "label": "Dans les places amenagées à l'entrée du village"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_4e3735bcc40c64f3",
+          "kind": "MAP",
+          "title": "3139 OT Nyons (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:33.667106+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22306,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22306/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22306/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22306/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22306/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22306,
+    "identity": {
+      "nom": "Galambert",
+      "nomComplet": "Ruisseau de Galambert, Galambert",
+      "prefixeNom": "Ruisseau de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22306/Galambert.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-Maritimes",
+      "communePrincipale": "Peillon",
+      "communes": [
+        "Peille",
+        "Peillon"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": "Galambert"
+    },
+    "rating": {
+      "cotation": "v3a1I",
+      "interet": 0.5,
+      "nbVotes": 6
+    },
+    "metrics": {
+      "altitudeDepartM": 550,
+      "deniveleM": 50,
+      "longueurM": 750,
+      "cascadeMaxM": 12,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "1h00",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "De Peille prendre la D53 en direction de La Turbie et après une grande épingle à cheveu (rien d'intéressant dans ce vallon), prendre à droite une route au niveau du quartier des Lacs. Après un virage à gauche, se garer sur un excellent parking à droite près de la balise de randonnée.",
+      "accesAmont": null,
+      "approche": "Pas de navette. Suivre le chemin de petite randonnée jusqu'au premier petit pont, point de départ de la course.",
+      "descente": "Petit vallon sec sans aucune prétention et sans obstacle valant vraiment le détour. A faire si vous habitez dans le coin.",
+      "retour": "Sortir au pont suivant sauf si vous désirez enchaîner avec le vallon de la Launa dont les caractéristiques sont assez similaires. Au retour, longez le Galambert en rive gauche jusqu'au pont de départ puis remontez à la voiture.",
+      "engagement": "Faible",
+      "periode": "Canyon sec sauf après une très forte période de pluie. Des traces de crues impressionnantes sont visibles dans le vallon.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Il peut s'enchainer avec la Launa.(amont de la Launa)"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22306,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.784443,
+        "longitude": 7.399444,
+        "label": null
+      },
+      {
+        "canyonId": 22306,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.781666,
+        "longitude": 7.393889,
+        "label": null
+      },
+      {
+        "canyonId": 22306,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.781944,
+        "longitude": 7.397778,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.781944,
+      "longitude": 7.397778,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_65daf1ce5e444805",
+          "kind": "MAP",
+          "title": "3742 OT Nice-Menton (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

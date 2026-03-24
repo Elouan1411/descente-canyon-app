@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:51.541044+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24007,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24007/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24007/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24007/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24007/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24007,
+    "identity": {
+      "nom": "Jorrax",
+      "nomComplet": "Ruisseau du Jorrax",
+      "prefixeNom": "Ruisseau du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24007/Jorrax.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Haute-Savoie",
+      "communePrincipale": "Praz-sur-Arly",
+      "communes": [
+        "Praz-sur-Arly"
+      ],
+      "massif": "Bornes - Aravis",
+      "bassin": "Arly",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 1.5,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1420,
+      "deniveleM": 422,
+      "longueurM": 2500,
+      "cascadeMaxM": 40,
+      "cordeMiniM": 45,
+      "navette": "5.0km"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "3.5h",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": "De Praz-sur-Arly monter par la petite route aux Épines Blanches (parking), et si avec 4x4 la piste jusqu'à l'affluent RG qu'on croise à 1420 m.",
+      "accesAmont": null,
+      "approche": null,
+      "descente": "Jusqu'au chemin rando à 1150m 2.5 h. Beaucoup de rando aqua, de temps en temps une cascade pour faire un rappel.\n\nAvant la grande cascade sortie facilement possible en RG (traces).",
+      "retour": "Si on se gare à la D1212 pas de retour.",
+      "engagement": "Facile, permet bien un débit augmenté.",
+      "periode": "Après la fonte bien faisable tout l'année.",
+      "geologie": null,
+      "historique": "21.05.2017 Rémy Villanova, Timo Stammwitz",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24007,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.852222,
+        "longitude": 6.544306,
+        "label": null
+      },
+      {
+        "canyonId": 24007,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.833111,
+        "longitude": 6.551972,
+        "label": null
+      },
+      {
+        "canyonId": 24007,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 45.844833,
+        "longitude": 6.54825,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 45.844833,
+      "longitude": 6.54825,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_bf97d8efb10efc46",
+          "kind": "MAP",
+          "title": "3531 OT Megève - Col des Aravis (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

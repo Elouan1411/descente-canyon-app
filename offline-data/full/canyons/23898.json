@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:30.420001+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23898,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23898/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23898/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23898/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23898/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23898,
+    "identity": {
+      "nom": "Capulla",
+      "nomComplet": "Canyon de Capulla",
+      "prefixeNom": "Canyon de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23898/Capulla.html"
+    },
+    "location": {
+      "pays": "Portugal",
+      "region": "Madeira",
+      "departement": "São Vicente Municipality",
+      "communePrincipale": "São Vicente",
+      "communes": [
+        "São Vicente"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v5a2II",
+      "interet": 2.7,
+      "nbVotes": 6
+    },
+    "metrics": {
+      "altitudeDepartM": 1100,
+      "deniveleM": 400,
+      "longueurM": 1000,
+      "cascadeMaxM": 111,
+      "cordeMiniM": 50,
+      "navette": "4.0km"
+    },
+    "timings": {
+      "approche": "45min",
+      "descente": "4h",
+      "retour": "40"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": "13 rappels.",
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": "Ouvert par Patri, Jose Rodriguez, Andrés Marti, Duarte Silva et Raquel Albeniz en septembre 2015.",
+      "remarques": "Sources : canyoning.camadeira.com"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23898,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 32.781921,
+        "longitude": -17.077511,
+        "label": null
+      },
+      {
+        "canyonId": 23898,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 32.788841,
+        "longitude": -17.07556,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 32.781921,
+      "longitude": -17.077511,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_0564c245398e8377",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyoning.camadeira.com/canyons/canyon-capulla/",
+          "url": "http://canyoning.camadeira.com/canyons/canyon-capulla/"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

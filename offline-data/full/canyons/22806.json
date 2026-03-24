@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:54:25.944716+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22806,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22806/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22806/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22806/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22806/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22806,
+    "identity": {
+      "nom": "Forcola",
+      "nomComplet": "Forcola",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22806/Forcola.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Lombardia",
+      "departement": "Sondrio",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a3III",
+      "interet": null,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": 1809,
+      "deniveleM": 217,
+      "longueurM": 1200,
+      "cascadeMaxM": 25,
+      "cordeMiniM": null,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "4h",
+      "retour": "40min"
+    },
+    "topo": {
+      "accesAval": "Village de Boscopiano.",
+      "accesAmont": null,
+      "approche": "Du village, monter jusqu'au départ, ou, avec une voiture, rejoindre le barrage de Cancano, le dépasser et suivre à pied le sentier qui descend jusqu'au pont sur le torrent.",
+      "descente": "Canyon situé à l'intérieur du Parc National de Stevio, à quelques pas de Bornio.\n\n6 rappels.",
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": "Seul canyon \"Calcaire\" de la Valtellina.",
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22806,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.516941,
+        "longitude": 10.339873,
+        "label": null
+      },
+      {
+        "canyonId": 22806,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.510155,
+        "longitude": 10.342094,
+        "label": null
+      },
+      {
+        "canyonId": 22806,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 46.517021,
+        "longitude": 10.331347,
+        "label": null
+      },
+      {
+        "canyonId": 22806,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 46.504486,
+        "longitude": 10.354536,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 46.517021,
+      "longitude": 10.331347,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

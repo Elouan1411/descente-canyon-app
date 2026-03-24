@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:52.805003+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24012,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24012/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24012/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24012/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24012/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24012,
+    "identity": {
+      "nom": "Sapet",
+      "nomComplet": "Torrent du Sapet",
+      "prefixeNom": "Torrent du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24012/Sapet.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Hautes-Alpes",
+      "communePrincipale": "La Bâtie-Neuve",
+      "communes": [
+        "La Bâtie-Neuve"
+      ],
+      "massif": "Ecrins - Oisans - Champsaur",
+      "bassin": "L'Avance",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a2II",
+      "interet": 1.6,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 1760,
+      "deniveleM": 320,
+      "longueurM": 1500,
+      "cascadeMaxM": 40,
+      "cordeMiniM": 45,
+      "navette": "2.2km"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "2h30",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": "poursuivre la route; à la sortie de la grande épingle à gauche, remonter la piste jusqu'au pont vers 1640m (petit parking après le pont).",
+      "approche": "Prendre le chemin vers le Piolit (balisé). Dans un lacet à gauche proche du torrent (vers 1770m), rejoindre le torrent en légère descente.",
+      "descente": "Première partie: cascades déclives et petits goulets, sous le pont la zone centrale avec la C40 puis un final avec de la marche et deux petites cascades.",
+      "retour": "Suivre la piste forestière (sortir RD quand la vallée s'ouvre un peu et devient plat) à la route du Col de Moissières.",
+      "engagement": null,
+      "periode": "Faire en période de fonte des névés ou après quelques pluies, sinon très peu d'eau. Eau cristaline. Bassin très expo aux orages. Mai à novembre.",
+      "geologie": "Calcaire.",
+      "historique": "Le 04/06/2017: Jaysson Lambert et Timo Stammwitz",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24012,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.598331,
+        "longitude": 6.253056,
+        "label": null
+      },
+      {
+        "canyonId": 24012,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.597473,
+        "longitude": 6.234417,
+        "label": null
+      },
+      {
+        "canyonId": 24012,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 44.597805,
+        "longitude": 6.245583,
+        "label": null
+      },
+      {
+        "canyonId": 24012,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 44.595695,
+        "longitude": 6.228972,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 44.597805,
+      "longitude": 6.245583,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_28e68141a286bb81",
+          "kind": "MAP",
+          "title": "3338 ET Gap (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:15.363196+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22218,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22218/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22218/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22218/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22218/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22218,
+    "identity": {
+      "nom": "Patas (inférieur)",
+      "nomComplet": "Ribeira das Patas (inférieur)",
+      "prefixeNom": "Ribeira das",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22218/Patas-inferieur.html"
+    },
+    "location": {
+      "pays": "Cap-Vert",
+      "region": null,
+      "departement": "Porto Novo",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v1a1IV",
+      "interet": 1.6,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 140,
+      "deniveleM": 5,
+      "longueurM": 9000,
+      "cascadeMaxM": null,
+      "cordeMiniM": null,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "10min",
+      "descente": "3h",
+      "retour": "1h30"
+    },
+    "topo": {
+      "accesAval": "Comme Patas médian jusqu'à Lagedos.",
+      "accesAmont": null,
+      "approche": "Entre les premières maisons de Lagedos se diriger dans la direction est-nord-est jusqu'à un fossé. Dans le fossé aller à droite direction sud-est vers Ribeira das Patas. Un sentier commence et descend la paroi vers le lit de Patas.",
+      "descente": "\"Trekking\" entre parois hautes vers la mer",
+      "retour": "De la mer en rive droite ou gauche retour vers le Ponte Sul, toujours chercher une sente ou un sentier ; de Ponte Sul retour vers Lagedos (3 km du Pont).",
+      "engagement": null,
+      "periode": "Sec",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Ne pas oublier le casque et beaucoup d'eau !"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22218,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 17.014961,
+        "longitude": -25.162554,
+        "label": null
+      },
+      {
+        "canyonId": 22218,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 16.964193,
+        "longitude": -25.136452,
+        "label": null
+      },
+      {
+        "canyonId": 22218,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 17.015373,
+        "longitude": -25.164839,
+        "label": null
+      },
+      {
+        "canyonId": 22218,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 16.991165,
+        "longitude": -25.147383,
+        "label": null
+      },
+      {
+        "canyonId": 22218,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 16.990112,
+        "longitude": -25.149721,
+        "label": "but provisoire sur le chemin du retour à la voiture"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 17.015373,
+      "longitude": -25.164839,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_a0b95353ed9c3736",
+          "kind": "MAP",
+          "title": "Santo Antâo (Goldstadt-Wanderkarte)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

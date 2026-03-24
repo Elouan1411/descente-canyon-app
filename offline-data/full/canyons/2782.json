@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:46:50.473947+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2782,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2782/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2782/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2782/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2782/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/2782/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 2782,
+    "identity": {
+      "nom": "Escaoupres",
+      "nomComplet": "Vallon des Escaoupres, Les baignoires",
+      "prefixeNom": "Vallon des",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2782/Escaoupres.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Bouches-du-Rhône",
+      "communePrincipale": "Allauch",
+      "communes": [
+        "Allauch"
+      ],
+      "massif": "garlaban",
+      "bassin": "Huveaune",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 0.6,
+      "nbVotes": 12
+    },
+    "metrics": {
+      "altitudeDepartM": 300,
+      "deniveleM": 100,
+      "longueurM": 800,
+      "cascadeMaxM": 8,
+      "cordeMiniM": 10,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "1h",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "Sortez de l'autoroute à la Valentine. Traversez le village en suivant Allauch. Ne ratez pas enuite la bifurcation pour Camoins et tout se suite aprés à gauche pour Treille. Après le village de la Treille (Marseille), continuer jusqu'au quartier des Bellons (Allauch) et se garer au niveau d'un pylone électrique à droite.",
+      "accesAmont": null,
+      "approche": "Continuer par la route, au premier embranchement prendre à gauche en direction de la buvette, dépasser quelques maisons et un snack (autre parking possible après celui-ci) et continuer à monter par le chemin qui se transforme en piste. Aller jusqu'à l'embranchement (mines de bauxite visibles sur la droite) qui indique \"Allauch 1h35\" à gauche, le sentier descend à gauche devant un portail et rejoint le canyon. (Marques jaunes)",
+      "descente": "Deux petites parties distinctes, constituée de petits ressauts. La dernière cascade de 7m est la plus intéressante.",
+      "retour": "Après un passage sous un tunnel végétal, un rocher rond signale la fin de la descente, prendre le sentier qui remonte sur la gauche et ramène à la route.\n\nLa sortie traverse un terrain privé: il est impératif de se déséquiper, de ranger le matériel et de sortir avec discrétion et courtoisie... comme de simples randonneurs.",
+      "engagement": "Échappatoires tout le long. Canyon équipé école.",
+      "periode": "En eau seulement après des pluies importantes qui remplissent les vasques. Mais cela est très rare et ne nécessite au pire que le bas de la combinaison.",
+      "geologie": null,
+      "historique": "Canyon équipé à l'origine par Jean-Louis Arnaud, professeur d'EPS puis suréquipé par (inconnu). J-L Arnaud est aussi l'ouvreur des trois sites d'escalade de La Treille.",
+      "remarques": "Les gens des environs viennent en remontant par l'aval se baigner dans les vasques après une forte pluie. Pour l'anecdote, le vallon est cité dans le film \"Manon des Sources\" du provençal Marcel Pagnol : Manon se baignait enfant dans les vasques après les pluies..."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2782,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.333309,
+        "longitude": 5.515072,
+        "label": null
+      },
+      {
+        "canyonId": 2782,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.326176,
+        "longitude": 5.509129,
+        "label": null
+      },
+      {
+        "canyonId": 2782,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.325294,
+        "longitude": 5.513892,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.325294,
+      "longitude": 5.513892,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_c55008676d4d8829",
+          "kind": "MAP",
+          "title": "3245 ET Aubagne - La Ciotat (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 282,
+          "status": "Actif",
+          "action": "Indéfini",
+          "title": "Information",
+          "summary": null,
+          "remark": null,
+          "details": "Consultez le\n\ntexte (ou extrait)\n\nLa sortie des baignoires se fait sur un terrain privé. Merci d'être discret et courtois.",
+          "effectiveDate": null,
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/282/legislation.html",
+          "attachments": []
+        }
+      ]
+    }
+  }
+}

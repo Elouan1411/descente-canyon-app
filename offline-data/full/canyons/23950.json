@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:41.828935+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23950,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23950/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23950/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23950/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23950/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23950,
+    "identity": {
+      "nom": "Las Chorreras de Enguídanos",
+      "nomComplet": "Barranco de Las Chorreras de Enguídanos, Río Cabriel",
+      "prefixeNom": "Barranco de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23950/Las-Chorreras-de-Enguidanos.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Castilla-La Mancha",
+      "departement": "Provincia de Cuenca",
+      "communePrincipale": "Enguídanos",
+      "communes": [
+        "Enguídanos"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": "Río Cabriel"
+    },
+    "rating": {
+      "cotation": "v2a3I",
+      "interet": 2.0,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 792,
+      "deniveleM": 110,
+      "longueurM": 1800,
+      "cascadeMaxM": 7,
+      "cordeMiniM": 10,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h",
+      "descente": "1h30",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "Route CUV 5014\n\nSe garer le long de la route après la barrière (après renseignement, les guides locaux ont un droit de passage)",
+      "accesAmont": null,
+      "approche": "Prendre le chemin après la barrière traverser le pont sur le río Guadazaón on arrive sur des bâtiments à l'abandon prendre à droite, ensuite ça monte prendre à gauche (à droite c'est le chemin du retour)",
+      "descente": "Randonnée aquatique, tout peut s'éviter. Le cadre est magnifique. Il y a un siphon facile au départ dans une vasque (évitable) suivi d'un toboggan, quelques petits sauts et petits toboggans. On arrive ensuite sur un toboggan important 8 m (rappel possible), puis dans la grande vasque suivante il y a un saut possible de 10 m en rive droite.",
+      "retour": "Chemin rive droite aménagé",
+      "engagement": "Nombreuses échappatoires",
+      "periode": "En eau toute l'année",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23950,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 39.712639,
+        "longitude": -1.617294,
+        "label": null
+      },
+      {
+        "canyonId": 23950,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 39.704834,
+        "longitude": -1.618077,
+        "label": null
+      },
+      {
+        "canyonId": 23950,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 39.70163,
+        "longitude": -1.621765,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 39.70163,
+      "longitude": -1.621765,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_b90567320d5d11b6",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "https://fr.wikiloc.com/wikiloc/view.do?id=10209530",
+          "url": "https://fr.wikiloc.com/wikiloc/view.do?id=10209530"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

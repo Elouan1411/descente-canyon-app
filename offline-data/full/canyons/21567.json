@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:49:54.735236+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21567,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21567/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21567/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21567/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21567/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/21567/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 21567,
+    "identity": {
+      "nom": "Oo (supérieur)",
+      "nomComplet": "Cascades d' Oo (supérieur), Neste d'Oo supérieur",
+      "prefixeNom": "Cascades d'",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21567/Oo-superieur.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Haute-Garonne",
+      "communePrincipale": "Astau (les Granges de)",
+      "communes": [
+        "Astau (les Granges de)"
+      ],
+      "massif": null,
+      "bassin": "Espingo",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v6a4IV",
+      "interet": 3.0,
+      "nbVotes": 6
+    },
+    "metrics": {
+      "altitudeDepartM": 1870,
+      "deniveleM": 320,
+      "longueurM": 350,
+      "cascadeMaxM": 220,
+      "cordeMiniM": 90,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h40",
+      "descente": "4h",
+      "retour": "1h15"
+    },
+    "topo": {
+      "accesAval": "Au village d'Oo prendre la D76 jusqu'aux Granges d'Astau.\n\nParking situé aux Granges d'Astau",
+      "accesAmont": null,
+      "approche": "Prendre le GR qui monte au refuge d'Espingo.\n\nDu refuge d'Espingo, prendre en direction du Val d'Arrouge.\n\nL'entrée du Canyon se situe au niveau du déversoir du lac d'Espingo.\n\nOn peut s'équiper dans de très belles pelouses RG.",
+      "descente": "Gros débit, mains-courantes, passages en vire,\n\nUne dizaine d'obstacles, Maxi 25m.\n\nLa C220m passe RD:\n\nR90m sur un Arbre\n\nR35m 2 goujons (relai technique et exiguë, prévoir crochets d'artifs pour y accéder)\n\nR80m 2 goujons",
+      "retour": "Contourner le lac d'Oo par la gauche puis au refuge d'Oo reprendre le GR.",
+      "engagement": "Engagement fort dans certains encaissement entrecoupés de quelques échappatoires.\n\nEchappatoires notamment avant la cascade de 220m",
+      "periode": "Canyon de montagne .\n\nTrès aquatique, uniquement à l'étiage.",
+      "geologie": "Majoritairement granit.\n\nDe nombreuses sections en rochers très délités",
+      "historique": "Descendu par Patrick Gimat en 1997\n\nDescendu par Serge Bayle en ..... sur pitons, spits et barres de fer...\n\nCanyon équipé en goujons de 10mm en 2021",
+      "remarques": "Prévoir de quoi rééquiper car les ancrages sont soumis à de fortes conditions (crues, glace, avalanches, etc...).\n\nD'autre part le site est classé, donc se renseigner à l'avance."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21567,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 42.763889,
+        "longitude": 0.501667,
+        "label": "Bar restaurant des granges d'Astau"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 42.763889,
+      "longitude": 0.501667,
+      "label": "Bar restaurant des granges d'Astau"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_b4d10c31e88f9235",
+          "kind": "MAP",
+          "title": "1848 OT Bagneres-de-Luchon (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 266,
+          "status": "Abrogé",
+          "action": "Interdit",
+          "title": "Arrêté préfectoral (Haute-Garonne) - 28 juin 2013",
+          "summary": "\"La crue de la Garonne et de ses affluents a considérablement endommagé les rives et les installations liées aux activités aquatiques et nautiques\"... Et voilà la pratique du canyoning interdite dans toute la vallée du Lys et de la Neste d'Oo.",
+          "remark": null,
+          "details": "Arrêté préfectoral du 28 juin 2013 (abrogé)\n\nArrêté préfectoral du 5 août 2013",
+          "effectiveDate": "28 juin 2013",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/266/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral du 28 juin 2013 (abrogé)",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem266_pj1.pdf"
+            },
+            {
+              "label": "Arrêté préfectoral du 5 août 2013",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem266_pj2.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

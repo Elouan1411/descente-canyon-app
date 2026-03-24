@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:54:09.826891+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22738,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22738/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22738/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22738/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22738/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22738,
+    "identity": {
+      "nom": "Berschner Bach",
+      "nomComplet": "Berschner Bach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22738/Berschner-Bach.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Walenstadt",
+      "departement": "Saint Gallen",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Préalpes appenzelloises",
+      "bassin": "Walensee",
+      "coursEau": "Berschner Bach"
+    },
+    "rating": {
+      "cotation": "v5a5V",
+      "interet": 2.5,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1290,
+      "deniveleM": 710,
+      "longueurM": 3000,
+      "cascadeMaxM": 60,
+      "cordeMiniM": 80,
+      "navette": "2.0km"
+    },
+    "timings": {
+      "approche": "1h",
+      "descente": "4 - 6h",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "Commune de Berschis\n\nSur la route asphalté, aller aux parkings payants avant le panneau d'interdiction, à 1077m.",
+      "accesAmont": null,
+      "approche": "Départ de Kurhaus Senntis (affluent Sagenbach)",
+      "descente": "Grande gorge avec plusieurs parties encaissées, plusieurs zones de gros blocs, pas mal de troncs d'arbres, et une grande cascade finale de 60 m.\n\nOrientation S - SW.",
+      "retour": "Sortir avant ou après la cascade de Berschis.",
+      "engagement": "Long descente sans vrai sortie, 600m denivellement de terrain sauvage.",
+      "periode": "Souvent beaucoup d'eau, à faire après longue période sèche.",
+      "geologie": "Plusieurs types de calcaire.",
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22738,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.11517,
+        "longitude": 9.37108,
+        "label": null
+      },
+      {
+        "canyonId": 22738,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.104881,
+        "longitude": 9.35888,
+        "label": null
+      },
+      {
+        "canyonId": 22738,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 47.100479,
+        "longitude": 9.35462,
+        "label": null
+      },
+      {
+        "canyonId": 22738,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.10218,
+        "longitude": 9.36903,
+        "label": "Parking au point 1077"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.100479,
+      "longitude": 9.35462,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_660535d0ebd7267f",
+          "kind": "MAP",
+          "title": "1135 Buchs (Swisstopo)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

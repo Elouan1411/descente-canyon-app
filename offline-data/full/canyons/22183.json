@@ -1,0 +1,205 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:08.488556+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22183,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22183/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22183/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22183/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22183/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/22183/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 22183,
+    "identity": {
+      "nom": "Anellu",
+      "nomComplet": "Ruisseau d' Anellu, Aneddu",
+      "prefixeNom": "Ruisseau d'",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22183/Anellu.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Corse",
+      "departement": "Corse-du-Sud",
+      "communePrincipale": "Aullène",
+      "communes": [
+        "Aullène"
+      ],
+      "massif": "Alta rocca",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a3II",
+      "interet": 2.4,
+      "nbVotes": 8
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": null,
+      "longueurM": null,
+      "cascadeMaxM": 23,
+      "cordeMiniM": 25,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "25",
+      "descente": "2h30",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "Depuis le centre du village de Aullène , Prendre la D69 vers Zicavo et le col de la Vacca, garer la voiture au niveau du pont d'Aneddu (point IGN 984m).",
+      "accesAmont": null,
+      "approche": "Au niveau du pont (rive gauche) un sentier balisé orange, avec un panneau rocher oscillant monte en sous bois. en 20-25 minutes le sentier arrive directement au départ du canyon.",
+      "descente": "Quelques rappels, quelques vasques, de jolis passages\n\nAprès la cascade de 23 mètres , il faut continuer quelques minutes dans la rivière , il y a un passage qui se resserre à nouveau, un bloc coincé… Continuer après ce bloc environ 10 minutes, juste avant que ça ne se resserre à nouveau un sentier part en rive droite",
+      "retour": "Prendre ce sentier en rive droite, en 2 minutes vous êtes sur la route et le pont de départ.\n\nSi vous voyez le pont en étant encore dans la rivière , revenez facilement en arrière une trentaine de mètres pour prendre le sentier.",
+      "engagement": null,
+      "periode": "Encore un peu d’eau en été",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Allez voir le rocher oscillant avant d'attaquer le canyon (suivre marques blanches), c'est assez marrant."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22183,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 41.812508,
+        "longitude": 9.1092,
+        "label": "depart 2 - au-dessus de verticales (1100m alt)"
+      },
+      {
+        "canyonId": 22183,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 41.816162,
+        "longitude": 9.114404,
+        "label": "depart 1"
+      },
+      {
+        "canyonId": 22183,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 41.811588,
+        "longitude": 9.103943,
+        "label": null
+      },
+      {
+        "canyonId": 22183,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 41.8265,
+        "longitude": 9.111056,
+        "label": "Parking amont 1 : aller la piste au Bergeries de Niellu à pied"
+      },
+      {
+        "canyonId": 22183,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 41.823727,
+        "longitude": 9.110649,
+        "label": "Parking amont 2 : suivre la piste jusqu'à Bergeries de Niellu avec voiture"
+      },
+      {
+        "canyonId": 22183,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 41.811523,
+        "longitude": 9.102967,
+        "label": null
+      },
+      {
+        "canyonId": 22183,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 41.812412,
+        "longitude": 9.102999,
+        "label": "debut d'approche (\"rocher oscillante\")"
+      },
+      {
+        "canyonId": 22183,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 41.816032,
+        "longitude": 9.111958,
+        "label": "le sentier direct arrive le sentier de Bergeries de Niellu"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 41.8265,
+      "longitude": 9.111056,
+      "label": "Parking amont 1 : aller la piste au Bergeries de Niellu à pied"
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_2bafc8e0f7a42d9c",
+          "kind": "TOPOGUIDE",
+          "title": "La Corse en Canyon",
+          "authors": [
+            "Association CorseCanyon"
+          ],
+          "publicationYear": 2018,
+          "reference": null,
+          "editor": "auto-edition",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/1127/La-Corse-en-Canyon-3eme-edition.html"
+        },
+        {
+          "id": "biblio_eeda460e91ce529f",
+          "kind": "TOPOGUIDE",
+          "title": "Corse Canyons (2ème édition)",
+          "authors": [
+            "Franck Jourdan",
+            "Jean-François Fiorina"
+          ],
+          "publicationYear": 2006,
+          "reference": "2-84698-169-8",
+          "editor": "Albiana",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/133/Corse-Canyons.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_b6fb73f30bb7590c",
+          "kind": "MAP",
+          "title": "4253 ET Aiguilles-de-Bavella (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 520,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Corse-du-Sud) - 26 juil 2011",
+          "summary": "- Le canyonisme est interdit la nuit (sauf dérogation)\n\n- Le canyonisme est interdit s'il y a une alerte émise par Météo-France de niveau orange ou rouge en cours.\n\n- Le canyonisme est interdit aux mineurs de moins de 7 ans, sauf canyon évalué égal ou inférieur à V1-A3-E3\n\n- Les groupes auront un effectif maximum de 12 personnes, hors encadrement.",
+          "remark": "L'arrêté du 9 juillet 2019 pris conjointement par les préfectures de Corse-du-Sud et de Haute-Corse harmonise les réglementations existantes pour les deux départements.",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nArrêté préfectoral modificatif (Corse-du-Sud et Haute-Corse) n°R20-2019-07-09-001 du 9 juillet 2019\n\nArrêté préfectoral (Corse-du-Sud) n°2011207-0005 du 26 juillet 2011",
+          "effectiveDate": "26 juil 2011",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/520/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral modificatif (Corse-du-Sud et Haute-Corse) n°R20-2019-07-09-001 du 9 juillet 2019",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem520_pj2.pdf"
+            },
+            {
+              "label": "Arrêté préfectoral (Corse-du-Sud) n°2011207-0005 du 26 juillet 2011",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem520_pj1.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

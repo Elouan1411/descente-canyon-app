@@ -1,0 +1,138 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:46.905269+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23127,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23127/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23127/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23127/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23127/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/23127/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 23127,
+    "identity": {
+      "nom": "Petra",
+      "nomComplet": "Ruisseau de Petra, Piscia di Gallu amont",
+      "prefixeNom": "Ruisseau de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23127/Petra.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Corse",
+      "departement": "Corse-du-Sud",
+      "communePrincipale": "Porto-Vecchio",
+      "communes": [
+        "Zonza",
+        "Porto-Vecchio"
+      ],
+      "massif": "Alta rocca",
+      "bassin": "Osu",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a2I",
+      "interet": 1.4,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 920,
+      "deniveleM": 850,
+      "longueurM": 800,
+      "cascadeMaxM": 10,
+      "cordeMiniM": 15,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "40min",
+      "descente": "1h",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "Monter à L'Ospedale par la D368 et poursuivre la route en direction de Zonza. 1km après le barrage, se garer le long de la route, au niveau de l'ancien parking des paillotes sans gêner la circulation.",
+      "accesAmont": null,
+      "approche": "Traverser la route et emprunter la piste descendant sur la cascade de Piscia di Gallu. Arrivé au ruisseau, suivre le GR partant à gauche vers le nouveau parking touristique de Piscia di Gallu et entrer dans le ruisseau, 50m avant le nouveau parking.",
+      "descente": "Quelques désescalades et sauts sur un ruisseau parfois encaissé, dans un cadre minéral et forestier.",
+      "retour": "Deux possibilités :\n\n- Soit, vous rentrez à votre véhicule et là, il vous faudra emprunter l'itinéraire de l'aller en 20min.\n\n- Soit, vous enchaînez sur Piscia di Gallu et le temps de retour sera d'1h (voir fiche) .",
+      "engagement": "Aucun",
+      "periode": "Filet d'eau à l'étiage",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Aucun équipement en place. Rappels facultatifs."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23127,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 41.687042,
+        "longitude": 9.200838,
+        "label": null
+      },
+      {
+        "canyonId": 23127,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 41.683456,
+        "longitude": 9.209314,
+        "label": null
+      },
+      {
+        "canyonId": 23127,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 41.676144,
+        "longitude": 9.206192,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 41.676144,
+      "longitude": 9.206192,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_3c89130e796573da",
+          "kind": "MAP",
+          "title": "4254 ET Porto-Vecchio (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 520,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Corse-du-Sud) - 26 juil 2011",
+          "summary": "- Le canyonisme est interdit la nuit (sauf dérogation)\n\n- Le canyonisme est interdit s'il y a une alerte émise par Météo-France de niveau orange ou rouge en cours.\n\n- Le canyonisme est interdit aux mineurs de moins de 7 ans, sauf canyon évalué égal ou inférieur à V1-A3-E3\n\n- Les groupes auront un effectif maximum de 12 personnes, hors encadrement.",
+          "remark": "L'arrêté du 9 juillet 2019 pris conjointement par les préfectures de Corse-du-Sud et de Haute-Corse harmonise les réglementations existantes pour les deux départements.",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nArrêté préfectoral modificatif (Corse-du-Sud et Haute-Corse) n°R20-2019-07-09-001 du 9 juillet 2019\n\nArrêté préfectoral (Corse-du-Sud) n°2011207-0005 du 26 juillet 2011",
+          "effectiveDate": "26 juil 2011",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/520/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral modificatif (Corse-du-Sud et Haute-Corse) n°R20-2019-07-09-001 du 9 juillet 2019",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem520_pj2.pdf"
+            },
+            {
+              "label": "Arrêté préfectoral (Corse-du-Sud) n°2011207-0005 du 26 juillet 2011",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem520_pj1.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

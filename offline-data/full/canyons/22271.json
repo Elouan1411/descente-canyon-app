@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:26.875719+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22271,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22271/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22271/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22271/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22271/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22271,
+    "identity": {
+      "nom": "Grand Pichet",
+      "nomComplet": "Cascade du Grand Pichet",
+      "prefixeNom": "Cascade du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22271/Grand-Pichet.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Ain",
+      "communePrincipale": "Bolozon",
+      "communes": [
+        "Bolozon"
+      ],
+      "massif": "Bugey",
+      "bassin": "Ain",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v5a2I",
+      "interet": 2.1,
+      "nbVotes": 5
+    },
+    "metrics": {
+      "altitudeDepartM": 730,
+      "deniveleM": 300,
+      "longueurM": 800,
+      "cascadeMaxM": 90,
+      "cordeMiniM": 90,
+      "navette": "16.0km"
+    },
+    "timings": {
+      "approche": "2min",
+      "descente": "2h",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "De Pont d'Ain, suivre Poncin, Serrières-sur-Ain, puis Bolozon. Avant d'entrer dans Bolozon, dans une épingle à gauche, 2 chemins partent sur la droite (l'un monte, l'autre descend). Prendre le chemin carrossable qui descend.\n\nLe suivre et passer le pont qui traverse le ruisseau du canyon et se garer juste après à droite.\n\nParking",
+      "accesAmont": "Longer l'Ain vers le sud et avant le pont de Serrières sur Ain (viaduc), monter à gauche direction le col de Berthiand. Juste avant le col et la forêt, un chemin carrossable part sur la gauche).\n\nLe continuer jusqu'à Vers et traverser le village.\n\nPasser devant un abreuvoir puis un lavoir et suivre le chemin carrossable qui remonte à gauche.\n\nSe garer sur le bord du champ dans la première courbe à droite (très belle vue).",
+      "approche": "Du bord du champ, descendre dans la combe sur votre gauche en passant une barrière qu'il ne faudra pas oublier de refermer derrière soi. On arrive dans le canyon en 2 minutes.",
+      "descente": "On arrive rapidement à la grande cascade. Deux points RG pour une MC10, et très bon relais sans frottement RD, départ de la C80.\n\nPuis une alternance de cascades et ressauts de 10 à 20m, de marche et un long chenal historique, qui permettait certainement la préservation de la voie ferrée en contre-bas.",
+      "retour": "En suivant le ruisseau, on revient naturellement à la voiture.",
+      "engagement": "Aucun : environnement boisé et ouvert, tous les obstacles sont contournables.",
+      "periode": "Souvent sec, préférer les périodes très pluvieuses.\n\nLe seuil des cascades est large, aucun endroit ne semble a priori piégeux.",
+      "geologie": "Tuf extrêmement adhérent !",
+      "historique": "Ré-équipé par la Tribu Canyon.",
+      "remarques": "Un des plus beau panorama de l'Ain !!\n\n...quand il n'y a pas de brouillard ;-)"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22271,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.188156,
+        "longitude": 5.494264,
+        "label": null
+      },
+      {
+        "canyonId": 22271,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.190014,
+        "longitude": 5.48442,
+        "label": null
+      },
+      {
+        "canyonId": 22271,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 46.188828,
+        "longitude": 5.496152,
+        "label": "se garer au bord du champ"
+      },
+      {
+        "canyonId": 22271,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 46.191113,
+        "longitude": 5.47736,
+        "label": "se garer juste apres le pont"
+      },
+      {
+        "canyonId": 22271,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 46.17466,
+        "longitude": 5.490804,
+        "label": "tourner à gauche sur le chemin avant le col du bertian"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 46.188828,
+      "longitude": 5.496152,
+      "label": "se garer au bord du champ"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

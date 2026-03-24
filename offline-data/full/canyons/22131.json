@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:56.849970+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22131,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22131/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22131/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22131/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22131/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22131,
+    "identity": {
+      "nom": "Trockenbach",
+      "nomComplet": "Trockenbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22131/Trockenbach.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Tyrol",
+      "departement": "Kufstein",
+      "communePrincipale": "Erl",
+      "communes": [
+        "Erl"
+      ],
+      "massif": "Chiemgauer Alpen - Alpes de Chiemgau",
+      "bassin": "Inn",
+      "coursEau": "Trockenbach"
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 1.8,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 750,
+      "deniveleM": 540,
+      "longueurM": 2000,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h",
+      "descente": "3h",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "Autoroute München - Innsbruck (A93/E45) jusqu'à la sortie Oberaudorf (5km avant la frontière Allemagne/Autriche). Prendre la route vers l'est et traverser le Inn. Prochaine route (avant la station essence) à gauche et continuer 2,5km direction Erl. Avant Erl prendre la petite route à droite (\"Wasserfall\") jusqu'à la bifurcation (100m). Il y a un parking devant Mühlgraben 76, 6343 Mühlgraben\n\nPossibilité de navette:\n\nAvec l'autre voiture retourner dans Erl (avant l'église) à droite (\"Spitzstein/Winkl). Suivre la route vers le-haut et à la prochaine bifurcation (2km depuis Erl) prendre à droite. La route est horizontale et traverse le Trockenbach. Garer ici la voiture.",
+      "accesAmont": null,
+      "approche": "Du premier parking monter la route à droite (\"Steigental\") et la suivre pendant 2400m. A la dernière ferme, suivre \"Spitzsteinkopf\" vers la gauche. Suivre la ligne électrique haute tension qui monte vers la foret. Après avoir traversé de nouveau un champ, vous voyez des fermes. Prendre à gauche, descendre la route sur 400m et vous tombez sur un pont.",
+      "descente": "Premier encaissement, ensuite une fatigante désescalade, quelques cascades, de la marche, petit barrage et la C30.",
+      "retour": "Suivre le sentier jusqu'á voiture",
+      "engagement": "Après le premier encaissement, beaucoup de possibilités de se mettre hors d'eau.",
+      "periode": "Petites nages, quelques sauts possibles. Ne pas pratiquer après des grosses pluies. Le niveau d'eau à l'arrivée n'est pas representatif car il y a un captage d'eau plus haut.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Très glissante; C30 (saut possible: 15m ou moins)"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22131,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.685284,
+        "longitude": 12.209179,
+        "label": null
+      },
+      {
+        "canyonId": 22131,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.675919,
+        "longitude": 12.194121,
+        "label": null
+      },
+      {
+        "canyonId": 22131,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 47.685787,
+        "longitude": 12.209582,
+        "label": null
+      },
+      {
+        "canyonId": 22131,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 47.674107,
+        "longitude": 12.189041,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 47.685787,
+      "longitude": 12.209582,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_c3a9767b6b25a80d",
+          "kind": "MAP",
+          "title": "9 Kaisergebirge (Kompass)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

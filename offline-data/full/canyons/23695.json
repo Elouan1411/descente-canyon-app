@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:45.338953+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23695,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23695/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23695/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23695/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23695/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23695,
+    "identity": {
+      "nom": "Fätschbach",
+      "nomComplet": "Fätschbach, Berglistüber",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23695/Fatschbach.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Glarus Süd",
+      "departement": "Glaris",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": "Linth",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a3II",
+      "interet": 2.6,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1285,
+      "deniveleM": 565,
+      "longueurM": 3100,
+      "cascadeMaxM": 46,
+      "cordeMiniM": 50,
+      "navette": "10.0km"
+    },
+    "timings": {
+      "approche": "3min",
+      "descente": "4h",
+      "retour": "2min"
+    },
+    "topo": {
+      "accesAval": "Coming from the A3 Highway, take the exit 44-Niederurnen. Then drive to the end of the valley in direction Klausenpass.\n\nAt the very first turn of the Klausenpass, drive left, passing the big basin of the hydroelectric plant and park your car just after the crossing of Fätschbach, 1.3km from the Klausenpass street. Take the second car to drive up the Klausenpass. Just when it becomes flatter you can see on the left the water capture.\n\nPark 350m before the water capture on a big parking place.\n\nIf you would like to skip the less interesting lower part, then park your first car at the 5th U-turn at Bergli, where a sign indicates the Berglistüber waterfall.",
+      "accesAmont": null,
+      "approche": "From the upper parking there is a small path crossing a fence and leads you to the water pipe which crosses the canyon. From there climb to the right in the water stream.",
+      "descente": "The canyon is split up in four sections.\n\nPart 1: From the start there is a series of nice jumps up to 8m in to very deep pools. Apart of the last waterfall all have to be jumped no anchors in place.\n\nThen there is a long walk (20-30min) in the riverbed to the second part.\n\nPart 2: This part starts with some small jumps and continues with a nice abseils in deep, huge pools.\n\nAfter this section there is again some down climb and walking (10-20min).\n\nPart 3: Here comes the very nice and photogenic waterfall of Berglistüber.\n\nAfter this section you have the possibility to exit on the tourist path or continue further down to the end.\n\nPart 4: Some more abseils, interrupted by down climbs and walking to the very end.",
+      "retour": "After part 4 continue until reaching the parking lot.\n\nIf you exit at Berglistüber (end part 3) there is a 5min walk to the parking.",
+      "engagement": null,
+      "periode": "After snowmelt, July-October",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Call the water capture for information! Number writtne on a sign at the exit of part 4."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23695,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.907188,
+        "longitude": 8.949461,
+        "label": null
+      },
+      {
+        "canyonId": 23695,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.907936,
+        "longitude": 8.983487,
+        "label": null
+      },
+      {
+        "canyonId": 23695,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 46.907406,
+        "longitude": 8.94967,
+        "label": null
+      },
+      {
+        "canyonId": 23695,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 46.908195,
+        "longitude": 8.983758,
+        "label": null
+      },
+      {
+        "canyonId": 23695,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 46.90892,
+        "longitude": 8.978276,
+        "label": "Parking when you plan to exit at the Berglistüber waterfall."
+      },
+      {
+        "canyonId": 23695,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 46.908508,
+        "longitude": 8.975542,
+        "label": "Exit after the Berglistüber waterfall, as the lower part is less interesting."
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 46.907406,
+      "longitude": 8.94967,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

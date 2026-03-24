@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:37.132012+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22596,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22596/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22596/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22596/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22596/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22596,
+    "identity": {
+      "nom": "Longon",
+      "nomComplet": "Vallon de Longon, Ruisseau de Longon",
+      "prefixeNom": "Vallon de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22596/Longon.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-Maritimes",
+      "communePrincipale": "Roure",
+      "communes": [
+        "Roure"
+      ],
+      "massif": null,
+      "bassin": "Tinée",
+      "coursEau": "Ruisseau de Longon"
+    },
+    "rating": {
+      "cotation": "v3a2III",
+      "interet": 1.6,
+      "nbVotes": 5
+    },
+    "metrics": {
+      "altitudeDepartM": 870,
+      "deniveleM": 230,
+      "longueurM": 1000,
+      "cascadeMaxM": 35,
+      "cordeMiniM": 35,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "50min",
+      "descente": "2h00",
+      "retour": "5 min"
+    },
+    "topo": {
+      "accesAval": "Se rendre à St Sauveur sur Tinée. Continuer 4,9Km vers Isola. Passer le Pont de Paule par l'ancienne route (qui passe au dessus de la D2205 et de la Tinée) et se garer immédiatement à l'embranchement, à l'ombre (fontaine, poubelles).\n\nAvec navette: avec l' autre véhicule, revenir vers St Sauveur et à l'entrée du village prendre à droite la D30, vers Roubion, puis 3km plus loin encore a droite la D130 vers Roure . 2km avant Roure, dans une épingle à gauche (balise 243), prendre une piste (déchèterie). Se garer 3km plus loin au niveau de la Chapelle Ste Anne, que l' on contourne.",
+      "accesAmont": null,
+      "approche": "Monter 50 m par l'ancienne route jusqu'à la première marque de peinture verte (parc du Mercantour). Attaquer cette montée par une sente qui rejoint d'abord un pylone, puis chemine en diagonale à gauche au travers d'anciennes restanques. Rejoindre la grange Collet et continuer a monter 3/4 mn, le sentier ainsi atteint passe une crête et continue à flanc. Rejoindre la passerelle ou descendre un peu avant.\n\nApproche avec navette: De la chapelle prendre le GR et continuer tout droit au niveau de la balise 244. Le chemin fini par descendre légèrement jusqu'à une passerelle qui coupe le vallon, point de départ du canyon.",
+      "descente": "Descente très souvent en fort débit . Deux petits Pi sous la passerelle, une C10 et de la marche sur les bords recouverts de terre et de gravier mènent à une C25. La plaquette (de 8) rive D est morte, aller chercher un arbre rive G. Garder la corde pour descendre un petit toboggan de 3 m. Pour la C50 finale, descendre rive G (scabreux) jusqu'à un bel arbre pour un rappel de 35m . Sortir au captage.",
+      "retour": "Suivre la piste puis la route jusqu'à la voiture.",
+      "engagement": "Pas d' échappatoire dans le resserrement. L'équipement est à refaire.",
+      "periode": "Peu aquatique , 2 passages bien arrosés, la C25 rive D (a ré-équiper) et le petit tobog. qui suit.\n\nA faire à l'étiage en débit mini (100-120 l/s).",
+      "geologie": null,
+      "historique": "XXXXX",
+      "remarques": "Se garer correctement au niveau de la chapelle (2-3 places max) pour l'accès navette."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22596,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.12125,
+        "longitude": 7.07925,
+        "label": null
+      },
+      {
+        "canyonId": 22596,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.120159,
+        "longitude": 7.09131,
+        "label": null
+      },
+      {
+        "canyonId": 22596,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 44.114334,
+        "longitude": 7.085238,
+        "label": null
+      },
+      {
+        "canyonId": 22596,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 44.120129,
+        "longitude": 7.091975,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 44.114334,
+      "longitude": 7.085238,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

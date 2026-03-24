@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:53.608592+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22116,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22116/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22116/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22116/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22116/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22116,
+    "identity": {
+      "nom": "Innersbachklamm",
+      "nomComplet": "Innersbachklamm, Innersbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22116/Innersbachklamm.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Salzbourg",
+      "departement": "Politischer Bezirk Zell am See",
+      "communePrincipale": "Lofer",
+      "communes": [
+        "Unken",
+        "Lofer"
+      ],
+      "massif": "Alpes de Berchtesgaden",
+      "bassin": null,
+      "coursEau": "Innersbach"
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 1.8,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 540,
+      "deniveleM": 520,
+      "longueurM": 80,
+      "cascadeMaxM": 3,
+      "cordeMiniM": 5,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "10min",
+      "descente": "20min",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "De Reichenhall (Allemagne) vers Lofer, Saalfelden, Zell am See. 3km après la frontière passer Unken. Encore 3 km et à gauche jusqu'à une Hotel in Reith (à droite). Garer la voiture sur un grand parking.",
+      "accesAmont": null,
+      "approche": "20m retour et à droite (épingle), traverser le Innersbach et poursuivre le sentier jusqu'à l'encaissement.",
+      "descente": "Désescalader le \"Holzverhau\", ensuite quelques toboggans et un saut à la fin",
+      "retour": "Par les passerelles de bois dans la clue.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22116,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.627804,
+        "longitude": 12.726535,
+        "label": null
+      },
+      {
+        "canyonId": 22116,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.628521,
+        "longitude": 12.726293,
+        "label": null
+      },
+      {
+        "canyonId": 22116,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.627613,
+        "longitude": 12.73236,
+        "label": null
+      },
+      {
+        "canyonId": 22116,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.62682,
+        "longitude": 12.722147,
+        "label": "Parking alternatif (approche vers la sortie)"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.627613,
+      "longitude": 12.73236,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

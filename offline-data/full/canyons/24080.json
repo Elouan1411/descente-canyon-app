@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:59:07.266086+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24080,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24080/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24080/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24080/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24080/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24080,
+    "identity": {
+      "nom": "Castillo",
+      "nomComplet": "Barranco del Castillo, San Jeronimo",
+      "prefixeNom": "Barranco del",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24080/Castillo.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Canarias",
+      "departement": "Santa Cruz de Tenerife",
+      "communePrincipale": "Tacoronte",
+      "communes": [
+        "Tacoronte"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a1III",
+      "interet": 2.5,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 300,
+      "deniveleM": 280,
+      "longueurM": 1000,
+      "cascadeMaxM": 70,
+      "cordeMiniM": 60,
+      "navette": "2.5km"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "3h",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": "Laisser le véhicule navette à la fin de la route de Mesa del Mar, parking de la Playa de la Arena.\n\nMonter sur Guayonje par d'impressionants lacets. En haut de la calle Mesa del Mar, prendre à droite la carretera de Guayonje.\n\nSe garer juste après un arrêt de bus au niveau d'un établissement d'agriculture.",
+      "accesAmont": null,
+      "approche": "Du parking, on devine le cours d'eau. Le joindre par la rive droite sur la murette en béton.",
+      "descente": "On commence par 10 minutes de marche dans des fleurs/déchets/buissons avant d'atteindre les rappels.\n\nR25\n\nR30\n\nR60\n\nR45\n\nR70 fractionnable 10m ou 45m plus bas\n\nPuis R35, R8, R35 et R8.",
+      "retour": "Rester dans le lit jusqu'à rejoindre la mer et le sentier qui mène au Castillo.\n\nRentrer à Mesa del Mar en longeant la côte.",
+      "engagement": "Canyon ouvert à l'équipement correct.\n\nPas d'échappatoire évidente une fois passé le troisième rappel.",
+      "periode": "Descente sèche, plein N.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Vue fantastique sur l'océan et El Teide."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24080,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 28.49472,
+        "longitude": -16.420219,
+        "label": null
+      },
+      {
+        "canyonId": 24080,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 28.496082,
+        "longitude": -16.424948,
+        "label": null
+      },
+      {
+        "canyonId": 24080,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 28.494858,
+        "longitude": -16.419903,
+        "label": null
+      },
+      {
+        "canyonId": 24080,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 28.502724,
+        "longitude": -16.424015,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 28.494858,
+      "longitude": -16.419903,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_93f592eb87eba238",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://franciscoadanfarina.blogspot.fr/2.....de-san-jeronimo.html",
+          "url": "http://franciscoadanfarina.blogspot.fr/2.....de-san-jeronimo.html"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:01.207071+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21602,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21602/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21602/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21602/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21602/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21602,
+    "identity": {
+      "nom": "Vessadas (Sup)",
+      "nomComplet": "Ribeira de Vessadas (Sup)",
+      "prefixeNom": "Ribeira de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21602/Vessadas-Sup.html"
+    },
+    "location": {
+      "pays": "Portugal",
+      "region": "São Pedro do Sul",
+      "departement": "Viseu",
+      "communePrincipale": "Manhouce",
+      "communes": [
+        "Manhouce"
+      ],
+      "massif": "Serra da Freita",
+      "bassin": "Rio Vouga",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 1.0,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 850,
+      "deniveleM": 170,
+      "longueurM": 1300,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 35,
+      "navette": "2.5km"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "1h30",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": "A Viseu, au sud est de Porto, prendre la E80 direction Aveiro. Sortir à droite en direction de Oliveira de Frades. Puis prendre la direction de Monhouce par la 612. 500m avant l'entrée du village de Gestozinho, se garer au niveau du pont qui enjambe le canyon.",
+      "accesAmont": null,
+      "approche": "Rivière en contre bas",
+      "descente": "Les premières cascades ne sont pas équipées. Après une marche on arrive à un petit enchaînement intéressant. Nouvelle marche et nous voilà à la grande cascades de 30m. Peu esthétique, et dont l’équipement a été arraché par les crues.\n\nRetour : Sortie immédiate au pont.",
+      "retour": "A côté du moulin à eau, remonter par les champs cultivés. Le pont est au dessus de la route 612.",
+      "engagement": "Canyon non encaissé",
+      "periode": "De Avril à Octobre (période optimale entre Mai et Juin).",
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21602,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 40.842937,
+        "longitude": -8.22788,
+        "label": null
+      },
+      {
+        "canyonId": 21602,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 40.836922,
+        "longitude": -8.218239,
+        "label": null
+      },
+      {
+        "canyonId": 21602,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 40.842937,
+        "longitude": -8.22788,
+        "label": null
+      },
+      {
+        "canyonId": 21602,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 40.836922,
+        "longitude": -8.218239,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 40.842937,
+      "longitude": -8.22788,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_ec03bda4f672804d",
+          "kind": "MAP",
+          "title": "155-165 (IGE)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

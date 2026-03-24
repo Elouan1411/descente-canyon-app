@@ -1,0 +1,398 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:44:18.313377+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2151,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2151/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2151/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2151/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2151/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/2151/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 2151,
+    "identity": {
+      "nom": "Cramassouri",
+      "nomComplet": "Vallon de Cramassouri, Vallon des aviateurs",
+      "prefixeNom": "Vallon de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2151/Cramassouri.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-Maritimes",
+      "communePrincipale": "La Tour",
+      "communes": [
+        "La Tour"
+      ],
+      "massif": null,
+      "bassin": "Tinée",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a2II",
+      "interet": 2.9,
+      "nbVotes": 187
+    },
+    "metrics": {
+      "altitudeDepartM": 300,
+      "deniveleM": 80,
+      "longueurM": 1000,
+      "cascadeMaxM": 10,
+      "cordeMiniM": 10,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "1h30",
+      "retour": "25min"
+    },
+    "topo": {
+      "accesAval": "Quitter la vallée du Var pour la D 2205 en direction de la vallée de la Tinée. Continuer la D 2205, puis tourner à droite en direction de La Tour (D32). Se garer dans un virage en épingle, au niveau de places de parking. A noter que si le parking est plein, il y en a un autre quelques centaines de mètres plus loin.",
+      "accesAmont": null,
+      "approche": "Un peu plus haut sur la route, peu après la stèle des aviateurs, on trouve un sentier qui permet de descendre jusqu'au vallon (panneau d'affichage au départ du sentier). A noter, 3 passages câblés que l'on tiendra simplement à la main.",
+      "descente": "Quelques vasques, puis une courte marche mène à un enchainement de petites cascades permettant souvent des jeux.\n\nDeux passages en désescalade sont casse-cheville et doivent être abordés avec prudence.\n\nAttention à bien sonder, car certaines vasques peuvent être comblées.\n\nL'avant dernière cascade (C7) peut se faire en rappel, saut ou toboggan.\n\nLe canyon se termine à l'arrivée dans la Tinée.",
+      "retour": "On remonte la Tinée en rive gauche sur environ 20 m pour trouver un sentier (cairns et marquage jaune ou bleue).\n\nDepuis 2012, la Tinée ayant changée de lit, elle \"tape\" sur la sortie du canyon. Si son débit est trop important, il faut coller à la RD du canyon et rejoindre une main courante en acier qui permet d'escalader et progresser sur la paroi qui fait l'angle (peu évident au début, facile vers la fin).\n\nLe sentier devient mieux marqué et remonte à la route. Il débouche une vingtaine de mètre avant le virage où sont garées les véhicules.",
+      "engagement": "Echappatoires possibles hors encaissement.",
+      "periode": "Toujours en eau pendant la période autorisée.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "La descente avec un gros débit nécessite une très bonne connaissance de ce canyon et obligatoirement des cordes."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2151,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.938576,
+        "longitude": 7.180552,
+        "label": "Départ depuis l'existence du nouveau chemin d'accès"
+      },
+      {
+        "canyonId": 2151,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.933971,
+        "longitude": 7.175295,
+        "label": null
+      },
+      {
+        "canyonId": 2151,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 43.931961,
+        "longitude": 7.175703,
+        "label": "Au cas où l'on choisisse de faire une navette"
+      },
+      {
+        "canyonId": 2151,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.936363,
+        "longitude": 7.176261,
+        "label": null
+      },
+      {
+        "canyonId": 2151,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 43.937416,
+        "longitude": 7.177978,
+        "label": "Départ du nouveau sentier d'approche"
+      },
+      {
+        "canyonId": 2151,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 43.934471,
+        "longitude": 7.173525,
+        "label": "Départ du sentier de retour (pas de traversée de la Tinée)"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.931961,
+      "longitude": 7.175703,
+      "label": "Au cas où l'on choisisse de faire une navette"
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_3cf99204167f6619",
+          "kind": "TOPOGUIDE",
+          "title": "100 beaux canyons méditerranéens",
+          "authors": [
+            "Jean-François FIORINA et Franck JOURDAN"
+          ],
+          "publicationYear": 2007,
+          "reference": "978 2 7417 0339 6",
+          "editor": "GAP",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/111/100-beaux-canyons-mediterraneens.html"
+        },
+        {
+          "id": "biblio_2ef96f1a1f57f28b",
+          "kind": "TOPOGUIDE",
+          "title": "30 plus beaux canyons des Alpes du Sud",
+          "authors": [
+            "Hubert Ayasse"
+          ],
+          "publicationYear": 2006,
+          "reference": "ISBN 2-7449 0585-2 ISBN 0765-569-X",
+          "editor": "Edisud",
+          "status": "stock vide !\n\nSans doute disponible sur commande : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/179/30-plus-beaux-canyons-des-Alpes-du-Sud.html"
+        },
+        {
+          "id": "biblio_9b037f1f06ef0fe9",
+          "kind": "TOPOGUIDE",
+          "title": "Clues & Canyons - Les guides Randoxygène",
+          "authors": [
+            "Conseil Général des Alpes-Maritimes"
+          ],
+          "publicationYear": 2005,
+          "reference": null,
+          "editor": "CG06",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1158/topoguide.html"
+        },
+        {
+          "id": "biblio_097bfa69beeec31b",
+          "kind": "TOPOGUIDE",
+          "title": "Clues & Canyons - Les guides Randoxygène",
+          "authors": [
+            "Conseil Général des Alpes-Maritimes"
+          ],
+          "publicationYear": 2003,
+          "reference": null,
+          "editor": null,
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1148/topoguide.html"
+        },
+        {
+          "id": "biblio_38d534bea000e12a",
+          "kind": "TOPOGUIDE",
+          "title": "Clues & Canyons - Les guides Randoxygène",
+          "authors": [
+            "Conseil Général des Alpes-Maritimes"
+          ],
+          "publicationYear": 2001,
+          "reference": null,
+          "editor": "CG06",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/110/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_1b6eca29674d88a9",
+          "kind": "MAP",
+          "title": "3641 ET Moyenne Tinee (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 554,
+          "status": "Obsolète",
+          "action": "Interdit",
+          "title": "Arrêté municipal (La Tour) - 06 sept 2024",
+          "summary": "Pratique du canyoning interdite dans le vallon de Cramassouri à compter du vendredi 6 septembre 2024.",
+          "remark": "Incompatibilité entre différentes pratiques (chasse). Interdiction reconduite chaque année. Le canyon sera de nouveau autorisé selon les dispositions de l'arrêté préfectoral, soit le 1er avril 2025.",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nArrêté municipal (La Tour) n°2024-45 du 23 août 2024",
+          "effectiveDate": "31 mars 2025",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/554/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté municipal (La Tour) n°2024-45 du 23 août 2024",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem554_pj1.pdf"
+            }
+          ]
+        },
+        {
+          "id": 527,
+          "status": "Obsolète",
+          "action": "Interdit",
+          "title": "Arrêté municipal (La Tour) - 09 sept 2023",
+          "summary": "Pratique du canyoning interdite dans le vallon de Cramassouri à compter du samedi 9 septembre 2023.",
+          "remark": "Incompatibilité entre différentes pratiques (chasse). Interdiction reconduite chaque année. Le canyon sera de nouveau autorisé selon les dispositions de l'arrêté préfectoral, soit le 1er avril 2024.",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nArrêté municipal (La Tour) n°2023-45 du 4 septembre 2023",
+          "effectiveDate": "31 mars 2024",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/527/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté municipal (La Tour) n°2023-45 du 4 septembre 2023",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem527_pj1.pdf"
+            }
+          ]
+        },
+        {
+          "id": 493,
+          "status": "Obsolète",
+          "action": "Interdit",
+          "title": "Arrêté municipal (La Tour) - 10 sept 2022",
+          "summary": "Pratique du canyoning interdite dans le vallon de Cramassouri à compter du samedi 10 septembre 2022.",
+          "remark": "Incompatibilité entre différentes pratiques (chasseurs probablement). Interdiction reconduite chaque année. Le canyon sera de nouveau autorisé selon les dispositions de l'arrêté préfectoral, soit le 1er avril 2023.",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nArrêté municipal (La-Tour) n°2022-43 du 2 septembre 2022",
+          "effectiveDate": "31 mars 2023",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/493/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté municipal (La-Tour) n°2022-43 du 2 septembre 2022",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem493_pj1.pdf"
+            }
+          ]
+        },
+        {
+          "id": 447,
+          "status": "Obsolète",
+          "action": "Interdit",
+          "title": "Arrêté municipal (La Tour) - 06 sept 2021",
+          "summary": "Pratique du canyoning interdite dans le vallon de Cramassouri à compter du lundi 6 septembre 2021.",
+          "remark": "Incompatibilité entre différentes pratiques (chasseurs probablement). Interdiction reconduite chaque année.",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nArrêté municipal (La-Tour-sur-Tinée) n°2021-29 du 3 septembre 2021",
+          "effectiveDate": "31 mars 2022",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/447/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté municipal (La-Tour-sur-Tinée) n°2021-29 du 3 septembre 2021",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem447_pj1.pdf"
+            }
+          ]
+        },
+        {
+          "id": 413,
+          "status": "Abrogé",
+          "action": "Indéfini",
+          "title": "Arrêté - 01 avr 2021",
+          "summary": "Le canyon de Cramassouri a été fortement touché par la tempête Alex. L'intégralité des équipements sont détruits et il n'y a plus aucun moyen de franchissement des obstacles. Le comité départemental FFME 06 est en charge du rééquipement. Prière de ne pas parcourir cet itinéraire avant remise en sécurité définitive.",
+          "remark": "Le canyon n'est actuellement pas interdit, un arrêté suspensif peut être pris pour la durée des travaux. Un accident pourrait déboucher sur une interdiction définitive. Ne pas descendre ce canyon jusqu'à la fin de la sécurisation",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.",
+          "effectiveDate": "01 avr 2021",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/413/legislation.html",
+          "attachments": []
+        },
+        {
+          "id": 349,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Alpes-Maritimes) - 27 oct 2016",
+          "summary": "La pratique du canyonisme est autorisée du 1er avril au 31 octobre inclus à l'exception des canyons figurant dans les articles 2 et 3, où s'applique une réglementation spécifique (périodes plus réduites, interdiction...).\n\nLes canyons secs ou habituellement à sec sont autorisés toute l'année.\n\nTous les canyons situés en zone centrale du Parc du Mercantour sont interdits.\n\nTout groupe de pratiquants ne peut excéder 8 personnes, encadrement non compris.",
+          "remark": null,
+          "details": "Arrêté préfectoral n°2016-852 du 27 octobre 2016",
+          "effectiveDate": "27 oct 2016",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/349/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral n°2016-852 du 27 octobre 2016",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem349_pj1.pdf"
+            }
+          ]
+        },
+        {
+          "id": 342,
+          "status": "Obsolète",
+          "action": "Réglemente",
+          "title": "Arrêté municipal (La Tour sur Tinée) - 30 août 2016",
+          "summary": "Chaque année depuis 2008, le canyon de Cramassouri fait l'objet d'une interdiction anticipée par rapport à l'arrêté préfectoral. En 2016, le canyon fermera le samedi 10 septembre (inclus). Il sera interdit jusqu'au 1er avril 2017, date à laquelle l'arrêté préfectoral ré-autorise la pratique.\n\nA noter qu'une charte de bonne pratique, fixant les conditions d'accès au canyon (parking, sentier, etc...) est publiée depuis 2008.\n\nEn effet, les canyons sont l’objet d’un fort enjeu environnemental et social. C’est une zone que nous partageons avec les riverains, les pêcheurs, les chasseurs et les amoureux de la nature. Merci de tenir compte de ces paramètres dans vote pratique de descente des canyons.",
+          "remark": null,
+          "details": "Arrêté municipal n°2016/17 du 30 août 2016\n\nCharte pour la pratique du canyon de Cramassouri",
+          "effectiveDate": "31 déc 2016",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/342/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté municipal n°2016/17 du 30 août 2016",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem342_pj1.pdf"
+            },
+            {
+              "label": "Charte pour la pratique du canyon de Cramassouri",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem342_pj2.pdf"
+            }
+          ]
+        },
+        {
+          "id": 327,
+          "status": "Obsolète",
+          "action": "Interdit",
+          "title": "Arrêté municipal (La Tour sur Tinée) - 28 août 2015",
+          "summary": "Chaque année depuis 2008, le canyon de Cramassouri fait l'objet d'une interdiction anticipée par rapport à l'arrêté préfectoral. En 2015, le canyon fermera le jeudi 10 septembre. Il sera interdit jusqu'au 1er avril 2016, date à laquelle l'arrêté préfectoral ré-autorise la pratique.\n\nA noter qu'une charte de bonne pratique, fixant les conditions d'accès au canyon (parking, sentier, etc...) est publiée depuis 2008.\n\nEn effet, les canyons sont l’objet d’un fort enjeu environnemental et social. C’est une zone que nous partageons avec les riverains, les pêcheurs, les chasseurs et les amoureux de la nature. Merci de tenir compte de ces paramètres dans vote pratique de descente des canyons.",
+          "remark": null,
+          "details": "Charte d'utilisation de 2008\n\nArrêté municipal n°2015/26Bis du 28 août 2015",
+          "effectiveDate": "01 avr 2016",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/327/legislation.html",
+          "attachments": [
+            {
+              "label": "Charte d'utilisation de 2008",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem327_pj2.pdf"
+            },
+            {
+              "label": "Arrêté municipal n°2015/26Bis du 28 août 2015",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem327_pj1.pdf"
+            }
+          ]
+        },
+        {
+          "id": 171,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Information - 28 juil 2008",
+          "summary": "Avec l'arrivée de la nouvelle équipe municipale de la Tour sur Tinée, le canyon de Cramassouri a pu être réouvert après une période d'interdiction. Le nouvel arrêté municipal abroge l'ancien qui interdisait la pratique. Pour l'année 2008, le canyon a été donc réouvert à compter du 1er aout 2008 et jusqu'au 12 septembre 2008, date d'ouverture de la chasse...\n\nDésormais, le canyon réouvre du 1er avril (date définie dans l'arrêté préfectoral) et ferme lorsque la période de chasse commence (partage entre les différents usages du site).\n\nDes places de parking ont été aménagées en bordure de la départementale. Un sentier d'accès a été tracé. Une charte a été édictée (ci-dessous).",
+          "remark": null,
+          "details": "Consultez le\n\ntexte (ou extrait)\n\nCOMMUNE DE LA TOUR-SUR-TINEE\n\nCHARTE POUR LA PRATIQUE DU CANYON DE CRAMASSOURI\n\nSuite à l’interdiction de pratique durant l’année 2007, une charte a été mise en place par la commune de La Tour-sur–Tinée, dont le but est de réguler et d’harmoniser la cohabitation entre les pratiquants et les habitants de la Tour. Le respect de celle-ci sera la garantie d’une pérennisation de l’activité et une meilleure protection du milieu. Cette charte s’adresse à tous les pratiquants encadrés ou non qui souhaitent descendre le canyon de Cramassouri.\n\nArticle 1 Conditions d’utilisation du site:\n\n- Laisser libre la chaussée et de ne pas gêner la circulation sur la route, en garant les véhicules uniquement dans les parkings prévus à cet effet.\n\n- Afin de ne pas gêner les autres usagers, ne pas se déshabiller sur la route.\n\n- Respecter et faire respecter strictement le nouveau sentier d’accès au canyon.\n\n- Respecter la quiétude des lieux, lors du parcours du canyon en proscrivant cris et hurlements.\n\n- Le canyon de Cramassouri est un milieu fragile, éviter de le souiller et de marcher dans l’eau lorsque ce n’est pas nécessaire (Piétinement des zones sensibles et de la microfaune).\n\n- En cas de constatation d’atteinte au milieu, prévenir le plus rapidement possible la mairie de la Tour sur Tinée (amarrages défectueux, tags, gravats, épaves..)\n\n- Respecter les autres usagers, une bonne cohabitation entre les personnes est nécessaire à la pérennisation de l’activité.\n\nArticle 2 La réglementation:\n\nRespecter et faire respecter les réglementations en vigueur :\n\n- l’arrêté préfectoral N° 98.000481BIS du 22/12/1998 et notamment l’article 7 « Recommandations de pratique».\n\n- l’arrêté municipal\n\nArticle 3 Intérêt local:\n\nParticiper à l’intérêt local et touristique de la commue, qui vous accueille, en faisant l’effort de nous visiter et d’animer ses commerces.\n\nPOUR LES GROUPES ENCADRES (PROFESSIONNELS OU BENEVOLES DE CLUBS)\n\nArticle 4 :\n\nSensibiliser et éduquer les usagers que vous encadrez, à la protection du milieu aquatique spécifique au canyon.\n\nArticle 5 :\n\nAfin de ne pas «s’approprier» le canyon, tout professionnel s’engage à ne le parcourir que deux fois par jour maximum.\n\nCRÉATION D’UN COMITÉ DE SUIVI\n\nArticle 6 :\n\nUn comité de suivi est créé réunissant les différents représentants qui parcourent régulièrement le canyon de Cramassouri. Il sera chargé annuellement d’analyser les retours de fréquentation ainsi que les problèmes survenus au cours de la saison écoulée. Le comité de suivi (présidé par le maire de la Tour sur Tinée), émettra un avis sur les mesures nécessaires à l’amélioration des conditions de pratique, la protection des milieux, ainsi que la modification de la charte.\n\nArticle 7 :\n\nPour une gestion durable et disposer d’une parfaite connaissance de la fréquentation et de la pratique dans ce canyon, il est demandé aux professionnels ainsi qu’aux bénévoles, d’informer la mairie de la Tour-sur–Tinée sur sa fréquentation. Un imprimé sera disponible à la mairie et auprès des fédérations concernées (FFME, FFCAM, FFS...).\n\nCharte",
+          "effectiveDate": "28 juil 2008",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/171/legislation.html",
+          "attachments": [
+            {
+              "label": "Charte",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem171_pj1.pdf"
+            }
+          ]
+        },
+        {
+          "id": 150,
+          "status": "Abrogé",
+          "action": "Interdit",
+          "title": "Arrêté municipal (La Tour sur Tinée) - 08 déc 2006",
+          "summary": "La pratique du canyon dans le vallon de Cramassouri est interdite.",
+          "remark": null,
+          "details": "Consultez :\n\nArrêté municipal (La Tour sur Tinée) - 08 déc 2006",
+          "effectiveDate": "31 juil 2008",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/150/legislation.html",
+          "attachments": []
+        },
+        {
+          "id": 123,
+          "status": "Obsolète",
+          "action": "Interdit",
+          "title": "Arrêté municipal (La Tour sur Tinée) - 05 sept 2006",
+          "summary": "En raison du danger de chute de pierres et de rocher (travaux d'élargissement de la RD32), le canyon est interdit du 18 septembre au 31 octobre, date légale de fin de pratique (cf arrêté préfectoral)",
+          "remark": null,
+          "details": "Consultez le\n\ntexte (ou extrait)\n\nArrêté municipal n° 06/04 du 05 septembre 2006 [extrait] :\n\nArticle 1 : La pratique du canyoning dans le vallon de Crémassourin [!!!] est interdite à compter du 18 septembre 2006 jusqu'au 31 octobre date légale de fin de pratique.\n\nArticle 2 : Le présent arrêté sera affiché à l'entrée du chemin menant au vallon\n\nConsultez :\n\nPhoto de l'arrêté au départ du sentier",
+          "effectiveDate": "31 oct 2006",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/123/legislation.html",
+          "attachments": []
+        },
+        {
+          "id": 26,
+          "status": "Obsolète",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Alpes-Maritimes) - 22 déc 1998",
+          "summary": "La pratique du canyonisme est autorisée du 1er avril au 31 octobre inclus à l'exception des canyons figurant dans les articles 2 et 3, où s'applique une réglementation spécifique (périodes plus réduites, interdiction...).\n\nLes canyons secs ou habituellement à sec sont autorisés toute l'année.\n\nTous les canyons situés en zone centrale du Parc du Mercantour sont interdits.\n\nTout groupe de pratiquants ne peut excéder 8 personnes, encadrement non compris.",
+          "remark": null,
+          "details": "Consultez le document\n\nArrêté préfectoral N°98.000481-bis du 22/12/1998\n\nARRETE PREFECTORAL\n\n(n° 98.000481-bis du 22/12/1998)\n\nVU le code général des collectivités territoriales ;\n\nVU le code rural ;\n\nVU le code de la consommation et notamment ses articles L 221-1 à L 225-1 ;\n\nVU la loi n° 76.629 du 10 juillet 1976 relative à la protection de la nature ;\n\nVU la loi n° 84.610 du 16 juillet 1984 modifiée par la loi n° 92 52 du 13 juillet 1992 relative à la promotion et à l'organisation des activités physiques et sportives ;\n\nVU la loi n° 87.565 du 22 juillet 1987 relative à l'organisation de la sécurité civile, à la protection de la forêt contre l'incendie et à la prévention des risques majeurs ;\n\nVU la loi n° 92.3 du 3 janvier 1992 sur l'eau ;\n\nVU la loi n° 95.101 du 2 février 1995 relative au renforcement de la protection de l'environnement ;\n\nVU le décret n° 93.1035 du 31 août 1993 relatif à l'enseignement contre rémunération des activités physiques et sportives ;\n\nVU le décret n° 93.1101 du 3 septembre 1993 et l'arrêté du 13 janvier 1994 relatifs à la déclaration des établissements dans lesquels sont pratiquées des activités physiques et sportives et à la sécurité de ces activités ;\n\nVU le décret n° 94 629 du 5 août 1994 pris pour lapplication des articles du code de la consommation susvisés et relatif à la prévention des risques résultant de l'usage des équipements de protection individuelle pour la pratique sportive ou de loisirs ;\n\nVU l'arrêté ministériel du 12 janvier 1994 relatif au contrôle de l'enseignement contre rémunération des activités physiques et sportives ;\n\nVU l'arrêté ministériel du 8 décembre 1995 et son annexe fixant les modalités d'encadrement et les conditions d'organisation et de pratique dans les séjours de vacances déclarés et dans les centres de loisirs sans hébergement habilités de certaines activités physiques et sportives ;\n\nVU l'arrêté n° 95 11 du 9 février 1995 du directeur du Parc National du Mercantour portant réglementation de la pratique des sports en eau vive dans le Parc National du Mercantour ;\n\nVU l'arrêté préfectoral n° 97.000109 du 14 mars 1997 portant réglementation du canyon dans le département des Alpes-Maritimes ;\n\nVU l'arrêté préfectoral n° 97.000241 du 16 juin 1997 portant réglementation du canyon dans le département des Alpes-Maritimes ;\n\nVU l'instruction n° 98 104 JS du 22 juin 1998 du ministère de la jeunesse et des sports portant recommandations pour la pratique de descente en canyon ;\n\nVU l'avis des maires concernés ;\n\nVU lavis des chefs de service concernés ;\n\nCONSIDERANT que la pratique du canyonisme consiste à parcourir des sites dénommés canyons, clues, cascades, défilés, rious, gorges, vallons, ravins, torrents, rivières, ruisseaux et combes, où peuvent alterner randonnée, nage, désescalade, sauts dans l'eau et descentes en rappel ;\n\nCONSIDERANT que le risque d'accident est manifeste et que la pratique du canyon nécessite de maîtriser une technique adaptée et posséder une connaissance suffisante des sites ;\n\nCONSIDERANT que cette activité fait l'objet d'une pratique de plus en plus répandue et qu'elle contribue au développement des activités sportives et touristiques ;\n\nCONSIDERANT que le niveau d'eau et les crues peuvent rendre l'activité dangereuse à l'occasion de précipitations importantes spécifiques au département des Alpes-Maritimes ;\n\nCONSIDERANT que l'engouement croissant pour cette activité peut générer des nuisances sur l'environnement naturel et la qualité de l'eau ;\n\nCONSIDERANT que les canyons relèvent soit du domaine public, soit du domaine privé ;\n\nCONSIDERANT la nécessité d'assurer la préservation de l'écosystème aquatique ;\n\nCONSIDERANT la nécessité d'assurer le partage du milieu entre les pêcheurs et les pratiquants du canyon ;\n\nSur proposition du sous-préfet, directeur de cabinet, le préfet des Alpes-Maritimes arrête :\n\nARTICLE 1 : PERIODE DE PRATIQUE\n\nLa pratique du canyonisme est autorisée du 1er avril au 31 octobre inclus à l'exception des canyons figurant dans les articles 2 et 3 du présent arrêté où s'applique une réglementation spécifique Les canyons secs ou habituellement à sec sont autorisés toute l'année.\n\nARTICLE 2 : CANYONS OU PARTIES DE CANYONS REGLEMENTES\n\nVALLEES\n\nCANYONS\n\nHEURES AUTORISEES\n\nPERIODES AUTORISEES\n\nJOURS AUTORISES\n\nCians\n\nRaton\n\nEntrée : 1 heure après le lever du jour et en tout état de cause avant 10h.\n\nSortie avant 17h\n\ndu 15 juin\n\nau\n\n31 octobre\n\nTous\n\nles jours\n\nVar\n\nAmen (cascades du final)\n\nde 9h\n\nà\n\n17h\n\nCians\n\nCianavelle\n\nde 9h\n\nà\n\n17h\n\ndu 01 avril\n\nau\n\n31 octobre\n\nLundi\n\nMercredi\n\nVendredi\n\nDimanche\n\nEstéron\n\nSaint-Auban\n\nTinée\n\nUllion\n\nCagne\n\nLa Cagne (en aval de la passerelle du GR51)\n\nBévéra\n\nBassera (en aval du GR 52 A)\n\nGiou\n\nVar\n\nRoudoule\n\nVar\n\nAmen (du pont de l'Amen aux cascades du final)\n\nde 9h\n\nà\n\n17h\n\ndu 15 juin\n\nau\n\n31 octobre\n\nSiagne\n\nSiagne de la Pare (Escragnolles)\n\nLes noms de lieux figurant dans le tableau ci-dessus sont issus de la cartographie IGN au 1/25 000e.\n\nARTICLE 3 : CANYON OU PARTIES DE CANYONS INTERDITS\n\nVALLEES\n\nCANYONS\n\nPRATIQUE\n\nINTERDITE\n\nTOUTE\n\nL'ANNEE\n\nVésubie\n\nDuranus (en aval du canal de la Vésubie)\n\nAffaia\n\nSaint-Colomban\n\nInfernet (en amont du haeau des Panisses)\n\nImberget (en aval du pont sur la D19, et sur 300m)\n\nFigaret\n\nVar\n\nEnaux\n\nBévéra\n\nBévéra\n\nSiagne\n\nSiagne\n\nLoup\n\nLoup (du saut du Loup au Bès de Courmes)\n\nEstéron\n\nCascade de Vegay\n\nRoya\n\nBendola (en aval du pont de Castou, alt. 428m)\n\nMaglia (en aval de la sortie Balisée)\n\nZouayne\n\nCians\n\nChallandre (en amont de la bergerie des Eguilles)\n\nCascade de Thierry (et Arsilane)\n\nMercantour\n\nTous les canyons situés en zone centrale du Parc du Mercantour\n\nLes noms et les lieux figurant dans le tableau ci-dessus sont issus de la cartographie IGN au 1/25 000e.\n\nARTICLE 4 : LIMITATION DU NOMBRE DE PRATIQUANTS\n\nTout groupe de pratiquants ne peut excéder 8 personnes, à l'exception du canyon du Raton où l'effectif maximum est réduit à 6 personnes, encadrement non compris.\n\nARTICLE 5 : ENCADREMENT\n\n5.1- DIPLÔMES ET QUALIFICATIONS NECESSAIRES A L'ENCADREMENT ET L'ENSEIGNEMENT\n\nPROFESSIONNELS DE LA PRATIOUE DU CANYONISME\n\nSeuls les diplômes professionnels suivants ouvrent droit à rémunération :\n\n BREVET D'ETAT D'EDUCATEUR SPORTIF ler degré option spéléologie, assorti de l'attestation de qualification et d'aptitude à l'encadrement et l'enseignement professionnels de la pratique du canyon ou ce brevet délivré après 1996.\n\n BREVET D'ETAT D'EDUCATEUR SPORTIF ler degré option escalade, assorti de l'attestation de qualification et d'aptitude à l'encadrement et l'enseignement professionnels de la pratique du canyon ou ce brevet délivré après 1996.\n\n BREVET D'ETAT D'EDUCATEUR SPORTIF ler degré option canoë-kayak assorti de l'attestation de qualification et d'aptitude à l'encadrement et l'enseignement professionnels de la pratique du canyon.\n\n BREVET D'ETAT D'ALPINISME :\n\n- guide de haute montagne ou aspirant-guide de haute montagne assortis de l'attestation de qualification et d'aptitude à l'encadrement et l'enseignement professionnels de la pratique du canyon ou ces brevets délivrés après 1996 ;\n\n- accompagnateur en moyenne montagne assorti de l'attestation de qualification et d'aptitude à l'encadrement et l'enseignement professionnels de la pratique du canyon ;\n\n- tout diplôme professionnel étranger admis en équivalence.\n\nLes exploitants d'établissements d'activités physiques et sportives proposant la pratique du canyonisme ainsi que toutes les personnes qui enseignent, encadrent ou animent contre rémunération cette activité doivent être déclarés auprès du préfet (Direction Départementale de la Jeunesse et des Sports).\n\n5.2- DIPLÔMES ET QUALIFICATIONS FEDERALES POUR L'ENCADREMENT BENEVOLE DE LA PRATIQUE DU CANYONISME\n\n Diplôme de moniteur ou d'instructeur fédéral de canyonisme délivré par la Fédération Française de la Montagne et de l'Escalade ; ou tout autre diplôme reconnu par cette fédération.\n\nARTICLE 6 : RECOMMANDATIONS DE PRATIQUE\n\n6.1 - SE PREPARER\n\nSe renseigner :\n\n- sur le parcours: niveau de difficulté technique, engagement, dénivelée, horaires, y compris marche d'approche et retour, en consultant les topoguides, les plaquettes d'informations, les organismes professionnels ou associatifs d'encadrement ;\n\n- sur les échappatoires, routes, accès supplémentaires (carte IGN 1/25.000) ;\n\n- sur le moyen le plus rapide de déclencher les secours.\n\nS'informer précisément :\n\n- sur la nature du parcours, et particulièrement, dans les canyons aquatiques, sur la présence de mouvements d'eau importants liés à une géomorphologie particulière (rappels, blocs siphonnants, marmites, drossages violents, galeries immergées . . . ) ;\n\n- sur le débit d'eau (dépendant de la situation géographique, de l'altitude et de l'importance du bassin versant), et les temps de réponse en cas de précipitations en amon t;\n\n- sur la météo (température, précipitations, risques d'orage . . .) ;\n\n- sur les dangers résultant de la régulation artificielle des débits des cours d'eau.\n\nBeaucoup de systèmes de lâchers d'eau sont automatisés et donc imprévisibles.\n\nPrévenir une tierce personne de l'itinéraire choisi et de l'heure probable de retour.\n\nNe jamais partir ou progresser seul; de préférence partir à trois personnes.\n\n6.2- S'EQUIPER\n\nEmporter du matériel selon les normes en vigueur, adapté au parcours et aux conditions météorologiques.\n\nEquipement individuel :\n\n- vêtements isothermiques (veste à manches longues et pantalon, selon les canyons) ;\n\n- casque de protection selon les normes en vigueur ;\n\n- chaussures polyvalentes nage/marche ;\n\n- cuissard et longe(s) double(s), ou longe simple avec deux sorties d'attache ;\n\n- descendeur et mousqueton de sécurité ;\n\n- sifflet.\n\nEquipement collectif :\n\n- corde(s) de longueur au moins égale à deux fois la longueur du plus long rappel ;\n\n- mousquetons de sécurité ;\n\n- matériel de remontée sur corde ;\n\n- matériel de rééquipement (tamponnoir, chevilles autoforeuses, plaquettes et marteau, coinceurs et cordelette...) ;\n\n- corde supplémentaire de secours (de longueur au moins égale à une fois la longueur du plus grand rappel) ;\n\nlampe étanche ;\n\ncouteau rapidement accessible.\n\n6.3- PROGRESSER EN SECURITE\n\n- rester groupés ;\n\n- contrôler systématiquement les amarrages ;\n\n- vérifier la longueur des cordes et leur état. Placer des protections aux points de frottement ou utiliser des techniques qui permettent de déplacer les points de frottement ;\n\n- ne jamais sauter dans les vasques sans en avoir vérifié la possibilité (profondeur, encombrements et mouvements d'eau...) ;\n\n- rester très vigilant dans les progressions de marche, les glissades ou les désescalades ;\n\n- utiliser des signaux clairs et convenus entre les membres du groupe ;\n\n- se nourrir et s'hydrater régulièrement, emporter des boissons et des aliments énergétiques (important en cas d'attente forcée et pour lutter contre le refroidissement).\n\n6.4 - RESPECTER LE MILIEU ET LES AUTRES USAGERS\n\n- des baigneurs, des pêcheurs, des riverains partagent votre lieu de loisir, respectez-les ;\n\n- être patient avec ceux qui vous précèdent, conciliant avec ceux qui vous doublent ;\n\n- préférer les rives au lit du torrent dans les sections de marche afin de limiter le piétinement du fond de la rivière;\n\n- respecter l'eau, la flore, la faune ;\n\n- respecter les itinéraires d'accès et de retour, ne pas piétiner les clôtures, refermer les barrières;\n\n- parquer les véhicules aux endroits prévus à cet effet.\n\nARTICLE 7 : RECOMMANDATIONS POUR L'ENCADREMENT\n\nUn petit groupe est gage de confort, de sécurité et de discrétion. Dans les limites fixées par l'article 4, le nombre de participants par encadrant sera apprécié selon les conditions de pratique, le niveau des pratiquants et les paramètres suivants :\n\n- débit de la rivière prévu lors de la sortie ;\n\n- température eau/air ;\n\n- durée totale de la course (y compris approche et retour) ;\n\n- morphologie et encombrement des gorges ;\n\n- engagement et absence d'échappatoires ;\n\n- difficulté des passages rocheux à franchir ;\n\n- hauteur des plus grandes verticales et nombre de rappels.\n\nL'encadrant choisira au regard des considérations précédentes le matériel complémentaire dont il aura besoin pour mener à bien la sortie.\n\nVérifier l'aptitude des participants à savoir nager et s'immerger. Chaque pratiquant ou son représentant légal, pour les mineurs, atteste sur l'honneur de son aptitude à savoir nager et s'immerger, ou présente un certificat d'une autorité qualifiée.\n\nPour l'encadrement des mineurs dans les séjours de vacances déclarés et les centres de loisirs sans hébergement habilités, les modalités d'encadrement et les conditions d'organisation et de pratique sont fixées par l'annexe \" canyon (descente de) \" de l'arrêté Jeunesse et Sport du 8 décembre 1995 fixant les modalités d'encadrement et les conditions d'organisation et de pratique dans les séjours de vacances déclarés et dans les centres de loisirs sans hébergement habilités pour certaines activités physiques et sportives.\n\nARTICLE 8 : INFORMATION ET AFFICHAGE\n\nLe présent arrêté doit être affiché en mairie et au départ des canyons par les autorités municipales.\n\nARTICLE 9 : SANCTIONS\n\nLes contrevenants s'exposent aux sanctions administratives et pénales prévues par les textes en vigueur.\n\nARTICLE 10 :\n\nLe présent arrêté pourra être révisé chaque année en fonction du bilan de la fréquentation et des incidents qui sera effectué en fin de saison.\n\nARTICLE 11 :\n\nLes arrêtés préfectoraux :\n\n- n° 97 000109 du 14 mars 1997 ;\n\n- n° 97 000241 (modificatif) du 16 juin 1997 ;\n\nsont abrogés.\n\nLe présent arrêté se substitue aux différents arrêtés municipaux concernant la pratique du canyonisme.\n\nARTICLE 12 :\n\nLe secrétaire général de la préfecture des Alpes-Maritimes, le sous-préfet de Grasse, le sous-préfet, directeur de cabinet, le directeur régional de l'environnement, le directeur départemental des affaires sanitaires et sociales, le directeur départemental de l'agriculture et de la forêt, le directeur départemental de la jeunesse et des sports, le directeur départemental de la concurrence, de la consommation et de la répression des fraudes, le directeur départemental des services d'incendie et de secours, le chef du service départemental de l'office national des forêts, le commandant du groupement de gendarmerie des Alpes-Maritimes, le commandant de la C.R. S. n° 6, le chef du centre départemental de météorologie des Alpes-Maritimes et les maires des communes concernées sont chargés, chacun en ce qui le concerne, de l'exécution du présent arrêté qui sera inséré au recueil des actes administratifs de la préfecture.",
+          "effectiveDate": "26 oct 2016",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/26/legislation.html",
+          "attachments": []
+        }
+      ]
+    }
+  }
+}

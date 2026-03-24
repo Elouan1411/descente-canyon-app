@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:49.321053+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23452,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23452/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23452/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23452/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23452/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23452,
+    "identity": {
+      "nom": "Achards",
+      "nomComplet": "Ruisseau des Achards",
+      "prefixeNom": "Ruisseau des",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23452/Achards.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Isère",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Dévoluy",
+      "bassin": "Drac",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2III",
+      "interet": 0.8,
+      "nbVotes": 6
+    },
+    "metrics": {
+      "altitudeDepartM": 874,
+      "deniveleM": 270,
+      "longueurM": 2300,
+      "cascadeMaxM": 27,
+      "cordeMiniM": 35,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "1h45",
+      "retour": "1h30"
+    },
+    "topo": {
+      "accesAval": "De Gap, se rendre à Corps puis prendre la D537 qui mène au barrage du Sautet. Juste après, prendre la D66 qui mène à Cordéac. 3km avant Cordéac, se garer sur le pont qui enjambe le Ruisseau des Achards au niveau du Moulin des Achards.",
+      "accesAmont": null,
+      "approche": "Entrez directement dans le ruisseau",
+      "descente": "On démarre par 1300m de marche en rivière bien fastidieuse (30 min) pour arriver à la première cascade d'une trentaine de mètres (Deux points RG, gros frottement à gérer) puis de nouveau de la marche dans un encaissement ruiniforme, on rencontre quelques désescalades dont certaines nécessitent l'usage de la corde. Après une dernière partie de marche on arrive dans le Drac.",
+      "retour": "Descendre le Drac sur 200m puis longer la rive jusqu'à deviner, 200m plus loin encore, une pseudo crête à travers la forêt. Il faut alors trouver des sentes d'animaux qui remontent cette crête jusqu'au plateau. La bonne sente se trouve vraiment sur la ligne de crête quand vous êtes à mi-chemin de l'ascension (Bon courage). Cette sente débouche dans un champ. Remonter ce champ sur la droite pour arriver sur une route au niveau du hameau des Gautiers. De là, prendre la route à gauche qui vous ramènera sur la D66 puis au parking.",
+      "engagement": "Pas d'échappatoire après avoir passé la C30.",
+      "periode": "En eau toute l'année, au printemps avec un bon débit certaines désescalades deviendront délicates.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "- Une bouse pour collectionneur.\n\n- Navette possible en garant une voiture au hameau des Gautiers\n\n- Aucun équipement mis à part ceux de la C30, système D pour les autres \"ressauts\"."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23452,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 44.812088,
+        "longitude": 5.864573,
+        "label": null
+      },
+      {
+        "canyonId": 23452,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 44.82933,
+        "longitude": 5.854634,
+        "label": null
+      },
+      {
+        "canyonId": 23452,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 44.831512,
+        "longitude": 5.860582,
+        "label": "La crête de retour"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 44.812088,
+      "longitude": 5.864573,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

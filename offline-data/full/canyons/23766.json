@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:01.335997+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23766,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23766/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23766/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23766/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23766/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23766,
+    "identity": {
+      "nom": "Aua da Cavrein",
+      "nomComplet": "Aua da Cavrein",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23766/Aua-da-Cavrein.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": null,
+      "departement": "Graubünden/Grigioni/Grischun",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v5a4II",
+      "interet": 2.7,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 1778,
+      "deniveleM": 70,
+      "longueurM": 350,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 30,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "1h-1h30",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "Buy a car access ticket for the Val Russein in a restaurant in Sumvitg. Then drive in the Val Russein, passing the dam and continue until you reach a fork (alt. 1531m). Turn here left and park at the very end.",
+      "accesAmont": null,
+      "approche": "Cross the Aua da Cavrein stream and hike up on the hiking path RG until you cross the Aua da Cavrein a second time (alt. 1775m). Either you start just above the bridge or you continue for 5min to find some unexplored section which we missed during the opening of the canyon.",
+      "descente": "Val Cavrein has always a high water level, so it is rather an aquatic canyon with some demanding and impressive looking abseil.\n\nThere are several exits possible. The end offers very nice abseils...",
+      "retour": "Same way back to the car.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": "23.10.2016: Thomas Guigon, Matthias Holzinger",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23766,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.762405,
+        "longitude": 8.869393,
+        "label": null
+      },
+      {
+        "canyonId": 23766,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.761478,
+        "longitude": 8.873218,
+        "label": null
+      },
+      {
+        "canyonId": 23766,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.761078,
+        "longitude": 8.880718,
+        "label": null
+      },
+      {
+        "canyonId": 23766,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 46.762848,
+        "longitude": 8.8664,
+        "label": "upper start"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.761078,
+      "longitude": 8.880718,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

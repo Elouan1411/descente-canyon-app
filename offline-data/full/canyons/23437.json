@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:48.283658+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23437,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23437/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23437/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23437/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23437/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23437,
+    "identity": {
+      "nom": "Laviano",
+      "nomComplet": "Conche di Laviano",
+      "prefixeNom": "Conche di",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23437/Laviano.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Campanie",
+      "departement": "Salerno",
+      "communePrincipale": "Laviano",
+      "communes": [
+        "Laviano"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.6,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 505,
+      "deniveleM": 160,
+      "longueurM": 1500,
+      "cascadeMaxM": 5,
+      "cordeMiniM": 5,
+      "navette": "2.0km"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "1h",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": "De l'autostrada A3 au sud de Naples, sortir à Contursi-Termes-Postiglione. Remonter au nord vers Calabritto par la SS 691. Tourner à droite en direction de Campo-Piano et Laviano. Se garer près du pont à la sortie de Campo-Piano.\n\nSuivre la route vers Laviano, se garer au village.\n\nSans navette, un sentier semble couper les épingles vers le village de Laviano.",
+      "accesAmont": null,
+      "approche": "Descendre au cours d'eau",
+      "descente": "Très fort encaissement très esthétique durant 500m puis marche en rivière ensuite",
+      "retour": "Remonter au pont d'arrivée",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": "Découvert par les habitants du village",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23437,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 40.78463,
+        "longitude": 15.309601,
+        "label": null
+      },
+      {
+        "canyonId": 23437,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 40.786709,
+        "longitude": 15.293551,
+        "label": null
+      },
+      {
+        "canyonId": 23437,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 40.784897,
+        "longitude": 15.306082,
+        "label": null
+      },
+      {
+        "canyonId": 23437,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 40.7868,
+        "longitude": 15.293213,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 40.784897,
+      "longitude": 15.306082,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_8b90a42df928f560",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://catastoforre.aic-canyoning.it/index/forra/cod/SA015",
+          "url": "http://catastoforre.aic-canyoning.it/index/forra/cod/SA015"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

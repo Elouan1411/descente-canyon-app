@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:56.767146+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23481,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23481/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23481/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23481/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23481/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23481,
+    "identity": {
+      "nom": "Comboè",
+      "nomComplet": "Torrente Comboè",
+      "prefixeNom": "Torrente",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23481/Comboe.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Valle d'Aosta",
+      "departement": "Aosta",
+      "communePrincipale": "Pollein",
+      "communes": [
+        "Pollein"
+      ],
+      "massif": "Gran Paradiso",
+      "bassin": "Dora Baltea",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v5a4III",
+      "interet": 3.0,
+      "nbVotes": 6
+    },
+    "metrics": {
+      "altitudeDepartM": 1050,
+      "deniveleM": 350,
+      "longueurM": 1500,
+      "cascadeMaxM": 45,
+      "cordeMiniM": 60,
+      "navette": "10.0km"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "4h",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "En venant de Turin par l'autoroute, sortir à Aosta Est, rejoindre le village de Pollein, tourner à gauche vers Roulaz/Felinaz, continuer au dessus du hameau de Saint-Bénin le long du torrent jusqu'à un parking à gauche (route interdite ensuite). La cascade de 45m est visible du parking.",
+      "accesAmont": "Reprendre la route régionale SR19 vers Aosta et tourner à gauche vers Pila (SR18). Remonter jusqu'au kilomètre 5 + 500 à l'embranchement pour Rivierer Dessous, petite route à gauche, continuer jusqu'au pont sur le torrent Comboè.",
+      "approche": null,
+      "descente": "Une vingtaine de cascades, première partie bien équipée, dans la seconde partie l'équipement est à améliorer et il est parfois nécessaire d'utiliser la même corde pour plusieurs ressauts.",
+      "retour": "Quelques minutes de marche dans le canyon pour arriver à l'ouvrage hydraulique qui indique la fin du parcours. Utiliser les échelles en métal pour rejoindre la piste.",
+      "engagement": "Première échappatoire au niveau d'un éboulement dans la première partie.\n\nDeuxième sortie possible au niveau de la vasque sifonnante (voir remarques).",
+      "periode": "Août-Septembre.\n\nBien évaluer le débit, certaines cascades devenant problématiques par gros débit. Ne pas oublier qu'un captage au-dessus du parking aval fait disparaître une grande partie du débit réel, bien vérifier au-dessus !",
+      "geologie": null,
+      "historique": "Première descente M. Rivadossi et S. Zipponi (08/1998)",
+      "remarques": "Dans le premier tiers du canyon, un petit siphon à droite dans une vasque, franchissable par une opposition.\n\nLa cascade finale de 45m est caractérisée par une première partie inclinée où l'eau se concentre en totalité dans une goulotte qui s’interrompt brutalement par une verticale. Quelques pas sans quitter la corde pour rejoindre la seconde partie arrosée."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23481,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 45.723904,
+        "longitude": 7.348607,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.723904,
+      "longitude": 7.348607,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_28bb7a443c6e8f73",
+          "kind": "MAP",
+          "title": "N°3 Parco Nazionale Gran Paradiso (IGC)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_ef7379e5d37c9686",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.gulliver.it/itinerario/52300/",
+          "url": "http://www.gulliver.it/itinerario/52300/"
+        },
+        {
+          "id": "resource_4e705cf82da672b3",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://catastoforre.aic-canyoning.it/index/forra/cod/AO015",
+          "url": "http://catastoforre.aic-canyoning.it/index/forra/cod/AO015"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

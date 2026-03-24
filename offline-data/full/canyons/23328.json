@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:35.688870+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23328,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23328/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23328/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23328/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23328/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23328,
+    "identity": {
+      "nom": "Gaya",
+      "nomComplet": "Vallon de Gaya",
+      "prefixeNom": "Vallon de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23328/Gaya.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-Maritimes",
+      "communePrincipale": "Coaraze",
+      "communes": [
+        "Coaraze"
+      ],
+      "massif": null,
+      "bassin": "Paillon",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1II",
+      "interet": 0.9,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 750,
+      "deniveleM": 200,
+      "longueurM": 1100,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "1h30",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": "Parking: De Nice suivre la vallée du Paillon de Contes, dépasser Coaraze en direction du Col St Roch, dépasser de 500m le pont du ruisseau de Planfaé et se garer à gauche avant le virage en épingle à gauche.",
+      "accesAmont": null,
+      "approche": "Prendre le sentier qui part dans l’épingle. Aux maisons, aller à gauche puis à la balise 239, montée raide vers la « baisse de Méou » puis descendre au vallon (30min).",
+      "descente": "Suivre le vallon, C30 maxi avec petit débit, quelques cascades de tuf et, des troncs en travers!",
+      "retour": "Le vallon coupe un sentier, le prendre à droite. Plus haut, à la balise 240, aller à droite et, retrouver la balise 239 à partir de laquelle on retrouve le sentier pris à l’aller (30min).",
+      "engagement": "On peut facilement sortir mais dans un maquis dense!",
+      "periode": "Filet d'eau à l'étiage.",
+      "geologie": null,
+      "historique": "en 1997, par Th. du forum de Descente-Canyon.com",
+      "remarques": "Carte IGN 3741 ET, pli C1."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23328,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.885292,
+        "longitude": 7.314162,
+        "label": null
+      },
+      {
+        "canyonId": 23328,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.881409,
+        "longitude": 7.305987,
+        "label": null
+      },
+      {
+        "canyonId": 23328,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.888199,
+        "longitude": 7.311973,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.888199,
+      "longitude": 7.311973,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_b3be246eedf8e406",
+          "kind": "MAP",
+          "title": "3741 ET Vallée de La Bevera (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

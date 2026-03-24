@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:45.569757+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22363,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22363/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22363/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22363/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22363/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22363,
+    "identity": {
+      "nom": "Cales",
+      "nomComplet": "Canyon de Cales, Ribeira das Cales",
+      "prefixeNom": "Canyon de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22363/Cales.html"
+    },
+    "location": {
+      "pays": "Portugal",
+      "region": "Madeira",
+      "departement": "Funchal Municipality",
+      "communePrincipale": "Monte",
+      "communes": [
+        "Monte"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": "Ribeira das Cales"
+    },
+    "rating": {
+      "cotation": "v3a4III",
+      "interet": 1.7,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 1100,
+      "deniveleM": 220,
+      "longueurM": 900,
+      "cascadeMaxM": 27,
+      "cordeMiniM": 30,
+      "navette": "3.8km"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "2h",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": ". Il se situe dans un virage à droite, devant un portail, on peut y garer 3/4 voitures.\n\nPour le parking",
+      "accesAmont": ", rebrousser chemin et au carrefour rencontré précédemment, monter vers le col. Après 2 kilomètres, on se gare devant la maison du parc écologique de Funchal.",
+      "approche": "Le canyon se trouve juste en contrebas de la route.",
+      "descente": "Petit canyon au milieu d'eucalyptus comportant quelques sauts. De courtes marches et quelques rappels ponctuent la descente.\n\nUn éboulement s'est produit au niveau du dernier rappel, les points sont situés en contrebas sous un bloc.",
+      "retour": "Après le dernier rappel au niveau des éboulis, prendre la sente rive droite qui ramène en 5 minutes à la voiture garée au portail.",
+      "engagement": "Faible, canyon ouvert et bien équipé. Possibilité de voir le débit au niveau du parking amont.",
+      "periode": "Coule toute l'année mais préférable avec de l'eau.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Les 2 cascades sous le sentier ne sont pas équipées."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22363,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 32.699631,
+        "longitude": -16.903515,
+        "label": null
+      },
+      {
+        "canyonId": 22363,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 32.693092,
+        "longitude": -16.897493,
+        "label": null
+      },
+      {
+        "canyonId": 22363,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 32.69986,
+        "longitude": -16.904085,
+        "label": null
+      },
+      {
+        "canyonId": 22363,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 32.69278,
+        "longitude": -16.896839,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 32.69986,
+      "longitude": -16.904085,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_f00ce1512c259c48",
+          "kind": "MAP",
+          "title": "Madeira, Tour & Trail (Discovery Walking Guides Ltd. Northampton)",
+          "scale": "1/40000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

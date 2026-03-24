@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:44:45.293025+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2241,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2241/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2241/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2241/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2241/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/2241/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 2241,
+    "identity": {
+      "nom": "Colombières",
+      "nomComplet": "Gorges de Colombières",
+      "prefixeNom": "Gorges de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2241/Colombieres.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Hérault",
+      "communePrincipale": "Colombières-sur-Orb",
+      "communes": [
+        "Colombières-sur-Orb"
+      ],
+      "massif": "Caroux",
+      "bassin": "Orb",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "",
+      "interet": null,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": null,
+      "longueurM": null,
+      "cascadeMaxM": null,
+      "cordeMiniM": null,
+      "navette": null
+    },
+    "timings": {
+      "approche": null,
+      "descente": null,
+      "retour": null
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2241,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.608925,
+        "longitude": 3.00828,
+        "label": null
+      },
+      {
+        "canyonId": 2241,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.581139,
+        "longitude": 3.012013,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 43.608925,
+      "longitude": 3.00828,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_fc07aa1bfb96647b",
+          "kind": "MAP",
+          "title": "2543 OT Lamalou-Les-Bains (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_31a84c858d51a3b6",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://clementdom.free.fr/html/colombieres.htm",
+          "url": "http://clementdom.free.fr/html/colombieres.htm"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 52,
+          "status": "Actif",
+          "action": "Interdit",
+          "title": "Arrêté municipal (Colombières sur Orb) - 25 juil 1995",
+          "summary": "Le canyoning est interdit dans le ruisseau d'Arles en raison du captage de l'eau en aval par un arrêté municipal de la commune de Rosis (1ère partie des gorges) et un autre de la commune de Colombières-sur-Orb (partie finale des gorges).",
+          "remark": null,
+          "details": "Arrêtés municipaux des communes de Rosis et Colombières-sur-Orb",
+          "effectiveDate": "25 juil 1995",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/52/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêtés municipaux des communes de Rosis et Colombières-sur-Orb",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem52_pj1.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:44.911982+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23121,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23121/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23121/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23121/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23121/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23121,
+    "identity": {
+      "nom": "Archtallaine",
+      "nomComplet": "Archtallaine, Urlaine im Archtal",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23121/Archtallaine.html"
+    },
+    "location": {
+      "pays": "Allemagne",
+      "region": "Bayern",
+      "departement": "Oberbayern",
+      "communePrincipale": "Eschenlohe",
+      "communes": [
+        "Landkreis Garmisch-Partenkirchen",
+        "Eschenlohe"
+      ],
+      "massif": "Estergebirge",
+      "bassin": "Loisach",
+      "coursEau": "Archtallaine"
+    },
+    "rating": {
+      "cotation": "v3a3IV",
+      "interet": 1.8,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1050,
+      "deniveleM": 320,
+      "longueurM": 1350,
+      "cascadeMaxM": 10,
+      "cordeMiniM": 15,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h15",
+      "descente": "3h",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23121,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.57114,
+        "longitude": 11.19977,
+        "label": null
+      },
+      {
+        "canyonId": 23121,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.583248,
+        "longitude": 11.195178,
+        "label": "sortie vers gauche à la piste"
+      },
+      {
+        "canyonId": 23121,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.587135,
+        "longitude": 11.192227,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.587135,
+      "longitude": 11.192227,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_96e6058c83db2170",
+          "kind": "MAP",
+          "title": "8533/8633 Mittenwald (TK25)",
+          "scale": "1/2500",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

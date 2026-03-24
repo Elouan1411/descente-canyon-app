@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:44:26.735770+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2185,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2185/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2185/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2185/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2185/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/2185/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 2185,
+    "identity": {
+      "nom": "Trou de la Marmite",
+      "nomComplet": "Cascades du Trou de la Marmite",
+      "prefixeNom": "Cascades du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2185/Trou-de-la-Marmite.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Ain",
+      "communePrincipale": "Hauteville-Lompnes",
+      "communes": [
+        "Hauteville-Lompnes"
+      ],
+      "massif": "Bugey",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a1I",
+      "interet": 1.4,
+      "nbVotes": 13
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": null,
+      "longueurM": 150,
+      "cascadeMaxM": 45,
+      "cordeMiniM": 50,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1min",
+      "descente": "45min",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "D'Hauteville-Lompnes, prendre la D9 en direction de Ruffieu. Approximativement 1.4km après la clinique et l'hôpital, on passe sur un discret pont qui franchit le ruisseau. Prendre à droite au niveau du pont et stationner très vite dans une ancienne carrière à gauche de la route (pas sous les blocs, quand même !)",
+      "accesAmont": null,
+      "approche": "Remonter la route jusqu'en amont du pont.",
+      "descente": "Un ressaut puis un rappel sur arbre avant le beau rappel du Trou de la marmite (C 45, amarrages en place)",
+      "retour": "Du pied de la dernière cascade, le chemin du parcours aventure remonte rapidement RG à la voiture.",
+      "engagement": null,
+      "periode": "Généralement un filet d'eau.",
+      "geologie": null,
+      "historique": "GSHL",
+      "remarques": "Doit se faire à la remontée en cascade de glace mais les conditions optimales doivent être dûres à trouver..."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2185,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.967796,
+        "longitude": 5.623283,
+        "label": null
+      },
+      {
+        "canyonId": 2185,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.966366,
+        "longitude": 5.621395,
+        "label": null
+      },
+      {
+        "canyonId": 2185,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 45.967312,
+        "longitude": 5.622244,
+        "label": "au-dessous de C45, depart du sentier vers le-haut"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.966366,
+      "longitude": 5.621395,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_640a5be2c102fcb1",
+          "kind": "MAP",
+          "title": "3230 E",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 103,
+          "status": "Obsolète",
+          "action": "Interdit",
+          "title": "Arrêté préfectoral (Ain) - 10 août 2005",
+          "summary": "La pratique du canyonisme est interdite pour des raisons de sécheresse, jusqu'au 15 septembre, sauf évolution.\n\nPour infos, l'amende est de 1500 €, 3000 € en cas de récidive...",
+          "remark": null,
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.",
+          "effectiveDate": "15 sept 2005",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/103/legislation.html",
+          "attachments": []
+        }
+      ]
+    }
+  }
+}

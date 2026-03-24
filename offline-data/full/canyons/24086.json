@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:59:08.988297+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24086,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24086/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24086/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24086/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24086/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24086,
+    "identity": {
+      "nom": "Verde (superior)",
+      "nomComplet": "Garganta Verde (superior)",
+      "prefixeNom": "Garganta",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24086/Verde-superior.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Andalucía",
+      "departement": "Cádiz",
+      "communePrincipale": "Zahara",
+      "communes": [
+        "Zahara"
+      ],
+      "massif": "Sierra Grazalema",
+      "bassin": "Rio Guadalete",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.0,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": null,
+      "longueurM": null,
+      "cascadeMaxM": null,
+      "cordeMiniM": null,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "??",
+      "descente": "??",
+      "retour": "??"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": "Descente totalement interdite par le parc naturel.",
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24086,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 36.80658,
+        "longitude": -5.395731,
+        "label": null
+      },
+      {
+        "canyonId": 24086,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 36.814167,
+        "longitude": -5.403892,
+        "label": "sentier de la \"Ermita\" vers le-haut ( P sur CA-9104)"
+      },
+      {
+        "canyonId": 24086,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 36.80846,
+        "longitude": -5.39215,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 36.80846,
+      "longitude": -5.39215,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

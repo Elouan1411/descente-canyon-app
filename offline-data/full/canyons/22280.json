@@ -1,0 +1,176 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:28.914435+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22280,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22280/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22280/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22280/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22280/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22280,
+    "identity": {
+      "nom": "Heckenbach",
+      "nomComplet": "Heckenbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22280/Heckenbach.html"
+    },
+    "location": {
+      "pays": "Allemagne",
+      "region": "Bayern",
+      "departement": "Oberbayern",
+      "communePrincipale": "Kochel",
+      "communes": [
+        "Landkreis Bad Tölz-Wolfratshausen",
+        "Kochel"
+      ],
+      "massif": "Walchenseeberge",
+      "bassin": "Loisach",
+      "coursEau": "Heckenbach"
+    },
+    "rating": {
+      "cotation": "v3a3IV",
+      "interet": 2.5,
+      "nbVotes": 5
+    },
+    "metrics": {
+      "altitudeDepartM": 700,
+      "deniveleM": 60,
+      "longueurM": 250,
+      "cascadeMaxM": 15,
+      "cordeMiniM": 20,
+      "navette": "1.3km"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "1h30",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": "aussi.",
+      "approche": "Traverser la route (B11) et descendre au course d'eau.",
+      "descente": "Encaissement sans échappatoire, 5 rappels.",
+      "retour": "Sortie à gauche vers B11.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22280,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.634026,
+        "longitude": 11.354413,
+        "label": null
+      },
+      {
+        "canyonId": 22280,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.636036,
+        "longitude": 11.354225,
+        "label": null
+      },
+      {
+        "canyonId": 22280,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 47.633957,
+        "longitude": 11.353469,
+        "label": null
+      },
+      {
+        "canyonId": 22280,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 47.636547,
+        "longitude": 11.352439,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 47.633957,
+      "longitude": 11.353469,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_a216ca92fa29ca51",
+          "kind": "TOPOGUIDE",
+          "title": "Canyoning in Bayern und Tirol",
+          "authors": [
+            "Werner Baumgarten"
+          ],
+          "publicationYear": 2010,
+          "reference": null,
+          "editor": null,
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1226/topoguide.html"
+        },
+        {
+          "id": "biblio_e6999a504a929a33",
+          "kind": "TOPOGUIDE",
+          "title": "Canyoning",
+          "authors": [
+            "Zaunhuber"
+          ],
+          "publicationYear": 1996,
+          "reference": null,
+          "editor": "Pollner Verlag",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1177/topoguide.html"
+        },
+        {
+          "id": "biblio_6a63d70b9eb1b4ce",
+          "kind": "TOPOGUIDE",
+          "title": "UK L 30 Karwendelgebirge (Bayerisches Landesvermessungsamt) - 1/50000",
+          "authors": [],
+          "publicationYear": null,
+          "reference": null,
+          "editor": null,
+          "status": null,
+          "detailUrl": null
+        },
+        {
+          "id": "biblio_1134ee04232a510b",
+          "kind": "TOPOGUIDE",
+          "title": "8334 Kochel am See (Bayerisches Landesvermessungsamt) - 1/25000",
+          "authors": [],
+          "publicationYear": null,
+          "reference": null,
+          "editor": null,
+          "status": null,
+          "detailUrl": null
+        },
+        {
+          "id": "biblio_81c36bbe7cd73a69",
+          "kind": "TOPOGUIDE",
+          "title": "http://membres.lycos.fr/aaltazin/allemagn.htm",
+          "authors": [],
+          "publicationYear": null,
+          "reference": null,
+          "editor": null,
+          "status": null,
+          "detailUrl": "http://membres.lycos.fr/aaltazin/allemagn.htm"
+        }
+      ],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

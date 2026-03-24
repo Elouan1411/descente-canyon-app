@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:54:39.325981+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22856,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22856/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22856/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22856/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22856/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22856,
+    "identity": {
+      "nom": "Saut de la truite",
+      "nomComplet": "Cascade du Saut de la truite, Affluent de la lyonne",
+      "prefixeNom": "Cascade du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22856/Saut-de-la-truite.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Drôme",
+      "communePrincipale": "Bouvante",
+      "communes": [
+        "Bouvante"
+      ],
+      "massif": "Vercors",
+      "bassin": "Drôme",
+      "coursEau": "Affluent de la lyonne"
+    },
+    "rating": {
+      "cotation": "v4a1III",
+      "interet": 1.9,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 1072,
+      "deniveleM": 240,
+      "longueurM": 100,
+      "cascadeMaxM": 220,
+      "cordeMiniM": 65,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "2h30",
+      "retour": "3h"
+    },
+    "topo": {
+      "accesAval": "Depuis le village de Léoncel, monter au Col de la Bataille, traverser le tunnel, puis redescendre de l'autre coté en direction de Bouvante-le-Bas en suivant la D199. Après 2Km, se garer à gauche, sur le parking du refuge de Gardiole.\n\nIl est également possible de garer une voiture à Logue et d'effectuer une navette de 17Km en remontant par Bouvante le Haut, puis le Col de la Croix sur la D331 puis en rejoignant Gardiole en continuant sur la D199.\n\nOn économise ainsi 2h de marche",
+      "accesAmont": null,
+      "approche": "Du parking du refuge de Gardiole, suivre le sentier balisé (qui sera aussi celui du retour) vers le Saut de la Truite, sur 1km, jusqu’à l'entrée dans la partie boisée.\n\nLà, repérer une sorte de godet de pelleteuse entre les arbres. Là se trouve le premier amarrage sur arbre, permettant l'accès au haut de la cascade.",
+      "descente": "Trouver un premier amarrage rive gauche dans les arbres. De là, suivre le sillon fait par le cours d'eau sur 30m. Là, vous arrivez au deuxième relais marquant le départ de la cascade.\n\nA partir de là, la descente s'effectue tout d'abord en fil d'araignée (C48), puis un pent incliné herbeux sur 60m, puis C15, C22, C50, puis C15",
+      "retour": "Suivre la combe, puis un peu avant la source de la Lyonne, sur la droite part clairement un sentier propre et évident qui rejoint Logue, puis les Roissards. Là, on suivra le sentier PR indiquant Gardiole, balisé jaune et vert.",
+      "engagement": "Aucune échappatoire possible.",
+      "periode": "Débit faible (petit filet d'eau) toute l'année, certainement plus important à la fonte des neiges.",
+      "geologie": null,
+      "historique": "Ouvert le 18 juillet 2012 par bengo et Rom38",
+      "remarques": "Equipement bon, tout doublé sur goujons de 10 et plaquettes. Attention cependant à certains frottements, notamment le premier relais plein gaz.\n\nVue magnifique."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22856,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.901333,
+        "longitude": 5.252083,
+        "label": null
+      },
+      {
+        "canyonId": 22856,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 44.893581,
+        "longitude": 5.253696,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 44.893581,
+      "longitude": 5.253696,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_4c66ec3c98484f0c",
+          "kind": "MAP",
+          "title": "3136 ET Combe-Laval (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

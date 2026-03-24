@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:02.496302+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23772,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23772/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23772/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23772/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23772/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23772,
+    "identity": {
+      "nom": "Chaussène",
+      "nomComplet": "Ravin de Chaussène",
+      "prefixeNom": "Ravin de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23772/Chaussene.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Drôme",
+      "communePrincipale": "Plaisians",
+      "communes": [
+        "Plaisians"
+      ],
+      "massif": "Drôme provençale",
+      "bassin": "Ouvèze",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a1I",
+      "interet": 0.9,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 590,
+      "deniveleM": 90,
+      "longueurM": 380,
+      "cascadeMaxM": 16,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "25min",
+      "descente": "1h00",
+      "retour": "7min"
+    },
+    "topo": {
+      "accesAval": "De Carpentras prenez la D938 en direction Le-Barroux, puis Malaucène et Vaison la Romaine. Après Malaucène suivez la D13 sur Entrechaux. Continuez et passez Mollans-sur-Ouvèze puis tournez à droite vers Plaisians en suivant la D72. De là continuez en suivant la direction du col de Fontaube. Passez le carrefour menant à la clue de Plaisians et faire 1,3 km avant de vous garez sur le grand parking de gauche juste après le petit pont du ravin de Chaussène (Alt 481 m sur l'IGN).",
+      "accesAmont": null,
+      "approche": "Continuer un peu sur la route à pied et emprunter la piste de droite. Celle-ci traverse le petit ruisseau et le longe par la rive gauche. Par la suite, plusieurs pistes (quad) se présentent à vous, prenez dans la majorité des cas celle de gauche. Passer un col et descendre via une piste à gauche pour rejoindre le départ de la descente.",
+      "descente": "Deux petites désescalades mènent au premier rappel qui enchaîne 3 petites cascades R12 sur AN en RD (anneau de corde), désescalades, C4 sur 1 pt en RG, C16+C2 (R20) sur 1pt en RG, désescalades de petites cascades, C6 1pt en RG, désescalades de petites cascades, sortir en RG avant le mur de ronces et revenir sur le ruisseau avant de sortir en RG pour rejoindre la piste prise à l'aller.",
+      "retour": "Suivre la piste prise à l'aller.",
+      "engagement": "Aucun",
+      "periode": "A faire après les pluies du printemps et de l'automne.",
+      "geologie": null,
+      "historique": "tony-13 et ALAIN 13. Deux, trois mono-points posés en 2017.",
+      "remarques": "A coupler avec les autres ravins du coin pour passer une journée dans la vallée."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23772,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.21302,
+        "longitude": 5.303889,
+        "label": null
+      },
+      {
+        "canyonId": 23772,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.21489,
+        "longitude": 5.305423,
+        "label": null
+      },
+      {
+        "canyonId": 23772,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.217548,
+        "longitude": 5.308025,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.217548,
+      "longitude": 5.308025,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_2f6c53ae7f1abe4d",
+          "kind": "MAP",
+          "title": "3140 ET Mont-Ventoux (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

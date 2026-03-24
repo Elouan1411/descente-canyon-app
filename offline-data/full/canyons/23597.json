@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:22.997987+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23597,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23597/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23597/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23597/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23597/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23597,
+    "identity": {
+      "nom": "Mülitobel inférieur",
+      "nomComplet": "Mülitobel inférieur, Schranggabach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23597/Mulitobel-inferieur.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Grüsch",
+      "departement": "Graubünden/Grigioni/Grischun",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Alpes de Plessur",
+      "bassin": "Prättigau",
+      "coursEau": "Schranggabach"
+    },
+    "rating": {
+      "cotation": "v2a5III",
+      "interet": 1.7,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 660,
+      "deniveleM": 75,
+      "longueurM": 900,
+      "cascadeMaxM": 6,
+      "cordeMiniM": 15,
+      "navette": "1.0km"
+    },
+    "timings": {
+      "approche": "2min",
+      "descente": "1h",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": "Sortir de l'A28 à l'entré du Prättigau (sortie Valzeina), suivre la route vers Valzeina jusqu'au premier virage.",
+      "accesAmont": null,
+      "approche": "Descendre du virage au pont de chemin rando qui traverse le torrent.",
+      "descente": "Descente aquatique et engagée (toujours beaucoup d'eau, très gros bassin versant).",
+      "retour": "Sortie au parking aval au pont qui traverse la rivière Landquart.",
+      "engagement": "Difficile, débit toujours conséquent, parcours d'eau vive. Plusieurs escalades necessaire.",
+      "periode": "Parcours acquatique avec peu de denivellement. Aout - Octobre après une période sèche.",
+      "geologie": "Calcaire - schiste",
+      "historique": "18.09.2004 Nadine et Dani Keller, Christoph Lehner, Huldi Hug, après le glissement de terrain réequipé 26.09.2009 par Timo Stammwitz.",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23597,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.969372,
+        "longitude": 9.6221,
+        "label": null
+      },
+      {
+        "canyonId": 23597,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.9743,
+        "longitude": 9.62856,
+        "label": null
+      },
+      {
+        "canyonId": 23597,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 46.969971,
+        "longitude": 9.62184,
+        "label": null
+      },
+      {
+        "canyonId": 23597,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 46.9743,
+        "longitude": 9.62856,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 46.969971,
+      "longitude": 9.62184,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_70fb813b807aff2d",
+          "kind": "MAP",
+          "title": "1176 Schiers (Swisstopo)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

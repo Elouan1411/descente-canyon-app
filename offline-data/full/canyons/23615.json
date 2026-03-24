@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:28.005425+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23615,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23615/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23615/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23615/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23615/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23615,
+    "identity": {
+      "nom": "Pibou",
+      "nomComplet": "Ruisseau du Pibou",
+      "prefixeNom": "Ruisseau du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23615/Pibou.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Drôme",
+      "communePrincipale": "Villeperdrix",
+      "communes": [
+        "Villeperdrix"
+      ],
+      "massif": null,
+      "bassin": "Aigues - Aigue - Eygues - Aygues",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v1a1II",
+      "interet": 0.8,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 390,
+      "deniveleM": 20,
+      "longueurM": 200,
+      "cascadeMaxM": 2,
+      "cordeMiniM": null,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "20min",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "Suivre la D94, direction Nyons-Gap. Passer Sahune et se garer à gauche, 800m après les cascades des Estouves.",
+      "accesAmont": null,
+      "approche": "Revenir 100m sur ses pas, jusqu'à la grotte visible au bord de la route. De-là, un sentier monte en zig-zag jusqu'au col de Serre La Baye. Au sommet prendre à droite et descendre au départ du petit canyon.",
+      "descente": "Courte descente comportant un ou deux sauts. Deux, trois nages et un toboggan dans un mini encaissement.",
+      "retour": "Suivre la route, jusqu'à votre véhicule.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "A coupler avec les Estouves et/ou le Grand Ubac.\n\nOn peut aussi remonter ce mini-canyon depuis la sortie (5min). Le ressaut difficile à escalader se contourne en remontant rive gauche. L'accès par le chemin reste néanmoins conseillé avec des débutants."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23615,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.434486,
+        "longitude": 5.286179,
+        "label": null
+      },
+      {
+        "canyonId": 23615,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.433441,
+        "longitude": 5.288247,
+        "label": null
+      },
+      {
+        "canyonId": 23615,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.432613,
+        "longitude": 5.284738,
+        "label": null
+      },
+      {
+        "canyonId": 23615,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 44.433304,
+        "longitude": 5.283258,
+        "label": "Approche"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.432613,
+      "longitude": 5.284738,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_4e3735bcc40c64f3",
+          "kind": "MAP",
+          "title": "3139 OT Nyons (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:06.784810+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22462,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22462/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22462/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22462/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22462/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22462,
+    "identity": {
+      "nom": "Mello",
+      "nomComplet": "Mello",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22462/Mello.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Lombardia",
+      "departement": "Sondrio",
+      "communePrincipale": "Val Masino",
+      "communes": [
+        "Val Masino"
+      ],
+      "massif": null,
+      "bassin": "Val Masino",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v5a5III",
+      "interet": 2.5,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1515,
+      "deniveleM": 270,
+      "longueurM": 600,
+      "cascadeMaxM": 48,
+      "cordeMiniM": 55,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "2h",
+      "descente": "1h45",
+      "retour": "1h"
+    },
+    "topo": {
+      "accesAval": "Val Masino - San Martino - Parking Val di Mello",
+      "accesAmont": null,
+      "approche": "Parking - Alpe Pioda",
+      "descente": "Plusieurs grands rappels",
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22462,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.264481,
+        "longitude": 9.689641,
+        "label": "passarelle"
+      },
+      {
+        "canyonId": 22462,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.263985,
+        "longitude": 9.682238,
+        "label": "au-dessous de la dernière grande cascade"
+      },
+      {
+        "canyonId": 22462,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.2509,
+        "longitude": 9.642724,
+        "label": "(5 Euro peage de San Martino - 2010)"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.2509,
+      "longitude": 9.642724,
+      "label": "(5 Euro peage de San Martino - 2010)"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_4744433c393a25aa",
+          "kind": "MAP",
+          "title": "CNS 279 kompass 93",
+          "scale": null,
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

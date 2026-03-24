@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:46:35.381887+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2723,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2723/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2723/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2723/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2723/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2723,
+    "identity": {
+      "nom": "Fenollet II (Oeste)",
+      "nomComplet": "Barranco de Fenollet II (Oeste)",
+      "prefixeNom": "Barranco de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2723/Fenollet-II-Oeste.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Cataluña",
+      "departement": "Lérida",
+      "communePrincipale": "Organyà",
+      "communes": [
+        "Organyà"
+      ],
+      "massif": null,
+      "bassin": "Rio Segre",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1III",
+      "interet": 0.7,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 1180,
+      "deniveleM": 120,
+      "longueurM": 200,
+      "cascadeMaxM": 25,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "50min",
+      "descente": "1h30",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "Dans Organya prenez la direction de Cabo. Rapidement prenez à gauche vers Montanissell. Une belle falaise apparaît à droite. Montez jusqu'au dessus de la Casa Fenollet et garez le véhicule au mieux dans l'épingle (2 à 3 places, panneau de randonnée).",
+      "accesAmont": null,
+      "approche": "Attention, le chemin commence dans une zone de pompages : respectez les installation hydrauliques. Au-dessus de l'exploitation agricole commence une piste peu visible montant à un réservoir d'eau (nombreux tuyaux). Au réservoir prenez à gauche toujours en suivant les tuyaux (sente parfois cairnée). Ils montent jusqu'à une imposante cascade de tuff. Juste avant, la sente part à droite pour monter au milieu des barres rocheuses (cheminement logique). Arrivé sur le plateau, elle rejoint une piste au niveau de pâturages et sous le Roc de l'Oleu. Suivre la piste en gros direction sud-ouest. Vers l'altitude 1220m, la quitter pour une sente à gauche qui rejoint le cours d'eau (carte utile). Le premier obstacle se situe vers l'altitude 1180m.",
+      "descente": "La descente est constituée de cascades sèches sans grand caractère. Attention aux chutes de pierres.",
+      "retour": "Après le dernier rappel, vers l'altitude 1060m, rejoignez au mieux le chemin emprunté à l'aller (sentes d'animaux) et de là la route.",
+      "engagement": "Échappatoires difficiles dans les cascades. Peu d'encaissement.",
+      "periode": "Encore moins d'eau que son voisin.",
+      "geologie": "Calcaire",
+      "historique": "Équipement très bon.",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2723,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.205448,
+        "longitude": 1.276748,
+        "label": null
+      },
+      {
+        "canyonId": 2723,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 42.207962,
+        "longitude": 1.274425,
+        "label": "pour 4x4"
+      },
+      {
+        "canyonId": 2723,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 42.20483,
+        "longitude": 1.276377,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 42.207962,
+      "longitude": 1.274425,
+      "label": "pour 4x4"
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_d624b36bbe2e13ec",
+          "kind": "TOPOGUIDE",
+          "title": "Gorgs Organya. Guia de barrancs. Alt Urgell",
+          "authors": [],
+          "publicationYear": 2014,
+          "reference": "978-84-942504-6-0",
+          "editor": "Editions Saloria",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/190/Gorgs-Organya--Guia-de-barrancs--Alt-Urgell.html"
+        },
+        {
+          "id": "biblio_8f71bb2c37c4b85c",
+          "kind": "TOPOGUIDE",
+          "title": "Lleida (Tomo I), Decenso de cañones.",
+          "authors": [
+            "Edouardo Gomez"
+          ],
+          "publicationYear": 1996,
+          "reference": null,
+          "editor": null,
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1129/topoguide.html"
+        }
+      ],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

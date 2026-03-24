@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:54:00.220697+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22699,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22699/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22699/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22699/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22699/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22699,
+    "identity": {
+      "nom": "Bard",
+      "nomComplet": "Ruisseau du Bard, Closette",
+      "prefixeNom": "Ruisseau du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22699/Bard.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Haute-Savoie",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Bauges",
+      "bassin": "Fier",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a2II",
+      "interet": 0.9,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 700,
+      "deniveleM": 40,
+      "longueurM": 1600,
+      "cascadeMaxM": 10,
+      "cordeMiniM": 15,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "1h15",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "Depuis Faverges, prendre la direction de Seythenex et des grottes du même nom par la D12 puis par une petite route communale. Dépasser le parking des grottes puis, juste avant d'arriver au village de Seythenex, prendre une petite route à gauche sous un imposant viaduc. Elle mène rapidement à une scierie près d'un petit pont sur le ruisseau du Bard. Se stationner sans gêner le long de la route juste avant la scierie.",
+      "accesAmont": null,
+      "approche": "On rentre dans le ruisseau au niveau du pont dans l'épingle.",
+      "descente": "Pas mal de marche mais quelques beaux passages dans des mini-encaissements calcifiées. Pas d'amarrages en place.",
+      "retour": "Sortir du ruisseau au niveau d'une confluence avec un ruisseau arrivant de droite. On trouve un sentier en rive droite menant rapidement au hameau du Villaret situé en aval des grottes de Seythenex. Il ne reste plus qu'à longer la route jusqu'à la voiture.",
+      "engagement": "Il y a souvent possibilité de sortir.",
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "Il y a peut-être moyen de trouver un accès et/ou une approche permettant de ne faire que les parties intéressantes ?"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22699,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.72327,
+        "longitude": 6.302523,
+        "label": null
+      },
+      {
+        "canyonId": 22699,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.73531,
+        "longitude": 6.300785,
+        "label": null
+      },
+      {
+        "canyonId": 22699,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.723328,
+        "longitude": 6.302674,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.723328,
+      "longitude": 6.302674,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_706988e49e3d2c14",
+          "kind": "MAP",
+          "title": "3432 ET Albertville (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

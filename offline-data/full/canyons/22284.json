@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:29.742796+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22284,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22284/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22284/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22284/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22284/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22284,
+    "identity": {
+      "nom": "Spätenbach",
+      "nomComplet": "Spätenbach, Spätabach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22284/Spatenbach.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Vorarlberg",
+      "departement": "Dornbirn",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Bregenzer Wald",
+      "bassin": "Dornbirner Ach",
+      "coursEau": "Spätenbach"
+    },
+    "rating": {
+      "cotation": "v4a3IV",
+      "interet": 2.2,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 850,
+      "deniveleM": 100,
+      "longueurM": 700,
+      "cascadeMaxM": 27,
+      "cordeMiniM": 30,
+      "navette": "2.2km"
+    },
+    "timings": {
+      "approche": "1h",
+      "descente": "3h",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "Quitter l'autoroute Bregenz-Feldkirch vers Dornbirn. Du centre, vous suivez la direction du téléphérique \"Karren-Seilbahn\", Rappenloch-Schlucht, Ebnit, Gütle en rive droite de la Dornbirner Ache. Environ 1,3 km après le téléphérique vous traversez le ruisseau et continuer environ 1,3 km jusqu'à pont vers la Rappenlochschlucht. Ici vous trouvez le parking pour le départ d'approche.\n\nAvec la seconde voiture continuer environ 2,2 km (ne pas prendre la route à gauche) et garez vous 200m avant un tunnel.",
+      "accesAmont": null,
+      "approche": "Du pont sur le Rappenloch-Schlucht prendre la piste/sentier vers sud en direction Spätenbachalpe, passer la et continuer jusqu'à pont sur le Spätenbach.",
+      "descente": "Marcher dans le lit du ruisseau jusqu'à partie verticale. Ensuite plusieurs rappels jusqu'à la sortie.",
+      "retour": "À la confluence Spätenbach/Dornbirner Ache, traverser la Dornbirner Ache et monter vers la route.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "Fréquenté par les professionnels.\n\nRegardez bien le niveau d'eau dans la Dornbirner Ache (à traverser après la sortie du Spätenbach) !"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22284,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.370972,
+        "longitude": 9.7689,
+        "label": null
+      },
+      {
+        "canyonId": 22284,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.370659,
+        "longitude": 9.772194,
+        "label": null
+      },
+      {
+        "canyonId": 22284,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 47.370441,
+        "longitude": 9.77295,
+        "label": null
+      },
+      {
+        "canyonId": 22284,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 47.38369,
+        "longitude": 9.779141,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 47.370441,
+      "longitude": 9.77295,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

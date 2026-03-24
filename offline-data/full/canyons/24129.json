@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:59:18.416027+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24129,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24129/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24129/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24129/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24129/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24129,
+    "identity": {
+      "nom": "Rieutord (amont)",
+      "nomComplet": "Le Rieutord (amont)",
+      "prefixeNom": "Le",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24129/Rieutord-amont.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Gard",
+      "communePrincipale": "Saint-Martial",
+      "communes": [
+        "Saint-Martial"
+      ],
+      "massif": "Mont Aigoual",
+      "bassin": "Hérault",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1I",
+      "interet": 1.2,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 720,
+      "deniveleM": 180,
+      "longueurM": 650,
+      "cascadeMaxM": 12,
+      "cordeMiniM": 25,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1min",
+      "descente": "1h00",
+      "retour": "35min"
+    },
+    "topo": {
+      "accesAval": "De Sumène, se rendre à Saint-Martial par la D20. Puis, emprunter la D290. Passer le col de l'Astric et poursuivre sur le col de la Croisette. Prendre alors sur Le Liron en allant tout droit, puis à droite à la prochaine bifurcation. Se garer sans gêner la circulation juste avant le pont du Rieutord.",
+      "accesAmont": null,
+      "approche": "Descendre dans lit du ruisseau.",
+      "descente": "Progression sur un lit propre et parfois sculpté où s'écoulent, en début de saison, quelques cascades n’excédant pas les 12m de hauteur. Celles-ci, peuvent se descendre par désescalade, toboggans ou rappels utilisant quelques amarrages naturels sur les rives. Un rappel reste obligatoire et enchaîne les deux cascades sur 2x25m.",
+      "retour": "Remonter sur 100m l'affluent arrivant en rive gauche (Valat de Blaquisses) et sortir en rive droite pour récupérer l'ancienne piste remontant sur Le Liron. De là, suivre la route pour récupérer votre véhicule.",
+      "engagement": "Aucun",
+      "periode": "A faire en début de saison pour y trouver de l'eau. Sec l'été.",
+      "geologie": null,
+      "historique": "?",
+      "remarques": "Descente à compléter avec Blaquisses et surtout la partie aval du Rieutord, bien plus esthétique.\n\nÉquipement : terrain d'aventure (équipement très minimaliste à compléter)."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24129,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.045303,
+        "longitude": 3.751159,
+        "label": null
+      },
+      {
+        "canyonId": 24129,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.039982,
+        "longitude": 3.751706,
+        "label": null
+      },
+      {
+        "canyonId": 24129,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.045193,
+        "longitude": 3.750976,
+        "label": null
+      },
+      {
+        "canyonId": 24129,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 44.041431,
+        "longitude": 3.752521,
+        "label": "itinéraire de retour"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.045193,
+      "longitude": 3.750976,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_c0245a1ccc4224fe",
+          "kind": "MAP",
+          "title": "2741 ET Saint-Hippolyte du Fort (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

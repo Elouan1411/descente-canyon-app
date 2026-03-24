@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:31.229466+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21737,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21737/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21737/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21737/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21737/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21737,
+    "identity": {
+      "nom": "Foce",
+      "nomComplet": "Gola del Torrente La Foce, Gole di Celano",
+      "prefixeNom": "Gola del Torrente La",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21737/Foce.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Abruzzes",
+      "departement": "Provincia dell’Aquila",
+      "communePrincipale": "Comune di Celano",
+      "communes": [
+        "Ovindoli",
+        "Comune di Celano"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.0,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1220,
+      "deniveleM": 170,
+      "longueurM": 800,
+      "cascadeMaxM": 18,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "2h",
+      "retour": "50min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21737,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.126095,
+        "longitude": 13.567708,
+        "label": null
+      },
+      {
+        "canyonId": 21737,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.113647,
+        "longitude": 13.570583,
+        "label": null
+      },
+      {
+        "canyonId": 21737,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 42.141388,
+        "longitude": 13.532667,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 42.141388,
+      "longitude": 13.532667,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_358aac81d14264e9",
+          "kind": "MAP",
+          "title": "Velino - Sirente, carta die sentieri montani della provincia dell'Aquila (CAI Delegazione Regionale Abruzzese)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:45.467464+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23976,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23976/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23976/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23976/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23976/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23976,
+    "identity": {
+      "nom": "Vabre",
+      "nomComplet": "Ruisseau du Vabre",
+      "prefixeNom": "Ruisseau du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23976/Vabre.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Vaucluse",
+      "communePrincipale": "Cabrières-d'Aigues",
+      "communes": [
+        "Cabrières-d'Aigues"
+      ],
+      "massif": "Luberon",
+      "bassin": "Durance",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a1I",
+      "interet": 1.0,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 640,
+      "deniveleM": 110,
+      "longueurM": 500,
+      "cascadeMaxM": 10,
+      "cordeMiniM": 15,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "35min",
+      "descente": "1h00",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "De Pertuis prendre la D9 pour se rendre sur la Cabrières-d'Aigues . A l'entrée du village prendre à gauche en direction de Cucuron, puis à droite sur l'Esqueiras en sortant du village (chemin de l'Esqueiras). Rouler jusqu'au bout de cette petite route et garez-vous sur la piste à droite, juste avant d'arriver à l'entrée de la propriété de La Sereine.",
+      "accesAmont": null,
+      "approche": "Suivre la piste qui se transforme par la suite en sentier. Ce sentier grimpe le long d'un talweg et rejoint une zone un peu plus plane . A la fourche, prendre le sentier de gauche et le suivre quelques minutes . Celui-ci prend un virage à gauche vers le Vabre, puis après quelques mètres, un virage à droite non loin du Vabre. Quitter le sentier à ce niveau là et descendre à gauche pour rejoindre au mieux le \"ruisseau\".",
+      "descente": "Un peu de marche vous amène sur une C5 sur An ou shunt en Rg, puis Pi10 sur An ou shunt en Rd, une marche 250 m pour arriver sur la partie finale, C4 sur An avec anneau de corde en Rd, D1, D3+D4 ou R2x9m sur An en Rd, C3+C4 (R2x10m) sur un 1pt dans l'axe en arrière, Pi5+C3 (R2x10m)sur An avec anneau de corde en Rd.",
+      "retour": "Faire 30 m et sortir en Rg via une pseudo sente sur la pente terreuse, puis prendre à gauche à travers bois pour rejoindre la piste et votre véhicule.",
+      "engagement": "Partie finale plus ou moins encaissée.",
+      "periode": "A faire après les pluies, comme les descentes voisines.",
+      "geologie": null,
+      "historique": "Un point posé sur goujon de 8mm+maillon de chaîne et deux anneaux de corde (oct 2017).",
+      "remarques": "Il est possible de ne faire que la partie partie finale en quittant le sentier à gauche avant que celui-ci monte le long d'un talweg (non testé).\n\nIl est possible aussi de rejoindre le départ du Vallat de Méchant Pas via cette approche . Sauf qu'à la fourche (mentionnée sur la description de l'approche), il faudra prendre le sentier de droite, puis encore à droite jusqu'au vallat."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23976,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.803535,
+        "longitude": 5.470683,
+        "label": null
+      },
+      {
+        "canyonId": 23976,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.798374,
+        "longitude": 5.473901,
+        "label": null
+      },
+      {
+        "canyonId": 23976,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.795303,
+        "longitude": 5.477603,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 43.795303,
+      "longitude": 5.477603,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_3cea02269723b911",
+          "kind": "MAP",
+          "title": "3243 OT Pertuis - Lourmarin (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

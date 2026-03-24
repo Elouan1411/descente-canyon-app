@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:48:37.262161+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21230,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21230/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21230/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21230/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21230/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21230,
+    "identity": {
+      "nom": "Alzen",
+      "nomComplet": "Cascade d' Alzen, Ruisseau d'Alzen",
+      "prefixeNom": "Cascade d'",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21230/Alzen.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Ariège",
+      "communePrincipale": "Alzen",
+      "communes": [
+        "Alzen"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": "Ruisseau d'Alzen"
+    },
+    "rating": {
+      "cotation": "v4a2II",
+      "interet": 2.1,
+      "nbVotes": 11
+    },
+    "metrics": {
+      "altitudeDepartM": 680,
+      "deniveleM": 120,
+      "longueurM": 190,
+      "cascadeMaxM": 70,
+      "cordeMiniM": 45,
+      "navette": "2.0km"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "2h00",
+      "retour": "5 ou 35min"
+    },
+    "topo": {
+      "accesAval": "Entre Foix et La Bastide de Sérou, prendre à gauche vers le village d'Alzen (cascade indiquée). On peut laisser une voiture navette près du panneau d'accès et/ou aller se garer sur une grande place à la sortie du village d'Alzen.",
+      "accesAmont": null,
+      "approche": "D'Alzen, prendre le sentier qui part en direction de la chapelle Sainte Croix sur la colline au NO (démarre rue du marchand de confit de canard).\n\nA la bifurcation, ne pas aller vers la chapelle, prendre le sentier de gauche jusqu'au petit banc en bois à l'aplomb du torrent non visible (pont naturel). Passer Rive G du torrent et descendre à vue dès que possible.",
+      "descente": "Petite traversée souterraine de 50m environ (sympa et pas besoin de frontale) puis rappel de 15 mètres.\n\n2 autres petits rappels (max 20m) avant d'arriver sur la grande cascade en 2 parties : 1er rappel de 45m maxi (amarrage centre RD) puis un relais RD derrière une goulotte (vieux amarrages possibles) pour le rappel de 40m plein vide derrière la cascade lorsque le rideau est formé (superbe).",
+      "retour": "Depuis le bas de la cascade prendre le sentier d'accès jusqu'à la route. Depuis la route, récupérer la voiture navette laissée à ce niveau ou remonter à pied par la route jusqu'à Alzen.",
+      "engagement": "La canyon est large et de nombreuses échappatoires sont possibles. La descente de la grande cascade est engagée.",
+      "periode": "Ce canyon n'est pas aquatique.\n\nIl est magnifique en glace (quelques jours de froid suffisent)",
+      "geologie": "Calcaire marneux",
+      "historique": null,
+      "remarques": "Vérifier les équipements des relais en place et les doubler éventuellement. La roche est très tendre."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21230,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.9925,
+        "longitude": 1.466667,
+        "label": null
+      },
+      {
+        "canyonId": 21230,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 42.989258,
+        "longitude": 1.472219,
+        "label": null
+      },
+      {
+        "canyonId": 21230,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 42.995087,
+        "longitude": 1.466723,
+        "label": "Un panneau en bois indique la cascade d'alzen. Un sentier descend au canyon"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 42.989258,
+      "longitude": 1.472219,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_76afcf8ad7f89c6a",
+          "kind": "MAP",
+          "title": "2047 ET La Bastide de Serou (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_d057efa83e60db9f",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.hautcouserans.free.fr/alzen_547.htm",
+          "url": "http://canyon.hautcouserans.free.fr/alzen_547.htm"
+        },
+        {
+          "id": "resource_9172e7a2ecd2bc03",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://yelsub1.free.fr/canyons/09/alzen_en_glace_22janv2011/",
+          "url": "http://yelsub1.free.fr/canyons/09/alzen_en_glace_22janv2011/"
+        },
+        {
+          "id": "resource_28620f6c0777bd44",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://yelsub1.free.fr/canyons/09/alzen2008/",
+          "url": "http://yelsub1.free.fr/canyons/09/alzen2008/"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

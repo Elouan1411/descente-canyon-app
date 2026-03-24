@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:06.739463+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22174,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22174/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22174/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22174/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22174/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22174,
+    "identity": {
+      "nom": "Praia Lisboa (superieur)",
+      "nomComplet": "Ribeira de Praia Lisboa (superieur)",
+      "prefixeNom": "Ribeira de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22174/Praia-Lisboa-superieur.html"
+    },
+    "location": {
+      "pays": "Cap-Vert",
+      "region": null,
+      "departement": "Ribeira Grande",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 1.5,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 310,
+      "deniveleM": 150,
+      "longueurM": 200,
+      "cascadeMaxM": 105,
+      "cordeMiniM": 60,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "40min",
+      "descente": "1h15min",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": "De Ribeira Grande 4 km vers l'ouest direction Ponta do Sol. En haut avant les premières maisons de Ponta do Sol tourner à gauche, passer l'église blanche direction Fontainhas. Après 1,5 km traverser le lit du canyon, départ de l'approche.",
+      "accesAmont": null,
+      "approche": "Continuer la route environ 50 m et tourner à gauche sur le sentier vers le haut.\n\nLe sentier est en partie aérien. Monter vers le Nord avec vue sur la mer et ensuite le sentier tourne en grande courbe à gauche vers sud et enfin vers l'Est jusqu'au lit du canyon au dessus du grande rappel.",
+      "descente": "Départ immédiatement avec le grande 105 m - rappel (53m/50m). Au dessous de la cascade marche et désescalade jusqu'à la route.",
+      "retour": null,
+      "engagement": null,
+      "periode": "sec",
+      "geologie": null,
+      "historique": null,
+      "remarques": "il est recommandé de continuer par Lisboa (inférieur)."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22174,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 17.18483,
+        "longitude": -25.09831,
+        "label": null
+      },
+      {
+        "canyonId": 22174,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 17.188478,
+        "longitude": -25.1017,
+        "label": null
+      },
+      {
+        "canyonId": 22174,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 17.188396,
+        "longitude": -25.101871,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 17.188396,
+      "longitude": -25.101871,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_a0b95353ed9c3736",
+          "kind": "MAP",
+          "title": "Santo Antâo (Goldstadt-Wanderkarte)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_6f904f2c7e599cc6",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.caboverdenolimits.com/cuadros_barrancos.html",
+          "url": "http://www.caboverdenolimits.com/cuadros_barrancos.html"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,145 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:44:51.001473+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2274,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2274/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2274/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2274/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2274/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 2274,
+    "identity": {
+      "nom": "Articol",
+      "nomComplet": "Ruisseau d' Articol",
+      "prefixeNom": "Ruisseau d'",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2274/Articol.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Isère",
+      "communePrincipale": "Allemond",
+      "communes": [
+        "Allemond"
+      ],
+      "massif": "Belledonne",
+      "bassin": "Romanche",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v5a2III",
+      "interet": 2.2,
+      "nbVotes": 16
+    },
+    "metrics": {
+      "altitudeDepartM": 1250,
+      "deniveleM": 245,
+      "longueurM": 450,
+      "cascadeMaxM": 33,
+      "cordeMiniM": 35,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "40min",
+      "descente": "2h",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": "En venant de Grenoble en direction du col du Glandon, se garer à l'entrée du hameau d'Articol.",
+      "accesAmont": null,
+      "approche": "Dans le hameau prendre un sentier bien raide en direction des chalets de \"Gay\". Dans un lacet proche du ruisseau vers l'altitude 1275m, descendre dans un petit pré jusqu'au ruisseau tout proche.",
+      "descente": "Le ruisseau est pas mal encombré de bois et très peu sculpté au début. L’intérêt principal est l’enchaînement final qui se termine par une c35 au creusement original en rive gauche. Quelques désescalades doivent être peu évidentes par gros débit. Attention, le ruisseau est très glissant.",
+      "retour": "On arrive au pont routier à côté du véhicule.",
+      "engagement": "Dans l'enchainement final, il y a peu d'échappatoires évidentes",
+      "periode": "Les cascades sont arrosées, mais les vasques sont rarement profondes",
+      "geologie": "Gneiss",
+      "historique": "Première descente le 12 août 1990 (A. Maurice, R. Vuillot).",
+      "remarques": "L'équipement est bon et bien placé : broches inox, doublées uniquement dans la partie finale. Prévoir le matériel de rééquipement et de la corde à couper, l'équipement pouvant souffrir des crues et le profil du ruisseau évoluer..."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2274,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.176666,
+        "longitude": 6.030556,
+        "label": null
+      },
+      {
+        "canyonId": 2274,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.176945,
+        "longitude": 6.036111,
+        "label": null
+      },
+      {
+        "canyonId": 2274,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.176945,
+        "longitude": 6.036111,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.176945,
+      "longitude": 6.036111,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_774008f93c089927",
+          "kind": "TOPOGUIDE",
+          "title": "100 descentes de canyons autour de Grenoble",
+          "authors": [
+            "Arnaud Astier"
+          ],
+          "publicationYear": 2015,
+          "reference": "978-2-7466-7754-8",
+          "editor": "auto-édition",
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/194/100-Descentes-de-Canyons-autour-de-Grenoble.html"
+        },
+        {
+          "id": "biblio_6b7865a698c28634",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons alpins : Le tour de l'Oisans en canyons",
+          "authors": [
+            "Alain Bach",
+            "Marc Brunello",
+            "Christian Chillet",
+            "Philippe Drouin"
+          ],
+          "publicationYear": 1992,
+          "reference": "ISBN 2-7417-0054-0",
+          "editor": "Gap",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/117/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_bd24b285ad0fb3d2",
+          "kind": "MAP",
+          "title": "3335 ET Le Bourg-d'Oisans (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:13.050676+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23819,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23819/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23819/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23819/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23819/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23819,
+    "identity": {
+      "nom": "Mousquère",
+      "nomComplet": "Ruisseau de la Mousquère",
+      "prefixeNom": "Ruisseau de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23819/Mousquere.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Hautes-Pyrénées",
+      "communePrincipale": "Estensans",
+      "communes": [
+        "Sailhan",
+        "Estensans"
+      ],
+      "massif": "Le Lustou",
+      "bassin": "Lustou",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v1a2II",
+      "interet": 0.5,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 950,
+      "deniveleM": 130,
+      "longueurM": 1000,
+      "cascadeMaxM": 2,
+      "cordeMiniM": null,
+      "navette": "3.0km"
+    },
+    "timings": {
+      "approche": "5",
+      "descente": "1h",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": "à la centrale de Bourisp.\n\nVéhicule",
+      "accesAmont": "sur la route du col d'Azet, au niveau du pont qui traverse le ruisseau de la Mousquère sur la D25.",
+      "approche": "Du pont un sentier s’élève vers un champ puis redescend au début de l'encaissement.",
+      "descente": "Une partie sup qui est composée d'une vasque ou l'on peut sauter de la berge rive gauche (2m, corde en fixe).\n\nPartie de marche qui arrive au pont de la D25. De là suivre le cours d'eau pour rencontrer le second encaissement ou l'on passe sous les restes d'un ancien parc acrobranche...\n\nRoche sculptée mais aucun caractère ludique.\n\nLongue période de marche en rivière avec seulement 3 petits sauts.",
+      "retour": "On sort du cours d'eau au niveau de la centrale.",
+      "engagement": "Aucun si ce n'est en période de fonte des neiges.",
+      "periode": "Faible, à vrai dire, on l'a fait juste pour voir ! C'est long et il n'y a rien d'intéressant.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Nul, je l'ai mis dans la base pour pas se refaire avoir!\n\nL'ancien parc accro. pourrit au dessus du cours d'eau, bof bof."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23819,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.815559,
+        "longitude": 0.343585,
+        "label": null
+      },
+      {
+        "canyonId": 23819,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.826023,
+        "longitude": 0.339032,
+        "label": null
+      },
+      {
+        "canyonId": 23819,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 42.816532,
+        "longitude": 0.342655,
+        "label": null
+      },
+      {
+        "canyonId": 23819,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 42.826752,
+        "longitude": 0.338106,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 42.816532,
+      "longitude": 0.342655,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_ea58b8fc020a675e",
+          "kind": "MAP",
+          "title": "1748 ET Neouvielle (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

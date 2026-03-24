@@ -1,0 +1,140 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:21.056700+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23588,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23588/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23588/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23588/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23588/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23588,
+    "identity": {
+      "nom": "Alpbach",
+      "nomComplet": "Alpbach, Selfirüfi",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23588/Alpbach.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Jenins",
+      "departement": "Graubünden/Grigioni/Grischun",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Rätikon",
+      "bassin": "Rhein",
+      "coursEau": "Alpbach"
+    },
+    "rating": {
+      "cotation": "v4a3III",
+      "interet": 2.2,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1320,
+      "deniveleM": 620,
+      "longueurM": 2000,
+      "cascadeMaxM": 55,
+      "cordeMiniM": 60,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h30",
+      "descente": "4-6h",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "Sortie A13 Landquart, se garer dans le village de Jenins.",
+      "accesAmont": null,
+      "approche": "Monter la piste de l'alpage.",
+      "descente": "Parcours souvent vertical, quelques passages de marche avec des troncs.",
+      "retour": "A travers le bois d'abord sur RD, puis RG et prendre la piste sur RG.",
+      "engagement": "Parcours de grandes verticales.",
+      "periode": "Juin - Novembre, après période sèche.",
+      "geologie": "Schiste",
+      "historique": null,
+      "remarques": "Set pour réequipement fortement conseillé."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23588,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.010029,
+        "longitude": 9.57885,
+        "label": null
+      },
+      {
+        "canyonId": 23588,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.000309,
+        "longitude": 9.56686,
+        "label": null
+      },
+      {
+        "canyonId": 23588,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.004688,
+        "longitude": 9.56046,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.004688,
+      "longitude": 9.56046,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_ee92621b53de3c8c",
+          "kind": "TOPOGUIDE",
+          "title": "Canyoning : Swiss Alps / Alpes Suisse",
+          "authors": [
+            "Association Openbach"
+          ],
+          "publicationYear": 2015,
+          "reference": "9782746679450",
+          "editor": "auto-edition",
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/195/Canyoning-:-Swiss-alps---Alpes-suisses-Vol-1.html"
+        },
+        {
+          "id": "biblio_b440b623b8f939ea",
+          "kind": "TOPOGUIDE",
+          "title": "GRand CANYONS",
+          "authors": [
+            "Timo Stammwitz"
+          ],
+          "publicationYear": 2010,
+          "reference": "978-3-9523369-5-3",
+          "editor": null,
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/155/GRand-CANYONS.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_54fc6bbb0c5b3a6f",
+          "kind": "MAP",
+          "title": "1156 Schesaplana (Swisstopo)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

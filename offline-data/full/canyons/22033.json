@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:36.392197+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22033,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22033/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22033/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22033/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22033/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22033,
+    "identity": {
+      "nom": "Vioulou",
+      "nomComplet": "Canyon du Vioulou",
+      "prefixeNom": "Canyon du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22033/Vioulou.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Aveyron",
+      "communePrincipale": "Trémouilles",
+      "communes": [
+        "Trémouilles"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a3III",
+      "interet": 1.7,
+      "nbVotes": 7
+    },
+    "metrics": {
+      "altitudeDepartM": 710,
+      "deniveleM": 100,
+      "longueurM": 1080,
+      "cascadeMaxM": 10,
+      "cordeMiniM": 15,
+      "navette": "3.0km"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "3h",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "De Trémouilles, partir au nord direction les Bastries. Avant de franchir le pont sur la Viaur, tourner à droite vers Bannès, puis le moulin de Bannès. Remonter la RG et rouler tant que votre voiture le supporte et se garer correctement.\n\nParking",
+      "accesAmont": "De Trémouilles, partir à l'est direction Canet, Pont de Salars par la D536. Après environ 1400m, prendre la piste à gauche (route de Sarlit à droite, point IGN 751) sur 200m jusqu'à un virage à droite, garez vous là (4 places ).",
+      "approche": "Prendre le chemin qui monte à gauche, contourne le champs puis passe entre deux champs puis entre dans la forêt. Le suivre jusqu'à une intersection. Descendre à droite jusque dans la rivière (tout droit c'est le chemin retour qui arrive).",
+      "descente": "Roche sombre et ambiance austère, c'est une véritable patinoire. Parcours très ludique entre les blocs, quelques toboggans, nombreux passages à chercher sous les blocs, voire en siphons (en toute prudence). Une vasque trouée RD en haut d'un petit toboggan permet un passage en siphon. Bref, de nombreux jeux à trouver. A noter néanmoins que la roche très glissante rend le parcours éprouvant.",
+      "retour": "Sortir RG peu après la dernière grande vasque et rejoindre la voiture aval par un bon sentier. Si vous avez choisi l'option sans navette (préférable à mon avis), prendre le sentier a gauche qui monte raide et remonte au parking amont en 30mn.",
+      "engagement": "Canyon relativement sauvage. Tout est facilement contournable, mais sortir du vallon parait fastidieux.",
+      "periode": "La présence en amont de trois barrages assure un débit constant toute l'année. En période de fort débit, les passages deviennent dangereux et ce parcours aquatique devient infernal.",
+      "geologie": "Roche très très glissante !",
+      "historique": "Roland Pelissier et Y. Martin - 1 juin 1990",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22033,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.247952,
+        "longitude": 2.66309,
+        "label": null
+      },
+      {
+        "canyonId": 22033,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 44.246658,
+        "longitude": 2.658793,
+        "label": null
+      },
+      {
+        "canyonId": 22033,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 44.263302,
+        "longitude": 2.657479,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 44.246658,
+      "longitude": 2.658793,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_8826d68127d88a09",
+          "kind": "MAP",
+          "title": "2440 O Cassagnes-Begonhes (IGN Série Bleue)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

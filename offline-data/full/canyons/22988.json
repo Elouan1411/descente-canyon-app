@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:10.949307+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22988,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22988/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22988/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22988/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22988/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22988,
+    "identity": {
+      "nom": "Brigoud",
+      "nomComplet": "Riou Brigoud",
+      "prefixeNom": "Riou",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22988/Brigoud.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Isère",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Chartreuse",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a1I",
+      "interet": 0.8,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 1100,
+      "deniveleM": 600,
+      "longueurM": 2500,
+      "cascadeMaxM": 6,
+      "cordeMiniM": 20,
+      "navette": "6.0km"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "2h45",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "au pont du Riou Brigoud sur la D520c avant de monter à la Ruchère.\n\nGarer le véhicule",
+      "accesAmont": "au parking de départ des randonnées au lieu dit \"Le Habert\" (au sud de la Ruchère).",
+      "approche": "Rejoindre le ruisseau en traversant la forêt.",
+      "descente": "La descente est une succession de longues marches en ruisseau et de désescalades de ressauts entrecoupées de quelques cascades nécessitant la corde.\n\nCes cascades sont toutes équipées sur amarrages naturels dans la partie amont (au dessus du pont) et sur AN ou monopoint dans la partie aval.",
+      "retour": "Revenir à la voiture au mieux en remontant dans la forêt ou option moins fatiguante :\n\nFranchir le Guiers et bartasser (très très peu) pour trouver une très bonne piste RD du Guiers (trait noir plein sur l'IGN). La suivre vers l'amont, franchir la passerelle et remonter par le bon sentier vers la voiture aval.",
+      "engagement": "Peu engagé, encaissements très courts et très rares.",
+      "periode": "Pas énormément d'eau, à faire après de bonnes pluies ou à la fonte des neiges.",
+      "geologie": "Le ruisseau se développe majoritairement dans le sénonien.",
+      "historique": "Premières descentes connues les 7 avril 2011 et 23 mai 2011.",
+      "remarques": "La navette peut sûrement s'éviter par une longue marche en rive gauche en suivant les chemins sur la carte."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22988,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.401905,
+        "longitude": 5.800732,
+        "label": null
+      },
+      {
+        "canyonId": 22988,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.421158,
+        "longitude": 5.819766,
+        "label": null
+      },
+      {
+        "canyonId": 22988,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 45.401939,
+        "longitude": 5.799515,
+        "label": "Parking et quasiment point d'entrée dans le ruisseau"
+      },
+      {
+        "canyonId": 22988,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 45.418995,
+        "longitude": 5.816333,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 45.401939,
+      "longitude": 5.799515,
+      "label": "Parking et quasiment point d'entrée dans le ruisseau"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_07737b47737fa6b4",
+          "kind": "MAP",
+          "title": "3333 OT Massif de la Chartreuse Nord (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

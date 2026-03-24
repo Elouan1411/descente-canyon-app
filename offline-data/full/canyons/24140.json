@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:59:20.600841+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24140,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24140/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24140/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24140/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24140/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24140,
+    "identity": {
+      "nom": "Kamena Vourla",
+      "nomComplet": "Kamena Vourla",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24140/Kamena-Vourla.html"
+    },
+    "location": {
+      "pays": "Grèce",
+      "region": "Central Greece",
+      "departement": "of Phthiotis",
+      "communePrincipale": "Molos-Agios Konstantinos",
+      "communes": [
+        "Molos-Agios Konstantinos"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 1.9,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 620,
+      "deniveleM": 570,
+      "longueurM": 750,
+      "cascadeMaxM": 50,
+      "cordeMiniM": 55,
+      "navette": "8.5km"
+    },
+    "timings": {
+      "approche": "45min",
+      "descente": "3h30",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "Au village de Kamena Vourla, en sortant de l'autoroute, aller vers l'Est vers Karia (Kapuà) (tourner deux fois à droite) et se garer sur le parking devant le grand bâtiment blanc coté montagne (ancien hôtel ARTEMIS - APTEMIS).\n\nParking",
+      "accesAmont": "continuer en direction de Karia et se garer, en face d'une maison en contrebas de la route, environ 300 m à l'ouest le village, près d'une piste qui monte légèrement vers l'Est.",
+      "approche": "Prendre la piste qui monte doucement sur le gauche et prendre ensuite celle qui monte immédiatement sur la gauche (le topo de la Grèce es totalement faux sur ce point de vue là).\n\nAu col, on rejoint un pré. Suivre la sente qui descend à gauche vers un autre pré et suivre le sentier immédiatement à droite (panneau vert et marques rouges).\n\nContinuer ce sentier qui longe un vallon jusqu'à un croiser un bon ravin bien marqué (30 min).\n\nLe descendre (nombreuses désescalades faciles) jusqu'à rejoindre le début de l'encaissement après 25min).",
+      "descente": "De nombreux rappels qui s'enchaines.\n\nLa plus grande cascade fait 70m.\n\nLes 50 premiers mètres sont pleins gaz, mais on arrive sur une bonne vire en RD équipé d'un point.",
+      "retour": "Sortir en RG par une petite sente, 200 m après le dernier rappel (juste avant un maison RG). Passer 2 vieux grillages puis rejoindre un chemin qui passe à gauche de l'ancien hôtel (parking aval).",
+      "engagement": null,
+      "periode": "En eau au printemps.\n\nSec en été et automne. A cette période, le petit vallon d'accès peut parfois couler, mais il y a une perte avant l'encaissement et pas de vasques en eau (enfin une seule qui passe en opposition large).",
+      "geologie": null,
+      "historique": null,
+      "remarques": "La grande cascade se voit de la route."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24140,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 38.761112,
+        "longitude": 22.775557,
+        "label": null
+      },
+      {
+        "canyonId": 24140,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 38.75272,
+        "longitude": 22.775862,
+        "label": null
+      },
+      {
+        "canyonId": 24140,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 38.773609,
+        "longitude": 22.776943,
+        "label": null
+      },
+      {
+        "canyonId": 24140,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 38.755005,
+        "longitude": 22.774555,
+        "label": "Panneau départ du sentier"
+      },
+      {
+        "canyonId": 24140,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 38.761112,
+        "longitude": 22.775557,
+        "label": "Fin du sentier d'approche"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 38.75272,
+      "longitude": 22.775862,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

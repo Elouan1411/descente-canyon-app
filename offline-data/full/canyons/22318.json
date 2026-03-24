@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:35.382353+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22318,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22318/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22318/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22318/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22318/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22318,
+    "identity": {
+      "nom": "Vernes",
+      "nomComplet": "Ruisseau des Vernes",
+      "prefixeNom": "Ruisseau des",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22318/Vernes.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Isère",
+      "communePrincipale": "Montaud",
+      "communes": [
+        "Montaud"
+      ],
+      "massif": "Vercors",
+      "bassin": "Isère",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1II",
+      "interet": 0.8,
+      "nbVotes": 7
+    },
+    "metrics": {
+      "altitudeDepartM": 880,
+      "deniveleM": 160,
+      "longueurM": 1000,
+      "cascadeMaxM": 35,
+      "cordeMiniM": 40,
+      "navette": "13.0km"
+    },
+    "timings": {
+      "approche": "10/15min",
+      "descente": "1h15",
+      "retour": "2h30"
+    },
+    "topo": {
+      "accesAval": "Se garer sur le parking du canyon des Lavures (voir fiche)",
+      "accesAmont": "de Saint-Quentin-sur-Isère, monter à Montaud et continuer jusqu'au hameau Le Coing. Se garer à proximité du panneau qui indique que le tunnel est fermé, à la fin de la route goudronnée.",
+      "approche": "Du parking, prendre la piste qui longe la route. Couper un premier ruisseau temporaire et prendre à droite le chemin descendant qui chemine sur la crête séparant les deux ruisseaux temporaires (voir carte). On atteint une petite prairie où confluent trois ruisseaux. Continuer vers l'aval jusqu'au premier petit encaissement caractéristique (abri sous roche en RD), départ de la descente.",
+      "descente": "Le début est une longue marche en rivière entrecoupée de petits encaissements. On arrive à un joli passage cavernicole. Ensuite 2 cascades d'une dizaine de mètres. On arrive au sommet de la C35, AN RG en retrait de 5 m par rapport au seuil. Il existe aussi un amarrage sur un arbre en bord de cascade mais l'arbre ne semble pas en pleine santé...",
+      "retour": "Les 2h30 indiquées correspondent à 45min de marche de liaison + 1h45 de descente du canyon des Lavures :\n\nAprès la C35, continuer la descente en suivant le ruisseau, la descente est raide mais la corde n'est pas nécessaire. Après 45min, on arrive au départ du canyon des Lavures que l'on descend jusqu'à la voiture.\n\nIl doit être possible de remonter sur le plateau en remontant RG depuis le pied de la C35, mais non testé. Un sentier en RG existe sur la carte, il faut peut-être continuer un peu vers l'aval pour le rattraper puis monter à gauche. Le reste du ruisseau au-dessus de la C35 se remonte facilement.",
+      "engagement": "Faible",
+      "periode": "Printemps ou après une période de pluie.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Il doit être possible de réaliser la descente avec une seule voiture en rattrapant depuis le parking des Lavures le sentier qui remonte en RG du ruisseau des Lavures puis des Vernes et finit par couper ce dernier avant l'encaissement cavernicole. De là, on remonte facilement au premier encaissement."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22318,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 45.249332,
+        "longitude": 5.554125,
+        "label": null
+      },
+      {
+        "canyonId": 22318,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 45.24836,
+        "longitude": 5.551389,
+        "label": null
+      },
+      {
+        "canyonId": 22318,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 45.261696,
+        "longitude": 5.529722,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 45.249332,
+      "longitude": 5.554125,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_f71cf3569cd5f7fc",
+          "kind": "MAP",
+          "title": "3235 OT Autrans - Gorges de La Bourne (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

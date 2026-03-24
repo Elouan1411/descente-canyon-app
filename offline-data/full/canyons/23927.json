@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:36.868315+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23927,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23927/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23927/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23927/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23927/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23927,
+    "identity": {
+      "nom": "Pétarel",
+      "nomComplet": "Torrent de Pétarel",
+      "prefixeNom": "Torrent de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23927/Petarel.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Hautes-Alpes",
+      "communePrincipale": "La Chapelle-en-Valgaudémar",
+      "communes": [
+        "La Chapelle-en-Valgaudémar"
+      ],
+      "massif": "Valgaudémar",
+      "bassin": "Séveraisse",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2III",
+      "interet": 2.6,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 2000,
+      "deniveleM": 350,
+      "longueurM": 500,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 35,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h50",
+      "descente": "3h30",
+      "retour": "1h00"
+    },
+    "topo": {
+      "accesAval": "De Gap, emprunter la N85 en direction de Grenoble. Passer St-Bonnet-en-Champsaur et 1500 m après Chauffauyer tourner à droite sur St-Firmin par la D985A. Rouler jusqu'à La Chapelle-en-Valgaudemar . Dans le village, à droite, emprunter la petite route montant aux Oules du Diable . Garez-vous au parking indiqué .",
+      "accesAmont": null,
+      "approche": "A pied, faire 200 m sur la route goudronnée et entre deux maisons à droite, emprunter le GR (Lacs de Pétarel 3h00 balisage rouge et blanc). Après, 30 min de marche l'on pénètre dans le parc des Ecrins (le balisage change en rouge et jaune). L'on franchit un passage délicat sur 100 m et quelques anciennes moraines (A ce niveau,la dernière cascade est visible depuis le GR sur votre gauche). Après 50 min de marche, l'on arrive sur une bifurcation où il faudra prendre à gauche sur les Lacs de Pétarel (1h30). Le sentier grimpe en lacets dans un sous-bois et atteint une nouvelle ancienne moraine à ciel découvert. Lorsque le GR passe non loin du Torrent (second lacet de la moraine), se rendre au départ de la descente. (Ne pas monter plus haut, car cela vous réservera uniquement de la désescalade) (Seule curiosité, les jolis lacs de pétarel et son panorama alpin).",
+      "descente": "Enchaînement de cascades sans vasques profondes sur une succession de passages encaissés.",
+      "retour": "Lorsque la dernière cascade a été descendue, sortir en RG après une courte désescalade dans le torrent et rejoindre le GR en sous-bois. De là, emprunter l'itinéraire pris à l'aller jusqu'au parking.",
+      "engagement": "Aucune échappatoire dans les encaissements. Sinon, possibilité de rejoindre le GR en sortant par la rg.",
+      "periode": "Période optimale : été si météo correcte.\n\nNe pas sous-estimer le débit car certains rappels se descendent dans l'actif.",
+      "geologie": null,
+      "historique": "??????\n\nEquipement sur goujon de 10mm et plaquettes. Quelques cordes changées en 2017.",
+      "remarques": "Prévoir de la corde à couper (lunules ou cordes reliants les plaquettes), de quoi équiper en fonction du débit, car certaines cascades se descendent en désescalade dans l'actif, ceci sur une roche assez glissante."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23927,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.804871,
+        "longitude": 6.165354,
+        "label": null
+      },
+      {
+        "canyonId": 23927,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.809261,
+        "longitude": 6.165083,
+        "label": null
+      },
+      {
+        "canyonId": 23927,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.811722,
+        "longitude": 6.196087,
+        "label": null
+      },
+      {
+        "canyonId": 23927,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 44.812222,
+        "longitude": 6.186042,
+        "label": "Approche GR"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.811722,
+      "longitude": 6.196087,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_b0e951331c704682",
+          "kind": "MAP",
+          "title": "3437 OT Champsaur - Parc des Ecrins (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

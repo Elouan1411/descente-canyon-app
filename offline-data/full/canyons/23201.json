@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:05.021273+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23201,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23201/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23201/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23201/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23201/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23201,
+    "identity": {
+      "nom": "Mal Cros",
+      "nomComplet": "Torrent de Mal Cros",
+      "prefixeNom": "Torrent de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23201/Mal-Cros.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Hautes-Alpes",
+      "communePrincipale": "Champoléon",
+      "communes": [
+        "Champoléon"
+      ],
+      "massif": "Ecrins - Oisans - Champsaur",
+      "bassin": "Drac",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v5a4IV",
+      "interet": 2.7,
+      "nbVotes": 6
+    },
+    "metrics": {
+      "altitudeDepartM": 2350,
+      "deniveleM": 600,
+      "longueurM": 2500,
+      "cascadeMaxM": 90,
+      "cordeMiniM": 100,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "3h",
+      "descente": "4 à 5h",
+      "retour": "1h15"
+    },
+    "topo": {
+      "accesAval": "De Gap prendre la N85 vers Grenoble puis la D944 vers le col de Manse. 4km après Pont-du-Fossé prendre à gauche la D944a. Après les Borels prendre à gauche vers le hameau des Fermons. Garez-vous au parking.",
+      "accesAmont": null,
+      "approche": "Prendre le GR qui mène au refuge du Tourond (1h). Du refuge prendre le sentier qui monte (panneau \"Vieux Chaillol hors sentier\"). Suivre ce sentier jusqu'à la \"cabane\" (voir IGN) . De là prendre à gauche le sentier qui mène à la résurgence de Mal Cros. 100 m avant la résurgence monter à vue RG puis RD au départ du canyon.",
+      "descente": "La descente se compose de 4 parties (on fait les parties que l'on souhaite).\n\nPartie 1 : Dans le noir (frontale obligatoire 2x20m)\n\nPartie 2 : \"Encaissement\" continu très étroit, peu profond (2x20m)\n\nPartie 3 : Marches et desescalades entrecoupées de cascades à descendre sur AN\n\nPartie 4 : Cascade de la Pisse (2x100m), relais RD 3 points",
+      "retour": "Du bas de la C90 remonter RG l'éboulis pour rejoindre le sentier touristique de la cascade. Le suivre pour rejoindre le refuge du Tourond puis le sentier pris à l'aller menant aux Fermons.",
+      "engagement": "Peu engagé, sauf pour la partie 1, on peut sortir de partout.",
+      "periode": "L'été semble la meilleure période mais attention au lendemain de pluie pouvant rendre le débit énorme.",
+      "geologie": "Conglomérat de grès. Schiste et Calcaire",
+      "historique": null,
+      "remarques": "Possibilité de laisser les grandes longueurs de corde au niveau de la partie 3 pendant l'approche. Pour cela 100m avant la \"cabane\" prendre à gauche le sentier qui indique Tour de Planure. Allégez vous et remontez RG les parties 2 et 1. Équipement \"minimaliste\" en amont de la partie souterraine. possibilité d'accéder à la grotte par un boyau sec à 50m en RG, arrivée au niveau du \"puits de lumière\"\n\nPartie 4 : il existe un relais bien visible RG mais avec un frottement très important et un rappel de corde qui sera impossible.\n\nLe relais à prendre est très excentré en RD."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23201,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.72245,
+        "longitude": 6.206168,
+        "label": null
+      },
+      {
+        "canyonId": 23201,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.712357,
+        "longitude": 6.214279,
+        "label": null
+      },
+      {
+        "canyonId": 23201,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.724583,
+        "longitude": 6.248396,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.724583,
+      "longitude": 6.248396,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_b0e951331c704682",
+          "kind": "MAP",
+          "title": "3437 OT Champsaur - Parc des Ecrins (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

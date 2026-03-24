@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:22.009826+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23592,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23592/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23592/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23592/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23592/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23592,
+    "identity": {
+      "nom": "Chempfi",
+      "nomComplet": "Canyon de Chempfi, Schranggabach",
+      "prefixeNom": "Canyon de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23592/Chempfi.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Grüsch",
+      "departement": "Graubünden/Grigioni/Grischun",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Alpes de Plessur",
+      "bassin": "Prättigau",
+      "coursEau": "Schranggabach"
+    },
+    "rating": {
+      "cotation": "v3a5IV",
+      "interet": 2.2,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 1180,
+      "deniveleM": 108,
+      "longueurM": 950,
+      "cascadeMaxM": 22,
+      "cordeMiniM": 25,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h",
+      "descente": "2h",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": "Sortir de l'A28 à l'entré de la vallée (sortie pour Valzeina), conduire jusqu'à Engi.",
+      "descente": "Parcours de belles vasques et petits ressauts avec souvent un gros débit.",
+      "retour": "Du pont à la fin du canyon, suivre la piste jusqu'au parking.",
+      "engagement": "Très aquatique, parcours d'eau vive, plusieurs beaux sauts et tobs.",
+      "periode": "Grand bassin versant en amont (18km2), à faire après une periode sèche, Août - Octobre.",
+      "geologie": "Schiste assez dur.",
+      "historique": "Ouverture Tin Frehner, Huldi Hug 03.07.2005, completé 03.07.2009 Timo Stammwitz.",
+      "remarques": "Equipement de rééquipement fortement conseillé, certains points ne sont pas bien protégés des monstrueuses crues. Avec gros débit il est nécessaire de poser certaines main-courantes."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23592,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.924919,
+        "longitude": 9.61383,
+        "label": null
+      },
+      {
+        "canyonId": 23592,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.930248,
+        "longitude": 9.61556,
+        "label": null
+      },
+      {
+        "canyonId": 23592,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.938042,
+        "longitude": 9.61032,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.938042,
+      "longitude": 9.61032,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_70fb813b807aff2d",
+          "kind": "MAP",
+          "title": "1176 Schiers (Swisstopo)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

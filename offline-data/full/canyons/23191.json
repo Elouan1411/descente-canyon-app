@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:02.642485+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23191,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23191/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23191/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23191/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23191/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23191,
+    "identity": {
+      "nom": "Aymerits",
+      "nomComplet": "Rau des Aymerits",
+      "prefixeNom": "Rau des",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23191/Aymerits.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Aveyron",
+      "communePrincipale": "Maleville",
+      "communes": [
+        "Maleville"
+      ],
+      "massif": "Ségala",
+      "bassin": "Aveyron",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1I",
+      "interet": 1.0,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 400,
+      "deniveleM": 120,
+      "longueurM": 400,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "1h30",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": "Depuis Villefranche de Rouergue, prendre la direction des gorges de l'Aveyron par la D269 (Pont de Vezis, Labastide l'Evêque), faire environ 5 kilomètres. On croise alors les cascades finales, se garer juste après le pont.",
+      "accesAmont": null,
+      "approche": "Suivre la route en direction de Villefranche environ 400 mètres. Remarquer un pont qui traverse l'Aveyron (Pont des Phalips). A peu près 100m avant ce pont, une sente part dans le talus. Prendre cette sente qui monte jusqu'à traverser le ruisseau (15 min). La descente commence là. Il y a quelques cascades en amont mais le lit est obstrué par des arbres morts et la végétation. De plus, ce n'est pas équipé.",
+      "descente": "Huit rappels dont certains ne nécessitent pas la corde.\n\nAttention à la roche qui est très glissante.",
+      "retour": "On arrive directement au pont qui croise la route départementale : passer dessous et prendre la sente rive gauche pour remonter à la voiture.",
+      "engagement": "Tout peut être évité.",
+      "periode": "Coule toute l'année, mais préférer les périodes pluvieuses",
+      "geologie": null,
+      "historique": "Canyon équipé par le club Villefranche Pyrénées au début des années 2000.",
+      "remarques": "Pas d'encaissement. Course peu parcourue donc prévoir de quoi débroussailler."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23191,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.366676,
+        "longitude": 2.090809,
+        "label": null
+      },
+      {
+        "canyonId": 23191,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.363632,
+        "longitude": 2.091281,
+        "label": null
+      },
+      {
+        "canyonId": 23191,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.363747,
+        "longitude": 2.091458,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.363747,
+      "longitude": 2.091458,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_b4487ea586ad82da",
+          "kind": "MAP",
+          "title": "2239E Villefranche-De-Rouergue (IGN Série Bleue)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

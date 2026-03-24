@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:57.641145+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22417,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22417/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22417/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22417/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22417/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22417,
+    "identity": {
+      "nom": "Chardon / Jaille",
+      "nomComplet": "Chardon / Jaille, Combe Chardon / Combe de la Jaille",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22417/Chardon---Jaille.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Isère",
+      "communePrincipale": "Engins",
+      "communes": [
+        "Engins"
+      ],
+      "massif": "Vercors",
+      "bassin": "Isère",
+      "coursEau": "Combe Chardon / Combe de la Jaille"
+    },
+    "rating": {
+      "cotation": "v3a1II",
+      "interet": 0.6,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 1100,
+      "deniveleM": 240,
+      "longueurM": 800,
+      "cascadeMaxM": 17,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "45min",
+      "descente": "1h",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "De Grenoble, prendre la D531 en direction de Villard-de-Lans. Passer le barrage d'Engins et se garer environ 400m plus loin au \"Jaux\". Parking sur la gauche de la route.",
+      "accesAmont": null,
+      "approche": "Prendre le GR9 en direction de St Nizier du Moucherotte via le \"Pas de la Corne\". Après le \"Pas\" ne pas prendre à gauche direction le \"Pas du Curé\" mais bien à droite direction St-Nizier. A St Nizier, longer la D106 par le sud. Dans un virage à gauche avant d'arriver au Centre de vacances du hameau \"la Tour\", une piste sur la droite amène au départ de la combe.",
+      "descente": "Succession d'une dizaine de ressauts-cascades dans un cadre forestier.",
+      "retour": "A la confluence avec le Furon, on prend à droite pour récupérer la voiture.",
+      "engagement": null,
+      "periode": "A faire au printemps à la fonte des neiges, ou après une période de pluies",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Chaque cascade est équipée sur 2 points (principalement 1 vieux spit + 1 goujon) ou s'équipe sur arbre."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22417,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.176674,
+        "longitude": 5.618305,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.176674,
+      "longitude": 5.618305,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_f71cf3569cd5f7fc",
+          "kind": "MAP",
+          "title": "3235 OT Autrans - Gorges de La Bourne (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:48:48.321641+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21287,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21287/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21287/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21287/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21287/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21287,
+    "identity": {
+      "nom": "Courset (inférieur)",
+      "nomComplet": "Torrent du Courset (inférieur)",
+      "prefixeNom": "Torrent du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21287/Courset-inferieur.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Lavey-Morcles",
+      "departement": "Vaud",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Préalpes vaudoises",
+      "bassin": "Rhône (amont du Lac Léman)",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 2.2,
+      "nbVotes": 7
+    },
+    "metrics": {
+      "altitudeDepartM": 835,
+      "deniveleM": 210,
+      "longueurM": 450,
+      "cascadeMaxM": 28,
+      "cordeMiniM": 30,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "25min",
+      "descente": "2h",
+      "retour": "2min"
+    },
+    "topo": {
+      "accesAval": "Entre Montreux et Martigny, quitter la route principale pour le village de Lavey. On passe au dessus d'un large canal, puis on tourne à droite pour traverser le petit village de Lavey. Un fois traversé, on poursuit la route (rue du stand), en prenant d'abord à gauche à la patte d'oie, puis un peu plus loin à droite (on ne traverse pas le ruisseau, on reste en RG). Garer la voiture près au bout de la piste quelques dizaines de mètres plus haut en laissant la place dans l'aire de retournement (attention à ne pas gêner le travail de débardage. Il faut sans doute se garer ailleurs en semaine, mais il y a de la place notamment près du pont).",
+      "accesAmont": null,
+      "approche": "En rive gauche, un bon sentier monte assez sec en bordure du ruisseau. Peux après avoir franchi un vague couloir (affluent du canyon), une petite sente mène en 1 minute au ruisseau que l'on voit en dessous. Le premier rappel est tout proche",
+      "descente": "C'est une succession de rappels, sans encaissement important, mais avec néanmoins quelques goulottes et autres formes d'érosion. On peut parfois éviter certains ressauts par l'une des rives.",
+      "retour": "Après la dernière cascade (C28 puis un rappel de 5m), on arrive en haut d'un pare-crue. Une petite sente RG ramène à la voiture toute proche.",
+      "engagement": "Il est souvent possible de se mettre hors crue. Selon les endroits, il sera plus ou moins aisé de sortir du canyon. Les cascades peuvent néanmoins être parfois bien arrosées",
+      "periode": "Il faut, pour s'engager, un débit relativement modéré. Cette descente est envisageable une fois le gros de la fonte des neiges passé. Le bassin versant semble assez boisé, mais il est raide, aussi on évitera soigneusement d'y être présent en cas d'orage violent.",
+      "geologie": "Ce calcaire noir, parfois veiné de blanc a été fortement sollicité et trouve une apparence plus schisteuse.",
+      "historique": null,
+      "remarques": "Les crues dans ce canyon sont redoutables (gros volume de charriage)."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21287,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.226612,
+        "longitude": 7.040477,
+        "label": null
+      },
+      {
+        "canyonId": 21287,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.227806,
+        "longitude": 7.034394,
+        "label": null
+      },
+      {
+        "canyonId": 21287,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 46.227894,
+        "longitude": 7.034061,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.227894,
+      "longitude": 7.034061,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_ece5dd930b294b1e",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.swestcanyon.ch/Canyons/Courset/Courset.htm",
+          "url": "http://www.swestcanyon.ch/Canyons/Courset/Courset.htm"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

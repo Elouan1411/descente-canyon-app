@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:59.008948+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21853,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21853/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21853/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21853/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21853/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21853,
+    "identity": {
+      "nom": "Nonne",
+      "nomComplet": "Saut de la Nonne",
+      "prefixeNom": "Saut de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21853/Nonne.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Auvergne-Rhône-Alpes",
+      "departement": "Isère",
+      "communePrincipale": "Voreppe",
+      "communes": [
+        "Voreppe"
+      ],
+      "massif": "Chartreuse",
+      "bassin": "Isère",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a1IV",
+      "interet": 1.5,
+      "nbVotes": 9
+    },
+    "metrics": {
+      "altitudeDepartM": 1037,
+      "deniveleM": 412,
+      "longueurM": 1100,
+      "cascadeMaxM": 93,
+      "cordeMiniM": 90,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "35",
+      "descente": "1h20",
+      "retour": "1h25"
+    },
+    "topo": {
+      "accesAval": "Monter au parking supérieur du monastère de Chalais.",
+      "accesAmont": null,
+      "approche": "Même accès que le \"Ruisseau de Charminelle\". A la maison forestière de la Roize prendre à gauche direction \"Charminelle\" (chemin n°6), ensuite descendre rive droite le troisième affluent que l'on croise (caractéristique : un \"Z\" suivit un seuil ouvragé), qui vous amène au départ.",
+      "descente": "Très belle cascade de 93 m (fractionnée à - 8) en fil d'araignée au milieu d'un très beau cirque rocheux et rejoignant le collecteur principal la Roize, suivit d'une cascade de 3Om...",
+      "retour": "après l'arrivée au plus bas dans la Roize -130m remontez sur la corde , ou en rive droite 1 plaquette, jusqu'à deux cordes en fixe et un ressaut RD ou un couloir terreux au milieu.",
+      "engagement": "grande verticale engagée",
+      "periode": "au préalable vérifier débit de la ROIZE, crues phénoménales",
+      "geologie": null,
+      "historique": "rééquipement de la grande cascade par le PADAWAN, DDT et YODA",
+      "remarques": "http://bouzeland.over-blog.com/pages/La_nonne-1338685.html"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21853,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.301945,
+        "longitude": 5.684444,
+        "label": null
+      },
+      {
+        "canyonId": 21853,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 45.292248,
+        "longitude": 5.6774,
+        "label": null
+      },
+      {
+        "canyonId": 21853,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 45.308941,
+        "longitude": 5.661778,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 45.292248,
+      "longitude": 5.6774,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_bf7324fa2ae1510e",
+          "kind": "MAP",
+          "title": "3334 OT Massif de la Chartreuse Sud (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

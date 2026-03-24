@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:25.073915+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21977,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21977/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21977/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21977/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21977/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21977,
+    "identity": {
+      "nom": "Malamort",
+      "nomComplet": "Canyon de Malamort",
+      "prefixeNom": "Canyon de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21977/Malamort.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Hautes-Alpes",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": "Durance",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v6a4III",
+      "interet": 2.6,
+      "nbVotes": 8
+    },
+    "metrics": {
+      "altitudeDepartM": 1900,
+      "deniveleM": 100,
+      "longueurM": 200,
+      "cascadeMaxM": 20,
+      "cordeMiniM": 35,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h20",
+      "descente": "45min/1h30",
+      "retour": "35min"
+    },
+    "topo": {
+      "accesAval": "De Vallouise se rendre au parking d'Entre les Aygues en passant par le Villard.",
+      "accesAmont": null,
+      "approche": "Du parking descendre par un sentier qui passe sur la passerelle en bois, suivre alors le GR54 qui mène à Jas Laroix et plus loin au col de l'Aup Martin (vallée de la Selle). On remonte alors le canyon en RG on passe une petite étroiture puis on continu à monter dans la vallée jusqu'au départ de l'étroiture principale (juste avant la bergerie de Jas Lacroix)",
+      "descente": "Succession de ressauts (tobog, rappel, saut,nage) puis marche 15 min dans le lit ou sur le sentier pour tomber sur la 2eme mini étroiture (1 ou 2 petits rappels puis un bief)",
+      "retour": "Reprendre le sentier pris à l'aller.",
+      "engagement": "Pas d'échappatoire dans l'encaissement",
+      "periode": "A faire tard dans la saison (octobre novembre) sinon il vous faudra bien maitriser les mouvements d'eau et l'ancre flottante (surtout sur la C20)",
+      "geologie": null,
+      "historique": "Henri Vincens",
+      "remarques": "Très bien équipé sur lunules.\n\nCanyon dans le parc national des écrins.\n\nA enchainer avec le torrent d'Ale plus en amont (débit moins fort).\n\nBien évaluer le débit avant de s'engager, très technique par gros débit, équipé dans l'actif."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21977,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.8069,
+        "longitude": 6.376995,
+        "label": null
+      },
+      {
+        "canyonId": 21977,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.808025,
+        "longitude": 6.379495,
+        "label": null
+      },
+      {
+        "canyonId": 21977,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.83046,
+        "longitude": 6.402519,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.83046,
+      "longitude": 6.402519,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_2893447c6d6073b6",
+          "kind": "MAP",
+          "title": "3436 ET Meije - Pelvoux - Parc des Ecrins (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

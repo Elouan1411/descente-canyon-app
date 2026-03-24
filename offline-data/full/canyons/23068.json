@@ -1,0 +1,141 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:32.178599+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23068,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23068/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23068/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23068/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23068/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/23068/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 23068,
+    "identity": {
+      "nom": "Orignol",
+      "nomComplet": "Ravin d' Orignol",
+      "prefixeNom": "Ravin d'",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23068/Orignol.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Occitanie",
+      "departement": "Lozère",
+      "communePrincipale": "Saint-Pierre-des-Tripiers",
+      "communes": [
+        "Saint-Pierre-des-Tripiers"
+      ],
+      "massif": "Causse Méjean",
+      "bassin": "Tarn",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a1II",
+      "interet": 1.0,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 800,
+      "deniveleM": 200,
+      "longueurM": 700,
+      "cascadeMaxM": 40,
+      "cordeMiniM": 45,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "20mn",
+      "descente": "2h30",
+      "retour": "1h10"
+    },
+    "topo": {
+      "accesAval": "Par la route des gorges du Tarn, se rendre aux Vignes. Traverser le pont et monter sur le Causse Méjean. En bout de côte, prendre à droite vers la Bourgarie. Se garer à l'entrée du hameau et suivre le GR6A plein Sud.",
+      "accesAmont": null,
+      "approche": "Passer aux ruines de Volcégur et continuer sur le GR jusqu'à traverser un talweg peu marqué. Là, on quitte le GR. Suivre le fond de cette vallée sèche au mieux dans la végétation 10min, jusqu'au premier rappel.",
+      "descente": "Deux parties bien distinctes :\n\n* Jusqu'au sentier des corniches :\n\n- R1 10m MC sur AN+2 goujons.\n\n- R2 12m, suivie d'un passage sous bloc.\n\n* Sous le sentier des corniches :\n\n- R3 7m bien glissant.\n\n- R4 11m sur AN avec MC sur broches.\n\n- R5 15m MC sur câble.\n\n- R6 40m départ peu confortable, 1 dévia en place.",
+      "retour": "Du bas du rappel, rejoindre le sentier Gaupillat en pied de falaise n'est pas aisé : 300m de bartas ! Du bas du rappel, chercher un poil à droite un ressaut en contre-bas : corde pourrie... Puis tirer un peu à gauche d'une zone éboulée : ne pas louper le sentier peu évident.\n\nLe reste est nickel : suivre le sentier à droite, jusqu'au premier embranchement évident qui monte à droite. C'est l'accès au magnifique Pas de l'Arc, puis au cirque du Bout du Monde (source). La Bourgarie n'est plus qu'à 15min.",
+      "engagement": "Faible, c'est un dry.",
+      "periode": "Toute l'année.",
+      "geologie": null,
+      "historique": "Ouvert début des années 80 avec des potes spéléos du CAF Millau.",
+      "remarques": "Possibilité d’enchaîner avec l'inoubliable descente de la Baousse del Biel toute proche. Dans ce cas, lors de la marche retour, trouver une sente de remontée dans le premier cirque qui suit (caractéristique sur la carte). Cherchez-en le départ plutôt sur la gauche.\n\nOn débouche sur le sentier des corniches coupé plus tôt. La Baousse se trouve à gauche à quelques centaines de mètres.\n\nEn cas d’enchaînement des 2 ravins : 2x50m obligatoires."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23068,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.225975,
+        "longitude": 3.237014,
+        "label": null
+      },
+      {
+        "canyonId": 23068,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.241798,
+        "longitude": 3.241742,
+        "label": "hameau de la Bourgarie"
+      },
+      {
+        "canyonId": 23068,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 44.222374,
+        "longitude": 3.242194,
+        "label": "talweg à suivre vers l'aval"
+      },
+      {
+        "canyonId": 23068,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 44.231258,
+        "longitude": 3.236103,
+        "label": "ravin à remonter si enchainement"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.241798,
+      "longitude": 3.241742,
+      "label": "hameau de la Bourgarie"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_3bf86c23b7e29bf2",
+          "kind": "MAP",
+          "title": "2640 OT Gorges du Tarn (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 508,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Lozère) - 26 oct 2016",
+          "summary": "La pratique du canyonisme est autorisée sur le département de la Lozère du lever au coucher du soleil. Il est cependant interdit de s’engager dans un canyon après 17 heures.\n\nL'arrêté préfectoral réglemente également la pratique du canyonisme en Lozère sur les points suivants : les équipements obligatoires, la prise d’information préalable, l'accès aux sites, l’effectif des groupes, l’encadrement, le respect du milieu naturel, des équipements et des autres usagers, le retour d’expérience et les contrôles.",
+          "remark": null,
+          "details": "Arrêté préfectoral (Lozère) n°DDCSPP-JESEP-2016-300-001 du 26 octobre 2016",
+          "effectiveDate": "26 oct 2016",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/508/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral (Lozère) n°DDCSPP-JESEP-2016-300-001 du 26 octobre 2016",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem508_pj1.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

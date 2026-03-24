@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:51.587900+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22106,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22106/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22106/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22106/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22106/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22106,
+    "identity": {
+      "nom": "Vimieiro",
+      "nomComplet": "Ribeira do Vimieiro, Canyon du Retour",
+      "prefixeNom": "Ribeira do",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22106/Vimieiro.html"
+    },
+    "location": {
+      "pays": "Portugal",
+      "region": "Madeira",
+      "departement": "Porto Moniz Municipality",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": "Ribeira do Seixal",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a2II",
+      "interet": 2.8,
+      "nbVotes": 16
+    },
+    "metrics": {
+      "altitudeDepartM": 840,
+      "deniveleM": 315,
+      "longueurM": 500,
+      "cascadeMaxM": 60,
+      "cordeMiniM": 40,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h20",
+      "descente": "2h30",
+      "retour": "20"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22106,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 32.787483,
+        "longitude": -17.111221,
+        "label": null
+      },
+      {
+        "canyonId": 22106,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 32.789104,
+        "longitude": -17.114908,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 32.787483,
+      "longitude": -17.111221,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_d4559c6470527679",
+          "kind": "TOPOGUIDE",
+          "title": "Meeting Canyoning Madeira 2016",
+          "authors": [
+            "Duarte Silva e colaboradores"
+          ],
+          "publicationYear": 2016,
+          "reference": null,
+          "editor": "Clube Naval do Seixal",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1343/topoguide.html"
+        },
+        {
+          "id": "biblio_2714eb823c608ae0",
+          "kind": "TOPOGUIDE",
+          "title": "Meeting Canyoning Madeira 2015",
+          "authors": [
+            "Duarte Silva"
+          ],
+          "publicationYear": 2015,
+          "reference": null,
+          "editor": "Clube Naval do Seixal",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1342/topoguide.html"
+        },
+        {
+          "id": "biblio_9fee8e80e3298324",
+          "kind": "TOPOGUIDE",
+          "title": "Canyons de Madère - Descentes Sportives et Randonnées",
+          "authors": [
+            "Antoine Florin"
+          ],
+          "publicationYear": 2007,
+          "reference": "978-2-9529227-0-8",
+          "editor": "auto-édition",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1194/topoguide.html"
+        }
+      ],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_fc0d03ab8e8a75c7",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://web.archive.org/web/2008051401193......madeira/retour.html",
+          "url": "http://web.archive.org/web/2008051401193......madeira/retour.html"
+        },
+        {
+          "id": "resource_c5b8c68518d57085",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyoning.camadeira.com/canyons/vimieiro/",
+          "url": "http://canyoning.camadeira.com/canyons/vimieiro/"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

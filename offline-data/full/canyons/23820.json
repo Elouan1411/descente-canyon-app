@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:13.305722+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23820,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23820/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23820/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23820/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23820/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23820,
+    "identity": {
+      "nom": "Storto",
+      "nomComplet": "Rio Storto, Krumpbach",
+      "prefixeNom": "Rio",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23820/Storto.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Frioul-Vénétie julienne",
+      "departement": "Udine",
+      "communePrincipale": "Sauris",
+      "communes": [
+        "Sauris"
+      ],
+      "massif": "Alpes Carniques - Carniche - Karnischen",
+      "bassin": "Tagliamento",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a3III",
+      "interet": 2.6,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 1130,
+      "deniveleM": 150,
+      "longueurM": 1000,
+      "cascadeMaxM": 18,
+      "cordeMiniM": 20,
+      "navette": "2.0km"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "2h",
+      "retour": "3min"
+    },
+    "topo": {
+      "accesAval": "aval : continuer à descendre la route plein nord en direction du lac. Juste avant, dans le 4ème virage en épingle à droite, prendre à gauche une petite route qui longe la rive du lac et franchit le canyon sur un pont. Stationner par là au mieux.",
+      "accesAmont": "amont : d'Ampezzo, prendre la direction du Lago di Sauris par la Strada del Monte Pura (nommage OSM) ou Via San Valentino (nommage G.Maps). Juste avant de commencer à longer le Rio Storto par une grande ligne droite, la route fait 4 virages en épingle. Juste après, repérer à gauche une piste qui descend vers le Rio. Stationner au mieux là ou plus bas le long de la route.\n\nParking",
+      "approche": "Du parking amont, prendre la piste rejoignant le rio Storto qui est le deuxième ruisseau traversé.",
+      "descente": "Ouvert au début et s'encaisse par la suite (plus intéressant). Pas mal de bois dans le canyon. Assez glissant.",
+      "retour": "Selon le niveau du lac, le retour peut être très différent... En 2022, avec un niveau du lac très très bas, nous avons remonté à la fin du canyon la très raide rive droite jusqu'à rejoindre la route. Habituellement, cette partie du canyon semble en eau et la sortie s'envisage probablement différemment et plus facilement...",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": "Juillet 2015 : Alessandro de Santis et amis",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23820,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.43306,
+        "longitude": 12.72401,
+        "label": null
+      },
+      {
+        "canyonId": 23820,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.44228,
+        "longitude": 12.72536,
+        "label": null
+      },
+      {
+        "canyonId": 23820,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 46.434231,
+        "longitude": 12.726115,
+        "label": null
+      },
+      {
+        "canyonId": 23820,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 46.442825,
+        "longitude": 12.725016,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 46.434231,
+      "longitude": 12.726115,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

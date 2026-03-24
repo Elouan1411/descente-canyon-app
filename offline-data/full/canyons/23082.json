@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:55:36.049628+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23082,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23082/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23082/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23082/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23082/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23082,
+    "identity": {
+      "nom": "Foppiano",
+      "nomComplet": "Rio di Foppiano",
+      "prefixeNom": "Rio di",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23082/Foppiano.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Piemonte",
+      "departement": "Verbano-Cusio-Ossola",
+      "communePrincipale": "Formazza",
+      "communes": [
+        "Premia",
+        "Formazza"
+      ],
+      "massif": null,
+      "bassin": "Toce",
+      "coursEau": "Rio di Foppiano"
+    },
+    "rating": {
+      "cotation": "v5a2III",
+      "interet": 2.8,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 1330,
+      "deniveleM": 350,
+      "longueurM": 500,
+      "cascadeMaxM": 65,
+      "cordeMiniM": null,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "1h",
+      "descente": "3h",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "Atteindre et dépasser le village de Foppiano et garer le véhicule sur un espace sur la gauche à proximité du pont sur le torrent. Le parcours est visible sur la gauche à côté d’une carrière.\n\nParking",
+      "accesAmont": "Continuer la route jusqu’à un nouveau tunnel. Tourner à droite et continuer l’ancienne route qui monte en lacets. Après le dernier virage, avant d’atteindre la sortie du tunnel, se garer au mieux.\n\nSi l'ancienne route est fermée, prendre le nouveau tunnel qui effectue sous terre une immense boucle, se garer à la sortie. Redescendre alors à pieds par l'ancienne route.",
+      "approche": "Au niveau de la dernière portion de la route avant de rejoindre la sortie de la galerie, commence une belle piste muletière (à gauche de la route en montant) qui mène à l’Alpe Antillone. Dépasser le hameau et continuer sur le sentier balisé vers l’Alpe Vova qui traverse à gué le torrent après environ 20 minutes.",
+      "descente": "Torrent plutôt ouvert et à dominante verticale. Belles cascades creusées dans le granit dans une ambiance ensoleillée. 14 cascades qui s'enchaînent sans temps mort, la plus haute (65m) est fractionnée à -50m.",
+      "retour": "Après la dernière cascade continuer dans le lit du torrent jusqu’à la voiture.",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": "Si vous effectuez cette descente en semaine, elle sera rythmée par les explosions parfois impressionnantes de la carrière toute proche... essayez de ne pas sursauter !"
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23082,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 46.338512,
+        "longitude": 8.421615,
+        "label": null
+      },
+      {
+        "canyonId": 23082,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 46.33297,
+        "longitude": 8.400308,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 46.338512,
+      "longitude": 8.421615,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_24bbce7a020ccc7d",
+          "kind": "MAP",
+          "title": "11 Domodossola E Val Formazza (IGC)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

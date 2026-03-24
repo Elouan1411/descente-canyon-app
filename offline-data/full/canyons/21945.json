@@ -1,0 +1,174 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:17.351861+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21945,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21945/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21945/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21945/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21945/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/21945/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 21945,
+    "identity": {
+      "nom": "Fil",
+      "nomComplet": "Vallon du Fil, Fil",
+      "prefixeNom": "Vallon du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21945/Fil.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Var",
+      "communePrincipale": "Mons",
+      "communes": [
+        "Mons"
+      ],
+      "massif": "Préalpes de Grasse",
+      "bassin": "Siagne",
+      "coursEau": "Fil"
+    },
+    "rating": {
+      "cotation": "v1a3I",
+      "interet": 1.1,
+      "nbVotes": 5
+    },
+    "metrics": {
+      "altitudeDepartM": 711,
+      "deniveleM": 24,
+      "longueurM": 700,
+      "cascadeMaxM": 3,
+      "cordeMiniM": 10,
+      "navette": "1.8km"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "30min",
+      "retour": "2min"
+    },
+    "topo": {
+      "accesAval": "de Fayence, prendre la D563 vers Mons, jusqu’à passer le pont sur le vallon du Fil, 2,6km avant Mons. Une seule vraie place de parking, à droite juste avant le pont. (cote 687)\n\nparking",
+      "accesAmont": "option n°1 : (1,8km) continuer vers Mons avec le 2ème véhicule, se garer au bout de 1,8km, peu après la chapelle St-Laurent, sur un large parking à gauche (station de pompage, poubelles, cote 802).\n\noption n°2 : (4km) continuer jusqu'à Mons. Arrivé au village, tourner à gauche (direction Castellane). Suivre la route sur 700m environ, jusqu'à un large parking à droite, au débouché d'une piste.",
+      "approche": "option n°1 : (20min) continuer par un beau chemin sur la gauche, marqué « I 67 val Bouissole », qui monte légèrement d'abord, puis redescend vers le vallon. Après 20min de marche, on arrive au départ au niveau d’un petit pont en pierre. (cote 711m)\n\noption n°2 : (15min) continuer à pied 100m sur la route, puis descendre à gauche vers la rivière. (mi-chemin entre cotes 774 et 749)",
+      "descente": "option n°1 : (30min, 700m) Randonnée aquatique dans un cadre agréable. Beau bief de 40m très encaissé (1m de large) qui passe sous le pont en pierre du départ (option n°1).\n\noption n°2 : (1h, 1,5km) On débute la course plus en amont, quelques beaux biefs, (max 20m), deux courtes parties encaissées, et un joli saut possible.\n\nSortir RG sur un petit sentier 20m avant le pont d’arrivée.\n\nremarques :\n\n- La suite de la descente (depuis le pont de la route jusqu’aux sources de la Siagnole de Mons) est à prospecter.\n\n- Ne pas envisager de poursuivre dans la Siagnole depuis les sources si il y a de l’eau dans le Fil.",
+      "retour": "On sort en rive gauche peu avant le pont où se trouve le parking aval.",
+      "engagement": "faible.",
+      "periode": "Débit faible. Vite sec. Quelques petits sauts possibles depuis les rives. A faire impérativement après une bonne période de pluie pour avoir suffisamment d’eau. Ne pas entreprendre cette descente si la partie sous le pont du parking aval est sèche : eau croupie et insectes au menu…",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Site secondaire. La corde n'est habituellement pas utile."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21945,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.688057,
+        "longitude": 6.691944,
+        "label": "(option 1)"
+      },
+      {
+        "canyonId": 21945,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.694168,
+        "longitude": 6.7025,
+        "label": "(option 2)"
+      },
+      {
+        "canyonId": 21945,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.684166,
+        "longitude": 6.691667,
+        "label": null
+      },
+      {
+        "canyonId": 21945,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 43.687222,
+        "longitude": 6.7075,
+        "label": "(option 1)"
+      },
+      {
+        "canyonId": 21945,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 43.693054,
+        "longitude": 6.708611,
+        "label": "(option 2)"
+      },
+      {
+        "canyonId": 21945,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 43.683613,
+        "longitude": 6.691667,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 43.687222,
+      "longitude": 6.7075,
+      "label": "(option 1)"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_20aedaf0c1250367",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://carnaby.street.free.fr/pages_musi.....rtecanyons06.htm#fil",
+          "url": "http://carnaby.street.free.fr/pages_musi.....rtecanyons06.htm#fil"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 579,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Var) - 13 mai 2025",
+          "summary": "- La pratique du canyonisme dans des canyons secs (cotation aquaticité A1 ou habituellement à sec) est autorisée toute l'année\n\n- La pratique du canyonisme dans des canyons aquatiques est interdite du 1er novembre au 31 mars.\n\nPour la période du 1er avril au 30 octobre, il est interdit :\n\n- de pratiquer du coucher du soleil à 9h\n\n- de s'engager dans une descente de canyon aquatique après 17h.\n\n- De manière générale, il est interdit :\n\n- de s'engager si une alerte vigilance météo de niveau orange ou rouge est émise par Météo France, en ce qui concerne le risque \"pluie\", \"orage\", et \"inondation\", sur le secteur concerné.\n\n- de constituer un groupe de plus de 10 personnes (encadrement inclus)",
+          "remark": null,
+          "details": "Arrêté préfectoral (Préfecture du Var) SDJES-SPORTS-2025-12 du 13 mai 2025",
+          "effectiveDate": "13 mai 2025",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/579/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral (Préfecture du Var) SDJES-SPORTS-2025-12 du 13 mai 2025",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem579_pj1.pdf"
+            }
+          ]
+        },
+        {
+          "id": 545,
+          "status": "Abrogé",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Var) - 06 mai 2024",
+          "summary": "La pratique du canyonisme se voit interdite du 1er novembre au 31 mars.\n\nPour la période du 1er avril au 30 octobre, il est interdit :\n\n- de s'engager dans une descente de canyon avant 9h et après 17h.\n\n- de s'engager si une alerte vigilance météo de niveau orange ou rouge est émise par Météo France, en ce qui concerne le risque \"pluie\", \"orage\", et \"inondation\", sur le secteur concerné.\n\n- de constituer un groupe de plus de 10 personnes (encadrement inclus)",
+          "remark": "Arrêté abrogé et remplacé par l'arrêté préfectoral SDJES-SPORTS-2025-12 du 13 mai 2025",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nArrêté préfectoral (Var) n° SDJES-SPORTS-2024-0004 du 06 mai 2024",
+          "effectiveDate": "13 mai 2025",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/545/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral (Var) n° SDJES-SPORTS-2024-0004 du 06 mai 2024",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem545_pj1.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:56:44.236960+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23412,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23412/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23412/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23412/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23412/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23412,
+    "identity": {
+      "nom": "Liria",
+      "nomComplet": "Barranco de Liria",
+      "prefixeNom": "Barranco de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23412/Liria.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Canarias",
+      "departement": "Santa Cruz de Tenerife",
+      "communePrincipale": "Hermigua",
+      "communes": [
+        "Hermigua"
+      ],
+      "massif": null,
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": null,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": null,
+      "longueurM": null,
+      "cascadeMaxM": 145,
+      "cordeMiniM": 65,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "??",
+      "descente": "??",
+      "retour": "??"
+    },
+    "topo": {
+      "accesAval": "Hermigua, île de la Gomera.",
+      "accesAmont": null,
+      "approche": "Départ à la presa de Hermigua (barrage).",
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23412,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 28.143843,
+        "longitude": -17.221367,
+        "label": "Point très approximatif"
+      },
+      {
+        "canyonId": 23412,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 28.164072,
+        "longitude": -17.205723,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 28.143843,
+      "longitude": -17.221367,
+      "label": "Point très approximatif"
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

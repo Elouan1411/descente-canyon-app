@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:49:59.370043+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21592,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21592/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21592/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21592/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21592/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21592,
+    "identity": {
+      "nom": "Fonts de Paüls",
+      "nomComplet": "Barranco de Les Fonts de Paüls",
+      "prefixeNom": "Barranco de Les",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21592/Fonts-de-Pauls.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Cataluña",
+      "departement": "Tarragona",
+      "communePrincipale": "Pauls",
+      "communes": [
+        "Pauls"
+      ],
+      "massif": "El Port",
+      "bassin": "Rio Ebre",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1I",
+      "interet": 1.1,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": 200,
+      "longueurM": 800,
+      "cascadeMaxM": 17,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "30min",
+      "descente": "1h",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "Depuis Tarragona, prendre l'A7-E15 jusqu'à Tortosa (sortie 40). Remonter par la C42 jusqu'à Tortosa, puis la C12 jusqu'à Xerta. tourner à droite pour passer sous la C12 et remonter à gauche par la TV3541 jusqu'à Paüls. Avant l'entrée du village, prendre à droite une moins bonne route dans une grande courbe à gauche (panneau Plaza Major). Remonter jusqu'à cette place et prendre de suite à droite en épingle, la rue qui monte au cimetière. Prendre juste avant celui-ci une piste qui part à droite et le longe. La suivre jusqu'à une bifurcation indiquant que l'on quitte le GR (croix rouge et blanche, étoile bleue). Se garer au mieux 20m plus loin à gauche.",
+      "accesAmont": null,
+      "approche": "Redescendre au GR qui descend et croise un ruisseau (barranco de Morellars) et remonter pour longer le canyon par sa rive droite. On longe une barre rocheuse par la droite jusqu'à voir le cours d'eau (dalles) que l'on rejoindra juste avant une sorte de fontaine à gauche avec une inscription \"barranco de les fonts\" en rouge par un pierrier que l'on descend vers la droite (marques rouges).",
+      "descente": "Des broussailles, quelques ressauts puis un enchaînement de 3 cascades (la première se prend en tob/saut si il y a de l'eau, la 2ème se désescalade si il y a pas d'eau, la 3ème se descend en rappel). Suit un peu de marche dans un lit embroussaillé puis arrive la jolie C17 avec départ dans un trou formé par des blocs suspendus. Rappel pendulaire sympathique. On sort peu après à droite.",
+      "retour": "Prendre au mieux à droite et rejoindre en tirant à droite pour éviter une propriété grillagée. On rejoint le GR de départ et on remonte au véhicule.",
+      "engagement": "Peu important.",
+      "periode": "Après se très fortes pluies pour avoir de l'eau. La première vasque est souvent pleine (sauf été) et la combinaison est donc nécessaire si il fait froid.",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Pour boucler une journée après autre chose. Court mais sympa pour la C17. On l'a fait à 3 en 1h30 tout compris."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21592,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 40.938675,
+        "longitude": 0.379286,
+        "label": null
+      },
+      {
+        "canyonId": 21592,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 40.929855,
+        "longitude": 0.389779,
+        "label": null
+      },
+      {
+        "canyonId": 21592,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 40.924053,
+        "longitude": 0.401795,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 40.924053,
+      "longitude": 0.401795,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_997b6ea834e113e1",
+          "kind": "MAP",
+          "title": "El Port (Piolet)",
+          "scale": "1/30000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_d7a6c9e97f9330b7",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.barranquismo.net/paginas/barr.....nco_de_les_fonts.htm",
+          "url": "http://www.barranquismo.net/paginas/barr.....nco_de_les_fonts.htm"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

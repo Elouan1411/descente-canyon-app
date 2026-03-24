@@ -1,0 +1,171 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:54:22.873036+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22792,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22792/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22792/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22792/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22792/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22792,
+    "identity": {
+      "nom": "Ötzbach",
+      "nomComplet": "Ötzbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22792/Otzbach.html"
+    },
+    "location": {
+      "pays": "Autriche",
+      "region": "Haute-Autriche",
+      "departement": "Kirchdorf an der Krems",
+      "communePrincipale": "Hinterstoder",
+      "communes": [
+        "Hinterstoder"
+      ],
+      "massif": "Totes Gebirge - Massif Mort",
+      "bassin": "Steyr",
+      "coursEau": "Ötzbach"
+    },
+    "rating": {
+      "cotation": "v3a3IV",
+      "interet": 2.0,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 650,
+      "deniveleM": 115,
+      "longueurM": 1350,
+      "cascadeMaxM": 19,
+      "cordeMiniM": 25,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h",
+      "descente": "1h50",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": "Sortir de l'A9 (St Pankratz) en direction de Hinterstoder.\n\nGarer la voiture au pont sur Weissenbach.",
+      "accesAmont": null,
+      "approche": "Au sud du pont (alt. 490 m), monter quelques mètres une sente.\n\nDans la pente (hors sente), monter jusqu'à la piste (alt. 610 m).\n\nLa suivre jusqu'à arriver au cours d'eau.",
+      "descente": "Quelques encaisements, quelques rappels, beaucoup d'arbres.",
+      "retour": "Continuer la rivière Weissenbach jusqu'à pont, ou prendre la piste forestière en rive gauche et descendre le sentier avec le panneau \"Zur Bundesstraße nach Hinterstoder Nr. 430\".",
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22792,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.752361,
+        "longitude": 14.135553,
+        "label": null
+      },
+      {
+        "canyonId": 22792,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.761658,
+        "longitude": 14.148331,
+        "label": "Sortie 1 vers la piste à la rive gauche du Weißenbach"
+      },
+      {
+        "canyonId": 22792,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.757862,
+        "longitude": 14.163142,
+        "label": "sortie 2 - aller au cours d'eau du Weißenbach jusqu'au pont de la route"
+      },
+      {
+        "canyonId": 22792,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.757908,
+        "longitude": 14.163222,
+        "label": null
+      },
+      {
+        "canyonId": 22792,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.755619,
+        "longitude": 14.161377,
+        "label": "4 - arrivée sur la piste"
+      },
+      {
+        "canyonId": 22792,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.757713,
+        "longitude": 14.16326,
+        "label": "1 - monter la sente"
+      },
+      {
+        "canyonId": 22792,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.757164,
+        "longitude": 14.163405,
+        "label": "2 - fin de la sente - continuer la montée sans sente"
+      },
+      {
+        "canyonId": 22792,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.757423,
+        "longitude": 14.162847,
+        "label": "3 - arrivée à la crête"
+      },
+      {
+        "canyonId": 22792,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.7579,
+        "longitude": 14.16208,
+        "label": "sortie de la piste et début du sentier \"Zur Bundesstraße nach Hinterstoder Nr. 430\" (panneau à droite)"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.757908,
+      "longitude": 14.163222,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_77c1c804c4512aea",
+          "kind": "MAP",
+          "title": "WK 5501 Nationalpark Kalkalpen (Freytag & Berndt)",
+          "scale": "1/35000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_3c61a89ee0c57716",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://canyon.carto.net/cwiki/bin/view/C.....topic=OetzbachCanyon",
+          "url": "http://canyon.carto.net/cwiki/bin/view/C.....topic=OetzbachCanyon"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

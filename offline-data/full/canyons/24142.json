@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:59:21.196918+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24142,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24142/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24142/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24142/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24142/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24142,
+    "identity": {
+      "nom": "Pré Girardin",
+      "nomComplet": "Torrent de Pré Girardin",
+      "prefixeNom": "Torrent de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24142/Pre-Girardin.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Hautes-Alpes",
+      "communePrincipale": "Ceillac",
+      "communes": [
+        "Ceillac"
+      ],
+      "massif": "Queyras",
+      "bassin": "Guil",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a1II",
+      "interet": 1.5,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 2020,
+      "deniveleM": 150,
+      "longueurM": 230,
+      "cascadeMaxM": 12,
+      "cordeMiniM": 25,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "40min",
+      "descente": "1h30",
+      "retour": "20min"
+    },
+    "topo": {
+      "accesAval": "De Guillestre prendre la D902,puis à droite après quelques kilomètres sur la D60 vers Ceillac . Passer le village de Ceillac et emprunter à droite une petite route se transformant rapidement en piste jusqu'à un grand parking. Se garer non loin des blocs rocheux qui barrent la piste (accès identique aux cascades de Miroir).",
+      "accesAmont": null,
+      "approche": "Suivre la piste à pied vers le sud-est et remonter la pente raide de Girardin en parallèle du télésiège. L'on rejoint une piste presque en son sommet. Poursuivre la montée par un morceau de piste puis prendre un sentier à droite dans la pente raide. On récupère de nouveau la fameuse piste afin de passer un col avec un cabanon en béton . Dès lors, quitter cette piste en prenant à droite au niveau du petit cabanon et poursuivre à travers bois jusqu'au torrent de Pré Girardin.",
+      "descente": "Torrent encaissé parcouru de quelques petites cascades à passer en rappel.\n\nC1+C4 (R2x10m) sur An en Rd, désescalades de blocs, C5+C4 (R2x22m) sur 1pt en Rg, marche, C9 sur 1pt en Rg, C4 sur 1pt en Rd, désescalades, C1+C10 (R2x25m) sur 1pt en Rd, désescades en Rg (sortie de l'encaissement), descendre la pente herbeuse en Rg, Pi12 sur An en Rg.",
+      "retour": "Descendre la pente du télésiège de Girardin et rejoindre le parking.",
+      "engagement": "Encaissement étroit. Pas d'échappatoire avant la C10.",
+      "periode": "Juillet, Août, septembre...",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Sur la partie aval du torrent, qui fait suite après le télésiège, il existe une C10. Mais cette partie n'a que peu d'intérêt.\n\nEquipement: Terrain d'aventure.\n\nAttention, roche très glissante !!...\n\nPurger le sommet des cascades avant d'y descendre.\n\nPrévoir du matériel pour équiper les cascades au cas où ..."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24142,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.640903,
+        "longitude": 6.794641,
+        "label": null
+      },
+      {
+        "canyonId": 24142,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 44.642948,
+        "longitude": 6.795942,
+        "label": null
+      },
+      {
+        "canyonId": 24142,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.64846,
+        "longitude": 6.792385,
+        "label": null
+      },
+      {
+        "canyonId": 24142,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 44.64418,
+        "longitude": 6.796784,
+        "label": "Approche par la piste de ski Girardin"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.64846,
+      "longitude": 6.792385,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_a317eb6118143790",
+          "kind": "MAP",
+          "title": "3537 ET Guillestre (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

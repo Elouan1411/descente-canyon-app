@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:52:02.776513+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22157,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22157/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22157/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22157/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22157/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22157,
+    "identity": {
+      "nom": "Nero",
+      "nomComplet": "Fiume Nero, Fiume Nero",
+      "prefixeNom": "Fiume",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22157/Nero.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Lombardia",
+      "departement": "Bergamo",
+      "communePrincipale": "Valbondione",
+      "communes": [
+        "Valbondione"
+      ],
+      "massif": "Alpi Orobie",
+      "bassin": "Val Seriana",
+      "coursEau": "Fiume Nero"
+    },
+    "rating": {
+      "cotation": "v3a4III",
+      "interet": 2.5,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 900,
+      "deniveleM": 105,
+      "longueurM": 300,
+      "cascadeMaxM": 15,
+      "cordeMiniM": null,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "15min",
+      "descente": "1h30",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22157,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.022194,
+        "longitude": 9.953667,
+        "label": null
+      },
+      {
+        "canyonId": 22157,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.021835,
+        "longitude": 9.956982,
+        "label": null
+      },
+      {
+        "canyonId": 22157,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.022682,
+        "longitude": 9.957604,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.022682,
+      "longitude": 9.957604,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

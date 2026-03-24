@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:59.363781+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 24045,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/24045/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/24045/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/24045/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/24045/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 24045,
+    "identity": {
+      "nom": "La Bréole",
+      "nomComplet": "Cascade de La Bréole",
+      "prefixeNom": "Cascade de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/24045/La-Breole.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "departement": "Alpes-de-Haute-Provence",
+      "communePrincipale": "Ubaye-Serre-Ponçon",
+      "communes": [
+        "Ubaye-Serre-Ponçon"
+      ],
+      "massif": null,
+      "bassin": "Ubaye",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a2II",
+      "interet": 1.6,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 810,
+      "deniveleM": 100,
+      "longueurM": 50,
+      "cascadeMaxM": 80,
+      "cordeMiniM": 50,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "1h",
+      "retour": "35min"
+    },
+    "topo": {
+      "accesAval": "De Tallard prendre la D900B vers l'Ubaye. Passer Espinasses, passer le tunnel de Chaussetive et garez vous 500m après sur la gauche (dans un virage à droite) à l'arrivée du GR.",
+      "accesAmont": null,
+      "approche": "A pied, poursuivre sur la route (point de vue sur la partie haute de la cascade) puis descendre au mieux dans le pierrier (raide) en amont du grand cassé.",
+      "descente": "Désescalades puis on arrive rapidement au départ de la cascade.\n\n2 vieux spits avec maillons permettent d'accéder à un relai RG quelques mètres plus bas (2 points sur goujons avec plaquettes et anneaux) puis C40 pour arriver sur un palier intermédiaire arrosé. Un point RG (non protégé) permet de faire un rappel de 15m pour trouver un autre point RD (protégé ) puis dernière longueur de 25/30m.",
+      "retour": "Du bas de la cascade, marcher dans le lit presque jusqu'au lac puis remonter dés que possible sur la crête en RG jusqu'à la route ( traces de sentier non entretenu et sentes d'animaux)",
+      "engagement": "Engagement total, pas de possibilité de s'échapper.",
+      "periode": "A la fonte ou après des pluies pour profiter d'un débit intéressant.",
+      "geologie": null,
+      "historique": "4 points posés (goujons 8mm avec plaquettes et anneaux) le 03/02/2018",
+      "remarques": "Un point non protégé des crues sur le palier intermédiaire."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 24045,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 44.462559,
+        "longitude": 6.270917,
+        "label": null
+      },
+      {
+        "canyonId": 24045,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 44.463684,
+        "longitude": 6.269027,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 44.463684,
+      "longitude": 6.269027,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_f6542a442811df8f",
+          "kind": "MAP",
+          "title": "3439 ET Seyne - Chabanon-Grand-Puy (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:09.303816+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23534,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23534/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23534/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23534/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23534/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23534,
+    "identity": {
+      "nom": "Graia",
+      "nomComplet": "Rio Graia, Rio Graglia",
+      "prefixeNom": "Rio",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23534/Graia.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Piemonte",
+      "departement": "Verbano-Cusio-Ossola",
+      "communePrincipale": "Trontano",
+      "communes": [
+        "Trontano"
+      ],
+      "massif": null,
+      "bassin": "Ossola",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v4a3III",
+      "interet": 2.5,
+      "nbVotes": 6
+    },
+    "metrics": {
+      "altitudeDepartM": null,
+      "deniveleM": 300,
+      "longueurM": 1000,
+      "cascadeMaxM": 35,
+      "cordeMiniM": 35,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "3h",
+      "retour": "15min"
+    },
+    "topo": {
+      "accesAval": "Sortir de l'A26 à Domodossola et continuer sur la SS33 du Sempione. Sortir à Masera et continuer sur le sens unique. Arrivé à un croisement tourner à droite et franchir la voie ferrée. Continuer sur environ 2 km et tourner à gauche pour Trontano. Dépasser le village et continuer jusqu'au pont sur le torrent. Se garer sur un espace immédiatement avant.\n\nAccès",
+      "accesAmont": "Continuer après le pont et tourner à droite au premier croisement. Franchir la voie ferrée et un peu après tourner à nouveau à droite. Suivre la petite route qui monte en lacets jusqu'à un élargissement évident au niveau d'une petite chapelle, où on gare le véhicule. La route est étroite, sans barrières de protection, se transformant par endroits en piste.\n\nAccès sans navette :\n\nAccès sans navette possible par la route, facilité par un sentier balisé qui coupe les longues courbes de la route (1h jusqu'à l'Alpe Briasca).",
+      "approche": "Continuer sur la petite route et rejoindre peu après les prés de l'alpe Briasca. En restant à droite, remonter jusqu'aux dernières maisons en haut à droite. Quelques mètres après la dernière maison se trouve une fontaine. De là, descendre au mieux en diagonale en direction de l'amont (descente malcommode...) jusqu'à rejoindre le lit du torrent.",
+      "descente": "Joli torrent, avec quelques beaux passages encaissés, quelques sauts et toboggans. Similaire à son voisin le Rio Margologio, en plus discontinu. Récupération des cordes parfois difficile. Roche très glissante.\n\nEquipé de \"petites chaînes à la française\".",
+      "retour": "Arrivé à une digue qui barre le torrent, descendre en rappel une dernière fois et peu après remonter à droite dans le bois jusqu'à trouver un sentier qui descend jusqu'à la route et la voiture.",
+      "engagement": "Pas d'échappatoires évidentes mais possibilité de se mettre facilement hors-crue.",
+      "periode": "Juin - Octobre\n\nEn gros débit certains passages peuvent être délicats.",
+      "geologie": "Gneiss",
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23534,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.110664,
+        "longitude": 8.353167,
+        "label": null
+      },
+      {
+        "canyonId": 23534,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.118732,
+        "longitude": 8.344489,
+        "label": null
+      },
+      {
+        "canyonId": 23534,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 46.115658,
+        "longitude": 8.352644,
+        "label": null
+      },
+      {
+        "canyonId": 23534,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 46.120361,
+        "longitude": 8.343842,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 46.115658,
+      "longitude": 8.352644,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_e3d61340b218c99d",
+          "kind": "MAP",
+          "title": "1311 Comologno (Carte Nationale Suisse)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": [
+        {
+          "id": "resource_23fa4fb00e61bc2c",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://catastoforre.aic-canyoning.it/index/forra/cod/VB043",
+          "url": "http://catastoforre.aic-canyoning.it/index/forra/cod/VB043"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:53:48.888413+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22653,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22653/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22653/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22653/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22653/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22653,
+    "identity": {
+      "nom": "Dundel",
+      "nomComplet": "Dundel, Dundelbach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22653/Dundel.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": "Lungern",
+      "departement": "Obwald",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": null,
+      "coursEau": "Dundelbach"
+    },
+    "rating": {
+      "cotation": "v4a2II",
+      "interet": 2.0,
+      "nbVotes": 3
+    },
+    "metrics": {
+      "altitudeDepartM": 1426,
+      "deniveleM": 700,
+      "longueurM": 1000,
+      "cascadeMaxM": 80,
+      "cordeMiniM": 90,
+      "navette": "6.0km"
+    },
+    "timings": {
+      "approche": "2h45",
+      "descente": "3h30",
+      "retour": "néant"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": ", remonter la route jusqu'au vu de la ferme. Se garer le long des champs. (attention cependant à ne pas gêner - engins agricoles).",
+      "approche": "Remonter le sentier qui part rive droite. Il coupe la route, suivre celle-ci. En 2 endroits, un sentier coupe les lacets. Enter dans le canyon dès que vous avez la ferme en vue.",
+      "descente": "Suivre le torrent. :-)\n\nAttention certaines cascades parpinent, notamment la C80 1er pont en montant (visible du village).",
+      "retour": null,
+      "engagement": "Faible, on peut sortir en plusieurs endroits notamment à tous les endroits où la route coupe le torrent. Le final peut s'éviter il faudra alors 2x50m\n\nEquipement bon (2 points).",
+      "periode": "mai à septembre",
+      "geologie": null,
+      "historique": "Ouverture le 28 mai 2008, par Lise-May Viment, Dominique et Olivier Courtois.",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22653,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 46.792038,
+        "longitude": 8.131385,
+        "label": null
+      },
+      {
+        "canyonId": 22653,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 46.788483,
+        "longitude": 8.148079,
+        "label": null
+      },
+      {
+        "canyonId": 22653,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 46.788364,
+        "longitude": 8.148251,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 46.788364,
+      "longitude": 8.148251,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_93f166286d002017",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://groupespeleoalsace.free.fr/web_acappella/crbst_12.html",
+          "url": "http://groupespeleoalsace.free.fr/web_acappella/crbst_12.html"
+        },
+        {
+          "id": "resource_86a1ee14dd3e7d90",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.aventurecanyon.com/dundel-topo.html",
+          "url": "http://www.aventurecanyon.com/dundel-topo.html"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

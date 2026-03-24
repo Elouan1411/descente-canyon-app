@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:29.396850+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23621,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23621/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23621/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23621/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23621/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23621,
+    "identity": {
+      "nom": "Chloterlibach",
+      "nomComplet": "Chloterlibach",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23621/Chloterlibach.html"
+    },
+    "location": {
+      "pays": "Suisse",
+      "region": null,
+      "departement": "Schwyz",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": null,
+      "bassin": "Muota",
+      "coursEau": "Chloterlibach"
+    },
+    "rating": {
+      "cotation": "v3a2II",
+      "interet": 1.8,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 890,
+      "deniveleM": 150,
+      "longueurM": 370,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 35,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "2min",
+      "descente": "1h-1h30",
+      "retour": "30min"
+    },
+    "topo": {
+      "accesAval": "De Schwyz, prendre la direction du col de Ibergeregg. 750m après le restaurent windstock, se garer dans l’épingle (alt. 915m).",
+      "accesAmont": null,
+      "approche": "Le canyon commence au pont sur la route en dessous du parking, mais il n’est pas possible de se garer sur la route de l’hôtel. Donc descendre au mieux jusqu’au torrent, ou faire le tour par la route.",
+      "descente": "Canyon composé de 2 petites parties. La première partie commence au pont (alt. 890m) et se termine au pont (alt. 850m) et mesure 160m. On enchaine plusieurs petits obstacles dans un petit encaissement. Il y a un beau T5. Après cette partie, sortir RD et longer le torrent à la lisière de la forêt et se remettre à l’eau à la passerelle (alt. 815m) pour la seconde partie.\n\nCette seconde partie est moins bien équipée, elle se compose de cascade de plus grande hauteur. Une première C25, AN loin RG, puis une goulotte AN RD qui amène sur un relais haut RD pour une dernière C30. Encore 2-3 ressauts et on arrive en haut d’une grande dalle (60-80m ?) légèrement creusée. On peut descendre cette dalle en utilisant des AN RD ou sortir RD sur la sente menant à une cabane à foin.",
+      "retour": "De la cabane à foin remonter à la lisière de la forêt en longeant le canyon RD jusqu’à la passerelle de la partie 2. La traverser puis rester sur le sentier de randonnée qui monte jusqu’au pont (alt. 910m) et prendre la piste à gauche revenant au parking.\n\nPour enchainer avec le canyon de CHLINGENTOBEL, traverser la passerelle de départ de la partie 2, continuer sur le sentier puis prendre à droite sur une sente qui passe au-dessus d’une cabane et remonte le torrent de CHLINGENTOBEL dans les bois. Descendre au mieux jusqu’au torrent.",
+      "engagement": "Nombreuses échappatoires possibles.",
+      "periode": "Bassin versant de 3.5km2 avec des marais. Possible dès le printemps et rapidement après des pluies.",
+      "geologie": null,
+      "historique": "Partie 1 : Timo Stammwitz et Mauro le 20.07.2014.\n\nPartie 2 : L’équipe de canyon.li le 25.04.2015.",
+      "remarques": "Pour rendre la journée plus intéressante, il faut enchainer avec le canyon de Chlingentobel, situé juste à coté."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23621,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 47.0084,
+        "longitude": 8.69523,
+        "label": "Départ partie haute"
+      },
+      {
+        "canyonId": 23621,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 47.00322,
+        "longitude": 8.69088,
+        "label": "Fin du canyon en haut de la grande dalle inclinée"
+      },
+      {
+        "canyonId": 23621,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 47.008869,
+        "longitude": 8.6958,
+        "label": null
+      },
+      {
+        "canyonId": 23621,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.008572,
+        "longitude": 8.69328,
+        "label": "Fin partie haute"
+      },
+      {
+        "canyonId": 23621,
+        "rawType": "point_interne",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 47.004902,
+        "longitude": 8.69013,
+        "label": "Départ partie basse"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 47.008869,
+      "longitude": 8.6958,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_0d74531459b8c03f",
+          "kind": "MAP",
+          "title": "1152 Ibergeregg (Swisstopo)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

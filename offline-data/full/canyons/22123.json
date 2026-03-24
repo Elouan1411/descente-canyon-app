@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:51:55.090041+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 22123,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/22123/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/22123/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22123/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22123/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 22123,
+    "identity": {
+      "nom": "San Joaquin",
+      "nomComplet": "Barranco de San Joaquin",
+      "prefixeNom": "Barranco de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/22123/San-Joaquin.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Canarias",
+      "departement": "Santa Cruz de Tenerife",
+      "communePrincipale": "Fasnia",
+      "communes": [
+        "Fasnia"
+      ],
+      "massif": "Le Teide",
+      "bassin": null,
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.1,
+      "nbVotes": 4
+    },
+    "metrics": {
+      "altitudeDepartM": 335,
+      "deniveleM": 315,
+      "longueurM": 2600,
+      "cascadeMaxM": 40,
+      "cordeMiniM": 40,
+      "navette": "7.0km"
+    },
+    "timings": {
+      "approche": "5min",
+      "descente": "2h",
+      "retour": "5min"
+    },
+    "topo": {
+      "accesAval": "De l'aéroport de Tenerife, prendre l'autoroute TF1 en direction Santa Cruz de Tenerife (nord-est). Après 26,5km (sortie nr.14 - Los Roques/Fasnia) sortir et garer la première voiture dans San Roques au bord de la mer.\n\nAvec le deuxième voiture monter par la TF620 jusqu'à Fasnia (6km). Tourner à gauche et aller par la TF28, passer la Punte de los Tres Ojos sur le Barranco San Joaquin (300m). Encore 50m et tourner à gauche. Arriver à l'église San Joaquin. La contourner à gauche et après 30m tourner à gauche. Encore 30m et garer la 2e voiture.",
+      "accesAmont": null,
+      "approche": "De la voiture, prendre vers nord hors sentier, jusqu'au 1er rappel.",
+      "descente": "Marches et quelques rappels. Un rappel par une merveilleuse lava-rose (photo)",
+      "retour": "Après le pont, sortir à gauche et suivre une sente jusqu'au parking.",
+      "engagement": null,
+      "periode": "Pas d'eau",
+      "geologie": null,
+      "historique": null,
+      "remarques": "A combiner avec Herques."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 22123,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 28.227697,
+        "longitude": -16.439291,
+        "label": null
+      },
+      {
+        "canyonId": 22123,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 28.21888,
+        "longitude": -16.414829,
+        "label": null
+      },
+      {
+        "canyonId": 22123,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 28.227367,
+        "longitude": -16.439358,
+        "label": null
+      },
+      {
+        "canyonId": 22123,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 28.219633,
+        "longitude": -16.41469,
+        "label": null
+      },
+      {
+        "canyonId": 22123,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 28.229504,
+        "longitude": -16.443207,
+        "label": "tourner deTF28"
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AMONT",
+      "latitude": 28.227367,
+      "longitude": -16.439358,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_1755f027132ff050",
+          "kind": "MAP",
+          "title": "1092 Puerto de La Cruz (Institu Geographic Nacional)",
+          "scale": "1/50000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

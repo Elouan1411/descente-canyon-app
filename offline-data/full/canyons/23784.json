@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:58:05.187181+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23784,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23784/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23784/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23784/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23784/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23784,
+    "identity": {
+      "nom": "Caffaro sup.",
+      "nomComplet": "Caffaro sup.",
+      "prefixeNom": null,
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23784/Caffaro-sup-.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Lombardia",
+      "departement": "Brescia",
+      "communePrincipale": "Bagolino",
+      "communes": [
+        "Bagolino"
+      ],
+      "massif": "Alpi Bresciane",
+      "bassin": "Lac d’Idro",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v3a3II",
+      "interet": 1.3,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 1000,
+      "deniveleM": 150,
+      "longueurM": 1000,
+      "cascadeMaxM": 30,
+      "cordeMiniM": 30,
+      "navette": "??"
+    },
+    "timings": {
+      "approche": "5",
+      "descente": "1h30min",
+      "retour": "5"
+    },
+    "topo": {
+      "accesAval": "navette inutile",
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23784,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.867031,
+        "longitude": 10.4538,
+        "label": null
+      },
+      {
+        "canyonId": 23784,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.861858,
+        "longitude": 10.45328,
+        "label": null
+      },
+      {
+        "canyonId": 23784,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.867012,
+        "longitude": 10.454109,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 45.867012,
+      "longitude": 10.454109,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

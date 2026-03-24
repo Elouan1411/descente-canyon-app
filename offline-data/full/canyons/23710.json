@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:57:48.946328+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23710,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23710/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23710/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23710/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23710/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23710,
+    "identity": {
+      "nom": "Serra Scova",
+      "nomComplet": "Riu de Serra Scova, Serra Scova",
+      "prefixeNom": "Riu de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23710/Serra-Scova.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Sardegna",
+      "departement": "Nuoro",
+      "communePrincipale": "Villagrande Strisaili",
+      "communes": [
+        "Villagrande Strisaili"
+      ],
+      "massif": "Gennargentu",
+      "bassin": "Bau Sa Tèala",
+      "coursEau": "Serra Scova"
+    },
+    "rating": {
+      "cotation": "v4a2II",
+      "interet": 0.5,
+      "nbVotes": 1
+    },
+    "metrics": {
+      "altitudeDepartM": 565,
+      "deniveleM": 160,
+      "longueurM": 600,
+      "cascadeMaxM": 36,
+      "cordeMiniM": 45,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "néant",
+      "descente": "2h",
+      "retour": "50min"
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": "Départ immédiat en rive droite dans une décharge à ciel ouvert (plastique, cadavres de têtes de chèvres dans des sacs plastiques, verre, odeurs puantes). On a 5-10min de marche dans le cours d'eau. L'eau y est claire.\n\nOn passe sous la station d'épuration (rive droite), où l'eau devient grise.\n\nLes obstacles s’enchaînent mais ne sont pas équipés. On passe à côté en rive gauche puis en rive droite. Ensuite C10, C36, C15 et C11. La dernière C26 n'a plus d'amarrage en rive droite : on évite en rive gauche par un rappel de 30m sur AN dans les ronces.\n\nLe cadre est splendide avec vue sur la mer à condition d'oublier de respirer (odeur de lessive) et de regarder la couleur de l'eau, avec une vasque pleine de mousse et le canyon tapissé d'algues vertes.",
+      "retour": "Sortie en rive droite après la C26 sur une sente que l'on devine en prenant droit dans la pente. On rattrape la piste devenue une sente (la nature a repris ses droits) puis une piste qui arrive sur la route d'accès.",
+      "engagement": "Bon équipement lorsqu'il est présent. On sort difficilement à cause des broussailles.",
+      "periode": "Lorsque le débit est important pour cacher la pollution, A2. Plutôt en début de saison (mai).",
+      "geologie": null,
+      "historique": null,
+      "remarques": "Ne pas faire ce canyon à cause du danger sanitaire et la pollution.\n\nEquipement insuffisant mais faisable."
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23710,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 39.958778,
+        "longitude": 9.516104,
+        "label": null
+      },
+      {
+        "canyonId": 23710,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 39.95882,
+        "longitude": 9.522128,
+        "label": null
+      },
+      {
+        "canyonId": 23710,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 39.958794,
+        "longitude": 9.51549,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 39.958794,
+      "longitude": 9.51549,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_e435bcb3ae381ba1",
+          "kind": "MAP",
+          "title": "531-I Tortoli (IGM)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}

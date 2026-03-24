@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:47:44.243967+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2990,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2990/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2990/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2990/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2990/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/2990/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 2990,
+    "identity": {
+      "nom": "Zarkambide",
+      "nomComplet": "Ravin de Zarkambide, Zerkanbide - Errekaitze, Zarkambide",
+      "prefixeNom": "Ravin de",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2990/Zarkambide.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Nouvelle-Aquitaine",
+      "departement": "Pyrénées-Atlantiques",
+      "communePrincipale": "Bidarray",
+      "communes": [
+        "Bidarray"
+      ],
+      "massif": "Urkulu",
+      "bassin": null,
+      "coursEau": "Zarkambide"
+    },
+    "rating": {
+      "cotation": "",
+      "interet": 550.0,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": 550,
+      "deniveleM": 450,
+      "longueurM": 3500,
+      "cascadeMaxM": null,
+      "cordeMiniM": null,
+      "navette": null
+    },
+    "timings": {
+      "approche": null,
+      "descente": null,
+      "retour": null
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 2990,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 43.270832,
+        "longitude": -1.398869,
+        "label": null
+      },
+      {
+        "canyonId": 2990,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 43.267612,
+        "longitude": -1.37681,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "ENTREE",
+      "latitude": 43.270832,
+      "longitude": -1.398869,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_27d785d0b0d820d2",
+          "kind": "MAP",
+          "title": "1346 OT Saint-Jean-Pied-de-Port (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "rules": [
+        {
+          "id": 106,
+          "status": "Actif",
+          "action": "Interdit",
+          "title": "Arrêté municipal (Bidarray) - 22 oct 2002",
+          "summary": null,
+          "remark": "2005 : Ce texte fait l'objet d'un recours au tribunal administratif, mené notamment par les fédérations de pratiquants.",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nDélibération du conseil municiapl du 22 octobre 2002",
+          "effectiveDate": "22 oct 2002",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/106/legislation.html",
+          "attachments": [
+            {
+              "label": "Délibération du conseil municiapl du 22 octobre 2002",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/arrete106.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

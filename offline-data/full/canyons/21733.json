@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-03-24T09:50:30.387974+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 21733,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/21733/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/21733/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/21733/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/21733/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 21733,
+    "identity": {
+      "nom": "Rocca Gelli",
+      "nomComplet": "Fosso di Rocca Gelli, Fosso dell'Eremita",
+      "prefixeNom": "Fosso di",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/21733/Rocca-Gelli.html"
+    },
+    "location": {
+      "pays": "Italie",
+      "region": "Ombrie",
+      "departement": "Perugia",
+      "communePrincipale": "Vallo di Nera",
+      "communes": [
+        "Vallo di Nera"
+      ],
+      "massif": null,
+      "bassin": "Nera",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "??",
+      "interet": 2.2,
+      "nbVotes": 5
+    },
+    "metrics": {
+      "altitudeDepartM": 410,
+      "deniveleM": 250,
+      "longueurM": 500,
+      "cascadeMaxM": 17,
+      "cordeMiniM": 20,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "20min",
+      "descente": "1h30",
+      "retour": "10min"
+    },
+    "topo": {
+      "accesAval": "Sur la Valnerina (SS209) vers Visso, après le village de Piedipaterno, à la borne kilométrique 39+400 (km 39,4) garez la voiture où vous pouvez, près de l’église de l’Eremita (Elle était en cours de restauration en 2008).",
+      "accesAmont": null,
+      "approche": "A droite du cimetière commence un chemin qui longe la rivière RG. Traversez-là et par un bon chemin RD, remontez raide jusqu’à l’arête. Le canyon commence juste derrière",
+      "descente": "la rivière s’encaisse tout de suite avec une belle C15. L’encaissement s’ouvre un peu mais continue par un nouvel enchaînement de cascades. Le captage d’eau marque la fin de la descente. Attention à ne pas le détériorer.\n\nUn court encaissement idéale pour l'initiation ! A enchaîner avec Casco !",
+      "retour": "on sort RG et par un bon chemin on rejoint le cimetière.",
+      "engagement": "un encaissement fort mais court",
+      "periode": "le niveau est rapidement faible\n\nMars – Mai (juin)",
+      "geologie": null,
+      "historique": "Lepri, Conti, Scacciafratte, Nobili, Boccaccini du GGP en 1994",
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 21733,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 42.785652,
+        "longitude": 12.867308,
+        "label": null
+      },
+      {
+        "canyonId": 21733,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 42.784927,
+        "longitude": 12.868359,
+        "label": null
+      },
+      {
+        "canyonId": 21733,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 42.783165,
+        "longitude": 12.870097,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 42.783165,
+      "longitude": 12.870097,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [
+        {
+          "id": "biblio_d46ced2ae68f52b6",
+          "kind": "TOPOGUIDE",
+          "title": "Figlie dell'Acqua e del Tempo",
+          "authors": [
+            "Antonioni"
+          ],
+          "publicationYear": 2001,
+          "reference": "88-86610-13-0",
+          "editor": "Società Editrice Ricerche",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1169/topoguide.html"
+        },
+        {
+          "id": "biblio_176464b0d425952d",
+          "kind": "TOPOGUIDE",
+          "title": "Italia Centrale - Gole e Canyons Vol.1",
+          "authors": [
+            "Carlin",
+            "Dobosz",
+            "Ecker",
+            "Pinotti",
+            "Recchioni"
+          ],
+          "publicationYear": 1998,
+          "reference": "88-900260-0-6",
+          "editor": "Adriambiente",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1164/topoguide.html"
+        }
+      ],
+      "maps": [
+        {
+          "id": "map_604652507d0a3ea1",
+          "kind": "MAP",
+          "title": "131 - II (SW) Spoleto (IGM)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": []
+    }
+  }
+}
