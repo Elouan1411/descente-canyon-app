@@ -73,15 +73,18 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
+import androidx.compose.ui.window.DialogWindowProvider
 import androidx.compose.ui.window.DialogProperties
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsControllerCompat
+import androidx.core.view.WindowInsetsCompat
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import coil3.compose.AsyncImage
@@ -735,10 +738,12 @@ private fun PhotoGalleryDialog(
         pageCount = { photos.size },
     )
     val context = LocalContext.current
+    val view = LocalView.current
 
-    DisposableEffect(context) {
+    DisposableEffect(context, view) {
+        val dialogWindow = (view.parent as? DialogWindowProvider)?.window
         val activity = context as? Activity
-        val window = activity?.window
+        val window = dialogWindow ?: activity?.window
         val previousStatusBarColor = window?.statusBarColor
         val previousNavBarColor = window?.navigationBarColor
         val insetsController = window?.let { WindowCompat.getInsetsController(it, it.decorView) }
@@ -746,10 +751,13 @@ private fun PhotoGalleryDialog(
         val previousLightNav = insetsController?.isAppearanceLightNavigationBars
 
         if (window != null && insetsController != null) {
+            WindowCompat.setDecorFitsSystemWindows(window, false)
             window.statusBarColor = android.graphics.Color.BLACK
             window.navigationBarColor = android.graphics.Color.BLACK
             insetsController.isAppearanceLightStatusBars = false
             insetsController.isAppearanceLightNavigationBars = false
+            insetsController.hide(WindowInsetsCompat.Type.systemBars())
+            insetsController.systemBarsBehavior = WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
         }
 
         onDispose {
@@ -758,6 +766,7 @@ private fun PhotoGalleryDialog(
                 previousNavBarColor?.let { window.navigationBarColor = it }
                 previousLightStatus?.let { insetsController.isAppearanceLightStatusBars = it }
                 previousLightNav?.let { insetsController.isAppearanceLightNavigationBars = it }
+                insetsController.show(WindowInsetsCompat.Type.systemBars())
             }
         }
     }
