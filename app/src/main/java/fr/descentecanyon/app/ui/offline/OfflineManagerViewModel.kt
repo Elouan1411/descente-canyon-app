@@ -64,24 +64,6 @@ class OfflineManagerViewModel @Inject constructor(
         }
     }
 
-    fun removeOfflineCanyon(canyonId: Int) {
-        viewModelScope.launch {
-            canyonRepository.removeOfflineData(canyonId).fold(
-                onSuccess = {
-                    computeStorageSize()
-                    _uiState.update {
-                        it.copy(transientMessage = "Canyon supprime du mode hors-ligne")
-                    }
-                },
-                onFailure = { throwable ->
-                    _uiState.update {
-                        it.copy(transientMessage = throwable.message ?: "Erreur")
-                    }
-                },
-            )
-        }
-    }
-
     fun clearTransientMessage() {
         _uiState.update { it.copy(transientMessage = null) }
     }

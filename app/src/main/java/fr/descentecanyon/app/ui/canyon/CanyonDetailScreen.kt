@@ -354,10 +354,28 @@ private fun SummaryStatsGrid(
         SummaryStat(stringResource(R.string.return_time), canyon.tempsRetour),
     ).filter { !it.value.isNullOrBlank() }
 
+    val locationStats = listOf(
+        SummaryStat(
+            stringResource(R.string.communes),
+            canyon.communes.takeIf { it.isNotEmpty() }?.joinToString(),
+        ),
+        SummaryStat(stringResource(R.string.region), canyon.region),
+        SummaryStat(stringResource(R.string.department), canyon.departement),
+        SummaryStat(stringResource(R.string.massif), canyon.massif),
+        SummaryStat(stringResource(R.string.basin), canyon.bassin),
+        SummaryStat(stringResource(R.string.watercourse), canyon.coursEau),
+    ).filter { !it.value.isNullOrBlank() }
+
     Column(
         modifier = modifier.fillMaxWidth(),
         verticalArrangement = Arrangement.spacedBy(12.dp),
     ) {
+        if (locationStats.isNotEmpty()) {
+            SummarySection(
+                title = stringResource(R.string.location),
+                stats = locationStats,
+            )
+        }
         if (parcoursStats.isNotEmpty()) {
             SummarySection(
                 title = stringResource(R.string.canyon_summary_parcours),
@@ -610,13 +628,13 @@ private fun BibliographySection(
                 fontWeight = FontWeight.SemiBold,
             )
             if (topoguides.isNotEmpty()) {
-                BibliographyGroup(title = stringResource(R.string.topoguides), entries = topoguides)
+                BibliographyGroup(title = stringResource(R.string.topoguides_with_count, topoguides.size), entries = topoguides)
             }
             if (maps.isNotEmpty()) {
-                BibliographyGroup(title = stringResource(R.string.maps), entries = maps)
+                BibliographyGroup(title = stringResource(R.string.maps_with_count, maps.size), entries = maps)
             }
             if (resources.isNotEmpty()) {
-                BibliographyGroup(title = stringResource(R.string.resources), entries = resources)
+                BibliographyGroup(title = stringResource(R.string.resources_with_count, resources.size), entries = resources)
             }
         }
     }
@@ -696,7 +714,7 @@ private fun RegulationSection(
     ) {
         Column(modifier = Modifier.padding(12.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
             Text(
-                text = stringResource(R.string.regulations),
+                text = stringResource(R.string.regulations_with_count, regulations.size),
                 style = MaterialTheme.typography.titleMedium,
                 fontWeight = FontWeight.SemiBold,
             )

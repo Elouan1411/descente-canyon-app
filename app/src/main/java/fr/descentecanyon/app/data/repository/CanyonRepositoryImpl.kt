@@ -116,11 +116,6 @@ class CanyonRepositoryImpl @Inject constructor(
         }
     }
 
-    override suspend fun removeOfflineData(canyonId: Int): Result<Unit> = runCatching {
-        canyonDao.setOffline(canyonId, false)
-        // TODO: Remove cached map tiles and photos
-    }
-
     override fun getOfflineCanyons(): Flow<List<CanyonSummary>> {
         return canyonDao.getOfflineCanyons().map { entities ->
             entities.map { it.toSummary() }

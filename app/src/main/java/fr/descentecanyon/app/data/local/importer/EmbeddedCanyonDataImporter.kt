@@ -129,7 +129,7 @@ class EmbeddedCanyonDataImporter @Inject constructor(
             historique = historique,
             remarques = remarques,
             hasSpecificRegulation = hasSpecificRegulation,
-            isOffline = false,
+            isOffline = true,
             isFavorite = isFavorite,
             lastUpdated = lastUpdated,
         )

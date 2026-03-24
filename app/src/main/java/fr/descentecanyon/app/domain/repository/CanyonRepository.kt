@@ -39,12 +39,7 @@ interface CanyonRepository {
     ): Flow<Result<List<CanyonSummary>>>
 
     /**
-     * Remove offline data for a canyon.
-     */
-    suspend fun removeOfflineData(canyonId: Int): Result<Unit>
-
-    /**
-     * Get all canyons saved for offline use.
+     * Get canyons available in the embedded local catalog.
      */
     fun getOfflineCanyons(): Flow<List<CanyonSummary>>
 

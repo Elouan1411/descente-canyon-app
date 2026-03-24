@@ -201,7 +201,7 @@ fun HomeScreen(
                 }
             } else {
                 items(
-                    items = homeState.offlineCanyons,
+                    items = homeState.offlineCanyons.take(6),
                     key = { it.id },
                 ) { canyon ->
                     CanyonSummaryCard(
