@@ -30,7 +30,4 @@ sealed interface Screen {
 
     @Serializable
     data object PhotoGallery : Screen
-
-    @Serializable
-    data object OfflineManager : Screen
 }

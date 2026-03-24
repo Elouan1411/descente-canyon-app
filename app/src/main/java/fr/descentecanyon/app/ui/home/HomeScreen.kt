@@ -15,7 +15,6 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AccountCircle
-import androidx.compose.material.icons.filled.CloudDownload
 import androidx.compose.material.icons.filled.Refresh
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.Card
@@ -64,7 +63,6 @@ import java.time.format.DateTimeFormatter
 fun HomeScreen(
     onCanyonClick: (Int) -> Unit,
     onQuickSearchClick: () -> Unit,
-    onOfflineManagerClick: () -> Unit,
     modifier: Modifier = Modifier,
     homeViewModel: HomeViewModel = hiltViewModel(),
     authViewModel: AuthViewModel = hiltViewModel(),
@@ -95,13 +93,6 @@ fun HomeScreen(
                     )
                 },
                 actions = {
-                    IconButton(onClick = onOfflineManagerClick) {
-                        Icon(
-                            imageVector = Icons.Default.CloudDownload,
-                            contentDescription = stringResource(R.string.offline_manager_title),
-                            modifier = Modifier.size(28.dp),
-                        )
-                    }
                     IconButton(onClick = { showLoginDialog = true }) {
                         Icon(
                             imageVector = Icons.Default.AccountCircle,
@@ -156,24 +147,11 @@ fun HomeScreen(
             }
 
             item {
-                Row(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(top = 16.dp, bottom = 4.dp),
-                    horizontalArrangement = Arrangement.SpaceBetween,
-                    verticalAlignment = Alignment.CenterVertically,
-                ) {
-                    Text(
-                        text = stringResource(R.string.home_offline_canyons),
-                        style = MaterialTheme.typography.titleLarge,
-                    )
-                    IconButton(onClick = onOfflineManagerClick) {
-                        Icon(
-                            imageVector = Icons.Default.CloudDownload,
-                            contentDescription = stringResource(R.string.offline_manager_title),
-                        )
-                    }
-                }
+                Text(
+                    text = stringResource(R.string.home_offline_canyons),
+                    style = MaterialTheme.typography.titleLarge,
+                    modifier = Modifier.padding(top = 16.dp, bottom = 4.dp),
+                )
             }
 
             if (homeState.offlineCanyons.isEmpty()) {

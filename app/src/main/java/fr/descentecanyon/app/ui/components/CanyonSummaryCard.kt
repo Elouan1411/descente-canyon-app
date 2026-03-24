@@ -1,8 +1,6 @@
 package fr.descentecanyon.app.ui.components
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -10,9 +8,11 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.CloudDownload
+import androidx.compose.material.icons.filled.Star
+import androidx.compose.material.icons.filled.StarHalf
+import androidx.compose.material.icons.outlined.StarOutline
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
@@ -21,8 +21,6 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
@@ -161,36 +159,30 @@ fun InterestStars(
     modifier: Modifier = Modifier,
 ) {
     val clamped = interest.coerceIn(0f, 4f)
+    val fullStars = clamped.toInt()
+    val hasHalfStar = (clamped - fullStars) >= 0.5f
+
     Row(
         modifier = modifier,
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.spacedBy(4.dp),
     ) {
         repeat(4) { index ->
-            val segmentValue = (clamped - index).coerceIn(0f, 1f)
-            Box(
-                modifier = Modifier
-                    .size(width = 18.dp, height = 8.dp)
-                    .clip(RoundedCornerShape(999.dp))
-                    .background(MaterialTheme.colorScheme.surfaceVariant),
-            ) {
-                if (segmentValue > 0f) {
-                    Box(
-                        modifier = Modifier
-                            .fillMaxWidth(segmentValue)
-                            .size(width = 18.dp, height = 8.dp)
-                            .clip(RoundedCornerShape(999.dp))
-                            .background(
-                                Brush.horizontalGradient(
-                                    listOf(
-                                        MaterialTheme.colorScheme.secondary,
-                                        MaterialTheme.colorScheme.tertiary,
-                                    )
-                                )
-                            ),
-                    )
-                }
+            val icon = when {
+                index < fullStars -> Icons.Filled.Star
+                index == fullStars && hasHalfStar -> Icons.Filled.StarHalf
+                else -> Icons.Outlined.StarOutline
             }
+            Icon(
+                imageVector = icon,
+                contentDescription = null,
+                modifier = Modifier.size(16.dp),
+                tint = if (index < fullStars || (index == fullStars && hasHalfStar)) {
+                    MaterialTheme.colorScheme.secondary
+                } else {
+                    MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.45f)
+                },
+            )
         }
         Text(
             text = String.format(Locale.US, "%.1f", clamped),
