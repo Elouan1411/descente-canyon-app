@@ -17,13 +17,13 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.icons.automirrored.filled.Sort
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowDownward
 import androidx.compose.material.icons.filled.ArrowUpward
 import androidx.compose.material.icons.filled.Clear
 import androidx.compose.material.icons.filled.ExpandMore
 import androidx.compose.material.icons.filled.Search
-import androidx.compose.material.icons.filled.Sort
 import androidx.compose.material.icons.filled.Tune
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.DropdownMenu
@@ -205,7 +205,7 @@ fun SearchScreen(
 
             Box {
                 OutlinedButton(onClick = { showSortMenu = true }) {
-                    Icon(Icons.Default.Sort, contentDescription = null)
+                    Icon(Icons.AutoMirrored.Filled.Sort, contentDescription = null)
                     Spacer(modifier = Modifier.width(6.dp))
                     Text(sortLabel(uiState.criteria.sortField))
                     Spacer(modifier = Modifier.width(6.dp))
@@ -243,9 +243,7 @@ fun SearchScreen(
             }
         }
 
-        val activeFilters = remember(uiState.criteria, uiState.availableCountries, uiState.availableDepartments) {
-            buildActiveFilterActions(uiState, viewModel)
-        }
+        val activeFilters = buildActiveFilterActions(uiState, viewModel)
         if (activeFilters.isNotEmpty()) {
             Spacer(modifier = Modifier.height(12.dp))
             FlowRow(
@@ -638,14 +636,24 @@ private data class ActiveFilterAction(
     val onRemove: () -> Unit,
 )
 
+@Composable
 private fun buildActiveFilterActions(
     uiState: SearchUiState,
     viewModel: SearchViewModel,
 ): List<ActiveFilterAction> {
     val criteria = uiState.criteria
+    val favoritesLabel = stringResource(R.string.search_filter_favorites)
+    val interestMinLabel = stringResource(R.string.search_filter_interest_min)
+    val regulationsLabel = stringResource(R.string.regulations)
+    val shuttleLabel = stringResource(R.string.shuttle)
+    val altitudeLabel = stringResource(R.string.altitude)
+    val elevationLabel = stringResource(R.string.elevation)
+    val lengthLabel = stringResource(R.string.length)
+    val maxWaterfallLabel = stringResource(R.string.max_waterfall)
+    val ropeLabel = stringResource(R.string.rope)
     return buildList {
         if (criteria.favoritesOnly) {
-            add(ActiveFilterAction(label = "Favoris") {
+            add(ActiveFilterAction(label = favoritesLabel) {
                 viewModel.onCriteriaChanged(criteria.copy(favoritesOnly = false))
             })
         }
@@ -671,42 +679,42 @@ private fun buildActiveFilterActions(
             })
         }
         criteria.interestMin?.let { minimum ->
-            add(ActiveFilterAction(label = "Interet >= $minimum") {
+            add(ActiveFilterAction(label = "$interestMinLabel >= $minimum") {
                 viewModel.onCriteriaChanged(criteria.copy(interestMin = null))
             })
         }
         if (criteria.regulationOnly) {
-            add(ActiveFilterAction(label = "Reglementation") {
+            add(ActiveFilterAction(label = regulationsLabel) {
                 viewModel.onCriteriaChanged(criteria.copy(regulationOnly = false))
             })
         }
         if (criteria.shuttleOnly) {
-            add(ActiveFilterAction(label = "Navette") {
+            add(ActiveFilterAction(label = shuttleLabel) {
                 viewModel.onCriteriaChanged(criteria.copy(shuttleOnly = false))
             })
         }
         criteria.altitudeRange.takeIf(IntRangeFilter::isActive)?.let {
-            add(ActiveFilterAction(label = "Alt. ${plainRangeLabel(it)}") {
+            add(ActiveFilterAction(label = "$altitudeLabel ${plainRangeLabel(it)}") {
                 viewModel.onCriteriaChanged(criteria.copy(altitudeRange = IntRangeFilter()))
             })
         }
         criteria.elevationRange.takeIf(IntRangeFilter::isActive)?.let {
-            add(ActiveFilterAction(label = "Denivele ${plainRangeLabel(it)}") {
+            add(ActiveFilterAction(label = "$elevationLabel ${plainRangeLabel(it)}") {
                 viewModel.onCriteriaChanged(criteria.copy(elevationRange = IntRangeFilter()))
             })
         }
         criteria.lengthRange.takeIf(IntRangeFilter::isActive)?.let {
-            add(ActiveFilterAction(label = "Long. ${plainRangeLabel(it)}") {
+            add(ActiveFilterAction(label = "$lengthLabel ${plainRangeLabel(it)}") {
                 viewModel.onCriteriaChanged(criteria.copy(lengthRange = IntRangeFilter()))
             })
         }
         criteria.maxWaterfallRange.takeIf(IntRangeFilter::isActive)?.let {
-            add(ActiveFilterAction(label = "Cmax ${plainRangeLabel(it)}") {
+            add(ActiveFilterAction(label = "$maxWaterfallLabel ${plainRangeLabel(it)}") {
                 viewModel.onCriteriaChanged(criteria.copy(maxWaterfallRange = IntRangeFilter()))
             })
         }
         criteria.ropeRange.takeIf(IntRangeFilter::isActive)?.let {
-            add(ActiveFilterAction(label = "Corde ${plainRangeLabel(it)}") {
+            add(ActiveFilterAction(label = "$ropeLabel ${plainRangeLabel(it)}") {
                 viewModel.onCriteriaChanged(criteria.copy(ropeRange = IntRangeFilter()))
             })
         }
