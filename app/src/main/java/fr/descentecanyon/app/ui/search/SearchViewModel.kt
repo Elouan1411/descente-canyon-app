@@ -1,137 +1,149 @@
 package fr.descentecanyon.app.ui.search
 
+import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
-import fr.descentecanyon.app.domain.model.CanyonSummary
+import fr.descentecanyon.app.domain.model.CanyonSearchItem
+import fr.descentecanyon.app.domain.model.SearchCriteria
+import fr.descentecanyon.app.domain.model.SearchSortField
+import fr.descentecanyon.app.domain.model.SortDirection
 import fr.descentecanyon.app.domain.usecase.SearchCanyonsUseCase
-import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.FlowPreview
+import javax.inject.Inject
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.flow.debounce
-import kotlinx.coroutines.flow.distinctUntilChanged
-import kotlinx.coroutines.flow.flatMapLatest
-import kotlinx.coroutines.flow.flowOf
+import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
-import javax.inject.Inject
-
-enum class SearchFilter {
-    ALL,
-    OFFLINE,
-}
+import kotlinx.serialization.encodeToString
+import kotlinx.serialization.json.Json
 
 data class SearchUiState(
-    val query: String = "",
-    val results: List<CanyonSummary> = emptyList(),
-    val isLoading: Boolean = false,
+    val criteria: SearchCriteria = SearchCriteria(),
+    val results: List<CanyonSearchItem> = emptyList(),
+    val isLoading: Boolean = true,
     val error: String? = null,
-    val selectedFilter: SearchFilter = SearchFilter.ALL,
     val availableCountries: List<String> = emptyList(),
-    val selectedCountry: String? = null,
+    val availableDepartments: List<String> = emptyList(),
+    val activeFilterCount: Int = 0,
 )
 
-@OptIn(FlowPreview::class, ExperimentalCoroutinesApi::class)
 @HiltViewModel
 class SearchViewModel @Inject constructor(
     private val searchCanyonsUseCase: SearchCanyonsUseCase,
+    private val savedStateHandle: SavedStateHandle,
 ) : ViewModel() {
 
-    private val _uiState = MutableStateFlow(SearchUiState())
+    private val criteriaFlow = MutableStateFlow(loadCriteria())
+    private val _uiState = MutableStateFlow(
+        SearchUiState(
+            criteria = criteriaFlow.value,
+            activeFilterCount = criteriaFlow.value.activeFilterCount(),
+        )
+    )
     val uiState: StateFlow<SearchUiState> = _uiState.asStateFlow()
-
-    private val queryFlow = MutableStateFlow("")
-    private var latestResults: List<CanyonSummary> = emptyList()
 
     init {
         viewModelScope.launch {
-            queryFlow
-                .debounce(300L)
-                .distinctUntilChanged()
-                .flatMapLatest { query ->
-                    if (query.length < 2) {
-                        latestResults = emptyList()
-                        flowOf(Result.success(emptyList()))
-                    } else {
-                        _uiState.update { it.copy(isLoading = true, error = null) }
-                        searchCanyonsUseCase(query)
-                    }
-                }
-                .collect { result ->
-                    result.fold(
-                        onSuccess = { canyons ->
-                            latestResults = canyons
-                            _uiState.update {
-                                it.copy(
-                                    results = filterResults(canyons, it.selectedFilter, it.selectedCountry),
-                                    isLoading = false,
-                                    error = null,
-                                    availableCountries = availableCountries(canyons),
-                                )
-                            }
-                        },
-                        onFailure = { throwable ->
-                            _uiState.update {
-                                it.copy(
-                                    isLoading = false,
-                                    error = throwable.message,
-                                )
-                            }
-                        },
-                    )
-                }
+            combine(searchCanyonsUseCase.observeCatalog(), criteriaFlow) { catalog, criteria ->
+                val resultSet = searchCanyonsUseCase(catalog, criteria)
+                SearchUiState(
+                    criteria = criteria,
+                    results = resultSet.results,
+                    isLoading = false,
+                    error = null,
+                    availableCountries = resultSet.availableCountries,
+                    availableDepartments = resultSet.availableDepartments,
+                    activeFilterCount = criteria.activeFilterCount(),
+                )
+            }.collect { state ->
+                _uiState.value = state
+            }
         }
     }
 
     fun onQueryChanged(query: String) {
-        _uiState.update {
-            it.copy(
-                query = query,
-                results = if (query.length < 2) emptyList() else it.results,
-                error = null,
+        onCriteriaChanged(criteriaFlow.value.copy(query = query))
+    }
+
+    fun onCriteriaChanged(criteria: SearchCriteria) {
+        val current = criteriaFlow.value
+        val updated = if (
+            !current.selectedCountry.equals(criteria.selectedCountry, ignoreCase = true) &&
+            current.selectedDepartment == criteria.selectedDepartment
+        ) {
+            criteria.copy(selectedDepartment = null)
+        } else {
+            criteria
+        }
+        criteriaFlow.value = updated
+        persistCriteria(updated)
+    }
+
+    fun onSortSelected(field: SearchSortField) {
+        val current = criteriaFlow.value
+        val next = if (current.sortField == field) {
+            current.copy(sortDirection = current.sortDirection.toggle())
+        } else {
+            current.copy(
+                sortField = field,
+                sortDirection = field.defaultDirection(),
             )
         }
-        queryFlow.value = query
+        onCriteriaChanged(next)
     }
 
-    fun onFilterSelected(filter: SearchFilter) {
-        _uiState.update {
-            it.copy(
-                selectedFilter = filter,
-                results = filterResults(latestResults, filter, it.selectedCountry),
-            )
+    fun clearAllFilters() {
+        onCriteriaChanged(criteriaFlow.value.clearAllFilters())
+    }
+
+    fun clearCountry() {
+        onCriteriaChanged(criteriaFlow.value.copy(selectedCountry = null, selectedDepartment = null))
+    }
+
+    fun clearDepartment() {
+        onCriteriaChanged(criteriaFlow.value.copy(selectedDepartment = null))
+    }
+
+    fun clearQuery() {
+        onCriteriaChanged(criteriaFlow.value.copy(query = ""))
+    }
+
+    fun clearError() {
+        _uiState.update { it.copy(error = null) }
+    }
+
+    private fun loadCriteria(): SearchCriteria {
+        val raw = savedStateHandle.get<String>(SEARCH_CRITERIA_KEY).orEmpty()
+        return runCatching { json.decodeFromString<SearchCriteria>(raw) }
+            .getOrDefault(SearchCriteria())
+    }
+
+    private fun persistCriteria(criteria: SearchCriteria) {
+        savedStateHandle[SEARCH_CRITERIA_KEY] = json.encodeToString(criteria)
+    }
+
+    private fun SortDirection.toggle(): SortDirection {
+        return if (this == SortDirection.ASC) SortDirection.DESC else SortDirection.ASC
+    }
+
+    private fun SearchSortField.defaultDirection(): SortDirection {
+        return when (this) {
+            SearchSortField.NAME, SearchSortField.DISTANCE -> SortDirection.ASC
+            SearchSortField.RELEVANCE,
+            SearchSortField.INTEREST,
+            SearchSortField.POPULARITY,
+            SearchSortField.DIFFICULTY,
+            SearchSortField.ELEVATION,
+            SearchSortField.LENGTH,
+            SearchSortField.MAX_WATERFALL,
+            -> SortDirection.DESC
         }
     }
 
-    fun onCountrySelected(country: String?) {
-        _uiState.update {
-            it.copy(
-                selectedCountry = country,
-                results = filterResults(latestResults, it.selectedFilter, country),
-            )
-        }
-    }
-
-    private fun filterResults(
-        results: List<CanyonSummary>,
-        filter: SearchFilter,
-        country: String?,
-    ): List<CanyonSummary> {
-        val filtered = when (filter) {
-            SearchFilter.ALL -> results
-            SearchFilter.OFFLINE -> results.filter { it.isOffline }
-        }
-
-        return country?.let { selected ->
-            filtered.filter { it.pays.equals(selected, ignoreCase = true) }
-        } ?: filtered
-    }
-
-    private fun availableCountries(results: List<CanyonSummary>): List<String> {
-        return results.mapNotNull { it.pays.takeIf(String::isNotBlank) }
-            .distinct()
-            .sorted()
+    companion object {
+        private const val SEARCH_CRITERIA_KEY = "search_criteria"
+        private val json = Json { ignoreUnknownKeys = true }
     }
 }

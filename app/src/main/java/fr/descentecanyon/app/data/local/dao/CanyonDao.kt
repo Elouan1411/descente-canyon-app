@@ -20,6 +20,9 @@ interface CanyonDao {
     @Query("SELECT * FROM canyons WHERE id = :id")
     suspend fun getById(id: Int): CanyonEntity?
 
+    @Query("SELECT * FROM canyons")
+    fun observeAll(): Flow<List<CanyonEntity>>
+
     @Query("SELECT COUNT(*) FROM canyons")
     suspend fun count(): Int
 

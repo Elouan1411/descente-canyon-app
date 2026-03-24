@@ -7,7 +7,6 @@ import fr.descentecanyon.app.domain.model.CanyonDetail
 import fr.descentecanyon.app.domain.repository.CanyonRepository
 import fr.descentecanyon.app.domain.repository.FavoritesRepository
 import fr.descentecanyon.app.domain.repository.PhotoRepository
-import fr.descentecanyon.app.domain.usecase.DownloadCanyonOfflineUseCase
 import fr.descentecanyon.app.domain.usecase.DownloadPhotoForOfflineUseCase
 import fr.descentecanyon.app.domain.usecase.GetCanyonDetailUseCase
 import fr.descentecanyon.app.domain.usecase.GetCanyonPreviewUseCase
@@ -21,7 +20,6 @@ import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.test.advanceUntilIdle
 import kotlinx.coroutines.test.runTest
 import org.junit.Assert.assertEquals
-import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
 import org.junit.Rule
 import org.junit.Test
@@ -38,46 +36,15 @@ class CanyonDetailViewModelTest {
     private val getCanyonPreviewUseCase = GetCanyonPreviewUseCase(canyonRepository)
     private val getCanyonDetailUseCase = GetCanyonDetailUseCase(canyonRepository)
     private val toggleFavoriteUseCase = ToggleFavoriteUseCase(favoritesRepository)
-    private val downloadCanyonOfflineUseCase = DownloadCanyonOfflineUseCase(canyonRepository)
     private val downloadPhotoForOfflineUseCase = DownloadPhotoForOfflineUseCase(photoRepository)
 
     @Test
     @OptIn(ExperimentalCoroutinesApi::class)
-    fun `download for offline updates canyon state`() = runTest {
-        coEvery { canyonRepository.getCanyonDetail(42) } returns Result.success(detail(isOffline = false))
-        coEvery { canyonRepository.getCanyonPreview(42) } returns Result.success(detail(isOffline = false))
-        coEvery { canyonRepository.downloadForOffline(42) } returns Result.success(Unit)
-        every { favoritesRepository.isFavorite(42) } returns flowOf(false)
-        every { connectivityObserver.observe() } returns flowOf(true)
-
-        val viewModel = CanyonDetailViewModel(
-            savedStateHandle = SavedStateHandle(mapOf("canyonId" to 42)),
-            getCanyonPreviewUseCase = getCanyonPreviewUseCase,
-            getCanyonDetailUseCase = getCanyonDetailUseCase,
-            toggleFavoriteUseCase = toggleFavoriteUseCase,
-            downloadCanyonOfflineUseCase = downloadCanyonOfflineUseCase,
-            downloadPhotoForOfflineUseCase = downloadPhotoForOfflineUseCase,
-            connectivityObserver = connectivityObserver,
-            favoritesRepository = favoritesRepository,
-        )
-        advanceUntilIdle()
-
-        viewModel.downloadForOffline()
-        advanceUntilIdle()
-
-        assertTrue(viewModel.uiState.value.canyonDetail?.canyon?.isOffline == true)
-        assertFalse(viewModel.uiState.value.isDownloading)
-        assertEquals("Canyon telecharge pour usage hors-ligne", viewModel.uiState.value.transientMessage)
-    }
-
-    @Test
-    @OptIn(ExperimentalCoroutinesApi::class)
     fun `preview loads before full detail`() = runTest {
+        coEvery { canyonRepository.getCanyonDetail(42) } returns Result.success(detail(isOffline = false))
         coEvery { canyonRepository.getCanyonPreview(42) } returns Result.success(
             detail(isOffline = false).copy(canyon = detail(false).canyon.copy(nom = "Preview"))
         )
-        coEvery { canyonRepository.getCanyonDetail(42) } returns Result.success(detail(isOffline = false))
-        coEvery { canyonRepository.downloadForOffline(42) } returns Result.success(Unit)
         every { favoritesRepository.isFavorite(42) } returns flowOf(false)
         every { connectivityObserver.observe() } returns flowOf(true)
 
@@ -86,16 +53,14 @@ class CanyonDetailViewModelTest {
             getCanyonPreviewUseCase = getCanyonPreviewUseCase,
             getCanyonDetailUseCase = getCanyonDetailUseCase,
             toggleFavoriteUseCase = toggleFavoriteUseCase,
-            downloadCanyonOfflineUseCase = downloadCanyonOfflineUseCase,
             downloadPhotoForOfflineUseCase = downloadPhotoForOfflineUseCase,
             connectivityObserver = connectivityObserver,
             favoritesRepository = favoritesRepository,
         )
-
         advanceUntilIdle()
 
         assertEquals("Riolan", viewModel.uiState.value.canyonDetail?.canyon?.nom)
-        assertFalse(viewModel.uiState.value.isLoading)
+        assertTrue(!viewModel.uiState.value.isLoading)
     }
 
     @Test
@@ -123,7 +88,6 @@ class CanyonDetailViewModelTest {
                 )
             )
         )
-        coEvery { canyonRepository.downloadForOffline(42) } returns Result.success(Unit)
         coEvery { photoRepository.downloadPhoto(8) } returns Result.success("/tmp/photo.jpg")
         every { favoritesRepository.isFavorite(42) } returns flowOf(false)
         every { connectivityObserver.observe() } returns flowOf(true)
@@ -133,7 +97,6 @@ class CanyonDetailViewModelTest {
             getCanyonPreviewUseCase = getCanyonPreviewUseCase,
             getCanyonDetailUseCase = getCanyonDetailUseCase,
             toggleFavoriteUseCase = toggleFavoriteUseCase,
-            downloadCanyonOfflineUseCase = downloadCanyonOfflineUseCase,
             downloadPhotoForOfflineUseCase = downloadPhotoForOfflineUseCase,
             connectivityObserver = connectivityObserver,
             favoritesRepository = favoritesRepository,

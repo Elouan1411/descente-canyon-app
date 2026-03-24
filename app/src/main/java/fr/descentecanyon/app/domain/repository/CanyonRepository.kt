@@ -2,6 +2,7 @@ package fr.descentecanyon.app.domain.repository
 
 import fr.descentecanyon.app.domain.model.Canyon
 import fr.descentecanyon.app.domain.model.CanyonDetail
+import fr.descentecanyon.app.domain.model.CanyonSearchItem
 import fr.descentecanyon.app.domain.model.CanyonSummary
 import kotlinx.coroutines.flow.Flow
 
@@ -16,6 +17,11 @@ interface CanyonRepository {
      * Returns results from the local embedded catalog.
      */
     fun searchByName(query: String): Flow<Result<List<CanyonSummary>>>
+
+    /**
+     * Observe the local search catalog enriched with filterable fields.
+     */
+    fun observeSearchCatalog(): Flow<List<CanyonSearchItem>>
 
     /**
      * Get full canyon detail by ID.

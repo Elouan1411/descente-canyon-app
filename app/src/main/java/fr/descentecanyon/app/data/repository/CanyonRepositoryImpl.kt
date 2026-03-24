@@ -9,9 +9,11 @@ import fr.descentecanyon.app.data.local.dao.RegulationDao
 import fr.descentecanyon.app.data.local.entity.GeoPointEntity
 import fr.descentecanyon.app.data.mapper.toDetail
 import fr.descentecanyon.app.data.mapper.toEntity
+import fr.descentecanyon.app.data.mapper.toSearchItem
 import fr.descentecanyon.app.data.mapper.toSummary
 import fr.descentecanyon.app.data.remote.scraper.CanyonScraper
 import fr.descentecanyon.app.domain.model.CanyonDetail
+import fr.descentecanyon.app.domain.model.CanyonSearchItem
 import fr.descentecanyon.app.domain.model.CanyonSummary
 import fr.descentecanyon.app.domain.model.GeoPointType
 import fr.descentecanyon.app.domain.repository.CanyonRepository
@@ -41,6 +43,22 @@ class CanyonRepositoryImpl @Inject constructor(
     override fun searchByName(query: String): Flow<Result<List<CanyonSummary>>> {
         return canyonDao.searchByName(query).map { entities ->
             Result.success(entities.map { it.toSummary() })
+        }
+    }
+
+    override fun observeSearchCatalog(): Flow<List<CanyonSearchItem>> {
+        return canyonDao.observeAll().map { entities ->
+            val representativePoints = geoPointDao.getAll()
+                .groupBy { it.canyonId }
+                .mapValues { (_, points) -> points.bestMarkerPointOrNull() }
+
+            entities.map { entity ->
+                val point = representativePoints[entity.id]
+                entity.toSearchItem(
+                    representativeLat = point?.latitude,
+                    representativeLng = point?.longitude,
+                )
+            }
         }
     }
 

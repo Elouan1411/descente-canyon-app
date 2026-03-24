@@ -1,19 +1,21 @@
 package fr.descentecanyon.app.ui.search
 
-import fr.descentecanyon.app.domain.model.CanyonSummary
+import androidx.lifecycle.SavedStateHandle
+import fr.descentecanyon.app.domain.model.CanyonSearchItem
+import fr.descentecanyon.app.domain.model.CotationRating
+import fr.descentecanyon.app.domain.model.SearchCriteria
+import fr.descentecanyon.app.domain.model.SearchSortField
+import fr.descentecanyon.app.domain.model.SortDirection
 import fr.descentecanyon.app.domain.repository.CanyonRepository
 import fr.descentecanyon.app.domain.usecase.SearchCanyonsUseCase
 import fr.descentecanyon.app.testutil.MainDispatcherRule
 import io.mockk.every
 import io.mockk.mockk
-import io.mockk.verify
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.flowOf
-import kotlinx.coroutines.test.advanceTimeBy
 import kotlinx.coroutines.test.advanceUntilIdle
 import kotlinx.coroutines.test.runTest
 import org.junit.Assert.assertEquals
-import org.junit.Assert.assertTrue
 import org.junit.Rule
 import org.junit.Test
 
@@ -27,57 +29,92 @@ class SearchViewModelTest {
 
     @Test
     @OptIn(ExperimentalCoroutinesApi::class)
-    fun `short query clears results without calling search`() = runTest {
-        every { canyonRepository.searchByName(any()) } returns flowOf(Result.success(emptyList()))
-        val viewModel = SearchViewModel(searchCanyonsUseCase)
+    fun `full local catalog is available without query`() = runTest {
+        every { canyonRepository.observeSearchCatalog() } returns flowOf(
+            listOf(
+                canyon(id = 1, pays = "France", departement = "Ain"),
+                canyon(id = 2, pays = "Espagne", departement = "Huesca"),
+            )
+        )
+        val viewModel = SearchViewModel(searchCanyonsUseCase, SavedStateHandle())
 
-        viewModel.onQueryChanged("r")
-        advanceTimeBy(350)
         advanceUntilIdle()
 
-        assertTrue(viewModel.uiState.value.results.isEmpty())
-        verify(exactly = 0) { canyonRepository.searchByName(any()) }
+        assertEquals(setOf(1, 2), viewModel.uiState.value.results.map { it.id }.toSet())
+        assertEquals(listOf("Espagne", "France"), viewModel.uiState.value.availableCountries)
     }
 
     @Test
     @OptIn(ExperimentalCoroutinesApi::class)
-    fun `selected filters narrow fetched results`() = runTest {
-        every { canyonRepository.searchByName("ri") } returns flowOf(
-            Result.success(
-                listOf(
-                    summary(id = 1, pays = "France"),
-                    summary(id = 2, pays = "Espagne"),
-                    summary(id = 3, pays = "France", isOffline = true),
-                )
+    fun `filters narrow results and changing country resets department`() = runTest {
+        every { canyonRepository.observeSearchCatalog() } returns flowOf(
+            listOf(
+                canyon(id = 1, pays = "France", departement = "Ain"),
+                canyon(id = 2, pays = "France", departement = "Isere", isFavorite = true),
+                canyon(id = 3, pays = "Espagne", departement = "Huesca"),
             )
         )
-        val viewModel = SearchViewModel(searchCanyonsUseCase)
+        val viewModel = SearchViewModel(searchCanyonsUseCase, SavedStateHandle())
 
-        viewModel.onQueryChanged("ri")
-        advanceTimeBy(350)
+        advanceUntilIdle()
+        viewModel.onCriteriaChanged(
+            SearchCriteria(
+                selectedCountry = "France",
+                selectedDepartment = "Isere",
+            )
+        )
         advanceUntilIdle()
 
-        assertEquals(listOf(1, 2, 3), viewModel.uiState.value.results.map { it.id })
-        assertEquals(listOf("Espagne", "France"), viewModel.uiState.value.availableCountries)
+        assertEquals(listOf(2), viewModel.uiState.value.results.map { it.id })
 
-        viewModel.onCountrySelected("France")
-        assertEquals(listOf(1, 3), viewModel.uiState.value.results.map { it.id })
+        viewModel.onCriteriaChanged(viewModel.uiState.value.criteria.copy(selectedCountry = "Espagne"))
+        advanceUntilIdle()
 
-        viewModel.onFilterSelected(SearchFilter.OFFLINE)
+        assertEquals(null, viewModel.uiState.value.criteria.selectedDepartment)
         assertEquals(listOf(3), viewModel.uiState.value.results.map { it.id })
-        verify(exactly = 1) { canyonRepository.searchByName("ri") }
     }
 
-    private fun summary(
+    @Test
+    @OptIn(ExperimentalCoroutinesApi::class)
+    fun `reselecting same sort toggles direction`() = runTest {
+        every { canyonRepository.observeSearchCatalog() } returns flowOf(
+            listOf(
+                canyon(id = 1, nom = "Alpha", interet = 2f),
+                canyon(id = 2, nom = "Beta", interet = 4f),
+            )
+        )
+        val viewModel = SearchViewModel(searchCanyonsUseCase, SavedStateHandle())
+
+        advanceUntilIdle()
+        viewModel.onSortSelected(SearchSortField.NAME)
+        advanceUntilIdle()
+        assertEquals(SortDirection.ASC, viewModel.uiState.value.criteria.sortDirection)
+        assertEquals(listOf(1, 2), viewModel.uiState.value.results.map { it.id })
+
+        viewModel.onSortSelected(SearchSortField.NAME)
+        advanceUntilIdle()
+        assertEquals(SortDirection.DESC, viewModel.uiState.value.criteria.sortDirection)
+        assertEquals(listOf(2, 1), viewModel.uiState.value.results.map { it.id })
+    }
+
+    private fun canyon(
         id: Int,
-        pays: String,
-        isOffline: Boolean = false,
-    ) = CanyonSummary(
+        nom: String = "Canyon $id",
+        pays: String = "France",
+        departement: String? = "Ain",
+        interet: Float? = 3f,
+        isFavorite: Boolean = false,
+    ) = CanyonSearchItem(
         id = id,
-        nom = "Canyon $id",
+        nom = nom,
+        nomComplet = nom,
         pays = pays,
+        departement = departement,
         cotation = "v3a3III",
+        cotationRating = CotationRating.parse("v3a3III"),
+        interet = interet,
+        isFavorite = isFavorite,
         url = "/canyoning/canyon/$id/test.html",
-        isOffline = isOffline,
+        searchableText = "$nom $pays ${departement.orEmpty()}".lowercase(),
     )
 }

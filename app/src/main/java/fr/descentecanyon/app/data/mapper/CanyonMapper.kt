@@ -16,7 +16,9 @@ import fr.descentecanyon.app.domain.model.BibliographyKind
 import fr.descentecanyon.app.domain.model.Canyon
 import fr.descentecanyon.app.domain.model.CanyonDetail
 import fr.descentecanyon.app.domain.model.CanyonPhoto
+import fr.descentecanyon.app.domain.model.CanyonSearchItem
 import fr.descentecanyon.app.domain.model.CanyonSummary
+import fr.descentecanyon.app.domain.model.CotationRating
 import fr.descentecanyon.app.domain.model.Debit
 import fr.descentecanyon.app.domain.model.GeoPoint
 import fr.descentecanyon.app.domain.model.GeoPointType
@@ -24,6 +26,7 @@ import fr.descentecanyon.app.domain.model.NiveauDebit
 import fr.descentecanyon.app.domain.model.Regulation
 import fr.descentecanyon.app.domain.model.RegulationAttachment
 import fr.descentecanyon.app.domain.model.ResourceType
+import fr.descentecanyon.app.domain.model.normalizeForSearch
 import java.time.LocalDate
 import java.util.Locale
 import kotlinx.serialization.Serializable
@@ -31,7 +34,7 @@ import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 
-private fun String.normalizeCountryName(): String {
+internal fun String.normalizeCountryName(): String {
     if (length !in 2..3) return this
 
     val code = uppercase()
@@ -124,6 +127,51 @@ fun CanyonEntity.toSummary(): CanyonSummary = CanyonSummary(
     url = url,
     isOffline = isOffline,
 )
+
+fun CanyonEntity.toSearchItem(
+    representativeLat: Double? = null,
+    representativeLng: Double? = null,
+): CanyonSearchItem {
+    val normalizedCountry = pays.normalizeCountryName()
+    return CanyonSearchItem(
+        id = id,
+        nom = nom,
+        nomComplet = nomComplet,
+        pays = normalizedCountry,
+        region = region,
+        departement = departement,
+        commune = commune.takeIf(String::isNotBlank),
+        massif = massif,
+        bassin = bassin,
+        coursEau = coursEau,
+        cotation = cotation,
+        cotationRating = CotationRating.parse(cotation),
+        interet = interet,
+        nbVotes = nbVotes,
+        altitudeDepart = altitudeDepart,
+        denivele = denivele,
+        longueur = longueur,
+        cascadeMax = cascadeMax,
+        cordeMin = cordeMin,
+        hasSpecificRegulation = hasSpecificRegulation,
+        hasNavette = navette.hasUsefulNavette(),
+        isFavorite = isFavorite,
+        representativeLat = representativeLat,
+        representativeLng = representativeLng,
+        url = url,
+        searchableText = buildList {
+            add(nom)
+            add(nomComplet)
+            add(normalizedCountry)
+            departement?.let(::add)
+            region?.let(::add)
+            commune.takeIf(String::isNotBlank)?.let(::add)
+            massif?.let(::add)
+            bassin?.let(::add)
+            coursEau?.let(::add)
+        }.joinToString(" ").normalizeForSearch(),
+    )
+}
 
 fun CanyonEntity.toDetail(
     geoPoints: List<GeoPointEntity>,
@@ -219,6 +267,12 @@ private fun ScrapedDebit.buildLatestDebitStableId(): Long {
         .hashCode()
         .toLong()
         .let { if (it == 0L) 1L else kotlin.math.abs(it) }
+}
+
+private fun String?.hasUsefulNavette(): Boolean {
+    val normalized = this?.normalizeForSearch().orEmpty()
+    if (normalized.isBlank()) return false
+    return normalized !in setOf("non", "no", "aucune", "aucun", "0", "-")
 }
 
 fun PhotoEntity.toDomain(): CanyonPhoto = CanyonPhoto(

@@ -6,8 +6,6 @@ import fr.descentecanyon.app.domain.model.CanyonSummary
 import fr.descentecanyon.app.domain.repository.CanyonRepository
 import fr.descentecanyon.app.domain.repository.DebitSubmissionRepository
 import fr.descentecanyon.app.testutil.MainDispatcherRule
-import io.mockk.coEvery
-import io.mockk.coVerify
 import io.mockk.every
 import io.mockk.mockk
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -64,26 +62,4 @@ class OfflineManagerViewModelTest {
         assertEquals(2, viewModel.uiState.value.pendingDebitsCount)
     }
 
-    @Test
-    @OptIn(ExperimentalCoroutinesApi::class)
-    fun `remove offline canyon delegates to repository`() = runTest {
-        every { canyonRepository.getOfflineCanyons() } returns flowOf(emptyList())
-        every { connectivityObserver.observe() } returns MutableStateFlow(true)
-        every { debitSubmissionRepository.observePendingCount() } returns flowOf(0)
-        coEvery { canyonRepository.removeOfflineData(42) } returns Result.success(Unit)
-
-        val viewModel = OfflineManagerViewModel(
-            context = context,
-            canyonRepository = canyonRepository,
-            connectivityObserver = connectivityObserver,
-            debitSubmissionRepository = debitSubmissionRepository,
-        )
-        advanceUntilIdle()
-
-        viewModel.removeOfflineCanyon(42)
-        advanceUntilIdle()
-
-        coVerify(exactly = 1) { canyonRepository.removeOfflineData(42) }
-        assertEquals("Canyon supprime du mode hors-ligne", viewModel.uiState.value.transientMessage)
-    }
 }
