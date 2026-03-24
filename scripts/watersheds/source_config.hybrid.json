@@ -1,0 +1,1724 @@
+{
+  "sources": [
+    {
+      "name": "ign-rgealti5m-06-alpes-maritimes",
+      "mode": "derive_local_hydrology",
+      "dem": "build\\watersheds\\ign-data\\vrt\\rgealti5m\\_all_downloaded.vrt",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "autoPrepare": {
+        "provider": "ign",
+        "dataset": "rgealti5m",
+        "manifest": "build/watersheds/ign-plan/ign_download_manifest.json",
+        "outputDir": "build/watersheds/ign-data"
+      },
+      "match": {
+        "pays": "France",
+        "departement": "Alpes-Maritimes"
+      }
+    },
+    {
+      "name": "ign-bdalti-06-alpes-maritimes",
+      "mode": "derive_local_hydrology",
+      "dem": "build\\watersheds\\ign-data\\vrt\\bdalti\\_all_downloaded.vrt",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "autoPrepare": {
+        "provider": "ign",
+        "dataset": "bdalti",
+        "manifest": "build/watersheds/ign-plan/ign_download_manifest.json",
+        "outputDir": "build/watersheds/ign-data"
+      },
+      "match": {
+        "pays": "France",
+        "departement": "Alpes-Maritimes"
+      }
+    },
+    {
+      "name": "ign-rgealti5m-04-alpes-de-haute-provence",
+      "mode": "derive_local_hydrology",
+      "dem": "build\\watersheds\\ign-data\\vrt\\rgealti5m\\_all_downloaded.vrt",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "autoPrepare": {
+        "provider": "ign",
+        "dataset": "rgealti5m",
+        "manifest": "build/watersheds/ign-plan/ign_download_manifest.json",
+        "outputDir": "build/watersheds/ign-data"
+      },
+      "match": {
+        "pays": "France",
+        "departement": "Alpes-de-Haute-Provence"
+      }
+    },
+    {
+      "name": "ign-bdalti-04-alpes-de-haute-provence",
+      "mode": "derive_local_hydrology",
+      "dem": "build\\watersheds\\ign-data\\vrt\\bdalti\\_all_downloaded.vrt",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "autoPrepare": {
+        "provider": "ign",
+        "dataset": "bdalti",
+        "manifest": "build/watersheds/ign-plan/ign_download_manifest.json",
+        "outputDir": "build/watersheds/ign-data"
+      },
+      "match": {
+        "pays": "France",
+        "departement": "Alpes-de-Haute-Provence"
+      }
+    },
+    {
+      "name": "ign-rgealti5m-05-hautes-alpes",
+      "mode": "derive_local_hydrology",
+      "dem": "build\\watersheds\\ign-data\\vrt\\rgealti5m\\_all_downloaded.vrt",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "autoPrepare": {
+        "provider": "ign",
+        "dataset": "rgealti5m",
+        "manifest": "build/watersheds/ign-plan/ign_download_manifest.json",
+        "outputDir": "build/watersheds/ign-data"
+      },
+      "match": {
+        "pays": "France",
+        "departement": "Hautes-Alpes"
+      }
+    },
+    {
+      "name": "ign-bdalti-05-hautes-alpes",
+      "mode": "derive_local_hydrology",
+      "dem": "build\\watersheds\\ign-data\\vrt\\bdalti\\_all_downloaded.vrt",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "autoPrepare": {
+        "provider": "ign",
+        "dataset": "bdalti",
+        "manifest": "build/watersheds/ign-plan/ign_download_manifest.json",
+        "outputDir": "build/watersheds/ign-data"
+      },
+      "match": {
+        "pays": "France",
+        "departement": "Hautes-Alpes"
+      }
+    },
+    {
+      "name": "ign-rgealti5m-83-var",
+      "mode": "derive_local_hydrology",
+      "dem": "build\\watersheds\\ign-data\\vrt\\rgealti5m\\_all_downloaded.vrt",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "autoPrepare": {
+        "provider": "ign",
+        "dataset": "rgealti5m",
+        "manifest": "build/watersheds/ign-plan/ign_download_manifest.json",
+        "outputDir": "build/watersheds/ign-data"
+      },
+      "match": {
+        "pays": "France",
+        "departement": "Var"
+      }
+    },
+    {
+      "name": "ign-bdalti-83-var",
+      "mode": "derive_local_hydrology",
+      "dem": "build\\watersheds\\ign-data\\vrt\\bdalti\\_all_downloaded.vrt",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "autoPrepare": {
+        "provider": "ign",
+        "dataset": "bdalti",
+        "manifest": "build/watersheds/ign-plan/ign_download_manifest.json",
+        "outputDir": "build/watersheds/ign-data"
+      },
+      "match": {
+        "pays": "France",
+        "departement": "Var"
+      }
+    },
+    {
+      "name": "ign-rgealti5m-38-isere",
+      "mode": "derive_local_hydrology",
+      "dem": "build\\watersheds\\ign-data\\vrt\\rgealti5m\\_all_downloaded.vrt",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "autoPrepare": {
+        "provider": "ign",
+        "dataset": "rgealti5m",
+        "manifest": "build/watersheds/ign-plan/ign_download_manifest.json",
+        "outputDir": "build/watersheds/ign-data"
+      },
+      "match": {
+        "pays": "France",
+        "departement": "Isère"
+      }
+    },
+    {
+      "name": "ign-bdalti-38-isere",
+      "mode": "derive_local_hydrology",
+      "dem": "build\\watersheds\\ign-data\\vrt\\bdalti\\_all_downloaded.vrt",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "autoPrepare": {
+        "provider": "ign",
+        "dataset": "bdalti",
+        "manifest": "build/watersheds/ign-plan/ign_download_manifest.json",
+        "outputDir": "build/watersheds/ign-data"
+      },
+      "match": {
+        "pays": "France",
+        "departement": "Isère"
+      }
+    },
+    {
+      "name": "ign-rgealti5m-74-haute-savoie",
+      "mode": "derive_local_hydrology",
+      "dem": "build\\watersheds\\ign-data\\vrt\\rgealti5m\\_all_downloaded.vrt",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "autoPrepare": {
+        "provider": "ign",
+        "dataset": "rgealti5m",
+        "manifest": "build/watersheds/ign-plan/ign_download_manifest.json",
+        "outputDir": "build/watersheds/ign-data"
+      },
+      "match": {
+        "pays": "France",
+        "departement": "Haute-Savoie"
+      }
+    },
+    {
+      "name": "ign-bdalti-74-haute-savoie",
+      "mode": "derive_local_hydrology",
+      "dem": "build\\watersheds\\ign-data\\vrt\\bdalti\\_all_downloaded.vrt",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "autoPrepare": {
+        "provider": "ign",
+        "dataset": "bdalti",
+        "manifest": "build/watersheds/ign-plan/ign_download_manifest.json",
+        "outputDir": "build/watersheds/ign-data"
+      },
+      "match": {
+        "pays": "France",
+        "departement": "Haute-Savoie"
+      }
+    },
+    {
+      "name": "ign-rgealti5m-73-savoie",
+      "mode": "derive_local_hydrology",
+      "dem": "build\\watersheds\\ign-data\\vrt\\rgealti5m\\_all_downloaded.vrt",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "autoPrepare": {
+        "provider": "ign",
+        "dataset": "rgealti5m",
+        "manifest": "build/watersheds/ign-plan/ign_download_manifest.json",
+        "outputDir": "build/watersheds/ign-data"
+      },
+      "match": {
+        "pays": "France",
+        "departement": "Savoie"
+      }
+    },
+    {
+      "name": "ign-bdalti-73-savoie",
+      "mode": "derive_local_hydrology",
+      "dem": "build\\watersheds\\ign-data\\vrt\\bdalti\\_all_downloaded.vrt",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "autoPrepare": {
+        "provider": "ign",
+        "dataset": "bdalti",
+        "manifest": "build/watersheds/ign-plan/ign_download_manifest.json",
+        "outputDir": "build/watersheds/ign-data"
+      },
+      "match": {
+        "pays": "France",
+        "departement": "Savoie"
+      }
+    },
+    {
+      "name": "ign-rgealti5m-974-la-reunion",
+      "mode": "derive_local_hydrology",
+      "dem": "build\\watersheds\\ign-data\\vrt\\rgealti5m\\_all_downloaded.vrt",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "autoPrepare": {
+        "provider": "ign",
+        "dataset": "rgealti5m",
+        "manifest": "build/watersheds/ign-plan/ign_download_manifest.json",
+        "outputDir": "build/watersheds/ign-data"
+      },
+      "match": {
+        "pays": "France",
+        "departement": "La Réunion"
+      }
+    },
+    {
+      "name": "ign-bdalti-974-la-reunion",
+      "mode": "derive_local_hydrology",
+      "dem": "build\\watersheds\\ign-data\\vrt\\bdalti\\_all_downloaded.vrt",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "autoPrepare": {
+        "provider": "ign",
+        "dataset": "bdalti",
+        "manifest": "build/watersheds/ign-plan/ign_download_manifest.json",
+        "outputDir": "build/watersheds/ign-data"
+      },
+      "match": {
+        "pays": "France",
+        "departement": "La Réunion"
+      }
+    },
+    {
+      "name": "ign-rgealti5m-2a-corse-du-sud",
+      "mode": "derive_local_hydrology",
+      "dem": "build\\watersheds\\ign-data\\vrt\\rgealti5m\\_all_downloaded.vrt",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "autoPrepare": {
+        "provider": "ign",
+        "dataset": "rgealti5m",
+        "manifest": "build/watersheds/ign-plan/ign_download_manifest.json",
+        "outputDir": "build/watersheds/ign-data"
+      },
+      "match": {
+        "pays": "France",
+        "departement": "Corse-du-Sud"
+      }
+    },
+    {
+      "name": "ign-bdalti-2a-corse-du-sud",
+      "mode": "derive_local_hydrology",
+      "dem": "build\\watersheds\\ign-data\\vrt\\bdalti\\_all_downloaded.vrt",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "autoPrepare": {
+        "provider": "ign",
+        "dataset": "bdalti",
+        "manifest": "build/watersheds/ign-plan/ign_download_manifest.json",
+        "outputDir": "build/watersheds/ign-data"
+      },
+      "match": {
+        "pays": "France",
+        "departement": "Corse-du-Sud"
+      }
+    },
+    {
+      "name": "ign-rgealti5m-26-drome",
+      "mode": "derive_local_hydrology",
+      "dem": "build\\watersheds\\ign-data\\vrt\\rgealti5m\\_all_downloaded.vrt",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "autoPrepare": {
+        "provider": "ign",
+        "dataset": "rgealti5m",
+        "manifest": "build/watersheds/ign-plan/ign_download_manifest.json",
+        "outputDir": "build/watersheds/ign-data"
+      },
+      "match": {
+        "pays": "France",
+        "departement": "Drôme"
+      }
+    },
+    {
+      "name": "ign-bdalti-26-drome",
+      "mode": "derive_local_hydrology",
+      "dem": "build\\watersheds\\ign-data\\vrt\\bdalti\\_all_downloaded.vrt",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "autoPrepare": {
+        "provider": "ign",
+        "dataset": "bdalti",
+        "manifest": "build/watersheds/ign-plan/ign_download_manifest.json",
+        "outputDir": "build/watersheds/ign-data"
+      },
+      "match": {
+        "pays": "France",
+        "departement": "Drôme"
+      }
+    },
+    {
+      "name": "ign-rgealti5m-66-pyrenees-orientales",
+      "mode": "derive_local_hydrology",
+      "dem": "build\\watersheds\\ign-data\\vrt\\rgealti5m\\_all_downloaded.vrt",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "autoPrepare": {
+        "provider": "ign",
+        "dataset": "rgealti5m",
+        "manifest": "build/watersheds/ign-plan/ign_download_manifest.json",
+        "outputDir": "build/watersheds/ign-data"
+      },
+      "match": {
+        "pays": "France",
+        "departement": "Pyrénées-Orientales"
+      }
+    },
+    {
+      "name": "ign-bdalti-66-pyrenees-orientales",
+      "mode": "derive_local_hydrology",
+      "dem": "build\\watersheds\\ign-data\\vrt\\bdalti\\_all_downloaded.vrt",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "autoPrepare": {
+        "provider": "ign",
+        "dataset": "bdalti",
+        "manifest": "build/watersheds/ign-plan/ign_download_manifest.json",
+        "outputDir": "build/watersheds/ign-data"
+      },
+      "match": {
+        "pays": "France",
+        "departement": "Pyrénées-Orientales"
+      }
+    },
+    {
+      "name": "ign-rgealti5m-65-hautes-pyrenees",
+      "mode": "derive_local_hydrology",
+      "dem": "build\\watersheds\\ign-data\\vrt\\rgealti5m\\_all_downloaded.vrt",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "autoPrepare": {
+        "provider": "ign",
+        "dataset": "rgealti5m",
+        "manifest": "build/watersheds/ign-plan/ign_download_manifest.json",
+        "outputDir": "build/watersheds/ign-data"
+      },
+      "match": {
+        "pays": "France",
+        "departement": "Hautes-Pyrénées"
+      }
+    },
+    {
+      "name": "ign-bdalti-65-hautes-pyrenees",
+      "mode": "derive_local_hydrology",
+      "dem": "build\\watersheds\\ign-data\\vrt\\bdalti\\_all_downloaded.vrt",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "autoPrepare": {
+        "provider": "ign",
+        "dataset": "bdalti",
+        "manifest": "build/watersheds/ign-plan/ign_download_manifest.json",
+        "outputDir": "build/watersheds/ign-data"
+      },
+      "match": {
+        "pays": "France",
+        "departement": "Hautes-Pyrénées"
+      }
+    },
+    {
+      "name": "ign-rgealti5m-13-bouches-du-rhone",
+      "mode": "derive_local_hydrology",
+      "dem": "build\\watersheds\\ign-data\\vrt\\rgealti5m\\_all_downloaded.vrt",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "autoPrepare": {
+        "provider": "ign",
+        "dataset": "rgealti5m",
+        "manifest": "build/watersheds/ign-plan/ign_download_manifest.json",
+        "outputDir": "build/watersheds/ign-data"
+      },
+      "match": {
+        "pays": "France",
+        "departement": "Bouches-du-Rhône"
+      }
+    },
+    {
+      "name": "ign-bdalti-13-bouches-du-rhone",
+      "mode": "derive_local_hydrology",
+      "dem": "build\\watersheds\\ign-data\\vrt\\bdalti\\_all_downloaded.vrt",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "autoPrepare": {
+        "provider": "ign",
+        "dataset": "bdalti",
+        "manifest": "build/watersheds/ign-plan/ign_download_manifest.json",
+        "outputDir": "build/watersheds/ign-data"
+      },
+      "match": {
+        "pays": "France",
+        "departement": "Bouches-du-Rhône"
+      }
+    },
+    {
+      "name": "ign-rgealti5m-2b-haute-corse",
+      "mode": "derive_local_hydrology",
+      "dem": "build\\watersheds\\ign-data\\vrt\\rgealti5m\\_all_downloaded.vrt",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "autoPrepare": {
+        "provider": "ign",
+        "dataset": "rgealti5m",
+        "manifest": "build/watersheds/ign-plan/ign_download_manifest.json",
+        "outputDir": "build/watersheds/ign-data"
+      },
+      "match": {
+        "pays": "France",
+        "departement": "Haute-Corse"
+      }
+    },
+    {
+      "name": "ign-bdalti-2b-haute-corse",
+      "mode": "derive_local_hydrology",
+      "dem": "build\\watersheds\\ign-data\\vrt\\bdalti\\_all_downloaded.vrt",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "autoPrepare": {
+        "provider": "ign",
+        "dataset": "bdalti",
+        "manifest": "build/watersheds/ign-plan/ign_download_manifest.json",
+        "outputDir": "build/watersheds/ign-data"
+      },
+      "match": {
+        "pays": "France",
+        "departement": "Haute-Corse"
+      }
+    },
+    {
+      "name": "ign-rgealti5m-64-pyrenees-atlantiques",
+      "mode": "derive_local_hydrology",
+      "dem": "build\\watersheds\\ign-data\\vrt\\rgealti5m\\_all_downloaded.vrt",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "autoPrepare": {
+        "provider": "ign",
+        "dataset": "rgealti5m",
+        "manifest": "build/watersheds/ign-plan/ign_download_manifest.json",
+        "outputDir": "build/watersheds/ign-data"
+      },
+      "match": {
+        "pays": "France",
+        "departement": "Pyrénées-Atlantiques"
+      }
+    },
+    {
+      "name": "ign-bdalti-64-pyrenees-atlantiques",
+      "mode": "derive_local_hydrology",
+      "dem": "build\\watersheds\\ign-data\\vrt\\bdalti\\_all_downloaded.vrt",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "autoPrepare": {
+        "provider": "ign",
+        "dataset": "bdalti",
+        "manifest": "build/watersheds/ign-plan/ign_download_manifest.json",
+        "outputDir": "build/watersheds/ign-data"
+      },
+      "match": {
+        "pays": "France",
+        "departement": "Pyrénées-Atlantiques"
+      }
+    },
+    {
+      "name": "ign-rgealti5m-09-ariege",
+      "mode": "derive_local_hydrology",
+      "dem": "build\\watersheds\\ign-data\\vrt\\rgealti5m\\_all_downloaded.vrt",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "autoPrepare": {
+        "provider": "ign",
+        "dataset": "rgealti5m",
+        "manifest": "build/watersheds/ign-plan/ign_download_manifest.json",
+        "outputDir": "build/watersheds/ign-data"
+      },
+      "match": {
+        "pays": "France",
+        "departement": "Ariège"
+      }
+    },
+    {
+      "name": "ign-bdalti-09-ariege",
+      "mode": "derive_local_hydrology",
+      "dem": "build\\watersheds\\ign-data\\vrt\\bdalti\\_all_downloaded.vrt",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "autoPrepare": {
+        "provider": "ign",
+        "dataset": "bdalti",
+        "manifest": "build/watersheds/ign-plan/ign_download_manifest.json",
+        "outputDir": "build/watersheds/ign-data"
+      },
+      "match": {
+        "pays": "France",
+        "departement": "Ariège"
+      }
+    },
+    {
+      "name": "ign-rgealti5m-30-gard",
+      "mode": "derive_local_hydrology",
+      "dem": "build\\watersheds\\ign-data\\vrt\\rgealti5m\\_all_downloaded.vrt",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "autoPrepare": {
+        "provider": "ign",
+        "dataset": "rgealti5m",
+        "manifest": "build/watersheds/ign-plan/ign_download_manifest.json",
+        "outputDir": "build/watersheds/ign-data"
+      },
+      "match": {
+        "pays": "France",
+        "departement": "Gard"
+      }
+    },
+    {
+      "name": "ign-bdalti-30-gard",
+      "mode": "derive_local_hydrology",
+      "dem": "build\\watersheds\\ign-data\\vrt\\bdalti\\_all_downloaded.vrt",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "autoPrepare": {
+        "provider": "ign",
+        "dataset": "bdalti",
+        "manifest": "build/watersheds/ign-plan/ign_download_manifest.json",
+        "outputDir": "build/watersheds/ign-data"
+      },
+      "match": {
+        "pays": "France",
+        "departement": "Gard"
+      }
+    },
+    {
+      "name": "ign-rgealti5m-12-aveyron",
+      "mode": "derive_local_hydrology",
+      "dem": "build\\watersheds\\ign-data\\vrt\\rgealti5m\\_all_downloaded.vrt",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "autoPrepare": {
+        "provider": "ign",
+        "dataset": "rgealti5m",
+        "manifest": "build/watersheds/ign-plan/ign_download_manifest.json",
+        "outputDir": "build/watersheds/ign-data"
+      },
+      "match": {
+        "pays": "France",
+        "departement": "Aveyron"
+      }
+    },
+    {
+      "name": "ign-bdalti-12-aveyron",
+      "mode": "derive_local_hydrology",
+      "dem": "build\\watersheds\\ign-data\\vrt\\bdalti\\_all_downloaded.vrt",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "autoPrepare": {
+        "provider": "ign",
+        "dataset": "bdalti",
+        "manifest": "build/watersheds/ign-plan/ign_download_manifest.json",
+        "outputDir": "build/watersheds/ign-data"
+      },
+      "match": {
+        "pays": "France",
+        "departement": "Aveyron"
+      }
+    },
+    {
+      "name": "ign-rgealti5m-15-cantal",
+      "mode": "derive_local_hydrology",
+      "dem": "build\\watersheds\\ign-data\\vrt\\rgealti5m\\_all_downloaded.vrt",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "autoPrepare": {
+        "provider": "ign",
+        "dataset": "rgealti5m",
+        "manifest": "build/watersheds/ign-plan/ign_download_manifest.json",
+        "outputDir": "build/watersheds/ign-data"
+      },
+      "match": {
+        "pays": "France",
+        "departement": "Cantal"
+      }
+    },
+    {
+      "name": "ign-bdalti-15-cantal",
+      "mode": "derive_local_hydrology",
+      "dem": "build\\watersheds\\ign-data\\vrt\\bdalti\\_all_downloaded.vrt",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "autoPrepare": {
+        "provider": "ign",
+        "dataset": "bdalti",
+        "manifest": "build/watersheds/ign-plan/ign_download_manifest.json",
+        "outputDir": "build/watersheds/ign-data"
+      },
+      "match": {
+        "pays": "France",
+        "departement": "Cantal"
+      }
+    },
+    {
+      "name": "ign-rgealti5m-01-ain",
+      "mode": "derive_local_hydrology",
+      "dem": "build\\watersheds\\ign-data\\vrt\\rgealti5m\\_all_downloaded.vrt",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "autoPrepare": {
+        "provider": "ign",
+        "dataset": "rgealti5m",
+        "manifest": "build/watersheds/ign-plan/ign_download_manifest.json",
+        "outputDir": "build/watersheds/ign-data"
+      },
+      "match": {
+        "pays": "France",
+        "departement": "Ain"
+      }
+    },
+    {
+      "name": "ign-bdalti-01-ain",
+      "mode": "derive_local_hydrology",
+      "dem": "build\\watersheds\\ign-data\\vrt\\bdalti\\_all_downloaded.vrt",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "autoPrepare": {
+        "provider": "ign",
+        "dataset": "bdalti",
+        "manifest": "build/watersheds/ign-plan/ign_download_manifest.json",
+        "outputDir": "build/watersheds/ign-data"
+      },
+      "match": {
+        "pays": "France",
+        "departement": "Ain"
+      }
+    },
+    {
+      "name": "ign-rgealti5m-34-herault",
+      "mode": "derive_local_hydrology",
+      "dem": "build\\watersheds\\ign-data\\vrt\\rgealti5m\\_all_downloaded.vrt",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "autoPrepare": {
+        "provider": "ign",
+        "dataset": "rgealti5m",
+        "manifest": "build/watersheds/ign-plan/ign_download_manifest.json",
+        "outputDir": "build/watersheds/ign-data"
+      },
+      "match": {
+        "pays": "France",
+        "departement": "Hérault"
+      }
+    },
+    {
+      "name": "ign-bdalti-34-herault",
+      "mode": "derive_local_hydrology",
+      "dem": "build\\watersheds\\ign-data\\vrt\\bdalti\\_all_downloaded.vrt",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "autoPrepare": {
+        "provider": "ign",
+        "dataset": "bdalti",
+        "manifest": "build/watersheds/ign-plan/ign_download_manifest.json",
+        "outputDir": "build/watersheds/ign-data"
+      },
+      "match": {
+        "pays": "France",
+        "departement": "Hérault"
+      }
+    },
+    {
+      "name": "ign-rgealti5m-31-haute-garonne",
+      "mode": "derive_local_hydrology",
+      "dem": "build\\watersheds\\ign-data\\vrt\\rgealti5m\\_all_downloaded.vrt",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "autoPrepare": {
+        "provider": "ign",
+        "dataset": "rgealti5m",
+        "manifest": "build/watersheds/ign-plan/ign_download_manifest.json",
+        "outputDir": "build/watersheds/ign-data"
+      },
+      "match": {
+        "pays": "France",
+        "departement": "Haute-Garonne"
+      }
+    },
+    {
+      "name": "ign-bdalti-31-haute-garonne",
+      "mode": "derive_local_hydrology",
+      "dem": "build\\watersheds\\ign-data\\vrt\\bdalti\\_all_downloaded.vrt",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "autoPrepare": {
+        "provider": "ign",
+        "dataset": "bdalti",
+        "manifest": "build/watersheds/ign-plan/ign_download_manifest.json",
+        "outputDir": "build/watersheds/ign-data"
+      },
+      "match": {
+        "pays": "France",
+        "departement": "Haute-Garonne"
+      }
+    },
+    {
+      "name": "ign-rgealti5m-07-ardeche",
+      "mode": "derive_local_hydrology",
+      "dem": "build\\watersheds\\ign-data\\vrt\\rgealti5m\\_all_downloaded.vrt",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "autoPrepare": {
+        "provider": "ign",
+        "dataset": "rgealti5m",
+        "manifest": "build/watersheds/ign-plan/ign_download_manifest.json",
+        "outputDir": "build/watersheds/ign-data"
+      },
+      "match": {
+        "pays": "France",
+        "departement": "Ardèche"
+      }
+    },
+    {
+      "name": "ign-bdalti-07-ardeche",
+      "mode": "derive_local_hydrology",
+      "dem": "build\\watersheds\\ign-data\\vrt\\bdalti\\_all_downloaded.vrt",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "autoPrepare": {
+        "provider": "ign",
+        "dataset": "bdalti",
+        "manifest": "build/watersheds/ign-plan/ign_download_manifest.json",
+        "outputDir": "build/watersheds/ign-data"
+      },
+      "match": {
+        "pays": "France",
+        "departement": "Ardèche"
+      }
+    },
+    {
+      "name": "ign-rgealti5m-84-vaucluse",
+      "mode": "derive_local_hydrology",
+      "dem": "build\\watersheds\\ign-data\\vrt\\rgealti5m\\_all_downloaded.vrt",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "autoPrepare": {
+        "provider": "ign",
+        "dataset": "rgealti5m",
+        "manifest": "build/watersheds/ign-plan/ign_download_manifest.json",
+        "outputDir": "build/watersheds/ign-data"
+      },
+      "match": {
+        "pays": "France",
+        "departement": "Vaucluse"
+      }
+    },
+    {
+      "name": "ign-bdalti-84-vaucluse",
+      "mode": "derive_local_hydrology",
+      "dem": "build\\watersheds\\ign-data\\vrt\\bdalti\\_all_downloaded.vrt",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "autoPrepare": {
+        "provider": "ign",
+        "dataset": "bdalti",
+        "manifest": "build/watersheds/ign-plan/ign_download_manifest.json",
+        "outputDir": "build/watersheds/ign-data"
+      },
+      "match": {
+        "pays": "France",
+        "departement": "Vaucluse"
+      }
+    },
+    {
+      "name": "ign-rgealti5m-48-lozere",
+      "mode": "derive_local_hydrology",
+      "dem": "build\\watersheds\\ign-data\\vrt\\rgealti5m\\_all_downloaded.vrt",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "autoPrepare": {
+        "provider": "ign",
+        "dataset": "rgealti5m",
+        "manifest": "build/watersheds/ign-plan/ign_download_manifest.json",
+        "outputDir": "build/watersheds/ign-data"
+      },
+      "match": {
+        "pays": "France",
+        "departement": "Lozère"
+      }
+    },
+    {
+      "name": "ign-bdalti-48-lozere",
+      "mode": "derive_local_hydrology",
+      "dem": "build\\watersheds\\ign-data\\vrt\\bdalti\\_all_downloaded.vrt",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "autoPrepare": {
+        "provider": "ign",
+        "dataset": "bdalti",
+        "manifest": "build/watersheds/ign-plan/ign_download_manifest.json",
+        "outputDir": "build/watersheds/ign-data"
+      },
+      "match": {
+        "pays": "France",
+        "departement": "Lozère"
+      }
+    },
+    {
+      "name": "ign-rgealti5m-11-aude",
+      "mode": "derive_local_hydrology",
+      "dem": "build\\watersheds\\ign-data\\vrt\\rgealti5m\\_all_downloaded.vrt",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "autoPrepare": {
+        "provider": "ign",
+        "dataset": "rgealti5m",
+        "manifest": "build/watersheds/ign-plan/ign_download_manifest.json",
+        "outputDir": "build/watersheds/ign-data"
+      },
+      "match": {
+        "pays": "France",
+        "departement": "Aude"
+      }
+    },
+    {
+      "name": "ign-bdalti-11-aude",
+      "mode": "derive_local_hydrology",
+      "dem": "build\\watersheds\\ign-data\\vrt\\bdalti\\_all_downloaded.vrt",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "autoPrepare": {
+        "provider": "ign",
+        "dataset": "bdalti",
+        "manifest": "build/watersheds/ign-plan/ign_download_manifest.json",
+        "outputDir": "build/watersheds/ign-data"
+      },
+      "match": {
+        "pays": "France",
+        "departement": "Aude"
+      }
+    },
+    {
+      "name": "ign-rgealti5m-25-doubs",
+      "mode": "derive_local_hydrology",
+      "dem": "build\\watersheds\\ign-data\\vrt\\rgealti5m\\_all_downloaded.vrt",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "autoPrepare": {
+        "provider": "ign",
+        "dataset": "rgealti5m",
+        "manifest": "build/watersheds/ign-plan/ign_download_manifest.json",
+        "outputDir": "build/watersheds/ign-data"
+      },
+      "match": {
+        "pays": "France",
+        "departement": "Doubs"
+      }
+    },
+    {
+      "name": "ign-bdalti-25-doubs",
+      "mode": "derive_local_hydrology",
+      "dem": "build\\watersheds\\ign-data\\vrt\\bdalti\\_all_downloaded.vrt",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "autoPrepare": {
+        "provider": "ign",
+        "dataset": "bdalti",
+        "manifest": "build/watersheds/ign-plan/ign_download_manifest.json",
+        "outputDir": "build/watersheds/ign-data"
+      },
+      "match": {
+        "pays": "France",
+        "departement": "Doubs"
+      }
+    },
+    {
+      "name": "ign-rgealti5m-43-haute-loire",
+      "mode": "derive_local_hydrology",
+      "dem": "build\\watersheds\\ign-data\\vrt\\rgealti5m\\_all_downloaded.vrt",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "autoPrepare": {
+        "provider": "ign",
+        "dataset": "rgealti5m",
+        "manifest": "build/watersheds/ign-plan/ign_download_manifest.json",
+        "outputDir": "build/watersheds/ign-data"
+      },
+      "match": {
+        "pays": "France",
+        "departement": "Haute-Loire"
+      }
+    },
+    {
+      "name": "ign-bdalti-43-haute-loire",
+      "mode": "derive_local_hydrology",
+      "dem": "build\\watersheds\\ign-data\\vrt\\bdalti\\_all_downloaded.vrt",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "autoPrepare": {
+        "provider": "ign",
+        "dataset": "bdalti",
+        "manifest": "build/watersheds/ign-plan/ign_download_manifest.json",
+        "outputDir": "build/watersheds/ign-data"
+      },
+      "match": {
+        "pays": "France",
+        "departement": "Haute-Loire"
+      }
+    },
+    {
+      "name": "ign-rgealti5m-972-martinique",
+      "mode": "derive_local_hydrology",
+      "dem": "build\\watersheds\\ign-data\\vrt\\rgealti5m\\_all_downloaded.vrt",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "autoPrepare": {
+        "provider": "ign",
+        "dataset": "rgealti5m",
+        "manifest": "build/watersheds/ign-plan/ign_download_manifest.json",
+        "outputDir": "build/watersheds/ign-data"
+      },
+      "match": {
+        "pays": "France",
+        "departement": "Martinique"
+      }
+    },
+    {
+      "name": "ign-bdalti-972-martinique",
+      "mode": "derive_local_hydrology",
+      "dem": "build\\watersheds\\ign-data\\vrt\\bdalti\\_all_downloaded.vrt",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "autoPrepare": {
+        "provider": "ign",
+        "dataset": "bdalti",
+        "manifest": "build/watersheds/ign-plan/ign_download_manifest.json",
+        "outputDir": "build/watersheds/ign-data"
+      },
+      "match": {
+        "pays": "France",
+        "departement": "Martinique"
+      }
+    },
+    {
+      "name": "ign-rgealti5m-971-guadeloupe",
+      "mode": "derive_local_hydrology",
+      "dem": "build\\watersheds\\ign-data\\vrt\\rgealti5m\\_all_downloaded.vrt",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "autoPrepare": {
+        "provider": "ign",
+        "dataset": "rgealti5m",
+        "manifest": "build/watersheds/ign-plan/ign_download_manifest.json",
+        "outputDir": "build/watersheds/ign-data"
+      },
+      "match": {
+        "pays": "France",
+        "departement": "Guadeloupe"
+      }
+    },
+    {
+      "name": "ign-bdalti-971-guadeloupe",
+      "mode": "derive_local_hydrology",
+      "dem": "build\\watersheds\\ign-data\\vrt\\bdalti\\_all_downloaded.vrt",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "autoPrepare": {
+        "provider": "ign",
+        "dataset": "bdalti",
+        "manifest": "build/watersheds/ign-plan/ign_download_manifest.json",
+        "outputDir": "build/watersheds/ign-data"
+      },
+      "match": {
+        "pays": "France",
+        "departement": "Guadeloupe"
+      }
+    },
+    {
+      "name": "ign-rgealti5m-39-jura",
+      "mode": "derive_local_hydrology",
+      "dem": "build\\watersheds\\ign-data\\vrt\\rgealti5m\\_all_downloaded.vrt",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "autoPrepare": {
+        "provider": "ign",
+        "dataset": "rgealti5m",
+        "manifest": "build/watersheds/ign-plan/ign_download_manifest.json",
+        "outputDir": "build/watersheds/ign-data"
+      },
+      "match": {
+        "pays": "France",
+        "departement": "Jura"
+      }
+    },
+    {
+      "name": "ign-bdalti-39-jura",
+      "mode": "derive_local_hydrology",
+      "dem": "build\\watersheds\\ign-data\\vrt\\bdalti\\_all_downloaded.vrt",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "autoPrepare": {
+        "provider": "ign",
+        "dataset": "bdalti",
+        "manifest": "build/watersheds/ign-plan/ign_download_manifest.json",
+        "outputDir": "build/watersheds/ign-data"
+      },
+      "match": {
+        "pays": "France",
+        "departement": "Jura"
+      }
+    },
+    {
+      "name": "ign-rgealti5m-46-lot",
+      "mode": "derive_local_hydrology",
+      "dem": "build\\watersheds\\ign-data\\vrt\\rgealti5m\\_all_downloaded.vrt",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "autoPrepare": {
+        "provider": "ign",
+        "dataset": "rgealti5m",
+        "manifest": "build/watersheds/ign-plan/ign_download_manifest.json",
+        "outputDir": "build/watersheds/ign-data"
+      },
+      "match": {
+        "pays": "France",
+        "departement": "Lot"
+      }
+    },
+    {
+      "name": "ign-bdalti-46-lot",
+      "mode": "derive_local_hydrology",
+      "dem": "build\\watersheds\\ign-data\\vrt\\bdalti\\_all_downloaded.vrt",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "autoPrepare": {
+        "provider": "ign",
+        "dataset": "bdalti",
+        "manifest": "build/watersheds/ign-plan/ign_download_manifest.json",
+        "outputDir": "build/watersheds/ign-data"
+      },
+      "match": {
+        "pays": "France",
+        "departement": "Lot"
+      }
+    },
+    {
+      "name": "ign-rgealti5m-976-mayotte",
+      "mode": "derive_local_hydrology",
+      "dem": "build\\watersheds\\ign-data\\vrt\\rgealti5m\\_all_downloaded.vrt",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "autoPrepare": {
+        "provider": "ign",
+        "dataset": "rgealti5m",
+        "manifest": "build/watersheds/ign-plan/ign_download_manifest.json",
+        "outputDir": "build/watersheds/ign-data"
+      },
+      "match": {
+        "pays": "France",
+        "departement": "Mayotte"
+      }
+    },
+    {
+      "name": "ign-bdalti-976-mayotte",
+      "mode": "derive_local_hydrology",
+      "dem": "build\\watersheds\\ign-data\\vrt\\bdalti\\_all_downloaded.vrt",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "autoPrepare": {
+        "provider": "ign",
+        "dataset": "bdalti",
+        "manifest": "build/watersheds/ign-plan/ign_download_manifest.json",
+        "outputDir": "build/watersheds/ign-data"
+      },
+      "match": {
+        "pays": "France",
+        "departement": "Mayotte"
+      }
+    },
+    {
+      "name": "ign-rgealti5m-82-tarn-et-garonne",
+      "mode": "derive_local_hydrology",
+      "dem": "build\\watersheds\\ign-data\\vrt\\rgealti5m\\_all_downloaded.vrt",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "autoPrepare": {
+        "provider": "ign",
+        "dataset": "rgealti5m",
+        "manifest": "build/watersheds/ign-plan/ign_download_manifest.json",
+        "outputDir": "build/watersheds/ign-data"
+      },
+      "match": {
+        "pays": "France",
+        "departement": "Tarn-et-Garonne"
+      }
+    },
+    {
+      "name": "ign-bdalti-82-tarn-et-garonne",
+      "mode": "derive_local_hydrology",
+      "dem": "build\\watersheds\\ign-data\\vrt\\bdalti\\_all_downloaded.vrt",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "autoPrepare": {
+        "provider": "ign",
+        "dataset": "bdalti",
+        "manifest": "build/watersheds/ign-plan/ign_download_manifest.json",
+        "outputDir": "build/watersheds/ign-data"
+      },
+      "match": {
+        "pays": "France",
+        "departement": "Tarn-et-Garonne"
+      }
+    },
+    {
+      "name": "ign-rgealti5m-63-puy-de-dome",
+      "mode": "derive_local_hydrology",
+      "dem": "build\\watersheds\\ign-data\\vrt\\rgealti5m\\_all_downloaded.vrt",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "autoPrepare": {
+        "provider": "ign",
+        "dataset": "rgealti5m",
+        "manifest": "build/watersheds/ign-plan/ign_download_manifest.json",
+        "outputDir": "build/watersheds/ign-data"
+      },
+      "match": {
+        "pays": "France",
+        "departement": "Puy-de-Dôme"
+      }
+    },
+    {
+      "name": "ign-bdalti-63-puy-de-dome",
+      "mode": "derive_local_hydrology",
+      "dem": "build\\watersheds\\ign-data\\vrt\\bdalti\\_all_downloaded.vrt",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "autoPrepare": {
+        "provider": "ign",
+        "dataset": "bdalti",
+        "manifest": "build/watersheds/ign-plan/ign_download_manifest.json",
+        "outputDir": "build/watersheds/ign-data"
+      },
+      "match": {
+        "pays": "France",
+        "departement": "Puy-de-Dôme"
+      }
+    },
+    {
+      "name": "ign-rgealti5m-50-manche",
+      "mode": "derive_local_hydrology",
+      "dem": "build\\watersheds\\ign-data\\vrt\\rgealti5m\\_all_downloaded.vrt",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "autoPrepare": {
+        "provider": "ign",
+        "dataset": "rgealti5m",
+        "manifest": "build/watersheds/ign-plan/ign_download_manifest.json",
+        "outputDir": "build/watersheds/ign-data"
+      },
+      "match": {
+        "pays": "France",
+        "departement": "Manche"
+      }
+    },
+    {
+      "name": "ign-bdalti-50-manche",
+      "mode": "derive_local_hydrology",
+      "dem": "build\\watersheds\\ign-data\\vrt\\bdalti\\_all_downloaded.vrt",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "autoPrepare": {
+        "provider": "ign",
+        "dataset": "bdalti",
+        "manifest": "build/watersheds/ign-plan/ign_download_manifest.json",
+        "outputDir": "build/watersheds/ign-data"
+      },
+      "match": {
+        "pays": "France",
+        "departement": "Manche"
+      }
+    },
+    {
+      "name": "ign-rgealti5m-42-loire",
+      "mode": "derive_local_hydrology",
+      "dem": "build\\watersheds\\ign-data\\vrt\\rgealti5m\\_all_downloaded.vrt",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "autoPrepare": {
+        "provider": "ign",
+        "dataset": "rgealti5m",
+        "manifest": "build/watersheds/ign-plan/ign_download_manifest.json",
+        "outputDir": "build/watersheds/ign-data"
+      },
+      "match": {
+        "pays": "France",
+        "departement": "Loire"
+      }
+    },
+    {
+      "name": "ign-bdalti-42-loire",
+      "mode": "derive_local_hydrology",
+      "dem": "build\\watersheds\\ign-data\\vrt\\bdalti\\_all_downloaded.vrt",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "autoPrepare": {
+        "provider": "ign",
+        "dataset": "bdalti",
+        "manifest": "build/watersheds/ign-plan/ign_download_manifest.json",
+        "outputDir": "build/watersheds/ign-data"
+      },
+      "match": {
+        "pays": "France",
+        "departement": "Loire"
+      }
+    },
+    {
+      "name": "ign-rgealti5m-70-haute-saone",
+      "mode": "derive_local_hydrology",
+      "dem": "build\\watersheds\\ign-data\\vrt\\rgealti5m\\_all_downloaded.vrt",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "autoPrepare": {
+        "provider": "ign",
+        "dataset": "rgealti5m",
+        "manifest": "build/watersheds/ign-plan/ign_download_manifest.json",
+        "outputDir": "build/watersheds/ign-data"
+      },
+      "match": {
+        "pays": "France",
+        "departement": "Haute-Saône"
+      }
+    },
+    {
+      "name": "ign-bdalti-70-haute-saone",
+      "mode": "derive_local_hydrology",
+      "dem": "build\\watersheds\\ign-data\\vrt\\bdalti\\_all_downloaded.vrt",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "autoPrepare": {
+        "provider": "ign",
+        "dataset": "bdalti",
+        "manifest": "build/watersheds/ign-plan/ign_download_manifest.json",
+        "outputDir": "build/watersheds/ign-data"
+      },
+      "match": {
+        "pays": "France",
+        "departement": "Haute-Saône"
+      }
+    },
+    {
+      "name": "ign-rgealti5m-68-haut-rhin",
+      "mode": "derive_local_hydrology",
+      "dem": "build\\watersheds\\ign-data\\vrt\\rgealti5m\\_all_downloaded.vrt",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "autoPrepare": {
+        "provider": "ign",
+        "dataset": "rgealti5m",
+        "manifest": "build/watersheds/ign-plan/ign_download_manifest.json",
+        "outputDir": "build/watersheds/ign-data"
+      },
+      "match": {
+        "pays": "France",
+        "departement": "Haut-Rhin"
+      }
+    },
+    {
+      "name": "ign-bdalti-68-haut-rhin",
+      "mode": "derive_local_hydrology",
+      "dem": "build\\watersheds\\ign-data\\vrt\\bdalti\\_all_downloaded.vrt",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "autoPrepare": {
+        "provider": "ign",
+        "dataset": "bdalti",
+        "manifest": "build/watersheds/ign-plan/ign_download_manifest.json",
+        "outputDir": "build/watersheds/ign-data"
+      },
+      "match": {
+        "pays": "France",
+        "departement": "Haut-Rhin"
+      }
+    },
+    {
+      "name": "ign-rgealti5m-29-finistere",
+      "mode": "derive_local_hydrology",
+      "dem": "build\\watersheds\\ign-data\\vrt\\rgealti5m\\_all_downloaded.vrt",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "autoPrepare": {
+        "provider": "ign",
+        "dataset": "rgealti5m",
+        "manifest": "build/watersheds/ign-plan/ign_download_manifest.json",
+        "outputDir": "build/watersheds/ign-data"
+      },
+      "match": {
+        "pays": "France",
+        "departement": "Finistère"
+      }
+    },
+    {
+      "name": "ign-bdalti-29-finistere",
+      "mode": "derive_local_hydrology",
+      "dem": "build\\watersheds\\ign-data\\vrt\\bdalti\\_all_downloaded.vrt",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "autoPrepare": {
+        "provider": "ign",
+        "dataset": "bdalti",
+        "manifest": "build/watersheds/ign-plan/ign_download_manifest.json",
+        "outputDir": "build/watersheds/ign-data"
+      },
+      "match": {
+        "pays": "France",
+        "departement": "Finistère"
+      }
+    },
+    {
+      "name": "ign-rgealti5m-19-correze",
+      "mode": "derive_local_hydrology",
+      "dem": "build\\watersheds\\ign-data\\vrt\\rgealti5m\\_all_downloaded.vrt",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "autoPrepare": {
+        "provider": "ign",
+        "dataset": "rgealti5m",
+        "manifest": "build/watersheds/ign-plan/ign_download_manifest.json",
+        "outputDir": "build/watersheds/ign-data"
+      },
+      "match": {
+        "pays": "France",
+        "departement": "Corrèze"
+      }
+    },
+    {
+      "name": "ign-bdalti-19-correze",
+      "mode": "derive_local_hydrology",
+      "dem": "build\\watersheds\\ign-data\\vrt\\bdalti\\_all_downloaded.vrt",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "autoPrepare": {
+        "provider": "ign",
+        "dataset": "bdalti",
+        "manifest": "build/watersheds/ign-plan/ign_download_manifest.json",
+        "outputDir": "build/watersheds/ign-data"
+      },
+      "match": {
+        "pays": "France",
+        "departement": "Corrèze"
+      }
+    },
+    {
+      "name": "copernicus-europe",
+      "mode": "derive_local_hydrology",
+      "dem": "build/watersheds/copernicus-data/vrt/copernicus_glo30.vrt",
+      "srs": "EPSG:4326",
+      "bufferKm": 20.0,
+      "candidateStrategy": "nearest_channel",
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "autoPrepare": {
+        "provider": "copernicus",
+        "manifest": "scripts/watersheds/copernicus_url_manifest.example.json",
+        "outputDir": "build/watersheds/copernicus-data"
+      },
+      "match": {
+        "pays": [
+          "Albanie",
+          "Allemagne",
+          "Allemagne , Autriche",
+          "Andorre",
+          "Autriche",
+          "Belgique",
+          "Bosnie-Herzégovine",
+          "Bulgarie",
+          "Chypre",
+          "Croatie",
+          "Danemark",
+          "Espagne",
+          "Estonie",
+          "Finlande",
+          "France",
+          "France , Espagne",
+          "France , Suisse",
+          "Grèce",
+          "Hongrie",
+          "Irlande",
+          "Islande",
+          "Italie",
+          "Kosovo",
+          "Lettonie",
+          "Liechtenstein",
+          "Lituanie",
+          "Luxembourg",
+          "Macédoine du Nord",
+          "Malte",
+          "Monténégro",
+          "Norvège",
+          "Pays-Bas",
+          "Pologne",
+          "Portugal",
+          "République tchèque",
+          "Roumanie",
+          "Royaume-Uni",
+          "Serbie",
+          "Slovaquie",
+          "Slovénie",
+          "Suède",
+          "Suisse",
+          "Turquie",
+          "Ukraine"
+        ]
+      }
+    },
+    {
+      "name": "merit-fallback",
+      "mode": "precomputed_hydrology",
+      "upaRaster": "build\\watersheds\\merit\\vrt\\merit_upa.vrt",
+      "flowdirRaster": "build\\watersheds\\merit\\vrt\\merit_dir.vrt",
+      "elevationRaster": "build\\watersheds\\merit\\vrt\\merit_elv.vrt",
+      "searchRadiusCells": 2,
+      "candidateStrategy": "max_upa",
+      "autoPrepare": {
+        "provider": "merit",
+        "manifest": "scripts/watersheds/merit_url_manifest.json",
+        "outputDir": "build/watersheds/merit"
+      },
+      "match": {
+        "default": true
+      }
+    }
+  ]
+}

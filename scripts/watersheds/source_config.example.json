@@ -1,0 +1,30 @@
+{
+  "sources": [
+    {
+      "name": "ign-ain-rgealti5m",
+      "mode": "derive_local_hydrology",
+      "dem": "build/watersheds/ign-ain-local-buizin/department_dem.tif",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "match": {
+        "pays": "France",
+        "departement": "Ain"
+      }
+    },
+    {
+      "name": "merit-fallback",
+      "mode": "precomputed_hydrology",
+      "upaRaster": "build/watersheds/merit/vrt/merit_upa.vrt",
+      "flowdirRaster": "build/watersheds/merit/vrt/merit_dir.vrt",
+      "elevationRaster": "build/watersheds/merit/vrt/merit_elv.vrt",
+      "searchRadiusCells": 2,
+      "candidateStrategy": "max_upa",
+      "match": {
+        "default": true
+      }
+    }
+  ]
+}
