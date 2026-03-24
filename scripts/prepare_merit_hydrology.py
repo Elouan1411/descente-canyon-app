@@ -36,6 +36,8 @@ def download_file(url: str, destination: Path) -> None:
     destination.parent.mkdir(parents=True, exist_ok=True)
     if destination.exists() and destination.stat().st_size > 0:
         return
+    if "dl=0" in url:
+        url = url.replace("dl=0", "dl=1")
     request = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
     with urllib.request.urlopen(request, timeout=300) as response, open(destination, "wb") as handle:
         while True:
@@ -76,6 +78,13 @@ def main() -> int:
             download_file(str(url), tar_path)
             if not marker.exists():
                 raw_dir.mkdir(parents=True, exist_ok=True)
+                if not tarfile.is_tarfile(tar_path):
+                    tar_path.unlink(missing_ok=True)
+                    raise SystemExit(
+                        f"Downloaded MERIT file is not a tar archive for {package_name}/{layer}. "
+                        "This usually means Dropbox returned an HTML page instead of the file. "
+                        "Use France-only for now, or fetch MERIT from a machine/session where the passworded Dropbox links are unlocked."
+                    )
                 with tarfile.open(tar_path) as archive:
                     archive.extractall(raw_dir)
                 marker.write_text("ok", encoding="utf-8")

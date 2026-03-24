@@ -162,12 +162,22 @@ def auto_prepare_source(
 
     provider = auto_prepare.get("provider")
     if provider == "ign":
+        manifest_path = Path(auto_prepare.get("manifest", "build/watersheds/ign-plan/ign_download_manifest.json"))
+        if not manifest_path.exists():
+            subprocess.run(
+                [sys.executable, "scripts/fetch_ign_alti_catalog.py"],
+                check=True,
+            )
+            subprocess.run(
+                [sys.executable, "scripts/plan_ign_downloads.py"],
+                check=True,
+            )
         subprocess.run(
             [
                 sys.executable,
                 "scripts/prepare_ign_department_dem.py",
                 "--manifest",
-                auto_prepare.get("manifest", "build/watersheds/ign-plan/ign_download_manifest.json"),
+                str(manifest_path),
                 "--dataset",
                 auto_prepare.get("dataset", "rgealti5m"),
                 "--department",

@@ -34,6 +34,11 @@ def resolve_url(manifest: dict[str, Any], cell: str) -> str:
         return str(cells[cell])
     template = manifest.get("template")
     if template:
+        if "example.invalid" in str(template):
+            raise SystemExit(
+                "Copernicus manifest still contains the placeholder template. "
+                "Replace scripts/watersheds/copernicus_url_manifest.example.json with real URLs first."
+            )
         return str(template).format(cell=cell)
     raise SystemExit(f"No Copernicus URL found for cell {cell}")
 
