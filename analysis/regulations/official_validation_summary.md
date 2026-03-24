@@ -23,6 +23,30 @@
 - À ce stade, je n'ai **pas trouvé de texte officiel manquant** à ajouter pour la Lozère avec un niveau de confiance suffisant.
 - En revanche, le lot Lozère montre qu'il faut comparer systématiquement les textes anciens actifs avec les pages préfectorales actuelles, car des textes récents `Obsolète` / `Abrogé` existent déjà dans le dataset autour du même territoire.
 
+### Lot géographique examiné : Var
+- Site officiel accessible : `https://www.var.gouv.fr/`
+- Dans cette passe, aucune page canyoning/réglementation dédiée n'a pu être isolée automatiquement avec un niveau de confiance suffisant depuis le portail officiel seul.
+- Texte prioritaire du dataset à revalider :
+  - **ID 579** - `Actif` - Arrêté préfectoral (Var) - 13 mai 2025
+- Enjeu : ce texte impacte fortement le dataset (**84 canyons liés** dans l'inventaire), donc c'est le prochain lot prioritaire pour une validation manuelle ciblée.
+
+### Lot géographique examiné : Alpes-Maritimes
+- Site officiel accessible : `https://www.alpes-maritimes.gouv.fr/`
+- Dans cette passe, aucune page canyoning explicite n'a pu être confirmée automatiquement depuis le portail officiel.
+- Textes actifs prioritaires à revalider :
+  - **ID 349** - Arrêté préfectoral (Alpes-Maritimes) - 27 oct 2016
+  - **ID 153** - Arrêté préfectoral (Alpes-Maritimes) - 09 mai 1990
+  - **ID 194** - Arrêté préfectoral (Alpes-Maritimes) - 15 fév 1996
+- Conclusion : pas de confirmation officielle positive supplémentaire dans cette passe, mais le lot reste prioritaire.
+
+### Lot géographique examiné : Alpes-de-Haute-Provence
+- Site officiel accessible : `https://www.alpes-de-haute-provence.gouv.fr/`
+- Dans cette passe, aucun résultat canyoning dédié n'a pu être identifié automatiquement à partir de la navigation générique du site.
+- Textes actifs prioritaires à revalider :
+  - **ID 42** - Arrêté préfectoral (Alpes de Haute Provence) - 03 juil 1996
+  - **ID 534** - Arrêté préfectoral (Alpes-de-Haute-Provence) - 29 déc 1997
+- Conclusion : pas de confirmation officielle positive supplémentaire dans cette passe.
+
 ## Limites rencontrées
 - Une validation exhaustive des **241** textes actifs sur des sites officiels (mairies, préfectures, Legifrance, régions, parcs) nécessite une recherche web systématique.
 - Les moteurs généralistes déclenchent rapidement des CAPTCHA/anti-bot, ce qui empêche une automatisation fiable à grande échelle depuis cet environnement.
@@ -48,6 +72,6 @@ Pour l'instant, aucun candidat nouveau n'a été ajouté automatiquement avec un
 Procéder en **lots thématiques ou géographiques** (ex. `Lozère`, `Var`, `Alpes-Maritimes`, `Corse-du-Sud`, `Alpes-de-Haute-Provence`) pour permettre une validation réellement fiable via sources officielles.
 
 ## Prochaine priorité recommandée
-1. **Var** : un texte très récent et très impactant existe déjà dans le dataset (`ID 579 - Arrêté préfectoral (Var) - 13 mai 2025`, 84 canyons liés dans l'inventaire top-link).
-2. **Alpes-Maritimes** : plusieurs arrêtés actifs historiques sont très impactants et méritent une confirmation officielle à jour.
-3. **Alpes-de-Haute-Provence** : un arrêté ancien mais très lié (`ID 42`) doit être revalidé ou remplacé par un texte plus récent si disponible.
+1. **Var** : `ID 579 - Arrêté préfectoral (Var) - 13 mai 2025` (84 canyons liés)
+2. **Alpes-Maritimes** : `ID 349`, `ID 153`, `ID 194`
+3. **Alpes-de-Haute-Provence** : `ID 42`, `ID 534`
