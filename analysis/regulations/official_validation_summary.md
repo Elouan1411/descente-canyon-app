@@ -14,6 +14,15 @@
    - Contenu observé : la page confirme explicitement "L'arrêté préfectoral signé le 26 octobre 2016 réglemente la pratique du canyonisme en Lozère" et fournit un lien vers le PDF officiel.
    - Conclusion : **probablement toujours active** (confirmation officielle positive, mais pas de contrôle article par article du PDF dans cette passe).
 
+### Lot géographique examiné : Lozère
+- Le site officiel de la préfecture de Lozère confirme encore l'existence et l'applicabilité de l'arrêté du **26 octobre 2016** sur la pratique du canyonisme.
+- Dans le dataset embarqué, les textes récents liés à la Lozère observés sont :
+  - **ID 508** - `Actif` - Arrêté préfectoral (Lozère) - 26 oct 2016
+  - **ID 540** - `Abrogé` - Arrêté municipal (Pied-de-Borne, Prévenchères) - 26 avr 2024
+  - **ID 557** - `Obsolète` - Arrêté préfectoral (Lozère) - 05 sept 2024
+- À ce stade, je n'ai **pas trouvé de texte officiel manquant** à ajouter pour la Lozère avec un niveau de confiance suffisant.
+- En revanche, le lot Lozère montre qu'il faut comparer systématiquement les textes anciens actifs avec les pages préfectorales actuelles, car des textes récents `Obsolète` / `Abrogé` existent déjà dans le dataset autour du même territoire.
+
 ## Limites rencontrées
 - Une validation exhaustive des **241** textes actifs sur des sites officiels (mairies, préfectures, Legifrance, régions, parcs) nécessite une recherche web systématique.
 - Les moteurs généralistes déclenchent rapidement des CAPTCHA/anti-bot, ce qui empêche une automatisation fiable à grande échelle depuis cet environnement.
@@ -37,3 +46,8 @@ Pour l'instant, aucun candidat nouveau n'a été ajouté automatiquement avec un
 
 ## Recommandation
 Procéder en **lots thématiques ou géographiques** (ex. `Lozère`, `Var`, `Alpes-Maritimes`, `Corse-du-Sud`, `Alpes-de-Haute-Provence`) pour permettre une validation réellement fiable via sources officielles.
+
+## Prochaine priorité recommandée
+1. **Var** : un texte très récent et très impactant existe déjà dans le dataset (`ID 579 - Arrêté préfectoral (Var) - 13 mai 2025`, 84 canyons liés dans l'inventaire top-link).
+2. **Alpes-Maritimes** : plusieurs arrêtés actifs historiques sont très impactants et méritent une confirmation officielle à jour.
+3. **Alpes-de-Haute-Provence** : un arrêté ancien mais très lié (`ID 42`) doit être revalidé ou remplacé par un texte plus récent si disponible.
