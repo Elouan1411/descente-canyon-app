@@ -2,6 +2,7 @@ package fr.descentecanyon.app.ui.canyon
 
 import android.app.Activity
 import android.graphics.Color as AndroidColor
+import androidx.activity.compose.BackHandler
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
@@ -31,6 +32,7 @@ import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.snapshotFlow
 import androidx.compose.runtime.setValue
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
@@ -58,7 +60,7 @@ fun PhotoGalleryScreen(
     viewModel: PhotoGalleryViewModel = hiltViewModel(),
 ) {
     val photos by PhotoGallerySession.photos.collectAsStateWithLifecycle()
-    val initialIndex by PhotoGallerySession.initialIndex.collectAsStateWithLifecycle()
+    val currentIndex by PhotoGallerySession.currentIndex.collectAsStateWithLifecycle()
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
     val context = LocalContext.current
     var showOverlay by rememberSaveable { mutableStateOf(true) }
@@ -68,10 +70,21 @@ fun PhotoGalleryScreen(
         return
     }
 
+    BackHandler {
+        PhotoGallerySession.clear()
+        onBackClick()
+    }
+
     val pagerState = rememberPagerState(
-        initialPage = initialIndex,
+        initialPage = currentIndex,
         pageCount = { photos.size },
     )
+
+    LaunchedEffect(pagerState) {
+        snapshotFlow { pagerState.currentPage }.collect { page ->
+            PhotoGallerySession.updateCurrentIndex(page)
+        }
+    }
 
     DisposableEffect(context) {
         val activity = context as? Activity
@@ -93,7 +106,6 @@ fun PhotoGalleryScreen(
         }
 
         onDispose {
-            PhotoGallerySession.clear()
             if (window != null && insetsController != null) {
                 previousStatusBarColor?.let { window.statusBarColor = it }
                 previousNavBarColor?.let { window.navigationBarColor = it }

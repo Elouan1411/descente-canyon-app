@@ -9,12 +9,17 @@ object PhotoGallerySession {
     private val _photos = MutableStateFlow<List<CanyonPhoto>>(emptyList())
     val photos: StateFlow<List<CanyonPhoto>> = _photos.asStateFlow()
 
-    private val _initialIndex = MutableStateFlow(0)
-    val initialIndex: StateFlow<Int> = _initialIndex.asStateFlow()
+    private val _currentIndex = MutableStateFlow(0)
+    val currentIndex: StateFlow<Int> = _currentIndex.asStateFlow()
 
     fun open(photos: List<CanyonPhoto>, initialIndex: Int) {
         _photos.value = photos
-        _initialIndex.value = initialIndex.coerceIn(0, (photos.size - 1).coerceAtLeast(0))
+        _currentIndex.value = initialIndex.coerceIn(0, (photos.size - 1).coerceAtLeast(0))
+    }
+
+    fun updateCurrentIndex(index: Int) {
+        val max = (_photos.value.size - 1).coerceAtLeast(0)
+        _currentIndex.value = index.coerceIn(0, max)
     }
 
     fun updatePhotoLocalPath(photoId: Long, localPath: String) {
@@ -25,6 +30,6 @@ object PhotoGallerySession {
 
     fun clear() {
         _photos.value = emptyList()
-        _initialIndex.value = 0
+        _currentIndex.value = 0
     }
 }
