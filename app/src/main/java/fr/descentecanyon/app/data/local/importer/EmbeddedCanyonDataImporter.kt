@@ -43,11 +43,8 @@ class EmbeddedCanyonDataImporter @Inject constructor(
         val hasBibliography = bibliographyDao.countEntries() > 0
         val hasRegulations = regulationDao.countTexts() > 0
         if (importedVersion == manifest.generatedAt && hasCanyons && hasBibliography && hasRegulations) {
-            canyonDao.clearOfflineFlags()
             return
         }
-
-        val favoriteIds = canyonDao.getFavoriteIds().toSet()
 
         val canyonRows = readJsonAsset<List<CanyonImportRow>>("canyons.json")
         val geoPointRows = readJsonAsset<List<GeoPointImportRow>>("geo_points.json")
@@ -55,21 +52,28 @@ class EmbeddedCanyonDataImporter @Inject constructor(
         val canyonBibliography = readJsonAsset<List<CanyonBibliographyImportRow>>("canyon_bibliography.json")
         val regulationTexts = readJsonAsset<List<RegulationImportRow>>("regulation_texts.json")
         val canyonRegulations = readJsonAsset<List<CanyonRegulationImportRow>>("canyon_regulations.json")
+        val existingCanyons = canyonDao.getByIds(canyonRows.map { it.id }).associateBy { it.id }
 
         database.withTransaction {
             bibliographyDao.clearLinks()
             regulationDao.clearLinks()
             bibliographyDao.clearEntries()
             regulationDao.clearTexts()
-            canyonDao.clearAll()
 
-            canyonRows.map { row -> row.toEntity(favoriteIds.contains(row.id), json) }
-                .chunked(300)
-                .forEach { chunk -> canyonDao.insertAll(chunk) }
+            canyonRows.forEach { row ->
+                val existing = existingCanyons[row.id]
+                val merged = row.toEntity(json).preservingLocalState(existing)
+                if (canyonDao.insertIgnore(merged) == -1L) {
+                    canyonDao.update(merged)
+                }
+            }
 
             geoPointRows.map { row -> row.toEntity() }
-                .chunked(500)
-                .forEach { chunk -> geoPointDao.insertAll(chunk) }
+                .groupBy { it.canyonId }
+                .forEach { (canyonId, points) ->
+                    geoPointDao.deleteByCanyonId(canyonId)
+                    points.chunked(500).forEach { chunk -> geoPointDao.insertAll(chunk) }
+                }
 
             bibliographyEntries.map { row -> row.toEntity(json) }
                 .chunked(300)
@@ -96,7 +100,7 @@ class EmbeddedCanyonDataImporter @Inject constructor(
         return json.decodeFromString(payload)
     }
 
-    private fun CanyonImportRow.toEntity(isFavorite: Boolean, json: Json): CanyonEntity {
+    private fun CanyonImportRow.toEntity(json: Json): CanyonEntity {
         return CanyonEntity(
             id = id,
             nom = nom,
@@ -135,8 +139,32 @@ class EmbeddedCanyonDataImporter @Inject constructor(
             hasSpecificRegulation = hasSpecificRegulation,
             isForbidden = isForbidden,
             isOffline = false,
-            isFavorite = isFavorite,
+            isFavorite = false,
             lastUpdated = lastUpdated,
+        )
+    }
+
+    private fun CanyonEntity.preservingLocalState(existing: CanyonEntity?): CanyonEntity {
+        if (existing == null) return this
+        return copy(
+            communesJson = communesJson ?: existing.communesJson,
+            bassin = bassin ?: existing.bassin,
+            coursEau = coursEau ?: existing.coursEau,
+            accesAval = accesAval ?: existing.accesAval,
+            accesAmont = accesAmont ?: existing.accesAmont,
+            approche = approche ?: existing.approche,
+            descente = descente ?: existing.descente,
+            retour = retour ?: existing.retour,
+            engagement = engagement ?: existing.engagement,
+            periode = periode ?: existing.periode,
+            geologie = geologie ?: existing.geologie,
+            historique = historique ?: existing.historique,
+            remarques = remarques ?: existing.remarques,
+            hasSpecificRegulation = hasSpecificRegulation || existing.hasSpecificRegulation,
+            isForbidden = isForbidden || existing.isForbidden,
+            isOffline = existing.isOffline,
+            isFavorite = existing.isFavorite,
+            lastUpdated = maxOf(lastUpdated, existing.lastUpdated),
         )
     }
 
