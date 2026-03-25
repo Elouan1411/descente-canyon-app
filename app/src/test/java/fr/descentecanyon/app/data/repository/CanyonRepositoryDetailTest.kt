@@ -6,6 +6,7 @@ import fr.descentecanyon.app.data.local.dao.DebitDao
 import fr.descentecanyon.app.data.local.dao.GeoPointDao
 import fr.descentecanyon.app.data.local.dao.PhotoDao
 import fr.descentecanyon.app.data.local.dao.RegulationDao
+import fr.descentecanyon.app.data.local.database.AppDatabase
 import fr.descentecanyon.app.data.local.entity.CanyonEntity
 import fr.descentecanyon.app.data.local.importer.EmbeddedCanyonDataImporter
 import fr.descentecanyon.app.data.remote.scraper.CanyonScraper
@@ -20,6 +21,7 @@ import org.junit.Test
 class CanyonRepositoryDetailTest {
 
     private val canyonDao = mockk<CanyonDao>()
+    private val database = mockk<AppDatabase>(relaxed = true)
     private val geoPointDao = mockk<GeoPointDao>()
     private val debitDao = mockk<DebitDao>()
     private val photoDao = mockk<PhotoDao>()
@@ -39,6 +41,7 @@ class CanyonRepositoryDetailTest {
         coJustRun { canyonDao.update(any()) }
 
         val repository = CanyonRepositoryImpl(
+            database = database,
             canyonDao = canyonDao,
             geoPointDao = geoPointDao,
             debitDao = debitDao,

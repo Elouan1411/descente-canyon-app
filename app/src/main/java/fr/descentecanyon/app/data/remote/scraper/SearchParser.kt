@@ -2,6 +2,7 @@ package fr.descentecanyon.app.data.remote.scraper
 
 import fr.descentecanyon.app.data.remote.dto.ScrapedCanyonSummary
 import org.jsoup.nodes.Document
+import java.util.Locale
 
 /**
  * Parses search results from the canyon database.
@@ -14,7 +15,7 @@ internal object SearchParser {
         val results = mutableListOf<ScrapedCanyonSummary>()
 
         // Search results are typically links to canyon pages in the main content area
-        val canyonLinks = doc.select("a[href~=/canyoning/canyon/\\d+/]")
+        val canyonLinks = doc.select("a[href~=/canyoning/canyon/\\d+/.*]")
 
         for (link in canyonLinks) {
             val href = link.attr("href")
@@ -24,17 +25,23 @@ internal object SearchParser {
             // Avoid duplicate IDs (same canyon can appear in multiple links)
             if (results.any { it.id == id }) continue
 
-            val nom = link.text().trim()
+            val nom = link.attr("title").takeIf { it.isNotBlank() } ?: link.text().trim()
             if (nom.isBlank()) continue
 
-            // Try to get department/country from surrounding context
             val parentRow = link.closest("tr") ?: link.closest("li") ?: link.parent()
-            val departement = parentRow?.select("td")?.getOrNull(1)?.text()?.trim()
+            val locationCell = parentRow?.select("td")?.getOrNull(2)
+            val departement = locationCell?.ownText()?.trim()?.ifBlank { null }
+            val pays = locationCell
+                ?.selectFirst("img[class*=d-]")
+                ?.classNames()
+                ?.firstNotNullOfOrNull(::countryNameFromFlagClass)
+                .orEmpty()
 
             results.add(
                 ScrapedCanyonSummary(
                     id = id,
                     nom = nom,
+                    pays = pays,
                     departement = departement,
                     url = href,
                 )
@@ -42,5 +49,12 @@ internal object SearchParser {
         }
 
         return results
+    }
+
+    private fun countryNameFromFlagClass(className: String): String? {
+        val code = className.substringAfter("d-", "").takeIf { it.length == 2 } ?: return null
+        return Locale("", code.uppercase(Locale.ROOT)).getDisplayCountry(Locale.FRENCH)
+            .takeIf { it.isNotBlank() }
+            ?.replaceFirstChar { char -> if (char.isLowerCase()) char.titlecase(Locale.FRENCH) else char.toString() }
     }
 }

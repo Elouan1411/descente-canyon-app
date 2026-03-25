@@ -6,6 +6,7 @@ import fr.descentecanyon.app.data.local.dao.DebitDao
 import fr.descentecanyon.app.data.local.dao.GeoPointDao
 import fr.descentecanyon.app.data.local.dao.PhotoDao
 import fr.descentecanyon.app.data.local.dao.RegulationDao
+import fr.descentecanyon.app.data.local.database.AppDatabase
 import fr.descentecanyon.app.data.local.importer.EmbeddedCanyonDataImporter
 import fr.descentecanyon.app.data.local.entity.GeoPointEntity
 import fr.descentecanyon.app.data.mapper.toSearchItem
@@ -20,6 +21,7 @@ import fr.descentecanyon.app.domain.model.GeoPointType
 import fr.descentecanyon.app.domain.model.normalizeForSearch
 import fr.descentecanyon.app.domain.repository.CanyonRepository
 import fr.descentecanyon.app.domain.repository.MapOfflineRepository
+import androidx.room.withTransaction
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.distinctUntilChanged
@@ -38,6 +40,7 @@ import javax.inject.Singleton
 
 @Singleton
 class CanyonRepositoryImpl @Inject constructor(
+    private val database: AppDatabase,
     private val canyonDao: CanyonDao,
     private val geoPointDao: GeoPointDao,
     private val debitDao: DebitDao,
@@ -125,13 +128,15 @@ class CanyonRepositoryImpl @Inject constructor(
             val photos = scraper.scrapeCanyonPhotos(canyonId).getOrDefault(emptyList())
             val debits = scraper.scrapeCanyonDebits(canyonId).getOrDefault(emptyList())
             val entity = detail.toEntity()
-            insertPreservingFlags(entity)
-            replaceSupportingData(
-                canyonId = canyonId,
-                geoPointEntities = detail.geoPoints.map { it.toEntity(canyonId) },
-                photoEntities = photos.map { it.toEntity() },
-                debitEntities = debits.map { it.toEntity() },
-            )
+            database.withTransaction {
+                insertPreservingFlags(entity)
+                replaceSupportingData(
+                    canyonId = canyonId,
+                    geoPointEntities = detail.geoPoints.map { it.toEntity(canyonId) },
+                    photoEntities = photos.map { it.toEntity() },
+                    debitEntities = debits.map { it.toEntity() },
+                )
+            }
 
             loadLocalDetail(canyonId, canyonDao.getById(canyonId) ?: entity)
         }.recoverCatching {
@@ -203,12 +208,13 @@ class CanyonRepositoryImpl @Inject constructor(
         val debits = scraper.scrapeCanyonDebits(canyonId).getOrDefault(emptyList())
         val entity = detail.toEntity().copy(isOffline = true)
 
-        insertPreservingFlags(entity)
-
         val geoPointEntities = detail.geoPoints.map { it.toEntity(canyonId) }
         val photoEntities = photos.map { it.toEntity() }
         val debitEntities = debits.map { it.toEntity() }
-        replaceSupportingData(canyonId, geoPointEntities, photoEntities, debitEntities)
+        database.withTransaction {
+            insertPreservingFlags(entity)
+            replaceSupportingData(canyonId, geoPointEntities, photoEntities, debitEntities)
+        }
 
         geoPointEntities.bestMarkerPointOrNull()?.let { point ->
             mapOfflineRepository.downloadRegion(
