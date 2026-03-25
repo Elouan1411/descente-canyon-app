@@ -74,6 +74,7 @@ python scripts/merge_country_watershed_runs.py \
 - batch resumable pour toute la base: `scripts/run_catchment_batch.py`
 - telechargement Copernicus a la volee: `scripts/prepare_copernicus_dem.py`
 - telechargement MERIT a la volee: `scripts/prepare_merit_hydrology.py`
+- sources nationales hors France par manifest: `scripts/prepare_national_dem.py`
 - calcul des entrees: `scripts/compute_entry_watersheds.py`
 - diagnostic des cas suspects: `scripts/analyze_watershed_suspicious_cases.py`
 - fusion des runs: `scripts/merge_country_watershed_runs.py`
@@ -177,6 +178,17 @@ Pour `Copernicus` et `MERIT`, il faut renseigner les manifests d'URL si tu veux 
 - `scripts/watersheds/merit_url_manifest.example.json`
 
 Pour les sources nationales hors France, le principe recommande est le meme : telecharger seulement les unites utiles et reconstruire un VRT global `_all_downloaded.vrt`, ce qui permet de traverser proprement les limites entre fichiers ou subdivisions administratives.
+
+Manifests exemples integres pour les modeles nationaux les plus prometteurs hors France :
+
+- `scripts/watersheds/switzerland_national_dem_manifest.example.json`
+- `scripts/watersheds/spain_national_dem_manifest.example.json`
+- `scripts/watersheds/austria_national_dem_manifest.example.json`
+- `scripts/watersheds/slovenia_national_dem_manifest.example.json`
+
+Ces pays sont maintenant integres dans la logique de selection du batch avant `Copernicus`.
+
+Remarque validation : les grandes stations hydrometriques (grandes rivieres) ne donnent pas directement des verites terrain pour les petits canyons. Elles peuvent seulement servir de verification tres grossiere a l'echelle du bassin aval, pas de validation fine canyon par canyon.
 
 Sur Debian, les scripts utilisent par defaut les executables du `PATH` (`gdalbuildvrt`, `gdal_translate`, `7z`).
 

@@ -213,6 +213,30 @@ def auto_prepare_source(
         subprocess.run(command, check=True)
         return
 
+    if provider == "national-dem":
+        units: list[str] = []
+        for field_name in auto_prepare.get("unitFields", ["departement", "region"]):
+            value = canyon.get(field_name)
+            if value:
+                units.append(str(value))
+        for value in auto_prepare.get("extraUnits", []):
+            units.append(str(value))
+        units = [unit for unit in units if unit]
+        if not units:
+            raise SystemExit(f"No units resolved for national DEM source {source['name']}")
+        command = [
+            sys.executable,
+            "scripts/prepare_national_dem.py",
+            "--manifest",
+            auto_prepare.get("manifest"),
+            "--output-dir",
+            auto_prepare.get("outputDir"),
+        ]
+        for unit in units:
+            command.extend(["--unit", unit])
+        subprocess.run(command, check=True)
+        return
+
     if provider == "merit":
         command = [
             sys.executable,
@@ -348,21 +372,19 @@ def ensure_local_hydrology(
             float(source.get("bufferKm", 20.0)) * 1000.0,
             source_srs=source.get("srs"),
         )
-        subprocess.run(
-            [
-                sys.executable,
-                "scripts/derive_ign_hydrology.py",
-                "--dem",
-                str(clip_path),
-                "--output-dir",
-                str(hydrology_dir),
-                "--work-dir",
-                str(hydrology_dir / "work"),
-                "--srs",
-                source.get("srs", DEFAULT_LAMBERT93_PROJ4),
-            ],
-            check=True,
-        )
+        command = [
+            sys.executable,
+            "scripts/derive_ign_hydrology.py",
+            "--dem",
+            str(clip_path),
+            "--output-dir",
+            str(hydrology_dir),
+            "--work-dir",
+            str(hydrology_dir / "work"),
+        ]
+        if source.get("srs"):
+            command.extend(["--srs", source["srs"]])
+        subprocess.run(command, check=True)
 
     return {
         "upa": upa_path,

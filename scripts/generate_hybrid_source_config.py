@@ -126,6 +126,10 @@ def parse_args() -> argparse.Namespace:
         type=Path,
         default=Path("scripts/watersheds/source_config.hybrid.json"),
     )
+    parser.add_argument("--swiss-manifest", type=Path, default=Path("scripts/watersheds/switzerland_national_dem_manifest.example.json"))
+    parser.add_argument("--spain-manifest", type=Path, default=Path("scripts/watersheds/spain_national_dem_manifest.example.json"))
+    parser.add_argument("--austria-manifest", type=Path, default=Path("scripts/watersheds/austria_national_dem_manifest.example.json"))
+    parser.add_argument("--slovenia-manifest", type=Path, default=Path("scripts/watersheds/slovenia_national_dem_manifest.example.json"))
     return parser.parse_args()
 
 
@@ -134,6 +138,29 @@ def main() -> int:
     manifest = load_json(args.ign_manifest)
 
     sources: list[dict[str, Any]] = []
+
+    def add_national_source(*, name: str, country: str, manifest_path: Path, output_dir: str, unit_fields: list[str], srs: str | None = None) -> None:
+        source: dict[str, Any] = {
+            "name": name,
+            "mode": "derive_local_hydrology",
+            "dem": f"{output_dir}/vrt/_all_downloaded.vrt",
+            "bufferKm": 20.0,
+            "candidateStrategy": "nearest_channel",
+            "searchRadiusM": 120.0,
+            "channelMinUpaKm2": 0.05,
+            "autoPrepare": {
+                "provider": "national-dem",
+                "manifest": str(manifest_path),
+                "outputDir": output_dir,
+                "unitFields": unit_fields,
+            },
+            "match": {
+                "pays": country,
+            },
+        }
+        if srs:
+            source["srs"] = srs
+        sources.append(source)
 
     for item in manifest:
         department = item["department"]
@@ -193,6 +220,37 @@ def main() -> int:
                 }
             }
         )
+
+    add_national_source(
+        name="switzerland-swissalti3d",
+        country="Suisse",
+        manifest_path=args.swiss_manifest,
+        output_dir="build/watersheds/switzerland-national-dem",
+        unit_fields=["region", "departement"],
+        srs="EPSG:2056",
+    )
+    add_national_source(
+        name="spain-ign-mdt02",
+        country="Espagne",
+        manifest_path=args.spain_manifest,
+        output_dir="build/watersheds/spain-national-dem",
+        unit_fields=["departement", "region"],
+    )
+    add_national_source(
+        name="austria-bev-als-dtm",
+        country="Autriche",
+        manifest_path=args.austria_manifest,
+        output_dir="build/watersheds/austria-national-dem",
+        unit_fields=["departement", "region"],
+        srs="EPSG:3035",
+    )
+    add_national_source(
+        name="slovenia-dmv5",
+        country="Slovénie",
+        manifest_path=args.slovenia_manifest,
+        output_dir="build/watersheds/slovenia-national-dem",
+        unit_fields=["departement", "region"],
+    )
 
     sources.append(
         {
