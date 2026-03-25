@@ -9,6 +9,7 @@ from pathlib import Path
 from typing import Any
 
 import rasterio
+from rasterio.enums import Resampling
 from rasterio.windows import Window
 from rasterio.warp import transform
 
@@ -72,7 +73,7 @@ def clip_dem(
 ) -> None:
     with rasterio.Env(GDAL_CACHEMAX=256):
         with rasterio.open(source_dem) as src:
-            source_crs = src.crs or source_srs
+            source_crs = source_srs or src.crs
             if source_crs is None:
                 raise SystemExit(f"DEM sans CRS exploitable: {source_dem}")
 
@@ -114,6 +115,36 @@ def clip_dem(
                 for band_index in range(1, src.count + 1):
                     data = src.read(band_index, window=clipped_window)
                     dst.write(data, band_index)
+
+
+def resample_dem(input_dem: Path, output_dem: Path, target_resolution: float) -> None:
+    with rasterio.open(input_dem) as src:
+        x_res = abs(src.transform.a)
+        y_res = abs(src.transform.e)
+        if x_res <= 0 or y_res <= 0:
+            raise SystemExit(f"Invalid source resolution for {input_dem}")
+        scale_x = x_res / target_resolution
+        scale_y = y_res / target_resolution
+        width = max(1, int(round(src.width * scale_x)))
+        height = max(1, int(round(src.height * scale_y)))
+        data = src.read(
+            out_shape=(src.count, height, width),
+            resampling=Resampling.bilinear,
+        )
+        transform_out = src.transform * src.transform.scale(src.width / width, src.height / height)
+        profile = src.profile.copy()
+        profile.update(
+            driver="GTiff",
+            width=width,
+            height=height,
+            transform=transform_out,
+            compress="lzw",
+            tiled=True,
+            BIGTIFF="YES",
+        )
+        output_dem.parent.mkdir(parents=True, exist_ok=True)
+        with rasterio.open(output_dem, "w", **profile) as dst:
+            dst.write(data)
 
 
 def parse_args() -> argparse.Namespace:

@@ -222,34 +222,95 @@ def main() -> int:
         )
 
     add_national_source(
-        name="switzerland-swissalti3d",
-        country="Suisse",
-        manifest_path=args.swiss_manifest,
-        output_dir="build/watersheds/switzerland-national-dem",
-        unit_fields=["region", "departement"],
-        srs="EPSG:2056",
-    )
-    add_national_source(
-        name="spain-ign-mdt02",
-        country="Espagne",
-        manifest_path=args.spain_manifest,
-        output_dir="build/watersheds/spain-national-dem",
-        unit_fields=["departement", "region"],
-    )
-    add_national_source(
-        name="austria-bev-als-dtm",
-        country="Autriche",
-        manifest_path=args.austria_manifest,
-        output_dir="build/watersheds/austria-national-dem",
-        unit_fields=["departement", "region"],
-        srs="EPSG:3035",
-    )
-    add_national_source(
         name="slovenia-dmv5",
         country="Slovénie",
         manifest_path=args.slovenia_manifest,
         output_dir="build/watersheds/slovenia-national-dem",
         unit_fields=["departement", "region"],
+    )
+
+    sources.append(
+        {
+            "name": "switzerland-swissalti3d",
+            "mode": "derive_local_hydrology",
+            "dem": "build/watersheds/switzerland-national-dem/vrt/_all_downloaded.vrt",
+            "srs": "EPSG:2056",
+            "bufferKm": 10.0,
+            "processingResolutionM": 5.0,
+            "candidateStrategy": "nearest_channel",
+            "searchRadiusM": 120.0,
+            "channelMinUpaKm2": 0.05,
+            "autoPrepare": {
+                "provider": "switzerland-stac",
+                "outputDir": "build/watersheds/switzerland-national-dem",
+                "bufferKm": 10.0,
+            },
+            "match": {
+                "pays": "Suisse"
+            }
+        }
+    )
+    sources.append(
+        {
+            "name": "spain-ign-mdt5",
+            "mode": "derive_local_hydrology",
+            "dem": "build/watersheds/spain-national-dem/raw/spain_30.tif",
+            "srs": None,
+            "bufferKm": 10.0,
+            "candidateStrategy": "nearest_channel",
+            "searchRadiusM": 120.0,
+            "channelMinUpaKm2": 0.05,
+            "autoPrepare": {
+                "provider": "spain-wcs",
+                "outputDir": "build/watersheds/spain-national-dem",
+                "bufferKm": 10.0,
+            },
+            "match": {
+                "pays": "Espagne"
+            }
+        }
+    )
+    sources.append(
+        {
+            "name": "austria-bev-als-dtm",
+            "mode": "derive_local_hydrology",
+            "dem": "build/watersheds/austria-national-dem/vrt/_all_downloaded.vrt",
+            "srs": "EPSG:3035",
+            "bufferKm": 20.0,
+            "processingResolutionM": 5.0,
+            "candidateStrategy": "nearest_channel",
+            "searchRadiusM": 120.0,
+            "channelMinUpaKm2": 0.05,
+            "autoPrepare": {
+                "provider": "austria-als",
+                "outputDir": "build/watersheds/austria-national-dem",
+                "bufferKm": 20.0,
+            },
+            "match": {
+                "pays": "Autriche"
+            }
+        }
+    )
+    sources.append(
+        {
+            "name": "italy-liguria-dem",
+            "mode": "derive_local_hydrology",
+            "dem": "build/watersheds/italy-liguria-dem/raw/liguria_5m.tif",
+            "bufferKm": 10.0,
+            "processingResolutionM": 5.0,
+            "candidateStrategy": "nearest_channel",
+            "searchRadiusM": 120.0,
+            "channelMinUpaKm2": 0.05,
+            "autoPrepare": {
+                "provider": "liguria-wcs",
+                "outputDir": "build/watersheds/italy-liguria-dem",
+                "bufferKm": 10.0,
+            },
+            "match": {
+                "pays": "Italie",
+                "region": "Ligurie"
+            }
+        }
     )
 
     sources.append(
