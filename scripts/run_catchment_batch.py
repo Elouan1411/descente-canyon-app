@@ -12,7 +12,7 @@ from typing import Any
 
 from cli_tools import default_gdal_translate, resolve_executable
 from compute_entry_watersheds import EntryPoint, create_raster, evaluate_entry, load_canyons
-from run_local_ign_canyon_workflow import DEFAULT_LAMBERT93_PROJ4, materialize_dem_if_needed
+from run_local_ign_canyon_workflow import DEFAULT_LAMBERT93_PROJ4
 
 
 POINT_TYPE_PRIORITY = {
@@ -280,13 +280,9 @@ def ensure_local_hydrology(
 ) -> dict[str, Path]:
     from run_local_ign_canyon_workflow import clip_dem
 
-    source_dir = output_dir / "sources" / source["name"]
-    dem_path = materialize_dem_if_needed(
-        normalized_path(source["dem"]).resolve(),
-        source_dir,
-        gdal_translate,
-        source.get("srs", DEFAULT_LAMBERT93_PROJ4),
-    )
+    dem_path = normalized_path(source["dem"]).resolve()
+    if not dem_path.exists():
+        raise SystemExit(f"DEM source not found: {dem_path}")
 
     canyon_work_dir = output_dir / "work" / str(canyon_id)
     clip_path = canyon_work_dir / "clip_dem.tif"
