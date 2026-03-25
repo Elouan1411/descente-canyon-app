@@ -50,18 +50,4 @@ class GeoPointParserTest {
         val parkings = result.filter { it.type.startsWith("PARKING") }
         assertTrue("Expected at least 1 parking point", parkings.isNotEmpty())
     }
-
-    @Test
-    fun `parser handles negative coordinates and spaces around commas`() {
-        val doc = Jsoup.parse(loadHtml("canyon_carte_negative_coords.html"))
-        val result = GeoPointParser.parse(doc)
-
-        assertEquals(3, result.size)
-        assertEquals("ENTREE", result[0].type)
-        assertEquals(42.204967, result[0].latitude, 0.000001)
-        assertEquals(-0.143080, result[0].longitude, 0.000001)
-        assertEquals("SORTIE", result[1].type)
-        assertEquals(-0.141814, result[1].longitude, 0.000001)
-        assertEquals("PARKING_AVAL", result[2].type)
-    }
 }

@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 2,
-    "identityHash": "8994815255519fc555861c44b22fe278",
+    "identityHash": "3e271ff896395788908ca8fb4f4caad9",
     "entities": [
       {
         "tableName": "canyons",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER NOT NULL, `nom` TEXT NOT NULL, `nomComplet` TEXT NOT NULL, `pays` TEXT NOT NULL, `region` TEXT, `departement` TEXT, `commune` TEXT NOT NULL, `massif` TEXT, `cotation` TEXT NOT NULL, `altitudeDepart` INTEGER, `denivele` INTEGER, `longueur` INTEGER, `cascadeMax` INTEGER, `cordeMin` INTEGER, `tempsApproche` TEXT, `tempsDescente` TEXT, `tempsRetour` TEXT, `navette` TEXT, `interet` REAL, `nbVotes` INTEGER NOT NULL, `url` TEXT NOT NULL, `accesAval` TEXT, `accesAmont` TEXT, `approche` TEXT, `descente` TEXT, `retour` TEXT, `engagement` TEXT, `periode` TEXT, `isOffline` INTEGER NOT NULL, `isFavorite` INTEGER NOT NULL, `lastUpdated` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER NOT NULL, `nom` TEXT NOT NULL, `nomComplet` TEXT NOT NULL, `pays` TEXT NOT NULL, `region` TEXT, `departement` TEXT, `commune` TEXT NOT NULL, `communesJson` TEXT, `massif` TEXT, `bassin` TEXT, `coursEau` TEXT, `cotation` TEXT NOT NULL, `altitudeDepart` INTEGER, `denivele` INTEGER, `longueur` INTEGER, `cascadeMax` INTEGER, `cordeMin` INTEGER, `tempsApproche` TEXT, `tempsDescente` TEXT, `tempsRetour` TEXT, `navette` TEXT, `interet` REAL, `nbVotes` INTEGER NOT NULL, `url` TEXT NOT NULL, `accesAval` TEXT, `accesAmont` TEXT, `approche` TEXT, `descente` TEXT, `retour` TEXT, `engagement` TEXT, `periode` TEXT, `geologie` TEXT, `historique` TEXT, `remarques` TEXT, `hasSpecificRegulation` INTEGER NOT NULL, `isForbidden` INTEGER NOT NULL, `isOffline` INTEGER NOT NULL, `isFavorite` INTEGER NOT NULL, `lastUpdated` INTEGER NOT NULL, PRIMARY KEY(`id`))",
         "fields": [
           {
             "fieldPath": "id",
@@ -49,8 +49,23 @@
             "notNull": true
           },
           {
+            "fieldPath": "communesJson",
+            "columnName": "communesJson",
+            "affinity": "TEXT"
+          },
+          {
             "fieldPath": "massif",
             "columnName": "massif",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "bassin",
+            "columnName": "bassin",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "coursEau",
+            "columnName": "coursEau",
             "affinity": "TEXT"
           },
           {
@@ -155,6 +170,33 @@
             "fieldPath": "periode",
             "columnName": "periode",
             "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "geologie",
+            "columnName": "geologie",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "historique",
+            "columnName": "historique",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "remarques",
+            "columnName": "remarques",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "hasSpecificRegulation",
+            "columnName": "hasSpecificRegulation",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isForbidden",
+            "columnName": "isForbidden",
+            "affinity": "INTEGER",
+            "notNull": true
           },
           {
             "fieldPath": "isOffline",
@@ -477,7 +519,7 @@
     ],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '8994815255519fc555861c44b22fe278')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '3e271ff896395788908ca8fb4f4caad9')"
     ]
   }
 }

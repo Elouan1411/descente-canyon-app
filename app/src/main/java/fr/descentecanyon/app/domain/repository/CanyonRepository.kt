@@ -8,32 +8,31 @@ import kotlinx.coroutines.flow.Flow
 
 /**
  * Repository interface for canyon data access.
- * Implementations handle local access to the embedded canyon catalog.
+ * Implementations handle remote scraping and local caching.
  */
 interface CanyonRepository {
 
     /**
      * Search canyons by name.
-     * Returns results from the local embedded catalog.
+     * Returns cached results first, then refreshes from remote.
      */
     fun searchByName(query: String): Flow<Result<List<CanyonSummary>>>
 
     /**
-     * Observe the local search catalog enriched with filterable fields.
+     * Observe the local search catalog enriched with filterable/searchable fields.
      */
     fun observeSearchCatalog(): Flow<List<CanyonSearchItem>>
 
     /**
      * Get full canyon detail by ID.
-     * Loads from the local embedded catalog.
-     */
-    suspend fun getCanyonPreview(canyonId: Int): Result<CanyonDetail>
-
-    /**
-     * Get full canyon detail by ID.
-     * Loads from the local embedded catalog.
+     * Loads from local DB if available offline, otherwise scrapes from web.
      */
     suspend fun getCanyonDetail(canyonId: Int): Result<CanyonDetail>
+
+    /**
+     * Get a lightweight canyon preview before full detail is loaded.
+     */
+    suspend fun getCanyonPreview(canyonId: Int): Result<CanyonDetail>
 
     /**
      * Get canyons near a geographic position.
@@ -45,7 +44,17 @@ interface CanyonRepository {
     ): Flow<Result<List<CanyonSummary>>>
 
     /**
-     * Get canyons available in the embedded local catalog.
+     * Download a canyon for offline use (fiche + map tiles).
+     */
+    suspend fun downloadForOffline(canyonId: Int): Result<Unit>
+
+    /**
+     * Remove offline data for a canyon.
+     */
+    suspend fun removeOfflineData(canyonId: Int): Result<Unit>
+
+    /**
+     * Get all canyons saved for offline use.
      */
     fun getOfflineCanyons(): Flow<List<CanyonSummary>>
 

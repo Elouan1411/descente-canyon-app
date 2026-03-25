@@ -43,6 +43,7 @@ fun MapLibreView(
     userLongitude: Double?,
     onMarkerClick: (Int) -> Unit,
     clusterMarkers: Boolean = true,
+    styleUri: String = MAP_STYLE_URI,
     modifier: Modifier = Modifier,
 ) {
     val context = LocalContext.current
@@ -77,7 +78,7 @@ fun MapLibreView(
         factory = {
             mapView.apply {
                 getMapAsync { map ->
-                    renderState.bindMap(map, onMarkerClick)
+                    renderState.bindMap(map, onMarkerClick, styleUri)
                 }
             }
         },
@@ -89,6 +90,7 @@ fun MapLibreView(
                 userLongitude = userLongitude,
                 onMarkerClick = onMarkerClick,
                 clusterMarkers = clusterMarkers,
+                styleUri = styleUri,
             )
         },
     )
@@ -105,15 +107,19 @@ private class MapRenderState(
     private var clusterMarkers: Boolean = true
     private var listenersAttached = false
     private var lastSignature: String? = null
+    private var lastFitDataSignature: String? = null
     private var didFitCamera = false
+    private var styleUri: String = MAP_STYLE_URI
 
     fun bindMap(
         map: MapLibreMap,
         onMarkerClick: (Int) -> Unit,
+        styleUri: String,
     ) {
         this.map = map
         this.onMarkerClick = onMarkerClick
-        map.setStyle(Style.Builder().fromUri(MAP_STYLE_URI)) {
+        this.styleUri = styleUri
+        map.setStyle(Style.Builder().fromUri(styleUri)) {
             if (!listenersAttached) {
                 attachListeners(map)
                 listenersAttached = true
@@ -132,12 +138,28 @@ private class MapRenderState(
         userLongitude: Double?,
         onMarkerClick: (Int) -> Unit,
         clusterMarkers: Boolean,
+        styleUri: String,
     ) {
         this.markers = markers
         this.userLatitude = userLatitude
         this.userLongitude = userLongitude
         this.onMarkerClick = onMarkerClick
         this.clusterMarkers = clusterMarkers
+        if (this.styleUri != styleUri) {
+            this.styleUri = styleUri
+            lastSignature = null
+            didFitCamera = false
+            map?.setStyle(Style.Builder().fromUri(styleUri)) {
+                render(force = true)
+            }
+            return
+        }
+
+        val fitDataSignature = buildFitDataSignature(markers)
+        if (fitDataSignature != lastFitDataSignature) {
+            lastFitDataSignature = fitDataSignature
+            didFitCamera = false
+        }
         runCatching {
             render(force = false)
         }.onFailure { throwable ->
@@ -236,18 +258,19 @@ private class MapRenderState(
         map: MapLibreMap,
         displayMarkers: List<MapDisplayMarker>,
     ) {
-        if (displayMarkers.isEmpty()) return
+        val canyonMarkers = displayMarkers.filterNot { it is MapDisplayMarker.User }
+        if (canyonMarkers.isEmpty()) return
 
         val bounds = LatLngBounds.Builder().apply {
-            displayMarkers.forEach { marker ->
+            canyonMarkers.forEach { marker ->
                 include(LatLng(marker.latitude, marker.longitude))
             }
         }.build()
 
-        val camera = map.getCameraForLatLngBounds(bounds, intArrayOf(80, 80, 80, 80))
+        val camera = map.getCameraForLatLngBounds(bounds, intArrayOf(96, 96, 96, 164))
         if (camera != null) {
-            val adjustedZoom = minOf(camera.zoom, preferredZoom(displayMarkers))
-            val target = camera.target ?: LatLng(displayMarkers.first().latitude, displayMarkers.first().longitude)
+            val adjustedZoom = minOf(camera.zoom, preferredZoom(canyonMarkers))
+            val target = camera.target ?: LatLng(canyonMarkers.first().latitude, canyonMarkers.first().longitude)
             map.moveCamera(
                 CameraUpdateFactory.newLatLngZoom(
                     target,
@@ -257,8 +280,8 @@ private class MapRenderState(
         } else {
             map.moveCamera(
                 CameraUpdateFactory.newLatLngZoom(
-                    LatLng(displayMarkers.first().latitude, displayMarkers.first().longitude),
-                    preferredZoom(displayMarkers),
+                    LatLng(canyonMarkers.first().latitude, canyonMarkers.first().longitude),
+                    preferredZoom(canyonMarkers),
                 )
             )
         }
@@ -275,12 +298,25 @@ private class MapRenderState(
         )
 
         return when {
-            maxSpan < 0.003 -> 14.0
-            maxSpan < 0.008 -> 13.0
-            maxSpan < 0.02 -> 12.0
-            maxSpan < 0.05 -> 11.0
-            maxSpan < 0.12 -> 10.0
-            else -> 8.5
+            maxSpan < 0.003 -> 14.3
+            maxSpan < 0.008 -> 13.3
+            maxSpan < 0.02 -> 12.2
+            maxSpan < 0.05 -> 11.2
+            maxSpan < 0.12 -> 10.2
+            else -> 8.8
+        }
+    }
+
+    private fun buildFitDataSignature(markers: List<CanyonSummary>): String {
+        return buildString {
+            markers.sortedBy { it.id }.forEach { canyon ->
+                append('|')
+                append(canyon.id)
+                append(':')
+                append(canyon.latitude?.toString().orEmpty())
+                append(':')
+                append(canyon.longitude?.toString().orEmpty())
+            }
         }
     }
 
@@ -346,8 +382,8 @@ private class MapRenderState(
     private fun drawableToBitmap(resId: Int): Bitmap {
         val drawable = ContextCompat.getDrawable(context, resId)
             ?: return createMarkerBitmap("?", 0xFF1A6B8A.toInt())
-        val width = drawable.intrinsicWidth.coerceAtLeast(64)
-        val height = drawable.intrinsicHeight.coerceAtLeast(64)
+        val width = drawable.intrinsicWidth.coerceAtLeast(88)
+        val height = drawable.intrinsicHeight.coerceAtLeast(88)
         val bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888)
         val canvas = Canvas(bitmap)
         drawable.setBounds(0, 0, width, height)
@@ -356,8 +392,8 @@ private class MapRenderState(
     }
 
     private fun createMarkerBitmap(label: String, colorInt: Int): Bitmap {
-        val width = 124
-        val height = 56
+        val width = 132
+        val height = 64
         val bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888)
         val canvas = Canvas(bitmap)
 
@@ -365,17 +401,17 @@ private class MapRenderState(
         val strokePaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
             color = 0xFFFFFFFF.toInt()
             style = Paint.Style.STROKE
-            strokeWidth = 4f
+            strokeWidth = 5f
         }
         val textPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
             color = 0xFFFFFFFF.toInt()
-            textSize = 24f
+            textSize = 28f
             textAlign = Paint.Align.CENTER
             isFakeBoldText = true
         }
         val rect = Rect(8, 8, width - 8, height - 8)
-        canvas.drawRoundRect(rect.left.toFloat(), rect.top.toFloat(), rect.right.toFloat(), rect.bottom.toFloat(), 20f, 20f, fillPaint)
-        canvas.drawRoundRect(rect.left.toFloat(), rect.top.toFloat(), rect.right.toFloat(), rect.bottom.toFloat(), 20f, 20f, strokePaint)
+        canvas.drawRoundRect(rect.left.toFloat(), rect.top.toFloat(), rect.right.toFloat(), rect.bottom.toFloat(), 22f, 22f, fillPaint)
+        canvas.drawRoundRect(rect.left.toFloat(), rect.top.toFloat(), rect.right.toFloat(), rect.bottom.toFloat(), 22f, 22f, strokePaint)
         val y = height / 2f - (textPaint.descent() + textPaint.ascent()) / 2f
         canvas.drawText(label.take(4), width / 2f, y, textPaint)
         return bitmap

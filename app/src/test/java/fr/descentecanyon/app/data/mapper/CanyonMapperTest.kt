@@ -3,7 +3,6 @@ package fr.descentecanyon.app.data.mapper
 import fr.descentecanyon.app.data.local.entity.CanyonEntity
 import fr.descentecanyon.app.data.local.entity.DebitEntity
 import fr.descentecanyon.app.data.local.entity.GeoPointEntity
-import fr.descentecanyon.app.data.remote.dto.ScrapedDebit
 import fr.descentecanyon.app.domain.model.GeoPointType
 import fr.descentecanyon.app.domain.model.NiveauDebit
 import org.junit.Assert.*
@@ -182,62 +181,6 @@ class CanyonMapperTest {
         val debit = entity.toDomain()
 
         assertEquals(NiveauDebit.INCONNU, debit.niveau)
-    }
-
-    @Test
-    fun `ScrapedDebit toLatestDomain keeps canyon name and parses weekday prefixed date`() {
-        val scraped = ScrapedDebit(
-            canyonId = 22437,
-            canyonNom = "St Meme",
-            date = "dim. 22/03",
-            niveauRaw = "TRES_GROS",
-        )
-
-        val debit = scraped.toLatestDomain()
-
-        assertEquals("St Meme", debit.canyonNom)
-        assertEquals(22, debit.date.dayOfMonth)
-        assertEquals(3, debit.date.monthValue)
-        assertEquals(NiveauDebit.TRES_GROS, debit.niveau)
-        assertTrue(debit.id != 0L)
-    }
-
-    @Test
-    fun `ScrapedDebit toLatestDomain generates stable ids for same content`() {
-        val first = ScrapedDebit(
-            canyonId = 24,
-            canyonNom = "Pissarde",
-            date = "dim. 22/03",
-            niveauRaw = "CORRECT",
-            auteur = "Test",
-        ).toLatestDomain()
-        val second = ScrapedDebit(
-            canyonId = 24,
-            canyonNom = "Pissarde",
-            date = "dim. 22/03",
-            niveauRaw = "CORRECT",
-            auteur = "Test",
-        ).toLatestDomain()
-
-        assertEquals(first.id, second.id)
-    }
-
-    @Test
-    fun `CanyonEntity toSummary normalizes country code`() {
-        val entity = CanyonEntity(
-            id = 1,
-            nom = "Test",
-            nomComplet = "Test",
-            pays = "FR",
-            departement = "Isere",
-            commune = "Test",
-            cotation = "v3a3III",
-            url = "/canyoning/canyon/1/test.html",
-        )
-
-        val summary = entity.toSummary()
-
-        assertEquals("France", summary.pays)
     }
 
     // --- GeoPointEntity with unknown type ---

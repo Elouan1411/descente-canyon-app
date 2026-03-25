@@ -89,25 +89,77 @@ class SearchCanyonsUseCaseTest {
 
     @Test
     fun `country and subdivision filters match multi-valued entries`() {
+        val catalog = listOf(
+            canyon(
+                id = 1,
+                pays = "France, Espagne",
+                countryTokens = listOf("France", "Espagne"),
+                departement = "Pyrenees-Atlantiques, Huesca",
+                departmentTokens = listOf("Pyrenees-Atlantiques", "Huesca"),
+                subdivisionsByCountry = mapOf(
+                    "France" to listOf("Pyrenees-Atlantiques"),
+                    "Espagne" to listOf("Huesca"),
+                ),
+            )
+        )
+
         val result = useCase(
-            catalog = listOf(
-                canyon(
-                    id = 1,
-                    pays = "France, Espagne",
-                    countryTokens = listOf("France", "Espagne"),
-                    departement = "Pyrenees-Atlantiques, Huesca",
-                    departmentTokens = listOf("Pyrenees-Atlantiques", "Huesca"),
-                )
-            ),
+            catalog = catalog,
             criteria = SearchCriteria(
                 selectedCountry = "Espagne",
                 selectedDepartment = "Huesca",
             ),
         )
 
+        val franceResult = useCase(
+            catalog = catalog,
+            criteria = SearchCriteria(
+                selectedCountry = "France",
+            ),
+        )
+
         assertEquals(listOf(1), result.results.map { it.id })
         assertEquals(listOf("Espagne", "France"), result.availableCountries)
-        assertEquals(listOf("Huesca", "Pyrenees-Atlantiques"), result.availableDepartments)
+        assertEquals(listOf("Huesca"), result.availableDepartments)
+        assertEquals(listOf("Pyrenees-Atlantiques"), franceResult.availableDepartments)
+    }
+
+    @Test
+    fun `distance sort orders nearest canyon first`() {
+        val result = useCase(
+            catalog = listOf(
+                canyon(id = 1, latitude = 43.7000, longitude = 6.9000),
+                canyon(id = 2, latitude = 43.9000, longitude = 7.3000),
+                canyon(id = 3, latitude = 44.5000, longitude = 5.5000),
+            ),
+            criteria = SearchCriteria(
+                sortField = SearchSortField.DISTANCE,
+                sortDirection = SortDirection.ASC,
+                userLatitude = 43.7050,
+                userLongitude = 6.9050,
+            ),
+        )
+
+        assertEquals(listOf(1, 2, 3), result.results.map { it.id })
+    }
+
+    @Test
+    fun `distance sort disables broad defer when user location is known`() {
+        val result = useCase(
+            catalog = listOf(
+                canyon(id = 1, latitude = 43.7000, longitude = 6.9000),
+                canyon(id = 2, latitude = 43.9000, longitude = 7.3000),
+            ),
+            criteria = SearchCriteria(
+                sortField = SearchSortField.DISTANCE,
+                sortDirection = SortDirection.ASC,
+                userLatitude = 43.7050,
+                userLongitude = 6.9050,
+            ),
+        )
+
+        assertEquals(false, result.isResultListDeferred)
+        assertEquals(listOf(1, 2), result.results.map { it.id })
     }
 
     private fun canyon(
@@ -118,6 +170,9 @@ class SearchCanyonsUseCaseTest {
         countryTokens: List<String> = listOf("France"),
         departement: String? = null,
         departmentTokens: List<String> = emptyList(),
+        subdivisionsByCountry: Map<String, List<String>> = emptyMap(),
+        latitude: Double? = null,
+        longitude: Double? = null,
     ) = CanyonSearchItem(
         id = id,
         nom = "Canyon $id",
@@ -126,10 +181,15 @@ class SearchCanyonsUseCaseTest {
         countryTokens = countryTokens,
         departement = departement,
         departmentTokens = departmentTokens,
+        subdivisionsByCountry = subdivisionsByCountry,
         cotation = cotation,
         cotationRating = CotationRating.parse(cotation),
         longueur = longueur,
+        representativeLat = latitude,
+        representativeLng = longitude,
         url = "/canyoning/canyon/$id/test.html",
         searchableText = "canyon $id ${countryTokens.joinToString(" ")} ${departmentTokens.joinToString(" ")}".lowercase(),
+        normalizedNom = "canyon $id",
+        normalizedNomComplet = "canyon $id",
     )
 }

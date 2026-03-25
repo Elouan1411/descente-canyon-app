@@ -40,6 +40,7 @@ class EmbeddedCanyonDataImporter @Inject constructor(
         val manifest = readJsonAsset<RoomImportManifest>("room-import/manifest.json")
         val importedVersion = appMetadataDao.get(DATASET_VERSION_KEY)?.value
         if (importedVersion == manifest.generatedAt && canyonDao.count() > 0) {
+            canyonDao.clearOfflineFlags()
             return
         }
 
@@ -130,7 +131,7 @@ class EmbeddedCanyonDataImporter @Inject constructor(
             remarques = remarques,
             hasSpecificRegulation = hasSpecificRegulation,
             isForbidden = isForbidden,
-            isOffline = true,
+            isOffline = false,
             isFavorite = isFavorite,
             lastUpdated = lastUpdated,
         )

@@ -107,17 +107,33 @@ class CanyonScraper @Inject constructor(
         withContext(Dispatchers.IO) {
             semaphore.withPermit {
                 runCatching {
-                    val connection = Jsoup.connect("$BASE_URL/job/canyonbynom")
+                    val connection = Jsoup.connect("$BASE_URL/canyoning")
                         .userAgent(USER_AGENT)
                         .timeout(TIMEOUT_MS)
-                        .data("nom", query)
-                        .ignoreContentType(true)
-                    val body = sessionManager.applyTo(connection).execute().body()
-                    val doc = Jsoup.parse(
-                        "<table><tbody>$body</tbody></table>",
-                        BASE_URL,
-                    )
+                        .data("q", query)
+                    val doc = sessionManager.applyTo(connection).post()
                     SearchParser.parse(doc)
+                }
+            }
+        }
+
+    suspend fun scrapeNearbyCanyons(latitude: Double, longitude: Double): Result<List<ScrapedCanyonSummary>> =
+        withContext(Dispatchers.IO) {
+            semaphore.withPermit {
+                runCatching {
+                    val url = "$BASE_URL/canyoning/proche.html?lat=$latitude&lng=$longitude"
+                    val doc = fetchDocument(url)
+                    NearbyParser.parse(doc)
+                }
+            }
+        }
+
+    suspend fun scrapeMapIndex(): Result<List<ScrapedCanyonSummary>> =
+        withContext(Dispatchers.IO) {
+            semaphore.withPermit {
+                runCatching {
+                    val doc = fetchDocument("$BASE_URL/canyoning/carte-des-canyons")
+                    MapIndexParser.parse(doc.outerHtml())
                 }
             }
         }
@@ -154,50 +170,6 @@ class CanyonScraper @Inject constructor(
                     if (!success) {
                         throw IllegalStateException("Le formulaire de debit a ete refuse par le serveur.")
                     }
-                }
-            }
-        }
-
-    /**
-     * Scrape nearby canyons using the server-side geolocation endpoint.
-     * POST /job/canyonbygeoloc with latitude, longitude, interetmin.
-     * The server calculates distances and returns sorted HTML table rows.
-     */
-    suspend fun scrapeNearbyCanyons(
-        latitude: Double,
-        longitude: Double,
-        interetMin: Double = 0.0,
-    ): Result<List<ScrapedCanyonSummary>> =
-        withContext(Dispatchers.IO) {
-            semaphore.withPermit {
-                runCatching {
-                    val connection = Jsoup.connect("$BASE_URL/job/canyonbygeoloc")
-                        .userAgent(USER_AGENT)
-                        .timeout(TIMEOUT_MS)
-                        .data("latitude", latitude.toString())
-                        .data("longitude", longitude.toString())
-                        .data("interetmin", interetMin.toString())
-                        .ignoreContentType(true)
-                    val body = sessionManager.applyTo(connection).execute().body()
-                    val doc = Jsoup.parse(
-                        "<table><tbody>$body</tbody></table>",
-                        BASE_URL,
-                    )
-                    NearbyParser.parse(doc)
-                }
-            }
-        }
-
-    suspend fun scrapeMapIndex(): Result<List<ScrapedCanyonSummary>> =
-        withContext(Dispatchers.IO) {
-            semaphore.withPermit {
-                runCatching {
-                    val connection = Jsoup.connect("$BASE_URL/canyoning/carte.json")
-                        .userAgent(USER_AGENT)
-                        .timeout(20_000)
-                        .ignoreContentType(true)
-                    val body = sessionManager.applyTo(connection).execute().body()
-                    MapIndexParser.parse(body)
                 }
             }
         }

@@ -11,8 +11,8 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.CloudDownload
 import androidx.compose.material.icons.filled.Star
-import androidx.compose.material.icons.automirrored.filled.StarHalf
-import androidx.compose.material.icons.outlined.StarOutline
+import androidx.compose.material.icons.filled.StarBorder
+import androidx.compose.material.icons.filled.StarHalf
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
@@ -39,7 +39,6 @@ import fr.descentecanyon.app.ui.theme.DebitGros
 import fr.descentecanyon.app.ui.theme.DebitInconnu
 import fr.descentecanyon.app.ui.theme.DebitSec
 import fr.descentecanyon.app.ui.theme.DebitTresGros
-import java.util.Locale
 
 @Composable
 fun CanyonSummaryCard(
@@ -61,12 +60,6 @@ fun CanyonSummaryCard(
                 verticalAlignment = Alignment.CenterVertically,
             ) {
                 Column(modifier = Modifier.weight(1f)) {
-                    fun String?.cleanLocationPart(): String? {
-                        return this
-                            ?.trim()
-                            ?.takeIf { it.isNotBlank() && !it.equals("null", ignoreCase = true) && it != "-" }
-                    }
-
                     Text(
                         text = canyon.nom,
                         style = MaterialTheme.typography.titleMedium,
@@ -74,20 +67,18 @@ fun CanyonSummaryCard(
                         maxLines = 1,
                         overflow = TextOverflow.Ellipsis,
                     )
-                    val location = listOf(
-                        canyon.pays.cleanLocationPart(),
-                        canyon.departement.cleanLocationPart(),
-                    ).joinToString(" - ")
+                    val location = buildString {
+                        append(canyon.pays)
+                        canyon.departement?.let { append(" - $it") }
+                    }
                     Text(
-                        text = location.ifBlank { stringResource(R.string.search_location_unknown) },
+                        text = location,
                         style = MaterialTheme.typography.bodySmall,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                     )
                 }
                 Spacer(modifier = Modifier.width(8.dp))
-                canyon.cotation.takeIf { it.isNotBlank() }?.let {
-                    CotationBadge(cotation = it)
-                }
+                CotationBadge(cotation = canyon.cotation)
             }
 
             Row(
@@ -97,12 +88,8 @@ fun CanyonSummaryCard(
                 horizontalArrangement = Arrangement.SpaceBetween,
                 verticalAlignment = Alignment.CenterVertically,
             ) {
-                if (canyon.isForbidden) {
-                    ForbiddenBadge()
-                } else {
-                    canyon.interet?.let { interest ->
-                        InterestStars(interest = interest)
-                    }
+                canyon.interet?.let { interest ->
+                    InterestStars(interest = interest)
                 }
                 Row(verticalAlignment = Alignment.CenterVertically) {
                     canyon.dernierDebit?.let { niveau ->
@@ -120,26 +107,6 @@ fun CanyonSummaryCard(
                 }
             }
         }
-    }
-}
-
-@Composable
-private fun ForbiddenBadge(
-    modifier: Modifier = Modifier,
-) {
-    Card(
-        modifier = modifier,
-        colors = CardDefaults.cardColors(
-            containerColor = MaterialTheme.colorScheme.error.copy(alpha = 0.12f),
-        ),
-    ) {
-        Text(
-            text = stringResource(R.string.regulation_forbidden),
-            style = MaterialTheme.typography.labelSmall,
-            fontWeight = FontWeight.Bold,
-            color = MaterialTheme.colorScheme.error,
-            modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp),
-        )
     }
 }
 
@@ -182,37 +149,34 @@ fun InterestStars(
     interest: Float,
     modifier: Modifier = Modifier,
 ) {
-    val clamped = interest.coerceIn(0f, 4f)
-    val fullStars = clamped.toInt()
-    val hasHalfStar = (clamped - fullStars) >= 0.5f
-
-    Row(
-        modifier = modifier,
-        verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.spacedBy(4.dp),
-    ) {
-        repeat(4) { index ->
-            val icon = when {
-                index < fullStars -> Icons.Filled.Star
-                index == fullStars && hasHalfStar -> Icons.AutoMirrored.Filled.StarHalf
-                else -> Icons.Outlined.StarOutline
-            }
+    Row(modifier = modifier, verticalAlignment = Alignment.CenterVertically) {
+        val fullStars = interest.toInt()
+        val hasHalf = (interest - fullStars) >= 0.5f
+        val emptyStars = 5 - fullStars - if (hasHalf) 1 else 0
+        repeat(fullStars) {
             Icon(
-                imageVector = icon,
+                imageVector = Icons.Default.Star,
                 contentDescription = null,
                 modifier = Modifier.size(16.dp),
-                tint = if (index < fullStars || (index == fullStars && hasHalfStar)) {
-                    MaterialTheme.colorScheme.secondary
-                } else {
-                    MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.45f)
-                },
+                tint = MaterialTheme.colorScheme.secondary,
             )
         }
-        Text(
-            text = String.format(Locale.US, "%.1f", clamped),
-            style = MaterialTheme.typography.labelSmall,
-            color = MaterialTheme.colorScheme.onSurfaceVariant,
-        )
+        if (hasHalf) {
+            Icon(
+                imageVector = Icons.Default.StarHalf,
+                contentDescription = null,
+                modifier = Modifier.size(16.dp),
+                tint = MaterialTheme.colorScheme.secondary,
+            )
+        }
+        repeat(emptyStars) {
+            Icon(
+                imageVector = Icons.Default.StarBorder,
+                contentDescription = null,
+                modifier = Modifier.size(16.dp),
+                tint = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.4f),
+            )
+        }
     }
 }
 

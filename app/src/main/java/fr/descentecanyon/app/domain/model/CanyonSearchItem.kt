@@ -9,6 +9,7 @@ data class CanyonSearchItem(
     val region: String? = null,
     val departement: String? = null,
     val departmentTokens: List<String> = emptyList(),
+    val subdivisionsByCountry: Map<String, List<String>> = emptyMap(),
     val commune: String? = null,
     val massif: String? = null,
     val bassin: String? = null,
@@ -30,7 +31,22 @@ data class CanyonSearchItem(
     val representativeLng: Double? = null,
     val url: String,
     val searchableText: String,
+    val normalizedNom: String,
+    val normalizedNomComplet: String,
 )
+
+fun CanyonSearchItem.subdivisionsFor(country: String?): List<String> {
+    if (country == null) {
+        return subdivisionsByCountry.values.flatten().ifEmpty { departmentTokens }
+    }
+
+    val mapped = subdivisionsByCountry.entries.firstOrNull { it.key.equals(country, ignoreCase = true) }
+    return when {
+        mapped != null -> mapped.value
+        countryTokens.size <= 1 && countryTokens.any { it.equals(country, ignoreCase = true) } -> departmentTokens
+        else -> emptyList()
+    }
+}
 
 fun CanyonSearchItem.toSummary(): CanyonSummary {
     return CanyonSummary(

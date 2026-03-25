@@ -9,7 +9,7 @@ import fr.descentecanyon.app.data.local.entity.PhotoEntity
 @Dao
 interface PhotoDao {
 
-    @Query("SELECT * FROM photos WHERE id = :photoId LIMIT 1")
+    @Query("SELECT * FROM photos WHERE id = :photoId")
     suspend fun getById(photoId: Long): PhotoEntity?
 
     @Query("SELECT * FROM photos WHERE canyonId = :canyonId")
@@ -19,7 +19,7 @@ interface PhotoDao {
     suspend fun insertAll(photos: List<PhotoEntity>)
 
     @Query("UPDATE photos SET localPath = :localPath WHERE id = :photoId")
-    suspend fun updateLocalPath(photoId: Long, localPath: String?)
+    suspend fun updateLocalPath(photoId: Long, localPath: String)
 
     @Query("DELETE FROM photos WHERE canyonId = :canyonId")
     suspend fun deleteByCanyonId(canyonId: Int)

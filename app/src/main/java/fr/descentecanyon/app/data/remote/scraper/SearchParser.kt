@@ -2,70 +2,39 @@ package fr.descentecanyon.app.data.remote.scraper
 
 import fr.descentecanyon.app.data.remote.dto.ScrapedCanyonSummary
 import org.jsoup.nodes.Document
-import java.util.Locale
 
 /**
- * Parses search results from the canyon AJAX endpoint.
- *
- * The endpoint POST /job/canyonbynom returns HTML table row fragments.
- * We locate canyon links and extract department/country from the
- * closest table row or from the surrounding DOM context.
+ * Parses search results from the canyon database.
+ * Search is done via POST to /canyoning with parameter q=query.
+ * Results are returned as a list of canyon links.
  */
 internal object SearchParser {
-
-    private val CANYON_URL_REGEX = Regex("/canyoning/canyon/(\\d+)/(.+)\\.html")
 
     fun parse(doc: Document): List<ScrapedCanyonSummary> {
         val results = mutableListOf<ScrapedCanyonSummary>()
 
+        // Search results are typically links to canyon pages in the main content area
         val canyonLinks = doc.select("a[href~=/canyoning/canyon/\\d+/]")
 
         for (link in canyonLinks) {
             val href = link.attr("href")
-            val match = CANYON_URL_REGEX.find(href) ?: continue
-            val id = match.groupValues[1].toIntOrNull() ?: continue
+            val id = Regex("/canyon/(\\d+)/").find(href)
+                ?.groupValues?.get(1)?.toIntOrNull() ?: continue
 
+            // Avoid duplicate IDs (same canyon can appear in multiple links)
             if (results.any { it.id == id }) continue
 
-            val nom = link.attr("title").takeIf { it.isNotBlank() }
-                ?: link.text().trim()
+            val nom = link.text().trim()
             if (nom.isBlank()) continue
 
-            // Try to find the enclosing <tr> for structured extraction
-            val row = link.closest("tr")
-
-            var departement: String? = null
-            var pays = ""
-
-            if (row != null) {
-                // Structured: look in the third <td> which contains flag + department
-                val locationTd = row.select("td").getOrNull(2)
-                departement = locationTd?.ownText()?.trim()?.takeIf { it.isNotBlank() }
-                val flagImg = locationTd?.selectFirst("img[class~=d-]")
-                pays = flagImg?.className()
-                    ?.split(" ")
-                    ?.firstOrNull { it.startsWith("d-") && it.length > 2 }
-                    ?.removePrefix("d-")
-                    ?.uppercase()
-                    ?.toDisplayCountryName()
-                    ?: ""
-            } else {
-                // Flat DOM: search siblings for flag images
-                val flagImg = doc.selectFirst("img[class~=d-]")
-                pays = flagImg?.className()
-                    ?.split(" ")
-                    ?.firstOrNull { it.startsWith("d-") && it.length > 2 }
-                    ?.removePrefix("d-")
-                    ?.uppercase()
-                    ?.toDisplayCountryName()
-                    ?: ""
-            }
+            // Try to get department/country from surrounding context
+            val parentRow = link.closest("tr") ?: link.closest("li") ?: link.parent()
+            val departement = parentRow?.select("td")?.getOrNull(1)?.text()?.trim()
 
             results.add(
                 ScrapedCanyonSummary(
                     id = id,
                     nom = nom,
-                    pays = pays,
                     departement = departement,
                     url = href,
                 )
@@ -74,23 +43,4 @@ internal object SearchParser {
 
         return results
     }
-}
-
-private fun String.toDisplayCountryName(): String {
-    val specialCases = mapOf(
-        "RE" to "Reunion",
-        "MQ" to "Martinique",
-        "GP" to "Guadeloupe",
-        "GF" to "Guyane",
-        "NC" to "Nouvelle-Caledonie",
-        "PF" to "Polynesie francaise",
-        "YT" to "Mayotte",
-    )
-    specialCases[this]?.let { return it }
-
-    val locale = Locale("", this)
-    return locale.getDisplayCountry(Locale.FRENCH)
-        .takeIf { it.isNotBlank() }
-        ?.replaceFirstChar { char -> if (char.isLowerCase()) char.titlecase(Locale.FRENCH) else char.toString() }
-        ?: this
 }

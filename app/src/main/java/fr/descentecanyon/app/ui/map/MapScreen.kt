@@ -4,9 +4,7 @@ import android.Manifest
 import android.annotation.SuppressLint
 import android.content.Context
 import android.location.Location
-import android.location.LocationListener
 import android.location.LocationManager
-import android.os.Looper
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.background
@@ -20,9 +18,9 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Explore
@@ -46,6 +44,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
@@ -148,69 +147,48 @@ fun MapScreen(
         }
     }
 
-    Column(
+    LazyColumn(
         modifier = modifier
             .fillMaxSize()
-            .statusBarsPadding()
             .padding(horizontal = 16.dp),
         verticalArrangement = Arrangement.spacedBy(12.dp),
     ) {
-        SnackbarHost(hostState = snackbarHostState)
-        Spacer(modifier = Modifier.height(8.dp))
+        item {
+            SnackbarHost(hostState = snackbarHostState)
+        }
 
-        if (!uiState.hasLocationPermission) {
-            PermissionCard(
-                showRationale = uiState.hasRequestedLocationPermission,
-                onRequestPermission = {
-                    permissionLauncher.launch(
-                        arrayOf(
-                            Manifest.permission.ACCESS_FINE_LOCATION,
-                            Manifest.permission.ACCESS_COARSE_LOCATION,
-                        )
-                    )
-                },
-            )
-        } else {
-            NearbyStatusCard(
+        item {
+            Spacer(modifier = Modifier.height(8.dp))
+            MapHeroCard(
                 canyonCount = uiState.canyons.size,
                 hasLocation = uiState.userLatitude != null && uiState.userLongitude != null,
-                onRefresh = { loadNearbyFromDevice(context, viewModel) },
             )
         }
 
-        when {
-            uiState.isLoading -> {
-                Box(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .fillMaxSize()
-                        .padding(32.dp),
-                    contentAlignment = Alignment.Center,
-                ) {
-                    CircularProgressIndicator()
-                }
+        item {
+            if (!uiState.hasLocationPermission) {
+                PermissionCard(
+                    showRationale = uiState.hasRequestedLocationPermission,
+                    onRequestPermission = {
+                        permissionLauncher.launch(
+                            arrayOf(
+                                Manifest.permission.ACCESS_FINE_LOCATION,
+                                Manifest.permission.ACCESS_COARSE_LOCATION,
+                            )
+                        )
+                    },
+                )
+            } else {
+                LocationCard(
+                    latitude = uiState.userLatitude,
+                    longitude = uiState.userLongitude,
+                    onRefresh = { loadNearbyFromDevice(context, viewModel) },
+                )
             }
+        }
 
-            uiState.error != null -> {
-                Card(
-                    colors = CardDefaults.cardColors(
-                        containerColor = MaterialTheme.colorScheme.errorContainer,
-                    ),
-                ) {
-                    Text(
-                        text = uiState.error.orEmpty(),
-                        color = MaterialTheme.colorScheme.onErrorContainer,
-                        style = MaterialTheme.typography.bodyMedium,
-                        modifier = Modifier.padding(16.dp),
-                    )
-                }
-            }
-
-            uiState.canyons.isEmpty() && uiState.hasLocationPermission -> {
-                EmptyNearbyCard()
-            }
-
-            else -> {
+        if (uiState.canyons.isNotEmpty()) {
+            item {
                 Card(
                     modifier = Modifier.fillMaxWidth(),
                     shape = RoundedCornerShape(24.dp),
@@ -226,61 +204,94 @@ fun MapScreen(
                             .height(280.dp),
                     )
                 }
+            }
+        }
 
-                Text(
-                    text = stringResource(R.string.map_nearby_title),
-                    style = MaterialTheme.typography.titleLarge,
-                    fontWeight = FontWeight.SemiBold,
-                )
-
-                Card(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .fillMaxSize(),
-                    elevation = CardDefaults.cardElevation(defaultElevation = 1.dp),
-                ) {
-                    LazyColumn(
-                        modifier = Modifier.fillMaxSize().padding(12.dp),
-                        verticalArrangement = Arrangement.spacedBy(10.dp),
+        when {
+            uiState.isLoading -> {
+                item {
+                    Box(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(32.dp),
+                        contentAlignment = Alignment.Center,
                     ) {
-                        items(
-                            items = uiState.canyons,
-                            key = { canyon -> canyon.id },
-                        ) { canyon ->
-                            NearbyCanyonCard(
-                                canyon = canyon,
-                                onClick = { onCanyonClick(canyon.id) },
-                            )
-                        }
-                        item { Spacer(modifier = Modifier.height(12.dp)) }
+                        CircularProgressIndicator()
                     }
                 }
             }
+
+            uiState.error != null -> {
+                item {
+                    Card(
+                        colors = CardDefaults.cardColors(
+                            containerColor = MaterialTheme.colorScheme.errorContainer,
+                        ),
+                    ) {
+                        Text(
+                            text = uiState.error.orEmpty(),
+                            color = MaterialTheme.colorScheme.onErrorContainer,
+                            style = MaterialTheme.typography.bodyMedium,
+                            modifier = Modifier.padding(16.dp),
+                        )
+                    }
+                }
+            }
+
+            uiState.canyons.isEmpty() && uiState.hasLocationPermission -> {
+                item {
+                    EmptyNearbyCard()
+                }
+            }
+
+            else -> {
+                item {
+                    Text(
+                        text = stringResource(R.string.map_nearby_title),
+                        style = MaterialTheme.typography.titleLarge,
+                        fontWeight = FontWeight.SemiBold,
+                    )
+                }
+                items(
+                    items = uiState.canyons,
+                    key = { canyon -> canyon.id },
+                ) { canyon ->
+                    NearbyCanyonCard(
+                        canyon = canyon,
+                        onClick = { onCanyonClick(canyon.id) },
+                    )
+                }
+            }
+        }
+
+        item {
+            Spacer(modifier = Modifier.height(12.dp))
         }
     }
 }
 
 @Composable
-private fun NearbyStatusCard(
+private fun MapHeroCard(
     canyonCount: Int,
     hasLocation: Boolean,
-    onRefresh: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     Card(
         modifier = modifier.fillMaxWidth(),
         shape = RoundedCornerShape(24.dp),
-        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.secondaryContainer),
+        colors = CardDefaults.cardColors(containerColor = Color.Transparent),
     ) {
-        Row(
-            modifier = Modifier.fillMaxWidth().padding(18.dp),
-            horizontalArrangement = Arrangement.SpaceBetween,
-            verticalAlignment = Alignment.CenterVertically,
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .background(
+                    Brush.linearGradient(
+                        colors = listOf(CanyonBlueDark, CanyonBlue, RockBrownLight),
+                    )
+                )
+                .padding(20.dp),
         ) {
-            Column(
-                modifier = Modifier.weight(1f),
-                verticalArrangement = Arrangement.spacedBy(6.dp),
-            ) {
+            Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
                 Row(
                     horizontalArrangement = Arrangement.spacedBy(10.dp),
                     verticalAlignment = Alignment.CenterVertically,
@@ -288,12 +299,12 @@ private fun NearbyStatusCard(
                     Icon(
                         imageVector = Icons.Default.Explore,
                         contentDescription = null,
-                        tint = MaterialTheme.colorScheme.onSecondaryContainer,
+                        tint = Color.White,
                     )
                     Text(
-                        text = stringResource(R.string.map_nearby_title),
-                        style = MaterialTheme.typography.titleLarge,
-                        color = MaterialTheme.colorScheme.onSecondaryContainer,
+                        text = stringResource(R.string.tab_map),
+                        style = MaterialTheme.typography.headlineSmall,
+                        color = Color.White,
                         fontWeight = FontWeight.Bold,
                     )
                 }
@@ -303,12 +314,18 @@ private fun NearbyStatusCard(
                     } else {
                         stringResource(R.string.map_ready_without_location)
                     },
-                    style = MaterialTheme.typography.bodyMedium,
-                    color = MaterialTheme.colorScheme.onSecondaryContainer,
+                    style = MaterialTheme.typography.bodyLarge,
+                    color = Color.White.copy(alpha = 0.92f),
                 )
-            }
-            Button(onClick = onRefresh) {
-                Text(text = stringResource(R.string.retry))
+                Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                    repeat(canyonCount.coerceIn(1, 4)) { index ->
+                        Box(
+                            modifier = Modifier
+                                .size(if (index == 0) 14.dp else 10.dp)
+                                .background(Color.White.copy(alpha = 0.9f), CircleShape),
+                        )
+                    }
+                }
             }
         }
     }
@@ -352,6 +369,49 @@ private fun PermissionCard(
 }
 
 @Composable
+private fun LocationCard(
+    latitude: Double?,
+    longitude: Double?,
+    onRefresh: () -> Unit,
+    modifier: Modifier = Modifier,
+) {
+    Card(
+        modifier = modifier.fillMaxWidth(),
+        colors = CardDefaults.cardColors(
+            containerColor = MaterialTheme.colorScheme.secondaryContainer,
+        ),
+    ) {
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(16.dp),
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically,
+        ) {
+            Column(modifier = Modifier.weight(1f)) {
+                Text(
+                    text = stringResource(R.string.map_location_title),
+                    style = MaterialTheme.typography.titleMedium,
+                    fontWeight = FontWeight.SemiBold,
+                )
+                Text(
+                    text = if (latitude != null && longitude != null) {
+                        stringResource(R.string.map_location_coordinates, latitude, longitude)
+                    } else {
+                        stringResource(R.string.map_location_unknown)
+                    },
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSecondaryContainer,
+                )
+            }
+            Button(onClick = onRefresh) {
+                Text(text = stringResource(R.string.retry))
+            }
+        }
+    }
+}
+
+@Composable
 private fun EmptyNearbyCard(modifier: Modifier = Modifier) {
     Card(modifier = modifier.fillMaxWidth()) {
         Column(
@@ -383,58 +443,39 @@ private fun NearbyCanyonCard(
             canyon = canyon,
             onClick = onClick,
         )
+        canyon.latitude?.let { latitude ->
+            canyon.longitude?.let { longitude ->
+                Row(
+                    modifier = Modifier.padding(start = 12.dp, top = 6.dp),
+                    verticalAlignment = Alignment.CenterVertically,
+                ) {
+                    Icon(
+                        imageVector = Icons.Default.Place,
+                        contentDescription = null,
+                        modifier = Modifier.size(14.dp),
+                        tint = MaterialTheme.colorScheme.primary,
+                    )
+                    Spacer(modifier = Modifier.size(4.dp))
+                    Text(
+                        text = stringResource(R.string.map_marker_coordinates, latitude, longitude),
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    )
+                }
+            }
+        }
     }
 }
 
-@SuppressLint("MissingPermission")
 private fun loadNearbyFromDevice(
     context: Context,
     viewModel: MapViewModel,
 ) {
-    if (!context.hasLocationPermission()) {
+    val location = context.bestLastKnownLocation() ?: run {
         viewModel.onLocationUnavailable()
         return
     }
-
-    val locationManager = context.getSystemService(Context.LOCATION_SERVICE) as? LocationManager
-    if (locationManager == null) {
-        viewModel.onLocationUnavailable()
-        return
-    }
-
-    // Try cached location first
-    val cached = bestLastKnownLocation(locationManager)
-    if (cached != null) {
-        viewModel.loadNearby(cached.latitude, cached.longitude)
-        return
-    }
-
-    // No cached location: request a fresh one
-    val provider = when {
-        locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER) -> LocationManager.NETWORK_PROVIDER
-        locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER) -> LocationManager.GPS_PROVIDER
-        else -> {
-            viewModel.onLocationUnavailable()
-            return
-        }
-    }
-
-    locationManager.requestSingleUpdate(
-        provider,
-        object : LocationListener {
-            override fun onLocationChanged(location: Location) {
-                viewModel.loadNearby(location.latitude, location.longitude)
-            }
-
-            @Deprecated("Deprecated in API")
-            override fun onStatusChanged(provider: String?, status: Int, extras: android.os.Bundle?) {}
-            override fun onProviderEnabled(provider: String) {}
-            override fun onProviderDisabled(provider: String) {
-                viewModel.onLocationUnavailable()
-            }
-        },
-        Looper.getMainLooper(),
-    )
+    viewModel.loadNearby(location.latitude, location.longitude)
 }
 
 private fun Context.hasLocationPermission(): Boolean {
@@ -444,17 +485,18 @@ private fun Context.hasLocationPermission(): Boolean {
         android.content.pm.PackageManager.PERMISSION_GRANTED
 }
 
-private fun bestLastKnownLocation(locationManager: LocationManager): Location? {
-    val providers = listOf(
-        LocationManager.NETWORK_PROVIDER,
-        LocationManager.GPS_PROVIDER,
-        LocationManager.PASSIVE_PROVIDER,
-    )
+@SuppressLint("MissingPermission")
+private fun Context.bestLastKnownLocation(): Location? {
+    if (!hasLocationPermission()) return null
 
-    @SuppressLint("MissingPermission")
-    fun getLocation(provider: String): Location? =
+    val locationManager = getSystemService(Context.LOCATION_SERVICE) as? LocationManager ?: return null
+    val providers = buildList {
+        add(LocationManager.GPS_PROVIDER)
+        add(LocationManager.NETWORK_PROVIDER)
+        add(LocationManager.PASSIVE_PROVIDER)
+    }
+
+    return providers.mapNotNull { provider ->
         runCatching { locationManager.getLastKnownLocation(provider) }.getOrNull()
-
-    return providers.mapNotNull { getLocation(it) }
-        .maxByOrNull { it.accuracy.takeIf { a -> a > 0f }?.let { a -> -a } ?: Float.MIN_VALUE }
+    }.maxByOrNull { it.accuracy.takeIf { accuracy -> accuracy > 0f }?.let { accuracy -> -accuracy } ?: Float.MIN_VALUE }
 }

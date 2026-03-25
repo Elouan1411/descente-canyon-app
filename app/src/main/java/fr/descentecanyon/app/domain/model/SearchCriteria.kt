@@ -57,11 +57,15 @@ data class SearchCriteria(
     }
 
     fun shouldDeferBroadResults(): Boolean {
-        return query.isBlank() &&
+        val canSortByDistance = sortField == SearchSortField.DISTANCE &&
+            userLatitude != null &&
+            userLongitude != null
+        return query.normalizeForSearch().length < 2 &&
             !favoritesOnly &&
             selectedCountry == null &&
             selectedDepartment == null &&
-            !hasAdvancedFilters()
+            !hasAdvancedFilters() &&
+            !canSortByDistance
     }
 
     fun activeFilterCount(): Int {

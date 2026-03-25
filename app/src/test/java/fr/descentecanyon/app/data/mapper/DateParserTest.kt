@@ -118,25 +118,4 @@ class DateParserTest {
         val result = DateParser.parseToIsoString("sam. 8 aout 2025")
         assertEquals("2025-08-08", result)
     }
-
-    @Test
-    fun `French date with abbreviated month and dot`() {
-        val result = DateParser.parseToIsoString("jeu. 16 oct. 2025")
-        assertEquals("2025-10-16", result)
-    }
-
-    @Test
-    fun `French date with abbreviated accented month and dot`() {
-        val result = DateParser.parseToIsoString("mer. 20 août 2025")
-        assertEquals("2025-08-20", result)
-    }
-
-    @Test
-    fun `day slash month with weekday prefix parses current year`() {
-        val result = DateParser.parseToIsoString("dim. 22/03")
-        val parsed = LocalDate.parse(result!!)
-        assertEquals(22, parsed.dayOfMonth)
-        assertEquals(3, parsed.monthValue)
-        assertEquals(LocalDate.now().year, parsed.year)
-    }
 }

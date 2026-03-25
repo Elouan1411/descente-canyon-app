@@ -1,7 +1,7 @@
 package fr.descentecanyon.app.data.mapper
 
-import fr.descentecanyon.app.data.local.entity.CanyonEntity
 import fr.descentecanyon.app.data.local.entity.BibliographyEntryEntity
+import fr.descentecanyon.app.data.local.entity.CanyonEntity
 import fr.descentecanyon.app.data.local.entity.DebitEntity
 import fr.descentecanyon.app.data.local.entity.GeoPointEntity
 import fr.descentecanyon.app.data.local.entity.PhotoEntity
@@ -34,26 +34,7 @@ import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 
-internal fun String.normalizeCountryName(): String {
-    if (length !in 2..3) return this
-
-    val code = uppercase()
-    val specialCases = mapOf(
-        "RE" to "Reunion",
-        "MQ" to "Martinique",
-        "GP" to "Guadeloupe",
-        "GF" to "Guyane",
-        "NC" to "Nouvelle-Caledonie",
-        "PF" to "Polynesie francaise",
-        "YT" to "Mayotte",
-    )
-    specialCases[code]?.let { return it }
-
-    return Locale("", code).getDisplayCountry(Locale.FRENCH)
-        .takeIf { it.isNotBlank() }
-        ?.replaceFirstChar { char -> if (char.isLowerCase()) char.titlecase(Locale.FRENCH) else char.toString() }
-        ?: this
-}
+// --- Entity -> Domain ---
 
 private val mapperJson = Json { ignoreUnknownKeys = true }
 
@@ -72,20 +53,17 @@ private fun String?.fromJsonStringList(): List<String> {
 
 private fun List<RegulationAttachment>.toJsonAttachments(): String? {
     if (isEmpty()) return null
-    val payload = map { RegulationAttachmentPayload(label = it.label, url = it.url) }
-    return mapperJson.encodeToString(payload)
+    return mapperJson.encodeToString(map { RegulationAttachmentPayload(it.label, it.url) })
 }
 
 private fun String?.fromJsonAttachments(): List<RegulationAttachment> {
     if (this.isNullOrBlank()) return emptyList()
     return runCatching {
         mapperJson.decodeFromString<List<RegulationAttachmentPayload>>(this).map {
-            RegulationAttachment(label = it.label, url = it.url)
+            RegulationAttachment(it.label, it.url)
         }
     }.getOrDefault(emptyList())
 }
-
-// --- Entity -> Domain ---
 
 fun CanyonEntity.toDomain(): Canyon = Canyon(
     id = id,
@@ -117,24 +95,44 @@ fun CanyonEntity.toDomain(): Canyon = Canyon(
     lastUpdated = lastUpdated,
 )
 
-fun CanyonEntity.toSummary(
-    isForbidden: Boolean = false,
-): CanyonSummary = CanyonSummary(
+internal fun String.normalizeCountryName(): String {
+    val normalized = normalizeForSearch()
+    if (normalized == "france espagne") return "France, Espagne"
+    if (length !in 2..3) return trim()
+
+    val code = uppercase()
+    val specialCases = mapOf(
+        "RE" to "Reunion",
+        "MQ" to "Martinique",
+        "GP" to "Guadeloupe",
+        "GF" to "Guyane",
+        "NC" to "Nouvelle-Caledonie",
+        "PF" to "Polynesie francaise",
+        "YT" to "Mayotte",
+    )
+    specialCases[code]?.let { return it }
+
+    return Locale("", code).getDisplayCountry(Locale.FRENCH)
+        .takeIf { it.isNotBlank() }
+        ?.replaceFirstChar { char -> if (char.isLowerCase()) char.titlecase(Locale.FRENCH) else char.toString() }
+        ?: trim()
+}
+
+fun CanyonEntity.toSummary(): CanyonSummary = CanyonSummary(
     id = id,
     nom = nom,
     pays = pays.normalizeCountryName(),
     departement = departement,
     cotation = cotation,
-    interet = interet.normalizedInterest().takeUnless { isForbidden || this.isForbidden },
+    interet = interet.normalizedInterest().takeUnless { isForbidden },
     url = url,
     isOffline = isOffline,
-    isForbidden = isForbidden || this.isForbidden,
+    isForbidden = isForbidden,
 )
 
 fun CanyonEntity.toSearchItem(
     representativeLat: Double? = null,
     representativeLng: Double? = null,
-    isForbidden: Boolean = false,
 ): CanyonSearchItem {
     val normalizedCountry = pays.normalizeCountryName()
     val countryTokens = normalizedCountry.toAdministrativeTokens()
@@ -154,7 +152,7 @@ fun CanyonEntity.toSearchItem(
         coursEau = coursEau,
         cotation = cotation,
         cotationRating = CotationRating.parse(cotation),
-        interet = interet.normalizedInterest().takeUnless { isForbidden || this.isForbidden },
+        interet = interet.normalizedInterest(),
         nbVotes = nbVotes,
         altitudeDepart = altitudeDepart,
         denivele = denivele,
@@ -162,7 +160,7 @@ fun CanyonEntity.toSearchItem(
         cascadeMax = cascadeMax,
         cordeMin = cordeMin,
         hasSpecificRegulation = hasSpecificRegulation,
-        isForbidden = isForbidden || this.isForbidden,
+        isForbidden = isForbidden,
         hasNavette = navette.hasUsefulNavette(),
         isFavorite = isFavorite,
         representativeLat = representativeLat,
@@ -181,6 +179,8 @@ fun CanyonEntity.toSearchItem(
             bassin?.let(::add)
             coursEau?.let(::add)
         }.joinToString(" ").normalizeForSearch(),
+        normalizedNom = nom.normalizeForSearch(),
+        normalizedNomComplet = nomComplet.normalizeForSearch(),
     )
 }
 
@@ -259,41 +259,6 @@ fun DebitEntity.toDomain(): Debit = Debit(
     commentaire = commentaire,
 )
 
-fun ScrapedDebit.toLatestDomain(): Debit = Debit(
-    id = buildLatestDebitStableId(),
-    canyonId = canyonId,
-    canyonNom = canyonNom.ifBlank { null },
-    date = DateParser.parseToLocalDate(date) ?: LocalDate.of(LocalDate.now().year, 1, 1),
-    niveau = try { NiveauDebit.valueOf(niveauRaw) } catch (_: Exception) { NiveauDebit.INCONNU },
-    auteur = auteur,
-    isDescended = isDescended,
-    waterTemperature = waterTemperature,
-    airTemperature = airTemperature,
-    commentaire = commentaire,
-)
-
-private fun ScrapedDebit.buildLatestDebitStableId(): Long {
-    return listOf(canyonId.toString(), canyonNom, date, niveauRaw, auteur.orEmpty(), commentaire.orEmpty())
-        .joinToString("|")
-        .hashCode()
-        .toLong()
-        .let { if (it == 0L) 1L else kotlin.math.abs(it) }
-}
-
-private fun String?.hasUsefulNavette(): Boolean {
-    val normalized = this?.normalizeForSearch().orEmpty()
-    if (normalized.isBlank()) return false
-    return normalized !in setOf("non", "no", "aucune", "aucun", "0", "-")
-}
-
-private fun String?.toAdministrativeTokens(): List<String> {
-    return this.orEmpty()
-        .split(',', ';')
-        .map(String::trim)
-        .filter(String::isNotBlank)
-        .distinct()
-}
-
 fun PhotoEntity.toDomain(): CanyonPhoto = CanyonPhoto(
     id = id,
     canyonId = canyonId,
@@ -327,7 +292,6 @@ fun ScrapedCanyonDetail.toEntity(): CanyonEntity = CanyonEntity(
     navette = navette,
     interet = interet,
     nbVotes = nbVotes,
-    isForbidden = isForbidden,
     url = url,
     accesAval = accesAval,
     accesAmont = accesAmont,
@@ -376,6 +340,18 @@ fun ScrapedCanyonSummary.toEntity(): CanyonEntity = CanyonEntity(
     url = url,
 )
 
-private fun Float?.normalizedInterest(): Float? {
-    return this?.takeIf { it in 0f..4f }
+private fun Float?.normalizedInterest(): Float? = this?.takeIf { it in 0f..4f }
+
+private fun String?.hasUsefulNavette(): Boolean {
+    val normalized = this?.normalizeForSearch().orEmpty()
+    if (normalized.isBlank()) return false
+    return normalized !in setOf("non", "no", "aucune", "aucun", "0", "-")
+}
+
+private fun String?.toAdministrativeTokens(): List<String> {
+    return this.orEmpty()
+        .split(',', ';')
+        .map(String::trim)
+        .filter(String::isNotBlank)
+        .distinct()
 }

@@ -4,6 +4,7 @@ import androidx.lifecycle.SavedStateHandle
 import fr.descentecanyon.app.data.network.ConnectivityObserver
 import fr.descentecanyon.app.domain.model.Canyon
 import fr.descentecanyon.app.domain.model.CanyonDetail
+import fr.descentecanyon.app.domain.model.CanyonPhoto
 import fr.descentecanyon.app.domain.repository.CanyonRepository
 import fr.descentecanyon.app.domain.repository.FavoritesRepository
 import fr.descentecanyon.app.domain.repository.PhotoRepository
@@ -20,7 +21,7 @@ import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.test.advanceUntilIdle
 import kotlinx.coroutines.test.runTest
 import org.junit.Assert.assertEquals
-import org.junit.Assert.assertTrue
+import org.junit.Assert.assertFalse
 import org.junit.Rule
 import org.junit.Test
 
@@ -41,10 +42,10 @@ class CanyonDetailViewModelTest {
     @Test
     @OptIn(ExperimentalCoroutinesApi::class)
     fun `preview loads before full detail`() = runTest {
-        coEvery { canyonRepository.getCanyonDetail(42) } returns Result.success(detail(isOffline = false))
         coEvery { canyonRepository.getCanyonPreview(42) } returns Result.success(
-            detail(isOffline = false).copy(canyon = detail(false).canyon.copy(nom = "Preview"))
+            detail().copy(canyon = detail().canyon.copy(nom = "Preview"))
         )
+        coEvery { canyonRepository.getCanyonDetail(42) } returns Result.success(detail())
         every { favoritesRepository.isFavorite(42) } returns flowOf(false)
         every { connectivityObserver.observe() } returns flowOf(true)
 
@@ -57,37 +58,18 @@ class CanyonDetailViewModelTest {
             connectivityObserver = connectivityObserver,
             favoritesRepository = favoritesRepository,
         )
+
         advanceUntilIdle()
 
         assertEquals("Riolan", viewModel.uiState.value.canyonDetail?.canyon?.nom)
-        assertTrue(!viewModel.uiState.value.isLoading)
+        assertFalse(viewModel.uiState.value.isLoading)
     }
 
     @Test
     @OptIn(ExperimentalCoroutinesApi::class)
     fun `download photo updates local path and transient message`() = runTest {
-        coEvery { canyonRepository.getCanyonPreview(42) } returns Result.success(
-            detail(false).copy(
-                photos = listOf(
-                    fr.descentecanyon.app.domain.model.CanyonPhoto(
-                        id = 8,
-                        canyonId = 42,
-                        url = "https://example.com/photo.jpg",
-                    )
-                )
-            )
-        )
-        coEvery { canyonRepository.getCanyonDetail(42) } returns Result.success(
-            detail(false).copy(
-                photos = listOf(
-                    fr.descentecanyon.app.domain.model.CanyonPhoto(
-                        id = 8,
-                        canyonId = 42,
-                        url = "https://example.com/photo.jpg",
-                    )
-                )
-            )
-        )
+        coEvery { canyonRepository.getCanyonPreview(42) } returns Result.success(detail())
+        coEvery { canyonRepository.getCanyonDetail(42) } returns Result.success(detail())
         coEvery { photoRepository.downloadPhoto(8) } returns Result.success("/tmp/photo.jpg")
         every { favoritesRepository.isFavorite(42) } returns flowOf(false)
         every { connectivityObserver.observe() } returns flowOf(true)
@@ -101,8 +83,8 @@ class CanyonDetailViewModelTest {
             connectivityObserver = connectivityObserver,
             favoritesRepository = favoritesRepository,
         )
-
         advanceUntilIdle()
+
         viewModel.downloadPhoto(8)
         advanceUntilIdle()
 
@@ -110,7 +92,7 @@ class CanyonDetailViewModelTest {
         assertEquals("Photo telechargee", viewModel.uiState.value.transientMessage)
     }
 
-    private fun detail(isOffline: Boolean) = CanyonDetail(
+    private fun detail() = CanyonDetail(
         canyon = Canyon(
             id = 42,
             nom = "Riolan",
@@ -119,7 +101,14 @@ class CanyonDetailViewModelTest {
             commune = "Sigale",
             cotation = "v4a4III",
             url = "/canyoning/canyon/42/riolan.html",
-            isOffline = isOffline,
+        ),
+        photos = listOf(
+            CanyonPhoto(
+                id = 8,
+                canyonId = 42,
+                url = "https://example.test/photo.jpg",
+                thumbnailUrl = "https://example.test/thumb.jpg",
+            )
         ),
     )
 }

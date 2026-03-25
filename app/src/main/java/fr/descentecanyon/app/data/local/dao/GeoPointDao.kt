@@ -20,7 +20,4 @@ interface GeoPointDao {
 
     @Query("DELETE FROM geo_points WHERE canyonId = :canyonId")
     suspend fun deleteByCanyonId(canyonId: Int)
-
-    @Query("DELETE FROM geo_points")
-    suspend fun clearAll()
 }

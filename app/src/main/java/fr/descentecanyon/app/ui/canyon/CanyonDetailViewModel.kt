@@ -21,6 +21,8 @@ import javax.inject.Inject
 data class CanyonDetailUiState(
     val canyonDetail: CanyonDetail? = null,
     val isLoading: Boolean = false,
+    val isLoadingPhotos: Boolean = false,
+    val isLoadingDebits: Boolean = false,
     val error: String? = null,
     val isFavorite: Boolean = false,
     val downloadingPhotoIds: Set<Long> = emptySet(),
@@ -53,12 +55,21 @@ class CanyonDetailViewModel @Inject constructor(
 
     fun loadCanyon(id: Int) {
         viewModelScope.launch {
-            _uiState.update { it.copy(isLoading = true, error = null) }
+            _uiState.update {
+                it.copy(
+                    isLoading = true,
+                    isLoadingPhotos = true,
+                    isLoadingDebits = true,
+                    error = null,
+                )
+            }
             getCanyonPreviewUseCase(id).onSuccess { preview ->
                 _uiState.update {
                     it.copy(
                         canyonDetail = preview,
                         isLoading = false,
+                        isLoadingPhotos = true,
+                        isLoadingDebits = true,
                         error = null,
                     )
                 }
@@ -70,6 +81,8 @@ class CanyonDetailViewModel @Inject constructor(
                         it.copy(
                             canyonDetail = detail,
                             isLoading = false,
+                            isLoadingPhotos = false,
+                            isLoadingDebits = false,
                             error = null,
                         )
                     }
@@ -78,6 +91,8 @@ class CanyonDetailViewModel @Inject constructor(
                     _uiState.update {
                         it.copy(
                             isLoading = false,
+                            isLoadingPhotos = false,
+                            isLoadingDebits = false,
                             error = throwable.message ?: "Erreur inconnue",
                         )
                     }

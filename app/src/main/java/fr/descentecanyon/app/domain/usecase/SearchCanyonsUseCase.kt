@@ -8,6 +8,7 @@ import fr.descentecanyon.app.domain.model.SearchSortField
 import fr.descentecanyon.app.domain.model.SortDirection
 import fr.descentecanyon.app.domain.model.matches
 import fr.descentecanyon.app.domain.model.normalizeForSearch
+import fr.descentecanyon.app.domain.model.subdivisionsFor
 import fr.descentecanyon.app.domain.repository.CanyonRepository
 import javax.inject.Inject
 import kotlin.math.asin
@@ -26,6 +27,8 @@ class SearchCanyonsUseCase @Inject constructor(
         criteria: SearchCriteria,
     ): SearchResultSet {
         val normalizedQuery = criteria.query.normalizeForSearch()
+        val shouldDeferResults = criteria.shouldDeferBroadResults()
+
         val baseMatches = catalog.asSequence()
             .filter { matchesBaseFilters(it, criteria, normalizedQuery) }
             .toList()
@@ -34,25 +37,27 @@ class SearchCanyonsUseCase @Inject constructor(
             .flatMap { it.countryTokens.asSequence() }
             .distinct()
             .sorted()
+            .toList()
 
         val countryMatches = baseMatches.asSequence()
             .filter { matchesCountry(it, criteria.selectedCountry) }
             .toList()
 
         val availableDepartments = countryMatches.asSequence()
-            .flatMap { it.departmentTokens.asSequence() }
+            .flatMap { it.subdivisionsFor(criteria.selectedCountry).asSequence() }
             .distinct()
             .sorted()
-
-        val results = countryMatches.asSequence()
-            .filter { matchesDepartment(it, criteria.selectedDepartment) }
             .toList()
 
-        if (criteria.shouldDeferBroadResults()) {
+        val results = countryMatches.asSequence()
+            .filter { matchesDepartment(it, criteria.selectedCountry, criteria.selectedDepartment) }
+            .toList()
+
+        if (shouldDeferResults) {
             return SearchResultSet(
                 results = emptyList(),
-                availableCountries = availableCountries.toList(),
-                availableDepartments = availableDepartments.toList(),
+                availableCountries = availableCountries,
+                availableDepartments = availableDepartments,
                 totalResultsCount = results.size,
                 isResultListDeferred = true,
             )
@@ -60,8 +65,8 @@ class SearchCanyonsUseCase @Inject constructor(
 
         return SearchResultSet(
             results = sortItems(results, criteria),
-            availableCountries = availableCountries.toList(),
-            availableDepartments = availableDepartments.toList(),
+            availableCountries = availableCountries,
+            availableDepartments = availableDepartments,
             totalResultsCount = results.size,
         )
     }
@@ -88,50 +93,41 @@ class SearchCanyonsUseCase @Inject constructor(
         return country == null || item.countryTokens.any { it.equals(country, ignoreCase = true) }
     }
 
-    private fun matchesDepartment(item: CanyonSearchItem, department: String?): Boolean {
-        return department == null || item.departmentTokens.any { it.equals(department, ignoreCase = true) }
+    private fun matchesDepartment(item: CanyonSearchItem, country: String?, department: String?): Boolean {
+        return department == null || item.subdivisionsFor(country).any { it.equals(department, ignoreCase = true) }
     }
 
-    private fun sortItems(
-        items: List<CanyonSearchItem>,
-        criteria: SearchCriteria,
-    ): List<CanyonSearchItem> {
+    private fun matchesQuery(item: CanyonSearchItem, normalizedQuery: String): Boolean {
+        if (normalizedQuery.isBlank()) return true
+        return item.searchableText.contains(normalizedQuery)
+    }
+
+    private fun sortItems(items: List<CanyonSearchItem>, criteria: SearchCriteria): List<CanyonSearchItem> {
+        if (items.size <= 1) return items
+        if (criteria.sortField == SearchSortField.RELEVANCE) return sortByRelevance(items, criteria)
+
         val comparator = when (criteria.sortField) {
-            SearchSortField.RELEVANCE -> compareBy<CanyonSearchItem> {
-                relevanceScore(it, criteria.query)
-            }
-                .thenBy { it.interet ?: Float.NEGATIVE_INFINITY }
-                .thenBy { it.nbVotes }
-                .thenBy(String.CASE_INSENSITIVE_ORDER) { it.nom }
-
             SearchSortField.NAME -> compareBy(String.CASE_INSENSITIVE_ORDER) { it.nom }
-
-            SearchSortField.INTEREST -> compareNullable<CanyonSearchItem, Float>(selector = { item -> item.interet })
+            SearchSortField.INTEREST -> compareNullable<CanyonSearchItem, Float> { it.interet }
                 .thenBy { it.nbVotes }
                 .thenBy(String.CASE_INSENSITIVE_ORDER) { it.nom }
-
             SearchSortField.POPULARITY -> compareBy<CanyonSearchItem> { it.nbVotes }
-                .then(compareNullable<CanyonSearchItem, Float>(selector = { item -> item.interet }))
+                .then(compareNullable<CanyonSearchItem, Float> { it.interet })
                 .thenBy(String.CASE_INSENSITIVE_ORDER) { it.nom }
-
             SearchSortField.DIFFICULTY -> Comparator { left, right ->
                 compareDifficultyAscending(left.cotationRating, right.cotationRating)
                     .takeIf { it != 0 }
-                    ?: compareCotationFallback(left.cotationRating, right.cotationRating)
-                        .takeIf { it != 0 }
+                    ?: compareCotationFallback(left.cotationRating, right.cotationRating).takeIf { it != 0 }
                     ?: left.nom.compareTo(right.nom, ignoreCase = true)
             }
-
-            SearchSortField.ELEVATION -> compareNullable<CanyonSearchItem, Int>(selector = { item -> item.denivele })
+            SearchSortField.ELEVATION -> compareNullable<CanyonSearchItem, Int> { it.denivele }
                 .thenBy(String.CASE_INSENSITIVE_ORDER) { it.nom }
-
-            SearchSortField.LENGTH -> compareNullable<CanyonSearchItem, Int>(selector = { item -> item.longueur })
+            SearchSortField.LENGTH -> compareNullable<CanyonSearchItem, Int> { it.longueur }
                 .thenBy(String.CASE_INSENSITIVE_ORDER) { it.nom }
-
-            SearchSortField.MAX_WATERFALL -> compareNullable<CanyonSearchItem, Int>(selector = { item -> item.cascadeMax })
+            SearchSortField.MAX_WATERFALL -> compareNullable<CanyonSearchItem, Int> { it.cascadeMax }
                 .thenBy(String.CASE_INSENSITIVE_ORDER) { it.nom }
-
             SearchSortField.DISTANCE -> compareByDistance(criteria)
+            SearchSortField.RELEVANCE -> compareBy(String.CASE_INSENSITIVE_ORDER) { it.nom }
         }
 
         val sorted = items.sortedWith(comparator)
@@ -141,23 +137,31 @@ class SearchCanyonsUseCase @Inject constructor(
         }
     }
 
-    private fun matchesQuery(item: CanyonSearchItem, normalizedQuery: String): Boolean {
-        if (normalizedQuery.isBlank()) return true
-        return item.searchableText.contains(normalizedQuery)
+    private fun sortByRelevance(items: List<CanyonSearchItem>, criteria: SearchCriteria): List<CanyonSearchItem> {
+        val normalizedQuery = criteria.query.normalizeForSearch()
+        val sorted = items.map { item -> ScoredSearchItem(item, relevanceScore(item, normalizedQuery)) }
+            .sortedWith(
+                compareBy<ScoredSearchItem> { it.relevance }
+                    .thenBy { it.item.interet ?: Float.NEGATIVE_INFINITY }
+                    .thenBy { it.item.nbVotes }
+                    .thenBy(String.CASE_INSENSITIVE_ORDER) { it.item.nom }
+            )
+            .map { it.item }
+
+        return when (criteria.sortDirection) {
+            SortDirection.ASC -> sorted
+            SortDirection.DESC -> sorted.reversed()
+        }
     }
 
-    private fun relevanceScore(item: CanyonSearchItem, query: String): Int {
-        val normalizedQuery = query.normalizeForSearch()
+    private fun relevanceScore(item: CanyonSearchItem, normalizedQuery: String): Int {
         if (normalizedQuery.isBlank()) return 0
-
-        val normalizedName = item.nom.normalizeForSearch()
-        val normalizedFullName = item.nomComplet.normalizeForSearch()
         return when {
-            normalizedName == normalizedQuery -> 500
-            normalizedName.startsWith(normalizedQuery) -> 400
-            normalizedName.contains(normalizedQuery) -> 300
-            normalizedFullName.startsWith(normalizedQuery) -> 250
-            normalizedFullName.contains(normalizedQuery) -> 200
+            item.normalizedNom == normalizedQuery -> 500
+            item.normalizedNom.startsWith(normalizedQuery) -> 400
+            item.normalizedNom.contains(normalizedQuery) -> 300
+            item.normalizedNomComplet.startsWith(normalizedQuery) -> 250
+            item.normalizedNomComplet.contains(normalizedQuery) -> 200
             else -> 100
         }
     }
@@ -179,30 +183,25 @@ class SearchCanyonsUseCase @Inject constructor(
             leftProfile == null && rightProfile == null -> 0
             leftProfile == null -> 1
             rightProfile == null -> -1
-            else -> {
-                leftProfile.zip(rightProfile).firstOrNull { it.first != it.second }
-                    ?.let { (leftValue, rightValue) -> leftValue.compareTo(rightValue) }
-                    ?: 0
-            }
+            else -> leftProfile.zip(rightProfile).firstOrNull { it.first != it.second }
+                ?.let { (lv, rv) -> lv.compareTo(rv) }
+                ?: 0
         }
     }
 
     private fun compareByDistance(criteria: SearchCriteria): Comparator<CanyonSearchItem> {
         val latitude = criteria.userLatitude
         val longitude = criteria.userLongitude
-        return compareNullable<CanyonSearchItem, Double>(selector = { item ->
+        return compareNullable<CanyonSearchItem, Double> { item ->
             if (latitude == null || longitude == null || item.representativeLat == null || item.representativeLng == null) {
                 null
             } else {
                 haversineKm(latitude, longitude, item.representativeLat, item.representativeLng)
             }
-        }).thenBy(String.CASE_INSENSITIVE_ORDER) { it.nom }
+        }.thenBy(String.CASE_INSENSITIVE_ORDER) { it.nom }
     }
 
-    private fun reverseKeepingUnknownsLast(
-        sorted: List<CanyonSearchItem>,
-        sortField: SearchSortField,
-    ): List<CanyonSearchItem> {
+    private fun reverseKeepingUnknownsLast(sorted: List<CanyonSearchItem>, sortField: SearchSortField): List<CanyonSearchItem> {
         val (known, unknown) = when (sortField) {
             SearchSortField.INTEREST -> sorted.partition { it.interet != null }
             SearchSortField.DIFFICULTY -> sorted.partition { it.cotationRating.isKnown }
@@ -215,12 +214,7 @@ class SearchCanyonsUseCase @Inject constructor(
         return known.reversed() + unknown
     }
 
-    private fun haversineKm(
-        latitude: Double,
-        longitude: Double,
-        targetLatitude: Double,
-        targetLongitude: Double,
-    ): Double {
+    private fun haversineKm(latitude: Double, longitude: Double, targetLatitude: Double, targetLongitude: Double): Double {
         val earthRadiusKm = 6371.0
         val latDistance = Math.toRadians(targetLatitude - latitude)
         val lonDistance = Math.toRadians(targetLongitude - longitude)
@@ -231,17 +225,17 @@ class SearchCanyonsUseCase @Inject constructor(
     }
 }
 
-private fun <T, R : Comparable<R>> compareNullable(
-    selector: (T) -> R?,
-): Comparator<T> {
+private data class ScoredSearchItem(val item: CanyonSearchItem, val relevance: Int)
+
+private fun <T, R : Comparable<R>> compareNullable(selector: (T) -> R?): Comparator<T> {
     return Comparator { left, right ->
-        val leftValue = selector(left)
-        val rightValue = selector(right)
+        val lv = selector(left)
+        val rv = selector(right)
         when {
-            leftValue == null && rightValue == null -> 0
-            leftValue == null -> 1
-            rightValue == null -> -1
-            else -> leftValue.compareTo(rightValue)
+            lv == null && rv == null -> 0
+            lv == null -> 1
+            rv == null -> -1
+            else -> lv.compareTo(rv)
         }
     }
 }

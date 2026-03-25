@@ -2,11 +2,11 @@ package fr.descentecanyon.app.data.local.database
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
+import fr.descentecanyon.app.data.local.dao.AppMetadataDao
+import fr.descentecanyon.app.data.local.dao.BibliographyDao
 import fr.descentecanyon.app.data.local.dao.CanyonDao
 import fr.descentecanyon.app.data.local.dao.DebitDao
 import fr.descentecanyon.app.data.local.dao.GeoPointDao
-import fr.descentecanyon.app.data.local.dao.AppMetadataDao
-import fr.descentecanyon.app.data.local.dao.BibliographyDao
 import fr.descentecanyon.app.data.local.dao.PendingDebitSubmissionDao
 import fr.descentecanyon.app.data.local.dao.PhotoDao
 import fr.descentecanyon.app.data.local.dao.RegulationDao
