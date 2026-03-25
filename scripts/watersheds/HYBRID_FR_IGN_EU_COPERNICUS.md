@@ -164,7 +164,11 @@ Le script traite un canyon a la fois, peut etre interrompu puis relance avec la 
 
 - `build/watersheds/batch-run/all_canyon_point_catchments.json`
 - `build/watersheds/batch-run/import_ready_catchments.json`
+- `build/watersheds/batch-run/import_ready_watersheds.json`
+- `build/watersheds/batch-run/watershed_polygons.geojson`
 - `build/watersheds/batch-run/summary.json`
+
+Le pipeline stocke maintenant aussi, quand possible, un polygone de bassin versant simplifie par canyon dans les sorties batch. Cette geometrie est destinee au stockage offline puis a l'affichage dans l'application plus tard.
 
 Le batch peut maintenant tenter de preparer automatiquement la meilleure source disponible dans cet ordre :
 

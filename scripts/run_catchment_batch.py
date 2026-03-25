@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import concurrent.futures
+import collections
 import json
 import math
 import shutil
@@ -11,8 +12,13 @@ from dataclasses import asdict
 from pathlib import Path
 from typing import Any
 
+import numpy as np
+import rasterio
+from rasterio.features import shapes
+from rasterio.warp import transform_geom
+
 from cli_tools import default_gdal_translate, resolve_executable
-from compute_entry_watersheds import EntryPoint, create_raster, evaluate_entry, load_canyons
+from compute_entry_watersheds import FLOW_DIRECTION_OFFSETS, EntryPoint, create_raster, evaluate_entry, load_canyons
 from run_local_ign_canyon_workflow import DEFAULT_LAMBERT93_PROJ4
 
 
@@ -457,12 +463,181 @@ def suggested_candidate(points: list[dict[str, Any]]) -> dict[str, Any] | None:
     )
 
 
+def perpendicular_distance(point: tuple[float, float], start: tuple[float, float], end: tuple[float, float]) -> float:
+    if start == end:
+        return math.hypot(point[0] - start[0], point[1] - start[1])
+    x0, y0 = point
+    x1, y1 = start
+    x2, y2 = end
+    numerator = abs((y2 - y1) * x0 - (x2 - x1) * y0 + x2 * y1 - y2 * x1)
+    denominator = math.hypot(y2 - y1, x2 - x1)
+    return numerator / max(denominator, 1e-9)
+
+
+def douglas_peucker(points: list[tuple[float, float]], tolerance: float) -> list[tuple[float, float]]:
+    if len(points) <= 2:
+        return points
+    start = points[0]
+    end = points[-1]
+    max_distance = -1.0
+    split_index = -1
+    for index in range(1, len(points) - 1):
+        distance = perpendicular_distance(points[index], start, end)
+        if distance > max_distance:
+            max_distance = distance
+            split_index = index
+    if max_distance <= tolerance or split_index < 0:
+        return [start, end]
+    left = douglas_peucker(points[: split_index + 1], tolerance)
+    right = douglas_peucker(points[split_index:], tolerance)
+    return left[:-1] + right
+
+
+def simplify_ring(ring: list[list[float]], tolerance: float) -> list[list[float]]:
+    if tolerance <= 0 or len(ring) <= 5:
+        return ring
+    closed_points = [(float(x), float(y)) for x, y in ring[:-1]] if ring[0] == ring[-1] else [(float(x), float(y)) for x, y in ring]
+    simplified = douglas_peucker(closed_points, tolerance)
+    if len(simplified) < 3:
+        simplified = closed_points
+    result = [[x, y] for x, y in simplified]
+    if result[0] != result[-1]:
+        result.append(result[0])
+    if len(result) < 4:
+        return ring
+    return result
+
+
+def simplify_projected_geometry(geometry: dict[str, Any], tolerance: float) -> dict[str, Any]:
+    if tolerance <= 0:
+        return geometry
+    if geometry["type"] == "Polygon":
+        return {
+            "type": "Polygon",
+            "coordinates": [simplify_ring(ring, tolerance) for ring in geometry["coordinates"]],
+        }
+    if geometry["type"] == "MultiPolygon":
+        return {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [simplify_ring(ring, tolerance) for ring in polygon]
+                for polygon in geometry["coordinates"]
+            ],
+        }
+    return geometry
+
+
+def geometry_bbox(geometry: dict[str, Any]) -> list[float]:
+    coords: list[tuple[float, float]] = []
+
+    def collect(value: Any) -> None:
+        if isinstance(value, list) and value and isinstance(value[0], (int, float)) and len(value) >= 2:
+            coords.append((float(value[0]), float(value[1])))
+            return
+        if isinstance(value, list):
+            for item in value:
+                collect(item)
+
+    collect(geometry.get("coordinates", []))
+    longitudes = [point[0] for point in coords]
+    latitudes = [point[1] for point in coords]
+    return [min(longitudes), min(latitudes), max(longitudes), max(latitudes)]
+
+
+def geometry_vertex_count(geometry: dict[str, Any]) -> int:
+    count = 0
+
+    def collect(value: Any) -> None:
+        nonlocal count
+        if isinstance(value, list) and value and isinstance(value[0], (int, float)) and len(value) >= 2:
+            count += 1
+            return
+        if isinstance(value, list):
+            for item in value:
+                collect(item)
+
+    collect(geometry.get("coordinates", []))
+    return count
+
+
+def build_watershed_geometry(
+    *,
+    flowdir_path: Path,
+    snapped_longitude: float,
+    snapped_latitude: float,
+    source_srs: str | None,
+    simplify_tolerance: float,
+) -> dict[str, Any] | None:
+    with rasterio.open(flowdir_path) as src:
+        raster_crs = src.crs or source_srs
+        if raster_crs is None:
+            raise SystemExit(f"Flow direction raster has no CRS: {flowdir_path}")
+
+        xs, ys = rasterio.warp.transform("EPSG:4326", raster_crs, [snapped_longitude], [snapped_latitude])
+        target_cell = src.index(xs[0], ys[0])
+        flow = src.read(1, masked=True).filled(0).astype(np.int16)
+
+        visited = np.zeros(flow.shape, dtype=np.uint8)
+        queue: collections.deque[tuple[int, int]] = collections.deque()
+        target_row, target_col = target_cell
+        if target_row < 0 or target_row >= flow.shape[0] or target_col < 0 or target_col >= flow.shape[1]:
+            return None
+
+        visited[target_row, target_col] = 1
+        queue.append((target_row, target_col))
+
+        while queue:
+            row, col = queue.popleft()
+            for d_row in (-1, 0, 1):
+                for d_col in (-1, 0, 1):
+                    if d_row == 0 and d_col == 0:
+                        continue
+                    n_row = row + d_row
+                    n_col = col + d_col
+                    if n_row < 0 or n_row >= flow.shape[0] or n_col < 0 or n_col >= flow.shape[1]:
+                        continue
+                    if visited[n_row, n_col] == 1:
+                        continue
+                    direction_code = int(flow[n_row, n_col])
+                    offset = FLOW_DIRECTION_OFFSETS.get(direction_code)
+                    if offset is None:
+                        continue
+                    if n_row + offset[0] == row and n_col + offset[1] == col:
+                        visited[n_row, n_col] = 1
+                        queue.append((n_row, n_col))
+
+        polygon_geometries = []
+        for geometry, value in shapes(visited, mask=visited == 1, transform=src.transform):
+            if int(value) != 1:
+                continue
+            simplified = simplify_projected_geometry(geometry, simplify_tolerance)
+            polygon_geometries.append(transform_geom(raster_crs, "EPSG:4326", simplified, precision=6))
+
+    if not polygon_geometries:
+        return None
+
+    polygons: list[Any] = []
+    for geometry in polygon_geometries:
+        if geometry["type"] == "Polygon":
+            polygons.append(geometry["coordinates"])
+        elif geometry["type"] == "MultiPolygon":
+            polygons.extend(geometry["coordinates"])
+
+    if not polygons:
+        return None
+    if len(polygons) == 1:
+        return {"type": "Polygon", "coordinates": polygons[0]}
+    return {"type": "MultiPolygon", "coordinates": polygons}
+
+
 def aggregate_results(output_dir: Path) -> None:
     canyon_files = sorted((output_dir / "canyons").glob("*.json")) if (output_dir / "canyons").exists() else []
     canyon_results = [load_json(path) for path in canyon_files]
     write_json(output_dir / "all_canyon_point_catchments.json", canyon_results)
 
     import_rows = []
+    watershed_rows = []
+    watershed_features = []
     for item in canyon_results:
         candidate = item.get("suggestedCandidate")
         if not candidate:
@@ -481,13 +656,47 @@ def aggregate_results(output_dir: Path) -> None:
                 "rawToSnappedUpaRatio": candidate["evaluation"]["raw_to_snapped_upa_ratio"],
             }
         )
+        watershed = item.get("watershed")
+        if watershed and watershed.get("geometry"):
+            watershed_rows.append(
+                {
+                    "canyonId": item["canyonId"],
+                    "canyonName": item["canyonName"],
+                    "sourceName": item["sourceName"],
+                    "bbox": watershed.get("bbox"),
+                    "vertexCount": watershed.get("vertexCount"),
+                    "selectedPointType": watershed.get("selectedPointType"),
+                    "selectedPointLabel": watershed.get("selectedPointLabel"),
+                    "upstreamCatchmentAreaKm2": watershed.get("selectedUpstreamCatchmentAreaKm2"),
+                    "geometry": watershed.get("geometry"),
+                }
+            )
+            watershed_features.append(
+                {
+                    "type": "Feature",
+                    "geometry": watershed.get("geometry"),
+                    "properties": {
+                        "canyonId": item["canyonId"],
+                        "canyonName": item["canyonName"],
+                        "sourceName": item["sourceName"],
+                        "vertexCount": watershed.get("vertexCount"),
+                        "upstreamCatchmentAreaKm2": watershed.get("selectedUpstreamCatchmentAreaKm2"),
+                    },
+                }
+            )
 
     write_json(output_dir / "import_ready_catchments.json", import_rows)
+    write_json(output_dir / "import_ready_watersheds.json", watershed_rows)
+    write_json(
+        output_dir / "watershed_polygons.geojson",
+        {"type": "FeatureCollection", "features": watershed_features},
+    )
     write_json(
         output_dir / "summary.json",
         {
             "canyonsWithResults": len(canyon_results),
             "importReadyRows": len(import_rows),
+            "watershedPolygonRows": len(watershed_rows),
         },
     )
 
@@ -547,6 +756,34 @@ def process_single_canyon(
         source=source,
         raster_paths=raster_paths,
     )
+    selected_candidate = suggested_candidate(point_results)
+    watershed = None
+    if (
+        selected_candidate is not None
+        and source["mode"] == "derive_local_hydrology"
+        and raster_paths.get("flowdir") is not None
+        and selected_candidate["evaluation"].get("snapped_longitude") is not None
+        and selected_candidate["evaluation"].get("snapped_latitude") is not None
+    ):
+        print(f"WATERSHED canyon {canyon_id} start", flush=True)
+        geometry = build_watershed_geometry(
+            flowdir_path=raster_paths["flowdir"],
+            snapped_longitude=float(selected_candidate["evaluation"]["snapped_longitude"]),
+            snapped_latitude=float(selected_candidate["evaluation"]["snapped_latitude"]),
+            source_srs=source.get("srs"),
+            simplify_tolerance=float(source.get("watershedSimplifyToleranceM", 10.0)),
+        )
+        if geometry is not None:
+            watershed = {
+                "geometry": geometry,
+                "bbox": geometry_bbox(geometry),
+                "vertexCount": geometry_vertex_count(geometry),
+                "selectedPointType": selected_candidate["pointType"],
+                "selectedPointLabel": selected_candidate.get("label"),
+                "selectedUpstreamCatchmentAreaKm2": selected_candidate["evaluation"].get("snapped_upa_km2"),
+                "simplifyToleranceM": float(source.get("watershedSimplifyToleranceM", 10.0)),
+            }
+        print(f"WATERSHED canyon {canyon_id} done", flush=True)
     result = {
         "canyonId": canyon_id,
         "canyonName": canyon.get("nomComplet") or canyon.get("nom"),
@@ -555,7 +792,8 @@ def process_single_canyon(
         "sourceName": source["name"],
         "sourceMode": source["mode"],
         "points": point_results,
-        "suggestedCandidate": suggested_candidate(point_results),
+        "suggestedCandidate": selected_candidate,
+        "watershed": watershed,
     }
     write_json(canyon_file, result)
     if not keep_work:
