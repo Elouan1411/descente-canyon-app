@@ -6,11 +6,7 @@ import fr.descentecanyon.app.data.local.dao.DebitDao
 import fr.descentecanyon.app.data.local.dao.GeoPointDao
 import fr.descentecanyon.app.data.local.dao.PhotoDao
 import fr.descentecanyon.app.data.local.dao.RegulationDao
-import fr.descentecanyon.app.data.local.database.AppDatabase
 import fr.descentecanyon.app.data.local.entity.CanyonEntity
-import fr.descentecanyon.app.data.local.importer.EmbeddedCanyonDataImporter
-import fr.descentecanyon.app.data.remote.scraper.CanyonScraper
-import fr.descentecanyon.app.domain.repository.MapOfflineRepository
 import io.mockk.coEvery
 import io.mockk.coJustRun
 import io.mockk.coVerify
@@ -21,15 +17,12 @@ import org.junit.Test
 class CanyonRepositoryDetailTest {
 
     private val canyonDao = mockk<CanyonDao>()
-    private val database = mockk<AppDatabase>(relaxed = true)
     private val geoPointDao = mockk<GeoPointDao>()
     private val debitDao = mockk<DebitDao>()
     private val photoDao = mockk<PhotoDao>()
     private val bibliographyDao = mockk<BibliographyDao>()
     private val regulationDao = mockk<RegulationDao>()
-    private val embeddedCanyonDataImporter = mockk<EmbeddedCanyonDataImporter>(relaxed = true)
-    private val scraper = mockk<CanyonScraper>(relaxed = true)
-    private val mapOfflineRepository = mockk<MapOfflineRepository>(relaxed = true)
+    private val representativePointSelector = RepresentativePointSelector()
 
     @Test
     fun `insert preserving flags updates existing canyon without replace`() = runTest {
@@ -40,20 +33,17 @@ class CanyonRepositoryDetailTest {
         coEvery { canyonDao.insertIgnore(any()) } returns -1L
         coJustRun { canyonDao.update(any()) }
 
-        val repository = CanyonRepositoryImpl(
-            database = database,
+        val localStore = CanyonLocalStore(
             canyonDao = canyonDao,
             geoPointDao = geoPointDao,
             debitDao = debitDao,
             photoDao = photoDao,
             bibliographyDao = bibliographyDao,
             regulationDao = regulationDao,
-            embeddedCanyonDataImporter = embeddedCanyonDataImporter,
-            scraper = scraper,
-            mapOfflineRepository = mapOfflineRepository,
+            representativePointSelector = representativePointSelector,
         )
 
-        repository.insertPreservingFlags(refreshed)
+        localStore.insertPreservingFlags(refreshed)
 
         coVerify(exactly = 1) { canyonDao.insertIgnore(any()) }
         coVerify(exactly = 1) {

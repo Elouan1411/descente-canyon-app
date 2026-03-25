@@ -6,7 +6,6 @@ import fr.descentecanyon.app.data.local.dao.DebitDao
 import fr.descentecanyon.app.data.local.dao.GeoPointDao
 import fr.descentecanyon.app.data.local.dao.PhotoDao
 import fr.descentecanyon.app.data.local.dao.RegulationDao
-import fr.descentecanyon.app.data.local.importer.EmbeddedCanyonDataImporter
 import fr.descentecanyon.app.data.local.database.AppDatabase
 import fr.descentecanyon.app.data.local.entity.CanyonEntity
 import fr.descentecanyon.app.data.local.entity.GeoPointEntity
@@ -29,9 +28,17 @@ class CanyonRepositoryNearbyTest {
     private val photoDao = mockk<PhotoDao>()
     private val bibliographyDao = mockk<BibliographyDao>()
     private val regulationDao = mockk<RegulationDao>()
-    private val embeddedCanyonDataImporter = mockk<EmbeddedCanyonDataImporter>(relaxed = true)
+    private val localStore = CanyonLocalStore(
+        canyonDao = canyonDao,
+        geoPointDao = geoPointDao,
+        debitDao = debitDao,
+        photoDao = photoDao,
+        bibliographyDao = bibliographyDao,
+        regulationDao = regulationDao,
+        representativePointSelector = RepresentativePointSelector(),
+    )
     private val scraper = mockk<CanyonScraper>(relaxed = true)
-    private val mapOfflineRepository = mockk<MapOfflineRepository>()
+    private val mapOfflineRepository = mockk<MapOfflineRepository>(relaxed = true)
 
     @Test
     fun `get nearby canyons keeps closest markers within radius`() = runTest {
@@ -45,15 +52,12 @@ class CanyonRepositoryNearbyTest {
             canyonEntity(id = 1, nom = "Riolan"),
             canyonEntity(id = 3, nom = "Lointain"),
         )
+
         val repository = CanyonRepositoryImpl(
             database = database,
             canyonDao = canyonDao,
+            localStore = localStore,
             geoPointDao = geoPointDao,
-            debitDao = debitDao,
-            photoDao = photoDao,
-            bibliographyDao = bibliographyDao,
-            regulationDao = regulationDao,
-            embeddedCanyonDataImporter = embeddedCanyonDataImporter,
             scraper = scraper,
             mapOfflineRepository = mapOfflineRepository,
         )
