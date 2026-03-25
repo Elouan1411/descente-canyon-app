@@ -30,7 +30,7 @@
       ],
       "massif": "Bugey",
       "bassin": null,
-      "coursEau": null
+      "coursEau": "Biez des Cruies"
     },
     "rating": {
       "cotation": "v4a1II",
@@ -58,7 +58,7 @@
       "retour": "Suivre le ruisseau le plus possible et Reprendre le sentier de montée sur rive droite (sauf si garé à la cote 530).",
       "engagement": "Peu d'échappatoires possibles après la première C25.",
       "periode": "Le bassin versant est faible, mais un filet d'eau circule tout au long de l'année. Les conditions idéales se trouveront en période de crue. Pas de vasque profonde.",
-      "geologie": null,
+      "geologie": "Calcaire",
       "historique": null,
       "remarques": "Sur la fin, un amarrage est constitué de deux maillons non reliés. Il s'agit d'un départ de main courante, un autre amarrage est placé tout de suite après le nez de cascade."
     },
@@ -73,6 +73,14 @@
       },
       {
         "canyonId": 2163,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.805588,
+        "longitude": 5.597363,
+        "label": "sans navette"
+      },
+      {
+        "canyonId": 2163,
         "rawType": "parking_aval",
         "type": "PARKING_AVAL",
         "latitude": 45.807503,
@@ -81,11 +89,19 @@
       },
       {
         "canyonId": 2163,
-        "rawType": "parking",
-        "type": "PARKING_AVAL",
-        "latitude": 45.805588,
-        "longitude": 5.597363,
-        "label": "sans navette"
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.8042585,
+        "longitude": 5.5898884,
+        "label": null
+      },
+      {
+        "canyonId": 2163,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.8075265,
+        "longitude": 5.5977812,
+        "label": null
       }
     ],
     "representativePoint": {

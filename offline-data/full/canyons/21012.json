@@ -30,7 +30,7 @@
       ],
       "massif": null,
       "bassin": "Lys",
-      "coursEau": null
+      "coursEau": "Torrente de Bouro"
     },
     "rating": {
       "cotation": "v4a3II",
@@ -58,11 +58,19 @@
       "retour": "Rejoignez le pont.",
       "engagement": "Il y a évidemment le canal au sommet de la goulotte. L'engagement est donc modéré.",
       "periode": "Mi-juillet à septembre, toujours plus en eau que Pacoulla.\n\nA ne pas faire après les crues, attendre plusieurs jours.\n\nUne partie du débit est prélevée, ce qui est heureux, le final (les 3 derniers rappels) serait plus difficile en gros débit.",
-      "geologie": null,
+      "geologie": "Granit",
       "historique": null,
       "remarques": "Il y a un relais rive G après la goulotte (visible du pont du canal). Il impose peut être (non testé) quelques mètres de cordes supplémentaires."
     },
     "geoPoints": [
+      {
+        "canyonId": 21012,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.639908,
+        "longitude": 7.857486,
+        "label": null
+      },
       {
         "canyonId": 21012,
         "rawType": "depart",
@@ -73,10 +81,10 @@
       },
       {
         "canyonId": 21012,
-        "rawType": "parking",
-        "type": "PARKING_AVAL",
-        "latitude": 45.639908,
-        "longitude": 7.857486,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.6392801,
+        "longitude": 7.8587289,
         "label": null
       }
     ],
