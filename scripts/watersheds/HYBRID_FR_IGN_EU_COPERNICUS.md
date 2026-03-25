@@ -146,6 +146,19 @@ python scripts/run_catchment_batch.py \
   --france-only
 ```
 
+Pour un serveur avec beaucoup de disque/RAM/CPU, option recommandee : precharger tous les departements IGN utiles puis traiter plusieurs canyons en parallele :
+
+```bash
+python scripts/run_catchment_batch.py \
+  --source-config scripts/watersheds/source_config.hybrid.json \
+  --output-dir build/watersheds/batch-run-france \
+  --france-only \
+  --prepare-france-ign-first \
+  --jobs 4
+```
+
+Avec 64 Go de RAM et 8 coeurs, `--jobs 4` est un bon point de depart. Tu peux tester `--jobs 6` si le serveur reste stable.
+
 Le script traite un canyon a la fois, peut etre interrompu puis relance avec la meme commande, et reconstruit apres chaque canyon :
 
 - `build/watersheds/batch-run/all_canyon_point_catchments.json`

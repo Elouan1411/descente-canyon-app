@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import concurrent.futures
 import json
 import math
 import shutil
@@ -65,6 +66,7 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument("--only-canyon-id", type=int, action="append")
     parser.add_argument("--max-canyons", type=int)
+    parser.add_argument("--jobs", type=int, default=1)
     parser.add_argument("--skip-existing", action="store_true", default=True)
     parser.add_argument(
         "--point-type",
@@ -77,6 +79,7 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument("--country", action="append")
     parser.add_argument("--france-only", action="store_true")
+    parser.add_argument("--prepare-france-ign-first", action="store_true")
     parser.add_argument("--keep-work", action="store_true")
     return parser.parse_args()
 
@@ -225,6 +228,42 @@ def auto_prepare_source(
         return
 
     raise SystemExit(f"Unsupported autoPrepare provider: {provider}")
+
+
+def bootstrap_ign_manifest(manifest_path: Path) -> None:
+    if manifest_path.exists():
+        return
+    subprocess.run([sys.executable, "scripts/fetch_ign_alti_catalog.py"], check=True)
+    subprocess.run([sys.executable, "scripts/plan_ign_downloads.py"], check=True)
+
+
+def prepare_all_france_ign_sources(canyon_ids: list[int], canyons: dict[int, dict[str, Any]], output_dir: Path) -> None:
+    manifest_path = Path("build/watersheds/ign-plan/ign_download_manifest.json")
+    bootstrap_ign_manifest(manifest_path)
+    manifest = load_json(manifest_path)
+    by_department = {item["department"]: item for item in manifest}
+    departments = sorted({canyons[canyon_id].get("departement") for canyon_id in canyon_ids if canyons[canyon_id].get("pays") == "France" and canyons[canyon_id].get("departement")})
+
+    for department in departments:
+        item = by_department.get(department)
+        if not item:
+            continue
+        dataset = "rgealti5m" if item.get("rgeAlti5m") else "bdalti"
+        subprocess.run(
+            [
+                sys.executable,
+                "scripts/prepare_ign_department_dem.py",
+                "--manifest",
+                str(manifest_path),
+                "--dataset",
+                dataset,
+                "--department",
+                department,
+                "--output-dir",
+                "build/watersheds/ign-data",
+            ],
+            check=True,
+        )
 
 
 def resolve_source_for_canyon(
@@ -420,6 +459,75 @@ def aggregate_results(output_dir: Path) -> None:
     )
 
 
+def process_single_canyon(
+    *,
+    canyon_id: int,
+    canyon: dict[str, Any],
+    points: list[dict[str, Any]],
+    sources: list[dict[str, Any]],
+    output_dir: Path,
+    gdal_translate: str,
+    keep_work: bool,
+) -> str:
+    canyon_file = output_dir / "canyons" / f"{canyon_id}.json"
+
+    source = resolve_source_for_canyon(
+        canyon=canyon,
+        points=points,
+        sources=sources,
+        output_dir=output_dir,
+        gdal_translate=gdal_translate,
+    )
+    if source is None:
+        write_json(
+            canyon_file,
+            {
+                "canyonId": canyon_id,
+                "canyonName": canyon.get("nomComplet") or canyon.get("nom"),
+                "status": "no_matching_source",
+            },
+        )
+        return "no_matching_source"
+
+    if source["mode"] == "derive_local_hydrology":
+        raster_paths = ensure_local_hydrology(
+            source=source,
+            canyon_id=canyon_id,
+            output_dir=output_dir,
+            points=points,
+            gdal_translate=gdal_translate,
+        )
+    elif source["mode"] == "precomputed_hydrology":
+        raster_paths = {
+            "upa": normalized_path(source["upaRaster"]).resolve(),
+            "flowdir": normalized_path(source["flowdirRaster"]).resolve() if source.get("flowdirRaster") else None,
+            "elevation": normalized_path(source["elevationRaster"]).resolve() if source.get("elevationRaster") else None,
+        }
+    else:
+        raise SystemExit(f"Unsupported source mode: {source['mode']}")
+
+    point_results = evaluate_points_for_canyon(
+        canyon=canyon,
+        points=points,
+        source=source,
+        raster_paths=raster_paths,
+    )
+    result = {
+        "canyonId": canyon_id,
+        "canyonName": canyon.get("nomComplet") or canyon.get("nom"),
+        "country": canyon.get("pays"),
+        "department": canyon.get("departement"),
+        "sourceName": source["name"],
+        "sourceMode": source["mode"],
+        "points": point_results,
+        "suggestedCandidate": suggested_candidate(point_results),
+    }
+    write_json(canyon_file, result)
+    if not keep_work:
+        shutil.rmtree(output_dir / "work" / str(canyon_id), ignore_errors=True)
+    return "ok"
+
+
 def main() -> int:
     args = parse_args()
     output_dir = args.output_dir.resolve()
@@ -453,77 +561,56 @@ def main() -> int:
     if args.max_canyons is not None:
         canyon_ids = canyon_ids[: args.max_canyons]
 
+    if args.france_only and args.prepare_france_ign_first:
+        prepare_all_france_ign_sources(canyon_ids, canyons, output_dir)
+
     processed = 0
     try:
+        pending = []
         for canyon_id in canyon_ids:
             canyon_file = output_dir / "canyons" / f"{canyon_id}.json"
             if args.skip_existing and canyon_file.exists():
                 continue
-
             canyon = canyons.get(canyon_id)
             if canyon is None:
                 continue
             points = points_by_canyon.get(canyon_id, [])
             if not points:
                 continue
+            pending.append((canyon_id, canyon, points))
 
-            source = resolve_source_for_canyon(
-                canyon=canyon,
-                points=points,
-                sources=sources,
-                output_dir=output_dir,
-                gdal_translate=gdal_translate,
-            )
-            if source is None:
-                write_json(
-                    canyon_file,
-                    {
-                        "canyonId": canyon_id,
-                        "canyonName": canyon.get("nomComplet") or canyon.get("nom"),
-                        "status": "no_matching_source",
-                    },
-                )
-                processed += 1
-                continue
-
-            if source["mode"] == "derive_local_hydrology":
-                raster_paths = ensure_local_hydrology(
-                    source=source,
+        if args.jobs <= 1:
+            for canyon_id, canyon, points in pending:
+                process_single_canyon(
                     canyon_id=canyon_id,
-                    output_dir=output_dir,
+                    canyon=canyon,
                     points=points,
+                    sources=sources,
+                    output_dir=output_dir,
                     gdal_translate=gdal_translate,
+                    keep_work=args.keep_work,
                 )
-            elif source["mode"] == "precomputed_hydrology":
-                raster_paths = {
-                    "upa": normalized_path(source["upaRaster"]).resolve(),
-                    "flowdir": normalized_path(source["flowdirRaster"]).resolve() if source.get("flowdirRaster") else None,
-                    "elevation": normalized_path(source["elevationRaster"]).resolve() if source.get("elevationRaster") else None,
+                aggregate_results(output_dir)
+                processed += 1
+        else:
+            with concurrent.futures.ThreadPoolExecutor(max_workers=args.jobs) as executor:
+                future_to_canyon = {
+                    executor.submit(
+                        process_single_canyon,
+                        canyon_id=canyon_id,
+                        canyon=canyon,
+                        points=points,
+                        sources=sources,
+                        output_dir=output_dir,
+                        gdal_translate=gdal_translate,
+                        keep_work=args.keep_work,
+                    ): canyon_id
+                    for canyon_id, canyon, points in pending
                 }
-            else:
-                raise SystemExit(f"Unsupported source mode: {source['mode']}")
-
-            point_results = evaluate_points_for_canyon(
-                canyon=canyon,
-                points=points,
-                source=source,
-                raster_paths=raster_paths,
-            )
-            result = {
-                "canyonId": canyon_id,
-                "canyonName": canyon.get("nomComplet") or canyon.get("nom"),
-                "country": canyon.get("pays"),
-                "department": canyon.get("departement"),
-                "sourceName": source["name"],
-                "sourceMode": source["mode"],
-                "points": point_results,
-                "suggestedCandidate": suggested_candidate(point_results),
-            }
-            write_json(canyon_file, result)
-            aggregate_results(output_dir)
-            if not args.keep_work:
-                shutil.rmtree(output_dir / "work" / str(canyon_id), ignore_errors=True)
-            processed += 1
+                for future in concurrent.futures.as_completed(future_to_canyon):
+                    future.result()
+                    aggregate_results(output_dir)
+                    processed += 1
     except KeyboardInterrupt:
         print("Interrupted cleanly. Resume with the same command to continue.")
     finally:
