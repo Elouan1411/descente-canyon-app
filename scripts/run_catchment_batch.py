@@ -81,6 +81,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--only-canyon-id", type=int, action="append")
     parser.add_argument("--max-canyons", type=int)
     parser.add_argument("--jobs", type=int, default=1)
+    parser.add_argument("--aggregate-every", type=int, default=25)
     parser.add_argument("--skip-existing", action="store_true", default=True)
     parser.add_argument(
         "--point-type",
@@ -896,6 +897,18 @@ def aggregate_results(output_dir: Path) -> None:
     )
 
 
+def write_progress(output_dir: Path, *, processed: int, pending: int) -> None:
+    canyon_count = len(list((output_dir / "canyons").glob("*.json"))) if (output_dir / "canyons").exists() else 0
+    write_json(
+        output_dir / "progress.json",
+        {
+            "processedThisRun": processed,
+            "pendingThisRun": pending,
+            "canyonResultFiles": canyon_count,
+        },
+    )
+
+
 def process_single_canyon(
     *,
     canyon_id: int,
@@ -1062,6 +1075,7 @@ def main() -> int:
             pending.append((canyon_id, canyon, points))
 
         if args.jobs <= 1:
+            pending_total = len(pending)
             for canyon_id, canyon, points in pending:
                 process_single_canyon(
                     canyon_id=canyon_id,
@@ -1072,10 +1086,13 @@ def main() -> int:
                     gdal_translate=gdal_translate,
                     keep_work=args.keep_work,
                 )
-                aggregate_results(output_dir)
                 processed += 1
+                write_progress(output_dir, processed=processed, pending=max(pending_total - processed, 0))
+                if args.aggregate_every > 0 and processed % args.aggregate_every == 0:
+                    aggregate_results(output_dir)
         else:
             with concurrent.futures.ThreadPoolExecutor(max_workers=args.jobs) as executor:
+                pending_total = len(pending)
                 pending_iter = iter(pending)
                 in_flight: dict[concurrent.futures.Future[str], int] = {}
 
@@ -1101,7 +1118,9 @@ def main() -> int:
                     for future in done:
                         future.result()
                         processed += 1
-                        aggregate_results(output_dir)
+                        write_progress(output_dir, processed=processed, pending=max(pending_total - processed, 0))
+                        if args.aggregate_every > 0 and processed % args.aggregate_every == 0:
+                            aggregate_results(output_dir)
                         in_flight.pop(future, None)
                         try:
                             canyon_id, canyon, points = next(pending_iter)
