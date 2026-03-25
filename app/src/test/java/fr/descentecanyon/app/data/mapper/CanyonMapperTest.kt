@@ -183,6 +183,7 @@ class CanyonMapperTest {
         assertEquals(NiveauDebit.INCONNU, debit.niveau)
     }
 
+
     // --- GeoPointEntity with unknown type ---
 
     @Test
