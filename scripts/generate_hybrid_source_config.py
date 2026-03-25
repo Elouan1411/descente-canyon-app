@@ -221,12 +221,24 @@ def main() -> int:
             }
         )
 
-    add_national_source(
-        name="slovenia-dmv5",
-        country="Slovénie",
-        manifest_path=args.slovenia_manifest,
-        output_dir="build/watersheds/slovenia-national-dem",
-        unit_fields=["departement", "region"],
+    sources.append(
+        {
+            "name": "slovenia-dmv5-direct",
+            "mode": "derive_local_hydrology",
+            "dem": "build/watersheds/slovenia-national-dem/vrt/_all_downloaded.vrt",
+            "bufferKm": 20.0,
+            "processingResolutionM": 10.0,
+            "candidateStrategy": "nearest_channel",
+            "searchRadiusM": 120.0,
+            "channelMinUpaKm2": 0.05,
+            "autoPrepare": {
+                "provider": "slovenia-jgp",
+                "outputDir": "build/watersheds/slovenia-national-dem"
+            },
+            "match": {
+                "pays": "Slovénie"
+            }
+        }
     )
 
     sources.append(
@@ -252,9 +264,9 @@ def main() -> int:
     )
     sources.append(
         {
-            "name": "spain-ign-mdt5",
+            "name": "spain-ign-mdt25",
             "mode": "derive_local_hydrology",
-            "dem": "build/watersheds/spain-national-dem/raw/spain_30.tif",
+            "dem": "build/watersheds/spain-national-dem/raw/spain_4258_25m.tif",
             "srs": None,
             "bufferKm": 10.0,
             "candidateStrategy": "nearest_channel",

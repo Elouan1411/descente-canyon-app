@@ -10,9 +10,6 @@ from pathlib import Path
 from typing import Any
 from urllib.error import HTTPError, URLError
 
-from rasterio.warp import transform
-
-
 WCS_URL = "https://servicios.idee.es/wcs-inspire/mdt"
 
 
@@ -33,47 +30,38 @@ def parse_points(values: list[str]) -> list[tuple[float, float]]:
     return [(float(v.split(",", 1)[0]), float(v.split(",", 1)[1])) for v in values]
 
 
-def utm_zone(longitude: float) -> int:
-    return int(math.floor((longitude + 180.0) / 6.0) + 1)
-
-
 def main() -> int:
     args = parse_args()
     points = parse_points(args.point)
-    mean_lon = sum(p[1] for p in points) / len(points)
-    zone = utm_zone(mean_lon)
-    if zone not in {28, 29, 30, 31}:
-        raise SystemExit(f"Unsupported Spain UTM zone for official DEM service: {zone}")
-
-    epsg = f"EPSG:258{zone:02d}"
-    coverage_id = f"Elevacion258{zone:02d}_5"
     lats = [p[0] for p in points]
     lons = [p[1] for p in points]
-    xs, ys = transform("EPSG:4326", epsg, lons, lats)
-    min_x = min(xs) - args.buffer_km * 1000.0
-    max_x = max(xs) + args.buffer_km * 1000.0
-    min_y = min(ys) - args.buffer_km * 1000.0
-    max_y = max(ys) + args.buffer_km * 1000.0
+    lat_buffer = args.buffer_km / 111.32
+    lon_buffer = args.buffer_km / (111.32 * max(0.1, abs(math.cos(math.radians(sum(lats) / len(lats))))))
+    min_x = min(lons) - lon_buffer
+    max_x = max(lons) + lon_buffer
+    min_y = min(lats) - lat_buffer
+    max_y = max(lats) + lat_buffer
 
     query = urllib.parse.urlencode(
         [
             ("service", "WCS"),
             ("version", "2.0.1"),
             ("request", "GetCoverage"),
-            ("coverageId", coverage_id),
+            ("coverageId", "Elevacion4258_25"),
             ("format", "image/tiff"),
-            ("subsettingCrs", f"http://www.opengis.net/def/crs/EPSG/0/258{zone:02d}"),
+            ("subsettingCrs", "http://www.opengis.net/def/crs/EPSG/0/4258"),
             ("subset", f"x({min_x},{max_x})"),
             ("subset", f"y({min_y},{max_y})"),
         ]
     )
     url = f"{WCS_URL}?{query}"
-    output_path = args.output_dir / "raw" / f"spain_{zone}.tif"
+    output_path = args.output_dir / "raw" / "spain_4258_25m.tif"
     output_path.parent.mkdir(parents=True, exist_ok=True)
     last_error: Exception | None = None
     for attempt in range(1, 4):
         try:
-            with urllib.request.urlopen(url, timeout=300) as response, open(output_path, "wb") as handle:
+            request = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+            with urllib.request.urlopen(request, timeout=300) as response, open(output_path, "wb") as handle:
                 handle.write(response.read())
             break
         except (HTTPError, URLError) as exc:
@@ -85,8 +73,8 @@ def main() -> int:
     else:
         raise SystemExit(f"Spain DEM request failed: {last_error}")
 
-    write_json(args.output_dir / "request.json", {"url": url, "epsg": epsg, "coverageId": coverage_id})
-    print(json.dumps({"dem": str(output_path), "epsg": epsg, "coverageId": coverage_id}, ensure_ascii=False, indent=2))
+    write_json(args.output_dir / "request.json", {"url": url, "epsg": "EPSG:4258", "coverageId": "Elevacion4258_25"})
+    print(json.dumps({"dem": str(output_path), "epsg": "EPSG:4258", "coverageId": "Elevacion4258_25"}, ensure_ascii=False, indent=2))
     return 0
 
 

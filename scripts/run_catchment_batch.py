@@ -159,6 +159,14 @@ def points_merit_packages(points: list[dict[str, Any]]) -> list[str]:
     return sorted({merit_package_name(float(point["latitude"]), float(point["longitude"])) for point in points})
 
 
+def slovenia_quadrant_file_ids(points: list[dict[str, Any]]) -> list[int]:
+    avg_lat = sum(float(point["latitude"]) for point in points) / len(points)
+    avg_lon = sum(float(point["longitude"]) for point in points) / len(points)
+    if avg_lat >= 46.2:
+        return [469] if avg_lon < 14.2 else [518]
+    return [517] if avg_lon < 14.2 else [516]
+
+
 def planned_source_sort_key(canyon: dict[str, Any], points: list[dict[str, Any]], sources: list[dict[str, Any]]) -> tuple[Any, ...]:
     for source in sources:
         if not canyon_matches(canyon, source.get("match", {})):
@@ -268,6 +276,22 @@ def auto_prepare_source(
         ]
         for point in points:
             command.extend(["--point", f"{point['latitude']},{point['longitude']}"])
+        subprocess.run(command, check=True)
+        return
+
+    if provider == "slovenia-jgp":
+        command = [
+            sys.executable,
+            "scripts/prepare_slovenia_dem.py",
+            "--output-dir",
+            auto_prepare.get("outputDir"),
+            "--buffer-km",
+            str(auto_prepare.get("bufferKm", source.get("bufferKm", 10.0))),
+        ]
+        for point in points:
+            command.extend(["--point", f"{point['latitude']},{point['longitude']}"])
+        for file_id in slovenia_quadrant_file_ids(points):
+            command.extend(["--file-id", str(file_id)])
         subprocess.run(command, check=True)
         return
 

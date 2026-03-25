@@ -15,7 +15,7 @@ from rasterio.warp import transform
 from cli_tools import default_gdalbuildvrt, resolve_executable
 
 
-STAC_SEARCH_URL = "https://data.geo.admin.ch/api/stac/v1/search"
+STAC_ITEMS_URL = "https://data.geo.admin.ch/api/stac/v0.9/collections/ch.swisstopo.swissalti3d/items"
 
 
 def write_json(path: Path, data: Any) -> None:
@@ -55,18 +55,18 @@ def bbox_for_points(points: list[tuple[float, float]], buffer_km: float) -> tupl
 def fetch_items(bbox: tuple[float, float, float, float]) -> list[dict[str, Any]]:
     query = urllib.parse.urlencode(
         {
-            "collections": "ch.swisstopo.swissalti3d",
             "bbox": ",".join(str(v) for v in bbox),
             "limit": 100,
         }
     )
-    next_url = f"{STAC_SEARCH_URL}?{query}"
+    next_url = f"{STAC_ITEMS_URL}?{query}"
     items: list[dict[str, Any]] = []
     while next_url:
         last_error: Exception | None = None
         for attempt in range(1, 4):
             try:
-                with urllib.request.urlopen(next_url, timeout=120) as response:
+                request = urllib.request.Request(next_url, headers={"User-Agent": "Mozilla/5.0"})
+                with urllib.request.urlopen(request, timeout=120) as response:
                     payload = json.load(response)
                 break
             except URLError as exc:
@@ -83,22 +83,46 @@ def fetch_items(bbox: tuple[float, float, float, float]) -> list[dict[str, Any]]
     return items
 
 
-def tile_urls(items: list[dict[str, Any]]) -> list[str]:
-    urls = []
+def tile_assets(items: list[dict[str, Any]]) -> list[tuple[str, str]]:
+    assets: list[tuple[str, str]] = []
     for item in items:
         for asset_name, asset in item.get("assets", {}).items():
             if asset_name.endswith("_2_2056_5728.tif"):
-                urls.append("/vsicurl/" + asset["href"])
+                assets.append((asset_name, asset["href"]))
                 break
-    return sorted(set(urls))
+    return sorted(set(assets))
 
 
-def build_vrt(gdalbuildvrt: str, urls: list[str], vrt_path: Path) -> None:
-    if not urls:
+def download_file(url: str, destination: Path) -> None:
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    if destination.exists() and destination.stat().st_size > 0:
+        return
+    last_error: Exception | None = None
+    temp_path = destination.with_suffix(destination.suffix + ".part")
+    for attempt in range(1, 4):
+        try:
+            request = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+            with urllib.request.urlopen(request, timeout=300) as response, open(temp_path, "wb") as handle:
+                while True:
+                    chunk = response.read(1024 * 1024)
+                    if not chunk:
+                        break
+                    handle.write(chunk)
+            temp_path.replace(destination)
+            return
+        except URLError as exc:
+            last_error = exc
+            temp_path.unlink(missing_ok=True)
+            time.sleep(5 * attempt)
+    raise SystemExit(f"Swiss tile download failed: {last_error}")
+
+
+def build_vrt(gdalbuildvrt: str, tif_paths: list[Path], vrt_path: Path) -> None:
+    if not tif_paths:
         raise SystemExit("No swissALTI3D 2m tiles found for requested bbox")
     vrt_path.parent.mkdir(parents=True, exist_ok=True)
     input_list = vrt_path.with_suffix(".txt")
-    input_list.write_text("\n".join(urls), encoding="utf-8")
+    input_list.write_text("\n".join(str(path) for path in tif_paths), encoding="utf-8")
     subprocess.run([gdalbuildvrt, "-input_file_list", str(input_list), str(vrt_path)], check=True)
 
 
@@ -107,12 +131,18 @@ def main() -> int:
     points = parse_points(args.point)
     bbox = bbox_for_points(points, args.buffer_km)
     items = fetch_items(bbox)
-    urls = tile_urls(items)
+    assets = tile_assets(items)
     gdalbuildvrt = resolve_executable(args.gdalbuildvrt, extra_candidates=[default_gdalbuildvrt()])
+    raw_dir = args.output_dir / "raw"
+    tif_paths = []
+    for asset_name, href in assets:
+        path = raw_dir / asset_name
+        download_file(href, path)
+        tif_paths.append(path)
     vrt_path = args.output_dir / "vrt" / "_all_downloaded.vrt"
-    build_vrt(gdalbuildvrt, urls, vrt_path)
-    write_json(args.output_dir / "selected_tiles.json", {"bbox": bbox, "tileCount": len(urls), "urls": urls})
-    print(json.dumps({"tileCount": len(urls), "vrt": str(vrt_path)}, ensure_ascii=False, indent=2))
+    build_vrt(gdalbuildvrt, tif_paths, vrt_path)
+    write_json(args.output_dir / "selected_tiles.json", {"bbox": bbox, "tileCount": len(tif_paths), "paths": [str(path) for path in tif_paths]})
+    print(json.dumps({"tileCount": len(tif_paths), "vrt": str(vrt_path)}, ensure_ascii=False, indent=2))
     return 0
 
 
