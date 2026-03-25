@@ -242,28 +242,38 @@ def prepare_all_france_ign_sources(canyon_ids: list[int], canyons: dict[int, dic
     bootstrap_ign_manifest(manifest_path)
     manifest = load_json(manifest_path)
     by_department = {item["department"]: item for item in manifest}
-    departments = sorted({canyons[canyon_id].get("departement") for canyon_id in canyon_ids if canyons[canyon_id].get("pays") == "France" and canyons[canyon_id].get("departement")})
+    departments = sorted(
+        {
+            canyons[canyon_id].get("departement")
+            for canyon_id in canyon_ids
+            if canyons[canyon_id].get("pays") == "France"
+            and canyons[canyon_id].get("departement")
+            and "," not in str(canyons[canyon_id].get("departement"))
+        }
+    )
 
     for department in departments:
         item = by_department.get(department)
         if not item:
             continue
-        dataset = "rgealti5m" if item.get("rgeAlti5m") else "bdalti"
-        subprocess.run(
-            [
-                sys.executable,
-                "scripts/prepare_ign_department_dem.py",
-                "--manifest",
-                str(manifest_path),
-                "--dataset",
-                dataset,
-                "--department",
-                department,
-                "--output-dir",
-                "build/watersheds/ign-data",
-            ],
-            check=True,
-        )
+        for dataset_field, dataset_name in (("rgeAlti5m", "rgealti5m"), ("bdAlti", "bdalti")):
+            if not item.get(dataset_field):
+                continue
+            subprocess.run(
+                [
+                    sys.executable,
+                    "scripts/prepare_ign_department_dem.py",
+                    "--manifest",
+                    str(manifest_path),
+                    "--dataset",
+                    dataset_name,
+                    "--department",
+                    department,
+                    "--output-dir",
+                    "build/watersheds/ign-data",
+                ],
+                check=True,
+            )
 
 
 def resolve_source_for_canyon(
