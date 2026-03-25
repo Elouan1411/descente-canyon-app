@@ -27,6 +27,9 @@ interface BibliographyDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertLinks(links: List<CanyonBibliographyEntity>)
 
+    @Query("SELECT COUNT(*) FROM bibliography_entries")
+    suspend fun countEntries(): Int
+
     @Query("DELETE FROM canyon_bibliography")
     suspend fun clearLinks()
 

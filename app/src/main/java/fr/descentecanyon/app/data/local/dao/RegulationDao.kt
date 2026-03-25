@@ -27,6 +27,9 @@ interface RegulationDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertLinks(links: List<CanyonRegulationEntity>)
 
+    @Query("SELECT COUNT(*) FROM regulation_texts")
+    suspend fun countTexts(): Int
+
     @Query("DELETE FROM canyon_regulations")
     suspend fun clearLinks()
 

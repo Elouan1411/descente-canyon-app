@@ -440,12 +440,13 @@ private fun SummarySection(
 }
 
 private fun LazyListScope.topoItems(detail: CanyonDetail) {
+        val sectionModifier = Modifier.padding(horizontal = 16.dp, vertical = 4.dp)
         detail.accesAval?.let { text ->
             item {
                 CollapsibleSection(
                     title = stringResource(R.string.access_downstream),
                     content = text,
-                    modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp),
+                    modifier = sectionModifier,
                 )
             }
         }
@@ -454,7 +455,7 @@ private fun LazyListScope.topoItems(detail: CanyonDetail) {
                 CollapsibleSection(
                     title = stringResource(R.string.access_upstream),
                     content = text,
-                    modifier = Modifier.padding(horizontal = 16.dp, vertical = 4.dp),
+                    modifier = sectionModifier,
                 )
             }
         }
@@ -463,7 +464,7 @@ private fun LazyListScope.topoItems(detail: CanyonDetail) {
                 CollapsibleSection(
                     title = stringResource(R.string.approach),
                     content = text,
-                    modifier = Modifier.padding(horizontal = 16.dp, vertical = 4.dp),
+                    modifier = sectionModifier,
                 )
             }
         }
@@ -472,7 +473,7 @@ private fun LazyListScope.topoItems(detail: CanyonDetail) {
                 CollapsibleSection(
                     title = stringResource(R.string.descent),
                     content = text,
-                    modifier = Modifier.padding(horizontal = 16.dp, vertical = 4.dp),
+                    modifier = sectionModifier,
                 )
             }
         }
@@ -481,7 +482,7 @@ private fun LazyListScope.topoItems(detail: CanyonDetail) {
                 CollapsibleSection(
                     title = stringResource(R.string.return_path),
                     content = text,
-                    modifier = Modifier.padding(horizontal = 16.dp, vertical = 4.dp),
+                    modifier = sectionModifier,
                 )
             }
         }
@@ -490,7 +491,7 @@ private fun LazyListScope.topoItems(detail: CanyonDetail) {
                 CollapsibleSection(
                     title = stringResource(R.string.engagement),
                     content = text,
-                    modifier = Modifier.padding(horizontal = 16.dp, vertical = 4.dp),
+                    modifier = sectionModifier,
                 )
             }
         }
@@ -499,7 +500,7 @@ private fun LazyListScope.topoItems(detail: CanyonDetail) {
                 CollapsibleSection(
                     title = stringResource(R.string.period),
                     content = text,
-                    modifier = Modifier.padding(horizontal = 16.dp, vertical = 4.dp),
+                    modifier = sectionModifier,
                 )
             }
         }
@@ -508,7 +509,7 @@ private fun LazyListScope.topoItems(detail: CanyonDetail) {
                 CollapsibleSection(
                     title = stringResource(R.string.geology),
                     content = text,
-                    modifier = Modifier.padding(horizontal = 16.dp, vertical = 4.dp),
+                    modifier = sectionModifier,
                 )
             }
         }
@@ -517,7 +518,7 @@ private fun LazyListScope.topoItems(detail: CanyonDetail) {
                 CollapsibleSection(
                     title = stringResource(R.string.history),
                     content = text,
-                    modifier = Modifier.padding(horizontal = 16.dp, vertical = 4.dp),
+                    modifier = sectionModifier,
                 )
             }
         }
@@ -526,7 +527,7 @@ private fun LazyListScope.topoItems(detail: CanyonDetail) {
                 CollapsibleSection(
                     title = stringResource(R.string.notes),
                     content = text,
-                    modifier = Modifier.padding(horizontal = 16.dp, vertical = 4.dp),
+                    modifier = sectionModifier,
                 )
             }
         }
@@ -534,7 +535,7 @@ private fun LazyListScope.topoItems(detail: CanyonDetail) {
             item {
                 BibliographySection(
                     entries = detail.bibliography,
-                    modifier = Modifier.padding(horizontal = 16.dp, vertical = 4.dp),
+                    modifier = sectionModifier,
                 )
             }
         }
@@ -542,7 +543,7 @@ private fun LazyListScope.topoItems(detail: CanyonDetail) {
             item {
                 RegulationSection(
                     regulations = detail.regulations,
-                    modifier = Modifier.padding(horizontal = 16.dp, vertical = 4.dp),
+                    modifier = sectionModifier,
                 )
             }
         }
