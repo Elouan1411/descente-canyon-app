@@ -26,7 +26,7 @@ sealed interface Screen {
     data class DebitForm(val canyonId: Int) : Screen
 
     @Serializable
-    data object PhotoGallery : Screen
+    data class PhotoGallery(val canyonId: Int, val initialPhotoId: Long) : Screen
 
     @Serializable
     data class CanyonPointsMap(val canyonId: Int) : Screen

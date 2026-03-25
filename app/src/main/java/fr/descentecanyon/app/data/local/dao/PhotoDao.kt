@@ -5,6 +5,7 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import fr.descentecanyon.app.data.local.entity.PhotoEntity
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface PhotoDao {
@@ -14,6 +15,9 @@ interface PhotoDao {
 
     @Query("SELECT * FROM photos WHERE canyonId = :canyonId")
     suspend fun getByCanyonId(canyonId: Int): List<PhotoEntity>
+
+    @Query("SELECT * FROM photos WHERE canyonId = :canyonId")
+    fun observeByCanyonId(canyonId: Int): Flow<List<PhotoEntity>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertAll(photos: List<PhotoEntity>)

@@ -3,8 +3,12 @@ package fr.descentecanyon.app.data.repository
 import android.content.Context
 import dagger.hilt.android.qualifiers.ApplicationContext
 import fr.descentecanyon.app.data.local.dao.PhotoDao
+import fr.descentecanyon.app.data.mapper.toDomain
+import fr.descentecanyon.app.domain.model.CanyonPhoto
 import fr.descentecanyon.app.domain.repository.PhotoRepository
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.withContext
 import java.io.File
 import java.net.URL
@@ -16,6 +20,12 @@ class PhotoRepositoryImpl @Inject constructor(
     private val photoDao: PhotoDao,
     @param:ApplicationContext private val context: Context,
 ) : PhotoRepository {
+
+    override fun observePhotos(canyonId: Int): Flow<List<CanyonPhoto>> {
+        return photoDao.observeByCanyonId(canyonId).map { photos ->
+            photos.map { it.toDomain() }
+        }
+    }
 
     override suspend fun downloadPhoto(photoId: Long): Result<String> = runCatching {
         withContext(Dispatchers.IO) {

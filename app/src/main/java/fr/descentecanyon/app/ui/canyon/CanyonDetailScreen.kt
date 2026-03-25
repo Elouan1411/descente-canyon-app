@@ -73,6 +73,8 @@ import androidx.compose.ui.window.DialogProperties
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import coil3.compose.AsyncImage
+import coil3.request.ImageRequest
+import coil3.request.allowHardware
 import fr.descentecanyon.app.R
 import fr.descentecanyon.app.domain.model.BibliographyEntry
 import fr.descentecanyon.app.domain.model.BibliographyKind
@@ -104,7 +106,7 @@ fun CanyonDetailScreen(
     onBackClick: () -> Unit,
     onReportDebitClick: () -> Unit,
     onShowMapClick: () -> Unit,
-    onOpenPhotoGallery: () -> Unit,
+    onOpenPhotoGallery: (Long) -> Unit,
     modifier: Modifier = Modifier,
     viewModel: CanyonDetailViewModel = hiltViewModel(),
 ) {
@@ -232,7 +234,7 @@ private fun CanyonDetailContent(
     isLoadingPhotos: Boolean,
     isLoadingDebits: Boolean,
     downloadingPhotoIds: Set<Long>,
-    onOpenPhotoGallery: () -> Unit,
+    onOpenPhotoGallery: (Long) -> Unit,
     modifier: Modifier = Modifier,
 ) {
     var selectedTab by rememberSaveable { mutableIntStateOf(0) }
@@ -933,7 +935,7 @@ private fun LazyListScope.photosItems(
     isLoadingPhotos: Boolean,
     isOfflineSaved: Boolean,
     downloadingPhotoIds: Set<Long>,
-    onOpenPhotoGallery: () -> Unit,
+    onOpenPhotoGallery: (Long) -> Unit,
 ) {
     if (isLoadingPhotos && photos.isEmpty()) {
         item {
@@ -974,8 +976,7 @@ private fun LazyListScope.photosItems(
                 photo = photo,
                 isDownloading = downloadingPhotoIds.contains(photo.id),
                 onOpen = {
-                    PhotoGallerySession.open(photos, photos.indexOf(photo))
-                    onOpenPhotoGallery()
+                    onOpenPhotoGallery(photo.id)
                 },
                 modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp),
             )
@@ -1026,16 +1027,30 @@ private fun ProgressivePhoto(
     modifier: Modifier = Modifier,
     contentScale: ContentScale,
 ) {
+    val context = LocalContext.current
+    val previewRequest: ImageRequest = remember(context, photo.localPath, photo.thumbnailUrl, photo.url) {
+        ImageRequest.Builder(context)
+            .data(photo.localPath ?: photo.thumbnailUrl ?: photo.url)
+            .allowHardware(false)
+            .build()
+    }
+    val fullRequest: ImageRequest = remember(context, photo.url) {
+        ImageRequest.Builder(context)
+            .data(photo.url)
+            .allowHardware(false)
+            .build()
+    }
+
     Box(modifier = modifier.background(MaterialTheme.colorScheme.surface)) {
         AsyncImage(
-            model = photo.localPath ?: photo.thumbnailUrl ?: photo.url,
+            model = previewRequest,
             contentDescription = photo.description,
             modifier = Modifier.fillMaxSize(),
             contentScale = contentScale,
         )
         if (photo.localPath == null) {
             AsyncImage(
-                model = photo.url,
+                model = fullRequest,
                 contentDescription = photo.description,
                 modifier = Modifier.fillMaxSize(),
                 contentScale = contentScale,

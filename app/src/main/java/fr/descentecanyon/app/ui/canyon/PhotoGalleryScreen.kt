@@ -32,6 +32,7 @@ import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.runtime.snapshotFlow
 import androidx.compose.runtime.setValue
 import androidx.compose.runtime.saveable.rememberSaveable
@@ -50,6 +51,8 @@ import androidx.core.view.WindowInsetsControllerCompat
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import coil3.compose.AsyncImage
+import coil3.request.ImageRequest
+import coil3.request.allowHardware
 import fr.descentecanyon.app.R
 
 @OptIn(ExperimentalFoundationApi::class)
@@ -59,30 +62,47 @@ fun PhotoGalleryScreen(
     modifier: Modifier = Modifier,
     viewModel: PhotoGalleryViewModel = hiltViewModel(),
 ) {
-    val photos by PhotoGallerySession.photos.collectAsStateWithLifecycle()
-    val currentIndex by PhotoGallerySession.currentIndex.collectAsStateWithLifecycle()
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
+    val photos = uiState.photos
     val context = LocalContext.current
     var showOverlay by rememberSaveable { mutableStateOf(true) }
+
+    if (uiState.isLoading) {
+        Surface(
+            modifier = modifier.fillMaxSize(),
+            color = Color.Black,
+        ) {
+            Box(
+                modifier = Modifier.fillMaxSize(),
+                contentAlignment = Alignment.Center,
+            ) {
+                CircularProgressIndicator(color = Color.White)
+            }
+        }
+        return
+    }
 
     if (photos.isEmpty()) {
         LaunchedEffect(Unit) { onBackClick() }
         return
     }
 
-    BackHandler {
-        PhotoGallerySession.clear()
-        onBackClick()
-    }
+    BackHandler(onBack = onBackClick)
 
     val pagerState = rememberPagerState(
-        initialPage = currentIndex,
+        initialPage = 0,
         pageCount = { photos.size },
     )
 
+    LaunchedEffect(uiState.currentIndex, photos.size) {
+        if (photos.isNotEmpty() && pagerState.currentPage != uiState.currentIndex) {
+            pagerState.scrollToPage(uiState.currentIndex)
+        }
+    }
+
     LaunchedEffect(pagerState) {
         snapshotFlow { pagerState.currentPage }.collect { page ->
-            PhotoGallerySession.updateCurrentIndex(page)
+            viewModel.onPageChanged(page)
         }
     }
 
@@ -125,13 +145,19 @@ fun PhotoGalleryScreen(
             modifier = Modifier.fillMaxSize(),
         ) { page ->
             val photo = photos[page]
+            val photoRequest: ImageRequest = remember(context, photo.localPath, photo.url) {
+                ImageRequest.Builder(context)
+                    .data(photo.localPath ?: photo.url)
+                    .allowHardware(false)
+                    .build()
+            }
             Box(
                 modifier = Modifier
                     .fillMaxSize()
                     .clickable { showOverlay = !showOverlay },
             ) {
                 AsyncImage(
-                    model = photo.localPath ?: photo.url,
+                    model = photoRequest,
                     contentDescription = photo.description,
                     modifier = Modifier.fillMaxSize().background(Color.Black),
                     contentScale = ContentScale.Fit,
