@@ -481,6 +481,7 @@ def process_single_canyon(
     keep_work: bool,
 ) -> str:
     canyon_file = output_dir / "canyons" / f"{canyon_id}.json"
+    print(f"START canyon {canyon_id} {canyon.get('nomComplet') or canyon.get('nom')}", flush=True)
 
     source = resolve_source_for_canyon(
         canyon=canyon,
@@ -498,6 +499,7 @@ def process_single_canyon(
                 "status": "no_matching_source",
             },
         )
+        print(f"DONE canyon {canyon_id} no_matching_source", flush=True)
         return "no_matching_source"
 
     if source["mode"] == "derive_local_hydrology":
@@ -536,6 +538,7 @@ def process_single_canyon(
     write_json(canyon_file, result)
     if not keep_work:
         shutil.rmtree(output_dir / "work" / str(canyon_id), ignore_errors=True)
+    print(f"DONE canyon {canyon_id} ok", flush=True)
     return "ok"
 
 
@@ -611,8 +614,12 @@ def main() -> int:
                 processed += 1
         else:
             with concurrent.futures.ThreadPoolExecutor(max_workers=args.jobs) as executor:
-                future_to_canyon = {
-                    executor.submit(
+                pending_iter = iter(pending)
+                in_flight: dict[concurrent.futures.Future[str], int] = {}
+
+                for _ in range(min(args.jobs, len(pending))):
+                    canyon_id, canyon, points = next(pending_iter)
+                    future = executor.submit(
                         process_single_canyon,
                         canyon_id=canyon_id,
                         canyon=canyon,
@@ -621,13 +628,34 @@ def main() -> int:
                         output_dir=output_dir,
                         gdal_translate=gdal_translate,
                         keep_work=args.keep_work,
-                    ): canyon_id
-                    for canyon_id, canyon, points in pending
-                }
-                for future in concurrent.futures.as_completed(future_to_canyon):
-                    future.result()
-                    aggregate_results(output_dir)
-                    processed += 1
+                    )
+                    in_flight[future] = canyon_id
+
+                while in_flight:
+                    done, _ = concurrent.futures.wait(
+                        in_flight,
+                        return_when=concurrent.futures.FIRST_COMPLETED,
+                    )
+                    for future in done:
+                        future.result()
+                        processed += 1
+                        aggregate_results(output_dir)
+                        in_flight.pop(future, None)
+                        try:
+                            canyon_id, canyon, points = next(pending_iter)
+                        except StopIteration:
+                            continue
+                        new_future = executor.submit(
+                            process_single_canyon,
+                            canyon_id=canyon_id,
+                            canyon=canyon,
+                            points=points,
+                            sources=sources,
+                            output_dir=output_dir,
+                            gdal_translate=gdal_translate,
+                            keep_work=args.keep_work,
+                        )
+                        in_flight[new_future] = canyon_id
     except KeyboardInterrupt:
         print("Interrupted cleanly. Resume with the same command to continue.")
     finally:

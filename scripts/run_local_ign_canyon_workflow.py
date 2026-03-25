@@ -70,43 +70,44 @@ def clip_dem(
     *,
     source_srs: str | None = None,
 ) -> None:
-    with rasterio.open(source_dem) as src:
-        source_crs = src.crs or source_srs
-        if source_crs is None:
-            raise SystemExit(f"DEM sans CRS exploitable: {source_dem}")
+    with rasterio.Env(GDAL_CACHEMAX=256):
+        with rasterio.open(source_dem) as src:
+            source_crs = src.crs or source_srs
+            if source_crs is None:
+                raise SystemExit(f"DEM sans CRS exploitable: {source_dem}")
 
-        longitudes = [point[1] for point in points]
-        latitudes = [point[0] for point in points]
-        xs, ys = transform("EPSG:4326", source_crs, longitudes, latitudes)
-        min_x = min(xs) - buffer_m
-        max_x = max(xs) + buffer_m
-        min_y = min(ys) - buffer_m
-        max_y = max(ys) + buffer_m
+            longitudes = [point[1] for point in points]
+            latitudes = [point[0] for point in points]
+            xs, ys = transform("EPSG:4326", source_crs, longitudes, latitudes)
+            min_x = min(xs) - buffer_m
+            max_x = max(xs) + buffer_m
+            min_y = min(ys) - buffer_m
+            max_y = max(ys) + buffer_m
 
-        window = src.window(min_x, min_y, max_x, max_y)
-        window = window.round_offsets().round_lengths()
-        row_off = max(0, int(window.row_off))
-        col_off = max(0, int(window.col_off))
-        height = min(src.height - row_off, int(window.height))
-        width = min(src.width - col_off, int(window.width))
-        clipped_window = Window(row_off=row_off, col_off=col_off, height=height, width=width)
+            window = src.window(min_x, min_y, max_x, max_y)
+            window = window.round_offsets().round_lengths()
+            row_off = max(0, int(window.row_off))
+            col_off = max(0, int(window.col_off))
+            height = min(src.height - row_off, int(window.height))
+            width = min(src.width - col_off, int(window.width))
+            clipped_window = Window(row_off=row_off, col_off=col_off, height=height, width=width)
 
-        profile = src.profile.copy()
-        profile.update(
-            height=height,
-            width=width,
-            transform=src.window_transform(clipped_window),
-            crs=source_crs,
-            compress="lzw",
-            tiled=True,
-            BIGTIFF="YES",
-        )
+            profile = src.profile.copy()
+            profile.update(
+                height=height,
+                width=width,
+                transform=src.window_transform(clipped_window),
+                crs=source_crs,
+                compress="lzw",
+                tiled=True,
+                BIGTIFF="YES",
+            )
 
-        output_dem.parent.mkdir(parents=True, exist_ok=True)
-        with rasterio.open(output_dem, "w", **profile) as dst:
-            for band_index in range(1, src.count + 1):
-                data = src.read(band_index, window=clipped_window)
-                dst.write(data, band_index)
+            output_dem.parent.mkdir(parents=True, exist_ok=True)
+            with rasterio.open(output_dem, "w", **profile) as dst:
+                for band_index in range(1, src.count + 1):
+                    data = src.read(band_index, window=clipped_window)
+                    dst.write(data, band_index)
 
 
 def parse_args() -> argparse.Namespace:
