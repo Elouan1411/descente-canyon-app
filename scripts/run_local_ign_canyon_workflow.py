@@ -62,14 +62,22 @@ def materialize_dem_if_needed(input_dem: Path, output_dir: Path, gdal_translate:
     return materialized
 
 
-def clip_dem(source_dem: Path, output_dem: Path, points: list[tuple[float, float]], buffer_m: float) -> None:
+def clip_dem(
+    source_dem: Path,
+    output_dem: Path,
+    points: list[tuple[float, float]],
+    buffer_m: float,
+    *,
+    source_srs: str | None = None,
+) -> None:
     with rasterio.open(source_dem) as src:
-        if src.crs is None:
+        source_crs = src.crs or source_srs
+        if source_crs is None:
             raise SystemExit(f"DEM sans CRS exploitable: {source_dem}")
 
         longitudes = [point[1] for point in points]
         latitudes = [point[0] for point in points]
-        xs, ys = transform("EPSG:4326", src.crs, longitudes, latitudes)
+        xs, ys = transform("EPSG:4326", source_crs, longitudes, latitudes)
         min_x = min(xs) - buffer_m
         max_x = max(xs) + buffer_m
         min_y = min(ys) - buffer_m
@@ -88,6 +96,7 @@ def clip_dem(source_dem: Path, output_dem: Path, points: list[tuple[float, float
             height=height,
             width=width,
             transform=src.window_transform(clipped_window),
+            crs=source_crs,
             compress="lzw",
             tiled=True,
             BIGTIFF="YES",
@@ -183,6 +192,7 @@ def main() -> int:
             clip_path,
             [(float(point["latitude"]), float(point["longitude"])) for point in entry_points],
             buffer_m,
+            source_srs=args.srs,
         )
 
         subprocess.run(

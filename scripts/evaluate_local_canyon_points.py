@@ -104,6 +104,7 @@ def main() -> int:
             clip_path,
             [(float(point["latitude"]), float(point["longitude"])) for point in source_points],
             args.buffer_km * 1000.0,
+            source_srs=args.srs,
         )
 
         if not (hydrology_dir / "ign_upstream_area_km2.tif").exists():

@@ -346,6 +346,7 @@ def ensure_local_hydrology(
             clip_path,
             [(float(point["latitude"]), float(point["longitude"])) for point in points],
             float(source.get("bufferKm", 20.0)) * 1000.0,
+            source_srs=source.get("srs"),
         )
         subprocess.run(
             [
@@ -546,6 +547,12 @@ def main() -> int:
 
     config = load_json(args.source_config)
     sources = config["sources"]
+    if args.france_only:
+        sources = [
+            source
+            for source in sources
+            if source.get("match", {}).get("pays") == "France"
+        ]
     canyons = load_canyons(args.canyons_json)
     point_types = set(args.point_type)
     geo_points = load_json(args.geo_points_json)

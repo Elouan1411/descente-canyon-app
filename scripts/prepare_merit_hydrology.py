@@ -78,6 +78,8 @@ def main() -> int:
             download_file(str(url), tar_path)
             if not marker.exists():
                 raw_dir.mkdir(parents=True, exist_ok=True)
+                if not tar_path.exists():
+                    raise SystemExit(f"MERIT archive missing after download attempt: {tar_path}")
                 if not tarfile.is_tarfile(tar_path):
                     tar_path.unlink(missing_ok=True)
                     raise SystemExit(
