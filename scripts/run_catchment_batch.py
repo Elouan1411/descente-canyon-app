@@ -30,6 +30,14 @@ POINT_TYPE_PRIORITY = {
     "POINT_REMARQUABLE": 4,
 }
 
+HYDRO_TYPE_BONUS = {
+    "ENTREE": 6.0,
+    "SORTIE": 5.0,
+    "PARKING_AVAL": 3.0,
+    "POINT_REMARQUABLE": 2.0,
+    "PARKING_AMONT": 1.0,
+}
+
 
 def load_json(path: Path) -> Any:
     return json.loads(path.read_text(encoding="utf-8"))
@@ -216,6 +224,62 @@ def auto_prepare_source(
         ]
         for cell in points_copernicus_cells(points):
             command.extend(["--cell", cell])
+        subprocess.run(command, check=True)
+        return
+
+    if provider == "switzerland-stac":
+        command = [
+            sys.executable,
+            "scripts/prepare_switzerland_dem.py",
+            "--output-dir",
+            auto_prepare.get("outputDir"),
+            "--buffer-km",
+            str(auto_prepare.get("bufferKm", source.get("bufferKm", 10.0))),
+        ]
+        for point in points:
+            command.extend(["--point", f"{point['latitude']},{point['longitude']}"])
+        subprocess.run(command, check=True)
+        return
+
+    if provider == "spain-wcs":
+        command = [
+            sys.executable,
+            "scripts/prepare_spain_dem.py",
+            "--output-dir",
+            auto_prepare.get("outputDir"),
+            "--buffer-km",
+            str(auto_prepare.get("bufferKm", source.get("bufferKm", 20.0))),
+        ]
+        for point in points:
+            command.extend(["--point", f"{point['latitude']},{point['longitude']}"])
+        subprocess.run(command, check=True)
+        return
+
+    if provider == "austria-als":
+        command = [
+            sys.executable,
+            "scripts/prepare_austria_dem.py",
+            "--output-dir",
+            auto_prepare.get("outputDir"),
+            "--buffer-km",
+            str(auto_prepare.get("bufferKm", source.get("bufferKm", 20.0))),
+        ]
+        for point in points:
+            command.extend(["--point", f"{point['latitude']},{point['longitude']}"])
+        subprocess.run(command, check=True)
+        return
+
+    if provider == "liguria-wcs":
+        command = [
+            sys.executable,
+            "scripts/prepare_liguria_dem.py",
+            "--output-dir",
+            auto_prepare.get("outputDir"),
+            "--buffer-km",
+            str(auto_prepare.get("bufferKm", source.get("bufferKm", 20.0))),
+        ]
+        for point in points:
+            command.extend(["--point", f"{point['latitude']},{point['longitude']}"])
         subprocess.run(command, check=True)
         return
 
@@ -449,18 +513,143 @@ def evaluate_points_for_canyon(
             elevation_raster.close()
 
 
-def suggested_candidate(points: list[dict[str, Any]]) -> dict[str, Any] | None:
+def analyze_point_candidates(points: list[dict[str, Any]]) -> dict[str, Any]:
     valid = [point for point in points if point["evaluation"]["snapped_upa_km2"] is not None]
     if not valid:
-        return None
-    return min(
-        valid,
+        return {
+            "points": points,
+            "bestHydroProxyCandidate": None,
+            "strictTopoCandidate": None,
+            "analysisSummary": {
+                "validCandidateCount": 0,
+                "maxUpaKm2": None,
+            },
+        }
+
+    max_upa = max(float(point["evaluation"]["snapped_upa_km2"]) for point in valid)
+    analyzed_points = []
+
+    for point in points:
+        evaluation = point["evaluation"]
+        snapped_upa = evaluation.get("snapped_upa_km2")
+        snap_distance = evaluation.get("snap_distance_m")
+        raw_to_snapped_ratio = evaluation.get("raw_to_snapped_upa_ratio")
+        point_type = str(point.get("pointType") or "")
+
+        verdict = "invalid"
+        reasons: list[str] = []
+        score = float("-inf")
+        relative_upa_ratio = None
+
+        if snapped_upa is not None:
+            snapped_upa = float(snapped_upa)
+            relative_upa_ratio = snapped_upa / max(max_upa, 1e-9)
+            score = min(relative_upa_ratio, 1.25) * 100.0
+            score += HYDRO_TYPE_BONUS.get(point_type, 0.0)
+
+            if snap_distance is not None:
+                score -= min(float(snap_distance) / 5.0, 40.0)
+                if float(snap_distance) > 80.0:
+                    reasons.append("long_snap_distance")
+                elif float(snap_distance) > 30.0:
+                    reasons.append("moderate_snap_distance")
+
+            if raw_to_snapped_ratio is not None:
+                ratio_value = float(raw_to_snapped_ratio)
+                if ratio_value >= 100.0:
+                    score -= 35.0
+                    reasons.append("very_large_upa_jump_after_snap")
+                elif ratio_value >= 20.0:
+                    score -= 18.0
+                    reasons.append("large_upa_jump_after_snap")
+                elif ratio_value >= 10.0:
+                    score -= 10.0
+                    reasons.append("moderate_upa_jump_after_snap")
+
+            if snapped_upa < 0.01:
+                score -= 120.0
+                reasons.append("tiny_absolute_upa")
+            elif snapped_upa < 0.05:
+                score -= 30.0
+                reasons.append("small_absolute_upa")
+
+            if relative_upa_ratio < 0.05:
+                score -= 200.0
+                reasons.append("upa_far_below_best_candidate")
+            elif relative_upa_ratio < 0.20:
+                score -= 60.0
+                reasons.append("upa_much_lower_than_best_candidate")
+            elif relative_upa_ratio < 0.50:
+                score -= 15.0
+                reasons.append("upa_lower_than_best_candidate")
+            else:
+                reasons.append("upa_close_to_best_candidate")
+
+            if point_type == "PARKING_AMONT" and relative_upa_ratio < 0.20:
+                score -= 30.0
+                reasons.append("upstream_parking_unlikely_hydrologic_proxy")
+            if point_type == "PARKING_AVAL" and relative_upa_ratio >= 0.75:
+                reasons.append("downstream_parking_plausible_proxy")
+            if point_type == "ENTREE":
+                reasons.append("topo_entry_point")
+            if point_type == "SORTIE":
+                reasons.append("topo_exit_point")
+
+            if "tiny_absolute_upa" in reasons or "upa_far_below_best_candidate" in reasons:
+                verdict = "off_channel"
+            elif any(reason in reasons for reason in ["very_large_upa_jump_after_snap", "large_upa_jump_after_snap"]) and (snap_distance or 0.0) > 50.0:
+                verdict = "uncertain"
+            elif relative_upa_ratio >= 0.75 and (snap_distance or 0.0) <= 80.0:
+                verdict = "good_proxy"
+            else:
+                verdict = "possible_proxy"
+
+        analysis = {
+            "selectionScore": None if score == float("-inf") else round(score, 3),
+            "selectionVerdict": verdict,
+            "selectionReasons": reasons,
+            "relativeUpaRatioToBest": None if relative_upa_ratio is None else round(relative_upa_ratio, 6),
+        }
+        analyzed_point = dict(point)
+        analyzed_point["analysis"] = analysis
+        analyzed_points.append(analyzed_point)
+
+    ranked_valid = sorted(
+        [point for point in analyzed_points if point["evaluation"]["snapped_upa_km2"] is not None],
         key=lambda point: (
-            POINT_TYPE_PRIORITY.get(str(point["pointType"]), 99),
+            -(point["analysis"]["selectionScore"] or float("-inf")),
             point["evaluation"]["snap_distance_m"] if point["evaluation"]["snap_distance_m"] is not None else float("inf"),
+            POINT_TYPE_PRIORITY.get(str(point["pointType"]), 99),
             -(point["evaluation"]["snapped_upa_km2"] or 0.0),
         ),
     )
+
+    for rank, point in enumerate(ranked_valid, start=1):
+        point["analysis"]["selectionRank"] = rank
+
+    best_hydro_proxy = next(
+        (point for point in ranked_valid if point["analysis"]["selectionVerdict"] in {"good_proxy", "possible_proxy", "uncertain"}),
+        ranked_valid[0] if ranked_valid else None,
+    )
+    strict_topo_candidate = min(
+        ranked_valid,
+        key=lambda point: (
+            POINT_TYPE_PRIORITY.get(str(point["pointType"]), 99),
+            point["analysis"]["selectionRank"],
+        ),
+    ) if ranked_valid else None
+
+    return {
+        "points": analyzed_points,
+        "bestHydroProxyCandidate": best_hydro_proxy,
+        "strictTopoCandidate": strict_topo_candidate,
+        "analysisSummary": {
+            "validCandidateCount": len(ranked_valid),
+            "maxUpaKm2": round(max_upa, 6),
+            "bestHydroProxyPointType": best_hydro_proxy.get("pointType") if best_hydro_proxy else None,
+            "strictTopoPointType": strict_topo_candidate.get("pointType") if strict_topo_candidate else None,
+        },
+    }
 
 
 def perpendicular_distance(point: tuple[float, float], start: tuple[float, float], end: tuple[float, float]) -> float:
@@ -639,7 +828,7 @@ def aggregate_results(output_dir: Path) -> None:
     watershed_rows = []
     watershed_features = []
     for item in canyon_results:
-        candidate = item.get("suggestedCandidate")
+        candidate = item.get("bestHydroProxyCandidate") or item.get("suggestedCandidate")
         if not candidate:
             continue
         import_rows.append(
@@ -654,6 +843,10 @@ def aggregate_results(output_dir: Path) -> None:
                 "upstreamCatchmentAreaKm2": candidate["evaluation"]["snapped_upa_km2"],
                 "snapDistanceM": candidate["evaluation"]["snap_distance_m"],
                 "rawToSnappedUpaRatio": candidate["evaluation"]["raw_to_snapped_upa_ratio"],
+                "selectionVerdict": candidate.get("analysis", {}).get("selectionVerdict"),
+                "selectionScore": candidate.get("analysis", {}).get("selectionScore"),
+                "strictTopoPointType": item.get("strictTopoCandidate", {}).get("pointType") if item.get("strictTopoCandidate") else None,
+                "strictTopoUpstreamCatchmentAreaKm2": item.get("strictTopoCandidate", {}).get("evaluation", {}).get("snapped_upa_km2") if item.get("strictTopoCandidate") else None,
             }
         )
         watershed = item.get("watershed")
@@ -668,6 +861,7 @@ def aggregate_results(output_dir: Path) -> None:
                     "selectedPointType": watershed.get("selectedPointType"),
                     "selectedPointLabel": watershed.get("selectedPointLabel"),
                     "upstreamCatchmentAreaKm2": watershed.get("selectedUpstreamCatchmentAreaKm2"),
+                    "selectionVerdict": watershed.get("selectedSelectionVerdict"),
                     "geometry": watershed.get("geometry"),
                 }
             )
@@ -681,6 +875,7 @@ def aggregate_results(output_dir: Path) -> None:
                         "sourceName": item["sourceName"],
                         "vertexCount": watershed.get("vertexCount"),
                         "upstreamCatchmentAreaKm2": watershed.get("selectedUpstreamCatchmentAreaKm2"),
+                        "selectionVerdict": watershed.get("selectedSelectionVerdict"),
                     },
                 }
             )
@@ -756,7 +951,10 @@ def process_single_canyon(
         source=source,
         raster_paths=raster_paths,
     )
-    selected_candidate = suggested_candidate(point_results)
+    candidate_analysis = analyze_point_candidates(point_results)
+    analyzed_points = candidate_analysis["points"]
+    selected_candidate = candidate_analysis["bestHydroProxyCandidate"]
+    strict_topo_candidate = candidate_analysis["strictTopoCandidate"]
     watershed = None
     if (
         selected_candidate is not None
@@ -781,6 +979,7 @@ def process_single_canyon(
                 "selectedPointType": selected_candidate["pointType"],
                 "selectedPointLabel": selected_candidate.get("label"),
                 "selectedUpstreamCatchmentAreaKm2": selected_candidate["evaluation"].get("snapped_upa_km2"),
+                "selectedSelectionVerdict": selected_candidate.get("analysis", {}).get("selectionVerdict"),
                 "simplifyToleranceM": float(source.get("watershedSimplifyToleranceM", 10.0)),
             }
         print(f"WATERSHED canyon {canyon_id} done", flush=True)
@@ -791,7 +990,10 @@ def process_single_canyon(
         "department": canyon.get("departement"),
         "sourceName": source["name"],
         "sourceMode": source["mode"],
-        "points": point_results,
+        "points": analyzed_points,
+        "analysisSummary": candidate_analysis["analysisSummary"],
+        "bestHydroProxyCandidate": selected_candidate,
+        "strictTopoCandidate": strict_topo_candidate,
         "suggestedCandidate": selected_candidate,
         "watershed": watershed,
     }
