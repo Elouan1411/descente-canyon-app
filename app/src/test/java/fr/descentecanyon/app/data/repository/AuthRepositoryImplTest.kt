@@ -3,6 +3,8 @@ package fr.descentecanyon.app.data.repository
 import fr.descentecanyon.app.data.remote.auth.CredentialStore
 import fr.descentecanyon.app.data.remote.auth.LoginException
 import fr.descentecanyon.app.data.remote.auth.SessionManager
+import fr.descentecanyon.app.data.network.DescenteCanyonWebClient
+import fr.descentecanyon.app.data.network.WebDocumentResponse
 import fr.descentecanyon.app.domain.model.AuthState
 import io.mockk.every
 import io.mockk.mockk
@@ -21,9 +23,15 @@ class AuthRepositoryImplTest {
 
     @Before
     fun setup() {
-        // Use a real SessionManager (it has no Android deps) instead of mocking
-        // because MockK relaxed mocks don't handle Mutex/Lazy properly
-        sessionManager = SessionManager()
+        sessionManager = SessionManager(object : DescenteCanyonWebClient() {
+            override fun postDocument(
+                url: String,
+                data: Map<String, String>,
+                cookies: Map<String, String>,
+            ): WebDocumentResponse {
+                throw LoginException("Login failed: invalid credentials")
+            }
+        })
         credentialStore = mockk(relaxed = true)
         repository = AuthRepositoryImpl(sessionManager, credentialStore)
     }
@@ -36,7 +44,6 @@ class AuthRepositoryImplTest {
 
     @Test
     fun `login failure updates state to error`() = runTest {
-        // Login will fail because we can't actually connect in unit tests
         val result = repository.login("user", "wrong")
 
         assertTrue(result.isFailure)

@@ -1,12 +1,11 @@
 package fr.descentecanyon.app.data.remote.auth
 
+import fr.descentecanyon.app.data.network.DescenteCanyonWebClient
 import fr.descentecanyon.app.data.remote.scraper.CanyonScraper
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 import kotlinx.coroutines.withContext
-import org.jsoup.Connection
-import org.jsoup.Jsoup
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -18,7 +17,9 @@ import javax.inject.Singleton
  * On success, the server sets session cookies that must be sent with all subsequent requests.
  */
 @Singleton
-class SessionManager @Inject constructor() {
+class SessionManager @Inject constructor(
+    private val webClient: DescenteCanyonWebClient,
+) {
 
     private val mutex = Mutex()
     @Volatile private var cookies: Map<String, String> = emptyMap()
@@ -29,8 +30,6 @@ class SessionManager @Inject constructor() {
 
     companion object {
         private const val LOGIN_URL = "${CanyonScraper.BASE_URL}/login"
-        private const val USER_AGENT = "DescenteCanyonApp (Android)"
-        private const val TIMEOUT_MS = 15_000
     }
 
     /**
@@ -40,17 +39,14 @@ class SessionManager @Inject constructor() {
      */
     suspend fun login(username: String, password: String): String = mutex.withLock {
         withContext(Dispatchers.IO) {
-            val response = Jsoup.connect(LOGIN_URL)
-                .userAgent(USER_AGENT)
-                .timeout(TIMEOUT_MS)
-                .data("username", username)
-                .data("password", password)
-                .method(Connection.Method.POST)
-                .followRedirects(true)
-                .execute()
-
-            val responseCookies = response.cookies()
-            val doc = response.parse()
+            val response = webClient.postDocument(
+                url = LOGIN_URL,
+                data = mapOf(
+                    "username" to username,
+                    "password" to password,
+                ),
+            )
+            val doc = response.document
 
             // Check if login succeeded: the navbar should show the username instead of "S'identifier"
             val navbarText = doc.select("ul.navbar-nav.navbar-right").text()
@@ -61,7 +57,7 @@ class SessionManager @Inject constructor() {
                 throw LoginException("Login failed: invalid credentials")
             }
 
-            cookies = responseCookies
+            cookies = response.cookies
             _loggedInUsername = username
             username
         }
@@ -80,16 +76,6 @@ class SessionManager @Inject constructor() {
      */
     fun getCookies(): Map<String, String> = cookies
 
-    /**
-     * Apply session cookies to a JSoup connection.
-     */
-    fun applyTo(connection: Connection): Connection {
-        return if (cookies.isNotEmpty()) {
-            connection.cookies(cookies)
-        } else {
-            connection
-        }
-    }
 }
 
 class LoginException(message: String) : Exception(message)

@@ -1,6 +1,6 @@
 package fr.descentecanyon.app.data.remote.scraper
 
-import fr.descentecanyon.app.BuildConfig
+import fr.descentecanyon.app.data.network.DescenteCanyonWebClient
 import fr.descentecanyon.app.data.remote.auth.SessionManager
 import fr.descentecanyon.app.data.remote.dto.ScrapedCanyonDetail
 import fr.descentecanyon.app.data.remote.dto.ScrapedCanyonSummary
@@ -16,8 +16,6 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.sync.Semaphore
 import kotlinx.coroutines.sync.withPermit
 import kotlinx.coroutines.withContext
-import org.jsoup.Connection
-import org.jsoup.Jsoup
 import org.jsoup.nodes.Document
 import org.jsoup.nodes.Element
 import javax.inject.Inject
@@ -29,13 +27,12 @@ import javax.inject.Singleton
  */
 @Singleton
 class CanyonScraper @Inject constructor(
+    private val webClient: DescenteCanyonWebClient,
     private val sessionManager: SessionManager,
 ) {
 
     companion object {
         const val BASE_URL = "https://www.descente-canyon.com"
-        private val USER_AGENT = "DescenteCanyonApp/${BuildConfig.VERSION_NAME} (Android)"
-        private const val TIMEOUT_MS = 15_000
     }
 
     // Rate limit: max 3 concurrent requests to avoid overloading the site
@@ -107,12 +104,12 @@ class CanyonScraper @Inject constructor(
         withContext(Dispatchers.IO) {
             semaphore.withPermit {
                 runCatching {
-                    val connection = Jsoup.connect("$BASE_URL/canyoning")
-                        .userAgent(USER_AGENT)
-                        .timeout(TIMEOUT_MS)
-                        .data("q", query)
-                    val doc = sessionManager.applyTo(connection).post()
-                    SearchParser.parse(doc)
+                    val response = webClient.postDocument(
+                        url = "$BASE_URL/canyoning",
+                        data = mapOf("q" to query),
+                        cookies = sessionManager.getCookies(),
+                    )
+                    SearchParser.parse(response.document)
                 }
             }
         }
@@ -143,27 +140,23 @@ class CanyonScraper @Inject constructor(
             semaphore.withPermit {
                 runCatching {
                     val url = "$BASE_URL/canyoning/ajout-debit/${submission.canyonId}/formulaire-observation.html"
-                    val response = sessionManager.applyTo(
-                        Jsoup.connect(url)
-                            .userAgent(USER_AGENT)
-                            .timeout(TIMEOUT_MS)
-                            .method(Connection.Method.POST)
-                            .data(
-                                mapOf(
-                                    "groupe" to submission.observerName,
-                                    "emailgroupe" to submission.observerEmail.orEmpty(),
-                                    "date_mesure" to submission.observationDate.toString(),
-                                    "parcouru" to submission.observationType.toFormValue(),
-                                    "debit" to submission.debitLevel.toFormValue(),
-                                    "eau" to submission.waterTemperature.toFormValue(),
-                                    "air" to submission.airTemperature.toFormValue(),
-                                    "remarque" to submission.comment,
-                                )
-                            )
-                    ).execute()
+                    val response = webClient.postDocument(
+                        url = url,
+                        data = mapOf(
+                            "groupe" to submission.observerName,
+                            "emailgroupe" to submission.observerEmail.orEmpty(),
+                            "date_mesure" to submission.observationDate.toString(),
+                            "parcouru" to submission.observationType.toFormValue(),
+                            "debit" to submission.debitLevel.toFormValue(),
+                            "eau" to submission.waterTemperature.toFormValue(),
+                            "air" to submission.airTemperature.toFormValue(),
+                            "remarque" to submission.comment,
+                        ),
+                        cookies = sessionManager.getCookies(),
+                    )
 
-                    val finalUrl = response.url().toString()
-                    val doc = response.parse()
+                    val finalUrl = response.finalUrl
+                    val doc = response.document
                     val success = finalUrl.contains("/canyoning/canyon-debit/${submission.canyonId}/observations.html") ||
                         doc.selectFirst("form#monformulaire") == null
 
@@ -211,10 +204,10 @@ class CanyonScraper @Inject constructor(
     // --- Internal ---
 
     private fun fetchDocument(url: String): Document {
-        val connection = Jsoup.connect(url)
-            .userAgent(USER_AGENT)
-            .timeout(TIMEOUT_MS)
-        return sessionManager.applyTo(connection).get()
+        return webClient.getDocument(
+            url = url,
+            cookies = sessionManager.getCookies(),
+        )
     }
 }
 

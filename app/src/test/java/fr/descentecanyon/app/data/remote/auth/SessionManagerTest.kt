@@ -1,5 +1,6 @@
 package fr.descentecanyon.app.data.remote.auth
 
+import fr.descentecanyon.app.data.network.DescenteCanyonWebClient
 import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Test
@@ -10,7 +11,7 @@ class SessionManagerTest {
 
     @Before
     fun setup() {
-        sessionManager = SessionManager()
+        sessionManager = SessionManager(DescenteCanyonWebClient())
     }
 
     @Test
