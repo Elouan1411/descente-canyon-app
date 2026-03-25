@@ -1,5 +1,8 @@
 package fr.descentecanyon.app.ui.search
 
+import android.Manifest
+import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -9,7 +12,9 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
@@ -18,19 +23,25 @@ import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material.icons.automirrored.filled.Sort
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.Sort
 import androidx.compose.material.icons.filled.ArrowDownward
 import androidx.compose.material.icons.filled.ArrowUpward
 import androidx.compose.material.icons.filled.Clear
 import androidx.compose.material.icons.filled.ExpandMore
+import androidx.compose.material.icons.filled.List
+import androidx.compose.material.icons.filled.Map
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.Tune
+import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FilterChip
+import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
@@ -48,9 +59,10 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -61,8 +73,13 @@ import fr.descentecanyon.app.domain.model.SearchCriteria
 import fr.descentecanyon.app.domain.model.SearchSortField
 import fr.descentecanyon.app.domain.model.SortDirection
 import fr.descentecanyon.app.domain.model.toSummary
+import fr.descentecanyon.app.map.MAP_SEARCH_STYLE_URI
 import fr.descentecanyon.app.ui.components.CanyonSummaryCard
+import fr.descentecanyon.app.ui.location.hasLocationPermission
+import fr.descentecanyon.app.ui.location.loadCurrentDeviceLocation
+import fr.descentecanyon.app.ui.map.MapLibreView
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun SearchScreen(
     onCanyonClick: (Int) -> Unit,
@@ -70,291 +87,381 @@ fun SearchScreen(
     viewModel: SearchViewModel = hiltViewModel(),
 ) {
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
+    val context = LocalContext.current
     val listState = rememberLazyListState()
     var showFiltersSheet by rememberSaveable { mutableStateOf(false) }
     var showSortMenu by rememberSaveable { mutableStateOf(false) }
     var showCountryMenu by rememberSaveable { mutableStateOf(false) }
     var showDepartmentMenu by rememberSaveable { mutableStateOf(false) }
-    val filterAndSortCriteria = uiState.criteria.copy(query = "")
+    var pendingDistanceSort by rememberSaveable { mutableStateOf(false) }
 
-    LaunchedEffect(filterAndSortCriteria) {
+    val locationPermissionLauncher = rememberLauncherForActivityResult(
+        contract = ActivityResultContracts.RequestMultiplePermissions(),
+    ) { permissions ->
+        val granted = permissions[Manifest.permission.ACCESS_FINE_LOCATION] == true ||
+            permissions[Manifest.permission.ACCESS_COARSE_LOCATION] == true
+        viewModel.onLocationPermissionResult(granted)
+        if (granted) {
+            viewModel.onLocationLookupStarted()
+            loadCurrentDeviceLocation(
+                context = context,
+                onLocation = { latitude, longitude ->
+                    viewModel.onUserLocationUpdated(latitude, longitude)
+                    if (pendingDistanceSort) {
+                        viewModel.onSortSelected(SearchSortField.DISTANCE)
+                        pendingDistanceSort = false
+                    }
+                },
+                onUnavailable = {
+                    viewModel.onLocationUnavailable()
+                    pendingDistanceSort = false
+                },
+            )
+        } else {
+            pendingDistanceSort = false
+        }
+    }
+
+    fun requestCurrentLocation(applyDistanceSortWhenReady: Boolean) {
+        if (applyDistanceSortWhenReady) pendingDistanceSort = true
+
+        if (!context.hasLocationPermission()) {
+            locationPermissionLauncher.launch(
+                arrayOf(
+                    Manifest.permission.ACCESS_FINE_LOCATION,
+                    Manifest.permission.ACCESS_COARSE_LOCATION,
+                )
+            )
+            return
+        }
+
+        viewModel.onLocationPermissionResult(true)
+        if (uiState.userLatitude != null && uiState.userLongitude != null) {
+            if (pendingDistanceSort) {
+                viewModel.onSortSelected(SearchSortField.DISTANCE)
+                pendingDistanceSort = false
+            }
+            return
+        }
+
+        viewModel.onLocationLookupStarted()
+        loadCurrentDeviceLocation(
+            context = context,
+            onLocation = { latitude, longitude ->
+                viewModel.onUserLocationUpdated(latitude, longitude)
+                if (pendingDistanceSort) {
+                    viewModel.onSortSelected(SearchSortField.DISTANCE)
+                    pendingDistanceSort = false
+                }
+            },
+            onUnavailable = {
+                viewModel.onLocationUnavailable()
+                pendingDistanceSort = false
+            },
+        )
+    }
+
+    LaunchedEffect(Unit) {
+        if (context.hasLocationPermission()) {
+            viewModel.onLocationPermissionResult(true)
+        }
+    }
+
+    LaunchedEffect(uiState.criteria) {
         listState.scrollToItem(0)
     }
 
-    Column(
+    val activeFilters = buildActiveFilterActions(uiState, viewModel)
+
+    Box(
         modifier = modifier
             .fillMaxSize()
-            .statusBarsPadding()
-            .padding(horizontal = 16.dp),
+            .statusBarsPadding(),
     ) {
-        Spacer(modifier = Modifier.height(8.dp))
-
-        OutlinedTextField(
-            value = uiState.criteria.query,
-            onValueChange = viewModel::onQueryChanged,
-            modifier = Modifier.fillMaxWidth(),
-            placeholder = { Text(stringResource(R.string.search_hint)) },
-            leadingIcon = {
-                Icon(
-                    imageVector = Icons.Default.Search,
-                    contentDescription = null,
-                )
-            },
-            trailingIcon = {
-                if (uiState.criteria.query.isNotEmpty()) {
-                    IconButton(onClick = viewModel::clearQuery) {
-                        Icon(
-                            imageVector = Icons.Default.Clear,
-                            contentDescription = stringResource(R.string.search_clear_query),
-                        )
-                    }
-                }
-            },
-            singleLine = true,
-        )
-
-        Spacer(modifier = Modifier.height(12.dp))
-
-        FlowRow(
-            horizontalArrangement = Arrangement.spacedBy(8.dp),
-            verticalArrangement = Arrangement.spacedBy(8.dp),
-            modifier = Modifier.fillMaxWidth(),
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(horizontal = 16.dp),
         ) {
-            FilterChip(
-                selected = uiState.criteria.favoritesOnly,
-                onClick = {
-                    viewModel.onCriteriaChanged(
-                        uiState.criteria.copy(favoritesOnly = !uiState.criteria.favoritesOnly)
-                    )
+            Spacer(modifier = Modifier.height(8.dp))
+
+            OutlinedTextField(
+                value = uiState.queryDraft,
+                onValueChange = viewModel::onQueryChanged,
+                modifier = Modifier.fillMaxWidth(),
+                placeholder = { Text(stringResource(R.string.search_hint)) },
+                leadingIcon = { Icon(Icons.Default.Search, contentDescription = null) },
+                trailingIcon = {
+                    when {
+                        uiState.queryDraft.isNotEmpty() -> {
+                            IconButton(onClick = viewModel::clearQuery) {
+                                Icon(Icons.Default.Clear, contentDescription = stringResource(R.string.search_clear_query))
+                            }
+                        }
+
+                        uiState.isSearching -> {
+                            CircularProgressIndicator(modifier = Modifier.size(18.dp), strokeWidth = 2.dp)
+                        }
+                    }
                 },
-                label = { Text(stringResource(R.string.search_filter_favorites)) },
+                singleLine = true,
             )
 
-            Box {
-                OutlinedButton(onClick = { showCountryMenu = true }) {
-                    Text(
-                        text = uiState.criteria.selectedCountry ?: stringResource(R.string.search_filter_country),
-                        maxLines = 1,
-                        overflow = TextOverflow.Ellipsis,
-                    )
-                    Spacer(modifier = Modifier.width(6.dp))
-                    Icon(Icons.Default.ExpandMore, contentDescription = null)
-                }
-                DropdownMenu(
-                    expanded = showCountryMenu,
-                    onDismissRequest = { showCountryMenu = false },
-                ) {
-                    DropdownMenuItem(
-                        text = { Text(stringResource(R.string.search_filter_any_country)) },
-                        onClick = {
-                            showCountryMenu = false
-                            viewModel.clearCountry()
-                        },
-                    )
-                    uiState.availableCountries.forEach { country ->
-                        DropdownMenuItem(
-                            text = { Text(country) },
-                            onClick = {
-                                showCountryMenu = false
-                                viewModel.onCriteriaChanged(uiState.criteria.copy(selectedCountry = country))
-                            },
-                        )
-                    }
-                }
-            }
+            Spacer(modifier = Modifier.height(8.dp))
 
-            Box {
-                OutlinedButton(
-                    onClick = { showDepartmentMenu = true },
-                    enabled = uiState.availableDepartments.isNotEmpty(),
-                ) {
-                    Text(
-                        text = uiState.criteria.selectedDepartment ?: stringResource(R.string.search_filter_department),
-                        maxLines = 1,
-                        overflow = TextOverflow.Ellipsis,
-                    )
-                    Spacer(modifier = Modifier.width(6.dp))
-                    Icon(Icons.Default.ExpandMore, contentDescription = null)
-                }
-                DropdownMenu(
-                    expanded = showDepartmentMenu,
-                    onDismissRequest = { showDepartmentMenu = false },
-                ) {
-                    DropdownMenuItem(
-                        text = { Text(stringResource(R.string.search_filter_any_department)) },
-                        onClick = {
-                            showDepartmentMenu = false
-                            viewModel.clearDepartment()
-                        },
-                    )
-                    uiState.availableDepartments.forEach { department ->
-                        DropdownMenuItem(
-                            text = { Text(department) },
-                            onClick = {
-                                showDepartmentMenu = false
-                                viewModel.onCriteriaChanged(uiState.criteria.copy(selectedDepartment = department))
-                            },
-                        )
-                    }
-                }
-            }
-
-            OutlinedButton(onClick = { showFiltersSheet = true }) {
-                Icon(Icons.Default.Tune, contentDescription = null)
-                Spacer(modifier = Modifier.width(6.dp))
-                Text(
-                    if (uiState.activeFilterCount > 0) {
-                        stringResource(R.string.search_filters_with_count, uiState.activeFilterCount)
-                    } else {
-                        stringResource(R.string.search_filters)
-                    }
-                )
-            }
-
-            Box {
-                OutlinedButton(onClick = { showSortMenu = true }) {
-                    Icon(Icons.AutoMirrored.Filled.Sort, contentDescription = null)
-                    Spacer(modifier = Modifier.width(6.dp))
-                    Text(sortLabel(uiState.criteria.sortField))
-                    Spacer(modifier = Modifier.width(6.dp))
-                    Icon(
-                        imageVector = if (uiState.criteria.sortDirection == SortDirection.ASC) {
-                            Icons.Default.ArrowUpward
-                        } else {
-                            Icons.Default.ArrowDownward
-                        },
-                        contentDescription = null,
-                    )
-                }
-                DropdownMenu(
-                    expanded = showSortMenu,
-                    onDismissRequest = { showSortMenu = false },
-                ) {
-                    SearchSortField.entries.filterNot { it == SearchSortField.DISTANCE }.forEach { field ->
-                        DropdownMenuItem(
-                            text = {
-                                Text(
-                                    if (uiState.criteria.sortField == field) {
-                                        sortLabel(field) + directionSuffix(uiState.criteria.sortDirection)
-                                    } else {
-                                        sortLabel(field)
-                                    }
-                                )
-                            },
-                            onClick = {
-                                showSortMenu = false
-                                viewModel.onSortSelected(field)
-                            },
-                        )
-                    }
-                }
-            }
-        }
-
-        val activeFilters = buildActiveFilterActions(uiState, viewModel)
-        if (activeFilters.isNotEmpty()) {
-            Spacer(modifier = Modifier.height(12.dp))
             FlowRow(
                 horizontalArrangement = Arrangement.spacedBy(8.dp),
                 verticalArrangement = Arrangement.spacedBy(8.dp),
+                modifier = Modifier.fillMaxWidth(),
             ) {
-                activeFilters.forEach { filter ->
-                    FilterChip(
-                        selected = true,
-                        onClick = filter.onRemove,
-                        label = { Text(filter.label) },
-                        trailingIcon = {
-                            Icon(Icons.Default.Clear, contentDescription = null)
-                        },
+                Box {
+                    OutlinedButton(onClick = { showCountryMenu = true }) {
+                        Text(
+                            text = uiState.criteria.selectedCountry ?: stringResource(R.string.search_filter_country),
+                            maxLines = 1,
+                            overflow = TextOverflow.Ellipsis,
+                        )
+                        Spacer(modifier = Modifier.width(4.dp))
+                        Icon(Icons.Default.ExpandMore, contentDescription = null)
+                    }
+                    DropdownMenu(expanded = showCountryMenu, onDismissRequest = { showCountryMenu = false }) {
+                        DropdownMenuItem(
+                            text = { Text(stringResource(R.string.search_filter_any_country)) },
+                            onClick = {
+                                showCountryMenu = false
+                                viewModel.clearCountry()
+                            },
+                        )
+                        uiState.availableCountries.forEach { country ->
+                            DropdownMenuItem(
+                                text = { Text(country) },
+                                onClick = {
+                                    showCountryMenu = false
+                                    viewModel.onCriteriaChanged(uiState.criteria.copy(selectedCountry = country))
+                                },
+                            )
+                        }
+                    }
+                }
+
+                Box {
+                    OutlinedButton(
+                        onClick = { showDepartmentMenu = true },
+                        enabled = uiState.availableDepartments.isNotEmpty(),
+                    ) {
+                        Text(
+                            text = uiState.criteria.selectedDepartment ?: stringResource(R.string.search_filter_department),
+                            maxLines = 1,
+                            overflow = TextOverflow.Ellipsis,
+                        )
+                        Spacer(modifier = Modifier.width(4.dp))
+                        Icon(Icons.Default.ExpandMore, contentDescription = null)
+                    }
+                    DropdownMenu(expanded = showDepartmentMenu, onDismissRequest = { showDepartmentMenu = false }) {
+                        DropdownMenuItem(
+                            text = { Text(stringResource(R.string.search_filter_any_department)) },
+                            onClick = {
+                                showDepartmentMenu = false
+                                viewModel.clearDepartment()
+                            },
+                        )
+                        uiState.availableDepartments.forEach { department ->
+                            DropdownMenuItem(
+                                text = { Text(department) },
+                                onClick = {
+                                    showDepartmentMenu = false
+                                    viewModel.onCriteriaChanged(uiState.criteria.copy(selectedDepartment = department))
+                                },
+                            )
+                        }
+                    }
+                }
+
+                OutlinedButton(onClick = { showFiltersSheet = true }) {
+                    Icon(Icons.Default.Tune, contentDescription = null)
+                    Spacer(modifier = Modifier.width(6.dp))
+                    Text(
+                        if (uiState.activeFilterCount > 0) stringResource(R.string.search_filters_with_count, uiState.activeFilterCount)
+                        else stringResource(R.string.search_filters)
                     )
                 }
-                TextButton(onClick = viewModel::clearAllFilters) {
-                    Text(stringResource(R.string.search_clear_filters))
+
+                Box {
+                    OutlinedButton(onClick = { showSortMenu = true }) {
+                        Icon(Icons.AutoMirrored.Filled.Sort, contentDescription = null)
+                        Spacer(modifier = Modifier.width(6.dp))
+                        Text(sortLabel(uiState.criteria.sortField))
+                        Spacer(modifier = Modifier.width(4.dp))
+                        Icon(
+                            imageVector = if (uiState.criteria.sortDirection == SortDirection.ASC) Icons.Default.ArrowUpward else Icons.Default.ArrowDownward,
+                            contentDescription = null,
+                        )
+                    }
+                    DropdownMenu(expanded = showSortMenu, onDismissRequest = { showSortMenu = false }) {
+                        SearchSortField.entries.forEach { field ->
+                            DropdownMenuItem(
+                                text = {
+                                    Text(
+                                        if (uiState.criteria.sortField == field) {
+                                            sortLabel(field) + directionSuffix(uiState.criteria.sortDirection)
+                                        } else {
+                                            sortLabel(field)
+                                        }
+                                    )
+                                },
+                                onClick = {
+                                    showSortMenu = false
+                                    if (field == SearchSortField.DISTANCE) {
+                                        requestCurrentLocation(applyDistanceSortWhenReady = true)
+                                    } else {
+                                        pendingDistanceSort = false
+                                        viewModel.onSortSelected(field)
+                                    }
+                                },
+                            )
+                        }
+                    }
+                }
+            }
+
+            if (activeFilters.isNotEmpty()) {
+                Spacer(modifier = Modifier.height(8.dp))
+                FlowRow(
+                    horizontalArrangement = Arrangement.spacedBy(6.dp),
+                    verticalArrangement = Arrangement.spacedBy(6.dp),
+                ) {
+                    activeFilters.forEach { filter ->
+                        FilterChip(
+                            selected = true,
+                            onClick = filter.onRemove,
+                            label = { Text(filter.label) },
+                            trailingIcon = { Icon(Icons.Default.Clear, contentDescription = null) },
+                        )
+                    }
+                    TextButton(onClick = viewModel::clearAllFilters) {
+                        Text(stringResource(R.string.search_clear_filters))
+                    }
+                }
+            }
+
+            Spacer(modifier = Modifier.height(8.dp))
+
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically,
+            ) {
+                Text(
+                    text = stringResource(R.string.search_results_count, uiState.totalResultsCount),
+                    style = MaterialTheme.typography.labelLarge,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                )
+                if (uiState.resultViewMode == SearchResultViewMode.MAP && uiState.isLocating) {
+                    Text(
+                        text = stringResource(R.string.search_location_loading),
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    )
+                }
+            }
+
+            Spacer(modifier = Modifier.height(6.dp))
+
+            if (uiState.isLoading) {
+                Box(modifier = Modifier.fillMaxWidth().padding(32.dp), contentAlignment = Alignment.Center) {
+                    CircularProgressIndicator()
+                }
+            }
+
+            uiState.error?.let { error ->
+                Text(
+                    text = error,
+                    color = MaterialTheme.colorScheme.error,
+                    style = MaterialTheme.typography.bodyMedium,
+                    modifier = Modifier.padding(vertical = 4.dp),
+                )
+            }
+
+            if (!uiState.isLoading && uiState.isResultListDeferred) {
+                Box(modifier = Modifier.fillMaxWidth().padding(28.dp), contentAlignment = Alignment.Center) {
+                    Text(
+                        text = stringResource(R.string.search_broad_results_hint),
+                        style = MaterialTheme.typography.bodyLarge,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    )
+                }
+            } else if (!uiState.isLoading && uiState.results.isEmpty()) {
+                Box(modifier = Modifier.fillMaxWidth().padding(28.dp), contentAlignment = Alignment.Center) {
+                    Text(
+                        text = stringResource(R.string.no_results),
+                        style = MaterialTheme.typography.bodyLarge,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    )
+                }
+            } else if (uiState.resultViewMode == SearchResultViewMode.LIST) {
+                LazyColumn(
+                    state = listState,
+                    modifier = Modifier.weight(1f),
+                    verticalArrangement = Arrangement.spacedBy(8.dp),
+                ) {
+                    items(uiState.results, key = { it.id }) { canyon ->
+                        CanyonSummaryCard(
+                            canyon = canyon.toSummary(),
+                            onClick = { onCanyonClick(canyon.id) },
+                        )
+                    }
+                    item { Spacer(modifier = Modifier.height(96.dp)) }
+                }
+            } else {
+                val markers = remember(uiState.results) {
+                    uiState.results.mapNotNull { item -> item.takeIf { it.representativeLat != null && it.representativeLng != null }?.toSummary() }
+                }
+                if (markers.isEmpty()) {
+                    Box(modifier = Modifier.fillMaxWidth().weight(1f).padding(28.dp), contentAlignment = Alignment.Center) {
+                        Text(
+                            text = stringResource(R.string.search_map_no_coordinates),
+                            style = MaterialTheme.typography.bodyLarge,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant,
+                        )
+                    }
+                } else {
+                    Card(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .weight(1f)
+                            .navigationBarsPadding(),
+                        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant),
+                    ) {
+                        MapLibreView(
+                            markers = markers,
+                            userLatitude = uiState.userLatitude,
+                            userLongitude = uiState.userLongitude,
+                            onMarkerClick = viewModel::selectCanyon,
+                            styleUri = MAP_SEARCH_STYLE_URI,
+                            modifier = Modifier.fillMaxSize().padding(bottom = 8.dp),
+                        )
+                    }
                 }
             }
         }
 
-        Spacer(modifier = Modifier.height(12.dp))
-
-        Text(
-            text = stringResource(R.string.search_results_count, uiState.totalResultsCount),
-            style = MaterialTheme.typography.labelLarge,
-            color = MaterialTheme.colorScheme.onSurfaceVariant,
-        )
-
-        Spacer(modifier = Modifier.height(8.dp))
-
-        if (uiState.isLoading) {
-            Box(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(32.dp),
-                contentAlignment = Alignment.Center,
-            ) {
-                CircularProgressIndicator()
-            }
-        }
-
-        uiState.error?.let { error ->
-            Text(
-                text = error,
-                color = MaterialTheme.colorScheme.error,
-                style = MaterialTheme.typography.bodyMedium,
-                modifier = Modifier.padding(8.dp),
+        FloatingActionButton(
+            onClick = {
+                val next = if (uiState.resultViewMode == SearchResultViewMode.MAP) SearchResultViewMode.LIST else SearchResultViewMode.MAP
+                viewModel.onResultViewModeChanged(next)
+                if (next == SearchResultViewMode.MAP && context.hasLocationPermission() && uiState.userLatitude == null && uiState.userLongitude == null) {
+                    requestCurrentLocation(applyDistanceSortWhenReady = false)
+                }
+            },
+            modifier = Modifier
+                .align(Alignment.BottomEnd)
+                .navigationBarsPadding()
+                .padding(end = 20.dp, bottom = 92.dp),
+        ) {
+            Icon(
+                imageVector = if (uiState.resultViewMode == SearchResultViewMode.MAP) Icons.Default.List else Icons.Default.Map,
+                contentDescription = null,
             )
-        }
-
-        if (!uiState.isLoading && uiState.isResultListDeferred) {
-            Box(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(32.dp),
-                contentAlignment = Alignment.Center,
-            ) {
-                Text(
-                    text = stringResource(R.string.search_broad_results_hint),
-                    style = MaterialTheme.typography.bodyLarge,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant,
-                )
-            }
-        }
-
-        if (!uiState.isLoading && !uiState.isResultListDeferred && uiState.results.isEmpty()) {
-            Box(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(32.dp),
-                contentAlignment = Alignment.Center,
-            ) {
-                Text(
-                    text = stringResource(R.string.no_results),
-                    style = MaterialTheme.typography.bodyLarge,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant,
-                )
-            }
-        }
-
-        if (!uiState.isResultListDeferred) {
-            LazyColumn(
-                state = listState,
-                modifier = Modifier.weight(1f),
-                verticalArrangement = Arrangement.spacedBy(8.dp),
-            ) {
-                items(
-                    items = uiState.results,
-                    key = { it.id },
-                ) { canyon ->
-                    CanyonSummaryCard(
-                        canyon = canyon.toSummary(),
-                        onClick = { onCanyonClick(canyon.id) },
-                    )
-                }
-                item {
-                    Spacer(modifier = Modifier.height(96.dp))
-                }
-            }
-        } else {
-            Spacer(modifier = Modifier.weight(1f))
         }
     }
 
@@ -365,6 +472,38 @@ fun SearchScreen(
             onCriteriaChanged = viewModel::onCriteriaChanged,
             onClearAll = viewModel::clearAllFilters,
         )
+    }
+
+    uiState.selectedCanyon?.let { selectedCanyon ->
+        ModalBottomSheet(onDismissRequest = viewModel::clearSelectedCanyon) {
+            Column(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 20.dp, vertical = 8.dp)
+                    .navigationBarsPadding(),
+                verticalArrangement = Arrangement.spacedBy(12.dp),
+            ) {
+                Text(selectedCanyon.nom, style = MaterialTheme.typography.headlineSmall)
+                CanyonSummaryCard(
+                    canyon = selectedCanyon.toSummary(),
+                    onClick = {
+                        viewModel.clearSelectedCanyon()
+                        onCanyonClick(selectedCanyon.id)
+                    },
+                )
+                Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+                    OutlinedButton(onClick = {
+                        viewModel.clearSelectedCanyon()
+                        onCanyonClick(selectedCanyon.id)
+                    }) {
+                        Text(stringResource(R.string.map_bottom_sheet_open))
+                    }
+                    TextButton(onClick = viewModel::clearSelectedCanyon) {
+                        Text(stringResource(R.string.close))
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -379,36 +518,29 @@ private fun SearchFiltersSheet(
     val criteria = uiState.criteria
     val sheetState = androidx.compose.material3.rememberModalBottomSheetState(skipPartiallyExpanded = true)
 
-    ModalBottomSheet(
-        onDismissRequest = onDismiss,
-        sheetState = sheetState,
-        dragHandle = null,
-    ) {
+    ModalBottomSheet(onDismissRequest = onDismiss, sheetState = sheetState, dragHandle = null) {
         Column(
             modifier = Modifier
                 .fillMaxWidth()
                 .statusBarsPadding()
                 .verticalScroll(rememberScrollState())
                 .padding(horizontal = 20.dp, vertical = 8.dp),
-            verticalArrangement = Arrangement.spacedBy(18.dp),
+            verticalArrangement = Arrangement.spacedBy(16.dp),
         ) {
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceBetween,
-                verticalAlignment = Alignment.CenterVertically,
-            ) {
-                Text(
-                    text = stringResource(R.string.search_filters_title),
-                    style = MaterialTheme.typography.headlineSmall,
-                )
+            Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween, verticalAlignment = Alignment.CenterVertically) {
+                Text(stringResource(R.string.search_filters_title), style = MaterialTheme.typography.headlineSmall)
                 Row(verticalAlignment = Alignment.CenterVertically) {
-                    TextButton(onClick = onClearAll) {
-                        Text(stringResource(R.string.search_clear_filters))
-                    }
-                    TextButton(onClick = onDismiss) {
-                        Text(stringResource(R.string.close))
-                    }
+                    TextButton(onClick = onClearAll) { Text(stringResource(R.string.search_clear_filters)) }
+                    TextButton(onClick = onDismiss) { Text(stringResource(R.string.close)) }
                 }
+            }
+
+            FilterSection(title = stringResource(R.string.search_filters)) {
+                FilterChip(
+                    selected = criteria.favoritesOnly,
+                    onClick = { onCriteriaChanged(criteria.copy(favoritesOnly = !criteria.favoritesOnly)) },
+                    label = { Text(stringResource(R.string.search_filter_favorites)) },
+                )
             }
 
             FilterSection(title = stringResource(R.string.search_filter_cotation)) {
@@ -443,70 +575,37 @@ private fun SearchFiltersSheet(
                     optionLabel = { if (it % 1f == 0f) it.toInt().toString() else it.toString() },
                     onSelected = { onCriteriaChanged(criteria.copy(interestMin = it)) },
                 )
-                FlowRow(
-                    horizontalArrangement = Arrangement.spacedBy(8.dp),
-                    verticalArrangement = Arrangement.spacedBy(8.dp),
-                ) {
+                FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
                     FilterChip(
                         selected = criteria.regulationOnly,
-                        onClick = {
-                            onCriteriaChanged(criteria.copy(regulationOnly = !criteria.regulationOnly))
-                        },
+                        onClick = { onCriteriaChanged(criteria.copy(regulationOnly = !criteria.regulationOnly)) },
                         label = { Text(stringResource(R.string.search_filter_regulated_only)) },
                     )
                     FilterChip(
                         selected = criteria.shuttleOnly,
-                        onClick = {
-                            onCriteriaChanged(criteria.copy(shuttleOnly = !criteria.shuttleOnly))
-                        },
+                        onClick = { onCriteriaChanged(criteria.copy(shuttleOnly = !criteria.shuttleOnly)) },
                         label = { Text(stringResource(R.string.search_filter_shuttle_only)) },
                     )
                 }
             }
 
             FilterSection(title = stringResource(R.string.search_filter_numeric_title)) {
-                NumericRangeRow(
-                    label = stringResource(R.string.altitude),
-                    range = criteria.altitudeRange,
-                    onRangeChanged = { onCriteriaChanged(criteria.copy(altitudeRange = it)) },
-                )
-                NumericRangeRow(
-                    label = stringResource(R.string.elevation),
-                    range = criteria.elevationRange,
-                    onRangeChanged = { onCriteriaChanged(criteria.copy(elevationRange = it)) },
-                )
-                NumericRangeRow(
-                    label = stringResource(R.string.length),
-                    range = criteria.lengthRange,
-                    onRangeChanged = { onCriteriaChanged(criteria.copy(lengthRange = it)) },
-                )
-                NumericRangeRow(
-                    label = stringResource(R.string.max_waterfall),
-                    range = criteria.maxWaterfallRange,
-                    onRangeChanged = { onCriteriaChanged(criteria.copy(maxWaterfallRange = it)) },
-                )
-                NumericRangeRow(
-                    label = stringResource(R.string.rope),
-                    range = criteria.ropeRange,
-                    onRangeChanged = { onCriteriaChanged(criteria.copy(ropeRange = it)) },
-                )
+                NumericRangeRow(stringResource(R.string.altitude), criteria.altitudeRange) { onCriteriaChanged(criteria.copy(altitudeRange = it)) }
+                NumericRangeRow(stringResource(R.string.elevation), criteria.elevationRange) { onCriteriaChanged(criteria.copy(elevationRange = it)) }
+                NumericRangeRow(stringResource(R.string.length), criteria.lengthRange) { onCriteriaChanged(criteria.copy(lengthRange = it)) }
+                NumericRangeRow(stringResource(R.string.max_waterfall), criteria.maxWaterfallRange) { onCriteriaChanged(criteria.copy(maxWaterfallRange = it)) }
+                NumericRangeRow(stringResource(R.string.rope), criteria.ropeRange) { onCriteriaChanged(criteria.copy(ropeRange = it)) }
             }
 
-            Spacer(modifier = Modifier.height(24.dp))
+            Spacer(modifier = Modifier.height(20.dp))
         }
     }
 }
 
 @Composable
-private fun FilterSection(
-    title: String,
-    content: @Composable () -> Unit,
-) {
+private fun FilterSection(title: String, content: @Composable () -> Unit) {
     Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
-        Text(
-            text = title,
-            style = MaterialTheme.typography.titleMedium,
-        )
+        Text(text = title, style = MaterialTheme.typography.titleMedium)
         content()
     }
 }
@@ -521,7 +620,7 @@ private fun RangeDropdownRow(
 ) {
     Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
         Text(text = label, style = MaterialTheme.typography.labelLarge)
-        Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+        Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
             IntDropdownField(
                 label = stringResource(R.string.search_filter_min),
                 selected = range.min,
@@ -543,14 +642,10 @@ private fun RangeDropdownRow(
 }
 
 @Composable
-private fun NumericRangeRow(
-    label: String,
-    range: IntRangeFilter,
-    onRangeChanged: (IntRangeFilter) -> Unit,
-) {
+private fun NumericRangeRow(label: String, range: IntRangeFilter, onRangeChanged: (IntRangeFilter) -> Unit) {
     Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
         Text(text = label, style = MaterialTheme.typography.labelLarge)
-        Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+        Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
             NumericField(
                 label = stringResource(R.string.search_filter_min),
                 value = range.min?.toString().orEmpty(),
@@ -568,19 +663,10 @@ private fun NumericRangeRow(
 }
 
 @Composable
-private fun NumericField(
-    label: String,
-    value: String,
-    onValueChange: (String) -> Unit,
-    modifier: Modifier = Modifier,
-) {
+private fun NumericField(label: String, value: String, onValueChange: (String) -> Unit, modifier: Modifier = Modifier) {
     OutlinedTextField(
         value = value,
-        onValueChange = { next ->
-            if (next.all(Char::isDigit) || next.isBlank()) {
-                onValueChange(next)
-            }
-        },
+        onValueChange = { next -> if (next.all(Char::isDigit) || next.isBlank()) onValueChange(next) },
         modifier = modifier,
         label = { Text(label) },
         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
@@ -599,30 +685,18 @@ private fun IntDropdownField(
 ) {
     var expanded by remember { mutableStateOf(false) }
     Box(modifier = modifier) {
-        OutlinedButton(
-            onClick = { expanded = true },
-            modifier = Modifier.fillMaxWidth(),
-        ) {
+        OutlinedButton(onClick = { expanded = true }, modifier = Modifier.fillMaxWidth()) {
             Text(text = "$label: ${selected?.let(optionLabel) ?: stringResource(R.string.search_filter_any)}")
         }
-        DropdownMenu(
-            expanded = expanded,
-            onDismissRequest = { expanded = false },
-        ) {
+        DropdownMenu(expanded = expanded, onDismissRequest = { expanded = false }) {
             DropdownMenuItem(
                 text = { Text(stringResource(R.string.search_filter_any)) },
-                onClick = {
-                    expanded = false
-                    onSelected(null)
-                },
+                onClick = { expanded = false; onSelected(null) },
             )
             options.forEach { option ->
                 DropdownMenuItem(
                     text = { Text(optionLabel(option)) },
-                    onClick = {
-                        expanded = false
-                        onSelected(option)
-                    },
+                    onClick = { expanded = false; onSelected(option) },
                 )
             }
         }
@@ -642,40 +716,25 @@ private fun FloatDropdownField(
         OutlinedButton(onClick = { expanded = true }) {
             Text(text = "$label: ${selected?.let(optionLabel) ?: stringResource(R.string.search_filter_any)}")
         }
-        DropdownMenu(
-            expanded = expanded,
-            onDismissRequest = { expanded = false },
-        ) {
+        DropdownMenu(expanded = expanded, onDismissRequest = { expanded = false }) {
             DropdownMenuItem(
                 text = { Text(stringResource(R.string.search_filter_any)) },
-                onClick = {
-                    expanded = false
-                    onSelected(null)
-                },
+                onClick = { expanded = false; onSelected(null) },
             )
             options.forEach { option ->
                 DropdownMenuItem(
                     text = { Text(optionLabel(option)) },
-                    onClick = {
-                        expanded = false
-                        onSelected(option)
-                    },
+                    onClick = { expanded = false; onSelected(option) },
                 )
             }
         }
     }
 }
 
-private data class ActiveFilterAction(
-    val label: String,
-    val onRemove: () -> Unit,
-)
+private data class ActiveFilterAction(val label: String, val onRemove: () -> Unit)
 
 @Composable
-private fun buildActiveFilterActions(
-    uiState: SearchUiState,
-    viewModel: SearchViewModel,
-): List<ActiveFilterAction> {
+private fun buildActiveFilterActions(uiState: SearchUiState, viewModel: SearchViewModel): List<ActiveFilterAction> {
     val criteria = uiState.criteria
     val favoritesLabel = stringResource(R.string.search_filter_favorites)
     val interestMinLabel = stringResource(R.string.search_filter_interest_min)
@@ -687,101 +746,43 @@ private fun buildActiveFilterActions(
     val maxWaterfallLabel = stringResource(R.string.max_waterfall)
     val ropeLabel = stringResource(R.string.rope)
     return buildList {
-        if (criteria.favoritesOnly) {
-            add(ActiveFilterAction(label = favoritesLabel) {
-                viewModel.onCriteriaChanged(criteria.copy(favoritesOnly = false))
-            })
-        }
-        criteria.selectedCountry?.let { country ->
-            add(ActiveFilterAction(label = country, onRemove = viewModel::clearCountry))
-        }
-        criteria.selectedDepartment?.let { department ->
-            add(ActiveFilterAction(label = department, onRemove = viewModel::clearDepartment))
-        }
-        criteria.verticalRange.takeIf(IntRangeFilter::isActive)?.let {
-            add(ActiveFilterAction(label = rangeLabel("V", it)) {
-                viewModel.onCriteriaChanged(criteria.copy(verticalRange = IntRangeFilter()))
-            })
-        }
-        criteria.aquaticRange.takeIf(IntRangeFilter::isActive)?.let {
-            add(ActiveFilterAction(label = rangeLabel("A", it)) {
-                viewModel.onCriteriaChanged(criteria.copy(aquaticRange = IntRangeFilter()))
-            })
-        }
-        criteria.engagementRange.takeIf(IntRangeFilter::isActive)?.let {
-            add(ActiveFilterAction(label = engagementRangeLabel(it)) {
-                viewModel.onCriteriaChanged(criteria.copy(engagementRange = IntRangeFilter()))
-            })
-        }
-        criteria.interestMin?.let { minimum ->
-            add(ActiveFilterAction(label = "$interestMinLabel >= $minimum") {
-                viewModel.onCriteriaChanged(criteria.copy(interestMin = null))
-            })
-        }
-        if (criteria.regulationOnly) {
-            add(ActiveFilterAction(label = regulationsLabel) {
-                viewModel.onCriteriaChanged(criteria.copy(regulationOnly = false))
-            })
-        }
-        if (criteria.shuttleOnly) {
-            add(ActiveFilterAction(label = shuttleLabel) {
-                viewModel.onCriteriaChanged(criteria.copy(shuttleOnly = false))
-            })
-        }
-        criteria.altitudeRange.takeIf(IntRangeFilter::isActive)?.let {
-            add(ActiveFilterAction(label = "$altitudeLabel ${plainRangeLabel(it)}") {
-                viewModel.onCriteriaChanged(criteria.copy(altitudeRange = IntRangeFilter()))
-            })
-        }
-        criteria.elevationRange.takeIf(IntRangeFilter::isActive)?.let {
-            add(ActiveFilterAction(label = "$elevationLabel ${plainRangeLabel(it)}") {
-                viewModel.onCriteriaChanged(criteria.copy(elevationRange = IntRangeFilter()))
-            })
-        }
-        criteria.lengthRange.takeIf(IntRangeFilter::isActive)?.let {
-            add(ActiveFilterAction(label = "$lengthLabel ${plainRangeLabel(it)}") {
-                viewModel.onCriteriaChanged(criteria.copy(lengthRange = IntRangeFilter()))
-            })
-        }
-        criteria.maxWaterfallRange.takeIf(IntRangeFilter::isActive)?.let {
-            add(ActiveFilterAction(label = "$maxWaterfallLabel ${plainRangeLabel(it)}") {
-                viewModel.onCriteriaChanged(criteria.copy(maxWaterfallRange = IntRangeFilter()))
-            })
-        }
-        criteria.ropeRange.takeIf(IntRangeFilter::isActive)?.let {
-            add(ActiveFilterAction(label = "$ropeLabel ${plainRangeLabel(it)}") {
-                viewModel.onCriteriaChanged(criteria.copy(ropeRange = IntRangeFilter()))
-            })
-        }
+        if (criteria.favoritesOnly) add(ActiveFilterAction(favoritesLabel) { viewModel.onCriteriaChanged(criteria.copy(favoritesOnly = false)) })
+        criteria.selectedCountry?.let { add(ActiveFilterAction(it, viewModel::clearCountry)) }
+        criteria.selectedDepartment?.let { add(ActiveFilterAction(it, viewModel::clearDepartment)) }
+        criteria.verticalRange.takeIf(IntRangeFilter::isActive)?.let { add(ActiveFilterAction(rangeLabel("V", it)) { viewModel.onCriteriaChanged(criteria.copy(verticalRange = IntRangeFilter())) }) }
+        criteria.aquaticRange.takeIf(IntRangeFilter::isActive)?.let { add(ActiveFilterAction(rangeLabel("A", it)) { viewModel.onCriteriaChanged(criteria.copy(aquaticRange = IntRangeFilter())) }) }
+        criteria.engagementRange.takeIf(IntRangeFilter::isActive)?.let { add(ActiveFilterAction(engagementRangeLabel(it)) { viewModel.onCriteriaChanged(criteria.copy(engagementRange = IntRangeFilter())) }) }
+        criteria.interestMin?.let { add(ActiveFilterAction("$interestMinLabel >= $it") { viewModel.onCriteriaChanged(criteria.copy(interestMin = null)) }) }
+        if (criteria.regulationOnly) add(ActiveFilterAction(regulationsLabel) { viewModel.onCriteriaChanged(criteria.copy(regulationOnly = false)) })
+        if (criteria.shuttleOnly) add(ActiveFilterAction(shuttleLabel) { viewModel.onCriteriaChanged(criteria.copy(shuttleOnly = false)) })
+        criteria.altitudeRange.takeIf(IntRangeFilter::isActive)?.let { add(ActiveFilterAction("$altitudeLabel ${plainRangeLabel(it)}") { viewModel.onCriteriaChanged(criteria.copy(altitudeRange = IntRangeFilter())) }) }
+        criteria.elevationRange.takeIf(IntRangeFilter::isActive)?.let { add(ActiveFilterAction("$elevationLabel ${plainRangeLabel(it)}") { viewModel.onCriteriaChanged(criteria.copy(elevationRange = IntRangeFilter())) }) }
+        criteria.lengthRange.takeIf(IntRangeFilter::isActive)?.let { add(ActiveFilterAction("$lengthLabel ${plainRangeLabel(it)}") { viewModel.onCriteriaChanged(criteria.copy(lengthRange = IntRangeFilter())) }) }
+        criteria.maxWaterfallRange.takeIf(IntRangeFilter::isActive)?.let { add(ActiveFilterAction("$maxWaterfallLabel ${plainRangeLabel(it)}") { viewModel.onCriteriaChanged(criteria.copy(maxWaterfallRange = IntRangeFilter())) }) }
+        criteria.ropeRange.takeIf(IntRangeFilter::isActive)?.let { add(ActiveFilterAction("$ropeLabel ${plainRangeLabel(it)}") { viewModel.onCriteriaChanged(criteria.copy(ropeRange = IntRangeFilter())) }) }
     }
 }
 
 @Composable
-private fun sortLabel(field: SearchSortField): String {
-    return when (field) {
-        SearchSortField.RELEVANCE -> stringResource(R.string.search_sort_relevance)
-        SearchSortField.NAME -> stringResource(R.string.search_sort_name)
-        SearchSortField.INTEREST -> stringResource(R.string.search_sort_interest)
-        SearchSortField.POPULARITY -> stringResource(R.string.search_sort_popularity)
-        SearchSortField.DIFFICULTY -> stringResource(R.string.search_sort_difficulty)
-        SearchSortField.ELEVATION -> stringResource(R.string.search_sort_elevation)
-        SearchSortField.LENGTH -> stringResource(R.string.search_sort_length)
-        SearchSortField.MAX_WATERFALL -> stringResource(R.string.search_sort_max_waterfall)
-        SearchSortField.DISTANCE -> stringResource(R.string.search_sort_distance)
-    }
+private fun sortLabel(field: SearchSortField): String = when (field) {
+    SearchSortField.RELEVANCE -> stringResource(R.string.search_sort_relevance)
+    SearchSortField.NAME -> stringResource(R.string.search_sort_name)
+    SearchSortField.INTEREST -> stringResource(R.string.search_sort_interest)
+    SearchSortField.POPULARITY -> stringResource(R.string.search_sort_popularity)
+    SearchSortField.DIFFICULTY -> stringResource(R.string.search_sort_difficulty)
+    SearchSortField.ELEVATION -> stringResource(R.string.search_sort_elevation)
+    SearchSortField.LENGTH -> stringResource(R.string.search_sort_length)
+    SearchSortField.MAX_WATERFALL -> stringResource(R.string.search_sort_max_waterfall)
+    SearchSortField.DISTANCE -> stringResource(R.string.search_sort_distance)
 }
 
-private fun directionSuffix(direction: SortDirection): String {
-    return if (direction == SortDirection.ASC) " ↑" else " ↓"
-}
+private fun directionSuffix(direction: SortDirection): String = if (direction == SortDirection.ASC) " ↑" else " ↓"
 
-private fun rangeLabel(prefix: String, range: IntRangeFilter): String {
-    return when {
-        range.min != null && range.max != null -> "$prefix ${range.min}-${range.max}"
-        range.min != null -> "$prefix >= ${range.min}"
-        range.max != null -> "$prefix <= ${range.max}"
-        else -> prefix
-    }
+private fun rangeLabel(prefix: String, range: IntRangeFilter): String = when {
+    range.min != null && range.max != null -> "$prefix ${range.min}-${range.max}"
+    range.min != null -> "$prefix >= ${range.min}"
+    range.max != null -> "$prefix <= ${range.max}"
+    else -> prefix
 }
 
 private fun engagementRangeLabel(range: IntRangeFilter): String {
@@ -794,11 +795,9 @@ private fun engagementRangeLabel(range: IntRangeFilter): String {
     }
 }
 
-private fun plainRangeLabel(range: IntRangeFilter): String {
-    return when {
-        range.min != null && range.max != null -> "${range.min}-${range.max}"
-        range.min != null -> ">= ${range.min}"
-        range.max != null -> "<= ${range.max}"
-        else -> ""
-    }
+private fun plainRangeLabel(range: IntRangeFilter): String = when {
+    range.min != null && range.max != null -> "${range.min}-${range.max}"
+    range.min != null -> ">= ${range.min}"
+    range.max != null -> "<= ${range.max}"
+    else -> ""
 }
