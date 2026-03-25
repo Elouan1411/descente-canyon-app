@@ -93,11 +93,17 @@ def clip_dem(
             clipped_window = Window(row_off=row_off, col_off=col_off, height=height, width=width)
 
             profile = src.profile.copy()
+            profile.pop("blockxsize", None)
+            profile.pop("blockysize", None)
+            profile.pop("tiled", None)
+            profile.pop("compress", None)
+            profile.pop("interleave", None)
             profile.update(
                 height=height,
                 width=width,
                 transform=src.window_transform(clipped_window),
                 crs=source_crs,
+                driver="GTiff",
                 compress="lzw",
                 tiled=True,
                 BIGTIFF="YES",
