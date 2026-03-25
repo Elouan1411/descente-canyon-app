@@ -32,8 +32,6 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
-import androidx.compose.material3.TopAppBar
-import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
@@ -49,6 +47,7 @@ import fr.descentecanyon.app.R
 import fr.descentecanyon.app.domain.model.CanyonDetail
 import fr.descentecanyon.app.domain.model.GeoPoint
 import fr.descentecanyon.app.domain.model.GeoPointType
+import fr.descentecanyon.app.ui.components.CompactAppBar
 import fr.descentecanyon.app.ui.map.MapLibreView
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -65,17 +64,13 @@ fun CanyonPointsMapScreen(
     Scaffold(
         containerColor = MaterialTheme.colorScheme.background,
         topBar = {
-            TopAppBar(
-                title = { Text(uiState.canyonDetail?.canyon?.nom ?: "Canyon #$canyonId") },
-                navigationIcon = {
+            CompactAppBar(
+                title = uiState.canyonDetail?.canyon?.nom ?: "Canyon #$canyonId",
+                navigation = {
                     IconButton(onClick = onBackClick) {
                         Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = stringResource(R.string.back))
                     }
                 },
-                colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = MaterialTheme.colorScheme.primaryContainer,
-                    titleContentColor = MaterialTheme.colorScheme.onPrimaryContainer,
-                ),
             )
         },
         modifier = modifier,

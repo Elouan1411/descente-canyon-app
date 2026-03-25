@@ -18,7 +18,6 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyListScope
@@ -49,11 +48,10 @@ import androidx.compose.material3.ModalBottomSheet
 import androidx.compose.material3.PrimaryTabRow
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SmallFloatingActionButton
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Tab
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
-import androidx.compose.material3.TopAppBar
-import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -86,6 +84,7 @@ import fr.descentecanyon.app.domain.model.GeoPointType
 import fr.descentecanyon.app.domain.model.NiveauDebit
 import fr.descentecanyon.app.domain.model.Regulation
 import fr.descentecanyon.app.ui.components.CotationBadge
+import fr.descentecanyon.app.ui.components.CompactAppBar
 import fr.descentecanyon.app.ui.components.DebitBadge
 import fr.descentecanyon.app.ui.components.InterestStars
 import fr.descentecanyon.app.ui.map.MapLibreView
@@ -122,15 +121,9 @@ fun CanyonDetailScreen(
     Scaffold(
         containerColor = MaterialTheme.colorScheme.background,
         topBar = {
-            TopAppBar(
-                title = {
-                    Text(
-                        text = uiState.canyonDetail?.canyon?.nom ?: "Canyon #$canyonId",
-                        maxLines = 1,
-                        overflow = TextOverflow.Ellipsis,
-                    )
-                },
-                navigationIcon = {
+            CompactAppBar(
+                title = uiState.canyonDetail?.canyon?.nom ?: "Canyon #$canyonId",
+                navigation = {
                     IconButton(onClick = onBackClick) {
                         Icon(
                             imageVector = Icons.AutoMirrored.Filled.ArrowBack,
@@ -145,48 +138,38 @@ fun CanyonDetailScreen(
                             contentDescription = stringResource(R.string.debit_form_title),
                         )
                     }
-                    IconButton(onClick = { viewModel.toggleFavorite() }) {
+                    IconButton(onClick = viewModel::toggleFavorite) {
                         Icon(
-                            imageVector = if (uiState.isFavorite) {
-                                Icons.Default.Favorite
-                            } else {
-                                Icons.Default.FavoriteBorder
-                            },
+                            imageVector = if (uiState.isFavorite) Icons.Default.Favorite else Icons.Default.FavoriteBorder,
                             contentDescription = if (uiState.isFavorite) {
                                 stringResource(R.string.remove_favorite)
                             } else {
                                 stringResource(R.string.add_favorite)
                             },
-                            tint = if (uiState.isFavorite) {
-                                MaterialTheme.colorScheme.error
-                            } else {
-                                MaterialTheme.colorScheme.onSurface
-                            },
+                            tint = if (uiState.isFavorite) MaterialTheme.colorScheme.error else MaterialTheme.colorScheme.onPrimaryContainer,
                         )
                     }
                 },
-                colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = MaterialTheme.colorScheme.primaryContainer,
-                    titleContentColor = MaterialTheme.colorScheme.onPrimaryContainer,
-                ),
             )
         },
         floatingActionButton = {
             Column(
                 modifier = Modifier
-                    .padding(bottom = 28.dp)
+                    .padding(bottom = 20.dp)
                     .navigationBarsPadding(),
                 horizontalAlignment = Alignment.End,
                 verticalArrangement = Arrangement.spacedBy(12.dp),
             ) {
                 FloatingActionButton(
                     onClick = onShowMapClick,
+                    modifier = Modifier.size(68.dp),
                     containerColor = MaterialTheme.colorScheme.primary,
                     contentColor = MaterialTheme.colorScheme.onPrimary,
                 ) {
                     Icon(
                         imageVector = Icons.Default.Map,
                         contentDescription = stringResource(R.string.show_map_points),
+                        modifier = Modifier.size(30.dp),
                     )
                 }
             }
@@ -230,8 +213,9 @@ fun CanyonDetailScreen(
                 CanyonDetailContent(
                     detail = uiState.canyonDetail!!,
                     isOnline = uiState.isOnline,
+                    isLoadingPhotos = uiState.isLoadingPhotos,
+                    isLoadingDebits = uiState.isLoadingDebits,
                     downloadingPhotoIds = uiState.downloadingPhotoIds,
-                    onDownloadPhoto = viewModel::downloadPhoto,
                     onOpenPhotoGallery = onOpenPhotoGallery,
                     modifier = Modifier.padding(innerPadding),
                 )
@@ -245,8 +229,9 @@ fun CanyonDetailScreen(
 private fun CanyonDetailContent(
     detail: CanyonDetail,
     isOnline: Boolean,
+    isLoadingPhotos: Boolean,
+    isLoadingDebits: Boolean,
     downloadingPhotoIds: Set<Long>,
-    onDownloadPhoto: (Long) -> Unit,
     onOpenPhotoGallery: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
@@ -254,8 +239,16 @@ private fun CanyonDetailContent(
     val listState = rememberLazyListState()
     val tabs = listOf(
         stringResource(R.string.tab_topo),
-        stringResource(R.string.tab_photos),
-        stringResource(R.string.tab_debits),
+        if (isLoadingPhotos && detail.photos.isEmpty()) {
+            stringResource(R.string.tab_photos_loading)
+        } else {
+            stringResource(R.string.tab_photos_with_count, detail.photos.size)
+        },
+        if (isLoadingDebits && detail.debits.isEmpty()) {
+            stringResource(R.string.tab_debits_loading)
+        } else {
+            stringResource(R.string.tab_debits_with_count, detail.debits.size)
+        },
     )
 
     LazyColumn(
@@ -285,12 +278,12 @@ private fun CanyonDetailContent(
             1 -> photosItems(
                 photos = detail.photos,
                 isOnline = isOnline,
+                isLoadingPhotos = isLoadingPhotos,
                 isOfflineSaved = detail.canyon.isOffline,
                 downloadingPhotoIds = downloadingPhotoIds,
-                onDownloadPhoto = onDownloadPhoto,
                 onOpenPhotoGallery = onOpenPhotoGallery,
             )
-            2 -> debitItems(detail.debits)
+            2 -> debitItems(detail.debits, isLoadingDebits)
         }
     }
 }
@@ -936,17 +929,21 @@ private fun StringBuilder.appendLineIfNotBlank(value: String?) {
 private fun LazyListScope.photosItems(
     photos: List<CanyonPhoto>,
     isOnline: Boolean,
+    isLoadingPhotos: Boolean,
     isOfflineSaved: Boolean,
     downloadingPhotoIds: Set<Long>,
-    onDownloadPhoto: (Long) -> Unit,
     onOpenPhotoGallery: () -> Unit,
 ) {
-    if (photos.isEmpty()) {
+    if (isLoadingPhotos && photos.isEmpty()) {
+        item {
+            LoadingSectionItem(text = stringResource(R.string.loading_photos))
+        }
+    } else if (photos.isEmpty()) {
         item {
             Box(
                 modifier = Modifier
-                .fillMaxWidth()
-                .padding(32.dp),
+                    .fillMaxWidth()
+                    .padding(start = 32.dp, top = 32.dp, end = 32.dp, bottom = 96.dp),
                 contentAlignment = Alignment.Center,
             ) {
                 Text(
@@ -960,12 +957,21 @@ private fun LazyListScope.photosItems(
             }
         }
     } else {
+        if (isLoadingPhotos) {
+            item {
+                InlineLoadingBanner(
+                    text = stringResource(R.string.loading_photos),
+                    modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp),
+                )
+            }
+        }
         items(
             items = photos,
             key = { it.id.takeIf { id -> id != 0L } ?: it.url.hashCode().toLong() },
         ) { photo ->
             PhotoCard(
                 photo = photo,
+                isDownloading = downloadingPhotoIds.contains(photo.id),
                 onOpen = {
                     PhotoGallerySession.open(photos, photos.indexOf(photo))
                     onOpenPhotoGallery()
@@ -974,7 +980,7 @@ private fun LazyListScope.photosItems(
             )
         }
         item {
-            Spacer(modifier = Modifier.height(132.dp))
+            Spacer(modifier = Modifier.height(96.dp))
         }
     }
 }
@@ -982,6 +988,7 @@ private fun LazyListScope.photosItems(
 @Composable
 private fun PhotoCard(
     photo: CanyonPhoto,
+    isDownloading: Boolean,
     onOpen: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
@@ -990,13 +997,25 @@ private fun PhotoCard(
         modifier = modifier.fillMaxWidth(),
         elevation = CardDefaults.cardElevation(defaultElevation = 1.dp),
     ) {
-        ProgressivePhoto(
-            photo = photo,
-            modifier = Modifier
-                .fillMaxWidth()
-                .height(220.dp),
-            contentScale = ContentScale.Crop,
-        )
+        Box {
+            ProgressivePhoto(
+                photo = photo,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(220.dp),
+                contentScale = ContentScale.Crop,
+            )
+            if (isDownloading) {
+                Box(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .background(MaterialTheme.colorScheme.scrim.copy(alpha = 0.28f)),
+                    contentAlignment = Alignment.Center,
+                ) {
+                    CircularProgressIndicator()
+                }
+            }
+        }
     }
 }
 
@@ -1024,13 +1043,20 @@ private fun ProgressivePhoto(
     }
 }
 
-private fun LazyListScope.debitItems(debits: List<Debit>) {
-    if (debits.isEmpty()) {
+private fun LazyListScope.debitItems(
+    debits: List<Debit>,
+    isLoadingDebits: Boolean,
+) {
+    if (isLoadingDebits && debits.isEmpty()) {
+        item {
+            LoadingSectionItem(text = stringResource(R.string.loading_debits))
+        }
+    } else if (debits.isEmpty()) {
         item {
             Box(
                 modifier = Modifier
-                .fillMaxWidth()
-                .padding(32.dp),
+                    .fillMaxWidth()
+                    .padding(start = 32.dp, top = 32.dp, end = 32.dp, bottom = 96.dp),
                 contentAlignment = Alignment.Center,
             ) {
                 Text(
@@ -1041,6 +1067,14 @@ private fun LazyListScope.debitItems(debits: List<Debit>) {
             }
         }
     } else {
+        if (isLoadingDebits) {
+            item {
+                InlineLoadingBanner(
+                    text = stringResource(R.string.loading_debits),
+                    modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp),
+                )
+            }
+        }
         items(
             items = debits,
             key = { it.id },
@@ -1051,7 +1085,58 @@ private fun LazyListScope.debitItems(debits: List<Debit>) {
             )
         }
         item {
-            Spacer(modifier = Modifier.height(132.dp)) // FAB clearance
+            Spacer(modifier = Modifier.height(96.dp))
+        }
+    }
+}
+
+@Composable
+private fun LoadingSectionItem(
+    text: String,
+    modifier: Modifier = Modifier,
+) {
+    Box(
+        modifier = modifier
+            .fillMaxWidth()
+            .padding(start = 32.dp, top = 32.dp, end = 32.dp, bottom = 96.dp),
+        contentAlignment = Alignment.Center,
+    ) {
+        Column(
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.spacedBy(12.dp),
+        ) {
+            CircularProgressIndicator()
+            Text(
+                text = text,
+                style = MaterialTheme.typography.bodyMedium,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+            )
+        }
+    }
+}
+
+@Composable
+private fun InlineLoadingBanner(
+    text: String,
+    modifier: Modifier = Modifier,
+) {
+    Card(
+        modifier = modifier.fillMaxWidth(),
+        colors = CardDefaults.cardColors(
+            containerColor = MaterialTheme.colorScheme.surfaceVariant,
+        ),
+    ) {
+        Row(
+            modifier = Modifier.padding(horizontal = 14.dp, vertical = 10.dp),
+            horizontalArrangement = Arrangement.spacedBy(12.dp),
+            verticalAlignment = Alignment.CenterVertically,
+        ) {
+            CircularProgressIndicator(modifier = Modifier.size(18.dp), strokeWidth = 2.dp)
+            Text(
+                text = text,
+                style = MaterialTheme.typography.bodyMedium,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+            )
         }
     }
 }

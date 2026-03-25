@@ -7,9 +7,9 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
@@ -46,7 +46,6 @@ fun FavoritesScreen(
     Column(
         modifier = modifier
             .fillMaxSize()
-            .statusBarsPadding()
             .padding(horizontal = 16.dp),
     ) {
         Spacer(modifier = Modifier.height(8.dp))
@@ -103,6 +102,7 @@ fun FavoritesScreen(
             }
         } else {
             LazyColumn(
+                modifier = Modifier.navigationBarsPadding(),
                 verticalArrangement = Arrangement.spacedBy(8.dp),
             ) {
                 items(
@@ -119,7 +119,7 @@ fun FavoritesScreen(
                     }
                 }
                 item {
-                    Spacer(modifier = Modifier.height(8.dp))
+                    Spacer(modifier = Modifier.height(16.dp))
                 }
             }
         }

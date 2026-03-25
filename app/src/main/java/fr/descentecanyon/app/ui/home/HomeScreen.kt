@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
@@ -43,11 +44,11 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import fr.descentecanyon.app.R
-import fr.descentecanyon.app.ui.components.CanyonSummaryCard
 import fr.descentecanyon.app.domain.model.Debit
 import fr.descentecanyon.app.domain.model.NiveauDebit
 import fr.descentecanyon.app.ui.auth.AuthViewModel
 import fr.descentecanyon.app.ui.auth.LoginDialog
+import fr.descentecanyon.app.ui.components.CompactAppBar
 import fr.descentecanyon.app.ui.components.DebitBadge
 import fr.descentecanyon.app.ui.theme.DebitCorrect
 import fr.descentecanyon.app.ui.theme.DebitCrue
@@ -83,15 +84,9 @@ fun HomeScreen(
     }
 
     Scaffold(
-        containerColor = MaterialTheme.colorScheme.background,
         topBar = {
-            TopAppBar(
-                title = {
-                    Text(
-                        text = stringResource(R.string.app_name),
-                        style = MaterialTheme.typography.headlineSmall,
-                    )
-                },
+            CompactAppBar(
+                title = stringResource(R.string.app_name),
                 actions = {
                     IconButton(onClick = { showLoginDialog = true }) {
                         Icon(
@@ -101,10 +96,6 @@ fun HomeScreen(
                         )
                     }
                 },
-                colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = MaterialTheme.colorScheme.primaryContainer,
-                    titleContentColor = MaterialTheme.colorScheme.onPrimaryContainer,
-                ),
             )
         },
         modifier = modifier,
@@ -112,30 +103,11 @@ fun HomeScreen(
         LazyColumn(
             modifier = Modifier
                 .fillMaxSize()
+                .navigationBarsPadding()
                 .padding(innerPadding)
                 .padding(horizontal = 16.dp),
             verticalArrangement = Arrangement.spacedBy(8.dp),
         ) {
-            if (!homeState.isOnline) {
-                item {
-                    Card(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(top = 8.dp),
-                        colors = CardDefaults.cardColors(
-                            containerColor = MaterialTheme.colorScheme.errorContainer,
-                        ),
-                    ) {
-                        Text(
-                            text = stringResource(R.string.offline_banner),
-                            style = MaterialTheme.typography.bodyMedium,
-                            color = MaterialTheme.colorScheme.onErrorContainer,
-                            modifier = Modifier.padding(12.dp),
-                        )
-                    }
-                }
-            }
-
             // Credit card
             item {
                 Spacer(modifier = Modifier.height(8.dp))
@@ -146,49 +118,7 @@ fun HomeScreen(
                 QuickSearchCard(onClick = onQuickSearchClick)
             }
 
-            item {
-                Text(
-                    text = stringResource(R.string.home_offline_canyons),
-                    style = MaterialTheme.typography.titleLarge,
-                    modifier = Modifier.padding(top = 16.dp, bottom = 4.dp),
-                )
-            }
-
-            if (homeState.offlineCanyons.isEmpty()) {
-                item {
-                    Card(
-                        modifier = Modifier.fillMaxWidth(),
-                        colors = CardDefaults.cardColors(
-                            containerColor = MaterialTheme.colorScheme.secondaryContainer,
-                        ),
-                    ) {
-                        Column(modifier = Modifier.padding(16.dp)) {
-                            Text(
-                                text = stringResource(R.string.home_offline_empty_title),
-                                style = MaterialTheme.typography.titleMedium,
-                                fontWeight = FontWeight.SemiBold,
-                            )
-                            Text(
-                                text = stringResource(R.string.home_offline_empty_body),
-                                style = MaterialTheme.typography.bodySmall,
-                                color = MaterialTheme.colorScheme.onSecondaryContainer,
-                                modifier = Modifier.padding(top = 6.dp),
-                            )
-                        }
-                    }
-                }
-            } else {
-                items(
-                    items = homeState.offlineCanyons.take(6),
-                    key = { it.id },
-                ) { canyon ->
-                    CanyonSummaryCard(
-                        canyon = canyon,
-                        onClick = { onCanyonClick(canyon.id) },
-                    )
-                }
-            }
-
+            // Section header
             item {
                 Row(
                     modifier = Modifier
@@ -210,6 +140,7 @@ fun HomeScreen(
                 }
             }
 
+            // Loading
             if (homeState.isLoading) {
                 item {
                     Box(
@@ -223,6 +154,7 @@ fun HomeScreen(
                 }
             }
 
+            // Error
             homeState.error?.let { error ->
                 item {
                     Column(
@@ -244,8 +176,9 @@ fun HomeScreen(
                 }
             }
 
+            // Debit cards
             items(
-                items = homeState.latestDebits.take(6),
+                items = homeState.latestDebits,
                 key = { it.id },
             ) { debit ->
                 DebitCard(
@@ -255,7 +188,7 @@ fun HomeScreen(
             }
 
             item {
-                Spacer(modifier = Modifier.height(8.dp))
+                Spacer(modifier = Modifier.height(16.dp))
             }
         }
     }
@@ -350,7 +283,7 @@ private fun DebitCard(
                 verticalAlignment = Alignment.CenterVertically,
             ) {
                 Text(
-                    text = debit.canyonNom ?: "Canyon #${debit.canyonId}",
+                    text = "Canyon #${debit.canyonId}",
                     style = MaterialTheme.typography.titleMedium,
                     fontWeight = FontWeight.Bold,
                     maxLines = 1,

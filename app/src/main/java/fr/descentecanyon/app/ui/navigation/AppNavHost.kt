@@ -7,9 +7,9 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.toRoute
 import fr.descentecanyon.app.ui.canyon.CanyonDetailScreen
-import fr.descentecanyon.app.ui.canyon.PhotoGallerySession
-import fr.descentecanyon.app.ui.canyon.PhotoGalleryScreen
 import fr.descentecanyon.app.ui.canyon.CanyonPointsMapScreen
+import fr.descentecanyon.app.ui.canyon.PhotoGalleryScreen
+import fr.descentecanyon.app.ui.canyon.PhotoGallerySession
 import fr.descentecanyon.app.ui.debit.DebitFormScreen
 import fr.descentecanyon.app.ui.favorites.FavoritesScreen
 import fr.descentecanyon.app.ui.home.HomeScreen
@@ -77,7 +77,7 @@ fun AppNavHost(
                 onBackClick = {
                     PhotoGallerySession.clear()
                     navController.popBackStack()
-                }
+                },
             )
         }
 
