@@ -430,41 +430,6 @@ private fun EmptyNearbyCard(modifier: Modifier = Modifier) {
     }
 }
 
-@Composable
-private fun NearbyCanyonCard(
-    canyon: CanyonSummary,
-    onClick: () -> Unit,
-    modifier: Modifier = Modifier,
-) {
-    Column(modifier = modifier) {
-        CanyonSummaryCard(
-            canyon = canyon,
-            onClick = onClick,
-        )
-        canyon.latitude?.let { latitude ->
-            canyon.longitude?.let { longitude ->
-                Row(
-                    modifier = Modifier.padding(start = 12.dp, top = 6.dp),
-                    verticalAlignment = Alignment.CenterVertically,
-                ) {
-                    Icon(
-                        imageVector = Icons.Default.Place,
-                        contentDescription = null,
-                        modifier = Modifier.size(14.dp),
-                        tint = MaterialTheme.colorScheme.primary,
-                    )
-                    Spacer(modifier = Modifier.size(4.dp))
-                    Text(
-                        text = stringResource(R.string.map_marker_coordinates, latitude, longitude),
-                        style = MaterialTheme.typography.bodySmall,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant,
-                    )
-                }
-            }
-        }
-    }
-}
-
 private fun loadNearbyFromDevice(
     context: Context,
     viewModel: MapViewModel,
