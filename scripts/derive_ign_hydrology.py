@@ -91,6 +91,7 @@ def parse_args() -> argparse.Namespace:
         default=DEFAULT_LAMBERT93_PROJ4,
         help="CRS horizontal a assigner si le DEM source ne porte pas ses geokeys",
     )
+    parser.add_argument("--whitebox-verbose", action="store_true")
     return parser.parse_args()
 
 
@@ -117,7 +118,7 @@ def main() -> int:
         work_dir.mkdir(parents=True, exist_ok=True)
         wbt.set_working_dir(str(work_dir))
 
-    wbt.verbose = True
+    wbt.verbose = args.whitebox_verbose
     wbt.flow_accumulation_full_workflow(
         dem=str(dem_for_whitebox),
         out_dem=str(breached_dem),
