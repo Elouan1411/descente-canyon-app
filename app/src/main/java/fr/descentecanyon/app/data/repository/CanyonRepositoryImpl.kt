@@ -79,9 +79,6 @@ class CanyonRepositoryImpl @Inject constructor(
 
     override fun observeSearchCatalog(): Flow<List<CanyonSearchItem>> {
         return canyonDao.observeAll()
-            .onStart {
-                embeddedCanyonDataImporter.ensureImported()
-            }
             .map { entities ->
                 val representativePoints = geoPointDao.getAll()
                     .groupBy { it.canyonId }
@@ -120,7 +117,6 @@ class CanyonRepositoryImpl @Inject constructor(
     }
 
     override suspend fun getCanyonDetail(canyonId: Int): Result<CanyonDetail> {
-        embeddedCanyonDataImporter.ensureImported()
         val localCanyon = canyonDao.getById(canyonId)
 
         return runCatching {
@@ -149,7 +145,6 @@ class CanyonRepositoryImpl @Inject constructor(
     }
 
     override suspend fun getCanyonPreview(canyonId: Int): Result<CanyonDetail> {
-        embeddedCanyonDataImporter.ensureImported()
         val localCanyon = canyonDao.getById(canyonId)
         if (localCanyon != null) {
             return Result.success(loadLocalDetail(canyonId, localCanyon))
