@@ -8,6 +8,7 @@ import math
 import shutil
 import subprocess
 import sys
+import time
 from dataclasses import asdict
 from pathlib import Path
 from typing import Any
@@ -421,8 +422,8 @@ def ensure_local_hydrology(
     output_dir: Path,
     points: list[dict[str, Any]],
     gdal_translate: str,
-) -> dict[str, Path]:
-    from run_local_ign_canyon_workflow import clip_dem
+) -> tuple[dict[str, Path], dict[str, Any]]:
+    from run_local_ign_canyon_workflow import clip_dem, resample_dem
 
     dem_path = normalized_path(source["dem"]).resolve()
     if not dem_path.exists():
@@ -430,12 +431,21 @@ def ensure_local_hydrology(
 
     canyon_work_dir = output_dir / "work" / str(canyon_id)
     clip_path = canyon_work_dir / "clip_dem.tif"
+    processing_clip_path = canyon_work_dir / "clip_dem_processing.tif"
     hydrology_dir = canyon_work_dir / "hydrology"
     upa_path = hydrology_dir / "ign_upstream_area_km2.tif"
     flowdir_path = hydrology_dir / "ign_d8_pointer_esri.tif"
     elevation_path = hydrology_dir / "ign_breached_dem.tif"
 
-    if not upa_path.exists() or not flowdir_path.exists() or not elevation_path.exists():
+    timings = {
+        "clipDemSec": 0.0,
+        "resampleDemSec": 0.0,
+        "deriveHydrologySec": 0.0,
+    }
+    reused_hydrology = upa_path.exists() and flowdir_path.exists() and elevation_path.exists()
+
+    if not reused_hydrology:
+        started = time.perf_counter()
         clip_dem(
             dem_path,
             clip_path,
@@ -443,11 +453,18 @@ def ensure_local_hydrology(
             float(source.get("bufferKm", 20.0)) * 1000.0,
             source_srs=source.get("srs"),
         )
+        timings["clipDemSec"] = time.perf_counter() - started
+        processing_dem = clip_path
+        if source.get("processingResolutionM"):
+            started = time.perf_counter()
+            resample_dem(clip_path, processing_clip_path, float(source["processingResolutionM"]))
+            processing_dem = processing_clip_path
+            timings["resampleDemSec"] = time.perf_counter() - started
         command = [
             sys.executable,
             "scripts/derive_ign_hydrology.py",
             "--dem",
-            str(clip_path),
+            str(processing_dem),
             "--output-dir",
             str(hydrology_dir),
             "--work-dir",
@@ -455,13 +472,21 @@ def ensure_local_hydrology(
         ]
         if source.get("srs"):
             command.extend(["--srs", source["srs"]])
+        started = time.perf_counter()
         subprocess.run(command, check=True)
+        timings["deriveHydrologySec"] = time.perf_counter() - started
 
-    return {
-        "upa": upa_path,
-        "flowdir": flowdir_path,
-        "elevation": elevation_path,
-    }
+    return (
+        {
+            "upa": upa_path,
+            "flowdir": flowdir_path,
+            "elevation": elevation_path,
+        },
+        {
+            "timingsSec": rounded_stage_values(timings),
+            "reusedExistingHydrology": reused_hydrology,
+        },
+    )
 
 
 def evaluate_points_for_canyon(
@@ -828,7 +853,18 @@ def aggregate_results(output_dir: Path) -> None:
     import_rows = []
     watershed_rows = []
     watershed_features = []
+    stage_totals: dict[str, float] = collections.defaultdict(float)
+    stage_maxima: dict[str, float] = collections.defaultdict(float)
+    profiled_canyons = 0
     for item in canyon_results:
+        profiling = item.get("profiling", {})
+        stage_values = profiling.get("stagesSec", {})
+        if stage_values:
+            profiled_canyons += 1
+            for key, value in stage_values.items():
+                numeric_value = float(value or 0.0)
+                stage_totals[key] += numeric_value
+                stage_maxima[key] = max(stage_maxima[key], numeric_value)
         candidate = item.get("bestHydroProxyCandidate") or item.get("suggestedCandidate")
         if not candidate:
             continue
@@ -893,6 +929,17 @@ def aggregate_results(output_dir: Path) -> None:
             "canyonsWithResults": len(canyon_results),
             "importReadyRows": len(import_rows),
             "watershedPolygonRows": len(watershed_rows),
+            "profiling": {
+                "profiledCanyons": profiled_canyons,
+                "stageTotalsSec": rounded_stage_values(dict(stage_totals)),
+                "stageAveragesSec": rounded_stage_values(
+                    {
+                        key: (value / profiled_canyons)
+                        for key, value in stage_totals.items()
+                    }
+                ) if profiled_canyons else {},
+                "stageMaxSec": rounded_stage_values(dict(stage_maxima)),
+            },
         },
     )
 
@@ -909,6 +956,10 @@ def write_progress(output_dir: Path, *, processed: int, pending: int) -> None:
     )
 
 
+def rounded_stage_values(values: dict[str, float]) -> dict[str, float]:
+    return {key: round(value, 3) for key, value in values.items()}
+
+
 def process_single_canyon(
     *,
     canyon_id: int,
@@ -921,7 +972,10 @@ def process_single_canyon(
 ) -> str:
     canyon_file = output_dir / "canyons" / f"{canyon_id}.json"
     print(f"START canyon {canyon_id} {canyon.get('nomComplet') or canyon.get('nom')}", flush=True)
+    total_started = time.perf_counter()
+    stage_timings: dict[str, float] = {}
 
+    started = time.perf_counter()
     source = resolve_source_for_canyon(
         canyon=canyon,
         points=points,
@@ -929,6 +983,7 @@ def process_single_canyon(
         output_dir=output_dir,
         gdal_translate=gdal_translate,
     )
+    stage_timings["resolveSourceSec"] = time.perf_counter() - started
     if source is None:
         write_json(
             canyon_file,
@@ -936,35 +991,52 @@ def process_single_canyon(
                 "canyonId": canyon_id,
                 "canyonName": canyon.get("nomComplet") or canyon.get("nom"),
                 "status": "no_matching_source",
+                "profiling": {
+                    "stagesSec": rounded_stage_values(
+                        {
+                            **stage_timings,
+                            "totalSec": time.perf_counter() - total_started,
+                        }
+                    )
+                },
             },
         )
         print(f"DONE canyon {canyon_id} no_matching_source", flush=True)
         return "no_matching_source"
 
     if source["mode"] == "derive_local_hydrology":
-        raster_paths = ensure_local_hydrology(
+        started = time.perf_counter()
+        raster_paths, hydrology_profile = ensure_local_hydrology(
             source=source,
             canyon_id=canyon_id,
             output_dir=output_dir,
             points=points,
             gdal_translate=gdal_translate,
         )
+        stage_timings["ensureLocalHydrologySec"] = time.perf_counter() - started
+        for key, value in hydrology_profile.get("timingsSec", {}).items():
+            stage_timings[key] = float(value)
     elif source["mode"] == "precomputed_hydrology":
         raster_paths = {
             "upa": normalized_path(source["upaRaster"]).resolve(),
             "flowdir": normalized_path(source["flowdirRaster"]).resolve() if source.get("flowdirRaster") else None,
             "elevation": normalized_path(source["elevationRaster"]).resolve() if source.get("elevationRaster") else None,
         }
+        hydrology_profile = {"reusedExistingHydrology": True, "timingsSec": {}}
     else:
         raise SystemExit(f"Unsupported source mode: {source['mode']}")
 
+    started = time.perf_counter()
     point_results = evaluate_points_for_canyon(
         canyon=canyon,
         points=points,
         source=source,
         raster_paths=raster_paths,
     )
+    stage_timings["evaluatePointsSec"] = time.perf_counter() - started
+    started = time.perf_counter()
     candidate_analysis = analyze_point_candidates(point_results)
+    stage_timings["analyzeCandidatesSec"] = time.perf_counter() - started
     analyzed_points = candidate_analysis["points"]
     selected_candidate = candidate_analysis["bestHydroProxyCandidate"]
     strict_topo_candidate = candidate_analysis["strictTopoCandidate"]
@@ -977,6 +1049,7 @@ def process_single_canyon(
         and selected_candidate["evaluation"].get("snapped_latitude") is not None
     ):
         print(f"WATERSHED canyon {canyon_id} start", flush=True)
+        started = time.perf_counter()
         geometry = build_watershed_geometry(
             flowdir_path=raster_paths["flowdir"],
             snapped_longitude=float(selected_candidate["evaluation"]["snapped_longitude"]),
@@ -984,6 +1057,7 @@ def process_single_canyon(
             source_srs=source.get("srs"),
             simplify_tolerance=float(source.get("watershedSimplifyToleranceM", 10.0)),
         )
+        stage_timings["buildWatershedGeometrySec"] = time.perf_counter() - started
         if geometry is not None:
             watershed = {
                 "geometry": geometry,
@@ -996,6 +1070,10 @@ def process_single_canyon(
                 "simplifyToleranceM": float(source.get("watershedSimplifyToleranceM", 10.0)),
             }
         print(f"WATERSHED canyon {canyon_id} done", flush=True)
+    else:
+        stage_timings["buildWatershedGeometrySec"] = 0.0
+
+    stage_timings["totalSec"] = time.perf_counter() - total_started
     result = {
         "canyonId": canyon_id,
         "canyonName": canyon.get("nomComplet") or canyon.get("nom"),
@@ -1009,11 +1087,27 @@ def process_single_canyon(
         "strictTopoCandidate": strict_topo_candidate,
         "suggestedCandidate": selected_candidate,
         "watershed": watershed,
+        "profiling": {
+            "sourceMode": source["mode"],
+            "reusedExistingHydrology": hydrology_profile.get("reusedExistingHydrology", False),
+            "stagesSec": rounded_stage_values(stage_timings),
+        },
     }
+    started = time.perf_counter()
+    write_json(canyon_file, result)
+    stage_timings["writeResultSec"] = time.perf_counter() - started
+    stage_timings["totalSec"] = time.perf_counter() - total_started
+    result["profiling"]["stagesSec"] = rounded_stage_values(stage_timings)
     write_json(canyon_file, result)
     if not keep_work:
         shutil.rmtree(output_dir / "work" / str(canyon_id), ignore_errors=True)
-    print(f"DONE canyon {canyon_id} ok", flush=True)
+    print(
+        f"DONE canyon {canyon_id} ok total={result['profiling']['stagesSec']['totalSec']}s "
+        f"hydro={result['profiling']['stagesSec'].get('ensureLocalHydrologySec', 0.0)}s "
+        f"points={result['profiling']['stagesSec'].get('evaluatePointsSec', 0.0)}s "
+        f"watershed={result['profiling']['stagesSec'].get('buildWatershedGeometrySec', 0.0)}s",
+        flush=True,
+    )
     return "ok"
 
 
