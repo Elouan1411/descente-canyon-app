@@ -45,18 +45,11 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import fr.descentecanyon.app.R
 import fr.descentecanyon.app.domain.model.Debit
-import fr.descentecanyon.app.domain.model.NiveauDebit
 import fr.descentecanyon.app.ui.auth.AuthViewModel
 import fr.descentecanyon.app.ui.auth.LoginDialog
 import fr.descentecanyon.app.ui.components.CompactAppBar
 import fr.descentecanyon.app.ui.components.DebitBadge
-import fr.descentecanyon.app.ui.theme.DebitCorrect
-import fr.descentecanyon.app.ui.theme.DebitCrue
-import fr.descentecanyon.app.ui.theme.DebitFilet
-import fr.descentecanyon.app.ui.theme.DebitGros
-import fr.descentecanyon.app.ui.theme.DebitInconnu
-import fr.descentecanyon.app.ui.theme.DebitSec
-import fr.descentecanyon.app.ui.theme.DebitTresGros
+import fr.descentecanyon.app.ui.components.debitLevelColor
 import java.time.format.DateTimeFormatter
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -266,15 +259,7 @@ private fun DebitCard(
     onClick: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
-    val bgColor = when (debit.niveau) {
-        NiveauDebit.SEC -> DebitSec
-        NiveauDebit.FILET -> DebitFilet
-        NiveauDebit.CORRECT -> DebitCorrect
-        NiveauDebit.GROS -> DebitGros
-        NiveauDebit.TRES_GROS -> DebitTresGros
-        NiveauDebit.CRUE -> DebitCrue
-        NiveauDebit.INCONNU -> DebitInconnu
-    }
+    val bgColor = debitLevelColor(debit.niveau)
 
     Card(
         onClick = onClick,

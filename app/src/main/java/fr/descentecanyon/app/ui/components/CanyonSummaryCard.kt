@@ -32,13 +32,6 @@ import fr.descentecanyon.app.ui.theme.CotationDifficile
 import fr.descentecanyon.app.ui.theme.CotationFacile
 import fr.descentecanyon.app.ui.theme.CotationMoyen
 import fr.descentecanyon.app.ui.theme.CotationTresDifficile
-import fr.descentecanyon.app.ui.theme.DebitCorrect
-import fr.descentecanyon.app.ui.theme.DebitCrue
-import fr.descentecanyon.app.ui.theme.DebitFilet
-import fr.descentecanyon.app.ui.theme.DebitGros
-import fr.descentecanyon.app.ui.theme.DebitInconnu
-import fr.descentecanyon.app.ui.theme.DebitSec
-import fr.descentecanyon.app.ui.theme.DebitTresGros
 
 @Composable
 fun CanyonSummaryCard(
@@ -185,15 +178,7 @@ fun DebitBadge(
     niveau: NiveauDebit,
     modifier: Modifier = Modifier,
 ) {
-    val color = when (niveau) {
-        NiveauDebit.SEC -> DebitSec
-        NiveauDebit.FILET -> DebitFilet
-        NiveauDebit.CORRECT -> DebitCorrect
-        NiveauDebit.GROS -> DebitGros
-        NiveauDebit.TRES_GROS -> DebitTresGros
-        NiveauDebit.CRUE -> DebitCrue
-        NiveauDebit.INCONNU -> DebitInconnu
-    }
+    val color = debitLevelColor(niveau)
     Card(
         modifier = modifier,
         colors = CardDefaults.cardColors(containerColor = color.copy(alpha = 0.15f)),

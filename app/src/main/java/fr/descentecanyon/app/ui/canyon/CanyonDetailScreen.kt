@@ -89,13 +89,10 @@ import fr.descentecanyon.app.ui.components.CotationBadge
 import fr.descentecanyon.app.ui.components.CompactAppBar
 import fr.descentecanyon.app.ui.components.DebitBadge
 import fr.descentecanyon.app.ui.components.InterestStars
+import fr.descentecanyon.app.ui.components.debitLevelColor
 import fr.descentecanyon.app.ui.map.MapLibreView
 import fr.descentecanyon.app.ui.theme.DebitCorrect
 import fr.descentecanyon.app.ui.theme.DebitCrue
-import fr.descentecanyon.app.ui.theme.DebitFilet
-import fr.descentecanyon.app.ui.theme.DebitGros
-import fr.descentecanyon.app.ui.theme.DebitInconnu
-import fr.descentecanyon.app.ui.theme.DebitSec
 import fr.descentecanyon.app.ui.theme.DebitTresGros
 import java.time.format.DateTimeFormatter
 
@@ -1367,40 +1364,6 @@ private fun CanyonGeoPointsFullScreenDialog(
     }
 }
 
-private fun GeoPoint.displayName(): String {
-    return when (type) {
-        GeoPointType.PARKING_AMONT -> label ?: "Parking amont"
-        GeoPointType.PARKING_AVAL -> label ?: "Parking aval"
-        GeoPointType.ENTREE -> label ?: "Debut du canyon"
-        GeoPointType.SORTIE -> label ?: "Sortie du canyon"
-        GeoPointType.POINT_REMARQUABLE -> label ?: "Point remarquable"
-        GeoPointType.ECHAPPATOIRE -> label ?: "Echappatoire"
-        GeoPointType.UNKNOWN -> label ?: "Point GPS"
-    }
-}
-
-private fun GeoPointType.navigationPriority(): Int {
-    return when (this) {
-        GeoPointType.PARKING_AMONT -> 0
-        GeoPointType.PARKING_AVAL -> 1
-        GeoPointType.ENTREE -> 2
-        GeoPointType.SORTIE -> 3
-        GeoPointType.POINT_REMARQUABLE -> 4
-        GeoPointType.ECHAPPATOIRE -> 5
-        GeoPointType.UNKNOWN -> 6
-    }
-}
-
-private fun GeoPointType.mapColor() = when (this) {
-    GeoPointType.PARKING_AMONT -> fr.descentecanyon.app.ui.theme.CanyonBlue
-    GeoPointType.PARKING_AVAL -> androidx.compose.ui.graphics.Color(0xFF7C3AED)
-    GeoPointType.ENTREE -> fr.descentecanyon.app.ui.theme.CotationFacile
-    GeoPointType.SORTIE -> fr.descentecanyon.app.ui.theme.CotationDifficile
-    GeoPointType.POINT_REMARQUABLE -> fr.descentecanyon.app.ui.theme.RockBrownLight
-    GeoPointType.ECHAPPATOIRE -> fr.descentecanyon.app.ui.theme.CanyonBlueDark
-    GeoPointType.UNKNOWN -> fr.descentecanyon.app.ui.theme.DebitInconnu
-}
-
 private fun openNavigation(
     context: android.content.Context,
     point: GeoPoint,
@@ -1416,15 +1379,7 @@ private fun DebitListItem(
     modifier: Modifier = Modifier,
 ) {
     var expanded by rememberSaveable(debit.id) { mutableStateOf(false) }
-    val bgColor = when (debit.niveau) {
-        NiveauDebit.SEC -> DebitSec
-        NiveauDebit.FILET -> DebitFilet
-        NiveauDebit.CORRECT -> DebitCorrect
-        NiveauDebit.GROS -> DebitGros
-        NiveauDebit.TRES_GROS -> DebitTresGros
-        NiveauDebit.CRUE -> DebitCrue
-        NiveauDebit.INCONNU -> DebitInconnu
-    }
+    val bgColor = debitLevelColor(debit.niveau)
 
     Card(
         modifier = modifier

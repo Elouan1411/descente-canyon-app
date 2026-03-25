@@ -1,10 +1,7 @@
 package fr.descentecanyon.app.ui.map
 
 import android.Manifest
-import android.annotation.SuppressLint
 import android.content.Context
-import android.location.Location
-import android.location.LocationManager
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.background
@@ -50,13 +47,14 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import androidx.core.content.ContextCompat
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import fr.descentecanyon.app.R
 import fr.descentecanyon.app.domain.model.CanyonSummary
 import fr.descentecanyon.app.map.MAP_OFFLINE_RADIUS_KM
 import fr.descentecanyon.app.ui.components.CanyonSummaryCard
+import fr.descentecanyon.app.ui.location.hasLocationPermission
+import fr.descentecanyon.app.ui.location.loadCurrentDeviceLocation
 import fr.descentecanyon.app.ui.theme.CanyonBlue
 import fr.descentecanyon.app.ui.theme.CanyonBlueDark
 import fr.descentecanyon.app.ui.theme.RockBrownLight
@@ -471,32 +469,9 @@ private fun loadNearbyFromDevice(
     context: Context,
     viewModel: MapViewModel,
 ) {
-    val location = context.bestLastKnownLocation() ?: run {
-        viewModel.onLocationUnavailable()
-        return
-    }
-    viewModel.loadNearby(location.latitude, location.longitude)
-}
-
-private fun Context.hasLocationPermission(): Boolean {
-    return ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) ==
-        android.content.pm.PackageManager.PERMISSION_GRANTED ||
-        ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) ==
-        android.content.pm.PackageManager.PERMISSION_GRANTED
-}
-
-@SuppressLint("MissingPermission")
-private fun Context.bestLastKnownLocation(): Location? {
-    if (!hasLocationPermission()) return null
-
-    val locationManager = getSystemService(Context.LOCATION_SERVICE) as? LocationManager ?: return null
-    val providers = buildList {
-        add(LocationManager.GPS_PROVIDER)
-        add(LocationManager.NETWORK_PROVIDER)
-        add(LocationManager.PASSIVE_PROVIDER)
-    }
-
-    return providers.mapNotNull { provider ->
-        runCatching { locationManager.getLastKnownLocation(provider) }.getOrNull()
-    }.maxByOrNull { it.accuracy.takeIf { accuracy -> accuracy > 0f }?.let { accuracy -> -accuracy } ?: Float.MIN_VALUE }
+    loadCurrentDeviceLocation(
+        context = context,
+        onLocation = { latitude, longitude -> viewModel.loadNearby(latitude, longitude) },
+        onUnavailable = viewModel::onLocationUnavailable,
+    )
 }

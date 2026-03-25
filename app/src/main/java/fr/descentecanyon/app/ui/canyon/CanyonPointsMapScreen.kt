@@ -36,7 +36,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
@@ -46,7 +45,6 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import fr.descentecanyon.app.R
 import fr.descentecanyon.app.domain.model.CanyonDetail
 import fr.descentecanyon.app.domain.model.GeoPoint
-import fr.descentecanyon.app.domain.model.GeoPointType
 import fr.descentecanyon.app.ui.components.CompactAppBar
 import fr.descentecanyon.app.ui.map.MapLibreView
 
@@ -109,7 +107,7 @@ private fun CanyonPointsMapContent(
         detail.geoPoints.mapIndexed { index, point ->
             fr.descentecanyon.app.domain.model.CanyonSummary(
                 id = detail.canyon.id * 10 + index,
-                nom = pointDisplayName(point),
+                nom = point.displayName(),
                 pays = detail.canyon.pays,
                 cotation = detail.canyon.cotation,
                 url = detail.canyon.url,
@@ -165,7 +163,7 @@ private fun CanyonPointsMapContent(
                     verticalArrangement = Arrangement.spacedBy(10.dp),
                 ) {
                     items(
-                        detail.geoPoints.sortedBy { pointPriority(it.type) },
+                        detail.geoPoints.sortedBy { it.type.navigationPriority() },
                         key = { it.id.takeIf { id -> id != 0L } ?: (it.latitude.toString() + it.longitude.toString()) },
                     ) { point ->
                         Card(
@@ -184,13 +182,13 @@ private fun CanyonPointsMapContent(
                             ) {
                                 Column(modifier = Modifier.weight(1f)) {
                                     Row(verticalAlignment = Alignment.CenterVertically) {
-                                        Box(Modifier.size(12.dp).background(pointColor(point.type), CircleShape))
+                                        Box(Modifier.size(12.dp).background(point.type.mapColor(), CircleShape))
                                         Spacer(Modifier.width(8.dp))
                                         Text(
-                                            pointDisplayName(point),
+                                            point.displayName(),
                                             style = MaterialTheme.typography.titleMedium,
                                             fontWeight = FontWeight.SemiBold,
-                                            color = pointColor(point.type),
+                                            color = point.type.mapColor(),
                                         )
                                     }
                                     Text(
@@ -214,34 +212,4 @@ private fun CanyonPointsMapContent(
             }
         }
     }
-}
-
-private fun pointDisplayName(point: GeoPoint): String = when (point.type) {
-    GeoPointType.PARKING_AMONT -> point.label ?: "Parking amont"
-    GeoPointType.PARKING_AVAL -> point.label ?: "Parking aval"
-    GeoPointType.ENTREE -> point.label ?: "Debut du canyon"
-    GeoPointType.SORTIE -> point.label ?: "Sortie du canyon"
-    GeoPointType.POINT_REMARQUABLE -> point.label ?: "Point remarquable"
-    GeoPointType.ECHAPPATOIRE -> point.label ?: "Echappatoire"
-    GeoPointType.UNKNOWN -> point.label ?: "Point GPS"
-}
-
-private fun pointPriority(type: GeoPointType): Int = when (type) {
-    GeoPointType.PARKING_AMONT -> 0
-    GeoPointType.PARKING_AVAL -> 1
-    GeoPointType.ENTREE -> 2
-    GeoPointType.SORTIE -> 3
-    GeoPointType.POINT_REMARQUABLE -> 4
-    GeoPointType.ECHAPPATOIRE -> 5
-    GeoPointType.UNKNOWN -> 6
-}
-
-private fun pointColor(type: GeoPointType): Color = when (type) {
-    GeoPointType.PARKING_AMONT -> fr.descentecanyon.app.ui.theme.CanyonBlue
-    GeoPointType.PARKING_AVAL -> Color(0xFF7C3AED)
-    GeoPointType.ENTREE -> fr.descentecanyon.app.ui.theme.CotationFacile
-    GeoPointType.SORTIE -> fr.descentecanyon.app.ui.theme.CotationDifficile
-    GeoPointType.POINT_REMARQUABLE -> fr.descentecanyon.app.ui.theme.RockBrownLight
-    GeoPointType.ECHAPPATOIRE -> fr.descentecanyon.app.ui.theme.CanyonBlueDark
-    GeoPointType.UNKNOWN -> fr.descentecanyon.app.ui.theme.DebitInconnu
 }
