@@ -59,10 +59,12 @@ class Cell:
 @dataclass(frozen=True)
 class CandidateCell:
     cell: Cell
-    latitude: float
-    longitude: float
     value: float
     distance_m: float
+    latitude: float | None = None
+    longitude: float | None = None
+    x: float | None = None
+    y: float | None = None
 
 
 @dataclass(frozen=True)
@@ -303,6 +305,7 @@ class RasterioRaster:
         self.height = self.dataset.height
         self.width = self.dataset.width
         self.nodata = self.dataset.nodata
+        self._is_geographic = bool(self.dataset.crs is not None and getattr(self.dataset.crs, "is_geographic", False))
         self._cell_value_cache: dict[tuple[int, int], float | None] = {}
 
     def close(self) -> None:
@@ -328,8 +331,16 @@ class RasterioRaster:
         return Cell(row=row, col=col)
 
     def cell_center(self, cell: Cell) -> tuple[float, float]:
-        x, y = self._xy(self.dataset.transform, cell.row, cell.col, offset="center")
+        x, y = self.cell_center_xy(cell)
         return self._to_wgs84(x, y)
+
+    def cell_center_xy(self, cell: Cell) -> tuple[float, float]:
+        transform = self.dataset.transform
+        col = cell.col + 0.5
+        row = cell.row + 0.5
+        x = transform.c + col * transform.a + row * transform.b
+        y = transform.f + col * transform.d + row * transform.e
+        return x, y
 
     def value_at_cell(self, cell: Cell | None) -> float | None:
         if cell is None:
@@ -366,6 +377,8 @@ class RasterioRaster:
         if raw_cell is None:
             return None, []
 
+        origin_x, origin_y = self._to_dataset_xy(longitude, latitude)
+
         row_min = max(0, raw_cell.row - radius_cells)
         row_max = min(self.height - 1, raw_cell.row + radius_cells)
         col_min = max(0, raw_cell.col - radius_cells)
@@ -391,14 +404,23 @@ class RasterioRaster:
                     continue
 
                 cell = Cell(row=absolute_row, col=absolute_col)
-                cell_latitude, cell_longitude = self.cell_center(cell)
+                cell_x, cell_y = self.cell_center_xy(cell)
+                if self._is_geographic:
+                    cell_latitude, cell_longitude = self._to_wgs84(cell_x, cell_y)
+                    distance_m = haversine_m(latitude, longitude, cell_latitude, cell_longitude)
+                else:
+                    cell_latitude = None
+                    cell_longitude = None
+                    distance_m = math.hypot(cell_x - origin_x, cell_y - origin_y)
                 candidates.append(
                     CandidateCell(
                         cell=cell,
+                        value=float(value),
+                        distance_m=distance_m,
                         latitude=cell_latitude,
                         longitude=cell_longitude,
-                        value=float(value),
-                        distance_m=haversine_m(latitude, longitude, cell_latitude, cell_longitude),
+                        x=cell_x,
+                        y=cell_y,
                     )
                 )
 
@@ -544,16 +566,23 @@ def evaluate_entry(
         channel_min_upa_km2=channel_min_upa_km2,
     )
     snapped_upa = snapped_candidate.value
-    pixel_size_m = upa_raster.approximate_cell_size_m(snapped_candidate.longitude, snapped_candidate.latitude)
+    snapped_latitude = snapped_candidate.latitude
+    snapped_longitude = snapped_candidate.longitude
+    if (snapped_latitude is None or snapped_longitude is None) and hasattr(upa_raster, "cell_center"):
+        snapped_latitude, snapped_longitude = upa_raster.cell_center(snapped_candidate.cell)
+    if snapped_latitude is None or snapped_longitude is None:
+        raise RuntimeError("Unable to resolve snapped candidate coordinates")
+
+    pixel_size_m = upa_raster.approximate_cell_size_m(snapped_longitude, snapped_latitude)
     elevation = None
     flowdir_value = None
 
     if elevation_raster is not None:
-        snapped_elevation_cell = elevation_raster.point_to_cell(snapped_candidate.longitude, snapped_candidate.latitude)
+        snapped_elevation_cell = elevation_raster.point_to_cell(snapped_longitude, snapped_latitude)
         elevation = elevation_raster.value_at_cell(snapped_elevation_cell)
 
     if flowdir_raster is not None:
-        snapped_flowdir_cell = flowdir_raster.point_to_cell(snapped_candidate.longitude, snapped_candidate.latitude)
+        snapped_flowdir_cell = flowdir_raster.point_to_cell(snapped_longitude, snapped_latitude)
         raw_flowdir_value = flowdir_raster.value_at_cell(snapped_flowdir_cell)
         if raw_flowdir_value is not None:
             flowdir_value = int(round(raw_flowdir_value))
@@ -571,8 +600,8 @@ def evaluate_entry(
         snapped_upa_km2=round(snapped_upa, 6),
         raw_cell=raw_cell,
         snapped_cell=snapped_candidate.cell,
-        snapped_latitude=round(snapped_candidate.latitude, 6),
-        snapped_longitude=round(snapped_candidate.longitude, 6),
+        snapped_latitude=round(snapped_latitude, 6),
+        snapped_longitude=round(snapped_longitude, 6),
         snap_distance_m=round(snapped_candidate.distance_m, 3),
         pixel_size_m=round_if_not_none(pixel_size_m, 3),
         candidate_count=len(candidates),
