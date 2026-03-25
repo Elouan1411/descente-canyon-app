@@ -5,10 +5,12 @@ import json
 import re
 import subprocess
 import sys
+import time
 import unicodedata
 import urllib.request
 from pathlib import Path
 from typing import Any
+from urllib.error import HTTPError, URLError
 
 from cli_tools import default_7zip, default_gdalbuildvrt, resolve_executable
 
@@ -124,14 +126,30 @@ def download_file(url: str, destination: Path) -> None:
         print(f"skip download {destination.name}")
         return
 
-    request = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
-    with urllib.request.urlopen(request, timeout=300) as response, open(destination, "wb") as handle:
-        while True:
-            chunk = response.read(1024 * 1024)
-            if not chunk:
-                break
-            handle.write(chunk)
-    print(f"downloaded {destination}")
+    last_error: Exception | None = None
+    temp_destination = destination.with_suffix(destination.suffix + ".part")
+    for attempt in range(1, 6):
+        try:
+            request = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+            with urllib.request.urlopen(request, timeout=300) as response, open(temp_destination, "wb") as handle:
+                while True:
+                    chunk = response.read(1024 * 1024)
+                    if not chunk:
+                        break
+                    handle.write(chunk)
+            temp_destination.replace(destination)
+            print(f"downloaded {destination}")
+            return
+        except (HTTPError, URLError) as exc:
+            last_error = exc
+            temp_destination.unlink(missing_ok=True)
+            if isinstance(exc, HTTPError) and exc.code not in {429, 500, 502, 503, 504}:
+                raise
+            wait_seconds = min(60, 5 * attempt)
+            print(f"retry download {destination.name} after {wait_seconds}s due to {exc}")
+            time.sleep(wait_seconds)
+
+    raise SystemExit(f"Failed to download {url}: {last_error}")
 
 
 def archive_roots(download_dir: Path) -> list[Path]:
