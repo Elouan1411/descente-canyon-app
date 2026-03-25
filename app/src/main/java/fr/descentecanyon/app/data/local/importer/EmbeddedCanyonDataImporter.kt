@@ -37,7 +37,7 @@ class EmbeddedCanyonDataImporter @Inject constructor(
     private val json = Json { ignoreUnknownKeys = true }
 
     suspend fun ensureImported() {
-        val manifest = readJsonAsset<RoomImportManifest>("room-import/manifest.json")
+        val manifest = readJsonAsset<RoomImportManifest>("manifest.json")
         val importedVersion = appMetadataDao.get(DATASET_VERSION_KEY)?.value
         if (importedVersion == manifest.generatedAt && canyonDao.count() > 0) {
             canyonDao.clearOfflineFlags()
@@ -46,12 +46,12 @@ class EmbeddedCanyonDataImporter @Inject constructor(
 
         val favoriteIds = canyonDao.getFavoriteIds().toSet()
 
-        val canyonRows = readJsonAsset<List<CanyonImportRow>>("room-import/canyons.json")
-        val geoPointRows = readJsonAsset<List<GeoPointImportRow>>("room-import/geo_points.json")
-        val bibliographyEntries = readJsonAsset<List<BibliographyEntryImportRow>>("room-import/bibliography_entries.json")
-        val canyonBibliography = readJsonAsset<List<CanyonBibliographyImportRow>>("room-import/canyon_bibliography.json")
-        val regulationTexts = readJsonAsset<List<RegulationImportRow>>("room-import/regulation_texts.json")
-        val canyonRegulations = readJsonAsset<List<CanyonRegulationImportRow>>("room-import/canyon_regulations.json")
+        val canyonRows = readJsonAsset<List<CanyonImportRow>>("canyons.json")
+        val geoPointRows = readJsonAsset<List<GeoPointImportRow>>("geo_points.json")
+        val bibliographyEntries = readJsonAsset<List<BibliographyEntryImportRow>>("bibliography_entries.json")
+        val canyonBibliography = readJsonAsset<List<CanyonBibliographyImportRow>>("canyon_bibliography.json")
+        val regulationTexts = readJsonAsset<List<RegulationImportRow>>("regulation_texts.json")
+        val canyonRegulations = readJsonAsset<List<CanyonRegulationImportRow>>("canyon_regulations.json")
 
         database.withTransaction {
             bibliographyDao.clearLinks()

@@ -15,7 +15,7 @@ android {
         getByName("main") {
             assets.srcDirs(
                 "src/main/assets",
-                "../offline-data/full",
+                "../offline-data/full/room-import",
             )
         }
     }
