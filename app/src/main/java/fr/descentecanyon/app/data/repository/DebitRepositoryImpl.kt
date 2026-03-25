@@ -6,6 +6,7 @@ import fr.descentecanyon.app.data.mapper.toEntity
 import fr.descentecanyon.app.data.remote.scraper.CanyonScraper
 import fr.descentecanyon.app.domain.model.Debit
 import fr.descentecanyon.app.domain.repository.DebitRepository
+import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import javax.inject.Inject
@@ -24,8 +25,12 @@ class DebitRepositoryImpl @Inject constructor(
     }
 
     override fun getLatestDebits(limit: Int): Flow<Result<List<Debit>>> {
-        return debitDao.getLatest(limit).map { entities ->
-            Result.success(entities.map { it.toDomain() })
+        return flow {
+            emit(
+                scraper.scrapeLatestDebits().map { debits ->
+                    debits.take(limit).map { it.toDomain() }
+                }
+            )
         }
     }
 

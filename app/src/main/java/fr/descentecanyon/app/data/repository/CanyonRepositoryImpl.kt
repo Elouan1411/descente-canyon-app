@@ -241,9 +241,10 @@ class CanyonRepositoryImpl @Inject constructor(
     // --- B-4/B-5 fix: Preserve isFavorite and isOffline flags on insert ---
 
     /**
-     * Insert a single entity while preserving existing user flags (isFavorite, isOffline).
+     * Insert or update a single entity while preserving existing user flags
+     * and without deleting dependent rows linked by foreign keys.
      */
-    private suspend fun insertPreservingFlags(entity: fr.descentecanyon.app.data.local.entity.CanyonEntity) {
+    internal suspend fun insertPreservingFlags(entity: fr.descentecanyon.app.data.local.entity.CanyonEntity) {
         val existing = canyonDao.getById(entity.id)
         val merged = if (existing != null) {
             entity.copy(
@@ -261,16 +262,19 @@ class CanyonRepositoryImpl @Inject constructor(
         } else {
             entity
         }
-        canyonDao.insert(merged)
+        if (canyonDao.insertIgnore(merged) == -1L) {
+            canyonDao.update(merged)
+        }
     }
 
     /**
-     * Insert a list of entities while preserving existing user flags.
+     * Insert or update a list of entities while preserving existing user flags
+     * and without deleting dependent rows linked by foreign keys.
      */
-    private suspend fun insertAllPreservingFlags(entities: List<fr.descentecanyon.app.data.local.entity.CanyonEntity>) {
-        val merged = entities.map { entity ->
+    internal suspend fun insertAllPreservingFlags(entities: List<fr.descentecanyon.app.data.local.entity.CanyonEntity>) {
+        entities.forEach { entity ->
             val existing = canyonDao.getById(entity.id)
-            if (existing != null) {
+            val merged = if (existing != null) {
                 entity.copy(
                     isFavorite = existing.isFavorite,
                     isOffline = existing.isOffline,
@@ -286,8 +290,11 @@ class CanyonRepositoryImpl @Inject constructor(
             } else {
                 entity
             }
+
+            if (canyonDao.insertIgnore(merged) == -1L) {
+                canyonDao.update(merged)
+            }
         }
-        canyonDao.insertAll(merged)
     }
 
     private suspend fun replaceSupportingData(

@@ -30,6 +30,8 @@ object DateParser {
 
     private val DAY_MONTH_REGEX = Regex("""(\d{1,2})/(\d{2})""")
 
+    private val FRENCH_DAY_MONTH_REGEX = Regex("""(?:\p{L}+\.?\s+)?(\d{1,2})/(\d{2})""")
+
     private val DMY_DASH_REGEX = Regex("""(\d{2})-(\d{2})-(\d{4})""")
 
     /**
@@ -42,6 +44,7 @@ object DateParser {
 
         return tryParseIso(trimmed)
             ?: tryParseFrenchLong(trimmed)
+            ?: tryParseFrenchDayMonth(trimmed)
             ?: tryParseDayMonthSlash(trimmed)
             ?: tryParseDmyDash(trimmed)
     }
@@ -85,6 +88,20 @@ object DateParser {
 
         return try {
             LocalDate.of(year, month, day).format(DateTimeFormatter.ISO_LOCAL_DATE)
+        } catch (_: Exception) {
+            null
+        }
+    }
+
+    /**
+     * "dim. 22/03" -> ignores weekday, assumes current year.
+     */
+    private fun tryParseFrenchDayMonth(value: String): String? {
+        val match = FRENCH_DAY_MONTH_REGEX.matchEntire(value.trim()) ?: return null
+        val day = match.groupValues[1].toIntOrNull() ?: return null
+        val month = match.groupValues[2].toIntOrNull() ?: return null
+        return try {
+            LocalDate.of(LocalDate.now().year, month, day).format(DateTimeFormatter.ISO_LOCAL_DATE)
         } catch (_: Exception) {
             null
         }

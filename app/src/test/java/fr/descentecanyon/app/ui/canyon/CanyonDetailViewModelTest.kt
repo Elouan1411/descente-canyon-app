@@ -1,10 +1,13 @@
 package fr.descentecanyon.app.ui.canyon
 
 import androidx.lifecycle.SavedStateHandle
+import fr.descentecanyon.app.domain.model.BibliographyEntry
+import fr.descentecanyon.app.domain.model.BibliographyKind
 import fr.descentecanyon.app.data.network.ConnectivityObserver
 import fr.descentecanyon.app.domain.model.Canyon
 import fr.descentecanyon.app.domain.model.CanyonDetail
 import fr.descentecanyon.app.domain.model.CanyonPhoto
+import fr.descentecanyon.app.domain.model.Regulation
 import fr.descentecanyon.app.domain.repository.CanyonRepository
 import fr.descentecanyon.app.domain.repository.FavoritesRepository
 import fr.descentecanyon.app.domain.repository.PhotoRepository
@@ -67,6 +70,34 @@ class CanyonDetailViewModelTest {
 
     @Test
     @OptIn(ExperimentalCoroutinesApi::class)
+    fun `full detail keeps bibliography and regulations after loading completes`() = runTest {
+        coEvery { canyonRepository.getCanyonPreview(42) } returns Result.success(
+            detail().copy(canyon = detail().canyon.copy(nom = "Preview"))
+        )
+        coEvery { canyonRepository.getCanyonDetail(42) } returns Result.success(detail())
+        every { favoritesRepository.isFavorite(42) } returns flowOf(false)
+        every { connectivityObserver.observe() } returns flowOf(true)
+
+        val viewModel = CanyonDetailViewModel(
+            savedStateHandle = SavedStateHandle(mapOf("canyonId" to 42)),
+            getCanyonPreviewUseCase = getCanyonPreviewUseCase,
+            getCanyonDetailUseCase = getCanyonDetailUseCase,
+            toggleFavoriteUseCase = toggleFavoriteUseCase,
+            downloadPhotoForOfflineUseCase = downloadPhotoForOfflineUseCase,
+            connectivityObserver = connectivityObserver,
+            favoritesRepository = favoritesRepository,
+        )
+
+        advanceUntilIdle()
+
+        assertEquals(1, viewModel.uiState.value.canyonDetail?.bibliography?.size)
+        assertEquals(1, viewModel.uiState.value.canyonDetail?.regulations?.size)
+        assertFalse(viewModel.uiState.value.isLoadingPhotos)
+        assertFalse(viewModel.uiState.value.isLoadingDebits)
+    }
+
+    @Test
+    @OptIn(ExperimentalCoroutinesApi::class)
     fun `download photo updates local path and transient message`() = runTest {
         coEvery { canyonRepository.getCanyonPreview(42) } returns Result.success(detail())
         coEvery { canyonRepository.getCanyonDetail(42) } returns Result.success(detail())
@@ -108,6 +139,21 @@ class CanyonDetailViewModelTest {
                 canyonId = 42,
                 url = "https://example.test/photo.jpg",
                 thumbnailUrl = "https://example.test/thumb.jpg",
+            )
+        ),
+        bibliography = listOf(
+            BibliographyEntry(
+                id = "biblio-1",
+                kind = BibliographyKind.RESOURCE,
+                title = "Topo local",
+            )
+        ),
+        regulations = listOf(
+            Regulation(
+                id = 7,
+                status = "actif",
+                title = "Arrete prefectoral",
+                textUrl = "https://example.test/reglementation",
             )
         ),
     )

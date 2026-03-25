@@ -14,6 +14,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavDestination.Companion.hasRoute
+import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import dagger.hilt.android.AndroidEntryPoint
@@ -74,13 +75,22 @@ private fun MainScreen() {
                             label = { Text(item.label) },
                             selected = currentDestination?.hasRoute(item.screen::class) == true,
                             onClick = {
-                                navController.navigate(item.screen) {
-                                    popUpTo(navController.graph.startDestinationId) {
-                                        saveState = true
+                                val startDestinationId = navController.graph.findStartDestination().id
+                                handleBottomNavClick(
+                                    item = item,
+                                    popToHome = {
+                                        navController.popBackStack(startDestinationId, false)
+                                    },
+                                    navigate = { screen ->
+                                        navController.navigate(screen) {
+                                            popUpTo(startDestinationId) {
+                                                saveState = true
+                                            }
+                                            launchSingleTop = true
+                                            restoreState = true
+                                        }
                                     }
-                                    launchSingleTop = true
-                                    restoreState = true
-                                }
+                                )
                             },
                         )
                     }
@@ -93,4 +103,16 @@ private fun MainScreen() {
             modifier = Modifier,
         )
     }
+}
+
+internal fun handleBottomNavClick(
+    item: BottomNavItem,
+    popToHome: () -> Boolean,
+    navigate: (Screen) -> Unit,
+) {
+    if (item == BottomNavItem.HOME && popToHome()) {
+        return
+    }
+
+    navigate(item.screen)
 }

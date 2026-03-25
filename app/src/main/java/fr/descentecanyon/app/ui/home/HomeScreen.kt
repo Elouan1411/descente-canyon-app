@@ -179,7 +179,7 @@ fun HomeScreen(
             // Debit cards
             items(
                 items = homeState.latestDebits,
-                key = { it.id },
+                key = { latestDebitItemKey(it) },
             ) { debit ->
                 DebitCard(
                     debit = debit,
@@ -192,6 +192,14 @@ fun HomeScreen(
             }
         }
     }
+}
+
+internal fun latestDebitItemKey(debit: Debit): String = buildString {
+    append(debit.canyonId)
+    append('-')
+    append(debit.date)
+    append('-')
+    append(debit.auteur.orEmpty())
 }
 
 @Composable
@@ -283,7 +291,7 @@ private fun DebitCard(
                 verticalAlignment = Alignment.CenterVertically,
             ) {
                 Text(
-                    text = "Canyon #${debit.canyonId}",
+                    text = debit.canyonNom?.takeIf { it.isNotBlank() } ?: "Canyon #${debit.canyonId}",
                     style = MaterialTheme.typography.titleMedium,
                     fontWeight = FontWeight.Bold,
                     maxLines = 1,

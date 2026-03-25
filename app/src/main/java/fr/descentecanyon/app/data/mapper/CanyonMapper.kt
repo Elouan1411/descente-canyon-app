@@ -259,6 +259,18 @@ fun DebitEntity.toDomain(): Debit = Debit(
     commentaire = commentaire,
 )
 
+fun ScrapedDebit.toDomain(): Debit = Debit(
+    canyonId = canyonId,
+    canyonNom = canyonNom.ifBlank { null },
+    date = DateParser.parseToLocalDate(date) ?: LocalDate.of(1970, 1, 1),
+    niveau = try { NiveauDebit.valueOf(niveauRaw) } catch (_: Exception) { NiveauDebit.INCONNU },
+    auteur = auteur,
+    isDescended = isDescended,
+    waterTemperature = waterTemperature,
+    airTemperature = airTemperature,
+    commentaire = commentaire,
+)
+
 fun PhotoEntity.toDomain(): CanyonPhoto = CanyonPhoto(
     id = id,
     canyonId = canyonId,

@@ -44,6 +44,9 @@ interface CanyonDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(canyon: CanyonEntity)
 
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    suspend fun insertIgnore(canyon: CanyonEntity): Long
+
     @Update
     suspend fun update(canyon: CanyonEntity)
 

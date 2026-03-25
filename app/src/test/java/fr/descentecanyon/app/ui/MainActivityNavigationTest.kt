@@ -1,0 +1,59 @@
+package fr.descentecanyon.app.ui
+
+import fr.descentecanyon.app.ui.navigation.BottomNavItem
+import fr.descentecanyon.app.ui.navigation.Screen
+import org.junit.Assert.assertEquals
+import org.junit.Assert.assertTrue
+import org.junit.Test
+
+class MainActivityNavigationTest {
+
+    @Test
+    fun `home click stops after successful pop to home`() {
+        var popCalled = false
+        var navigatedTo: Screen? = null
+
+        handleBottomNavClick(
+            item = BottomNavItem.HOME,
+            popToHome = {
+                popCalled = true
+                true
+            },
+            navigate = { screen -> navigatedTo = screen },
+        )
+
+        assertTrue(popCalled)
+        assertEquals(null, navigatedTo)
+    }
+
+    @Test
+    fun `home click navigates when pop to home fails`() {
+        var navigatedTo: Screen? = null
+
+        handleBottomNavClick(
+            item = BottomNavItem.HOME,
+            popToHome = { false },
+            navigate = { screen -> navigatedTo = screen },
+        )
+
+        assertEquals(Screen.Home, navigatedTo)
+    }
+
+    @Test
+    fun `non home click always navigates to its destination`() {
+        var popCalled = false
+        var navigatedTo: Screen? = null
+
+        handleBottomNavClick(
+            item = BottomNavItem.SEARCH,
+            popToHome = {
+                popCalled = true
+                true
+            },
+            navigate = { screen -> navigatedTo = screen },
+        )
+
+        assertEquals(false, popCalled)
+        assertEquals(Screen.Search, navigatedTo)
+    }
+}

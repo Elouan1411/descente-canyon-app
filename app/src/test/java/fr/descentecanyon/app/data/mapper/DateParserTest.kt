@@ -65,6 +65,16 @@ class DateParserTest {
         assertEquals(1, parsed.monthValue)
     }
 
+    @Test
+    fun `parse weekday plus day slash month`() {
+        val result = DateParser.parseToIsoString("dim. 22/03")
+        assertNotNull(result)
+        val parsed = LocalDate.parse(result!!)
+        assertEquals(22, parsed.dayOfMonth)
+        assertEquals(3, parsed.monthValue)
+        assertEquals(LocalDate.now().year, parsed.year)
+    }
+
     // --- dd-MM-yyyy format ---
 
     @Test
