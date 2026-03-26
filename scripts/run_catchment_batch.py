@@ -426,10 +426,17 @@ def resolve_source_for_canyon(
     sources: list[dict[str, Any]],
     output_dir: Path,
     gdal_translate: str,
-) -> dict[str, Any] | None:
+) -> tuple[dict[str, Any] | None, list[dict[str, Any]]]:
+    attempts: list[dict[str, Any]] = []
     for source in sources:
         if not canyon_matches(canyon, source.get("match", {})):
             continue
+        attempt = {
+            "sourceName": source.get("name"),
+            "provider": (source.get("autoPrepare") or {}).get("provider"),
+            "matched": True,
+            "availableBefore": source_is_available(source),
+        }
         if not source_is_available(source):
             try:
                 auto_prepare_source(
@@ -439,11 +446,15 @@ def resolve_source_for_canyon(
                     output_dir=output_dir,
                     gdal_translate=gdal_translate,
                 )
-            except Exception:
+            except Exception as exc:
+                attempt["prepareError"] = f"{type(exc).__name__}: {exc}"
+                attempts.append(attempt)
                 continue
+        attempt["availableAfter"] = source_is_available(source)
+        attempts.append(attempt)
         if source_is_available(source):
-            return source
-    return None
+            return source, attempts
+    return None, attempts
 
 
 def choose_source(canyon: dict[str, Any], sources: list[dict[str, Any]]) -> dict[str, Any] | None:
@@ -1032,7 +1043,7 @@ def process_single_canyon(
     stage_timings: dict[str, float] = {}
 
     started = time.perf_counter()
-    source = resolve_source_for_canyon(
+    source, source_attempts = resolve_source_for_canyon(
         canyon=canyon,
         points=points,
         sources=sources,
@@ -1047,6 +1058,7 @@ def process_single_canyon(
                 "canyonId": canyon_id,
                 "canyonName": canyon.get("nomComplet") or canyon.get("nom"),
                 "status": "no_matching_source",
+                "sourceAttempts": source_attempts,
                 "profiling": {
                     "stagesSec": rounded_stage_values(
                         {
@@ -1056,6 +1068,10 @@ def process_single_canyon(
                     )
                 },
             },
+        )
+        append_text(
+            output_dir / "source_resolution.log",
+            f"[{canyon_id}] {canyon.get('nomComplet') or canyon.get('nom')} -> no_matching_source | attempts={json.dumps(source_attempts, ensure_ascii=False)}\n",
         )
         print(f"DONE canyon {canyon_id} no_matching_source", flush=True)
         return "no_matching_source"
