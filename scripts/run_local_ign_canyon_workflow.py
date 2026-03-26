@@ -73,30 +73,49 @@ def clip_dem(
 ) -> None:
     with rasterio.Env(GDAL_CACHEMAX=256):
         with rasterio.open(source_dem) as src:
-            source_crs = source_srs or src.crs
-            if source_crs is None:
+            crs_candidates = []
+            if src.crs is not None:
+                crs_candidates.append(src.crs)
+            if source_srs is not None and str(source_srs) not in {str(candidate) for candidate in crs_candidates}:
+                crs_candidates.append(source_srs)
+
+            if not crs_candidates:
                 raise SystemExit(f"DEM sans CRS exploitable: {source_dem}")
 
             longitudes = [point[1] for point in points]
             latitudes = [point[0] for point in points]
-            xs, ys = transform("EPSG:4326", source_crs, longitudes, latitudes)
-            min_x = min(xs) - buffer_m
-            max_x = max(xs) + buffer_m
-            min_y = min(ys) - buffer_m
-            max_y = max(ys) + buffer_m
+            last_window_error = None
+            source_crs = None
+            row_off = col_off = height = width = 0
+            clipped_window = None
 
-            window = src.window(min_x, min_y, max_x, max_y)
-            window = window.round_offsets().round_lengths()
-            row_off = max(0, int(window.row_off))
-            col_off = max(0, int(window.col_off))
-            height = min(src.height - row_off, int(window.height))
-            width = min(src.width - col_off, int(window.width))
-            if row_off >= src.height or col_off >= src.width or height <= 0 or width <= 0:
-                raise SystemExit(
+            for crs_candidate in crs_candidates:
+                xs, ys = transform("EPSG:4326", crs_candidate, longitudes, latitudes)
+                min_x = min(xs) - buffer_m
+                max_x = max(xs) + buffer_m
+                min_y = min(ys) - buffer_m
+                max_y = max(ys) + buffer_m
+
+                window = src.window(min_x, min_y, max_x, max_y)
+                window = window.round_offsets().round_lengths()
+                row_off = max(0, int(window.row_off))
+                col_off = max(0, int(window.col_off))
+                height = min(src.height - row_off, int(window.height))
+                width = min(src.width - col_off, int(window.width))
+
+                if row_off < src.height and col_off < src.width and height > 0 and width > 0:
+                    source_crs = crs_candidate
+                    clipped_window = Window(row_off=row_off, col_off=col_off, height=height, width=width)
+                    break
+
+                last_window_error = (
                     f"Clip window outside raster coverage for {source_dem}. "
-                    f"row_off={row_off}, col_off={col_off}, height={height}, width={width}"
+                    f"crs={crs_candidate} row_off={row_off}, col_off={col_off}, height={height}, width={width}"
                 )
-            clipped_window = Window(row_off=row_off, col_off=col_off, height=height, width=width)
+
+            if clipped_window is None or source_crs is None:
+                raise SystemExit(last_window_error or f"Clip window outside raster coverage for {source_dem}.")
+
 
             profile = src.profile.copy()
             profile.pop("blockxsize", None)
