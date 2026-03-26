@@ -6,6 +6,7 @@ import fr.descentecanyon.app.data.local.entity.DebitEntity
 import fr.descentecanyon.app.data.local.entity.GeoPointEntity
 import fr.descentecanyon.app.data.local.entity.PhotoEntity
 import fr.descentecanyon.app.data.local.entity.RegulationTextEntity
+import fr.descentecanyon.app.data.local.entity.WatershedEntity
 import fr.descentecanyon.app.data.remote.dto.ScrapedCanyonDetail
 import fr.descentecanyon.app.data.remote.dto.ScrapedCanyonSummary
 import fr.descentecanyon.app.data.remote.dto.ScrapedDebit
@@ -18,8 +19,10 @@ import fr.descentecanyon.app.domain.model.CanyonDetail
 import fr.descentecanyon.app.domain.model.CanyonPhoto
 import fr.descentecanyon.app.domain.model.CanyonSearchItem
 import fr.descentecanyon.app.domain.model.CanyonSummary
+import fr.descentecanyon.app.domain.model.CanyonWatershed
 import fr.descentecanyon.app.domain.model.CotationRating
 import fr.descentecanyon.app.domain.model.Debit
+import fr.descentecanyon.app.domain.model.GeoBounds
 import fr.descentecanyon.app.domain.model.GeoPoint
 import fr.descentecanyon.app.domain.model.GeoPointType
 import fr.descentecanyon.app.domain.model.NiveauDebit
@@ -190,6 +193,7 @@ fun CanyonEntity.toDetail(
     regulations: List<RegulationTextEntity>,
     photos: List<PhotoEntity>,
     debits: List<DebitEntity>,
+    watershed: WatershedEntity?,
 ): CanyonDetail = CanyonDetail(
     canyon = toDomain(),
     accesAval = accesAval,
@@ -207,6 +211,25 @@ fun CanyonEntity.toDetail(
     regulations = regulations.map { it.toDomain() },
     photos = photos.map { it.toDomain() },
     debits = debits.map { it.toDomain() },
+    watershed = watershed?.toDomain(),
+)
+
+fun WatershedEntity.toDomain(): CanyonWatershed = CanyonWatershed(
+    areaKm2 = areaKm2,
+    geometryJson = geometryJson,
+    bounds = listOfNotNull(
+        bboxMinLongitude,
+        bboxMinLatitude,
+        bboxMaxLongitude,
+        bboxMaxLatitude,
+    ).takeIf { it.size == 4 }?.let {
+        GeoBounds(
+            minLongitude = it[0],
+            minLatitude = it[1],
+            maxLongitude = it[2],
+            maxLatitude = it[3],
+        )
+    },
 )
 
 fun BibliographyEntryEntity.toDomain(): BibliographyEntry = BibliographyEntry(

@@ -30,12 +30,18 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
@@ -44,9 +50,13 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import fr.descentecanyon.app.R
 import fr.descentecanyon.app.domain.model.CanyonDetail
+import fr.descentecanyon.app.domain.model.GeoBounds
 import fr.descentecanyon.app.domain.model.GeoPoint
+import fr.descentecanyon.app.domain.model.GeoPointType
 import fr.descentecanyon.app.ui.components.CompactAppBar
 import fr.descentecanyon.app.ui.map.MapLibreView
+import java.util.Locale
+import org.maplibre.android.geometry.LatLngBounds
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -103,6 +113,9 @@ private fun CanyonPointsMapContent(
     onNavigate: (GeoPoint) -> Unit,
     modifier: Modifier = Modifier,
 ) {
+    val watershed = detail.watershed
+    val hasWatershedPolygon = !watershed?.geometryJson.isNullOrBlank()
+    var showWatershed by rememberSaveable(detail.canyon.id) { mutableStateOf(false) }
     val markers = remember(detail.geoPoints) {
         detail.geoPoints.mapIndexed { index, point ->
             fr.descentecanyon.app.domain.model.CanyonSummary(
@@ -130,6 +143,43 @@ private fun CanyonPointsMapContent(
             modifier = Modifier.fillMaxSize(),
             verticalArrangement = Arrangement.spacedBy(12.dp),
         ) {
+            if (hasWatershedPolygon) {
+                Card(
+                    modifier = Modifier.fillMaxWidth(),
+                    colors = CardDefaults.cardColors(
+                        containerColor = MaterialTheme.colorScheme.surface.copy(alpha = 0.96f),
+                    ),
+                    elevation = CardDefaults.cardElevation(defaultElevation = 1.dp),
+                ) {
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(horizontal = 16.dp, vertical = 12.dp),
+                        horizontalArrangement = Arrangement.SpaceBetween,
+                        verticalAlignment = Alignment.CenterVertically,
+                    ) {
+                        Column(modifier = Modifier.weight(1f)) {
+                            Text(
+                                text = stringResource(R.string.map_show_watershed),
+                                style = MaterialTheme.typography.titleSmall,
+                                fontWeight = FontWeight.SemiBold,
+                            )
+                            watershed.areaKm2?.let { areaKm2 ->
+                                Text(
+                                    text = stringResource(R.string.watershed_area_value, formatAreaKm2(areaKm2)),
+                                    style = MaterialTheme.typography.bodySmall,
+                                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                                )
+                            }
+                        }
+                        Switch(
+                            checked = showWatershed,
+                            onCheckedChange = { showWatershed = it },
+                        )
+                    }
+                }
+            }
+
             Card(
                 modifier = Modifier.fillMaxWidth(),
                 elevation = CardDefaults.cardElevation(defaultElevation = 2.dp),
@@ -140,6 +190,9 @@ private fun CanyonPointsMapContent(
                     userLongitude = null,
                     onMarkerClick = {},
                     clusterMarkers = false,
+                    watershedGeometryJson = watershed?.geometryJson,
+                    watershedBounds = watershed?.bounds?.toLatLngBounds(),
+                    showWatershed = showWatershed,
                     modifier = Modifier
                         .fillMaxWidth()
                         .height(mapHeight),
@@ -212,4 +265,16 @@ private fun CanyonPointsMapContent(
             }
         }
     }
+}
+
+private fun formatAreaKm2(areaKm2: Double): String {
+    val precision = if (areaKm2 >= 100.0) "%.0f" else if (areaKm2 >= 10.0) "%.1f" else "%.2f"
+    return String.format(Locale.getDefault(), precision, areaKm2)
+}
+
+private fun GeoBounds.toLatLngBounds(): LatLngBounds {
+    return LatLngBounds.Builder()
+        .include(org.maplibre.android.geometry.LatLng(minLatitude, minLongitude))
+        .include(org.maplibre.android.geometry.LatLng(maxLatitude, maxLongitude))
+        .build()
 }

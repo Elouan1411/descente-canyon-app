@@ -63,6 +63,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
@@ -91,10 +92,12 @@ import fr.descentecanyon.app.ui.components.DebitBadge
 import fr.descentecanyon.app.ui.components.InterestStars
 import fr.descentecanyon.app.ui.components.debitLevelColor
 import fr.descentecanyon.app.ui.map.MapLibreView
+import fr.descentecanyon.app.ui.test.TestTags
 import fr.descentecanyon.app.ui.theme.DebitCorrect
 import fr.descentecanyon.app.ui.theme.DebitCrue
 import fr.descentecanyon.app.ui.theme.DebitTresGros
 import java.time.format.DateTimeFormatter
+import java.util.Locale
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -131,13 +134,19 @@ fun CanyonDetailScreen(
                     }
                 },
                 actions = {
-                    IconButton(onClick = onReportDebitClick) {
+                    IconButton(
+                        onClick = onReportDebitClick,
+                        modifier = Modifier.testTag(TestTags.detailReportDebitButton),
+                    ) {
                         Icon(
                             imageVector = Icons.Default.Edit,
                             contentDescription = stringResource(R.string.debit_form_title),
                         )
                     }
-                    IconButton(onClick = viewModel::toggleFavorite) {
+                    IconButton(
+                        onClick = viewModel::toggleFavorite,
+                        modifier = Modifier.testTag(TestTags.detailFavoriteButton),
+                    ) {
                         Icon(
                             imageVector = if (uiState.isFavorite) Icons.Default.Favorite else Icons.Default.FavoriteBorder,
                             contentDescription = if (uiState.isFavorite) {
@@ -214,6 +223,9 @@ fun CanyonDetailScreen(
                     isOnline = uiState.isOnline,
                     isLoadingPhotos = uiState.isLoadingPhotos,
                     isLoadingDebits = uiState.isLoadingDebits,
+                    weather = uiState.weather,
+                    isLoadingWeather = uiState.isLoadingWeather,
+                    weatherError = uiState.weatherError,
                     downloadingPhotoIds = uiState.downloadingPhotoIds,
                     onOpenPhotoGallery = onOpenPhotoGallery,
                     modifier = Modifier.padding(innerPadding),
@@ -230,6 +242,9 @@ private fun CanyonDetailContent(
     isOnline: Boolean,
     isLoadingPhotos: Boolean,
     isLoadingDebits: Boolean,
+    weather: fr.descentecanyon.app.domain.model.CanyonWeather?,
+    isLoadingWeather: Boolean,
+    weatherError: String?,
     downloadingPhotoIds: Set<Long>,
     onOpenPhotoGallery: (Long) -> Unit,
     modifier: Modifier = Modifier,
@@ -256,6 +271,13 @@ private fun CanyonDetailContent(
         verticalArrangement = Arrangement.spacedBy(0.dp),
     ) {
         item { SummaryCard(detail = detail) }
+        item {
+            CanyonWeatherCard(
+                weather = weather,
+                isLoading = isLoadingWeather,
+                error = weatherError,
+            )
+        }
 
         stickyHeader {
             PrimaryTabRow(
@@ -355,6 +377,10 @@ private fun SummaryStatsGrid(
         SummaryStat(stringResource(R.string.department), canyon.departement),
         SummaryStat(stringResource(R.string.massif), canyon.massif),
         SummaryStat(stringResource(R.string.basin), canyon.bassin),
+        SummaryStat(
+            stringResource(R.string.watershed_area),
+            detail.watershed?.areaKm2?.let(::formatAreaKm2),
+        ),
         SummaryStat(stringResource(R.string.watercourse), canyon.coursEau),
     ).filter { !it.value.isNullOrBlank() }
 
@@ -387,6 +413,11 @@ private data class SummaryStat(
     val label: String,
     val value: String?,
 )
+
+private fun formatAreaKm2(areaKm2: Double): String {
+    val precision = if (areaKm2 >= 100.0) "%.0f" else if (areaKm2 >= 10.0) "%.1f" else "%.2f"
+    return String.format(Locale.getDefault(), "$precision km2", areaKm2)
+}
 
 @Composable
 private fun SummarySection(

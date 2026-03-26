@@ -3,6 +3,7 @@ package fr.descentecanyon.app.data.mapper
 import fr.descentecanyon.app.data.local.entity.CanyonEntity
 import fr.descentecanyon.app.data.local.entity.DebitEntity
 import fr.descentecanyon.app.data.local.entity.GeoPointEntity
+import fr.descentecanyon.app.data.local.entity.WatershedEntity
 import fr.descentecanyon.app.domain.model.GeoPointType
 import fr.descentecanyon.app.domain.model.NiveauDebit
 import org.junit.Assert.*
@@ -217,5 +218,27 @@ class CanyonMapperTest {
         val geoPoint = entity.toDomain()
 
         assertEquals(GeoPointType.PARKING_AVAL, geoPoint.type)
+    }
+
+    @Test
+    fun `WatershedEntity toDomain maps area geometry and bounds`() {
+        val entity = WatershedEntity(
+            canyonId = 42,
+            areaKm2 = 12.34,
+            geometryJson = "{\"type\":\"Polygon\",\"coordinates\":[]}",
+            bboxMinLongitude = 6.10,
+            bboxMinLatitude = 43.70,
+            bboxMaxLongitude = 6.20,
+            bboxMaxLatitude = 43.80,
+        )
+
+        val watershed = entity.toDomain()
+
+        assertEquals(12.34, watershed.areaKm2 ?: 0.0, 0.001)
+        assertEquals("{\"type\":\"Polygon\",\"coordinates\":[]}", watershed.geometryJson)
+        assertEquals(6.10, watershed.bounds?.minLongitude ?: 0.0, 0.001)
+        assertEquals(43.70, watershed.bounds?.minLatitude ?: 0.0, 0.001)
+        assertEquals(6.20, watershed.bounds?.maxLongitude ?: 0.0, 0.001)
+        assertEquals(43.80, watershed.bounds?.maxLatitude ?: 0.0, 0.001)
     }
 }

@@ -7,6 +7,7 @@ import fr.descentecanyon.app.data.local.dao.BibliographyDao
 import fr.descentecanyon.app.data.local.dao.CanyonDao
 import fr.descentecanyon.app.data.local.dao.GeoPointDao
 import fr.descentecanyon.app.data.local.dao.RegulationDao
+import fr.descentecanyon.app.data.local.dao.WatershedDao
 import fr.descentecanyon.app.data.local.database.AppDatabase
 import fr.descentecanyon.app.data.local.entity.AppMetadataEntity
 import fr.descentecanyon.app.data.local.entity.BibliographyEntryEntity
@@ -15,12 +16,16 @@ import fr.descentecanyon.app.data.local.entity.CanyonEntity
 import fr.descentecanyon.app.data.local.entity.CanyonRegulationEntity
 import fr.descentecanyon.app.data.local.entity.GeoPointEntity
 import fr.descentecanyon.app.data.local.entity.RegulationTextEntity
+import fr.descentecanyon.app.data.local.entity.WatershedEntity
+import java.io.FileNotFoundException
 import javax.inject.Inject
 import javax.inject.Singleton
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
+import kotlinx.serialization.json.JsonElement
+import kotlinx.serialization.json.JsonNull
 import androidx.room.withTransaction
 
 @Singleton
@@ -31,12 +36,18 @@ class EmbeddedCanyonDataImporter @Inject constructor(
     private val geoPointDao: GeoPointDao,
     private val bibliographyDao: BibliographyDao,
     private val regulationDao: RegulationDao,
+    private val watershedDao: WatershedDao,
     private val appMetadataDao: AppMetadataDao,
 ) {
 
     private val json = Json { ignoreUnknownKeys = true }
 
     suspend fun ensureImported() {
+        ensureCoreImported()
+        ensureWatershedsImported()
+    }
+
+    suspend fun ensureCoreImported() {
         val manifest = readJsonAsset<RoomImportManifest>("manifest.json")
         val importedVersion = appMetadataDao.get(DATASET_VERSION_KEY)?.value
         val hasCanyons = canyonDao.count() > 0
@@ -95,9 +106,35 @@ class EmbeddedCanyonDataImporter @Inject constructor(
         }
     }
 
+    suspend fun ensureWatershedsImported() {
+        val manifest = readJsonAsset<RoomImportManifest>("manifest.json")
+        val watershedsVersion = manifest.watershedsVersion ?: manifest.generatedAt
+        val importedVersion = appMetadataDao.get(WATERSHEDS_VERSION_KEY)?.value
+        if (importedVersion == watershedsVersion) {
+            return
+        }
+
+        val watersheds = readOptionalJsonAsset<List<WatershedImportRow>>("watersheds.json").orEmpty()
+        database.withTransaction {
+            watershedDao.clearAll()
+            watersheds.mapNotNull { row -> row.toEntity(json) }
+                .chunked(300)
+                .forEach { chunk -> watershedDao.insertAll(chunk) }
+            appMetadataDao.insert(AppMetadataEntity(WATERSHEDS_VERSION_KEY, watershedsVersion))
+        }
+    }
+
     private inline fun <reified T> readJsonAsset(path: String): T {
         val payload = context.assets.open(path).bufferedReader().use { it.readText() }
         return json.decodeFromString(payload)
+    }
+
+    private inline fun <reified T> readOptionalJsonAsset(path: String): T? {
+        return try {
+            readJsonAsset(path)
+        } catch (_: FileNotFoundException) {
+            null
+        }
     }
 
     private fun CanyonImportRow.toEntity(json: Json): CanyonEntity {
@@ -224,8 +261,28 @@ class EmbeddedCanyonDataImporter @Inject constructor(
         )
     }
 
+    private fun WatershedImportRow.toEntity(json: Json): WatershedEntity? {
+        val geometryValue = geometry
+            ?.takeUnless { it is JsonNull }
+            ?.let { json.encodeToString(JsonElement.serializer(), it) }
+        val bboxValues = bbox?.takeIf { it.size == 4 }
+        if (geometryValue == null && upstreamCatchmentAreaKm2 == null && bboxValues == null) {
+            return null
+        }
+        return WatershedEntity(
+            canyonId = canyonId,
+            areaKm2 = upstreamCatchmentAreaKm2,
+            geometryJson = geometryValue,
+            bboxMinLongitude = bboxValues?.get(0),
+            bboxMinLatitude = bboxValues?.get(1),
+            bboxMaxLongitude = bboxValues?.get(2),
+            bboxMaxLatitude = bboxValues?.get(3),
+        )
+    }
+
     companion object {
         private const val DATASET_VERSION_KEY = "embedded_dataset_version"
+        private const val WATERSHEDS_VERSION_KEY = "embedded_watersheds_version"
     }
 }
 
@@ -233,7 +290,11 @@ class EmbeddedCanyonDataImporter @Inject constructor(
 private data class RoomImportManifest(
     val schemaVersion: Int,
     val generatedAt: String,
+    val versions: Map<String, String> = emptyMap(),
 )
+
+private val RoomImportManifest.watershedsVersion: String?
+    get() = versions["watersheds"]
 
 @Serializable
 private data class CanyonImportRow(
@@ -333,4 +394,12 @@ private data class RegulationImportRow(
 private data class CanyonRegulationImportRow(
     val canyonId: Int,
     val regulationId: Int,
+)
+
+@Serializable
+private data class WatershedImportRow(
+    val canyonId: Int,
+    val upstreamCatchmentAreaKm2: Double? = null,
+    val bbox: List<Double>? = null,
+    val geometry: JsonElement? = null,
 )

@@ -6,6 +6,7 @@ import android.graphics.Paint
 import android.graphics.Rect
 import android.os.Bundle
 import android.util.Log
+import androidx.annotation.ColorInt
 import androidx.core.content.ContextCompat
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
@@ -33,8 +34,23 @@ import org.maplibre.android.geometry.LatLngBounds
 import org.maplibre.android.maps.MapLibreMap
 import org.maplibre.android.maps.MapView
 import org.maplibre.android.maps.Style
+import org.maplibre.android.style.layers.FillLayer
+import org.maplibre.android.style.layers.LineLayer
+import org.maplibre.android.style.layers.PropertyFactory.fillAntialias
+import org.maplibre.android.style.layers.PropertyFactory.fillColor
+import org.maplibre.android.style.layers.PropertyFactory.fillOpacity
+import org.maplibre.android.style.layers.PropertyFactory.lineColor
+import org.maplibre.android.style.layers.PropertyFactory.lineOpacity
+import org.maplibre.android.style.layers.PropertyFactory.lineWidth
+import org.maplibre.android.style.sources.GeoJsonSource
 
 private const val TAG = "MapLibreView"
+private const val WATERSHED_SOURCE_ID = "watershed-source"
+private const val WATERSHED_FILL_LAYER_ID = "watershed-fill-layer"
+private const val WATERSHED_LINE_LAYER_ID = "watershed-line-layer"
+private const val EMPTY_GEOJSON = "{\"type\":\"FeatureCollection\",\"features\":[]}"
+@ColorInt private const val WATERSHED_FILL_COLOR = 0x331A6B8A
+@ColorInt private const val WATERSHED_LINE_COLOR = 0xFF1A6B8A.toInt()
 
 @Composable
 fun MapLibreView(
@@ -43,6 +59,9 @@ fun MapLibreView(
     userLongitude: Double?,
     onMarkerClick: (Int) -> Unit,
     clusterMarkers: Boolean = true,
+    watershedGeometryJson: String? = null,
+    watershedBounds: LatLngBounds? = null,
+    showWatershed: Boolean = false,
     styleUri: String = MAP_STYLE_URI,
     modifier: Modifier = Modifier,
 ) {
@@ -90,6 +109,9 @@ fun MapLibreView(
                 userLongitude = userLongitude,
                 onMarkerClick = onMarkerClick,
                 clusterMarkers = clusterMarkers,
+                watershedGeometryJson = watershedGeometryJson,
+                watershedBounds = watershedBounds,
+                showWatershed = showWatershed,
                 styleUri = styleUri,
             )
         },
@@ -105,6 +127,9 @@ private class MapRenderState(
     private var userLongitude: Double? = null
     private var onMarkerClick: (Int) -> Unit = {}
     private var clusterMarkers: Boolean = true
+    private var watershedGeometryJson: String? = null
+    private var watershedBounds: LatLngBounds? = null
+    private var showWatershed: Boolean = false
     private var listenersAttached = false
     private var lastSignature: String? = null
     private var lastFitDataSignature: String? = null
@@ -138,6 +163,9 @@ private class MapRenderState(
         userLongitude: Double?,
         onMarkerClick: (Int) -> Unit,
         clusterMarkers: Boolean,
+        watershedGeometryJson: String?,
+        watershedBounds: LatLngBounds?,
+        showWatershed: Boolean,
         styleUri: String,
     ) {
         this.markers = markers
@@ -145,6 +173,9 @@ private class MapRenderState(
         this.userLongitude = userLongitude
         this.onMarkerClick = onMarkerClick
         this.clusterMarkers = clusterMarkers
+        this.watershedGeometryJson = watershedGeometryJson
+        this.watershedBounds = watershedBounds
+        this.showWatershed = showWatershed
         if (this.styleUri != styleUri) {
             this.styleUri = styleUri
             lastSignature = null
@@ -155,7 +186,7 @@ private class MapRenderState(
             return
         }
 
-        val fitDataSignature = buildFitDataSignature(markers)
+        val fitDataSignature = buildFitDataSignature(markers, watershedBounds, watershedGeometryJson, showWatershed)
         if (fitDataSignature != lastFitDataSignature) {
             lastFitDataSignature = fitDataSignature
             didFitCamera = false
@@ -202,7 +233,7 @@ private class MapRenderState(
 
     private fun render(force: Boolean) {
         val map = map ?: return
-        if (map.style == null) return
+        val style = map.style ?: return
 
         val displayMarkers = if (clusterMarkers) {
             MapClusterEngine.cluster(
@@ -237,9 +268,16 @@ private class MapRenderState(
                 add(MapDisplayMarker.User(currentUserLatitude, currentUserLongitude))
             }
         }
-        val signature = buildSignature(displayMarkers, map.cameraPosition.zoom)
+        val signature = buildSignature(
+            displayMarkers = displayMarkers,
+            zoom = map.cameraPosition.zoom,
+            watershedGeometryJson = watershedGeometryJson,
+            showWatershed = showWatershed,
+        )
         if (!force && lastSignature == signature) return
         lastSignature = signature
+
+        updateWatershed(style)
 
         val iconFactory = IconFactory.getInstance(context)
         map.clear()
@@ -249,7 +287,11 @@ private class MapRenderState(
         }
 
         if (!didFitCamera) {
-            fitCamera(map, fitMarkers.ifEmpty { displayMarkers })
+            fitCamera(
+                map = map,
+                displayMarkers = fitMarkers.ifEmpty { displayMarkers },
+                watershedBounds = watershedBounds.takeIf { showWatershed && !watershedGeometryJson.isNullOrBlank() },
+            )
             didFitCamera = true
         }
     }
@@ -257,20 +299,28 @@ private class MapRenderState(
     private fun fitCamera(
         map: MapLibreMap,
         displayMarkers: List<MapDisplayMarker>,
+        watershedBounds: LatLngBounds?,
     ) {
         val canyonMarkers = displayMarkers.filterNot { it is MapDisplayMarker.User }
-        if (canyonMarkers.isEmpty()) return
+        if (canyonMarkers.isEmpty() && watershedBounds == null) return
 
         val bounds = LatLngBounds.Builder().apply {
             canyonMarkers.forEach { marker ->
                 include(LatLng(marker.latitude, marker.longitude))
             }
+            watershedBounds?.let {
+                include(it.northEast)
+                include(it.southWest)
+            }
         }.build()
 
         val camera = map.getCameraForLatLngBounds(bounds, intArrayOf(96, 96, 96, 164))
         if (camera != null) {
-            val adjustedZoom = minOf(camera.zoom, preferredZoom(canyonMarkers))
-            val target = camera.target ?: LatLng(canyonMarkers.first().latitude, canyonMarkers.first().longitude)
+            val adjustedZoom = canyonMarkers.takeIf { it.isNotEmpty() }?.let { minOf(camera.zoom, preferredZoom(it)) } ?: camera.zoom
+            val target = camera.target
+                ?: canyonMarkers.firstOrNull()?.let { LatLng(it.latitude, it.longitude) }
+                ?: watershedBounds?.center
+                ?: return
             map.moveCamera(
                 CameraUpdateFactory.newLatLngZoom(
                     target,
@@ -278,10 +328,13 @@ private class MapRenderState(
                 )
             )
         } else {
+            val fallbackTarget = canyonMarkers.firstOrNull()?.let { LatLng(it.latitude, it.longitude) }
+                ?: watershedBounds?.center
+                ?: return
             map.moveCamera(
                 CameraUpdateFactory.newLatLngZoom(
-                    LatLng(canyonMarkers.first().latitude, canyonMarkers.first().longitude),
-                    preferredZoom(canyonMarkers),
+                    fallbackTarget,
+                    canyonMarkers.takeIf { it.isNotEmpty() }?.let(::preferredZoom) ?: 10.0,
                 )
             )
         }
@@ -307,7 +360,12 @@ private class MapRenderState(
         }
     }
 
-    private fun buildFitDataSignature(markers: List<CanyonSummary>): String {
+    private fun buildFitDataSignature(
+        markers: List<CanyonSummary>,
+        watershedBounds: LatLngBounds?,
+        watershedGeometryJson: String?,
+        showWatershed: Boolean,
+    ): String {
         return buildString {
             markers.sortedBy { it.id }.forEach { canyon ->
                 append('|')
@@ -317,12 +375,20 @@ private class MapRenderState(
                 append(':')
                 append(canyon.longitude?.toString().orEmpty())
             }
+            append("|w:")
+            append(showWatershed)
+            if (showWatershed && !watershedGeometryJson.isNullOrBlank()) {
+                append(':').append(watershedGeometryJson.hashCode())
+                append(':').append(watershedBounds?.toSignature().orEmpty())
+            }
         }
     }
 
     private fun buildSignature(
         displayMarkers: List<MapDisplayMarker>,
         zoom: Double,
+        watershedGeometryJson: String?,
+        showWatershed: Boolean,
     ): String {
         return buildString {
             append(zoom.toInt())
@@ -334,7 +400,65 @@ private class MapRenderState(
                     is MapDisplayMarker.User -> append("u")
                 }
             }
+            append("|w:")
+            append(showWatershed)
+            if (showWatershed && !watershedGeometryJson.isNullOrBlank()) {
+                append(':').append(watershedGeometryJson.hashCode())
+            }
         }
+    }
+
+    private fun updateWatershed(style: Style) {
+        ensureWatershedStyle(style)
+        val source = style.getSource(WATERSHED_SOURCE_ID) as? GeoJsonSource ?: return
+        val geoJson = if (showWatershed && !watershedGeometryJson.isNullOrBlank()) {
+            toFeatureGeoJson(watershedGeometryJson!!)
+        } else {
+            EMPTY_GEOJSON
+        }
+        runCatching {
+            source.setGeoJson(geoJson)
+        }.onFailure { throwable ->
+            Log.e(TAG, "Unable to update watershed polygon", throwable)
+            source.setGeoJson(EMPTY_GEOJSON)
+        }
+    }
+
+    private fun ensureWatershedStyle(style: Style) {
+        if (style.getSource(WATERSHED_SOURCE_ID) == null) {
+            style.addSource(GeoJsonSource(WATERSHED_SOURCE_ID, EMPTY_GEOJSON))
+        }
+        if (style.getLayer(WATERSHED_FILL_LAYER_ID) == null) {
+            style.addLayer(
+                FillLayer(WATERSHED_FILL_LAYER_ID, WATERSHED_SOURCE_ID).withProperties(
+                    fillAntialias(true),
+                    fillColor(WATERSHED_FILL_COLOR),
+                    fillOpacity(1.0f),
+                )
+            )
+        }
+        if (style.getLayer(WATERSHED_LINE_LAYER_ID) == null) {
+            style.addLayer(
+                LineLayer(WATERSHED_LINE_LAYER_ID, WATERSHED_SOURCE_ID).withProperties(
+                    lineColor(WATERSHED_LINE_COLOR),
+                    lineOpacity(0.9f),
+                    lineWidth(2.2f),
+                )
+            )
+        }
+    }
+
+    private fun toFeatureGeoJson(geometryJson: String): String {
+        return "{\"type\":\"Feature\",\"properties\":{},\"geometry\":$geometryJson}"
+    }
+
+    private fun LatLngBounds.toSignature(): String {
+        return listOf(
+            latitudeNorth,
+            longitudeEast,
+            latitudeSouth,
+            longitudeWest,
+        ).joinToString(":")
     }
 
     private fun MapDisplayMarker.toMarkerOptions(iconFactory: IconFactory): MarkerOptions {

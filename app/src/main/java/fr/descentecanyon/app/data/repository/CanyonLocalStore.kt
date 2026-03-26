@@ -6,6 +6,7 @@ import fr.descentecanyon.app.data.local.dao.DebitDao
 import fr.descentecanyon.app.data.local.dao.GeoPointDao
 import fr.descentecanyon.app.data.local.dao.PhotoDao
 import fr.descentecanyon.app.data.local.dao.RegulationDao
+import fr.descentecanyon.app.data.local.dao.WatershedDao
 import fr.descentecanyon.app.data.local.entity.CanyonEntity
 import fr.descentecanyon.app.data.local.entity.DebitEntity
 import fr.descentecanyon.app.data.local.entity.GeoPointEntity
@@ -24,6 +25,7 @@ class CanyonLocalStore @Inject constructor(
     private val photoDao: PhotoDao,
     private val bibliographyDao: BibliographyDao,
     private val regulationDao: RegulationDao,
+    private val watershedDao: WatershedDao,
     private val representativePointSelector: RepresentativePointSelector,
 ) {
 
@@ -104,7 +106,8 @@ class CanyonLocalStore @Inject constructor(
         val regulations = regulationDao.getByCanyonId(canyonId)
         val photos = photoDao.getByCanyonId(canyonId)
         val debits = debitDao.getByCanyonId(canyonId).firstOrNull().orEmpty()
-        return canyon.toDetail(geoPoints, bibliography, regulations, photos, debits)
+        val watershed = watershedDao.getByCanyonId(canyonId)
+        return canyon.toDetail(geoPoints, bibliography, regulations, photos, debits, watershed)
     }
 
     suspend fun representativePointsByCanyon(): Map<Int, GeoPointEntity?> {

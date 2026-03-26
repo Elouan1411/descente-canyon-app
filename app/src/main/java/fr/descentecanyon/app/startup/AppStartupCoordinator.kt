@@ -1,14 +1,18 @@
 package fr.descentecanyon.app.startup
 
+import android.util.Log
 import fr.descentecanyon.app.data.local.importer.EmbeddedCanyonDataImporter
 import fr.descentecanyon.app.data.network.ConnectivityObserver
 import fr.descentecanyon.app.domain.repository.AuthRepository
 import fr.descentecanyon.app.domain.usecase.SyncPendingDebitsUseCase
 import javax.inject.Inject
 import javax.inject.Singleton
+import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.distinctUntilChanged
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 import kotlinx.coroutines.withContext
@@ -21,6 +25,7 @@ class AppStartupCoordinator @Inject constructor(
     private val syncPendingDebitsUseCase: SyncPendingDebitsUseCase,
 ) {
 
+    private val backgroundScope = CoroutineScope(SupervisorJob() + Dispatchers.IO)
     private val initializeMutex = Mutex()
     @Volatile private var initialized = false
 
@@ -31,7 +36,7 @@ class AppStartupCoordinator @Inject constructor(
             if (initialized) return
 
             withContext(Dispatchers.IO) {
-                embeddedCanyonDataImporter.ensureImported()
+                embeddedCanyonDataImporter.ensureCoreImported()
             }
 
             if (authRepository.hasSavedCredentials()) {
@@ -39,6 +44,13 @@ class AppStartupCoordinator @Inject constructor(
             }
 
             initialized = true
+            backgroundScope.launch {
+                runCatching {
+                    embeddedCanyonDataImporter.ensureWatershedsImported()
+                }.onFailure { throwable ->
+                    Log.w(TAG, "Unable to import watersheds in background", throwable)
+                }
+            }
         }
     }
 
@@ -48,5 +60,9 @@ class AppStartupCoordinator @Inject constructor(
         if (isOnline) {
             syncPendingDebitsUseCase()
         }
+    }
+
+    private companion object {
+        const val TAG = "AppStartupCoordinator"
     }
 }

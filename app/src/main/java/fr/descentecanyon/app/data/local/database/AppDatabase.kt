@@ -10,6 +10,7 @@ import fr.descentecanyon.app.data.local.dao.GeoPointDao
 import fr.descentecanyon.app.data.local.dao.PendingDebitSubmissionDao
 import fr.descentecanyon.app.data.local.dao.PhotoDao
 import fr.descentecanyon.app.data.local.dao.RegulationDao
+import fr.descentecanyon.app.data.local.dao.WatershedDao
 import fr.descentecanyon.app.data.local.entity.AppMetadataEntity
 import fr.descentecanyon.app.data.local.entity.BibliographyEntryEntity
 import fr.descentecanyon.app.data.local.entity.CanyonEntity
@@ -20,6 +21,7 @@ import fr.descentecanyon.app.data.local.entity.GeoPointEntity
 import fr.descentecanyon.app.data.local.entity.PendingDebitSubmissionEntity
 import fr.descentecanyon.app.data.local.entity.PhotoEntity
 import fr.descentecanyon.app.data.local.entity.RegulationTextEntity
+import fr.descentecanyon.app.data.local.entity.WatershedEntity
 
 @Database(
     entities = [
@@ -31,10 +33,11 @@ import fr.descentecanyon.app.data.local.entity.RegulationTextEntity
         CanyonBibliographyEntity::class,
         RegulationTextEntity::class,
         CanyonRegulationEntity::class,
+        WatershedEntity::class,
         AppMetadataEntity::class,
         PendingDebitSubmissionEntity::class,
     ],
-    version = 5,
+    version = 7,
     exportSchema = true,
 )
 abstract class AppDatabase : RoomDatabase() {
@@ -44,6 +47,7 @@ abstract class AppDatabase : RoomDatabase() {
     abstract fun photoDao(): PhotoDao
     abstract fun bibliographyDao(): BibliographyDao
     abstract fun regulationDao(): RegulationDao
+    abstract fun watershedDao(): WatershedDao
     abstract fun appMetadataDao(): AppMetadataDao
     abstract fun pendingDebitSubmissionDao(): PendingDebitSubmissionDao
 

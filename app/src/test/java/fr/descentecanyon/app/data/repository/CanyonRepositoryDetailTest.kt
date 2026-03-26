@@ -6,6 +6,7 @@ import fr.descentecanyon.app.data.local.dao.DebitDao
 import fr.descentecanyon.app.data.local.dao.GeoPointDao
 import fr.descentecanyon.app.data.local.dao.PhotoDao
 import fr.descentecanyon.app.data.local.dao.RegulationDao
+import fr.descentecanyon.app.data.local.dao.WatershedDao
 import fr.descentecanyon.app.data.local.entity.CanyonEntity
 import io.mockk.coEvery
 import io.mockk.coJustRun
@@ -22,6 +23,7 @@ class CanyonRepositoryDetailTest {
     private val photoDao = mockk<PhotoDao>()
     private val bibliographyDao = mockk<BibliographyDao>()
     private val regulationDao = mockk<RegulationDao>()
+    private val watershedDao = mockk<WatershedDao>()
     private val representativePointSelector = RepresentativePointSelector()
 
     @Test
@@ -40,6 +42,7 @@ class CanyonRepositoryDetailTest {
             photoDao = photoDao,
             bibliographyDao = bibliographyDao,
             regulationDao = regulationDao,
+            watershedDao = watershedDao,
             representativePointSelector = representativePointSelector,
         )
 
