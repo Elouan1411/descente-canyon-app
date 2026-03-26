@@ -159,6 +159,18 @@ python scripts/run_catchment_batch.py \
 
 Les erreurs sont journalisees dans `build/watersheds/.../errors.log`, et chaque canyon en erreur ecrit quand meme un JSON individuel avec `status = error` et la stack trace.
 
+Pour copier facilement un run depuis `build/` vers un dossier suivi par Git :
+
+```bash
+python3 scripts/package_watershed_results.py \
+  --source-dir build/watersheds/batch-run-france \
+  --country France \
+  --track full \
+  --label 2026-03-25-france-v1
+```
+
+Le dossier cible est ensuite range sous `watershed-results/runs/<country>/<track>/<label>/` pour pouvoir accueillir plusieurs pays, retries, nouveaux canyons, etc.
+
 Pour un serveur avec beaucoup de disque/RAM/CPU, option recommandee : precharger tous les departements IGN utiles puis traiter plusieurs canyons en parallele :
 
 ```bash
