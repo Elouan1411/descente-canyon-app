@@ -137,8 +137,20 @@ def canyon_matches(canyon: dict[str, Any], match: dict[str, Any]) -> bool:
 
 
 def source_is_available(source: dict[str, Any]) -> bool:
+    if source.get("preparedDynamically"):
+        dem_path = normalized_path(source.get("dem"))
+        return dem_path is not None and dem_path.exists()
     mode = source.get("mode")
     if mode == "derive_local_hydrology":
+        dynamic_provider = (source.get("autoPrepare") or {}).get("provider") in {
+            "switzerland-stac",
+            "spain-wcs",
+            "austria-als",
+            "slovenia-jgp",
+            "liguria-wcs",
+        }
+        if dynamic_provider:
+            return False
         availability_path = normalized_path(source.get("availabilityPath"))
         if availability_path is not None:
             return availability_path.exists()
@@ -212,10 +224,10 @@ def auto_prepare_source(
     points: list[dict[str, Any]],
     output_dir: Path,
     gdal_translate: str,
-) -> None:
+) -> dict[str, Any]:
     auto_prepare = source.get("autoPrepare")
     if not auto_prepare:
-        return
+        return source
 
     provider = auto_prepare.get("provider")
     if provider == "ign":
@@ -244,7 +256,7 @@ def auto_prepare_source(
             ],
             check=True,
         )
-        return
+        return source
 
     if provider == "copernicus":
         command = [
@@ -258,56 +270,69 @@ def auto_prepare_source(
         for cell in points_copernicus_cells(points):
             command.extend(["--cell", cell])
         subprocess.run(command, check=True)
-        return
+        return source
 
     if provider == "switzerland-stac":
+        local_output_dir = output_dir / "prepared_sources" / f"switzerland-{canyon['id']}"
         command = [
             sys.executable,
             "scripts/prepare_switzerland_dem.py",
             "--output-dir",
-            auto_prepare.get("outputDir"),
+            str(local_output_dir),
             "--buffer-km",
             str(auto_prepare.get("bufferKm", source.get("bufferKm", 10.0))),
         ]
         for point in points:
             command.extend(["--point", f"{point['latitude']},{point['longitude']}"])
         subprocess.run(command, check=True)
-        return
+        prepared = dict(source)
+        prepared["dem"] = str(local_output_dir / "vrt" / "_all_downloaded.vrt")
+        prepared["preparedDynamically"] = True
+        return prepared
 
     if provider == "spain-wcs":
+        local_output_dir = output_dir / "prepared_sources" / f"spain-{canyon['id']}"
         command = [
             sys.executable,
             "scripts/prepare_spain_dem.py",
             "--output-dir",
-            auto_prepare.get("outputDir"),
+            str(local_output_dir),
             "--buffer-km",
             str(auto_prepare.get("bufferKm", source.get("bufferKm", 20.0))),
         ]
         for point in points:
             command.extend(["--point", f"{point['latitude']},{point['longitude']}"])
         subprocess.run(command, check=True)
-        return
+        prepared = dict(source)
+        prepared["dem"] = str(local_output_dir / "raw" / "spain_4258_25m.tif")
+        prepared["preparedDynamically"] = True
+        return prepared
 
     if provider == "austria-als":
+        local_output_dir = output_dir / "prepared_sources" / f"austria-{canyon['id']}"
         command = [
             sys.executable,
             "scripts/prepare_austria_dem.py",
             "--output-dir",
-            auto_prepare.get("outputDir"),
+            str(local_output_dir),
             "--buffer-km",
             str(auto_prepare.get("bufferKm", source.get("bufferKm", 20.0))),
         ]
         for point in points:
             command.extend(["--point", f"{point['latitude']},{point['longitude']}"])
         subprocess.run(command, check=True)
-        return
+        prepared = dict(source)
+        prepared["dem"] = str(local_output_dir / "vrt" / "_all_downloaded.vrt")
+        prepared["preparedDynamically"] = True
+        return prepared
 
     if provider == "slovenia-jgp":
+        local_output_dir = output_dir / "prepared_sources" / f"slovenia-{canyon['id']}"
         command = [
             sys.executable,
             "scripts/prepare_slovenia_dem.py",
             "--output-dir",
-            auto_prepare.get("outputDir"),
+            str(local_output_dir),
             "--buffer-km",
             str(auto_prepare.get("bufferKm", source.get("bufferKm", 10.0))),
         ]
@@ -316,21 +341,28 @@ def auto_prepare_source(
         for file_id in slovenia_quadrant_file_ids(points):
             command.extend(["--file-id", str(file_id)])
         subprocess.run(command, check=True)
-        return
+        prepared = dict(source)
+        prepared["dem"] = str(local_output_dir / "vrt" / "_all_downloaded.vrt")
+        prepared["preparedDynamically"] = True
+        return prepared
 
     if provider == "liguria-wcs":
+        local_output_dir = output_dir / "prepared_sources" / f"liguria-{canyon['id']}"
         command = [
             sys.executable,
             "scripts/prepare_liguria_dem.py",
             "--output-dir",
-            auto_prepare.get("outputDir"),
+            str(local_output_dir),
             "--buffer-km",
             str(auto_prepare.get("bufferKm", source.get("bufferKm", 20.0))),
         ]
         for point in points:
             command.extend(["--point", f"{point['latitude']},{point['longitude']}"])
         subprocess.run(command, check=True)
-        return
+        prepared = dict(source)
+        prepared["dem"] = str(local_output_dir / "raw" / "liguria_5m.tif")
+        prepared["preparedDynamically"] = True
+        return prepared
 
     if provider == "national-dem":
         units: list[str] = []
@@ -354,7 +386,7 @@ def auto_prepare_source(
         for unit in units:
             command.extend(["--unit", unit])
         subprocess.run(command, check=True)
-        return
+        return source
 
     if provider == "merit":
         command = [
@@ -368,7 +400,7 @@ def auto_prepare_source(
         for package_name in points_merit_packages(points):
             command.extend(["--package", package_name])
         subprocess.run(command, check=True)
-        return
+        return source
 
     raise SystemExit(f"Unsupported autoPrepare provider: {provider}")
 
@@ -437,9 +469,10 @@ def resolve_source_for_canyon(
             "matched": True,
             "availableBefore": source_is_available(source),
         }
+        resolved_source = source
         if not source_is_available(source):
             try:
-                auto_prepare_source(
+                resolved_source = auto_prepare_source(
                     source=source,
                     canyon=canyon,
                     points=points,
@@ -450,10 +483,10 @@ def resolve_source_for_canyon(
                 attempt["prepareError"] = f"{type(exc).__name__}: {exc}"
                 attempts.append(attempt)
                 continue
-        attempt["availableAfter"] = source_is_available(source)
+        attempt["availableAfter"] = source_is_available(resolved_source)
         attempts.append(attempt)
-        if source_is_available(source):
-            return source, attempts
+        if source_is_available(resolved_source):
+            return resolved_source, attempts
     return None, attempts
 
 
