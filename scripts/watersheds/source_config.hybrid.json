@@ -1641,6 +1641,98 @@
       }
     },
     {
+      "name": "slovenia-dmv5-direct",
+      "mode": "derive_local_hydrology",
+      "dem": "build/watersheds/slovenia-national-dem/vrt/_all_downloaded.vrt",
+      "bufferKm": 20.0,
+      "processingResolutionM": 10.0,
+      "candidateStrategy": "nearest_channel",
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "autoPrepare": {
+        "provider": "slovenia-jgp",
+        "outputDir": "build/watersheds/slovenia-national-dem"
+      },
+      "match": {
+        "pays": "Slovénie"
+      }
+    },
+    {
+      "name": "switzerland-swissalti3d",
+      "mode": "derive_local_hydrology",
+      "dem": "build/watersheds/switzerland-national-dem/vrt/_all_downloaded.vrt",
+      "srs": "EPSG:2056",
+      "bufferKm": 10.0,
+      "processingResolutionM": 5.0,
+      "candidateStrategy": "nearest_channel",
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "autoPrepare": {
+        "provider": "switzerland-stac",
+        "outputDir": "build/watersheds/switzerland-national-dem",
+        "bufferKm": 10.0
+      },
+      "match": {
+        "pays": "Suisse"
+      }
+    },
+    {
+      "name": "spain-ign-mdt25",
+      "mode": "derive_local_hydrology",
+      "dem": "build/watersheds/spain-national-dem/raw/spain_4258_25m.tif",
+      "srs": null,
+      "bufferKm": 10.0,
+      "candidateStrategy": "nearest_channel",
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "autoPrepare": {
+        "provider": "spain-wcs",
+        "outputDir": "build/watersheds/spain-national-dem",
+        "bufferKm": 10.0
+      },
+      "match": {
+        "pays": "Espagne"
+      }
+    },
+    {
+      "name": "austria-bev-als-dtm",
+      "mode": "derive_local_hydrology",
+      "dem": "build/watersheds/austria-national-dem/vrt/_all_downloaded.vrt",
+      "srs": "EPSG:3035",
+      "bufferKm": 20.0,
+      "processingResolutionM": 5.0,
+      "candidateStrategy": "nearest_channel",
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "autoPrepare": {
+        "provider": "austria-als",
+        "outputDir": "build/watersheds/austria-national-dem",
+        "bufferKm": 20.0
+      },
+      "match": {
+        "pays": "Autriche"
+      }
+    },
+    {
+      "name": "italy-liguria-dem",
+      "mode": "derive_local_hydrology",
+      "dem": "build/watersheds/italy-liguria-dem/raw/liguria_5m.tif",
+      "bufferKm": 10.0,
+      "processingResolutionM": 5.0,
+      "candidateStrategy": "nearest_channel",
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "autoPrepare": {
+        "provider": "liguria-wcs",
+        "outputDir": "build/watersheds/italy-liguria-dem",
+        "bufferKm": 10.0
+      },
+      "match": {
+        "pays": "Italie",
+        "region": "Ligurie"
+      }
+    },
+    {
       "name": "copernicus-europe",
       "mode": "derive_local_hydrology",
       "dem": "build/watersheds/copernicus-data/vrt/copernicus_glo30.vrt",
