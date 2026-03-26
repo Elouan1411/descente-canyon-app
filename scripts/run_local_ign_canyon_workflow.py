@@ -91,6 +91,11 @@ def clip_dem(
             col_off = max(0, int(window.col_off))
             height = min(src.height - row_off, int(window.height))
             width = min(src.width - col_off, int(window.width))
+            if row_off >= src.height or col_off >= src.width or height <= 0 or width <= 0:
+                raise SystemExit(
+                    f"Clip window outside raster coverage for {source_dem}. "
+                    f"row_off={row_off}, col_off={col_off}, height={height}, width={width}"
+                )
             clipped_window = Window(row_off=row_off, col_off=col_off, height=height, width=width)
 
             profile = src.profile.copy()

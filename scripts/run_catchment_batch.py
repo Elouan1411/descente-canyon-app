@@ -119,6 +119,9 @@ def canyon_matches(canyon: dict[str, Any], match: dict[str, Any]) -> bool:
 def source_is_available(source: dict[str, Any]) -> bool:
     mode = source.get("mode")
     if mode == "derive_local_hydrology":
+        availability_path = normalized_path(source.get("availabilityPath"))
+        if availability_path is not None:
+            return availability_path.exists()
         dem = source.get("dem")
         dem_path = normalized_path(dem)
         return dem_path is not None and dem_path.exists()

@@ -175,12 +175,15 @@ def main() -> int:
         slug = f"{dept_code.lower()}-{normalize_slug(department)}"
         rge_vrt = args.ign_vrt_root / "rgealti5m" / "_all_downloaded.vrt"
         bd_vrt = args.ign_vrt_root / "bdalti" / "_all_downloaded.vrt"
+        rge_department_vrt = args.ign_vrt_root / "rgealti5m" / f"{slug}.vrt"
+        bd_department_vrt = args.ign_vrt_root / "bdalti" / f"{slug}.vrt"
 
         sources.append(
             {
                 "name": f"ign-rgealti5m-{slug}",
                 "mode": "derive_local_hydrology",
                 "dem": str(rge_vrt),
+                "availabilityPath": str(rge_department_vrt),
                 "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
                 "bufferKm": 20.0,
                 "searchRadiusM": 120.0,
@@ -203,6 +206,7 @@ def main() -> int:
                 "name": f"ign-bdalti-{slug}",
                 "mode": "derive_local_hydrology",
                 "dem": str(bd_vrt),
+                "availabilityPath": str(bd_department_vrt),
                 "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
                 "bufferKm": 20.0,
                 "searchRadiusM": 120.0,
