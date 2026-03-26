@@ -11,7 +11,7 @@ from typing import Any
 import rasterio
 from rasterio.enums import Resampling
 from rasterio.windows import Window
-from rasterio.warp import transform
+from rasterio.warp import calculate_default_transform, reproject, transform
 
 from cli_tools import default_gdal_translate, resolve_executable
 
@@ -169,6 +169,40 @@ def resample_dem(input_dem: Path, output_dem: Path, target_resolution: float) ->
         output_dem.parent.mkdir(parents=True, exist_ok=True)
         with rasterio.open(output_dem, "w", **profile) as dst:
             dst.write(data)
+
+
+def reproject_dem(input_dem: Path, output_dem: Path, dst_crs: str) -> None:
+    with rasterio.open(input_dem) as src:
+        transform_out, width, height = calculate_default_transform(
+            src.crs,
+            dst_crs,
+            src.width,
+            src.height,
+            *src.bounds,
+        )
+        profile = src.profile.copy()
+        profile.update(
+            driver="GTiff",
+            crs=dst_crs,
+            transform=transform_out,
+            width=width,
+            height=height,
+            compress="lzw",
+            tiled=True,
+            BIGTIFF="YES",
+        )
+        output_dem.parent.mkdir(parents=True, exist_ok=True)
+        with rasterio.open(output_dem, "w", **profile) as dst:
+            for band_index in range(1, src.count + 1):
+                reproject(
+                    source=rasterio.band(src, band_index),
+                    destination=rasterio.band(dst, band_index),
+                    src_transform=src.transform,
+                    src_crs=src.crs,
+                    dst_transform=transform_out,
+                    dst_crs=dst_crs,
+                    resampling=Resampling.bilinear,
+                )
 
 
 def parse_args() -> argparse.Namespace:

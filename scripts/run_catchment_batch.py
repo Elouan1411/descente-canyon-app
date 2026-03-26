@@ -481,7 +481,7 @@ def ensure_local_hydrology(
     points: list[dict[str, Any]],
     gdal_translate: str,
 ) -> tuple[dict[str, Path], dict[str, Any]]:
-    from run_local_ign_canyon_workflow import clip_dem, resample_dem
+    from run_local_ign_canyon_workflow import clip_dem, reproject_dem, resample_dem
 
     dem_path = normalized_path(source["dem"]).resolve()
     if not dem_path.exists():
@@ -489,6 +489,7 @@ def ensure_local_hydrology(
 
     canyon_work_dir = output_dir / "work" / str(canyon_id)
     clip_path = canyon_work_dir / "clip_dem.tif"
+    projected_clip_path = canyon_work_dir / "clip_dem_projected.tif"
     processing_clip_path = canyon_work_dir / "clip_dem_processing.tif"
     hydrology_dir = canyon_work_dir / "hydrology"
     upa_path = hydrology_dir / "ign_upstream_area_km2.tif"
@@ -513,9 +514,14 @@ def ensure_local_hydrology(
         )
         timings["clipDemSec"] = time.perf_counter() - started
         processing_dem = clip_path
+        if source.get("processingCrs"):
+            started = time.perf_counter()
+            reproject_dem(clip_path, projected_clip_path, str(source["processingCrs"]))
+            processing_dem = projected_clip_path
+            timings["resampleDemSec"] = time.perf_counter() - started
         if source.get("processingResolutionM"):
             started = time.perf_counter()
-            resample_dem(clip_path, processing_clip_path, float(source["processingResolutionM"]))
+            resample_dem(processing_dem, processing_clip_path, float(source["processingResolutionM"]))
             processing_dem = processing_clip_path
             timings["resampleDemSec"] = time.perf_counter() - started
         command = [
