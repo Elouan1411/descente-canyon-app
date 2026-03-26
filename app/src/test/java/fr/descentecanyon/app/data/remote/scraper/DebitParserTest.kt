@@ -48,6 +48,27 @@ class DebitParserTest {
     }
 
     @Test
+    fun `canyon debits expose parsable dates`() {
+        val doc = Jsoup.parse(loadHtml("canyon_debits.html"))
+        val result = DebitParser.parseCanyonDebits(doc, 2186)
+
+        for (debit in result) {
+            assertNotNull("Date should be parsable: ${debit.date}", DateParser.parseToLocalDate(debit.date))
+        }
+    }
+
+    @Test
+    fun `merged canyon debit rows are split per author with comments`() {
+        val doc = Jsoup.parse(loadHtml("canyon_debits.html"))
+        val result = DebitParser.parseCanyonDebits(doc, 2186)
+            .filter { it.date == "sam. 19 avril 2025" }
+
+        assertEquals(listOf("ricardcoca", "suze51"), result.mapNotNull { it.auteur })
+        assertEquals(2, result.size)
+        assertTrue(result.all { !it.commentaire.isNullOrBlank() })
+    }
+
+    @Test
     fun `parse latest debits returns non-empty list`() {
         val doc = Jsoup.parse(loadHtml("derniers_debits.html"))
         val result = DebitParser.parseLatestDebits(doc)

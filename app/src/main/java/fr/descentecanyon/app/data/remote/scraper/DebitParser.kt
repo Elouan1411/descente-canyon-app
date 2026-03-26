@@ -1,6 +1,7 @@
 package fr.descentecanyon.app.data.remote.scraper
 
 import fr.descentecanyon.app.data.remote.dto.ScrapedDebit
+import org.jsoup.Jsoup
 import org.jsoup.nodes.Document
 
 /**
@@ -40,7 +41,10 @@ internal object DebitParser {
             if (tds.size < 4) continue
 
             val dateRaw = tds[0].text().trim()
-            val auteur = tds[1].text().trim()
+            val authors = tds[1].html()
+                .split(Regex("(?i)<br\\s*/?>"))
+                .map { htmlPart -> Jsoup.parse(htmlPart).text().trim() }
+                .filter { it.isNotBlank() }
             val observationTitle = tds[2].selectFirst("span")?.attr("title")?.trim()?.lowercase()
             val isDescended = when {
                 observationTitle?.contains("parcouru") == true && observationTitle.contains("non") -> false
@@ -51,25 +55,30 @@ internal object DebitParser {
             val airTemperature = tds.getOrNull(5)?.text()?.trim()?.ifBlank { null }
 
             // Extract remark if exists
-            val remarkBtn = row.selectFirst("td button.lire")
-            val commentaire = if (remarkBtn != null) {
-                val remarkId = remarkBtn.id().removePrefix("r")
-                doc.selectFirst("tr#tr$remarkId p")?.text()?.trim()
-            } else null
+            val observationDetails = row.selectFirst("td button.lire")
+                ?.id()
+                ?.removePrefix("r")
+                ?.takeIf { it.isNotBlank() }
+                ?.let { remarkId -> parseObservationDetails(doc.selectFirst("tr#tr$remarkId")) }
+                .orEmpty()
 
-            results.add(
-                ScrapedDebit(
-                    canyonId = canyonId,
-                    canyonNom = "",
-                    date = dateRaw,
-                    niveauRaw = debitLevel,
-                    auteur = auteur.ifBlank { null },
-                    isDescended = isDescended,
-                    waterTemperature = waterTemperature,
-                    airTemperature = airTemperature,
-                    commentaire = commentaire,
+            val debitObservations = buildDebitObservations(authors, observationDetails)
+
+            for (observation in debitObservations) {
+                results.add(
+                    ScrapedDebit(
+                        canyonId = canyonId,
+                        canyonNom = "",
+                        date = dateRaw,
+                        niveauRaw = debitLevel,
+                        auteur = observation.author,
+                        isDescended = isDescended,
+                        waterTemperature = waterTemperature,
+                        airTemperature = airTemperature,
+                        commentaire = observation.comment,
+                    )
                 )
-            )
+            }
         }
 
         return results
@@ -131,4 +140,52 @@ internal object DebitParser {
             .replace(Regex("\\s+"), " ")
             .trim()
     }
+
+    private fun parseObservationDetails(remarkRow: org.jsoup.nodes.Element?): List<DebitObservationDetail> {
+        if (remarkRow == null) return emptyList()
+
+        val users = remarkRow.select("div.userc").map { userBlock ->
+            userBlock.selectFirst("b")?.text()?.trim().orEmpty()
+        }
+        val comments = remarkRow.select("p").map { paragraph ->
+            paragraph.text().trim().ifBlank { null }
+        }
+
+        val count = maxOf(users.size, comments.size)
+        return (0 until count).mapNotNull { index ->
+            val author = users.getOrNull(index)?.takeIf { it.isNotBlank() }
+            val comment = comments.getOrNull(index)
+            if (author == null && comment == null) {
+                null
+            } else {
+                DebitObservationDetail(author = author, comment = comment)
+            }
+        }
+    }
+
+    private fun buildDebitObservations(
+        authors: List<String>,
+        observationDetails: List<DebitObservationDetail>,
+    ): List<DebitObservationDetail> {
+        if (authors.isEmpty() && observationDetails.isEmpty()) {
+            return listOf(DebitObservationDetail())
+        }
+        if (authors.isEmpty()) {
+            return observationDetails
+        }
+
+        return authors.mapIndexed { index, author ->
+            val matchingDetail = observationDetails.firstOrNull { detail -> detail.author == author }
+                ?: observationDetails.getOrNull(index)
+            DebitObservationDetail(
+                author = author,
+                comment = matchingDetail?.comment,
+            )
+        }
+    }
+
+    private data class DebitObservationDetail(
+        val author: String? = null,
+        val comment: String? = null,
+    )
 }

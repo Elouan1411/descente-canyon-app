@@ -130,6 +130,24 @@ class DateParserTest {
     }
 
     @Test
+    fun `French date with abbreviated month`() {
+        val result = DateParser.parseToIsoString("dim. 15 janv. 2023")
+        assertEquals("2023-01-15", result)
+    }
+
+    @Test
+    fun `French date with abbreviated accented month`() {
+        val result = DateParser.parseToIsoString("ven. 02 août 2024")
+        assertEquals("2024-08-02", result)
+    }
+
+    @Test
+    fun `French date with abbreviated month and non breaking spaces`() {
+        val result = DateParser.parseToIsoString("mar. 29\u00A0août\u00A02023")
+        assertEquals("2023-08-29", result)
+    }
+
+    @Test
     fun `parse French long date with two digit year`() {
         val result = DateParser.parseToIsoString("sam. 8 aout 25")
         assertEquals("2025-08-08", result)
