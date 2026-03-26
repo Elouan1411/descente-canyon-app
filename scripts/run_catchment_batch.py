@@ -9,6 +9,7 @@ import shutil
 import subprocess
 import sys
 import time
+import traceback
 from dataclasses import asdict
 from pathlib import Path
 from typing import Any
@@ -49,6 +50,24 @@ def write_json(path: Path, data: Any) -> None:
     path.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
 
 
+def append_text(path: Path, text: str) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("a", encoding="utf-8") as handle:
+        handle.write(text)
+
+
+def load_canyon_ids_from_file(path: Path) -> list[int]:
+    canyon_ids: list[int] = []
+    for raw_line in path.read_text(encoding="utf-8").splitlines():
+        line = raw_line.strip()
+        if not line or line.startswith("#"):
+            continue
+        left = line.split("|", 1)[0].strip()
+        if left:
+            canyon_ids.append(int(left))
+    return canyon_ids
+
+
 def normalized_path(value: str | Path | None) -> Path | None:
     if value is None:
         return None
@@ -80,6 +99,7 @@ def parse_args() -> argparse.Namespace:
         default=Path("build/watersheds/batch-run"),
     )
     parser.add_argument("--only-canyon-id", type=int, action="append")
+    parser.add_argument("--only-canyon-id-file", type=Path)
     parser.add_argument("--max-canyons", type=int)
     parser.add_argument("--jobs", type=int, default=1)
     parser.add_argument("--aggregate-every", type=int, default=25)
@@ -880,10 +900,15 @@ def aggregate_results(output_dir: Path) -> None:
     import_rows = []
     watershed_rows = []
     watershed_features = []
+    status_counts: dict[str, int] = collections.Counter()
+    watershed_skip_counts: dict[str, int] = collections.Counter()
     stage_totals: dict[str, float] = collections.defaultdict(float)
     stage_maxima: dict[str, float] = collections.defaultdict(float)
     profiled_canyons = 0
     for item in canyon_results:
+        status_counts[str(item.get("status") or "ok")] += 1
+        if item.get("watershedStatus") == "skipped" and item.get("watershedSkipReason"):
+            watershed_skip_counts[str(item.get("watershedSkipReason"))] += 1
         profiling = item.get("profiling", {})
         stage_values = profiling.get("stagesSec", {})
         if stage_values:
@@ -943,6 +968,8 @@ def aggregate_results(output_dir: Path) -> None:
                     },
                 }
             )
+        elif item.get("watershedStatus") == "skipped":
+            import_rows[-1]["watershedSkipReason"] = item.get("watershedSkipReason")
 
     write_json(output_dir / "import_ready_catchments.json", import_rows)
     write_json(output_dir / "import_ready_watersheds.json", watershed_rows)
@@ -956,6 +983,8 @@ def aggregate_results(output_dir: Path) -> None:
             "canyonsWithResults": len(canyon_results),
             "importReadyRows": len(import_rows),
             "watershedPolygonRows": len(watershed_rows),
+            "statusCounts": dict(status_counts),
+            "watershedSkipCounts": dict(watershed_skip_counts),
             "profiling": {
                 "profiledCanyons": profiled_canyons,
                 "stageTotalsSec": rounded_stage_values(dict(stage_totals)),
@@ -1068,6 +1097,8 @@ def process_single_canyon(
     selected_candidate = candidate_analysis["bestHydroProxyCandidate"]
     strict_topo_candidate = candidate_analysis["strictTopoCandidate"]
     watershed = None
+    watershed_status = "skipped"
+    watershed_skip_reason = None
     if (
         selected_candidate is not None
         and source["mode"] == "derive_local_hydrology"
@@ -1096,9 +1127,23 @@ def process_single_canyon(
                 "selectedSelectionVerdict": selected_candidate.get("analysis", {}).get("selectionVerdict"),
                 "simplifyToleranceM": float(source.get("watershedSimplifyToleranceM", 10.0)),
             }
+            watershed_status = "built"
+        else:
+            watershed_status = "skipped"
+            watershed_skip_reason = "empty_geometry"
         print(f"WATERSHED canyon {canyon_id} done", flush=True)
     else:
         stage_timings["buildWatershedGeometrySec"] = 0.0
+        if selected_candidate is None:
+            watershed_skip_reason = "no_selected_candidate"
+        elif source["mode"] != "derive_local_hydrology":
+            watershed_skip_reason = "source_mode_not_local_hydrology"
+        elif raster_paths.get("flowdir") is None:
+            watershed_skip_reason = "missing_flowdir_raster"
+        elif selected_candidate["evaluation"].get("snapped_longitude") is None or selected_candidate["evaluation"].get("snapped_latitude") is None:
+            watershed_skip_reason = "missing_snapped_coordinates"
+        else:
+            watershed_skip_reason = "condition_not_met"
 
     stage_timings["totalSec"] = time.perf_counter() - total_started
     result = {
@@ -1114,6 +1159,8 @@ def process_single_canyon(
         "strictTopoCandidate": strict_topo_candidate,
         "suggestedCandidate": selected_candidate,
         "watershed": watershed,
+        "watershedStatus": watershed_status,
+        "watershedSkipReason": watershed_skip_reason,
         "profiling": {
             "sourceMode": source["mode"],
             "reusedExistingHydrology": hydrology_profile.get("reusedExistingHydrology", False),
@@ -1136,6 +1183,54 @@ def process_single_canyon(
         flush=True,
     )
     return "ok"
+
+
+def process_single_canyon_safe(
+    *,
+    canyon_id: int,
+    canyon: dict[str, Any],
+    points: list[dict[str, Any]],
+    sources: list[dict[str, Any]],
+    output_dir: Path,
+    gdal_translate: str,
+    keep_work: bool,
+) -> str:
+    try:
+        return process_single_canyon(
+            canyon_id=canyon_id,
+            canyon=canyon,
+            points=points,
+            sources=sources,
+            output_dir=output_dir,
+            gdal_translate=gdal_translate,
+            keep_work=keep_work,
+        )
+    except KeyboardInterrupt:
+        raise
+    except Exception as exc:
+        error_text = traceback.format_exc()
+        error_payload = {
+            "canyonId": canyon_id,
+            "canyonName": canyon.get("nomComplet") or canyon.get("nom"),
+            "country": canyon.get("pays"),
+            "department": canyon.get("departement"),
+            "status": "error",
+            "error": {
+                "type": type(exc).__name__,
+                "message": str(exc),
+                "traceback": error_text,
+            },
+            "availablePointTypes": sorted({str(point.get("type")) for point in points}),
+        }
+        write_json(output_dir / "canyons" / f"{canyon_id}.json", error_payload)
+        append_text(
+            output_dir / "errors.log",
+            f"[{canyon_id}] {canyon.get('nomComplet') or canyon.get('nom')} - {type(exc).__name__}: {exc}\n{error_text}\n",
+        )
+        print(f"ERROR canyon {canyon_id} {type(exc).__name__}: {exc}", flush=True)
+        if not keep_work:
+            shutil.rmtree(output_dir / "work" / str(canyon_id), ignore_errors=True)
+        return "error"
 
 
 def main() -> int:
@@ -1166,6 +1261,9 @@ def main() -> int:
     if args.only_canyon_id:
         allowed = set(args.only_canyon_id)
         canyon_ids = [canyon_id for canyon_id in canyon_ids if canyon_id in allowed]
+    if args.only_canyon_id_file:
+        allowed_from_file = set(load_canyon_ids_from_file(args.only_canyon_id_file))
+        canyon_ids = [canyon_id for canyon_id in canyon_ids if canyon_id in allowed_from_file]
     canyon_ids = sorted(
         canyon_ids,
         key=lambda canyon_id: planned_source_sort_key(
@@ -1198,7 +1296,7 @@ def main() -> int:
         if args.jobs <= 1:
             pending_total = len(pending)
             for canyon_id, canyon, points in pending:
-                process_single_canyon(
+                process_single_canyon_safe(
                     canyon_id=canyon_id,
                     canyon=canyon,
                     points=points,
@@ -1220,7 +1318,7 @@ def main() -> int:
                 for _ in range(min(args.jobs, len(pending))):
                     canyon_id, canyon, points = next(pending_iter)
                     future = executor.submit(
-                        process_single_canyon,
+                        process_single_canyon_safe,
                         canyon_id=canyon_id,
                         canyon=canyon,
                         points=points,
@@ -1248,7 +1346,7 @@ def main() -> int:
                         except StopIteration:
                             continue
                         new_future = executor.submit(
-                            process_single_canyon,
+                            process_single_canyon_safe,
                             canyon_id=canyon_id,
                             canyon=canyon,
                             points=points,

@@ -147,6 +147,18 @@ python scripts/run_catchment_batch.py \
   --france-only
 ```
 
+Pour retester une liste cible de canyons et continuer meme en cas d'erreur locale :
+
+```bash
+python scripts/run_catchment_batch.py \
+  --source-config scripts/watersheds/source_config.hybrid.json \
+  --output-dir build/watersheds/batch-run-france-retry \
+  --france-only \
+  --only-canyon-id-file scripts/watersheds/france_missing_watersheds_20260325.txt
+```
+
+Les erreurs sont journalisees dans `build/watersheds/.../errors.log`, et chaque canyon en erreur ecrit quand meme un JSON individuel avec `status = error` et la stack trace.
+
 Pour un serveur avec beaucoup de disque/RAM/CPU, option recommandee : precharger tous les departements IGN utiles puis traiter plusieurs canyons en parallele :
 
 ```bash
