@@ -1,44 +1,44 @@
 {
-  "canyonsWithResults": 1460,
-  "importReadyRows": 1454,
-  "watershedPolygonRows": 1454,
+  "canyonsWithResults": 1872,
+  "importReadyRows": 1844,
+  "watershedPolygonRows": 1844,
   "profiling": {
-    "profiledCanyons": 1460,
+    "profiledCanyons": 1872,
     "stageTotalsSec": {
-      "resolveSourceSec": 2.368,
-      "ensureLocalHydrologySec": 122133.194,
-      "clipDemSec": 17637.723,
+      "resolveSourceSec": 3.173,
+      "ensureLocalHydrologySec": 152092.378,
+      "clipDemSec": 21873.074,
       "resampleDemSec": 0.0,
-      "deriveHydrologySec": 104480.353,
-      "evaluatePointsSec": 5211.746,
+      "deriveHydrologySec": 130200.669,
+      "evaluatePointsSec": 6182.867,
       "analyzeCandidatesSec": 0.0,
-      "buildWatershedGeometrySec": 13919.112,
-      "totalSec": 141296.86,
-      "writeResultSec": 22.294
+      "buildWatershedGeometrySec": 18432.327,
+      "totalSec": 176753.563,
+      "writeResultSec": 31.27
     },
     "stageAveragesSec": {
       "resolveSourceSec": 0.002,
-      "ensureLocalHydrologySec": 83.653,
-      "clipDemSec": 12.081,
+      "ensureLocalHydrologySec": 81.246,
+      "clipDemSec": 11.684,
       "resampleDemSec": 0.0,
-      "deriveHydrologySec": 71.562,
-      "evaluatePointsSec": 3.57,
+      "deriveHydrologySec": 69.552,
+      "evaluatePointsSec": 3.303,
       "analyzeCandidatesSec": 0.0,
-      "buildWatershedGeometrySec": 9.534,
-      "totalSec": 96.779,
-      "writeResultSec": 0.015
+      "buildWatershedGeometrySec": 9.846,
+      "totalSec": 94.42,
+      "writeResultSec": 0.017
     },
     "stageMaxSec": {
       "resolveSourceSec": 0.102,
       "ensureLocalHydrologySec": 422.316,
-      "clipDemSec": 24.437,
+      "clipDemSec": 43.507,
       "resampleDemSec": 0.0,
       "deriveHydrologySec": 406.95,
       "evaluatePointsSec": 434.157,
       "analyzeCandidatesSec": 0.0,
       "buildWatershedGeometrySec": 190.143,
       "totalSec": 518.15,
-      "writeResultSec": 0.868
+      "writeResultSec": 0.907
     }
   }
 }
