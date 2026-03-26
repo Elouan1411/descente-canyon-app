@@ -140,106 +140,110 @@ fun PhotoGalleryScreen(
         modifier = modifier.fillMaxSize(),
         color = Color.Black,
     ) {
-        HorizontalPager(
-            state = pagerState,
-            modifier = Modifier.fillMaxSize(),
-        ) { page ->
-            val photo = photos[page]
-            val photoRequest: ImageRequest = remember(context, photo.localPath, photo.url) {
-                ImageRequest.Builder(context)
-                    .data(photo.localPath ?: photo.url)
-                    .allowHardware(false)
-                    .build()
-            }
-            Box(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .clickable { showOverlay = !showOverlay },
-            ) {
-                AsyncImage(
-                    model = photoRequest,
-                    contentDescription = photo.description,
-                    modifier = Modifier.fillMaxSize().background(Color.Black),
-                    contentScale = ContentScale.Fit,
-                )
+        val currentPhoto = photos.getOrElse(pagerState.currentPage) { photos.first() }
 
-                AnimatedVisibility(
-                    visible = showOverlay,
-                    modifier = Modifier.align(Alignment.TopCenter),
+        Box(modifier = Modifier.fillMaxSize()) {
+            HorizontalPager(
+                state = pagerState,
+                modifier = Modifier.fillMaxSize(),
+            ) { page ->
+                val photo = photos[page]
+                val photoRequest: ImageRequest = remember(context, photo.localPath, photo.url) {
+                    ImageRequest.Builder(context)
+                        .data(photo.localPath ?: photo.url)
+                        .allowHardware(false)
+                        .build()
+                }
+                Box(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .clickable { showOverlay = !showOverlay },
                 ) {
-                    Row(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .background(Brush.verticalGradient(listOf(Color.Black.copy(alpha = 0.7f), Color.Transparent)))
-                            .statusBarsPadding()
-                            .padding(horizontal = 16.dp, vertical = 12.dp),
-                        horizontalArrangement = Arrangement.SpaceBetween,
-                        verticalAlignment = Alignment.CenterVertically,
-                    ) {
-                        Text(
-                            text = "${page + 1}/${photos.size}",
-                            color = Color.White,
-                            style = MaterialTheme.typography.titleMedium,
-                        )
-                        Row(horizontalArrangement = Arrangement.spacedBy(8.dp), verticalAlignment = Alignment.CenterVertically) {
-                            if (photo.localPath == null) {
-                                IconButton(
-                                    onClick = { viewModel.downloadPhoto(photo.id) },
-                                    enabled = photo.id != 0L && !uiState.downloadingPhotoIds.contains(photo.id),
-                                ) {
-                                    if (uiState.downloadingPhotoIds.contains(photo.id)) {
-                                        CircularProgressIndicator(
-                                            modifier = Modifier.size(18.dp),
-                                            strokeWidth = 2.dp,
-                                            color = Color.White,
-                                        )
-                                    } else {
-                                        Icon(
-                                            imageVector = Icons.Default.CloudDownload,
-                                            contentDescription = stringResource(R.string.photo_download_action),
-                                            tint = Color.White,
-                                        )
-                                    }
+                    AsyncImage(
+                        model = photoRequest,
+                        contentDescription = photo.description,
+                        modifier = Modifier.fillMaxSize().background(Color.Black),
+                        contentScale = ContentScale.Fit,
+                    )
+                }
+            }
+
+            AnimatedVisibility(
+                visible = showOverlay,
+                modifier = Modifier.align(Alignment.TopCenter),
+            ) {
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .background(Brush.verticalGradient(listOf(Color.Black.copy(alpha = 0.7f), Color.Transparent)))
+                        .statusBarsPadding()
+                        .padding(horizontal = 16.dp, vertical = 12.dp),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.CenterVertically,
+                ) {
+                    Text(
+                        text = "${pagerState.currentPage + 1}/${photos.size}",
+                        color = Color.White,
+                        style = MaterialTheme.typography.titleMedium,
+                    )
+                    Row(horizontalArrangement = Arrangement.spacedBy(8.dp), verticalAlignment = Alignment.CenterVertically) {
+                        if (currentPhoto.localPath == null) {
+                            IconButton(
+                                onClick = { viewModel.downloadPhoto(currentPhoto.id) },
+                                enabled = currentPhoto.id != 0L && !uiState.downloadingPhotoIds.contains(currentPhoto.id),
+                            ) {
+                                if (uiState.downloadingPhotoIds.contains(currentPhoto.id)) {
+                                    CircularProgressIndicator(
+                                        modifier = Modifier.size(18.dp),
+                                        strokeWidth = 2.dp,
+                                        color = Color.White,
+                                    )
+                                } else {
+                                    Icon(
+                                        imageVector = Icons.Default.CloudDownload,
+                                        contentDescription = stringResource(R.string.photo_download_action),
+                                        tint = Color.White,
+                                    )
                                 }
                             }
-                            IconButton(onClick = onBackClick) {
-                                Icon(
-                                    imageVector = Icons.AutoMirrored.Filled.ArrowBack,
-                                    contentDescription = stringResource(R.string.back),
-                                    tint = Color.White,
-                                )
-                            }
+                        }
+                        IconButton(onClick = onBackClick) {
+                            Icon(
+                                imageVector = Icons.AutoMirrored.Filled.ArrowBack,
+                                contentDescription = stringResource(R.string.back),
+                                tint = Color.White,
+                            )
                         }
                     }
                 }
+            }
 
-                AnimatedVisibility(
-                    visible = showOverlay,
-                    modifier = Modifier.align(Alignment.BottomCenter),
+            AnimatedVisibility(
+                visible = showOverlay,
+                modifier = Modifier.align(Alignment.BottomCenter),
+            ) {
+                androidx.compose.foundation.layout.Column(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .background(Brush.verticalGradient(listOf(Color.Transparent, Color.Black.copy(alpha = 0.82f))))
+                        .navigationBarsPadding()
+                        .padding(horizontal = 16.dp, vertical = 18.dp),
+                    verticalArrangement = Arrangement.spacedBy(6.dp),
                 ) {
-                    androidx.compose.foundation.layout.Column(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .background(Brush.verticalGradient(listOf(Color.Transparent, Color.Black.copy(alpha = 0.82f))))
-                            .navigationBarsPadding()
-                            .padding(horizontal = 16.dp, vertical = 18.dp),
-                        verticalArrangement = Arrangement.spacedBy(6.dp),
-                    ) {
-                        photo.description?.takeIf { it.isNotBlank() }?.let {
-                            Text(
-                                text = it,
-                                color = Color.White,
-                                style = MaterialTheme.typography.bodyLarge,
-                                fontWeight = FontWeight.Medium,
-                            )
-                        }
-                        photo.auteur?.takeIf { it.isNotBlank() }?.let {
-                            Text(
-                                text = it,
-                                color = Color.White.copy(alpha = 0.82f),
-                                style = MaterialTheme.typography.bodySmall,
-                            )
-                        }
+                    currentPhoto.description?.takeIf { it.isNotBlank() }?.let {
+                        Text(
+                            text = it,
+                            color = Color.White,
+                            style = MaterialTheme.typography.bodyLarge,
+                            fontWeight = FontWeight.Medium,
+                        )
+                    }
+                    currentPhoto.auteur?.takeIf { it.isNotBlank() }?.let {
+                        Text(
+                            text = it,
+                            color = Color.White.copy(alpha = 0.82f),
+                            style = MaterialTheme.typography.bodySmall,
+                        )
                     }
                 }
             }

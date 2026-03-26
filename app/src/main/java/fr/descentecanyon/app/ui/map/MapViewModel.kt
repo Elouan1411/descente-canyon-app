@@ -3,11 +3,12 @@ package fr.descentecanyon.app.ui.map
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
-import fr.descentecanyon.app.map.MAP_OFFLINE_RADIUS_KM
 import fr.descentecanyon.app.domain.model.CanyonSummary
 import fr.descentecanyon.app.domain.usecase.DownloadMapOfflineRegionUseCase
-import fr.descentecanyon.app.domain.usecase.GetNearbyCanyonsUseCase
-import kotlinx.coroutines.Job
+import fr.descentecanyon.app.domain.usecase.SearchCanyonsUseCase
+import fr.descentecanyon.app.domain.model.toSummary
+import fr.descentecanyon.app.map.MAP_OFFLINE_RADIUS_KM
+import kotlin.math.abs
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -16,9 +17,9 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 data class MapUiState(
-    val canyons: List<CanyonSummary> = emptyList(),
+    val mapCanyons: List<CanyonSummary> = emptyList(),
     val selectedCanyon: CanyonSummary? = null,
-    val isLoading: Boolean = false,
+    val isLoading: Boolean = true,
     val isDownloadingOfflineRegion: Boolean = false,
     val error: String? = null,
     val transientMessage: String? = null,
@@ -26,65 +27,72 @@ data class MapUiState(
     val hasRequestedLocationPermission: Boolean = false,
     val userLatitude: Double? = null,
     val userLongitude: Double? = null,
+    val cameraState: MapCameraState? = null,
+    val focusLocationRequestId: Int = 0,
+)
+
+data class MapCameraState(
+    val latitude: Double,
+    val longitude: Double,
+    val zoom: Double,
 )
 
 @HiltViewModel
 class MapViewModel @Inject constructor(
-    private val getNearbyCanyonsUseCase: GetNearbyCanyonsUseCase,
+    searchCanyonsUseCase: SearchCanyonsUseCase,
     private val downloadMapOfflineRegionUseCase: DownloadMapOfflineRegionUseCase,
 ) : ViewModel() {
 
     private val _uiState = MutableStateFlow(MapUiState())
     val uiState: StateFlow<MapUiState> = _uiState.asStateFlow()
 
-    private var nearbyJob: Job? = null
+    init {
+        viewModelScope.launch {
+            searchCanyonsUseCase.observeCatalog().collect { catalog ->
+                val mapCanyons = catalog.mapNotNull { item ->
+                    item.takeIf { it.representativeLat != null && it.representativeLng != null }?.toSummary()
+                }
+                _uiState.update { state ->
+                    state.copy(
+                        mapCanyons = mapCanyons,
+                        selectedCanyon = state.selectedCanyon?.let { selected ->
+                            mapCanyons.firstOrNull { canyon -> canyon.id == selected.id }
+                        },
+                        isLoading = false,
+                    )
+                }
+            }
+        }
+    }
 
     fun onLocationPermissionResult(granted: Boolean) {
         _uiState.update {
             it.copy(
                 hasLocationPermission = granted,
                 hasRequestedLocationPermission = true,
-                error = if (!granted) "La position est necessaire pour charger les canyons proches." else null,
+                error = null,
             )
         }
     }
 
-    fun loadNearby(latitude: Double, longitude: Double, radiusKm: Double = 50.0) {
-        nearbyJob?.cancel()
-        nearbyJob = viewModelScope.launch {
-            _uiState.update {
-                it.copy(
-                    isLoading = true,
-                    error = null,
-                    transientMessage = null,
-                    userLatitude = latitude,
-                    userLongitude = longitude,
-                )
-            }
+    fun focusAroundUser(latitude: Double, longitude: Double) {
+        _uiState.update {
+            it.copy(
+                error = null,
+                transientMessage = null,
+                userLatitude = latitude,
+                userLongitude = longitude,
+                focusLocationRequestId = it.focusLocationRequestId + 1,
+            )
+        }
+    }
 
-            getNearbyCanyonsUseCase(latitude, longitude, radiusKm).collect { result ->
-                result.fold(
-                    onSuccess = { canyons ->
-                        _uiState.update {
-                            it.copy(
-                                canyons = canyons,
-                                selectedCanyon = it.selectedCanyon?.let { selected ->
-                                    canyons.firstOrNull { canyon -> canyon.id == selected.id }
-                                },
-                                isLoading = false,
-                                error = null,
-                            )
-                        }
-                    },
-                    onFailure = { throwable ->
-                        _uiState.update {
-                            it.copy(
-                                isLoading = false,
-                                error = throwable.message ?: "Impossible de charger les canyons proches.",
-                            )
-                        }
-                    },
-                )
+    fun onCameraChanged(cameraState: MapCameraState) {
+        _uiState.update { state ->
+            if (state.cameraState.isSameAs(cameraState)) {
+                state
+            } else {
+                state.copy(cameraState = cameraState)
             }
         }
     }
@@ -95,7 +103,7 @@ class MapViewModel @Inject constructor(
 
     fun onLocationUnavailable() {
         _uiState.update {
-            it.copy(error = "Aucune position recente disponible sur cet appareil.")
+            it.copy(transientMessage = "Aucune position recente disponible sur cet appareil.")
         }
     }
 
@@ -135,7 +143,7 @@ class MapViewModel @Inject constructor(
 
     fun selectCanyon(canyonId: Int) {
         _uiState.update { state ->
-            state.copy(selectedCanyon = state.canyons.firstOrNull { it.id == canyonId })
+            state.copy(selectedCanyon = state.mapCanyons.firstOrNull { it.id == canyonId })
         }
     }
 
@@ -146,4 +154,11 @@ class MapViewModel @Inject constructor(
     fun clearTransientMessage() {
         _uiState.update { it.copy(transientMessage = null) }
     }
+}
+
+private fun MapCameraState?.isSameAs(other: MapCameraState): Boolean {
+    if (this == null) return false
+    return abs(latitude - other.latitude) < 0.000001 &&
+        abs(longitude - other.longitude) < 0.000001 &&
+        abs(zoom - other.zoom) < 0.01
 }

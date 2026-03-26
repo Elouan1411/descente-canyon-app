@@ -58,10 +58,14 @@ fun MapLibreView(
     userLatitude: Double?,
     userLongitude: Double?,
     onMarkerClick: (Int) -> Unit,
+    onVisibleBoundsChanged: (LatLngBounds) -> Unit = {},
+    onCameraChanged: (MapCameraState) -> Unit = {},
     clusterMarkers: Boolean = true,
     watershedGeometryJson: String? = null,
     watershedBounds: LatLngBounds? = null,
     showWatershed: Boolean = false,
+    persistedCameraState: MapCameraState? = null,
+    focusLocationRequestId: Int = 0,
     styleUri: String = MAP_STYLE_URI,
     modifier: Modifier = Modifier,
 ) {
@@ -108,10 +112,14 @@ fun MapLibreView(
                 userLatitude = userLatitude,
                 userLongitude = userLongitude,
                 onMarkerClick = onMarkerClick,
+                onVisibleBoundsChanged = onVisibleBoundsChanged,
+                onCameraChanged = onCameraChanged,
                 clusterMarkers = clusterMarkers,
                 watershedGeometryJson = watershedGeometryJson,
                 watershedBounds = watershedBounds,
                 showWatershed = showWatershed,
+                persistedCameraState = persistedCameraState,
+                focusLocationRequestId = focusLocationRequestId,
                 styleUri = styleUri,
             )
         },
@@ -126,10 +134,15 @@ private class MapRenderState(
     private var userLatitude: Double? = null
     private var userLongitude: Double? = null
     private var onMarkerClick: (Int) -> Unit = {}
+    private var onVisibleBoundsChanged: (LatLngBounds) -> Unit = {}
+    private var onCameraChanged: (MapCameraState) -> Unit = {}
     private var clusterMarkers: Boolean = true
     private var watershedGeometryJson: String? = null
     private var watershedBounds: LatLngBounds? = null
     private var showWatershed: Boolean = false
+    private var persistedCameraState: MapCameraState? = null
+    private var focusLocationRequestId: Int = 0
+    private var lastFocusedLocationRequestId: Int = 0
     private var listenersAttached = false
     private var lastSignature: String? = null
     private var lastFitDataSignature: String? = null
@@ -162,20 +175,28 @@ private class MapRenderState(
         userLatitude: Double?,
         userLongitude: Double?,
         onMarkerClick: (Int) -> Unit,
+        onVisibleBoundsChanged: (LatLngBounds) -> Unit,
+        onCameraChanged: (MapCameraState) -> Unit,
         clusterMarkers: Boolean,
         watershedGeometryJson: String?,
         watershedBounds: LatLngBounds?,
         showWatershed: Boolean,
+        persistedCameraState: MapCameraState?,
+        focusLocationRequestId: Int,
         styleUri: String,
     ) {
         this.markers = markers
         this.userLatitude = userLatitude
         this.userLongitude = userLongitude
         this.onMarkerClick = onMarkerClick
+        this.onVisibleBoundsChanged = onVisibleBoundsChanged
+        this.onCameraChanged = onCameraChanged
         this.clusterMarkers = clusterMarkers
         this.watershedGeometryJson = watershedGeometryJson
         this.watershedBounds = watershedBounds
         this.showWatershed = showWatershed
+        this.persistedCameraState = persistedCameraState
+        this.focusLocationRequestId = focusLocationRequestId
         if (this.styleUri != styleUri) {
             this.styleUri = styleUri
             lastSignature = null
@@ -196,6 +217,8 @@ private class MapRenderState(
         }.onFailure { throwable ->
             Log.e(TAG, "Unable to refresh map data", throwable)
         }
+
+        maybeFocusOnLocation()
     }
 
     private fun attachListeners(map: MapLibreMap) {
@@ -205,6 +228,7 @@ private class MapRenderState(
             }.onFailure { throwable ->
                 Log.e(TAG, "Unable to update map after camera move", throwable)
             }
+            dispatchVisibleBounds(map)
         }
         map.setOnMarkerClickListener { marker ->
             handleMarkerTap(map, marker)
@@ -287,13 +311,18 @@ private class MapRenderState(
         }
 
         if (!didFitCamera) {
-            fitCamera(
-                map = map,
-                displayMarkers = fitMarkers.ifEmpty { displayMarkers },
-                watershedBounds = watershedBounds.takeIf { showWatershed && !watershedGeometryJson.isNullOrBlank() },
-            )
+            val restored = restoreCamera(map)
+            if (!restored) {
+                fitCamera(
+                    map = map,
+                    displayMarkers = fitMarkers.ifEmpty { displayMarkers },
+                    watershedBounds = watershedBounds.takeIf { showWatershed && !watershedGeometryJson.isNullOrBlank() },
+                )
+            }
             didFitCamera = true
         }
+
+        dispatchVisibleBounds(map)
     }
 
     private fun fitCamera(
@@ -303,6 +332,17 @@ private class MapRenderState(
     ) {
         val canyonMarkers = displayMarkers.filterNot { it is MapDisplayMarker.User }
         if (canyonMarkers.isEmpty() && watershedBounds == null) return
+
+        if (canyonMarkers.size == 1 && watershedBounds == null) {
+            val marker = canyonMarkers.first()
+            map.moveCamera(
+                CameraUpdateFactory.newLatLngZoom(
+                    LatLng(marker.latitude, marker.longitude),
+                    13.6,
+                )
+            )
+            return
+        }
 
         val bounds = LatLngBounds.Builder().apply {
             canyonMarkers.forEach { marker ->
@@ -381,6 +421,46 @@ private class MapRenderState(
                 append(':').append(watershedGeometryJson.hashCode())
                 append(':').append(watershedBounds?.toSignature().orEmpty())
             }
+        }
+    }
+
+    private fun maybeFocusOnLocation() {
+        val map = map ?: return
+        val latitude = userLatitude ?: return
+        val longitude = userLongitude ?: return
+        if (focusLocationRequestId == 0 || focusLocationRequestId == lastFocusedLocationRequestId) return
+
+        lastFocusedLocationRequestId = focusLocationRequestId
+        didFitCamera = true
+        map.animateCamera(
+            CameraUpdateFactory.newLatLngZoom(LatLng(latitude, longitude), 10.8),
+            500,
+        )
+    }
+
+    private fun restoreCamera(map: MapLibreMap): Boolean {
+        val cameraState = persistedCameraState ?: return false
+        map.moveCamera(
+            CameraUpdateFactory.newLatLngZoom(
+                LatLng(cameraState.latitude, cameraState.longitude),
+                cameraState.zoom,
+            )
+        )
+        return true
+    }
+
+    private fun dispatchVisibleBounds(map: MapLibreMap) {
+        runCatching {
+            map.projection.visibleRegion?.latLngBounds
+        }.getOrNull()?.let(onVisibleBoundsChanged)
+        map.cameraPosition.target?.let { target ->
+            onCameraChanged(
+                MapCameraState(
+                    latitude = target.latitude,
+                    longitude = target.longitude,
+                    zoom = map.cameraPosition.zoom,
+                )
+            )
         }
     }
 

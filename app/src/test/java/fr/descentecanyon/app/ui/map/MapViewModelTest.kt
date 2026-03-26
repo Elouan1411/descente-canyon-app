@@ -1,10 +1,12 @@
 package fr.descentecanyon.app.ui.map
 
 import fr.descentecanyon.app.domain.model.CanyonSummary
+import fr.descentecanyon.app.domain.model.CanyonSearchItem
+import fr.descentecanyon.app.domain.model.CotationRating
 import fr.descentecanyon.app.domain.repository.CanyonRepository
 import fr.descentecanyon.app.domain.repository.MapOfflineRepository
 import fr.descentecanyon.app.domain.usecase.DownloadMapOfflineRegionUseCase
-import fr.descentecanyon.app.domain.usecase.GetNearbyCanyonsUseCase
+import fr.descentecanyon.app.domain.usecase.SearchCanyonsUseCase
 import fr.descentecanyon.app.testutil.MainDispatcherRule
 import io.mockk.every
 import io.mockk.mockk
@@ -26,72 +28,46 @@ class MapViewModelTest {
 
     private val canyonRepository = mockk<CanyonRepository>()
     private val mapOfflineRepository = mockk<MapOfflineRepository>()
-    private val getNearbyCanyonsUseCase = GetNearbyCanyonsUseCase(canyonRepository)
+    private val searchCanyonsUseCase = SearchCanyonsUseCase(canyonRepository)
     private val downloadMapOfflineRegionUseCase = DownloadMapOfflineRegionUseCase(mapOfflineRepository)
 
     @Test
     @OptIn(ExperimentalCoroutinesApi::class)
     fun `permission denial updates ui state`() = runTest {
-        val viewModel = MapViewModel(getNearbyCanyonsUseCase, downloadMapOfflineRegionUseCase)
+        every { canyonRepository.observeSearchCatalog() } returns flowOf(emptyList())
+        val viewModel = MapViewModel(searchCanyonsUseCase, downloadMapOfflineRegionUseCase)
 
         viewModel.onLocationPermissionResult(false)
 
         assertFalse(viewModel.uiState.value.hasLocationPermission)
         assertTrue(viewModel.uiState.value.hasRequestedLocationPermission)
-        assertEquals(
-            "La position est necessaire pour charger les canyons proches.",
-            viewModel.uiState.value.error,
-        )
+        assertEquals(null, viewModel.uiState.value.error)
     }
 
     @Test
     @OptIn(ExperimentalCoroutinesApi::class)
-    fun `load nearby stores location and results`() = runTest {
-        every { canyonRepository.getCanyonsNearby(43.7, 6.9, 50.0) } returns flowOf(
-            Result.success(
-                listOf(
-                    CanyonSummary(
-                        id = 42,
-                        nom = "Riolan",
-                        pays = "France",
-                        cotation = "v4a4III",
-                        url = "/canyoning/canyon/42/riolan.html",
-                        latitude = 43.71,
-                        longitude = 6.88,
-                    )
-                )
-            )
-        )
-        val viewModel = MapViewModel(getNearbyCanyonsUseCase, downloadMapOfflineRegionUseCase)
+    fun `focus around user stores location and increments request id`() = runTest {
+        every { canyonRepository.observeSearchCatalog() } returns flowOf(listOf(catalogItem(id = 42)))
+        val viewModel = MapViewModel(searchCanyonsUseCase, downloadMapOfflineRegionUseCase)
 
-        viewModel.loadNearby(43.7, 6.9)
+        advanceUntilIdle()
+
+        viewModel.focusAroundUser(43.7, 6.9)
         advanceUntilIdle()
 
         assertFalse(viewModel.uiState.value.isLoading)
         assertEquals(43.7, viewModel.uiState.value.userLatitude)
         assertEquals(6.9, viewModel.uiState.value.userLongitude)
-        assertEquals(listOf(42), viewModel.uiState.value.canyons.map { it.id })
+        assertEquals(1, viewModel.uiState.value.focusLocationRequestId)
+        assertEquals(listOf(42), viewModel.uiState.value.mapCanyons.map { it.id })
     }
 
     @Test
     @OptIn(ExperimentalCoroutinesApi::class)
     fun `select canyon exposes bottom sheet item`() = runTest {
-        every { canyonRepository.getCanyonsNearby(43.7, 6.9, 50.0) } returns flowOf(
-            Result.success(
-                listOf(
-                    CanyonSummary(
-                        id = 7,
-                        nom = "Aiglun",
-                        pays = "France",
-                        cotation = "v5a5IV",
-                        url = "/canyoning/canyon/7/aiglun.html",
-                    )
-                )
-            )
-        )
-        val viewModel = MapViewModel(getNearbyCanyonsUseCase, downloadMapOfflineRegionUseCase)
+        every { canyonRepository.observeSearchCatalog() } returns flowOf(listOf(catalogItem(id = 7, nom = "Aiglun")))
+        val viewModel = MapViewModel(searchCanyonsUseCase, downloadMapOfflineRegionUseCase)
 
-        viewModel.loadNearby(43.7, 6.9)
         advanceUntilIdle()
         viewModel.selectCanyon(7)
 
@@ -103,25 +79,12 @@ class MapViewModelTest {
     @Test
     @OptIn(ExperimentalCoroutinesApi::class)
     fun `download selected region exposes success message`() = runTest {
-        every { canyonRepository.getCanyonsNearby(43.7, 6.9, 50.0) } returns flowOf(
-            Result.success(
-                listOf(
-                    CanyonSummary(
-                        id = 7,
-                        nom = "Aiglun",
-                        pays = "France",
-                        cotation = "v5a5IV",
-                        url = "/canyoning/canyon/7/aiglun.html",
-                        latitude = 43.72,
-                        longitude = 6.95,
-                    )
-                )
-            )
+        every { canyonRepository.observeSearchCatalog() } returns flowOf(
+            listOf(catalogItem(id = 7, nom = "Aiglun", latitude = 43.72, longitude = 6.95))
         )
         coEvery { mapOfflineRepository.downloadRegion("Aiglun", 43.72, 6.95, 3.0) } returns Result.success(Unit)
-        val viewModel = MapViewModel(getNearbyCanyonsUseCase, downloadMapOfflineRegionUseCase)
+        val viewModel = MapViewModel(searchCanyonsUseCase, downloadMapOfflineRegionUseCase)
 
-        viewModel.loadNearby(43.7, 6.9)
         advanceUntilIdle()
         viewModel.selectCanyon(7)
         viewModel.downloadSelectedRegion()
@@ -130,4 +93,25 @@ class MapViewModelTest {
         assertEquals("Zone de carte telechargee pour Aiglun", viewModel.uiState.value.transientMessage)
         assertTrue(!viewModel.uiState.value.isDownloadingOfflineRegion)
     }
+
+    private fun catalogItem(
+        id: Int,
+        nom: String = "Riolan",
+        latitude: Double = 43.71,
+        longitude: Double = 6.88,
+    ) = CanyonSearchItem(
+        id = id,
+        nom = nom,
+        nomComplet = nom,
+        pays = "France",
+        countryTokens = listOf("France"),
+        cotation = "v4a4III",
+        cotationRating = CotationRating.parse("v4a4III"),
+        url = "/canyoning/canyon/$id/${nom.lowercase()}.html",
+        searchableText = nom,
+        normalizedNom = nom.lowercase(),
+        normalizedNomComplet = nom.lowercase(),
+        representativeLat = latitude,
+        representativeLng = longitude,
+    )
 }
