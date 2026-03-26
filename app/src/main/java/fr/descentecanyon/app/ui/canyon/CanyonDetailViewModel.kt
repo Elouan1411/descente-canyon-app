@@ -6,10 +6,12 @@ import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import fr.descentecanyon.app.data.network.ConnectivityObserver
 import fr.descentecanyon.app.domain.model.CanyonDetail
+import fr.descentecanyon.app.domain.model.CanyonWeather
 import fr.descentecanyon.app.domain.repository.FavoritesRepository
 import fr.descentecanyon.app.domain.usecase.DownloadPhotoForOfflineUseCase
 import fr.descentecanyon.app.domain.usecase.GetCanyonDetailUseCase
 import fr.descentecanyon.app.domain.usecase.GetCanyonPreviewUseCase
+import fr.descentecanyon.app.domain.usecase.GetCanyonWeatherUseCase
 import fr.descentecanyon.app.domain.usecase.ToggleFavoriteUseCase
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -24,6 +26,9 @@ data class CanyonDetailUiState(
     val isLoadingPhotos: Boolean = false,
     val isLoadingDebits: Boolean = false,
     val error: String? = null,
+    val weather: CanyonWeather? = null,
+    val isLoadingWeather: Boolean = false,
+    val weatherError: String? = null,
     val isFavorite: Boolean = false,
     val downloadingPhotoIds: Set<Long> = emptySet(),
     val isOnline: Boolean = true,
@@ -35,6 +40,7 @@ class CanyonDetailViewModel @Inject constructor(
     savedStateHandle: SavedStateHandle,
     private val getCanyonPreviewUseCase: GetCanyonPreviewUseCase,
     private val getCanyonDetailUseCase: GetCanyonDetailUseCase,
+    private val getCanyonWeatherUseCase: GetCanyonWeatherUseCase,
     private val toggleFavoriteUseCase: ToggleFavoriteUseCase,
     private val downloadPhotoForOfflineUseCase: DownloadPhotoForOfflineUseCase,
     private val connectivityObserver: ConnectivityObserver,
@@ -60,7 +66,10 @@ class CanyonDetailViewModel @Inject constructor(
                     isLoading = true,
                     isLoadingPhotos = true,
                     isLoadingDebits = true,
+                    isLoadingWeather = false,
                     error = null,
+                    weather = null,
+                    weatherError = null,
                 )
             }
             getCanyonPreviewUseCase(id).onSuccess { preview ->
@@ -83,9 +92,13 @@ class CanyonDetailViewModel @Inject constructor(
                             isLoading = false,
                             isLoadingPhotos = false,
                             isLoadingDebits = false,
+                            isLoadingWeather = true,
+                            weather = null,
                             error = null,
+                            weatherError = null,
                         )
                     }
+                    loadWeather(detail)
                 },
                 onFailure = { throwable ->
                     _uiState.update {
@@ -93,7 +106,33 @@ class CanyonDetailViewModel @Inject constructor(
                             isLoading = false,
                             isLoadingPhotos = false,
                             isLoadingDebits = false,
+                            isLoadingWeather = false,
                             error = throwable.message ?: "Erreur inconnue",
+                        )
+                    }
+                },
+            )
+        }
+    }
+
+    private fun loadWeather(detail: CanyonDetail) {
+        viewModelScope.launch {
+            getCanyonWeatherUseCase(detail).fold(
+                onSuccess = { weather ->
+                    _uiState.update {
+                        it.copy(
+                            weather = weather,
+                            isLoadingWeather = false,
+                            weatherError = null,
+                        )
+                    }
+                },
+                onFailure = { throwable ->
+                    _uiState.update {
+                        it.copy(
+                            weather = null,
+                            isLoadingWeather = false,
+                            weatherError = throwable.message ?: "Meteo indisponible",
                         )
                     }
                 },

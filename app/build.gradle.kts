@@ -58,7 +58,7 @@ android {
         versionCode = 1
         versionName = "1.0.0"
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = "fr.descentecanyon.app.e2e.runner.HiltTestRunner"
     }
 
     buildTypes {
@@ -142,6 +142,12 @@ dependencies {
     // JSoup (HTML parsing)
     implementation(libs.jsoup)
 
+    // Ktor (HTTP client)
+    implementation(libs.ktor.client.core)
+    implementation(libs.ktor.client.android)
+    implementation(libs.ktor.client.content.negotiation)
+    implementation(libs.ktor.serialization.kotlinx.json)
+
     // Kotlin Serialization
     implementation(libs.kotlinx.serialization.json)
 
@@ -153,7 +159,7 @@ dependencies {
 
     // Coil (image loading with caching)
     implementation(libs.coil.compose)
-    implementation(libs.coil.network.ktor)
+    implementation(libs.coil.network.okhttp)
 
     // Testing
     testImplementation(libs.junit)
@@ -162,6 +168,11 @@ dependencies {
     testImplementation(libs.kotlinx.coroutines.test)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    androidTestImplementation(libs.androidx.test.runner)
+    androidTestImplementation(libs.androidx.test.rules)
+    androidTestImplementation(libs.androidx.uiautomator)
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.ui.test.junit4)
+    androidTestImplementation(libs.hilt.android.testing)
+    kspAndroidTest(libs.hilt.android.compiler)
 }
