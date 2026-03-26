@@ -77,6 +77,16 @@ def normalize_slug(value: str) -> str:
     return result.strip("-")
 
 
+def france_department_srs(department: str) -> str:
+    if department == "La Réunion":
+        return "EPSG:2975"
+    if department in {"Martinique", "Guadeloupe"}:
+        return "EPSG:32620"
+    if department == "Mayotte":
+        return "EPSG:32738"
+    return "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs"
+
+
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description="Generates a hybrid source config: IGN France, Copernicus Europe, MERIT fallback."
@@ -184,7 +194,7 @@ def main() -> int:
                 "mode": "derive_local_hydrology",
                 "dem": str(rge_vrt),
                 "availabilityPath": str(rge_department_vrt),
-                "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+                "srs": france_department_srs(department),
                 "bufferKm": 20.0,
                 "searchRadiusM": 120.0,
                 "channelMinUpaKm2": 0.05,
@@ -207,7 +217,7 @@ def main() -> int:
                 "mode": "derive_local_hydrology",
                 "dem": str(bd_vrt),
                 "availabilityPath": str(bd_department_vrt),
-                "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+                "srs": france_department_srs(department),
                 "bufferKm": 20.0,
                 "searchRadiusM": 120.0,
                 "channelMinUpaKm2": 0.05,
