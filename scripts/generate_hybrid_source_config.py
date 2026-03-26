@@ -240,6 +240,7 @@ def main() -> int:
             "name": "slovenia-dmv5-direct",
             "mode": "derive_local_hydrology",
             "dem": "build/watersheds/slovenia-national-dem/vrt/_all_downloaded.vrt",
+            "srs": "EPSG:3794",
             "bufferKm": 20.0,
             "processingResolutionM": 10.0,
             "candidateStrategy": "nearest_channel",

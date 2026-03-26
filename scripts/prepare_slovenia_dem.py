@@ -11,6 +11,9 @@ from pathlib import Path
 from typing import Any
 from urllib.error import URLError
 
+import rasterio
+from affine import Affine
+
 from cli_tools import default_gdalbuildvrt, resolve_executable
 from rasterio.warp import transform
 
@@ -65,16 +68,14 @@ def download_file(url: str, destination: Path) -> None:
     temp_path = destination.with_suffix(destination.suffix + ".part")
     for attempt in range(1, 4):
         try:
-            request = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
-            with urllib.request.urlopen(request, timeout=300) as response, open(temp_path, "wb") as handle:
-                while True:
-                    chunk = response.read(1024 * 1024)
-                    if not chunk:
-                        break
-                    handle.write(chunk)
+            urllib.request.urlretrieve(url, temp_path)
             temp_path.replace(destination)
             return
         except URLError as exc:
+            last_error = exc
+            temp_path.unlink(missing_ok=True)
+            time.sleep(5 * attempt)
+        except Exception as exc:
             last_error = exc
             temp_path.unlink(missing_ok=True)
             time.sleep(5 * attempt)
@@ -99,6 +100,38 @@ def build_vrt(gdalbuildvrt: str, xyz_paths: list[Path], vrt_path: Path) -> None:
     input_list = vrt_path.with_suffix(".txt")
     input_list.write_text("\n".join(str(path) for path in xyz_paths), encoding="utf-8")
     subprocess.run([gdalbuildvrt, "-input_file_list", str(input_list), str(vrt_path)], check=True)
+
+
+def normalize_xyz_to_geotiff(xyz_path: Path, tif_path: Path) -> Path:
+    tif_path.parent.mkdir(parents=True, exist_ok=True)
+    if tif_path.exists() and tif_path.stat().st_size > 0:
+        return tif_path
+    with rasterio.open(xyz_path) as src:
+        data = src.read()
+        profile = src.profile.copy()
+        profile.pop("blockxsize", None)
+        profile.pop("blockysize", None)
+        profile.pop("tiled", None)
+        transform_in = src.transform
+        if transform_in.e > 0:
+            data = data[:, ::-1, :]
+            transform_in = Affine(
+                transform_in.a,
+                transform_in.b,
+                transform_in.c,
+                transform_in.d,
+                -transform_in.e,
+                transform_in.f + src.height * transform_in.e,
+            )
+        profile.update(
+            driver="GTiff",
+            compress="lzw",
+            tiled=False,
+            transform=transform_in,
+        )
+        with rasterio.open(tif_path, "w", **profile) as dst:
+            dst.write(data)
+    return tif_path
 
 
 def xyz_bounds(path: Path) -> tuple[float, float, float, float] | None:
@@ -154,10 +187,14 @@ def main() -> int:
 
     xyz_paths = sorted((output_dir / "raw").rglob("*.xyz"))
     xyz_paths = select_xyz_paths(xyz_paths, bbox)
+    tif_paths = []
+    for path in xyz_paths:
+        tif_target = (output_dir / "tif" / path.relative_to(output_dir / "raw")).with_suffix(".tif")
+        tif_paths.append(normalize_xyz_to_geotiff(path, tif_target))
     vrt_path = output_dir / "vrt" / "_all_downloaded.vrt"
-    build_vrt(gdalbuildvrt, xyz_paths, vrt_path)
-    write_json(output_dir / "downloaded_units.json", {"downloads": downloaded, "xyzCount": len(xyz_paths), "bbox3794": bbox})
-    print(json.dumps({"xyzCount": len(xyz_paths), "vrt": str(vrt_path)}, ensure_ascii=False, indent=2))
+    build_vrt(gdalbuildvrt, tif_paths, vrt_path)
+    write_json(output_dir / "downloaded_units.json", {"downloads": downloaded, "xyzCount": len(xyz_paths), "tifCount": len(tif_paths), "bbox3794": bbox})
+    print(json.dumps({"xyzCount": len(xyz_paths), "tifCount": len(tif_paths), "vrt": str(vrt_path)}, ensure_ascii=False, indent=2))
     return 0
 
 
