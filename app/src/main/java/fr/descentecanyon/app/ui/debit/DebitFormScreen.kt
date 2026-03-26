@@ -27,6 +27,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -39,6 +40,7 @@ import fr.descentecanyon.app.domain.model.NiveauDebit
 import fr.descentecanyon.app.domain.model.ObservationType
 import fr.descentecanyon.app.domain.model.WaterTemperature
 import fr.descentecanyon.app.ui.components.CompactAppBar
+import fr.descentecanyon.app.ui.test.TestTags
 
 @OptIn(androidx.compose.material3.ExperimentalMaterial3Api::class)
 @Composable
@@ -96,6 +98,7 @@ fun DebitFormScreen(
                     text = stringResource(R.string.debit_pending_count, uiState.pendingCount),
                     style = MaterialTheme.typography.bodyMedium,
                     color = MaterialTheme.colorScheme.primary,
+                    modifier = Modifier.testTag(TestTags.debitPendingCount),
                 )
             }
 
@@ -104,13 +107,13 @@ fun DebitFormScreen(
                     value = uiState.observerName,
                     onValueChange = viewModel::onObserverNameChanged,
                     label = { Text(stringResource(R.string.debit_observer_name)) },
-                    modifier = Modifier.fillMaxWidth(),
+                    modifier = Modifier.fillMaxWidth().testTag(TestTags.debitObserverNameField),
                 )
                 OutlinedTextField(
                     value = uiState.observerEmail,
                     onValueChange = viewModel::onObserverEmailChanged,
                     label = { Text(stringResource(R.string.debit_observer_email)) },
-                    modifier = Modifier.fillMaxWidth(),
+                    modifier = Modifier.fillMaxWidth().testTag(TestTags.debitObserverEmailField),
                 )
             } else {
                 Text(
@@ -123,7 +126,7 @@ fun DebitFormScreen(
                 value = uiState.observationDate.toString(),
                 onValueChange = viewModel::onObservationDateChanged,
                 label = { Text(stringResource(R.string.debit_observation_date)) },
-                modifier = Modifier.fillMaxWidth(),
+                modifier = Modifier.fillMaxWidth().testTag(TestTags.debitObservationDateField),
             )
 
             FormChipSection(
@@ -195,7 +198,7 @@ fun DebitFormScreen(
                 value = uiState.comment,
                 onValueChange = viewModel::onCommentChanged,
                 label = { Text(stringResource(R.string.debit_comment)) },
-                modifier = Modifier.fillMaxWidth(),
+                modifier = Modifier.fillMaxWidth().testTag(TestTags.debitCommentField),
                 minLines = 4,
             )
 
@@ -209,7 +212,7 @@ fun DebitFormScreen(
 
             Button(
                 onClick = viewModel::submit,
-                modifier = Modifier.fillMaxWidth(),
+                modifier = Modifier.fillMaxWidth().testTag(TestTags.debitSubmitButton),
                 enabled = !uiState.isSubmitting,
             ) {
                 if (uiState.isSubmitting) {

@@ -21,6 +21,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
@@ -28,6 +29,7 @@ import androidx.compose.ui.unit.dp
 import fr.descentecanyon.app.R
 import fr.descentecanyon.app.domain.model.CanyonSummary
 import fr.descentecanyon.app.domain.model.NiveauDebit
+import fr.descentecanyon.app.ui.test.TestTags
 import fr.descentecanyon.app.ui.theme.CotationDifficile
 import fr.descentecanyon.app.ui.theme.CotationFacile
 import fr.descentecanyon.app.ui.theme.CotationMoyen
@@ -41,7 +43,7 @@ fun CanyonSummaryCard(
 ) {
     Card(
         onClick = onClick,
-        modifier = modifier.fillMaxWidth(),
+        modifier = modifier.fillMaxWidth().testTag(TestTags.canyonCard(canyon.id)),
         elevation = CardDefaults.cardElevation(defaultElevation = 2.dp),
     ) {
         Column(

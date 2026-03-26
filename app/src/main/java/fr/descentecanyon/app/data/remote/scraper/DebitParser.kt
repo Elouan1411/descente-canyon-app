@@ -95,7 +95,7 @@ internal object DebitParser {
 
             // Column 4: Last debit date
             val dateLink = tds[3].selectFirst("a")
-            val dateRaw = dateLink?.ownText()?.trim() ?: ""
+            val dateRaw = sanitizeLatestDebitDate(dateLink?.text().orEmpty().ifBlank { tds[3].text() })
 
             // Determine most recent debit level from the last non-empty day column
             var lastDebitLevel = "INCONNU"
@@ -122,5 +122,13 @@ internal object DebitParser {
         }
 
         return results
+    }
+
+    private fun sanitizeLatestDebitDate(raw: String): String {
+        return raw
+            .replace(Regex("(?i)\\bnon\\s+parcouru\\b"), "")
+            .replace(Regex("(?i)\\bparcouru\\b"), "")
+            .replace(Regex("\\s+"), " ")
+            .trim()
     }
 }

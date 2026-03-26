@@ -23,14 +23,16 @@ object DateParser {
         "septembre" to 9, "octobre" to 10, "novembre" to 11, "décembre" to 12, "decembre" to 12,
     )
 
-    // Matches: "dim. 22 mars 2026", "lun 1 juin 2025", "mar.  15  janvier  2025"
+    // Matches: "dim. 22 mars 2026", "lun 1 juin 2025", "mar. 15 janvier 25"
     private val FRENCH_LONG_REGEX = Regex(
-        """(?:\w+\.?\s+)?(\d{1,2})\s+(\p{L}+)\s+(\d{4})""",
+        """(?:\w+\.?\s+)?(\d{1,2})\s+(\p{L}+)\s+(\d{2,4})""",
     )
 
-    private val DAY_MONTH_REGEX = Regex("""(\d{1,2})/(\d{2})""")
+    private val DAY_MONTH_REGEX = Regex("""(\d{1,2})/(\d{1,2})""")
 
-    private val FRENCH_DAY_MONTH_REGEX = Regex("""(?:\p{L}+\.?\s+)?(\d{1,2})/(\d{2})""")
+    private val FRENCH_DAY_MONTH_REGEX = Regex("""(?:\p{L}+\.?\s+)?(\d{1,2})/(\d{1,2})""")
+
+    private val DMY_SLASH_REGEX = Regex("""(?:\p{L}+\.?\s+)?(\d{1,2})/(\d{1,2})/(\d{2,4})""")
 
     private val DMY_DASH_REGEX = Regex("""(\d{2})-(\d{2})-(\d{4})""")
 
@@ -44,6 +46,7 @@ object DateParser {
 
         return tryParseIso(trimmed)
             ?: tryParseFrenchLong(trimmed)
+            ?: tryParseDmySlash(trimmed)
             ?: tryParseFrenchDayMonth(trimmed)
             ?: tryParseDayMonthSlash(trimmed)
             ?: tryParseDmyDash(trimmed)
@@ -83,9 +86,24 @@ object DateParser {
 
         val day = match.groupValues[1].toIntOrNull() ?: return null
         val monthName = match.groupValues[2]
-        val year = match.groupValues[3].toIntOrNull() ?: return null
+        val year = normalizeYear(match.groupValues[3].toIntOrNull() ?: return null)
         val month = FRENCH_MONTHS[monthName] ?: return null
 
+        return try {
+            LocalDate.of(year, month, day).format(DateTimeFormatter.ISO_LOCAL_DATE)
+        } catch (_: Exception) {
+            null
+        }
+    }
+
+    /**
+     * "dim. 22/03/2026", "22/03/24"
+     */
+    private fun tryParseDmySlash(value: String): String? {
+        val match = DMY_SLASH_REGEX.matchEntire(value.trim()) ?: return null
+        val day = match.groupValues[1].toIntOrNull() ?: return null
+        val month = match.groupValues[2].toIntOrNull() ?: return null
+        val year = normalizeYear(match.groupValues[3].toIntOrNull() ?: return null)
         return try {
             LocalDate.of(year, month, day).format(DateTimeFormatter.ISO_LOCAL_DATE)
         } catch (_: Exception) {
@@ -134,5 +152,9 @@ object DateParser {
         } catch (_: Exception) {
             null
         }
+    }
+
+    private fun normalizeYear(year: Int): Int {
+        return if (year in 0..99) 2000 + year else year
     }
 }

@@ -128,4 +128,22 @@ class DateParserTest {
         val result = DateParser.parseToIsoString("sam. 8 aout 2025")
         assertEquals("2025-08-08", result)
     }
+
+    @Test
+    fun `parse French long date with two digit year`() {
+        val result = DateParser.parseToIsoString("sam. 8 aout 25")
+        assertEquals("2025-08-08", result)
+    }
+
+    @Test
+    fun `parse day month year with slashes`() {
+        val result = DateParser.parseToIsoString("dim. 22/03/2026")
+        assertEquals("2026-03-22", result)
+    }
+
+    @Test
+    fun `parse day month two digit year with slashes`() {
+        val result = DateParser.parseToIsoString("31/08/24")
+        assertEquals("2024-08-31", result)
+    }
 }

@@ -1,5 +1,6 @@
 package fr.descentecanyon.app.data.remote.scraper
 
+import fr.descentecanyon.app.data.mapper.DateParser
 import org.jsoup.Jsoup
 import org.junit.Assert.*
 import org.junit.Test
@@ -68,6 +69,16 @@ class DebitParserTest {
         val result = DebitParser.parseLatestDebits(doc)
         for (debit in result) {
             assertTrue("Canyon name should not be blank", debit.canyonNom.isNotBlank())
+        }
+    }
+
+    @Test
+    fun `latest debits expose parsable dates`() {
+        val doc = Jsoup.parse(loadHtml("derniers_debits.html"))
+        val result = DebitParser.parseLatestDebits(doc)
+
+        for (debit in result) {
+            assertNotNull("Date should be parsable: ${debit.date}", DateParser.parseToLocalDate(debit.date))
         }
     }
 }
