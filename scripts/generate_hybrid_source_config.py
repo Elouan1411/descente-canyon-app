@@ -367,16 +367,28 @@ def main() -> int:
         }
     )
 
-    add_national_source(
-        name="portugal-dgt-mdt2m",
-        country="Portugal",
-        manifest_path=args.portugal_manifest,
-        output_dir="build/watersheds/portugal-national-dem",
-        unit_fields=["departement", "region"],
-        srs="EPSG:3763",
+    sources.append(
+        {
+            "name": "portugal-dgt-mdt2m",
+            "mode": "derive_local_hydrology",
+            "dem": "build/watersheds/portugal-national-dem/vrt/_all_downloaded.vrt",
+            "srs": "EPSG:3763",
+            "bufferKm": 15.0,
+            "processingResolutionM": 10.0,
+            "candidateStrategy": "nearest_channel",
+            "searchRadiusM": 120.0,
+            "channelMinUpaKm2": 0.05,
+            "autoPrepare": {
+                "provider": "portugal-dgt-api",
+                "outputDir": "build/watersheds/portugal-national-dem",
+                "bufferKm": 15.0,
+                "alwaysPrepare": True,
+            },
+            "match": {
+                "pays": "Portugal"
+            }
+        }
     )
-    sources[-1]["bufferKm"] = 15.0
-    sources[-1]["processingResolutionM"] = 10.0
 
     sources.append(
         {

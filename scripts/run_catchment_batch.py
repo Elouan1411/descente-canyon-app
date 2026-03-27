@@ -46,6 +46,7 @@ DYNAMIC_AUTOPREPARE_PROVIDERS = {
     "austria-als",
     "slovenia-jgp",
     "liguria-wcs",
+    "portugal-dgt-api",
     "copernicus",
 }
 
@@ -374,6 +375,26 @@ def auto_prepare_source(
         subprocess.run(command, check=True)
         prepared = dict(source)
         prepared["dem"] = str(local_output_dir / "raw" / "liguria_5m.tif")
+        prepared["preparedDynamically"] = True
+        return prepared
+
+    if provider == "portugal-dgt-api":
+        local_output_dir = output_dir / "prepared_sources" / f"portugal-{canyon['id']}"
+        command = [
+            sys.executable,
+            "scripts/prepare_portugal_dem.py",
+            "--output-dir",
+            str(local_output_dir),
+            "--cache-dir",
+            str(Path(auto_prepare.get("outputDir", "build/watersheds/portugal-national-dem")) / "raw"),
+            "--buffer-km",
+            str(auto_prepare.get("bufferKm", source.get("bufferKm", 15.0))),
+        ]
+        for point in points:
+            command.extend(["--point", f"{point['latitude']},{point['longitude']}"])
+        subprocess.run(command, check=True)
+        prepared = dict(source)
+        prepared["dem"] = str(local_output_dir / "vrt" / "_all_downloaded.vrt")
         prepared["preparedDynamically"] = True
         return prepared
 
