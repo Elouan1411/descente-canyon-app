@@ -20,11 +20,14 @@ The pipeline is split into four steps:
    - selects one weather target per canyon
    - uses watershed bbox center when available
    - falls back to entry / upstream parking / other geo points
-   - plans `J-7 08:00 -> J 08:00` weather windows and merges overlaps per target
+   - plans `J-7 08:00 -> J 08:00` weather windows
+   - batches nearby windows per target to reduce API calls with `--fetch-max-gap-days` and `--fetch-max-span-days`
 
 3. `fetch_open_meteo_archive.py`
    - fetches merged historical windows from Open-Meteo archive
-   - caches raw API payloads and writes flattened hourly rows
+   - resumes from `weather_window_manifest.jsonl` and `raw-json/` on rerun
+   - writes flattened hourly rows incrementally to avoid losing progress
+   - retries rate limits / temporary API failures with exponential backoff
 
 4. `build_debit_training_features.py`
    - joins valid observations with hourly weather cache
@@ -38,8 +41,8 @@ The pipeline is split into four steps:
 
 ```bash
 python scripts/build_debit_observation_dataset.py --all --workers 6 --output-dir build/debit-pipeline/observations
-python scripts/plan_debit_weather_windows.py --output-dir build/debit-pipeline/weather-planning
-python scripts/fetch_open_meteo_archive.py --output-dir build/debit-pipeline/weather-archive --workers 4
+python scripts/plan_debit_weather_windows.py --output-dir build/debit-pipeline/weather-planning --fetch-max-gap-days 30 --fetch-max-span-days 90
+python scripts/fetch_open_meteo_archive.py --output-dir build/debit-pipeline/weather-archive --workers 2 --request-delay-ms 1000
 python scripts/build_debit_training_features.py --output-dir build/debit-pipeline/training-features
 python scripts/train_debit_baseline_model.py --features-path build/debit-pipeline/training-features/training_features.jsonl
 ```
@@ -57,6 +60,8 @@ python scripts/build_debit_observation_dataset.py --all \
   --reuse-observations-path build/debit-pipeline/observations/all_debit_observations.jsonl \
   --output-dir build/debit-pipeline/observations
 ```
+
+If the weather archive fetch is interrupted, rerun the exact same command. Already completed windows are skipped automatically.
 
 ## Quality Filter
 

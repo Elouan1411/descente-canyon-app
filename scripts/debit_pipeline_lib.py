@@ -5,6 +5,7 @@ import json
 import re
 import time
 import unicodedata
+from json import JSONDecodeError
 from datetime import date, datetime, time as datetime_time, timedelta
 from pathlib import Path
 from typing import Any
@@ -778,7 +779,7 @@ def build_weather_target(
             min_longitude, min_latitude, max_longitude, max_latitude = bbox
             latitude = (float(min_latitude) + float(max_latitude)) / 2.0
             longitude = (float(min_longitude) + float(max_longitude)) / 2.0
-            target_id = stable_id("target", "watershed", canyon_id, round(latitude, 6), round(longitude, 6))
+            target_id = stable_id("target", "watershed", round(latitude, 6), round(longitude, 6))
             return {
                 "targetId": target_id,
                 "canyonId": canyon_id,
@@ -796,7 +797,6 @@ def build_weather_target(
     target_id = stable_id(
         "target",
         "point",
-        canyon_id,
         best_point.get("type"),
         round(float(best_point["latitude"]), 6),
         round(float(best_point["longitude"]), 6),
@@ -839,11 +839,19 @@ def build_observation_window(
     }
 
 
-def merge_windows(observation_windows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+def merge_windows(
+    observation_windows: list[dict[str, Any]],
+    *,
+    max_gap_days: int = 0,
+    max_span_days: int | None = None,
+) -> list[dict[str, Any]]:
     merged: list[dict[str, Any]] = []
     grouped: dict[str, list[dict[str, Any]]] = {}
     for window in observation_windows:
         grouped.setdefault(window["targetId"], []).append(window)
+
+    max_gap = timedelta(days=max(max_gap_days, 0))
+    max_span = timedelta(days=max_span_days) if max_span_days is not None else None
 
     for target_id, windows in grouped.items():
         ordered = sorted(windows, key=lambda item: item["windowStartLocal"])
@@ -862,7 +870,12 @@ def merge_windows(observation_windows: list[dict[str, Any]]) -> list[dict[str, A
                 continue
 
             current_end = datetime.fromisoformat(current["windowEndLocal"])
-            if start <= current_end:
+            current_start = datetime.fromisoformat(current["windowStartLocal"])
+            merged_end = max(current_end, end)
+            gap = start - current_end
+            span = merged_end - current_start
+            can_merge = start <= current_end or gap <= max_gap
+            if can_merge and (max_span is None or span <= max_span):
                 if end > current_end:
                     current["windowEndLocal"] = window["windowEndLocal"]
                     current["archiveEndDate"] = window["archiveEndDate"]
@@ -873,6 +886,9 @@ def merge_windows(observation_windows: list[dict[str, Any]]) -> list[dict[str, A
             current["observationIds"] = sorted(current_observation_ids)
             current["observationCount"] = len(current_observation_ids)
             current["canyonIds"] = sorted(current_canyon_ids)
+            current["fetchSpanDays"] = (
+                datetime.fromisoformat(current["windowEndLocal"]) - datetime.fromisoformat(current["windowStartLocal"])
+            ).days
             merged.append(current)
 
             current = dict(window)
@@ -884,6 +900,9 @@ def merge_windows(observation_windows: list[dict[str, Any]]) -> list[dict[str, A
             current["observationIds"] = sorted(current_observation_ids)
             current["observationCount"] = len(current_observation_ids)
             current["canyonIds"] = sorted(current_canyon_ids)
+            current["fetchSpanDays"] = (
+                datetime.fromisoformat(current["windowEndLocal"]) - datetime.fromisoformat(current["windowStartLocal"])
+            ).days
             merged.append(current)
 
     return sorted(merged, key=lambda item: (item["targetId"], item["windowStartLocal"]))
@@ -934,7 +953,9 @@ def fetch_json(
 
 
 def is_retryable_weather_error(exc: Exception) -> bool:
-    return isinstance(exc, URLError)
+    if isinstance(exc, HTTPError):
+        return exc.code in {408, 409, 425, 429, 500, 502, 503, 504}
+    return isinstance(exc, (URLError, TimeoutError, JSONDecodeError))
 
 
 def flatten_open_meteo_hourly_rows(

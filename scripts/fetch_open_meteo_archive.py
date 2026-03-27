@@ -4,6 +4,7 @@ import argparse
 import concurrent.futures
 import json
 import sys
+import threading
 import time
 from datetime import datetime, timezone
 from pathlib import Path
@@ -15,7 +16,6 @@ from debit_pipeline_lib import (
     flatten_open_meteo_hourly_rows,
     is_retryable_weather_error,
     write_json,
-    write_jsonl,
 )
 
 
@@ -38,6 +38,38 @@ def read_jsonl(path: Path) -> list[dict[str, Any]]:
     return rows
 
 
+def append_jsonl(path: Path, rows: list[dict[str, Any]]) -> None:
+    if not rows:
+        return
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("a", encoding="utf-8") as handle:
+        for row in rows:
+            handle.write(json.dumps(row, ensure_ascii=False) + "\n")
+
+
+def load_completed_window_ids(path: Path) -> set[str]:
+    if not path.exists():
+        return set()
+    return {row["mergedWindowId"] for row in read_jsonl(path) if row.get("mergedWindowId")}
+
+
+class RequestThrottler:
+    def __init__(self, delay_seconds: float) -> None:
+        self.delay_seconds = max(delay_seconds, 0.0)
+        self._lock = threading.Lock()
+        self._next_allowed_at = 0.0
+
+    def wait_turn(self) -> None:
+        if self.delay_seconds <= 0:
+            return
+        with self._lock:
+            now = time.monotonic()
+            if now < self._next_allowed_at:
+                time.sleep(self._next_allowed_at - now)
+                now = time.monotonic()
+            self._next_allowed_at = now + self.delay_seconds
+
+
 def fetch_single_window(
     *,
     merged_window: dict[str, Any],
@@ -45,9 +77,15 @@ def fetch_single_window(
     model: str,
     hourly_variables: list[str],
     user_agent: str,
-    request_delay_seconds: float,
+    throttler: RequestThrottler,
+    max_attempts: int,
+    base_backoff_seconds: float,
+    refetch_cached: bool,
 ) -> dict[str, Any]:
     cache_path = cache_dir / f"{merged_window['mergedWindowId']}.json"
+    if refetch_cached and cache_path.exists():
+        cache_path.unlink()
+
     url = build_open_meteo_archive_url(
         latitude=float(merged_window["targetLatitude"]),
         longitude=float(merged_window["targetLongitude"]),
@@ -57,28 +95,35 @@ def fetch_single_window(
         hourly_variables=hourly_variables,
     )
 
+    if cache_path.exists():
+        payload = fetch_json(url, user_agent=user_agent, cache_path=cache_path)
+        return {
+            "mergedWindowId": merged_window["mergedWindowId"],
+            "url": url,
+            "cachePath": str(cache_path),
+            "payload": payload,
+            "hourlyRows": flatten_open_meteo_hourly_rows(merged_window=merged_window, payload=payload),
+            "source": "cache",
+        }
+
     last_error: Exception | None = None
-    for attempt in range(3):
+    for attempt in range(max(max_attempts, 1)):
         try:
-            payload = fetch_json(
-                url,
-                user_agent=user_agent,
-                delay_seconds=request_delay_seconds,
-                cache_path=cache_path,
-            )
-            hourly_rows = flatten_open_meteo_hourly_rows(merged_window=merged_window, payload=payload)
+            throttler.wait_turn()
+            payload = fetch_json(url, user_agent=user_agent, cache_path=cache_path)
             return {
                 "mergedWindowId": merged_window["mergedWindowId"],
                 "url": url,
                 "cachePath": str(cache_path),
                 "payload": payload,
-                "hourlyRows": hourly_rows,
+                "hourlyRows": flatten_open_meteo_hourly_rows(merged_window=merged_window, payload=payload),
+                "source": "network",
             }
         except Exception as exc:  # noqa: BLE001
             last_error = exc
-            if attempt == 2 or not is_retryable_weather_error(exc):
+            if attempt == max_attempts - 1 or not is_retryable_weather_error(exc):
                 raise
-            time.sleep(2 * (attempt + 1))
+            time.sleep(base_backoff_seconds * (2 ** attempt))
 
     assert last_error is not None
     raise last_error
@@ -91,7 +136,10 @@ def main() -> None:
     parser.add_argument("--model", default="era5")
     parser.add_argument("--hourly", default=",".join(DEFAULT_HOURLY_VARIABLES))
     parser.add_argument("--workers", type=int, default=4)
-    parser.add_argument("--request-delay-ms", type=int, default=200)
+    parser.add_argument("--request-delay-ms", type=int, default=1000)
+    parser.add_argument("--max-attempts", type=int, default=6)
+    parser.add_argument("--base-backoff-ms", type=int, default=2000)
+    parser.add_argument("--refetch-cached", action="store_true", help="Ignore cached raw JSON and fetch again")
     parser.add_argument("--user-agent", default="DescenteCanyonDebitPipeline/0.1")
     args = parser.parse_args()
 
@@ -99,14 +147,27 @@ def main() -> None:
     output_dir = Path(args.output_dir)
     cache_dir = output_dir / "raw-json"
     cache_dir.mkdir(parents=True, exist_ok=True)
+    manifest_path = output_dir / "weather_window_manifest.jsonl"
+    hourly_rows_path = output_dir / "weather_hourly_rows.jsonl"
+    failures_path = output_dir / "failures.json"
+
     hourly_variables = [value.strip() for value in args.hourly.split(",") if value.strip()]
-    request_delay_seconds = max(args.request_delay_ms, 0) / 1000.0
+    throttler = RequestThrottler(max(args.request_delay_ms, 0) / 1000.0)
+    base_backoff_seconds = max(args.base_backoff_ms, 0) / 1000.0
+    completed_window_ids = load_completed_window_ids(manifest_path)
+    windows_to_process = [window for window in merged_windows if window["mergedWindowId"] not in completed_window_ids]
 
-    manifests: list[dict[str, Any]] = []
-    all_hourly_rows: list[dict[str, Any]] = []
     failures: list[dict[str, Any]] = []
+    success_count = 0
+    cache_source_count = 0
+    network_source_count = 0
 
-    print(f"Fetching Open-Meteo archive for {len(merged_windows)} merged window(s)...", file=sys.stderr)
+    print(
+        f"Fetching Open-Meteo archive for {len(windows_to_process)}/{len(merged_windows)} merged window(s)... "
+        f"already_done={len(completed_window_ids)}",
+        file=sys.stderr,
+    )
+
     with concurrent.futures.ThreadPoolExecutor(max_workers=max(args.workers, 1)) as executor:
         future_map = {
             executor.submit(
@@ -116,48 +177,64 @@ def main() -> None:
                 model=args.model,
                 hourly_variables=hourly_variables,
                 user_agent=args.user_agent,
-                request_delay_seconds=request_delay_seconds,
+                throttler=throttler,
+                max_attempts=args.max_attempts,
+                base_backoff_seconds=base_backoff_seconds,
+                refetch_cached=args.refetch_cached,
             ): window
-            for window in merged_windows
+            for window in windows_to_process
         }
 
         completed = 0
+        total_to_process = len(windows_to_process)
         for future in concurrent.futures.as_completed(future_map):
             window = future_map[future]
             completed += 1
             try:
                 result = future.result()
                 payload = result["payload"]
-                manifests.append(
+                manifest_row = {
+                    "mergedWindowId": result["mergedWindowId"],
+                    "targetId": window["targetId"],
+                    "archiveStartDate": window["archiveStartDate"],
+                    "archiveEndDate": window["archiveEndDate"],
+                    "requestedLatitude": window["targetLatitude"],
+                    "requestedLongitude": window["targetLongitude"],
+                    "resolvedLatitude": payload.get("latitude"),
+                    "resolvedLongitude": payload.get("longitude"),
+                    "resolvedElevation": payload.get("elevation"),
+                    "timezone": payload.get("timezone"),
+                    "hourlyRowCount": len(result["hourlyRows"]),
+                    "url": result["url"],
+                    "cachePath": result["cachePath"],
+                    "source": result.get("source"),
+                }
+                append_jsonl(manifest_path, [manifest_row])
+                append_jsonl(hourly_rows_path, result["hourlyRows"])
+                success_count += 1
+                if result.get("source") == "cache":
+                    cache_source_count += 1
+                else:
+                    network_source_count += 1
+            except Exception as exc:  # noqa: BLE001
+                failures.append(
                     {
-                        "mergedWindowId": result["mergedWindowId"],
+                        "mergedWindowId": window["mergedWindowId"],
                         "targetId": window["targetId"],
-                        "archiveStartDate": window["archiveStartDate"],
-                        "archiveEndDate": window["archiveEndDate"],
-                        "requestedLatitude": window["targetLatitude"],
-                        "requestedLongitude": window["targetLongitude"],
-                        "resolvedLatitude": payload.get("latitude"),
-                        "resolvedLongitude": payload.get("longitude"),
-                        "resolvedElevation": payload.get("elevation"),
-                        "timezone": payload.get("timezone"),
-                        "hourlyRowCount": len(result["hourlyRows"]),
-                        "url": result["url"],
-                        "cachePath": result["cachePath"],
+                        "archiveStartDate": window.get("archiveStartDate"),
+                        "archiveEndDate": window.get("archiveEndDate"),
+                        "error": repr(exc),
                     }
                 )
-                all_hourly_rows.extend(result["hourlyRows"])
-            except Exception as exc:  # noqa: BLE001
-                failures.append({
-                    "mergedWindowId": window["mergedWindowId"],
-                    "targetId": window["targetId"],
-                    "error": repr(exc),
-                })
-            if completed % 50 == 0 or completed == len(merged_windows):
-                print(f"Progress {completed}/{len(merged_windows)} | failures={len(failures)}", file=sys.stderr)
+                write_json(failures_path, failures)
 
-    output_dir.mkdir(parents=True, exist_ok=True)
-    write_jsonl(output_dir / "weather_window_manifest.jsonl", sorted(manifests, key=lambda item: item["mergedWindowId"]))
-    write_jsonl(output_dir / "weather_hourly_rows.jsonl", all_hourly_rows)
+            if completed % 50 == 0 or completed == total_to_process:
+                print(
+                    f"Progress {completed}/{total_to_process} | successes={success_count} | failures={len(failures)} "
+                    f"| cache={cache_source_count} | network={network_source_count}",
+                    file=sys.stderr,
+                )
+
     write_json(
         output_dir / "metadata.json",
         {
@@ -166,17 +243,25 @@ def main() -> None:
             "model": args.model,
             "hourlyVariables": hourly_variables,
             "requestedWindowCount": len(merged_windows),
-            "successfulWindowCount": len(manifests),
+            "alreadyCompletedWindowCount": len(completed_window_ids),
+            "processedWindowCount": len(windows_to_process),
+            "successfulWindowCount": success_count,
             "failureCount": len(failures),
-            "hourlyRowCount": len(all_hourly_rows),
+            "cacheSourceCount": cache_source_count,
+            "networkSourceCount": network_source_count,
+            "requestDelayMs": args.request_delay_ms,
+            "maxAttempts": args.max_attempts,
+            "baseBackoffMs": args.base_backoff_ms,
+            "refetchCached": args.refetch_cached,
             "files": {
                 "manifest": "weather_window_manifest.jsonl",
                 "hourlyRows": "weather_hourly_rows.jsonl",
                 "rawJsonDir": "raw-json",
+                "failures": "failures.json",
             },
         },
     )
-    write_json(output_dir / "failures.json", failures)
+    write_json(failures_path, failures)
 
 
 if __name__ == "__main__":

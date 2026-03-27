@@ -37,6 +37,18 @@ def main() -> None:
     parser.add_argument("--watersheds-path", default="offline-data/full/room-import/watersheds.json")
     parser.add_argument("--output-dir", default="build/debit-pipeline/weather-planning")
     parser.add_argument("--lookback-days", type=int, default=7)
+    parser.add_argument(
+        "--fetch-max-gap-days",
+        type=int,
+        default=14,
+        help="Merge nearby observation windows for the same weather target when the gap stays below this threshold",
+    )
+    parser.add_argument(
+        "--fetch-max-span-days",
+        type=int,
+        default=45,
+        help="Limit a merged weather fetch window to this many days to avoid huge payloads",
+    )
     args = parser.parse_args()
 
     observations = read_jsonl(Path(args.observations_path))
@@ -45,7 +57,7 @@ def main() -> None:
     watershed_lookup = load_watershed_lookup(Path(args.watersheds_path))
 
     targets_by_canyon: dict[int, dict[str, Any]] = {}
-    targets: list[dict[str, Any]] = []
+    targets_by_id: dict[str, dict[str, Any]] = {}
     observation_windows: list[dict[str, Any]] = []
     skipped_observations: list[dict[str, Any]] = []
 
@@ -73,8 +85,18 @@ def main() -> None:
                     "reason": "missing_weather_target",
                 })
                 continue
-            targets_by_canyon[canyon_id] = target
-            targets.append(target)
+            canonical_target = targets_by_id.get(target["targetId"])
+            if canonical_target is None:
+                canonical_target = dict(target)
+                canonical_target["canyonIds"] = [canyon_id]
+                canonical_target["canyonCount"] = 1
+                targets_by_id[target["targetId"]] = canonical_target
+            else:
+                canyon_ids = set(canonical_target.get("canyonIds", []))
+                canyon_ids.add(canyon_id)
+                canonical_target["canyonIds"] = sorted(canyon_ids)
+                canonical_target["canyonCount"] = len(canonical_target["canyonIds"])
+            targets_by_canyon[canyon_id] = canonical_target
 
         if observation.get("assumedObservationTimeLocal") is None:
             skipped_observations.append({
@@ -92,7 +114,12 @@ def main() -> None:
             )
         )
 
-    merged_windows = merge_windows(observation_windows)
+    merged_windows = merge_windows(
+        observation_windows,
+        max_gap_days=args.fetch_max_gap_days,
+        max_span_days=args.fetch_max_span_days,
+    )
+    targets = sorted(targets_by_id.values(), key=lambda item: (item["source"], item["targetId"]))
     source_counts = Counter(target["source"] for target in targets)
 
     output_dir = Path(args.output_dir)
@@ -107,6 +134,8 @@ def main() -> None:
             "schemaVersion": 1,
             "generatedAt": datetime.now(timezone.utc).isoformat(),
             "lookbackDays": args.lookback_days,
+            "fetchMaxGapDays": args.fetch_max_gap_days,
+            "fetchMaxSpanDays": args.fetch_max_span_days,
             "observationCount": len(observations),
             "targetCount": len(targets),
             "observationWindowCount": len(observation_windows),
