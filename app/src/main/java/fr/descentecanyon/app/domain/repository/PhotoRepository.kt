@@ -5,5 +5,6 @@ import kotlinx.coroutines.flow.Flow
 
 interface PhotoRepository {
     fun observePhotos(canyonId: Int): Flow<List<CanyonPhoto>>
+    suspend fun refreshPhotos(canyonId: Int): Result<List<CanyonPhoto>>
     suspend fun downloadPhoto(photoId: Long): Result<String>
 }

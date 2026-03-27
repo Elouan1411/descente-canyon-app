@@ -102,16 +102,14 @@ class CanyonRepositoryImpl @Inject constructor(
 
         return runCatching {
             val detail = scraper.scrapeFullCanyonDetail(canyonId).getOrThrow()
-            val photos = scraper.scrapeCanyonPhotos(canyonId).getOrDefault(emptyList())
-            val debits = scraper.scrapeCanyonDebits(canyonId).getOrDefault(emptyList())
             val entity = detail.toEntity()
+            val existingGeoPoints = geoPointDao.getByCanyonId(canyonId)
+            val geoPointEntities = detail.geoPoints.map { it.toEntity(canyonId) }.ifEmpty { existingGeoPoints }
             database.withTransaction {
                 localStore.insertPreservingFlags(entity)
-                localStore.replaceSupportingData(
+                localStore.replaceGeoPoints(
                     canyonId = canyonId,
-                    geoPointEntities = detail.geoPoints.map { it.toEntity(canyonId) },
-                    photoEntities = photos.map { it.toEntity() },
-                    debitEntities = debits.map { it.toEntity() },
+                    geoPointEntities = geoPointEntities,
                 )
             }
 
@@ -184,7 +182,8 @@ class CanyonRepositoryImpl @Inject constructor(
         val debits = scraper.scrapeCanyonDebits(canyonId).getOrDefault(emptyList())
         val entity = detail.toEntity().copy(isOffline = true)
 
-        val geoPointEntities = detail.geoPoints.map { it.toEntity(canyonId) }
+        val existingGeoPoints = geoPointDao.getByCanyonId(canyonId)
+        val geoPointEntities = detail.geoPoints.map { it.toEntity(canyonId) }.ifEmpty { existingGeoPoints }
         val photoEntities = photos.map { it.toEntity() }
         val debitEntities = debits.map { it.toEntity() }
         database.withTransaction {

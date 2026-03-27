@@ -211,7 +211,7 @@ class EmbeddedCanyonDataImporter @Inject constructor(
             type = type,
             latitude = latitude,
             longitude = longitude,
-            label = label,
+            title = label,
         )
     }
 

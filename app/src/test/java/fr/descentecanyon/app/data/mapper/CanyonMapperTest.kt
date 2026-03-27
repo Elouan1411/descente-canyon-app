@@ -195,14 +195,16 @@ class CanyonMapperTest {
             type = "SOME_FUTURE_TYPE",
             latitude = 43.85,
             longitude = 6.95,
-            label = "Point X",
+            title = "Point X",
+            remark = "Belvédère",
         )
         val geoPoint = entity.toDomain()
 
         assertEquals(GeoPointType.UNKNOWN, geoPoint.type)
         assertEquals(43.85, geoPoint.latitude, 0.001)
         assertEquals(6.95, geoPoint.longitude, 0.001)
-        assertEquals("Point X", geoPoint.label)
+        assertEquals("Point X", geoPoint.title)
+        assertEquals("Belvédère", geoPoint.remark)
     }
 
     @Test
@@ -213,7 +215,7 @@ class CanyonMapperTest {
             type = "PARKING_AVAL",
             latitude = 43.85,
             longitude = 6.95,
-            label = "Parking bas",
+            title = "Parking bas",
         )
         val geoPoint = entity.toDomain()
 

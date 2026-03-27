@@ -41,5 +41,6 @@ data class ScrapedGeoPoint(
     val type: String,
     val latitude: Double,
     val longitude: Double,
-    val label: String? = null,
+    val title: String? = null,
+    val remark: String? = null,
 )

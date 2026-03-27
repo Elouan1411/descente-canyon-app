@@ -7,7 +7,9 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import fr.descentecanyon.app.data.network.ConnectivityObserver
 import fr.descentecanyon.app.domain.model.CanyonDetail
 import fr.descentecanyon.app.domain.model.CanyonWeather
+import fr.descentecanyon.app.domain.repository.DebitRepository
 import fr.descentecanyon.app.domain.repository.FavoritesRepository
+import fr.descentecanyon.app.domain.repository.PhotoRepository
 import fr.descentecanyon.app.domain.usecase.DownloadPhotoForOfflineUseCase
 import fr.descentecanyon.app.domain.usecase.GetCanyonDetailUseCase
 import fr.descentecanyon.app.domain.usecase.GetCanyonPreviewUseCase
@@ -42,6 +44,8 @@ class CanyonDetailViewModel @Inject constructor(
     private val getCanyonDetailUseCase: GetCanyonDetailUseCase,
     private val getCanyonWeatherUseCase: GetCanyonWeatherUseCase,
     private val toggleFavoriteUseCase: ToggleFavoriteUseCase,
+    private val photoRepository: PhotoRepository,
+    private val debitRepository: DebitRepository,
     private val downloadPhotoForOfflineUseCase: DownloadPhotoForOfflineUseCase,
     private val connectivityObserver: ConnectivityObserver,
     private val favoritesRepository: FavoritesRepository,
@@ -54,6 +58,8 @@ class CanyonDetailViewModel @Inject constructor(
     val uiState: StateFlow<CanyonDetailUiState> = _uiState.asStateFlow()
 
     init {
+        observePhotos(canyonId)
+        observeDebits(canyonId)
         loadCanyon(canyonId)
         observeFavorite(canyonId)
         observeConnectivity()
@@ -72,13 +78,15 @@ class CanyonDetailViewModel @Inject constructor(
                     weatherError = null,
                 )
             }
+
+            val photosRefreshJob = viewModelScope.launch { refreshPhotos(id) }
+            val debitsRefreshJob = viewModelScope.launch { refreshDebits(id) }
+
             getCanyonPreviewUseCase(id).onSuccess { preview ->
                 _uiState.update {
                     it.copy(
-                        canyonDetail = preview,
+                        canyonDetail = mergeBaseDetail(preview, it.canyonDetail),
                         isLoading = false,
-                        isLoadingPhotos = true,
-                        isLoadingDebits = true,
                         error = null,
                     )
                 }
@@ -88,10 +96,8 @@ class CanyonDetailViewModel @Inject constructor(
                 onSuccess = { detail ->
                     _uiState.update {
                         it.copy(
-                            canyonDetail = detail,
+                            canyonDetail = mergeBaseDetail(detail, it.canyonDetail),
                             isLoading = false,
-                            isLoadingPhotos = false,
-                            isLoadingDebits = false,
                             isLoadingWeather = true,
                             weather = null,
                             error = null,
@@ -138,6 +144,64 @@ class CanyonDetailViewModel @Inject constructor(
                 },
             )
         }
+    }
+
+    private fun observePhotos(id: Int) {
+        viewModelScope.launch {
+            photoRepository.observePhotos(id).collect { photos ->
+                _uiState.update { state ->
+                    state.copy(
+                        canyonDetail = state.canyonDetail?.copy(photos = photos),
+                    )
+                }
+            }
+        }
+    }
+
+    private fun observeDebits(id: Int) {
+        viewModelScope.launch {
+            debitRepository.getDebitsForCanyon(id).collect { result ->
+                result.onSuccess { debits ->
+                    _uiState.update { state ->
+                        state.copy(
+                            canyonDetail = state.canyonDetail?.copy(debits = debits),
+                        )
+                    }
+                }
+            }
+        }
+    }
+
+    private suspend fun refreshPhotos(id: Int) {
+        photoRepository.refreshPhotos(id).fold(
+            onSuccess = {
+                _uiState.update { it.copy(isLoadingPhotos = false) }
+            },
+            onFailure = { throwable ->
+                _uiState.update {
+                    it.copy(
+                        isLoadingPhotos = false,
+                        transientMessage = throwable.message ?: "Impossible de charger les photos",
+                    )
+                }
+            },
+        )
+    }
+
+    private suspend fun refreshDebits(id: Int) {
+        debitRepository.refreshDebits(id).fold(
+            onSuccess = {
+                _uiState.update { it.copy(isLoadingDebits = false) }
+            },
+            onFailure = { throwable ->
+                _uiState.update {
+                    it.copy(
+                        isLoadingDebits = false,
+                        transientMessage = throwable.message ?: "Impossible de charger les débits",
+                    )
+                }
+            },
+        )
     }
 
     private fun observeFavorite(id: Int) {
@@ -193,6 +257,17 @@ class CanyonDetailViewModel @Inject constructor(
                         )
                     }
                 },
+            )
+        }
+    }
+
+    private fun mergeBaseDetail(newDetail: CanyonDetail, currentDetail: CanyonDetail?): CanyonDetail {
+        return if (currentDetail == null) {
+            newDetail
+        } else {
+            newDetail.copy(
+                photos = currentDetail.photos,
+                debits = currentDetail.debits,
             )
         }
     }

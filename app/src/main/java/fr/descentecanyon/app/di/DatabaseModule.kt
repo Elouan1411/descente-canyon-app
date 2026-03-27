@@ -254,6 +254,35 @@ object DatabaseModule {
         }
     }
 
+    private val MIGRATION_7_8 = object : Migration(7, 8) {
+        override fun migrate(db: SupportSQLiteDatabase) {
+            db.execSQL("ALTER TABLE `geo_points` RENAME TO `geo_points_legacy`")
+            db.execSQL(
+                """
+                CREATE TABLE IF NOT EXISTS `geo_points` (
+                    `id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+                    `canyonId` INTEGER NOT NULL,
+                    `type` TEXT NOT NULL,
+                    `latitude` REAL NOT NULL,
+                    `longitude` REAL NOT NULL,
+                    `title` TEXT,
+                    `remark` TEXT,
+                    FOREIGN KEY(`canyonId`) REFERENCES `canyons`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE
+                )
+                """.trimIndent()
+            )
+            db.execSQL(
+                """
+                INSERT INTO `geo_points` (`id`, `canyonId`, `type`, `latitude`, `longitude`, `title`, `remark`)
+                SELECT `id`, `canyonId`, `type`, `latitude`, `longitude`, `label`, NULL
+                FROM `geo_points_legacy`
+                """.trimIndent()
+            )
+            db.execSQL("DROP TABLE `geo_points_legacy`")
+            db.execSQL("CREATE INDEX IF NOT EXISTS `index_geo_points_canyonId` ON `geo_points` (`canyonId`)")
+        }
+    }
+
     @Provides
     @Singleton
     fun provideDatabase(@ApplicationContext context: Context): AppDatabase {
@@ -268,6 +297,7 @@ object DatabaseModule {
             .addMigrations(MIGRATION_4_5)
             .addMigrations(MIGRATION_5_6)
             .addMigrations(MIGRATION_6_7)
+            .addMigrations(MIGRATION_7_8)
             .build()
     }
 

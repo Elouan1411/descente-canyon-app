@@ -13,6 +13,10 @@ class FakePhotoRepository @Inject constructor() : PhotoRepository {
         return E2eFixtureState.canyonDetails.map { details -> details[canyonId]?.photos.orEmpty() }
     }
 
+    override suspend fun refreshPhotos(canyonId: Int): Result<List<CanyonPhoto>> {
+        return Result.success(E2eFixtureState.canyonDetails.value[canyonId]?.photos.orEmpty())
+    }
+
     override suspend fun downloadPhoto(photoId: Long): Result<String> {
         val localPath = "/data/local/tmp/photo-$photoId.jpg"
         E2eFixtureState.updatePhotoLocalPath(photoId, localPath)

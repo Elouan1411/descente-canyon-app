@@ -9,25 +9,38 @@ import fr.descentecanyon.app.ui.theme.CotationDifficile
 import fr.descentecanyon.app.ui.theme.CotationFacile
 import fr.descentecanyon.app.ui.theme.DebitInconnu
 import fr.descentecanyon.app.ui.theme.RockBrownLight
+import java.util.Locale
 
 fun GeoPoint.displayName(): String = when (type) {
-    GeoPointType.PARKING_AMONT -> label?.takeIf { it.isNotBlank() } ?: "Parking Amont"
-    GeoPointType.PARKING_AVAL -> label?.takeIf { it.isNotBlank() } ?: "Parking Aval"
-    GeoPointType.ENTREE -> label?.takeIf { it.isNotBlank() } ?: "Début du canyon"
-    GeoPointType.SORTIE -> label?.takeIf { it.isNotBlank() } ?: "Sortie du canyon"
-    GeoPointType.POINT_REMARQUABLE -> "Point remarquable"
-    GeoPointType.ECHAPPATOIRE -> "Échappatoire"
-    GeoPointType.UNKNOWN -> "Point GPS"
+    GeoPointType.PARKING_AMONT -> normalizedTitle() ?: "Parking Amont"
+    GeoPointType.PARKING_AVAL -> normalizedTitle() ?: "Parking Aval"
+    GeoPointType.ENTREE -> normalizedTitle() ?: "Départ du canyon"
+    GeoPointType.SORTIE -> normalizedTitle() ?: "Sortie du canyon"
+    GeoPointType.POINT_REMARQUABLE -> normalizedTitle() ?: "Point remarquable"
+    GeoPointType.ECHAPPATOIRE -> normalizedTitle() ?: "Échappatoire"
+    GeoPointType.UNKNOWN -> normalizedTitle() ?: "Point GPS"
 }
 
 fun GeoPoint.displaySubtitle(): String? {
-    val trimmedLabel = label?.trim()?.takeIf { it.isNotBlank() } ?: return null
-    val title = displayName()
-    return trimmedLabel.takeUnless { it.equals(title, ignoreCase = true) }
+    return remark?.trim()?.takeIf { it.isNotBlank() }
 }
 
 fun GeoPoint.navigationLabel(): String {
-    return displaySubtitle()?.let { subtitle -> "${displayName()} - $subtitle" } ?: displayName()
+    return displayName()
+}
+
+private fun GeoPoint.normalizedTitle(): String? {
+    val rawTitle = title?.trim()?.takeIf { it.isNotBlank() } ?: return null
+    return when (rawTitle.lowercase(Locale.FRENCH)) {
+        "parking amont" -> "Parking Amont"
+        "parking aval" -> "Parking Aval"
+        "parking" -> "Parking"
+        "départ du canyon", "depart du canyon" -> "Départ du canyon"
+        "sortie du canyon" -> "Sortie du canyon"
+        "point remarquable de l'approche ou du retour" -> "Point remarquable de l'approche ou du retour"
+        "point remarquable à l'intérieur du canyon", "point remarquable a l'interieur du canyon" -> "Point remarquable à l'intérieur du canyon"
+        else -> rawTitle.replaceFirstChar { char -> if (char.isLowerCase()) char.titlecase(Locale.FRENCH) else char.toString() }
+    }
 }
 
 fun GeoPointType.navigationPriority(): Int = when (this) {

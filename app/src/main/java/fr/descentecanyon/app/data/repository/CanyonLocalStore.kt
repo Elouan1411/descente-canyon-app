@@ -78,26 +78,45 @@ class CanyonLocalStore @Inject constructor(
         }
     }
 
+    suspend fun replaceGeoPoints(
+        canyonId: Int,
+        geoPointEntities: List<GeoPointEntity>,
+    ) {
+        geoPointDao.deleteByCanyonId(canyonId)
+        if (geoPointEntities.isNotEmpty()) {
+            geoPointDao.insertAll(geoPointEntities)
+        }
+    }
+
+    suspend fun replacePhotos(
+        canyonId: Int,
+        photoEntities: List<PhotoEntity>,
+    ) {
+        photoDao.deleteByCanyonId(canyonId)
+        if (photoEntities.isNotEmpty()) {
+            photoDao.insertAll(photoEntities)
+        }
+    }
+
+    suspend fun replaceDebits(
+        canyonId: Int,
+        debitEntities: List<DebitEntity>,
+    ) {
+        debitDao.deleteByCanyonId(canyonId)
+        if (debitEntities.isNotEmpty()) {
+            debitDao.insertAll(debitEntities)
+        }
+    }
+
     suspend fun replaceSupportingData(
         canyonId: Int,
         geoPointEntities: List<GeoPointEntity>,
         photoEntities: List<PhotoEntity>,
         debitEntities: List<DebitEntity>,
     ) {
-        geoPointDao.deleteByCanyonId(canyonId)
-        if (geoPointEntities.isNotEmpty()) {
-            geoPointDao.insertAll(geoPointEntities)
-        }
-
-        photoDao.deleteByCanyonId(canyonId)
-        if (photoEntities.isNotEmpty()) {
-            photoDao.insertAll(photoEntities)
-        }
-
-        debitDao.deleteByCanyonId(canyonId)
-        if (debitEntities.isNotEmpty()) {
-            debitDao.insertAll(debitEntities)
-        }
+        replaceGeoPoints(canyonId, geoPointEntities)
+        replacePhotos(canyonId, photoEntities)
+        replaceDebits(canyonId, debitEntities)
     }
 
     suspend fun loadLocalDetail(canyonId: Int, canyon: CanyonEntity): CanyonDetail {

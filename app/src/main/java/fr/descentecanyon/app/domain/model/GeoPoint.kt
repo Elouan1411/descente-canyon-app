@@ -9,7 +9,8 @@ data class GeoPoint(
     val type: GeoPointType,
     val latitude: Double,
     val longitude: Double,
-    val label: String? = null,
+    val title: String? = null,
+    val remark: String? = null,
 )
 
 enum class GeoPointType {

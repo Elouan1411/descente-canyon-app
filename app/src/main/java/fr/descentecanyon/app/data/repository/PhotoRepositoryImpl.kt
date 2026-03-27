@@ -1,10 +1,14 @@
 package fr.descentecanyon.app.data.repository
 
 import android.content.Context
+import androidx.room.withTransaction
 import dagger.hilt.android.qualifiers.ApplicationContext
-import fr.descentecanyon.app.data.network.DescenteCanyonWebClient
+import fr.descentecanyon.app.data.local.database.AppDatabase
 import fr.descentecanyon.app.data.local.dao.PhotoDao
 import fr.descentecanyon.app.data.mapper.toDomain
+import fr.descentecanyon.app.data.mapper.toEntity
+import fr.descentecanyon.app.data.network.DescenteCanyonWebClient
+import fr.descentecanyon.app.data.remote.scraper.CanyonScraper
 import fr.descentecanyon.app.domain.model.CanyonPhoto
 import fr.descentecanyon.app.domain.repository.PhotoRepository
 import kotlinx.coroutines.Dispatchers
@@ -17,7 +21,9 @@ import javax.inject.Singleton
 
 @Singleton
 class PhotoRepositoryImpl @Inject constructor(
+    private val database: AppDatabase,
     private val photoDao: PhotoDao,
+    private val scraper: CanyonScraper,
     private val webClient: DescenteCanyonWebClient,
     @param:ApplicationContext private val context: Context,
 ) : PhotoRepository {
@@ -25,6 +31,28 @@ class PhotoRepositoryImpl @Inject constructor(
     override fun observePhotos(canyonId: Int): Flow<List<CanyonPhoto>> {
         return photoDao.observeByCanyonId(canyonId).map { photos ->
             photos.map { it.toDomain() }
+        }
+    }
+
+    override suspend fun refreshPhotos(canyonId: Int): Result<List<CanyonPhoto>> = runCatching {
+        withContext(Dispatchers.IO) {
+            val existingByUrl = photoDao.getByCanyonId(canyonId).associateBy { it.url }
+            val entities = scraper.scrapeCanyonPhotos(canyonId).getOrThrow().map { scrapedPhoto ->
+                val existing = existingByUrl[scrapedPhoto.url]
+                scrapedPhoto.toEntity().copy(
+                    id = existing?.id ?: 0,
+                    localPath = existing?.localPath,
+                )
+            }
+
+            database.withTransaction {
+                photoDao.deleteByCanyonId(canyonId)
+                if (entities.isNotEmpty()) {
+                    photoDao.insertAll(entities)
+                }
+            }
+
+            entities.map { it.toDomain() }
         }
     }
 

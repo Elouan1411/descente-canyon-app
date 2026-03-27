@@ -266,7 +266,8 @@ fun GeoPointEntity.toDomain(): GeoPoint = GeoPoint(
     type = try { GeoPointType.valueOf(type) } catch (_: Exception) { GeoPointType.UNKNOWN },
     latitude = latitude,
     longitude = longitude,
-    label = label,
+    title = title,
+    remark = remark,
 )
 
 fun DebitEntity.toDomain(): Debit = Debit(
@@ -342,7 +343,8 @@ fun ScrapedGeoPoint.toEntity(canyonId: Int): GeoPointEntity = GeoPointEntity(
     type = type,
     latitude = latitude,
     longitude = longitude,
-    label = label,
+    title = title,
+    remark = remark,
 )
 
 fun ScrapedDebit.toEntity(): DebitEntity = DebitEntity(
