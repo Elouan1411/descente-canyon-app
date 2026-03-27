@@ -1,5 +1,7 @@
 package fr.descentecanyon.app.ui.components
 
+import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.layout.Spacer
@@ -8,12 +10,14 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.statusBarsPadding
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 
@@ -28,19 +32,39 @@ fun CompactAppBar(
         Spacer(modifier = Modifier.statusBarsPadding())
         Surface(
             modifier = Modifier.fillMaxWidth(),
-            color = MaterialTheme.colorScheme.primaryContainer,
+            color = MaterialTheme.colorScheme.surface,
             contentColor = MaterialTheme.colorScheme.onPrimaryContainer,
-            shadowElevation = 2.dp,
+            shadowElevation = 6.dp,
+            tonalElevation = 0.dp,
+            border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.8f)),
         ) {
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .height(44.dp)
-                    .padding(horizontal = 4.dp),
+                    .background(
+                        Brush.verticalGradient(
+                            colors = listOf(
+                                MaterialTheme.colorScheme.primaryContainer.copy(alpha = 0.95f),
+                                MaterialTheme.colorScheme.surface,
+                            ),
+                        )
+                    )
+                    .height(52.dp)
+                    .padding(horizontal = 6.dp),
                 verticalAlignment = Alignment.CenterVertically,
             ) {
                 if (navigation != null) {
-                    navigation()
+                    Surface(
+                        color = MaterialTheme.colorScheme.surface.copy(alpha = 0.68f),
+                        shape = RoundedCornerShape(20.dp),
+                    ) {
+                        Row(
+                            modifier = Modifier.padding(horizontal = 2.dp),
+                            verticalAlignment = Alignment.CenterVertically,
+                        ) {
+                            navigation()
+                        }
+                    }
                 }
                 Text(
                     text = title,
@@ -49,9 +73,9 @@ fun CompactAppBar(
                     style = MaterialTheme.typography.titleMedium,
                     modifier = Modifier
                         .weight(1f)
-                        .padding(start = if (navigation == null) 12.dp else 0.dp),
+                        .padding(start = if (navigation == null) 14.dp else 8.dp),
                 )
-                actions()
+                Row(verticalAlignment = Alignment.CenterVertically, content = actions)
             }
         }
     }

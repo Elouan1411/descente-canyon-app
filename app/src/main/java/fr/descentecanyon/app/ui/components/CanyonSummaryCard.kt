@@ -1,5 +1,6 @@
 package fr.descentecanyon.app.ui.components
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -45,7 +46,9 @@ fun CanyonSummaryCard(
     Card(
         onClick = onClick,
         modifier = modifier.fillMaxWidth().testTag(TestTags.canyonCard(canyon.id)),
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
         elevation = CardDefaults.cardElevation(defaultElevation = 2.dp),
+        border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.7f)),
     ) {
         Column(
             modifier = Modifier.padding(12.dp),
@@ -128,7 +131,7 @@ fun CotationBadge(
     }
     Card(
         modifier = modifier,
-        colors = CardDefaults.cardColors(containerColor = color.copy(alpha = 0.15f)),
+        colors = CardDefaults.cardColors(containerColor = color.copy(alpha = 0.12f)),
     ) {
         Text(
             text = cotation,
@@ -191,14 +194,14 @@ fun DebitBadge(
     val color = debitLevelColor(niveau)
     Card(
         modifier = modifier,
-        colors = CardDefaults.cardColors(containerColor = color.copy(alpha = 0.15f)),
+        colors = CardDefaults.cardColors(containerColor = color.copy(alpha = 0.12f)),
     ) {
         Text(
             text = niveau.label,
             style = MaterialTheme.typography.labelSmall,
             fontWeight = FontWeight.SemiBold,
             color = color,
-            modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp),
+            modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp),
         )
     }
 }

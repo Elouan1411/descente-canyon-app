@@ -5,25 +5,28 @@ import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.dynamicDarkColorScheme
-import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 
 private val LightColorScheme = lightColorScheme(
-    primary = CanyonBlue,
+    primary = CanyonBlueDark,
     onPrimary = Color.White,
-    primaryContainer = CanyonBlueLight,
-    onPrimaryContainer = Color.White,
+    primaryContainer = CanyonBlueMist,
+    onPrimaryContainer = Color(0xFF102F3C),
     secondary = RockBrown,
     onSecondary = Color.White,
-    secondaryContainer = RockBrownLight,
-    onSecondaryContainer = Color.White,
-    background = SurfaceLight,
-    onBackground = Color(0xFF1A1C1E),
-    surface = Color.White,
-    onSurface = Color(0xFF1A1C1E),
+    secondaryContainer = RockSandLight,
+    onSecondaryContainer = Color(0xFF4A3212),
+    background = BackgroundLight,
+    onBackground = Color(0xFF172027),
+    surface = CardLight,
+    onSurface = Color(0xFF1A232A),
+    surfaceVariant = CanyonBlueFrost,
+    onSurfaceVariant = TextMutedLight,
+    outline = BorderLight,
+    outlineVariant = BorderLight.copy(alpha = 0.72f),
 )
 
 private val DarkColorScheme = darkColorScheme(
@@ -48,10 +51,9 @@ fun DescenteCanyonTheme(
     content: @Composable () -> Unit,
 ) {
     val colorScheme = when {
-        dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
+        dynamicColor && darkTheme && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
             val context = LocalContext.current
-            if (darkTheme) dynamicDarkColorScheme(context)
-            else dynamicLightColorScheme(context)
+            dynamicDarkColorScheme(context)
         }
         darkTheme -> DarkColorScheme
         else -> LightColorScheme
