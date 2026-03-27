@@ -40,6 +40,15 @@ HYDRO_TYPE_BONUS = {
     "PARKING_AMONT": 1.0,
 }
 
+DYNAMIC_AUTOPREPARE_PROVIDERS = {
+    "switzerland-stac",
+    "spain-wcs",
+    "austria-als",
+    "slovenia-jgp",
+    "liguria-wcs",
+    "copernicus",
+}
+
 
 def load_json(path: Path) -> Any:
     return json.loads(path.read_text(encoding="utf-8"))
@@ -463,10 +472,11 @@ def resolve_source_for_canyon(
     for source in sources:
         if not canyon_matches(canyon, source.get("match", {})):
             continue
-        force_prepare = bool((source.get("autoPrepare") or {}).get("alwaysPrepare", False))
+        provider = (source.get("autoPrepare") or {}).get("provider")
+        force_prepare = bool((source.get("autoPrepare") or {}).get("alwaysPrepare", False)) or provider in DYNAMIC_AUTOPREPARE_PROVIDERS
         attempt = {
             "sourceName": source.get("name"),
-            "provider": (source.get("autoPrepare") or {}).get("provider"),
+            "provider": provider,
             "matched": True,
             "availableBefore": source_is_available(source),
             "forcePrepare": force_prepare,
