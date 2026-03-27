@@ -938,6 +938,44 @@ def build_annual_windows(observation_windows: list[dict[str, Any]]) -> list[dict
     return annual_windows
 
 
+def build_target_history_windows(
+    observation_windows: list[dict[str, Any]],
+    *,
+    history_end_date: str,
+) -> list[dict[str, Any]]:
+    grouped: dict[str, list[dict[str, Any]]] = {}
+    for window in observation_windows:
+        grouped.setdefault(window["targetId"], []).append(window)
+
+    history_windows: list[dict[str, Any]] = []
+    for target_id, windows in sorted(grouped.items(), key=lambda item: item[0]):
+        ordered = sorted(windows, key=lambda item: item["windowStartLocal"])
+        first = dict(ordered[0])
+        start_local = min(window["windowStartLocal"] for window in ordered)
+        end_local = max(window["windowEndLocal"] for window in ordered)
+        history_window = dict(first)
+        history_window["mergedWindowId"] = stable_id(
+            "targethistory",
+            target_id,
+            start_local,
+            history_end_date,
+        )
+        history_window["windowStartLocal"] = start_local
+        history_window["windowEndLocal"] = end_local
+        history_window["archiveStartDate"] = min(window["archiveStartDate"] for window in ordered)
+        history_window["archiveEndDate"] = history_end_date
+        history_window["observationIds"] = sorted(window["observationId"] for window in ordered)
+        history_window["observationCount"] = len(ordered)
+        history_window["canyonIds"] = sorted({int(window["canyonId"]) for window in ordered})
+        history_window["fetchSpanDays"] = (
+            date.fromisoformat(history_end_date) - date.fromisoformat(history_window["archiveStartDate"])
+        ).days
+        history_window["fetchStrategy"] = "target_history_daily"
+        history_windows.append(history_window)
+
+    return history_windows
+
+
 def build_open_meteo_archive_url(
     *,
     latitude: float,
@@ -954,6 +992,28 @@ def build_open_meteo_archive_url(
         "start_date": start_date,
         "end_date": end_date,
         "hourly": ",".join(hourly_variables),
+        "timezone": timezone,
+        "models": model,
+    }
+    return f"{OPEN_METEO_ARCHIVE_URL}?{urlencode(params)}"
+
+
+def build_open_meteo_archive_daily_url(
+    *,
+    latitude: float,
+    longitude: float,
+    start_date: str,
+    end_date: str,
+    model: str,
+    daily_variables: list[str],
+    timezone: str = "auto",
+) -> str:
+    params = {
+        "latitude": latitude,
+        "longitude": longitude,
+        "start_date": start_date,
+        "end_date": end_date,
+        "daily": ",".join(daily_variables),
         "timezone": timezone,
         "models": model,
     }
@@ -1014,6 +1074,32 @@ def flatten_open_meteo_hourly_rows(
     return rows
 
 
+def flatten_open_meteo_daily_rows(
+    *,
+    merged_window: dict[str, Any],
+    payload: dict[str, Any],
+) -> list[dict[str, Any]]:
+    daily = payload.get("daily") or {}
+    times = daily.get("time") or []
+    variable_names = [name for name in daily.keys() if name != "time"]
+    rows: list[dict[str, Any]] = []
+    for index, raw_date in enumerate(times):
+        row = {
+            "mergedWindowId": merged_window["mergedWindowId"],
+            "targetId": merged_window["targetId"],
+            "date": raw_date,
+            "timezone": payload.get("timezone"),
+            "resolvedLatitude": payload.get("latitude"),
+            "resolvedLongitude": payload.get("longitude"),
+            "resolvedElevation": payload.get("elevation"),
+        }
+        for name in variable_names:
+            values = daily.get(name) or []
+            row[name] = values[index] if index < len(values) else None
+        rows.append(row)
+    return rows
+
+
 def extract_hourly_feature_window(hourly_rows: list[dict[str, Any]], end_local: str, hours: int) -> list[dict[str, Any]]:
     end_time = datetime.fromisoformat(end_local)
     start_time = end_time - timedelta(hours=hours)
@@ -1058,4 +1144,67 @@ def compute_precipitation_features(hourly_rows: list[dict[str, Any]], end_local:
     for row in sorted(antecedent_window, key=lambda item: item["timeLocal"]):
         api_value = api_value * decay + float(row.get(precipitation_key) or 0.0)
     features["antecedent_precipitation_index"] = round(api_value, 3)
+    return features
+
+
+def compute_daily_precipitation_features(daily_rows: list[dict[str, Any]], observation_date: str) -> dict[str, Any]:
+    features: dict[str, Any] = {
+        "precip_prev_day_mm": None,
+        "precip_3d_mm": 0.0,
+        "precip_7d_mm": 0.0,
+        "precip_14d_mm": 0.0,
+        "max_daily_precip_7d_mm": 0.0,
+        "days_since_precip_over_1mm": None,
+        "days_since_precip_over_5mm": None,
+        "days_since_precip_over_10mm": None,
+        "antecedent_precipitation_index_daily": 0.0,
+        "rain_prev_day_mm": None,
+        "snowfall_prev_day_cm": None,
+        "temperature2mMeanPrevDay": None,
+    }
+
+    observation_day = date.fromisoformat(observation_date)
+    end_day = observation_day - timedelta(days=1)
+    sorted_rows = sorted(daily_rows, key=lambda row: row["date"])
+    eligible_rows = [row for row in sorted_rows if date.fromisoformat(row["date"]) <= end_day]
+    if not eligible_rows:
+        return features
+
+    precip_by_day = [float(row.get("precipitation_sum") or 0.0) for row in eligible_rows]
+    if precip_by_day:
+        features["precip_prev_day_mm"] = round(precip_by_day[-1], 3)
+        features["precip_3d_mm"] = round(sum(precip_by_day[-3:]), 3)
+        features["precip_7d_mm"] = round(sum(precip_by_day[-7:]), 3)
+        features["precip_14d_mm"] = round(sum(precip_by_day[-14:]), 3)
+        features["max_daily_precip_7d_mm"] = round(max(precip_by_day[-7:], default=0.0), 3)
+
+    previous_day_row = eligible_rows[-1]
+    features["rain_prev_day_mm"] = (
+        round(float(previous_day_row.get("rain_sum") or 0.0), 3) if previous_day_row.get("rain_sum") is not None else None
+    )
+    features["snowfall_prev_day_cm"] = (
+        round(float(previous_day_row.get("snowfall_sum") or 0.0), 3)
+        if previous_day_row.get("snowfall_sum") is not None
+        else None
+    )
+    features["temperature2mMeanPrevDay"] = previous_day_row.get("temperature_2m_mean")
+
+    thresholds = (
+        (1.0, "days_since_precip_over_1mm"),
+        (5.0, "days_since_precip_over_5mm"),
+        (10.0, "days_since_precip_over_10mm"),
+    )
+    for threshold, feature_name in thresholds:
+        last_match_day: date | None = None
+        for row in eligible_rows:
+            current_day = date.fromisoformat(row["date"])
+            if float(row.get("precipitation_sum") or 0.0) >= threshold:
+                last_match_day = current_day
+        features[feature_name] = (end_day - last_match_day).days if last_match_day is not None else None
+
+    api_value = 0.0
+    decay = 0.85
+    for row in eligible_rows[-30:]:
+        api_value = api_value * decay + float(row.get("precipitation_sum") or 0.0)
+    features["antecedent_precipitation_index_daily"] = round(api_value, 3)
     return features

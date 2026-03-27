@@ -11,20 +11,19 @@ from pathlib import Path
 from typing import Any
 
 from debit_pipeline_lib import (
-    build_open_meteo_archive_url,
+    build_open_meteo_archive_daily_url,
     fetch_json,
-    flatten_open_meteo_hourly_rows,
+    flatten_open_meteo_daily_rows,
     is_retryable_weather_error,
     write_json,
 )
 
 
-DEFAULT_HOURLY_VARIABLES = [
-    "precipitation",
-    "rain",
-    "snowfall",
-    "temperature_2m",
-    "soil_moisture_0_to_7cm",
+DEFAULT_DAILY_VARIABLES = [
+    "precipitation_sum",
+    "rain_sum",
+    "snowfall_sum",
+    "temperature_2m_mean",
 ]
 
 
@@ -75,7 +74,7 @@ def fetch_single_window(
     merged_window: dict[str, Any],
     cache_dir: Path,
     model: str,
-    hourly_variables: list[str],
+    daily_variables: list[str],
     user_agent: str,
     throttler: RequestThrottler,
     request_timeout_seconds: int,
@@ -87,13 +86,13 @@ def fetch_single_window(
     if refetch_cached and cache_path.exists():
         cache_path.unlink()
 
-    url = build_open_meteo_archive_url(
+    url = build_open_meteo_archive_daily_url(
         latitude=float(merged_window["targetLatitude"]),
         longitude=float(merged_window["targetLongitude"]),
         start_date=merged_window["archiveStartDate"],
         end_date=merged_window["archiveEndDate"],
         model=model,
-        hourly_variables=hourly_variables,
+        daily_variables=daily_variables,
     )
 
     if cache_path.exists():
@@ -103,7 +102,7 @@ def fetch_single_window(
             "url": url,
             "cachePath": str(cache_path),
             "payload": payload,
-            "hourlyRows": flatten_open_meteo_hourly_rows(merged_window=merged_window, payload=payload),
+            "dailyRows": flatten_open_meteo_daily_rows(merged_window=merged_window, payload=payload),
             "source": "cache",
         }
 
@@ -117,7 +116,7 @@ def fetch_single_window(
                 "url": url,
                 "cachePath": str(cache_path),
                 "payload": payload,
-                "hourlyRows": flatten_open_meteo_hourly_rows(merged_window=merged_window, payload=payload),
+                "dailyRows": flatten_open_meteo_daily_rows(merged_window=merged_window, payload=payload),
                 "source": "network",
             }
         except Exception as exc:  # noqa: BLE001
@@ -131,16 +130,16 @@ def fetch_single_window(
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Fetch merged historical weather windows from Open-Meteo archive")
+    parser = argparse.ArgumentParser(description="Fetch historical daily weather windows from Open-Meteo archive")
     parser.add_argument("--merged-windows-path", default="build/debit-pipeline/weather-planning/merged_weather_windows.jsonl")
     parser.add_argument("--output-dir", default="build/debit-pipeline/weather-archive")
     parser.add_argument("--model", default="era5")
-    parser.add_argument("--hourly", default=",".join(DEFAULT_HOURLY_VARIABLES))
-    parser.add_argument("--workers", type=int, default=4)
-    parser.add_argument("--request-delay-ms", type=int, default=1000)
+    parser.add_argument("--daily", default=",".join(DEFAULT_DAILY_VARIABLES))
+    parser.add_argument("--workers", type=int, default=2)
+    parser.add_argument("--request-delay-ms", type=int, default=1200)
     parser.add_argument("--timeout-s", type=int, default=20)
-    parser.add_argument("--max-attempts", type=int, default=6)
-    parser.add_argument("--base-backoff-ms", type=int, default=2000)
+    parser.add_argument("--max-attempts", type=int, default=3)
+    parser.add_argument("--base-backoff-ms", type=int, default=1500)
     parser.add_argument("--refetch-cached", action="store_true", help="Ignore cached raw JSON and fetch again")
     parser.add_argument("--user-agent", default="DescenteCanyonDebitPipeline/0.1")
     args = parser.parse_args()
@@ -150,10 +149,10 @@ def main() -> None:
     cache_dir = output_dir / "raw-json"
     cache_dir.mkdir(parents=True, exist_ok=True)
     manifest_path = output_dir / "weather_window_manifest.jsonl"
-    hourly_rows_path = output_dir / "weather_hourly_rows.jsonl"
+    daily_rows_path = output_dir / "weather_daily_rows.jsonl"
     failures_path = output_dir / "failures.json"
 
-    hourly_variables = [value.strip() for value in args.hourly.split(",") if value.strip()]
+    daily_variables = [value.strip() for value in args.daily.split(",") if value.strip()]
     throttler = RequestThrottler(max(args.request_delay_ms, 0) / 1000.0)
     base_backoff_seconds = max(args.base_backoff_ms, 0) / 1000.0
     completed_window_ids = load_completed_window_ids(manifest_path)
@@ -165,7 +164,7 @@ def main() -> None:
     network_source_count = 0
 
     print(
-        f"Fetching Open-Meteo archive for {len(windows_to_process)}/{len(merged_windows)} merged window(s)... "
+        f"Fetching Open-Meteo daily archive for {len(windows_to_process)}/{len(merged_windows)} target window(s)... "
         f"already_done={len(completed_window_ids)}",
         file=sys.stderr,
     )
@@ -177,7 +176,7 @@ def main() -> None:
                 merged_window=window,
                 cache_dir=cache_dir,
                 model=args.model,
-                hourly_variables=hourly_variables,
+                daily_variables=daily_variables,
                 user_agent=args.user_agent,
                 throttler=throttler,
                 request_timeout_seconds=max(args.timeout_s, 1),
@@ -191,7 +190,6 @@ def main() -> None:
         completed = 0
         total_to_process = len(windows_to_process)
         pending = set(future_map.keys())
-        last_heartbeat = time.monotonic()
         while pending:
             done, pending = concurrent.futures.wait(
                 pending,
@@ -204,7 +202,6 @@ def main() -> None:
                     f"| cache={cache_source_count} | network={network_source_count}",
                     file=sys.stderr,
                 )
-                last_heartbeat = time.monotonic()
                 continue
 
             for future in done:
@@ -224,13 +221,13 @@ def main() -> None:
                         "resolvedLongitude": payload.get("longitude"),
                         "resolvedElevation": payload.get("elevation"),
                         "timezone": payload.get("timezone"),
-                        "hourlyRowCount": len(result["hourlyRows"]),
+                        "dailyRowCount": len(result["dailyRows"]),
                         "url": result["url"],
                         "cachePath": result["cachePath"],
                         "source": result.get("source"),
                     }
                     append_jsonl(manifest_path, [manifest_row])
-                    append_jsonl(hourly_rows_path, result["hourlyRows"])
+                    append_jsonl(daily_rows_path, result["dailyRows"])
                     success_count += 1
                     if result.get("source") == "cache":
                         cache_source_count += 1
@@ -248,7 +245,7 @@ def main() -> None:
                     )
                     write_json(failures_path, failures)
 
-                if completed <= 10 or completed % 50 == 0 or completed == total_to_process:
+                if completed <= 10 or completed % 20 == 0 or completed == total_to_process:
                     print(
                         f"Progress {completed}/{total_to_process} | successes={success_count} | failures={len(failures)} "
                         f"| cache={cache_source_count} | network={network_source_count}",
@@ -261,7 +258,7 @@ def main() -> None:
             "schemaVersion": 1,
             "generatedAt": datetime.now(timezone.utc).isoformat(),
             "model": args.model,
-            "hourlyVariables": hourly_variables,
+            "dailyVariables": daily_variables,
             "requestedWindowCount": len(merged_windows),
             "alreadyCompletedWindowCount": len(completed_window_ids),
             "processedWindowCount": len(windows_to_process),
@@ -276,7 +273,7 @@ def main() -> None:
             "refetchCached": args.refetch_cached,
             "files": {
                 "manifest": "weather_window_manifest.jsonl",
-                "hourlyRows": "weather_hourly_rows.jsonl",
+                "dailyRows": "weather_daily_rows.jsonl",
                 "rawJsonDir": "raw-json",
                 "failures": "failures.json",
             },

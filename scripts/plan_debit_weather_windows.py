@@ -10,6 +10,7 @@ from typing import Any
 from debit_pipeline_lib import (
     build_annual_windows,
     build_observation_window,
+    build_target_history_windows,
     build_weather_target,
     load_canyon_lookup,
     load_geo_points_lookup,
@@ -40,8 +41,8 @@ def main() -> None:
     parser.add_argument("--lookback-days", type=int, default=7)
     parser.add_argument(
         "--fetch-strategy",
-        choices=["proximity", "annual"],
-        default="annual",
+        choices=["proximity", "annual", "history_daily"],
+        default="history_daily",
         help="How to batch weather fetch windows for API calls",
     )
     parser.add_argument(
@@ -121,7 +122,12 @@ def main() -> None:
             )
         )
 
-    if args.fetch_strategy == "annual":
+    if args.fetch_strategy == "history_daily":
+        merged_windows = build_target_history_windows(
+            observation_windows,
+            history_end_date=datetime.now().date().isoformat(),
+        )
+    elif args.fetch_strategy == "annual":
         merged_windows = build_annual_windows(observation_windows)
     else:
         merged_windows = merge_windows(

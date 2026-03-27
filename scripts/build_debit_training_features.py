@@ -8,7 +8,7 @@ from pathlib import Path
 from typing import Any
 
 from debit_pipeline_lib import (
-    compute_precipitation_features,
+    compute_daily_precipitation_features,
     load_canyon_lookup,
     load_watershed_lookup,
     normalize_text,
@@ -27,12 +27,11 @@ def read_jsonl(path: Path) -> list[dict[str, Any]]:
     return rows
 
 
-def last_row_at_or_before(rows: list[dict[str, Any]], end_local: str) -> dict[str, Any] | None:
-    end_time = datetime.fromisoformat(end_local)
+def last_daily_row_before(rows: list[dict[str, Any]], observation_date: str) -> dict[str, Any] | None:
+    cutoff_date = observation_date
     selected: dict[str, Any] | None = None
     for row in rows:
-        current_time = datetime.fromisoformat(row["timeLocal"])
-        if current_time <= end_time:
+        if row["date"] < cutoff_date:
             selected = row
         else:
             break
@@ -40,11 +39,11 @@ def last_row_at_or_before(rows: list[dict[str, Any]], end_local: str) -> dict[st
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Build training features from valid debit observations and weather cache")
+    parser = argparse.ArgumentParser(description="Build training features from valid debit observations and daily weather cache")
     parser.add_argument("--observations-path", default="build/debit-pipeline/observations/valid_debit_observations.jsonl")
     parser.add_argument("--observation-windows-path", default="build/debit-pipeline/weather-planning/observation_weather_windows.jsonl")
     parser.add_argument("--merged-windows-path", default="build/debit-pipeline/weather-planning/merged_weather_windows.jsonl")
-    parser.add_argument("--weather-hourly-path", default="build/debit-pipeline/weather-archive/weather_hourly_rows.jsonl")
+    parser.add_argument("--weather-daily-path", default="build/debit-pipeline/weather-archive/weather_daily_rows.jsonl")
     parser.add_argument("--canyons-path", default="offline-data/full/room-import/canyons.json")
     parser.add_argument("--watersheds-path", default="offline-data/full/room-import/watersheds.json")
     parser.add_argument("--output-dir", default="build/debit-pipeline/training-features")
@@ -53,7 +52,7 @@ def main() -> None:
     observations = read_jsonl(Path(args.observations_path))
     observation_windows = read_jsonl(Path(args.observation_windows_path))
     merged_windows = read_jsonl(Path(args.merged_windows_path))
-    weather_rows = read_jsonl(Path(args.weather_hourly_path))
+    weather_rows = read_jsonl(Path(args.weather_daily_path))
     canyon_lookup = load_canyon_lookup(Path(args.canyons_path))
     watershed_lookup = load_watershed_lookup(Path(args.watersheds_path))
 
@@ -67,7 +66,7 @@ def main() -> None:
     for row in weather_rows:
         weather_by_merged_window[row["mergedWindowId"]].append(row)
     for rows in weather_by_merged_window.values():
-        rows.sort(key=lambda item: item["timeLocal"])
+        rows.sort(key=lambda item: item["date"])
 
     feature_rows: list[dict[str, Any]] = []
     skipped: list[dict[str, Any]] = []
@@ -78,16 +77,16 @@ def main() -> None:
         if observation_window is None or merged_window is None:
             skipped.append({"observationId": observation_id, "reason": "missing_weather_window"})
             continue
-        hourly = weather_by_merged_window.get(merged_window["mergedWindowId"], [])
-        if not hourly:
-            skipped.append({"observationId": observation_id, "reason": "missing_hourly_weather"})
+        daily_rows = weather_by_merged_window.get(merged_window["mergedWindowId"], [])
+        if not daily_rows:
+            skipped.append({"observationId": observation_id, "reason": "missing_daily_weather"})
             continue
 
         canyon_id = int(observation["canyonId"])
         canyon = canyon_lookup.get(canyon_id, {})
         watershed = watershed_lookup.get(canyon_id)
-        end_local = observation_window["windowEndLocal"]
-        latest_weather = last_row_at_or_before(hourly, end_local)
+        observation_date = observation.get("date")
+        latest_weather = last_daily_row_before(daily_rows, observation_date) if observation_date else None
 
         feature_row = {
             "observationId": observation_id,
@@ -117,14 +116,14 @@ def main() -> None:
             "commentText": observation.get("comment"),
             "commentTokenCount": len(normalize_text(observation.get("comment")).split()) if observation.get("comment") else 0,
         }
-        feature_row.update(compute_precipitation_features(hourly, end_local))
+        if observation_date is not None:
+            feature_row.update(compute_daily_precipitation_features(daily_rows, observation_date))
         if latest_weather is not None:
             feature_row.update(
                 {
-                    "temperature2mAtObservation": latest_weather.get("temperature_2m"),
-                    "soilMoisture0To7cmAtObservation": latest_weather.get("soil_moisture_0_to_7cm"),
-                    "rainAtObservationHour": latest_weather.get("rain"),
-                    "snowfallAtObservationHour": latest_weather.get("snowfall"),
+                    "temperature2mAtObservation": latest_weather.get("temperature_2m_mean"),
+                    "rainAtObservationDay": latest_weather.get("rain_sum"),
+                    "snowfallAtObservationDay": latest_weather.get("snowfall_sum"),
                     "weatherTimezone": latest_weather.get("timezone"),
                 }
             )
