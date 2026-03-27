@@ -93,7 +93,7 @@ fun CanyonPointsMapScreen(
                 detail = uiState.canyonDetail,
                 modifier = Modifier.padding(innerPadding),
                 onNavigate = { point ->
-                    val label = Uri.encode(point.label ?: "Canyon")
+                    val label = Uri.encode(point.navigationLabel())
                     val uri = Uri.parse("geo:${point.latitude},${point.longitude}?q=${point.latitude},${point.longitude}($label)")
                     context.startActivity(Intent(Intent.ACTION_VIEW, uri))
                 },
@@ -120,7 +120,7 @@ private fun CanyonPointsMapContent(
         detail.geoPoints.mapIndexed { index, point ->
             fr.descentecanyon.app.domain.model.CanyonSummary(
                 id = detail.canyon.id * 10 + index,
-                nom = point.displayName(),
+                nom = point.navigationLabel(),
                 pays = detail.canyon.pays,
                 cotation = detail.canyon.cotation,
                 url = detail.canyon.url,
@@ -237,11 +237,19 @@ private fun CanyonPointsMapContent(
                                     Row(verticalAlignment = Alignment.CenterVertically) {
                                         Box(Modifier.size(12.dp).background(point.type.mapColor(), CircleShape))
                                         Spacer(Modifier.width(8.dp))
-                                        Text(
+                                    Text(
                                             point.displayName(),
                                             style = MaterialTheme.typography.titleMedium,
                                             fontWeight = FontWeight.SemiBold,
                                             color = point.type.mapColor(),
+                                        )
+                                    }
+                                    point.displaySubtitle()?.let { subtitle ->
+                                        Text(
+                                            text = subtitle,
+                                            style = MaterialTheme.typography.bodyMedium,
+                                            color = MaterialTheme.colorScheme.onSurface,
+                                            modifier = Modifier.padding(top = 4.dp),
                                         )
                                     }
                                     Text(

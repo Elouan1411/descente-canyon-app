@@ -1251,7 +1251,7 @@ private fun CanyonGeoPointsMapAndList(
         detail.geoPoints.mapIndexed { index, point ->
             fr.descentecanyon.app.domain.model.CanyonSummary(
                 id = detail.canyon.id * 10 + index,
-                nom = point.displayName(),
+                nom = point.navigationLabel(),
                 pays = detail.canyon.pays,
                 cotation = detail.canyon.cotation,
                 url = detail.canyon.url,
@@ -1312,6 +1312,14 @@ private fun CanyonGeoPointsMapAndList(
                                 style = MaterialTheme.typography.titleMedium,
                                 fontWeight = FontWeight.SemiBold,
                                 color = point.type.mapColor(),
+                            )
+                        }
+                        point.displaySubtitle()?.let { subtitle ->
+                            Text(
+                                text = subtitle,
+                                style = MaterialTheme.typography.bodyMedium,
+                                color = MaterialTheme.colorScheme.onSurface,
+                                modifier = Modifier.padding(top = 4.dp),
                             )
                         }
                         Text(
@@ -1399,7 +1407,7 @@ private fun openNavigation(
     context: android.content.Context,
     point: GeoPoint,
 ) {
-    val label = Uri.encode(point.label ?: "Canyon")
+    val label = Uri.encode(point.navigationLabel())
     val uri = Uri.parse("geo:${point.latitude},${point.longitude}?q=${point.latitude},${point.longitude}($label)")
     context.startActivity(Intent(Intent.ACTION_VIEW, uri))
 }

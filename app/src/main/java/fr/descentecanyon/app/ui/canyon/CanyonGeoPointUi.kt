@@ -11,13 +11,23 @@ import fr.descentecanyon.app.ui.theme.DebitInconnu
 import fr.descentecanyon.app.ui.theme.RockBrownLight
 
 fun GeoPoint.displayName(): String = when (type) {
-    GeoPointType.PARKING_AMONT -> label ?: "Parking amont"
-    GeoPointType.PARKING_AVAL -> label ?: "Parking aval"
-    GeoPointType.ENTREE -> label ?: "Debut du canyon"
-    GeoPointType.SORTIE -> label ?: "Sortie du canyon"
-    GeoPointType.POINT_REMARQUABLE -> label ?: "Point remarquable"
-    GeoPointType.ECHAPPATOIRE -> label ?: "Echappatoire"
-    GeoPointType.UNKNOWN -> label ?: "Point GPS"
+    GeoPointType.PARKING_AMONT -> label?.takeIf { it.isNotBlank() } ?: "Parking Amont"
+    GeoPointType.PARKING_AVAL -> label?.takeIf { it.isNotBlank() } ?: "Parking Aval"
+    GeoPointType.ENTREE -> label?.takeIf { it.isNotBlank() } ?: "Début du canyon"
+    GeoPointType.SORTIE -> label?.takeIf { it.isNotBlank() } ?: "Sortie du canyon"
+    GeoPointType.POINT_REMARQUABLE -> "Point remarquable"
+    GeoPointType.ECHAPPATOIRE -> "Échappatoire"
+    GeoPointType.UNKNOWN -> "Point GPS"
+}
+
+fun GeoPoint.displaySubtitle(): String? {
+    val trimmedLabel = label?.trim()?.takeIf { it.isNotBlank() } ?: return null
+    val title = displayName()
+    return trimmedLabel.takeUnless { it.equals(title, ignoreCase = true) }
+}
+
+fun GeoPoint.navigationLabel(): String {
+    return displaySubtitle()?.let { subtitle -> "${displayName()} - $subtitle" } ?: displayName()
 }
 
 fun GeoPointType.navigationPriority(): Int = when (this) {
