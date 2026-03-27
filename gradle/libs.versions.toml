@@ -2,6 +2,7 @@
 agp = "9.1.0"
 kotlin = "2.3.20"
 ksp = "2.3.6"
+playPublisher = "3.12.1"
 
 # AndroidX
 coreKtx = "1.16.0"
@@ -122,3 +123,4 @@ kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "ko
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 hilt-android = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+play-publisher = { id = "com.github.triplet.play", version.ref = "playPublisher" }

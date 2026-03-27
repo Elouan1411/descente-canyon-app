@@ -7,6 +7,7 @@ plugins {
     alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.hilt.android)
     alias(libs.plugins.ksp)
+    alias(libs.plugins.play.publisher)
 }
 
 val localProperties = Properties().apply {
@@ -16,10 +17,18 @@ val localProperties = Properties().apply {
     }
 }
 
-val releaseKeystoreFile = localProperties.getProperty("releaseKeystoreFile")
-val releaseStorePassword = localProperties.getProperty("releaseStorePassword")
-val releaseKeyAlias = localProperties.getProperty("releaseKeyAlias")
-val releaseKeyPassword = localProperties.getProperty("releaseKeyPassword")
+fun localPropertyOrEnv(propertyName: String, envName: String): String? {
+    val propertyValue = localProperties.getProperty(propertyName)?.takeIf { it.isNotBlank() }
+    return propertyValue ?: System.getenv(envName)?.takeIf { it.isNotBlank() }
+}
+
+val releaseKeystoreFile = localPropertyOrEnv("releaseKeystoreFile", "RELEASE_KEYSTORE_FILE")
+val releaseStorePassword = localPropertyOrEnv("releaseStorePassword", "RELEASE_STORE_PASSWORD")
+val releaseKeyAlias = localPropertyOrEnv("releaseKeyAlias", "RELEASE_KEY_ALIAS")
+val releaseKeyPassword = localPropertyOrEnv("releaseKeyPassword", "RELEASE_KEY_PASSWORD")
+val playServiceAccountFile = localPropertyOrEnv("playServiceAccountFile", "PLAY_SERVICE_ACCOUNT_FILE")
+val ciVersionCode = providers.gradleProperty("ciVersionCode").orNull?.toIntOrNull()
+val ciVersionName = providers.gradleProperty("ciVersionName").orNull
 val hasReleaseSigning = listOf(
     releaseKeystoreFile,
     releaseStorePassword,
@@ -55,8 +64,8 @@ android {
         applicationId = "fr.descentecanyon.app"
         minSdk = 26
         targetSdk = 35
-        versionCode = 1
-        versionName = "1.0.0"
+        versionCode = ciVersionCode ?: 1
+        versionName = ciVersionName ?: "1.0.0"
 
         testInstrumentationRunner = "fr.descentecanyon.app.e2e.runner.HiltTestRunner"
     }
@@ -88,6 +97,15 @@ android {
     buildFeatures {
         compose = true
         buildConfig = true
+    }
+}
+
+play {
+    defaultToAppBundles.set(true)
+    track.set(providers.gradleProperty("playTrack").orElse("internal"))
+
+    if (!playServiceAccountFile.isNullOrBlank()) {
+        serviceAccountCredentials.set(layout.projectDirectory.file(playServiceAccountFile))
     }
 }
 
