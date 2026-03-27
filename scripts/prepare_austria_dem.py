@@ -27,6 +27,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--point", action="append", required=True, help="Point as lat,lon")
     parser.add_argument("--buffer-km", type=float, default=20.0)
     parser.add_argument("--output-dir", type=Path, default=Path("build/watersheds/austria-national-dem"))
+    parser.add_argument("--cache-dir", type=Path)
     parser.add_argument("--gdalbuildvrt", default=default_gdalbuildvrt())
     return parser.parse_args()
 
@@ -101,7 +102,7 @@ def main() -> int:
     points = parse_points(args.point)
     tiles = intersecting_tiles(points, args.buffer_km)
     gdalbuildvrt = resolve_executable(args.gdalbuildvrt, extra_candidates=[default_gdalbuildvrt()])
-    raw_dir = args.output_dir / "raw"
+    raw_dir = (args.cache_dir or (args.output_dir / "raw")).resolve()
     tif_paths = []
     for filename, url in tiles:
         path = raw_dir / filename

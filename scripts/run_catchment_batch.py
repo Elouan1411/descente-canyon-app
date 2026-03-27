@@ -288,6 +288,8 @@ def auto_prepare_source(
             "scripts/prepare_switzerland_dem.py",
             "--output-dir",
             str(local_output_dir),
+            "--cache-dir",
+            str(Path(auto_prepare.get("outputDir", "build/watersheds/switzerland-national-dem")) / "raw"),
             "--buffer-km",
             str(auto_prepare.get("bufferKm", source.get("bufferKm", 10.0))),
         ]
@@ -324,6 +326,8 @@ def auto_prepare_source(
             "scripts/prepare_austria_dem.py",
             "--output-dir",
             str(local_output_dir),
+            "--cache-dir",
+            str(Path(auto_prepare.get("outputDir", "build/watersheds/austria-national-dem")) / "raw"),
             "--buffer-km",
             str(auto_prepare.get("bufferKm", source.get("bufferKm", 20.0))),
         ]

@@ -28,6 +28,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--point", action="append", required=True, help="Point as lat,lon")
     parser.add_argument("--buffer-km", type=float, default=10.0)
     parser.add_argument("--output-dir", type=Path, default=Path("build/watersheds/switzerland-national-dem"))
+    parser.add_argument("--cache-dir", type=Path)
     parser.add_argument("--gdalbuildvrt", default=default_gdalbuildvrt())
     return parser.parse_args()
 
@@ -133,7 +134,7 @@ def main() -> int:
     items = fetch_items(bbox)
     assets = tile_assets(items)
     gdalbuildvrt = resolve_executable(args.gdalbuildvrt, extra_candidates=[default_gdalbuildvrt()])
-    raw_dir = args.output_dir / "raw"
+    raw_dir = (args.cache_dir or (args.output_dir / "raw")).resolve()
     tif_paths = []
     for asset_name, href in assets:
         path = raw_dir / asset_name
