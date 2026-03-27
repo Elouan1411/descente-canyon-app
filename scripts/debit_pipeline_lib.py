@@ -137,6 +137,9 @@ WEAK_NON_HYDRO_INFO_KEYWORDS = {
 }
 
 HYDROLOGY_SIGNAL_PATTERNS = {
+    "dc shorthand": r"\bdc\b",
+    "gd shorthand": r"\bgd\b",
+    "top": r"\btop\b",
     "debit": r"\bdebit\b",
     "debit observe": r"\bdebit observe\b",
     "debit actuel": r"\bdebit actuel\b",
@@ -154,20 +157,30 @@ HYDROLOGY_SIGNAL_PATTERNS = {
     "petit debit": r"\bpetit debit\b",
     "petit filet": r"\bpetit filet\b",
     "filet d eau": r"\bfilet d eau\b",
+    "goutte a goutte": r"\bgoutte a goutte\b",
     "rien ne coule": r"\brien ne coule\b",
     "ne coule": r"\bne coule(?:nt)?\b",
     "ca coule": r"\bca coule\b",
     "en eau": r"\ben eau\b",
+    "peu d eau": r"\b(?:peu|quasi pas|pas) d eau\b",
+    "beaucoup d eau": r"\bbeaucoup d eau\b",
     "trace d eau": r"\btrace d eau\b",
     "sec": r"\bsec\b",
     "crue": r"\bcrue\b",
     "impraticable": r"\bimpraticable\b",
+    "impassable": r"\bimpassable\b",
     "praticable": r"(?<!im)\bpraticable\b",
+    "faisable": r"\bfaisable\b",
     "conditions": r"\ben conditions\b",
+    "top conditions": r"\btop conditions?\b",
+    "conditions ideales": r"\bconditions? ideal\w*\b",
     "vasque": r"\bvasque(?:s)?\b",
     "cascade": r"\bcascade(?:s)?\b",
     "saut": r"\bsaut(?:s)?\b",
     "toboggan": r"\btoboggan(?:s)?\b",
+    "bouillonne": r"\bbouillonn\w*\b",
+    "ca crache": r"\bca crache\b",
+    "queue de cheval": r"\bqueue de cheval\b",
     "barrage": r"\bbarrage\b",
     "captage": r"\bcaptage\b",
     "capture": r"\bcapte\b",
@@ -177,6 +190,18 @@ HYDROLOGY_SIGNAL_PATTERNS = {
     "centrale": r"\bcentrale\b",
     "retenue": r"\bretenue\b",
     "robinet": r"\brobinet\b",
+    "neige": r"\bneige\b",
+    "neve": r"\bneve\b",
+    "glace": r"\bglace\b",
+    "avalanche": r"\bavalanche(?:s)?\b",
+    "fonte": r"\bfonte\b",
+    "caudal": r"\bcaudal\b",
+    "portata": r"\bportata\b",
+    "waterlevel": r"\bwater ?level\b",
+    "too much water": r"\btoo much water\b",
+    "troppa acqua": r"\btroppa acqua\b",
+    "mucha agua": r"\bmucha agua\b",
+    "too high": r"\btoo high\b",
     "vu du pont": r"\bvu du pont\b",
     "depuis le pont": r"\bdepuis le pont\b",
     "observation depuis": r"\bobservation(?:s)? depuis\b",
@@ -185,6 +210,9 @@ HYDROLOGY_SIGNAL_PATTERNS = {
     "orage": r"\borage(?:s)?\b",
     "pluie": r"\bpluie(?:s)?\b",
     "juste ce qu il faut": r"\bjuste ce qu il faut\b",
+    "a faire": r"\ba faire\b",
+    "c est le moment": r"\bc est le moment\b",
+    "au top": r"\bau top\b",
 }
 
 CURRENT_OBSERVATION_PATTERNS = {
@@ -599,10 +627,10 @@ def classify_observation(observation: dict[str, Any], overrides: list[dict[str, 
 
     if is_descended is False:
         if not normalized_comment:
-            reasons.append("non_descended_without_comment")
+            reasons.append("non_descended_without_comment_but_level_selected")
             return {
-                "qualityLabel": "uncertain",
-                "qualityScore": _quality_score_for_label("uncertain"),
+                "qualityLabel": "valid",
+                "qualityScore": _quality_score_for_label("valid"),
                 "qualityReasons": reasons,
                 "manualOverride": False,
             }
