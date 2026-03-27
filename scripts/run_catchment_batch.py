@@ -377,6 +377,16 @@ def auto_prepare_source(
         prepared["preparedDynamically"] = True
         return prepared
 
+    if provider == "tinitaly-bulk":
+        command = [
+            sys.executable,
+            "scripts/prepare_tinitaly_dem.py",
+            "--output-dir",
+            auto_prepare.get("outputDir", "build/watersheds/italy-national-dem"),
+        ]
+        subprocess.run(command, check=True)
+        return source
+
     if provider == "national-dem":
         units: list[str] = []
         for field_name in auto_prepare.get("unitFields", ["departement", "region"]):

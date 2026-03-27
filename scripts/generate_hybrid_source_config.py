@@ -345,6 +345,26 @@ def main() -> int:
             }
         }
     )
+    sources.append(
+        {
+            "name": "italy-tinitaly-10m",
+            "mode": "derive_local_hydrology",
+            "dem": "build/watersheds/italy-national-dem/vrt/_all_downloaded.vrt",
+            "srs": "EPSG:32632",
+            "bufferKm": 15.0,
+            "processingResolutionM": 10.0,
+            "candidateStrategy": "nearest_channel",
+            "searchRadiusM": 120.0,
+            "channelMinUpaKm2": 0.05,
+            "autoPrepare": {
+                "provider": "tinitaly-bulk",
+                "outputDir": "build/watersheds/italy-national-dem"
+            },
+            "match": {
+                "pays": "Italie"
+            }
+        }
+    )
 
     sources.append(
         {

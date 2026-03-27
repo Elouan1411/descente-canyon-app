@@ -68,6 +68,7 @@ python scripts/merge_country_watershed_runs.py \
 - manifeste IGN priorise: `scripts/plan_ign_downloads.py`
 - preparation telechargement/extraction/VRT IGN: `scripts/prepare_ign_department_dem.py`
 - preparation generique pays par manifest: `scripts/prepare_national_dem.py`
+- preparation Italie nationale TINITALY: `scripts/prepare_tinitaly_dem.py`
 - plan des geocells Copernicus: `scripts/plan_copernicus_geocells.py`
 - derive IGN hydrology rasters: `scripts/derive_ign_hydrology.py`
 - workflow local canyon sur DEM IGN: `scripts/run_local_ign_canyon_workflow.py`
@@ -206,6 +207,8 @@ Pour `Copernicus` et `MERIT`, il faut renseigner les manifests d'URL si tu veux 
 - `scripts/watersheds/merit_url_manifest.example.json`
 
 Pour les sources nationales hors France, le principe recommande est le meme : telecharger seulement les unites utiles et reconstruire un VRT global `_all_downloaded.vrt`, ce qui permet de traverser proprement les limites entre fichiers ou subdivisions administratives.
+
+Pour l'Italie complete, le pipeline utilise `TINITALY 1.1` (10 m, couverture nationale) comme source principale, avec l'override regional Ligurie conserve pour les canyons de cette region.
 
 Manifests exemples integres pour les modeles nationaux les plus prometteurs hors France :
 
