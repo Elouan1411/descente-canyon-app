@@ -208,6 +208,8 @@ Pour `Copernicus` et `MERIT`, il faut renseigner les manifests d'URL si tu veux 
 
 Pour les sources nationales hors France, le principe recommande est le meme : telecharger seulement les unites utiles et reconstruire un VRT global `_all_downloaded.vrt`, ce qui permet de traverser proprement les limites entre fichiers ou subdivisions administratives.
 
+Le Portugal est prepare dans la config hybride via une source `DGT MDT-2m` (`EPSG:3763`) basee sur un manifest a completer : `scripts/watersheds/portugal_national_dem_manifest.example.json`. Tant que ce manifest n'est pas renseigne, le pays retombe naturellement sur le fallback Europe.
+
 Pour l'Italie complete, le pipeline utilise `TINITALY 1.1` (10 m, couverture nationale) comme source principale, avec l'override regional Ligurie conserve pour les canyons de cette region.
 
 Manifests exemples integres pour les modeles nationaux les plus prometteurs hors France :

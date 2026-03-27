@@ -140,6 +140,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--spain-manifest", type=Path, default=Path("scripts/watersheds/spain_national_dem_manifest.example.json"))
     parser.add_argument("--austria-manifest", type=Path, default=Path("scripts/watersheds/austria_national_dem_manifest.example.json"))
     parser.add_argument("--slovenia-manifest", type=Path, default=Path("scripts/watersheds/slovenia_national_dem_manifest.example.json"))
+    parser.add_argument("--portugal-manifest", type=Path, default=Path("scripts/watersheds/portugal_national_dem_manifest.example.json"))
     return parser.parse_args()
 
 
@@ -365,6 +366,17 @@ def main() -> int:
             }
         }
     )
+
+    add_national_source(
+        name="portugal-dgt-mdt2m",
+        country="Portugal",
+        manifest_path=args.portugal_manifest,
+        output_dir="build/watersheds/portugal-national-dem",
+        unit_fields=["departement", "region"],
+        srs="EPSG:3763",
+    )
+    sources[-1]["bufferKm"] = 15.0
+    sources[-1]["processingResolutionM"] = 10.0
 
     sources.append(
         {
