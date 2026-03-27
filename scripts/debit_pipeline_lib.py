@@ -90,40 +90,37 @@ DMY_DASH_REGEX = re.compile(r"(\d{2})-(\d{2})-(\d{4})")
 EXPLICIT_INVALID_PATTERNS = (
     "sans rapport avec le debit",
     "sans rapport avec le debit actuel",
-    "route reservee aux cyclistes",
-    "fermee a la circulation",
-    "ferme a la circulation",
-    "fermeture de la route",
-    "route fermee",
-    "route coupee",
-    "route coupee",
     "nous serons en stage",
     "nous serons en formation",
     "journee de formation",
     "stage formation",
+    "debit inconnu",
+    "ni vu ni parcouru",
     "il risque donc d y avoir du monde",
 )
 
 STRONG_NON_HYDRO_INFO_KEYWORDS = {
-    "circulation",
     "cyclistes",
-    "vehicule",
-    "vehicules",
     "stationnement",
     "travaux",
     "chantier",
-    "formation",
-    "stage",
-    "ffcam",
     "fermeture",
     "ferme",
     "fermee",
-    "reservee",
-    "reserve",
+    "interdit",
+    "interdite",
+    "arrete",
+    "propriete",
+    "militaire",
+    "rallye",
+    "train",
 }
 
 WEAK_NON_HYDRO_INFO_KEYWORDS = {
+    "circulation",
     "route",
+    "vehicule",
+    "vehicules",
     "voiture",
     "acces",
     "parking",
@@ -131,23 +128,55 @@ WEAK_NON_HYDRO_INFO_KEYWORDS = {
     "groupe",
     "monde",
     "info",
+    "formation",
+    "stage",
+    "ffcam",
+    "ffme",
+    "reservee",
+    "reserve",
 }
 
 HYDROLOGY_SIGNAL_PATTERNS = {
+    "debit": r"\bdebit\b",
     "debit observe": r"\bdebit observe\b",
     "debit actuel": r"\bdebit actuel\b",
+    "debit correct": r"\bdebit correct\b",
+    "debit parfait": r"\bdebit parfait\b",
+    "debit ok": r"\bdebit ok\b",
+    "debit normal": r"\bdebit normal\b",
+    "debit reel": r"\bdebit reel\b",
+    "debit reserve": r"\bdebit reserve\b",
+    "debit naturel": r"\bdebit naturel\b",
+    "debit libre": r"\bdebit libre\b",
     "trop d eau": r"\btrop d eau\b",
     "gros debit": r"\bgros debit\b",
     "tres gros": r"\btres gros\b",
+    "petit debit": r"\bpetit debit\b",
     "petit filet": r"\bpetit filet\b",
     "filet d eau": r"\bfilet d eau\b",
     "rien ne coule": r"\brien ne coule\b",
     "ne coule": r"\bne coule(?:nt)?\b",
+    "ca coule": r"\bca coule\b",
+    "en eau": r"\ben eau\b",
     "trace d eau": r"\btrace d eau\b",
     "sec": r"\bsec\b",
     "crue": r"\bcrue\b",
     "impraticable": r"\bimpraticable\b",
     "praticable": r"(?<!im)\bpraticable\b",
+    "conditions": r"\ben conditions\b",
+    "vasque": r"\bvasque(?:s)?\b",
+    "cascade": r"\bcascade(?:s)?\b",
+    "saut": r"\bsaut(?:s)?\b",
+    "toboggan": r"\btoboggan(?:s)?\b",
+    "barrage": r"\bbarrage\b",
+    "captage": r"\bcaptage\b",
+    "capture": r"\bcapte\b",
+    "lacher d eau": r"\blach(?:e|er|ers)? d eau\b",
+    "deverse": r"\bdevers(?:e|er|ee|ement)\b",
+    "turbinage": r"\bturbinage\b",
+    "centrale": r"\bcentrale\b",
+    "retenue": r"\bretenue\b",
+    "robinet": r"\brobinet\b",
     "vu du pont": r"\bvu du pont\b",
     "depuis le pont": r"\bdepuis le pont\b",
     "observation depuis": r"\bobservation(?:s)? depuis\b",
@@ -156,6 +185,22 @@ HYDROLOGY_SIGNAL_PATTERNS = {
     "orage": r"\borage(?:s)?\b",
     "pluie": r"\bpluie(?:s)?\b",
     "juste ce qu il faut": r"\bjuste ce qu il faut\b",
+}
+
+CURRENT_OBSERVATION_PATTERNS = {
+    "aujourd hui": r"\baujourd hui\b",
+    "ce jour": r"\bce jour\b",
+    "actuellement": r"\bactuellement\b",
+    "vu": r"\bvu(?:e)?\b",
+    "observe": r"\bobserv\w+\b",
+    "au parking": r"\bau parking\b",
+    "au pont": r"\bau pont\b",
+    "au depart": r"\bau depart\b",
+    "dans le canyon": r"\bdans le canyon\b",
+    "a l arrivee": r"\ba l arrivee\b",
+    "ce matin": r"\bce matin\b",
+    "ce soir": r"\bce soir\b",
+    "debit est": r"\bdebit (?:est|etait|reste|demeure|redevient|redevenu)\b",
 }
 
 
@@ -520,11 +565,17 @@ def classify_observation(observation: dict[str, Any], overrides: list[dict[str, 
         for label, pattern in HYDROLOGY_SIGNAL_PATTERNS.items()
         if re.search(pattern, normalized_comment)
     ]
+    current_observation_hits = [
+        label
+        for label, pattern in CURRENT_OBSERVATION_PATTERNS.items()
+        if re.search(pattern, normalized_comment)
+    ]
     has_hydrology_comment_signal = bool(hydro_signal_hits)
+    has_current_observation_context = bool(current_observation_hits)
     has_strong_non_hydro_signal = bool(strong_non_hydro_hits)
     has_weak_non_hydro_signal = bool(weak_non_hydro_hits)
 
-    if explicit_invalid_hits:
+    if explicit_invalid_hits and is_descended is not True:
         reasons.extend(f"explicit_invalid:{pattern}" for pattern in explicit_invalid_hits)
         return {
             "qualityLabel": "invalid",
@@ -535,6 +586,10 @@ def classify_observation(observation: dict[str, Any], overrides: list[dict[str, 
 
     if is_descended is True:
         reasons.append("descended")
+        if hydro_signal_hits:
+            reasons.extend(f"hydrology_signal:{phrase}" for phrase in hydro_signal_hits)
+        if strong_non_hydro_hits or weak_non_hydro_hits:
+            reasons.append("descended_with_non_hydro_context")
         return {
             "qualityLabel": "valid",
             "qualityScore": _quality_score_for_label("valid"),
@@ -551,20 +606,29 @@ def classify_observation(observation: dict[str, Any], overrides: list[dict[str, 
                 "qualityReasons": reasons,
                 "manualOverride": False,
             }
-        if has_strong_non_hydro_signal and not has_hydrology_comment_signal:
+        if has_hydrology_comment_signal:
+            reasons.extend(f"hydrology_signal:{phrase}" for phrase in hydro_signal_hits)
+            if has_current_observation_context or not has_strong_non_hydro_signal:
+                reasons.append("non_descended_hydrology_observation")
+                return {
+                    "qualityLabel": "valid",
+                    "qualityScore": _quality_score_for_label("valid"),
+                    "qualityReasons": reasons,
+                    "manualOverride": False,
+                }
+            reasons.extend(f"context_only:{keyword}" for keyword in strong_non_hydro_hits)
+            reasons.append("mixed_hydrology_and_logistics")
+            return {
+                "qualityLabel": "uncertain",
+                "qualityScore": _quality_score_for_label("uncertain"),
+                "qualityReasons": reasons,
+                "manualOverride": False,
+            }
+        if has_strong_non_hydro_signal:
             reasons.extend(f"non_hydro_info:{keyword}" for keyword in strong_non_hydro_hits)
             return {
                 "qualityLabel": "invalid",
                 "qualityScore": _quality_score_for_label("invalid"),
-                "qualityReasons": reasons,
-                "manualOverride": False,
-            }
-        if has_hydrology_comment_signal:
-            reasons.extend(f"hydrology_signal:{phrase}" for phrase in hydro_signal_hits)
-            reasons.append("non_descended_but_hydrology_comment")
-            return {
-                "qualityLabel": "valid",
-                "qualityScore": _quality_score_for_label("valid"),
                 "qualityReasons": reasons,
                 "manualOverride": False,
             }
@@ -581,6 +645,32 @@ def classify_observation(observation: dict[str, Any], overrides: list[dict[str, 
         return {
             "qualityLabel": "uncertain",
             "qualityScore": _quality_score_for_label("uncertain"),
+            "qualityReasons": reasons,
+            "manualOverride": False,
+        }
+
+    if has_hydrology_comment_signal:
+        reasons.extend(f"hydrology_signal:{phrase}" for phrase in hydro_signal_hits)
+        if has_current_observation_context:
+            reasons.append("hydrology_observation_without_status")
+            return {
+                "qualityLabel": "valid",
+                "qualityScore": _quality_score_for_label("valid"),
+                "qualityReasons": reasons,
+                "manualOverride": False,
+            }
+        if has_strong_non_hydro_signal or has_weak_non_hydro_signal:
+            reasons.append("mixed_hydrology_and_logistics")
+            return {
+                "qualityLabel": "uncertain",
+                "qualityScore": _quality_score_for_label("uncertain"),
+                "qualityReasons": reasons,
+                "manualOverride": False,
+            }
+        reasons.append("default_hydrology_valid")
+        return {
+            "qualityLabel": "valid",
+            "qualityScore": _quality_score_for_label("valid"),
             "qualityReasons": reasons,
             "manualOverride": False,
         }

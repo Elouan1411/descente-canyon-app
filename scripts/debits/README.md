@@ -10,6 +10,8 @@ The pipeline is split into four steps:
 
 1. `build_debit_observation_dataset.py`
    - scrapes canyon debit pages
+   - reuses a persistent HTML cache in `build/debit-pipeline/cache/debit-html`
+   - automatically reuses an older cache in `<output-dir>/html-cache` if it already contains more files
    - parses one observation event per debit row
    - applies conservative quality filtering
    - excludes known false debit posts via `scripts/debits/observation_overrides.json`
@@ -40,6 +42,20 @@ python scripts/plan_debit_weather_windows.py --output-dir build/debit-pipeline/w
 python scripts/fetch_open_meteo_archive.py --output-dir build/debit-pipeline/weather-archive --workers 4
 python scripts/build_debit_training_features.py --output-dir build/debit-pipeline/training-features
 python scripts/train_debit_baseline_model.py --features-path build/debit-pipeline/training-features/training_features.jsonl
+```
+
+To force a fresh debit download, add:
+
+```bash
+python scripts/build_debit_observation_dataset.py --all --refresh-html-cache
+```
+
+If you only changed the filtering rules and want to relabel an existing dataset without re-reading all cached HTML:
+
+```bash
+python scripts/build_debit_observation_dataset.py --all \
+  --reuse-observations-path build/debit-pipeline/observations/all_debit_observations.jsonl \
+  --output-dir build/debit-pipeline/observations
 ```
 
 ## Quality Filter
