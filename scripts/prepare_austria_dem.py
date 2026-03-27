@@ -3,8 +3,11 @@ from __future__ import annotations
 import argparse
 import json
 import subprocess
+import time
+import urllib.request
 from pathlib import Path
 from typing import Any
+from urllib.error import HTTPError, URLError
 
 from rasterio.warp import transform
 
@@ -32,7 +35,7 @@ def parse_points(values: list[str]) -> list[tuple[float, float]]:
     return [(float(v.split(",", 1)[0]), float(v.split(",", 1)[1])) for v in values]
 
 
-def intersecting_tiles(points: list[tuple[float, float]], buffer_km: float) -> list[str]:
+def intersecting_tiles(points: list[tuple[float, float]], buffer_km: float) -> list[tuple[str, str]]:
     lats = [p[0] for p in points]
     lons = [p[1] for p in points]
     xs, ys = transform("EPSG:4326", "EPSG:3035", lons, lats)
@@ -47,31 +50,74 @@ def intersecting_tiles(points: list[tuple[float, float]], buffer_km: float) -> l
     urls = []
     for east in range(east_start, east_end + 1, 50000):
         for north in range(north_start, north_end + 1, 50000):
+            filename = f"ALS_DTM_CRS3035RES50000mN{north}E{east}.tif"
             urls.append(
-                "/vsicurl/https://data.bev.gv.at/download/ALS/DTM/"
-                f"{AUSTRIA_TILE_DATE}/ALS_DTM_CRS3035RES50000mN{north}E{east}.tif"
+                (
+                    filename,
+                    "https://data.bev.gv.at/download/ALS/DTM/"
+                    f"{AUSTRIA_TILE_DATE}/{filename}",
+                )
             )
     return sorted(set(urls))
 
 
-def build_vrt(gdalbuildvrt: str, urls: list[str], vrt_path: Path) -> None:
-    if not urls:
+def download_file(url: str, destination: Path) -> None:
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    if destination.exists() and destination.stat().st_size > 0:
+        return
+    temp_path = destination.with_suffix(destination.suffix + ".part")
+    last_error: Exception | None = None
+    for attempt in range(1, 5):
+        try:
+            request = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+            with urllib.request.urlopen(request, timeout=300) as response, open(temp_path, "wb") as handle:
+                while True:
+                    chunk = response.read(1024 * 1024)
+                    if not chunk:
+                        break
+                    handle.write(chunk)
+            temp_path.replace(destination)
+            return
+        except (HTTPError, URLError) as exc:
+            last_error = exc
+            temp_path.unlink(missing_ok=True)
+            if isinstance(exc, HTTPError) and exc.code not in {429, 500, 502, 503, 504}:
+                raise
+            time.sleep(5 * attempt)
+    raise SystemExit(f"Austria DEM download failed: {last_error}")
+
+
+def build_vrt(gdalbuildvrt: str, tif_paths: list[Path], vrt_path: Path) -> None:
+    if not tif_paths:
         raise SystemExit("No Austrian ALS tiles resolved")
     vrt_path.parent.mkdir(parents=True, exist_ok=True)
     input_list = vrt_path.with_suffix(".txt")
-    input_list.write_text("\n".join(urls), encoding="utf-8")
+    input_list.write_text("\n".join(str(path) for path in tif_paths), encoding="utf-8")
     subprocess.run([gdalbuildvrt, "-input_file_list", str(input_list), str(vrt_path)], check=True)
 
 
 def main() -> int:
     args = parse_args()
     points = parse_points(args.point)
-    urls = intersecting_tiles(points, args.buffer_km)
+    tiles = intersecting_tiles(points, args.buffer_km)
     gdalbuildvrt = resolve_executable(args.gdalbuildvrt, extra_candidates=[default_gdalbuildvrt()])
+    raw_dir = args.output_dir / "raw"
+    tif_paths = []
+    for filename, url in tiles:
+        path = raw_dir / filename
+        download_file(url, path)
+        tif_paths.append(path)
     vrt_path = args.output_dir / "vrt" / "_all_downloaded.vrt"
-    build_vrt(gdalbuildvrt, urls, vrt_path)
-    write_json(args.output_dir / "selected_tiles.json", {"tileCount": len(urls), "urls": urls})
-    print(json.dumps({"tileCount": len(urls), "vrt": str(vrt_path)}, ensure_ascii=False, indent=2))
+    build_vrt(gdalbuildvrt, tif_paths, vrt_path)
+    write_json(
+        args.output_dir / "selected_tiles.json",
+        {
+            "tileCount": len(tiles),
+            "tiles": [{"filename": filename, "url": url} for filename, url in tiles],
+            "paths": [str(path) for path in tif_paths],
+        },
+    )
+    print(json.dumps({"tileCount": len(tiles), "vrt": str(vrt_path)}, ensure_ascii=False, indent=2))
     return 0
 
 

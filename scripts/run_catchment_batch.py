@@ -550,6 +550,7 @@ def ensure_local_hydrology(
 
     if not reused_hydrology:
         started = time.perf_counter()
+        print(f"CLIP canyon {canyon_id} start", flush=True)
         clip_dem(
             dem_path,
             clip_path,
@@ -558,17 +559,22 @@ def ensure_local_hydrology(
             source_srs=source.get("srs"),
         )
         timings["clipDemSec"] = time.perf_counter() - started
+        print(f"CLIP canyon {canyon_id} done", flush=True)
         processing_dem = clip_path
         if source.get("processingCrs"):
             started = time.perf_counter()
+            print(f"REPROJECT canyon {canyon_id} start", flush=True)
             reproject_dem(clip_path, projected_clip_path, str(source["processingCrs"]))
             processing_dem = projected_clip_path
             timings["resampleDemSec"] = time.perf_counter() - started
+            print(f"REPROJECT canyon {canyon_id} done", flush=True)
         if source.get("processingResolutionM"):
             started = time.perf_counter()
+            print(f"RESAMPLE canyon {canyon_id} start", flush=True)
             resample_dem(processing_dem, processing_clip_path, float(source["processingResolutionM"]))
             processing_dem = processing_clip_path
             timings["resampleDemSec"] = time.perf_counter() - started
+            print(f"RESAMPLE canyon {canyon_id} done", flush=True)
         command = [
             sys.executable,
             "scripts/derive_ign_hydrology.py",
@@ -582,8 +588,10 @@ def ensure_local_hydrology(
         if source.get("srs"):
             command.extend(["--srs", source["srs"]])
         started = time.perf_counter()
+        print(f"HYDRO canyon {canyon_id} start", flush=True)
         subprocess.run(command, check=True)
         timings["deriveHydrologySec"] = time.perf_counter() - started
+        print(f"HYDRO canyon {canyon_id} done", flush=True)
 
     return (
         {
