@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import random
 import time
 import urllib.parse
 import urllib.request
@@ -62,7 +63,7 @@ def main() -> int:
     output_path = args.output_dir / "raw" / "liguria_5m.tif"
     output_path.parent.mkdir(parents=True, exist_ok=True)
     last_error: Exception | None = None
-    for attempt in range(1, 4):
+    for attempt in range(1, 7):
         try:
             with urllib.request.urlopen(url, timeout=300) as response, open(output_path, "wb") as handle:
                 handle.write(response.read())
@@ -72,7 +73,7 @@ def main() -> int:
             output_path.unlink(missing_ok=True)
             if isinstance(exc, HTTPError) and exc.code not in {429, 500, 502, 503, 504}:
                 raise
-            time.sleep(5 * attempt)
+            time.sleep(min(90, 5 * attempt) + random.uniform(0, 2.0))
     else:
         raise SystemExit(f"Liguria DEM request failed: {last_error}")
 
