@@ -17,13 +17,14 @@ import androidx.compose.ui.viewinterop.AndroidView
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.compose.LocalLifecycleOwner
+import com.google.gson.JsonObject
 import fr.descentecanyon.app.R
 import fr.descentecanyon.app.domain.model.CanyonSummary
 import fr.descentecanyon.app.domain.model.GeoPointType
-import fr.descentecanyon.app.map.MAP_CLUSTER_ZOOM_THRESHOLD
 import fr.descentecanyon.app.map.MAP_STYLE_URI
 import fr.descentecanyon.app.map.MapClusterEngine
 import fr.descentecanyon.app.map.MapDisplayMarker
+import kotlin.math.roundToInt
 import org.maplibre.android.MapLibre
 import org.maplibre.android.annotations.IconFactory
 import org.maplibre.android.annotations.Marker
@@ -34,23 +35,74 @@ import org.maplibre.android.geometry.LatLngBounds
 import org.maplibre.android.maps.MapLibreMap
 import org.maplibre.android.maps.MapView
 import org.maplibre.android.maps.Style
+import org.maplibre.android.style.expressions.Expression
+import org.maplibre.android.style.layers.CircleLayer
 import org.maplibre.android.style.layers.FillLayer
 import org.maplibre.android.style.layers.LineLayer
+import org.maplibre.android.style.layers.PropertyFactory.circleColor
+import org.maplibre.android.style.layers.PropertyFactory.circleOpacity
+import org.maplibre.android.style.layers.PropertyFactory.circleRadius
+import org.maplibre.android.style.layers.PropertyFactory.circleStrokeColor
+import org.maplibre.android.style.layers.PropertyFactory.circleStrokeOpacity
+import org.maplibre.android.style.layers.PropertyFactory.circleStrokeWidth
 import org.maplibre.android.style.layers.PropertyFactory.fillAntialias
 import org.maplibre.android.style.layers.PropertyFactory.fillColor
 import org.maplibre.android.style.layers.PropertyFactory.fillOpacity
 import org.maplibre.android.style.layers.PropertyFactory.lineColor
 import org.maplibre.android.style.layers.PropertyFactory.lineOpacity
 import org.maplibre.android.style.layers.PropertyFactory.lineWidth
+import org.maplibre.android.style.layers.PropertyFactory.textAllowOverlap
+import org.maplibre.android.style.layers.PropertyFactory.textColor
+import org.maplibre.android.style.layers.PropertyFactory.textField
+import org.maplibre.android.style.layers.PropertyFactory.textFont
+import org.maplibre.android.style.layers.PropertyFactory.textHaloColor
+import org.maplibre.android.style.layers.PropertyFactory.textHaloWidth
+import org.maplibre.android.style.layers.PropertyFactory.textIgnorePlacement
+import org.maplibre.android.style.layers.PropertyFactory.textSize
+import org.maplibre.android.style.layers.SymbolLayer
+import org.maplibre.android.style.sources.GeoJsonOptions
 import org.maplibre.android.style.sources.GeoJsonSource
+import org.maplibre.geojson.Feature
+import org.maplibre.geojson.FeatureCollection
+import org.maplibre.geojson.Point
 
 private const val TAG = "MapLibreView"
+
 private const val WATERSHED_SOURCE_ID = "watershed-source"
 private const val WATERSHED_FILL_LAYER_ID = "watershed-fill-layer"
 private const val WATERSHED_LINE_LAYER_ID = "watershed-line-layer"
+
+private const val CANYON_SOURCE_ID = "canyon-source"
+private const val CANYON_CLUSTER_LAYER_ID = "canyon-cluster-layer"
+private const val CANYON_CLUSTER_COUNT_LAYER_ID = "canyon-cluster-count-layer"
+private const val CANYON_POINT_LAYER_ID = "canyon-point-layer"
+private const val USER_SOURCE_ID = "user-source"
+private const val USER_HALO_LAYER_ID = "user-halo-layer"
+private const val USER_POINT_LAYER_ID = "user-point-layer"
+
+private const val PROPERTY_CANYON_ID = "canyonId"
+private const val PROPERTY_CANYON_NAME = "name"
+private const val PROPERTY_CLUSTER_COUNT = "clusterCount"
+
 private const val EMPTY_GEOJSON = "{\"type\":\"FeatureCollection\",\"features\":[]}"
+
 @ColorInt private const val WATERSHED_FILL_COLOR = 0x331A6B8A
 @ColorInt private const val WATERSHED_LINE_COLOR = 0xFF1A6B8A.toInt()
+@ColorInt private const val CANYON_POINT_COLOR = 0xFF1A6B8A.toInt()
+@ColorInt private const val CANYON_POINT_STROKE = 0xFFF8FAFC.toInt()
+@ColorInt private const val CLUSTER_SMALL_COLOR = 0xFF0F5E7A.toInt()
+@ColorInt private const val CLUSTER_MEDIUM_COLOR = 0xFF0F766E.toInt()
+@ColorInt private const val CLUSTER_LARGE_COLOR = 0xFF8B5E17.toInt()
+@ColorInt private const val CLUSTER_STROKE_COLOR = 0xFFF8FAFC.toInt()
+@ColorInt private const val CLUSTER_TEXT_COLOR = 0xFFFFFFFF.toInt()
+@ColorInt private const val CLUSTER_TEXT_HALO_COLOR = 0x80111827.toInt()
+@ColorInt private const val USER_HALO_COLOR = 0x553B82F6
+@ColorInt private const val USER_POINT_COLOR = 0xFF1D4ED8.toInt()
+@ColorInt private const val USER_STROKE_COLOR = 0xFFFFFFFF.toInt()
+
+private const val CLUSTER_TAP_FALLBACK_ZOOM_DELTA = 2.0
+
+private val EMPTY_FEATURE_COLLECTION = FeatureCollection.fromFeatures(emptyList<Feature>())
 
 @Composable
 fun MapLibreView(
@@ -129,6 +181,11 @@ fun MapLibreView(
 private class MapRenderState(
     private val context: android.content.Context,
 ) {
+    private enum class RenderMode {
+        VECTOR,
+        ANNOTATION,
+    }
+
     private var map: MapLibreMap? = null
     private var markers: List<CanyonSummary> = emptyList()
     private var userLatitude: Double? = null
@@ -144,10 +201,11 @@ private class MapRenderState(
     private var focusLocationRequestId: Int = 0
     private var lastFocusedLocationRequestId: Int = 0
     private var listenersAttached = false
-    private var lastSignature: String? = null
-    private var lastFitDataSignature: String? = null
+    private var lastRenderSignature: Int? = null
+    private var lastFitDataSignature: Int? = null
     private var didFitCamera = false
     private var styleUri: String = MAP_STYLE_URI
+    private var renderMode: RenderMode? = null
 
     fun bindMap(
         map: MapLibreMap,
@@ -158,6 +216,7 @@ private class MapRenderState(
         this.onMarkerClick = onMarkerClick
         this.styleUri = styleUri
         map.setStyle(Style.Builder().fromUri(styleUri)) {
+            renderMode = null
             if (!listenersAttached) {
                 attachListeners(map)
                 listenersAttached = true
@@ -197,11 +256,13 @@ private class MapRenderState(
         this.showWatershed = showWatershed
         this.persistedCameraState = persistedCameraState
         this.focusLocationRequestId = focusLocationRequestId
+
         if (this.styleUri != styleUri) {
             this.styleUri = styleUri
-            lastSignature = null
+            lastRenderSignature = null
             didFitCamera = false
             map?.setStyle(Style.Builder().fromUri(styleUri)) {
+                renderMode = null
                 render(force = true)
             }
             return
@@ -212,6 +273,7 @@ private class MapRenderState(
             lastFitDataSignature = fitDataSignature
             didFitCamera = false
         }
+
         runCatching {
             render(force = false)
         }.onFailure { throwable ->
@@ -223,91 +285,83 @@ private class MapRenderState(
 
     private fun attachListeners(map: MapLibreMap) {
         map.addOnCameraIdleListener {
-            runCatching {
-                render(force = true)
-            }.onFailure { throwable ->
-                Log.e(TAG, "Unable to update map after camera move", throwable)
+            if (clusterMarkers) {
+                runCatching {
+                    render(force = false)
+                }.onFailure { throwable ->
+                    Log.e(TAG, "Unable to refresh clustered map after camera idle", throwable)
+                }
             }
             dispatchVisibleBounds(map)
         }
         map.setOnMarkerClickListener { marker ->
-            handleMarkerTap(map, marker)
-            true
+            if (!clusterMarkers) {
+                handleAnnotationTap(marker)
+            }
+            !clusterMarkers
+        }
+        map.addOnMapClickListener { latLng ->
+            if (!clusterMarkers) {
+                return@addOnMapClickListener false
+            }
+            handleClusteredTap(map, latLng)
         }
     }
 
-    private fun handleMarkerTap(
+    private fun handleAnnotationTap(marker: Marker) {
+        val canyonId = marker.snippet.orEmpty()
+            .removePrefix("canyon:")
+            .toIntOrNull()
+            ?: return
+        onMarkerClick(canyonId)
+    }
+
+    private fun handleClusteredTap(
         map: MapLibreMap,
-        marker: Marker,
-    ) {
-        val snippet = marker.snippet.orEmpty()
-        when {
-            snippet.startsWith("canyon:") -> snippet.removePrefix("canyon:").toIntOrNull()?.let(onMarkerClick)
-            snippet.startsWith("cluster:") -> {
-                map.animateCamera(
-                    CameraUpdateFactory.newLatLngZoom(
-                        marker.position,
-                        maxOf(map.cameraPosition.zoom + 2.0, MAP_CLUSTER_ZOOM_THRESHOLD + 0.5),
-                    ),
-                    500,
-                )
-            }
+        latLng: LatLng,
+    ): Boolean {
+        val screenPoint = map.projection.toScreenLocation(latLng)
+        val clusterFeature = map.queryRenderedFeatures(screenPoint, CANYON_CLUSTER_LAYER_ID).firstOrNull()
+        if (clusterFeature != null) {
+            val geometry = clusterFeature.geometry() as? Point ?: return true
+            map.animateCamera(
+                CameraUpdateFactory.newLatLngZoom(
+                    LatLng(geometry.latitude(), geometry.longitude()),
+                    map.cameraPosition.zoom + CLUSTER_TAP_FALLBACK_ZOOM_DELTA,
+                ),
+                350,
+            )
+            return true
         }
+
+        val canyonFeature = map.queryRenderedFeatures(screenPoint, CANYON_POINT_LAYER_ID).firstOrNull()
+        val canyonId = canyonFeature?.getNumberProperty(PROPERTY_CANYON_ID)?.toInt()
+            ?: canyonFeature?.getStringProperty(PROPERTY_CANYON_ID)?.toIntOrNull()
+            ?: return false
+        onMarkerClick(canyonId)
+        return true
     }
 
     private fun render(force: Boolean) {
         val map = map ?: return
         val style = map.style ?: return
-
-        val displayMarkers = if (clusterMarkers) {
-            MapClusterEngine.cluster(
-                canyons = markers,
-                zoom = map.cameraPosition.zoom,
-                userLatitude = userLatitude,
-                userLongitude = userLongitude,
-            )
-        } else {
-            buildList {
-                val currentUserLatitude = userLatitude
-                val currentUserLongitude = userLongitude
-                markers.forEach { canyon ->
-                    val latitude = canyon.latitude ?: return@forEach
-                    val longitude = canyon.longitude ?: return@forEach
-                    add(MapDisplayMarker.Canyon(canyon, latitude, longitude))
-                }
-                if (currentUserLatitude != null && currentUserLongitude != null) {
-                    add(MapDisplayMarker.User(currentUserLatitude, currentUserLongitude))
-                }
-            }
-        }
-        val fitMarkers = buildList {
-            val currentUserLatitude = userLatitude
-            val currentUserLongitude = userLongitude
-            markers.forEach { canyon ->
-                val latitude = canyon.latitude ?: return@forEach
-                val longitude = canyon.longitude ?: return@forEach
-                add(MapDisplayMarker.Canyon(canyon, latitude, longitude))
-            }
-            if (currentUserLatitude != null && currentUserLongitude != null) {
-                add(MapDisplayMarker.User(currentUserLatitude, currentUserLongitude))
-            }
-        }
-        val signature = buildSignature(
-            displayMarkers = displayMarkers,
-            zoom = map.cameraPosition.zoom,
+        val signature = buildRenderSignature(
+            markers = markers,
+            userLatitude = userLatitude,
+            userLongitude = userLongitude,
+            clusterMarkers = clusterMarkers,
             watershedGeometryJson = watershedGeometryJson,
             showWatershed = showWatershed,
         )
-        if (!force && lastSignature == signature) return
-        lastSignature = signature
+        if (!force && lastRenderSignature == signature) return
+        lastRenderSignature = signature
 
         updateWatershed(style)
 
-        val iconFactory = IconFactory.getInstance(context)
-        map.clear()
-
-        displayMarkers.forEach { marker ->
-            map.addMarker(marker.toMarkerOptions(iconFactory))
+        if (clusterMarkers) {
+            renderVector(style, map)
+        } else {
+            renderAnnotated(style, map)
         }
 
         if (!didFitCamera) {
@@ -315,7 +369,7 @@ private class MapRenderState(
             if (!restored) {
                 fitCamera(
                     map = map,
-                    displayMarkers = fitMarkers.ifEmpty { displayMarkers },
+                    coordinates = canyonCoordinates(),
                     watershedBounds = watershedBounds.takeIf { showWatershed && !watershedGeometryJson.isNullOrBlank() },
                 )
             }
@@ -325,19 +379,45 @@ private class MapRenderState(
         dispatchVisibleBounds(map)
     }
 
+    private fun renderVector(
+        style: Style,
+        map: MapLibreMap,
+    ) {
+        if (renderMode != RenderMode.VECTOR) {
+            map.clear()
+            renderMode = RenderMode.VECTOR
+        }
+        ensureVectorStyle(style)
+        style.getSourceAs<GeoJsonSource>(CANYON_SOURCE_ID)?.setGeoJson(
+            buildDisplayFeatureCollection(markers, map.cameraPosition.zoom)
+        )
+        style.getSourceAs<GeoJsonSource>(USER_SOURCE_ID)?.setGeoJson(buildUserFeatureCollection(userLatitude, userLongitude))
+    }
+
+    private fun renderAnnotated(
+        style: Style,
+        map: MapLibreMap,
+    ) {
+        clearClusteredSources(style)
+        val iconFactory = IconFactory.getInstance(context)
+        map.clear()
+        renderMode = RenderMode.ANNOTATION
+        buildAnnotationMarkers().forEach { marker ->
+            map.addMarker(marker.toMarkerOptions(iconFactory, context))
+        }
+    }
+
     private fun fitCamera(
         map: MapLibreMap,
-        displayMarkers: List<MapDisplayMarker>,
+        coordinates: List<LatLng>,
         watershedBounds: LatLngBounds?,
     ) {
-        val canyonMarkers = displayMarkers.filterNot { it is MapDisplayMarker.User }
-        if (canyonMarkers.isEmpty() && watershedBounds == null) return
+        if (coordinates.isEmpty() && watershedBounds == null) return
 
-        if (canyonMarkers.size == 1 && watershedBounds == null) {
-            val marker = canyonMarkers.first()
+        if (coordinates.size == 1 && watershedBounds == null) {
             map.moveCamera(
                 CameraUpdateFactory.newLatLngZoom(
-                    LatLng(marker.latitude, marker.longitude),
+                    coordinates.first(),
                     13.6,
                 )
             )
@@ -345,9 +425,7 @@ private class MapRenderState(
         }
 
         val bounds = LatLngBounds.Builder().apply {
-            canyonMarkers.forEach { marker ->
-                include(LatLng(marker.latitude, marker.longitude))
-            }
+            coordinates.forEach(::include)
             watershedBounds?.let {
                 include(it.northEast)
                 include(it.southWest)
@@ -356,11 +434,9 @@ private class MapRenderState(
 
         val camera = map.getCameraForLatLngBounds(bounds, intArrayOf(96, 96, 96, 164))
         if (camera != null) {
-            val adjustedZoom = canyonMarkers.takeIf { it.isNotEmpty() }?.let { minOf(camera.zoom, preferredZoom(it)) } ?: camera.zoom
-            val target = camera.target
-                ?: canyonMarkers.firstOrNull()?.let { LatLng(it.latitude, it.longitude) }
-                ?: watershedBounds?.center
-                ?: return
+            val adjustedZoom = coordinates.takeIf { it.isNotEmpty() }?.let(::preferredZoom)?.let { minOf(camera.zoom, it) }
+                ?: camera.zoom
+            val target = camera.target ?: coordinates.firstOrNull() ?: watershedBounds?.center ?: return
             map.moveCamera(
                 CameraUpdateFactory.newLatLngZoom(
                     target,
@@ -368,23 +444,21 @@ private class MapRenderState(
                 )
             )
         } else {
-            val fallbackTarget = canyonMarkers.firstOrNull()?.let { LatLng(it.latitude, it.longitude) }
-                ?: watershedBounds?.center
-                ?: return
+            val fallbackTarget = coordinates.firstOrNull() ?: watershedBounds?.center ?: return
             map.moveCamera(
                 CameraUpdateFactory.newLatLngZoom(
                     fallbackTarget,
-                    canyonMarkers.takeIf { it.isNotEmpty() }?.let(::preferredZoom) ?: 10.0,
+                    coordinates.takeIf { it.isNotEmpty() }?.let(::preferredZoom) ?: 10.0,
                 )
             )
         }
     }
 
-    private fun preferredZoom(displayMarkers: List<MapDisplayMarker>): Double {
-        if (displayMarkers.size <= 1) return 14.5
+    private fun preferredZoom(coordinates: List<LatLng>): Double {
+        if (coordinates.size <= 1) return 14.5
 
-        val latitudes = displayMarkers.map { it.latitude }
-        val longitudes = displayMarkers.map { it.longitude }
+        val latitudes = coordinates.map { it.latitude }
+        val longitudes = coordinates.map { it.longitude }
         val maxSpan = maxOf(
             (latitudes.maxOrNull() ?: 0.0) - (latitudes.minOrNull() ?: 0.0),
             (longitudes.maxOrNull() ?: 0.0) - (longitudes.minOrNull() ?: 0.0),
@@ -405,23 +479,19 @@ private class MapRenderState(
         watershedBounds: LatLngBounds?,
         watershedGeometryJson: String?,
         showWatershed: Boolean,
-    ): String {
-        return buildString {
-            markers.sortedBy { it.id }.forEach { canyon ->
-                append('|')
-                append(canyon.id)
-                append(':')
-                append(canyon.latitude?.toString().orEmpty())
-                append(':')
-                append(canyon.longitude?.toString().orEmpty())
-            }
-            append("|w:")
-            append(showWatershed)
-            if (showWatershed && !watershedGeometryJson.isNullOrBlank()) {
-                append(':').append(watershedGeometryJson.hashCode())
-                append(':').append(watershedBounds?.toSignature().orEmpty())
-            }
+    ): Int {
+        var result = 17
+        markers.sortedBy { it.id }.forEach { canyon ->
+            result = 31 * result + canyon.id
+            result = 31 * result + canyon.latitude.coordinateHash()
+            result = 31 * result + canyon.longitude.coordinateHash()
         }
+        result = 31 * result + showWatershed.hashCode()
+        if (showWatershed && !watershedGeometryJson.isNullOrBlank()) {
+            result = 31 * result + watershedGeometryJson.hashCode()
+            result = 31 * result + (watershedBounds?.toSignatureHash() ?: 0)
+        }
+        return result
     }
 
     private fun maybeFocusOnLocation() {
@@ -451,8 +521,9 @@ private class MapRenderState(
 
     private fun dispatchVisibleBounds(map: MapLibreMap) {
         runCatching {
-            map.projection.visibleRegion?.latLngBounds
+            map.projection.visibleRegion.latLngBounds
         }.getOrNull()?.let(onVisibleBoundsChanged)
+
         map.cameraPosition.target?.let { target ->
             onCameraChanged(
                 MapCameraState(
@@ -464,28 +535,32 @@ private class MapRenderState(
         }
     }
 
-    private fun buildSignature(
-        displayMarkers: List<MapDisplayMarker>,
-        zoom: Double,
+    private fun buildRenderSignature(
+        markers: List<CanyonSummary>,
+        userLatitude: Double?,
+        userLongitude: Double?,
+        clusterMarkers: Boolean,
         watershedGeometryJson: String?,
         showWatershed: Boolean,
-    ): String {
-        return buildString {
-            append(zoom.toInt())
-            displayMarkers.forEach { marker ->
-                append('|')
-                when (marker) {
-                    is MapDisplayMarker.Canyon -> append("c").append(marker.canyon.id)
-                    is MapDisplayMarker.Cluster -> append("k").append(marker.count).append(':').append(marker.canyonIds.joinToString(","))
-                    is MapDisplayMarker.User -> append("u")
-                }
-            }
-            append("|w:")
-            append(showWatershed)
-            if (showWatershed && !watershedGeometryJson.isNullOrBlank()) {
-                append(':').append(watershedGeometryJson.hashCode())
-            }
+    ): Int {
+        var result = 17
+        result = 31 * result + clusterMarkers.hashCode()
+        markers.sortedBy { it.id }.forEach { canyon ->
+            result = 31 * result + canyon.id
+            result = 31 * result + canyon.latitude.coordinateHash()
+            result = 31 * result + canyon.longitude.coordinateHash()
+            result = 31 * result + (canyon.markerType?.ordinal ?: -1)
         }
+        if (clusterMarkers) {
+            result = 31 * result + ((map?.cameraPosition?.zoom?.clusterBucket()) ?: -1)
+        }
+        result = 31 * result + userLatitude.coordinateHash()
+        result = 31 * result + userLongitude.coordinateHash()
+        result = 31 * result + showWatershed.hashCode()
+        if (showWatershed && !watershedGeometryJson.isNullOrBlank()) {
+            result = 31 * result + watershedGeometryJson.hashCode()
+        }
+        return result
     }
 
     private fun updateWatershed(style: Style) {
@@ -528,96 +603,331 @@ private class MapRenderState(
         }
     }
 
+    private fun ensureVectorStyle(style: Style) {
+        if (style.getSource(CANYON_SOURCE_ID) == null) {
+            style.addSource(
+                GeoJsonSource(
+                    CANYON_SOURCE_ID,
+                    EMPTY_FEATURE_COLLECTION,
+                    GeoJsonOptions(),
+                )
+            )
+        }
+        if (style.getSource(USER_SOURCE_ID) == null) {
+            style.addSource(GeoJsonSource(USER_SOURCE_ID, EMPTY_FEATURE_COLLECTION))
+        }
+        if (style.getLayer(CANYON_CLUSTER_LAYER_ID) == null) {
+            style.addLayer(
+                CircleLayer(CANYON_CLUSTER_LAYER_ID, CANYON_SOURCE_ID)
+                    .withFilter(Expression.has(PROPERTY_CLUSTER_COUNT))
+                    .withProperties(
+                        circleColor(
+                            Expression.step(
+                                Expression.get(PROPERTY_CLUSTER_COUNT),
+                                Expression.color(CLUSTER_SMALL_COLOR),
+                                Expression.stop(20, Expression.color(CLUSTER_MEDIUM_COLOR)),
+                                Expression.stop(100, Expression.color(CLUSTER_LARGE_COLOR)),
+                            )
+                        ),
+                        circleRadius(
+                            Expression.step(
+                                Expression.get(PROPERTY_CLUSTER_COUNT),
+                                18,
+                                Expression.stop(20, 24),
+                                Expression.stop(100, 31),
+                            )
+                        ),
+                        circleOpacity(0.94f),
+                        circleStrokeColor(CLUSTER_STROKE_COLOR),
+                        circleStrokeWidth(2.5f),
+                        circleStrokeOpacity(0.98f),
+                    )
+            )
+        }
+        if (style.getLayer(CANYON_CLUSTER_COUNT_LAYER_ID) == null) {
+            style.addLayer(
+                SymbolLayer(CANYON_CLUSTER_COUNT_LAYER_ID, CANYON_SOURCE_ID)
+                    .withFilter(Expression.has(PROPERTY_CLUSTER_COUNT))
+                    .withProperties(
+                        textField(Expression.toString(Expression.get(PROPERTY_CLUSTER_COUNT))),
+                        textFont(arrayOf("Open Sans Semibold")),
+                        textSize(
+                            Expression.step(
+                                Expression.get(PROPERTY_CLUSTER_COUNT),
+                                12,
+                                Expression.stop(100, 13),
+                                Expression.stop(1000, 14),
+                            )
+                        ),
+                        textColor(CLUSTER_TEXT_COLOR),
+                        textHaloColor(CLUSTER_TEXT_HALO_COLOR),
+                        textHaloWidth(1.25f),
+                        textAllowOverlap(true),
+                        textIgnorePlacement(true),
+                    )
+            )
+        }
+        if (style.getLayer(CANYON_POINT_LAYER_ID) == null) {
+            style.addLayer(
+                CircleLayer(CANYON_POINT_LAYER_ID, CANYON_SOURCE_ID)
+                    .withFilter(Expression.not(Expression.has(PROPERTY_CLUSTER_COUNT)))
+                    .withProperties(
+                        circleColor(CANYON_POINT_COLOR),
+                        circleRadius(
+                            Expression.interpolate(
+                                Expression.linear(),
+                                Expression.zoom(),
+                                Expression.stop(2, 3.2),
+                                Expression.stop(5, 4.2),
+                                Expression.stop(8, 5.4),
+                                Expression.stop(11, 7.2),
+                            )
+                        ),
+                        circleOpacity(
+                            Expression.interpolate(
+                                Expression.linear(),
+                                Expression.zoom(),
+                                Expression.stop(2, 0.75),
+                                Expression.stop(5, 0.82),
+                                Expression.stop(8, 0.9),
+                                Expression.stop(11, 0.96),
+                            )
+                        ),
+                        circleStrokeColor(CANYON_POINT_STROKE),
+                        circleStrokeWidth(
+                            Expression.interpolate(
+                                Expression.linear(),
+                                Expression.zoom(),
+                                Expression.stop(2, 0.85),
+                                Expression.stop(8, 1.2),
+                                Expression.stop(11, 1.6),
+                            )
+                        ),
+                        circleStrokeOpacity(0.95f),
+                    )
+            )
+        }
+        if (style.getLayer(USER_HALO_LAYER_ID) == null) {
+            style.addLayer(
+                CircleLayer(USER_HALO_LAYER_ID, USER_SOURCE_ID).withProperties(
+                    circleColor(USER_HALO_COLOR),
+                    circleRadius(15f),
+                    circleOpacity(0.8f),
+                )
+            )
+        }
+        if (style.getLayer(USER_POINT_LAYER_ID) == null) {
+            style.addLayer(
+                CircleLayer(USER_POINT_LAYER_ID, USER_SOURCE_ID).withProperties(
+                    circleColor(USER_POINT_COLOR),
+                    circleRadius(6f),
+                    circleOpacity(1.0f),
+                    circleStrokeColor(USER_STROKE_COLOR),
+                    circleStrokeWidth(2f),
+                    circleStrokeOpacity(1.0f),
+                )
+            )
+        }
+    }
+
+    private fun clearClusteredSources(style: Style) {
+        style.getSourceAs<GeoJsonSource>(CANYON_SOURCE_ID)?.setGeoJson(EMPTY_FEATURE_COLLECTION)
+        style.getSourceAs<GeoJsonSource>(USER_SOURCE_ID)?.setGeoJson(EMPTY_FEATURE_COLLECTION)
+    }
+
+    private fun buildDisplayFeatureCollection(
+        markers: List<CanyonSummary>,
+        zoom: Double,
+    ): FeatureCollection {
+        val features = MapClusterEngine.cluster(
+            canyons = markers,
+            zoom = zoom,
+            userLatitude = null,
+            userLongitude = null,
+        ).mapNotNull { marker ->
+            when (marker) {
+                is MapDisplayMarker.Canyon -> Feature.fromGeometry(
+                    Point.fromLngLat(marker.longitude, marker.latitude),
+                    JsonObject().apply {
+                        addProperty(PROPERTY_CANYON_ID, marker.canyon.id)
+                        addProperty(PROPERTY_CANYON_NAME, marker.canyon.nom)
+                    },
+                )
+
+                is MapDisplayMarker.Cluster -> Feature.fromGeometry(
+                    Point.fromLngLat(marker.longitude, marker.latitude),
+                    JsonObject().apply {
+                        addProperty(PROPERTY_CLUSTER_COUNT, marker.count)
+                    },
+                )
+
+                is MapDisplayMarker.User -> null
+            }
+        }
+        return FeatureCollection.fromFeatures(features)
+    }
+
+    private fun buildUserFeatureCollection(
+        latitude: Double?,
+        longitude: Double?,
+    ): FeatureCollection {
+        if (latitude == null || longitude == null) return EMPTY_FEATURE_COLLECTION
+        return FeatureCollection.fromFeature(
+            Feature.fromGeometry(Point.fromLngLat(longitude, latitude))
+        )
+    }
+
+    private fun canyonCoordinates(): List<LatLng> {
+        return markers.mapNotNull { canyon ->
+            val latitude = canyon.latitude ?: return@mapNotNull null
+            val longitude = canyon.longitude ?: return@mapNotNull null
+            LatLng(latitude, longitude)
+        }
+    }
+
+    private fun buildAnnotationMarkers(): List<AnnotationMarker> {
+        return buildList {
+            markers.forEach { canyon ->
+                val latitude = canyon.latitude ?: return@forEach
+                val longitude = canyon.longitude ?: return@forEach
+                add(AnnotationMarker.Canyon(canyon, latitude, longitude))
+            }
+            val currentUserLatitude = userLatitude
+            val currentUserLongitude = userLongitude
+            if (currentUserLatitude != null && currentUserLongitude != null) {
+                add(AnnotationMarker.User(currentUserLatitude, currentUserLongitude))
+            }
+        }
+    }
+
     private fun toFeatureGeoJson(geometryJson: String): String {
         return "{\"type\":\"Feature\",\"properties\":{},\"geometry\":$geometryJson}"
     }
+}
 
-    private fun LatLngBounds.toSignature(): String {
-        return listOf(
-            latitudeNorth,
-            longitudeEast,
-            latitudeSouth,
-            longitudeWest,
-        ).joinToString(":")
+private sealed interface AnnotationMarker {
+    val latitude: Double
+    val longitude: Double
+
+    data class Canyon(
+        val canyon: CanyonSummary,
+        override val latitude: Double,
+        override val longitude: Double,
+    ) : AnnotationMarker
+
+    data class User(
+        override val latitude: Double,
+        override val longitude: Double,
+    ) : AnnotationMarker
+}
+
+private fun LatLngBounds.toSignatureHash(): Int {
+    var result = 17
+    result = 31 * result + latitudeNorth.coordinateHash()
+    result = 31 * result + longitudeEast.coordinateHash()
+    result = 31 * result + latitudeSouth.coordinateHash()
+    result = 31 * result + longitudeWest.coordinateHash()
+    return result
+}
+
+private fun Double?.coordinateHash(): Int {
+    return this?.times(1_000_000)?.roundToInt() ?: 0
+}
+
+private fun Double.clusterBucket(): Int {
+    return when {
+        this >= 10.0 -> 10
+        this >= 9.0 -> 9
+        this >= 8.0 -> 8
+        this >= 7.0 -> 7
+        else -> 6
     }
+}
 
-    private fun MapDisplayMarker.toMarkerOptions(iconFactory: IconFactory): MarkerOptions {
-        fun MarkerOptions.applySafeIcon(bitmap: Bitmap): MarkerOptions {
-            return runCatching {
-                icon(iconFactory.fromBitmap(bitmap))
-            }.onFailure { throwable ->
-                Log.e(TAG, "Unable to load marker icon bitmap", throwable)
-            }.getOrDefault(this)
-        }
-
-        return when (this) {
-            is MapDisplayMarker.Canyon -> MarkerOptions()
-                .position(LatLng(latitude, longitude))
-                .title(canyon.nom)
-                .snippet("canyon:${canyon.id}")
-                .applySafeIcon(drawableToBitmap(canyon.markerIconRes()))
-
-            is MapDisplayMarker.Cluster -> MarkerOptions()
-                .position(LatLng(latitude, longitude))
-                .title("$count canyons")
-                .snippet("cluster:${canyonIds.joinToString(",")}")
-                .applySafeIcon(createMarkerBitmap(count.toString(), 0xFF8B6914.toInt()))
-
-            is MapDisplayMarker.User -> MarkerOptions()
-                .position(LatLng(latitude, longitude))
-                .title("Votre position")
-                .snippet("user")
-                .applySafeIcon(createMarkerBitmap("Moi", 0xFF111827.toInt()))
-        }
+private fun CanyonSummary.markerIconRes(): Int {
+    return when (markerType) {
+        GeoPointType.PARKING_AMONT -> R.drawable.map_marker_parking_amont
+        GeoPointType.PARKING_AVAL -> R.drawable.map_marker_parking_aval
+        GeoPointType.ENTREE -> R.drawable.map_marker_entry
+        GeoPointType.SORTIE -> R.drawable.map_marker_exit
+        GeoPointType.POINT_REMARQUABLE -> R.drawable.map_marker_remarkable
+        GeoPointType.ECHAPPATOIRE -> R.drawable.map_marker_escape
+        GeoPointType.UNKNOWN, null -> R.drawable.map_marker_point
     }
+}
 
-    private fun CanyonSummary.markerIconRes(): Int {
-        return when (markerType) {
-            GeoPointType.PARKING_AMONT -> R.drawable.map_marker_parking_amont
-            GeoPointType.PARKING_AVAL -> R.drawable.map_marker_parking_aval
-            GeoPointType.ENTREE -> R.drawable.map_marker_entry
-            GeoPointType.SORTIE -> R.drawable.map_marker_exit
-            GeoPointType.POINT_REMARQUABLE -> R.drawable.map_marker_remarkable
-            GeoPointType.ECHAPPATOIRE -> R.drawable.map_marker_escape
-            GeoPointType.UNKNOWN, null -> R.drawable.map_marker_point
-        }
+private fun drawableToBitmap(
+    context: android.content.Context,
+    resId: Int,
+): Bitmap {
+    val drawable = ContextCompat.getDrawable(context, resId)
+        ?: return createMarkerBitmap("?", 0xFF1A6B8A.toInt())
+    val width = drawable.intrinsicWidth.coerceAtLeast(88)
+    val height = drawable.intrinsicHeight.coerceAtLeast(88)
+    val bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888)
+    val canvas = Canvas(bitmap)
+    drawable.setBounds(0, 0, width, height)
+    drawable.draw(canvas)
+    return bitmap
+}
+
+private fun AnnotationMarker.toMarkerBitmap(context: android.content.Context): Bitmap {
+    return when (this) {
+        is AnnotationMarker.Canyon -> drawableToBitmap(context, canyon.markerIconRes())
+        is AnnotationMarker.User -> createMarkerBitmap("Moi", 0xFF111827.toInt())
     }
+}
 
-    private fun drawableToBitmap(resId: Int): Bitmap {
-        val drawable = ContextCompat.getDrawable(context, resId)
-            ?: return createMarkerBitmap("?", 0xFF1A6B8A.toInt())
-        val width = drawable.intrinsicWidth.coerceAtLeast(88)
-        val height = drawable.intrinsicHeight.coerceAtLeast(88)
-        val bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888)
-        val canvas = Canvas(bitmap)
-        drawable.setBounds(0, 0, width, height)
-        drawable.draw(canvas)
-        return bitmap
+private fun MarkerOptions.applyMarkerBitmap(
+    iconFactory: IconFactory,
+    marker: AnnotationMarker,
+    context: android.content.Context,
+): MarkerOptions {
+    return runCatching {
+        icon(iconFactory.fromBitmap(marker.toMarkerBitmap(context)))
+    }.onFailure { throwable ->
+        Log.e(TAG, "Unable to load marker icon bitmap", throwable)
+    }.getOrDefault(this)
+}
+
+private fun AnnotationMarker.toMarkerOptions(iconFactory: IconFactory, context: android.content.Context): MarkerOptions {
+    return when (this) {
+        is AnnotationMarker.Canyon -> MarkerOptions()
+            .position(LatLng(latitude, longitude))
+            .title(canyon.nom)
+            .snippet("canyon:${canyon.id}")
+            .applyMarkerBitmap(iconFactory, this, context)
+
+        is AnnotationMarker.User -> MarkerOptions()
+            .position(LatLng(latitude, longitude))
+            .title("Votre position")
+            .snippet("user")
+            .applyMarkerBitmap(iconFactory, this, context)
     }
+}
 
-    private fun createMarkerBitmap(label: String, colorInt: Int): Bitmap {
-        val width = 132
-        val height = 64
-        val bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888)
-        val canvas = Canvas(bitmap)
+private fun createMarkerBitmap(label: String, colorInt: Int): Bitmap {
+    val width = 132
+    val height = 64
+    val bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888)
+    val canvas = Canvas(bitmap)
 
-        val fillPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply { color = colorInt }
-        val strokePaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
-            color = 0xFFFFFFFF.toInt()
-            style = Paint.Style.STROKE
-            strokeWidth = 5f
-        }
-        val textPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
-            color = 0xFFFFFFFF.toInt()
-            textSize = 28f
-            textAlign = Paint.Align.CENTER
-            isFakeBoldText = true
-        }
-        val rect = Rect(8, 8, width - 8, height - 8)
-        canvas.drawRoundRect(rect.left.toFloat(), rect.top.toFloat(), rect.right.toFloat(), rect.bottom.toFloat(), 22f, 22f, fillPaint)
-        canvas.drawRoundRect(rect.left.toFloat(), rect.top.toFloat(), rect.right.toFloat(), rect.bottom.toFloat(), 22f, 22f, strokePaint)
-        val y = height / 2f - (textPaint.descent() + textPaint.ascent()) / 2f
-        canvas.drawText(label.take(4), width / 2f, y, textPaint)
-        return bitmap
+    val fillPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply { color = colorInt }
+    val strokePaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+        color = 0xFFFFFFFF.toInt()
+        style = Paint.Style.STROKE
+        strokeWidth = 5f
     }
+    val textPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+        color = 0xFFFFFFFF.toInt()
+        textSize = 28f
+        textAlign = Paint.Align.CENTER
+        isFakeBoldText = true
+    }
+    val rect = Rect(8, 8, width - 8, height - 8)
+    canvas.drawRoundRect(rect.left.toFloat(), rect.top.toFloat(), rect.right.toFloat(), rect.bottom.toFloat(), 22f, 22f, fillPaint)
+    canvas.drawRoundRect(rect.left.toFloat(), rect.top.toFloat(), rect.right.toFloat(), rect.bottom.toFloat(), 22f, 22f, strokePaint)
+    val y = height / 2f - (textPaint.descent() + textPaint.ascent()) / 2f
+    canvas.drawText(label.take(4), width / 2f, y, textPaint)
+    return bitmap
 }
