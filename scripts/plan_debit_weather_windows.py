@@ -8,6 +8,7 @@ from pathlib import Path
 from typing import Any
 
 from debit_pipeline_lib import (
+    build_annual_windows,
     build_observation_window,
     build_weather_target,
     load_canyon_lookup,
@@ -37,6 +38,12 @@ def main() -> None:
     parser.add_argument("--watersheds-path", default="offline-data/full/room-import/watersheds.json")
     parser.add_argument("--output-dir", default="build/debit-pipeline/weather-planning")
     parser.add_argument("--lookback-days", type=int, default=7)
+    parser.add_argument(
+        "--fetch-strategy",
+        choices=["proximity", "annual"],
+        default="annual",
+        help="How to batch weather fetch windows for API calls",
+    )
     parser.add_argument(
         "--fetch-max-gap-days",
         type=int,
@@ -114,11 +121,14 @@ def main() -> None:
             )
         )
 
-    merged_windows = merge_windows(
-        observation_windows,
-        max_gap_days=args.fetch_max_gap_days,
-        max_span_days=args.fetch_max_span_days,
-    )
+    if args.fetch_strategy == "annual":
+        merged_windows = build_annual_windows(observation_windows)
+    else:
+        merged_windows = merge_windows(
+            observation_windows,
+            max_gap_days=args.fetch_max_gap_days,
+            max_span_days=args.fetch_max_span_days,
+        )
     targets = sorted(targets_by_id.values(), key=lambda item: (item["source"], item["targetId"]))
     source_counts = Counter(target["source"] for target in targets)
 
@@ -134,6 +144,7 @@ def main() -> None:
             "schemaVersion": 1,
             "generatedAt": datetime.now(timezone.utc).isoformat(),
             "lookbackDays": args.lookback_days,
+            "fetchStrategy": args.fetch_strategy,
             "fetchMaxGapDays": args.fetch_max_gap_days,
             "fetchMaxSpanDays": args.fetch_max_span_days,
             "observationCount": len(observations),

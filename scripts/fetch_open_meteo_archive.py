@@ -78,6 +78,7 @@ def fetch_single_window(
     hourly_variables: list[str],
     user_agent: str,
     throttler: RequestThrottler,
+    request_timeout_seconds: int,
     max_attempts: int,
     base_backoff_seconds: float,
     refetch_cached: bool,
@@ -96,7 +97,7 @@ def fetch_single_window(
     )
 
     if cache_path.exists():
-        payload = fetch_json(url, user_agent=user_agent, cache_path=cache_path)
+        payload = fetch_json(url, user_agent=user_agent, timeout=request_timeout_seconds, cache_path=cache_path)
         return {
             "mergedWindowId": merged_window["mergedWindowId"],
             "url": url,
@@ -110,7 +111,7 @@ def fetch_single_window(
     for attempt in range(max(max_attempts, 1)):
         try:
             throttler.wait_turn()
-            payload = fetch_json(url, user_agent=user_agent, cache_path=cache_path)
+            payload = fetch_json(url, user_agent=user_agent, timeout=request_timeout_seconds, cache_path=cache_path)
             return {
                 "mergedWindowId": merged_window["mergedWindowId"],
                 "url": url,
@@ -137,6 +138,7 @@ def main() -> None:
     parser.add_argument("--hourly", default=",".join(DEFAULT_HOURLY_VARIABLES))
     parser.add_argument("--workers", type=int, default=4)
     parser.add_argument("--request-delay-ms", type=int, default=1000)
+    parser.add_argument("--timeout-s", type=int, default=20)
     parser.add_argument("--max-attempts", type=int, default=6)
     parser.add_argument("--base-backoff-ms", type=int, default=2000)
     parser.add_argument("--refetch-cached", action="store_true", help="Ignore cached raw JSON and fetch again")
@@ -178,6 +180,7 @@ def main() -> None:
                 hourly_variables=hourly_variables,
                 user_agent=args.user_agent,
                 throttler=throttler,
+                request_timeout_seconds=max(args.timeout_s, 1),
                 max_attempts=args.max_attempts,
                 base_backoff_seconds=base_backoff_seconds,
                 refetch_cached=args.refetch_cached,
@@ -187,53 +190,70 @@ def main() -> None:
 
         completed = 0
         total_to_process = len(windows_to_process)
-        for future in concurrent.futures.as_completed(future_map):
-            window = future_map[future]
-            completed += 1
-            try:
-                result = future.result()
-                payload = result["payload"]
-                manifest_row = {
-                    "mergedWindowId": result["mergedWindowId"],
-                    "targetId": window["targetId"],
-                    "archiveStartDate": window["archiveStartDate"],
-                    "archiveEndDate": window["archiveEndDate"],
-                    "requestedLatitude": window["targetLatitude"],
-                    "requestedLongitude": window["targetLongitude"],
-                    "resolvedLatitude": payload.get("latitude"),
-                    "resolvedLongitude": payload.get("longitude"),
-                    "resolvedElevation": payload.get("elevation"),
-                    "timezone": payload.get("timezone"),
-                    "hourlyRowCount": len(result["hourlyRows"]),
-                    "url": result["url"],
-                    "cachePath": result["cachePath"],
-                    "source": result.get("source"),
-                }
-                append_jsonl(manifest_path, [manifest_row])
-                append_jsonl(hourly_rows_path, result["hourlyRows"])
-                success_count += 1
-                if result.get("source") == "cache":
-                    cache_source_count += 1
-                else:
-                    network_source_count += 1
-            except Exception as exc:  # noqa: BLE001
-                failures.append(
-                    {
-                        "mergedWindowId": window["mergedWindowId"],
-                        "targetId": window["targetId"],
-                        "archiveStartDate": window.get("archiveStartDate"),
-                        "archiveEndDate": window.get("archiveEndDate"),
-                        "error": repr(exc),
-                    }
-                )
-                write_json(failures_path, failures)
-
-            if completed % 50 == 0 or completed == total_to_process:
+        pending = set(future_map.keys())
+        last_heartbeat = time.monotonic()
+        while pending:
+            done, pending = concurrent.futures.wait(
+                pending,
+                timeout=10,
+                return_when=concurrent.futures.FIRST_COMPLETED,
+            )
+            if not done:
                 print(
-                    f"Progress {completed}/{total_to_process} | successes={success_count} | failures={len(failures)} "
+                    f"Waiting... completed={completed}/{total_to_process} | failures={len(failures)} "
                     f"| cache={cache_source_count} | network={network_source_count}",
                     file=sys.stderr,
                 )
+                last_heartbeat = time.monotonic()
+                continue
+
+            for future in done:
+                window = future_map[future]
+                completed += 1
+                try:
+                    result = future.result()
+                    payload = result["payload"]
+                    manifest_row = {
+                        "mergedWindowId": result["mergedWindowId"],
+                        "targetId": window["targetId"],
+                        "archiveStartDate": window["archiveStartDate"],
+                        "archiveEndDate": window["archiveEndDate"],
+                        "requestedLatitude": window["targetLatitude"],
+                        "requestedLongitude": window["targetLongitude"],
+                        "resolvedLatitude": payload.get("latitude"),
+                        "resolvedLongitude": payload.get("longitude"),
+                        "resolvedElevation": payload.get("elevation"),
+                        "timezone": payload.get("timezone"),
+                        "hourlyRowCount": len(result["hourlyRows"]),
+                        "url": result["url"],
+                        "cachePath": result["cachePath"],
+                        "source": result.get("source"),
+                    }
+                    append_jsonl(manifest_path, [manifest_row])
+                    append_jsonl(hourly_rows_path, result["hourlyRows"])
+                    success_count += 1
+                    if result.get("source") == "cache":
+                        cache_source_count += 1
+                    else:
+                        network_source_count += 1
+                except Exception as exc:  # noqa: BLE001
+                    failures.append(
+                        {
+                            "mergedWindowId": window["mergedWindowId"],
+                            "targetId": window["targetId"],
+                            "archiveStartDate": window.get("archiveStartDate"),
+                            "archiveEndDate": window.get("archiveEndDate"),
+                            "error": repr(exc),
+                        }
+                    )
+                    write_json(failures_path, failures)
+
+                if completed <= 10 or completed % 50 == 0 or completed == total_to_process:
+                    print(
+                        f"Progress {completed}/{total_to_process} | successes={success_count} | failures={len(failures)} "
+                        f"| cache={cache_source_count} | network={network_source_count}",
+                        file=sys.stderr,
+                    )
 
     write_json(
         output_dir / "metadata.json",
@@ -250,6 +270,7 @@ def main() -> None:
             "cacheSourceCount": cache_source_count,
             "networkSourceCount": network_source_count,
             "requestDelayMs": args.request_delay_ms,
+            "timeoutSeconds": args.timeout_s,
             "maxAttempts": args.max_attempts,
             "baseBackoffMs": args.base_backoff_ms,
             "refetchCached": args.refetch_cached,

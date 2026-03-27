@@ -908,6 +908,36 @@ def merge_windows(
     return sorted(merged, key=lambda item: (item["targetId"], item["windowStartLocal"]))
 
 
+def build_annual_windows(observation_windows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    grouped: dict[tuple[str, int], list[dict[str, Any]]] = {}
+    for window in observation_windows:
+        end_year = datetime.fromisoformat(window["windowEndLocal"]).year
+        grouped.setdefault((window["targetId"], end_year), []).append(window)
+
+    annual_windows: list[dict[str, Any]] = []
+    for (target_id, year), windows in sorted(grouped.items(), key=lambda item: (item[0][0], item[0][1])):
+        ordered = sorted(windows, key=lambda item: item["windowStartLocal"])
+        first = dict(ordered[0])
+        start_local = min(window["windowStartLocal"] for window in ordered)
+        end_local = max(window["windowEndLocal"] for window in ordered)
+        annual_window = dict(first)
+        annual_window["mergedWindowId"] = stable_id("annualwindow", target_id, year, start_local, end_local)
+        annual_window["windowStartLocal"] = start_local
+        annual_window["windowEndLocal"] = end_local
+        annual_window["archiveStartDate"] = min(window["archiveStartDate"] for window in ordered)
+        annual_window["archiveEndDate"] = max(window["archiveEndDate"] for window in ordered)
+        annual_window["observationIds"] = sorted(window["observationId"] for window in ordered)
+        annual_window["observationCount"] = len(ordered)
+        annual_window["canyonIds"] = sorted({int(window["canyonId"]) for window in ordered})
+        annual_window["fetchSpanDays"] = (
+            datetime.fromisoformat(end_local) - datetime.fromisoformat(start_local)
+        ).days
+        annual_window["fetchStrategy"] = "annual"
+        annual_windows.append(annual_window)
+
+    return annual_windows
+
+
 def build_open_meteo_archive_url(
     *,
     latitude: float,
