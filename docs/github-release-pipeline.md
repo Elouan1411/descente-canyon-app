@@ -3,7 +3,18 @@
 This repository ships Android releases from GitHub Actions with two workflows:
 
 - `.github/workflows/ci.yml`: runs tests, lint, and a debug build on `main` and pull requests.
-- `.github/workflows/release.yml`: manually builds a signed `.aab` and uploads it as a GitHub artifact for manual submission to Google Play Console.
+- `.github/workflows/release.yml`: manually bumps the semantic version, increments `versionCode` from a versioned file in the repo, builds a signed `.aab`, uploads it as a GitHub artifact, commits the new version file, and pushes a matching Git tag.
+
+## Source of truth
+
+App versioning is stored in `version.properties` at the repository root:
+
+```properties
+VERSION_CODE=1
+VERSION_NAME=1.0.0
+```
+
+The release workflow reads this file, computes the next version, rewrites it, commits it back to the current branch, and tags the release.
 
 ## Required GitHub setup
 
@@ -64,14 +75,21 @@ Store them in the matching GitHub secrets:
 
 1. Open `Actions -> Release`.
 2. Click `Run workflow`.
-3. Enter a new `version_name`, for example `1.0.1`.
-4. Enter a strictly increasing `version_code`, for example `2`.
-5. Run the workflow.
+3. Choose the semantic bump type:
+   - `patch`: `1.0.0` -> `1.0.1`
+   - `minor`: `1.0.0` -> `1.1.0`
+   - `major`: `1.0.0` -> `2.0.0`
+4. Run the workflow.
 
 The workflow will:
 
+- read the current version from `version.properties`
+- compute the next `version_name`
+- increment `VERSION_CODE` by 1
 - rebuild the signed release bundle
 - upload the `.aab` as a GitHub Actions artifact
+- commit the updated `version.properties`
+- push a matching Git tag such as `v1.0.1`
 
 ## Submitting to Google Play manually
 
@@ -86,6 +104,8 @@ The workflow will:
 
 - `version_code` must always increase on Google Play.
 - `version_name` is the visible app version shown to users.
+- `version.properties` is now the source of truth for both `VERSION_NAME` and `VERSION_CODE`.
 - local builds still work through `local.properties`.
 - CI and release builds currently use JDK 25 because the project is configured for Java 25 in `app/build.gradle.kts`.
+- both workflows opt in to Node 24 for JavaScript-based GitHub Actions to avoid the Node 20 deprecation warning.
 - automatic Play publishing can be added later by wiring a Google Play service account JSON secret.

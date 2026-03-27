@@ -17,6 +17,13 @@ val localProperties = Properties().apply {
     }
 }
 
+val versionProperties = Properties().apply {
+    val versionPropertiesFile = rootProject.file("version.properties")
+    if (versionPropertiesFile.exists()) {
+        versionPropertiesFile.inputStream().use(::load)
+    }
+}
+
 fun localPropertyOrEnv(propertyName: String, envName: String): String? {
     val propertyValue = localProperties.getProperty(propertyName)?.takeIf { it.isNotBlank() }
     return propertyValue ?: System.getenv(envName)?.takeIf { it.isNotBlank() }
@@ -27,8 +34,10 @@ val releaseStorePassword = localPropertyOrEnv("releaseStorePassword", "RELEASE_S
 val releaseKeyAlias = localPropertyOrEnv("releaseKeyAlias", "RELEASE_KEY_ALIAS")
 val releaseKeyPassword = localPropertyOrEnv("releaseKeyPassword", "RELEASE_KEY_PASSWORD")
 val playServiceAccountFile = localPropertyOrEnv("playServiceAccountFile", "PLAY_SERVICE_ACCOUNT_FILE")
-val ciVersionCode = providers.gradleProperty("ciVersionCode").orNull?.toIntOrNull()
-val ciVersionName = providers.gradleProperty("ciVersionName").orNull
+val fileVersionCode = versionProperties.getProperty("VERSION_CODE")?.toIntOrNull() ?: 1
+val fileVersionName = versionProperties.getProperty("VERSION_NAME")?.takeIf { it.isNotBlank() } ?: "1.0.0"
+val ciVersionCode = providers.gradleProperty("ciVersionCode").orNull?.toIntOrNull() ?: fileVersionCode
+val ciVersionName = providers.gradleProperty("ciVersionName").orNull ?: fileVersionName
 val hasReleaseSigning = listOf(
     releaseKeystoreFile,
     releaseStorePassword,
@@ -64,8 +73,8 @@ android {
         applicationId = "fr.descentecanyon.app"
         minSdk = 26
         targetSdk = 35
-        versionCode = ciVersionCode ?: 1
-        versionName = ciVersionName ?: "1.0.0"
+        versionCode = ciVersionCode
+        versionName = ciVersionName
 
         testInstrumentationRunner = "fr.descentecanyon.app.e2e.runner.HiltTestRunner"
     }

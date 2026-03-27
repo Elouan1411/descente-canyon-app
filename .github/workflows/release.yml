@@ -1,16 +1,20 @@
 name: Release
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 on:
   workflow_dispatch:
     inputs:
-      version_name:
-        description: Visible app version, for example 1.2.0
+      bump:
+        description: Semantic version bump to apply
         required: true
-        type: string
-      version_code:
-        description: Monotonic integer versionCode, for example 12
-        required: true
-        type: string
+        default: patch
+        type: choice
+        options:
+          - patch
+          - minor
+          - major
 
 concurrency:
   group: release-build
@@ -22,7 +26,7 @@ jobs:
     timeout-minutes: 60
     environment: production
     permissions:
-      contents: read
+      contents: write
 
     env:
       RELEASE_KEYSTORE_FILE: release.keystore
@@ -33,6 +37,70 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Compute next version
+        id: version
+        shell: bash
+        run: |
+          python <<'PY' >> "$GITHUB_OUTPUT"
+          import os
+          from pathlib import Path
+
+          bump = os.environ["BUMP"]
+          props = {}
+          for line in Path("version.properties").read_text(encoding="utf-8").splitlines():
+              line = line.strip()
+              if not line or line.startswith("#") or "=" not in line:
+                  continue
+              key, value = line.split("=", 1)
+              props[key.strip()] = value.strip()
+
+          current_name = props.get("VERSION_NAME", "1.0.0")
+          current_code = int(props.get("VERSION_CODE", "1"))
+          major, minor, patch = (int(part) for part in current_name.split("."))
+
+          if bump == "major":
+              next_version = (major + 1, 0, 0)
+          elif bump == "minor":
+              next_version = (major, minor + 1, 0)
+          else:
+              next_version = (major, minor, patch + 1)
+
+          version_name = ".".join(str(part) for part in next_version)
+          version_tag = f"v{version_name}"
+          version_code = str(current_code + 1)
+
+          print(f"current_version={current_name}")
+          print(f"current_version_code={current_code}")
+          print(f"version_name={version_name}")
+          print(f"version_tag={version_tag}")
+          print(f"version_code={version_code}")
+          PY
+        env:
+          BUMP: ${{ github.event.inputs.bump }}
+
+      - name: Show computed version
+        run: |
+          echo "Current version: ${{ steps.version.outputs.current_version }}"
+          echo "Current version code: ${{ steps.version.outputs.current_version_code }}"
+          echo "Next version: ${{ steps.version.outputs.version_name }}"
+          echo "Version code: ${{ steps.version.outputs.version_code }}"
+
+      - name: Ensure release tag does not exist
+        run: |
+          if git rev-parse "${{ steps.version.outputs.version_tag }}" >/dev/null 2>&1; then
+            echo "Tag ${{ steps.version.outputs.version_tag }} already exists"
+            exit 1
+          fi
+
+      - name: Write version.properties
+        run: |
+          cat > version.properties <<EOF
+          VERSION_CODE=${{ steps.version.outputs.version_code }}
+          VERSION_NAME=${{ steps.version.outputs.version_name }}
+          EOF
 
       - name: Set up JDK 25
         uses: actions/setup-java@v4
@@ -54,13 +122,32 @@ jobs:
 
       - name: Build signed release bundle
         run: |
-          ./gradlew :app:bundleRelease \
-            -PciVersionCode=${{ github.event.inputs.version_code }} \
-            -PciVersionName=${{ github.event.inputs.version_name }}
+          ./gradlew :app:bundleRelease
 
       - name: Upload release bundle artifact
         uses: actions/upload-artifact@v4
         with:
-          name: app-release-${{ github.event.inputs.version_name }}-${{ github.event.inputs.version_code }}
+          name: app-release-${{ steps.version.outputs.version_name }}-${{ steps.version.outputs.version_code }}
           path: app/build/outputs/bundle/release/*.aab
           if-no-files-found: error
+
+      - name: Commit version bump and push tag
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add version.properties
+          git commit -m "Bump app version to ${{ steps.version.outputs.version_name }}"
+          git tag "${{ steps.version.outputs.version_tag }}"
+          git push origin HEAD:${{ github.ref_name }} --follow-tags
+
+      - name: Write job summary
+        run: |
+          {
+            echo "## Release bundle ready"
+            echo ""
+            echo "- Previous version: `${{ steps.version.outputs.current_version }}`"
+            echo "- Previous version code: `${{ steps.version.outputs.current_version_code }}`"
+            echo "- New version: `${{ steps.version.outputs.version_name }}`"
+            echo "- Version code: `${{ steps.version.outputs.version_code }}`"
+            echo "- Git tag: `${{ steps.version.outputs.version_tag }}`"
+          } >> "$GITHUB_STEP_SUMMARY"
