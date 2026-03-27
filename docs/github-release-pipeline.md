@@ -3,7 +3,7 @@
 This repository ships Android releases from GitHub Actions with two workflows:
 
 - `.github/workflows/ci.yml`: runs tests, lint, and a debug build on `main` and pull requests.
-- `.github/workflows/release.yml`: manually bumps the semantic version, increments `versionCode` from a versioned file in the repo, builds a signed `.aab`, uploads it as a GitHub artifact, commits the new version file, and pushes a matching Git tag.
+- `.github/workflows/release.yml`: manually bumps the semantic version, increments `versionCode` from a versioned file in the repo, builds a signed `.aab`, uploads it as a GitHub artifact, commits the new version file, pushes a matching Git tag, and creates a GitHub Release with the `.aab` attached.
 
 ## Source of truth
 
@@ -90,12 +90,13 @@ The workflow will:
 - upload the `.aab` as a GitHub Actions artifact
 - commit the updated `version.properties`
 - push a matching Git tag such as `v1.0.1`
+- create a GitHub Release for that tag and attach the `.aab`
 
 ## Submitting to Google Play manually
 
 1. Open the finished workflow run.
-2. Download the generated artifact.
-3. Extract the `.aab` file.
+2. Open the generated GitHub Release, or download the artifact from the workflow run.
+3. Get the `.aab` file.
 4. Open Google Play Console.
 5. Create or update the release on the desired track.
 6. Upload the `.aab` manually.
