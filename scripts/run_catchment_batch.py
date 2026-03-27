@@ -463,14 +463,16 @@ def resolve_source_for_canyon(
     for source in sources:
         if not canyon_matches(canyon, source.get("match", {})):
             continue
+        force_prepare = bool((source.get("autoPrepare") or {}).get("alwaysPrepare", False))
         attempt = {
             "sourceName": source.get("name"),
             "provider": (source.get("autoPrepare") or {}).get("provider"),
             "matched": True,
             "availableBefore": source_is_available(source),
+            "forcePrepare": force_prepare,
         }
         resolved_source = source
-        if not source_is_available(source):
+        if force_prepare or not source_is_available(source):
             try:
                 resolved_source = auto_prepare_source(
                     source=source,

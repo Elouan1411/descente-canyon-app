@@ -248,7 +248,8 @@ def main() -> int:
             "channelMinUpaKm2": 0.05,
             "autoPrepare": {
                 "provider": "slovenia-jgp",
-                "outputDir": "build/watersheds/slovenia-national-dem"
+                "outputDir": "build/watersheds/slovenia-national-dem",
+                "alwaysPrepare": True
             },
             "match": {
                 "pays": "Slovénie"
@@ -271,6 +272,7 @@ def main() -> int:
                 "provider": "switzerland-stac",
                 "outputDir": "build/watersheds/switzerland-national-dem",
                 "bufferKm": 10.0,
+                "alwaysPrepare": True,
             },
             "match": {
                 "pays": "Suisse"
@@ -292,6 +294,7 @@ def main() -> int:
                 "provider": "spain-wcs",
                 "outputDir": "build/watersheds/spain-national-dem",
                 "bufferKm": 10.0,
+                "alwaysPrepare": True,
             },
             "match": {
                 "pays": "Espagne"
@@ -313,6 +316,7 @@ def main() -> int:
                 "provider": "austria-als",
                 "outputDir": "build/watersheds/austria-national-dem",
                 "bufferKm": 20.0,
+                "alwaysPrepare": True,
             },
             "match": {
                 "pays": "Autriche"
@@ -333,6 +337,7 @@ def main() -> int:
                 "provider": "liguria-wcs",
                 "outputDir": "build/watersheds/italy-liguria-dem",
                 "bufferKm": 10.0,
+                "alwaysPrepare": True,
             },
             "match": {
                 "pays": "Italie",
@@ -354,7 +359,8 @@ def main() -> int:
             "autoPrepare": {
                 "provider": "copernicus",
                 "manifest": "scripts/watersheds/copernicus_url_manifest.example.json",
-                "outputDir": "build/watersheds/copernicus-data"
+                "outputDir": "build/watersheds/copernicus-data",
+                "alwaysPrepare": True
             },
             "match": {
                 "pays": EUROPEAN_COUNTRIES
