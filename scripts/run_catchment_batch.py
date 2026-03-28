@@ -17,9 +17,9 @@ from typing import Any
 import numpy as np
 import rasterio
 from rasterio.features import shapes
-from rasterio.warp import transform_geom
+from rasterio.warp import transform, transform_geom
 
-from cli_tools import default_gdal_translate, resolve_executable
+from cli_tools import default_gdal_translate, default_gdalwarp, resolve_executable
 from compute_entry_watersheds import FLOW_DIRECTION_OFFSETS, EntryPoint, create_raster, evaluate_entry, load_canyons
 from run_local_ign_canyon_workflow import DEFAULT_LAMBERT93_PROJ4
 
@@ -84,6 +84,56 @@ def load_canyon_ids_from_file(path: Path) -> list[int]:
     return canyon_ids
 
 
+def bbox_for_points_in_crs(points: list[dict[str, Any]], target_crs: str, buffer_km: float) -> tuple[float, float, float, float]:
+    lats = [float(point["latitude"]) for point in points]
+    lons = [float(point["longitude"]) for point in points]
+    xs, ys = transform("EPSG:4326", target_crs, lons, lats)
+    min_x = min(xs) - buffer_km * 1000.0
+    max_x = max(xs) + buffer_km * 1000.0
+    min_y = min(ys) - buffer_km * 1000.0
+    max_y = max(ys) + buffer_km * 1000.0
+    return min_x, min_y, max_x, max_y
+
+
+def merge_dem_paths(
+    *,
+    dem_paths: list[Path],
+    target_path: Path,
+    target_srs: str,
+    points: list[dict[str, Any]],
+    buffer_km: float,
+    resolution_m: float,
+    gdal_warp: str,
+) -> Path:
+    target_path.parent.mkdir(parents=True, exist_ok=True)
+    min_x, min_y, max_x, max_y = bbox_for_points_in_crs(points, target_srs, buffer_km)
+    command = [
+        gdal_warp,
+        "-overwrite",
+        "-multi",
+        "-wo",
+        "NUM_THREADS=ALL_CPUS",
+        "-r",
+        "bilinear",
+        "-dstnodata",
+        "-9999",
+        "-t_srs",
+        target_srs,
+        "-tr",
+        str(resolution_m),
+        str(resolution_m),
+        "-te",
+        str(min_x),
+        str(min_y),
+        str(max_x),
+        str(max_y),
+        *[str(path) for path in dem_paths],
+        str(target_path),
+    ]
+    subprocess.run(command, check=True)
+    return target_path
+
+
 def normalized_path(value: str | Path | None) -> Path | None:
     if value is None:
         return None
@@ -129,6 +179,7 @@ def parse_args() -> argparse.Namespace:
         "--gdal-translate",
         default=default_gdal_translate(),
     )
+    parser.add_argument("--gdal-warp", default=default_gdalwarp())
     parser.add_argument("--country", action="append")
     parser.add_argument("--france-only", action="store_true")
     parser.add_argument("--prepare-france-ign-first", action="store_true")
@@ -348,14 +399,10 @@ def auto_prepare_source(
             command.extend(["--point", f"{point['latitude']},{point['longitude']}"])
         subprocess.run(command, check=True)
         selected_tiles = load_json_if_exists(local_output_dir / "selected_tiles.json") or {}
-        if int(selected_tiles.get("missingTileCount") or 0) > 0:
-            raise SystemExit(
-                f"Austria DEM coverage incomplete for canyon {canyon['id']} - missing border tiles. "
-                "Fallback to a transboundary source is required to avoid a truncated watershed."
-            )
         prepared = dict(source)
         prepared["dem"] = str(local_output_dir / "vrt" / "_all_downloaded.vrt")
         prepared["preparedDynamically"] = True
+        prepared["coverageIncomplete"] = int(selected_tiles.get("missingTileCount") or 0) > 0
         return prepared
 
     if provider == "slovenia-jgp":
@@ -520,6 +567,7 @@ def resolve_source_for_canyon(
     sources: list[dict[str, Any]],
     output_dir: Path,
     gdal_translate: str,
+    gdal_warp: str,
 ) -> tuple[dict[str, Any] | None, list[dict[str, Any]]]:
     attempts: list[dict[str, Any]] = []
     for source in sources:
@@ -549,6 +597,56 @@ def resolve_source_for_canyon(
                 attempts.append(attempt)
                 continue
         attempt["availableAfter"] = source_is_available(resolved_source)
+        if resolved_source.get("coverageIncomplete") and source.get("supplementProviders"):
+            merged_dem_paths = [normalized_path(resolved_source["dem"]).resolve()]
+            attempt["coverageIncomplete"] = True
+            attempt["supplementsTried"] = []
+            for supplement_provider in source.get("supplementProviders", []):
+                supplement_source = next(
+                    (
+                        candidate
+                        for candidate in sources
+                        if (candidate.get("autoPrepare") or {}).get("provider") == supplement_provider
+                    ),
+                    None,
+                )
+                if supplement_source is None:
+                    attempt["supplementsTried"].append({"provider": supplement_provider, "status": "missing_config"})
+                    continue
+                try:
+                    prepared_supplement = auto_prepare_source(
+                        source=supplement_source,
+                        canyon=canyon,
+                        points=points,
+                        output_dir=output_dir,
+                        gdal_translate=gdal_translate,
+                    )
+                    supplement_dem = normalized_path(prepared_supplement["dem"]).resolve()
+                    if supplement_dem.exists():
+                        merged_dem_paths.append(supplement_dem)
+                        attempt["supplementsTried"].append({"provider": supplement_provider, "status": "added", "dem": str(supplement_dem)})
+                    else:
+                        attempt["supplementsTried"].append({"provider": supplement_provider, "status": "missing_dem"})
+                except Exception as exc:
+                    attempt["supplementsTried"].append({"provider": supplement_provider, "status": "error", "error": f"{type(exc).__name__}: {exc}"})
+
+            if len(merged_dem_paths) > 1:
+                merged_path = output_dir / "prepared_sources" / f"merged-{source.get('name','source')}-{canyon['id']}" / "merged_dem.tif"
+                merge_dem_paths(
+                    dem_paths=merged_dem_paths,
+                    target_path=merged_path,
+                    target_srs=str(source.get("srs") or "EPSG:4326"),
+                    points=points,
+                    buffer_km=float(source.get("bufferKm", 20.0)),
+                    resolution_m=float(source.get("processingResolutionM") or 10.0),
+                    gdal_warp=gdal_warp,
+                )
+                resolved_source = dict(resolved_source)
+                resolved_source["dem"] = str(merged_path)
+                resolved_source["skipClipIfLocalDem"] = True
+                resolved_source["processingResolutionM"] = None
+                resolved_source["coverageIncomplete"] = False
+                attempt["mergedDem"] = str(merged_path)
         attempts.append(attempt)
         if source_is_available(resolved_source):
             return resolved_source, attempts
@@ -1147,6 +1245,7 @@ def process_single_canyon(
     sources: list[dict[str, Any]],
     output_dir: Path,
     gdal_translate: str,
+    gdal_warp: str,
     keep_work: bool,
 ) -> str:
     canyon_file = output_dir / "canyons" / f"{canyon_id}.json"
@@ -1161,6 +1260,7 @@ def process_single_canyon(
         sources=sources,
         output_dir=output_dir,
         gdal_translate=gdal_translate,
+        gdal_warp=gdal_warp,
     )
     stage_timings["resolveSourceSec"] = time.perf_counter() - started
     if source is None:
@@ -1321,6 +1421,7 @@ def process_single_canyon_safe(
     sources: list[dict[str, Any]],
     output_dir: Path,
     gdal_translate: str,
+    gdal_warp: str,
     keep_work: bool,
 ) -> str:
     try:
@@ -1331,6 +1432,7 @@ def process_single_canyon_safe(
             sources=sources,
             output_dir=output_dir,
             gdal_translate=gdal_translate,
+            gdal_warp=gdal_warp,
             keep_work=keep_work,
         )
     except KeyboardInterrupt:
@@ -1366,6 +1468,7 @@ def main() -> int:
     output_dir = args.output_dir.resolve()
     output_dir.mkdir(parents=True, exist_ok=True)
     gdal_translate = resolve_executable(args.gdal_translate, extra_candidates=[default_gdal_translate()])
+    gdal_warp = resolve_executable(args.gdal_warp, extra_candidates=[default_gdalwarp()])
 
     config = load_json(args.source_config)
     sources = config["sources"]
@@ -1431,6 +1534,7 @@ def main() -> int:
                     sources=sources,
                     output_dir=output_dir,
                     gdal_translate=gdal_translate,
+                    gdal_warp=gdal_warp,
                     keep_work=args.keep_work,
                 )
                 processed += 1
@@ -1453,6 +1557,7 @@ def main() -> int:
                         sources=sources,
                         output_dir=output_dir,
                         gdal_translate=gdal_translate,
+                        gdal_warp=gdal_warp,
                         keep_work=args.keep_work,
                     )
                     in_flight[future] = canyon_id
@@ -1481,6 +1586,7 @@ def main() -> int:
                             sources=sources,
                             output_dir=output_dir,
                             gdal_translate=gdal_translate,
+                            gdal_warp=gdal_warp,
                             keep_work=args.keep_work,
                         )
                         in_flight[new_future] = canyon_id

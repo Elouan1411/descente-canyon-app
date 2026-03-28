@@ -269,6 +269,7 @@ def main() -> int:
             "candidateStrategy": "nearest_channel",
             "searchRadiusM": 120.0,
             "channelMinUpaKm2": 0.05,
+            "supplementProviders": ["austria-als", "tinitaly-bulk"],
             "autoPrepare": {
                 "provider": "switzerland-stac",
                 "outputDir": "build/watersheds/switzerland-national-dem",
@@ -313,6 +314,7 @@ def main() -> int:
             "candidateStrategy": "nearest_channel",
             "searchRadiusM": 120.0,
             "channelMinUpaKm2": 0.05,
+            "supplementProviders": ["switzerland-stac", "slovenia-jgp", "tinitaly-bulk"],
             "autoPrepare": {
                 "provider": "austria-als",
                 "outputDir": "build/watersheds/austria-national-dem",
@@ -357,6 +359,7 @@ def main() -> int:
             "candidateStrategy": "nearest_channel",
             "searchRadiusM": 120.0,
             "channelMinUpaKm2": 0.05,
+            "supplementProviders": ["switzerland-stac", "austria-als"],
             "autoPrepare": {
                 "provider": "tinitaly-bulk",
                 "outputDir": "build/watersheds/italy-national-dem"
@@ -385,7 +388,8 @@ def main() -> int:
                 "alwaysPrepare": True,
             },
             "match": {
-                "pays": "Portugal"
+                "pays": "Portugal",
+                "regionNotIn": ["Madeira", "Açores"]
             }
         }
     )

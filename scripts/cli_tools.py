@@ -37,6 +37,12 @@ def default_gdal_translate() -> str:
     return "gdal_translate"
 
 
+def default_gdalwarp() -> str:
+    if os.name == "nt":
+        return r"C:\Program Files\GDAL\gdalwarp.exe"
+    return "gdalwarp"
+
+
 def default_7zip() -> str:
     if os.name == "nt":
         return r"C:\Program Files\7-Zip\7z.exe"
