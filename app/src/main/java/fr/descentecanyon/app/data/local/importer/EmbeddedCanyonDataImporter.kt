@@ -5,6 +5,7 @@ import dagger.hilt.android.qualifiers.ApplicationContext
 import fr.descentecanyon.app.data.local.dao.AppMetadataDao
 import fr.descentecanyon.app.data.local.dao.BibliographyDao
 import fr.descentecanyon.app.data.local.dao.CanyonDao
+import fr.descentecanyon.app.data.local.dao.getByIdsChunked
 import fr.descentecanyon.app.data.local.dao.GeoPointDao
 import fr.descentecanyon.app.data.local.dao.RegulationDao
 import fr.descentecanyon.app.data.local.dao.WatershedDao
@@ -63,7 +64,7 @@ class EmbeddedCanyonDataImporter @Inject constructor(
         val canyonBibliography = readJsonAsset<List<CanyonBibliographyImportRow>>("canyon_bibliography.json")
         val regulationTexts = readJsonAsset<List<RegulationImportRow>>("regulation_texts.json")
         val canyonRegulations = readJsonAsset<List<CanyonRegulationImportRow>>("canyon_regulations.json")
-        val existingCanyons = canyonDao.getByIds(canyonRows.map { it.id }).associateBy { it.id }
+        val existingCanyons = canyonDao.getByIdsChunked(canyonRows.map { it.id }).associateBy { it.id }
 
         database.withTransaction {
             bibliographyDao.clearLinks()

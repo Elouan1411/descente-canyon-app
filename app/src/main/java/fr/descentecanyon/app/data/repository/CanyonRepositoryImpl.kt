@@ -2,6 +2,7 @@ package fr.descentecanyon.app.data.repository
 
 import fr.descentecanyon.app.data.local.dao.CanyonDao
 import fr.descentecanyon.app.data.local.dao.GeoPointDao
+import fr.descentecanyon.app.data.local.dao.getByIdsChunked
 import fr.descentecanyon.app.data.local.database.AppDatabase
 import fr.descentecanyon.app.data.mapper.toSearchItem
 import fr.descentecanyon.app.data.mapper.toEntity
@@ -152,7 +153,7 @@ class CanyonRepositoryImpl @Inject constructor(
                 return@flow
             }
 
-            val canyons = canyonDao.getByIds(representativePoints.keys.toList())
+            val canyons = canyonDao.getByIdsChunked(representativePoints.keys)
             val nearby = canyons.mapNotNull { canyon ->
                 val point = representativePoints[canyon.id] ?: return@mapNotNull null
                 val distanceKm = localStore.haversineKm(
