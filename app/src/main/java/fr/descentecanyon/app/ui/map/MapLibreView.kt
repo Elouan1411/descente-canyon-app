@@ -73,6 +73,8 @@ private const val WATERSHED_LINE_LAYER_ID = "watershed-line-layer"
 private const val CANYON_SOURCE_ID = "canyon-source"
 private const val CANYON_CLUSTER_LAYER_ID = "canyon-cluster-layer"
 private const val CANYON_CLUSTER_COUNT_LAYER_ID = "canyon-cluster-count-layer"
+private const val CANYON_VISIBLE_SOURCE_ID = "canyon-visible-source"
+private const val CANYON_VISIBLE_POINT_LAYER_ID = "canyon-visible-point-layer"
 private const val CANYON_POINT_LAYER_ID = "canyon-point-layer"
 private const val USER_SOURCE_ID = "user-source"
 private const val USER_HALO_LAYER_ID = "user-halo-layer"
@@ -102,7 +104,8 @@ private const val EMPTY_GEOJSON = "{\"type\":\"FeatureCollection\",\"features\":
 private const val CLUSTER_RADIUS = 96
 private const val CLUSTER_MAX_ZOOM = 12
 private const val CLUSTER_TAP_FALLBACK_ZOOM_DELTA = 2.0
-private const val VIEWPORT_CLUSTER_PADDING_FACTOR = 0.35
+private const val DETAIL_POINT_ZOOM_THRESHOLD = 8.4
+private const val DETAIL_POINT_VISIBLE_COUNT_THRESHOLD = 12
 
 private val EMPTY_FEATURE_COLLECTION = FeatureCollection.fromFeatures(emptyList<Feature>())
 
@@ -289,7 +292,7 @@ private class MapRenderState(
         map.addOnCameraIdleListener {
             if (clusterMarkers) {
                 runCatching {
-                    render(force = false)
+                    refreshViewportDerivedSources(map)
                 }.onFailure { throwable ->
                     Log.e(TAG, "Unable to refresh clustered map after camera idle", throwable)
                 }
@@ -342,7 +345,11 @@ private class MapRenderState(
             return true
         }
 
-        val canyonFeature = map.queryRenderedFeatures(screenPoint, CANYON_POINT_LAYER_ID).firstOrNull()
+        val canyonFeature = map.queryRenderedFeatures(
+            screenPoint,
+            CANYON_VISIBLE_POINT_LAYER_ID,
+            CANYON_POINT_LAYER_ID,
+        ).firstOrNull()
         val canyonId = canyonFeature?.getNumberProperty(PROPERTY_CANYON_ID)?.toInt()
             ?: canyonFeature?.getStringProperty(PROPERTY_CANYON_ID)?.toIntOrNull()
             ?: return false
@@ -396,10 +403,32 @@ private class MapRenderState(
             renderMode = RenderMode.VECTOR
         }
         ensureVectorStyle(style)
-        style.getSourceAs<GeoJsonSource>(CANYON_SOURCE_ID)?.setGeoJson(
-            buildCanyonFeatureCollection(filterMarkersForViewport(markers, map))
-        )
+        updateVisiblePointSource(style, map)
         style.getSourceAs<GeoJsonSource>(USER_SOURCE_ID)?.setGeoJson(buildUserFeatureCollection(userLatitude, userLongitude))
+    }
+
+    private fun refreshViewportDerivedSources(map: MapLibreMap) {
+        val style = map.style ?: return
+        if (renderMode != RenderMode.VECTOR) return
+        updateVisiblePointSource(style, map)
+    }
+
+    private fun updateVisiblePointSource(
+        style: Style,
+        map: MapLibreMap,
+    ) {
+        val visibleMarkers = filterMarkersInViewport(markers, map)
+        val detailMode = shouldShowDetailPoints(map.cameraPosition.zoom, visibleMarkers.size)
+        style.getSourceAs<GeoJsonSource>(CANYON_SOURCE_ID)?.setGeoJson(
+            if (detailMode) EMPTY_FEATURE_COLLECTION else buildCanyonFeatureCollection(markers)
+        )
+        style.getSourceAs<GeoJsonSource>(CANYON_VISIBLE_SOURCE_ID)?.setGeoJson(
+            if (detailMode) {
+                buildCanyonFeatureCollection(visibleMarkers)
+            } else {
+                EMPTY_FEATURE_COLLECTION
+            }
+        )
     }
 
     private fun renderAnnotated(
@@ -559,9 +588,6 @@ private class MapRenderState(
             result = 31 * result + canyon.longitude.coordinateHash()
             result = 31 * result + (canyon.markerType?.ordinal ?: -1)
         }
-        if (clusterMarkers) {
-            result = 31 * result + (map?.projection?.visibleRegion?.latLngBounds?.viewportSignatureHash() ?: 0)
-        }
         result = 31 * result + userLatitude.coordinateHash()
         result = 31 * result + userLongitude.coordinateHash()
         result = 31 * result + showWatershed.hashCode()
@@ -626,6 +652,9 @@ private class MapRenderState(
         }
         if (style.getSource(USER_SOURCE_ID) == null) {
             style.addSource(GeoJsonSource(USER_SOURCE_ID, EMPTY_FEATURE_COLLECTION))
+        }
+        if (style.getSource(CANYON_VISIBLE_SOURCE_ID) == null) {
+            style.addSource(GeoJsonSource(CANYON_VISIBLE_SOURCE_ID, EMPTY_FEATURE_COLLECTION))
         }
         if (style.getLayer(CANYON_CLUSTER_LAYER_ID) == null) {
             style.addLayer(
@@ -718,6 +747,35 @@ private class MapRenderState(
                     )
             )
         }
+        if (style.getLayer(CANYON_VISIBLE_POINT_LAYER_ID) == null) {
+            style.addLayer(
+                CircleLayer(CANYON_VISIBLE_POINT_LAYER_ID, CANYON_VISIBLE_SOURCE_ID)
+                    .withProperties(
+                        circleColor(CANYON_POINT_COLOR),
+                        circleRadius(
+                            Expression.interpolate(
+                                Expression.linear(),
+                                Expression.zoom(),
+                                Expression.stop(8, 5.2),
+                                Expression.stop(10, 6.4),
+                                Expression.stop(12, 7.8),
+                            )
+                        ),
+                        circleOpacity(
+                            Expression.interpolate(
+                                Expression.linear(),
+                                Expression.zoom(),
+                                Expression.stop(8, 0.9),
+                                Expression.stop(10, 0.95),
+                                Expression.stop(12, 1.0),
+                            )
+                        ),
+                        circleStrokeColor(CANYON_POINT_STROKE),
+                        circleStrokeWidth(1.6f),
+                        circleStrokeOpacity(0.98f),
+                    )
+            )
+        }
         if (style.getLayer(USER_HALO_LAYER_ID) == null) {
             style.addLayer(
                 CircleLayer(USER_HALO_LAYER_ID, USER_SOURCE_ID).withProperties(
@@ -743,6 +801,7 @@ private class MapRenderState(
 
     private fun clearClusteredSources(style: Style) {
         style.getSourceAs<GeoJsonSource>(CANYON_SOURCE_ID)?.setGeoJson(EMPTY_FEATURE_COLLECTION)
+        style.getSourceAs<GeoJsonSource>(CANYON_VISIBLE_SOURCE_ID)?.setGeoJson(EMPTY_FEATURE_COLLECTION)
         style.getSourceAs<GeoJsonSource>(USER_SOURCE_ID)?.setGeoJson(EMPTY_FEATURE_COLLECTION)
     }
 
@@ -761,19 +820,22 @@ private class MapRenderState(
         return FeatureCollection.fromFeatures(features)
     }
 
-    private fun filterMarkersForViewport(
+    private fun filterMarkersInViewport(
         markers: List<CanyonSummary>,
         map: MapLibreMap,
     ): List<CanyonSummary> {
-        val bounds = runCatching {
-            map.projection.visibleRegion.latLngBounds
-        }.getOrNull() ?: return markers
-        val paddedBounds = bounds.expand(VIEWPORT_CLUSTER_PADDING_FACTOR)
+        val bounds = visibleBounds(map) ?: return markers
         return markers.filter { canyon ->
             val latitude = canyon.latitude ?: return@filter false
             val longitude = canyon.longitude ?: return@filter false
-            paddedBounds.contains(latitude, longitude)
+            bounds.contains(latitude, longitude)
         }
+    }
+
+    private fun visibleBounds(map: MapLibreMap): LatLngBounds? {
+        return runCatching {
+            map.projection.visibleRegion.latLngBounds
+        }.getOrNull()
     }
 
     private fun buildUserFeatureCollection(
@@ -839,32 +901,6 @@ private fun LatLngBounds.toSignatureHash(): Int {
     return result
 }
 
-private fun LatLngBounds.viewportSignatureHash(): Int {
-    var result = 17
-    result = 31 * result + (latitudeNorth * 100).roundToInt()
-    result = 31 * result + (latitudeSouth * 100).roundToInt()
-    result = 31 * result + (longitudeEast * 100).roundToInt()
-    result = 31 * result + (longitudeWest * 100).roundToInt()
-    return result
-}
-
-private fun LatLngBounds.expand(paddingFactor: Double): LatLngBounds {
-    val latSpan = (latitudeNorth - latitudeSouth).coerceAtLeast(0.01)
-    val lonSpan = longitudeSpan().coerceAtLeast(0.01)
-    val latPadding = latSpan * paddingFactor
-    val lonPadding = lonSpan * paddingFactor
-
-    val north = (latitudeNorth + latPadding).coerceAtMost(85.0)
-    val south = (latitudeSouth - latPadding).coerceAtLeast(-85.0)
-    val west = normalizeLongitude(longitudeWest - lonPadding)
-    val east = normalizeLongitude(longitudeEast + lonPadding)
-
-    return LatLngBounds.Builder()
-        .include(LatLng(north, west))
-        .include(LatLng(south, east))
-        .build()
-}
-
 private fun LatLngBounds.contains(latitude: Double, longitude: Double): Boolean {
     val latMatches = latitude in latitudeSouth..latitudeNorth
     if (!latMatches) return false
@@ -875,20 +911,16 @@ private fun LatLngBounds.contains(latitude: Double, longitude: Double): Boolean 
     }
 }
 
-private fun LatLngBounds.longitudeSpan(): Double {
-    val raw = longitudeEast - longitudeWest
-    return if (raw >= 0) raw else raw + 360.0
-}
-
-private fun normalizeLongitude(value: Double): Double {
-    var normalized = value
-    while (normalized < -180.0) normalized += 360.0
-    while (normalized > 180.0) normalized -= 360.0
-    return normalized
-}
-
 private fun Double?.coordinateHash(): Int {
     return this?.times(1_000_000)?.roundToInt() ?: 0
+}
+
+internal fun shouldShowDetailPoints(
+    zoom: Double,
+    visibleMarkerCount: Int,
+): Boolean {
+    return zoom >= DETAIL_POINT_ZOOM_THRESHOLD ||
+        visibleMarkerCount in 1..DETAIL_POINT_VISIBLE_COUNT_THRESHOLD
 }
 
 private fun CanyonSummary.markerIconRes(): Int {
