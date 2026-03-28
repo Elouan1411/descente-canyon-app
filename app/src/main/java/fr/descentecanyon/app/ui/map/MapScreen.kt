@@ -8,11 +8,13 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.statusBarsPadding
@@ -159,7 +161,6 @@ fun MapScreen(
         SnackbarHost(hostState = snackbarHostState)
 
         MapHeroCard(
-            canyonCount = visibleCanyons.size,
             onAroundMeClick = {
                 if (context.hasLocationPermission()) {
                     viewModel.onLocationPermissionResult(true)
@@ -234,7 +235,10 @@ fun MapScreen(
 
                 else -> {
                     LazyColumn(
-                        modifier = Modifier.fillMaxSize(),
+                        modifier = Modifier
+                            .fillMaxSize()
+                            .navigationBarsPadding(),
+                        contentPadding = PaddingValues(bottom = 24.dp),
                         verticalArrangement = Arrangement.spacedBy(12.dp),
                     ) {
                         items(
@@ -258,7 +262,6 @@ fun MapScreen(
 
 @Composable
 private fun MapHeroCard(
-    canyonCount: Int,
     onAroundMeClick: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
@@ -275,44 +278,37 @@ private fun MapHeroCard(
                         colors = listOf(CanyonBlueDark, CanyonBlue, RockBrownLight),
                     )
                 )
-                .padding(20.dp),
+                .padding(horizontal = 20.dp, vertical = 18.dp),
         ) {
-            Column(verticalArrangement = Arrangement.spacedBy(16.dp)) {
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically,
+            ) {
                 Row(
-                    modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.SpaceBetween,
+                    horizontalArrangement = Arrangement.spacedBy(10.dp),
                     verticalAlignment = Alignment.CenterVertically,
                 ) {
-                    Row(
-                        horizontalArrangement = Arrangement.spacedBy(10.dp),
-                        verticalAlignment = Alignment.CenterVertically,
-                    ) {
-                        Icon(
-                            imageVector = Icons.Default.Explore,
-                            contentDescription = null,
-                            tint = Color.White,
-                        )
-                        Text(
-                            text = stringResource(R.string.tab_map),
-                            style = MaterialTheme.typography.headlineSmall,
-                            color = Color.White,
-                            fontWeight = FontWeight.Bold,
-                        )
-                    }
-                    Button(onClick = onAroundMeClick) {
-                        Icon(
-                            imageVector = Icons.Default.MyLocation,
-                            contentDescription = null,
-                        )
-                        Spacer(modifier = Modifier.size(8.dp))
-                        Text(text = stringResource(R.string.map_focus_action))
-                    }
+                    Icon(
+                        imageVector = Icons.Default.Explore,
+                        contentDescription = null,
+                        tint = Color.White,
+                    )
+                    Text(
+                        text = stringResource(R.string.tab_map),
+                        style = MaterialTheme.typography.headlineSmall,
+                        color = Color.White,
+                        fontWeight = FontWeight.Bold,
+                    )
                 }
-                Text(
-                    text = stringResource(R.string.map_visible_description, canyonCount),
-                    style = MaterialTheme.typography.bodyLarge,
-                    color = Color.White.copy(alpha = 0.92f),
-                )
+                Button(onClick = onAroundMeClick) {
+                    Icon(
+                        imageVector = Icons.Default.MyLocation,
+                        contentDescription = null,
+                    )
+                    Spacer(modifier = Modifier.size(8.dp))
+                    Text(text = stringResource(R.string.map_focus_action))
+                }
             }
         }
     }
