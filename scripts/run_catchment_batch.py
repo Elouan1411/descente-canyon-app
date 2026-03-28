@@ -95,6 +95,16 @@ def bbox_for_points_in_crs(points: list[dict[str, Any]], target_crs: str, buffer
     return min_x, min_y, max_x, max_y
 
 
+def source_coverage_incomplete(source: dict[str, Any], points: list[dict[str, Any]]) -> bool:
+    coverage_bbox = source.get("coverageBbox")
+    if not coverage_bbox:
+        return False
+    coverage_crs = str(source.get("coverageBboxCrs") or source.get("srs") or "EPSG:4326")
+    min_x, min_y, max_x, max_y = bbox_for_points_in_crs(points, coverage_crs, float(source.get("bufferKm", 20.0)))
+    cov_min_x, cov_min_y, cov_max_x, cov_max_y = coverage_bbox
+    return min_x < cov_min_x or min_y < cov_min_y or max_x > cov_max_x or max_y > cov_max_y
+
+
 def merge_dem_paths(
     *,
     dem_paths: list[Path],
@@ -597,7 +607,7 @@ def resolve_source_for_canyon(
                 attempts.append(attempt)
                 continue
         attempt["availableAfter"] = source_is_available(resolved_source)
-        if resolved_source.get("coverageIncomplete") and source.get("supplementProviders"):
+        if (resolved_source.get("coverageIncomplete") or source_coverage_incomplete(resolved_source, points)) and source.get("supplementProviders"):
             merged_dem_paths = [normalized_path(resolved_source["dem"]).resolve()]
             attempt["coverageIncomplete"] = True
             attempt["supplementsTried"] = []
@@ -606,7 +616,7 @@ def resolve_source_for_canyon(
                     (
                         candidate
                         for candidate in sources
-                        if (candidate.get("autoPrepare") or {}).get("provider") == supplement_provider
+                        if (candidate.get("autoPrepare") or {}).get("provider") == supplement_provider or candidate.get("name") == supplement_provider
                     ),
                     None,
                 )
