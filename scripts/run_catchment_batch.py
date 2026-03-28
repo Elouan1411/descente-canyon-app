@@ -60,6 +60,12 @@ def write_json(path: Path, data: Any) -> None:
     path.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
 
 
+def load_json_if_exists(path: Path) -> Any | None:
+    if not path.exists():
+        return None
+    return load_json(path)
+
+
 def append_text(path: Path, text: str) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("a", encoding="utf-8") as handle:
@@ -135,6 +141,12 @@ def canyon_matches(canyon: dict[str, Any], match: dict[str, Any]) -> bool:
         return True
     for key, expected in match.items():
         if key == "default":
+            continue
+        if key.endswith("NotIn"):
+            field_name = key[: -len("NotIn")]
+            actual = canyon.get(field_name)
+            if actual in expected:
+                return False
             continue
         actual = canyon.get(key)
         if isinstance(expected, list):
@@ -335,6 +347,12 @@ def auto_prepare_source(
         for point in points:
             command.extend(["--point", f"{point['latitude']},{point['longitude']}"])
         subprocess.run(command, check=True)
+        selected_tiles = load_json_if_exists(local_output_dir / "selected_tiles.json") or {}
+        if int(selected_tiles.get("missingTileCount") or 0) > 0:
+            raise SystemExit(
+                f"Austria DEM coverage incomplete for canyon {canyon['id']} - missing border tiles. "
+                "Fallback to a transboundary source is required to avoid a truncated watershed."
+            )
         prepared = dict(source)
         prepared["dem"] = str(local_output_dir / "vrt" / "_all_downloaded.vrt")
         prepared["preparedDynamically"] = True
