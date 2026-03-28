@@ -62,10 +62,10 @@ def intersecting_tiles(points: list[tuple[float, float]], buffer_km: float) -> l
     return sorted(set(urls))
 
 
-def download_file(url: str, destination: Path) -> None:
+def download_file(url: str, destination: Path) -> bool:
     destination.parent.mkdir(parents=True, exist_ok=True)
     if destination.exists() and destination.stat().st_size > 0:
-        return
+        return True
     temp_path = destination.with_suffix(destination.suffix + ".part")
     last_error: Exception | None = None
     for attempt in range(1, 5):
@@ -78,12 +78,15 @@ def download_file(url: str, destination: Path) -> None:
                         break
                     handle.write(chunk)
             temp_path.replace(destination)
-            return
+            return True
         except (HTTPError, URLError) as exc:
             last_error = exc
             temp_path.unlink(missing_ok=True)
-            if isinstance(exc, HTTPError) and exc.code not in {429, 500, 502, 503, 504}:
-                raise
+            if isinstance(exc, HTTPError):
+                if exc.code == 404:
+                    return False
+                if exc.code not in {429, 500, 502, 503, 504}:
+                    raise
             time.sleep(5 * attempt)
     raise SystemExit(f"Austria DEM download failed: {last_error}")
 
@@ -104,21 +107,27 @@ def main() -> int:
     gdalbuildvrt = resolve_executable(args.gdalbuildvrt, extra_candidates=[default_gdalbuildvrt()])
     raw_dir = (args.cache_dir or (args.output_dir / "raw")).resolve()
     tif_paths = []
+    missing = []
     for filename, url in tiles:
         path = raw_dir / filename
-        download_file(url, path)
-        tif_paths.append(path)
+        if download_file(url, path):
+            tif_paths.append(path)
+        else:
+            missing.append({"filename": filename, "url": url})
     vrt_path = args.output_dir / "vrt" / "_all_downloaded.vrt"
     build_vrt(gdalbuildvrt, tif_paths, vrt_path)
     write_json(
         args.output_dir / "selected_tiles.json",
         {
             "tileCount": len(tiles),
+            "availableTileCount": len(tif_paths),
+            "missingTileCount": len(missing),
+            "missing": missing,
             "tiles": [{"filename": filename, "url": url} for filename, url in tiles],
             "paths": [str(path) for path in tif_paths],
         },
     )
-    print(json.dumps({"tileCount": len(tiles), "vrt": str(vrt_path)}, ensure_ascii=False, indent=2))
+    print(json.dumps({"tileCount": len(tiles), "availableTileCount": len(tif_paths), "missingTileCount": len(missing), "vrt": str(vrt_path)}, ensure_ascii=False, indent=2))
     return 0
 
 
