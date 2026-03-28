@@ -14,7 +14,9 @@ from debit_pipeline_lib import (
     build_open_meteo_archive_daily_url,
     fetch_json,
     flatten_open_meteo_daily_rows,
+    get_weather_retry_delay,
     is_retryable_weather_error,
+    stable_id,
     write_json,
 )
 
@@ -69,10 +71,39 @@ class RequestThrottler:
             self._next_allowed_at = now + self.delay_seconds
 
 
-def fetch_single_window(
+def chunk_windows(windows: list[dict[str, Any]], max_batch_targets: int) -> list[list[dict[str, Any]]]:
+    ordered = sorted(windows, key=lambda item: (item["archiveStartDate"], item["targetId"]))
+    batch_size = max(max_batch_targets, 1)
+    return [ordered[index:index + batch_size] for index in range(0, len(ordered), batch_size)]
+
+
+def batch_url_for_windows(batch_windows: list[dict[str, Any]], daily_variables: list[str], model: str) -> str:
+    latitudes = ",".join(str(window["targetLatitude"]) for window in batch_windows)
+    longitudes = ",".join(str(window["targetLongitude"]) for window in batch_windows)
+    start_date = min(window["archiveStartDate"] for window in batch_windows)
+    end_date = max(window["archiveEndDate"] for window in batch_windows)
+    return build_open_meteo_archive_daily_url(
+        latitude=latitudes,
+        longitude=longitudes,
+        start_date=start_date,
+        end_date=end_date,
+        model=model,
+        daily_variables=daily_variables,
+    )
+
+
+def payloads_from_response(payload: Any) -> list[dict[str, Any]]:
+    if isinstance(payload, list):
+        return payload
+    if isinstance(payload, dict):
+        return [payload]
+    raise ValueError(f"Unexpected payload type: {type(payload).__name__}")
+
+
+def fetch_batch(
     *,
-    merged_window: dict[str, Any],
-    cache_dir: Path,
+    batch_windows: list[dict[str, Any]],
+    raw_cache_dir: Path,
     model: str,
     daily_variables: list[str],
     user_agent: str,
@@ -82,48 +113,35 @@ def fetch_single_window(
     base_backoff_seconds: float,
     refetch_cached: bool,
 ) -> dict[str, Any]:
-    cache_path = cache_dir / f"{merged_window['mergedWindowId']}.json"
+    batch_id = stable_id(
+        "weatherbatch",
+        model,
+        min(window["archiveStartDate"] for window in batch_windows),
+        max(window["archiveEndDate"] for window in batch_windows),
+        "|".join(window["mergedWindowId"] for window in batch_windows),
+    )
+    cache_path = raw_cache_dir / f"{batch_id}.json"
     if refetch_cached and cache_path.exists():
         cache_path.unlink()
 
-    url = build_open_meteo_archive_daily_url(
-        latitude=float(merged_window["targetLatitude"]),
-        longitude=float(merged_window["targetLongitude"]),
-        start_date=merged_window["archiveStartDate"],
-        end_date=merged_window["archiveEndDate"],
-        model=model,
-        daily_variables=daily_variables,
-    )
+    url = batch_url_for_windows(batch_windows, daily_variables, model)
 
     if cache_path.exists():
         payload = fetch_json(url, user_agent=user_agent, timeout=request_timeout_seconds, cache_path=cache_path)
-        return {
-            "mergedWindowId": merged_window["mergedWindowId"],
-            "url": url,
-            "cachePath": str(cache_path),
-            "payload": payload,
-            "dailyRows": flatten_open_meteo_daily_rows(merged_window=merged_window, payload=payload),
-            "source": "cache",
-        }
+        return {"batchId": batch_id, "cachePath": str(cache_path), "payload": payload, "source": "cache", "url": url}
 
     last_error: Exception | None = None
     for attempt in range(max(max_attempts, 1)):
         try:
             throttler.wait_turn()
             payload = fetch_json(url, user_agent=user_agent, timeout=request_timeout_seconds, cache_path=cache_path)
-            return {
-                "mergedWindowId": merged_window["mergedWindowId"],
-                "url": url,
-                "cachePath": str(cache_path),
-                "payload": payload,
-                "dailyRows": flatten_open_meteo_daily_rows(merged_window=merged_window, payload=payload),
-                "source": "network",
-            }
+            return {"batchId": batch_id, "cachePath": str(cache_path), "payload": payload, "source": "network", "url": url}
         except Exception as exc:  # noqa: BLE001
             last_error = exc
             if attempt == max_attempts - 1 or not is_retryable_weather_error(exc):
                 raise
-            time.sleep(base_backoff_seconds * (2 ** attempt))
+            retry_delay = get_weather_retry_delay(exc, base_backoff_seconds * (2 ** attempt))
+            time.sleep(retry_delay)
 
     assert last_error is not None
     raise last_error
@@ -135,19 +153,20 @@ def main() -> None:
     parser.add_argument("--output-dir", default="build/debit-pipeline/weather-archive")
     parser.add_argument("--model", default="era5")
     parser.add_argument("--daily", default=",".join(DEFAULT_DAILY_VARIABLES))
-    parser.add_argument("--workers", type=int, default=2)
-    parser.add_argument("--request-delay-ms", type=int, default=1200)
-    parser.add_argument("--timeout-s", type=int, default=20)
+    parser.add_argument("--workers", type=int, default=1)
+    parser.add_argument("--max-batch-targets", type=int, default=25)
+    parser.add_argument("--request-delay-ms", type=int, default=5000)
+    parser.add_argument("--timeout-s", type=int, default=30)
     parser.add_argument("--max-attempts", type=int, default=3)
-    parser.add_argument("--base-backoff-ms", type=int, default=1500)
+    parser.add_argument("--base-backoff-ms", type=int, default=10000)
     parser.add_argument("--refetch-cached", action="store_true", help="Ignore cached raw JSON and fetch again")
     parser.add_argument("--user-agent", default="DescenteCanyonDebitPipeline/0.1")
     args = parser.parse_args()
 
     merged_windows = read_jsonl(Path(args.merged_windows_path))
     output_dir = Path(args.output_dir)
-    cache_dir = output_dir / "raw-json"
-    cache_dir.mkdir(parents=True, exist_ok=True)
+    raw_cache_dir = output_dir / "raw-json"
+    raw_cache_dir.mkdir(parents=True, exist_ok=True)
     manifest_path = output_dir / "weather_window_manifest.jsonl"
     daily_rows_path = output_dir / "weather_daily_rows.jsonl"
     failures_path = output_dir / "failures.json"
@@ -157,6 +176,7 @@ def main() -> None:
     base_backoff_seconds = max(args.base_backoff_ms, 0) / 1000.0
     completed_window_ids = load_completed_window_ids(manifest_path)
     windows_to_process = [window for window in merged_windows if window["mergedWindowId"] not in completed_window_ids]
+    batches = chunk_windows(windows_to_process, args.max_batch_targets)
 
     failures: list[dict[str, Any]] = []
     success_count = 0
@@ -164,7 +184,7 @@ def main() -> None:
     network_source_count = 0
 
     print(
-        f"Fetching Open-Meteo daily archive for {len(windows_to_process)}/{len(merged_windows)} target window(s)... "
+        f"Fetching Open-Meteo daily archive for {len(windows_to_process)}/{len(merged_windows)} target window(s) in {len(batches)} batch(es)... "
         f"already_done={len(completed_window_ids)}",
         file=sys.stderr,
     )
@@ -172,9 +192,9 @@ def main() -> None:
     with concurrent.futures.ThreadPoolExecutor(max_workers=max(args.workers, 1)) as executor:
         future_map = {
             executor.submit(
-                fetch_single_window,
-                merged_window=window,
-                cache_dir=cache_dir,
+                fetch_batch,
+                batch_windows=batch,
+                raw_cache_dir=raw_cache_dir,
                 model=args.model,
                 daily_variables=daily_variables,
                 user_agent=args.user_agent,
@@ -183,12 +203,12 @@ def main() -> None:
                 max_attempts=args.max_attempts,
                 base_backoff_seconds=base_backoff_seconds,
                 refetch_cached=args.refetch_cached,
-            ): window
-            for window in windows_to_process
+            ): batch
+            for batch in batches
         }
 
-        completed = 0
-        total_to_process = len(windows_to_process)
+        completed_batches = 0
+        total_batches = len(batches)
         pending = set(future_map.keys())
         while pending:
             done, pending = concurrent.futures.wait(
@@ -198,56 +218,71 @@ def main() -> None:
             )
             if not done:
                 print(
-                    f"Waiting... completed={completed}/{total_to_process} | failures={len(failures)} "
+                    f"Waiting... batches={completed_batches}/{total_batches} | windows_success={success_count} | failures={len(failures)} "
                     f"| cache={cache_source_count} | network={network_source_count}",
                     file=sys.stderr,
                 )
                 continue
 
             for future in done:
-                window = future_map[future]
-                completed += 1
+                batch_windows = future_map[future]
+                completed_batches += 1
                 try:
                     result = future.result()
-                    payload = result["payload"]
-                    manifest_row = {
-                        "mergedWindowId": result["mergedWindowId"],
-                        "targetId": window["targetId"],
-                        "archiveStartDate": window["archiveStartDate"],
-                        "archiveEndDate": window["archiveEndDate"],
-                        "requestedLatitude": window["targetLatitude"],
-                        "requestedLongitude": window["targetLongitude"],
-                        "resolvedLatitude": payload.get("latitude"),
-                        "resolvedLongitude": payload.get("longitude"),
-                        "resolvedElevation": payload.get("elevation"),
-                        "timezone": payload.get("timezone"),
-                        "dailyRowCount": len(result["dailyRows"]),
-                        "url": result["url"],
-                        "cachePath": result["cachePath"],
-                        "source": result.get("source"),
-                    }
-                    append_jsonl(manifest_path, [manifest_row])
-                    append_jsonl(daily_rows_path, result["dailyRows"])
-                    success_count += 1
+                    payloads = payloads_from_response(result["payload"])
+                    if len(payloads) != len(batch_windows):
+                        raise ValueError(
+                            f"Batch payload length mismatch: expected {len(batch_windows)} got {len(payloads)}"
+                        )
+
+                    manifest_rows: list[dict[str, Any]] = []
+                    all_daily_rows: list[dict[str, Any]] = []
+                    for window, payload in zip(batch_windows, payloads):
+                        daily_rows = flatten_open_meteo_daily_rows(merged_window=window, payload=payload)
+                        manifest_rows.append(
+                            {
+                                "mergedWindowId": window["mergedWindowId"],
+                                "targetId": window["targetId"],
+                                "archiveStartDate": window["archiveStartDate"],
+                                "archiveEndDate": window["archiveEndDate"],
+                                "requestedLatitude": window["targetLatitude"],
+                                "requestedLongitude": window["targetLongitude"],
+                                "resolvedLatitude": payload.get("latitude"),
+                                "resolvedLongitude": payload.get("longitude"),
+                                "resolvedElevation": payload.get("elevation"),
+                                "timezone": payload.get("timezone"),
+                                "dailyRowCount": len(daily_rows),
+                                "url": result["url"],
+                                "cachePath": result["cachePath"],
+                                "source": result.get("source"),
+                                "batchId": result["batchId"],
+                            }
+                        )
+                        all_daily_rows.extend(daily_rows)
+
+                    append_jsonl(manifest_path, manifest_rows)
+                    append_jsonl(daily_rows_path, all_daily_rows)
+                    success_count += len(batch_windows)
                     if result.get("source") == "cache":
-                        cache_source_count += 1
+                        cache_source_count += len(batch_windows)
                     else:
-                        network_source_count += 1
+                        network_source_count += len(batch_windows)
                 except Exception as exc:  # noqa: BLE001
-                    failures.append(
-                        {
-                            "mergedWindowId": window["mergedWindowId"],
-                            "targetId": window["targetId"],
-                            "archiveStartDate": window.get("archiveStartDate"),
-                            "archiveEndDate": window.get("archiveEndDate"),
-                            "error": repr(exc),
-                        }
-                    )
+                    for window in batch_windows:
+                        failures.append(
+                            {
+                                "mergedWindowId": window["mergedWindowId"],
+                                "targetId": window["targetId"],
+                                "archiveStartDate": window.get("archiveStartDate"),
+                                "archiveEndDate": window.get("archiveEndDate"),
+                                "error": repr(exc),
+                            }
+                        )
                     write_json(failures_path, failures)
 
-                if completed <= 10 or completed % 20 == 0 or completed == total_to_process:
+                if completed_batches <= 5 or completed_batches % 10 == 0 or completed_batches == total_batches:
                     print(
-                        f"Progress {completed}/{total_to_process} | successes={success_count} | failures={len(failures)} "
+                        f"Progress batches {completed_batches}/{total_batches} | windows_success={success_count} | failures={len(failures)} "
                         f"| cache={cache_source_count} | network={network_source_count}",
                         file=sys.stderr,
                     )
@@ -262,6 +297,8 @@ def main() -> None:
             "requestedWindowCount": len(merged_windows),
             "alreadyCompletedWindowCount": len(completed_window_ids),
             "processedWindowCount": len(windows_to_process),
+            "batchCount": len(batches),
+            "maxBatchTargets": args.max_batch_targets,
             "successfulWindowCount": success_count,
             "failureCount": len(failures),
             "cacheSourceCount": cache_source_count,

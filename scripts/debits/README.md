@@ -25,6 +25,7 @@ The pipeline is split into four steps:
 
 3. `fetch_open_meteo_archive.py`
    - fetches daily historical weather from Open-Meteo archive
+   - batches multiple targets into one Open-Meteo request with `--max-batch-targets`
    - resumes from `weather_window_manifest.jsonl` and `raw-json/` on rerun
    - writes flattened daily rows incrementally to avoid losing progress
    - retries rate limits / temporary API failures with exponential backoff
@@ -42,7 +43,7 @@ The pipeline is split into four steps:
 ```bash
 python scripts/build_debit_observation_dataset.py --all --workers 6 --output-dir build/debit-pipeline/observations
 python scripts/plan_debit_weather_windows.py --output-dir build/debit-pipeline/weather-planning --fetch-strategy history_daily
-python scripts/fetch_open_meteo_archive.py --output-dir build/debit-pipeline/weather-archive --workers 1 --request-delay-ms 1200
+python scripts/fetch_open_meteo_archive.py --output-dir build/debit-pipeline/weather-archive --workers 1 --max-batch-targets 25 --request-delay-ms 5000
 python scripts/build_debit_training_features.py --output-dir build/debit-pipeline/training-features
 python scripts/train_debit_baseline_model.py --features-path build/debit-pipeline/training-features/training_features.jsonl
 ```

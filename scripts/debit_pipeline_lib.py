@@ -13,13 +13,20 @@ from urllib.error import HTTPError, URLError
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
-from bs4 import BeautifulSoup
-
-
 BASE_URL = "https://www.descente-canyon.com"
 OPEN_METEO_ARCHIVE_URL = "https://archive-api.open-meteo.com/v1/archive"
 DEFAULT_USER_AGENT = "DescenteCanyonDebitPipeline/0.1"
 DEFAULT_ASSUMED_OBSERVATION_HOUR = 8
+
+
+def get_beautiful_soup() -> Any:
+    try:
+        from bs4 import BeautifulSoup  # type: ignore
+    except ImportError as exc:  # pragma: no cover
+        raise SystemExit(
+            "beautifulsoup4 is required for debit scraping. Install it with `python -m pip install beautifulsoup4`."
+        ) from exc
+    return BeautifulSoup
 
 DEBIT_CLASS_MAP = {
     "debit1": "CRUE",
@@ -410,6 +417,7 @@ def parse_html_line_breaks(container: Any) -> list[str]:
     if container is None:
         return []
     html = container if isinstance(container, str) else str(container)
+    BeautifulSoup = get_beautiful_soup()
     soup = BeautifulSoup(f"<div>{html}</div>", "html.parser")
     for br in soup.select("br"):
         br.replace_with("\n")
@@ -442,6 +450,7 @@ def parse_canyon_debit_page(
     source_url: str,
     assumed_observation_hour: int = DEFAULT_ASSUMED_OBSERVATION_HOUR,
 ) -> list[dict[str, Any]]:
+    BeautifulSoup = get_beautiful_soup()
     document = BeautifulSoup(html, "html.parser")
     rows = document.select("table#listedebit tbody tr")
     events: list[dict[str, Any]] = []
@@ -1046,6 +1055,22 @@ def is_retryable_weather_error(exc: Exception) -> bool:
     if isinstance(exc, HTTPError):
         return exc.code in {408, 409, 425, 429, 500, 502, 503, 504}
     return isinstance(exc, (URLError, TimeoutError, JSONDecodeError))
+
+
+def get_weather_retry_delay(exc: Exception, default_seconds: float) -> float:
+    delay_seconds = max(default_seconds, 0.0)
+    if isinstance(exc, HTTPError):
+        retry_after = exc.headers.get("Retry-After") if exc.headers is not None else None
+        if retry_after:
+            try:
+                return max(float(retry_after), delay_seconds)
+            except ValueError:
+                pass
+        if exc.code == 429:
+            return max(60.0, delay_seconds)
+        if exc.code in {500, 502, 503, 504}:
+            return max(10.0, delay_seconds)
+    return delay_seconds
 
 
 def flatten_open_meteo_hourly_rows(
