@@ -24,6 +24,7 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.List
 import androidx.compose.material.icons.automirrored.filled.Sort
 import androidx.compose.material.icons.filled.ArrowDownward
 import androidx.compose.material.icons.filled.ArrowUpward
@@ -183,6 +184,7 @@ fun SearchScreen(
         Column(
             modifier = Modifier
                 .fillMaxSize()
+                .navigationBarsPadding()
                 .padding(horizontal = 16.dp),
         ) {
             Spacer(modifier = Modifier.height(8.dp))
@@ -358,13 +360,6 @@ fun SearchScreen(
                     style = MaterialTheme.typography.labelLarge,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                 )
-                if (uiState.resultViewMode == SearchResultViewMode.MAP && uiState.isLocating) {
-                    Text(
-                        text = stringResource(R.string.search_location_loading),
-                        style = MaterialTheme.typography.bodySmall,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant,
-                    )
-                }
             }
 
             Spacer(modifier = Modifier.height(6.dp))
@@ -430,8 +425,7 @@ fun SearchScreen(
                     Card(
                         modifier = Modifier
                             .fillMaxWidth()
-                            .weight(1f)
-                            .navigationBarsPadding(),
+                            .weight(1f),
                         colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant),
                     ) {
                         MapLibreView(
@@ -451,9 +445,6 @@ fun SearchScreen(
             onClick = {
                 val next = if (uiState.resultViewMode == SearchResultViewMode.MAP) SearchResultViewMode.LIST else SearchResultViewMode.MAP
                 viewModel.onResultViewModeChanged(next)
-                if (next == SearchResultViewMode.MAP && context.hasLocationPermission() && uiState.userLatitude == null && uiState.userLongitude == null) {
-                    requestCurrentLocation(applyDistanceSortWhenReady = false)
-                }
             },
             modifier = Modifier
                 .align(Alignment.BottomEnd)
@@ -461,7 +452,7 @@ fun SearchScreen(
                 .padding(end = 20.dp, bottom = 92.dp),
         ) {
             Icon(
-                imageVector = if (uiState.resultViewMode == SearchResultViewMode.MAP) Icons.Default.List else Icons.Default.Map,
+                imageVector = if (uiState.resultViewMode == SearchResultViewMode.MAP) Icons.AutoMirrored.Filled.List else Icons.Default.Map,
                 contentDescription = null,
             )
         }

@@ -224,8 +224,8 @@ class SearchViewModel @Inject constructor(
                 isLocating = false,
             )
         }
-        _uiState.update {
-            it.copy(error = if (granted) null else "La position est necessaire pour trier les canyons les plus proches.")
+        if (granted) {
+            _uiState.update { it.copy(error = null) }
         }
     }
 
@@ -242,7 +242,6 @@ class SearchViewModel @Inject constructor(
 
     fun onLocationUnavailable() {
         locationFlow.update { it.copy(isLocating = false) }
-        _uiState.update { it.copy(error = "Aucune position recente disponible sur cet appareil.") }
     }
 
     fun selectCanyon(canyonId: Int) {
