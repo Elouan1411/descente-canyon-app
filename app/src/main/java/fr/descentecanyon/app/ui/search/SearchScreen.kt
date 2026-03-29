@@ -31,7 +31,6 @@ import androidx.compose.material.icons.filled.ArrowUpward
 import androidx.compose.material.icons.filled.Clear
 import androidx.compose.material.icons.filled.ExpandMore
 import androidx.compose.material.icons.filled.List
-import androidx.compose.material.icons.filled.Map
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.Tune
 import androidx.compose.material3.ButtonDefaults
@@ -62,6 +61,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextOverflow
@@ -184,7 +184,6 @@ fun SearchScreen(
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .navigationBarsPadding()
                 .padding(horizontal = 16.dp),
         ) {
             Spacer(modifier = Modifier.height(8.dp))
@@ -451,10 +450,17 @@ fun SearchScreen(
                 .navigationBarsPadding()
                 .padding(end = 20.dp, bottom = 92.dp),
         ) {
-            Icon(
-                imageVector = if (uiState.resultViewMode == SearchResultViewMode.MAP) Icons.AutoMirrored.Filled.List else Icons.Default.Map,
-                contentDescription = null,
-            )
+            if (uiState.resultViewMode == SearchResultViewMode.MAP) {
+                Icon(
+                    imageVector = Icons.AutoMirrored.Filled.List,
+                    contentDescription = null,
+                )
+            } else {
+                Icon(
+                    painter = painterResource(id = R.drawable.map_search_24),
+                    contentDescription = null,
+                )
+            }
         }
     }
 
