@@ -19,7 +19,6 @@ import fr.descentecanyon.app.ui.search.SearchScreen
 @Composable
 fun AppNavHost(
     navController: NavHostController,
-    topLevelModifier: Modifier = Modifier,
     topLevelContentPadding: PaddingValues = PaddingValues(),
 ) {
     NavHost(
@@ -35,7 +34,6 @@ fun AppNavHost(
                 onQuickSearchClick = {
                     navController.navigate(Screen.Search)
                 },
-                modifier = topLevelModifier,
                 contentPadding = topLevelContentPadding,
             )
         }
@@ -45,7 +43,6 @@ fun AppNavHost(
                 onCanyonClick = { canyonId ->
                     navController.navigate(Screen.CanyonDetail(canyonId))
                 },
-                modifier = topLevelModifier,
                 contentPadding = topLevelContentPadding,
             )
         }
@@ -55,7 +52,6 @@ fun AppNavHost(
                 onCanyonClick = { canyonId ->
                     navController.navigate(Screen.CanyonDetail(canyonId))
                 },
-                modifier = topLevelModifier,
                 contentPadding = topLevelContentPadding,
             )
         }
@@ -65,7 +61,6 @@ fun AppNavHost(
                 onCanyonClick = { canyonId ->
                     navController.navigate(Screen.CanyonDetail(canyonId))
                 },
-                modifier = topLevelModifier,
                 contentPadding = topLevelContentPadding,
             )
         }
