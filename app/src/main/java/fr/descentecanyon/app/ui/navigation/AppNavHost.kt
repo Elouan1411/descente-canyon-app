@@ -1,6 +1,7 @@
 package fr.descentecanyon.app.ui.navigation
 
 import androidx.compose.runtime.Composable
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
@@ -19,6 +20,7 @@ import fr.descentecanyon.app.ui.search.SearchScreen
 fun AppNavHost(
     navController: NavHostController,
     topLevelModifier: Modifier = Modifier,
+    topLevelContentPadding: PaddingValues = PaddingValues(),
 ) {
     NavHost(
         navController = navController,
@@ -34,6 +36,7 @@ fun AppNavHost(
                     navController.navigate(Screen.Search)
                 },
                 modifier = topLevelModifier,
+                contentPadding = topLevelContentPadding,
             )
         }
 
@@ -43,6 +46,7 @@ fun AppNavHost(
                     navController.navigate(Screen.CanyonDetail(canyonId))
                 },
                 modifier = topLevelModifier,
+                contentPadding = topLevelContentPadding,
             )
         }
 
@@ -52,6 +56,7 @@ fun AppNavHost(
                     navController.navigate(Screen.CanyonDetail(canyonId))
                 },
                 modifier = topLevelModifier,
+                contentPadding = topLevelContentPadding,
             )
         }
 
@@ -61,6 +66,7 @@ fun AppNavHost(
                     navController.navigate(Screen.CanyonDetail(canyonId))
                 },
                 modifier = topLevelModifier,
+                contentPadding = topLevelContentPadding,
             )
         }
 

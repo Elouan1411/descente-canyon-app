@@ -49,7 +49,7 @@ fun CompactAppBar(
                             ),
                         )
                     )
-                    .height(52.dp)
+                    .height(48.dp)
                     .padding(horizontal = 6.dp),
                 verticalAlignment = Alignment.CenterVertically,
             ) {

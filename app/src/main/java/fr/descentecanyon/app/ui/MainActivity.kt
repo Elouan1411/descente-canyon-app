@@ -165,6 +165,7 @@ private fun MainScreen() {
         AppNavHost(
             navController = navController,
             topLevelModifier = Modifier.padding(innerPadding),
+            topLevelContentPadding = innerPadding,
         )
     }
 }

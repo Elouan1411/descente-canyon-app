@@ -66,6 +66,7 @@ import org.maplibre.android.geometry.LatLngBounds
 fun MapScreen(
     onCanyonClick: (Int) -> Unit,
     modifier: Modifier = Modifier,
+    contentPadding: PaddingValues = PaddingValues(),
     viewModel: MapViewModel = hiltViewModel(),
 ) {
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
@@ -154,6 +155,7 @@ fun MapScreen(
         modifier = modifier
             .fillMaxSize()
             .statusBarsPadding()
+            .padding(bottom = contentPadding.calculateBottomPadding())
             .padding(horizontal = 16.dp),
         verticalArrangement = Arrangement.spacedBy(12.dp),
     ) {

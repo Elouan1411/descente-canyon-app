@@ -3,6 +3,7 @@ package fr.descentecanyon.app.ui.favorites
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -41,6 +42,7 @@ import fr.descentecanyon.app.ui.test.TestTags
 fun FavoritesScreen(
     onCanyonClick: (Int) -> Unit,
     modifier: Modifier = Modifier,
+    contentPadding: PaddingValues = PaddingValues(),
     viewModel: FavoritesViewModel = hiltViewModel(),
 ) {
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
@@ -49,6 +51,7 @@ fun FavoritesScreen(
         modifier = modifier
             .fillMaxSize()
             .statusBarsPadding()
+            .padding(bottom = contentPadding.calculateBottomPadding())
             .padding(horizontal = 16.dp),
     ) {
         Spacer(modifier = Modifier.height(8.dp))
