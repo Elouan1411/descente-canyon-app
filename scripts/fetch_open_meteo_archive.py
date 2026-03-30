@@ -26,6 +26,9 @@ DEFAULT_DAILY_VARIABLES = [
     "rain_sum",
     "snowfall_sum",
     "temperature_2m_mean",
+    "temperature_2m_min",
+    "temperature_2m_max",
+    "precipitation_hours",
 ]
 
 

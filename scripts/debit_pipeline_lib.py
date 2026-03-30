@@ -1175,17 +1175,46 @@ def compute_precipitation_features(hourly_rows: list[dict[str, Any]], end_local:
 def compute_daily_precipitation_features(daily_rows: list[dict[str, Any]], observation_date: str) -> dict[str, Any]:
     features: dict[str, Any] = {
         "precip_prev_day_mm": None,
+        "precip_2d_mm": 0.0,
         "precip_3d_mm": 0.0,
+        "precip_5d_mm": 0.0,
         "precip_7d_mm": 0.0,
+        "precip_10d_mm": 0.0,
         "precip_14d_mm": 0.0,
+        "precip_21d_mm": 0.0,
+        "precip_30d_mm": 0.0,
+        "max_daily_precip_3d_mm": 0.0,
         "max_daily_precip_7d_mm": 0.0,
+        "max_daily_precip_14d_mm": 0.0,
+        "wet_days_7d": 0,
+        "wet_days_14d": 0,
+        "wet_days_30d": 0,
         "days_since_precip_over_1mm": None,
         "days_since_precip_over_5mm": None,
         "days_since_precip_over_10mm": None,
         "antecedent_precipitation_index_daily": 0.0,
+        "antecedent_precipitation_index_daily_70": 0.0,
+        "antecedent_precipitation_index_daily_85": 0.0,
+        "antecedent_precipitation_index_daily_93": 0.0,
         "rain_prev_day_mm": None,
+        "rain_3d_mm": 0.0,
+        "rain_7d_mm": 0.0,
         "snowfall_prev_day_cm": None,
+        "snowfall_3d_cm": 0.0,
+        "snowfall_7d_cm": 0.0,
+        "snowfall_14d_cm": 0.0,
         "temperature2mMeanPrevDay": None,
+        "temperature2mMinPrevDay": None,
+        "temperature2mMaxPrevDay": None,
+        "temperature2mMean_3d": None,
+        "temperature2mMean_7d": None,
+        "temperature2mMean_14d": None,
+        "positive_degree_days_3d": 0.0,
+        "positive_degree_days_7d": 0.0,
+        "positive_degree_days_14d": 0.0,
+        "precipitation_hours_3d": 0.0,
+        "precipitation_hours_7d": 0.0,
+        "precipitation_hours_14d": 0.0,
     }
 
     observation_day = date.fromisoformat(observation_date)
@@ -1196,12 +1225,48 @@ def compute_daily_precipitation_features(daily_rows: list[dict[str, Any]], obser
         return features
 
     precip_by_day = [float(row.get("precipitation_sum") or 0.0) for row in eligible_rows]
+    rain_by_day = [float(row.get("rain_sum") or 0.0) for row in eligible_rows]
+    snowfall_by_day = [float(row.get("snowfall_sum") or 0.0) for row in eligible_rows]
+    temperature_mean_by_day = [row.get("temperature_2m_mean") for row in eligible_rows]
+    temperature_min_by_day = [row.get("temperature_2m_min") for row in eligible_rows]
+    temperature_max_by_day = [row.get("temperature_2m_max") for row in eligible_rows]
+    precipitation_hours_by_day = [float(row.get("precipitation_hours") or 0.0) for row in eligible_rows]
+
+    def trailing_sum(values: list[float], days: int) -> float:
+        return round(sum(values[-days:]), 3)
+
+    def trailing_max(values: list[float], days: int) -> float:
+        return round(max(values[-days:], default=0.0), 3)
+
+    def trailing_count(values: list[float], days: int, *, threshold: float) -> int:
+        return sum(1 for value in values[-days:] if value >= threshold)
+
+    def trailing_mean(values: list[Any], days: int) -> float | None:
+        trailing_values = [float(value) for value in values[-days:] if value is not None]
+        if not trailing_values:
+            return None
+        return round(sum(trailing_values) / len(trailing_values), 3)
+
+    def trailing_positive_degree_days(values: list[Any], days: int) -> float:
+        trailing_values = [max(float(value), 0.0) for value in values[-days:] if value is not None]
+        return round(sum(trailing_values), 3)
+
     if precip_by_day:
         features["precip_prev_day_mm"] = round(precip_by_day[-1], 3)
-        features["precip_3d_mm"] = round(sum(precip_by_day[-3:]), 3)
-        features["precip_7d_mm"] = round(sum(precip_by_day[-7:]), 3)
-        features["precip_14d_mm"] = round(sum(precip_by_day[-14:]), 3)
-        features["max_daily_precip_7d_mm"] = round(max(precip_by_day[-7:], default=0.0), 3)
+        features["precip_2d_mm"] = trailing_sum(precip_by_day, 2)
+        features["precip_3d_mm"] = trailing_sum(precip_by_day, 3)
+        features["precip_5d_mm"] = trailing_sum(precip_by_day, 5)
+        features["precip_7d_mm"] = trailing_sum(precip_by_day, 7)
+        features["precip_10d_mm"] = trailing_sum(precip_by_day, 10)
+        features["precip_14d_mm"] = trailing_sum(precip_by_day, 14)
+        features["precip_21d_mm"] = trailing_sum(precip_by_day, 21)
+        features["precip_30d_mm"] = trailing_sum(precip_by_day, 30)
+        features["max_daily_precip_3d_mm"] = trailing_max(precip_by_day, 3)
+        features["max_daily_precip_7d_mm"] = trailing_max(precip_by_day, 7)
+        features["max_daily_precip_14d_mm"] = trailing_max(precip_by_day, 14)
+        features["wet_days_7d"] = trailing_count(precip_by_day, 7, threshold=0.1)
+        features["wet_days_14d"] = trailing_count(precip_by_day, 14, threshold=0.1)
+        features["wet_days_30d"] = trailing_count(precip_by_day, 30, threshold=0.1)
 
     previous_day_row = eligible_rows[-1]
     features["rain_prev_day_mm"] = (
@@ -1213,6 +1278,22 @@ def compute_daily_precipitation_features(daily_rows: list[dict[str, Any]], obser
         else None
     )
     features["temperature2mMeanPrevDay"] = previous_day_row.get("temperature_2m_mean")
+    features["temperature2mMinPrevDay"] = previous_day_row.get("temperature_2m_min")
+    features["temperature2mMaxPrevDay"] = previous_day_row.get("temperature_2m_max")
+    features["rain_3d_mm"] = trailing_sum(rain_by_day, 3)
+    features["rain_7d_mm"] = trailing_sum(rain_by_day, 7)
+    features["snowfall_3d_cm"] = trailing_sum(snowfall_by_day, 3)
+    features["snowfall_7d_cm"] = trailing_sum(snowfall_by_day, 7)
+    features["snowfall_14d_cm"] = trailing_sum(snowfall_by_day, 14)
+    features["temperature2mMean_3d"] = trailing_mean(temperature_mean_by_day, 3)
+    features["temperature2mMean_7d"] = trailing_mean(temperature_mean_by_day, 7)
+    features["temperature2mMean_14d"] = trailing_mean(temperature_mean_by_day, 14)
+    features["positive_degree_days_3d"] = trailing_positive_degree_days(temperature_mean_by_day, 3)
+    features["positive_degree_days_7d"] = trailing_positive_degree_days(temperature_mean_by_day, 7)
+    features["positive_degree_days_14d"] = trailing_positive_degree_days(temperature_mean_by_day, 14)
+    features["precipitation_hours_3d"] = trailing_sum(precipitation_hours_by_day, 3)
+    features["precipitation_hours_7d"] = trailing_sum(precipitation_hours_by_day, 7)
+    features["precipitation_hours_14d"] = trailing_sum(precipitation_hours_by_day, 14)
 
     thresholds = (
         (1.0, "days_since_precip_over_1mm"),
@@ -1227,9 +1308,17 @@ def compute_daily_precipitation_features(daily_rows: list[dict[str, Any]], obser
                 last_match_day = current_day
         features[feature_name] = (end_day - last_match_day).days if last_match_day is not None else None
 
-    api_value = 0.0
-    decay = 0.85
+    api_values = {
+        "antecedent_precipitation_index_daily_70": 0.0,
+        "antecedent_precipitation_index_daily_85": 0.0,
+        "antecedent_precipitation_index_daily_93": 0.0,
+    }
     for row in eligible_rows[-30:]:
-        api_value = api_value * decay + float(row.get("precipitation_sum") or 0.0)
-    features["antecedent_precipitation_index_daily"] = round(api_value, 3)
+        precipitation_value = float(row.get("precipitation_sum") or 0.0)
+        api_values["antecedent_precipitation_index_daily_70"] = api_values["antecedent_precipitation_index_daily_70"] * 0.70 + precipitation_value
+        api_values["antecedent_precipitation_index_daily_85"] = api_values["antecedent_precipitation_index_daily_85"] * 0.85 + precipitation_value
+        api_values["antecedent_precipitation_index_daily_93"] = api_values["antecedent_precipitation_index_daily_93"] * 0.93 + precipitation_value
+    for feature_name, value in api_values.items():
+        features[feature_name] = round(value, 3)
+    features["antecedent_precipitation_index_daily"] = features["antecedent_precipitation_index_daily_85"]
     return features

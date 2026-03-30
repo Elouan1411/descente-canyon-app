@@ -32,10 +32,10 @@ The pipeline is split into four steps:
 
 4. `build_debit_training_features.py`
    - joins valid observations with daily weather cache
-   - computes daily precipitation features for modelling
+   - computes extended daily hydrology features for modelling
 
 5. `train_debit_baseline_model.py`
-   - optional baseline with `scikit-learn`
+   - supports `random_forest` and `catboost`
    - defaults to `3` classes: `LOW`, `MEDIUM`, `HIGH`
 
 ## Example
@@ -45,7 +45,8 @@ python scripts/build_debit_observation_dataset.py --all --workers 6 --output-dir
 python scripts/plan_debit_weather_windows.py --output-dir build/debit-pipeline/weather-planning --fetch-strategy history_daily
 python scripts/fetch_open_meteo_archive.py --output-dir build/debit-pipeline/weather-archive --workers 1 --max-batch-targets 25 --request-delay-ms 5000
 python scripts/build_debit_training_features.py --output-dir build/debit-pipeline/training-features
-python scripts/train_debit_baseline_model.py --features-path build/debit-pipeline/training-features/training_features.jsonl
+python scripts/train_debit_baseline_model.py --features-path build/debit-pipeline/training-features/training_features.jsonl --model random_forest
+python scripts/train_debit_baseline_model.py --features-path build/debit-pipeline/training-features/training_features.jsonl --output-dir build/debit-pipeline/model-catboost-v21 --model catboost
 ```
 
 To force a fresh debit download, add:
@@ -63,6 +64,12 @@ python scripts/build_debit_observation_dataset.py --all \
 ```
 
 If the weather archive fetch is interrupted, rerun the exact same command. Already completed target histories are skipped automatically.
+
+For the CatBoost variant, install:
+
+```bash
+python -m pip install catboost
+```
 
 ## Quality Filter
 

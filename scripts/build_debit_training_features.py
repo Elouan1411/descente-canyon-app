@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
 from collections import defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
@@ -87,6 +88,7 @@ def main() -> None:
         watershed = watershed_lookup.get(canyon_id)
         observation_date = observation.get("date")
         latest_weather = last_daily_row_before(daily_rows, observation_date) if observation_date else None
+        observation_month = int(observation["date"].split("-")[1]) if observation.get("date") else None
 
         feature_row = {
             "observationId": observation_id,
@@ -106,7 +108,9 @@ def main() -> None:
             "departement": canyon.get("departement"),
             "massif": canyon.get("massif"),
             "bassin": canyon.get("bassin"),
-            "month": int(observation["date"].split("-")[1]) if observation.get("date") else None,
+            "month": observation_month,
+            "monthSin": round(math.sin(2.0 * math.pi * ((observation_month or 1) - 1) / 12.0), 6) if observation_month else None,
+            "monthCos": round(math.cos(2.0 * math.pi * ((observation_month or 1) - 1) / 12.0), 6) if observation_month else None,
             "altitudeDepartM": canyon.get("altitudeDepart"),
             "deniveleM": canyon.get("denivele"),
             "longueurM": canyon.get("longueur"),
@@ -122,8 +126,11 @@ def main() -> None:
             feature_row.update(
                 {
                     "temperature2mAtObservation": latest_weather.get("temperature_2m_mean"),
+                    "temperature2mMinAtObservationDay": latest_weather.get("temperature_2m_min"),
+                    "temperature2mMaxAtObservationDay": latest_weather.get("temperature_2m_max"),
                     "rainAtObservationDay": latest_weather.get("rain_sum"),
                     "snowfallAtObservationDay": latest_weather.get("snowfall_sum"),
+                    "precipitationHoursAtObservationDay": latest_weather.get("precipitation_hours"),
                     "weatherTimezone": latest_weather.get("timezone"),
                 }
             )
