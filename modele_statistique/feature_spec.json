@@ -1,0 +1,514 @@
+{
+  "schemaVersion": 1,
+  "labels": [
+    "HIGH",
+    "LOW",
+    "MEDIUM"
+  ],
+  "features": [
+    {
+      "name": "month",
+      "source": "computed",
+      "default": -9999.0
+    },
+    {
+      "name": "monthSin",
+      "source": "computed",
+      "default": 0.0
+    },
+    {
+      "name": "monthCos",
+      "source": "computed",
+      "default": 0.0
+    },
+    {
+      "name": "altitudeDepartM",
+      "source": "static",
+      "default": -9999.0
+    },
+    {
+      "name": "deniveleM",
+      "source": "static",
+      "default": -9999.0
+    },
+    {
+      "name": "longueurM",
+      "source": "static",
+      "default": -9999.0
+    },
+    {
+      "name": "cascadeMaxM",
+      "source": "static",
+      "default": -9999.0
+    },
+    {
+      "name": "upstreamCatchmentAreaKm2",
+      "source": "static",
+      "default": -9999.0
+    },
+    {
+      "name": "precip_prev_day_mm",
+      "source": "weather",
+      "default": -9999.0
+    },
+    {
+      "name": "precip_2d_mm",
+      "source": "weather",
+      "default": -9999.0
+    },
+    {
+      "name": "precip_3d_mm",
+      "source": "weather",
+      "default": -9999.0
+    },
+    {
+      "name": "precip_5d_mm",
+      "source": "weather",
+      "default": -9999.0
+    },
+    {
+      "name": "precip_7d_mm",
+      "source": "weather",
+      "default": -9999.0
+    },
+    {
+      "name": "precip_10d_mm",
+      "source": "weather",
+      "default": -9999.0
+    },
+    {
+      "name": "precip_14d_mm",
+      "source": "weather",
+      "default": -9999.0
+    },
+    {
+      "name": "precip_21d_mm",
+      "source": "weather",
+      "default": -9999.0
+    },
+    {
+      "name": "precip_30d_mm",
+      "source": "weather",
+      "default": -9999.0
+    },
+    {
+      "name": "max_daily_precip_3d_mm",
+      "source": "weather",
+      "default": -9999.0
+    },
+    {
+      "name": "max_daily_precip_7d_mm",
+      "source": "weather",
+      "default": -9999.0
+    },
+    {
+      "name": "max_daily_precip_14d_mm",
+      "source": "weather",
+      "default": -9999.0
+    },
+    {
+      "name": "wet_days_7d",
+      "source": "weather",
+      "default": -9999.0
+    },
+    {
+      "name": "wet_days_14d",
+      "source": "weather",
+      "default": -9999.0
+    },
+    {
+      "name": "wet_days_30d",
+      "source": "weather",
+      "default": -9999.0
+    },
+    {
+      "name": "days_since_precip_over_1mm",
+      "source": "weather",
+      "default": -9999.0
+    },
+    {
+      "name": "days_since_precip_over_5mm",
+      "source": "weather",
+      "default": -9999.0
+    },
+    {
+      "name": "days_since_precip_over_10mm",
+      "source": "weather",
+      "default": -9999.0
+    },
+    {
+      "name": "antecedent_precipitation_index_daily",
+      "source": "weather",
+      "default": -9999.0
+    },
+    {
+      "name": "antecedent_precipitation_index_daily_70",
+      "source": "weather",
+      "default": -9999.0
+    },
+    {
+      "name": "antecedent_precipitation_index_daily_85",
+      "source": "weather",
+      "default": -9999.0
+    },
+    {
+      "name": "antecedent_precipitation_index_daily_93",
+      "source": "weather",
+      "default": -9999.0
+    },
+    {
+      "name": "temperature2mAtObservation",
+      "source": "weather",
+      "default": -9999.0
+    },
+    {
+      "name": "temperature2mMeanPrevDay",
+      "source": "weather",
+      "default": -9999.0
+    },
+    {
+      "name": "temperature2mMinPrevDay",
+      "source": "weather",
+      "default": -9999.0
+    },
+    {
+      "name": "temperature2mMaxPrevDay",
+      "source": "weather",
+      "default": -9999.0
+    },
+    {
+      "name": "temperature2mMean_3d",
+      "source": "weather",
+      "default": -9999.0
+    },
+    {
+      "name": "temperature2mMean_7d",
+      "source": "weather",
+      "default": -9999.0
+    },
+    {
+      "name": "temperature2mMean_14d",
+      "source": "weather",
+      "default": -9999.0
+    },
+    {
+      "name": "temperature2mMinAtObservationDay",
+      "source": "weather",
+      "default": -9999.0
+    },
+    {
+      "name": "temperature2mMaxAtObservationDay",
+      "source": "weather",
+      "default": -9999.0
+    },
+    {
+      "name": "positive_degree_days_3d",
+      "source": "weather",
+      "default": -9999.0
+    },
+    {
+      "name": "positive_degree_days_7d",
+      "source": "weather",
+      "default": -9999.0
+    },
+    {
+      "name": "positive_degree_days_14d",
+      "source": "weather",
+      "default": -9999.0
+    },
+    {
+      "name": "rain_prev_day_mm",
+      "source": "weather",
+      "default": -9999.0
+    },
+    {
+      "name": "rain_3d_mm",
+      "source": "weather",
+      "default": -9999.0
+    },
+    {
+      "name": "rain_7d_mm",
+      "source": "weather",
+      "default": -9999.0
+    },
+    {
+      "name": "snowfall_prev_day_cm",
+      "source": "weather",
+      "default": -9999.0
+    },
+    {
+      "name": "snowfall_3d_cm",
+      "source": "weather",
+      "default": -9999.0
+    },
+    {
+      "name": "snowfall_7d_cm",
+      "source": "weather",
+      "default": -9999.0
+    },
+    {
+      "name": "snowfall_14d_cm",
+      "source": "weather",
+      "default": -9999.0
+    },
+    {
+      "name": "rainAtObservationDay",
+      "source": "weather",
+      "default": -9999.0
+    },
+    {
+      "name": "snowfallAtObservationDay",
+      "source": "weather",
+      "default": -9999.0
+    },
+    {
+      "name": "precipitation_hours_3d",
+      "source": "weather",
+      "default": -9999.0
+    },
+    {
+      "name": "precipitation_hours_7d",
+      "source": "weather",
+      "default": -9999.0
+    },
+    {
+      "name": "precipitation_hours_14d",
+      "source": "weather",
+      "default": -9999.0
+    },
+    {
+      "name": "precipitationHoursAtObservationDay",
+      "source": "weather",
+      "default": -9999.0
+    },
+    {
+      "name": "hasWatershed",
+      "source": "static",
+      "default": 0.0
+    },
+    {
+      "name": "globalPastObsCount",
+      "source": "lookup",
+      "default": 0.0
+    },
+    {
+      "name": "regionPastObsCount",
+      "source": "lookup",
+      "default": 0.0
+    },
+    {
+      "name": "massifPastObsCount",
+      "source": "lookup",
+      "default": 0.0
+    },
+    {
+      "name": "canyonPastObsCount",
+      "source": "lookup",
+      "default": 0.0
+    },
+    {
+      "name": "globalPriorLow",
+      "source": "lookup",
+      "default": 0.0
+    },
+    {
+      "name": "globalPriorMedium",
+      "source": "lookup",
+      "default": 0.0
+    },
+    {
+      "name": "globalPriorHigh",
+      "source": "lookup",
+      "default": 0.0
+    },
+    {
+      "name": "regionPriorLow",
+      "source": "lookup",
+      "default": 0.0
+    },
+    {
+      "name": "regionPriorMedium",
+      "source": "lookup",
+      "default": 0.0
+    },
+    {
+      "name": "regionPriorHigh",
+      "source": "lookup",
+      "default": 0.0
+    },
+    {
+      "name": "massifPriorLow",
+      "source": "lookup",
+      "default": 0.0
+    },
+    {
+      "name": "massifPriorMedium",
+      "source": "lookup",
+      "default": 0.0
+    },
+    {
+      "name": "massifPriorHigh",
+      "source": "lookup",
+      "default": 0.0
+    },
+    {
+      "name": "canyonPriorLow",
+      "source": "lookup",
+      "default": 0.0
+    },
+    {
+      "name": "canyonPriorMedium",
+      "source": "lookup",
+      "default": 0.0
+    },
+    {
+      "name": "canyonPriorHigh",
+      "source": "lookup",
+      "default": 0.0
+    },
+    {
+      "name": "historicalRegulatedSignalCountCanyon",
+      "source": "lookup",
+      "default": -9999.0
+    },
+    {
+      "name": "historicalSnowmeltSignalCountCanyon",
+      "source": "lookup",
+      "default": -9999.0
+    },
+    {
+      "name": "historicalRegulatedSignalRatioCanyon",
+      "source": "lookup",
+      "default": 0.0
+    },
+    {
+      "name": "historicalSnowmeltSignalRatioCanyon",
+      "source": "lookup",
+      "default": 0.0
+    },
+    {
+      "name": "historicalRegulatedSignalRatioMassif",
+      "source": "lookup",
+      "default": 0.0
+    },
+    {
+      "name": "historicalSnowmeltSignalRatioMassif",
+      "source": "lookup",
+      "default": 0.0
+    },
+    {
+      "name": "historicalRegulatedSignalRatioRegion",
+      "source": "lookup",
+      "default": 0.0
+    },
+    {
+      "name": "historicalSnowmeltSignalRatioRegion",
+      "source": "lookup",
+      "default": 0.0
+    },
+    {
+      "name": "historicallyRegulatedCanyon",
+      "source": "lookup",
+      "default": 0.0
+    },
+    {
+      "name": "historicallySnowmeltCanyon",
+      "source": "lookup",
+      "default": 0.0
+    },
+    {
+      "name": "historicallyAtypicalCanyon",
+      "source": "lookup",
+      "default": 0.0
+    }
+  ],
+  "staticFeatureNames": [
+    "altitudeDepartM",
+    "deniveleM",
+    "longueurM",
+    "cascadeMaxM",
+    "upstreamCatchmentAreaKm2",
+    "hasWatershed"
+  ],
+  "lookupFeatureNames": [
+    "globalPastObsCount",
+    "regionPastObsCount",
+    "massifPastObsCount",
+    "canyonPastObsCount",
+    "globalPriorLow",
+    "globalPriorMedium",
+    "globalPriorHigh",
+    "regionPriorLow",
+    "regionPriorMedium",
+    "regionPriorHigh",
+    "massifPriorLow",
+    "massifPriorMedium",
+    "massifPriorHigh",
+    "canyonPriorLow",
+    "canyonPriorMedium",
+    "canyonPriorHigh",
+    "historicalRegulatedSignalCountCanyon",
+    "historicalSnowmeltSignalCountCanyon",
+    "historicalRegulatedSignalRatioCanyon",
+    "historicalSnowmeltSignalRatioCanyon",
+    "historicalRegulatedSignalRatioMassif",
+    "historicalSnowmeltSignalRatioMassif",
+    "historicalRegulatedSignalRatioRegion",
+    "historicalSnowmeltSignalRatioRegion",
+    "historicallyRegulatedCanyon",
+    "historicallySnowmeltCanyon",
+    "historicallyAtypicalCanyon"
+  ],
+  "dynamicFeatureNames": [
+    "month",
+    "monthSin",
+    "monthCos",
+    "precip_prev_day_mm",
+    "precip_2d_mm",
+    "precip_3d_mm",
+    "precip_5d_mm",
+    "precip_7d_mm",
+    "precip_10d_mm",
+    "precip_14d_mm",
+    "precip_21d_mm",
+    "precip_30d_mm",
+    "max_daily_precip_3d_mm",
+    "max_daily_precip_7d_mm",
+    "max_daily_precip_14d_mm",
+    "wet_days_7d",
+    "wet_days_14d",
+    "wet_days_30d",
+    "days_since_precip_over_1mm",
+    "days_since_precip_over_5mm",
+    "days_since_precip_over_10mm",
+    "antecedent_precipitation_index_daily",
+    "antecedent_precipitation_index_daily_70",
+    "antecedent_precipitation_index_daily_85",
+    "antecedent_precipitation_index_daily_93",
+    "temperature2mAtObservation",
+    "temperature2mMeanPrevDay",
+    "temperature2mMinPrevDay",
+    "temperature2mMaxPrevDay",
+    "temperature2mMean_3d",
+    "temperature2mMean_7d",
+    "temperature2mMean_14d",
+    "temperature2mMinAtObservationDay",
+    "temperature2mMaxAtObservationDay",
+    "positive_degree_days_3d",
+    "positive_degree_days_7d",
+    "positive_degree_days_14d",
+    "rain_prev_day_mm",
+    "rain_3d_mm",
+    "rain_7d_mm",
+    "snowfall_prev_day_cm",
+    "snowfall_3d_cm",
+    "snowfall_7d_cm",
+    "snowfall_14d_cm",
+    "rainAtObservationDay",
+    "snowfallAtObservationDay",
+    "precipitation_hours_3d",
+    "precipitation_hours_7d",
+    "precipitation_hours_14d",
+    "precipitationHoursAtObservationDay"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-03-30T15:40:55.706470+00:00",
+  "labels": [
+    "HIGH",
+    "LOW",
+    "MEDIUM"
+  ],
+  "defaultPolicy": "safety_first",
+  "policies": {
+    "balanced": {
+      "highThreshold": 0.46
+    },
+    "prudent": {
+      "highThreshold": 0.55
+    },
+    "safety_first": {
+      "highThreshold": 0.29
+    }
+  }
+}

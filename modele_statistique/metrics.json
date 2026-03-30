@@ -1,0 +1,644 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-03-30T15:40:55.706738+00:00",
+  "model": "random_forest_mobile_embedded_full",
+  "targetMode": "three",
+  "labels": [
+    "HIGH",
+    "LOW",
+    "MEDIUM"
+  ],
+  "featureCount": 83,
+  "features": [
+    "month",
+    "monthSin",
+    "monthCos",
+    "altitudeDepartM",
+    "deniveleM",
+    "longueurM",
+    "cascadeMaxM",
+    "upstreamCatchmentAreaKm2",
+    "precip_prev_day_mm",
+    "precip_2d_mm",
+    "precip_3d_mm",
+    "precip_5d_mm",
+    "precip_7d_mm",
+    "precip_10d_mm",
+    "precip_14d_mm",
+    "precip_21d_mm",
+    "precip_30d_mm",
+    "max_daily_precip_3d_mm",
+    "max_daily_precip_7d_mm",
+    "max_daily_precip_14d_mm",
+    "wet_days_7d",
+    "wet_days_14d",
+    "wet_days_30d",
+    "days_since_precip_over_1mm",
+    "days_since_precip_over_5mm",
+    "days_since_precip_over_10mm",
+    "antecedent_precipitation_index_daily",
+    "antecedent_precipitation_index_daily_70",
+    "antecedent_precipitation_index_daily_85",
+    "antecedent_precipitation_index_daily_93",
+    "temperature2mAtObservation",
+    "temperature2mMeanPrevDay",
+    "temperature2mMinPrevDay",
+    "temperature2mMaxPrevDay",
+    "temperature2mMean_3d",
+    "temperature2mMean_7d",
+    "temperature2mMean_14d",
+    "temperature2mMinAtObservationDay",
+    "temperature2mMaxAtObservationDay",
+    "positive_degree_days_3d",
+    "positive_degree_days_7d",
+    "positive_degree_days_14d",
+    "rain_prev_day_mm",
+    "rain_3d_mm",
+    "rain_7d_mm",
+    "snowfall_prev_day_cm",
+    "snowfall_3d_cm",
+    "snowfall_7d_cm",
+    "snowfall_14d_cm",
+    "rainAtObservationDay",
+    "snowfallAtObservationDay",
+    "precipitation_hours_3d",
+    "precipitation_hours_7d",
+    "precipitation_hours_14d",
+    "precipitationHoursAtObservationDay",
+    "hasWatershed",
+    "globalPastObsCount",
+    "regionPastObsCount",
+    "massifPastObsCount",
+    "canyonPastObsCount",
+    "globalPriorLow",
+    "globalPriorMedium",
+    "globalPriorHigh",
+    "regionPriorLow",
+    "regionPriorMedium",
+    "regionPriorHigh",
+    "massifPriorLow",
+    "massifPriorMedium",
+    "massifPriorHigh",
+    "canyonPriorLow",
+    "canyonPriorMedium",
+    "canyonPriorHigh",
+    "historicalRegulatedSignalCountCanyon",
+    "historicalSnowmeltSignalCountCanyon",
+    "historicalRegulatedSignalRatioCanyon",
+    "historicalSnowmeltSignalRatioCanyon",
+    "historicalRegulatedSignalRatioMassif",
+    "historicalSnowmeltSignalRatioMassif",
+    "historicalRegulatedSignalRatioRegion",
+    "historicalSnowmeltSignalRatioRegion",
+    "historicallyRegulatedCanyon",
+    "historicallySnowmeltCanyon",
+    "historicallyAtypicalCanyon"
+  ],
+  "trainRowCount": 112823,
+  "calibrationRowCount": 16117,
+  "testRowCount": 32234,
+  "trainClassCounts": {
+    "HIGH": 14459,
+    "LOW": 24133,
+    "MEDIUM": 74231
+  },
+  "calibrationClassCounts": {
+    "HIGH": 1983,
+    "LOW": 3419,
+    "MEDIUM": 10715
+  },
+  "testClassCounts": {
+    "HIGH": 3907,
+    "LOW": 6889,
+    "MEDIUM": 21438
+  },
+  "argmaxMetrics": {
+    "accuracy": 0.694266923124651,
+    "balancedAccuracy": 0.6643069729699876,
+    "macroF1": 0.6300175003146149,
+    "weightedF1": 0.7069464202890704,
+    "precisionHigh": 0.36014681143905797,
+    "recallHigh": 0.602764269260302,
+    "f1High": 0.45089029293509475,
+    "classificationReport": {
+      "HIGH": {
+        "precision": 0.36014681143905797,
+        "recall": 0.602764269260302,
+        "f1-score": 0.45089029293509475,
+        "support": 3907.0
+      },
+      "LOW": {
+        "precision": 0.6787861017446122,
+        "recall": 0.6720859340978371,
+        "f1-score": 0.675419401896426,
+        "support": 6889.0
+      },
+      "MEDIUM": {
+        "precision": 0.8156193705626789,
+        "recall": 0.7180707155518239,
+        "f1-score": 0.7637428061123239,
+        "support": 21438.0
+      },
+      "accuracy": 0.694266923124651,
+      "macro avg": {
+        "precision": 0.6181840945821163,
+        "recall": 0.6643069729699876,
+        "f1-score": 0.6300175003146149,
+        "support": 32234.0
+      },
+      "weighted avg": {
+        "precision": 0.7311689245310462,
+        "recall": 0.694266923124651,
+        "f1-score": 0.7069464202890704,
+        "support": 32234.0
+      }
+    },
+    "confusionMatrix": [
+      [
+        2355,
+        133,
+        1419
+      ],
+      [
+        198,
+        4630,
+        2061
+      ],
+      [
+        3986,
+        2058,
+        15394
+      ]
+    ]
+  },
+  "thresholdPolicies": {
+    "balanced": {
+      "threshold": 0.46,
+      "calibrationMetrics": {
+        "accuracy": 0.701991685797605,
+        "balancedAccuracy": 0.6666889148771663,
+        "macroF1": 0.6366506979529939,
+        "weightedF1": 0.7118845034428622,
+        "precisionHigh": 0.39096267190569745,
+        "recallHigh": 0.6021180030257186,
+        "f1High": 0.47409172126265636,
+        "classificationReport": {
+          "HIGH": {
+            "precision": 0.39096267190569745,
+            "recall": 0.6021180030257186,
+            "f1-score": 0.47409172126265636,
+            "support": 1983.0
+          },
+          "LOW": {
+            "precision": 0.6640419947506562,
+            "recall": 0.6659842059081603,
+            "f1-score": 0.6650116822429907,
+            "support": 3419.0
+          },
+          "MEDIUM": {
+            "precision": 0.8140959103176251,
+            "recall": 0.7319645356976202,
+            "f1-score": 0.7708486903533344,
+            "support": 10715.0
+          },
+          "accuracy": 0.701991685797605,
+          "macro avg": {
+            "precision": 0.6230335256579929,
+            "recall": 0.6666889148771663,
+            "f1-score": 0.6366506979529939,
+            "support": 16117.0
+          },
+          "weighted avg": {
+            "precision": 0.7302026579074793,
+            "recall": 0.701991685797605,
+            "f1-score": 0.7118845034428622,
+            "support": 16117.0
+          }
+        },
+        "confusionMatrix": [
+          [
+            1194,
+            85,
+            704
+          ],
+          [
+            55,
+            2277,
+            1087
+          ],
+          [
+            1805,
+            1067,
+            7843
+          ]
+        ],
+        "threshold": 0.46
+      },
+      "testMetrics": {
+        "accuracy": 0.7006887137804803,
+        "balancedAccuracy": 0.6627772235509214,
+        "macroF1": 0.6335065500675606,
+        "weightedF1": 0.7114018931577027,
+        "precisionHigh": 0.37328543435662964,
+        "recallHigh": 0.5851036600972613,
+        "f1High": 0.45578706011364767,
+        "classificationReport": {
+          "HIGH": {
+            "precision": 0.37328543435662964,
+            "recall": 0.5851036600972613,
+            "f1-score": 0.45578706011364767,
+            "support": 3907.0
+          },
+          "LOW": {
+            "precision": 0.6777875329236172,
+            "recall": 0.6723762519959355,
+            "f1-score": 0.6750710486045325,
+            "support": 6889.0
+          },
+          "MEDIUM": {
+            "precision": 0.8128242373936502,
+            "recall": 0.7308517585595671,
+            "f1-score": 0.7696615414845016,
+            "support": 21438.0
+          },
+          "accuracy": 0.7006887137804803,
+          "macro avg": {
+            "precision": 0.6212990682246323,
+            "recall": 0.6627772235509214,
+            "f1-score": 0.6335065500675606,
+            "support": 32234.0
+          },
+          "weighted avg": {
+            "precision": 0.730689039758864,
+            "recall": 0.7006887137804803,
+            "f1-score": 0.7114018931577027,
+            "support": 32234.0
+          }
+        },
+        "confusionMatrix": [
+          [
+            2286,
+            137,
+            1484
+          ],
+          [
+            133,
+            4632,
+            2124
+          ],
+          [
+            3705,
+            2065,
+            15668
+          ]
+        ]
+      }
+    },
+    "prudent": {
+      "threshold": 0.55,
+      "calibrationMetrics": {
+        "accuracy": 0.7364894211081466,
+        "balancedAccuracy": 0.6338485021200139,
+        "macroF1": 0.6400969793282085,
+        "weightedF1": 0.7336303552063779,
+        "precisionHigh": 0.4802784222737819,
+        "recallHigh": 0.4175491679273828,
+        "f1High": 0.44672241704882654,
+        "classificationReport": {
+          "HIGH": {
+            "precision": 0.4802784222737819,
+            "recall": 0.4175491679273828,
+            "f1-score": 0.44672241704882654,
+            "support": 1983.0
+          },
+          "LOW": {
+            "precision": 0.6638483965014578,
+            "recall": 0.6659842059081603,
+            "f1-score": 0.6649145860709592,
+            "support": 3419.0
+          },
+          "MEDIUM": {
+            "precision": 0.7995074340965064,
+            "recall": 0.8180121325244983,
+            "f1-score": 0.8086539348648399,
+            "support": 10715.0
+          },
+          "accuracy": 0.7364894211081466,
+          "macro avg": {
+            "precision": 0.647878084290582,
+            "recall": 0.6338485021200139,
+            "f1-score": 0.6400969793282085,
+            "support": 16117.0
+          },
+          "weighted avg": {
+            "precision": 0.7314520031861673,
+            "recall": 0.7364894211081466,
+            "f1-score": 0.7336303552063779,
+            "support": 16117.0
+          }
+        },
+        "confusionMatrix": [
+          [
+            828,
+            85,
+            1070
+          ],
+          [
+            14,
+            2277,
+            1128
+          ],
+          [
+            882,
+            1068,
+            8765
+          ]
+        ],
+        "threshold": 0.55
+      },
+      "testMetrics": {
+        "accuracy": 0.7362412359620276,
+        "balancedAccuracy": 0.6290003911519425,
+        "macroF1": 0.6352932074982399,
+        "weightedF1": 0.7331859857811396,
+        "precisionHigh": 0.4527086383601757,
+        "recallHigh": 0.39570002559508577,
+        "f1High": 0.42228899207866705,
+        "classificationReport": {
+          "HIGH": {
+            "precision": 0.4527086383601757,
+            "recall": 0.39570002559508577,
+            "f1-score": 0.42228899207866705,
+            "support": 3907.0
+          },
+          "LOW": {
+            "precision": 0.6776363902296328,
+            "recall": 0.6725214109449847,
+            "f1-score": 0.6750692117149935,
+            "support": 6889.0
+          },
+          "MEDIUM": {
+            "precision": 0.7985169684287144,
+            "recall": 0.8187797369157571,
+            "f1-score": 0.8085214187010594,
+            "support": 21438.0
+          },
+          "accuracy": 0.7362412359620276,
+          "macro avg": {
+            "precision": 0.6429539990061742,
+            "recall": 0.6290003911519425,
+            "f1-score": 0.6352932074982399,
+            "support": 32234.0
+          },
+          "weighted avg": {
+            "precision": 0.7307680248042416,
+            "recall": 0.7362412359620276,
+            "f1-score": 0.7331859857811396,
+            "support": 32234.0
+          }
+        },
+        "confusionMatrix": [
+          [
+            1546,
+            138,
+            2223
+          ],
+          [
+            50,
+            4633,
+            2206
+          ],
+          [
+            1819,
+            2066,
+            17553
+          ]
+        ]
+      }
+    },
+    "safety_first": {
+      "threshold": 0.29,
+      "calibrationMetrics": {
+        "accuracy": 0.5538871998510889,
+        "balancedAccuracy": 0.663756272209492,
+        "macroF1": 0.5504788159110948,
+        "weightedF1": 0.5832905575785371,
+        "precisionHigh": 0.254739336492891,
+        "recallHigh": 0.8673726676752396,
+        "f1High": 0.3938179736691471,
+        "classificationReport": {
+          "HIGH": {
+            "precision": 0.254739336492891,
+            "recall": 0.8673726676752396,
+            "f1-score": 0.3938179736691471,
+            "support": 1983.0
+          },
+          "LOW": {
+            "precision": 0.6682394573872014,
+            "recall": 0.662766890903773,
+            "f1-score": 0.6654919236417034,
+            "support": 3419.0
+          },
+          "MEDIUM": {
+            "precision": 0.8270840308001339,
+            "recall": 0.46112925804946336,
+            "f1-score": 0.5921265504224339,
+            "support": 10715.0
+          },
+          "accuracy": 0.5538871998510889,
+          "macro avg": {
+            "precision": 0.5833542748934087,
+            "recall": 0.663756272209492,
+            "f1-score": 0.5504788159110948,
+            "support": 16117.0
+          },
+          "weighted avg": {
+            "precision": 0.7229673139601464,
+            "recall": 0.5538871998510889,
+            "f1-score": 0.5832905575785371,
+            "support": 16117.0
+          }
+        },
+        "confusionMatrix": [
+          [
+            1720,
+            71,
+            192
+          ],
+          [
+            312,
+            2266,
+            841
+          ],
+          [
+            4720,
+            1054,
+            4941
+          ]
+        ],
+        "threshold": 0.29
+      },
+      "testMetrics": {
+        "accuracy": 0.5557796115902464,
+        "balancedAccuracy": 0.6628475909272205,
+        "macroF1": 0.5518818493856162,
+        "weightedF1": 0.5868854223565431,
+        "precisionHigh": 0.24871393424289867,
+        "recallHigh": 0.8538520604044023,
+        "f1High": 0.38521939953810624,
+        "classificationReport": {
+          "HIGH": {
+            "precision": 0.24871393424289867,
+            "recall": 0.8538520604044023,
+            "f1-score": 0.38521939953810624,
+            "support": 3907.0
+          },
+          "LOW": {
+            "precision": 0.6804777351813625,
+            "recall": 0.669908549862099,
+            "f1-score": 0.6751517811425646,
+            "support": 6889.0
+          },
+          "MEDIUM": {
+            "precision": 0.8276434919843841,
+            "recall": 0.46478216251515997,
+            "f1-score": 0.5952743674761777,
+            "support": 21438.0
+          },
+          "accuracy": 0.5557796115902464,
+          "macro avg": {
+            "precision": 0.5856117204695485,
+            "recall": 0.6628475909272205,
+            "f1-score": 0.5518818493856162,
+            "support": 32234.0
+          },
+          "weighted avg": {
+            "precision": 0.7260208984275188,
+            "recall": 0.5557796115902464,
+            "f1-score": 0.5868854223565431,
+            "support": 32234.0
+          }
+        },
+        "confusionMatrix": [
+          [
+            3336,
+            128,
+            443
+          ],
+          [
+            642,
+            4615,
+            1632
+          ],
+          [
+            9435,
+            2039,
+            9964
+          ]
+        ]
+      }
+    }
+  },
+  "topFeatureImportances": [
+    {
+      "feature": "canyonPriorLow",
+      "importance": 0.1867078949458442
+    },
+    {
+      "feature": "canyonPriorHigh",
+      "importance": 0.10209253035411406
+    },
+    {
+      "feature": "canyonPriorMedium",
+      "importance": 0.10034022939293741
+    },
+    {
+      "feature": "antecedent_precipitation_index_daily_93",
+      "importance": 0.025282477666079002
+    },
+    {
+      "feature": "antecedent_precipitation_index_daily_85",
+      "importance": 0.023018376016317652
+    },
+    {
+      "feature": "massifPriorLow",
+      "importance": 0.02229619572765105
+    },
+    {
+      "feature": "antecedent_precipitation_index_daily",
+      "importance": 0.021972849856993024
+    },
+    {
+      "feature": "precip_30d_mm",
+      "importance": 0.02028280897744494
+    },
+    {
+      "feature": "upstreamCatchmentAreaKm2",
+      "importance": 0.018764436946070516
+    },
+    {
+      "feature": "massifPriorHigh",
+      "importance": 0.01828530624150721
+    },
+    {
+      "feature": "massifPriorMedium",
+      "importance": 0.014977907997083942
+    },
+    {
+      "feature": "temperature2mMean_14d",
+      "importance": 0.014671542425233908
+    },
+    {
+      "feature": "precip_14d_mm",
+      "importance": 0.01454536943431716
+    },
+    {
+      "feature": "month",
+      "importance": 0.014419418504689904
+    },
+    {
+      "feature": "positive_degree_days_14d",
+      "importance": 0.014243675081674607
+    },
+    {
+      "feature": "monthSin",
+      "importance": 0.014164116757915133
+    },
+    {
+      "feature": "canyonPastObsCount",
+      "importance": 0.013653769418361555
+    },
+    {
+      "feature": "regionPriorLow",
+      "importance": 0.013554940735968227
+    },
+    {
+      "feature": "precip_21d_mm",
+      "importance": 0.013430193130939998
+    },
+    {
+      "feature": "wet_days_30d",
+      "importance": 0.012272623311465976
+    }
+  ],
+  "runtimeLookupMetadata": {
+    "schemaVersion": 1,
+    "generatedAt": "2026-03-30T15:38:53.107843+00:00",
+    "targetMode": "three",
+    "inputRowCount": 161174,
+    "retainedRowCount": 161174,
+    "skippedMissingCanyonCount": 0,
+    "skippedUnknownTargetCount": 0,
+    "globalPastObsCount": 161174,
+    "regionCount": 244,
+    "massifCount": 433,
+    "canyonCount": 3394
+  },
+  "files": {
+    "model": "model.onnx",
+    "featureSpec": "feature_spec.json",
+    "canyonStaticFeatures": "canyon_static_features.json",
+    "runtimeLookups": "runtime_feature_lookups.json",
+    "thresholds": "thresholds.json"
+  }
+}
