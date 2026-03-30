@@ -1265,7 +1265,6 @@ def process_single_canyon(
         sources=sources,
         output_dir=output_dir,
         gdal_translate=gdal_translate,
-        gdal_warp=gdal_warp,
     )
     stage_timings["resolveSourceSec"] = time.perf_counter() - started
     if source is None:
@@ -1437,7 +1436,6 @@ def process_single_canyon_safe(
             sources=sources,
             output_dir=output_dir,
             gdal_translate=gdal_translate,
-            gdal_warp=gdal_warp,
             keep_work=keep_work,
         )
     except KeyboardInterrupt:
@@ -1473,6 +1471,7 @@ def main() -> int:
     output_dir = args.output_dir.resolve()
     output_dir.mkdir(parents=True, exist_ok=True)
     gdal_translate = resolve_executable(args.gdal_translate, extra_candidates=[default_gdal_translate()])
+    gdal_warp = resolve_executable(args.gdal_warp, extra_candidates=[default_gdalwarp()])
 
     config = load_json(args.source_config)
     sources = config["sources"]
