@@ -1,0 +1,48 @@
+{
+  "canyonsWithResults": 308,
+  "importReadyRows": 308,
+  "watershedPolygonRows": 308,
+  "statusCounts": {
+    "ok": 308
+  },
+  "watershedSkipCounts": {},
+  "profiling": {
+    "profiledCanyons": 308,
+    "stageTotalsSec": {
+      "resolveSourceSec": 33111.573,
+      "ensureLocalHydrologySec": 30500.45,
+      "clipDemSec": 22790.946,
+      "resampleDemSec": 2384.914,
+      "deriveHydrologySec": 5319.455,
+      "evaluatePointsSec": 94.651,
+      "analyzeCandidatesSec": 0.0,
+      "buildWatershedGeometrySec": 1603.251,
+      "totalSec": 65313.015,
+      "writeResultSec": 1.729
+    },
+    "stageAveragesSec": {
+      "resolveSourceSec": 107.505,
+      "ensureLocalHydrologySec": 99.027,
+      "clipDemSec": 73.997,
+      "resampleDemSec": 7.743,
+      "deriveHydrologySec": 17.271,
+      "evaluatePointsSec": 0.307,
+      "analyzeCandidatesSec": 0.0,
+      "buildWatershedGeometrySec": 5.205,
+      "totalSec": 212.055,
+      "writeResultSec": 0.006
+    },
+    "stageMaxSec": {
+      "resolveSourceSec": 502.412,
+      "ensureLocalHydrologySec": 620.803,
+      "clipDemSec": 548.5,
+      "resampleDemSec": 38.051,
+      "deriveHydrologySec": 57.928,
+      "evaluatePointsSec": 30.54,
+      "analyzeCandidatesSec": 0.0,
+      "buildWatershedGeometrySec": 76.943,
+      "totalSec": 825.527,
+      "writeResultSec": 0.412
+    }
+  }
+}
