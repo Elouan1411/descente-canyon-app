@@ -140,18 +140,145 @@ def top_feature_importances(feature_names: list[str], importances: list[float], 
     )[:limit]
 
 
+def split_temporal_rows(rows: list[dict[str, Any]], calibration_fraction: float, test_fraction: float) -> tuple[list[dict[str, Any]], list[dict[str, Any]], list[dict[str, Any]]]:
+    total = len(rows)
+    test_count = max(1, int(total * test_fraction))
+    calibration_count = max(1, int(total * calibration_fraction))
+    train_count = total - test_count - calibration_count
+    if train_count < 50:
+        raise SystemExit("Not enough rows left for the training split; lower --calibration-fraction or --test-fraction")
+    train_rows = rows[:train_count]
+    calibration_rows = rows[train_count:train_count + calibration_count]
+    test_rows = rows[train_count + calibration_count:]
+    return train_rows, calibration_rows, test_rows
+
+
+def probabilities_to_predictions(probabilities: list[list[float]], labels: list[str]) -> list[str]:
+    return [labels[max(range(len(labels)), key=lambda index: probs[index])] for probs in probabilities]
+
+
+def probability_by_label(probabilities: list[list[float]], labels: list[str], label: str) -> list[float]:
+    if label not in labels:
+        return [0.0 for _ in probabilities]
+    label_index = labels.index(label)
+    return [float(probs[label_index]) for probs in probabilities]
+
+
+def threshold_high_predictions(probabilities: list[list[float]], labels: list[str], threshold: float) -> list[str]:
+    if "HIGH" not in labels:
+        return probabilities_to_predictions(probabilities, labels)
+    high_index = labels.index("HIGH")
+    non_high_indices = [index for index, label in enumerate(labels) if label != "HIGH"]
+    predictions: list[str] = []
+    for probs in probabilities:
+        if probs[high_index] >= threshold:
+            predictions.append("HIGH")
+            continue
+        best_non_high_index = max(non_high_indices, key=lambda index: probs[index]) if non_high_indices else high_index
+        predictions.append(labels[best_non_high_index])
+    return predictions
+
+
+def evaluate_predictions(
+    *,
+    y_true: list[str],
+    predictions: list[str],
+    labels: list[str],
+    accuracy_score_fn: Any,
+    balanced_accuracy_score_fn: Any,
+    classification_report_fn: Any,
+    confusion_matrix_fn: Any,
+    f1_score_fn: Any,
+) -> dict[str, Any]:
+    report = classification_report_fn(y_true, predictions, labels=labels, output_dict=True, zero_division=0)
+    return {
+        "accuracy": accuracy_score_fn(y_true, predictions),
+        "balancedAccuracy": balanced_accuracy_score_fn(y_true, predictions),
+        "macroF1": f1_score_fn(y_true, predictions, labels=labels, average="macro", zero_division=0),
+        "weightedF1": f1_score_fn(y_true, predictions, labels=labels, average="weighted", zero_division=0),
+        "precisionHigh": report.get("HIGH", {}).get("precision"),
+        "recallHigh": report.get("HIGH", {}).get("recall"),
+        "f1High": report.get("HIGH", {}).get("f1-score"),
+        "classificationReport": report,
+        "confusionMatrix": confusion_matrix_fn(y_true, predictions, labels=labels).tolist(),
+    }
+
+
+def find_high_threshold(
+    *,
+    y_true: list[str],
+    probabilities: list[list[float]],
+    labels: list[str],
+    policy: str,
+    accuracy_score_fn: Any,
+    balanced_accuracy_score_fn: Any,
+    classification_report_fn: Any,
+    confusion_matrix_fn: Any,
+    f1_score_fn: Any,
+) -> dict[str, Any]:
+    candidate_thresholds = [round(step / 100.0, 2) for step in range(10, 91, 2)]
+    best_result: dict[str, Any] | None = None
+
+    for threshold in candidate_thresholds:
+        predictions = threshold_high_predictions(probabilities, labels, threshold)
+        metrics = evaluate_predictions(
+            y_true=y_true,
+            predictions=predictions,
+            labels=labels,
+            accuracy_score_fn=accuracy_score_fn,
+            balanced_accuracy_score_fn=balanced_accuracy_score_fn,
+            classification_report_fn=classification_report_fn,
+            confusion_matrix_fn=confusion_matrix_fn,
+            f1_score_fn=f1_score_fn,
+        )
+        metrics["threshold"] = threshold
+
+        if best_result is None:
+            best_result = metrics
+            continue
+
+        if policy == "prudent":
+            current_precision = metrics.get("precisionHigh") or 0.0
+            current_recall = metrics.get("recallHigh") or 0.0
+            best_precision = best_result.get("precisionHigh") or 0.0
+            best_recall = best_result.get("recallHigh") or 0.0
+            current_score = (1 if current_recall >= 0.40 else 0, current_precision, current_recall, metrics["balancedAccuracy"])
+            best_score = (1 if best_recall >= 0.40 else 0, best_precision, best_recall, best_result["balancedAccuracy"])
+            if current_score > best_score:
+                best_result = metrics
+        else:
+            current_score = (metrics.get("f1High") or 0.0, metrics["balancedAccuracy"], metrics.get("precisionHigh") or 0.0)
+            best_score = (best_result.get("f1High") or 0.0, best_result["balancedAccuracy"], best_result.get("precisionHigh") or 0.0)
+            if current_score > best_score:
+                best_result = metrics
+
+    assert best_result is not None
+    return best_result
+
+
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Train a simple débit baseline model from generated features")
+    parser = argparse.ArgumentParser(description="Train a calibrated débit baseline model from generated features")
     parser.add_argument("--features-path", default="build/debit-pipeline/training-features/training_features.jsonl")
     parser.add_argument("--output-dir", default="build/debit-pipeline/model-baseline")
     parser.add_argument("--model", choices=["random_forest", "catboost"], default="random_forest")
     parser.add_argument("--target", choices=["three", "six"], default="three")
-    parser.add_argument("--validation-fraction", type=float, default=0.2)
+    parser.add_argument("--calibration-method", choices=["none", "sigmoid", "isotonic"], default="sigmoid")
+    parser.add_argument("--calibration-fraction", type=float, default=0.10)
+    parser.add_argument("--test-fraction", type=float, default=0.20)
     args = parser.parse_args()
 
     try:
+        from sklearn.calibration import CalibratedClassifierCV
         from sklearn.ensemble import RandomForestClassifier
-        from sklearn.metrics import accuracy_score, balanced_accuracy_score, classification_report, confusion_matrix, f1_score
+        from sklearn.metrics import (
+            accuracy_score,
+            balanced_accuracy_score,
+            brier_score_loss,
+            classification_report,
+            confusion_matrix,
+            f1_score,
+            log_loss,
+        )
     except ImportError as exc:  # pragma: no cover
         raise SystemExit(
             "scikit-learn is required for this script. Install it with `python -m pip install scikit-learn`."
@@ -170,19 +297,21 @@ def main() -> None:
     target_mapper = target_three_classes if args.target == "three" else target_six_classes
     filtered = [row for row in rows if target_mapper(row.get("niveau")) is not None and row.get("date")]
     filtered.sort(key=lambda row: row["date"])
-    if len(filtered) < 50:
-        raise SystemExit("Not enough rows to train a baseline model")
+    if len(filtered) < 200:
+        raise SystemExit("Not enough rows to train and calibrate a baseline model")
 
-    split_index = max(1, int(len(filtered) * (1.0 - args.validation_fraction)))
-    train_rows = filtered[:split_index]
-    validation_rows = filtered[split_index:]
-    if not validation_rows:
-        raise SystemExit("Validation split is empty; lower --validation-fraction")
+    train_rows, calibration_rows, test_rows = split_temporal_rows(
+        filtered,
+        calibration_fraction=args.calibration_fraction,
+        test_fraction=args.test_fraction,
+    )
 
     x_train = [row_to_numeric_vector(row) for row in train_rows]
     y_train = [target_mapper(row["niveau"]) for row in train_rows]
-    x_validation = [row_to_numeric_vector(row) for row in validation_rows]
-    y_validation = [target_mapper(row["niveau"]) for row in validation_rows]
+    x_calibration = [row_to_numeric_vector(row) for row in calibration_rows]
+    y_calibration = [target_mapper(row["niveau"]) for row in calibration_rows]
+    x_test = [row_to_numeric_vector(row) for row in test_rows]
+    y_test = [target_mapper(row["niveau"]) for row in test_rows]
 
     if args.model == "catboost":
         model = CatBoostClassifier(
@@ -206,21 +335,83 @@ def main() -> None:
         )
 
     model.fit(x_train, y_train)
-    predictions = model.predict(x_validation)
+    calibrated_model: Any = model
+    if args.calibration_method != "none":
+        calibrated_model = CalibratedClassifierCV(model, method=args.calibration_method, cv="prefit")
+        calibrated_model.fit(x_calibration, y_calibration)
 
-    label_order = sorted(set(y_train) | set(y_validation))
-    report = classification_report(y_validation, predictions, labels=label_order, output_dict=True, zero_division=0)
-    confusion = confusion_matrix(y_validation, predictions, labels=label_order)
+    labels = list(calibrated_model.classes_) if hasattr(calibrated_model, "classes_") else sorted(set(y_train) | set(y_test))
+    calibration_probabilities = calibrated_model.predict_proba(x_calibration)
+    test_probabilities = calibrated_model.predict_proba(x_test)
+    argmax_predictions = probabilities_to_predictions(test_probabilities, labels)
+    argmax_metrics = evaluate_predictions(
+        y_true=y_test,
+        predictions=argmax_predictions,
+        labels=labels,
+        accuracy_score_fn=accuracy_score,
+        balanced_accuracy_score_fn=balanced_accuracy_score,
+        classification_report_fn=classification_report,
+        confusion_matrix_fn=confusion_matrix,
+        f1_score_fn=f1_score,
+    )
+
+    calibration_high_probs = probability_by_label(calibration_probabilities, labels, "HIGH")
+    test_high_probs = probability_by_label(test_probabilities, labels, "HIGH")
+    probability_metrics = {
+        "logLoss": log_loss(y_test, test_probabilities, labels=labels),
+        "brierHigh": brier_score_loss([1 if label == "HIGH" else 0 for label in y_test], test_high_probs),
+        "meanHighProbability": sum(test_high_probs) / len(test_high_probs) if test_high_probs else None,
+    }
+
+    threshold_policies: dict[str, Any] = {}
+    if args.target == "three" and "HIGH" in labels:
+        balanced_threshold_metrics = find_high_threshold(
+            y_true=y_calibration,
+            probabilities=calibration_probabilities,
+            labels=labels,
+            policy="balanced",
+            accuracy_score_fn=accuracy_score,
+            balanced_accuracy_score_fn=balanced_accuracy_score,
+            classification_report_fn=classification_report,
+            confusion_matrix_fn=confusion_matrix,
+            f1_score_fn=f1_score,
+        )
+        prudent_threshold_metrics = find_high_threshold(
+            y_true=y_calibration,
+            probabilities=calibration_probabilities,
+            labels=labels,
+            policy="prudent",
+            accuracy_score_fn=accuracy_score,
+            balanced_accuracy_score_fn=balanced_accuracy_score,
+            classification_report_fn=classification_report,
+            confusion_matrix_fn=confusion_matrix,
+            f1_score_fn=f1_score,
+        )
+
+        for policy_name, calibration_metrics in (("balanced", balanced_threshold_metrics), ("prudent", prudent_threshold_metrics)):
+            threshold = calibration_metrics["threshold"]
+            test_predictions = threshold_high_predictions(test_probabilities, labels, threshold)
+            test_metrics = evaluate_predictions(
+                y_true=y_test,
+                predictions=test_predictions,
+                labels=labels,
+                accuracy_score_fn=accuracy_score,
+                balanced_accuracy_score_fn=balanced_accuracy_score,
+                classification_report_fn=classification_report,
+                confusion_matrix_fn=confusion_matrix,
+                f1_score_fn=f1_score,
+            )
+            threshold_policies[policy_name] = {
+                "threshold": threshold,
+                "calibrationMetrics": calibration_metrics,
+                "testMetrics": test_metrics,
+            }
+
     if args.model == "catboost":
         importances = list(model.get_feature_importance())
     else:
         importances = list(model.feature_importances_)
     feature_importance = top_feature_importances(NUMERIC_FEATURES, importances)
-    macro_f1 = f1_score(y_validation, predictions, labels=label_order, average="macro", zero_division=0)
-    weighted_f1 = f1_score(y_validation, predictions, labels=label_order, average="weighted", zero_division=0)
-    precision_high = report.get("HIGH", {}).get("precision")
-    recall_high = report.get("HIGH", {}).get("recall")
-    f1_high = report.get("HIGH", {}).get("f1-score")
 
     output_dir = Path(args.output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -231,20 +422,27 @@ def main() -> None:
             "generatedAt": datetime.now(timezone.utc).isoformat(),
             "model": args.model,
             "targetMode": args.target,
+            "calibrationMethod": args.calibration_method,
             "trainRowCount": len(train_rows),
-            "validationRowCount": len(validation_rows),
+            "calibrationRowCount": len(calibration_rows),
+            "testRowCount": len(test_rows),
+            "validationRowCount": len(test_rows),
             "trainClassCounts": dict(sorted(Counter(y_train).items())),
-            "validationClassCounts": dict(sorted(Counter(y_validation).items())),
-            "accuracy": accuracy_score(y_validation, predictions),
-            "balancedAccuracy": balanced_accuracy_score(y_validation, predictions),
-            "macroF1": macro_f1,
-            "weightedF1": weighted_f1,
-            "precisionHigh": precision_high,
-            "recallHigh": recall_high,
-            "f1High": f1_high,
-            "classificationReport": report,
-            "labels": label_order,
-            "confusionMatrix": confusion.tolist(),
+            "calibrationClassCounts": dict(sorted(Counter(y_calibration).items())),
+            "testClassCounts": dict(sorted(Counter(y_test).items())),
+            "validationClassCounts": dict(sorted(Counter(y_test).items())),
+            "accuracy": argmax_metrics["accuracy"],
+            "balancedAccuracy": argmax_metrics["balancedAccuracy"],
+            "macroF1": argmax_metrics["macroF1"],
+            "weightedF1": argmax_metrics["weightedF1"],
+            "precisionHigh": argmax_metrics["precisionHigh"],
+            "recallHigh": argmax_metrics["recallHigh"],
+            "f1High": argmax_metrics["f1High"],
+            "classificationReport": argmax_metrics["classificationReport"],
+            "labels": labels,
+            "confusionMatrix": argmax_metrics["confusionMatrix"],
+            "probabilityMetrics": probability_metrics,
+            "thresholdPolicies": threshold_policies,
             "topFeatureImportances": feature_importance,
         },
     )

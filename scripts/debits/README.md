@@ -37,8 +37,10 @@ The pipeline is split into four steps:
    - adds heuristic historical flags for regulated and snowmelt-sensitive canyons
 
 5. `train_debit_baseline_model.py`
-   - supports `random_forest` and `catboost`
-   - defaults to `3` classes: `LOW`, `MEDIUM`, `HIGH`
+    - supports `random_forest` and `catboost`
+    - defaults to `3` classes: `LOW`, `MEDIUM`, `HIGH`
+    - uses temporal `train / calibration / test` splits for calibrated probability outputs
+    - reports `HIGH` threshold policies for balanced and prudent operating modes
 
 ## Example
 
@@ -47,8 +49,8 @@ python scripts/build_debit_observation_dataset.py --all --workers 6 --output-dir
 python scripts/plan_debit_weather_windows.py --output-dir build/debit-pipeline/weather-planning --fetch-strategy history_daily
 python scripts/fetch_open_meteo_archive.py --output-dir build/debit-pipeline/weather-archive --workers 1 --max-batch-targets 25 --request-delay-ms 5000
 python scripts/build_debit_training_features.py --output-dir build/debit-pipeline/training-features
-python scripts/train_debit_baseline_model.py --features-path build/debit-pipeline/training-features/training_features.jsonl --model random_forest
-python scripts/train_debit_baseline_model.py --features-path build/debit-pipeline/training-features/training_features.jsonl --output-dir build/debit-pipeline/model-catboost-v21 --model catboost
+python scripts/train_debit_baseline_model.py --features-path build/debit-pipeline/training-features/training_features.jsonl --model random_forest --calibration-method sigmoid
+python scripts/train_debit_baseline_model.py --features-path build/debit-pipeline/training-features/training_features.jsonl --output-dir build/debit-pipeline/model-catboost-v23 --model catboost --calibration-method sigmoid
 ```
 
 To force a fresh debit download, add:
