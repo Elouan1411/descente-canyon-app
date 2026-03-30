@@ -1250,6 +1250,7 @@ def process_single_canyon(
     sources: list[dict[str, Any]],
     output_dir: Path,
     gdal_translate: str,
+    gdal_warp: str,
     keep_work: bool,
 ) -> str:
     canyon_file = output_dir / "canyons" / f"{canyon_id}.json"
@@ -1264,6 +1265,7 @@ def process_single_canyon(
         sources=sources,
         output_dir=output_dir,
         gdal_translate=gdal_translate,
+        gdal_warp=gdal_warp,
     )
     stage_timings["resolveSourceSec"] = time.perf_counter() - started
     if source is None:
@@ -1424,6 +1426,7 @@ def process_single_canyon_safe(
     sources: list[dict[str, Any]],
     output_dir: Path,
     gdal_translate: str,
+    gdal_warp: str,
     keep_work: bool,
 ) -> str:
     try:
@@ -1434,6 +1437,7 @@ def process_single_canyon_safe(
             sources=sources,
             output_dir=output_dir,
             gdal_translate=gdal_translate,
+            gdal_warp=gdal_warp,
             keep_work=keep_work,
         )
     except KeyboardInterrupt:
@@ -1534,6 +1538,7 @@ def main() -> int:
                     sources=sources,
                     output_dir=output_dir,
                     gdal_translate=gdal_translate,
+                    gdal_warp=gdal_warp,
                     keep_work=args.keep_work,
                 )
                 processed += 1
@@ -1556,6 +1561,7 @@ def main() -> int:
                         sources=sources,
                         output_dir=output_dir,
                         gdal_translate=gdal_translate,
+                        gdal_warp=gdal_warp,
                         keep_work=args.keep_work,
                     )
                     in_flight[future] = canyon_id
@@ -1584,6 +1590,7 @@ def main() -> int:
                             sources=sources,
                             output_dir=output_dir,
                             gdal_translate=gdal_translate,
+                            gdal_warp=gdal_warp,
                             keep_work=args.keep_work,
                         )
                         in_flight[new_future] = canyon_id
