@@ -63,22 +63,7 @@ def serialize_group_aggregate(aggregate: dict[str, Any]) -> dict[str, Any]:
     }
 
 
-def main() -> None:
-    parser = argparse.ArgumentParser(
-        description="Export runtime lookup tables from generated debit training features"
-    )
-    parser.add_argument(
-        "--features-path",
-        default="build/debit-pipeline/training-features/training_features.jsonl",
-    )
-    parser.add_argument(
-        "--output-dir",
-        default="build/debit-pipeline/runtime-lookups",
-    )
-    args = parser.parse_args()
-
-    rows = read_jsonl(Path(args.features_path))
-
+def build_runtime_lookup_payload(rows: list[dict[str, Any]]) -> tuple[dict[str, Any], dict[str, Any]]:
     global_aggregate = empty_group_aggregate()
     region_aggregates: dict[str, dict[str, Any]] = {}
     massif_aggregates: dict[str, dict[str, Any]] = {}
@@ -212,47 +197,70 @@ def main() -> None:
             "signalHistory": dict(canyon_signal_history),
         }
 
+    payload = {
+        "schemaVersion": 1,
+        "generatedAt": datetime.now(timezone.utc).isoformat(),
+        "targetMode": TARGET_MODE,
+        "labels": list(TARGET_BUCKETS),
+        "unknownKeys": {
+            "region": UNKNOWN_REGION_KEY,
+            "massif": UNKNOWN_MASSIF_KEY,
+        },
+        "smoothingStrengths": {
+            "region": REGION_SMOOTHING_STRENGTH,
+            "massif": MASSIF_SMOOTHING_STRENGTH,
+            "canyon": CANYON_SMOOTHING_STRENGTH,
+        },
+        "global": global_snapshot,
+        "regions": region_snapshots,
+        "massifs": massif_snapshots,
+        "canyons": canyon_snapshots,
+    }
+
+    metadata = {
+        "schemaVersion": 1,
+        "generatedAt": datetime.now(timezone.utc).isoformat(),
+        "targetMode": TARGET_MODE,
+        "inputRowCount": len(rows),
+        "retainedRowCount": retained_row_count,
+        "skippedMissingCanyonCount": skipped_missing_canyon_count,
+        "skippedUnknownTargetCount": skipped_unknown_target_count,
+        "globalPastObsCount": global_past_obs_count,
+        "regionCount": len(region_snapshots),
+        "massifCount": len(massif_snapshots),
+        "canyonCount": len(canyon_snapshots),
+    }
+    return payload, metadata
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(
+        description="Export runtime lookup tables from generated debit training features"
+    )
+    parser.add_argument(
+        "--features-path",
+        default="build/debit-pipeline/training-features/training_features.jsonl",
+    )
+    parser.add_argument(
+        "--output-dir",
+        default="build/debit-pipeline/runtime-lookups",
+    )
+    args = parser.parse_args()
+
+    rows = read_jsonl(Path(args.features_path))
+
+    payload, metadata = build_runtime_lookup_payload(rows)
+    metadata["sourceFeaturesPath"] = str(Path(args.features_path))
+
     output_dir = Path(args.output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    write_json(
-        output_dir / "runtime_feature_lookups.json",
-        {
-            "schemaVersion": 1,
-            "generatedAt": datetime.now(timezone.utc).isoformat(),
-            "targetMode": TARGET_MODE,
-            "labels": list(TARGET_BUCKETS),
-            "unknownKeys": {
-                "region": UNKNOWN_REGION_KEY,
-                "massif": UNKNOWN_MASSIF_KEY,
-            },
-            "smoothingStrengths": {
-                "region": REGION_SMOOTHING_STRENGTH,
-                "massif": MASSIF_SMOOTHING_STRENGTH,
-                "canyon": CANYON_SMOOTHING_STRENGTH,
-            },
-            "global": global_snapshot,
-            "regions": region_snapshots,
-            "massifs": massif_snapshots,
-            "canyons": canyon_snapshots,
-        },
-    )
+    write_json(output_dir / "runtime_feature_lookups.json", payload)
 
     write_json(
         output_dir / "metadata.json",
         {
-            "schemaVersion": 1,
-            "generatedAt": datetime.now(timezone.utc).isoformat(),
-            "targetMode": TARGET_MODE,
-            "sourceFeaturesPath": str(Path(args.features_path)),
-            "inputRowCount": len(rows),
-            "retainedRowCount": retained_row_count,
-            "skippedMissingCanyonCount": skipped_missing_canyon_count,
-            "skippedUnknownTargetCount": skipped_unknown_target_count,
-            "globalPastObsCount": global_past_obs_count,
-            "regionCount": len(region_snapshots),
-            "massifCount": len(massif_snapshots),
-            "canyonCount": len(canyon_snapshots),
+            **metadata,
             "files": {
                 "runtimeLookups": "runtime_feature_lookups.json",
             },

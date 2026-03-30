@@ -42,10 +42,15 @@ The pipeline is split into four steps:
    - exports per-canyon runtime lookup values for Android embedding
 
 6. `train_debit_baseline_model.py`
-     - supports `random_forest` and `catboost`
-     - defaults to `3` classes: `LOW`, `MEDIUM`, `HIGH`
-     - uses temporal `train / calibration / test` splits for calibrated probability outputs
-     - reports `HIGH` threshold policies for balanced and prudent operating modes
+      - supports `random_forest` and `catboost`
+      - defaults to `3` classes: `LOW`, `MEDIUM`, `HIGH`
+      - uses temporal `train / calibration / test` splits for calibrated probability outputs
+      - reports `HIGH` threshold policies for balanced and prudent operating modes
+
+7. `export_mobile_embedded_debit_model.py`
+   - trains an embedded `random_forest` model using the full V2.2 feature set
+   - exports `modele_statistique/model.onnx`
+   - exports `feature_spec.json`, `canyon_static_features.json`, `runtime_feature_lookups.json` and `thresholds.json`
 
 ## Example
 
@@ -57,6 +62,7 @@ python scripts/build_debit_training_features.py --output-dir build/debit-pipelin
 python scripts/export_debit_runtime_lookups.py --features-path build/debit-pipeline/training-features/training_features.jsonl --output-dir build/debit-pipeline/runtime-lookups
 python scripts/train_debit_baseline_model.py --features-path build/debit-pipeline/training-features/training_features.jsonl --model random_forest --calibration-method sigmoid
 python scripts/train_debit_baseline_model.py --features-path build/debit-pipeline/training-features/training_features.jsonl --output-dir build/debit-pipeline/model-catboost-v23 --model catboost --calibration-method sigmoid
+python scripts/export_mobile_embedded_debit_model.py --features-path build/debit-pipeline/training-features-v22/training_features.jsonl --output-dir modele_statistique
 ```
 
 To force a fresh debit download, add:
@@ -79,6 +85,12 @@ For the CatBoost variant, install:
 
 ```bash
 python -m pip install catboost
+```
+
+For the embedded mobile export, install:
+
+```bash
+python -m pip install numpy scikit-learn skl2onnx onnx
 ```
 
 ## Quality Filter
