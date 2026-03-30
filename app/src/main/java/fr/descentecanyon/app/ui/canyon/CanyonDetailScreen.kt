@@ -10,6 +10,7 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -19,6 +20,7 @@ import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyListScope
 import androidx.compose.foundation.lazy.items
@@ -33,13 +35,12 @@ import androidx.compose.material.icons.filled.FavoriteBorder
 import androidx.compose.material.icons.filled.KeyboardArrowDown
 import androidx.compose.material.icons.filled.KeyboardArrowUp
 import androidx.compose.material.icons.filled.Language
-import androidx.compose.material.icons.filled.Map
+import androidx.compose.material.icons.filled.LocationOn
 import androidx.compose.material.icons.filled.Navigation
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -68,6 +69,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
@@ -90,6 +92,7 @@ import fr.descentecanyon.app.ui.components.CotationBadge
 import fr.descentecanyon.app.ui.components.CompactAppBar
 import fr.descentecanyon.app.ui.components.DebitBadge
 import fr.descentecanyon.app.ui.components.InterestStars
+import fr.descentecanyon.app.ui.components.AppFloatingActionButton
 import fr.descentecanyon.app.ui.components.debitLevelColor
 import fr.descentecanyon.app.ui.map.MapLibreView
 import fr.descentecanyon.app.ui.test.TestTags
@@ -108,6 +111,7 @@ fun CanyonDetailScreen(
     onShowMapClick: () -> Unit,
     onOpenPhotoGallery: (Long) -> Unit,
     modifier: Modifier = Modifier,
+    contentPadding: PaddingValues = PaddingValues(),
     viewModel: CanyonDetailViewModel = hiltViewModel(),
 ) {
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
@@ -122,6 +126,7 @@ fun CanyonDetailScreen(
 
     Scaffold(
         containerColor = MaterialTheme.colorScheme.background,
+        contentWindowInsets = WindowInsets(0, 0, 0, 0),
         topBar = {
             CompactAppBar(
                 title = uiState.canyonDetail?.canyon?.nom ?: "Canyon #$canyonId",
@@ -160,76 +165,81 @@ fun CanyonDetailScreen(
                 },
             )
         },
-        floatingActionButton = {
-            Column(
-                modifier = Modifier
-                    .padding(bottom = 20.dp)
-                    .navigationBarsPadding(),
-                horizontalAlignment = Alignment.End,
-                verticalArrangement = Arrangement.spacedBy(12.dp),
-            ) {
-                FloatingActionButton(
-                    onClick = onShowMapClick,
-                    modifier = Modifier.size(68.dp),
-                    containerColor = MaterialTheme.colorScheme.primary,
-                    contentColor = MaterialTheme.colorScheme.onPrimary,
-                ) {
-                    Icon(
-                        imageVector = Icons.Default.Map,
-                        contentDescription = stringResource(R.string.show_map_points),
-                        modifier = Modifier.size(30.dp),
-                    )
-                }
-            }
-        },
         modifier = modifier,
     ) { innerPadding ->
-        when {
-            uiState.isLoading -> {
-                Box(
-                    modifier = Modifier
-                        .fillMaxSize()
-                        .padding(innerPadding),
-                    contentAlignment = Alignment.Center,
-                ) {
-                    CircularProgressIndicator()
-                }
-            }
-            uiState.error != null -> {
-                Box(
-                    modifier = Modifier
-                        .fillMaxSize()
-                        .padding(innerPadding),
-                    contentAlignment = Alignment.Center,
-                ) {
-                    Column(
-                        horizontalAlignment = Alignment.CenterHorizontally,
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(innerPadding),
+        ) {
+            when {
+                uiState.isLoading -> {
+                    Box(
+                        modifier = Modifier.fillMaxSize(),
+                        contentAlignment = Alignment.Center,
                     ) {
-                        Text(
-                            text = uiState.error ?: stringResource(R.string.error_generic),
-                            color = MaterialTheme.colorScheme.error,
-                            style = MaterialTheme.typography.bodyLarge,
-                        )
-                        Spacer(modifier = Modifier.height(8.dp))
-                        TextButton(onClick = { viewModel.loadCanyon(canyonId) }) {
-                            Text(stringResource(R.string.retry))
+                        CircularProgressIndicator()
+                    }
+                }
+
+                uiState.error != null -> {
+                    Box(
+                        modifier = Modifier.fillMaxSize(),
+                        contentAlignment = Alignment.Center,
+                    ) {
+                        Column(
+                            horizontalAlignment = Alignment.CenterHorizontally,
+                        ) {
+                            Text(
+                                text = uiState.error ?: stringResource(R.string.error_generic),
+                                color = MaterialTheme.colorScheme.error,
+                                style = MaterialTheme.typography.bodyLarge,
+                            )
+                            Spacer(modifier = Modifier.height(8.dp))
+                            TextButton(onClick = { viewModel.loadCanyon(canyonId) }) {
+                                Text(stringResource(R.string.retry))
+                            }
                         }
                     }
                 }
+
+                uiState.canyonDetail != null -> {
+                    CanyonDetailContent(
+                        detail = uiState.canyonDetail!!,
+                        isOnline = uiState.isOnline,
+                        isLoadingPhotos = uiState.isLoadingPhotos,
+                        isLoadingDebits = uiState.isLoadingDebits,
+                        weather = uiState.weather,
+                        isLoadingWeather = uiState.isLoadingWeather,
+                        weatherError = uiState.weatherError,
+                        downloadingPhotoIds = uiState.downloadingPhotoIds,
+                        onOpenPhotoGallery = onOpenPhotoGallery,
+                        bottomContentPadding = contentPadding.calculateBottomPadding() + 96.dp,
+                        modifier = Modifier.fillMaxSize(),
+                    )
+                }
             }
-            uiState.canyonDetail != null -> {
-                CanyonDetailContent(
-                    detail = uiState.canyonDetail!!,
-                    isOnline = uiState.isOnline,
-                    isLoadingPhotos = uiState.isLoadingPhotos,
-                    isLoadingDebits = uiState.isLoadingDebits,
-                    weather = uiState.weather,
-                    isLoadingWeather = uiState.isLoadingWeather,
-                    weatherError = uiState.weatherError,
-                    downloadingPhotoIds = uiState.downloadingPhotoIds,
-                    onOpenPhotoGallery = onOpenPhotoGallery,
-                    modifier = Modifier.padding(innerPadding),
-                )
+
+            if (uiState.canyonDetail != null && !uiState.isLoading && uiState.error == null) {
+                Box(
+                    modifier = Modifier.fillMaxSize(),
+                    contentAlignment = Alignment.BottomEnd,
+                ) {
+                    AppFloatingActionButton(
+                        onClick = onShowMapClick,
+                        modifier = Modifier.padding(
+                            end = 20.dp,
+                            bottom = contentPadding.calculateBottomPadding() + 20.dp,
+                        ),
+                        icon = { iconModifier ->
+                            Icon(
+                                imageVector = Icons.Default.LocationOn,
+                                contentDescription = stringResource(R.string.show_map_points),
+                                modifier = iconModifier,
+                            )
+                        },
+                    )
+                }
             }
         }
     }
@@ -247,6 +257,7 @@ private fun CanyonDetailContent(
     weatherError: String?,
     downloadingPhotoIds: Set<Long>,
     onOpenPhotoGallery: (Long) -> Unit,
+    bottomContentPadding: Dp = 0.dp,
     modifier: Modifier = Modifier,
 ) {
     var selectedTab by rememberSaveable { mutableIntStateOf(0) }
@@ -268,6 +279,7 @@ private fun CanyonDetailContent(
     LazyColumn(
         state = listState,
         modifier = modifier.fillMaxSize(),
+        contentPadding = PaddingValues(bottom = bottomContentPadding),
         verticalArrangement = Arrangement.spacedBy(0.dp),
     ) {
         item { SummaryCard(detail = detail) }

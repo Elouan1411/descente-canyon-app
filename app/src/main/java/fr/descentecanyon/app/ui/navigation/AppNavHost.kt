@@ -75,6 +75,7 @@ fun AppNavHost(
                 onOpenPhotoGallery = { photoId ->
                     navController.navigate(Screen.PhotoGallery(detail.canyonId, photoId))
                 },
+                contentPadding = topLevelContentPadding,
             )
         }
 

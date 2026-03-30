@@ -377,7 +377,7 @@ fun ScrapedCanyonSummary.toEntity(): CanyonEntity = CanyonEntity(
     url = url,
 )
 
-private fun Float?.normalizedInterest(): Float? = this?.takeIf { it in 0f..5f }
+private fun Float?.normalizedInterest(): Float? = this?.takeIf { it >= 0f }?.coerceAtMost(4f)
 
 private fun String?.hasUsefulNavette(): Boolean {
     val normalized = this?.normalizeForSearch().orEmpty()

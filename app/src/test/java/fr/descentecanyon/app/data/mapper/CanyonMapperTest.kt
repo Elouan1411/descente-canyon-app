@@ -33,7 +33,7 @@ class CanyonMapperTest {
         tempsDescente: String? = "3h",
         tempsRetour: String? = "30min",
         navette: String? = "non",
-        interet: Float? = 4.2f,
+        interet: Float? = 4f,
         nbVotes: Int = 120,
         url: String = "/canyoning/canyon/42/",
         isOffline: Boolean = false,
@@ -91,7 +91,7 @@ class CanyonMapperTest {
         assertEquals("3h", canyon.tempsDescente)
         assertEquals("30min", canyon.tempsRetour)
         assertEquals("non", canyon.navette)
-        assertEquals(4.2f, canyon.interet)
+        assertEquals(4f, canyon.interet)
         assertEquals(120, canyon.nbVotes)
         assertEquals("/canyoning/canyon/42/", canyon.url)
         assertFalse(canyon.isOffline)
@@ -113,6 +113,14 @@ class CanyonMapperTest {
         assertEquals(3.5f, summary.interet)
         assertEquals("/canyoning/canyon/42/", summary.url)
         assertTrue(summary.isOffline)
+    }
+
+    @Test
+    fun `interest is clamped to four stars scale`() {
+        val entity = canyonEntity(interet = 4.2f)
+
+        assertEquals(4f, entity.toDomain().interet)
+        assertEquals(4f, entity.toSummary().interet)
     }
 
     // --- DebitEntity -> Debit (valid date) ---

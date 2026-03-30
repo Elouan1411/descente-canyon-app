@@ -149,9 +149,10 @@ fun InterestStars(
     modifier: Modifier = Modifier,
 ) {
     Row(modifier = modifier, verticalAlignment = Alignment.CenterVertically) {
-        val fullStars = interest.toInt()
-        val hasHalf = (interest - fullStars) >= 0.5f
-        val emptyStars = 5 - fullStars - if (hasHalf) 1 else 0
+        val clampedInterest = interest.coerceIn(0f, 4f)
+        val fullStars = clampedInterest.toInt()
+        val hasHalf = (clampedInterest - fullStars) >= 0.5f
+        val emptyStars = 4 - fullStars - if (hasHalf) 1 else 0
         repeat(fullStars) {
             Icon(
                 imageVector = Icons.Default.Star,
@@ -178,7 +179,7 @@ fun InterestStars(
         }
         Spacer(modifier = Modifier.width(6.dp))
         Text(
-            text = String.format(Locale.US, "%.1f", interest),
+            text = String.format(Locale.US, "%.1f/4", clampedInterest),
             style = MaterialTheme.typography.labelMedium,
             color = MaterialTheme.colorScheme.onSurfaceVariant,
             fontWeight = FontWeight.Medium,

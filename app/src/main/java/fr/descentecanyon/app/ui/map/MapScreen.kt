@@ -155,7 +155,6 @@ fun MapScreen(
         modifier = modifier
             .fillMaxSize()
             .statusBarsPadding()
-            .padding(bottom = contentPadding.calculateBottomPadding())
             .padding(horizontal = 16.dp),
         verticalArrangement = Arrangement.spacedBy(12.dp),
     ) {
@@ -218,7 +217,8 @@ fun MapScreen(
         Box(
             modifier = Modifier
                 .fillMaxWidth()
-                .weight(1f),
+                .weight(1f)
+                .padding(bottom = contentPadding.calculateBottomPadding()),
         ) {
             when {
                 uiState.isLoading -> {

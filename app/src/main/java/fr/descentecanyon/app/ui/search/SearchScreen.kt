@@ -42,7 +42,6 @@ import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FilterChip
-import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
@@ -77,6 +76,7 @@ import fr.descentecanyon.app.domain.model.SearchSortField
 import fr.descentecanyon.app.domain.model.SortDirection
 import fr.descentecanyon.app.domain.model.toSummary
 import fr.descentecanyon.app.map.MAP_SEARCH_STYLE_URI
+import fr.descentecanyon.app.ui.components.AppFloatingActionButton
 import fr.descentecanyon.app.ui.components.CanyonSummaryCard
 import fr.descentecanyon.app.ui.location.hasLocationPermission
 import fr.descentecanyon.app.ui.location.loadCurrentDeviceLocation
@@ -181,7 +181,6 @@ fun SearchScreen(
     Box(
         modifier = modifier
             .fillMaxSize()
-            .padding(bottom = contentPadding.calculateBottomPadding())
             .statusBarsPadding(),
     ) {
         Column(
@@ -401,6 +400,7 @@ fun SearchScreen(
                 LazyColumn(
                     state = listState,
                     modifier = Modifier.weight(1f),
+                    contentPadding = PaddingValues(bottom = contentPadding.calculateBottomPadding() + 96.dp),
                     verticalArrangement = Arrangement.spacedBy(8.dp),
                 ) {
                     items(uiState.results, key = { it.id }) { canyon ->
@@ -436,35 +436,39 @@ fun SearchScreen(
                             userLongitude = uiState.userLongitude,
                             onMarkerClick = viewModel::selectCanyon,
                             styleUri = MAP_SEARCH_STYLE_URI,
-                            modifier = Modifier.fillMaxSize().padding(bottom = 8.dp),
+                            modifier = Modifier
+                                .fillMaxSize()
+                                .padding(bottom = contentPadding.calculateBottomPadding() + 8.dp),
                         )
                     }
                 }
             }
         }
 
-        FloatingActionButton(
+        AppFloatingActionButton(
             onClick = {
                 val next = if (uiState.resultViewMode == SearchResultViewMode.MAP) SearchResultViewMode.LIST else SearchResultViewMode.MAP
                 viewModel.onResultViewModeChanged(next)
             },
             modifier = Modifier
                 .align(Alignment.BottomEnd)
-                .navigationBarsPadding()
-                .padding(end = 20.dp, bottom = 92.dp),
-        ) {
-            if (uiState.resultViewMode == SearchResultViewMode.MAP) {
-                Icon(
-                    imageVector = Icons.AutoMirrored.Filled.List,
-                    contentDescription = null,
-                )
-            } else {
-                Icon(
-                    painter = painterResource(R.drawable.map_search_24),
-                    contentDescription = null,
-                )
-            }
-        }
+                .padding(end = 20.dp, bottom = contentPadding.calculateBottomPadding() + 20.dp),
+            icon = { iconModifier ->
+                if (uiState.resultViewMode == SearchResultViewMode.MAP) {
+                    Icon(
+                        imageVector = Icons.AutoMirrored.Filled.List,
+                        contentDescription = null,
+                        modifier = iconModifier,
+                    )
+                } else {
+                    Icon(
+                        painter = painterResource(R.drawable.map_search_24),
+                        contentDescription = null,
+                        modifier = iconModifier,
+                    )
+                }
+            },
+        )
     }
 
     if (showFiltersSheet) {
@@ -481,8 +485,7 @@ fun SearchScreen(
             Column(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(horizontal = 20.dp, vertical = 8.dp)
-                    .navigationBarsPadding(),
+                    .padding(horizontal = 20.dp, vertical = 8.dp),
                 verticalArrangement = Arrangement.spacedBy(12.dp),
             ) {
                 Text(selectedCanyon.nom, style = MaterialTheme.typography.headlineSmall)
