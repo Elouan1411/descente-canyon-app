@@ -84,6 +84,17 @@ def load_canyon_ids_from_file(path: Path) -> list[int]:
     return canyon_ids
 
 
+def should_skip_existing_canyon(path: Path, skip_existing: bool) -> bool:
+    if not skip_existing or not path.exists():
+        return False
+    try:
+        payload = load_json(path)
+    except Exception:
+        return False
+    status = payload.get("status", "ok")
+    return status != "error"
+
+
 def bbox_for_points_in_crs(points: list[dict[str, Any]], target_crs: str, buffer_km: float) -> tuple[float, float, float, float]:
     lats = [float(point["latitude"]) for point in points]
     lons = [float(point["longitude"]) for point in points]
@@ -1265,6 +1276,7 @@ def process_single_canyon(
         sources=sources,
         output_dir=output_dir,
         gdal_translate=gdal_translate,
+        gdal_warp=gdal_warp,
     )
     stage_timings["resolveSourceSec"] = time.perf_counter() - started
     if source is None:
@@ -1436,6 +1448,7 @@ def process_single_canyon_safe(
             sources=sources,
             output_dir=output_dir,
             gdal_translate=gdal_translate,
+            gdal_warp=gdal_warp,
             keep_work=keep_work,
         )
     except KeyboardInterrupt:
@@ -1517,7 +1530,7 @@ def main() -> int:
         pending = []
         for canyon_id in canyon_ids:
             canyon_file = output_dir / "canyons" / f"{canyon_id}.json"
-            if args.skip_existing and canyon_file.exists():
+            if should_skip_existing_canyon(canyon_file, args.skip_existing):
                 continue
             canyon = canyons.get(canyon_id)
             if canyon is None:
