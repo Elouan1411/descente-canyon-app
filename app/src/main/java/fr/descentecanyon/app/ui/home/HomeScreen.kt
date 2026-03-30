@@ -104,8 +104,8 @@ fun HomeScreen(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(innerPadding)
-                .padding(bottom = contentPadding.calculateBottomPadding())
                 .padding(horizontal = 16.dp),
+            contentPadding = PaddingValues(bottom = contentPadding.calculateBottomPadding()),
             verticalArrangement = Arrangement.spacedBy(8.dp),
         ) {
             // Credit card
