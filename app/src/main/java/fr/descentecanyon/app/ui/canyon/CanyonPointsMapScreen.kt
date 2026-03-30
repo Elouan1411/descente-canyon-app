@@ -5,14 +5,14 @@ import android.net.Uri
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
@@ -64,6 +64,7 @@ fun CanyonPointsMapScreen(
     canyonId: Int,
     onBackClick: () -> Unit,
     modifier: Modifier = Modifier,
+    contentPadding: PaddingValues = PaddingValues(),
     viewModel: CanyonDetailViewModel = hiltViewModel(),
 ) {
     val uiState = viewModel.uiState.collectAsStateWithLifecycle().value
@@ -71,6 +72,7 @@ fun CanyonPointsMapScreen(
 
     Scaffold(
         containerColor = MaterialTheme.colorScheme.background,
+        contentWindowInsets = WindowInsets(0, 0, 0, 0),
         topBar = {
             CompactAppBar(
                 title = uiState.canyonDetail?.canyon?.nom ?: "Canyon #$canyonId",
@@ -91,6 +93,7 @@ fun CanyonPointsMapScreen(
 
             uiState.canyonDetail != null -> CanyonPointsMapContent(
                 detail = uiState.canyonDetail,
+                contentPadding = contentPadding,
                 modifier = Modifier.padding(innerPadding),
                 onNavigate = { point ->
                     val label = Uri.encode(point.navigationLabel())
@@ -111,6 +114,7 @@ fun CanyonPointsMapScreen(
 private fun CanyonPointsMapContent(
     detail: CanyonDetail,
     onNavigate: (GeoPoint) -> Unit,
+    contentPadding: PaddingValues,
     modifier: Modifier = Modifier,
 ) {
     val watershed = detail.watershed
@@ -131,144 +135,140 @@ private fun CanyonPointsMapContent(
         }
     }
 
-    BoxWithConstraints(
+    Column(
         modifier = modifier
             .fillMaxSize()
+            .padding(bottom = contentPadding.calculateBottomPadding())
             .padding(16.dp),
+        verticalArrangement = Arrangement.spacedBy(12.dp),
     ) {
         val mapHeight = 360.dp
-        val listHeight = (maxHeight - mapHeight - 12.dp).coerceAtLeast(180.dp)
 
-        Column(
-            modifier = Modifier.fillMaxSize(),
-            verticalArrangement = Arrangement.spacedBy(12.dp),
-        ) {
-            if (hasWatershedPolygon) {
-                Card(
-                    modifier = Modifier.fillMaxWidth(),
-                    colors = CardDefaults.cardColors(
-                        containerColor = MaterialTheme.colorScheme.surface.copy(alpha = 0.96f),
-                    ),
-                    elevation = CardDefaults.cardElevation(defaultElevation = 1.dp),
+        if (hasWatershedPolygon) {
+            Card(
+                modifier = Modifier.fillMaxWidth(),
+                colors = CardDefaults.cardColors(
+                    containerColor = MaterialTheme.colorScheme.surface.copy(alpha = 0.96f),
+                ),
+                elevation = CardDefaults.cardElevation(defaultElevation = 1.dp),
+            ) {
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(horizontal = 16.dp, vertical = 12.dp),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.CenterVertically,
                 ) {
-                    Row(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(horizontal = 16.dp, vertical = 12.dp),
-                        horizontalArrangement = Arrangement.SpaceBetween,
-                        verticalAlignment = Alignment.CenterVertically,
-                    ) {
-                        Column(modifier = Modifier.weight(1f)) {
+                    Column(modifier = Modifier.weight(1f)) {
+                        Text(
+                            text = stringResource(R.string.map_show_watershed),
+                            style = MaterialTheme.typography.titleSmall,
+                            fontWeight = FontWeight.SemiBold,
+                        )
+                        watershed.areaKm2?.let { areaKm2 ->
                             Text(
-                                text = stringResource(R.string.map_show_watershed),
-                                style = MaterialTheme.typography.titleSmall,
-                                fontWeight = FontWeight.SemiBold,
+                                text = stringResource(R.string.watershed_area_value, formatAreaKm2(areaKm2)),
+                                style = MaterialTheme.typography.bodySmall,
+                                color = MaterialTheme.colorScheme.onSurfaceVariant,
                             )
-                            watershed.areaKm2?.let { areaKm2 ->
+                        }
+                    }
+                    Switch(
+                        checked = showWatershed,
+                        onCheckedChange = { showWatershed = it },
+                    )
+                }
+            }
+        }
+
+        Card(
+            modifier = Modifier.fillMaxWidth(),
+            elevation = CardDefaults.cardElevation(defaultElevation = 2.dp),
+        ) {
+            MapLibreView(
+                markers = markers,
+                userLatitude = null,
+                userLongitude = null,
+                onMarkerClick = {},
+                clusterMarkers = false,
+                watershedGeometryJson = watershed?.geometryJson,
+                watershedBounds = watershed?.bounds?.toLatLngBounds(),
+                showWatershed = showWatershed,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(mapHeight),
+            )
+        }
+
+        Card(
+            modifier = Modifier
+                .fillMaxWidth()
+                .weight(1f),
+            colors = CardDefaults.cardColors(
+                containerColor = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f),
+            ),
+            elevation = CardDefaults.cardElevation(defaultElevation = 1.dp),
+        ) {
+            LazyColumn(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(12.dp),
+                contentPadding = PaddingValues(bottom = 16.dp),
+                verticalArrangement = Arrangement.spacedBy(10.dp),
+            ) {
+                items(
+                    detail.geoPoints.sortedBy { it.type.navigationPriority() },
+                    key = { it.id.takeIf { id -> id != 0L } ?: (it.latitude.toString() + it.longitude.toString()) },
+                ) { point ->
+                    Card(
+                        modifier = Modifier.fillMaxWidth(),
+                        colors = CardDefaults.cardColors(
+                            containerColor = MaterialTheme.colorScheme.surface.copy(alpha = 0.96f),
+                        ),
+                        elevation = CardDefaults.cardElevation(defaultElevation = 1.dp),
+                    ) {
+                        Row(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(14.dp),
+                            verticalAlignment = Alignment.CenterVertically,
+                            horizontalArrangement = Arrangement.SpaceBetween,
+                        ) {
+                            Column(modifier = Modifier.weight(1f)) {
+                                Row(verticalAlignment = Alignment.CenterVertically) {
+                                    Box(Modifier.size(12.dp).background(point.type.mapColor(), CircleShape))
+                                    Spacer(Modifier.width(8.dp))
+                                    Text(
+                                        point.displayName(),
+                                        style = MaterialTheme.typography.titleMedium,
+                                        fontWeight = FontWeight.SemiBold,
+                                        color = point.type.mapColor(),
+                                    )
+                                }
+                                point.displaySubtitle()?.let { subtitle ->
+                                    Text(
+                                        text = subtitle,
+                                        style = MaterialTheme.typography.bodyMedium,
+                                        color = MaterialTheme.colorScheme.onSurface,
+                                        modifier = Modifier.padding(top = 4.dp),
+                                    )
+                                }
                                 Text(
-                                    text = stringResource(R.string.watershed_area_value, formatAreaKm2(areaKm2)),
+                                    text = stringResource(R.string.map_location_coordinates, point.latitude, point.longitude),
                                     style = MaterialTheme.typography.bodySmall,
                                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                                 )
                             }
-                        }
-                        Switch(
-                            checked = showWatershed,
-                            onCheckedChange = { showWatershed = it },
-                        )
-                    }
-                }
-            }
-
-            Card(
-                modifier = Modifier.fillMaxWidth(),
-                elevation = CardDefaults.cardElevation(defaultElevation = 2.dp),
-            ) {
-                MapLibreView(
-                    markers = markers,
-                    userLatitude = null,
-                    userLongitude = null,
-                    onMarkerClick = {},
-                    clusterMarkers = false,
-                    watershedGeometryJson = watershed?.geometryJson,
-                    watershedBounds = watershed?.bounds?.toLatLngBounds(),
-                    showWatershed = showWatershed,
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .height(mapHeight),
-                )
-            }
-
-            Card(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(listHeight),
-                colors = CardDefaults.cardColors(
-                    containerColor = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f),
-                ),
-                elevation = CardDefaults.cardElevation(defaultElevation = 1.dp),
-            ) {
-                LazyColumn(
-                    modifier = Modifier
-                        .fillMaxSize()
-                        .navigationBarsPadding()
-                        .padding(12.dp),
-                    verticalArrangement = Arrangement.spacedBy(10.dp),
-                ) {
-                    items(
-                        detail.geoPoints.sortedBy { it.type.navigationPriority() },
-                        key = { it.id.takeIf { id -> id != 0L } ?: (it.latitude.toString() + it.longitude.toString()) },
-                    ) { point ->
-                        Card(
-                            modifier = Modifier.fillMaxWidth(),
-                            colors = CardDefaults.cardColors(
-                                containerColor = MaterialTheme.colorScheme.surface.copy(alpha = 0.96f),
-                            ),
-                            elevation = CardDefaults.cardElevation(defaultElevation = 1.dp),
-                        ) {
-                            Row(
-                                modifier = Modifier
-                                    .fillMaxWidth()
-                                    .padding(14.dp),
-                                verticalAlignment = Alignment.CenterVertically,
-                                horizontalArrangement = Arrangement.SpaceBetween,
-                            ) {
-                                Column(modifier = Modifier.weight(1f)) {
-                                    Row(verticalAlignment = Alignment.CenterVertically) {
-                                        Box(Modifier.size(12.dp).background(point.type.mapColor(), CircleShape))
-                                        Spacer(Modifier.width(8.dp))
-                                    Text(
-                                            point.displayName(),
-                                            style = MaterialTheme.typography.titleMedium,
-                                            fontWeight = FontWeight.SemiBold,
-                                            color = point.type.mapColor(),
-                                        )
-                                    }
-                                    point.displaySubtitle()?.let { subtitle ->
-                                        Text(
-                                            text = subtitle,
-                                            style = MaterialTheme.typography.bodyMedium,
-                                            color = MaterialTheme.colorScheme.onSurface,
-                                            modifier = Modifier.padding(top = 4.dp),
-                                        )
-                                    }
-                                    Text(
-                                        text = stringResource(R.string.map_location_coordinates, point.latitude, point.longitude),
-                                        style = MaterialTheme.typography.bodySmall,
-                                        color = MaterialTheme.colorScheme.onSurfaceVariant,
-                                    )
-                                }
-                                TextButton(onClick = { onNavigate(point) }) {
-                                    Icon(Icons.Default.Navigation, contentDescription = null)
-                                    Spacer(Modifier.width(6.dp))
-                                    Text(stringResource(R.string.navigate))
-                                }
+                            TextButton(onClick = { onNavigate(point) }) {
+                                Icon(Icons.Default.Navigation, contentDescription = null)
+                                Spacer(Modifier.width(6.dp))
+                                Text(stringResource(R.string.navigate))
                             }
                         }
                     }
-                    item {
-                        Spacer(modifier = Modifier.height(28.dp))
-                    }
+                }
+                item {
+                    Spacer(modifier = Modifier.height(16.dp))
                 }
             }
         }

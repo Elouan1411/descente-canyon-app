@@ -53,6 +53,7 @@ import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
@@ -78,6 +79,7 @@ import fr.descentecanyon.app.domain.model.toSummary
 import fr.descentecanyon.app.map.MAP_SEARCH_STYLE_URI
 import fr.descentecanyon.app.ui.components.AppFloatingActionButton
 import fr.descentecanyon.app.ui.components.CanyonSummaryCard
+import fr.descentecanyon.app.ui.components.SelectedCanyonSheetContent
 import fr.descentecanyon.app.ui.location.hasLocationPermission
 import fr.descentecanyon.app.ui.location.loadCurrentDeviceLocation
 import fr.descentecanyon.app.ui.map.MapLibreView
@@ -99,6 +101,7 @@ fun SearchScreen(
     var showCountryMenu by rememberSaveable { mutableStateOf(false) }
     var showDepartmentMenu by rememberSaveable { mutableStateOf(false) }
     var pendingDistanceSort by rememberSaveable { mutableStateOf(false) }
+    var lastHandledScrollResetId by rememberSaveable { mutableIntStateOf(uiState.scrollResetRequestId) }
 
     val locationPermissionLauncher = rememberLauncherForActivityResult(
         contract = ActivityResultContracts.RequestMultiplePermissions(),
@@ -172,8 +175,11 @@ fun SearchScreen(
         }
     }
 
-    LaunchedEffect(uiState.criteria) {
-        listState.scrollToItem(0)
+    LaunchedEffect(uiState.scrollResetRequestId) {
+        if (uiState.scrollResetRequestId > lastHandledScrollResetId) {
+            listState.scrollToItem(0)
+            lastHandledScrollResetId = uiState.scrollResetRequestId
+        }
     }
 
     val activeFilters = buildActiveFilterActions(uiState, viewModel)
@@ -482,32 +488,14 @@ fun SearchScreen(
 
     uiState.selectedCanyon?.let { selectedCanyon ->
         ModalBottomSheet(onDismissRequest = viewModel::clearSelectedCanyon) {
-            Column(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(horizontal = 20.dp, vertical = 8.dp),
-                verticalArrangement = Arrangement.spacedBy(12.dp),
-            ) {
-                Text(selectedCanyon.nom, style = MaterialTheme.typography.headlineSmall)
-                CanyonSummaryCard(
-                    canyon = selectedCanyon.toSummary(),
-                    onClick = {
-                        viewModel.clearSelectedCanyon()
-                        onCanyonClick(selectedCanyon.id)
-                    },
-                )
-                Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-                    OutlinedButton(onClick = {
-                        viewModel.clearSelectedCanyon()
-                        onCanyonClick(selectedCanyon.id)
-                    }) {
-                        Text(stringResource(R.string.map_bottom_sheet_open))
-                    }
-                    TextButton(onClick = viewModel::clearSelectedCanyon) {
-                        Text(stringResource(R.string.close))
-                    }
-                }
-            }
+            SelectedCanyonSheetContent(
+                canyon = selectedCanyon.toSummary(),
+                onOpen = {
+                    viewModel.clearSelectedCanyon()
+                    onCanyonClick(selectedCanyon.id)
+                },
+                onClose = viewModel::clearSelectedCanyon,
+            )
         }
     }
 }

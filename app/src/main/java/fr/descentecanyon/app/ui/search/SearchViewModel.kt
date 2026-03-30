@@ -60,6 +60,7 @@ data class SearchUiState(
     val userLongitude: Double? = null,
     val isLocating: Boolean = false,
     val selectedCanyon: CanyonSearchItem? = null,
+    val scrollResetRequestId: Int = 0,
 )
 
 @HiltViewModel
@@ -77,6 +78,7 @@ class SearchViewModel @Inject constructor(
     private val locationFlow = MutableStateFlow(SearchLocationUiState())
     private val resultViewModeFlow = MutableStateFlow(SearchResultViewMode.LIST)
     private val selectedCanyonIdFlow = MutableStateFlow<Int?>(null)
+    private val scrollResetRequestIdFlow = MutableStateFlow(0)
     private var queryDebounceJob: Job? = null
 
     private val _uiState = MutableStateFlow(
@@ -108,6 +110,9 @@ class SearchViewModel @Inject constructor(
                     resultViewMode = resultViewMode,
                 )
             }
+                .combine(scrollResetRequestIdFlow) { partial, scrollResetRequestId ->
+                    partial.copy(scrollResetRequestId = scrollResetRequestId)
+                }
                 .combine(selectedCanyonIdFlow) { partial, selectedCanyonId ->
                     SearchComputationInput(
                         catalog = partial.catalog,
@@ -115,6 +120,7 @@ class SearchViewModel @Inject constructor(
                         location = partial.location,
                         resultViewMode = partial.resultViewMode,
                         selectedCanyonId = selectedCanyonId,
+                        scrollResetRequestId = partial.scrollResetRequestId,
                     )
                 }
                 .mapLatest { input ->
@@ -138,6 +144,7 @@ class SearchViewModel @Inject constructor(
                         userLongitude = input.location.userLongitude,
                         isLocating = input.location.isLocating,
                         selectedCanyon = resultSet.results.firstOrNull { it.id == input.selectedCanyonId },
+                        scrollResetRequestId = input.scrollResetRequestId,
                     )
                 }
                 .flowOn(searchDispatcher)
@@ -158,6 +165,7 @@ class SearchViewModel @Inject constructor(
                         userLatitude = locationFlow.value.userLatitude,
                         userLongitude = locationFlow.value.userLongitude,
                         isLocating = locationFlow.value.isLocating,
+                        scrollResetRequestId = scrollResetRequestIdFlow.value,
                     )
                 }
                 .collect { state ->
@@ -185,6 +193,7 @@ class SearchViewModel @Inject constructor(
             sanitized
         }
         filtersFlow.value = updated.copy(query = "")
+        scrollResetRequestIdFlow.update { it + 1 }
         selectedCanyonIdFlow.value = null
         persistCriteria(updated)
         _uiState.update {
@@ -309,6 +318,7 @@ private data class SearchComputationInput(
     val location: SearchLocationUiState,
     val resultViewMode: SearchResultViewMode,
     val selectedCanyonId: Int?,
+    val scrollResetRequestId: Int,
 )
 
 private data class PartialSearchComputationInput(
@@ -316,6 +326,7 @@ private data class PartialSearchComputationInput(
     val criteria: SearchCriteria,
     val location: SearchLocationUiState,
     val resultViewMode: SearchResultViewMode,
+    val scrollResetRequestId: Int = 0,
 )
 
 private fun SearchCriteria.sanitizedForPersistence(): SearchCriteria = copy(userLatitude = null, userLongitude = null)

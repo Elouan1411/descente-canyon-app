@@ -50,7 +50,6 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import coil3.compose.AsyncImage
 import coil3.request.ImageRequest
 import coil3.request.allowHardware
 import fr.descentecanyon.app.R
@@ -159,11 +158,20 @@ fun PhotoGalleryScreen(
                         .fillMaxSize()
                         .clickable { showOverlay = !showOverlay },
                 ) {
-                    AsyncImage(
+                    RetryablePhoto(
                         model = photoRequest,
                         contentDescription = photo.description,
                         modifier = Modifier.fillMaxSize().background(Color.Black),
                         contentScale = ContentScale.Fit,
+                        loadingContent = {
+                            CircularProgressIndicator(color = Color.White)
+                        },
+                        errorContent = { onRetry ->
+                            DefaultPhotoError(
+                                onRetry = onRetry,
+                                message = stringResource(R.string.photo_gallery_load_error),
+                            )
+                        },
                     )
                 }
             }

@@ -6,19 +6,26 @@ import fr.descentecanyon.app.domain.model.BibliographyKind
 import fr.descentecanyon.app.data.network.ConnectivityObserver
 import fr.descentecanyon.app.domain.model.Canyon
 import fr.descentecanyon.app.domain.model.CanyonDetail
+import fr.descentecanyon.app.domain.model.CanyonDebitPredictions
 import fr.descentecanyon.app.domain.model.CanyonPhoto
 import fr.descentecanyon.app.domain.model.CanyonWeather
+import fr.descentecanyon.app.domain.model.DailyDebitPrediction
 import fr.descentecanyon.app.domain.model.Debit
+import fr.descentecanyon.app.domain.model.DebitPredictionPolicy
 import fr.descentecanyon.app.domain.model.NiveauDebit
+import fr.descentecanyon.app.domain.model.PredictedDebitLevel
 import fr.descentecanyon.app.domain.model.WeatherLocationSource
 import fr.descentecanyon.app.domain.model.WeatherTarget
 import fr.descentecanyon.app.domain.model.Regulation
+import fr.descentecanyon.app.domain.model.RuntimeLookupSource
 import fr.descentecanyon.app.domain.repository.CanyonRepository
+import fr.descentecanyon.app.domain.repository.DebitPredictionRepository
 import fr.descentecanyon.app.domain.repository.DebitRepository
 import fr.descentecanyon.app.domain.repository.FavoritesRepository
 import fr.descentecanyon.app.domain.repository.PhotoRepository
 import fr.descentecanyon.app.domain.repository.WeatherRepository
 import fr.descentecanyon.app.domain.usecase.DownloadPhotoForOfflineUseCase
+import fr.descentecanyon.app.domain.usecase.GetCanyonDebitPredictionsUseCase
 import fr.descentecanyon.app.domain.usecase.GetCanyonDetailUseCase
 import fr.descentecanyon.app.domain.usecase.GetCanyonPreviewUseCase
 import fr.descentecanyon.app.domain.usecase.GetCanyonWeatherUseCase
@@ -47,11 +54,13 @@ class CanyonDetailViewModelTest {
     private val favoritesRepository = mockk<FavoritesRepository>()
     private val photoRepository = mockk<PhotoRepository>()
     private val debitRepository = mockk<DebitRepository>()
+    private val debitPredictionRepository = mockk<DebitPredictionRepository>()
     private val weatherRepository = mockk<WeatherRepository>()
     private val connectivityObserver = mockk<ConnectivityObserver>()
     private val getCanyonPreviewUseCase = GetCanyonPreviewUseCase(canyonRepository)
     private val getCanyonDetailUseCase = GetCanyonDetailUseCase(canyonRepository)
     private val getCanyonWeatherUseCase = GetCanyonWeatherUseCase(weatherRepository)
+    private val getCanyonDebitPredictionsUseCase = GetCanyonDebitPredictionsUseCase(debitPredictionRepository)
     private val toggleFavoriteUseCase = ToggleFavoriteUseCase(favoritesRepository)
     private val downloadPhotoForOfflineUseCase = DownloadPhotoForOfflineUseCase(photoRepository)
 
@@ -62,7 +71,9 @@ class CanyonDetailViewModelTest {
             detail().copy(canyon = detail().canyon.copy(nom = "Preview"))
         )
         coEvery { canyonRepository.getCanyonDetail(42) } returns Result.success(detail())
+        every { canyonRepository.observeWatershed(42) } returns flowOf(null)
         coEvery { weatherRepository.getCanyonWeather(any()) } returns Result.success(weather())
+        coEvery { debitPredictionRepository.getPredictions(any()) } returns Result.success(predictions())
         every { photoRepository.observePhotos(42) } returns flowOf(detail().photos)
         coEvery { photoRepository.refreshPhotos(42) } returns Result.success(detail().photos)
         every { debitRepository.getDebitsForCanyon(42) } returns flowOf(Result.success(detail().debits))
@@ -75,7 +86,9 @@ class CanyonDetailViewModelTest {
             getCanyonPreviewUseCase = getCanyonPreviewUseCase,
             getCanyonDetailUseCase = getCanyonDetailUseCase,
             getCanyonWeatherUseCase = getCanyonWeatherUseCase,
+            getCanyonDebitPredictionsUseCase = getCanyonDebitPredictionsUseCase,
             toggleFavoriteUseCase = toggleFavoriteUseCase,
+            canyonRepository = canyonRepository,
             photoRepository = photoRepository,
             debitRepository = debitRepository,
             downloadPhotoForOfflineUseCase = downloadPhotoForOfflineUseCase,
@@ -96,7 +109,9 @@ class CanyonDetailViewModelTest {
             detail().copy(canyon = detail().canyon.copy(nom = "Preview"))
         )
         coEvery { canyonRepository.getCanyonDetail(42) } returns Result.success(detail())
+        every { canyonRepository.observeWatershed(42) } returns flowOf(null)
         coEvery { weatherRepository.getCanyonWeather(any()) } returns Result.success(weather())
+        coEvery { debitPredictionRepository.getPredictions(any()) } returns Result.success(predictions())
         every { photoRepository.observePhotos(42) } returns flowOf(detail().photos)
         coEvery { photoRepository.refreshPhotos(42) } returns Result.success(detail().photos)
         every { debitRepository.getDebitsForCanyon(42) } returns flowOf(Result.success(detail().debits))
@@ -109,7 +124,9 @@ class CanyonDetailViewModelTest {
             getCanyonPreviewUseCase = getCanyonPreviewUseCase,
             getCanyonDetailUseCase = getCanyonDetailUseCase,
             getCanyonWeatherUseCase = getCanyonWeatherUseCase,
+            getCanyonDebitPredictionsUseCase = getCanyonDebitPredictionsUseCase,
             toggleFavoriteUseCase = toggleFavoriteUseCase,
+            canyonRepository = canyonRepository,
             photoRepository = photoRepository,
             debitRepository = debitRepository,
             downloadPhotoForOfflineUseCase = downloadPhotoForOfflineUseCase,
@@ -122,9 +139,11 @@ class CanyonDetailViewModelTest {
         assertEquals(1, viewModel.uiState.value.canyonDetail?.bibliography?.size)
         assertEquals(1, viewModel.uiState.value.canyonDetail?.regulations?.size)
         assertNotNull(viewModel.uiState.value.weather)
+        assertNotNull(viewModel.uiState.value.predictions)
         assertFalse(viewModel.uiState.value.isLoadingPhotos)
         assertFalse(viewModel.uiState.value.isLoadingDebits)
         assertFalse(viewModel.uiState.value.isLoadingWeather)
+        assertFalse(viewModel.uiState.value.isLoadingPredictions)
     }
 
     @Test
@@ -132,7 +151,9 @@ class CanyonDetailViewModelTest {
     fun `download photo updates local path and transient message`() = runTest {
         coEvery { canyonRepository.getCanyonPreview(42) } returns Result.success(detail())
         coEvery { canyonRepository.getCanyonDetail(42) } returns Result.success(detail())
+        every { canyonRepository.observeWatershed(42) } returns flowOf(null)
         coEvery { weatherRepository.getCanyonWeather(any()) } returns Result.success(weather())
+        coEvery { debitPredictionRepository.getPredictions(any()) } returns Result.success(predictions())
         every { photoRepository.observePhotos(42) } returns flowOf(detail().photos)
         coEvery { photoRepository.refreshPhotos(42) } returns Result.success(detail().photos)
         every { debitRepository.getDebitsForCanyon(42) } returns flowOf(Result.success(detail().debits))
@@ -146,7 +167,9 @@ class CanyonDetailViewModelTest {
             getCanyonPreviewUseCase = getCanyonPreviewUseCase,
             getCanyonDetailUseCase = getCanyonDetailUseCase,
             getCanyonWeatherUseCase = getCanyonWeatherUseCase,
+            getCanyonDebitPredictionsUseCase = getCanyonDebitPredictionsUseCase,
             toggleFavoriteUseCase = toggleFavoriteUseCase,
+            canyonRepository = canyonRepository,
             photoRepository = photoRepository,
             debitRepository = debitRepository,
             downloadPhotoForOfflineUseCase = downloadPhotoForOfflineUseCase,
@@ -167,7 +190,9 @@ class CanyonDetailViewModelTest {
     fun `weather failure keeps canyon detail available`() = runTest {
         coEvery { canyonRepository.getCanyonPreview(42) } returns Result.success(detail())
         coEvery { canyonRepository.getCanyonDetail(42) } returns Result.success(detail())
+        every { canyonRepository.observeWatershed(42) } returns flowOf(null)
         coEvery { weatherRepository.getCanyonWeather(any()) } returns Result.failure(IllegalStateException("Meteo indisponible"))
+        coEvery { debitPredictionRepository.getPredictions(any()) } returns Result.success(predictions())
         every { photoRepository.observePhotos(42) } returns flowOf(detail().photos)
         coEvery { photoRepository.refreshPhotos(42) } returns Result.success(detail().photos)
         every { debitRepository.getDebitsForCanyon(42) } returns flowOf(Result.success(detail().debits))
@@ -180,7 +205,9 @@ class CanyonDetailViewModelTest {
             getCanyonPreviewUseCase = getCanyonPreviewUseCase,
             getCanyonDetailUseCase = getCanyonDetailUseCase,
             getCanyonWeatherUseCase = getCanyonWeatherUseCase,
+            getCanyonDebitPredictionsUseCase = getCanyonDebitPredictionsUseCase,
             toggleFavoriteUseCase = toggleFavoriteUseCase,
+            canyonRepository = canyonRepository,
             photoRepository = photoRepository,
             debitRepository = debitRepository,
             downloadPhotoForOfflineUseCase = downloadPhotoForOfflineUseCase,
@@ -253,5 +280,31 @@ class CanyonDetailViewModelTest {
         next48HoursPrecipitationMm = 6.0,
         maxHourlyPrecipitationPast72HoursMm = 4.5,
         maxPrecipitationProbabilityNext24Hours = 70,
+    )
+
+    private fun predictions() = CanyonDebitPredictions(
+        target = WeatherTarget(
+            latitude = 43.75,
+            longitude = 6.25,
+            source = WeatherLocationSource.WATERSHED_CENTER,
+        ),
+        timezone = "UTC",
+        fetchedAt = Instant.parse("2026-03-26T12:00:00Z"),
+        lookupSource = RuntimeLookupSource.CANYON,
+        usedWeatherCache = false,
+        policy = DebitPredictionPolicy.SAFETY_FIRST,
+        predictions = listOf(
+            DailyDebitPrediction(
+                date = java.time.LocalDate.of(2026, 3, 26),
+                horizonDays = 0,
+                level = PredictedDebitLevel.MEDIUM,
+                probabilities = mapOf(
+                    PredictedDebitLevel.HIGH to 0.31,
+                    PredictedDebitLevel.LOW to 0.18,
+                    PredictedDebitLevel.MEDIUM to 0.51,
+                ),
+                highThreshold = 0.29,
+            )
+        ),
     )
 }

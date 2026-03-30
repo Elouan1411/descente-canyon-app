@@ -34,7 +34,6 @@ import androidx.compose.material3.ModalBottomSheet
 import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -53,7 +52,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import fr.descentecanyon.app.R
 import fr.descentecanyon.app.domain.model.CanyonSummary
-import fr.descentecanyon.app.map.MAP_OFFLINE_RADIUS_KM
+import fr.descentecanyon.app.ui.components.SelectedCanyonSheetContent
 import fr.descentecanyon.app.ui.location.hasLocationPermission
 import fr.descentecanyon.app.ui.location.loadCurrentDeviceLocation
 import fr.descentecanyon.app.ui.theme.CanyonBlue
@@ -106,48 +105,11 @@ fun MapScreen(
         ModalBottomSheet(
             onDismissRequest = viewModel::clearSelectedCanyon,
         ) {
-            Column(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(horizontal = 20.dp, vertical = 8.dp),
-                verticalArrangement = Arrangement.spacedBy(12.dp),
-            ) {
-                Text(
-                    text = canyon.nom,
-                    style = MaterialTheme.typography.headlineSmall,
-                    fontWeight = FontWeight.Bold,
-                )
-                Text(
-                    text = stringResource(
-                        R.string.map_bottom_sheet_meta,
-                        canyon.cotation,
-                        canyon.pays,
-                    ),
-                    style = MaterialTheme.typography.bodyMedium,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant,
-                )
-                Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-                    Button(onClick = { onCanyonClick(canyon.id) }) {
-                        Text(text = stringResource(R.string.map_bottom_sheet_open))
-                    }
-                    Button(
-                        onClick = viewModel::downloadSelectedRegion,
-                        enabled = !uiState.isDownloadingOfflineRegion,
-                    ) {
-                        Text(
-                            text = if (uiState.isDownloadingOfflineRegion) {
-                                stringResource(R.string.map_bottom_sheet_downloading)
-                            } else {
-                                stringResource(R.string.map_bottom_sheet_download, MAP_OFFLINE_RADIUS_KM.toInt())
-                            }
-                        )
-                    }
-                    TextButton(onClick = viewModel::clearSelectedCanyon) {
-                        Text(text = stringResource(R.string.back))
-                    }
-                }
-                Spacer(modifier = Modifier.height(12.dp))
-            }
+            SelectedCanyonSheetContent(
+                canyon = canyon,
+                onOpen = { onCanyonClick(canyon.id) },
+                onClose = viewModel::clearSelectedCanyon,
+            )
         }
     }
 

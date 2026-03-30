@@ -70,6 +70,7 @@ class SearchViewModelTest {
         advanceUntilIdle()
 
         assertEquals(listOf(2), viewModel.uiState.value.results.map { it.id })
+        assertEquals(1, viewModel.uiState.value.scrollResetRequestId)
 
         viewModel.onCriteriaChanged(viewModel.uiState.value.criteria.copy(selectedCountry = "Espagne"))
         advanceTimeBy(250)
@@ -77,6 +78,7 @@ class SearchViewModelTest {
 
         assertEquals(null, viewModel.uiState.value.criteria.selectedDepartment)
         assertEquals(listOf(3), viewModel.uiState.value.results.map { it.id })
+        assertEquals(2, viewModel.uiState.value.scrollResetRequestId)
     }
 
     @Test
@@ -100,12 +102,30 @@ class SearchViewModelTest {
         advanceUntilIdle()
         assertEquals(SortDirection.ASC, viewModel.uiState.value.criteria.sortDirection)
         assertEquals(listOf(1), viewModel.uiState.value.results.map { it.id })
+        assertEquals(1, viewModel.uiState.value.scrollResetRequestId)
 
         viewModel.onSortSelected(SearchSortField.NAME)
         advanceTimeBy(250)
         advanceUntilIdle()
         assertEquals(SortDirection.DESC, viewModel.uiState.value.criteria.sortDirection)
         assertEquals(listOf(1), viewModel.uiState.value.results.map { it.id })
+        assertEquals(2, viewModel.uiState.value.scrollResetRequestId)
+    }
+
+    @Test
+    @OptIn(ExperimentalCoroutinesApi::class)
+    fun `selecting a canyon does not request a list scroll reset`() = runTest {
+        every { canyonRepository.observeSearchCatalog() } returns flowOf(listOf(canyon(id = 1)))
+        val viewModel = SearchViewModel(searchCanyonsUseCase, SavedStateHandle(), mainDispatcherRule.dispatcher)
+
+        advanceTimeBy(250)
+        advanceUntilIdle()
+        assertEquals(0, viewModel.uiState.value.scrollResetRequestId)
+
+        viewModel.selectCanyon(1)
+        advanceUntilIdle()
+
+        assertEquals(0, viewModel.uiState.value.scrollResetRequestId)
     }
 
     @Test

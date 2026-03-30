@@ -6,15 +6,22 @@ import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import fr.descentecanyon.app.data.network.ConnectivityObserver
 import fr.descentecanyon.app.domain.model.CanyonDetail
+import fr.descentecanyon.app.domain.model.CanyonDebitPredictions
 import fr.descentecanyon.app.domain.model.CanyonWeather
+import fr.descentecanyon.app.domain.repository.CanyonRepository
 import fr.descentecanyon.app.domain.repository.DebitRepository
 import fr.descentecanyon.app.domain.repository.FavoritesRepository
 import fr.descentecanyon.app.domain.repository.PhotoRepository
 import fr.descentecanyon.app.domain.usecase.DownloadPhotoForOfflineUseCase
+import fr.descentecanyon.app.domain.usecase.GetCanyonDebitPredictionsUseCase
 import fr.descentecanyon.app.domain.usecase.GetCanyonDetailUseCase
 import fr.descentecanyon.app.domain.usecase.GetCanyonPreviewUseCase
 import fr.descentecanyon.app.domain.usecase.GetCanyonWeatherUseCase
 import fr.descentecanyon.app.domain.usecase.ToggleFavoriteUseCase
+import java.net.ConnectException
+import java.net.SocketTimeoutException
+import java.net.UnknownHostException
+import java.nio.channels.UnresolvedAddressException
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -31,6 +38,9 @@ data class CanyonDetailUiState(
     val weather: CanyonWeather? = null,
     val isLoadingWeather: Boolean = false,
     val weatherError: String? = null,
+    val predictions: CanyonDebitPredictions? = null,
+    val isLoadingPredictions: Boolean = false,
+    val predictionError: String? = null,
     val isFavorite: Boolean = false,
     val downloadingPhotoIds: Set<Long> = emptySet(),
     val isOnline: Boolean = true,
@@ -43,7 +53,9 @@ class CanyonDetailViewModel @Inject constructor(
     private val getCanyonPreviewUseCase: GetCanyonPreviewUseCase,
     private val getCanyonDetailUseCase: GetCanyonDetailUseCase,
     private val getCanyonWeatherUseCase: GetCanyonWeatherUseCase,
+    private val getCanyonDebitPredictionsUseCase: GetCanyonDebitPredictionsUseCase,
     private val toggleFavoriteUseCase: ToggleFavoriteUseCase,
+    private val canyonRepository: CanyonRepository,
     private val photoRepository: PhotoRepository,
     private val debitRepository: DebitRepository,
     private val downloadPhotoForOfflineUseCase: DownloadPhotoForOfflineUseCase,
@@ -60,6 +72,7 @@ class CanyonDetailViewModel @Inject constructor(
     init {
         observePhotos(canyonId)
         observeDebits(canyonId)
+        observeWatershed(canyonId)
         loadCanyon(canyonId)
         observeFavorite(canyonId)
         observeConnectivity()
@@ -72,52 +85,68 @@ class CanyonDetailViewModel @Inject constructor(
                     isLoading = true,
                     isLoadingPhotos = true,
                     isLoadingDebits = true,
-                    isLoadingWeather = false,
+                    isLoadingWeather = true,
+                    isLoadingPredictions = true,
                     error = null,
                     weather = null,
                     weatherError = null,
+                    predictions = null,
+                    predictionError = null,
                 )
             }
 
             val photosRefreshJob = viewModelScope.launch { refreshPhotos(id) }
             val debitsRefreshJob = viewModelScope.launch { refreshDebits(id) }
 
-            getCanyonPreviewUseCase(id).onSuccess { preview ->
-                _uiState.update {
-                    it.copy(
-                        canyonDetail = mergeBaseDetail(preview, it.canyonDetail),
-                        isLoading = false,
-                        error = null,
-                    )
+            launch {
+                getCanyonPreviewUseCase(id).onSuccess { preview ->
+                    _uiState.update { state ->
+                        if (state.canyonDetail != null) {
+                            state
+                        } else {
+                            state.copy(
+                                canyonDetail = mergeBaseDetail(preview, state.canyonDetail),
+                                isLoading = false,
+                                error = null,
+                            )
+                        }
+                    }
                 }
             }
 
-            getCanyonDetailUseCase(id).fold(
-                onSuccess = { detail ->
-                    _uiState.update {
-                        it.copy(
-                            canyonDetail = mergeBaseDetail(detail, it.canyonDetail),
-                            isLoading = false,
-                            isLoadingWeather = true,
-                            weather = null,
-                            error = null,
-                            weatherError = null,
-                        )
-                    }
-                    loadWeather(detail)
-                },
-                onFailure = { throwable ->
-                    _uiState.update {
-                        it.copy(
-                            isLoading = false,
-                            isLoadingPhotos = false,
-                            isLoadingDebits = false,
-                            isLoadingWeather = false,
-                            error = throwable.message ?: "Erreur inconnue",
-                        )
-                    }
-                },
-            )
+            launch {
+                getCanyonDetailUseCase(id).fold(
+                    onSuccess = { detail ->
+                        _uiState.update {
+                            it.copy(
+                                canyonDetail = mergeBaseDetail(detail, it.canyonDetail),
+                                isLoading = false,
+                                isLoadingWeather = true,
+                                isLoadingPredictions = true,
+                                weather = null,
+                                predictions = null,
+                                error = null,
+                                weatherError = null,
+                                predictionError = null,
+                            )
+                        }
+                        loadWeather(detail)
+                        loadPredictions(detail)
+                    },
+                    onFailure = { throwable ->
+                        _uiState.update {
+                            it.copy(
+                                isLoading = false,
+                                isLoadingPhotos = false,
+                                isLoadingDebits = false,
+                                isLoadingWeather = false,
+                                isLoadingPredictions = false,
+                                error = throwable.message ?: "Erreur inconnue",
+                            )
+                        }
+                    },
+                )
+            }
         }
     }
 
@@ -172,6 +201,18 @@ class CanyonDetailViewModel @Inject constructor(
         }
     }
 
+    private fun observeWatershed(id: Int) {
+        viewModelScope.launch {
+            canyonRepository.observeWatershed(id).collect { watershed ->
+                _uiState.update { state ->
+                    state.copy(
+                        canyonDetail = state.canyonDetail?.copy(watershed = watershed),
+                    )
+                }
+            }
+        }
+    }
+
     private suspend fun refreshPhotos(id: Int) {
         photoRepository.refreshPhotos(id).fold(
             onSuccess = {
@@ -181,7 +222,6 @@ class CanyonDetailViewModel @Inject constructor(
                 _uiState.update {
                     it.copy(
                         isLoadingPhotos = false,
-                        transientMessage = throwable.message ?: "Impossible de charger les photos",
                     )
                 }
             },
@@ -253,7 +293,7 @@ class CanyonDetailViewModel @Inject constructor(
                     _uiState.update {
                         it.copy(
                             downloadingPhotoIds = it.downloadingPhotoIds - photoId,
-                            transientMessage = throwable.message ?: "Impossible de telecharger la photo",
+                            transientMessage = throwable.toFriendlyPhotoMessage(),
                         )
                     }
                 },
@@ -269,6 +309,51 @@ class CanyonDetailViewModel @Inject constructor(
                 photos = currentDetail.photos,
                 debits = currentDetail.debits,
             )
+        }
+    }
+
+    private fun loadPredictions(detail: CanyonDetail) {
+        viewModelScope.launch {
+            getCanyonDebitPredictionsUseCase(detail).fold(
+                onSuccess = { predictions ->
+                    _uiState.update {
+                        it.copy(
+                            predictions = predictions,
+                            isLoadingPredictions = false,
+                            predictionError = null,
+                        )
+                    }
+                },
+                onFailure = { throwable ->
+                    _uiState.update {
+                        it.copy(
+                            predictions = null,
+                            isLoadingPredictions = false,
+                            predictionError = throwable.message ?: "Estimation du debit indisponible",
+                        )
+                    }
+                },
+            )
+        }
+    }
+
+    private fun Throwable.toFriendlyPhotoMessage(): String {
+        return if (isLikelyNetworkIssue()) {
+            "Impossible de charger la photo pour le moment."
+        } else {
+            message ?: "Impossible de charger la photo pour le moment."
+        }
+    }
+
+    private fun Throwable.isLikelyNetworkIssue(): Boolean {
+        return generateSequence(this) { it.cause }.any { cause ->
+            cause is UnknownHostException ||
+                cause is UnresolvedAddressException ||
+                cause is ConnectException ||
+                cause is SocketTimeoutException ||
+                cause.message?.contains("Read timed out", ignoreCase = true) == true ||
+                cause.message?.contains("Read time out", ignoreCase = true) == true ||
+                cause.message?.contains("Unable to resolve host", ignoreCase = true) == true
         }
     }
 }

@@ -7,7 +7,7 @@ import fr.descentecanyon.app.data.local.dao.GeoPointDao
 import fr.descentecanyon.app.data.local.dao.PhotoDao
 import fr.descentecanyon.app.data.local.dao.RegulationDao
 import fr.descentecanyon.app.data.local.dao.WatershedDao
-import fr.descentecanyon.app.data.local.database.AppDatabase
+import fr.descentecanyon.app.data.local.database.DescenteCanyonDatabase
 import fr.descentecanyon.app.data.local.entity.CanyonEntity
 import fr.descentecanyon.app.data.local.entity.GeoPointEntity
 import fr.descentecanyon.app.data.remote.scraper.CanyonScraper
@@ -23,7 +23,7 @@ import org.junit.Test
 class CanyonRepositoryNearbyTest {
 
     private val canyonDao = mockk<CanyonDao>()
-    private val database = mockk<AppDatabase>(relaxed = true)
+    private val database = mockk<DescenteCanyonDatabase>(relaxed = true)
     private val geoPointDao = mockk<GeoPointDao>()
     private val debitDao = mockk<DebitDao>()
     private val photoDao = mockk<PhotoDao>()
@@ -61,6 +61,7 @@ class CanyonRepositoryNearbyTest {
             canyonDao = canyonDao,
             localStore = localStore,
             geoPointDao = geoPointDao,
+            watershedDao = watershedDao,
             scraper = scraper,
             mapOfflineRepository = mapOfflineRepository,
         )

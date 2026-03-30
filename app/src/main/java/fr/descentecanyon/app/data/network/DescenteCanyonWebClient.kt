@@ -69,7 +69,7 @@ open class DescenteCanyonWebClient @Inject constructor() {
 
     companion object {
         private val USER_AGENT = "DescenteCanyonApp/${BuildConfig.VERSION_NAME} (Android)"
-        private const val TIMEOUT_MS = 15_000
+        private const val TIMEOUT_MS = 30_000
     }
 }
 

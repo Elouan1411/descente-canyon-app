@@ -4,10 +4,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import fr.descentecanyon.app.domain.model.CanyonSummary
-import fr.descentecanyon.app.domain.usecase.DownloadMapOfflineRegionUseCase
-import fr.descentecanyon.app.domain.usecase.SearchCanyonsUseCase
 import fr.descentecanyon.app.domain.model.toSummary
-import fr.descentecanyon.app.map.MAP_OFFLINE_RADIUS_KM
+import fr.descentecanyon.app.domain.usecase.SearchCanyonsUseCase
 import kotlin.math.abs
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -20,7 +18,6 @@ data class MapUiState(
     val mapCanyons: List<CanyonSummary> = emptyList(),
     val selectedCanyon: CanyonSummary? = null,
     val isLoading: Boolean = true,
-    val isDownloadingOfflineRegion: Boolean = false,
     val error: String? = null,
     val transientMessage: String? = null,
     val hasLocationPermission: Boolean = false,
@@ -40,7 +37,6 @@ data class MapCameraState(
 @HiltViewModel
 class MapViewModel @Inject constructor(
     searchCanyonsUseCase: SearchCanyonsUseCase,
-    private val downloadMapOfflineRegionUseCase: DownloadMapOfflineRegionUseCase,
 ) : ViewModel() {
 
     private val _uiState = MutableStateFlow(MapUiState())
@@ -104,40 +100,6 @@ class MapViewModel @Inject constructor(
     fun onLocationUnavailable() {
         _uiState.update {
             it.copy(transientMessage = "Aucune position recente disponible sur cet appareil.")
-        }
-    }
-
-    fun downloadSelectedRegion(radiusKm: Double = MAP_OFFLINE_RADIUS_KM) {
-        val selected = _uiState.value.selectedCanyon ?: return
-        val latitude = selected.latitude ?: return
-        val longitude = selected.longitude ?: return
-        if (_uiState.value.isDownloadingOfflineRegion) return
-
-        viewModelScope.launch {
-            _uiState.update { it.copy(isDownloadingOfflineRegion = true, transientMessage = null) }
-            downloadMapOfflineRegionUseCase(
-                name = selected.nom,
-                latitude = latitude,
-                longitude = longitude,
-                radiusKm = radiusKm,
-            ).fold(
-                onSuccess = {
-                    _uiState.update {
-                        it.copy(
-                            isDownloadingOfflineRegion = false,
-                            transientMessage = "Zone de carte telechargee pour ${selected.nom}",
-                        )
-                    }
-                },
-                onFailure = { throwable ->
-                    _uiState.update {
-                        it.copy(
-                            isDownloadingOfflineRegion = false,
-                            transientMessage = throwable.message ?: "Impossible de telecharger la zone hors-ligne.",
-                        )
-                    }
-                },
-            )
         }
     }
 

@@ -75,13 +75,13 @@ import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import coil3.compose.AsyncImage
 import coil3.request.ImageRequest
 import coil3.request.allowHardware
 import fr.descentecanyon.app.R
 import fr.descentecanyon.app.domain.model.BibliographyEntry
 import fr.descentecanyon.app.domain.model.BibliographyKind
 import fr.descentecanyon.app.domain.model.CanyonDetail
+import fr.descentecanyon.app.domain.model.CanyonDebitPredictions
 import fr.descentecanyon.app.domain.model.CanyonPhoto
 import fr.descentecanyon.app.domain.model.Debit
 import fr.descentecanyon.app.domain.model.GeoPoint
@@ -212,6 +212,9 @@ fun CanyonDetailScreen(
                         weather = uiState.weather,
                         isLoadingWeather = uiState.isLoadingWeather,
                         weatherError = uiState.weatherError,
+                        predictions = uiState.predictions,
+                        isLoadingPredictions = uiState.isLoadingPredictions,
+                        predictionError = uiState.predictionError,
                         downloadingPhotoIds = uiState.downloadingPhotoIds,
                         onOpenPhotoGallery = onOpenPhotoGallery,
                         bottomContentPadding = contentPadding.calculateBottomPadding() + 96.dp,
@@ -255,6 +258,9 @@ private fun CanyonDetailContent(
     weather: fr.descentecanyon.app.domain.model.CanyonWeather?,
     isLoadingWeather: Boolean,
     weatherError: String?,
+    predictions: CanyonDebitPredictions?,
+    isLoadingPredictions: Boolean,
+    predictionError: String?,
     downloadingPhotoIds: Set<Long>,
     onOpenPhotoGallery: (Long) -> Unit,
     bottomContentPadding: Dp = 0.dp,
@@ -288,6 +294,13 @@ private fun CanyonDetailContent(
                 weather = weather,
                 isLoading = isLoadingWeather,
                 error = weatherError,
+            )
+        }
+        item {
+            CanyonDebitPredictionCard(
+                predictions = predictions,
+                isLoading = isLoadingPredictions,
+                error = predictionError,
             )
         }
 
@@ -1068,35 +1081,25 @@ private fun ProgressivePhoto(
     contentScale: ContentScale,
 ) {
     val context = LocalContext.current
-    val previewRequest: ImageRequest = remember(context, photo.localPath, photo.thumbnailUrl, photo.url) {
+    val fullRequest: ImageRequest = remember(context, photo.localPath, photo.url) {
         ImageRequest.Builder(context)
-            .data(photo.localPath ?: photo.thumbnailUrl ?: photo.url)
-            .allowHardware(false)
-            .build()
-    }
-    val fullRequest: ImageRequest = remember(context, photo.url) {
-        ImageRequest.Builder(context)
-            .data(photo.url)
+            .data(photo.localPath ?: photo.url)
             .allowHardware(false)
             .build()
     }
 
-    Box(modifier = modifier.background(MaterialTheme.colorScheme.surface)) {
-        AsyncImage(
-            model = previewRequest,
-            contentDescription = photo.description,
-            modifier = Modifier.fillMaxSize(),
-            contentScale = contentScale,
-        )
-        if (photo.localPath == null) {
-            AsyncImage(
-                model = fullRequest,
-                contentDescription = photo.description,
-                modifier = Modifier.fillMaxSize(),
-                contentScale = contentScale,
+    RetryablePhoto(
+        model = fullRequest,
+        contentDescription = photo.description,
+        modifier = modifier,
+        contentScale = contentScale,
+        errorContent = { onRetry ->
+            DefaultPhotoError(
+                onRetry = onRetry,
+                message = stringResource(R.string.photo_load_error),
             )
-        }
-    }
+        },
+    )
 }
 
 private fun LazyListScope.debitItems(
