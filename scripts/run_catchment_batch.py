@@ -201,11 +201,15 @@ def canyon_matches(canyon: dict[str, Any], match: dict[str, Any]) -> bool:
                 return False
             continue
         actual = canyon.get(key)
+        if key in {"departement", "region"} and isinstance(actual, str) and "," in actual:
+            actual_values = [part.strip() for part in actual.split(",") if part.strip()]
+        else:
+            actual_values = [actual]
         if isinstance(expected, list):
-            if actual not in expected:
+            if not any(value in expected for value in actual_values):
                 return False
             continue
-        if actual != expected:
+        if expected not in actual_values:
             return False
     return True
 

@@ -87,17 +87,6 @@ def france_department_srs(department: str) -> str:
     return "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs"
 
 
-def france_department_supplements(department: str) -> list[str]:
-    supplements: list[str] = []
-    if department in {"Pyrénées-Atlantiques", "Hautes-Pyrénées", "Haute-Garonne", "Ariège", "Pyrénées-Orientales"}:
-        supplements.append("spain-ign-mdt25")
-    if department in {"Ain", "Jura", "Doubs", "Haut-Rhin", "Haute-Savoie", "Savoie"}:
-        supplements.append("switzerland-swissalti3d")
-    if department in {"Savoie", "Hautes-Alpes", "Alpes-de-Haute-Provence", "Alpes-Maritimes", "Haute-Savoie", "Corse-du-Sud", "Haute-Corse"}:
-        supplements.append("italy-tinitaly-10m")
-    return supplements
-
-
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description="Generates a hybrid source config: IGN France, Copernicus Europe, MERIT fallback."
@@ -152,6 +141,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--austria-manifest", type=Path, default=Path("scripts/watersheds/austria_national_dem_manifest.example.json"))
     parser.add_argument("--slovenia-manifest", type=Path, default=Path("scripts/watersheds/slovenia_national_dem_manifest.example.json"))
     parser.add_argument("--portugal-manifest", type=Path, default=Path("scripts/watersheds/portugal_national_dem_manifest.example.json"))
+    parser.add_argument("--france-special-manifest", type=Path, default=Path("scripts/watersheds/france_special_dem_manifest.json"))
     return parser.parse_args()
 
 
@@ -208,12 +198,9 @@ def main() -> int:
                 "availabilityPath": str(rge_department_vrt),
                 "srs": france_department_srs(department),
                 "bufferKm": 20.0,
-                "coverageBbox": [-5.5, 41.0, 10.0, 51.5],
-                "coverageBboxCrs": "EPSG:4326",
                 "searchRadiusM": 120.0,
                 "channelMinUpaKm2": 0.05,
                 "candidateStrategy": "nearest_channel",
-                "supplementProviders": france_department_supplements(department),
                 "autoPrepare": {
                     "provider": "ign",
                     "dataset": "rgealti5m",
@@ -234,12 +221,9 @@ def main() -> int:
                 "availabilityPath": str(bd_department_vrt),
                 "srs": france_department_srs(department),
                 "bufferKm": 20.0,
-                "coverageBbox": [-5.5, 41.0, 10.0, 51.5],
-                "coverageBboxCrs": "EPSG:4326",
                 "searchRadiusM": 120.0,
                 "channelMinUpaKm2": 0.05,
                 "candidateStrategy": "nearest_channel",
-                "supplementProviders": france_department_supplements(department),
                 "autoPrepare": {
                     "provider": "ign",
                     "dataset": "bdalti",
@@ -255,19 +239,24 @@ def main() -> int:
 
     sources.append(
         {
-            "name": "france-ign-all",
+            "name": "france-cotedor-rge5m",
             "mode": "derive_local_hydrology",
-            "dem": str(args.ign_vrt_root / "rgealti5m" / "_all_downloaded.vrt"),
-            "availabilityPath": str(args.ign_vrt_root / "rgealti5m" / "_all_downloaded.vrt"),
+            "dem": "build/watersheds/france-special-dem/vrt/_all_downloaded.vrt",
+            "availabilityPath": "build/watersheds/france-special-dem/vrt/_all_downloaded.vrt",
             "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
             "bufferKm": 20.0,
-            "coverageBbox": [-5.5, 41.0, 10.0, 51.5],
-            "coverageBboxCrs": "EPSG:4326",
-            "candidateStrategy": "nearest_channel",
             "searchRadiusM": 120.0,
             "channelMinUpaKm2": 0.05,
+            "candidateStrategy": "nearest_channel",
+            "autoPrepare": {
+                "provider": "national-dem",
+                "manifest": str(args.france_special_manifest),
+                "outputDir": "build/watersheds/france-special-dem",
+                "unitFields": ["departement"]
+            },
             "match": {
-                "pays": "__SUPPLEMENT_ONLY__"
+                "pays": "France",
+                "departement": "Côte-d'Or"
             }
         }
     )
@@ -305,7 +294,6 @@ def main() -> int:
             "candidateStrategy": "nearest_channel",
             "searchRadiusM": 120.0,
             "channelMinUpaKm2": 0.05,
-            "supplementProviders": ["austria-als", "tinitaly-bulk"],
             "autoPrepare": {
                 "provider": "switzerland-stac",
                 "outputDir": "build/watersheds/switzerland-national-dem",
@@ -325,12 +313,9 @@ def main() -> int:
             "srs": "EPSG:4258",
             "processingCrs": "EPSG:25830",
             "bufferKm": 10.0,
-            "coverageBbox": [-9.6, 35.8, 4.5, 43.95],
-            "coverageBboxCrs": "EPSG:4326",
             "candidateStrategy": "nearest_channel",
             "searchRadiusM": 120.0,
             "channelMinUpaKm2": 0.05,
-            "supplementProviders": ["france-ign-all", "portugal-dgt-mdt2m"],
             "autoPrepare": {
                 "provider": "spain-wcs",
                 "outputDir": "build/watersheds/spain-national-dem",
@@ -353,7 +338,6 @@ def main() -> int:
             "candidateStrategy": "nearest_channel",
             "searchRadiusM": 120.0,
             "channelMinUpaKm2": 0.05,
-            "supplementProviders": ["switzerland-stac", "slovenia-jgp", "tinitaly-bulk"],
             "autoPrepare": {
                 "provider": "austria-als",
                 "outputDir": "build/watersheds/austria-national-dem",
@@ -398,7 +382,6 @@ def main() -> int:
             "candidateStrategy": "nearest_channel",
             "searchRadiusM": 120.0,
             "channelMinUpaKm2": 0.05,
-            "supplementProviders": ["switzerland-stac", "austria-als"],
             "autoPrepare": {
                 "provider": "tinitaly-bulk",
                 "outputDir": "build/watersheds/italy-national-dem"
@@ -416,13 +399,10 @@ def main() -> int:
             "dem": "build/watersheds/portugal-national-dem/vrt/_all_downloaded.vrt",
             "srs": "EPSG:3763",
             "bufferKm": 15.0,
-            "coverageBbox": [-9.56, 36.95, -6.19, 42.16],
-            "coverageBboxCrs": "EPSG:4326",
             "processingResolutionM": 10.0,
             "candidateStrategy": "nearest_channel",
             "searchRadiusM": 120.0,
             "channelMinUpaKm2": 0.05,
-            "supplementProviders": ["spain-ign-mdt25"],
             "autoPrepare": {
                 "provider": "portugal-dgt-api",
                 "outputDir": "build/watersheds/portugal-national-dem",
