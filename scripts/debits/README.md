@@ -33,6 +33,8 @@ The pipeline is split into four steps:
 4. `build_debit_training_features.py`
    - joins valid observations with daily weather cache
    - computes extended daily hydrology features for modelling
+   - adds temporal priors by canyon / massif / region using past observations only
+   - adds heuristic historical flags for regulated and snowmelt-sensitive canyons
 
 5. `train_debit_baseline_model.py`
    - supports `random_forest` and `catboost`
