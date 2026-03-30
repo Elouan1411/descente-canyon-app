@@ -284,6 +284,11 @@ def main() -> None:
             "scikit-learn is required for this script. Install it with `python -m pip install scikit-learn`."
         ) from exc
 
+    try:
+        from sklearn.frozen import FrozenEstimator  # type: ignore
+    except ImportError:  # pragma: no cover
+        FrozenEstimator = None
+
     CatBoostClassifier = None
     if args.model == "catboost":
         try:
@@ -337,7 +342,10 @@ def main() -> None:
     model.fit(x_train, y_train)
     calibrated_model: Any = model
     if args.calibration_method != "none":
-        calibrated_model = CalibratedClassifierCV(model, method=args.calibration_method, cv="prefit")
+        if FrozenEstimator is not None:
+            calibrated_model = CalibratedClassifierCV(FrozenEstimator(model), method=args.calibration_method, cv=None)
+        else:
+            calibrated_model = CalibratedClassifierCV(model, method=args.calibration_method, cv="prefit")
         calibrated_model.fit(x_calibration, y_calibration)
 
     labels = list(calibrated_model.classes_) if hasattr(calibrated_model, "classes_") else sorted(set(y_train) | set(y_test))
