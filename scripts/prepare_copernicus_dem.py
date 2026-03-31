@@ -3,11 +3,16 @@ from __future__ import annotations
 import argparse
 import json
 import subprocess
+import time
 import urllib.request
 from pathlib import Path
 from typing import Any
+from urllib.error import HTTPError, URLError
 
 from cli_tools import default_gdalbuildvrt, resolve_executable
+
+
+S3_BASE_URL = "https://copernicus-dem-30m.s3.amazonaws.com"
 
 
 def load_json(path: Path) -> Any:
@@ -35,25 +40,46 @@ def resolve_url(manifest: dict[str, Any], cell: str) -> str:
     template = manifest.get("template")
     if template:
         if "example.invalid" in str(template):
-            raise SystemExit(
-                "Copernicus manifest still contains the placeholder template. "
-                "Replace scripts/watersheds/copernicus_url_manifest.example.json with real URLs first."
-            )
+            return copernicus_public_url(cell)
         return str(template).format(cell=cell)
-    raise SystemExit(f"No Copernicus URL found for cell {cell}")
+    return copernicus_public_url(cell)
 
 
-def download_file(url: str, destination: Path) -> None:
+def copernicus_public_url(cell: str) -> str:
+    lat_part, lon_part = cell.split("_")
+    northing = f"{lat_part}_00"
+    easting = f"{lon_part}_00"
+    tile_id = f"Copernicus_DSM_COG_10_{northing}_{easting}_DEM"
+    return f"{S3_BASE_URL}/{tile_id}/{tile_id}.tif"
+
+
+def download_file(url: str, destination: Path) -> bool:
     destination.parent.mkdir(parents=True, exist_ok=True)
     if destination.exists() and destination.stat().st_size > 0:
-        return
-    request = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
-    with urllib.request.urlopen(request, timeout=300) as response, open(destination, "wb") as handle:
-        while True:
-            chunk = response.read(1024 * 1024)
-            if not chunk:
-                break
-            handle.write(chunk)
+        return True
+    temp_path = destination.with_suffix(destination.suffix + ".part")
+    last_error: Exception | None = None
+    for attempt in range(1, 5):
+        try:
+            request = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+            with urllib.request.urlopen(request, timeout=300) as response, open(temp_path, "wb") as handle:
+                while True:
+                    chunk = response.read(1024 * 1024)
+                    if not chunk:
+                        break
+                    handle.write(chunk)
+            temp_path.replace(destination)
+            return True
+        except (HTTPError, URLError) as exc:
+            last_error = exc
+            temp_path.unlink(missing_ok=True)
+            if isinstance(exc, HTTPError):
+                if exc.code == 404:
+                    return False
+                if exc.code not in {429, 500, 502, 503, 504}:
+                    raise
+            time.sleep(min(60, 5 * attempt))
+    raise SystemExit(f"Copernicus DEM download failed: {last_error}")
 
 
 def build_vrt(gdalbuildvrt: str, tif_paths: list[Path], vrt_path: Path) -> None:
@@ -74,16 +100,21 @@ def main() -> int:
     vrt_path = output_dir / "vrt" / "copernicus_glo30.vrt"
 
     downloaded = []
+    missing = []
     for cell in sorted(set(args.cell)):
         url = resolve_url(manifest, cell)
         destination = raw_dir / f"{cell}.tif"
-        download_file(url, destination)
-        downloaded.append({"cell": cell, "url": url, "path": str(destination)})
+        if download_file(url, destination):
+            downloaded.append({"cell": cell, "url": url, "path": str(destination)})
+        else:
+            missing.append({"cell": cell, "url": url})
 
     tif_paths = sorted(raw_dir.glob("*.tif"))
+    if not tif_paths:
+        raise SystemExit("No Copernicus DEM tiles available to build VRT")
     build_vrt(gdalbuildvrt, tif_paths, vrt_path)
-    write_json(output_dir / "downloaded_cells.json", downloaded)
-    print(json.dumps({"cells": len(downloaded), "vrt": str(vrt_path)}, ensure_ascii=False, indent=2))
+    write_json(output_dir / "downloaded_cells.json", {"downloaded": downloaded, "missing": missing})
+    print(json.dumps({"cells": len(downloaded), "missing": len(missing), "vrt": str(vrt_path)}, ensure_ascii=False, indent=2))
     return 0
 
 

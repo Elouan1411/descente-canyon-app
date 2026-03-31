@@ -359,7 +359,10 @@ def auto_prepare_source(
         for cell in points_copernicus_cells(points):
             command.extend(["--cell", cell])
         subprocess.run(command, check=True)
-        return source
+        selected = load_json_if_exists(Path(auto_prepare.get("outputDir", "build/watersheds/copernicus-data")) / "downloaded_cells.json") or {}
+        prepared = dict(source)
+        prepared["coverageIncomplete"] = bool(selected.get("missing"))
+        return prepared
 
     if provider == "switzerland-stac":
         local_output_dir = output_dir / "prepared_sources" / f"switzerland-{canyon['id']}"
