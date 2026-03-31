@@ -3,6 +3,7 @@ package fr.descentecanyon.app.e2e.fakes
 import fr.descentecanyon.app.domain.model.CanyonDetail
 import fr.descentecanyon.app.domain.model.CanyonSearchItem
 import fr.descentecanyon.app.domain.model.CanyonSummary
+import fr.descentecanyon.app.domain.model.CanyonWatershed
 import fr.descentecanyon.app.domain.repository.CanyonRepository
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -35,6 +36,8 @@ class FakeCanyonRepository @Inject constructor() : CanyonRepository {
     }
 
     override suspend fun getCanyonPreview(canyonId: Int): Result<CanyonDetail> = getCanyonDetail(canyonId)
+
+    override fun observeWatershed(canyonId: Int): Flow<CanyonWatershed?> = flowOf(null)
 
     override fun getCanyonsNearby(latitude: Double, longitude: Double, radiusKm: Double): Flow<Result<List<CanyonSummary>>> {
         return flowOf(Result.success(E2eFixtureState.summaries()))

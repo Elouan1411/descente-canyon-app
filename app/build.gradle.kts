@@ -2,7 +2,6 @@ import java.util.Properties
 
 plugins {
     alias(libs.plugins.android.application)
-    alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.hilt.android)
@@ -62,7 +61,7 @@ android {
 
     sourceSets {
         getByName("main") {
-            assets.setSrcDirs(
+            assets.directories.addAll(
                 listOf(
                     "src/main/assets",
                     "../offline-data/full/room-import",
@@ -109,6 +108,12 @@ android {
     buildFeatures {
         compose = true
         buildConfig = true
+    }
+
+    testOptions {
+        unitTests.all {
+            it.jvmArgs("--enable-native-access=ALL-UNNAMED")
+        }
     }
 }
 

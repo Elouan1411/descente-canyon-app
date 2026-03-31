@@ -19,7 +19,7 @@ import kotlinx.coroutines.withContext
 @Singleton
 class OnnxDebitPredictor @Inject constructor(
     private val modelStore: EmbeddedDebitModelStore,
-    @IoDispatcher private val ioDispatcher: CoroutineDispatcher,
+    @param:IoDispatcher private val ioDispatcher: CoroutineDispatcher,
 ) {
 
     suspend fun predict(

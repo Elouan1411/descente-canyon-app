@@ -18,7 +18,7 @@ class DebitPredictionRepositoryImpl @Inject constructor(
     private val modelStore: EmbeddedDebitModelStore,
     private val featureBuilder: DebitFeatureBuilder,
     private val predictor: OnnxDebitPredictor,
-    @IoDispatcher private val ioDispatcher: CoroutineDispatcher,
+    @param:IoDispatcher private val ioDispatcher: CoroutineDispatcher,
 ) : DebitPredictionRepository {
 
     override suspend fun getPredictions(detail: CanyonDetail): Result<CanyonDebitPredictions> {
