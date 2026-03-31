@@ -29,6 +29,9 @@ maplibre = "11.8.4"
 # Coroutines
 coroutines = "1.10.2"
 
+# ML runtime
+onnxRuntime = "1.22.0"
+
 # Image loading
 coil = "3.1.0"
 
@@ -97,6 +100,10 @@ kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-
 # Coroutines
 kotlinx-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "coroutines" }
 kotlinx-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "coroutines" }
+
+# ONNX Runtime
+onnxruntime-android = { group = "com.microsoft.onnxruntime", name = "onnxruntime-android", version.ref = "onnxRuntime" }
+onnxruntime-jvm = { group = "com.microsoft.onnxruntime", name = "onnxruntime", version.ref = "onnxRuntime" }
 
 # MapLibre
 maplibre = { group = "org.maplibre.gl", name = "android-sdk", version.ref = "maplibre" }

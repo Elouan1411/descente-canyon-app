@@ -108,8 +108,9 @@ private fun MainScreen() {
         currentDestination?.hasRoute(item.screen::class) == true
     }
     val isDetailScreen = currentDestination?.hasRoute(Screen.CanyonDetail::class) == true
+    val isCanyonPointsMapScreen = currentDestination?.hasRoute(Screen.CanyonPointsMap::class) == true
 
-    val showBottomBar = isTopLevelDestination || isDetailScreen
+    val showBottomBar = isTopLevelDestination || isDetailScreen || isCanyonPointsMapScreen
 
     Scaffold(
         bottomBar = {
@@ -126,6 +127,9 @@ private fun MainScreen() {
                         windowInsets = NavigationBarDefaults.windowInsets,
                     ) {
                         BottomNavItem.entries.forEach { item ->
+                            val isSelected = currentDestination?.hasRoute(item.screen::class) == true ||
+                                (isCanyonPointsMapScreen && item == BottomNavItem.MAP)
+
                             NavigationBarItem(
                                 icon = { Icon(item.icon, contentDescription = item.label) },
                                 label = { Text(item.label) },
@@ -136,7 +140,7 @@ private fun MainScreen() {
                                     unselectedIconColor = MaterialTheme.colorScheme.onSurfaceVariant,
                                     unselectedTextColor = MaterialTheme.colorScheme.onSurfaceVariant,
                                 ),
-                                selected = currentDestination?.hasRoute(item.screen::class) == true,
+                                selected = isSelected,
                                 onClick = {
                                     val startDestinationId = navController.graph.findStartDestination().id
                                     handleBottomNavClick(

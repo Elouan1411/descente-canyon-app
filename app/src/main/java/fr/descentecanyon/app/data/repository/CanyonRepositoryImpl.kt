@@ -2,8 +2,10 @@ package fr.descentecanyon.app.data.repository
 
 import fr.descentecanyon.app.data.local.dao.CanyonDao
 import fr.descentecanyon.app.data.local.dao.GeoPointDao
+import fr.descentecanyon.app.data.local.dao.WatershedDao
 import fr.descentecanyon.app.data.local.dao.getByIdsChunked
-import fr.descentecanyon.app.data.local.database.AppDatabase
+import fr.descentecanyon.app.data.local.database.DescenteCanyonDatabase
+import fr.descentecanyon.app.data.mapper.toDomain
 import fr.descentecanyon.app.data.mapper.toSearchItem
 import fr.descentecanyon.app.data.mapper.toEntity
 import fr.descentecanyon.app.data.mapper.toSummary
@@ -11,6 +13,7 @@ import fr.descentecanyon.app.data.remote.scraper.CanyonScraper
 import fr.descentecanyon.app.domain.model.CanyonSearchItem
 import fr.descentecanyon.app.domain.model.CanyonDetail
 import fr.descentecanyon.app.domain.model.CanyonSummary
+import fr.descentecanyon.app.domain.model.CanyonWatershed
 import fr.descentecanyon.app.domain.model.GeoPointType
 import fr.descentecanyon.app.domain.model.normalizeForSearch
 import fr.descentecanyon.app.domain.repository.CanyonRepository
@@ -28,10 +31,11 @@ import javax.inject.Singleton
 
 @Singleton
 class CanyonRepositoryImpl @Inject constructor(
-    private val database: AppDatabase,
+    private val database: DescenteCanyonDatabase,
     private val canyonDao: CanyonDao,
     private val localStore: CanyonLocalStore,
     private val geoPointDao: GeoPointDao,
+    private val watershedDao: WatershedDao,
     private val scraper: CanyonScraper,
     private val mapOfflineRepository: MapOfflineRepository,
 ) : CanyonRepository {
@@ -136,6 +140,10 @@ class CanyonRepositoryImpl @Inject constructor(
             localStore.insertPreservingFlags(entity)
             localStore.loadLocalDetail(canyonId, canyonDao.getById(canyonId) ?: entity)
         }
+    }
+
+    override fun observeWatershed(canyonId: Int): Flow<CanyonWatershed?> {
+        return watershedDao.observeByCanyonId(canyonId).map { it?.toDomain() }
     }
 
     override fun getCanyonsNearby(

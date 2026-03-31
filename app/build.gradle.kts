@@ -62,9 +62,12 @@ android {
 
     sourceSets {
         getByName("main") {
-            assets.srcDirs(
-                "src/main/assets",
-                "../offline-data/full/room-import",
+            assets.setSrcDirs(
+                listOf(
+                    "src/main/assets",
+                    "../offline-data/full/room-import",
+                    "../modele_statistique",
+                )
             )
         }
     }
@@ -181,6 +184,9 @@ dependencies {
     // Coroutines
     implementation(libs.kotlinx.coroutines.android)
 
+    // On-device ML inference
+    implementation(libs.onnxruntime.android)
+
     // MapLibre (offline maps)
     implementation(libs.maplibre)
 
@@ -192,6 +198,7 @@ dependencies {
     testImplementation(libs.junit)
     testImplementation(libs.mockk)
     testImplementation(libs.turbine)
+    testImplementation(libs.onnxruntime.jvm)
     testImplementation(libs.kotlinx.coroutines.test)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

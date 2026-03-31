@@ -1,7 +1,7 @@
 package fr.descentecanyon.app.startup
 
 import android.util.Log
-import fr.descentecanyon.app.data.local.importer.EmbeddedCanyonDataImporter
+import fr.descentecanyon.app.data.local.importer.EmbeddedAppDataImporter
 import fr.descentecanyon.app.data.network.ConnectivityObserver
 import fr.descentecanyon.app.domain.repository.AuthRepository
 import fr.descentecanyon.app.domain.usecase.SyncPendingDebitsUseCase
@@ -19,7 +19,7 @@ import kotlinx.coroutines.withContext
 
 @Singleton
 class AppStartupCoordinator @Inject constructor(
-    private val embeddedCanyonDataImporter: EmbeddedCanyonDataImporter,
+    private val embeddedCanyonDataImporter: EmbeddedAppDataImporter,
     private val authRepository: AuthRepository,
     private val connectivityObserver: ConnectivityObserver,
     private val syncPendingDebitsUseCase: SyncPendingDebitsUseCase,

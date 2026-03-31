@@ -12,6 +12,11 @@ open class OpenMeteoRemoteSource @Inject constructor(
     private val httpClient: HttpClient,
 ) {
 
+    companion object {
+        private const val DAILY_VARIABLES =
+            "precipitation_sum,rain_sum,snowfall_sum,temperature_2m_mean,temperature_2m_min,temperature_2m_max,precipitation_hours"
+    }
+
     open suspend fun fetchForecast(
         latitude: Double,
         longitude: Double,
@@ -25,6 +30,36 @@ open class OpenMeteoRemoteSource @Inject constructor(
             )
             parameter("past_hours", 72)
             parameter("forecast_hours", 48)
+            parameter("timezone", "auto")
+        }.body()
+    }
+
+    open suspend fun fetchDailyForecast(
+        latitude: Double,
+        longitude: Double,
+        forecastDays: Int = 3,
+    ): OpenMeteoDailyResponseDto {
+        return httpClient.get("/v1/forecast") {
+            parameter("latitude", latitude)
+            parameter("longitude", longitude)
+            parameter("daily", DAILY_VARIABLES)
+            parameter("forecast_days", forecastDays)
+            parameter("timezone", "auto")
+        }.body()
+    }
+
+    open suspend fun fetchDailyArchive(
+        latitude: Double,
+        longitude: Double,
+        startDate: String,
+        endDate: String,
+    ): OpenMeteoDailyResponseDto {
+        return httpClient.get("https://archive-api.open-meteo.com/v1/archive") {
+            parameter("latitude", latitude)
+            parameter("longitude", longitude)
+            parameter("start_date", startDate)
+            parameter("end_date", endDate)
+            parameter("daily", DAILY_VARIABLES)
             parameter("timezone", "auto")
         }.body()
     }

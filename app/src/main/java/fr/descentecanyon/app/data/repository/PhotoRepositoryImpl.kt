@@ -3,7 +3,7 @@ package fr.descentecanyon.app.data.repository
 import android.content.Context
 import androidx.room.withTransaction
 import dagger.hilt.android.qualifiers.ApplicationContext
-import fr.descentecanyon.app.data.local.database.AppDatabase
+import fr.descentecanyon.app.data.local.database.DescenteCanyonDatabase
 import fr.descentecanyon.app.data.local.dao.PhotoDao
 import fr.descentecanyon.app.data.mapper.toDomain
 import fr.descentecanyon.app.data.mapper.toEntity
@@ -21,7 +21,7 @@ import javax.inject.Singleton
 
 @Singleton
 class PhotoRepositoryImpl @Inject constructor(
-    private val database: AppDatabase,
+    private val database: DescenteCanyonDatabase,
     private val photoDao: PhotoDao,
     private val scraper: CanyonScraper,
     private val webClient: DescenteCanyonWebClient,

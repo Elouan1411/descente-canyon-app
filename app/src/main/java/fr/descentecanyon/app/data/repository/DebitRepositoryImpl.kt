@@ -2,7 +2,7 @@ package fr.descentecanyon.app.data.repository
 
 import androidx.room.withTransaction
 import fr.descentecanyon.app.data.local.dao.DebitDao
-import fr.descentecanyon.app.data.local.database.AppDatabase
+import fr.descentecanyon.app.data.local.database.DescenteCanyonDatabase
 import fr.descentecanyon.app.data.mapper.toDomain
 import fr.descentecanyon.app.data.mapper.toEntity
 import fr.descentecanyon.app.data.remote.scraper.CanyonScraper
@@ -16,7 +16,7 @@ import javax.inject.Singleton
 
 @Singleton
 class DebitRepositoryImpl @Inject constructor(
-    private val database: AppDatabase,
+    private val database: DescenteCanyonDatabase,
     private val debitDao: DebitDao,
     private val scraper: CanyonScraper,
 ) : DebitRepository {

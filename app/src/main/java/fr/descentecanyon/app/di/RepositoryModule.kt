@@ -6,6 +6,8 @@ import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import fr.descentecanyon.app.data.repository.AuthRepositoryImpl
 import fr.descentecanyon.app.data.repository.CanyonRepositoryImpl
+import fr.descentecanyon.app.data.repository.DebitPredictionRepositoryImpl
+import fr.descentecanyon.app.data.repository.DebitPredictionSupportRepositoryImpl
 import fr.descentecanyon.app.data.repository.DebitRepositoryImpl
 import fr.descentecanyon.app.data.repository.DebitSubmissionRepositoryImpl
 import fr.descentecanyon.app.data.repository.FavoritesRepositoryImpl
@@ -14,6 +16,8 @@ import fr.descentecanyon.app.data.repository.PhotoRepositoryImpl
 import fr.descentecanyon.app.data.repository.WeatherRepositoryImpl
 import fr.descentecanyon.app.domain.repository.AuthRepository
 import fr.descentecanyon.app.domain.repository.CanyonRepository
+import fr.descentecanyon.app.domain.repository.DebitPredictionRepository
+import fr.descentecanyon.app.domain.repository.DebitPredictionSupportRepository
 import fr.descentecanyon.app.domain.repository.DebitRepository
 import fr.descentecanyon.app.domain.repository.DebitSubmissionRepository
 import fr.descentecanyon.app.domain.repository.FavoritesRepository
@@ -37,6 +41,18 @@ abstract class RepositoryModule {
     @Binds
     @Singleton
     abstract fun bindDebitRepository(impl: DebitRepositoryImpl): DebitRepository
+
+    @Binds
+    @Singleton
+    abstract fun bindDebitPredictionSupportRepository(
+        impl: DebitPredictionSupportRepositoryImpl,
+    ): DebitPredictionSupportRepository
+
+    @Binds
+    @Singleton
+    abstract fun bindDebitPredictionRepository(
+        impl: DebitPredictionRepositoryImpl,
+    ): DebitPredictionRepository
 
     @Binds
     @Singleton

@@ -13,13 +13,14 @@ import dagger.hilt.components.SingletonComponent
 import fr.descentecanyon.app.data.local.dao.AppMetadataDao
 import fr.descentecanyon.app.data.local.dao.BibliographyDao
 import fr.descentecanyon.app.data.local.dao.CanyonDao
+import fr.descentecanyon.app.data.local.dao.DailyWeatherDao
 import fr.descentecanyon.app.data.local.dao.DebitDao
 import fr.descentecanyon.app.data.local.dao.GeoPointDao
 import fr.descentecanyon.app.data.local.dao.PendingDebitSubmissionDao
 import fr.descentecanyon.app.data.local.dao.PhotoDao
 import fr.descentecanyon.app.data.local.dao.RegulationDao
 import fr.descentecanyon.app.data.local.dao.WatershedDao
-import fr.descentecanyon.app.data.local.database.AppDatabase
+import fr.descentecanyon.app.data.local.database.DescenteCanyonDatabase
 import javax.inject.Singleton
 
 @Module
@@ -283,13 +284,42 @@ object DatabaseModule {
         }
     }
 
+    private val MIGRATION_8_9 = object : Migration(8, 9) {
+        override fun migrate(db: SupportSQLiteDatabase) {
+            db.execSQL(
+                """
+                CREATE TABLE IF NOT EXISTS `daily_weather` (
+                    `canyonId` INTEGER NOT NULL,
+                    `date` TEXT NOT NULL,
+                    `timezone` TEXT NOT NULL,
+                    `targetLatitude` REAL NOT NULL,
+                    `targetLongitude` REAL NOT NULL,
+                    `targetSource` TEXT NOT NULL,
+                    `sourceKind` TEXT NOT NULL,
+                    `precipitationSum` REAL,
+                    `rainSum` REAL,
+                    `snowfallSum` REAL,
+                    `temperature2mMean` REAL,
+                    `temperature2mMin` REAL,
+                    `temperature2mMax` REAL,
+                    `precipitationHours` REAL,
+                    `fetchedAtEpochMs` INTEGER NOT NULL,
+                    PRIMARY KEY(`canyonId`, `date`),
+                    FOREIGN KEY(`canyonId`) REFERENCES `canyons`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE
+                )
+                """.trimIndent()
+            )
+            db.execSQL("CREATE INDEX IF NOT EXISTS `index_daily_weather_canyonId` ON `daily_weather` (`canyonId`)")
+        }
+    }
+
     @Provides
     @Singleton
-    fun provideDatabase(@ApplicationContext context: Context): AppDatabase {
+    fun provideDatabase(@ApplicationContext context: Context): DescenteCanyonDatabase {
         return Room.databaseBuilder(
             context,
-            AppDatabase::class.java,
-            AppDatabase.DATABASE_NAME,
+            DescenteCanyonDatabase::class.java,
+            DescenteCanyonDatabase.DATABASE_NAME,
         )
             .addMigrations(MIGRATION_1_2)
             .addMigrations(MIGRATION_2_3)
@@ -298,35 +328,39 @@ object DatabaseModule {
             .addMigrations(MIGRATION_5_6)
             .addMigrations(MIGRATION_6_7)
             .addMigrations(MIGRATION_7_8)
+            .addMigrations(MIGRATION_8_9)
             .build()
     }
 
     @Provides
-    fun provideCanyonDao(database: AppDatabase): CanyonDao = database.canyonDao()
+    fun provideCanyonDao(database: DescenteCanyonDatabase): CanyonDao = database.canyonDao()
 
     @Provides
-    fun provideGeoPointDao(database: AppDatabase): GeoPointDao = database.geoPointDao()
+    fun provideGeoPointDao(database: DescenteCanyonDatabase): GeoPointDao = database.geoPointDao()
 
     @Provides
-    fun provideDebitDao(database: AppDatabase): DebitDao = database.debitDao()
+    fun provideDebitDao(database: DescenteCanyonDatabase): DebitDao = database.debitDao()
 
     @Provides
-    fun providePhotoDao(database: AppDatabase): PhotoDao = database.photoDao()
+    fun provideDailyWeatherDao(database: DescenteCanyonDatabase): DailyWeatherDao = database.dailyWeatherDao()
 
     @Provides
-    fun provideBibliographyDao(database: AppDatabase): BibliographyDao = database.bibliographyDao()
+    fun providePhotoDao(database: DescenteCanyonDatabase): PhotoDao = database.photoDao()
 
     @Provides
-    fun provideRegulationDao(database: AppDatabase): RegulationDao = database.regulationDao()
+    fun provideBibliographyDao(database: DescenteCanyonDatabase): BibliographyDao = database.bibliographyDao()
 
     @Provides
-    fun provideWatershedDao(database: AppDatabase): WatershedDao = database.watershedDao()
+    fun provideRegulationDao(database: DescenteCanyonDatabase): RegulationDao = database.regulationDao()
 
     @Provides
-    fun provideAppMetadataDao(database: AppDatabase): AppMetadataDao = database.appMetadataDao()
+    fun provideWatershedDao(database: DescenteCanyonDatabase): WatershedDao = database.watershedDao()
 
     @Provides
-    fun providePendingDebitSubmissionDao(database: AppDatabase): PendingDebitSubmissionDao {
+    fun provideAppMetadataDao(database: DescenteCanyonDatabase): AppMetadataDao = database.appMetadataDao()
+
+    @Provides
+    fun providePendingDebitSubmissionDao(database: DescenteCanyonDatabase): PendingDebitSubmissionDao {
         return database.pendingDebitSubmissionDao()
     }
 

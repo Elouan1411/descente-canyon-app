@@ -12,6 +12,11 @@ import kotlinx.coroutines.flow.callbackFlow
 import javax.inject.Inject
 import javax.inject.Singleton
 
+interface ConnectivityObserver {
+    fun observe(): Flow<Boolean>
+    fun isCurrentlyOnline(): Boolean
+}
+
 @Singleton
 class AndroidConnectivityObserver @Inject constructor(
     @param:ApplicationContext private val context: Context,

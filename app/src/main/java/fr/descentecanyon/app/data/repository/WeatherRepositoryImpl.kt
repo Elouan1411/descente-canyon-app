@@ -4,12 +4,7 @@ import fr.descentecanyon.app.data.remote.weather.OpenMeteoRemoteSource
 import fr.descentecanyon.app.di.IoDispatcher
 import fr.descentecanyon.app.domain.model.CanyonDetail
 import fr.descentecanyon.app.domain.model.CanyonWeather
-import fr.descentecanyon.app.domain.model.GeoBounds
-import fr.descentecanyon.app.domain.model.GeoPoint
-import fr.descentecanyon.app.domain.model.GeoPointType
 import fr.descentecanyon.app.domain.model.HourlyPrecipitation
-import fr.descentecanyon.app.domain.model.WeatherLocationSource
-import fr.descentecanyon.app.domain.model.WeatherTarget
 import fr.descentecanyon.app.domain.repository.WeatherRepository
 import java.time.Instant
 import java.time.LocalDateTime
@@ -29,7 +24,7 @@ class WeatherRepositoryImpl @Inject constructor(
     override suspend fun getCanyonWeather(detail: CanyonDetail): Result<CanyonWeather> {
         return withContext(ioDispatcher) {
             runCatching {
-                val target = resolveWeatherTarget(detail)
+                val target = WeatherTargetResolver.resolve(detail)
                     ?: throw IllegalStateException("Aucune coordonnee exploitable pour la meteo")
                 val response = remoteSource.fetchForecast(target.latitude, target.longitude)
                 val zoneId = response.timezone.toZoneIdOrUtc()
@@ -65,52 +60,6 @@ class WeatherRepositoryImpl @Inject constructor(
             }
         }
     }
-
-    private fun resolveWeatherTarget(detail: CanyonDetail): WeatherTarget? {
-        detail.watershed?.bounds?.let { bounds ->
-            return WeatherTarget(
-                latitude = bounds.centerLatitude(),
-                longitude = bounds.centerLongitude(),
-                source = WeatherLocationSource.WATERSHED_CENTER,
-            )
-        }
-
-        return detail.geoPoints
-            .minByOrNull(::weatherPriority)
-            ?.toWeatherTarget()
-    }
-
-    private fun weatherPriority(point: GeoPoint): Int {
-        return when (point.type) {
-            GeoPointType.ENTREE -> 0
-            GeoPointType.PARKING_AMONT -> 1
-            GeoPointType.SORTIE -> 2
-            GeoPointType.PARKING_AVAL -> 3
-            GeoPointType.POINT_REMARQUABLE -> 4
-            GeoPointType.ECHAPPATOIRE -> 5
-            GeoPointType.UNKNOWN -> 6
-        }
-    }
-
-    private fun GeoPoint.toWeatherTarget(): WeatherTarget {
-        return WeatherTarget(
-            latitude = latitude,
-            longitude = longitude,
-            source = when (type) {
-                GeoPointType.ENTREE -> WeatherLocationSource.ENTRY
-                GeoPointType.PARKING_AMONT -> WeatherLocationSource.UPSTREAM_PARKING
-                GeoPointType.SORTIE -> WeatherLocationSource.EXIT
-                GeoPointType.PARKING_AVAL -> WeatherLocationSource.DOWNSTREAM_PARKING
-                GeoPointType.POINT_REMARQUABLE -> WeatherLocationSource.REMARKABLE_POINT
-                GeoPointType.ECHAPPATOIRE -> WeatherLocationSource.ESCAPE
-                GeoPointType.UNKNOWN -> WeatherLocationSource.UNKNOWN
-            },
-        )
-    }
-
-    private fun GeoBounds.centerLatitude(): Double = (minLatitude + maxLatitude) / 2.0
-
-    private fun GeoBounds.centerLongitude(): Double = (minLongitude + maxLongitude) / 2.0
 
     private fun String.toZoneIdOrUtc(): ZoneId {
         return runCatching { ZoneId.of(this) }.getOrDefault(ZoneId.of("UTC"))

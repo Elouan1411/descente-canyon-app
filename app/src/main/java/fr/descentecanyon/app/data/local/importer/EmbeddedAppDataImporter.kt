@@ -1,15 +1,16 @@
 package fr.descentecanyon.app.data.local.importer
 
 import android.content.Context
+import androidx.room.withTransaction
 import dagger.hilt.android.qualifiers.ApplicationContext
 import fr.descentecanyon.app.data.local.dao.AppMetadataDao
 import fr.descentecanyon.app.data.local.dao.BibliographyDao
 import fr.descentecanyon.app.data.local.dao.CanyonDao
-import fr.descentecanyon.app.data.local.dao.getByIdsChunked
 import fr.descentecanyon.app.data.local.dao.GeoPointDao
 import fr.descentecanyon.app.data.local.dao.RegulationDao
 import fr.descentecanyon.app.data.local.dao.WatershedDao
-import fr.descentecanyon.app.data.local.database.AppDatabase
+import fr.descentecanyon.app.data.local.dao.getByIdsChunked
+import fr.descentecanyon.app.data.local.database.DescenteCanyonDatabase
 import fr.descentecanyon.app.data.local.entity.AppMetadataEntity
 import fr.descentecanyon.app.data.local.entity.BibliographyEntryEntity
 import fr.descentecanyon.app.data.local.entity.CanyonBibliographyEntity
@@ -21,18 +22,15 @@ import fr.descentecanyon.app.data.local.entity.WatershedEntity
 import java.io.FileNotFoundException
 import javax.inject.Inject
 import javax.inject.Singleton
-import kotlinx.serialization.Serializable
-import kotlinx.serialization.decodeFromString
-import kotlinx.serialization.encodeToString
+import kotlinx.serialization.builtins.ListSerializer
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonElement
 import kotlinx.serialization.json.JsonNull
-import androidx.room.withTransaction
 
 @Singleton
-class EmbeddedCanyonDataImporter @Inject constructor(
-    @ApplicationContext private val context: Context,
-    private val database: AppDatabase,
+class EmbeddedAppDataImporter @Inject constructor(
+    @param:ApplicationContext private val context: Context,
+    private val database: DescenteCanyonDatabase,
     private val canyonDao: CanyonDao,
     private val geoPointDao: GeoPointDao,
     private val bibliographyDao: BibliographyDao,
@@ -49,7 +47,7 @@ class EmbeddedCanyonDataImporter @Inject constructor(
     }
 
     suspend fun ensureCoreImported() {
-        val manifest = readJsonAsset<RoomImportManifest>("manifest.json")
+        val manifest = readManifest()
         val importedVersion = appMetadataDao.get(DATASET_VERSION_KEY)?.value
         val hasCanyons = canyonDao.count() > 0
         val hasBibliography = bibliographyDao.countEntries() > 0
@@ -58,12 +56,12 @@ class EmbeddedCanyonDataImporter @Inject constructor(
             return
         }
 
-        val canyonRows = readJsonAsset<List<CanyonImportRow>>("canyons.json")
-        val geoPointRows = readJsonAsset<List<GeoPointImportRow>>("geo_points.json")
-        val bibliographyEntries = readJsonAsset<List<BibliographyEntryImportRow>>("bibliography_entries.json")
-        val canyonBibliography = readJsonAsset<List<CanyonBibliographyImportRow>>("canyon_bibliography.json")
-        val regulationTexts = readJsonAsset<List<RegulationImportRow>>("regulation_texts.json")
-        val canyonRegulations = readJsonAsset<List<CanyonRegulationImportRow>>("canyon_regulations.json")
+        val canyonRows = readCanyonRows()
+        val geoPointRows = readGeoPointRows()
+        val bibliographyEntries = readBibliographyEntries()
+        val canyonBibliography = readCanyonBibliography()
+        val regulationTexts = readRegulationTexts()
+        val canyonRegulations = readCanyonRegulations()
         val existingCanyons = canyonDao.getByIdsChunked(canyonRows.map { it.id }).associateBy { it.id }
 
         database.withTransaction {
@@ -80,26 +78,26 @@ class EmbeddedCanyonDataImporter @Inject constructor(
                 }
             }
 
-            geoPointRows.map { row -> row.toEntity() }
+            geoPointRows.map { it.toEntity() }
                 .groupBy { it.canyonId }
                 .forEach { (canyonId, points) ->
                     geoPointDao.deleteByCanyonId(canyonId)
                     points.chunked(500).forEach { chunk -> geoPointDao.insertAll(chunk) }
                 }
 
-            bibliographyEntries.map { row -> row.toEntity(json) }
+            bibliographyEntries.map { it.toEntity(json) }
                 .chunked(300)
                 .forEach { chunk -> bibliographyDao.insertEntries(chunk) }
 
-            canyonBibliography.map { row -> row.toEntity() }
+            canyonBibliography.map { it.toEntity() }
                 .chunked(500)
                 .forEach { chunk -> bibliographyDao.insertLinks(chunk) }
 
-            regulationTexts.map { row -> row.toEntity(json) }
+            regulationTexts.map { it.toEntity(json) }
                 .chunked(300)
                 .forEach { chunk -> regulationDao.insertTexts(chunk) }
 
-            canyonRegulations.map { row -> row.toEntity() }
+            canyonRegulations.map { it.toEntity() }
                 .chunked(500)
                 .forEach { chunk -> regulationDao.insertLinks(chunk) }
 
@@ -108,31 +106,79 @@ class EmbeddedCanyonDataImporter @Inject constructor(
     }
 
     suspend fun ensureWatershedsImported() {
-        val manifest = readJsonAsset<RoomImportManifest>("manifest.json")
-        val watershedsVersion = manifest.watershedsVersion ?: manifest.generatedAt
+        val manifest = readManifest()
+        val watershedsVersion = manifest.versions["watersheds"] ?: manifest.generatedAt
         val importedVersion = appMetadataDao.get(WATERSHEDS_VERSION_KEY)?.value
         if (importedVersion == watershedsVersion) {
             return
         }
 
-        val watersheds = readOptionalJsonAsset<List<WatershedImportRow>>("watersheds.json").orEmpty()
+        val watersheds = readWatershedRows().orEmpty()
         database.withTransaction {
             watershedDao.clearAll()
-            watersheds.mapNotNull { row -> row.toEntity(json) }
+            watersheds.mapNotNull { it.toEntity(json) }
                 .chunked(300)
                 .forEach { chunk -> watershedDao.insertAll(chunk) }
             appMetadataDao.insert(AppMetadataEntity(WATERSHEDS_VERSION_KEY, watershedsVersion))
         }
     }
 
-    private inline fun <reified T> readJsonAsset(path: String): T {
-        val payload = context.assets.open(path).bufferedReader().use { it.readText() }
-        return json.decodeFromString(payload)
+    private fun readManifest(): RoomImportManifest {
+        return readJsonAsset("manifest.json") { payload ->
+            json.decodeFromString(RoomImportManifest.serializer(), payload)
+        }
     }
 
-    private inline fun <reified T> readOptionalJsonAsset(path: String): T? {
+    private fun readCanyonRows(): List<CanyonImportRow> {
+        return readJsonAsset("canyons.json") { payload ->
+            json.decodeFromString(ListSerializer(CanyonImportRow.serializer()), payload)
+        }
+    }
+
+    private fun readGeoPointRows(): List<GeoPointImportRow> {
+        return readJsonAsset("geo_points.json") { payload ->
+            json.decodeFromString(ListSerializer(GeoPointImportRow.serializer()), payload)
+        }
+    }
+
+    private fun readBibliographyEntries(): List<BibliographyEntryImportRow> {
+        return readJsonAsset("bibliography_entries.json") { payload ->
+            json.decodeFromString(ListSerializer(BibliographyEntryImportRow.serializer()), payload)
+        }
+    }
+
+    private fun readCanyonBibliography(): List<CanyonBibliographyImportRow> {
+        return readJsonAsset("canyon_bibliography.json") { payload ->
+            json.decodeFromString(ListSerializer(CanyonBibliographyImportRow.serializer()), payload)
+        }
+    }
+
+    private fun readRegulationTexts(): List<RegulationImportRow> {
+        return readJsonAsset("regulation_texts.json") { payload ->
+            json.decodeFromString(ListSerializer(RegulationImportRow.serializer()), payload)
+        }
+    }
+
+    private fun readCanyonRegulations(): List<CanyonRegulationImportRow> {
+        return readJsonAsset("canyon_regulations.json") { payload ->
+            json.decodeFromString(ListSerializer(CanyonRegulationImportRow.serializer()), payload)
+        }
+    }
+
+    private fun readWatershedRows(): List<WatershedImportRow>? {
+        return readOptionalJsonAsset("watersheds.json") { payload ->
+            json.decodeFromString(ListSerializer(WatershedImportRow.serializer()), payload)
+        }
+    }
+
+    private fun <T> readJsonAsset(path: String, decode: (String) -> T): T {
+        val payload = context.assets.open(path).bufferedReader().use { it.readText() }
+        return decode(payload)
+    }
+
+    private fun <T> readOptionalJsonAsset(path: String, decode: (String) -> T): T? {
         return try {
-            readJsonAsset(path)
+            readJsonAsset(path, decode)
         } catch (_: FileNotFoundException) {
             null
         }
@@ -234,10 +280,7 @@ class EmbeddedCanyonDataImporter @Inject constructor(
     }
 
     private fun CanyonBibliographyImportRow.toEntity(): CanyonBibliographyEntity {
-        return CanyonBibliographyEntity(
-            canyonId = canyonId,
-            bibliographyId = bibliographyId,
-        )
+        return CanyonBibliographyEntity(canyonId = canyonId, bibliographyId = bibliographyId)
     }
 
     private fun RegulationImportRow.toEntity(json: Json): RegulationTextEntity {
@@ -256,10 +299,7 @@ class EmbeddedCanyonDataImporter @Inject constructor(
     }
 
     private fun CanyonRegulationImportRow.toEntity(): CanyonRegulationEntity {
-        return CanyonRegulationEntity(
-            canyonId = canyonId,
-            regulationId = regulationId,
-        )
+        return CanyonRegulationEntity(canyonId = canyonId, regulationId = regulationId)
     }
 
     private fun WatershedImportRow.toEntity(json: Json): WatershedEntity? {
@@ -286,121 +326,3 @@ class EmbeddedCanyonDataImporter @Inject constructor(
         private const val WATERSHEDS_VERSION_KEY = "embedded_watersheds_version"
     }
 }
-
-@Serializable
-private data class RoomImportManifest(
-    val schemaVersion: Int,
-    val generatedAt: String,
-    val versions: Map<String, String> = emptyMap(),
-)
-
-private val RoomImportManifest.watershedsVersion: String?
-    get() = versions["watersheds"]
-
-@Serializable
-private data class CanyonImportRow(
-    val id: Int,
-    val nom: String,
-    val nomComplet: String,
-    val pays: String,
-    val region: String? = null,
-    val departement: String? = null,
-    val commune: String,
-    val communes: List<String> = emptyList(),
-    val massif: String? = null,
-    val bassin: String? = null,
-    val coursEau: String? = null,
-    val cotation: String,
-    val altitudeDepart: Int? = null,
-    val denivele: Int? = null,
-    val longueur: Int? = null,
-    val cascadeMax: Int? = null,
-    val cordeMin: Int? = null,
-    val tempsApproche: String? = null,
-    val tempsDescente: String? = null,
-    val tempsRetour: String? = null,
-    val navette: String? = null,
-    val interet: Float? = null,
-    val nbVotes: Int = 0,
-    val url: String,
-    val accesAval: String? = null,
-    val accesAmont: String? = null,
-    val approche: String? = null,
-    val descente: String? = null,
-    val retour: String? = null,
-    val engagement: String? = null,
-    val periode: String? = null,
-    val geologie: String? = null,
-    val historique: String? = null,
-    val remarques: String? = null,
-    val isOffline: Boolean = false,
-    val isFavorite: Boolean = false,
-    val lastUpdated: Long,
-    val hasSpecificRegulation: Boolean = false,
-    val isForbidden: Boolean = false,
-)
-
-@Serializable
-private data class GeoPointImportRow(
-    val canyonId: Int,
-    val type: String,
-    val latitude: Double,
-    val longitude: Double,
-    val label: String? = null,
-)
-
-@Serializable
-private data class BibliographyEntryImportRow(
-    val id: String,
-    val kind: String,
-    val resourceType: String? = null,
-    val title: String,
-    val authors: List<String> = emptyList(),
-    val publicationYear: Int? = null,
-    val reference: String? = null,
-    val editor: String? = null,
-    val status: String? = null,
-    val scale: String? = null,
-    val detailUrl: String? = null,
-    val url: String? = null,
-)
-
-@Serializable
-private data class CanyonBibliographyImportRow(
-    val canyonId: Int,
-    val bibliographyId: String,
-)
-
-@Serializable
-private data class RegulationAttachmentImportRow(
-    val label: String,
-    val url: String,
-)
-
-@Serializable
-private data class RegulationImportRow(
-    val id: Int,
-    val status: String? = null,
-    val action: String? = null,
-    val title: String,
-    val summary: String? = null,
-    val remark: String? = null,
-    val details: String? = null,
-    val effectiveDate: String? = null,
-    val textUrl: String,
-    val attachments: List<RegulationAttachmentImportRow> = emptyList(),
-)
-
-@Serializable
-private data class CanyonRegulationImportRow(
-    val canyonId: Int,
-    val regulationId: Int,
-)
-
-@Serializable
-private data class WatershedImportRow(
-    val canyonId: Int,
-    val upstreamCatchmentAreaKm2: Double? = null,
-    val bbox: List<Double>? = null,
-    val geometry: JsonElement? = null,
-)
