@@ -48,22 +48,28 @@ fun loadCurrentDeviceLocation(
         }
     }
 
-    locationManager.requestSingleUpdate(
+    val listener = object : LocationListener {
+        override fun onLocationChanged(location: Location) {
+            locationManager.removeUpdates(this)
+            onLocation(location.latitude, location.longitude)
+        }
+
+        @Deprecated("Deprecated in API")
+        override fun onStatusChanged(provider: String?, status: Int, extras: Bundle?) {}
+
+        override fun onProviderEnabled(provider: String) {}
+
+        override fun onProviderDisabled(provider: String) {
+            locationManager.removeUpdates(this)
+            onUnavailable()
+        }
+    }
+
+    locationManager.requestLocationUpdates(
         provider,
-        object : LocationListener {
-            override fun onLocationChanged(location: Location) {
-                onLocation(location.latitude, location.longitude)
-            }
-
-            @Deprecated("Deprecated in API")
-            override fun onStatusChanged(provider: String?, status: Int, extras: Bundle?) {}
-
-            override fun onProviderEnabled(provider: String) {}
-
-            override fun onProviderDisabled(provider: String) {
-                onUnavailable()
-            }
-        },
+        0L,
+        0f,
+        listener,
         Looper.getMainLooper(),
     )
 }

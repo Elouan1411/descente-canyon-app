@@ -4,6 +4,7 @@ import fr.descentecanyon.app.domain.model.Canyon
 import fr.descentecanyon.app.domain.model.CanyonDetail
 import fr.descentecanyon.app.domain.model.CanyonSearchItem
 import fr.descentecanyon.app.domain.model.CanyonSummary
+import fr.descentecanyon.app.domain.model.CanyonWatershed
 import kotlinx.coroutines.flow.Flow
 
 /**
@@ -33,6 +34,11 @@ interface CanyonRepository {
      * Get a lightweight canyon preview before full detail is loaded.
      */
     suspend fun getCanyonPreview(canyonId: Int): Result<CanyonDetail>
+
+    /**
+     * Observe watershed data imported asynchronously for a canyon.
+     */
+    fun observeWatershed(canyonId: Int): Flow<CanyonWatershed?>
 
     /**
      * Get canyons near a geographic position.

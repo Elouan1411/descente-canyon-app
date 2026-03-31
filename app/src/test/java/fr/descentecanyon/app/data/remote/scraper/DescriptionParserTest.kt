@@ -16,35 +16,35 @@ class DescriptionParserTest {
     @Test
     fun `parse access aval`() {
         val result = parseValouse()
-        assertNotNull("accesAval should not be null", result.accesAval)
+        val accesAval = requireNotNull(result.accesAval) { "accesAval should not be null" }
         assertTrue(
             "accesAval should mention Burbanche or Hopitaux",
-            result.accesAval!!.contains("Burbanche") || result.accesAval!!.contains("H\u00f4pitaux"),
+            accesAval.contains("Burbanche") || accesAval.contains("H\u00f4pitaux"),
         )
     }
 
     @Test
     fun `parse access amont`() {
         val result = parseValouse()
-        assertNotNull("accesAmont should not be null", result.accesAmont)
+        val accesAmont = requireNotNull(result.accesAmont) { "accesAmont should not be null" }
         assertTrue(
             "accesAmont should mention Tare or plateau",
-            result.accesAmont!!.contains("Tare") || result.accesAmont!!.contains("plateau"),
+            accesAmont.contains("Tare") || accesAmont.contains("plateau"),
         )
     }
 
     @Test
     fun `parse approche`() {
         val result = parseValouse()
-        assertNotNull("approche should not be null", result.approche)
-        assertTrue(result.approche!!.contains("piste") || result.approche!!.contains("cl\u00f4tures"))
+        val approche = requireNotNull(result.approche) { "approche should not be null" }
+        assertTrue(approche.contains("piste") || approche.contains("cl\u00f4tures"))
     }
 
     @Test
     fun `parse descente`() {
         val result = parseValouse()
-        assertNotNull("descente should not be null", result.descente)
-        assertTrue(result.descente!!.contains("cascades") || result.descente!!.contains("rappel"))
+        val descente = requireNotNull(result.descente) { "descente should not be null" }
+        assertTrue(descente.contains("cascades") || descente.contains("rappel"))
     }
 
     @Test
@@ -56,14 +56,14 @@ class DescriptionParserTest {
     @Test
     fun `parse engagement`() {
         val result = parseValouse()
-        assertNotNull("engagement should not be null", result.engagement)
-        assertTrue(result.engagement!!.contains("chappatoire") || result.engagement!!.lowercase().contains("echapp"))
+        val engagement = requireNotNull(result.engagement) { "engagement should not be null" }
+        assertTrue(engagement.contains("chappatoire") || engagement.lowercase().contains("echapp"))
     }
 
     @Test
     fun `parse periode`() {
         val result = parseValouse()
-        assertNotNull("periode should not be null", result.periode)
-        assertTrue(result.periode!!.contains("sec") || result.periode!!.contains("pluie"))
+        val periode = requireNotNull(result.periode) { "periode should not be null" }
+        assertTrue(periode.contains("sec") || periode.contains("pluie"))
     }
 }

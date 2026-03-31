@@ -1,3 +1,5 @@
+@file:Suppress("DEPRECATION")
+
 package fr.descentecanyon.app.ui.map
 
 import android.graphics.Bitmap

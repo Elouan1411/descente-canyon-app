@@ -1,7 +1,6 @@
 package fr.descentecanyon.app.ui.canyon
 
 import android.app.Activity
-import android.graphics.Color as AndroidColor
 import androidx.activity.compose.BackHandler
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.ExperimentalFoundationApi
@@ -108,16 +107,12 @@ fun PhotoGalleryScreen(
     DisposableEffect(context) {
         val activity = context as? Activity
         val window = activity?.window
-        val previousStatusBarColor = window?.statusBarColor
-        val previousNavBarColor = window?.navigationBarColor
         val insetsController = window?.let { WindowCompat.getInsetsController(it, it.decorView) }
         val previousLightStatus = insetsController?.isAppearanceLightStatusBars
         val previousLightNav = insetsController?.isAppearanceLightNavigationBars
 
         if (window != null && insetsController != null) {
             WindowCompat.setDecorFitsSystemWindows(window, false)
-            window.statusBarColor = AndroidColor.BLACK
-            window.navigationBarColor = AndroidColor.BLACK
             insetsController.isAppearanceLightStatusBars = false
             insetsController.isAppearanceLightNavigationBars = false
             insetsController.hide(WindowInsetsCompat.Type.systemBars())
@@ -126,8 +121,6 @@ fun PhotoGalleryScreen(
 
         onDispose {
             if (window != null && insetsController != null) {
-                previousStatusBarColor?.let { window.statusBarColor = it }
-                previousNavBarColor?.let { window.navigationBarColor = it }
                 previousLightStatus?.let { insetsController.isAppearanceLightStatusBars = it }
                 previousLightNav?.let { insetsController.isAppearanceLightNavigationBars = it }
                 insetsController.show(WindowInsetsCompat.Type.systemBars())

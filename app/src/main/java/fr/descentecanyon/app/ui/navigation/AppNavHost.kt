@@ -90,6 +90,7 @@ fun AppNavHost(
             CanyonPointsMapScreen(
                 canyonId = route.canyonId,
                 onBackClick = { navController.popBackStack() },
+                contentPadding = topLevelContentPadding,
             )
         }
 

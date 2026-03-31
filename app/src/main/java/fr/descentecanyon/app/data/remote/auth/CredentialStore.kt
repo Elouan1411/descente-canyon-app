@@ -1,3 +1,5 @@
+@file:Suppress("DEPRECATION")
+
 package fr.descentecanyon.app.data.remote.auth
 
 import android.content.Context
@@ -24,7 +26,7 @@ interface CredentialStore {
  */
 @Singleton
 class EncryptedCredentialStore @Inject constructor(
-    @ApplicationContext private val context: Context,
+    @param:ApplicationContext private val context: Context,
 ) : CredentialStore {
 
     companion object {
