@@ -47,56 +47,60 @@ class CanyonRepositoryImpl @Inject constructor(
 
     private val repositoryScope = CoroutineScope(SupervisorJob() + Dispatchers.Default)
 
-    private val representativePointsFlow = geoPointDao.observeAll()
-        .map { points ->
-            points.groupBy { it.canyonId }
-                .mapValues { (_, canyonPoints) -> localStore.bestMarkerPointOrNull(canyonPoints) }
-        }
-        .distinctUntilChanged()
-        .flowOn(Dispatchers.Default)
-        .shareIn(
-            scope = repositoryScope,
-            started = SharingStarted.WhileSubscribed(stopTimeoutMillis = 5_000),
-            replay = 1,
-        )
-
-    private val searchCatalogFlow = canyonDao.observeAll()
-        .combine(representativePointsFlow) { entities, representativePoints ->
-            val baseItems = entities.map { entity ->
-                val point = representativePoints[entity.id]
-                entity.toSearchItem(
-                    representativeLat = point?.latitude,
-                    representativeLng = point?.longitude,
-                )
+    private val representativePointsFlow by lazy {
+        geoPointDao.observeAll()
+            .map { points ->
+                points.groupBy { it.canyonId }
+                    .mapValues { (_, canyonPoints) -> localStore.bestMarkerPointOrNull(canyonPoints) }
             }
+            .distinctUntilChanged()
+            .flowOn(Dispatchers.Default)
+            .shareIn(
+                scope = repositoryScope,
+                started = SharingStarted.WhileSubscribed(stopTimeoutMillis = 5_000),
+                replay = 1,
+            )
+    }
 
-            val knownCountryBySubdivision = baseItems
-                .asSequence()
-                .filter { it.countryTokens.size == 1 }
-                .flatMap { item ->
-                    item.departmentTokens.asSequence().map { subdivision ->
-                        subdivision.normalizeForSearch() to item.countryTokens.first()
+    private val searchCatalogFlow by lazy {
+        canyonDao.observeAll()
+            .combine(representativePointsFlow) { entities, representativePoints ->
+                val baseItems = entities.map { entity ->
+                    val point = representativePoints[entity.id]
+                    entity.toSearchItem(
+                        representativeLat = point?.latitude,
+                        representativeLng = point?.longitude,
+                    )
+                }
+
+                val knownCountryBySubdivision = baseItems
+                    .asSequence()
+                    .filter { it.countryTokens.size == 1 }
+                    .flatMap { item ->
+                        item.departmentTokens.asSequence().map { subdivision ->
+                            subdivision.normalizeForSearch() to item.countryTokens.first()
+                        }
                     }
-                }
-                .groupBy({ it.first }, { it.second })
-                .mapNotNull { (subdivision, countries) ->
-                    countries.distinct().singleOrNull()?.let { subdivision to it }
-                }
-                .toMap()
+                    .groupBy({ it.first }, { it.second })
+                    .mapNotNull { (subdivision, countries) ->
+                        countries.distinct().singleOrNull()?.let { subdivision to it }
+                    }
+                    .toMap()
 
-            baseItems.map { item ->
-                item.copy(
-                    subdivisionsByCountry = item.buildSubdivisionsByCountry(knownCountryBySubdivision),
-                )
+                baseItems.map { item ->
+                    item.copy(
+                        subdivisionsByCountry = item.buildSubdivisionsByCountry(knownCountryBySubdivision),
+                    )
+                }
             }
-        }
-        .distinctUntilChanged()
-        .flowOn(Dispatchers.Default)
-        .shareIn(
-            scope = repositoryScope,
-            started = SharingStarted.WhileSubscribed(stopTimeoutMillis = 5_000),
-            replay = 1,
-        )
+            .distinctUntilChanged()
+            .flowOn(Dispatchers.Default)
+            .shareIn(
+                scope = repositoryScope,
+                started = SharingStarted.WhileSubscribed(stopTimeoutMillis = 5_000),
+                replay = 1,
+            )
+    }
 
     /**
      * B-1 fix: Use Room's reactive Flow directly instead of collecting inside a flow{} builder
