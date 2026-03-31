@@ -24,6 +24,23 @@ def resolve_input_path(value: Path) -> Path:
     return value
 
 
+def resolve_input_paths(value: Path) -> list[Path]:
+    direct_path = resolve_input_path(value)
+    if direct_path.is_file():
+        return [direct_path]
+    if not value.is_dir():
+        return [direct_path]
+
+    candidates = sorted(
+        path
+        for path in value.glob("**/import_ready_watersheds.json")
+        if path.is_file()
+    )
+    if candidates:
+        return candidates
+    return [direct_path]
+
+
 def normalize_bbox(value: Any) -> list[float] | None:
     if not isinstance(value, list) or len(value) != 4:
         return None
@@ -110,21 +127,24 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> int:
     args = parse_args()
-    input_path = resolve_input_path(args.input)
-    if not input_path.exists():
-        raise FileNotFoundError(f"Fichier introuvable: {input_path}")
+    input_paths = resolve_input_paths(args.input)
+    if not input_paths or any(not path.exists() for path in input_paths):
+        missing = next((path for path in input_paths if not path.exists()), args.input)
+        raise FileNotFoundError(f"Fichier introuvable: {missing}")
 
-    raw_rows = load_json(input_path)
-    if not isinstance(raw_rows, list):
-        raise ValueError("Le fichier source doit contenir une liste JSON")
+    normalized_rows: list[dict[str, Any]] = []
+    for input_path in input_paths:
+        raw_rows = load_json(input_path)
+        if not isinstance(raw_rows, list):
+            raise ValueError(f"Le fichier source doit contenir une liste JSON: {input_path}")
+        normalized_rows.extend(
+            normalized
+            for item in raw_rows
+            if isinstance(item, dict)
+            for normalized in [normalize_row(item)]
+            if normalized is not None
+        )
 
-    normalized_rows = [
-        normalized
-        for item in raw_rows
-        if isinstance(item, dict)
-        for normalized in [normalize_row(item)]
-        if normalized is not None
-    ]
     output_rows = dedupe_rows(normalized_rows)
     write_json(args.output, output_rows)
 
@@ -134,7 +154,7 @@ def main() -> int:
     print(
         json.dumps(
             {
-                "input": str(input_path),
+                "inputs": [str(path) for path in input_paths],
                 "output": str(args.output),
                 "watersheds": len(output_rows),
                 "manifestUpdated": (not args.skip_manifest and args.manifest.exists()),
