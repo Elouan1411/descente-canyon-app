@@ -8,6 +8,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.toRoute
 import fr.descentecanyon.app.ui.canyon.CanyonDetailScreen
+import fr.descentecanyon.app.ui.canyon.DebitPredictionInfoScreen
 import fr.descentecanyon.app.ui.canyon.CanyonPointsMapScreen
 import fr.descentecanyon.app.ui.canyon.PhotoGalleryScreen
 import fr.descentecanyon.app.ui.debit.DebitFormScreen
@@ -72,6 +73,9 @@ fun AppNavHost(
                 onBackClick = { navController.popBackStack() },
                 onReportDebitClick = { navController.navigate(Screen.DebitForm(detail.canyonId)) },
                 onShowMapClick = { navController.navigate(Screen.CanyonPointsMap(detail.canyonId)) },
+                onOpenPredictionInfo = { lookupSourceName ->
+                    navController.navigate(Screen.DebitPredictionInfo(lookupSourceName))
+                },
                 onOpenPhotoGallery = { photoId ->
                     navController.navigate(Screen.PhotoGallery(detail.canyonId, photoId))
                 },
@@ -97,6 +101,15 @@ fun AppNavHost(
         composable<Screen.DebitForm> {
             DebitFormScreen(
                 onBackClick = { navController.popBackStack() },
+            )
+        }
+
+        composable<Screen.DebitPredictionInfo> { backStackEntry ->
+            val route = backStackEntry.toRoute<Screen.DebitPredictionInfo>()
+            DebitPredictionInfoScreen(
+                onBackClick = { navController.popBackStack() },
+                lookupSourceName = route.lookupSourceName,
+                contentPadding = topLevelContentPadding,
             )
         }
     }

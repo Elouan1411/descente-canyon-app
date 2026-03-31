@@ -99,7 +99,7 @@ class MapViewModel @Inject constructor(
 
     fun onLocationUnavailable() {
         _uiState.update {
-            it.copy(transientMessage = "Aucune position recente disponible sur cet appareil.")
+            it.copy(transientMessage = "Aucune position récente disponible sur cet appareil.")
         }
     }
 

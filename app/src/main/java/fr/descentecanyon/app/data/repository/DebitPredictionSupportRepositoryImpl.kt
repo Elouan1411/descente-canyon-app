@@ -31,7 +31,7 @@ class DebitPredictionSupportRepositoryImpl @Inject constructor(
         return withContext(ioDispatcher) {
             runCatching {
                 val target = WeatherTargetResolver.resolve(detail)
-                    ?: throw IllegalStateException("Aucune coordonnee exploitable pour l'estimation du debit")
+                    ?: throw IllegalStateException("Aucune coordonnée exploitable pour l'estimation du débit")
                 val lookups = runtimeLookupStore.getLookups()
                 val dailyWeather = loadDailyWeather(detail.canyon.id, target)
                 DebitPredictionSupport(
@@ -56,7 +56,7 @@ class DebitPredictionSupportRepositoryImpl @Inject constructor(
         }
         if (forecastResult.isFailure) {
             return loadCachedFallback(canyonId)
-                ?: throw forecastResult.exceptionOrNull() ?: IllegalStateException("Meteo journaliere indisponible")
+                ?: throw forecastResult.exceptionOrNull() ?: IllegalStateException("Météo journalière indisponible")
         }
 
         val forecast = forecastResult.getOrThrow()

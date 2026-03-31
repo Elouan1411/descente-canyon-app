@@ -167,7 +167,7 @@ class CanyonDetailViewModel @Inject constructor(
                         it.copy(
                             weather = null,
                             isLoadingWeather = false,
-                            weatherError = throwable.message ?: "Meteo indisponible",
+                            weatherError = throwable.message ?: "Météo indisponible",
                         )
                     }
                 },
@@ -285,7 +285,7 @@ class CanyonDetailViewModel @Inject constructor(
                                 }
                             ),
                             downloadingPhotoIds = state.downloadingPhotoIds - photoId,
-                            transientMessage = "Photo telechargee",
+                            transientMessage = "Photo téléchargée",
                         )
                     }
                 },
@@ -329,7 +329,7 @@ class CanyonDetailViewModel @Inject constructor(
                         it.copy(
                             predictions = null,
                             isLoadingPredictions = false,
-                            predictionError = throwable.message ?: "Estimation du debit indisponible",
+                            predictionError = throwable.message ?: "Estimation du débit indisponible",
                         )
                     }
                 },

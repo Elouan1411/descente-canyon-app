@@ -13,6 +13,7 @@ import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -36,6 +37,7 @@ fun CanyonDebitPredictionCard(
     predictions: CanyonDebitPredictions?,
     isLoading: Boolean,
     error: String?,
+    onInfoClick: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     Card(
@@ -50,10 +52,19 @@ fun CanyonDebitPredictionCard(
             modifier = Modifier.padding(16.dp),
             verticalArrangement = Arrangement.spacedBy(12.dp),
         ) {
-            Text(
-                text = stringResource(R.string.prediction_title),
-                style = MaterialTheme.typography.titleMedium,
-            )
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically,
+            ) {
+                Text(
+                    text = stringResource(R.string.prediction_title),
+                    style = MaterialTheme.typography.titleMedium,
+                )
+                TextButton(onClick = onInfoClick) {
+                    Text(text = stringResource(R.string.prediction_info_cta))
+                }
+            }
 
             when {
                 isLoading || (predictions == null && error == null) -> {

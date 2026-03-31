@@ -10,6 +10,8 @@ import fr.descentecanyon.app.domain.model.CanyonStaticFeatureSet
 import fr.descentecanyon.app.domain.model.DebitFeatureDefinition
 import fr.descentecanyon.app.domain.model.DebitFeatureSource
 import fr.descentecanyon.app.domain.model.DebitFeatureSpec
+import fr.descentecanyon.app.domain.model.DebitPredictionDriver
+import fr.descentecanyon.app.domain.model.DebitPredictionInfoSummary
 import fr.descentecanyon.app.domain.model.DebitPredictionPolicy
 import fr.descentecanyon.app.domain.model.DebitThresholds
 import java.io.File
@@ -39,6 +41,7 @@ class EmbeddedDebitModelStore @Inject constructor(
     private val specMutex = Mutex()
     private val thresholdsMutex = Mutex()
     private val staticFeaturesMutex = Mutex()
+    private val metricsMutex = Mutex()
     private val sessionMutex = Mutex()
 
     @Volatile
@@ -49,6 +52,9 @@ class EmbeddedDebitModelStore @Inject constructor(
 
     @Volatile
     private var cachedStaticFeatures: Map<Int, CanyonStaticFeatureSet>? = null
+
+    @Volatile
+    private var cachedMetricsSummary: DebitPredictionInfoSummary? = null
 
     @Volatile
     private var cachedSessionHolder: OnnxSessionHolder? = null
@@ -77,6 +83,14 @@ class EmbeddedDebitModelStore @Inject constructor(
             dto.mapKeys { (key, _) -> key.toInt() }
                 .mapValues { (key, value) -> CanyonStaticFeatureSet(key, value.toNumericMap()) }
                 .also { cachedStaticFeatures = it }
+        }
+    }
+
+    suspend fun getMetricsSummary(): DebitPredictionInfoSummary {
+        cachedMetricsSummary?.let { return it }
+        return metricsMutex.withLock {
+            cachedMetricsSummary?.let { return it }
+            loadJsonAsset<MetricsDto>(METRICS_ASSET_PATH).toDomain().also { cachedMetricsSummary = it }
         }
     }
 
@@ -158,6 +172,74 @@ class EmbeddedDebitModelStore @Inject constructor(
         )
     }
 
+    private fun MetricsDto.toDomain(): DebitPredictionInfoSummary {
+        return DebitPredictionInfoSummary(
+            modelName = model,
+            targetMode = targetMode,
+            featureCount = featureCount,
+            trainRowCount = trainRowCount,
+            calibrationRowCount = calibrationRowCount,
+            testRowCount = testRowCount,
+            canyonCount = runtimeLookupMetadata?.canyonCount ?: 0,
+            regionCount = runtimeLookupMetadata?.regionCount ?: 0,
+            massifCount = runtimeLookupMetadata?.massifCount ?: 0,
+            topDrivers = topFeatureImportances
+                .mapNotNull { feature -> feature.feature.toDriverOrNull() }
+                .distinctBy { it.title }
+                .take(5),
+        )
+    }
+
+    private fun String.toDriverOrNull(): DebitPredictionDriver? {
+        return when {
+            startsWith("canyonPrior") || this == "canyonPastObsCount" -> {
+                DebitPredictionDriver(
+                    title = "Historique du canyon",
+                    description = "Quand il existe des observations passées pour ce canyon, elles influencent fortement l'estimation.",
+                )
+            }
+            startsWith("massifPrior") || startsWith("regionPrior") || startsWith("globalPrior") ||
+                contains("PastObsCount") -> {
+                DebitPredictionDriver(
+                    title = "Contexte du massif et de la région",
+                    description = "Si le canyon manque d'historique propre, le modèle s'appuie davantage sur des canyons proches ou similaires.",
+                )
+            }
+            startsWith("precip_") || startsWith("wet_days_") || startsWith("days_since_precip") ||
+                startsWith("antecedent_precipitation_index") || startsWith("precipitation_hours") -> {
+                DebitPredictionDriver(
+                    title = "Pluie récente et cumuls",
+                    description = "Les précipitations des derniers jours et des dernières semaines comptent beaucoup dans le niveau estimé.",
+                )
+            }
+            startsWith("temperature") || startsWith("positive_degree_days") || startsWith("snowfall") || startsWith("rain") -> {
+                DebitPredictionDriver(
+                    title = "Température, pluie et neige",
+                    description = "La température moyenne, la pluie liquide et la neige récente aident à distinguer des situations hydrologiques différentes.",
+                )
+            }
+            this == "upstreamCatchmentAreaKm2" || this == "hasWatershed" -> {
+                DebitPredictionDriver(
+                    title = "Bassin versant",
+                    description = "La surface du bassin versant aide à relier les pluies reçues à la réponse probable du canyon.",
+                )
+            }
+            startsWith("month") -> {
+                DebitPredictionDriver(
+                    title = "Saison",
+                    description = "La période de l'année influence le comportement moyen du canyon, notamment via la fonte et les régimes de pluie.",
+                )
+            }
+            startsWith("historical") -> {
+                DebitPredictionDriver(
+                    title = "Signaux historiques atypiques",
+                    description = "Certains canyons réagissent différemment à cause d'effets régulés ou de signatures de fonte observés dans l'historique.",
+                )
+            }
+            else -> null
+        }
+    }
+
     private fun String.toPredictionPolicy(): DebitPredictionPolicy {
         return when (lowercase()) {
             "balanced" -> DebitPredictionPolicy.BALANCED
@@ -171,6 +253,7 @@ class EmbeddedDebitModelStore @Inject constructor(
         private const val FEATURE_SPEC_ASSET_PATH = "feature_spec.json"
         private const val THRESHOLDS_ASSET_PATH = "thresholds.json"
         private const val STATIC_FEATURES_ASSET_PATH = "canyon_static_features.json"
+        private const val METRICS_ASSET_PATH = "metrics.json"
         private const val MODEL_ASSET_PATH = "model.onnx"
     }
 }
@@ -206,4 +289,28 @@ private data class ThresholdsDto(
 @Serializable
 private data class ThresholdPolicyDto(
     val highThreshold: Double,
+)
+
+@Serializable
+private data class MetricsDto(
+    val model: String,
+    val targetMode: String,
+    val featureCount: Int,
+    val trainRowCount: Int,
+    val calibrationRowCount: Int,
+    val testRowCount: Int,
+    val topFeatureImportances: List<FeatureImportanceDto> = emptyList(),
+    val runtimeLookupMetadata: RuntimeLookupMetadataDto? = null,
+)
+
+@Serializable
+private data class FeatureImportanceDto(
+    val feature: String,
+)
+
+@Serializable
+private data class RuntimeLookupMetadataDto(
+    val regionCount: Int,
+    val massifCount: Int,
+    val canyonCount: Int,
 )

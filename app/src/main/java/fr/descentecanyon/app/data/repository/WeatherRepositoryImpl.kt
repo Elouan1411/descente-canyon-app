@@ -25,7 +25,7 @@ class WeatherRepositoryImpl @Inject constructor(
         return withContext(ioDispatcher) {
             runCatching {
                 val target = WeatherTargetResolver.resolve(detail)
-                    ?: throw IllegalStateException("Aucune coordonnee exploitable pour la meteo")
+                    ?: throw IllegalStateException("Aucune coordonnée exploitable pour la météo")
                 val response = remoteSource.fetchForecast(target.latitude, target.longitude)
                 val zoneId = response.timezone.toZoneIdOrUtc()
                 val now = ZonedDateTime.now(zoneId)
@@ -35,7 +35,7 @@ class WeatherRepositoryImpl @Inject constructor(
 
                 val hourly = response.hourly.toHourlyPrecipitation()
                 if (hourly.isEmpty()) {
-                    throw IllegalStateException("Aucune donnee de precipitation disponible")
+                    throw IllegalStateException("Aucune donnée de précipitation disponible")
                 }
 
                 val pastHours = hourly.filter { !it.dateTime.atZone(zoneId).isAfter(now) }

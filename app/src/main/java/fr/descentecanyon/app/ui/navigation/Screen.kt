@@ -30,4 +30,7 @@ sealed interface Screen {
 
     @Serializable
     data class CanyonPointsMap(val canyonId: Int) : Screen
+
+    @Serializable
+    data class DebitPredictionInfo(val lookupSourceName: String? = null) : Screen
 }

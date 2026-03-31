@@ -109,6 +109,7 @@ fun CanyonDetailScreen(
     onBackClick: () -> Unit,
     onReportDebitClick: () -> Unit,
     onShowMapClick: () -> Unit,
+    onOpenPredictionInfo: (String?) -> Unit,
     onOpenPhotoGallery: (Long) -> Unit,
     modifier: Modifier = Modifier,
     contentPadding: PaddingValues = PaddingValues(),
@@ -215,6 +216,7 @@ fun CanyonDetailScreen(
                         predictions = uiState.predictions,
                         isLoadingPredictions = uiState.isLoadingPredictions,
                         predictionError = uiState.predictionError,
+                        onOpenPredictionInfo = onOpenPredictionInfo,
                         downloadingPhotoIds = uiState.downloadingPhotoIds,
                         onOpenPhotoGallery = onOpenPhotoGallery,
                         bottomContentPadding = contentPadding.calculateBottomPadding() + 96.dp,
@@ -261,6 +263,7 @@ private fun CanyonDetailContent(
     predictions: CanyonDebitPredictions?,
     isLoadingPredictions: Boolean,
     predictionError: String?,
+    onOpenPredictionInfo: (String?) -> Unit,
     downloadingPhotoIds: Set<Long>,
     onOpenPhotoGallery: (Long) -> Unit,
     bottomContentPadding: Dp = 0.dp,
@@ -301,6 +304,7 @@ private fun CanyonDetailContent(
                 predictions = predictions,
                 isLoading = isLoadingPredictions,
                 error = predictionError,
+                onInfoClick = { onOpenPredictionInfo(predictions?.lookupSource?.name) },
             )
         }
 

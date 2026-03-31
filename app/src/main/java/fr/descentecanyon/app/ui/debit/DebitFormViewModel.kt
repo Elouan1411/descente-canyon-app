@@ -146,8 +146,8 @@ class DebitFormViewModel @Inject constructor(
                         it.copy(
                             isSubmitting = false,
                             transientMessage = when (status) {
-                                DebitSubmissionStatus.SUBMITTED -> "Debit envoye"
-                                DebitSubmissionStatus.QUEUED_OFFLINE -> "Debit enregistre hors-ligne"
+                                DebitSubmissionStatus.SUBMITTED -> "Débit envoyé"
+                                DebitSubmissionStatus.QUEUED_OFFLINE -> "Débit enregistré hors-ligne"
                             },
                             lastSubmissionStatus = status,
                         )
@@ -157,7 +157,7 @@ class DebitFormViewModel @Inject constructor(
                     _uiState.update {
                         it.copy(
                             isSubmitting = false,
-                            error = throwable.message ?: "Impossible d'envoyer le debit.",
+                            error = throwable.message ?: "Impossible d'envoyer le débit.",
                         )
                     }
                 },
@@ -175,7 +175,7 @@ class DebitFormViewModel @Inject constructor(
 
     private fun validate(state: DebitFormUiState): String? {
         if (state.observerName.isBlank()) return "Le nom est obligatoire."
-        if (!state.isConnected && state.observerEmail.isBlank()) return "L'email est obligatoire hors connexion."
+        if (!state.isConnected && state.observerEmail.isBlank()) return "L'e-mail est obligatoire hors connexion."
         return null
     }
 }
