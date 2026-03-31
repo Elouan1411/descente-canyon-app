@@ -6,6 +6,9 @@ import fr.descentecanyon.app.domain.model.CanyonDetail
 import fr.descentecanyon.app.domain.model.CanyonWeather
 import fr.descentecanyon.app.domain.model.HourlyPrecipitation
 import fr.descentecanyon.app.domain.repository.WeatherRepository
+import java.net.ConnectException
+import java.net.SocketTimeoutException
+import java.net.UnknownHostException
 import java.time.Instant
 import java.time.LocalDateTime
 import java.time.ZoneId
@@ -13,7 +16,9 @@ import java.time.ZonedDateTime
 import javax.inject.Inject
 import javax.inject.Singleton
 import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.withContext
+import java.nio.channels.UnresolvedAddressException
 
 @Singleton
 class WeatherRepositoryImpl @Inject constructor(
@@ -26,7 +31,9 @@ class WeatherRepositoryImpl @Inject constructor(
             runCatching {
                 val target = WeatherTargetResolver.resolve(detail)
                     ?: throw IllegalStateException("Aucune coordonnée exploitable pour la météo")
-                val response = remoteSource.fetchForecast(target.latitude, target.longitude)
+                val response = retryOpenMeteoRequest {
+                    remoteSource.fetchForecast(target.latitude, target.longitude)
+                }
                 val zoneId = response.timezone.toZoneIdOrUtc()
                 val now = ZonedDateTime.now(zoneId)
                     .withMinute(0)
@@ -91,5 +98,37 @@ class WeatherRepositoryImpl @Inject constructor(
 
     private fun List<HourlyPrecipitation>.maxLast(hours: Int): Double {
         return takeLast(hours).maxOfOrNull { it.precipitationMm } ?: 0.0
+    }
+
+    private suspend fun <T> retryOpenMeteoRequest(block: suspend () -> T): T {
+        var lastFailure: Throwable? = null
+        repeat(OPEN_METEO_ATTEMPTS) { attempt ->
+            try {
+                return block()
+            } catch (throwable: Throwable) {
+                lastFailure = throwable
+                if (attempt == OPEN_METEO_ATTEMPTS - 1 || !throwable.isRetryableOpenMeteoFailure()) {
+                    throw throwable
+                }
+                delay(OPEN_METEO_RETRY_DELAY_MS)
+            }
+        }
+        throw lastFailure ?: IllegalStateException("Open-Meteo request failed")
+    }
+
+    private fun Throwable.isRetryableOpenMeteoFailure(): Boolean {
+        return generateSequence(this) { it.cause }.any { cause ->
+            cause is UnknownHostException ||
+                cause is UnresolvedAddressException ||
+                cause is ConnectException ||
+                cause is SocketTimeoutException ||
+                cause.message?.contains("timeout", ignoreCase = true) == true ||
+                cause.message?.contains("timed out", ignoreCase = true) == true
+        }
+    }
+
+    private companion object {
+        const val OPEN_METEO_ATTEMPTS = 2
+        const val OPEN_METEO_RETRY_DELAY_MS = 600L
     }
 }

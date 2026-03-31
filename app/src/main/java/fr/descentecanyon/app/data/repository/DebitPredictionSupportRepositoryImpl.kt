@@ -11,13 +11,18 @@ import fr.descentecanyon.app.domain.model.DailyWeatherValue
 import fr.descentecanyon.app.domain.model.DebitPredictionSupport
 import fr.descentecanyon.app.domain.model.WeatherTarget
 import fr.descentecanyon.app.domain.repository.DebitPredictionSupportRepository
+import java.net.ConnectException
+import java.net.SocketTimeoutException
+import java.net.UnknownHostException
 import java.time.Instant
 import java.time.LocalDate
 import java.time.ZoneId
 import javax.inject.Inject
 import javax.inject.Singleton
 import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.withContext
+import java.nio.channels.UnresolvedAddressException
 
 @Singleton
 class DebitPredictionSupportRepositoryImpl @Inject constructor(
@@ -48,11 +53,13 @@ class DebitPredictionSupportRepositoryImpl @Inject constructor(
 
     private suspend fun loadDailyWeather(canyonId: Int, target: WeatherTarget): DailyWeatherLoadResult {
         val forecastResult = runCatching {
-            remoteSource.fetchDailyForecast(
-                latitude = target.latitude,
-                longitude = target.longitude,
-                forecastDays = FORECAST_DAYS,
-            )
+            retryOpenMeteoRequest {
+                remoteSource.fetchDailyForecast(
+                    latitude = target.latitude,
+                    longitude = target.longitude,
+                    forecastDays = FORECAST_DAYS,
+                )
+            }
         }
         if (forecastResult.isFailure) {
             return loadCachedFallback(canyonId)
@@ -60,18 +67,21 @@ class DebitPredictionSupportRepositoryImpl @Inject constructor(
         }
 
         val forecast = forecastResult.getOrThrow()
+        val forecastRows = forecast.toDailyValues(DailyWeatherSource.FORECAST)
         val zoneId = forecast.timezone.toZoneIdOrUtc()
         val today = LocalDate.now(zoneId)
         val archiveStart = today.minusDays(LOOKBACK_DAYS)
         val archiveEnd = today.minusDays(1)
 
         val archiveRows = runCatching {
-            remoteSource.fetchDailyArchive(
-                latitude = target.latitude,
-                longitude = target.longitude,
-                startDate = archiveStart.toString(),
-                endDate = archiveEnd.toString(),
-            ).toDailyValues(DailyWeatherSource.ARCHIVE)
+            retryOpenMeteoRequest {
+                remoteSource.fetchDailyArchive(
+                    latitude = target.latitude,
+                    longitude = target.longitude,
+                    startDate = archiveStart.toString(),
+                    endDate = archiveEnd.toString(),
+                )
+            }.toDailyValues(DailyWeatherSource.ARCHIVE)
         }.getOrElse { throwable ->
             val cachedArchive = dailyWeatherDao.getByCanyonIdAndDateRange(
                 canyonId = canyonId,
@@ -86,10 +96,14 @@ class DebitPredictionSupportRepositoryImpl @Inject constructor(
                     usedCache = true,
                 )
             }
-            throw throwable
+            return DailyWeatherLoadResult(
+                timezone = forecast.timezone,
+                fetchedAt = Instant.now(),
+                dailyWeather = forecastRows,
+                usedCache = false,
+            )
         }
 
-        val forecastRows = forecast.toDailyValues(DailyWeatherSource.FORECAST)
         val mergedRows = (archiveRows + forecastRows)
             .associateBy { it.date }
             .values
@@ -210,6 +224,33 @@ class DebitPredictionSupportRepositoryImpl @Inject constructor(
         return runCatching { ZoneId.of(this) }.getOrDefault(ZoneId.of("UTC"))
     }
 
+    private suspend fun <T> retryOpenMeteoRequest(block: suspend () -> T): T {
+        var lastFailure: Throwable? = null
+        repeat(OPEN_METEO_ATTEMPTS) { attempt ->
+            try {
+                return block()
+            } catch (throwable: Throwable) {
+                lastFailure = throwable
+                if (attempt == OPEN_METEO_ATTEMPTS - 1 || !throwable.isRetryableOpenMeteoFailure()) {
+                    throw throwable
+                }
+                delay(OPEN_METEO_RETRY_DELAY_MS)
+            }
+        }
+        throw lastFailure ?: IllegalStateException("Open-Meteo request failed")
+    }
+
+    private fun Throwable.isRetryableOpenMeteoFailure(): Boolean {
+        return generateSequence(this) { it.cause }.any { cause ->
+            cause is UnknownHostException ||
+                cause is UnresolvedAddressException ||
+                cause is ConnectException ||
+                cause is SocketTimeoutException ||
+                cause.message?.contains("timeout", ignoreCase = true) == true ||
+                cause.message?.contains("timed out", ignoreCase = true) == true
+        }
+    }
+
     private data class DailyWeatherLoadResult(
         val timezone: String,
         val fetchedAt: Instant,
@@ -221,5 +262,7 @@ class DebitPredictionSupportRepositoryImpl @Inject constructor(
         private const val LOOKBACK_DAYS = 30L
         private const val FORECAST_DAYS = 3
         private const val PRUNE_AFTER_DAYS = 45L
+        private const val OPEN_METEO_ATTEMPTS = 2
+        private const val OPEN_METEO_RETRY_DELAY_MS = 600L
     }
 }

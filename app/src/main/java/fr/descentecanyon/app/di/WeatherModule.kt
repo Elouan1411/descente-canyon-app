@@ -42,9 +42,9 @@ object WeatherModule {
             }
 
             install(HttpTimeout) {
-                requestTimeoutMillis = 15_000
-                connectTimeoutMillis = 15_000
-                socketTimeoutMillis = 15_000
+                requestTimeoutMillis = 25_000
+                connectTimeoutMillis = 20_000
+                socketTimeoutMillis = 25_000
             }
         }
     }

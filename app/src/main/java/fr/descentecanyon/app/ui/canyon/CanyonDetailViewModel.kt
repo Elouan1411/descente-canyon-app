@@ -22,6 +22,8 @@ import java.net.ConnectException
 import java.net.SocketTimeoutException
 import java.net.UnknownHostException
 import java.nio.channels.UnresolvedAddressException
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -68,6 +70,7 @@ class CanyonDetailViewModel @Inject constructor(
 
     private val _uiState = MutableStateFlow(CanyonDetailUiState())
     val uiState: StateFlow<CanyonDetailUiState> = _uiState.asStateFlow()
+    private var predictionLoadJob: Job? = null
 
     init {
         observePhotos(canyonId)
@@ -80,6 +83,7 @@ class CanyonDetailViewModel @Inject constructor(
 
     fun loadCanyon(id: Int) {
         viewModelScope.launch {
+            predictionLoadJob?.cancel()
             _uiState.update {
                 it.copy(
                     isLoading = true,
@@ -131,7 +135,7 @@ class CanyonDetailViewModel @Inject constructor(
                             )
                         }
                         loadWeather(detail)
-                        loadPredictions(detail)
+                        schedulePredictions(detail)
                     },
                     onFailure = { throwable ->
                         _uiState.update {
@@ -141,7 +145,7 @@ class CanyonDetailViewModel @Inject constructor(
                                 isLoadingDebits = false,
                                 isLoadingWeather = false,
                                 isLoadingPredictions = false,
-                                error = throwable.message ?: "Erreur inconnue",
+                                error = throwable.toFriendlyCanyonDetailMessage(),
                             )
                         }
                     },
@@ -167,7 +171,7 @@ class CanyonDetailViewModel @Inject constructor(
                         it.copy(
                             weather = null,
                             isLoadingWeather = false,
-                            weatherError = throwable.message ?: "Météo indisponible",
+                            weatherError = throwable.toFriendlyWeatherMessage(),
                         )
                     }
                 },
@@ -237,7 +241,7 @@ class CanyonDetailViewModel @Inject constructor(
                 _uiState.update {
                     it.copy(
                         isLoadingDebits = false,
-                        transientMessage = throwable.message ?: "Impossible de charger les débits",
+                        transientMessage = throwable.toFriendlyDebitsMessage(),
                     )
                 }
             },
@@ -312,37 +316,68 @@ class CanyonDetailViewModel @Inject constructor(
         }
     }
 
-    private fun loadPredictions(detail: CanyonDetail) {
-        viewModelScope.launch {
-            getCanyonDebitPredictionsUseCase(detail).fold(
-                onSuccess = { predictions ->
-                    _uiState.update {
-                        it.copy(
-                            predictions = predictions,
-                            isLoadingPredictions = false,
-                            predictionError = null,
-                        )
-                    }
-                },
-                onFailure = { throwable ->
-                    _uiState.update {
-                        it.copy(
-                            predictions = null,
-                            isLoadingPredictions = false,
-                            predictionError = throwable.message ?: "Estimation du débit indisponible",
-                        )
-                    }
-                },
-            )
+    private suspend fun loadPredictions(detail: CanyonDetail) {
+        getCanyonDebitPredictionsUseCase(detail).fold(
+            onSuccess = { predictions ->
+                _uiState.update {
+                    it.copy(
+                        predictions = predictions,
+                        isLoadingPredictions = false,
+                        predictionError = null,
+                    )
+                }
+            },
+            onFailure = { throwable ->
+                _uiState.update {
+                    it.copy(
+                        predictions = null,
+                        isLoadingPredictions = false,
+                        predictionError = throwable.toFriendlyPredictionMessage(),
+                    )
+                }
+            },
+        )
+    }
+
+    private fun schedulePredictions(detail: CanyonDetail) {
+        predictionLoadJob?.cancel()
+        predictionLoadJob = viewModelScope.launch {
+            // Let the canyon screen settle before loading the heaviest remote/native prediction stack.
+            delay(PREDICTION_LOAD_DELAY_MS)
+            loadPredictions(detail)
+        }
+    }
+
+    private fun Throwable.toFriendlyCanyonDetailMessage(): String {
+        return "Impossible de charger cette fiche canyon pour le moment."
+    }
+
+    private fun Throwable.toFriendlyWeatherMessage(): String {
+        return if (isLikelyNetworkIssue()) {
+            "Impossible de récupérer la météo pour le moment."
+        } else {
+            "Météo indisponible pour le moment."
+        }
+    }
+
+    private fun Throwable.toFriendlyPredictionMessage(): String {
+        return if (isLikelyNetworkIssue()) {
+            "Impossible de calculer l'estimation du débit pour le moment."
+        } else {
+            "Estimation du débit indisponible pour le moment."
+        }
+    }
+
+    private fun Throwable.toFriendlyDebitsMessage(): String {
+        return if (isLikelyNetworkIssue()) {
+            "Impossible de charger les débits pour le moment."
+        } else {
+            "Débits indisponibles pour le moment."
         }
     }
 
     private fun Throwable.toFriendlyPhotoMessage(): String {
-        return if (isLikelyNetworkIssue()) {
-            "Impossible de charger la photo pour le moment."
-        } else {
-            message ?: "Impossible de charger la photo pour le moment."
-        }
+        return "Impossible de charger la photo pour le moment."
     }
 
     private fun Throwable.isLikelyNetworkIssue(): Boolean {
@@ -353,7 +388,13 @@ class CanyonDetailViewModel @Inject constructor(
                 cause is SocketTimeoutException ||
                 cause.message?.contains("Read timed out", ignoreCase = true) == true ||
                 cause.message?.contains("Read time out", ignoreCase = true) == true ||
+                cause.message?.contains("timeout", ignoreCase = true) == true ||
+                cause.message?.contains("timed out", ignoreCase = true) == true ||
                 cause.message?.contains("Unable to resolve host", ignoreCase = true) == true
         }
+    }
+
+    private companion object {
+        const val PREDICTION_LOAD_DELAY_MS = 800L
     }
 }
