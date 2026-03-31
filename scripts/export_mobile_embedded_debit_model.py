@@ -20,6 +20,21 @@ STATIC_FEATURE_NAMES = {
     "cascadeMaxM",
     "upstreamCatchmentAreaKm2",
     "hasWatershed",
+    "watershedHasGeometry",
+    "watershedPerimeterKm",
+    "watershedCompactnessCoefficient",
+    "watershedCircularityRatio",
+    "watershedBboxWidthKm",
+    "watershedBboxHeightKm",
+    "watershedBboxDiagonalKm",
+    "watershedBboxAreaKm2",
+    "watershedAreaToBboxRatio",
+    "watershedLengthProxyKm",
+    "watershedWidthProxyKm",
+    "watershedElongationRatio",
+    "watershedFormFactor",
+    "watershedShapeFactor",
+    "watershedGeometryVertexCount",
 }
 LOOKUP_FEATURE_NAMES = {
     "globalPastObsCount",
@@ -237,10 +252,12 @@ def find_high_threshold(
 def build_canyon_static_features(canyons_path: Path, watersheds_path: Path) -> dict[str, dict[str, float | None]]:
     canyon_lookup = load_canyon_lookup(canyons_path)
     watershed_lookup = load_watershed_lookup(watersheds_path)
+    from debit_pipeline_lib import compute_watershed_morphology_features
+
     result: dict[str, dict[str, float | None]] = {}
     for canyon_id, canyon in sorted(canyon_lookup.items()):
         watershed = watershed_lookup.get(canyon_id)
-        result[str(canyon_id)] = {
+        row = {
             "altitudeDepartM": float(canyon.get("altitudeDepart")) if canyon.get("altitudeDepart") is not None else None,
             "deniveleM": float(canyon.get("denivele")) if canyon.get("denivele") is not None else None,
             "longueurM": float(canyon.get("longueur")) if canyon.get("longueur") is not None else None,
@@ -248,6 +265,8 @@ def build_canyon_static_features(canyons_path: Path, watersheds_path: Path) -> d
             "upstreamCatchmentAreaKm2": float(watershed.get("upstreamCatchmentAreaKm2")) if watershed and watershed.get("upstreamCatchmentAreaKm2") is not None else None,
             "hasWatershed": 1.0 if watershed is not None else 0.0,
         }
+        row.update(compute_watershed_morphology_features(watershed))
+        result[str(canyon_id)] = row
     return result
 
 

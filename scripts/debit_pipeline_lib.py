@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import math
 import re
 import time
 import unicodedata
@@ -17,6 +18,7 @@ BASE_URL = "https://www.descente-canyon.com"
 OPEN_METEO_ARCHIVE_URL = "https://archive-api.open-meteo.com/v1/archive"
 DEFAULT_USER_AGENT = "DescenteCanyonDebitPipeline/0.1"
 DEFAULT_ASSUMED_OBSERVATION_HOUR = 8
+EARTH_RADIUS_KM = 6371.0088
 
 
 def get_beautiful_soup() -> Any:
@@ -773,6 +775,145 @@ def load_geo_points_lookup(geo_points_path: Path) -> dict[int, list[dict[str, An
 def load_watershed_lookup(watersheds_path: Path) -> dict[int, dict[str, Any]]:
     rows = load_json(watersheds_path)
     return {int(row["canyonId"]): row for row in rows}
+
+
+def compute_watershed_morphology_features(watershed: dict[str, Any] | None) -> dict[str, Any]:
+    features = {
+        "watershedHasGeometry": False,
+        "watershedPerimeterKm": None,
+        "watershedCompactnessCoefficient": None,
+        "watershedCircularityRatio": None,
+        "watershedBboxWidthKm": None,
+        "watershedBboxHeightKm": None,
+        "watershedBboxDiagonalKm": None,
+        "watershedBboxAreaKm2": None,
+        "watershedAreaToBboxRatio": None,
+        "watershedLengthProxyKm": None,
+        "watershedWidthProxyKm": None,
+        "watershedElongationRatio": None,
+        "watershedFormFactor": None,
+        "watershedShapeFactor": None,
+        "watershedGeometryVertexCount": None,
+    }
+    if watershed is None:
+        return features
+
+    area_km2 = watershed.get("upstreamCatchmentAreaKm2")
+    bbox = watershed.get("bbox")
+    geometry = watershed.get("geometry")
+
+    if bbox is not None and isinstance(bbox, list) and len(bbox) == 4:
+        min_lon, min_lat, max_lon, max_lat = [float(value) for value in bbox]
+        center_lat_rad = math.radians((min_lat + max_lat) / 2.0)
+        width_km = abs(math.radians(max_lon - min_lon) * EARTH_RADIUS_KM * math.cos(center_lat_rad))
+        height_km = abs(math.radians(max_lat - min_lat) * EARTH_RADIUS_KM)
+        diagonal_km = math.hypot(width_km, height_km)
+        bbox_area_km2 = width_km * height_km
+        features.update(
+            {
+                "watershedBboxWidthKm": round(width_km, 6),
+                "watershedBboxHeightKm": round(height_km, 6),
+                "watershedBboxDiagonalKm": round(diagonal_km, 6),
+                "watershedBboxAreaKm2": round(bbox_area_km2, 6),
+            }
+        )
+        if area_km2 is not None and bbox_area_km2 > 0:
+            features["watershedAreaToBboxRatio"] = round(float(area_km2) / bbox_area_km2, 6)
+
+    if geometry is None or not isinstance(geometry, dict):
+        return _finalize_watershed_shape_features(features, area_km2)
+
+    polygons = _extract_watershed_polygons(geometry)
+    if not polygons:
+        return _finalize_watershed_shape_features(features, area_km2)
+
+    reference_lat = _reference_latitude_for_polygons(polygons)
+    perimeter_km = 0.0
+    vertex_count = 0
+    for polygon in polygons:
+        if not polygon:
+            continue
+        exterior_ring = polygon[0]
+        if len(exterior_ring) < 2:
+            continue
+        perimeter_km += _ring_perimeter_km(exterior_ring, reference_lat)
+        vertex_count += max(len(exterior_ring) - 1, 0)
+
+    if perimeter_km > 0:
+        features["watershedHasGeometry"] = True
+        features["watershedPerimeterKm"] = round(perimeter_km, 6)
+        features["watershedGeometryVertexCount"] = vertex_count
+
+    return _finalize_watershed_shape_features(features, area_km2)
+
+
+def _finalize_watershed_shape_features(features: dict[str, Any], area_km2: Any) -> dict[str, Any]:
+    area_value = float(area_km2) if area_km2 is not None else None
+    perimeter_value = features.get("watershedPerimeterKm")
+    width_value = features.get("watershedBboxWidthKm")
+    height_value = features.get("watershedBboxHeightKm")
+
+    if area_value is not None and width_value is not None and height_value is not None:
+        length_proxy = max(width_value, height_value)
+        if length_proxy > 0:
+            width_proxy = area_value / length_proxy
+            features["watershedLengthProxyKm"] = round(length_proxy, 6)
+            features["watershedWidthProxyKm"] = round(width_proxy, 6)
+            if width_proxy > 0:
+                features["watershedElongationRatio"] = round(length_proxy / width_proxy, 6)
+            features["watershedFormFactor"] = round(area_value / (length_proxy * length_proxy), 6)
+            if area_value > 0:
+                features["watershedShapeFactor"] = round((length_proxy * length_proxy) / area_value, 6)
+
+    if area_value is not None and area_value > 0 and perimeter_value is not None and perimeter_value > 0:
+        features["watershedCompactnessCoefficient"] = round(
+            perimeter_value / (2.0 * math.sqrt(math.pi * area_value)),
+            6,
+        )
+        features["watershedCircularityRatio"] = round(
+            (4.0 * math.pi * area_value) / (perimeter_value * perimeter_value),
+            6,
+        )
+
+    return features
+
+
+def _extract_watershed_polygons(geometry: dict[str, Any]) -> list[list[list[list[float]]]]:
+    geometry_type = geometry.get("type")
+    coordinates = geometry.get("coordinates")
+    if geometry_type == "Polygon" and isinstance(coordinates, list):
+        return [coordinates]
+    if geometry_type == "MultiPolygon" and isinstance(coordinates, list):
+        return coordinates
+    return []
+
+
+def _reference_latitude_for_polygons(polygons: list[list[list[list[float]]]]) -> float:
+    latitudes: list[float] = []
+    for polygon in polygons:
+        for ring in polygon:
+            for point in ring:
+                if isinstance(point, list) and len(point) >= 2:
+                    latitudes.append(float(point[1]))
+    return sum(latitudes) / len(latitudes) if latitudes else 0.0
+
+
+def _ring_perimeter_km(ring: list[list[float]], reference_lat: float) -> float:
+    if len(ring) < 2:
+        return 0.0
+    total = 0.0
+    for start, end in zip(ring, ring[1:]):
+        total += _segment_length_km(start, end, reference_lat)
+    return total
+
+
+def _segment_length_km(start: list[float], end: list[float], reference_lat: float) -> float:
+    start_lon, start_lat = float(start[0]), float(start[1])
+    end_lon, end_lat = float(end[0]), float(end[1])
+    x_scale = EARTH_RADIUS_KM * math.cos(math.radians(reference_lat))
+    dx = math.radians(end_lon - start_lon) * x_scale
+    dy = math.radians(end_lat - start_lat) * EARTH_RADIUS_KM
+    return math.hypot(dx, dy)
 
 
 def build_weather_target(

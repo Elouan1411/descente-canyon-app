@@ -11,6 +11,7 @@ from typing import Any
 
 from debit_pipeline_lib import (
     compute_daily_precipitation_features,
+    compute_watershed_morphology_features,
     load_canyon_lookup,
     load_watershed_lookup,
     normalize_text,
@@ -142,6 +143,11 @@ def main() -> None:
     weather_rows = read_jsonl(Path(args.weather_daily_path))
     canyon_lookup = load_canyon_lookup(Path(args.canyons_path))
     watershed_lookup = load_watershed_lookup(Path(args.watersheds_path))
+    default_watershed_features = compute_watershed_morphology_features(None)
+    watershed_features_by_canyon = {
+        canyon_id: compute_watershed_morphology_features(watershed)
+        for canyon_id, watershed in watershed_lookup.items()
+    }
 
     observation_window_by_id = {row["observationId"]: row for row in observation_windows}
     observation_to_merged: dict[str, dict[str, Any]] = {}
@@ -240,11 +246,11 @@ def main() -> None:
                 "altitudeDepartM": canyon.get("altitudeDepart"),
                 "deniveleM": canyon.get("denivele"),
                 "longueurM": canyon.get("longueur"),
-                "cascadeMaxM": canyon.get("cascadeMax"),
-                "upstreamCatchmentAreaKm2": watershed.get("upstreamCatchmentAreaKm2") if watershed else None,
-                "hasWatershed": watershed is not None,
-                "commentText": observation.get("comment"),
-                "commentTokenCount": len(normalize_text(observation.get("comment")).split()) if observation.get("comment") else 0,
+            "cascadeMaxM": canyon.get("cascadeMax"),
+            "upstreamCatchmentAreaKm2": watershed.get("upstreamCatchmentAreaKm2") if watershed else None,
+            "hasWatershed": watershed is not None,
+            "commentText": observation.get("comment"),
+            "commentTokenCount": len(normalize_text(observation.get("comment")).split()) if observation.get("comment") else 0,
                 "globalPastObsCount": counter_total(global_class_counts),
                 "regionPastObsCount": counter_total(region_class_counts[region_key]),
                 "massifPastObsCount": counter_total(massif_class_counts[massif_key]),
@@ -273,6 +279,7 @@ def main() -> None:
                 "historicallySnowmeltCanyon": canyon_history["snowmeltCount"] >= 2,
                 "historicallyAtypicalCanyon": canyon_history["regulatedCount"] >= 2 or canyon_history["snowmeltCount"] >= 2,
             }
+            feature_row.update(watershed_features_by_canyon.get(canyon_id, default_watershed_features))
             if observation_date is not None:
                 feature_row.update(compute_daily_precipitation_features(daily_rows, observation_date))
             if latest_weather is not None:
