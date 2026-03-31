@@ -394,6 +394,30 @@ def main() -> int:
 
     sources.append(
         {
+            "name": "madeira-dtm5m",
+            "mode": "derive_local_hydrology",
+            "dem": "build/watersheds/madeira-national-dem/raw/madeira_5m.tif",
+            "srs": "EPSG:5016",
+            "bufferKm": 10.0,
+            "processingResolutionM": 10.0,
+            "candidateStrategy": "nearest_channel",
+            "searchRadiusM": 120.0,
+            "channelMinUpaKm2": 0.05,
+            "autoPrepare": {
+                "provider": "madeira-wcs",
+                "outputDir": "build/watersheds/madeira-national-dem",
+                "bufferKm": 10.0,
+                "alwaysPrepare": True,
+            },
+            "match": {
+                "pays": "Portugal",
+                "region": "Madeira"
+            }
+        }
+    )
+
+    sources.append(
+        {
             "name": "portugal-dgt-mdt2m",
             "mode": "derive_local_hydrology",
             "dem": "build/watersheds/portugal-national-dem/vrt/_all_downloaded.vrt",

@@ -70,6 +70,7 @@ python scripts/merge_country_watershed_runs.py \
 - preparation generique pays par manifest: `scripts/prepare_national_dem.py`
 - preparation Italie nationale TINITALY: `scripts/prepare_tinitaly_dem.py`
 - preparation Portugal DGT MDT-2m: `scripts/prepare_portugal_dem.py`
+- preparation Madeira DTM 5m: `scripts/prepare_madeira_dem.py`
 - plan des geocells Copernicus: `scripts/plan_copernicus_geocells.py`
 - derive IGN hydrology rasters: `scripts/derive_ign_hydrology.py`
 - workflow local canyon sur DEM IGN: `scripts/run_local_ign_canyon_workflow.py`
@@ -209,7 +210,12 @@ Pour `Copernicus` et `MERIT`, il faut renseigner les manifests d'URL si tu veux 
 
 Pour les sources nationales hors France, le principe recommande est le meme : telecharger seulement les unites utiles et reconstruire un VRT global `_all_downloaded.vrt`, ce qui permet de traverser proprement les limites entre fichiers ou subdivisions administratives.
 
-Le Portugal est prepare dans la config hybride via une source dynamique `DGT MDT-2m` (`EPSG:3763`) telechargee autour des canyons via l'API publique DGT.
+Le Portugal est prepare dans la config hybride via deux sources distinctes :
+
+- `Madeira` : DTM 5m officiel regional via WCS (`EPSG:5016`)
+- `Portugal continental` : DGT MDT-2m via API (`EPSG:3763`)
+
+Les `Açores` restent a traiter a part; en l'etat ils ne sont pas encore couverts par une source plus precise que MERIT/Copernicus dans le pipeline.
 
 Pour l'Italie complete, le pipeline utilise `TINITALY 1.1` (10 m, couverture nationale) comme source principale, avec l'override regional Ligurie conserve pour les canyons de cette region.
 

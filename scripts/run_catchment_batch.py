@@ -479,6 +479,24 @@ def auto_prepare_source(
         prepared["preparedDynamically"] = True
         return prepared
 
+    if provider == "madeira-wcs":
+        local_output_dir = output_dir / "prepared_sources" / f"madeira-{canyon['id']}"
+        command = [
+            sys.executable,
+            "scripts/prepare_madeira_dem.py",
+            "--output-dir",
+            str(local_output_dir),
+            "--buffer-km",
+            str(auto_prepare.get("bufferKm", source.get("bufferKm", 10.0))),
+        ]
+        for point in points:
+            command.extend(["--point", f"{point['latitude']},{point['longitude']}"])
+        subprocess.run(command, check=True)
+        prepared = dict(source)
+        prepared["dem"] = str(local_output_dir / "raw" / "madeira_5m.tif")
+        prepared["preparedDynamically"] = True
+        return prepared
+
     if provider == "tinitaly-bulk":
         command = [
             sys.executable,
