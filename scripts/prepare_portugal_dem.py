@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import subprocess
 import time
 import urllib.parse
@@ -101,10 +102,12 @@ def download_file(url: str, destination: Path) -> None:
     destination.parent.mkdir(parents=True, exist_ok=True)
     if destination.exists() and destination.stat().st_size > 0:
         return
-    temp_path = destination.with_suffix(destination.suffix + ".part")
+    temp_path = destination.with_suffix(destination.suffix + f".{os.getpid()}.part")
     last_error: Exception | None = None
     for attempt in range(1, 6):
         try:
+            if destination.exists() and destination.stat().st_size > 0:
+                return
             request = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
             with urllib.request.urlopen(request, timeout=300) as response, open(temp_path, "wb") as handle:
                 while True:
@@ -112,6 +115,9 @@ def download_file(url: str, destination: Path) -> None:
                     if not chunk:
                         break
                     handle.write(chunk)
+            if destination.exists() and destination.stat().st_size > 0:
+                temp_path.unlink(missing_ok=True)
+                return
             temp_path.replace(destination)
             return
         except (HTTPError, URLError) as exc:
