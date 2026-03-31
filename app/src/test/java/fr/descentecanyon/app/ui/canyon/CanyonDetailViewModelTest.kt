@@ -264,6 +264,46 @@ class CanyonDetailViewModelTest {
         assertFalse(viewModel.uiState.value.isLoadingPredictions)
     }
 
+    @Test
+    @OptIn(ExperimentalCoroutinesApi::class)
+    fun `detail refresh failure keeps preview content available`() = runTest {
+        coEvery { canyonRepository.getCanyonPreview(42) } returns Result.success(detail())
+        coEvery { canyonRepository.getCanyonDetail(42) } returns Result.failure(IllegalStateException("boom"))
+        every { canyonRepository.observeWatershed(42) } returns flowOf(null)
+        coEvery { weatherRepository.getCanyonWeather(any()) } returns Result.success(weather())
+        coEvery { debitPredictionRepository.getPredictions(any()) } returns Result.success(predictions())
+        every { photoRepository.observePhotos(42) } returns flowOf(detail().photos)
+        coEvery { photoRepository.refreshPhotos(42) } returns Result.success(detail().photos)
+        every { debitRepository.getDebitsForCanyon(42) } returns flowOf(Result.success(detail().debits))
+        coEvery { debitRepository.refreshDebits(42) } returns Result.success(detail().debits)
+        every { favoritesRepository.isFavorite(42) } returns flowOf(false)
+        every { connectivityObserver.observe() } returns flowOf(true)
+
+        val viewModel = CanyonDetailViewModel(
+            savedStateHandle = SavedStateHandle(mapOf("canyonId" to 42)),
+            getCanyonPreviewUseCase = getCanyonPreviewUseCase,
+            getCanyonDetailUseCase = getCanyonDetailUseCase,
+            getCanyonWeatherUseCase = getCanyonWeatherUseCase,
+            getCanyonDebitPredictionsUseCase = getCanyonDebitPredictionsUseCase,
+            toggleFavoriteUseCase = toggleFavoriteUseCase,
+            canyonRepository = canyonRepository,
+            photoRepository = photoRepository,
+            debitRepository = debitRepository,
+            downloadPhotoForOfflineUseCase = downloadPhotoForOfflineUseCase,
+            connectivityObserver = connectivityObserver,
+            favoritesRepository = favoritesRepository,
+        )
+
+        advanceUntilIdle()
+
+        assertEquals("Riolan", viewModel.uiState.value.canyonDetail?.canyon?.nom)
+        assertEquals("Impossible de charger cette fiche canyon pour le moment.", viewModel.uiState.value.transientMessage)
+        assertEquals(null, viewModel.uiState.value.error)
+        assertNotNull(viewModel.uiState.value.weather)
+        assertNotNull(viewModel.uiState.value.predictions)
+        assertFalse(viewModel.uiState.value.isRefreshingDetail)
+    }
+
     private fun detail() = CanyonDetail(
         canyon = Canyon(
             id = 42,

@@ -7,9 +7,11 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import fr.descentecanyon.app.di.DefaultDispatcher
 import fr.descentecanyon.app.domain.model.CanyonSearchItem
 import fr.descentecanyon.app.domain.model.SearchCriteria
+import fr.descentecanyon.app.domain.model.SearchResultSet
 import fr.descentecanyon.app.domain.model.SearchSortField
 import fr.descentecanyon.app.domain.model.SortDirection
 import fr.descentecanyon.app.domain.usecase.SearchCanyonsUseCase
+import fr.descentecanyon.app.perf.PerformanceTrace
 import javax.inject.Inject
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -72,34 +74,37 @@ class SearchViewModel @Inject constructor(
 ) : ViewModel() {
 
     private val initialCriteria = loadCriteria()
+    private val initialResultViewMode = loadResultViewMode()
     private val filtersFlow = MutableStateFlow(initialCriteria.sanitizedForPersistence().copy(query = ""))
     private val queryDraftFlow = MutableStateFlow(initialCriteria.query)
     private val appliedQueryFlow = MutableStateFlow(initialCriteria.query)
     private val locationFlow = MutableStateFlow(SearchLocationUiState())
-    private val resultViewModeFlow = MutableStateFlow(SearchResultViewMode.LIST)
+    private val resultViewModeFlow = MutableStateFlow(initialResultViewMode)
     private val selectedCanyonIdFlow = MutableStateFlow<Int?>(null)
     private val scrollResetRequestIdFlow = MutableStateFlow(0)
     private var queryDebounceJob: Job? = null
+    private var hasLoggedInitialResults = false
 
     private val _uiState = MutableStateFlow(
         SearchUiState(
             queryDraft = initialCriteria.query,
             criteria = initialCriteria,
             activeFilterCount = initialCriteria.activeFilterCount(),
+            resultViewMode = initialResultViewMode,
         )
     )
     val uiState: StateFlow<SearchUiState> = _uiState.asStateFlow()
 
     init {
+        PerformanceTrace.start(SEARCH_INITIAL_TRACE_KEY, "search_initial_load")
         viewModelScope.launch {
             combine(
                 searchCanyonsUseCase.observeCatalog(),
                 filtersFlow,
                 appliedQueryFlow,
                 locationFlow,
-                resultViewModeFlow,
-            ) { catalog, filters, appliedQuery, location, resultViewMode ->
-                PartialSearchComputationInput(
+            ) { catalog, filters, appliedQuery, location ->
+                SearchQueryInput(
                     catalog = catalog,
                     criteria = filters.copy(
                         query = appliedQuery,
@@ -107,48 +112,66 @@ class SearchViewModel @Inject constructor(
                         userLongitude = location.userLongitude,
                     ),
                     location = location,
-                    resultViewMode = resultViewMode,
                 )
             }
-                .combine(scrollResetRequestIdFlow) { partial, scrollResetRequestId ->
-                    partial.copy(scrollResetRequestId = scrollResetRequestId)
-                }
-                .combine(selectedCanyonIdFlow) { partial, selectedCanyonId ->
-                    SearchComputationInput(
-                        catalog = partial.catalog,
-                        criteria = partial.criteria,
-                        location = partial.location,
-                        resultViewMode = partial.resultViewMode,
-                        selectedCanyonId = selectedCanyonId,
-                        scrollResetRequestId = partial.scrollResetRequestId,
+                .mapLatest { input ->
+                    val computationStartedAt = monotonicNowMs()
+                    val resultSet = searchCanyonsUseCase(input.catalog, input.criteria)
+                    PerformanceTrace.logEvent(
+                        event = "search_compute",
+                        "catalogSize" to input.catalog.size,
+                        "resultCount" to resultSet.results.size,
+                        "queryLength" to input.criteria.query.length,
+                        "activeFilters" to input.criteria.activeFilterCount(),
+                        "sortField" to input.criteria.sortField,
+                        "sortDirection" to input.criteria.sortDirection,
+                        "durationMs" to (monotonicNowMs() - computationStartedAt),
+                    )
+                    SearchComputedState(
+                        criteria = input.criteria,
+                        location = input.location,
+                        resultSet = resultSet,
                     )
                 }
-                .mapLatest { input ->
-                    val resultSet = searchCanyonsUseCase(input.catalog, input.criteria)
+                .combine(resultViewModeFlow) { computed, resultViewMode ->
+                    computed to resultViewMode
+                }
+                .combine(scrollResetRequestIdFlow) { (computed, resultViewMode), scrollResetRequestId ->
+                    Triple(computed, resultViewMode, scrollResetRequestId)
+                }
+                .combine(selectedCanyonIdFlow) { (computed, resultViewMode, scrollResetRequestId), selectedCanyonId ->
                     SearchUiState(
                         queryDraft = queryDraftFlow.value,
-                        criteria = input.criteria,
-                        results = resultSet.results,
+                        criteria = computed.criteria,
+                        results = computed.resultSet.results,
                         isLoading = false,
                         isSearching = false,
                         error = null,
-                        resultViewMode = input.resultViewMode,
-                        availableCountries = resultSet.availableCountries,
-                        availableDepartments = resultSet.availableDepartments,
-                        activeFilterCount = input.criteria.activeFilterCount(),
-                        totalResultsCount = resultSet.totalResultsCount,
-                        isResultListDeferred = resultSet.isResultListDeferred,
-                        hasLocationPermission = input.location.hasLocationPermission,
-                        hasRequestedLocationPermission = input.location.hasRequestedLocationPermission,
-                        userLatitude = input.location.userLatitude,
-                        userLongitude = input.location.userLongitude,
-                        isLocating = input.location.isLocating,
-                        selectedCanyon = resultSet.results.firstOrNull { it.id == input.selectedCanyonId },
-                        scrollResetRequestId = input.scrollResetRequestId,
+                        resultViewMode = resultViewMode,
+                        availableCountries = computed.resultSet.availableCountries,
+                        availableDepartments = computed.resultSet.availableDepartments,
+                        activeFilterCount = computed.criteria.activeFilterCount(),
+                        totalResultsCount = computed.resultSet.totalResultsCount,
+                        isResultListDeferred = computed.resultSet.isResultListDeferred,
+                        hasLocationPermission = computed.location.hasLocationPermission,
+                        hasRequestedLocationPermission = computed.location.hasRequestedLocationPermission,
+                        userLatitude = computed.location.userLatitude,
+                        userLongitude = computed.location.userLongitude,
+                        isLocating = computed.location.isLocating,
+                        selectedCanyon = computed.resultSet.results.firstOrNull { it.id == selectedCanyonId },
+                        scrollResetRequestId = scrollResetRequestId,
                     )
                 }
                 .flowOn(searchDispatcher)
                 .catch { throwable ->
+                    if (!hasLoggedInitialResults) {
+                        hasLoggedInitialResults = true
+                        PerformanceTrace.end(
+                            key = SEARCH_INITIAL_TRACE_KEY,
+                            outcome = "failed",
+                            "error" to (throwable.message ?: throwable::class.simpleName),
+                        )
+                    }
                     _uiState.value = SearchUiState(
                         queryDraft = queryDraftFlow.value,
                         criteria = filtersFlow.value.copy(
@@ -169,6 +192,16 @@ class SearchViewModel @Inject constructor(
                     )
                 }
                 .collect { state ->
+                    if (!hasLoggedInitialResults) {
+                        hasLoggedInitialResults = true
+                        PerformanceTrace.end(
+                            key = SEARCH_INITIAL_TRACE_KEY,
+                            outcome = "ready",
+                            "totalResultsCount" to state.totalResultsCount,
+                            "resultCount" to state.results.size,
+                            "viewMode" to state.resultViewMode,
+                        )
+                    }
                     _uiState.update { current -> state.copy(error = current.error ?: state.error) }
                 }
         }
@@ -222,6 +255,7 @@ class SearchViewModel @Inject constructor(
 
     fun onResultViewModeChanged(mode: SearchResultViewMode) {
         resultViewModeFlow.value = mode
+        persistResultViewMode(mode)
         if (mode == SearchResultViewMode.LIST) selectedCanyonIdFlow.value = null
     }
 
@@ -297,6 +331,17 @@ class SearchViewModel @Inject constructor(
         savedStateHandle[SEARCH_CRITERIA_KEY] = json.encodeToString(criteria.sanitizedForPersistence())
     }
 
+    private fun loadResultViewMode(): SearchResultViewMode {
+        val raw = savedStateHandle.get<String>(SEARCH_RESULT_VIEW_MODE_KEY).orEmpty()
+        return raw.takeIf { it.isNotBlank() }
+            ?.let { value -> SearchResultViewMode.entries.firstOrNull { it.name == value } }
+            ?: SearchResultViewMode.LIST
+    }
+
+    private fun persistResultViewMode(mode: SearchResultViewMode) {
+        savedStateHandle[SEARCH_RESULT_VIEW_MODE_KEY] = mode.name
+    }
+
     private fun SortDirection.toggle(): SortDirection = if (this == SortDirection.ASC) SortDirection.DESC else SortDirection.ASC
 
     private fun SearchSortField.defaultDirection(): SortDirection {
@@ -308,25 +353,24 @@ class SearchViewModel @Inject constructor(
 
     companion object {
         private const val SEARCH_CRITERIA_KEY = "search_criteria"
+        private const val SEARCH_RESULT_VIEW_MODE_KEY = "search_result_view_mode"
+        private const val SEARCH_INITIAL_TRACE_KEY = "screen.search.initial"
         private val json = Json { ignoreUnknownKeys = true }
     }
 }
 
-private data class SearchComputationInput(
+private data class SearchQueryInput(
     val catalog: List<CanyonSearchItem>,
     val criteria: SearchCriteria,
     val location: SearchLocationUiState,
-    val resultViewMode: SearchResultViewMode,
-    val selectedCanyonId: Int?,
-    val scrollResetRequestId: Int,
 )
 
-private data class PartialSearchComputationInput(
-    val catalog: List<CanyonSearchItem>,
+private data class SearchComputedState(
     val criteria: SearchCriteria,
     val location: SearchLocationUiState,
-    val resultViewMode: SearchResultViewMode,
-    val scrollResetRequestId: Int = 0,
+    val resultSet: SearchResultSet,
 )
 
 private fun SearchCriteria.sanitizedForPersistence(): SearchCriteria = copy(userLatitude = null, userLongitude = null)
+
+private fun monotonicNowMs(): Long = System.nanoTime() / 1_000_000

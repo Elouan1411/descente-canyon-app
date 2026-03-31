@@ -19,6 +19,7 @@ import fr.descentecanyon.app.data.local.entity.CanyonRegulationEntity
 import fr.descentecanyon.app.data.local.entity.GeoPointEntity
 import fr.descentecanyon.app.data.local.entity.RegulationTextEntity
 import fr.descentecanyon.app.data.local.entity.WatershedEntity
+import fr.descentecanyon.app.perf.PerformanceTrace
 import java.io.FileNotFoundException
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -46,80 +47,195 @@ class EmbeddedAppDataImporter @Inject constructor(
         ensureWatershedsImported()
     }
 
-    suspend fun ensureCoreImported() {
+    suspend fun getCoreImportMode(): EmbeddedImportMode {
+        return readCoreImportPlan().mode
+    }
+
+    suspend fun ensureCoreImported(): EmbeddedImportOutcome {
+        val plan = readCoreImportPlan()
+        val manifest = plan.manifest
+        if (plan.mode == EmbeddedImportMode.SKIPPED) {
+            return EmbeddedImportOutcome(
+                dataset = EmbeddedImportDataset.CORE,
+                mode = EmbeddedImportMode.SKIPPED,
+                version = manifest.generatedAt,
+                expectedRowCount = manifest.expectedCoreRowCount,
+                importedRowCount = 0,
+            ).also { outcome ->
+                PerformanceTrace.logEvent(
+                    event = "embedded_core_import_skipped",
+                    "mode" to outcome.mode.logLabel,
+                    "datasetVersion" to outcome.version,
+                    "expectedRows" to outcome.expectedRowCount,
+                )
+            }
+        }
+
+        val mode = plan.mode
+        PerformanceTrace.start(
+            key = CORE_IMPORT_TRACE_KEY,
+            event = "embedded_core_import",
+            "mode" to mode.logLabel,
+            "datasetVersion" to manifest.generatedAt,
+            "expectedRows" to manifest.expectedCoreRowCount,
+        )
+
+        try {
+            val canyonRows = readCanyonRows()
+            val geoPointRows = readGeoPointRows()
+            val bibliographyEntries = readBibliographyEntries()
+            val canyonBibliography = readCanyonBibliography()
+            val regulationTexts = readRegulationTexts()
+            val canyonRegulations = readCanyonRegulations()
+            val existingCanyons = canyonDao.getByIdsChunked(canyonRows.map { it.id }).associateBy { it.id }
+
+            database.withTransaction {
+                bibliographyDao.clearLinks()
+                regulationDao.clearLinks()
+                bibliographyDao.clearEntries()
+                regulationDao.clearTexts()
+
+                canyonRows.forEach { row ->
+                    val existing = existingCanyons[row.id]
+                    val merged = row.toEntity(json).preservingLocalState(existing)
+                    if (canyonDao.insertIgnore(merged) == -1L) {
+                        canyonDao.update(merged)
+                    }
+                }
+
+                geoPointRows.map { it.toEntity() }
+                    .groupBy { it.canyonId }
+                    .forEach { (canyonId, points) ->
+                        geoPointDao.deleteByCanyonId(canyonId)
+                        points.chunked(500).forEach { chunk -> geoPointDao.insertAll(chunk) }
+                    }
+
+                bibliographyEntries.map { it.toEntity(json) }
+                    .chunked(300)
+                    .forEach { chunk -> bibliographyDao.insertEntries(chunk) }
+
+                canyonBibliography.map { it.toEntity() }
+                    .chunked(500)
+                    .forEach { chunk -> bibliographyDao.insertLinks(chunk) }
+
+                regulationTexts.map { it.toEntity(json) }
+                    .chunked(300)
+                    .forEach { chunk -> regulationDao.insertTexts(chunk) }
+
+                canyonRegulations.map { it.toEntity() }
+                    .chunked(500)
+                    .forEach { chunk -> regulationDao.insertLinks(chunk) }
+
+                appMetadataDao.insert(AppMetadataEntity(DATASET_VERSION_KEY, manifest.generatedAt))
+            }
+
+            return EmbeddedImportOutcome(
+                dataset = EmbeddedImportDataset.CORE,
+                mode = mode,
+                version = manifest.generatedAt,
+                expectedRowCount = manifest.expectedCoreRowCount,
+                importedRowCount = canyonRows.size + geoPointRows.size + bibliographyEntries.size + canyonBibliography.size + regulationTexts.size + canyonRegulations.size,
+            ).also { outcome ->
+                PerformanceTrace.end(
+                    key = CORE_IMPORT_TRACE_KEY,
+                    outcome = "ok",
+                    "mode" to outcome.mode.logLabel,
+                    "datasetVersion" to outcome.version,
+                    "importedRows" to outcome.importedRowCount,
+                )
+            }
+        } catch (throwable: Throwable) {
+            PerformanceTrace.end(
+                key = CORE_IMPORT_TRACE_KEY,
+                outcome = "failed",
+                "mode" to mode.logLabel,
+                "datasetVersion" to manifest.generatedAt,
+                "error" to (throwable.message ?: throwable::class.simpleName),
+            )
+            throw throwable
+        }
+    }
+
+    private suspend fun readCoreImportPlan(): CoreImportPlan {
         val manifest = readManifest()
         val importedVersion = appMetadataDao.get(DATASET_VERSION_KEY)?.value
         val hasCanyons = canyonDao.count() > 0
         val hasBibliography = bibliographyDao.countEntries() > 0
         val hasRegulations = regulationDao.countTexts() > 0
-        if (importedVersion == manifest.generatedAt && hasCanyons && hasBibliography && hasRegulations) {
-            return
+        val mode = if (importedVersion == manifest.generatedAt && hasCanyons && hasBibliography && hasRegulations) {
+            EmbeddedImportMode.SKIPPED
+        } else if (hasCanyons || hasBibliography || hasRegulations) {
+            EmbeddedImportMode.DATASET_UPDATE
+        } else {
+            EmbeddedImportMode.FIRST_IMPORT
         }
-
-        val canyonRows = readCanyonRows()
-        val geoPointRows = readGeoPointRows()
-        val bibliographyEntries = readBibliographyEntries()
-        val canyonBibliography = readCanyonBibliography()
-        val regulationTexts = readRegulationTexts()
-        val canyonRegulations = readCanyonRegulations()
-        val existingCanyons = canyonDao.getByIdsChunked(canyonRows.map { it.id }).associateBy { it.id }
-
-        database.withTransaction {
-            bibliographyDao.clearLinks()
-            regulationDao.clearLinks()
-            bibliographyDao.clearEntries()
-            regulationDao.clearTexts()
-
-            canyonRows.forEach { row ->
-                val existing = existingCanyons[row.id]
-                val merged = row.toEntity(json).preservingLocalState(existing)
-                if (canyonDao.insertIgnore(merged) == -1L) {
-                    canyonDao.update(merged)
-                }
-            }
-
-            geoPointRows.map { it.toEntity() }
-                .groupBy { it.canyonId }
-                .forEach { (canyonId, points) ->
-                    geoPointDao.deleteByCanyonId(canyonId)
-                    points.chunked(500).forEach { chunk -> geoPointDao.insertAll(chunk) }
-                }
-
-            bibliographyEntries.map { it.toEntity(json) }
-                .chunked(300)
-                .forEach { chunk -> bibliographyDao.insertEntries(chunk) }
-
-            canyonBibliography.map { it.toEntity() }
-                .chunked(500)
-                .forEach { chunk -> bibliographyDao.insertLinks(chunk) }
-
-            regulationTexts.map { it.toEntity(json) }
-                .chunked(300)
-                .forEach { chunk -> regulationDao.insertTexts(chunk) }
-
-            canyonRegulations.map { it.toEntity() }
-                .chunked(500)
-                .forEach { chunk -> regulationDao.insertLinks(chunk) }
-
-            appMetadataDao.insert(AppMetadataEntity(DATASET_VERSION_KEY, manifest.generatedAt))
-        }
+        return CoreImportPlan(manifest = manifest, mode = mode)
     }
 
-    suspend fun ensureWatershedsImported() {
+    suspend fun ensureWatershedsImported(): EmbeddedImportOutcome {
         val manifest = readManifest()
         val watershedsVersion = manifest.versions["watersheds"] ?: manifest.generatedAt
         val importedVersion = appMetadataDao.get(WATERSHEDS_VERSION_KEY)?.value
         if (importedVersion == watershedsVersion) {
-            return
+            return EmbeddedImportOutcome(
+                dataset = EmbeddedImportDataset.WATERSHEDS,
+                mode = EmbeddedImportMode.SKIPPED,
+                version = watershedsVersion,
+                expectedRowCount = manifest.counts["watersheds"],
+                importedRowCount = 0,
+            ).also { outcome ->
+                PerformanceTrace.logEvent(
+                    event = "embedded_watersheds_import_skipped",
+                    "mode" to outcome.mode.logLabel,
+                    "datasetVersion" to outcome.version,
+                    "expectedRows" to outcome.expectedRowCount,
+                )
+            }
         }
 
-        val watersheds = readWatershedRows().orEmpty()
-        database.withTransaction {
-            watershedDao.clearAll()
-            watersheds.mapNotNull { it.toEntity(json) }
-                .chunked(300)
-                .forEach { chunk -> watershedDao.insertAll(chunk) }
-            appMetadataDao.insert(AppMetadataEntity(WATERSHEDS_VERSION_KEY, watershedsVersion))
+        val mode = if (watershedDao.count() > 0) EmbeddedImportMode.DATASET_UPDATE else EmbeddedImportMode.FIRST_IMPORT
+        PerformanceTrace.start(
+            key = WATERSHEDS_IMPORT_TRACE_KEY,
+            event = "embedded_watersheds_import",
+            "mode" to mode.logLabel,
+            "datasetVersion" to watershedsVersion,
+            "expectedRows" to manifest.counts["watersheds"],
+        )
+
+        try {
+            val watersheds = readWatershedRows().orEmpty()
+            database.withTransaction {
+                watershedDao.clearAll()
+                watersheds.mapNotNull { it.toEntity(json) }
+                    .chunked(300)
+                    .forEach { chunk -> watershedDao.insertAll(chunk) }
+                appMetadataDao.insert(AppMetadataEntity(WATERSHEDS_VERSION_KEY, watershedsVersion))
+            }
+
+            return EmbeddedImportOutcome(
+                dataset = EmbeddedImportDataset.WATERSHEDS,
+                mode = mode,
+                version = watershedsVersion,
+                expectedRowCount = manifest.counts["watersheds"],
+                importedRowCount = watersheds.size,
+            ).also { outcome ->
+                PerformanceTrace.end(
+                    key = WATERSHEDS_IMPORT_TRACE_KEY,
+                    outcome = "ok",
+                    "mode" to outcome.mode.logLabel,
+                    "datasetVersion" to outcome.version,
+                    "importedRows" to outcome.importedRowCount,
+                )
+            }
+        } catch (throwable: Throwable) {
+            PerformanceTrace.end(
+                key = WATERSHEDS_IMPORT_TRACE_KEY,
+                outcome = "failed",
+                "mode" to mode.logLabel,
+                "datasetVersion" to watershedsVersion,
+                "error" to (throwable.message ?: throwable::class.simpleName),
+            )
+            throw throwable
         }
     }
 
@@ -324,5 +440,41 @@ class EmbeddedAppDataImporter @Inject constructor(
     companion object {
         private const val DATASET_VERSION_KEY = "embedded_dataset_version"
         private const val WATERSHEDS_VERSION_KEY = "embedded_watersheds_version"
+        private const val CORE_IMPORT_TRACE_KEY = "embedded.import.core"
+        private const val WATERSHEDS_IMPORT_TRACE_KEY = "embedded.import.watersheds"
     }
 }
+
+data class EmbeddedImportOutcome(
+    val dataset: EmbeddedImportDataset,
+    val mode: EmbeddedImportMode,
+    val version: String,
+    val expectedRowCount: Int?,
+    val importedRowCount: Int,
+)
+
+enum class EmbeddedImportDataset {
+    CORE,
+    WATERSHEDS,
+}
+
+enum class EmbeddedImportMode(val logLabel: String) {
+    SKIPPED("normal_launch"),
+    FIRST_IMPORT("first_launch"),
+    DATASET_UPDATE("dataset_update"),
+}
+
+private data class CoreImportPlan(
+    val manifest: RoomImportManifest,
+    val mode: EmbeddedImportMode,
+)
+
+private val RoomImportManifest.expectedCoreRowCount: Int
+    get() = listOf(
+        "canyons",
+        "geo_points",
+        "bibliography_entries",
+        "canyon_bibliography",
+        "regulation_texts",
+        "canyon_regulations",
+    ).sumOf { counts[it] ?: 0 }

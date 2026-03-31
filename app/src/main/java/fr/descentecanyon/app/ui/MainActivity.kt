@@ -21,6 +21,7 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.produceState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -30,7 +31,9 @@ import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import dagger.hilt.android.AndroidEntryPoint
+import fr.descentecanyon.app.perf.PerformanceTrace
 import fr.descentecanyon.app.startup.AppStartupCoordinator
+import fr.descentecanyon.app.startup.StartupLaunchMode
 import fr.descentecanyon.app.ui.navigation.AppNavHost
 import fr.descentecanyon.app.ui.navigation.BottomNavItem
 import fr.descentecanyon.app.ui.navigation.Screen
@@ -44,6 +47,10 @@ class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        PerformanceTrace.logEvent(
+            event = "main_activity_created",
+            "isColdStart" to (savedInstanceState == null),
+        )
         enableEdgeToEdge()
         lifecycleScope.launch {
             appStartupCoordinator.observeConnectivity()
@@ -61,17 +68,26 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 private fun AppStartupScreen(appStartupCoordinator: AppStartupCoordinator) {
-    val startupState by produceState<StartupUiState>(initialValue = StartupUiState.Loading, key1 = appStartupCoordinator) {
+    val startupState by produceState<StartupUiState>(initialValue = StartupUiState.Resolving, key1 = appStartupCoordinator) {
         value = runCatching {
-            appStartupCoordinator.initialize()
-            StartupUiState.Ready
+            when (appStartupCoordinator.resolveLaunchMode()) {
+                StartupLaunchMode.NON_BLOCKING -> StartupUiState.AppVisible(isBackgroundInitializing = true)
+                StartupLaunchMode.BLOCKING_IMPORT -> {
+                    PerformanceTrace.logEvent("startup_blocking_ui_required")
+                    runStartupInitialization(appStartupCoordinator)
+                    StartupUiState.AppVisible(isBackgroundInitializing = false)
+                }
+            }
         }.getOrElse { throwable ->
             StartupUiState.Error(throwable.message ?: "Initialisation impossible")
         }
     }
 
     when (val state = startupState) {
-        StartupUiState.Loading -> {
+        StartupUiState.Resolving -> {
+            LaunchedEffect(Unit) {
+                PerformanceTrace.logEvent("startup_loading_ui_visible")
+            }
             Box(
                 modifier = Modifier.fillMaxSize(),
                 contentAlignment = Alignment.Center,
@@ -80,7 +96,21 @@ private fun AppStartupScreen(appStartupCoordinator: AppStartupCoordinator) {
             }
         }
 
-        StartupUiState.Ready -> MainScreen()
+        is StartupUiState.AppVisible -> {
+            if (state.isBackgroundInitializing) {
+                LaunchedEffect(appStartupCoordinator) {
+                    runCatching {
+                        runStartupInitialization(appStartupCoordinator)
+                    }.onFailure { throwable ->
+                        PerformanceTrace.logEvent(
+                            event = "startup_background_initialize_failed",
+                            "error" to (throwable.message ?: throwable::class.simpleName),
+                        )
+                    }
+                }
+            }
+            MainScreen()
+        }
 
         is StartupUiState.Error -> {
             Box(
@@ -94,13 +124,16 @@ private fun AppStartupScreen(appStartupCoordinator: AppStartupCoordinator) {
 }
 
 private sealed interface StartupUiState {
-    data object Loading : StartupUiState
-    data object Ready : StartupUiState
+    data object Resolving : StartupUiState
+    data class AppVisible(val isBackgroundInitializing: Boolean) : StartupUiState
     data class Error(val message: String) : StartupUiState
 }
 
 @Composable
 private fun MainScreen() {
+    androidx.compose.runtime.LaunchedEffect(Unit) {
+        PerformanceTrace.logEvent("main_screen_visible")
+    }
     val navController = rememberNavController()
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentDestination = navBackStackEntry?.destination
@@ -183,4 +216,21 @@ internal fun handleBottomNavClick(
     }
 
     navigate(item.screen)
+}
+
+private const val STARTUP_INITIALIZE_TRACE_KEY = "startup.initialize"
+
+private suspend fun runStartupInitialization(appStartupCoordinator: AppStartupCoordinator) {
+    PerformanceTrace.start(key = STARTUP_INITIALIZE_TRACE_KEY, event = "startup_initialize")
+    try {
+        appStartupCoordinator.initialize()
+        PerformanceTrace.end(key = STARTUP_INITIALIZE_TRACE_KEY, outcome = "ready")
+    } catch (throwable: Throwable) {
+        PerformanceTrace.end(
+            key = STARTUP_INITIALIZE_TRACE_KEY,
+            outcome = "failed",
+            "error" to (throwable.message ?: throwable::class.simpleName),
+        )
+        throw throwable
+    }
 }

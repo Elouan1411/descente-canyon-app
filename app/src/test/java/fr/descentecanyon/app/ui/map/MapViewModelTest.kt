@@ -1,5 +1,6 @@
 package fr.descentecanyon.app.ui.map
 
+import androidx.lifecycle.SavedStateHandle
 import fr.descentecanyon.app.domain.model.CanyonSummary
 import fr.descentecanyon.app.domain.model.CanyonSearchItem
 import fr.descentecanyon.app.domain.model.CotationRating
@@ -30,7 +31,7 @@ class MapViewModelTest {
     @OptIn(ExperimentalCoroutinesApi::class)
     fun `permission denial updates ui state`() = runTest {
         every { canyonRepository.observeSearchCatalog() } returns flowOf(emptyList())
-        val viewModel = MapViewModel(searchCanyonsUseCase)
+        val viewModel = MapViewModel(SavedStateHandle(), searchCanyonsUseCase)
 
         viewModel.onLocationPermissionResult(false)
 
@@ -43,7 +44,7 @@ class MapViewModelTest {
     @OptIn(ExperimentalCoroutinesApi::class)
     fun `focus around user stores location and increments request id`() = runTest {
         every { canyonRepository.observeSearchCatalog() } returns flowOf(listOf(catalogItem(id = 42)))
-        val viewModel = MapViewModel(searchCanyonsUseCase)
+        val viewModel = MapViewModel(SavedStateHandle(), searchCanyonsUseCase)
 
         advanceUntilIdle()
 
@@ -61,7 +62,7 @@ class MapViewModelTest {
     @OptIn(ExperimentalCoroutinesApi::class)
     fun `select canyon exposes bottom sheet item`() = runTest {
         every { canyonRepository.observeSearchCatalog() } returns flowOf(listOf(catalogItem(id = 7, nom = "Aiglun")))
-        val viewModel = MapViewModel(searchCanyonsUseCase)
+        val viewModel = MapViewModel(SavedStateHandle(), searchCanyonsUseCase)
 
         advanceUntilIdle()
         viewModel.selectCanyon(7)
@@ -69,6 +70,35 @@ class MapViewModelTest {
         assertEquals(7, viewModel.uiState.value.selectedCanyon?.id)
         viewModel.clearSelectedCanyon()
         assertEquals(null, viewModel.uiState.value.selectedCanyon)
+    }
+
+    @Test
+    @OptIn(ExperimentalCoroutinesApi::class)
+    fun `saved state restores camera and selected canyon`() = runTest {
+        every { canyonRepository.observeSearchCatalog() } returns flowOf(listOf(catalogItem(id = 9, nom = "Riou")))
+        val savedStateHandle = SavedStateHandle(
+            mapOf(
+                "map_camera_latitude" to 43.62,
+                "map_camera_longitude" to 6.71,
+                "map_camera_zoom" to 9.5,
+                "map_selected_canyon_id" to 9,
+                "map_user_latitude" to 43.61,
+                "map_user_longitude" to 6.72,
+                "map_focus_location_request_id" to 3,
+            )
+        )
+
+        val viewModel = MapViewModel(savedStateHandle, searchCanyonsUseCase)
+
+        advanceUntilIdle()
+
+        assertEquals(43.62, viewModel.uiState.value.cameraState?.latitude)
+        assertEquals(6.71, viewModel.uiState.value.cameraState?.longitude)
+        assertEquals(9.5, viewModel.uiState.value.cameraState?.zoom)
+        assertEquals(9, viewModel.uiState.value.selectedCanyon?.id)
+        assertEquals(43.61, viewModel.uiState.value.userLatitude)
+        assertEquals(6.72, viewModel.uiState.value.userLongitude)
+        assertEquals(3, viewModel.uiState.value.focusLocationRequestId)
     }
 
     private fun catalogItem(

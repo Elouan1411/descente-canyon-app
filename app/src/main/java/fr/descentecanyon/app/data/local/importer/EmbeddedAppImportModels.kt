@@ -7,6 +7,7 @@ import kotlinx.serialization.json.JsonElement
 data class RoomImportManifest(
     val schemaVersion: Int,
     val generatedAt: String,
+    val counts: Map<String, Int> = emptyMap(),
     val versions: Map<String, String> = emptyMap(),
 )
 

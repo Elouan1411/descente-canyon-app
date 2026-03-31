@@ -52,6 +52,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import fr.descentecanyon.app.R
 import fr.descentecanyon.app.domain.model.CanyonSummary
+import fr.descentecanyon.app.perf.PerformanceTrace
 import fr.descentecanyon.app.ui.components.SelectedCanyonSheetContent
 import fr.descentecanyon.app.ui.location.hasLocationPermission
 import fr.descentecanyon.app.ui.location.loadCurrentDeviceLocation
@@ -86,6 +87,10 @@ fun MapScreen(
         if (granted) {
             focusAroundUserFromDevice(context, viewModel)
         }
+    }
+
+    LaunchedEffect(Unit) {
+        PerformanceTrace.logEvent("map_screen_visible")
     }
 
     LaunchedEffect(Unit) {

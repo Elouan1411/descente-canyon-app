@@ -12,6 +12,7 @@ import fr.descentecanyon.app.domain.repository.CanyonRepository
 import fr.descentecanyon.app.domain.repository.DebitRepository
 import fr.descentecanyon.app.domain.repository.FavoritesRepository
 import fr.descentecanyon.app.domain.repository.PhotoRepository
+import fr.descentecanyon.app.perf.PerformanceTrace
 import fr.descentecanyon.app.domain.usecase.DownloadPhotoForOfflineUseCase
 import fr.descentecanyon.app.domain.usecase.GetCanyonDebitPredictionsUseCase
 import fr.descentecanyon.app.domain.usecase.GetCanyonDetailUseCase
@@ -34,8 +35,11 @@ import javax.inject.Inject
 data class CanyonDetailUiState(
     val canyonDetail: CanyonDetail? = null,
     val isLoading: Boolean = false,
+    val isRefreshingDetail: Boolean = false,
     val isLoadingPhotos: Boolean = false,
+    val photoError: String? = null,
     val isLoadingDebits: Boolean = false,
+    val debitError: String? = null,
     val error: String? = null,
     val weather: CanyonWeather? = null,
     val isLoadingWeather: Boolean = false,
@@ -71,6 +75,7 @@ class CanyonDetailViewModel @Inject constructor(
     private val _uiState = MutableStateFlow(CanyonDetailUiState())
     val uiState: StateFlow<CanyonDetailUiState> = _uiState.asStateFlow()
     private var predictionLoadJob: Job? = null
+    private var hasLoggedPrimaryContentReady = false
 
     init {
         observePhotos(canyonId)
@@ -84,18 +89,20 @@ class CanyonDetailViewModel @Inject constructor(
     fun loadCanyon(id: Int) {
         viewModelScope.launch {
             predictionLoadJob?.cancel()
+            hasLoggedPrimaryContentReady = false
+            val hasExistingContent = _uiState.value.canyonDetail != null
+            PerformanceTrace.start(detailLoadKey(id), "canyon_detail_load", "canyonId" to id)
             _uiState.update {
                 it.copy(
-                    isLoading = true,
+                    isLoading = !hasExistingContent,
+                    isRefreshingDetail = hasExistingContent,
                     isLoadingPhotos = true,
+                    photoError = null,
                     isLoadingDebits = true,
-                    isLoadingWeather = true,
-                    isLoadingPredictions = true,
+                    debitError = null,
+                    isLoadingWeather = false,
+                    isLoadingPredictions = false,
                     error = null,
-                    weather = null,
-                    weatherError = null,
-                    predictions = null,
-                    predictionError = null,
                 )
             }
 
@@ -104,6 +111,7 @@ class CanyonDetailViewModel @Inject constructor(
 
             launch {
                 getCanyonPreviewUseCase(id).onSuccess { preview ->
+                    val wasEmpty = _uiState.value.canyonDetail == null
                     _uiState.update { state ->
                         if (state.canyonDetail != null) {
                             state
@@ -111,53 +119,135 @@ class CanyonDetailViewModel @Inject constructor(
                             state.copy(
                                 canyonDetail = mergeBaseDetail(preview, state.canyonDetail),
                                 isLoading = false,
+                                isRefreshingDetail = true,
                                 error = null,
                             )
                         }
+                    }
+                    loadDeferredSectionsIfNeeded(preview)
+                    if (wasEmpty && !hasLoggedPrimaryContentReady) {
+                        hasLoggedPrimaryContentReady = true
+                        PerformanceTrace.end(
+                            key = detailLoadKey(id),
+                            outcome = "preview_ready",
+                            "canyonId" to id,
+                        )
                     }
                 }
             }
 
             launch {
+                val detailLoadStartedAt = monotonicNowMs()
                 getCanyonDetailUseCase(id).fold(
                     onSuccess = { detail ->
                         _uiState.update {
                             it.copy(
                                 canyonDetail = mergeBaseDetail(detail, it.canyonDetail),
                                 isLoading = false,
-                                isLoadingWeather = true,
-                                isLoadingPredictions = true,
-                                weather = null,
-                                predictions = null,
+                                isRefreshingDetail = false,
                                 error = null,
-                                weatherError = null,
-                                predictionError = null,
                             )
                         }
-                        loadWeather(detail)
-                        schedulePredictions(detail)
+                        PerformanceTrace.logEvent(
+                            event = "canyon_detail_full_ready",
+                            "canyonId" to id,
+                            "photoCount" to detail.photos.size,
+                            "debitCount" to detail.debits.size,
+                            "durationMs" to (monotonicNowMs() - detailLoadStartedAt),
+                        )
+                        if (!hasLoggedPrimaryContentReady) {
+                            hasLoggedPrimaryContentReady = true
+                            PerformanceTrace.end(
+                                key = detailLoadKey(id),
+                                outcome = "detail_ready",
+                                "canyonId" to id,
+                            )
+                        }
+                        loadDeferredSectionsIfNeeded(detail)
                     },
                     onFailure = { throwable ->
-                        _uiState.update {
-                            it.copy(
-                                isLoading = false,
-                                isLoadingPhotos = false,
-                                isLoadingDebits = false,
-                                isLoadingWeather = false,
-                                isLoadingPredictions = false,
-                                error = throwable.toFriendlyCanyonDetailMessage(),
+                        val hasContent = _uiState.value.canyonDetail != null
+                        if (!hasLoggedPrimaryContentReady) {
+                            PerformanceTrace.end(
+                                key = detailLoadKey(id),
+                                outcome = "failed",
+                                "canyonId" to id,
+                                "error" to (throwable.message ?: throwable::class.simpleName),
                             )
                         }
+                        _uiState.update { state ->
+                            if (hasContent) {
+                                state.copy(
+                                    isLoading = false,
+                                    isRefreshingDetail = false,
+                                    error = null,
+                                    transientMessage = throwable.toFriendlyCanyonDetailMessage(),
+                                )
+                            } else {
+                                state.copy(
+                                    isLoading = false,
+                                    isRefreshingDetail = false,
+                                    isLoadingPhotos = false,
+                                    photoError = null,
+                                    isLoadingDebits = false,
+                                    debitError = null,
+                                    isLoadingWeather = false,
+                                    isLoadingPredictions = false,
+                                    error = throwable.toFriendlyCanyonDetailMessage(),
+                                )
+                            }
+                        }
+                        _uiState.value.canyonDetail?.let(::loadDeferredSectionsIfNeeded)
                     },
                 )
             }
         }
     }
 
+    private fun loadDeferredSectionsIfNeeded(detail: CanyonDetail) {
+        maybeLoadWeather(detail)
+        maybeSchedulePredictions(detail)
+    }
+
+    private fun maybeLoadWeather(detail: CanyonDetail) {
+        val state = _uiState.value
+        val shouldLoad = state.weather == null || state.weatherError != null
+        if (!shouldLoad || state.isLoadingWeather) return
+
+        _uiState.update {
+            it.copy(
+                isLoadingWeather = true,
+                weatherError = null,
+            )
+        }
+        loadWeather(detail)
+    }
+
+    private fun maybeSchedulePredictions(detail: CanyonDetail) {
+        val state = _uiState.value
+        val shouldLoad = state.predictions == null || state.predictionError != null
+        if (!shouldLoad || state.isLoadingPredictions) return
+
+        _uiState.update {
+            it.copy(
+                isLoadingPredictions = true,
+                predictionError = null,
+            )
+        }
+        schedulePredictions(detail)
+    }
+
     private fun loadWeather(detail: CanyonDetail) {
         viewModelScope.launch {
+            PerformanceTrace.start(weatherLoadKey(detail.canyon.id), "canyon_weather_load", "canyonId" to detail.canyon.id)
             getCanyonWeatherUseCase(detail).fold(
                 onSuccess = { weather ->
+                    PerformanceTrace.end(
+                        key = weatherLoadKey(detail.canyon.id),
+                        outcome = "ready",
+                        "canyonId" to detail.canyon.id,
+                        "hourlyCount" to weather.hourly.size,
+                    )
                     _uiState.update {
                         it.copy(
                             weather = weather,
@@ -167,6 +257,12 @@ class CanyonDetailViewModel @Inject constructor(
                     }
                 },
                 onFailure = { throwable ->
+                    PerformanceTrace.end(
+                        key = weatherLoadKey(detail.canyon.id),
+                        outcome = "failed",
+                        "canyonId" to detail.canyon.id,
+                        "error" to (throwable.message ?: throwable::class.simpleName),
+                    )
                     _uiState.update {
                         it.copy(
                             weather = null,
@@ -218,14 +314,23 @@ class CanyonDetailViewModel @Inject constructor(
     }
 
     private suspend fun refreshPhotos(id: Int) {
+        PerformanceTrace.start(photoRefreshKey(id), "canyon_photos_refresh", "canyonId" to id)
         photoRepository.refreshPhotos(id).fold(
             onSuccess = {
-                _uiState.update { it.copy(isLoadingPhotos = false) }
+                PerformanceTrace.end(photoRefreshKey(id), outcome = "ready", "canyonId" to id)
+                _uiState.update { it.copy(isLoadingPhotos = false, photoError = null) }
             },
             onFailure = { throwable ->
+                PerformanceTrace.end(
+                    key = photoRefreshKey(id),
+                    outcome = "failed",
+                    "canyonId" to id,
+                    "error" to (throwable.message ?: throwable::class.simpleName),
+                )
                 _uiState.update {
                     it.copy(
                         isLoadingPhotos = false,
+                        photoError = throwable.toFriendlyPhotosMessage(),
                     )
                 }
             },
@@ -233,14 +338,23 @@ class CanyonDetailViewModel @Inject constructor(
     }
 
     private suspend fun refreshDebits(id: Int) {
+        PerformanceTrace.start(debitRefreshKey(id), "canyon_debits_refresh", "canyonId" to id)
         debitRepository.refreshDebits(id).fold(
             onSuccess = {
-                _uiState.update { it.copy(isLoadingDebits = false) }
+                PerformanceTrace.end(debitRefreshKey(id), outcome = "ready", "canyonId" to id)
+                _uiState.update { it.copy(isLoadingDebits = false, debitError = null) }
             },
             onFailure = { throwable ->
+                PerformanceTrace.end(
+                    key = debitRefreshKey(id),
+                    outcome = "failed",
+                    "canyonId" to id,
+                    "error" to (throwable.message ?: throwable::class.simpleName),
+                )
                 _uiState.update {
                     it.copy(
                         isLoadingDebits = false,
+                        debitError = throwable.toFriendlyDebitsMessage(),
                         transientMessage = throwable.toFriendlyDebitsMessage(),
                     )
                 }
@@ -317,8 +431,15 @@ class CanyonDetailViewModel @Inject constructor(
     }
 
     private suspend fun loadPredictions(detail: CanyonDetail) {
+        PerformanceTrace.start(predictionLoadKey(detail.canyon.id), "canyon_predictions_load", "canyonId" to detail.canyon.id)
         getCanyonDebitPredictionsUseCase(detail).fold(
             onSuccess = { predictions ->
+                PerformanceTrace.end(
+                    key = predictionLoadKey(detail.canyon.id),
+                    outcome = "ready",
+                    "canyonId" to detail.canyon.id,
+                    "dayCount" to predictions.predictions.size,
+                )
                 _uiState.update {
                     it.copy(
                         predictions = predictions,
@@ -328,6 +449,12 @@ class CanyonDetailViewModel @Inject constructor(
                 }
             },
             onFailure = { throwable ->
+                PerformanceTrace.end(
+                    key = predictionLoadKey(detail.canyon.id),
+                    outcome = "failed",
+                    "canyonId" to detail.canyon.id,
+                    "error" to (throwable.message ?: throwable::class.simpleName),
+                )
                 _uiState.update {
                     it.copy(
                         predictions = null,
@@ -376,6 +503,14 @@ class CanyonDetailViewModel @Inject constructor(
         }
     }
 
+    private fun Throwable.toFriendlyPhotosMessage(): String {
+        return if (isLikelyNetworkIssue()) {
+            "Impossible de charger les photos pour le moment."
+        } else {
+            "Photos indisponibles pour le moment."
+        }
+    }
+
     private fun Throwable.toFriendlyPhotoMessage(): String {
         return "Impossible de charger la photo pour le moment."
     }
@@ -398,3 +533,15 @@ class CanyonDetailViewModel @Inject constructor(
         const val PREDICTION_LOAD_DELAY_MS = 800L
     }
 }
+
+private fun detailLoadKey(canyonId: Int): String = "screen.canyon.$canyonId.detail"
+
+private fun weatherLoadKey(canyonId: Int): String = "screen.canyon.$canyonId.weather"
+
+private fun debitRefreshKey(canyonId: Int): String = "screen.canyon.$canyonId.debits"
+
+private fun photoRefreshKey(canyonId: Int): String = "screen.canyon.$canyonId.photos"
+
+private fun predictionLoadKey(canyonId: Int): String = "screen.canyon.$canyonId.predictions"
+
+private fun monotonicNowMs(): Long = System.nanoTime() / 1_000_000

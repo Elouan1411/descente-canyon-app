@@ -76,7 +76,6 @@ import androidx.compose.ui.window.DialogProperties
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import coil3.request.ImageRequest
-import coil3.request.allowHardware
 import fr.descentecanyon.app.R
 import fr.descentecanyon.app.domain.model.BibliographyEntry
 import fr.descentecanyon.app.domain.model.BibliographyKind
@@ -88,6 +87,7 @@ import fr.descentecanyon.app.domain.model.GeoPoint
 import fr.descentecanyon.app.domain.model.GeoPointType
 import fr.descentecanyon.app.domain.model.NiveauDebit
 import fr.descentecanyon.app.domain.model.Regulation
+import fr.descentecanyon.app.perf.PerformanceTrace
 import fr.descentecanyon.app.ui.components.CotationBadge
 import fr.descentecanyon.app.ui.components.CompactAppBar
 import fr.descentecanyon.app.ui.components.DebitBadge
@@ -117,6 +117,10 @@ fun CanyonDetailScreen(
 ) {
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
     val context = LocalContext.current
+
+    LaunchedEffect(canyonId) {
+        PerformanceTrace.logEvent("canyon_detail_screen_visible", "canyonId" to canyonId)
+    }
 
     LaunchedEffect(uiState.transientMessage) {
         uiState.transientMessage?.let { message ->
@@ -207,9 +211,12 @@ fun CanyonDetailScreen(
                 uiState.canyonDetail != null -> {
                     CanyonDetailContent(
                         detail = uiState.canyonDetail!!,
+                        isRefreshingDetail = uiState.isRefreshingDetail,
                         isOnline = uiState.isOnline,
                         isLoadingPhotos = uiState.isLoadingPhotos,
+                        photoError = uiState.photoError,
                         isLoadingDebits = uiState.isLoadingDebits,
+                        debitError = uiState.debitError,
                         weather = uiState.weather,
                         isLoadingWeather = uiState.isLoadingWeather,
                         weatherError = uiState.weatherError,
@@ -254,9 +261,12 @@ fun CanyonDetailScreen(
 @Composable
 private fun CanyonDetailContent(
     detail: CanyonDetail,
+    isRefreshingDetail: Boolean,
     isOnline: Boolean,
     isLoadingPhotos: Boolean,
+    photoError: String?,
     isLoadingDebits: Boolean,
+    debitError: String?,
     weather: fr.descentecanyon.app.domain.model.CanyonWeather?,
     isLoadingWeather: Boolean,
     weatherError: String?,
@@ -273,12 +283,16 @@ private fun CanyonDetailContent(
     val listState = rememberLazyListState()
     val tabs = listOf(
         stringResource(R.string.tab_topo),
-        if (isLoadingPhotos && detail.photos.isEmpty()) {
+        if (photoError != null && detail.photos.isEmpty()) {
+            stringResource(R.string.tab_photos_unavailable)
+        } else if (isLoadingPhotos && detail.photos.isEmpty()) {
             stringResource(R.string.tab_photos_loading)
         } else {
             stringResource(R.string.tab_photos_with_count, detail.photos.size)
         },
-        if (isLoadingDebits && detail.debits.isEmpty()) {
+        if (debitError != null && detail.debits.isEmpty()) {
+            stringResource(R.string.tab_debits_unavailable)
+        } else if (isLoadingDebits && detail.debits.isEmpty()) {
             stringResource(R.string.tab_debits_loading)
         } else {
             stringResource(R.string.tab_debits_with_count, detail.debits.size)
@@ -291,6 +305,11 @@ private fun CanyonDetailContent(
         contentPadding = PaddingValues(bottom = bottomContentPadding),
         verticalArrangement = Arrangement.spacedBy(0.dp),
     ) {
+        item {
+            AnimatedVisibility(visible = isRefreshingDetail) {
+                DetailRefreshingBanner()
+            }
+        }
         item { SummaryCard(detail = detail) }
         item {
             CanyonWeatherCard(
@@ -329,11 +348,39 @@ private fun CanyonDetailContent(
                 photos = detail.photos,
                 isOnline = isOnline,
                 isLoadingPhotos = isLoadingPhotos,
+                photoError = photoError,
                 isOfflineSaved = detail.canyon.isOffline,
                 downloadingPhotoIds = downloadingPhotoIds,
                 onOpenPhotoGallery = onOpenPhotoGallery,
             )
-            2 -> debitItems(detail.debits, isLoadingDebits)
+            2 -> debitItems(detail.debits, isLoadingDebits, debitError)
+        }
+    }
+}
+
+@Composable
+private fun DetailRefreshingBanner(modifier: Modifier = Modifier) {
+    Surface(
+        modifier = modifier
+            .fillMaxWidth()
+            .padding(horizontal = 16.dp, vertical = 12.dp),
+        shape = MaterialTheme.shapes.medium,
+        color = MaterialTheme.colorScheme.secondaryContainer.copy(alpha = 0.7f),
+    ) {
+        Row(
+            modifier = Modifier.padding(horizontal = 14.dp, vertical = 10.dp),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.spacedBy(12.dp),
+        ) {
+            CircularProgressIndicator(
+                modifier = Modifier.size(18.dp),
+                strokeWidth = 2.dp,
+            )
+            Text(
+                text = stringResource(R.string.refreshing_canyon_details),
+                style = MaterialTheme.typography.bodyMedium,
+                color = MaterialTheme.colorScheme.onSecondaryContainer,
+            )
         }
     }
 }
@@ -990,6 +1037,7 @@ private fun LazyListScope.photosItems(
     photos: List<CanyonPhoto>,
     isOnline: Boolean,
     isLoadingPhotos: Boolean,
+    photoError: String?,
     isOfflineSaved: Boolean,
     downloadingPhotoIds: Set<Long>,
     onOpenPhotoGallery: (Long) -> Unit,
@@ -1008,6 +1056,7 @@ private fun LazyListScope.photosItems(
             ) {
                 Text(
                     text = when {
+                        photoError != null -> photoError
                         !isOnline && isOfflineSaved -> stringResource(R.string.no_offline_photos_without_network)
                         else -> stringResource(R.string.no_photos)
                     },
@@ -1085,10 +1134,10 @@ private fun ProgressivePhoto(
     contentScale: ContentScale,
 ) {
     val context = LocalContext.current
-    val fullRequest: ImageRequest = remember(context, photo.localPath, photo.url) {
+    val previewModel = photo.localPath ?: photo.thumbnailUrl ?: photo.url
+    val fullRequest: ImageRequest = remember(context, previewModel) {
         ImageRequest.Builder(context)
-            .data(photo.localPath ?: photo.url)
-            .allowHardware(false)
+            .data(previewModel)
             .build()
     }
 
@@ -1109,6 +1158,7 @@ private fun ProgressivePhoto(
 private fun LazyListScope.debitItems(
     debits: List<Debit>,
     isLoadingDebits: Boolean,
+    debitError: String?,
 ) {
     if (isLoadingDebits && debits.isEmpty()) {
         item {
@@ -1123,7 +1173,7 @@ private fun LazyListScope.debitItems(
                 contentAlignment = Alignment.Center,
             ) {
                 Text(
-                    text = stringResource(R.string.no_debits),
+                    text = debitError ?: stringResource(R.string.no_debits),
                     style = MaterialTheme.typography.bodyLarge,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                 )

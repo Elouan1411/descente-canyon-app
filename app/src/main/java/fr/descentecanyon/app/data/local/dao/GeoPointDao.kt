@@ -5,12 +5,16 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import fr.descentecanyon.app.data.local.entity.GeoPointEntity
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface GeoPointDao {
 
     @Query("SELECT * FROM geo_points")
     suspend fun getAll(): List<GeoPointEntity>
+
+    @Query("SELECT * FROM geo_points")
+    fun observeAll(): Flow<List<GeoPointEntity>>
 
     @Query("SELECT * FROM geo_points WHERE canyonId = :canyonId")
     suspend fun getByCanyonId(canyonId: Int): List<GeoPointEntity>

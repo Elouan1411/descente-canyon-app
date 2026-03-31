@@ -19,13 +19,18 @@ import fr.descentecanyon.app.domain.model.normalizeForSearch
 import fr.descentecanyon.app.domain.repository.CanyonRepository
 import fr.descentecanyon.app.domain.repository.MapOfflineRepository
 import androidx.room.withTransaction
+import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.onStart
+import kotlinx.coroutines.flow.shareIn
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -39,6 +44,59 @@ class CanyonRepositoryImpl @Inject constructor(
     private val scraper: CanyonScraper,
     private val mapOfflineRepository: MapOfflineRepository,
 ) : CanyonRepository {
+
+    private val repositoryScope = CoroutineScope(SupervisorJob() + Dispatchers.Default)
+
+    private val representativePointsFlow = geoPointDao.observeAll()
+        .map { points ->
+            points.groupBy { it.canyonId }
+                .mapValues { (_, canyonPoints) -> localStore.bestMarkerPointOrNull(canyonPoints) }
+        }
+        .distinctUntilChanged()
+        .flowOn(Dispatchers.Default)
+        .shareIn(
+            scope = repositoryScope,
+            started = SharingStarted.WhileSubscribed(stopTimeoutMillis = 5_000),
+            replay = 1,
+        )
+
+    private val searchCatalogFlow = canyonDao.observeAll()
+        .combine(representativePointsFlow) { entities, representativePoints ->
+            val baseItems = entities.map { entity ->
+                val point = representativePoints[entity.id]
+                entity.toSearchItem(
+                    representativeLat = point?.latitude,
+                    representativeLng = point?.longitude,
+                )
+            }
+
+            val knownCountryBySubdivision = baseItems
+                .asSequence()
+                .filter { it.countryTokens.size == 1 }
+                .flatMap { item ->
+                    item.departmentTokens.asSequence().map { subdivision ->
+                        subdivision.normalizeForSearch() to item.countryTokens.first()
+                    }
+                }
+                .groupBy({ it.first }, { it.second })
+                .mapNotNull { (subdivision, countries) ->
+                    countries.distinct().singleOrNull()?.let { subdivision to it }
+                }
+                .toMap()
+
+            baseItems.map { item ->
+                item.copy(
+                    subdivisionsByCountry = item.buildSubdivisionsByCountry(knownCountryBySubdivision),
+                )
+            }
+        }
+        .distinctUntilChanged()
+        .flowOn(Dispatchers.Default)
+        .shareIn(
+            scope = repositoryScope,
+            started = SharingStarted.WhileSubscribed(stopTimeoutMillis = 5_000),
+            replay = 1,
+        )
 
     /**
      * B-1 fix: Use Room's reactive Flow directly instead of collecting inside a flow{} builder
@@ -66,40 +124,7 @@ class CanyonRepositoryImpl @Inject constructor(
     }
 
     override fun observeSearchCatalog(): Flow<List<CanyonSearchItem>> {
-        return canyonDao.observeAll()
-            .map { entities ->
-                val representativePoints = localStore.representativePointsByCanyon()
-
-                val baseItems = entities.map { entity ->
-                    val point = representativePoints[entity.id]
-                    entity.toSearchItem(
-                        representativeLat = point?.latitude,
-                        representativeLng = point?.longitude,
-                    )
-                }
-
-                val knownCountryBySubdivision = baseItems
-                    .asSequence()
-                    .filter { it.countryTokens.size == 1 }
-                    .flatMap { item ->
-                        item.departmentTokens.asSequence().map { subdivision ->
-                            subdivision.normalizeForSearch() to item.countryTokens.first()
-                        }
-                    }
-                    .groupBy({ it.first }, { it.second })
-                    .mapNotNull { (subdivision, countries) ->
-                        countries.distinct().singleOrNull()?.let { subdivision to it }
-                    }
-                    .toMap()
-
-                baseItems.map { item ->
-                    item.copy(
-                        subdivisionsByCountry = item.buildSubdivisionsByCountry(knownCountryBySubdivision),
-                    )
-                }
-            }
-            .distinctUntilChanged()
-            .flowOn(Dispatchers.Default)
+        return searchCatalogFlow
     }
 
     override suspend fun getCanyonDetail(canyonId: Int): Result<CanyonDetail> {

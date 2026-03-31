@@ -161,6 +161,22 @@ class SearchViewModelTest {
         assertNull(viewModel.uiState.value.selectedCanyon)
     }
 
+    @Test
+    @OptIn(ExperimentalCoroutinesApi::class)
+    fun `saved state restores map result view mode`() = runTest {
+        every { canyonRepository.observeSearchCatalog() } returns flowOf(listOf(canyon(id = 1)))
+        val viewModel = SearchViewModel(
+            searchCanyonsUseCase,
+            SavedStateHandle(mapOf("search_result_view_mode" to SearchResultViewMode.MAP.name)),
+            mainDispatcherRule.dispatcher,
+        )
+
+        advanceTimeBy(250)
+        advanceUntilIdle()
+
+        assertEquals(SearchResultViewMode.MAP, viewModel.uiState.value.resultViewMode)
+    }
+
     private fun canyon(
         id: Int,
         nom: String = "Canyon $id",

@@ -14,8 +14,9 @@ open class DescenteCanyonWebClient @Inject constructor() {
     open fun getDocument(
         url: String,
         cookies: Map<String, String> = emptyMap(),
+        timeoutMs: Int = TIMEOUT_MS,
     ): Document {
-        return buildConnection(url, cookies).get()
+        return buildConnection(url, cookies, timeoutMs).get()
     }
 
     open fun postDocument(
@@ -23,7 +24,7 @@ open class DescenteCanyonWebClient @Inject constructor() {
         data: Map<String, String>,
         cookies: Map<String, String> = emptyMap(),
     ): WebDocumentResponse {
-        val response = buildConnection(url, cookies)
+        val response = buildConnection(url, cookies, TIMEOUT_MS)
             .data(data)
             .method(Connection.Method.POST)
             .followRedirects(true)
@@ -42,7 +43,7 @@ open class DescenteCanyonWebClient @Inject constructor() {
         cookies: Map<String, String> = emptyMap(),
     ) {
         targetFile.parentFile?.mkdirs()
-        buildConnection(url, cookies)
+        buildConnection(url, cookies, TIMEOUT_MS)
             .ignoreContentType(true)
             .execute()
             .bodyStream()
@@ -56,10 +57,11 @@ open class DescenteCanyonWebClient @Inject constructor() {
     private fun buildConnection(
         url: String,
         cookies: Map<String, String>,
+        timeoutMs: Int,
     ): Connection {
         return Jsoup.connect(url)
             .userAgent(USER_AGENT)
-            .timeout(TIMEOUT_MS)
+            .timeout(timeoutMs)
             .apply {
                 if (cookies.isNotEmpty()) {
                     cookies(cookies)

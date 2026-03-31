@@ -33,6 +33,7 @@ class CanyonScraper @Inject constructor(
 
     companion object {
         const val BASE_URL = "https://www.descente-canyon.com"
+        const val DEFAULT_TIMEOUT_MS = 30_000
     }
 
     // Rate limit: max 3 concurrent requests to avoid overloading the site
@@ -71,20 +72,32 @@ class CanyonScraper @Inject constructor(
         }
 
     suspend fun scrapeCanyonPhotos(canyonId: Int): Result<List<ScrapedPhoto>> =
+        scrapeCanyonPhotos(canyonId = canyonId, timeoutMs = DEFAULT_TIMEOUT_MS)
+
+    suspend fun scrapeCanyonPhotos(canyonId: Int, timeoutMs: Int): Result<List<ScrapedPhoto>> =
         withContext(Dispatchers.IO) {
             semaphore.withPermit {
                 runCatching {
-                    val doc = fetchDocument("$BASE_URL/canyoning/canyon-photo/$canyonId/photographie.html")
+                    val doc = fetchDocument(
+                        url = "$BASE_URL/canyoning/canyon-photo/$canyonId/photographie.html",
+                        timeoutMs = timeoutMs,
+                    )
                     PhotoParser.parse(doc, canyonId)
                 }
             }
         }
 
     suspend fun scrapeCanyonDebits(canyonId: Int): Result<List<ScrapedDebit>> =
+        scrapeCanyonDebits(canyonId = canyonId, timeoutMs = DEFAULT_TIMEOUT_MS)
+
+    suspend fun scrapeCanyonDebits(canyonId: Int, timeoutMs: Int): Result<List<ScrapedDebit>> =
         withContext(Dispatchers.IO) {
             semaphore.withPermit {
                 runCatching {
-                    val doc = fetchDocument("$BASE_URL/canyoning/canyon-debit/$canyonId/observations.html")
+                    val doc = fetchDocument(
+                        url = "$BASE_URL/canyoning/canyon-debit/$canyonId/observations.html",
+                        timeoutMs = timeoutMs,
+                    )
                     DebitParser.parseCanyonDebits(doc, canyonId)
                 }
             }
@@ -203,12 +216,17 @@ class CanyonScraper @Inject constructor(
 
     // --- Internal ---
 
-    private fun fetchDocument(url: String): Document {
+    private fun fetchDocument(
+        url: String,
+        timeoutMs: Int = DEFAULT_TIMEOUT_MS,
+    ): Document {
         return webClient.getDocument(
             url = url,
             cookies = sessionManager.getCookies(),
+            timeoutMs = timeoutMs,
         )
     }
+
 }
 
 private fun ObservationType.toFormValue(): String = when (this) {

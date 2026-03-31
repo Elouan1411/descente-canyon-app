@@ -6,6 +6,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import fr.descentecanyon.app.data.network.ConnectivityObserver
 import fr.descentecanyon.app.domain.model.Debit
 import fr.descentecanyon.app.domain.usecase.GetLatestDebitsUseCase
+import fr.descentecanyon.app.perf.PerformanceTrace
 import java.net.ConnectException
 import java.net.SocketTimeoutException
 import java.net.UnknownHostException
@@ -42,6 +43,7 @@ class HomeViewModel @Inject constructor(
 
     private var debitsJob: Job? = null
     private var previousOnline: Boolean? = null
+    private var hasLoggedInitialDebitsLoad = false
 
     init {
         observeConnectivity()
@@ -76,6 +78,10 @@ class HomeViewModel @Inject constructor(
 
     fun loadLatestDebits() {
         if (!connectivityObserver.isCurrentlyOnline()) {
+            if (!hasLoggedInitialDebitsLoad) {
+                hasLoggedInitialDebitsLoad = true
+                PerformanceTrace.logEvent("home_latest_debits_skipped", "reason" to "offline")
+            }
             _uiState.update { state ->
                 state.copy(
                     isOnline = false,
@@ -92,6 +98,10 @@ class HomeViewModel @Inject constructor(
 
         debitsJob?.cancel()
         debitsJob = viewModelScope.launch {
+            val loadStartedAt = monotonicNowMs()
+            if (!hasLoggedInitialDebitsLoad) {
+                PerformanceTrace.start(HOME_LATEST_DEBITS_TRACE_KEY, "home_latest_debits_load")
+            }
             _uiState.update { state ->
                 state.copy(
                     isLoading = true,
@@ -105,6 +115,19 @@ class HomeViewModel @Inject constructor(
             getLatestDebitsUseCase(limit = 20).collect { result ->
                 result.fold(
                     onSuccess = { debits ->
+                        PerformanceTrace.logEvent(
+                            event = "home_latest_debits_result",
+                            "count" to debits.size,
+                            "durationMs" to (monotonicNowMs() - loadStartedAt),
+                        )
+                        if (!hasLoggedInitialDebitsLoad) {
+                            hasLoggedInitialDebitsLoad = true
+                            PerformanceTrace.end(
+                                key = HOME_LATEST_DEBITS_TRACE_KEY,
+                                outcome = "ready",
+                                "count" to debits.size,
+                            )
+                        }
                         _uiState.update { state ->
                             state.copy(
                                 latestDebits = debits,
@@ -118,6 +141,14 @@ class HomeViewModel @Inject constructor(
                         }
                     },
                     onFailure = { throwable ->
+                        if (!hasLoggedInitialDebitsLoad) {
+                            hasLoggedInitialDebitsLoad = true
+                            PerformanceTrace.end(
+                                key = HOME_LATEST_DEBITS_TRACE_KEY,
+                                outcome = "failed",
+                                "error" to (throwable.message ?: throwable::class.simpleName),
+                            )
+                        }
                         _uiState.update { state ->
                             state.copy(
                                 isLoading = false,
@@ -166,6 +197,10 @@ class HomeViewModel @Inject constructor(
         }
     }
 }
+
+private const val HOME_LATEST_DEBITS_TRACE_KEY = "screen.home.latest_debits"
+
+private fun monotonicNowMs(): Long = System.nanoTime() / 1_000_000
 
 private enum class HomeLatestDebitsFailureKind {
     NETWORK,

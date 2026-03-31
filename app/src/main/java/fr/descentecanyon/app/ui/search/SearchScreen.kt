@@ -77,6 +77,7 @@ import fr.descentecanyon.app.domain.model.SearchSortField
 import fr.descentecanyon.app.domain.model.SortDirection
 import fr.descentecanyon.app.domain.model.toSummary
 import fr.descentecanyon.app.map.MAP_SEARCH_STYLE_URI
+import fr.descentecanyon.app.perf.PerformanceTrace
 import fr.descentecanyon.app.ui.components.AppFloatingActionButton
 import fr.descentecanyon.app.ui.components.CanyonSummaryCard
 import fr.descentecanyon.app.ui.components.SelectedCanyonSheetContent
@@ -102,6 +103,10 @@ fun SearchScreen(
     var showDepartmentMenu by rememberSaveable { mutableStateOf(false) }
     var pendingDistanceSort by rememberSaveable { mutableStateOf(false) }
     var lastHandledScrollResetId by rememberSaveable { mutableIntStateOf(uiState.scrollResetRequestId) }
+
+    LaunchedEffect(Unit) {
+        PerformanceTrace.logEvent("search_screen_visible")
+    }
 
     val locationPermissionLauncher = rememberLauncherForActivityResult(
         contract = ActivityResultContracts.RequestMultiplePermissions(),
@@ -372,9 +377,10 @@ fun SearchScreen(
             Spacer(modifier = Modifier.height(6.dp))
 
             if (uiState.isLoading) {
-                Box(modifier = Modifier.fillMaxWidth().padding(32.dp), contentAlignment = Alignment.Center) {
-                    CircularProgressIndicator()
-                }
+                SearchCatalogLoadingHint(
+                    hasTypedQuery = uiState.queryDraft.isNotBlank(),
+                    modifier = Modifier.fillMaxWidth(),
+                )
             }
 
             uiState.error?.let { error ->
@@ -495,6 +501,38 @@ fun SearchScreen(
                     onCanyonClick(selectedCanyon.id)
                 },
                 onClose = viewModel::clearSelectedCanyon,
+            )
+        }
+    }
+}
+
+@Composable
+private fun SearchCatalogLoadingHint(
+    hasTypedQuery: Boolean,
+    modifier: Modifier = Modifier,
+) {
+    Card(
+        modifier = modifier.padding(vertical = 8.dp),
+        colors = CardDefaults.cardColors(
+            containerColor = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.55f),
+        ),
+    ) {
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 14.dp, vertical = 12.dp),
+            horizontalArrangement = Arrangement.spacedBy(12.dp),
+            verticalAlignment = Alignment.CenterVertically,
+        ) {
+            CircularProgressIndicator(modifier = Modifier.size(18.dp), strokeWidth = 2.dp)
+            Text(
+                text = if (hasTypedQuery) {
+                    stringResource(R.string.search_catalog_loading_with_query)
+                } else {
+                    stringResource(R.string.search_catalog_loading_idle)
+                },
+                style = MaterialTheme.typography.bodyMedium,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
             )
         }
     }

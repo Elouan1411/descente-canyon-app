@@ -37,7 +37,10 @@ class PhotoRepositoryImpl @Inject constructor(
     override suspend fun refreshPhotos(canyonId: Int): Result<List<CanyonPhoto>> = runCatching {
         withContext(Dispatchers.IO) {
             val existingByUrl = photoDao.getByCanyonId(canyonId).associateBy { it.url }
-            val entities = scraper.scrapeCanyonPhotos(canyonId).getOrThrow().map { scrapedPhoto ->
+            val entities = scraper.scrapeCanyonPhotos(
+                canyonId = canyonId,
+                timeoutMs = REFRESH_TIMEOUT_MS,
+            ).getOrThrow().map { scrapedPhoto ->
                 val existing = existingByUrl[scrapedPhoto.url]
                 scrapedPhoto.toEntity().copy(
                     id = existing?.id ?: 0,
@@ -74,5 +77,9 @@ class PhotoRepositoryImpl @Inject constructor(
             photoDao.updateLocalPath(photoId, targetFile.absolutePath)
             targetFile.absolutePath
         }
+    }
+
+    private companion object {
+        const val REFRESH_TIMEOUT_MS = 15_000
     }
 }

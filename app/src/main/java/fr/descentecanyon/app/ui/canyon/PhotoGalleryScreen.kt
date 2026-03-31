@@ -50,7 +50,6 @@ import androidx.core.view.WindowInsetsControllerCompat
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import coil3.request.ImageRequest
-import coil3.request.allowHardware
 import fr.descentecanyon.app.R
 
 @OptIn(ExperimentalFoundationApi::class)
@@ -143,7 +142,6 @@ fun PhotoGalleryScreen(
                 val photoRequest: ImageRequest = remember(context, photo.localPath, photo.url) {
                     ImageRequest.Builder(context)
                         .data(photo.localPath ?: photo.url)
-                        .allowHardware(false)
                         .build()
                 }
                 Box(

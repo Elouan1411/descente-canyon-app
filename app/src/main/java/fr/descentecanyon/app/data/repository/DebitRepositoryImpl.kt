@@ -38,7 +38,10 @@ class DebitRepositoryImpl @Inject constructor(
     }
 
     override suspend fun refreshDebits(canyonId: Int): Result<List<Debit>> {
-        return scraper.scrapeCanyonDebits(canyonId).map { scrapedDebits ->
+        return scraper.scrapeCanyonDebits(
+            canyonId = canyonId,
+            timeoutMs = REFRESH_TIMEOUT_MS,
+        ).map { scrapedDebits ->
             val entities = scrapedDebits.map { it.toEntity() }
 
             database.withTransaction {
@@ -48,5 +51,9 @@ class DebitRepositoryImpl @Inject constructor(
 
             entities.map { it.toDomain() }
         }
+    }
+
+    private companion object {
+        const val REFRESH_TIMEOUT_MS = 15_000
     }
 }

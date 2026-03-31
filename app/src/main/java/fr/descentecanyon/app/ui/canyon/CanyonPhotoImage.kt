@@ -31,7 +31,6 @@ import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImagePainter
 import coil3.compose.rememberAsyncImagePainter
 import coil3.request.ImageRequest
-import coil3.request.allowHardware
 import fr.descentecanyon.app.R
 
 @Composable
@@ -56,7 +55,6 @@ fun RetryablePhoto(
     val request = remember(context, model, retryVersion) {
         ImageRequest.Builder(context)
             .data(model)
-            .allowHardware(false)
             .build()
     }
     val painter = rememberAsyncImagePainter(model = request)
