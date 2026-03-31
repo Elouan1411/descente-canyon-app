@@ -182,7 +182,7 @@ class CanyonDetailViewModelTest {
         advanceUntilIdle()
 
         assertEquals("/tmp/photo.jpg", viewModel.uiState.value.canyonDetail?.photos?.first()?.localPath)
-        assertEquals("Photo telechargee", viewModel.uiState.value.transientMessage)
+        assertEquals("Photo téléchargée", viewModel.uiState.value.transientMessage)
     }
 
     @Test

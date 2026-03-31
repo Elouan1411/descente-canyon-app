@@ -67,7 +67,7 @@ class DebitFormViewModelTest {
         viewModel.submit()
         advanceUntilIdle()
 
-        assertEquals("Debit enregistre hors-ligne", viewModel.uiState.value.transientMessage)
+        assertEquals("Débit enregistré hors-ligne", viewModel.uiState.value.transientMessage)
         assertEquals(DebitSubmissionStatus.QUEUED_OFFLINE, viewModel.uiState.value.lastSubmissionStatus)
     }
 }
