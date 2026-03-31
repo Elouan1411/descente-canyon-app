@@ -1723,6 +1723,29 @@
       }
     },
     {
+      "name": "france-cotedor-rge5m",
+      "mode": "derive_local_hydrology",
+      "dem": "build/watersheds/france-special-dem/vrt/_all_downloaded.vrt",
+      "availabilityPath": "build/watersheds/france-special-dem/vrt/_all_downloaded.vrt",
+      "srs": "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
+      "bufferKm": 20.0,
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "candidateStrategy": "nearest_channel",
+      "autoPrepare": {
+        "provider": "national-dem",
+        "manifest": "scripts\\watersheds\\france_special_dem_manifest.json",
+        "outputDir": "build/watersheds/france-special-dem",
+        "unitFields": [
+          "departement"
+        ]
+      },
+      "match": {
+        "pays": "France",
+        "departement": "Côte-d'Or"
+      }
+    },
+    {
       "name": "slovenia-dmv5-direct",
       "mode": "derive_local_hydrology",
       "dem": "build/watersheds/slovenia-national-dem/vrt/_all_downloaded.vrt",
@@ -1734,7 +1757,8 @@
       "channelMinUpaKm2": 0.05,
       "autoPrepare": {
         "provider": "slovenia-jgp",
-        "outputDir": "build/watersheds/slovenia-national-dem"
+        "outputDir": "build/watersheds/slovenia-national-dem",
+        "alwaysPrepare": true
       },
       "match": {
         "pays": "Slovénie"
@@ -1753,7 +1777,8 @@
       "autoPrepare": {
         "provider": "switzerland-stac",
         "outputDir": "build/watersheds/switzerland-national-dem",
-        "bufferKm": 10.0
+        "bufferKm": 10.0,
+        "alwaysPrepare": true
       },
       "match": {
         "pays": "Suisse"
@@ -1772,7 +1797,8 @@
       "autoPrepare": {
         "provider": "spain-wcs",
         "outputDir": "build/watersheds/spain-national-dem",
-        "bufferKm": 10.0
+        "bufferKm": 10.0,
+        "alwaysPrepare": true
       },
       "match": {
         "pays": "Espagne"
@@ -1791,7 +1817,8 @@
       "autoPrepare": {
         "provider": "austria-als",
         "outputDir": "build/watersheds/austria-national-dem",
-        "bufferKm": 20.0
+        "bufferKm": 20.0,
+        "alwaysPrepare": true
       },
       "match": {
         "pays": "Autriche"
@@ -1809,11 +1836,51 @@
       "autoPrepare": {
         "provider": "liguria-wcs",
         "outputDir": "build/watersheds/italy-liguria-dem",
-        "bufferKm": 10.0
+        "bufferKm": 10.0,
+        "alwaysPrepare": true
       },
       "match": {
         "pays": "Italie",
         "region": "Ligurie"
+      }
+    },
+    {
+      "name": "italy-tinitaly-10m",
+      "mode": "derive_local_hydrology",
+      "dem": "build/watersheds/italy-national-dem/vrt/_all_downloaded.vrt",
+      "srs": "EPSG:32632",
+      "bufferKm": 15.0,
+      "processingResolutionM": 10.0,
+      "candidateStrategy": "nearest_channel",
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "autoPrepare": {
+        "provider": "tinitaly-bulk",
+        "outputDir": "build/watersheds/italy-national-dem"
+      },
+      "match": {
+        "pays": "Italie"
+      }
+    },
+    {
+      "name": "madeira-dtm5m",
+      "mode": "derive_local_hydrology",
+      "dem": "build/watersheds/madeira-national-dem/raw/madeira_5m.tif",
+      "srs": "EPSG:5016",
+      "bufferKm": 10.0,
+      "processingResolutionM": 10.0,
+      "candidateStrategy": "nearest_channel",
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "autoPrepare": {
+        "provider": "madeira-wcs",
+        "outputDir": "build/watersheds/madeira-national-dem",
+        "bufferKm": 10.0,
+        "alwaysPrepare": true
+      },
+      "match": {
+        "pays": "Portugal",
+        "region": "Madeira"
       }
     },
     {
@@ -1828,7 +1895,8 @@
       "autoPrepare": {
         "provider": "copernicus",
         "manifest": "scripts/watersheds/copernicus_url_manifest.example.json",
-        "outputDir": "build/watersheds/copernicus-data"
+        "outputDir": "build/watersheds/copernicus-data",
+        "alwaysPrepare": true
       },
       "match": {
         "pays": [

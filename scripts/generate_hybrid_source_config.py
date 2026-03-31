@@ -140,7 +140,6 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--spain-manifest", type=Path, default=Path("scripts/watersheds/spain_national_dem_manifest.example.json"))
     parser.add_argument("--austria-manifest", type=Path, default=Path("scripts/watersheds/austria_national_dem_manifest.example.json"))
     parser.add_argument("--slovenia-manifest", type=Path, default=Path("scripts/watersheds/slovenia_national_dem_manifest.example.json"))
-    parser.add_argument("--portugal-manifest", type=Path, default=Path("scripts/watersheds/portugal_national_dem_manifest.example.json"))
     parser.add_argument("--france-special-manifest", type=Path, default=Path("scripts/watersheds/france_special_dem_manifest.json"))
     return parser.parse_args()
 
@@ -412,30 +411,6 @@ def main() -> int:
             "match": {
                 "pays": "Portugal",
                 "region": "Madeira"
-            }
-        }
-    )
-
-    sources.append(
-        {
-            "name": "portugal-dgt-mdt2m",
-            "mode": "derive_local_hydrology",
-            "dem": "build/watersheds/portugal-national-dem/vrt/_all_downloaded.vrt",
-            "srs": "EPSG:3763",
-            "bufferKm": 15.0,
-            "processingResolutionM": 10.0,
-            "candidateStrategy": "nearest_channel",
-            "searchRadiusM": 120.0,
-            "channelMinUpaKm2": 0.05,
-            "autoPrepare": {
-                "provider": "portugal-dgt-api",
-                "outputDir": "build/watersheds/portugal-national-dem",
-                "bufferKm": 15.0,
-                "alwaysPrepare": True,
-            },
-            "match": {
-                "pays": "Portugal",
-                "regionNotIn": ["Madeira", "Açores"]
             }
         }
     )
