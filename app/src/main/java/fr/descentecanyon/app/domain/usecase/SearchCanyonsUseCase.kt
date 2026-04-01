@@ -27,10 +27,11 @@ class SearchCanyonsUseCase @Inject constructor(
         criteria: SearchCriteria,
     ): SearchResultSet {
         val normalizedQuery = criteria.query.normalizeForSearch()
+        val queryTokens = normalizedQuery.searchTokens()
         val shouldDeferResults = criteria.shouldDeferBroadResults()
 
         val baseMatches = catalog.asSequence()
-            .filter { matchesBaseFilters(it, criteria, normalizedQuery) }
+            .filter { matchesBaseFilters(it, criteria, normalizedQuery, queryTokens) }
             .toList()
 
         val availableCountries = baseMatches.asSequence()
@@ -75,8 +76,9 @@ class SearchCanyonsUseCase @Inject constructor(
         item: CanyonSearchItem,
         criteria: SearchCriteria,
         normalizedQuery: String,
+        queryTokens: List<String>,
     ): Boolean {
-        return matchesQuery(item, normalizedQuery) &&
+        return matchesQuery(item, normalizedQuery, queryTokens) &&
             (!criteria.favoritesOnly || item.isFavorite) &&
             item.cotationRating.matches(criteria) &&
             (criteria.interestMin == null || (item.interet ?: Float.NEGATIVE_INFINITY) >= criteria.interestMin) &&
@@ -97,9 +99,9 @@ class SearchCanyonsUseCase @Inject constructor(
         return department == null || item.subdivisionsFor(country).any { it.equals(department, ignoreCase = true) }
     }
 
-    private fun matchesQuery(item: CanyonSearchItem, normalizedQuery: String): Boolean {
+    private fun matchesQuery(item: CanyonSearchItem, normalizedQuery: String, queryTokens: List<String>): Boolean {
         if (normalizedQuery.isBlank()) return true
-        return item.searchableText.contains(normalizedQuery)
+        return queryTokens.all(item.searchableText::contains)
     }
 
     private fun sortItems(items: List<CanyonSearchItem>, criteria: SearchCriteria): List<CanyonSearchItem> {
@@ -156,13 +158,18 @@ class SearchCanyonsUseCase @Inject constructor(
 
     private fun relevanceScore(item: CanyonSearchItem, normalizedQuery: String): Int {
         if (normalizedQuery.isBlank()) return 0
+        val queryTokens = normalizedQuery.searchTokens()
         return when {
-            item.normalizedNom == normalizedQuery -> 500
-            item.normalizedNom.startsWith(normalizedQuery) -> 400
-            item.normalizedNom.contains(normalizedQuery) -> 300
-            item.normalizedNomComplet.startsWith(normalizedQuery) -> 250
-            item.normalizedNomComplet.contains(normalizedQuery) -> 200
-            else -> 100
+            item.normalizedNom == normalizedQuery -> 800
+            item.normalizedNomComplet == normalizedQuery -> 750
+            item.normalizedNom.startsWith(normalizedQuery) -> 700
+            item.normalizedNom.contains(normalizedQuery) -> 650
+            item.normalizedNom.matchesAllTokens(queryTokens) -> 600
+            item.normalizedNomComplet.startsWith(normalizedQuery) -> 550
+            item.normalizedNomComplet.contains(normalizedQuery) -> 500
+            item.normalizedNomComplet.matchesAllTokens(queryTokens) -> 450
+            item.searchableText.contains(normalizedQuery) -> 300
+            else -> 200
         }
     }
 
@@ -226,6 +233,10 @@ class SearchCanyonsUseCase @Inject constructor(
 }
 
 private data class ScoredSearchItem(val item: CanyonSearchItem, val relevance: Int)
+
+private fun String.searchTokens(): List<String> = split(' ').filter(String::isNotBlank)
+
+private fun String.matchesAllTokens(tokens: List<String>): Boolean = tokens.all(this::contains)
 
 private fun <T, R : Comparable<R>> compareNullable(selector: (T) -> R?): Comparator<T> {
     return Comparator { left, right ->

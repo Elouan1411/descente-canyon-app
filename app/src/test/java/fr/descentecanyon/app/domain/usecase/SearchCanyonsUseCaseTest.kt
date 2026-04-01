@@ -6,6 +6,7 @@ import fr.descentecanyon.app.domain.model.IntRangeFilter
 import fr.descentecanyon.app.domain.model.SearchCriteria
 import fr.descentecanyon.app.domain.model.SearchSortField
 import fr.descentecanyon.app.domain.model.SortDirection
+import fr.descentecanyon.app.domain.model.normalizeForSearch
 import fr.descentecanyon.app.domain.repository.CanyonRepository
 import io.mockk.mockk
 import org.junit.Assert.assertEquals
@@ -162,8 +163,36 @@ class SearchCanyonsUseCaseTest {
         assertEquals(listOf(1, 2), result.results.map { it.id })
     }
 
+    @Test
+    fun `search ignores punctuation and matches tokens out of order`() {
+        val result = useCase(
+            catalog = listOf(
+                canyon(id = 1, nom = "Cros-Chaumeil"),
+                canyon(id = 2, nom = "Riolan"),
+            ),
+            criteria = SearchCriteria(query = "Chaumeil Cros"),
+        )
+
+        assertEquals(listOf(1), result.results.map { it.id })
+    }
+
+    @Test
+    fun `relevance favors name matches over secondary field matches`() {
+        val result = useCase(
+            catalog = listOf(
+                canyon(id = 1, nom = "Cros-Chaumeil"),
+                canyon(id = 2, nom = "Riolan", searchableText = "riolan france cros chaumeil"),
+            ),
+            criteria = SearchCriteria(query = "Cros Chaumeil"),
+        )
+
+        assertEquals(listOf(1, 2), result.results.map { it.id })
+    }
+
     private fun canyon(
         id: Int,
+        nom: String = "Canyon $id",
+        nomComplet: String = nom,
         cotation: String = "V3A3III",
         longueur: Int? = 1000,
         pays: String = "France",
@@ -173,10 +202,16 @@ class SearchCanyonsUseCaseTest {
         subdivisionsByCountry: Map<String, List<String>> = emptyMap(),
         latitude: Double? = null,
         longitude: Double? = null,
+        searchableText: String = listOf(nom, nomComplet, pays)
+            .plus(countryTokens)
+            .plus(listOfNotNull(departement))
+            .plus(departmentTokens)
+            .joinToString(" ")
+            .normalizeForSearch(),
     ) = CanyonSearchItem(
         id = id,
-        nom = "Canyon $id",
-        nomComplet = "Canyon $id",
+        nom = nom,
+        nomComplet = nomComplet,
         pays = pays,
         countryTokens = countryTokens,
         departement = departement,
@@ -188,8 +223,8 @@ class SearchCanyonsUseCaseTest {
         representativeLat = latitude,
         representativeLng = longitude,
         url = "/canyoning/canyon/$id/test.html",
-        searchableText = "canyon $id ${countryTokens.joinToString(" ")} ${departmentTokens.joinToString(" ")}".lowercase(),
-        normalizedNom = "canyon $id",
-        normalizedNomComplet = "canyon $id",
+        searchableText = searchableText,
+        normalizedNom = nom.normalizeForSearch(),
+        normalizedNomComplet = nomComplet.normalizeForSearch(),
     )
 }

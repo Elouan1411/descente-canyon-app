@@ -29,7 +29,6 @@ import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.map
-import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.flow.shareIn
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -100,31 +99,6 @@ class CanyonRepositoryImpl @Inject constructor(
                 started = SharingStarted.WhileSubscribed(stopTimeoutMillis = 5_000),
                 replay = 1,
             )
-    }
-
-    /**
-     * B-1 fix: Use Room's reactive Flow directly instead of collecting inside a flow{} builder
-     * (which would block forever since Room Flows never complete).
-     * Remote results are fetched on subscription via onStart and inserted into DB,
-     * which automatically triggers a new emission from the Room Flow.
-     */
-    override fun searchByName(query: String): Flow<Result<List<CanyonSummary>>> {
-        return canyonDao.searchByName(query)
-            .map<List<fr.descentecanyon.app.data.local.entity.CanyonEntity>, Result<List<CanyonSummary>>> { entities ->
-                Result.success(entities.map { it.toSummary() })
-            }
-            .onStart {
-                // Fire-and-forget remote fetch; inserted rows trigger a new Flow emission
-                try {
-                    val remoteResults = scraper.searchCanyons(query).getOrNull()
-                    if (!remoteResults.isNullOrEmpty()) {
-                        val entities = remoteResults.map { it.toEntity() }
-                        localStore.insertAllPreservingFlags(entities)
-                    }
-                } catch (_: Exception) {
-                    // Remote failure is non-fatal; local results still flow
-                }
-            }
     }
 
     override fun observeSearchCatalog(): Flow<List<CanyonSearchItem>> {
@@ -252,7 +226,7 @@ class CanyonRepositoryImpl @Inject constructor(
 
     override fun getCanyonsByLocation(locationPath: String): Flow<Result<List<CanyonSummary>>> {
         // TODO: Implement location-based browsing
-        return canyonDao.searchByName("").map { entities ->
+        return canyonDao.observeAll().map { entities ->
             Result.success(entities.map { it.toSummary() })
         }
     }

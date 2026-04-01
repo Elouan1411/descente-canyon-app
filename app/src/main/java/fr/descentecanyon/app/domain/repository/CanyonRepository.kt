@@ -14,12 +14,6 @@ import kotlinx.coroutines.flow.Flow
 interface CanyonRepository {
 
     /**
-     * Search canyons by name.
-     * Returns cached results first, then refreshes from remote.
-     */
-    fun searchByName(query: String): Flow<Result<List<CanyonSummary>>>
-
-    /**
      * Observe the local search catalog enriched with filterable/searchable fields.
      */
     fun observeSearchCatalog(): Flow<List<CanyonSearchItem>>

@@ -14,9 +14,6 @@ interface CanyonDao {
     @Query("SELECT * FROM canyons WHERE id IN (:ids)")
     suspend fun getByIds(ids: List<Int>): List<CanyonEntity>
 
-    @Query("SELECT * FROM canyons WHERE nom LIKE '%' || :query || '%' OR nomComplet LIKE '%' || :query || '%'")
-    fun searchByName(query: String): Flow<List<CanyonEntity>>
-
     @Query("SELECT * FROM canyons WHERE id = :id")
     suspend fun getById(id: Int): CanyonEntity?
 
