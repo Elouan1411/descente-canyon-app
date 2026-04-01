@@ -183,6 +183,8 @@ def select_candidate(
     strategy: str,
     channel_min_upa_km2: float | None,
 ) -> CandidateCell:
+    if strategy == "exact_cell":
+        return min(candidates, key=lambda candidate: (candidate.distance_m, -candidate.value))
     if strategy == "nearest_channel":
         filtered = candidates
         if channel_min_upa_km2 is not None:
@@ -1458,7 +1460,7 @@ def parse_args(argv: list[str]) -> argparse.Namespace:
     parser.add_argument("--search-radius-m", type=float)
     parser.add_argument(
         "--candidate-strategy",
-        choices=["max_upa", "nearest_channel"],
+        choices=["max_upa", "nearest_channel", "exact_cell"],
         default="max_upa",
     )
     parser.add_argument("--channel-min-upa-km2", type=float)

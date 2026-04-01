@@ -1,0 +1,294 @@
+from __future__ import annotations
+
+import math
+from typing import Any
+
+import numpy as np
+import rasterio
+from rasterio.features import shapes
+from rasterio.transform import Affine
+from rasterio.warp import transform, transform_geom
+
+from compute_entry_watersheds import FLOW_DIRECTION_OFFSETS
+
+
+def _cell_center(transform: Affine, row: int, col: int) -> tuple[float, float]:
+    x = transform.c + (col + 0.5) * transform.a + (row + 0.5) * transform.b
+    y = transform.f + (col + 0.5) * transform.d + (row + 0.5) * transform.e
+    return x, y
+
+
+def _haversine_m(lat1: float, lon1: float, lat2: float, lon2: float) -> float:
+    radius_m = 6_371_008.8
+    phi1 = math.radians(lat1)
+    phi2 = math.radians(lat2)
+    delta_phi = math.radians(lat2 - lat1)
+    delta_lambda = math.radians(lon2 - lon1)
+    a = (
+        math.sin(delta_phi / 2.0) ** 2
+        + math.cos(phi1) * math.cos(phi2) * math.sin(delta_lambda / 2.0) ** 2
+    )
+    return 2.0 * radius_m * math.atan2(math.sqrt(a), math.sqrt(1.0 - a))
+
+
+def _cell_step_length_m(transform: Affine, crs: Any, row1: int, col1: int, row2: int, col2: int) -> float:
+    x1, y1 = _cell_center(transform, row1, col1)
+    x2, y2 = _cell_center(transform, row2, col2)
+    if crs is not None and getattr(crs, "is_geographic", False):
+        (lon1,), (lat1,) = transform_coords(crs, "EPSG:4326", [x1], [y1])
+        (lon2,), (lat2,) = transform_coords(crs, "EPSG:4326", [x2], [y2])
+        return _haversine_m(lat1, lon1, lat2, lon2)
+    return math.hypot(x2 - x1, y2 - y1)
+
+
+def transform_coords(src_crs: Any, dst_crs: Any, xs: list[float], ys: list[float]) -> tuple[list[float], list[float]]:
+    out_xs, out_ys = transform(src_crs, dst_crs, xs, ys)
+    return list(out_xs), list(out_ys)
+
+
+def build_watershed_mask_data(
+    *,
+    flowdir_path: str,
+    snapped_longitude: float,
+    snapped_latitude: float,
+    source_srs: str | None,
+) -> dict[str, Any] | None:
+    with rasterio.open(flowdir_path) as src:
+        raster_crs = src.crs or source_srs
+        if raster_crs is None:
+            raise SystemExit(f"Flow direction raster has no CRS: {flowdir_path}")
+
+        xs, ys = transform("EPSG:4326", raster_crs, [snapped_longitude], [snapped_latitude])
+        target_row, target_col = src.index(xs[0], ys[0])
+        flow = src.read(1, masked=True).filled(0).astype(np.int16)
+        if target_row < 0 or target_row >= flow.shape[0] or target_col < 0 or target_col >= flow.shape[1]:
+            return None
+
+        visited = np.zeros(flow.shape, dtype=np.uint8)
+        path_lengths = np.full(flow.shape, np.nan, dtype=np.float32)
+        queue: list[tuple[int, int]] = [(target_row, target_col)]
+        visited[target_row, target_col] = 1
+        path_lengths[target_row, target_col] = 0.0
+
+        index = 0
+        while index < len(queue):
+            row, col = queue[index]
+            index += 1
+            for d_row in (-1, 0, 1):
+                for d_col in (-1, 0, 1):
+                    if d_row == 0 and d_col == 0:
+                        continue
+                    n_row = row + d_row
+                    n_col = col + d_col
+                    if n_row < 0 or n_row >= flow.shape[0] or n_col < 0 or n_col >= flow.shape[1]:
+                        continue
+                    if visited[n_row, n_col] == 1:
+                        continue
+                    direction_code = int(flow[n_row, n_col])
+                    offset = FLOW_DIRECTION_OFFSETS.get(direction_code)
+                    if offset is None:
+                        continue
+                    if n_row + offset[0] == row and n_col + offset[1] == col:
+                        visited[n_row, n_col] = 1
+                        queue.append((n_row, n_col))
+                        step = _cell_step_length_m(src.transform, raster_crs, n_row, n_col, row, col)
+                        path_lengths[n_row, n_col] = float(path_lengths[row, col] + step)
+
+        return {
+            "mask": visited == 1,
+            "pathLengthsM": path_lengths,
+            "transform": src.transform,
+            "crs": raster_crs,
+            "targetCell": [target_row, target_col],
+        }
+
+
+def mask_to_geometry(mask_data: dict[str, Any], simplify_tolerance: float) -> dict[str, Any] | None:
+    from run_catchment_batch import simplify_projected_geometry
+
+    mask = mask_data["mask"].astype(np.uint8)
+    raster_crs = mask_data["crs"]
+    transform_affine = mask_data["transform"]
+    polygon_geometries = []
+    for geometry, value in shapes(mask, mask=mask == 1, transform=transform_affine):
+        if int(value) != 1:
+            continue
+        simplified = simplify_projected_geometry(geometry, simplify_tolerance)
+        polygon_geometries.append(transform_geom(raster_crs, "EPSG:4326", simplified, precision=6))
+
+    if not polygon_geometries:
+        return None
+
+    polygons: list[Any] = []
+    for geometry in polygon_geometries:
+        if geometry["type"] == "Polygon":
+            polygons.append(geometry["coordinates"])
+        elif geometry["type"] == "MultiPolygon":
+            polygons.extend(geometry["coordinates"])
+    if not polygons:
+        return None
+    if len(polygons) == 1:
+        return {"type": "Polygon", "coordinates": polygons[0]}
+    return {"type": "MultiPolygon", "coordinates": polygons}
+
+
+def _resolution_m(transform_affine: Affine, crs: Any, lat_hint: float) -> tuple[float, float]:
+    x_res = abs(transform_affine.a)
+    y_res = abs(transform_affine.e)
+    if crs is not None and getattr(crs, "is_geographic", False):
+        y_res_m = 111_320.0 * y_res
+        x_res_m = 111_320.0 * max(0.1, abs(math.cos(math.radians(lat_hint)))) * x_res
+        return x_res_m, y_res_m
+    return x_res, y_res
+
+
+def _slope_aspect(dem: np.ndarray, x_res_m: float, y_res_m: float) -> tuple[np.ndarray, np.ndarray]:
+    dz_dy, dz_dx = np.gradient(dem, y_res_m, x_res_m)
+    slope_rad = np.arctan(np.sqrt(dz_dx ** 2 + dz_dy ** 2))
+    slope_deg = np.degrees(slope_rad)
+    aspect = np.degrees(np.arctan2(dz_dx, -dz_dy))
+    aspect = np.where(aspect < 0, 360.0 + aspect, aspect)
+    return slope_deg, aspect
+
+
+def _tri(dem: np.ndarray) -> np.ndarray:
+    padded = np.pad(dem, 1, mode="constant", constant_values=np.nan)
+    center = padded[1:-1, 1:-1]
+    diffs = []
+    for d_row in (-1, 0, 1):
+        for d_col in (-1, 0, 1):
+            if d_row == 0 and d_col == 0:
+                continue
+            neighbor = padded[1 + d_row : 1 + d_row + dem.shape[0], 1 + d_col : 1 + d_col + dem.shape[1]]
+            diffs.append(np.abs(neighbor - center))
+    stacked = np.stack(diffs, axis=0)
+    return np.nanmean(stacked, axis=0)
+
+
+def _safe_stat(values: np.ndarray, fn: str) -> float | None:
+    if values.size == 0:
+        return None
+    result = getattr(np, fn)(values)
+    if np.isnan(result):
+        return None
+    return float(result)
+
+
+def _round(value: float | None, digits: int = 6) -> float | None:
+    if value is None:
+        return None
+    return round(value, digits)
+
+
+def compute_watershed_descriptors(
+    *,
+    dem_path: str,
+    mask_data: dict[str, Any],
+    selected_candidate: dict[str, Any],
+) -> dict[str, Any]:
+    with rasterio.open(dem_path) as src:
+        dem = src.read(1, masked=True).filled(np.nan).astype(np.float32)
+        mask = mask_data["mask"]
+        if dem.shape != mask.shape:
+            raise SystemExit(f"DEM/mask shape mismatch for descriptors: {dem.shape} vs {mask.shape}")
+
+        valid = mask & np.isfinite(dem)
+        mask_count = int(np.count_nonzero(mask))
+        valid_count = int(np.count_nonzero(valid))
+        nodata_fraction = 1.0 if mask_count == 0 else max(0.0, 1.0 - valid_count / mask_count)
+        if valid_count == 0:
+            return {
+                "descriptorStatus": "no_valid_dem_cells",
+                "watershedCellCount": mask_count,
+                "watershedNoDataFraction": _round(nodata_fraction),
+            }
+
+        values = dem[valid]
+        mean_lat = float(np.nanmean([selected_candidate["evaluation"]["snapped_latitude"], selected_candidate["latitude"]]))
+        x_res_m, y_res_m = _resolution_m(src.transform, src.crs, mean_lat)
+        cell_area_m2 = max(x_res_m * y_res_m, 1.0)
+        area_km2 = valid_count * cell_area_m2 / 1_000_000.0
+
+        slope_deg, aspect_deg = _slope_aspect(dem, x_res_m, y_res_m)
+        tri = _tri(dem)
+        valid_slope = slope_deg[valid & np.isfinite(slope_deg)]
+        valid_aspect = aspect_deg[valid & np.isfinite(aspect_deg)]
+        valid_tri = tri[valid & np.isfinite(tri)]
+
+        path_lengths = mask_data["pathLengthsM"]
+        valid_path = path_lengths[mask & np.isfinite(path_lengths)]
+        max_flow_path_m = _safe_stat(valid_path, "max") or 0.0
+        max_flow_path_km = max_flow_path_m / 1000.0 if max_flow_path_m > 0 else None
+
+        outlet_elevation = selected_candidate["evaluation"].get("elevation_m")
+        main_channel_slope_percent = None
+        if max_flow_path_m > 0 and outlet_elevation is not None:
+            max_index = np.nanargmax(path_lengths)
+            row, col = np.unravel_index(max_index, path_lengths.shape)
+            start_elevation = float(dem[row, col]) if np.isfinite(dem[row, col]) else None
+            if start_elevation is not None:
+                rise = max(start_elevation - float(outlet_elevation), 0.0)
+                main_channel_slope_percent = (rise / max_flow_path_m) * 100.0
+
+        relief_m = (_safe_stat(values, "max") or 0.0) - (_safe_stat(values, "min") or 0.0)
+        kirpich = None
+        if max_flow_path_m > 0 and main_channel_slope_percent and main_channel_slope_percent > 0:
+            slope_m_per_m = main_channel_slope_percent / 100.0
+            kirpich = 0.01947 * (max_flow_path_m ** 0.77) * (slope_m_per_m ** -0.385)
+        giandotti = None
+        if area_km2 > 0 and max_flow_path_km and relief_m > 0:
+            giandotti = ((4 * math.sqrt(area_km2)) + (1.5 * max_flow_path_km)) / (0.8 * math.sqrt(relief_m)) * 60.0
+
+        aspect_n = np.count_nonzero(((valid_aspect >= 315) | (valid_aspect < 45))) / max(valid_aspect.size, 1)
+        aspect_e = np.count_nonzero((valid_aspect >= 45) & (valid_aspect < 135)) / max(valid_aspect.size, 1)
+        aspect_s = np.count_nonzero((valid_aspect >= 135) & (valid_aspect < 225)) / max(valid_aspect.size, 1)
+        aspect_w = np.count_nonzero((valid_aspect >= 225) & (valid_aspect < 315)) / max(valid_aspect.size, 1)
+
+        snap_distance = float(selected_candidate["evaluation"].get("snap_distance_m") or 0.0)
+        dem_resolution = math.sqrt(x_res_m * y_res_m)
+        verdict = (selected_candidate.get("analysis") or {}).get("selectionVerdict") or "unknown"
+        quality = 1.0
+        quality -= min(nodata_fraction * 0.7, 0.7)
+        quality -= min(snap_distance / 200.0 * 0.25, 0.25)
+        quality -= 0.15 if dem_resolution > 20 else (0.08 if dem_resolution > 10 else 0.0)
+        quality -= {"off_channel": 0.5, "uncertain": 0.2, "possible_proxy": 0.1}.get(verdict, 0.0)
+        quality = max(0.0, min(1.0, quality))
+
+        return {
+            "descriptorStatus": "ok",
+            "watershedCellCount": mask_count,
+            "watershedValidCellCount": valid_count,
+            "watershedNoDataFraction": _round(nodata_fraction),
+            "basinAreaRasterKm2": _round(area_km2),
+            "basinMinElevationM": _round(_safe_stat(values, "min"), 3),
+            "basinMeanElevationM": _round(_safe_stat(values, "mean"), 3),
+            "basinMedianElevationM": _round(_safe_stat(values, "median"), 3),
+            "basinMaxElevationM": _round(_safe_stat(values, "max"), 3),
+            "basinElevationStdM": _round(_safe_stat(values, "std"), 3),
+            "basinReliefM": _round(relief_m, 3),
+            "fractionAbove1500m": _round(float(np.count_nonzero(values >= 1500.0) / values.size), 6),
+            "fractionAbove2000m": _round(float(np.count_nonzero(values >= 2000.0) / values.size), 6),
+            "fractionAbove2500m": _round(float(np.count_nonzero(values >= 2500.0) / values.size), 6),
+            "meanSlopeDeg": _round(_safe_stat(valid_slope, "mean"), 3),
+            "medianSlopeDeg": _round(_safe_stat(valid_slope, "median"), 3),
+            "p90SlopeDeg": _round(float(np.nanpercentile(valid_slope, 90)) if valid_slope.size else None, 3),
+            "maxSlopeDeg": _round(_safe_stat(valid_slope, "max"), 3),
+            "fractionSlopeOver10Deg": _round(float(np.count_nonzero(valid_slope >= 10.0) / max(valid_slope.size, 1)), 6),
+            "fractionSlopeOver20Deg": _round(float(np.count_nonzero(valid_slope >= 20.0) / max(valid_slope.size, 1)), 6),
+            "fractionSlopeOver30Deg": _round(float(np.count_nonzero(valid_slope >= 30.0) / max(valid_slope.size, 1)), 6),
+            "aspectNorthFraction": _round(aspect_n, 6),
+            "aspectEastFraction": _round(aspect_e, 6),
+            "aspectSouthFraction": _round(aspect_s, 6),
+            "aspectWestFraction": _round(aspect_w, 6),
+            "terrainRuggednessIndex": _round(_safe_stat(valid_tri, "mean"), 6),
+            "maxFlowPathLengthKm": _round(max_flow_path_km, 6),
+            "mainFlowLengthKm": _round(max_flow_path_km, 6),
+            "mainChannelSlopePercent": _round(main_channel_slope_percent, 6),
+            "timeOfConcentrationKirpichMin": _round(kirpich, 6),
+            "timeOfConcentrationGiandottiMin": _round(giandotti, 6),
+            "meltonRuggedness": _round((relief_m / 1000.0) / math.sqrt(area_km2), 6) if area_km2 > 0 else None,
+            "outletElevationM": _round(float(outlet_elevation) if outlet_elevation is not None else None, 3),
+            "outletSnapDistanceM": _round(snap_distance, 3),
+            "demResolutionM": _round(dem_resolution, 3),
+            "watershedQualityScore": _round(quality, 6),
+        }

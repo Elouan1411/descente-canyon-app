@@ -12,6 +12,7 @@ CORE_FILES = [
     "summary.json",
     "progress.json",
     "import_ready_catchments.json",
+    "import_ready_watershed_descriptors.json",
     "import_ready_watersheds.json",
     "watershed_polygons.geojson",
     "errors.log",

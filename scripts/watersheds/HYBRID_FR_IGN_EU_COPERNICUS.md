@@ -196,6 +196,18 @@ Le script traite un canyon a la fois, peut etre interrompu puis relance avec la 
 
 Le pipeline stocke maintenant aussi, quand possible, un polygone de bassin versant simplifie par canyon dans les sorties batch. Cette geometrie est destinee au stockage offline puis a l'affichage dans l'application plus tard.
 
+Le batch ecrit aussi un fichier `import_ready_watershed_descriptors.json` avec des descripteurs morphometriques derives du DEM (altitudes, pentes, rugosite, longueurs d'ecoulement, score qualite, etc.).
+
+Pour recalculer une liste de canyons issue de `build/watershed-review/watershed-review.json` avec le point GPS valide manuellement et sans snap (meme cellule raster), utiliser :
+
+```bash
+python scripts/run_catchment_batch.py \
+  --source-config scripts/watersheds/source_config.hybrid.json \
+  --output-dir build/watersheds/batch-run-review \
+  --review-file build/watershed-review/watershed-review.json \
+  --jobs 2
+```
+
 Le batch peut maintenant tenter de preparer automatiquement la meilleure source disponible dans cet ordre :
 
 1. `IGN` pour la France

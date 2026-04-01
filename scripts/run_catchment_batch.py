@@ -20,8 +20,9 @@ from rasterio.features import shapes
 from rasterio.warp import transform, transform_geom
 
 from cli_tools import default_gdal_translate, default_gdalwarp, resolve_executable
-from compute_entry_watersheds import FLOW_DIRECTION_OFFSETS, EntryPoint, create_raster, evaluate_entry, load_canyons
+from compute_entry_watersheds import EntryPoint, create_raster, evaluate_entry, load_canyons
 from run_local_ign_canyon_workflow import DEFAULT_LAMBERT93_PROJ4
+from watershed_features import build_watershed_mask_data, compute_watershed_descriptors, mask_to_geometry
 
 
 POINT_TYPE_PRIORITY = {
@@ -38,6 +39,7 @@ HYDRO_TYPE_BONUS = {
     "PARKING_AVAL": 3.0,
     "POINT_REMARQUABLE": 2.0,
     "PARKING_AMONT": 1.0,
+    "REVIEW_GPS": 10.0,
 }
 
 DYNAMIC_AUTOPREPARE_PROVIDERS = {
@@ -93,6 +95,39 @@ def should_skip_existing_canyon(path: Path, skip_existing: bool) -> bool:
         return False
     status = payload.get("status", "ok")
     return status != "error"
+
+
+def load_review_points(review_file: Path) -> dict[int, list[dict[str, Any]]]:
+    reviews = load_json(review_file)
+    if not isinstance(reviews, list):
+        raise SystemExit(f"Invalid review file format: {review_file}")
+    by_canyon: dict[int, list[dict[str, Any]]] = {}
+    for review in reviews:
+        if not isinstance(review, dict):
+            continue
+        if str(review.get("status", "")).lower() != "bad":
+            continue
+        gps = review.get("gps")
+        if not isinstance(gps, dict):
+            continue
+        try:
+            canyon_id = int(review["canyonId"])
+            latitude = float(gps["latitude"])
+            longitude = float(gps["longitude"])
+        except (KeyError, TypeError, ValueError):
+            continue
+        by_canyon[canyon_id] = [
+            {
+                "canyonId": canyon_id,
+                "type": "REVIEW_GPS",
+                "label": "review_gps",
+                "latitude": latitude,
+                "longitude": longitude,
+                "_forceExactCell": True,
+                "_reviewStatus": "bad",
+            }
+        ]
+    return by_canyon
 
 
 def bbox_for_points_in_crs(points: list[dict[str, Any]], target_crs: str, buffer_km: float) -> tuple[float, float, float, float]:
@@ -177,6 +212,7 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument("--only-canyon-id", type=int, action="append")
     parser.add_argument("--only-canyon-id-file", type=Path)
+    parser.add_argument("--review-file", type=Path)
     parser.add_argument("--max-canyons", type=int)
     parser.add_argument("--jobs", type=int, default=1)
     parser.add_argument("--aggregate-every", type=int, default=25)
@@ -816,15 +852,25 @@ def evaluate_points_for_canyon(
                 longitude=float(point["longitude"]),
                 label=point.get("label"),
             )
+            if point.get("_forceExactCell"):
+                search_radius_cells = 0
+                search_radius_m = 0.0
+                candidate_strategy = "exact_cell"
+                channel_min_upa_km2 = None
+            else:
+                search_radius_cells = int(source.get("searchRadiusCells", 2))
+                search_radius_m = source.get("searchRadiusM")
+                candidate_strategy = str(source.get("candidateStrategy", "max_upa"))
+                channel_min_upa_km2 = source.get("channelMinUpaKm2")
             evaluated = evaluate_entry(
                 entry,
                 upa_raster,
                 flowdir_raster,
                 elevation_raster,
-                search_radius_cells=int(source.get("searchRadiusCells", 2)),
-                search_radius_m=source.get("searchRadiusM"),
-                candidate_strategy=str(source.get("candidateStrategy", "max_upa")),
-                channel_min_upa_km2=source.get("channelMinUpaKm2"),
+                search_radius_cells=search_radius_cells,
+                search_radius_m=search_radius_m,
+                candidate_strategy=candidate_strategy,
+                channel_min_upa_km2=channel_min_upa_km2,
             )
             results.append(
                 {
@@ -832,6 +878,7 @@ def evaluate_points_for_canyon(
                     "label": point.get("label"),
                     "latitude": point.get("latitude"),
                     "longitude": point.get("longitude"),
+                    "forcedByReview": bool(point.get("_forceExactCell")),
                     "evaluation": asdict(evaluated),
                 }
             )
@@ -1158,6 +1205,7 @@ def aggregate_results(output_dir: Path) -> None:
     import_rows = []
     watershed_rows = []
     watershed_features = []
+    descriptor_rows = []
     status_counts: dict[str, int] = collections.Counter()
     watershed_skip_counts: dict[str, int] = collections.Counter()
     stage_totals: dict[str, float] = collections.defaultdict(float)
@@ -1194,8 +1242,21 @@ def aggregate_results(output_dir: Path) -> None:
                 "selectionScore": candidate.get("analysis", {}).get("selectionScore"),
                 "strictTopoPointType": item.get("strictTopoCandidate", {}).get("pointType") if item.get("strictTopoCandidate") else None,
                 "strictTopoUpstreamCatchmentAreaKm2": item.get("strictTopoCandidate", {}).get("evaluation", {}).get("snapped_upa_km2") if item.get("strictTopoCandidate") else None,
+                "forcedByReview": item.get("forcedByReview", False),
             }
         )
+        descriptors = item.get("descriptors")
+        if descriptors:
+            descriptor_rows.append(
+                {
+                    "canyonId": item["canyonId"],
+                    "canyonName": item["canyonName"],
+                    "sourceName": item["sourceName"],
+                    "pointType": candidate["pointType"],
+                    "forcedByReview": item.get("forcedByReview", False),
+                    **descriptors,
+                }
+            )
         watershed = item.get("watershed")
         if watershed and watershed.get("geometry"):
             watershed_rows.append(
@@ -1230,6 +1291,7 @@ def aggregate_results(output_dir: Path) -> None:
             import_rows[-1]["watershedSkipReason"] = item.get("watershedSkipReason")
 
     write_json(output_dir / "import_ready_catchments.json", import_rows)
+    write_json(output_dir / "import_ready_watershed_descriptors.json", descriptor_rows)
     write_json(output_dir / "import_ready_watersheds.json", watershed_rows)
     write_json(
         output_dir / "watershed_polygons.geojson",
@@ -1240,6 +1302,7 @@ def aggregate_results(output_dir: Path) -> None:
         {
             "canyonsWithResults": len(canyon_results),
             "importReadyRows": len(import_rows),
+            "descriptorRows": len(descriptor_rows),
             "watershedPolygonRows": len(watershed_rows),
             "statusCounts": dict(status_counts),
             "watershedSkipCounts": dict(watershed_skip_counts),
@@ -1362,8 +1425,10 @@ def process_single_canyon(
     selected_candidate = candidate_analysis["bestHydroProxyCandidate"]
     strict_topo_candidate = candidate_analysis["strictTopoCandidate"]
     watershed = None
+    descriptors = None
     watershed_status = "skipped"
     watershed_skip_reason = None
+    mask_data = None
     if (
         selected_candidate is not None
         and source["mode"] == "derive_local_hydrology"
@@ -1373,14 +1438,21 @@ def process_single_canyon(
     ):
         print(f"WATERSHED canyon {canyon_id} start", flush=True)
         started = time.perf_counter()
-        geometry = build_watershed_geometry(
+        mask_data = build_watershed_mask_data(
             flowdir_path=raster_paths["flowdir"],
             snapped_longitude=float(selected_candidate["evaluation"]["snapped_longitude"]),
             snapped_latitude=float(selected_candidate["evaluation"]["snapped_latitude"]),
             source_srs=source.get("srs"),
-            simplify_tolerance=float(source.get("watershedSimplifyToleranceM", 10.0)),
         )
-        stage_timings["buildWatershedGeometrySec"] = time.perf_counter() - started
+        stage_timings["buildWatershedMaskSec"] = time.perf_counter() - started
+        geometry = None
+        if mask_data is not None:
+            started = time.perf_counter()
+            geometry = mask_to_geometry(mask_data, float(source.get("watershedSimplifyToleranceM", 10.0)))
+            stage_timings["buildWatershedGeometrySec"] = time.perf_counter() - started
+        else:
+            stage_timings["buildWatershedGeometrySec"] = 0.0
+
         if geometry is not None:
             watershed = {
                 "geometry": geometry,
@@ -1398,6 +1470,7 @@ def process_single_canyon(
             watershed_skip_reason = "empty_geometry"
         print(f"WATERSHED canyon {canyon_id} done", flush=True)
     else:
+        stage_timings["buildWatershedMaskSec"] = 0.0
         stage_timings["buildWatershedGeometrySec"] = 0.0
         if selected_candidate is None:
             watershed_skip_reason = "no_selected_candidate"
@@ -1409,6 +1482,17 @@ def process_single_canyon(
             watershed_skip_reason = "missing_snapped_coordinates"
         else:
             watershed_skip_reason = "condition_not_met"
+
+    if mask_data is not None and raster_paths.get("elevation") is not None and selected_candidate is not None:
+        started = time.perf_counter()
+        descriptors = compute_watershed_descriptors(
+            dem_path=str(raster_paths["elevation"]),
+            mask_data=mask_data,
+            selected_candidate=selected_candidate,
+        )
+        stage_timings["computeDescriptorsSec"] = time.perf_counter() - started
+    else:
+        stage_timings["computeDescriptorsSec"] = 0.0
 
     stage_timings["totalSec"] = time.perf_counter() - total_started
     result = {
@@ -1424,8 +1508,10 @@ def process_single_canyon(
         "strictTopoCandidate": strict_topo_candidate,
         "suggestedCandidate": selected_candidate,
         "watershed": watershed,
+        "descriptors": descriptors,
         "watershedStatus": watershed_status,
         "watershedSkipReason": watershed_skip_reason,
+        "forcedByReview": any(bool(point.get("_forceExactCell")) for point in points),
         "profiling": {
             "sourceMode": source["mode"],
             "reusedExistingHydrology": hydrology_profile.get("reusedExistingHydrology", False),
@@ -1517,8 +1603,11 @@ def main() -> int:
         ]
     canyons = load_canyons(args.canyons_json)
     point_types = set(args.point_type)
-    geo_points = load_json(args.geo_points_json)
-    points_by_canyon = all_canyon_points(geo_points, point_types)
+    if args.review_file:
+        points_by_canyon = load_review_points(args.review_file)
+    else:
+        geo_points = load_json(args.geo_points_json)
+        points_by_canyon = all_canyon_points(geo_points, point_types)
 
     canyon_ids = sorted(points_by_canyon)
     countries = set(args.country or [])
