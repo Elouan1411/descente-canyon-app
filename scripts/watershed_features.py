@@ -14,6 +14,12 @@ from rasterio.warp import transform, transform_geom
 from compute_entry_watersheds import FLOW_DIRECTION_OFFSETS
 
 
+SOILGRIDS_LAYERS = {
+    "clay": "https://files.isric.org/soilgrids/latest/data/clay/clay_0-5cm_mean.vrt",
+    "sand": "https://files.isric.org/soilgrids/latest/data/sand/sand_0-5cm_mean.vrt",
+}
+
+
 def _cell_center(transform: Affine, row: int, col: int) -> tuple[float, float]:
     x = transform.c + (col + 0.5) * transform.a + (row + 0.5) * transform.b
     y = transform.f + (col + 0.5) * transform.d + (row + 0.5) * transform.e
@@ -417,6 +423,64 @@ def _worldcover_metrics(
     }
 
 
+def _soilgrids_metrics(
+    *,
+    mask: np.ndarray,
+    reference_transform: Affine,
+    reference_crs: Any,
+    width: int,
+    height: int,
+) -> dict[str, Any]:
+    arrays: dict[str, np.ndarray] = {}
+    for key, url in SOILGRIDS_LAYERS.items():
+        with rasterio.open(url) as src:
+            with WarpedVRT(
+                src,
+                crs=reference_crs,
+                transform=reference_transform,
+                width=width,
+                height=height,
+                resampling=Resampling.bilinear,
+            ) as vrt:
+                arrays[key] = vrt.read(1, masked=True).filled(np.nan).astype(np.float32)
+
+    clay = arrays["clay"]
+    sand = arrays["sand"]
+    valid = mask & np.isfinite(clay) & np.isfinite(sand)
+    valid_count = int(np.count_nonzero(valid))
+    if valid_count == 0:
+        return {
+            "soilValidFraction": 0.0,
+            "meanClayTopsoilPct": None,
+            "medianClayTopsoilPct": None,
+            "p90ClayTopsoilPct": None,
+            "meanSandTopsoilPct": None,
+            "medianSandTopsoilPct": None,
+            "lowPermeabilitySoilFraction": None,
+            "highInfiltrationSoilFraction": None,
+            "runoffPotentialIndex": None,
+        }
+
+    # SoilGrids clay/sand mean values are in g/kg. Convert to percent.
+    clay_pct = clay[valid] / 10.0
+    sand_pct = sand[valid] / 10.0
+    low_perm = np.count_nonzero(clay_pct >= 35.0) / valid_count
+    high_infil = np.count_nonzero((sand_pct >= 60.0) & (clay_pct < 20.0)) / valid_count
+    runoff_index = np.clip(((clay_pct / 50.0) - (sand_pct / 100.0) + 0.5), 0.0, 1.0)
+
+    return {
+        "soilValidFraction": _round(valid_count / max(int(np.count_nonzero(mask)), 1), 6),
+        "meanClayTopsoilPct": _round(float(np.nanmean(clay_pct)), 3),
+        "medianClayTopsoilPct": _round(float(np.nanmedian(clay_pct)), 3),
+        "p90ClayTopsoilPct": _round(float(np.nanpercentile(clay_pct, 90)), 3),
+        "meanSandTopsoilPct": _round(float(np.nanmean(sand_pct)), 3),
+        "medianSandTopsoilPct": _round(float(np.nanmedian(sand_pct)), 3),
+        "lowPermeabilitySoilFraction": _round(float(low_perm), 6),
+        "highInfiltrationSoilFraction": _round(float(high_infil), 6),
+        "runoffPotentialIndex": _round(float(np.nanmean(runoff_index)), 6),
+    }
+
+
 def _safe_stat(values: np.ndarray, fn: str) -> float | None:
     if values.size == 0:
         return None
@@ -534,6 +598,29 @@ def compute_watershed_descriptors(
             height=mask.shape[0],
         )
 
+    try:
+        soil_metrics = _soilgrids_metrics(
+            mask=mask,
+            reference_transform=mask_data["transform"],
+            reference_crs=mask_data["crs"],
+            width=mask.shape[1],
+            height=mask.shape[0],
+        )
+        soil_metrics["soilDescriptorStatus"] = "ok"
+    except Exception as exc:
+        soil_metrics = {
+            "soilDescriptorStatus": f"error:{type(exc).__name__}",
+            "soilValidFraction": None,
+            "meanClayTopsoilPct": None,
+            "medianClayTopsoilPct": None,
+            "p90ClayTopsoilPct": None,
+            "meanSandTopsoilPct": None,
+            "medianSandTopsoilPct": None,
+            "lowPermeabilitySoilFraction": None,
+            "highInfiltrationSoilFraction": None,
+            "runoffPotentialIndex": None,
+        }
+
     return {
             "descriptorStatus": "ok",
             "watershedCellCount": mask_count,
@@ -573,4 +660,5 @@ def compute_watershed_descriptors(
             "watershedQualityScore": _round(quality, 6),
             **network_metrics,
             **landcover_metrics,
+            **soil_metrics,
         }
