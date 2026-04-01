@@ -780,6 +780,9 @@ def _ghsl_built_metrics(
     cell_area_m2: float,
 ) -> dict[str, Any]:
     with rasterio.open(ghsl_path) as src:
+        src_x_res = abs(src.transform.a)
+        src_y_res = abs(src.transform.e)
+        source_cell_area_m2 = max(src_x_res * src_y_res, 1.0)
         with WarpedVRT(
             src,
             crs=reference_crs,
@@ -800,8 +803,8 @@ def _ghsl_built_metrics(
         }
 
     built_values = built[valid]
-    total_built_m2 = float(np.nansum(built_values))
-    basin_built_fraction = total_built_m2 / max(valid_count * cell_area_m2, 1.0)
+    built_fraction_values = np.clip(built_values / source_cell_area_m2, 0.0, 1.0)
+    basin_built_fraction = float(np.nanmean(built_fraction_values))
     mean_built_surface = float(np.nanmean(built_values))
     return {
         "imperviousValidFraction": _round(valid_count / max(int(np.count_nonzero(mask)), 1), 6),
