@@ -215,7 +215,8 @@ La phase 3 ajoute aussi :
 
 - `HydroLAKES` pour `lakeFraction` et `lakeCount`
 - `GLiM 0.5°` pour des proxies geologiques (`carbonateFraction`, `unconsolidatedFraction`, `crystallineFraction`, `volcanicFraction`, `dominantLithologyCode`, `karstIndicator`)
-- un `imperviousProxyFraction` derive du `urbanFraction` WorldCover en attendant une couche imperviousness dediee
+- `GHSL Built Surface` pour une vraie `imperviousBuiltSurfaceFraction`
+- un `imperviousProxyFraction` derive du `urbanFraction` WorldCover conserve comme fallback simple
 
 La phase 2 ajoute aussi des descripteurs `ESA WorldCover 2021` (fractions de foret, shrub, herbe, cultures, urbain, roche nue, eau permanente, zones humides, etc.) avec telechargement automatique des tuiles utiles dans `build/watersheds/worldcover/`.
 

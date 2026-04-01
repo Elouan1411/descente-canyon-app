@@ -852,6 +852,23 @@ def ensure_glim() -> dict[str, Any]:
     }
 
 
+def ensure_ghsl_built() -> dict[str, Any]:
+    output_dir = Path("build/watersheds/ghsl-built")
+    command = [
+        sys.executable,
+        "scripts/prepare_ghsl_built.py",
+        "--output-dir",
+        str(output_dir),
+    ]
+    started = time.perf_counter()
+    subprocess.run(command, check=True)
+    ready = load_json_if_exists(output_dir / "ready.json") or {}
+    return {
+        "path": ready.get("raster"),
+        "elapsedSec": round(time.perf_counter() - started, 3),
+    }
+
+
 def evaluate_points_for_canyon(
     *,
     canyon: dict[str, Any],
@@ -1507,6 +1524,7 @@ def process_single_canyon(
 
     if mask_data is not None and raster_paths.get("elevation") is not None and selected_candidate is not None:
         worldcover_info = None
+        ghsl_info = None
         hydrolakes_info = None
         glim_info = None
         try:
@@ -1515,6 +1533,12 @@ def process_single_canyon(
         except Exception:
             worldcover_info = None
             stage_timings["prepareWorldCoverSec"] = 0.0
+        try:
+            ghsl_info = ensure_ghsl_built()
+            stage_timings["prepareGHSLBuiltSec"] = float(ghsl_info["elapsedSec"])
+        except Exception:
+            ghsl_info = None
+            stage_timings["prepareGHSLBuiltSec"] = 0.0
         try:
             hydrolakes_info = ensure_hydrolakes()
             stage_timings["prepareHydroLakesSec"] = float(hydrolakes_info["elapsedSec"])
@@ -1533,6 +1557,7 @@ def process_single_canyon(
             uparea_path=str(raster_paths["upa"]),
             flowdir_path=str(raster_paths["flowdir"]),
             worldcover_path=worldcover_info["path"] if worldcover_info else None,
+            ghsl_built_path=ghsl_info["path"] if ghsl_info else None,
             hydrolakes_path=hydrolakes_info["path"] if hydrolakes_info else None,
             glim_path=glim_info["path"] if glim_info else None,
             watershed_geometry=watershed["geometry"] if watershed else None,

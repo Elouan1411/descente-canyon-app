@@ -604,6 +604,47 @@ def _glim_metrics(
     }
 
 
+def _ghsl_built_metrics(
+    *,
+    ghsl_path: str,
+    mask: np.ndarray,
+    reference_transform: Affine,
+    reference_crs: Any,
+    width: int,
+    height: int,
+    cell_area_m2: float,
+) -> dict[str, Any]:
+    with rasterio.open(ghsl_path) as src:
+        with WarpedVRT(
+            src,
+            crs=reference_crs,
+            transform=reference_transform,
+            width=width,
+            height=height,
+            resampling=Resampling.bilinear,
+        ) as vrt:
+            built = vrt.read(1, masked=True).filled(0).astype(np.float32)
+
+    valid = mask & np.isfinite(built) & (built >= 0)
+    valid_count = int(np.count_nonzero(valid))
+    if valid_count == 0:
+        return {
+            "imperviousValidFraction": 0.0,
+            "imperviousBuiltSurfaceFraction": None,
+            "meanBuiltSurfaceM2PerCell": None,
+        }
+
+    built_values = built[valid]
+    total_built_m2 = float(np.nansum(built_values))
+    basin_built_fraction = total_built_m2 / max(valid_count * cell_area_m2, 1.0)
+    mean_built_surface = float(np.nanmean(built_values))
+    return {
+        "imperviousValidFraction": _round(valid_count / max(int(np.count_nonzero(mask)), 1), 6),
+        "imperviousBuiltSurfaceFraction": _round(max(0.0, min(1.0, basin_built_fraction)), 6),
+        "meanBuiltSurfaceM2PerCell": _round(mean_built_surface, 3),
+    }
+
+
 def _safe_stat(values: np.ndarray, fn: str) -> float | None:
     if values.size == 0:
         return None
@@ -625,6 +666,7 @@ def compute_watershed_descriptors(
     uparea_path: str,
     flowdir_path: str,
     worldcover_path: str | None,
+    ghsl_built_path: str | None,
     hydrolakes_path: str | None,
     glim_path: str | None,
     watershed_geometry: dict[str, Any] | None,
@@ -793,6 +835,29 @@ def compute_watershed_descriptors(
             "karstIndicator": None,
         }
 
+    try:
+        ghsl_metrics = _ghsl_built_metrics(
+            ghsl_path=ghsl_built_path,
+            mask=mask,
+            reference_transform=mask_data["transform"],
+            reference_crs=mask_data["crs"],
+            width=mask.shape[1],
+            height=mask.shape[0],
+            cell_area_m2=cell_area_m2,
+        ) if ghsl_built_path else {
+            "imperviousValidFraction": None,
+            "imperviousBuiltSurfaceFraction": None,
+            "meanBuiltSurfaceM2PerCell": None,
+        }
+        ghsl_metrics["imperviousDescriptorStatus"] = "ok" if ghsl_built_path else "skipped"
+    except Exception as exc:
+        ghsl_metrics = {
+            "imperviousDescriptorStatus": f"error:{type(exc).__name__}",
+            "imperviousValidFraction": None,
+            "imperviousBuiltSurfaceFraction": None,
+            "meanBuiltSurfaceM2PerCell": None,
+        }
+
     return {
             "descriptorStatus": "ok",
             "watershedCellCount": mask_count,
@@ -835,5 +900,6 @@ def compute_watershed_descriptors(
             **soil_metrics,
             **hydrolakes_metrics,
             **glim_metrics,
+            **ghsl_metrics,
             "imperviousProxyFraction": landcover_metrics.get("urbanFraction"),
         }
