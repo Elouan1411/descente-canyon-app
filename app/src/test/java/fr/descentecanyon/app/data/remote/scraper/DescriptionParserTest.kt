@@ -13,6 +13,9 @@ class DescriptionParserTest {
     private fun parseValouse() =
         DescriptionParser.parse(Jsoup.parse(loadHtml("canyon_description.html")), 2186)
 
+    private fun parseClare() =
+        DescriptionParser.parse(Jsoup.parse(loadHtml("canyon_description_clare.html")), 2477)
+
     @Test
     fun `parse access aval`() {
         val result = parseValouse()
@@ -65,5 +68,16 @@ class DescriptionParserTest {
         val result = parseValouse()
         val periode = requireNotNull(result.periode) { "periode should not be null" }
         assertTrue(periode.contains("sec") || periode.contains("pluie"))
+    }
+
+    @Test
+    fun `keep full access text when aval amont are not explicit sections`() {
+        val result = parseClare()
+
+        val accesAval = requireNotNull(result.accesAval) { "accesAval should keep the full access block" }
+        assertTrue(accesAval.startsWith("Par la D 2210"))
+        assertTrue(accesAval.contains("(parking aval). Dans cette épingle il y a une piste avec barrière."))
+        assertTrue(accesAval.contains("parking du domaine"))
+        assertNull("accesAmont should stay null when no explicit amont section exists", result.accesAmont)
     }
 }

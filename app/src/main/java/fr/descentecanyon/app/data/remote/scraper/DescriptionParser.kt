@@ -11,6 +11,11 @@ import org.jsoup.nodes.Document
  */
 internal object DescriptionParser {
 
+    private val accessMarkerRegex = Regex(
+        "(^|\\n+)\\s*(aval|amont)\\s*:?\\s*",
+        setOf(RegexOption.IGNORE_CASE, RegexOption.MULTILINE),
+    )
+
     fun parse(doc: Document, canyonId: Int): ScrapedCanyonDetail {
         val sections = mutableMapOf<String, String>()
 
@@ -57,31 +62,29 @@ internal object DescriptionParser {
     private fun splitAccess(accessFull: String): Pair<String?, String?> {
         if (accessFull.isBlank()) return null to null
 
-        val lowerText = accessFull.lowercase()
-        val avalIndex = lowerText.indexOf("aval")
-        val amontIndex = lowerText.indexOf("amont")
+        val normalizedText = accessFull.replace("\r\n", "\n")
+        val matches = accessMarkerRegex.findAll(normalizedText).toList()
+        if (matches.isEmpty()) {
+            return accessFull.trim().takeIf { it.isNotEmpty() } to null
+        }
+
+        val sections = mutableMapOf<String, String>()
+        matches.forEachIndexed { index, match ->
+            val label = match.groupValues[2].lowercase()
+            val startIndex = match.range.last + 1
+            val endIndex = matches.getOrNull(index + 1)?.range?.first ?: normalizedText.length
+            val content = normalizedText.substring(startIndex, endIndex).trim()
+            if (content.isNotEmpty()) {
+                sections[label] = content
+            }
+        }
 
         return when {
-            avalIndex >= 0 && amontIndex >= 0 -> {
-                val firstIdx = minOf(avalIndex, amontIndex)
-                val secondIdx = maxOf(avalIndex, amontIndex)
-                val first = accessFull.substring(firstIdx).take(secondIdx - firstIdx).trim()
-                    .removePrefix("Aval :").removePrefix("Aval:").removePrefix("aval :").trim()
-                val second = accessFull.substring(secondIdx).trim()
-                    .removePrefix("Amont :").removePrefix("Amont:").removePrefix("amont :").trim()
-
-                if (avalIndex < amontIndex) first to second
-                else second to first
+            sections.isEmpty() -> accessFull.trim().takeIf { it.isNotEmpty() } to null
+            sections.containsKey("aval") || sections.containsKey("amont") -> {
+                sections["aval"] to sections["amont"]
             }
-            avalIndex >= 0 -> {
-                accessFull.substring(avalIndex)
-                    .removePrefix("Aval :").removePrefix("Aval:").trim() to null
-            }
-            amontIndex >= 0 -> {
-                null to accessFull.substring(amontIndex)
-                    .removePrefix("Amont :").removePrefix("Amont:").trim()
-            }
-            else -> accessFull to null
+            else -> accessFull.trim().takeIf { it.isNotEmpty() } to null
         }
     }
 }

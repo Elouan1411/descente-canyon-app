@@ -262,30 +262,24 @@ def split_access_section(access_text: str | None) -> tuple[str | None, str | Non
     if not access_text:
         return None, None
 
-    lower = access_text.lower()
-    aval_index = lower.find("aval")
-    amont_index = lower.find("amont")
+    normalized = access_text.replace("\r\n", "\n")
+    matches = list(re.finditer(r"(?im)(^|\n+)\s*(aval|amont)\s*:?\s*", normalized))
+    if not matches:
+        return clean_multiline_text(access_text), None
 
-    if aval_index >= 0 and amont_index >= 0:
-        first_index = min(aval_index, amont_index)
-        second_index = max(aval_index, amont_index)
-        first = access_text[first_index:second_index].strip()
-        second = access_text[second_index:].strip()
-        first = re.sub(r"^(aval\s*:?)", "", first, flags=re.I).strip()
-        second = re.sub(r"^(amont\s*:?)", "", second, flags=re.I).strip()
-        if aval_index < amont_index:
-            return clean_multiline_text(first), clean_multiline_text(second)
-        return clean_multiline_text(second), clean_multiline_text(first)
+    sections: dict[str, str] = {}
+    for index, match in enumerate(matches):
+        label = match.group(2).lower()
+        start = match.end()
+        end = matches[index + 1].start() if index + 1 < len(matches) else len(normalized)
+        value = normalized[start:end].strip()
+        if value:
+            sections[label] = value
 
-    if aval_index >= 0:
-        value = re.sub(r"^(.*?aval\s*:?)", "", access_text[aval_index:], flags=re.I).strip()
-        return clean_multiline_text(value), None
+    if not sections:
+        return clean_multiline_text(access_text), None
 
-    if amont_index >= 0:
-        value = re.sub(r"^(.*?amont\s*:?)", "", access_text[amont_index:], flags=re.I).strip()
-        return None, clean_multiline_text(value)
-
-    return clean_multiline_text(access_text), None
+    return clean_multiline_text(sections.get("aval")), clean_multiline_text(sections.get("amont"))
 
 
 def collect_section_text(start_heading: Any) -> str | None:
