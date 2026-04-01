@@ -1,0 +1,53 @@
+{
+  "sources": [
+    {
+      "name": "copernicus-europe",
+      "mode": "derive_local_hydrology",
+      "dem": "build/watersheds/copernicus-data/vrt/copernicus_glo30.vrt",
+      "srs": "EPSG:4326",
+      "processingCrs": "EPSG:3035",
+      "bufferKm": 20.0,
+      "processingResolutionM": 30.0,
+      "candidateStrategy": "nearest_channel",
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "autoPrepare": {
+        "provider": "copernicus",
+        "manifest": "scripts/watersheds/copernicus_url_manifest.example.json",
+        "outputDir": "build/watersheds/copernicus-data",
+        "alwaysPrepare": true
+      },
+      "match": {
+        "pays": [
+          "Portugal",
+          "Allemagne",
+          "Grèce",
+          "Turquie",
+          "Andorre",
+          "Croatie",
+          "Monténégro",
+          "France , Espagne",
+          "France , Suisse",
+          "Allemagne , Autriche"
+        ]
+      }
+    },
+    {
+      "name": "merit-fallback",
+      "mode": "precomputed_hydrology",
+      "upaRaster": "build/watersheds/merit/vrt/merit_upa.vrt",
+      "flowdirRaster": "build/watersheds/merit/vrt/merit_dir.vrt",
+      "elevationRaster": "build/watersheds/merit/vrt/merit_elv.vrt",
+      "searchRadiusCells": 2,
+      "candidateStrategy": "max_upa",
+      "autoPrepare": {
+        "provider": "merit",
+        "manifest": "scripts/watersheds/merit_url_manifest.json",
+        "outputDir": "build/watersheds/merit"
+      },
+      "match": {
+        "default": true
+      }
+    }
+  ]
+}
