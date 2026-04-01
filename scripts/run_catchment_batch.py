@@ -869,6 +869,24 @@ def ensure_ghsl_built() -> dict[str, Any]:
     }
 
 
+def ensure_gdw() -> dict[str, Any]:
+    output_dir = Path("build/watersheds/gdw")
+    command = [
+        sys.executable,
+        "scripts/prepare_gdw.py",
+        "--output-dir",
+        str(output_dir),
+    ]
+    started = time.perf_counter()
+    subprocess.run(command, check=True)
+    ready = load_json_if_exists(output_dir / "ready.json") or {}
+    return {
+        "barriers": ready.get("barriers"),
+        "reservoirs": ready.get("reservoirs"),
+        "elapsedSec": round(time.perf_counter() - started, 3),
+    }
+
+
 def evaluate_points_for_canyon(
     *,
     canyon: dict[str, Any],
@@ -1526,6 +1544,7 @@ def process_single_canyon(
         worldcover_info = None
         ghsl_info = None
         hydrolakes_info = None
+        gdw_info = None
         glim_info = None
         try:
             worldcover_info = ensure_worldcover(points)
@@ -1546,6 +1565,12 @@ def process_single_canyon(
             hydrolakes_info = None
             stage_timings["prepareHydroLakesSec"] = 0.0
         try:
+            gdw_info = ensure_gdw()
+            stage_timings["prepareGDWSec"] = float(gdw_info["elapsedSec"])
+        except Exception:
+            gdw_info = None
+            stage_timings["prepareGDWSec"] = 0.0
+        try:
             glim_info = ensure_glim()
             stage_timings["prepareGLiMSec"] = float(glim_info["elapsedSec"])
         except Exception:
@@ -1559,6 +1584,8 @@ def process_single_canyon(
             worldcover_path=worldcover_info["path"] if worldcover_info else None,
             ghsl_built_path=ghsl_info["path"] if ghsl_info else None,
             hydrolakes_path=hydrolakes_info["path"] if hydrolakes_info else None,
+            gdw_barriers_path=gdw_info["barriers"] if gdw_info else None,
+            gdw_reservoirs_path=gdw_info["reservoirs"] if gdw_info else None,
             glim_path=glim_info["path"] if glim_info else None,
             watershed_geometry=watershed["geometry"] if watershed else None,
             mask_data=mask_data,

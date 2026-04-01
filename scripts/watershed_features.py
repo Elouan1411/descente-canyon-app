@@ -590,6 +590,120 @@ def _hydrolakes_metrics(
     }
 
 
+def _record_value(attrs: dict[str, Any], *candidates: str) -> Any:
+    normalized = {"".join(ch.lower() for ch in key if ch.isalnum()): value for key, value in attrs.items()}
+    for candidate in candidates:
+        key = "".join(ch.lower() for ch in candidate if ch.isalnum())
+        if key in normalized:
+            return normalized[key]
+    return None
+
+
+def _gdw_regulation_metrics(
+    *,
+    barriers_path: str,
+    reservoirs_path: str,
+    watershed_geometry: dict[str, Any] | None,
+    basin_area_km2: float,
+) -> dict[str, Any]:
+    if watershed_geometry is None:
+        return {
+            "gdwBarrierCountUpstream": 0,
+            "gdwReservoirCountUpstream": 0,
+            "gdwHydropowerBarrierCountUpstream": 0,
+            "gdwReservoirAreaUpstreamKm2": None,
+            "gdwReservoirStorageUpstreamMcm": None,
+            "gdwLargestReservoirStorageMcm": None,
+            "gdwLargestReservoirAreaKm2": None,
+            "gdwMaxUpstreamDorPct": None,
+            "gdwNewestUpstreamDamYear": None,
+            "gdwMaxDamHeightM": None,
+            "gdwRegulatedCatchment": None,
+        }
+
+    import shapefile  # type: ignore
+    from shapely.geometry import shape as shapely_shape  # type: ignore
+
+    basin = shapely_shape(watershed_geometry)
+    bbox = basin.bounds
+
+    barrier_count = 0
+    hydropower_barrier_count = 0
+    max_dor = 0.0
+    newest_year = None
+    max_dam_height = 0.0
+
+    barriers_reader = shapefile.Reader(barriers_path)
+    for shape_record in barriers_reader.iterShapeRecords(bbox=bbox):
+        barrier_geom = shapely_shape(shape_record.shape.__geo_interface__)
+        if barrier_geom.is_empty or not basin.intersects(barrier_geom):
+            continue
+        attrs = shape_record.record.as_dict() if hasattr(shape_record.record, "as_dict") else {}
+        barrier_count += 1
+        dor = _record_value(attrs, "Dor_pc", "DOR_PC")
+        if dor not in (None, ""):
+            max_dor = max(max_dor, float(dor))
+        main_use = _record_value(attrs, "Main_use", "MAIN_USE")
+        use_elec = _record_value(attrs, "Use_elec", "USE_ELEC")
+        if (isinstance(main_use, str) and "hydro" in main_use.lower()) or (isinstance(use_elec, str) and use_elec.strip()):
+            hydropower_barrier_count += 1
+        year_dam = _record_value(attrs, "Year_dam", "YEAR_DAM")
+        if year_dam not in (None, ""):
+            try:
+                year_value = int(float(year_dam))
+                if newest_year is None or year_value > newest_year:
+                    newest_year = year_value
+            except ValueError:
+                pass
+        dam_height = _record_value(attrs, "Dam_hgt_m", "DAM_HGT_M")
+        if dam_height not in (None, ""):
+            max_dam_height = max(max_dam_height, float(dam_height))
+
+    reservoir_count = 0
+    reservoir_area = 0.0
+    reservoir_storage = 0.0
+    largest_storage = 0.0
+    largest_area = 0.0
+
+    reservoirs_reader = shapefile.Reader(reservoirs_path)
+    for shape_record in reservoirs_reader.iterShapeRecords(bbox=bbox):
+        reservoir_geom = shapely_shape(shape_record.shape.__geo_interface__)
+        if reservoir_geom.is_empty or not basin.intersects(reservoir_geom):
+            continue
+        inter = basin.intersection(reservoir_geom)
+        if inter.is_empty:
+            continue
+        attrs = shape_record.record.as_dict() if hasattr(shape_record.record, "as_dict") else {}
+        reservoir_count += 1
+        area_km2 = _record_value(attrs, "Area_skm", "AREA_SKM")
+        if area_km2 not in (None, ""):
+            area_value = float(area_km2)
+            reservoir_area += area_value
+            largest_area = max(largest_area, area_value)
+        storage_mcm = _record_value(attrs, "Cap_mcm", "CAP_MCM")
+        if storage_mcm not in (None, ""):
+            storage_value = float(storage_mcm)
+            reservoir_storage += storage_value
+            largest_storage = max(largest_storage, storage_value)
+        dor = _record_value(attrs, "Dor_pc", "DOR_PC")
+        if dor not in (None, ""):
+            max_dor = max(max_dor, float(dor))
+
+    return {
+        "gdwBarrierCountUpstream": barrier_count,
+        "gdwReservoirCountUpstream": reservoir_count,
+        "gdwHydropowerBarrierCountUpstream": hydropower_barrier_count,
+        "gdwReservoirAreaUpstreamKm2": _round(reservoir_area, 6),
+        "gdwReservoirStorageUpstreamMcm": _round(reservoir_storage, 6),
+        "gdwLargestReservoirStorageMcm": _round(largest_storage if reservoir_count > 0 else None, 6),
+        "gdwLargestReservoirAreaKm2": _round(largest_area if reservoir_count > 0 else None, 6),
+        "gdwMaxUpstreamDorPct": _round(max_dor if max_dor > 0 else None, 6),
+        "gdwNewestUpstreamDamYear": newest_year,
+        "gdwMaxDamHeightM": _round(max_dam_height if max_dam_height > 0 else None, 3),
+        "gdwRegulatedCatchment": barrier_count > 0 or reservoir_count > 0,
+    }
+
+
 def _glim_metrics(
     *,
     glim_path: str,
@@ -714,6 +828,8 @@ def compute_watershed_descriptors(
     worldcover_path: str | None,
     ghsl_built_path: str | None,
     hydrolakes_path: str | None,
+    gdw_barriers_path: str | None,
+    gdw_reservoirs_path: str | None,
     glim_path: str | None,
     watershed_geometry: dict[str, Any] | None,
     mask_data: dict[str, Any],
@@ -850,6 +966,42 @@ def compute_watershed_descriptors(
         }
 
     try:
+        gdw_metrics = _gdw_regulation_metrics(
+            barriers_path=gdw_barriers_path,
+            reservoirs_path=gdw_reservoirs_path,
+            watershed_geometry=watershed_geometry,
+            basin_area_km2=area_km2,
+        ) if gdw_barriers_path and gdw_reservoirs_path else {
+            "gdwBarrierCountUpstream": None,
+            "gdwReservoirCountUpstream": None,
+            "gdwHydropowerBarrierCountUpstream": None,
+            "gdwReservoirAreaUpstreamKm2": None,
+            "gdwReservoirStorageUpstreamMcm": None,
+            "gdwLargestReservoirStorageMcm": None,
+            "gdwLargestReservoirAreaKm2": None,
+            "gdwMaxUpstreamDorPct": None,
+            "gdwNewestUpstreamDamYear": None,
+            "gdwMaxDamHeightM": None,
+            "gdwRegulatedCatchment": None,
+        }
+        gdw_metrics["gdwStatus"] = "ok" if gdw_barriers_path and gdw_reservoirs_path else "skipped"
+    except Exception as exc:
+        gdw_metrics = {
+            "gdwStatus": f"error:{type(exc).__name__}",
+            "gdwBarrierCountUpstream": None,
+            "gdwReservoirCountUpstream": None,
+            "gdwHydropowerBarrierCountUpstream": None,
+            "gdwReservoirAreaUpstreamKm2": None,
+            "gdwReservoirStorageUpstreamMcm": None,
+            "gdwLargestReservoirStorageMcm": None,
+            "gdwLargestReservoirAreaKm2": None,
+            "gdwMaxUpstreamDorPct": None,
+            "gdwNewestUpstreamDamYear": None,
+            "gdwMaxDamHeightM": None,
+            "gdwRegulatedCatchment": None,
+        }
+
+    try:
         glim_metrics = _glim_metrics(
             glim_path=glim_path,
             mask=mask,
@@ -945,6 +1097,7 @@ def compute_watershed_descriptors(
             **landcover_metrics,
             **soil_metrics,
             **hydrolakes_metrics,
+            **gdw_metrics,
             **glim_metrics,
             **ghsl_metrics,
             "imperviousProxyFraction": landcover_metrics.get("urbanFraction"),
