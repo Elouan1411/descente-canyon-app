@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import math
+import warnings
 from typing import Any
 
 import numpy as np
@@ -189,7 +190,9 @@ def _tri(dem: np.ndarray) -> np.ndarray:
             neighbor = padded[1 + d_row : 1 + d_row + dem.shape[0], 1 + d_col : 1 + d_col + dem.shape[1]]
             diffs.append(np.abs(neighbor - center))
     stacked = np.stack(diffs, axis=0)
-    return np.nanmean(stacked, axis=0)
+    with warnings.catch_warnings():
+        warnings.simplefilter("ignore", category=RuntimeWarning)
+        return np.nanmean(stacked, axis=0)
 
 
 def _network_threshold_km2(dem_resolution_m: float) -> float:
@@ -461,7 +464,8 @@ def _soilgrids_metrics(
                 height=height,
                 resampling=Resampling.bilinear,
             ) as vrt:
-                arrays[key] = vrt.read(1, masked=True).filled(np.nan).astype(np.float32)
+                data = vrt.read(1, masked=True)
+                arrays[key] = np.where(np.ma.getmaskarray(data), np.nan, data.data.astype(np.float32))
 
     clay = arrays["clay"]
     sand = arrays["sand"]
@@ -716,6 +720,7 @@ def _glim_metrics(
     with rasterio.open(glim_path) as src:
         with WarpedVRT(
             src,
+            src_crs="EPSG:4326",
             crs=reference_crs,
             transform=reference_transform,
             width=width,

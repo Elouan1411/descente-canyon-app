@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import shutil
 import time
 import urllib.request
 import zipfile
@@ -54,10 +55,20 @@ def download_file(url: str, destination: Path) -> None:
 def extract_archive(archive_path: Path, raw_dir: Path) -> list[Path]:
     marker = raw_dir / ".extracted"
     if marker.exists():
-        return sorted(raw_dir.rglob("*.shp"))
+        shapefiles = sorted(raw_dir.rglob("*.shp"))
+        if shapefiles:
+            return shapefiles
+        marker.unlink(missing_ok=True)
     raw_dir.mkdir(parents=True, exist_ok=True)
     with zipfile.ZipFile(archive_path) as archive:
         archive.extractall(raw_dir)
+    nested_archives = sorted(raw_dir.rglob("*.zip"))
+    for nested_archive in nested_archives:
+        target_dir = nested_archive.with_suffix("")
+        target_dir.mkdir(parents=True, exist_ok=True)
+        with zipfile.ZipFile(nested_archive) as archive:
+            archive.extractall(target_dir)
+        nested_archive.unlink(missing_ok=True)
     marker.write_text("ok", encoding="utf-8")
     return sorted(raw_dir.rglob("*.shp"))
 
