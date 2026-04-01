@@ -7,12 +7,21 @@ import fr.descentecanyon.app.data.local.dao.GeoPointDao
 import fr.descentecanyon.app.data.local.dao.PhotoDao
 import fr.descentecanyon.app.data.local.dao.RegulationDao
 import fr.descentecanyon.app.data.local.dao.WatershedDao
+import fr.descentecanyon.app.data.local.database.DescenteCanyonDatabase
 import fr.descentecanyon.app.data.local.entity.CanyonEntity
+import fr.descentecanyon.app.data.mapper.toDomain
+import fr.descentecanyon.app.data.remote.scraper.CanyonScraper
+import fr.descentecanyon.app.domain.model.CanyonDetail
+import fr.descentecanyon.app.domain.repository.MapOfflineRepository
 import io.mockk.coEvery
 import io.mockk.coJustRun
+import io.mockk.coVerifySequence
 import io.mockk.coVerify
+import io.mockk.confirmVerified
 import io.mockk.mockk
+import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.test.runTest
+import org.junit.Assert.assertEquals
 import org.junit.Test
 
 class CanyonRepositoryDetailTest {
@@ -24,6 +33,9 @@ class CanyonRepositoryDetailTest {
     private val bibliographyDao = mockk<BibliographyDao>()
     private val regulationDao = mockk<RegulationDao>()
     private val watershedDao = mockk<WatershedDao>()
+    private val database = mockk<DescenteCanyonDatabase>(relaxed = true)
+    private val scraper = mockk<CanyonScraper>(relaxed = true)
+    private val mapOfflineRepository = mockk<MapOfflineRepository>(relaxed = true)
     private val representativePointSelector = RepresentativePointSelector()
 
     @Test
@@ -57,6 +69,54 @@ class CanyonRepositoryDetailTest {
                     it.isOffline
             })
         }
+    }
+
+    @Test
+    fun `get canyon detail loads local data without scraping`() = runTest {
+        val canyon = canyonEntity(id = 42, nom = "Riolan", isFavorite = false, isOffline = true)
+        val localStore = CanyonLocalStore(
+            canyonDao = canyonDao,
+            geoPointDao = geoPointDao,
+            debitDao = debitDao,
+            photoDao = photoDao,
+            bibliographyDao = bibliographyDao,
+            regulationDao = regulationDao,
+            watershedDao = watershedDao,
+            representativePointSelector = representativePointSelector,
+        )
+
+        coEvery { canyonDao.getById(42) } returns canyon
+        coEvery { geoPointDao.getByCanyonId(42) } returns emptyList()
+        coEvery { bibliographyDao.getByCanyonId(42) } returns emptyList()
+        coEvery { regulationDao.getByCanyonId(42) } returns emptyList()
+        coEvery { photoDao.getByCanyonId(42) } returns emptyList()
+        coEvery { watershedDao.getByCanyonId(42) } returns null
+        coEvery { debitDao.getByCanyonId(42) } returns flowOf(emptyList())
+
+        val repository = CanyonRepositoryImpl(
+            database = database,
+            canyonDao = canyonDao,
+            localStore = localStore,
+            geoPointDao = geoPointDao,
+            watershedDao = watershedDao,
+            scraper = scraper,
+            mapOfflineRepository = mapOfflineRepository,
+        )
+
+        val result = repository.getCanyonDetail(42).getOrThrow()
+
+        assertEquals(canyon.id, result.canyon.id)
+        assertEquals(canyon.nom, result.canyon.nom)
+        coVerifySequence {
+            canyonDao.getById(42)
+            geoPointDao.getByCanyonId(42)
+            bibliographyDao.getByCanyonId(42)
+            regulationDao.getByCanyonId(42)
+            photoDao.getByCanyonId(42)
+            debitDao.getByCanyonId(42)
+            watershedDao.getByCanyonId(42)
+        }
+        confirmVerified(scraper)
     }
 
     private fun canyonEntity(

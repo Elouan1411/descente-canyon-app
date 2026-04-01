@@ -9,7 +9,7 @@ import kotlinx.coroutines.flow.Flow
 
 /**
  * Repository interface for canyon data access.
- * Implementations handle remote scraping and local caching.
+ * Implementations load the embedded canyon catalog from local storage.
  */
 interface CanyonRepository {
 
@@ -19,8 +19,7 @@ interface CanyonRepository {
     fun observeSearchCatalog(): Flow<List<CanyonSearchItem>>
 
     /**
-     * Get full canyon detail by ID.
-     * Loads from local DB if available offline, otherwise scrapes from web.
+     * Get full canyon detail by ID from the local catalog.
      */
     suspend fun getCanyonDetail(canyonId: Int): Result<CanyonDetail>
 

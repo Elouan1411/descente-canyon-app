@@ -107,41 +107,19 @@ class CanyonRepositoryImpl @Inject constructor(
 
     override suspend fun getCanyonDetail(canyonId: Int): Result<CanyonDetail> {
         val localCanyon = canyonDao.getById(canyonId)
+            ?: return Result.failure(IllegalArgumentException("Canyon introuvable: $canyonId"))
 
         return runCatching {
-            val detail = scraper.scrapeFullCanyonDetail(canyonId).getOrThrow()
-            val entity = detail.toEntity()
-            val existingGeoPoints = geoPointDao.getByCanyonId(canyonId)
-            val geoPointEntities = detail.geoPoints.map { it.toEntity(canyonId) }.ifEmpty { existingGeoPoints }
-            database.withTransaction {
-                localStore.insertPreservingFlags(entity)
-                localStore.replaceGeoPoints(
-                    canyonId = canyonId,
-                    geoPointEntities = geoPointEntities,
-                )
-            }
-
-            localStore.loadLocalDetail(canyonId, canyonDao.getById(canyonId) ?: entity)
-        }.recoverCatching {
-            if (localCanyon != null) {
-                localStore.loadLocalDetail(canyonId, localCanyon)
-            } else {
-                throw it
-            }
+            localStore.loadLocalDetail(canyonId, localCanyon)
         }
     }
 
     override suspend fun getCanyonPreview(canyonId: Int): Result<CanyonDetail> {
         val localCanyon = canyonDao.getById(canyonId)
-        if (localCanyon != null) {
-            return Result.success(localStore.loadLocalDetail(canyonId, localCanyon))
-        }
+            ?: return Result.failure(IllegalArgumentException("Canyon introuvable: $canyonId"))
 
         return runCatching {
-            val summary = scraper.scrapeCanyonSummary(canyonId).getOrThrow()
-            val entity = summary.toEntity()
-            localStore.insertPreservingFlags(entity)
-            localStore.loadLocalDetail(canyonId, canyonDao.getById(canyonId) ?: entity)
+            localStore.loadLocalDetail(canyonId, localCanyon)
         }
     }
 
