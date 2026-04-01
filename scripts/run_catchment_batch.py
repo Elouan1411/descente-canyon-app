@@ -21,6 +21,7 @@ from rasterio.warp import transform, transform_geom
 
 from cli_tools import default_gdal_translate, default_gdalwarp, resolve_executable
 from compute_entry_watersheds import EntryPoint, create_raster, evaluate_entry, load_canyons
+from osm_regulation import query_osm_regulation, summarize_osm_regulation
 from run_local_ign_canyon_workflow import DEFAULT_LAMBERT93_PROJ4
 from watershed_features import build_watershed_mask_data, compute_watershed_descriptors, mask_to_geometry
 
@@ -231,6 +232,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--country", action="append")
     parser.add_argument("--france-only", action="store_true")
     parser.add_argument("--world", action="store_true")
+    parser.add_argument("--enable-osm-regulation", action="store_true")
     parser.add_argument("--prepare-france-ign-first", action="store_true")
     parser.add_argument("--keep-work", action="store_true")
     return parser.parse_args()
@@ -1420,6 +1422,7 @@ def process_single_canyon(
     output_dir: Path,
     gdal_translate: str,
     gdal_warp: str,
+    enable_osm_regulation: bool,
     keep_work: bool,
 ) -> str:
     canyon_file = output_dir / "canyons" / f"{canyon_id}.json"
@@ -1500,6 +1503,7 @@ def process_single_canyon(
     strict_topo_candidate = candidate_analysis["strictTopoCandidate"]
     watershed = None
     descriptors = None
+    osm_regulation = None
     watershed_status = "skipped"
     watershed_skip_reason = None
     mask_data = None
@@ -1617,8 +1621,59 @@ def process_single_canyon(
             selected_candidate=selected_candidate,
         )
         stage_timings["computeDescriptorsSec"] = time.perf_counter() - started
+
+        if enable_osm_regulation and watershed and watershed.get("geometry") is not None:
+            started = time.perf_counter()
+            try:
+                osm_probe = query_osm_regulation(
+                    canyon_id=canyon_id,
+                    canyon_name=canyon.get("nomComplet") or canyon.get("nom") or str(canyon_id),
+                    watershed_geometry=watershed["geometry"],
+                    cache_dir=output_dir / "osm_regulation_cache",
+                )
+                osm_regulation = osm_probe
+                if osm_probe.get("status") == "ok":
+                    descriptors.update(summarize_osm_regulation(osm_probe.get("matches", [])))
+                else:
+                    descriptors.update(
+                        {
+                            "osmRegulationStatus": osm_probe.get("status"),
+                            "osmRegulationPresent": None,
+                            "osmDamCountUpstream": None,
+                            "osmWeirCountUpstream": None,
+                            "osmReservoirCountUpstream": None,
+                            "osmCanalCountUpstream": None,
+                            "osmPenstockCountUpstream": None,
+                            "osmHydropowerPlantCountUpstream": None,
+                            "osmOperatorEdfCountUpstream": None,
+                            "osmLikelyHydropowerScheme": None,
+                            "osmRegulationConfidence": None,
+                            "osmExampleNames": [],
+                        }
+                    )
+            except Exception as exc:
+                descriptors.update(
+                    {
+                        "osmRegulationStatus": f"error:{type(exc).__name__}",
+                        "osmRegulationPresent": None,
+                        "osmDamCountUpstream": None,
+                        "osmWeirCountUpstream": None,
+                        "osmReservoirCountUpstream": None,
+                        "osmCanalCountUpstream": None,
+                        "osmPenstockCountUpstream": None,
+                        "osmHydropowerPlantCountUpstream": None,
+                        "osmOperatorEdfCountUpstream": None,
+                        "osmLikelyHydropowerScheme": None,
+                        "osmRegulationConfidence": None,
+                        "osmExampleNames": [],
+                    }
+                )
+            stage_timings["computeOsmRegulationSec"] = time.perf_counter() - started
+        else:
+            stage_timings["computeOsmRegulationSec"] = 0.0
     else:
         stage_timings["computeDescriptorsSec"] = 0.0
+        stage_timings["computeOsmRegulationSec"] = 0.0
 
     stage_timings["totalSec"] = time.perf_counter() - total_started
     result = {
@@ -1635,6 +1690,7 @@ def process_single_canyon(
         "suggestedCandidate": selected_candidate,
         "watershed": watershed,
         "descriptors": descriptors,
+        "osmRegulationProbe": osm_regulation,
         "watershedStatus": watershed_status,
         "watershedSkipReason": watershed_skip_reason,
         "forcedByReview": any(bool(point.get("_forceExactCell")) for point in points),
@@ -1671,6 +1727,7 @@ def process_single_canyon_safe(
     output_dir: Path,
     gdal_translate: str,
     gdal_warp: str,
+    enable_osm_regulation: bool,
     keep_work: bool,
 ) -> str:
     try:
@@ -1682,6 +1739,7 @@ def process_single_canyon_safe(
             output_dir=output_dir,
             gdal_translate=gdal_translate,
             gdal_warp=gdal_warp,
+            enable_osm_regulation=enable_osm_regulation,
             keep_work=keep_work,
         )
     except KeyboardInterrupt:
@@ -1787,6 +1845,7 @@ def main() -> int:
                     output_dir=output_dir,
                     gdal_translate=gdal_translate,
                     gdal_warp=gdal_warp,
+                    enable_osm_regulation=args.enable_osm_regulation,
                     keep_work=args.keep_work,
                 )
                 processed += 1
@@ -1810,6 +1869,7 @@ def main() -> int:
                         output_dir=output_dir,
                         gdal_translate=gdal_translate,
                         gdal_warp=gdal_warp,
+                        enable_osm_regulation=args.enable_osm_regulation,
                         keep_work=args.keep_work,
                     )
                     in_flight[future] = canyon_id
@@ -1839,6 +1899,7 @@ def main() -> int:
                             output_dir=output_dir,
                             gdal_translate=gdal_translate,
                             gdal_warp=gdal_warp,
+                            enable_osm_regulation=args.enable_osm_regulation,
                             keep_work=args.keep_work,
                         )
                         in_flight[new_future] = canyon_id
