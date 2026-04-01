@@ -798,6 +798,25 @@ def ensure_local_hydrology(
     )
 
 
+def ensure_worldcover(points: list[dict[str, Any]]) -> dict[str, Any]:
+    output_dir = Path("build/watersheds/worldcover")
+    command = [
+        sys.executable,
+        "scripts/prepare_worldcover.py",
+        "--output-dir",
+        str(output_dir),
+    ]
+    for point in points:
+        command.extend(["--point", f"{point['latitude']},{point['longitude']}"])
+    started = time.perf_counter()
+    subprocess.run(command, check=True)
+    elapsed = time.perf_counter() - started
+    return {
+        "path": str(output_dir / "vrt" / "_all_downloaded.vrt"),
+        "elapsedSec": round(elapsed, 3),
+    }
+
+
 def evaluate_points_for_canyon(
     *,
     canyon: dict[str, Any],
@@ -1452,11 +1471,19 @@ def process_single_canyon(
             watershed_skip_reason = "condition_not_met"
 
     if mask_data is not None and raster_paths.get("elevation") is not None and selected_candidate is not None:
+        worldcover_info = None
+        try:
+            worldcover_info = ensure_worldcover(points)
+            stage_timings["prepareWorldCoverSec"] = float(worldcover_info["elapsedSec"])
+        except Exception:
+            worldcover_info = None
+            stage_timings["prepareWorldCoverSec"] = 0.0
         started = time.perf_counter()
         descriptors = compute_watershed_descriptors(
             dem_path=str(raster_paths["elevation"]),
             uparea_path=str(raster_paths["upa"]),
             flowdir_path=str(raster_paths["flowdir"]),
+            worldcover_path=worldcover_info["path"] if worldcover_info else None,
             mask_data=mask_data,
             selected_candidate=selected_candidate,
         )

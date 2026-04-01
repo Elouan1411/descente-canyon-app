@@ -6,7 +6,9 @@ from typing import Any
 import numpy as np
 import rasterio
 from rasterio.features import shapes
+from rasterio.enums import Resampling
 from rasterio.transform import Affine
+from rasterio.vrt import WarpedVRT
 from rasterio.warp import transform, transform_geom
 
 from compute_entry_watersheds import FLOW_DIRECTION_OFFSETS
@@ -321,6 +323,100 @@ def _compute_network_metrics(
     }
 
 
+def _connected_component_count(mask: np.ndarray, *, min_pixels: int = 1) -> int:
+    visited = np.zeros(mask.shape, dtype=np.uint8)
+    count = 0
+    for row in range(mask.shape[0]):
+        for col in range(mask.shape[1]):
+            if not mask[row, col] or visited[row, col] == 1:
+                continue
+            size = 0
+            stack = [(row, col)]
+            visited[row, col] = 1
+            while stack:
+                cur_row, cur_col = stack.pop()
+                size += 1
+                for d_row in (-1, 0, 1):
+                    for d_col in (-1, 0, 1):
+                        if d_row == 0 and d_col == 0:
+                            continue
+                        n_row = cur_row + d_row
+                        n_col = cur_col + d_col
+                        if n_row < 0 or n_row >= mask.shape[0] or n_col < 0 or n_col >= mask.shape[1]:
+                            continue
+                        if not mask[n_row, n_col] or visited[n_row, n_col] == 1:
+                            continue
+                        visited[n_row, n_col] = 1
+                        stack.append((n_row, n_col))
+            if size >= min_pixels:
+                count += 1
+    return count
+
+
+def _worldcover_metrics(
+    *,
+    worldcover_path: str,
+    mask: np.ndarray,
+    reference_transform: Affine,
+    reference_crs: Any,
+    width: int,
+    height: int,
+) -> dict[str, Any]:
+    with rasterio.open(worldcover_path) as src:
+        with WarpedVRT(
+            src,
+            crs=reference_crs,
+            transform=reference_transform,
+            width=width,
+            height=height,
+            resampling=Resampling.nearest,
+        ) as vrt:
+            worldcover = vrt.read(1, masked=True).filled(0).astype(np.int16)
+
+    valid = mask & (worldcover > 0)
+    valid_count = int(np.count_nonzero(valid))
+    if valid_count == 0:
+        return {
+            "landCoverValidFraction": 0.0,
+            "forestFraction": None,
+            "shrubFraction": None,
+            "grassFraction": None,
+            "croplandFraction": None,
+            "urbanFraction": None,
+            "bareRockFraction": None,
+            "snowIceFraction": None,
+            "permanentWaterFraction": None,
+            "wetlandFraction": None,
+            "mangroveFraction": None,
+            "mossLichenFraction": None,
+            "waterPatchCount": 0,
+            "wetlandPatchCount": 0,
+        }
+
+    values = worldcover[valid]
+    def frac(code: int) -> float:
+        return float(np.count_nonzero(values == code) / valid_count)
+
+    water_mask = valid & (worldcover == 80)
+    wetland_mask = valid & (worldcover == 90)
+    return {
+        "landCoverValidFraction": _round(valid_count / max(int(np.count_nonzero(mask)), 1), 6),
+        "forestFraction": _round(frac(10), 6),
+        "shrubFraction": _round(frac(20), 6),
+        "grassFraction": _round(frac(30), 6),
+        "croplandFraction": _round(frac(40), 6),
+        "urbanFraction": _round(frac(50), 6),
+        "bareRockFraction": _round(frac(60), 6),
+        "snowIceFraction": _round(frac(70), 6),
+        "permanentWaterFraction": _round(frac(80), 6),
+        "wetlandFraction": _round(frac(90), 6),
+        "mangroveFraction": _round(frac(95), 6),
+        "mossLichenFraction": _round(frac(100), 6),
+        "waterPatchCount": _connected_component_count(water_mask, min_pixels=3),
+        "wetlandPatchCount": _connected_component_count(wetland_mask, min_pixels=3),
+    }
+
+
 def _safe_stat(values: np.ndarray, fn: str) -> float | None:
     if values.size == 0:
         return None
@@ -341,6 +437,7 @@ def compute_watershed_descriptors(
     dem_path: str,
     uparea_path: str,
     flowdir_path: str,
+    worldcover_path: str | None,
     mask_data: dict[str, Any],
     selected_candidate: dict[str, Any],
 ) -> dict[str, Any]:
@@ -426,6 +523,17 @@ def compute_watershed_descriptors(
             dem_resolution_m=dem_resolution,
         )
 
+    landcover_metrics = {}
+    if worldcover_path:
+        landcover_metrics = _worldcover_metrics(
+            worldcover_path=worldcover_path,
+            mask=mask,
+            reference_transform=mask_data["transform"],
+            reference_crs=mask_data["crs"],
+            width=mask.shape[1],
+            height=mask.shape[0],
+        )
+
     return {
             "descriptorStatus": "ok",
             "watershedCellCount": mask_count,
@@ -464,4 +572,5 @@ def compute_watershed_descriptors(
             "demResolutionM": _round(dem_resolution, 3),
             "watershedQualityScore": _round(quality, 6),
             **network_metrics,
+            **landcover_metrics,
         }

@@ -209,6 +209,8 @@ Le pipeline stocke maintenant aussi, quand possible, un polygone de bassin versa
 
 Le batch ecrit aussi un fichier `import_ready_watershed_descriptors.json` avec des descripteurs morphometriques derives du DEM (altitudes, pentes, rugosite, longueurs d'ecoulement, score qualite, etc.).
 
+La phase 2 ajoute aussi des descripteurs `ESA WorldCover 2021` (fractions de foret, shrub, herbe, cultures, urbain, roche nue, eau permanente, zones humides, etc.) avec telechargement automatique des tuiles utiles dans `build/watersheds/worldcover/`.
+
 Pour recalculer une liste de canyons issue de `build/watershed-review/watershed-review.json` avec le point GPS valide manuellement et sans snap (meme cellule raster), utiliser :
 
 ```bash
