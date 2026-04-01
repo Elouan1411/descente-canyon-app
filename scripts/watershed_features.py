@@ -805,6 +805,54 @@ def _ghsl_built_metrics(
     }
 
 
+def _rgi_metrics(
+    *,
+    glacier_shapefiles: list[str],
+    watershed_geometry: dict[str, Any] | None,
+    basin_area_km2: float,
+) -> dict[str, Any]:
+    if watershed_geometry is None:
+        return {
+            "glacierFraction": None,
+            "glacierCount": 0,
+            "largestGlacierAreaKm2": None,
+        }
+
+    import shapefile  # type: ignore
+    from shapely.geometry import shape as shapely_shape  # type: ignore
+
+    basin = shapely_shape(watershed_geometry)
+    bbox = basin.bounds
+    glacier_count = 0
+    glacier_area_km2 = 0.0
+    largest_glacier_area_km2 = 0.0
+
+    for glacier_path in glacier_shapefiles:
+        reader = shapefile.Reader(glacier_path)
+        for shape_record in reader.iterShapeRecords(bbox=bbox):
+            glacier_geom = shapely_shape(shape_record.shape.__geo_interface__)
+            if glacier_geom.is_empty or not basin.intersects(glacier_geom):
+                continue
+            inter = basin.intersection(glacier_geom)
+            if inter.is_empty:
+                continue
+            attrs = shape_record.record.as_dict() if hasattr(shape_record.record, "as_dict") else {}
+            area_km2 = _record_value(attrs, "Area", "AREA", "Area_km2", "RGI_AREA")
+            if area_km2 in (None, ""):
+                continue
+            area_value = float(area_km2)
+            glacier_count += 1
+            glacier_area_km2 += area_value
+            largest_glacier_area_km2 = max(largest_glacier_area_km2, area_value)
+
+    glacier_fraction = (glacier_area_km2 / basin_area_km2) if basin_area_km2 > 0 else None
+    return {
+        "glacierFraction": _round(glacier_fraction, 6),
+        "glacierCount": glacier_count,
+        "largestGlacierAreaKm2": _round(largest_glacier_area_km2 if glacier_count > 0 else None, 6),
+    }
+
+
 def _safe_stat(values: np.ndarray, fn: str) -> float | None:
     if values.size == 0:
         return None
@@ -831,6 +879,7 @@ def compute_watershed_descriptors(
     gdw_barriers_path: str | None,
     gdw_reservoirs_path: str | None,
     glim_path: str | None,
+    rgi_glacier_paths: list[str] | None,
     watershed_geometry: dict[str, Any] | None,
     mask_data: dict[str, Any],
     selected_candidate: dict[str, Any],
@@ -1056,6 +1105,25 @@ def compute_watershed_descriptors(
             "meanBuiltSurfaceM2PerCell": None,
         }
 
+    try:
+        glacier_metrics = _rgi_metrics(
+            glacier_shapefiles=rgi_glacier_paths or [],
+            watershed_geometry=watershed_geometry,
+            basin_area_km2=area_km2,
+        ) if rgi_glacier_paths else {
+            "glacierFraction": None,
+            "glacierCount": 0,
+            "largestGlacierAreaKm2": None,
+        }
+        glacier_metrics["glacierDescriptorStatus"] = "ok" if rgi_glacier_paths else "skipped"
+    except Exception as exc:
+        glacier_metrics = {
+            "glacierDescriptorStatus": f"error:{type(exc).__name__}",
+            "glacierFraction": None,
+            "glacierCount": None,
+            "largestGlacierAreaKm2": None,
+        }
+
     return {
             "descriptorStatus": "ok",
             "watershedCellCount": mask_count,
@@ -1100,5 +1168,6 @@ def compute_watershed_descriptors(
             **gdw_metrics,
             **glim_metrics,
             **ghsl_metrics,
+            **glacier_metrics,
             "imperviousProxyFraction": landcover_metrics.get("urbanFraction"),
         }

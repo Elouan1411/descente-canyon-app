@@ -220,6 +220,11 @@ La phase 3 ajoute aussi :
 - `GHSL Built Surface` pour une vraie `imperviousBuiltSurfaceFraction`
 - un `imperviousProxyFraction` derive du `urbanFraction` WorldCover conserve comme fallback simple
 
+La phase cryosphere ajoute :
+
+- `RGI 6.2` pour `glacierFraction`, `glacierCount`, `largestGlacierAreaKm2`
+- `snowIceFraction` de `WorldCover` est conserve comme proxy neige/glace leger en attendant une source climatologique de neige plus complete
+
 La phase 2 ajoute aussi des descripteurs `ESA WorldCover 2021` (fractions de foret, shrub, herbe, cultures, urbain, roche nue, eau permanente, zones humides, etc.) avec telechargement automatique des tuiles utiles dans `build/watersheds/worldcover/`.
 
 Pour recalculer une liste de canyons issue de `build/watershed-review/watershed-review.json` avec le point GPS valide manuellement et sans snap (meme cellule raster), utiliser :

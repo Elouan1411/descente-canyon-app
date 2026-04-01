@@ -887,6 +887,23 @@ def ensure_gdw() -> dict[str, Any]:
     }
 
 
+def ensure_rgi() -> dict[str, Any]:
+    output_dir = Path("build/watersheds/rgi")
+    command = [
+        sys.executable,
+        "scripts/prepare_rgi.py",
+        "--output-dir",
+        str(output_dir),
+    ]
+    started = time.perf_counter()
+    subprocess.run(command, check=True)
+    ready = load_json_if_exists(output_dir / "ready.json") or {}
+    return {
+        "shapefiles": ready.get("shapefiles", []),
+        "elapsedSec": round(time.perf_counter() - started, 3),
+    }
+
+
 def evaluate_points_for_canyon(
     *,
     canyon: dict[str, Any],
@@ -1546,6 +1563,7 @@ def process_single_canyon(
         hydrolakes_info = None
         gdw_info = None
         glim_info = None
+        rgi_info = None
         try:
             worldcover_info = ensure_worldcover(points)
             stage_timings["prepareWorldCoverSec"] = float(worldcover_info["elapsedSec"])
@@ -1571,6 +1589,12 @@ def process_single_canyon(
             gdw_info = None
             stage_timings["prepareGDWSec"] = 0.0
         try:
+            rgi_info = ensure_rgi()
+            stage_timings["prepareRGISec"] = float(rgi_info["elapsedSec"])
+        except Exception:
+            rgi_info = None
+            stage_timings["prepareRGISec"] = 0.0
+        try:
             glim_info = ensure_glim()
             stage_timings["prepareGLiMSec"] = float(glim_info["elapsedSec"])
         except Exception:
@@ -1587,6 +1611,7 @@ def process_single_canyon(
             gdw_barriers_path=gdw_info["barriers"] if gdw_info else None,
             gdw_reservoirs_path=gdw_info["reservoirs"] if gdw_info else None,
             glim_path=glim_info["path"] if glim_info else None,
+            rgi_glacier_paths=rgi_info["shapefiles"] if rgi_info else None,
             watershed_geometry=watershed["geometry"] if watershed else None,
             mask_data=mask_data,
             selected_candidate=selected_candidate,
