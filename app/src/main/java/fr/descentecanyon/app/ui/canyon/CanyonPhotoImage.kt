@@ -15,6 +15,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
@@ -30,7 +31,6 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImagePainter
 import coil3.compose.rememberAsyncImagePainter
-import coil3.request.ImageRequest
 import fr.descentecanyon.app.R
 
 @Composable
@@ -39,6 +39,7 @@ fun RetryablePhoto(
     contentDescription: String?,
     modifier: Modifier = Modifier,
     contentScale: ContentScale,
+    onError: ((Throwable?) -> Unit)? = null,
     loadingContent: @Composable BoxScope.() -> Unit = {
         CircularProgressIndicator(
             modifier = Modifier.size(28.dp),
@@ -53,12 +54,17 @@ fun RetryablePhoto(
     val context = LocalContext.current
     var retryVersion by remember(model) { mutableIntStateOf(0) }
     val request = remember(context, model, retryVersion) {
-        ImageRequest.Builder(context)
+        coil3.request.ImageRequest.Builder(context)
             .data(model)
             .build()
     }
     val painter = rememberAsyncImagePainter(model = request)
     val state by painter.state.collectAsState()
+    val errorState = state as? AsyncImagePainter.State.Error
+
+    LaunchedEffect(errorState) {
+        errorState?.let { onError?.invoke(it.result.throwable) }
+    }
 
     Box(
         modifier = modifier.background(MaterialTheme.colorScheme.surface),

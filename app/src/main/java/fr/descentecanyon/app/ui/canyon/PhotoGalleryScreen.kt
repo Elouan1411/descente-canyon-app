@@ -49,7 +49,6 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import coil3.request.ImageRequest
 import fr.descentecanyon.app.R
 
 @OptIn(ExperimentalFoundationApi::class)
@@ -139,18 +138,13 @@ fun PhotoGalleryScreen(
                 modifier = Modifier.fillMaxSize(),
             ) { page ->
                 val photo = photos[page]
-                val photoRequest: ImageRequest = remember(context, photo.localPath, photo.url) {
-                    ImageRequest.Builder(context)
-                        .data(photo.localPath ?: photo.url)
-                        .build()
-                }
                 Box(
                     modifier = Modifier
                         .fillMaxSize()
                         .clickable { showOverlay = !showOverlay },
                 ) {
                     RetryablePhoto(
-                        model = photoRequest,
+                        model = photo.localPath ?: photo.url,
                         contentDescription = photo.description,
                         modifier = Modifier.fillMaxSize().background(Color.Black),
                         contentScale = ContentScale.Fit,

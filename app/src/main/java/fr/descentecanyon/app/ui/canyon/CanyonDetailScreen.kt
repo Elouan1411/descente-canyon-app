@@ -75,7 +75,6 @@ import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import coil3.request.ImageRequest
 import fr.descentecanyon.app.R
 import fr.descentecanyon.app.domain.model.BibliographyEntry
 import fr.descentecanyon.app.domain.model.BibliographyKind
@@ -550,7 +549,11 @@ private fun LazyListScope.topoItems(detail: CanyonDetail) {
         detail.accesAval?.let { text ->
             item {
                 CollapsibleSection(
-                    title = stringResource(R.string.access_downstream),
+                    title = if (detail.accesAmont.isNullOrBlank()) {
+                        stringResource(R.string.access)
+                    } else {
+                        stringResource(R.string.access_downstream)
+                    },
                     content = text,
                     modifier = sectionModifier,
                 )
@@ -1133,22 +1136,34 @@ private fun ProgressivePhoto(
     modifier: Modifier = Modifier,
     contentScale: ContentScale,
 ) {
-    val context = LocalContext.current
     val previewModel = photo.localPath ?: photo.thumbnailUrl ?: photo.url
-    val fullRequest: ImageRequest = remember(context, previewModel) {
-        ImageRequest.Builder(context)
-            .data(previewModel)
-            .build()
+    val fullModel = photo.localPath ?: photo.url
+    val canFallbackToFullImage = photo.localPath == null &&
+        !photo.thumbnailUrl.isNullOrBlank() &&
+        photo.thumbnailUrl != photo.url
+    var displayedModel by remember(photo.localPath, photo.thumbnailUrl, photo.url) {
+        mutableStateOf(previewModel)
     }
 
     RetryablePhoto(
-        model = fullRequest,
+        model = displayedModel,
         contentDescription = photo.description,
         modifier = modifier,
         contentScale = contentScale,
+        onError = {
+            if (canFallbackToFullImage && displayedModel != fullModel) {
+                displayedModel = fullModel
+            }
+        },
         errorContent = { onRetry ->
             DefaultPhotoError(
-                onRetry = onRetry,
+                onRetry = {
+                    if (canFallbackToFullImage && displayedModel != fullModel) {
+                        displayedModel = fullModel
+                    } else {
+                        onRetry()
+                    }
+                },
                 message = stringResource(R.string.photo_load_error),
             )
         },
