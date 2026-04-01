@@ -19,7 +19,7 @@ import rasterio
 from rasterio.features import shapes
 from rasterio.warp import transform, transform_geom
 
-from cli_tools import default_gdal_translate, default_gdalwarp, default_ogr2ogr, resolve_executable
+from cli_tools import default_gdal_translate, default_gdalwarp, resolve_executable
 from compute_entry_watersheds import EntryPoint, create_raster, evaluate_entry, load_canyons
 from osm_regulation import query_osm_regulation, summarize_osm_regulation
 from run_local_ign_canyon_workflow import DEFAULT_LAMBERT93_PROJ4
@@ -229,12 +229,10 @@ def parse_args() -> argparse.Namespace:
         default=default_gdal_translate(),
     )
     parser.add_argument("--gdal-warp", default=default_gdalwarp())
-    parser.add_argument("--ogr2ogr", default=default_ogr2ogr())
     parser.add_argument("--country", action="append")
     parser.add_argument("--france-only", action="store_true")
     parser.add_argument("--world", action="store_true")
     parser.add_argument("--enable-osm-regulation", action="store_true")
-    parser.add_argument("--osm-regulation-gpkg", type=Path)
     parser.add_argument("--prepare-france-ign-first", action="store_true")
     parser.add_argument("--keep-work", action="store_true")
     return parser.parse_args()
@@ -1425,8 +1423,6 @@ def process_single_canyon(
     gdal_translate: str,
     gdal_warp: str,
     enable_osm_regulation: bool,
-    osm_regulation_gpkg: str | None,
-    ogr2ogr: str,
     keep_work: bool,
 ) -> str:
     canyon_file = output_dir / "canyons" / f"{canyon_id}.json"
@@ -1634,8 +1630,6 @@ def process_single_canyon(
                     canyon_name=canyon.get("nomComplet") or canyon.get("nom") or str(canyon_id),
                     watershed_geometry=watershed["geometry"],
                     cache_dir=output_dir / "osm_regulation_cache",
-                    offline_gpkg=osm_regulation_gpkg,
-                    ogr2ogr=ogr2ogr,
                 )
                 osm_regulation = osm_probe
                 if osm_probe.get("status") == "ok":
@@ -1734,8 +1728,6 @@ def process_single_canyon_safe(
     gdal_translate: str,
     gdal_warp: str,
     enable_osm_regulation: bool,
-    osm_regulation_gpkg: str | None,
-    ogr2ogr: str,
     keep_work: bool,
 ) -> str:
     try:
@@ -1748,8 +1740,6 @@ def process_single_canyon_safe(
             gdal_translate=gdal_translate,
             gdal_warp=gdal_warp,
             enable_osm_regulation=enable_osm_regulation,
-            osm_regulation_gpkg=osm_regulation_gpkg,
-            ogr2ogr=ogr2ogr,
             keep_work=keep_work,
         )
     except KeyboardInterrupt:
@@ -1786,7 +1776,6 @@ def main() -> int:
     output_dir.mkdir(parents=True, exist_ok=True)
     gdal_translate = resolve_executable(args.gdal_translate, extra_candidates=[default_gdal_translate()])
     gdal_warp = resolve_executable(args.gdal_warp, extra_candidates=[default_gdalwarp()])
-    ogr2ogr = resolve_executable(args.ogr2ogr, extra_candidates=[default_ogr2ogr()])
 
     config = load_json(args.source_config)
     sources = config["sources"]
@@ -1857,8 +1846,6 @@ def main() -> int:
                     gdal_translate=gdal_translate,
                     gdal_warp=gdal_warp,
                     enable_osm_regulation=args.enable_osm_regulation,
-                    osm_regulation_gpkg=str(args.osm_regulation_gpkg.resolve()) if args.osm_regulation_gpkg else None,
-                    ogr2ogr=ogr2ogr,
                     keep_work=args.keep_work,
                 )
                 processed += 1
@@ -1883,8 +1870,6 @@ def main() -> int:
                         gdal_translate=gdal_translate,
                         gdal_warp=gdal_warp,
                         enable_osm_regulation=args.enable_osm_regulation,
-                        osm_regulation_gpkg=str(args.osm_regulation_gpkg.resolve()) if args.osm_regulation_gpkg else None,
-                        ogr2ogr=ogr2ogr,
                         keep_work=args.keep_work,
                     )
                     in_flight[future] = canyon_id
@@ -1915,8 +1900,6 @@ def main() -> int:
                             gdal_translate=gdal_translate,
                             gdal_warp=gdal_warp,
                             enable_osm_regulation=args.enable_osm_regulation,
-                            osm_regulation_gpkg=str(args.osm_regulation_gpkg.resolve()) if args.osm_regulation_gpkg else None,
-                            ogr2ogr=ogr2ogr,
                             keep_work=args.keep_work,
                         )
                         in_flight[new_future] = canyon_id

@@ -21,6 +21,8 @@ OVERPASS_URLS = [
     "https://lz4.overpass-api.de/api/interpreter",
 ]
 MIN_INTERVAL_SEC = 8.0
+OVERPASS_FAILURE_COOLDOWN_SEC = 3600.0
+DEFAULT_OFFLINE_GPKG = Path("build/watersheds/osm-regulation/regulation_features.gpkg")
 
 KEYWORDS = [
     ("waterway", ["dam", "weir", "canal", "pressurised", "sluice_gate"]),
@@ -134,23 +136,56 @@ def query_osm_regulation(
     canyon_name: str,
     watershed_geometry: dict[str, Any],
     cache_dir: Path,
-    offline_gpkg: str | None = None,
-    ogr2ogr: str | None = None,
 ) -> dict[str, Any]:
     cache_path = cache_dir / f"{canyon_id}.json"
     if cache_path.exists():
         return read_json(cache_path)
 
+    offline_path = DEFAULT_OFFLINE_GPKG if DEFAULT_OFFLINE_GPKG.exists() else None
+    cooldown_path = cache_dir / ".overpass.disabled_until"
+
+    if offline_path and cooldown_path.exists():
+        try:
+            disabled_until = float(cooldown_path.read_text(encoding="utf-8"))
+            if time.time() < disabled_until:
+                payload = query_osm_regulation_offline(bbox=shape(watershed_geometry).bounds, offline_gpkg=str(offline_path), ogr2ogr=None)
+                matches = _filter_matches(shape(watershed_geometry), payload.get("features", []))
+                result = {
+                    "canyonId": canyon_id,
+                    "canyonName": canyon_name,
+                    "status": "ok",
+                    "source": "offline_fallback",
+                    "matchCount": len(matches),
+                    "elapsedSec": 0.0,
+                    "matches": matches,
+                }
+                write_json(cache_path, result)
+                return result
+        except Exception:
+            pass
+
     basin_geom = shape(watershed_geometry)
     bbox = basin_geom.bounds
     started = time.perf_counter()
     try:
-        if offline_gpkg:
-            payload = query_osm_regulation_offline(bbox=bbox, offline_gpkg=offline_gpkg, ogr2ogr=ogr2ogr)
-        else:
-            payload = overpass_query(bbox, cache_dir=cache_dir)
+        payload = overpass_query(bbox, cache_dir=cache_dir)
         elapsed = time.perf_counter() - started
     except Exception as exc:
+        if offline_path:
+            cooldown_path.write_text(str(time.time() + OVERPASS_FAILURE_COOLDOWN_SEC), encoding="utf-8")
+            payload = query_osm_regulation_offline(bbox=bbox, offline_gpkg=str(offline_path), ogr2ogr=None)
+            matches = _filter_matches(basin_geom, payload.get("features", []))
+            result = {
+                "canyonId": canyon_id,
+                "canyonName": canyon_name,
+                "status": "ok",
+                "source": "offline_fallback",
+                "matchCount": len(matches),
+                "elapsedSec": round(time.perf_counter() - started, 3),
+                "matches": matches,
+            }
+            write_json(cache_path, result)
+            return result
         return {
             "canyonId": canyon_id,
             "canyonName": canyon_name,
@@ -161,8 +196,24 @@ def query_osm_regulation(
             "error": str(exc),
         }
 
+    matches = _filter_matches(basin_geom, payload.get("elements", []))
+
+    payload = {
+        "canyonId": canyon_id,
+        "canyonName": canyon_name,
+        "status": "ok",
+        "source": "overpass",
+        "matchCount": len(matches),
+        "elapsedSec": round(elapsed, 3),
+        "matches": matches,
+    }
+    write_json(cache_path, payload)
+    return payload
+
+
+def _filter_matches(basin_geom, elements: list[dict[str, Any]]) -> list[dict[str, Any]]:
     matches = []
-    for element in payload.get("elements", []):
+    for element in elements:
         geom = geometry_from_overpass(element)
         if geom is None or geom.is_empty or not basin_geom.intersects(geom):
             continue
@@ -175,17 +226,7 @@ def query_osm_regulation(
                 "geometryType": geom.geom_type,
             }
         )
-
-    payload = {
-        "canyonId": canyon_id,
-        "canyonName": canyon_name,
-        "status": "ok",
-        "matchCount": len(matches),
-        "elapsedSec": round(elapsed, 3),
-        "matches": matches,
-    }
-    write_json(cache_path, payload)
-    return payload
+    return matches
 
 
 def query_osm_regulation_offline(*, bbox: tuple[float, float, float, float], offline_gpkg: str, ogr2ogr: str | None) -> dict[str, Any]:

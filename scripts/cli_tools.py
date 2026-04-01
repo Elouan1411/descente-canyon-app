@@ -43,6 +43,12 @@ def default_gdalwarp() -> str:
     return "gdalwarp"
 
 
+def default_ogr2ogr() -> str:
+    if os.name == "nt":
+        return r"C:\Program Files\GDAL\ogr2ogr.exe"
+    return "ogr2ogr"
+
+
 def default_7zip() -> str:
     if os.name == "nt":
         return r"C:\Program Files\7-Zip\7z.exe"
