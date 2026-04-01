@@ -140,6 +140,17 @@ python scripts/run_catchment_batch.py \
   --output-dir build/watersheds/batch-run
 ```
 
+Run mondial explicite :
+
+```bash
+python scripts/run_catchment_batch.py \
+  --source-config scripts/watersheds/source_config.hybrid.json \
+  --output-dir build/watersheds/batch-run-world \
+  --world \
+  --jobs 4 \
+  --aggregate-every 50
+```
+
 Pour ne traiter que la France :
 
 ```bash

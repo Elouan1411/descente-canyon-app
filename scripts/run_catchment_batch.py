@@ -230,6 +230,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--gdal-warp", default=default_gdalwarp())
     parser.add_argument("--country", action="append")
     parser.add_argument("--france-only", action="store_true")
+    parser.add_argument("--world", action="store_true")
     parser.add_argument("--prepare-france-ign-first", action="store_true")
     parser.add_argument("--keep-work", action="store_true")
     return parser.parse_args()
