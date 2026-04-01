@@ -165,6 +165,162 @@ def _tri(dem: np.ndarray) -> np.ndarray:
     return np.nanmean(stacked, axis=0)
 
 
+def _network_threshold_km2(dem_resolution_m: float) -> float:
+    if dem_resolution_m <= 10.0:
+        return 0.05
+    if dem_resolution_m <= 30.0:
+        return 0.1
+    if dem_resolution_m <= 100.0:
+        return 0.5
+    if dem_resolution_m <= 500.0:
+        return 2.0
+    return 5.0
+
+
+def _step_lengths_for_grid(x_res_m: float, y_res_m: float) -> dict[tuple[int, int], float]:
+    lengths: dict[tuple[int, int], float] = {}
+    for d_row in (-1, 0, 1):
+        for d_col in (-1, 0, 1):
+            if d_row == 0 and d_col == 0:
+                continue
+            lengths[(d_row, d_col)] = math.hypot(y_res_m * d_row, x_res_m * d_col)
+    return lengths
+
+
+def _compute_network_metrics(
+    *,
+    mask: np.ndarray,
+    path_lengths: np.ndarray,
+    flow: np.ndarray,
+    uparea: np.ndarray,
+    area_km2: float,
+    dem_resolution_m: float,
+) -> dict[str, Any]:
+    threshold = _network_threshold_km2(dem_resolution_m)
+    stream_mask = mask & np.isfinite(uparea) & (uparea >= threshold)
+    thresholds = [threshold, threshold / 2.0, threshold / 5.0, 0.0]
+    for candidate_threshold in thresholds:
+        stream_mask = mask & np.isfinite(uparea) & (uparea >= candidate_threshold)
+        if np.count_nonzero(stream_mask) > 0:
+            threshold = candidate_threshold
+            break
+
+    stream_count = int(np.count_nonzero(stream_mask))
+    if stream_count == 0:
+        return {
+            "streamExtractionThresholdKm2": _round(threshold, 6),
+            "streamCellCount": 0,
+            "streamFrequencyPerKm2": None,
+            "drainageDensityKmPerKm2": None,
+            "streamSegmentCount": 0,
+            "junctionCount": 0,
+            "strahlerOrder": None,
+            "firstOrderLengthFraction": None,
+            "totalStreamLengthKm": None,
+        }
+
+    valid_path = np.where(stream_mask & np.isfinite(path_lengths), path_lengths, -1.0)
+    ordered_indices = np.argwhere(stream_mask)
+    ordered_indices = sorted(ordered_indices.tolist(), key=lambda rc: float(valid_path[rc[0], rc[1]]), reverse=True)
+
+    # Derive local step lengths from the mean path increment among neighbors to stay CRS-agnostic.
+    step_lengths: dict[tuple[int, int], float] = {}
+    for d_row in (-1, 0, 1):
+        for d_col in (-1, 0, 1):
+            if d_row == 0 and d_col == 0:
+                continue
+            diffs = []
+            for row, col in ordered_indices[: min(len(ordered_indices), 400)]:
+                n_row = row + d_row
+                n_col = col + d_col
+                if n_row < 0 or n_row >= path_lengths.shape[0] or n_col < 0 or n_col >= path_lengths.shape[1]:
+                    continue
+                if not np.isfinite(path_lengths[n_row, n_col]) or not np.isfinite(path_lengths[row, col]):
+                    continue
+                diff = abs(float(path_lengths[n_row, n_col] - path_lengths[row, col]))
+                if diff > 0:
+                    diffs.append(diff)
+            if diffs:
+                step_lengths[(d_row, d_col)] = float(np.median(diffs))
+
+    fallback_lengths = _step_lengths_for_grid(dem_resolution_m, dem_resolution_m)
+    for key, value in fallback_lengths.items():
+        step_lengths.setdefault(key, value)
+
+    orders = np.zeros(flow.shape, dtype=np.int16)
+    junction_count = 0
+    source_count = 0
+    total_length_m = 0.0
+    first_order_length_m = 0.0
+    stream_segment_count = 0
+
+    for row, col in ordered_indices:
+        upstream_orders = []
+        for d_row in (-1, 0, 1):
+            for d_col in (-1, 0, 1):
+                if d_row == 0 and d_col == 0:
+                    continue
+                n_row = row + d_row
+                n_col = col + d_col
+                if n_row < 0 or n_row >= flow.shape[0] or n_col < 0 or n_col >= flow.shape[1]:
+                    continue
+                if not stream_mask[n_row, n_col]:
+                    continue
+                direction_code = int(flow[n_row, n_col])
+                offset = FLOW_DIRECTION_OFFSETS.get(direction_code)
+                if offset is None:
+                    continue
+                if n_row + offset[0] == row and n_col + offset[1] == col and orders[n_row, n_col] > 0:
+                    upstream_orders.append(int(orders[n_row, n_col]))
+
+        if not upstream_orders:
+            orders[row, col] = 1
+            source_count += 1
+        else:
+            max_order = max(upstream_orders)
+            if upstream_orders.count(max_order) >= 2:
+                orders[row, col] = max_order + 1
+            else:
+                orders[row, col] = max_order
+            if len(upstream_orders) >= 2:
+                junction_count += 1
+
+    for row, col in ordered_indices:
+        direction_code = int(flow[row, col])
+        offset = FLOW_DIRECTION_OFFSETS.get(direction_code)
+        if offset is None:
+            continue
+        n_row = row + offset[0]
+        n_col = col + offset[1]
+        if n_row < 0 or n_row >= flow.shape[0] or n_col < 0 or n_col >= flow.shape[1]:
+            continue
+        if not stream_mask[n_row, n_col]:
+            continue
+        step_length = step_lengths.get(offset, fallback_lengths.get(offset, dem_resolution_m))
+        total_length_m += step_length
+        stream_segment_count += 1
+        if orders[row, col] == 1:
+            first_order_length_m += step_length
+
+    strahler_order = int(np.max(orders[stream_mask])) if stream_count > 0 else None
+    total_stream_length_km = total_length_m / 1000.0 if total_length_m > 0 else None
+    drainage_density = (total_stream_length_km / area_km2) if total_stream_length_km and area_km2 > 0 else None
+    stream_frequency = (source_count / area_km2) if area_km2 > 0 else None
+    first_order_fraction = (first_order_length_m / total_length_m) if total_length_m > 0 else None
+
+    return {
+        "streamExtractionThresholdKm2": _round(threshold, 6),
+        "streamCellCount": stream_count,
+        "streamFrequencyPerKm2": _round(stream_frequency, 6),
+        "drainageDensityKmPerKm2": _round(drainage_density, 6),
+        "streamSegmentCount": stream_segment_count,
+        "junctionCount": junction_count,
+        "strahlerOrder": strahler_order,
+        "firstOrderLengthFraction": _round(first_order_fraction, 6),
+        "totalStreamLengthKm": _round(total_stream_length_km, 6),
+    }
+
+
 def _safe_stat(values: np.ndarray, fn: str) -> float | None:
     if values.size == 0:
         return None
@@ -183,6 +339,8 @@ def _round(value: float | None, digits: int = 6) -> float | None:
 def compute_watershed_descriptors(
     *,
     dem_path: str,
+    uparea_path: str,
+    flowdir_path: str,
     mask_data: dict[str, Any],
     selected_candidate: dict[str, Any],
 ) -> dict[str, Any]:
@@ -254,7 +412,21 @@ def compute_watershed_descriptors(
         quality -= {"off_channel": 0.5, "uncertain": 0.2, "possible_proxy": 0.1}.get(verdict, 0.0)
         quality = max(0.0, min(1.0, quality))
 
-        return {
+    with rasterio.open(uparea_path) as upa_src, rasterio.open(flowdir_path) as flow_src:
+        uparea = upa_src.read(1, masked=True).filled(np.nan).astype(np.float32)
+        flow = flow_src.read(1, masked=True).filled(0).astype(np.int16)
+        if uparea.shape != mask.shape or flow.shape != mask.shape:
+            raise SystemExit(f"Hydrology raster shape mismatch for descriptors: upa={uparea.shape}, flow={flow.shape}, mask={mask.shape}")
+        network_metrics = _compute_network_metrics(
+            mask=mask,
+            path_lengths=path_lengths,
+            flow=flow,
+            uparea=uparea,
+            area_km2=area_km2,
+            dem_resolution_m=dem_resolution,
+        )
+
+    return {
             "descriptorStatus": "ok",
             "watershedCellCount": mask_count,
             "watershedValidCellCount": valid_count,
@@ -291,4 +463,5 @@ def compute_watershed_descriptors(
             "outletSnapDistanceM": _round(snap_distance, 3),
             "demResolutionM": _round(dem_resolution, 3),
             "watershedQualityScore": _round(quality, 6),
+            **network_metrics,
         }

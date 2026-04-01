@@ -1455,6 +1455,8 @@ def process_single_canyon(
         started = time.perf_counter()
         descriptors = compute_watershed_descriptors(
             dem_path=str(raster_paths["elevation"]),
+            uparea_path=str(raster_paths["upa"]),
+            flowdir_path=str(raster_paths["flowdir"]),
             mask_data=mask_data,
             selected_candidate=selected_candidate,
         )
