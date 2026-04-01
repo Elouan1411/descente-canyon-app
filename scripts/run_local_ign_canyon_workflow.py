@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
 import subprocess
 import sys
 import unicodedata
@@ -91,10 +92,19 @@ def clip_dem(
 
             for crs_candidate in crs_candidates:
                 xs, ys = transform("EPSG:4326", crs_candidate, longitudes, latitudes)
-                min_x = min(xs) - buffer_m
-                max_x = max(xs) + buffer_m
-                min_y = min(ys) - buffer_m
-                max_y = max(ys) + buffer_m
+                if hasattr(crs_candidate, "is_geographic") and crs_candidate.is_geographic:
+                    mean_lat = sum(latitudes) / len(latitudes)
+                    lat_buffer = buffer_m / 111_320.0
+                    lon_buffer = buffer_m / (111_320.0 * max(0.1, abs(math.cos(math.radians(mean_lat)))))
+                    min_x = min(xs) - lon_buffer
+                    max_x = max(xs) + lon_buffer
+                    min_y = min(ys) - lat_buffer
+                    max_y = max(ys) + lat_buffer
+                else:
+                    min_x = min(xs) - buffer_m
+                    max_x = max(xs) + buffer_m
+                    min_y = min(ys) - buffer_m
+                    max_y = max(ys) + buffer_m
 
                 window = src.window(min_x, min_y, max_x, max_y)
                 window = window.round_offsets().round_lengths()

@@ -215,6 +215,8 @@ Le Portugal est prepare dans la config hybride via deux sources distinctes :
 
 Les `Açores` utilisent aussi pour l'instant le fallback `Copernicus GLO-30`. La source `DGT MDT-2m` n'est plus utilisee dans le pipeline automatique car les rasters de telechargement necessitent une authentification et ralentissaient fortement les runs sans produire de resultat exploitable.
 
+Le fallback `Copernicus GLO-30` est clippe depuis `EPSG:4326` avec un buffer correctement converti en degres, puis reprojete en `EPSG:3035` avant le calcul hydrologique afin d'eviter des emprises absurdes et des traitements excessivement lents.
+
 Pour l'Italie complete, le pipeline utilise `TINITALY 1.1` (10 m, couverture nationale) comme source principale, avec l'override regional Ligurie conserve pour les canyons de cette region.
 
 Manifests exemples integres pour les modeles nationaux les plus prometteurs hors France :
