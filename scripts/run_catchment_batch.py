@@ -817,6 +817,41 @@ def ensure_worldcover(points: list[dict[str, Any]]) -> dict[str, Any]:
     }
 
 
+def ensure_hydrolakes() -> dict[str, Any]:
+    output_dir = Path("build/watersheds/hydrolakes")
+    command = [
+        sys.executable,
+        "scripts/prepare_hydrolakes.py",
+        "--output-dir",
+        str(output_dir),
+    ]
+    started = time.perf_counter()
+    subprocess.run(command, check=True)
+    ready = load_json_if_exists(output_dir / "ready.json") or {}
+    return {
+        "path": ready.get("shapefile"),
+        "elapsedSec": round(time.perf_counter() - started, 3),
+    }
+
+
+def ensure_glim() -> dict[str, Any]:
+    output_dir = Path("build/watersheds/glim")
+    command = [
+        sys.executable,
+        "scripts/prepare_glim_lithology.py",
+        "--output-dir",
+        str(output_dir),
+    ]
+    started = time.perf_counter()
+    subprocess.run(command, check=True)
+    ready = load_json_if_exists(output_dir / "ready.json") or {}
+    return {
+        "path": ready.get("raster"),
+        "classMap": ready.get("classMap", {}),
+        "elapsedSec": round(time.perf_counter() - started, 3),
+    }
+
+
 def evaluate_points_for_canyon(
     *,
     canyon: dict[str, Any],
@@ -1472,18 +1507,35 @@ def process_single_canyon(
 
     if mask_data is not None and raster_paths.get("elevation") is not None and selected_candidate is not None:
         worldcover_info = None
+        hydrolakes_info = None
+        glim_info = None
         try:
             worldcover_info = ensure_worldcover(points)
             stage_timings["prepareWorldCoverSec"] = float(worldcover_info["elapsedSec"])
         except Exception:
             worldcover_info = None
             stage_timings["prepareWorldCoverSec"] = 0.0
+        try:
+            hydrolakes_info = ensure_hydrolakes()
+            stage_timings["prepareHydroLakesSec"] = float(hydrolakes_info["elapsedSec"])
+        except Exception:
+            hydrolakes_info = None
+            stage_timings["prepareHydroLakesSec"] = 0.0
+        try:
+            glim_info = ensure_glim()
+            stage_timings["prepareGLiMSec"] = float(glim_info["elapsedSec"])
+        except Exception:
+            glim_info = None
+            stage_timings["prepareGLiMSec"] = 0.0
         started = time.perf_counter()
         descriptors = compute_watershed_descriptors(
             dem_path=str(raster_paths["elevation"]),
             uparea_path=str(raster_paths["upa"]),
             flowdir_path=str(raster_paths["flowdir"]),
             worldcover_path=worldcover_info["path"] if worldcover_info else None,
+            hydrolakes_path=hydrolakes_info["path"] if hydrolakes_info else None,
+            glim_path=glim_info["path"] if glim_info else None,
+            watershed_geometry=watershed["geometry"] if watershed else None,
             mask_data=mask_data,
             selected_candidate=selected_candidate,
         )

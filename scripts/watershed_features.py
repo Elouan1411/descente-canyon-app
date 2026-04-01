@@ -19,6 +19,25 @@ SOILGRIDS_LAYERS = {
     "sand": "https://files.isric.org/soilgrids/latest/data/sand/sand_0-5cm_mean.vrt",
 }
 
+GLIM_CLASS_CODES = {
+    "su": 1,
+    "vb": 2,
+    "ss": 3,
+    "pb": 4,
+    "sm": 5,
+    "sc": 6,
+    "va": 7,
+    "mt": 8,
+    "pa": 9,
+    "vi": 10,
+    "wb": 11,
+    "py": 12,
+    "pi": 13,
+    "ev": 14,
+    "nd": 15,
+    "ig": 16,
+}
+
 
 def _cell_center(transform: Affine, row: int, col: int) -> tuple[float, float]:
     x = transform.c + (col + 0.5) * transform.a + (row + 0.5) * transform.b
@@ -481,6 +500,110 @@ def _soilgrids_metrics(
     }
 
 
+def _hydrolakes_metrics(
+    *,
+    hydrolakes_path: str,
+    watershed_geometry: dict[str, Any] | None,
+    basin_area_km2: float,
+) -> dict[str, Any]:
+    if watershed_geometry is None:
+        return {
+            "lakeFraction": None,
+            "lakeCount": 0,
+        }
+    import shapefile  # type: ignore
+    from shapely.geometry import shape as shapely_shape  # type: ignore
+
+    basin = shapely_shape(watershed_geometry)
+    bbox = basin.bounds
+    total_lake_area_km2 = 0.0
+    lake_count = 0
+
+    reader = shapefile.Reader(hydrolakes_path)
+    for shape_record in reader.iterShapeRecords(bbox=bbox):
+        lake_geom = shapely_shape(shape_record.shape.__geo_interface__)
+        if not lake_geom.is_valid or lake_geom.is_empty:
+            continue
+        if not basin.intersects(lake_geom):
+            continue
+        inter = basin.intersection(lake_geom)
+        if inter.is_empty:
+            continue
+        # Geometry is in EPSG:4326; area proxy from geodesic-free polygon area is too wrong.
+        # Use lake area attribute as a practical fallback and count intersecting lakes.
+        attrs = shape_record.record.as_dict() if hasattr(shape_record.record, "as_dict") else {}
+        lake_area = attrs.get("Lake_area") or attrs.get("Lake_area__") or attrs.get("Lake_area_1")
+        if lake_area is not None:
+            total_lake_area_km2 += float(lake_area)
+        lake_count += 1
+
+    lake_fraction = (total_lake_area_km2 / basin_area_km2) if basin_area_km2 > 0 else None
+    return {
+        "lakeFraction": _round(lake_fraction, 6),
+        "lakeCount": lake_count,
+    }
+
+
+def _glim_metrics(
+    *,
+    glim_path: str,
+    mask: np.ndarray,
+    reference_transform: Affine,
+    reference_crs: Any,
+    width: int,
+    height: int,
+) -> dict[str, Any]:
+    with rasterio.open(glim_path) as src:
+        with WarpedVRT(
+            src,
+            crs=reference_crs,
+            transform=reference_transform,
+            width=width,
+            height=height,
+            resampling=Resampling.nearest,
+        ) as vrt:
+            geology = vrt.read(1, masked=True).filled(-9999).astype(np.int16)
+
+    valid = mask & (geology > 0)
+    valid_count = int(np.count_nonzero(valid))
+    if valid_count == 0:
+        return {
+            "geologyValidFraction": 0.0,
+            "carbonateFraction": None,
+            "unconsolidatedFraction": None,
+            "crystallineFraction": None,
+            "volcanicFraction": None,
+            "evaporiteFraction": None,
+            "dominantLithologyCode": None,
+            "karstIndicator": None,
+        }
+
+    values = geology[valid]
+    def frac(codes: list[int]) -> float:
+        return float(np.count_nonzero(np.isin(values, codes)) / valid_count)
+
+    carbonate = frac([GLIM_CLASS_CODES["sc"]])
+    unconsolidated = frac([GLIM_CLASS_CODES["su"]])
+    crystalline = frac([GLIM_CLASS_CODES["mt"], GLIM_CLASS_CODES["pa"], GLIM_CLASS_CODES["pb"], GLIM_CLASS_CODES["pi"]])
+    volcanic = frac([GLIM_CLASS_CODES["va"], GLIM_CLASS_CODES["vi"], GLIM_CLASS_CODES["vb"], GLIM_CLASS_CODES["py"], GLIM_CLASS_CODES["ig"]])
+    evaporite = frac([GLIM_CLASS_CODES["ev"]])
+    unique, counts = np.unique(values, return_counts=True)
+    dominant_code = int(unique[int(np.argmax(counts))]) if unique.size else None
+    code_to_name = {value: key for key, value in GLIM_CLASS_CODES.items()}
+    karst = 1.0 if carbonate >= 0.3 else (0.5 if carbonate >= 0.1 else 0.0)
+
+    return {
+        "geologyValidFraction": _round(valid_count / max(int(np.count_nonzero(mask)), 1), 6),
+        "carbonateFraction": _round(carbonate, 6),
+        "unconsolidatedFraction": _round(unconsolidated, 6),
+        "crystallineFraction": _round(crystalline, 6),
+        "volcanicFraction": _round(volcanic, 6),
+        "evaporiteFraction": _round(evaporite, 6),
+        "dominantLithologyCode": code_to_name.get(dominant_code, str(dominant_code) if dominant_code is not None else None),
+        "karstIndicator": _round(karst, 6),
+    }
+
+
 def _safe_stat(values: np.ndarray, fn: str) -> float | None:
     if values.size == 0:
         return None
@@ -502,6 +625,9 @@ def compute_watershed_descriptors(
     uparea_path: str,
     flowdir_path: str,
     worldcover_path: str | None,
+    hydrolakes_path: str | None,
+    glim_path: str | None,
+    watershed_geometry: dict[str, Any] | None,
     mask_data: dict[str, Any],
     selected_candidate: dict[str, Any],
 ) -> dict[str, Any]:
@@ -621,6 +747,52 @@ def compute_watershed_descriptors(
             "runoffPotentialIndex": None,
         }
 
+    try:
+        hydrolakes_metrics = _hydrolakes_metrics(
+            hydrolakes_path=hydrolakes_path,
+            watershed_geometry=watershed_geometry,
+            basin_area_km2=area_km2,
+        ) if hydrolakes_path else {"lakeFraction": None, "lakeCount": 0}
+        hydrolakes_metrics["hydroLakesStatus"] = "ok" if hydrolakes_path else "skipped"
+    except Exception as exc:
+        hydrolakes_metrics = {
+            "hydroLakesStatus": f"error:{type(exc).__name__}",
+            "lakeFraction": None,
+            "lakeCount": None,
+        }
+
+    try:
+        glim_metrics = _glim_metrics(
+            glim_path=glim_path,
+            mask=mask,
+            reference_transform=mask_data["transform"],
+            reference_crs=mask_data["crs"],
+            width=mask.shape[1],
+            height=mask.shape[0],
+        ) if glim_path else {
+            "geologyValidFraction": None,
+            "carbonateFraction": None,
+            "unconsolidatedFraction": None,
+            "crystallineFraction": None,
+            "volcanicFraction": None,
+            "evaporiteFraction": None,
+            "dominantLithologyCode": None,
+            "karstIndicator": None,
+        }
+        glim_metrics["geologyDescriptorStatus"] = "ok" if glim_path else "skipped"
+    except Exception as exc:
+        glim_metrics = {
+            "geologyDescriptorStatus": f"error:{type(exc).__name__}",
+            "geologyValidFraction": None,
+            "carbonateFraction": None,
+            "unconsolidatedFraction": None,
+            "crystallineFraction": None,
+            "volcanicFraction": None,
+            "evaporiteFraction": None,
+            "dominantLithologyCode": None,
+            "karstIndicator": None,
+        }
+
     return {
             "descriptorStatus": "ok",
             "watershedCellCount": mask_count,
@@ -661,4 +833,7 @@ def compute_watershed_descriptors(
             **network_metrics,
             **landcover_metrics,
             **soil_metrics,
+            **hydrolakes_metrics,
+            **glim_metrics,
+            "imperviousProxyFraction": landcover_metrics.get("urbanFraction"),
         }

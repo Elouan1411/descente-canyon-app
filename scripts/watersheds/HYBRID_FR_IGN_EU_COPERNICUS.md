@@ -211,6 +211,12 @@ Le batch ecrit aussi un fichier `import_ready_watershed_descriptors.json` avec d
 
 La phase 3 ajoute un premier bloc `sols / infiltration` base sur `SoilGrids` (clay / sand topsoil) pour produire des proxies de permeabilite et de potentiel de ruissellement.
 
+La phase 3 ajoute aussi :
+
+- `HydroLAKES` pour `lakeFraction` et `lakeCount`
+- `GLiM 0.5°` pour des proxies geologiques (`carbonateFraction`, `unconsolidatedFraction`, `crystallineFraction`, `volcanicFraction`, `dominantLithologyCode`, `karstIndicator`)
+- un `imperviousProxyFraction` derive du `urbanFraction` WorldCover en attendant une couche imperviousness dediee
+
 La phase 2 ajoute aussi des descripteurs `ESA WorldCover 2021` (fractions de foret, shrub, herbe, cultures, urbain, roche nue, eau permanente, zones humides, etc.) avec telechargement automatique des tuiles utiles dans `build/watersheds/worldcover/`.
 
 Pour recalculer une liste de canyons issue de `build/watershed-review/watershed-review.json` avec le point GPS valide manuellement et sans snap (meme cellule raster), utiliser :
