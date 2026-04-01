@@ -49,6 +49,28 @@ def default_ogr2ogr() -> str:
     return "ogr2ogr"
 
 
+def gdal_env(executable: str) -> dict[str, str]:
+    env = os.environ.copy()
+    if env.get("GDAL_DATA"):
+        return env
+    exe_path = Path(executable)
+    candidates = []
+    if os.name == "nt":
+        candidates.append(exe_path.parent / "gdal-data")
+        candidates.append(Path(r"C:\Program Files\GDAL\gdal-data"))
+    else:
+        candidates.extend([
+            exe_path.parent.parent / "share" / "gdal",
+            Path("/usr/share/gdal"),
+            Path("/usr/local/share/gdal"),
+        ])
+    for candidate in candidates:
+        if candidate.exists():
+            env["GDAL_DATA"] = str(candidate)
+            return env
+    return env
+
+
 def default_7zip() -> str:
     if os.name == "nt":
         return r"C:\Program Files\7-Zip\7z.exe"

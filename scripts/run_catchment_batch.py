@@ -1628,6 +1628,7 @@ def process_single_canyon(
                 osm_probe = query_osm_regulation(
                     canyon_id=canyon_id,
                     canyon_name=canyon.get("nomComplet") or canyon.get("nom") or str(canyon_id),
+                    country=str(canyon.get("pays") or ""),
                     watershed_geometry=watershed["geometry"],
                     cache_dir=output_dir / "osm_regulation_cache",
                 )

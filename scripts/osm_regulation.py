@@ -3,7 +3,9 @@ from __future__ import annotations
 import json
 import os
 import subprocess
+import sys
 import time
+import unicodedata
 import urllib.parse
 import urllib.request
 from pathlib import Path
@@ -91,6 +93,19 @@ def feature_tags_summary(tags: dict[str, Any]) -> dict[str, Any]:
     return {key: tags.get(key) for key in keep if key in tags}
 
 
+def parse_other_tags(value: str | None) -> dict[str, str]:
+    if not value:
+        return {}
+    result = {}
+    for chunk in value.split('","'):
+        text = chunk.strip('"')
+        if '=>"' not in text:
+            continue
+        key, val = text.split('=>"', 1)
+        result[key] = val.strip('"')
+    return result
+
+
 def overpass_query(bbox: tuple[float, float, float, float], *, cache_dir: Path) -> dict[str, Any]:
     south, west, north, east = bbox[1], bbox[0], bbox[3], bbox[2]
     parts = []
@@ -134,6 +149,7 @@ def query_osm_regulation(
     *,
     canyon_id: int,
     canyon_name: str,
+    country: str,
     watershed_geometry: dict[str, Any],
     cache_dir: Path,
 ) -> dict[str, Any]:
@@ -142,6 +158,10 @@ def query_osm_regulation(
         return read_json(cache_path)
 
     offline_path = DEFAULT_OFFLINE_GPKG if DEFAULT_OFFLINE_GPKG.exists() else None
+    country_slug = slugify_country(country)
+    country_offline_path = Path("build/watersheds/osm-regulation") / country_slug / "regulation_features.gpkg"
+    if country_offline_path.exists():
+        offline_path = country_offline_path
     cooldown_path = cache_dir / ".overpass.disabled_until"
 
     if offline_path and cooldown_path.exists():
@@ -149,7 +169,7 @@ def query_osm_regulation(
             disabled_until = float(cooldown_path.read_text(encoding="utf-8"))
             if time.time() < disabled_until:
                 payload = query_osm_regulation_offline(bbox=shape(watershed_geometry).bounds, offline_gpkg=str(offline_path), ogr2ogr=None)
-                matches = _filter_matches(shape(watershed_geometry), payload.get("features", []))
+                matches = offline_features_to_matches(shape(watershed_geometry), payload.get("features", []))
                 result = {
                     "canyonId": canyon_id,
                     "canyonName": canyon_name,
@@ -171,10 +191,17 @@ def query_osm_regulation(
         payload = overpass_query(bbox, cache_dir=cache_dir)
         elapsed = time.perf_counter() - started
     except Exception as exc:
+        if offline_path is None:
+            try:
+                ensure_country_offline_extract(country=country, output_gpkg=country_offline_path)
+                if country_offline_path.exists():
+                    offline_path = country_offline_path
+            except Exception:
+                offline_path = None
         if offline_path:
             cooldown_path.write_text(str(time.time() + OVERPASS_FAILURE_COOLDOWN_SEC), encoding="utf-8")
             payload = query_osm_regulation_offline(bbox=bbox, offline_gpkg=str(offline_path), ogr2ogr=None)
-            matches = _filter_matches(basin_geom, payload.get("features", []))
+            matches = offline_features_to_matches(basin_geom, payload.get("features", []))
             result = {
                 "canyonId": canyon_id,
                 "canyonName": canyon_name,
@@ -209,6 +236,28 @@ def query_osm_regulation(
     }
     write_json(cache_path, payload)
     return payload
+
+
+def ensure_country_offline_extract(*, country: str, output_gpkg: Path) -> None:
+    if output_gpkg.exists():
+        return
+    output_gpkg.parent.mkdir(parents=True, exist_ok=True)
+    command = [
+        sys.executable,
+        "scripts/prepare_osm_regulation_extract.py",
+        "--country",
+        country,
+        "--output-gpkg",
+        str(output_gpkg),
+    ]
+    subprocess.run(command, check=True)
+
+
+def slugify_country(country: str) -> str:
+    normalized = unicodedata.normalize("NFKD", country)
+    normalized = "".join(ch for ch in normalized if not unicodedata.combining(ch))
+    normalized = normalized.lower().replace(" ", "-").replace(",", "")
+    return normalized
 
 
 def _filter_matches(basin_geom, elements: list[dict[str, Any]]) -> list[dict[str, Any]]:
@@ -247,6 +296,29 @@ def query_osm_regulation_offline(*, bbox: tuple[float, float, float, float], off
     ]
     completed = subprocess.run(command, check=True, capture_output=True, text=True)
     return json.loads(completed.stdout)
+
+
+def offline_features_to_matches(basin_geom, features: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    matches = []
+    for feature in features:
+        geom = shape(feature.get('geometry'))
+        if geom.is_empty or not basin_geom.intersects(geom):
+            continue
+        properties = feature.get('properties', {})
+        tags = {}
+        for key in ['name', 'waterway', 'barrier', 'man_made', 'landuse', 'natural']:
+            if key in properties and properties[key] not in (None, ''):
+                tags[key] = properties[key]
+        tags.update(parse_other_tags(properties.get('other_tags')))
+        matches.append(
+            {
+                'elementType': 'feature',
+                'elementId': properties.get('osm_id'),
+                'tags': feature_tags_summary(tags),
+                'geometryType': geom.geom_type,
+            }
+        )
+    return matches
 
 
 def summarize_osm_regulation(matches: list[dict[str, Any]]) -> dict[str, Any]:
