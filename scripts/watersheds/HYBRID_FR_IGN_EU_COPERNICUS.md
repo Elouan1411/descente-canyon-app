@@ -76,6 +76,7 @@ python scripts/merge_country_watershed_runs.py \
 - batch resumable pour toute la base: `scripts/run_catchment_batch.py`
 - telechargement Copernicus a la volee: `scripts/prepare_copernicus_dem.py`
 - telechargement MERIT a la volee: `scripts/prepare_merit_hydrology.py`
+- fallback MERIT IHU global public: `scripts/prepare_merit_ihu_global.py`
 - sources nationales hors France par manifest: `scripts/prepare_national_dem.py`
 - calcul des entrees: `scripts/compute_entry_watersheds.py`
 - diagnostic des cas suspects: `scripts/analyze_watershed_suspicious_cases.py`
@@ -239,6 +240,8 @@ Le Portugal est prepare dans la config hybride via deux sources distinctes :
 Les `Açores` utilisent aussi pour l'instant le fallback `Copernicus GLO-30`. La source `DGT MDT-2m` n'est plus utilisee dans le pipeline automatique car les rasters de telechargement necessitent une authentification et ralentissaient fortement les runs sans produire de resultat exploitable.
 
 Le fallback `Copernicus GLO-30` est clippe depuis `EPSG:4326` avec un buffer correctement converti en degres, puis reprojete en `EPSG:3035` avant le calcul hydrologique afin d'eviter des emprises absurdes et des traitements excessivement lents.
+
+Pour le reste du monde, le pipeline peut maintenant utiliser `MERIT Hydro IHU` public (Zenodo, 30 arc-second) comme fallback global automatisable, ce qui evite la dependance au dossier Dropbox protege du MERIT Hydro original.
 
 Pour l'Italie complete, le pipeline utilise `TINITALY 1.1` (10 m, couverture nationale) comme source principale, avec l'override regional Ligurie conserve pour les canyons de cette region.
 

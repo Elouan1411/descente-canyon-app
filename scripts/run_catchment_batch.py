@@ -585,6 +585,21 @@ def auto_prepare_source(
         subprocess.run(command, check=True)
         return source
 
+    if provider == "merit-ihu-global":
+        output_dir_path = auto_prepare.get("outputDir", "build/watersheds/merit-ihu-global")
+        command = [
+            sys.executable,
+            "scripts/prepare_merit_ihu_global.py",
+            "--output-dir",
+            output_dir_path,
+        ]
+        subprocess.run(command, check=True)
+        prepared = dict(source)
+        prepared["upaRaster"] = str(Path(output_dir_path) / "raw" / "30sec_uparea.tif")
+        prepared["flowdirRaster"] = str(Path(output_dir_path) / "raw" / "30sec_flwdir.tif")
+        prepared["elevationRaster"] = str(Path(output_dir_path) / "raw" / "30sec_elevtn.tif")
+        return prepared
+
     raise SystemExit(f"Unsupported autoPrepare provider: {provider}")
 
 

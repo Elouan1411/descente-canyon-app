@@ -440,6 +440,25 @@ def main() -> int:
     )
     sources.append(
         {
+            "name": "merit-ihu-global",
+            "mode": "precomputed_hydrology",
+            "upaRaster": "build/watersheds/merit-ihu-global/raw/30sec_uparea.tif",
+            "flowdirRaster": "build/watersheds/merit-ihu-global/raw/30sec_flwdir.tif",
+            "elevationRaster": "build/watersheds/merit-ihu-global/raw/30sec_elevtn.tif",
+            "searchRadiusCells": 1,
+            "candidateStrategy": "max_upa",
+            "autoPrepare": {
+                "provider": "merit-ihu-global",
+                "outputDir": "build/watersheds/merit-ihu-global"
+            },
+            "match": {
+                "default": True
+            }
+        }
+    )
+
+    sources.append(
+        {
             "name": "merit-fallback",
             "mode": "precomputed_hydrology",
             "upaRaster": str(args.merit_upa),
