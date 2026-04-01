@@ -75,7 +75,6 @@ python scripts/merge_country_watershed_runs.py \
 - workflow local canyon sur DEM IGN: `scripts/run_local_ign_canyon_workflow.py`
 - batch resumable pour toute la base: `scripts/run_catchment_batch.py`
 - telechargement Copernicus a la volee: `scripts/prepare_copernicus_dem.py`
-- telechargement MERIT a la volee: `scripts/prepare_merit_hydrology.py`
 - fallback MERIT IHU global public: `scripts/prepare_merit_ihu_global.py`
 - sources nationales hors France par manifest: `scripts/prepare_national_dem.py`
 - calcul des entrees: `scripts/compute_entry_watersheds.py`
@@ -224,11 +223,9 @@ Le batch peut maintenant tenter de preparer automatiquement la meilleure source 
 
 1. `IGN` pour la France
 2. `Copernicus` pour l'Europe
-3. `MERIT` en fallback
+3. `MERIT Hydro IHU` en fallback
 
-Pour `MERIT`, il faut encore renseigner un manifest d'URL si tu veux un telechargement completement automatique a la volee :
-
-- `scripts/watersheds/merit_url_manifest.example.json`
+`Copernicus` est maintenant dynamique et ne depend plus d'un manifest manuel.
 
 Pour les sources nationales hors France, le principe recommande est le meme : telecharger seulement les unites utiles et reconstruire un VRT global `_all_downloaded.vrt`, ce qui permet de traverser proprement les limites entre fichiers ou subdivisions administratives.
 
@@ -241,7 +238,7 @@ Les `Açores` utilisent aussi pour l'instant le fallback `Copernicus GLO-30`. La
 
 Le fallback `Copernicus GLO-30` est clippe depuis `EPSG:4326` avec un buffer correctement converti en degres, puis reprojete en `EPSG:3035` avant le calcul hydrologique afin d'eviter des emprises absurdes et des traitements excessivement lents.
 
-Pour le reste du monde, le pipeline peut maintenant utiliser `MERIT Hydro IHU` public (Zenodo, 30 arc-second) comme fallback global automatisable, ce qui evite la dependance au dossier Dropbox protege du MERIT Hydro original.
+Pour le reste du monde, le pipeline utilise `MERIT Hydro IHU` public (Zenodo, 30 arc-second) comme fallback global automatisable, ce qui evite la dependance au dossier Dropbox protege du MERIT Hydro original.
 
 Pour l'Italie complete, le pipeline utilise `TINITALY 1.1` (10 m, couverture nationale) comme source principale, avec l'override regional Ligurie conserve pour les canyons de cette region.
 

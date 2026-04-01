@@ -26,14 +26,16 @@ def write_json(path: Path, data: Any) -> None:
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Downloads Copernicus DEM geocells on demand and rebuilds a VRT.")
-    parser.add_argument("--manifest", type=Path, required=True)
+    parser.add_argument("--manifest", type=Path)
     parser.add_argument("--cell", action="append", required=True)
     parser.add_argument("--output-dir", type=Path, default=Path("build/watersheds/copernicus-data"))
     parser.add_argument("--gdalbuildvrt", default=default_gdalbuildvrt())
     return parser.parse_args()
 
 
-def resolve_url(manifest: dict[str, Any], cell: str) -> str:
+def resolve_url(manifest: dict[str, Any] | None, cell: str) -> str:
+    if manifest is None:
+        return copernicus_public_url(cell)
     cells = manifest.get("cells", {})
     if cell in cells:
         return str(cells[cell])
@@ -94,7 +96,7 @@ def build_vrt(gdalbuildvrt: str, tif_paths: list[Path], vrt_path: Path) -> None:
 def main() -> int:
     args = parse_args()
     gdalbuildvrt = resolve_executable(args.gdalbuildvrt, extra_candidates=[default_gdalbuildvrt()])
-    manifest = load_json(args.manifest)
+    manifest = load_json(args.manifest) if args.manifest else None
     output_dir = args.output_dir.resolve()
     raw_dir = output_dir / "raw"
     vrt_path = output_dir / "vrt" / "copernicus_glo30.vrt"

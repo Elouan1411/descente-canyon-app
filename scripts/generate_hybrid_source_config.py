@@ -117,21 +117,6 @@ def parse_args() -> argparse.Namespace:
         default=Path("build/watersheds/copernicus-europe-hydrology/copernicus_breached_dem.tif"),
     )
     parser.add_argument(
-        "--merit-upa",
-        type=Path,
-        default=Path("build/watersheds/merit/vrt/merit_upa.vrt"),
-    )
-    parser.add_argument(
-        "--merit-flowdir",
-        type=Path,
-        default=Path("build/watersheds/merit/vrt/merit_dir.vrt"),
-    )
-    parser.add_argument(
-        "--merit-elevation",
-        type=Path,
-        default=Path("build/watersheds/merit/vrt/merit_elv.vrt"),
-    )
-    parser.add_argument(
         "--output",
         type=Path,
         default=Path("scripts/watersheds/source_config.hybrid.json"),
@@ -429,7 +414,6 @@ def main() -> int:
             "channelMinUpaKm2": 0.05,
             "autoPrepare": {
                 "provider": "copernicus",
-                "manifest": "scripts/watersheds/copernicus_url_manifest.example.json",
                 "outputDir": "build/watersheds/copernicus-data",
                 "alwaysPrepare": True
             },
@@ -451,26 +435,6 @@ def main() -> int:
                 "provider": "merit-ihu-global",
                 "outputDir": "build/watersheds/merit-ihu-global"
             },
-            "match": {
-                "default": True
-            }
-        }
-    )
-
-    sources.append(
-        {
-            "name": "merit-fallback",
-            "mode": "precomputed_hydrology",
-            "upaRaster": str(args.merit_upa),
-            "flowdirRaster": str(args.merit_flowdir),
-            "elevationRaster": str(args.merit_elevation),
-            "searchRadiusCells": 2,
-            "candidateStrategy": "max_upa",
-                "autoPrepare": {
-                    "provider": "merit",
-                    "manifest": "scripts/watersheds/merit_url_manifest.json",
-                    "outputDir": "build/watersheds/merit"
-                },
             "match": {
                 "default": True
             }

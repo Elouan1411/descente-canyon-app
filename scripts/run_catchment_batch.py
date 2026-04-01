@@ -48,7 +48,7 @@ DYNAMIC_AUTOPREPARE_PROVIDERS = {
     "austria-als",
     "slovenia-jgp",
     "liguria-wcs",
-    "portugal-dgt-api",
+    "madeira-wcs",
     "copernicus",
 }
 
@@ -304,20 +304,8 @@ def copernicus_cell_name(latitude: float, longitude: float) -> str:
     return f"{lat_prefix}{lat_degree:02d}_{lon_prefix}{lon_degree:03d}"
 
 
-def merit_package_name(latitude: float, longitude: float) -> str:
-    lat0 = int(float(latitude) // 30) * 30
-    lon0 = int(float(longitude) // 30) * 30
-    lat_prefix = "n" if lat0 >= 0 else "s"
-    lon_prefix = "e" if lon0 >= 0 else "w"
-    return f"{lat_prefix}{abs(lat0):02d}{lon_prefix}{abs(lon0):03d}"
-
-
 def points_copernicus_cells(points: list[dict[str, Any]]) -> list[str]:
     return sorted({copernicus_cell_name(float(point["latitude"]), float(point["longitude"])) for point in points})
-
-
-def points_merit_packages(points: list[dict[str, Any]]) -> list[str]:
-    return sorted({merit_package_name(float(point["latitude"]), float(point["longitude"])) for point in points})
 
 
 def slovenia_quadrant_file_ids(points: list[dict[str, Any]]) -> list[int]:
@@ -337,8 +325,8 @@ def planned_source_sort_key(canyon: dict[str, Any], points: list[dict[str, Any]]
             return (0, str(canyon.get("departement") or ""), int(canyon["id"]))
         if provider == "copernicus":
             return (1, ",".join(points_copernicus_cells(points)), int(canyon["id"]))
-        if provider == "merit":
-            return (2, ",".join(points_merit_packages(points)), int(canyon["id"]))
+        if provider == "merit-ihu-global":
+            return (2, source.get("name", ""), int(canyon["id"]))
         return (3, source.get("name", ""), int(canyon["id"]))
     return (9, int(canyon["id"]))
 
@@ -388,8 +376,6 @@ def auto_prepare_source(
         command = [
             sys.executable,
             "scripts/prepare_copernicus_dem.py",
-            "--manifest",
-            auto_prepare.get("manifest", "scripts/watersheds/copernicus_url_manifest.example.json"),
             "--output-dir",
             auto_prepare.get("outputDir", "build/watersheds/copernicus-data"),
         ]
@@ -499,26 +485,6 @@ def auto_prepare_source(
         prepared["preparedDynamically"] = True
         return prepared
 
-    if provider == "portugal-dgt-api":
-        local_output_dir = output_dir / "prepared_sources" / f"portugal-{canyon['id']}"
-        command = [
-            sys.executable,
-            "scripts/prepare_portugal_dem.py",
-            "--output-dir",
-            str(local_output_dir),
-            "--cache-dir",
-            str(Path(auto_prepare.get("outputDir", "build/watersheds/portugal-national-dem")) / "raw"),
-            "--buffer-km",
-            str(auto_prepare.get("bufferKm", source.get("bufferKm", 15.0))),
-        ]
-        for point in points:
-            command.extend(["--point", f"{point['latitude']},{point['longitude']}"])
-        subprocess.run(command, check=True)
-        prepared = dict(source)
-        prepared["dem"] = str(local_output_dir / "vrt" / "_all_downloaded.vrt")
-        prepared["preparedDynamically"] = True
-        return prepared
-
     if provider == "madeira-wcs":
         local_output_dir = output_dir / "prepared_sources" / f"madeira-{canyon['id']}"
         command = [
@@ -568,20 +534,6 @@ def auto_prepare_source(
         ]
         for unit in units:
             command.extend(["--unit", unit])
-        subprocess.run(command, check=True)
-        return source
-
-    if provider == "merit":
-        command = [
-            sys.executable,
-            "scripts/prepare_merit_hydrology.py",
-            "--manifest",
-            auto_prepare.get("manifest", "scripts/watersheds/merit_url_manifest.example.json"),
-            "--output-dir",
-            auto_prepare.get("outputDir", "build/watersheds/merit"),
-        ]
-        for package_name in points_merit_packages(points):
-            command.extend(["--package", package_name])
         subprocess.run(command, check=True)
         return source
 
