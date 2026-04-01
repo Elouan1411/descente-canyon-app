@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import os
+import subprocess
 import time
 import urllib.parse
 import urllib.request
@@ -10,6 +11,8 @@ from typing import Any
 from urllib.error import HTTPError, URLError
 
 from shapely.geometry import Point, Polygon, shape
+
+from cli_tools import default_ogr2ogr, resolve_executable
 
 
 OVERPASS_URLS = [
@@ -131,6 +134,8 @@ def query_osm_regulation(
     canyon_name: str,
     watershed_geometry: dict[str, Any],
     cache_dir: Path,
+    offline_gpkg: str | None = None,
+    ogr2ogr: str | None = None,
 ) -> dict[str, Any]:
     cache_path = cache_dir / f"{canyon_id}.json"
     if cache_path.exists():
@@ -140,7 +145,10 @@ def query_osm_regulation(
     bbox = basin_geom.bounds
     started = time.perf_counter()
     try:
-        payload = overpass_query(bbox, cache_dir=cache_dir)
+        if offline_gpkg:
+            payload = query_osm_regulation_offline(bbox=bbox, offline_gpkg=offline_gpkg, ogr2ogr=ogr2ogr)
+        else:
+            payload = overpass_query(bbox, cache_dir=cache_dir)
         elapsed = time.perf_counter() - started
     except Exception as exc:
         return {
@@ -178,6 +186,26 @@ def query_osm_regulation(
     }
     write_json(cache_path, payload)
     return payload
+
+
+def query_osm_regulation_offline(*, bbox: tuple[float, float, float, float], offline_gpkg: str, ogr2ogr: str | None) -> dict[str, Any]:
+    ogr2ogr_bin = resolve_executable(ogr2ogr or default_ogr2ogr(), extra_candidates=[default_ogr2ogr()])
+    west, south, east, north = bbox
+    command = [
+        ogr2ogr_bin,
+        "-f",
+        "GeoJSON",
+        "/vsistdout/",
+        str(Path(offline_gpkg).resolve()),
+        "regulation_features",
+        "-spat",
+        str(west),
+        str(south),
+        str(east),
+        str(north),
+    ]
+    completed = subprocess.run(command, check=True, capture_output=True, text=True)
+    return json.loads(completed.stdout)
 
 
 def summarize_osm_regulation(matches: list[dict[str, Any]]) -> dict[str, Any]:
