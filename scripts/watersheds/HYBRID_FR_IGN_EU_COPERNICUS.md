@@ -214,6 +214,7 @@ La phase 3 ajoute un premier bloc `sols / infiltration` base sur `SoilGrids` (cl
 La phase 3 ajoute aussi :
 
 - `HydroLAKES` pour `lakeFraction` et `lakeCount`
+- `HydroLAKES` pour des proxies de regulation (`reservoirCountUpstream`, `damCountUpstream`, `reservoirAreaFraction`, `reservoirStorageUpstreamMcm`, `regulatedCatchment`)
 - `GLiM 0.5°` pour des proxies geologiques (`carbonateFraction`, `unconsolidatedFraction`, `crystallineFraction`, `volcanicFraction`, `dominantLithologyCode`, `karstIndicator`)
 - `GHSL Built Surface` pour une vraie `imperviousBuiltSurfaceFraction`
 - un `imperviousProxyFraction` derive du `urbanFraction` WorldCover conserve comme fallback simple

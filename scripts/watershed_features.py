@@ -510,6 +510,16 @@ def _hydrolakes_metrics(
         return {
             "lakeFraction": None,
             "lakeCount": 0,
+            "reservoirCountUpstream": 0,
+            "regulatedLakeCountUpstream": 0,
+            "damCountUpstream": 0,
+            "majorReservoirDamCountUpstream": 0,
+            "reservoirAreaUpstreamKm2": None,
+            "reservoirAreaFraction": None,
+            "reservoirStorageUpstreamMcm": None,
+            "largestUpstreamReservoirAreaKm2": None,
+            "largestUpstreamReservoirStorageMcm": None,
+            "regulatedCatchment": None,
         }
     import shapefile  # type: ignore
     from shapely.geometry import shape as shapely_shape  # type: ignore
@@ -518,6 +528,13 @@ def _hydrolakes_metrics(
     bbox = basin.bounds
     total_lake_area_km2 = 0.0
     lake_count = 0
+    reservoir_count = 0
+    regulated_lake_count = 0
+    major_reservoir_dam_count = 0
+    reservoir_area_upstream_km2 = 0.0
+    reservoir_storage_upstream_mcm = 0.0
+    largest_reservoir_area_km2 = 0.0
+    largest_reservoir_storage_mcm = 0.0
 
     reader = shapefile.Reader(hydrolakes_path)
     for shape_record in reader.iterShapeRecords(bbox=bbox):
@@ -537,10 +554,39 @@ def _hydrolakes_metrics(
             total_lake_area_km2 += float(lake_area)
         lake_count += 1
 
+        lake_type = attrs.get("Lake_type") or attrs.get("Lake_type_") or attrs.get("Lake_type1")
+        grand_id = attrs.get("Grand_id") or attrs.get("Grand_id_") or attrs.get("Grand_id1") or 0
+        reservoir_volume = attrs.get("Vol_res") or attrs.get("Vol_res__") or attrs.get("Vol_res_1") or 0.0
+        if reservoir_volume in (None, ""):
+            reservoir_volume = 0.0
+
+        if lake_type in (2, 3):
+            regulated_lake_count += 1
+            reservoir_count += 1
+            if float(grand_id or 0) > 0:
+                major_reservoir_dam_count += 1
+            lake_area_value = float(lake_area or 0.0)
+            reservoir_area_upstream_km2 += lake_area_value
+            reservoir_storage_value = float(reservoir_volume or 0.0)
+            reservoir_storage_upstream_mcm += reservoir_storage_value
+            largest_reservoir_area_km2 = max(largest_reservoir_area_km2, lake_area_value)
+            largest_reservoir_storage_mcm = max(largest_reservoir_storage_mcm, reservoir_storage_value)
+
     lake_fraction = (total_lake_area_km2 / basin_area_km2) if basin_area_km2 > 0 else None
+    reservoir_fraction = (reservoir_area_upstream_km2 / basin_area_km2) if basin_area_km2 > 0 else None
     return {
         "lakeFraction": _round(lake_fraction, 6),
         "lakeCount": lake_count,
+        "reservoirCountUpstream": reservoir_count,
+        "regulatedLakeCountUpstream": regulated_lake_count,
+        "damCountUpstream": major_reservoir_dam_count,
+        "majorReservoirDamCountUpstream": major_reservoir_dam_count,
+        "reservoirAreaUpstreamKm2": _round(reservoir_area_upstream_km2, 6),
+        "reservoirAreaFraction": _round(reservoir_fraction, 6),
+        "reservoirStorageUpstreamMcm": _round(reservoir_storage_upstream_mcm, 6),
+        "largestUpstreamReservoirAreaKm2": _round(largest_reservoir_area_km2 if reservoir_count > 0 else None, 6),
+        "largestUpstreamReservoirStorageMcm": _round(largest_reservoir_storage_mcm if reservoir_count > 0 else None, 6),
+        "regulatedCatchment": reservoir_count > 0,
     }
 
 
