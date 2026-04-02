@@ -16,7 +16,14 @@ from urllib.error import HTTPError, URLError
 
 ARTICLE_API_URL = "https://api.figshare.com/v2/articles/25988293"
 TARGET_ARCHIVE_NAME = "GDW_v1_0_shp.zip"
+TARGET_FILE_ID = "47913754"
 LEGACY_URL = "https://ndownloader.figshare.com/files/47913754"
+STATIC_DOWNLOAD_URLS = [
+    f"https://api.figshare.com/v2/file/download/{TARGET_FILE_ID}",
+    f"https://figshare.com/ndownloader/files/{TARGET_FILE_ID}",
+    LEGACY_URL,
+]
+STATIC_ARCHIVE_MD5 = "5064cf2315ef6159d9133b03596e761a"
 BROWSER_HEADERS = {
     "User-Agent": (
         "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
@@ -91,7 +98,15 @@ def fetch_json(url: str) -> Any:
 
 
 def resolve_download_sources() -> tuple[list[str], str | None]:
-    payload = fetch_json(ARTICLE_API_URL)
+    try:
+        payload = fetch_json(ARTICLE_API_URL)
+    except (HTTPError, URLError, json.JSONDecodeError) as exc:
+        print(
+            f"WARN GDW article API unavailable ({type(exc).__name__}: {exc}); using static download fallbacks.",
+            flush=True,
+        )
+        return STATIC_DOWNLOAD_URLS, STATIC_ARCHIVE_MD5
+
     files = payload.get("files") or []
     for file_info in files:
         if file_info.get("name") != TARGET_ARCHIVE_NAME:
@@ -103,13 +118,13 @@ def resolve_download_sources() -> tuple[list[str], str | None]:
         download_url = file_info.get("download_url")
         if download_url:
             candidates.append(str(download_url))
-        candidates.append(LEGACY_URL)
+        candidates.extend(STATIC_DOWNLOAD_URLS)
         deduped = []
         for candidate in candidates:
             if candidate not in deduped:
                 deduped.append(candidate)
         return deduped, file_info.get("computed_md5") or file_info.get("supplied_md5")
-    return [LEGACY_URL], None
+    return STATIC_DOWNLOAD_URLS, STATIC_ARCHIVE_MD5
 
 
 def download_with_urllib(url: str, temp_path: Path) -> None:
