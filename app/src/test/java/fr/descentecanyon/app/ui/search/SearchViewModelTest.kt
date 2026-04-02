@@ -97,18 +97,49 @@ class SearchViewModelTest {
         viewModel.onQueryChanged("al")
         advanceTimeBy(250)
         advanceUntilIdle()
+        assertEquals(1, viewModel.uiState.value.scrollResetRequestId)
+
         viewModel.onSortSelected(SearchSortField.NAME)
         advanceTimeBy(250)
         advanceUntilIdle()
         assertEquals(SortDirection.ASC, viewModel.uiState.value.criteria.sortDirection)
         assertEquals(listOf(1), viewModel.uiState.value.results.map { it.id })
-        assertEquals(1, viewModel.uiState.value.scrollResetRequestId)
+        assertEquals(2, viewModel.uiState.value.scrollResetRequestId)
 
         viewModel.onSortSelected(SearchSortField.NAME)
         advanceTimeBy(250)
         advanceUntilIdle()
         assertEquals(SortDirection.DESC, viewModel.uiState.value.criteria.sortDirection)
         assertEquals(listOf(1), viewModel.uiState.value.results.map { it.id })
+        assertEquals(3, viewModel.uiState.value.scrollResetRequestId)
+    }
+
+    @Test
+    @OptIn(ExperimentalCoroutinesApi::class)
+    fun `applied query change requests a list scroll reset`() = runTest {
+        every { canyonRepository.observeSearchCatalog() } returns flowOf(
+            listOf(
+                canyon(id = 1, nom = "Alpha"),
+                canyon(id = 2, nom = "Alpin"),
+            )
+        )
+        val viewModel = SearchViewModel(searchCanyonsUseCase, SavedStateHandle(), mainDispatcherRule.dispatcher)
+
+        advanceTimeBy(250)
+        advanceUntilIdle()
+        assertEquals(0, viewModel.uiState.value.scrollResetRequestId)
+
+        viewModel.onQueryChanged("al")
+        advanceTimeBy(199)
+        assertEquals(0, viewModel.uiState.value.scrollResetRequestId)
+
+        advanceTimeBy(1)
+        advanceUntilIdle()
+        assertEquals(setOf(1, 2), viewModel.uiState.value.results.map { it.id }.toSet())
+        assertEquals(1, viewModel.uiState.value.scrollResetRequestId)
+
+        viewModel.clearQuery()
+        advanceUntilIdle()
         assertEquals(2, viewModel.uiState.value.scrollResetRequestId)
     }
 

@@ -313,13 +313,21 @@ class SearchViewModel @Inject constructor(
     private fun applyQuery(query: String, immediate: Boolean) {
         queryDebounceJob?.cancel()
         if (immediate) {
-            appliedQueryFlow.value = query
+            updateAppliedQuery(query)
             return
         }
         queryDebounceJob = viewModelScope.launch {
             delay(200)
-            appliedQueryFlow.value = query
+            updateAppliedQuery(query)
         }
+    }
+
+    private fun updateAppliedQuery(query: String) {
+        if (appliedQueryFlow.value == query) {
+            return
+        }
+        appliedQueryFlow.value = query
+        scrollResetRequestIdFlow.update { it + 1 }
     }
 
     private fun loadCriteria(): SearchCriteria {
