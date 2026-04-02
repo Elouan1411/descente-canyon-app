@@ -23,7 +23,12 @@ from cli_tools import default_gdal_translate, default_gdalwarp, resolve_executab
 from compute_entry_watersheds import EntryPoint, create_raster, evaluate_entry, load_canyons
 from osm_regulation import query_osm_regulation, summarize_osm_regulation
 from run_local_ign_canyon_workflow import DEFAULT_LAMBERT93_PROJ4
-from watershed_features import build_watershed_mask_data, compute_watershed_descriptors, mask_to_geometry
+from watershed_features import (
+    build_watershed_mask_data,
+    compute_watershed_descriptors,
+    mask_to_geometry,
+    _advanced_regulation_metrics,
+)
 
 
 POINT_TYPE_PRIORITY = {
@@ -819,6 +824,24 @@ def ensure_worldcover(points: list[dict[str, Any]]) -> dict[str, Any]:
     }
 
 
+def ensure_worldclim_climate() -> dict[str, Any]:
+    output_dir = Path("build/watersheds/worldclim-climate")
+    command = [
+        sys.executable,
+        "scripts/prepare_worldclim_climate.py",
+        "--output-dir",
+        str(output_dir),
+    ]
+    started = time.perf_counter()
+    subprocess.run(command, check=True)
+    ready = load_json_if_exists(output_dir / "ready.json") or {}
+    return {
+        "monthly": ready.get("monthly", {}),
+        "resolution": ready.get("resolution"),
+        "elapsedSec": round(time.perf_counter() - started, 3),
+    }
+
+
 def ensure_hydrolakes() -> dict[str, Any]:
     output_dir = Path("build/watersheds/hydrolakes")
     command = [
@@ -1562,12 +1585,19 @@ def process_single_canyon(
             watershed_skip_reason = "condition_not_met"
 
     if mask_data is not None and raster_paths.get("elevation") is not None and selected_candidate is not None:
+        climate_info = None
         worldcover_info = None
         ghsl_info = None
         hydrolakes_info = None
         gdw_info = None
         glim_info = None
         rgi_info = None
+        try:
+            climate_info = ensure_worldclim_climate()
+            stage_timings["prepareClimateSec"] = float(climate_info["elapsedSec"])
+        except Exception:
+            climate_info = None
+            stage_timings["prepareClimateSec"] = 0.0
         try:
             worldcover_info = ensure_worldcover(points)
             stage_timings["prepareWorldCoverSec"] = float(worldcover_info["elapsedSec"])
@@ -1609,6 +1639,7 @@ def process_single_canyon(
             dem_path=str(raster_paths["elevation"]),
             uparea_path=str(raster_paths["upa"]),
             flowdir_path=str(raster_paths["flowdir"]),
+            climate_monthly_paths=climate_info["monthly"] if climate_info else None,
             worldcover_path=worldcover_info["path"] if worldcover_info else None,
             ghsl_built_path=ghsl_info["path"] if ghsl_info else None,
             hydrolakes_path=hydrolakes_info["path"] if hydrolakes_info else None,
@@ -1672,6 +1703,11 @@ def process_single_canyon(
             stage_timings["computeOsmRegulationSec"] = time.perf_counter() - started
         else:
             stage_timings["computeOsmRegulationSec"] = 0.0
+
+        if descriptors is not None:
+            descriptors.update(_advanced_regulation_metrics(descriptors))
+            descriptors.pop("hydroLakesNearestRegulationDistanceKm", None)
+            descriptors.pop("gdwNearestRegulationDistanceKm", None)
     else:
         stage_timings["computeDescriptorsSec"] = 0.0
         stage_timings["computeOsmRegulationSec"] = 0.0

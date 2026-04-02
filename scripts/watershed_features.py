@@ -18,7 +18,21 @@ from compute_entry_watersheds import FLOW_DIRECTION_OFFSETS
 SOILGRIDS_LAYERS = {
     "clay": "https://files.isric.org/soilgrids/latest/data/clay/clay_0-5cm_mean.vrt",
     "sand": "https://files.isric.org/soilgrids/latest/data/sand/sand_0-5cm_mean.vrt",
+    "subsoilClay": "https://files.isric.org/soilgrids/latest/data/clay/clay_30-60cm_mean.vrt",
+    "subsoilSand": "https://files.isric.org/soilgrids/latest/data/sand/sand_30-60cm_mean.vrt",
+    "coarseFragments": "https://files.isric.org/soilgrids/latest/data/cfvo/cfvo_0-5cm_mean.vrt",
 }
+
+SOIL_AUXILIARY_LAYERS = {
+    "bedrockDepth": "https://files.isric.org/soilgrids/former/2017-03-10/data/BDRICM_M_250m_ll.tif",
+    "soilDepth": "https://files.isric.org/soilgrids/former/2017-03-10/data/BDTICM_M_250m_ll.tif",
+    "availableWaterCapacity": "https://zenodo.org/api/records/2629149/files/sol_available.water.capacity_usda.mm_m_250m_0..200cm_1950..2017_v0.1.tif/content",
+    "saturatedHydraulicConductivity": "https://zenodo.org/api/records/3935359/files/Global_Ksat_1Km_s0....0cm_v1.0.tif/content",
+}
+
+WORLDCLIM_MONTHS = tuple(range(1, 13))
+MONTH_DAY_OF_YEAR = (15, 45, 74, 105, 135, 166, 196, 227, 258, 288, 319, 349)
+MONTH_DAYS = (31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31)
 
 GLIM_CLASS_CODES = {
     "su": 1,
@@ -182,17 +196,21 @@ def _slope_aspect(dem: np.ndarray, x_res_m: float, y_res_m: float) -> tuple[np.n
 def _tri(dem: np.ndarray) -> np.ndarray:
     padded = np.pad(dem, 1, mode="constant", constant_values=np.nan)
     center = padded[1:-1, 1:-1]
-    diffs = []
+    total = np.zeros(dem.shape, dtype=np.float32)
+    counts = np.zeros(dem.shape, dtype=np.uint8)
     for d_row in (-1, 0, 1):
         for d_col in (-1, 0, 1):
             if d_row == 0 and d_col == 0:
                 continue
             neighbor = padded[1 + d_row : 1 + d_row + dem.shape[0], 1 + d_col : 1 + d_col + dem.shape[1]]
-            diffs.append(np.abs(neighbor - center))
-    stacked = np.stack(diffs, axis=0)
-    with warnings.catch_warnings():
-        warnings.simplefilter("ignore", category=RuntimeWarning)
-        return np.nanmean(stacked, axis=0)
+            diff = np.abs(neighbor - center)
+            valid = np.isfinite(diff)
+            total[valid] += diff[valid]
+            counts[valid] += 1
+    result = np.full(dem.shape, np.nan, dtype=np.float32)
+    valid_counts = counts > 0
+    result[valid_counts] = total[valid_counts] / counts[valid_counts]
+    return result
 
 
 def _network_threshold_km2(dem_resolution_m: float) -> float:
@@ -217,6 +235,18 @@ def _step_lengths_for_grid(x_res_m: float, y_res_m: float) -> dict[tuple[int, in
     return lengths
 
 
+def _stream_mask_for_grid(mask: np.ndarray, uparea: np.ndarray, dem_resolution_m: float) -> tuple[float, np.ndarray]:
+    threshold = _network_threshold_km2(dem_resolution_m)
+    stream_mask = mask & np.isfinite(uparea) & (uparea >= threshold)
+    thresholds = [threshold, threshold / 2.0, threshold / 5.0, 0.0]
+    for candidate_threshold in thresholds:
+        stream_mask = mask & np.isfinite(uparea) & (uparea >= candidate_threshold)
+        if np.count_nonzero(stream_mask) > 0:
+            threshold = candidate_threshold
+            break
+    return threshold, stream_mask
+
+
 def _compute_network_metrics(
     *,
     mask: np.ndarray,
@@ -226,14 +256,7 @@ def _compute_network_metrics(
     area_km2: float,
     dem_resolution_m: float,
 ) -> dict[str, Any]:
-    threshold = _network_threshold_km2(dem_resolution_m)
-    stream_mask = mask & np.isfinite(uparea) & (uparea >= threshold)
-    thresholds = [threshold, threshold / 2.0, threshold / 5.0, 0.0]
-    for candidate_threshold in thresholds:
-        stream_mask = mask & np.isfinite(uparea) & (uparea >= candidate_threshold)
-        if np.count_nonzero(stream_mask) > 0:
-            threshold = candidate_threshold
-            break
+    threshold, stream_mask = _stream_mask_for_grid(mask, uparea, dem_resolution_m)
 
     stream_count = int(np.count_nonzero(stream_mask))
     if stream_count == 0:
@@ -351,9 +374,9 @@ def _compute_network_metrics(
     }
 
 
-def _connected_component_count(mask: np.ndarray, *, min_pixels: int = 1) -> int:
+def _connected_component_sizes(mask: np.ndarray, *, min_pixels: int = 1) -> list[int]:
     visited = np.zeros(mask.shape, dtype=np.uint8)
-    count = 0
+    sizes: list[int] = []
     for row in range(mask.shape[0]):
         for col in range(mask.shape[1]):
             if not mask[row, col] or visited[row, col] == 1:
@@ -377,14 +400,290 @@ def _connected_component_count(mask: np.ndarray, *, min_pixels: int = 1) -> int:
                         visited[n_row, n_col] = 1
                         stack.append((n_row, n_col))
             if size >= min_pixels:
-                count += 1
-    return count
+                sizes.append(size)
+    return sizes
+
+
+def _connected_component_count(mask: np.ndarray, *, min_pixels: int = 1) -> int:
+    return len(_connected_component_sizes(mask, min_pixels=min_pixels))
+
+
+def _largest_component_fraction(mask: np.ndarray, *, min_pixels: int = 1) -> float | None:
+    sizes = _connected_component_sizes(mask, min_pixels=min_pixels)
+    total = sum(sizes)
+    if total <= 0:
+        return None
+    return float(max(sizes) / total)
+
+
+def _mid_month_ra_mm_per_day(latitude_deg: float, day_of_year: int) -> float:
+    g_sc = 0.0820
+    phi = math.radians(latitude_deg)
+    d_r = 1.0 + 0.033 * math.cos((2.0 * math.pi / 365.0) * day_of_year)
+    delta = 0.409 * math.sin((2.0 * math.pi / 365.0) * day_of_year - 1.39)
+    cos_arg = -math.tan(phi) * math.tan(delta)
+    cos_arg = max(-1.0, min(1.0, cos_arg))
+    omega_s = math.acos(cos_arg)
+    ra_mj_m2_day = (
+        (24.0 * 60.0 / math.pi)
+        * g_sc
+        * d_r
+        * (
+            omega_s * math.sin(phi) * math.sin(delta)
+            + math.cos(phi) * math.cos(delta) * math.sin(omega_s)
+        )
+    )
+    return ra_mj_m2_day * 0.408
+
+
+def _worldclim_metrics(
+    *,
+    monthly_paths: dict[str, list[str]],
+    mask: np.ndarray,
+    reference_transform: Affine,
+    reference_crs: Any,
+    width: int,
+    height: int,
+) -> dict[str, Any]:
+    required = {"prec", "tavg", "tmin", "tmax"}
+    if not required.issubset(monthly_paths):
+        raise ValueError(f"Missing climate layers: {sorted(required - set(monthly_paths))}")
+
+    monthly_means: dict[str, list[float]] = {key: [] for key in required}
+    sampled_cells = np.argwhere(mask)[:2000]
+    sample_xs = []
+    sample_ys = []
+    for row, col in sampled_cells:
+        x, y = _cell_center(reference_transform, int(row), int(col))
+        sample_xs.append(x)
+        sample_ys.append(y)
+    _, sample_lats = transform_coords(reference_crs, "EPSG:4326", sample_xs, sample_ys)
+    mean_lat = float(np.nanmean(sample_lats)) if sample_lats else 45.0
+
+    for key in required:
+        paths = monthly_paths[key]
+        if len(paths) != 12:
+            raise ValueError(f"Expected 12 monthly rasters for {key}, got {len(paths)}")
+        for path in paths:
+            with rasterio.open(path) as src:
+                with WarpedVRT(
+                    src,
+                    crs=reference_crs,
+                    transform=reference_transform,
+                    width=width,
+                    height=height,
+                    resampling=Resampling.bilinear,
+                ) as vrt:
+                    data = vrt.read(1, masked=True)
+                    values = np.where(mask & ~np.ma.getmaskarray(data), data.data.astype(np.float32), np.nan)
+                    monthly_means[key].append(float(np.nanmean(values)))
+
+    monthly_prec = np.array(monthly_means["prec"], dtype=np.float64)
+    monthly_tavg = np.array(monthly_means["tavg"], dtype=np.float64)
+    monthly_tmin = np.array(monthly_means["tmin"], dtype=np.float64)
+    monthly_tmax = np.array(monthly_means["tmax"], dtype=np.float64)
+
+    annual_precip_mm = float(np.nansum(monthly_prec))
+    mean_annual_temp_c = float(np.nanmean(monthly_tavg))
+    precip_mean = float(np.nanmean(monthly_prec))
+    precip_seasonality = float(np.nanstd(monthly_prec) / precip_mean) if precip_mean > 0 else None
+    winter_months = (11, 0, 1) if mean_lat >= 0 else (5, 6, 7)
+    winter_temp_c = float(np.nanmean(monthly_tavg[list(winter_months)]))
+    continentality = float(np.nanmax(monthly_tavg) - np.nanmin(monthly_tavg))
+    oceanicity = 1.0 / (1.0 + max(continentality, 0.0))
+
+    monthly_pet_mm: list[float] = []
+    snow_monthly_mm = 0.0
+    for index, day_of_year in enumerate(MONTH_DAY_OF_YEAR):
+        delta_t = max(monthly_tmax[index] - monthly_tmin[index], 0.0)
+        if monthly_tavg[index] <= -20.0:
+            pet_mm_day = 0.0
+        else:
+            pet_mm_day = 0.0023 * _mid_month_ra_mm_per_day(mean_lat, day_of_year) * (monthly_tavg[index] + 17.8) * math.sqrt(delta_t)
+        pet_mm_day = max(pet_mm_day, 0.0)
+        monthly_pet_mm.append(pet_mm_day * MONTH_DAYS[index])
+        snow_fraction = max(0.0, min(1.0, (2.0 - monthly_tavg[index]) / 4.0))
+        snow_monthly_mm += float(monthly_prec[index] * snow_fraction)
+
+    annual_pet_mm = float(np.nansum(monthly_pet_mm))
+    aridity_index = (annual_precip_mm / annual_pet_mm) if annual_pet_mm > 0 else None
+    snow_fraction_climatology = (snow_monthly_mm / annual_precip_mm) if annual_precip_mm > 0 else None
+
+    return {
+        "meanAnnualPrecipMm": _round(annual_precip_mm, 3),
+        "meanMonthlyPrecipSeasonality": _round(precip_seasonality, 6),
+        "meanAnnualTemperatureC": _round(mean_annual_temp_c, 3),
+        "meanWinterTemperatureC": _round(winter_temp_c, 3),
+        "meanSnowFractionClimatology": _round(snow_fraction_climatology, 6),
+        "potentialEvapotranspiration": _round(annual_pet_mm, 3),
+        "aridityIndex": _round(aridity_index, 6),
+        "continentalityProxy": _round(continentality, 3),
+        "oceanicityProxy": _round(oceanicity, 6),
+    }
+
+
+def _compute_curvatures(dem: np.ndarray, x_res_m: float, y_res_m: float) -> tuple[np.ndarray, np.ndarray]:
+    dz_dy, dz_dx = np.gradient(dem, y_res_m, x_res_m)
+    d2z_dx2 = np.gradient(dz_dx, x_res_m, axis=1)
+    d2z_dy2 = np.gradient(dz_dy, y_res_m, axis=0)
+    d2z_dxdy = np.gradient(dz_dx, y_res_m, axis=0)
+
+    p = dz_dx
+    q = dz_dy
+    r = d2z_dx2
+    s = d2z_dxdy
+    t = d2z_dy2
+    grad_sq = p ** 2 + q ** 2
+    safe_grad_sq = np.where(grad_sq <= 1e-12, np.nan, grad_sq)
+    safe_surface = np.where(grad_sq <= 1e-12, np.nan, 1.0 + grad_sq)
+
+    plan = ((q ** 2) * r - (2.0 * p * q * s) + (p ** 2) * t) / (safe_grad_sq * np.sqrt(safe_surface))
+    profile = ((p ** 2) * r + (2.0 * p * q * s) + (q ** 2) * t) / (safe_grad_sq * np.power(safe_surface, 1.5))
+    return plan, profile
+
+
+def _compute_hand(dem: np.ndarray, mask: np.ndarray, flow: np.ndarray, stream_mask: np.ndarray) -> np.ndarray:
+    hand = np.full(dem.shape, np.nan, dtype=np.float32)
+    stream_elevation = np.full(dem.shape, np.nan, dtype=np.float32)
+    valid_cells = mask & np.isfinite(dem)
+    stream_elevation[stream_mask & valid_cells] = dem[stream_mask & valid_cells]
+    hand[stream_mask & valid_cells] = 0.0
+
+    for start_row, start_col in np.argwhere(valid_cells & ~stream_mask):
+        row = int(start_row)
+        col = int(start_col)
+        stack: list[tuple[int, int]] = []
+        while True:
+            if not valid_cells[row, col]:
+                target_elevation = np.nan
+                break
+            if np.isfinite(stream_elevation[row, col]):
+                target_elevation = float(stream_elevation[row, col])
+                break
+            stack.append((row, col))
+            direction_code = int(flow[row, col])
+            offset = FLOW_DIRECTION_OFFSETS.get(direction_code)
+            if offset is None:
+                target_elevation = np.nan
+                break
+            next_row = row + offset[0]
+            next_col = col + offset[1]
+            if next_row < 0 or next_row >= flow.shape[0] or next_col < 0 or next_col >= flow.shape[1]:
+                target_elevation = np.nan
+                break
+            if any(next_row == existing_row and next_col == existing_col for existing_row, existing_col in stack):
+                target_elevation = np.nan
+                break
+            row = next_row
+            col = next_col
+
+        for cell_row, cell_col in reversed(stack):
+            stream_elevation[cell_row, cell_col] = target_elevation
+            if np.isfinite(target_elevation):
+                hand[cell_row, cell_col] = max(float(dem[cell_row, cell_col]) - target_elevation, 0.0)
+            else:
+                hand[cell_row, cell_col] = np.nan
+    return hand
+
+
+def _local_closed_depression_count(dem: np.ndarray, valid: np.ndarray, *, minimum_drop_m: float = 2.0) -> int:
+    if dem.shape[0] < 3 or dem.shape[1] < 3:
+        return 0
+    center = dem[1:-1, 1:-1]
+    center_valid = valid[1:-1, 1:-1] & np.isfinite(center)
+    if not np.any(center_valid):
+        return 0
+    neighbor_stack = []
+    valid_stack = []
+    for d_row in (-1, 0, 1):
+        for d_col in (-1, 0, 1):
+            if d_row == 0 and d_col == 0:
+                continue
+            neighbor_stack.append(dem[1 + d_row : 1 + d_row + center.shape[0], 1 + d_col : 1 + d_col + center.shape[1]])
+            valid_stack.append(valid[1 + d_row : 1 + d_row + center.shape[0], 1 + d_col : 1 + d_col + center.shape[1]])
+    neighbors = np.stack(neighbor_stack, axis=0)
+    neighbors_valid = np.stack(valid_stack, axis=0)
+    all_neighbors_valid = np.all(neighbors_valid, axis=0)
+    with warnings.catch_warnings():
+        warnings.simplefilter("ignore", category=RuntimeWarning)
+        neighbor_min = np.nanmin(np.where(neighbors_valid, neighbors, np.nan), axis=0)
+    depressions = center_valid & all_neighbors_valid & np.isfinite(neighbor_min) & ((neighbor_min - center) >= minimum_drop_m)
+    return int(np.count_nonzero(depressions))
+
+
+def _topo_hydrology_metrics(
+    *,
+    dem: np.ndarray,
+    mask: np.ndarray,
+    flow: np.ndarray,
+    uparea: np.ndarray,
+    x_res_m: float,
+    y_res_m: float,
+    dem_resolution_m: float,
+    values: np.ndarray,
+) -> tuple[dict[str, Any], np.ndarray, np.ndarray]:
+    _, stream_mask = _stream_mask_for_grid(mask, uparea, dem_resolution_m)
+    hand = _compute_hand(dem, mask, flow, stream_mask)
+    plan_curvature, profile_curvature = _compute_curvatures(dem, x_res_m, y_res_m)
+
+    slope_deg, _ = _slope_aspect(dem, x_res_m, y_res_m)
+    slope_tan = np.tan(np.radians(np.clip(slope_deg, 0.1, 89.0)))
+    specific_area_m = np.maximum(uparea, 1e-6) * 1_000_000.0 / max(dem_resolution_m, 1.0)
+    twi = np.log(np.maximum(specific_area_m / np.maximum(slope_tan, 1e-6), 1e-6))
+
+    valid_hand = hand[mask & np.isfinite(hand)]
+    valid_twi = twi[mask & np.isfinite(twi)]
+    valid_plan = plan_curvature[mask & np.isfinite(plan_curvature)]
+    valid_profile = profile_curvature[mask & np.isfinite(profile_curvature)]
+    valid_uparea = uparea[mask & np.isfinite(uparea)]
+
+    relief = (_safe_stat(values, "max") or 0.0) - (_safe_stat(values, "min") or 0.0)
+    hypsometric = None
+    if relief > 0:
+        hypsometric = ((_safe_stat(values, "mean") or 0.0) - (_safe_stat(values, "min") or 0.0)) / relief
+
+    if valid_hand.size > 0:
+        valley_floor_threshold_m = float(np.clip(np.nanpercentile(valid_hand, 20), 5.0, 30.0))
+        valley_floor_mask = mask & np.isfinite(hand) & (hand <= valley_floor_threshold_m)
+    else:
+        valley_floor_mask = np.zeros(mask.shape, dtype=bool)
+    valley_floor_count = int(np.count_nonzero(valley_floor_mask))
+    stream_count = int(np.count_nonzero(stream_mask))
+    valley_confinement = None
+    channel_confinement = None
+    if np.count_nonzero(mask) > 0 and valley_floor_count > 0:
+        valley_floor_fraction = valley_floor_count / max(int(np.count_nonzero(mask)), 1)
+        valley_confinement = max(0.0, min(1.0, 1.0 - valley_floor_fraction))
+        channel_confinement = stream_count / valley_floor_count
+
+    return (
+        {
+            "hypsometricIntegral": _round(hypsometric, 6),
+            "topographicWetnessIndexMean": _round(_safe_stat(valid_twi, "mean"), 6),
+            "topographicWetnessIndexP90": _round(float(np.nanpercentile(valid_twi, 90)) if valid_twi.size else None, 6),
+            "handMeanM": _round(_safe_stat(valid_hand, "mean"), 3),
+            "handMedianM": _round(_safe_stat(valid_hand, "median"), 3),
+            "handP90M": _round(float(np.nanpercentile(valid_hand, 90)) if valid_hand.size else None, 3),
+            "meanPlanCurvature": _round(_safe_stat(valid_plan, "mean"), 6),
+            "meanProfileCurvature": _round(_safe_stat(valid_profile, "mean"), 6),
+            "valleyConfinementIndex": _round(valley_confinement, 6),
+            "channelConfinementRatio": _round(channel_confinement, 6),
+            "flowAccumulationP50Km2": _round(float(np.nanpercentile(valid_uparea, 50)) if valid_uparea.size else None, 6),
+            "flowAccumulationP90Km2": _round(float(np.nanpercentile(valid_uparea, 90)) if valid_uparea.size else None, 6),
+            "flowAccumulationP99Km2": _round(float(np.nanpercentile(valid_uparea, 99)) if valid_uparea.size else None, 6),
+        },
+        hand,
+        stream_mask,
+    )
+
 
 
 def _worldcover_metrics(
     *,
     worldcover_path: str,
     mask: np.ndarray,
+    hand: np.ndarray | None,
+    stream_mask: np.ndarray | None,
     reference_transform: Affine,
     reference_crs: Any,
     width: int,
@@ -419,14 +718,34 @@ def _worldcover_metrics(
             "mossLichenFraction": None,
             "waterPatchCount": 0,
             "wetlandPatchCount": 0,
+            "forestPatchCount": 0,
+            "urbanPatchCount": 0,
+            "largestForestPatchFraction": None,
+            "landCoverFragmentationIndex": None,
+            "riparianForestFraction": None,
+            "imperviousConnectivityProxy": None,
         }
 
     values = worldcover[valid]
     def frac(code: int) -> float:
         return float(np.count_nonzero(values == code) / valid_count)
 
+    forest_mask = valid & (worldcover == 10)
+    shrub_grass_mask = valid & np.isin(worldcover, [20, 30, 90, 95, 100])
+    urban_mask = valid & (worldcover == 50)
     water_mask = valid & (worldcover == 80)
     wetland_mask = valid & (worldcover == 90)
+    natural_mask = forest_mask | shrub_grass_mask
+    largest_forest_fraction = _largest_component_fraction(forest_mask, min_pixels=3)
+    largest_natural_fraction = _largest_component_fraction(natural_mask, min_pixels=3)
+
+    riparian_forest_fraction = None
+    if hand is not None and stream_mask is not None:
+        riparian_mask = valid & np.isfinite(hand) & ((hand <= 20.0) | stream_mask)
+        riparian_count = int(np.count_nonzero(riparian_mask))
+        if riparian_count > 0:
+            riparian_forest_fraction = float(np.count_nonzero(riparian_mask & (worldcover == 10)) / riparian_count)
+
     return {
         "landCoverValidFraction": _round(valid_count / max(int(np.count_nonzero(mask)), 1), 6),
         "forestFraction": _round(frac(10), 6),
@@ -442,6 +761,12 @@ def _worldcover_metrics(
         "mossLichenFraction": _round(frac(100), 6),
         "waterPatchCount": _connected_component_count(water_mask, min_pixels=3),
         "wetlandPatchCount": _connected_component_count(wetland_mask, min_pixels=3),
+        "forestPatchCount": _connected_component_count(forest_mask, min_pixels=3),
+        "urbanPatchCount": _connected_component_count(urban_mask, min_pixels=2),
+        "largestForestPatchFraction": _round(largest_forest_fraction, 6),
+        "landCoverFragmentationIndex": _round((1.0 - largest_natural_fraction) if largest_natural_fraction is not None else None, 6),
+        "riparianForestFraction": _round(riparian_forest_fraction, 6),
+        "imperviousConnectivityProxy": _round(_largest_component_fraction(urban_mask, min_pixels=2), 6),
     }
 
 
@@ -454,7 +779,7 @@ def _soilgrids_metrics(
     height: int,
 ) -> dict[str, Any]:
     arrays: dict[str, np.ndarray] = {}
-    for key, url in SOILGRIDS_LAYERS.items():
+    for key, url in {**SOILGRIDS_LAYERS, **SOIL_AUXILIARY_LAYERS}.items():
         with rasterio.open(url) as src:
             with WarpedVRT(
                 src,
@@ -469,6 +794,13 @@ def _soilgrids_metrics(
 
     clay = arrays["clay"]
     sand = arrays["sand"]
+    subsoil_clay = arrays["subsoilClay"]
+    subsoil_sand = arrays["subsoilSand"]
+    coarse_fragments = arrays["coarseFragments"]
+    bedrock_depth = arrays["bedrockDepth"]
+    soil_depth = arrays["soilDepth"]
+    available_water_capacity = arrays["availableWaterCapacity"]
+    saturated_hydraulic_conductivity = arrays["saturatedHydraulicConductivity"]
     valid = mask & np.isfinite(clay) & np.isfinite(sand)
     valid_count = int(np.count_nonzero(valid))
     if valid_count == 0:
@@ -482,11 +814,49 @@ def _soilgrids_metrics(
             "lowPermeabilitySoilFraction": None,
             "highInfiltrationSoilFraction": None,
             "runoffPotentialIndex": None,
+            "coarseFragmentFraction": None,
+            "subsoilClayFraction": None,
+            "subsoilSandFraction": None,
+            "soilDepthMean": None,
+            "soilDepthShallowFraction": None,
+            "bedrockDepth": None,
+            "availableWaterCapacity": None,
+            "saturatedHydraulicConductivity": None,
         }
 
     # SoilGrids clay/sand mean values are in g/kg. Convert to percent.
     clay_pct = clay[valid] / 10.0
     sand_pct = sand[valid] / 10.0
+    subsoil_valid = mask & np.isfinite(subsoil_clay) & np.isfinite(subsoil_sand)
+    coarse_valid = mask & np.isfinite(coarse_fragments)
+    depth_valid = mask & np.isfinite(soil_depth) & (soil_depth >= 0)
+    bedrock_valid = mask & np.isfinite(bedrock_depth) & (bedrock_depth >= 0)
+    awc_valid = mask & np.isfinite(available_water_capacity) & (available_water_capacity >= 0)
+    ksat_valid = mask & np.isfinite(saturated_hydraulic_conductivity) & (saturated_hydraulic_conductivity > -30)
+
+    subsoil_clay_fraction = None
+    subsoil_sand_fraction = None
+    if np.count_nonzero(subsoil_valid) > 0:
+        subsoil_clay_fraction = float(np.nanmean(subsoil_clay[subsoil_valid] / 1000.0))
+        subsoil_sand_fraction = float(np.nanmean(subsoil_sand[subsoil_valid] / 1000.0))
+
+    coarse_fragment_fraction = None
+    if np.count_nonzero(coarse_valid) > 0:
+        coarse_fragment_fraction = float(np.nanmean(coarse_fragments[coarse_valid] / 1000.0))
+
+    soil_depth_mean = float(np.nanmean(soil_depth[depth_valid])) if np.count_nonzero(depth_valid) > 0 else None
+    shallow_fraction = None
+    if np.count_nonzero(depth_valid) > 0:
+        shallow_fraction = float(np.count_nonzero(soil_depth[depth_valid] <= 100.0) / np.count_nonzero(depth_valid))
+
+    bedrock_depth_mean = float(np.nanmean(bedrock_depth[bedrock_valid])) if np.count_nonzero(bedrock_valid) > 0 else None
+    awc_mean = float(np.nanmean(available_water_capacity[awc_valid])) if np.count_nonzero(awc_valid) > 0 else None
+
+    ksat_mean = None
+    if np.count_nonzero(ksat_valid) > 0:
+        # Global_Ksat is log10(Ksat [cm/day]); convert back to physical units.
+        ksat_mean = float(np.nanmean(np.power(10.0, saturated_hydraulic_conductivity[ksat_valid])))
+
     low_perm = np.count_nonzero(clay_pct >= 35.0) / valid_count
     high_infil = np.count_nonzero((sand_pct >= 60.0) & (clay_pct < 20.0)) / valid_count
     runoff_index = np.clip(((clay_pct / 50.0) - (sand_pct / 100.0) + 0.5), 0.0, 1.0)
@@ -501,6 +871,14 @@ def _soilgrids_metrics(
         "lowPermeabilitySoilFraction": _round(float(low_perm), 6),
         "highInfiltrationSoilFraction": _round(float(high_infil), 6),
         "runoffPotentialIndex": _round(float(np.nanmean(runoff_index)), 6),
+        "coarseFragmentFraction": _round(coarse_fragment_fraction, 6),
+        "subsoilClayFraction": _round(subsoil_clay_fraction, 6),
+        "subsoilSandFraction": _round(subsoil_sand_fraction, 6),
+        "soilDepthMean": _round(soil_depth_mean, 3),
+        "soilDepthShallowFraction": _round(shallow_fraction, 6),
+        "bedrockDepth": _round(bedrock_depth_mean, 3),
+        "availableWaterCapacity": _round(awc_mean, 3),
+        "saturatedHydraulicConductivity": _round(ksat_mean, 3),
     }
 
 
@@ -509,8 +887,10 @@ def _hydrolakes_metrics(
     hydrolakes_path: str,
     watershed_geometry: dict[str, Any] | None,
     basin_area_km2: float,
+    outlet_longitude: float | None,
+    outlet_latitude: float | None,
 ) -> dict[str, Any]:
-    if watershed_geometry is None:
+    if watershed_geometry is None or outlet_longitude is None or outlet_latitude is None:
         return {
             "lakeFraction": None,
             "lakeCount": 0,
@@ -524,11 +904,15 @@ def _hydrolakes_metrics(
             "largestUpstreamReservoirAreaKm2": None,
             "largestUpstreamReservoirStorageMcm": None,
             "regulatedCatchment": None,
+            "hydroLakesNearestRegulationDistanceKm": None,
         }
     import shapefile  # type: ignore
     from shapely.geometry import shape as shapely_shape  # type: ignore
 
     basin = shapely_shape(watershed_geometry)
+    outlet_point = shapely_shape(
+        transform_geom("EPSG:4326", "EPSG:3857", {"type": "Point", "coordinates": [outlet_longitude, outlet_latitude]})
+    )
     bbox = basin.bounds
     total_lake_area_km2 = 0.0
     lake_count = 0
@@ -539,6 +923,7 @@ def _hydrolakes_metrics(
     reservoir_storage_upstream_mcm = 0.0
     largest_reservoir_area_km2 = 0.0
     largest_reservoir_storage_mcm = 0.0
+    nearest_regulation_distance_km = None
 
     reader = shapefile.Reader(hydrolakes_path)
     for shape_record in reader.iterShapeRecords(bbox=bbox):
@@ -575,6 +960,10 @@ def _hydrolakes_metrics(
             reservoir_storage_upstream_mcm += reservoir_storage_value
             largest_reservoir_area_km2 = max(largest_reservoir_area_km2, lake_area_value)
             largest_reservoir_storage_mcm = max(largest_reservoir_storage_mcm, reservoir_storage_value)
+            regulation_geom = shapely_shape(transform_geom("EPSG:4326", "EPSG:3857", lake_geom.__geo_interface__))
+            distance_km = outlet_point.distance(regulation_geom) / 1000.0
+            if nearest_regulation_distance_km is None or distance_km < nearest_regulation_distance_km:
+                nearest_regulation_distance_km = distance_km
 
     lake_fraction = (total_lake_area_km2 / basin_area_km2) if basin_area_km2 > 0 else None
     reservoir_fraction = (reservoir_area_upstream_km2 / basin_area_km2) if basin_area_km2 > 0 else None
@@ -591,6 +980,7 @@ def _hydrolakes_metrics(
         "largestUpstreamReservoirAreaKm2": _round(largest_reservoir_area_km2 if reservoir_count > 0 else None, 6),
         "largestUpstreamReservoirStorageMcm": _round(largest_reservoir_storage_mcm if reservoir_count > 0 else None, 6),
         "regulatedCatchment": reservoir_count > 0,
+        "hydroLakesNearestRegulationDistanceKm": _round(nearest_regulation_distance_km, 6),
     }
 
 
@@ -609,8 +999,10 @@ def _gdw_regulation_metrics(
     reservoirs_path: str,
     watershed_geometry: dict[str, Any] | None,
     basin_area_km2: float,
+    outlet_longitude: float | None,
+    outlet_latitude: float | None,
 ) -> dict[str, Any]:
-    if watershed_geometry is None:
+    if watershed_geometry is None or outlet_longitude is None or outlet_latitude is None:
         return {
             "gdwBarrierCountUpstream": 0,
             "gdwReservoirCountUpstream": 0,
@@ -623,12 +1015,16 @@ def _gdw_regulation_metrics(
             "gdwNewestUpstreamDamYear": None,
             "gdwMaxDamHeightM": None,
             "gdwRegulatedCatchment": None,
+            "gdwNearestRegulationDistanceKm": None,
         }
 
     import shapefile  # type: ignore
     from shapely.geometry import shape as shapely_shape  # type: ignore
 
     basin = shapely_shape(watershed_geometry)
+    outlet_point = shapely_shape(
+        transform_geom("EPSG:4326", "EPSG:3857", {"type": "Point", "coordinates": [outlet_longitude, outlet_latitude]})
+    )
     bbox = basin.bounds
 
     barrier_count = 0
@@ -636,6 +1032,7 @@ def _gdw_regulation_metrics(
     max_dor = 0.0
     newest_year = None
     max_dam_height = 0.0
+    nearest_regulation_distance_km = None
 
     barriers_reader = shapefile.Reader(barriers_path)
     for shape_record in barriers_reader.iterShapeRecords(bbox=bbox):
@@ -644,6 +1041,10 @@ def _gdw_regulation_metrics(
             continue
         attrs = shape_record.record.as_dict() if hasattr(shape_record.record, "as_dict") else {}
         barrier_count += 1
+        barrier_geom_projected = shapely_shape(transform_geom("EPSG:4326", "EPSG:3857", barrier_geom.__geo_interface__))
+        barrier_distance_km = outlet_point.distance(barrier_geom_projected) / 1000.0
+        if nearest_regulation_distance_km is None or barrier_distance_km < nearest_regulation_distance_km:
+            nearest_regulation_distance_km = barrier_distance_km
         dor = _record_value(attrs, "Dor_pc", "DOR_PC")
         if dor not in (None, ""):
             max_dor = max(max_dor, float(dor))
@@ -679,6 +1080,10 @@ def _gdw_regulation_metrics(
             continue
         attrs = shape_record.record.as_dict() if hasattr(shape_record.record, "as_dict") else {}
         reservoir_count += 1
+        reservoir_geom_projected = shapely_shape(transform_geom("EPSG:4326", "EPSG:3857", reservoir_geom.__geo_interface__))
+        reservoir_distance_km = outlet_point.distance(reservoir_geom_projected) / 1000.0
+        if nearest_regulation_distance_km is None or reservoir_distance_km < nearest_regulation_distance_km:
+            nearest_regulation_distance_km = reservoir_distance_km
         area_km2 = _record_value(attrs, "Area_skm", "AREA_SKM")
         if area_km2 not in (None, ""):
             area_value = float(area_km2)
@@ -705,6 +1110,7 @@ def _gdw_regulation_metrics(
         "gdwNewestUpstreamDamYear": newest_year,
         "gdwMaxDamHeightM": _round(max_dam_height if max_dam_height > 0 else None, 3),
         "gdwRegulatedCatchment": barrier_count > 0 or reservoir_count > 0,
+        "gdwNearestRegulationDistanceKm": _round(nearest_regulation_distance_km, 6),
     }
 
 
@@ -861,6 +1267,124 @@ def _rgi_metrics(
     }
 
 
+def _advanced_regulation_metrics(descriptors: dict[str, Any]) -> dict[str, Any]:
+    basin_area_km2 = float(descriptors.get("basinAreaRasterKm2") or 0.0)
+    total_stream_length_km = float(descriptors.get("totalStreamLengthKm") or 0.0)
+    hydrolakes_distance = descriptors.get("hydroLakesNearestRegulationDistanceKm")
+    gdw_distance = descriptors.get("gdwNearestRegulationDistanceKm")
+    distance_candidates = [float(value) for value in [hydrolakes_distance, gdw_distance] if value is not None]
+    nearest_distance = min(distance_candidates) if distance_candidates else None
+
+    gdw_dor_fraction = float(descriptors.get("gdwMaxUpstreamDorPct") or 0.0) / 100.0
+    reservoir_fraction = float(descriptors.get("reservoirAreaFraction") or 0.0)
+    regulated_area_fraction = max(gdw_dor_fraction, reservoir_fraction)
+
+    hydropower_count = int(descriptors.get("gdwHydropowerBarrierCountUpstream") or 0) + int(descriptors.get("osmHydropowerPlantCountUpstream") or 0)
+    barrier_only_count = int(descriptors.get("gdwBarrierCountUpstream") or 0) + int(descriptors.get("osmDamCountUpstream") or 0)
+    storage_count = int(descriptors.get("gdwReservoirCountUpstream") or 0) + int(descriptors.get("reservoirCountUpstream") or 0) + int(descriptors.get("osmReservoirCountUpstream") or 0)
+    diversion_count = int(descriptors.get("osmWeirCountUpstream") or 0) + int(descriptors.get("osmCanalCountUpstream") or 0) + int(descriptors.get("osmPenstockCountUpstream") or 0)
+    regulation_vector = {
+        "hydropower": hydropower_count,
+        "barrier": barrier_only_count,
+        "reservoir": storage_count,
+        "diversion": diversion_count,
+    }
+    dominant_type = "none"
+    non_zero = [key for key, value in regulation_vector.items() if value > 0]
+    if len(non_zero) >= 2:
+        sorted_counts = sorted(regulation_vector.values(), reverse=True)
+        dominant_type = "mixed" if len(sorted_counts) >= 2 and sorted_counts[0] == sorted_counts[1] else max(regulation_vector, key=regulation_vector.get)
+    elif len(non_zero) == 1:
+        dominant_type = non_zero[0]
+
+    water_intake_count = int(descriptors.get("osmWeirCountUpstream") or 0) + int(descriptors.get("osmCanalCountUpstream") or 0) + int(descriptors.get("osmPenstockCountUpstream") or 0)
+    water_intake_density = None
+    if total_stream_length_km > 0:
+        water_intake_density = water_intake_count / total_stream_length_km
+    elif basin_area_km2 > 0:
+        water_intake_density = water_intake_count / basin_area_km2
+
+    cascade_sources = hydropower_count + int(descriptors.get("osmPenstockCountUpstream") or 0)
+    cascade_count = max(cascade_sources - 1, 0)
+    interbasin_transfer = (int(descriptors.get("osmCanalCountUpstream") or 0) > 0) or (int(descriptors.get("osmPenstockCountUpstream") or 0) > 1)
+
+    storage_mcm = max(float(descriptors.get("gdwReservoirStorageUpstreamMcm") or 0.0), float(descriptors.get("reservoirStorageUpstreamMcm") or 0.0))
+    barrier_count = max(
+        int(descriptors.get("gdwBarrierCountUpstream") or 0),
+        int(descriptors.get("damCountUpstream") or 0),
+        int(descriptors.get("osmDamCountUpstream") or 0),
+    )
+    distance_score = 0.0 if nearest_distance is None else max(0.0, 1.0 - min(nearest_distance / 20.0, 1.0))
+    severity = min(
+        1.0,
+        (0.35 * min(gdw_dor_fraction, 1.0))
+        + (0.25 * min(math.log1p(storage_mcm) / math.log1p(10_000.0), 1.0))
+        + (0.2 * min((barrier_count + storage_count + diversion_count) / 8.0, 1.0))
+        + (0.2 * distance_score),
+    )
+
+    return {
+        "distanceToNearestRegulationUpstreamKm": _round(nearest_distance, 6),
+        "regulatedAreaFraction": _round(regulated_area_fraction if regulated_area_fraction > 0 else None, 6),
+        "dominantRegulationType": dominant_type,
+        "interbasinTransferLikely": interbasin_transfer,
+        "waterIntakeDensity": _round(water_intake_density, 6),
+        "hydropowerCascadeCount": cascade_count,
+        "regulationSeverityIndex": _round(severity if severity > 0 else None, 6),
+    }
+
+
+def _karst_hydrology_proxy_metrics(
+    *,
+    dem: np.ndarray,
+    valid: np.ndarray,
+    area_km2: float,
+    carbonate_fraction: float | None,
+    karst_indicator: float | None,
+    high_infiltration_soil_fraction: float | None,
+    soil_depth_shallow_fraction: float | None,
+    drainage_density_km_per_km2: float | None,
+    stream_frequency_per_km2: float | None,
+) -> dict[str, Any]:
+    if carbonate_fraction is None and karst_indicator is None:
+        return {
+            "sinkholeDensity": None,
+            "springDensity": None,
+            "losingStreamIndicator": None,
+            "resurgenceIndicator": None,
+            "karstConnectivityIndex": None,
+        }
+
+    carbonate = float(carbonate_fraction or 0.0)
+    karst = float(karst_indicator or 0.0)
+    high_infiltration = float(high_infiltration_soil_fraction or 0.0)
+    shallow_fraction = float(soil_depth_shallow_fraction or 0.0)
+    drainage_density = float(drainage_density_km_per_km2 or 0.0)
+    stream_frequency = float(stream_frequency_per_km2 or 0.0)
+
+    depression_count = _local_closed_depression_count(dem, valid, minimum_drop_m=2.0)
+    sinkhole_density = ((depression_count / area_km2) * max(carbonate, karst, 0.1)) if area_km2 > 0 else None
+    spring_density = stream_frequency * max(carbonate, karst)
+    sinkhole_score = 0.0 if sinkhole_density is None else min(sinkhole_density / 1.0, 1.0)
+    karst_connectivity = min(
+        1.0,
+        (0.45 * max(carbonate, karst))
+        + (0.2 * high_infiltration)
+        + (0.2 * shallow_fraction)
+        + (0.15 * sinkhole_score),
+    )
+    losing_stream_indicator = max(0.0, min(1.0, karst_connectivity * (1.0 - min(drainage_density / 3.0, 1.0))))
+    resurgence_indicator = max(0.0, min(1.0, karst_connectivity * min(spring_density / 1.5, 1.0)))
+
+    return {
+        "sinkholeDensity": _round(sinkhole_density, 6),
+        "springDensity": _round(spring_density, 6),
+        "losingStreamIndicator": _round(losing_stream_indicator, 6),
+        "resurgenceIndicator": _round(resurgence_indicator, 6),
+        "karstConnectivityIndex": _round(karst_connectivity, 6),
+    }
+
+
 def _safe_stat(values: np.ndarray, fn: str) -> float | None:
     if values.size == 0:
         return None
@@ -881,6 +1405,7 @@ def compute_watershed_descriptors(
     dem_path: str,
     uparea_path: str,
     flowdir_path: str,
+    climate_monthly_paths: dict[str, list[str]] | None,
     worldcover_path: str | None,
     ghsl_built_path: str | None,
     hydrolakes_path: str | None,
@@ -960,6 +1485,9 @@ def compute_watershed_descriptors(
         quality -= {"off_channel": 0.5, "uncertain": 0.2, "possible_proxy": 0.1}.get(verdict, 0.0)
         quality = max(0.0, min(1.0, quality))
 
+        outlet_longitude = selected_candidate["evaluation"].get("snapped_longitude")
+        outlet_latitude = selected_candidate["evaluation"].get("snapped_latitude")
+
     with rasterio.open(uparea_path) as upa_src, rasterio.open(flowdir_path) as flow_src:
         uparea = upa_src.read(1, masked=True).filled(np.nan).astype(np.float32)
         flow = flow_src.read(1, masked=True).filled(0).astype(np.int16)
@@ -973,12 +1501,58 @@ def compute_watershed_descriptors(
             area_km2=area_km2,
             dem_resolution_m=dem_resolution,
         )
+        topo_hydrology_metrics, hand, stream_mask = _topo_hydrology_metrics(
+            dem=dem,
+            mask=mask,
+            flow=flow,
+            uparea=uparea,
+            x_res_m=x_res_m,
+            y_res_m=y_res_m,
+            dem_resolution_m=dem_resolution,
+            values=values,
+        )
+
+    try:
+        climate_metrics = _worldclim_metrics(
+            monthly_paths=climate_monthly_paths or {},
+            mask=mask,
+            reference_transform=mask_data["transform"],
+            reference_crs=mask_data["crs"],
+            width=mask.shape[1],
+            height=mask.shape[0],
+        ) if climate_monthly_paths else {
+            "meanAnnualPrecipMm": None,
+            "meanMonthlyPrecipSeasonality": None,
+            "meanAnnualTemperatureC": None,
+            "meanWinterTemperatureC": None,
+            "meanSnowFractionClimatology": None,
+            "potentialEvapotranspiration": None,
+            "aridityIndex": None,
+            "continentalityProxy": None,
+            "oceanicityProxy": None,
+        }
+        climate_metrics["climateDescriptorStatus"] = "ok" if climate_monthly_paths else "skipped"
+    except Exception as exc:
+        climate_metrics = {
+            "climateDescriptorStatus": f"error:{type(exc).__name__}",
+            "meanAnnualPrecipMm": None,
+            "meanMonthlyPrecipSeasonality": None,
+            "meanAnnualTemperatureC": None,
+            "meanWinterTemperatureC": None,
+            "meanSnowFractionClimatology": None,
+            "potentialEvapotranspiration": None,
+            "aridityIndex": None,
+            "continentalityProxy": None,
+            "oceanicityProxy": None,
+        }
 
     landcover_metrics = {}
     if worldcover_path:
         landcover_metrics = _worldcover_metrics(
             worldcover_path=worldcover_path,
             mask=mask,
+            hand=hand,
+            stream_mask=stream_mask,
             reference_transform=mask_data["transform"],
             reference_crs=mask_data["crs"],
             width=mask.shape[1],
@@ -1013,6 +1587,8 @@ def compute_watershed_descriptors(
             hydrolakes_path=hydrolakes_path,
             watershed_geometry=watershed_geometry,
             basin_area_km2=area_km2,
+            outlet_longitude=float(outlet_longitude) if outlet_longitude is not None else None,
+            outlet_latitude=float(outlet_latitude) if outlet_latitude is not None else None,
         ) if hydrolakes_path else {"lakeFraction": None, "lakeCount": 0}
         hydrolakes_metrics["hydroLakesStatus"] = "ok" if hydrolakes_path else "skipped"
     except Exception as exc:
@@ -1020,6 +1596,7 @@ def compute_watershed_descriptors(
             "hydroLakesStatus": f"error:{type(exc).__name__}",
             "lakeFraction": None,
             "lakeCount": None,
+            "hydroLakesNearestRegulationDistanceKm": None,
         }
 
     try:
@@ -1028,6 +1605,8 @@ def compute_watershed_descriptors(
             reservoirs_path=gdw_reservoirs_path,
             watershed_geometry=watershed_geometry,
             basin_area_km2=area_km2,
+            outlet_longitude=float(outlet_longitude) if outlet_longitude is not None else None,
+            outlet_latitude=float(outlet_latitude) if outlet_latitude is not None else None,
         ) if gdw_barriers_path and gdw_reservoirs_path else {
             "gdwBarrierCountUpstream": None,
             "gdwReservoirCountUpstream": None,
@@ -1040,6 +1619,7 @@ def compute_watershed_descriptors(
             "gdwNewestUpstreamDamYear": None,
             "gdwMaxDamHeightM": None,
             "gdwRegulatedCatchment": None,
+            "gdwNearestRegulationDistanceKm": None,
         }
         gdw_metrics["gdwStatus"] = "ok" if gdw_barriers_path and gdw_reservoirs_path else "skipped"
     except Exception as exc:
@@ -1056,6 +1636,7 @@ def compute_watershed_descriptors(
             "gdwNewestUpstreamDamYear": None,
             "gdwMaxDamHeightM": None,
             "gdwRegulatedCatchment": None,
+            "gdwNearestRegulationDistanceKm": None,
         }
 
     try:
@@ -1132,6 +1713,27 @@ def compute_watershed_descriptors(
             "largestGlacierAreaKm2": None,
         }
 
+    karst_metrics = _karst_hydrology_proxy_metrics(
+        dem=dem,
+        valid=valid,
+        area_km2=area_km2,
+        carbonate_fraction=glim_metrics.get("carbonateFraction"),
+        karst_indicator=glim_metrics.get("karstIndicator"),
+        high_infiltration_soil_fraction=soil_metrics.get("highInfiltrationSoilFraction"),
+        soil_depth_shallow_fraction=soil_metrics.get("soilDepthShallowFraction"),
+        drainage_density_km_per_km2=network_metrics.get("drainageDensityKmPerKm2"),
+        stream_frequency_per_km2=network_metrics.get("streamFrequencyPerKm2"),
+    )
+
+    advanced_regulation_metrics = _advanced_regulation_metrics(
+        {
+            "basinAreaRasterKm2": area_km2,
+            **network_metrics,
+            **hydrolakes_metrics,
+            **gdw_metrics,
+        }
+    )
+
     return {
             "descriptorStatus": "ok",
             "watershedCellCount": mask_count,
@@ -1169,6 +1771,8 @@ def compute_watershed_descriptors(
             "outletSnapDistanceM": _round(snap_distance, 3),
             "demResolutionM": _round(dem_resolution, 3),
             "watershedQualityScore": _round(quality, 6),
+            **climate_metrics,
+            **topo_hydrology_metrics,
             **network_metrics,
             **landcover_metrics,
             **soil_metrics,
@@ -1177,5 +1781,7 @@ def compute_watershed_descriptors(
             **glim_metrics,
             **ghsl_metrics,
             **glacier_metrics,
+            **advanced_regulation_metrics,
+            **karst_metrics,
             "imperviousProxyFraction": landcover_metrics.get("urbanFraction"),
         }
