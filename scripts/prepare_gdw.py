@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import os
 import time
@@ -11,7 +12,9 @@ from typing import Any
 from urllib.error import HTTPError, URLError
 
 
-URL = "https://ndownloader.figshare.com/files/47913754"
+ARTICLE_API_URL = "https://api.figshare.com/v2/articles/25988293"
+TARGET_ARCHIVE_NAME = "GDW_v1_0_shp.zip"
+LEGACY_URL = "https://ndownloader.figshare.com/files/47913754"
 
 
 def write_json(path: Path, data: Any) -> None:
@@ -42,7 +45,52 @@ def release_lock(lock_fd: int, lock_path: Path) -> None:
     lock_path.unlink(missing_ok=True)
 
 
-def download_file(url: str, destination: Path) -> None:
+def _md5(path: Path) -> str:
+    digest = hashlib.md5()
+    with path.open("rb") as handle:
+        while True:
+            chunk = handle.read(1024 * 1024)
+            if not chunk:
+                break
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def fetch_json(url: str) -> Any:
+    request = urllib.request.Request(
+        url,
+        headers={
+            "User-Agent": "descente-canyon-app/1.0",
+            "Accept": "application/json",
+        },
+    )
+    with urllib.request.urlopen(request, timeout=120) as response:
+        return json.loads(response.read().decode("utf-8"))
+
+
+def resolve_download_sources() -> tuple[list[str], str | None]:
+    payload = fetch_json(ARTICLE_API_URL)
+    files = payload.get("files") or []
+    for file_info in files:
+        if file_info.get("name") != TARGET_ARCHIVE_NAME:
+            continue
+        file_id = file_info.get("id")
+        candidates = []
+        if file_id is not None:
+            candidates.append(f"https://api.figshare.com/v2/file/download/{file_id}")
+        download_url = file_info.get("download_url")
+        if download_url:
+            candidates.append(str(download_url))
+        candidates.append(LEGACY_URL)
+        deduped = []
+        for candidate in candidates:
+            if candidate not in deduped:
+                deduped.append(candidate)
+        return deduped, file_info.get("computed_md5") or file_info.get("supplied_md5")
+    return [LEGACY_URL], None
+
+
+def download_file(destination: Path) -> None:
     destination.parent.mkdir(parents=True, exist_ok=True)
     if destination.exists() and destination.stat().st_size > 0:
         return
@@ -52,22 +100,36 @@ def download_file(url: str, destination: Path) -> None:
         try:
             if destination.exists() and destination.stat().st_size > 0:
                 return
-            request = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
-            with urllib.request.urlopen(request, timeout=300) as response, open(temp_path, "wb") as handle:
-                while True:
-                    chunk = response.read(1024 * 1024)
-                    if not chunk:
-                        break
-                    handle.write(chunk)
-            if destination.exists() and destination.stat().st_size > 0:
-                temp_path.unlink(missing_ok=True)
-                return
-            temp_path.replace(destination)
-            return
+            candidates, expected_md5 = resolve_download_sources()
+            for url in candidates:
+                try:
+                    request = urllib.request.Request(
+                        url,
+                        headers={
+                            "User-Agent": "descente-canyon-app/1.0",
+                            "Accept": "application/octet-stream,*/*;q=0.8",
+                        },
+                    )
+                    with urllib.request.urlopen(request, timeout=300) as response, open(temp_path, "wb") as handle:
+                        while True:
+                            chunk = response.read(1024 * 1024)
+                            if not chunk:
+                                break
+                            handle.write(chunk)
+                    if expected_md5 and _md5(temp_path) != expected_md5:
+                        raise SystemExit(f"GDW archive checksum mismatch for {url}")
+                    temp_path.replace(destination)
+                    return
+                except (HTTPError, URLError) as exc:
+                    last_error = exc
+                    temp_path.unlink(missing_ok=True)
+                    if isinstance(exc, HTTPError) and exc.code not in {403, 429, 500, 502, 503, 504}:
+                        raise
+                    continue
         except (HTTPError, URLError) as exc:
             last_error = exc
             temp_path.unlink(missing_ok=True)
-            if isinstance(exc, HTTPError) and exc.code not in {429, 500, 502, 503, 504}:
+            if isinstance(exc, HTTPError) and exc.code not in {403, 429, 500, 502, 503, 504}:
                 raise
             time.sleep(min(60, 5 * attempt))
     raise SystemExit(f"Global Dam Watch download failed: {last_error}")
@@ -105,7 +167,7 @@ def main() -> int:
             ready = json.loads(ready_path.read_text(encoding="utf-8"))
             print(json.dumps(ready, ensure_ascii=False, indent=2))
             return 0
-        download_file(URL, archive_path)
+        download_file(archive_path)
         barriers, reservoirs = extract_archive(archive_path, raw_dir)
         if not args.keep_archive:
             archive_path.unlink(missing_ok=True)

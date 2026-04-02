@@ -929,6 +929,34 @@ def ensure_rgi() -> dict[str, Any]:
     }
 
 
+def prepare_shared_descriptor_inputs(output_dir: Path) -> dict[str, Any]:
+    shared: dict[str, Any] = {
+        "climate": None,
+        "ghsl": None,
+        "hydrolakes": None,
+        "gdw": None,
+        "rgi": None,
+        "glim": None,
+        "errors": {},
+    }
+    preparations = [
+        ("climate", ensure_worldclim_climate),
+        ("ghsl", ensure_ghsl_built),
+        ("hydrolakes", ensure_hydrolakes),
+        ("gdw", ensure_gdw),
+        ("rgi", ensure_rgi),
+        ("glim", ensure_glim),
+    ]
+    for key, loader in preparations:
+        try:
+            shared[key] = loader()
+        except Exception as exc:
+            shared["errors"][key] = f"{type(exc).__name__}: {exc}"
+            print(f"WARN shared descriptor prepare failed for {key}: {type(exc).__name__}: {exc}", flush=True)
+    write_json(output_dir / "global_prepare.json", shared)
+    return shared
+
+
 def evaluate_points_for_canyon(
     *,
     canyon: dict[str, Any],
@@ -1447,6 +1475,7 @@ def process_single_canyon(
     gdal_warp: str,
     enable_osm_regulation: bool,
     keep_work: bool,
+    shared_descriptor_inputs: dict[str, Any],
 ) -> str:
     canyon_file = output_dir / "canyons" / f"{canyon_id}.json"
     print(f"START canyon {canyon_id} {canyon.get('nomComplet') or canyon.get('nom')}", flush=True)
@@ -1585,55 +1614,25 @@ def process_single_canyon(
             watershed_skip_reason = "condition_not_met"
 
     if mask_data is not None and raster_paths.get("elevation") is not None and selected_candidate is not None:
-        climate_info = None
+        climate_info = shared_descriptor_inputs.get("climate")
         worldcover_info = None
-        ghsl_info = None
-        hydrolakes_info = None
-        gdw_info = None
-        glim_info = None
-        rgi_info = None
-        try:
-            climate_info = ensure_worldclim_climate()
-            stage_timings["prepareClimateSec"] = float(climate_info["elapsedSec"])
-        except Exception:
-            climate_info = None
-            stage_timings["prepareClimateSec"] = 0.0
+        ghsl_info = shared_descriptor_inputs.get("ghsl")
+        hydrolakes_info = shared_descriptor_inputs.get("hydrolakes")
+        gdw_info = shared_descriptor_inputs.get("gdw")
+        glim_info = shared_descriptor_inputs.get("glim")
+        rgi_info = shared_descriptor_inputs.get("rgi")
+        stage_timings["prepareClimateSec"] = 0.0
         try:
             worldcover_info = ensure_worldcover(points)
             stage_timings["prepareWorldCoverSec"] = float(worldcover_info["elapsedSec"])
         except Exception:
             worldcover_info = None
             stage_timings["prepareWorldCoverSec"] = 0.0
-        try:
-            ghsl_info = ensure_ghsl_built()
-            stage_timings["prepareGHSLBuiltSec"] = float(ghsl_info["elapsedSec"])
-        except Exception:
-            ghsl_info = None
-            stage_timings["prepareGHSLBuiltSec"] = 0.0
-        try:
-            hydrolakes_info = ensure_hydrolakes()
-            stage_timings["prepareHydroLakesSec"] = float(hydrolakes_info["elapsedSec"])
-        except Exception:
-            hydrolakes_info = None
-            stage_timings["prepareHydroLakesSec"] = 0.0
-        try:
-            gdw_info = ensure_gdw()
-            stage_timings["prepareGDWSec"] = float(gdw_info["elapsedSec"])
-        except Exception:
-            gdw_info = None
-            stage_timings["prepareGDWSec"] = 0.0
-        try:
-            rgi_info = ensure_rgi()
-            stage_timings["prepareRGISec"] = float(rgi_info["elapsedSec"])
-        except Exception:
-            rgi_info = None
-            stage_timings["prepareRGISec"] = 0.0
-        try:
-            glim_info = ensure_glim()
-            stage_timings["prepareGLiMSec"] = float(glim_info["elapsedSec"])
-        except Exception:
-            glim_info = None
-            stage_timings["prepareGLiMSec"] = 0.0
+        stage_timings["prepareGHSLBuiltSec"] = 0.0
+        stage_timings["prepareHydroLakesSec"] = 0.0
+        stage_timings["prepareGDWSec"] = 0.0
+        stage_timings["prepareRGISec"] = 0.0
+        stage_timings["prepareGLiMSec"] = 0.0
         started = time.perf_counter()
         descriptors = compute_watershed_descriptors(
             dem_path=str(raster_paths["elevation"]),
@@ -1766,6 +1765,7 @@ def process_single_canyon_safe(
     gdal_warp: str,
     enable_osm_regulation: bool,
     keep_work: bool,
+    shared_descriptor_inputs: dict[str, Any],
 ) -> str:
     try:
         return process_single_canyon(
@@ -1778,6 +1778,7 @@ def process_single_canyon_safe(
             gdal_warp=gdal_warp,
             enable_osm_regulation=enable_osm_regulation,
             keep_work=keep_work,
+            shared_descriptor_inputs=shared_descriptor_inputs,
         )
     except KeyboardInterrupt:
         raise
@@ -1871,6 +1872,16 @@ def main() -> int:
                 continue
             pending.append((canyon_id, canyon, points))
 
+        shared_descriptor_inputs = prepare_shared_descriptor_inputs(output_dir) if pending else {
+            "climate": None,
+            "ghsl": None,
+            "hydrolakes": None,
+            "gdw": None,
+            "rgi": None,
+            "glim": None,
+            "errors": {},
+        }
+
         if args.jobs <= 1:
             pending_total = len(pending)
             for canyon_id, canyon, points in pending:
@@ -1884,6 +1895,7 @@ def main() -> int:
                     gdal_warp=gdal_warp,
                     enable_osm_regulation=args.enable_osm_regulation,
                     keep_work=args.keep_work,
+                    shared_descriptor_inputs=shared_descriptor_inputs,
                 )
                 processed += 1
                 write_progress(output_dir, processed=processed, pending=max(pending_total - processed, 0))
@@ -1908,6 +1920,7 @@ def main() -> int:
                         gdal_warp=gdal_warp,
                         enable_osm_regulation=args.enable_osm_regulation,
                         keep_work=args.keep_work,
+                        shared_descriptor_inputs=shared_descriptor_inputs,
                     )
                     in_flight[future] = canyon_id
 
@@ -1938,6 +1951,7 @@ def main() -> int:
                             gdal_warp=gdal_warp,
                             enable_osm_regulation=args.enable_osm_regulation,
                             keep_work=args.keep_work,
+                            shared_descriptor_inputs=shared_descriptor_inputs,
                         )
                         in_flight[new_future] = canyon_id
     except KeyboardInterrupt:
