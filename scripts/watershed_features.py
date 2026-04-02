@@ -1400,6 +1400,37 @@ def _round(value: float | None, digits: int = 6) -> float | None:
     return round(value, digits)
 
 
+def _same_crs(left: Any, right: Any) -> bool:
+    if left is None and right is None:
+        return True
+    if left is None or right is None:
+        return False
+    return str(left) == str(right)
+
+
+def _same_transform(left: Affine, right: Affine, tolerance: float = 1e-9) -> bool:
+    return all(abs(float(a) - float(b)) <= tolerance for a, b in zip(left[:6], right[:6]))
+
+
+def _validate_reference_grid(
+    *,
+    dataset: Any,
+    mask_data: dict[str, Any],
+    expected_shape: tuple[int, int],
+    name: str,
+) -> None:
+    if (dataset.height, dataset.width) != expected_shape:
+        raise SystemExit(
+            f"{name}/mask shape mismatch for descriptors: {(dataset.height, dataset.width)} vs {expected_shape}"
+        )
+    if not _same_crs(dataset.crs, mask_data["crs"]):
+        raise SystemExit(f"{name}/mask CRS mismatch for descriptors: {dataset.crs} vs {mask_data['crs']}")
+    if not _same_transform(dataset.transform, mask_data["transform"]):
+        raise SystemExit(
+            f"{name}/mask transform mismatch for descriptors: {dataset.transform} vs {mask_data['transform']}"
+        )
+
+
 def compute_watershed_descriptors(
     *,
     dem_path: str,
@@ -1420,8 +1451,7 @@ def compute_watershed_descriptors(
     with rasterio.open(dem_path) as src:
         dem = src.read(1, masked=True).filled(np.nan).astype(np.float32)
         mask = mask_data["mask"]
-        if dem.shape != mask.shape:
-            raise SystemExit(f"DEM/mask shape mismatch for descriptors: {dem.shape} vs {mask.shape}")
+        _validate_reference_grid(dataset=src, mask_data=mask_data, expected_shape=mask.shape, name="DEM")
 
         valid = mask & np.isfinite(dem)
         mask_count = int(np.count_nonzero(mask))
@@ -1489,10 +1519,10 @@ def compute_watershed_descriptors(
         outlet_latitude = selected_candidate["evaluation"].get("snapped_latitude")
 
     with rasterio.open(uparea_path) as upa_src, rasterio.open(flowdir_path) as flow_src:
+        _validate_reference_grid(dataset=upa_src, mask_data=mask_data, expected_shape=mask.shape, name="UPA")
+        _validate_reference_grid(dataset=flow_src, mask_data=mask_data, expected_shape=mask.shape, name="flowdir")
         uparea = upa_src.read(1, masked=True).filled(np.nan).astype(np.float32)
         flow = flow_src.read(1, masked=True).filled(0).astype(np.int16)
-        if uparea.shape != mask.shape or flow.shape != mask.shape:
-            raise SystemExit(f"Hydrology raster shape mismatch for descriptors: upa={uparea.shape}, flow={flow.shape}, mask={mask.shape}")
         network_metrics = _compute_network_metrics(
             mask=mask,
             path_lengths=path_lengths,

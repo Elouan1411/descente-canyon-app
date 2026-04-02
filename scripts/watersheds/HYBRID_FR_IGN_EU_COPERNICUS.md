@@ -227,13 +227,12 @@ La phase cryosphere ajoute :
 
 La phase 2 ajoute aussi des descripteurs `ESA WorldCover 2021` (fractions de foret, shrub, herbe, cultures, urbain, roche nue, eau permanente, zones humides, etc.) avec telechargement automatique des tuiles utiles dans `build/watersheds/worldcover/`.
 
-Pour recalculer une liste de canyons issue de `build/watershed-review/watershed-review.json` avec le point GPS valide manuellement et sans snap (meme cellule raster), utiliser :
+Pour recalculer une liste de canyons issue de `watershed-review/watershed-review.json` avec le point GPS valide manuellement et sans snap (meme cellule raster), utiliser :
 
 ```bash
 python scripts/run_catchment_batch.py \
   --source-config scripts/watersheds/source_config.hybrid.json \
   --output-dir build/watersheds/batch-run-review \
-  --review-file build/watershed-review/watershed-review.json \
   --jobs 2
 ```
 

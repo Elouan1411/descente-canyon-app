@@ -1,0 +1,1499 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Watershed Review Tool</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #eef3fb;
+      --panel: #ffffff;
+      --panel-soft: #f7f9fe;
+      --border: #d8e0ee;
+      --text: #1a2335;
+      --muted: #5d6980;
+      --accent: #245bff;
+      --accent-soft: #dfe7ff;
+      --danger: #b52d25;
+      --danger-soft: #fde8e6;
+      --success: #127847;
+      --success-soft: #dff3e8;
+      --warning: #996100;
+      --warning-soft: #fff1d9;
+      --shadow: 0 14px 32px rgba(31, 44, 79, 0.08);
+      --radius: 16px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      background: linear-gradient(180deg, #edf2fb 0%, #eef3fb 260px, #f5f7fc 100%);
+      color: var(--text);
+    }
+
+    button,
+    input {
+      font: inherit;
+    }
+
+    .page {
+      max-width: 1820px;
+      margin: 0 auto;
+      padding: 14px 14px 96px;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      display: grid;
+      gap: 6px;
+      padding: 10px 12px;
+      margin-bottom: 10px;
+      border: 1px solid rgba(216, 224, 238, 0.92);
+      border-radius: var(--radius);
+      background: rgba(245, 248, 253, 0.94);
+      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow);
+    }
+
+    .topbar-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+
+    .title-block h1 {
+      margin: 0;
+      font-size: 16px;
+      line-height: 1.2;
+    }
+
+    .title-block p {
+      display: none;
+    }
+
+    .toolbar-actions {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      border: 1px solid var(--border);
+      background: var(--panel);
+      color: var(--text);
+      border-radius: 11px;
+      padding: 9px 12px;
+      cursor: pointer;
+      transition: 0.12s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 22px rgba(36, 91, 255, 0.08);
+    }
+
+    .button:disabled {
+      opacity: 0.45;
+      cursor: default;
+      transform: none;
+      box-shadow: none;
+    }
+
+    .button-ghost {
+      background: transparent;
+    }
+
+    .stats-row,
+    .status-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .stats-row {
+      display: none;
+    }
+
+    .chip,
+    .pill,
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: var(--panel);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .chip-accent {
+      background: var(--accent-soft);
+      color: var(--accent);
+      border-color: #bfd0ff;
+    }
+
+    .chip-warning {
+      background: var(--warning-soft);
+      color: var(--warning);
+      border-color: #efdaa3;
+    }
+
+    .status-text {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    .card {
+      display: grid;
+      gap: 10px;
+      min-width: 0;
+      padding: 10px;
+      max-width: 1600px;
+      width: 100%;
+      margin: 0 auto;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.96);
+      box-shadow: var(--shadow);
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .card-title-wrap {
+      min-width: 0;
+      display: grid;
+      gap: 5px;
+    }
+
+    .card-title {
+      margin: 0;
+      font-size: 16px;
+      line-height: 1.32;
+      word-break: break-word;
+    }
+
+    .card-subtitle {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .tag-list {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .point-list {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .point-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 9px;
+      border-radius: 999px;
+      border: 1px solid #d8e0ee;
+      background: #f8fafd;
+      color: var(--text);
+      font-size: 12px;
+      line-height: 1.3;
+    }
+
+    .point-chip-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      flex: 0 0 auto;
+    }
+
+    .tag-warning {
+      background: var(--warning-soft);
+      color: var(--warning);
+      border-color: #f1d89d;
+    }
+
+    .actions {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .button-good {
+      background: var(--success-soft);
+      border-color: #b9dec9;
+      color: var(--success);
+    }
+
+    .button-bad {
+      background: var(--danger-soft);
+      border-color: #efbbb7;
+      color: var(--danger);
+    }
+
+    .button-active {
+      outline: 2px solid rgba(36, 91, 255, 0.18);
+      box-shadow: 0 0 0 1px rgba(36, 91, 255, 0.18) inset;
+    }
+
+    .gps-line {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+
+    .proposal-box {
+      display: grid;
+      gap: 8px;
+      padding: 10px 12px;
+      border: 1px solid #ffd59a;
+      border-radius: 13px;
+      background: #fff6e8;
+    }
+
+    .proposal-box-empty {
+      border-color: var(--border);
+      background: var(--panel-soft);
+    }
+
+    .proposal-title {
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #9a6300;
+    }
+
+    .proposal-line {
+      font-size: 13px;
+      line-height: 1.45;
+      color: var(--text);
+    }
+
+    .proposal-meta {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    .button-proposal {
+      justify-self: start;
+      background: #fff0d7;
+      border-color: #efcc8c;
+      color: #8b5a00;
+    }
+
+    .map {
+      height: min(72vh, 840px);
+      min-height: 560px;
+      border-radius: 13px;
+      overflow: hidden;
+      border: 1px solid #d4ddef;
+      background: #dfe8fb;
+    }
+
+    .empty {
+      padding: 42px 18px;
+      text-align: center;
+      border: 1px dashed var(--border);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.84);
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .fab {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 40;
+      min-width: 290px;
+      max-width: min(90vw, 420px);
+      padding: 14px 18px;
+      border: 0;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #245bff 0%, #0f7fff 100%);
+      color: #ffffff;
+      box-shadow: 0 16px 34px rgba(36, 91, 255, 0.34);
+      cursor: pointer;
+      font-weight: 800;
+      line-height: 1.3;
+      text-align: left;
+    }
+
+    .fab:disabled {
+      cursor: default;
+      opacity: 0.65;
+      box-shadow: 0 10px 24px rgba(36, 91, 255, 0.16);
+    }
+
+    .fab-title {
+      display: block;
+      font-size: 15px;
+    }
+
+    .fab-subtitle {
+      display: block;
+      margin-top: 4px;
+      font-size: 12px;
+      font-weight: 600;
+      opacity: 0.92;
+    }
+
+    @media (max-width: 760px) {
+      .page {
+        padding: 10px 10px 100px;
+      }
+
+      .topbar {
+        position: static;
+      }
+
+      .map {
+        height: 56vh;
+        min-height: 340px;
+      }
+
+      .fab {
+        right: 10px;
+        left: 10px;
+        bottom: 10px;
+        max-width: none;
+        min-width: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <div class="topbar-head">
+        <div class="title-block">
+          <h1>Watershed review tool</h1>
+        </div>
+        <div class="toolbar-actions">
+          <button class="button" id="prev-page">Precedent</button>
+          <button class="button" id="next-page">Suivant</button>
+          <span class="chip chip-accent" id="page-label">Chargement...</span>
+          <button class="button button-ghost" id="reset-session">Reinitialiser la session</button>
+        </div>
+      </div>
+
+      <div class="stats-row" id="stats-row"></div>
+      <div class="status-row">
+        <span class="status-text" id="status-text">Preparation de la revue...</span>
+      </div>
+    </header>
+
+    <main id="grid" class="grid"></main>
+  </div>
+
+  <button id="save-next" class="fab" disabled>
+    <span class="fab-title">Chargement en cours...</span>
+    <span class="fab-subtitle">Espace: enregistrer + suivant. Entree: good + enregistrer + suivant.</span>
+  </button>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+  <script>
+    const PAGE_SIZE = 1;
+    const LOCAL_STORAGE_KEY = "watershed-review-session-v4";
+    const REVIEW_STATE_API_URL = "/api/review-state";
+    const REVIEW_FILE_PATH = "watershed-review/watershed-review.json";
+    const ASSISTANT_PROPOSALS_PATH = "../build/watershed-review/assistant-proposals.json";
+    const DATA_URLS = {
+      canyons: "../offline-data/full/room-import/canyons.json",
+      geoPoints: "../offline-data/full/room-import/geo_points.json",
+      frCatchments: "../watershed-results/runs/france/full/2026-03-28-france-v1/import_ready_catchments.json",
+      frWatersheds: "../watershed-results/runs/france/full/2026-03-28-france-v1/import_ready_watersheds.json",
+      chCatchments: "../watershed-results/runs/suisse/full/2026-03-28-switzerland-v1/import_ready_catchments.json",
+      chWatersheds: "../watershed-results/runs/suisse/full/2026-03-28-switzerland-v1/import_ready_watersheds.json",
+      atCatchments: "../watershed-results/runs/autriche/full/2026-03-28-austria-v1/import_ready_catchments.json",
+      atWatersheds: "../watershed-results/runs/autriche/full/2026-03-28-austria-v1/import_ready_watersheds.json"
+    };
+
+    const BASEMAP = {
+      url: "https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png",
+      options: {
+        maxZoom: 17,
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, SRTM | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a>'
+      }
+    };
+
+    const POINT_COLORS = {
+      ENTREE: "#1f8f4d",
+      SORTIE: "#d44b3f",
+      PARKING_AMONT: "#cc8a00",
+      PARKING_AVAL: "#cc8a00",
+      POINT_REMARQUABLE: "#7f56d9"
+    };
+
+    const state = {
+      orderedItems: [],
+      canyonsById: new Map(),
+      pointsByCanyonId: new Map(),
+      catchmentsByCanyonId: new Map(),
+      watershedsByCanyonId: new Map(),
+      assistantProposalsByCanyonId: new Map(),
+      reviewByCanyonId: new Map(),
+      currentPage: 0,
+      visibleMapEntries: new Map(),
+      loaded: false,
+      saving: false
+    };
+
+    const elements = {
+      grid: document.getElementById("grid"),
+      pageLabel: document.getElementById("page-label"),
+      statsRow: document.getElementById("stats-row"),
+      statusText: document.getElementById("status-text"),
+      prevPage: document.getElementById("prev-page"),
+      nextPage: document.getElementById("next-page"),
+      saveNext: document.getElementById("save-next"),
+      resetSession: document.getElementById("reset-session")
+    };
+
+    bindEvents();
+    updateSaveButton();
+    initialize();
+
+    async function initialize() {
+      if (location.protocol === "file:") {
+        renderEmpty(
+          "Cette page doit etre ouverte via le lanceur Windows ou via un serveur local HTTP.<br>Le navigateur ne peut pas charger les JSON du repo directement en file://."
+        );
+        setStatus("Ouvre launch-watershed-review.bat pour lancer la page correctement.");
+        updateSaveButton();
+        return;
+      }
+
+      if (!window.L) {
+        renderEmpty("Leaflet n'a pas pu etre charge. Verifie l'acces internet.");
+        setStatus("Echec de chargement de Leaflet.");
+        updateSaveButton();
+        return;
+      }
+
+      try {
+        setStatus("Chargement des JSON du repo...");
+        const [data, savedState, assistantProposals] = await Promise.all([
+          loadAllData(),
+          loadServerState(),
+          loadAssistantProposals()
+        ]);
+        applyAssistantProposals(assistantProposals);
+        if (savedState) {
+          applySavedState(savedState);
+        } else {
+          restoreLocalSession();
+        }
+        buildDataset(data);
+        state.loaded = true;
+        clampCurrentPage();
+        persistLocalSession();
+        setStatus(`Donnees chargees: ${state.orderedItems.length} canyons, ${state.assistantProposalsByCanyonId.size} propositions assistant.`);
+        renderPage();
+      } catch (error) {
+        console.error(error);
+        renderEmpty(`Chargement impossible.<br>${escapeHtml(error.message)}`);
+        setStatus("Erreur de chargement des donnees.");
+        updateSaveButton();
+      }
+    }
+
+    function bindEvents() {
+      elements.prevPage.addEventListener("click", () => {
+        if (state.currentPage > 0) {
+          state.currentPage -= 1;
+          persistLocalSession();
+          renderPage();
+        }
+      });
+
+      elements.nextPage.addEventListener("click", () => {
+        if (state.currentPage + 1 < getPageCount()) {
+          state.currentPage += 1;
+          persistLocalSession();
+          renderPage();
+        }
+      });
+
+      elements.saveNext.addEventListener("click", () => { void saveAndAdvance(); });
+
+      elements.resetSession.addEventListener("click", async () => {
+        if (!window.confirm("Effacer toutes les decisions locales et revenir au debut ?")) {
+          return;
+        }
+        state.reviewByCanyonId.clear();
+        state.currentPage = 0;
+        persistLocalSession();
+        try {
+          await persistStateToServer({ currentPage: 0, reviews: [] });
+        } catch (error) {
+          console.error(error);
+          setStatus(`Session locale reinitialisee, mais ecriture serveur impossible: ${error.message}`);
+          renderPage();
+          return;
+        }
+        renderPage();
+        setStatus(`Session locale reinitialisee. Fichier vide ecrit dans ${REVIEW_FILE_PATH}.`);
+      });
+
+      elements.grid.addEventListener("click", (event) => {
+        const button = event.target.closest("button[data-action]");
+        if (!button) {
+          return;
+        }
+        const canyonId = Number(button.dataset.canyonId);
+        if (!Number.isFinite(canyonId)) {
+          return;
+        }
+        const action = button.dataset.action;
+        if (action === "good") {
+          const item = state.orderedItems.find((entry) => entry.canyonId === canyonId);
+          const current = state.reviewByCanyonId.get(canyonId);
+          setReview(canyonId, {
+            status: "good",
+            gps: current && current.gps ? current.gps : defaultGpsForItem(item),
+            adminPlaced: Boolean(current && current.adminPlaced),
+            pointType: current && current.pointType ? current.pointType : item && item.catchment ? item.catchment.pointType : null,
+            label: current && current.label !== undefined ? current.label : item && item.catchment ? item.catchment.label : null
+          });
+          return;
+        }
+        if (action === "bad") {
+          const current = state.reviewByCanyonId.get(canyonId);
+          setReview(canyonId, {
+            status: "bad",
+            gps: current && current.gps ? current.gps : null,
+            adminPlaced: Boolean((current && current.adminPlaced) || (current && current.gps)),
+            pointType: current && current.pointType ? current.pointType : "REVIEW_GPS",
+            label: current && current.label !== undefined ? current.label : "review_truth"
+          });
+          return;
+        }
+        if (action === "use-proposal") {
+          const item = state.orderedItems.find((entry) => entry.canyonId === canyonId);
+          if (!item || !item.assistantProposal) {
+            return;
+          }
+          setReview(canyonId, {
+            status: "bad",
+            gps: item.assistantProposal.gps,
+            adminPlaced: true,
+            pointType: "REVIEW_GPS",
+            label: "assistant_proposal"
+          });
+          setStatus(`Proposition assistant appliquee pour ${item.name}.`);
+          return;
+        }
+        if (action === "reset") {
+          state.reviewByCanyonId.delete(canyonId);
+          persistLocalSession();
+          updateCardState(canyonId);
+          updateChrome();
+        }
+      });
+
+      window.addEventListener("keydown", (event) => {
+        if (event.target && ["INPUT", "TEXTAREA", "SELECT"].includes(event.target.tagName)) {
+          return;
+        }
+        if (event.code === "Space") {
+          event.preventDefault();
+          void saveAndAdvance();
+          return;
+        }
+        if (event.key === "Enter") {
+          event.preventDefault();
+          void markGoodAndAdvance();
+          return;
+        }
+        if (event.key === "ArrowRight") {
+          elements.nextPage.click();
+        }
+        if (event.key === "ArrowLeft") {
+          elements.prevPage.click();
+        }
+      });
+    }
+
+    async function loadAllData() {
+      const entries = await Promise.all(
+        Object.entries(DATA_URLS).map(async ([key, url]) => [key, await fetchJson(url)])
+      );
+      return Object.fromEntries(entries);
+    }
+
+    async function loadServerState() {
+      const response = await fetch(REVIEW_STATE_API_URL, { cache: "no-store" });
+      if (response.status === 404) {
+        return null;
+      }
+      if (!response.ok) {
+        throw new Error(`Etat de revue inaccessible (${response.status}). Lance la page via launch-watershed-review.bat.`);
+      }
+      return response.json();
+    }
+
+    async function loadAssistantProposals() {
+      const response = await fetch(ASSISTANT_PROPOSALS_PATH, { cache: "no-store" });
+      if (response.status === 404) {
+        return [];
+      }
+      if (!response.ok) {
+        throw new Error(`Propositions assistant inaccessibles (${response.status}).`);
+      }
+      return response.json();
+    }
+
+    function applyAssistantProposals(rawProposals) {
+      state.assistantProposalsByCanyonId.clear();
+      if (!Array.isArray(rawProposals)) {
+        return;
+      }
+      for (const rawProposal of rawProposals) {
+        const normalized = normalizeAssistantProposal(rawProposal);
+        if (!normalized) {
+          continue;
+        }
+        state.assistantProposalsByCanyonId.set(normalized.canyonId, normalized);
+      }
+    }
+
+    function applySavedState(savedState) {
+      state.reviewByCanyonId.clear();
+      if (Number.isFinite(Number(savedState.currentPage))) {
+        state.currentPage = Number(savedState.currentPage);
+      }
+      const reviews = Array.isArray(savedState.reviews) ? savedState.reviews : [];
+      for (const rawReview of reviews) {
+        const normalized = normalizeReview(rawReview);
+        if (normalized) {
+            state.reviewByCanyonId.set(normalized.canyonId, {
+              status: normalized.status,
+              gps: normalized.gps,
+              adminPlaced: normalized.adminPlaced,
+              pointType: normalized.pointType,
+              label: normalized.label
+            });
+          }
+        }
+    }
+
+    async function fetchJson(url) {
+      const response = await fetch(url, { cache: "no-store" });
+      if (!response.ok) {
+        throw new Error(`${url} a retourne ${response.status}.`);
+      }
+      return response.json();
+    }
+
+    function buildDataset(data) {
+      state.canyonsById = new Map();
+      for (const canyon of data.canyons) {
+        if (canyon && Number.isFinite(Number(canyon.id))) {
+          state.canyonsById.set(Number(canyon.id), canyon);
+        }
+      }
+
+      state.pointsByCanyonId = new Map();
+      for (const point of data.geoPoints) {
+        if (!point || !Number.isFinite(Number(point.canyonId))) {
+          continue;
+        }
+        const canyonId = Number(point.canyonId);
+        if (!state.pointsByCanyonId.has(canyonId)) {
+          state.pointsByCanyonId.set(canyonId, []);
+        }
+        state.pointsByCanyonId.get(canyonId).push(point);
+      }
+
+      state.catchmentsByCanyonId = new Map();
+      for (const row of [...data.frCatchments, ...data.chCatchments, ...data.atCatchments]) {
+        if (row && Number.isFinite(Number(row.canyonId))) {
+          state.catchmentsByCanyonId.set(Number(row.canyonId), row);
+        }
+      }
+
+      state.watershedsByCanyonId = new Map();
+      for (const row of [...data.frWatersheds, ...data.chWatersheds, ...data.atWatersheds]) {
+        if (row && Number.isFinite(Number(row.canyonId))) {
+          state.watershedsByCanyonId.set(Number(row.canyonId), row);
+        }
+      }
+
+      const canyonIds = new Set([
+        ...state.catchmentsByCanyonId.keys(),
+        ...state.watershedsByCanyonId.keys()
+      ]);
+
+      state.orderedItems = Array.from(canyonIds)
+        .map((canyonId) => buildItem(canyonId))
+        .sort(compareItems);
+    }
+
+    function buildItem(canyonId) {
+      const canyon = state.canyonsById.get(canyonId) || {};
+      const catchment = state.catchmentsByCanyonId.get(canyonId) || {};
+      const watershed = state.watershedsByCanyonId.get(canyonId) || {};
+      const suspiciousReasons = getSuspiciousReasons(catchment);
+      const areaKm2 = Number.isFinite(Number(catchment.upstreamCatchmentAreaKm2))
+        ? Number(catchment.upstreamCatchmentAreaKm2)
+        : Number.isFinite(Number(watershed.upstreamCatchmentAreaKm2))
+          ? Number(watershed.upstreamCatchmentAreaKm2)
+          : Number.POSITIVE_INFINITY;
+
+      return {
+        canyonId,
+        canyon,
+        catchment,
+        watershed,
+        assistantProposal: state.assistantProposalsByCanyonId.get(canyonId) || null,
+        points: state.pointsByCanyonId.get(canyonId) || [],
+        suspicious: suspiciousReasons.length > 0,
+        suspiciousReasons,
+        areaKm2,
+        name: String(canyon.nomComplet || catchment.canyonName || watershed.canyonName || `Canyon ${canyonId}`),
+        country: String(canyon.pays || "?"),
+        basinLabel: String(canyon.bassin || "(sans bassin texte)")
+      };
+    }
+
+    function compareItems(left, right) {
+      if (left.areaKm2 !== right.areaKm2) {
+        return left.areaKm2 - right.areaKm2;
+      }
+      if (left.suspicious !== right.suspicious) {
+        return left.suspicious ? -1 : 1;
+      }
+      const countryCompare = left.country.localeCompare(right.country, "fr", { sensitivity: "base" });
+      if (countryCompare !== 0) {
+        return countryCompare;
+      }
+      const basinCompare = left.basinLabel.localeCompare(right.basinLabel, "fr", { sensitivity: "base" });
+      if (basinCompare !== 0) {
+        return basinCompare;
+      }
+      const nameCompare = left.name.localeCompare(right.name, "fr", { sensitivity: "base" });
+      if (nameCompare !== 0) {
+        return nameCompare;
+      }
+      return left.canyonId - right.canyonId;
+    }
+
+    function getSuspiciousReasons(catchment) {
+      if (!catchment || typeof catchment !== "object") {
+        return [];
+      }
+      const reasons = [];
+      if (String(catchment.selectionVerdict || "") === "uncertain") {
+        reasons.push("selectionVerdict=uncertain");
+      }
+      if (catchment.strictTopoPointType && catchment.strictTopoPointType !== "ENTREE") {
+        reasons.push(`strictTopoPointType=${catchment.strictTopoPointType}`);
+      }
+      if (Number(catchment.snapDistanceM) >= 25) {
+        reasons.push(`snapDistanceM=${formatNumber(catchment.snapDistanceM, 1)}m`);
+      }
+      if (Number(catchment.rawToSnappedUpaRatio) >= 10000) {
+        reasons.push(`upaRatio=${formatNumber(catchment.rawToSnappedUpaRatio, 0)}`);
+      }
+      return reasons;
+    }
+
+    function getPageCount() {
+      if (state.orderedItems.length === 0) {
+        return 0;
+      }
+      return Math.ceil(state.orderedItems.length / PAGE_SIZE);
+    }
+
+    function clampCurrentPage() {
+      const pageCount = getPageCount();
+      if (pageCount === 0) {
+        state.currentPage = 0;
+        return;
+      }
+      state.currentPage = Math.max(0, Math.min(state.currentPage, pageCount - 1));
+    }
+
+    function getVisibleItems() {
+      const start = state.currentPage * PAGE_SIZE;
+      return state.orderedItems.slice(start, start + PAGE_SIZE);
+    }
+
+    function renderPage() {
+      destroyVisibleMaps();
+      elements.grid.innerHTML = "";
+
+      if (!state.loaded) {
+        updateChrome();
+        return;
+      }
+
+      const visibleItems = getVisibleItems();
+      if (visibleItems.length === 0) {
+        renderEmpty("Aucun canyon disponible pour cette page.");
+        updateChrome();
+        return;
+      }
+
+      visibleItems.forEach((item, index) => {
+        const absoluteIndex = state.currentPage * PAGE_SIZE + index + 1;
+        elements.grid.appendChild(buildCardElement(item, absoluteIndex));
+      });
+
+      for (const item of visibleItems) {
+        initializeMap(item);
+        updateCardState(item.canyonId);
+      }
+
+      updateChrome();
+    }
+
+    function renderEmpty(html) {
+      destroyVisibleMaps();
+      elements.grid.innerHTML = `<div class="empty">${html}</div>`;
+    }
+
+    function buildCardElement(item, absoluteIndex) {
+      const review = state.reviewByCanyonId.get(item.canyonId);
+      const defaultGps = defaultGpsForItem(item);
+      const pointMarkup = item.points.length > 0
+        ? item.points.map((point) => {
+            const pointType = String(point.type || "?");
+            const color = POINT_COLORS[pointType] || "#55647a";
+            const labelBits = [pointType, point.label].filter(Boolean);
+            const coords = Number.isFinite(Number(point.latitude)) && Number.isFinite(Number(point.longitude))
+              ? `(${Number(point.latitude).toFixed(5)}, ${Number(point.longitude).toFixed(5)})`
+              : "";
+            return `<span class="point-chip"><span class="point-chip-dot" style="background:${escapeHtml(color)}"></span>${escapeHtml(labelBits.join(" - "))}${coords ? ` <span style="color:#647089">${escapeHtml(coords)}</span>` : ""}</span>`;
+          }).join("")
+        : `<span class="point-chip">Aucun autre point GPS</span>`;
+      const proposalMarkup = item.assistantProposal
+        ? `
+          <div class="proposal-box">
+            <div class="proposal-title">Proposition assistant</div>
+            <div class="proposal-line">${formatGpsLine(item.assistantProposal.gps)}</div>
+            <div class="proposal-meta">${escapeHtml(item.assistantProposal.summary || "")}${item.assistantProposal.confidence ? ` · confiance ${escapeHtml(item.assistantProposal.confidence)}` : ""}</div>
+            <button class="button button-proposal" data-action="use-proposal" data-canyon-id="${item.canyonId}">Utiliser la proposition</button>
+          </div>
+        `
+        : `
+          <div class="proposal-box proposal-box-empty">
+            <div class="proposal-title" style="color:#647089;">Proposition assistant</div>
+            <div class="proposal-line">Aucune proposition pour ce canyon.</div>
+          </div>
+        `;
+
+      const card = document.createElement("article");
+      card.className = "card";
+      card.dataset.canyonId = String(item.canyonId);
+      card.innerHTML = `
+        <div class="card-header">
+          <div class="card-title-wrap">
+            <h2 class="card-title">${absoluteIndex}. ${escapeHtml(item.name)}</h2>
+            <div class="card-subtitle">
+              <span>Point retenu: ${escapeHtml(item.catchment.pointType || "-")}</span>
+            </div>
+          </div>
+          <div id="status-pill-${item.canyonId}"></div>
+        </div>
+
+        <div class="map" id="map-${item.canyonId}"></div>
+
+        ${proposalMarkup}
+
+        <div class="point-list">${pointMarkup}</div>
+
+        <div class="actions">
+          <button class="button button-good" data-action="good" data-canyon-id="${item.canyonId}" id="good-button-${item.canyonId}">Good</button>
+          <button class="button button-bad" data-action="bad" data-canyon-id="${item.canyonId}" id="bad-button-${item.canyonId}">Bad</button>
+          <button class="button" data-action="reset" data-canyon-id="${item.canyonId}">Reset</button>
+        </div>
+
+        <div class="gps-line" id="gps-line-${item.canyonId}">
+          ${review && review.gps ? formatGpsLine(review.gps) : defaultGps ? `Point retenu actuel: ${formatGps(defaultGps)}` : "GPS retenu: aucun"}
+        </div>
+      `;
+      return card;
+    }
+
+    function initializeMap(item) {
+      const container = document.getElementById(`map-${item.canyonId}`);
+      if (!container) {
+        return;
+      }
+
+      const map = L.map(container, { zoomControl: false, preferCanvas: true });
+      map.setView([46.5, 7.5], 6);
+      const tileLayer = L.tileLayer(BASEMAP.url, BASEMAP.options).addTo(map);
+      L.control.zoom({ position: "bottomright" }).addTo(map);
+
+      let watershedLayer = null;
+      if (item.watershed && item.watershed.geometry) {
+        try {
+          watershedLayer = L.geoJSON(
+            { type: "Feature", properties: {}, geometry: item.watershed.geometry },
+            { style: { color: "#245bff", weight: 2, fillColor: "#245bff", fillOpacity: 0.16 } }
+          ).addTo(map);
+        } catch (error) {
+          console.warn(`Geometrie ignoree pour ${item.canyonId}`, error);
+        }
+      }
+
+      const pointLayer = L.layerGroup().addTo(map);
+      const pointMarkers = [];
+      for (const point of item.points) {
+        if (!Number.isFinite(Number(point.latitude)) || !Number.isFinite(Number(point.longitude))) {
+          continue;
+        }
+        const pointType = String(point.type || "");
+        const color = POINT_COLORS[pointType] || "#55647a";
+        const pointLat = Number(point.latitude);
+        const pointLng = Number(point.longitude);
+        const marker = L.circleMarker([pointLat, pointLng], {
+          radius: 6,
+          color,
+          weight: 2,
+          fillColor: color,
+          fillOpacity: 0.86
+        });
+        const tooltip = [pointType, point.label, "cliquer pour utiliser"].filter(Boolean).join(" - ");
+        if (tooltip) {
+          marker.bindTooltip(tooltip);
+        }
+        marker.on("click", (event) => {
+          if (event.originalEvent) {
+            L.DomEvent.stop(event.originalEvent);
+          }
+          setReview(item.canyonId, {
+            status: "bad",
+            gps: {
+              latitude: Number(pointLat.toFixed(6)),
+              longitude: Number(pointLng.toFixed(6))
+            },
+            adminPlaced: true,
+            pointType,
+            label: point.label || null
+          });
+          setStatus(`Point ${pointType}${point.label ? ` - ${point.label}` : ""} utilise comme reference pour ${item.name}.`);
+        });
+        marker.addTo(pointLayer);
+        pointMarkers.push(marker);
+      }
+
+      let selectedPointMarker = null;
+      if (Number.isFinite(Number(item.catchment.latitude)) && Number.isFinite(Number(item.catchment.longitude))) {
+        selectedPointMarker = L.circleMarker([Number(item.catchment.latitude), Number(item.catchment.longitude)], {
+          radius: 8,
+          color: "#192232",
+          weight: 3,
+          fillColor: "#ffffff",
+          fillOpacity: 1
+        }).addTo(map);
+        selectedPointMarker.bindTooltip(`Point retenu actuel - ${item.catchment.pointType || "-"}`);
+      }
+
+      let reviewPointMarker = null;
+      const currentReview = state.reviewByCanyonId.get(item.canyonId);
+      if (currentReview && currentReview.gps) {
+        reviewPointMarker = createReviewMarker(map, currentReview.gps);
+      }
+
+      let assistantProposalMarker = null;
+      if (item.assistantProposal) {
+        assistantProposalMarker = createAssistantProposalMarker(map, item.assistantProposal);
+      }
+
+      map.on("click", (event) => {
+        setReview(item.canyonId, {
+          status: "bad",
+          gps: {
+            latitude: Number(event.latlng.lat.toFixed(6)),
+            longitude: Number(event.latlng.lng.toFixed(6))
+          },
+          adminPlaced: true,
+          pointType: "REVIEW_GPS",
+          label: "manual_map"
+        });
+      });
+
+      fitMap(map, item, watershedLayer, selectedPointMarker, reviewPointMarker, assistantProposalMarker);
+
+      state.visibleMapEntries.set(item.canyonId, {
+        map,
+        tileLayer,
+        watershedLayer,
+        pointMarkers,
+        selectedPointMarker,
+        reviewPointMarker,
+        assistantProposalMarker
+      });
+    }
+
+    function fitMap(map, item, watershedLayer, selectedPointMarker, reviewPointMarker, assistantProposalMarker) {
+      const bounds = L.latLngBounds([]);
+
+      if (item.watershed && Array.isArray(item.watershed.bbox) && item.watershed.bbox.length === 4) {
+        const bbox = item.watershed.bbox.map(Number);
+        if (bbox.every(Number.isFinite)) {
+          bounds.extend([bbox[1], bbox[0]]);
+          bounds.extend([bbox[3], bbox[2]]);
+        }
+      }
+
+      if (watershedLayer) {
+        const layerBounds = watershedLayer.getBounds();
+        if (layerBounds.isValid()) {
+          bounds.extend(layerBounds);
+        }
+      }
+
+      for (const point of item.points) {
+        if (Number.isFinite(Number(point.latitude)) && Number.isFinite(Number(point.longitude))) {
+          bounds.extend([Number(point.latitude), Number(point.longitude)]);
+        }
+      }
+
+      if (selectedPointMarker) {
+        bounds.extend(selectedPointMarker.getLatLng());
+      }
+      if (reviewPointMarker) {
+        bounds.extend(reviewPointMarker.getLatLng());
+      }
+      if (assistantProposalMarker) {
+        bounds.extend(assistantProposalMarker.getLatLng());
+      }
+
+      if (bounds.isValid()) {
+        map.fitBounds(bounds.pad(0.12));
+      }
+    }
+
+    function createReviewMarker(map, gps) {
+      return L.circleMarker([gps.latitude, gps.longitude], {
+        radius: 8,
+        color: "#0468ad",
+        weight: 3,
+        fillColor: "#00b7ff",
+        fillOpacity: 0.92
+      })
+        .bindTooltip(`GPS propose - ${gps.latitude.toFixed(6)}, ${gps.longitude.toFixed(6)}`)
+        .addTo(map);
+    }
+
+    function createAssistantProposalMarker(map, proposal) {
+      return L.circleMarker([proposal.gps.latitude, proposal.gps.longitude], {
+        radius: 8,
+        color: "#b36a00",
+        weight: 3,
+        fillColor: "#ffb224",
+        fillOpacity: 0.95
+      })
+        .bindTooltip(`Proposition assistant - ${proposal.gps.latitude.toFixed(6)}, ${proposal.gps.longitude.toFixed(6)}`)
+        .addTo(map);
+    }
+
+    function destroyVisibleMaps() {
+      for (const entry of state.visibleMapEntries.values()) {
+        entry.map.remove();
+      }
+      state.visibleMapEntries.clear();
+    }
+
+    function setReview(canyonId, review) {
+      const normalized = normalizeReview({ canyonId, ...review });
+      if (!normalized) {
+        return;
+      }
+      state.reviewByCanyonId.set(canyonId, {
+        status: normalized.status,
+        gps: normalized.gps,
+        adminPlaced: normalized.adminPlaced,
+        pointType: normalized.pointType,
+        label: normalized.label
+      });
+      persistLocalSession();
+      updateCardState(canyonId);
+      updateChrome();
+    }
+
+    function defaultGpsForItem(item) {
+      if (!item || !item.catchment) {
+        return null;
+      }
+      if (!Number.isFinite(Number(item.catchment.latitude)) || !Number.isFinite(Number(item.catchment.longitude))) {
+        return null;
+      }
+      return {
+        latitude: Number(Number(item.catchment.latitude).toFixed(6)),
+        longitude: Number(Number(item.catchment.longitude).toFixed(6))
+      };
+    }
+
+    function updateCardState(canyonId) {
+      const review = state.reviewByCanyonId.get(canyonId);
+      const pillHost = document.getElementById(`status-pill-${canyonId}`);
+      const gpsLine = document.getElementById(`gps-line-${canyonId}`);
+      const goodButton = document.getElementById(`good-button-${canyonId}`);
+      const badButton = document.getElementById(`bad-button-${canyonId}`);
+
+      if (pillHost) {
+        if (!review) {
+          pillHost.innerHTML = `<span class="pill">Pending</span>`;
+        } else if (review.status === "good") {
+          pillHost.innerHTML = `<span class="pill" style="background: var(--success-soft); color: var(--success); border-color: #badfca;">Good${review.adminPlaced ? " · admin" : ""}</span>`;
+        } else if (review.status === "pending") {
+          pillHost.innerHTML = `<span class="pill" style="background: var(--warning-soft); color: var(--warning); border-color: #efdaa3;">Pending${review.adminPlaced ? " · admin" : ""}</span>`;
+        } else {
+          pillHost.innerHTML = `<span class="pill" style="background: var(--danger-soft); color: var(--danger); border-color: #edbbb6;">Bad${review.adminPlaced ? " · admin" : ""}</span>`;
+        }
+      }
+
+      if (gpsLine) {
+        if (review && review.gps) {
+          gpsLine.textContent = formatGpsLine(review.gps);
+        } else if (review && (review.status === "bad" || review.status === "pending")) {
+          gpsLine.textContent = "GPS retenu: aucun - clique sur la carte pour le definir.";
+        } else {
+          const item = state.orderedItems.find((entry) => entry.canyonId === canyonId);
+          const defaultGps = defaultGpsForItem(item);
+          gpsLine.textContent = defaultGps ? `Point retenu actuel: ${formatGps(defaultGps)}` : "GPS retenu: aucun";
+        }
+      }
+
+      if (goodButton) {
+        goodButton.classList.toggle("button-active", Boolean(review && review.status === "good"));
+      }
+      if (badButton) {
+        badButton.classList.toggle("button-active", Boolean(review && review.status === "bad"));
+      }
+
+      const mapEntry = state.visibleMapEntries.get(canyonId);
+      if (mapEntry) {
+        if (mapEntry.reviewPointMarker) {
+          mapEntry.map.removeLayer(mapEntry.reviewPointMarker);
+          mapEntry.reviewPointMarker = null;
+        }
+        if (review && review.gps) {
+          mapEntry.reviewPointMarker = createReviewMarker(mapEntry.map, review.gps);
+        }
+      }
+    }
+
+    function updateChrome() {
+      const pageCount = getPageCount();
+      const visibleItems = getVisibleItems();
+      const reviewedOnPage = visibleItems.filter((item) => state.reviewByCanyonId.has(item.canyonId)).length;
+      const remainingOnPage = visibleItems.length - reviewedOnPage;
+      const goodCount = countReviews("good");
+      const badCount = countReviews("bad");
+      const pendingCount = countReviews("pending");
+
+      if (!state.loaded) {
+        elements.pageLabel.textContent = "Chargement...";
+      } else if (pageCount === 0) {
+        elements.pageLabel.textContent = "Canyon 0 / 0";
+      } else {
+        const start = state.currentPage * PAGE_SIZE + 1;
+        elements.pageLabel.textContent = `Canyon ${start} / ${state.orderedItems.length}`;
+      }
+
+      elements.statsRow.innerHTML = [
+        chip(`${state.reviewByCanyonId.size}/${state.orderedItems.length} revus`),
+        chip(`${goodCount} good`),
+        chip(`${pendingCount} pending`, pendingCount > 0 ? "chip-warning" : ""),
+        chip(`${badCount} bad`)
+      ].join("");
+
+      elements.prevPage.disabled = state.currentPage <= 0;
+      elements.nextPage.disabled = !state.loaded || state.currentPage + 1 >= pageCount;
+
+      updateSaveButton(remainingOnPage, visibleItems.length, pageCount);
+    }
+
+    function updateSaveButton(remainingOnPage = 0, visibleCount = 0, pageCount = 0) {
+      const button = elements.saveNext;
+
+      if (state.saving) {
+        button.disabled = true;
+        button.innerHTML = `<span class="fab-title">Enregistrement en cours...</span><span class="fab-subtitle">Mise a jour de ${REVIEW_FILE_PATH}.</span>`;
+        return;
+      }
+
+      if (!state.loaded) {
+        button.disabled = true;
+        button.innerHTML = `<span class="fab-title">Chargement en cours...</span><span class="fab-subtitle">Les JSON du repo sont charges automatiquement.</span>`;
+        return;
+      }
+
+      if (visibleCount === 0) {
+        button.disabled = true;
+        button.innerHTML = `<span class="fab-title">Revue terminee</span><span class="fab-subtitle">Il n'y a plus de canyon a afficher.</span>`;
+        return;
+      }
+
+      const isLastPage = state.currentPage + 1 >= pageCount;
+      button.disabled = false;
+      button.innerHTML = `<span class="fab-title">${isLastPage ? "Enregistrer" : "Enregistrer et suivant"}</span><span class="fab-subtitle">Espace: save + suivant. Entree: good + save + suivant.</span>`;
+    }
+
+    function getCurrentItem() {
+      const visibleItems = getVisibleItems();
+      return visibleItems.length > 0 ? visibleItems[0] : null;
+    }
+
+    async function saveAndAdvance() {
+      if (!state.loaded) {
+        return;
+      }
+
+      const payload = exportableReviews();
+      const pageCount = getPageCount();
+      const previousPage = state.currentPage;
+      const nextPage = previousPage + 1 < pageCount ? previousPage + 1 : previousPage;
+
+      state.saving = true;
+      updateChrome();
+      try {
+        await persistStateToServer({ currentPage: nextPage, reviews: payload });
+      } catch (error) {
+        console.error(error);
+        state.saving = false;
+        updateChrome();
+        setStatus(`Enregistrement impossible: ${error.message}`);
+        return;
+      }
+
+      state.currentPage = nextPage;
+      persistLocalSession();
+      state.saving = false;
+      renderPage();
+      if (nextPage !== previousPage) {
+        setStatus(`JSON enregistre dans ${REVIEW_FILE_PATH}. Passage au canyon suivant.`);
+        return;
+      }
+      setStatus(`JSON enregistre dans ${REVIEW_FILE_PATH}. Fin de la revue atteinte.`);
+    }
+
+    async function markGoodAndAdvance() {
+      const currentItem = getCurrentItem();
+      if (!currentItem) {
+        return;
+      }
+      const currentReview = state.reviewByCanyonId.get(currentItem.canyonId);
+      setReview(currentItem.canyonId, {
+        status: "good",
+        gps: currentReview && currentReview.gps ? currentReview.gps : defaultGpsForItem(currentItem),
+        adminPlaced: Boolean(currentReview && currentReview.adminPlaced),
+        pointType: currentReview && currentReview.pointType ? currentReview.pointType : currentItem.catchment.pointType,
+        label: currentReview && currentReview.label !== undefined ? currentReview.label : currentItem.catchment.label
+      });
+      await saveAndAdvance();
+    }
+
+    async function persistStateToServer(payload) {
+      const response = await fetch(REVIEW_STATE_API_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(payload)
+      });
+      if (!response.ok) {
+        throw new Error(`serveur ${response.status}`);
+      }
+      return response.json();
+    }
+
+    function countReviews(status) {
+      let count = 0;
+      for (const review of state.reviewByCanyonId.values()) {
+        if (review.status === status) {
+          count += 1;
+        }
+      }
+      return count;
+    }
+
+    function exportableReviews() {
+      return Array.from(state.reviewByCanyonId.entries())
+        .map(([canyonId, review]) => ({
+          canyonId,
+          status: review.status,
+          gps: review.gps ? {
+            latitude: Number(review.gps.latitude.toFixed(6)),
+            longitude: Number(review.gps.longitude.toFixed(6))
+          } : null,
+          adminPlaced: Boolean(review.adminPlaced),
+          pointType: review.pointType || null,
+          label: review.label ?? null
+        }))
+        .sort((left, right) => left.canyonId - right.canyonId);
+    }
+
+    function persistLocalSession() {
+      const payload = {
+        currentPage: state.currentPage,
+        reviews: exportableReviews()
+      };
+      window.localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(payload));
+    }
+
+    function restoreLocalSession() {
+      const raw = window.localStorage.getItem(LOCAL_STORAGE_KEY);
+      if (!raw) {
+        return;
+      }
+      try {
+        const parsed = JSON.parse(raw);
+        if (Number.isFinite(Number(parsed.currentPage))) {
+          state.currentPage = Number(parsed.currentPage);
+        }
+        if (Array.isArray(parsed.reviews)) {
+          for (const rawReview of parsed.reviews) {
+            const normalized = normalizeReview(rawReview);
+            if (normalized) {
+              state.reviewByCanyonId.set(normalized.canyonId, {
+                status: normalized.status,
+                gps: normalized.gps,
+                adminPlaced: normalized.adminPlaced,
+                pointType: normalized.pointType,
+                label: normalized.label
+              });
+            }
+          }
+        }
+      } catch (error) {
+        console.error(error);
+        window.localStorage.removeItem(LOCAL_STORAGE_KEY);
+      }
+    }
+
+    function normalizeReview(rawReview) {
+      if (!rawReview || !Number.isFinite(Number(rawReview.canyonId))) {
+        return null;
+      }
+      const status = String(rawReview.status || "").toLowerCase();
+      if (status !== "good" && status !== "bad" && status !== "pending") {
+        return null;
+      }
+      let gps = null;
+      if (rawReview.gps && Number.isFinite(Number(rawReview.gps.latitude)) && Number.isFinite(Number(rawReview.gps.longitude))) {
+        gps = {
+          latitude: Number(rawReview.gps.latitude),
+          longitude: Number(rawReview.gps.longitude)
+        };
+      }
+      return {
+        canyonId: Number(rawReview.canyonId),
+        status,
+        gps,
+        adminPlaced: Boolean(rawReview.adminPlaced),
+        pointType: rawReview.pointType ? String(rawReview.pointType) : null,
+        label: rawReview.label == null ? null : String(rawReview.label)
+      };
+    }
+
+    function normalizeAssistantProposal(rawProposal) {
+      if (!rawProposal || !Number.isFinite(Number(rawProposal.canyonId))) {
+        return null;
+      }
+      const rawGps = rawProposal.gps;
+      if (!rawGps || !Number.isFinite(Number(rawGps.latitude)) || !Number.isFinite(Number(rawGps.longitude))) {
+        return null;
+      }
+      return {
+        canyonId: Number(rawProposal.canyonId),
+        gps: {
+          latitude: Number(rawGps.latitude),
+          longitude: Number(rawGps.longitude)
+        },
+        summary: String(rawProposal.summary || ""),
+        confidence: String(rawProposal.confidence || "")
+      };
+    }
+
+    function setStatus(text) {
+      elements.statusText.textContent = text;
+    }
+
+    function chip(text, extraClass = "") {
+      return `<span class="chip ${extraClass}">${escapeHtml(text)}</span>`;
+    }
+
+    function formatArea(value) {
+      if (!Number.isFinite(value)) {
+        return "-";
+      }
+      return `${formatNumber(value, value < 1 ? 3 : 2)} km2`;
+    }
+
+    function formatMeters(value) {
+      return Number.isFinite(Number(value)) ? `${formatNumber(value, 1)} m` : "-";
+    }
+
+    function formatRatio(value) {
+      return Number.isFinite(Number(value)) ? formatNumber(value, value >= 100 ? 0 : 1) : "-";
+    }
+
+    function formatGpsLine(gps) {
+      return `GPS retenu: ${formatGps(gps)}`;
+    }
+
+    function formatGps(gps) {
+      return `${gps.latitude.toFixed(6)}, ${gps.longitude.toFixed(6)}`;
+    }
+
+    function formatNumber(value, fractionDigits) {
+      return Number(value).toLocaleString("fr-FR", {
+        minimumFractionDigits: 0,
+        maximumFractionDigits: fractionDigits
+      });
+    }
+
+    function escapeHtml(value) {
+      return String(value)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/\"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+    }
+  </script>
+</body>
+</html>

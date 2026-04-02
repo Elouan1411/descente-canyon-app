@@ -24,15 +24,23 @@ def write_json(path: Path, data: Any) -> None:
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Download ESA WorldCover tiles on demand and rebuild a global VRT cache.")
-    parser.add_argument("--point", action="append", required=True, help="Point as lat,lon")
+    parser.add_argument("--point", action="append", default=[], help="Point as lat,lon")
+    parser.add_argument("--points-file", type=Path, help="Text file with one lat,lon point per line")
     parser.add_argument("--buffer-km", type=float, default=20.0)
     parser.add_argument("--output-dir", type=Path, default=Path("build/watersheds/worldcover"))
     parser.add_argument("--gdalbuildvrt", default=default_gdalbuildvrt())
-    return parser.parse_args()
+    args = parser.parse_args()
+    if not args.point and args.points_file is None:
+        parser.error("Provide at least one --point or a --points-file")
+    return args
 
 
 def parse_points(values: list[str]) -> list[tuple[float, float]]:
     return [(float(v.split(",", 1)[0]), float(v.split(",", 1)[1])) for v in values]
+
+
+def load_points_from_file(path: Path) -> list[str]:
+    return [line.strip() for line in path.read_text(encoding="utf-8").splitlines() if line.strip()]
 
 
 def acquire_lock(lock_path: Path, *, timeout_sec: int = 1800) -> int:
@@ -116,7 +124,10 @@ def build_vrt(gdalbuildvrt: str, tif_paths: list[Path], vrt_path: Path) -> None:
 
 def main() -> int:
     args = parse_args()
-    points = parse_points(args.point)
+    point_values = list(args.point)
+    if args.points_file is not None:
+        point_values.extend(load_points_from_file(args.points_file.resolve()))
+    points = parse_points(point_values)
     output_dir = args.output_dir.resolve()
     raw_dir = output_dir / "raw"
     vrt_path = output_dir / "vrt" / "_all_downloaded.vrt"

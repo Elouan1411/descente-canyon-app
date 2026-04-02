@@ -58,6 +58,8 @@ DYNAMIC_AUTOPREPARE_PROVIDERS = {
     "copernicus",
 }
 
+DEFAULT_REVIEW_FILE = Path("watershed-review/watershed-review.json")
+
 
 def load_json(path: Path) -> Any:
     return json.loads(path.read_text(encoding="utf-8"))
@@ -103,37 +105,71 @@ def should_skip_existing_canyon(path: Path, skip_existing: bool) -> bool:
     return status != "error"
 
 
-def load_review_points(review_file: Path) -> dict[int, list[dict[str, Any]]]:
+def load_review_overrides(review_file: Path) -> dict[int, dict[str, Any]]:
     reviews = load_json(review_file)
     if not isinstance(reviews, list):
         raise SystemExit(f"Invalid review file format: {review_file}")
-    by_canyon: dict[int, list[dict[str, Any]]] = {}
+
+    overrides: dict[int, dict[str, Any]] = {}
     for review in reviews:
         if not isinstance(review, dict):
             continue
-        if str(review.get("status", "")).lower() != "bad":
+        status = str(review.get("status", "")).lower()
+        if status not in {"good", "bad", "pending"}:
             continue
+        gps = review.get("gps")
+        normalized_gps = None
+        if isinstance(gps, dict):
+            try:
+                normalized_gps = {
+                    "latitude": float(gps["latitude"]),
+                    "longitude": float(gps["longitude"]),
+                }
+            except (KeyError, TypeError, ValueError):
+                normalized_gps = None
+        try:
+            canyon_id = int(review["canyonId"])
+        except (KeyError, TypeError, ValueError):
+            continue
+        overrides[canyon_id] = {
+            "canyonId": canyon_id,
+            "status": status,
+            "gps": normalized_gps,
+            "adminPlaced": bool(review.get("adminPlaced", False)),
+            "pointType": review.get("pointType"),
+            "label": review.get("label"),
+        }
+    return overrides
+
+
+def apply_review_overrides(
+    points_by_canyon: dict[int, list[dict[str, Any]]],
+    review_overrides: dict[int, dict[str, Any]],
+    *,
+    review_file: Path,
+) -> dict[int, list[dict[str, Any]]]:
+    merged = {canyon_id: list(points) for canyon_id, points in points_by_canyon.items()}
+    review_file_str = str(review_file).replace("\\", "/")
+    for canyon_id, review in review_overrides.items():
         gps = review.get("gps")
         if not isinstance(gps, dict):
             continue
-        try:
-            canyon_id = int(review["canyonId"])
-            latitude = float(gps["latitude"])
-            longitude = float(gps["longitude"])
-        except (KeyError, TypeError, ValueError):
-            continue
-        by_canyon[canyon_id] = [
+        merged.setdefault(canyon_id, [])
+        merged[canyon_id].insert(
+            0,
             {
                 "canyonId": canyon_id,
-                "type": "REVIEW_GPS",
-                "label": "review_gps",
-                "latitude": latitude,
-                "longitude": longitude,
+                "type": review.get("pointType") or "REVIEW_GPS",
+                "label": review.get("label") or "review_truth",
+                "latitude": gps["latitude"],
+                "longitude": gps["longitude"],
                 "_forceExactCell": True,
-                "_reviewStatus": "bad",
-            }
-        ]
-    return by_canyon
+                "_reviewStatus": review.get("status"),
+                "_reviewAdminPlaced": bool(review.get("adminPlaced", False)),
+                "_reviewSourceFile": review_file_str,
+            },
+        )
+    return merged
 
 
 def bbox_for_points_in_crs(points: list[dict[str, Any]], target_crs: str, buffer_km: float) -> tuple[float, float, float, float]:
@@ -218,7 +254,12 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument("--only-canyon-id", type=int, action="append")
     parser.add_argument("--only-canyon-id-file", type=Path)
-    parser.add_argument("--review-file", type=Path)
+    parser.add_argument(
+        "--review-file",
+        type=Path,
+        default=DEFAULT_REVIEW_FILE,
+        help="Fichier de verite review utilise pour forcer les points valides/admin.",
+    )
     parser.add_argument("--max-canyons", type=int)
     parser.add_argument("--jobs", type=int, default=1)
     parser.add_argument("--aggregate-every", type=int, default=25)
@@ -806,15 +847,28 @@ def ensure_local_hydrology(
 
 
 def ensure_worldcover(points: list[dict[str, Any]]) -> dict[str, Any]:
+    if not points:
+        return {"path": None, "elapsedSec": 0.0}
     output_dir = Path("build/watersheds/worldcover")
+    deduped_points = {
+        (round(float(point["latitude"]), 6), round(float(point["longitude"]), 6))
+        for point in points
+        if point.get("latitude") is not None and point.get("longitude") is not None
+    }
+    points_file = output_dir / "requested_points.txt"
+    points_file.parent.mkdir(parents=True, exist_ok=True)
+    points_file.write_text(
+        "\n".join(f"{latitude},{longitude}" for latitude, longitude in sorted(deduped_points)) + "\n",
+        encoding="utf-8",
+    )
     command = [
         sys.executable,
         "scripts/prepare_worldcover.py",
         "--output-dir",
         str(output_dir),
+        "--points-file",
+        str(points_file),
     ]
-    for point in points:
-        command.extend(["--point", f"{point['latitude']},{point['longitude']}"])
     started = time.perf_counter()
     subprocess.run(command, check=True)
     elapsed = time.perf_counter() - started
@@ -929,9 +983,13 @@ def ensure_rgi() -> dict[str, Any]:
     }
 
 
-def prepare_shared_descriptor_inputs(output_dir: Path) -> dict[str, Any]:
+def prepare_shared_descriptor_inputs(
+    output_dir: Path,
+    pending: list[tuple[int, dict[str, Any], list[dict[str, Any]]]],
+) -> dict[str, Any]:
     shared: dict[str, Any] = {
         "climate": None,
+        "worldcover": None,
         "ghsl": None,
         "hydrolakes": None,
         "gdw": None,
@@ -939,7 +997,8 @@ def prepare_shared_descriptor_inputs(output_dir: Path) -> dict[str, Any]:
         "glim": None,
         "errors": {},
     }
-    preparations = [
+    shared_points = [point for _, _, points in pending for point in points]
+    preparations: list[tuple[str, Any]] = [
         ("climate", ensure_worldclim_climate),
         ("ghsl", ensure_ghsl_built),
         ("hydrolakes", ensure_hydrolakes),
@@ -947,12 +1006,18 @@ def prepare_shared_descriptor_inputs(output_dir: Path) -> dict[str, Any]:
         ("rgi", ensure_rgi),
         ("glim", ensure_glim),
     ]
-    for key, loader in preparations:
-        try:
-            shared[key] = loader()
-        except Exception as exc:
-            shared["errors"][key] = f"{type(exc).__name__}: {exc}"
-            print(f"WARN shared descriptor prepare failed for {key}: {type(exc).__name__}: {exc}", flush=True)
+    if shared_points:
+        preparations.append(("worldcover", lambda: ensure_worldcover(shared_points)))
+
+    with concurrent.futures.ThreadPoolExecutor(max_workers=min(len(preparations), 6)) as executor:
+        future_map = {executor.submit(loader): key for key, loader in preparations}
+        for future in concurrent.futures.as_completed(future_map):
+            key = future_map[future]
+            try:
+                shared[key] = future.result()
+            except Exception as exc:
+                shared["errors"][key] = f"{type(exc).__name__}: {exc}"
+                print(f"WARN shared descriptor prepare failed for {key}: {type(exc).__name__}: {exc}", flush=True)
     write_json(output_dir / "global_prepare.json", shared)
     return shared
 
@@ -1006,6 +1071,9 @@ def evaluate_points_for_canyon(
                     "latitude": point.get("latitude"),
                     "longitude": point.get("longitude"),
                     "forcedByReview": bool(point.get("_forceExactCell")),
+                    "reviewStatus": point.get("_reviewStatus"),
+                    "reviewAdminPlaced": bool(point.get("_reviewAdminPlaced", False)),
+                    "reviewSourceFile": point.get("_reviewSourceFile"),
                     "evaluation": asdict(evaluated),
                 }
             )
@@ -1019,15 +1087,20 @@ def evaluate_points_for_canyon(
 
 
 def analyze_point_candidates(points: list[dict[str, Any]]) -> dict[str, Any]:
+    review_truth_candidate = next((point for point in points if point.get("forcedByReview")), None)
     valid = [point for point in points if point["evaluation"]["snapped_upa_km2"] is not None]
     if not valid:
         return {
             "points": points,
-            "bestHydroProxyCandidate": None,
+            "bestHydroProxyCandidate": review_truth_candidate,
+            "suggestedCandidate": None,
+            "reviewTruthCandidate": review_truth_candidate,
             "strictTopoCandidate": None,
             "analysisSummary": {
                 "validCandidateCount": 0,
                 "maxUpaKm2": None,
+                "reviewTruthUsed": review_truth_candidate is not None,
+                "reviewTruthStatus": review_truth_candidate.get("reviewStatus") if review_truth_candidate else None,
             },
         }
 
@@ -1132,9 +1205,10 @@ def analyze_point_candidates(points: list[dict[str, Any]]) -> dict[str, Any]:
     for rank, point in enumerate(ranked_valid, start=1):
         point["analysis"]["selectionRank"] = rank
 
-    best_hydro_proxy = next(
-        (point for point in ranked_valid if point["analysis"]["selectionVerdict"] in {"good_proxy", "possible_proxy", "uncertain"}),
-        ranked_valid[0] if ranked_valid else None,
+    auto_ranked_valid = [point for point in ranked_valid if not point.get("forcedByReview")]
+    algorithm_suggested_candidate = next(
+        (point for point in auto_ranked_valid if point["analysis"]["selectionVerdict"] in {"good_proxy", "possible_proxy", "uncertain"}),
+        auto_ranked_valid[0] if auto_ranked_valid else None,
     )
     strict_topo_candidate = min(
         ranked_valid,
@@ -1144,16 +1218,40 @@ def analyze_point_candidates(points: list[dict[str, Any]]) -> dict[str, Any]:
         ),
     ) if ranked_valid else None
 
+    selected_candidate = review_truth_candidate or algorithm_suggested_candidate
+
     return {
         "points": analyzed_points,
-        "bestHydroProxyCandidate": best_hydro_proxy,
+        "bestHydroProxyCandidate": selected_candidate,
+        "suggestedCandidate": algorithm_suggested_candidate,
+        "reviewTruthCandidate": review_truth_candidate,
         "strictTopoCandidate": strict_topo_candidate,
         "analysisSummary": {
             "validCandidateCount": len(ranked_valid),
             "maxUpaKm2": round(max_upa, 6),
-            "bestHydroProxyPointType": best_hydro_proxy.get("pointType") if best_hydro_proxy else None,
+            "bestHydroProxyPointType": selected_candidate.get("pointType") if selected_candidate else None,
             "strictTopoPointType": strict_topo_candidate.get("pointType") if strict_topo_candidate else None,
+            "algorithmSuggestedPointType": algorithm_suggested_candidate.get("pointType") if algorithm_suggested_candidate else None,
+            "reviewTruthUsed": review_truth_candidate is not None,
+            "reviewTruthStatus": review_truth_candidate.get("reviewStatus") if review_truth_candidate else None,
         },
+    }
+
+
+def review_metadata_for_points(points: list[dict[str, Any]]) -> dict[str, Any] | None:
+    review_point = next((point for point in points if point.get("_forceExactCell")), None)
+    if review_point is None:
+        return None
+    return {
+        "status": review_point.get("_reviewStatus"),
+        "adminPlaced": bool(review_point.get("_reviewAdminPlaced", False)),
+        "gps": {
+            "latitude": float(review_point["latitude"]),
+            "longitude": float(review_point["longitude"]),
+        },
+        "pointType": review_point.get("type"),
+        "label": review_point.get("label"),
+        "sourceFile": review_point.get("_reviewSourceFile"),
     }
 
 
@@ -1552,7 +1650,10 @@ def process_single_canyon(
     stage_timings["analyzeCandidatesSec"] = time.perf_counter() - started
     analyzed_points = candidate_analysis["points"]
     selected_candidate = candidate_analysis["bestHydroProxyCandidate"]
+    suggested_candidate = candidate_analysis.get("suggestedCandidate")
+    review_truth_candidate = candidate_analysis.get("reviewTruthCandidate")
     strict_topo_candidate = candidate_analysis["strictTopoCandidate"]
+    review_metadata = review_metadata_for_points(points)
     watershed = None
     descriptors = None
     osm_regulation = None
@@ -1615,19 +1716,14 @@ def process_single_canyon(
 
     if mask_data is not None and raster_paths.get("elevation") is not None and selected_candidate is not None:
         climate_info = shared_descriptor_inputs.get("climate")
-        worldcover_info = None
+        worldcover_info = shared_descriptor_inputs.get("worldcover")
         ghsl_info = shared_descriptor_inputs.get("ghsl")
         hydrolakes_info = shared_descriptor_inputs.get("hydrolakes")
         gdw_info = shared_descriptor_inputs.get("gdw")
         glim_info = shared_descriptor_inputs.get("glim")
         rgi_info = shared_descriptor_inputs.get("rgi")
         stage_timings["prepareClimateSec"] = 0.0
-        try:
-            worldcover_info = ensure_worldcover(points)
-            stage_timings["prepareWorldCoverSec"] = float(worldcover_info["elapsedSec"])
-        except Exception:
-            worldcover_info = None
-            stage_timings["prepareWorldCoverSec"] = 0.0
+        stage_timings["prepareWorldCoverSec"] = 0.0
         stage_timings["prepareGHSLBuiltSec"] = 0.0
         stage_timings["prepareHydroLakesSec"] = 0.0
         stage_timings["prepareGDWSec"] = 0.0
@@ -1723,7 +1819,9 @@ def process_single_canyon(
         "analysisSummary": candidate_analysis["analysisSummary"],
         "bestHydroProxyCandidate": selected_candidate,
         "strictTopoCandidate": strict_topo_candidate,
-        "suggestedCandidate": selected_candidate,
+        "suggestedCandidate": suggested_candidate,
+        "reviewTruthCandidate": review_truth_candidate,
+        "reviewOverride": review_metadata,
         "watershed": watershed,
         "descriptors": descriptors,
         "osmRegulationProbe": osm_regulation,
@@ -1825,11 +1923,11 @@ def main() -> int:
         ]
     canyons = load_canyons(args.canyons_json)
     point_types = set(args.point_type)
-    if args.review_file:
-        points_by_canyon = load_review_points(args.review_file)
-    else:
-        geo_points = load_json(args.geo_points_json)
-        points_by_canyon = all_canyon_points(geo_points, point_types)
+    geo_points = load_json(args.geo_points_json)
+    points_by_canyon = all_canyon_points(geo_points, point_types)
+    if args.review_file and args.review_file.exists():
+        review_overrides = load_review_overrides(args.review_file)
+        points_by_canyon = apply_review_overrides(points_by_canyon, review_overrides, review_file=args.review_file)
 
     canyon_ids = sorted(points_by_canyon)
     countries = set(args.country or [])
@@ -1872,8 +1970,9 @@ def main() -> int:
                 continue
             pending.append((canyon_id, canyon, points))
 
-        shared_descriptor_inputs = prepare_shared_descriptor_inputs(output_dir) if pending else {
+        shared_descriptor_inputs = prepare_shared_descriptor_inputs(output_dir, pending) if pending else {
             "climate": None,
+            "worldcover": None,
             "ghsl": None,
             "hydrolakes": None,
             "gdw": None,
