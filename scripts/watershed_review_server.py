@@ -12,6 +12,7 @@ from urllib.parse import urlparse
 ROOT_DIR = Path(__file__).resolve().parent.parent
 DEFAULT_REVIEW_FILE = ROOT_DIR / "watershed-review" / "watershed-review.json"
 DEFAULT_STATE_FILE = ROOT_DIR / "build" / "watershed-review" / "watershed-review-state.json"
+LEGACY_REVIEW_FILE = ROOT_DIR / "build" / "watershed-review" / "watershed-review.json"
 
 REVIEW_FILE = DEFAULT_REVIEW_FILE
 STATE_FILE = DEFAULT_STATE_FILE
@@ -81,25 +82,61 @@ def normalize_state(raw_state: object) -> dict[str, object]:
     }
 
 
+def load_reviews_file(path: Path) -> tuple[list[dict[str, object]], float] | None:
+    if not path.exists():
+        return None
+    try:
+        raw_reviews = json.loads(path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return None
+    if not isinstance(raw_reviews, list):
+        return None
+    reviews = []
+    for raw_review in raw_reviews:
+        normalized_review = normalize_review(raw_review)
+        if normalized_review is not None:
+            reviews.append(normalized_review)
+    reviews.sort(key=lambda review: int(review["canyonId"]))
+    return reviews, path.stat().st_mtime
+
+
+def load_reviews_from_state_file(path: Path) -> tuple[list[dict[str, object]], float] | None:
+    if not path.exists():
+        return None
+    try:
+        raw_state = json.loads(path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return None
+    normalized_state = normalize_state(raw_state)
+    reviews = normalized_state.get("reviews")
+    if not isinstance(reviews, list):
+        return None
+    return reviews, path.stat().st_mtime
+
+
 def load_saved_reviews() -> list[dict[str, object]]:
-    candidate_paths = [REVIEW_FILE, ROOT_DIR / "build" / "watershed-review" / "watershed-review.json"]
-    for path in candidate_paths:
-        if not path.exists():
+    sources: list[tuple[str, list[dict[str, object]], float]] = []
+    review_source = load_reviews_file(REVIEW_FILE)
+    if review_source is not None:
+        sources.append(("truth", review_source[0], review_source[1]))
+    legacy_source = load_reviews_file(LEGACY_REVIEW_FILE)
+    if legacy_source is not None:
+        sources.append(("legacy", legacy_source[0], legacy_source[1]))
+    state_source = load_reviews_from_state_file(STATE_FILE)
+    if state_source is not None:
+        sources.append(("state", state_source[0], state_source[1]))
+    if not sources:
+        return []
+
+    primary_name, primary_reviews, _ = max(sources, key=lambda item: item[2])
+    merged: dict[int, dict[str, object]] = {int(review["canyonId"]): review for review in primary_reviews}
+    for source_name, reviews, _ in sources:
+        if source_name == primary_name:
             continue
-        try:
-            raw_reviews = json.loads(path.read_text(encoding="utf-8"))
-        except json.JSONDecodeError:
-            continue
-        if not isinstance(raw_reviews, list):
-            continue
-        reviews = []
-        for raw_review in raw_reviews:
-            normalized_review = normalize_review(raw_review)
-            if normalized_review is not None:
-                reviews.append(normalized_review)
-        reviews.sort(key=lambda review: int(review["canyonId"]))
-        return reviews
-    return []
+        for review in reviews:
+            merged.setdefault(int(review["canyonId"]), review)
+    normalized = [merged[canyon_id] for canyon_id in sorted(merged)]
+    return normalized
 
 
 def load_saved_state() -> dict[str, object]:
@@ -120,8 +157,11 @@ def load_saved_state() -> dict[str, object]:
 def write_state(state: dict[str, object]) -> None:
     STATE_FILE.parent.mkdir(parents=True, exist_ok=True)
     REVIEW_FILE.parent.mkdir(parents=True, exist_ok=True)
+    LEGACY_REVIEW_FILE.parent.mkdir(parents=True, exist_ok=True)
+    review_payload = json.dumps(state["reviews"], ensure_ascii=True, indent=2) + "\n"
     STATE_FILE.write_text(json.dumps(state, ensure_ascii=True, indent=2) + "\n", encoding="utf-8")
-    REVIEW_FILE.write_text(json.dumps(state["reviews"], ensure_ascii=True, indent=2) + "\n", encoding="utf-8")
+    REVIEW_FILE.write_text(review_payload, encoding="utf-8")
+    LEGACY_REVIEW_FILE.write_text(review_payload, encoding="utf-8")
 
 
 class ReviewRequestHandler(SimpleHTTPRequestHandler):
