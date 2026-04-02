@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
+import androidx.navigation.NavOptionsBuilder
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.toRoute
@@ -30,10 +31,10 @@ fun AppNavHost(
         composable<Screen.Home> {
             HomeScreen(
                 onCanyonClick = { canyonId ->
-                    navController.navigate(Screen.CanyonDetail(canyonId))
+                    navController.navigateSingleTop(Screen.CanyonDetail(canyonId))
                 },
                 onQuickSearchClick = {
-                    navController.navigate(Screen.Search)
+                    navController.navigateSingleTop(Screen.Search)
                 },
                 contentPadding = topLevelContentPadding,
             )
@@ -42,7 +43,7 @@ fun AppNavHost(
         composable<Screen.Search> {
             SearchScreen(
                 onCanyonClick = { canyonId ->
-                    navController.navigate(Screen.CanyonDetail(canyonId))
+                    navController.navigateSingleTop(Screen.CanyonDetail(canyonId))
                 },
                 contentPadding = topLevelContentPadding,
             )
@@ -51,7 +52,7 @@ fun AppNavHost(
         composable<Screen.Map> {
             MapScreen(
                 onCanyonClick = { canyonId ->
-                    navController.navigate(Screen.CanyonDetail(canyonId))
+                    navController.navigateSingleTop(Screen.CanyonDetail(canyonId))
                 },
                 contentPadding = topLevelContentPadding,
             )
@@ -60,7 +61,7 @@ fun AppNavHost(
         composable<Screen.Favorites> {
             FavoritesScreen(
                 onCanyonClick = { canyonId ->
-                    navController.navigate(Screen.CanyonDetail(canyonId))
+                    navController.navigateSingleTop(Screen.CanyonDetail(canyonId))
                 },
                 contentPadding = topLevelContentPadding,
             )
@@ -71,13 +72,13 @@ fun AppNavHost(
             CanyonDetailScreen(
                 canyonId = detail.canyonId,
                 onBackClick = { navController.popBackStack() },
-                onReportDebitClick = { navController.navigate(Screen.DebitForm(detail.canyonId)) },
-                onShowMapClick = { navController.navigate(Screen.CanyonPointsMap(detail.canyonId)) },
+                onReportDebitClick = { navController.navigateSingleTop(Screen.DebitForm(detail.canyonId)) },
+                onShowMapClick = { navController.navigateSingleTop(Screen.CanyonPointsMap(detail.canyonId)) },
                 onOpenPredictionInfo = { lookupSourceName ->
-                    navController.navigate(Screen.DebitPredictionInfo(lookupSourceName))
+                    navController.navigateSingleTop(Screen.DebitPredictionInfo(lookupSourceName))
                 },
                 onOpenPhotoGallery = { photoId ->
-                    navController.navigate(Screen.PhotoGallery(detail.canyonId, photoId))
+                    navController.navigateSingleTop(Screen.PhotoGallery(detail.canyonId, photoId))
                 },
                 contentPadding = topLevelContentPadding,
             )
@@ -113,4 +114,14 @@ fun AppNavHost(
             )
         }
     }
+}
+
+private fun NavHostController.navigateSingleTop(screen: Screen) {
+    navigate(screen) {
+        applySingleTopNavigation()
+    }
+}
+
+internal fun NavOptionsBuilder.applySingleTopNavigation() {
+    launchSingleTop = true
 }
