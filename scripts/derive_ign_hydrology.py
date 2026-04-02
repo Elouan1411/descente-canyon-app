@@ -19,6 +19,19 @@ def write_json(path: Path, data: dict) -> None:
     path.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
 
 
+def reset_outputs(paths: list[Path]) -> None:
+    for path in paths:
+        path.unlink(missing_ok=True)
+
+
+def validate_outputs(paths: list[Path], *, step_name: str) -> None:
+    missing = [str(path) for path in paths if not path.exists() or path.stat().st_size == 0]
+    if missing:
+        raise SystemExit(
+            f"{step_name} did not create expected raster outputs: {', '.join(missing)}"
+        )
+
+
 def convert_area_m2_to_km2(input_path: Path, output_path: Path) -> None:
     with rasterio.open(input_path) as src:
         profile = src.profile.copy()
@@ -111,6 +124,7 @@ def main() -> int:
     pointer_raster = output_dir / "ign_d8_pointer_esri.tif"
     accumulation_m2 = output_dir / "ign_upstream_area_m2.tif"
     accumulation_km2 = output_dir / "ign_upstream_area_km2.tif"
+    reset_outputs([breached_dem, pointer_raster, accumulation_m2, accumulation_km2])
 
     wbt = WhiteboxTools()
     if args.work_dir is not None:
@@ -119,7 +133,7 @@ def main() -> int:
         wbt.set_working_dir(str(work_dir))
 
     wbt.verbose = args.whitebox_verbose
-    wbt.flow_accumulation_full_workflow(
+    workflow_status = wbt.flow_accumulation_full_workflow(
         dem=str(dem_for_whitebox),
         out_dem=str(breached_dem),
         out_pntr=str(pointer_raster),
@@ -127,9 +141,16 @@ def main() -> int:
         out_type=args.out_type,
         esri_pntr=True,
     )
+    if workflow_status != 0:
+        raise SystemExit(f"Whitebox flow_accumulation_full_workflow failed with status={workflow_status}")
+    validate_outputs(
+        [breached_dem, pointer_raster, accumulation_m2],
+        step_name="Whitebox flow_accumulation_full_workflow",
+    )
 
     if args.out_type == "ca":
         convert_area_m2_to_km2(accumulation_m2, accumulation_km2)
+        validate_outputs([accumulation_km2], step_name="convert_area_m2_to_km2")
 
     metadata = {
         "inputDem": str(args.dem),

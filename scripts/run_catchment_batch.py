@@ -1255,6 +1255,27 @@ def review_metadata_for_points(points: list[dict[str, Any]]) -> dict[str, Any] |
     }
 
 
+def apply_shared_prepare_errors(
+    descriptors: dict[str, Any],
+    shared_errors: dict[str, str],
+) -> None:
+    status_by_key = {
+        "climate": "climateDescriptorStatus",
+        "hydrolakes": "hydroLakesStatus",
+        "gdw": "gdwStatus",
+        "glim": "geologyDescriptorStatus",
+        "ghsl": "imperviousDescriptorStatus",
+        "rgi": "glacierDescriptorStatus",
+    }
+    for shared_key, status_key in status_by_key.items():
+        error = shared_errors.get(shared_key)
+        if not error:
+            continue
+        current = descriptors.get(status_key)
+        if current in {None, "skipped"}:
+            descriptors[status_key] = f"error:prepare_failed:{shared_key}"
+
+
 def perpendicular_distance(point: tuple[float, float], start: tuple[float, float], end: tuple[float, float]) -> float:
     if start == end:
         return math.hypot(point[0] - start[0], point[1] - start[1])
@@ -1800,6 +1821,7 @@ def process_single_canyon(
             stage_timings["computeOsmRegulationSec"] = 0.0
 
         if descriptors is not None:
+            apply_shared_prepare_errors(descriptors, shared_descriptor_inputs.get("errors", {}))
             descriptors.update(_advanced_regulation_metrics(descriptors))
             descriptors.pop("hydroLakesNearestRegulationDistanceKm", None)
             descriptors.pop("gdwNearestRegulationDistanceKm", None)
