@@ -94,7 +94,35 @@ def load_canyon_ids_from_file(path: Path) -> list[int]:
     return canyon_ids
 
 
-def should_skip_existing_canyon(path: Path, skip_existing: bool) -> bool:
+def _normalize_gps(gps: dict[str, Any] | None) -> tuple[float, float] | None:
+    if not isinstance(gps, dict):
+        return None
+    try:
+        return (round(float(gps["latitude"]), 6), round(float(gps["longitude"]), 6))
+    except (KeyError, TypeError, ValueError):
+        return None
+
+
+def _extract_existing_selected_gps(payload: dict[str, Any]) -> tuple[float, float] | None:
+    review_override = payload.get("reviewOverride")
+    normalized_review_gps = _normalize_gps(review_override.get("gps") if isinstance(review_override, dict) else None)
+    if normalized_review_gps is not None:
+        return normalized_review_gps
+
+    candidate = payload.get("bestHydroProxyCandidate")
+    if isinstance(candidate, dict):
+        try:
+            return (round(float(candidate["latitude"]), 6), round(float(candidate["longitude"]), 6))
+        except (KeyError, TypeError, ValueError):
+            return None
+    return None
+
+
+def should_skip_existing_canyon(
+    path: Path,
+    skip_existing: bool,
+    review_override: dict[str, Any] | None = None,
+) -> bool:
     if not skip_existing or not path.exists():
         return False
     try:
@@ -102,7 +130,17 @@ def should_skip_existing_canyon(path: Path, skip_existing: bool) -> bool:
     except Exception:
         return False
     status = payload.get("status", "ok")
-    return status != "error"
+    if status == "error":
+        return False
+
+    current_review_gps = _normalize_gps(review_override.get("gps") if isinstance(review_override, dict) else None)
+    if current_review_gps is None:
+        return True
+
+    existing_selected_gps = _extract_existing_selected_gps(payload)
+    if existing_selected_gps is None:
+        return False
+    return existing_selected_gps == current_review_gps
 
 
 def load_review_overrides(review_file: Path) -> dict[int, dict[str, Any]]:
@@ -1947,6 +1985,7 @@ def main() -> int:
     point_types = set(args.point_type)
     geo_points = load_json(args.geo_points_json)
     points_by_canyon = all_canyon_points(geo_points, point_types)
+    review_overrides: dict[int, dict[str, Any]] = {}
     if args.review_file and args.review_file.exists():
         review_overrides = load_review_overrides(args.review_file)
         points_by_canyon = apply_review_overrides(points_by_canyon, review_overrides, review_file=args.review_file)
@@ -1982,7 +2021,7 @@ def main() -> int:
         pending = []
         for canyon_id in canyon_ids:
             canyon_file = output_dir / "canyons" / f"{canyon_id}.json"
-            if should_skip_existing_canyon(canyon_file, args.skip_existing):
+            if should_skip_existing_canyon(canyon_file, args.skip_existing, review_overrides.get(canyon_id)):
                 continue
             canyon = canyons.get(canyon_id)
             if canyon is None:
