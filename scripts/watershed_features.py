@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import math
+import threading
 from typing import Any
 
 import numpy as np
@@ -33,6 +34,8 @@ WORLDCLIM_MONTHS = tuple(range(1, 13))
 MONTH_DAY_OF_YEAR = (15, 45, 74, 105, 135, 166, 196, 227, 258, 288, 319, 349)
 MONTH_DAYS = (31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31)
 
+_SHARED_RASTER_CACHE = threading.local()
+
 GLIM_CLASS_CODES = {
     "su": 1,
     "vb": 2,
@@ -51,6 +54,18 @@ GLIM_CLASS_CODES = {
     "nd": 15,
     "ig": 16,
 }
+
+
+def _open_shared_raster(path: str):
+    cache = getattr(_SHARED_RASTER_CACHE, "datasets", None)
+    if cache is None:
+        cache = {}
+        _SHARED_RASTER_CACHE.datasets = cache
+    dataset = cache.get(path)
+    if dataset is None:
+        dataset = rasterio.open(path, sharing=True)
+        cache[path] = dataset
+    return dataset
 
 
 def _cell_center(transform: Affine, row: int, col: int) -> tuple[float, float]:
@@ -72,14 +87,9 @@ def _haversine_m(lat1: float, lon1: float, lat2: float, lon2: float) -> float:
     return 2.0 * radius_m * math.atan2(math.sqrt(a), math.sqrt(1.0 - a))
 
 
-def _cell_step_length_m(transform: Affine, crs: Any, row1: int, col1: int, row2: int, col2: int) -> float:
-    x1, y1 = _cell_center(transform, row1, col1)
-    x2, y2 = _cell_center(transform, row2, col2)
-    if crs is not None and getattr(crs, "is_geographic", False):
-        (lon1,), (lat1,) = transform_coords(crs, "EPSG:4326", [x1], [y1])
-        (lon2,), (lat2,) = transform_coords(crs, "EPSG:4326", [x2], [y2])
-        return _haversine_m(lat1, lon1, lat2, lon2)
-    return math.hypot(x2 - x1, y2 - y1)
+def _step_lengths_for_transform(transform_affine: Affine, crs: Any, lat_hint: float) -> dict[tuple[int, int], float]:
+    x_res_m, y_res_m = _resolution_m(transform_affine, crs, lat_hint)
+    return _step_lengths_for_grid(x_res_m, y_res_m)
 
 
 def transform_coords(src_crs: Any, dst_crs: Any, xs: list[float], ys: list[float]) -> tuple[list[float], list[float]]:
@@ -110,6 +120,7 @@ def build_watershed_mask_data(
         queue: list[tuple[int, int]] = [(target_row, target_col)]
         visited[target_row, target_col] = 1
         path_lengths[target_row, target_col] = 0.0
+        step_lengths = _step_lengths_for_transform(src.transform, raster_crs, snapped_latitude)
 
         index = 0
         while index < len(queue):
@@ -132,7 +143,7 @@ def build_watershed_mask_data(
                     if n_row + offset[0] == row and n_col + offset[1] == col:
                         visited[n_row, n_col] = 1
                         queue.append((n_row, n_col))
-                        step = _cell_step_length_m(src.transform, raster_crs, n_row, n_col, row, col)
+                        step = step_lengths.get(offset, 0.0)
                         path_lengths[n_row, n_col] = float(path_lengths[row, col] + step)
 
         return {
@@ -464,18 +475,18 @@ def _worldclim_metrics(
         if len(paths) != 12:
             raise ValueError(f"Expected 12 monthly rasters for {key}, got {len(paths)}")
         for path in paths:
-            with rasterio.open(path) as src:
-                with WarpedVRT(
-                    src,
-                    crs=reference_crs,
-                    transform=reference_transform,
-                    width=width,
-                    height=height,
-                    resampling=Resampling.bilinear,
-                ) as vrt:
-                    data = vrt.read(1, masked=True)
-                    values = np.where(mask & ~np.ma.getmaskarray(data), data.data.astype(np.float32), np.nan)
-                    monthly_means[key].append(float(np.nanmean(values)))
+            src = _open_shared_raster(path)
+            with WarpedVRT(
+                src,
+                crs=reference_crs,
+                transform=reference_transform,
+                width=width,
+                height=height,
+                resampling=Resampling.bilinear,
+            ) as vrt:
+                data = vrt.read(1, masked=True)
+                values = np.where(mask & ~np.ma.getmaskarray(data), data.data.astype(np.float32), np.nan)
+                monthly_means[key].append(float(np.nanmean(values)))
 
     monthly_prec = np.array(monthly_means["prec"], dtype=np.float64)
     monthly_tavg = np.array(monthly_means["tavg"], dtype=np.float64)
@@ -691,16 +702,16 @@ def _worldcover_metrics(
     width: int,
     height: int,
 ) -> dict[str, Any]:
-    with rasterio.open(worldcover_path) as src:
-        with WarpedVRT(
-            src,
-            crs=reference_crs,
-            transform=reference_transform,
-            width=width,
-            height=height,
-            resampling=Resampling.nearest,
-        ) as vrt:
-            worldcover = vrt.read(1, masked=True).filled(0).astype(np.int16)
+    src = _open_shared_raster(worldcover_path)
+    with WarpedVRT(
+        src,
+        crs=reference_crs,
+        transform=reference_transform,
+        width=width,
+        height=height,
+        resampling=Resampling.nearest,
+    ) as vrt:
+        worldcover = vrt.read(1, masked=True).filled(0).astype(np.int16)
 
     valid = mask & (worldcover > 0)
     valid_count = int(np.count_nonzero(valid))
@@ -782,17 +793,17 @@ def _soilgrids_metrics(
 ) -> dict[str, Any]:
     arrays: dict[str, np.ndarray] = {}
     for key, url in {**SOILGRIDS_LAYERS, **SOIL_AUXILIARY_LAYERS}.items():
-        with rasterio.open(url) as src:
-            with WarpedVRT(
-                src,
-                crs=reference_crs,
-                transform=reference_transform,
-                width=width,
-                height=height,
-                resampling=Resampling.bilinear,
-            ) as vrt:
-                data = vrt.read(1, masked=True)
-                arrays[key] = np.where(np.ma.getmaskarray(data), np.nan, data.data.astype(np.float32))
+        src = _open_shared_raster(url)
+        with WarpedVRT(
+            src,
+            crs=reference_crs,
+            transform=reference_transform,
+            width=width,
+            height=height,
+            resampling=Resampling.bilinear,
+        ) as vrt:
+            data = vrt.read(1, masked=True)
+            arrays[key] = np.where(np.ma.getmaskarray(data), np.nan, data.data.astype(np.float32))
 
     clay = arrays["clay"]
     sand = arrays["sand"]
@@ -1125,17 +1136,17 @@ def _glim_metrics(
     width: int,
     height: int,
 ) -> dict[str, Any]:
-    with rasterio.open(glim_path) as src:
-        with WarpedVRT(
-            src,
-            src_crs="EPSG:4326",
-            crs=reference_crs,
-            transform=reference_transform,
-            width=width,
-            height=height,
-            resampling=Resampling.nearest,
-        ) as vrt:
-            geology = vrt.read(1, masked=True).filled(-9999).astype(np.int16)
+    src = _open_shared_raster(glim_path)
+    with WarpedVRT(
+        src,
+        src_crs="EPSG:4326",
+        crs=reference_crs,
+        transform=reference_transform,
+        width=width,
+        height=height,
+        resampling=Resampling.nearest,
+    ) as vrt:
+        geology = vrt.read(1, masked=True).filled(-9999).astype(np.int16)
 
     valid = mask & (geology > 0)
     valid_count = int(np.count_nonzero(valid))
@@ -1187,19 +1198,19 @@ def _ghsl_built_metrics(
     height: int,
     cell_area_m2: float,
 ) -> dict[str, Any]:
-    with rasterio.open(ghsl_path) as src:
-        src_x_res = abs(src.transform.a)
-        src_y_res = abs(src.transform.e)
-        source_cell_area_m2 = max(src_x_res * src_y_res, 1.0)
-        with WarpedVRT(
-            src,
-            crs=reference_crs,
-            transform=reference_transform,
-            width=width,
-            height=height,
-            resampling=Resampling.bilinear,
-        ) as vrt:
-            built = vrt.read(1, masked=True).filled(0).astype(np.float32)
+    src = _open_shared_raster(ghsl_path)
+    src_x_res = abs(src.transform.a)
+    src_y_res = abs(src.transform.e)
+    source_cell_area_m2 = max(src_x_res * src_y_res, 1.0)
+    with WarpedVRT(
+        src,
+        crs=reference_crs,
+        transform=reference_transform,
+        width=width,
+        height=height,
+        resampling=Resampling.bilinear,
+    ) as vrt:
+        built = vrt.read(1, masked=True).filled(0).astype(np.float32)
 
     valid = mask & np.isfinite(built) & (built >= 0)
     valid_count = int(np.count_nonzero(valid))

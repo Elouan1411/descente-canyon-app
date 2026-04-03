@@ -5,6 +5,7 @@ import concurrent.futures
 import collections
 import json
 import math
+import os
 import shutil
 import subprocess
 import sys
@@ -59,6 +60,17 @@ DYNAMIC_AUTOPREPARE_PROVIDERS = {
 }
 
 DEFAULT_REVIEW_FILE = Path("watershed-review/watershed-review.json")
+
+
+def default_executor_mode() -> str:
+    return "thread" if sys.platform == "win32" else "process"
+
+
+def configure_runtime_caches() -> None:
+    os.environ.setdefault("GDAL_CACHEMAX", "1024")
+    os.environ.setdefault("VSI_CACHE", "TRUE")
+    os.environ.setdefault("VSI_CACHE_SIZE", str(128 * 1024 * 1024))
+    os.environ.setdefault("CPL_VSIL_CURL_CACHE_SIZE", str(128 * 1024 * 1024))
 
 
 def load_json(path: Path) -> Any:
@@ -300,6 +312,12 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument("--max-canyons", type=int)
     parser.add_argument("--jobs", type=int, default=1)
+    parser.add_argument(
+        "--executor",
+        choices=["thread", "process"],
+        default=default_executor_mode(),
+        help="Type de parallellisme canyon-level. 'process' exploite mieux le CPU sur Linux.",
+    )
     parser.add_argument("--aggregate-every", type=int, default=25)
     parser.add_argument("--skip-existing", dest="skip_existing", action="store_true", default=True)
     parser.add_argument("--reprocess-existing", dest="skip_existing", action="store_false")
@@ -1968,6 +1986,7 @@ def process_single_canyon_safe(
 
 def main() -> int:
     args = parse_args()
+    configure_runtime_caches()
     output_dir = args.output_dir.resolve()
     output_dir.mkdir(parents=True, exist_ok=True)
     gdal_translate = resolve_executable(args.gdal_translate, extra_candidates=[default_gdal_translate()])
@@ -2062,7 +2081,13 @@ def main() -> int:
                 if args.aggregate_every > 0 and processed % args.aggregate_every == 0:
                     aggregate_results(output_dir)
         else:
-            with concurrent.futures.ThreadPoolExecutor(max_workers=args.jobs) as executor:
+            executor_cls: type[concurrent.futures.Executor]
+            executor_cls = (
+                concurrent.futures.ProcessPoolExecutor
+                if args.executor == "process"
+                else concurrent.futures.ThreadPoolExecutor
+            )
+            with executor_cls(max_workers=args.jobs) as executor:
                 pending_total = len(pending)
                 pending_iter = iter(pending)
                 in_flight: dict[concurrent.futures.Future[str], int] = {}
