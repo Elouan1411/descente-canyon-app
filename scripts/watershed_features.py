@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import math
-import warnings
 from typing import Any
 
 import numpy as np
@@ -604,9 +603,12 @@ def _local_closed_depression_count(dem: np.ndarray, valid: np.ndarray, *, minimu
     neighbors = np.stack(neighbor_stack, axis=0)
     neighbors_valid = np.stack(valid_stack, axis=0)
     all_neighbors_valid = np.all(neighbors_valid, axis=0)
-    with warnings.catch_warnings():
-        warnings.simplefilter("ignore", category=RuntimeWarning)
-        neighbor_min = np.nanmin(np.where(neighbors_valid, neighbors, np.nan), axis=0)
+    any_neighbors_valid = np.any(neighbors_valid, axis=0)
+    neighbor_min = np.where(
+        any_neighbors_valid,
+        np.min(np.where(neighbors_valid, neighbors, np.inf), axis=0),
+        np.nan,
+    )
     depressions = center_valid & all_neighbors_valid & np.isfinite(neighbor_min) & ((neighbor_min - center) >= minimum_drop_m)
     return int(np.count_nonzero(depressions))
 
