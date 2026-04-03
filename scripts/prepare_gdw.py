@@ -45,6 +45,10 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Download and extract Global Dam Watch shapefiles once.")
     parser.add_argument("--output-dir", type=Path, default=Path("build/watersheds/gdw"))
     parser.add_argument("--keep-archive", action="store_true")
+    parser.add_argument("--archive-path", type=Path, help="Local GDW_v1_0_shp.zip archive to reuse instead of downloading")
+    parser.add_argument("--barriers-path", type=Path, help="Existing GDW barriers shapefile to reuse directly")
+    parser.add_argument("--reservoirs-path", type=Path, help="Existing GDW reservoirs shapefile to reuse directly")
+    parser.add_argument("--download-url", action="append", default=[], help="Additional download URL(s) to try before Figshare")
     return parser.parse_args()
 
 
@@ -85,6 +89,28 @@ def find_extracted_shapefiles(raw_dir: Path) -> tuple[Path | None, Path | None]:
     return barriers, reservoirs
 
 
+def resolve_local_override_paths(args: argparse.Namespace) -> tuple[Path | None, Path | None, Path | None]:
+    archive_path = args.archive_path or os.environ.get("GDW_ARCHIVE_PATH")
+    barriers_path = args.barriers_path or os.environ.get("GDW_BARRIERS_PATH")
+    reservoirs_path = args.reservoirs_path or os.environ.get("GDW_RESERVOIRS_PATH")
+    return (
+        Path(archive_path).resolve() if archive_path else None,
+        Path(barriers_path).resolve() if barriers_path else None,
+        Path(reservoirs_path).resolve() if reservoirs_path else None,
+    )
+
+
+def resolve_additional_download_urls(args: argparse.Namespace) -> list[str]:
+    env_value = os.environ.get("GDW_DOWNLOAD_URLS", "")
+    env_urls = [value.strip() for value in env_value.split(",") if value.strip()]
+    cli_urls = [str(url).strip() for url in args.download_url if str(url).strip()]
+    deduped: list[str] = []
+    for candidate in [*cli_urls, *env_urls]:
+        if candidate not in deduped:
+            deduped.append(candidate)
+    return deduped
+
+
 def fetch_json(url: str) -> Any:
     request = urllib.request.Request(
         url,
@@ -97,7 +123,8 @@ def fetch_json(url: str) -> Any:
         return json.loads(response.read().decode("utf-8"))
 
 
-def resolve_download_sources() -> tuple[list[str], str | None]:
+def resolve_download_sources(additional_urls: list[str] | None = None) -> tuple[list[str], str | None]:
+    additional_urls = additional_urls or []
     try:
         payload = fetch_json(ARTICLE_API_URL)
     except (HTTPError, URLError, json.JSONDecodeError) as exc:
@@ -105,7 +132,7 @@ def resolve_download_sources() -> tuple[list[str], str | None]:
             f"WARN GDW article API unavailable ({type(exc).__name__}: {exc}); using static download fallbacks.",
             flush=True,
         )
-        return STATIC_DOWNLOAD_URLS, STATIC_ARCHIVE_MD5
+        return [*additional_urls, *STATIC_DOWNLOAD_URLS], STATIC_ARCHIVE_MD5
 
     files = payload.get("files") or []
     for file_info in files:
@@ -118,13 +145,14 @@ def resolve_download_sources() -> tuple[list[str], str | None]:
         download_url = file_info.get("download_url")
         if download_url:
             candidates.append(str(download_url))
+        candidates.extend(additional_urls)
         candidates.extend(STATIC_DOWNLOAD_URLS)
         deduped = []
         for candidate in candidates:
             if candidate not in deduped:
                 deduped.append(candidate)
         return deduped, file_info.get("computed_md5") or file_info.get("supplied_md5")
-    return STATIC_DOWNLOAD_URLS, STATIC_ARCHIVE_MD5
+    return [*additional_urls, *STATIC_DOWNLOAD_URLS], STATIC_ARCHIVE_MD5
 
 
 def download_with_urllib(url: str, temp_path: Path) -> None:
@@ -170,7 +198,18 @@ def download_with_curl(url: str, temp_path: Path) -> None:
     )
 
 
-def download_file(destination: Path) -> dict[str, Any]:
+def copy_local_archive(source: Path, destination: Path) -> dict[str, Any]:
+    if not source.exists():
+        raise SystemExit(f"GDW local archive not found: {source}")
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    shutil.copy2(source, destination)
+    if not _valid_archive(destination):
+        destination.unlink(missing_ok=True)
+        raise SystemExit(f"GDW local archive is not a valid zip: {source}")
+    return {"url": str(source), "method": "local_archive"}
+
+
+def download_file(destination: Path, *, additional_urls: list[str] | None = None) -> dict[str, Any]:
     destination.parent.mkdir(parents=True, exist_ok=True)
     if _valid_archive(destination):
         return {"url": None, "method": "existing_archive"}
@@ -187,7 +226,7 @@ def download_file(destination: Path) -> dict[str, Any]:
         try:
             if _valid_archive(destination):
                 return {"url": None, "method": "existing_archive"}
-            candidates, expected_md5 = resolve_download_sources()
+            candidates, expected_md5 = resolve_download_sources(additional_urls)
             for url in candidates:
                 for method_name, method in download_methods:
                     try:
@@ -215,7 +254,12 @@ def download_file(destination: Path) -> dict[str, Any]:
         if attempt < 5:
             time.sleep(min(60, 5 * attempt))
     details = "; ".join(errors[-6:]) if errors else str(last_error)
-    raise SystemExit(f"Global Dam Watch download failed: {details}")
+    raise SystemExit(
+        "Global Dam Watch download failed: "
+        f"{details}. "
+        "You can seed the dataset manually by placing GDW_v1_0_shp.zip in build/watersheds/gdw/downloads/ "
+        "or by passing --archive-path /path/to/GDW_v1_0_shp.zip."
+    )
 
 
 def extract_archive(archive_path: Path, raw_dir: Path) -> tuple[Path, Path]:
@@ -248,11 +292,29 @@ def main() -> int:
             ready = json.loads(ready_path.read_text(encoding="utf-8"))
             print(json.dumps(ready, ensure_ascii=False, indent=2))
             return 0
+        local_archive_override, local_barriers_override, local_reservoirs_override = resolve_local_override_paths(args)
+        additional_download_urls = resolve_additional_download_urls(args)
+        if local_barriers_override is not None or local_reservoirs_override is not None:
+            if local_barriers_override is None or local_reservoirs_override is None:
+                raise SystemExit("Provide both --barriers-path and --reservoirs-path together for GDW local overrides")
+            if not local_barriers_override.exists() or not local_reservoirs_override.exists():
+                raise SystemExit("GDW local shapefile override path(s) not found")
+            payload = {
+                "barriers": str(local_barriers_override),
+                "reservoirs": str(local_reservoirs_override),
+                "download": {"url": None, "method": "local_shapefiles"},
+            }
+            write_json(ready_path, payload)
+            print(json.dumps(payload, ensure_ascii=False, indent=2))
+            return 0
         barriers, reservoirs = find_extracted_shapefiles(raw_dir)
         download_info: dict[str, Any] = {"url": None, "method": None}
         if barriers is None or reservoirs is None:
             if not _valid_archive(archive_path):
-                download_info = download_file(archive_path)
+                if local_archive_override is not None:
+                    download_info = copy_local_archive(local_archive_override, archive_path)
+                else:
+                    download_info = download_file(archive_path, additional_urls=additional_download_urls)
             barriers, reservoirs = extract_archive(archive_path, raw_dir)
         if not args.keep_archive:
             archive_path.unlink(missing_ok=True)

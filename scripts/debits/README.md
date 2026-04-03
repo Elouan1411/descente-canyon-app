@@ -35,6 +35,7 @@ The pipeline is split into four steps:
     - computes extended daily hydrology features for modelling
     - adds temporal priors by canyon / massif / region using past observations only
     - adds heuristic historical flags for regulated and snowmelt-sensitive canyons
+    - adds watershed shape and response-proxy features derived from basin geometry and canyon relief
 
 5. `export_debit_runtime_lookups.py`
    - reads `training_features.jsonl`

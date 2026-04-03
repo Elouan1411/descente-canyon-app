@@ -12,7 +12,7 @@ from urllib.parse import urlparse
 ROOT_DIR = Path(__file__).resolve().parent.parent
 DEFAULT_REVIEW_FILE = ROOT_DIR / "watershed-review" / "watershed-review.json"
 DEFAULT_STATE_FILE = ROOT_DIR / "build" / "watershed-review" / "watershed-review-state.json"
-LEGACY_REVIEW_FILE = ROOT_DIR / "build" / "watershed-review" / "watershed-review.json"
+STALE_LEGACY_REVIEW_FILE = ROOT_DIR / "build" / "watershed-review" / "watershed-review.json"
 
 REVIEW_FILE = DEFAULT_REVIEW_FILE
 STATE_FILE = DEFAULT_STATE_FILE
@@ -119,9 +119,6 @@ def load_saved_reviews() -> list[dict[str, object]]:
     review_source = load_reviews_file(REVIEW_FILE)
     if review_source is not None:
         sources.append(("truth", review_source[0], review_source[1]))
-    legacy_source = load_reviews_file(LEGACY_REVIEW_FILE)
-    if legacy_source is not None:
-        sources.append(("legacy", legacy_source[0], legacy_source[1]))
     state_source = load_reviews_from_state_file(STATE_FILE)
     if state_source is not None:
         sources.append(("state", state_source[0], state_source[1]))
@@ -157,11 +154,10 @@ def load_saved_state() -> dict[str, object]:
 def write_state(state: dict[str, object]) -> None:
     STATE_FILE.parent.mkdir(parents=True, exist_ok=True)
     REVIEW_FILE.parent.mkdir(parents=True, exist_ok=True)
-    LEGACY_REVIEW_FILE.parent.mkdir(parents=True, exist_ok=True)
     review_payload = json.dumps(state["reviews"], ensure_ascii=True, indent=2) + "\n"
     STATE_FILE.write_text(json.dumps(state, ensure_ascii=True, indent=2) + "\n", encoding="utf-8")
     REVIEW_FILE.write_text(review_payload, encoding="utf-8")
-    LEGACY_REVIEW_FILE.write_text(review_payload, encoding="utf-8")
+    STALE_LEGACY_REVIEW_FILE.unlink(missing_ok=True)
 
 
 class ReviewRequestHandler(SimpleHTTPRequestHandler):

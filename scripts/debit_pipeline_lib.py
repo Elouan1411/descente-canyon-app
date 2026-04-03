@@ -847,6 +847,75 @@ def compute_watershed_morphology_features(watershed: dict[str, Any] | None) -> d
     return _finalize_watershed_shape_features(features, area_km2)
 
 
+def compute_watershed_response_proxy_features(
+    canyon: dict[str, Any] | None,
+    watershed: dict[str, Any] | None,
+    morphology_features: dict[str, Any] | None = None,
+) -> dict[str, Any]:
+    features = {
+        "watershedReliefProxyM": None,
+        "watershedReliefPerLengthProxyMPerKm": None,
+        "watershedReliefPerDiagonalProxyMPerKm": None,
+        "watershedSlopeProxyPercent": None,
+        "watershedSlopeDiagonalProxyPercent": None,
+        "watershedReliefAreaRatioMPerKm2": None,
+        "watershedKirpichTimeProxyMinutes": None,
+        "watershedFlashinessProxy": None,
+        "watershedShapeReliefInteraction": None,
+    }
+    if canyon is None:
+        return features
+
+    denivele_value = canyon.get("denivele")
+    area_value = watershed.get("upstreamCatchmentAreaKm2") if watershed is not None else None
+    if denivele_value is None:
+        return features
+
+    relief_m = float(denivele_value)
+    features["watershedReliefProxyM"] = relief_m
+
+    morphology = morphology_features or {}
+    length_proxy_km = morphology.get("watershedLengthProxyKm")
+    diagonal_proxy_km = morphology.get("watershedBboxDiagonalKm")
+    elongation_ratio = morphology.get("watershedElongationRatio")
+    circularity_ratio = morphology.get("watershedCircularityRatio")
+
+    if area_value is not None and float(area_value) > 0:
+        features["watershedReliefAreaRatioMPerKm2"] = round(relief_m / float(area_value), 6)
+
+    if length_proxy_km is not None and float(length_proxy_km) > 0:
+        length_proxy_value = float(length_proxy_km)
+        relief_per_length = relief_m / length_proxy_value
+        slope_fraction = relief_m / (length_proxy_value * 1000.0)
+        features["watershedReliefPerLengthProxyMPerKm"] = round(relief_per_length, 6)
+        features["watershedSlopeProxyPercent"] = round(slope_fraction * 100.0, 6)
+        if slope_fraction > 0:
+            # Kirpich formula using a geometry-derived channel-length proxy.
+            features["watershedKirpichTimeProxyMinutes"] = round(
+                0.01947 * ((length_proxy_value * 1000.0) ** 0.77) * (slope_fraction ** -0.385),
+                6,
+            )
+        if circularity_ratio is not None and area_value is not None and float(area_value) > 0:
+            features["watershedFlashinessProxy"] = round(
+                float(circularity_ratio) * slope_fraction / math.sqrt(float(area_value)),
+                8,
+            )
+        if elongation_ratio is not None:
+            features["watershedShapeReliefInteraction"] = round(
+                float(elongation_ratio) * slope_fraction,
+                8,
+            )
+
+    if diagonal_proxy_km is not None and float(diagonal_proxy_km) > 0:
+        diagonal_value = float(diagonal_proxy_km)
+        relief_per_diagonal = relief_m / diagonal_value
+        diagonal_slope_fraction = relief_m / (diagonal_value * 1000.0)
+        features["watershedReliefPerDiagonalProxyMPerKm"] = round(relief_per_diagonal, 6)
+        features["watershedSlopeDiagonalProxyPercent"] = round(diagonal_slope_fraction * 100.0, 6)
+
+    return features
+
+
 def _finalize_watershed_shape_features(features: dict[str, Any], area_km2: Any) -> dict[str, Any]:
     area_value = float(area_km2) if area_km2 is not None else None
     perimeter_value = features.get("watershedPerimeterKm")

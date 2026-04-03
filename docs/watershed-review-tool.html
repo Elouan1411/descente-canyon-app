@@ -583,13 +583,13 @@
         const action = button.dataset.action;
         if (action === "good") {
           const item = state.orderedItems.find((entry) => entry.canyonId === canyonId);
-          const current = state.reviewByCanyonId.get(canyonId);
+          const defaultGps = defaultGpsForItem(item);
           setReview(canyonId, {
             status: "good",
-            gps: current && current.gps ? current.gps : defaultGpsForItem(item),
-            adminPlaced: Boolean(current && current.adminPlaced),
-            pointType: current && current.pointType ? current.pointType : item && item.catchment ? item.catchment.pointType : null,
-            label: current && current.label !== undefined ? current.label : item && item.catchment ? item.catchment.label : null
+            gps: defaultGps,
+            adminPlaced: false,
+            pointType: item && item.catchment ? item.catchment.pointType : null,
+            label: item && item.catchment ? item.catchment.label : null
           });
           return;
         }
@@ -1315,13 +1315,13 @@
       if (!currentItem) {
         return;
       }
-      const currentReview = state.reviewByCanyonId.get(currentItem.canyonId);
+      const defaultGps = defaultGpsForItem(currentItem);
       setReview(currentItem.canyonId, {
         status: "good",
-        gps: currentReview && currentReview.gps ? currentReview.gps : defaultGpsForItem(currentItem),
-        adminPlaced: Boolean(currentReview && currentReview.adminPlaced),
-        pointType: currentReview && currentReview.pointType ? currentReview.pointType : currentItem.catchment.pointType,
-        label: currentReview && currentReview.label !== undefined ? currentReview.label : currentItem.catchment.label
+        gps: defaultGps,
+        adminPlaced: false,
+        pointType: currentItem.catchment.pointType,
+        label: currentItem.catchment.label
       });
       await saveAndAdvance();
     }
