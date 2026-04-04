@@ -222,6 +222,31 @@ def apply_review_overrides(
     return merged
 
 
+def source_with_buffer(source: dict[str, Any], buffer_km: float) -> dict[str, Any]:
+    widened = dict(source)
+    widened["bufferKm"] = float(buffer_km)
+    auto_prepare = source.get("autoPrepare")
+    if isinstance(auto_prepare, dict):
+        widened_auto_prepare = dict(auto_prepare)
+        widened_auto_prepare["bufferKm"] = float(buffer_km)
+        widened["autoPrepare"] = widened_auto_prepare
+    return widened
+
+
+def watershed_mask_touches_raster_edge(mask_data: dict[str, Any] | None) -> bool:
+    if not mask_data:
+        return False
+    mask = mask_data.get("mask")
+    if not isinstance(mask, np.ndarray) or mask.ndim != 2 or mask.size == 0:
+        return False
+    return bool(
+        np.any(mask[0, :])
+        or np.any(mask[-1, :])
+        or np.any(mask[:, 0])
+        or np.any(mask[:, -1])
+    )
+
+
 def bbox_for_points_in_crs(points: list[dict[str, Any]], target_crs: str, buffer_km: float) -> tuple[float, float, float, float]:
     lats = [float(point["latitude"]) for point in points]
     lons = [float(point["longitude"]) for point in points]
@@ -821,6 +846,7 @@ def ensure_local_hydrology(
     output_dir: Path,
     points: list[dict[str, Any]],
     gdal_translate: str,
+    force_rebuild: bool = False,
 ) -> tuple[dict[str, Path], dict[str, Any]]:
     from run_local_ign_canyon_workflow import clip_dem, reproject_dem, resample_dem
 
@@ -842,9 +868,10 @@ def ensure_local_hydrology(
         "resampleDemSec": 0.0,
         "deriveHydrologySec": 0.0,
     }
-    reused_hydrology = upa_path.exists() and flowdir_path.exists() and elevation_path.exists()
+    reused_hydrology = (not force_rebuild) and upa_path.exists() and flowdir_path.exists() and elevation_path.exists()
 
     if not reused_hydrology:
+        shutil.rmtree(hydrology_dir, ignore_errors=True)
         started = time.perf_counter()
         print(f"CLIP canyon {canyon_id} start", flush=True)
         clip_dem(
@@ -1714,22 +1741,6 @@ def process_single_canyon(
     else:
         raise SystemExit(f"Unsupported source mode: {source['mode']}")
 
-    started = time.perf_counter()
-    point_results = evaluate_points_for_canyon(
-        canyon=canyon,
-        points=points,
-        source=source,
-        raster_paths=raster_paths,
-    )
-    stage_timings["evaluatePointsSec"] = time.perf_counter() - started
-    started = time.perf_counter()
-    candidate_analysis = analyze_point_candidates(point_results)
-    stage_timings["analyzeCandidatesSec"] = time.perf_counter() - started
-    analyzed_points = candidate_analysis["points"]
-    selected_candidate = candidate_analysis["bestHydroProxyCandidate"]
-    suggested_candidate = candidate_analysis.get("suggestedCandidate")
-    review_truth_candidate = candidate_analysis.get("reviewTruthCandidate")
-    strict_topo_candidate = candidate_analysis["strictTopoCandidate"]
     review_metadata = review_metadata_for_points(points)
     watershed = None
     descriptors = None
@@ -1737,13 +1748,51 @@ def process_single_canyon(
     watershed_status = "skipped"
     watershed_skip_reason = None
     mask_data = None
-    if (
-        selected_candidate is not None
-        and source["mode"] == "derive_local_hydrology"
-        and raster_paths.get("flowdir") is not None
-        and selected_candidate["evaluation"].get("snapped_longitude") is not None
-        and selected_candidate["evaluation"].get("snapped_latitude") is not None
-    ):
+    analyzed_points = []
+    selected_candidate = None
+    suggested_candidate = None
+    review_truth_candidate = None
+    strict_topo_candidate = None
+    candidate_analysis = {
+        "analysisSummary": {},
+        "points": [],
+        "bestHydroProxyCandidate": None,
+        "suggestedCandidate": None,
+        "reviewTruthCandidate": None,
+        "strictTopoCandidate": None,
+    }
+    watershed_edge_retry = None
+
+    max_edge_retries = 2 if source["mode"] == "derive_local_hydrology" else 0
+    current_buffer_km = float(source.get("bufferKm", 20.0))
+    for edge_retry_index in range(max_edge_retries + 1):
+        started = time.perf_counter()
+        point_results = evaluate_points_for_canyon(
+            canyon=canyon,
+            points=points,
+            source=source,
+            raster_paths=raster_paths,
+        )
+        stage_timings["evaluatePointsSec"] = stage_timings.get("evaluatePointsSec", 0.0) + (time.perf_counter() - started)
+        started = time.perf_counter()
+        candidate_analysis = analyze_point_candidates(point_results)
+        stage_timings["analyzeCandidatesSec"] = stage_timings.get("analyzeCandidatesSec", 0.0) + (time.perf_counter() - started)
+        analyzed_points = candidate_analysis["points"]
+        selected_candidate = candidate_analysis["bestHydroProxyCandidate"]
+        suggested_candidate = candidate_analysis.get("suggestedCandidate")
+        review_truth_candidate = candidate_analysis.get("reviewTruthCandidate")
+        strict_topo_candidate = candidate_analysis["strictTopoCandidate"]
+
+        if not (
+            selected_candidate is not None
+            and source["mode"] == "derive_local_hydrology"
+            and raster_paths.get("flowdir") is not None
+            and selected_candidate["evaluation"].get("snapped_longitude") is not None
+            and selected_candidate["evaluation"].get("snapped_latitude") is not None
+        ):
+            mask_data = None
+            break
+
         print(f"WATERSHED canyon {canyon_id} start", flush=True)
         started = time.perf_counter()
         mask_data = build_watershed_mask_data(
@@ -1752,7 +1801,59 @@ def process_single_canyon(
             snapped_latitude=float(selected_candidate["evaluation"]["snapped_latitude"]),
             source_srs=source.get("srs"),
         )
-        stage_timings["buildWatershedMaskSec"] = time.perf_counter() - started
+        stage_timings["buildWatershedMaskSec"] = stage_timings.get("buildWatershedMaskSec", 0.0) + (time.perf_counter() - started)
+        touches_edge = watershed_mask_touches_raster_edge(mask_data)
+        if not touches_edge or edge_retry_index >= max_edge_retries:
+            watershed_edge_retry = {
+                "attempts": edge_retry_index,
+                "finalBufferKm": current_buffer_km,
+                "touchesRasterEdge": touches_edge,
+            }
+            break
+
+        next_buffer_km = min(max(current_buffer_km * 2.0, current_buffer_km + 10.0), 80.0)
+        if next_buffer_km <= current_buffer_km:
+            watershed_edge_retry = {
+                "attempts": edge_retry_index,
+                "finalBufferKm": current_buffer_km,
+                "touchesRasterEdge": touches_edge,
+            }
+            break
+
+        print(
+            f"RETRY canyon {canyon_id} watershed touches raster edge with buffer={current_buffer_km}km; retrying with {next_buffer_km}km",
+            flush=True,
+        )
+        current_buffer_km = next_buffer_km
+        source = source_with_buffer(source, current_buffer_km)
+        if source.get("autoPrepare"):
+            source = auto_prepare_source(
+                source=source,
+                canyon=canyon,
+                points=points,
+                output_dir=output_dir,
+                gdal_translate=gdal_translate,
+            )
+        started = time.perf_counter()
+        raster_paths, hydrology_profile = ensure_local_hydrology(
+            source=source,
+            canyon_id=canyon_id,
+            output_dir=output_dir,
+            points=points,
+            gdal_translate=gdal_translate,
+            force_rebuild=True,
+        )
+        stage_timings["ensureLocalHydrologySec"] = stage_timings.get("ensureLocalHydrologySec", 0.0) + (time.perf_counter() - started)
+        for key, value in hydrology_profile.get("timingsSec", {}).items():
+            stage_timings[key] = stage_timings.get(key, 0.0) + float(value)
+
+    if (
+        selected_candidate is not None
+        and source["mode"] == "derive_local_hydrology"
+        and raster_paths.get("flowdir") is not None
+        and selected_candidate["evaluation"].get("snapped_longitude") is not None
+        and selected_candidate["evaluation"].get("snapped_latitude") is not None
+    ):
         geometry = None
         if mask_data is not None:
             started = time.perf_counter()
@@ -1900,6 +2001,7 @@ def process_single_canyon(
         "suggestedCandidate": suggested_candidate,
         "reviewTruthCandidate": review_truth_candidate,
         "reviewOverride": review_metadata,
+        "watershedEdgeRetry": watershed_edge_retry,
         "watershed": watershed,
         "descriptors": descriptors,
         "osmRegulationProbe": osm_regulation,

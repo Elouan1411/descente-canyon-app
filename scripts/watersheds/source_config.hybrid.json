@@ -1769,7 +1769,7 @@
       "mode": "derive_local_hydrology",
       "dem": "build/watersheds/switzerland-national-dem/vrt/_all_downloaded.vrt",
       "srs": "EPSG:2056",
-      "bufferKm": 10.0,
+      "bufferKm": 20.0,
       "processingResolutionM": 5.0,
       "candidateStrategy": "nearest_channel",
       "searchRadiusM": 120.0,
@@ -1777,7 +1777,7 @@
       "autoPrepare": {
         "provider": "switzerland-stac",
         "outputDir": "build/watersheds/switzerland-national-dem",
-        "bufferKm": 10.0,
+        "bufferKm": 20.0,
         "alwaysPrepare": true
       },
       "match": {
