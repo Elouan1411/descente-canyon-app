@@ -5,6 +5,7 @@ import json
 import subprocess
 from pathlib import Path
 
+import numpy as np
 import rasterio
 from whitebox.whitebox_tools import WhiteboxTools
 
@@ -44,33 +45,77 @@ def convert_area_m2_to_km2(input_path: Path, output_path: Path) -> None:
                 dst.write(data.filled(profile.get("nodata") if profile.get("nodata") is not None else -9999), band_index)
 
 
-def materialize_dem_if_needed(input_dem: Path, output_dir: Path, gdal_translate: str, srs: str) -> Path:
-    if input_dem.suffix.lower() in {".tif", ".tiff"}:
+def materialize_dem_if_needed(
+    input_dem: Path,
+    output_dir: Path,
+    gdal_translate: str,
+    srs: str,
+    *,
+    force: bool = False,
+    output_name: str = "dem_for_whitebox.tif",
+    compress: str = "LZW",
+    tiled: bool = True,
+) -> Path:
+    if not force and input_dem.suffix.lower() in {".tif", ".tiff"}:
         return input_dem
 
-    materialized = output_dir / "dem_for_whitebox.tif"
+    materialized = output_dir / output_name
     if materialized.exists():
         materialized.unlink()
 
-    subprocess.run(
-        [
-            gdal_translate,
-            "-of",
-            "GTiff",
-            "-a_srs",
-            srs,
-            "-co",
-            "TILED=YES",
-            "-co",
-            "BIGTIFF=YES",
-            "-co",
-            "COMPRESS=LZW",
-            str(input_dem),
-            str(materialized),
-        ],
-        check=True,
-    )
+    command = [
+        gdal_translate,
+        "-of",
+        "GTiff",
+        "-a_srs",
+        srs,
+        "-co",
+        "BIGTIFF=YES",
+    ]
+    if tiled:
+        command.extend(["-co", "TILED=YES"])
+    if compress and compress.upper() != "NONE":
+        command.extend(["-co", f"COMPRESS={compress}"])
+    command.extend([str(input_dem), str(materialized)])
+    subprocess.run(command, check=True)
     return materialized
+
+
+def validate_input_dem(input_dem: Path) -> None:
+    with rasterio.open(input_dem) as src:
+        if src.width < 2 or src.height < 2:
+            raise SystemExit(f"DEM too small for Whitebox: {input_dem} ({src.width}x{src.height})")
+        data = src.read(1, masked=True)
+        valid = (~np.ma.getmaskarray(data)) & np.isfinite(data.data)
+        valid_count = int(np.count_nonzero(valid))
+        if valid_count == 0:
+            raise SystemExit(f"DEM has no valid cells for Whitebox: {input_dem}")
+
+
+def run_flow_accumulation_workflow(
+    *,
+    wbt: WhiteboxTools,
+    dem_path: Path,
+    breached_dem: Path,
+    pointer_raster: Path,
+    accumulation_m2: Path,
+    out_type: str,
+) -> None:
+    reset_outputs([breached_dem, pointer_raster, accumulation_m2])
+    workflow_status = wbt.flow_accumulation_full_workflow(
+        dem=str(dem_path),
+        out_dem=str(breached_dem),
+        out_pntr=str(pointer_raster),
+        out_accum=str(accumulation_m2),
+        out_type=out_type,
+        esri_pntr=True,
+    )
+    if workflow_status != 0:
+        raise RuntimeError(f"Whitebox flow_accumulation_full_workflow failed with status={workflow_status}")
+    validate_outputs(
+        [breached_dem, pointer_raster, accumulation_m2],
+        step_name="Whitebox flow_accumulation_full_workflow",
+    )
 
 
 def parse_args() -> argparse.Namespace:
@@ -119,6 +164,7 @@ def main() -> int:
         gdal_translate,
         args.srs,
     )
+    validate_input_dem(dem_for_whitebox)
 
     breached_dem = output_dir / "ign_breached_dem.tif"
     pointer_raster = output_dir / "ign_d8_pointer_esri.tif"
@@ -133,20 +179,47 @@ def main() -> int:
         wbt.set_working_dir(str(work_dir))
 
     wbt.verbose = args.whitebox_verbose
-    workflow_status = wbt.flow_accumulation_full_workflow(
-        dem=str(dem_for_whitebox),
-        out_dem=str(breached_dem),
-        out_pntr=str(pointer_raster),
-        out_accum=str(accumulation_m2),
-        out_type=args.out_type,
-        esri_pntr=True,
-    )
-    if workflow_status != 0:
-        raise SystemExit(f"Whitebox flow_accumulation_full_workflow failed with status={workflow_status}")
-    validate_outputs(
-        [breached_dem, pointer_raster, accumulation_m2],
-        step_name="Whitebox flow_accumulation_full_workflow",
-    )
+    whitebox_attempts: list[dict[str, str]] = []
+    try:
+        run_flow_accumulation_workflow(
+            wbt=wbt,
+            dem_path=dem_for_whitebox,
+            breached_dem=breached_dem,
+            pointer_raster=pointer_raster,
+            accumulation_m2=accumulation_m2,
+            out_type=args.out_type,
+        )
+        whitebox_attempts.append({"dem": str(dem_for_whitebox), "mode": "primary", "status": "ok"})
+    except Exception as exc:
+        whitebox_attempts.append({"dem": str(dem_for_whitebox), "mode": "primary", "status": f"error:{type(exc).__name__}: {exc}"})
+        retry_dem = materialize_dem_if_needed(
+            args.dem.resolve(),
+            output_dir,
+            gdal_translate,
+            args.srs,
+            force=True,
+            output_name="dem_for_whitebox_retry.tif",
+            compress="NONE",
+            tiled=False,
+        )
+        validate_input_dem(retry_dem)
+        try:
+            run_flow_accumulation_workflow(
+                wbt=wbt,
+                dem_path=retry_dem,
+                breached_dem=breached_dem,
+                pointer_raster=pointer_raster,
+                accumulation_m2=accumulation_m2,
+                out_type=args.out_type,
+            )
+            dem_for_whitebox = retry_dem
+            whitebox_attempts.append({"dem": str(retry_dem), "mode": "retry_plain_geotiff", "status": "ok"})
+        except Exception as retry_exc:
+            whitebox_attempts.append({"dem": str(retry_dem), "mode": "retry_plain_geotiff", "status": f"error:{type(retry_exc).__name__}: {retry_exc}"})
+            raise SystemExit(
+                "Whitebox hydrology failed after retry. "
+                f"primary={type(exc).__name__}: {exc}; retry={type(retry_exc).__name__}: {retry_exc}"
+            )
 
     if args.out_type == "ca":
         convert_area_m2_to_km2(accumulation_m2, accumulation_km2)
@@ -162,6 +235,7 @@ def main() -> int:
             "upstreamAreaKm2": str(accumulation_km2) if args.out_type == "ca" else None,
         },
         "whiteboxOutType": args.out_type,
+        "whiteboxAttempts": whitebox_attempts,
         "notes": [
             "Le raster d8PointerEsri est compatible avec compute_entry_watersheds.py.",
             "Le raster upstreamAreaKm2 est la couche a utiliser comme --upa-raster pour les runs IGN si out_type=ca.",

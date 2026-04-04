@@ -11,6 +11,7 @@ import subprocess
 import sys
 import time
 import traceback
+from concurrent.futures.process import BrokenProcessPool
 from dataclasses import asdict
 from pathlib import Path
 from typing import Any
@@ -63,7 +64,7 @@ DEFAULT_REVIEW_FILE = Path("watershed-review/watershed-review.json")
 
 
 def default_executor_mode() -> str:
-    return "thread" if sys.platform == "win32" else "process"
+    return "thread"
 
 
 def configure_runtime_caches() -> None:
@@ -2060,7 +2061,7 @@ def process_single_canyon_safe(
         )
     except KeyboardInterrupt:
         raise
-    except Exception as exc:
+    except BaseException as exc:
         error_text = traceback.format_exc()
         error_payload = {
             "canyonId": canyon_id,
@@ -2189,10 +2190,15 @@ def main() -> int:
                 if args.executor == "process"
                 else concurrent.futures.ThreadPoolExecutor
             )
+            broken_pool_exc: BrokenProcessPool | None = None
+            remaining_after_broken_pool: list[tuple[int, dict[str, Any], list[dict[str, Any]]]] = []
             with executor_cls(max_workers=args.jobs) as executor:
                 pending_total = len(pending)
                 pending_iter = iter(pending)
-                in_flight: dict[concurrent.futures.Future[str], int] = {}
+                in_flight: dict[
+                    concurrent.futures.Future[str],
+                    tuple[int, dict[str, Any], list[dict[str, Any]]],
+                ] = {}
 
                 for _ in range(min(args.jobs, len(pending))):
                     canyon_id, canyon, points = next(pending_iter)
@@ -2209,7 +2215,7 @@ def main() -> int:
                         keep_work=args.keep_work,
                         shared_descriptor_inputs=shared_descriptor_inputs,
                     )
-                    in_flight[future] = canyon_id
+                    in_flight[future] = (canyon_id, canyon, points)
 
                 while in_flight:
                     done, _ = concurrent.futures.wait(
@@ -2217,7 +2223,13 @@ def main() -> int:
                         return_when=concurrent.futures.FIRST_COMPLETED,
                     )
                     for future in done:
-                        future.result()
+                        try:
+                            future.result()
+                        except BrokenProcessPool as exc:
+                            broken_pool_exc = exc
+                            remaining_after_broken_pool = list(in_flight.values()) + list(pending_iter)
+                            in_flight.clear()
+                            break
                         processed += 1
                         write_progress(output_dir, processed=processed, pending=max(pending_total - processed, 0))
                         if args.aggregate_every > 0 and processed % args.aggregate_every == 0:
@@ -2240,7 +2252,31 @@ def main() -> int:
                             keep_work=args.keep_work,
                             shared_descriptor_inputs=shared_descriptor_inputs,
                         )
-                        in_flight[new_future] = canyon_id
+                        in_flight[new_future] = (canyon_id, canyon, points)
+                    if broken_pool_exc is not None:
+                        break
+            if broken_pool_exc is not None:
+                print(
+                    f"WARN process executor broke ({broken_pool_exc}); falling back to sequential processing for {len(remaining_after_broken_pool)} canyon(s)",
+                    flush=True,
+                )
+                for canyon_id, canyon, points in remaining_after_broken_pool:
+                    process_single_canyon_safe(
+                        canyon_id=canyon_id,
+                        canyon=canyon,
+                        points=points,
+                        sources=sources,
+                        output_dir=output_dir,
+                        gdal_translate=gdal_translate,
+                        gdal_warp=gdal_warp,
+                        enable_osm_regulation=args.enable_osm_regulation,
+                        keep_work=args.keep_work,
+                        shared_descriptor_inputs=shared_descriptor_inputs,
+                    )
+                    processed += 1
+                    write_progress(output_dir, processed=processed, pending=max(pending_total - processed, 0))
+                    if args.aggregate_every > 0 and processed % args.aggregate_every == 0:
+                        aggregate_results(output_dir)
     except KeyboardInterrupt:
         print("Interrupted cleanly. Resume with the same command to continue.")
     finally:
