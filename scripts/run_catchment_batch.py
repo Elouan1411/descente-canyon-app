@@ -234,6 +234,50 @@ def source_with_buffer(source: dict[str, Any], buffer_km: float) -> dict[str, An
     return widened
 
 
+def find_coarser_ign_source(source: dict[str, Any], sources: list[dict[str, Any]]) -> dict[str, Any] | None:
+    source_name = str(source.get("name") or "")
+    if not source_name.startswith("ign-rgealti5m-"):
+        return None
+
+    target_name = source_name.replace("ign-rgealti5m-", "ign-bdalti-", 1)
+    for candidate in sources:
+        if str(candidate.get("name") or "") == target_name:
+            return candidate
+
+    source_match = source.get("match")
+    for candidate in sources:
+        candidate_name = str(candidate.get("name") or "")
+        candidate_provider = (candidate.get("autoPrepare") or {}).get("provider")
+        candidate_dataset = (candidate.get("autoPrepare") or {}).get("dataset")
+        if candidate_name.startswith("ign-bdalti-") and candidate_provider == "ign" and candidate_dataset == "bdalti":
+            if candidate.get("match") == source_match:
+                return candidate
+    return None
+
+
+def choose_retry_hydrology_source(
+    *,
+    source: dict[str, Any],
+    sources: list[dict[str, Any]],
+    next_buffer_km: float,
+) -> tuple[dict[str, Any], dict[str, Any] | None]:
+    widened_source = source_with_buffer(source, next_buffer_km)
+    if next_buffer_km < 40.0:
+        return widened_source, None
+
+    coarser_source = find_coarser_ign_source(source, sources)
+    if coarser_source is None:
+        return widened_source, None
+
+    switched_source = source_with_buffer(coarser_source, next_buffer_km)
+    return switched_source, {
+        "reason": "edge_retry_buffer_gte_40km",
+        "fromSource": str(source.get("name") or ""),
+        "toSource": str(coarser_source.get("name") or ""),
+        "bufferKm": float(next_buffer_km),
+    }
+
+
 def watershed_mask_touches_raster_edge(mask_data: dict[str, Any] | None) -> bool:
     if not mask_data:
         return False
@@ -1763,6 +1807,11 @@ def process_single_canyon(
         "strictTopoCandidate": None,
     }
     watershed_edge_retry = None
+    hydrology_resolution_strategy = {
+        "initialSource": str(source.get("name") or ""),
+        "initialBufferKm": float(source.get("bufferKm", 20.0)),
+        "fallbacks": [],
+    }
 
     max_edge_retries = 2 if source["mode"] == "derive_local_hydrology" else 0
     current_buffer_km = float(source.get("bufferKm", 20.0))
@@ -1826,7 +1875,17 @@ def process_single_canyon(
             flush=True,
         )
         current_buffer_km = next_buffer_km
-        source = source_with_buffer(source, current_buffer_km)
+        source, source_switch = choose_retry_hydrology_source(
+            source=source,
+            sources=sources,
+            next_buffer_km=current_buffer_km,
+        )
+        if source_switch is not None:
+            hydrology_resolution_strategy["fallbacks"].append(source_switch)
+            print(
+                f"FALLBACK canyon {canyon_id} hydrology source {source_switch['fromSource']} -> {source_switch['toSource']} at buffer={current_buffer_km}km",
+                flush=True,
+            )
         if source.get("autoPrepare"):
             source = auto_prepare_source(
                 source=source,
@@ -1847,6 +1906,10 @@ def process_single_canyon(
         stage_timings["ensureLocalHydrologySec"] = stage_timings.get("ensureLocalHydrologySec", 0.0) + (time.perf_counter() - started)
         for key, value in hydrology_profile.get("timingsSec", {}).items():
             stage_timings[key] = stage_timings.get(key, 0.0) + float(value)
+
+    hydrology_resolution_strategy["finalSource"] = str(source.get("name") or "")
+    hydrology_resolution_strategy["finalBufferKm"] = float(current_buffer_km)
+    hydrology_resolution_strategy["fallbackUsed"] = bool(hydrology_resolution_strategy["fallbacks"])
 
     if (
         selected_candidate is not None
@@ -2003,6 +2066,7 @@ def process_single_canyon(
         "reviewTruthCandidate": review_truth_candidate,
         "reviewOverride": review_metadata,
         "watershedEdgeRetry": watershed_edge_retry,
+        "hydrologyResolutionStrategy": hydrology_resolution_strategy,
         "watershed": watershed,
         "descriptors": descriptors,
         "osmRegulationProbe": osm_regulation,

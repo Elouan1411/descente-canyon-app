@@ -88,6 +88,30 @@
       flex-wrap: wrap;
     }
 
+    .toolbar-jump {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px;
+      border: 1px solid var(--border);
+      border-radius: 11px;
+      background: var(--panel);
+    }
+
+    .toolbar-jump-input {
+      width: 92px;
+      min-width: 0;
+      border: 0;
+      outline: 0;
+      padding: 5px 6px;
+      background: transparent;
+      color: var(--text);
+    }
+
+    .toolbar-jump-button {
+      padding: 6px 10px;
+    }
+
     .button {
       border: 1px solid var(--border);
       background: var(--panel);
@@ -405,8 +429,15 @@
           <h1>Watershed review tool</h1>
         </div>
         <div class="toolbar-actions">
+          <button class="button" id="first-pending">Premier pending</button>
+          <button class="button" id="prev-pending">Pending precedent</button>
+          <button class="button" id="next-pending">Pending suivant</button>
           <button class="button" id="prev-page">Precedent</button>
           <button class="button" id="next-page">Suivant</button>
+          <label class="toolbar-jump" for="jump-canyon-id">
+            <input class="toolbar-jump-input" id="jump-canyon-id" type="number" inputmode="numeric" min="1" step="1" placeholder="Canyon ID">
+            <button class="button toolbar-jump-button" id="jump-canyon-button" type="button">Aller</button>
+          </label>
           <span class="chip chip-accent" id="page-label">Chargement...</span>
           <button class="button button-ghost" id="reset-session">Reinitialiser la session</button>
         </div>
@@ -441,7 +472,13 @@
       chCatchments: "../watershed-results/runs/suisse/full/2026-03-28-switzerland-v1/import_ready_catchments.json",
       chWatersheds: "../watershed-results/runs/suisse/full/2026-03-28-switzerland-v1/import_ready_watersheds.json",
       atCatchments: "../watershed-results/runs/autriche/full/2026-03-28-austria-v1/import_ready_catchments.json",
-      atWatersheds: "../watershed-results/runs/autriche/full/2026-03-28-austria-v1/import_ready_watersheds.json"
+      atWatersheds: "../watershed-results/runs/autriche/full/2026-03-28-austria-v1/import_ready_watersheds.json",
+      itCatchments: "../watershed-results/runs/italie/full/2026-03-25-italy-v1/import_ready_catchments.json",
+      itWatersheds: "../watershed-results/runs/italie/full/2026-03-25-italy-v1/import_ready_watersheds.json",
+      esCatchments: "../watershed-results/runs/espagne/full/2026-03-25-spain-v1/import_ready_catchments.json",
+      esWatersheds: "../watershed-results/runs/espagne/full/2026-03-25-spain-v1/import_ready_watersheds.json",
+      siCatchments: "../watershed-results/runs/slov%C3%A9nie/full/2026-03-25-slovenia-v1/import_ready_catchments.json",
+      siWatersheds: "../watershed-results/runs/slov%C3%A9nie/full/2026-03-25-slovenia-v1/import_ready_watersheds.json"
     };
 
     const BASEMAP = {
@@ -479,8 +516,13 @@
       pageLabel: document.getElementById("page-label"),
       statsRow: document.getElementById("stats-row"),
       statusText: document.getElementById("status-text"),
+      firstPending: document.getElementById("first-pending"),
+      prevPending: document.getElementById("prev-pending"),
+      nextPending: document.getElementById("next-pending"),
       prevPage: document.getElementById("prev-page"),
       nextPage: document.getElementById("next-page"),
+      jumpCanyonId: document.getElementById("jump-canyon-id"),
+      jumpCanyonButton: document.getElementById("jump-canyon-button"),
       saveNext: document.getElementById("save-next"),
       resetSession: document.getElementById("reset-session")
     };
@@ -534,6 +576,36 @@
     }
 
     function bindEvents() {
+      elements.firstPending.addEventListener("click", () => {
+        const pendingPage = findFirstPendingPage();
+        if (pendingPage === -1) {
+          return;
+        }
+        state.currentPage = pendingPage;
+        persistLocalSession();
+        renderPage();
+      });
+
+      elements.prevPending.addEventListener("click", () => {
+        const pendingPage = findAdjacentPendingPage(-1);
+        if (pendingPage === -1) {
+          return;
+        }
+        state.currentPage = pendingPage;
+        persistLocalSession();
+        renderPage();
+      });
+
+      elements.nextPending.addEventListener("click", () => {
+        const pendingPage = findAdjacentPendingPage(1);
+        if (pendingPage === -1) {
+          return;
+        }
+        state.currentPage = pendingPage;
+        persistLocalSession();
+        renderPage();
+      });
+
       elements.prevPage.addEventListener("click", () => {
         if (state.currentPage > 0) {
           state.currentPage -= 1;
@@ -548,6 +620,18 @@
           persistLocalSession();
           renderPage();
         }
+      });
+
+      elements.jumpCanyonButton.addEventListener("click", () => {
+        jumpToCanyonId();
+      });
+
+      elements.jumpCanyonId.addEventListener("keydown", (event) => {
+        if (event.key !== "Enter") {
+          return;
+        }
+        event.preventDefault();
+        jumpToCanyonId();
       });
 
       elements.saveNext.addEventListener("click", () => { void saveAndAdvance(); });
@@ -742,14 +826,28 @@
       }
 
       state.catchmentsByCanyonId = new Map();
-      for (const row of [...data.frCatchments, ...data.chCatchments, ...data.atCatchments]) {
+      for (const row of [
+        ...data.frCatchments,
+        ...data.chCatchments,
+        ...data.atCatchments,
+        ...data.itCatchments,
+        ...data.esCatchments,
+        ...data.siCatchments
+      ]) {
         if (row && Number.isFinite(Number(row.canyonId))) {
           state.catchmentsByCanyonId.set(Number(row.canyonId), row);
         }
       }
 
       state.watershedsByCanyonId = new Map();
-      for (const row of [...data.frWatersheds, ...data.chWatersheds, ...data.atWatersheds]) {
+      for (const row of [
+        ...data.frWatersheds,
+        ...data.chWatersheds,
+        ...data.atWatersheds,
+        ...data.itWatersheds,
+        ...data.esWatersheds,
+        ...data.siWatersheds
+      ]) {
         if (row && Number.isFinite(Number(row.canyonId))) {
           state.watershedsByCanyonId.set(Number(row.canyonId), row);
         }
@@ -841,6 +939,32 @@
       return Math.ceil(state.orderedItems.length / PAGE_SIZE);
     }
 
+    function isPendingItem(item) {
+      if (!item) {
+        return false;
+      }
+      const review = state.reviewByCanyonId.get(item.canyonId);
+      return !review || review.status === "pending";
+    }
+
+    function findFirstPendingPage() {
+      for (let index = 0; index < state.orderedItems.length; index += 1) {
+        if (isPendingItem(state.orderedItems[index])) {
+          return index;
+        }
+      }
+      return -1;
+    }
+
+    function findAdjacentPendingPage(direction) {
+      for (let index = state.currentPage + direction; index >= 0 && index < state.orderedItems.length; index += direction) {
+        if (isPendingItem(state.orderedItems[index])) {
+          return index;
+        }
+      }
+      return -1;
+    }
+
     function clampCurrentPage() {
       const pageCount = getPageCount();
       if (pageCount === 0) {
@@ -848,6 +972,23 @@
         return;
       }
       state.currentPage = Math.max(0, Math.min(state.currentPage, pageCount - 1));
+    }
+
+    function jumpToCanyonId() {
+      const canyonId = Number(elements.jumpCanyonId.value);
+      if (!Number.isInteger(canyonId) || canyonId <= 0) {
+        setStatus("Saisis un canyonId valide pour y acceder directement.");
+        return;
+      }
+      const pageIndex = state.orderedItems.findIndex((item) => item.canyonId === canyonId);
+      if (pageIndex === -1) {
+        setStatus(`Canyon ${canyonId} introuvable dans la liste de review.`);
+        return;
+      }
+      state.currentPage = pageIndex;
+      persistLocalSession();
+      renderPage();
+      setStatus(`Navigation directe vers le canyon ${canyonId}.`);
     }
 
     function getVisibleItems() {
@@ -1240,8 +1381,13 @@
         chip(`${badCount} bad`)
       ].join("");
 
+      elements.firstPending.disabled = !state.loaded || findFirstPendingPage() === -1;
+      elements.prevPending.disabled = !state.loaded || findAdjacentPendingPage(-1) === -1;
+      elements.nextPending.disabled = !state.loaded || findAdjacentPendingPage(1) === -1;
       elements.prevPage.disabled = state.currentPage <= 0;
       elements.nextPage.disabled = !state.loaded || state.currentPage + 1 >= pageCount;
+      elements.jumpCanyonId.disabled = !state.loaded;
+      elements.jumpCanyonButton.disabled = !state.loaded;
 
       updateSaveButton(remainingOnPage, visibleItems.length, pageCount);
     }
