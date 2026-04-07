@@ -176,7 +176,8 @@ class EmbeddedAppDataImporter @Inject constructor(
         val manifest = readManifest()
         val watershedsVersion = manifest.versions["watersheds"] ?: manifest.generatedAt
         val importedVersion = appMetadataDao.get(WATERSHEDS_VERSION_KEY)?.value
-        if (importedVersion == watershedsVersion) {
+        val hasImportedWatersheds = watershedDao.count() > 0
+        if (shouldSkipWatershedsImport(importedVersion, watershedsVersion, hasImportedWatersheds)) {
             return EmbeddedImportOutcome(
                 dataset = EmbeddedImportDataset.WATERSHEDS,
                 mode = EmbeddedImportMode.SKIPPED,
@@ -468,6 +469,14 @@ private data class CoreImportPlan(
     val manifest: RoomImportManifest,
     val mode: EmbeddedImportMode,
 )
+
+internal fun shouldSkipWatershedsImport(
+    importedVersion: String?,
+    watershedsVersion: String,
+    hasImportedWatersheds: Boolean,
+): Boolean {
+    return importedVersion == watershedsVersion && hasImportedWatersheds
+}
 
 private val RoomImportManifest.expectedCoreRowCount: Int
     get() = listOf(
