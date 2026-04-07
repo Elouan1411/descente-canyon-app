@@ -30,6 +30,7 @@ data class Canyon(
     val nbVotes: Int = 0,
     val url: String,
     val hasSpecificRegulation: Boolean = false,
+    val isForbidden: Boolean = false,
     val isOffline: Boolean = false,
     val lastUpdated: Long = 0L,
 )

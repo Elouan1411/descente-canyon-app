@@ -98,6 +98,7 @@ import fr.descentecanyon.app.domain.model.NiveauDebit
 import fr.descentecanyon.app.domain.model.Regulation
 import fr.descentecanyon.app.perf.PerformanceTrace
 import fr.descentecanyon.app.ui.components.CotationBadge
+import fr.descentecanyon.app.ui.components.ForbiddenBadge
 import fr.descentecanyon.app.ui.components.CompactAppBar
 import fr.descentecanyon.app.ui.components.DebitBadge
 import fr.descentecanyon.app.ui.components.InterestStars
@@ -433,7 +434,11 @@ private fun SummaryCard(
                 horizontalArrangement = Arrangement.SpaceBetween,
                 verticalAlignment = Alignment.CenterVertically,
             ) {
-                CotationBadge(cotation = canyon.cotation, large = true)
+                if (canyon.isForbidden) {
+                    ForbiddenBadge(large = true)
+                } else {
+                    CotationBadge(cotation = canyon.cotation, large = true)
+                }
                 Spacer(modifier = Modifier.width(12.dp))
                 canyon.interet?.let { interest ->
                     InterestStars(interest = interest)

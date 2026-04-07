@@ -94,6 +94,7 @@ fun CanyonEntity.toDomain(): Canyon = Canyon(
     nbVotes = nbVotes,
     url = url,
     hasSpecificRegulation = hasSpecificRegulation,
+    isForbidden = isForbidden,
     isOffline = isOffline,
     lastUpdated = lastUpdated,
 )
