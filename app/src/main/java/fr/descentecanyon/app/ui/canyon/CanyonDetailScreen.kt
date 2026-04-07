@@ -2,6 +2,7 @@ package fr.descentecanyon.app.ui.canyon
 
 import android.content.Intent
 import android.net.Uri
+import android.util.Patterns
 import android.widget.Toast
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.ExperimentalFoundationApi
@@ -26,6 +27,7 @@ import androidx.compose.foundation.lazy.LazyListScope
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.text.ClickableText
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.Description
@@ -62,13 +64,20 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.AnnotatedString
+import androidx.compose.ui.text.SpanStyle
+import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
@@ -80,6 +89,7 @@ import fr.descentecanyon.app.domain.model.BibliographyEntry
 import fr.descentecanyon.app.domain.model.BibliographyKind
 import fr.descentecanyon.app.domain.model.CanyonDetail
 import fr.descentecanyon.app.domain.model.CanyonDebitPredictions
+import fr.descentecanyon.app.domain.model.CanyonEdfPracticability
 import fr.descentecanyon.app.domain.model.CanyonPhoto
 import fr.descentecanyon.app.domain.model.Debit
 import fr.descentecanyon.app.domain.model.GeoPoint
@@ -216,6 +226,10 @@ fun CanyonDetailScreen(
                         photoError = uiState.photoError,
                         isLoadingDebits = uiState.isLoadingDebits,
                         debitError = uiState.debitError,
+                        edfStatus = uiState.edfStatus,
+                        isLoadingEdfStatus = uiState.isLoadingEdfStatus,
+                        edfStatusError = uiState.edfStatusError,
+                        edfStatusSourceUrl = uiState.edfStatusSourceUrl,
                         weather = uiState.weather,
                         isLoadingWeather = uiState.isLoadingWeather,
                         weatherError = uiState.weatherError,
@@ -266,6 +280,10 @@ private fun CanyonDetailContent(
     photoError: String?,
     isLoadingDebits: Boolean,
     debitError: String?,
+    edfStatus: CanyonEdfPracticability?,
+    isLoadingEdfStatus: Boolean,
+    edfStatusError: String?,
+    edfStatusSourceUrl: String?,
     weather: fr.descentecanyon.app.domain.model.CanyonWeather?,
     isLoadingWeather: Boolean,
     weatherError: String?,
@@ -310,6 +328,16 @@ private fun CanyonDetailContent(
             }
         }
         item { SummaryCard(detail = detail) }
+        if (edfStatusSourceUrl != null) {
+            item {
+                CanyonEdfStatusCard(
+                    status = edfStatus,
+                    isLoading = isLoadingEdfStatus,
+                    error = edfStatusError,
+                    sourceUrl = edfStatusSourceUrl,
+                )
+            }
+        }
         item {
             CanyonWeatherCard(
                 weather = weather,
@@ -700,9 +728,8 @@ private fun CollapsibleSection(
             AnimatedVisibility(visible = expanded) {
                 Column {
                     HorizontalDivider()
-                    Text(
-                        text = content,
-                        style = MaterialTheme.typography.bodyMedium,
+                    LinkifiedSectionText(
+                        content = content,
                         modifier = Modifier.padding(12.dp),
                     )
                 }
@@ -710,6 +737,88 @@ private fun CollapsibleSection(
         }
     }
 }
+
+@Composable
+private fun LinkifiedSectionText(
+    content: String,
+    modifier: Modifier = Modifier,
+) {
+    val uriHandler = LocalUriHandler.current
+    val linkColor = MaterialTheme.colorScheme.primary
+    val bodyColor = MaterialTheme.colorScheme.onSurface
+    val text = remember(content, linkColor) {
+        buildLinkifiedAnnotatedString(
+            content = normalizeSectionText(content),
+            linkColor = linkColor,
+        )
+    }
+
+    ClickableText(
+        text = text,
+        style = MaterialTheme.typography.bodyMedium.copy(color = bodyColor),
+        modifier = modifier,
+        onClick = { offset ->
+            text.getStringAnnotations(tag = SectionUrlAnnotationTag, start = offset, end = offset)
+                .firstOrNull()
+                ?.item
+                ?.let(uriHandler::openUri)
+        },
+    )
+}
+
+private const val SectionUrlAnnotationTag = "section_url"
+private val HtmlLineBreakRegex = Regex("""(?i)<br\s*/?>""")
+
+private fun normalizeSectionText(content: String): String {
+    return content
+        .replace("\r\n", "\n")
+        .replace(HtmlLineBreakRegex, "\n")
+}
+
+private fun buildLinkifiedAnnotatedString(
+    content: String,
+    linkColor: Color,
+): AnnotatedString {
+    val matcher = Patterns.WEB_URL.matcher(content)
+    return buildAnnotatedString {
+        var currentIndex = 0
+        while (matcher.find()) {
+            val rawMatch = matcher.group().orEmpty()
+            val linkText = rawMatch.trimTrailingUrlPunctuation()
+            if (linkText.isBlank()) {
+                continue
+            }
+
+            append(content.substring(currentIndex, matcher.start()))
+            pushStringAnnotation(tag = SectionUrlAnnotationTag, annotation = normalizeExternalUrl(linkText))
+            withStyle(
+                style = SpanStyle(
+                    color = linkColor,
+                    textDecoration = TextDecoration.Underline,
+                )
+            ) {
+                append(linkText)
+            }
+            pop()
+            append(rawMatch.substring(linkText.length))
+            currentIndex = matcher.end()
+        }
+
+        if (currentIndex < content.length) {
+            append(content.substring(currentIndex))
+        }
+    }
+}
+
+private fun normalizeExternalUrl(url: String): String {
+    return if (url.startsWith("http://", ignoreCase = true) || url.startsWith("https://", ignoreCase = true)) {
+        url
+    } else {
+        "https://$url"
+    }
+}
+
+private fun String.trimTrailingUrlPunctuation(): String = trimEnd('.', ',', ';', ':', ')', ']', '}')
 
 @Composable
 private fun BibliographySection(

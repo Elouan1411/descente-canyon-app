@@ -9,8 +9,10 @@ import fr.descentecanyon.app.data.repository.CanyonRepositoryImpl
 import fr.descentecanyon.app.data.repository.DebitPredictionRepositoryImpl
 import fr.descentecanyon.app.data.repository.DebitPredictionSupportRepositoryImpl
 import fr.descentecanyon.app.data.repository.DebitRepositoryImpl
+import fr.descentecanyon.app.data.repository.EdfPracticabilityRepositoryImpl
 import fr.descentecanyon.app.data.repository.DebitSubmissionRepositoryImpl
 import fr.descentecanyon.app.data.repository.FavoritesRepositoryImpl
+import fr.descentecanyon.app.data.repository.ForumRepositoryImpl
 import fr.descentecanyon.app.data.repository.MapOfflineRepositoryImpl
 import fr.descentecanyon.app.data.repository.PhotoRepositoryImpl
 import fr.descentecanyon.app.data.repository.WeatherRepositoryImpl
@@ -20,7 +22,9 @@ import fr.descentecanyon.app.domain.repository.DebitPredictionRepository
 import fr.descentecanyon.app.domain.repository.DebitPredictionSupportRepository
 import fr.descentecanyon.app.domain.repository.DebitRepository
 import fr.descentecanyon.app.domain.repository.DebitSubmissionRepository
+import fr.descentecanyon.app.domain.repository.EdfPracticabilityRepository
 import fr.descentecanyon.app.domain.repository.FavoritesRepository
+import fr.descentecanyon.app.domain.repository.ForumRepository
 import fr.descentecanyon.app.domain.repository.MapOfflineRepository
 import fr.descentecanyon.app.domain.repository.PhotoRepository
 import fr.descentecanyon.app.domain.repository.WeatherRepository
@@ -60,6 +64,10 @@ abstract class RepositoryModule {
 
     @Binds
     @Singleton
+    abstract fun bindForumRepository(impl: ForumRepositoryImpl): ForumRepository
+
+    @Binds
+    @Singleton
     abstract fun bindMapOfflineRepository(impl: MapOfflineRepositoryImpl): MapOfflineRepository
 
     @Binds
@@ -69,6 +77,12 @@ abstract class RepositoryModule {
     @Binds
     @Singleton
     abstract fun bindDebitSubmissionRepository(impl: DebitSubmissionRepositoryImpl): DebitSubmissionRepository
+
+    @Binds
+    @Singleton
+    abstract fun bindEdfPracticabilityRepository(
+        impl: EdfPracticabilityRepositoryImpl,
+    ): EdfPracticabilityRepository
 
     @Binds
     @Singleton

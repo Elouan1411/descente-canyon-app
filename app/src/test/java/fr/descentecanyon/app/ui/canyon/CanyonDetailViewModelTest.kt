@@ -1,32 +1,40 @@
 package fr.descentecanyon.app.ui.canyon
 
 import androidx.lifecycle.SavedStateHandle
+import fr.descentecanyon.app.data.network.ConnectivityObserver
 import fr.descentecanyon.app.domain.model.BibliographyEntry
 import fr.descentecanyon.app.domain.model.BibliographyKind
-import fr.descentecanyon.app.data.network.ConnectivityObserver
 import fr.descentecanyon.app.domain.model.Canyon
-import fr.descentecanyon.app.domain.model.CanyonDetail
 import fr.descentecanyon.app.domain.model.CanyonDebitPredictions
+import fr.descentecanyon.app.domain.model.CanyonDetail
+import fr.descentecanyon.app.domain.model.CanyonEdfPracticability
 import fr.descentecanyon.app.domain.model.CanyonPhoto
+import fr.descentecanyon.app.domain.model.CanyonWatershed
 import fr.descentecanyon.app.domain.model.CanyonWeather
 import fr.descentecanyon.app.domain.model.DailyDebitPrediction
 import fr.descentecanyon.app.domain.model.Debit
 import fr.descentecanyon.app.domain.model.DebitPredictionPolicy
+import fr.descentecanyon.app.domain.model.EdfPracticabilityCondition
+import fr.descentecanyon.app.domain.model.EdfPracticabilityReference
+import fr.descentecanyon.app.domain.model.EdfPracticabilitySample
+import fr.descentecanyon.app.domain.model.GeoBounds
 import fr.descentecanyon.app.domain.model.NiveauDebit
 import fr.descentecanyon.app.domain.model.PredictedDebitLevel
-import fr.descentecanyon.app.domain.model.WeatherLocationSource
-import fr.descentecanyon.app.domain.model.WeatherTarget
 import fr.descentecanyon.app.domain.model.Regulation
 import fr.descentecanyon.app.domain.model.RuntimeLookupSource
+import fr.descentecanyon.app.domain.model.WeatherLocationSource
+import fr.descentecanyon.app.domain.model.WeatherTarget
 import fr.descentecanyon.app.domain.repository.CanyonRepository
 import fr.descentecanyon.app.domain.repository.DebitPredictionRepository
 import fr.descentecanyon.app.domain.repository.DebitRepository
+import fr.descentecanyon.app.domain.repository.EdfPracticabilityRepository
 import fr.descentecanyon.app.domain.repository.FavoritesRepository
 import fr.descentecanyon.app.domain.repository.PhotoRepository
 import fr.descentecanyon.app.domain.repository.WeatherRepository
 import fr.descentecanyon.app.domain.usecase.DownloadPhotoForOfflineUseCase
 import fr.descentecanyon.app.domain.usecase.GetCanyonDebitPredictionsUseCase
 import fr.descentecanyon.app.domain.usecase.GetCanyonDetailUseCase
+import fr.descentecanyon.app.domain.usecase.GetCanyonEdfPracticabilityUseCase
 import fr.descentecanyon.app.domain.usecase.GetCanyonPreviewUseCase
 import fr.descentecanyon.app.domain.usecase.GetCanyonWeatherUseCase
 import fr.descentecanyon.app.domain.usecase.ToggleFavoriteUseCase
@@ -35,6 +43,7 @@ import io.mockk.coEvery
 import io.mockk.every
 import io.mockk.mockk
 import java.net.SocketTimeoutException
+import java.time.Instant
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.test.advanceUntilIdle
@@ -44,7 +53,6 @@ import org.junit.Assert.assertFalse
 import org.junit.Assert.assertNotNull
 import org.junit.Rule
 import org.junit.Test
-import java.time.Instant
 
 class CanyonDetailViewModelTest {
 
@@ -57,10 +65,12 @@ class CanyonDetailViewModelTest {
     private val debitRepository = mockk<DebitRepository>()
     private val debitPredictionRepository = mockk<DebitPredictionRepository>()
     private val weatherRepository = mockk<WeatherRepository>()
+    private val edfPracticabilityRepository = mockk<EdfPracticabilityRepository>()
     private val connectivityObserver = mockk<ConnectivityObserver>()
     private val getCanyonPreviewUseCase = GetCanyonPreviewUseCase(canyonRepository)
     private val getCanyonDetailUseCase = GetCanyonDetailUseCase(canyonRepository)
     private val getCanyonWeatherUseCase = GetCanyonWeatherUseCase(weatherRepository)
+    private val getCanyonEdfPracticabilityUseCase = GetCanyonEdfPracticabilityUseCase(edfPracticabilityRepository)
     private val getCanyonDebitPredictionsUseCase = GetCanyonDebitPredictionsUseCase(debitPredictionRepository)
     private val toggleFavoriteUseCase = ToggleFavoriteUseCase(favoritesRepository)
     private val downloadPhotoForOfflineUseCase = DownloadPhotoForOfflineUseCase(photoRepository)
@@ -68,34 +78,14 @@ class CanyonDetailViewModelTest {
     @Test
     @OptIn(ExperimentalCoroutinesApi::class)
     fun `preview loads before full detail`() = runTest {
+        stubBaseState()
+
         coEvery { canyonRepository.getCanyonPreview(42) } returns Result.success(
             detail().copy(canyon = detail().canyon.copy(nom = "Preview"))
         )
         coEvery { canyonRepository.getCanyonDetail(42) } returns Result.success(detail())
-        every { canyonRepository.observeWatershed(42) } returns flowOf(null)
-        coEvery { weatherRepository.getCanyonWeather(any()) } returns Result.success(weather())
-        coEvery { debitPredictionRepository.getPredictions(any()) } returns Result.success(predictions())
-        every { photoRepository.observePhotos(42) } returns flowOf(detail().photos)
-        coEvery { photoRepository.refreshPhotos(42) } returns Result.success(detail().photos)
-        every { debitRepository.getDebitsForCanyon(42) } returns flowOf(Result.success(detail().debits))
-        coEvery { debitRepository.refreshDebits(42) } returns Result.success(detail().debits)
-        every { favoritesRepository.isFavorite(42) } returns flowOf(false)
-        every { connectivityObserver.observe() } returns flowOf(true)
 
-        val viewModel = CanyonDetailViewModel(
-            savedStateHandle = SavedStateHandle(mapOf("canyonId" to 42)),
-            getCanyonPreviewUseCase = getCanyonPreviewUseCase,
-            getCanyonDetailUseCase = getCanyonDetailUseCase,
-            getCanyonWeatherUseCase = getCanyonWeatherUseCase,
-            getCanyonDebitPredictionsUseCase = getCanyonDebitPredictionsUseCase,
-            toggleFavoriteUseCase = toggleFavoriteUseCase,
-            canyonRepository = canyonRepository,
-            photoRepository = photoRepository,
-            debitRepository = debitRepository,
-            downloadPhotoForOfflineUseCase = downloadPhotoForOfflineUseCase,
-            connectivityObserver = connectivityObserver,
-            favoritesRepository = favoritesRepository,
-        )
+        val viewModel = createViewModel()
 
         advanceUntilIdle()
 
@@ -106,34 +96,14 @@ class CanyonDetailViewModelTest {
     @Test
     @OptIn(ExperimentalCoroutinesApi::class)
     fun `full detail keeps bibliography and regulations after loading completes`() = runTest {
+        stubBaseState()
+
         coEvery { canyonRepository.getCanyonPreview(42) } returns Result.success(
             detail().copy(canyon = detail().canyon.copy(nom = "Preview"))
         )
         coEvery { canyonRepository.getCanyonDetail(42) } returns Result.success(detail())
-        every { canyonRepository.observeWatershed(42) } returns flowOf(null)
-        coEvery { weatherRepository.getCanyonWeather(any()) } returns Result.success(weather())
-        coEvery { debitPredictionRepository.getPredictions(any()) } returns Result.success(predictions())
-        every { photoRepository.observePhotos(42) } returns flowOf(detail().photos)
-        coEvery { photoRepository.refreshPhotos(42) } returns Result.success(detail().photos)
-        every { debitRepository.getDebitsForCanyon(42) } returns flowOf(Result.success(detail().debits))
-        coEvery { debitRepository.refreshDebits(42) } returns Result.success(detail().debits)
-        every { favoritesRepository.isFavorite(42) } returns flowOf(false)
-        every { connectivityObserver.observe() } returns flowOf(true)
 
-        val viewModel = CanyonDetailViewModel(
-            savedStateHandle = SavedStateHandle(mapOf("canyonId" to 42)),
-            getCanyonPreviewUseCase = getCanyonPreviewUseCase,
-            getCanyonDetailUseCase = getCanyonDetailUseCase,
-            getCanyonWeatherUseCase = getCanyonWeatherUseCase,
-            getCanyonDebitPredictionsUseCase = getCanyonDebitPredictionsUseCase,
-            toggleFavoriteUseCase = toggleFavoriteUseCase,
-            canyonRepository = canyonRepository,
-            photoRepository = photoRepository,
-            debitRepository = debitRepository,
-            downloadPhotoForOfflineUseCase = downloadPhotoForOfflineUseCase,
-            connectivityObserver = connectivityObserver,
-            favoritesRepository = favoritesRepository,
-        )
+        val viewModel = createViewModel()
 
         advanceUntilIdle()
 
@@ -150,33 +120,13 @@ class CanyonDetailViewModelTest {
     @Test
     @OptIn(ExperimentalCoroutinesApi::class)
     fun `download photo updates local path and transient message`() = runTest {
+        stubBaseState()
+
         coEvery { canyonRepository.getCanyonPreview(42) } returns Result.success(detail())
         coEvery { canyonRepository.getCanyonDetail(42) } returns Result.success(detail())
-        every { canyonRepository.observeWatershed(42) } returns flowOf(null)
-        coEvery { weatherRepository.getCanyonWeather(any()) } returns Result.success(weather())
-        coEvery { debitPredictionRepository.getPredictions(any()) } returns Result.success(predictions())
-        every { photoRepository.observePhotos(42) } returns flowOf(detail().photos)
-        coEvery { photoRepository.refreshPhotos(42) } returns Result.success(detail().photos)
-        every { debitRepository.getDebitsForCanyon(42) } returns flowOf(Result.success(detail().debits))
-        coEvery { debitRepository.refreshDebits(42) } returns Result.success(detail().debits)
         coEvery { photoRepository.downloadPhoto(8) } returns Result.success("/tmp/photo.jpg")
-        every { favoritesRepository.isFavorite(42) } returns flowOf(false)
-        every { connectivityObserver.observe() } returns flowOf(true)
 
-        val viewModel = CanyonDetailViewModel(
-            savedStateHandle = SavedStateHandle(mapOf("canyonId" to 42)),
-            getCanyonPreviewUseCase = getCanyonPreviewUseCase,
-            getCanyonDetailUseCase = getCanyonDetailUseCase,
-            getCanyonWeatherUseCase = getCanyonWeatherUseCase,
-            getCanyonDebitPredictionsUseCase = getCanyonDebitPredictionsUseCase,
-            toggleFavoriteUseCase = toggleFavoriteUseCase,
-            canyonRepository = canyonRepository,
-            photoRepository = photoRepository,
-            debitRepository = debitRepository,
-            downloadPhotoForOfflineUseCase = downloadPhotoForOfflineUseCase,
-            connectivityObserver = connectivityObserver,
-            favoritesRepository = favoritesRepository,
-        )
+        val viewModel = createViewModel()
         advanceUntilIdle()
 
         viewModel.downloadPhoto(8)
@@ -189,32 +139,15 @@ class CanyonDetailViewModelTest {
     @Test
     @OptIn(ExperimentalCoroutinesApi::class)
     fun `weather failure keeps canyon detail available`() = runTest {
+        stubBaseState()
+
         coEvery { canyonRepository.getCanyonPreview(42) } returns Result.success(detail())
         coEvery { canyonRepository.getCanyonDetail(42) } returns Result.success(detail())
-        every { canyonRepository.observeWatershed(42) } returns flowOf(null)
-        coEvery { weatherRepository.getCanyonWeather(any()) } returns Result.failure(SocketTimeoutException("Request timeout has expired"))
-        coEvery { debitPredictionRepository.getPredictions(any()) } returns Result.success(predictions())
-        every { photoRepository.observePhotos(42) } returns flowOf(detail().photos)
-        coEvery { photoRepository.refreshPhotos(42) } returns Result.success(detail().photos)
-        every { debitRepository.getDebitsForCanyon(42) } returns flowOf(Result.success(detail().debits))
-        coEvery { debitRepository.refreshDebits(42) } returns Result.success(detail().debits)
-        every { favoritesRepository.isFavorite(42) } returns flowOf(false)
-        every { connectivityObserver.observe() } returns flowOf(true)
+        coEvery {
+            weatherRepository.getCanyonWeather(any())
+        } returns Result.failure(SocketTimeoutException("Request timeout has expired"))
 
-        val viewModel = CanyonDetailViewModel(
-            savedStateHandle = SavedStateHandle(mapOf("canyonId" to 42)),
-            getCanyonPreviewUseCase = getCanyonPreviewUseCase,
-            getCanyonDetailUseCase = getCanyonDetailUseCase,
-            getCanyonWeatherUseCase = getCanyonWeatherUseCase,
-            getCanyonDebitPredictionsUseCase = getCanyonDebitPredictionsUseCase,
-            toggleFavoriteUseCase = toggleFavoriteUseCase,
-            canyonRepository = canyonRepository,
-            photoRepository = photoRepository,
-            debitRepository = debitRepository,
-            downloadPhotoForOfflineUseCase = downloadPhotoForOfflineUseCase,
-            connectivityObserver = connectivityObserver,
-            favoritesRepository = favoritesRepository,
-        )
+        val viewModel = createViewModel()
 
         advanceUntilIdle()
 
@@ -226,34 +159,15 @@ class CanyonDetailViewModelTest {
     @Test
     @OptIn(ExperimentalCoroutinesApi::class)
     fun `prediction timeout shows friendly message instead of raw timeout`() = runTest {
+        stubBaseState()
+
         coEvery { canyonRepository.getCanyonPreview(42) } returns Result.success(detail())
         coEvery { canyonRepository.getCanyonDetail(42) } returns Result.success(detail())
-        every { canyonRepository.observeWatershed(42) } returns flowOf(null)
-        coEvery { weatherRepository.getCanyonWeather(any()) } returns Result.success(weather())
-        coEvery { debitPredictionRepository.getPredictions(any()) } returns Result.failure(
-            SocketTimeoutException("Request timeout has expired")
-        )
-        every { photoRepository.observePhotos(42) } returns flowOf(detail().photos)
-        coEvery { photoRepository.refreshPhotos(42) } returns Result.success(detail().photos)
-        every { debitRepository.getDebitsForCanyon(42) } returns flowOf(Result.success(detail().debits))
-        coEvery { debitRepository.refreshDebits(42) } returns Result.success(detail().debits)
-        every { favoritesRepository.isFavorite(42) } returns flowOf(false)
-        every { connectivityObserver.observe() } returns flowOf(true)
+        coEvery {
+            debitPredictionRepository.getPredictions(any())
+        } returns Result.failure(SocketTimeoutException("Request timeout has expired"))
 
-        val viewModel = CanyonDetailViewModel(
-            savedStateHandle = SavedStateHandle(mapOf("canyonId" to 42)),
-            getCanyonPreviewUseCase = getCanyonPreviewUseCase,
-            getCanyonDetailUseCase = getCanyonDetailUseCase,
-            getCanyonWeatherUseCase = getCanyonWeatherUseCase,
-            getCanyonDebitPredictionsUseCase = getCanyonDebitPredictionsUseCase,
-            toggleFavoriteUseCase = toggleFavoriteUseCase,
-            canyonRepository = canyonRepository,
-            photoRepository = photoRepository,
-            debitRepository = debitRepository,
-            downloadPhotoForOfflineUseCase = downloadPhotoForOfflineUseCase,
-            connectivityObserver = connectivityObserver,
-            favoritesRepository = favoritesRepository,
-        )
+        val viewModel = createViewModel()
 
         advanceUntilIdle()
 
@@ -267,32 +181,12 @@ class CanyonDetailViewModelTest {
     @Test
     @OptIn(ExperimentalCoroutinesApi::class)
     fun `detail refresh failure keeps preview content available`() = runTest {
+        stubBaseState()
+
         coEvery { canyonRepository.getCanyonPreview(42) } returns Result.success(detail())
         coEvery { canyonRepository.getCanyonDetail(42) } returns Result.failure(IllegalStateException("boom"))
-        every { canyonRepository.observeWatershed(42) } returns flowOf(null)
-        coEvery { weatherRepository.getCanyonWeather(any()) } returns Result.success(weather())
-        coEvery { debitPredictionRepository.getPredictions(any()) } returns Result.success(predictions())
-        every { photoRepository.observePhotos(42) } returns flowOf(detail().photos)
-        coEvery { photoRepository.refreshPhotos(42) } returns Result.success(detail().photos)
-        every { debitRepository.getDebitsForCanyon(42) } returns flowOf(Result.success(detail().debits))
-        coEvery { debitRepository.refreshDebits(42) } returns Result.success(detail().debits)
-        every { favoritesRepository.isFavorite(42) } returns flowOf(false)
-        every { connectivityObserver.observe() } returns flowOf(true)
 
-        val viewModel = CanyonDetailViewModel(
-            savedStateHandle = SavedStateHandle(mapOf("canyonId" to 42)),
-            getCanyonPreviewUseCase = getCanyonPreviewUseCase,
-            getCanyonDetailUseCase = getCanyonDetailUseCase,
-            getCanyonWeatherUseCase = getCanyonWeatherUseCase,
-            getCanyonDebitPredictionsUseCase = getCanyonDebitPredictionsUseCase,
-            toggleFavoriteUseCase = toggleFavoriteUseCase,
-            canyonRepository = canyonRepository,
-            photoRepository = photoRepository,
-            debitRepository = debitRepository,
-            downloadPhotoForOfflineUseCase = downloadPhotoForOfflineUseCase,
-            connectivityObserver = connectivityObserver,
-            favoritesRepository = favoritesRepository,
-        )
+        val viewModel = createViewModel()
 
         advanceUntilIdle()
 
@@ -302,6 +196,69 @@ class CanyonDetailViewModelTest {
         assertNotNull(viewModel.uiState.value.weather)
         assertNotNull(viewModel.uiState.value.predictions)
         assertFalse(viewModel.uiState.value.isRefreshingDetail)
+    }
+
+    @Test
+    @OptIn(ExperimentalCoroutinesApi::class)
+    fun `edf status loads when a mapping exists`() = runTest {
+        stubBaseState()
+
+        coEvery { canyonRepository.getCanyonPreview(42) } returns Result.success(detail())
+        coEvery { canyonRepository.getCanyonDetail(42) } returns Result.success(detail())
+        every { edfPracticabilityRepository.getReference(42) } returns EdfPracticabilityReference(
+            practicabilityId = 40746706,
+            sourceUrl = "https://mariviereetmoi.edf.fr/#/map/place/PRACTICABILITY/40746706",
+        )
+        coEvery { edfPracticabilityRepository.getStatus(42) } returns Result.success(edfStatus())
+
+        val viewModel = createViewModel()
+
+        advanceUntilIdle()
+
+        assertEquals(EdfPracticabilityCondition.APPROPRIATE, viewModel.uiState.value.edfStatus?.state)
+        assertFalse(viewModel.uiState.value.isLoadingEdfStatus)
+        assertEquals(null, viewModel.uiState.value.edfStatusError)
+    }
+
+    @Test
+    fun `base detail merge preserves an already loaded watershed`() {
+        val merged = mergeBaseCanyonDetail(
+            newDetail = detail(),
+            currentDetail = detail().copy(watershed = watershed()),
+        )
+
+        assertEquals(12.5, merged.watershed?.areaKm2)
+    }
+
+    private fun createViewModel(): CanyonDetailViewModel {
+        return CanyonDetailViewModel(
+            savedStateHandle = SavedStateHandle(mapOf("canyonId" to 42)),
+            getCanyonPreviewUseCase = getCanyonPreviewUseCase,
+            getCanyonDetailUseCase = getCanyonDetailUseCase,
+            getCanyonWeatherUseCase = getCanyonWeatherUseCase,
+            getCanyonEdfPracticabilityUseCase = getCanyonEdfPracticabilityUseCase,
+            getCanyonDebitPredictionsUseCase = getCanyonDebitPredictionsUseCase,
+            toggleFavoriteUseCase = toggleFavoriteUseCase,
+            canyonRepository = canyonRepository,
+            photoRepository = photoRepository,
+            debitRepository = debitRepository,
+            downloadPhotoForOfflineUseCase = downloadPhotoForOfflineUseCase,
+            connectivityObserver = connectivityObserver,
+            favoritesRepository = favoritesRepository,
+        )
+    }
+
+    private fun stubBaseState() {
+        every { canyonRepository.observeWatershed(42) } returns flowOf(null)
+        coEvery { weatherRepository.getCanyonWeather(any()) } returns Result.success(weather())
+        every { edfPracticabilityRepository.getReference(42) } returns null
+        coEvery { debitPredictionRepository.getPredictions(any()) } returns Result.success(predictions())
+        every { photoRepository.observePhotos(42) } returns flowOf(detail().photos)
+        coEvery { photoRepository.refreshPhotos(42) } returns Result.success(detail().photos)
+        every { debitRepository.getDebitsForCanyon(42) } returns flowOf(Result.success(detail().debits))
+        coEvery { debitRepository.refreshDebits(42) } returns Result.success(detail().debits)
+        every { favoritesRepository.isFavorite(42) } returns flowOf(false)
+        every { connectivityObserver.observe() } returns flowOf(true)
     }
 
     private fun detail() = CanyonDetail(
@@ -387,6 +344,31 @@ class CanyonDetailViewModelTest {
                 ),
                 highThreshold = 0.29,
             )
+        ),
+    )
+
+    private fun edfStatus() = CanyonEdfPracticability(
+        practicabilityId = 40746706,
+        title = "Canyon du Tech",
+        amenagementTitle = "Lac le Tech",
+        sourceUrl = "https://mariviereetmoi.edf.fr/#/map/place/PRACTICABILITY/40746706",
+        state = EdfPracticabilityCondition.APPROPRIATE,
+        lastSample = EdfPracticabilitySample(
+            value = 1204.77,
+            recordedAt = Instant.parse("2026-04-03T18:00:00Z"),
+            condition = EdfPracticabilityCondition.APPROPRIATE,
+        ),
+        description = "Le risque de déversement est faible.",
+    )
+
+    private fun watershed() = CanyonWatershed(
+        areaKm2 = 12.5,
+        geometryJson = "{\"type\":\"Polygon\",\"coordinates\":[]}",
+        bounds = GeoBounds(
+            minLongitude = 6.0,
+            minLatitude = 43.7,
+            maxLongitude = 6.1,
+            maxLatitude = 43.8,
         ),
     )
 }

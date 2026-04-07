@@ -1,5 +1,6 @@
 package fr.descentecanyon.app.domain.repository
 
+import fr.descentecanyon.app.domain.model.CachedItems
 import fr.descentecanyon.app.domain.model.Debit
 import kotlinx.coroutines.flow.Flow
 
@@ -17,6 +18,10 @@ interface DebitRepository {
      * Get the latest debits reported across all canyons.
      */
     fun getLatestDebits(limit: Int = 20): Flow<Result<List<Debit>>>
+
+    suspend fun getCachedLatestDebits(limit: Int = 20): CachedItems<Debit>
+
+    suspend fun refreshLatestDebits(limit: Int = 20): Result<CachedItems<Debit>>
 
     /**
      * Refresh debits from remote source.

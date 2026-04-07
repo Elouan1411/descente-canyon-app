@@ -36,6 +36,9 @@ fun AppNavHost(
                 onQuickSearchClick = {
                     navController.navigateSingleTop(Screen.Search)
                 },
+                onMapClick = {
+                    navController.navigateSingleTop(Screen.Map)
+                },
                 contentPadding = topLevelContentPadding,
             )
         }

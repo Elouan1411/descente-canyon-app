@@ -26,8 +26,10 @@ import androidx.compose.runtime.produceState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavBackStackEntry
 import androidx.navigation.NavDestination.Companion.hasRoute
 import androidx.navigation.NavGraph.Companion.findStartDestination
+import androidx.navigation.NavOptionsBuilder
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import dagger.hilt.android.AndroidEntryPoint
@@ -136,14 +138,8 @@ private fun MainScreen() {
     }
     val navController = rememberNavController()
     val navBackStackEntry by navController.currentBackStackEntryAsState()
-    val currentDestination = navBackStackEntry?.destination
-    val isTopLevelDestination = BottomNavItem.entries.any { item ->
-        currentDestination?.hasRoute(item.screen::class) == true
-    }
-    val isDetailScreen = currentDestination?.hasRoute(Screen.CanyonDetail::class) == true
-    val isCanyonPointsMapScreen = currentDestination?.hasRoute(Screen.CanyonPointsMap::class) == true
-
-    val showBottomBar = isTopLevelDestination || isDetailScreen || isCanyonPointsMapScreen
+    val selectedBottomNavItem = resolveSelectedBottomNavItem(navBackStackEntry)
+    val showBottomBar = shouldShowBottomBar(navBackStackEntry)
 
     Scaffold(
         bottomBar = {
@@ -160,9 +156,6 @@ private fun MainScreen() {
                         windowInsets = NavigationBarDefaults.windowInsets,
                     ) {
                         BottomNavItem.entries.forEach { item ->
-                            val isSelected = currentDestination?.hasRoute(item.screen::class) == true ||
-                                (isCanyonPointsMapScreen && item == BottomNavItem.MAP)
-
                             NavigationBarItem(
                                 icon = { Icon(item.icon, contentDescription = item.label) },
                                 label = { Text(item.label) },
@@ -173,7 +166,7 @@ private fun MainScreen() {
                                     unselectedIconColor = MaterialTheme.colorScheme.onSurfaceVariant,
                                     unselectedTextColor = MaterialTheme.colorScheme.onSurfaceVariant,
                                 ),
-                                selected = isSelected,
+                                selected = item == selectedBottomNavItem,
                                 onClick = {
                                     val startDestinationId = navController.graph.findStartDestination().id
                                     handleBottomNavClick(
@@ -183,11 +176,7 @@ private fun MainScreen() {
                                         },
                                         navigate = { screen ->
                                             navController.navigate(screen) {
-                                                popUpTo(startDestinationId) {
-                                                    saveState = true
-                                                }
-                                                launchSingleTop = true
-                                                restoreState = true
+                                                applyBottomNavRootNavigation(startDestinationId)
                                             }
                                         }
                                     )
@@ -206,6 +195,37 @@ private fun MainScreen() {
     }
 }
 
+internal fun resolveSelectedBottomNavItem(backStackEntry: NavBackStackEntry?): BottomNavItem? {
+    val destination = backStackEntry?.destination ?: return null
+    return when {
+        destination.hasRoute(Screen.Home::class) -> BottomNavItem.HOME
+        destination.hasRoute(Screen.Search::class) -> BottomNavItem.SEARCH
+        destination.hasRoute(Screen.Map::class) -> BottomNavItem.MAP
+        destination.hasRoute(Screen.Favorites::class) -> BottomNavItem.FAVORITES
+        else -> null
+    }
+}
+
+internal fun selectedBottomNavItemForScreen(screen: Screen): BottomNavItem? {
+    return when (screen) {
+        Screen.Home -> BottomNavItem.HOME
+        Screen.Search -> BottomNavItem.SEARCH
+        Screen.Map -> BottomNavItem.MAP
+        Screen.Favorites -> BottomNavItem.FAVORITES
+        else -> null
+    }
+}
+
+internal fun shouldShowBottomBar(backStackEntry: NavBackStackEntry?): Boolean {
+    val destination = backStackEntry?.destination ?: return false
+    return destination.hasRoute(Screen.Home::class) ||
+        destination.hasRoute(Screen.Search::class) ||
+        destination.hasRoute(Screen.Map::class) ||
+        destination.hasRoute(Screen.Favorites::class) ||
+        destination.hasRoute(Screen.CanyonDetail::class) ||
+        destination.hasRoute(Screen.CanyonPointsMap::class)
+}
+
 internal fun handleBottomNavClick(
     item: BottomNavItem,
     popToHome: () -> Boolean,
@@ -216,6 +236,11 @@ internal fun handleBottomNavClick(
     }
 
     navigate(item.screen)
+}
+
+internal fun NavOptionsBuilder.applyBottomNavRootNavigation(startDestinationId: Int) {
+    popUpTo(startDestinationId)
+    launchSingleTop = true
 }
 
 private const val STARTUP_INITIALIZE_TRACE_KEY = "startup.initialize"

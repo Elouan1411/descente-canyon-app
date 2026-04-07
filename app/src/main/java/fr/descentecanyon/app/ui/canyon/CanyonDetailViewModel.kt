@@ -8,12 +8,14 @@ import fr.descentecanyon.app.data.network.ConnectivityObserver
 import fr.descentecanyon.app.domain.model.CanyonDetail
 import fr.descentecanyon.app.domain.model.CanyonDebitPredictions
 import fr.descentecanyon.app.domain.model.CanyonWeather
+import fr.descentecanyon.app.domain.model.CanyonEdfPracticability
 import fr.descentecanyon.app.domain.repository.CanyonRepository
 import fr.descentecanyon.app.domain.repository.DebitRepository
 import fr.descentecanyon.app.domain.repository.FavoritesRepository
 import fr.descentecanyon.app.domain.repository.PhotoRepository
 import fr.descentecanyon.app.perf.PerformanceTrace
 import fr.descentecanyon.app.domain.usecase.DownloadPhotoForOfflineUseCase
+import fr.descentecanyon.app.domain.usecase.GetCanyonEdfPracticabilityUseCase
 import fr.descentecanyon.app.domain.usecase.GetCanyonDebitPredictionsUseCase
 import fr.descentecanyon.app.domain.usecase.GetCanyonDetailUseCase
 import fr.descentecanyon.app.domain.usecase.GetCanyonPreviewUseCase
@@ -44,6 +46,10 @@ data class CanyonDetailUiState(
     val weather: CanyonWeather? = null,
     val isLoadingWeather: Boolean = false,
     val weatherError: String? = null,
+    val edfStatus: CanyonEdfPracticability? = null,
+    val isLoadingEdfStatus: Boolean = false,
+    val edfStatusError: String? = null,
+    val edfStatusSourceUrl: String? = null,
     val predictions: CanyonDebitPredictions? = null,
     val isLoadingPredictions: Boolean = false,
     val predictionError: String? = null,
@@ -59,6 +65,7 @@ class CanyonDetailViewModel @Inject constructor(
     private val getCanyonPreviewUseCase: GetCanyonPreviewUseCase,
     private val getCanyonDetailUseCase: GetCanyonDetailUseCase,
     private val getCanyonWeatherUseCase: GetCanyonWeatherUseCase,
+    private val getCanyonEdfPracticabilityUseCase: GetCanyonEdfPracticabilityUseCase,
     private val getCanyonDebitPredictionsUseCase: GetCanyonDebitPredictionsUseCase,
     private val toggleFavoriteUseCase: ToggleFavoriteUseCase,
     private val canyonRepository: CanyonRepository,
@@ -78,6 +85,11 @@ class CanyonDetailViewModel @Inject constructor(
     private var hasLoggedPrimaryContentReady = false
 
     init {
+        _uiState.update {
+            it.copy(
+                edfStatusSourceUrl = getCanyonEdfPracticabilityUseCase.getReference(canyonId)?.sourceUrl,
+            )
+        }
         observePhotos(canyonId)
         observeDebits(canyonId)
         observeWatershed(canyonId)
@@ -205,8 +217,25 @@ class CanyonDetailViewModel @Inject constructor(
     }
 
     private fun loadDeferredSectionsIfNeeded(detail: CanyonDetail) {
+        maybeLoadEdfStatus()
         maybeLoadWeather(detail)
         maybeSchedulePredictions(detail)
+    }
+
+    private fun maybeLoadEdfStatus() {
+        val state = _uiState.value
+        val sourceUrl = state.edfStatusSourceUrl ?: return
+        val shouldLoad = state.edfStatus == null || state.edfStatusError != null
+        if (!shouldLoad || state.isLoadingEdfStatus) return
+
+        _uiState.update {
+            it.copy(
+                isLoadingEdfStatus = true,
+                edfStatusError = null,
+                edfStatusSourceUrl = sourceUrl,
+            )
+        }
+        loadEdfStatus(canyonId)
     }
 
     private fun maybeLoadWeather(detail: CanyonDetail) {
@@ -221,6 +250,44 @@ class CanyonDetailViewModel @Inject constructor(
             )
         }
         loadWeather(detail)
+    }
+
+    private fun loadEdfStatus(canyonId: Int) {
+        viewModelScope.launch {
+            PerformanceTrace.start(edfStatusLoadKey(canyonId), "canyon_edf_status_load", "canyonId" to canyonId)
+            getCanyonEdfPracticabilityUseCase(canyonId).fold(
+                onSuccess = { status ->
+                    PerformanceTrace.end(
+                        key = edfStatusLoadKey(canyonId),
+                        outcome = "ready",
+                        "canyonId" to canyonId,
+                        "state" to status.state.name,
+                    )
+                    _uiState.update {
+                        it.copy(
+                            edfStatus = status,
+                            isLoadingEdfStatus = false,
+                            edfStatusError = null,
+                        )
+                    }
+                },
+                onFailure = { throwable ->
+                    PerformanceTrace.end(
+                        key = edfStatusLoadKey(canyonId),
+                        outcome = "failed",
+                        "canyonId" to canyonId,
+                        "error" to (throwable.message ?: throwable::class.simpleName),
+                    )
+                    _uiState.update {
+                        it.copy(
+                            edfStatus = null,
+                            isLoadingEdfStatus = false,
+                            edfStatusError = throwable.toFriendlyEdfStatusMessage(),
+                        )
+                    }
+                },
+            )
+        }
     }
 
     private fun maybeSchedulePredictions(detail: CanyonDetail) {
@@ -420,14 +487,7 @@ class CanyonDetailViewModel @Inject constructor(
     }
 
     private fun mergeBaseDetail(newDetail: CanyonDetail, currentDetail: CanyonDetail?): CanyonDetail {
-        return if (currentDetail == null) {
-            newDetail
-        } else {
-            newDetail.copy(
-                photos = currentDetail.photos,
-                debits = currentDetail.debits,
-            )
-        }
+        return mergeBaseCanyonDetail(newDetail, currentDetail)
     }
 
     private suspend fun loadPredictions(detail: CanyonDetail) {
@@ -487,6 +547,14 @@ class CanyonDetailViewModel @Inject constructor(
         }
     }
 
+    private fun Throwable.toFriendlyEdfStatusMessage(): String {
+        return if (isLikelyNetworkIssue()) {
+            "Impossible de récupérer les conditions EDF pour le moment."
+        } else {
+            "Conditions EDF indisponibles pour le moment."
+        }
+    }
+
     private fun Throwable.toFriendlyPredictionMessage(): String {
         return if (isLikelyNetworkIssue()) {
             "Impossible de calculer l'estimation du débit pour le moment."
@@ -534,9 +602,23 @@ class CanyonDetailViewModel @Inject constructor(
     }
 }
 
+internal fun mergeBaseCanyonDetail(newDetail: CanyonDetail, currentDetail: CanyonDetail?): CanyonDetail {
+    return if (currentDetail == null) {
+        newDetail
+    } else {
+        newDetail.copy(
+            photos = currentDetail.photos,
+            debits = currentDetail.debits,
+            watershed = newDetail.watershed ?: currentDetail.watershed,
+        )
+    }
+}
+
 private fun detailLoadKey(canyonId: Int): String = "screen.canyon.$canyonId.detail"
 
 private fun weatherLoadKey(canyonId: Int): String = "screen.canyon.$canyonId.weather"
+
+private fun edfStatusLoadKey(canyonId: Int): String = "screen.canyon.$canyonId.edf"
 
 private fun debitRefreshKey(canyonId: Int): String = "screen.canyon.$canyonId.debits"
 

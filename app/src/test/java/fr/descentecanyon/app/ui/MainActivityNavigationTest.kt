@@ -1,8 +1,11 @@
 package fr.descentecanyon.app.ui
 
+import androidx.navigation.NavOptionsBuilder
 import fr.descentecanyon.app.ui.navigation.BottomNavItem
 import fr.descentecanyon.app.ui.navigation.Screen
 import org.junit.Assert.assertEquals
+import org.junit.Assert.assertFalse
+import org.junit.Assert.assertNull
 import org.junit.Assert.assertTrue
 import org.junit.Test
 
@@ -55,5 +58,29 @@ class MainActivityNavigationTest {
 
         assertEquals(false, popCalled)
         assertEquals(Screen.Search, navigatedTo)
+    }
+
+    @Test
+    fun `detail screen has no selected bottom nav item`() {
+        val selected = selectedBottomNavItemForScreen(Screen.CanyonDetail(canyonId = 42))
+
+        assertNull(selected)
+    }
+
+    @Test
+    fun `canyon points map has no selected bottom nav item`() {
+        val selected = selectedBottomNavItemForScreen(Screen.CanyonPointsMap(canyonId = 42))
+
+        assertNull(selected)
+    }
+
+    @Test
+    fun `bottom nav root navigation does not restore previous stack state`() {
+        val builder = NavOptionsBuilder()
+
+        builder.applyBottomNavRootNavigation(startDestinationId = 123)
+
+        assertTrue(builder.launchSingleTop)
+        assertFalse(builder.restoreState)
     }
 }

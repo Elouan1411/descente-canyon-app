@@ -1,6 +1,7 @@
 package fr.descentecanyon.app.ui.home
 
 import fr.descentecanyon.app.domain.model.Debit
+import fr.descentecanyon.app.domain.model.ForumActiveTopic
 import fr.descentecanyon.app.domain.model.NiveauDebit
 import java.time.LocalDate
 import org.junit.Assert.assertNotEquals
@@ -28,5 +29,29 @@ class HomeScreenTest {
         )
 
         assertNotEquals(latestDebitItemKey(first), latestDebitItemKey(second))
+    }
+
+    @Test
+    fun `forum topic item key stays unique for different updates`() {
+        val first = ForumActiveTopic(
+            topicId = 28125,
+            title = "Baisse des notes Gamchi , Trummel IV",
+            forumId = 16,
+            forumName = "SUISSE",
+            replyCount = 34,
+            viewCount = 34624,
+            lastAuthor = "Max38",
+            lastPostedAtText = "ven. 03 avr. 2026 22:20",
+            lastPostedAtEpochMs = 1_743_800_454_000,
+            topicUrl = "topic-1",
+            lastMessageUrl = "post-1",
+        )
+        val second = first.copy(
+            lastPostedAtText = "sam. 04 avr. 2026 08:17",
+            lastPostedAtEpochMs = 1_743_836_234_000,
+            lastMessageUrl = "post-2",
+        )
+
+        assertNotEquals(forumTopicItemKey(first), forumTopicItemKey(second))
     }
 }
