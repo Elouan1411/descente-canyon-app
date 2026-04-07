@@ -22,6 +22,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
@@ -77,7 +78,11 @@ fun CanyonSummaryCard(
                     )
                 }
                 Spacer(modifier = Modifier.width(8.dp))
-                CotationBadge(cotation = canyon.cotation)
+                if (canyon.isForbidden) {
+                    ForbiddenBadge()
+                } else {
+                    CotationBadge(cotation = canyon.cotation)
+                }
             }
 
             Row(
@@ -129,12 +134,45 @@ fun CotationBadge(
     } else {
         MaterialTheme.typography.labelLarge
     }
+    SummaryBadge(
+        text = cotation,
+        color = color,
+        textStyle = textStyle,
+        modifier = modifier,
+    )
+}
+
+@Composable
+fun ForbiddenBadge(
+    modifier: Modifier = Modifier,
+    large: Boolean = false,
+) {
+    val textStyle = if (large) {
+        MaterialTheme.typography.titleLarge
+    } else {
+        MaterialTheme.typography.labelLarge
+    }
+    SummaryBadge(
+        text = stringResource(R.string.canyon_badge_forbidden),
+        color = MaterialTheme.colorScheme.error,
+        textStyle = textStyle,
+        modifier = modifier,
+    )
+}
+
+@Composable
+private fun SummaryBadge(
+    text: String,
+    color: Color,
+    textStyle: androidx.compose.ui.text.TextStyle,
+    modifier: Modifier = Modifier,
+) {
     Card(
         modifier = modifier,
         colors = CardDefaults.cardColors(containerColor = color.copy(alpha = 0.12f)),
     ) {
         Text(
-            text = cotation,
+            text = text,
             style = textStyle,
             fontWeight = FontWeight.Bold,
             color = color,
