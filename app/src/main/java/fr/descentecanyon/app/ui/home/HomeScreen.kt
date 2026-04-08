@@ -1,5 +1,6 @@
 package fr.descentecanyon.app.ui.home
 
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import androidx.compose.foundation.BorderStroke
@@ -51,6 +52,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
@@ -85,6 +87,7 @@ fun HomeScreen(
     val homeState by homeViewModel.uiState.collectAsStateWithLifecycle()
     val authState by authViewModel.uiState.collectAsStateWithLifecycle()
     val context = LocalContext.current
+    val addCanyonUrl = stringResource(R.string.home_add_canyon_url)
     var showLoginDialog by remember { mutableStateOf(false) }
 
     if (showLoginDialog) {
@@ -133,6 +136,12 @@ fun HomeScreen(
 
             item {
                 QuickSearchCard(onClick = onQuickSearchClick)
+            }
+
+            item {
+                AddCanyonCard(
+                    onClick = { openExternalUrl(context, addCanyonUrl) },
+                )
             }
 
             item {
@@ -212,9 +221,7 @@ fun HomeScreen(
                             topic = topic,
                             onClick = {
                                 val url = topic.lastMessageUrl.ifBlank { topic.topicUrl }
-                                runCatching {
-                                    context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
-                                }
+                                openExternalUrl(context, url)
                             },
                         )
                     }
@@ -518,11 +525,40 @@ private fun QuickSearchCard(
     onClick: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
+    HomeActionCard(
+        title = stringResource(R.string.quick_search_title),
+        hint = stringResource(R.string.quick_search_hint),
+        icon = Icons.Default.Search,
+        onClick = onClick,
+        modifier = modifier.testTag(TestTags.homeQuickSearch),
+    )
+}
+
+@Composable
+private fun AddCanyonCard(
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier,
+) {
+    HomeActionCard(
+        title = stringResource(R.string.home_add_canyon_title),
+        hint = stringResource(R.string.home_add_canyon_hint),
+        icon = Icons.AutoMirrored.Filled.OpenInNew,
+        onClick = onClick,
+        modifier = modifier.testTag(TestTags.homeAddCanyon),
+    )
+}
+
+@Composable
+private fun HomeActionCard(
+    title: String,
+    hint: String,
+    icon: ImageVector,
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier,
+) {
     Card(
         onClick = onClick,
-        modifier = modifier
-            .fillMaxWidth()
-            .testTag(TestTags.homeQuickSearch),
+        modifier = modifier.fillMaxWidth(),
         colors = CardDefaults.cardColors(
             containerColor = MaterialTheme.colorScheme.surface,
         ),
@@ -542,7 +578,7 @@ private fun QuickSearchCard(
                 contentAlignment = Alignment.Center,
             ) {
                 Icon(
-                    imageVector = Icons.Default.Search,
+                    imageVector = icon,
                     contentDescription = null,
                     tint = MaterialTheme.colorScheme.primary,
                 )
@@ -550,12 +586,12 @@ private fun QuickSearchCard(
             Spacer(modifier = Modifier.width(12.dp))
             Column(modifier = Modifier.weight(1f)) {
                 Text(
-                    text = stringResource(R.string.quick_search_title),
+                    text = title,
                     style = MaterialTheme.typography.titleMedium,
                     fontWeight = FontWeight.SemiBold,
                 )
                 Text(
-                    text = stringResource(R.string.quick_search_hint),
+                    text = hint,
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                 )
@@ -740,6 +776,12 @@ private fun formatCompactCount(value: Int): String {
         value >= 10_000 -> "${value / 1_000}k"
         value >= 1_000 -> String.format("%.1fk", value / 1_000f)
         else -> value.toString()
+    }
+}
+
+private fun openExternalUrl(context: Context, url: String) {
+    runCatching {
+        context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
     }
 }
 
