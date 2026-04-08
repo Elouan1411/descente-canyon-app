@@ -192,24 +192,25 @@ function normalizePayload(input) {
     massif: sanitizeText(input.massif, 120),
     basin: sanitizeText(input.basin, 120),
     watercourse: sanitizeText(input.watercourse, 120),
-    rating: sanitizeText(input.rating, 40),
+    ratingVerticality: sanitizeRatingPart(input.ratingVerticality),
+    ratingAquatic: sanitizeRatingPart(input.ratingAquatic),
+    ratingEngagement: sanitizeRatingPart(input.ratingEngagement),
     altitudeStart: sanitizeInteger(input.altitudeStart),
     elevation: sanitizeInteger(input.elevation),
     length: sanitizeInteger(input.length),
     maxWaterfall: sanitizeInteger(input.maxWaterfall),
     minRope: sanitizeInteger(input.minRope),
-    interest: sanitizeDecimal(input.interest),
+    interest: sanitizeInterest(input.interest),
     approachTime: sanitizeText(input.approachTime, 80),
     descentTime: sanitizeText(input.descentTime, 80),
     returnTime: sanitizeText(input.returnTime, 80),
-    shuttle: sanitizeText(input.shuttle, 2000),
+    hasShuttle: input.hasShuttle === true,
     description: sanitizeText(input.description, 4000),
     accessDownstream: sanitizeText(input.accessDownstream, 3000),
     accessUpstream: sanitizeText(input.accessUpstream, 3000),
     approach: sanitizeText(input.approach, 3000),
     descent: sanitizeText(input.descent, 3000),
     returnRoute: sanitizeText(input.returnRoute, 3000),
-    engagement: sanitizeText(input.engagement, 160),
     period: sanitizeText(input.period, 160),
     geology: sanitizeText(input.geology, 3000),
     history: sanitizeText(input.history, 3000),
@@ -217,7 +218,8 @@ function normalizePayload(input) {
     sources: sanitizeText(input.sources, 3000),
     bibliography: sanitizeText(input.bibliography, 3000),
     regulations: sanitizeText(input.regulations, 3000),
-    geoPoints: sanitizeGeoPoints(input.geoPoints, input),
+    geoPoints: sanitizeGeoPoints(input.geoPoints),
+    gpxTrace: sanitizeGpxTrace(input.gpxTrace),
     submitterPseudo: sanitizeText(input.submitterPseudo, 80),
     sourceContext: sanitizeSourceContext(input.sourceContext),
     honeypot: typeof input.honeypot === "string" ? input.honeypot.trim() : "",
@@ -225,59 +227,30 @@ function normalizePayload(input) {
   };
 }
 
-function sanitizeGeoPoints(value, legacyInput) {
-  const points = Array.isArray(value)
-    ? value
-        .map((item) => normalizeGeoPoint(item))
-        .filter((point) => point.hasAnyUserData)
-        .map(({ hasAnyUserData, ...point }) => point)
-    : [];
-
-  if (points.length > 0) {
-    return points;
+function sanitizeGeoPoints(value) {
+  if (!Array.isArray(value)) {
+    return [];
   }
 
-  return buildLegacyGeoPoints(legacyInput);
+  return value
+    .map((item) => normalizeGeoPoint(item))
+    .filter((point) => point.hasAnyUserData)
+    .map(({ hasAnyUserData, ...point }) => point);
 }
 
 function normalizeGeoPoint(item) {
   const latitude = sanitizeCoordinate(item?.latitude ?? item?.lat);
   const longitude = sanitizeCoordinate(item?.longitude ?? item?.lng);
-  const label = sanitizeText(item?.label ?? item?.title, 120);
+  const title = sanitizeText(item?.title ?? item?.label, 120);
   const remark = sanitizeText(item?.remark ?? item?.comment, 500);
 
   return {
     type: sanitizeGeoPointType(item?.type),
     latitude,
     longitude,
-    label,
+    title,
     remark,
-    hasAnyUserData: latitude !== null || longitude !== null || Boolean(label) || Boolean(remark),
-  };
-}
-
-function buildLegacyGeoPoints(input) {
-  return [
-    buildLegacyGeoPoint("ENTREE", input.entryLat, input.entryLng),
-    buildLegacyGeoPoint("SORTIE", input.exitLat, input.exitLng),
-    buildLegacyGeoPoint("PARKING_AVAL", input.parkingLat, input.parkingLng),
-  ].filter(Boolean);
-}
-
-function buildLegacyGeoPoint(type, latValue, lngValue) {
-  const latitude = sanitizeCoordinate(latValue);
-  const longitude = sanitizeCoordinate(lngValue);
-
-  if (latitude === null && longitude === null) {
-    return null;
-  }
-
-  return {
-    type,
-    latitude,
-    longitude,
-    label: "",
-    remark: "",
+    hasAnyUserData: latitude !== null || longitude !== null || Boolean(title) || Boolean(remark),
   };
 }
 
@@ -322,6 +295,44 @@ function sanitizeGeoPointType(value) {
   }
 }
 
+function sanitizeGpxTrace(value) {
+  if (!value || typeof value !== "object") {
+    return null;
+  }
+
+  const fileName = sanitizeText(value.fileName, 180);
+  if (!fileName) {
+    return null;
+  }
+
+  return {
+    fileName,
+    pointCount: sanitizeInteger(value.pointCount) ?? 0,
+    segmentCount: sanitizeInteger(value.segmentCount) ?? 0,
+    waypointCount: sanitizeInteger(value.waypointCount) ?? 0,
+    bbox: sanitizeBbox(value.bbox),
+    rawContent: sanitizeText(value.rawContent, 16000),
+    isTruncated: value.isTruncated === true,
+  };
+}
+
+function sanitizeBbox(value) {
+  if (!value || typeof value !== "object") {
+    return null;
+  }
+
+  const minLat = sanitizeCoordinate(value.minLat);
+  const minLng = sanitizeCoordinate(value.minLng);
+  const maxLat = sanitizeCoordinate(value.maxLat);
+  const maxLng = sanitizeCoordinate(value.maxLng);
+
+  if ([minLat, minLng, maxLat, maxLng].some((item) => item === null)) {
+    return null;
+  }
+
+  return { minLat, minLng, maxLat, maxLng };
+}
+
 function validatePayload(payload) {
   const errors = [];
 
@@ -347,6 +358,7 @@ function validatePayload(payload) {
     errors.push("Too many geo points");
   }
 
+  validateRating(errors, payload);
   validateNonNegativeInteger(errors, "altitudeStart", payload.altitudeStart);
   validateNonNegativeInteger(errors, "elevation", payload.elevation);
   validateNonNegativeInteger(errors, "length", payload.length);
@@ -355,8 +367,28 @@ function validatePayload(payload) {
   validateInterest(errors, payload.interest);
 
   payload.geoPoints.forEach((point, index) => validateGeoPoint(errors, point, index));
+  validateGpxTrace(errors, payload.gpxTrace);
 
   return errors;
+}
+
+function validateRating(errors, payload) {
+  const parts = [payload.ratingVerticality, payload.ratingAquatic, payload.ratingEngagement];
+  const filledCount = parts.filter((value) => value !== null).length;
+
+  if (filledCount === 0) {
+    return;
+  }
+  if (filledCount !== 3) {
+    errors.push("ratingVerticality, ratingAquatic and ratingEngagement must all be provided together");
+    return;
+  }
+
+  parts.forEach((value, index) => {
+    if (value < 1 || value > 9) {
+      errors.push(["ratingVerticality", "ratingAquatic", "ratingEngagement"][index] + " must be between 1 and 9");
+    }
+  });
 }
 
 function validateNonNegativeInteger(errors, label, value) {
@@ -372,8 +404,8 @@ function validateInterest(errors, value) {
   if (value === null) {
     return;
   }
-  if (!Number.isFinite(value) || value < 0 || value > 5) {
-    errors.push("interest must be between 0 and 5");
+  if (!Number.isInteger(value) || value < 0 || value > 4) {
+    errors.push("interest must be an integer between 0 and 4");
   }
 }
 
@@ -392,6 +424,31 @@ function validateGeoPoint(errors, point, index) {
   }
 }
 
+function validateGpxTrace(errors, gpxTrace) {
+  if (!gpxTrace) {
+    return;
+  }
+  if (gpxTrace.pointCount <= 0) {
+    errors.push("gpxTrace must contain at least one point");
+  }
+  if (gpxTrace.segmentCount < 0 || gpxTrace.waypointCount < 0) {
+    errors.push("gpxTrace counts are invalid");
+  }
+  if (gpxTrace.bbox) {
+    validateCoordinateBounds(errors, "gpxTrace bbox", gpxTrace.bbox.minLat, gpxTrace.bbox.minLng);
+    validateCoordinateBounds(errors, "gpxTrace bbox", gpxTrace.bbox.maxLat, gpxTrace.bbox.maxLng);
+  }
+}
+
+function validateCoordinateBounds(errors, label, lat, lng) {
+  if (lat < -90 || lat > 90) {
+    errors.push(`${label} latitude is invalid`);
+  }
+  if (lng < -180 || lng > 180) {
+    errors.push(`${label} longitude is invalid`);
+  }
+}
+
 function sanitizeText(value, maxLength) {
   if (typeof value !== "string") {
     return "";
@@ -407,12 +464,12 @@ function sanitizeInteger(value) {
   return Number.isInteger(parsed) ? parsed : null;
 }
 
-function sanitizeDecimal(value) {
-  if (value === null || value === undefined || value === "") {
-    return null;
-  }
-  const parsed = Number(value);
-  return Number.isFinite(parsed) ? parsed : null;
+function sanitizeRatingPart(value) {
+  return sanitizeInteger(value);
+}
+
+function sanitizeInterest(value) {
+  return sanitizeInteger(value);
 }
 
 function sanitizeCoordinate(value) {
@@ -460,7 +517,7 @@ function buildIssueBody(payload, request) {
     "",
     "## Caracteristiques",
     "",
-    bulletLine("Cotation", payload.rating),
+    bulletLine("Cotation", formatCotation(payload)),
     bulletLine("Interet", formatInterest(payload.interest)),
     bulletLine("Altitude depart", formatMetric(payload.altitudeStart, "m")),
     bulletLine("Denivele", formatMetric(payload.elevation, "m")),
@@ -470,8 +527,7 @@ function buildIssueBody(payload, request) {
     bulletLine("Temps approche", payload.approachTime),
     bulletLine("Temps descente", payload.descentTime),
     bulletLine("Temps retour", payload.returnTime),
-    bulletLine("Navette", payload.shuttle),
-    bulletLine("Engagement", payload.engagement),
+    `- Navette: ${payload.hasShuttle ? "oui" : "non"}`,
     bulletLine("Periode", payload.period),
     "",
     sectionBlock("## Description", payload.description),
@@ -495,6 +551,10 @@ function buildIssueBody(payload, request) {
     "## Points GPS",
     "",
     formatGeoPoints(payload.geoPoints),
+    "",
+    "## Trace GPX",
+    "",
+    formatGpxTrace(payload.gpxTrace),
     "",
     sectionBlock("## Sources", payload.sources),
     "",
@@ -524,6 +584,13 @@ function sectionBlock(title, value) {
   return [title, "", valueOrFallbackBlock(value)].join("\n");
 }
 
+function formatCotation(payload) {
+  if (payload.ratingVerticality === null || payload.ratingAquatic === null || payload.ratingEngagement === null) {
+    return "";
+  }
+  return `V${payload.ratingVerticality} A${payload.ratingAquatic} E${payload.ratingEngagement}`;
+}
+
 function formatGeoPoints(points) {
   if (points.length === 0) {
     return "Aucun point GPS renseigne.";
@@ -532,8 +599,8 @@ function formatGeoPoints(points) {
   return points
     .map((point) => {
       const extras = [];
-      if (point.label) {
-        extras.push(`libelle: ${point.label}`);
+      if (point.title) {
+        extras.push(`titre: ${point.title}`);
       }
       if (point.remark) {
         extras.push(`remarque: ${point.remark}`);
@@ -543,6 +610,44 @@ function formatGeoPoints(points) {
       return `- ${humanizeGeoPointType(point.type)}: ${formatCoordinate(point.latitude)}, ${formatCoordinate(point.longitude)}${suffix}`;
     })
     .join("\n");
+}
+
+function formatGpxTrace(gpxTrace) {
+  if (!gpxTrace) {
+    return "Aucune trace GPX fournie.";
+  }
+
+  const lines = [
+    `- Fichier: ${gpxTrace.fileName}`,
+    `- Segments: ${gpxTrace.segmentCount}`,
+    `- Points: ${gpxTrace.pointCount}`,
+    `- Waypoints: ${gpxTrace.waypointCount}`,
+  ];
+
+  if (gpxTrace.bbox) {
+    lines.push(
+      `- Bbox: ${formatCoordinate(gpxTrace.bbox.minLat)}, ${formatCoordinate(gpxTrace.bbox.minLng)} -> ${formatCoordinate(gpxTrace.bbox.maxLat)}, ${formatCoordinate(gpxTrace.bbox.maxLng)}`,
+    );
+  }
+
+  if (gpxTrace.rawContent) {
+    lines.push("");
+    lines.push("<details>");
+    lines.push("<summary>Contenu GPX</summary>");
+    lines.push("");
+    lines.push("```xml");
+    lines.push(gpxTrace.rawContent);
+    lines.push("```");
+    if (gpxTrace.isTruncated) {
+      lines.push("");
+      lines.push("Le contenu GPX a ete tronque pour tenir dans l'issue.");
+    }
+    lines.push("</details>");
+  } else if (gpxTrace.isTruncated) {
+    lines.push("- Contenu GPX non integre dans l'issue car le fichier est trop volumineux.");
+  }
+
+  return lines.join("\n");
 }
 
 function humanizeGeoPointType(type) {
@@ -560,7 +665,7 @@ function formatInterest(value) {
   if (value === null) {
     return "";
   }
-  return String(value);
+  return `${value}/4`;
 }
 
 function formatCoordinate(value) {
