@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import subprocess
 import time
 import urllib.request
@@ -19,9 +20,36 @@ def load_json(path: Path) -> Any:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def load_json_if_exists(path: Path) -> Any | None:
+    if not path.exists():
+        return None
+    try:
+        return load_json(path)
+    except json.JSONDecodeError:
+        return None
+
+
 def write_json(path: Path, data: Any) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
+    temp_path = path.with_suffix(path.suffix + f".{os.getpid()}.tmp")
+    temp_path.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
+    temp_path.replace(path)
+
+
+def acquire_lock(lock_path: Path, *, timeout_sec: int = 1800) -> int:
+    started = time.time()
+    while True:
+        try:
+            return os.open(str(lock_path), os.O_CREAT | os.O_EXCL | os.O_RDWR)
+        except FileExistsError:
+            if time.time() - started > timeout_sec:
+                raise SystemExit(f"Timeout waiting for Copernicus lock: {lock_path}")
+            time.sleep(5)
+
+
+def release_lock(lock_fd: int, lock_path: Path) -> None:
+    os.close(lock_fd)
+    lock_path.unlink(missing_ok=True)
 
 
 def parse_args() -> argparse.Namespace:
@@ -59,10 +87,12 @@ def download_file(url: str, destination: Path) -> bool:
     destination.parent.mkdir(parents=True, exist_ok=True)
     if destination.exists() and destination.stat().st_size > 0:
         return True
-    temp_path = destination.with_suffix(destination.suffix + ".part")
+    temp_path = destination.with_suffix(destination.suffix + f".{os.getpid()}.part")
     last_error: Exception | None = None
     for attempt in range(1, 5):
         try:
+            if destination.exists() and destination.stat().st_size > 0:
+                return True
             request = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
             with urllib.request.urlopen(request, timeout=300) as response, open(temp_path, "wb") as handle:
                 while True:
@@ -70,6 +100,9 @@ def download_file(url: str, destination: Path) -> bool:
                     if not chunk:
                         break
                     handle.write(chunk)
+            if destination.exists() and destination.stat().st_size > 0:
+                temp_path.unlink(missing_ok=True)
+                return True
             temp_path.replace(destination)
             return True
         except (HTTPError, URLError) as exc:
@@ -100,24 +133,41 @@ def main() -> int:
     output_dir = args.output_dir.resolve()
     raw_dir = output_dir / "raw"
     vrt_path = output_dir / "vrt" / "copernicus_glo30.vrt"
+    lock_path = output_dir / ".prepare.lock"
 
-    downloaded = []
-    missing = []
-    for cell in sorted(set(args.cell)):
-        url = resolve_url(manifest, cell)
-        destination = raw_dir / f"{cell}.tif"
-        if download_file(url, destination):
-            downloaded.append({"cell": cell, "url": url, "path": str(destination)})
-        else:
-            missing.append({"cell": cell, "url": url})
+    output_dir.mkdir(parents=True, exist_ok=True)
+    lock_fd = acquire_lock(lock_path)
+    try:
+        existing_downloaded = load_json_if_exists(output_dir / "downloaded_cells.json") or {}
+        downloaded = list(existing_downloaded.get("downloaded") or [])
+        missing = list(existing_downloaded.get("missing") or [])
+        downloaded_by_cell = {
+            str(item.get("cell")): item for item in downloaded if isinstance(item, dict) and item.get("cell")
+        }
+        missing_by_cell = {
+            str(item.get("cell")): item for item in missing if isinstance(item, dict) and item.get("cell")
+        }
 
-    tif_paths = sorted(raw_dir.glob("*.tif"))
-    if not tif_paths:
-        raise SystemExit("No Copernicus DEM tiles available to build VRT")
-    build_vrt(gdalbuildvrt, tif_paths, vrt_path)
-    write_json(output_dir / "downloaded_cells.json", {"downloaded": downloaded, "missing": missing})
-    print(json.dumps({"cells": len(downloaded), "missing": len(missing), "vrt": str(vrt_path)}, ensure_ascii=False, indent=2))
-    return 0
+        for cell in sorted(set(args.cell)):
+            url = resolve_url(manifest, cell)
+            destination = raw_dir / f"{cell}.tif"
+            if download_file(url, destination):
+                downloaded_by_cell[cell] = {"cell": cell, "url": url, "path": str(destination)}
+                missing_by_cell.pop(cell, None)
+            else:
+                missing_by_cell[cell] = {"cell": cell, "url": url}
+
+        tif_paths = sorted(raw_dir.glob("*.tif"))
+        if not tif_paths:
+            raise SystemExit("No Copernicus DEM tiles available to build VRT")
+        build_vrt(gdalbuildvrt, tif_paths, vrt_path)
+        downloaded = [downloaded_by_cell[key] for key in sorted(downloaded_by_cell)]
+        missing = [missing_by_cell[key] for key in sorted(missing_by_cell)]
+        write_json(output_dir / "downloaded_cells.json", {"downloaded": downloaded, "missing": missing})
+        print(json.dumps({"cells": len(downloaded), "missing": len(missing), "vrt": str(vrt_path)}, ensure_ascii=False, indent=2))
+        return 0
+    finally:
+        release_lock(lock_fd, lock_path)
 
 
 if __name__ == "__main__":

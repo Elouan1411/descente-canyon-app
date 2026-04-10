@@ -1949,6 +1949,26 @@
       }
     },
     {
+      "name": "copernicus-global",
+      "mode": "derive_local_hydrology",
+      "dem": "build/watersheds/copernicus-data/vrt/copernicus_glo30.vrt",
+      "srs": "EPSG:4326",
+      "processingCrs": "EPSG:4326",
+      "bufferKm": 20.0,
+      "processingResolutionM": 30.0,
+      "candidateStrategy": "nearest_channel",
+      "searchRadiusM": 120.0,
+      "channelMinUpaKm2": 0.05,
+      "autoPrepare": {
+        "provider": "copernicus",
+        "outputDir": "build/watersheds/copernicus-data",
+        "alwaysPrepare": true
+      },
+      "match": {
+        "default": true
+      }
+    },
+    {
       "name": "merit-ihu-global",
       "mode": "precomputed_hydrology",
       "upaRaster": "build/watersheds/merit-ihu-global/raw/30sec_uparea.tif",

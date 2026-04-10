@@ -3,12 +3,14 @@ from __future__ import annotations
 import argparse
 import concurrent.futures
 import collections
+import copy
 import json
 import math
 import os
 import shutil
 import subprocess
 import sys
+import threading
 import time
 import traceback
 from concurrent.futures.process import BrokenProcessPool
@@ -61,6 +63,8 @@ DYNAMIC_AUTOPREPARE_PROVIDERS = {
 }
 
 DEFAULT_REVIEW_FILE = Path("watershed-review/watershed-review.json")
+AUTOPREPARE_CACHE_LOCK = threading.Lock()
+AUTOPREPARE_CACHE: dict[tuple[Any, ...], dict[str, Any]] = {}
 
 
 def default_executor_mode() -> str:
@@ -86,7 +90,10 @@ def write_json(path: Path, data: Any) -> None:
 def load_json_if_exists(path: Path) -> Any | None:
     if not path.exists():
         return None
-    return load_json(path)
+    try:
+        return load_json(path)
+    except json.JSONDecodeError:
+        return None
 
 
 def append_text(path: Path, text: str) -> None:
@@ -482,6 +489,91 @@ def points_copernicus_cells(points: list[dict[str, Any]]) -> list[str]:
     return sorted({copernicus_cell_name(float(point["latitude"]), float(point["longitude"])) for point in points})
 
 
+def auto_prepare_cache_key(
+    *,
+    source: dict[str, Any],
+    canyon: dict[str, Any],
+    points: list[dict[str, Any]],
+) -> tuple[Any, ...] | None:
+    auto_prepare = source.get("autoPrepare") or {}
+    provider = auto_prepare.get("provider")
+    if provider == "ign":
+        return (
+            provider,
+            auto_prepare.get("outputDir", "build/watersheds/ign-data"),
+            auto_prepare.get("dataset", "rgealti5m"),
+            str(canyon.get("departement") or ""),
+        )
+    if provider == "copernicus":
+        return (
+            provider,
+            auto_prepare.get("outputDir", "build/watersheds/copernicus-data"),
+            tuple(points_copernicus_cells(points)),
+        )
+    if provider == "merit-ihu-global":
+        return (provider, auto_prepare.get("outputDir", "build/watersheds/merit-ihu-global"))
+    if provider == "tinitaly-bulk":
+        return (provider, auto_prepare.get("outputDir", "build/watersheds/italy-national-dem"))
+    if provider == "national-dem":
+        units: list[str] = []
+        for field_name in auto_prepare.get("unitFields", ["departement", "region"]):
+            value = canyon.get(field_name)
+            if value:
+                units.append(str(value))
+        for value in auto_prepare.get("extraUnits", []):
+            units.append(str(value))
+        return (
+            provider,
+            auto_prepare.get("outputDir"),
+            auto_prepare.get("manifest"),
+            tuple(sorted(unit for unit in units if unit)),
+        )
+    return None
+
+
+def auto_prepare_source_cached(
+    *,
+    source: dict[str, Any],
+    canyon: dict[str, Any],
+    points: list[dict[str, Any]],
+    output_dir: Path,
+    gdal_translate: str,
+) -> dict[str, Any]:
+    cache_key = auto_prepare_cache_key(source=source, canyon=canyon, points=points)
+    if cache_key is None:
+        return auto_prepare_source(
+            source=source,
+            canyon=canyon,
+            points=points,
+            output_dir=output_dir,
+            gdal_translate=gdal_translate,
+        )
+
+    with AUTOPREPARE_CACHE_LOCK:
+        cached = AUTOPREPARE_CACHE.get(cache_key)
+    if cached is not None:
+        if cached["status"] == "ok":
+            return copy.deepcopy(cached["source"])
+        raise RuntimeError(str(cached["error"]))
+
+    try:
+        prepared = auto_prepare_source(
+            source=source,
+            canyon=canyon,
+            points=points,
+            output_dir=output_dir,
+            gdal_translate=gdal_translate,
+        )
+    except Exception as exc:
+        with AUTOPREPARE_CACHE_LOCK:
+            AUTOPREPARE_CACHE[cache_key] = {"status": "error", "error": f"{type(exc).__name__}: {exc}"}
+        raise
+
+    with AUTOPREPARE_CACHE_LOCK:
+        AUTOPREPARE_CACHE[cache_key] = {"status": "ok", "source": copy.deepcopy(prepared)}
+    return prepared
+
+
 def slovenia_quadrant_file_ids(points: list[dict[str, Any]]) -> list[int]:
     avg_lat = sum(float(point["latitude"]) for point in points) / len(points)
     avg_lon = sum(float(point["longitude"]) for point in points) / len(points)
@@ -800,7 +892,7 @@ def resolve_source_for_canyon(
         resolved_source = source
         if force_prepare or not source_is_available(source):
             try:
-                resolved_source = auto_prepare_source(
+                resolved_source = auto_prepare_source_cached(
                     source=source,
                     canyon=canyon,
                     points=points,
@@ -829,7 +921,7 @@ def resolve_source_for_canyon(
                     attempt["supplementsTried"].append({"provider": supplement_provider, "status": "missing_config"})
                     continue
                 try:
-                    prepared_supplement = auto_prepare_source(
+                    prepared_supplement = auto_prepare_source_cached(
                         source=supplement_source,
                         canyon=canyon,
                         points=points,
@@ -1888,7 +1980,7 @@ def process_single_canyon(
                 flush=True,
             )
         if source.get("autoPrepare"):
-            source = auto_prepare_source(
+            source = auto_prepare_source_cached(
                 source=source,
                 canyon=canyon,
                 points=points,
