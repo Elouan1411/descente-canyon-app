@@ -64,6 +64,7 @@ DYNAMIC_AUTOPREPARE_PROVIDERS = {
 }
 
 DEFAULT_REVIEW_FILE = Path("watershed-review/watershed-review.json")
+REVIEW_HYDRO_SNAP_SEARCH_RADII_M = (15.0, 20.0, 30.0)
 AUTOPREPARE_CACHE_LOCK = threading.Lock()
 AUTOPREPARE_CACHE: dict[tuple[Any, ...], dict[str, Any]] = {}
 
@@ -125,17 +126,17 @@ def _normalize_gps(gps: dict[str, Any] | None) -> tuple[float, float] | None:
 
 
 def _extract_existing_selected_gps(payload: dict[str, Any]) -> tuple[float, float] | None:
-    review_override = payload.get("reviewOverride")
-    normalized_review_gps = _normalize_gps(review_override.get("gps") if isinstance(review_override, dict) else None)
-    if normalized_review_gps is not None:
-        return normalized_review_gps
-
     candidate = payload.get("bestHydroProxyCandidate")
     if isinstance(candidate, dict):
         try:
             return (round(float(candidate["latitude"]), 6), round(float(candidate["longitude"]), 6))
         except (KeyError, TypeError, ValueError):
-            return None
+            pass
+
+    review_override = payload.get("reviewOverride")
+    normalized_review_gps = _normalize_gps(review_override.get("gps") if isinstance(review_override, dict) else None)
+    if normalized_review_gps is not None:
+        return normalized_review_gps
     return None
 
 
@@ -197,8 +198,33 @@ def load_review_overrides(review_file: Path) -> dict[int, dict[str, Any]]:
             "adminPlaced": bool(review.get("adminPlaced", False)),
             "pointType": review.get("pointType"),
             "label": review.get("label"),
+            "applyHydrologyOverride": bool(
+                normalized_gps is not None
+                and status in {"bad", "pending"}
+                and bool(review.get("adminPlaced", False))
+            ),
         }
     return overrides
+
+
+def is_review_hydrology_override(point: dict[str, Any]) -> bool:
+    return bool(point.get("_reviewHydroOverride") or point.get("_forceExactCell"))
+
+
+def review_snap_search_radii_m(point: dict[str, Any]) -> tuple[float, ...]:
+    raw = point.get("_reviewSnapSearchRadiiM")
+    if isinstance(raw, list):
+        radii: list[float] = []
+        for value in raw:
+            try:
+                radius = float(value)
+            except (TypeError, ValueError):
+                continue
+            if radius > 0:
+                radii.append(radius)
+        if radii:
+            return tuple(radii)
+    return REVIEW_HYDRO_SNAP_SEARCH_RADII_M
 
 
 def apply_review_overrides(
@@ -210,6 +236,8 @@ def apply_review_overrides(
     merged = {canyon_id: list(points) for canyon_id, points in points_by_canyon.items()}
     review_file_str = str(review_file).replace("\\", "/")
     for canyon_id, review in review_overrides.items():
+        if not review.get("applyHydrologyOverride"):
+            continue
         gps = review.get("gps")
         if not isinstance(gps, dict):
             continue
@@ -222,7 +250,8 @@ def apply_review_overrides(
                 "label": review.get("label") or "review_truth",
                 "latitude": gps["latitude"],
                 "longitude": gps["longitude"],
-                "_forceExactCell": True,
+                "_reviewHydroOverride": True,
+                "_reviewSnapSearchRadiiM": list(REVIEW_HYDRO_SNAP_SEARCH_RADII_M),
                 "_reviewStatus": review.get("status"),
                 "_reviewAdminPlaced": bool(review.get("adminPlaced", False)),
                 "_reviewSourceFile": review_file_str,
@@ -1320,36 +1349,55 @@ def evaluate_points_for_canyon(
                 longitude=float(point["longitude"]),
                 label=point.get("label"),
             )
-            if point.get("_forceExactCell"):
+            review_snap_attempted_radii_m: list[float] | None = None
+            review_snap_radius_m: float | None = None
+            if is_review_hydrology_override(point):
                 search_radius_cells = 0
-                search_radius_m = 0.0
-                candidate_strategy = "exact_cell"
-                channel_min_upa_km2 = None
+                channel_min_upa_km2 = source.get("channelMinUpaKm2")
+                review_snap_attempted_radii_m = []
+                evaluated = None
+                for snap_radius_m in review_snap_search_radii_m(point):
+                    review_snap_attempted_radii_m.append(float(snap_radius_m))
+                    evaluated = evaluate_entry(
+                        entry,
+                        upa_raster,
+                        flowdir_raster,
+                        elevation_raster,
+                        search_radius_cells=search_radius_cells,
+                        search_radius_m=float(snap_radius_m),
+                        candidate_strategy="nearest_channel_strict",
+                        channel_min_upa_km2=channel_min_upa_km2,
+                    )
+                    if evaluated.snapped_upa_km2 is not None:
+                        review_snap_radius_m = float(snap_radius_m)
+                        break
             else:
                 search_radius_cells = int(source.get("searchRadiusCells", 2))
                 search_radius_m = source.get("searchRadiusM")
                 candidate_strategy = str(source.get("candidateStrategy", "max_upa"))
                 channel_min_upa_km2 = source.get("channelMinUpaKm2")
-            evaluated = evaluate_entry(
-                entry,
-                upa_raster,
-                flowdir_raster,
-                elevation_raster,
-                search_radius_cells=search_radius_cells,
-                search_radius_m=search_radius_m,
-                candidate_strategy=candidate_strategy,
-                channel_min_upa_km2=channel_min_upa_km2,
-            )
+                evaluated = evaluate_entry(
+                    entry,
+                    upa_raster,
+                    flowdir_raster,
+                    elevation_raster,
+                    search_radius_cells=search_radius_cells,
+                    search_radius_m=search_radius_m,
+                    candidate_strategy=candidate_strategy,
+                    channel_min_upa_km2=channel_min_upa_km2,
+                )
             results.append(
                 {
                     "pointType": point.get("type"),
                     "label": point.get("label"),
                     "latitude": point.get("latitude"),
                     "longitude": point.get("longitude"),
-                    "forcedByReview": bool(point.get("_forceExactCell")),
+                    "forcedByReview": is_review_hydrology_override(point),
                     "reviewStatus": point.get("_reviewStatus"),
                     "reviewAdminPlaced": bool(point.get("_reviewAdminPlaced", False)),
                     "reviewSourceFile": point.get("_reviewSourceFile"),
+                    "reviewSnapAttemptedRadiiM": review_snap_attempted_radii_m,
+                    "reviewSnapRadiusM": review_snap_radius_m,
                     "evaluation": asdict(evaluated),
                 }
             )
@@ -1364,18 +1412,22 @@ def evaluate_points_for_canyon(
 
 def analyze_point_candidates(points: list[dict[str, Any]]) -> dict[str, Any]:
     review_truth_candidate = next((point for point in points if point.get("forcedByReview")), None)
+    review_truth_candidate_is_valid = bool(
+        review_truth_candidate
+        and review_truth_candidate.get("evaluation", {}).get("snapped_upa_km2") is not None
+    )
     valid = [point for point in points if point["evaluation"]["snapped_upa_km2"] is not None]
     if not valid:
         return {
             "points": points,
-            "bestHydroProxyCandidate": review_truth_candidate,
+            "bestHydroProxyCandidate": review_truth_candidate if review_truth_candidate_is_valid else None,
             "suggestedCandidate": None,
             "reviewTruthCandidate": review_truth_candidate,
             "strictTopoCandidate": None,
             "analysisSummary": {
                 "validCandidateCount": 0,
                 "maxUpaKm2": None,
-                "reviewTruthUsed": review_truth_candidate is not None,
+                "reviewTruthUsed": review_truth_candidate_is_valid,
                 "reviewTruthStatus": review_truth_candidate.get("reviewStatus") if review_truth_candidate else None,
             },
         }
@@ -1494,7 +1546,10 @@ def analyze_point_candidates(points: list[dict[str, Any]]) -> dict[str, Any]:
         ),
     ) if ranked_valid else None
 
-    selected_candidate = review_truth_candidate or algorithm_suggested_candidate
+    if review_truth_candidate is not None:
+        selected_candidate = review_truth_candidate if review_truth_candidate_is_valid else None
+    else:
+        selected_candidate = algorithm_suggested_candidate
 
     return {
         "points": analyzed_points,
@@ -1508,14 +1563,14 @@ def analyze_point_candidates(points: list[dict[str, Any]]) -> dict[str, Any]:
             "bestHydroProxyPointType": selected_candidate.get("pointType") if selected_candidate else None,
             "strictTopoPointType": strict_topo_candidate.get("pointType") if strict_topo_candidate else None,
             "algorithmSuggestedPointType": algorithm_suggested_candidate.get("pointType") if algorithm_suggested_candidate else None,
-            "reviewTruthUsed": review_truth_candidate is not None,
+            "reviewTruthUsed": review_truth_candidate_is_valid,
             "reviewTruthStatus": review_truth_candidate.get("reviewStatus") if review_truth_candidate else None,
         },
     }
 
 
 def review_metadata_for_points(points: list[dict[str, Any]]) -> dict[str, Any] | None:
-    review_point = next((point for point in points if point.get("_forceExactCell")), None)
+    review_point = next((point for point in points if is_review_hydrology_override(point)), None)
     if review_point is None:
         return None
     return {
@@ -1528,6 +1583,55 @@ def review_metadata_for_points(points: list[dict[str, Any]]) -> dict[str, Any] |
         "pointType": review_point.get("type"),
         "label": review_point.get("label"),
         "sourceFile": review_point.get("_reviewSourceFile"),
+    }
+
+
+def candidate_diagnostic(candidate: dict[str, Any] | None) -> dict[str, Any] | None:
+    if not isinstance(candidate, dict):
+        return None
+    evaluation = candidate.get("evaluation") or {}
+    analysis = candidate.get("analysis") or {}
+    return {
+        "pointType": candidate.get("pointType"),
+        "label": candidate.get("label"),
+        "latitude": candidate.get("latitude"),
+        "longitude": candidate.get("longitude"),
+        "forcedByReview": bool(candidate.get("forcedByReview")),
+        "reviewStatus": candidate.get("reviewStatus"),
+        "reviewAdminPlaced": bool(candidate.get("reviewAdminPlaced", False)),
+        "reviewSnapAttemptedRadiiM": candidate.get("reviewSnapAttemptedRadiiM"),
+        "reviewSnapRadiusM": candidate.get("reviewSnapRadiusM"),
+        "status": evaluation.get("status"),
+        "statusDetail": evaluation.get("status_detail"),
+        "snappedLatitude": evaluation.get("snapped_latitude"),
+        "snappedLongitude": evaluation.get("snapped_longitude"),
+        "snappedUpaKm2": evaluation.get("snapped_upa_km2"),
+        "rawUpaKm2": evaluation.get("raw_upa_km2"),
+        "snapDistanceM": evaluation.get("snap_distance_m"),
+        "candidateCount": evaluation.get("candidate_count"),
+        "selectionVerdict": analysis.get("selectionVerdict"),
+        "selectionScore": analysis.get("selectionScore"),
+        "selectionReasons": analysis.get("selectionReasons"),
+    }
+
+
+def build_watershed_skip_details(
+    *,
+    selected_candidate: dict[str, Any] | None,
+    suggested_candidate: dict[str, Any] | None,
+    strict_topo_candidate: dict[str, Any] | None,
+    review_truth_candidate: dict[str, Any] | None,
+    candidate_analysis: dict[str, Any],
+    source: dict[str, Any],
+) -> dict[str, Any]:
+    return {
+        "sourceName": source.get("name"),
+        "sourceMode": source.get("mode"),
+        "analysisSummary": candidate_analysis.get("analysisSummary"),
+        "selectedCandidate": candidate_diagnostic(selected_candidate),
+        "suggestedCandidate": candidate_diagnostic(suggested_candidate),
+        "strictTopoCandidate": candidate_diagnostic(strict_topo_candidate),
+        "reviewTruthCandidate": candidate_diagnostic(review_truth_candidate),
     }
 
 
@@ -1812,6 +1916,8 @@ def aggregate_results(output_dir: Path) -> None:
             )
         elif item.get("watershedStatus") == "skipped":
             import_rows[-1]["watershedSkipReason"] = item.get("watershedSkipReason")
+            if item.get("watershedSkipDetails"):
+                import_rows[-1]["watershedSkipDetails"] = item.get("watershedSkipDetails")
 
     write_json(output_dir / "import_ready_catchments.json", import_rows)
     write_json(output_dir / "import_ready_watershed_descriptors.json", descriptor_rows)
@@ -1941,6 +2047,7 @@ def process_single_canyon(
     osm_regulation = None
     watershed_status = "skipped"
     watershed_skip_reason = None
+    watershed_skip_details = None
     mask_data = None
     analyzed_points = []
     selected_candidate = None
@@ -2095,15 +2202,31 @@ def process_single_canyon(
         stage_timings["buildWatershedMaskSec"] = 0.0
         stage_timings["buildWatershedGeometrySec"] = 0.0
         if selected_candidate is None:
-            watershed_skip_reason = "no_selected_candidate"
+            watershed_skip_reason = (
+                "review_override_no_channel_within_30m"
+                if review_truth_candidate is not None
+                else "no_selected_candidate"
+            )
         elif source["mode"] != "derive_local_hydrology":
             watershed_skip_reason = "source_mode_not_local_hydrology"
         elif raster_paths.get("flowdir") is None:
             watershed_skip_reason = "missing_flowdir_raster"
         elif selected_candidate["evaluation"].get("snapped_longitude") is None or selected_candidate["evaluation"].get("snapped_latitude") is None:
-            watershed_skip_reason = "missing_snapped_coordinates"
+            watershed_skip_reason = (
+                "review_truth_missing_snapped_coordinates"
+                if selected_candidate.get("forcedByReview")
+                else "missing_snapped_coordinates"
+            )
         else:
             watershed_skip_reason = "condition_not_met"
+        watershed_skip_details = build_watershed_skip_details(
+            selected_candidate=selected_candidate,
+            suggested_candidate=suggested_candidate,
+            strict_topo_candidate=strict_topo_candidate,
+            review_truth_candidate=review_truth_candidate,
+            candidate_analysis=candidate_analysis,
+            source=source,
+        )
 
     if mask_data is not None and raster_paths.get("elevation") is not None and selected_candidate is not None:
         climate_info = shared_descriptor_inputs.get("climate")
@@ -2221,7 +2344,8 @@ def process_single_canyon(
         "osmRegulationProbe": osm_regulation,
         "watershedStatus": watershed_status,
         "watershedSkipReason": watershed_skip_reason,
-        "forcedByReview": any(bool(point.get("_forceExactCell")) for point in points),
+        "watershedSkipDetails": watershed_skip_details,
+        "forcedByReview": any(is_review_hydrology_override(point) for point in points),
         "profiling": {
             "sourceMode": source["mode"],
             "reusedExistingHydrology": hydrology_profile.get("reusedExistingHydrology", False),

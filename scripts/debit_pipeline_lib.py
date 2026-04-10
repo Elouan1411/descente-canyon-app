@@ -196,6 +196,68 @@ WATERSHED_DESCRIPTOR_NUMERIC_KEYS = [
     "karstConnectivityIndex",
 ]
 WATERSHED_DESCRIPTOR_REGULATION_TYPES = ["none", "hydropower", "barrier", "reservoir", "diversion", "mixed"]
+WATERSHED_DESCRIPTOR_BOUNDED_UNIT_INTERVAL_KEYS = {
+    "watershedNoDataFraction",
+    "watershedQualityScore",
+    "fractionAbove1500m",
+    "fractionAbove2000m",
+    "fractionAbove2500m",
+    "fractionSlopeOver10Deg",
+    "fractionSlopeOver20Deg",
+    "fractionSlopeOver30Deg",
+    "aspectNorthFraction",
+    "aspectEastFraction",
+    "aspectSouthFraction",
+    "aspectWestFraction",
+    "meanSnowFractionClimatology",
+    "oceanicityProxy",
+    "hypsometricIntegral",
+    "valleyConfinementIndex",
+    "firstOrderLengthFraction",
+    "landCoverValidFraction",
+    "forestFraction",
+    "shrubFraction",
+    "grassFraction",
+    "croplandFraction",
+    "urbanFraction",
+    "bareRockFraction",
+    "snowIceFraction",
+    "permanentWaterFraction",
+    "wetlandFraction",
+    "mangroveFraction",
+    "mossLichenFraction",
+    "largestForestPatchFraction",
+    "landCoverFragmentationIndex",
+    "riparianForestFraction",
+    "imperviousConnectivityProxy",
+    "soilValidFraction",
+    "lowPermeabilitySoilFraction",
+    "highInfiltrationSoilFraction",
+    "runoffPotentialIndex",
+    "coarseFragmentFraction",
+    "subsoilClayFraction",
+    "subsoilSandFraction",
+    "soilDepthShallowFraction",
+    "lakeFraction",
+    "reservoirAreaFraction",
+    "regulatedAreaFraction",
+    "regulationSeverityIndex",
+    "geologyValidFraction",
+    "carbonateFraction",
+    "unconsolidatedFraction",
+    "crystallineFraction",
+    "volcanicFraction",
+    "evaporiteFraction",
+    "karstIndicator",
+    "imperviousValidFraction",
+    "imperviousBuiltSurfaceFraction",
+    "imperviousProxyFraction",
+    "glacierFraction",
+    "osmRegulationConfidence",
+    "losingStreamIndicator",
+    "resurgenceIndicator",
+    "karstConnectivityIndex",
+}
 
 
 def get_beautiful_soup() -> Any:
@@ -957,7 +1019,7 @@ def load_watershed_lookup(watersheds_path: Path) -> dict[int, dict[str, Any]]:
 def normalize_watershed_descriptor_row(row: dict[str, Any]) -> dict[str, Any]:
     normalized: dict[str, Any] = {}
     for key in WATERSHED_DESCRIPTOR_NUMERIC_KEYS:
-        normalized[key] = row.get(key)
+        normalized[key] = _sanitize_watershed_descriptor_value(key, row.get(key))
 
     for status_key, flag_key in WATERSHED_DESCRIPTOR_STATUS_FLAG_MAP.items():
         normalized[flag_key] = row.get(status_key) == "ok"
@@ -989,6 +1051,24 @@ def normalize_watershed_descriptor_row(row: dict[str, Any]) -> dict[str, Any]:
     normalized["hasWatershedDescriptors"] = row.get("descriptorStatus") == "ok"
 
     return normalized
+
+
+def _sanitize_watershed_descriptor_value(key: str, value: Any) -> Any:
+    if value is None or isinstance(value, bool):
+        return value
+    if isinstance(value, (int, float)):
+        numeric_value = float(value)
+        if not math.isfinite(numeric_value):
+            return None
+        if key in WATERSHED_DESCRIPTOR_BOUNDED_UNIT_INTERVAL_KEYS:
+            if -0.01 <= numeric_value < 0.0:
+                return 0.0
+            if 1.0 < numeric_value <= 1.01:
+                return 1.0
+            if numeric_value < 0.0 or numeric_value > 1.0:
+                return None
+        return numeric_value
+    return value
 
 
 def resolve_watershed_descriptors_path(path: Path) -> Path:

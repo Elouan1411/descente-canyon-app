@@ -458,7 +458,7 @@
       <ul class="help-list">
         <li>Le formulaire reprend les principaux champs de la base canyon de l'application.</li>
         <li>Les points GPS sont structurés comme dans la base : type, titre et remarque.</li>
-        <li>Tu peux importer une trace GPX pour l'afficher sur la carte et la résumer dans l'issue.</li>
+        <li>Tu peux importer une trace GPX pour l'afficher sur la carte et l'envoyer dans une draft PR.</li>
       </ul>
     </section>
 
@@ -469,8 +469,13 @@
 
           <div class="grid">
             <label>
+              ID Descente-Canyon existant
+              <input name="descenteCanyonId" type="number" min="1" step="1" inputmode="numeric" placeholder="1234">
+              <span class="field-help">Renseigne cet identifiant pour proposer un overlay sur un canyon `dc:*` existant.</span>
+            </label>
+            <label>
               Nom du canyon *
-              <input name="name" type="text" maxlength="120" required>
+              <input name="name" type="text" maxlength="120">
             </label>
             <label>
               Nom complet ou alias
@@ -481,7 +486,7 @@
           <div class="grid-4">
             <label>
               Pays *
-              <input name="country" type="text" maxlength="80" required>
+              <input name="country" type="text" maxlength="80">
             </label>
             <label>
               Région
@@ -601,7 +606,7 @@
 
           <label>
             Description générale *
-            <textarea name="description" maxlength="4000" required placeholder="Décris brièvement le canyon, son état de connaissance, son intérêt ou le contexte de la proposition."></textarea>
+              <textarea name="description" maxlength="4000" placeholder="Décris brièvement le canyon, son état de connaissance, son intérêt ou le contexte de la proposition."></textarea>
           </label>
 
           <div class="grid">
@@ -1227,6 +1232,7 @@
 
     function buildPayload(formData) {
       return {
+        descenteCanyonId: parseOptionalInteger((formData.get("descenteCanyonId") || "").trim()),
         name: (formData.get("name") || "").trim(),
         fullName: (formData.get("fullName") || "").trim(),
         country: (formData.get("country") || "").trim(),
@@ -1308,7 +1314,7 @@
 
         showResult(
           "success",
-          `<strong>Merci, la proposition a bien été publiée.</strong><br>Issue créée : <a href="${result.issueUrl}" target="_blank" rel="noopener noreferrer">#${result.issueNumber}</a>`
+          `<strong>Merci, la proposition a bien été publiée.</strong><br>Draft PR : <a href="${result.pullRequestUrl}" target="_blank" rel="noopener noreferrer">#${result.pullRequestNumber}</a>${result.issueUrl ? `<br>Issue publique de suivi : <a href="${result.issueUrl}" target="_blank" rel="noopener noreferrer">#${result.issueNumber}</a>` : ""}`
         );
         form.reset();
         resetGeoPoints();

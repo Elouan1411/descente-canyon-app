@@ -33,4 +33,6 @@ data class Canyon(
     val isForbidden: Boolean = false,
     val isOffline: Boolean = false,
     val lastUpdated: Long = 0L,
+    val sourceType: CanyonSourceType = CanyonSourceType.DESCENTE_CANYON,
+    val sourceKey: String = "",
 )

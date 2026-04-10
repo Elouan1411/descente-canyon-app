@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://descente-canyon.app/schemas/dc-overlay.schema.json",
+  "title": "Descente-Canyon Overlay",
+  "type": "object",
+  "required": ["sourceKey"],
+  "properties": {
+    "sourceKey": {
+      "type": "string",
+      "pattern": "^dc:[0-9]+$"
+    },
+    "watershed": {
+      "type": "object",
+      "properties": {
+        "areaKm2": { "type": "number", "minimum": 0 },
+        "polygonFile": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": false
+    },
+    "tracks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "file"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+          "name": { "type": "string", "minLength": 1 },
+          "role": { "type": "string" },
+          "file": { "type": "string", "minLength": 1 },
+          "isPrimary": { "type": "boolean" }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

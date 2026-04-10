@@ -276,6 +276,19 @@
       flex-wrap: wrap;
     }
 
+    .map-actions {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .button-map-focus {
+      background: #eef3ff;
+      border-color: #cfdcff;
+      color: #3550a8;
+    }
+
     .button-good {
       background: var(--success-soft);
       border-color: #b9dec9;
@@ -311,6 +324,23 @@
     .proposal-box-empty {
       border-color: var(--border);
       background: var(--panel-soft);
+    }
+
+    .reference-box {
+      display: grid;
+      gap: 8px;
+      padding: 10px 12px;
+      border: 1px solid #cfc9ff;
+      border-radius: 13px;
+      background: #f2efff;
+    }
+
+    .reference-title {
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #5d40c6;
     }
 
     .proposal-title {
@@ -429,6 +459,9 @@
           <h1>Watershed review tool</h1>
         </div>
         <div class="toolbar-actions">
+          <button class="button" id="queue-old-bad">Anciens bad</button>
+          <button class="button" id="queue-missing">Manquants</button>
+          <button class="button" id="queue-old-good">Anciens good</button>
           <button class="button" id="first-pending">Premier pending</button>
           <button class="button" id="prev-pending">Pending precedent</button>
           <button class="button" id="next-pending">Pending suivant</button>
@@ -462,24 +495,19 @@
     const PAGE_SIZE = 1;
     const LOCAL_STORAGE_KEY = "watershed-review-session-v4";
     const REVIEW_STATE_API_URL = "/api/review-state";
+    const REVIEW_CONTEXT_API_URL = "/api/review-context";
     const REVIEW_FILE_PATH = "watershed-review/watershed-review.json";
     const ASSISTANT_PROPOSALS_PATH = "../build/watershed-review/assistant-proposals.json";
-    const DATA_URLS = {
+    const STATIC_DATA_URLS = {
       canyons: "../offline-data/full/room-import/canyons.json",
-      geoPoints: "../offline-data/full/room-import/geo_points.json",
-      frCatchments: "../watershed-results/runs/france/full/2026-03-28-france-v1/import_ready_catchments.json",
-      frWatersheds: "../watershed-results/runs/france/full/2026-03-28-france-v1/import_ready_watersheds.json",
-      chCatchments: "../watershed-results/runs/suisse/full/2026-03-28-switzerland-v1/import_ready_catchments.json",
-      chWatersheds: "../watershed-results/runs/suisse/full/2026-03-28-switzerland-v1/import_ready_watersheds.json",
-      atCatchments: "../watershed-results/runs/autriche/full/2026-03-28-austria-v1/import_ready_catchments.json",
-      atWatersheds: "../watershed-results/runs/autriche/full/2026-03-28-austria-v1/import_ready_watersheds.json",
-      itCatchments: "../watershed-results/runs/italie/full/2026-03-25-italy-v1/import_ready_catchments.json",
-      itWatersheds: "../watershed-results/runs/italie/full/2026-03-25-italy-v1/import_ready_watersheds.json",
-      esCatchments: "../watershed-results/runs/espagne/full/2026-03-25-spain-v1/import_ready_catchments.json",
-      esWatersheds: "../watershed-results/runs/espagne/full/2026-03-25-spain-v1/import_ready_watersheds.json",
-      siCatchments: "../watershed-results/runs/slov%C3%A9nie/full/2026-03-25-slovenia-v1/import_ready_catchments.json",
-      siWatersheds: "../watershed-results/runs/slov%C3%A9nie/full/2026-03-25-slovenia-v1/import_ready_watersheds.json"
+      geoPoints: "../offline-data/full/room-import/geo_points.json"
     };
+
+    const QUEUE_DEFINITIONS = [
+      { name: "old-bad", label: "Anciens bad", buttonId: "queue-old-bad" },
+      { name: "missing", label: "Manquants", buttonId: "queue-missing" },
+      { name: "old-good", label: "Anciens good", buttonId: "queue-old-good" }
+    ];
 
     const BASEMAP = {
       url: "https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png",
@@ -498,13 +526,20 @@
     };
 
     const state = {
+      worldLabel: null,
+      activeQueueName: "old-bad",
+      allItems: [],
       orderedItems: [],
       canyonsById: new Map(),
       pointsByCanyonId: new Map(),
       catchmentsByCanyonId: new Map(),
       watershedsByCanyonId: new Map(),
+      referenceCatchmentsByCanyonId: new Map(),
+      referenceWatershedsByCanyonId: new Map(),
       assistantProposalsByCanyonId: new Map(),
+      baselineReviewByCanyonId: new Map(),
       reviewByCanyonId: new Map(),
+      completedCanyonIds: new Set(),
       currentPage: 0,
       visibleMapEntries: new Map(),
       loaded: false,
@@ -516,6 +551,9 @@
       pageLabel: document.getElementById("page-label"),
       statsRow: document.getElementById("stats-row"),
       statusText: document.getElementById("status-text"),
+      queueOldBad: document.getElementById("queue-old-bad"),
+      queueMissing: document.getElementById("queue-missing"),
+      queueOldGood: document.getElementById("queue-old-good"),
       firstPending: document.getElementById("first-pending"),
       prevPending: document.getElementById("prev-pending"),
       nextPending: document.getElementById("next-pending"),
@@ -550,22 +588,19 @@
 
       try {
         setStatus("Chargement des JSON du repo...");
-        const [data, savedState, assistantProposals] = await Promise.all([
-          loadAllData(),
+        const [reviewContext, savedState, assistantProposals] = await Promise.all([
+          loadReviewContext(),
           loadServerState(),
           loadAssistantProposals()
         ]);
+        const data = await loadAllData(reviewContext);
         applyAssistantProposals(assistantProposals);
-        if (savedState) {
-          applySavedState(savedState);
-        } else {
-          restoreLocalSession();
-        }
+        initializeSession(savedState, reviewContext.world.label);
         buildDataset(data);
         state.loaded = true;
         clampCurrentPage();
         persistLocalSession();
-        setStatus(`Donnees chargees: ${state.orderedItems.length} canyons, ${state.assistantProposalsByCanyonId.size} propositions assistant.`);
+        setStatus(`Donnees chargees: ${state.allItems.length} canyons world, ${state.assistantProposalsByCanyonId.size} propositions assistant.`);
         renderPage();
       } catch (error) {
         console.error(error);
@@ -576,6 +611,18 @@
     }
 
     function bindEvents() {
+      elements.queueOldBad.addEventListener("click", () => {
+        setActiveQueue("old-bad");
+      });
+
+      elements.queueMissing.addEventListener("click", () => {
+        setActiveQueue("missing");
+      });
+
+      elements.queueOldGood.addEventListener("click", () => {
+        setActiveQueue("old-good");
+      });
+
       elements.firstPending.addEventListener("click", () => {
         const pendingPage = findFirstPendingPage();
         if (pendingPage === -1) {
@@ -641,10 +688,18 @@
           return;
         }
         state.reviewByCanyonId.clear();
+        state.completedCanyonIds.clear();
         state.currentPage = 0;
         persistLocalSession();
         try {
-          await persistStateToServer({ currentPage: 0, reviews: [] });
+          await persistStateToServer({
+            currentPage: 0,
+            reviews: [],
+            baselineReviews: exportableBaselineReviews(),
+            batchLabel: state.worldLabel,
+            queueName: state.activeQueueName,
+            completedCanyonIds: []
+          });
         } catch (error) {
           console.error(error);
           setStatus(`Session locale reinitialisee, mais ecriture serveur impossible: ${error.message}`);
@@ -675,6 +730,7 @@
             pointType: item && item.catchment ? item.catchment.pointType : null,
             label: item && item.catchment ? item.catchment.label : null
           });
+          markCompleted(canyonId);
           return;
         }
         if (action === "bad") {
@@ -686,6 +742,7 @@
             pointType: current && current.pointType ? current.pointType : "REVIEW_GPS",
             label: current && current.label !== undefined ? current.label : "review_truth"
           });
+          markCompleted(canyonId);
           return;
         }
         if (action === "use-proposal") {
@@ -700,12 +757,22 @@
             pointType: "REVIEW_GPS",
             label: "assistant_proposal"
           });
+          markCompleted(canyonId);
           setStatus(`Proposition assistant appliquee pour ${item.name}.`);
+          return;
+        }
+        if (action === "focus-new" || action === "focus-old" || action === "focus-both") {
+          const mapEntry = state.visibleMapEntries.get(canyonId);
+          if (!mapEntry) {
+            return;
+          }
+          focusMapOnMode(mapEntry, action.replace("focus-", ""));
           return;
         }
         if (action === "reset") {
           state.reviewByCanyonId.delete(canyonId);
           persistLocalSession();
+          clearCompleted(canyonId);
           updateCardState(canyonId);
           updateChrome();
         }
@@ -734,11 +801,31 @@
       });
     }
 
-    async function loadAllData() {
-      const entries = await Promise.all(
-        Object.entries(DATA_URLS).map(async ([key, url]) => [key, await fetchJson(url)])
+    async function loadReviewContext() {
+      const response = await fetch(REVIEW_CONTEXT_API_URL, { cache: "no-store" });
+      if (!response.ok) {
+        throw new Error(`Contexte de review inaccessible (${response.status}).`);
+      }
+      return response.json();
+    }
+
+    async function loadAllData(reviewContext) {
+      const staticEntries = await Promise.all(
+        Object.entries(STATIC_DATA_URLS).map(async ([key, url]) => [key, await fetchJson(url)])
       );
-      return Object.fromEntries(entries);
+      const [worldCatchments, worldWatersheds, referenceCatchments, referenceWatersheds] = await Promise.all([
+        fetchJson(reviewContext.world.catchmentsUrl),
+        fetchJson(reviewContext.world.watershedsUrl),
+        Promise.all(reviewContext.referenceRuns.map((run) => fetchJson(run.catchmentsUrl))),
+        Promise.all(reviewContext.referenceRuns.map((run) => fetchJson(run.watershedsUrl)))
+      ]);
+      return {
+        ...Object.fromEntries(staticEntries),
+        worldCatchments,
+        worldWatersheds,
+        referenceCatchments: referenceCatchments.flat(),
+        referenceWatersheds: referenceWatersheds.flat()
+      };
     }
 
     async function loadServerState() {
@@ -777,6 +864,71 @@
       }
     }
 
+    function initializeSession(savedState, worldLabel) {
+      state.worldLabel = worldLabel;
+      state.reviewByCanyonId.clear();
+      state.baselineReviewByCanyonId.clear();
+      state.completedCanyonIds.clear();
+
+      const fallbackState = savedState || restoreLocalSession();
+      const currentReviews = Array.isArray(fallbackState && fallbackState.reviews) ? fallbackState.reviews : [];
+
+      for (const rawReview of currentReviews) {
+        const normalized = normalizeReview(rawReview);
+        if (normalized) {
+          state.reviewByCanyonId.set(normalized.canyonId, {
+            status: normalized.status,
+            gps: normalized.gps,
+            adminPlaced: normalized.adminPlaced,
+            pointType: normalized.pointType,
+            label: normalized.label
+          });
+        }
+      }
+
+      const sameBatch = Boolean(
+        fallbackState &&
+        fallbackState.batchLabel &&
+        String(fallbackState.batchLabel) === String(worldLabel)
+      );
+
+      const baselineSource = sameBatch && Array.isArray(fallbackState.baselineReviews) && fallbackState.baselineReviews.length > 0
+        ? fallbackState.baselineReviews
+        : currentReviews;
+
+      for (const rawReview of baselineSource) {
+        const normalized = normalizeReview(rawReview);
+        if (normalized) {
+          state.baselineReviewByCanyonId.set(normalized.canyonId, {
+            status: normalized.status,
+            gps: normalized.gps,
+            adminPlaced: normalized.adminPlaced,
+            pointType: normalized.pointType,
+            label: normalized.label
+          });
+        }
+      }
+
+      if (sameBatch && Array.isArray(fallbackState.completedCanyonIds)) {
+        for (const rawCanyonId of fallbackState.completedCanyonIds) {
+          const canyonId = Number(rawCanyonId);
+          if (Number.isFinite(canyonId)) {
+            state.completedCanyonIds.add(canyonId);
+          }
+        }
+      }
+
+      state.activeQueueName = sameBatch && isValidQueueName(fallbackState && fallbackState.queueName)
+        ? String(fallbackState.queueName)
+        : "old-bad";
+
+      if (sameBatch && Number.isFinite(Number(fallbackState && fallbackState.currentPage))) {
+        state.currentPage = Number(fallbackState.currentPage);
+      } else {
+        state.currentPage = 0;
+      }
+    }
+
     function applySavedState(savedState) {
       state.reviewByCanyonId.clear();
       if (Number.isFinite(Number(savedState.currentPage))) {
@@ -795,6 +947,10 @@
             });
           }
         }
+    }
+
+    function isValidQueueName(queueName) {
+      return QUEUE_DEFINITIONS.some((queue) => queue.name === String(queueName));
     }
 
     async function fetchJson(url) {
@@ -826,30 +982,38 @@
       }
 
       state.catchmentsByCanyonId = new Map();
-      for (const row of [
-        ...data.frCatchments,
-        ...data.chCatchments,
-        ...data.atCatchments,
-        ...data.itCatchments,
-        ...data.esCatchments,
-        ...data.siCatchments
-      ]) {
+      for (const row of data.worldCatchments) {
         if (row && Number.isFinite(Number(row.canyonId))) {
           state.catchmentsByCanyonId.set(Number(row.canyonId), row);
         }
       }
 
       state.watershedsByCanyonId = new Map();
-      for (const row of [
-        ...data.frWatersheds,
-        ...data.chWatersheds,
-        ...data.atWatersheds,
-        ...data.itWatersheds,
-        ...data.esWatersheds,
-        ...data.siWatersheds
-      ]) {
+      for (const row of data.worldWatersheds) {
         if (row && Number.isFinite(Number(row.canyonId))) {
           state.watershedsByCanyonId.set(Number(row.canyonId), row);
+        }
+      }
+
+      state.referenceCatchmentsByCanyonId = new Map();
+      for (const row of data.referenceCatchments) {
+        if (!row || !Number.isFinite(Number(row.canyonId))) {
+          continue;
+        }
+        const canyonId = Number(row.canyonId);
+        if (!state.referenceCatchmentsByCanyonId.has(canyonId)) {
+          state.referenceCatchmentsByCanyonId.set(canyonId, row);
+        }
+      }
+
+      state.referenceWatershedsByCanyonId = new Map();
+      for (const row of data.referenceWatersheds) {
+        if (!row || !Number.isFinite(Number(row.canyonId))) {
+          continue;
+        }
+        const canyonId = Number(row.canyonId);
+        if (!state.referenceWatershedsByCanyonId.has(canyonId)) {
+          state.referenceWatershedsByCanyonId.set(canyonId, row);
         }
       }
 
@@ -858,9 +1022,11 @@
         ...state.watershedsByCanyonId.keys()
       ]);
 
-      state.orderedItems = Array.from(canyonIds)
+      state.allItems = Array.from(canyonIds)
         .map((canyonId) => buildItem(canyonId))
         .sort(compareItems);
+      rebuildQueue();
+      jumpToFirstPendingIfAvailable();
     }
 
     function buildItem(canyonId) {
@@ -879,6 +1045,9 @@
         canyon,
         catchment,
         watershed,
+        referenceCatchment: state.referenceCatchmentsByCanyonId.get(canyonId) || null,
+        referenceWatershed: state.referenceWatershedsByCanyonId.get(canyonId) || null,
+        baselineReview: state.baselineReviewByCanyonId.get(canyonId) || null,
         assistantProposal: state.assistantProposalsByCanyonId.get(canyonId) || null,
         points: state.pointsByCanyonId.get(canyonId) || [],
         suspicious: suspiciousReasons.length > 0,
@@ -888,6 +1057,47 @@
         country: String(canyon.pays || "?"),
         basinLabel: String(canyon.bassin || "(sans bassin texte)")
       };
+    }
+
+    function rebuildQueue() {
+      state.orderedItems = state.allItems
+        .filter((item) => {
+          const baselineReview = item.baselineReview;
+          if (state.activeQueueName === "old-bad") {
+            return Boolean(baselineReview && baselineReview.status === "bad");
+          }
+          if (state.activeQueueName === "missing") {
+            return !baselineReview;
+          }
+          if (state.activeQueueName === "old-good") {
+            return Boolean(baselineReview && baselineReview.status === "good");
+          }
+          return true;
+        })
+        .slice()
+        .sort((left, right) => {
+          const leftPending = isPendingItem(left) ? 0 : 1;
+          const rightPending = isPendingItem(right) ? 0 : 1;
+          if (leftPending !== rightPending) {
+            return leftPending - rightPending;
+          }
+          return compareItems(left, right);
+        });
+    }
+
+    function countItemsForQueue(queueName) {
+      return state.allItems.filter((item) => {
+        if (queueName === "old-bad") {
+          return Boolean(item.baselineReview && item.baselineReview.status === "bad");
+        }
+        if (queueName === "missing") {
+          return !item.baselineReview;
+        }
+        if (queueName === "old-good") {
+          return Boolean(item.baselineReview && item.baselineReview.status === "good");
+        }
+        return false;
+      }).length;
     }
 
     function compareItems(left, right) {
@@ -943,8 +1153,7 @@
       if (!item) {
         return false;
       }
-      const review = state.reviewByCanyonId.get(item.canyonId);
-      return !review || review.status === "pending";
+      return !state.completedCanyonIds.has(item.canyonId);
     }
 
     function findFirstPendingPage() {
@@ -972,6 +1181,30 @@
         return;
       }
       state.currentPage = Math.max(0, Math.min(state.currentPage, pageCount - 1));
+    }
+
+    function jumpToFirstPendingIfAvailable() {
+      const pendingPage = findFirstPendingPage();
+      if (pendingPage !== -1) {
+        state.currentPage = pendingPage;
+      }
+    }
+
+    function setActiveQueue(queueName) {
+      if (!isValidQueueName(queueName)) {
+        return;
+      }
+      state.activeQueueName = queueName;
+      state.currentPage = 0;
+      rebuildQueue();
+      jumpToFirstPendingIfAvailable();
+      clampCurrentPage();
+      persistLocalSession();
+      renderPage();
+      const queue = QUEUE_DEFINITIONS.find((entry) => entry.name === queueName);
+      if (queue) {
+        setStatus(`File active: ${queue.label}.`);
+      }
     }
 
     function jumpToCanyonId() {
@@ -1033,6 +1266,7 @@
     function buildCardElement(item, absoluteIndex) {
       const review = state.reviewByCanyonId.get(item.canyonId);
       const defaultGps = defaultGpsForItem(item);
+      const baselineReview = item.baselineReview;
       const pointMarkup = item.points.length > 0
         ? item.points.map((point) => {
             const pointType = String(point.type || "?");
@@ -1059,6 +1293,26 @@
             <div class="proposal-line">Aucune proposition pour ce canyon.</div>
           </div>
         `;
+      const referenceGps = baselineReview && baselineReview.gps ? formatGpsLine(baselineReview.gps) : "Aucune review precedente";
+      const referencePointType = item.referenceCatchment && item.referenceCatchment.pointType
+        ? item.referenceCatchment.pointType
+        : baselineReview && baselineReview.pointType
+          ? baselineReview.pointType
+          : "-";
+      const referenceMarkup = baselineReview
+        ? `
+          <div class="reference-box">
+            <div class="reference-title">Review precedente</div>
+            <div class="proposal-line">${escapeHtml(baselineReview.status)} · ${escapeHtml(referencePointType)}</div>
+            <div class="proposal-line">${escapeHtml(referenceGps)}</div>
+          </div>
+        `
+        : `
+          <div class="reference-box">
+            <div class="reference-title">Review precedente</div>
+            <div class="proposal-line">Aucune review precedente pour ce canyon.</div>
+          </div>
+        `;
 
       const card = document.createElement("article");
       card.className = "card";
@@ -1075,6 +1329,14 @@
         </div>
 
         <div class="map" id="map-${item.canyonId}"></div>
+
+        <div class="map-actions">
+          <button class="button button-map-focus" data-action="focus-new" data-canyon-id="${item.canyonId}">Nouveau bassin</button>
+          <button class="button button-map-focus" data-action="focus-old" data-canyon-id="${item.canyonId}">Ancien bassin</button>
+          <button class="button button-map-focus" data-action="focus-both" data-canyon-id="${item.canyonId}">Les deux</button>
+        </div>
+
+        ${referenceMarkup}
 
         ${proposalMarkup}
 
@@ -1109,11 +1371,30 @@
         try {
           watershedLayer = L.geoJSON(
             { type: "Feature", properties: {}, geometry: item.watershed.geometry },
-            { style: { color: "#245bff", weight: 2, fillColor: "#245bff", fillOpacity: 0.16 } }
+            { style: { color: "#245bff", weight: 3, fillColor: "#245bff", fillOpacity: 0.28 } }
           ).addTo(map);
         } catch (error) {
           console.warn(`Geometrie ignoree pour ${item.canyonId}`, error);
         }
+      }
+
+      let referenceWatershedLayer = null;
+      if (item.referenceWatershed && item.referenceWatershed.geometry) {
+        try {
+          referenceWatershedLayer = L.geoJSON(
+            { type: "Feature", properties: {}, geometry: item.referenceWatershed.geometry },
+            { style: { color: "#6b4ce6", weight: 2, dashArray: "6 4", fillColor: "#6b4ce6", fillOpacity: 0.03 } }
+          ).addTo(map);
+        } catch (error) {
+          console.warn(`Geometrie historique ignoree pour ${item.canyonId}`, error);
+        }
+      }
+
+      if (referenceWatershedLayer) {
+        referenceWatershedLayer.bringToBack();
+      }
+      if (watershedLayer) {
+        watershedLayer.bringToFront();
       }
 
       const pointLayer = L.layerGroup().addTo(map);
@@ -1151,6 +1432,7 @@
             pointType,
             label: point.label || null
           });
+          markCompleted(item.canyonId);
           setStatus(`Point ${pointType}${point.label ? ` - ${point.label}` : ""} utilise comme reference pour ${item.name}.`);
         });
         marker.addTo(pointLayer);
@@ -1172,7 +1454,12 @@
       let reviewPointMarker = null;
       const currentReview = state.reviewByCanyonId.get(item.canyonId);
       if (currentReview && currentReview.gps) {
-        reviewPointMarker = createReviewMarker(map, currentReview.gps);
+        reviewPointMarker = createReviewMarker(map, currentReview.gps, currentReview.status || "bad");
+      }
+
+      let baselineReviewMarker = null;
+      if (item.baselineReview && item.baselineReview.gps) {
+        baselineReviewMarker = createBaselineReviewMarker(map, item.baselineReview.gps, item.baselineReview.status);
       }
 
       let assistantProposalMarker = null;
@@ -1191,25 +1478,47 @@
           pointType: "REVIEW_GPS",
           label: "manual_map"
         });
+        markCompleted(item.canyonId);
       });
 
-      fitMap(map, item, watershedLayer, selectedPointMarker, reviewPointMarker, assistantProposalMarker);
-
-      state.visibleMapEntries.set(item.canyonId, {
+      const mapEntry = {
         map,
         tileLayer,
         watershedLayer,
+        referenceWatershedLayer,
         pointMarkers,
         selectedPointMarker,
         reviewPointMarker,
-        assistantProposalMarker
-      });
+        assistantProposalMarker,
+        baselineReviewMarker,
+        item
+      };
+
+      fitMap(mapEntry, getDefaultFocusMode(item));
+
+      state.visibleMapEntries.set(item.canyonId, mapEntry);
     }
 
-    function fitMap(map, item, watershedLayer, selectedPointMarker, reviewPointMarker, assistantProposalMarker) {
-      const bounds = L.latLngBounds([]);
+    function getDefaultFocusMode(item) {
+      const newArea = Number(item && item.watershed ? item.watershed.upstreamCatchmentAreaKm2 : NaN);
+      const oldArea = Number(item && item.referenceWatershed ? item.referenceWatershed.upstreamCatchmentAreaKm2 : NaN);
+      if (Number.isFinite(newArea) && Number.isFinite(oldArea) && oldArea > 0 && newArea < oldArea / 20) {
+        return "new";
+      }
+      return "both";
+    }
 
-      if (item.watershed && Array.isArray(item.watershed.bbox) && item.watershed.bbox.length === 4) {
+    function focusMapOnMode(mapEntry, mode) {
+      fitMap(mapEntry, mode);
+    }
+
+    function fitMap(mapEntry, mode = "both") {
+      const { map, item, watershedLayer, referenceWatershedLayer, selectedPointMarker, reviewPointMarker, assistantProposalMarker, baselineReviewMarker } = mapEntry;
+      const bounds = L.latLngBounds([]);
+      const includeNew = mode === "new" || mode === "both";
+      const includeOld = mode === "old" || mode === "both";
+
+      if (includeNew && item.watershed && Array.isArray(item.watershed.bbox) && item.watershed.bbox.length === 4) {
         const bbox = item.watershed.bbox.map(Number);
         if (bbox.every(Number.isFinite)) {
           bounds.extend([bbox[1], bbox[0]]);
@@ -1217,10 +1526,16 @@
         }
       }
 
-      if (watershedLayer) {
+      if (includeNew && watershedLayer) {
         const layerBounds = watershedLayer.getBounds();
         if (layerBounds.isValid()) {
           bounds.extend(layerBounds);
+        }
+      }
+      if (includeOld && referenceWatershedLayer) {
+        const referenceBounds = referenceWatershedLayer.getBounds();
+        if (referenceBounds.isValid()) {
+          bounds.extend(referenceBounds);
         }
       }
 
@@ -1230,7 +1545,7 @@
         }
       }
 
-      if (selectedPointMarker) {
+      if (includeNew && selectedPointMarker) {
         bounds.extend(selectedPointMarker.getLatLng());
       }
       if (reviewPointMarker) {
@@ -1239,21 +1554,24 @@
       if (assistantProposalMarker) {
         bounds.extend(assistantProposalMarker.getLatLng());
       }
+      if (includeOld && baselineReviewMarker) {
+        bounds.extend(baselineReviewMarker.getLatLng());
+      }
 
       if (bounds.isValid()) {
         map.fitBounds(bounds.pad(0.12));
       }
     }
 
-    function createReviewMarker(map, gps) {
+    function createReviewMarker(map, gps, status = "bad") {
       return L.circleMarker([gps.latitude, gps.longitude], {
         radius: 8,
-        color: "#0468ad",
+        color: status === "good" ? "#137a48" : status === "pending" ? "#996100" : "#0468ad",
         weight: 3,
-        fillColor: "#00b7ff",
+        fillColor: status === "good" ? "#4dc987" : status === "pending" ? "#ffcf70" : "#00b7ff",
         fillOpacity: 0.92
       })
-        .bindTooltip(`GPS propose - ${gps.latitude.toFixed(6)}, ${gps.longitude.toFixed(6)}`)
+        .bindTooltip(`Review courante ${status} - ${gps.latitude.toFixed(6)}, ${gps.longitude.toFixed(6)}`)
         .addTo(map);
     }
 
@@ -1266,6 +1584,18 @@
         fillOpacity: 0.95
       })
         .bindTooltip(`Proposition assistant - ${proposal.gps.latitude.toFixed(6)}, ${proposal.gps.longitude.toFixed(6)}`)
+        .addTo(map);
+    }
+
+    function createBaselineReviewMarker(map, gps, status) {
+      return L.circleMarker([gps.latitude, gps.longitude], {
+        radius: 8,
+        color: "#5d40c6",
+        weight: 3,
+        fillColor: status === "bad" ? "#c8b8ff" : "#e0d7ff",
+        fillOpacity: 0.95
+      })
+        .bindTooltip(`Review precedente ${status} - ${gps.latitude.toFixed(6)}, ${gps.longitude.toFixed(6)}`)
         .addTo(map);
     }
 
@@ -1293,6 +1623,18 @@
       updateChrome();
     }
 
+    function markCompleted(canyonId) {
+      state.completedCanyonIds.add(canyonId);
+      persistLocalSession();
+      updateChrome();
+    }
+
+    function clearCompleted(canyonId) {
+      state.completedCanyonIds.delete(canyonId);
+      persistLocalSession();
+      updateChrome();
+    }
+
     function defaultGpsForItem(item) {
       if (!item || !item.catchment) {
         return null;
@@ -1308,13 +1650,14 @@
 
     function updateCardState(canyonId) {
       const review = state.reviewByCanyonId.get(canyonId);
+      const completed = state.completedCanyonIds.has(canyonId);
       const pillHost = document.getElementById(`status-pill-${canyonId}`);
       const gpsLine = document.getElementById(`gps-line-${canyonId}`);
       const goodButton = document.getElementById(`good-button-${canyonId}`);
       const badButton = document.getElementById(`bad-button-${canyonId}`);
 
       if (pillHost) {
-        if (!review) {
+        if (!completed) {
           pillHost.innerHTML = `<span class="pill">Pending</span>`;
         } else if (review.status === "good") {
           pillHost.innerHTML = `<span class="pill" style="background: var(--success-soft); color: var(--success); border-color: #badfca;">Good${review.adminPlaced ? " · admin" : ""}</span>`;
@@ -1326,9 +1669,9 @@
       }
 
       if (gpsLine) {
-        if (review && review.gps) {
+        if (completed && review && review.gps) {
           gpsLine.textContent = formatGpsLine(review.gps);
-        } else if (review && (review.status === "bad" || review.status === "pending")) {
+        } else if (completed && review && (review.status === "bad" || review.status === "pending")) {
           gpsLine.textContent = "GPS retenu: aucun - clique sur la carte pour le definir.";
         } else {
           const item = state.orderedItems.find((entry) => entry.canyonId === canyonId);
@@ -1351,7 +1694,7 @@
           mapEntry.reviewPointMarker = null;
         }
         if (review && review.gps) {
-          mapEntry.reviewPointMarker = createReviewMarker(mapEntry.map, review.gps);
+          mapEntry.reviewPointMarker = createReviewMarker(mapEntry.map, review.gps, review.status || "bad");
         }
       }
     }
@@ -1359,27 +1702,34 @@
     function updateChrome() {
       const pageCount = getPageCount();
       const visibleItems = getVisibleItems();
-      const reviewedOnPage = visibleItems.filter((item) => state.reviewByCanyonId.has(item.canyonId)).length;
-      const remainingOnPage = visibleItems.length - reviewedOnPage;
-      const goodCount = countReviews("good");
-      const badCount = countReviews("bad");
-      const pendingCount = countReviews("pending");
+      const remainingOnPage = visibleItems.filter((item) => isPendingItem(item)).length;
+      const activeQueue = QUEUE_DEFINITIONS.find((queue) => queue.name === state.activeQueueName) || QUEUE_DEFINITIONS[0];
+      const completedInQueue = state.orderedItems.filter((item) => state.completedCanyonIds.has(item.canyonId)).length;
 
       if (!state.loaded) {
         elements.pageLabel.textContent = "Chargement...";
       } else if (pageCount === 0) {
-        elements.pageLabel.textContent = "Canyon 0 / 0";
+        elements.pageLabel.textContent = `${activeQueue.label} 0 / 0`;
       } else {
         const start = state.currentPage * PAGE_SIZE + 1;
-        elements.pageLabel.textContent = `Canyon ${start} / ${state.orderedItems.length}`;
+        elements.pageLabel.textContent = `${activeQueue.label} ${start} / ${state.orderedItems.length}`;
       }
 
       elements.statsRow.innerHTML = [
-        chip(`${state.reviewByCanyonId.size}/${state.orderedItems.length} revus`),
-        chip(`${goodCount} good`),
-        chip(`${pendingCount} pending`, pendingCount > 0 ? "chip-warning" : ""),
-        chip(`${badCount} bad`)
+        chip(`${completedInQueue}/${state.orderedItems.length} traites`),
+        chip(`${countItemsForQueue("old-bad")} anciens bad`),
+        chip(`${countItemsForQueue("missing")} manquants`),
+        chip(`${countItemsForQueue("old-good")} anciens good`)
       ].join("");
+
+      for (const queue of QUEUE_DEFINITIONS) {
+        const element = elements[queue.buttonId.replace(/-([a-z])/g, (_, letter) => letter.toUpperCase())];
+        if (!element) {
+          continue;
+        }
+        element.classList.toggle("button-active", queue.name === state.activeQueueName);
+        element.disabled = !state.loaded || countItemsForQueue(queue.name) === 0;
+      }
 
       elements.firstPending.disabled = !state.loaded || findFirstPendingPage() === -1;
       elements.prevPending.disabled = !state.loaded || findAdjacentPendingPage(-1) === -1;
@@ -1436,7 +1786,14 @@
       state.saving = true;
       updateChrome();
       try {
-        await persistStateToServer({ currentPage: nextPage, reviews: payload });
+        await persistStateToServer({
+          currentPage: nextPage,
+          reviews: payload,
+          baselineReviews: exportableBaselineReviews(),
+          batchLabel: state.worldLabel,
+          queueName: state.activeQueueName,
+          completedCanyonIds: Array.from(state.completedCanyonIds).sort((left, right) => left - right)
+        });
       } catch (error) {
         console.error(error);
         state.saving = false;
@@ -1469,6 +1826,7 @@
         pointType: currentItem.catchment.pointType,
         label: currentItem.catchment.label
       });
+      markCompleted(currentItem.canyonId);
       await saveAndAdvance();
     }
 
@@ -1512,10 +1870,30 @@
         .sort((left, right) => left.canyonId - right.canyonId);
     }
 
+    function exportableBaselineReviews() {
+      return Array.from(state.baselineReviewByCanyonId.entries())
+        .map(([canyonId, review]) => ({
+          canyonId,
+          status: review.status,
+          gps: review.gps ? {
+            latitude: Number(review.gps.latitude.toFixed(6)),
+            longitude: Number(review.gps.longitude.toFixed(6))
+          } : null,
+          adminPlaced: Boolean(review.adminPlaced),
+          pointType: review.pointType || null,
+          label: review.label ?? null
+        }))
+        .sort((left, right) => left.canyonId - right.canyonId);
+    }
+
     function persistLocalSession() {
       const payload = {
+        batchLabel: state.worldLabel,
+        queueName: state.activeQueueName,
         currentPage: state.currentPage,
-        reviews: exportableReviews()
+        completedCanyonIds: Array.from(state.completedCanyonIds).sort((left, right) => left - right),
+        reviews: exportableReviews(),
+        baselineReviews: exportableBaselineReviews()
       };
       window.localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(payload));
     }
@@ -1523,30 +1901,14 @@
     function restoreLocalSession() {
       const raw = window.localStorage.getItem(LOCAL_STORAGE_KEY);
       if (!raw) {
-        return;
+        return null;
       }
       try {
-        const parsed = JSON.parse(raw);
-        if (Number.isFinite(Number(parsed.currentPage))) {
-          state.currentPage = Number(parsed.currentPage);
-        }
-        if (Array.isArray(parsed.reviews)) {
-          for (const rawReview of parsed.reviews) {
-            const normalized = normalizeReview(rawReview);
-            if (normalized) {
-              state.reviewByCanyonId.set(normalized.canyonId, {
-                status: normalized.status,
-                gps: normalized.gps,
-                adminPlaced: normalized.adminPlaced,
-                pointType: normalized.pointType,
-                label: normalized.label
-              });
-            }
-          }
-        }
+        return JSON.parse(raw);
       } catch (error) {
         console.error(error);
         window.localStorage.removeItem(LOCAL_STORAGE_KEY);
+        return null;
       }
     }
 

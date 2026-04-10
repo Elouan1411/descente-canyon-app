@@ -52,6 +52,8 @@ data class CanyonImportRow(
     val lastUpdated: Long,
     val hasSpecificRegulation: Boolean = false,
     val isForbidden: Boolean = false,
+    val sourceType: String = "DESCENTE_CANYON",
+    val sourceKey: String = "",
 )
 
 @Serializable
@@ -115,6 +117,19 @@ data class CanyonRegulationImportRow(
 data class WatershedImportRow(
     val canyonId: Int,
     val upstreamCatchmentAreaKm2: Double? = null,
+    val bbox: List<Double>? = null,
+    val geometry: JsonElement? = null,
+)
+
+@Serializable
+data class CanyonTrackImportRow(
+    val canyonId: Int,
+    val trackId: String,
+    val name: String,
+    val role: String? = null,
+    val isPrimary: Boolean = false,
+    val sourceFile: String? = null,
+    val pointCount: Int? = null,
     val bbox: List<Double>? = null,
     val geometry: JsonElement? = null,
 )

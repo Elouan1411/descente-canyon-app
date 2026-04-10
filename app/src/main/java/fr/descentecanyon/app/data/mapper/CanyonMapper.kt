@@ -2,6 +2,7 @@ package fr.descentecanyon.app.data.mapper
 
 import fr.descentecanyon.app.data.local.entity.BibliographyEntryEntity
 import fr.descentecanyon.app.data.local.entity.CanyonEntity
+import fr.descentecanyon.app.data.local.entity.CanyonTrackEntity
 import fr.descentecanyon.app.data.local.entity.DebitEntity
 import fr.descentecanyon.app.data.local.entity.GeoPointEntity
 import fr.descentecanyon.app.data.local.entity.PhotoEntity
@@ -17,8 +18,10 @@ import fr.descentecanyon.app.domain.model.BibliographyKind
 import fr.descentecanyon.app.domain.model.Canyon
 import fr.descentecanyon.app.domain.model.CanyonDetail
 import fr.descentecanyon.app.domain.model.CanyonPhoto
+import fr.descentecanyon.app.domain.model.CanyonSourceType
 import fr.descentecanyon.app.domain.model.CanyonSearchItem
 import fr.descentecanyon.app.domain.model.CanyonSummary
+import fr.descentecanyon.app.domain.model.CanyonTrack
 import fr.descentecanyon.app.domain.model.CanyonWatershed
 import fr.descentecanyon.app.domain.model.CotationRating
 import fr.descentecanyon.app.domain.model.Debit
@@ -97,6 +100,8 @@ fun CanyonEntity.toDomain(): Canyon = Canyon(
     isForbidden = isForbidden,
     isOffline = isOffline,
     lastUpdated = lastUpdated,
+    sourceType = sourceType.toDomainSourceType(),
+    sourceKey = sourceKey.ifBlank { "dc:$id" },
 )
 
 internal fun String.normalizeCountryName(): String {
@@ -192,6 +197,7 @@ fun CanyonEntity.toDetail(
     geoPoints: List<GeoPointEntity>,
     bibliography: List<BibliographyEntryEntity>,
     regulations: List<RegulationTextEntity>,
+    tracks: List<CanyonTrackEntity>,
     photos: List<PhotoEntity>,
     debits: List<DebitEntity>,
     watershed: WatershedEntity?,
@@ -210,9 +216,33 @@ fun CanyonEntity.toDetail(
     geoPoints = geoPoints.map { it.toDomain() },
     bibliography = bibliography.map { it.toDomain() },
     regulations = regulations.map { it.toDomain() },
+    tracks = tracks.map { it.toDomain() },
     photos = photos.map { it.toDomain() },
     debits = debits.map { it.toDomain() },
     watershed = watershed?.toDomain(),
+)
+
+fun CanyonTrackEntity.toDomain(): CanyonTrack = CanyonTrack(
+    id = trackId,
+    name = name,
+    role = role,
+    isPrimary = isPrimary,
+    sourceFile = sourceFile,
+    pointCount = pointCount,
+    geometryJson = geometryJson,
+    bounds = listOfNotNull(
+        bboxMinLongitude,
+        bboxMinLatitude,
+        bboxMaxLongitude,
+        bboxMaxLatitude,
+    ).takeIf { it.size == 4 }?.let {
+        GeoBounds(
+            minLongitude = it[0],
+            minLatitude = it[1],
+            maxLongitude = it[2],
+            maxLatitude = it[3],
+        )
+    },
 )
 
 fun WatershedEntity.toDomain(): CanyonWatershed = CanyonWatershed(
@@ -337,6 +367,8 @@ fun ScrapedCanyonDetail.toEntity(): CanyonEntity = CanyonEntity(
     retour = retour,
     engagement = engagement,
     periode = periode,
+    sourceType = CanyonSourceType.DESCENTE_CANYON.name,
+    sourceKey = "dc:$id",
 )
 
 fun ScrapedGeoPoint.toEntity(canyonId: Int): GeoPointEntity = GeoPointEntity(
@@ -376,7 +408,14 @@ fun ScrapedCanyonSummary.toEntity(): CanyonEntity = CanyonEntity(
     commune = "",
     cotation = cotation,
     url = url,
+    sourceType = CanyonSourceType.DESCENTE_CANYON.name,
+    sourceKey = "dc:$id",
 )
+
+private fun String.toDomainSourceType(): CanyonSourceType {
+    return runCatching { CanyonSourceType.valueOf(this) }
+        .getOrDefault(CanyonSourceType.DESCENTE_CANYON)
+}
 
 private fun Float?.normalizedInterest(): Float? = this?.takeIf { it >= 0f }?.coerceAtMost(4f)
 

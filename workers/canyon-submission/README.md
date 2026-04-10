@@ -1,6 +1,6 @@
 # Canyon Submission Worker
 
-Worker Cloudflare minimal pour recevoir un formulaire public et creer une issue GitHub avec le label `new-canyon`.
+Worker Cloudflare pour recevoir un formulaire public et creer une branche, une draft PR, puis une issue publique de suivi sur GitHub.
 
 ## Structure
 
@@ -16,9 +16,9 @@ Dans `Settings > Variables & Secrets` du Worker:
 - `GITHUB_REPO`: repo GitHub cible
 - `ALLOWED_ORIGINS`: liste CSV des origins autorisees
   - exemple: `https://<user>.github.io,https://<user>.github.io/descente-canyon-app`
-- secret `GITHUB_TOKEN`: token du bot avec permission `Issues: Read and write`
+- secret `GITHUB_TOKEN`: token du bot avec permissions `Contents: Read and write`, `Pull requests: Read and write` et `Issues: Read and write`
 
-Le label `new-canyon` doit exister dans le repo GitHub cible.
+Les labels `new-canyon` et `overlay-dc` sont utilises si presents dans le repo cible. En leur absence, le Worker cree quand meme la PR et l'issue sans labels.
 
 `keep_vars` est active dans `wrangler.jsonc` pour eviter qu'un deploy Git n'efface ces variables runtime.
 

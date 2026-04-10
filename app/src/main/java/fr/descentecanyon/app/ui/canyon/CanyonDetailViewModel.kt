@@ -609,6 +609,7 @@ internal fun mergeBaseCanyonDetail(newDetail: CanyonDetail, currentDetail: Canyo
         newDetail.copy(
             photos = currentDetail.photos,
             debits = currentDetail.debits,
+            tracks = newDetail.tracks.ifEmpty { currentDetail.tracks },
             watershed = newDetail.watershed ?: currentDetail.watershed,
         )
     }

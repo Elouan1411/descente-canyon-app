@@ -88,23 +88,15 @@ async function handleSubmitCanyon(request, env) {
     );
   }
 
-  const githubResponse = await createGitHubIssue({
-    env,
-    title: buildIssueTitle(normalized),
-    body: buildIssueBody(normalized, request),
-    labels: buildLabels(),
-  });
-
-  if (!githubResponse.ok) {
-    console.error("GitHub issue creation failed", {
-      status: githubResponse.status,
-      body: await githubResponse.text(),
-    });
-
+  let submissionResult;
+  try {
+    submissionResult = await createSubmissionArtifacts({ payload: normalized, request, env });
+  } catch (error) {
+    console.error("GitHub submission flow failed", serializeError(error));
     return jsonResponse(
       {
         ok: false,
-        error: "GitHub issue creation failed",
+        error: error.message || "GitHub submission flow failed",
       },
       502,
       request,
@@ -112,14 +104,14 @@ async function handleSubmitCanyon(request, env) {
     );
   }
 
-  const createdIssue = await githubResponse.json();
-
   return jsonResponse(
     {
       ok: true,
-      issueNumber: createdIssue.number,
-      issueUrl: createdIssue.html_url,
-      title: createdIssue.title,
+      pullRequestNumber: submissionResult.pullRequest.number,
+      pullRequestUrl: submissionResult.pullRequest.html_url,
+      issueNumber: submissionResult.issue?.number ?? null,
+      issueUrl: submissionResult.issue?.html_url ?? null,
+      title: submissionResult.pullRequest.title,
     },
     201,
     request,
@@ -182,6 +174,7 @@ function jsonResponse(data, status, request, env) {
 
 function normalizePayload(input) {
   return {
+    descenteCanyonId: sanitizeInteger(input.descenteCanyonId ?? input.dcId),
     name: sanitizeText(input.name, 120),
     fullName: sanitizeText(input.fullName, 160),
     country: sanitizeText(input.country, 80),
@@ -335,6 +328,7 @@ function sanitizeBbox(value) {
 
 function validatePayload(payload) {
   const errors = [];
+  const isDcOverlay = payload.descenteCanyonId !== null;
 
   if (payload.honeypot) {
     errors.push("Spam detected");
@@ -342,17 +336,20 @@ function validatePayload(payload) {
   if (!payload.publicConsent) {
     errors.push("Public consent is required");
   }
-  if (!payload.name) {
+  if (!isDcOverlay && !payload.name) {
     errors.push("Name is required");
   }
-  if (!payload.country) {
+  if (!isDcOverlay && !payload.country) {
     errors.push("Country is required");
   }
-  if (!payload.description) {
+  if (!isDcOverlay && !payload.description) {
     errors.push("Description is required");
   }
   if (!payload.sources) {
     errors.push("At least one source is required");
+  }
+  if (payload.descenteCanyonId !== null && payload.descenteCanyonId <= 0) {
+    errors.push("descenteCanyonId must be a positive integer");
   }
   if (payload.geoPoints.length > 24) {
     errors.push("Too many geo points");
@@ -485,7 +482,11 @@ function sanitizeSourceContext(value) {
   return normalized === "app" ? "app" : "web";
 }
 
-function buildIssueTitle(payload) {
+function buildSubmissionTitle(payload) {
+  if (payload.descenteCanyonId !== null) {
+    return `[Overlay DC] ${payload.name || `dc:${payload.descenteCanyonId}`}`;
+  }
+
   const locationParts = [payload.department, payload.region, payload.country].filter(Boolean);
   const location = locationParts.slice(0, 2).join(" - ");
   return location
@@ -493,20 +494,22 @@ function buildIssueTitle(payload) {
     : `[Nouveau canyon] ${payload.name}`;
 }
 
-function buildIssueBody(payload, request) {
+function buildPullRequestBody(payload, request, submissionPaths) {
   const submittedAt = new Date().toISOString();
   const remoteIpCountry = request.headers.get("CF-IPCountry") || "unknown";
 
   return [
-    "## Identite",
+    "## Summary",
+    `- Type: ${describeSubmissionType(payload)}`,
+    `- Cible: ${payload.descenteCanyonId !== null ? `dc:${payload.descenteCanyonId}` : `app:${submissionPaths.slug}`}`,
+    submissionPaths.trackPath ? `- GPX: ${formatInlineCode(submissionPaths.trackPath)}` : "- GPX: aucun",
     "",
-    bulletLine("Nom", payload.name, true),
+    "## Details",
+    "",
+    bulletLine("Nom", payload.name || `dc:${payload.descenteCanyonId}`, true),
     bulletLine("Nom complet", payload.fullName),
     bulletLine("Pseudo", payload.submitterPseudo),
-    "",
-    "## Localisation",
-    "",
-    bulletLine("Pays", payload.country, true),
+    bulletLine("Pays", payload.country),
     bulletLine("Region", payload.region),
     bulletLine("Departement", payload.department),
     bulletLine("Commune", payload.municipality),
@@ -514,9 +517,6 @@ function buildIssueBody(payload, request) {
     bulletLine("Massif", payload.massif),
     bulletLine("Bassin", payload.basin),
     bulletLine("Cours d'eau", payload.watercourse),
-    "",
-    "## Caracteristiques",
-    "",
     bulletLine("Cotation", formatCotation(payload)),
     bulletLine("Interet", formatInterest(payload.interest)),
     bulletLine("Altitude depart", formatMetric(payload.altitudeStart, "m")),
@@ -568,6 +568,36 @@ function buildIssueBody(payload, request) {
     "- Consentement public: oui",
     `- Soumis le: ${submittedAt}`,
     `- Pays IP Cloudflare: ${remoteIpCountry}`,
+  ]
+    .filter((line) => line !== null)
+    .join("\n");
+}
+
+function buildTrackingIssueTitle(payload) {
+  return payload.descenteCanyonId !== null
+    ? `[Suivi overlay] dc:${payload.descenteCanyonId}`
+    : `[Suivi nouveau canyon] ${payload.name}`;
+}
+
+function buildTrackingIssueBody(payload, pullRequest) {
+  return [
+    "## Suivi public",
+    "",
+    `- Draft PR: ${pullRequest.html_url}`,
+    `- Type: ${describeSubmissionType(payload)}`,
+    payload.descenteCanyonId !== null
+      ? `- Reference Descente-Canyon: dc:${payload.descenteCanyonId}`
+      : `- Canyon propose: ${payload.name}`,
+    bulletLine("Pseudo", payload.submitterPseudo),
+    bulletLine("Pays", payload.country),
+    bulletLine("Region", payload.region),
+    bulletLine("Departement", payload.department),
+    "",
+    sectionBlock("## Resume", payload.description || payload.remarks || "Soumission publique en attente de revue."),
+    "",
+    sectionBlock("## Sources", payload.sources),
+    "",
+    `Cette issue suit la revue de ${pullRequest.html_url}.`,
   ]
     .filter((line) => line !== null)
     .join("\n");
@@ -676,15 +706,251 @@ function valueOrFallbackBlock(value) {
   return value || "Non renseigne.";
 }
 
-function buildLabels() {
-  return ["new-canyon"];
+function buildLabels(payload) {
+  return payload.descenteCanyonId !== null ? ["overlay-dc"] : ["new-canyon"];
 }
 
-async function createGitHubIssue({ env, title, body, labels }) {
-  const apiUrl = `https://api.github.com/repos/${env.GITHUB_OWNER}/${env.GITHUB_REPO}/issues`;
+function describeSubmissionType(payload) {
+  return payload.descenteCanyonId !== null ? "overlay Descente-Canyon" : "nouveau canyon app";
+}
 
-  return await fetch(apiUrl, {
+async function createSubmissionArtifacts({ payload, request, env }) {
+  const repository = await getRepository(env);
+  const submissionPaths = buildSubmissionPaths(payload);
+  const branch = await createSubmissionBranch(env, repository.default_branch, submissionPaths.branchName);
+  const files = buildSubmissionFiles(payload, submissionPaths);
+
+  for (const file of files) {
+    await putRepositoryFile({
+      env,
+      branch,
+      path: file.path,
+      content: file.content,
+      message: file.message,
+    });
+  }
+
+  const pullRequest = await createDraftPullRequest({
+    env,
+    title: buildSubmissionTitle(payload),
+    body: buildPullRequestBody(payload, request, submissionPaths),
+    head: branch,
+    base: repository.default_branch,
+  });
+
+  await addLabelsToIssueLike(env, pullRequest.number, buildLabels(payload));
+
+  const issue = await createTrackingIssue({
+    env,
+    title: buildTrackingIssueTitle(payload),
+    body: buildTrackingIssueBody(payload, pullRequest),
+    labels: buildLabels(payload),
+  });
+
+  return { pullRequest, issue };
+}
+
+function buildSubmissionPaths(payload) {
+  const slug = payload.descenteCanyonId !== null
+    ? `dc-${payload.descenteCanyonId}`
+    : slugify(payload.name || "canyon");
+  const date = new Date().toISOString().slice(0, 10);
+  const uniqueSuffix = Math.random().toString(36).slice(2, 8);
+  const branchName = `submission/${date}-${slug}-${uniqueSuffix}`;
+
+  if (payload.descenteCanyonId !== null) {
+    return {
+      slug,
+      branchName,
+      overlayPath: `data-overlay/dc/${payload.descenteCanyonId}/overlay.json`,
+      trackPath: payload.gpxTrace ? `data-overlay/dc/${payload.descenteCanyonId}/tracks/${buildTrackFileName(payload.gpxTrace.fileName)}` : null,
+    };
+  }
+
+  return {
+    slug,
+    branchName,
+    canyonPath: `data-overlay/app-canyons/${slug}/canyon.json`,
+    trackPath: payload.gpxTrace ? `data-overlay/app-canyons/${slug}/tracks/${buildTrackFileName(payload.gpxTrace.fileName)}` : null,
+  };
+}
+
+function buildSubmissionFiles(payload, submissionPaths) {
+  const files = [];
+
+  if (payload.descenteCanyonId !== null) {
+    const overlay = {
+      sourceKey: `dc:${payload.descenteCanyonId}`,
+      tracks: submissionPaths.trackPath
+        ? [
+            {
+              id: "main",
+              name: "Trace principale",
+              role: "MAIN",
+              file: submissionPaths.trackPath.split(`/dc/${payload.descenteCanyonId}/`)[1],
+              isPrimary: true,
+            },
+          ]
+        : [],
+    };
+
+    files.push({
+      path: submissionPaths.overlayPath,
+      content: toPrettyJson(overlay),
+      message: `submission: add overlay for dc:${payload.descenteCanyonId}`,
+    });
+  } else {
+    const canyon = compactObject({
+      sourceKey: `app:${submissionPaths.slug}`,
+      name: payload.name,
+      fullName: payload.fullName || payload.name,
+      country: payload.country,
+      region: payload.region,
+      department: payload.department,
+      municipality: payload.municipality,
+      communes: parseTextList(payload.communes),
+      massif: payload.massif,
+      basin: payload.basin,
+      watercourse: payload.watercourse,
+      rating: hasRating(payload)
+        ? {
+            verticality: payload.ratingVerticality,
+            aquatic: payload.ratingAquatic,
+            engagement: payload.ratingEngagement,
+          }
+        : undefined,
+      altitudeStart: payload.altitudeStart,
+      elevation: payload.elevation,
+      length: payload.length,
+      maxWaterfall: payload.maxWaterfall,
+      minRope: payload.minRope,
+      approachTime: payload.approachTime,
+      descentTime: payload.descentTime,
+      returnTime: payload.returnTime,
+      hasShuttle: payload.hasShuttle,
+      interest: payload.interest,
+      description: payload.description,
+      accessDownstream: payload.accessDownstream,
+      accessUpstream: payload.accessUpstream,
+      approach: payload.approach,
+      descent: payload.descent,
+      returnRoute: payload.returnRoute,
+      period: payload.period,
+      geology: payload.geology,
+      history: payload.history,
+      remarks: payload.remarks,
+      geoPoints: payload.geoPoints,
+      tracks: submissionPaths.trackPath
+        ? [
+            {
+              id: "main",
+              name: "Trace principale",
+              role: "MAIN",
+              file: submissionPaths.trackPath.split(`/app-canyons/${submissionPaths.slug}/`)[1],
+              isPrimary: true,
+            },
+          ]
+        : undefined,
+    });
+
+    files.push({
+      path: submissionPaths.canyonPath,
+      content: toPrettyJson(canyon),
+      message: `submission: add canyon ${payload.name}`,
+    });
+  }
+
+  if (submissionPaths.trackPath && payload.gpxTrace?.rawContent) {
+    files.push({
+      path: submissionPaths.trackPath,
+      content: payload.gpxTrace.rawContent,
+      message: `submission: add GPX for ${payload.name || `dc:${payload.descenteCanyonId}`}`,
+    });
+  }
+
+  return files;
+}
+
+async function getRepository(env) {
+  return await githubJson(env, `/repos/${env.GITHUB_OWNER}/${env.GITHUB_REPO}`);
+}
+
+async function createSubmissionBranch(env, baseBranch, branchName) {
+  const baseRef = await githubJson(env, `/repos/${env.GITHUB_OWNER}/${env.GITHUB_REPO}/git/ref/heads/${encodeURIComponent(baseBranch)}`);
+  await githubJson(env, `/repos/${env.GITHUB_OWNER}/${env.GITHUB_REPO}/git/refs`, {
     method: "POST",
+    body: {
+      ref: `refs/heads/${branchName}`,
+      sha: baseRef.object.sha,
+    },
+  });
+  return branchName;
+}
+
+async function putRepositoryFile({ env, branch, path, content, message }) {
+  const encodedPath = path.split("/").map(encodeURIComponent).join("/");
+  return await githubJson(env, `/repos/${env.GITHUB_OWNER}/${env.GITHUB_REPO}/contents/${encodedPath}`, {
+    method: "PUT",
+    body: {
+      message,
+      branch,
+      content: toBase64Utf8(content),
+    },
+  });
+}
+
+async function createDraftPullRequest({ env, title, body, head, base }) {
+  return await githubJson(env, `/repos/${env.GITHUB_OWNER}/${env.GITHUB_REPO}/pulls`, {
+    method: "POST",
+    body: {
+      title,
+      body,
+      head,
+      base,
+      draft: true,
+    },
+  });
+}
+
+async function createTrackingIssue({ env, title, body, labels }) {
+  try {
+    return await githubJson(env, `/repos/${env.GITHUB_OWNER}/${env.GITHUB_REPO}/issues`, {
+      method: "POST",
+      body: { title, body, labels },
+    });
+  } catch (error) {
+    if (error.githubStatus !== 422) {
+      throw error;
+    }
+
+    return await githubJson(env, `/repos/${env.GITHUB_OWNER}/${env.GITHUB_REPO}/issues`, {
+      method: "POST",
+      body: { title, body },
+    });
+  }
+}
+
+async function addLabelsToIssueLike(env, number, labels) {
+  if (!labels || labels.length === 0) {
+    return null;
+  }
+
+  try {
+    return await githubJson(env, `/repos/${env.GITHUB_OWNER}/${env.GITHUB_REPO}/issues/${number}/labels`, {
+      method: "POST",
+      body: { labels },
+    });
+  } catch (error) {
+    if (error.githubStatus === 422) {
+      return null;
+    }
+    throw error;
+  }
+}
+
+async function githubJson(env, path, init = {}) {
+  const response = await fetch(`https://api.github.com${path}`, {
+    method: init.method || "GET",
     headers: {
       Accept: "application/vnd.github+json",
       Authorization: `Bearer ${env.GITHUB_TOKEN}`,
@@ -692,12 +958,79 @@ async function createGitHubIssue({ env, title, body, labels }) {
       "User-Agent": "descente-canyon-canyon-submission-worker",
       "X-GitHub-Api-Version": "2022-11-28",
     },
-    body: JSON.stringify({
-      title,
-      body,
-      labels,
-    }),
+    body: init.body ? JSON.stringify(init.body) : undefined,
   });
+
+  if (!response.ok) {
+    const body = await response.text();
+    const error = new Error(`GitHub API ${response.status}: ${body}`);
+    error.githubStatus = response.status;
+    throw error;
+  }
+
+  return await response.json();
+}
+
+function slugify(value) {
+  return String(value || "canyon")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "")
+    .slice(0, 80) || "canyon";
+}
+
+function buildTrackFileName(fileName) {
+  const normalized = slugify(String(fileName || "main").replace(/\.gpx$/i, ""));
+  return `${normalized || "main"}.gpx`;
+}
+
+function parseTextList(value) {
+  if (!value) {
+    return [];
+  }
+
+  return String(value)
+    .split(/[,;\n]/)
+    .map((item) => item.trim())
+    .filter(Boolean);
+}
+
+function hasRating(payload) {
+  return payload.ratingVerticality !== null && payload.ratingAquatic !== null && payload.ratingEngagement !== null;
+}
+
+function compactObject(value) {
+  if (Array.isArray(value)) {
+    return value.map(compactObject);
+  }
+  if (!value || typeof value !== "object") {
+    return value;
+  }
+
+  return Object.fromEntries(
+    Object.entries(value)
+      .filter(([, entry]) => entry !== undefined && entry !== null && !(typeof entry === "string" && entry.trim() === ""))
+      .map(([key, entry]) => [key, compactObject(entry)]),
+  );
+}
+
+function toPrettyJson(value) {
+  return `${JSON.stringify(value, null, 2)}\n`;
+}
+
+function toBase64Utf8(value) {
+  const bytes = new TextEncoder().encode(String(value));
+  let binary = "";
+  for (const byte of bytes) {
+    binary += String.fromCharCode(byte);
+  }
+  return btoa(binary);
+}
+
+function formatInlineCode(value) {
+  return `\`${value}\``;
 }
 
 function parseCsv(value) {

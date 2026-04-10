@@ -19,6 +19,7 @@ data class CanyonDetail(
     val geoPoints: List<GeoPoint> = emptyList(),
     val bibliography: List<BibliographyEntry> = emptyList(),
     val regulations: List<Regulation> = emptyList(),
+    val tracks: List<CanyonTrack> = emptyList(),
     val photos: List<CanyonPhoto> = emptyList(),
     val debits: List<Debit> = emptyList(),
     val watershed: CanyonWatershed? = null,

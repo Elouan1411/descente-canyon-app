@@ -46,4 +46,6 @@ data class CanyonEntity(
     val isOffline: Boolean = false,
     val isFavorite: Boolean = false,
     val lastUpdated: Long = System.currentTimeMillis(),
+    val sourceType: String = "DESCENTE_CANYON",
+    val sourceKey: String = "",
 )

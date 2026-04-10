@@ -13,6 +13,7 @@ ROOT_DIR = Path(__file__).resolve().parent.parent
 DEFAULT_REVIEW_FILE = ROOT_DIR / "watershed-review" / "watershed-review.json"
 DEFAULT_STATE_FILE = ROOT_DIR / "build" / "watershed-review" / "watershed-review-state.json"
 STALE_LEGACY_REVIEW_FILE = ROOT_DIR / "build" / "watershed-review" / "watershed-review.json"
+WATERSHED_RUNS_DIR = ROOT_DIR / "watershed-results" / "runs"
 
 REVIEW_FILE = DEFAULT_REVIEW_FILE
 STATE_FILE = DEFAULT_STATE_FILE
@@ -58,27 +59,71 @@ def normalize_review(raw_review: object) -> dict[str, object] | None:
     }
 
 
-def normalize_state(raw_state: object) -> dict[str, object]:
+def normalize_review_list(raw_reviews: object) -> list[dict[str, object]]:
+    reviews: list[dict[str, object]] = []
+    if not isinstance(raw_reviews, list):
+        return reviews
+    for raw_review in raw_reviews:
+        normalized_review = normalize_review(raw_review)
+        if normalized_review is not None:
+            reviews.append(normalized_review)
+    reviews.sort(key=lambda review: int(review["canyonId"]))
+    return reviews
+
+
+def normalize_id_list(raw_ids: object) -> list[int]:
+    if not isinstance(raw_ids, list):
+        return []
+    values: set[int] = set()
+    for raw_id in raw_ids:
+        try:
+            values.add(int(raw_id))
+        except (TypeError, ValueError):
+            continue
+    return sorted(values)
+
+
+def normalize_state(raw_state: object, existing_state: dict[str, object] | None = None) -> dict[str, object]:
     if not isinstance(raw_state, dict):
-        return {"currentPage": 0, "reviews": []}
+        raw_state = {}
+
+    existing_state = existing_state or {}
 
     try:
         current_page = max(0, int(raw_state.get("currentPage", 0)))
     except (TypeError, ValueError):
         current_page = 0
 
-    raw_reviews = raw_state.get("reviews")
-    reviews: list[dict[str, object]] = []
-    if isinstance(raw_reviews, list):
-        for raw_review in raw_reviews:
-            normalized_review = normalize_review(raw_review)
-            if normalized_review is not None:
-                reviews.append(normalized_review)
+    reviews = normalize_review_list(raw_state.get("reviews"))
+    if "baselineReviews" in raw_state:
+        baseline_reviews = normalize_review_list(raw_state.get("baselineReviews"))
+    else:
+        baseline_reviews = normalize_review_list(existing_state.get("baselineReviews"))
 
-    reviews.sort(key=lambda review: int(review["canyonId"]))
+    if "batchLabel" not in raw_state:
+        batch_label = existing_state.get("batchLabel")
+    else:
+        raw_batch_label = raw_state.get("batchLabel")
+        batch_label = str(raw_batch_label)
+
+    if "queueName" not in raw_state:
+        queue_name = existing_state.get("queueName")
+    else:
+        raw_queue_name = raw_state.get("queueName")
+        queue_name = str(raw_queue_name)
+
+    if "completedCanyonIds" in raw_state:
+        completed_canyon_ids = normalize_id_list(raw_state.get("completedCanyonIds"))
+    else:
+        completed_canyon_ids = normalize_id_list(existing_state.get("completedCanyonIds"))
+
     return {
         "currentPage": current_page,
         "reviews": reviews,
+        "baselineReviews": baseline_reviews,
+        "batchLabel": batch_label,
+        "queueName": queue_name,
+        "completedCanyonIds": completed_canyon_ids,
     }
 
 
@@ -139,12 +184,26 @@ def load_saved_reviews() -> list[dict[str, object]]:
 def load_saved_state() -> dict[str, object]:
     reviews = load_saved_reviews()
     if not STATE_FILE.exists():
-        return {"currentPage": 0, "reviews": reviews}
+        return {
+            "currentPage": 0,
+            "reviews": reviews,
+            "baselineReviews": [],
+            "batchLabel": None,
+            "queueName": None,
+            "completedCanyonIds": [],
+        }
 
     try:
         raw_state = json.loads(STATE_FILE.read_text(encoding="utf-8"))
     except json.JSONDecodeError:
-        return {"currentPage": 0, "reviews": reviews}
+        return {
+            "currentPage": 0,
+            "reviews": reviews,
+            "baselineReviews": [],
+            "batchLabel": None,
+            "queueName": None,
+            "completedCanyonIds": [],
+        }
 
     normalized_state = normalize_state(raw_state)
     normalized_state["reviews"] = reviews
@@ -160,6 +219,75 @@ def write_state(state: dict[str, object]) -> None:
     STALE_LEGACY_REVIEW_FILE.unlink(missing_ok=True)
 
 
+def to_web_path(path: Path) -> str:
+    return "/" + str(path.relative_to(ROOT_DIR)).replace("\\", "/")
+
+
+def find_latest_world_run() -> Path | None:
+    world_runs_dir = WATERSHED_RUNS_DIR / "full"
+    if not world_runs_dir.exists():
+        return None
+    candidates = [
+        path for path in world_runs_dir.iterdir()
+        if path.is_dir() and (path / "import_ready_catchments.json").exists() and (path / "import_ready_watersheds.json").exists()
+    ]
+    if not candidates:
+        return None
+    return max(candidates, key=lambda path: (path.stat().st_mtime, path.name))
+
+
+def list_reference_runs(world_run_dir: Path | None) -> list[Path]:
+    reference_runs: list[Path] = []
+    if not WATERSHED_RUNS_DIR.exists():
+        return reference_runs
+
+    for country_dir in WATERSHED_RUNS_DIR.iterdir():
+        if not country_dir.is_dir() or country_dir.name == "full":
+            continue
+        full_dir = country_dir / "full"
+        if not full_dir.exists() or not full_dir.is_dir():
+            continue
+        for run_dir in full_dir.iterdir():
+            if not run_dir.is_dir():
+                continue
+            if world_run_dir is not None and run_dir.resolve() == world_run_dir.resolve():
+                continue
+            if not (run_dir / "import_ready_catchments.json").exists():
+                continue
+            if not (run_dir / "import_ready_watersheds.json").exists():
+                continue
+            reference_runs.append(run_dir)
+
+    reference_runs.sort(key=lambda path: (path.parent.parent.name, path.name))
+    return reference_runs
+
+
+def build_review_context() -> dict[str, object]:
+    world_run_dir = find_latest_world_run()
+    if world_run_dir is None:
+        raise FileNotFoundError("No world watershed run found in watershed-results/runs/full")
+
+    reference_runs = list_reference_runs(world_run_dir)
+    return {
+        "world": {
+            "label": world_run_dir.name,
+            "catchmentsUrl": to_web_path(world_run_dir / "import_ready_catchments.json"),
+            "watershedsUrl": to_web_path(world_run_dir / "import_ready_watersheds.json"),
+            "summaryUrl": to_web_path(world_run_dir / "summary.json"),
+            "statusIndexUrl": to_web_path(world_run_dir / "canyon_status_index.json"),
+        },
+        "referenceRuns": [
+            {
+                "label": run_dir.name,
+                "country": run_dir.parent.parent.name,
+                "catchmentsUrl": to_web_path(run_dir / "import_ready_catchments.json"),
+                "watershedsUrl": to_web_path(run_dir / "import_ready_watersheds.json"),
+            }
+            for run_dir in reference_runs
+        ],
+    }
+
+
 class ReviewRequestHandler(SimpleHTTPRequestHandler):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, directory=str(ROOT_DIR), **kwargs)
@@ -168,6 +296,12 @@ class ReviewRequestHandler(SimpleHTTPRequestHandler):
         parsed = urlparse(self.path)
         if parsed.path == "/api/review-state":
             self._send_json(load_saved_state())
+            return
+        if parsed.path == "/api/review-context":
+            try:
+                self._send_json(build_review_context())
+            except FileNotFoundError as error:
+                self.send_error(HTTPStatus.NOT_FOUND, str(error))
             return
         super().do_GET()
 
@@ -195,13 +329,17 @@ class ReviewRequestHandler(SimpleHTTPRequestHandler):
             self.send_error(HTTPStatus.BAD_REQUEST, "Invalid JSON payload")
             return
 
-        state = normalize_state(payload)
+        existing_state = load_saved_state()
+        state = normalize_state(payload, existing_state=existing_state)
         write_state(state)
         self._send_json(
             {
                 "ok": True,
                 "currentPage": state["currentPage"],
                 "reviewCount": len(state["reviews"]),
+                "baselineReviewCount": len(state["baselineReviews"]),
+                "batchLabel": state.get("batchLabel"),
+                "queueName": state.get("queueName"),
                 "reviewFile": str(REVIEW_FILE.relative_to(ROOT_DIR)).replace("\\", "/"),
                 "stateFile": str(STATE_FILE.relative_to(ROOT_DIR)).replace("\\", "/"),
             },

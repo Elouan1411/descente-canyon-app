@@ -2,6 +2,7 @@ package fr.descentecanyon.app.data.repository
 
 import fr.descentecanyon.app.data.local.dao.BibliographyDao
 import fr.descentecanyon.app.data.local.dao.CanyonDao
+import fr.descentecanyon.app.data.local.dao.CanyonTrackDao
 import fr.descentecanyon.app.data.local.dao.DebitDao
 import fr.descentecanyon.app.data.local.dao.GeoPointDao
 import fr.descentecanyon.app.data.local.dao.PhotoDao
@@ -20,6 +21,7 @@ import kotlinx.coroutines.flow.firstOrNull
 @Singleton
 class CanyonLocalStore @Inject constructor(
     private val canyonDao: CanyonDao,
+    private val canyonTrackDao: CanyonTrackDao,
     private val geoPointDao: GeoPointDao,
     private val debitDao: DebitDao,
     private val photoDao: PhotoDao,
@@ -123,10 +125,11 @@ class CanyonLocalStore @Inject constructor(
         val geoPoints = geoPointDao.getByCanyonId(canyonId)
         val bibliography = bibliographyDao.getByCanyonId(canyonId)
         val regulations = regulationDao.getByCanyonId(canyonId)
+        val tracks = canyonTrackDao.getByCanyonId(canyonId)
         val photos = photoDao.getByCanyonId(canyonId)
         val debits = debitDao.getByCanyonId(canyonId).firstOrNull().orEmpty()
         val watershed = watershedDao.getByCanyonId(canyonId)
-        return canyon.toDetail(geoPoints, bibliography, regulations, photos, debits, watershed)
+        return canyon.toDetail(geoPoints, bibliography, regulations, tracks, photos, debits, watershed)
     }
 
     suspend fun representativePointsByCanyon(): Map<Int, GeoPointEntity?> {

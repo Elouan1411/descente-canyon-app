@@ -13,6 +13,7 @@ import dagger.hilt.components.SingletonComponent
 import fr.descentecanyon.app.data.local.dao.AppMetadataDao
 import fr.descentecanyon.app.data.local.dao.BibliographyDao
 import fr.descentecanyon.app.data.local.dao.CanyonDao
+import fr.descentecanyon.app.data.local.dao.CanyonTrackDao
 import fr.descentecanyon.app.data.local.dao.DailyWeatherDao
 import fr.descentecanyon.app.data.local.dao.DebitDao
 import fr.descentecanyon.app.data.local.dao.GeoPointDao
@@ -313,6 +314,36 @@ object DatabaseModule {
         }
     }
 
+    private val MIGRATION_9_10 = object : Migration(9, 10) {
+        override fun migrate(db: SupportSQLiteDatabase) {
+            ensureCanyonColumn(db, "sourceType", "TEXT NOT NULL DEFAULT 'DESCENTE_CANYON'")
+            ensureCanyonColumn(db, "sourceKey", "TEXT NOT NULL DEFAULT ''")
+            db.execSQL("UPDATE `canyons` SET `sourceType` = 'DESCENTE_CANYON' WHERE `sourceType` IS NULL OR TRIM(`sourceType`) = ''")
+            db.execSQL("UPDATE `canyons` SET `sourceKey` = 'dc:' || `id` WHERE `sourceKey` IS NULL OR TRIM(`sourceKey`) = ''")
+            db.execSQL(
+                """
+                CREATE TABLE IF NOT EXISTS `canyon_tracks` (
+                    `canyonId` INTEGER NOT NULL,
+                    `trackId` TEXT NOT NULL,
+                    `name` TEXT NOT NULL,
+                    `role` TEXT,
+                    `isPrimary` INTEGER NOT NULL,
+                    `sourceFile` TEXT,
+                    `pointCount` INTEGER,
+                    `geometryJson` TEXT,
+                    `bboxMinLongitude` REAL,
+                    `bboxMinLatitude` REAL,
+                    `bboxMaxLongitude` REAL,
+                    `bboxMaxLatitude` REAL,
+                    PRIMARY KEY(`canyonId`, `trackId`),
+                    FOREIGN KEY(`canyonId`) REFERENCES `canyons`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE
+                )
+                """.trimIndent()
+            )
+            db.execSQL("CREATE INDEX IF NOT EXISTS `index_canyon_tracks_canyonId` ON `canyon_tracks` (`canyonId`)")
+        }
+    }
+
     @Provides
     @Singleton
     fun provideDatabase(@ApplicationContext context: Context): DescenteCanyonDatabase {
@@ -329,11 +360,15 @@ object DatabaseModule {
             .addMigrations(MIGRATION_6_7)
             .addMigrations(MIGRATION_7_8)
             .addMigrations(MIGRATION_8_9)
+            .addMigrations(MIGRATION_9_10)
             .build()
     }
 
     @Provides
     fun provideCanyonDao(database: DescenteCanyonDatabase): CanyonDao = database.canyonDao()
+
+    @Provides
+    fun provideCanyonTrackDao(database: DescenteCanyonDatabase): CanyonTrackDao = database.canyonTrackDao()
 
     @Provides
     fun provideGeoPointDao(database: DescenteCanyonDatabase): GeoPointDao = database.geoPointDao()

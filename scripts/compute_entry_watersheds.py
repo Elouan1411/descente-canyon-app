@@ -182,15 +182,17 @@ def select_candidate(
     *,
     strategy: str,
     channel_min_upa_km2: float | None,
-) -> CandidateCell:
+) -> CandidateCell | None:
     if strategy == "exact_cell":
         return min(candidates, key=lambda candidate: (candidate.distance_m, -candidate.value))
-    if strategy == "nearest_channel":
+    if strategy in {"nearest_channel", "nearest_channel_strict"}:
         filtered = candidates
         if channel_min_upa_km2 is not None:
             threshold_matches = [candidate for candidate in candidates if candidate.value >= channel_min_upa_km2]
             if threshold_matches:
                 filtered = threshold_matches
+            elif strategy == "nearest_channel_strict":
+                return None
         return min(filtered, key=lambda candidate: (candidate.distance_m, -candidate.value))
 
     return max(candidates, key=lambda candidate: (candidate.value, -candidate.distance_m))
@@ -567,6 +569,31 @@ def evaluate_entry(
         strategy=candidate_strategy,
         channel_min_upa_km2=channel_min_upa_km2,
     )
+    if snapped_candidate is None:
+        return EvaluatedEntry(
+            canyon_id=entry.canyon_id,
+            canyon_name=entry.canyon_name,
+            entry_index=entry.entry_index,
+            geo_point_index=entry.geo_point_index,
+            latitude=entry.latitude,
+            longitude=entry.longitude,
+            label=entry.label,
+            label_hint=label_hint,
+            raw_upa_km2=round_if_not_none(raw_upa, 6),
+            snapped_upa_km2=None,
+            raw_cell=raw_cell,
+            snapped_cell=None,
+            snapped_latitude=None,
+            snapped_longitude=None,
+            snap_distance_m=None,
+            pixel_size_m=round_if_not_none(upa_raster.approximate_cell_size_m(entry.longitude, entry.latitude), 3),
+            candidate_count=len(candidates),
+            raw_to_snapped_upa_ratio=None,
+            elevation_m=None,
+            flowdir_value=None,
+            status="no_valid_upa_candidate",
+            status_detail="no_channel_candidate_meeting_threshold_within_search_radius",
+        )
     snapped_upa = snapped_candidate.value
     snapped_latitude = snapped_candidate.latitude
     snapped_longitude = snapped_candidate.longitude
@@ -1460,7 +1487,7 @@ def parse_args(argv: list[str]) -> argparse.Namespace:
     parser.add_argument("--search-radius-m", type=float)
     parser.add_argument(
         "--candidate-strategy",
-        choices=["max_upa", "nearest_channel", "exact_cell"],
+        choices=["max_upa", "nearest_channel", "nearest_channel_strict", "exact_cell"],
         default="max_upa",
     )
     parser.add_argument("--channel-min-upa-km2", type=float)

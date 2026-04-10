@@ -6,6 +6,7 @@ import dagger.hilt.android.qualifiers.ApplicationContext
 import fr.descentecanyon.app.data.local.dao.AppMetadataDao
 import fr.descentecanyon.app.data.local.dao.BibliographyDao
 import fr.descentecanyon.app.data.local.dao.CanyonDao
+import fr.descentecanyon.app.data.local.dao.CanyonTrackDao
 import fr.descentecanyon.app.data.local.dao.GeoPointDao
 import fr.descentecanyon.app.data.local.dao.RegulationDao
 import fr.descentecanyon.app.data.local.dao.WatershedDao
@@ -16,6 +17,7 @@ import fr.descentecanyon.app.data.local.entity.BibliographyEntryEntity
 import fr.descentecanyon.app.data.local.entity.CanyonBibliographyEntity
 import fr.descentecanyon.app.data.local.entity.CanyonEntity
 import fr.descentecanyon.app.data.local.entity.CanyonRegulationEntity
+import fr.descentecanyon.app.data.local.entity.CanyonTrackEntity
 import fr.descentecanyon.app.data.local.entity.GeoPointEntity
 import fr.descentecanyon.app.data.local.entity.RegulationTextEntity
 import fr.descentecanyon.app.data.local.entity.WatershedEntity
@@ -33,6 +35,7 @@ class EmbeddedAppDataImporter @Inject constructor(
     @param:ApplicationContext private val context: Context,
     private val database: DescenteCanyonDatabase,
     private val canyonDao: CanyonDao,
+    private val canyonTrackDao: CanyonTrackDao,
     private val geoPointDao: GeoPointDao,
     private val bibliographyDao: BibliographyDao,
     private val regulationDao: RegulationDao,
@@ -87,6 +90,7 @@ class EmbeddedAppDataImporter @Inject constructor(
             val canyonBibliography = readCanyonBibliography()
             val regulationTexts = readRegulationTexts()
             val canyonRegulations = readCanyonRegulations()
+            val canyonTracks = readCanyonTracks().orEmpty()
             val existingCanyons = canyonDao.getByIdsChunked(canyonRows.map { it.id }).associateBy { it.id }
 
             database.withTransaction {
@@ -126,6 +130,13 @@ class EmbeddedAppDataImporter @Inject constructor(
                     .chunked(500)
                     .forEach { chunk -> regulationDao.insertLinks(chunk) }
 
+                canyonTrackDao.clearAll()
+                canyonTracks.map { it.toEntity(json) }
+                    .groupBy { it.canyonId }
+                    .forEach { (canyonId, tracks) ->
+                        tracks.chunked(300).forEach { chunk -> canyonTrackDao.insertAll(chunk) }
+                    }
+
                 appMetadataDao.insert(AppMetadataEntity(DATASET_VERSION_KEY, manifest.generatedAt))
             }
 
@@ -134,7 +145,7 @@ class EmbeddedAppDataImporter @Inject constructor(
                 mode = mode,
                 version = manifest.generatedAt,
                 expectedRowCount = manifest.expectedCoreRowCount,
-                importedRowCount = canyonRows.size + geoPointRows.size + bibliographyEntries.size + canyonBibliography.size + regulationTexts.size + canyonRegulations.size,
+                importedRowCount = canyonRows.size + geoPointRows.size + bibliographyEntries.size + canyonBibliography.size + regulationTexts.size + canyonRegulations.size + canyonTracks.size,
             ).also { outcome ->
                 PerformanceTrace.end(
                     key = CORE_IMPORT_TRACE_KEY,
@@ -162,7 +173,9 @@ class EmbeddedAppDataImporter @Inject constructor(
         val hasCanyons = canyonDao.count() > 0
         val hasBibliography = bibliographyDao.countEntries() > 0
         val hasRegulations = regulationDao.countTexts() > 0
-        val mode = if (importedVersion == manifest.generatedAt && hasCanyons && hasBibliography && hasRegulations) {
+        val expectedTracks = manifest.counts["tracks"] ?: 0
+        val hasExpectedTracks = canyonTrackDao.count() >= expectedTracks
+        val mode = if (importedVersion == manifest.generatedAt && hasCanyons && hasBibliography && hasRegulations && hasExpectedTracks) {
             EmbeddedImportMode.SKIPPED
         } else if (hasCanyons || hasBibliography || hasRegulations) {
             EmbeddedImportMode.DATASET_UPDATE
@@ -288,6 +301,12 @@ class EmbeddedAppDataImporter @Inject constructor(
         }
     }
 
+    private fun readCanyonTracks(): List<CanyonTrackImportRow>? {
+        return readOptionalJsonAsset("tracks.json") { payload ->
+            json.decodeFromString(ListSerializer(CanyonTrackImportRow.serializer()), payload)
+        }
+    }
+
     private fun <T> readJsonAsset(path: String, decode: (String) -> T): T {
         val payload = context.assets.open(path).bufferedReader().use { it.readText() }
         return decode(payload)
@@ -342,6 +361,8 @@ class EmbeddedAppDataImporter @Inject constructor(
             isOffline = false,
             isFavorite = false,
             lastUpdated = lastUpdated,
+            sourceType = sourceType,
+            sourceKey = sourceKey.ifBlank { "dc:$id" },
         )
     }
 
@@ -361,6 +382,8 @@ class EmbeddedAppDataImporter @Inject constructor(
             geologie = geologie ?: existing.geologie,
             historique = historique ?: existing.historique,
             remarques = remarques ?: existing.remarques,
+            sourceType = sourceType.ifBlank { existing.sourceType },
+            sourceKey = sourceKey.ifBlank { existing.sourceKey },
             hasSpecificRegulation = hasSpecificRegulation || existing.hasSpecificRegulation,
             isForbidden = isForbidden || existing.isForbidden,
             isOffline = existing.isOffline,
@@ -438,6 +461,27 @@ class EmbeddedAppDataImporter @Inject constructor(
         )
     }
 
+    private fun CanyonTrackImportRow.toEntity(json: Json): CanyonTrackEntity {
+        val geometryValue = geometry
+            ?.takeUnless { it is JsonNull }
+            ?.let { json.encodeToString(JsonElement.serializer(), it) }
+        val bboxValues = bbox?.takeIf { it.size == 4 }
+        return CanyonTrackEntity(
+            canyonId = canyonId,
+            trackId = trackId,
+            name = name,
+            role = role,
+            isPrimary = isPrimary,
+            sourceFile = sourceFile,
+            pointCount = pointCount,
+            geometryJson = geometryValue,
+            bboxMinLongitude = bboxValues?.getOrNull(0),
+            bboxMinLatitude = bboxValues?.getOrNull(1),
+            bboxMaxLongitude = bboxValues?.getOrNull(2),
+            bboxMaxLatitude = bboxValues?.getOrNull(3),
+        )
+    }
+
     companion object {
         private const val DATASET_VERSION_KEY = "embedded_dataset_version"
         private const val WATERSHEDS_VERSION_KEY = "embedded_watersheds_version"
@@ -486,4 +530,5 @@ private val RoomImportManifest.expectedCoreRowCount: Int
         "canyon_bibliography",
         "regulation_texts",
         "canyon_regulations",
+        "tracks",
     ).sumOf { counts[it] ?: 0 }

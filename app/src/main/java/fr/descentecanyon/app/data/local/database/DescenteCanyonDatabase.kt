@@ -5,6 +5,7 @@ import androidx.room.RoomDatabase
 import fr.descentecanyon.app.data.local.dao.AppMetadataDao
 import fr.descentecanyon.app.data.local.dao.BibliographyDao
 import fr.descentecanyon.app.data.local.dao.CanyonDao
+import fr.descentecanyon.app.data.local.dao.CanyonTrackDao
 import fr.descentecanyon.app.data.local.dao.DailyWeatherDao
 import fr.descentecanyon.app.data.local.dao.DebitDao
 import fr.descentecanyon.app.data.local.dao.GeoPointDao
@@ -17,6 +18,7 @@ import fr.descentecanyon.app.data.local.entity.BibliographyEntryEntity
 import fr.descentecanyon.app.data.local.entity.CanyonBibliographyEntity
 import fr.descentecanyon.app.data.local.entity.CanyonEntity
 import fr.descentecanyon.app.data.local.entity.CanyonRegulationEntity
+import fr.descentecanyon.app.data.local.entity.CanyonTrackEntity
 import fr.descentecanyon.app.data.local.entity.DailyWeatherEntity
 import fr.descentecanyon.app.data.local.entity.DebitEntity
 import fr.descentecanyon.app.data.local.entity.GeoPointEntity
@@ -36,15 +38,17 @@ import fr.descentecanyon.app.data.local.entity.WatershedEntity
         CanyonBibliographyEntity::class,
         RegulationTextEntity::class,
         CanyonRegulationEntity::class,
+        CanyonTrackEntity::class,
         WatershedEntity::class,
         AppMetadataEntity::class,
         PendingDebitSubmissionEntity::class,
     ],
-    version = 9,
+    version = 10,
     exportSchema = true,
 )
 abstract class DescenteCanyonDatabase : RoomDatabase() {
     abstract fun canyonDao(): CanyonDao
+    abstract fun canyonTrackDao(): CanyonTrackDao
     abstract fun geoPointDao(): GeoPointDao
     abstract fun debitDao(): DebitDao
     abstract fun dailyWeatherDao(): DailyWeatherDao
