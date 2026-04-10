@@ -11,6 +11,7 @@ from typing import Any
 from urllib.error import HTTPError, URLError
 
 WCS_URL = "https://servicios.idee.es/wcs-inspire/mdt"
+MAX_REQUEST_PIXELS = 8_000_000
 
 
 def write_json(path: Path, data: Any) -> None:
@@ -30,6 +31,14 @@ def parse_points(values: list[str]) -> list[tuple[float, float]]:
     return [(float(v.split(",", 1)[0]), float(v.split(",", 1)[1])) for v in values]
 
 
+def estimate_request_pixels(*, min_x: float, max_x: float, min_y: float, max_y: float, mean_lat: float) -> int:
+    height_m = max((max_y - min_y) * 111_320.0, 0.0)
+    width_m = max((max_x - min_x) * 111_320.0 * max(0.1, abs(math.cos(math.radians(mean_lat)))), 0.0)
+    width_px = max(int(math.ceil(width_m / 25.0)), 1)
+    height_px = max(int(math.ceil(height_m / 25.0)), 1)
+    return width_px * height_px
+
+
 def main() -> int:
     args = parse_args()
     points = parse_points(args.point)
@@ -41,6 +50,14 @@ def main() -> int:
     max_x = max(lons) + lon_buffer
     min_y = min(lats) - lat_buffer
     max_y = max(lats) + lat_buffer
+    mean_lat = sum(lats) / len(lats)
+    estimated_pixels = estimate_request_pixels(min_x=min_x, max_x=max_x, min_y=min_y, max_y=max_y, mean_lat=mean_lat)
+    if estimated_pixels > MAX_REQUEST_PIXELS:
+        raise SystemExit(
+            "Spain DEM request too large for official WCS: "
+            f"estimatedPixels={estimated_pixels} > {MAX_REQUEST_PIXELS}. "
+            "Use a coarser fallback source for this retry."
+        )
 
     query = urllib.parse.urlencode(
         [
@@ -73,8 +90,28 @@ def main() -> int:
     else:
         raise SystemExit(f"Spain DEM request failed: {last_error}")
 
-    write_json(args.output_dir / "request.json", {"url": url, "epsg": "EPSG:4258", "coverageId": "Elevacion4258_25"})
-    print(json.dumps({"dem": str(output_path), "epsg": "EPSG:4258", "coverageId": "Elevacion4258_25"}, ensure_ascii=False, indent=2))
+    write_json(
+        args.output_dir / "request.json",
+        {
+            "url": url,
+            "epsg": "EPSG:4258",
+            "coverageId": "Elevacion4258_25",
+            "estimatedPixels": estimated_pixels,
+            "bbox": [min_x, min_y, max_x, max_y],
+        },
+    )
+    print(
+        json.dumps(
+            {
+                "dem": str(output_path),
+                "epsg": "EPSG:4258",
+                "coverageId": "Elevacion4258_25",
+                "estimatedPixels": estimated_pixels,
+            },
+            ensure_ascii=False,
+            indent=2,
+        )
+    )
     return 0
 
 

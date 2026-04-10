@@ -262,6 +262,14 @@ def find_coarser_ign_source(source: dict[str, Any], sources: list[dict[str, Any]
     return None
 
 
+def find_named_source(sources: list[dict[str, Any]], *names: str) -> dict[str, Any] | None:
+    wanted = set(names)
+    for candidate in sources:
+        if str(candidate.get("name") or "") in wanted:
+            return candidate
+    return None
+
+
 def choose_retry_hydrology_source(
     *,
     source: dict[str, Any],
@@ -271,6 +279,18 @@ def choose_retry_hydrology_source(
     widened_source = source_with_buffer(source, next_buffer_km)
     if next_buffer_km < 40.0:
         return widened_source, None
+
+    provider = (source.get("autoPrepare") or {}).get("provider")
+    if provider == "spain-wcs":
+        copernicus_source = find_named_source(sources, "copernicus-europe", "copernicus-global")
+        if copernicus_source is not None:
+            switched_source = source_with_buffer(copernicus_source, next_buffer_km)
+            return switched_source, {
+                "reason": "edge_retry_buffer_gte_40km",
+                "fromSource": str(source.get("name") or ""),
+                "toSource": str(copernicus_source.get("name") or ""),
+                "bufferKm": float(next_buffer_km),
+            }
 
     coarser_source = find_coarser_ign_source(source, sources)
     if coarser_source is None:
