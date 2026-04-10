@@ -128,9 +128,13 @@ def normalize_xyz_to_geotiff(xyz_path: Path, tif_path: Path) -> Path:
             compress="lzw",
             tiled=False,
             transform=transform_in,
+            crs="EPSG:3794",
         )
         with rasterio.open(tif_path, "w", **profile) as dst:
             dst.write(data)
+    with rasterio.open(tif_path) as check:
+        if check.crs is None:
+            raise SystemExit(f"Slovenia GeoTIFF missing CRS after write: {tif_path}")
     return tif_path
 
 
