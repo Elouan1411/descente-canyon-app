@@ -110,6 +110,66 @@ def _read_dataset_int(dataset: Any, *, dtype: Any, fill_value: int) -> np.ndarra
     return data
 
 
+def _coerce_valid_geometry(geometry: Any) -> Any | None:
+    if geometry is None or geometry.is_empty:
+        return None
+    try:
+        if geometry.is_valid:
+            return geometry
+    except Exception:  # noqa: BLE001
+        pass
+
+    try:
+        repaired = geometry.buffer(0)
+        if repaired is not None and not repaired.is_empty and repaired.is_valid:
+            return repaired
+    except Exception:  # noqa: BLE001
+        return None
+    return None
+
+
+def _project_geometry(geometry: Any, *, from_crs: str = "EPSG:4326", to_crs: str = "EPSG:6933") -> Any | None:
+    geometry = _coerce_valid_geometry(geometry)
+    if geometry is None:
+        return None
+    from shapely.geometry import shape as shapely_shape  # type: ignore
+
+    try:
+        projected = shapely_shape(transform_geom(from_crs, to_crs, geometry.__geo_interface__))
+        return _coerce_valid_geometry(projected)
+    except Exception:  # noqa: BLE001
+        return None
+
+
+def _safe_intersection(left: Any, right: Any) -> Any | None:
+    left = _coerce_valid_geometry(left)
+    right = _coerce_valid_geometry(right)
+    if left is None or right is None:
+        return None
+    try:
+        inter = left.intersection(right)
+    except Exception:  # noqa: BLE001
+        left = _coerce_valid_geometry(left.buffer(0))
+        right = _coerce_valid_geometry(right.buffer(0))
+        if left is None or right is None:
+            return None
+        try:
+            inter = left.intersection(right)
+        except Exception:  # noqa: BLE001
+            return None
+    return _coerce_valid_geometry(inter)
+
+
+def _geometry_area_km2(geometry: Any, *, from_crs: str = "EPSG:4326") -> float | None:
+    projected = _project_geometry(geometry, from_crs=from_crs, to_crs="EPSG:6933")
+    if projected is None:
+        return None
+    try:
+        return float(projected.area) / 1_000_000.0
+    except Exception:  # noqa: BLE001
+        return None
+
+
 def _cell_center(transform: Affine, row: int, col: int) -> tuple[float, float]:
     x = transform.c + (col + 0.5) * transform.a + (row + 0.5) * transform.b
     y = transform.f + (col + 0.5) * transform.d + (row + 0.5) * transform.e
@@ -988,10 +1048,28 @@ def _hydrolakes_metrics(
     import shapefile  # type: ignore
     from shapely.geometry import shape as shapely_shape  # type: ignore
 
-    basin = shapely_shape(watershed_geometry)
-    outlet_point = shapely_shape(
-        transform_geom("EPSG:4326", "EPSG:3857", {"type": "Point", "coordinates": [outlet_longitude, outlet_latitude]})
+    basin = _coerce_valid_geometry(shapely_shape(watershed_geometry))
+    outlet_point = _project_geometry(
+        shapely_shape({"type": "Point", "coordinates": [outlet_longitude, outlet_latitude]}),
+        from_crs="EPSG:4326",
+        to_crs="EPSG:3857",
     )
+    if basin is None or outlet_point is None:
+        return {
+            "lakeFraction": None,
+            "lakeCount": 0,
+            "reservoirCountUpstream": 0,
+            "regulatedLakeCountUpstream": 0,
+            "damCountUpstream": 0,
+            "majorReservoirDamCountUpstream": 0,
+            "reservoirAreaUpstreamKm2": None,
+            "reservoirAreaFraction": None,
+            "reservoirStorageUpstreamMcm": None,
+            "largestUpstreamReservoirAreaKm2": None,
+            "largestUpstreamReservoirStorageMcm": None,
+            "regulatedCatchment": None,
+            "hydroLakesNearestRegulationDistanceKm": None,
+        }
     bbox = basin.bounds
     total_lake_area_km2 = 0.0
     lake_count = 0
@@ -1006,20 +1084,17 @@ def _hydrolakes_metrics(
 
     reader = shapefile.Reader(hydrolakes_path)
     for shape_record in reader.iterShapeRecords(bbox=bbox):
-        lake_geom = shapely_shape(shape_record.shape.__geo_interface__)
-        if not lake_geom.is_valid or lake_geom.is_empty:
+        lake_geom = _coerce_valid_geometry(shapely_shape(shape_record.shape.__geo_interface__))
+        if lake_geom is None:
             continue
-        if not basin.intersects(lake_geom):
+        inter = _safe_intersection(basin, lake_geom)
+        if inter is None:
             continue
-        inter = basin.intersection(lake_geom)
-        if inter.is_empty:
+        inter_area_km2 = _geometry_area_km2(inter)
+        if inter_area_km2 is None or inter_area_km2 <= 0:
             continue
-        # Geometry is in EPSG:4326; area proxy from geodesic-free polygon area is too wrong.
-        # Use lake area attribute as a practical fallback and count intersecting lakes.
         attrs = shape_record.record.as_dict() if hasattr(shape_record.record, "as_dict") else {}
-        lake_area = attrs.get("Lake_area") or attrs.get("Lake_area__") or attrs.get("Lake_area_1")
-        if lake_area is not None:
-            total_lake_area_km2 += float(lake_area)
+        total_lake_area_km2 += inter_area_km2
         lake_count += 1
 
         lake_type = attrs.get("Lake_type") or attrs.get("Lake_type_") or attrs.get("Lake_type1")
@@ -1033,13 +1108,15 @@ def _hydrolakes_metrics(
             reservoir_count += 1
             if float(grand_id or 0) > 0:
                 major_reservoir_dam_count += 1
-            lake_area_value = float(lake_area or 0.0)
+            lake_area_value = inter_area_km2
             reservoir_area_upstream_km2 += lake_area_value
             reservoir_storage_value = float(reservoir_volume or 0.0)
             reservoir_storage_upstream_mcm += reservoir_storage_value
             largest_reservoir_area_km2 = max(largest_reservoir_area_km2, lake_area_value)
             largest_reservoir_storage_mcm = max(largest_reservoir_storage_mcm, reservoir_storage_value)
-            regulation_geom = shapely_shape(transform_geom("EPSG:4326", "EPSG:3857", lake_geom.__geo_interface__))
+            regulation_geom = _project_geometry(lake_geom, from_crs="EPSG:4326", to_crs="EPSG:3857")
+            if regulation_geom is None:
+                continue
             distance_km = outlet_point.distance(regulation_geom) / 1000.0
             if nearest_regulation_distance_km is None or distance_km < nearest_regulation_distance_km:
                 nearest_regulation_distance_km = distance_km
@@ -1100,10 +1177,27 @@ def _gdw_regulation_metrics(
     import shapefile  # type: ignore
     from shapely.geometry import shape as shapely_shape  # type: ignore
 
-    basin = shapely_shape(watershed_geometry)
-    outlet_point = shapely_shape(
-        transform_geom("EPSG:4326", "EPSG:3857", {"type": "Point", "coordinates": [outlet_longitude, outlet_latitude]})
+    basin = _coerce_valid_geometry(shapely_shape(watershed_geometry))
+    outlet_point = _project_geometry(
+        shapely_shape({"type": "Point", "coordinates": [outlet_longitude, outlet_latitude]}),
+        from_crs="EPSG:4326",
+        to_crs="EPSG:3857",
     )
+    if basin is None or outlet_point is None:
+        return {
+            "gdwBarrierCountUpstream": 0,
+            "gdwReservoirCountUpstream": 0,
+            "gdwHydropowerBarrierCountUpstream": 0,
+            "gdwReservoirAreaUpstreamKm2": None,
+            "gdwReservoirStorageUpstreamMcm": None,
+            "gdwLargestReservoirStorageMcm": None,
+            "gdwLargestReservoirAreaKm2": None,
+            "gdwMaxUpstreamDorPct": None,
+            "gdwNewestUpstreamDamYear": None,
+            "gdwMaxDamHeightM": None,
+            "gdwRegulatedCatchment": None,
+            "gdwNearestRegulationDistanceKm": None,
+        }
     bbox = basin.bounds
 
     barrier_count = 0
@@ -1115,12 +1209,16 @@ def _gdw_regulation_metrics(
 
     barriers_reader = shapefile.Reader(barriers_path)
     for shape_record in barriers_reader.iterShapeRecords(bbox=bbox):
-        barrier_geom = shapely_shape(shape_record.shape.__geo_interface__)
-        if barrier_geom.is_empty or not basin.intersects(barrier_geom):
+        barrier_geom = _coerce_valid_geometry(shapely_shape(shape_record.shape.__geo_interface__))
+        if barrier_geom is None:
+            continue
+        if _safe_intersection(basin, barrier_geom) is None:
             continue
         attrs = shape_record.record.as_dict() if hasattr(shape_record.record, "as_dict") else {}
         barrier_count += 1
-        barrier_geom_projected = shapely_shape(transform_geom("EPSG:4326", "EPSG:3857", barrier_geom.__geo_interface__))
+        barrier_geom_projected = _project_geometry(barrier_geom, from_crs="EPSG:4326", to_crs="EPSG:3857")
+        if barrier_geom_projected is None:
+            continue
         barrier_distance_km = outlet_point.distance(barrier_geom_projected) / 1000.0
         if nearest_regulation_distance_km is None or barrier_distance_km < nearest_regulation_distance_km:
             nearest_regulation_distance_km = barrier_distance_km
@@ -1151,23 +1249,25 @@ def _gdw_regulation_metrics(
 
     reservoirs_reader = shapefile.Reader(reservoirs_path)
     for shape_record in reservoirs_reader.iterShapeRecords(bbox=bbox):
-        reservoir_geom = shapely_shape(shape_record.shape.__geo_interface__)
-        if reservoir_geom.is_empty or not basin.intersects(reservoir_geom):
+        reservoir_geom = _coerce_valid_geometry(shapely_shape(shape_record.shape.__geo_interface__))
+        if reservoir_geom is None:
             continue
-        inter = basin.intersection(reservoir_geom)
-        if inter.is_empty:
+        inter = _safe_intersection(basin, reservoir_geom)
+        if inter is None:
+            continue
+        inter_area_km2 = _geometry_area_km2(inter)
+        if inter_area_km2 is None or inter_area_km2 <= 0:
             continue
         attrs = shape_record.record.as_dict() if hasattr(shape_record.record, "as_dict") else {}
         reservoir_count += 1
-        reservoir_geom_projected = shapely_shape(transform_geom("EPSG:4326", "EPSG:3857", reservoir_geom.__geo_interface__))
+        reservoir_geom_projected = _project_geometry(reservoir_geom, from_crs="EPSG:4326", to_crs="EPSG:3857")
+        if reservoir_geom_projected is None:
+            continue
         reservoir_distance_km = outlet_point.distance(reservoir_geom_projected) / 1000.0
         if nearest_regulation_distance_km is None or reservoir_distance_km < nearest_regulation_distance_km:
             nearest_regulation_distance_km = reservoir_distance_km
-        area_km2 = _record_value(attrs, "Area_skm", "AREA_SKM")
-        if area_km2 not in (None, ""):
-            area_value = float(area_km2)
-            reservoir_area += area_value
-            largest_area = max(largest_area, area_value)
+        reservoir_area += inter_area_km2
+        largest_area = max(largest_area, inter_area_km2)
         storage_mcm = _record_value(attrs, "Cap_mcm", "CAP_MCM")
         if storage_mcm not in (None, ""):
             storage_value = float(storage_mcm)
@@ -1315,7 +1415,13 @@ def _rgi_metrics(
     import shapefile  # type: ignore
     from shapely.geometry import shape as shapely_shape  # type: ignore
 
-    basin = shapely_shape(watershed_geometry)
+    basin = _coerce_valid_geometry(shapely_shape(watershed_geometry))
+    if basin is None:
+        return {
+            "glacierFraction": None,
+            "glacierCount": 0,
+            "largestGlacierAreaKm2": None,
+        }
     bbox = basin.bounds
     glacier_count = 0
     glacier_area_km2 = 0.0
@@ -1324,20 +1430,18 @@ def _rgi_metrics(
     for glacier_path in glacier_shapefiles:
         reader = shapefile.Reader(glacier_path)
         for shape_record in reader.iterShapeRecords(bbox=bbox):
-            glacier_geom = shapely_shape(shape_record.shape.__geo_interface__)
-            if glacier_geom.is_empty or not basin.intersects(glacier_geom):
+            glacier_geom = _coerce_valid_geometry(shapely_shape(shape_record.shape.__geo_interface__))
+            if glacier_geom is None:
                 continue
-            inter = basin.intersection(glacier_geom)
-            if inter.is_empty:
+            inter = _safe_intersection(basin, glacier_geom)
+            if inter is None:
                 continue
-            attrs = shape_record.record.as_dict() if hasattr(shape_record.record, "as_dict") else {}
-            area_km2 = _record_value(attrs, "Area", "AREA", "Area_km2", "RGI_AREA")
-            if area_km2 in (None, ""):
+            inter_area_km2 = _geometry_area_km2(inter)
+            if inter_area_km2 is None or inter_area_km2 <= 0:
                 continue
-            area_value = float(area_km2)
             glacier_count += 1
-            glacier_area_km2 += area_value
-            largest_glacier_area_km2 = max(largest_glacier_area_km2, area_value)
+            glacier_area_km2 += inter_area_km2
+            largest_glacier_area_km2 = max(largest_glacier_area_km2, inter_area_km2)
 
     glacier_fraction = (glacier_area_km2 / basin_area_km2) if basin_area_km2 > 0 else None
     return {
@@ -1355,8 +1459,8 @@ def _advanced_regulation_metrics(descriptors: dict[str, Any]) -> dict[str, Any]:
     distance_candidates = [float(value) for value in [hydrolakes_distance, gdw_distance] if value is not None]
     nearest_distance = min(distance_candidates) if distance_candidates else None
 
-    gdw_dor_fraction = float(descriptors.get("gdwMaxUpstreamDorPct") or 0.0) / 100.0
-    reservoir_fraction = float(descriptors.get("reservoirAreaFraction") or 0.0)
+    gdw_dor_fraction = max(0.0, min(float(descriptors.get("gdwMaxUpstreamDorPct") or 0.0) / 100.0, 1.0))
+    reservoir_fraction = max(0.0, min(float(descriptors.get("reservoirAreaFraction") or 0.0), 1.0))
     regulated_area_fraction = max(gdw_dor_fraction, reservoir_fraction)
 
     hydropower_count = int(descriptors.get("gdwHydropowerBarrierCountUpstream") or 0) + int(descriptors.get("osmHydropowerPlantCountUpstream") or 0)
