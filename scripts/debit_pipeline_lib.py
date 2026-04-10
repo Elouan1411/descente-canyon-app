@@ -19,6 +19,183 @@ OPEN_METEO_ARCHIVE_URL = "https://archive-api.open-meteo.com/v1/archive"
 DEFAULT_USER_AGENT = "DescenteCanyonDebitPipeline/0.1"
 DEFAULT_ASSUMED_OBSERVATION_HOUR = 8
 EARTH_RADIUS_KM = 6371.0088
+WATERSHED_DESCRIPTOR_STATUS_FLAG_MAP = {
+    "descriptorStatus": "descriptorStatusOk",
+    "soilDescriptorStatus": "soilDescriptorStatusOk",
+    "hydroLakesStatus": "hydroLakesStatusOk",
+    "gdwStatus": "gdwStatusOk",
+    "climateDescriptorStatus": "climateDescriptorStatusOk",
+    "geologyDescriptorStatus": "geologyDescriptorStatusOk",
+    "imperviousDescriptorStatus": "imperviousDescriptorStatusOk",
+    "glacierDescriptorStatus": "glacierDescriptorStatusOk",
+    "osmRegulationStatus": "osmRegulationStatusOk",
+}
+WATERSHED_DESCRIPTOR_NUMERIC_KEYS = [
+    "forcedByReview",
+    "watershedCellCount",
+    "watershedValidCellCount",
+    "watershedNoDataFraction",
+    "basinAreaRasterKm2",
+    "demResolutionM",
+    "watershedQualityScore",
+    "basinMinElevationM",
+    "basinMeanElevationM",
+    "basinMedianElevationM",
+    "basinMaxElevationM",
+    "basinElevationStdM",
+    "basinReliefM",
+    "fractionAbove1500m",
+    "fractionAbove2000m",
+    "fractionAbove2500m",
+    "meanSlopeDeg",
+    "medianSlopeDeg",
+    "p90SlopeDeg",
+    "maxSlopeDeg",
+    "fractionSlopeOver10Deg",
+    "fractionSlopeOver20Deg",
+    "fractionSlopeOver30Deg",
+    "aspectNorthFraction",
+    "aspectEastFraction",
+    "aspectSouthFraction",
+    "aspectWestFraction",
+    "terrainRuggednessIndex",
+    "maxFlowPathLengthKm",
+    "mainFlowLengthKm",
+    "mainChannelSlopePercent",
+    "timeOfConcentrationKirpichMin",
+    "timeOfConcentrationGiandottiMin",
+    "meltonRuggedness",
+    "outletElevationM",
+    "outletSnapDistanceM",
+    "streamExtractionThresholdKm2",
+    "streamCellCount",
+    "streamFrequencyPerKm2",
+    "drainageDensityKmPerKm2",
+    "streamSegmentCount",
+    "junctionCount",
+    "strahlerOrder",
+    "firstOrderLengthFraction",
+    "totalStreamLengthKm",
+    "meanAnnualPrecipMm",
+    "meanMonthlyPrecipSeasonality",
+    "meanAnnualTemperatureC",
+    "meanWinterTemperatureC",
+    "meanSnowFractionClimatology",
+    "potentialEvapotranspiration",
+    "aridityIndex",
+    "continentalityProxy",
+    "oceanicityProxy",
+    "hypsometricIntegral",
+    "topographicWetnessIndexMean",
+    "topographicWetnessIndexP90",
+    "handMeanM",
+    "handMedianM",
+    "handP90M",
+    "meanPlanCurvature",
+    "meanProfileCurvature",
+    "valleyConfinementIndex",
+    "channelConfinementRatio",
+    "flowAccumulationP50Km2",
+    "flowAccumulationP90Km2",
+    "flowAccumulationP99Km2",
+    "landCoverValidFraction",
+    "forestFraction",
+    "shrubFraction",
+    "grassFraction",
+    "croplandFraction",
+    "urbanFraction",
+    "bareRockFraction",
+    "snowIceFraction",
+    "permanentWaterFraction",
+    "wetlandFraction",
+    "mangroveFraction",
+    "mossLichenFraction",
+    "waterPatchCount",
+    "wetlandPatchCount",
+    "forestPatchCount",
+    "urbanPatchCount",
+    "largestForestPatchFraction",
+    "landCoverFragmentationIndex",
+    "riparianForestFraction",
+    "imperviousConnectivityProxy",
+    "soilValidFraction",
+    "meanClayTopsoilPct",
+    "medianClayTopsoilPct",
+    "p90ClayTopsoilPct",
+    "meanSandTopsoilPct",
+    "medianSandTopsoilPct",
+    "lowPermeabilitySoilFraction",
+    "highInfiltrationSoilFraction",
+    "runoffPotentialIndex",
+    "coarseFragmentFraction",
+    "subsoilClayFraction",
+    "subsoilSandFraction",
+    "soilDepthMean",
+    "soilDepthShallowFraction",
+    "bedrockDepth",
+    "availableWaterCapacity",
+    "saturatedHydraulicConductivity",
+    "lakeFraction",
+    "lakeCount",
+    "reservoirCountUpstream",
+    "regulatedLakeCountUpstream",
+    "damCountUpstream",
+    "majorReservoirDamCountUpstream",
+    "reservoirAreaUpstreamKm2",
+    "reservoirAreaFraction",
+    "reservoirStorageUpstreamMcm",
+    "largestUpstreamReservoirAreaKm2",
+    "largestUpstreamReservoirStorageMcm",
+    "regulatedCatchment",
+    "gdwBarrierCountUpstream",
+    "gdwReservoirCountUpstream",
+    "gdwHydropowerBarrierCountUpstream",
+    "gdwReservoirAreaUpstreamKm2",
+    "gdwReservoirStorageUpstreamMcm",
+    "gdwLargestReservoirStorageMcm",
+    "gdwLargestReservoirAreaKm2",
+    "gdwMaxUpstreamDorPct",
+    "gdwNewestUpstreamDamYear",
+    "gdwMaxDamHeightM",
+    "gdwRegulatedCatchment",
+    "geologyValidFraction",
+    "carbonateFraction",
+    "unconsolidatedFraction",
+    "crystallineFraction",
+    "volcanicFraction",
+    "evaporiteFraction",
+    "dominantLithologyCode",
+    "karstIndicator",
+    "imperviousValidFraction",
+    "imperviousBuiltSurfaceFraction",
+    "meanBuiltSurfaceM2PerCell",
+    "imperviousProxyFraction",
+    "glacierFraction",
+    "glacierCount",
+    "largestGlacierAreaKm2",
+    "osmRegulationPresent",
+    "osmDamCountUpstream",
+    "osmWeirCountUpstream",
+    "osmReservoirCountUpstream",
+    "osmCanalCountUpstream",
+    "osmPenstockCountUpstream",
+    "osmHydropowerPlantCountUpstream",
+    "osmOperatorEdfCountUpstream",
+    "osmLikelyHydropowerScheme",
+    "osmRegulationConfidence",
+    "distanceToNearestRegulationUpstreamKm",
+    "regulatedAreaFraction",
+    "interbasinTransferLikely",
+    "waterIntakeDensity",
+    "hydropowerCascadeCount",
+    "regulationSeverityIndex",
+    "sinkholeDensity",
+    "springDensity",
+    "losingStreamIndicator",
+    "resurgenceIndicator",
+    "karstConnectivityIndex",
+]
+WATERSHED_DESCRIPTOR_REGULATION_TYPES = ["none", "hydropower", "barrier", "reservoir", "diversion", "mixed"]
 
 
 def get_beautiful_soup() -> Any:
@@ -775,6 +952,71 @@ def load_geo_points_lookup(geo_points_path: Path) -> dict[int, list[dict[str, An
 def load_watershed_lookup(watersheds_path: Path) -> dict[int, dict[str, Any]]:
     rows = load_json(watersheds_path)
     return {int(row["canyonId"]): row for row in rows}
+
+
+def normalize_watershed_descriptor_row(row: dict[str, Any]) -> dict[str, Any]:
+    normalized: dict[str, Any] = {}
+    for key in WATERSHED_DESCRIPTOR_NUMERIC_KEYS:
+        normalized[key] = row.get(key)
+
+    for status_key, flag_key in WATERSHED_DESCRIPTOR_STATUS_FLAG_MAP.items():
+        normalized[flag_key] = row.get(status_key) == "ok"
+
+    normalized["watershedDescriptorOk"] = normalized["descriptorStatusOk"]
+    normalized["climateDescriptorOk"] = normalized["climateDescriptorStatusOk"]
+    normalized["soilDescriptorOk"] = normalized["soilDescriptorStatusOk"]
+    normalized["hydroLakesDescriptorOk"] = normalized["hydroLakesStatusOk"]
+    normalized["gdwDescriptorOk"] = normalized["gdwStatusOk"]
+    normalized["geologyDescriptorOk"] = normalized["geologyDescriptorStatusOk"]
+    normalized["imperviousDescriptorOk"] = normalized["imperviousDescriptorStatusOk"]
+    normalized["glacierDescriptorOk"] = normalized["glacierDescriptorStatusOk"]
+    normalized["osmRegulationDescriptorOk"] = normalized["osmRegulationStatusOk"]
+
+    regulation_type = row.get("dominantRegulationType")
+    for value in WATERSHED_DESCRIPTOR_REGULATION_TYPES:
+        normalized[f"dominantRegulationTypeIs{value.title()}"] = regulation_type == value
+
+    normalized["hasClimateDescriptors"] = row.get("climateDescriptorStatus") == "ok"
+    normalized["hasSoilDescriptors"] = row.get("soilDescriptorStatus") == "ok"
+    normalized["hasRegulationDescriptors"] = (
+        row.get("hydroLakesStatus") == "ok"
+        or row.get("gdwStatus") == "ok"
+        or row.get("osmRegulationStatus") == "ok"
+    )
+    normalized["hasGeologyDescriptors"] = row.get("geologyDescriptorStatus") == "ok"
+    normalized["hasImperviousDescriptors"] = row.get("imperviousDescriptorStatus") == "ok"
+    normalized["hasGlacierDescriptors"] = row.get("glacierDescriptorStatus") == "ok"
+    normalized["hasWatershedDescriptors"] = row.get("descriptorStatus") == "ok"
+
+    return normalized
+
+
+def resolve_watershed_descriptors_path(path: Path) -> Path:
+    if path.is_file():
+        return path
+    direct = path / "import_ready_watershed_descriptors.json"
+    if direct.exists():
+        return direct
+    matches = sorted(path.glob("**/import_ready_watershed_descriptors.json"))
+    if matches:
+        return matches[-1]
+    return direct
+
+
+def load_watershed_descriptors_lookup(path: Path | None) -> dict[int, dict[str, Any]]:
+    if path is None:
+        return {}
+    resolved_path = resolve_watershed_descriptors_path(path)
+    if not resolved_path.exists():
+        return {}
+    payload = load_json(resolved_path)
+    if not isinstance(payload, list):
+        raise SystemExit(f"Watershed descriptors must be a JSON array: {resolved_path}")
+    return {
+        int(row["canyonId"]): normalize_watershed_descriptor_row(row)
+        for row in payload
+        if row.get("canyonId") is not None
+    }
 
 
 def compute_watershed_morphology_features(watershed: dict[str, Any] | None) -> dict[str, Any]:

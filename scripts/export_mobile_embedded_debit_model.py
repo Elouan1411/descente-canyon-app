@@ -7,7 +7,15 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-from debit_pipeline_lib import load_canyon_lookup, load_watershed_lookup, write_json
+from debit_pipeline_lib import (
+    WATERSHED_DESCRIPTOR_NUMERIC_KEYS,
+    WATERSHED_DESCRIPTOR_REGULATION_TYPES,
+    WATERSHED_DESCRIPTOR_STATUS_FLAG_MAP,
+    load_canyon_lookup,
+    load_watershed_descriptors_lookup,
+    load_watershed_lookup,
+    write_json,
+)
 from export_debit_runtime_lookups import build_runtime_lookup_payload
 from train_debit_baseline_model import NUMERIC_FEATURES
 
@@ -20,13 +28,8 @@ STATIC_FEATURE_NAMES = {
     "cascadeMaxM",
     "upstreamCatchmentAreaKm2",
     "hasWatershed",
-    "watershedCellCount",
-    "watershedValidCellCount",
-    "watershedNoDataFraction",
-    "basinAreaRasterKm2",
-    "demResolutionM",
-    "watershedQualityScore",
-    "watershedDescriptorForcedByReview",
+    *WATERSHED_DESCRIPTOR_NUMERIC_KEYS,
+    *list(WATERSHED_DESCRIPTOR_STATUS_FLAG_MAP.values()),
     "watershedDescriptorOk",
     "climateDescriptorOk",
     "soilDescriptorOk",
@@ -43,161 +46,7 @@ STATIC_FEATURE_NAMES = {
     "hasGeologyDescriptors",
     "hasImperviousDescriptors",
     "hasGlacierDescriptors",
-    "basinMinElevationM",
-    "basinMeanElevationM",
-    "basinMedianElevationM",
-    "basinMaxElevationM",
-    "basinElevationStdM",
-    "basinReliefM",
-    "fractionAbove1500m",
-    "fractionAbove2000m",
-    "fractionAbove2500m",
-    "meanSlopeDeg",
-    "medianSlopeDeg",
-    "p90SlopeDeg",
-    "maxSlopeDeg",
-    "fractionSlopeOver10Deg",
-    "fractionSlopeOver20Deg",
-    "fractionSlopeOver30Deg",
-    "aspectNorthFraction",
-    "aspectEastFraction",
-    "aspectSouthFraction",
-    "aspectWestFraction",
-    "terrainRuggednessIndex",
-    "maxFlowPathLengthKm",
-    "mainFlowLengthKm",
-    "mainChannelSlopePercent",
-    "timeOfConcentrationKirpichMin",
-    "timeOfConcentrationGiandottiMin",
-    "meltonRuggedness",
-    "outletElevationM",
-    "outletSnapDistanceM",
-    "streamExtractionThresholdKm2",
-    "streamCellCount",
-    "streamFrequencyPerKm2",
-    "drainageDensityKmPerKm2",
-    "streamSegmentCount",
-    "junctionCount",
-    "strahlerOrder",
-    "firstOrderLengthFraction",
-    "totalStreamLengthKm",
-    "meanAnnualPrecipMm",
-    "meanMonthlyPrecipSeasonality",
-    "meanAnnualTemperatureC",
-    "meanWinterTemperatureC",
-    "meanSnowFractionClimatology",
-    "potentialEvapotranspiration",
-    "aridityIndex",
-    "continentalityProxy",
-    "oceanicityProxy",
-    "hypsometricIntegral",
-    "topographicWetnessIndexMean",
-    "topographicWetnessIndexP90",
-    "handMeanM",
-    "handMedianM",
-    "handP90M",
-    "meanPlanCurvature",
-    "meanProfileCurvature",
-    "valleyConfinementIndex",
-    "channelConfinementRatio",
-    "flowAccumulationP50Km2",
-    "flowAccumulationP90Km2",
-    "flowAccumulationP99Km2",
-    "landCoverValidFraction",
-    "forestFraction",
-    "shrubFraction",
-    "grassFraction",
-    "croplandFraction",
-    "urbanFraction",
-    "bareRockFraction",
-    "snowIceFraction",
-    "permanentWaterFraction",
-    "wetlandFraction",
-    "mangroveFraction",
-    "mossLichenFraction",
-    "waterPatchCount",
-    "wetlandPatchCount",
-    "forestPatchCount",
-    "urbanPatchCount",
-    "largestForestPatchFraction",
-    "landCoverFragmentationIndex",
-    "riparianForestFraction",
-    "imperviousConnectivityProxy",
-    "soilValidFraction",
-    "meanClayTopsoilPct",
-    "medianClayTopsoilPct",
-    "p90ClayTopsoilPct",
-    "meanSandTopsoilPct",
-    "medianSandTopsoilPct",
-    "lowPermeabilitySoilFraction",
-    "highInfiltrationSoilFraction",
-    "runoffPotentialIndex",
-    "coarseFragmentFraction",
-    "subsoilClayFraction",
-    "subsoilSandFraction",
-    "soilDepthMean",
-    "soilDepthShallowFraction",
-    "bedrockDepth",
-    "availableWaterCapacity",
-    "saturatedHydraulicConductivity",
-    "lakeFraction",
-    "lakeCount",
-    "reservoirCountUpstream",
-    "regulatedLakeCountUpstream",
-    "damCountUpstream",
-    "majorReservoirDamCountUpstream",
-    "reservoirAreaUpstreamKm2",
-    "reservoirAreaFraction",
-    "reservoirStorageUpstreamMcm",
-    "largestUpstreamReservoirAreaKm2",
-    "largestUpstreamReservoirStorageMcm",
-    "regulatedCatchment",
-    "gdwBarrierCountUpstream",
-    "gdwReservoirCountUpstream",
-    "gdwHydropowerBarrierCountUpstream",
-    "gdwReservoirAreaUpstreamKm2",
-    "gdwReservoirStorageUpstreamMcm",
-    "gdwLargestReservoirStorageMcm",
-    "gdwLargestReservoirAreaKm2",
-    "gdwMaxUpstreamDorPct",
-    "gdwNewestUpstreamDamYear",
-    "gdwMaxDamHeightM",
-    "gdwRegulatedCatchment",
-    "distanceToNearestRegulationUpstreamKm",
-    "regulatedAreaFraction",
-    "interbasinTransferLikely",
-    "waterIntakeDensity",
-    "hydropowerCascadeCount",
-    "regulationSeverityIndex",
-    "geologyValidFraction",
-    "carbonateFraction",
-    "unconsolidatedFraction",
-    "crystallineFraction",
-    "volcanicFraction",
-    "evaporiteFraction",
-    "karstIndicator",
-    "sinkholeDensity",
-    "springDensity",
-    "losingStreamIndicator",
-    "resurgenceIndicator",
-    "karstConnectivityIndex",
-    "imperviousValidFraction",
-    "imperviousBuiltSurfaceFraction",
-    "meanBuiltSurfaceM2PerCell",
-    "imperviousProxyFraction",
-    "glacierFraction",
-    "glacierCount",
-    "largestGlacierAreaKm2",
-    "osmRegulationPresent",
-    "osmDamCountUpstream",
-    "osmWeirCountUpstream",
-    "osmReservoirCountUpstream",
-    "osmCanalCountUpstream",
-    "osmPenstockCountUpstream",
-    "osmHydropowerPlantCountUpstream",
-    "osmOperatorEdfCountUpstream",
-    "osmLikelyHydropowerScheme",
-    "osmRegulationConfidence",
+    *[f"dominantRegulationTypeIs{value.title()}" for value in WATERSHED_DESCRIPTOR_REGULATION_TYPES],
     "watershedHasGeometry",
     "watershedPerimeterKm",
     "watershedCompactnessCoefficient",
@@ -436,10 +285,12 @@ def find_high_threshold(
     return best_result
 
 
-def build_canyon_static_features(canyons_path: Path, watersheds_path: Path) -> dict[str, dict[str, float | None]]:
+def build_canyon_static_features(canyons_path: Path, watersheds_path: Path, descriptors_path: Path | None) -> dict[str, dict[str, float | None]]:
     canyon_lookup = load_canyon_lookup(canyons_path)
     watershed_lookup = load_watershed_lookup(watersheds_path)
     from debit_pipeline_lib import compute_watershed_morphology_features, compute_watershed_response_proxy_features
+
+    descriptors_lookup = load_watershed_descriptors_lookup(descriptors_path)
 
     result: dict[str, dict[str, float | None]] = {}
     for canyon_id, canyon in sorted(canyon_lookup.items()):
@@ -455,6 +306,7 @@ def build_canyon_static_features(canyons_path: Path, watersheds_path: Path) -> d
         morphology = compute_watershed_morphology_features(watershed)
         row.update(morphology)
         row.update(compute_watershed_response_proxy_features(canyon, watershed, morphology))
+        row.update(descriptors_lookup.get(canyon_id, {}))
         result[str(canyon_id)] = row
     return result
 
@@ -553,6 +405,7 @@ def main() -> None:
     parser.add_argument("--output-dir", default="modele_statistique")
     parser.add_argument("--canyons-path", default="offline-data/full/room-import/canyons.json")
     parser.add_argument("--watersheds-path", default="offline-data/full/room-import/watersheds.json")
+    parser.add_argument("--watershed-descriptors-path", default="build/watersheds/batch-run/import_ready_watershed_descriptors.json")
     parser.add_argument("--calibration-fraction", type=float, default=0.10)
     parser.add_argument("--test-fraction", type=float, default=0.20)
     parser.add_argument("--n-estimators", type=int, default=400)
@@ -655,7 +508,14 @@ def main() -> None:
     (output_dir / "model.onnx").write_bytes(onnx_model.SerializeToString())
 
     write_json(output_dir / "feature_spec.json", feature_spec_payload(labels))
-    write_json(output_dir / "canyon_static_features.json", build_canyon_static_features(Path(args.canyons_path), Path(args.watersheds_path)))
+    write_json(
+        output_dir / "canyon_static_features.json",
+        build_canyon_static_features(
+            Path(args.canyons_path),
+            Path(args.watersheds_path),
+            Path(args.watershed_descriptors_path) if args.watershed_descriptors_path else None,
+        ),
+    )
     write_json(output_dir / "runtime_feature_lookups.json", compact_runtime_lookup_payload(runtime_lookup_payload))
     write_json(
         output_dir / "thresholds.json",

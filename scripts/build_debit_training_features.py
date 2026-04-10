@@ -11,11 +11,11 @@ from typing import Any
 
 from debit_pipeline_lib import (
     compute_daily_precipitation_features,
-    compute_watershed_morphology_features,
-    compute_watershed_response_proxy_features,
     load_canyon_lookup,
+    load_watershed_descriptors_lookup,
     load_watershed_lookup,
     normalize_text,
+    resolve_watershed_descriptors_path,
     write_json,
     write_jsonl,
 )
@@ -46,23 +46,6 @@ SNOWMELT_KEYWORDS = (
     "snow",
     "nival",
 )
-DESCRIPTOR_METADATA_RENAMES = {
-    "sourceName": "watershedDescriptorSourceName",
-    "pointType": "watershedDescriptorPointType",
-    "forcedByReview": "watershedDescriptorForcedByReview",
-    "canyonName": "watershedDescriptorCanyonName",
-}
-DESCRIPTOR_STATUS_FLAG_MAP = {
-    "descriptorStatus": "watershedDescriptorOk",
-    "climateDescriptorStatus": "climateDescriptorOk",
-    "soilDescriptorStatus": "soilDescriptorOk",
-    "hydroLakesStatus": "hydroLakesDescriptorOk",
-    "gdwStatus": "gdwDescriptorOk",
-    "geologyDescriptorStatus": "geologyDescriptorOk",
-    "imperviousDescriptorStatus": "imperviousDescriptorOk",
-    "glacierDescriptorStatus": "glacierDescriptorOk",
-    "osmRegulationStatus": "osmRegulationDescriptorOk",
-}
 
 
 def target_bucket_for_level(level: str | None) -> str | None:
@@ -133,59 +116,6 @@ def read_jsonl(path: Path) -> list[dict[str, Any]]:
     return rows
 
 
-def read_json(path: Path) -> Any:
-    return json.loads(path.read_text(encoding="utf-8"))
-
-
-def resolve_watershed_descriptors_path(path: Path) -> Path:
-    if path.is_file():
-        return path
-    direct = path / "import_ready_watershed_descriptors.json"
-    if direct.exists():
-        return direct
-    matches = sorted(path.glob("**/import_ready_watershed_descriptors.json"))
-    if matches:
-        return matches[-1]
-    return direct
-
-
-def descriptor_status_is_ok(value: Any) -> bool:
-    return isinstance(value, str) and value == "ok"
-
-
-def normalize_descriptor_row(row: dict[str, Any]) -> dict[str, Any]:
-    normalized: dict[str, Any] = {}
-    for key, value in row.items():
-        if key == "canyonId":
-            continue
-        target_key = DESCRIPTOR_METADATA_RENAMES.get(key, key)
-        normalized[target_key] = value
-
-    for status_key, flag_key in DESCRIPTOR_STATUS_FLAG_MAP.items():
-        normalized[flag_key] = descriptor_status_is_ok(row.get(status_key))
-
-    normalized["hasWatershedDescriptors"] = descriptor_status_is_ok(row.get("descriptorStatus"))
-    normalized["hasClimateDescriptors"] = descriptor_status_is_ok(row.get("climateDescriptorStatus"))
-    normalized["hasSoilDescriptors"] = descriptor_status_is_ok(row.get("soilDescriptorStatus"))
-    normalized["hasRegulationDescriptors"] = descriptor_status_is_ok(row.get("hydroLakesStatus")) or descriptor_status_is_ok(row.get("gdwStatus")) or descriptor_status_is_ok(row.get("osmRegulationStatus"))
-    normalized["hasGeologyDescriptors"] = descriptor_status_is_ok(row.get("geologyDescriptorStatus"))
-    normalized["hasImperviousDescriptors"] = descriptor_status_is_ok(row.get("imperviousDescriptorStatus"))
-    normalized["hasGlacierDescriptors"] = descriptor_status_is_ok(row.get("glacierDescriptorStatus"))
-    return normalized
-
-
-def load_watershed_descriptors_lookup(path: Path | None) -> dict[int, dict[str, Any]]:
-    if path is None:
-        return {}
-    resolved_path = resolve_watershed_descriptors_path(path)
-    if not resolved_path.exists():
-        return {}
-    rows = read_json(resolved_path)
-    if not isinstance(rows, list):
-        raise SystemExit(f"Watershed descriptors must be a JSON array: {resolved_path}")
-    return {int(row["canyonId"]): normalize_descriptor_row(row) for row in rows if row.get("canyonId") is not None}
-
-
 def last_daily_row_before(rows: list[dict[str, Any]], observation_date: str) -> dict[str, Any] | None:
     cutoff_date = observation_date
     selected: dict[str, Any] | None = None
@@ -216,12 +146,6 @@ def main() -> None:
     canyon_lookup = load_canyon_lookup(Path(args.canyons_path))
     watershed_lookup = load_watershed_lookup(Path(args.watersheds_path))
     watershed_descriptors_by_canyon = load_watershed_descriptors_lookup(Path(args.watershed_descriptors_path) if args.watershed_descriptors_path else None)
-    default_watershed_features = compute_watershed_morphology_features(None)
-    watershed_features_by_canyon = {
-        canyon_id: compute_watershed_morphology_features(watershed)
-        for canyon_id, watershed in watershed_lookup.items()
-    }
-    default_response_proxy_features = compute_watershed_response_proxy_features(None, None, default_watershed_features)
 
     observation_window_by_id = {row["observationId"]: row for row in observation_windows}
     observation_to_merged: dict[str, dict[str, Any]] = {}
@@ -354,15 +278,7 @@ def main() -> None:
                 "historicallyAtypicalCanyon": canyon_history["regulatedCount"] >= 2 or canyon_history["snowmeltCount"] >= 2,
             }
             feature_row.update(watershed_descriptors_by_canyon.get(canyon_id, {}))
-            watershed_features = watershed_features_by_canyon.get(canyon_id, default_watershed_features)
-            feature_row.update(watershed_features)
-            feature_row.update(
-                compute_watershed_response_proxy_features(
-                    canyon,
-                    watershed,
-                    watershed_features,
-                ) if canyon else default_response_proxy_features
-            )
+            feature_row.update(watershed_descriptors_by_canyon.get(canyon_id, {}))
             if observation_date is not None:
                 feature_row.update(compute_daily_precipitation_features(daily_rows, observation_date))
             if latest_weather is not None:
