@@ -1389,6 +1389,7 @@ def apply_shared_prepare_errors(
 ) -> None:
     status_by_key = {
         "climate": "climateDescriptorStatus",
+        "worldcover": "landCoverDescriptorStatus",
         "hydrolakes": "hydroLakesStatus",
         "gdw": "gdwStatus",
         "glim": "geologyDescriptorStatus",

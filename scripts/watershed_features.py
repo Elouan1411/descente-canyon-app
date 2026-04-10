@@ -68,6 +68,48 @@ def _open_shared_raster(path: str):
     return dataset
 
 
+def _read_warped_float(vrt: WarpedVRT) -> np.ndarray:
+    data = vrt.read(1, masked=False).astype(np.float32, copy=False)
+    mask = vrt.read_masks(1) == 0
+    if np.any(mask):
+        data = data.copy()
+        data[mask] = np.nan
+    return data
+
+
+def _read_warped_int(vrt: WarpedVRT, *, dtype: Any, fill_value: int) -> np.ndarray:
+    data = vrt.read(1, masked=False).astype(dtype, copy=False)
+    mask = vrt.read_masks(1) == 0
+    if np.any(mask):
+        data = data.copy()
+        data[mask] = fill_value
+    return data
+
+
+def _read_dataset_float(dataset: Any) -> np.ndarray:
+    data = dataset.read(1, masked=False).astype(np.float32, copy=False)
+    nodata = dataset.nodata
+    mask = dataset.read_masks(1) == 0
+    if nodata is not None:
+        mask = mask | (data == float(nodata))
+    if np.any(mask):
+        data = data.copy()
+        data[mask] = np.nan
+    return data
+
+
+def _read_dataset_int(dataset: Any, *, dtype: Any, fill_value: int) -> np.ndarray:
+    data = dataset.read(1, masked=False).astype(dtype, copy=False)
+    nodata = dataset.nodata
+    mask = dataset.read_masks(1) == 0
+    if nodata is not None:
+        mask = mask | (data == nodata)
+    if np.any(mask):
+        data = data.copy()
+        data[mask] = fill_value
+    return data
+
+
 def _cell_center(transform: Affine, row: int, col: int) -> tuple[float, float]:
     x = transform.c + (col + 0.5) * transform.a + (row + 0.5) * transform.b
     y = transform.f + (col + 0.5) * transform.d + (row + 0.5) * transform.e
@@ -484,8 +526,8 @@ def _worldclim_metrics(
                 height=height,
                 resampling=Resampling.bilinear,
             ) as vrt:
-                data = vrt.read(1, masked=True)
-                values = np.where(mask & ~np.ma.getmaskarray(data), data.data.astype(np.float32), np.nan)
+                data = _read_warped_float(vrt)
+                values = np.where(mask & np.isfinite(data), data, np.nan)
                 monthly_means[key].append(float(np.nanmean(values)))
 
     monthly_prec = np.array(monthly_means["prec"], dtype=np.float64)
@@ -711,7 +753,7 @@ def _worldcover_metrics(
         height=height,
         resampling=Resampling.nearest,
     ) as vrt:
-        worldcover = vrt.read(1, masked=True).filled(0).astype(np.int16)
+        worldcover = _read_warped_int(vrt, dtype=np.int16, fill_value=0)
 
     valid = mask & (worldcover > 0)
     valid_count = int(np.count_nonzero(valid))
@@ -783,6 +825,31 @@ def _worldcover_metrics(
     }
 
 
+def _empty_landcover_metrics() -> dict[str, Any]:
+    return {
+        "landCoverValidFraction": None,
+        "forestFraction": None,
+        "shrubFraction": None,
+        "grassFraction": None,
+        "croplandFraction": None,
+        "urbanFraction": None,
+        "bareRockFraction": None,
+        "snowIceFraction": None,
+        "permanentWaterFraction": None,
+        "wetlandFraction": None,
+        "mangroveFraction": None,
+        "mossLichenFraction": None,
+        "waterPatchCount": None,
+        "wetlandPatchCount": None,
+        "forestPatchCount": None,
+        "urbanPatchCount": None,
+        "largestForestPatchFraction": None,
+        "landCoverFragmentationIndex": None,
+        "riparianForestFraction": None,
+        "imperviousConnectivityProxy": None,
+    }
+
+
 def _soilgrids_metrics(
     *,
     mask: np.ndarray,
@@ -802,8 +869,7 @@ def _soilgrids_metrics(
             height=height,
             resampling=Resampling.bilinear,
         ) as vrt:
-            data = vrt.read(1, masked=True)
-            arrays[key] = np.where(np.ma.getmaskarray(data), np.nan, data.data.astype(np.float32))
+            arrays[key] = _read_warped_float(vrt)
 
     clay = arrays["clay"]
     sand = arrays["sand"]
@@ -1146,7 +1212,7 @@ def _glim_metrics(
         height=height,
         resampling=Resampling.nearest,
     ) as vrt:
-        geology = vrt.read(1, masked=True).filled(-9999).astype(np.int16)
+        geology = _read_warped_int(vrt, dtype=np.int16, fill_value=-9999)
 
     valid = mask & (geology > 0)
     valid_count = int(np.count_nonzero(valid))
@@ -1210,7 +1276,8 @@ def _ghsl_built_metrics(
         height=height,
         resampling=Resampling.bilinear,
     ) as vrt:
-        built = vrt.read(1, masked=True).filled(0).astype(np.float32)
+        built = _read_warped_float(vrt)
+        built[~np.isfinite(built)] = 0.0
 
     valid = mask & np.isfinite(built) & (built >= 0)
     valid_count = int(np.count_nonzero(valid))
@@ -1462,7 +1529,7 @@ def compute_watershed_descriptors(
     selected_candidate: dict[str, Any],
 ) -> dict[str, Any]:
     with rasterio.open(dem_path) as src:
-        dem = src.read(1, masked=True).filled(np.nan).astype(np.float32)
+        dem = _read_dataset_float(src)
         mask = mask_data["mask"]
         _validate_reference_grid(dataset=src, mask_data=mask_data, expected_shape=mask.shape, name="DEM")
 
@@ -1534,8 +1601,8 @@ def compute_watershed_descriptors(
     with rasterio.open(uparea_path) as upa_src, rasterio.open(flowdir_path) as flow_src:
         _validate_reference_grid(dataset=upa_src, mask_data=mask_data, expected_shape=mask.shape, name="UPA")
         _validate_reference_grid(dataset=flow_src, mask_data=mask_data, expected_shape=mask.shape, name="flowdir")
-        uparea = upa_src.read(1, masked=True).filled(np.nan).astype(np.float32)
-        flow = flow_src.read(1, masked=True).filled(0).astype(np.int16)
+        uparea = _read_dataset_float(upa_src)
+        flow = _read_dataset_int(flow_src, dtype=np.int16, fill_value=0)
         network_metrics = _compute_network_metrics(
             mask=mask,
             path_lengths=path_lengths,
@@ -1589,8 +1656,7 @@ def compute_watershed_descriptors(
             "oceanicityProxy": None,
         }
 
-    landcover_metrics = {}
-    if worldcover_path:
+    try:
         landcover_metrics = _worldcover_metrics(
             worldcover_path=worldcover_path,
             mask=mask,
@@ -1600,7 +1666,13 @@ def compute_watershed_descriptors(
             reference_crs=mask_data["crs"],
             width=mask.shape[1],
             height=mask.shape[0],
-        )
+        ) if worldcover_path else _empty_landcover_metrics()
+        landcover_metrics["landCoverDescriptorStatus"] = "ok" if worldcover_path else "skipped"
+    except Exception as exc:
+        landcover_metrics = {
+            "landCoverDescriptorStatus": f"error:{type(exc).__name__}",
+            **_empty_landcover_metrics(),
+        }
 
     try:
         soil_metrics = _soilgrids_metrics(
