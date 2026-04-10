@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+from dataclasses import dataclass
 import json
 from datetime import datetime, timezone
 from pathlib import Path
@@ -16,29 +17,85 @@ def write_json(path: Path, payload: Any) -> None:
     path.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
-def resolve_input_path(value: Path) -> Path:
-    if value.is_dir():
-        candidate = value / "import_ready_watersheds.json"
-        if candidate.exists():
-            return candidate
-    return value
+@dataclass(frozen=True)
+class WatershedPackage:
+    run_dir: Path
+    import_ready_path: Path
+    track: str
+    label: str
+    generated_at: str | None
 
 
-def resolve_input_paths(value: Path) -> list[Path]:
-    direct_path = resolve_input_path(value)
-    if direct_path.is_file():
-        return [direct_path]
+def resolve_explicit_package(value: Path) -> WatershedPackage | None:
+    if value.is_file():
+        return build_package(value.parent, value)
     if not value.is_dir():
-        return [direct_path]
+        return None
 
-    candidates = sorted(
-        path
-        for path in value.glob("**/import_ready_watersheds.json")
-        if path.is_file()
+    import_ready_path = value / "import_ready_watersheds.json"
+    if import_ready_path.exists():
+        return build_package(value, import_ready_path)
+    return None
+
+
+def build_package(run_dir: Path, import_ready_path: Path) -> WatershedPackage:
+    manifest_path = run_dir / "package_manifest.json"
+    manifest = load_json(manifest_path) if manifest_path.exists() else {}
+    if not isinstance(manifest, dict):
+        manifest = {}
+    return WatershedPackage(
+        run_dir=run_dir,
+        import_ready_path=import_ready_path,
+        track=str(manifest.get("track") or run_dir.parent.name or "unknown"),
+        label=str(manifest.get("label") or run_dir.name),
+        generated_at=manifest.get("generatedAt") if isinstance(manifest.get("generatedAt"), str) else None,
     )
-    if candidates:
-        return candidates
-    return [direct_path]
+
+
+def discover_world_packages(root: Path) -> list[WatershedPackage]:
+    search_root = root / "runs" if (root / "runs").is_dir() else root
+    packages: list[WatershedPackage] = []
+    for manifest_path in sorted(search_root.glob("**/package_manifest.json")):
+        manifest = load_json(manifest_path)
+        if not isinstance(manifest, dict):
+            continue
+        if manifest.get("scope") != "world":
+            continue
+        run_dir = manifest_path.parent
+        import_ready_path = run_dir / "import_ready_watersheds.json"
+        if not import_ready_path.exists():
+            continue
+        packages.append(
+            WatershedPackage(
+                run_dir=run_dir,
+                import_ready_path=import_ready_path,
+                track=str(manifest.get("track") or run_dir.parent.name or "unknown"),
+                label=str(manifest.get("label") or run_dir.name),
+                generated_at=manifest.get("generatedAt") if isinstance(manifest.get("generatedAt"), str) else None,
+            )
+        )
+    return packages
+
+
+def parse_generated_at(value: str | None) -> datetime:
+    if not value:
+        return datetime.min.replace(tzinfo=timezone.utc)
+    try:
+        parsed = datetime.fromisoformat(value)
+    except ValueError:
+        return datetime.min.replace(tzinfo=timezone.utc)
+    return parsed if parsed.tzinfo is not None else parsed.replace(tzinfo=timezone.utc)
+
+
+def select_latest_package(packages: list[WatershedPackage]) -> WatershedPackage:
+    return max(
+        packages,
+        key=lambda package: (
+            parse_generated_at(package.generated_at),
+            package.track,
+            package.label,
+        ),
+    )
 
 
 def normalize_bbox(value: Any) -> list[float] | None:
@@ -69,21 +126,6 @@ def normalize_row(row: dict[str, Any]) -> dict[str, Any] | None:
     return normalized
 
 
-def dedupe_rows(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
-    by_canyon: dict[int, dict[str, Any]] = {}
-    for row in rows:
-        canyon_id = int(row["canyonId"])
-        existing = by_canyon.get(canyon_id)
-        if existing is None:
-            by_canyon[canyon_id] = row
-            continue
-        existing_has_geometry = existing.get("geometry") is not None
-        row_has_geometry = row.get("geometry") is not None
-        if row_has_geometry and not existing_has_geometry:
-            by_canyon[canyon_id] = row
-    return [by_canyon[canyon_id] for canyon_id in sorted(by_canyon)]
-
-
 def update_manifest(manifest_path: Path, watersheds_count: int) -> None:
     manifest = load_json(manifest_path)
     tables = manifest.setdefault("tables", {})
@@ -97,13 +139,13 @@ def update_manifest(manifest_path: Path, watersheds_count: int) -> None:
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Genere offline-data/full/room-import/watersheds.json a partir de watershed results."
+        description="Genere offline-data/full/room-import/watersheds.json depuis le dernier package watershed world."
     )
     parser.add_argument(
         "--input",
         type=Path,
-        default=Path("watershed-results/import_ready_watersheds.json"),
-        help="Fichier import_ready_watersheds.json ou dossier le contenant.",
+        default=Path("watershed-results"),
+        help="Dossier watershed-results, dossier de run, ou fichier import_ready_watersheds.json.",
     )
     parser.add_argument(
         "--output",
@@ -127,25 +169,32 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> int:
     args = parse_args()
-    input_paths = resolve_input_paths(args.input)
-    if not input_paths or any(not path.exists() for path in input_paths):
-        missing = next((path for path in input_paths if not path.exists()), args.input)
-        raise FileNotFoundError(f"Fichier introuvable: {missing}")
+    explicit_package = resolve_explicit_package(args.input)
+    if explicit_package is not None:
+        selected_package = explicit_package
+    else:
+        if not args.input.exists():
+            raise FileNotFoundError(f"Fichier introuvable: {args.input}")
+        packages = discover_world_packages(args.input)
+        if not packages:
+            raise FileNotFoundError(
+                f"Aucun package watershed world trouve dans: {args.input}"
+            )
+        selected_package = select_latest_package(packages)
 
-    normalized_rows: list[dict[str, Any]] = []
-    for input_path in input_paths:
-        raw_rows = load_json(input_path)
-        if not isinstance(raw_rows, list):
-            raise ValueError(f"Le fichier source doit contenir une liste JSON: {input_path}")
-        normalized_rows.extend(
-            normalized
-            for item in raw_rows
-            if isinstance(item, dict)
-            for normalized in [normalize_row(item)]
-            if normalized is not None
+    raw_rows = load_json(selected_package.import_ready_path)
+    if not isinstance(raw_rows, list):
+        raise ValueError(
+            f"Le fichier source doit contenir une liste JSON: {selected_package.import_ready_path}"
         )
 
-    output_rows = dedupe_rows(normalized_rows)
+    output_rows = [
+        normalized
+        for item in raw_rows
+        if isinstance(item, dict)
+        for normalized in [normalize_row(item)]
+        if normalized is not None
+    ]
     write_json(args.output, output_rows)
 
     if not args.skip_manifest and args.manifest.exists():
@@ -154,7 +203,11 @@ def main() -> int:
     print(
         json.dumps(
             {
-                "inputs": [str(path) for path in input_paths],
+                "selectedRun": str(selected_package.run_dir),
+                "selectedTrack": selected_package.track,
+                "selectedLabel": selected_package.label,
+                "selectedGeneratedAt": selected_package.generated_at,
+                "input": str(selected_package.import_ready_path),
                 "output": str(args.output),
                 "watersheds": len(output_rows),
                 "manifestUpdated": (not args.skip_manifest and args.manifest.exists()),

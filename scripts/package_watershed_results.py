@@ -39,10 +39,9 @@ def slugify(value: str) -> str:
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Copies build/watersheds run outputs into a tracked watershed-results structure."
+        description="Copies a world watershed batch run into the tracked watershed-results structure."
     )
     parser.add_argument("--source-dir", type=Path, required=True)
-    parser.add_argument("--country", required=True, help="Country name, e.g. France or Spain")
     parser.add_argument(
         "--track",
         required=True,
@@ -92,7 +91,7 @@ def copy_if_exists(source: Path, destination: Path) -> bool:
 def main() -> int:
     args = parse_args()
     source_dir = args.source_dir.resolve()
-    output_dir = (args.output_root / "runs" / slugify(args.country) / args.track / slugify(args.label)).resolve()
+    output_dir = (args.output_root / "runs" / args.track / slugify(args.label)).resolve()
 
     if output_dir.exists() and not args.force:
         raise SystemExit(f"Output directory already exists: {output_dir}. Use --force to overwrite.")
@@ -126,7 +125,7 @@ def main() -> int:
     manifest = {
         "generatedAt": datetime.now(timezone.utc).isoformat(),
         "sourceDir": str(source_dir),
-        "country": args.country,
+        "scope": "world",
         "track": args.track,
         "label": args.label,
         "copiedFiles": copied_files,
