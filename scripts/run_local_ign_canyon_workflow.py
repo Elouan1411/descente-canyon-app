@@ -153,6 +153,10 @@ def clip_dem(
 
 def resample_dem(input_dem: Path, output_dem: Path, target_resolution: float) -> None:
     with rasterio.open(input_dem) as src:
+        if src.crs is not None and src.crs.is_geographic:
+            raise SystemExit(
+                f"Cannot resample geographic DEM in metric resolution without reprojection first: {input_dem} ({src.crs})"
+            )
         x_res = abs(src.transform.a)
         y_res = abs(src.transform.e)
         if x_res <= 0 or y_res <= 0:

@@ -20,6 +20,7 @@ from typing import Any
 
 import numpy as np
 import rasterio
+from rasterio.crs import CRS
 from rasterio.features import shapes
 from rasterio.warp import transform, transform_geom
 
@@ -328,6 +329,39 @@ def bbox_for_points_in_crs(points: list[dict[str, Any]], target_crs: str, buffer
     min_y = min(ys) - buffer_km * 1000.0
     max_y = max(ys) + buffer_km * 1000.0
     return min_x, min_y, max_x, max_y
+
+
+def crs_is_geographic(crs_value: Any) -> bool:
+    if not crs_value:
+        return False
+    try:
+        return bool(CRS.from_user_input(crs_value).is_geographic)
+    except Exception:
+        return False
+
+
+def local_projected_crs_for_points(points: list[dict[str, Any]]) -> str:
+    mean_lat = sum(float(point["latitude"]) for point in points) / len(points)
+    mean_lon = sum(float(point["longitude"]) for point in points) / len(points)
+    if -80.0 <= mean_lat <= 84.0:
+        zone = max(1, min(60, int(math.floor((mean_lon + 180.0) / 6.0)) + 1))
+        epsg = 32600 + zone if mean_lat >= 0 else 32700 + zone
+        return f"EPSG:{epsg}"
+    return "EPSG:3857"
+
+
+def effective_processing_crs(source: dict[str, Any], points: list[dict[str, Any]]) -> str | None:
+    processing_crs = source.get("processingCrs")
+    processing_resolution = source.get("processingResolutionM")
+    if str(processing_crs or "").upper() == "AUTO_LOCAL_UTM":
+        return local_projected_crs_for_points(points)
+    if processing_crs and not crs_is_geographic(processing_crs):
+        return str(processing_crs)
+    if processing_resolution and crs_is_geographic(source.get("srs")):
+        return local_projected_crs_for_points(points)
+    if processing_crs:
+        return str(processing_crs)
+    return None
 
 
 def merge_dem_paths(
@@ -1025,6 +1059,7 @@ def ensure_local_hydrology(
         "resampleDemSec": 0.0,
         "deriveHydrologySec": 0.0,
     }
+    processing_crs = effective_processing_crs(source, points)
     reused_hydrology = (not force_rebuild) and upa_path.exists() and flowdir_path.exists() and elevation_path.exists()
 
     if not reused_hydrology:
@@ -1041,10 +1076,10 @@ def ensure_local_hydrology(
         timings["clipDemSec"] = time.perf_counter() - started
         print(f"CLIP canyon {canyon_id} done", flush=True)
         processing_dem = clip_path
-        if source.get("processingCrs"):
+        if processing_crs:
             started = time.perf_counter()
             print(f"REPROJECT canyon {canyon_id} start", flush=True)
-            reproject_dem(clip_path, projected_clip_path, str(source["processingCrs"]))
+            reproject_dem(clip_path, projected_clip_path, processing_crs)
             processing_dem = projected_clip_path
             timings["resampleDemSec"] = time.perf_counter() - started
             print(f"REPROJECT canyon {canyon_id} done", flush=True)
@@ -1082,6 +1117,7 @@ def ensure_local_hydrology(
         {
             "timingsSec": rounded_stage_values(timings),
             "reusedExistingHydrology": reused_hydrology,
+            "processingCrs": processing_crs,
         },
     )
 

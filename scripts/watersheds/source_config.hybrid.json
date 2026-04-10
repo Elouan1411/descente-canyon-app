@@ -1953,7 +1953,7 @@
       "mode": "derive_local_hydrology",
       "dem": "build/watersheds/copernicus-data/vrt/copernicus_glo30.vrt",
       "srs": "EPSG:4326",
-      "processingCrs": "EPSG:4326",
+      "processingCrs": "AUTO_LOCAL_UTM",
       "bufferKm": 20.0,
       "processingResolutionM": 30.0,
       "candidateStrategy": "nearest_channel",
