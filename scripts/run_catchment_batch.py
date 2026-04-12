@@ -1282,8 +1282,13 @@ def ensure_rgi() -> dict[str, Any]:
     started = time.perf_counter()
     subprocess.run(command, check=True)
     ready = load_json_if_exists(output_dir / "ready.json") or {}
+    shapefiles = [
+        path
+        for path in ready.get("shapefiles", [])
+        if isinstance(path, str) and "/00_rgi62_regions/" not in path.replace("\\", "/").lower()
+    ]
     return {
-        "shapefiles": ready.get("shapefiles", []),
+        "shapefiles": shapefiles,
         "elapsedSec": round(time.perf_counter() - started, 3),
     }
 

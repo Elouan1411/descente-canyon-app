@@ -43,6 +43,20 @@ def release_lock(lock_fd: int, lock_path: Path) -> None:
     lock_path.unlink(missing_ok=True)
 
 
+def is_rgi_glacier_shapefile(path: Path) -> bool:
+    normalized = str(path).replace("\\", "/").lower()
+    if "/00_rgi62_regions/" in normalized:
+        return False
+    stem = path.stem.lower()
+    if stem.endswith("o1regions") or stem.endswith("o2regions"):
+        return False
+    return True
+
+
+def filter_rgi_glacier_shapefiles(shapefiles: list[Path]) -> list[Path]:
+    return [path for path in shapefiles if is_rgi_glacier_shapefile(path)]
+
+
 def download_file(url: str, destination: Path) -> None:
     destination.parent.mkdir(parents=True, exist_ok=True)
     if destination.exists() and destination.stat().st_size > 0:
@@ -77,7 +91,7 @@ def download_file(url: str, destination: Path) -> None:
 def extract_archive(archive_path: Path, raw_dir: Path) -> list[Path]:
     marker = raw_dir / ".extracted"
     if marker.exists():
-        shapefiles = sorted(raw_dir.rglob("*.shp"))
+        shapefiles = filter_rgi_glacier_shapefiles(sorted(raw_dir.rglob("*.shp")))
         if shapefiles:
             return shapefiles
         marker.unlink(missing_ok=True)
@@ -92,7 +106,7 @@ def extract_archive(archive_path: Path, raw_dir: Path) -> list[Path]:
             archive.extractall(target_dir)
         nested_archive.unlink(missing_ok=True)
     marker.write_text("ok", encoding="utf-8")
-    return sorted(raw_dir.rglob("*.shp"))
+    return filter_rgi_glacier_shapefiles(sorted(raw_dir.rglob("*.shp")))
 
 
 def main() -> int:
@@ -107,6 +121,11 @@ def main() -> int:
         ready_path = output_dir / "ready.json"
         if ready_path.exists():
             ready = json.loads(ready_path.read_text(encoding="utf-8"))
+            existing_paths = [Path(value) for value in ready.get("shapefiles", []) if isinstance(value, str)]
+            filtered_paths = [str(path) for path in filter_rgi_glacier_shapefiles(existing_paths)]
+            if filtered_paths != ready.get("shapefiles", []):
+                ready = {"shapefiles": filtered_paths}
+                write_json(ready_path, ready)
             print(json.dumps({"shapefileCount": len(ready.get('shapefiles', [])), "sample": ready.get('shapefiles', [])[:3]}, ensure_ascii=False, indent=2))
             return 0
         download_file(URL, archive_path)

@@ -1414,6 +1414,7 @@ def _rgi_metrics(
 
     import shapefile  # type: ignore
     from shapely.geometry import shape as shapely_shape  # type: ignore
+    from shapely.ops import unary_union  # type: ignore
 
     basin = _coerce_valid_geometry(shapely_shape(watershed_geometry))
     if basin is None:
@@ -1424,12 +1425,30 @@ def _rgi_metrics(
         }
     bbox = basin.bounds
     glacier_count = 0
-    glacier_area_km2 = 0.0
+    glacier_intersections = []
     largest_glacier_area_km2 = 0.0
+    seen_glacier_ids: set[str] = set()
+
+    def is_glacier_shapefile(path: str) -> bool:
+        normalized = str(path).replace("\\", "/").lower()
+        return "/00_rgi62_regions/" not in normalized and not normalized.endswith("o1regions.shp") and not normalized.endswith("o2regions.shp")
 
     for glacier_path in glacier_shapefiles:
+        if not is_glacier_shapefile(glacier_path):
+            continue
         reader = shapefile.Reader(glacier_path)
+        field_names = {str(field[0]).lower() for field in reader.fields[1:]}
+        has_glacier_id_field = any(name in field_names for name in {"rgiid", "rgi_id", "glimsid", "glims_id"})
+        if not has_glacier_id_field:
+            continue
         for shape_record in reader.iterShapeRecords(bbox=bbox):
+            attrs = shape_record.record.as_dict() if hasattr(shape_record.record, "as_dict") else {}
+            glacier_id = _record_value(attrs, "RGIId", "RGIID", "RGI_ID", "GLIMSId", "GLIMS_ID")
+            if glacier_id in (None, ""):
+                continue
+            glacier_id = str(glacier_id)
+            if glacier_id in seen_glacier_ids:
+                continue
             glacier_geom = _coerce_valid_geometry(shapely_shape(shape_record.shape.__geo_interface__))
             if glacier_geom is None:
                 continue
@@ -1439,15 +1458,24 @@ def _rgi_metrics(
             inter_area_km2 = _geometry_area_km2(inter)
             if inter_area_km2 is None or inter_area_km2 <= 0:
                 continue
+            seen_glacier_ids.add(glacier_id)
             glacier_count += 1
-            glacier_area_km2 += inter_area_km2
+            glacier_intersections.append(inter)
             largest_glacier_area_km2 = max(largest_glacier_area_km2, inter_area_km2)
+
+    glacier_area_km2 = 0.0
+    if glacier_intersections:
+        try:
+            union_geom = _coerce_valid_geometry(unary_union(glacier_intersections))
+            glacier_area_km2 = _geometry_area_km2(union_geom) or 0.0
+        except Exception:  # noqa: BLE001
+            glacier_area_km2 = float(sum((_geometry_area_km2(geom) or 0.0) for geom in glacier_intersections))
 
     glacier_fraction = (glacier_area_km2 / basin_area_km2) if basin_area_km2 > 0 else None
     return {
-        "glacierFraction": _round(glacier_fraction, 6),
+        "glacierFraction": _round(min(glacier_fraction, 1.0) if glacier_fraction is not None else None, 6),
         "glacierCount": glacier_count,
-        "largestGlacierAreaKm2": _round(largest_glacier_area_km2 if glacier_count > 0 else None, 6),
+        "largestGlacierAreaKm2": _round(min(largest_glacier_area_km2, basin_area_km2) if glacier_count > 0 else None, 6),
     }
 
 
