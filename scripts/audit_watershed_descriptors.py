@@ -71,6 +71,7 @@ FLOW_COLUMNS = {
     "streamCellCount",
     "streamFrequencyPerKm2",
     "drainageDensityKmPerKm2",
+    "streamLinkCount",
     "streamSegmentCount",
     "junctionCount",
     "strahlerOrder",
@@ -140,11 +141,11 @@ SOIL_COLUMNS = {
     "coarseFragmentFraction",
     "subsoilClayFraction",
     "subsoilSandFraction",
-    "soilDepthMean",
-    "soilDepthShallowFraction",
-    "bedrockDepth",
-    "availableWaterCapacity",
-    "saturatedHydraulicConductivity",
+    "soilDepthMeanCm",
+    "soilDepthShallowFractionLt100Cm",
+    "bedrockDepthCm",
+    "availableWaterCapacityMm",
+    "saturatedHydraulicConductivityCmPerDay",
 }
 
 REGULATION_COLUMNS = {
@@ -200,11 +201,11 @@ GEOLOGY_COLUMNS = {
     "evaporiteFraction",
     "dominantLithologyCode",
     "karstIndicator",
-    "sinkholeDensity",
-    "springDensity",
-    "losingStreamIndicator",
-    "resurgenceIndicator",
-    "karstConnectivityIndex",
+    "sinkholeDensityProxyPerKm2",
+    "springDensityProxyPerKm2",
+    "losingStreamProxy",
+    "resurgenceProxy",
+    "karstConnectivityProxy",
 }
 
 GLACIER_COLUMNS = {
@@ -329,9 +330,11 @@ def validate_row(row: dict[str, Any], issues: dict[str, dict[str, Any]]) -> None
             add_issue(issues, "fraction_out_of_range", key, canyon_id, numeric_value)
         if key.endswith("Indicator") and not (0.0 <= numeric_value <= 1.0):
             add_issue(issues, "indicator_out_of_range", key, canyon_id, numeric_value)
+        if key in {"losingStreamProxy", "resurgenceProxy", "karstConnectivityProxy"} and not (0.0 <= numeric_value <= 1.0):
+            add_issue(issues, "proxy_out_of_range", key, canyon_id, numeric_value)
         if key.endswith("Count") and numeric_value < 0:
             add_issue(issues, "negative_count", key, canyon_id, numeric_value)
-        if key.endswith(("Km", "Km2", "M", "Mcm", "Min", "Pct", "Score")) and key not in {"meanAnnualTemperatureC", "meanWinterTemperatureC", "meanPlanCurvature", "meanProfileCurvature"} and numeric_value < 0:
+        if key.endswith(("Km", "Km2", "M", "Mcm", "Min", "Pct", "Score", "Mm", "Cm", "CmPerDay")) and key not in {"meanAnnualTemperatureC", "meanWinterTemperatureC", "meanPlanCurvature", "meanProfileCurvature"} and numeric_value < 0:
             add_issue(issues, "negative_non_expected", key, canyon_id, numeric_value)
 
     min_elev = row.get("basinMinElevationM")

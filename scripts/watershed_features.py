@@ -377,6 +377,7 @@ def _compute_network_metrics(
             "streamCellCount": 0,
             "streamFrequencyPerKm2": None,
             "drainageDensityKmPerKm2": None,
+            "streamLinkCount": 0,
             "streamSegmentCount": 0,
             "junctionCount": 0,
             "strahlerOrder": None,
@@ -413,11 +414,13 @@ def _compute_network_metrics(
         step_lengths.setdefault(key, value)
 
     orders = np.zeros(flow.shape, dtype=np.int16)
+    upstream_stream_counts = np.zeros(flow.shape, dtype=np.uint8)
+    downstream_stream_mask = np.zeros(flow.shape, dtype=bool)
     junction_count = 0
     source_count = 0
     total_length_m = 0.0
     first_order_length_m = 0.0
-    stream_segment_count = 0
+    stream_link_count = 0
 
     for row, col in ordered_indices:
         upstream_orders = []
@@ -461,11 +464,22 @@ def _compute_network_metrics(
             continue
         if not stream_mask[n_row, n_col]:
             continue
+        downstream_stream_mask[row, col] = True
+        upstream_stream_counts[n_row, n_col] += 1
         step_length = step_lengths.get(offset, fallback_lengths.get(offset, dem_resolution_m))
         total_length_m += step_length
-        stream_segment_count += 1
+        stream_link_count += 1
         if orders[row, col] == 1:
             first_order_length_m += step_length
+
+    stream_segment_count = 0
+    for row, col in ordered_indices:
+        indegree = int(upstream_stream_counts[row, col])
+        has_downstream = bool(downstream_stream_mask[row, col])
+        if has_downstream and indegree != 1:
+            stream_segment_count += 1
+        elif not has_downstream and indegree == 0:
+            stream_segment_count += 1
 
     strahler_order = int(np.max(orders[stream_mask])) if stream_count > 0 else None
     total_stream_length_km = total_length_m / 1000.0 if total_length_m > 0 else None
@@ -478,6 +492,7 @@ def _compute_network_metrics(
         "streamCellCount": stream_count,
         "streamFrequencyPerKm2": _round(stream_frequency, 6),
         "drainageDensityKmPerKm2": _round(drainage_density, 6),
+        "streamLinkCount": stream_link_count,
         "streamSegmentCount": stream_segment_count,
         "junctionCount": junction_count,
         "strahlerOrder": strahler_order,
@@ -956,11 +971,11 @@ def _soilgrids_metrics(
             "coarseFragmentFraction": None,
             "subsoilClayFraction": None,
             "subsoilSandFraction": None,
-            "soilDepthMean": None,
-            "soilDepthShallowFraction": None,
-            "bedrockDepth": None,
-            "availableWaterCapacity": None,
-            "saturatedHydraulicConductivity": None,
+            "soilDepthMeanCm": None,
+            "soilDepthShallowFractionLt100Cm": None,
+            "bedrockDepthCm": None,
+            "availableWaterCapacityMm": None,
+            "saturatedHydraulicConductivityCmPerDay": None,
         }
 
     # SoilGrids clay/sand mean values are in g/kg. Convert to percent.
@@ -1013,11 +1028,11 @@ def _soilgrids_metrics(
         "coarseFragmentFraction": _round(coarse_fragment_fraction, 6),
         "subsoilClayFraction": _round(subsoil_clay_fraction, 6),
         "subsoilSandFraction": _round(subsoil_sand_fraction, 6),
-        "soilDepthMean": _round(soil_depth_mean, 3),
-        "soilDepthShallowFraction": _round(shallow_fraction, 6),
-        "bedrockDepth": _round(bedrock_depth_mean, 3),
-        "availableWaterCapacity": _round(awc_mean, 3),
-        "saturatedHydraulicConductivity": _round(ksat_mean, 3),
+        "soilDepthMeanCm": _round(soil_depth_mean, 3),
+        "soilDepthShallowFractionLt100Cm": _round(shallow_fraction, 6),
+        "bedrockDepthCm": _round(bedrock_depth_mean, 3),
+        "availableWaterCapacityMm": _round(awc_mean, 3),
+        "saturatedHydraulicConductivityCmPerDay": _round(ksat_mean, 3),
     }
 
 
@@ -1560,11 +1575,12 @@ def _karst_hydrology_proxy_metrics(
 ) -> dict[str, Any]:
     if carbonate_fraction is None and karst_indicator is None:
         return {
-            "sinkholeDensity": None,
-            "springDensity": None,
-            "losingStreamIndicator": None,
-            "resurgenceIndicator": None,
-            "karstConnectivityIndex": None,
+            "karstHydrologyProxyMethod": "heuristic_v1",
+            "sinkholeDensityProxyPerKm2": None,
+            "springDensityProxyPerKm2": None,
+            "losingStreamProxy": None,
+            "resurgenceProxy": None,
+            "karstConnectivityProxy": None,
         }
 
     carbonate = float(carbonate_fraction or 0.0)
@@ -1589,11 +1605,12 @@ def _karst_hydrology_proxy_metrics(
     resurgence_indicator = max(0.0, min(1.0, karst_connectivity * min(spring_density / 1.5, 1.0)))
 
     return {
-        "sinkholeDensity": _round(sinkhole_density, 6),
-        "springDensity": _round(spring_density, 6),
-        "losingStreamIndicator": _round(losing_stream_indicator, 6),
-        "resurgenceIndicator": _round(resurgence_indicator, 6),
-        "karstConnectivityIndex": _round(karst_connectivity, 6),
+        "karstHydrologyProxyMethod": "heuristic_v1",
+        "sinkholeDensityProxyPerKm2": _round(sinkhole_density, 6),
+        "springDensityProxyPerKm2": _round(spring_density, 6),
+        "losingStreamProxy": _round(losing_stream_indicator, 6),
+        "resurgenceProxy": _round(resurgence_indicator, 6),
+        "karstConnectivityProxy": _round(karst_connectivity, 6),
     }
 
 
@@ -1622,6 +1639,26 @@ def _same_crs(left: Any, right: Any) -> bool:
 
 def _same_transform(left: Affine, right: Affine, tolerance: float = 1e-9) -> bool:
     return all(abs(float(a) - float(b)) <= tolerance for a, b in zip(left[:6], right[:6]))
+
+
+def _descriptor_consistency_warnings(descriptors: dict[str, Any]) -> list[str]:
+    warnings: list[str] = []
+    for key, value in descriptors.items():
+        if not isinstance(value, (int, float)) or isinstance(value, bool):
+            continue
+        numeric_value = float(value)
+        if (key.endswith("Fraction") or key.endswith("ProxyFraction")) and not (0.0 <= numeric_value <= 1.0):
+            warnings.append(f"{key}_out_of_range")
+        if key.endswith("Proxy") and key not in {"continentalityProxy", "oceanicityProxy"} and not (0.0 <= numeric_value <= 1.0):
+            warnings.append(f"{key}_out_of_range")
+
+    basin_area_km2 = descriptors.get("basinAreaRasterKm2")
+    largest_glacier_area_km2 = descriptors.get("largestGlacierAreaKm2")
+    if isinstance(basin_area_km2, (int, float)) and isinstance(largest_glacier_area_km2, (int, float)):
+        if float(largest_glacier_area_km2) > float(basin_area_km2):
+            warnings.append("largestGlacierAreaKm2_exceeds_basinAreaRasterKm2")
+
+    return sorted(set(warnings))
 
 
 def _validate_reference_grid(
@@ -1827,6 +1864,14 @@ def compute_watershed_descriptors(
             "lowPermeabilitySoilFraction": None,
             "highInfiltrationSoilFraction": None,
             "runoffPotentialIndex": None,
+            "coarseFragmentFraction": None,
+            "subsoilClayFraction": None,
+            "subsoilSandFraction": None,
+            "soilDepthMeanCm": None,
+            "soilDepthShallowFractionLt100Cm": None,
+            "bedrockDepthCm": None,
+            "availableWaterCapacityMm": None,
+            "saturatedHydraulicConductivityCmPerDay": None,
         }
 
     try:
@@ -1967,7 +2012,7 @@ def compute_watershed_descriptors(
         carbonate_fraction=glim_metrics.get("carbonateFraction"),
         karst_indicator=glim_metrics.get("karstIndicator"),
         high_infiltration_soil_fraction=soil_metrics.get("highInfiltrationSoilFraction"),
-        soil_depth_shallow_fraction=soil_metrics.get("soilDepthShallowFraction"),
+        soil_depth_shallow_fraction=soil_metrics.get("soilDepthShallowFractionLt100Cm"),
         drainage_density_km_per_km2=network_metrics.get("drainageDensityKmPerKm2"),
         stream_frequency_per_km2=network_metrics.get("streamFrequencyPerKm2"),
     )
@@ -1981,7 +2026,7 @@ def compute_watershed_descriptors(
         }
     )
 
-    return {
+    descriptors = {
             "descriptorStatus": "ok",
             "watershedCellCount": mask_count,
             "watershedValidCellCount": valid_count,
@@ -2032,3 +2077,6 @@ def compute_watershed_descriptors(
             **karst_metrics,
             "imperviousProxyFraction": landcover_metrics.get("urbanFraction"),
         }
+    descriptor_warnings = _descriptor_consistency_warnings(descriptors)
+    descriptors["descriptorWarnings"] = descriptor_warnings
+    return descriptors
