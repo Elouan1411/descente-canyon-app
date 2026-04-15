@@ -2,6 +2,8 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
+import shlex
 import subprocess
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -98,6 +100,67 @@ def build_whitebox_failure_message(
     return "\n".join(parts)
 
 
+def raster_crs_string(path: Path) -> str | None:
+    with rasterio.open(path) as src:
+        return src.crs.to_string() if src.crs is not None else None
+
+
+def resolve_whitebox_executable() -> Path:
+    wbt = WhiteboxTools()
+    executable = Path(wbt.exe_path) / wbt.exe_name
+    if executable.exists():
+        return executable
+    fallback = Path(wbt.exe_path) / "WBT" / wbt.exe_name
+    if fallback.exists():
+        return fallback
+    raise SystemExit(f"Whitebox executable not found near {wbt.exe_path}")
+
+
+def quarantine_invalid_whitebox_settings(executable_path: Path) -> Path | None:
+    settings_path = executable_path.parent / "settings.json"
+    if not settings_path.exists():
+        return None
+    try:
+        json.loads(settings_path.read_text(encoding="utf-8"))
+        return None
+    except json.JSONDecodeError:
+        backup_path = executable_path.parent / f"settings.invalid-{os.getpid()}.json"
+        try:
+            backup_path.unlink(missing_ok=True)
+            settings_path.replace(backup_path)
+        except FileNotFoundError:
+            return None
+        except OSError as exc:
+            raise SystemExit(
+                f"Whitebox settings.json is invalid and could not be quarantined: {settings_path} ({exc})"
+            ) from exc
+        return backup_path
+
+
+def run_whitebox_command(
+    *,
+    executable_path: Path,
+    args: list[str],
+    log_capture: WhiteboxLogCapture,
+) -> int:
+    log_capture.clear()
+    quarantined = quarantine_invalid_whitebox_settings(executable_path)
+    if quarantined is not None:
+        log_capture(f"Quarantined invalid Whitebox settings file: {quarantined}")
+    command = [str(executable_path), *args]
+    log_capture(shlex.join(command))
+    process = subprocess.Popen(
+        command,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.STDOUT,
+        text=True,
+    )
+    assert process.stdout is not None
+    for line in process.stdout:
+        log_capture(line)
+    return process.wait()
+
+
 def convert_area_m2_to_km2(input_path: Path, output_path: Path) -> None:
     with rasterio.open(input_path) as src:
         profile = src.profile.copy()
@@ -132,11 +195,12 @@ def materialize_dem_if_needed(
         gdal_translate,
         "-of",
         "GTiff",
-        "-a_srs",
-        srs,
         "-co",
         "BIGTIFF=YES",
     ]
+    source_crs = raster_crs_string(input_dem)
+    if source_crs is None:
+        command.extend(["-a_srs", srs])
     if tiled:
         command.extend(["-co", "TILED=YES"])
     if compress and compress.upper() != "NONE":
@@ -159,7 +223,7 @@ def validate_input_dem(input_dem: Path) -> None:
 
 def run_flow_accumulation_workflow(
     *,
-    wbt: WhiteboxTools,
+    whitebox_executable: Path,
     dem_path: Path,
     breached_dem: Path,
     pointer_raster: Path,
@@ -168,15 +232,18 @@ def run_flow_accumulation_workflow(
     log_capture: WhiteboxLogCapture,
 ) -> None:
     reset_outputs([breached_dem, pointer_raster, accumulation_m2])
-    log_capture.clear()
-    workflow_status = wbt.flow_accumulation_full_workflow(
-        dem=str(dem_path),
-        out_dem=str(breached_dem),
-        out_pntr=str(pointer_raster),
-        out_accum=str(accumulation_m2),
-        out_type=out_type,
-        esri_pntr=True,
-        callback=log_capture,
+    workflow_status = run_whitebox_command(
+        executable_path=whitebox_executable,
+        args=[
+            "--run=FlowAccumulationFullWorkflow",
+            f"--dem={dem_path}",
+            f"--out_dem={breached_dem}",
+            f"--out_pntr={pointer_raster}",
+            f"--out_accum={accumulation_m2}",
+            f"--out_type={out_type}",
+            "--esri_pntr",
+        ],
+        log_capture=log_capture,
     )
     if workflow_status != 0:
         raise RuntimeError(
@@ -260,19 +327,16 @@ def main() -> int:
     accumulation_km2 = output_dir / "ign_upstream_area_km2.tif"
     reset_outputs([breached_dem, pointer_raster, accumulation_m2, accumulation_km2])
 
-    wbt = WhiteboxTools()
+    whitebox_executable = resolve_whitebox_executable()
     if args.work_dir is not None:
         work_dir = args.work_dir.resolve()
         work_dir.mkdir(parents=True, exist_ok=True)
-        wbt.set_working_dir(str(work_dir))
 
     log_capture = WhiteboxLogCapture(emit=args.whitebox_verbose)
-    # Keep Whitebox in verbose mode so its callback receives the full tool log.
-    wbt.verbose = True
     whitebox_attempts: list[dict[str, str]] = []
     try:
         run_flow_accumulation_workflow(
-            wbt=wbt,
+            whitebox_executable=whitebox_executable,
             dem_path=dem_for_whitebox,
             breached_dem=breached_dem,
             pointer_raster=pointer_raster,
@@ -303,7 +367,7 @@ def main() -> int:
         validate_input_dem(retry_dem)
         try:
             run_flow_accumulation_workflow(
-                wbt=wbt,
+                whitebox_executable=whitebox_executable,
                 dem_path=retry_dem,
                 breached_dem=breached_dem,
                 pointer_raster=pointer_raster,
@@ -341,11 +405,13 @@ def main() -> int:
             "upstreamAreaM2": str(accumulation_m2),
             "upstreamAreaKm2": str(accumulation_km2) if args.out_type == "ca" else None,
         },
+        "whiteboxExecutable": str(whitebox_executable),
         "whiteboxOutType": args.out_type,
         "whiteboxAttempts": whitebox_attempts,
         "notes": [
             "Le raster d8PointerEsri est compatible avec compute_entry_watersheds.py.",
             "Le raster upstreamAreaKm2 est la couche a utiliser comme --upa-raster pour les runs IGN si out_type=ca.",
+            "Whitebox est lance avec des chemins absolus sans --wd/-v/--compress_rasters pour eviter les ecritures concurrentes dans settings.json.",
         ],
     }
     write_json(output_dir / "metadata.json", metadata)
