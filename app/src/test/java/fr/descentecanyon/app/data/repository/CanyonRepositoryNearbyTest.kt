@@ -1,7 +1,8 @@
 package fr.descentecanyon.app.data.repository
 
-import fr.descentecanyon.app.data.local.dao.CanyonDao
 import fr.descentecanyon.app.data.local.dao.BibliographyDao
+import fr.descentecanyon.app.data.local.dao.CanyonDao
+import fr.descentecanyon.app.data.local.dao.CanyonTrackDao
 import fr.descentecanyon.app.data.local.dao.DebitDao
 import fr.descentecanyon.app.data.local.dao.GeoPointDao
 import fr.descentecanyon.app.data.local.dao.PhotoDao
@@ -24,6 +25,7 @@ class CanyonRepositoryNearbyTest {
 
     private val canyonDao = mockk<CanyonDao>()
     private val database = mockk<DescenteCanyonDatabase>(relaxed = true)
+    private val canyonTrackDao = mockk<CanyonTrackDao>()
     private val geoPointDao = mockk<GeoPointDao>()
     private val debitDao = mockk<DebitDao>()
     private val photoDao = mockk<PhotoDao>()
@@ -32,6 +34,7 @@ class CanyonRepositoryNearbyTest {
     private val watershedDao = mockk<WatershedDao>()
     private val localStore = CanyonLocalStore(
         canyonDao = canyonDao,
+        canyonTrackDao = canyonTrackDao,
         geoPointDao = geoPointDao,
         debitDao = debitDao,
         photoDao = photoDao,

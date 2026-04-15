@@ -2,6 +2,7 @@ package fr.descentecanyon.app.data.repository
 
 import fr.descentecanyon.app.data.local.dao.BibliographyDao
 import fr.descentecanyon.app.data.local.dao.CanyonDao
+import fr.descentecanyon.app.data.local.dao.CanyonTrackDao
 import fr.descentecanyon.app.data.local.dao.DebitDao
 import fr.descentecanyon.app.data.local.dao.GeoPointDao
 import fr.descentecanyon.app.data.local.dao.PhotoDao
@@ -27,6 +28,7 @@ import org.junit.Test
 class CanyonRepositoryDetailTest {
 
     private val canyonDao = mockk<CanyonDao>()
+    private val canyonTrackDao = mockk<CanyonTrackDao>()
     private val geoPointDao = mockk<GeoPointDao>()
     private val debitDao = mockk<DebitDao>()
     private val photoDao = mockk<PhotoDao>()
@@ -49,6 +51,7 @@ class CanyonRepositoryDetailTest {
 
         val localStore = CanyonLocalStore(
             canyonDao = canyonDao,
+            canyonTrackDao = canyonTrackDao,
             geoPointDao = geoPointDao,
             debitDao = debitDao,
             photoDao = photoDao,
@@ -76,6 +79,7 @@ class CanyonRepositoryDetailTest {
         val canyon = canyonEntity(id = 42, nom = "Riolan", isFavorite = false, isOffline = true)
         val localStore = CanyonLocalStore(
             canyonDao = canyonDao,
+            canyonTrackDao = canyonTrackDao,
             geoPointDao = geoPointDao,
             debitDao = debitDao,
             photoDao = photoDao,
@@ -89,6 +93,7 @@ class CanyonRepositoryDetailTest {
         coEvery { geoPointDao.getByCanyonId(42) } returns emptyList()
         coEvery { bibliographyDao.getByCanyonId(42) } returns emptyList()
         coEvery { regulationDao.getByCanyonId(42) } returns emptyList()
+        coEvery { canyonTrackDao.getByCanyonId(42) } returns emptyList()
         coEvery { photoDao.getByCanyonId(42) } returns emptyList()
         coEvery { watershedDao.getByCanyonId(42) } returns null
         coEvery { debitDao.getByCanyonId(42) } returns flowOf(emptyList())
@@ -112,6 +117,7 @@ class CanyonRepositoryDetailTest {
             geoPointDao.getByCanyonId(42)
             bibliographyDao.getByCanyonId(42)
             regulationDao.getByCanyonId(42)
+            canyonTrackDao.getByCanyonId(42)
             photoDao.getByCanyonId(42)
             debitDao.getByCanyonId(42)
             watershedDao.getByCanyonId(42)
