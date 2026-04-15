@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import json
 import subprocess
+from dataclasses import dataclass, field
 from pathlib import Path
 
 import numpy as np
@@ -13,6 +14,32 @@ from cli_tools import default_gdal_translate, resolve_executable
 
 
 DEFAULT_LAMBERT93_PROJ4 = "+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs"
+
+
+@dataclass
+class WhiteboxLogCapture:
+    emit: bool = False
+    max_lines: int = 400
+    lines: list[str] = field(default_factory=list)
+
+    def __call__(self, line: str) -> None:
+        text = str(line).rstrip()
+        if not text:
+            return
+        self.lines.append(text)
+        if len(self.lines) > self.max_lines:
+            self.lines = self.lines[-self.max_lines :]
+        if self.emit:
+            print(text, flush=True)
+
+    def clear(self) -> None:
+        self.lines.clear()
+
+    def tail_text(self, limit: int = 60) -> str:
+        if not self.lines:
+            return "<no whitebox output captured>"
+        tail = self.lines[-limit:]
+        return "\n".join(tail)
 
 
 def write_json(path: Path, data: dict) -> None:
@@ -28,9 +55,47 @@ def reset_outputs(paths: list[Path]) -> None:
 def validate_outputs(paths: list[Path], *, step_name: str) -> None:
     missing = [str(path) for path in paths if not path.exists() or path.stat().st_size == 0]
     if missing:
-        raise SystemExit(
+        raise RuntimeError(
             f"{step_name} did not create expected raster outputs: {', '.join(missing)}"
         )
+
+
+def describe_raster(path: Path) -> str:
+    with rasterio.open(path) as src:
+        x_res = abs(src.transform.a)
+        y_res = abs(src.transform.e)
+        return (
+            f"path={path} width={src.width} height={src.height} bands={src.count} "
+            f"dtype={','.join(src.dtypes)} nodata={src.nodata} crs={src.crs} "
+            f"resolution=({x_res}, {y_res}) bounds={tuple(round(value, 6) for value in src.bounds)}"
+        )
+
+
+def build_whitebox_failure_message(
+    *,
+    dem_path: Path,
+    step_name: str,
+    workflow_status: int,
+    outputs: list[Path],
+    log_capture: WhiteboxLogCapture,
+    cause: Exception | None = None,
+) -> str:
+    missing = [str(path) for path in outputs if not path.exists() or path.stat().st_size == 0]
+    parts = [
+        f"{step_name} failed for DEM {dem_path}",
+        f"DEM info: {describe_raster(dem_path)}",
+        (
+            f"Whitebox wrapper returned status={workflow_status}. "
+            "Note: the Python wrapper can still return 0 even when the Whitebox executable fails, "
+            "so missing outputs and the tool log below are the most useful diagnostics."
+        ),
+    ]
+    if missing:
+        parts.append(f"Missing outputs: {', '.join(missing)}")
+    if cause is not None:
+        parts.append(f"Validation error: {type(cause).__name__}: {cause}")
+    parts.append("Whitebox output tail:\n" + log_capture.tail_text())
+    return "\n".join(parts)
 
 
 def convert_area_m2_to_km2(input_path: Path, output_path: Path) -> None:
@@ -100,8 +165,10 @@ def run_flow_accumulation_workflow(
     pointer_raster: Path,
     accumulation_m2: Path,
     out_type: str,
+    log_capture: WhiteboxLogCapture,
 ) -> None:
     reset_outputs([breached_dem, pointer_raster, accumulation_m2])
+    log_capture.clear()
     workflow_status = wbt.flow_accumulation_full_workflow(
         dem=str(dem_path),
         out_dem=str(breached_dem),
@@ -109,13 +176,34 @@ def run_flow_accumulation_workflow(
         out_accum=str(accumulation_m2),
         out_type=out_type,
         esri_pntr=True,
+        callback=log_capture,
     )
     if workflow_status != 0:
-        raise RuntimeError(f"Whitebox flow_accumulation_full_workflow failed with status={workflow_status}")
-    validate_outputs(
-        [breached_dem, pointer_raster, accumulation_m2],
-        step_name="Whitebox flow_accumulation_full_workflow",
-    )
+        raise RuntimeError(
+            build_whitebox_failure_message(
+                dem_path=dem_path,
+                step_name="Whitebox flow_accumulation_full_workflow",
+                workflow_status=workflow_status,
+                outputs=[breached_dem, pointer_raster, accumulation_m2],
+                log_capture=log_capture,
+            )
+        )
+    try:
+        validate_outputs(
+            [breached_dem, pointer_raster, accumulation_m2],
+            step_name="Whitebox flow_accumulation_full_workflow",
+        )
+    except RuntimeError as exc:
+        raise RuntimeError(
+            build_whitebox_failure_message(
+                dem_path=dem_path,
+                step_name="Whitebox flow_accumulation_full_workflow",
+                workflow_status=workflow_status,
+                outputs=[breached_dem, pointer_raster, accumulation_m2],
+                log_capture=log_capture,
+                cause=exc,
+            )
+        ) from exc
 
 
 def parse_args() -> argparse.Namespace:
@@ -178,7 +266,9 @@ def main() -> int:
         work_dir.mkdir(parents=True, exist_ok=True)
         wbt.set_working_dir(str(work_dir))
 
-    wbt.verbose = args.whitebox_verbose
+    log_capture = WhiteboxLogCapture(emit=args.whitebox_verbose)
+    # Keep Whitebox in verbose mode so its callback receives the full tool log.
+    wbt.verbose = True
     whitebox_attempts: list[dict[str, str]] = []
     try:
         run_flow_accumulation_workflow(
@@ -188,10 +278,18 @@ def main() -> int:
             pointer_raster=pointer_raster,
             accumulation_m2=accumulation_m2,
             out_type=args.out_type,
+            log_capture=log_capture,
         )
         whitebox_attempts.append({"dem": str(dem_for_whitebox), "mode": "primary", "status": "ok"})
     except Exception as exc:
-        whitebox_attempts.append({"dem": str(dem_for_whitebox), "mode": "primary", "status": f"error:{type(exc).__name__}: {exc}"})
+        whitebox_attempts.append(
+            {
+                "dem": str(dem_for_whitebox),
+                "mode": "primary",
+                "status": f"error:{type(exc).__name__}: {exc}",
+                "whiteboxOutputTail": log_capture.tail_text(),
+            }
+        )
         retry_dem = materialize_dem_if_needed(
             args.dem.resolve(),
             output_dir,
@@ -211,14 +309,23 @@ def main() -> int:
                 pointer_raster=pointer_raster,
                 accumulation_m2=accumulation_m2,
                 out_type=args.out_type,
+                log_capture=log_capture,
             )
             dem_for_whitebox = retry_dem
             whitebox_attempts.append({"dem": str(retry_dem), "mode": "retry_plain_geotiff", "status": "ok"})
         except Exception as retry_exc:
-            whitebox_attempts.append({"dem": str(retry_dem), "mode": "retry_plain_geotiff", "status": f"error:{type(retry_exc).__name__}: {retry_exc}"})
+            whitebox_attempts.append(
+                {
+                    "dem": str(retry_dem),
+                    "mode": "retry_plain_geotiff",
+                    "status": f"error:{type(retry_exc).__name__}: {retry_exc}",
+                    "whiteboxOutputTail": log_capture.tail_text(),
+                }
+            )
             raise SystemExit(
                 "Whitebox hydrology failed after retry. "
-                f"primary={type(exc).__name__}: {exc}; retry={type(retry_exc).__name__}: {retry_exc}"
+                f"\nPrimary attempt:\n{exc}\n"
+                f"\nRetry attempt:\n{retry_exc}"
             )
 
     if args.out_type == "ca":
