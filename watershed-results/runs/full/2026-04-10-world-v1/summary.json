@@ -1,26 +1,28 @@
 {
   "canyonsWithResults": 3767,
-  "importReadyRows": 3767,
-  "descriptorRows": 3766,
-  "watershedPolygonRows": 3766,
+  "importReadyRows": 3766,
+  "descriptorRows": 3706,
+  "watershedPolygonRows": 3706,
   "statusCounts": {
-    "ok": 3767
+    "ok": 3766,
+    "error": 1
   },
   "watershedSkipCounts": {
+    "review_override_no_channel_within_30m": 59,
     "missing_snapped_coordinates": 1
   },
   "profiling": {
-    "profiledCanyons": 3767,
+    "profiledCanyons": 3766,
     "stageTotalsSec": {
-      "resolveSourceSec": 21135.79,
-      "ensureLocalHydrologySec": 291351.043,
-      "clipDemSec": 115040.495,
-      "resampleDemSec": 22338.014,
-      "deriveHydrologySec": 153684.201,
-      "evaluatePointsSec": 8862.259,
-      "analyzeCandidatesSec": 1.544,
-      "buildWatershedMaskSec": 12095.749,
-      "buildWatershedGeometrySec": 2600.744,
+      "resolveSourceSec": 18288.913,
+      "ensureLocalHydrologySec": 323145.229,
+      "clipDemSec": 115526.062,
+      "resampleDemSec": 22328.26,
+      "deriveHydrologySec": 185025.25,
+      "evaluatePointsSec": 7178.874,
+      "analyzeCandidatesSec": 0.544,
+      "buildWatershedMaskSec": 12881.064,
+      "buildWatershedGeometrySec": 2329.042,
       "prepareClimateSec": 0.0,
       "prepareWorldCoverSec": 0.0,
       "prepareGHSLBuiltSec": 0.0,
@@ -28,21 +30,21 @@
       "prepareGDWSec": 0.0,
       "prepareRGISec": 0.0,
       "prepareGLiMSec": 0.0,
-      "computeDescriptorsSec": 2002296.117,
+      "computeDescriptorsSec": 1771346.55,
       "computeOsmRegulationSec": 0.0,
-      "totalSec": 2342738.085,
-      "writeResultSec": 70.899
+      "totalSec": 2139109.09,
+      "writeResultSec": 52.818
     },
     "stageAveragesSec": {
-      "resolveSourceSec": 5.611,
-      "ensureLocalHydrologySec": 77.343,
-      "clipDemSec": 30.539,
-      "resampleDemSec": 5.93,
-      "deriveHydrologySec": 40.798,
-      "evaluatePointsSec": 2.353,
+      "resolveSourceSec": 4.856,
+      "ensureLocalHydrologySec": 85.806,
+      "clipDemSec": 30.676,
+      "resampleDemSec": 5.929,
+      "deriveHydrologySec": 49.13,
+      "evaluatePointsSec": 1.906,
       "analyzeCandidatesSec": 0.0,
-      "buildWatershedMaskSec": 3.211,
-      "buildWatershedGeometrySec": 0.69,
+      "buildWatershedMaskSec": 3.42,
+      "buildWatershedGeometrySec": 0.618,
       "prepareClimateSec": 0.0,
       "prepareWorldCoverSec": 0.0,
       "prepareGHSLBuiltSec": 0.0,
@@ -50,20 +52,20 @@
       "prepareGDWSec": 0.0,
       "prepareRGISec": 0.0,
       "prepareGLiMSec": 0.0,
-      "computeDescriptorsSec": 531.536,
+      "computeDescriptorsSec": 470.352,
       "computeOsmRegulationSec": 0.0,
-      "totalSec": 621.911,
-      "writeResultSec": 0.019
+      "totalSec": 568.006,
+      "writeResultSec": 0.014
     },
     "stageMaxSec": {
-      "resolveSourceSec": 650.298,
+      "resolveSourceSec": 470.985,
       "ensureLocalHydrologySec": 7323.017,
       "clipDemSec": 6939.533,
       "resampleDemSec": 294.503,
-      "deriveHydrologySec": 1125.181,
-      "evaluatePointsSec": 52.108,
+      "deriveHydrologySec": 695.354,
+      "evaluatePointsSec": 40.235,
       "analyzeCandidatesSec": 0.288,
-      "buildWatershedMaskSec": 392.827,
+      "buildWatershedMaskSec": 232.667,
       "buildWatershedGeometrySec": 30.602,
       "prepareClimateSec": 0.0,
       "prepareWorldCoverSec": 0.0,
@@ -72,10 +74,10 @@
       "prepareGDWSec": 0.0,
       "prepareRGISec": 0.0,
       "prepareGLiMSec": 0.0,
-      "computeDescriptorsSec": 3554.815,
+      "computeDescriptorsSec": 2763.991,
       "computeOsmRegulationSec": 0.0,
       "totalSec": 8352.322,
-      "writeResultSec": 6.076
+      "writeResultSec": 2.175
     }
   }
 }
