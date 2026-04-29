@@ -498,6 +498,125 @@ def write_jsonl(path: Path, rows: list[dict[str, Any]]) -> None:
             handle.write(json.dumps(row, ensure_ascii=False) + "\n")
 
 
+DEBIT_DERIVED_MODEL_FEATURE_NAMES = (
+    "precip7dWeeklyClimatologyRatio",
+    "precip30dMonthlyClimatologyRatio",
+    "api93MonthlyClimatologyRatio",
+    "runoffPrecip7dSignal",
+    "runoffPrecip30dSignal",
+    "flashFlood7dSignal",
+    "basinPrecipVolume30dProxy",
+    "rainOnSnow7dSignal",
+    "snowmeltDegreeDay14dSignal",
+    "highElevationSnowmeltSignal",
+    "canyonHistoryConfidence",
+    "massifHistoryConfidence",
+    "regionHistoryConfidence",
+    "canyonHighPriorLift",
+    "canyonLowPriorLift",
+    "massifHighPriorLift",
+    "regionHighPriorLift",
+    "canyonPriorEntropy",
+    "highLowPriorSpread",
+)
+
+
+def _model_feature_number(row: dict[str, Any], key: str) -> float | None:
+    value = row.get(key)
+    if value is None:
+        return None
+    if isinstance(value, bool):
+        return 1.0 if value else 0.0
+    try:
+        numeric_value = float(value)
+    except (TypeError, ValueError):
+        return None
+    return numeric_value if math.isfinite(numeric_value) else None
+
+
+def _model_ratio(numerator: float | None, denominator: float | None) -> float | None:
+    if numerator is None or denominator is None or abs(denominator) < 1e-9:
+        return None
+    return round(numerator / denominator, 6)
+
+
+def _model_product(*values: float | None) -> float | None:
+    result = 1.0
+    for value in values:
+        if value is None:
+            return None
+        result *= value
+    return round(result, 6)
+
+
+def _history_confidence(count: float | None, strength: float) -> float:
+    if count is None or count <= 0.0:
+        return 0.0
+    return round(count / (count + strength), 6)
+
+
+def _prior_entropy(*probabilities: float | None) -> float | None:
+    values = [value for value in probabilities if value is not None and value > 0.0]
+    total = sum(values)
+    if total <= 0.0:
+        return None
+    entropy = -sum((value / total) * math.log(value / total) for value in values)
+    return round(entropy / math.log(len(probabilities)), 6) if len(probabilities) > 1 else 0.0
+
+
+def compute_debit_derived_model_features(row: dict[str, Any]) -> dict[str, float | None]:
+    mean_annual_precip = _model_feature_number(row, "meanAnnualPrecipMm")
+    weekly_climatology = mean_annual_precip / 52.1775 if mean_annual_precip is not None else None
+    monthly_climatology = mean_annual_precip / 12.0 if mean_annual_precip is not None else None
+
+    precip_7d = _model_feature_number(row, "precip_7d_mm")
+    precip_30d = _model_feature_number(row, "precip_30d_mm")
+    api_93 = _model_feature_number(row, "antecedent_precipitation_index_daily_93")
+    max_precip_7d = _model_feature_number(row, "max_daily_precip_7d_mm")
+    rain_7d = _model_feature_number(row, "rain_7d_mm")
+    snowfall_14d = _model_feature_number(row, "snowfall_14d_cm")
+    positive_degree_days_14d = _model_feature_number(row, "positive_degree_days_14d")
+    runoff_potential = _model_feature_number(row, "runoffPotentialIndex")
+    flashiness = _model_feature_number(row, "watershedFlashinessProxy")
+    basin_area = _model_feature_number(row, "basinAreaRasterKm2") or _model_feature_number(row, "upstreamCatchmentAreaKm2")
+    fraction_above_1500m = _model_feature_number(row, "fractionAbove1500m")
+
+    region_prior_high = _model_feature_number(row, "regionPriorHigh")
+    massif_prior_high = _model_feature_number(row, "massifPriorHigh")
+    canyon_prior_high = _model_feature_number(row, "canyonPriorHigh")
+    canyon_prior_medium = _model_feature_number(row, "canyonPriorMedium")
+    canyon_prior_low = _model_feature_number(row, "canyonPriorLow")
+    massif_prior_low = _model_feature_number(row, "massifPriorLow")
+
+    return {
+        "precip7dWeeklyClimatologyRatio": _model_ratio(precip_7d, weekly_climatology),
+        "precip30dMonthlyClimatologyRatio": _model_ratio(precip_30d, monthly_climatology),
+        "api93MonthlyClimatologyRatio": _model_ratio(api_93, monthly_climatology),
+        "runoffPrecip7dSignal": _model_product(precip_7d, runoff_potential),
+        "runoffPrecip30dSignal": _model_product(precip_30d, runoff_potential),
+        "flashFlood7dSignal": _model_product(max_precip_7d, flashiness),
+        "basinPrecipVolume30dProxy": _model_product(precip_30d, basin_area),
+        "rainOnSnow7dSignal": _model_product(rain_7d, snowfall_14d),
+        "snowmeltDegreeDay14dSignal": _model_product(positive_degree_days_14d, snowfall_14d),
+        "highElevationSnowmeltSignal": _model_product(positive_degree_days_14d, snowfall_14d, fraction_above_1500m),
+        "canyonHistoryConfidence": _history_confidence(_model_feature_number(row, "canyonPastObsCount"), 10.0),
+        "massifHistoryConfidence": _history_confidence(_model_feature_number(row, "massifPastObsCount"), 20.0),
+        "regionHistoryConfidence": _history_confidence(_model_feature_number(row, "regionPastObsCount"), 30.0),
+        "canyonHighPriorLift": round(canyon_prior_high - massif_prior_high, 6) if canyon_prior_high is not None and massif_prior_high is not None else None,
+        "canyonLowPriorLift": round(canyon_prior_low - massif_prior_low, 6) if canyon_prior_low is not None and massif_prior_low is not None else None,
+        "massifHighPriorLift": round(massif_prior_high - region_prior_high, 6) if massif_prior_high is not None and region_prior_high is not None else None,
+        "regionHighPriorLift": round(region_prior_high - (_model_feature_number(row, "globalPriorHigh") or 0.0), 6) if region_prior_high is not None else None,
+        "canyonPriorEntropy": _prior_entropy(canyon_prior_low, canyon_prior_medium, canyon_prior_high),
+        "highLowPriorSpread": round(canyon_prior_high - canyon_prior_low, 6) if canyon_prior_high is not None and canyon_prior_low is not None else None,
+    }
+
+
+def with_debit_derived_model_features(row: dict[str, Any]) -> dict[str, Any]:
+    enriched = dict(row)
+    enriched.update(compute_debit_derived_model_features(enriched))
+    return enriched
+
+
 def stable_id(prefix: str, *values: Any) -> str:
     normalized = "|".join("" if value is None else str(value) for value in values)
     digest = hashlib.sha1(normalized.encode("utf-8")).hexdigest()[:16]
@@ -1021,6 +1140,8 @@ def normalize_watershed_descriptor_row(row: dict[str, Any]) -> dict[str, Any]:
     normalized: dict[str, Any] = {}
     for key in WATERSHED_DESCRIPTOR_NUMERIC_KEYS:
         normalized[key] = _sanitize_watershed_descriptor_value(key, row.get(key))
+
+    normalized["watershedDescriptorForcedByReview"] = bool(row.get("forcedByReview"))
 
     for status_key, flag_key in WATERSHED_DESCRIPTOR_STATUS_FLAG_MAP.items():
         normalized[flag_key] = row.get(status_key) == "ok"

@@ -31,11 +31,13 @@ The pipeline is split into four steps:
    - retries rate limits / temporary API failures with exponential backoff
 
 4. `build_debit_training_features.py`
-    - joins valid observations with daily weather cache
-    - computes extended daily hydrology features for modelling
-    - adds temporal priors by canyon / massif / region using past observations only
-    - adds heuristic historical flags for regulated and snowmelt-sensitive canyons
-    - adds watershed shape and response-proxy features derived from basin geometry and canyon relief
+     - joins valid observations with daily weather cache
+     - computes extended daily hydrology features for modelling
+     - adds derived hydrology and prior-confidence features used by the model/runtime
+     - adds temporal priors by canyon / massif / region using past observations only
+     - adds heuristic historical flags for regulated and snowmelt-sensitive canyons
+     - adds watershed shape and response-proxy features derived from basin geometry and canyon relief
+     - defaults to the full `weather-archive-v21` daily cache and `batch-run-world` watershed descriptors when present
 
 5. `export_debit_runtime_lookups.py`
    - reads `training_features.jsonl`
@@ -47,11 +49,40 @@ The pipeline is split into four steps:
       - defaults to `3` classes: `LOW`, `MEDIUM`, `HIGH`
       - uses temporal `train / calibration / test` splits for calibrated probability outputs
       - reports `HIGH` threshold policies for balanced and prudent operating modes
+      - reports feature coverage and drops all-missing / constant features unless requested otherwise
 
 7. `export_mobile_embedded_debit_model.py`
-   - trains an embedded `random_forest` model using the full V2.2 feature set
+   - trains an embedded `random_forest` model using the active feature set retained by coverage audit
    - exports `modele_statistique/model.onnx`
    - exports `feature_spec.json`, `canyon_static_features.json`, `runtime_feature_lookups.json` and `thresholds.json`
+
+7b. `export_mobile_ordinal_debit_model.py`
+   - trains a six-level CatBoost ordinal classifier candidate
+   - exports an ONNX model with raw labels `SEC`, `FILET`, `CORRECT`, `GROS`, `TRES_GROS`, `CRUE`
+   - writes LOW/MEDIUM/HIGH ordinal score thresholds for app-side routing
+   - targets candidate validation before replacing `modele_statistique/`
+
+8. `evaluate_debit_model_reliability.py`
+   - compares temporal and cold-canyon validation splits
+   - runs feature ablations to quantify historical priors vs weather vs physical descriptors
+    - tests a canyon-history dropout variant for better cold-start robustness
+    - reports HIGH threshold policies, calibration, history-bucket metrics and high-confidence errors
+
+9. `train_debit_ordinal_model.py`
+   - trains an ordinal regressor on the six ordered debit levels
+   - calibrates LOW/MEDIUM/HIGH thresholds on the calibration split
+   - supports `extra_trees`, `random_forest`, `hist_gradient_boosting`, `catboost` and `catboost_classifier`
+   - currently useful as the stronger teacher/candidate model before mobile export/distillation
+
+10. `build_debit_canyon_day_dataset.py`
+   - aggregates raw observation rows into one consensus target per canyon/day
+   - drops consensus ties and LOW/HIGH contradictions by default
+   - adds `sampleWeight` to reduce domination by heavily reported canyons
+
+11. `dump_opencanyon_reports.py` and `prepare_opencanyon_debit_observations.py`
+    - dump public OpenCanyon reports with all statuses and imported reports included
+    - exclude reports imported from descente-canyon.com while retaining imports from other sources
+    - map conservative exact-name/region matches to local canyon ids for candidate enrichment
 
 ## Example
 
@@ -63,7 +94,16 @@ python scripts/build_debit_training_features.py --output-dir build/debit-pipelin
 python scripts/export_debit_runtime_lookups.py --features-path build/debit-pipeline/training-features/training_features.jsonl --output-dir build/debit-pipeline/runtime-lookups
 python scripts/train_debit_baseline_model.py --features-path build/debit-pipeline/training-features/training_features.jsonl --model random_forest --calibration-method sigmoid
 python scripts/train_debit_baseline_model.py --features-path build/debit-pipeline/training-features/training_features.jsonl --output-dir build/debit-pipeline/model-catboost-v23 --model catboost --calibration-method sigmoid
-python scripts/export_mobile_embedded_debit_model.py --features-path build/debit-pipeline/training-features-v22/training_features.jsonl --output-dir modele_statistique
+python scripts/train_debit_baseline_model.py --features-path build/debit-pipeline/training-features/training_features.jsonl --output-dir build/debit-pipeline/model-catboost-derived-current --model catboost --calibration-method sigmoid
+python scripts/evaluate_debit_model_reliability.py --features-path build/debit-pipeline/training-features/training_features.jsonl --output-dir build/debit-pipeline/model-reliability
+python scripts/train_debit_ordinal_model.py --features-path build/debit-pipeline/training-features/training_features.jsonl --output-dir build/debit-pipeline/model-ordinal-hgb --model hist_gradient_boosting --n-estimators 420 --learning-rate 0.035 --max-depth 10 --max-leaf-nodes 63 --min-samples-leaf 20 --canyon-history-dropout-rate 0.15 --no-class-balanced-weights
+python scripts/train_debit_ordinal_model.py --features-path build/debit-pipeline/training-features/training_features.jsonl --output-dir build/debit-pipeline/model-ordinal-catboost --model catboost_classifier --n-estimators 900 --max-depth 8 --learning-rate 0.035 --l2-leaf-reg 8 --canyon-history-dropout-rate 0.15 --no-class-balanced-weights
+python scripts/build_debit_canyon_day_dataset.py --features-path build/debit-pipeline/training-features/training_features.jsonl --output-dir build/debit-pipeline/training-features-canyon-day
+python scripts/dump_opencanyon_reports.py --output-dir build/opencanyon/reports
+python scripts/prepare_opencanyon_debit_observations.py --reports-path build/opencanyon/reports/opencanyon_reports.jsonl --output-dir build/opencanyon/prepared-debit-observations
+python scripts/merge_debit_observation_sources.py --output-dir build/debit-pipeline/observations-merged
+python scripts/export_mobile_embedded_debit_model.py --features-path build/debit-pipeline/training-features/training_features.jsonl --output-dir modele_statistique --default-policy balanced --canyon-history-dropout-rate 0.15
+python scripts/export_mobile_ordinal_debit_model.py --features-path build/debit-pipeline/training-features/training_features.jsonl --output-dir build/debit-pipeline/mobile-ordinal-catboost-candidate --iterations 900 --depth 8 --learning-rate 0.035 --l2-leaf-reg 8 --canyon-history-dropout-rate 0.15 --default-policy balanced
 ```
 
 To force a fresh debit download, add:

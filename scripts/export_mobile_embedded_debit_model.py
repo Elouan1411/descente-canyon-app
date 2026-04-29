@@ -8,19 +8,30 @@ from pathlib import Path
 from typing import Any
 
 from debit_pipeline_lib import (
+    DEBIT_DERIVED_MODEL_FEATURE_NAMES,
     WATERSHED_DESCRIPTOR_NUMERIC_KEYS,
     WATERSHED_DESCRIPTOR_REGULATION_TYPES,
     WATERSHED_DESCRIPTOR_STATUS_FLAG_MAP,
     load_canyon_lookup,
     load_watershed_descriptors_lookup,
     load_watershed_lookup,
+    with_debit_derived_model_features,
     write_json,
 )
 from export_debit_runtime_lookups import build_runtime_lookup_payload
-from train_debit_baseline_model import NUMERIC_FEATURES
+from train_debit_baseline_model import (
+    NUMERIC_FEATURES,
+    apply_canyon_history_dropout,
+    build_feature_coverage_report,
+    numeric_feature_value,
+    sample_weights,
+    select_model_features,
+)
 
 
-COMPUTED_FEATURE_NAMES = {"month", "monthSin", "monthCos"}
+DEFAULT_FEATURES_PATH = "build/debit-pipeline/training-features/training_features.jsonl"
+DEFAULT_WATERSHED_DESCRIPTORS_PATH = "build/watersheds/batch-run-world/import_ready_watershed_descriptors.json"
+COMPUTED_FEATURE_NAMES = {"month", "monthSin", "monthCos", *DEBIT_DERIVED_MODEL_FEATURE_NAMES}
 STATIC_FEATURE_NAMES = {
     "altitudeDepartM",
     "deniveleM",
@@ -28,6 +39,7 @@ STATIC_FEATURE_NAMES = {
     "cascadeMaxM",
     "upstreamCatchmentAreaKm2",
     "hasWatershed",
+    "watershedDescriptorForcedByReview",
     *WATERSHED_DESCRIPTOR_NUMERIC_KEYS,
     *list(WATERSHED_DESCRIPTOR_STATUS_FLAG_MAP.values()),
     "watershedDescriptorOk",
@@ -71,6 +83,33 @@ STATIC_FEATURE_NAMES = {
     "watershedKirpichTimeProxyMinutes",
     "watershedFlashinessProxy",
     "watershedShapeReliefInteraction",
+}
+BOOLEAN_DEFAULT_FEATURE_NAMES = {
+    "watershedHasGeometry",
+    "watershedDescriptorForcedByReview",
+    "regulatedCatchment",
+    "gdwRegulatedCatchment",
+    "interbasinTransferLikely",
+    "osmRegulationPresent",
+    "osmLikelyHydropowerScheme",
+    *list(WATERSHED_DESCRIPTOR_STATUS_FLAG_MAP.values()),
+    "watershedDescriptorOk",
+    "climateDescriptorOk",
+    "soilDescriptorOk",
+    "hydroLakesDescriptorOk",
+    "gdwDescriptorOk",
+    "geologyDescriptorOk",
+    "imperviousDescriptorOk",
+    "glacierDescriptorOk",
+    "osmRegulationDescriptorOk",
+    "hasWatershedDescriptors",
+    "hasClimateDescriptors",
+    "hasSoilDescriptors",
+    "hasRegulationDescriptors",
+    "hasGeologyDescriptors",
+    "hasImperviousDescriptors",
+    "hasGlacierDescriptors",
+    *[f"dominantRegulationTypeIs{value.title()}" for value in WATERSHED_DESCRIPTOR_REGULATION_TYPES],
 }
 LOOKUP_FEATURE_NAMES = {
     "globalPastObsCount",
@@ -148,7 +187,11 @@ def feature_source(feature_name: str) -> str:
 
 
 def feature_default(feature_name: str) -> float:
-    if feature_name.startswith("historically") or feature_name == "hasWatershed":
+    if (
+        feature_name.startswith("historically")
+        or feature_name == "hasWatershed"
+        or feature_name in BOOLEAN_DEFAULT_FEATURE_NAMES
+    ):
         return 0.0
     if feature_name.endswith("Count"):
         return 0.0
@@ -156,34 +199,37 @@ def feature_default(feature_name: str) -> float:
         return 0.0
     if feature_name in {"monthSin", "monthCos"}:
         return 0.0
+    if feature_name.endswith("Confidence") or feature_name.endswith("Lift") or feature_name.endswith("Entropy") or feature_name.endswith("Spread"):
+        return 0.0
     return -9999.0
 
 
-def feature_spec_payload(labels: list[str]) -> dict[str, Any]:
+def feature_spec_payload(labels: list[str], feature_names: list[str]) -> dict[str, Any]:
     features = [
         {
             "name": feature_name,
             "source": feature_source(feature_name),
             "default": feature_default(feature_name),
         }
-        for feature_name in NUMERIC_FEATURES
+        for feature_name in feature_names
     ]
     return {
         "schemaVersion": 1,
         "labels": labels,
         "features": features,
-        "staticFeatureNames": [feature_name for feature_name in NUMERIC_FEATURES if feature_name in STATIC_FEATURE_NAMES],
-        "lookupFeatureNames": [feature_name for feature_name in NUMERIC_FEATURES if feature_name in LOOKUP_FEATURE_NAMES],
-        "dynamicFeatureNames": [feature_name for feature_name in NUMERIC_FEATURES if feature_name not in STATIC_FEATURE_NAMES and feature_name not in LOOKUP_FEATURE_NAMES],
+        "staticFeatureNames": [feature_name for feature_name in feature_names if feature_name in STATIC_FEATURE_NAMES],
+        "lookupFeatureNames": [feature_name for feature_name in feature_names if feature_name in LOOKUP_FEATURE_NAMES],
+        "dynamicFeatureNames": [feature_name for feature_name in feature_names if feature_name not in STATIC_FEATURE_NAMES and feature_name not in LOOKUP_FEATURE_NAMES],
     }
 
 
-def row_to_vector(row: dict[str, Any]) -> list[float]:
+def row_to_vector(row: dict[str, Any], feature_names: list[str]) -> list[float]:
     values: list[float] = []
-    for feature_name in NUMERIC_FEATURES:
-        raw_value = row.get(feature_name)
-        value = feature_default(feature_name) if raw_value is None else raw_value
-        values.append(float(value))
+    for feature_name in feature_names:
+        value = numeric_feature_value(row.get(feature_name))
+        if value is None:
+            value = feature_default(feature_name)
+        values.append(value)
     return values
 
 
@@ -401,17 +447,38 @@ def compact_runtime_lookup_payload(payload: dict[str, Any]) -> dict[str, Any]:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Export an embedded debit model and mobile runtime artifacts")
-    parser.add_argument("--features-path", default="build/debit-pipeline/training-features-v22/training_features.jsonl")
+    parser.add_argument("--features-path", default=DEFAULT_FEATURES_PATH)
     parser.add_argument("--output-dir", default="modele_statistique")
     parser.add_argument("--canyons-path", default="offline-data/full/room-import/canyons.json")
     parser.add_argument("--watersheds-path", default="offline-data/full/room-import/watersheds.json")
-    parser.add_argument("--watershed-descriptors-path", default="build/watersheds/batch-run/import_ready_watershed_descriptors.json")
+    parser.add_argument("--watershed-descriptors-path", default=DEFAULT_WATERSHED_DESCRIPTORS_PATH)
     parser.add_argument("--calibration-fraction", type=float, default=0.10)
     parser.add_argument("--test-fraction", type=float, default=0.20)
     parser.add_argument("--n-estimators", type=int, default=400)
     parser.add_argument("--max-depth", type=int, default=12)
     parser.add_argument("--min-samples-leaf", type=int, default=3)
+    parser.add_argument(
+        "--canyon-history-dropout-rate",
+        type=float,
+        default=0.0,
+        help="Randomly neutralize canyon-specific history on this fraction of training rows",
+    )
     parser.add_argument("--target-opset", type=int, default=17)
+    parser.add_argument(
+        "--keep-uninformative-features",
+        action="store_true",
+        help="Keep features that are all missing or constant in the training corpus",
+    )
+    parser.add_argument(
+        "--ignore-sample-weights",
+        action="store_true",
+        help="Ignore sampleWeight values present in the feature rows",
+    )
+    parser.add_argument(
+        "--default-policy",
+        choices=["balanced", "prudent", "safety_first"],
+        default="balanced",
+    )
     args = parser.parse_args()
 
     try:
@@ -426,10 +493,23 @@ def main() -> None:
 
     rows = read_jsonl(Path(args.features_path))
     runtime_lookup_payload, runtime_lookup_metadata = build_runtime_lookup_payload(rows)
-    filtered = [row for row in rows if target_three_classes(row.get("niveau")) is not None and row.get("date")]
+    filtered = [
+        with_debit_derived_model_features(row)
+        for row in rows
+        if target_three_classes(row.get("niveau")) is not None and row.get("date")
+    ]
     filtered.sort(key=lambda row: row["date"])
     if len(filtered) < 200:
         raise SystemExit("Not enough rows to export an embedded model")
+
+    feature_coverage = build_feature_coverage_report(filtered, NUMERIC_FEATURES)
+    active_feature_names = select_model_features(
+        NUMERIC_FEATURES,
+        feature_coverage,
+        keep_uninformative_features=args.keep_uninformative_features,
+    )
+    if not active_feature_names:
+        raise SystemExit("No usable numeric features left after coverage filtering")
 
     train_rows, calibration_rows, test_rows = split_temporal_rows(
         filtered,
@@ -437,11 +517,17 @@ def main() -> None:
         test_fraction=args.test_fraction,
     )
 
-    x_train = [row_to_vector(row) for row in train_rows]
+    training_feature_rows = apply_canyon_history_dropout(
+        train_rows,
+        dropout_rate=args.canyon_history_dropout_rate,
+        random_seed=42,
+    )
+
+    x_train = [row_to_vector(row, active_feature_names) for row in training_feature_rows]
     y_train = [target_three_classes(row["niveau"]) for row in train_rows]
-    x_calibration = [row_to_vector(row) for row in calibration_rows]
+    x_calibration = [row_to_vector(row, active_feature_names) for row in calibration_rows]
     y_calibration = [target_three_classes(row["niveau"]) for row in calibration_rows]
-    x_test = [row_to_vector(row) for row in test_rows]
+    x_test = [row_to_vector(row, active_feature_names) for row in test_rows]
     y_test = [target_three_classes(row["niveau"]) for row in test_rows]
 
     model = RandomForestClassifier(
@@ -452,7 +538,9 @@ def main() -> None:
         n_jobs=-1,
         class_weight="balanced_subsample",
     )
-    model.fit(x_train, y_train)
+    train_sample_weights = None if args.ignore_sample_weights else sample_weights(training_feature_rows)
+    fit_kwargs = {"sample_weight": train_sample_weights} if train_sample_weights is not None else {}
+    model.fit(x_train, y_train, **fit_kwargs)
 
     labels = list(model.classes_)
     calibration_probabilities = model.predict_proba(x_calibration)
@@ -500,14 +588,14 @@ def main() -> None:
             "testMetrics": test_metrics,
         }
 
-    sample_input = np.array([row_to_vector(train_rows[0])], dtype=np.float32)
+    sample_input = np.array([row_to_vector(train_rows[0], active_feature_names)], dtype=np.float32)
     onnx_model = to_onnx(model, sample_input, target_opset=args.target_opset)
 
     output_dir = Path(args.output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
     (output_dir / "model.onnx").write_bytes(onnx_model.SerializeToString())
 
-    write_json(output_dir / "feature_spec.json", feature_spec_payload(labels))
+    write_json(output_dir / "feature_spec.json", feature_spec_payload(labels, active_feature_names))
     write_json(
         output_dir / "canyon_static_features.json",
         build_canyon_static_features(
@@ -523,7 +611,7 @@ def main() -> None:
             "schemaVersion": 1,
             "generatedAt": datetime.now(timezone.utc).isoformat(),
             "labels": labels,
-            "defaultPolicy": "safety_first",
+            "defaultPolicy": args.default_policy,
             "policies": {
                 policy_name: {"highThreshold": payload["threshold"]}
                 for policy_name, payload in threshold_policies.items()
@@ -537,9 +625,13 @@ def main() -> None:
             "generatedAt": datetime.now(timezone.utc).isoformat(),
             "model": "random_forest_mobile_embedded_full",
             "targetMode": "three",
+            "canyonHistoryDropoutRate": args.canyon_history_dropout_rate,
+            "usesSampleWeights": train_sample_weights is not None,
             "labels": labels,
-            "featureCount": len(NUMERIC_FEATURES),
-            "features": NUMERIC_FEATURES,
+            "featureCount": len(active_feature_names),
+            "features": active_feature_names,
+            "droppedFeatureCount": len(NUMERIC_FEATURES) - len(active_feature_names),
+            "featureCoverage": feature_coverage,
             "trainRowCount": len(train_rows),
             "calibrationRowCount": len(calibration_rows),
             "testRowCount": len(test_rows),
@@ -554,7 +646,7 @@ def main() -> None:
                     "importance": float(importance),
                 }
                 for feature_name, importance in sorted(
-                    zip(NUMERIC_FEATURES, model.feature_importances_),
+                    zip(active_feature_names, model.feature_importances_),
                     key=lambda item: item[1],
                     reverse=True,
                 )[:20]

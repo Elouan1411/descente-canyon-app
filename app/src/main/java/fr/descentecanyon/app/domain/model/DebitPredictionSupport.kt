@@ -105,6 +105,8 @@ enum class PredictedDebitLevel {
 data class DebitThresholds(
     val defaultPolicy: DebitPredictionPolicy,
     val highThresholdByPolicy: Map<DebitPredictionPolicy, Double>,
+    val lowThresholdByPolicy: Map<DebitPredictionPolicy, Double> = emptyMap(),
+    val targetMode: String = "three",
 )
 
 data class DailyDebitPrediction(

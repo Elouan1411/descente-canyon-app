@@ -30,6 +30,7 @@ class DebitFeatureBuilder @Inject constructor() {
         featureValues += staticFeatures(detail, staticFeatureSet)
         featureValues += weatherFeatures(support.dailyWeather, targetDate)
         featureValues += support.runtimeLookup.featureValues
+        featureValues += derivedFeatures(featureValues)
 
         return featureSpec.features.map { feature ->
             ((featureValues[feature.name] ?: feature.defaultValue).toFloat())
@@ -210,6 +211,87 @@ class DebitFeatureBuilder @Inject constructor() {
         features["precipitationHoursAtObservationDay"] = previousDayRow.precipitationHours
 
         return features
+    }
+
+    private fun derivedFeatures(source: Map<String, Double?>): Map<String, Double?> {
+        val meanAnnualPrecip = source["meanAnnualPrecipMm"]
+        val weeklyClimatology = meanAnnualPrecip?.div(52.1775)
+        val monthlyClimatology = meanAnnualPrecip?.div(12.0)
+        val precip7d = source["precip_7d_mm"]
+        val precip30d = source["precip_30d_mm"]
+        val api93 = source["antecedent_precipitation_index_daily_93"]
+        val maxPrecip7d = source["max_daily_precip_7d_mm"]
+        val rain7d = source["rain_7d_mm"]
+        val snowfall14d = source["snowfall_14d_cm"]
+        val positiveDegreeDays14d = source["positive_degree_days_14d"]
+        val runoffPotential = source["runoffPotentialIndex"]
+        val flashiness = source["watershedFlashinessProxy"]
+        val basinArea = source["basinAreaRasterKm2"] ?: source["upstreamCatchmentAreaKm2"]
+        val fractionAbove1500m = source["fractionAbove1500m"]
+        val regionPriorHigh = source["regionPriorHigh"]
+        val massifPriorHigh = source["massifPriorHigh"]
+        val canyonPriorHigh = source["canyonPriorHigh"]
+        val canyonPriorMedium = source["canyonPriorMedium"]
+        val canyonPriorLow = source["canyonPriorLow"]
+        val massifPriorLow = source["massifPriorLow"]
+
+        return mapOf(
+            "precip7dWeeklyClimatologyRatio" to ratio(precip7d, weeklyClimatology),
+            "precip30dMonthlyClimatologyRatio" to ratio(precip30d, monthlyClimatology),
+            "api93MonthlyClimatologyRatio" to ratio(api93, monthlyClimatology),
+            "runoffPrecip7dSignal" to product(precip7d, runoffPotential),
+            "runoffPrecip30dSignal" to product(precip30d, runoffPotential),
+            "flashFlood7dSignal" to product(maxPrecip7d, flashiness),
+            "basinPrecipVolume30dProxy" to product(precip30d, basinArea),
+            "rainOnSnow7dSignal" to product(rain7d, snowfall14d),
+            "snowmeltDegreeDay14dSignal" to product(positiveDegreeDays14d, snowfall14d),
+            "highElevationSnowmeltSignal" to product(positiveDegreeDays14d, snowfall14d, fractionAbove1500m),
+            "canyonHistoryConfidence" to historyConfidence(source["canyonPastObsCount"], 10.0),
+            "massifHistoryConfidence" to historyConfidence(source["massifPastObsCount"], 20.0),
+            "regionHistoryConfidence" to historyConfidence(source["regionPastObsCount"], 30.0),
+            "canyonHighPriorLift" to difference(canyonPriorHigh, massifPriorHigh),
+            "canyonLowPriorLift" to difference(canyonPriorLow, massifPriorLow),
+            "massifHighPriorLift" to difference(massifPriorHigh, regionPriorHigh),
+            "regionHighPriorLift" to difference(regionPriorHigh, source["globalPriorHigh"] ?: 0.0),
+            "canyonPriorEntropy" to priorEntropy(canyonPriorLow, canyonPriorMedium, canyonPriorHigh),
+            "highLowPriorSpread" to difference(canyonPriorHigh, canyonPriorLow),
+        )
+    }
+
+    private fun ratio(numerator: Double?, denominator: Double?): Double? {
+        return if (numerator == null || denominator == null || kotlin.math.abs(denominator) < 1e-9) {
+            null
+        } else {
+            roundTo(numerator / denominator, 6)
+        }
+    }
+
+    private fun product(vararg values: Double?): Double? {
+        var result = 1.0
+        values.forEach { value ->
+            if (value == null) return null
+            result *= value
+        }
+        return roundTo(result, 6)
+    }
+
+    private fun difference(left: Double?, right: Double?): Double? {
+        return if (left == null || right == null) null else roundTo(left - right, 6)
+    }
+
+    private fun historyConfidence(count: Double?, strength: Double): Double {
+        return if (count == null || count <= 0.0) 0.0 else roundTo(count / (count + strength), 6)
+    }
+
+    private fun priorEntropy(vararg probabilities: Double?): Double? {
+        val values = probabilities.filterNotNull().filter { it > 0.0 }
+        val total = values.sum()
+        if (total <= 0.0 || probabilities.size <= 1) return null
+        val entropy = -values.sumOf { value ->
+            val probability = value / total
+            probability * kotlin.math.ln(probability)
+        }
+        return roundTo(entropy / kotlin.math.ln(probabilities.size.toDouble()), 6)
     }
 
     private fun roundTo(value: Double, decimals: Int): Double {

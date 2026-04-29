@@ -166,9 +166,13 @@ class EmbeddedDebitModelStore @Inject constructor(
 
     private fun ThresholdsDto.toDomain(): DebitThresholds {
         return DebitThresholds(
+            targetMode = targetMode,
             defaultPolicy = defaultPolicy.toPredictionPolicy(),
             highThresholdByPolicy = policies.mapKeys { (key, _) -> key.toPredictionPolicy() }
                 .mapValues { (_, value) -> value.highThreshold },
+            lowThresholdByPolicy = policies.mapNotNull { (key, value) ->
+                value.lowThreshold?.let { key.toPredictionPolicy() to it }
+            }.toMap(),
         )
     }
 
@@ -282,6 +286,7 @@ private data class FeatureDto(
 
 @Serializable
 private data class ThresholdsDto(
+    val targetMode: String = "three",
     val defaultPolicy: String,
     val policies: Map<String, ThresholdPolicyDto> = emptyMap(),
 )
@@ -289,6 +294,7 @@ private data class ThresholdsDto(
 @Serializable
 private data class ThresholdPolicyDto(
     val highThreshold: Double,
+    val lowThreshold: Double? = null,
 )
 
 @Serializable

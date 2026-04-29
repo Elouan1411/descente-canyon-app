@@ -1,15 +1,19 @@
 from __future__ import annotations
 
 import argparse
+import bisect
 import itertools
 import json
 import math
 from collections import defaultdict
-from datetime import datetime, timezone
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
 
 from debit_pipeline_lib import (
+    compute_debit_derived_model_features,
+    compute_watershed_morphology_features,
+    compute_watershed_response_proxy_features,
     compute_daily_precipitation_features,
     load_canyon_lookup,
     load_watershed_descriptors_lookup,
@@ -21,6 +25,11 @@ from debit_pipeline_lib import (
 )
 
 
+DEFAULT_WEATHER_DAILY_PATH = "build/debit-pipeline/weather-archive-v21/weather_daily_rows.jsonl"
+LEGACY_WEATHER_DAILY_PATH = "build/debit-pipeline/weather-archive/weather_daily_rows.jsonl"
+DEFAULT_WATERSHED_DESCRIPTORS_PATH = "build/watersheds/batch-run-world/import_ready_watershed_descriptors.json"
+LEGACY_WATERSHED_DESCRIPTORS_PATH = "build/watersheds/batch-run/import_ready_watershed_descriptors.json"
+WEATHER_FEATURE_LOOKBACK_DAYS = 366
 TARGET_BUCKETS = ("LOW", "MEDIUM", "HIGH")
 REGULATED_KEYWORDS = (
     "barrage",
@@ -127,25 +136,67 @@ def last_daily_row_before(rows: list[dict[str, Any]], observation_date: str) -> 
     return selected
 
 
+def daily_rows_before_observation(
+    rows: list[dict[str, Any]],
+    row_dates: list[str],
+    observation_date: str,
+) -> tuple[list[dict[str, Any]], dict[str, Any] | None]:
+    end_index = bisect.bisect_left(row_dates, observation_date)
+    if end_index <= 0:
+        return [], None
+
+    start_date = (date.fromisoformat(observation_date) - timedelta(days=WEATHER_FEATURE_LOOKBACK_DAYS)).isoformat()
+    start_index = bisect.bisect_left(row_dates, start_date)
+    return rows[start_index:end_index], rows[end_index - 1]
+
+
+def resolve_default_input_path(raw_path: str, default_path: str, fallback_path: str) -> Path:
+    path = Path(raw_path)
+    if raw_path == default_path and not path.exists():
+        fallback = Path(fallback_path)
+        if fallback.exists():
+            return fallback
+    return path
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Build training features from valid debit observations and daily weather cache")
     parser.add_argument("--observations-path", default="build/debit-pipeline/observations/valid_debit_observations.jsonl")
     parser.add_argument("--observation-windows-path", default="build/debit-pipeline/weather-planning/observation_weather_windows.jsonl")
     parser.add_argument("--merged-windows-path", default="build/debit-pipeline/weather-planning/merged_weather_windows.jsonl")
-    parser.add_argument("--weather-daily-path", default="build/debit-pipeline/weather-archive/weather_daily_rows.jsonl")
+    parser.add_argument("--weather-daily-path", default=DEFAULT_WEATHER_DAILY_PATH)
     parser.add_argument("--canyons-path", default="offline-data/full/room-import/canyons.json")
     parser.add_argument("--watersheds-path", default="offline-data/full/room-import/watersheds.json")
-    parser.add_argument("--watershed-descriptors-path", default="build/watersheds/batch-run/import_ready_watershed_descriptors.json")
+    parser.add_argument("--watershed-descriptors-path", default=DEFAULT_WATERSHED_DESCRIPTORS_PATH)
     parser.add_argument("--output-dir", default="build/debit-pipeline/training-features")
     args = parser.parse_args()
 
     observations = read_jsonl(Path(args.observations_path))
     observation_windows = read_jsonl(Path(args.observation_windows_path))
     merged_windows = read_jsonl(Path(args.merged_windows_path))
-    weather_rows = read_jsonl(Path(args.weather_daily_path))
+    weather_daily_path = resolve_default_input_path(
+        args.weather_daily_path,
+        DEFAULT_WEATHER_DAILY_PATH,
+        LEGACY_WEATHER_DAILY_PATH,
+    )
+    watershed_descriptors_path = resolve_default_input_path(
+        args.watershed_descriptors_path,
+        DEFAULT_WATERSHED_DESCRIPTORS_PATH,
+        LEGACY_WATERSHED_DESCRIPTORS_PATH,
+    ) if args.watershed_descriptors_path else None
+
+    weather_rows = read_jsonl(weather_daily_path)
     canyon_lookup = load_canyon_lookup(Path(args.canyons_path))
     watershed_lookup = load_watershed_lookup(Path(args.watersheds_path))
-    watershed_descriptors_by_canyon = load_watershed_descriptors_lookup(Path(args.watershed_descriptors_path) if args.watershed_descriptors_path else None)
+    watershed_descriptors_by_canyon = load_watershed_descriptors_lookup(watershed_descriptors_path)
+    watershed_static_features_by_canyon: dict[int, dict[str, Any]] = {}
+    for canyon_id, canyon in canyon_lookup.items():
+        watershed = watershed_lookup.get(canyon_id)
+        watershed_morphology = compute_watershed_morphology_features(watershed)
+        watershed_static_features_by_canyon[canyon_id] = {
+            **watershed_morphology,
+            **compute_watershed_response_proxy_features(canyon, watershed, watershed_morphology),
+        }
 
     observation_window_by_id = {row["observationId"]: row for row in observation_windows}
     observation_to_merged: dict[str, dict[str, Any]] = {}
@@ -156,8 +207,10 @@ def main() -> None:
     weather_by_merged_window: dict[str, list[dict[str, Any]]] = defaultdict(list)
     for row in weather_rows:
         weather_by_merged_window[row["mergedWindowId"]].append(row)
-    for rows in weather_by_merged_window.values():
+    weather_dates_by_merged_window: dict[str, list[str]] = {}
+    for merged_window_id, rows in weather_by_merged_window.items():
         rows.sort(key=lambda item: item["date"])
+        weather_dates_by_merged_window[merged_window_id] = [row["date"] for row in rows]
 
     observations_sorted = sorted(
         observations,
@@ -204,7 +257,11 @@ def main() -> None:
             canyon = canyon_lookup.get(canyon_id, {})
             watershed = watershed_lookup.get(canyon_id)
             observation_date = observation.get("date")
-            latest_weather = last_daily_row_before(daily_rows, observation_date) if observation_date else None
+            feature_daily_rows, latest_weather = daily_rows_before_observation(
+                daily_rows,
+                weather_dates_by_merged_window.get(merged_window["mergedWindowId"], []),
+                observation_date,
+            ) if observation_date else ([], None)
             observation_month = int(observation["date"].split("-")[1]) if observation.get("date") else None
             region_key = canyon.get("region") or "__UNKNOWN_REGION__"
             massif_key = canyon.get("massif") or "__UNKNOWN_MASSIF__"
@@ -244,11 +301,11 @@ def main() -> None:
                 "altitudeDepartM": canyon.get("altitudeDepart"),
                 "deniveleM": canyon.get("denivele"),
                 "longueurM": canyon.get("longueur"),
-            "cascadeMaxM": canyon.get("cascadeMax"),
-            "upstreamCatchmentAreaKm2": watershed.get("upstreamCatchmentAreaKm2") if watershed else None,
-            "hasWatershed": watershed is not None,
-            "commentText": observation.get("comment"),
-            "commentTokenCount": len(normalize_text(observation.get("comment")).split()) if observation.get("comment") else 0,
+                "cascadeMaxM": canyon.get("cascadeMax"),
+                "upstreamCatchmentAreaKm2": watershed.get("upstreamCatchmentAreaKm2") if watershed else None,
+                "hasWatershed": watershed is not None,
+                "commentText": observation.get("comment"),
+                "commentTokenCount": len(normalize_text(observation.get("comment")).split()) if observation.get("comment") else 0,
                 "globalPastObsCount": counter_total(global_class_counts),
                 "regionPastObsCount": counter_total(region_class_counts[region_key]),
                 "massifPastObsCount": counter_total(massif_class_counts[massif_key]),
@@ -277,10 +334,10 @@ def main() -> None:
                 "historicallySnowmeltCanyon": canyon_history["snowmeltCount"] >= 2,
                 "historicallyAtypicalCanyon": canyon_history["regulatedCount"] >= 2 or canyon_history["snowmeltCount"] >= 2,
             }
-            feature_row.update(watershed_descriptors_by_canyon.get(canyon_id, {}))
+            feature_row.update(watershed_static_features_by_canyon.get(canyon_id, {}))
             feature_row.update(watershed_descriptors_by_canyon.get(canyon_id, {}))
             if observation_date is not None:
-                feature_row.update(compute_daily_precipitation_features(daily_rows, observation_date))
+                feature_row.update(compute_daily_precipitation_features(feature_daily_rows, observation_date))
             if latest_weather is not None:
                 feature_row.update(
                     {
@@ -293,6 +350,7 @@ def main() -> None:
                         "weatherTimezone": latest_weather.get("timezone"),
                     }
                 )
+            feature_row.update(compute_debit_derived_model_features(feature_row))
             group_feature_rows.append(feature_row)
             processed_group_observations.append(
                 (observation, canyon_id, region_key, massif_key, target_bucket or "", signal_flags)
@@ -333,8 +391,9 @@ def main() -> None:
             "generatedAt": datetime.now(timezone.utc).isoformat(),
             "featureRowCount": len(feature_rows),
             "skippedObservationCount": len(skipped),
+            "weatherDailyPath": str(weather_daily_path),
             "watershedDescriptorCount": len(watershed_descriptors_by_canyon),
-            "watershedDescriptorsPath": str(resolve_watershed_descriptors_path(Path(args.watershed_descriptors_path))) if args.watershed_descriptors_path else None,
+            "watershedDescriptorsPath": str(resolve_watershed_descriptors_path(watershed_descriptors_path)) if watershed_descriptors_path else None,
             "files": {
                 "trainingFeatures": "training_features.jsonl",
                 "skipped": "skipped_observations.json",

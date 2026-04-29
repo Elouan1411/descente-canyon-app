@@ -44,15 +44,21 @@ class OnnxDebitPredictor @Inject constructor(
                     val probabilitiesByLabel = extractProbabilities(result, featureSpec.labels)
                     val highThreshold = thresholds.highThresholdByPolicy[policy]
                         ?: error("Missing threshold for policy $policy")
-                    val normalized = mapOf(
-                        PredictedDebitLevel.HIGH to (probabilitiesByLabel["HIGH"] ?: 0.0),
-                        PredictedDebitLevel.LOW to (probabilitiesByLabel["LOW"] ?: 0.0),
-                        PredictedDebitLevel.MEDIUM to (probabilitiesByLabel["MEDIUM"] ?: 0.0),
-                    )
-                    val level = when {
-                        normalized.getValue(PredictedDebitLevel.HIGH) >= highThreshold -> PredictedDebitLevel.HIGH
-                        normalized.getValue(PredictedDebitLevel.LOW) >= normalized.getValue(PredictedDebitLevel.MEDIUM) -> PredictedDebitLevel.LOW
-                        else -> PredictedDebitLevel.MEDIUM
+                    val ordinalLowThreshold = thresholds.lowThresholdByPolicy[policy]
+                    val normalized = threeClassProbabilities(probabilitiesByLabel)
+                    val level = if (ordinalLowThreshold != null && hasSixOrdinalLabels(probabilitiesByLabel)) {
+                        val ordinalScore = expectedOrdinalScore(probabilitiesByLabel)
+                        when {
+                            ordinalScore >= highThreshold -> PredictedDebitLevel.HIGH
+                            ordinalScore < ordinalLowThreshold -> PredictedDebitLevel.LOW
+                            else -> PredictedDebitLevel.MEDIUM
+                        }
+                    } else {
+                        when {
+                            normalized.getValue(PredictedDebitLevel.HIGH) >= highThreshold -> PredictedDebitLevel.HIGH
+                            normalized.getValue(PredictedDebitLevel.LOW) >= normalized.getValue(PredictedDebitLevel.MEDIUM) -> PredictedDebitLevel.LOW
+                            else -> PredictedDebitLevel.MEDIUM
+                        }
                     }
                     DailyDebitPrediction(
                         date = date,
@@ -63,6 +69,32 @@ class OnnxDebitPredictor @Inject constructor(
                     )
                 }
             }
+        }
+    }
+
+    private fun hasSixOrdinalLabels(probabilitiesByLabel: Map<String, Double>): Boolean {
+        return ORDINAL_RANK_BY_LABEL.keys.all { label -> probabilitiesByLabel.containsKey(label) }
+    }
+
+    private fun expectedOrdinalScore(probabilitiesByLabel: Map<String, Double>): Double {
+        return ORDINAL_RANK_BY_LABEL.entries.sumOf { (label, rank) ->
+            (probabilitiesByLabel[label] ?: 0.0) * rank
+        }
+    }
+
+    private fun threeClassProbabilities(probabilitiesByLabel: Map<String, Double>): Map<PredictedDebitLevel, Double> {
+        return if (hasSixOrdinalLabels(probabilitiesByLabel)) {
+            mapOf(
+                PredictedDebitLevel.LOW to ((probabilitiesByLabel["SEC"] ?: 0.0) + (probabilitiesByLabel["FILET"] ?: 0.0)),
+                PredictedDebitLevel.MEDIUM to (probabilitiesByLabel["CORRECT"] ?: 0.0),
+                PredictedDebitLevel.HIGH to ((probabilitiesByLabel["GROS"] ?: 0.0) + (probabilitiesByLabel["TRES_GROS"] ?: 0.0) + (probabilitiesByLabel["CRUE"] ?: 0.0)),
+            )
+        } else {
+            mapOf(
+                PredictedDebitLevel.HIGH to (probabilitiesByLabel["HIGH"] ?: 0.0),
+                PredictedDebitLevel.LOW to (probabilitiesByLabel["LOW"] ?: 0.0),
+                PredictedDebitLevel.MEDIUM to (probabilitiesByLabel["MEDIUM"] ?: 0.0),
+            )
         }
     }
 
@@ -115,5 +147,16 @@ class OnnxDebitPredictor @Inject constructor(
             is DoubleArray -> labels.zip(raw.toList()).toMap()
             else -> null
         }
+    }
+
+    companion object {
+        private val ORDINAL_RANK_BY_LABEL = mapOf(
+            "SEC" to 0.0,
+            "FILET" to 1.0,
+            "CORRECT" to 2.0,
+            "GROS" to 3.0,
+            "TRES_GROS" to 4.0,
+            "CRUE" to 5.0,
+        )
     }
 }

@@ -5,7 +5,13 @@ import ai.onnxruntime.OnnxSequence
 import ai.onnxruntime.OnnxTensor
 import ai.onnxruntime.OrtEnvironment
 import java.nio.FloatBuffer
+import java.nio.file.Files
 import java.nio.file.Paths
+import kotlinx.serialization.json.Json
+import kotlinx.serialization.json.contentOrNull
+import kotlinx.serialization.json.jsonArray
+import kotlinx.serialization.json.jsonObject
+import kotlinx.serialization.json.jsonPrimitive
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertNotNull
@@ -14,14 +20,15 @@ import org.junit.Test
 class OnnxModelContractTest {
 
     @Test
-    fun `model accepts 83 features and exposes probability output`() {
+    fun `model accepts exported feature count and exposes probability output`() {
         val modelPath = Paths.get("..", "modele_statistique", "model.onnx").normalize().toAbsolutePath().toString()
+        val spec = exportedFeatureSpec()
+        val featureCount = spec.featureCount
         val environment = OrtEnvironment.getEnvironment()
         val session = environment.createSession(modelPath, ai.onnxruntime.OrtSession.SessionOptions())
 
         session.use {
             val inputName = session.inputNames.single()
-            val featureCount = 83
             val tensor = OnnxTensor.createTensor(
                 environment,
                 FloatBuffer.wrap(FloatArray(featureCount)),
@@ -32,11 +39,26 @@ class OnnxModelContractTest {
                     assertFalse(!result.iterator().hasNext())
                     val probabilityMap = result.firstNotNullOfOrNull { (_, value) -> extractProbabilities(value) }
                     assertNotNull(probabilityMap)
-                    assertEquals(setOf("HIGH", "LOW", "MEDIUM"), probabilityMap!!.keys)
+                    assertEquals(spec.labels.toSet(), probabilityMap!!.keys)
                 }
             }
         }
     }
+
+    private fun exportedFeatureSpec(): ExportedFeatureSpec {
+        val specPath = Paths.get("..", "modele_statistique", "feature_spec.json").normalize().toAbsolutePath()
+        val payload = Files.readString(specPath)
+        val root = Json.parseToJsonElement(payload).jsonObject
+        return ExportedFeatureSpec(
+            labels = root.getValue("labels").jsonArray.mapNotNull { it.jsonPrimitive.contentOrNull },
+            featureCount = root.getValue("features").jsonArray.size,
+        )
+    }
+
+    private data class ExportedFeatureSpec(
+        val labels: List<String>,
+        val featureCount: Int,
+    )
 
     private fun extractProbabilities(value: ai.onnxruntime.OnnxValue): Map<String, Double>? {
         return when (value) {
