@@ -1,6 +1,6 @@
 # Preparation MERIT Hydro
 
-Ce document decrit la preparation minimale des rasters `MERIT Hydro` pour lancer `scripts/compute_entry_watersheds.py`.
+Ce document decrit la preparation minimale des rasters `MERIT Hydro` pour lancer `scripts/watersheds/compute_entry_watersheds.py`.
 
 ## Donnees a preparer
 
@@ -53,7 +53,7 @@ Sous QGIS, tu peux faire la meme chose via `Raster > Divers > Construire un rast
 Commence par quelques canyons multi-entrees pour verifier le comportement:
 
 ```bash
-python scripts/compute_entry_watersheds.py \
+python scripts/watersheds/compute_entry_watersheds.py \
   --upa-raster D:/gis/merit/vrt/merit_upa.vrt \
   --flowdir-raster D:/gis/merit/vrt/merit_dir.vrt \
   --elevation-raster D:/gis/merit/vrt/merit_elv.vrt \
@@ -82,7 +82,7 @@ Ensuite, ouvre dans QGIS:
 Quand le smoke test est bon:
 
 ```bash
-python scripts/compute_entry_watersheds.py \
+python scripts/watersheds/compute_entry_watersheds.py \
   --upa-raster D:/gis/merit/vrt/merit_upa.vrt \
   --flowdir-raster D:/gis/merit/vrt/merit_dir.vrt \
   --elevation-raster D:/gis/merit/vrt/merit_elv.vrt \

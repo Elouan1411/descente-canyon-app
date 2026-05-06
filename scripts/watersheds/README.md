@@ -42,7 +42,7 @@ Strategie hybride France IGN / Europe Copernicus: voir `scripts/watersheds/HYBRI
 ## Execution type
 
 ```bash
-python scripts/compute_entry_watersheds.py \
+python scripts/watersheds/compute_entry_watersheds.py \
   --upa-raster D:/gis/merit/upa.vrt \
   --flowdir-raster D:/gis/merit/dir.vrt \
   --elevation-raster D:/gis/merit/elv.vrt \
@@ -52,7 +52,7 @@ python scripts/compute_entry_watersheds.py \
 Pour cibler quelques canyons pendant le debug:
 
 ```bash
-python scripts/compute_entry_watersheds.py \
+python scripts/watersheds/compute_entry_watersheds.py \
   --upa-raster D:/gis/merit/upa.vrt \
   --flowdir-raster D:/gis/merit/dir.vrt \
   --elevation-raster D:/gis/merit/elv.vrt \
@@ -63,7 +63,7 @@ python scripts/compute_entry_watersheds.py \
 Verification interne sans raster reel:
 
 ```bash
-python scripts/compute_entry_watersheds.py --self-check
+python scripts/watersheds/compute_entry_watersheds.py --self-check
 ```
 
 ## Sorties

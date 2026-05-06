@@ -1,6 +1,6 @@
 # Runtime Feature Lookups
 
-`export_debit_runtime_lookups.py` converts `training_features.jsonl` into a compact lookup bundle that can be embedded in the Android app.
+`export_runtime_lookups.py` converts `training_features.jsonl` into a compact lookup bundle that can be embedded in the Android app.
 
 ## Output
 
@@ -28,7 +28,7 @@ The `canyons` map is designed to feed the model feature builder directly for the
 ## Example
 
 ```bash
-python scripts/export_debit_runtime_lookups.py \
+python scripts/debits/export_runtime_lookups.py \
   --features-path build/debit-pipeline/training-features/training_features.jsonl \
   --output-dir build/debit-pipeline/runtime-lookups
 ```

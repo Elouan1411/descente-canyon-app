@@ -28,7 +28,7 @@ La meilleure strategie pratique pour ce projet est :
 - telecharger les departements francais utiles depuis `https://geoservices.ign.fr/rgealti`
 - construire une mosaique/VRT `RGE ALTI 5m`
 - calculer localement `flow direction`, `flow accumulation`, puis `UPA`
-- relancer `scripts/compute_entry_watersheds.py` sur les canyons francais avec ces rasters derives
+- relancer `scripts/watersheds/compute_entry_watersheds.py` sur les canyons francais avec ces rasters derives
 
 ### 2. France fallback leger avec BD ALTI 25m
 
@@ -45,16 +45,16 @@ La meilleure strategie pratique pour ce projet est :
 - telecharger les geocells 1x1 degre utiles
 - construire une mosaique/VRT Copernicus
 - calculer `flow direction`, `flow accumulation`, puis `UPA`
-- relancer `scripts/compute_entry_watersheds.py` sur les pays hors France
+- relancer `scripts/watersheds/compute_entry_watersheds.py` sur les pays hors France
 
 ### 5. Fusion des runs
 
-Utiliser `scripts/merge_country_watershed_runs.py` pour preferer IGN en France et Copernicus ailleurs.
+Utiliser `scripts/watersheds/merge_country_runs.py` pour preferer IGN en France et Copernicus ailleurs.
 
 Exemple :
 
 ```bash
-python scripts/merge_country_watershed_runs.py \
+python scripts/watersheds/merge_country_runs.py \
   --country-run "France=build/watersheds/ign-france-run" \
   --fallback-run "build/watersheds/copernicus-europe-run" \
   --fallback-run "build/watersheds/merit-main-run" \
@@ -63,30 +63,30 @@ python scripts/merge_country_watershed_runs.py \
 
 ## Scripts utiles
 
-- plan des sources: `scripts/plan_hybrid_watershed_sources.py`
-- catalogue IGN exact: `scripts/fetch_ign_alti_catalog.py`
-- manifeste IGN priorise: `scripts/plan_ign_downloads.py`
-- preparation telechargement/extraction/VRT IGN: `scripts/prepare_ign_department_dem.py`
-- preparation generique pays par manifest: `scripts/prepare_national_dem.py`
-- preparation Italie nationale TINITALY: `scripts/prepare_tinitaly_dem.py`
-- preparation Madeira DTM 5m: `scripts/prepare_madeira_dem.py`
-- plan des geocells Copernicus: `scripts/plan_copernicus_geocells.py`
-- derive IGN hydrology rasters: `scripts/derive_ign_hydrology.py`
-- workflow local canyon sur DEM IGN: `scripts/run_local_ign_canyon_workflow.py`
-- batch resumable pour toute la base: `scripts/run_catchment_batch.py`
-- telechargement Copernicus a la volee: `scripts/prepare_copernicus_dem.py`
-- fallback MERIT IHU global public: `scripts/prepare_merit_ihu_global.py`
-- sources nationales hors France par manifest: `scripts/prepare_national_dem.py`
-- calcul des entrees: `scripts/compute_entry_watersheds.py`
-- diagnostic des cas suspects: `scripts/analyze_watershed_suspicious_cases.py`
-- fusion des runs: `scripts/merge_country_watershed_runs.py`
+- plan des sources: `scripts/watersheds/plan_hybrid_sources.py`
+- catalogue IGN exact: `scripts/watersheds/sources/fetch_ign_alti_catalog.py`
+- manifeste IGN priorise: `scripts/watersheds/sources/plan_ign_downloads.py`
+- preparation telechargement/extraction/VRT IGN: `scripts/watersheds/sources/prepare_ign_department_dem.py`
+- preparation generique pays par manifest: `scripts/watersheds/sources/prepare_national_dem.py`
+- preparation Italie nationale TINITALY: `scripts/watersheds/sources/prepare_tinitaly_dem.py`
+- preparation Madeira DTM 5m: `scripts/watersheds/sources/prepare_madeira_dem.py`
+- plan des geocells Copernicus: `scripts/watersheds/sources/plan_copernicus_geocells.py`
+- derive IGN hydrology rasters: `scripts/watersheds/sources/derive_ign_hydrology.py`
+- workflow local canyon sur DEM IGN: `scripts/watersheds/run_local_ign_workflow.py`
+- batch resumable pour toute la base: `scripts/watersheds/run_catchment_batch.py`
+- telechargement Copernicus a la volee: `scripts/watersheds/sources/prepare_copernicus_dem.py`
+- fallback MERIT IHU global public: `scripts/watersheds/sources/prepare_merit_ihu_global.py`
+- sources nationales hors France par manifest: `scripts/watersheds/sources/prepare_national_dem.py`
+- calcul des entrees: `scripts/watersheds/compute_entry_watersheds.py`
+- diagnostic des cas suspects: `scripts/watersheds/analyze_suspicious_cases.py`
+- fusion des runs: `scripts/watersheds/merge_country_runs.py`
 
 ## Preparation concrete des sources
 
 ### IGN
 
 ```bash
-python scripts/fetch_ign_alti_catalog.py
+python scripts/watersheds/sources/fetch_ign_alti_catalog.py
 ```
 
 Les liens exacts seront ecrits dans:
@@ -98,7 +98,7 @@ Les liens exacts seront ecrits dans:
 Pour obtenir les URLs priorisees sur les departements utiles a la base canyon :
 
 ```bash
-python scripts/plan_ign_downloads.py
+python scripts/watersheds/sources/plan_ign_downloads.py
 ```
 
 Le manifeste sera ecrit dans :
@@ -108,7 +108,7 @@ Le manifeste sera ecrit dans :
 Pour deriver les rasters hydrologiques a partir d'un DEM IGN deja mosaque :
 
 ```bash
-python scripts/derive_ign_hydrology.py \
+python scripts/watersheds/sources/derive_ign_hydrology.py \
   --dem D:/gis/ign/vrt/ign_rgealti_5m.vrt \
   --output-dir build/watersheds/ign-france-hydrology
 ```
@@ -116,7 +116,7 @@ python scripts/derive_ign_hydrology.py \
 Puis lancer le calcul des bassins versants avec les rasters derives :
 
 ```bash
-python scripts/compute_entry_watersheds.py \
+python scripts/watersheds/compute_entry_watersheds.py \
   --upa-raster build/watersheds/ign-france-hydrology/ign_upstream_area_km2.tif \
   --flowdir-raster build/watersheds/ign-france-hydrology/ign_d8_pointer_esri.tif \
   --elevation-raster build/watersheds/ign-france-hydrology/ign_breached_dem.tif \
@@ -126,7 +126,7 @@ python scripts/compute_entry_watersheds.py \
 Exemple de preparation generalisee par departement :
 
 ```bash
-python scripts/prepare_ign_department_dem.py \
+python scripts/watersheds/sources/prepare_ign_department_dem.py \
   --dataset rgealti5m \
   --department Ain \
   --output-dir build/watersheds/ign-data
@@ -135,7 +135,7 @@ python scripts/prepare_ign_department_dem.py \
 Batch local resumable sur toute la base :
 
 ```bash
-python scripts/run_catchment_batch.py \
+python scripts/watersheds/run_catchment_batch.py \
   --source-config scripts/watersheds/source_config.example.json \
   --output-dir build/watersheds/batch-run
 ```
@@ -143,7 +143,7 @@ python scripts/run_catchment_batch.py \
 Run mondial explicite :
 
 ```bash
-python scripts/run_catchment_batch.py \
+python scripts/watersheds/run_catchment_batch.py \
   --source-config scripts/watersheds/source_config.hybrid.json \
   --output-dir build/watersheds/batch-run-world \
   --world \
@@ -154,7 +154,7 @@ python scripts/run_catchment_batch.py \
 Pour ne traiter que la France :
 
 ```bash
-python scripts/run_catchment_batch.py \
+python scripts/watersheds/run_catchment_batch.py \
   --source-config scripts/watersheds/source_config.hybrid.json \
   --output-dir build/watersheds/batch-run-france \
   --france-only
@@ -163,7 +163,7 @@ python scripts/run_catchment_batch.py \
 Pour retester une liste cible de canyons et continuer meme en cas d'erreur locale :
 
 ```bash
-python scripts/run_catchment_batch.py \
+python scripts/watersheds/run_catchment_batch.py \
   --source-config scripts/watersheds/source_config.hybrid.json \
   --output-dir build/watersheds/batch-run-france-retry \
   --france-only \
@@ -175,7 +175,7 @@ Les erreurs sont journalisees dans `build/watersheds/.../errors.log`, et chaque 
 Pour copier facilement un run depuis `build/` vers un dossier suivi par Git :
 
 ```bash
-python3 scripts/package_watershed_results.py \
+python3 scripts/watersheds/package_results.py \
   --source-dir build/watersheds/batch-run-france \
   --country France \
   --track full \
@@ -187,7 +187,7 @@ Le dossier cible est ensuite range sous `watershed-results/runs/<country>/<track
 Pour un serveur avec beaucoup de disque/RAM/CPU, option recommandee : precharger tous les departements IGN utiles puis traiter plusieurs canyons en parallele :
 
 ```bash
-python scripts/run_catchment_batch.py \
+python scripts/watersheds/run_catchment_batch.py \
   --source-config scripts/watersheds/source_config.hybrid.json \
   --output-dir build/watersheds/batch-run-france \
   --france-only \
@@ -230,7 +230,7 @@ La phase 2 ajoute aussi des descripteurs `ESA WorldCover 2021` (fractions de for
 Pour recalculer une liste de canyons issue de `watershed-review/watershed-review.json` avec le point GPS valide manuellement et sans snap (meme cellule raster), utiliser :
 
 ```bash
-python scripts/run_catchment_batch.py \
+python scripts/watersheds/run_catchment_batch.py \
   --source-config scripts/watersheds/source_config.hybrid.json \
   --output-dir build/watersheds/batch-run-review \
   --jobs 2
@@ -275,7 +275,7 @@ Sur Debian, les scripts utilisent par defaut les executables du `PATH` (`gdalbui
 ### Copernicus
 
 ```bash
-python scripts/plan_copernicus_geocells.py
+python scripts/watersheds/sources/plan_copernicus_geocells.py
 ```
 
 La liste des geocells 1x1 a telecharger sera ecrite dans:

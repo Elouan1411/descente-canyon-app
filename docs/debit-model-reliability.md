@@ -15,7 +15,7 @@ This note tracks how reliability is measured after the physical descriptor work.
 Run the reliability report before deciding whether a newly exported model is better:
 
 ```bash
-PYTHONPATH="/home/plinz/descente-canyon-app/scripts" ./.venv/bin/python scripts/evaluate_debit_model_reliability.py --features-path build/debit-pipeline/training-features-improved/training_features.jsonl --output-dir build/debit-pipeline/model-reliability
+PYTHONPATH="/home/plinz/descente-canyon-app/scripts" ./.venv/bin/python scripts/debits/evaluate_model_reliability.py --features-path build/debit-pipeline/training-features-improved/training_features.jsonl --output-dir build/debit-pipeline/model-reliability
 ```
 
 The report writes:
@@ -27,7 +27,7 @@ The report writes:
 To export the currently preferred mobile model after a positive reliability run:
 
 ```bash
-PYTHONPATH="/home/plinz/descente-canyon-app/scripts" ./.venv/bin/python scripts/export_mobile_embedded_debit_model.py --features-path build/debit-pipeline/training-features-improved/training_features.jsonl --output-dir modele_statistique --default-policy balanced --canyon-history-dropout-rate 0.15
+PYTHONPATH="/home/plinz/descente-canyon-app/scripts" ./.venv/bin/python scripts/debits/export_mobile_embedded_model.py --features-path build/debit-pipeline/training-features-improved/training_features.jsonl --output-dir modele_statistique --default-policy balanced --canyon-history-dropout-rate 0.15
 ```
 
 ## Primary Decision Rule
@@ -44,7 +44,7 @@ PYTHONPATH="/home/plinz/descente-canyon-app/scripts" ./.venv/bin/python scripts/
 
 ## Ordinal Candidate
 
-The most promising non-mobile candidate is now `train_debit_ordinal_model.py` with `--model hist_gradient_boosting` on the raw improved features.
+The most promising non-mobile candidate is now `scripts/debits/train_ordinal_model.py` with `--model hist_gradient_boosting` on the raw improved features.
 
 Quick comparison against the current mobile random forest export:
 
@@ -69,7 +69,7 @@ Current interpretation: ordinal scoring is useful because water level is natural
 The strongest ordinal HGB command:
 
 ```bash
-PYTHONPATH="/home/plinz/descente-canyon-app/scripts" ./.venv/bin/python scripts/train_debit_ordinal_model.py --features-path build/debit-pipeline/training-features-improved/training_features.jsonl --output-dir build/debit-pipeline/model-ordinal-hgb-expressive --split-mode temporal --model hist_gradient_boosting --n-estimators 420 --learning-rate 0.035 --max-depth 10 --max-leaf-nodes 63 --min-samples-leaf 20 --canyon-history-dropout-rate 0.15 --no-class-balanced-weights
+PYTHONPATH="/home/plinz/descente-canyon-app/scripts" ./.venv/bin/python scripts/debits/train_ordinal_model.py --features-path build/debit-pipeline/training-features-improved/training_features.jsonl --output-dir build/debit-pipeline/model-ordinal-hgb-expressive --split-mode temporal --model hist_gradient_boosting --n-estimators 420 --learning-rate 0.035 --max-depth 10 --max-leaf-nodes 63 --min-samples-leaf 20 --canyon-history-dropout-rate 0.15 --no-class-balanced-weights
 ```
 
 Mobile export still needs a separate implementation or distillation step.
@@ -81,7 +81,7 @@ Direct HGB ONNX export currently fails in this environment (`TreeEnsembleRegress
 Candidate export command:
 
 ```bash
-PYTHONPATH="/home/plinz/descente-canyon-app/scripts" ./.venv/bin/python scripts/export_mobile_ordinal_debit_model.py --features-path build/debit-pipeline/training-features-improved/training_features.jsonl --output-dir build/debit-pipeline/mobile-ordinal-catboost-candidate --iterations 900 --depth 8 --learning-rate 0.035 --l2-leaf-reg 8 --canyon-history-dropout-rate 0.15 --default-policy balanced
+PYTHONPATH="/home/plinz/descente-canyon-app/scripts" ./.venv/bin/python scripts/debits/export_mobile_ordinal_model.py --features-path build/debit-pipeline/training-features-improved/training_features.jsonl --output-dir build/debit-pipeline/mobile-ordinal-catboost-candidate --iterations 900 --depth 8 --learning-rate 0.035 --l2-leaf-reg 8 --canyon-history-dropout-rate 0.15 --default-policy balanced
 ```
 
 Candidate metrics:

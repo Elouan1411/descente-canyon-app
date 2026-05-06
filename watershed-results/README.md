@@ -33,7 +33,7 @@ Typical contents:
 Run this on the server or locally after a world batch run is available in `build/watersheds/...`:
 
 ```bash
-python3 scripts/package_watershed_results.py \
+python3 scripts/watersheds/package_results.py \
   --source-dir build/watersheds/batch-run-world \
   --track full \
   --label 2026-03-30-world-v1
@@ -42,7 +42,7 @@ python3 scripts/package_watershed_results.py \
 Retry example:
 
 ```bash
-python3 scripts/package_watershed_results.py \
+python3 scripts/watersheds/package_results.py \
   --source-dir build/watersheds/batch-run-world-retry \
   --track retry \
   --label 2026-03-30-world-retry-1
@@ -53,13 +53,13 @@ python3 scripts/package_watershed_results.py \
 Generate the app import file from the latest packaged world run:
 
 ```bash
-python3 scripts/export_room_import_watersheds.py --input watershed-results
+python3 scripts/watersheds/export_room_import.py --input watershed-results
 ```
 
 You can also target a specific packaged run directly:
 
 ```bash
-python3 scripts/export_room_import_watersheds.py \
+python3 scripts/watersheds/export_room_import.py \
   --input watershed-results/runs/full/2026-03-30-world-v1
 ```
 
