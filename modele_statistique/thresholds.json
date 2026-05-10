@@ -1,21 +1,28 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-04-29T12:12:35.411250+00:00",
+  "generatedAt": "2026-05-10T15:59:50.943032+00:00",
+  "targetMode": "six_ordinal",
   "labels": [
-    "HIGH",
-    "LOW",
-    "MEDIUM"
+    "CORRECT",
+    "CRUE",
+    "FILET",
+    "GROS",
+    "SEC",
+    "TRES_GROS"
   ],
   "defaultPolicy": "balanced",
   "policies": {
     "balanced": {
-      "highThreshold": 0.5
+      "lowThreshold": 1.9,
+      "highThreshold": 2.3
     },
     "prudent": {
-      "highThreshold": 0.58
+      "lowThreshold": 1.9,
+      "highThreshold": 2.5
     },
     "safety_first": {
-      "highThreshold": 0.28
+      "lowThreshold": 1.9,
+      "highThreshold": 2.2
     }
   }
 }
