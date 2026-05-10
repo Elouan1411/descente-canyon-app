@@ -35,7 +35,6 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import fr.descentecanyon.app.R
 import fr.descentecanyon.app.domain.model.DebitPredictionInfoSummary
-import fr.descentecanyon.app.domain.model.RuntimeLookupSource
 import fr.descentecanyon.app.ui.components.CompactAppBar
 import java.text.NumberFormat
 import java.util.Locale
@@ -44,7 +43,6 @@ import java.util.Locale
 @Composable
 fun DebitPredictionInfoScreen(
     onBackClick: () -> Unit,
-    lookupSourceName: String?,
     modifier: Modifier = Modifier,
     contentPadding: PaddingValues = PaddingValues(),
     viewModel: DebitPredictionInfoViewModel = hiltViewModel(),
@@ -72,7 +70,6 @@ fun DebitPredictionInfoScreen(
             uiState.isLoading -> LoadingContent(innerPadding)
             uiState.summary != null -> DebitPredictionInfoContent(
                 summary = uiState.summary,
-                lookupSourceName = lookupSourceName,
                 modifier = Modifier.padding(innerPadding),
                 contentPadding = contentPadding,
             )
@@ -120,14 +117,10 @@ private fun ErrorContent(
 @Composable
 private fun DebitPredictionInfoContent(
     summary: DebitPredictionInfoSummary,
-    lookupSourceName: String?,
     contentPadding: PaddingValues,
     modifier: Modifier = Modifier,
 ) {
     val numberFormat = NumberFormat.getIntegerInstance(Locale.getDefault())
-    val lookupSource = lookupSourceName?.let { name ->
-        runCatching { RuntimeLookupSource.valueOf(name) }.getOrNull()
-    }
 
     LazyColumn(
         modifier = modifier.fillMaxSize(),
@@ -144,15 +137,6 @@ private fun DebitPredictionInfoContent(
                 title = stringResource(R.string.prediction_info_intro_title),
                 body = stringResource(R.string.prediction_info_intro_body),
             )
-        }
-
-        if (lookupSource != null) {
-            item {
-                InfoIntroCard(
-                    title = stringResource(R.string.prediction_info_this_canyon_title),
-                    body = currentLookupExplanation(lookupSource),
-                )
-            }
         }
 
         item {
@@ -301,15 +285,5 @@ private fun DriverCard(
             Text(text = title, style = MaterialTheme.typography.titleSmall, fontWeight = FontWeight.SemiBold)
             Text(text = description, style = MaterialTheme.typography.bodyMedium)
         }
-    }
-}
-
-@Composable
-private fun currentLookupExplanation(source: RuntimeLookupSource): String {
-    return when (source) {
-        RuntimeLookupSource.CANYON -> stringResource(R.string.prediction_info_lookup_canyon)
-        RuntimeLookupSource.MASSIF -> stringResource(R.string.prediction_info_lookup_massif)
-        RuntimeLookupSource.REGION -> stringResource(R.string.prediction_info_lookup_region)
-        RuntimeLookupSource.GLOBAL -> stringResource(R.string.prediction_info_lookup_global)
     }
 }

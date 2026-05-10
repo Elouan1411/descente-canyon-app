@@ -84,6 +84,7 @@ private const val USER_POINT_LAYER_ID = "user-point-layer"
 
 private const val PROPERTY_CANYON_ID = "canyonId"
 private const val PROPERTY_CANYON_NAME = "name"
+private const val PROPERTY_INTEREST_COLOR = "interestColor"
 private const val PROPERTY_POINT_COUNT = "point_count"
 private const val PROPERTY_POINT_COUNT_ABBREVIATED = "point_count_abbreviated"
 
@@ -91,8 +92,12 @@ private const val EMPTY_GEOJSON = "{\"type\":\"FeatureCollection\",\"features\":
 
 @ColorInt private const val WATERSHED_FILL_COLOR = 0x331A6B8A
 @ColorInt private const val WATERSHED_LINE_COLOR = 0xFF1A6B8A.toInt()
-@ColorInt private const val CANYON_POINT_COLOR = 0xFF1A6B8A.toInt()
 @ColorInt private const val CANYON_POINT_STROKE = 0xFFF8FAFC.toInt()
+@ColorInt private const val INTEREST_UNKNOWN_COLOR = 0xFFFFFFFF.toInt()
+@ColorInt private const val INTEREST_0_TO_1_COLOR = 0xFFD6B27A.toInt()
+@ColorInt private const val INTEREST_1_TO_2_COLOR = 0xFFFFD447.toInt()
+@ColorInt private const val INTEREST_2_TO_3_COLOR = 0xFF33A852.toInt()
+@ColorInt private const val INTEREST_3_TO_4_COLOR = 0xFF2F7DE1.toInt()
 @ColorInt private const val CLUSTER_SMALL_COLOR = 0xFF0F5E7A.toInt()
 @ColorInt private const val CLUSTER_MEDIUM_COLOR = 0xFF0F766E.toInt()
 @ColorInt private const val CLUSTER_LARGE_COLOR = 0xFF8B5E17.toInt()
@@ -589,6 +594,7 @@ private class MapRenderState(
             result = 31 * result + canyon.latitude.coordinateHash()
             result = 31 * result + canyon.longitude.coordinateHash()
             result = 31 * result + (canyon.markerType?.ordinal ?: -1)
+            result = 31 * result + (canyon.interet?.times(100)?.roundToInt() ?: -1)
         }
         result = 31 * result + userLatitude.coordinateHash()
         result = 31 * result + userLongitude.coordinateHash()
@@ -714,7 +720,7 @@ private class MapRenderState(
                 CircleLayer(CANYON_POINT_LAYER_ID, CANYON_SOURCE_ID)
                     .withFilter(Expression.not(Expression.has(PROPERTY_POINT_COUNT)))
                     .withProperties(
-                        circleColor(CANYON_POINT_COLOR),
+                        circleColor(Expression.toColor(Expression.get(PROPERTY_INTEREST_COLOR))),
                         circleRadius(
                             Expression.interpolate(
                                 Expression.linear(),
@@ -753,7 +759,7 @@ private class MapRenderState(
             style.addLayer(
                 CircleLayer(CANYON_VISIBLE_POINT_LAYER_ID, CANYON_VISIBLE_SOURCE_ID)
                     .withProperties(
-                        circleColor(CANYON_POINT_COLOR),
+                        circleColor(Expression.toColor(Expression.get(PROPERTY_INTEREST_COLOR))),
                         circleRadius(
                             Expression.interpolate(
                                 Expression.linear(),
@@ -816,6 +822,7 @@ private class MapRenderState(
                 JsonObject().apply {
                     addProperty(PROPERTY_CANYON_ID, canyon.id)
                     addProperty(PROPERTY_CANYON_NAME, canyon.nom)
+                    addProperty(PROPERTY_INTEREST_COLOR, colorIntToMapColor(interestMarkerColor(canyon.interet)))
                 },
             )
         }
@@ -923,6 +930,21 @@ internal fun shouldShowDetailPoints(
 ): Boolean {
     return zoom >= DETAIL_POINT_ZOOM_THRESHOLD ||
         visibleMarkerCount in 1..DETAIL_POINT_VISIBLE_COUNT_THRESHOLD
+}
+
+@ColorInt
+internal fun interestMarkerColor(interest: Float?): Int {
+    return when {
+        interest == null || interest <= 0f -> INTEREST_UNKNOWN_COLOR
+        interest <= 1f -> INTEREST_0_TO_1_COLOR
+        interest <= 2f -> INTEREST_1_TO_2_COLOR
+        interest <= 3f -> INTEREST_2_TO_3_COLOR
+        else -> INTEREST_3_TO_4_COLOR
+    }
+}
+
+private fun colorIntToMapColor(@ColorInt color: Int): String {
+    return "#%06X".format(color and 0x00FFFFFF)
 }
 
 private fun CanyonSummary.markerIconRes(): Int {

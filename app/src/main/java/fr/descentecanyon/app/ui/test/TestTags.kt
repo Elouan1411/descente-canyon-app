@@ -2,7 +2,6 @@ package fr.descentecanyon.app.ui.test
 
 object TestTags {
     const val homeQuickSearch = "home_quick_search"
-    const val homeAddCanyon = "home_add_canyon"
     const val searchQueryField = "search_query_field"
     const val detailFavoriteButton = "detail_favorite_button"
     const val detailReportDebitButton = "detail_report_debit_button"

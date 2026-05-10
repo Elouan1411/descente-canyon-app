@@ -9,10 +9,12 @@ import fr.descentecanyon.app.domain.model.DebitFeatureSpec
 import fr.descentecanyon.app.domain.model.DailyDebitPrediction
 import fr.descentecanyon.app.domain.model.DebitPredictionPolicy
 import fr.descentecanyon.app.domain.model.DebitThresholds
+import fr.descentecanyon.app.domain.model.NiveauDebit
 import fr.descentecanyon.app.domain.model.PredictedDebitLevel
 import java.nio.FloatBuffer
 import javax.inject.Inject
 import javax.inject.Singleton
+import kotlin.math.roundToInt
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.withContext
 
@@ -46,8 +48,12 @@ class OnnxDebitPredictor @Inject constructor(
                         ?: error("Missing threshold for policy $policy")
                     val ordinalLowThreshold = thresholds.lowThresholdByPolicy[policy]
                     val normalized = threeClassProbabilities(probabilitiesByLabel)
-                    val level = if (ordinalLowThreshold != null && hasSixOrdinalLabels(probabilitiesByLabel)) {
-                        val ordinalScore = expectedOrdinalScore(probabilitiesByLabel)
+                    val ordinalScore = if (hasSixOrdinalLabels(probabilitiesByLabel)) {
+                        expectedOrdinalScore(probabilitiesByLabel)
+                    } else {
+                        null
+                    }
+                    val level = if (ordinalLowThreshold != null && ordinalScore != null) {
                         when {
                             ordinalScore >= highThreshold -> PredictedDebitLevel.HIGH
                             ordinalScore < ordinalLowThreshold -> PredictedDebitLevel.LOW
@@ -66,6 +72,8 @@ class OnnxDebitPredictor @Inject constructor(
                         level = level,
                         probabilities = normalized,
                         highThreshold = highThreshold,
+                        ordinalScore = ordinalScore,
+                        ordinalLevel = ordinalScore?.let(::ordinalLevelFromScore),
                     )
                 }
             }
@@ -79,6 +87,17 @@ class OnnxDebitPredictor @Inject constructor(
     private fun expectedOrdinalScore(probabilitiesByLabel: Map<String, Double>): Double {
         return ORDINAL_RANK_BY_LABEL.entries.sumOf { (label, rank) ->
             (probabilitiesByLabel[label] ?: 0.0) * rank
+        }
+    }
+
+    private fun ordinalLevelFromScore(score: Double): NiveauDebit {
+        return when (score.roundToInt().coerceIn(0, 5)) {
+            0 -> NiveauDebit.SEC
+            1 -> NiveauDebit.FILET
+            2 -> NiveauDebit.CORRECT
+            3 -> NiveauDebit.GROS
+            4 -> NiveauDebit.TRES_GROS
+            else -> NiveauDebit.CRUE
         }
     }
 

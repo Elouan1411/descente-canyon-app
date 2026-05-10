@@ -198,15 +198,15 @@ class EmbeddedDebitModelStore @Inject constructor(
         return when {
             startsWith("canyonPrior") || this == "canyonPastObsCount" -> {
                 DebitPredictionDriver(
-                    title = "Historique du canyon",
-                    description = "Quand il existe des observations passées pour ce canyon, elles influencent fortement l'estimation.",
+                    title = "Observations passées du canyon",
+                    description = "Quand des observations passées existent pour ce canyon, elles aident le modèle à mieux situer son comportement habituel.",
                 )
             }
             startsWith("massifPrior") || startsWith("regionPrior") || startsWith("globalPrior") ||
                 contains("PastObsCount") -> {
                 DebitPredictionDriver(
                     title = "Contexte du massif et de la région",
-                    description = "Si le canyon manque d'historique propre, le modèle s'appuie davantage sur des canyons proches ou similaires.",
+                    description = "Si le canyon manque d'observations propres, le modèle s'appuie davantage sur des canyons proches ou similaires.",
                 )
             }
             startsWith("precip_") || startsWith("wet_days_") || startsWith("days_since_precip") ||
@@ -237,7 +237,7 @@ class EmbeddedDebitModelStore @Inject constructor(
             startsWith("historical") -> {
                 DebitPredictionDriver(
                     title = "Signaux historiques atypiques",
-                    description = "Certains canyons réagissent différemment à cause d'effets régulés ou de signatures de fonte observés dans l'historique.",
+                    description = "Certains canyons réagissent différemment à cause d'effets régulés ou de signatures de fonte observés dans les données passées.",
                 )
             }
             else -> null

@@ -77,8 +77,8 @@ fun AppNavHost(
                 onBackClick = { navController.popBackStack() },
                 onReportDebitClick = { navController.navigateSingleTop(Screen.DebitForm(detail.canyonId)) },
                 onShowMapClick = { navController.navigateSingleTop(Screen.CanyonPointsMap(detail.canyonId)) },
-                onOpenPredictionInfo = { lookupSourceName ->
-                    navController.navigateSingleTop(Screen.DebitPredictionInfo(lookupSourceName))
+                onOpenPredictionInfo = {
+                    navController.navigateSingleTop(Screen.DebitPredictionInfo)
                 },
                 onOpenPhotoGallery = { photoId ->
                     navController.navigateSingleTop(Screen.PhotoGallery(detail.canyonId, photoId))
@@ -108,11 +108,9 @@ fun AppNavHost(
             )
         }
 
-        composable<Screen.DebitPredictionInfo> { backStackEntry ->
-            val route = backStackEntry.toRoute<Screen.DebitPredictionInfo>()
+        composable<Screen.DebitPredictionInfo> {
             DebitPredictionInfoScreen(
                 onBackClick = { navController.popBackStack() },
-                lookupSourceName = route.lookupSourceName,
                 contentPadding = topLevelContentPadding,
             )
         }

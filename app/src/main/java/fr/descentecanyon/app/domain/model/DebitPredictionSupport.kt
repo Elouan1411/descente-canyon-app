@@ -115,6 +115,8 @@ data class DailyDebitPrediction(
     val level: PredictedDebitLevel,
     val probabilities: Map<PredictedDebitLevel, Double>,
     val highThreshold: Double,
+    val ordinalScore: Double? = null,
+    val ordinalLevel: NiveauDebit? = null,
 )
 
 data class CanyonDebitPredictions(

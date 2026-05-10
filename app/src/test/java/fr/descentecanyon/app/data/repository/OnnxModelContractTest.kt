@@ -47,7 +47,7 @@ class OnnxModelContractTest {
 
     private fun exportedFeatureSpec(): ExportedFeatureSpec {
         val specPath = Paths.get("..", "modele_statistique", "feature_spec.json").normalize().toAbsolutePath()
-        val payload = Files.readString(specPath)
+        val payload = Files.readAllBytes(specPath).toString(Charsets.UTF_8)
         val root = Json.parseToJsonElement(payload).jsonObject
         return ExportedFeatureSpec(
             labels = root.getValue("labels").jsonArray.mapNotNull { it.jsonPrimitive.contentOrNull },

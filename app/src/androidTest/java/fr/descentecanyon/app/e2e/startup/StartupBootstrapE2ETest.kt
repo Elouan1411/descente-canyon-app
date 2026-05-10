@@ -14,8 +14,6 @@ class StartupBootstrapE2ETest : BaseE2eTest() {
 
         composeRule.onNodeWithTag(TestTags.homeQuickSearch, useUnmergedTree = true)
             .assertIsDisplayed()
-        composeRule.onNodeWithTag(TestTags.homeAddCanyon, useUnmergedTree = true)
-            .assertIsDisplayed()
         composeRule.onNodeWithText("Derniers debits")
             .assertIsDisplayed()
         composeRule.onNodeWithText("Riolan")

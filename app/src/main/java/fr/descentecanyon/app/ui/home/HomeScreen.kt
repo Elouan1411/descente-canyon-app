@@ -87,7 +87,6 @@ fun HomeScreen(
     val homeState by homeViewModel.uiState.collectAsStateWithLifecycle()
     val authState by authViewModel.uiState.collectAsStateWithLifecycle()
     val context = LocalContext.current
-    val addCanyonUrl = stringResource(R.string.home_add_canyon_url)
     var showLoginDialog by remember { mutableStateOf(false) }
 
     if (showLoginDialog) {
@@ -136,12 +135,6 @@ fun HomeScreen(
 
             item {
                 QuickSearchCard(onClick = onQuickSearchClick)
-            }
-
-            item {
-                AddCanyonCard(
-                    onClick = { openExternalUrl(context, addCanyonUrl) },
-                )
             }
 
             item {
@@ -531,20 +524,6 @@ private fun QuickSearchCard(
         icon = Icons.Default.Search,
         onClick = onClick,
         modifier = modifier.testTag(TestTags.homeQuickSearch),
-    )
-}
-
-@Composable
-private fun AddCanyonCard(
-    onClick: () -> Unit,
-    modifier: Modifier = Modifier,
-) {
-    HomeActionCard(
-        title = stringResource(R.string.home_add_canyon_title),
-        hint = stringResource(R.string.home_add_canyon_hint),
-        icon = Icons.AutoMirrored.Filled.OpenInNew,
-        onClick = onClick,
-        modifier = modifier.testTag(TestTags.homeAddCanyon),
     )
 }
 

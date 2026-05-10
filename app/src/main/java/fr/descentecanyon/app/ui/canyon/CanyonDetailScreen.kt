@@ -119,7 +119,7 @@ fun CanyonDetailScreen(
     onBackClick: () -> Unit,
     onReportDebitClick: () -> Unit,
     onShowMapClick: () -> Unit,
-    onOpenPredictionInfo: (String?) -> Unit,
+    onOpenPredictionInfo: () -> Unit,
     onOpenPhotoGallery: (Long) -> Unit,
     modifier: Modifier = Modifier,
     contentPadding: PaddingValues = PaddingValues(),
@@ -291,7 +291,7 @@ private fun CanyonDetailContent(
     predictions: CanyonDebitPredictions?,
     isLoadingPredictions: Boolean,
     predictionError: String?,
-    onOpenPredictionInfo: (String?) -> Unit,
+    onOpenPredictionInfo: () -> Unit,
     downloadingPhotoIds: Set<Long>,
     onOpenPhotoGallery: (Long) -> Unit,
     bottomContentPadding: Dp = 0.dp,
@@ -351,7 +351,7 @@ private fun CanyonDetailContent(
                 predictions = predictions,
                 isLoading = isLoadingPredictions,
                 error = predictionError,
-                onInfoClick = { onOpenPredictionInfo(predictions?.lookupSource?.name) },
+                onInfoClick = onOpenPredictionInfo,
             )
         }
 
@@ -391,7 +391,7 @@ private fun DetailRefreshingBanner(modifier: Modifier = Modifier) {
     Surface(
         modifier = modifier
             .fillMaxWidth()
-            .padding(horizontal = 16.dp, vertical = 12.dp),
+            .padding(horizontal = 16.dp, vertical = 4.dp),
         shape = MaterialTheme.shapes.medium,
         color = MaterialTheme.colorScheme.secondaryContainer.copy(alpha = 0.7f),
     ) {
@@ -423,7 +423,7 @@ private fun SummaryCard(
     Card(
         modifier = modifier
             .fillMaxWidth()
-            .padding(horizontal = 16.dp, vertical = 12.dp),
+            .padding(horizontal = 16.dp, vertical = 4.dp),
         colors = CardDefaults.cardColors(
             containerColor = MaterialTheme.colorScheme.surfaceVariant,
         ),

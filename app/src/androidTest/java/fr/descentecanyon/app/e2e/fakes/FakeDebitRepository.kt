@@ -1,5 +1,6 @@
 package fr.descentecanyon.app.e2e.fakes
 
+import fr.descentecanyon.app.domain.model.CachedItems
 import fr.descentecanyon.app.domain.model.Debit
 import fr.descentecanyon.app.domain.repository.DebitRepository
 import javax.inject.Inject
@@ -18,6 +19,14 @@ class FakeDebitRepository @Inject constructor() : DebitRepository {
 
     override fun getLatestDebits(limit: Int): Flow<Result<List<Debit>>> {
         return E2eFixtureState.latestDebits.map { Result.success(it.take(limit)) }
+    }
+
+    override suspend fun getCachedLatestDebits(limit: Int): CachedItems<Debit> {
+        return CachedItems(items = E2eFixtureState.latestDebits.value.take(limit))
+    }
+
+    override suspend fun refreshLatestDebits(limit: Int): Result<CachedItems<Debit>> {
+        return Result.success(getCachedLatestDebits(limit))
     }
 
     override suspend fun refreshDebits(canyonId: Int): Result<List<Debit>> {
