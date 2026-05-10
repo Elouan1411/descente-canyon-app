@@ -64,7 +64,12 @@ class HomeViewModel @Inject constructor(
     }
 
     fun selectFeed(type: HomeFeedType) {
-        if (_uiState.value.selectedFeed == type) return
+        if (_uiState.value.selectedFeed == type) {
+            if (uiState.value.isOnline) {
+                refreshFeed(type)
+            }
+            return
+        }
 
         _uiState.update { state -> state.copy(selectedFeed = type) }
         viewModelScope.launch {

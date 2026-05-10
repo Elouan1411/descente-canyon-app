@@ -153,6 +153,30 @@ class HomeViewModelTest {
         }
     }
 
+    @Test
+    fun `selecting current forum feed refreshes topics`() = runTest {
+        val connectivity = MutableStateFlow(true)
+        var currentOnline = true
+        every { connectivityObserver.observe() } returns connectivity
+        every { connectivityObserver.isCurrentlyOnline() } answers { currentOnline }
+        coEvery { appMetadataDao.get("home.selected_feed_type") } returns AppMetadataEntity("home.selected_feed_type", HomeFeedType.FORUM.name)
+        coEvery { appMetadataDao.insert(any()) } returns Unit
+        coEvery { debitRepository.getCachedLatestDebits(any()) } returns CachedItems(emptyList(), null)
+        coEvery { forumRepository.getCachedActiveTopics(any()) } returns CachedItems(emptyList(), null)
+        coEvery { debitRepository.refreshLatestDebits(any()) } returns Result.success(CachedItems(emptyList(), 1234L))
+        coEvery { forumRepository.refreshActiveTopics(any()) } returns Result.success(CachedItems(listOf(sampleTopic()), 5678L))
+
+        val viewModel = createViewModel()
+        advanceUntilIdle()
+
+        viewModel.selectFeed(HomeFeedType.FORUM)
+        advanceUntilIdle()
+
+        assertEquals(HomeFeedType.FORUM, viewModel.uiState.value.selectedFeed)
+        assertEquals(1, viewModel.uiState.value.forumFeed.items.size)
+        coVerify(atLeast = 2) { forumRepository.refreshActiveTopics(any()) }
+    }
+
     private fun createViewModel(): HomeViewModel {
         return HomeViewModel(
             debitRepository = debitRepository,

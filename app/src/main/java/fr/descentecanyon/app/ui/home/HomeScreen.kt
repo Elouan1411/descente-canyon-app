@@ -242,6 +242,7 @@ private fun HomeFeedPicker(
             SegmentedButton(
                 selected = selectedFeed == option,
                 onClick = { onFeedSelected(option) },
+                modifier = Modifier.weight(1f),
                 shape = SegmentedButtonDefaults.itemShape(index = index, count = options.size),
                 label = {
                     Text(
