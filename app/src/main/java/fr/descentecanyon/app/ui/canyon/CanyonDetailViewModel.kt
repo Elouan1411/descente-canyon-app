@@ -216,6 +216,13 @@ class CanyonDetailViewModel @Inject constructor(
         }
     }
 
+    fun refreshDebitsAfterSubmission() {
+        viewModelScope.launch {
+            _uiState.update { it.copy(isLoadingDebits = true, debitError = null) }
+            refreshDebits(canyonId)
+        }
+    }
+
     private fun loadDeferredSectionsIfNeeded(detail: CanyonDetail) {
         maybeLoadEdfStatus()
         maybeLoadWeather(detail)

@@ -74,6 +74,7 @@ private fun DebitSubmission.toEntity(): PendingDebitSubmissionEntity = PendingDe
     waterTemperature = waterTemperature.name,
     airTemperature = airTemperature.name,
     comment = comment,
+    personalComment = personalComment,
 )
 
 private fun PendingDebitSubmissionEntity.toDomain(): DebitSubmission = DebitSubmission(
@@ -86,6 +87,7 @@ private fun PendingDebitSubmissionEntity.toDomain(): DebitSubmission = DebitSubm
     waterTemperature = runCatching { WaterTemperature.valueOf(waterTemperature) }.getOrDefault(WaterTemperature.INCONNUE),
     airTemperature = runCatching { AirTemperature.valueOf(airTemperature) }.getOrDefault(AirTemperature.INCONNUE),
     comment = comment,
+    personalComment = personalComment,
 )
 
 private fun Throwable.isRecoverableNetworkFailure(): Boolean {

@@ -2,6 +2,7 @@ package fr.descentecanyon.app.e2e.debit
 
 import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.onNodeWithTag
+import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
 import androidx.compose.ui.test.performScrollTo
 import androidx.compose.ui.test.performTextInput
@@ -34,7 +35,14 @@ class OfflineDebitSyncE2ETest : BaseE2eTest() {
             .performTextInput("Testeur")
         composeRule.onNodeWithTag(TestTags.debitObserverEmailField, useUnmergedTree = true)
             .performTextInput("test@example.com")
+        composeRule.onNodeWithText("Canyon parcouru", useUnmergedTree = true)
+            .performScrollTo()
+            .performClick()
+        composeRule.onNodeWithText("Débit correct", useUnmergedTree = true)
+            .performScrollTo()
+            .performClick()
         composeRule.onNodeWithTag(TestTags.debitCommentField, useUnmergedTree = true)
+            .performScrollTo()
             .performTextInput("Observation E2E")
         composeRule.onNodeWithTag(TestTags.debitSubmitButton, useUnmergedTree = true)
             .performScrollTo()

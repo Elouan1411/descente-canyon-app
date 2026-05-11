@@ -25,8 +25,8 @@ enum class NiveauDebit(val label: String, val colorHex: String) {
     SEC("Sec", "#999999"),
     FILET("Petit filet d'eau", "#0066FF"),
     CORRECT("Débit correct", "#00AA00"),
-    GROS("Gros débit", "#FFAA00"),
-    TRES_GROS("Très gros débit", "#FF6600"),
-    CRUE("Trop d'eau", "#FF0000"),
+    GROS("Gros débit", "#FF6600"),
+    TRES_GROS("Très gros débit", "#FF0000"),
+    CRUE("Trop d'eau", "#000000"),
     INCONNU("Inconnu", "#CCCCCC"),
 }

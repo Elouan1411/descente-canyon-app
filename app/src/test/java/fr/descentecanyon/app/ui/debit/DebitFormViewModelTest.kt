@@ -3,11 +3,14 @@ package fr.descentecanyon.app.ui.debit
 import androidx.lifecycle.SavedStateHandle
 import fr.descentecanyon.app.domain.model.AuthState
 import fr.descentecanyon.app.domain.model.DebitSubmissionStatus
+import fr.descentecanyon.app.domain.model.NiveauDebit
+import fr.descentecanyon.app.domain.model.ObservationType
 import fr.descentecanyon.app.domain.repository.AuthRepository
 import fr.descentecanyon.app.domain.repository.DebitSubmissionRepository
 import fr.descentecanyon.app.domain.usecase.SubmitDebitUseCase
 import fr.descentecanyon.app.testutil.MainDispatcherRule
 import io.mockk.coEvery
+import io.mockk.coVerify
 import io.mockk.every
 import io.mockk.mockk
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -64,10 +67,40 @@ class DebitFormViewModelTest {
 
         viewModel.onObserverNameChanged("Antoine")
         viewModel.onObserverEmailChanged("antoine@example.com")
+        viewModel.onObservationTypeChanged(ObservationType.PARCOURU)
+        viewModel.onDebitLevelChanged(NiveauDebit.CORRECT)
         viewModel.submit()
         advanceUntilIdle()
 
-        assertEquals("Débit enregistré hors-ligne", viewModel.uiState.value.transientMessage)
+        assertEquals("Débit enregistré hors ligne", viewModel.uiState.value.transientMessage)
         assertEquals(DebitSubmissionStatus.QUEUED_OFFLINE, viewModel.uiState.value.lastSubmissionStatus)
+    }
+
+    @Test
+    @OptIn(ExperimentalCoroutinesApi::class)
+    fun `submit requires explicit observation type and debit`() = runTest {
+        every { authRepository.authState } returns authStateFlow
+        every { debitSubmissionRepository.observePendingCount() } returns flowOf(0)
+        coEvery { debitSubmissionRepository.submit(any()) } returns Result.success(DebitSubmissionStatus.SUBMITTED)
+        val viewModel = DebitFormViewModel(
+            savedStateHandle = SavedStateHandle(mapOf("canyonId" to 2186)),
+            authRepository = authRepository,
+            submitDebitUseCase = submitDebitUseCase,
+            debitSubmissionRepository = debitSubmissionRepository,
+        )
+
+        viewModel.onObserverNameChanged("Antoine")
+        viewModel.onObserverEmailChanged("antoine@example.com")
+        viewModel.submit()
+        advanceUntilIdle()
+
+        assertEquals("Le type d'observation est obligatoire.", viewModel.uiState.value.error)
+
+        viewModel.onObservationTypeChanged(ObservationType.PARCOURU)
+        viewModel.submit()
+        advanceUntilIdle()
+
+        assertEquals("Le débit est obligatoire.", viewModel.uiState.value.error)
+        coVerify(exactly = 0) { debitSubmissionRepository.submit(any()) }
     }
 }

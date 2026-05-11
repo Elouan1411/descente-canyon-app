@@ -231,15 +231,19 @@ fun DebitBadge(
     modifier: Modifier = Modifier,
 ) {
     val color = debitLevelColor(niveau)
+    val isCrue = niveau == NiveauDebit.CRUE
     Card(
         modifier = modifier,
-        colors = CardDefaults.cardColors(containerColor = color.copy(alpha = 0.12f)),
+        colors = CardDefaults.cardColors(
+            containerColor = if (isCrue) color else color.copy(alpha = 0.12f),
+        ),
+        border = if (isCrue) BorderStroke(1.dp, Color.White.copy(alpha = 0.45f)) else null,
     ) {
         Text(
             text = niveau.label,
             style = MaterialTheme.typography.labelSmall,
             fontWeight = FontWeight.SemiBold,
-            color = color,
+            color = if (isCrue) Color.White else color,
             modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp),
         )
     }

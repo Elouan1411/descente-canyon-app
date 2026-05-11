@@ -43,7 +43,7 @@ import fr.descentecanyon.app.data.local.entity.WatershedEntity
         AppMetadataEntity::class,
         PendingDebitSubmissionEntity::class,
     ],
-    version = 11,
+    version = 12,
     exportSchema = true,
 )
 abstract class DescenteCanyonDatabase : RoomDatabase() {

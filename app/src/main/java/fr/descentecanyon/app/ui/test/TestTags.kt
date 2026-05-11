@@ -10,6 +10,7 @@ object TestTags {
     const val debitObserverEmailField = "debit_observer_email_field"
     const val debitObservationDateField = "debit_observation_date_field"
     const val debitCommentField = "debit_comment_field"
+    const val debitPersonalCommentField = "debit_personal_comment_field"
     const val debitPendingCount = "debit_pending_count"
     const val debitSubmitButton = "debit_submit_button"
 

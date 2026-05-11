@@ -63,6 +63,11 @@ class SessionManager @Inject constructor(
         }
     }
 
+    fun restoreSession(username: String, savedCookies: Map<String, String>) {
+        cookies = savedCookies
+        _loggedInUsername = username
+    }
+
     /**
      * Clear the session.
      */

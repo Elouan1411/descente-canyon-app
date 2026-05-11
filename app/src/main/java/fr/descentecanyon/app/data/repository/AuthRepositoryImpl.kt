@@ -24,6 +24,7 @@ class AuthRepositoryImpl @Inject constructor(
         return runCatching {
             sessionManager.login(username, password)
             credentialStore.saveCredentials(username, password)
+            credentialStore.saveSessionCookies(username, sessionManager.getCookies())
             _authState.value = AuthState.Connected(username)
         }.onFailure { e ->
             _authState.value = AuthState.Error(e.message ?: "Login failed")
@@ -37,13 +38,21 @@ class AuthRepositoryImpl @Inject constructor(
     }
 
     override suspend fun tryRestoreSession(): Result<Unit> {
+        val savedUsername = credentialStore.getUsername()
+        val savedCookies = credentialStore.getSessionCookies()
+        if (savedUsername != null && savedCookies.isNotEmpty()) {
+            sessionManager.restoreSession(savedUsername, savedCookies)
+            _authState.value = AuthState.Connected(savedUsername)
+            return Result.success(Unit)
+        }
+
         if (!credentialStore.hasCredentials()) {
             return Result.failure(IllegalStateException("No saved credentials"))
         }
-        val username = credentialStore.getUsername()!!
+        val username = savedUsername!!
         val password = credentialStore.getPassword()!!
         return login(username, password)
     }
 
-    override fun hasSavedCredentials(): Boolean = credentialStore.hasCredentials()
+    override fun hasSavedCredentials(): Boolean = credentialStore.hasSessionCookies() || credentialStore.hasCredentials()
 }

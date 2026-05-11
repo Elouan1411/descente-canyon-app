@@ -12,6 +12,7 @@ data class DebitSubmission(
     val waterTemperature: WaterTemperature,
     val airTemperature: AirTemperature,
     val comment: String = "",
+    val personalComment: String = "",
 )
 
 enum class ObservationType {
@@ -41,3 +42,7 @@ enum class DebitSubmissionStatus {
     SUBMITTED,
     QUEUED_OFFLINE,
 }
+
+class DebitSubmissionSessionExpiredException(
+    message: String = "La session Descente-Canyon a expiré. Connecte-toi à nouveau avant d'envoyer le débit.",
+) : Exception(message)

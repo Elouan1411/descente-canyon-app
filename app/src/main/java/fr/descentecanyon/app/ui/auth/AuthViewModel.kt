@@ -46,6 +46,10 @@ class AuthViewModel @Inject constructor(
         _uiState.update { it.copy(password = password) }
     }
 
+    fun showError(message: String) {
+        _uiState.update { it.copy(authState = AuthState.Error(message)) }
+    }
+
     fun login() {
         val state = _uiState.value
         if (state.username.isBlank() || state.password.isBlank()) return

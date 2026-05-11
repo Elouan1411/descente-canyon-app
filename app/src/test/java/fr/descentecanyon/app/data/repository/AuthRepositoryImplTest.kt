@@ -28,6 +28,8 @@ class AuthRepositoryImplTest {
                 url: String,
                 data: Map<String, String>,
                 cookies: Map<String, String>,
+                referer: String?,
+                origin: String?,
             ): WebDocumentResponse {
                 throw LoginException("Login failed: invalid credentials")
             }
@@ -62,6 +64,8 @@ class AuthRepositoryImplTest {
 
     @Test
     fun `tryRestoreSession fails when no credentials`() = runTest {
+        every { credentialStore.getUsername() } returns null
+        every { credentialStore.getSessionCookies() } returns emptyMap()
         every { credentialStore.hasCredentials() } returns false
 
         val result = repository.tryRestoreSession()
@@ -70,11 +74,27 @@ class AuthRepositoryImplTest {
     }
 
     @Test
+    fun `tryRestoreSession restores saved cookies without login`() = runTest {
+        every { credentialStore.getUsername() } returns "antoine"
+        every { credentialStore.getSessionCookies() } returns mapOf("sid" to "abc")
+
+        val result = repository.tryRestoreSession()
+
+        assertTrue(result.isSuccess)
+        assertEquals(AuthState.Connected("antoine"), repository.authState.first())
+        assertEquals(mapOf("sid" to "abc"), sessionManager.getCookies())
+    }
+
+    @Test
     fun `hasSavedCredentials delegates to store`() {
+        every { credentialStore.hasSessionCookies() } returns false
         every { credentialStore.hasCredentials() } returns true
         assertTrue(repository.hasSavedCredentials())
 
         every { credentialStore.hasCredentials() } returns false
         assertFalse(repository.hasSavedCredentials())
+
+        every { credentialStore.hasSessionCookies() } returns true
+        assertTrue(repository.hasSavedCredentials())
     }
 }

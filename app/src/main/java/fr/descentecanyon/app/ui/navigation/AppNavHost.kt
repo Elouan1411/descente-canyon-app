@@ -2,7 +2,9 @@ package fr.descentecanyon.app.ui.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavHostController
 import androidx.navigation.NavOptionsBuilder
 import androidx.navigation.compose.NavHost
@@ -72,6 +74,9 @@ fun AppNavHost(
 
         composable<Screen.CanyonDetail> { backStackEntry ->
             val detail = backStackEntry.toRoute<Screen.CanyonDetail>()
+            val refreshDebitsAfterSubmission by backStackEntry.savedStateHandle
+                .getStateFlow(DEBIT_SUBMISSION_REFRESH_KEY, false)
+                .collectAsStateWithLifecycle()
             CanyonDetailScreen(
                 canyonId = detail.canyonId,
                 onBackClick = { navController.popBackStack() },
@@ -84,6 +89,10 @@ fun AppNavHost(
                     navController.navigateSingleTop(Screen.PhotoGallery(detail.canyonId, photoId))
                 },
                 contentPadding = topLevelContentPadding,
+                refreshDebitsAfterSubmission = refreshDebitsAfterSubmission,
+                onRefreshDebitsAfterSubmissionHandled = {
+                    backStackEntry.savedStateHandle[DEBIT_SUBMISSION_REFRESH_KEY] = false
+                },
             )
         }
 
@@ -105,6 +114,12 @@ fun AppNavHost(
         composable<Screen.DebitForm> {
             DebitFormScreen(
                 onBackClick = { navController.popBackStack() },
+                onSubmissionSuccess = {
+                    navController.previousBackStackEntry
+                        ?.savedStateHandle
+                        ?.set(DEBIT_SUBMISSION_REFRESH_KEY, true)
+                    navController.popBackStack()
+                },
             )
         }
 
@@ -116,6 +131,8 @@ fun AppNavHost(
         }
     }
 }
+
+private const val DEBIT_SUBMISSION_REFRESH_KEY = "debit_submission_refresh"
 
 private fun NavHostController.navigateSingleTop(screen: Screen) {
     navigate(screen) {

@@ -33,4 +33,13 @@ class SessionManagerTest {
         assertNull(sessionManager.loggedInUsername)
         assertTrue(sessionManager.getCookies().isEmpty())
     }
+
+    @Test
+    fun `restore session stores username and cookies`() {
+        sessionManager.restoreSession("antoine", mapOf("sid" to "abc"))
+
+        assertTrue(sessionManager.isLoggedIn)
+        assertEquals("antoine", sessionManager.loggedInUsername)
+        assertEquals(mapOf("sid" to "abc"), sessionManager.getCookies())
+    }
 }

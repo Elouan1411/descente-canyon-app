@@ -15,5 +15,6 @@ data class PendingDebitSubmissionEntity(
     val waterTemperature: String,
     val airTemperature: String,
     val comment: String,
+    val personalComment: String = "",
     val createdAt: Long = System.currentTimeMillis(),
 )

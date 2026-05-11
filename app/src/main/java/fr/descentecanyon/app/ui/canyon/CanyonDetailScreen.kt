@@ -30,8 +30,8 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.text.ClickableText
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Description
-import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.FavoriteBorder
 import androidx.compose.material.icons.filled.KeyboardArrowDown
@@ -39,6 +39,7 @@ import androidx.compose.material.icons.filled.KeyboardArrowUp
 import androidx.compose.material.icons.filled.Language
 import androidx.compose.material.icons.filled.LocationOn
 import androidx.compose.material.icons.filled.Navigation
+import androidx.compose.material.icons.filled.WaterDrop
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CircularProgressIndicator
@@ -123,6 +124,8 @@ fun CanyonDetailScreen(
     onOpenPhotoGallery: (Long) -> Unit,
     modifier: Modifier = Modifier,
     contentPadding: PaddingValues = PaddingValues(),
+    refreshDebitsAfterSubmission: Boolean = false,
+    onRefreshDebitsAfterSubmissionHandled: () -> Unit = {},
     viewModel: CanyonDetailViewModel = hiltViewModel(),
 ) {
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
@@ -130,6 +133,13 @@ fun CanyonDetailScreen(
 
     LaunchedEffect(canyonId) {
         PerformanceTrace.logEvent("canyon_detail_screen_visible", "canyonId" to canyonId)
+    }
+
+    LaunchedEffect(refreshDebitsAfterSubmission) {
+        if (refreshDebitsAfterSubmission) {
+            viewModel.refreshDebitsAfterSubmission()
+            onRefreshDebitsAfterSubmissionHandled()
+        }
     }
 
     LaunchedEffect(uiState.transientMessage) {
@@ -158,10 +168,7 @@ fun CanyonDetailScreen(
                         onClick = onReportDebitClick,
                         modifier = Modifier.testTag(TestTags.detailReportDebitButton),
                     ) {
-                        Icon(
-                            imageVector = Icons.Default.Edit,
-                            contentDescription = stringResource(R.string.debit_form_title),
-                        )
+                        AddDebitIcon(contentDescription = stringResource(R.string.debit_add_action))
                     }
                     IconButton(
                         onClick = viewModel::toggleFavorite,
@@ -266,6 +273,39 @@ fun CanyonDetailScreen(
                         },
                     )
                 }
+            }
+        }
+    }
+}
+
+@Composable
+private fun AddDebitIcon(
+    contentDescription: String,
+    modifier: Modifier = Modifier,
+) {
+    Box(modifier = modifier.size(30.dp)) {
+        Icon(
+            imageVector = Icons.Default.WaterDrop,
+            contentDescription = contentDescription,
+            tint = MaterialTheme.colorScheme.onPrimaryContainer,
+            modifier = Modifier
+                .size(26.dp)
+                .align(Alignment.CenterStart),
+        )
+        Surface(
+            modifier = Modifier
+                .size(15.dp)
+                .align(Alignment.BottomEnd),
+            shape = CircleShape,
+            color = MaterialTheme.colorScheme.primary,
+            contentColor = MaterialTheme.colorScheme.onPrimary,
+        ) {
+            Box(contentAlignment = Alignment.Center) {
+                Icon(
+                    imageVector = Icons.Default.Add,
+                    contentDescription = null,
+                    modifier = Modifier.size(11.dp),
+                )
             }
         }
     }

@@ -7,6 +7,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import fr.descentecanyon.app.domain.model.AirTemperature
 import fr.descentecanyon.app.domain.model.AuthState
 import fr.descentecanyon.app.domain.model.DebitSubmission
+import fr.descentecanyon.app.domain.model.DebitSubmissionSessionExpiredException
 import fr.descentecanyon.app.domain.model.DebitSubmissionStatus
 import fr.descentecanyon.app.domain.model.NiveauDebit
 import fr.descentecanyon.app.domain.model.ObservationType
@@ -27,17 +28,19 @@ data class DebitFormUiState(
     val observerName: String = "",
     val observerEmail: String = "",
     val observationDate: LocalDate = LocalDate.now(),
-    val observationType: ObservationType = ObservationType.PARCOURU,
-    val debitLevel: NiveauDebit = NiveauDebit.CORRECT,
-    val waterTemperature: WaterTemperature = WaterTemperature.INCONNUE,
-    val airTemperature: AirTemperature = AirTemperature.INCONNUE,
+    val observationType: ObservationType? = null,
+    val debitLevel: NiveauDebit? = null,
+    val waterTemperature: WaterTemperature? = null,
+    val airTemperature: AirTemperature? = null,
     val comment: String = "",
+    val personalComment: String = "",
     val isConnected: Boolean = false,
     val pendingCount: Int = 0,
     val isSubmitting: Boolean = false,
     val error: String? = null,
     val transientMessage: String? = null,
     val lastSubmissionStatus: DebitSubmissionStatus? = null,
+    val loginRequiredMessage: String? = null,
 )
 
 @HiltViewModel
@@ -94,8 +97,12 @@ class DebitFormViewModel @Inject constructor(
 
     fun onObservationDateChanged(value: String) {
         runCatching { LocalDate.parse(value) }.onSuccess { parsed ->
-            _uiState.update { it.copy(observationDate = parsed, error = null) }
+            onObservationDateSelected(parsed)
         }
+    }
+
+    fun onObservationDateSelected(value: LocalDate) {
+        _uiState.update { it.copy(observationDate = value, error = null) }
     }
 
     fun onObservationTypeChanged(value: ObservationType) {
@@ -118,12 +125,34 @@ class DebitFormViewModel @Inject constructor(
         _uiState.update { it.copy(comment = value, error = null) }
     }
 
+    fun onPersonalCommentChanged(value: String) {
+        _uiState.update { it.copy(personalComment = value, error = null) }
+    }
+
     fun submit() {
         val state = _uiState.value
-        val validationError = validate(state)
-        if (validationError != null) {
-            _uiState.update { it.copy(error = validationError) }
-            return
+        val observerName = state.observerName.trim()
+        val observerEmail = state.observerEmail.trim().takeIf { it.isNotBlank() }
+        val observationType = state.observationType
+        val debitLevel = state.debitLevel
+
+        when {
+            observerName.isBlank() -> {
+                _uiState.update { it.copy(error = "Le nom est obligatoire.") }
+                return
+            }
+            !state.isConnected && observerEmail == null -> {
+                _uiState.update { it.copy(error = "L'e-mail est obligatoire hors connexion.") }
+                return
+            }
+            observationType == null -> {
+                _uiState.update { it.copy(error = "Le type d'observation est obligatoire.") }
+                return
+            }
+            debitLevel == null -> {
+                _uiState.update { it.copy(error = "Le débit est obligatoire.") }
+                return
+            }
         }
 
         viewModelScope.launch {
@@ -131,14 +160,15 @@ class DebitFormViewModel @Inject constructor(
             submitDebitUseCase(
                 DebitSubmission(
                     canyonId = canyonId,
-                    observerName = state.observerName.trim(),
-                    observerEmail = state.observerEmail.trim().takeIf { it.isNotBlank() },
+                    observerName = observerName,
+                    observerEmail = observerEmail,
                     observationDate = state.observationDate,
-                    observationType = state.observationType,
-                    debitLevel = state.debitLevel,
-                    waterTemperature = state.waterTemperature,
-                    airTemperature = state.airTemperature,
+                    observationType = observationType,
+                    debitLevel = debitLevel,
+                    waterTemperature = state.waterTemperature ?: WaterTemperature.INCONNUE,
+                    airTemperature = state.airTemperature ?: AirTemperature.INCONNUE,
                     comment = state.comment.trim(),
+                    personalComment = state.personalComment.trim(),
                 )
             ).fold(
                 onSuccess = { status ->
@@ -147,17 +177,22 @@ class DebitFormViewModel @Inject constructor(
                             isSubmitting = false,
                             transientMessage = when (status) {
                                 DebitSubmissionStatus.SUBMITTED -> "Débit envoyé"
-                                DebitSubmissionStatus.QUEUED_OFFLINE -> "Débit enregistré hors-ligne"
+                                DebitSubmissionStatus.QUEUED_OFFLINE -> "Débit enregistré hors ligne"
                             },
                             lastSubmissionStatus = status,
                         )
                     }
                 },
                 onFailure = { throwable ->
+                    val requiresLogin = throwable is DebitSubmissionSessionExpiredException
+                    if (requiresLogin) {
+                        authRepository.logout()
+                    }
                     _uiState.update {
                         it.copy(
                             isSubmitting = false,
                             error = throwable.message ?: "Impossible d'envoyer le débit.",
+                            loginRequiredMessage = if (requiresLogin) throwable.message else null,
                         )
                     }
                 },
@@ -173,9 +208,7 @@ class DebitFormViewModel @Inject constructor(
         _uiState.update { it.copy(lastSubmissionStatus = null) }
     }
 
-    private fun validate(state: DebitFormUiState): String? {
-        if (state.observerName.isBlank()) return "Le nom est obligatoire."
-        if (!state.isConnected && state.observerEmail.isBlank()) return "L'e-mail est obligatoire hors connexion."
-        return null
+    fun clearLoginRequiredMessage() {
+        _uiState.update { it.copy(loginRequiredMessage = null) }
     }
 }

@@ -63,6 +63,7 @@ import fr.descentecanyon.app.R
 import fr.descentecanyon.app.domain.model.Debit
 import fr.descentecanyon.app.domain.model.ForumActiveTopic
 import fr.descentecanyon.app.domain.model.HomeFeedType
+import fr.descentecanyon.app.domain.model.NiveauDebit
 import fr.descentecanyon.app.ui.auth.AuthViewModel
 import fr.descentecanyon.app.ui.auth.LoginDialog
 import fr.descentecanyon.app.ui.components.CompactAppBar
@@ -605,6 +606,7 @@ private fun DebitCard(
     modifier: Modifier = Modifier,
 ) {
     val bgColor = debitLevelColor(debit.niveau)
+    val isCrue = debit.niveau == NiveauDebit.CRUE
 
     Card(
         onClick = onClick,
@@ -619,8 +621,8 @@ private fun DebitCard(
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .height(6.dp)
-                    .background(bgColor.copy(alpha = 0.9f)),
+                    .height(if (isCrue) 8.dp else 6.dp)
+                    .background(if (isCrue) bgColor else bgColor.copy(alpha = 0.9f)),
             )
             Column(modifier = Modifier.padding(14.dp)) {
                 Row(

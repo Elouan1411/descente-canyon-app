@@ -1,6 +1,7 @@
 package fr.descentecanyon.app.ui.canyon
 
 import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -20,12 +21,14 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import fr.descentecanyon.app.R
 import fr.descentecanyon.app.domain.model.Debit
+import fr.descentecanyon.app.domain.model.NiveauDebit
 import fr.descentecanyon.app.ui.components.DebitBadge
 import fr.descentecanyon.app.ui.components.debitLevelColor
 import java.time.format.DateTimeFormatter
@@ -37,14 +40,19 @@ internal fun DebitListItem(
 ) {
     var expanded by rememberSaveable(debit.id) { mutableStateOf(false) }
     val bgColor = debitLevelColor(debit.niveau)
+    val colorScheme = MaterialTheme.colorScheme
+    val isCrue = debit.niveau == NiveauDebit.CRUE
+    val primaryTextColor = if (isCrue) Color.White else colorScheme.onSurface
+    val secondaryTextColor = if (isCrue) Color.White.copy(alpha = 0.78f) else colorScheme.onSurfaceVariant
 
     Card(
         modifier = modifier
             .fillMaxWidth()
             .clickable { expanded = !expanded },
         colors = CardDefaults.cardColors(
-            containerColor = bgColor.copy(alpha = 0.1f),
+            containerColor = if (isCrue) bgColor else bgColor.copy(alpha = 0.1f),
         ),
+        border = if (isCrue) BorderStroke(1.dp, Color.White.copy(alpha = 0.45f)) else null,
     ) {
         Row(
             modifier = Modifier
@@ -59,13 +67,14 @@ internal fun DebitListItem(
                         text = debit.date.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")),
                         style = MaterialTheme.typography.bodyMedium,
                         fontWeight = FontWeight.Medium,
+                        color = primaryTextColor,
                     )
                     debit.isDescended?.let { isDescended ->
                         Spacer(modifier = Modifier.width(8.dp))
                         Text(
                             text = if (isDescended) stringResource(R.string.debit_type_descended) else stringResource(R.string.debit_type_not_descended),
                             style = MaterialTheme.typography.labelSmall,
-                            color = MaterialTheme.colorScheme.primary,
+                            color = if (isCrue) Color.White.copy(alpha = 0.9f) else colorScheme.primary,
                         )
                     }
                 }
@@ -73,7 +82,7 @@ internal fun DebitListItem(
                     Text(
                         text = auteur,
                         style = MaterialTheme.typography.bodySmall,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                        color = secondaryTextColor,
                     )
                 }
                 AnimatedVisibility(visible = expanded) {
@@ -82,6 +91,7 @@ internal fun DebitListItem(
                             Text(
                                 text = comment,
                                 style = MaterialTheme.typography.bodySmall,
+                                color = primaryTextColor,
                                 modifier = Modifier.padding(top = 6.dp),
                             )
                         }
@@ -93,14 +103,14 @@ internal fun DebitListItem(
                                 Text(
                                     text = stringResource(R.string.debit_water_temperature_short, it),
                                     style = MaterialTheme.typography.labelSmall,
-                                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                                    color = secondaryTextColor,
                                 )
                             }
                             debit.airTemperature?.let {
                                 Text(
                                     text = stringResource(R.string.debit_air_temperature_short, it),
                                     style = MaterialTheme.typography.labelSmall,
-                                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                                    color = secondaryTextColor,
                                 )
                             }
                         }
@@ -111,6 +121,7 @@ internal fun DebitListItem(
                         Text(
                             text = comment,
                             style = MaterialTheme.typography.bodySmall,
+                            color = primaryTextColor,
                             maxLines = 2,
                             overflow = TextOverflow.Ellipsis,
                             modifier = Modifier.padding(top = 2.dp),

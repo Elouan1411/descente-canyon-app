@@ -16,15 +16,37 @@ open class DescenteCanyonWebClient @Inject constructor() {
         cookies: Map<String, String> = emptyMap(),
         timeoutMs: Int = TIMEOUT_MS,
     ): Document {
-        return buildConnection(url, cookies, timeoutMs).get()
+        return getDocumentResponse(url, cookies, timeoutMs).document
+    }
+
+    open fun getDocumentResponse(
+        url: String,
+        cookies: Map<String, String> = emptyMap(),
+        timeoutMs: Int = TIMEOUT_MS,
+    ): WebDocumentResponse {
+        val response = buildConnection(url, cookies, timeoutMs)
+            .followRedirects(true)
+            .execute()
+
+        return WebDocumentResponse(
+            document = response.parse(),
+            cookies = response.cookies(),
+            finalUrl = response.url().toString(),
+        )
     }
 
     open fun postDocument(
         url: String,
         data: Map<String, String>,
         cookies: Map<String, String> = emptyMap(),
+        referer: String? = null,
+        origin: String? = null,
     ): WebDocumentResponse {
         val response = buildConnection(url, cookies, TIMEOUT_MS)
+            .apply {
+                if (referer != null) referrer(referer)
+                if (origin != null) header("Origin", origin)
+            }
             .data(data)
             .method(Connection.Method.POST)
             .followRedirects(true)

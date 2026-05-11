@@ -10,6 +10,7 @@ import fr.descentecanyon.app.data.remote.dto.ScrapedGeoPoint
 import fr.descentecanyon.app.data.remote.dto.ScrapedPhoto
 import fr.descentecanyon.app.domain.model.AirTemperature
 import fr.descentecanyon.app.domain.model.DebitSubmission
+import fr.descentecanyon.app.domain.model.DebitSubmissionSessionExpiredException
 import fr.descentecanyon.app.domain.model.NiveauDebit
 import fr.descentecanyon.app.domain.model.ObservationType
 import fr.descentecanyon.app.domain.model.WaterTemperature
@@ -164,19 +165,26 @@ class CanyonScraper @Inject constructor(
             semaphore.withPermit {
                 runCatching {
                     val url = "$BASE_URL/canyoning/ajout-debit/${submission.canyonId}/formulaire-observation.html"
+                    val savedCookies = sessionManager.getCookies()
+                    val formResponse = webClient.getDocumentResponse(
+                        url = url,
+                        cookies = savedCookies,
+                    )
+                    val requestCookies = savedCookies + formResponse.cookies
+                    val form = formResponse.document.selectFirst("form#monformulaire")
+                        ?: throw IllegalStateException("Impossible de charger le formulaire de débit.")
+
+                    if (form.isAnonymousDebitForm() && submission.observerEmail == null) {
+                        sessionManager.logout()
+                        throw DebitSubmissionSessionExpiredException()
+                    }
+
                     val response = webClient.postDocument(
                         url = url,
-                        data = mapOf(
-                            "groupe" to submission.observerName,
-                            "emailgroupe" to submission.observerEmail.orEmpty(),
-                            "date_mesure" to submission.observationDate.toString(),
-                            "parcouru" to submission.observationType.toFormValue(),
-                            "debit" to submission.debitLevel.toFormValue(),
-                            "eau" to submission.waterTemperature.toFormValue(),
-                            "air" to submission.airTemperature.toFormValue(),
-                            "remarque" to submission.comment,
-                        ),
-                        cookies = sessionManager.getCookies(),
+                        data = form.toDebitSubmissionData(submission),
+                        cookies = requestCookies,
+                        referer = url,
+                        origin = BASE_URL,
                     )
 
                     val finalUrl = response.finalUrl
@@ -185,7 +193,11 @@ class CanyonScraper @Inject constructor(
                         doc.selectFirst("form#monformulaire") == null
 
                     if (!success) {
-                        throw IllegalStateException("Le formulaire de debit a ete refuse par le serveur.")
+                        val serverMessage = doc.extractDebitSubmissionError()
+                        throw IllegalStateException(
+                            serverMessage?.let { "Le formulaire de débit a été refusé par le serveur : $it" }
+                                ?: "Le formulaire de débit a été refusé par le serveur.",
+                        )
                     }
                 }
             }
@@ -243,6 +255,61 @@ class CanyonScraper @Inject constructor(
 private fun ObservationType.toFormValue(): String = when (this) {
     ObservationType.NON_PARCOURU -> "0"
     ObservationType.PARCOURU -> "1"
+}
+
+private fun Element.toDebitSubmissionData(submission: DebitSubmission): Map<String, String> {
+    return readFormDefaults().toMutableMap().apply {
+        putIfFieldPresent(this@toDebitSubmissionData, "groupe", submission.observerName)
+        putIfFieldPresent(this@toDebitSubmissionData, "emailgroupe", submission.observerEmail.orEmpty())
+        putIfFieldPresent(this@toDebitSubmissionData, "date_mesure", submission.observationDate.toString())
+        putIfFieldPresent(this@toDebitSubmissionData, "parcouru", submission.observationType.toFormValue())
+        putIfFieldPresent(this@toDebitSubmissionData, "debit", submission.debitLevel.toFormValue())
+        putIfFieldPresent(this@toDebitSubmissionData, "eau", submission.waterTemperature.toFormValue())
+        putIfFieldPresent(this@toDebitSubmissionData, "air", submission.airTemperature.toFormValue())
+        putIfFieldPresent(this@toDebitSubmissionData, "remarque", submission.comment)
+        putIfFieldPresent(this@toDebitSubmissionData, "perso", submission.personalComment)
+    }
+}
+
+private fun Element.readFormDefaults(): Map<String, String> {
+    return select("input[name], textarea[name], select[name]")
+        .mapNotNull { element ->
+            val name = element.attr("name").takeIf { it.isNotBlank() } ?: return@mapNotNull null
+            val type = element.attr("type")
+            if (type == "button" || type == "submit" || type == "reset") return@mapNotNull null
+            val value = when (element.tagName()) {
+                "textarea" -> element.text()
+                "select" -> element.selectFirst("option[selected]")?.attr("value").orEmpty()
+                else -> element.attr("value")
+            }
+            name to value
+        }
+        .toMap()
+}
+
+private fun MutableMap<String, String>.putIfFieldPresent(
+    form: Element,
+    name: String,
+    value: String,
+) {
+    if (form.hasFormControl(name)) {
+        this[name] = value
+    }
+}
+
+private fun Element.hasFormControl(name: String): Boolean {
+    return getElementsByAttributeValue("name", name).isNotEmpty()
+}
+
+private fun Element.isAnonymousDebitForm(): Boolean {
+    return hasFormControl("groupe") && hasFormControl("emailgroupe")
+}
+
+private fun Document.extractDebitSubmissionError(): String? {
+    return select(".alert-danger, .alert-error")
+        .joinToString(" ") { it.text() }
+        .trim()
+        .takeIf { it.isNotBlank() }
 }
 
 private fun NiveauDebit.toFormValue(): String = when (this) {
