@@ -8,10 +8,17 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.statusBarsPadding
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.AlertDialog
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -31,14 +38,15 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import androidx.compose.foundation.text.KeyboardOptions
 import fr.descentecanyon.app.R
 import fr.descentecanyon.app.domain.model.CotationRating
 import fr.descentecanyon.app.domain.model.IntRangeFilter
 import fr.descentecanyon.app.domain.model.SearchCriteria
 import fr.descentecanyon.app.domain.model.SearchSortField
 import fr.descentecanyon.app.domain.model.SortDirection
+import java.text.Normalizer
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -68,12 +76,28 @@ fun SearchFiltersSheet(
                 }
             }
 
-            FilterSection(title = stringResource(R.string.search_filters)) {
-                FilterChip(
-                    selected = criteria.favoritesOnly,
-                    onClick = { onCriteriaChanged(criteria.copy(favoritesOnly = !criteria.favoritesOnly)) },
-                    label = { Text(stringResource(R.string.search_filter_favorites)) },
+            FilterSection(title = stringResource(R.string.location)) {
+                SearchableStringPickerField(
+                    label = stringResource(R.string.search_filter_country),
+                    selected = criteria.selectedCountry,
+                    emptyLabel = stringResource(R.string.search_filter_any_country),
+                    options = uiState.availableCountries,
+                    onSelected = { country ->
+                        onCriteriaChanged(criteria.copy(selectedCountry = country, selectedDepartment = null))
+                    },
                 )
+                if (criteria.selectedCountry != null) {
+                    SearchableStringPickerField(
+                        label = stringResource(R.string.search_filter_department),
+                        selected = criteria.selectedDepartment,
+                        emptyLabel = stringResource(R.string.search_filter_any_department),
+                        options = uiState.availableDepartments,
+                        enabled = uiState.availableDepartments.isNotEmpty(),
+                        onSelected = { department ->
+                            onCriteriaChanged(criteria.copy(selectedDepartment = department))
+                        },
+                    )
+                }
             }
 
             FilterSection(title = stringResource(R.string.search_filter_cotation)) {
@@ -110,6 +134,11 @@ fun SearchFiltersSheet(
                 )
                 FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
                     FilterChip(
+                        selected = criteria.favoritesOnly,
+                        onClick = { onCriteriaChanged(criteria.copy(favoritesOnly = !criteria.favoritesOnly)) },
+                        label = { Text(stringResource(R.string.search_filter_favorites)) },
+                    )
+                    FilterChip(
                         selected = criteria.regulationOnly,
                         onClick = { onCriteriaChanged(criteria.copy(regulationOnly = !criteria.regulationOnly)) },
                         label = { Text(stringResource(R.string.search_filter_regulated_only)) },
@@ -137,11 +166,148 @@ fun SearchFiltersSheet(
 
 @Composable
 private fun FilterSection(title: String, content: @Composable () -> Unit) {
-    Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
-        Text(text = title, style = MaterialTheme.typography.titleMedium)
-        content()
+    Card(
+        modifier = Modifier.fillMaxWidth(),
+        colors = CardDefaults.cardColors(
+            containerColor = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.55f),
+        ),
+        elevation = CardDefaults.cardElevation(defaultElevation = 0.dp),
+    ) {
+        Column(
+            modifier = Modifier.padding(14.dp),
+            verticalArrangement = Arrangement.spacedBy(10.dp),
+        ) {
+            Text(text = title, style = MaterialTheme.typography.titleMedium)
+            content()
+        }
     }
 }
+
+@Composable
+private fun SearchableStringPickerField(
+    label: String,
+    selected: String?,
+    emptyLabel: String,
+    options: List<String>,
+    onSelected: (String?) -> Unit,
+    modifier: Modifier = Modifier,
+    enabled: Boolean = true,
+) {
+    var showPicker by remember { mutableStateOf(false) }
+    var query by remember { mutableStateOf("") }
+    val filteredOptions = remember(options, query) {
+        if (query.isBlank()) options else options.filter { it.matchesPickerQuery(query) }
+    }
+
+    Box(modifier = modifier.fillMaxWidth()) {
+        OutlinedButton(
+            onClick = {
+                query = ""
+                showPicker = true
+            },
+            enabled = enabled,
+            modifier = Modifier.fillMaxWidth(),
+        ) {
+            Column(
+                modifier = Modifier.weight(1f),
+                verticalArrangement = Arrangement.spacedBy(2.dp),
+            ) {
+                Text(
+                    text = label,
+                    style = MaterialTheme.typography.labelMedium,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    maxLines = 1,
+                )
+                Text(
+                    text = selected ?: emptyLabel,
+                    maxLines = 1,
+                    overflow = TextOverflow.Ellipsis,
+                )
+            }
+        }
+
+        if (showPicker) {
+            AlertDialog(
+                onDismissRequest = { showPicker = false },
+                title = { Text(label) },
+                text = {
+                    Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
+                        OutlinedTextField(
+                            value = query,
+                            onValueChange = { query = it },
+                            modifier = Modifier.fillMaxWidth(),
+                            placeholder = { Text(stringResource(R.string.search_filter_option_search)) },
+                            singleLine = true,
+                        )
+                        LazyColumn(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .heightIn(max = 360.dp),
+                        ) {
+                            item {
+                                DropdownMenuItem(
+                                    text = {
+                                        Text(
+                                            text = emptyLabel,
+                                            color = if (selected == null) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurface,
+                                        )
+                                    },
+                                    onClick = {
+                                        showPicker = false
+                                        onSelected(null)
+                                    },
+                                )
+                            }
+                            if (filteredOptions.isEmpty()) {
+                                item {
+                                    Text(
+                                        text = stringResource(R.string.search_filter_option_no_results),
+                                        style = MaterialTheme.typography.bodyMedium,
+                                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                                        modifier = Modifier.padding(horizontal = 12.dp, vertical = 14.dp),
+                                    )
+                                }
+                            } else {
+                                items(filteredOptions) { option ->
+                                    DropdownMenuItem(
+                                        text = {
+                                            Text(
+                                                text = option,
+                                                color = if (option == selected) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurface,
+                                            )
+                                        },
+                                        onClick = {
+                                            showPicker = false
+                                            onSelected(option)
+                                        },
+                                    )
+                                }
+                            }
+                        }
+                    }
+                },
+                confirmButton = {
+                    TextButton(onClick = { showPicker = false }) {
+                        Text(stringResource(R.string.close))
+                    }
+                },
+            )
+        }
+    }
+}
+
+private fun String.matchesPickerQuery(query: String): Boolean {
+    return normalizedPickerText().contains(query.normalizedPickerText())
+}
+
+private fun String.normalizedPickerText(): String {
+    return Normalizer
+        .normalize(this, Normalizer.Form.NFD)
+        .replace(DiacriticsRegex, "")
+        .lowercase()
+}
+
+private val DiacriticsRegex = Regex("\\p{Mn}+")
 
 @Composable
 private fun RangeDropdownRow(

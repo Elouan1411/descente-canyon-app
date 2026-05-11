@@ -30,21 +30,29 @@ class SearchCanyonsUseCase @Inject constructor(
         val queryTokens = normalizedQuery.searchTokens()
         val shouldDeferResults = criteria.shouldDeferBroadResults()
 
+        val geoOptionMatches = catalog.asSequence()
+            .filter { matchesQuery(it, normalizedQuery, queryTokens) }
+            .toList()
+
         val baseMatches = catalog.asSequence()
             .filter { matchesBaseFilters(it, criteria, normalizedQuery, queryTokens) }
             .toList()
 
-        val availableCountries = baseMatches.asSequence()
+        val availableCountries = geoOptionMatches.asSequence()
             .flatMap { it.countryTokens.asSequence() }
             .distinct()
             .sorted()
+            .toList()
+
+        val countryOptionMatches = geoOptionMatches.asSequence()
+            .filter { matchesCountry(it, criteria.selectedCountry) }
             .toList()
 
         val countryMatches = baseMatches.asSequence()
             .filter { matchesCountry(it, criteria.selectedCountry) }
             .toList()
 
-        val availableDepartments = countryMatches.asSequence()
+        val availableDepartments = countryOptionMatches.asSequence()
             .flatMap { it.subdivisionsFor(criteria.selectedCountry).asSequence() }
             .distinct()
             .sorted()

@@ -400,6 +400,10 @@ private data class SearchComputedState(
     val scrollResetRequestId: Int,
 )
 
-private fun SearchCriteria.sanitizedForPersistence(): SearchCriteria = copy(userLatitude = null, userLongitude = null)
+private fun SearchCriteria.sanitizedForPersistence(): SearchCriteria = copy(
+    selectedDepartment = selectedDepartment.takeIf { selectedCountry != null },
+    userLatitude = null,
+    userLongitude = null,
+)
 
 private fun monotonicNowMs(): Long = System.nanoTime() / 1_000_000

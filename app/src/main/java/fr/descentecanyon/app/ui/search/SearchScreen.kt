@@ -4,6 +4,7 @@ import android.Manifest
 import android.app.Activity
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -22,9 +23,8 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
-import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
-import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.List
 import androidx.compose.material.icons.automirrored.filled.Sort
@@ -32,10 +32,8 @@ import androidx.compose.material.icons.filled.ArrowDownward
 import androidx.compose.material.icons.filled.ArrowUpward
 import androidx.compose.material.icons.filled.Clear
 import androidx.compose.material.icons.filled.ExpandMore
-import androidx.compose.material.icons.filled.List
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.Tune
-import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CircularProgressIndicator
@@ -47,8 +45,8 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.ModalBottomSheet
-import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
@@ -61,11 +59,11 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -101,8 +99,6 @@ fun SearchScreen(
     val listState = rememberLazyListState()
     var showFiltersSheet by rememberSaveable { mutableStateOf(false) }
     var showSortMenu by rememberSaveable { mutableStateOf(false) }
-    var showCountryMenu by rememberSaveable { mutableStateOf(false) }
-    var showDepartmentMenu by rememberSaveable { mutableStateOf(false) }
     var pendingDistanceSort by rememberSaveable { mutableStateOf(false) }
     var lastHandledScrollResetId by rememberSaveable { mutableIntStateOf(uiState.scrollResetRequestId) }
 
@@ -232,94 +228,36 @@ fun SearchScreen(
 
             Spacer(modifier = Modifier.height(8.dp))
 
-            FlowRow(
-                horizontalArrangement = Arrangement.spacedBy(8.dp),
-                verticalArrangement = Arrangement.spacedBy(8.dp),
+            Row(
                 modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.spacedBy(10.dp),
             ) {
-                Box {
-                    OutlinedButton(onClick = { showCountryMenu = true }) {
-                        Text(
-                            text = uiState.criteria.selectedCountry ?: stringResource(R.string.search_filter_country),
-                            maxLines = 1,
-                            overflow = TextOverflow.Ellipsis,
-                        )
-                        Spacer(modifier = Modifier.width(4.dp))
-                        Icon(Icons.Default.ExpandMore, contentDescription = null)
-                    }
-                    DropdownMenu(expanded = showCountryMenu, onDismissRequest = { showCountryMenu = false }) {
-                        DropdownMenuItem(
-                            text = { Text(stringResource(R.string.search_filter_any_country)) },
-                            onClick = {
-                                showCountryMenu = false
-                                viewModel.clearCountry()
-                            },
-                        )
-                        uiState.availableCountries.forEach { country ->
-                            DropdownMenuItem(
-                                text = { Text(country) },
-                                onClick = {
-                                    showCountryMenu = false
-                                    viewModel.onCriteriaChanged(uiState.criteria.copy(selectedCountry = country))
-                                },
-                            )
-                        }
-                    }
-                }
+                SearchControlButton(
+                    title = stringResource(R.string.search_filters),
+                    value = if (uiState.activeFilterCount > 0) {
+                        stringResource(R.string.search_filters_active_count, uiState.activeFilterCount)
+                    } else {
+                        stringResource(R.string.search_filters_none)
+                    },
+                    leadingIcon = Icons.Default.Tune,
+                    active = uiState.activeFilterCount > 0,
+                    onClick = { showFiltersSheet = true },
+                    modifier = Modifier.weight(1f),
+                )
 
-                Box {
-                    OutlinedButton(
-                        onClick = { showDepartmentMenu = true },
-                        enabled = uiState.availableDepartments.isNotEmpty(),
-                    ) {
-                        Text(
-                            text = uiState.criteria.selectedDepartment ?: stringResource(R.string.search_filter_department),
-                            maxLines = 1,
-                            overflow = TextOverflow.Ellipsis,
-                        )
-                        Spacer(modifier = Modifier.width(4.dp))
-                        Icon(Icons.Default.ExpandMore, contentDescription = null)
-                    }
-                    DropdownMenu(expanded = showDepartmentMenu, onDismissRequest = { showDepartmentMenu = false }) {
-                        DropdownMenuItem(
-                            text = { Text(stringResource(R.string.search_filter_any_department)) },
-                            onClick = {
-                                showDepartmentMenu = false
-                                viewModel.clearDepartment()
-                            },
-                        )
-                        uiState.availableDepartments.forEach { department ->
-                            DropdownMenuItem(
-                                text = { Text(department) },
-                                onClick = {
-                                    showDepartmentMenu = false
-                                    viewModel.onCriteriaChanged(uiState.criteria.copy(selectedDepartment = department))
-                                },
-                            )
-                        }
-                    }
-                }
-
-                OutlinedButton(onClick = { showFiltersSheet = true }) {
-                    Icon(Icons.Default.Tune, contentDescription = null)
-                    Spacer(modifier = Modifier.width(6.dp))
-                    Text(
-                        if (uiState.activeFilterCount > 0) stringResource(R.string.search_filters_with_count, uiState.activeFilterCount)
-                        else stringResource(R.string.search_filters)
+                Box(modifier = Modifier.weight(1f)) {
+                    SearchControlButton(
+                        title = stringResource(R.string.search_sort_title),
+                        value = sortLabel(uiState.criteria.sortField),
+                        leadingIcon = Icons.AutoMirrored.Filled.Sort,
+                        trailingIcon = if (uiState.criteria.sortDirection == SortDirection.ASC) {
+                            Icons.Default.ArrowUpward
+                        } else {
+                            Icons.Default.ArrowDownward
+                        },
+                        onClick = { showSortMenu = true },
+                        modifier = Modifier.fillMaxWidth(),
                     )
-                }
-
-                Box {
-                    OutlinedButton(onClick = { showSortMenu = true }) {
-                        Icon(Icons.AutoMirrored.Filled.Sort, contentDescription = null)
-                        Spacer(modifier = Modifier.width(6.dp))
-                        Text(sortLabel(uiState.criteria.sortField))
-                        Spacer(modifier = Modifier.width(4.dp))
-                        Icon(
-                            imageVector = if (uiState.criteria.sortDirection == SortDirection.ASC) Icons.Default.ArrowUpward else Icons.Default.ArrowDownward,
-                            contentDescription = null,
-                        )
-                    }
                     DropdownMenu(expanded = showSortMenu, onDismissRequest = { showSortMenu = false }) {
                         SearchSortField.entries.forEach { field ->
                             DropdownMenuItem(
@@ -508,6 +446,68 @@ fun SearchScreen(
                     onCanyonClick(selectedCanyon.id)
                 },
                 onClose = viewModel::clearSelectedCanyon,
+            )
+        }
+    }
+}
+
+@Composable
+private fun SearchControlButton(
+    title: String,
+    value: String,
+    leadingIcon: ImageVector,
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier,
+    trailingIcon: ImageVector = Icons.Default.ExpandMore,
+    active: Boolean = false,
+) {
+    val colorScheme = MaterialTheme.colorScheme
+    Surface(
+        onClick = onClick,
+        modifier = modifier.height(62.dp),
+        shape = RoundedCornerShape(18.dp),
+        color = if (active) colorScheme.primaryContainer.copy(alpha = 0.88f) else colorScheme.surface,
+        contentColor = colorScheme.onSurface,
+        tonalElevation = if (active) 2.dp else 0.dp,
+        shadowElevation = 1.dp,
+        border = BorderStroke(
+            width = 1.dp,
+            color = if (active) colorScheme.primary.copy(alpha = 0.38f) else colorScheme.outlineVariant.copy(alpha = 0.86f),
+        ),
+    ) {
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 12.dp, vertical = 9.dp),
+            verticalAlignment = Alignment.CenterVertically,
+        ) {
+            Icon(
+                imageVector = leadingIcon,
+                contentDescription = null,
+                tint = if (active) colorScheme.primary else colorScheme.onSurfaceVariant,
+            )
+            Spacer(modifier = Modifier.width(10.dp))
+            Column(modifier = Modifier.weight(1f)) {
+                Text(
+                    text = title,
+                    style = MaterialTheme.typography.labelMedium,
+                    color = colorScheme.onSurfaceVariant,
+                    maxLines = 1,
+                )
+                Text(
+                    text = value,
+                    style = MaterialTheme.typography.titleSmall,
+                    color = if (active) colorScheme.onPrimaryContainer else colorScheme.onSurface,
+                    maxLines = 1,
+                    overflow = TextOverflow.Ellipsis,
+                )
+            }
+            Spacer(modifier = Modifier.width(8.dp))
+            Icon(
+                imageVector = trailingIcon,
+                contentDescription = null,
+                modifier = Modifier.size(20.dp),
+                tint = if (active) colorScheme.primary else colorScheme.onSurfaceVariant,
             )
         }
     }
