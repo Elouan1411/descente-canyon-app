@@ -320,27 +320,13 @@ object DatabaseModule {
             ensureCanyonColumn(db, "sourceKey", "TEXT NOT NULL DEFAULT ''")
             db.execSQL("UPDATE `canyons` SET `sourceType` = 'DESCENTE_CANYON' WHERE `sourceType` IS NULL OR TRIM(`sourceType`) = ''")
             db.execSQL("UPDATE `canyons` SET `sourceKey` = 'dc:' || `id` WHERE `sourceKey` IS NULL OR TRIM(`sourceKey`) = ''")
-            db.execSQL(
-                """
-                CREATE TABLE IF NOT EXISTS `canyon_tracks` (
-                    `canyonId` INTEGER NOT NULL,
-                    `trackId` TEXT NOT NULL,
-                    `name` TEXT NOT NULL,
-                    `role` TEXT,
-                    `isPrimary` INTEGER NOT NULL,
-                    `sourceFile` TEXT,
-                    `pointCount` INTEGER,
-                    `geometryJson` TEXT,
-                    `bboxMinLongitude` REAL,
-                    `bboxMinLatitude` REAL,
-                    `bboxMaxLongitude` REAL,
-                    `bboxMaxLatitude` REAL,
-                    PRIMARY KEY(`canyonId`, `trackId`),
-                    FOREIGN KEY(`canyonId`) REFERENCES `canyons`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE
-                )
-                """.trimIndent()
-            )
-            db.execSQL("CREATE INDEX IF NOT EXISTS `index_canyon_tracks_canyonId` ON `canyon_tracks` (`canyonId`)")
+            recreateCanyonTracksTable(db)
+        }
+    }
+
+    private val MIGRATION_10_11 = object : Migration(10, 11) {
+        override fun migrate(db: SupportSQLiteDatabase) {
+            recreateCanyonTracksTable(db)
         }
     }
 
@@ -361,6 +347,7 @@ object DatabaseModule {
             .addMigrations(MIGRATION_7_8)
             .addMigrations(MIGRATION_8_9)
             .addMigrations(MIGRATION_9_10)
+            .addMigrations(MIGRATION_10_11)
             .build()
     }
 
@@ -445,6 +432,30 @@ object DatabaseModule {
         )
         db.execSQL("DROP TABLE `debits_legacy`")
         db.execSQL("CREATE INDEX IF NOT EXISTS `index_debits_canyonId` ON `debits` (`canyonId`)")
+    }
+
+    private fun recreateCanyonTracksTable(db: SupportSQLiteDatabase) {
+        db.execSQL("DROP TABLE IF EXISTS `canyon_tracks`")
+        db.execSQL(
+            """
+            CREATE TABLE IF NOT EXISTS `canyon_tracks` (
+                `canyonId` INTEGER NOT NULL,
+                `trackId` TEXT NOT NULL,
+                `name` TEXT NOT NULL,
+                `role` TEXT,
+                `isPrimary` INTEGER NOT NULL,
+                `sourceFile` TEXT,
+                `pointCount` INTEGER,
+                `geometryJson` TEXT,
+                `bboxMinLongitude` REAL,
+                `bboxMinLatitude` REAL,
+                `bboxMaxLongitude` REAL,
+                `bboxMaxLatitude` REAL,
+                PRIMARY KEY(`canyonId`, `trackId`)
+            )
+            """.trimIndent()
+        )
+        db.execSQL("CREATE INDEX IF NOT EXISTS `index_canyon_tracks_canyonId` ON `canyon_tracks` (`canyonId`)")
     }
 
     private fun SupportSQLiteDatabase.tableHasColumn(
