@@ -145,6 +145,37 @@ class SearchViewModelTest {
 
     @Test
     @OptIn(ExperimentalCoroutinesApi::class)
+    fun `deleting query character resets scroll after distance results are recomputed`() = runTest {
+        every { canyonRepository.observeSearchCatalog() } returns flowOf(
+            listOf(
+                canyon(id = 1, nom = "Ver proche", latitude = 43.70, longitude = 6.90),
+                canyon(id = 2, nom = "Versoud loin", latitude = 44.00, longitude = 7.30),
+            )
+        )
+        val viewModel = SearchViewModel(searchCanyonsUseCase, SavedStateHandle(), mainDispatcherRule.dispatcher)
+
+        advanceTimeBy(250)
+        advanceUntilIdle()
+        viewModel.onUserLocationUpdated(43.70, 6.90)
+        viewModel.onSortSelected(SearchSortField.DISTANCE)
+        advanceTimeBy(250)
+        advanceUntilIdle()
+
+        viewModel.onQueryChanged("vers")
+        advanceTimeBy(250)
+        advanceUntilIdle()
+        assertEquals(listOf(2), viewModel.uiState.value.results.map { it.id })
+        val versScrollResetId = viewModel.uiState.value.scrollResetRequestId
+
+        viewModel.onQueryChanged("ver")
+        advanceUntilIdle()
+
+        assertEquals(listOf(1, 2), viewModel.uiState.value.results.map { it.id })
+        assertEquals(versScrollResetId + 1, viewModel.uiState.value.scrollResetRequestId)
+    }
+
+    @Test
+    @OptIn(ExperimentalCoroutinesApi::class)
     fun `selecting a canyon does not request a list scroll reset`() = runTest {
         every { canyonRepository.observeSearchCatalog() } returns flowOf(listOf(canyon(id = 1)))
         val viewModel = SearchViewModel(searchCanyonsUseCase, SavedStateHandle(), mainDispatcherRule.dispatcher)

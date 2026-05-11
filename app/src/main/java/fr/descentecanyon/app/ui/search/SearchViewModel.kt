@@ -75,13 +75,16 @@ class SearchViewModel @Inject constructor(
 
     private val initialCriteria = loadCriteria()
     private val initialResultViewMode = loadResultViewMode()
-    private val filtersFlow = MutableStateFlow(initialCriteria.sanitizedForPersistence().copy(query = ""))
+    private val criteriaInputFlow = MutableStateFlow(
+        SearchCriteriaInputState(
+            filters = initialCriteria.sanitizedForPersistence().copy(query = ""),
+            appliedQuery = initialCriteria.query,
+        )
+    )
     private val queryDraftFlow = MutableStateFlow(initialCriteria.query)
-    private val appliedQueryFlow = MutableStateFlow(initialCriteria.query)
     private val locationFlow = MutableStateFlow(SearchLocationUiState())
     private val resultViewModeFlow = MutableStateFlow(initialResultViewMode)
     private val selectedCanyonIdFlow = MutableStateFlow<Int?>(null)
-    private val scrollResetRequestIdFlow = MutableStateFlow(0)
     private var queryDebounceJob: Job? = null
     private var hasLoggedInitialResults = false
 
@@ -100,18 +103,18 @@ class SearchViewModel @Inject constructor(
         viewModelScope.launch {
             combine(
                 searchCanyonsUseCase.observeCatalog(),
-                filtersFlow,
-                appliedQueryFlow,
+                criteriaInputFlow,
                 locationFlow,
-            ) { catalog, filters, appliedQuery, location ->
+            ) { catalog, criteriaInput, location ->
                 SearchQueryInput(
                     catalog = catalog,
-                    criteria = filters.copy(
-                        query = appliedQuery,
+                    criteria = criteriaInput.filters.copy(
+                        query = criteriaInput.appliedQuery,
                         userLatitude = location.userLatitude,
                         userLongitude = location.userLongitude,
                     ),
                     location = location,
+                    scrollResetRequestId = criteriaInput.scrollResetRequestId,
                 )
             }
                 .mapLatest { input ->
@@ -131,15 +134,13 @@ class SearchViewModel @Inject constructor(
                         criteria = input.criteria,
                         location = input.location,
                         resultSet = resultSet,
+                        scrollResetRequestId = input.scrollResetRequestId,
                     )
                 }
                 .combine(resultViewModeFlow) { computed, resultViewMode ->
                     computed to resultViewMode
                 }
-                .combine(scrollResetRequestIdFlow) { (computed, resultViewMode), scrollResetRequestId ->
-                    Triple(computed, resultViewMode, scrollResetRequestId)
-                }
-                .combine(selectedCanyonIdFlow) { (computed, resultViewMode, scrollResetRequestId), selectedCanyonId ->
+                .combine(selectedCanyonIdFlow) { (computed, resultViewMode), selectedCanyonId ->
                     SearchUiState(
                         queryDraft = queryDraftFlow.value,
                         criteria = computed.criteria,
@@ -159,7 +160,7 @@ class SearchViewModel @Inject constructor(
                         userLongitude = computed.location.userLongitude,
                         isLocating = computed.location.isLocating,
                         selectedCanyon = computed.resultSet.results.firstOrNull { it.id == selectedCanyonId },
-                        scrollResetRequestId = scrollResetRequestId,
+                        scrollResetRequestId = computed.scrollResetRequestId,
                     )
                 }
                 .flowOn(searchDispatcher)
@@ -172,10 +173,11 @@ class SearchViewModel @Inject constructor(
                             "error" to (throwable.message ?: throwable::class.simpleName),
                         )
                     }
+                    val criteriaInput = criteriaInputFlow.value
                     _uiState.value = SearchUiState(
                         queryDraft = queryDraftFlow.value,
-                        criteria = filtersFlow.value.copy(
-                            query = appliedQueryFlow.value,
+                        criteria = criteriaInput.filters.copy(
+                            query = criteriaInput.appliedQuery,
                             userLatitude = locationFlow.value.userLatitude,
                             userLongitude = locationFlow.value.userLongitude,
                         ),
@@ -188,7 +190,7 @@ class SearchViewModel @Inject constructor(
                         userLatitude = locationFlow.value.userLatitude,
                         userLongitude = locationFlow.value.userLongitude,
                         isLocating = locationFlow.value.isLocating,
-                        scrollResetRequestId = scrollResetRequestIdFlow.value,
+                        scrollResetRequestId = criteriaInput.scrollResetRequestId,
                     )
                 }
                 .collect { state ->
@@ -213,20 +215,24 @@ class SearchViewModel @Inject constructor(
         applyQuery(query = query, immediate = query.length <= previousDraft.length)
         selectedCanyonIdFlow.value = null
         _uiState.update {
-            it.copy(queryDraft = query, isSearching = query != appliedQueryFlow.value)
+            it.copy(queryDraft = query, isSearching = query != criteriaInputFlow.value.appliedQuery)
         }
     }
 
     fun onCriteriaChanged(criteria: SearchCriteria) {
-        val current = filtersFlow.value
+        val current = criteriaInputFlow.value.filters
         val sanitized = criteria.sanitizedForPersistence()
         val updated = if (!current.selectedCountry.equals(sanitized.selectedCountry, ignoreCase = true) && current.selectedDepartment == sanitized.selectedDepartment) {
             sanitized.copy(selectedDepartment = null)
         } else {
             sanitized
         }
-        filtersFlow.value = updated.copy(query = "")
-        scrollResetRequestIdFlow.update { it + 1 }
+        criteriaInputFlow.update {
+            it.copy(
+                filters = updated.copy(query = ""),
+                scrollResetRequestId = it.scrollResetRequestId + 1,
+            )
+        }
         selectedCanyonIdFlow.value = null
         persistCriteria(updated)
         _uiState.update {
@@ -243,7 +249,7 @@ class SearchViewModel @Inject constructor(
     }
 
     fun onSortSelected(field: SearchSortField) {
-        val current = filtersFlow.value
+        val current = criteriaInputFlow.value.filters
         val next = if (current.sortField == field) {
             current.copy(sortDirection = current.sortDirection.toggle())
         } else {
@@ -285,6 +291,9 @@ class SearchViewModel @Inject constructor(
 
     fun onLocationUnavailable() {
         locationFlow.update { it.copy(isLocating = false) }
+        _uiState.update {
+            it.copy(error = "Impossible d'obtenir une position récente. Vérifiez que la localisation est activée.")
+        }
     }
 
     fun selectCanyon(canyonId: Int) {
@@ -295,9 +304,9 @@ class SearchViewModel @Inject constructor(
         selectedCanyonIdFlow.value = null
     }
 
-    fun clearAllFilters() = onCriteriaChanged(filtersFlow.value.clearAllFilters())
-    fun clearCountry() = onCriteriaChanged(filtersFlow.value.copy(selectedCountry = null, selectedDepartment = null))
-    fun clearDepartment() = onCriteriaChanged(filtersFlow.value.copy(selectedDepartment = null))
+    fun clearAllFilters() = onCriteriaChanged(criteriaInputFlow.value.filters.clearAllFilters())
+    fun clearCountry() = onCriteriaChanged(criteriaInputFlow.value.filters.copy(selectedCountry = null, selectedDepartment = null))
+    fun clearDepartment() = onCriteriaChanged(criteriaInputFlow.value.filters.copy(selectedDepartment = null))
 
     fun clearQuery() {
         queryDraftFlow.value = ""
@@ -323,11 +332,15 @@ class SearchViewModel @Inject constructor(
     }
 
     private fun updateAppliedQuery(query: String) {
-        if (appliedQueryFlow.value == query) {
+        if (criteriaInputFlow.value.appliedQuery == query) {
             return
         }
-        appliedQueryFlow.value = query
-        scrollResetRequestIdFlow.update { it + 1 }
+        criteriaInputFlow.update {
+            it.copy(
+                appliedQuery = query,
+                scrollResetRequestId = it.scrollResetRequestId + 1,
+            )
+        }
     }
 
     private fun loadCriteria(): SearchCriteria {
@@ -367,16 +380,24 @@ class SearchViewModel @Inject constructor(
     }
 }
 
+private data class SearchCriteriaInputState(
+    val filters: SearchCriteria,
+    val appliedQuery: String,
+    val scrollResetRequestId: Int = 0,
+)
+
 private data class SearchQueryInput(
     val catalog: List<CanyonSearchItem>,
     val criteria: SearchCriteria,
     val location: SearchLocationUiState,
+    val scrollResetRequestId: Int,
 )
 
 private data class SearchComputedState(
     val criteria: SearchCriteria,
     val location: SearchLocationUiState,
     val resultSet: SearchResultSet,
+    val scrollResetRequestId: Int,
 )
 
 private fun SearchCriteria.sanitizedForPersistence(): SearchCriteria = copy(userLatitude = null, userLongitude = null)
