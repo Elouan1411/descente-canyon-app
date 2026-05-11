@@ -170,13 +170,20 @@ fun PhotoGalleryScreen(
                         .background(Brush.verticalGradient(listOf(Color.Black.copy(alpha = 0.7f), Color.Transparent)))
                         .statusBarsPadding()
                         .padding(horizontal = 16.dp, vertical = 12.dp),
-                    horizontalArrangement = Arrangement.SpaceBetween,
                     verticalAlignment = Alignment.CenterVertically,
                 ) {
+                    IconButton(onClick = onBackClick) {
+                        Icon(
+                            imageVector = Icons.AutoMirrored.Filled.ArrowBack,
+                            contentDescription = stringResource(R.string.back),
+                            tint = Color.White,
+                        )
+                    }
                     Text(
                         text = "${pagerState.currentPage + 1}/${photos.size}",
                         color = Color.White,
                         style = MaterialTheme.typography.titleMedium,
+                        modifier = Modifier.weight(1f),
                     )
                     Row(horizontalArrangement = Arrangement.spacedBy(8.dp), verticalAlignment = Alignment.CenterVertically) {
                         if (currentPhoto.localPath == null) {
@@ -198,13 +205,6 @@ fun PhotoGalleryScreen(
                                     )
                                 }
                             }
-                        }
-                        IconButton(onClick = onBackClick) {
-                            Icon(
-                                imageVector = Icons.AutoMirrored.Filled.ArrowBack,
-                                contentDescription = stringResource(R.string.back),
-                                tint = Color.White,
-                            )
                         }
                     }
                 }

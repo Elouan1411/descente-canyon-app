@@ -1572,9 +1572,14 @@ private fun CanyonGeoPointsFullScreenDialog(
             ) {
                 Row(
                     modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.SpaceBetween,
                     verticalAlignment = Alignment.CenterVertically,
                 ) {
+                    IconButton(onClick = onDismiss) {
+                        Icon(
+                            imageVector = Icons.AutoMirrored.Filled.ArrowBack,
+                            contentDescription = stringResource(R.string.back),
+                        )
+                    }
                     Column(modifier = Modifier.weight(1f)) {
                         Text(
                             text = stringResource(R.string.show_map_points),
@@ -1586,9 +1591,6 @@ private fun CanyonGeoPointsFullScreenDialog(
                             style = MaterialTheme.typography.bodyMedium,
                             color = MaterialTheme.colorScheme.onSurfaceVariant,
                         )
-                    }
-                    TextButton(onClick = onDismiss) {
-                        Text(text = stringResource(R.string.back))
                     }
                 }
                 CanyonGeoPointsMapAndList(
