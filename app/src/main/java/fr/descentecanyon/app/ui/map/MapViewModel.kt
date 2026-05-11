@@ -154,7 +154,7 @@ class MapViewModel @Inject constructor(
 
     fun onLocationUnavailable() {
         _uiState.update {
-            it.copy(transientMessage = "Aucune position récente disponible sur cet appareil.")
+            it.copy(transientMessage = "Impossible d'obtenir une position récente. Vérifiez que la localisation est activée.")
         }
     }
 

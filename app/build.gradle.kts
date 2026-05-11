@@ -208,6 +208,7 @@ dependencies {
 
     // MapLibre (offline maps)
     implementation(libs.maplibre)
+    implementation(libs.play.services.location)
 
     // Coil (image loading with caching)
     implementation(libs.coil.compose)

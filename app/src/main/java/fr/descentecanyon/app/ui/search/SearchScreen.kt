@@ -1,6 +1,7 @@
 package fr.descentecanyon.app.ui.search
 
 import android.Manifest
+import android.app.Activity
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.Arrangement
@@ -83,6 +84,7 @@ import fr.descentecanyon.app.ui.components.CanyonSummaryCard
 import fr.descentecanyon.app.ui.components.SelectedCanyonSheetContent
 import fr.descentecanyon.app.ui.location.hasLocationPermission
 import fr.descentecanyon.app.ui.location.loadCurrentDeviceLocation
+import fr.descentecanyon.app.ui.location.requestLocationSettings
 import fr.descentecanyon.app.ui.map.MapLibreView
 import fr.descentecanyon.app.ui.test.TestTags
 
@@ -108,6 +110,47 @@ fun SearchScreen(
         PerformanceTrace.logEvent("search_screen_visible")
     }
 
+    fun startLocationLookup() {
+        viewModel.onLocationLookupStarted()
+        loadCurrentDeviceLocation(
+            context = context,
+            onLocation = { latitude, longitude ->
+                viewModel.onUserLocationUpdated(latitude, longitude)
+                if (pendingDistanceSort) {
+                    viewModel.onSortSelected(SearchSortField.DISTANCE)
+                    pendingDistanceSort = false
+                }
+            },
+            onUnavailable = {
+                viewModel.onLocationUnavailable()
+                pendingDistanceSort = false
+            },
+        )
+    }
+
+    val locationSettingsLauncher = rememberLauncherForActivityResult(
+        contract = ActivityResultContracts.StartIntentSenderForResult(),
+    ) { result ->
+        if (result.resultCode == Activity.RESULT_OK) {
+            startLocationLookup()
+        } else {
+            viewModel.onLocationUnavailable()
+            pendingDistanceSort = false
+        }
+    }
+
+    fun requestLocationWithSettingsCheck() {
+        requestLocationSettings(
+            context = context,
+            onEnabled = ::startLocationLookup,
+            onResolutionRequired = { request -> locationSettingsLauncher.launch(request) },
+            onUnavailable = {
+                viewModel.onLocationUnavailable()
+                pendingDistanceSort = false
+            },
+        )
+    }
+
     val locationPermissionLauncher = rememberLauncherForActivityResult(
         contract = ActivityResultContracts.RequestMultiplePermissions(),
     ) { permissions ->
@@ -115,21 +158,7 @@ fun SearchScreen(
             permissions[Manifest.permission.ACCESS_COARSE_LOCATION] == true
         viewModel.onLocationPermissionResult(granted)
         if (granted) {
-            viewModel.onLocationLookupStarted()
-            loadCurrentDeviceLocation(
-                context = context,
-                onLocation = { latitude, longitude ->
-                    viewModel.onUserLocationUpdated(latitude, longitude)
-                    if (pendingDistanceSort) {
-                        viewModel.onSortSelected(SearchSortField.DISTANCE)
-                        pendingDistanceSort = false
-                    }
-                },
-                onUnavailable = {
-                    viewModel.onLocationUnavailable()
-                    pendingDistanceSort = false
-                },
-            )
+            requestLocationWithSettingsCheck()
         } else {
             pendingDistanceSort = false
         }
@@ -149,29 +178,7 @@ fun SearchScreen(
         }
 
         viewModel.onLocationPermissionResult(true)
-        if (uiState.userLatitude != null && uiState.userLongitude != null) {
-            if (pendingDistanceSort) {
-                viewModel.onSortSelected(SearchSortField.DISTANCE)
-                pendingDistanceSort = false
-            }
-            return
-        }
-
-        viewModel.onLocationLookupStarted()
-        loadCurrentDeviceLocation(
-            context = context,
-            onLocation = { latitude, longitude ->
-                viewModel.onUserLocationUpdated(latitude, longitude)
-                if (pendingDistanceSort) {
-                    viewModel.onSortSelected(SearchSortField.DISTANCE)
-                    pendingDistanceSort = false
-                }
-            },
-            onUnavailable = {
-                viewModel.onLocationUnavailable()
-                pendingDistanceSort = false
-            },
-        )
+        requestLocationWithSettingsCheck()
     }
 
     LaunchedEffect(Unit) {
@@ -469,13 +476,13 @@ fun SearchScreen(
                 if (uiState.resultViewMode == SearchResultViewMode.MAP) {
                     Icon(
                         imageVector = Icons.AutoMirrored.Filled.List,
-                        contentDescription = null,
+                        contentDescription = stringResource(R.string.search_show_list),
                         modifier = iconModifier,
                     )
                 } else {
                     Icon(
                         painter = painterResource(R.drawable.map_search_24),
-                        contentDescription = null,
+                        contentDescription = stringResource(R.string.search_show_map),
                         modifier = iconModifier,
                     )
                 }

@@ -25,6 +25,7 @@ kotlinxSerialization = "1.8.1"
 
 # Maps
 maplibre = "11.8.4"
+playServicesLocation = "21.3.0"
 
 # Coroutines
 coroutines = "1.10.2"
@@ -107,6 +108,7 @@ onnxruntime-jvm = { group = "com.microsoft.onnxruntime", name = "onnxruntime", v
 
 # MapLibre
 maplibre = { group = "org.maplibre.gl", name = "android-sdk", version.ref = "maplibre" }
+play-services-location = { group = "com.google.android.gms", name = "play-services-location", version.ref = "playServicesLocation" }
 
 # Coil (image loading)
 coil-compose = { group = "io.coil-kt.coil3", name = "coil-compose", version.ref = "coil" }

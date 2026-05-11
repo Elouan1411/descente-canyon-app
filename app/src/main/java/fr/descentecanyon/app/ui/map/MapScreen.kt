@@ -1,6 +1,7 @@
 package fr.descentecanyon.app.ui.map
 
 import android.Manifest
+import android.app.Activity
 import android.content.Context
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
@@ -56,6 +57,7 @@ import fr.descentecanyon.app.perf.PerformanceTrace
 import fr.descentecanyon.app.ui.components.SelectedCanyonSheetContent
 import fr.descentecanyon.app.ui.location.hasLocationPermission
 import fr.descentecanyon.app.ui.location.loadCurrentDeviceLocation
+import fr.descentecanyon.app.ui.location.requestLocationSettings
 import fr.descentecanyon.app.ui.theme.CanyonBlue
 import fr.descentecanyon.app.ui.theme.CanyonBlueDark
 import fr.descentecanyon.app.ui.theme.RockBrownLight
@@ -78,6 +80,25 @@ fun MapScreen(
             uiState.mapCanyons.filter { canyon -> canyon.isWithin(bounds) }
         } ?: uiState.mapCanyons
     }
+    val locationSettingsLauncher = rememberLauncherForActivityResult(
+        contract = ActivityResultContracts.StartIntentSenderForResult(),
+    ) { result ->
+        if (result.resultCode == Activity.RESULT_OK) {
+            focusAroundUserFromDevice(context, viewModel)
+        } else {
+            viewModel.onLocationUnavailable()
+        }
+    }
+
+    fun focusAroundUserWithSettingsCheck() {
+        requestLocationSettings(
+            context = context,
+            onEnabled = { focusAroundUserFromDevice(context, viewModel) },
+            onResolutionRequired = { request -> locationSettingsLauncher.launch(request) },
+            onUnavailable = viewModel::onLocationUnavailable,
+        )
+    }
+
     val permissionLauncher = rememberLauncherForActivityResult(
         contract = ActivityResultContracts.RequestMultiplePermissions(),
     ) { permissions ->
@@ -85,7 +106,7 @@ fun MapScreen(
             permissions[Manifest.permission.ACCESS_COARSE_LOCATION] == true
         viewModel.onLocationPermissionResult(granted)
         if (granted) {
-            focusAroundUserFromDevice(context, viewModel)
+            focusAroundUserWithSettingsCheck()
         }
     }
 
@@ -112,7 +133,10 @@ fun MapScreen(
         ) {
             SelectedCanyonSheetContent(
                 canyon = canyon,
-                onOpen = { onCanyonClick(canyon.id) },
+                onOpen = {
+                    viewModel.clearSelectedCanyon()
+                    onCanyonClick(canyon.id)
+                },
                 onClose = viewModel::clearSelectedCanyon,
             )
         }
@@ -131,7 +155,7 @@ fun MapScreen(
             onAroundMeClick = {
                 if (context.hasLocationPermission()) {
                     viewModel.onLocationPermissionResult(true)
-                    focusAroundUserFromDevice(context, viewModel)
+                    focusAroundUserWithSettingsCheck()
                 } else {
                     permissionLauncher.launch(
                         arrayOf(

@@ -3,18 +3,55 @@ package fr.descentecanyon.app.ui.location
 import android.Manifest
 import android.annotation.SuppressLint
 import android.content.Context
+import android.os.Handler
 import android.location.Location
-import android.location.LocationListener
-import android.location.LocationManager
-import android.os.Bundle
 import android.os.Looper
+import android.os.SystemClock
+import androidx.activity.result.IntentSenderRequest
 import androidx.core.content.ContextCompat
+import com.google.android.gms.common.api.ResolvableApiException
+import com.google.android.gms.location.CurrentLocationRequest
+import com.google.android.gms.location.LocationRequest
+import com.google.android.gms.location.LocationServices
+import com.google.android.gms.location.LocationSettingsRequest
+import com.google.android.gms.location.Priority
+import com.google.android.gms.tasks.CancellationTokenSource
 
 fun Context.hasLocationPermission(): Boolean {
     return ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) ==
         android.content.pm.PackageManager.PERMISSION_GRANTED ||
         ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) ==
         android.content.pm.PackageManager.PERMISSION_GRANTED
+}
+
+fun requestLocationSettings(
+    context: Context,
+    onEnabled: () -> Unit,
+    onResolutionRequired: (IntentSenderRequest) -> Unit,
+    onUnavailable: () -> Unit,
+) {
+    val locationRequest = LocationRequest.Builder(
+        Priority.PRIORITY_HIGH_ACCURACY,
+        LOCATION_SETTINGS_INTERVAL_MS,
+    ).build()
+    val settingsRequest = LocationSettingsRequest.Builder()
+        .addLocationRequest(locationRequest)
+        .setAlwaysShow(true)
+        .build()
+
+    LocationServices.getSettingsClient(context)
+        .checkLocationSettings(settingsRequest)
+        .addOnSuccessListener { onEnabled() }
+        .addOnFailureListener { throwable ->
+            val resolvable = throwable as? ResolvableApiException
+            if (resolvable != null) {
+                onResolutionRequired(
+                    IntentSenderRequest.Builder(resolvable.resolution.intentSender).build()
+                )
+            } else {
+                onUnavailable()
+            }
+        }
 }
 
 @SuppressLint("MissingPermission")
@@ -28,63 +65,46 @@ fun loadCurrentDeviceLocation(
         return
     }
 
-    val locationManager = context.getSystemService(Context.LOCATION_SERVICE) as? LocationManager
-    if (locationManager == null) {
-        onUnavailable()
-        return
-    }
+    val client = LocationServices.getFusedLocationProviderClient(context)
+    val cancellationTokenSource = CancellationTokenSource()
+    val handler = Handler(Looper.getMainLooper())
+    var completed = false
+    var timeout: Runnable? = null
 
-    bestLastKnownLocation(locationManager)?.let { cached ->
-        onLocation(cached.latitude, cached.longitude)
-        return
-    }
-
-    val provider = when {
-        locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER) -> LocationManager.NETWORK_PROVIDER
-        locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER) -> LocationManager.GPS_PROVIDER
-        else -> {
-            onUnavailable()
-            return
-        }
-    }
-
-    val listener = object : LocationListener {
-        override fun onLocationChanged(location: Location) {
-            locationManager.removeUpdates(this)
+    fun finish(location: Location?) {
+        if (completed) return
+        completed = true
+        timeout?.let(handler::removeCallbacks)
+        cancellationTokenSource.cancel()
+        if (location != null && location.isFreshEnough()) {
             onLocation(location.latitude, location.longitude)
-        }
-
-        @Deprecated("Deprecated in API")
-        override fun onStatusChanged(provider: String?, status: Int, extras: Bundle?) {}
-
-        override fun onProviderEnabled(provider: String) {}
-
-        override fun onProviderDisabled(provider: String) {
-            locationManager.removeUpdates(this)
+        } else {
             onUnavailable()
         }
     }
 
-    locationManager.requestLocationUpdates(
-        provider,
-        0L,
-        0f,
-        listener,
-        Looper.getMainLooper(),
-    )
+    val timeoutRunnable = Runnable { finish(null) }
+    timeout = timeoutRunnable
+    handler.postDelayed(timeoutRunnable, CURRENT_LOCATION_TIMEOUT_MS + CURRENT_LOCATION_TIMEOUT_GRACE_MS)
+
+    val request = CurrentLocationRequest.Builder()
+        .setPriority(Priority.PRIORITY_HIGH_ACCURACY)
+        .setDurationMillis(CURRENT_LOCATION_TIMEOUT_MS)
+        .setMaxUpdateAgeMillis(LOCATION_MAX_UPDATE_AGE_MS)
+        .build()
+
+    client.getCurrentLocation(request, cancellationTokenSource.token)
+        .addOnSuccessListener { location -> finish(location) }
+        .addOnFailureListener { finish(null) }
+        .addOnCanceledListener { finish(null) }
 }
 
-private fun bestLastKnownLocation(locationManager: LocationManager): Location? {
-    val providers = listOf(
-        LocationManager.NETWORK_PROVIDER,
-        LocationManager.GPS_PROVIDER,
-        LocationManager.PASSIVE_PROVIDER,
-    )
-
-    @SuppressLint("MissingPermission")
-    fun getLocation(provider: String): Location? =
-        runCatching { locationManager.getLastKnownLocation(provider) }.getOrNull()
-
-    return providers.mapNotNull { getLocation(it) }
-        .maxByOrNull { it.accuracy.takeIf { accuracy -> accuracy > 0f }?.let { accuracy -> -accuracy } ?: Float.MIN_VALUE }
+private fun Location.isFreshEnough(): Boolean {
+    val ageMs = (SystemClock.elapsedRealtimeNanos() - elapsedRealtimeNanos) / 1_000_000
+    return ageMs in 0..LOCATION_MAX_UPDATE_AGE_MS
 }
+
+private const val LOCATION_SETTINGS_INTERVAL_MS = 10_000L
+private const val CURRENT_LOCATION_TIMEOUT_MS = 15_000L
+private const val CURRENT_LOCATION_TIMEOUT_GRACE_MS = 1_000L
+private const val LOCATION_MAX_UPDATE_AGE_MS = 30_000L
