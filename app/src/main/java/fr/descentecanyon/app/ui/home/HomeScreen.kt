@@ -25,6 +25,7 @@ import androidx.compose.material.icons.automirrored.filled.OpenInNew
 import androidx.compose.material.icons.filled.AccountCircle
 import androidx.compose.material.icons.filled.ChatBubbleOutline
 import androidx.compose.material.icons.filled.CloudOff
+import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.Refresh
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.WifiOff
@@ -88,6 +89,7 @@ fun HomeScreen(
     val homeState by homeViewModel.uiState.collectAsStateWithLifecycle()
     val authState by authViewModel.uiState.collectAsStateWithLifecycle()
     val context = LocalContext.current
+    val donationUrl = stringResource(R.string.support_donation_url)
     var showLoginDialog by remember { mutableStateOf(false) }
 
     if (showLoginDialog) {
@@ -136,6 +138,10 @@ fun HomeScreen(
 
             item {
                 QuickSearchCard(onClick = onQuickSearchClick)
+            }
+
+            item {
+                DonationCard(onClick = { openExternalUrl(context, donationUrl) })
             }
 
             item {
@@ -526,6 +532,20 @@ private fun QuickSearchCard(
         icon = Icons.Default.Search,
         onClick = onClick,
         modifier = modifier.testTag(TestTags.homeQuickSearch),
+    )
+}
+
+@Composable
+private fun DonationCard(
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier,
+) {
+    HomeActionCard(
+        title = stringResource(R.string.support_donation_title),
+        hint = stringResource(R.string.support_donation_hint),
+        icon = Icons.Default.Favorite,
+        onClick = onClick,
+        modifier = modifier,
     )
 }
 

@@ -137,6 +137,9 @@ Recherchez un canyon et ajoutez-le à vos favoris.</string>
     <string name="search_sort_distance">Distance</string>
     <string name="quick_search_title">Recherche rapide</string>
     <string name="quick_search_hint">Ouvrir la recherche de canyon</string>
+    <string name="support_donation_title">Faire un don</string>
+    <string name="support_donation_hint">Soutenir le développement de l\'application</string>
+    <string name="support_donation_url">https://buymeacoffee.com/antoineduquennoy</string>
     <string name="search_location_unknown">Localisation non renseignée</string>
     <string name="map_permission_title">Activer la position</string>
     <string name="map_permission_description">Autorisez la localisation pour recentrer la carte autour de vous.</string>
@@ -320,6 +323,9 @@ Les photos et les débits restent récupérés en ligne quand le réseau est dis
     <string name="prediction_ordinal_gros">Gros débit probable</string>
     <string name="prediction_ordinal_tres_gros">Très gros débit probable</string>
     <string name="prediction_ordinal_crue">Crue probable</string>
+    <string name="prediction_uncertainty_low">Incertitude faible</string>
+    <string name="prediction_uncertainty_medium">Incertitude modérée</string>
+    <string name="prediction_uncertainty_high">Incertitude élevée</string>
     <string name="debit_level_filet_short">Filet</string>
     <string name="debit_level_crue_short">Crue</string>
     <string name="prediction_info_title">Comprendre l\'estimation</string>
@@ -329,7 +335,8 @@ Les photos et les débits restent récupérés en ligne quand le réseau est dis
     <string name="prediction_info_reading_title">Comment la lire</string>
     <string name="prediction_info_reading_p1">Chaque ligne correspond à un jour : aujourd\'hui, demain et après-demain. La jauge indique le débit probable entre Sec et Crue.</string>
     <string name="prediction_info_reading_p2">Plus le curseur se rapproche de Gros, Très gros ou Crue, plus le modèle estime que le débit peut devenir chargé.</string>
-    <string name="prediction_info_reading_p3">Cette estimation doit être lue comme une aide à la préparation, pas comme une garantie de sécurité ni comme une mesure instantanée du débit réel.</string>
+    <string name="prediction_info_reading_p3">L\'indication d\'incertitude montre si le modèle est concentré sur un niveau précis ou s\'il hésite entre plusieurs niveaux voisins.</string>
+    <string name="prediction_info_reading_p4">Cette estimation doit être lue comme une aide à la préparation, pas comme une garantie de sécurité ni comme une mesure instantanée du débit réel.</string>
     <string name="prediction_info_data_title">Quelles données sont utilisées</string>
     <string name="prediction_info_data_p1">Le modèle combine la météo journalière récente, les prévisions à court terme, certaines caractéristiques du canyon, la surface du bassin versant quand elle est connue, ainsi que des observations passées du canyon ou de zones proches.</string>
     <string name="prediction_info_data_p2">Concrètement, il tient compte à la fois de la pluie récente, de sa durée, de la saison, de la température, de la neige récente et du comportement observé sur le canyon, le massif ou la région.</string>

@@ -15,6 +15,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.KeyboardArrowDown
@@ -235,16 +236,26 @@ private fun PredictionRow(
             }
 
             Text(
-                text = ordinalLevel?.let { ordinalLevelTitle(it) } ?: levelLabel(prediction.level),
+                text = prediction.ordinalStandardDeviation?.let { uncertaintyLabel(it) }
+                    ?: ordinalLevel?.let { ordinalLevelTitle(it) }
+                    ?: levelLabel(prediction.level),
                 style = MaterialTheme.typography.titleSmall,
-                color = ordinalLevel?.let { ordinalColor(it) } ?: Color.White,
+                color = prediction.ordinalStandardDeviation?.let { uncertaintyColor(it) }
+                    ?: ordinalLevel?.let { ordinalColor(it) }
+                    ?: Color.White,
                 textAlign = TextAlign.End,
-                modifier = if (ordinalLevel == null) {
-                    Modifier
+                modifier = when {
+                    prediction.ordinalStandardDeviation != null -> Modifier
+                        .widthIn(max = 180.dp)
+                        .background(
+                            uncertaintyColor(prediction.ordinalStandardDeviation).copy(alpha = 0.16f),
+                            RoundedCornerShape(999.dp),
+                        )
+                        .padding(horizontal = 10.dp, vertical = 4.dp)
+                    ordinalLevel == null -> Modifier
                         .background(levelColor(prediction.level), RoundedCornerShape(999.dp))
                         .padding(horizontal = 10.dp, vertical = 4.dp)
-                } else {
-                    Modifier.width(140.dp)
+                    else -> Modifier.width(140.dp)
                 },
             )
         }
@@ -291,7 +302,7 @@ private fun DebitOrdinalGauge(
             Box(
                 modifier = Modifier
                     .align(Alignment.CenterStart)
-                    .offset(x = (maxWidth - markerWidth) * (score.coerceIn(0.0, 5.0).toFloat() / 5f))
+                    .offset(x = (maxWidth - markerWidth) * ordinalGaugePositionFraction(score))
                     .width(markerWidth)
                     .height(26.dp)
                     .clip(RoundedCornerShape(999.dp))
@@ -311,6 +322,24 @@ private fun DebitOrdinalGauge(
                 )
             }
         }
+    }
+}
+
+@Composable
+private fun uncertaintyLabel(standardDeviation: Double): String {
+    return when {
+        standardDeviation < 0.75 -> stringResource(R.string.prediction_uncertainty_low)
+        standardDeviation < 1.20 -> stringResource(R.string.prediction_uncertainty_medium)
+        else -> stringResource(R.string.prediction_uncertainty_high)
+    }
+}
+
+@Composable
+private fun uncertaintyColor(standardDeviation: Double): Color {
+    return when {
+        standardDeviation < 0.75 -> DebitCorrect
+        standardDeviation < 1.20 -> DebitGros
+        else -> MaterialTheme.colorScheme.error
     }
 }
 
@@ -368,6 +397,11 @@ private fun ordinalColor(level: NiveauDebit): Color {
         NiveauDebit.CRUE -> Color.Black
         NiveauDebit.INCONNU -> DebitInconnu
     }
+}
+
+private fun ordinalGaugePositionFraction(score: Double): Float {
+    val categoryCount = ORDINAL_GAUGE_LEVELS.size.toFloat()
+    return ((score.coerceIn(0.0, 5.0).toFloat() + 0.5f) / categoryCount).coerceIn(0f, 1f)
 }
 
 @Composable

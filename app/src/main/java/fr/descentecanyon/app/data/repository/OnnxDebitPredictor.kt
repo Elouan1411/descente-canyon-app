@@ -15,6 +15,7 @@ import java.nio.FloatBuffer
 import javax.inject.Inject
 import javax.inject.Singleton
 import kotlin.math.roundToInt
+import kotlin.math.sqrt
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.withContext
 
@@ -53,6 +54,9 @@ class OnnxDebitPredictor @Inject constructor(
                     } else {
                         null
                     }
+                    val ordinalStandardDeviation = ordinalScore?.let { score ->
+                        ordinalStandardDeviation(probabilitiesByLabel, score)
+                    }
                     val level = if (ordinalLowThreshold != null && ordinalScore != null) {
                         when {
                             ordinalScore >= highThreshold -> PredictedDebitLevel.HIGH
@@ -74,6 +78,7 @@ class OnnxDebitPredictor @Inject constructor(
                         highThreshold = highThreshold,
                         ordinalScore = ordinalScore,
                         ordinalLevel = ordinalScore?.let(::ordinalLevelFromScore),
+                        ordinalStandardDeviation = ordinalStandardDeviation,
                     )
                 }
             }
@@ -88,6 +93,17 @@ class OnnxDebitPredictor @Inject constructor(
         return ORDINAL_RANK_BY_LABEL.entries.sumOf { (label, rank) ->
             (probabilitiesByLabel[label] ?: 0.0) * rank
         }
+    }
+
+    private fun ordinalStandardDeviation(
+        probabilitiesByLabel: Map<String, Double>,
+        score: Double,
+    ): Double {
+        val variance = ORDINAL_RANK_BY_LABEL.entries.sumOf { (label, rank) ->
+            val distance = rank - score
+            (probabilitiesByLabel[label] ?: 0.0) * distance * distance
+        }
+        return sqrt(variance.coerceAtLeast(0.0))
     }
 
     private fun ordinalLevelFromScore(score: Double): NiveauDebit {

@@ -146,6 +146,7 @@ private fun DebitPredictionInfoContent(
                     stringResource(R.string.prediction_info_reading_p1),
                     stringResource(R.string.prediction_info_reading_p2),
                     stringResource(R.string.prediction_info_reading_p3),
+                    stringResource(R.string.prediction_info_reading_p4),
                 ),
             )
         }
