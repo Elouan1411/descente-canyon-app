@@ -8,13 +8,13 @@ set "REVIEW_FILE=%ROOT_DIR%watershed-review\watershed-review.json"
 set "STATE_FILE=%ROOT_DIR%build\watershed-review\watershed-review-state.json"
 
 powershell -NoProfile -ExecutionPolicy Bypass -Command ^
-  "$serverScript = [System.IO.Path]::GetFullPath('%ROOT_DIR%scripts\watershed_review_server.py');" ^
+  "$serverScript = [System.IO.Path]::GetFullPath('%ROOT_DIR%scripts\watersheds\review_server.py');" ^
   "$existing = Get-CimInstance Win32_Process -Filter \"Name = 'python.exe' OR Name = 'py.exe'\" -ErrorAction SilentlyContinue | Where-Object { $_.CommandLine -like ('*' + $serverScript + '*') };" ^
   "if ($existing) { $existing | ForEach-Object { Stop-Process -Id $_.ProcessId -Force -ErrorAction SilentlyContinue } ; Start-Sleep -Seconds 1 }" ^
   "$python = Get-Command py -ErrorAction SilentlyContinue;" ^
   "if (-not $python) { $python = Get-Command python -ErrorAction SilentlyContinue }" ^
   "if (-not $python) { throw 'Python introuvable. Installe py ou python pour lancer le serveur local.' }" ^
-  "Start-Process -WindowStyle Hidden -WorkingDirectory '%ROOT_DIR%' -FilePath $python.Source -ArgumentList '%ROOT_DIR%scripts\watershed_review_server.py','%PORT%','--review-file','%REVIEW_FILE%','--state-file','%STATE_FILE%' | Out-Null;"
+  "Start-Process -WindowStyle Hidden -WorkingDirectory '%ROOT_DIR%' -FilePath $python.Source -ArgumentList $serverScript,'%PORT%','--review-file','%REVIEW_FILE%','--state-file','%STATE_FILE%' | Out-Null;"
 
 timeout /t 2 /nobreak >nul
 
