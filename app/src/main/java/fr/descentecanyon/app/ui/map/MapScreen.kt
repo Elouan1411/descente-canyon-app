@@ -145,6 +145,7 @@ fun MapScreen(
     Column(
         modifier = modifier
             .fillMaxSize()
+            .background(MaterialTheme.colorScheme.background)
             .statusBarsPadding()
             .padding(horizontal = 16.dp),
         verticalArrangement = Arrangement.spacedBy(12.dp),
@@ -152,6 +153,7 @@ fun MapScreen(
         SnackbarHost(hostState = snackbarHostState)
 
         MapHeroCard(
+            isLocating = uiState.isLocating,
             onAroundMeClick = {
                 if (context.hasLocationPermission()) {
                     viewModel.onLocationPermissionResult(true)
@@ -253,6 +255,7 @@ fun MapScreen(
 
 @Composable
 private fun MapHeroCard(
+    isLocating: Boolean,
     onAroundMeClick: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
@@ -292,13 +295,28 @@ private fun MapHeroCard(
                         fontWeight = FontWeight.Bold,
                     )
                 }
-                Button(onClick = onAroundMeClick) {
-                    Icon(
-                        imageVector = Icons.Default.MyLocation,
-                        contentDescription = null,
-                    )
+                Button(
+                    onClick = onAroundMeClick,
+                    enabled = !isLocating,
+                ) {
+                    if (isLocating) {
+                        CircularProgressIndicator(
+                            modifier = Modifier.size(18.dp),
+                            color = MaterialTheme.colorScheme.onPrimary,
+                            strokeWidth = 2.dp,
+                        )
+                    } else {
+                        Icon(
+                            imageVector = Icons.Default.MyLocation,
+                            contentDescription = null,
+                        )
+                    }
                     Spacer(modifier = Modifier.size(8.dp))
-                    Text(text = stringResource(R.string.map_focus_action))
+                    Text(
+                        text = stringResource(
+                            if (isLocating) R.string.map_focus_loading else R.string.map_focus_action
+                        )
+                    )
                 }
             }
         }
@@ -330,6 +348,7 @@ private fun focusAroundUserFromDevice(
     context: Context,
     viewModel: MapViewModel,
 ) {
+    viewModel.onLocationLookupStarted()
     loadCurrentDeviceLocation(
         context = context,
         onLocation = { latitude, longitude -> viewModel.focusAroundUser(latitude, longitude) },

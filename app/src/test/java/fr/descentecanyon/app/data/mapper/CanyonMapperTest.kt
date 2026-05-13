@@ -123,6 +123,27 @@ class CanyonMapperTest {
         assertEquals(4f, entity.toSummary().interet)
     }
 
+    @Test
+    fun `search index round trip preserves precomputed fields`() {
+        val item = canyonEntity(navette = "oui", isFavorite = true)
+            .toSearchItem(representativeLat = 43.7, representativeLng = 6.9)
+            .copy(subdivisionsByCountry = mapOf("France" to listOf("06")))
+
+        val restored = item.toSearchIndexEntity().toSearchItem()
+
+        assertEquals(item.id, restored.id)
+        assertEquals(item.searchableText, restored.searchableText)
+        assertEquals(item.normalizedNom, restored.normalizedNom)
+        assertEquals(3, restored.cotationRating.vertical)
+        assertEquals(3, restored.cotationRating.aquatic)
+        assertEquals(3, restored.cotationRating.engagement)
+        assertEquals(true, restored.hasNavette)
+        assertEquals(true, restored.isFavorite)
+        assertEquals(43.7, restored.representativeLat)
+        assertEquals(6.9, restored.representativeLng)
+        assertEquals(mapOf("France" to listOf("06")), restored.subdivisionsByCountry)
+    }
+
     // --- DebitEntity -> Debit (valid date) ---
 
     @Test

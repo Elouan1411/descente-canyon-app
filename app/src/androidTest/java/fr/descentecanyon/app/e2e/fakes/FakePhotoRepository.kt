@@ -22,4 +22,10 @@ class FakePhotoRepository @Inject constructor() : PhotoRepository {
         E2eFixtureState.updatePhotoLocalPath(photoId, localPath)
         return Result.success(localPath)
     }
+
+    override suspend fun clearLocalPath(photoId: Long) {
+        E2eFixtureState.updatePhotoLocalPath(photoId, null)
+    }
+
+    override suspend fun reconcileDeletedLocalPhotos(canyonId: Int) = Unit
 }

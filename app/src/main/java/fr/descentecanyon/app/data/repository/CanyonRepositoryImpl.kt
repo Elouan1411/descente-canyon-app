@@ -2,6 +2,7 @@ package fr.descentecanyon.app.data.repository
 
 import fr.descentecanyon.app.data.local.dao.CanyonDao
 import fr.descentecanyon.app.data.local.dao.GeoPointDao
+import fr.descentecanyon.app.data.local.dao.SearchIndexDao
 import fr.descentecanyon.app.data.local.dao.WatershedDao
 import fr.descentecanyon.app.data.local.dao.getByIdsChunked
 import fr.descentecanyon.app.data.local.database.DescenteCanyonDatabase
@@ -15,7 +16,6 @@ import fr.descentecanyon.app.domain.model.CanyonDetail
 import fr.descentecanyon.app.domain.model.CanyonSummary
 import fr.descentecanyon.app.domain.model.CanyonWatershed
 import fr.descentecanyon.app.domain.model.GeoPointType
-import fr.descentecanyon.app.domain.model.normalizeForSearch
 import fr.descentecanyon.app.domain.repository.CanyonRepository
 import fr.descentecanyon.app.domain.repository.MapOfflineRepository
 import androidx.room.withTransaction
@@ -24,7 +24,6 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.SharingStarted
-import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
@@ -39,6 +38,7 @@ class CanyonRepositoryImpl @Inject constructor(
     private val canyonDao: CanyonDao,
     private val localStore: CanyonLocalStore,
     private val geoPointDao: GeoPointDao,
+    private val searchIndexDao: SearchIndexDao,
     private val watershedDao: WatershedDao,
     private val scraper: CanyonScraper,
     private val mapOfflineRepository: MapOfflineRepository,
@@ -46,51 +46,10 @@ class CanyonRepositoryImpl @Inject constructor(
 
     private val repositoryScope = CoroutineScope(SupervisorJob() + Dispatchers.Default)
 
-    private val representativePointsFlow by lazy {
-        geoPointDao.observeAll()
-            .map { points ->
-                points.groupBy { it.canyonId }
-                    .mapValues { (_, canyonPoints) -> localStore.bestMarkerPointOrNull(canyonPoints) }
-            }
-            .distinctUntilChanged()
-            .flowOn(Dispatchers.Default)
-            .shareIn(
-                scope = repositoryScope,
-                started = SharingStarted.WhileSubscribed(stopTimeoutMillis = 5_000),
-                replay = 1,
-            )
-    }
-
     private val searchCatalogFlow by lazy {
-        canyonDao.observeAll()
-            .combine(representativePointsFlow) { entities, representativePoints ->
-                val baseItems = entities.map { entity ->
-                    val point = representativePoints[entity.id]
-                    entity.toSearchItem(
-                        representativeLat = point?.latitude,
-                        representativeLng = point?.longitude,
-                    )
-                }
-
-                val knownCountryBySubdivision = baseItems
-                    .asSequence()
-                    .filter { it.countryTokens.size == 1 }
-                    .flatMap { item ->
-                        item.departmentTokens.asSequence().map { subdivision ->
-                            subdivision.normalizeForSearch() to item.countryTokens.first()
-                        }
-                    }
-                    .groupBy({ it.first }, { it.second })
-                    .mapNotNull { (subdivision, countries) ->
-                        countries.distinct().singleOrNull()?.let { subdivision to it }
-                    }
-                    .toMap()
-
-                baseItems.map { item ->
-                    item.copy(
-                        subdivisionsByCountry = item.buildSubdivisionsByCountry(knownCountryBySubdivision),
-                    )
-                }
+        searchIndexDao.observeAll()
+            .map { rows ->
+                rows.map { it.toSearchItem() }
             }
             .distinctUntilChanged()
             .flowOn(Dispatchers.Default)
@@ -209,48 +168,4 @@ class CanyonRepositoryImpl @Inject constructor(
         }
     }
 
-}
-
-private fun CanyonSearchItem.buildSubdivisionsByCountry(
-    knownCountryBySubdivision: Map<String, String>,
-): Map<String, List<String>> {
-    val countries = countryTokens.distinct()
-    if (countries.isEmpty()) return emptyMap()
-
-    val mapping = countries.associateWith { mutableListOf<String>() }.toMutableMap()
-    val subdivisions = departmentTokens.distinct()
-    if (subdivisions.isEmpty()) {
-        return mapping.mapValues { emptyList() }
-    }
-
-    if (countries.size == 1) {
-        mapping[countries.first()]?.addAll(subdivisions)
-        return mapping.mapValues { (_, values) -> values.distinct() }
-    }
-
-    val unresolved = mutableListOf<String>()
-    subdivisions.forEach { subdivision ->
-        val inferredCountry = knownCountryBySubdivision[subdivision.normalizeForSearch()]
-        val matchedCountry = countries.firstOrNull { it.equals(inferredCountry, ignoreCase = true) }
-        if (matchedCountry != null) {
-            mapping.getValue(matchedCountry).add(subdivision)
-        } else {
-            unresolved += subdivision
-        }
-    }
-
-    val emptyCountries = countries.filter { mapping.getValue(it).isEmpty() }
-    when {
-        unresolved.isNotEmpty() && emptyCountries.size == 1 -> {
-            mapping.getValue(emptyCountries.first()).addAll(unresolved)
-        }
-
-        unresolved.size == emptyCountries.size -> {
-            unresolved.zip(emptyCountries).forEach { (subdivision, country) ->
-                mapping.getValue(country).add(subdivision)
-            }
-        }
-    }
-
-    return mapping.mapValues { (_, values) -> values.distinct() }
 }

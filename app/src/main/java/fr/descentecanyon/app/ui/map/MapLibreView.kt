@@ -113,6 +113,7 @@ private const val CLUSTER_MAX_ZOOM = 12
 private const val CLUSTER_TAP_FALLBACK_ZOOM_DELTA = 2.0
 private const val DETAIL_POINT_ZOOM_THRESHOLD = 8.4
 private const val DETAIL_POINT_VISIBLE_COUNT_THRESHOLD = 12
+private const val USER_LOCATION_FOCUS_ZOOM = 9.6
 
 private val EMPTY_FEATURE_COLLECTION = FeatureCollection.fromFeatures(emptyList<Feature>())
 
@@ -547,7 +548,7 @@ private class MapRenderState(
         lastFocusedLocationRequestId = focusLocationRequestId
         didFitCamera = true
         map.animateCamera(
-            CameraUpdateFactory.newLatLngZoom(LatLng(latitude, longitude), 10.8),
+            CameraUpdateFactory.newLatLngZoom(LatLng(latitude, longitude), USER_LOCATION_FOCUS_ZOOM),
             500,
         )
     }

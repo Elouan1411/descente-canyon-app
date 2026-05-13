@@ -44,6 +44,7 @@ import androidx.compose.material3.SingleChoiceSegmentedButtonRow
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -91,6 +92,18 @@ fun HomeScreen(
     val context = LocalContext.current
     val donationUrl = stringResource(R.string.support_donation_url)
     var showLoginDialog by remember { mutableStateOf(false) }
+    var selectedFeedOverride by remember { mutableStateOf<HomeFeedType?>(null) }
+    val selectedFeed = selectedFeedOverride ?: homeState.selectedFeed
+    val selectFeed: (HomeFeedType) -> Unit = { type ->
+        selectedFeedOverride = type
+        homeViewModel.selectFeed(type)
+    }
+
+    LaunchedEffect(homeState.selectedFeed, selectedFeedOverride) {
+        if (selectedFeedOverride == homeState.selectedFeed) {
+            selectedFeedOverride = null
+        }
+    }
 
     if (showLoginDialog) {
         LoginDialog(
@@ -103,7 +116,7 @@ fun HomeScreen(
         )
     }
 
-    val activeFeedState = when (homeState.selectedFeed) {
+    val activeFeedState = when (selectedFeed) {
         HomeFeedType.DEBITS -> homeState.debitFeed
         HomeFeedType.FORUM -> homeState.forumFeed
     }
@@ -146,14 +159,14 @@ fun HomeScreen(
 
             item {
                 HomeFeedPicker(
-                    selectedFeed = homeState.selectedFeed,
-                    onFeedSelected = homeViewModel::selectFeed,
+                    selectedFeed = selectedFeed,
+                    onFeedSelected = selectFeed,
                 )
             }
 
             item {
                 HomeFeedHeader(
-                    selectedFeed = homeState.selectedFeed,
+                    selectedFeed = selectedFeed,
                     onRefresh = homeViewModel::refreshSelectedFeed,
                 )
             }
@@ -163,7 +176,7 @@ fun HomeScreen(
             ) {
                 item {
                     HomeFeedBanner(
-                        selectedFeed = homeState.selectedFeed,
+                        selectedFeed = selectedFeed,
                         notice = activeFeedState.notice,
                         lastSyncedAtEpochMs = activeFeedState.lastSyncedAtEpochMs,
                     )
@@ -186,11 +199,11 @@ fun HomeScreen(
             if (!activeFeedState.isLoading && activeFeedState.items.isEmpty()) {
                 item {
                     HomeEmptyState(
-                        selectedFeed = homeState.selectedFeed,
+                        selectedFeed = selectedFeed,
                         notice = activeFeedState.notice,
                         onRetry = homeViewModel::refreshSelectedFeed,
-                        onShowDebits = { homeViewModel.selectFeed(HomeFeedType.DEBITS) },
-                        onShowForum = { homeViewModel.selectFeed(HomeFeedType.FORUM) },
+                        onShowDebits = { selectFeed(HomeFeedType.DEBITS) },
+                        onShowForum = { selectFeed(HomeFeedType.FORUM) },
                         onQuickSearchClick = onQuickSearchClick,
                         onMapClick = onMapClick,
                         hasCachedDebits = homeState.debitFeed.items.isNotEmpty(),
@@ -199,7 +212,7 @@ fun HomeScreen(
                 }
             }
 
-            when (homeState.selectedFeed) {
+            when (selectedFeed) {
                 HomeFeedType.DEBITS -> {
                     items(
                         items = homeState.debitFeed.items,

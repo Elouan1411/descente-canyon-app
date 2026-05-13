@@ -73,7 +73,7 @@ object E2eFixtureState {
         favoriteIds.update { ids -> if (ids.contains(canyonId)) ids - canyonId else ids + canyonId }
     }
 
-    fun updatePhotoLocalPath(photoId: Long, localPath: String) {
+    fun updatePhotoLocalPath(photoId: Long, localPath: String?) {
         canyonDetails.update { details ->
             details.mapValues { (_, detail) ->
                 detail.copy(

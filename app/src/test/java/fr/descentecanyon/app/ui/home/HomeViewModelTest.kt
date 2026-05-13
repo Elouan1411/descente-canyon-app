@@ -18,6 +18,7 @@ import io.mockk.every
 import io.mockk.mockk
 import java.net.UnknownHostException
 import java.time.LocalDate
+import kotlinx.coroutines.CompletableDeferred
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.test.advanceUntilIdle
@@ -151,6 +152,35 @@ class HomeViewModelTest {
                 }
             )
         }
+    }
+
+    @Test
+    fun `restored selected feed does not overwrite user selection made while cache is loading`() = runTest {
+        val connectivity = MutableStateFlow(true)
+        var currentOnline = true
+        val cacheRestoreGate = CompletableDeferred<Unit>()
+        every { connectivityObserver.observe() } returns connectivity
+        every { connectivityObserver.isCurrentlyOnline() } answers { currentOnline }
+        coEvery { appMetadataDao.get("home.selected_feed_type") } returns AppMetadataEntity("home.selected_feed_type", HomeFeedType.DEBITS.name)
+        coEvery { appMetadataDao.insert(any()) } returns Unit
+        coEvery { debitRepository.getCachedLatestDebits(any()) } coAnswers {
+            cacheRestoreGate.await()
+            CachedItems(listOf(sampleDebit()), 1234L)
+        }
+        coEvery { forumRepository.getCachedActiveTopics(any()) } returns CachedItems(listOf(sampleTopic()), 5678L)
+        coEvery { debitRepository.refreshLatestDebits(any()) } returns Result.success(CachedItems(listOf(sampleDebit()), 1234L))
+        coEvery { forumRepository.refreshActiveTopics(any()) } returns Result.success(CachedItems(listOf(sampleTopic()), 5678L))
+
+        val viewModel = createViewModel()
+        advanceUntilIdle()
+
+        viewModel.selectFeed(HomeFeedType.FORUM)
+        advanceUntilIdle()
+        cacheRestoreGate.complete(Unit)
+        advanceUntilIdle()
+
+        assertEquals(HomeFeedType.FORUM, viewModel.uiState.value.selectedFeed)
+        assertEquals(1, viewModel.uiState.value.forumFeed.items.size)
     }
 
     @Test

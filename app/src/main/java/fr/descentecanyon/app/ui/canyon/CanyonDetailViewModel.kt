@@ -493,6 +493,20 @@ class CanyonDetailViewModel @Inject constructor(
         }
     }
 
+    fun onPersistedPhotoMissing(photoId: Long) {
+        if (photoId == 0L) return
+
+        viewModelScope.launch {
+            photoRepository.clearLocalPath(photoId)
+        }
+    }
+
+    fun reconcilePersistedPhotos() {
+        viewModelScope.launch {
+            runCatching { photoRepository.reconcileDeletedLocalPhotos(canyonId) }
+        }
+    }
+
     private fun mergeBaseDetail(newDetail: CanyonDetail, currentDetail: CanyonDetail?): CanyonDetail {
         return mergeBaseCanyonDetail(newDetail, currentDetail)
     }

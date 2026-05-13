@@ -12,6 +12,7 @@ import fr.descentecanyon.app.data.local.dao.GeoPointDao
 import fr.descentecanyon.app.data.local.dao.PendingDebitSubmissionDao
 import fr.descentecanyon.app.data.local.dao.PhotoDao
 import fr.descentecanyon.app.data.local.dao.RegulationDao
+import fr.descentecanyon.app.data.local.dao.SearchIndexDao
 import fr.descentecanyon.app.data.local.dao.WatershedDao
 import fr.descentecanyon.app.data.local.entity.AppMetadataEntity
 import fr.descentecanyon.app.data.local.entity.BibliographyEntryEntity
@@ -25,6 +26,7 @@ import fr.descentecanyon.app.data.local.entity.GeoPointEntity
 import fr.descentecanyon.app.data.local.entity.PendingDebitSubmissionEntity
 import fr.descentecanyon.app.data.local.entity.PhotoEntity
 import fr.descentecanyon.app.data.local.entity.RegulationTextEntity
+import fr.descentecanyon.app.data.local.entity.SearchIndexEntity
 import fr.descentecanyon.app.data.local.entity.WatershedEntity
 
 @Database(
@@ -42,8 +44,9 @@ import fr.descentecanyon.app.data.local.entity.WatershedEntity
         WatershedEntity::class,
         AppMetadataEntity::class,
         PendingDebitSubmissionEntity::class,
+        SearchIndexEntity::class,
     ],
-    version = 12,
+    version = 13,
     exportSchema = true,
 )
 abstract class DescenteCanyonDatabase : RoomDatabase() {
@@ -58,6 +61,7 @@ abstract class DescenteCanyonDatabase : RoomDatabase() {
     abstract fun watershedDao(): WatershedDao
     abstract fun appMetadataDao(): AppMetadataDao
     abstract fun pendingDebitSubmissionDao(): PendingDebitSubmissionDao
+    abstract fun searchIndexDao(): SearchIndexDao
 
     companion object {
         const val DATABASE_NAME = "descente_canyon_db"

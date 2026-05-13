@@ -3,15 +3,17 @@ package fr.descentecanyon.app.ui.location
 import android.Manifest
 import android.annotation.SuppressLint
 import android.content.Context
-import android.os.Handler
 import android.location.Location
+import android.os.Handler
 import android.os.Looper
 import android.os.SystemClock
 import androidx.activity.result.IntentSenderRequest
 import androidx.core.content.ContextCompat
 import com.google.android.gms.common.api.ResolvableApiException
 import com.google.android.gms.location.CurrentLocationRequest
+import com.google.android.gms.location.LocationCallback
 import com.google.android.gms.location.LocationRequest
+import com.google.android.gms.location.LocationResult
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.location.LocationSettingsRequest
 import com.google.android.gms.location.Priority
@@ -70,33 +72,64 @@ fun loadCurrentDeviceLocation(
     val handler = Handler(Looper.getMainLooper())
     var completed = false
     var timeout: Runnable? = null
+    var locationCallback: LocationCallback? = null
 
-    fun finish(location: Location?) {
+    fun cleanup() {
+        timeout?.let(handler::removeCallbacks)
+        locationCallback?.let { callback -> client.removeLocationUpdates(callback) }
+        cancellationTokenSource.cancel()
+    }
+
+    fun finishUnavailable() {
         if (completed) return
         completed = true
-        timeout?.let(handler::removeCallbacks)
-        cancellationTokenSource.cancel()
+        cleanup()
+        onUnavailable()
+    }
+
+    fun finishWith(location: Location) {
+        if (completed) return
+        completed = true
+        cleanup()
+        onLocation(location.latitude, location.longitude)
+    }
+
+    fun useIfFresh(location: Location?) {
         if (location != null && location.isFreshEnough()) {
-            onLocation(location.latitude, location.longitude)
-        } else {
-            onUnavailable()
+            finishWith(location)
         }
     }
 
-    val timeoutRunnable = Runnable { finish(null) }
+    val timeoutRunnable = Runnable { finishUnavailable() }
     timeout = timeoutRunnable
-    handler.postDelayed(timeoutRunnable, CURRENT_LOCATION_TIMEOUT_MS + CURRENT_LOCATION_TIMEOUT_GRACE_MS)
+    handler.postDelayed(timeoutRunnable, LOCATION_LOOKUP_TIMEOUT_MS)
 
-    val request = CurrentLocationRequest.Builder()
+    val updatesRequest = LocationRequest.Builder(
+        Priority.PRIORITY_HIGH_ACCURACY,
+        LOCATION_UPDATE_INTERVAL_MS,
+    )
+        .setMinUpdateIntervalMillis(LOCATION_UPDATE_MIN_INTERVAL_MS)
+        .setMaxUpdateDelayMillis(LOCATION_UPDATE_INTERVAL_MS)
+        .setDurationMillis(LOCATION_LOOKUP_TIMEOUT_MS)
+        .build()
+    val callback = object : LocationCallback() {
+        override fun onLocationResult(result: LocationResult) {
+            useIfFresh(result.lastLocation)
+        }
+    }
+    locationCallback = callback
+
+    client.requestLocationUpdates(updatesRequest, callback, Looper.getMainLooper())
+        .addOnFailureListener { finishUnavailable() }
+
+    val currentLocationRequest = CurrentLocationRequest.Builder()
         .setPriority(Priority.PRIORITY_HIGH_ACCURACY)
         .setDurationMillis(CURRENT_LOCATION_TIMEOUT_MS)
         .setMaxUpdateAgeMillis(LOCATION_MAX_UPDATE_AGE_MS)
         .build()
 
-    client.getCurrentLocation(request, cancellationTokenSource.token)
-        .addOnSuccessListener { location -> finish(location) }
-        .addOnFailureListener { finish(null) }
-        .addOnCanceledListener { finish(null) }
+    client.getCurrentLocation(currentLocationRequest, cancellationTokenSource.token)
+        .addOnSuccessListener(::useIfFresh)
 }
 
 private fun Location.isFreshEnough(): Boolean {
@@ -106,5 +139,7 @@ private fun Location.isFreshEnough(): Boolean {
 
 private const val LOCATION_SETTINGS_INTERVAL_MS = 10_000L
 private const val CURRENT_LOCATION_TIMEOUT_MS = 15_000L
-private const val CURRENT_LOCATION_TIMEOUT_GRACE_MS = 1_000L
+private const val LOCATION_LOOKUP_TIMEOUT_MS = 45_000L
+private const val LOCATION_UPDATE_INTERVAL_MS = 1_500L
+private const val LOCATION_UPDATE_MIN_INTERVAL_MS = 500L
 private const val LOCATION_MAX_UPDATE_AGE_MS = 30_000L

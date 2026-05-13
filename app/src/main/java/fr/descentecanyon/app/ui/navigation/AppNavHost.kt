@@ -1,7 +1,12 @@
 package fr.descentecanyon.app.ui.navigation
 
+import androidx.compose.animation.EnterTransition
+import androidx.compose.animation.ExitTransition
+import androidx.compose.foundation.background
 import androidx.compose.runtime.Composable
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -28,9 +33,16 @@ fun AppNavHost(
     NavHost(
         navController = navController,
         startDestination = Screen.Home,
-        modifier = Modifier,
+        modifier = Modifier
+            .fillMaxSize()
+            .background(MaterialTheme.colorScheme.background),
     ) {
-        composable<Screen.Home> {
+        composable<Screen.Home>(
+            enterTransition = { EnterTransition.None },
+            exitTransition = { ExitTransition.None },
+            popEnterTransition = { EnterTransition.None },
+            popExitTransition = { ExitTransition.None },
+        ) {
             HomeScreen(
                 onCanyonClick = { canyonId ->
                     navController.navigateSingleTop(Screen.CanyonDetail(canyonId))
@@ -45,7 +57,12 @@ fun AppNavHost(
             )
         }
 
-        composable<Screen.Search> {
+        composable<Screen.Search>(
+            enterTransition = { EnterTransition.None },
+            exitTransition = { ExitTransition.None },
+            popEnterTransition = { EnterTransition.None },
+            popExitTransition = { ExitTransition.None },
+        ) {
             SearchScreen(
                 onCanyonClick = { canyonId ->
                     navController.navigateSingleTop(Screen.CanyonDetail(canyonId))
@@ -54,7 +71,12 @@ fun AppNavHost(
             )
         }
 
-        composable<Screen.Map> {
+        composable<Screen.Map>(
+            enterTransition = { EnterTransition.None },
+            exitTransition = { ExitTransition.None },
+            popEnterTransition = { EnterTransition.None },
+            popExitTransition = { ExitTransition.None },
+        ) {
             MapScreen(
                 onCanyonClick = { canyonId ->
                     navController.navigateSingleTop(Screen.CanyonDetail(canyonId))
@@ -63,7 +85,12 @@ fun AppNavHost(
             )
         }
 
-        composable<Screen.Favorites> {
+        composable<Screen.Favorites>(
+            enterTransition = { EnterTransition.None },
+            exitTransition = { ExitTransition.None },
+            popEnterTransition = { EnterTransition.None },
+            popExitTransition = { ExitTransition.None },
+        ) {
             FavoritesScreen(
                 onCanyonClick = { canyonId ->
                     navController.navigateSingleTop(Screen.CanyonDetail(canyonId))
@@ -102,7 +129,12 @@ fun AppNavHost(
             )
         }
 
-        composable<Screen.CanyonPointsMap> { backStackEntry ->
+        composable<Screen.CanyonPointsMap>(
+            enterTransition = { EnterTransition.None },
+            exitTransition = { ExitTransition.None },
+            popEnterTransition = { EnterTransition.None },
+            popExitTransition = { ExitTransition.None },
+        ) { backStackEntry ->
             val route = backStackEntry.toRoute<Screen.CanyonPointsMap>()
             CanyonPointsMapScreen(
                 canyonId = route.canyonId,

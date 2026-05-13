@@ -20,6 +20,7 @@ import fr.descentecanyon.app.data.local.dao.GeoPointDao
 import fr.descentecanyon.app.data.local.dao.PendingDebitSubmissionDao
 import fr.descentecanyon.app.data.local.dao.PhotoDao
 import fr.descentecanyon.app.data.local.dao.RegulationDao
+import fr.descentecanyon.app.data.local.dao.SearchIndexDao
 import fr.descentecanyon.app.data.local.dao.WatershedDao
 import fr.descentecanyon.app.data.local.database.DescenteCanyonDatabase
 import javax.inject.Singleton
@@ -336,6 +337,12 @@ object DatabaseModule {
         }
     }
 
+    private val MIGRATION_12_13 = object : Migration(12, 13) {
+        override fun migrate(db: SupportSQLiteDatabase) {
+            createSearchIndexTable(db)
+        }
+    }
+
     @Provides
     @Singleton
     fun provideDatabase(@ApplicationContext context: Context): DescenteCanyonDatabase {
@@ -355,6 +362,7 @@ object DatabaseModule {
             .addMigrations(MIGRATION_9_10)
             .addMigrations(MIGRATION_10_11)
             .addMigrations(MIGRATION_11_12)
+            .addMigrations(MIGRATION_12_13)
             .build()
     }
 
@@ -393,6 +401,9 @@ object DatabaseModule {
         return database.pendingDebitSubmissionDao()
     }
 
+    @Provides
+    fun provideSearchIndexDao(database: DescenteCanyonDatabase): SearchIndexDao = database.searchIndexDao()
+
     private fun ensureCanyonColumn(
         db: SupportSQLiteDatabase,
         columnName: String,
@@ -410,6 +421,50 @@ object DatabaseModule {
         if (!db.tableHasColumn(tableName, columnName)) {
             db.execSQL("ALTER TABLE `$tableName` ADD COLUMN `$columnName` $sqlType")
         }
+    }
+
+    private fun createSearchIndexTable(db: SupportSQLiteDatabase) {
+        db.execSQL(
+            """
+            CREATE TABLE IF NOT EXISTS `search_index` (
+                `id` INTEGER NOT NULL,
+                `nom` TEXT NOT NULL,
+                `nomComplet` TEXT NOT NULL,
+                `pays` TEXT NOT NULL,
+                `countryTokensJson` TEXT,
+                `region` TEXT,
+                `departement` TEXT,
+                `departmentTokensJson` TEXT,
+                `subdivisionsByCountryJson` TEXT,
+                `commune` TEXT,
+                `massif` TEXT,
+                `bassin` TEXT,
+                `coursEau` TEXT,
+                `cotation` TEXT NOT NULL,
+                `cotationVertical` INTEGER,
+                `cotationAquatic` INTEGER,
+                `cotationEngagement` INTEGER,
+                `interet` REAL,
+                `nbVotes` INTEGER NOT NULL,
+                `altitudeDepart` INTEGER,
+                `denivele` INTEGER,
+                `longueur` INTEGER,
+                `cascadeMax` INTEGER,
+                `cordeMin` INTEGER,
+                `hasSpecificRegulation` INTEGER NOT NULL,
+                `isForbidden` INTEGER NOT NULL,
+                `hasNavette` INTEGER NOT NULL,
+                `isFavorite` INTEGER NOT NULL,
+                `representativeLat` REAL,
+                `representativeLng` REAL,
+                `url` TEXT NOT NULL,
+                `searchableText` TEXT NOT NULL,
+                `normalizedNom` TEXT NOT NULL,
+                `normalizedNomComplet` TEXT NOT NULL,
+                PRIMARY KEY(`id`)
+            )
+            """.trimIndent()
+        )
     }
 
     private fun recreateDebitsTable(db: SupportSQLiteDatabase) {

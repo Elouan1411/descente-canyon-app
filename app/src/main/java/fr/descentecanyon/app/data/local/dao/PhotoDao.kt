@@ -19,11 +19,14 @@ interface PhotoDao {
     @Query("SELECT * FROM photos WHERE canyonId = :canyonId")
     fun observeByCanyonId(canyonId: Int): Flow<List<PhotoEntity>>
 
+    @Query("SELECT * FROM photos WHERE localPath IS NOT NULL AND TRIM(localPath) != ''")
+    suspend fun getPhotosWithLocalPath(): List<PhotoEntity>
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertAll(photos: List<PhotoEntity>)
 
     @Query("UPDATE photos SET localPath = :localPath WHERE id = :photoId")
-    suspend fun updateLocalPath(photoId: Long, localPath: String)
+    suspend fun updateLocalPath(photoId: Long, localPath: String?)
 
     @Query("DELETE FROM photos WHERE canyonId = :canyonId")
     suspend fun deleteByCanyonId(canyonId: Int)

@@ -26,7 +26,7 @@ data class PhotoGalleryUiState(
 @HiltViewModel
 class PhotoGalleryViewModel @Inject constructor(
     savedStateHandle: SavedStateHandle,
-    photoRepository: PhotoRepository,
+    private val photoRepository: PhotoRepository,
     private val downloadPhotoForOfflineUseCase: DownloadPhotoForOfflineUseCase,
 ) : ViewModel() {
 
@@ -66,6 +66,20 @@ class PhotoGalleryViewModel @Inject constructor(
     fun onPageChanged(page: Int) {
         val photos = uiState.value.photos
         selectedPhotoId.value = photos.getOrNull(page)?.id ?: selectedPhotoId.value
+    }
+
+    fun onPersistedPhotoMissing(photoId: Long) {
+        if (photoId == 0L) return
+
+        viewModelScope.launch {
+            photoRepository.clearLocalPath(photoId)
+        }
+    }
+
+    fun reconcilePersistedPhotos() {
+        viewModelScope.launch {
+            runCatching { photoRepository.reconcileDeletedLocalPhotos(canyonId) }
+        }
     }
 }
 

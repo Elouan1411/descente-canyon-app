@@ -57,6 +57,7 @@ class HomeViewModel @Inject constructor(
     private var latestDebitsJob: Job? = null
     private var activeTopicsJob: Job? = null
     private var previousOnline: Boolean? = null
+    private var hasUserSelectedFeed = false
 
     init {
         observeConnectivity()
@@ -64,6 +65,7 @@ class HomeViewModel @Inject constructor(
     }
 
     fun selectFeed(type: HomeFeedType) {
+        hasUserSelectedFeed = true
         if (_uiState.value.selectedFeed == type) {
             if (uiState.value.isOnline) {
                 refreshFeed(type)
@@ -87,13 +89,13 @@ class HomeViewModel @Inject constructor(
 
     private fun restoreHomeState() {
         viewModelScope.launch {
-            val selectedFeed = snapshotStore.readSelectedFeedType() ?: HomeFeedType.DEBITS
+            val restoredSelectedFeed = snapshotStore.readSelectedFeedType() ?: HomeFeedType.DEBITS
             val cachedDebits = debitRepository.getCachedLatestDebits(LATEST_DEBITS_LIMIT)
             val cachedTopics = forumRepository.getCachedActiveTopics(ACTIVE_TOPICS_LIMIT)
 
             _uiState.update { state ->
                 state.copy(
-                    selectedFeed = selectedFeed,
+                    selectedFeed = if (hasUserSelectedFeed) state.selectedFeed else restoredSelectedFeed,
                     debitFeed = state.debitFeed.copy(
                         items = cachedDebits.items,
                         lastSyncedAtEpochMs = cachedDebits.syncedAtEpochMs,
@@ -116,6 +118,7 @@ class HomeViewModel @Inject constructor(
             }
 
             if (connectivityObserver.isCurrentlyOnline()) {
+                val selectedFeed = uiState.value.selectedFeed
                 refreshFeed(selectedFeed)
                 refreshFeed(otherFeedOf(selectedFeed), backgroundOnly = true)
             }

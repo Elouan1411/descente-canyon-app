@@ -138,6 +138,7 @@ private fun CanyonPointsMapContent(
     Column(
         modifier = modifier
             .fillMaxSize()
+            .background(MaterialTheme.colorScheme.background)
             .padding(bottom = contentPadding.calculateBottomPadding())
             .padding(16.dp),
         verticalArrangement = Arrangement.spacedBy(12.dp),

@@ -9,6 +9,7 @@ import fr.descentecanyon.app.data.local.dao.CanyonDao
 import fr.descentecanyon.app.data.local.dao.CanyonTrackDao
 import fr.descentecanyon.app.data.local.dao.GeoPointDao
 import fr.descentecanyon.app.data.local.dao.RegulationDao
+import fr.descentecanyon.app.data.local.dao.SearchIndexDao
 import fr.descentecanyon.app.data.local.dao.WatershedDao
 import fr.descentecanyon.app.data.local.dao.getByIdsChunked
 import fr.descentecanyon.app.data.local.database.DescenteCanyonDatabase
@@ -20,7 +21,12 @@ import fr.descentecanyon.app.data.local.entity.CanyonRegulationEntity
 import fr.descentecanyon.app.data.local.entity.CanyonTrackEntity
 import fr.descentecanyon.app.data.local.entity.GeoPointEntity
 import fr.descentecanyon.app.data.local.entity.RegulationTextEntity
+import fr.descentecanyon.app.data.local.entity.SearchIndexEntity
 import fr.descentecanyon.app.data.local.entity.WatershedEntity
+import fr.descentecanyon.app.data.mapper.toSearchIndexEntity
+import fr.descentecanyon.app.data.mapper.toSearchItem
+import fr.descentecanyon.app.data.mapper.withInferredSubdivisionsByCountry
+import fr.descentecanyon.app.data.repository.RepresentativePointSelector
 import fr.descentecanyon.app.perf.PerformanceTrace
 import java.io.FileNotFoundException
 import javax.inject.Inject
@@ -41,6 +47,8 @@ class EmbeddedAppDataImporter @Inject constructor(
     private val regulationDao: RegulationDao,
     private val watershedDao: WatershedDao,
     private val appMetadataDao: AppMetadataDao,
+    private val searchIndexDao: SearchIndexDao,
+    private val representativePointSelector: RepresentativePointSelector,
 ) {
 
     private val json = Json { ignoreUnknownKeys = true }
@@ -92,6 +100,12 @@ class EmbeddedAppDataImporter @Inject constructor(
             val canyonRegulations = readCanyonRegulations()
             val canyonTracks = readCanyonTracks().orEmpty()
             val existingCanyons = canyonDao.getByIdsChunked(canyonRows.map { it.id }).associateBy { it.id }
+            val canyonEntities = canyonRows.map { row ->
+                val existing = existingCanyons[row.id]
+                row.toEntity(json).preservingLocalState(existing)
+            }
+            val geoPointEntities = geoPointRows.map { it.toEntity() }
+            val searchIndexRows = buildSearchIndexRows(canyonEntities, geoPointEntities)
 
             database.withTransaction {
                 bibliographyDao.clearLinks()
@@ -99,20 +113,20 @@ class EmbeddedAppDataImporter @Inject constructor(
                 bibliographyDao.clearEntries()
                 regulationDao.clearTexts()
 
-                canyonRows.forEach { row ->
-                    val existing = existingCanyons[row.id]
-                    val merged = row.toEntity(json).preservingLocalState(existing)
-                    if (canyonDao.insertIgnore(merged) == -1L) {
-                        canyonDao.update(merged)
+                canyonEntities.forEach { canyon ->
+                    if (canyonDao.insertIgnore(canyon) == -1L) {
+                        canyonDao.update(canyon)
                     }
                 }
 
-                geoPointRows.map { it.toEntity() }
-                    .groupBy { it.canyonId }
+                geoPointEntities.groupBy { it.canyonId }
                     .forEach { (canyonId, points) ->
                         geoPointDao.deleteByCanyonId(canyonId)
                         points.chunked(500).forEach { chunk -> geoPointDao.insertAll(chunk) }
                     }
+
+                searchIndexDao.clearAll()
+                searchIndexRows.chunked(500).forEach { chunk -> searchIndexDao.insertAll(chunk) }
 
                 bibliographyEntries.map { it.toEntity(json) }
                     .chunked(300)
@@ -173,9 +187,10 @@ class EmbeddedAppDataImporter @Inject constructor(
         val hasCanyons = canyonDao.count() > 0
         val hasBibliography = bibliographyDao.countEntries() > 0
         val hasRegulations = regulationDao.countTexts() > 0
+        val hasSearchIndex = searchIndexDao.count() >= (manifest.counts["canyons"] ?: 0)
         val expectedTracks = manifest.counts["tracks"] ?: 0
         val hasExpectedTracks = canyonTrackDao.count() >= expectedTracks
-        val mode = if (importedVersion == manifest.generatedAt && hasCanyons && hasBibliography && hasRegulations && hasExpectedTracks) {
+        val mode = if (importedVersion == manifest.generatedAt && hasCanyons && hasBibliography && hasRegulations && hasExpectedTracks && hasSearchIndex) {
             EmbeddedImportMode.SKIPPED
         } else if (hasCanyons || hasBibliography || hasRegulations) {
             EmbeddedImportMode.DATASET_UPDATE
@@ -390,6 +405,23 @@ class EmbeddedAppDataImporter @Inject constructor(
             isFavorite = existing.isFavorite,
             lastUpdated = maxOf(lastUpdated, existing.lastUpdated),
         )
+    }
+
+    private fun buildSearchIndexRows(
+        canyons: List<CanyonEntity>,
+        geoPoints: List<GeoPointEntity>,
+    ): List<SearchIndexEntity> {
+        val representativePoints = geoPoints.groupBy { it.canyonId }
+            .mapValues { (_, points) -> representativePointSelector.bestMarkerPointOrNull(points) }
+        return canyons.map { canyon ->
+            val point = representativePoints[canyon.id]
+            canyon.toSearchItem(
+                representativeLat = point?.latitude,
+                representativeLng = point?.longitude,
+            )
+        }
+            .withInferredSubdivisionsByCountry()
+            .map { it.toSearchIndexEntity() }
     }
 
     private fun GeoPointImportRow.toEntity(): GeoPointEntity {

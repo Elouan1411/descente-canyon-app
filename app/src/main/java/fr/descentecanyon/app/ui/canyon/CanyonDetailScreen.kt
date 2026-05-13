@@ -57,6 +57,7 @@ import androidx.compose.material3.Tab
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
@@ -84,6 +85,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.LifecycleEventObserver
+import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import fr.descentecanyon.app.R
 import fr.descentecanyon.app.domain.model.BibliographyEntry
@@ -130,6 +134,7 @@ fun CanyonDetailScreen(
 ) {
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
     val context = LocalContext.current
+    val lifecycleOwner = LocalLifecycleOwner.current
 
     LaunchedEffect(canyonId) {
         PerformanceTrace.logEvent("canyon_detail_screen_visible", "canyonId" to canyonId)
@@ -146,6 +151,18 @@ fun CanyonDetailScreen(
         uiState.transientMessage?.let { message ->
             Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
             viewModel.clearTransientMessage()
+        }
+    }
+
+    DisposableEffect(lifecycleOwner, viewModel) {
+        val observer = LifecycleEventObserver { _, event ->
+            if (event == Lifecycle.Event.ON_RESUME) {
+                viewModel.reconcilePersistedPhotos()
+            }
+        }
+        lifecycleOwner.lifecycle.addObserver(observer)
+        onDispose {
+            lifecycleOwner.lifecycle.removeObserver(observer)
         }
     }
 
@@ -247,6 +264,7 @@ fun CanyonDetailScreen(
                         onOpenPredictionInfo = onOpenPredictionInfo,
                         downloadingPhotoIds = uiState.downloadingPhotoIds,
                         onOpenPhotoGallery = onOpenPhotoGallery,
+                        onPersistedPhotoMissing = viewModel::onPersistedPhotoMissing,
                         bottomContentPadding = contentPadding.calculateBottomPadding() + 96.dp,
                         modifier = Modifier.fillMaxSize(),
                     )
@@ -334,6 +352,7 @@ private fun CanyonDetailContent(
     onOpenPredictionInfo: () -> Unit,
     downloadingPhotoIds: Set<Long>,
     onOpenPhotoGallery: (Long) -> Unit,
+    onPersistedPhotoMissing: (Long) -> Unit,
     bottomContentPadding: Dp = 0.dp,
     modifier: Modifier = Modifier,
 ) {
@@ -420,6 +439,7 @@ private fun CanyonDetailContent(
                 isOfflineSaved = detail.canyon.isOffline,
                 downloadingPhotoIds = downloadingPhotoIds,
                 onOpenPhotoGallery = onOpenPhotoGallery,
+                onPersistedPhotoMissing = onPersistedPhotoMissing,
             )
             2 -> debitItems(detail.debits, isLoadingDebits, debitError)
         }
@@ -1198,6 +1218,7 @@ private fun LazyListScope.photosItems(
     isOfflineSaved: Boolean,
     downloadingPhotoIds: Set<Long>,
     onOpenPhotoGallery: (Long) -> Unit,
+    onPersistedPhotoMissing: (Long) -> Unit,
 ) {
     if (isLoadingPhotos && photos.isEmpty()) {
         item {
@@ -1241,6 +1262,7 @@ private fun LazyListScope.photosItems(
                 onOpen = {
                     onOpenPhotoGallery(photo.id)
                 },
+                onPersistedPhotoMissing = onPersistedPhotoMissing,
                 modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp),
             )
         }
@@ -1255,6 +1277,7 @@ private fun PhotoCard(
     photo: CanyonPhoto,
     isDownloading: Boolean,
     onOpen: () -> Unit,
+    onPersistedPhotoMissing: (Long) -> Unit,
     modifier: Modifier = Modifier,
 ) {
     Card(
@@ -1265,6 +1288,7 @@ private fun PhotoCard(
         Box {
             ProgressivePhoto(
                 photo = photo,
+                onPersistedPhotoMissing = onPersistedPhotoMissing,
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(220.dp),
@@ -1287,6 +1311,7 @@ private fun PhotoCard(
 @Composable
 private fun ProgressivePhoto(
     photo: CanyonPhoto,
+    onPersistedPhotoMissing: (Long) -> Unit,
     modifier: Modifier = Modifier,
     contentScale: ContentScale,
 ) {
@@ -1305,7 +1330,9 @@ private fun ProgressivePhoto(
         modifier = modifier,
         contentScale = contentScale,
         onError = {
-            if (canFallbackToFullImage && displayedModel != fullModel) {
+            if (photo.localPath != null) {
+                onPersistedPhotoMissing(photo.id)
+            } else if (canFallbackToFullImage && displayedModel != fullModel) {
                 displayedModel = fullModel
             }
         },

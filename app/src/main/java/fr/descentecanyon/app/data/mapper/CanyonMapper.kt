@@ -7,6 +7,7 @@ import fr.descentecanyon.app.data.local.entity.DebitEntity
 import fr.descentecanyon.app.data.local.entity.GeoPointEntity
 import fr.descentecanyon.app.data.local.entity.PhotoEntity
 import fr.descentecanyon.app.data.local.entity.RegulationTextEntity
+import fr.descentecanyon.app.data.local.entity.SearchIndexEntity
 import fr.descentecanyon.app.data.local.entity.WatershedEntity
 import fr.descentecanyon.app.data.remote.dto.ScrapedCanyonDetail
 import fr.descentecanyon.app.data.remote.dto.ScrapedCanyonSummary
@@ -191,6 +192,162 @@ fun CanyonEntity.toSearchItem(
         normalizedNom = nom.normalizeForSearch(),
         normalizedNomComplet = nomComplet.normalizeForSearch(),
     )
+}
+
+fun CanyonSearchItem.toSearchIndexEntity(): SearchIndexEntity {
+    return SearchIndexEntity(
+        id = id,
+        nom = nom,
+        nomComplet = nomComplet,
+        pays = pays,
+        countryTokensJson = countryTokens.toJsonString(),
+        region = region,
+        departement = departement,
+        departmentTokensJson = departmentTokens.toJsonString(),
+        subdivisionsByCountryJson = subdivisionsByCountry.toJsonString(),
+        commune = commune,
+        massif = massif,
+        bassin = bassin,
+        coursEau = coursEau,
+        cotation = cotation,
+        cotationVertical = cotationRating.vertical,
+        cotationAquatic = cotationRating.aquatic,
+        cotationEngagement = cotationRating.engagement,
+        interet = interet,
+        nbVotes = nbVotes,
+        altitudeDepart = altitudeDepart,
+        denivele = denivele,
+        longueur = longueur,
+        cascadeMax = cascadeMax,
+        cordeMin = cordeMin,
+        hasSpecificRegulation = hasSpecificRegulation,
+        isForbidden = isForbidden,
+        hasNavette = hasNavette,
+        isFavorite = isFavorite,
+        representativeLat = representativeLat,
+        representativeLng = representativeLng,
+        url = url,
+        searchableText = searchableText,
+        normalizedNom = normalizedNom,
+        normalizedNomComplet = normalizedNomComplet,
+    )
+}
+
+fun SearchIndexEntity.toSearchItem(): CanyonSearchItem {
+    return CanyonSearchItem(
+        id = id,
+        nom = nom,
+        nomComplet = nomComplet,
+        pays = pays,
+        countryTokens = countryTokensJson.fromJsonStringList(),
+        region = region,
+        departement = departement,
+        departmentTokens = departmentTokensJson.fromJsonStringList(),
+        subdivisionsByCountry = subdivisionsByCountryJson.fromJsonStringMap(),
+        commune = commune,
+        massif = massif,
+        bassin = bassin,
+        coursEau = coursEau,
+        cotation = cotation,
+        cotationRating = CotationRating(
+            raw = cotation,
+            vertical = cotationVertical,
+            aquatic = cotationAquatic,
+            engagement = cotationEngagement,
+        ),
+        interet = interet,
+        nbVotes = nbVotes,
+        altitudeDepart = altitudeDepart,
+        denivele = denivele,
+        longueur = longueur,
+        cascadeMax = cascadeMax,
+        cordeMin = cordeMin,
+        hasSpecificRegulation = hasSpecificRegulation,
+        isForbidden = isForbidden,
+        hasNavette = hasNavette,
+        isFavorite = isFavorite,
+        representativeLat = representativeLat,
+        representativeLng = representativeLng,
+        url = url,
+        searchableText = searchableText,
+        normalizedNom = normalizedNom,
+        normalizedNomComplet = normalizedNomComplet,
+    )
+}
+
+fun List<CanyonSearchItem>.withInferredSubdivisionsByCountry(): List<CanyonSearchItem> {
+    val knownCountryBySubdivision = asSequence()
+        .filter { it.countryTokens.size == 1 }
+        .flatMap { item ->
+            item.departmentTokens.asSequence().map { subdivision ->
+                subdivision.normalizeForSearch() to item.countryTokens.first()
+            }
+        }
+        .groupBy({ it.first }, { it.second })
+        .mapNotNull { (subdivision, countries) ->
+            countries.distinct().singleOrNull()?.let { subdivision to it }
+        }
+        .toMap()
+
+    return map { item ->
+        item.copy(
+            subdivisionsByCountry = item.buildSubdivisionsByCountry(knownCountryBySubdivision),
+        )
+    }
+}
+
+private fun Map<String, List<String>>.toJsonString(): String? {
+    if (isEmpty()) return null
+    return mapperJson.encodeToString(this)
+}
+
+private fun String?.fromJsonStringMap(): Map<String, List<String>> {
+    if (this.isNullOrBlank()) return emptyMap()
+    return runCatching { mapperJson.decodeFromString<Map<String, List<String>>>(this) }.getOrDefault(emptyMap())
+}
+
+private fun CanyonSearchItem.buildSubdivisionsByCountry(
+    knownCountryBySubdivision: Map<String, String>,
+): Map<String, List<String>> {
+    val countries = countryTokens.distinct()
+    if (countries.isEmpty()) return emptyMap()
+
+    val mapping = countries.associateWith { mutableListOf<String>() }.toMutableMap()
+    val subdivisions = departmentTokens.distinct()
+    if (subdivisions.isEmpty()) {
+        return mapping.mapValues { emptyList() }
+    }
+
+    if (countries.size == 1) {
+        mapping[countries.first()]?.addAll(subdivisions)
+        return mapping.mapValues { (_, values) -> values.distinct() }
+    }
+
+    val unresolved = mutableListOf<String>()
+    subdivisions.forEach { subdivision ->
+        val inferredCountry = knownCountryBySubdivision[subdivision.normalizeForSearch()]
+        val matchedCountry = countries.firstOrNull { it.equals(inferredCountry, ignoreCase = true) }
+        if (matchedCountry != null) {
+            mapping.getValue(matchedCountry).add(subdivision)
+        } else {
+            unresolved += subdivision
+        }
+    }
+
+    val emptyCountries = countries.filter { mapping.getValue(it).isEmpty() }
+    when {
+        unresolved.isNotEmpty() && emptyCountries.size == 1 -> {
+            mapping.getValue(emptyCountries.first()).addAll(unresolved)
+        }
+
+        unresolved.size == emptyCountries.size -> {
+            unresolved.zip(emptyCountries).forEach { (subdivision, country) ->
+                mapping.getValue(country).add(subdivision)
+            }
+        }
+    }
+
+    return mapping.mapValues { (_, values) -> values.distinct() }
 }
 
 fun CanyonEntity.toDetail(

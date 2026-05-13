@@ -4,6 +4,7 @@ import android.util.Log
 import fr.descentecanyon.app.data.local.importer.EmbeddedAppDataImporter
 import fr.descentecanyon.app.data.local.importer.EmbeddedImportMode
 import fr.descentecanyon.app.data.network.ConnectivityObserver
+import fr.descentecanyon.app.data.repository.LegacyPhotoStorageMigrator
 import fr.descentecanyon.app.perf.PerformanceTrace
 import fr.descentecanyon.app.domain.repository.AuthRepository
 import fr.descentecanyon.app.domain.usecase.SyncPendingDebitsUseCase
@@ -28,6 +29,7 @@ class AppStartupCoordinator @Inject constructor(
     private val syncPendingDebitsUseCase: SyncPendingDebitsUseCase,
     private val searchCatalogWarmupCoordinator: SearchCatalogWarmupCoordinator,
     private val predictionWarmupCoordinator: PredictionWarmupCoordinator,
+    private val legacyPhotoStorageMigrator: LegacyPhotoStorageMigrator,
 ) {
 
     private val backgroundScope = CoroutineScope(SupervisorJob() + Dispatchers.IO)
@@ -80,6 +82,12 @@ class AppStartupCoordinator @Inject constructor(
             initialized = true
             PerformanceTrace.logEvent("startup_initialize_marked_ready")
             backgroundScope.launch {
+                runCatching {
+                    legacyPhotoStorageMigrator.migrateOrDeleteLegacyPhotos()
+                }.onFailure { throwable ->
+                    Log.w(TAG, "Unable to migrate legacy photo storage", throwable)
+                }
+
                 delay(SEARCH_CATALOG_WARMUP_DELAY_MS)
                 PerformanceTrace.logEvent("search_catalog_warmup_scheduled", "delayMs" to SEARCH_CATALOG_WARMUP_DELAY_MS)
                 runCatching {

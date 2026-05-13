@@ -1,6 +1,9 @@
 package fr.descentecanyon.app.data.repository
 
+import androidx.room.withTransaction
 import fr.descentecanyon.app.data.local.dao.CanyonDao
+import fr.descentecanyon.app.data.local.dao.SearchIndexDao
+import fr.descentecanyon.app.data.local.database.DescenteCanyonDatabase
 import fr.descentecanyon.app.data.mapper.toSummary
 import fr.descentecanyon.app.domain.model.CanyonSummary
 import fr.descentecanyon.app.domain.repository.FavoritesRepository
@@ -11,7 +14,9 @@ import javax.inject.Singleton
 
 @Singleton
 class FavoritesRepositoryImpl @Inject constructor(
+    private val database: DescenteCanyonDatabase,
     private val canyonDao: CanyonDao,
+    private val searchIndexDao: SearchIndexDao,
 ) : FavoritesRepository {
 
     override fun getFavorites(): Flow<List<CanyonSummary>> {
@@ -21,11 +26,17 @@ class FavoritesRepositoryImpl @Inject constructor(
     }
 
     override suspend fun addFavorite(canyonId: Int) {
-        canyonDao.setFavorite(canyonId, true)
+        database.withTransaction {
+            canyonDao.setFavorite(canyonId, true)
+            searchIndexDao.setFavorite(canyonId, true)
+        }
     }
 
     override suspend fun removeFavorite(canyonId: Int) {
-        canyonDao.setFavorite(canyonId, false)
+        database.withTransaction {
+            canyonDao.setFavorite(canyonId, false)
+            searchIndexDao.setFavorite(canyonId, false)
+        }
     }
 
     override fun isFavorite(canyonId: Int): Flow<Boolean> {

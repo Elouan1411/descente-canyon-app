@@ -1,7 +1,13 @@
 package fr.descentecanyon.app.ui.canyon
 
+import android.Manifest
 import android.app.Activity
+import android.content.Context
+import android.content.pm.PackageManager
+import android.os.Build
+import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.compose.BackHandler
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
@@ -53,10 +59,14 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.unit.dp
+import androidx.core.content.ContextCompat
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.LifecycleEventObserver
+import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import fr.descentecanyon.app.R
 
@@ -70,7 +80,18 @@ fun PhotoGalleryScreen(
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
     val photos = uiState.photos
     val context = LocalContext.current
+    val lifecycleOwner = LocalLifecycleOwner.current
     var showOverlay by rememberSaveable { mutableStateOf(true) }
+    var pendingDownloadPhotoId by remember { mutableStateOf<Long?>(null) }
+    val writeStoragePermissionLauncher = rememberLauncherForActivityResult(
+        contract = ActivityResultContracts.RequestPermission(),
+    ) { isGranted ->
+        val photoId = pendingDownloadPhotoId
+        pendingDownloadPhotoId = null
+        if (isGranted && photoId != null) {
+            viewModel.downloadPhoto(photoId)
+        }
+    }
 
     if (uiState.isLoading) {
         Surface(
@@ -110,6 +131,18 @@ fun PhotoGalleryScreen(
         snapshotFlow { pagerState.currentPage }.collect { page ->
             zoomedPageIndex = null
             viewModel.onPageChanged(page)
+        }
+    }
+
+    DisposableEffect(lifecycleOwner, viewModel) {
+        val observer = LifecycleEventObserver { _, event ->
+            if (event == Lifecycle.Event.ON_RESUME) {
+                viewModel.reconcilePersistedPhotos()
+            }
+        }
+        lifecycleOwner.lifecycle.addObserver(observer)
+        onDispose {
+            lifecycleOwner.lifecycle.removeObserver(observer)
         }
     }
 
@@ -153,6 +186,11 @@ fun PhotoGalleryScreen(
                 ZoomablePhoto(
                     model = photo.localPath ?: photo.url,
                     contentDescription = photo.description,
+                    onError = {
+                        if (photo.localPath != null) {
+                            viewModel.onPersistedPhotoMissing(photo.id)
+                        }
+                    },
                     onToggleOverlay = { showOverlay = !showOverlay },
                     onZoomStateChanged = { isZoomed ->
                         zoomedPageIndex = if (isZoomed) page else zoomedPageIndex?.takeIf { it != page }
@@ -188,7 +226,14 @@ fun PhotoGalleryScreen(
                     Row(horizontalArrangement = Arrangement.spacedBy(8.dp), verticalAlignment = Alignment.CenterVertically) {
                         if (currentPhoto.localPath == null) {
                             IconButton(
-                                onClick = { viewModel.downloadPhoto(currentPhoto.id) },
+                                onClick = {
+                                    if (canWritePublicPhotos(context)) {
+                                        viewModel.downloadPhoto(currentPhoto.id)
+                                    } else {
+                                        pendingDownloadPhotoId = currentPhoto.id
+                                        writeStoragePermissionLauncher.launch(Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                                    }
+                                },
                                 enabled = currentPhoto.id != 0L && !uiState.downloadingPhotoIds.contains(currentPhoto.id),
                             ) {
                                 if (uiState.downloadingPhotoIds.contains(currentPhoto.id)) {
@@ -243,10 +288,16 @@ fun PhotoGalleryScreen(
     }
 }
 
+private fun canWritePublicPhotos(context: Context): Boolean {
+    return Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q ||
+        ContextCompat.checkSelfPermission(context, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED
+}
+
 @Composable
 private fun ZoomablePhoto(
     model: Any?,
     contentDescription: String?,
+    onError: () -> Unit,
     onToggleOverlay: () -> Unit,
     onZoomStateChanged: (Boolean) -> Unit,
     modifier: Modifier = Modifier,
@@ -321,6 +372,7 @@ private fun ZoomablePhoto(
                     translationY = offset.y
                 },
             contentScale = ContentScale.Fit,
+            onError = { onError() },
             loadingContent = {
                 CircularProgressIndicator(color = Color.White)
             },

@@ -25,6 +25,7 @@ data class MapUiState(
     val transientMessage: String? = null,
     val hasLocationPermission: Boolean = false,
     val hasRequestedLocationPermission: Boolean = false,
+    val isLocating: Boolean = false,
     val userLatitude: Double? = null,
     val userLongitude: Double? = null,
     val cameraState: MapCameraState? = null,
@@ -122,11 +123,16 @@ class MapViewModel @Inject constructor(
         savedStateHandle[MAP_HAS_REQUESTED_LOCATION_PERMISSION_KEY] = true
     }
 
+    fun onLocationLookupStarted() {
+        _uiState.update { it.copy(isLocating = true, error = null, transientMessage = null) }
+    }
+
     fun focusAroundUser(latitude: Double, longitude: Double) {
         _uiState.update {
             it.copy(
                 error = null,
                 transientMessage = null,
+                isLocating = false,
                 userLatitude = latitude,
                 userLongitude = longitude,
                 focusLocationRequestId = it.focusLocationRequestId + 1,
@@ -154,7 +160,10 @@ class MapViewModel @Inject constructor(
 
     fun onLocationUnavailable() {
         _uiState.update {
-            it.copy(transientMessage = "Impossible d'obtenir une position récente. Vérifiez que la localisation est activée.")
+            it.copy(
+                isLocating = false,
+                transientMessage = "Impossible d'obtenir une position récente. Vérifiez que la localisation est activée.",
+            )
         }
     }
 
