@@ -5,9 +5,12 @@ import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import fr.descentecanyon.app.data.network.ConnectivityObserver
 import fr.descentecanyon.app.data.repository.HomeFeedSnapshotStore
+import fr.descentecanyon.app.domain.model.CanyonSearchItem
 import fr.descentecanyon.app.domain.model.Debit
 import fr.descentecanyon.app.domain.model.ForumActiveTopic
 import fr.descentecanyon.app.domain.model.HomeFeedType
+import fr.descentecanyon.app.domain.model.subdivisionsFor
+import fr.descentecanyon.app.domain.repository.CanyonRepository
 import fr.descentecanyon.app.domain.repository.DebitRepository
 import fr.descentecanyon.app.domain.repository.ForumRepository
 import java.net.ConnectException
@@ -36,17 +39,31 @@ data class HomeFeedSectionState<T>(
     val lastSyncedAtEpochMs: Long? = null,
 )
 
+data class HomeDebitGeoFilterState(
+    val selectedCountry: String? = null,
+    val selectedDepartment: String? = null,
+    val availableCountries: List<String> = emptyList(),
+    val availableDepartments: List<String> = emptyList(),
+    val displayedCount: Int = 0,
+    val filteredCount: Int = 0,
+    val canLoadMore: Boolean = false,
+) {
+    fun hasActiveFilter(): Boolean = selectedCountry != null || selectedDepartment != null
+}
+
 data class HomeUiState(
     val selectedFeed: HomeFeedType = HomeFeedType.DEBITS,
     val isOnline: Boolean = true,
     val debitFeed: HomeFeedSectionState<Debit> = HomeFeedSectionState(),
     val forumFeed: HomeFeedSectionState<ForumActiveTopic> = HomeFeedSectionState(),
+    val debitGeoFilter: HomeDebitGeoFilterState = HomeDebitGeoFilterState(),
 )
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
     private val debitRepository: DebitRepository,
     private val forumRepository: ForumRepository,
+    private val canyonRepository: CanyonRepository,
     private val connectivityObserver: ConnectivityObserver,
     private val snapshotStore: HomeFeedSnapshotStore,
 ) : ViewModel() {
@@ -58,9 +75,13 @@ class HomeViewModel @Inject constructor(
     private var activeTopicsJob: Job? = null
     private var previousOnline: Boolean? = null
     private var hasUserSelectedFeed = false
+    private var allLatestDebits: List<Debit> = emptyList()
+    private var searchCatalog: List<CanyonSearchItem> = emptyList()
+    private var visibleDebitLimit = LATEST_DEBITS_PAGE_SIZE
 
     init {
         observeConnectivity()
+        observeSearchCatalog()
         restoreHomeState()
     }
 
@@ -87,11 +108,55 @@ class HomeViewModel @Inject constructor(
         refreshFeed(uiState.value.selectedFeed)
     }
 
+    fun selectDebitCountry(country: String?) {
+        visibleDebitLimit = LATEST_DEBITS_PAGE_SIZE
+        _uiState.update { state ->
+            state.copy(
+                debitGeoFilter = state.debitGeoFilter.copy(
+                    selectedCountry = country?.takeIf { it.isNotBlank() },
+                    selectedDepartment = null,
+                ),
+            ).withDebitPresentation()
+        }
+    }
+
+    fun selectDebitDepartment(department: String?) {
+        visibleDebitLimit = LATEST_DEBITS_PAGE_SIZE
+        _uiState.update { state ->
+            val selectedDepartment = department
+                ?.takeIf { it.isNotBlank() }
+                ?.takeIf { state.debitGeoFilter.selectedCountry != null }
+            state.copy(
+                debitGeoFilter = state.debitGeoFilter.copy(selectedDepartment = selectedDepartment),
+            ).withDebitPresentation()
+        }
+    }
+
+    fun clearDebitGeoFilter() {
+        visibleDebitLimit = LATEST_DEBITS_PAGE_SIZE
+        _uiState.update { state ->
+            state.copy(
+                debitGeoFilter = state.debitGeoFilter.copy(
+                    selectedCountry = null,
+                    selectedDepartment = null,
+                ),
+            ).withDebitPresentation()
+        }
+    }
+
+    fun loadMoreDebits() {
+        if (!uiState.value.debitGeoFilter.canLoadMore) return
+        visibleDebitLimit += LATEST_DEBITS_PAGE_SIZE
+        _uiState.update { state -> state.withDebitPresentation() }
+    }
+
     private fun restoreHomeState() {
         viewModelScope.launch {
             val restoredSelectedFeed = snapshotStore.readSelectedFeedType() ?: HomeFeedType.DEBITS
-            val cachedDebits = debitRepository.getCachedLatestDebits(LATEST_DEBITS_LIMIT)
+            val cachedDebits = debitRepository.getCachedLatestDebits(LATEST_DEBITS_CACHE_LIMIT)
             val cachedTopics = forumRepository.getCachedActiveTopics(ACTIVE_TOPICS_LIMIT)
+            allLatestDebits = cachedDebits.items
+            visibleDebitLimit = LATEST_DEBITS_PAGE_SIZE
 
             _uiState.update { state ->
                 state.copy(
@@ -114,13 +179,22 @@ class HomeViewModel @Inject constructor(
                             currentNotice = null,
                         ),
                     ),
-                )
+                ).withDebitPresentation()
             }
 
             if (connectivityObserver.isCurrentlyOnline()) {
                 val selectedFeed = uiState.value.selectedFeed
                 refreshFeed(selectedFeed)
                 refreshFeed(otherFeedOf(selectedFeed), backgroundOnly = true)
+            }
+        }
+    }
+
+    private fun observeSearchCatalog() {
+        viewModelScope.launch {
+            canyonRepository.observeSearchCatalog().collect { catalog ->
+                searchCatalog = catalog
+                _uiState.update { state -> state.withDebitPresentation() }
             }
         }
     }
@@ -207,8 +281,10 @@ class HomeViewModel @Inject constructor(
                         )
                     }
 
-                    debitRepository.refreshLatestDebits(LATEST_DEBITS_LIMIT).fold(
+                    debitRepository.refreshLatestDebits(LATEST_DEBITS_CACHE_LIMIT).fold(
                         onSuccess = { cached ->
+                            allLatestDebits = cached.items
+                            visibleDebitLimit = LATEST_DEBITS_PAGE_SIZE
                             _uiState.update { state ->
                                 state.copy(
                                     debitFeed = state.debitFeed.copy(
@@ -221,7 +297,7 @@ class HomeViewModel @Inject constructor(
                                         ),
                                         lastSyncedAtEpochMs = cached.syncedAtEpochMs,
                                     ),
-                                )
+                                ).withDebitPresentation()
                             }
                         },
                         onFailure = { throwable ->
@@ -342,8 +418,28 @@ class HomeViewModel @Inject constructor(
         HomeFeedType.FORUM -> HomeFeedType.DEBITS
     }
 
+    private fun HomeUiState.withDebitPresentation(): HomeUiState {
+        val presentation = buildDebitPresentation(
+            allDebits = allLatestDebits,
+            catalog = searchCatalog,
+            filter = debitGeoFilter,
+            visibleLimit = visibleDebitLimit,
+        )
+        return copy(
+            debitFeed = debitFeed.copy(items = presentation.visibleItems),
+            debitGeoFilter = debitGeoFilter.copy(
+                availableCountries = presentation.availableCountries,
+                availableDepartments = presentation.availableDepartments,
+                displayedCount = presentation.visibleItems.size,
+                filteredCount = presentation.filteredCount,
+                canLoadMore = presentation.canLoadMore,
+            ),
+        )
+    }
+
     private companion object {
-        const val LATEST_DEBITS_LIMIT = 20
+        const val LATEST_DEBITS_PAGE_SIZE = 20
+        const val LATEST_DEBITS_CACHE_LIMIT = Int.MAX_VALUE
         const val ACTIVE_TOPICS_LIMIT = 12
     }
 }
@@ -351,4 +447,69 @@ class HomeViewModel @Inject constructor(
 private enum class HomeFeedFailureKind {
     NETWORK,
     SERVICE,
+}
+
+private data class DebitPresentation(
+    val visibleItems: List<Debit>,
+    val availableCountries: List<String>,
+    val availableDepartments: List<String>,
+    val filteredCount: Int,
+    val canLoadMore: Boolean,
+)
+
+private fun buildDebitPresentation(
+    allDebits: List<Debit>,
+    catalog: List<CanyonSearchItem>,
+    filter: HomeDebitGeoFilterState,
+    visibleLimit: Int,
+): DebitPresentation {
+    val debitCanyonIds = allDebits.asSequence().map { it.canyonId }.toSet()
+    val catalogByLatestDebitId = catalog
+        .filter { it.id in debitCanyonIds }
+        .associateBy { it.id }
+    val catalogItems = catalogByLatestDebitId.values.toList()
+    val availableCountries = catalogItems.asSequence()
+        .flatMap { it.countryTokens.asSequence() }
+        .distinct()
+        .sorted()
+        .toList()
+    val countryMatches = catalogItems.asSequence()
+        .filter { it.matchesCountry(filter.selectedCountry) }
+        .toList()
+    val availableDepartments = if (filter.selectedCountry == null) {
+        emptyList()
+    } else {
+        countryMatches.asSequence()
+            .flatMap { it.subdivisionsFor(filter.selectedCountry).asSequence() }
+            .distinct()
+            .sorted()
+            .toList()
+    }
+
+    val filteredDebits = if (!filter.hasActiveFilter()) {
+        allDebits
+    } else {
+        val matchingIds = countryMatches.asSequence()
+            .filter { it.matchesDepartment(filter.selectedCountry, filter.selectedDepartment) }
+            .map { it.id }
+            .toSet()
+        allDebits.filter { it.canyonId in matchingIds }
+    }
+    val effectiveLimit = visibleLimit.coerceAtLeast(0)
+
+    return DebitPresentation(
+        visibleItems = filteredDebits.take(effectiveLimit),
+        availableCountries = availableCountries,
+        availableDepartments = availableDepartments,
+        filteredCount = filteredDebits.size,
+        canLoadMore = filteredDebits.size > effectiveLimit,
+    )
+}
+
+private fun CanyonSearchItem.matchesCountry(country: String?): Boolean {
+    return country == null || countryTokens.any { it.equals(country, ignoreCase = true) }
+}
+
+private fun CanyonSearchItem.matchesDepartment(country: String?, department: String?): Boolean {
+    return department == null || subdivisionsFor(country).any { it.equals(department, ignoreCase = true) }
 }

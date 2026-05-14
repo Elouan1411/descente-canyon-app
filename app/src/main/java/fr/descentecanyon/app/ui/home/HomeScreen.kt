@@ -14,11 +14,13 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.OpenInNew
@@ -26,17 +28,22 @@ import androidx.compose.material.icons.filled.AccountCircle
 import androidx.compose.material.icons.filled.ChatBubbleOutline
 import androidx.compose.material.icons.filled.CloudOff
 import androidx.compose.material.icons.filled.Favorite
+import androidx.compose.material.icons.filled.FilterList
 import androidx.compose.material.icons.filled.Refresh
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.WifiOff
+import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedButton
+import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SegmentedButton
 import androidx.compose.material3.SegmentedButtonDefaults
@@ -49,6 +56,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.runtime.snapshotFlow
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
@@ -72,9 +80,11 @@ import fr.descentecanyon.app.ui.components.CompactAppBar
 import fr.descentecanyon.app.ui.components.DebitBadge
 import fr.descentecanyon.app.ui.components.debitLevelColor
 import fr.descentecanyon.app.ui.test.TestTags
+import java.text.Normalizer
 import java.time.Instant
 import java.time.ZoneId
 import java.time.format.DateTimeFormatter
+import kotlinx.coroutines.flow.distinctUntilChanged
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -94,6 +104,7 @@ fun HomeScreen(
     var showLoginDialog by remember { mutableStateOf(false) }
     var selectedFeedOverride by remember { mutableStateOf<HomeFeedType?>(null) }
     val selectedFeed = selectedFeedOverride ?: homeState.selectedFeed
+    val listState = rememberLazyListState()
     val selectFeed: (HomeFeedType) -> Unit = { type ->
         selectedFeedOverride = type
         homeViewModel.selectFeed(type)
@@ -103,6 +114,24 @@ fun HomeScreen(
         if (selectedFeedOverride == homeState.selectedFeed) {
             selectedFeedOverride = null
         }
+    }
+
+    LaunchedEffect(
+        listState,
+        selectedFeed,
+        homeState.debitGeoFilter.canLoadMore,
+        homeState.debitFeed.items.size,
+    ) {
+        if (selectedFeed != HomeFeedType.DEBITS || !homeState.debitGeoFilter.canLoadMore) return@LaunchedEffect
+        snapshotFlow {
+            val layoutInfo = listState.layoutInfo
+            val lastVisibleIndex = layoutInfo.visibleItemsInfo.lastOrNull()?.index ?: -1
+            layoutInfo.totalItemsCount > 0 && lastVisibleIndex >= layoutInfo.totalItemsCount - LOAD_MORE_VISIBLE_THRESHOLD
+        }
+            .distinctUntilChanged()
+            .collect { shouldLoadMore ->
+                if (shouldLoadMore) homeViewModel.loadMoreDebits()
+            }
     }
 
     if (showLoginDialog) {
@@ -140,6 +169,7 @@ fun HomeScreen(
         modifier = modifier,
     ) { innerPadding ->
         LazyColumn(
+            state = listState,
             modifier = Modifier
                 .fillMaxSize()
                 .padding(innerPadding)
@@ -169,6 +199,17 @@ fun HomeScreen(
                     selectedFeed = selectedFeed,
                     onRefresh = homeViewModel::refreshSelectedFeed,
                 )
+            }
+
+            if (selectedFeed == HomeFeedType.DEBITS) {
+                item {
+                    HomeDebitGeoFilterControls(
+                        filterState = homeState.debitGeoFilter,
+                        onCountrySelected = homeViewModel::selectDebitCountry,
+                        onDepartmentSelected = homeViewModel::selectDebitDepartment,
+                        onClear = homeViewModel::clearDebitGeoFilter,
+                    )
+                }
             }
 
             if (activeFeedState.notice == HomeFeedNotice.OFFLINE_BANNER ||
@@ -208,6 +249,8 @@ fun HomeScreen(
                         onMapClick = onMapClick,
                         hasCachedDebits = homeState.debitFeed.items.isNotEmpty(),
                         hasCachedForum = homeState.forumFeed.items.isNotEmpty(),
+                        isDebitFilterActive = homeState.debitGeoFilter.hasActiveFilter(),
+                        onClearDebitFilters = homeViewModel::clearDebitGeoFilter,
                     )
                 }
             }
@@ -247,6 +290,8 @@ fun HomeScreen(
         }
     }
 }
+
+private const val LOAD_MORE_VISIBLE_THRESHOLD = 3
 
 @Composable
 private fun HomeFeedPicker(
@@ -316,6 +361,203 @@ private fun HomeFeedHeader(
         )
     }
 }
+
+@Composable
+private fun HomeDebitGeoFilterControls(
+    filterState: HomeDebitGeoFilterState,
+    onCountrySelected: (String?) -> Unit,
+    onDepartmentSelected: (String?) -> Unit,
+    onClear: () -> Unit,
+    modifier: Modifier = Modifier,
+) {
+    Card(
+        modifier = modifier.fillMaxWidth(),
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
+        border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.72f)),
+    ) {
+        Column(
+            modifier = Modifier.padding(14.dp),
+            verticalArrangement = Arrangement.spacedBy(10.dp),
+        ) {
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.spacedBy(10.dp),
+                verticalAlignment = Alignment.CenterVertically,
+            ) {
+                Icon(
+                    imageVector = Icons.Default.FilterList,
+                    contentDescription = null,
+                    tint = MaterialTheme.colorScheme.primary,
+                )
+                Column(modifier = Modifier.weight(1f)) {
+                    Text(
+                        text = stringResource(R.string.home_debit_filter_title),
+                        style = MaterialTheme.typography.titleSmall,
+                        fontWeight = FontWeight.SemiBold,
+                    )
+                    Text(
+                        text = stringResource(
+                            R.string.home_debit_filter_count,
+                            filterState.displayedCount,
+                            filterState.filteredCount,
+                        ),
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    )
+                }
+                if (filterState.hasActiveFilter()) {
+                    TextButton(onClick = onClear) {
+                        Text(stringResource(R.string.search_clear_filters))
+                    }
+                }
+            }
+
+            HomeStringPickerField(
+                label = stringResource(R.string.search_filter_country),
+                selected = filterState.selectedCountry,
+                emptyLabel = stringResource(R.string.search_filter_any_country),
+                options = filterState.availableCountries,
+                enabled = filterState.availableCountries.isNotEmpty(),
+                onSelected = onCountrySelected,
+            )
+
+            if (filterState.selectedCountry != null) {
+                HomeStringPickerField(
+                    label = stringResource(R.string.search_filter_department),
+                    selected = filterState.selectedDepartment,
+                    emptyLabel = stringResource(R.string.search_filter_any_department),
+                    options = filterState.availableDepartments,
+                    enabled = filterState.availableDepartments.isNotEmpty(),
+                    onSelected = onDepartmentSelected,
+                )
+            }
+        }
+    }
+}
+
+@Composable
+private fun HomeStringPickerField(
+    label: String,
+    selected: String?,
+    emptyLabel: String,
+    options: List<String>,
+    enabled: Boolean,
+    onSelected: (String?) -> Unit,
+    modifier: Modifier = Modifier,
+) {
+    var showPicker by remember { mutableStateOf(false) }
+    var query by remember { mutableStateOf("") }
+    val filteredOptions = remember(options, query) {
+        if (query.isBlank()) options else options.filter { it.matchesPickerQuery(query) }
+    }
+
+    OutlinedButton(
+        onClick = {
+            query = ""
+            showPicker = true
+        },
+        enabled = enabled,
+        modifier = modifier.fillMaxWidth(),
+    ) {
+        Column(
+            modifier = Modifier.weight(1f),
+            verticalArrangement = Arrangement.spacedBy(2.dp),
+        ) {
+            Text(
+                text = label,
+                style = MaterialTheme.typography.labelMedium,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                maxLines = 1,
+            )
+            Text(
+                text = selected ?: emptyLabel,
+                maxLines = 1,
+                overflow = TextOverflow.Ellipsis,
+            )
+        }
+    }
+
+    if (showPicker) {
+        AlertDialog(
+            onDismissRequest = { showPicker = false },
+            title = { Text(label) },
+            text = {
+                Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
+                    OutlinedTextField(
+                        value = query,
+                        onValueChange = { query = it },
+                        modifier = Modifier.fillMaxWidth(),
+                        placeholder = { Text(stringResource(R.string.search_filter_option_search)) },
+                        singleLine = true,
+                    )
+                    LazyColumn(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .heightIn(max = 360.dp),
+                    ) {
+                        item {
+                            DropdownMenuItem(
+                                text = {
+                                    Text(
+                                        text = emptyLabel,
+                                        color = if (selected == null) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurface,
+                                    )
+                                },
+                                onClick = {
+                                    showPicker = false
+                                    onSelected(null)
+                                },
+                            )
+                        }
+                        if (filteredOptions.isEmpty()) {
+                            item {
+                                Text(
+                                    text = stringResource(R.string.search_filter_option_no_results),
+                                    style = MaterialTheme.typography.bodyMedium,
+                                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                                    modifier = Modifier.padding(horizontal = 12.dp, vertical = 14.dp),
+                                )
+                            }
+                        } else {
+                            items(filteredOptions) { option ->
+                                DropdownMenuItem(
+                                    text = {
+                                        Text(
+                                            text = option,
+                                            color = if (option == selected) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurface,
+                                        )
+                                    },
+                                    onClick = {
+                                        showPicker = false
+                                        onSelected(option)
+                                    },
+                                )
+                            }
+                        }
+                    }
+                }
+            },
+            confirmButton = {
+                TextButton(onClick = { showPicker = false }) {
+                    Text(stringResource(R.string.close))
+                }
+            },
+        )
+    }
+}
+
+private fun String.matchesPickerQuery(query: String): Boolean {
+    return normalizedPickerText().contains(query.normalizedPickerText())
+}
+
+private fun String.normalizedPickerText(): String {
+    return Normalizer
+        .normalize(this, Normalizer.Form.NFD)
+        .replace(DiacriticsRegex, "")
+        .lowercase()
+}
+
+private val DiacriticsRegex = Regex("\\p{Mn}+")
 
 @Composable
 private fun HomeFeedBanner(
@@ -404,6 +646,8 @@ private fun HomeEmptyState(
     onMapClick: () -> Unit,
     hasCachedDebits: Boolean,
     hasCachedForum: Boolean,
+    isDebitFilterActive: Boolean,
+    onClearDebitFilters: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     when (selectedFeed) {
@@ -429,6 +673,17 @@ private fun HomeEmptyState(
                 onSecondaryAction = hasCachedForum.takeIf { it }?.let { onShowForum },
                 modifier = modifier,
             )
+
+            null -> if (isDebitFilterActive) {
+                HomeStatusCard(
+                    icon = Icons.Default.FilterList,
+                    title = stringResource(R.string.home_debit_filter_no_results_title),
+                    body = stringResource(R.string.home_debit_filter_no_results_body),
+                    primaryActionLabel = stringResource(R.string.search_clear_filters),
+                    onPrimaryAction = onClearDebitFilters,
+                    modifier = modifier,
+                )
+            }
 
             else -> Unit
         }

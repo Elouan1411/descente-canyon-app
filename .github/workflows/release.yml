@@ -120,15 +120,22 @@ jobs:
         run: |
           printf '%s' "$ANDROID_KEYSTORE_BASE64" | base64 --decode > "$RELEASE_KEYSTORE_FILE"
 
-      - name: Build signed release bundle
+      - name: Build signed release bundle and APK
         run: |
-          ./gradlew :app:bundleRelease
+          ./gradlew :app:bundleRelease :app:assembleRelease
 
       - name: Upload release bundle artifact
         uses: actions/upload-artifact@v4
         with:
-          name: app-release-${{ steps.version.outputs.version_name }}-${{ steps.version.outputs.version_code }}
+          name: app-release-bundle-${{ steps.version.outputs.version_name }}-${{ steps.version.outputs.version_code }}
           path: app/build/outputs/bundle/release/*.aab
+          if-no-files-found: error
+
+      - name: Upload release APK artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-release-apk-${{ steps.version.outputs.version_name }}-${{ steps.version.outputs.version_code }}
+          path: app/build/outputs/apk/release/*.apk
           if-no-files-found: error
 
       - name: Commit version bump and push tag
@@ -157,19 +164,23 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "${{ steps.version.outputs.version_tag }}" app/build/outputs/bundle/release/*.aab \
+          gh release create "${{ steps.version.outputs.version_tag }}" \
+            app/build/outputs/bundle/release/*.aab \
+            app/build/outputs/apk/release/*.apk \
             --title "${{ steps.version.outputs.version_tag }}" \
-            --notes "Android release bundle for version ${{ steps.version.outputs.version_name }} (versionCode ${{ steps.version.outputs.version_code }})."
+            --notes "Android release bundle and signed APK for version ${{ steps.version.outputs.version_name }} (versionCode ${{ steps.version.outputs.version_code }})."
 
       - name: Write job summary
         run: |
           {
-            echo "## Release bundle ready"
+            echo "## Release artifacts ready"
             echo ""
             echo "- Previous version: `${{ steps.version.outputs.current_version }}`"
             echo "- Previous version code: `${{ steps.version.outputs.current_version_code }}`"
             echo "- New version: `${{ steps.version.outputs.version_name }}`"
             echo "- Version code: `${{ steps.version.outputs.version_code }}`"
             echo "- Git tag: `${{ steps.version.outputs.version_tag }}`"
+            echo "- Play Store artifact: signed AAB"
+            echo "- Test install artifact: signed APK"
             echo "- GitHub Release: `https://github.com/${{ github.repository }}/releases/tag/${{ steps.version.outputs.version_tag }}`"
           } >> "$GITHUB_STEP_SUMMARY"

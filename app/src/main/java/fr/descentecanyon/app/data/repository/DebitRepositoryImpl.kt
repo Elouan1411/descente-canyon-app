@@ -41,9 +41,10 @@ class DebitRepositoryImpl @Inject constructor(
 
     override suspend fun refreshLatestDebits(limit: Int): Result<CachedItems<Debit>> {
         return scraper.scrapeLatestDebits().map { scrapedDebits ->
-            val debits = scrapedDebits.take(limit).map { it.toDomain() }
+            val allDebits = scrapedDebits.map { it.toDomain() }
+            val debits = allDebits.take(limit)
             val syncedAtEpochMs = System.currentTimeMillis()
-            snapshotStore.writeLatestDebits(debits, syncedAtEpochMs)
+            snapshotStore.writeLatestDebits(allDebits, syncedAtEpochMs)
             CachedItems(items = debits, syncedAtEpochMs = syncedAtEpochMs)
         }
     }

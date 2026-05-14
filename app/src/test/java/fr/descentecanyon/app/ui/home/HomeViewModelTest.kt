@@ -5,10 +5,14 @@ import fr.descentecanyon.app.data.local.dao.AppMetadataDao
 import fr.descentecanyon.app.data.local.entity.AppMetadataEntity
 import fr.descentecanyon.app.data.repository.HomeFeedSnapshotStore
 import fr.descentecanyon.app.domain.model.CachedItems
+import fr.descentecanyon.app.domain.model.CanyonSearchItem
+import fr.descentecanyon.app.domain.model.CotationRating
 import fr.descentecanyon.app.domain.model.Debit
 import fr.descentecanyon.app.domain.model.ForumActiveTopic
 import fr.descentecanyon.app.domain.model.HomeFeedType
 import fr.descentecanyon.app.domain.model.NiveauDebit
+import fr.descentecanyon.app.domain.model.normalizeForSearch
+import fr.descentecanyon.app.domain.repository.CanyonRepository
 import fr.descentecanyon.app.domain.repository.DebitRepository
 import fr.descentecanyon.app.domain.repository.ForumRepository
 import fr.descentecanyon.app.testutil.MainDispatcherRule
@@ -36,9 +40,11 @@ class HomeViewModelTest {
 
     private val debitRepository = mockk<DebitRepository>()
     private val forumRepository = mockk<ForumRepository>()
+    private val canyonRepository = mockk<CanyonRepository>()
     private val connectivityObserver = mockk<ConnectivityObserver>()
     private val appMetadataDao = mockk<AppMetadataDao>()
     private val snapshotStore = HomeFeedSnapshotStore(appMetadataDao)
+    private val searchCatalog = MutableStateFlow<List<CanyonSearchItem>>(emptyList())
 
     @Test
     fun `offline startup without cached data shows offline empty states`() = runTest {
@@ -207,22 +213,127 @@ class HomeViewModelTest {
         coVerify(atLeast = 2) { forumRepository.refreshActiveTopics(any()) }
     }
 
+    @Test
+    fun `latest debits are displayed by pages of twenty`() = runTest {
+        val connectivity = MutableStateFlow(true)
+        var currentOnline = true
+        val debits = (1..25).map { id -> sampleDebit(canyonId = id, canyonNom = "Canyon $id") }
+        every { connectivityObserver.observe() } returns connectivity
+        every { connectivityObserver.isCurrentlyOnline() } answers { currentOnline }
+        coEvery { appMetadataDao.get("home.selected_feed_type") } returns null
+        coEvery { appMetadataDao.insert(any()) } returns Unit
+        coEvery { debitRepository.getCachedLatestDebits(any()) } returns CachedItems(emptyList(), null)
+        coEvery { forumRepository.getCachedActiveTopics(any()) } returns CachedItems(emptyList(), null)
+        coEvery { debitRepository.refreshLatestDebits(any()) } returns Result.success(CachedItems(debits, 1234L))
+        coEvery { forumRepository.refreshActiveTopics(any()) } returns Result.success(CachedItems(emptyList(), 1234L))
+
+        val viewModel = createViewModel()
+        advanceUntilIdle()
+
+        assertEquals(20, viewModel.uiState.value.debitFeed.items.size)
+        assertTrue(viewModel.uiState.value.debitGeoFilter.canLoadMore)
+
+        viewModel.loadMoreDebits()
+        advanceUntilIdle()
+
+        assertEquals(25, viewModel.uiState.value.debitFeed.items.size)
+        assertEquals(false, viewModel.uiState.value.debitGeoFilter.canLoadMore)
+    }
+
+    @Test
+    fun `country and subdivision filters apply before latest debit pagination`() = runTest {
+        val connectivity = MutableStateFlow(true)
+        var currentOnline = true
+        val frenchDebits = (1..22).map { id -> sampleDebit(canyonId = id, canyonNom = "France $id") }
+        val spanishDebits = (101..105).map { id -> sampleDebit(canyonId = id, canyonNom = "Espagne $id") }
+        val debits = frenchDebits + spanishDebits
+        searchCatalog.value = frenchDebits.map { debit ->
+            searchItem(
+                id = debit.canyonId,
+                nom = debit.canyonNom.orEmpty(),
+                pays = "France",
+                departement = if (debit.canyonId <= 2) "Ain" else "Alpes-Maritimes",
+            )
+        } + spanishDebits.map { debit ->
+            searchItem(
+                id = debit.canyonId,
+                nom = debit.canyonNom.orEmpty(),
+                pays = "Espagne",
+                departement = "Huesca",
+            )
+        }
+        every { connectivityObserver.observe() } returns connectivity
+        every { connectivityObserver.isCurrentlyOnline() } answers { currentOnline }
+        coEvery { appMetadataDao.get("home.selected_feed_type") } returns null
+        coEvery { appMetadataDao.insert(any()) } returns Unit
+        coEvery { debitRepository.getCachedLatestDebits(any()) } returns CachedItems(emptyList(), null)
+        coEvery { forumRepository.getCachedActiveTopics(any()) } returns CachedItems(emptyList(), null)
+        coEvery { debitRepository.refreshLatestDebits(any()) } returns Result.success(CachedItems(debits, 1234L))
+        coEvery { forumRepository.refreshActiveTopics(any()) } returns Result.success(CachedItems(emptyList(), 1234L))
+
+        val viewModel = createViewModel()
+        advanceUntilIdle()
+
+        viewModel.selectDebitCountry("France")
+        advanceUntilIdle()
+
+        assertEquals(20, viewModel.uiState.value.debitFeed.items.size)
+        assertEquals(22, viewModel.uiState.value.debitGeoFilter.filteredCount)
+        assertTrue(viewModel.uiState.value.debitGeoFilter.canLoadMore)
+        assertEquals(listOf("Ain", "Alpes-Maritimes"), viewModel.uiState.value.debitGeoFilter.availableDepartments)
+
+        viewModel.selectDebitDepartment("Ain")
+        advanceUntilIdle()
+
+        assertEquals(listOf(1, 2), viewModel.uiState.value.debitFeed.items.map { it.canyonId })
+        assertEquals(false, viewModel.uiState.value.debitGeoFilter.canLoadMore)
+    }
+
     private fun createViewModel(): HomeViewModel {
+        every { canyonRepository.observeSearchCatalog() } returns searchCatalog
         return HomeViewModel(
             debitRepository = debitRepository,
             forumRepository = forumRepository,
+            canyonRepository = canyonRepository,
             connectivityObserver = connectivityObserver,
             snapshotStore = snapshotStore,
         )
     }
 
-    private fun sampleDebit() = Debit(
-        canyonId = 27,
-        canyonNom = "Furon",
+    private fun sampleDebit(
+        canyonId: Int = 27,
+        canyonNom: String = "Furon",
+    ) = Debit(
+        canyonId = canyonId,
+        canyonNom = canyonNom,
         date = LocalDate.of(2026, 3, 28),
         niveau = NiveauDebit.CORRECT,
         auteur = "Alice",
     )
+
+    private fun searchItem(
+        id: Int,
+        nom: String,
+        pays: String,
+        departement: String,
+    ): CanyonSearchItem {
+        return CanyonSearchItem(
+            id = id,
+            nom = nom,
+            nomComplet = nom,
+            pays = pays,
+            countryTokens = listOf(pays),
+            departement = departement,
+            departmentTokens = listOf(departement),
+            subdivisionsByCountry = mapOf(pays to listOf(departement)),
+            cotation = "V3A3III",
+            cotationRating = CotationRating.parse("V3A3III"),
+            url = "/canyoning/canyon/$id/test.html",
+            searchableText = listOf(nom, pays, departement).joinToString(" ").normalizeForSearch(),
+            normalizedNom = nom.normalizeForSearch(),
+            normalizedNomComplet = nom.normalizeForSearch(),
+        )
+    }
 
     private fun sampleTopic() = ForumActiveTopic(
         topicId = 28125,
