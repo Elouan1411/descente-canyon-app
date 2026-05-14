@@ -37,8 +37,9 @@ class AppStartupCoordinator @Inject constructor(
     @Volatile private var initialized = false
 
     suspend fun resolveLaunchMode(): StartupLaunchMode {
-        val mode = withContext(Dispatchers.IO) { embeddedCanyonDataImporter.getCoreImportMode() }
-        val launchMode = if (mode == EmbeddedImportMode.SKIPPED) {
+        val coreMode = withContext(Dispatchers.IO) { embeddedCanyonDataImporter.getCoreImportMode() }
+        val watershedsMode = withContext(Dispatchers.IO) { embeddedCanyonDataImporter.getWatershedsImportMode() }
+        val launchMode = if (coreMode == EmbeddedImportMode.SKIPPED && watershedsMode == EmbeddedImportMode.SKIPPED) {
             StartupLaunchMode.NON_BLOCKING
         } else {
             StartupLaunchMode.BLOCKING_IMPORT
@@ -46,7 +47,8 @@ class AppStartupCoordinator @Inject constructor(
         PerformanceTrace.logEvent(
             event = "startup_launch_mode_resolved",
             "launchMode" to launchMode.logLabel,
-            "coreImportMode" to mode.logLabel,
+            "coreImportMode" to coreMode.logLabel,
+            "watershedsImportMode" to watershedsMode.logLabel,
         )
         return launchMode
     }
@@ -65,6 +67,14 @@ class AppStartupCoordinator @Inject constructor(
                     "launchMode" to coreImportOutcome.mode.logLabel,
                     "datasetVersion" to coreImportOutcome.version,
                     "expectedRows" to coreImportOutcome.expectedRowCount,
+                )
+                val watershedsImportOutcome = embeddedCanyonDataImporter.ensureWatershedsImported()
+                PerformanceTrace.logEvent(
+                    event = "startup_watersheds_ready",
+                    "launchMode" to watershedsImportOutcome.mode.logLabel,
+                    "datasetVersion" to watershedsImportOutcome.version,
+                    "expectedRows" to watershedsImportOutcome.expectedRowCount,
+                    "importedRows" to watershedsImportOutcome.importedRowCount,
                 )
             }
 
@@ -96,16 +106,8 @@ class AppStartupCoordinator @Inject constructor(
                     Log.w(TAG, "Unable to warm up search catalog in background", throwable)
                 }
 
-                delay(WATERSHEDS_IMPORT_DELAY_AFTER_SEARCH_MS)
-                PerformanceTrace.logEvent("watersheds_import_scheduled", "delayMs" to WATERSHEDS_IMPORT_DELAY_AFTER_SEARCH_MS)
-                runCatching {
-                    embeddedCanyonDataImporter.ensureWatershedsImported()
-                }.onFailure { throwable ->
-                    Log.w(TAG, "Unable to import watersheds in background", throwable)
-                }
-
-                delay(PREDICTION_WARMUP_DELAY_AFTER_WATERSHEDS_MS)
-                PerformanceTrace.logEvent("prediction_warmup_scheduled", "delayMs" to PREDICTION_WARMUP_DELAY_AFTER_WATERSHEDS_MS)
+                delay(PREDICTION_WARMUP_DELAY_AFTER_SEARCH_MS)
+                PerformanceTrace.logEvent("prediction_warmup_scheduled", "delayMs" to PREDICTION_WARMUP_DELAY_AFTER_SEARCH_MS)
                 runCatching {
                     predictionWarmupCoordinator.warmupIfNeeded()
                 }.onFailure { throwable ->
@@ -126,8 +128,7 @@ class AppStartupCoordinator @Inject constructor(
     private companion object {
         const val TAG = "AppStartupCoordinator"
         const val SEARCH_CATALOG_WARMUP_DELAY_MS = 3_000L
-        const val WATERSHEDS_IMPORT_DELAY_AFTER_SEARCH_MS = 1_500L
-        const val PREDICTION_WARMUP_DELAY_AFTER_WATERSHEDS_MS = 2_500L
+        const val PREDICTION_WARMUP_DELAY_AFTER_SEARCH_MS = 2_500L
         const val AUTH_RESTORE_TRACE_KEY = "startup.auth_restore"
     }
 }

@@ -1,6 +1,8 @@
 package fr.descentecanyon.app.data.local.importer
 
 import android.content.Context
+import android.util.JsonReader
+import android.util.JsonToken
 import androidx.room.withTransaction
 import dagger.hilt.android.qualifiers.ApplicationContext
 import fr.descentecanyon.app.data.local.dao.AppMetadataDao
@@ -60,6 +62,20 @@ class EmbeddedAppDataImporter @Inject constructor(
 
     suspend fun getCoreImportMode(): EmbeddedImportMode {
         return readCoreImportPlan().mode
+    }
+
+    suspend fun getWatershedsImportMode(): EmbeddedImportMode {
+        val manifest = readManifest()
+        val watershedsVersion = manifest.versions["watersheds"] ?: manifest.generatedAt
+        val importedVersion = appMetadataDao.get(WATERSHEDS_VERSION_KEY)?.value
+        val hasImportedWatersheds = watershedDao.count() > 0
+        return if (shouldSkipWatershedsImport(importedVersion, watershedsVersion, hasImportedWatersheds)) {
+            EmbeddedImportMode.SKIPPED
+        } else if (hasImportedWatersheds) {
+            EmbeddedImportMode.DATASET_UPDATE
+        } else {
+            EmbeddedImportMode.FIRST_IMPORT
+        }
     }
 
     suspend fun ensureCoreImported(): EmbeddedImportOutcome {
@@ -232,12 +248,10 @@ class EmbeddedAppDataImporter @Inject constructor(
         )
 
         try {
-            val watersheds = readWatershedRows().orEmpty()
+            var importedCount = 0
             database.withTransaction {
                 watershedDao.clearAll()
-                watersheds.mapNotNull { it.toEntity(json) }
-                    .chunked(300)
-                    .forEach { chunk -> watershedDao.insertAll(chunk) }
+                importedCount = importWatershedsFromAsset()
                 appMetadataDao.insert(AppMetadataEntity(WATERSHEDS_VERSION_KEY, watershedsVersion))
             }
 
@@ -246,7 +260,7 @@ class EmbeddedAppDataImporter @Inject constructor(
                 mode = mode,
                 version = watershedsVersion,
                 expectedRowCount = manifest.counts["watersheds"],
-                importedRowCount = watersheds.size,
+                importedRowCount = importedCount,
             ).also { outcome ->
                 PerformanceTrace.end(
                     key = WATERSHEDS_IMPORT_TRACE_KEY,
@@ -310,16 +324,176 @@ class EmbeddedAppDataImporter @Inject constructor(
         }
     }
 
-    private fun readWatershedRows(): List<WatershedImportRow>? {
-        return readOptionalJsonAsset("watersheds.json") { payload ->
-            json.decodeFromString(ListSerializer(WatershedImportRow.serializer()), payload)
-        }
-    }
-
     private fun readCanyonTracks(): List<CanyonTrackImportRow>? {
         return readOptionalJsonAsset("tracks.json") { payload ->
             json.decodeFromString(ListSerializer(CanyonTrackImportRow.serializer()), payload)
         }
+    }
+
+    private suspend fun importWatershedsFromAsset(): Int {
+        val input = try {
+            context.assets.open("watersheds.json")
+        } catch (_: FileNotFoundException) {
+            return 0
+        }
+
+        var importedCount = 0
+        val chunk = mutableListOf<WatershedEntity>()
+        input.bufferedReader().use { bufferedReader ->
+            val reader = JsonReader(bufferedReader)
+            reader.beginArray()
+            while (reader.hasNext()) {
+                readWatershedEntity(reader)?.let { entity ->
+                    chunk += entity
+                    importedCount += 1
+                }
+                if (chunk.size >= WATERSHED_IMPORT_CHUNK_SIZE) {
+                    watershedDao.insertAll(chunk.toList())
+                    chunk.clear()
+                }
+            }
+            reader.endArray()
+        }
+        if (chunk.isNotEmpty()) {
+            watershedDao.insertAll(chunk.toList())
+        }
+        return importedCount
+    }
+
+    private fun readWatershedEntity(reader: JsonReader): WatershedEntity? {
+        var canyonId: Int? = null
+        var areaKm2: Double? = null
+        var bbox: List<Double>? = null
+        var geometryJson: String? = null
+
+        reader.beginObject()
+        while (reader.hasNext()) {
+            when (reader.nextName()) {
+                "canyonId" -> canyonId = readNullableInt(reader)
+                "upstreamCatchmentAreaKm2" -> areaKm2 = readNullableDouble(reader)
+                "bbox" -> bbox = readNullableDoubleList(reader)
+                "geometry" -> geometryJson = readRawJsonValue(reader)
+                else -> reader.skipValue()
+            }
+        }
+        reader.endObject()
+
+        val bboxValues = bbox?.takeIf { it.size == 4 }
+        if (canyonId == null || geometryJson == null && areaKm2 == null && bboxValues == null) {
+            return null
+        }
+        return WatershedEntity(
+            canyonId = canyonId,
+            areaKm2 = areaKm2,
+            geometryJson = geometryJson,
+            bboxMinLongitude = bboxValues?.get(0),
+            bboxMinLatitude = bboxValues?.get(1),
+            bboxMaxLongitude = bboxValues?.get(2),
+            bboxMaxLatitude = bboxValues?.get(3),
+        )
+    }
+
+    private fun readNullableInt(reader: JsonReader): Int? {
+        if (reader.peek() == JsonToken.NULL) {
+            reader.nextNull()
+            return null
+        }
+        return reader.nextInt()
+    }
+
+    private fun readNullableDouble(reader: JsonReader): Double? {
+        if (reader.peek() == JsonToken.NULL) {
+            reader.nextNull()
+            return null
+        }
+        return reader.nextDouble()
+    }
+
+    private fun readNullableDoubleList(reader: JsonReader): List<Double>? {
+        if (reader.peek() == JsonToken.NULL) {
+            reader.nextNull()
+            return null
+        }
+
+        val values = mutableListOf<Double>()
+        reader.beginArray()
+        while (reader.hasNext()) {
+            values += reader.nextDouble()
+        }
+        reader.endArray()
+        return values
+    }
+
+    private fun readRawJsonValue(reader: JsonReader): String? {
+        if (reader.peek() == JsonToken.NULL) {
+            reader.nextNull()
+            return null
+        }
+
+        return buildString { appendRawJsonValue(reader, this) }
+    }
+
+    private fun appendRawJsonValue(reader: JsonReader, output: StringBuilder) {
+        when (reader.peek()) {
+            JsonToken.BEGIN_ARRAY -> {
+                reader.beginArray()
+                output.append('[')
+                var first = true
+                while (reader.hasNext()) {
+                    if (!first) output.append(',')
+                    appendRawJsonValue(reader, output)
+                    first = false
+                }
+                reader.endArray()
+                output.append(']')
+            }
+            JsonToken.BEGIN_OBJECT -> {
+                reader.beginObject()
+                output.append('{')
+                var first = true
+                while (reader.hasNext()) {
+                    if (!first) output.append(',')
+                    appendJsonString(reader.nextName(), output)
+                    output.append(':')
+                    appendRawJsonValue(reader, output)
+                    first = false
+                }
+                reader.endObject()
+                output.append('}')
+            }
+            JsonToken.STRING -> appendJsonString(reader.nextString(), output)
+            JsonToken.NUMBER -> output.append(reader.nextString())
+            JsonToken.BOOLEAN -> output.append(reader.nextBoolean())
+            JsonToken.NULL -> {
+                reader.nextNull()
+                output.append("null")
+            }
+            else -> reader.skipValue()
+        }
+    }
+
+    private fun appendJsonString(value: String, output: StringBuilder) {
+        output.append('"')
+        value.forEach { char ->
+            when (char) {
+                '"' -> output.append("\\\"")
+                '\\' -> output.append("\\\\")
+                '\b' -> output.append("\\b")
+                '\u000C' -> output.append("\\f")
+                '\n' -> output.append("\\n")
+                '\r' -> output.append("\\r")
+                '\t' -> output.append("\\t")
+                else -> {
+                    if (char.code < 0x20) {
+                        output.append("\\u")
+                        output.append(char.code.toString(16).padStart(4, '0'))
+                    } else {
+                        output.append(char)
+                    }
+                }
+            }
+        }
+        output.append('"')
     }
 
     private fun <T> readJsonAsset(path: String, decode: (String) -> T): T {
@@ -519,6 +693,7 @@ class EmbeddedAppDataImporter @Inject constructor(
         private const val WATERSHEDS_VERSION_KEY = "embedded_watersheds_version"
         private const val CORE_IMPORT_TRACE_KEY = "embedded.import.core"
         private const val WATERSHEDS_IMPORT_TRACE_KEY = "embedded.import.watersheds"
+        private const val WATERSHED_IMPORT_CHUNK_SIZE = 300
     }
 }
 
