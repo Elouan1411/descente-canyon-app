@@ -1,0 +1,81 @@
+{
+  "canyonsWithResults": 3767,
+  "importReadyRows": 3767,
+  "descriptorRows": 3694,
+  "watershedPolygonRows": 3694,
+  "statusCounts": {
+    "ok": 3767
+  },
+  "watershedSkipCounts": {
+    "review_override_no_channel_within_30m": 73
+  },
+  "profiling": {
+    "profiledCanyons": 3767,
+    "stageTotalsSec": {
+      "resolveSourceSec": 33669.211,
+      "ensureLocalHydrologySec": 424221.57,
+      "clipDemSec": 172702.417,
+      "resampleDemSec": 30107.527,
+      "deriveHydrologySec": 221098.473,
+      "evaluatePointsSec": 7253.368,
+      "analyzeCandidatesSec": 0.291,
+      "buildWatershedMaskSec": 16861.555,
+      "buildWatershedGeometrySec": 2779.862,
+      "prepareClimateSec": 0.0,
+      "prepareWorldCoverSec": 0.0,
+      "prepareGHSLBuiltSec": 0.0,
+      "prepareHydroLakesSec": 0.0,
+      "prepareGDWSec": 0.0,
+      "prepareRGISec": 0.0,
+      "prepareGLiMSec": 0.0,
+      "computeDescriptorsSec": 1970907.875,
+      "computeOsmRegulationSec": 0.0,
+      "totalSec": 2459813.979,
+      "writeResultSec": 66.523
+    },
+    "stageAveragesSec": {
+      "resolveSourceSec": 8.938,
+      "ensureLocalHydrologySec": 112.615,
+      "clipDemSec": 45.846,
+      "resampleDemSec": 7.992,
+      "deriveHydrologySec": 58.694,
+      "evaluatePointsSec": 1.926,
+      "analyzeCandidatesSec": 0.0,
+      "buildWatershedMaskSec": 4.476,
+      "buildWatershedGeometrySec": 0.738,
+      "prepareClimateSec": 0.0,
+      "prepareWorldCoverSec": 0.0,
+      "prepareGHSLBuiltSec": 0.0,
+      "prepareHydroLakesSec": 0.0,
+      "prepareGDWSec": 0.0,
+      "prepareRGISec": 0.0,
+      "prepareGLiMSec": 0.0,
+      "computeDescriptorsSec": 523.204,
+      "computeOsmRegulationSec": 0.0,
+      "totalSec": 652.99,
+      "writeResultSec": 0.018
+    },
+    "stageMaxSec": {
+      "resolveSourceSec": 402.167,
+      "ensureLocalHydrologySec": 13920.947,
+      "clipDemSec": 13294.745,
+      "resampleDemSec": 531.698,
+      "deriveHydrologySec": 695.354,
+      "evaluatePointsSec": 24.188,
+      "analyzeCandidatesSec": 0.082,
+      "buildWatershedMaskSec": 332.354,
+      "buildWatershedGeometrySec": 72.474,
+      "prepareClimateSec": 0.0,
+      "prepareWorldCoverSec": 0.0,
+      "prepareGHSLBuiltSec": 0.0,
+      "prepareHydroLakesSec": 0.0,
+      "prepareGDWSec": 0.0,
+      "prepareRGISec": 0.0,
+      "prepareGLiMSec": 0.0,
+      "computeDescriptorsSec": 4338.801,
+      "computeOsmRegulationSec": 0.0,
+      "totalSec": 19547.87,
+      "writeResultSec": 2.557
+    }
+  }
+}

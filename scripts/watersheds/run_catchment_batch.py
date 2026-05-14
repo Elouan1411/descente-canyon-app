@@ -145,6 +145,43 @@ def _extract_existing_selected_gps(payload: dict[str, Any]) -> tuple[float, floa
     return None
 
 
+def _existing_forced_review_point(payload: dict[str, Any]) -> dict[str, Any] | None:
+    points = payload.get("points")
+    if isinstance(points, list):
+        for point in points:
+            if isinstance(point, dict) and point.get("forcedByReview"):
+                return point
+
+    for key in ("reviewTruthCandidate", "bestHydroProxyCandidate"):
+        candidate = payload.get(key)
+        if isinstance(candidate, dict) and candidate.get("forcedByReview"):
+            return candidate
+    return None
+
+
+def _existing_has_review_hydrology_override(payload: dict[str, Any]) -> bool:
+    if payload.get("forcedByReview"):
+        return True
+    if isinstance(payload.get("reviewOverride"), dict):
+        return True
+    return _existing_forced_review_point(payload) is not None
+
+
+def _existing_review_override_has_snap_metadata(
+    payload: dict[str, Any],
+    review_override: dict[str, Any],
+) -> bool:
+    forced_point = _existing_forced_review_point(payload)
+    if forced_point is None:
+        return False
+    if forced_point.get("reviewStatus") != review_override.get("status"):
+        return False
+    if bool(forced_point.get("reviewAdminPlaced", False)) != bool(review_override.get("adminPlaced", False)):
+        return False
+    attempted_radii = forced_point.get("reviewSnapAttemptedRadiiM")
+    return isinstance(attempted_radii, list) and len(attempted_radii) > 0
+
+
 def should_skip_existing_canyon(
     path: Path,
     skip_existing: bool,
@@ -160,9 +197,18 @@ def should_skip_existing_canyon(
     if status == "error":
         return False
 
-    current_review_gps = _normalize_gps(review_override.get("gps") if isinstance(review_override, dict) else None)
+    if review_override is None:
+        return not _existing_has_review_hydrology_override(payload)
+
+    if not review_override.get("applyHydrologyOverride", False):
+        return not _existing_has_review_hydrology_override(payload)
+
+    current_review_gps = _normalize_gps(review_override.get("gps"))
     if current_review_gps is None:
         return True
+
+    if not _existing_review_override_has_snap_metadata(payload, review_override):
+        return False
 
     existing_selected_gps = _extract_existing_selected_gps(payload)
     if existing_selected_gps is None:
@@ -577,6 +623,15 @@ def points_copernicus_cells(points: list[dict[str, Any]]) -> list[str]:
     return sorted({copernicus_cell_name(float(point["latitude"]), float(point["longitude"])) for point in points})
 
 
+def ign_prepare_department(source: dict[str, Any], canyon: dict[str, Any]) -> str:
+    source_match = source.get("match")
+    if isinstance(source_match, dict):
+        source_department = source_match.get("departement")
+        if isinstance(source_department, str) and source_department.strip():
+            return source_department.strip()
+    return str(canyon.get("departement") or "").strip()
+
+
 def auto_prepare_cache_key(
     *,
     source: dict[str, Any],
@@ -590,7 +645,7 @@ def auto_prepare_cache_key(
             provider,
             auto_prepare.get("outputDir", "build/watersheds/ign-data"),
             auto_prepare.get("dataset", "rgealti5m"),
-            str(canyon.get("departement") or ""),
+            ign_prepare_department(source, canyon),
         )
     if provider == "copernicus":
         return (
@@ -718,7 +773,7 @@ def auto_prepare_source(
                 "--dataset",
                 auto_prepare.get("dataset", "rgealti5m"),
                 "--department",
-                str(canyon.get("departement") or ""),
+                ign_prepare_department(source, canyon),
                 "--output-dir",
                 auto_prepare.get("outputDir", "build/watersheds/ign-data"),
             ],
