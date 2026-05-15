@@ -377,49 +377,28 @@ private fun HomeDebitGeoFilterControls(
     ) {
         Column(
             modifier = Modifier.padding(14.dp),
-            verticalArrangement = Arrangement.spacedBy(10.dp),
+            verticalArrangement = Arrangement.spacedBy(8.dp),
         ) {
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.spacedBy(10.dp),
                 verticalAlignment = Alignment.CenterVertically,
             ) {
-                Icon(
-                    imageVector = Icons.Default.FilterList,
-                    contentDescription = null,
-                    tint = MaterialTheme.colorScheme.primary,
+                HomeStringPickerField(
+                    label = stringResource(R.string.search_filter_country),
+                    selected = filterState.selectedCountry,
+                    emptyLabel = stringResource(R.string.search_filter_any_country),
+                    options = filterState.availableCountries,
+                    enabled = filterState.availableCountries.isNotEmpty(),
+                    onSelected = onCountrySelected,
+                    modifier = Modifier.weight(1f),
                 )
-                Column(modifier = Modifier.weight(1f)) {
-                    Text(
-                        text = stringResource(R.string.home_debit_filter_title),
-                        style = MaterialTheme.typography.titleSmall,
-                        fontWeight = FontWeight.SemiBold,
-                    )
-                    Text(
-                        text = stringResource(
-                            R.string.home_debit_filter_count,
-                            filterState.displayedCount,
-                            filterState.filteredCount,
-                        ),
-                        style = MaterialTheme.typography.bodySmall,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant,
-                    )
-                }
                 if (filterState.hasActiveFilter()) {
                     TextButton(onClick = onClear) {
                         Text(stringResource(R.string.search_clear_filters))
                     }
                 }
             }
-
-            HomeStringPickerField(
-                label = stringResource(R.string.search_filter_country),
-                selected = filterState.selectedCountry,
-                emptyLabel = stringResource(R.string.search_filter_any_country),
-                options = filterState.availableCountries,
-                enabled = filterState.availableCountries.isNotEmpty(),
-                onSelected = onCountrySelected,
-            )
 
             if (filterState.selectedCountry != null) {
                 HomeStringPickerField(
