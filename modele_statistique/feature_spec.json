@@ -205,7 +205,17 @@
       "default": 0.0
     },
     {
+      "name": "glacierDescriptorOk",
+      "source": "static",
+      "default": 0.0
+    },
+    {
       "name": "hasSoilDescriptors",
+      "source": "static",
+      "default": 0.0
+    },
+    {
+      "name": "hasGlacierDescriptors",
       "source": "static",
       "default": 0.0
     },
@@ -1432,7 +1442,9 @@
     "watershedQualityScore",
     "watershedDescriptorForcedByReview",
     "soilDescriptorOk",
+    "glacierDescriptorOk",
     "hasSoilDescriptors",
+    "hasGlacierDescriptors",
     "dominantRegulationTypeIsNone",
     "dominantRegulationTypeIsBarrier",
     "dominantRegulationTypeIsReservoir",

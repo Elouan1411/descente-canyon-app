@@ -80,6 +80,11 @@ def main() -> None:
     parser.add_argument("--default-policy", choices=["balanced", "prudent", "safety_first"], default="balanced")
     parser.add_argument("--ignore-sample-weights", action="store_true")
     parser.add_argument("--keep-uninformative-features", action="store_true")
+    parser.add_argument(
+        "--final-train-on-all",
+        action="store_true",
+        help="Calibrate thresholds on the temporal split, then fit the exported model on every labelled row.",
+    )
     args = parser.parse_args()
 
     try:
@@ -203,6 +208,32 @@ def main() -> None:
             "testMetrics": test_metrics,
         }
 
+    exported_training_row_count = len(train_rows)
+    if args.final_train_on_all:
+        final_training_feature_rows = apply_canyon_history_dropout(
+            filtered,
+            dropout_rate=args.canyon_history_dropout_rate,
+            random_seed=42,
+        )
+        x_final_train = [row_to_numeric_vector(row, active_feature_names) for row in final_training_feature_rows]
+        y_final_train = [str(row["niveau"]) for row in filtered]
+        final_sample_weights = None if args.ignore_sample_weights else sample_weights(final_training_feature_rows)
+        final_fit_kwargs = {"sample_weight": final_sample_weights} if final_sample_weights is not None else {}
+        model = CatBoostClassifier(
+            iterations=args.iterations,
+            depth=args.depth,
+            learning_rate=args.learning_rate,
+            l2_leaf_reg=args.l2_leaf_reg,
+            loss_function="MultiClass",
+            eval_metric="TotalF1",
+            random_seed=42,
+            thread_count=-1,
+            verbose=False,
+            allow_writing_files=False,
+        )
+        model.fit(x_final_train, y_final_train, **final_fit_kwargs)
+        exported_training_row_count = len(filtered)
+
     output_dir = Path(args.output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
     model_path = output_dir / "model.onnx"
@@ -256,6 +287,8 @@ def main() -> None:
             "featureCoverage": feature_coverage,
             "canyonHistoryDropoutRate": args.canyon_history_dropout_rate,
             "usesSampleWeights": train_sample_weights is not None,
+            "finalTrainOnAll": args.final_train_on_all,
+            "exportedTrainingRowCount": exported_training_row_count,
             "trainRowCount": len(train_rows),
             "calibrationRowCount": len(calibration_rows),
             "testRowCount": len(test_rows),

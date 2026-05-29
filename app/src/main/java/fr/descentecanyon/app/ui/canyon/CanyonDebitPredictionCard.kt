@@ -236,15 +236,15 @@ private fun PredictionRow(
             }
 
             Text(
-                text = prediction.ordinalStandardDeviation?.let { uncertaintyLabel(it) }
-                    ?: ordinalLevel?.let { ordinalLevelTitle(it) }
+                text = ordinalLevel?.let { ordinalLevelTitle(it) }
                     ?: levelLabel(prediction.level),
                 style = MaterialTheme.typography.titleSmall,
-                color = prediction.ordinalStandardDeviation?.let { uncertaintyColor(it) }
-                    ?: ordinalLevel?.let { ordinalColor(it) }
+                color = ordinalLevel?.let { ordinalColor(it) }
+                    ?: prediction.ordinalStandardDeviation?.let { uncertaintyColor(it) }
                     ?: Color.White,
                 textAlign = TextAlign.End,
                 modifier = when {
+                    ordinalLevel != null -> Modifier.width(140.dp)
                     prediction.ordinalStandardDeviation != null -> Modifier
                         .widthIn(max = 180.dp)
                         .background(
@@ -252,16 +252,22 @@ private fun PredictionRow(
                             RoundedCornerShape(999.dp),
                         )
                         .padding(horizontal = 10.dp, vertical = 4.dp)
-                    ordinalLevel == null -> Modifier
+                    else -> Modifier
                         .background(levelColor(prediction.level), RoundedCornerShape(999.dp))
                         .padding(horizontal = 10.dp, vertical = 4.dp)
-                    else -> Modifier.width(140.dp)
                 },
             )
         }
 
         if (ordinalLevel != null && ordinalScore != null) {
             DebitOrdinalGauge(score = ordinalScore)
+            prediction.ordinalStandardDeviation?.let { standardDeviation ->
+                Text(
+                    text = uncertaintyLabel(standardDeviation),
+                    style = MaterialTheme.typography.bodySmall,
+                    color = uncertaintyColor(standardDeviation),
+                )
+            }
         }
     }
 }
