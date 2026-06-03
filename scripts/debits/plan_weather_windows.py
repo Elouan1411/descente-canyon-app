@@ -46,6 +46,10 @@ def main() -> None:
         help="How to batch weather fetch windows for API calls",
     )
     parser.add_argument(
+        "--history-end-date",
+        help="End date for history_daily fetch windows. Defaults to today's date.",
+    )
+    parser.add_argument(
         "--fetch-max-gap-days",
         type=int,
         default=14,
@@ -122,10 +126,11 @@ def main() -> None:
             )
         )
 
+    history_end_date = args.history_end_date or datetime.now().date().isoformat()
     if args.fetch_strategy == "history_daily":
         merged_windows = build_target_history_windows(
             observation_windows,
-            history_end_date=datetime.now().date().isoformat(),
+            history_end_date=history_end_date,
         )
     elif args.fetch_strategy == "annual":
         merged_windows = build_annual_windows(observation_windows)
@@ -151,6 +156,7 @@ def main() -> None:
             "generatedAt": datetime.now(timezone.utc).isoformat(),
             "lookbackDays": args.lookback_days,
             "fetchStrategy": args.fetch_strategy,
+            "historyEndDate": history_end_date if args.fetch_strategy == "history_daily" else None,
             "fetchMaxGapDays": args.fetch_max_gap_days,
             "fetchMaxSpanDays": args.fetch_max_span_days,
             "observationCount": len(observations),

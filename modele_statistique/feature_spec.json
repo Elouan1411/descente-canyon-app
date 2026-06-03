@@ -1255,6 +1255,241 @@
       "default": 0.0
     },
     {
+      "name": "canyonMonthPastObsCount",
+      "source": "lookup",
+      "default": 0.0
+    },
+    {
+      "name": "canyonMonthPriorLow",
+      "source": "lookup",
+      "default": 0.0
+    },
+    {
+      "name": "canyonMonthPriorMedium",
+      "source": "lookup",
+      "default": 0.0
+    },
+    {
+      "name": "canyonMonthPriorHigh",
+      "source": "lookup",
+      "default": 0.0
+    },
+    {
+      "name": "canyonMonthMeanRank",
+      "source": "lookup",
+      "default": -9999.0
+    },
+    {
+      "name": "canyonSeasonPastObsCount",
+      "source": "lookup",
+      "default": 0.0
+    },
+    {
+      "name": "canyonSeasonPriorLow",
+      "source": "lookup",
+      "default": 0.0
+    },
+    {
+      "name": "canyonSeasonPriorMedium",
+      "source": "lookup",
+      "default": 0.0
+    },
+    {
+      "name": "canyonSeasonPriorHigh",
+      "source": "lookup",
+      "default": 0.0
+    },
+    {
+      "name": "canyonSeasonMeanRank",
+      "source": "lookup",
+      "default": -9999.0
+    },
+    {
+      "name": "massifMonthPastObsCount",
+      "source": "lookup",
+      "default": 0.0
+    },
+    {
+      "name": "massifMonthPriorLow",
+      "source": "lookup",
+      "default": 0.0
+    },
+    {
+      "name": "massifMonthPriorMedium",
+      "source": "lookup",
+      "default": 0.0
+    },
+    {
+      "name": "massifMonthPriorHigh",
+      "source": "lookup",
+      "default": 0.0
+    },
+    {
+      "name": "massifSeasonPastObsCount",
+      "source": "lookup",
+      "default": 0.0
+    },
+    {
+      "name": "massifSeasonPriorLow",
+      "source": "lookup",
+      "default": 0.0
+    },
+    {
+      "name": "massifSeasonPriorMedium",
+      "source": "lookup",
+      "default": 0.0
+    },
+    {
+      "name": "massifSeasonPriorHigh",
+      "source": "lookup",
+      "default": 0.0
+    },
+    {
+      "name": "regionMonthPastObsCount",
+      "source": "lookup",
+      "default": 0.0
+    },
+    {
+      "name": "regionMonthPriorLow",
+      "source": "lookup",
+      "default": 0.0
+    },
+    {
+      "name": "regionMonthPriorMedium",
+      "source": "lookup",
+      "default": 0.0
+    },
+    {
+      "name": "regionMonthPriorHigh",
+      "source": "lookup",
+      "default": 0.0
+    },
+    {
+      "name": "regionSeasonPastObsCount",
+      "source": "lookup",
+      "default": 0.0
+    },
+    {
+      "name": "regionSeasonPriorLow",
+      "source": "lookup",
+      "default": 0.0
+    },
+    {
+      "name": "regionSeasonPriorMedium",
+      "source": "lookup",
+      "default": 0.0
+    },
+    {
+      "name": "regionSeasonPriorHigh",
+      "source": "lookup",
+      "default": 0.0
+    },
+    {
+      "name": "canyonRecent30dObsCount",
+      "source": "lookup",
+      "default": 0.0
+    },
+    {
+      "name": "canyonRecent30dPriorHigh",
+      "source": "lookup",
+      "default": 0.0
+    },
+    {
+      "name": "canyonRecent90dObsCount",
+      "source": "lookup",
+      "default": 0.0
+    },
+    {
+      "name": "canyonRecent90dPriorHigh",
+      "source": "lookup",
+      "default": 0.0
+    },
+    {
+      "name": "canyonRecent365dObsCount",
+      "source": "lookup",
+      "default": 0.0
+    },
+    {
+      "name": "canyonRecent365dPriorHigh",
+      "source": "lookup",
+      "default": 0.0
+    },
+    {
+      "name": "canyonRecent365dMeanRank",
+      "source": "lookup",
+      "default": -9999.0
+    },
+    {
+      "name": "canyonDaysSinceLastObs",
+      "source": "lookup",
+      "default": -9999.0
+    },
+    {
+      "name": "canyonLastObservedRank",
+      "source": "lookup",
+      "default": -9999.0
+    },
+    {
+      "name": "massifRecent30dObsCount",
+      "source": "lookup",
+      "default": 0.0
+    },
+    {
+      "name": "massifRecent30dPriorHigh",
+      "source": "lookup",
+      "default": 0.0
+    },
+    {
+      "name": "massifRecent90dObsCount",
+      "source": "lookup",
+      "default": 0.0
+    },
+    {
+      "name": "massifRecent90dPriorHigh",
+      "source": "lookup",
+      "default": 0.0
+    },
+    {
+      "name": "massifRecent365dObsCount",
+      "source": "lookup",
+      "default": 0.0
+    },
+    {
+      "name": "massifRecent365dPriorHigh",
+      "source": "lookup",
+      "default": 0.0
+    },
+    {
+      "name": "regionRecent30dObsCount",
+      "source": "lookup",
+      "default": 0.0
+    },
+    {
+      "name": "regionRecent30dPriorHigh",
+      "source": "lookup",
+      "default": 0.0
+    },
+    {
+      "name": "regionRecent90dObsCount",
+      "source": "lookup",
+      "default": 0.0
+    },
+    {
+      "name": "regionRecent90dPriorHigh",
+      "source": "lookup",
+      "default": 0.0
+    },
+    {
+      "name": "regionRecent365dObsCount",
+      "source": "lookup",
+      "default": 0.0
+    },
+    {
+      "name": "regionRecent365dPriorHigh",
+      "source": "lookup",
+      "default": 0.0
+    },
+    {
       "name": "historicalRegulatedSignalCountCanyon",
       "source": "lookup",
       "default": -9999.0
@@ -1607,6 +1842,53 @@
     "canyonPriorLow",
     "canyonPriorMedium",
     "canyonPriorHigh",
+    "canyonMonthPastObsCount",
+    "canyonMonthPriorLow",
+    "canyonMonthPriorMedium",
+    "canyonMonthPriorHigh",
+    "canyonMonthMeanRank",
+    "canyonSeasonPastObsCount",
+    "canyonSeasonPriorLow",
+    "canyonSeasonPriorMedium",
+    "canyonSeasonPriorHigh",
+    "canyonSeasonMeanRank",
+    "massifMonthPastObsCount",
+    "massifMonthPriorLow",
+    "massifMonthPriorMedium",
+    "massifMonthPriorHigh",
+    "massifSeasonPastObsCount",
+    "massifSeasonPriorLow",
+    "massifSeasonPriorMedium",
+    "massifSeasonPriorHigh",
+    "regionMonthPastObsCount",
+    "regionMonthPriorLow",
+    "regionMonthPriorMedium",
+    "regionMonthPriorHigh",
+    "regionSeasonPastObsCount",
+    "regionSeasonPriorLow",
+    "regionSeasonPriorMedium",
+    "regionSeasonPriorHigh",
+    "canyonRecent30dObsCount",
+    "canyonRecent30dPriorHigh",
+    "canyonRecent90dObsCount",
+    "canyonRecent90dPriorHigh",
+    "canyonRecent365dObsCount",
+    "canyonRecent365dPriorHigh",
+    "canyonRecent365dMeanRank",
+    "canyonDaysSinceLastObs",
+    "canyonLastObservedRank",
+    "massifRecent30dObsCount",
+    "massifRecent30dPriorHigh",
+    "massifRecent90dObsCount",
+    "massifRecent90dPriorHigh",
+    "massifRecent365dObsCount",
+    "massifRecent365dPriorHigh",
+    "regionRecent30dObsCount",
+    "regionRecent30dPriorHigh",
+    "regionRecent90dObsCount",
+    "regionRecent90dPriorHigh",
+    "regionRecent365dObsCount",
+    "regionRecent365dPriorHigh",
     "historicalRegulatedSignalCountCanyon",
     "historicalSnowmeltSignalCountCanyon",
     "historicalRegulatedSignalRatioCanyon",

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-05-29T14:12:43.187015+00:00",
+  "generatedAt": "2026-06-03T11:51:14.941488+00:00",
   "targetMode": "six_ordinal",
   "labels": [
     "CORRECT",
@@ -13,16 +13,23 @@
   "defaultPolicy": "balanced",
   "policies": {
     "balanced": {
-      "lowThreshold": 1.9,
-      "highThreshold": 2.3
+      "lowThreshold": 1.85,
+      "highThreshold": 2.35
     },
     "prudent": {
-      "lowThreshold": 1.9,
-      "highThreshold": 2.4
+      "lowThreshold": 1.85,
+      "highThreshold": 2.6
     },
     "safety_first": {
-      "lowThreshold": 1.9,
-      "highThreshold": 2.2
+      "lowThreshold": 1.85,
+      "highThreshold": 2.05
     }
+  },
+  "ordinalCutpoints": {
+    "secFilet": 0.7,
+    "filetCorrect": 1.5,
+    "correctGros": 2.6,
+    "grosTresGros": 3.25,
+    "tresGrosCrue": 3.75
   }
 }

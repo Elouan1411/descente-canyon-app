@@ -106,6 +106,7 @@ data class DebitThresholds(
     val defaultPolicy: DebitPredictionPolicy,
     val highThresholdByPolicy: Map<DebitPredictionPolicy, Double>,
     val lowThresholdByPolicy: Map<DebitPredictionPolicy, Double> = emptyMap(),
+    val ordinalCutpoints: List<Double> = emptyList(),
     val targetMode: String = "three",
 )
 

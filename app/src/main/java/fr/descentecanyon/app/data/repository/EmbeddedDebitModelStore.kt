@@ -173,6 +173,7 @@ class EmbeddedDebitModelStore @Inject constructor(
             lowThresholdByPolicy = policies.mapNotNull { (key, value) ->
                 value.lowThreshold?.let { key.toPredictionPolicy() to it }
             }.toMap(),
+            ordinalCutpoints = ordinalCutpoints?.orderedValues().orEmpty(),
         )
     }
 
@@ -289,6 +290,7 @@ private data class ThresholdsDto(
     val targetMode: String = "three",
     val defaultPolicy: String,
     val policies: Map<String, ThresholdPolicyDto> = emptyMap(),
+    val ordinalCutpoints: OrdinalCutpointsDto? = null,
 )
 
 @Serializable
@@ -296,6 +298,17 @@ private data class ThresholdPolicyDto(
     val highThreshold: Double,
     val lowThreshold: Double? = null,
 )
+
+@Serializable
+private data class OrdinalCutpointsDto(
+    val secFilet: Double,
+    val filetCorrect: Double,
+    val correctGros: Double,
+    val grosTresGros: Double,
+    val tresGrosCrue: Double,
+) {
+    fun orderedValues(): List<Double> = listOf(secFilet, filetCorrect, correctGros, grosTresGros, tresGrosCrue)
+}
 
 @Serializable
 private data class MetricsDto(

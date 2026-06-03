@@ -910,6 +910,11 @@ def load_manual_overrides(path: Path | None) -> list[dict[str, Any]]:
 def match_manual_override(observation: dict[str, Any], overrides: list[dict[str, Any]]) -> dict[str, Any] | None:
     authors_normalized = {normalize_text(author) for author in observation.get("authors", []) if author}
     for override in overrides:
+        override_observation_id = override.get("observationId")
+        if override_observation_id is not None:
+            if override_observation_id == observation.get("observationId"):
+                return override
+            continue
         if override.get("canyonId") not in (None, observation.get("canyonId")):
             continue
         if override.get("date") not in (None, observation.get("date")):
@@ -1840,6 +1845,27 @@ def compute_daily_precipitation_features(daily_rows: list[dict[str, Any]], obser
         "max_daily_precip_3d_mm": 0.0,
         "max_daily_precip_7d_mm": 0.0,
         "max_daily_precip_14d_mm": 0.0,
+        "max_cell_precip_prev_day_mm": None,
+        "max_cell_precip_3d_mm": 0.0,
+        "max_cell_precip_7d_mm": 0.0,
+        "max_cell_precip_14d_mm": 0.0,
+        "max_cell_precip_30d_mm": 0.0,
+        "p90_cell_precip_prev_day_mm": None,
+        "p90_cell_precip_3d_mm": 0.0,
+        "p90_cell_precip_7d_mm": 0.0,
+        "p90_cell_precip_14d_mm": 0.0,
+        "p90_cell_precip_30d_mm": 0.0,
+        "spatial_precip_amplification_3d": None,
+        "spatial_precip_amplification_7d": None,
+        "spatial_precip_amplification_14d": None,
+        "spatial_precip_amplification_30d": None,
+        "weatherGridCellCount": 1.0,
+        "weatherGridAvailableCellCount": 1.0,
+        "weatherGridHasWatershed": 0.0,
+        "weatherGridCoveredAreaFraction": None,
+        "weatherGridAvailableWeightFractionPrevDay": None,
+        "weatherGridAvailableWeightFractionMean30d": None,
+        "weatherGridAvailableWeightFractionMin30d": None,
         "wet_days_7d": 0,
         "wet_days_14d": 0,
         "wet_days_30d": 0,
@@ -1885,6 +1911,9 @@ def compute_daily_precipitation_features(daily_rows: list[dict[str, Any]], obser
     temperature_min_by_day = [row.get("temperature_2m_min") for row in eligible_rows]
     temperature_max_by_day = [row.get("temperature_2m_max") for row in eligible_rows]
     precipitation_hours_by_day = [float(row.get("precipitation_hours") or 0.0) for row in eligible_rows]
+    max_cell_precip_by_day = [float(row.get("max_cell_precipitation_sum") if row.get("max_cell_precipitation_sum") is not None else row.get("precipitation_sum") or 0.0) for row in eligible_rows]
+    p90_cell_precip_by_day = [float(row.get("p90_cell_precipitation_sum") if row.get("p90_cell_precipitation_sum") is not None else row.get("precipitation_sum") or 0.0) for row in eligible_rows]
+    available_weight_by_day = [row.get("weatherGridAvailableWeightFraction") for row in eligible_rows]
 
     def trailing_sum(values: list[float], days: int) -> float:
         return round(sum(values[-days:]), 3)
@@ -1905,6 +1934,11 @@ def compute_daily_precipitation_features(daily_rows: list[dict[str, Any]], obser
         trailing_values = [max(float(value), 0.0) for value in values[-days:] if value is not None]
         return round(sum(trailing_values), 3)
 
+    def safe_ratio(numerator: float | None, denominator: float | None) -> float | None:
+        if numerator is None or denominator is None or abs(denominator) < 1e-9:
+            return None
+        return round(numerator / denominator, 6)
+
     if precip_by_day:
         features["precip_prev_day_mm"] = round(precip_by_day[-1], 3)
         features["precip_2d_mm"] = trailing_sum(precip_by_day, 2)
@@ -1918,11 +1952,34 @@ def compute_daily_precipitation_features(daily_rows: list[dict[str, Any]], obser
         features["max_daily_precip_3d_mm"] = trailing_max(precip_by_day, 3)
         features["max_daily_precip_7d_mm"] = trailing_max(precip_by_day, 7)
         features["max_daily_precip_14d_mm"] = trailing_max(precip_by_day, 14)
+        features["max_cell_precip_prev_day_mm"] = round(max_cell_precip_by_day[-1], 3)
+        features["max_cell_precip_3d_mm"] = trailing_sum(max_cell_precip_by_day, 3)
+        features["max_cell_precip_7d_mm"] = trailing_sum(max_cell_precip_by_day, 7)
+        features["max_cell_precip_14d_mm"] = trailing_sum(max_cell_precip_by_day, 14)
+        features["max_cell_precip_30d_mm"] = trailing_sum(max_cell_precip_by_day, 30)
+        features["p90_cell_precip_prev_day_mm"] = round(p90_cell_precip_by_day[-1], 3)
+        features["p90_cell_precip_3d_mm"] = trailing_sum(p90_cell_precip_by_day, 3)
+        features["p90_cell_precip_7d_mm"] = trailing_sum(p90_cell_precip_by_day, 7)
+        features["p90_cell_precip_14d_mm"] = trailing_sum(p90_cell_precip_by_day, 14)
+        features["p90_cell_precip_30d_mm"] = trailing_sum(p90_cell_precip_by_day, 30)
+        features["spatial_precip_amplification_3d"] = safe_ratio(features["max_cell_precip_3d_mm"], features["precip_3d_mm"])
+        features["spatial_precip_amplification_7d"] = safe_ratio(features["max_cell_precip_7d_mm"], features["precip_7d_mm"])
+        features["spatial_precip_amplification_14d"] = safe_ratio(features["max_cell_precip_14d_mm"], features["precip_14d_mm"])
+        features["spatial_precip_amplification_30d"] = safe_ratio(features["max_cell_precip_30d_mm"], features["precip_30d_mm"])
         features["wet_days_7d"] = trailing_count(precip_by_day, 7, threshold=0.1)
         features["wet_days_14d"] = trailing_count(precip_by_day, 14, threshold=0.1)
         features["wet_days_30d"] = trailing_count(precip_by_day, 30, threshold=0.1)
 
     previous_day_row = eligible_rows[-1]
+    features["weatherGridCellCount"] = previous_day_row.get("weatherGridCellCount", 1.0)
+    features["weatherGridAvailableCellCount"] = previous_day_row.get("weatherGridAvailableCellCount", features["weatherGridCellCount"])
+    features["weatherGridHasWatershed"] = previous_day_row.get("weatherGridHasWatershed", 0.0)
+    features["weatherGridCoveredAreaFraction"] = previous_day_row.get("weatherGridCoveredAreaFraction")
+    features["weatherGridAvailableWeightFractionPrevDay"] = previous_day_row.get("weatherGridAvailableWeightFraction")
+    availability_values = [float(value) for value in available_weight_by_day[-30:] if value is not None]
+    if availability_values:
+        features["weatherGridAvailableWeightFractionMean30d"] = round(sum(availability_values) / len(availability_values), 6)
+        features["weatherGridAvailableWeightFractionMin30d"] = round(min(availability_values), 6)
     features["rain_prev_day_mm"] = (
         round(float(previous_day_row.get("rain_sum") or 0.0), 3) if previous_day_row.get("rain_sum") is not None else None
     )

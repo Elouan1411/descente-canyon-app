@@ -128,6 +128,53 @@ LOOKUP_FEATURE_NAMES = {
     "canyonPriorLow",
     "canyonPriorMedium",
     "canyonPriorHigh",
+    "canyonMonthPastObsCount",
+    "canyonMonthPriorLow",
+    "canyonMonthPriorMedium",
+    "canyonMonthPriorHigh",
+    "canyonMonthMeanRank",
+    "canyonSeasonPastObsCount",
+    "canyonSeasonPriorLow",
+    "canyonSeasonPriorMedium",
+    "canyonSeasonPriorHigh",
+    "canyonSeasonMeanRank",
+    "massifMonthPastObsCount",
+    "massifMonthPriorLow",
+    "massifMonthPriorMedium",
+    "massifMonthPriorHigh",
+    "massifSeasonPastObsCount",
+    "massifSeasonPriorLow",
+    "massifSeasonPriorMedium",
+    "massifSeasonPriorHigh",
+    "regionMonthPastObsCount",
+    "regionMonthPriorLow",
+    "regionMonthPriorMedium",
+    "regionMonthPriorHigh",
+    "regionSeasonPastObsCount",
+    "regionSeasonPriorLow",
+    "regionSeasonPriorMedium",
+    "regionSeasonPriorHigh",
+    "canyonRecent30dObsCount",
+    "canyonRecent30dPriorHigh",
+    "canyonRecent90dObsCount",
+    "canyonRecent90dPriorHigh",
+    "canyonRecent365dObsCount",
+    "canyonRecent365dPriorHigh",
+    "canyonRecent365dMeanRank",
+    "canyonDaysSinceLastObs",
+    "canyonLastObservedRank",
+    "massifRecent30dObsCount",
+    "massifRecent30dPriorHigh",
+    "massifRecent90dObsCount",
+    "massifRecent90dPriorHigh",
+    "massifRecent365dObsCount",
+    "massifRecent365dPriorHigh",
+    "regionRecent30dObsCount",
+    "regionRecent30dPriorHigh",
+    "regionRecent90dObsCount",
+    "regionRecent90dPriorHigh",
+    "regionRecent365dObsCount",
+    "regionRecent365dPriorHigh",
     "historicalRegulatedSignalCountCanyon",
     "historicalSnowmeltSignalCountCanyon",
     "historicalRegulatedSignalRatioCanyon",
@@ -358,59 +405,12 @@ def build_canyon_static_features(canyons_path: Path, watersheds_path: Path, desc
 
 
 def compact_runtime_lookup_payload(payload: dict[str, Any]) -> dict[str, Any]:
-    global_feature_names = [
-        "globalPastObsCount",
-        "globalPriorLow",
-        "globalPriorMedium",
-        "globalPriorHigh",
-    ]
-    region_feature_names = [
-        "regionPastObsCount",
-        "regionPriorLow",
-        "regionPriorMedium",
-        "regionPriorHigh",
-        "historicalRegulatedSignalRatioRegion",
-        "historicalSnowmeltSignalRatioRegion",
-    ]
-    massif_feature_names = [
-        "massifPastObsCount",
-        "massifPriorLow",
-        "massifPriorMedium",
-        "massifPriorHigh",
-        "historicalRegulatedSignalRatioMassif",
-        "historicalSnowmeltSignalRatioMassif",
-    ]
-    canyon_feature_names = [
-        "regionKey",
-        "massifKey",
-        "globalPastObsCount",
-        "regionPastObsCount",
-        "massifPastObsCount",
-        "canyonPastObsCount",
-        "globalPriorLow",
-        "globalPriorMedium",
-        "globalPriorHigh",
-        "regionPriorLow",
-        "regionPriorMedium",
-        "regionPriorHigh",
-        "massifPriorLow",
-        "massifPriorMedium",
-        "massifPriorHigh",
-        "canyonPriorLow",
-        "canyonPriorMedium",
-        "canyonPriorHigh",
-        "historicalRegulatedSignalCountCanyon",
-        "historicalSnowmeltSignalCountCanyon",
-        "historicalRegulatedSignalRatioCanyon",
-        "historicalSnowmeltSignalRatioCanyon",
-        "historicalRegulatedSignalRatioMassif",
-        "historicalSnowmeltSignalRatioMassif",
-        "historicalRegulatedSignalRatioRegion",
-        "historicalSnowmeltSignalRatioRegion",
-        "historicallyRegulatedCanyon",
-        "historicallySnowmeltCanyon",
-        "historicallyAtypicalCanyon",
-    ]
+    def compact_row(row: dict[str, Any], *, include_context: bool = False) -> dict[str, Any]:
+        excluded = {"classCounts", "signalHistory", "canyonId"}
+        if not include_context:
+            excluded.update({"regionKey", "massifKey"})
+        return {key: value for key, value in row.items() if key not in excluded and isinstance(value, (int, float, bool, str))}
+
     defaults = {
         feature_name: payload["global"].get(feature_name, feature_default(feature_name))
         for feature_name in LOOKUP_FEATURE_NAMES
@@ -429,17 +429,17 @@ def compact_runtime_lookup_payload(payload: dict[str, Any]) -> dict[str, Any]:
         "unknownKeys": payload["unknownKeys"],
         "lookupFeatureNames": list(LOOKUP_FEATURE_NAMES),
         "defaults": defaults,
-        "global": {name: payload["global"].get(name, defaults.get(name)) for name in global_feature_names},
+        "global": compact_row(payload["global"]),
         "regions": {
-            key: {name: row.get(name, defaults.get(name)) for name in region_feature_names}
+            key: compact_row(row)
             for key, row in payload["regions"].items()
         },
         "massifs": {
-            key: {name: row.get(name, defaults.get(name)) for name in massif_feature_names}
+            key: compact_row(row)
             for key, row in payload["massifs"].items()
         },
         "canyons": {
-            key: {name: row.get(name, defaults.get(name)) for name in canyon_feature_names}
+            key: compact_row(row, include_context=True)
             for key, row in payload["canyons"].items()
         },
     }

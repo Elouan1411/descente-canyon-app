@@ -77,7 +77,7 @@ class OnnxDebitPredictor @Inject constructor(
                         probabilities = normalized,
                         highThreshold = highThreshold,
                         ordinalScore = ordinalScore,
-                        ordinalLevel = ordinalScore?.let(::ordinalLevelFromScore),
+                        ordinalLevel = ordinalScore?.let { score -> ordinalLevelFromScore(score, thresholds.ordinalCutpoints) },
                         ordinalStandardDeviation = ordinalStandardDeviation,
                     )
                 }
@@ -106,7 +106,18 @@ class OnnxDebitPredictor @Inject constructor(
         return sqrt(variance.coerceAtLeast(0.0))
     }
 
-    private fun ordinalLevelFromScore(score: Double): NiveauDebit {
+    private fun ordinalLevelFromScore(score: Double, cutpoints: List<Double>): NiveauDebit {
+        if (cutpoints.size == 5 && cutpoints.zipWithNext().all { (left, right) -> left < right }) {
+            val index = cutpoints.indexOfFirst { score < it }.takeIf { it >= 0 } ?: 5
+            return when (index.coerceIn(0, 5)) {
+                0 -> NiveauDebit.SEC
+                1 -> NiveauDebit.FILET
+                2 -> NiveauDebit.CORRECT
+                3 -> NiveauDebit.GROS
+                4 -> NiveauDebit.TRES_GROS
+                else -> NiveauDebit.CRUE
+            }
+        }
         return when (score.roundToInt().coerceIn(0, 5)) {
             0 -> NiveauDebit.SEC
             1 -> NiveauDebit.FILET

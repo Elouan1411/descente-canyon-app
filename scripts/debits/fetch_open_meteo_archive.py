@@ -150,11 +150,80 @@ def fetch_batch(
     raise last_error
 
 
+def fetch_and_flatten_batch(
+    *,
+    batch_windows: list[dict[str, Any]],
+    raw_cache_dir: Path,
+    model: str,
+    daily_variables: list[str],
+    user_agent: str,
+    throttler: RequestThrottler,
+    request_timeout_seconds: int,
+    max_attempts: int,
+    base_backoff_seconds: float,
+    refetch_cached: bool,
+) -> tuple[list[dict[str, Any]], list[dict[str, Any]], dict[str, int]]:
+    result = fetch_batch(
+        batch_windows=batch_windows,
+        raw_cache_dir=raw_cache_dir,
+        model=model,
+        daily_variables=daily_variables,
+        user_agent=user_agent,
+        throttler=throttler,
+        request_timeout_seconds=request_timeout_seconds,
+        max_attempts=max_attempts,
+        base_backoff_seconds=base_backoff_seconds,
+        refetch_cached=refetch_cached,
+    )
+    return flatten_batch_result(batch_windows=batch_windows, result=result)
+
+
+def flatten_batch_result(
+    *,
+    batch_windows: list[dict[str, Any]],
+    result: dict[str, Any],
+) -> tuple[list[dict[str, Any]], list[dict[str, Any]], dict[str, int]]:
+    payloads = payloads_from_response(result["payload"])
+    if len(payloads) != len(batch_windows):
+        raise ValueError(f"Batch payload length mismatch: expected {len(batch_windows)} got {len(payloads)}")
+
+    manifest_rows: list[dict[str, Any]] = []
+    all_daily_rows: list[dict[str, Any]] = []
+    for window, payload in zip(batch_windows, payloads):
+        daily_rows = flatten_open_meteo_daily_rows(merged_window=window, payload=payload)
+        manifest_rows.append(
+            {
+                "mergedWindowId": window["mergedWindowId"],
+                "targetId": window["targetId"],
+                "archiveStartDate": window["archiveStartDate"],
+                "archiveEndDate": window["archiveEndDate"],
+                "requestedLatitude": window["targetLatitude"],
+                "requestedLongitude": window["targetLongitude"],
+                "resolvedLatitude": payload.get("latitude"),
+                "resolvedLongitude": payload.get("longitude"),
+                "resolvedElevation": payload.get("elevation"),
+                "timezone": payload.get("timezone"),
+                "dailyRowCount": len(daily_rows),
+                "url": result["url"],
+                "cachePath": result["cachePath"],
+                "source": result.get("source"),
+                "batchId": result["batchId"],
+            }
+        )
+        all_daily_rows.extend(daily_rows)
+    stats = {
+        "success": len(batch_windows),
+        "cache": len(batch_windows) if result.get("source") == "cache" else 0,
+        "network": len(batch_windows) if result.get("source") != "cache" else 0,
+    }
+    return manifest_rows, all_daily_rows, stats
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Fetch historical daily weather windows from Open-Meteo archive")
     parser.add_argument("--merged-windows-path", default="build/debit-pipeline/weather-planning/merged_weather_windows.jsonl")
     parser.add_argument("--output-dir", default="build/debit-pipeline/weather-archive")
-    parser.add_argument("--model", default="era5")
+    parser.add_argument("--model", default="era5_land")
     parser.add_argument("--daily", default=",".join(DEFAULT_DAILY_VARIABLES))
     parser.add_argument("--workers", type=int, default=1)
     parser.add_argument("--max-batch-targets", type=int, default=25)
@@ -163,6 +232,26 @@ def main() -> None:
     parser.add_argument("--max-attempts", type=int, default=3)
     parser.add_argument("--base-backoff-ms", type=int, default=10000)
     parser.add_argument("--refetch-cached", action="store_true", help="Ignore cached raw JSON and fetch again")
+    parser.add_argument(
+        "--max-windows-to-process",
+        type=int,
+        help="Limit this run to the first N incomplete windows. Useful for resumable VPN/IP-rotated runs.",
+    )
+    parser.add_argument(
+        "--fallback-single-on-batch-failure",
+        action="store_true",
+        help="If a grouped batch fails, retry each window individually before recording failures.",
+    )
+    parser.add_argument(
+        "--abort-on-rate-limit",
+        action="store_true",
+        help="Exit with code 75 on HTTP 429 without recording failures, so an outer VPN runner can rotate IP and retry.",
+    )
+    parser.add_argument(
+        "--abort-on-transient-failure",
+        action="store_true",
+        help="Exit with code 75 on rate-limit/timeouts without recording failures, so an outer VPN runner can rotate IP and retry.",
+    )
     parser.add_argument("--user-agent", default="DescenteCanyonDebitPipeline/0.1")
     args = parser.parse_args()
 
@@ -179,6 +268,8 @@ def main() -> None:
     base_backoff_seconds = max(args.base_backoff_ms, 0) / 1000.0
     completed_window_ids = load_completed_window_ids(manifest_path)
     windows_to_process = [window for window in merged_windows if window["mergedWindowId"] not in completed_window_ids]
+    if args.max_windows_to_process is not None:
+        windows_to_process = windows_to_process[:max(args.max_windows_to_process, 0)]
     batches = chunk_windows(windows_to_process, args.max_batch_targets)
 
     failures: list[dict[str, Any]] = []
@@ -186,8 +277,10 @@ def main() -> None:
     cache_source_count = 0
     network_source_count = 0
 
+    remaining_total = max(len(merged_windows) - len(completed_window_ids), 0)
     print(
-        f"Fetching Open-Meteo daily archive for {len(windows_to_process)}/{len(merged_windows)} target window(s) in {len(batches)} batch(es)... "
+        f"Fetching Open-Meteo daily archive for {len(windows_to_process)} pending target window(s) "
+        f"from {remaining_total} remaining / {len(merged_windows)} total in {len(batches)} batch(es)... "
         f"already_done={len(completed_window_ids)}",
         file=sys.stderr,
     )
@@ -232,56 +325,66 @@ def main() -> None:
                 completed_batches += 1
                 try:
                     result = future.result()
-                    payloads = payloads_from_response(result["payload"])
-                    if len(payloads) != len(batch_windows):
-                        raise ValueError(
-                            f"Batch payload length mismatch: expected {len(batch_windows)} got {len(payloads)}"
-                        )
-
-                    manifest_rows: list[dict[str, Any]] = []
-                    all_daily_rows: list[dict[str, Any]] = []
-                    for window, payload in zip(batch_windows, payloads):
-                        daily_rows = flatten_open_meteo_daily_rows(merged_window=window, payload=payload)
-                        manifest_rows.append(
-                            {
-                                "mergedWindowId": window["mergedWindowId"],
-                                "targetId": window["targetId"],
-                                "archiveStartDate": window["archiveStartDate"],
-                                "archiveEndDate": window["archiveEndDate"],
-                                "requestedLatitude": window["targetLatitude"],
-                                "requestedLongitude": window["targetLongitude"],
-                                "resolvedLatitude": payload.get("latitude"),
-                                "resolvedLongitude": payload.get("longitude"),
-                                "resolvedElevation": payload.get("elevation"),
-                                "timezone": payload.get("timezone"),
-                                "dailyRowCount": len(daily_rows),
-                                "url": result["url"],
-                                "cachePath": result["cachePath"],
-                                "source": result.get("source"),
-                                "batchId": result["batchId"],
-                            }
-                        )
-                        all_daily_rows.extend(daily_rows)
-
+                    manifest_rows, all_daily_rows, stats = flatten_batch_result(
+                        batch_windows=batch_windows,
+                        result=result,
+                    )
                     append_jsonl(manifest_path, manifest_rows)
                     append_jsonl(daily_rows_path, all_daily_rows)
-                    success_count += len(batch_windows)
-                    if result.get("source") == "cache":
-                        cache_source_count += len(batch_windows)
-                    else:
-                        network_source_count += len(batch_windows)
+                    success_count += stats["success"]
+                    cache_source_count += stats["cache"]
+                    network_source_count += stats["network"]
                 except Exception as exc:  # noqa: BLE001
-                    for window in batch_windows:
-                        failures.append(
-                            {
-                                "mergedWindowId": window["mergedWindowId"],
-                                "targetId": window["targetId"],
-                                "archiveStartDate": window.get("archiveStartDate"),
-                                "archiveEndDate": window.get("archiveEndDate"),
-                                "error": repr(exc),
-                            }
-                        )
-                    write_json(failures_path, failures)
+                    is_rate_limited = "HTTPError 429" in repr(exc)
+                    is_transient = is_rate_limited or "TimeoutError" in repr(exc) or "URLError" in repr(exc) or "timed out" in repr(exc).lower()
+                    if (args.abort_on_rate_limit and is_rate_limited) or (args.abort_on_transient_failure and is_transient):
+                        raise SystemExit(75) from exc
+                    recovered_any = False
+                    if args.fallback_single_on_batch_failure and len(batch_windows) > 1:
+                        for window in batch_windows:
+                            try:
+                                manifest_rows, all_daily_rows, stats = fetch_and_flatten_batch(
+                                    batch_windows=[window],
+                                    raw_cache_dir=raw_cache_dir,
+                                    model=args.model,
+                                    daily_variables=daily_variables,
+                                    user_agent=args.user_agent,
+                                    throttler=throttler,
+                                    request_timeout_seconds=max(args.timeout_s, 1),
+                                    max_attempts=args.max_attempts,
+                                    base_backoff_seconds=base_backoff_seconds,
+                                    refetch_cached=args.refetch_cached,
+                                )
+                                append_jsonl(manifest_path, manifest_rows)
+                                append_jsonl(daily_rows_path, all_daily_rows)
+                                success_count += stats["success"]
+                                cache_source_count += stats["cache"]
+                                network_source_count += stats["network"]
+                                recovered_any = True
+                            except Exception as single_exc:  # noqa: BLE001
+                                failures.append(
+                                    {
+                                        "mergedWindowId": window["mergedWindowId"],
+                                        "targetId": window["targetId"],
+                                        "archiveStartDate": window.get("archiveStartDate"),
+                                        "archiveEndDate": window.get("archiveEndDate"),
+                                        "error": repr(single_exc),
+                                        "batchError": repr(exc),
+                                    }
+                                )
+                                write_json(failures_path, failures)
+                    if not args.fallback_single_on_batch_failure or (not recovered_any and len(batch_windows) <= 1):
+                        for window in batch_windows:
+                            failures.append(
+                                {
+                                    "mergedWindowId": window["mergedWindowId"],
+                                    "targetId": window["targetId"],
+                                    "archiveStartDate": window.get("archiveStartDate"),
+                                    "archiveEndDate": window.get("archiveEndDate"),
+                                    "error": repr(exc),
+                                }
+                            )
+                        write_json(failures_path, failures)
 
                 if completed_batches <= 5 or completed_batches % 10 == 0 or completed_batches == total_batches:
                     print(
@@ -300,6 +403,7 @@ def main() -> None:
             "requestedWindowCount": len(merged_windows),
             "alreadyCompletedWindowCount": len(completed_window_ids),
             "processedWindowCount": len(windows_to_process),
+            "maxWindowsToProcess": args.max_windows_to_process,
             "batchCount": len(batches),
             "maxBatchTargets": args.max_batch_targets,
             "successfulWindowCount": success_count,
@@ -311,6 +415,7 @@ def main() -> None:
             "maxAttempts": args.max_attempts,
             "baseBackoffMs": args.base_backoff_ms,
             "refetchCached": args.refetch_cached,
+            "fallbackSingleOnBatchFailure": args.fallback_single_on_batch_failure,
             "files": {
                 "manifest": "weather_window_manifest.jsonl",
                 "dailyRows": "weather_daily_rows.jsonl",

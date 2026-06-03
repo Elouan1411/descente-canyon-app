@@ -120,6 +120,62 @@ def computed_temporal_features(target_date: date) -> dict[str, float]:
     }
 
 
+MONTH_LOOKUP_FEATURES = [
+    "canyonMonthPastObsCount",
+    "canyonMonthPriorLow",
+    "canyonMonthPriorMedium",
+    "canyonMonthPriorHigh",
+    "canyonMonthMeanRank",
+    "massifMonthPastObsCount",
+    "massifMonthPriorLow",
+    "massifMonthPriorMedium",
+    "massifMonthPriorHigh",
+    "regionMonthPastObsCount",
+    "regionMonthPriorLow",
+    "regionMonthPriorMedium",
+    "regionMonthPriorHigh",
+]
+SEASON_LOOKUP_FEATURES = [
+    "canyonSeasonPastObsCount",
+    "canyonSeasonPriorLow",
+    "canyonSeasonPriorMedium",
+    "canyonSeasonPriorHigh",
+    "canyonSeasonMeanRank",
+    "massifSeasonPastObsCount",
+    "massifSeasonPriorLow",
+    "massifSeasonPriorMedium",
+    "massifSeasonPriorHigh",
+    "regionSeasonPastObsCount",
+    "regionSeasonPriorLow",
+    "regionSeasonPriorMedium",
+    "regionSeasonPriorHigh",
+]
+
+
+def season_key(month: int) -> str:
+    if month in {12, 1, 2}:
+        return "winter"
+    if month in {3, 4, 5}:
+        return "spring"
+    if month in {6, 7, 8}:
+        return "summer"
+    return "autumn"
+
+
+def temporal_history_lookup_features(lookup_values: dict[str, float], target_date: date) -> dict[str, float | None]:
+    month = str(target_date.month)
+    season = season_key(target_date.month)
+    values: dict[str, float | None] = {}
+    for feature_name in MONTH_LOOKUP_FEATURES:
+        values[feature_name] = lookup_values.get(f"month.{month}.{feature_name}")
+    for feature_name in SEASON_LOOKUP_FEATURES:
+        values[feature_name] = lookup_values.get(f"season.{season}.{feature_name}")
+    last_epoch_day = lookup_values.get("canyonLastObservationEpochDay")
+    if last_epoch_day is not None:
+        values["canyonDaysSinceLastObs"] = max(float(target_date.toordinal()) - float(last_epoch_day), 0.0)
+    return values
+
+
 def resolve_runtime_lookup(canyon: dict[str, Any], lookups: dict[str, Any]) -> tuple[str, dict[str, float]]:
     unknown_keys = lookups.get("unknownKeys") or {}
     resolved_region = canyon.get("region") or unknown_keys.get("region") or "__UNKNOWN_REGION__"
@@ -289,6 +345,7 @@ def build_feature_values(
             }
         )
     values.update(lookup_values)
+    values.update(temporal_history_lookup_features(lookup_values, target_day))
     values.update(compute_debit_derived_model_features(values))
     return values
 
@@ -614,12 +671,14 @@ def main() -> None:
     parser.add_argument("--cutoff-date", default=DEFAULT_CUTOFF_DATE)
     parser.add_argument("--observations-path", default="build/debit-pipeline/observations/valid_debit_observations.jsonl")
     parser.add_argument("--model-dir", default="modele_statistique")
+    parser.add_argument("--thresholds-path", help="Override thresholds JSON path instead of <model-dir>/thresholds.json")
     parser.add_argument("--canyons-path", default="offline-data/full/room-import/canyons.json")
     parser.add_argument("--watersheds-path", default="offline-data/full/room-import/watersheds.json")
     parser.add_argument("--geo-points-path", default="offline-data/full/room-import/geo_points.json")
     parser.add_argument("--output-dir", default=DEFAULT_OUTPUT_DIR)
-    parser.add_argument("--weather-model", default="era5")
+    parser.add_argument("--weather-model", default="era5_land")
     parser.add_argument("--include-weather-model-param", action="store_true", help="Use Open-Meteo models=... like the training archive instead of app-default archive requests")
+    parser.add_argument("--weather-cache-dir", help="Reuse or write Open-Meteo daily archive cache in this directory")
     parser.add_argument("--write-feature-rows", action="store_true", help="Also write post-cutoff feature rows usable by model export scripts")
     parser.add_argument("--request-delay-ms", type=int, default=1200)
     parser.add_argument("--timeout-s", type=int, default=120)
@@ -633,12 +692,12 @@ def main() -> None:
     cutoff = args.cutoff_date
     output_dir = Path(args.output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
-    weather_cache_dir = output_dir / "weather-cache"
+    weather_cache_dir = Path(args.weather_cache_dir) if args.weather_cache_dir else output_dir / "weather-cache"
     weather_cache_dir.mkdir(parents=True, exist_ok=True)
 
     model_dir = Path(args.model_dir)
     feature_spec = read_json(model_dir / "feature_spec.json")
-    thresholds = read_json(model_dir / "thresholds.json")
+    thresholds = read_json(Path(args.thresholds_path) if args.thresholds_path else model_dir / "thresholds.json")
     runtime_lookups = read_json(model_dir / "runtime_feature_lookups.json")
     static_features = read_json(model_dir / "canyon_static_features.json")
     labels = [str(label) for label in feature_spec.get("labels", [])]
@@ -762,7 +821,7 @@ def main() -> None:
         "cutoffDate": cutoff,
         "source": "descente-canyon",
         "scenario": "app_like_target_day_weather_before_target_day",
-        "weatherArchiveMode": "training_era5_models_param" if args.include_weather_model_param else "app_default_no_models_param",
+        "weatherArchiveMode": f"training_{args.weather_model}_models_param" if args.include_weather_model_param else "app_default_no_models_param",
         "modelDir": str(model_dir),
         "modelLabels": labels,
         "thresholdPolicy": thresholds.get("defaultPolicy"),

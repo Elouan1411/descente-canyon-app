@@ -5,6 +5,7 @@ import fr.descentecanyon.app.domain.model.CanyonStaticFeatureSet
 import fr.descentecanyon.app.domain.model.DailyWeatherValue
 import fr.descentecanyon.app.domain.model.DebitFeatureSpec
 import fr.descentecanyon.app.domain.model.DebitPredictionSupport
+import fr.descentecanyon.app.domain.model.NiveauDebit
 import java.time.LocalDate
 import kotlin.math.PI
 import kotlin.math.cos
@@ -30,6 +31,8 @@ class DebitFeatureBuilder @Inject constructor() {
         featureValues += staticFeatures(detail, staticFeatureSet)
         featureValues += weatherFeatures(support.dailyWeather, targetDate)
         featureValues += support.runtimeLookup.featureValues
+        featureValues += temporalHistoryLookupFeatures(support.runtimeLookup.featureValues, targetDate)
+        featureValues += dynamicCanyonHistoryFeatures(detail, targetDate)
         featureValues += derivedFeatures(featureValues)
 
         return featureSpec.features.map { feature ->
@@ -45,6 +48,66 @@ class DebitFeatureBuilder @Inject constructor() {
             "monthSin" to roundTo(sin(angle), 6),
             "monthCos" to roundTo(cos(angle), 6),
         )
+    }
+
+    private fun temporalHistoryLookupFeatures(
+        lookupValues: Map<String, Double>,
+        targetDate: LocalDate,
+    ): Map<String, Double?> {
+        val month = targetDate.monthValue.toString()
+        val season = when (targetDate.monthValue) {
+            12, 1, 2 -> "winter"
+            3, 4, 5 -> "spring"
+            6, 7, 8 -> "summer"
+            else -> "autumn"
+        }
+        val features = mutableMapOf<String, Double?>()
+        MONTH_LOOKUP_FEATURES.forEach { featureName ->
+            features[featureName] = lookupValues["month.$month.$featureName"]
+        }
+        SEASON_LOOKUP_FEATURES.forEach { featureName ->
+            features[featureName] = lookupValues["season.$season.$featureName"]
+        }
+        lookupValues["canyonLastObservationEpochDay"]?.let { epochDay ->
+            features["canyonDaysSinceLastObs"] = (targetDate.toEpochDay() - epochDay.toLong()).coerceAtLeast(0).toDouble()
+        }
+        return features
+    }
+
+    private fun dynamicCanyonHistoryFeatures(
+        detail: CanyonDetail,
+        targetDate: LocalDate,
+    ): Map<String, Double?> {
+        val pastDebits = detail.debits
+            .filter { debit -> debit.date.isBefore(targetDate) }
+            .sortedBy { debit -> debit.date }
+        if (pastDebits.isEmpty()) return emptyMap()
+
+        val features = mutableMapOf<String, Double?>()
+        val lastDebit = pastDebits.last()
+        features["canyonLastObservedRank"] = lastDebit.niveau.ordinalRank()
+        features["canyonDaysSinceLastObs"] = (targetDate.toEpochDay() - lastDebit.date.toEpochDay()).coerceAtLeast(0).toDouble()
+
+        listOf(30L, 90L, 365L).forEach { windowDays ->
+            val cutoff = targetDate.minusDays(windowDays)
+            val windowDebits = pastDebits.filter { debit -> !debit.date.isBefore(cutoff) }
+            val prefix = "canyonRecent${windowDays}d"
+            features["${prefix}ObsCount"] = windowDebits.size.toDouble()
+            features["${prefix}PriorHigh"] = if (windowDebits.isEmpty()) {
+                0.0
+            } else {
+                roundTo(windowDebits.count { it.niveau.isHighFlow() }.toDouble() / windowDebits.size.toDouble(), 6)
+            }
+            if (windowDays == 365L) {
+                features["${prefix}MeanRank"] = windowDebits
+                    .mapNotNull { debit -> debit.niveau.ordinalRank() }
+                    .takeIf { it.isNotEmpty() }
+                    ?.average()
+                    ?.let { roundTo(it, 6) }
+            }
+        }
+
+        return features
     }
 
     private fun staticFeatures(
@@ -297,5 +360,55 @@ class DebitFeatureBuilder @Inject constructor() {
     private fun roundTo(value: Double, decimals: Int): Double {
         val factor = 10.0.pow(decimals)
         return round(value * factor) / factor
+    }
+
+    private fun NiveauDebit.ordinalRank(): Double? {
+        return when (this) {
+            NiveauDebit.SEC -> 0.0
+            NiveauDebit.FILET -> 1.0
+            NiveauDebit.CORRECT -> 2.0
+            NiveauDebit.GROS -> 3.0
+            NiveauDebit.TRES_GROS -> 4.0
+            NiveauDebit.CRUE -> 5.0
+            NiveauDebit.INCONNU -> null
+        }
+    }
+
+    private fun NiveauDebit.isHighFlow(): Boolean {
+        return this == NiveauDebit.GROS || this == NiveauDebit.TRES_GROS || this == NiveauDebit.CRUE
+    }
+
+    private companion object {
+        val MONTH_LOOKUP_FEATURES = listOf(
+            "canyonMonthPastObsCount",
+            "canyonMonthPriorLow",
+            "canyonMonthPriorMedium",
+            "canyonMonthPriorHigh",
+            "canyonMonthMeanRank",
+            "massifMonthPastObsCount",
+            "massifMonthPriorLow",
+            "massifMonthPriorMedium",
+            "massifMonthPriorHigh",
+            "regionMonthPastObsCount",
+            "regionMonthPriorLow",
+            "regionMonthPriorMedium",
+            "regionMonthPriorHigh",
+        )
+
+        val SEASON_LOOKUP_FEATURES = listOf(
+            "canyonSeasonPastObsCount",
+            "canyonSeasonPriorLow",
+            "canyonSeasonPriorMedium",
+            "canyonSeasonPriorHigh",
+            "canyonSeasonMeanRank",
+            "massifSeasonPastObsCount",
+            "massifSeasonPriorLow",
+            "massifSeasonPriorMedium",
+            "massifSeasonPriorHigh",
+            "regionSeasonPastObsCount",
+            "regionSeasonPriorLow",
+            "regionSeasonPriorMedium",
+            "regionSeasonPriorHigh",
+        )
     }
 }
