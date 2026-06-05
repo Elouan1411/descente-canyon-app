@@ -261,9 +261,18 @@ fun HomeScreen(
                         items = homeState.debitFeed.items,
                         key = { latestDebitItemKey(it) },
                     ) { debit ->
+                        val isExternalOnly = homeState.isLocalCanyonCatalogLoaded &&
+                            debit.canyonId !in homeState.localCanyonIds
                         DebitCard(
                             debit = debit,
-                            onClick = { onCanyonClick(debit.canyonId) },
+                            isExternalOnly = isExternalOnly,
+                            onClick = {
+                                if (isExternalOnly) {
+                                    openExternalUrl(context, descenteCanyonCanyonUrl(debit.canyonId))
+                                } else {
+                                    onCanyonClick(debit.canyonId)
+                                }
+                            },
                         )
                     }
                 }
@@ -762,6 +771,9 @@ internal fun latestDebitItemKey(debit: Debit): String = buildString {
     append(debit.auteur.orEmpty())
 }
 
+internal fun descenteCanyonCanyonUrl(canyonId: Int): String =
+    "https://www.descente-canyon.com/canyoning/canyon/$canyonId/"
+
 internal fun forumTopicItemKey(topic: ForumActiveTopic): String = buildString {
     append(topic.topicId)
     append('-')
@@ -869,6 +881,7 @@ private fun CreditCard() {
 @Composable
 private fun DebitCard(
     debit: Debit,
+    isExternalOnly: Boolean,
     onClick: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
@@ -935,6 +948,27 @@ private fun DebitCard(
                         overflow = TextOverflow.Ellipsis,
                         modifier = Modifier.padding(top = 4.dp),
                     )
+                }
+                if (isExternalOnly) {
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(top = 8.dp),
+                        horizontalArrangement = Arrangement.spacedBy(6.dp),
+                        verticalAlignment = Alignment.CenterVertically,
+                    ) {
+                        Icon(
+                            imageVector = Icons.AutoMirrored.Filled.OpenInNew,
+                            contentDescription = null,
+                            tint = MaterialTheme.colorScheme.onSurfaceVariant,
+                            modifier = Modifier.size(16.dp),
+                        )
+                        Text(
+                            text = stringResource(R.string.home_debit_external_only),
+                            style = MaterialTheme.typography.labelSmall,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant,
+                        )
+                    }
                 }
             }
         }

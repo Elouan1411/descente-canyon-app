@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-06-05T12:17:15.197074+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2727,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2727/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2727/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2727/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2727/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/2727/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 2727,
+    "identity": {
+      "nom": "Galion (Partie Basse)",
+      "nomComplet": "Rivière du Galion (Partie Basse), Galion",
+      "prefixeNom": "Rivière du",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2727/Galion-Partie-Basse.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Saint-Claude",
+      "departement": "Guadeloupe",
+      "communePrincipale": "Gourbeyre",
+      "communes": [
+        "Gourbeyre"
+      ],
+      "massif": "Soufrière",
+      "bassin": null,
+      "coursEau": "Galion"
+    },
+    "rating": {
+      "cotation": "",
+      "interet": null,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": 850,
+      "deniveleM": 250,
+      "longueurM": null,
+      "cascadeMaxM": null,
+      "cordeMiniM": null,
+      "navette": null
+    },
+    "timings": {
+      "approche": null,
+      "descente": null,
+      "retour": null
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": "Association vertigua en janvier 1991. v. SILVE, R. RAOUS, S. WILMO, B. WISSENS, K. et D. KUSTER.",
+      "remarques": null
+    },
+    "geoPoints": [],
+    "representativePoint": null,
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_823671d200a5451f",
+          "kind": "MAP",
+          "title": "4605GT Basse-Terre / La Soufrière / Les Saintes / Parc National de la Guadeloupe (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "isForbidden": true,
+      "rules": [
+        {
+          "id": 152,
+          "status": "Actif",
+          "action": "Interdit",
+          "title": "Arrêté (Parc National de la Guadeloupe) - 18 juin 2004",
+          "summary": "Sauf autorisation spécifique du directeur, la pratique des sports dits \"d'eau vive\" de toute nature (et notamment le canyonisme et la randonnée aquatique) est interdite dans le parc national.",
+          "remark": null,
+          "details": "arrete n° 2004-01",
+          "effectiveDate": "18 juin 2004",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/152/legislation.html",
+          "attachments": [
+            {
+              "label": "arrete n° 2004-01",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/arrete152.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

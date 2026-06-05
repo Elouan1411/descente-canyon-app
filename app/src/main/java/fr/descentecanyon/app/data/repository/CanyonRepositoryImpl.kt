@@ -8,6 +8,7 @@ import fr.descentecanyon.app.data.local.dao.getByIdsChunked
 import fr.descentecanyon.app.data.local.database.DescenteCanyonDatabase
 import fr.descentecanyon.app.data.mapper.toDomain
 import fr.descentecanyon.app.data.mapper.toSearchItem
+import fr.descentecanyon.app.data.mapper.toSearchIndexEntity
 import fr.descentecanyon.app.data.mapper.toEntity
 import fr.descentecanyon.app.data.mapper.toSummary
 import fr.descentecanyon.app.data.remote.scraper.CanyonScraper
@@ -66,7 +67,7 @@ class CanyonRepositoryImpl @Inject constructor(
 
     override suspend fun getCanyonDetail(canyonId: Int): Result<CanyonDetail> {
         val localCanyon = canyonDao.getById(canyonId)
-            ?: return Result.failure(IllegalArgumentException("Canyon introuvable: $canyonId"))
+            ?: return fetchAndCacheRemoteDetail(canyonId)
 
         return runCatching {
             localStore.loadLocalDetail(canyonId, localCanyon)
@@ -165,6 +166,26 @@ class CanyonRepositoryImpl @Inject constructor(
         // TODO: Implement location-based browsing
         return canyonDao.observeAll().map { entities ->
             Result.success(entities.map { it.toSummary() })
+        }
+    }
+
+    private suspend fun fetchAndCacheRemoteDetail(canyonId: Int): Result<CanyonDetail> {
+        return scraper.scrapeFullCanyonDetail(canyonId).mapCatching { detail ->
+            val entity = detail.toEntity()
+            val geoPointEntities = detail.geoPoints.map { it.toEntity(canyonId) }
+            val representativePoint = localStore.bestMarkerPointOrNull(geoPointEntities)
+            val searchIndex = entity.toSearchItem(
+                representativeLat = representativePoint?.latitude,
+                representativeLng = representativePoint?.longitude,
+            ).toSearchIndexEntity()
+
+            database.withTransaction {
+                localStore.insertPreservingFlags(entity)
+                localStore.replaceGeoPoints(canyonId, geoPointEntities)
+                searchIndexDao.insertAll(listOf(searchIndex))
+            }
+
+            localStore.loadLocalDetail(canyonId, entity)
         }
     }
 

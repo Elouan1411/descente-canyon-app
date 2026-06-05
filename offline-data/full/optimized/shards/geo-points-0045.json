@@ -1,10 +1,130 @@
 [
   {
-    "canyonId": 24201,
+    "canyonId": 24191,
+    "type": "SORTIE",
+    "rawType": "arrivee",
+    "latitude": 43.671059,
+    "longitude": 6.722332,
+    "label": null
+  },
+  {
+    "canyonId": 24191,
     "type": "PARKING_AVAL",
     "rawType": "parking",
-    "latitude": 43.858963,
-    "longitude": 6.373705,
+    "latitude": 43.672874,
+    "longitude": 6.720916,
+    "label": null
+  },
+  {
+    "canyonId": 24191,
+    "type": "POINT_REMARQUABLE",
+    "rawType": "point_externe",
+    "latitude": 43.671383,
+    "longitude": 6.720916,
+    "label": "Roche taillée"
+  },
+  {
+    "canyonId": 24192,
+    "type": "ENTREE",
+    "rawType": "depart",
+    "latitude": 43.67997,
+    "longitude": 6.719558,
+    "label": null
+  },
+  {
+    "canyonId": 24192,
+    "type": "SORTIE",
+    "rawType": "arrivee",
+    "latitude": 43.678493,
+    "longitude": 6.717611,
+    "label": null
+  },
+  {
+    "canyonId": 24192,
+    "type": "PARKING_AVAL",
+    "rawType": "parking",
+    "latitude": 43.680153,
+    "longitude": 6.720014,
+    "label": null
+  },
+  {
+    "canyonId": 24195,
+    "type": "PARKING_AVAL",
+    "rawType": "parking",
+    "latitude": -44.65696,
+    "longitude": 168.334488,
+    "label": null
+  },
+  {
+    "canyonId": 24196,
+    "type": "ENTREE",
+    "rawType": "depart",
+    "latitude": -44.628056,
+    "longitude": 168.358887,
+    "label": null
+  },
+  {
+    "canyonId": 24196,
+    "type": "PARKING_AVAL",
+    "rawType": "parking",
+    "latitude": -44.654446,
+    "longitude": 168.314438,
+    "label": null
+  },
+  {
+    "canyonId": 24197,
+    "type": "PARKING_AVAL",
+    "rawType": "parking_aval",
+    "latitude": -44.652821,
+    "longitude": 168.328796,
+    "label": null
+  },
+  {
+    "canyonId": 24198,
+    "type": "ENTREE",
+    "rawType": "depart",
+    "latitude": -43.001389,
+    "longitude": 170.833328,
+    "label": null
+  },
+  {
+    "canyonId": 24198,
+    "type": "PARKING_AVAL",
+    "rawType": "parking",
+    "latitude": -43.001999,
+    "longitude": 170.858521,
+    "label": null
+  },
+  {
+    "canyonId": 24198,
+    "type": "POINT_REMARQUABLE",
+    "rawType": "point_interne",
+    "latitude": -42.99889,
+    "longitude": 170.837494,
+    "label": "Entrée intermédiaire possible"
+  },
+  {
+    "canyonId": 24199,
+    "type": "ENTREE",
+    "rawType": "depart",
+    "latitude": -43.08511,
+    "longitude": 171.307755,
+    "label": null
+  },
+  {
+    "canyonId": 24200,
+    "type": "PARKING_AVAL",
+    "rawType": "parking",
+    "latitude": -44.140316,
+    "longitude": 169.328857,
+    "label": null
+  },
+  {
+    "canyonId": 24201,
+    "type": "ENTREE",
+    "rawType": "depart",
+    "latitude": 43.832146,
+    "longitude": 6.374199,
     "label": null
   },
   {
@@ -16,28 +136,12 @@
     "label": null
   },
   {
-    "canyonId": 24209,
-    "type": "PARKING_AMONT",
-    "rawType": "parking_amont",
-    "latitude": 42.476612,
-    "longitude": 2.731427,
-    "label": "Stationnement au virage du Mas Soler (à côté des containers)."
-  },
-  {
-    "canyonId": 24209,
+    "canyonId": 24201,
     "type": "PARKING_AVAL",
-    "rawType": "parking_aval",
-    "latitude": 42.478107,
-    "longitude": 2.727439,
-    "label": "Stationnement du pont de la Vaillère."
-  },
-  {
-    "canyonId": 24209,
-    "type": "PARKING_AVAL",
-    "rawType": "parking_aval",
-    "latitude": 42.479744,
-    "longitude": 2.738952,
-    "label": "Stationnement sous les pins."
+    "rawType": "parking",
+    "latitude": 43.858963,
+    "longitude": 6.373705,
+    "label": null
   },
   {
     "canyonId": 24209,
@@ -54,6 +158,46 @@
     "latitude": 42.468403,
     "longitude": 2.733695,
     "label": null
+  },
+  {
+    "canyonId": 24209,
+    "type": "PARKING_AMONT",
+    "rawType": "parking_amont",
+    "latitude": 42.476612,
+    "longitude": 2.731427,
+    "label": "Stationnement au virage du Mas Soler (à côté des containers)."
+  },
+  {
+    "canyonId": 24209,
+    "type": "PARKING_AVAL",
+    "rawType": "parking_aval",
+    "latitude": 42.479744,
+    "longitude": 2.738952,
+    "label": "Stationnement sous les pins."
+  },
+  {
+    "canyonId": 24209,
+    "type": "PARKING_AVAL",
+    "rawType": "parking_aval",
+    "latitude": 42.478107,
+    "longitude": 2.727439,
+    "label": "Stationnement du pont de la Vaillère."
+  },
+  {
+    "canyonId": 24209,
+    "type": "POINT_REMARQUABLE",
+    "rawType": "point_externe",
+    "latitude": 42.477791,
+    "longitude": 2.723154,
+    "label": "Piste après le Mas Santol direction le Mas Lamoure."
+  },
+  {
+    "canyonId": 24209,
+    "type": "POINT_REMARQUABLE",
+    "rawType": "point_externe",
+    "latitude": 42.468319,
+    "longitude": 2.722628,
+    "label": "Sentier côté droit qui contourne le Mas Lamoure. (le chemin fini par se perdre, garder sa position toujours vers la gauche en montant dans les bois jusqu'à retrouver la piste)."
   },
   {
     "canyonId": 24209,
@@ -75,41 +219,9 @@
     "canyonId": 24209,
     "type": "POINT_REMARQUABLE",
     "rawType": "point_externe",
-    "latitude": 42.468319,
-    "longitude": 2.722628,
-    "label": "Sentier côté droit qui contourne le Mas Lamoure. (le chemin fini par se perdre, garder sa position toujours vers la gauche en montant dans les bois jusqu'à retrouver la piste)."
-  },
-  {
-    "canyonId": 24209,
-    "type": "POINT_REMARQUABLE",
-    "rawType": "point_externe",
     "latitude": 42.471222,
     "longitude": 2.733053,
     "label": "Sentier du retour longeant la Vaillère."
-  },
-  {
-    "canyonId": 24209,
-    "type": "POINT_REMARQUABLE",
-    "rawType": "point_externe",
-    "latitude": 42.477791,
-    "longitude": 2.723154,
-    "label": "Piste après le Mas Santol direction le Mas Lamoure."
-  },
-  {
-    "canyonId": 24210,
-    "type": "PARKING_AMONT",
-    "rawType": "parking_amont",
-    "latitude": 45.20789,
-    "longitude": 2.106667,
-    "label": "Parking en cas de navette"
-  },
-  {
-    "canyonId": 24210,
-    "type": "PARKING_AVAL",
-    "rawType": "parking_aval",
-    "latitude": 45.216278,
-    "longitude": 2.111972,
-    "label": "Départ initial"
   },
   {
     "canyonId": 24210,
@@ -126,6 +238,22 @@
     "latitude": 45.216331,
     "longitude": 2.112056,
     "label": null
+  },
+  {
+    "canyonId": 24210,
+    "type": "PARKING_AMONT",
+    "rawType": "parking_amont",
+    "latitude": 45.20789,
+    "longitude": 2.106667,
+    "label": "Parking en cas de navette"
+  },
+  {
+    "canyonId": 24210,
+    "type": "PARKING_AVAL",
+    "rawType": "parking_aval",
+    "latitude": 45.216278,
+    "longitude": 2.111972,
+    "label": "Départ initial"
   },
   {
     "canyonId": 24210,

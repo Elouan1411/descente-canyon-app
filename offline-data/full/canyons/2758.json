@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-06-05T12:17:16.282082+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 2758,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/2758/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/2758/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/2758/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/2758/guides-et-cartes.html",
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/2758/legislation.html"
+    }
+  },
+  "canyon": {
+    "id": 2758,
+    "identity": {
+      "nom": "Malanga",
+      "nomComplet": "Ravine Malanga, Rivière noire",
+      "prefixeNom": "Ravine",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2758/Malanga.html"
+    },
+    "location": {
+      "pays": "France",
+      "region": "Saint-Claude",
+      "departement": "Guadeloupe",
+      "communePrincipale": null,
+      "communes": [],
+      "massif": "Soufrière",
+      "bassin": null,
+      "coursEau": "Rivière noire"
+    },
+    "rating": {
+      "cotation": "",
+      "interet": null,
+      "nbVotes": 0
+    },
+    "metrics": {
+      "altitudeDepartM": 1220,
+      "deniveleM": 490,
+      "longueurM": 1000,
+      "cascadeMaxM": null,
+      "cordeMiniM": null,
+      "navette": null
+    },
+    "timings": {
+      "approche": null,
+      "descente": null,
+      "retour": null
+    },
+    "topo": {
+      "accesAval": null,
+      "accesAmont": null,
+      "approche": null,
+      "descente": null,
+      "retour": null,
+      "engagement": null,
+      "periode": null,
+      "geologie": null,
+      "historique": "Mars 1991 par V. SYLVE et D. KUSTER",
+      "remarques": null
+    },
+    "geoPoints": [],
+    "representativePoint": null,
+    "bibliography": {
+      "topoguides": [],
+      "maps": [
+        {
+          "id": "map_823671d200a5451f",
+          "kind": "MAP",
+          "title": "4605GT Basse-Terre / La Soufrière / Les Saintes / Parc National de la Guadeloupe (IGN TOP25)",
+          "scale": "1/25000",
+          "detailUrl": null
+        }
+      ],
+      "resources": []
+    },
+    "reglementation": {
+      "hasSpecificRegulation": true,
+      "isForbidden": true,
+      "rules": [
+        {
+          "id": 152,
+          "status": "Actif",
+          "action": "Interdit",
+          "title": "Arrêté (Parc National de la Guadeloupe) - 18 juin 2004",
+          "summary": "Sauf autorisation spécifique du directeur, la pratique des sports dits \"d'eau vive\" de toute nature (et notamment le canyonisme et la randonnée aquatique) est interdite dans le parc national.",
+          "remark": null,
+          "details": "arrete n° 2004-01",
+          "effectiveDate": "18 juin 2004",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/152/legislation.html",
+          "attachments": [
+            {
+              "label": "arrete n° 2004-01",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/arrete152.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -5,6 +5,7 @@ import fr.descentecanyon.app.domain.model.ForumActiveTopic
 import fr.descentecanyon.app.domain.model.NiveauDebit
 import java.time.LocalDate
 import org.junit.Assert.assertNotEquals
+import org.junit.Assert.assertEquals
 import org.junit.Test
 
 class HomeScreenTest {
@@ -53,5 +54,13 @@ class HomeScreenTest {
         )
 
         assertNotEquals(forumTopicItemKey(first), forumTopicItemKey(second))
+    }
+
+    @Test
+    fun `descente canyon canyon url targets summary page without requiring slug`() {
+        assertEquals(
+            "https://www.descente-canyon.com/canyoning/canyon/23332/",
+            descenteCanyonCanyonUrl(23332),
+        )
     }
 }

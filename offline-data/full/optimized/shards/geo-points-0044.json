@@ -1,19 +1,131 @@
 [
   {
-    "canyonId": 24091,
-    "type": "PARKING_AVAL",
-    "rawType": "parking",
-    "latitude": 42.091801,
-    "longitude": 9.066469,
+    "canyonId": 24085,
+    "type": "ENTREE",
+    "rawType": "depart",
+    "latitude": 44.710274,
+    "longitude": 6.057029,
     "label": null
   },
   {
-    "canyonId": 24091,
+    "canyonId": 24085,
+    "type": "SORTIE",
+    "rawType": "arrivee",
+    "latitude": 44.709595,
+    "longitude": 6.056932,
+    "label": null
+  },
+  {
+    "canyonId": 24085,
+    "type": "PARKING_AVAL",
+    "rawType": "parking",
+    "latitude": 44.714474,
+    "longitude": 6.057994,
+    "label": null
+  },
+  {
+    "canyonId": 24086,
     "type": "ENTREE",
     "rawType": "depart",
-    "latitude": 42.098625,
-    "longitude": 9.052993,
-    "label": "E2: partie aval"
+    "latitude": 36.80658,
+    "longitude": -5.395731,
+    "label": null
+  },
+  {
+    "canyonId": 24086,
+    "type": "SORTIE",
+    "rawType": "arrivee",
+    "latitude": 36.814167,
+    "longitude": -5.403892,
+    "label": "sentier de la \"Ermita\" vers le-haut ( P sur CA-9104)"
+  },
+  {
+    "canyonId": 24086,
+    "type": "PARKING_AVAL",
+    "rawType": "parking",
+    "latitude": 36.80846,
+    "longitude": -5.39215,
+    "label": null
+  },
+  {
+    "canyonId": 24087,
+    "type": "ENTREE",
+    "rawType": "depart",
+    "latitude": 43.78735,
+    "longitude": 6.499738,
+    "label": null
+  },
+  {
+    "canyonId": 24087,
+    "type": "PARKING_AVAL",
+    "rawType": "parking",
+    "latitude": 43.785568,
+    "longitude": 6.500682,
+    "label": null
+  },
+  {
+    "canyonId": 24088,
+    "type": "ENTREE",
+    "rawType": "depart",
+    "latitude": 42.485973,
+    "longitude": 2.505555,
+    "label": null
+  },
+  {
+    "canyonId": 24088,
+    "type": "SORTIE",
+    "rawType": "arrivee",
+    "latitude": 42.474995,
+    "longitude": 2.533667,
+    "label": null
+  },
+  {
+    "canyonId": 24089,
+    "type": "ENTREE",
+    "rawType": "depart",
+    "latitude": 45.948158,
+    "longitude": 6.68079,
+    "label": null
+  },
+  {
+    "canyonId": 24089,
+    "type": "SORTIE",
+    "rawType": "arrivee",
+    "latitude": 45.942051,
+    "longitude": 6.67603,
+    "label": null
+  },
+  {
+    "canyonId": 24089,
+    "type": "PARKING_AVAL",
+    "rawType": "parking",
+    "latitude": 45.93726,
+    "longitude": 6.68238,
+    "label": null
+  },
+  {
+    "canyonId": 24090,
+    "type": "ENTREE",
+    "rawType": "depart",
+    "latitude": 42.464703,
+    "longitude": 2.755638,
+    "label": null
+  },
+  {
+    "canyonId": 24090,
+    "type": "SORTIE",
+    "rawType": "arrivee",
+    "latitude": 42.468193,
+    "longitude": 2.756292,
+    "label": null
+  },
+  {
+    "canyonId": 24090,
+    "type": "PARKING_AVAL",
+    "rawType": "parking",
+    "latitude": 42.472134,
+    "longitude": 2.753544,
+    "label": null
   },
   {
     "canyonId": 24091,
@@ -25,10 +137,34 @@
   },
   {
     "canyonId": 24091,
+    "type": "ENTREE",
+    "rawType": "depart",
+    "latitude": 42.098625,
+    "longitude": 9.052993,
+    "label": "E2: partie aval"
+  },
+  {
+    "canyonId": 24091,
     "type": "SORTIE",
     "rawType": "arrivee",
     "latitude": 42.090603,
     "longitude": 9.048208,
+    "label": null
+  },
+  {
+    "canyonId": 24091,
+    "type": "PARKING_AVAL",
+    "rawType": "parking",
+    "latitude": 42.091801,
+    "longitude": 9.066469,
+    "label": null
+  },
+  {
+    "canyonId": 24092,
+    "type": "ENTREE",
+    "rawType": "depart",
+    "latitude": 42.22599,
+    "longitude": 1.886514,
     "label": null
   },
   {
@@ -45,14 +181,6 @@
     "rawType": "parking_aval",
     "latitude": 42.227791,
     "longitude": 1.881094,
-    "label": null
-  },
-  {
-    "canyonId": 24092,
-    "type": "ENTREE",
-    "rawType": "depart",
-    "latitude": 42.22599,
-    "longitude": 1.886514,
     "label": null
   },
   {
@@ -97,22 +225,6 @@
   },
   {
     "canyonId": 24094,
-    "type": "PARKING_AMONT",
-    "rawType": "parking_amont",
-    "latitude": 42.015739,
-    "longitude": 8.8572,
-    "label": null
-  },
-  {
-    "canyonId": 24094,
-    "type": "PARKING_AVAL",
-    "rawType": "parking_aval",
-    "latitude": 42.014957,
-    "longitude": 8.876163,
-    "label": null
-  },
-  {
-    "canyonId": 24094,
     "type": "ENTREE",
     "rawType": "depart",
     "latitude": 42.031464,
@@ -129,6 +241,22 @@
   },
   {
     "canyonId": 24094,
+    "type": "PARKING_AMONT",
+    "rawType": "parking_amont",
+    "latitude": 42.015739,
+    "longitude": 8.8572,
+    "label": null
+  },
+  {
+    "canyonId": 24094,
+    "type": "PARKING_AVAL",
+    "rawType": "parking_aval",
+    "latitude": 42.014957,
+    "longitude": 8.876163,
+    "label": null
+  },
+  {
+    "canyonId": 24094,
     "type": "POINT_REMARQUABLE",
     "rawType": "point_externe",
     "latitude": 42.026276,
@@ -141,6 +269,14 @@
     "rawType": "parking",
     "latitude": 42.507397,
     "longitude": 3.005513,
+    "label": null
+  },
+  {
+    "canyonId": 24096,
+    "type": "ENTREE",
+    "rawType": "depart",
+    "latitude": 42.080822,
+    "longitude": 1.781364,
     "label": null
   },
   {
@@ -161,27 +297,11 @@
   },
   {
     "canyonId": 24096,
-    "type": "ENTREE",
-    "rawType": "depart",
-    "latitude": 42.080822,
-    "longitude": 1.781364,
-    "label": null
-  },
-  {
-    "canyonId": 24096,
     "type": "POINT_REMARQUABLE",
     "rawType": "point_externe",
     "latitude": 42.06617,
     "longitude": 1.795694,
     "label": "départ de la piste de montée"
-  },
-  {
-    "canyonId": 24097,
-    "type": "PARKING_AVAL",
-    "rawType": "parking",
-    "latitude": 42.301121,
-    "longitude": 3.229654,
-    "label": null
   },
   {
     "canyonId": 24097,
@@ -197,6 +317,14 @@
     "rawType": "arrivee",
     "latitude": 42.302505,
     "longitude": 3.22762,
+    "label": null
+  },
+  {
+    "canyonId": 24097,
+    "type": "PARKING_AVAL",
+    "rawType": "parking",
+    "latitude": 42.301121,
+    "longitude": 3.229654,
     "label": null
   },
   {
@@ -217,14 +345,6 @@
   },
   {
     "canyonId": 24099,
-    "type": "PARKING_AVAL",
-    "rawType": "parking",
-    "latitude": 44.430618,
-    "longitude": 4.577812,
-    "label": "Parking approximatif selon l'état de la piste"
-  },
-  {
-    "canyonId": 24099,
     "type": "ENTREE",
     "rawType": "depart",
     "latitude": 44.42609,
@@ -240,12 +360,12 @@
     "label": "Confluence avec Rimouren"
   },
   {
-    "canyonId": 24100,
+    "canyonId": 24099,
     "type": "PARKING_AVAL",
     "rawType": "parking",
-    "latitude": 43.867786,
-    "longitude": 6.582308,
-    "label": null
+    "latitude": 44.430618,
+    "longitude": 4.577812,
+    "label": "Parking approximatif selon l'état de la piste"
   },
   {
     "canyonId": 24100,
@@ -264,11 +384,11 @@
     "label": null
   },
   {
-    "canyonId": 24101,
+    "canyonId": 24100,
     "type": "PARKING_AVAL",
     "rawType": "parking",
-    "latitude": 43.867764,
-    "longitude": 6.582238,
+    "latitude": 43.867786,
+    "longitude": 6.582308,
     "label": null
   },
   {
@@ -288,11 +408,11 @@
     "label": null
   },
   {
-    "canyonId": 24103,
+    "canyonId": 24101,
     "type": "PARKING_AVAL",
     "rawType": "parking",
-    "latitude": 44.746792,
-    "longitude": 6.122683,
+    "latitude": 43.867764,
+    "longitude": 6.582238,
     "label": null
   },
   {
@@ -313,11 +433,27 @@
   },
   {
     "canyonId": 24103,
+    "type": "PARKING_AVAL",
+    "rawType": "parking",
+    "latitude": 44.746792,
+    "longitude": 6.122683,
+    "label": null
+  },
+  {
+    "canyonId": 24103,
     "type": "POINT_REMARQUABLE",
     "rawType": "point_interne",
     "latitude": 44.71479,
     "longitude": 6.16849,
     "label": "départ aval"
+  },
+  {
+    "canyonId": 24104,
+    "type": "ENTREE",
+    "rawType": "depart",
+    "latitude": 37.505615,
+    "longitude": -3.108206,
+    "label": null
   },
   {
     "canyonId": 24104,
@@ -333,22 +469,6 @@
     "rawType": "parking_aval",
     "latitude": 37.505913,
     "longitude": -3.109764,
-    "label": null
-  },
-  {
-    "canyonId": 24104,
-    "type": "ENTREE",
-    "rawType": "depart",
-    "latitude": 37.505615,
-    "longitude": -3.108206,
-    "label": null
-  },
-  {
-    "canyonId": 24105,
-    "type": "PARKING_AVAL",
-    "rawType": "parking",
-    "latitude": 42.281826,
-    "longitude": 9.391106,
     "label": null
   },
   {
@@ -368,11 +488,11 @@
     "label": "arrivée dans la Bravona 250m vers la-bas dans le lit de la Bravona (sortie à gauche)"
   },
   {
-    "canyonId": 24106,
+    "canyonId": 24105,
     "type": "PARKING_AVAL",
     "rawType": "parking",
-    "latitude": 42.094597,
-    "longitude": 9.221651,
+    "latitude": 42.281826,
+    "longitude": 9.391106,
     "label": null
   },
   {
@@ -392,11 +512,11 @@
     "label": "plusieurs echapp. à gauche avant arrivée"
   },
   {
-    "canyonId": 24107,
+    "canyonId": 24106,
     "type": "PARKING_AVAL",
     "rawType": "parking",
-    "latitude": 44.616154,
-    "longitude": 6.741243,
+    "latitude": 42.094597,
+    "longitude": 9.221651,
     "label": null
   },
   {
@@ -416,11 +536,11 @@
     "label": null
   },
   {
-    "canyonId": 24108,
+    "canyonId": 24107,
     "type": "PARKING_AVAL",
     "rawType": "parking",
-    "latitude": 44.621525,
-    "longitude": 6.720332,
+    "latitude": 44.616154,
+    "longitude": 6.741243,
     "label": null
   },
   {
@@ -440,12 +560,28 @@
     "label": null
   },
   {
+    "canyonId": 24108,
+    "type": "PARKING_AVAL",
+    "rawType": "parking",
+    "latitude": 44.621525,
+    "longitude": 6.720332,
+    "label": null
+  },
+  {
     "canyonId": 24109,
     "type": "ENTREE",
     "rawType": "depart",
     "latitude": 43.97303,
     "longitude": 7.003558,
     "label": "En haut du cassé (111 m)"
+  },
+  {
+    "canyonId": 24110,
+    "type": "ENTREE",
+    "rawType": "depart",
+    "latitude": 42.36182,
+    "longitude": 0.926025,
+    "label": null
   },
   {
     "canyonId": 24110,
@@ -461,22 +597,6 @@
     "rawType": "parking_aval",
     "latitude": 42.334995,
     "longitude": 0.948014,
-    "label": null
-  },
-  {
-    "canyonId": 24110,
-    "type": "ENTREE",
-    "rawType": "depart",
-    "latitude": 42.36182,
-    "longitude": 0.926025,
-    "label": null
-  },
-  {
-    "canyonId": 24111,
-    "type": "PARKING_AVAL",
-    "rawType": "parking_aval",
-    "latitude": 46.605999,
-    "longitude": 7.65344,
     "label": null
   },
   {
@@ -496,11 +616,11 @@
     "label": null
   },
   {
-    "canyonId": 24112,
+    "canyonId": 24111,
     "type": "PARKING_AVAL",
-    "rawType": "parking",
-    "latitude": 42.833988,
-    "longitude": 0.937749,
+    "rawType": "parking_aval",
+    "latitude": 46.605999,
+    "longitude": 7.65344,
     "label": null
   },
   {
@@ -520,11 +640,11 @@
     "label": null
   },
   {
-    "canyonId": 24113,
+    "canyonId": 24112,
     "type": "PARKING_AVAL",
     "rawType": "parking",
-    "latitude": 45.017517,
-    "longitude": 5.970964,
+    "latitude": 42.833988,
+    "longitude": 0.937749,
     "label": null
   },
   {
@@ -536,11 +656,11 @@
     "label": null
   },
   {
-    "canyonId": 24114,
+    "canyonId": 24113,
     "type": "PARKING_AVAL",
     "rawType": "parking",
-    "latitude": 44.57811,
-    "longitude": 6.398479,
+    "latitude": 45.017517,
+    "longitude": 5.970964,
     "label": null
   },
   {
@@ -561,6 +681,14 @@
   },
   {
     "canyonId": 24114,
+    "type": "PARKING_AVAL",
+    "rawType": "parking",
+    "latitude": 44.57811,
+    "longitude": 6.398479,
+    "label": null
+  },
+  {
+    "canyonId": 24114,
     "type": "POINT_REMARQUABLE",
     "rawType": "point_externe",
     "latitude": 44.589279,
@@ -573,14 +701,6 @@
     "rawType": "depart",
     "latitude": 43.965961,
     "longitude": 6.996644,
-    "label": null
-  },
-  {
-    "canyonId": 24116,
-    "type": "PARKING_AMONT",
-    "rawType": "parking_amont",
-    "latitude": 28.352997,
-    "longitude": -16.886742,
     "label": null
   },
   {
@@ -600,19 +720,11 @@
     "label": null
   },
   {
-    "canyonId": 24117,
+    "canyonId": 24116,
     "type": "PARKING_AMONT",
     "rawType": "parking_amont",
-    "latitude": 42.79311,
-    "longitude": 1.28277,
-    "label": null
-  },
-  {
-    "canyonId": 24117,
-    "type": "PARKING_AVAL",
-    "rawType": "parking_aval",
-    "latitude": 42.802422,
-    "longitude": 1.270872,
+    "latitude": 28.352997,
+    "longitude": -16.886742,
     "label": null
   },
   {
@@ -632,19 +744,19 @@
     "label": null
   },
   {
-    "canyonId": 24119,
+    "canyonId": 24117,
     "type": "PARKING_AMONT",
     "rawType": "parking_amont",
-    "latitude": 45.683208,
-    "longitude": 7.642681,
+    "latitude": 42.79311,
+    "longitude": 1.28277,
     "label": null
   },
   {
-    "canyonId": 24119,
+    "canyonId": 24117,
     "type": "PARKING_AVAL",
     "rawType": "parking_aval",
-    "latitude": 45.686176,
-    "longitude": 7.655614,
+    "latitude": 42.802422,
+    "longitude": 1.270872,
     "label": null
   },
   {
@@ -664,11 +776,27 @@
     "label": null
   },
   {
-    "canyonId": 24120,
+    "canyonId": 24119,
+    "type": "PARKING_AMONT",
+    "rawType": "parking_amont",
+    "latitude": 45.683208,
+    "longitude": 7.642681,
+    "label": null
+  },
+  {
+    "canyonId": 24119,
     "type": "PARKING_AVAL",
-    "rawType": "parking",
-    "latitude": 42.787548,
-    "longitude": 1.33837,
+    "rawType": "parking_aval",
+    "latitude": 45.686176,
+    "longitude": 7.655614,
+    "label": null
+  },
+  {
+    "canyonId": 24120,
+    "type": "ENTREE",
+    "rawType": "depart",
+    "latitude": 42.772224,
+    "longitude": 1.353369,
     "label": null
   },
   {
@@ -681,18 +809,18 @@
   },
   {
     "canyonId": 24120,
-    "type": "ENTREE",
-    "rawType": "depart",
-    "latitude": 42.772224,
-    "longitude": 1.353369,
-    "label": null
-  },
-  {
-    "canyonId": 24120,
     "type": "SORTIE",
     "rawType": "arrivee",
     "latitude": 42.777565,
     "longitude": 1.352344,
+    "label": null
+  },
+  {
+    "canyonId": 24120,
+    "type": "PARKING_AVAL",
+    "rawType": "parking",
+    "latitude": 42.787548,
+    "longitude": 1.33837,
     "label": null
   },
   {
@@ -713,22 +841,6 @@
   },
   {
     "canyonId": 24123,
-    "type": "PARKING_AMONT",
-    "rawType": "parking_amont",
-    "latitude": 45.702934,
-    "longitude": 7.659155,
-    "label": null
-  },
-  {
-    "canyonId": 24123,
-    "type": "PARKING_AVAL",
-    "rawType": "parking_aval",
-    "latitude": 45.695541,
-    "longitude": 7.66269,
-    "label": null
-  },
-  {
-    "canyonId": 24123,
     "type": "ENTREE",
     "rawType": "depart",
     "latitude": 45.696442,
@@ -744,11 +856,19 @@
     "label": null
   },
   {
-    "canyonId": 24124,
+    "canyonId": 24123,
+    "type": "PARKING_AMONT",
+    "rawType": "parking_amont",
+    "latitude": 45.702934,
+    "longitude": 7.659155,
+    "label": null
+  },
+  {
+    "canyonId": 24123,
     "type": "PARKING_AVAL",
-    "rawType": "parking",
-    "latitude": 45.73502,
-    "longitude": 7.529904,
+    "rawType": "parking_aval",
+    "latitude": 45.695541,
+    "longitude": 7.66269,
     "label": null
   },
   {
@@ -768,11 +888,11 @@
     "label": null
   },
   {
-    "canyonId": 24125,
+    "canyonId": 24124,
     "type": "PARKING_AVAL",
     "rawType": "parking",
-    "latitude": 44.65752,
-    "longitude": 6.727797,
+    "latitude": 45.73502,
+    "longitude": 7.529904,
     "label": null
   },
   {
@@ -793,19 +913,19 @@
   },
   {
     "canyonId": 24125,
+    "type": "PARKING_AVAL",
+    "rawType": "parking",
+    "latitude": 44.65752,
+    "longitude": 6.727797,
+    "label": null
+  },
+  {
+    "canyonId": 24125,
     "type": "POINT_REMARQUABLE",
     "rawType": "point_externe",
     "latitude": 44.656498,
     "longitude": 6.728913,
     "label": "Retour à travers la forêt et une piste de coupeurs de bois"
-  },
-  {
-    "canyonId": 24126,
-    "type": "PARKING_AVAL",
-    "rawType": "parking",
-    "latitude": 44.667137,
-    "longitude": 6.717292,
-    "label": null
   },
   {
     "canyonId": 24126,
@@ -825,19 +945,19 @@
   },
   {
     "canyonId": 24126,
+    "type": "PARKING_AVAL",
+    "rawType": "parking",
+    "latitude": 44.667137,
+    "longitude": 6.717292,
+    "label": null
+  },
+  {
+    "canyonId": 24126,
     "type": "POINT_REMARQUABLE",
     "rawType": "point_externe",
     "latitude": 44.660797,
     "longitude": 6.713011,
     "label": "Talweg d'approche"
-  },
-  {
-    "canyonId": 24127,
-    "type": "PARKING_AVAL",
-    "rawType": "parking",
-    "latitude": 46.119095,
-    "longitude": 8.356066,
-    "label": null
   },
   {
     "canyonId": 24127,
@@ -853,6 +973,14 @@
     "rawType": "arrivee",
     "latitude": 46.116219,
     "longitude": 8.360443,
+    "label": null
+  },
+  {
+    "canyonId": 24127,
+    "type": "PARKING_AVAL",
+    "rawType": "parking",
+    "latitude": 46.119095,
+    "longitude": 8.356066,
     "label": null
   },
   {
@@ -873,14 +1001,6 @@
   },
   {
     "canyonId": 24128,
-    "type": "PARKING_AVAL",
-    "rawType": "parking",
-    "latitude": 45.443352,
-    "longitude": 7.336712,
-    "label": null
-  },
-  {
-    "canyonId": 24128,
     "type": "ENTREE",
     "rawType": "depart",
     "latitude": 45.447178,
@@ -896,11 +1016,11 @@
     "label": null
   },
   {
-    "canyonId": 24129,
+    "canyonId": 24128,
     "type": "PARKING_AVAL",
     "rawType": "parking",
-    "latitude": 44.045193,
-    "longitude": 3.750976,
+    "latitude": 45.443352,
+    "longitude": 7.336712,
     "label": null
   },
   {
@@ -921,19 +1041,19 @@
   },
   {
     "canyonId": 24129,
+    "type": "PARKING_AVAL",
+    "rawType": "parking",
+    "latitude": 44.045193,
+    "longitude": 3.750976,
+    "label": null
+  },
+  {
+    "canyonId": 24129,
     "type": "POINT_REMARQUABLE",
     "rawType": "point_externe",
     "latitude": 44.041431,
     "longitude": 3.752521,
     "label": "itinéraire de retour"
-  },
-  {
-    "canyonId": 24130,
-    "type": "PARKING_AVAL",
-    "rawType": "parking",
-    "latitude": 44.03664,
-    "longitude": 3.754989,
-    "label": null
   },
   {
     "canyonId": 24130,
@@ -949,6 +1069,14 @@
     "rawType": "arrivee",
     "latitude": 44.031681,
     "longitude": 3.752242,
+    "label": null
+  },
+  {
+    "canyonId": 24130,
+    "type": "PARKING_AVAL",
+    "rawType": "parking",
+    "latitude": 44.03664,
+    "longitude": 3.754989,
     "label": null
   },
   {
@@ -1001,14 +1129,6 @@
   },
   {
     "canyonId": 24137,
-    "type": "PARKING_AVAL",
-    "rawType": "parking",
-    "latitude": 47.649181,
-    "longitude": 11.370318,
-    "label": null
-  },
-  {
-    "canyonId": 24137,
     "type": "ENTREE",
     "rawType": "depart",
     "latitude": 47.641682,
@@ -1024,11 +1144,11 @@
     "label": null
   },
   {
-    "canyonId": 24138,
+    "canyonId": 24137,
     "type": "PARKING_AVAL",
     "rawType": "parking",
-    "latitude": 45.908806,
-    "longitude": 6.529262,
+    "latitude": 47.649181,
+    "longitude": 11.370318,
     "label": null
   },
   {
@@ -1040,11 +1160,11 @@
     "label": null
   },
   {
-    "canyonId": 24139,
+    "canyonId": 24138,
     "type": "PARKING_AVAL",
     "rawType": "parking",
-    "latitude": 45.888504,
-    "longitude": 6.528982,
+    "latitude": 45.908806,
+    "longitude": 6.529262,
     "label": null
   },
   {
@@ -1053,6 +1173,22 @@
     "rawType": "depart",
     "latitude": 45.890911,
     "longitude": 6.52203,
+    "label": null
+  },
+  {
+    "canyonId": 24139,
+    "type": "PARKING_AVAL",
+    "rawType": "parking",
+    "latitude": 45.888504,
+    "longitude": 6.528982,
+    "label": null
+  },
+  {
+    "canyonId": 24140,
+    "type": "ENTREE",
+    "rawType": "depart",
+    "latitude": 38.761112,
+    "longitude": 22.775557,
     "label": null
   },
   {
@@ -1073,14 +1209,6 @@
   },
   {
     "canyonId": 24140,
-    "type": "ENTREE",
-    "rawType": "depart",
-    "latitude": 38.761112,
-    "longitude": 22.775557,
-    "label": null
-  },
-  {
-    "canyonId": 24140,
     "type": "POINT_REMARQUABLE",
     "rawType": "point_externe",
     "latitude": 38.755005,
@@ -1094,14 +1222,6 @@
     "latitude": 38.761112,
     "longitude": 22.775557,
     "label": "Fin du sentier d'approche"
-  },
-  {
-    "canyonId": 24141,
-    "type": "PARKING_AVAL",
-    "rawType": "parking",
-    "latitude": 47.558773,
-    "longitude": 11.490106,
-    "label": null
   },
   {
     "canyonId": 24141,
@@ -1120,11 +1240,11 @@
     "label": null
   },
   {
-    "canyonId": 24142,
+    "canyonId": 24141,
     "type": "PARKING_AVAL",
     "rawType": "parking",
-    "latitude": 44.64846,
-    "longitude": 6.792385,
+    "latitude": 47.558773,
+    "longitude": 11.490106,
     "label": null
   },
   {
@@ -1145,6 +1265,14 @@
   },
   {
     "canyonId": 24142,
+    "type": "PARKING_AVAL",
+    "rawType": "parking",
+    "latitude": 44.64846,
+    "longitude": 6.792385,
+    "label": null
+  },
+  {
+    "canyonId": 24142,
     "type": "POINT_REMARQUABLE",
     "rawType": "point_externe",
     "latitude": 44.64418,
@@ -1157,14 +1285,6 @@
     "rawType": "parking_aval",
     "latitude": 42.044334,
     "longitude": 19.226267,
-    "label": null
-  },
-  {
-    "canyonId": 24144,
-    "type": "PARKING_AVAL",
-    "rawType": "parking",
-    "latitude": 47.6982,
-    "longitude": 11.415813,
     "label": null
   },
   {
@@ -1185,19 +1305,11 @@
   },
   {
     "canyonId": 24144,
-    "type": "POINT_REMARQUABLE",
-    "rawType": "point_externe",
-    "latitude": 47.683762,
-    "longitude": 11.43571,
-    "label": "waypoint 3 sur la sente de parking bike"
-  },
-  {
-    "canyonId": 24144,
-    "type": "POINT_REMARQUABLE",
-    "rawType": "point_externe",
-    "latitude": 47.68465,
-    "longitude": 11.44252,
-    "label": "waypoint 2 sur lasente de parking bike"
+    "type": "PARKING_AVAL",
+    "rawType": "parking",
+    "latitude": 47.6982,
+    "longitude": 11.415813,
+    "label": null
   },
   {
     "canyonId": 24144,
@@ -1211,25 +1323,33 @@
     "canyonId": 24144,
     "type": "POINT_REMARQUABLE",
     "rawType": "point_externe",
-    "latitude": 47.685032,
-    "longitude": 11.432365,
-    "label": "waypoint 6 arrivée approche normal par la sente de parking bike"
-  },
-  {
-    "canyonId": 24144,
-    "type": "POINT_REMARQUABLE",
-    "rawType": "point_externe",
     "latitude": 47.685329,
     "longitude": 11.44335,
     "label": "depart sente d'approche de parking bike"
   },
   {
-    "canyonId": 24145,
-    "type": "PARKING_AVAL",
-    "rawType": "parking",
-    "latitude": 46.299751,
-    "longitude": 13.041817,
-    "label": "when you start at the end of Leale"
+    "canyonId": 24144,
+    "type": "POINT_REMARQUABLE",
+    "rawType": "point_externe",
+    "latitude": 47.68465,
+    "longitude": 11.44252,
+    "label": "waypoint 2 sur lasente de parking bike"
+  },
+  {
+    "canyonId": 24144,
+    "type": "POINT_REMARQUABLE",
+    "rawType": "point_externe",
+    "latitude": 47.683762,
+    "longitude": 11.43571,
+    "label": "waypoint 3 sur la sente de parking bike"
+  },
+  {
+    "canyonId": 24144,
+    "type": "POINT_REMARQUABLE",
+    "rawType": "point_externe",
+    "latitude": 47.685032,
+    "longitude": 11.432365,
+    "label": "waypoint 6 arrivée approche normal par la sente de parking bike"
   },
   {
     "canyonId": 24145,
@@ -1248,12 +1368,12 @@
     "label": "arrivée dans Leale"
   },
   {
-    "canyonId": 24146,
+    "canyonId": 24145,
     "type": "PARKING_AVAL",
     "rawType": "parking",
-    "latitude": 44.387234,
-    "longitude": 6.832897,
-    "label": null
+    "latitude": 46.299751,
+    "longitude": 13.041817,
+    "label": "when you start at the end of Leale"
   },
   {
     "canyonId": 24146,
@@ -1264,11 +1384,11 @@
     "label": null
   },
   {
-    "canyonId": 24147,
+    "canyonId": 24146,
     "type": "PARKING_AVAL",
     "rawType": "parking",
-    "latitude": 44.39608,
-    "longitude": 6.766528,
+    "latitude": 44.387234,
+    "longitude": 6.832897,
     "label": null
   },
   {
@@ -1280,11 +1400,11 @@
     "label": null
   },
   {
-    "canyonId": 24148,
+    "canyonId": 24147,
     "type": "PARKING_AVAL",
     "rawType": "parking",
-    "latitude": 44.342327,
-    "longitude": 6.51281,
+    "latitude": 44.39608,
+    "longitude": 6.766528,
     "label": null
   },
   {
@@ -1296,11 +1416,11 @@
     "label": null
   },
   {
-    "canyonId": 24149,
+    "canyonId": 24148,
     "type": "PARKING_AVAL",
     "rawType": "parking",
-    "latitude": 42.533752,
-    "longitude": -0.166626,
+    "latitude": 44.342327,
+    "longitude": 6.51281,
     "label": null
   },
   {
@@ -1320,11 +1440,11 @@
     "label": null
   },
   {
-    "canyonId": 24150,
+    "canyonId": 24149,
     "type": "PARKING_AVAL",
-    "rawType": "parking_aval",
-    "latitude": 46.380814,
-    "longitude": 8.665709,
+    "rawType": "parking",
+    "latitude": 42.533752,
+    "longitude": -0.166626,
     "label": null
   },
   {
@@ -1336,11 +1456,11 @@
     "label": null
   },
   {
-    "canyonId": 24151,
+    "canyonId": 24150,
     "type": "PARKING_AVAL",
-    "rawType": "parking",
-    "latitude": 44.819881,
-    "longitude": 5.045269,
+    "rawType": "parking_aval",
+    "latitude": 46.380814,
+    "longitude": 8.665709,
     "label": null
   },
   {
@@ -1352,11 +1472,11 @@
     "label": null
   },
   {
-    "canyonId": 24152,
+    "canyonId": 24151,
     "type": "PARKING_AVAL",
     "rawType": "parking",
-    "latitude": 44.78915,
-    "longitude": 5.047765,
+    "latitude": 44.819881,
+    "longitude": 5.045269,
     "label": null
   },
   {
@@ -1365,6 +1485,14 @@
     "rawType": "depart",
     "latitude": 44.788086,
     "longitude": 5.051171,
+    "label": null
+  },
+  {
+    "canyonId": 24152,
+    "type": "PARKING_AVAL",
+    "rawType": "parking",
+    "latitude": 44.78915,
+    "longitude": 5.047765,
     "label": null
   },
   {
@@ -1449,14 +1577,6 @@
   },
   {
     "canyonId": 24162,
-    "type": "PARKING_AVAL",
-    "rawType": "parking",
-    "latitude": 46.622574,
-    "longitude": 8.023406,
-    "label": null
-  },
-  {
-    "canyonId": 24162,
     "type": "ENTREE",
     "rawType": "depart",
     "latitude": 46.593174,
@@ -1469,6 +1589,14 @@
     "rawType": "arrivee",
     "latitude": 46.596092,
     "longitude": 7.993897,
+    "label": null
+  },
+  {
+    "canyonId": 24162,
+    "type": "PARKING_AVAL",
+    "rawType": "parking",
+    "latitude": 46.622574,
+    "longitude": 8.023406,
     "label": null
   },
   {
@@ -1545,14 +1673,6 @@
   },
   {
     "canyonId": 24172,
-    "type": "PARKING_AVAL",
-    "rawType": "parking",
-    "latitude": 46.602276,
-    "longitude": 12.107186,
-    "label": null
-  },
-  {
-    "canyonId": 24172,
     "type": "ENTREE",
     "rawType": "depart",
     "latitude": 46.586071,
@@ -1568,11 +1688,11 @@
     "label": null
   },
   {
-    "canyonId": 24173,
+    "canyonId": 24172,
     "type": "PARKING_AVAL",
     "rawType": "parking",
-    "latitude": 46.480488,
-    "longitude": 12.290403,
+    "latitude": 46.602276,
+    "longitude": 12.107186,
     "label": null
   },
   {
@@ -1592,20 +1712,12 @@
     "label": null
   },
   {
-    "canyonId": 24174,
-    "type": "PARKING_AMONT",
-    "rawType": "parking_amont",
-    "latitude": 47.474621,
-    "longitude": 12.06889,
-    "label": "pour E1"
-  },
-  {
-    "canyonId": 24174,
+    "canyonId": 24173,
     "type": "PARKING_AVAL",
-    "rawType": "parking_aval",
-    "latitude": 47.477749,
-    "longitude": 12.06005,
-    "label": "pour E1, Parking pour E2"
+    "rawType": "parking",
+    "latitude": 46.480488,
+    "longitude": 12.290403,
+    "label": null
   },
   {
     "canyonId": 24174,
@@ -1624,12 +1736,20 @@
     "label": "E2"
   },
   {
-    "canyonId": 24175,
+    "canyonId": 24174,
+    "type": "PARKING_AMONT",
+    "rawType": "parking_amont",
+    "latitude": 47.474621,
+    "longitude": 12.06889,
+    "label": "pour E1"
+  },
+  {
+    "canyonId": 24174,
     "type": "PARKING_AVAL",
-    "rawType": "parking",
-    "latitude": 42.423599,
-    "longitude": 2.784256,
-    "label": null
+    "rawType": "parking_aval",
+    "latitude": 47.477749,
+    "longitude": 12.06005,
+    "label": "pour E1, Parking pour E2"
   },
   {
     "canyonId": 24175,
@@ -1649,11 +1769,11 @@
   },
   {
     "canyonId": 24175,
-    "type": "POINT_REMARQUABLE",
-    "rawType": "point_interne",
-    "latitude": 42.41394,
-    "longitude": 2.768105,
-    "label": "La petite cascade"
+    "type": "PARKING_AVAL",
+    "rawType": "parking",
+    "latitude": 42.423599,
+    "longitude": 2.784256,
+    "label": null
   },
   {
     "canyonId": 24175,
@@ -1672,12 +1792,12 @@
     "label": "Passage par la frontière Franco-espagnole"
   },
   {
-    "canyonId": 24176,
-    "type": "PARKING_AVAL",
-    "rawType": "parking",
-    "latitude": 46.966091,
-    "longitude": 11.33772,
-    "label": null
+    "canyonId": 24175,
+    "type": "POINT_REMARQUABLE",
+    "rawType": "point_interne",
+    "latitude": 42.41394,
+    "longitude": 2.768105,
+    "label": "La petite cascade"
   },
   {
     "canyonId": 24176,
@@ -1693,6 +1813,14 @@
     "rawType": "arrivee",
     "latitude": 46.966042,
     "longitude": 11.32984,
+    "label": null
+  },
+  {
+    "canyonId": 24176,
+    "type": "PARKING_AVAL",
+    "rawType": "parking",
+    "latitude": 46.966091,
+    "longitude": 11.33772,
     "label": null
   },
   {
@@ -1713,14 +1841,6 @@
   },
   {
     "canyonId": 24178,
-    "type": "PARKING_AVAL",
-    "rawType": "parking",
-    "latitude": 44.820606,
-    "longitude": 6.200483,
-    "label": null
-  },
-  {
-    "canyonId": 24178,
     "type": "ENTREE",
     "rawType": "depart",
     "latitude": 44.841656,
@@ -1733,6 +1853,14 @@
     "rawType": "arrivee",
     "latitude": 44.834732,
     "longitude": 6.198262,
+    "label": null
+  },
+  {
+    "canyonId": 24178,
+    "type": "PARKING_AVAL",
+    "rawType": "parking",
+    "latitude": 44.820606,
+    "longitude": 6.200483,
     "label": null
   },
   {
@@ -1753,14 +1881,6 @@
   },
   {
     "canyonId": 24183,
-    "type": "PARKING_AVAL",
-    "rawType": "parking",
-    "latitude": 42.833927,
-    "longitude": 0.937717,
-    "label": null
-  },
-  {
-    "canyonId": 24183,
     "type": "ENTREE",
     "rawType": "depart",
     "latitude": 42.821007,
@@ -1776,19 +1896,19 @@
     "label": null
   },
   {
+    "canyonId": 24183,
+    "type": "PARKING_AVAL",
+    "rawType": "parking",
+    "latitude": 42.833927,
+    "longitude": 0.937717,
+    "label": null
+  },
+  {
     "canyonId": 24184,
     "type": "PARKING_AVAL",
     "rawType": "parking",
     "latitude": 45.420769,
     "longitude": 7.037606,
-    "label": null
-  },
-  {
-    "canyonId": 24185,
-    "type": "PARKING_AVAL",
-    "rawType": "parking",
-    "latitude": 45.30875,
-    "longitude": 7.036204,
     "label": null
   },
   {
@@ -1800,11 +1920,11 @@
     "label": null
   },
   {
-    "canyonId": 24186,
-    "type": "PARKING_AMONT",
-    "rawType": "parking_amont",
-    "latitude": 45.276203,
-    "longitude": 6.93499,
+    "canyonId": 24185,
+    "type": "PARKING_AVAL",
+    "rawType": "parking",
+    "latitude": 45.30875,
+    "longitude": 7.036204,
     "label": null
   },
   {
@@ -1814,6 +1934,14 @@
     "latitude": 45.290131,
     "longitude": 6.943942,
     "label": "parking intermédiaire si on ne fait pas la C90"
+  },
+  {
+    "canyonId": 24186,
+    "type": "PARKING_AMONT",
+    "rawType": "parking_amont",
+    "latitude": 45.276203,
+    "longitude": 6.93499,
+    "label": null
   },
   {
     "canyonId": 24186,
@@ -1841,14 +1969,6 @@
   },
   {
     "canyonId": 24189,
-    "type": "PARKING_AVAL",
-    "rawType": "parking",
-    "latitude": 47.345829,
-    "longitude": 11.655753,
-    "label": null
-  },
-  {
-    "canyonId": 24189,
     "type": "ENTREE",
     "rawType": "depart",
     "latitude": 47.358398,
@@ -1864,11 +1984,11 @@
     "label": "fin de partie sup (Tuwaldbach I), debut partie inf. (Tuwaldbach II)"
   },
   {
-    "canyonId": 24191,
+    "canyonId": 24189,
     "type": "PARKING_AVAL",
     "rawType": "parking",
-    "latitude": 43.672874,
-    "longitude": 6.720916,
+    "latitude": 47.345829,
+    "longitude": 11.655753,
     "label": null
   },
   {
@@ -1877,126 +1997,6 @@
     "rawType": "depart",
     "latitude": 43.669647,
     "longitude": 6.719843,
-    "label": null
-  },
-  {
-    "canyonId": 24191,
-    "type": "SORTIE",
-    "rawType": "arrivee",
-    "latitude": 43.671059,
-    "longitude": 6.722332,
-    "label": null
-  },
-  {
-    "canyonId": 24191,
-    "type": "POINT_REMARQUABLE",
-    "rawType": "point_externe",
-    "latitude": 43.671383,
-    "longitude": 6.720916,
-    "label": "Roche taillée"
-  },
-  {
-    "canyonId": 24192,
-    "type": "PARKING_AVAL",
-    "rawType": "parking",
-    "latitude": 43.680153,
-    "longitude": 6.720014,
-    "label": null
-  },
-  {
-    "canyonId": 24192,
-    "type": "ENTREE",
-    "rawType": "depart",
-    "latitude": 43.67997,
-    "longitude": 6.719558,
-    "label": null
-  },
-  {
-    "canyonId": 24192,
-    "type": "SORTIE",
-    "rawType": "arrivee",
-    "latitude": 43.678493,
-    "longitude": 6.717611,
-    "label": null
-  },
-  {
-    "canyonId": 24195,
-    "type": "PARKING_AVAL",
-    "rawType": "parking",
-    "latitude": -44.65696,
-    "longitude": 168.334488,
-    "label": null
-  },
-  {
-    "canyonId": 24196,
-    "type": "PARKING_AVAL",
-    "rawType": "parking",
-    "latitude": -44.654446,
-    "longitude": 168.314438,
-    "label": null
-  },
-  {
-    "canyonId": 24196,
-    "type": "ENTREE",
-    "rawType": "depart",
-    "latitude": -44.628056,
-    "longitude": 168.358887,
-    "label": null
-  },
-  {
-    "canyonId": 24197,
-    "type": "PARKING_AVAL",
-    "rawType": "parking_aval",
-    "latitude": -44.652821,
-    "longitude": 168.328796,
-    "label": null
-  },
-  {
-    "canyonId": 24198,
-    "type": "PARKING_AVAL",
-    "rawType": "parking",
-    "latitude": -43.001999,
-    "longitude": 170.858521,
-    "label": null
-  },
-  {
-    "canyonId": 24198,
-    "type": "ENTREE",
-    "rawType": "depart",
-    "latitude": -43.001389,
-    "longitude": 170.833328,
-    "label": null
-  },
-  {
-    "canyonId": 24198,
-    "type": "POINT_REMARQUABLE",
-    "rawType": "point_interne",
-    "latitude": -42.99889,
-    "longitude": 170.837494,
-    "label": "Entrée intermédiaire possible"
-  },
-  {
-    "canyonId": 24199,
-    "type": "ENTREE",
-    "rawType": "depart",
-    "latitude": -43.08511,
-    "longitude": 171.307755,
-    "label": null
-  },
-  {
-    "canyonId": 24200,
-    "type": "PARKING_AVAL",
-    "rawType": "parking",
-    "latitude": -44.140316,
-    "longitude": 169.328857,
-    "label": null
-  },
-  {
-    "canyonId": 24201,
-    "type": "ENTREE",
-    "rawType": "depart",
-    "latitude": 43.832146,
-    "longitude": 6.374199,
     "label": null
   }
 ]

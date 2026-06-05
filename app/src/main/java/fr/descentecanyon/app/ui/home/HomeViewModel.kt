@@ -57,6 +57,8 @@ data class HomeUiState(
     val debitFeed: HomeFeedSectionState<Debit> = HomeFeedSectionState(),
     val forumFeed: HomeFeedSectionState<ForumActiveTopic> = HomeFeedSectionState(),
     val debitGeoFilter: HomeDebitGeoFilterState = HomeDebitGeoFilterState(),
+    val isLocalCanyonCatalogLoaded: Boolean = false,
+    val localCanyonIds: Set<Int> = emptySet(),
 )
 
 @HiltViewModel
@@ -194,7 +196,12 @@ class HomeViewModel @Inject constructor(
         viewModelScope.launch {
             canyonRepository.observeSearchCatalog().collect { catalog ->
                 searchCatalog = catalog
-                _uiState.update { state -> state.withDebitPresentation() }
+                _uiState.update { state ->
+                    state.copy(
+                        isLocalCanyonCatalogLoaded = catalog.isNotEmpty(),
+                        localCanyonIds = catalog.mapTo(mutableSetOf()) { it.id },
+                    ).withDebitPresentation()
+                }
             }
         }
     }

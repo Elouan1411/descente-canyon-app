@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "scrapedAt": "2026-06-05T12:18:30.195828+00:00",
+  "source": {
+    "site": "descente-canyon.com",
+    "canyonId": 23512,
+    "urls": {
+      "summary": "https://www.descente-canyon.com/canyoning/canyon/23512/",
+      "description": "https://www.descente-canyon.com/canyoning/canyon-description/23512/topo.html",
+      "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23512/carte.html",
+      "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23512/guides-et-cartes.html",
+      "regulation": null
+    }
+  },
+  "canyon": {
+    "id": 23512,
+    "identity": {
+      "nom": "Tartera",
+      "nomComplet": "Barranc de la Tartera",
+      "prefixeNom": "Barranc de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/23512/Tartera.html"
+    },
+    "location": {
+      "pays": "Espagne",
+      "region": "Cataluña",
+      "departement": "Lérida",
+      "communePrincipale": "Villanova de Meia",
+      "communes": [
+        "Villanova de Meia"
+      ],
+      "massif": null,
+      "bassin": "Rio Segre",
+      "coursEau": null
+    },
+    "rating": {
+      "cotation": "v2a2II",
+      "interet": 1.9,
+      "nbVotes": 2
+    },
+    "metrics": {
+      "altitudeDepartM": 590,
+      "deniveleM": 130,
+      "longueurM": 1900,
+      "cascadeMaxM": 10,
+      "cordeMiniM": 14,
+      "navette": "néant"
+    },
+    "timings": {
+      "approche": "1h à 1h30",
+      "descente": "1h30",
+      "retour": "25min"
+    },
+    "topo": {
+      "accesAval": "D'Artesa de Segre, prendre la L-512 direction nord. Arrivé à Montargull, tourner en direction de Torrec. Juste avant le cœur du hameau de Torrec et l'église, se garer sans gêner à gauche juste après la bascule. La piste d'accès et de retour est juste en face.",
+      "accesAmont": null,
+      "approche": "Prendre la piste qui descend (quelques \"coupettes\" possibles). Traverser un premier ruisseau (nommé barranc dels Colomers ou de les Planes, selon les cartes) et continuer le sentier qui traverse un second affluent. On prend à gauche ici et l'on remonte le barranc de la Tartera en rive gauche par une sente qui se perd peu à peu dans la végétation... L'entrée théorique est vers l'altitude 600m mais on peut rentrer avant dans le ruisseau pour plus de commodité quand la sente s'en approche très près, vers un gros bloc dans le lit (on ne rate pas grand chose). GPS utile.",
+      "descente": "Le lit est parfois encombré de végétation et de roseaux au début. Ça va mieux à partir de l'entrée intermédiaire possible : quelques ressauts et cascades mignons.",
+      "retour": "Sortir au niveau de la confluence avec le 1er barranc rencontré lors de la marche d'approche et le remonter quelques mètres jusqu'à retrouver le sentier d'accès et le parking.",
+      "engagement": null,
+      "periode": "Printemps ou après des pluies",
+      "geologie": "Calcaire",
+      "historique": null,
+      "remarques": null
+    },
+    "geoPoints": [
+      {
+        "canyonId": 23512,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 41.979881,
+        "longitude": 1.07438,
+        "label": null
+      }
+    ],
+    "representativePoint": {
+      "type": "PARKING_AVAL",
+      "latitude": 41.979881,
+      "longitude": 1.07438,
+      "label": null
+    },
+    "bibliography": {
+      "topoguides": [],
+      "maps": [],
+      "resources": [
+        {
+          "id": "resource_b9a16032c7e3a905",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://www.barrancos.org/Tartera.htm",
+          "url": "http://www.barrancos.org/Tartera.htm"
+        },
+        {
+          "id": "resource_ff69e92471733ce3",
+          "kind": "RESOURCE",
+          "resourceType": "WEBSITE",
+          "title": "http://ropewiki.com/Tartera",
+          "url": "http://ropewiki.com/Tartera"
+        }
+      ]
+    },
+    "reglementation": {
+      "hasSpecificRegulation": false,
+      "rules": [],
+      "isForbidden": false
+    }
+  }
+}

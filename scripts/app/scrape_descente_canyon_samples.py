@@ -12,7 +12,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 from urllib.error import HTTPError, URLError
-from urllib.parse import urljoin
+from urllib.parse import urljoin, urlparse
 from urllib.request import Request, urlopen
 
 from bs4 import BeautifulSoup
@@ -34,6 +34,14 @@ MAP_POINT_REGEX = re.compile(
 )
 
 REGULATION_ID_REGEX = re.compile(r"/reglemtexte/(\d+)/")
+CANYON_LINK_REGEX = re.compile(r"/canyoning/canyon/(\d+)/")
+LOCATION_LINK_REGEX = re.compile(
+    r"(?P<href>/canyoning/(?:"
+    r"lieux/\d+/liste-des-lieux\.html|"
+    r"lieu/\d+/[^\"'?#]+\.html|"
+    r"lieu-existe-aussi/\d+/seconde-zone\.html"
+    r"))"
+)
 
 GEO_TYPE_MAP = {
     "parking": "PARKING_AVAL",
@@ -314,7 +322,106 @@ def parse_map_index_ids(raw_body: str) -> list[int]:
     return sorted(set(canyon_ids))
 
 
+def extract_canyon_ids(raw_body: str) -> set[int]:
+    return {
+        int(match.group(1))
+        for match in CANYON_LINK_REGEX.finditer(raw_body)
+    }
+
+
+def normalize_canyoning_path(href: str) -> str | None:
+    if not href:
+        return None
+    parsed = urlparse(urljoin(BASE_URL, href))
+    if parsed.netloc and parsed.netloc != urlparse(BASE_URL).netloc:
+        return None
+    return parsed.path if parsed.path.startswith("/canyoning/") else None
+
+
+def extract_location_paths(raw_body: str) -> set[str]:
+    paths: set[str] = set()
+    for match in LOCATION_LINK_REGEX.finditer(raw_body):
+        path = normalize_canyoning_path(match.group("href"))
+        if path is not None:
+            paths.add(path)
+    return paths
+
+
+def location_id_from_path(path: str) -> str | None:
+    match = re.search(r"/canyoning/(?:lieu|lieux)/(\d+)/", path)
+    return match.group(1) if match else None
+
+
+def is_canyon_list_path(path: str, location_id: str) -> bool:
+    return bool(re.search(rf"/canyoning/lieu/{re.escape(location_id)}/[^/]+\.html$", path))
+
+
+def is_secondary_canyon_list_path(path: str, location_id: str) -> bool:
+    return path == f"/canyoning/lieu-existe-aussi/{location_id}/seconde-zone.html"
+
+
+def extract_country_canyon_listing_paths(raw_body: str, location_id: str) -> set[str]:
+    return {
+        path
+        for path in extract_location_paths(raw_body)
+        if is_canyon_list_path(path, location_id) or is_secondary_canyon_list_path(path, location_id)
+    }
+
+
+def fetch_location_canyon_ids() -> list[int]:
+    root_body = fetch_text(f"{BASE_URL}/canyoning")
+    canyon_ids = extract_canyon_ids(root_body)
+    seed_paths = sorted(extract_location_paths(root_body))
+    listing_paths: set[str] = set()
+    failed_paths: list[str] = []
+
+    for seed_path in seed_paths:
+        location_id = location_id_from_path(seed_path)
+        if location_id is None:
+            continue
+        try:
+            body = fetch_text(f"{BASE_URL}{seed_path}")
+        except Exception as exc:  # noqa: BLE001
+            failed_paths.append(f"{seed_path}: {exc!r}")
+            continue
+
+        canyon_ids.update(extract_canyon_ids(body))
+        if is_canyon_list_path(seed_path, location_id):
+            listing_paths.add(seed_path)
+        listing_paths.update(extract_country_canyon_listing_paths(body, location_id))
+
+    for listing_path in sorted(listing_paths):
+        try:
+            body = fetch_text(f"{BASE_URL}{listing_path}")
+        except Exception as exc:  # noqa: BLE001
+            failed_paths.append(f"{listing_path}: {exc!r}")
+            continue
+        canyon_ids.update(extract_canyon_ids(body))
+
+    print(
+        f"Location crawl: seeds={len(seed_paths)} listings={len(listing_paths)} canyon_ids={len(canyon_ids)} failures={len(failed_paths)}",
+        file=sys.stderr,
+    )
+    if failed_paths:
+        for failure in failed_paths[:10]:
+            print(f"Location crawl failure: {failure}", file=sys.stderr)
+        if len(failed_paths) > 10:
+            print(f"Location crawl failure: ... {len(failed_paths) - 10} more", file=sys.stderr)
+    return sorted(canyon_ids)
+
+
 def fetch_all_canyon_ids() -> list[int]:
+    map_ids = set(parse_map_index_ids(fetch_text(MAP_INDEX_URL)))
+    location_ids = set(fetch_location_canyon_ids())
+    merged_ids = sorted(map_ids | location_ids)
+    print(
+        f"ID sources: map={len(map_ids)} locations={len(location_ids)} merged={len(merged_ids)}",
+        file=sys.stderr,
+    )
+    return merged_ids
+
+
+def fetch_map_canyon_ids() -> list[int]:
     return parse_map_index_ids(fetch_text(MAP_INDEX_URL))
 
 
@@ -1069,17 +1176,35 @@ def write_optimized_dataset(output_dir: Path, optimized: dict[str, Any], shard_s
 
 def write_room_import_dataset(output_dir: Path, room_import: dict[str, Any]) -> None:
     room_dir = output_dir / "room-import"
+    manifest_path = room_dir / "manifest.json"
+    existing_manifest: dict[str, Any] = {}
+    if manifest_path.exists():
+        try:
+            existing_manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+        except json.JSONDecodeError:
+            existing_manifest = {}
+
+    core_tables = {
+        table_name: f"{table_name}.json"
+        for table_name in room_import["tables"].keys()
+    }
+    core_counts = {
+        table_name: len(rows)
+        for table_name, rows in room_import["tables"].items()
+    }
+    tables = dict(existing_manifest.get("tables", {}))
+    tables.update(core_tables)
+    counts = dict(existing_manifest.get("counts", {}))
+    counts.update(core_counts)
+    versions = dict(existing_manifest.get("versions", {}))
+    versions["overlays"] = room_import["generatedAt"]
+
     write_json(room_dir / "manifest.json", {
-        "schemaVersion": room_import["schemaVersion"],
+        "schemaVersion": max(int(existing_manifest.get("schemaVersion", 0)), int(room_import["schemaVersion"])),
         "generatedAt": room_import["generatedAt"],
-        "tables": {
-            table_name: f"{table_name}.json"
-            for table_name in room_import["tables"].keys()
-        },
-        "counts": {
-            table_name: len(rows)
-            for table_name, rows in room_import["tables"].items()
-        },
+        "tables": tables,
+        "counts": counts,
+        "versions": versions,
     })
     for table_name, rows in room_import["tables"].items():
         write_json(room_dir / f"{table_name}.json", rows)
@@ -1167,6 +1292,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Scrape structured descente-canyon sample data")
     parser.add_argument("canyon_ids", nargs="*", type=int)
     parser.add_argument("--all", action="store_true", dest="scrape_all")
+    parser.add_argument("--id-source", choices=("all", "map", "locations"), default="all")
     parser.add_argument("--output-dir", default="offline-data/samples")
     parser.add_argument("--shard-size", type=int, default=250)
     parser.add_argument("--workers", type=int, default=1)
@@ -1179,7 +1305,12 @@ def main() -> None:
 
     output_dir = Path(args.output_dir)
     if args.scrape_all:
-        canyon_ids = fetch_all_canyon_ids()
+        if args.id_source == "map":
+            canyon_ids = fetch_map_canyon_ids()
+        elif args.id_source == "locations":
+            canyon_ids = fetch_location_canyon_ids()
+        else:
+            canyon_ids = fetch_all_canyon_ids()
     else:
         canyon_ids = args.canyon_ids
 
