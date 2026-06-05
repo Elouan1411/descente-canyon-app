@@ -57,7 +57,7 @@ class OnnxDebitPredictor @Inject constructor(
                     val ordinalStandardDeviation = ordinalScore?.let { score ->
                         ordinalStandardDeviation(probabilitiesByLabel, score)
                     }
-                    val level = if (ordinalLowThreshold != null && ordinalScore != null) {
+                    val baseLevel = if (ordinalLowThreshold != null && ordinalScore != null) {
                         when {
                             ordinalScore >= highThreshold -> PredictedDebitLevel.HIGH
                             ordinalScore < ordinalLowThreshold -> PredictedDebitLevel.LOW
@@ -70,6 +70,7 @@ class OnnxDebitPredictor @Inject constructor(
                             else -> PredictedDebitLevel.MEDIUM
                         }
                     }
+                    val level = applyHighRiskOverlay(baseLevel, featureVector)
                     DailyDebitPrediction(
                         date = date,
                         horizonDays = horizonDays,
@@ -81,6 +82,27 @@ class OnnxDebitPredictor @Inject constructor(
                         ordinalStandardDeviation = ordinalStandardDeviation,
                     )
                 }
+            }
+        }
+    }
+
+    private suspend fun applyHighRiskOverlay(
+        baseLevel: PredictedDebitLevel,
+        featureVector: FloatArray,
+    ): PredictedDebitLevel {
+        if (baseLevel == PredictedDebitLevel.HIGH) return baseLevel
+        val overlay = modelStore.getHighRiskOverlay() ?: return baseLevel
+        val inputName = overlay.session.inputNames.firstOrNull() ?: return baseLevel
+        val tensor = OnnxTensor.createTensor(
+            overlay.environment,
+            FloatBuffer.wrap(featureVector),
+            longArrayOf(1, featureVector.size.toLong()),
+        )
+        tensor.use { inputTensor ->
+            overlay.session.run(mapOf(inputName to inputTensor)).use { result ->
+                val probabilitiesByLabel = extractProbabilities(result, overlay.labels)
+                val highProbability = probabilitiesByLabel["HIGH"] ?: return baseLevel
+                return if (highProbability >= overlay.threshold) PredictedDebitLevel.HIGH else baseLevel
             }
         }
     }

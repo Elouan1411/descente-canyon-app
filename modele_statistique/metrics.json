@@ -3,6 +3,16 @@
   "generatedAt": "2026-06-03T11:49:29.756455+00:00",
   "model": "catboost_mobile_ordinal_classifier",
   "targetMode": "six_ordinal",
+  "highRiskOverlay": {
+    "enabled": true,
+    "model": "extra_trees_high_risk_overlay",
+    "artifact": "high_risk_overlay.onnx",
+    "threshold": 0.35,
+    "nEstimators": 32,
+    "minSamplesLeaf": 3,
+    "strictHoldoutHighF1": 0.7186813186813186,
+    "recentDescenteHighF1": 0.7448275862068965
+  },
   "labels": [
     "CORRECT",
     "CRUE",

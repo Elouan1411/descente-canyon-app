@@ -669,6 +669,11 @@ def write_markdown_report(path: Path, report: dict[str, Any], worst_errors: list
 def main() -> None:
     parser = argparse.ArgumentParser(description="Evaluate the embedded app debit model on post-cutoff Descente-Canyon observations")
     parser.add_argument("--cutoff-date", default=DEFAULT_CUTOFF_DATE)
+    parser.add_argument(
+        "--source-filter",
+        default="descente-canyon",
+        help="Observation source to keep. Use 'all' to keep all sources.",
+    )
     parser.add_argument("--observations-path", default="build/debit-pipeline/observations/valid_debit_observations.jsonl")
     parser.add_argument("--model-dir", default="modele_statistique")
     parser.add_argument("--thresholds-path", help="Override thresholds JSON path instead of <model-dir>/thresholds.json")
@@ -706,7 +711,8 @@ def main() -> None:
     watersheds = load_watershed_lookup(Path(args.watersheds_path))
     geo_points = load_geo_points_lookup(Path(args.geo_points_path))
     observations = [row for row in read_jsonl(Path(args.observations_path)) if row.get("date") and row.get("date") > cutoff]
-    observations = [row for row in observations if (row.get("source") or "descente-canyon") == "descente-canyon"]
+    if args.source_filter != "all":
+        observations = [row for row in observations if (row.get("source") or "descente-canyon") == args.source_filter]
     observations = [row for row in observations if row.get("niveau") in LEVEL_TO_THREE]
     observations.sort(key=lambda row: (row["date"], int(row.get("canyonId") or 0), row.get("observationId") or ""))
 
@@ -819,7 +825,7 @@ def main() -> None:
         "schemaVersion": 1,
         "generatedAt": datetime.now(timezone.utc).isoformat(),
         "cutoffDate": cutoff,
-        "source": "descente-canyon",
+        "source": args.source_filter,
         "scenario": "app_like_target_day_weather_before_target_day",
         "weatherArchiveMode": f"training_{args.weather_model}_models_param" if args.include_weather_model_param else "app_default_no_models_param",
         "modelDir": str(model_dir),

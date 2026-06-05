@@ -15,6 +15,7 @@ import fr.descentecanyon.app.domain.model.DebitPredictionInfoSummary
 import fr.descentecanyon.app.domain.model.DebitPredictionPolicy
 import fr.descentecanyon.app.domain.model.DebitThresholds
 import java.io.File
+import java.io.IOException
 import javax.inject.Inject
 import javax.inject.Singleton
 import kotlinx.coroutines.CoroutineDispatcher
@@ -43,6 +44,7 @@ class EmbeddedDebitModelStore @Inject constructor(
     private val staticFeaturesMutex = Mutex()
     private val metricsMutex = Mutex()
     private val sessionMutex = Mutex()
+    private val highRiskOverlayMutex = Mutex()
 
     @Volatile
     private var cachedFeatureSpec: DebitFeatureSpec? = null
@@ -58,6 +60,12 @@ class EmbeddedDebitModelStore @Inject constructor(
 
     @Volatile
     private var cachedSessionHolder: OnnxSessionHolder? = null
+
+    @Volatile
+    private var cachedHighRiskOverlay: HighRiskOverlayHolder? = null
+
+    @Volatile
+    private var highRiskOverlayLoaded: Boolean = false
 
     suspend fun getFeatureSpec(): DebitFeatureSpec {
         cachedFeatureSpec?.let { return it }
@@ -99,10 +107,39 @@ class EmbeddedDebitModelStore @Inject constructor(
         return sessionMutex.withLock {
             cachedSessionHolder?.let { return it }
             withContext(ioDispatcher) {
-                val modelFile = ensureModelFile()
+                val modelFile = ensureAssetFile(MODEL_ASSET_PATH, "model-v${BuildConfig.VERSION_CODE}.onnx")
                 val environment = OrtEnvironment.getEnvironment()
                 val session = environment.createSession(modelFile.absolutePath, OrtSession.SessionOptions())
                 OnnxSessionHolder(environment, session).also { cachedSessionHolder = it }
+            }
+        }
+    }
+
+    suspend fun getHighRiskOverlay(): HighRiskOverlayHolder? {
+        if (highRiskOverlayLoaded) return cachedHighRiskOverlay
+        return highRiskOverlayMutex.withLock {
+            if (highRiskOverlayLoaded) return@withLock cachedHighRiskOverlay
+            withContext(ioDispatcher) {
+                val config = loadOptionalJsonAsset<HighRiskOverlayDto>(HIGH_RISK_OVERLAY_CONFIG_ASSET_PATH)
+                val overlay = if (config?.enabled == true) {
+                    val modelFile = ensureAssetFile(
+                        assetPath = config.modelAssetPath,
+                        targetFileName = "high-risk-overlay-v${BuildConfig.VERSION_CODE}.onnx",
+                    )
+                    val environment = OrtEnvironment.getEnvironment()
+                    val session = environment.createSession(modelFile.absolutePath, OrtSession.SessionOptions())
+                    HighRiskOverlayHolder(
+                        environment = environment,
+                        session = session,
+                        threshold = config.threshold,
+                        labels = config.labels,
+                    )
+                } else {
+                    null
+                }
+                cachedHighRiskOverlay = overlay
+                highRiskOverlayLoaded = true
+                overlay
             }
         }
     }
@@ -114,14 +151,25 @@ class EmbeddedDebitModelStore @Inject constructor(
         return json.decodeFromString(payload)
     }
 
-    private fun ensureModelFile(): File {
+    private suspend inline fun <reified T> loadOptionalJsonAsset(path: String): T? {
+        val payload = withContext(ioDispatcher) {
+            try {
+                context.assets.open(path).bufferedReader().use { it.readText() }
+            } catch (_: IOException) {
+                null
+            }
+        }
+        return payload?.let { json.decodeFromString<T>(it) }
+    }
+
+    private fun ensureAssetFile(assetPath: String, targetFileName: String): File {
         val targetDir = File(context.filesDir, "debit-model-cache")
         if (!targetDir.exists()) {
             targetDir.mkdirs()
         }
-        val targetFile = File(targetDir, "model-v${BuildConfig.VERSION_CODE}.onnx")
+        val targetFile = File(targetDir, targetFileName)
         if (!targetFile.exists() || targetFile.length() == 0L) {
-            context.assets.open(MODEL_ASSET_PATH).use { input ->
+            context.assets.open(assetPath).use { input ->
                 targetFile.outputStream().use { output -> input.copyTo(output) }
             }
         }
@@ -260,12 +308,20 @@ class EmbeddedDebitModelStore @Inject constructor(
         private const val STATIC_FEATURES_ASSET_PATH = "canyon_static_features.json"
         private const val METRICS_ASSET_PATH = "metrics.json"
         private const val MODEL_ASSET_PATH = "model.onnx"
+        private const val HIGH_RISK_OVERLAY_CONFIG_ASSET_PATH = "high_risk_overlay.json"
     }
 }
 
 data class OnnxSessionHolder(
     val environment: OrtEnvironment,
     val session: OrtSession,
+)
+
+data class HighRiskOverlayHolder(
+    val environment: OrtEnvironment,
+    val session: OrtSession,
+    val threshold: Double,
+    val labels: List<String>,
 )
 
 @Serializable
@@ -320,6 +376,14 @@ private data class MetricsDto(
     val testRowCount: Int,
     val topFeatureImportances: List<FeatureImportanceDto> = emptyList(),
     val runtimeLookupMetadata: RuntimeLookupMetadataDto? = null,
+)
+
+@Serializable
+private data class HighRiskOverlayDto(
+    val enabled: Boolean = false,
+    val modelAssetPath: String = "high_risk_overlay.onnx",
+    val threshold: Double,
+    val labels: List<String> = listOf("NOT_HIGH", "HIGH"),
 )
 
 @Serializable
