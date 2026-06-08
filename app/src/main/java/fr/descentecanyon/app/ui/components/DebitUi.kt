@@ -1,6 +1,9 @@
 package fr.descentecanyon.app.ui.components
 
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
+import fr.descentecanyon.app.R
 import fr.descentecanyon.app.domain.model.NiveauDebit
 import fr.descentecanyon.app.ui.theme.DebitCorrect
 import fr.descentecanyon.app.ui.theme.DebitCrue
@@ -18,4 +21,15 @@ fun debitLevelColor(niveau: NiveauDebit): Color = when (niveau) {
     NiveauDebit.TRES_GROS -> DebitTresGros
     NiveauDebit.CRUE -> DebitCrue
     NiveauDebit.INCONNU -> DebitInconnu
+}
+
+@Composable
+fun debitLevelLabel(niveau: NiveauDebit): String = when (niveau) {
+    NiveauDebit.SEC -> stringResource(R.string.debit_level_sec)
+    NiveauDebit.FILET -> stringResource(R.string.debit_level_filet)
+    NiveauDebit.CORRECT -> stringResource(R.string.debit_level_correct)
+    NiveauDebit.GROS -> stringResource(R.string.debit_level_gros)
+    NiveauDebit.TRES_GROS -> stringResource(R.string.debit_level_tres_gros)
+    NiveauDebit.CRUE -> stringResource(R.string.debit_level_crue)
+    NiveauDebit.INCONNU -> stringResource(R.string.debit_level_inconnu)
 }

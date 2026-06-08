@@ -53,8 +53,8 @@ internal object SearchParser {
 
     private fun countryNameFromFlagClass(className: String): String? {
         val code = className.substringAfter("d-", "").takeIf { it.length == 2 } ?: return null
-        return Locale("", code.uppercase(Locale.ROOT)).getDisplayCountry(Locale.FRENCH)
+        return Locale("", code.uppercase(Locale.ROOT)).getDisplayCountry(Locale.getDefault())
             .takeIf { it.isNotBlank() }
-            ?.replaceFirstChar { char -> if (char.isLowerCase()) char.titlecase(Locale.FRENCH) else char.toString() }
+            ?.replaceFirstChar { char -> if (char.isLowerCase()) char.titlecase(Locale.getDefault()) else char.toString() }
     }
 }

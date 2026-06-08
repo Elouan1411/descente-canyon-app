@@ -240,7 +240,7 @@ fun DebitBadge(
         border = if (isCrue) BorderStroke(1.dp, Color.White.copy(alpha = 0.45f)) else null,
     ) {
         Text(
-            text = niveau.label,
+            text = debitLevelLabel(niveau),
             style = MaterialTheme.typography.labelSmall,
             fontWeight = FontWeight.SemiBold,
             color = if (isCrue) Color.White else color,

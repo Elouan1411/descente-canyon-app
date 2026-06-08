@@ -1,9 +1,12 @@
 package fr.descentecanyon.app.ui.search
 
 import androidx.lifecycle.SavedStateHandle
+import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
+import dagger.hilt.android.qualifiers.ApplicationContext
+import fr.descentecanyon.app.R
 import fr.descentecanyon.app.di.DefaultDispatcher
 import fr.descentecanyon.app.domain.model.CanyonSearchItem
 import fr.descentecanyon.app.domain.model.SearchCriteria
@@ -68,6 +71,7 @@ data class SearchUiState(
 @HiltViewModel
 @OptIn(FlowPreview::class, ExperimentalCoroutinesApi::class)
 class SearchViewModel @Inject constructor(
+    @param:ApplicationContext private val context: Context,
     private val searchCanyonsUseCase: SearchCanyonsUseCase,
     private val savedStateHandle: SavedStateHandle,
     @param:DefaultDispatcher private val searchDispatcher: CoroutineDispatcher,
@@ -183,7 +187,7 @@ class SearchViewModel @Inject constructor(
                         ),
                         isLoading = false,
                         isSearching = false,
-                        error = throwable.message ?: "Impossible de charger le catalogue local de recherche.",
+                        error = context.getString(R.string.search_catalog_load_error),
                         resultViewMode = resultViewModeFlow.value,
                         hasLocationPermission = locationFlow.value.hasLocationPermission,
                         hasRequestedLocationPermission = locationFlow.value.hasRequestedLocationPermission,
@@ -292,7 +296,7 @@ class SearchViewModel @Inject constructor(
     fun onLocationUnavailable() {
         locationFlow.update { it.copy(isLocating = false) }
         _uiState.update {
-            it.copy(error = "Impossible d'obtenir une position récente. Vérifiez que la localisation est activée.")
+            it.copy(error = context.getString(R.string.location_recent_unavailable))
         }
     }
 

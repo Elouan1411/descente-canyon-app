@@ -5,6 +5,7 @@ import ai.onnxruntime.OrtSession
 import android.content.Context
 import dagger.hilt.android.qualifiers.ApplicationContext
 import fr.descentecanyon.app.BuildConfig
+import fr.descentecanyon.app.R
 import fr.descentecanyon.app.di.IoDispatcher
 import fr.descentecanyon.app.domain.model.CanyonStaticFeatureSet
 import fr.descentecanyon.app.domain.model.DebitFeatureDefinition
@@ -247,46 +248,46 @@ class EmbeddedDebitModelStore @Inject constructor(
         return when {
             startsWith("canyonPrior") || this == "canyonPastObsCount" -> {
                 DebitPredictionDriver(
-                    title = "Observations passées du canyon",
-                    description = "Quand des observations passées existent pour ce canyon, elles aident le modèle à mieux situer son comportement habituel.",
+                    title = context.getString(R.string.prediction_driver_canyon_history_title),
+                    description = context.getString(R.string.prediction_driver_canyon_history_description),
                 )
             }
             startsWith("massifPrior") || startsWith("regionPrior") || startsWith("globalPrior") ||
                 contains("PastObsCount") -> {
                 DebitPredictionDriver(
-                    title = "Contexte du massif et de la région",
-                    description = "Si le canyon manque d'observations propres, le modèle s'appuie davantage sur des canyons proches ou similaires.",
+                    title = context.getString(R.string.prediction_driver_area_context_title),
+                    description = context.getString(R.string.prediction_driver_area_context_description),
                 )
             }
             startsWith("precip_") || startsWith("wet_days_") || startsWith("days_since_precip") ||
                 startsWith("antecedent_precipitation_index") || startsWith("precipitation_hours") -> {
                 DebitPredictionDriver(
-                    title = "Pluie récente et cumuls",
-                    description = "Les précipitations des derniers jours et des dernières semaines comptent beaucoup dans le niveau estimé.",
+                    title = context.getString(R.string.prediction_driver_recent_rain_title),
+                    description = context.getString(R.string.prediction_driver_recent_rain_description),
                 )
             }
             startsWith("temperature") || startsWith("positive_degree_days") || startsWith("snowfall") || startsWith("rain") -> {
                 DebitPredictionDriver(
-                    title = "Température, pluie et neige",
-                    description = "La température moyenne, la pluie liquide et la neige récente aident à distinguer des situations hydrologiques différentes.",
+                    title = context.getString(R.string.prediction_driver_temperature_snow_title),
+                    description = context.getString(R.string.prediction_driver_temperature_snow_description),
                 )
             }
             this == "upstreamCatchmentAreaKm2" || this == "hasWatershed" -> {
                 DebitPredictionDriver(
-                    title = "Bassin versant",
-                    description = "La surface du bassin versant aide à relier les pluies reçues à la réponse probable du canyon.",
+                    title = context.getString(R.string.prediction_driver_watershed_title),
+                    description = context.getString(R.string.prediction_driver_watershed_description),
                 )
             }
             startsWith("month") -> {
                 DebitPredictionDriver(
-                    title = "Saison",
-                    description = "La période de l'année influence le comportement moyen du canyon, notamment via la fonte et les régimes de pluie.",
+                    title = context.getString(R.string.prediction_driver_season_title),
+                    description = context.getString(R.string.prediction_driver_season_description),
                 )
             }
             startsWith("historical") -> {
                 DebitPredictionDriver(
-                    title = "Signaux historiques atypiques",
-                    description = "Certains canyons réagissent différemment à cause d'effets régulés ou de signatures de fonte observés dans les données passées.",
+                    title = context.getString(R.string.prediction_driver_historical_signals_title),
+                    description = context.getString(R.string.prediction_driver_historical_signals_description),
                 )
             }
             else -> null

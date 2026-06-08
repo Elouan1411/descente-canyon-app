@@ -1,9 +1,12 @@
 package fr.descentecanyon.app.ui.canyon
 
+import android.content.Context
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
+import dagger.hilt.android.qualifiers.ApplicationContext
+import fr.descentecanyon.app.R
 import fr.descentecanyon.app.data.network.ConnectivityObserver
 import fr.descentecanyon.app.domain.model.CanyonDetail
 import fr.descentecanyon.app.domain.model.CanyonDebitPredictions
@@ -61,6 +64,7 @@ data class CanyonDetailUiState(
 
 @HiltViewModel
 class CanyonDetailViewModel @Inject constructor(
+    @param:ApplicationContext private val context: Context,
     savedStateHandle: SavedStateHandle,
     private val getCanyonPreviewUseCase: GetCanyonPreviewUseCase,
     private val getCanyonDetailUseCase: GetCanyonDetailUseCase,
@@ -477,7 +481,7 @@ class CanyonDetailViewModel @Inject constructor(
                                 }
                             ),
                             downloadingPhotoIds = state.downloadingPhotoIds - photoId,
-                            transientMessage = "Photo téléchargée",
+                            transientMessage = context.getString(R.string.photo_downloaded),
                         )
                     }
                 },
@@ -557,51 +561,51 @@ class CanyonDetailViewModel @Inject constructor(
     }
 
     private fun Throwable.toFriendlyCanyonDetailMessage(): String {
-        return "Impossible de charger cette fiche canyon pour le moment."
+        return context.getString(R.string.canyon_detail_load_error)
     }
 
     private fun Throwable.toFriendlyWeatherMessage(): String {
         return if (isLikelyNetworkIssue()) {
-            "Impossible de récupérer la météo pour le moment."
+            context.getString(R.string.weather_load_error_network)
         } else {
-            "Météo indisponible pour le moment."
+            context.getString(R.string.weather_unavailable_now)
         }
     }
 
     private fun Throwable.toFriendlyEdfStatusMessage(): String {
         return if (isLikelyNetworkIssue()) {
-            "Impossible de récupérer les conditions EDF pour le moment."
+            context.getString(R.string.edf_status_load_error_network)
         } else {
-            "Conditions EDF indisponibles pour le moment."
+            context.getString(R.string.edf_status_unavailable_now)
         }
     }
 
     private fun Throwable.toFriendlyPredictionMessage(): String {
         return if (isLikelyNetworkIssue()) {
-            "Impossible de calculer l'estimation du débit pour le moment."
+            context.getString(R.string.prediction_load_error_network)
         } else {
-            "Estimation du débit indisponible pour le moment."
+            context.getString(R.string.prediction_unavailable_now)
         }
     }
 
     private fun Throwable.toFriendlyDebitsMessage(): String {
         return if (isLikelyNetworkIssue()) {
-            "Impossible de charger les débits pour le moment."
+            context.getString(R.string.debits_load_error_network)
         } else {
-            "Débits indisponibles pour le moment."
+            context.getString(R.string.debits_unavailable_now)
         }
     }
 
     private fun Throwable.toFriendlyPhotosMessage(): String {
         return if (isLikelyNetworkIssue()) {
-            "Impossible de charger les photos pour le moment."
+            context.getString(R.string.photos_load_error_network)
         } else {
-            "Photos indisponibles pour le moment."
+            context.getString(R.string.photos_unavailable_now)
         }
     }
 
     private fun Throwable.toFriendlyPhotoMessage(): String {
-        return "Impossible de charger la photo pour le moment."
+        return context.getString(R.string.photo_load_error_now)
     }
 
     private fun Throwable.isLikelyNetworkIssue(): Boolean {

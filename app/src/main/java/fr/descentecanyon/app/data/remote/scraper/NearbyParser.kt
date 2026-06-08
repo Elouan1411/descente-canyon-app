@@ -109,20 +109,9 @@ internal object NearbyParser {
 }
 
 private fun String.toDisplayCountryName(): String {
-    val specialCases = mapOf(
-        "RE" to "Reunion",
-        "MQ" to "Martinique",
-        "GP" to "Guadeloupe",
-        "GF" to "Guyane",
-        "NC" to "Nouvelle-Caledonie",
-        "PF" to "Polynesie francaise",
-        "YT" to "Mayotte",
-    )
-    specialCases[this]?.let { return it }
-
     val locale = Locale("", this)
-    return locale.getDisplayCountry(Locale.FRENCH)
+    return locale.getDisplayCountry(Locale.getDefault())
         .takeIf { it.isNotBlank() }
-        ?.replaceFirstChar { char -> if (char.isLowerCase()) char.titlecase(Locale.FRENCH) else char.toString() }
+        ?.replaceFirstChar { char -> if (char.isLowerCase()) char.titlecase(Locale.getDefault()) else char.toString() }
         ?: this
 }

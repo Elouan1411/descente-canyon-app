@@ -25,6 +25,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.produceState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavBackStackEntry
 import androidx.navigation.NavDestination.Companion.hasRoute
@@ -33,6 +34,7 @@ import androidx.navigation.NavOptionsBuilder
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import dagger.hilt.android.AndroidEntryPoint
+import fr.descentecanyon.app.R
 import fr.descentecanyon.app.perf.PerformanceTrace
 import fr.descentecanyon.app.startup.AppStartupCoordinator
 import fr.descentecanyon.app.startup.StartupLaunchMode
@@ -81,7 +83,7 @@ private fun AppStartupScreen(appStartupCoordinator: AppStartupCoordinator) {
                 }
             }
         }.getOrElse { throwable ->
-            StartupUiState.Error(throwable.message ?: "Initialisation impossible")
+            StartupUiState.Error(throwable.message)
         }
     }
 
@@ -119,7 +121,7 @@ private fun AppStartupScreen(appStartupCoordinator: AppStartupCoordinator) {
                 modifier = Modifier.fillMaxSize(),
                 contentAlignment = Alignment.Center,
             ) {
-                Text(state.message)
+                Text(state.message ?: stringResource(R.string.startup_initialization_error))
             }
         }
     }
@@ -128,7 +130,7 @@ private fun AppStartupScreen(appStartupCoordinator: AppStartupCoordinator) {
 private sealed interface StartupUiState {
     data object Resolving : StartupUiState
     data class AppVisible(val isBackgroundInitializing: Boolean) : StartupUiState
-    data class Error(val message: String) : StartupUiState
+    data class Error(val message: String?) : StartupUiState
 }
 
 @Composable
@@ -156,9 +158,10 @@ private fun MainScreen() {
                         windowInsets = NavigationBarDefaults.windowInsets,
                     ) {
                         BottomNavItem.entries.forEach { item ->
+                            val itemLabel = stringResource(item.labelResId)
                             NavigationBarItem(
-                                icon = { Icon(item.icon, contentDescription = item.label) },
-                                label = { Text(item.label) },
+                                icon = { Icon(item.icon, contentDescription = itemLabel) },
+                                label = { Text(itemLabel) },
                                 colors = NavigationBarItemDefaults.colors(
                                     selectedIconColor = MaterialTheme.colorScheme.onPrimaryContainer,
                                     selectedTextColor = MaterialTheme.colorScheme.onSurface,

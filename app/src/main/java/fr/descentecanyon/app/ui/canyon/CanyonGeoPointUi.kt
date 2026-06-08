@@ -1,6 +1,11 @@
 package fr.descentecanyon.app.ui.canyon
 
+import android.content.Context
+import androidx.annotation.StringRes
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
+import fr.descentecanyon.app.R
 import fr.descentecanyon.app.domain.model.GeoPoint
 import fr.descentecanyon.app.domain.model.GeoPointType
 import fr.descentecanyon.app.ui.theme.CanyonBlue
@@ -11,36 +16,54 @@ import fr.descentecanyon.app.ui.theme.DebitInconnu
 import fr.descentecanyon.app.ui.theme.RockBrownLight
 import java.util.Locale
 
-fun GeoPoint.displayName(): String = when (type) {
-    GeoPointType.PARKING_AMONT -> normalizedTitle() ?: "Parking Amont"
-    GeoPointType.PARKING_AVAL -> normalizedTitle() ?: "Parking Aval"
-    GeoPointType.ENTREE -> normalizedTitle() ?: "Départ du canyon"
-    GeoPointType.SORTIE -> normalizedTitle() ?: "Sortie du canyon"
-    GeoPointType.POINT_REMARQUABLE -> normalizedTitle() ?: "Point remarquable"
-    GeoPointType.ECHAPPATOIRE -> normalizedTitle() ?: "Échappatoire"
-    GeoPointType.UNKNOWN -> normalizedTitle() ?: "Point GPS"
+@Composable
+fun GeoPoint.displayName(): String = normalizedTitleResource()?.let { stringResource(it) } ?: normalizedRawTitle() ?: when (type) {
+    GeoPointType.PARKING_AMONT -> stringResource(R.string.geo_point_parking_upstream)
+    GeoPointType.PARKING_AVAL -> stringResource(R.string.geo_point_parking_downstream)
+    GeoPointType.ENTREE -> stringResource(R.string.geo_point_entry)
+    GeoPointType.SORTIE -> stringResource(R.string.geo_point_exit)
+    GeoPointType.POINT_REMARQUABLE -> stringResource(R.string.geo_point_remarkable)
+    GeoPointType.ECHAPPATOIRE -> stringResource(R.string.geo_point_escape)
+    GeoPointType.UNKNOWN -> stringResource(R.string.geo_point_gps)
 }
 
 fun GeoPoint.displaySubtitle(): String? {
     return remark?.trim()?.takeIf { it.isNotBlank() }
 }
 
-fun GeoPoint.navigationLabel(): String {
-    return displayName()
+fun GeoPoint.navigationLabel(context: Context): String {
+    return normalizedTitleResource()?.let(context::getString) ?: normalizedRawTitle() ?: context.getString(type.defaultTitleResource())
 }
 
-private fun GeoPoint.normalizedTitle(): String? {
+@StringRes
+private fun GeoPoint.normalizedTitleResource(): Int? {
     val rawTitle = title?.trim()?.takeIf { it.isNotBlank() } ?: return null
     return when (rawTitle.lowercase(Locale.FRENCH)) {
-        "parking amont" -> "Parking Amont"
-        "parking aval" -> "Parking Aval"
-        "parking" -> "Parking"
-        "départ du canyon", "depart du canyon" -> "Départ du canyon"
-        "sortie du canyon" -> "Sortie du canyon"
-        "point remarquable de l'approche ou du retour" -> "Point remarquable de l'approche ou du retour"
-        "point remarquable à l'intérieur du canyon", "point remarquable a l'interieur du canyon" -> "Point remarquable à l'intérieur du canyon"
-        else -> rawTitle.replaceFirstChar { char -> if (char.isLowerCase()) char.titlecase(Locale.FRENCH) else char.toString() }
+        "parking amont" -> R.string.geo_point_parking_upstream
+        "parking aval" -> R.string.geo_point_parking_downstream
+        "parking" -> R.string.geo_point_parking
+        "départ du canyon", "depart du canyon" -> R.string.geo_point_entry
+        "sortie du canyon" -> R.string.geo_point_exit
+        "point remarquable de l'approche ou du retour" -> R.string.geo_point_remarkable_approach_return
+        "point remarquable à l'intérieur du canyon", "point remarquable a l'interieur du canyon" -> R.string.geo_point_remarkable_inside
+        else -> null
     }
+}
+
+private fun GeoPoint.normalizedRawTitle(): String? {
+    val rawTitle = title?.trim()?.takeIf { it.isNotBlank() } ?: return null
+    return rawTitle.replaceFirstChar { char -> if (char.isLowerCase()) char.titlecase(Locale.getDefault()) else char.toString() }
+}
+
+@StringRes
+private fun GeoPointType.defaultTitleResource(): Int = when (this) {
+    GeoPointType.PARKING_AMONT -> R.string.geo_point_parking_upstream
+    GeoPointType.PARKING_AVAL -> R.string.geo_point_parking_downstream
+    GeoPointType.ENTREE -> R.string.geo_point_entry
+    GeoPointType.SORTIE -> R.string.geo_point_exit
+    GeoPointType.POINT_REMARQUABLE -> R.string.geo_point_remarkable
+    GeoPointType.ECHAPPATOIRE -> R.string.geo_point_escape
+    GeoPointType.UNKNOWN -> R.string.geo_point_gps
 }
 
 fun GeoPointType.navigationPriority(): Int = when (this) {

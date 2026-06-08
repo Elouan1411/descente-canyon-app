@@ -1,8 +1,11 @@
 package fr.descentecanyon.app.ui.canyon
 
+import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
+import dagger.hilt.android.qualifiers.ApplicationContext
+import fr.descentecanyon.app.R
 import fr.descentecanyon.app.data.repository.EmbeddedDebitModelStore
 import fr.descentecanyon.app.domain.model.DebitPredictionInfoSummary
 import javax.inject.Inject
@@ -20,6 +23,7 @@ data class DebitPredictionInfoUiState(
 
 @HiltViewModel
 class DebitPredictionInfoViewModel @Inject constructor(
+    @param:ApplicationContext private val context: Context,
     private val embeddedDebitModelStore: EmbeddedDebitModelStore,
 ) : ViewModel() {
 
@@ -43,7 +47,7 @@ class DebitPredictionInfoViewModel @Inject constructor(
                         it.copy(
                             isLoading = false,
                             summary = null,
-                            error = throwable.message ?: "Informations indisponibles",
+                            error = throwable.message ?: context.getString(R.string.prediction_info_unavailable),
                         )
                     }
                 }

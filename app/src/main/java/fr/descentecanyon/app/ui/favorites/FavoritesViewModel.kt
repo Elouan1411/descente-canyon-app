@@ -1,8 +1,11 @@
 package fr.descentecanyon.app.ui.favorites
 
+import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
+import dagger.hilt.android.qualifiers.ApplicationContext
+import fr.descentecanyon.app.R
 import fr.descentecanyon.app.domain.model.CanyonSummary
 import fr.descentecanyon.app.domain.repository.FavoritesRepository
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -20,6 +23,7 @@ data class FavoritesUiState(
 
 @HiltViewModel
 class FavoritesViewModel @Inject constructor(
+    @param:ApplicationContext private val context: Context,
     private val favoritesRepository: FavoritesRepository,
 ) : ViewModel() {
 
@@ -51,7 +55,7 @@ class FavoritesViewModel @Inject constructor(
                 favoritesRepository.removeFavorite(canyonId)
             }.onFailure { throwable ->
                 _uiState.update {
-                    it.copy(error = throwable.message ?: "Impossible de retirer ce favori")
+                    it.copy(error = context.getString(R.string.favorite_remove_error))
                 }
             }
         }

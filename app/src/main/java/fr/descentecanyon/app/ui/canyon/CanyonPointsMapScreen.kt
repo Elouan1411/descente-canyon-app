@@ -75,7 +75,7 @@ fun CanyonPointsMapScreen(
         contentWindowInsets = WindowInsets(0, 0, 0, 0),
         topBar = {
             CompactAppBar(
-                title = uiState.canyonDetail?.canyon?.nom ?: "Canyon #$canyonId",
+                title = uiState.canyonDetail?.canyon?.nom ?: stringResource(R.string.canyon_fallback_title, canyonId),
                 navigation = {
                     IconButton(onClick = onBackClick) {
                         Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = stringResource(R.string.back))
@@ -96,7 +96,7 @@ fun CanyonPointsMapScreen(
                 contentPadding = contentPadding,
                 modifier = Modifier.padding(innerPadding),
                 onNavigate = { point ->
-                    val label = Uri.encode(point.navigationLabel())
+                    val label = Uri.encode(point.navigationLabel(context))
                     val uri = Uri.parse("geo:${point.latitude},${point.longitude}?q=${point.latitude},${point.longitude}($label)")
                     context.startActivity(Intent(Intent.ACTION_VIEW, uri))
                 },
@@ -105,7 +105,7 @@ fun CanyonPointsMapScreen(
             else -> Box(
                 modifier = Modifier.fillMaxSize().padding(innerPadding),
                 contentAlignment = Alignment.Center,
-            ) { Text(uiState.error ?: "Erreur") }
+            ) { Text(uiState.error ?: stringResource(R.string.error_generic)) }
         }
     }
 }
@@ -117,14 +117,15 @@ private fun CanyonPointsMapContent(
     contentPadding: PaddingValues,
     modifier: Modifier = Modifier,
 ) {
+    val context = LocalContext.current
     val watershed = detail.watershed
     val hasWatershedPolygon = !watershed?.geometryJson.isNullOrBlank()
     var showWatershed by rememberSaveable(detail.canyon.id) { mutableStateOf(false) }
-    val markers = remember(detail.geoPoints) {
+    val markers = remember(detail.geoPoints, context) {
         detail.geoPoints.mapIndexed { index, point ->
             fr.descentecanyon.app.domain.model.CanyonSummary(
                 id = detail.canyon.id * 10 + index,
-                nom = point.navigationLabel(),
+                nom = point.navigationLabel(context),
                 pays = detail.canyon.pays,
                 cotation = detail.canyon.cotation,
                 url = detail.canyon.url,

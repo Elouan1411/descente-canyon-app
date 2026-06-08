@@ -182,7 +182,7 @@ fun CanyonDetailScreen(
         contentWindowInsets = WindowInsets(0, 0, 0, 0),
         topBar = {
             CompactAppBar(
-                title = uiState.canyonDetail?.canyon?.nom ?: "Canyon #$canyonId",
+                title = uiState.canyonDetail?.canyon?.nom ?: stringResource(R.string.canyon_fallback_title, canyonId),
                 navigation = {
                     IconButton(onClick = onBackClick) {
                         Icon(
@@ -1562,11 +1562,12 @@ private fun CanyonGeoPointsMapAndList(
     onNavigate: (GeoPoint) -> Unit,
     mapHeight: androidx.compose.ui.unit.Dp,
 ) {
-    val markers = remember(detail.geoPoints) {
+    val context = LocalContext.current
+    val markers = remember(detail.geoPoints, context) {
         detail.geoPoints.mapIndexed { index, point ->
             fr.descentecanyon.app.domain.model.CanyonSummary(
                 id = detail.canyon.id * 10 + index,
-                nom = point.navigationLabel(),
+                nom = point.navigationLabel(context),
                 pays = detail.canyon.pays,
                 cotation = detail.canyon.cotation,
                 url = detail.canyon.url,
@@ -1724,7 +1725,7 @@ private fun openNavigation(
     context: android.content.Context,
     point: GeoPoint,
 ) {
-    val label = Uri.encode(point.navigationLabel())
+    val label = Uri.encode(point.navigationLabel(context))
     val uri = Uri.parse("geo:${point.latitude},${point.longitude}?q=${point.latitude},${point.longitude}($label)")
     context.startActivity(Intent(Intent.ACTION_VIEW, uri))
 }

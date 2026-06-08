@@ -978,7 +978,7 @@ private fun drawableToBitmap(
 private fun AnnotationMarker.toMarkerBitmap(context: android.content.Context): Bitmap {
     return when (this) {
         is AnnotationMarker.Canyon -> drawableToBitmap(context, canyon.markerIconRes())
-        is AnnotationMarker.User -> createMarkerBitmap("Moi", 0xFF111827.toInt())
+        is AnnotationMarker.User -> createMarkerBitmap(context.getString(R.string.map_user_marker_label), 0xFF111827.toInt())
     }
 }
 
@@ -1004,7 +1004,7 @@ private fun AnnotationMarker.toMarkerOptions(iconFactory: IconFactory, context: 
 
         is AnnotationMarker.User -> MarkerOptions()
             .position(LatLng(latitude, longitude))
-            .title("Votre position")
+            .title(context.getString(R.string.map_user_position_title))
             .snippet("user")
             .applyMarkerBitmap(iconFactory, this, context)
     }

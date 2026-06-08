@@ -1,9 +1,12 @@
 package fr.descentecanyon.app.ui.map
 
+import android.content.Context
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
+import dagger.hilt.android.qualifiers.ApplicationContext
+import fr.descentecanyon.app.R
 import fr.descentecanyon.app.domain.model.CanyonSummary
 import fr.descentecanyon.app.domain.model.toSummary
 import fr.descentecanyon.app.domain.usecase.SearchCanyonsUseCase
@@ -40,6 +43,7 @@ data class MapCameraState(
 
 @HiltViewModel
 class MapViewModel @Inject constructor(
+    @param:ApplicationContext private val context: Context,
     private val savedStateHandle: SavedStateHandle,
     searchCanyonsUseCase: SearchCanyonsUseCase,
 ) : ViewModel() {
@@ -74,7 +78,7 @@ class MapViewModel @Inject constructor(
                     _uiState.update {
                         it.copy(
                             isLoading = false,
-                            error = throwable.message ?: "Impossible de charger la carte.",
+                            error = context.getString(R.string.map_load_error),
                         )
                     }
                 }
@@ -162,7 +166,7 @@ class MapViewModel @Inject constructor(
         _uiState.update {
             it.copy(
                 isLocating = false,
-                transientMessage = "Impossible d'obtenir une position récente. Vérifiez que la localisation est activée.",
+                transientMessage = context.getString(R.string.location_recent_unavailable),
             )
         }
     }

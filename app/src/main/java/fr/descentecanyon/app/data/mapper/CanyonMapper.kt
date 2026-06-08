@@ -107,24 +107,21 @@ fun CanyonEntity.toDomain(): Canyon = Canyon(
 
 internal fun String.normalizeCountryName(): String {
     val normalized = normalizeForSearch()
-    if (normalized == "france espagne") return "France, Espagne"
+    if (normalized == "france espagne") {
+        return listOf("FR", "ES")
+            .map { Locale("", it).getDisplayCountry(Locale.getDefault()) }
+            .filter { it.isNotBlank() }
+            .joinToString(", ") { country ->
+                country.replaceFirstChar { char -> if (char.isLowerCase()) char.titlecase(Locale.getDefault()) else char.toString() }
+            }
+            .ifBlank { "France, Espagne" }
+    }
     if (length !in 2..3) return trim()
 
     val code = uppercase()
-    val specialCases = mapOf(
-        "RE" to "Reunion",
-        "MQ" to "Martinique",
-        "GP" to "Guadeloupe",
-        "GF" to "Guyane",
-        "NC" to "Nouvelle-Caledonie",
-        "PF" to "Polynesie francaise",
-        "YT" to "Mayotte",
-    )
-    specialCases[code]?.let { return it }
-
-    return Locale("", code).getDisplayCountry(Locale.FRENCH)
+    return Locale("", code).getDisplayCountry(Locale.getDefault())
         .takeIf { it.isNotBlank() }
-        ?.replaceFirstChar { char -> if (char.isLowerCase()) char.titlecase(Locale.FRENCH) else char.toString() }
+        ?.replaceFirstChar { char -> if (char.isLowerCase()) char.titlecase(Locale.getDefault()) else char.toString() }
         ?: trim()
 }
 

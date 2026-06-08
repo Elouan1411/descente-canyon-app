@@ -1,9 +1,12 @@
 package fr.descentecanyon.app.ui.interest
 
+import android.content.Context
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
+import dagger.hilt.android.qualifiers.ApplicationContext
+import fr.descentecanyon.app.R
 import fr.descentecanyon.app.domain.model.AuthState
 import fr.descentecanyon.app.domain.model.InterestRatingSessionRequiredException
 import fr.descentecanyon.app.domain.model.InterestRatingSubmission
@@ -37,6 +40,7 @@ data class InterestRatingFormUiState(
 
 @HiltViewModel
 class InterestRatingFormViewModel @Inject constructor(
+    @param:ApplicationContext private val context: Context,
     savedStateHandle: SavedStateHandle,
     private val authRepository: AuthRepository,
     private val getCanyonInterestRatingUseCase: GetCanyonInterestRatingUseCase,
@@ -98,7 +102,7 @@ class InterestRatingFormViewModel @Inject constructor(
                     }
                 },
                 onFailure = { throwable ->
-                    handleFailure(throwable, defaultMessage = "Impossible de charger votre note.", isLoading = false)
+                    handleFailure(throwable, defaultMessage = context.getString(R.string.interest_rating_load_error), isLoading = false)
                 },
             )
         }
@@ -112,7 +116,7 @@ class InterestRatingFormViewModel @Inject constructor(
         val state = _uiState.value
         if (!state.isConnected) {
             _uiState.update {
-                it.copy(loginRequiredMessage = "Connecte-toi à ton compte Descente-Canyon avant de noter ce canyon.")
+                it.copy(loginRequiredMessage = context.getString(R.string.interest_rating_login_required))
             }
             return
         }
@@ -130,13 +134,13 @@ class InterestRatingFormViewModel @Inject constructor(
                         it.copy(
                             isSubmitting = false,
                             personalRating = state.ratingTenths / 10f,
-                            transientMessage = "Note enregistrée",
+                            transientMessage = context.getString(R.string.interest_rating_saved),
                             submitted = true,
                         )
                     }
                 },
                 onFailure = { throwable ->
-                    handleFailure(throwable, defaultMessage = "Impossible d'enregistrer la note.", isSubmitting = false)
+                    handleFailure(throwable, defaultMessage = context.getString(R.string.interest_rating_save_error), isSubmitting = false)
                 },
             )
         }
@@ -156,8 +160,8 @@ class InterestRatingFormViewModel @Inject constructor(
             it.copy(
                 isLoading = isLoading,
                 isSubmitting = isSubmitting,
-                error = throwable.message ?: defaultMessage,
-                loginRequiredMessage = if (requiresLogin) throwable.message else null,
+                error = if (requiresLogin) context.getString(R.string.interest_rating_login_required) else defaultMessage,
+                loginRequiredMessage = if (requiresLogin) context.getString(R.string.interest_rating_login_required) else null,
             )
         }
     }

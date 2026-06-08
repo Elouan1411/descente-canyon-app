@@ -1,9 +1,12 @@
 package fr.descentecanyon.app.ui.debit
 
+import android.content.Context
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
+import dagger.hilt.android.qualifiers.ApplicationContext
+import fr.descentecanyon.app.R
 import fr.descentecanyon.app.domain.model.AirTemperature
 import fr.descentecanyon.app.domain.model.AuthState
 import fr.descentecanyon.app.domain.model.DebitSubmission
@@ -45,6 +48,7 @@ data class DebitFormUiState(
 
 @HiltViewModel
 class DebitFormViewModel @Inject constructor(
+    @param:ApplicationContext private val context: Context,
     savedStateHandle: SavedStateHandle,
     private val authRepository: AuthRepository,
     private val submitDebitUseCase: SubmitDebitUseCase,
@@ -138,19 +142,19 @@ class DebitFormViewModel @Inject constructor(
 
         when {
             observerName.isBlank() -> {
-                _uiState.update { it.copy(error = "Le nom est obligatoire.") }
+                _uiState.update { it.copy(error = context.getString(R.string.debit_observer_name_required)) }
                 return
             }
             !state.isConnected && observerEmail == null -> {
-                _uiState.update { it.copy(error = "L'e-mail est obligatoire hors connexion.") }
+                _uiState.update { it.copy(error = context.getString(R.string.debit_observer_email_required_offline)) }
                 return
             }
             observationType == null -> {
-                _uiState.update { it.copy(error = "Le type d'observation est obligatoire.") }
+                _uiState.update { it.copy(error = context.getString(R.string.debit_observation_type_required)) }
                 return
             }
             debitLevel == null -> {
-                _uiState.update { it.copy(error = "Le débit est obligatoire.") }
+                _uiState.update { it.copy(error = context.getString(R.string.debit_level_required)) }
                 return
             }
         }
@@ -176,8 +180,8 @@ class DebitFormViewModel @Inject constructor(
                         it.copy(
                             isSubmitting = false,
                             transientMessage = when (status) {
-                                DebitSubmissionStatus.SUBMITTED -> "Débit envoyé"
-                                DebitSubmissionStatus.QUEUED_OFFLINE -> "Débit enregistré hors ligne"
+                                DebitSubmissionStatus.SUBMITTED -> context.getString(R.string.debit_submission_sent)
+                                DebitSubmissionStatus.QUEUED_OFFLINE -> context.getString(R.string.debit_submission_saved_offline)
                             },
                             lastSubmissionStatus = status,
                         )
@@ -191,8 +195,8 @@ class DebitFormViewModel @Inject constructor(
                     _uiState.update {
                         it.copy(
                             isSubmitting = false,
-                            error = throwable.message ?: "Impossible d'envoyer le débit.",
-                            loginRequiredMessage = if (requiresLogin) throwable.message else null,
+                            error = if (requiresLogin) context.getString(R.string.debit_session_expired) else context.getString(R.string.debit_submission_failed),
+                            loginRequiredMessage = if (requiresLogin) context.getString(R.string.debit_session_expired) else null,
                         )
                     }
                 },

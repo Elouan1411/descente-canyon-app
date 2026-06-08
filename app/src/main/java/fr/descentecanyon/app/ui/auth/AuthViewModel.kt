@@ -1,8 +1,11 @@
 package fr.descentecanyon.app.ui.auth
 
+import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
+import dagger.hilt.android.qualifiers.ApplicationContext
+import fr.descentecanyon.app.R
 import fr.descentecanyon.app.domain.model.AuthState
 import fr.descentecanyon.app.domain.repository.AuthRepository
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -20,6 +23,7 @@ data class AuthUiState(
 
 @HiltViewModel
 class AuthViewModel @Inject constructor(
+    @param:ApplicationContext private val context: Context,
     private val authRepository: AuthRepository,
 ) : ViewModel() {
 
@@ -63,7 +67,7 @@ class AuthViewModel @Inject constructor(
                     _uiState.update {
                         it.copy(
                             authState = AuthState.Error(
-                                throwable.message ?: "Erreur de connexion"
+                                throwable.message ?: context.getString(R.string.login_error)
                             ),
                         )
                     }

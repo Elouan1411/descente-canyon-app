@@ -911,7 +911,7 @@ private fun DebitCard(
                     verticalAlignment = Alignment.CenterVertically,
                 ) {
                     Text(
-                        text = debit.canyonNom?.takeIf { it.isNotBlank() } ?: "Canyon #${debit.canyonId}",
+                        text = debit.canyonNom?.takeIf { it.isNotBlank() } ?: stringResource(R.string.canyon_fallback_title, debit.canyonId),
                         style = MaterialTheme.typography.titleMedium,
                         fontWeight = FontWeight.Bold,
                         maxLines = 1,
@@ -1042,16 +1042,14 @@ private fun ForumTopicCard(
     }
 }
 
+@Composable
 private fun buildForumTopicMeta(topic: ForumActiveTopic): String {
-    return buildString {
-        append(topic.forumName)
-        append(" • ")
-        append(topic.replyCount)
-        append(" rép.")
-        append(" • ")
-        append(formatCompactCount(topic.viewCount))
-        append(" vues")
-    }
+    return stringResource(
+        R.string.home_forum_topic_meta,
+        topic.forumName,
+        topic.replyCount,
+        formatCompactCount(topic.viewCount),
+    )
 }
 
 private fun formatCompactCount(value: Int): String {
