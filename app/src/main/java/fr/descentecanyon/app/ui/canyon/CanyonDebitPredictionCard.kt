@@ -154,7 +154,10 @@ fun CanyonDebitPredictionCard(
                                 if (index > 0) {
                                     HorizontalDivider()
                                 }
-                                PredictionRow(prediction = prediction)
+                                PredictionRow(
+                                    prediction = prediction,
+                                    ordinalCutpoints = predictions.ordinalCutpoints,
+                                )
                             }
                         }
 
@@ -205,6 +208,7 @@ private fun PredictionSummaryLine(
 @Composable
 private fun PredictionRow(
     prediction: DailyDebitPrediction,
+    ordinalCutpoints: List<Double>,
     modifier: Modifier = Modifier,
 ) {
     val ordinalLevel = prediction.ordinalLevel
@@ -260,7 +264,10 @@ private fun PredictionRow(
         }
 
         if (ordinalLevel != null && ordinalScore != null) {
-            DebitOrdinalGauge(score = ordinalScore)
+            DebitOrdinalGauge(
+                score = ordinalScore,
+                ordinalCutpoints = ordinalCutpoints,
+            )
             prediction.ordinalStandardDeviation?.let { standardDeviation ->
                 Text(
                     text = uncertaintyLabel(standardDeviation),
@@ -275,6 +282,7 @@ private fun PredictionRow(
 @Composable
 private fun DebitOrdinalGauge(
     score: Double,
+    ordinalCutpoints: List<Double>,
     modifier: Modifier = Modifier,
 ) {
     val trackShape = RoundedCornerShape(999.dp)
@@ -308,7 +316,7 @@ private fun DebitOrdinalGauge(
             Box(
                 modifier = Modifier
                     .align(Alignment.CenterStart)
-                    .offset(x = (maxWidth - markerWidth) * ordinalGaugePositionFraction(score))
+                    .offset(x = (maxWidth - markerWidth) * ordinalGaugePositionFraction(score, ordinalCutpoints))
                     .width(markerWidth)
                     .height(26.dp)
                     .clip(RoundedCornerShape(999.dp))
@@ -405,9 +413,27 @@ private fun ordinalColor(level: NiveauDebit): Color {
     }
 }
 
-private fun ordinalGaugePositionFraction(score: Double): Float {
+internal fun ordinalGaugePositionFraction(score: Double, ordinalCutpoints: List<Double> = emptyList()): Float {
+    if (ordinalCutpoints.size == ORDINAL_GAUGE_LEVELS.size - 1 && ordinalCutpoints.zipWithNext().all { (left, right) -> left < right }) {
+        return ordinalGaugePositionFractionFromCutpoints(score, ordinalCutpoints)
+    }
     val categoryCount = ORDINAL_GAUGE_LEVELS.size.toFloat()
     return ((score.coerceIn(0.0, 5.0).toFloat() + 0.5f) / categoryCount).coerceIn(0f, 1f)
+}
+
+private fun ordinalGaugePositionFractionFromCutpoints(score: Double, ordinalCutpoints: List<Double>): Float {
+    val categoryCount = ORDINAL_GAUGE_LEVELS.size
+    val bounds = listOf(0.0) + ordinalCutpoints + listOf(5.0)
+    val clampedScore = score.coerceIn(bounds.first(), bounds.last())
+    val index = ordinalCutpoints.indexOfFirst { clampedScore < it }.takeIf { it >= 0 } ?: (categoryCount - 1)
+    val lower = bounds[index]
+    val upper = bounds[index + 1]
+    val localFraction = if (upper > lower) {
+        ((clampedScore - lower) / (upper - lower)).coerceIn(0.0, 1.0)
+    } else {
+        0.5
+    }
+    return ((index + localFraction) / categoryCount).toFloat().coerceIn(0f, 1f)
 }
 
 @Composable

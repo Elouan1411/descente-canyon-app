@@ -128,5 +128,6 @@ data class CanyonDebitPredictions(
     val lookupSource: RuntimeLookupSource,
     val usedWeatherCache: Boolean,
     val policy: DebitPredictionPolicy,
+    val ordinalCutpoints: List<Double> = emptyList(),
     val predictions: List<DailyDebitPrediction>,
 )

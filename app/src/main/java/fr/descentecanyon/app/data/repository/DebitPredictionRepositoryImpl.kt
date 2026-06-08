@@ -54,6 +54,7 @@ class DebitPredictionRepositoryImpl @Inject constructor(
                     lookupSource = support.runtimeLookup.lookupSource,
                     usedWeatherCache = support.usedWeatherCache,
                     policy = thresholds.defaultPolicy,
+                    ordinalCutpoints = thresholds.ordinalCutpoints,
                     predictions = predictions,
                 )
             }
