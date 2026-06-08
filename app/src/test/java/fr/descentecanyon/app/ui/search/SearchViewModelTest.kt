@@ -10,6 +10,7 @@ import fr.descentecanyon.app.domain.model.SortDirection
 import fr.descentecanyon.app.domain.repository.CanyonRepository
 import fr.descentecanyon.app.domain.usecase.SearchCanyonsUseCase
 import fr.descentecanyon.app.testutil.MainDispatcherRule
+import fr.descentecanyon.app.testutil.localizedContext
 import io.mockk.every
 import io.mockk.mockk
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -40,7 +41,7 @@ class SearchViewModelTest {
                 canyon(id = 2, pays = "Espagne", departement = "Huesca"),
             )
         )
-        val viewModel = SearchViewModel(searchCanyonsUseCase, SavedStateHandle(), mainDispatcherRule.dispatcher)
+        val viewModel = SearchViewModel(localizedContext(), searchCanyonsUseCase, SavedStateHandle(), mainDispatcherRule.dispatcher)
 
         advanceTimeBy(250)
         advanceUntilIdle()
@@ -61,7 +62,7 @@ class SearchViewModelTest {
                 canyon(id = 3, pays = "Espagne", departement = "Huesca"),
             )
         )
-        val viewModel = SearchViewModel(searchCanyonsUseCase, SavedStateHandle(), mainDispatcherRule.dispatcher)
+        val viewModel = SearchViewModel(localizedContext(), searchCanyonsUseCase, SavedStateHandle(), mainDispatcherRule.dispatcher)
 
         advanceTimeBy(250)
         advanceUntilIdle()
@@ -90,7 +91,7 @@ class SearchViewModelTest {
                 canyon(id = 2, nom = "Beta", interet = 4f),
             )
         )
-        val viewModel = SearchViewModel(searchCanyonsUseCase, SavedStateHandle(), mainDispatcherRule.dispatcher)
+        val viewModel = SearchViewModel(localizedContext(), searchCanyonsUseCase, SavedStateHandle(), mainDispatcherRule.dispatcher)
 
         advanceTimeBy(250)
         advanceUntilIdle()
@@ -123,7 +124,7 @@ class SearchViewModelTest {
                 canyon(id = 2, nom = "Alpin"),
             )
         )
-        val viewModel = SearchViewModel(searchCanyonsUseCase, SavedStateHandle(), mainDispatcherRule.dispatcher)
+        val viewModel = SearchViewModel(localizedContext(), searchCanyonsUseCase, SavedStateHandle(), mainDispatcherRule.dispatcher)
 
         advanceTimeBy(250)
         advanceUntilIdle()
@@ -152,7 +153,7 @@ class SearchViewModelTest {
                 canyon(id = 2, nom = "Versoud loin", latitude = 44.00, longitude = 7.30),
             )
         )
-        val viewModel = SearchViewModel(searchCanyonsUseCase, SavedStateHandle(), mainDispatcherRule.dispatcher)
+        val viewModel = SearchViewModel(localizedContext(), searchCanyonsUseCase, SavedStateHandle(), mainDispatcherRule.dispatcher)
 
         advanceTimeBy(250)
         advanceUntilIdle()
@@ -178,7 +179,7 @@ class SearchViewModelTest {
     @OptIn(ExperimentalCoroutinesApi::class)
     fun `selecting a canyon does not request a list scroll reset`() = runTest {
         every { canyonRepository.observeSearchCatalog() } returns flowOf(listOf(canyon(id = 1)))
-        val viewModel = SearchViewModel(searchCanyonsUseCase, SavedStateHandle(), mainDispatcherRule.dispatcher)
+        val viewModel = SearchViewModel(localizedContext(), searchCanyonsUseCase, SavedStateHandle(), mainDispatcherRule.dispatcher)
 
         advanceTimeBy(250)
         advanceUntilIdle()
@@ -199,7 +200,7 @@ class SearchViewModelTest {
                 canyon(id = 2, nom = "Beta", latitude = 43.90, longitude = 7.30),
             )
         )
-        val viewModel = SearchViewModel(searchCanyonsUseCase, SavedStateHandle(), mainDispatcherRule.dispatcher)
+        val viewModel = SearchViewModel(localizedContext(), searchCanyonsUseCase, SavedStateHandle(), mainDispatcherRule.dispatcher)
 
         advanceTimeBy(250)
         advanceUntilIdle()
@@ -228,6 +229,7 @@ class SearchViewModelTest {
     fun `saved state restores map result view mode`() = runTest {
         every { canyonRepository.observeSearchCatalog() } returns flowOf(listOf(canyon(id = 1)))
         val viewModel = SearchViewModel(
+            localizedContext(),
             searchCanyonsUseCase,
             SavedStateHandle(mapOf("search_result_view_mode" to SearchResultViewMode.MAP.name)),
             mainDispatcherRule.dispatcher,

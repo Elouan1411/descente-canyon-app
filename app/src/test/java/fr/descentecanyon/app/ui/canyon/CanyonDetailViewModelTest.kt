@@ -39,6 +39,7 @@ import fr.descentecanyon.app.domain.usecase.GetCanyonPreviewUseCase
 import fr.descentecanyon.app.domain.usecase.GetCanyonWeatherUseCase
 import fr.descentecanyon.app.domain.usecase.ToggleFavoriteUseCase
 import fr.descentecanyon.app.testutil.MainDispatcherRule
+import fr.descentecanyon.app.testutil.localizedContext
 import io.mockk.coEvery
 import io.mockk.every
 import io.mockk.mockk
@@ -232,6 +233,7 @@ class CanyonDetailViewModelTest {
 
     private fun createViewModel(): CanyonDetailViewModel {
         return CanyonDetailViewModel(
+            context = localizedContext(),
             savedStateHandle = SavedStateHandle(mapOf("canyonId" to 42)),
             getCanyonPreviewUseCase = getCanyonPreviewUseCase,
             getCanyonDetailUseCase = getCanyonDetailUseCase,

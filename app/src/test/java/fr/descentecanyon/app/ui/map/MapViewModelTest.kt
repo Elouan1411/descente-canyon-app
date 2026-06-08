@@ -7,6 +7,7 @@ import fr.descentecanyon.app.domain.model.CotationRating
 import fr.descentecanyon.app.domain.repository.CanyonRepository
 import fr.descentecanyon.app.domain.usecase.SearchCanyonsUseCase
 import fr.descentecanyon.app.testutil.MainDispatcherRule
+import fr.descentecanyon.app.testutil.localizedContext
 import io.mockk.every
 import io.mockk.mockk
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -31,7 +32,7 @@ class MapViewModelTest {
     @OptIn(ExperimentalCoroutinesApi::class)
     fun `permission denial updates ui state`() = runTest {
         every { canyonRepository.observeSearchCatalog() } returns flowOf(emptyList())
-        val viewModel = MapViewModel(SavedStateHandle(), searchCanyonsUseCase)
+        val viewModel = MapViewModel(localizedContext(), SavedStateHandle(), searchCanyonsUseCase)
 
         viewModel.onLocationPermissionResult(false)
 
@@ -44,7 +45,7 @@ class MapViewModelTest {
     @OptIn(ExperimentalCoroutinesApi::class)
     fun `focus around user stores location and increments request id`() = runTest {
         every { canyonRepository.observeSearchCatalog() } returns flowOf(listOf(catalogItem(id = 42)))
-        val viewModel = MapViewModel(SavedStateHandle(), searchCanyonsUseCase)
+        val viewModel = MapViewModel(localizedContext(), SavedStateHandle(), searchCanyonsUseCase)
 
         advanceUntilIdle()
 
@@ -62,7 +63,7 @@ class MapViewModelTest {
     @OptIn(ExperimentalCoroutinesApi::class)
     fun `select canyon exposes bottom sheet item`() = runTest {
         every { canyonRepository.observeSearchCatalog() } returns flowOf(listOf(catalogItem(id = 7, nom = "Aiglun")))
-        val viewModel = MapViewModel(SavedStateHandle(), searchCanyonsUseCase)
+        val viewModel = MapViewModel(localizedContext(), SavedStateHandle(), searchCanyonsUseCase)
 
         advanceUntilIdle()
         viewModel.selectCanyon(7)
@@ -88,7 +89,7 @@ class MapViewModelTest {
             )
         )
 
-        val viewModel = MapViewModel(savedStateHandle, searchCanyonsUseCase)
+        val viewModel = MapViewModel(localizedContext(), savedStateHandle, searchCanyonsUseCase)
 
         advanceUntilIdle()
 

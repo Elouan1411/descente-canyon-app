@@ -3,6 +3,7 @@ package fr.descentecanyon.app.ui.favorites
 import fr.descentecanyon.app.domain.model.CanyonSummary
 import fr.descentecanyon.app.domain.repository.FavoritesRepository
 import fr.descentecanyon.app.testutil.MainDispatcherRule
+import fr.descentecanyon.app.testutil.localizedContext
 import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.every
@@ -28,7 +29,7 @@ class FavoritesViewModelTest {
     fun `favorites flow populates ui state`() = runTest {
         every { favoritesRepository.getFavorites() } returns MutableStateFlow(listOf(summary(7)))
 
-        val viewModel = FavoritesViewModel(favoritesRepository)
+        val viewModel = FavoritesViewModel(localizedContext(), favoritesRepository)
         advanceUntilIdle()
 
         assertEquals(listOf(7), viewModel.uiState.value.favorites.map { it.id })
@@ -41,7 +42,7 @@ class FavoritesViewModelTest {
         every { favoritesRepository.getFavorites() } returns MutableStateFlow(listOf(summary(7)))
         coEvery { favoritesRepository.removeFavorite(7) } returns Unit
 
-        val viewModel = FavoritesViewModel(favoritesRepository)
+        val viewModel = FavoritesViewModel(localizedContext(), favoritesRepository)
         advanceUntilIdle()
 
         viewModel.removeFavorite(7)

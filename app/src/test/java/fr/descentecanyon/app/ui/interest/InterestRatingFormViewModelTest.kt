@@ -8,6 +8,7 @@ import fr.descentecanyon.app.domain.repository.InterestRatingRepository
 import fr.descentecanyon.app.domain.usecase.GetCanyonInterestRatingUseCase
 import fr.descentecanyon.app.domain.usecase.SubmitCanyonInterestRatingUseCase
 import fr.descentecanyon.app.testutil.MainDispatcherRule
+import fr.descentecanyon.app.testutil.localizedContext
 import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.every
@@ -83,6 +84,7 @@ class InterestRatingFormViewModelTest {
     }
 
     private fun viewModel() = InterestRatingFormViewModel(
+        context = localizedContext(),
         savedStateHandle = SavedStateHandle(mapOf("canyonId" to 26)),
         authRepository = authRepository,
         getCanyonInterestRatingUseCase = getUseCase,

@@ -8,6 +8,7 @@ import fr.descentecanyon.app.domain.model.ObservationType
 import fr.descentecanyon.app.domain.repository.AuthRepository
 import fr.descentecanyon.app.domain.repository.DebitSubmissionRepository
 import fr.descentecanyon.app.domain.usecase.SubmitDebitUseCase
+import fr.descentecanyon.app.testutil.localizedContext
 import fr.descentecanyon.app.testutil.MainDispatcherRule
 import io.mockk.coEvery
 import io.mockk.coVerify
@@ -39,6 +40,7 @@ class DebitFormViewModelTest {
         every { authRepository.authState } returns authStateFlow
         every { debitSubmissionRepository.observePendingCount() } returns flowOf(0)
         val viewModel = DebitFormViewModel(
+            context = localizedContext(),
             savedStateHandle = SavedStateHandle(mapOf("canyonId" to 2186)),
             authRepository = authRepository,
             submitDebitUseCase = submitDebitUseCase,
@@ -59,6 +61,7 @@ class DebitFormViewModelTest {
         every { debitSubmissionRepository.observePendingCount() } returns flowOf(1)
         coEvery { debitSubmissionRepository.submit(any()) } returns Result.success(DebitSubmissionStatus.QUEUED_OFFLINE)
         val viewModel = DebitFormViewModel(
+            context = localizedContext(),
             savedStateHandle = SavedStateHandle(mapOf("canyonId" to 2186)),
             authRepository = authRepository,
             submitDebitUseCase = submitDebitUseCase,
@@ -83,6 +86,7 @@ class DebitFormViewModelTest {
         every { debitSubmissionRepository.observePendingCount() } returns flowOf(0)
         coEvery { debitSubmissionRepository.submit(any()) } returns Result.success(DebitSubmissionStatus.SUBMITTED)
         val viewModel = DebitFormViewModel(
+            context = localizedContext(),
             savedStateHandle = SavedStateHandle(mapOf("canyonId" to 2186)),
             authRepository = authRepository,
             submitDebitUseCase = submitDebitUseCase,
