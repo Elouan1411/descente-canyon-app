@@ -314,7 +314,6 @@ Les photos et les débits restent récupérés en ligne quand le réseau est dis
     <string name="prediction_loading">Calcul de l\'estimation...</string>
     <string name="prediction_unavailable">Estimation indisponible pour ce canyon.</string>
     <string name="prediction_info_cta">Comprendre l\'estimation</string>
-    <string name="prediction_updated_at">Mise à jour : %1$s</string>
     <string name="prediction_today">Aujourd\'hui</string>
     <string name="prediction_tomorrow">Demain</string>
     <string name="prediction_day_after_tomorrow">Après-demain</string>
@@ -327,9 +326,9 @@ Les photos et les débits restent récupérés en ligne quand le réseau est dis
     <string name="prediction_ordinal_gros">Gros débit probable</string>
     <string name="prediction_ordinal_tres_gros">Très gros débit probable</string>
     <string name="prediction_ordinal_crue">Crue probable</string>
-    <string name="prediction_uncertainty_low">Incertitude faible</string>
-    <string name="prediction_uncertainty_medium">Incertitude modérée</string>
-    <string name="prediction_uncertainty_high">Incertitude élevée</string>
+    <string name="prediction_confidence_high">Confiance élevée</string>
+    <string name="prediction_confidence_medium">Confiance moyenne</string>
+    <string name="prediction_confidence_low">Confiance faible</string>
     <string name="debit_level_filet_short">Filet</string>
     <string name="debit_level_crue_short">Crue</string>
     <string name="prediction_info_title">Comprendre l\'estimation</string>
@@ -339,7 +338,7 @@ Les photos et les débits restent récupérés en ligne quand le réseau est dis
     <string name="prediction_info_reading_title">Comment la lire</string>
     <string name="prediction_info_reading_p1">Chaque ligne correspond à un jour : aujourd\'hui, demain et après-demain. La jauge indique le débit probable entre Sec et Crue.</string>
     <string name="prediction_info_reading_p2">Plus le curseur se rapproche de Gros, Très gros ou Crue, plus le modèle estime que le débit peut devenir chargé.</string>
-    <string name="prediction_info_reading_p3">L\'indication d\'incertitude montre si le modèle est concentré sur un niveau précis ou s\'il hésite entre plusieurs niveaux voisins.</string>
+    <string name="prediction_info_reading_p3">Le badge de confiance baisse si le modèle hésite entre plusieurs niveaux ou si le score est proche d\'une limite entre deux catégories.</string>
     <string name="prediction_info_reading_p4">Cette estimation doit être lue comme une aide à la préparation, pas comme une garantie de sécurité ni comme une mesure instantanée du débit réel.</string>
     <string name="prediction_info_data_title">Quelles données sont utilisées</string>
     <string name="prediction_info_data_p1">Le modèle combine la météo journalière récente, les prévisions à court terme, certaines caractéristiques du canyon, la surface du bassin versant quand elle est connue, ainsi que des observations passées du canyon ou de zones proches.</string>

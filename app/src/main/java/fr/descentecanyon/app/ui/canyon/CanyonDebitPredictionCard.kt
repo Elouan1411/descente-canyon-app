@@ -14,6 +14,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -52,10 +53,6 @@ import fr.descentecanyon.app.ui.theme.DebitFilet
 import fr.descentecanyon.app.ui.theme.DebitGros
 import fr.descentecanyon.app.ui.theme.DebitInconnu
 import fr.descentecanyon.app.ui.theme.DebitSec
-import java.time.ZoneId
-import java.time.format.DateTimeFormatter
-import java.time.format.FormatStyle
-import java.util.Locale
 
 @Composable
 fun CanyonDebitPredictionCard(
@@ -139,17 +136,6 @@ fun CanyonDebitPredictionCard(
                         }
 
                         predictions != null -> {
-                            Text(
-                                text = stringResource(
-                                    R.string.prediction_updated_at,
-                                    DateTimeFormatter.ofLocalizedDateTime(FormatStyle.SHORT)
-                                        .withLocale(Locale.getDefault())
-                                        .format(predictions.fetchedAt.atZone(runCatching { ZoneId.of(predictions.timezone) }.getOrDefault(ZoneId.of("UTC")))),
-                                ),
-                                style = MaterialTheme.typography.bodySmall,
-                                color = MaterialTheme.colorScheme.onSurfaceVariant,
-                            )
-
                             predictions.predictions.forEachIndexed { index, prediction ->
                                 if (index > 0) {
                                     HorizontalDivider()
@@ -232,11 +218,6 @@ private fun PredictionRow(
                     },
                     style = MaterialTheme.typography.titleSmall,
                 )
-                Text(
-                    text = prediction.date.toString(),
-                    style = MaterialTheme.typography.bodySmall,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant,
-                )
             }
 
             Text(
@@ -244,18 +225,10 @@ private fun PredictionRow(
                     ?: levelLabel(prediction.level),
                 style = MaterialTheme.typography.titleSmall,
                 color = ordinalLevel?.let { ordinalColor(it) }
-                    ?: prediction.ordinalStandardDeviation?.let { uncertaintyColor(it) }
                     ?: Color.White,
                 textAlign = TextAlign.End,
                 modifier = when {
                     ordinalLevel != null -> Modifier.width(140.dp)
-                    prediction.ordinalStandardDeviation != null -> Modifier
-                        .widthIn(max = 180.dp)
-                        .background(
-                            uncertaintyColor(prediction.ordinalStandardDeviation).copy(alpha = 0.16f),
-                            RoundedCornerShape(999.dp),
-                        )
-                        .padding(horizontal = 10.dp, vertical = 4.dp)
                     else -> Modifier
                         .background(levelColor(prediction.level), RoundedCornerShape(999.dp))
                         .padding(horizontal = 10.dp, vertical = 4.dp)
@@ -269,13 +242,45 @@ private fun PredictionRow(
                 ordinalCutpoints = ordinalCutpoints,
             )
             prediction.ordinalStandardDeviation?.let { standardDeviation ->
-                Text(
-                    text = uncertaintyLabel(standardDeviation),
-                    style = MaterialTheme.typography.bodySmall,
-                    color = uncertaintyColor(standardDeviation),
+                ConfidenceBadge(
+                    confidence = predictionConfidence(
+                        standardDeviation = standardDeviation,
+                        score = ordinalScore,
+                        ordinalCutpoints = ordinalCutpoints,
+                    ),
                 )
             }
         }
+    }
+}
+
+@Composable
+private fun ConfidenceBadge(
+    confidence: PredictionConfidence,
+    modifier: Modifier = Modifier,
+) {
+    val color = confidenceColor(confidence)
+    Row(
+        modifier = modifier
+            .widthIn(max = 220.dp)
+            .background(color.copy(alpha = 0.14f), RoundedCornerShape(999.dp))
+            .border(1.dp, color.copy(alpha = 0.56f), RoundedCornerShape(999.dp))
+            .padding(horizontal = 10.dp, vertical = 5.dp),
+        horizontalArrangement = Arrangement.spacedBy(7.dp),
+        verticalAlignment = Alignment.CenterVertically,
+    ) {
+        Box(
+            modifier = Modifier
+                .size(8.dp)
+                .clip(RoundedCornerShape(999.dp))
+                .background(color),
+        )
+        Text(
+            text = confidenceLabel(confidence),
+            style = MaterialTheme.typography.labelMedium,
+            color = MaterialTheme.colorScheme.onSurface,
+            maxLines = 1,
+        )
     }
 }
 
@@ -340,20 +345,20 @@ private fun DebitOrdinalGauge(
 }
 
 @Composable
-private fun uncertaintyLabel(standardDeviation: Double): String {
-    return when {
-        standardDeviation < 0.75 -> stringResource(R.string.prediction_uncertainty_low)
-        standardDeviation < 1.20 -> stringResource(R.string.prediction_uncertainty_medium)
-        else -> stringResource(R.string.prediction_uncertainty_high)
+private fun confidenceLabel(confidence: PredictionConfidence): String {
+    return when (confidence) {
+        PredictionConfidence.HIGH -> stringResource(R.string.prediction_confidence_high)
+        PredictionConfidence.MEDIUM -> stringResource(R.string.prediction_confidence_medium)
+        PredictionConfidence.LOW -> stringResource(R.string.prediction_confidence_low)
     }
 }
 
 @Composable
-private fun uncertaintyColor(standardDeviation: Double): Color {
-    return when {
-        standardDeviation < 0.75 -> DebitCorrect
-        standardDeviation < 1.20 -> DebitGros
-        else -> MaterialTheme.colorScheme.error
+private fun confidenceColor(confidence: PredictionConfidence): Color {
+    return when (confidence) {
+        PredictionConfidence.HIGH -> DebitCorrect
+        PredictionConfidence.MEDIUM -> DebitGros
+        PredictionConfidence.LOW -> MaterialTheme.colorScheme.error
     }
 }
 
@@ -421,6 +426,33 @@ internal fun ordinalGaugePositionFraction(score: Double, ordinalCutpoints: List<
     return ((score.coerceIn(0.0, 5.0).toFloat() + 0.5f) / categoryCount).coerceIn(0f, 1f)
 }
 
+internal fun predictionConfidence(
+    standardDeviation: Double,
+    score: Double,
+    ordinalCutpoints: List<Double> = emptyList(),
+): PredictionConfidence {
+    val boundaryProximity = scoreBoundaryProximity(score, ordinalCutpoints)
+    return when {
+        standardDeviation >= 1.20 || boundaryProximity?.let { it < 0.10 } == true -> PredictionConfidence.LOW
+        standardDeviation >= 0.75 || boundaryProximity?.let { it < 0.20 } == true -> PredictionConfidence.MEDIUM
+        else -> PredictionConfidence.HIGH
+    }
+}
+
+private fun scoreBoundaryProximity(score: Double, ordinalCutpoints: List<Double>): Double? {
+    if (ordinalCutpoints.size != ORDINAL_GAUGE_LEVELS.size - 1 || !ordinalCutpoints.zipWithNext().all { (left, right) -> left < right }) {
+        return null
+    }
+    val bounds = listOf(0.0) + ordinalCutpoints + listOf(5.0)
+    val clampedScore = score.coerceIn(bounds.first(), bounds.last())
+    val index = ordinalCutpoints.indexOfFirst { clampedScore < it }.takeIf { it >= 0 } ?: (ORDINAL_GAUGE_LEVELS.size - 1)
+    val lower = bounds[index]
+    val upper = bounds[index + 1]
+    if (upper <= lower) return null
+    val localFraction = ((clampedScore - lower) / (upper - lower)).coerceIn(0.0, 1.0)
+    return minOf(localFraction, 1.0 - localFraction)
+}
+
 private fun ordinalGaugePositionFractionFromCutpoints(score: Double, ordinalCutpoints: List<Double>): Float {
     val categoryCount = ORDINAL_GAUGE_LEVELS.size
     val bounds = listOf(0.0) + ordinalCutpoints + listOf(5.0)
@@ -451,3 +483,9 @@ private val ORDINAL_GAUGE_LEVELS = listOf(
 )
 
 private val DebitVeryHighRed = Color(0xFFE53935)
+
+internal enum class PredictionConfidence {
+    HIGH,
+    MEDIUM,
+    LOW,
+}
