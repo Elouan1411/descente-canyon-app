@@ -22,6 +22,7 @@ import fr.descentecanyon.app.ui.canyon.PhotoGalleryScreen
 import fr.descentecanyon.app.ui.debit.DebitFormScreen
 import fr.descentecanyon.app.ui.favorites.FavoritesScreen
 import fr.descentecanyon.app.ui.home.HomeScreen
+import fr.descentecanyon.app.ui.interest.InterestRatingFormScreen
 import fr.descentecanyon.app.ui.map.MapScreen
 import fr.descentecanyon.app.ui.search.SearchScreen
 
@@ -104,10 +105,14 @@ fun AppNavHost(
             val refreshDebitsAfterSubmission by backStackEntry.savedStateHandle
                 .getStateFlow(DEBIT_SUBMISSION_REFRESH_KEY, false)
                 .collectAsStateWithLifecycle()
+            val refreshDetailAfterInterestRating by backStackEntry.savedStateHandle
+                .getStateFlow(INTEREST_RATING_REFRESH_KEY, false)
+                .collectAsStateWithLifecycle()
             CanyonDetailScreen(
                 canyonId = detail.canyonId,
                 onBackClick = { navController.popBackStack() },
                 onReportDebitClick = { navController.navigateSingleTop(Screen.DebitForm(detail.canyonId)) },
+                onRateInterestClick = { navController.navigateSingleTop(Screen.InterestRatingForm(detail.canyonId)) },
                 onShowMapClick = { navController.navigateSingleTop(Screen.CanyonPointsMap(detail.canyonId)) },
                 onOpenPredictionInfo = {
                     navController.navigateSingleTop(Screen.DebitPredictionInfo)
@@ -119,6 +124,10 @@ fun AppNavHost(
                 refreshDebitsAfterSubmission = refreshDebitsAfterSubmission,
                 onRefreshDebitsAfterSubmissionHandled = {
                     backStackEntry.savedStateHandle[DEBIT_SUBMISSION_REFRESH_KEY] = false
+                },
+                refreshDetailAfterInterestRating = refreshDetailAfterInterestRating,
+                onRefreshDetailAfterInterestRatingHandled = {
+                    backStackEntry.savedStateHandle[INTEREST_RATING_REFRESH_KEY] = false
                 },
             )
         }
@@ -155,6 +164,18 @@ fun AppNavHost(
             )
         }
 
+        composable<Screen.InterestRatingForm> {
+            InterestRatingFormScreen(
+                onBackClick = { navController.popBackStack() },
+                onSubmissionSuccess = {
+                    navController.previousBackStackEntry
+                        ?.savedStateHandle
+                        ?.set(INTEREST_RATING_REFRESH_KEY, true)
+                    navController.popBackStack()
+                },
+            )
+        }
+
         composable<Screen.DebitPredictionInfo> {
             DebitPredictionInfoScreen(
                 onBackClick = { navController.popBackStack() },
@@ -165,6 +186,7 @@ fun AppNavHost(
 }
 
 private const val DEBIT_SUBMISSION_REFRESH_KEY = "debit_submission_refresh"
+private const val INTEREST_RATING_REFRESH_KEY = "interest_rating_refresh"
 
 private fun NavHostController.navigateSingleTop(screen: Screen) {
     navigate(screen) {

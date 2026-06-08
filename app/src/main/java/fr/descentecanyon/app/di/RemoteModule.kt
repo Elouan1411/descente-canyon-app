@@ -6,6 +6,8 @@ import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import fr.descentecanyon.app.data.remote.scraper.DebitSubmissionRemoteSource
 import fr.descentecanyon.app.data.remote.scraper.DebitSubmissionRemoteSourceImpl
+import fr.descentecanyon.app.data.remote.scraper.InterestRatingRemoteSource
+import fr.descentecanyon.app.data.remote.scraper.InterestRatingRemoteSourceImpl
 import javax.inject.Singleton
 
 @Module
@@ -17,4 +19,10 @@ abstract class RemoteModule {
     abstract fun bindDebitSubmissionRemoteSource(
         impl: DebitSubmissionRemoteSourceImpl,
     ): DebitSubmissionRemoteSource
+
+    @Binds
+    @Singleton
+    abstract fun bindInterestRatingRemoteSource(
+        impl: InterestRatingRemoteSourceImpl,
+    ): InterestRatingRemoteSource
 }

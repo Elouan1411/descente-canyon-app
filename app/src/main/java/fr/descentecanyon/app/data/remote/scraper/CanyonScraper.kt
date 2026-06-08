@@ -9,11 +9,15 @@ import fr.descentecanyon.app.data.remote.dto.ScrapedForumActiveTopic
 import fr.descentecanyon.app.data.remote.dto.ScrapedGeoPoint
 import fr.descentecanyon.app.data.remote.dto.ScrapedPhoto
 import fr.descentecanyon.app.domain.model.AirTemperature
+import fr.descentecanyon.app.domain.model.CanyonInterestRating
 import fr.descentecanyon.app.domain.model.DebitSubmission
 import fr.descentecanyon.app.domain.model.DebitSubmissionSessionExpiredException
+import fr.descentecanyon.app.domain.model.InterestRatingSessionRequiredException
+import fr.descentecanyon.app.domain.model.InterestRatingSubmission
 import fr.descentecanyon.app.domain.model.NiveauDebit
 import fr.descentecanyon.app.domain.model.ObservationType
 import fr.descentecanyon.app.domain.model.WaterTemperature
+import java.util.Locale
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.sync.Semaphore
 import kotlinx.coroutines.sync.withPermit
@@ -203,6 +207,57 @@ class CanyonScraper @Inject constructor(
             }
         }
 
+    suspend fun getInterestRating(canyonId: Int): Result<CanyonInterestRating> =
+        withContext(Dispatchers.IO) {
+            semaphore.withPermit {
+                runCatching {
+                    val url = interestRatingUrl(canyonId)
+                    val response = webClient.getDocumentResponse(
+                        url = url,
+                        cookies = sessionManager.getCookies(),
+                    )
+                    val rating = InterestRatingParser.parse(response.document, canyonId)
+                    if (InterestRatingParser.parseForm(response.document) == null) {
+                        sessionManager.logout()
+                        throw InterestRatingSessionRequiredException()
+                    }
+                    rating
+                }
+            }
+        }
+
+    suspend fun submitInterestRating(submission: InterestRatingSubmission): Result<Unit> =
+        withContext(Dispatchers.IO) {
+            semaphore.withPermit {
+                runCatching {
+                    val url = interestRatingUrl(submission.canyonId)
+                    val savedCookies = sessionManager.getCookies()
+                    val formResponse = webClient.getDocumentResponse(
+                        url = url,
+                        cookies = savedCookies,
+                    )
+                    val form = InterestRatingParser.parseForm(formResponse.document)
+                    if (form == null) {
+                        sessionManager.logout()
+                        throw InterestRatingSessionRequiredException()
+                    }
+
+                    val response = webClient.postDocument(
+                        url = url,
+                        data = form.toInterestRatingSubmissionData(submission),
+                        cookies = savedCookies + formResponse.cookies,
+                        referer = url,
+                        origin = BASE_URL,
+                    )
+
+                    val serverMessage = response.document.extractDebitSubmissionError()
+                    if (serverMessage != null) {
+                        throw IllegalStateException("La note a été refusée par le serveur : $serverMessage")
+                    }
+                }
+            }
+        }
+
     /**
      * Scrape full canyon detail: summary + description + geopoints merged.
      * Acquires only one semaphore permit for the entire composite operation
@@ -250,6 +305,18 @@ class CanyonScraper @Inject constructor(
         )
     }
 
+    private fun interestRatingUrl(canyonId: Int): String =
+        "$BASE_URL/canyoning/canyon-interet/$canyonId/interet.html"
+
+}
+
+private fun InterestRatingForm.toInterestRatingSubmissionData(
+    submission: InterestRatingSubmission,
+): Map<String, String> {
+    return defaults.toMutableMap().apply {
+        this["vote"] = String.format(Locale.US, "%.1f", submission.rating.coerceIn(0f, 4f))
+        this[submitName] = submitValue
+    }
 }
 
 private fun ObservationType.toFormValue(): String = when (this) {

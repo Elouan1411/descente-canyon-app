@@ -13,6 +13,7 @@ import fr.descentecanyon.app.domain.repository.DebitSubmissionRepository
 import fr.descentecanyon.app.domain.repository.EdfPracticabilityRepository
 import fr.descentecanyon.app.domain.repository.FavoritesRepository
 import fr.descentecanyon.app.domain.repository.ForumRepository
+import fr.descentecanyon.app.domain.repository.InterestRatingRepository
 import fr.descentecanyon.app.domain.repository.MapOfflineRepository
 import fr.descentecanyon.app.domain.repository.PhotoRepository
 import fr.descentecanyon.app.domain.repository.WeatherRepository
@@ -24,6 +25,7 @@ import fr.descentecanyon.app.e2e.fakes.FakeDebitSubmissionRepository
 import fr.descentecanyon.app.e2e.fakes.FakeEdfPracticabilityRepository
 import fr.descentecanyon.app.e2e.fakes.FakeFavoritesRepository
 import fr.descentecanyon.app.e2e.fakes.FakeForumRepository
+import fr.descentecanyon.app.e2e.fakes.FakeInterestRatingRepository
 import fr.descentecanyon.app.e2e.fakes.FakeMapOfflineRepository
 import fr.descentecanyon.app.e2e.fakes.FakePhotoRepository
 import fr.descentecanyon.app.e2e.fakes.FakeWeatherRepository
@@ -45,5 +47,6 @@ object TestRepositoryModule {
     @Provides @Singleton fun provideMapOfflineRepository(fake: FakeMapOfflineRepository): MapOfflineRepository = fake
     @Provides @Singleton fun providePhotoRepository(fake: FakePhotoRepository): PhotoRepository = fake
     @Provides @Singleton fun provideDebitSubmissionRepository(fake: FakeDebitSubmissionRepository): DebitSubmissionRepository = fake
+    @Provides @Singleton fun provideInterestRatingRepository(fake: FakeInterestRatingRepository): InterestRatingRepository = fake
     @Provides @Singleton fun provideWeatherRepository(fake: FakeWeatherRepository): WeatherRepository = fake
 }

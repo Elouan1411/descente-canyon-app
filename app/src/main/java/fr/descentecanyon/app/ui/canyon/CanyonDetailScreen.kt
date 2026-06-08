@@ -39,6 +39,7 @@ import androidx.compose.material.icons.filled.KeyboardArrowUp
 import androidx.compose.material.icons.filled.Language
 import androidx.compose.material.icons.filled.LocationOn
 import androidx.compose.material.icons.filled.Navigation
+import androidx.compose.material.icons.filled.Star
 import androidx.compose.material.icons.filled.WaterDrop
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -123,6 +124,7 @@ fun CanyonDetailScreen(
     canyonId: Int,
     onBackClick: () -> Unit,
     onReportDebitClick: () -> Unit,
+    onRateInterestClick: () -> Unit,
     onShowMapClick: () -> Unit,
     onOpenPredictionInfo: () -> Unit,
     onOpenPhotoGallery: (Long) -> Unit,
@@ -130,6 +132,8 @@ fun CanyonDetailScreen(
     contentPadding: PaddingValues = PaddingValues(),
     refreshDebitsAfterSubmission: Boolean = false,
     onRefreshDebitsAfterSubmissionHandled: () -> Unit = {},
+    refreshDetailAfterInterestRating: Boolean = false,
+    onRefreshDetailAfterInterestRatingHandled: () -> Unit = {},
     viewModel: CanyonDetailViewModel = hiltViewModel(),
 ) {
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
@@ -144,6 +148,13 @@ fun CanyonDetailScreen(
         if (refreshDebitsAfterSubmission) {
             viewModel.refreshDebitsAfterSubmission()
             onRefreshDebitsAfterSubmissionHandled()
+        }
+    }
+
+    LaunchedEffect(refreshDetailAfterInterestRating) {
+        if (refreshDetailAfterInterestRating) {
+            viewModel.loadCanyon(canyonId)
+            onRefreshDetailAfterInterestRatingHandled()
         }
     }
 
@@ -186,6 +197,12 @@ fun CanyonDetailScreen(
                         modifier = Modifier.testTag(TestTags.detailReportDebitButton),
                     ) {
                         AddDebitIcon(contentDescription = stringResource(R.string.debit_add_action))
+                    }
+                    IconButton(
+                        onClick = onRateInterestClick,
+                        modifier = Modifier.testTag(TestTags.detailRateInterestButton),
+                    ) {
+                        AddInterestIcon(contentDescription = stringResource(R.string.interest_rating_add_action))
                     }
                     IconButton(
                         onClick = viewModel::toggleFavorite,
@@ -304,6 +321,39 @@ private fun AddDebitIcon(
     Box(modifier = modifier.size(30.dp)) {
         Icon(
             imageVector = Icons.Default.WaterDrop,
+            contentDescription = contentDescription,
+            tint = MaterialTheme.colorScheme.onPrimaryContainer,
+            modifier = Modifier
+                .size(26.dp)
+                .align(Alignment.CenterStart),
+        )
+        Surface(
+            modifier = Modifier
+                .size(15.dp)
+                .align(Alignment.BottomEnd),
+            shape = CircleShape,
+            color = MaterialTheme.colorScheme.primary,
+            contentColor = MaterialTheme.colorScheme.onPrimary,
+        ) {
+            Box(contentAlignment = Alignment.Center) {
+                Icon(
+                    imageVector = Icons.Default.Add,
+                    contentDescription = null,
+                    modifier = Modifier.size(11.dp),
+                )
+            }
+        }
+    }
+}
+
+@Composable
+private fun AddInterestIcon(
+    contentDescription: String,
+    modifier: Modifier = Modifier,
+) {
+    Box(modifier = modifier.size(30.dp)) {
+        Icon(
+            imageVector = Icons.Default.Star,
             contentDescription = contentDescription,
             tint = MaterialTheme.colorScheme.onPrimaryContainer,
             modifier = Modifier
@@ -1678,4 +1728,3 @@ private fun openNavigation(
     val uri = Uri.parse("geo:${point.latitude},${point.longitude}?q=${point.latitude},${point.longitude}($label)")
     context.startActivity(Intent(Intent.ACTION_VIEW, uri))
 }
-
