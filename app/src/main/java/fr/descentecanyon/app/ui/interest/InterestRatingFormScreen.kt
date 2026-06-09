@@ -35,6 +35,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -146,6 +147,8 @@ fun InterestRatingFormScreen(
                 enabled = !uiState.isSubmitting,
             )
 
+            InterestRatingGuide()
+
             uiState.error?.let {
                 Text(
                     text = it,
@@ -165,6 +168,67 @@ fun InterestRatingFormScreen(
                     Text(stringResource(R.string.interest_rating_submit))
                 }
             }
+        }
+    }
+}
+
+@Composable
+private fun InterestRatingGuide() {
+    Card(
+        modifier = Modifier.fillMaxWidth(),
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
+    ) {
+        Column(
+            modifier = Modifier.padding(16.dp),
+            verticalArrangement = Arrangement.spacedBy(12.dp),
+        ) {
+            Text(
+                text = stringResource(R.string.interest_rating_guide_title),
+                style = MaterialTheme.typography.titleSmall,
+                fontWeight = FontWeight.SemiBold,
+            )
+            Text(
+                text = stringResource(R.string.interest_rating_guide_intro),
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+            )
+            InterestRatingGuideItems.forEach { item ->
+                InterestRatingGuideRow(item)
+            }
+        }
+    }
+}
+
+@Composable
+private fun InterestRatingGuideRow(item: InterestRatingGuideItem) {
+    Row(
+        modifier = Modifier.fillMaxWidth(),
+        horizontalArrangement = Arrangement.spacedBy(12.dp),
+    ) {
+        Surface(
+            color = MaterialTheme.colorScheme.secondaryContainer,
+            contentColor = MaterialTheme.colorScheme.onSecondaryContainer,
+            shape = MaterialTheme.shapes.small,
+        ) {
+            Text(
+                text = stringResource(item.labelRes),
+                modifier = Modifier.padding(horizontal = 8.dp, vertical = 6.dp),
+                style = MaterialTheme.typography.labelLarge,
+                fontWeight = FontWeight.SemiBold,
+                textAlign = TextAlign.Center,
+            )
+        }
+        Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
+            Text(
+                text = stringResource(item.titleRes),
+                style = MaterialTheme.typography.bodyMedium,
+                fontWeight = FontWeight.SemiBold,
+            )
+            Text(
+                text = stringResource(item.descriptionRes),
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+            )
         }
     }
 }
@@ -198,8 +262,21 @@ private fun RatingSummaryCard(uiState: InterestRatingFormUiState) {
                     text = stringResource(
                         R.string.interest_rating_average,
                         formatRating(average),
-                        uiState.voteCount ?: 0,
                     ),
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                )
+            }
+            uiState.medianRating?.let { median ->
+                Text(
+                    text = stringResource(R.string.interest_rating_median, formatRating(median)),
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                )
+            }
+            uiState.voteCount?.let { voteCount ->
+                Text(
+                    text = stringResource(R.string.interest_rating_vote_count, voteCount),
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                 )
@@ -265,3 +342,37 @@ private fun LoginSuggestionCard(onLoginClick: () -> Unit) {
 }
 
 private fun formatRating(value: Float): String = String.format(Locale.US, "%.1f/4", value.coerceIn(0f, 4f))
+
+private data class InterestRatingGuideItem(
+    val labelRes: Int,
+    val titleRes: Int,
+    val descriptionRes: Int,
+)
+
+private val InterestRatingGuideItems = listOf(
+    InterestRatingGuideItem(
+        labelRes = R.string.interest_rating_guide_4_label,
+        titleRes = R.string.interest_rating_guide_4_title,
+        descriptionRes = R.string.interest_rating_guide_4_description,
+    ),
+    InterestRatingGuideItem(
+        labelRes = R.string.interest_rating_guide_3_label,
+        titleRes = R.string.interest_rating_guide_3_title,
+        descriptionRes = R.string.interest_rating_guide_3_description,
+    ),
+    InterestRatingGuideItem(
+        labelRes = R.string.interest_rating_guide_2_label,
+        titleRes = R.string.interest_rating_guide_2_title,
+        descriptionRes = R.string.interest_rating_guide_2_description,
+    ),
+    InterestRatingGuideItem(
+        labelRes = R.string.interest_rating_guide_1_label,
+        titleRes = R.string.interest_rating_guide_1_title,
+        descriptionRes = R.string.interest_rating_guide_1_description,
+    ),
+    InterestRatingGuideItem(
+        labelRes = R.string.interest_rating_guide_0_label,
+        titleRes = R.string.interest_rating_guide_0_title,
+        descriptionRes = R.string.interest_rating_guide_0_description,
+    ),
+)

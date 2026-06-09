@@ -10,16 +10,8 @@ internal object InterestRatingParser {
         return CanyonInterestRating(
             canyonId = canyonId,
             personalRating = personalRating(text),
-            averageRating = Regex("Moyenne des notes\\s*:\\s*.*?([0-4](?:[,.]\\d)?)/4")
-                .find(text)
-                ?.groupValues
-                ?.getOrNull(1)
-                ?.extractFloat(),
-            medianRating = Regex("Médiane des notes\\s*:\\s*.*?([0-4](?:[,.]\\d)?)/4")
-                .find(text)
-                ?.groupValues
-                ?.getOrNull(1)
-                ?.extractFloat(),
+            averageRating = ratingAfterLabel(text, "Moyenne des notes"),
+            medianRating = ratingAfterLabel(text, "Médiane des notes"),
             voteCount = Regex("Répartition des\\s+(\\d+)\\s+notes", RegexOption.IGNORE_CASE)
                 .find(text)
                 ?.groupValues
@@ -44,7 +36,15 @@ internal object InterestRatingParser {
     }
 
     private fun personalRating(text: String): Float? {
-        return Regex("vous avez signalé un intérêt de\\s*([0-4](?:[,.]\\d)?)/4", RegexOption.IGNORE_CASE)
+        return Regex("vous avez signalé un intérêt de\\s*([0-4](?:[,.]\\d)?)\\s*/\\s*4", RegexOption.IGNORE_CASE)
+            .find(text)
+            ?.groupValues
+            ?.getOrNull(1)
+            ?.extractFloat()
+    }
+
+    private fun ratingAfterLabel(text: String, label: String): Float? {
+        return Regex("$label\\s*:\\s*.*?([0-4](?:[,.]\\d)?)\\s*/\\s*4", RegexOption.IGNORE_CASE)
             .find(text)
             ?.groupValues
             ?.getOrNull(1)

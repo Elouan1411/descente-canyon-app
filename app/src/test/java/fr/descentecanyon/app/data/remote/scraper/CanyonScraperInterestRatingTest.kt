@@ -31,6 +31,22 @@ class CanyonScraperInterestRatingTest {
     }
 
     @Test
+    fun `getInterestRating parses aggregate ratings with spaced slash and no personal rating`() = runTest {
+        val webClient = FakeInterestRatingWebClient(formHtml = interestFormWithoutPersonalRatingHtml())
+        val sessionManager = SessionManager(webClient).apply {
+            restoreSession("Antoine", mapOf("phpbb3_hymrt_u" to "9696"))
+        }
+        val scraper = CanyonScraper(webClient, sessionManager)
+
+        val result = scraper.getInterestRating(211).getOrThrow()
+
+        assertEquals(null, result.personalRating)
+        assertEquals(3.0f, result.averageRating)
+        assertEquals(3.5f, result.medianRating)
+        assertEquals(211, result.voteCount)
+    }
+
+    @Test
     fun `submitInterestRating posts dynamic submit field and merged cookies`() = runTest {
         val webClient = FakeInterestRatingWebClient(
             formHtml = interestFormHtml(),
@@ -78,6 +94,23 @@ class CanyonScraperInterestRatingTest {
             <form action="/canyoning/canyon-interet/26/interet.html" method="post">
                 <p><b>Antoine</b>, vous avez signalé un intérêt de <b>2.5/4</b> pour ce canyon.</p>
                 <input type="hidden" value="46140" name="id_interet" id="id_interet" />
+                <input type="text" name="vote" size="4" maxlength="3" />
+                <input type="submit" value="enregistrer" name="valid-230" />
+            </form>
+        </body></html>
+    """.trimIndent()
+
+    private fun interestFormWithoutPersonalRatingHtml(): String = """
+        <html><body>
+            <div>
+                <p>
+                    Moyenne des notes : <img alt="intérêt" /> <b>3</b> /4<br />
+                    Médiane des notes : <img alt="intérêt" /> <b>3.5</b> /4 (moins sensible aux notes extrêmes)
+                </p>
+                <p><b>Répartition des 211 notes d'intéret</b>.</p>
+            </div>
+            <form action="/canyoning/canyon-interet/211/interet.html" method="post">
+                <p><b>Antoine</b>, vous pouvez donner une note personnelle d'intérêt.</p>
                 <input type="text" name="vote" size="4" maxlength="3" />
                 <input type="submit" value="enregistrer" name="valid-230" />
             </form>
