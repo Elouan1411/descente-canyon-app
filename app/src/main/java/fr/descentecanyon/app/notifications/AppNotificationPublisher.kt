@@ -1,6 +1,7 @@
 package fr.descentecanyon.app.notifications
 
 import android.Manifest
+import android.annotation.SuppressLint
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.PendingIntent
@@ -57,7 +58,7 @@ class AppNotificationPublisher @Inject constructor(
         } else {
             buildGroupedDebitNotification(events)
         }
-        NotificationManagerCompat.from(context).notify(DEBIT_NOTIFICATION_ID, notification)
+        notifySafely(DEBIT_NOTIFICATION_ID, notification)
     }
 
     fun publishForumEvents(events: List<TrackedActivityEvent>) {
@@ -67,7 +68,7 @@ class AppNotificationPublisher @Inject constructor(
         } else {
             buildGroupedForumNotification(events)
         }
-        NotificationManagerCompat.from(context).notify(FORUM_NOTIFICATION_ID, notification)
+        notifySafely(FORUM_NOTIFICATION_ID, notification)
     }
 
     private fun buildSingleDebitNotification(event: TrackedActivityEvent) =
@@ -163,6 +164,17 @@ class AppNotificationPublisher @Inject constructor(
     private fun canPostNotifications(): Boolean {
         return Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU ||
             ContextCompat.checkSelfPermission(context, Manifest.permission.POST_NOTIFICATIONS) == PackageManager.PERMISSION_GRANTED
+    }
+
+    @SuppressLint("MissingPermission")
+    private fun notifySafely(notificationId: Int, notification: android.app.Notification) {
+        runCatching {
+            NotificationManagerCompat.from(context).notify(notificationId, notification)
+        }.getOrElse { throwable ->
+            if (throwable !is SecurityException) {
+                throw throwable
+            }
+        }
     }
 
     private companion object {
