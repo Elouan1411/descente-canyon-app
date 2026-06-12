@@ -1,12 +1,29 @@
 package fr.descentecanyon.app.data.remote.scraper
 
 import fr.descentecanyon.app.data.remote.dto.ScrapedForumActiveTopic
+import fr.descentecanyon.app.data.remote.dto.ScrapedForumCategory
 import java.net.URI
 import java.time.OffsetDateTime
 import org.jsoup.nodes.Document
 import org.jsoup.nodes.Element
 
 internal object ForumParser {
+
+    fun parseCategories(doc: Document): List<ScrapedForumCategory> {
+        return doc.select("a.forumtitle, a[href*=viewforum]")
+            .mapNotNull { anchor ->
+                val forumName = anchor.text().trim().takeIf { it.isNotBlank() } ?: return@mapNotNull null
+                val forumUrl = sanitizeForumUrl(anchor.absUrl("href").ifBlank { anchor.attr("href") })
+                val forumId = forumUrl.extractQueryInt("f")
+                ScrapedForumCategory(
+                    forumId = forumId,
+                    forumName = forumName,
+                    forumUrl = forumUrl,
+                )
+            }
+            .distinctBy { category -> category.forumId ?: category.forumName.lowercase() }
+            .sortedBy { it.forumName.lowercase() }
+    }
 
     fun parseActiveTopics(doc: Document): List<ScrapedForumActiveTopic> {
         return doc.select("ul.topiclist.topics > li.row").mapNotNull(::parseTopicRow)

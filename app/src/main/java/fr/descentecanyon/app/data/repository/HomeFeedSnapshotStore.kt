@@ -4,6 +4,7 @@ import fr.descentecanyon.app.data.local.dao.AppMetadataDao
 import fr.descentecanyon.app.data.local.entity.AppMetadataEntity
 import fr.descentecanyon.app.domain.model.CachedItems
 import fr.descentecanyon.app.domain.model.Debit
+import fr.descentecanyon.app.domain.model.ForumCategory
 import fr.descentecanyon.app.domain.model.ForumActiveTopic
 import fr.descentecanyon.app.domain.model.HomeFeedType
 import fr.descentecanyon.app.domain.model.NiveauDebit
@@ -115,6 +116,39 @@ class HomeFeedSnapshotStore @Inject constructor(
         appMetadataDao.insert(AppMetadataEntity(ACTIVE_TOPICS_KEY, payload))
     }
 
+    suspend fun readForumCategories(): CachedItems<ForumCategory> {
+        val payload = appMetadataDao.get(FORUM_CATEGORIES_KEY)?.value ?: return CachedItems()
+        return runCatching {
+            val snapshot = json.decodeFromString<ForumCategoriesSnapshotDto>(payload)
+            CachedItems(
+                items = snapshot.items.map { item ->
+                    ForumCategory(
+                        forumId = item.forumId,
+                        forumName = item.forumName,
+                        forumUrl = item.forumUrl,
+                    )
+                },
+                syncedAtEpochMs = snapshot.syncedAtEpochMs,
+            )
+        }.getOrDefault(CachedItems())
+    }
+
+    suspend fun writeForumCategories(categories: List<ForumCategory>, syncedAtEpochMs: Long) {
+        val payload = json.encodeToString(
+            ForumCategoriesSnapshotDto(
+                syncedAtEpochMs = syncedAtEpochMs,
+                items = categories.map { category ->
+                    ForumCategoryItemDto(
+                        forumId = category.forumId,
+                        forumName = category.forumName,
+                        forumUrl = category.forumUrl,
+                    )
+                },
+            )
+        )
+        appMetadataDao.insert(AppMetadataEntity(FORUM_CATEGORIES_KEY, payload))
+    }
+
     suspend fun readSelectedFeedType(): HomeFeedType? {
         return appMetadataDao.get(SELECTED_FEED_KEY)?.value
             ?.takeIf { it.isNotBlank() }
@@ -165,9 +199,23 @@ class HomeFeedSnapshotStore @Inject constructor(
         val lastMessageUrl: String,
     )
 
+    @Serializable
+    private data class ForumCategoriesSnapshotDto(
+        val syncedAtEpochMs: Long,
+        val items: List<ForumCategoryItemDto>,
+    )
+
+    @Serializable
+    private data class ForumCategoryItemDto(
+        val forumId: Int? = null,
+        val forumName: String,
+        val forumUrl: String,
+    )
+
     private companion object {
         const val LATEST_DEBITS_KEY = "home.latest_debits.snapshot"
         const val ACTIVE_TOPICS_KEY = "home.active_topics.snapshot"
+        const val FORUM_CATEGORIES_KEY = "home.forum_categories.snapshot"
         const val SELECTED_FEED_KEY = "home.selected_feed_type"
     }
 }

@@ -1,6 +1,7 @@
 package fr.descentecanyon.app.domain.repository
 
 import fr.descentecanyon.app.domain.model.Debit
+import fr.descentecanyon.app.domain.model.ForumCategory
 import fr.descentecanyon.app.domain.model.ForumActiveTopic
 import fr.descentecanyon.app.domain.model.NotificationCenterState
 import fr.descentecanyon.app.domain.model.NotificationSyncSummary
@@ -14,6 +15,8 @@ interface NotificationCenterRepository {
     fun observeIsCanyonFollowed(canyonId: Int): Flow<Boolean>
 
     fun observeIsForumCategoryFollowed(forumId: Int?, forumName: String): Flow<Boolean>
+
+    fun observeIsForumThreadFollowed(topicId: Int): Flow<Boolean>
 
     suspend fun toggleCanyonFollow(
         canyonId: Int,
@@ -30,6 +33,13 @@ interface NotificationCenterRepository {
     )
 
     suspend fun removeForumCategoryFollow(key: String)
+
+    suspend fun toggleForumThreadFollow(
+        topic: ForumActiveTopic,
+        baselineTopics: List<ForumActiveTopic>,
+    )
+
+    suspend fun removeForumThreadFollow(topicId: Int)
 
     suspend fun clearRecentActivity()
 

@@ -62,6 +62,12 @@ class NotificationCenterRepositoryImpl @Inject constructor(
             .distinctUntilChanged()
     }
 
+    override fun observeIsForumThreadFollowed(topicId: Int): Flow<Boolean> {
+        return observeState()
+            .map { state -> state.followedForumThreads.any { it.topicId == topicId } }
+            .distinctUntilChanged()
+    }
+
     override suspend fun toggleCanyonFollow(
         canyonId: Int,
         canyonName: String,
@@ -116,6 +122,32 @@ class NotificationCenterRepositoryImpl @Inject constructor(
     override suspend fun removeForumCategoryFollow(key: String) {
         updateState { state ->
             state.copy(followedForumCategories = state.followedForumCategories.filterNot { it.key == key })
+        }
+    }
+
+    override suspend fun toggleForumThreadFollow(
+        topic: ForumActiveTopic,
+        baselineTopics: List<ForumActiveTopic>,
+    ) {
+        updateState { state ->
+            if (state.followedForumThreads.any { it.topicId == topic.topicId }) {
+                state.copy(followedForumThreads = state.followedForumThreads.filterNot { it.topicId == topic.topicId })
+            } else {
+                state.copy(
+                    followedForumThreads = (
+                        state.followedForumThreads + NotificationSyncEngine.buildInitialForumThreadFollow(
+                            topic = topic,
+                            baselineTopics = baselineTopics,
+                        )
+                    ).sortedBy { it.title.lowercase() }
+                )
+            }
+        }
+    }
+
+    override suspend fun removeForumThreadFollow(topicId: Int) {
+        updateState { state ->
+            state.copy(followedForumThreads = state.followedForumThreads.filterNot { it.topicId == topicId })
         }
     }
 

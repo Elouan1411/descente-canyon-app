@@ -3,6 +3,7 @@ package fr.descentecanyon.app.data.repository
 import fr.descentecanyon.app.domain.model.Debit
 import fr.descentecanyon.app.domain.model.FollowedCanyon
 import fr.descentecanyon.app.domain.model.FollowedForumCategory
+import fr.descentecanyon.app.domain.model.FollowedForumThread
 import fr.descentecanyon.app.domain.model.ForumActiveTopic
 import fr.descentecanyon.app.domain.model.NotificationCenterState
 import fr.descentecanyon.app.domain.model.NotificationSyncSummary
@@ -22,8 +23,6 @@ internal object NotificationSyncEngine {
             debit.canyonId.toString(),
             debit.date.toString(),
             debit.niveau.name,
-            debit.auteur.orEmpty().trim(),
-            debit.commentaire.orEmpty().trim(),
         ).joinToString("|")
     }
 
@@ -44,6 +43,7 @@ internal object NotificationSyncEngine {
             canyonId = canyonId,
             canyonName = canyonName,
             seenDebitKeys = baselineDebits.map(::buildDebitKey).distinct().takeLast(MAX_SEEN_KEYS),
+            hasSeededLatestDebits = baselineDebits.isNotEmpty(),
         )
     }
 
@@ -58,6 +58,24 @@ internal object NotificationSyncEngine {
             forumName = forumName,
             seenTopicMarkers = baselineTopics
                 .filter { topic -> matchesForumCategory(topic, forumId, forumName) }
+                .map(::buildForumTopicMarker)
+                .distinct()
+                .takeLast(MAX_SEEN_KEYS),
+        )
+    }
+
+    fun buildInitialForumThreadFollow(
+        topic: ForumActiveTopic,
+        baselineTopics: List<ForumActiveTopic>,
+    ): FollowedForumThread {
+        return FollowedForumThread(
+            topicId = topic.topicId,
+            title = topic.title,
+            forumId = topic.forumId,
+            forumName = topic.forumName,
+            topicUrl = topic.topicUrl,
+            seenTopicMarkers = baselineTopics
+                .filter { it.topicId == topic.topicId }
                 .map(::buildForumTopicMarker)
                 .distinct()
                 .takeLast(MAX_SEEN_KEYS),
@@ -85,7 +103,11 @@ internal object NotificationSyncEngine {
             val matchingDebits = latestDebits.filter { it.canyonId == followed.canyonId }
             val matchingKeys = matchingDebits.map(::buildDebitKey)
             val seenKeys = followed.seenDebitKeys.toSet()
-            val newDebits = matchingDebits.filter { debit -> buildDebitKey(debit) !in seenKeys }
+            val newDebits = if (followed.hasSeededLatestDebits) {
+                matchingDebits.filter { debit -> buildDebitKey(debit) !in seenKeys }
+            } else {
+                emptyList()
+            }
             newDebits.forEach { debit ->
                 debitEvents += TrackedActivityEvent(
                     id = "debit:${followed.canyonId}:${buildDebitKey(debit)}:$nowEpochMs",
@@ -101,9 +123,12 @@ internal object NotificationSyncEngine {
                 seenDebitKeys = mergeSeenKeys(
                     previous = followed.seenDebitKeys,
                     current = matchingKeys,
-                )
+                ),
+                hasSeededLatestDebits = true,
             )
         }
+
+        val emittedForumMarkers = linkedSetOf<String>()
 
         val updatedForumCategories = state.followedForumCategories.map { followed ->
             val matchingTopics = activeTopics.filter { topic ->
@@ -113,18 +138,51 @@ internal object NotificationSyncEngine {
             val seenMarkers = followed.seenTopicMarkers.toSet()
             val newTopics = matchingTopics.filter { topic -> buildForumTopicMarker(topic) !in seenMarkers }
             newTopics.forEach { topic ->
-                forumEvents += TrackedActivityEvent(
-                    id = "forum:${followed.key}:${buildForumTopicMarker(topic)}:$nowEpochMs",
-                    type = TrackedActivityType.FORUM,
-                    title = topic.title,
-                    body = topic.lastAuthor
-                        ?.takeIf { it.isNotBlank() }
-                        ?.let { "$it • ${topic.lastPostedAtText}" }
-                        ?: topic.lastPostedAtText,
-                    occurredAtEpochMs = nowEpochMs,
-                    forumName = followed.forumName,
-                    externalUrl = topic.lastMessageUrl.ifBlank { topic.topicUrl },
+                val marker = buildForumTopicMarker(topic)
+                if (emittedForumMarkers.add(marker)) {
+                    forumEvents += TrackedActivityEvent(
+                        id = "forum:${followed.key}:$marker:$nowEpochMs",
+                        type = TrackedActivityType.FORUM,
+                        title = topic.title,
+                        body = topic.lastAuthor
+                            ?.takeIf { it.isNotBlank() }
+                            ?.let { "$it • ${topic.lastPostedAtText}" }
+                            ?: topic.lastPostedAtText,
+                        occurredAtEpochMs = nowEpochMs,
+                        forumName = followed.forumName,
+                        externalUrl = topic.lastMessageUrl.ifBlank { topic.topicUrl },
+                    )
+                }
+            }
+            followed.copy(
+                seenTopicMarkers = mergeSeenKeys(
+                    previous = followed.seenTopicMarkers,
+                    current = matchingMarkers,
                 )
+            )
+        }
+
+        val updatedForumThreads = state.followedForumThreads.map { followed ->
+            val matchingTopics = activeTopics.filter { topic -> topic.topicId == followed.topicId }
+            val matchingMarkers = matchingTopics.map(::buildForumTopicMarker)
+            val seenMarkers = followed.seenTopicMarkers.toSet()
+            val newTopics = matchingTopics.filter { topic -> buildForumTopicMarker(topic) !in seenMarkers }
+            newTopics.forEach { topic ->
+                val marker = buildForumTopicMarker(topic)
+                if (emittedForumMarkers.add(marker)) {
+                    forumEvents += TrackedActivityEvent(
+                        id = "forum-thread:${followed.topicId}:$marker:$nowEpochMs",
+                        type = TrackedActivityType.FORUM,
+                        title = topic.title,
+                        body = topic.lastAuthor
+                            ?.takeIf { it.isNotBlank() }
+                            ?.let { "$it • ${topic.lastPostedAtText}" }
+                            ?: topic.lastPostedAtText,
+                        occurredAtEpochMs = nowEpochMs,
+                        forumName = followed.forumName,
+                        externalUrl = topic.lastMessageUrl.ifBlank { topic.topicUrl },
+                    )
+                }
             }
             followed.copy(
                 seenTopicMarkers = mergeSeenKeys(
@@ -137,6 +195,7 @@ internal object NotificationSyncEngine {
         val updatedState = state.copy(
             followedCanyons = updatedCanyons,
             followedForumCategories = updatedForumCategories,
+            followedForumThreads = updatedForumThreads,
             recentEvents = (debitEvents + forumEvents + state.recentEvents)
                 .sortedByDescending { it.occurredAtEpochMs }
                 .distinctBy { it.id }

@@ -177,13 +177,31 @@ private fun MainScreen(
         fun navigateTo(target: AppLaunchTarget) {
             when (target) {
                 AppLaunchTarget.None -> Unit
-                AppLaunchTarget.Notifications -> navController.navigateSingleTop(Screen.Notifications)
-                is AppLaunchTarget.CanyonDetail -> navController.navigateSingleTop(
-                    Screen.CanyonDetail(
-                        canyonId = target.canyonId,
-                        openDebitsTab = target.openDebitsTab,
-                    )
-                )
+                is AppLaunchTarget.Notifications -> {
+                    if (target.clearBackStack) {
+                        navController.navigate(Screen.Notifications) {
+                            popUpTo(navController.graph.findStartDestination().id) { inclusive = true }
+                            launchSingleTop = true
+                        }
+                    } else {
+                        navController.navigateSingleTop(Screen.Notifications)
+                    }
+                }
+                is AppLaunchTarget.CanyonDetail -> {
+                    if (target.clearBackStack) {
+                        navController.navigate(Screen.CanyonDetail(target.canyonId, target.openDebitsTab)) {
+                            popUpTo(navController.graph.findStartDestination().id) { inclusive = true }
+                            launchSingleTop = true
+                        }
+                    } else {
+                        navController.navigateSingleTop(
+                            Screen.CanyonDetail(
+                                canyonId = target.canyonId,
+                                openDebitsTab = target.openDebitsTab,
+                            )
+                        )
+                    }
+                }
             }
         }
 

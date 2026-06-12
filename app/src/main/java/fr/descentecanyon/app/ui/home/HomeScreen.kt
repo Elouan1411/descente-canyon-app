@@ -29,9 +29,9 @@ import androidx.compose.material.icons.filled.ChatBubbleOutline
 import androidx.compose.material.icons.filled.CloudOff
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.FilterList
+import androidx.compose.material.icons.filled.FolderSpecial
+import androidx.compose.material.icons.filled.MoreVert
 import androidx.compose.material.icons.filled.Notifications
-import androidx.compose.material.icons.filled.NotificationsActive
-import androidx.compose.material.icons.filled.NotificationsNone
 import androidx.compose.material.icons.filled.Refresh
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.WifiOff
@@ -51,6 +51,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SegmentedButton
 import androidx.compose.material3.SegmentedButtonDefaults
 import androidx.compose.material3.SingleChoiceSegmentedButtonRow
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
@@ -74,6 +75,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import fr.descentecanyon.app.R
 import fr.descentecanyon.app.domain.model.Debit
+import fr.descentecanyon.app.domain.model.ForumCategory
 import fr.descentecanyon.app.domain.model.ForumActiveTopic
 import fr.descentecanyon.app.domain.model.HomeFeedType
 import fr.descentecanyon.app.domain.model.NiveauDebit
@@ -224,6 +226,18 @@ fun HomeScreen(
                 }
             }
 
+            if (selectedFeed == HomeFeedType.FORUM) {
+                item {
+                    HomeForumFilterControls(
+                        filterState = homeState.forumFilter,
+                        onCategorySelected = homeViewModel::selectForumCategory,
+                        onClear = homeViewModel::clearForumCategoryFilter,
+                        followedCategoryKeys = homeState.followedForumCategoryKeys,
+                        onToggleCategoryFollow = { category -> homeViewModel.toggleForumCategoryFollow(category) },
+                    )
+                }
+            }
+
             if (activeFeedState.notice == HomeFeedNotice.OFFLINE_BANNER ||
                 activeFeedState.notice == HomeFeedNotice.STALE_BANNER
             ) {
@@ -294,15 +308,24 @@ fun HomeScreen(
                         items = homeState.forumFeed.items,
                         key = { forumTopicItemKey(it) },
                     ) { topic ->
-                        val isFollowed = forumCategoryKey(topic.forumId, topic.forumName) in homeState.followedForumCategoryKeys
                         ForumTopicCard(
                             topic = topic,
-                            isFollowed = isFollowed,
+                            isCategoryFollowed = forumCategoryKey(topic.forumId, topic.forumName) in homeState.followedForumCategoryKeys,
+                            isThreadFollowed = topic.topicId in homeState.followedForumThreadIds,
                             onClick = {
                                 val url = topic.lastMessageUrl.ifBlank { topic.topicUrl }
                                 openExternalUrl(context, url)
                             },
-                            onToggleFollow = { homeViewModel.toggleForumCategoryFollow(topic) },
+                            onToggleCategoryFollow = {
+                                homeViewModel.toggleForumCategoryFollow(
+                                    ForumCategory(
+                                        forumId = topic.forumId,
+                                        forumName = topic.forumName,
+                                        forumUrl = topic.topicUrl,
+                                    )
+                                )
+                            },
+                            onToggleThreadFollow = { homeViewModel.toggleForumThreadFollow(topic) },
                         )
                     }
                 }
@@ -311,6 +334,68 @@ fun HomeScreen(
             item {
                 CreditCard()
             }
+        }
+    }
+}
+
+@Composable
+private fun HomeForumFilterControls(
+    filterState: HomeForumFilterState,
+    onCategorySelected: (String?) -> Unit,
+    onClear: () -> Unit,
+    followedCategoryKeys: Set<String>,
+    onToggleCategoryFollow: (ForumCategory) -> Unit,
+    modifier: Modifier = Modifier,
+) {
+    Card(
+        modifier = modifier.fillMaxWidth(),
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
+        border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.72f)),
+    ) {
+        Column(
+            modifier = Modifier.padding(14.dp),
+            verticalArrangement = Arrangement.spacedBy(8.dp),
+        ) {
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.spacedBy(10.dp),
+                verticalAlignment = Alignment.CenterVertically,
+            ) {
+                HomeStringPickerField(
+                    label = stringResource(R.string.notifications_forum_filter_title),
+                    selected = filterState.availableCategories.firstOrNull { category ->
+                        forumCategoryKey(category.forumId, category.forumName) == filterState.selectedCategoryKey
+                    }?.forumName,
+                    emptyLabel = stringResource(R.string.notifications_forum_filter_all),
+                    options = filterState.availableCategories.map { it.forumName },
+                    enabled = filterState.availableCategories.isNotEmpty(),
+                    onSelected = { selectedName ->
+                        val selectedKey = filterState.availableCategories.firstOrNull { it.forumName == selectedName }
+                            ?.let { forumCategoryKey(it.forumId, it.forumName) }
+                        onCategorySelected(selectedKey)
+                    },
+                    modifier = Modifier.weight(1f),
+                )
+                if (filterState.hasActiveFilter()) {
+                    TextButton(onClick = onClear) {
+                        Text(stringResource(R.string.search_clear_filters))
+                    }
+                }
+            }
+
+            filterState.selectedCategoryKey
+                ?.let { selectedKey -> filterState.availableCategories.firstOrNull { forumCategoryKey(it.forumId, it.forumName) == selectedKey } }
+                ?.let { selectedCategory ->
+                    OutlinedButton(onClick = { onToggleCategoryFollow(selectedCategory) }) {
+                        Text(
+                            if (forumCategoryKey(selectedCategory.forumId, selectedCategory.forumName) in followedCategoryKeys) {
+                                stringResource(R.string.notifications_forum_unfollow_action)
+                            } else {
+                                stringResource(R.string.notifications_forum_follow_action)
+                            }
+                        )
+                    }
+                }
         }
     }
 }
@@ -993,30 +1078,33 @@ private fun DebitCard(
 @Composable
 private fun ForumTopicCard(
     topic: ForumActiveTopic,
-    isFollowed: Boolean,
+    isCategoryFollowed: Boolean,
+    isThreadFollowed: Boolean,
     onClick: () -> Unit,
-    onToggleFollow: () -> Unit,
+    onToggleCategoryFollow: () -> Unit,
+    onToggleThreadFollow: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
+    var menuExpanded by remember { mutableStateOf(false) }
     Card(
         onClick = onClick,
         modifier = modifier.fillMaxWidth(),
         colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
-        elevation = CardDefaults.cardElevation(defaultElevation = 2.dp),
+        elevation = CardDefaults.cardElevation(defaultElevation = 1.dp),
         border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.72f)),
     ) {
         Column(
-            modifier = Modifier.padding(14.dp),
-            verticalArrangement = Arrangement.spacedBy(8.dp),
+            modifier = Modifier.padding(horizontal = 12.dp, vertical = 10.dp),
+            verticalArrangement = Arrangement.spacedBy(6.dp),
         ) {
             Row(
                 modifier = Modifier.fillMaxWidth(),
-                verticalAlignment = Alignment.Top,
+                verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.spacedBy(10.dp),
             ) {
                 Box(
                     modifier = Modifier
-                        .size(36.dp)
+                        .size(32.dp)
                         .background(MaterialTheme.colorScheme.primaryContainer, CircleShape),
                     contentAlignment = Alignment.Center,
                 ) {
@@ -1029,35 +1117,66 @@ private fun ForumTopicCard(
                 Column(modifier = Modifier.weight(1f)) {
                     Text(
                         text = topic.title,
-                        style = MaterialTheme.typography.titleMedium,
+                        style = MaterialTheme.typography.titleSmall,
                         fontWeight = FontWeight.SemiBold,
-                        maxLines = 2,
+                        maxLines = 1,
                         overflow = TextOverflow.Ellipsis,
                     )
-                    Text(
-                        text = buildForumTopicMeta(topic),
-                        style = MaterialTheme.typography.bodySmall,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant,
-                        modifier = Modifier.padding(top = 2.dp),
-                    )
+                    Row(
+                        modifier = Modifier.padding(top = 3.dp),
+                        horizontalArrangement = Arrangement.spacedBy(6.dp),
+                        verticalAlignment = Alignment.CenterVertically,
+                    ) {
+                        ForumMetaChip(text = topic.forumName, icon = Icons.Default.FolderSpecial)
+                        ForumMetaChip(text = "${topic.replyCount}", icon = Icons.Default.ChatBubbleOutline)
+                        if (isThreadFollowed || isCategoryFollowed) {
+                            ForumMetaChip(
+                                text = if (isThreadFollowed) {
+                                    stringResource(R.string.notifications_forum_thread_badge)
+                                } else {
+                                    stringResource(R.string.notifications_forum_category_badge)
+                                },
+                            )
+                        }
+                    }
                 }
-                Column(horizontalAlignment = Alignment.End) {
-                    IconButton(onClick = onToggleFollow) {
+                Box {
+                    IconButton(onClick = { menuExpanded = true }) {
                         Icon(
-                            imageVector = if (isFollowed) Icons.Default.NotificationsActive else Icons.Default.NotificationsNone,
-                            contentDescription = if (isFollowed) {
-                                stringResource(R.string.notifications_forum_unfollow_action)
-                            } else {
-                                stringResource(R.string.notifications_forum_follow_action)
-                            },
-                            tint = if (isFollowed) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurfaceVariant,
+                            imageVector = Icons.Default.MoreVert,
+                            contentDescription = stringResource(R.string.notifications_forum_actions),
+                            tint = MaterialTheme.colorScheme.onSurfaceVariant,
                         )
                     }
-                    Icon(
-                        imageVector = Icons.AutoMirrored.Filled.OpenInNew,
-                        contentDescription = stringResource(R.string.home_forum_open_last_message),
-                        tint = MaterialTheme.colorScheme.onSurfaceVariant,
-                    )
+                    androidx.compose.material3.DropdownMenu(
+                        expanded = menuExpanded,
+                        onDismissRequest = { menuExpanded = false },
+                    ) {
+                        DropdownMenuItem(
+                            text = {
+                                Text(
+                                    if (isThreadFollowed) stringResource(R.string.notifications_forum_thread_unfollow_action)
+                                    else stringResource(R.string.notifications_forum_thread_follow_action)
+                                )
+                            },
+                            onClick = {
+                                menuExpanded = false
+                                onToggleThreadFollow()
+                            },
+                        )
+                        DropdownMenuItem(
+                            text = {
+                                Text(
+                                    if (isCategoryFollowed) stringResource(R.string.notifications_forum_unfollow_action)
+                                    else stringResource(R.string.notifications_forum_follow_action)
+                                )
+                            },
+                            onClick = {
+                                menuExpanded = false
+                                onToggleCategoryFollow()
+                            },
+                        )
+                    }
                 }
             }
             Text(
@@ -1065,28 +1184,39 @@ private fun ForumTopicCard(
                     ?.takeIf { it.isNotBlank() }
                     ?.let { author -> stringResource(R.string.home_forum_last_message_by, author, topic.lastPostedAtText) }
                     ?: topic.lastPostedAtText,
-                style = MaterialTheme.typography.bodyMedium,
-                color = MaterialTheme.colorScheme.onSurface,
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
             )
         }
     }
 }
 
 @Composable
-private fun buildForumTopicMeta(topic: ForumActiveTopic): String {
-    return stringResource(
-        R.string.home_forum_topic_meta,
-        topic.forumName,
-        topic.replyCount,
-        formatCompactCount(topic.viewCount),
-    )
-}
-
-private fun formatCompactCount(value: Int): String {
-    return when {
-        value >= 10_000 -> "${value / 1_000}k"
-        value >= 1_000 -> String.format("%.1fk", value / 1_000f)
-        else -> value.toString()
+private fun ForumMetaChip(
+    text: String,
+    icon: ImageVector? = null,
+    modifier: Modifier = Modifier,
+) {
+    Surface(
+        modifier = modifier,
+        color = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.68f),
+        contentColor = MaterialTheme.colorScheme.onSurfaceVariant,
+        shape = CircleShape,
+    ) {
+        Row(
+            modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp),
+            horizontalArrangement = Arrangement.spacedBy(4.dp),
+            verticalAlignment = Alignment.CenterVertically,
+        ) {
+            icon?.let {
+                Icon(
+                    imageVector = it,
+                    contentDescription = null,
+                    modifier = Modifier.size(12.dp),
+                )
+            }
+            Text(text = text, style = MaterialTheme.typography.labelSmall)
+        }
     }
 }
 

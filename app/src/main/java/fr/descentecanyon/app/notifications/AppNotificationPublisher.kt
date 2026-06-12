@@ -130,7 +130,7 @@ class AppNotificationPublisher @Inject constructor(
     private fun canyonDetailPendingIntent(canyonId: Int): PendingIntent {
         val intent = Intent(context, MainActivity::class.java)
             .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP)
-            .putLaunchTarget(AppLaunchTarget.CanyonDetail(canyonId = canyonId, openDebitsTab = true))
+            .putLaunchTarget(AppLaunchTarget.CanyonDetail(canyonId = canyonId, openDebitsTab = true, clearBackStack = true))
         return PendingIntent.getActivity(
             context,
             canyonId,
@@ -142,7 +142,7 @@ class AppNotificationPublisher @Inject constructor(
     private fun notificationCenterPendingIntent(): PendingIntent {
         val intent = Intent(context, MainActivity::class.java)
             .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP)
-            .putLaunchTarget(AppLaunchTarget.Notifications)
+            .putLaunchTarget(AppLaunchTarget.Notifications(clearBackStack = true))
         return PendingIntent.getActivity(
             context,
             10_000,

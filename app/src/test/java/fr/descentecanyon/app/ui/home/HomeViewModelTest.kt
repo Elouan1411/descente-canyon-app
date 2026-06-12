@@ -9,6 +9,7 @@ import fr.descentecanyon.app.domain.model.CanyonSearchItem
 import fr.descentecanyon.app.domain.model.CotationRating
 import fr.descentecanyon.app.domain.model.Debit
 import fr.descentecanyon.app.domain.model.ForumActiveTopic
+import fr.descentecanyon.app.domain.model.ForumCategory
 import fr.descentecanyon.app.domain.model.HomeFeedType
 import fr.descentecanyon.app.domain.model.NiveauDebit
 import fr.descentecanyon.app.domain.model.NotificationCenterState
@@ -59,6 +60,7 @@ class HomeViewModelTest {
         coEvery { appMetadataDao.insert(any()) } returns Unit
         coEvery { debitRepository.getCachedLatestDebits(any()) } returns CachedItems(emptyList(), null)
         coEvery { forumRepository.getCachedActiveTopics(any()) } returns CachedItems(emptyList(), null)
+        coEvery { forumRepository.getCachedCategories() } returns CachedItems(emptyList(), null)
 
         val viewModel = createViewModel()
         advanceUntilIdle()
@@ -79,6 +81,7 @@ class HomeViewModelTest {
         coEvery { appMetadataDao.insert(any()) } returns Unit
         coEvery { debitRepository.getCachedLatestDebits(any()) } returns CachedItems(emptyList(), null)
         coEvery { forumRepository.getCachedActiveTopics(any()) } returns CachedItems(emptyList(), null)
+        coEvery { forumRepository.getCachedCategories() } returns CachedItems(emptyList(), null)
         coEvery { debitRepository.refreshLatestDebits(any()) } returns Result.success(CachedItems(listOf(sampleDebit()), 1234L))
         coEvery { forumRepository.refreshActiveTopics(any()) } returns Result.success(CachedItems(emptyList(), 1234L))
 
@@ -103,6 +106,7 @@ class HomeViewModelTest {
         coEvery { appMetadataDao.insert(any()) } returns Unit
         coEvery { debitRepository.getCachedLatestDebits(any()) } returns CachedItems(emptyList(), null)
         coEvery { forumRepository.getCachedActiveTopics(any()) } returns CachedItems(emptyList(), null)
+        coEvery { forumRepository.getCachedCategories() } returns CachedItems(emptyList(), null)
         coEvery { debitRepository.refreshLatestDebits(any()) } returns Result.success(CachedItems(emptyList(), 1234L))
         coEvery { forumRepository.refreshActiveTopics(any()) } returns Result.failure(IllegalStateException("500"))
 
@@ -123,6 +127,7 @@ class HomeViewModelTest {
         coEvery { appMetadataDao.insert(any()) } returns Unit
         coEvery { debitRepository.getCachedLatestDebits(any()) } returns CachedItems(emptyList(), null)
         coEvery { forumRepository.getCachedActiveTopics(any()) } returns CachedItems(listOf(sampleTopic()), 5678L)
+        coEvery { forumRepository.getCachedCategories() } returns CachedItems(listOf(sampleCategory()), 5678L)
         coEvery { debitRepository.refreshLatestDebits(any()) } returns Result.success(CachedItems(emptyList(), 1234L))
         coEvery { forumRepository.refreshActiveTopics(any()) } returns Result.failure(UnknownHostException("Unable to resolve host"))
 
@@ -143,6 +148,7 @@ class HomeViewModelTest {
         coEvery { appMetadataDao.insert(any()) } returns Unit
         coEvery { debitRepository.getCachedLatestDebits(any()) } returns CachedItems(emptyList(), null)
         coEvery { forumRepository.getCachedActiveTopics(any()) } returns CachedItems(emptyList(), null)
+        coEvery { forumRepository.getCachedCategories() } returns CachedItems(emptyList(), null)
         coEvery { debitRepository.refreshLatestDebits(any()) } returns Result.success(CachedItems(listOf(sampleDebit()), 1234L))
         coEvery { forumRepository.refreshActiveTopics(any()) } returns Result.success(CachedItems(listOf(sampleTopic()), 5678L))
 
@@ -177,6 +183,7 @@ class HomeViewModelTest {
             CachedItems(listOf(sampleDebit()), 1234L)
         }
         coEvery { forumRepository.getCachedActiveTopics(any()) } returns CachedItems(listOf(sampleTopic()), 5678L)
+        coEvery { forumRepository.getCachedCategories() } returns CachedItems(listOf(sampleCategory()), 5678L)
         coEvery { debitRepository.refreshLatestDebits(any()) } returns Result.success(CachedItems(listOf(sampleDebit()), 1234L))
         coEvery { forumRepository.refreshActiveTopics(any()) } returns Result.success(CachedItems(listOf(sampleTopic()), 5678L))
 
@@ -202,6 +209,7 @@ class HomeViewModelTest {
         coEvery { appMetadataDao.insert(any()) } returns Unit
         coEvery { debitRepository.getCachedLatestDebits(any()) } returns CachedItems(emptyList(), null)
         coEvery { forumRepository.getCachedActiveTopics(any()) } returns CachedItems(emptyList(), null)
+        coEvery { forumRepository.getCachedCategories() } returns CachedItems(emptyList(), null)
         coEvery { debitRepository.refreshLatestDebits(any()) } returns Result.success(CachedItems(emptyList(), 1234L))
         coEvery { forumRepository.refreshActiveTopics(any()) } returns Result.success(CachedItems(listOf(sampleTopic()), 5678L))
 
@@ -227,6 +235,7 @@ class HomeViewModelTest {
         coEvery { appMetadataDao.insert(any()) } returns Unit
         coEvery { debitRepository.getCachedLatestDebits(any()) } returns CachedItems(emptyList(), null)
         coEvery { forumRepository.getCachedActiveTopics(any()) } returns CachedItems(emptyList(), null)
+        coEvery { forumRepository.getCachedCategories() } returns CachedItems(emptyList(), null)
         coEvery { debitRepository.refreshLatestDebits(any()) } returns Result.success(CachedItems(debits, 1234L))
         coEvery { forumRepository.refreshActiveTopics(any()) } returns Result.success(CachedItems(emptyList(), 1234L))
 
@@ -271,6 +280,7 @@ class HomeViewModelTest {
         coEvery { appMetadataDao.insert(any()) } returns Unit
         coEvery { debitRepository.getCachedLatestDebits(any()) } returns CachedItems(emptyList(), null)
         coEvery { forumRepository.getCachedActiveTopics(any()) } returns CachedItems(emptyList(), null)
+        coEvery { forumRepository.getCachedCategories() } returns CachedItems(emptyList(), null)
         coEvery { debitRepository.refreshLatestDebits(any()) } returns Result.success(CachedItems(debits, 1234L))
         coEvery { forumRepository.refreshActiveTopics(any()) } returns Result.success(CachedItems(emptyList(), 1234L))
 
@@ -296,6 +306,8 @@ class HomeViewModelTest {
         every { canyonRepository.observeSearchCatalog() } returns searchCatalog
         every { notificationCenterRepository.observeState() } returns MutableStateFlow(NotificationCenterState())
         coEvery { notificationCenterRepository.toggleForumCategoryFollow(any(), any(), any()) } returns Unit
+        coEvery { notificationCenterRepository.toggleForumThreadFollow(any(), any()) } returns Unit
+        coEvery { forumRepository.refreshCategories() } returns Result.success(CachedItems(listOf(sampleCategory()), 5678L))
         return HomeViewModel(
             debitRepository = debitRepository,
             forumRepository = forumRepository,
@@ -353,5 +365,11 @@ class HomeViewModelTest {
         lastPostedAtEpochMs = 1_743_800_454_000,
         topicUrl = "https://www.descente-canyon.com/forums/viewtopic.php?f=16&t=28125",
         lastMessageUrl = "https://www.descente-canyon.com/forums/viewtopic.php?f=16&t=28125&p=305248#p305248",
+    )
+
+    private fun sampleCategory() = ForumCategory(
+        forumId = 16,
+        forumName = "SUISSE",
+        forumUrl = "https://www.descente-canyon.com/forums/viewforum.php?f=16",
     )
 }

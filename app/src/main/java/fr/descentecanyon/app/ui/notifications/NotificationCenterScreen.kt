@@ -26,8 +26,8 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.automirrored.filled.OpenInNew
-import androidx.compose.material.icons.filled.ClearAll
 import androidx.compose.material.icons.filled.NotificationsActive
+import androidx.compose.material.icons.filled.RadioButtonChecked
 import androidx.compose.material.icons.filled.Tune
 import androidx.compose.material.icons.filled.WaterDrop
 import androidx.compose.material3.Card
@@ -55,6 +55,7 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import fr.descentecanyon.app.R
 import fr.descentecanyon.app.domain.model.FollowedCanyon
 import fr.descentecanyon.app.domain.model.FollowedForumCategory
+import fr.descentecanyon.app.domain.model.FollowedForumThread
 import fr.descentecanyon.app.domain.model.TrackedActivityEvent
 import fr.descentecanyon.app.domain.model.TrackedActivityType
 import fr.descentecanyon.app.ui.components.CompactAppBar
@@ -86,16 +87,6 @@ fun NotificationCenterScreen(
                             imageVector = Icons.AutoMirrored.Filled.ArrowBack,
                             contentDescription = stringResource(R.string.back),
                         )
-                    }
-                },
-                actions = {
-                    if (uiState.recentEvents.isNotEmpty()) {
-                        IconButton(onClick = viewModel::clearRecentActivity) {
-                            Icon(
-                                imageVector = Icons.Default.ClearAll,
-                                contentDescription = stringResource(R.string.notifications_clear_activity),
-                            )
-                        }
                     }
                 },
             )
@@ -140,6 +131,16 @@ fun NotificationCenterScreen(
                     )
                 }
             } else {
+                item {
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.End,
+                    ) {
+                        TextButton(onClick = viewModel::clearRecentActivity) {
+                            Text(stringResource(R.string.notifications_clear_activity))
+                        }
+                    }
+                }
                 items(uiState.recentEvents, key = { it.id }) { event ->
                     ActivityEventCard(
                         event = event,
@@ -185,7 +186,7 @@ fun NotificationCenterScreen(
                 )
             }
 
-            if (uiState.followedForumCategories.isEmpty()) {
+            if (uiState.followedForumCategories.isEmpty() && uiState.followedForumThreads.isEmpty()) {
                 item {
                     EmptyCard(
                         icon = Icons.Default.Tune,
@@ -198,6 +199,12 @@ fun NotificationCenterScreen(
                     FollowedForumCategoryCard(
                         forumCategory = forumCategory,
                         onRemove = { viewModel.removeForumCategoryFollow(forumCategory.key) },
+                    )
+                }
+                items(uiState.followedForumThreads, key = { it.topicId }) { thread ->
+                    FollowedForumThreadCard(
+                        thread = thread,
+                        onRemove = { viewModel.removeForumThreadFollow(thread.topicId) },
                     )
                 }
             }
@@ -365,6 +372,7 @@ private fun FollowedCanyonCard(
         modifier = modifier,
         title = canyon.canyonName,
         subtitle = stringResource(R.string.notifications_followed_canyon_meta, canyon.canyonId),
+        leadingIcon = Icons.Default.WaterDrop,
         onOpen = onOpen,
         onRemove = onRemove,
     )
@@ -380,6 +388,23 @@ private fun FollowedForumCategoryCard(
         modifier = modifier,
         title = forumCategory.forumName,
         subtitle = stringResource(R.string.notifications_followed_forum_meta),
+        leadingIcon = Icons.Default.Tune,
+        onOpen = null,
+        onRemove = onRemove,
+    )
+}
+
+@Composable
+private fun FollowedForumThreadCard(
+    thread: FollowedForumThread,
+    onRemove: () -> Unit,
+    modifier: Modifier = Modifier,
+) {
+    FollowRowCard(
+        modifier = modifier,
+        title = thread.title,
+        subtitle = thread.forumName,
+        leadingIcon = Icons.Default.RadioButtonChecked,
         onOpen = null,
         onRemove = onRemove,
     )
@@ -389,6 +414,7 @@ private fun FollowedForumCategoryCard(
 private fun FollowRowCard(
     title: String,
     subtitle: String,
+    leadingIcon: ImageVector? = null,
     onOpen: (() -> Unit)?,
     onRemove: () -> Unit,
     modifier: Modifier = Modifier,
@@ -404,6 +430,17 @@ private fun FollowRowCard(
                 .padding(horizontal = 14.dp, vertical = 12.dp),
             verticalAlignment = Alignment.CenterVertically,
         ) {
+            leadingIcon?.let {
+                Box(
+                    modifier = Modifier
+                        .padding(end = 10.dp)
+                        .size(32.dp)
+                        .background(MaterialTheme.colorScheme.primaryContainer, shape = MaterialTheme.shapes.medium),
+                    contentAlignment = Alignment.Center,
+                ) {
+                    Icon(imageVector = it, contentDescription = null, tint = MaterialTheme.colorScheme.primary)
+                }
+            }
             Column(modifier = Modifier.weight(1f)) {
                 Text(text = title, style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.SemiBold)
                 Text(

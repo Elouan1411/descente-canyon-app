@@ -1,6 +1,8 @@
 package fr.descentecanyon.app.data.mapper
 
 import fr.descentecanyon.app.data.remote.dto.ScrapedForumActiveTopic
+import fr.descentecanyon.app.data.remote.dto.ScrapedForumCategory
+import fr.descentecanyon.app.domain.model.ForumCategory
 import fr.descentecanyon.app.domain.model.ForumActiveTopic
 
 fun ScrapedForumActiveTopic.toDomain(): ForumActiveTopic = ForumActiveTopic(
@@ -15,4 +17,10 @@ fun ScrapedForumActiveTopic.toDomain(): ForumActiveTopic = ForumActiveTopic(
     lastPostedAtEpochMs = lastPostedAtEpochMs,
     topicUrl = topicUrl,
     lastMessageUrl = lastMessageUrl,
+)
+
+fun ScrapedForumCategory.toDomain(): ForumCategory = ForumCategory(
+    forumId = forumId,
+    forumName = forumName,
+    forumUrl = forumUrl,
 )

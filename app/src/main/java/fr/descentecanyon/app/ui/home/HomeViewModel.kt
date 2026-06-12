@@ -7,8 +7,10 @@ import fr.descentecanyon.app.data.network.ConnectivityObserver
 import fr.descentecanyon.app.data.repository.HomeFeedSnapshotStore
 import fr.descentecanyon.app.domain.model.CanyonSearchItem
 import fr.descentecanyon.app.domain.model.Debit
+import fr.descentecanyon.app.domain.model.ForumCategory
 import fr.descentecanyon.app.domain.model.ForumActiveTopic
 import fr.descentecanyon.app.domain.model.HomeFeedType
+import fr.descentecanyon.app.domain.model.forumCategoryKey
 import fr.descentecanyon.app.domain.model.subdivisionsFor
 import fr.descentecanyon.app.domain.repository.CanyonRepository
 import fr.descentecanyon.app.domain.repository.DebitRepository
@@ -52,15 +54,24 @@ data class HomeDebitGeoFilterState(
     fun hasActiveFilter(): Boolean = selectedCountry != null || selectedDepartment != null
 }
 
+data class HomeForumFilterState(
+    val selectedCategoryKey: String? = null,
+    val availableCategories: List<ForumCategory> = emptyList(),
+) {
+    fun hasActiveFilter(): Boolean = selectedCategoryKey != null
+}
+
 data class HomeUiState(
     val selectedFeed: HomeFeedType = HomeFeedType.DEBITS,
     val isOnline: Boolean = true,
     val debitFeed: HomeFeedSectionState<Debit> = HomeFeedSectionState(),
     val forumFeed: HomeFeedSectionState<ForumActiveTopic> = HomeFeedSectionState(),
     val debitGeoFilter: HomeDebitGeoFilterState = HomeDebitGeoFilterState(),
+    val forumFilter: HomeForumFilterState = HomeForumFilterState(),
     val isLocalCanyonCatalogLoaded: Boolean = false,
     val localCanyonIds: Set<Int> = emptySet(),
     val followedForumCategoryKeys: Set<String> = emptySet(),
+    val followedForumThreadIds: Set<Int> = emptySet(),
 )
 
 @HiltViewModel
@@ -83,6 +94,7 @@ class HomeViewModel @Inject constructor(
     private var allLatestDebits: List<Debit> = emptyList()
     private var searchCatalog: List<CanyonSearchItem> = emptyList()
     private var visibleDebitLimit = LATEST_DEBITS_PAGE_SIZE
+    private var allForumTopics: List<ForumActiveTopic> = emptyList()
 
     init {
         observeConnectivity()
@@ -91,13 +103,38 @@ class HomeViewModel @Inject constructor(
         restoreHomeState()
     }
 
-    fun toggleForumCategoryFollow(topic: ForumActiveTopic) {
+    fun toggleForumCategoryFollow(category: ForumCategory) {
         viewModelScope.launch {
             notificationCenterRepository.toggleForumCategoryFollow(
-                forumId = topic.forumId,
-                forumName = topic.forumName,
-                baselineTopics = _uiState.value.forumFeed.items,
+                forumId = category.forumId,
+                forumName = category.forumName,
+                baselineTopics = allForumTopics,
             )
+        }
+    }
+
+    fun toggleForumThreadFollow(topic: ForumActiveTopic) {
+        viewModelScope.launch {
+            notificationCenterRepository.toggleForumThreadFollow(
+                topic = topic,
+                baselineTopics = allForumTopics,
+            )
+        }
+    }
+
+    fun selectForumCategory(categoryKey: String?) {
+        _uiState.update { state ->
+            state.copy(
+                forumFilter = state.forumFilter.copy(selectedCategoryKey = categoryKey?.takeIf { it.isNotBlank() }),
+            ).withForumPresentation()
+        }
+    }
+
+    fun clearForumCategoryFilter() {
+        _uiState.update { state ->
+            state.copy(
+                forumFilter = state.forumFilter.copy(selectedCategoryKey = null),
+            ).withForumPresentation()
         }
     }
 
@@ -171,7 +208,9 @@ class HomeViewModel @Inject constructor(
             val restoredSelectedFeed = snapshotStore.readSelectedFeedType() ?: HomeFeedType.DEBITS
             val cachedDebits = debitRepository.getCachedLatestDebits(LATEST_DEBITS_CACHE_LIMIT)
             val cachedTopics = forumRepository.getCachedActiveTopics(ACTIVE_TOPICS_LIMIT)
+            val cachedForumCategories = forumRepository.getCachedCategories()
             allLatestDebits = cachedDebits.items
+            allForumTopics = cachedTopics.items
             visibleDebitLimit = LATEST_DEBITS_PAGE_SIZE
 
             _uiState.update { state ->
@@ -195,7 +234,10 @@ class HomeViewModel @Inject constructor(
                             currentNotice = null,
                         ),
                     ),
-                ).withDebitPresentation()
+                    forumFilter = state.forumFilter.copy(
+                        availableCategories = cachedForumCategories.items,
+                    ),
+                ).withDebitPresentation().withForumPresentation()
             }
 
             if (connectivityObserver.isCurrentlyOnline()) {
@@ -261,7 +303,8 @@ class HomeViewModel @Inject constructor(
                 _uiState.update {
                     it.copy(
                         followedForumCategoryKeys = state.followedForumCategories.mapTo(mutableSetOf()) { category -> category.key },
-                    )
+                        followedForumThreadIds = state.followedForumThreads.mapTo(mutableSetOf()) { thread -> thread.topicId },
+                    ).withForumPresentation()
                 }
             }
         }
@@ -364,6 +407,7 @@ class HomeViewModel @Inject constructor(
 
                     forumRepository.refreshActiveTopics(ACTIVE_TOPICS_LIMIT).fold(
                         onSuccess = { cached ->
+                            allForumTopics = cached.items
                             _uiState.update { state ->
                                 state.copy(
                                     forumFeed = state.forumFeed.copy(
@@ -376,8 +420,9 @@ class HomeViewModel @Inject constructor(
                                         ),
                                         lastSyncedAtEpochMs = cached.syncedAtEpochMs,
                                     ),
-                                )
+                                ).withForumPresentation()
                             }
+                            refreshForumCategoriesInBackground()
                         },
                         onFailure = { throwable ->
                             _uiState.update { state ->
@@ -451,6 +496,20 @@ class HomeViewModel @Inject constructor(
         HomeFeedType.FORUM -> HomeFeedType.DEBITS
     }
 
+    private fun refreshForumCategoriesInBackground() {
+        viewModelScope.launch {
+            forumRepository.refreshCategories().onSuccess { cached ->
+                _uiState.update { state ->
+                    state.copy(
+                        forumFilter = state.forumFilter.copy(
+                            availableCategories = cached.items,
+                        ),
+                    ).withForumPresentation()
+                }
+            }
+        }
+    }
+
     private fun HomeUiState.withDebitPresentation(): HomeUiState {
         val presentation = buildDebitPresentation(
             allDebits = allLatestDebits,
@@ -467,6 +526,18 @@ class HomeViewModel @Inject constructor(
                 filteredCount = presentation.filteredCount,
                 canLoadMore = presentation.canLoadMore,
             ),
+        )
+    }
+
+    private fun HomeUiState.withForumPresentation(): HomeUiState {
+        val selectedCategoryKey = forumFilter.selectedCategoryKey
+        val filteredTopics = if (selectedCategoryKey == null) {
+            allForumTopics
+        } else {
+            allForumTopics.filter { topic -> forumCategoryKey(topic.forumId, topic.forumName) == selectedCategoryKey }
+        }
+        return copy(
+            forumFeed = forumFeed.copy(items = filteredTopics),
         )
     }
 

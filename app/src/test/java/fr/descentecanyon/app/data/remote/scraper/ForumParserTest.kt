@@ -55,4 +55,39 @@ class ForumParserTest {
         )
         assertNotNull(result.first().lastPostedAtEpochMs)
     }
+
+    @Test
+    fun `parse categories extracts all forum sections uniquely`() {
+        val doc = Jsoup.parse(
+            """
+            <html>
+            <body>
+              <ul class="topiclist forums">
+                <li class="row">
+                  <a class="forumtitle" href="./viewforum.php?f=16&amp;sid=abc123">SUISSE</a>
+                </li>
+                <li class="row">
+                  <a class="forumtitle" href="./viewforum.php?f=17&amp;sid=abc123">ITALIE</a>
+                </li>
+                <li class="row">
+                  <a class="forumtitle" href="./viewforum.php?f=16&amp;sid=def456">SUISSE</a>
+                </li>
+              </ul>
+            </body>
+            </html>
+            """.trimIndent(),
+            "https://www.descente-canyon.com/forums/",
+        )
+
+        val result = ForumParser.parseCategories(doc)
+
+        assertEquals(2, result.size)
+        assertEquals("ITALIE", result[0].forumName)
+        assertEquals("SUISSE", result[1].forumName)
+        assertEquals(16, result[1].forumId)
+        assertEquals(
+            "https://www.descente-canyon.com/forums/viewforum.php?f=16",
+            result[1].forumUrl,
+        )
+    }
 }

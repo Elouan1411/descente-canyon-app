@@ -7,9 +7,12 @@ data class NotificationCenterState(
     val installOffsetMinutes: Int? = null,
     val followedCanyons: List<FollowedCanyon> = emptyList(),
     val followedForumCategories: List<FollowedForumCategory> = emptyList(),
+    val followedForumThreads: List<FollowedForumThread> = emptyList(),
     val recentEvents: List<TrackedActivityEvent> = emptyList(),
 ) {
-    fun hasTrackedTargets(): Boolean = followedCanyons.isNotEmpty() || followedForumCategories.isNotEmpty()
+    fun hasTrackedTargets(): Boolean {
+        return followedCanyons.isNotEmpty() || followedForumCategories.isNotEmpty() || followedForumThreads.isNotEmpty()
+    }
 }
 
 @Serializable
@@ -17,6 +20,7 @@ data class FollowedCanyon(
     val canyonId: Int,
     val canyonName: String,
     val seenDebitKeys: List<String> = emptyList(),
+    val hasSeededLatestDebits: Boolean = false,
 )
 
 @Serializable
@@ -25,6 +29,23 @@ data class FollowedForumCategory(
     val forumId: Int? = null,
     val forumName: String,
     val seenTopicMarkers: List<String> = emptyList(),
+)
+
+@Serializable
+data class FollowedForumThread(
+    val topicId: Int,
+    val title: String,
+    val forumId: Int? = null,
+    val forumName: String,
+    val topicUrl: String,
+    val seenTopicMarkers: List<String> = emptyList(),
+)
+
+@Serializable
+data class ForumCategory(
+    val forumId: Int?,
+    val forumName: String,
+    val forumUrl: String,
 )
 
 @Serializable
