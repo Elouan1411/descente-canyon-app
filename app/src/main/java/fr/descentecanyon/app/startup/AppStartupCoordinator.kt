@@ -5,6 +5,7 @@ import fr.descentecanyon.app.data.local.importer.EmbeddedAppDataImporter
 import fr.descentecanyon.app.data.local.importer.EmbeddedImportMode
 import fr.descentecanyon.app.data.network.ConnectivityObserver
 import fr.descentecanyon.app.data.repository.LegacyPhotoStorageMigrator
+import fr.descentecanyon.app.data.repository.NotificationSyncScheduler
 import fr.descentecanyon.app.perf.PerformanceTrace
 import fr.descentecanyon.app.domain.repository.AuthRepository
 import fr.descentecanyon.app.domain.usecase.SyncPendingDebitsUseCase
@@ -30,6 +31,7 @@ class AppStartupCoordinator @Inject constructor(
     private val searchCatalogWarmupCoordinator: SearchCatalogWarmupCoordinator,
     private val predictionWarmupCoordinator: PredictionWarmupCoordinator,
     private val legacyPhotoStorageMigrator: LegacyPhotoStorageMigrator,
+    private val notificationSyncScheduler: NotificationSyncScheduler,
 ) {
 
     private val backgroundScope = CoroutineScope(SupervisorJob() + Dispatchers.IO)
@@ -89,6 +91,7 @@ class AppStartupCoordinator @Inject constructor(
                 PerformanceTrace.logEvent("auth_restore_session_skipped", "reason" to "no_saved_credentials")
             }
 
+            notificationSyncScheduler.start()
             initialized = true
             PerformanceTrace.logEvent("startup_initialize_marked_ready")
             backgroundScope.launch {

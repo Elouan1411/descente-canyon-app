@@ -39,6 +39,8 @@ import androidx.compose.material.icons.filled.KeyboardArrowUp
 import androidx.compose.material.icons.filled.Language
 import androidx.compose.material.icons.filled.LocationOn
 import androidx.compose.material.icons.filled.Navigation
+import androidx.compose.material.icons.filled.NotificationsActive
+import androidx.compose.material.icons.filled.NotificationsNone
 import androidx.compose.material.icons.filled.Star
 import androidx.compose.material.icons.filled.WaterDrop
 import androidx.compose.material3.Card
@@ -128,6 +130,7 @@ fun CanyonDetailScreen(
     onShowMapClick: () -> Unit,
     onOpenPredictionInfo: () -> Unit,
     onOpenPhotoGallery: (Long) -> Unit,
+    openDebitsTabInitially: Boolean = false,
     modifier: Modifier = Modifier,
     contentPadding: PaddingValues = PaddingValues(),
     refreshDebitsAfterSubmission: Boolean = false,
@@ -203,6 +206,24 @@ fun CanyonDetailScreen(
                         modifier = Modifier.testTag(TestTags.detailRateInterestButton),
                     ) {
                         AddInterestIcon(contentDescription = stringResource(R.string.interest_rating_add_action))
+                    }
+                    IconButton(
+                        onClick = viewModel::toggleDebitNotifications,
+                        modifier = Modifier.testTag(TestTags.detailDebitNotificationButton),
+                    ) {
+                        Icon(
+                            imageVector = if (uiState.isDebitNotificationsEnabled) {
+                                Icons.Default.NotificationsActive
+                            } else {
+                                Icons.Default.NotificationsNone
+                            },
+                            contentDescription = if (uiState.isDebitNotificationsEnabled) {
+                                stringResource(R.string.notifications_canyon_unfollow_action)
+                            } else {
+                                stringResource(R.string.notifications_canyon_follow_action)
+                            },
+                            tint = if (uiState.isDebitNotificationsEnabled) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onPrimaryContainer,
+                        )
                     }
                     IconButton(
                         onClick = viewModel::toggleFavorite,
@@ -282,6 +303,7 @@ fun CanyonDetailScreen(
                         downloadingPhotoIds = uiState.downloadingPhotoIds,
                         onOpenPhotoGallery = onOpenPhotoGallery,
                         onPersistedPhotoMissing = viewModel::onPersistedPhotoMissing,
+                        openDebitsTabInitially = openDebitsTabInitially,
                         bottomContentPadding = contentPadding.calculateBottomPadding() + 96.dp,
                         modifier = Modifier.fillMaxSize(),
                     )
@@ -403,10 +425,13 @@ private fun CanyonDetailContent(
     downloadingPhotoIds: Set<Long>,
     onOpenPhotoGallery: (Long) -> Unit,
     onPersistedPhotoMissing: (Long) -> Unit,
+    openDebitsTabInitially: Boolean,
     bottomContentPadding: Dp = 0.dp,
     modifier: Modifier = Modifier,
 ) {
-    var selectedTab by rememberSaveable { mutableIntStateOf(0) }
+    var selectedTab by rememberSaveable(openDebitsTabInitially) {
+        mutableIntStateOf(if (openDebitsTabInitially) 2 else 0)
+    }
     val listState = rememberLazyListState()
     val tabs = listOf(
         stringResource(R.string.tab_topo),

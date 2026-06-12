@@ -1,0 +1,176 @@
+package fr.descentecanyon.app.data.repository
+
+import android.content.Context
+import androidx.datastore.preferences.core.Preferences
+import androidx.datastore.preferences.core.edit
+import androidx.datastore.preferences.core.emptyPreferences
+import androidx.datastore.preferences.core.stringPreferencesKey
+import androidx.datastore.preferences.preferencesDataStore
+import dagger.hilt.android.qualifiers.ApplicationContext
+import fr.descentecanyon.app.domain.model.Debit
+import fr.descentecanyon.app.domain.model.ForumActiveTopic
+import fr.descentecanyon.app.domain.model.NotificationCenterState
+import fr.descentecanyon.app.domain.model.NotificationSyncSummary
+import fr.descentecanyon.app.domain.model.forumCategoryKey
+import fr.descentecanyon.app.domain.repository.NotificationCenterRepository
+import java.io.IOException
+import javax.inject.Inject
+import javax.inject.Singleton
+import kotlin.random.Random
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.catch
+import kotlinx.coroutines.flow.distinctUntilChanged
+import kotlinx.coroutines.flow.map
+import kotlinx.serialization.encodeToString
+import kotlinx.serialization.json.Json
+
+private val Context.notificationCenterDataStore by preferencesDataStore(name = "notification_center")
+
+@Singleton
+class NotificationCenterRepositoryImpl @Inject constructor(
+    @param:ApplicationContext private val context: Context,
+) : NotificationCenterRepository {
+
+    private val json = Json {
+        ignoreUnknownKeys = true
+        encodeDefaults = true
+    }
+
+    override fun observeState(): Flow<NotificationCenterState> {
+        return context.notificationCenterDataStore.data
+            .catch { throwable ->
+                if (throwable is IOException) {
+                    emit(emptyPreferences())
+                } else {
+                    throw throwable
+                }
+            }
+            .map(::decodeState)
+            .distinctUntilChanged()
+    }
+
+    override fun observeIsCanyonFollowed(canyonId: Int): Flow<Boolean> {
+        return observeState()
+            .map { state -> state.followedCanyons.any { it.canyonId == canyonId } }
+            .distinctUntilChanged()
+    }
+
+    override fun observeIsForumCategoryFollowed(forumId: Int?, forumName: String): Flow<Boolean> {
+        val key = forumCategoryKey(forumId, forumName)
+        return observeState()
+            .map { state -> state.followedForumCategories.any { it.key == key } }
+            .distinctUntilChanged()
+    }
+
+    override suspend fun toggleCanyonFollow(
+        canyonId: Int,
+        canyonName: String,
+        baselineDebits: List<Debit>,
+    ) {
+        updateState { state ->
+            if (state.followedCanyons.any { it.canyonId == canyonId }) {
+                state.copy(followedCanyons = state.followedCanyons.filterNot { it.canyonId == canyonId })
+            } else {
+                state.copy(
+                    followedCanyons = (
+                        state.followedCanyons + NotificationSyncEngine.buildInitialCanyonFollow(
+                            canyonId = canyonId,
+                            canyonName = canyonName,
+                            baselineDebits = baselineDebits,
+                        )
+                    ).sortedBy { it.canyonName.lowercase() }
+                )
+            }
+        }
+    }
+
+    override suspend fun removeCanyonFollow(canyonId: Int) {
+        updateState { state ->
+            state.copy(followedCanyons = state.followedCanyons.filterNot { it.canyonId == canyonId })
+        }
+    }
+
+    override suspend fun toggleForumCategoryFollow(
+        forumId: Int?,
+        forumName: String,
+        baselineTopics: List<ForumActiveTopic>,
+    ) {
+        val key = forumCategoryKey(forumId, forumName)
+        updateState { state ->
+            if (state.followedForumCategories.any { it.key == key }) {
+                state.copy(followedForumCategories = state.followedForumCategories.filterNot { it.key == key })
+            } else {
+                state.copy(
+                    followedForumCategories = (
+                        state.followedForumCategories + NotificationSyncEngine.buildInitialForumFollow(
+                            forumId = forumId,
+                            forumName = forumName,
+                            baselineTopics = baselineTopics,
+                        )
+                    ).sortedBy { it.forumName.lowercase() }
+                )
+            }
+        }
+    }
+
+    override suspend fun removeForumCategoryFollow(key: String) {
+        updateState { state ->
+            state.copy(followedForumCategories = state.followedForumCategories.filterNot { it.key == key })
+        }
+    }
+
+    override suspend fun clearRecentActivity() {
+        updateState { state -> state.copy(recentEvents = emptyList()) }
+    }
+
+    override suspend fun getOrCreateInstallOffsetMinutes(): Int {
+        var resolved = 0
+        updateState { state ->
+            resolved = state.installOffsetMinutes ?: Random.nextInt(0, 30)
+            if (state.installOffsetMinutes == resolved) {
+                state
+            } else {
+                state.copy(installOffsetMinutes = resolved)
+            }
+        }
+        return resolved
+    }
+
+    override suspend fun syncFetchedContent(
+        latestDebits: List<Debit>,
+        activeTopics: List<ForumActiveTopic>,
+        nowEpochMs: Long,
+    ): NotificationSyncSummary {
+        var summary = NotificationSyncSummary()
+        updateState { state ->
+            val (updatedState, syncSummary) = NotificationSyncEngine.applyFetchedContent(
+                state = state,
+                latestDebits = latestDebits,
+                activeTopics = activeTopics,
+                nowEpochMs = nowEpochMs,
+            )
+            summary = syncSummary
+            updatedState
+        }
+        return summary
+    }
+
+    private suspend fun updateState(transform: (NotificationCenterState) -> NotificationCenterState) {
+        context.notificationCenterDataStore.edit { preferences ->
+            val current = decodeState(preferences)
+            val updated = transform(current)
+            preferences[STATE_KEY] = json.encodeToString(updated)
+        }
+    }
+
+    private fun decodeState(preferences: Preferences): NotificationCenterState {
+        val raw = preferences[STATE_KEY] ?: return NotificationCenterState()
+        return runCatching {
+            json.decodeFromString<NotificationCenterState>(raw)
+        }.getOrDefault(NotificationCenterState())
+    }
+
+    private companion object {
+        val STATE_KEY = stringPreferencesKey("notification_center.state")
+    }
+}

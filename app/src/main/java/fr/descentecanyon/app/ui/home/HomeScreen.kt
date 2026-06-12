@@ -29,6 +29,9 @@ import androidx.compose.material.icons.filled.ChatBubbleOutline
 import androidx.compose.material.icons.filled.CloudOff
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.FilterList
+import androidx.compose.material.icons.filled.Notifications
+import androidx.compose.material.icons.filled.NotificationsActive
+import androidx.compose.material.icons.filled.NotificationsNone
 import androidx.compose.material.icons.filled.Refresh
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.WifiOff
@@ -74,6 +77,7 @@ import fr.descentecanyon.app.domain.model.Debit
 import fr.descentecanyon.app.domain.model.ForumActiveTopic
 import fr.descentecanyon.app.domain.model.HomeFeedType
 import fr.descentecanyon.app.domain.model.NiveauDebit
+import fr.descentecanyon.app.domain.model.forumCategoryKey
 import fr.descentecanyon.app.ui.auth.AuthViewModel
 import fr.descentecanyon.app.ui.auth.LoginDialog
 import fr.descentecanyon.app.ui.components.CompactAppBar
@@ -92,6 +96,7 @@ fun HomeScreen(
     onCanyonClick: (Int) -> Unit,
     onQuickSearchClick: () -> Unit,
     onMapClick: () -> Unit,
+    onNotificationsClick: () -> Unit,
     modifier: Modifier = Modifier,
     contentPadding: PaddingValues = PaddingValues(),
     homeViewModel: HomeViewModel = hiltViewModel(),
@@ -156,6 +161,13 @@ fun HomeScreen(
             CompactAppBar(
                 title = stringResource(R.string.app_name),
                 actions = {
+                    IconButton(onClick = onNotificationsClick) {
+                        Icon(
+                            imageVector = Icons.Default.Notifications,
+                            contentDescription = stringResource(R.string.notifications_screen_title),
+                            modifier = Modifier.size(24.dp),
+                        )
+                    }
                     IconButton(onClick = { showLoginDialog = true }) {
                         Icon(
                             imageVector = Icons.Default.AccountCircle,
@@ -282,12 +294,15 @@ fun HomeScreen(
                         items = homeState.forumFeed.items,
                         key = { forumTopicItemKey(it) },
                     ) { topic ->
+                        val isFollowed = forumCategoryKey(topic.forumId, topic.forumName) in homeState.followedForumCategoryKeys
                         ForumTopicCard(
                             topic = topic,
+                            isFollowed = isFollowed,
                             onClick = {
                                 val url = topic.lastMessageUrl.ifBlank { topic.topicUrl }
                                 openExternalUrl(context, url)
                             },
+                            onToggleFollow = { homeViewModel.toggleForumCategoryFollow(topic) },
                         )
                     }
                 }
@@ -978,7 +993,9 @@ private fun DebitCard(
 @Composable
 private fun ForumTopicCard(
     topic: ForumActiveTopic,
+    isFollowed: Boolean,
     onClick: () -> Unit,
+    onToggleFollow: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     Card(
@@ -1024,11 +1041,24 @@ private fun ForumTopicCard(
                         modifier = Modifier.padding(top = 2.dp),
                     )
                 }
-                Icon(
-                    imageVector = Icons.AutoMirrored.Filled.OpenInNew,
-                    contentDescription = stringResource(R.string.home_forum_open_last_message),
-                    tint = MaterialTheme.colorScheme.onSurfaceVariant,
-                )
+                Column(horizontalAlignment = Alignment.End) {
+                    IconButton(onClick = onToggleFollow) {
+                        Icon(
+                            imageVector = if (isFollowed) Icons.Default.NotificationsActive else Icons.Default.NotificationsNone,
+                            contentDescription = if (isFollowed) {
+                                stringResource(R.string.notifications_forum_unfollow_action)
+                            } else {
+                                stringResource(R.string.notifications_forum_follow_action)
+                            },
+                            tint = if (isFollowed) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurfaceVariant,
+                        )
+                    }
+                    Icon(
+                        imageVector = Icons.AutoMirrored.Filled.OpenInNew,
+                        contentDescription = stringResource(R.string.home_forum_open_last_message),
+                        tint = MaterialTheme.colorScheme.onSurfaceVariant,
+                    )
+                }
             }
             Text(
                 text = topic.lastAuthor

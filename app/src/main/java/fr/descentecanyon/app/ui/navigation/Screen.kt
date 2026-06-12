@@ -20,7 +20,13 @@ sealed interface Screen {
     data object Favorites : Screen
 
     @Serializable
-    data class CanyonDetail(val canyonId: Int) : Screen
+    data object Notifications : Screen
+
+    @Serializable
+    data class CanyonDetail(
+        val canyonId: Int,
+        val openDebitsTab: Boolean = false,
+    ) : Screen
 
     @Serializable
     data class DebitForm(val canyonId: Int) : Screen

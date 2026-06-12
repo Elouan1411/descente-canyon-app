@@ -11,10 +11,12 @@ import fr.descentecanyon.app.domain.model.Debit
 import fr.descentecanyon.app.domain.model.ForumActiveTopic
 import fr.descentecanyon.app.domain.model.HomeFeedType
 import fr.descentecanyon.app.domain.model.NiveauDebit
+import fr.descentecanyon.app.domain.model.NotificationCenterState
 import fr.descentecanyon.app.domain.model.normalizeForSearch
 import fr.descentecanyon.app.domain.repository.CanyonRepository
 import fr.descentecanyon.app.domain.repository.DebitRepository
 import fr.descentecanyon.app.domain.repository.ForumRepository
+import fr.descentecanyon.app.domain.repository.NotificationCenterRepository
 import fr.descentecanyon.app.testutil.MainDispatcherRule
 import io.mockk.coEvery
 import io.mockk.coVerify
@@ -42,6 +44,7 @@ class HomeViewModelTest {
     private val forumRepository = mockk<ForumRepository>()
     private val canyonRepository = mockk<CanyonRepository>()
     private val connectivityObserver = mockk<ConnectivityObserver>()
+    private val notificationCenterRepository = mockk<NotificationCenterRepository>()
     private val appMetadataDao = mockk<AppMetadataDao>()
     private val snapshotStore = HomeFeedSnapshotStore(appMetadataDao)
     private val searchCatalog = MutableStateFlow<List<CanyonSearchItem>>(emptyList())
@@ -291,12 +294,15 @@ class HomeViewModelTest {
 
     private fun createViewModel(): HomeViewModel {
         every { canyonRepository.observeSearchCatalog() } returns searchCatalog
+        every { notificationCenterRepository.observeState() } returns MutableStateFlow(NotificationCenterState())
+        coEvery { notificationCenterRepository.toggleForumCategoryFollow(any(), any(), any()) } returns Unit
         return HomeViewModel(
             debitRepository = debitRepository,
             forumRepository = forumRepository,
             canyonRepository = canyonRepository,
             connectivityObserver = connectivityObserver,
             snapshotStore = snapshotStore,
+            notificationCenterRepository = notificationCenterRepository,
         )
     }
 

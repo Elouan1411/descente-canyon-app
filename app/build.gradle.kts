@@ -180,6 +180,9 @@ dependencies {
     // DataStore (preferences)
     implementation(libs.androidx.datastore.preferences)
 
+    // WorkManager (periodic background sync)
+    implementation(libs.androidx.work.runtime.ktx)
+
     // Security (encrypted credential storage)
     implementation(libs.androidx.security.crypto)
 

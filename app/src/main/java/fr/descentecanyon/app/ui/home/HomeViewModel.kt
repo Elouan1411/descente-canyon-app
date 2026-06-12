@@ -13,6 +13,7 @@ import fr.descentecanyon.app.domain.model.subdivisionsFor
 import fr.descentecanyon.app.domain.repository.CanyonRepository
 import fr.descentecanyon.app.domain.repository.DebitRepository
 import fr.descentecanyon.app.domain.repository.ForumRepository
+import fr.descentecanyon.app.domain.repository.NotificationCenterRepository
 import java.net.ConnectException
 import java.net.SocketTimeoutException
 import java.net.UnknownHostException
@@ -59,6 +60,7 @@ data class HomeUiState(
     val debitGeoFilter: HomeDebitGeoFilterState = HomeDebitGeoFilterState(),
     val isLocalCanyonCatalogLoaded: Boolean = false,
     val localCanyonIds: Set<Int> = emptySet(),
+    val followedForumCategoryKeys: Set<String> = emptySet(),
 )
 
 @HiltViewModel
@@ -68,6 +70,7 @@ class HomeViewModel @Inject constructor(
     private val canyonRepository: CanyonRepository,
     private val connectivityObserver: ConnectivityObserver,
     private val snapshotStore: HomeFeedSnapshotStore,
+    private val notificationCenterRepository: NotificationCenterRepository,
 ) : ViewModel() {
 
     private val _uiState = MutableStateFlow(HomeUiState())
@@ -84,7 +87,18 @@ class HomeViewModel @Inject constructor(
     init {
         observeConnectivity()
         observeSearchCatalog()
+        observeTrackedForumCategories()
         restoreHomeState()
+    }
+
+    fun toggleForumCategoryFollow(topic: ForumActiveTopic) {
+        viewModelScope.launch {
+            notificationCenterRepository.toggleForumCategoryFollow(
+                forumId = topic.forumId,
+                forumName = topic.forumName,
+                baselineTopics = _uiState.value.forumFeed.items,
+            )
+        }
     }
 
     fun selectFeed(type: HomeFeedType) {
@@ -236,6 +250,18 @@ class HomeViewModel @Inject constructor(
                     val selectedFeed = uiState.value.selectedFeed
                     refreshFeed(selectedFeed)
                     refreshFeed(otherFeedOf(selectedFeed), backgroundOnly = true)
+                }
+            }
+        }
+    }
+
+    private fun observeTrackedForumCategories() {
+        viewModelScope.launch {
+            notificationCenterRepository.observeState().collect { state ->
+                _uiState.update {
+                    it.copy(
+                        followedForumCategoryKeys = state.followedForumCategories.mapTo(mutableSetOf()) { category -> category.key },
+                    )
                 }
             }
         }

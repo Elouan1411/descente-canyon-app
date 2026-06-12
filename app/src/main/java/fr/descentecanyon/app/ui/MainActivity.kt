@@ -38,16 +38,22 @@ import fr.descentecanyon.app.R
 import fr.descentecanyon.app.perf.PerformanceTrace
 import fr.descentecanyon.app.startup.AppStartupCoordinator
 import fr.descentecanyon.app.startup.StartupLaunchMode
+import fr.descentecanyon.app.ui.navigation.AppLaunchTarget
 import fr.descentecanyon.app.ui.navigation.AppNavHost
 import fr.descentecanyon.app.ui.navigation.BottomNavItem
 import fr.descentecanyon.app.ui.navigation.Screen
+import fr.descentecanyon.app.ui.navigation.consumeLaunchTarget
+import fr.descentecanyon.app.ui.navigation.navigateSingleTop
 import fr.descentecanyon.app.ui.theme.DescenteCanyonTheme
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.flow.MutableSharedFlow
 import javax.inject.Inject
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     @Inject lateinit var appStartupCoordinator: AppStartupCoordinator
+
+    private val incomingLaunchTargets = MutableSharedFlow<AppLaunchTarget>(extraBufferCapacity = 1)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -62,16 +68,34 @@ class MainActivity : ComponentActivity() {
                     appStartupCoordinator.syncPendingDebitsIfOnline(isOnline)
                 }
         }
+        val initialLaunchTarget = consumeLaunchTarget(intent)
         setContent {
             DescenteCanyonTheme {
-                AppStartupScreen(appStartupCoordinator = appStartupCoordinator)
+                AppStartupScreen(
+                    appStartupCoordinator = appStartupCoordinator,
+                    initialLaunchTarget = initialLaunchTarget,
+                    incomingLaunchTargets = incomingLaunchTargets,
+                )
             }
+        }
+    }
+
+    override fun onNewIntent(intent: android.content.Intent) {
+        super.onNewIntent(intent)
+        setIntent(intent)
+        val launchTarget = consumeLaunchTarget(intent)
+        if (launchTarget != AppLaunchTarget.None) {
+            incomingLaunchTargets.tryEmit(launchTarget)
         }
     }
 }
 
 @Composable
-private fun AppStartupScreen(appStartupCoordinator: AppStartupCoordinator) {
+private fun AppStartupScreen(
+    appStartupCoordinator: AppStartupCoordinator,
+    initialLaunchTarget: AppLaunchTarget,
+    incomingLaunchTargets: MutableSharedFlow<AppLaunchTarget>,
+) {
     val startupState by produceState<StartupUiState>(initialValue = StartupUiState.Resolving, key1 = appStartupCoordinator) {
         value = runCatching {
             when (appStartupCoordinator.resolveLaunchMode()) {
@@ -113,7 +137,10 @@ private fun AppStartupScreen(appStartupCoordinator: AppStartupCoordinator) {
                     }
                 }
             }
-            MainScreen()
+            MainScreen(
+                initialLaunchTarget = initialLaunchTarget,
+                incomingLaunchTargets = incomingLaunchTargets,
+            )
         }
 
         is StartupUiState.Error -> {
@@ -134,7 +161,10 @@ private sealed interface StartupUiState {
 }
 
 @Composable
-private fun MainScreen() {
+private fun MainScreen(
+    initialLaunchTarget: AppLaunchTarget,
+    incomingLaunchTargets: MutableSharedFlow<AppLaunchTarget>,
+) {
     androidx.compose.runtime.LaunchedEffect(Unit) {
         PerformanceTrace.logEvent("main_screen_visible")
     }
@@ -142,6 +172,24 @@ private fun MainScreen() {
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val selectedBottomNavItem = resolveSelectedBottomNavItem(navBackStackEntry)
     val showBottomBar = shouldShowBottomBar(navBackStackEntry)
+
+    androidx.compose.runtime.LaunchedEffect(navController, initialLaunchTarget, incomingLaunchTargets) {
+        fun navigateTo(target: AppLaunchTarget) {
+            when (target) {
+                AppLaunchTarget.None -> Unit
+                AppLaunchTarget.Notifications -> navController.navigateSingleTop(Screen.Notifications)
+                is AppLaunchTarget.CanyonDetail -> navController.navigateSingleTop(
+                    Screen.CanyonDetail(
+                        canyonId = target.canyonId,
+                        openDebitsTab = target.openDebitsTab,
+                    )
+                )
+            }
+        }
+
+        navigateTo(initialLaunchTarget)
+        incomingLaunchTargets.collect(::navigateTo)
+    }
 
     Scaffold(
         bottomBar = {

@@ -15,6 +15,7 @@ import fr.descentecanyon.app.data.repository.FavoritesRepositoryImpl
 import fr.descentecanyon.app.data.repository.ForumRepositoryImpl
 import fr.descentecanyon.app.data.repository.InterestRatingRepositoryImpl
 import fr.descentecanyon.app.data.repository.MapOfflineRepositoryImpl
+import fr.descentecanyon.app.data.repository.NotificationCenterRepositoryImpl
 import fr.descentecanyon.app.data.repository.PhotoRepositoryImpl
 import fr.descentecanyon.app.data.repository.WeatherRepositoryImpl
 import fr.descentecanyon.app.domain.repository.AuthRepository
@@ -28,6 +29,7 @@ import fr.descentecanyon.app.domain.repository.FavoritesRepository
 import fr.descentecanyon.app.domain.repository.ForumRepository
 import fr.descentecanyon.app.domain.repository.InterestRatingRepository
 import fr.descentecanyon.app.domain.repository.MapOfflineRepository
+import fr.descentecanyon.app.domain.repository.NotificationCenterRepository
 import fr.descentecanyon.app.domain.repository.PhotoRepository
 import fr.descentecanyon.app.domain.repository.WeatherRepository
 import javax.inject.Singleton
@@ -75,6 +77,12 @@ abstract class RepositoryModule {
     @Binds
     @Singleton
     abstract fun bindPhotoRepository(impl: PhotoRepositoryImpl): PhotoRepository
+
+    @Binds
+    @Singleton
+    abstract fun bindNotificationCenterRepository(
+        impl: NotificationCenterRepositoryImpl,
+    ): NotificationCenterRepository
 
     @Binds
     @Singleton

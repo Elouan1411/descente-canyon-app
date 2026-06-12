@@ -24,6 +24,7 @@ import fr.descentecanyon.app.ui.favorites.FavoritesScreen
 import fr.descentecanyon.app.ui.home.HomeScreen
 import fr.descentecanyon.app.ui.interest.InterestRatingFormScreen
 import fr.descentecanyon.app.ui.map.MapScreen
+import fr.descentecanyon.app.ui.notifications.NotificationCenterScreen
 import fr.descentecanyon.app.ui.search.SearchScreen
 
 @Composable
@@ -53,6 +54,9 @@ fun AppNavHost(
                 },
                 onMapClick = {
                     navController.navigateSingleTop(Screen.Map)
+                },
+                onNotificationsClick = {
+                    navController.navigateSingleTop(Screen.Notifications)
                 },
                 contentPadding = topLevelContentPadding,
             )
@@ -120,6 +124,7 @@ fun AppNavHost(
                 onOpenPhotoGallery = { photoId ->
                     navController.navigateSingleTop(Screen.PhotoGallery(detail.canyonId, photoId))
                 },
+                openDebitsTabInitially = detail.openDebitsTab,
                 contentPadding = topLevelContentPadding,
                 refreshDebitsAfterSubmission = refreshDebitsAfterSubmission,
                 onRefreshDebitsAfterSubmissionHandled = {
@@ -129,6 +134,21 @@ fun AppNavHost(
                 onRefreshDetailAfterInterestRatingHandled = {
                     backStackEntry.savedStateHandle[INTEREST_RATING_REFRESH_KEY] = false
                 },
+            )
+        }
+
+        composable<Screen.Notifications>(
+            enterTransition = { EnterTransition.None },
+            exitTransition = { ExitTransition.None },
+            popEnterTransition = { EnterTransition.None },
+            popExitTransition = { ExitTransition.None },
+        ) {
+            NotificationCenterScreen(
+                onBackClick = { navController.popBackStack() },
+                onCanyonClick = { canyonId ->
+                    navController.navigateSingleTop(Screen.CanyonDetail(canyonId, openDebitsTab = true))
+                },
+                contentPadding = topLevelContentPadding,
             )
         }
 
@@ -188,7 +208,7 @@ fun AppNavHost(
 private const val DEBIT_SUBMISSION_REFRESH_KEY = "debit_submission_refresh"
 private const val INTEREST_RATING_REFRESH_KEY = "interest_rating_refresh"
 
-private fun NavHostController.navigateSingleTop(screen: Screen) {
+internal fun NavHostController.navigateSingleTop(screen: Screen) {
     navigate(screen) {
         applySingleTopNavigation()
     }

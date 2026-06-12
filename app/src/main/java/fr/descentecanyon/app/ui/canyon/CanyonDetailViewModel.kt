@@ -15,6 +15,7 @@ import fr.descentecanyon.app.domain.model.CanyonEdfPracticability
 import fr.descentecanyon.app.domain.repository.CanyonRepository
 import fr.descentecanyon.app.domain.repository.DebitRepository
 import fr.descentecanyon.app.domain.repository.FavoritesRepository
+import fr.descentecanyon.app.domain.repository.NotificationCenterRepository
 import fr.descentecanyon.app.domain.repository.PhotoRepository
 import fr.descentecanyon.app.perf.PerformanceTrace
 import fr.descentecanyon.app.domain.usecase.DownloadPhotoForOfflineUseCase
@@ -57,6 +58,7 @@ data class CanyonDetailUiState(
     val isLoadingPredictions: Boolean = false,
     val predictionError: String? = null,
     val isFavorite: Boolean = false,
+    val isDebitNotificationsEnabled: Boolean = false,
     val downloadingPhotoIds: Set<Long> = emptySet(),
     val isOnline: Boolean = true,
     val transientMessage: String? = null,
@@ -78,6 +80,7 @@ class CanyonDetailViewModel @Inject constructor(
     private val downloadPhotoForOfflineUseCase: DownloadPhotoForOfflineUseCase,
     private val connectivityObserver: ConnectivityObserver,
     private val favoritesRepository: FavoritesRepository,
+    private val notificationCenterRepository: NotificationCenterRepository,
 ) : ViewModel() {
 
     private val canyonId: Int = savedStateHandle["canyonId"]
@@ -99,6 +102,7 @@ class CanyonDetailViewModel @Inject constructor(
         observeWatershed(canyonId)
         loadCanyon(canyonId)
         observeFavorite(canyonId)
+        observeDebitNotificationPreference(canyonId)
         observeConnectivity()
     }
 
@@ -456,9 +460,29 @@ class CanyonDetailViewModel @Inject constructor(
         }
     }
 
+    private fun observeDebitNotificationPreference(id: Int) {
+        viewModelScope.launch {
+            notificationCenterRepository.observeIsCanyonFollowed(id).collect { isFollowed ->
+                _uiState.update { it.copy(isDebitNotificationsEnabled = isFollowed) }
+            }
+        }
+    }
+
     fun toggleFavorite() {
         viewModelScope.launch {
             toggleFavoriteUseCase(canyonId)
+        }
+    }
+
+    fun toggleDebitNotifications() {
+        viewModelScope.launch {
+            val canyonName = _uiState.value.canyonDetail?.canyon?.nom
+                ?: context.getString(R.string.canyon_fallback_title, canyonId)
+            notificationCenterRepository.toggleCanyonFollow(
+                canyonId = canyonId,
+                canyonName = canyonName,
+                baselineDebits = _uiState.value.canyonDetail?.debits.orEmpty(),
+            )
         }
     }
 

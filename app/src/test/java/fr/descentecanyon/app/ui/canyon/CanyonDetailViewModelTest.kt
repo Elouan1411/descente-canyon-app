@@ -19,6 +19,7 @@ import fr.descentecanyon.app.domain.model.EdfPracticabilityReference
 import fr.descentecanyon.app.domain.model.EdfPracticabilitySample
 import fr.descentecanyon.app.domain.model.GeoBounds
 import fr.descentecanyon.app.domain.model.NiveauDebit
+import fr.descentecanyon.app.domain.model.NotificationCenterState
 import fr.descentecanyon.app.domain.model.PredictedDebitLevel
 import fr.descentecanyon.app.domain.model.Regulation
 import fr.descentecanyon.app.domain.model.RuntimeLookupSource
@@ -29,6 +30,7 @@ import fr.descentecanyon.app.domain.repository.DebitPredictionRepository
 import fr.descentecanyon.app.domain.repository.DebitRepository
 import fr.descentecanyon.app.domain.repository.EdfPracticabilityRepository
 import fr.descentecanyon.app.domain.repository.FavoritesRepository
+import fr.descentecanyon.app.domain.repository.NotificationCenterRepository
 import fr.descentecanyon.app.domain.repository.PhotoRepository
 import fr.descentecanyon.app.domain.repository.WeatherRepository
 import fr.descentecanyon.app.domain.usecase.DownloadPhotoForOfflineUseCase
@@ -68,6 +70,7 @@ class CanyonDetailViewModelTest {
     private val weatherRepository = mockk<WeatherRepository>()
     private val edfPracticabilityRepository = mockk<EdfPracticabilityRepository>()
     private val connectivityObserver = mockk<ConnectivityObserver>()
+    private val notificationCenterRepository = mockk<NotificationCenterRepository>()
     private val getCanyonPreviewUseCase = GetCanyonPreviewUseCase(canyonRepository)
     private val getCanyonDetailUseCase = GetCanyonDetailUseCase(canyonRepository)
     private val getCanyonWeatherUseCase = GetCanyonWeatherUseCase(weatherRepository)
@@ -247,6 +250,7 @@ class CanyonDetailViewModelTest {
             downloadPhotoForOfflineUseCase = downloadPhotoForOfflineUseCase,
             connectivityObserver = connectivityObserver,
             favoritesRepository = favoritesRepository,
+            notificationCenterRepository = notificationCenterRepository,
         )
     }
 
@@ -260,6 +264,8 @@ class CanyonDetailViewModelTest {
         every { debitRepository.getDebitsForCanyon(42) } returns flowOf(Result.success(detail().debits))
         coEvery { debitRepository.refreshDebits(42) } returns Result.success(detail().debits)
         every { favoritesRepository.isFavorite(42) } returns flowOf(false)
+        every { notificationCenterRepository.observeIsCanyonFollowed(42) } returns flowOf(false)
+        coEvery { notificationCenterRepository.toggleCanyonFollow(any(), any(), any()) } returns Unit
         every { connectivityObserver.observe() } returns flowOf(true)
     }
 
