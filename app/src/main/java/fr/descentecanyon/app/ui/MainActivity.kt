@@ -6,6 +6,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -25,6 +26,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.produceState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavBackStackEntry
@@ -44,6 +46,7 @@ import fr.descentecanyon.app.ui.navigation.BottomNavItem
 import fr.descentecanyon.app.ui.navigation.Screen
 import fr.descentecanyon.app.ui.navigation.consumeLaunchTarget
 import fr.descentecanyon.app.ui.navigation.navigateSingleTop
+import fr.descentecanyon.app.ui.design.LocalDcColors
 import fr.descentecanyon.app.ui.theme.DescenteCanyonTheme
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.flow.MutableSharedFlow
@@ -172,6 +175,7 @@ private fun MainScreen(
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val selectedBottomNavItem = resolveSelectedBottomNavItem(navBackStackEntry)
     val showBottomBar = shouldShowBottomBar(navBackStackEntry)
+    val dcColors = LocalDcColors.current
 
     androidx.compose.runtime.LaunchedEffect(navController, initialLaunchTarget, incomingLaunchTargets) {
         fun navigateTo(target: AppLaunchTarget) {
@@ -213,13 +217,22 @@ private fun MainScreen(
         bottomBar = {
             if (showBottomBar) {
                 Surface(
-                    color = MaterialTheme.colorScheme.surface,
-                    contentColor = MaterialTheme.colorScheme.onSurface,
-                    shadowElevation = 10.dp,
-                    border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.72f)),
+                    color = dcColors.surfaceOverlay,
+                    contentColor = dcColors.textPrimary,
+                    shadowElevation = 0.dp,
+                    border = BorderStroke(1.dp, dcColors.borderSubtle),
                 ) {
                     NavigationBar(
-                        containerColor = MaterialTheme.colorScheme.surface,
+                        modifier = Modifier.background(
+                            Brush.horizontalGradient(
+                                listOf(
+                                    dcColors.waterDeep.copy(alpha = 0.26f),
+                                    dcColors.surfaceRaised,
+                                    dcColors.rock.copy(alpha = 0.16f),
+                                )
+                            )
+                        ),
+                        containerColor = androidx.compose.ui.graphics.Color.Transparent,
                         tonalElevation = 0.dp,
                         windowInsets = NavigationBarDefaults.windowInsets,
                     ) {
@@ -229,11 +242,11 @@ private fun MainScreen(
                                 icon = { Icon(item.icon, contentDescription = itemLabel) },
                                 label = { Text(itemLabel) },
                                 colors = NavigationBarItemDefaults.colors(
-                                    selectedIconColor = MaterialTheme.colorScheme.onPrimaryContainer,
-                                    selectedTextColor = MaterialTheme.colorScheme.onSurface,
-                                    indicatorColor = MaterialTheme.colorScheme.primaryContainer.copy(alpha = 0.88f),
-                                    unselectedIconColor = MaterialTheme.colorScheme.onSurfaceVariant,
-                                    unselectedTextColor = MaterialTheme.colorScheme.onSurfaceVariant,
+                                    selectedIconColor = dcColors.primaryActionContent,
+                                    selectedTextColor = dcColors.textPrimary,
+                                    indicatorColor = dcColors.primaryAction.copy(alpha = 0.92f),
+                                    unselectedIconColor = dcColors.textMuted,
+                                    unselectedTextColor = dcColors.textMuted,
                                 ),
                                 selected = item == selectedBottomNavItem,
                                 onClick = {

@@ -17,10 +17,12 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
@@ -41,6 +43,9 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
@@ -59,6 +64,12 @@ import fr.descentecanyon.app.domain.model.FollowedForumThread
 import fr.descentecanyon.app.domain.model.TrackedActivityEvent
 import fr.descentecanyon.app.domain.model.TrackedActivityType
 import fr.descentecanyon.app.ui.components.CompactAppBar
+import fr.descentecanyon.app.ui.design.DcEmptyState
+import fr.descentecanyon.app.ui.design.DcSectionHeader
+import fr.descentecanyon.app.ui.design.LocalDcColors
+import fr.descentecanyon.app.ui.design.LocalDcShapes
+import fr.descentecanyon.app.ui.design.rememberDcContentWidth
+import fr.descentecanyon.app.ui.design.rememberDcScreenHorizontalPadding
 import java.time.Instant
 import java.time.ZoneId
 import java.time.format.DateTimeFormatter
@@ -73,11 +84,15 @@ fun NotificationCenterScreen(
 ) {
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
     val context = LocalContext.current
-    val launcher = rememberLauncherForActivityResult(ActivityResultContracts.RequestPermission()) { }
-    val notificationsGranted = areNotificationsGranted(context)
+    val contentWidth = rememberDcContentWidth()
+    val screenHorizontalPadding = rememberDcScreenHorizontalPadding()
+    var notificationsGranted by remember(context) { mutableStateOf(areNotificationsGranted(context)) }
+    val launcher = rememberLauncherForActivityResult(ActivityResultContracts.RequestPermission()) {
+        notificationsGranted = areNotificationsGranted(context)
+    }
 
     Scaffold(
-        containerColor = MaterialTheme.colorScheme.background,
+        containerColor = LocalDcColors.current.backgroundBase,
         topBar = {
             CompactAppBar(
                 title = stringResource(R.string.notifications_screen_title),
@@ -93,119 +108,126 @@ fun NotificationCenterScreen(
         },
         modifier = modifier,
     ) { innerPadding ->
-        LazyColumn(
+        Box(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(innerPadding)
-                .padding(horizontal = 16.dp),
-            contentPadding = PaddingValues(bottom = contentPadding.calculateBottomPadding() + 20.dp),
-            verticalArrangement = Arrangement.spacedBy(12.dp),
+                .padding(innerPadding),
+            contentAlignment = Alignment.TopCenter,
         ) {
-            item { Spacer(modifier = Modifier.size(2.dp)) }
+            LazyColumn(
+                modifier = Modifier
+                    .fillMaxHeight()
+                    .width(contentWidth)
+                    .padding(horizontal = screenHorizontalPadding),
+                contentPadding = PaddingValues(bottom = contentPadding.calculateBottomPadding() + 20.dp),
+                verticalArrangement = Arrangement.spacedBy(12.dp),
+            ) {
+                item { Spacer(modifier = Modifier.size(2.dp)) }
 
-            if (!notificationsGranted) {
-                item {
-                    NotificationPermissionCard(
-                        onRequestPermission = {
-                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-                                launcher.launch(Manifest.permission.POST_NOTIFICATIONS)
+                if (!notificationsGranted) {
+                    item {
+                        NotificationPermissionCard(
+                            onRequestPermission = {
+                                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                                    launcher.launch(Manifest.permission.POST_NOTIFICATIONS)
+                                }
                             }
-                        }
-                    )
-                }
-            }
-
-            item {
-                SectionHeader(
-                    title = stringResource(R.string.notifications_activity_title),
-                    subtitle = stringResource(R.string.notifications_activity_subtitle),
-                )
-            }
-
-            if (uiState.recentEvents.isEmpty()) {
-                item {
-                    EmptyCard(
-                        icon = Icons.Default.NotificationsActive,
-                        title = stringResource(R.string.notifications_activity_empty_title),
-                        body = stringResource(R.string.notifications_activity_empty_body),
-                    )
-                }
-            } else {
-                item {
-                    Row(
-                        modifier = Modifier.fillMaxWidth(),
-                        horizontalArrangement = Arrangement.End,
-                    ) {
-                        TextButton(onClick = viewModel::clearRecentActivity) {
-                            Text(stringResource(R.string.notifications_clear_activity))
-                        }
+                        )
                     }
                 }
-                items(uiState.recentEvents, key = { it.id }) { event ->
-                    ActivityEventCard(
-                        event = event,
-                        onClick = {
-                            when (event.type) {
-                                TrackedActivityType.DEBIT -> event.canyonId?.let(onCanyonClick)
-                                TrackedActivityType.FORUM -> event.externalUrl?.let { openExternalUrl(context, it) }
+
+                item {
+                    SectionHeader(
+                        title = stringResource(R.string.notifications_activity_title),
+                        subtitle = stringResource(R.string.notifications_activity_subtitle),
+                    )
+                }
+
+                if (uiState.recentEvents.isEmpty()) {
+                    item {
+                        EmptyCard(
+                            icon = Icons.Default.NotificationsActive,
+                            title = stringResource(R.string.notifications_activity_empty_title),
+                            body = stringResource(R.string.notifications_activity_empty_body),
+                        )
+                    }
+                } else {
+                    item {
+                        Row(
+                            modifier = Modifier.fillMaxWidth(),
+                            horizontalArrangement = Arrangement.End,
+                        ) {
+                            TextButton(onClick = viewModel::clearRecentActivity) {
+                                Text(stringResource(R.string.notifications_clear_activity))
                             }
-                        },
-                    )
+                        }
+                    }
+                    items(uiState.recentEvents, key = { it.id }) { event ->
+                        ActivityEventCard(
+                            event = event,
+                            onClick = {
+                                when (event.type) {
+                                    TrackedActivityType.DEBIT -> event.canyonId?.let(onCanyonClick)
+                                    TrackedActivityType.FORUM -> event.externalUrl?.let { openExternalUrl(context, it) }
+                                }
+                            },
+                        )
+                    }
                 }
-            }
 
-            item {
-                SectionHeader(
-                    title = stringResource(R.string.notifications_canyons_title),
-                    subtitle = stringResource(R.string.notifications_canyons_subtitle),
-                )
-            }
-
-            if (uiState.followedCanyons.isEmpty()) {
                 item {
-                    EmptyCard(
-                        icon = Icons.Default.WaterDrop,
-                        title = stringResource(R.string.notifications_canyons_empty_title),
-                        body = stringResource(R.string.notifications_canyons_empty_body),
+                    SectionHeader(
+                        title = stringResource(R.string.notifications_canyons_title),
+                        subtitle = stringResource(R.string.notifications_canyons_subtitle),
                     )
                 }
-            } else {
-                items(uiState.followedCanyons, key = { it.canyonId }) { canyon ->
-                    FollowedCanyonCard(
-                        canyon = canyon,
-                        onOpen = { onCanyonClick(canyon.canyonId) },
-                        onRemove = { viewModel.removeCanyonFollow(canyon.canyonId) },
-                    )
+
+                if (uiState.followedCanyons.isEmpty()) {
+                    item {
+                        EmptyCard(
+                            icon = Icons.Default.WaterDrop,
+                            title = stringResource(R.string.notifications_canyons_empty_title),
+                            body = stringResource(R.string.notifications_canyons_empty_body),
+                        )
+                    }
+                } else {
+                    items(uiState.followedCanyons, key = { it.canyonId }) { canyon ->
+                        FollowedCanyonCard(
+                            canyon = canyon,
+                            onOpen = { onCanyonClick(canyon.canyonId) },
+                            onRemove = { viewModel.removeCanyonFollow(canyon.canyonId) },
+                        )
+                    }
                 }
-            }
 
-            item {
-                SectionHeader(
-                    title = stringResource(R.string.notifications_forum_title),
-                    subtitle = stringResource(R.string.notifications_forum_subtitle),
-                )
-            }
-
-            if (uiState.followedForumCategories.isEmpty() && uiState.followedForumThreads.isEmpty()) {
                 item {
-                    EmptyCard(
-                        icon = Icons.Default.Tune,
-                        title = stringResource(R.string.notifications_forum_empty_title),
-                        body = stringResource(R.string.notifications_forum_empty_body),
+                    SectionHeader(
+                        title = stringResource(R.string.notifications_forum_title),
+                        subtitle = stringResource(R.string.notifications_forum_subtitle),
                     )
                 }
-            } else {
-                items(uiState.followedForumCategories, key = { it.key }) { forumCategory ->
-                    FollowedForumCategoryCard(
-                        forumCategory = forumCategory,
-                        onRemove = { viewModel.removeForumCategoryFollow(forumCategory.key) },
-                    )
-                }
-                items(uiState.followedForumThreads, key = { it.topicId }) { thread ->
-                    FollowedForumThreadCard(
-                        thread = thread,
-                        onRemove = { viewModel.removeForumThreadFollow(thread.topicId) },
-                    )
+
+                if (uiState.followedForumCategories.isEmpty() && uiState.followedForumThreads.isEmpty()) {
+                    item {
+                        EmptyCard(
+                            icon = Icons.Default.Tune,
+                            title = stringResource(R.string.notifications_forum_empty_title),
+                            body = stringResource(R.string.notifications_forum_empty_body),
+                        )
+                    }
+                } else {
+                    items(uiState.followedForumCategories, key = { it.key }) { forumCategory ->
+                        FollowedForumCategoryCard(
+                            forumCategory = forumCategory,
+                            onRemove = { viewModel.removeForumCategoryFollow(forumCategory.key) },
+                        )
+                    }
+                    items(uiState.followedForumThreads, key = { it.topicId }) { thread ->
+                        FollowedForumThreadCard(
+                            thread = thread,
+                            onRemove = { viewModel.removeForumThreadFollow(thread.topicId) },
+                        )
+                    }
                 }
             }
         }
@@ -249,14 +271,7 @@ private fun SectionHeader(
     subtitle: String,
     modifier: Modifier = Modifier,
 ) {
-    Column(modifier = modifier.fillMaxWidth()) {
-        Text(text = title, style = MaterialTheme.typography.titleLarge)
-        Text(
-            text = subtitle,
-            style = MaterialTheme.typography.bodyMedium,
-            color = MaterialTheme.colorScheme.onSurfaceVariant,
-        )
-    }
+    DcSectionHeader(title = title, subtitle = subtitle, modifier = modifier)
 }
 
 @Composable
@@ -271,26 +286,12 @@ private fun EmptyCard(
         colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
         border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.72f)),
     ) {
-        Column(
-            modifier = Modifier.padding(16.dp),
-            verticalArrangement = Arrangement.spacedBy(8.dp),
-            horizontalAlignment = Alignment.CenterHorizontally,
-        ) {
-            Box(
-                modifier = Modifier
-                    .size(40.dp)
-                    .background(MaterialTheme.colorScheme.primaryContainer, shape = MaterialTheme.shapes.medium),
-                contentAlignment = Alignment.Center,
-            ) {
-                Icon(icon, contentDescription = null, tint = MaterialTheme.colorScheme.primary)
-            }
-            Text(text = title, style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.SemiBold)
-            Text(
-                text = body,
-                style = MaterialTheme.typography.bodyMedium,
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
-            )
-        }
+        DcEmptyState(
+            title = title,
+            body = body,
+            icon = icon,
+            modifier = Modifier.fillMaxWidth(),
+        )
     }
 }
 
@@ -300,6 +301,9 @@ private fun ActivityEventCard(
     onClick: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
+    val colors = LocalDcColors.current
+    val shapes = LocalDcShapes.current
+    val accent = if (event.type == TrackedActivityType.DEBIT) colors.water else colors.rock
     Card(
         modifier = modifier
             .fillMaxWidth()
@@ -316,35 +320,56 @@ private fun ActivityEventCard(
                 horizontalArrangement = Arrangement.SpaceBetween,
                 verticalAlignment = Alignment.CenterVertically,
             ) {
-                Text(
-                    text = if (event.type == TrackedActivityType.DEBIT) {
-                        stringResource(R.string.home_feed_debits)
-                    } else {
-                        event.forumName ?: stringResource(R.string.home_feed_forum)
-                    },
-                    style = MaterialTheme.typography.labelLarge,
-                    color = MaterialTheme.colorScheme.primary,
-                )
+                Surface(
+                    color = accent.copy(alpha = 0.14f),
+                    contentColor = accent,
+                    shape = shapes.pill,
+                    border = BorderStroke(1.dp, accent.copy(alpha = 0.4f)),
+                ) {
+                    Text(
+                        text = if (event.type == TrackedActivityType.DEBIT) {
+                            stringResource(R.string.home_feed_debits)
+                        } else {
+                            event.forumName ?: stringResource(R.string.home_feed_forum)
+                        },
+                        style = MaterialTheme.typography.labelSmall,
+                        fontWeight = FontWeight.Bold,
+                        modifier = Modifier.padding(horizontal = 9.dp, vertical = 5.dp),
+                    )
+                }
                 Text(
                     text = formatTimestamp(event.occurredAtEpochMs),
                     style = MaterialTheme.typography.bodySmall,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    color = colors.textMuted,
                 )
             }
-            Text(
-                text = event.title,
-                style = MaterialTheme.typography.titleMedium,
-                fontWeight = FontWeight.SemiBold,
-                maxLines = 2,
-                overflow = TextOverflow.Ellipsis,
-            )
-            Text(
-                text = event.body,
-                style = MaterialTheme.typography.bodyMedium,
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
-                maxLines = 2,
-                overflow = TextOverflow.Ellipsis,
-            )
+            Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+                Box(
+                    modifier = Modifier
+                        .padding(top = 2.dp)
+                        .size(10.dp)
+                        .background(accent, shape = shapes.pill),
+                )
+                Column(
+                    modifier = Modifier.weight(1f),
+                    verticalArrangement = Arrangement.spacedBy(4.dp),
+                ) {
+                    Text(
+                        text = event.title,
+                        style = MaterialTheme.typography.titleMedium,
+                        fontWeight = FontWeight.SemiBold,
+                        maxLines = 2,
+                        overflow = TextOverflow.Ellipsis,
+                    )
+                    Text(
+                        text = event.body,
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = colors.textSecondary,
+                        maxLines = 3,
+                        overflow = TextOverflow.Ellipsis,
+                    )
+                }
+            }
             if (event.type == TrackedActivityType.FORUM) {
                 Row(
                     modifier = Modifier.fillMaxWidth(),
@@ -419,6 +444,7 @@ private fun FollowRowCard(
     onRemove: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
+    val colors = LocalDcColors.current
     Card(
         modifier = modifier.fillMaxWidth(),
         colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
@@ -446,7 +472,7 @@ private fun FollowRowCard(
                 Text(
                     text = subtitle,
                     style = MaterialTheme.typography.bodySmall,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    color = colors.textSecondary,
                 )
             }
             if (onOpen != null) {

@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -20,6 +21,7 @@ import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.statusBarsPadding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -50,6 +52,7 @@ import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
+import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -81,6 +84,11 @@ import fr.descentecanyon.app.perf.PerformanceTrace
 import fr.descentecanyon.app.ui.components.AppFloatingActionButton
 import fr.descentecanyon.app.ui.components.CanyonSummaryCard
 import fr.descentecanyon.app.ui.components.SelectedCanyonSheetContent
+import fr.descentecanyon.app.ui.design.LocalDcColors
+import fr.descentecanyon.app.ui.design.LocalDcShapes
+import fr.descentecanyon.app.ui.design.LocalDcSpacing
+import fr.descentecanyon.app.ui.design.rememberDcContentWidth
+import fr.descentecanyon.app.ui.design.rememberDcScreenHorizontalPadding
 import fr.descentecanyon.app.ui.location.hasLocationPermission
 import fr.descentecanyon.app.ui.location.loadCurrentDeviceLocation
 import fr.descentecanyon.app.ui.location.requestLocationSettings
@@ -192,24 +200,33 @@ fun SearchScreen(
     }
 
     val activeFilters = buildActiveFilterActions(uiState, viewModel)
+    val dcColors = LocalDcColors.current
+    val dcShapes = LocalDcShapes.current
+    val spacing = LocalDcSpacing.current
+    val contentWidth = rememberDcContentWidth()
+    val screenHorizontalPadding = rememberDcScreenHorizontalPadding()
 
     Box(
         modifier = modifier
             .fillMaxSize()
-            .background(MaterialTheme.colorScheme.background)
+            .background(dcColors.backgroundBase)
             .statusBarsPadding(),
     ) {
         Column(
             modifier = Modifier
-                .fillMaxSize()
-                .padding(horizontal = 16.dp),
+                .fillMaxHeight()
+                .width(contentWidth)
+                .align(Alignment.TopCenter)
+                .padding(horizontal = screenHorizontalPadding),
         ) {
-            Spacer(modifier = Modifier.height(8.dp))
+            Spacer(modifier = Modifier.height(spacing.sm))
 
             OutlinedTextField(
                 value = uiState.queryDraft,
                 onValueChange = viewModel::onQueryChanged,
-                modifier = Modifier.fillMaxWidth().testTag(TestTags.searchQueryField),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .testTag(TestTags.searchQueryField),
                 placeholder = { Text(stringResource(R.string.search_hint)) },
                 leadingIcon = { Icon(Icons.Default.Search, contentDescription = null) },
                 trailingIcon = {
@@ -226,6 +243,16 @@ fun SearchScreen(
                     }
                 },
                 singleLine = true,
+                shape = dcShapes.xl,
+                colors = TextFieldDefaults.colors(
+                    focusedContainerColor = dcColors.surfaceBase,
+                    unfocusedContainerColor = dcColors.surfaceBase,
+                    disabledContainerColor = dcColors.surfaceRaised,
+                    focusedIndicatorColor = dcColors.primaryAction,
+                    unfocusedIndicatorColor = dcColors.borderSubtle,
+                    focusedLeadingIconColor = dcColors.primaryAction,
+                    unfocusedLeadingIconColor = dcColors.textMuted,
+                ),
             )
 
             Spacer(modifier = Modifier.height(8.dp))
@@ -387,7 +414,9 @@ fun SearchScreen(
                         modifier = Modifier
                             .fillMaxWidth()
                             .weight(1f),
-                        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant),
+                        shape = dcShapes.xl,
+                        colors = CardDefaults.cardColors(containerColor = dcColors.surfaceRaised),
+                        border = BorderStroke(1.dp, dcColors.borderSubtle),
                     ) {
                         MapLibreView(
                             markers = markers,
@@ -463,18 +492,19 @@ private fun SearchControlButton(
     trailingIcon: ImageVector = Icons.Default.ExpandMore,
     active: Boolean = false,
 ) {
-    val colorScheme = MaterialTheme.colorScheme
+    val dcColors = LocalDcColors.current
+    val shapes = LocalDcShapes.current
     Surface(
         onClick = onClick,
         modifier = modifier.height(62.dp),
-        shape = RoundedCornerShape(18.dp),
-        color = if (active) colorScheme.primaryContainer.copy(alpha = 0.88f) else colorScheme.surface,
-        contentColor = colorScheme.onSurface,
-        tonalElevation = if (active) 2.dp else 0.dp,
-        shadowElevation = 1.dp,
+        shape = shapes.lg,
+        color = if (active) dcColors.water.copy(alpha = 0.16f) else dcColors.surfaceBase,
+        contentColor = dcColors.textPrimary,
+        tonalElevation = 0.dp,
+        shadowElevation = 0.dp,
         border = BorderStroke(
             width = 1.dp,
-            color = if (active) colorScheme.primary.copy(alpha = 0.38f) else colorScheme.outlineVariant.copy(alpha = 0.86f),
+            color = if (active) dcColors.primaryAction.copy(alpha = 0.5f) else dcColors.borderSubtle,
         ),
     ) {
         Row(
@@ -486,20 +516,20 @@ private fun SearchControlButton(
             Icon(
                 imageVector = leadingIcon,
                 contentDescription = null,
-                tint = if (active) colorScheme.primary else colorScheme.onSurfaceVariant,
+                tint = if (active) dcColors.primaryAction else dcColors.textMuted,
             )
             Spacer(modifier = Modifier.width(10.dp))
             Column(modifier = Modifier.weight(1f)) {
                 Text(
                     text = title,
                     style = MaterialTheme.typography.labelMedium,
-                    color = colorScheme.onSurfaceVariant,
+                    color = dcColors.textMuted,
                     maxLines = 1,
                 )
                 Text(
                     text = value,
                     style = MaterialTheme.typography.titleSmall,
-                    color = if (active) colorScheme.onPrimaryContainer else colorScheme.onSurface,
+                    color = dcColors.textPrimary,
                     maxLines = 1,
                     overflow = TextOverflow.Ellipsis,
                 )
@@ -509,7 +539,7 @@ private fun SearchControlButton(
                 imageVector = trailingIcon,
                 contentDescription = null,
                 modifier = Modifier.size(20.dp),
-                tint = if (active) colorScheme.primary else colorScheme.onSurfaceVariant,
+                tint = if (active) dcColors.primaryAction else dcColors.textMuted,
             )
         }
     }

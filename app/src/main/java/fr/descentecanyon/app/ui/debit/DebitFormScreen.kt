@@ -11,12 +11,15 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.heightIn
+import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.MaterialTheme
@@ -27,6 +30,7 @@ import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -40,6 +44,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -54,6 +59,9 @@ import fr.descentecanyon.app.ui.auth.AuthViewModel
 import fr.descentecanyon.app.ui.auth.LoginDialog
 import fr.descentecanyon.app.ui.components.CompactAppBar
 import fr.descentecanyon.app.ui.components.debitLevelColor
+import fr.descentecanyon.app.ui.design.LocalDcColors
+import fr.descentecanyon.app.ui.design.LocalDcShapes
+import fr.descentecanyon.app.ui.design.LocalDcSpacing
 import fr.descentecanyon.app.ui.test.TestTags
 import java.time.LocalDate
 
@@ -119,6 +127,7 @@ fun DebitFormScreen(
     }
 
     Scaffold(
+        containerColor = LocalDcColors.current.backgroundBase,
         topBar = {
             CompactAppBar(
                 title = stringResource(R.string.debit_form_title),
@@ -133,14 +142,21 @@ fun DebitFormScreen(
             )
         },
         snackbarHost = { SnackbarHost(snackbarHostState) },
+        bottomBar = {
+            DebitSubmitBar(
+                isSubmitting = uiState.isSubmitting,
+                onSubmit = viewModel::submit,
+            )
+        },
         modifier = modifier,
     ) { innerPadding ->
+        val spacing = LocalDcSpacing.current
         Column(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(innerPadding)
                 .verticalScroll(rememberScrollState())
-                .padding(16.dp),
+                .padding(horizontal = spacing.screenHorizontal, vertical = spacing.lg),
             verticalArrangement = Arrangement.spacedBy(16.dp),
         ) {
             if (uiState.pendingCount > 0) {
@@ -210,7 +226,7 @@ fun DebitFormScreen(
                 onSelected = viewModel::onObservationTypeChanged,
             )
 
-            FormChoiceSection(
+            DebitLevelChoiceSection(
                 title = stringResource(R.string.debit_level_title),
                 options = listOf(
                     FormOption(
@@ -254,7 +270,7 @@ fun DebitFormScreen(
                 onSelected = viewModel::onDebitLevelChanged,
             )
 
-            FormChoiceSection(
+            CompactChoiceSection(
                 title = stringResource(R.string.debit_water_temperature),
                 options = listOf(
                     FormOption(
@@ -292,7 +308,7 @@ fun DebitFormScreen(
                 onSelected = viewModel::onWaterTemperatureChanged,
             )
 
-            FormChoiceSection(
+            CompactChoiceSection(
                 title = stringResource(R.string.debit_air_temperature),
                 options = listOf(
                     FormOption(
@@ -357,18 +373,246 @@ fun DebitFormScreen(
                 )
             }
 
+            Spacer(modifier = Modifier.height(72.dp))
+        }
+    }
+}
+
+@Composable
+private fun DebitSubmitBar(
+    isSubmitting: Boolean,
+    onSubmit: () -> Unit,
+) {
+    val colors = LocalDcColors.current
+    Surface(
+        color = colors.surfaceOverlay,
+        tonalElevation = 0.dp,
+        border = BorderStroke(1.dp, colors.borderSubtle),
+    ) {
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .navigationBarsPadding()
+                .padding(horizontal = 16.dp, vertical = 12.dp),
+        ) {
             Button(
-                onClick = viewModel::submit,
-                modifier = Modifier.fillMaxWidth().testTag(TestTags.debitSubmitButton),
-                enabled = !uiState.isSubmitting,
+                onClick = onSubmit,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .testTag(TestTags.debitSubmitButton),
+                shape = LocalDcShapes.current.xl,
+                enabled = !isSubmitting,
             ) {
-                if (uiState.isSubmitting) {
+                if (isSubmitting) {
                     CircularProgressIndicator(modifier = Modifier.height(18.dp))
                 } else {
                     Text(stringResource(R.string.debit_submit))
                 }
             }
-            Spacer(modifier = Modifier.height(16.dp))
+        }
+    }
+}
+
+@Composable
+private fun DebitLevelChoiceSection(
+    title: String,
+    options: List<FormOption<NiveauDebit>>,
+    selected: NiveauDebit?,
+    onSelected: (NiveauDebit) -> Unit,
+) {
+    Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
+        Text(
+            text = title,
+            style = MaterialTheme.typography.titleMedium,
+            fontWeight = FontWeight.Bold,
+        )
+        options.chunked(2).forEach { rowOptions ->
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.spacedBy(10.dp),
+            ) {
+                rowOptions.forEach { option ->
+                    DebitLevelChoiceCard(
+                        option = option,
+                        selected = option.value == selected,
+                        onClick = { onSelected(option.value) },
+                        modifier = Modifier.weight(1f),
+                    )
+                }
+                if (rowOptions.size == 1) {
+                    Spacer(modifier = Modifier.weight(1f))
+                }
+            }
+        }
+    }
+}
+
+@Composable
+private fun DebitLevelChoiceCard(
+    option: FormOption<NiveauDebit>,
+    selected: Boolean,
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier,
+) {
+    val colors = LocalDcColors.current
+    val shapes = LocalDcShapes.current
+    val accent = option.indicatorColor ?: MaterialTheme.colorScheme.primary
+    Surface(
+        modifier = modifier
+            .heightIn(min = 104.dp)
+            .clickable(onClick = onClick),
+        shape = shapes.lg,
+        color = if (selected) accent.copy(alpha = 0.16f) else colors.surfaceBase,
+        border = BorderStroke(
+            width = 1.dp,
+            color = if (selected) accent.copy(alpha = 0.72f) else colors.borderSubtle,
+        ),
+    ) {
+        Column(
+            modifier = Modifier.padding(12.dp),
+            verticalArrangement = Arrangement.spacedBy(7.dp),
+        ) {
+            Row(
+                horizontalArrangement = Arrangement.spacedBy(8.dp),
+                verticalAlignment = Alignment.CenterVertically,
+            ) {
+                Surface(
+                    modifier = Modifier.size(12.dp),
+                    shape = shapes.pill,
+                    color = accent,
+                    content = {},
+                )
+                Text(
+                    text = option.title,
+                    style = MaterialTheme.typography.labelLarge,
+                    fontWeight = FontWeight.Bold,
+                    maxLines = 2,
+                    overflow = TextOverflow.Ellipsis,
+                )
+            }
+            option.description?.let { description ->
+                Text(
+                    text = description,
+                    style = MaterialTheme.typography.bodySmall,
+                    color = colors.textSecondary,
+                    maxLines = 3,
+                    overflow = TextOverflow.Ellipsis,
+                )
+            }
+        }
+    }
+}
+
+@Composable
+private fun <T> CompactChoiceSection(
+    title: String,
+    options: List<FormOption<T>>,
+    selected: T?,
+    onSelected: (T) -> Unit,
+) {
+    var showInfoDialog by remember { mutableStateOf(false) }
+    val describedOptions = options.filter { !it.description.isNullOrBlank() }
+
+    if (showInfoDialog) {
+        AlertDialog(
+            onDismissRequest = { showInfoDialog = false },
+            title = { Text(title) },
+            text = {
+                Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
+                    describedOptions.forEach { option ->
+                        Column(verticalArrangement = Arrangement.spacedBy(3.dp)) {
+                            Text(
+                                text = option.title,
+                                style = MaterialTheme.typography.titleSmall,
+                                fontWeight = FontWeight.SemiBold,
+                            )
+                            Text(
+                                text = option.description.orEmpty(),
+                                style = MaterialTheme.typography.bodySmall,
+                                color = LocalDcColors.current.textSecondary,
+                            )
+                        }
+                    }
+                }
+            },
+            confirmButton = {
+                TextButton(onClick = { showInfoDialog = false }) {
+                    Text(stringResource(R.string.close))
+                }
+            },
+        )
+    }
+
+    Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically,
+        ) {
+            Text(
+                text = title,
+                style = MaterialTheme.typography.titleSmall,
+                fontWeight = FontWeight.SemiBold,
+            )
+            if (describedOptions.isNotEmpty()) {
+                TextButton(onClick = { showInfoDialog = true }) {
+                    Text(stringResource(R.string.debit_choice_info))
+                }
+            }
+        }
+        options.chunked(2).forEach { rowOptions ->
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.spacedBy(8.dp),
+            ) {
+                rowOptions.forEach { option ->
+                    CompactChoiceChip(
+                        title = option.title,
+                        selected = option.value == selected,
+                        onClick = { onSelected(option.value) },
+                        modifier = Modifier.weight(1f),
+                    )
+                }
+                if (rowOptions.size == 1) {
+                    Spacer(modifier = Modifier.weight(1f))
+                }
+            }
+        }
+    }
+}
+
+@Composable
+private fun CompactChoiceChip(
+    title: String,
+    selected: Boolean,
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier,
+) {
+    val colors = LocalDcColors.current
+    val shapes = LocalDcShapes.current
+    Surface(
+        modifier = modifier
+            .height(52.dp)
+            .clickable(onClick = onClick),
+        shape = shapes.pill,
+        color = if (selected) colors.primaryAction.copy(alpha = 0.18f) else colors.surfaceBase,
+        contentColor = if (selected) colors.primaryAction else colors.textPrimary,
+        border = BorderStroke(
+            width = 1.dp,
+            color = if (selected) colors.primaryAction.copy(alpha = 0.7f) else colors.borderSubtle,
+        ),
+    ) {
+        Box(
+            modifier = Modifier.padding(horizontal = 12.dp),
+            contentAlignment = Alignment.Center,
+        ) {
+            Text(
+                text = title,
+                style = MaterialTheme.typography.labelLarge,
+                fontWeight = FontWeight.SemiBold,
+                maxLines = 1,
+                overflow = TextOverflow.Ellipsis,
+            )
         }
     }
 }

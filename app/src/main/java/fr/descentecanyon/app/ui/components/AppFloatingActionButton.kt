@@ -1,13 +1,10 @@
 package fr.descentecanyon.app.ui.components
 
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.size
-import androidx.compose.material3.FloatingActionButton
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import fr.descentecanyon.app.ui.design.DcFloatingActionButton
 
 @Composable
 fun AppFloatingActionButton(
@@ -17,15 +14,11 @@ fun AppFloatingActionButton(
     iconSize: Dp = 28.dp,
     icon: @Composable (Modifier) -> Unit,
 ) {
-    FloatingActionButton(
+    DcFloatingActionButton(
         onClick = onClick,
-        modifier = modifier.size(buttonSize),
-    ) {
-        Box(
-            modifier = Modifier.size(iconSize),
-            contentAlignment = Alignment.Center,
-        ) {
-            icon(Modifier.size(iconSize))
-        }
-    }
+        modifier = modifier,
+        buttonSize = buttonSize,
+        iconSize = iconSize,
+        icon = icon,
+    )
 }

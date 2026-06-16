@@ -6,12 +6,14 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.statusBarsPadding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
@@ -31,12 +33,16 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import fr.descentecanyon.app.R
 import fr.descentecanyon.app.ui.components.CanyonSummaryCard
+import fr.descentecanyon.app.ui.design.DcEmptyState
+import fr.descentecanyon.app.ui.design.DcSectionHeader
+import fr.descentecanyon.app.ui.design.LocalDcColors
+import fr.descentecanyon.app.ui.design.rememberDcContentWidth
+import fr.descentecanyon.app.ui.design.rememberDcScreenHorizontalPadding
 import fr.descentecanyon.app.ui.test.TestTags
 
 @Composable
@@ -47,88 +53,84 @@ fun FavoritesScreen(
     viewModel: FavoritesViewModel = hiltViewModel(),
 ) {
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
+    val contentWidth = rememberDcContentWidth()
+    val screenHorizontalPadding = rememberDcScreenHorizontalPadding()
 
-    Column(
+    Box(
         modifier = modifier
             .fillMaxSize()
-            .background(MaterialTheme.colorScheme.background)
-            .statusBarsPadding()
-            .padding(horizontal = 16.dp),
+            .background(LocalDcColors.current.backgroundBase)
+            .statusBarsPadding(),
     ) {
-        Spacer(modifier = Modifier.height(8.dp))
+        Column(
+            modifier = Modifier
+                .fillMaxHeight()
+                .width(contentWidth)
+                .align(Alignment.TopCenter)
+                .padding(horizontal = screenHorizontalPadding),
+        ) {
+            Spacer(modifier = Modifier.height(8.dp))
 
-        Text(
-            text = stringResource(R.string.tab_favorites),
-            style = MaterialTheme.typography.headlineMedium,
-            modifier = Modifier.padding(bottom = 12.dp),
-        )
-
-        uiState.error?.let { error ->
-            Text(
-                text = error,
-                color = MaterialTheme.colorScheme.error,
-                style = MaterialTheme.typography.bodyMedium,
+            DcSectionHeader(
+                title = stringResource(R.string.tab_favorites),
+                subtitle = stringResource(R.string.favorites_screen_subtitle),
                 modifier = Modifier.padding(bottom = 12.dp),
             )
-        }
 
-        Box(
-            modifier = Modifier
-                .fillMaxWidth()
-                .weight(1f)
-                .padding(bottom = contentPadding.calculateBottomPadding()),
-        ) {
-            if (uiState.isLoading) {
-                Box(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(32.dp),
-                    contentAlignment = Alignment.Center,
-                ) {
-                    CircularProgressIndicator()
-                }
-            } else if (uiState.favorites.isEmpty()) {
-                Box(
-                    modifier = Modifier
-                        .fillMaxSize()
-                        .padding(32.dp),
-                    contentAlignment = Alignment.Center,
-                ) {
-                    Column(
-                        horizontalAlignment = Alignment.CenterHorizontally,
+            uiState.error?.let { error ->
+                Text(
+                    text = error,
+                    color = MaterialTheme.colorScheme.error,
+                    style = MaterialTheme.typography.bodyMedium,
+                    modifier = Modifier.padding(bottom = 12.dp),
+                )
+            }
+
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .weight(1f)
+                    .padding(bottom = contentPadding.calculateBottomPadding()),
+            ) {
+                if (uiState.isLoading) {
+                    Box(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(32.dp),
+                        contentAlignment = Alignment.Center,
                     ) {
-                        Icon(
-                            imageVector = Icons.Default.FavoriteBorder,
-                            contentDescription = null,
-                            modifier = Modifier.size(64.dp),
-                            tint = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.4f),
-                        )
-                        Spacer(modifier = Modifier.height(16.dp))
-                        Text(
-                            text = stringResource(R.string.no_favorites),
-                            style = MaterialTheme.typography.bodyLarge,
-                            color = MaterialTheme.colorScheme.onSurfaceVariant,
-                            textAlign = TextAlign.Center,
+                        CircularProgressIndicator()
+                    }
+                } else if (uiState.favorites.isEmpty()) {
+                    Box(
+                        modifier = Modifier
+                            .fillMaxSize()
+                            .padding(32.dp),
+                        contentAlignment = Alignment.Center,
+                    ) {
+                        DcEmptyState(
+                            title = stringResource(R.string.no_favorites),
+                            icon = Icons.Default.FavoriteBorder,
                         )
                     }
-                }
-            } else {
-                LazyColumn(
-                    modifier = Modifier.testTag(TestTags.favoritesList),
-                    contentPadding = PaddingValues(bottom = 16.dp),
-                    verticalArrangement = Arrangement.spacedBy(8.dp),
-                ) {
-                    items(
-                        items = uiState.favorites,
-                        key = { it.id },
-                    ) { canyon ->
-                        FavoriteDismissItem(
-                            onRemove = { viewModel.removeFavorite(canyon.id) },
-                        ) {
-                            CanyonSummaryCard(
-                                canyon = canyon,
-                                onClick = { onCanyonClick(canyon.id) },
-                            )
+                } else {
+                    LazyColumn(
+                        modifier = Modifier.testTag(TestTags.favoritesList),
+                        contentPadding = PaddingValues(bottom = 16.dp),
+                        verticalArrangement = Arrangement.spacedBy(8.dp),
+                    ) {
+                        items(
+                            items = uiState.favorites,
+                            key = { it.id },
+                        ) { canyon ->
+                            FavoriteDismissItem(
+                                onRemove = { viewModel.removeFavorite(canyon.id) },
+                            ) {
+                                CanyonSummaryCard(
+                                    canyon = canyon,
+                                    onClick = { onCanyonClick(canyon.id) },
+                                )
+                            }
                         }
                     }
                 }
@@ -166,18 +168,13 @@ private fun FavoriteDismissItem(
                 contentAlignment = Alignment.CenterEnd,
             ) {
                 Box(
-                    modifier = Modifier
-                        .fillMaxSize(),
+                    modifier = Modifier.fillMaxSize(),
                     contentAlignment = Alignment.CenterEnd,
                 ) {
                     Icon(
                         imageVector = Icons.Default.Delete,
                         contentDescription = stringResource(R.string.remove_favorite),
-                        tint = if (isDismissed) {
-                            MaterialTheme.colorScheme.error
-                        } else {
-                            Color.Transparent
-                        },
+                        tint = if (isDismissed) MaterialTheme.colorScheme.error else Color.Transparent,
                         modifier = Modifier.padding(end = 20.dp),
                     )
                 }

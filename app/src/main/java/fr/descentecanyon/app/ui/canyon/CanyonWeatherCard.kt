@@ -185,6 +185,30 @@ private fun WeatherSummaryLine(
     error: String?,
     expanded: Boolean,
 ) {
+    if (weather != null && !expanded) {
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.spacedBy(6.dp),
+        ) {
+            WeatherCompactTile(
+                label = stringResource(R.string.weather_last_72h),
+                value = formatMillimeters(weather.past72HoursPrecipitationMm),
+                modifier = Modifier.weight(1f),
+            )
+            WeatherCompactTile(
+                label = stringResource(R.string.weather_next_48h),
+                value = formatMillimeters(weather.next48HoursPrecipitationMm),
+                modifier = Modifier.weight(1f),
+            )
+            WeatherCompactTile(
+                label = stringResource(R.string.weather_probability_next_24h),
+                value = formatProbability(weather.maxPrecipitationProbabilityNext24Hours),
+                modifier = Modifier.weight(1f),
+            )
+        }
+        return
+    }
+
     val text = when {
         isLoading && weather == null -> stringResource(R.string.weather_loading)
         weather != null -> stringResource(
@@ -208,6 +232,40 @@ private fun WeatherSummaryLine(
         maxLines = if (expanded) 2 else 1,
         overflow = TextOverflow.Ellipsis,
     )
+}
+
+@Composable
+private fun WeatherCompactTile(
+    label: String,
+    value: String,
+    modifier: Modifier = Modifier,
+) {
+    Card(
+        modifier = modifier,
+        colors = CardDefaults.cardColors(
+            containerColor = MaterialTheme.colorScheme.surface.copy(alpha = 0.72f),
+        ),
+        elevation = CardDefaults.cardElevation(defaultElevation = 0.dp),
+    ) {
+        Column(
+            modifier = Modifier.padding(horizontal = 6.dp, vertical = 7.dp),
+            verticalArrangement = Arrangement.spacedBy(2.dp),
+        ) {
+            Text(
+                text = label,
+                style = MaterialTheme.typography.labelSmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                maxLines = 1,
+                overflow = TextOverflow.Ellipsis,
+            )
+            Text(
+                text = value,
+                style = MaterialTheme.typography.labelMedium,
+                fontWeight = FontWeight.Bold,
+                maxLines = 1,
+            )
+        }
+    }
 }
 
 @Composable

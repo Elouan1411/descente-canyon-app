@@ -6,11 +6,13 @@ import android.util.Patterns
 import android.widget.Toast
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -69,6 +71,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
@@ -112,6 +115,13 @@ import fr.descentecanyon.app.ui.components.DebitBadge
 import fr.descentecanyon.app.ui.components.InterestStars
 import fr.descentecanyon.app.ui.components.AppFloatingActionButton
 import fr.descentecanyon.app.ui.components.debitLevelColor
+import fr.descentecanyon.app.ui.design.DcCard
+import fr.descentecanyon.app.ui.design.DcCardVariant
+import fr.descentecanyon.app.ui.design.DcMetricTile
+import fr.descentecanyon.app.ui.design.LocalDcColors
+import fr.descentecanyon.app.ui.design.LocalDcShapes
+import fr.descentecanyon.app.ui.design.LocalDcSpacing
+import fr.descentecanyon.app.ui.design.rememberDcContentWidth
 import fr.descentecanyon.app.ui.map.MapLibreView
 import fr.descentecanyon.app.ui.test.TestTags
 import fr.descentecanyon.app.ui.theme.DebitCorrect
@@ -142,6 +152,7 @@ fun CanyonDetailScreen(
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
     val context = LocalContext.current
     val lifecycleOwner = LocalLifecycleOwner.current
+    val contentWidth = rememberDcContentWidth(maxWidth = 940.dp)
 
     LaunchedEffect(canyonId) {
         PerformanceTrace.logEvent("canyon_detail_screen_visible", "canyonId" to canyonId)
@@ -281,32 +292,39 @@ fun CanyonDetailScreen(
                 }
 
                 uiState.canyonDetail != null -> {
-                    CanyonDetailContent(
-                        detail = uiState.canyonDetail!!,
-                        isRefreshingDetail = uiState.isRefreshingDetail,
-                        isOnline = uiState.isOnline,
-                        isLoadingPhotos = uiState.isLoadingPhotos,
-                        photoError = uiState.photoError,
-                        isLoadingDebits = uiState.isLoadingDebits,
-                        debitError = uiState.debitError,
-                        edfStatus = uiState.edfStatus,
-                        isLoadingEdfStatus = uiState.isLoadingEdfStatus,
-                        edfStatusError = uiState.edfStatusError,
-                        edfStatusSourceUrl = uiState.edfStatusSourceUrl,
-                        weather = uiState.weather,
-                        isLoadingWeather = uiState.isLoadingWeather,
-                        weatherError = uiState.weatherError,
-                        predictions = uiState.predictions,
-                        isLoadingPredictions = uiState.isLoadingPredictions,
-                        predictionError = uiState.predictionError,
-                        onOpenPredictionInfo = onOpenPredictionInfo,
-                        downloadingPhotoIds = uiState.downloadingPhotoIds,
-                        onOpenPhotoGallery = onOpenPhotoGallery,
-                        onPersistedPhotoMissing = viewModel::onPersistedPhotoMissing,
-                        openDebitsTabInitially = openDebitsTabInitially,
-                        bottomContentPadding = contentPadding.calculateBottomPadding() + 96.dp,
+                    Box(
                         modifier = Modifier.fillMaxSize(),
-                    )
+                        contentAlignment = Alignment.TopCenter,
+                    ) {
+                        CanyonDetailContent(
+                            detail = uiState.canyonDetail!!,
+                            isRefreshingDetail = uiState.isRefreshingDetail,
+                            isOnline = uiState.isOnline,
+                            isLoadingPhotos = uiState.isLoadingPhotos,
+                            photoError = uiState.photoError,
+                            isLoadingDebits = uiState.isLoadingDebits,
+                            debitError = uiState.debitError,
+                            edfStatus = uiState.edfStatus,
+                            isLoadingEdfStatus = uiState.isLoadingEdfStatus,
+                            edfStatusError = uiState.edfStatusError,
+                            edfStatusSourceUrl = uiState.edfStatusSourceUrl,
+                            weather = uiState.weather,
+                            isLoadingWeather = uiState.isLoadingWeather,
+                            weatherError = uiState.weatherError,
+                            predictions = uiState.predictions,
+                            isLoadingPredictions = uiState.isLoadingPredictions,
+                            predictionError = uiState.predictionError,
+                            onOpenPredictionInfo = onOpenPredictionInfo,
+                            downloadingPhotoIds = uiState.downloadingPhotoIds,
+                            onOpenPhotoGallery = onOpenPhotoGallery,
+                            onPersistedPhotoMissing = viewModel::onPersistedPhotoMissing,
+                            openDebitsTabInitially = openDebitsTabInitially,
+                            bottomContentPadding = contentPadding.calculateBottomPadding() + 96.dp,
+                            modifier = Modifier
+                                .fillMaxHeight()
+                                .width(contentWidth),
+                        )
+                    }
                 }
             }
 
@@ -462,7 +480,12 @@ private fun CanyonDetailContent(
                 DetailRefreshingBanner()
             }
         }
-        item { SummaryCard(detail = detail) }
+        item {
+            SummaryCard(
+                detail = detail,
+                onPersistedPhotoMissing = onPersistedPhotoMissing,
+            )
+        }
         if (edfStatusSourceUrl != null) {
             item {
                 CanyonEdfStatusCard(
@@ -551,41 +574,123 @@ private fun DetailRefreshingBanner(modifier: Modifier = Modifier) {
 @Composable
 private fun SummaryCard(
     detail: CanyonDetail,
+    onPersistedPhotoMissing: (Long) -> Unit,
     modifier: Modifier = Modifier,
 ) {
     val canyon = detail.canyon
+    val heroPhoto = detail.photos.firstOrNull()
+    val colors = LocalDcColors.current
+    val shapes = LocalDcShapes.current
+    val spacing = LocalDcSpacing.current
 
-    Card(
+    DcCard(
         modifier = modifier
             .fillMaxWidth()
-            .padding(horizontal = 16.dp, vertical = 4.dp),
-        colors = CardDefaults.cardColors(
-            containerColor = MaterialTheme.colorScheme.surfaceVariant,
-        ),
+            .padding(horizontal = spacing.screenHorizontal, vertical = spacing.sm),
+        variant = DcCardVariant.Elevated,
+        contentPadding = 0.dp,
     ) {
-        Column(modifier = Modifier.padding(16.dp)) {
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceBetween,
-                verticalAlignment = Alignment.CenterVertically,
+        Column {
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(210.dp),
             ) {
-                if (canyon.isForbidden) {
-                    ForbiddenBadge(large = true)
+                if (heroPhoto != null) {
+                    HeroPhoto(
+                        photo = heroPhoto,
+                        onPersistedPhotoMissing = onPersistedPhotoMissing,
+                        modifier = Modifier.fillMaxSize(),
+                        contentScale = ContentScale.Crop,
+                    )
                 } else {
-                    CotationBadge(cotation = canyon.cotation, large = true)
+                    Box(
+                        modifier = Modifier
+                            .fillMaxSize()
+                            .background(
+                                Brush.linearGradient(
+                                    listOf(colors.waterDeep, colors.backgroundElevated, colors.rock.copy(alpha = 0.72f))
+                                )
+                            ),
+                    )
                 }
-                Spacer(modifier = Modifier.width(12.dp))
-                canyon.interet?.let { interest ->
-                    InterestStars(interest = interest)
+                Box(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .background(
+                            Brush.verticalGradient(
+                                listOf(Color.Transparent, colors.surfacePhotoScrim),
+                                startY = 40f,
+                            )
+                        )
+                )
+                Column(
+                    modifier = Modifier
+                        .align(Alignment.BottomStart)
+                        .padding(spacing.lg),
+                    verticalArrangement = Arrangement.spacedBy(spacing.sm),
+                ) {
+                    Row(
+                        horizontalArrangement = Arrangement.spacedBy(spacing.sm),
+                        verticalAlignment = Alignment.CenterVertically,
+                    ) {
+                        if (canyon.isForbidden) {
+                            ForbiddenBadge()
+                        } else {
+                            CotationBadge(cotation = canyon.cotation)
+                        }
+                        canyon.interet?.let { interest ->
+                            InterestStars(interest = interest)
+                        }
+                    }
+                    Text(
+                        text = canyon.nom,
+                        style = MaterialTheme.typography.headlineLarge,
+                        fontWeight = FontWeight.ExtraBold,
+                        color = colors.snow,
+                        maxLines = 2,
+                        overflow = TextOverflow.Ellipsis,
+                    )
+                    Row(verticalAlignment = Alignment.CenterVertically) {
+                        Icon(
+                            imageVector = Icons.Default.LocationOn,
+                            contentDescription = null,
+                            modifier = Modifier.size(16.dp),
+                            tint = colors.waterMist,
+                        )
+                        Spacer(modifier = Modifier.width(4.dp))
+                        Text(
+                            text = "${canyon.commune} - ${canyon.pays}",
+                            style = MaterialTheme.typography.bodyMedium,
+                            color = colors.waterMist,
+                            maxLines = 1,
+                            overflow = TextOverflow.Ellipsis,
+                        )
+                    }
+                }
+                heroPhoto?.auteur?.takeIf { it.isNotBlank() }?.let { author ->
+                    Surface(
+                        modifier = Modifier
+                            .align(Alignment.TopEnd)
+                            .padding(spacing.md),
+                        shape = shapes.pill,
+                        color = colors.surfacePhotoScrim.copy(alpha = 0.72f),
+                        contentColor = colors.snow,
+                    ) {
+                        Text(
+                            text = author,
+                            style = MaterialTheme.typography.labelSmall,
+                            modifier = Modifier.padding(horizontal = spacing.sm, vertical = spacing.xs),
+                            maxLines = 1,
+                            overflow = TextOverflow.Ellipsis,
+                        )
+                    }
                 }
             }
-            Text(
-                text = "${canyon.commune} - ${canyon.pays}",
-                style = MaterialTheme.typography.bodyMedium,
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
-                modifier = Modifier.padding(top = 8.dp),
+            SummaryStatsGrid(
+                detail = detail,
+                modifier = Modifier.padding(spacing.lg),
             )
-            SummaryStatsGrid(detail = detail, modifier = Modifier.padding(top = 12.dp))
         }
     }
 }
@@ -638,13 +743,13 @@ private fun SummaryStatsGrid(
             )
         }
         if (parcoursStats.isNotEmpty()) {
-            SummarySection(
+            SummaryMetricSection(
                 title = stringResource(R.string.canyon_summary_parcours),
                 stats = parcoursStats,
             )
         }
         if (timeStats.isNotEmpty()) {
-            SummarySection(
+            SummaryMetricSection(
                 title = stringResource(R.string.canyon_summary_timing),
                 stats = timeStats,
             )
@@ -705,6 +810,41 @@ private fun SummarySection(
                         HorizontalDivider(
                             color = MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.35f),
                         )
+                    }
+                }
+            }
+        }
+    }
+}
+
+@Composable
+private fun SummaryMetricSection(
+    title: String,
+    stats: List<SummaryStat>,
+    modifier: Modifier = Modifier,
+) {
+    Column(modifier = modifier, verticalArrangement = Arrangement.spacedBy(8.dp)) {
+        Text(
+            text = title,
+            style = MaterialTheme.typography.labelLarge,
+            fontWeight = FontWeight.SemiBold,
+            color = LocalDcColors.current.textSecondary,
+        )
+        Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
+            stats.chunked(2).forEach { rowStats ->
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.spacedBy(8.dp),
+                ) {
+                    rowStats.forEach { stat ->
+                        DcMetricTile(
+                            label = stat.label,
+                            value = stat.value ?: "-",
+                            modifier = Modifier.weight(1f),
+                        )
+                    }
+                    if (rowStats.size == 1) {
+                        Spacer(modifier = Modifier.weight(1f))
                     }
                 }
             }
@@ -836,10 +976,13 @@ private fun CollapsibleSection(
     modifier: Modifier = Modifier,
 ) {
     var expanded by rememberSaveable { mutableStateOf(false) }
+    val preview = remember(content) { normalizeSectionText(content).lineSequence().joinToString(" ").trim() }
+    val colors = LocalDcColors.current
 
-    Card(
+    DcCard(
         modifier = modifier.fillMaxWidth(),
-        elevation = CardDefaults.cardElevation(defaultElevation = 1.dp),
+        variant = if (expanded) DcCardVariant.Elevated else DcCardVariant.Surface,
+        contentPadding = 0.dp,
     ) {
         Column {
             Row(
@@ -850,11 +993,23 @@ private fun CollapsibleSection(
                 horizontalArrangement = Arrangement.SpaceBetween,
                 verticalAlignment = Alignment.CenterVertically,
             ) {
-                Text(
-                    text = title,
-                    style = MaterialTheme.typography.titleMedium,
-                    fontWeight = FontWeight.SemiBold,
-                )
+                Column(modifier = Modifier.weight(1f)) {
+                    Text(
+                        text = title,
+                        style = MaterialTheme.typography.titleMedium,
+                        fontWeight = FontWeight.SemiBold,
+                    )
+                    if (!expanded && preview.isNotBlank()) {
+                        Text(
+                            text = preview,
+                            style = MaterialTheme.typography.bodySmall,
+                            color = colors.textSecondary,
+                            maxLines = 2,
+                            overflow = TextOverflow.Ellipsis,
+                            modifier = Modifier.padding(top = 4.dp),
+                        )
+                    }
+                }
                 Icon(
                     imageVector = if (expanded) {
                         Icons.Default.KeyboardArrowUp
@@ -867,7 +1022,7 @@ private fun CollapsibleSection(
             }
             AnimatedVisibility(visible = expanded) {
                 Column {
-                    HorizontalDivider()
+                    HorizontalDivider(color = colors.borderSubtle)
                     LinkifiedSectionText(
                         content = content,
                         modifier = Modifier.padding(12.dp),
@@ -971,10 +1126,7 @@ private fun BibliographySection(
 
     var expanded by rememberSaveable { mutableStateOf(false) }
 
-    Card(
-        modifier = modifier.fillMaxWidth(),
-        elevation = CardDefaults.cardElevation(defaultElevation = 1.dp),
-    ) {
+    DcCard(modifier = modifier.fillMaxWidth(), variant = DcCardVariant.Surface, contentPadding = 0.dp) {
         Column {
             Row(
                 modifier = Modifier
@@ -1021,13 +1173,11 @@ private fun BibliographyGroup(
         Text(
             text = title,
             style = MaterialTheme.typography.labelLarge,
-            color = MaterialTheme.colorScheme.primary,
+            color = LocalDcColors.current.textSecondary,
             fontWeight = FontWeight.SemiBold,
         )
         entries.forEach { entry ->
-            Card(
-                colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.45f)),
-            ) {
+            DcCard(variant = DcCardVariant.Condition, contentPadding = 12.dp) {
                 Column(modifier = Modifier.padding(12.dp), verticalArrangement = Arrangement.spacedBy(4.dp)) {
                     Text(
                         text = entry.title,
@@ -1082,10 +1232,7 @@ private fun RegulationSection(
 ) {
     var expanded by rememberSaveable { mutableStateOf(false) }
 
-    Card(
-        modifier = modifier.fillMaxWidth(),
-        elevation = CardDefaults.cardElevation(defaultElevation = 1.dp),
-    ) {
+    DcCard(modifier = modifier.fillMaxWidth(), variant = DcCardVariant.Warning, contentPadding = 0.dp) {
         Column {
             Row(
                 modifier = Modifier
@@ -1145,9 +1292,10 @@ private fun RegulationItem(
         stringResource(R.string.regulation_effective_date, it)
     }
 
-    Card(
+    DcCard(
         modifier = modifier.fillMaxWidth(),
-        colors = CardDefaults.cardColors(containerColor = containerColor),
+        variant = DcCardVariant.Warning,
+        contentPadding = 0.dp,
     ) {
         Column {
             Row(
@@ -1222,7 +1370,9 @@ private fun RegulationStatusBadge(
 ) {
     Card(
         modifier = modifier,
+        shape = LocalDcShapes.current.pill,
         colors = CardDefaults.cardColors(containerColor = color.copy(alpha = 0.16f)),
+        border = BorderStroke(1.dp, color.copy(alpha = 0.36f)),
     ) {
         Text(
             text = text,
@@ -1369,6 +1519,45 @@ private fun PhotoCard(
                     .height(220.dp),
                 contentScale = ContentScale.Crop,
             )
+            val photoAuthor = photo.auteur?.takeIf { it.isNotBlank() }
+            val photoDescription = photo.description?.takeIf { it.isNotBlank() }
+            if (photoAuthor != null || photoDescription != null) {
+                Box(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .align(Alignment.BottomStart)
+                        .background(
+                            Brush.verticalGradient(
+                                listOf(Color.Transparent, LocalDcColors.current.surfacePhotoScrim)
+                            )
+                        )
+                        .padding(12.dp),
+                ) {
+                    Column(
+                        modifier = Modifier.align(Alignment.BottomStart),
+                    ) {
+                        photoDescription?.let { description ->
+                            Text(
+                                text = description,
+                                style = MaterialTheme.typography.bodySmall,
+                                color = LocalDcColors.current.snow,
+                                maxLines = 2,
+                                overflow = TextOverflow.Ellipsis,
+                            )
+                        }
+                        photoAuthor?.let { author ->
+                            Text(
+                                text = author,
+                                style = MaterialTheme.typography.labelSmall,
+                                color = LocalDcColors.current.waterMist,
+                                maxLines = 1,
+                                overflow = TextOverflow.Ellipsis,
+                                modifier = Modifier.padding(top = if (photoDescription != null) 2.dp else 0.dp),
+                            )
+                        }
+                    }
+                }
+            }
             if (isDownloading) {
                 Box(
                     modifier = Modifier
@@ -1381,6 +1570,46 @@ private fun PhotoCard(
             }
         }
     }
+}
+
+@Composable
+private fun HeroPhoto(
+    photo: CanyonPhoto,
+    onPersistedPhotoMissing: (Long) -> Unit,
+    modifier: Modifier = Modifier,
+    contentScale: ContentScale,
+) {
+    val fullModel = photo.localPath ?: photo.url.takeIf { it.isNotBlank() } ?: photo.thumbnailUrl.orEmpty()
+    val fallbackModel = photo.thumbnailUrl?.takeIf { it.isNotBlank() && it != fullModel }
+    var displayedModel by remember(photo.localPath, photo.url, photo.thumbnailUrl) {
+        mutableStateOf(fullModel)
+    }
+
+    RetryablePhoto(
+        model = displayedModel,
+        contentDescription = photo.description,
+        modifier = modifier,
+        contentScale = contentScale,
+        onError = {
+            if (photo.localPath != null) {
+                onPersistedPhotoMissing(photo.id)
+            } else if (fallbackModel != null && displayedModel != fallbackModel) {
+                displayedModel = fallbackModel
+            }
+        },
+        errorContent = { onRetry ->
+            DefaultPhotoError(
+                onRetry = {
+                    if (fallbackModel != null && displayedModel != fallbackModel) {
+                        displayedModel = fallbackModel
+                    } else {
+                        onRetry()
+                    }
+                },
+                message = stringResource(R.string.photo_load_error),
+            )
+        },
+    )
 }
 
 @Composable
@@ -1465,6 +1694,7 @@ private fun LazyListScope.debitItems(
         ) { debit ->
             DebitListItem(
                 debit = debit,
+                isLatest = debit == debits.first(),
                 modifier = Modifier.padding(horizontal = 16.dp, vertical = 4.dp),
             )
         }

@@ -2,6 +2,7 @@ package fr.descentecanyon.app.ui.canyon
 
 import android.content.Intent
 import android.net.Uri
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -13,6 +14,7 @@ import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
@@ -69,7 +71,9 @@ fun CanyonEdfStatusCard(
                         style = MaterialTheme.typography.titleMedium,
                         fontWeight = FontWeight.SemiBold,
                     )
-                    val subtitle = status?.title ?: stringResource(R.string.edf_status_source_name)
+                    val subtitle = status?.lastSample?.value?.let { value ->
+                        "${status.title} - ${stringResource(R.string.edf_status_current_level, formatLevel(value))}"
+                    } ?: status?.title ?: stringResource(R.string.edf_status_source_name)
                     Text(
                         text = subtitle,
                         style = MaterialTheme.typography.bodySmall,
@@ -206,15 +210,20 @@ private fun ConditionBadge(
         EdfPracticabilityCondition.UNKNOWN -> stringResource(R.string.edf_status_state_unknown) to MaterialTheme.colorScheme.outline
     }
 
-    Text(
-        text = label,
-        color = color,
-        style = MaterialTheme.typography.labelSmall,
-        fontWeight = FontWeight.SemiBold,
-        modifier = modifier
-            .background(color.copy(alpha = 0.14f), RoundedCornerShape(999.dp))
-            .padding(horizontal = 10.dp, vertical = 5.dp),
-    )
+    Surface(
+        modifier = modifier,
+        shape = RoundedCornerShape(999.dp),
+        color = color.copy(alpha = 0.14f),
+        contentColor = color,
+        border = BorderStroke(1.dp, color.copy(alpha = 0.48f)),
+    ) {
+        Text(
+            text = label,
+            style = MaterialTheme.typography.labelSmall,
+            fontWeight = FontWeight.SemiBold,
+            modifier = Modifier.padding(horizontal = 10.dp, vertical = 5.dp),
+        )
+    }
 }
 
 @Composable

@@ -31,16 +31,20 @@ import fr.descentecanyon.app.domain.model.Debit
 import fr.descentecanyon.app.domain.model.NiveauDebit
 import fr.descentecanyon.app.ui.components.DebitBadge
 import fr.descentecanyon.app.ui.components.debitLevelColor
+import fr.descentecanyon.app.ui.design.LocalDcColors
+import fr.descentecanyon.app.ui.design.LocalDcShapes
 import java.time.format.DateTimeFormatter
 
 @Composable
 internal fun DebitListItem(
     debit: Debit,
+    isLatest: Boolean = false,
     modifier: Modifier = Modifier,
 ) {
     var expanded by rememberSaveable(debit.id) { mutableStateOf(false) }
     val bgColor = debitLevelColor(debit.niveau)
     val colorScheme = MaterialTheme.colorScheme
+    val dcColors = LocalDcColors.current
     val isCrue = debit.niveau == NiveauDebit.CRUE
     val primaryTextColor = if (isCrue) Color.White else colorScheme.onSurface
     val secondaryTextColor = if (isCrue) Color.White.copy(alpha = 0.78f) else colorScheme.onSurfaceVariant
@@ -50,9 +54,17 @@ internal fun DebitListItem(
             .fillMaxWidth()
             .clickable { expanded = !expanded },
         colors = CardDefaults.cardColors(
-            containerColor = if (isCrue) bgColor else bgColor.copy(alpha = 0.1f),
+            containerColor = when {
+                isCrue -> bgColor
+                isLatest -> dcColors.surfaceRaised
+                else -> bgColor.copy(alpha = 0.1f)
+            },
         ),
-        border = if (isCrue) BorderStroke(1.dp, Color.White.copy(alpha = 0.45f)) else null,
+        border = when {
+            isCrue -> BorderStroke(1.dp, Color.White.copy(alpha = 0.45f))
+            isLatest -> BorderStroke(1.dp, dcColors.primaryAction.copy(alpha = 0.72f))
+            else -> null
+        },
     ) {
         Row(
             modifier = Modifier
@@ -63,6 +75,12 @@ internal fun DebitListItem(
         ) {
             Column(modifier = Modifier.weight(1f)) {
                 Row(verticalAlignment = Alignment.CenterVertically) {
+                    if (isLatest) {
+                        SmallMetaBadge(
+                            text = stringResource(R.string.debit_latest_badge),
+                            modifier = Modifier.padding(end = 8.dp),
+                        )
+                    }
                     Text(
                         text = debit.date.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")),
                         style = MaterialTheme.typography.bodyMedium,
@@ -147,6 +165,7 @@ private fun SmallMetaBadge(
 ) {
     Card(
         modifier = modifier,
+        shape = LocalDcShapes.current.pill,
         colors = CardDefaults.cardColors(
             containerColor = MaterialTheme.colorScheme.secondaryContainer,
         ),

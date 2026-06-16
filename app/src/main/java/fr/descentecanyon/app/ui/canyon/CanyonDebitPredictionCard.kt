@@ -99,8 +99,10 @@ fun CanyonDebitPredictionCard(
                         expanded = expanded,
                     )
                 }
-                TextButton(onClick = onInfoClick) {
-                    Text(text = stringResource(R.string.prediction_info_cta))
+                if (expanded) {
+                    TextButton(onClick = onInfoClick) {
+                        Text(text = stringResource(R.string.prediction_info_cta))
+                    }
                 }
                 Icon(
                     imageVector = if (expanded) Icons.Default.KeyboardArrowUp else Icons.Default.KeyboardArrowDown,
@@ -170,6 +172,35 @@ private fun PredictionSummaryLine(
 ) {
     val todayPrediction = predictions?.predictions?.firstOrNull { it.horizonDays == 0 }
         ?: predictions?.predictions?.firstOrNull()
+    val tomorrowPrediction = predictions?.predictions?.firstOrNull { it.horizonDays == 1 }
+    if (predictions != null && !expanded) {
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.spacedBy(8.dp),
+        ) {
+            todayPrediction?.let { prediction ->
+                PredictionCompactTile(
+                    label = stringResource(R.string.prediction_today),
+                    value = predictionSummaryValue(prediction),
+                    color = predictionSummaryColor(prediction),
+                    modifier = Modifier.weight(1f),
+                )
+            }
+            tomorrowPrediction?.let { prediction ->
+                PredictionCompactTile(
+                    label = stringResource(R.string.prediction_tomorrow),
+                    value = predictionSummaryValue(prediction),
+                    color = predictionSummaryColor(prediction),
+                    modifier = Modifier.weight(1f),
+                )
+            }
+            if (todayPrediction != null && tomorrowPrediction == null) {
+                Box(modifier = Modifier.weight(1f))
+            }
+        }
+        return
+    }
+
     val text = when {
         isLoading && predictions == null -> stringResource(R.string.prediction_loading)
         todayPrediction?.ordinalLevel != null -> "${stringResource(R.string.prediction_today)} : ${ordinalLevelTitle(todayPrediction.ordinalLevel)}"
@@ -189,6 +220,51 @@ private fun PredictionSummaryLine(
         maxLines = if (expanded) 2 else 1,
         overflow = TextOverflow.Ellipsis,
     )
+}
+
+@Composable
+private fun PredictionCompactTile(
+    label: String,
+    value: String,
+    color: Color,
+    modifier: Modifier = Modifier,
+) {
+    Card(
+        modifier = modifier,
+        colors = CardDefaults.cardColors(containerColor = color.copy(alpha = 0.14f)),
+        border = androidx.compose.foundation.BorderStroke(1.dp, color.copy(alpha = 0.42f)),
+        elevation = CardDefaults.cardElevation(defaultElevation = 0.dp),
+    ) {
+        Column(
+            modifier = Modifier.padding(horizontal = 10.dp, vertical = 7.dp),
+            verticalArrangement = Arrangement.spacedBy(2.dp),
+        ) {
+            Text(
+                text = label,
+                style = MaterialTheme.typography.labelSmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                maxLines = 1,
+            )
+            Text(
+                text = value,
+                style = MaterialTheme.typography.labelLarge,
+                color = color,
+                fontWeight = FontWeight.Bold,
+                maxLines = 1,
+                overflow = TextOverflow.Ellipsis,
+            )
+        }
+    }
+}
+
+@Composable
+private fun predictionSummaryValue(prediction: DailyDebitPrediction): String {
+    return prediction.ordinalLevel?.let { ordinalLevelTitle(it) } ?: levelLabel(prediction.level)
+}
+
+@Composable
+private fun predictionSummaryColor(prediction: DailyDebitPrediction): Color {
+    return prediction.ordinalLevel?.let { ordinalColor(it) } ?: levelColor(prediction.level)
 }
 
 @Composable

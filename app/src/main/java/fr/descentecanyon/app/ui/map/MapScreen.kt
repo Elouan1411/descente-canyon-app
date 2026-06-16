@@ -12,12 +12,14 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.statusBarsPadding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -55,12 +57,16 @@ import fr.descentecanyon.app.R
 import fr.descentecanyon.app.domain.model.CanyonSummary
 import fr.descentecanyon.app.perf.PerformanceTrace
 import fr.descentecanyon.app.ui.components.SelectedCanyonSheetContent
+import fr.descentecanyon.app.ui.design.DcEmptyState
+import fr.descentecanyon.app.ui.design.DcSectionHeader
+import fr.descentecanyon.app.ui.design.LocalDcColors
+import fr.descentecanyon.app.ui.design.LocalDcShapes
+import fr.descentecanyon.app.ui.design.LocalDcSpacing
+import fr.descentecanyon.app.ui.design.rememberDcContentWidth
+import fr.descentecanyon.app.ui.design.rememberDcScreenHorizontalPadding
 import fr.descentecanyon.app.ui.location.hasLocationPermission
 import fr.descentecanyon.app.ui.location.loadCurrentDeviceLocation
 import fr.descentecanyon.app.ui.location.requestLocationSettings
-import fr.descentecanyon.app.ui.theme.CanyonBlue
-import fr.descentecanyon.app.ui.theme.CanyonBlueDark
-import fr.descentecanyon.app.ui.theme.RockBrownLight
 import org.maplibre.android.geometry.LatLngBounds
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -74,6 +80,11 @@ fun MapScreen(
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
     val context = LocalContext.current
     val snackbarHostState = remember { SnackbarHostState() }
+    val dcColors = LocalDcColors.current
+    val dcShapes = LocalDcShapes.current
+    val spacing = LocalDcSpacing.current
+    val contentWidth = rememberDcContentWidth()
+    val screenHorizontalPadding = rememberDcScreenHorizontalPadding()
     var visibleBounds by remember { mutableStateOf<LatLngBounds?>(null) }
     val visibleCanyons = remember(uiState.mapCanyons, visibleBounds) {
         visibleBounds?.let { bounds ->
@@ -142,13 +153,19 @@ fun MapScreen(
         }
     }
 
-    Column(
+    Box(
         modifier = modifier
             .fillMaxSize()
-            .background(MaterialTheme.colorScheme.background)
+            .background(dcColors.backgroundBase)
             .statusBarsPadding()
-            .padding(horizontal = 16.dp),
-        verticalArrangement = Arrangement.spacedBy(12.dp),
+    ) {
+    Column(
+        modifier = Modifier
+            .fillMaxHeight()
+            .width(contentWidth)
+            .align(Alignment.TopCenter)
+            .padding(horizontal = screenHorizontalPadding),
+        verticalArrangement = Arrangement.spacedBy(spacing.md),
     ) {
         SnackbarHost(hostState = snackbarHostState)
 
@@ -171,8 +188,9 @@ fun MapScreen(
 
         Card(
             modifier = Modifier.fillMaxWidth(),
-            shape = RoundedCornerShape(24.dp),
-            elevation = CardDefaults.cardElevation(defaultElevation = 2.dp),
+            shape = dcShapes.xl,
+            colors = CardDefaults.cardColors(containerColor = dcColors.surfaceRaised),
+            elevation = CardDefaults.cardElevation(defaultElevation = 0.dp),
         ) {
             MapLibreView(
                 markers = uiState.mapCanyons,
@@ -185,26 +203,15 @@ fun MapScreen(
                 focusLocationRequestId = uiState.focusLocationRequestId,
                 modifier = Modifier
                     .fillMaxWidth()
-                    .height(280.dp),
+                    .height(390.dp),
             )
         }
 
         if (!uiState.isLoading) {
-            Column(
-                modifier = Modifier.fillMaxWidth(),
-                verticalArrangement = Arrangement.spacedBy(4.dp),
-            ) {
-                Text(
-                    text = stringResource(R.string.map_visible_title),
-                    style = MaterialTheme.typography.titleLarge,
-                    fontWeight = FontWeight.SemiBold,
-                )
-                Text(
-                    text = stringResource(R.string.map_visible_description, visibleCanyons.size),
-                    style = MaterialTheme.typography.bodyMedium,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant,
-                )
-            }
+            DcSectionHeader(
+                title = stringResource(R.string.map_visible_title),
+                subtitle = stringResource(R.string.map_visible_description, visibleCanyons.size),
+            )
         }
 
         Box(
@@ -251,6 +258,7 @@ fun MapScreen(
             }
         }
     }
+    }
 }
 
 @Composable
@@ -259,9 +267,11 @@ private fun MapHeroCard(
     onAroundMeClick: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
+    val colors = LocalDcColors.current
+    val shapes = LocalDcShapes.current
     Card(
         modifier = modifier.fillMaxWidth(),
-        shape = RoundedCornerShape(24.dp),
+        shape = shapes.xl,
         colors = CardDefaults.cardColors(containerColor = Color.Transparent),
     ) {
         Box(
@@ -269,10 +279,10 @@ private fun MapHeroCard(
                 .fillMaxWidth()
                 .background(
                     Brush.linearGradient(
-                        colors = listOf(CanyonBlueDark, CanyonBlue, RockBrownLight),
+                        colors = listOf(colors.waterDeep, colors.surfaceRaised, colors.rock.copy(alpha = 0.82f)),
                     )
                 )
-                .padding(horizontal = 20.dp, vertical = 18.dp),
+                .padding(horizontal = 16.dp, vertical = 8.dp),
         ) {
             Row(
                 modifier = Modifier.fillMaxWidth(),
@@ -280,6 +290,7 @@ private fun MapHeroCard(
                 verticalAlignment = Alignment.CenterVertically,
             ) {
                 Row(
+                    modifier = Modifier.weight(1f),
                     horizontalArrangement = Arrangement.spacedBy(10.dp),
                     verticalAlignment = Alignment.CenterVertically,
                 ) {
@@ -290,7 +301,7 @@ private fun MapHeroCard(
                     )
                     Text(
                         text = stringResource(R.string.tab_map),
-                        style = MaterialTheme.typography.headlineSmall,
+                        style = MaterialTheme.typography.titleLarge,
                         color = Color.White,
                         fontWeight = FontWeight.Bold,
                     )
@@ -298,6 +309,8 @@ private fun MapHeroCard(
                 Button(
                     onClick = onAroundMeClick,
                     enabled = !isLocating,
+                    shape = shapes.pill,
+                    contentPadding = androidx.compose.foundation.layout.PaddingValues(horizontal = 16.dp, vertical = 10.dp),
                 ) {
                     if (isLocating) {
                         CircularProgressIndicator(
@@ -325,23 +338,12 @@ private fun MapHeroCard(
 
 @Composable
 private fun EmptyVisibleCard(modifier: Modifier = Modifier) {
-    Card(modifier = modifier.fillMaxWidth()) {
-        Column(
-            modifier = Modifier.padding(16.dp),
-            verticalArrangement = Arrangement.spacedBy(8.dp),
-        ) {
-            Text(
-                text = stringResource(R.string.map_visible_empty_title),
-                style = MaterialTheme.typography.titleMedium,
-                fontWeight = FontWeight.SemiBold,
-            )
-            Text(
-                text = stringResource(R.string.map_visible_empty_description),
-                style = MaterialTheme.typography.bodyMedium,
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
-            )
-        }
-    }
+    DcEmptyState(
+        title = stringResource(R.string.map_visible_empty_title),
+        body = stringResource(R.string.map_visible_empty_description),
+        icon = Icons.Default.Explore,
+        modifier = modifier,
+    )
 }
 
 private fun focusAroundUserFromDevice(

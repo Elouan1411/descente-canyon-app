@@ -24,7 +24,9 @@ import fr.descentecanyon.app.R
 import fr.descentecanyon.app.domain.model.CanyonSummary
 import fr.descentecanyon.app.domain.model.GeoPointType
 import fr.descentecanyon.app.map.MAP_STYLE_URI
+import kotlin.math.cos
 import kotlin.math.roundToInt
+import kotlin.math.sin
 import org.maplibre.android.MapLibre
 import org.maplibre.android.annotations.IconFactory
 import org.maplibre.android.annotations.Marker
@@ -92,23 +94,24 @@ private const val EMPTY_GEOJSON = "{\"type\":\"FeatureCollection\",\"features\":
 
 @ColorInt private const val WATERSHED_FILL_COLOR = 0x331A6B8A
 @ColorInt private const val WATERSHED_LINE_COLOR = 0xFF1A6B8A.toInt()
-@ColorInt private const val CANYON_POINT_STROKE = 0xFFF8FAFC.toInt()
-@ColorInt private const val INTEREST_UNKNOWN_COLOR = 0xFFFFFFFF.toInt()
-@ColorInt private const val INTEREST_0_TO_1_COLOR = 0xFFD6B27A.toInt()
-@ColorInt private const val INTEREST_1_TO_2_COLOR = 0xFFFFD447.toInt()
-@ColorInt private const val INTEREST_2_TO_3_COLOR = 0xFF33A852.toInt()
-@ColorInt private const val INTEREST_3_TO_4_COLOR = 0xFF2F7DE1.toInt()
-@ColorInt private const val CLUSTER_SMALL_COLOR = 0xFF0F5E7A.toInt()
-@ColorInt private const val CLUSTER_MEDIUM_COLOR = 0xFF0F766E.toInt()
-@ColorInt private const val CLUSTER_LARGE_COLOR = 0xFF8B5E17.toInt()
-@ColorInt private const val CLUSTER_STROKE_COLOR = 0xFFF8FAFC.toInt()
+@ColorInt private const val CANYON_POINT_STROKE = 0xFFF2F6F7.toInt()
+@ColorInt private const val FORBIDDEN_CANYON_COLOR = 0xFF9F2133.toInt()
+@ColorInt private const val INTEREST_UNKNOWN_COLOR = 0xFFE7F3F5.toInt()
+@ColorInt private const val INTEREST_0_TO_1_COLOR = 0xFFE08A3D.toInt()
+@ColorInt private const val INTEREST_1_TO_2_COLOR = 0xFFFFC857.toInt()
+@ColorInt private const val INTEREST_2_TO_3_COLOR = 0xFF3DAA68.toInt()
+@ColorInt private const val INTEREST_3_TO_4_COLOR = 0xFF0077E6.toInt()
+@ColorInt private const val CLUSTER_SMALL_COLOR = 0xFF0B5D75.toInt()
+@ColorInt private const val CLUSTER_MEDIUM_COLOR = 0xFF1F7A5C.toInt()
+@ColorInt private const val CLUSTER_LARGE_COLOR = 0xFFB76022.toInt()
+@ColorInt private const val CLUSTER_STROKE_COLOR = 0xFFF2F6F7.toInt()
 @ColorInt private const val CLUSTER_TEXT_COLOR = 0xFFFFFFFF.toInt()
-@ColorInt private const val CLUSTER_TEXT_HALO_COLOR = 0x80111827.toInt()
-@ColorInt private const val USER_HALO_COLOR = 0x553B82F6
-@ColorInt private const val USER_POINT_COLOR = 0xFF1D4ED8.toInt()
+@ColorInt private const val CLUSTER_TEXT_HALO_COLOR = 0xCC071118.toInt()
+@ColorInt private const val USER_HALO_COLOR = 0x663CC7D9
+@ColorInt private const val USER_POINT_COLOR = 0xFF55D6EA.toInt()
 @ColorInt private const val USER_STROKE_COLOR = 0xFFFFFFFF.toInt()
 
-private const val CLUSTER_RADIUS = 96
+private const val CLUSTER_RADIUS = 88
 private const val CLUSTER_MAX_ZOOM = 12
 private const val CLUSTER_TAP_FALLBACK_ZOOM_DELTA = 2.0
 private const val DETAIL_POINT_ZOOM_THRESHOLD = 8.4
@@ -681,14 +684,14 @@ private class MapRenderState(
                         circleRadius(
                             Expression.step(
                                 Expression.get(PROPERTY_POINT_COUNT),
-                                16,
-                                Expression.stop(20, 22),
-                                Expression.stop(100, 28),
+                                18,
+                                Expression.stop(20, 24),
+                                Expression.stop(100, 30),
                             )
                         ),
                         circleOpacity(0.94f),
                         circleStrokeColor(CLUSTER_STROKE_COLOR),
-                        circleStrokeWidth(2.5f),
+                        circleStrokeWidth(2.8f),
                         circleStrokeOpacity(0.98f),
                     )
             )
@@ -703,14 +706,14 @@ private class MapRenderState(
                         textSize(
                             Expression.step(
                                 Expression.get(PROPERTY_POINT_COUNT),
-                                12,
-                                Expression.stop(100, 13),
-                                Expression.stop(1000, 14),
+                                12.5f,
+                                Expression.stop(100, 13.5f),
+                                Expression.stop(1000, 14.5f),
                             )
                         ),
                         textColor(CLUSTER_TEXT_COLOR),
                         textHaloColor(CLUSTER_TEXT_HALO_COLOR),
-                        textHaloWidth(1.25f),
+                        textHaloWidth(1.6f),
                         textAllowOverlap(false),
                         textIgnorePlacement(false),
                     )
@@ -726,10 +729,10 @@ private class MapRenderState(
                             Expression.interpolate(
                                 Expression.linear(),
                                 Expression.zoom(),
-                                Expression.stop(2, 3.6),
-                                Expression.stop(5, 4.8),
-                                Expression.stop(8, 6.0),
-                                Expression.stop(11, 7.4),
+                                Expression.stop(2, 4.0),
+                                Expression.stop(5, 5.2),
+                                Expression.stop(8, 6.4),
+                                Expression.stop(11, 8.0),
                             )
                         ),
                         circleOpacity(
@@ -747,9 +750,9 @@ private class MapRenderState(
                             Expression.interpolate(
                                 Expression.linear(),
                                 Expression.zoom(),
-                                Expression.stop(2, 0.85),
-                                Expression.stop(8, 1.2),
-                                Expression.stop(11, 1.6),
+                                Expression.stop(2, 1.0),
+                                Expression.stop(8, 1.4),
+                                Expression.stop(11, 1.9),
                             )
                         ),
                         circleStrokeOpacity(0.95f),
@@ -765,9 +768,9 @@ private class MapRenderState(
                             Expression.interpolate(
                                 Expression.linear(),
                                 Expression.zoom(),
-                                Expression.stop(8, 5.2),
-                                Expression.stop(10, 6.4),
-                                Expression.stop(12, 7.8),
+                                Expression.stop(8, 5.8),
+                                Expression.stop(10, 7.0),
+                                Expression.stop(12, 8.4),
                             )
                         ),
                         circleOpacity(
@@ -780,7 +783,7 @@ private class MapRenderState(
                             )
                         ),
                         circleStrokeColor(CANYON_POINT_STROKE),
-                        circleStrokeWidth(1.6f),
+                        circleStrokeWidth(1.9f),
                         circleStrokeOpacity(0.98f),
                     )
             )
@@ -789,7 +792,7 @@ private class MapRenderState(
             style.addLayer(
                 CircleLayer(USER_HALO_LAYER_ID, USER_SOURCE_ID).withProperties(
                     circleColor(USER_HALO_COLOR),
-                    circleRadius(15f),
+                    circleRadius(18f),
                     circleOpacity(0.8f),
                 )
             )
@@ -798,10 +801,10 @@ private class MapRenderState(
             style.addLayer(
                 CircleLayer(USER_POINT_LAYER_ID, USER_SOURCE_ID).withProperties(
                     circleColor(USER_POINT_COLOR),
-                    circleRadius(6f),
+                    circleRadius(7f),
                     circleOpacity(1.0f),
                     circleStrokeColor(USER_STROKE_COLOR),
-                    circleStrokeWidth(2f),
+                    circleStrokeWidth(2.4f),
                     circleStrokeOpacity(1.0f),
                 )
             )
@@ -815,15 +818,14 @@ private class MapRenderState(
     }
 
     private fun buildCanyonFeatureCollection(markers: List<CanyonSummary>): FeatureCollection {
-        val features = markers.mapNotNull { canyon ->
-            val latitude = canyon.latitude ?: return@mapNotNull null
-            val longitude = canyon.longitude ?: return@mapNotNull null
+        val features = distributedCanyonPositions(markers).map { positioned ->
+            val canyon = positioned.canyon
             Feature.fromGeometry(
-                Point.fromLngLat(longitude, latitude),
+                Point.fromLngLat(positioned.longitude, positioned.latitude),
                 JsonObject().apply {
                     addProperty(PROPERTY_CANYON_ID, canyon.id)
                     addProperty(PROPERTY_CANYON_NAME, canyon.nom)
-                    addProperty(PROPERTY_INTEREST_COLOR, colorIntToMapColor(interestMarkerColor(canyon.interet)))
+                    addProperty(PROPERTY_INTEREST_COLOR, colorIntToMapColor(interestMarkerColor(canyon)))
                 },
             )
         }
@@ -868,10 +870,8 @@ private class MapRenderState(
 
     private fun buildAnnotationMarkers(): List<AnnotationMarker> {
         return buildList {
-            markers.forEach { canyon ->
-                val latitude = canyon.latitude ?: return@forEach
-                val longitude = canyon.longitude ?: return@forEach
-                add(AnnotationMarker.Canyon(canyon, latitude, longitude))
+            distributedCanyonPositions(markers).forEach { positioned ->
+                add(AnnotationMarker.Canyon(positioned.canyon, positioned.latitude, positioned.longitude))
             }
             val currentUserLatitude = userLatitude
             val currentUserLongitude = userLongitude
@@ -901,6 +901,42 @@ private sealed interface AnnotationMarker {
         override val longitude: Double,
     ) : AnnotationMarker
 }
+
+private data class PositionedCanyon(
+    val canyon: CanyonSummary,
+    val latitude: Double,
+    val longitude: Double,
+)
+
+private fun distributedCanyonPositions(markers: List<CanyonSummary>): List<PositionedCanyon> {
+    val indexed = markers.mapIndexedNotNull { index, canyon ->
+        val latitude = canyon.latitude ?: return@mapIndexedNotNull null
+        val longitude = canyon.longitude ?: return@mapIndexedNotNull null
+        Triple(index, canyon, Pair(latitude, longitude))
+    }
+    return indexed
+        .groupBy { (_, _, coords) -> coords.first.roundForGroup() to coords.second.roundForGroup() }
+        .values
+        .flatMap { group ->
+            if (group.size == 1) {
+                val (_, canyon, coords) = group.first()
+                listOf(PositionedCanyon(canyon, coords.first, coords.second))
+            } else {
+                val ordered = group.sortedBy { (_, canyon, _) -> canyon.id }
+                val radius = 0.00018 + ((ordered.size - 2).coerceAtLeast(0) * 0.00003)
+                ordered.mapIndexed { idx, (_, canyon, coords) ->
+                    val angle = (2.0 * Math.PI * idx) / ordered.size
+                    PositionedCanyon(
+                        canyon = canyon,
+                        latitude = coords.first + sin(angle) * radius,
+                        longitude = coords.second + cos(angle) * radius,
+                    )
+                }
+            }
+        }
+}
+
+private fun Double.roundForGroup(): Int = (this * 10_000).roundToInt()
 
 private fun LatLngBounds.toSignatureHash(): Int {
     var result = 17
@@ -934,7 +970,9 @@ internal fun shouldShowDetailPoints(
 }
 
 @ColorInt
-internal fun interestMarkerColor(interest: Float?): Int {
+internal fun interestMarkerColor(canyon: CanyonSummary): Int {
+    if (canyon.isForbidden) return FORBIDDEN_CANYON_COLOR
+    val interest = canyon.interet
     return when {
         interest == null || interest <= 0f -> INTEREST_UNKNOWN_COLOR
         interest <= 1f -> INTEREST_0_TO_1_COLOR

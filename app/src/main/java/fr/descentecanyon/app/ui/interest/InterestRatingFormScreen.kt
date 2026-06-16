@@ -1,15 +1,18 @@
 package fr.descentecanyon.app.ui.interest
 
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.Button
@@ -25,6 +28,7 @@ import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -45,6 +49,11 @@ import fr.descentecanyon.app.ui.auth.AuthViewModel
 import fr.descentecanyon.app.ui.auth.LoginDialog
 import fr.descentecanyon.app.ui.components.CompactAppBar
 import fr.descentecanyon.app.ui.components.InterestStars
+import fr.descentecanyon.app.ui.design.DcCard
+import fr.descentecanyon.app.ui.design.DcCardVariant
+import fr.descentecanyon.app.ui.design.LocalDcColors
+import fr.descentecanyon.app.ui.design.LocalDcShapes
+import fr.descentecanyon.app.ui.design.LocalDcSpacing
 import fr.descentecanyon.app.ui.test.TestTags
 import java.util.Locale
 import kotlin.math.roundToInt
@@ -102,6 +111,7 @@ fun InterestRatingFormScreen(
     }
 
     Scaffold(
+        containerColor = LocalDcColors.current.backgroundBase,
         topBar = {
             CompactAppBar(
                 title = stringResource(R.string.interest_rating_form_title),
@@ -116,14 +126,21 @@ fun InterestRatingFormScreen(
             )
         },
         snackbarHost = { SnackbarHost(snackbarHostState) },
+        bottomBar = {
+            InterestSubmitBar(
+                isSubmitting = uiState.isSubmitting,
+                onSubmit = viewModel::submit,
+            )
+        },
         modifier = modifier,
     ) { innerPadding ->
+        val spacing = LocalDcSpacing.current
         Column(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(innerPadding)
                 .verticalScroll(rememberScrollState())
-                .padding(16.dp),
+                .padding(horizontal = spacing.screenHorizontal, vertical = spacing.lg),
             verticalArrangement = Arrangement.spacedBy(16.dp),
         ) {
             if (!uiState.isConnected) {
@@ -157,12 +174,37 @@ fun InterestRatingFormScreen(
                 )
             }
 
+            Spacer(modifier = Modifier.height(72.dp))
+        }
+    }
+}
+
+@Composable
+private fun InterestSubmitBar(
+    isSubmitting: Boolean,
+    onSubmit: () -> Unit,
+) {
+    val colors = LocalDcColors.current
+    Surface(
+        color = colors.surfaceOverlay,
+        tonalElevation = 0.dp,
+        border = BorderStroke(1.dp, colors.borderSubtle),
+    ) {
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .navigationBarsPadding()
+                .padding(horizontal = 16.dp, vertical = 12.dp),
+        ) {
             Button(
-                onClick = viewModel::submit,
-                modifier = Modifier.fillMaxWidth().testTag(TestTags.interestRatingSubmitButton),
-                enabled = !uiState.isSubmitting,
+                onClick = onSubmit,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .testTag(TestTags.interestRatingSubmitButton),
+                shape = LocalDcShapes.current.xl,
+                enabled = !isSubmitting,
             ) {
-                if (uiState.isSubmitting) {
+                if (isSubmitting) {
                     CircularProgressIndicator(modifier = Modifier.height(18.dp))
                 } else {
                     Text(stringResource(R.string.interest_rating_submit))
@@ -174,26 +216,37 @@ fun InterestRatingFormScreen(
 
 @Composable
 private fun InterestRatingGuide() {
-    Card(
+    var expanded by remember { mutableStateOf(false) }
+    DcCard(
         modifier = Modifier.fillMaxWidth(),
-        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
+        variant = DcCardVariant.Surface,
     ) {
         Column(
-            modifier = Modifier.padding(16.dp),
             verticalArrangement = Arrangement.spacedBy(12.dp),
         ) {
-            Text(
-                text = stringResource(R.string.interest_rating_guide_title),
-                style = MaterialTheme.typography.titleSmall,
-                fontWeight = FontWeight.SemiBold,
-            )
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween,
+            ) {
+                Text(
+                    text = stringResource(R.string.interest_rating_guide_title),
+                    style = MaterialTheme.typography.titleSmall,
+                    fontWeight = FontWeight.SemiBold,
+                    modifier = Modifier.weight(1f),
+                )
+                TextButton(onClick = { expanded = !expanded }) {
+                    Text(stringResource(if (expanded) R.string.canyon_summary_collapse else R.string.canyon_summary_expand))
+                }
+            }
             Text(
                 text = stringResource(R.string.interest_rating_guide_intro),
                 style = MaterialTheme.typography.bodySmall,
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                color = LocalDcColors.current.textSecondary,
             )
-            InterestRatingGuideItems.forEach { item ->
-                InterestRatingGuideRow(item)
+            if (expanded) {
+                InterestRatingGuideItems.forEach { item ->
+                    InterestRatingGuideRow(item)
+                }
             }
         }
     }
@@ -235,19 +288,19 @@ private fun InterestRatingGuideRow(item: InterestRatingGuideItem) {
 
 @Composable
 private fun RatingSummaryCard(uiState: InterestRatingFormUiState) {
-    Card(
+    DcCard(
         modifier = Modifier.fillMaxWidth(),
-        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant),
+        variant = DcCardVariant.Elevated,
     ) {
         Column(
-            modifier = Modifier.padding(16.dp),
-            verticalArrangement = Arrangement.spacedBy(8.dp),
+            verticalArrangement = Arrangement.spacedBy(10.dp),
         ) {
             Text(
-                text = stringResource(R.string.interest_rating_current_title),
-                style = MaterialTheme.typography.titleSmall,
+                text = stringResource(R.string.interest_rating_selected, formatRating(uiState.ratingTenths / 10f)),
+                style = MaterialTheme.typography.headlineSmall,
                 fontWeight = FontWeight.SemiBold,
             )
+            InterestStars(interest = uiState.ratingTenths / 10f)
             uiState.personalRating?.let { rating ->
                 Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                     Text(stringResource(R.string.interest_rating_personal))
@@ -297,6 +350,7 @@ private fun RatingSlider(
             style = MaterialTheme.typography.titleMedium,
             fontWeight = FontWeight.SemiBold,
         )
+        InterestStars(interest = ratingTenths / 10f)
         Slider(
             value = ratingTenths / 10f,
             onValueChange = { onRatingTenthsChanged((it * 10f).roundToInt()) },

@@ -12,12 +12,14 @@ import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
@@ -85,6 +87,10 @@ import fr.descentecanyon.app.ui.auth.LoginDialog
 import fr.descentecanyon.app.ui.components.CompactAppBar
 import fr.descentecanyon.app.ui.components.DebitBadge
 import fr.descentecanyon.app.ui.components.debitLevelColor
+import fr.descentecanyon.app.ui.design.DcOutdoorActionCard
+import fr.descentecanyon.app.ui.design.LocalDcColors
+import fr.descentecanyon.app.ui.design.rememberDcContentWidth
+import fr.descentecanyon.app.ui.design.rememberDcScreenHorizontalPadding
 import fr.descentecanyon.app.ui.test.TestTags
 import java.text.Normalizer
 import java.time.Instant
@@ -108,6 +114,8 @@ fun HomeScreen(
     val authState by authViewModel.uiState.collectAsStateWithLifecycle()
     val context = LocalContext.current
     val donationUrl = stringResource(R.string.support_donation_url)
+    val contentWidth = rememberDcContentWidth()
+    val screenHorizontalPadding = rememberDcScreenHorizontalPadding()
     var showLoginDialog by remember { mutableStateOf(false) }
     var selectedFeedOverride by remember { mutableStateOf<HomeFeedType?>(null) }
     val selectedFeed = selectedFeedOverride ?: homeState.selectedFeed
@@ -158,7 +166,7 @@ fun HomeScreen(
     }
 
     Scaffold(
-        containerColor = MaterialTheme.colorScheme.background,
+        containerColor = LocalDcColors.current.backgroundBase,
         topBar = {
             CompactAppBar(
                 title = stringResource(R.string.app_name),
@@ -182,16 +190,22 @@ fun HomeScreen(
         },
         modifier = modifier,
     ) { innerPadding ->
-        LazyColumn(
-            state = listState,
+        Box(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(innerPadding)
-                .padding(horizontal = 16.dp),
-            contentPadding = PaddingValues(bottom = contentPadding.calculateBottomPadding() + 16.dp),
-            verticalArrangement = Arrangement.spacedBy(12.dp),
+                .padding(innerPadding),
+            contentAlignment = Alignment.TopCenter,
         ) {
-            item { Spacer(modifier = Modifier.height(8.dp)) }
+            LazyColumn(
+                state = listState,
+                modifier = Modifier
+                    .fillMaxHeight()
+                    .width(contentWidth)
+                    .padding(horizontal = screenHorizontalPadding),
+                contentPadding = PaddingValues(bottom = contentPadding.calculateBottomPadding() + 16.dp),
+                verticalArrangement = Arrangement.spacedBy(12.dp),
+            ) {
+                item { Spacer(modifier = Modifier.height(8.dp)) }
 
             item {
                 QuickSearchCard(onClick = onQuickSearchClick)
@@ -331,8 +345,9 @@ fun HomeScreen(
                 }
             }
 
-            item {
-                CreditCard()
+                item {
+                    CreditCard()
+                }
             }
         }
     }
@@ -916,48 +931,13 @@ private fun HomeActionCard(
     onClick: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
-    Card(
+    DcOutdoorActionCard(
+        title = title,
+        hint = hint,
+        icon = icon,
         onClick = onClick,
         modifier = modifier.fillMaxWidth(),
-        colors = CardDefaults.cardColors(
-            containerColor = MaterialTheme.colorScheme.surface,
-        ),
-        elevation = CardDefaults.cardElevation(defaultElevation = 3.dp),
-        border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.8f)),
-    ) {
-        Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(horizontal = 16.dp, vertical = 14.dp),
-            verticalAlignment = Alignment.CenterVertically,
-        ) {
-            Box(
-                modifier = Modifier
-                    .size(40.dp)
-                    .background(MaterialTheme.colorScheme.primaryContainer, CircleShape),
-                contentAlignment = Alignment.Center,
-            ) {
-                Icon(
-                    imageVector = icon,
-                    contentDescription = null,
-                    tint = MaterialTheme.colorScheme.primary,
-                )
-            }
-            Spacer(modifier = Modifier.width(12.dp))
-            Column(modifier = Modifier.weight(1f)) {
-                Text(
-                    text = title,
-                    style = MaterialTheme.typography.titleMedium,
-                    fontWeight = FontWeight.SemiBold,
-                )
-                Text(
-                    text = hint,
-                    style = MaterialTheme.typography.bodySmall,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant,
-                )
-            }
-        }
-    }
+    )
 }
 
 @Composable
@@ -1123,12 +1103,22 @@ private fun ForumTopicCard(
                         overflow = TextOverflow.Ellipsis,
                     )
                     Row(
-                        modifier = Modifier.padding(top = 3.dp),
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(top = 3.dp),
                         horizontalArrangement = Arrangement.spacedBy(6.dp),
                         verticalAlignment = Alignment.CenterVertically,
                     ) {
-                        ForumMetaChip(text = topic.forumName, icon = Icons.Default.FolderSpecial)
-                        ForumMetaChip(text = "${topic.replyCount}", icon = Icons.Default.ChatBubbleOutline)
+                        ForumMetaChip(
+                            text = topic.forumName,
+                            icon = Icons.Default.FolderSpecial,
+                            modifier = Modifier.weight(1f),
+                        )
+                        ForumMetaChip(
+                            text = "${topic.replyCount}",
+                            icon = Icons.Default.ChatBubbleOutline,
+                            modifier = Modifier.widthIn(min = 48.dp),
+                        )
                         if (isThreadFollowed || isCategoryFollowed) {
                             ForumMetaChip(
                                 text = if (isThreadFollowed) {
@@ -1215,7 +1205,12 @@ private fun ForumMetaChip(
                     modifier = Modifier.size(12.dp),
                 )
             }
-            Text(text = text, style = MaterialTheme.typography.labelSmall)
+            Text(
+                text = text,
+                style = MaterialTheme.typography.labelSmall,
+                maxLines = 1,
+                overflow = TextOverflow.Ellipsis,
+            )
         }
     }
 }

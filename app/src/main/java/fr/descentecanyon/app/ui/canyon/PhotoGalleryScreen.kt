@@ -16,6 +16,7 @@ import androidx.compose.foundation.gestures.calculateZoom
 import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -57,6 +58,7 @@ import androidx.compose.ui.input.pointer.positionChanged
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.unit.dp
 import androidx.core.content.ContextCompat
@@ -202,28 +204,39 @@ fun PhotoGalleryScreen(
                 visible = showOverlay,
                 modifier = Modifier.align(Alignment.TopCenter),
             ) {
-                Row(
+                Surface(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .background(Brush.verticalGradient(listOf(Color.Black.copy(alpha = 0.7f), Color.Transparent)))
                         .statusBarsPadding()
-                        .padding(horizontal = 16.dp, vertical = 12.dp),
-                    verticalAlignment = Alignment.CenterVertically,
+                        .padding(horizontal = 12.dp, vertical = 10.dp),
+                    color = Color.Black.copy(alpha = 0.34f),
+                    contentColor = Color.White,
                 ) {
-                    IconButton(onClick = onBackClick) {
-                        Icon(
-                            imageVector = Icons.AutoMirrored.Filled.ArrowBack,
-                            contentDescription = stringResource(R.string.back),
-                            tint = Color.White,
-                        )
-                    }
-                    Text(
-                        text = "${pagerState.currentPage + 1}/${photos.size}",
-                        color = Color.White,
-                        style = MaterialTheme.typography.titleMedium,
-                        modifier = Modifier.weight(1f),
-                    )
-                    Row(horizontalArrangement = Arrangement.spacedBy(8.dp), verticalAlignment = Alignment.CenterVertically) {
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(horizontal = 4.dp, vertical = 2.dp),
+                        verticalAlignment = Alignment.CenterVertically,
+                    ) {
+                        IconButton(onClick = onBackClick) {
+                            Icon(
+                                imageVector = Icons.AutoMirrored.Filled.ArrowBack,
+                                contentDescription = stringResource(R.string.back),
+                                tint = Color.White,
+                            )
+                        }
+                        Surface(
+                            color = Color.White.copy(alpha = 0.12f),
+                            shape = MaterialTheme.shapes.large,
+                        ) {
+                            Text(
+                                text = "${pagerState.currentPage + 1}/${photos.size}",
+                                color = Color.White,
+                                style = MaterialTheme.typography.labelLarge,
+                                modifier = Modifier.padding(horizontal = 10.dp, vertical = 6.dp),
+                            )
+                        }
+                        Box(modifier = Modifier.weight(1f))
                         if (currentPhoto.localPath == null) {
                             IconButton(
                                 onClick = {
@@ -259,28 +272,50 @@ fun PhotoGalleryScreen(
                 visible = showOverlay,
                 modifier = Modifier.align(Alignment.BottomCenter),
             ) {
-                androidx.compose.foundation.layout.Column(
+                Column(
                     modifier = Modifier
                         .fillMaxWidth()
                         .background(Brush.verticalGradient(listOf(Color.Transparent, Color.Black.copy(alpha = 0.82f))))
                         .navigationBarsPadding()
                         .padding(horizontal = 16.dp, vertical = 18.dp),
-                    verticalArrangement = Arrangement.spacedBy(6.dp),
+                    verticalArrangement = Arrangement.spacedBy(10.dp),
                 ) {
-                    currentPhoto.description?.takeIf { it.isNotBlank() }?.let {
-                        Text(
-                            text = it,
-                            color = Color.White,
-                            style = MaterialTheme.typography.bodyLarge,
-                            fontWeight = FontWeight.Medium,
-                        )
+                    Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                        if (currentPhoto.localPath != null) {
+                            PhotoStatusBadge(text = stringResource(R.string.offline_available))
+                        } else if (uiState.downloadingPhotoIds.contains(currentPhoto.id)) {
+                            PhotoStatusBadge(text = stringResource(R.string.downloading_offline))
+                        }
                     }
-                    currentPhoto.auteur?.takeIf { it.isNotBlank() }?.let {
-                        Text(
-                            text = it,
-                            color = Color.White.copy(alpha = 0.82f),
-                            style = MaterialTheme.typography.bodySmall,
-                        )
+                    Surface(
+                        color = Color.Black.copy(alpha = 0.34f),
+                        contentColor = Color.White,
+                        shape = MaterialTheme.shapes.large,
+                    ) {
+                        Column(
+                            modifier = Modifier.padding(horizontal = 14.dp, vertical = 12.dp),
+                            verticalArrangement = Arrangement.spacedBy(6.dp),
+                        ) {
+                            currentPhoto.description?.takeIf { it.isNotBlank() }?.let {
+                                Text(
+                                    text = it,
+                                    color = Color.White,
+                                    style = MaterialTheme.typography.bodyLarge,
+                                    fontWeight = FontWeight.Medium,
+                                    maxLines = 3,
+                                    overflow = TextOverflow.Ellipsis,
+                                )
+                            }
+                            currentPhoto.auteur?.takeIf { it.isNotBlank() }?.let {
+                                Text(
+                                    text = it,
+                                    color = Color.White.copy(alpha = 0.82f),
+                                    style = MaterialTheme.typography.labelMedium,
+                                    maxLines = 1,
+                                    overflow = TextOverflow.Ellipsis,
+                                )
+                            }
+                        }
                     }
                 }
             }
@@ -291,6 +326,27 @@ fun PhotoGalleryScreen(
 private fun canWritePublicPhotos(context: Context): Boolean {
     return Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q ||
         ContextCompat.checkSelfPermission(context, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED
+}
+
+@Composable
+private fun PhotoStatusBadge(
+    text: String,
+    modifier: Modifier = Modifier,
+) {
+    Surface(
+        modifier = modifier,
+        color = Color.White.copy(alpha = 0.14f),
+        contentColor = Color.White,
+        shape = MaterialTheme.shapes.large,
+    ) {
+        Text(
+            text = text,
+            style = MaterialTheme.typography.labelMedium,
+            modifier = Modifier.padding(horizontal = 10.dp, vertical = 6.dp),
+            maxLines = 1,
+            overflow = TextOverflow.Ellipsis,
+        )
+    }
 }
 
 @Composable

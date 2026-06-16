@@ -13,10 +13,12 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.AlertDialog
+import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.DropdownMenu
@@ -46,6 +48,11 @@ import fr.descentecanyon.app.domain.model.IntRangeFilter
 import fr.descentecanyon.app.domain.model.SearchCriteria
 import fr.descentecanyon.app.domain.model.SearchSortField
 import fr.descentecanyon.app.domain.model.SortDirection
+import fr.descentecanyon.app.ui.design.DcCard
+import fr.descentecanyon.app.ui.design.DcCardVariant
+import fr.descentecanyon.app.ui.design.DcSectionHeader
+import fr.descentecanyon.app.ui.design.LocalDcColors
+import fr.descentecanyon.app.ui.design.LocalDcShapes
 import java.text.Normalizer
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -58,8 +65,16 @@ fun SearchFiltersSheet(
 ) {
     val criteria = uiState.criteria
     val sheetState = androidx.compose.material3.rememberModalBottomSheetState(skipPartiallyExpanded = true)
+    val colors = LocalDcColors.current
+    val shapes = LocalDcShapes.current
 
-    ModalBottomSheet(onDismissRequest = onDismiss, sheetState = sheetState, dragHandle = null) {
+    ModalBottomSheet(
+        onDismissRequest = onDismiss,
+        sheetState = sheetState,
+        dragHandle = null,
+        containerColor = colors.backgroundElevated,
+        shape = RoundedCornerShape(topStart = 36.dp, topEnd = 36.dp),
+    ) {
         Column(
             modifier = Modifier
                 .fillMaxWidth()
@@ -68,13 +83,14 @@ fun SearchFiltersSheet(
                 .padding(horizontal = 20.dp, vertical = 8.dp),
             verticalArrangement = Arrangement.spacedBy(16.dp),
         ) {
-            Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween, verticalAlignment = Alignment.CenterVertically) {
-                Text(stringResource(R.string.search_filters_title), style = MaterialTheme.typography.headlineSmall)
-                Row(verticalAlignment = Alignment.CenterVertically) {
+            DcSectionHeader(
+                title = stringResource(R.string.search_filters_title),
+                subtitle = stringResource(R.string.search_results_count, uiState.totalResultsCount),
+                action = {
                     TextButton(onClick = onClearAll) { Text(stringResource(R.string.search_clear_filters)) }
                     TextButton(onClick = onDismiss) { Text(stringResource(R.string.close)) }
-                }
-            }
+                },
+            )
 
             FilterSection(title = stringResource(R.string.location)) {
                 SearchableStringPickerField(
@@ -159,6 +175,14 @@ fun SearchFiltersSheet(
                 NumericRangeRow(stringResource(R.string.rope), criteria.ropeRange) { onCriteriaChanged(criteria.copy(ropeRange = it)) }
             }
 
+            Button(
+                onClick = onDismiss,
+                modifier = Modifier.fillMaxWidth(),
+                shape = shapes.xl,
+            ) {
+                Text(stringResource(R.string.search_filters_show_results))
+            }
+
             Spacer(modifier = Modifier.height(20.dp))
         }
     }
@@ -166,18 +190,15 @@ fun SearchFiltersSheet(
 
 @Composable
 private fun FilterSection(title: String, content: @Composable () -> Unit) {
-    Card(
+    DcCard(
         modifier = Modifier.fillMaxWidth(),
-        colors = CardDefaults.cardColors(
-            containerColor = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.55f),
-        ),
-        elevation = CardDefaults.cardElevation(defaultElevation = 0.dp),
+        variant = DcCardVariant.Surface,
+        contentPadding = 14.dp,
     ) {
         Column(
-            modifier = Modifier.padding(14.dp),
             verticalArrangement = Arrangement.spacedBy(10.dp),
         ) {
-            Text(text = title, style = MaterialTheme.typography.titleMedium)
+            Text(text = title, style = MaterialTheme.typography.titleMedium, color = LocalDcColors.current.textPrimary)
             content()
         }
     }

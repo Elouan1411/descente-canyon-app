@@ -2,16 +2,19 @@ package fr.descentecanyon.app.ui.components
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.StarHalf
 import androidx.compose.material.icons.filled.CloudDownload
+import androidx.compose.material.icons.filled.Place
 import androidx.compose.material.icons.filled.Star
 import androidx.compose.material.icons.filled.StarBorder
 import androidx.compose.material3.Card
@@ -32,52 +35,95 @@ import java.util.Locale
 import fr.descentecanyon.app.R
 import fr.descentecanyon.app.domain.model.CanyonSummary
 import fr.descentecanyon.app.domain.model.NiveauDebit
+import fr.descentecanyon.app.ui.design.DcCard
+import fr.descentecanyon.app.ui.design.DcCardVariant
+import fr.descentecanyon.app.ui.design.DcFlowBadge
+import fr.descentecanyon.app.ui.design.LocalDcColors
+import fr.descentecanyon.app.ui.design.LocalDcShapes
+import fr.descentecanyon.app.ui.design.LocalDcSpacing
 import fr.descentecanyon.app.ui.test.TestTags
 import fr.descentecanyon.app.ui.theme.CotationDifficile
 import fr.descentecanyon.app.ui.theme.CotationFacile
 import fr.descentecanyon.app.ui.theme.CotationMoyen
 import fr.descentecanyon.app.ui.theme.CotationTresDifficile
 
+enum class CanyonSummaryCardVariant { Compact, Rich, MapSheet }
+
 @Composable
 fun CanyonSummaryCard(
     canyon: CanyonSummary,
     onClick: () -> Unit,
     modifier: Modifier = Modifier,
+    variant: CanyonSummaryCardVariant = CanyonSummaryCardVariant.Compact,
 ) {
-    Card(
+    val colors = LocalDcColors.current
+    val spacing = LocalDcSpacing.current
+    DcCard(
         onClick = onClick,
-        modifier = modifier.fillMaxWidth().testTag(TestTags.canyonCard(canyon.id)),
-        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
-        elevation = CardDefaults.cardElevation(defaultElevation = 2.dp),
-        border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.7f)),
+        modifier = modifier
+            .fillMaxWidth()
+            .testTag(TestTags.canyonCard(canyon.id)),
+        variant = if (variant == CanyonSummaryCardVariant.Compact) DcCardVariant.Surface else DcCardVariant.Elevated,
+        contentPadding = 0.dp,
     ) {
         Column(
-            modifier = Modifier.padding(12.dp),
+            modifier = Modifier.fillMaxWidth(),
         ) {
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(if (variant == CanyonSummaryCardVariant.MapSheet) 5.dp else 4.dp)
+                    .padding(horizontal = spacing.lg),
+            )
             Row(
-                modifier = Modifier.fillMaxWidth(),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(
+                        start = spacing.lg,
+                        top = if (variant == CanyonSummaryCardVariant.Compact) spacing.md else spacing.lg,
+                        end = spacing.lg,
+                    ),
                 horizontalArrangement = Arrangement.SpaceBetween,
-                verticalAlignment = Alignment.CenterVertically,
+                verticalAlignment = Alignment.Top,
             ) {
                 Column(modifier = Modifier.weight(1f)) {
                     Text(
                         text = canyon.nom,
-                        style = MaterialTheme.typography.titleMedium,
-                        fontWeight = FontWeight.Bold,
-                        maxLines = 1,
+                        style = if (variant == CanyonSummaryCardVariant.MapSheet) {
+                            MaterialTheme.typography.titleLarge
+                        } else {
+                            MaterialTheme.typography.titleMedium
+                        },
+                        fontWeight = FontWeight.ExtraBold,
+                        color = colors.textPrimary,
+                        maxLines = if (variant == CanyonSummaryCardVariant.Compact) 1 else 2,
                         overflow = TextOverflow.Ellipsis,
                     )
                     val location = buildString {
                         append(canyon.pays)
                         canyon.departement?.let { append(" - $it") }
                     }
-                    Text(
-                        text = location,
-                        style = MaterialTheme.typography.bodySmall,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant,
-                    )
+                    Row(
+                        modifier = Modifier.padding(top = 3.dp),
+                        verticalAlignment = Alignment.CenterVertically,
+                    ) {
+                        Icon(
+                            imageVector = Icons.Default.Place,
+                            contentDescription = null,
+                            modifier = Modifier.size(14.dp),
+                            tint = colors.textMuted,
+                        )
+                        Spacer(modifier = Modifier.width(3.dp))
+                        Text(
+                            text = location,
+                            style = MaterialTheme.typography.bodySmall,
+                            color = colors.textSecondary,
+                            maxLines = 1,
+                            overflow = TextOverflow.Ellipsis,
+                        )
+                    }
                 }
-                Spacer(modifier = Modifier.width(8.dp))
+                Spacer(modifier = Modifier.width(spacing.sm))
                 if (canyon.isForbidden) {
                     ForbiddenBadge()
                 } else {
@@ -88,7 +134,7 @@ fun CanyonSummaryCard(
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(top = 8.dp),
+                    .padding(horizontal = spacing.lg, vertical = spacing.md),
                 horizontalArrangement = Arrangement.SpaceBetween,
                 verticalAlignment = Alignment.CenterVertically,
             ) {
@@ -100,17 +146,38 @@ fun CanyonSummaryCard(
                         DebitBadge(niveau = niveau)
                     }
                     if (canyon.isOffline) {
-                        Spacer(modifier = Modifier.width(8.dp))
-                        Icon(
-                            imageVector = Icons.Default.CloudDownload,
+                        Spacer(modifier = Modifier.width(spacing.sm))
+                        SummaryIconBadge(
+                            icon = Icons.Default.CloudDownload,
                             contentDescription = stringResource(R.string.offline_available),
-                            modifier = Modifier.size(18.dp),
-                            tint = MaterialTheme.colorScheme.primary,
                         )
                     }
                 }
             }
         }
+    }
+}
+
+@Composable
+private fun SummaryIconBadge(
+    icon: androidx.compose.ui.graphics.vector.ImageVector,
+    contentDescription: String?,
+    modifier: Modifier = Modifier,
+) {
+    Card(
+        modifier = modifier,
+        shape = LocalDcShapes.current.pill,
+        colors = CardDefaults.cardColors(containerColor = LocalDcColors.current.water.copy(alpha = 0.14f)),
+        border = BorderStroke(1.dp, LocalDcColors.current.water.copy(alpha = 0.36f)),
+    ) {
+        Icon(
+            imageVector = icon,
+            contentDescription = contentDescription,
+            modifier = Modifier
+                .padding(horizontal = 7.dp, vertical = 4.dp)
+                .size(16.dp),
+            tint = LocalDcColors.current.water,
+        )
     }
 }
 
@@ -169,7 +236,9 @@ private fun SummaryBadge(
 ) {
     Card(
         modifier = modifier,
+        shape = LocalDcShapes.current.pill,
         colors = CardDefaults.cardColors(containerColor = color.copy(alpha = 0.12f)),
+        border = BorderStroke(1.dp, color.copy(alpha = 0.34f)),
     ) {
         Text(
             text = text,
@@ -230,21 +299,9 @@ fun DebitBadge(
     niveau: NiveauDebit,
     modifier: Modifier = Modifier,
 ) {
-    val color = debitLevelColor(niveau)
-    val isCrue = niveau == NiveauDebit.CRUE
-    Card(
+    DcFlowBadge(
+        niveau = niveau,
+        label = debitLevelLabel(niveau),
         modifier = modifier,
-        colors = CardDefaults.cardColors(
-            containerColor = if (isCrue) color else color.copy(alpha = 0.12f),
-        ),
-        border = if (isCrue) BorderStroke(1.dp, Color.White.copy(alpha = 0.45f)) else null,
-    ) {
-        Text(
-            text = debitLevelLabel(niveau),
-            style = MaterialTheme.typography.labelSmall,
-            fontWeight = FontWeight.SemiBold,
-            color = if (isCrue) Color.White else color,
-            modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp),
-        )
-    }
+    )
 }
