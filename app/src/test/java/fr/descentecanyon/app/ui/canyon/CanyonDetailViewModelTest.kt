@@ -256,17 +256,20 @@ class CanyonDetailViewModelTest {
 
     private fun stubBaseState() {
         every { canyonRepository.observeWatershed(42) } returns flowOf(null)
+        coEvery { canyonRepository.getWatershedGeometry(42) } returns null
         coEvery { weatherRepository.getCanyonWeather(any()) } returns Result.success(weather())
         every { edfPracticabilityRepository.getReference(42) } returns null
         coEvery { debitPredictionRepository.getPredictions(any()) } returns Result.success(predictions())
         every { photoRepository.observePhotos(42) } returns flowOf(detail().photos)
         coEvery { photoRepository.refreshPhotos(42) } returns Result.success(detail().photos)
+        coEvery { photoRepository.downloadPhoto(8) } returns Result.success("/tmp/photo.jpg")
         every { debitRepository.getDebitsForCanyon(42) } returns flowOf(Result.success(detail().debits))
         coEvery { debitRepository.refreshDebits(42) } returns Result.success(detail().debits)
         every { favoritesRepository.isFavorite(42) } returns flowOf(false)
         every { notificationCenterRepository.observeIsCanyonFollowed(42) } returns flowOf(false)
         coEvery { notificationCenterRepository.toggleCanyonFollow(any(), any(), any()) } returns Unit
         every { connectivityObserver.observe() } returns flowOf(true)
+        every { connectivityObserver.isCurrentlyOnline() } returns true
     }
 
     private fun detail() = CanyonDetail(

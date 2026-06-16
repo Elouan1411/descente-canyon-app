@@ -97,7 +97,7 @@ class CanyonRepositoryDetailTest {
         coEvery { regulationDao.getByCanyonId(42) } returns emptyList()
         coEvery { canyonTrackDao.getByCanyonId(42) } returns emptyList()
         coEvery { photoDao.getByCanyonId(42) } returns emptyList()
-        coEvery { watershedDao.getByCanyonId(42) } returns null
+        coEvery { watershedDao.getMetadataByCanyonId(42) } returns null
         coEvery { debitDao.getByCanyonId(42) } returns flowOf(emptyList())
 
         val repository = CanyonRepositoryImpl(
@@ -123,7 +123,7 @@ class CanyonRepositoryDetailTest {
             canyonTrackDao.getByCanyonId(42)
             photoDao.getByCanyonId(42)
             debitDao.getByCanyonId(42)
-            watershedDao.getByCanyonId(42)
+            watershedDao.getMetadataByCanyonId(42)
         }
         confirmVerified(scraper)
     }
