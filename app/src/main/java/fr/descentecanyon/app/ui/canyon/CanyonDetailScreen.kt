@@ -29,7 +29,6 @@ import androidx.compose.foundation.lazy.LazyListScope
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.foundation.text.ClickableText
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.Add
@@ -75,16 +74,18 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.AnnotatedString
+import androidx.compose.ui.text.LinkAnnotation
 import androidx.compose.ui.text.SpanStyle
+import androidx.compose.ui.text.TextLinkStyles
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.text.withLink
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
@@ -1038,7 +1039,6 @@ private fun LinkifiedSectionText(
     content: String,
     modifier: Modifier = Modifier,
 ) {
-    val uriHandler = LocalUriHandler.current
     val linkColor = MaterialTheme.colorScheme.primary
     val bodyColor = MaterialTheme.colorScheme.onSurface
     val text = remember(content, linkColor) {
@@ -1048,20 +1048,13 @@ private fun LinkifiedSectionText(
         )
     }
 
-    ClickableText(
+    Text(
         text = text,
         style = MaterialTheme.typography.bodyMedium.copy(color = bodyColor),
         modifier = modifier,
-        onClick = { offset ->
-            text.getStringAnnotations(tag = SectionUrlAnnotationTag, start = offset, end = offset)
-                .firstOrNull()
-                ?.item
-                ?.let(uriHandler::openUri)
-        },
     )
 }
 
-private const val SectionUrlAnnotationTag = "section_url"
 private val HtmlLineBreakRegex = Regex("""(?i)<br\s*/?>""")
 
 private fun normalizeSectionText(content: String): String {
@@ -1085,16 +1078,19 @@ private fun buildLinkifiedAnnotatedString(
             }
 
             append(content.substring(currentIndex, matcher.start()))
-            pushStringAnnotation(tag = SectionUrlAnnotationTag, annotation = normalizeExternalUrl(linkText))
-            withStyle(
-                style = SpanStyle(
-                    color = linkColor,
-                    textDecoration = TextDecoration.Underline,
+            withLink(
+                LinkAnnotation.Url(
+                    url = normalizeExternalUrl(linkText),
+                    styles = TextLinkStyles(
+                        style = SpanStyle(
+                            color = linkColor,
+                            textDecoration = TextDecoration.Underline,
+                        )
+                    ),
                 )
             ) {
                 append(linkText)
             }
-            pop()
             append(rawMatch.substring(linkText.length))
             currentIndex = matcher.end()
         }

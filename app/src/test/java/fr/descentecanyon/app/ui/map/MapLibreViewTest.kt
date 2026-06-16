@@ -1,5 +1,6 @@
 package fr.descentecanyon.app.ui.map
 
+import fr.descentecanyon.app.domain.model.CanyonSummary
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
@@ -24,12 +25,23 @@ class MapLibreViewTest {
 
     @Test
     fun `interest marker colors follow descente canyon scale`() {
-        assertEquals(0xFFFFFFFF.toInt(), interestMarkerColor(null))
-        assertEquals(0xFFFFFFFF.toInt(), interestMarkerColor(0f))
-        assertEquals(0xFFD6B27A.toInt(), interestMarkerColor(0.5f))
-        assertEquals(0xFFFFD447.toInt(), interestMarkerColor(1.5f))
-        assertEquals(0xFF33A852.toInt(), interestMarkerColor(2.5f))
-        assertEquals(0xFF2F7DE1.toInt(), interestMarkerColor(3.5f))
-        assertEquals(0xFF2F7DE1.toInt(), interestMarkerColor(4f))
+        assertEquals(0xFFE7F3F5.toInt(), interestMarkerColor(canyonWithInterest(null)))
+        assertEquals(0xFFE7F3F5.toInt(), interestMarkerColor(canyonWithInterest(0f)))
+        assertEquals(0xFFE08A3D.toInt(), interestMarkerColor(canyonWithInterest(0.5f)))
+        assertEquals(0xFFFFC857.toInt(), interestMarkerColor(canyonWithInterest(1.5f)))
+        assertEquals(0xFF3DAA68.toInt(), interestMarkerColor(canyonWithInterest(2.5f)))
+        assertEquals(0xFF0077E6.toInt(), interestMarkerColor(canyonWithInterest(3.5f)))
+        assertEquals(0xFF0077E6.toInt(), interestMarkerColor(canyonWithInterest(4f)))
+    }
+
+    private fun canyonWithInterest(interest: Float?): CanyonSummary {
+        return CanyonSummary(
+            id = 1,
+            nom = "Test",
+            pays = "FR",
+            cotation = "3/3/II",
+            interet = interest,
+            url = "https://example.test/canyon/1",
+        )
     }
 }

@@ -1,0 +1,16 @@
+#!/bin/sh
+set -eu
+
+repo_root=$(git rev-parse --show-toplevel)
+cd "$repo_root"
+
+echo "pre-push: running ./gradlew test lint assembleDebug"
+
+if [ -f "./gradlew" ]; then
+  sh ./gradlew test lint assembleDebug
+elif [ -n "${COMSPEC:-}" ] && [ -f "./gradlew.bat" ]; then
+  cmd //c gradlew.bat test lint assembleDebug
+else
+  echo "pre-push: Gradle wrapper not found" >&2
+  exit 1
+fi
