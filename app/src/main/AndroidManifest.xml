@@ -38,13 +38,17 @@
             </intent-filter>
 
             <!-- Deep link support for descente-canyon.com URLs -->
-            <intent-filter android:autoVerify="true">
+            <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
                 <data
                     android:scheme="https"
                     android:host="www.descente-canyon.com"
+                    android:pathPrefix="/canyoning/canyon/" />
+                <data
+                    android:scheme="https"
+                    android:host="descente-canyon.com"
                     android:pathPrefix="/canyoning/canyon/" />
             </intent-filter>
         </activity>

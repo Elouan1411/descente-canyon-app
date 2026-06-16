@@ -1,7 +1,6 @@
 package fr.descentecanyon.app.ui
 
 import android.os.Bundle
-import androidx.lifecycle.lifecycleScope
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -48,7 +47,6 @@ import fr.descentecanyon.app.ui.navigation.consumeLaunchTarget
 import fr.descentecanyon.app.ui.navigation.navigateSingleTop
 import fr.descentecanyon.app.ui.design.LocalDcColors
 import fr.descentecanyon.app.ui.theme.DescenteCanyonTheme
-import kotlinx.coroutines.launch
 import kotlinx.coroutines.flow.MutableSharedFlow
 import javax.inject.Inject
 
@@ -65,12 +63,6 @@ class MainActivity : ComponentActivity() {
             "isColdStart" to (savedInstanceState == null),
         )
         enableEdgeToEdge()
-        lifecycleScope.launch {
-            appStartupCoordinator.observeConnectivity()
-                .collect { isOnline ->
-                    appStartupCoordinator.syncPendingDebitsIfOnline(isOnline)
-                }
-        }
         val initialLaunchTarget = consumeLaunchTarget(intent)
         setContent {
             DescenteCanyonTheme {

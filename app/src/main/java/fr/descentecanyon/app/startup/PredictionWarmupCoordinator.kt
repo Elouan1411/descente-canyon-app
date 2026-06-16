@@ -2,7 +2,6 @@ package fr.descentecanyon.app.startup
 
 import android.util.Log
 import fr.descentecanyon.app.data.repository.EmbeddedDebitModelStore
-import fr.descentecanyon.app.data.repository.EmbeddedDebitRuntimeLookupStore
 import fr.descentecanyon.app.perf.PerformanceTrace
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -12,7 +11,6 @@ import kotlinx.coroutines.sync.withLock
 @Singleton
 class PredictionWarmupCoordinator @Inject constructor(
     private val modelStore: EmbeddedDebitModelStore,
-    private val runtimeLookupStore: EmbeddedDebitRuntimeLookupStore,
 ) {
 
     private val warmupMutex = Mutex()
@@ -34,16 +32,18 @@ class PredictionWarmupCoordinator @Inject constructor(
 
             PerformanceTrace.start(WARMUP_TRACE_KEY, "prediction_warmup")
             try {
-                runCatching { runtimeLookupStore.getLookups() }
-                    .onFailure { throwable -> Log.w(TAG, "Unable to preload runtime lookups", throwable) }
-
+                // Keep warmup focused on the ONNX session and lightweight metadata.
+                // The large lookup/static feature JSONs are loaded on first real prediction use.
                 modelStore.getFeatureSpec()
                 modelStore.getThresholds()
-                modelStore.getStaticFeatures()
                 modelStore.getSession()
 
                 warmedUp = true
-                PerformanceTrace.end(WARMUP_TRACE_KEY, outcome = "ok")
+                PerformanceTrace.end(
+                    key = WARMUP_TRACE_KEY,
+                    outcome = "ok",
+                    "deferredAssets" to "runtime_lookups,static_features",
+                )
             } catch (throwable: Throwable) {
                 PerformanceTrace.end(
                     key = WARMUP_TRACE_KEY,

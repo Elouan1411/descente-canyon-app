@@ -34,6 +34,11 @@ interface CanyonRepository {
     fun observeWatershed(canyonId: Int): Flow<CanyonWatershed?>
 
     /**
+     * Load watershed polygon geometry only when a dedicated map screen needs it.
+     */
+    suspend fun getWatershedGeometry(canyonId: Int): String?
+
+    /**
      * Get canyons near a geographic position.
      */
     fun getCanyonsNearby(

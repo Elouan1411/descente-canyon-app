@@ -8,6 +8,7 @@ import fr.descentecanyon.app.data.local.dao.GeoPointDao
 import fr.descentecanyon.app.data.local.dao.PhotoDao
 import fr.descentecanyon.app.data.local.dao.RegulationDao
 import fr.descentecanyon.app.data.local.dao.WatershedDao
+import fr.descentecanyon.app.data.local.dao.toDomain
 import fr.descentecanyon.app.data.local.entity.CanyonEntity
 import fr.descentecanyon.app.data.local.entity.DebitEntity
 import fr.descentecanyon.app.data.local.entity.GeoPointEntity
@@ -128,7 +129,7 @@ class CanyonLocalStore @Inject constructor(
         val tracks = canyonTrackDao.getByCanyonId(canyonId)
         val photos = photoDao.getByCanyonId(canyonId)
         val debits = debitDao.getByCanyonId(canyonId).firstOrNull().orEmpty()
-        val watershed = watershedDao.getByCanyonId(canyonId)
+        val watershed = watershedDao.getMetadataByCanyonId(canyonId)?.toDomain()
         return canyon.toDetail(geoPoints, bibliography, regulations, tracks, photos, debits, watershed)
     }
 

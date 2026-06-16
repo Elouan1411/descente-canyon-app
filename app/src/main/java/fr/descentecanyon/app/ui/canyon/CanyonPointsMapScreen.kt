@@ -34,6 +34,7 @@ import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -70,6 +71,10 @@ fun CanyonPointsMapScreen(
     val uiState = viewModel.uiState.collectAsStateWithLifecycle().value
     val context = LocalContext.current
 
+    LaunchedEffect(canyonId) {
+        viewModel.ensureWatershedGeometryLoaded()
+    }
+
     Scaffold(
         containerColor = MaterialTheme.colorScheme.background,
         contentWindowInsets = WindowInsets(0, 0, 0, 0),
@@ -93,6 +98,7 @@ fun CanyonPointsMapScreen(
 
             uiState.canyonDetail != null -> CanyonPointsMapContent(
                 detail = uiState.canyonDetail,
+                watershedGeometryJson = uiState.watershedGeometryJson,
                 contentPadding = contentPadding,
                 modifier = Modifier.padding(innerPadding),
                 onNavigate = { point ->
@@ -113,13 +119,14 @@ fun CanyonPointsMapScreen(
 @Composable
 private fun CanyonPointsMapContent(
     detail: CanyonDetail,
+    watershedGeometryJson: String?,
     onNavigate: (GeoPoint) -> Unit,
     contentPadding: PaddingValues,
     modifier: Modifier = Modifier,
 ) {
     val context = LocalContext.current
     val watershed = detail.watershed
-    val hasWatershedPolygon = !watershed?.geometryJson.isNullOrBlank()
+    val hasWatershedPolygon = !watershedGeometryJson.isNullOrBlank()
     var showWatershed by rememberSaveable(detail.canyon.id) { mutableStateOf(false) }
     val markers = remember(detail.geoPoints, context) {
         detail.geoPoints.mapIndexed { index, point ->
@@ -167,7 +174,7 @@ private fun CanyonPointsMapContent(
                             style = MaterialTheme.typography.titleSmall,
                             fontWeight = FontWeight.SemiBold,
                         )
-                        watershed.areaKm2?.let { areaKm2 ->
+                        watershed?.areaKm2?.let { areaKm2 ->
                             Text(
                                 text = stringResource(R.string.watershed_area_value, formatAreaKm2(areaKm2)),
                                 style = MaterialTheme.typography.bodySmall,
@@ -193,7 +200,7 @@ private fun CanyonPointsMapContent(
                 userLongitude = null,
                 onMarkerClick = {},
                 clusterMarkers = false,
-                watershedGeometryJson = watershed?.geometryJson,
+                watershedGeometryJson = watershedGeometryJson,
                 watershedBounds = watershed?.bounds?.toLatLngBounds(),
                 showWatershed = showWatershed,
                 modifier = Modifier

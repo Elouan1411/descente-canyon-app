@@ -40,6 +40,7 @@ import javax.inject.Inject
 
 data class CanyonDetailUiState(
     val canyonDetail: CanyonDetail? = null,
+    val watershedGeometryJson: String? = null,
     val isLoading: Boolean = false,
     val isRefreshingDetail: Boolean = false,
     val isLoadingPhotos: Boolean = false,
@@ -104,6 +105,17 @@ class CanyonDetailViewModel @Inject constructor(
         observeFavorite(canyonId)
         observeDebitNotificationPreference(canyonId)
         observeConnectivity()
+    }
+
+    fun ensureWatershedGeometryLoaded() {
+        if (_uiState.value.watershedGeometryJson != null) return
+
+        viewModelScope.launch {
+            val geometryJson = canyonRepository.getWatershedGeometry(canyonId)
+            _uiState.update { state ->
+                if (state.watershedGeometryJson != null) state else state.copy(watershedGeometryJson = geometryJson)
+            }
+        }
     }
 
     fun loadCanyon(id: Int) {
@@ -242,6 +254,17 @@ class CanyonDetailViewModel @Inject constructor(
         val sourceUrl = state.edfStatusSourceUrl ?: return
         val shouldLoad = state.edfStatus == null || state.edfStatusError != null
         if (!shouldLoad || state.isLoadingEdfStatus) return
+        if (!connectivityObserver.isCurrentlyOnline()) {
+            _uiState.update {
+                it.copy(
+                    isLoadingEdfStatus = false,
+                    edfStatusError = context.getString(R.string.edf_status_load_error_network),
+                    edfStatusSourceUrl = sourceUrl,
+                )
+            }
+            PerformanceTrace.logEvent("canyon_edf_status_load_skipped", "canyonId" to canyonId, "reason" to "offline")
+            return
+        }
 
         _uiState.update {
             it.copy(
@@ -257,6 +280,16 @@ class CanyonDetailViewModel @Inject constructor(
         val state = _uiState.value
         val shouldLoad = state.weather == null || state.weatherError != null
         if (!shouldLoad || state.isLoadingWeather) return
+        if (!connectivityObserver.isCurrentlyOnline()) {
+            _uiState.update {
+                it.copy(
+                    isLoadingWeather = false,
+                    weatherError = context.getString(R.string.weather_load_error_network),
+                )
+            }
+            PerformanceTrace.logEvent("canyon_weather_load_skipped", "canyonId" to detail.canyon.id, "reason" to "offline")
+            return
+        }
 
         _uiState.update {
             it.copy(
@@ -397,6 +430,21 @@ class CanyonDetailViewModel @Inject constructor(
 
     private suspend fun refreshPhotos(id: Int) {
         PerformanceTrace.start(photoRefreshKey(id), "canyon_photos_refresh", "canyonId" to id)
+        if (!connectivityObserver.isCurrentlyOnline()) {
+            PerformanceTrace.end(
+                key = photoRefreshKey(id),
+                outcome = "skipped",
+                "canyonId" to id,
+                "reason" to "offline",
+            )
+            _uiState.update {
+                it.copy(
+                    isLoadingPhotos = false,
+                    photoError = context.getString(R.string.photos_load_error_network),
+                )
+            }
+            return
+        }
         photoRepository.refreshPhotos(id).fold(
             onSuccess = {
                 PerformanceTrace.end(photoRefreshKey(id), outcome = "ready", "canyonId" to id)
@@ -421,6 +469,23 @@ class CanyonDetailViewModel @Inject constructor(
 
     private suspend fun refreshDebits(id: Int) {
         PerformanceTrace.start(debitRefreshKey(id), "canyon_debits_refresh", "canyonId" to id)
+        if (!connectivityObserver.isCurrentlyOnline()) {
+            PerformanceTrace.end(
+                key = debitRefreshKey(id),
+                outcome = "skipped",
+                "canyonId" to id,
+                "reason" to "offline",
+            )
+            val message = context.getString(R.string.debits_load_error_network)
+            _uiState.update {
+                it.copy(
+                    isLoadingDebits = false,
+                    debitError = message,
+                    transientMessage = message,
+                )
+            }
+            return
+        }
         debitRepository.refreshDebits(id).fold(
             onSuccess = {
                 PerformanceTrace.end(debitRefreshKey(id), outcome = "ready", "canyonId" to id)
@@ -580,6 +645,16 @@ class CanyonDetailViewModel @Inject constructor(
         predictionLoadJob = viewModelScope.launch {
             // Let the canyon screen settle before loading the heaviest remote/native prediction stack.
             delay(PREDICTION_LOAD_DELAY_MS)
+            if (!connectivityObserver.isCurrentlyOnline()) {
+                PerformanceTrace.logEvent("canyon_predictions_load_skipped", "canyonId" to detail.canyon.id, "reason" to "offline")
+                _uiState.update {
+                    it.copy(
+                        isLoadingPredictions = false,
+                        predictionError = context.getString(R.string.prediction_load_error_network),
+                    )
+                }
+                return@launch
+            }
             loadPredictions(detail)
         }
     }

@@ -3,20 +3,16 @@ package fr.descentecanyon.app.startup
 import android.util.Log
 import fr.descentecanyon.app.data.local.importer.EmbeddedAppDataImporter
 import fr.descentecanyon.app.data.local.importer.EmbeddedImportMode
-import fr.descentecanyon.app.data.network.ConnectivityObserver
 import fr.descentecanyon.app.data.repository.LegacyPhotoStorageMigrator
 import fr.descentecanyon.app.data.repository.NotificationSyncScheduler
 import fr.descentecanyon.app.perf.PerformanceTrace
 import fr.descentecanyon.app.domain.repository.AuthRepository
-import fr.descentecanyon.app.domain.usecase.SyncPendingDebitsUseCase
 import javax.inject.Inject
 import javax.inject.Singleton
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.delay
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
@@ -26,8 +22,6 @@ import kotlinx.coroutines.withContext
 class AppStartupCoordinator @Inject constructor(
     private val embeddedCanyonDataImporter: EmbeddedAppDataImporter,
     private val authRepository: AuthRepository,
-    private val connectivityObserver: ConnectivityObserver,
-    private val syncPendingDebitsUseCase: SyncPendingDebitsUseCase,
     private val searchCatalogWarmupCoordinator: SearchCatalogWarmupCoordinator,
     private val predictionWarmupCoordinator: PredictionWarmupCoordinator,
     private val legacyPhotoStorageMigrator: LegacyPhotoStorageMigrator,
@@ -117,14 +111,6 @@ class AppStartupCoordinator @Inject constructor(
                     Log.w(TAG, "Unable to warm up prediction stack in background", throwable)
                 }
             }
-        }
-    }
-
-    fun observeConnectivity(): Flow<Boolean> = connectivityObserver.observe().distinctUntilChanged()
-
-    suspend fun syncPendingDebitsIfOnline(isOnline: Boolean) {
-        if (isOnline) {
-            syncPendingDebitsUseCase()
         }
     }
 

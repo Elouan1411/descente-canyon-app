@@ -25,6 +25,89 @@ class OnnxDebitPredictor @Inject constructor(
     @param:IoDispatcher private val ioDispatcher: CoroutineDispatcher,
 ) {
 
+    suspend fun predictBatch(
+        featureSpec: DebitFeatureSpec,
+        thresholds: DebitThresholds,
+        featureVectors: List<FloatArray>,
+        dates: List<java.time.LocalDate>,
+        policy: DebitPredictionPolicy = thresholds.defaultPolicy,
+    ): List<DailyDebitPrediction> {
+        require(featureVectors.isNotEmpty()) { "featureVectors must not be empty" }
+        require(featureVectors.size == dates.size) { "featureVectors and dates must have the same size" }
+
+        return withContext(ioDispatcher) {
+            val sessionHolder = modelStore.getSession()
+            val inputName = sessionHolder.session.inputNames.firstOrNull()
+                ?: error("No ONNX input found")
+            val featureCount = featureVectors.first().size
+            require(featureVectors.all { it.size == featureCount }) { "All feature vectors must have the same size" }
+
+            val flatBuffer = FloatArray(featureVectors.size * featureCount)
+            featureVectors.forEachIndexed { rowIndex, vector ->
+                vector.copyInto(
+                    destination = flatBuffer,
+                    destinationOffset = rowIndex * featureCount,
+                )
+            }
+
+            val tensor = OnnxTensor.createTensor(
+                sessionHolder.environment,
+                FloatBuffer.wrap(flatBuffer),
+                longArrayOf(featureVectors.size.toLong(), featureCount.toLong()),
+            )
+            tensor.use { inputTensor ->
+                sessionHolder.session.run(mapOf(inputName to inputTensor)).use { result ->
+                    val probabilitiesByRow = extractProbabilityRows(result, featureSpec.labels)
+                    require(probabilitiesByRow.size == featureVectors.size) {
+                        "Expected ${featureVectors.size} prediction rows, got ${probabilitiesByRow.size}"
+                    }
+
+                    val highThreshold = thresholds.highThresholdByPolicy[policy]
+                        ?: error("Missing threshold for policy $policy")
+                    val ordinalLowThreshold = thresholds.lowThresholdByPolicy[policy]
+
+                    val basePredictions = probabilitiesByRow.mapIndexed { index, probabilitiesByLabel ->
+                        val normalized = threeClassProbabilities(probabilitiesByLabel)
+                        val ordinalScore = if (hasSixOrdinalLabels(probabilitiesByLabel)) {
+                            expectedOrdinalScore(probabilitiesByLabel)
+                        } else {
+                            null
+                        }
+                        val ordinalStandardDeviation = ordinalScore?.let { score ->
+                            ordinalStandardDeviation(probabilitiesByLabel, score)
+                        }
+                        val baseLevel = if (ordinalLowThreshold != null && ordinalScore != null) {
+                            when {
+                                ordinalScore >= highThreshold -> PredictedDebitLevel.HIGH
+                                ordinalScore < ordinalLowThreshold -> PredictedDebitLevel.LOW
+                                else -> PredictedDebitLevel.MEDIUM
+                            }
+                        } else {
+                            when {
+                                normalized.getValue(PredictedDebitLevel.HIGH) >= highThreshold -> PredictedDebitLevel.HIGH
+                                normalized.getValue(PredictedDebitLevel.LOW) >= normalized.getValue(PredictedDebitLevel.MEDIUM) -> PredictedDebitLevel.LOW
+                                else -> PredictedDebitLevel.MEDIUM
+                            }
+                        }
+
+                        DailyDebitPrediction(
+                            date = dates[index],
+                            horizonDays = index,
+                            level = baseLevel,
+                            probabilities = normalized,
+                            highThreshold = highThreshold,
+                            ordinalScore = ordinalScore,
+                            ordinalLevel = ordinalScore?.let { score -> ordinalLevelFromScore(score, thresholds.ordinalCutpoints) },
+                            ordinalStandardDeviation = ordinalStandardDeviation,
+                        )
+                    }
+
+                    applyHighRiskOverlay(basePredictions, featureVectors)
+                }
+            }
+        }
+    }
+
     suspend fun predict(
         featureSpec: DebitFeatureSpec,
         thresholds: DebitThresholds,
@@ -33,76 +116,60 @@ class OnnxDebitPredictor @Inject constructor(
         date: java.time.LocalDate,
         policy: DebitPredictionPolicy = thresholds.defaultPolicy,
     ): DailyDebitPrediction {
-        return withContext(ioDispatcher) {
-            val sessionHolder = modelStore.getSession()
-            val inputName = sessionHolder.session.inputNames.firstOrNull()
-                ?: error("No ONNX input found")
-            val tensor = OnnxTensor.createTensor(
-                sessionHolder.environment,
-                FloatBuffer.wrap(featureVector),
-                longArrayOf(1, featureVector.size.toLong()),
-            )
-            tensor.use { inputTensor ->
-                sessionHolder.session.run(mapOf(inputName to inputTensor)).use { result ->
-                    val probabilitiesByLabel = extractProbabilities(result, featureSpec.labels)
-                    val highThreshold = thresholds.highThresholdByPolicy[policy]
-                        ?: error("Missing threshold for policy $policy")
-                    val ordinalLowThreshold = thresholds.lowThresholdByPolicy[policy]
-                    val normalized = threeClassProbabilities(probabilitiesByLabel)
-                    val ordinalScore = if (hasSixOrdinalLabels(probabilitiesByLabel)) {
-                        expectedOrdinalScore(probabilitiesByLabel)
-                    } else {
-                        null
-                    }
-                    val ordinalStandardDeviation = ordinalScore?.let { score ->
-                        ordinalStandardDeviation(probabilitiesByLabel, score)
-                    }
-                    val baseLevel = if (ordinalLowThreshold != null && ordinalScore != null) {
-                        when {
-                            ordinalScore >= highThreshold -> PredictedDebitLevel.HIGH
-                            ordinalScore < ordinalLowThreshold -> PredictedDebitLevel.LOW
-                            else -> PredictedDebitLevel.MEDIUM
-                        }
-                    } else {
-                        when {
-                            normalized.getValue(PredictedDebitLevel.HIGH) >= highThreshold -> PredictedDebitLevel.HIGH
-                            normalized.getValue(PredictedDebitLevel.LOW) >= normalized.getValue(PredictedDebitLevel.MEDIUM) -> PredictedDebitLevel.LOW
-                            else -> PredictedDebitLevel.MEDIUM
-                        }
-                    }
-                    val level = applyHighRiskOverlay(baseLevel, featureVector)
-                    DailyDebitPrediction(
-                        date = date,
-                        horizonDays = horizonDays,
-                        level = level,
-                        probabilities = normalized,
-                        highThreshold = highThreshold,
-                        ordinalScore = ordinalScore,
-                        ordinalLevel = ordinalScore?.let { score -> ordinalLevelFromScore(score, thresholds.ordinalCutpoints) },
-                        ordinalStandardDeviation = ordinalStandardDeviation,
-                    )
-                }
-            }
-        }
+        return predictBatch(
+            featureSpec = featureSpec,
+            thresholds = thresholds,
+            featureVectors = listOf(featureVector),
+            dates = listOf(date),
+            policy = policy,
+        ).single().copy(horizonDays = horizonDays)
     }
 
     private suspend fun applyHighRiskOverlay(
-        baseLevel: PredictedDebitLevel,
-        featureVector: FloatArray,
-    ): PredictedDebitLevel {
-        if (baseLevel == PredictedDebitLevel.HIGH) return baseLevel
-        val overlay = modelStore.getHighRiskOverlay() ?: return baseLevel
-        val inputName = overlay.session.inputNames.firstOrNull() ?: return baseLevel
+        basePredictions: List<DailyDebitPrediction>,
+        featureVectors: List<FloatArray>,
+    ): List<DailyDebitPrediction> {
+        val candidateIndexes = basePredictions.indices.filter { index ->
+            basePredictions[index].level != PredictedDebitLevel.HIGH
+        }
+        if (candidateIndexes.isEmpty()) return basePredictions
+
+        val overlay = modelStore.getHighRiskOverlay() ?: return basePredictions
+        val inputName = overlay.session.inputNames.firstOrNull() ?: return basePredictions
+        val featureCount = featureVectors.first().size
+        val flatBuffer = FloatArray(candidateIndexes.size * featureCount)
+        candidateIndexes.forEachIndexed { rowIndex, predictionIndex ->
+            featureVectors[predictionIndex].copyInto(
+                destination = flatBuffer,
+                destinationOffset = rowIndex * featureCount,
+            )
+        }
+
         val tensor = OnnxTensor.createTensor(
             overlay.environment,
-            FloatBuffer.wrap(featureVector),
-            longArrayOf(1, featureVector.size.toLong()),
+            FloatBuffer.wrap(flatBuffer),
+            longArrayOf(candidateIndexes.size.toLong(), featureCount.toLong()),
         )
         tensor.use { inputTensor ->
             overlay.session.run(mapOf(inputName to inputTensor)).use { result ->
-                val probabilitiesByLabel = extractProbabilities(result, overlay.labels)
-                val highProbability = probabilitiesByLabel["HIGH"] ?: return baseLevel
-                return if (highProbability >= overlay.threshold) PredictedDebitLevel.HIGH else baseLevel
+                val probabilitiesByRow = extractProbabilityRows(result, overlay.labels)
+                require(probabilitiesByRow.size == candidateIndexes.size) {
+                    "Expected ${candidateIndexes.size} overlay rows, got ${probabilitiesByRow.size}"
+                }
+
+                return basePredictions.mapIndexed { index, prediction ->
+                    val candidateRowIndex = candidateIndexes.indexOf(index)
+                    if (candidateRowIndex < 0) {
+                        prediction
+                    } else {
+                        val highProbability = probabilitiesByRow[candidateRowIndex]["HIGH"] ?: 0.0
+                        if (highProbability >= overlay.threshold) {
+                            prediction.copy(level = PredictedDebitLevel.HIGH)
+                        } else {
+                            prediction
+                        }
+                    }
+                }
             }
         }
     }
@@ -166,31 +233,31 @@ class OnnxDebitPredictor @Inject constructor(
         }
     }
 
-    private fun extractProbabilities(
+    private fun extractProbabilityRows(
         result: ai.onnxruntime.OrtSession.Result,
         labels: List<String>,
-    ): Map<String, Double> {
+    ): List<Map<String, Double>> {
         result.forEach { (_, value) ->
-            extractProbabilities(value, labels)?.let { return it }
+            extractProbabilityRows(value, labels)?.let { return it }
         }
         error("No probability output found in ONNX result")
     }
 
-    private fun extractProbabilities(value: OnnxValue, labels: List<String>): Map<String, Double>? {
+    private fun extractProbabilityRows(value: OnnxValue, labels: List<String>): List<Map<String, Double>>? {
         return when (value) {
-            is OnnxMap -> parseProbabilityMap(value.value)
+            is OnnxMap -> parseProbabilityMap(value.value)?.let(::listOf)
             is OnnxSequence -> extractProbabilitiesFromRaw(value.value, labels)
             is OnnxTensor -> parseTensorProbabilities(value.value, labels)
             else -> null
         }
     }
 
-    private fun extractProbabilitiesFromRaw(raw: Any?, labels: List<String>): Map<String, Double>? {
+    private fun extractProbabilitiesFromRaw(raw: Any?, labels: List<String>): List<Map<String, Double>>? {
         return when (raw) {
-            is OnnxMap -> parseProbabilityMap(raw.value)
-            is Map<*, *> -> parseProbabilityMap(raw)
-            is List<*> -> raw.firstNotNullOfOrNull { item -> extractProbabilitiesFromRaw(item, labels) }
-            is Array<*> -> raw.firstNotNullOfOrNull { item -> extractProbabilitiesFromRaw(item, labels) }
+            is OnnxMap -> parseProbabilityMap(raw.value)?.let(::listOf)
+            is Map<*, *> -> parseProbabilityMap(raw)?.let(::listOf)
+            is List<*> -> raw.mapNotNull { item -> extractProbabilitiesFromRaw(item, labels) }.flatten().takeIf { it.isNotEmpty() }
+            is Array<*> -> raw.mapNotNull { item -> extractProbabilitiesFromRaw(item, labels) }.flatten().takeIf { it.isNotEmpty() }
             else -> null
         }
     }
@@ -204,15 +271,19 @@ class OnnxDebitPredictor @Inject constructor(
         return probabilities.takeIf { it.isNotEmpty() }
     }
 
-    private fun parseTensorProbabilities(raw: Any?, labels: List<String>): Map<String, Double>? {
+    private fun parseTensorProbabilities(raw: Any?, labels: List<String>): List<Map<String, Double>>? {
         return when (raw) {
             is Array<*> -> when (val first = raw.firstOrNull()) {
-                is FloatArray -> labels.zip(first.map { it.toDouble() }).toMap()
-                is DoubleArray -> labels.zip(first.toList()).toMap()
+                is FloatArray -> raw.mapNotNull { row ->
+                    (row as? FloatArray)?.let { labels.zip(it.map { value -> value.toDouble() }).toMap() }
+                }.takeIf { it.isNotEmpty() }
+                is DoubleArray -> raw.mapNotNull { row ->
+                    (row as? DoubleArray)?.let { labels.zip(it.toList()).toMap() }
+                }.takeIf { it.isNotEmpty() }
                 else -> null
             }
-            is FloatArray -> labels.zip(raw.map { it.toDouble() }).toMap()
-            is DoubleArray -> labels.zip(raw.toList()).toMap()
+            is FloatArray -> listOf(labels.zip(raw.map { it.toDouble() }).toMap())
+            is DoubleArray -> listOf(labels.zip(raw.toList()).toMap())
             else -> null
         }
     }

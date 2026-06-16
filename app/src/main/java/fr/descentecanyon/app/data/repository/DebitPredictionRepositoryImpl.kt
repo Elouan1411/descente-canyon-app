@@ -27,25 +27,28 @@ class DebitPredictionRepositoryImpl @Inject constructor(
                 val support = supportRepository.getPredictionSupport(detail).getOrThrow()
                 val featureSpec = modelStore.getFeatureSpec()
                 val thresholds = modelStore.getThresholds()
-                val staticFeatures = modelStore.getStaticFeatures()[detail.canyon.id]
+                val staticFeatures = modelStore.getStaticFeatureSet(detail.canyon.id)
                 val zoneId = runCatching { ZoneId.of(support.timezone) }.getOrDefault(ZoneId.of("UTC"))
                 val baseDate = LocalDate.now(zoneId)
-                val predictions = (0..2).map { horizonDays ->
-                    val targetDate = baseDate.plusDays(horizonDays.toLong())
-                    val featureVector = featureBuilder.buildFeatureVector(
+                val horizonDates = (0..2).map { horizonDays ->
+                    baseDate.plusDays(horizonDays.toLong())
+                }
+                val featureVectors = horizonDates.map { targetDate ->
+                    featureBuilder.buildFeatureVector(
                         detail = detail,
                         support = support,
                         featureSpec = featureSpec,
                         staticFeatureSet = staticFeatures,
                         targetDate = targetDate,
                     )
-                    predictor.predict(
-                        featureSpec = featureSpec,
-                        thresholds = thresholds,
-                        featureVector = featureVector,
-                        horizonDays = horizonDays,
-                        date = targetDate,
-                    )
+                }
+                val predictions = predictor.predictBatch(
+                    featureSpec = featureSpec,
+                    thresholds = thresholds,
+                    featureVectors = featureVectors,
+                    dates = horizonDates,
+                ).mapIndexed { horizonDays, prediction ->
+                    prediction.copy(horizonDays = horizonDays)
                 }
                 CanyonDebitPredictions(
                     target = support.target,

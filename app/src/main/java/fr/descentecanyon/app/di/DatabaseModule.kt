@@ -346,7 +346,7 @@ object DatabaseModule {
     @Provides
     @Singleton
     fun provideDatabase(@ApplicationContext context: Context): DescenteCanyonDatabase {
-        return Room.databaseBuilder(
+        val builder = Room.databaseBuilder(
             context,
             DescenteCanyonDatabase::class.java,
             DescenteCanyonDatabase.DATABASE_NAME,
@@ -363,7 +363,9 @@ object DatabaseModule {
             .addMigrations(MIGRATION_10_11)
             .addMigrations(MIGRATION_11_12)
             .addMigrations(MIGRATION_12_13)
-            .build()
+            .createFromAsset(PREPACKAGED_DATABASE_ASSET_PATH)
+
+        return builder.build()
     }
 
     @Provides
@@ -535,4 +537,6 @@ object DatabaseModule {
         }
         return false
     }
+
+    private const val PREPACKAGED_DATABASE_ASSET_PATH = "databases/descente_canyon_prepackaged.db"
 }

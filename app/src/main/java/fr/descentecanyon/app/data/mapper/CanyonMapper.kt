@@ -354,7 +354,7 @@ fun CanyonEntity.toDetail(
     tracks: List<CanyonTrackEntity>,
     photos: List<PhotoEntity>,
     debits: List<DebitEntity>,
-    watershed: WatershedEntity?,
+    watershed: CanyonWatershed?,
 ): CanyonDetail = CanyonDetail(
     canyon = toDomain(),
     accesAval = accesAval,
@@ -373,7 +373,7 @@ fun CanyonEntity.toDetail(
     tracks = tracks.map { it.toDomain() },
     photos = photos.map { it.toDomain() },
     debits = debits.map { it.toDomain() },
-    watershed = watershed?.toDomain(),
+    watershed = watershed,
 )
 
 fun CanyonTrackEntity.toDomain(): CanyonTrack = CanyonTrack(

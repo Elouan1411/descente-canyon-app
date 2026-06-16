@@ -17,6 +17,7 @@ import fr.descentecanyon.app.domain.model.DebitPredictionPolicy
 import fr.descentecanyon.app.domain.model.DebitThresholds
 import java.io.File
 import java.io.IOException
+import java.io.RandomAccessFile
 import javax.inject.Inject
 import javax.inject.Singleton
 import kotlinx.coroutines.CoroutineDispatcher
@@ -54,7 +55,13 @@ class EmbeddedDebitModelStore @Inject constructor(
     private var cachedThresholds: DebitThresholds? = null
 
     @Volatile
-    private var cachedStaticFeatures: Map<Int, CanyonStaticFeatureSet>? = null
+    private var cachedStaticFeatureIndex: Map<Int, StaticFeatureIndexEntry>? = null
+
+    @Volatile
+    private var cachedStaticFeatureFile: File? = null
+
+    @Volatile
+    private var cachedStaticFeatureByCanyonId: Map<Int, CanyonStaticFeatureSet> = emptyMap()
 
     @Volatile
     private var cachedMetricsSummary: DebitPredictionInfoSummary? = null
@@ -84,14 +91,30 @@ class EmbeddedDebitModelStore @Inject constructor(
         }
     }
 
-    suspend fun getStaticFeatures(): Map<Int, CanyonStaticFeatureSet> {
-        cachedStaticFeatures?.let { return it }
+    suspend fun getStaticFeatureSet(canyonId: Int): CanyonStaticFeatureSet? {
+        cachedStaticFeatureByCanyonId[canyonId]?.let { return it }
         return staticFeaturesMutex.withLock {
-            cachedStaticFeatures?.let { return it }
-            val dto = loadJsonAsset<Map<String, JsonObject>>(STATIC_FEATURES_ASSET_PATH)
-            dto.mapKeys { (key, _) -> key.toInt() }
-                .mapValues { (key, value) -> CanyonStaticFeatureSet(key, value.toNumericMap()) }
-                .also { cachedStaticFeatures = it }
+            cachedStaticFeatureByCanyonId[canyonId]?.let { return it }
+            val index = loadStaticFeatureIndex()
+            val entry = index[canyonId] ?: return@withLock null
+            val assetFile = cachedStaticFeatureFile ?: withContext(ioDispatcher) {
+                ensureAssetFile(STATIC_FEATURES_ASSET_PATH, "static-features-v${BuildConfig.VERSION_CODE}.json")
+            }.also { cachedStaticFeatureFile = it }
+
+            withContext(ioDispatcher) {
+                RandomAccessFile(assetFile, "r").use { randomAccessFile ->
+                    randomAccessFile.seek(entry.startByteOffset)
+                    val payload = ByteArray(entry.byteLength)
+                    randomAccessFile.readFully(payload)
+                    val jsonObject = json.decodeFromString<JsonObject>(payload.decodeToString())
+                    CanyonStaticFeatureSet(
+                        canyonId = canyonId,
+                        featureValues = jsonObject.toNumericMap(),
+                    )
+                }
+            }.also { featureSet ->
+                cachedStaticFeatureByCanyonId = cachedStaticFeatureByCanyonId + (canyonId to featureSet)
+            }
         }
     }
 
@@ -188,6 +211,14 @@ class EmbeddedDebitModelStore @Inject constructor(
                 }
             }
         }.toMap()
+    }
+
+    private suspend fun loadStaticFeatureIndex(): Map<Int, StaticFeatureIndexEntry> {
+        cachedStaticFeatureIndex?.let { return it }
+        return loadJsonAsset<Map<String, StaticFeatureIndexEntryDto>>(STATIC_FEATURE_INDEX_ASSET_PATH)
+            .mapKeys { (key, _) -> key.toInt() }
+            .mapValues { (_, value) -> StaticFeatureIndexEntry(value.start, value.length) }
+            .also { cachedStaticFeatureIndex = it }
     }
 
     private fun FeatureSpecDto.toDomain(): DebitFeatureSpec {
@@ -307,11 +338,17 @@ class EmbeddedDebitModelStore @Inject constructor(
         private const val FEATURE_SPEC_ASSET_PATH = "feature_spec.json"
         private const val THRESHOLDS_ASSET_PATH = "thresholds.json"
         private const val STATIC_FEATURES_ASSET_PATH = "canyon_static_features.json"
+        private const val STATIC_FEATURE_INDEX_ASSET_PATH = "canyon_static_features.index.json"
         private const val METRICS_ASSET_PATH = "metrics.json"
         private const val MODEL_ASSET_PATH = "model.onnx"
         private const val HIGH_RISK_OVERLAY_CONFIG_ASSET_PATH = "high_risk_overlay.json"
     }
 }
+
+private data class StaticFeatureIndexEntry(
+    val startByteOffset: Long,
+    val byteLength: Int,
+)
 
 data class OnnxSessionHolder(
     val environment: OrtEnvironment,
@@ -397,4 +434,10 @@ private data class RuntimeLookupMetadataDto(
     val regionCount: Int,
     val massifCount: Int,
     val canyonCount: Int,
+)
+
+@Serializable
+private data class StaticFeatureIndexEntryDto(
+    val start: Long,
+    val length: Int,
 )

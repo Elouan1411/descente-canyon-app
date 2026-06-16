@@ -45,6 +45,34 @@ class OnnxModelContractTest {
         }
     }
 
+    @Test
+    fun `model accepts batch dimension and exposes one probability row per input`() {
+        val modelPath = Paths.get("..", "modele_statistique", "model.onnx").normalize().toAbsolutePath().toString()
+        val spec = exportedFeatureSpec()
+        val featureCount = spec.featureCount
+        val environment = OrtEnvironment.getEnvironment()
+        val session = environment.createSession(modelPath, ai.onnxruntime.OrtSession.SessionOptions())
+
+        session.use {
+            val inputName = session.inputNames.single()
+            val tensor = OnnxTensor.createTensor(
+                environment,
+                FloatBuffer.wrap(FloatArray(featureCount * 3)),
+                longArrayOf(3, featureCount.toLong()),
+            )
+            tensor.use { inputTensor ->
+                session.run(mapOf(inputName to inputTensor)).use { result ->
+                    val probabilityRows = result.firstNotNullOfOrNull { (_, value) -> extractProbabilityRows(value) }
+                    assertNotNull(probabilityRows)
+                    assertEquals(3, probabilityRows!!.size)
+                    probabilityRows.forEach { row ->
+                        assertEquals(spec.labels.toSet(), row.keys)
+                    }
+                }
+            }
+        }
+    }
+
     private fun exportedFeatureSpec(): ExportedFeatureSpec {
         val specPath = Paths.get("..", "modele_statistique", "feature_spec.json").normalize().toAbsolutePath()
         val payload = Files.readAllBytes(specPath).toString(Charsets.UTF_8)
@@ -76,12 +104,42 @@ class OnnxModelContractTest {
         }
     }
 
+    private fun extractProbabilityRows(value: ai.onnxruntime.OnnxValue): List<Map<String, Double>>? {
+        return when (value) {
+            is OnnxMap -> parseProbabilityMap(value.value)?.let(::listOf)
+            is OnnxSequence -> extractProbabilityRowsFromRaw(value.value)
+            is OnnxTensor -> when (val raw = value.value) {
+                is Array<*> -> when (val first = raw.firstOrNull()) {
+                    is FloatArray -> raw.mapNotNull { row ->
+                        (row as? FloatArray)?.let { mapOf("HIGH" to it[0].toDouble(), "LOW" to it[1].toDouble(), "MEDIUM" to it[2].toDouble()) }
+                    }.takeIf { it.isNotEmpty() }
+                    is DoubleArray -> raw.mapNotNull { row ->
+                        (row as? DoubleArray)?.let { mapOf("HIGH" to it[0], "LOW" to it[1], "MEDIUM" to it[2]) }
+                    }.takeIf { it.isNotEmpty() }
+                    else -> null
+                }
+                else -> null
+            }
+            else -> null
+        }
+    }
+
     private fun extractProbabilitiesFromRaw(raw: Any?): Map<String, Double>? {
         return when (raw) {
             is OnnxMap -> parseProbabilityMap(raw.value)
             is Map<*, *> -> parseProbabilityMap(raw)
             is List<*> -> raw.firstNotNullOfOrNull { item -> extractProbabilitiesFromRaw(item) }
             is Array<*> -> raw.firstNotNullOfOrNull { item -> extractProbabilitiesFromRaw(item) }
+            else -> null
+        }
+    }
+
+    private fun extractProbabilityRowsFromRaw(raw: Any?): List<Map<String, Double>>? {
+        return when (raw) {
+            is OnnxMap -> parseProbabilityMap(raw.value)?.let(::listOf)
+            is Map<*, *> -> parseProbabilityMap(raw)?.let(::listOf)
+            is List<*> -> raw.mapNotNull { item -> extractProbabilityRowsFromRaw(item) }.flatten().takeIf { it.isNotEmpty() }
+            is Array<*> -> raw.mapNotNull { item -> extractProbabilityRowsFromRaw(item) }.flatten().takeIf { it.isNotEmpty() }
             else -> null
         }
     }

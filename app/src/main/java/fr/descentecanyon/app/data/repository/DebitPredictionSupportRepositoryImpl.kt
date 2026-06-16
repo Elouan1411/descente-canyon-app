@@ -2,6 +2,7 @@ package fr.descentecanyon.app.data.repository
 
 import fr.descentecanyon.app.data.local.dao.DailyWeatherDao
 import fr.descentecanyon.app.data.local.entity.DailyWeatherEntity
+import fr.descentecanyon.app.data.network.ConnectivityObserver
 import fr.descentecanyon.app.data.remote.weather.OpenMeteoDailyResponseDto
 import fr.descentecanyon.app.data.remote.weather.OpenMeteoRemoteSource
 import fr.descentecanyon.app.di.IoDispatcher
@@ -29,6 +30,7 @@ class DebitPredictionSupportRepositoryImpl @Inject constructor(
     private val remoteSource: OpenMeteoRemoteSource,
     private val dailyWeatherDao: DailyWeatherDao,
     private val runtimeLookupStore: EmbeddedDebitRuntimeLookupStore,
+    private val connectivityObserver: ConnectivityObserver,
     @param:IoDispatcher private val ioDispatcher: CoroutineDispatcher,
 ) : DebitPredictionSupportRepository {
 
@@ -37,14 +39,13 @@ class DebitPredictionSupportRepositoryImpl @Inject constructor(
             runCatching {
                 val target = WeatherTargetResolver.resolve(detail)
                     ?: throw IllegalStateException("Aucune coordonnée exploitable pour l'estimation du débit")
-                val lookups = runtimeLookupStore.getLookups()
                 val dailyWeather = loadDailyWeather(detail.canyon.id, target)
                 DebitPredictionSupport(
                     target = target,
                     timezone = dailyWeather.timezone,
                     fetchedAt = dailyWeather.fetchedAt,
                     dailyWeather = dailyWeather.dailyWeather,
-                    runtimeLookup = DebitRuntimeLookupResolver.resolve(detail.canyon, lookups),
+                    runtimeLookup = runtimeLookupStore.resolve(detail.canyon),
                     usedWeatherCache = dailyWeather.usedCache,
                 )
             }
@@ -52,6 +53,11 @@ class DebitPredictionSupportRepositoryImpl @Inject constructor(
     }
 
     private suspend fun loadDailyWeather(canyonId: Int, target: WeatherTarget): DailyWeatherLoadResult {
+        if (!connectivityObserver.isCurrentlyOnline()) {
+            return loadCachedFallback(canyonId)
+                ?: throw IllegalStateException("Météo journalière indisponible hors ligne")
+        }
+
         val forecastResult = runCatching {
             retryOpenMeteoRequest {
                 remoteSource.fetchDailyForecast(

@@ -4,6 +4,7 @@ import fr.descentecanyon.app.data.local.dao.CanyonDao
 import fr.descentecanyon.app.data.local.dao.GeoPointDao
 import fr.descentecanyon.app.data.local.dao.SearchIndexDao
 import fr.descentecanyon.app.data.local.dao.WatershedDao
+import fr.descentecanyon.app.data.local.dao.toDomain
 import fr.descentecanyon.app.data.local.dao.getByIdsChunked
 import fr.descentecanyon.app.data.local.database.DescenteCanyonDatabase
 import fr.descentecanyon.app.data.mapper.toDomain
@@ -84,7 +85,11 @@ class CanyonRepositoryImpl @Inject constructor(
     }
 
     override fun observeWatershed(canyonId: Int): Flow<CanyonWatershed?> {
-        return watershedDao.observeByCanyonId(canyonId).map { it?.toDomain() }
+        return watershedDao.observeMetadataByCanyonId(canyonId).map { it?.toDomain() }
+    }
+
+    override suspend fun getWatershedGeometry(canyonId: Int): String? {
+        return watershedDao.getGeometryByCanyonId(canyonId)
     }
 
     override fun getCanyonsNearby(
