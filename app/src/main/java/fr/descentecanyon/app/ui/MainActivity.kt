@@ -176,8 +176,7 @@ private fun MainScreen(
                 is AppLaunchTarget.Notifications -> {
                     if (target.clearBackStack) {
                         navController.navigate(Screen.Notifications) {
-                            popUpTo(navController.graph.findStartDestination().id) { inclusive = true }
-                            launchSingleTop = true
+                            applyAppRootNavigation(navController.graph.findStartDestination().id)
                         }
                     } else {
                         navController.navigateSingleTop(Screen.Notifications)
@@ -186,8 +185,7 @@ private fun MainScreen(
                 is AppLaunchTarget.CanyonDetail -> {
                     if (target.clearBackStack) {
                         navController.navigate(Screen.CanyonDetail(target.canyonId, target.openDebitsTab)) {
-                            popUpTo(navController.graph.findStartDestination().id) { inclusive = true }
-                            launchSingleTop = true
+                            applyAppRootNavigation(navController.graph.findStartDestination().id)
                         }
                     } else {
                         navController.navigateSingleTop(
@@ -250,7 +248,7 @@ private fun MainScreen(
                                         },
                                         navigate = { screen ->
                                             navController.navigate(screen) {
-                                                applyBottomNavRootNavigation(startDestinationId)
+                                                applyAppRootNavigation(startDestinationId)
                                             }
                                         }
                                     )
@@ -312,7 +310,7 @@ internal fun handleBottomNavClick(
     navigate(item.screen)
 }
 
-internal fun NavOptionsBuilder.applyBottomNavRootNavigation(startDestinationId: Int) {
+internal fun NavOptionsBuilder.applyAppRootNavigation(startDestinationId: Int) {
     popUpTo(startDestinationId)
     launchSingleTop = true
 }

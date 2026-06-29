@@ -75,12 +75,23 @@ class MainActivityNavigationTest {
     }
 
     @Test
-    fun `bottom nav root navigation does not restore previous stack state`() {
+    fun `app root navigation keeps start destination as back fallback`() {
         val builder = NavOptionsBuilder()
 
-        builder.applyBottomNavRootNavigation(startDestinationId = 123)
+        builder.applyAppRootNavigation(startDestinationId = 123)
 
+        assertEquals(123, builder.popUpToId)
         assertTrue(builder.launchSingleTop)
         assertFalse(builder.restoreState)
+        assertFalse(builder.isPopUpToInclusive())
+    }
+
+    private fun NavOptionsBuilder.isPopUpToInclusive(): Boolean {
+        val options = javaClass
+            .getDeclaredMethod("build\$navigation_common_release")
+            .invoke(this)
+        return options.javaClass
+            .getDeclaredMethod("isPopUpToInclusive")
+            .invoke(options) as Boolean
     }
 }
