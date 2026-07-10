@@ -51,6 +51,17 @@ class EmbeddedAppDataImporterTest {
     }
 
     @Test
+    fun `require the expected watershed row count when manifest declares one`() {
+        assertTrue(hasExpectedWatershedRows(importedRowCount = 3694, expectedRowCount = 3694))
+        assertFalse(hasExpectedWatershedRows(importedRowCount = 3693, expectedRowCount = 3694))
+    }
+
+    @Test
+    fun `allow watershed import when manifest has no count`() {
+        assertTrue(hasExpectedWatershedRows(importedRowCount = 3694, expectedRowCount = null))
+    }
+
+    @Test
     fun `expected core row count includes tracks only when declared`() {
         val manifest = RoomImportManifest(
             schemaVersion = 1,

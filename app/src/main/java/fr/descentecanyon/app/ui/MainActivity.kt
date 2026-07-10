@@ -1,6 +1,7 @@
 package fr.descentecanyon.app.ui
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -8,7 +9,10 @@ import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.material3.Button
 import androidx.compose.material3.NavigationBarDefaults
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Icon
@@ -22,7 +26,9 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.produceState
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
@@ -91,7 +97,12 @@ private fun AppStartupScreen(
     initialLaunchTarget: AppLaunchTarget,
     incomingLaunchTargets: MutableSharedFlow<AppLaunchTarget>,
 ) {
-    val startupState by produceState<StartupUiState>(initialValue = StartupUiState.Resolving, key1 = appStartupCoordinator) {
+    val retryVersion = remember { mutableIntStateOf(0) }
+    val startupState by produceState<StartupUiState>(
+        initialValue = StartupUiState.Resolving,
+        key1 = appStartupCoordinator,
+        key2 = retryVersion.intValue,
+    ) {
         value = runCatching {
             when (appStartupCoordinator.resolveLaunchMode()) {
                 StartupLaunchMode.NON_BLOCKING -> StartupUiState.AppVisible(isBackgroundInitializing = true)
@@ -102,7 +113,8 @@ private fun AppStartupScreen(
                 }
             }
         }.getOrElse { throwable ->
-            StartupUiState.Error(throwable.message)
+            Log.e(TAG, "Startup initialization failed", throwable)
+            StartupUiState.Error
         }
     }
 
@@ -138,12 +150,21 @@ private fun AppStartupScreen(
             )
         }
 
-        is StartupUiState.Error -> {
+        StartupUiState.Error -> {
             Box(
                 modifier = Modifier.fillMaxSize(),
                 contentAlignment = Alignment.Center,
             ) {
-                Text(state.message ?: stringResource(R.string.startup_initialization_error))
+                Column(
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.spacedBy(16.dp),
+                ) {
+                    Text(stringResource(R.string.startup_initialization_error))
+                    Text(stringResource(R.string.startup_initialization_error_body))
+                    Button(onClick = { retryVersion.intValue += 1 }) {
+                        Text(stringResource(R.string.retry))
+                    }
+                }
             }
         }
     }
@@ -152,8 +173,10 @@ private fun AppStartupScreen(
 private sealed interface StartupUiState {
     data object Resolving : StartupUiState
     data class AppVisible(val isBackgroundInitializing: Boolean) : StartupUiState
-    data class Error(val message: String?) : StartupUiState
+    data object Error : StartupUiState
 }
+
+private const val TAG = "MainActivity"
 
 @Composable
 private fun MainScreen(

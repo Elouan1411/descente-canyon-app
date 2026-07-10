@@ -297,7 +297,10 @@ class EmbeddedAppDataImporter @Inject constructor(
                         )
                     },
                 ) {
-                    importWatershedsFromPrepackagedDatabase(watershedsVersion)
+                    importWatershedsFromPrepackagedDatabase(
+                        watershedsVersion = watershedsVersion,
+                        expectedRowCount = manifest.counts["watersheds"],
+                    )
                 }
             } else {
                 tracedImportPhase(
@@ -874,32 +877,46 @@ class EmbeddedAppDataImporter @Inject constructor(
         }
     }
 
-    private suspend fun importWatershedsFromPrepackagedDatabase(watershedsVersion: String): WatershedImportStats {
+    private suspend fun importWatershedsFromPrepackagedDatabase(
+        watershedsVersion: String,
+        expectedRowCount: Int?,
+    ): WatershedImportStats {
         return withPrepackagedDatabaseAssetFile { prepackagedDatabaseFile ->
-            database.withTransaction {
-                val writableDatabase = database.openHelper.writableDatabase
-                writableDatabase.execSQL("ATTACH DATABASE ? AS prepackaged_asset_db", arrayOf(prepackagedDatabaseFile.path))
-                try {
-                    watershedDao.clearAll()
-                    writableDatabase.execSQL(
-                        "INSERT OR REPLACE INTO watersheds (canyonId, areaKm2, geometryJson, bboxMinLongitude, bboxMinLatitude, bboxMaxLongitude, bboxMaxLatitude) SELECT canyonId, areaKm2, geometryJson, bboxMinLongitude, bboxMinLatitude, bboxMaxLongitude, bboxMaxLatitude FROM prepackaged_asset_db.watersheds"
+            val watersheds = SQLiteDatabase.openDatabase(
+                prepackagedDatabaseFile.path,
+                null,
+                SQLiteDatabase.OPEN_READONLY,
+            ).use { assetDatabase ->
+                assetDatabase.queryList(
+                    "SELECT canyonId, areaKm2, geometryJson, bboxMinLongitude, bboxMinLatitude, bboxMaxLongitude, bboxMaxLatitude FROM watersheds",
+                ) { cursor ->
+                    WatershedEntity(
+                        canyonId = cursor.getInt("canyonId"),
+                        areaKm2 = cursor.getDoubleOrNull("areaKm2"),
+                        geometryJson = cursor.getStringOrNull("geometryJson"),
+                        bboxMinLongitude = cursor.getDoubleOrNull("bboxMinLongitude"),
+                        bboxMinLatitude = cursor.getDoubleOrNull("bboxMinLatitude"),
+                        bboxMaxLongitude = cursor.getDoubleOrNull("bboxMaxLongitude"),
+                        bboxMaxLatitude = cursor.getDoubleOrNull("bboxMaxLatitude"),
                     )
-                    val importedCount = writableDatabase.queryCount("SELECT COUNT(*) FROM prepackaged_asset_db.watersheds")
-                    appMetadataDao.insert(AppMetadataEntity(WATERSHEDS_VERSION_KEY, watershedsVersion))
-                    WatershedImportStats(
-                        importedRowCount = importedCount,
-                        insertedChunkCount = importedCount.chunkCount(WATERSHED_IMPORT_CHUNK_SIZE),
-                    )
-                } finally {
-                    writableDatabase.execSQL("DETACH DATABASE prepackaged_asset_db")
                 }
             }
-        }
-    }
 
-    private fun SupportSQLiteDatabase.queryCount(sql: String): Int {
-        query(sql).use { cursor ->
-            return if (cursor.moveToFirst()) cursor.getInt(0) else 0
+            require(hasExpectedWatershedRows(watersheds.size, expectedRowCount)) {
+                "Prepackaged watershed count mismatch: expected $expectedRowCount, got ${watersheds.size}"
+            }
+
+            database.withTransaction {
+                watershedDao.clearAll()
+                watersheds.chunked(WATERSHED_IMPORT_CHUNK_SIZE).forEach { chunk ->
+                    watershedDao.insertAll(chunk)
+                }
+                appMetadataDao.insert(AppMetadataEntity(WATERSHEDS_VERSION_KEY, watershedsVersion))
+                WatershedImportStats(
+                    importedRowCount = watersheds.size,
+                    insertedChunkCount = watersheds.size.chunkCount(WATERSHED_IMPORT_CHUNK_SIZE),
+                )
+            }
         }
     }
 
@@ -1244,6 +1261,10 @@ internal fun shouldSkipWatershedsImport(
 
 internal fun hasExpectedTrackRows(importedTrackCount: Int, expectedTrackCount: Int): Boolean {
     return importedTrackCount >= expectedTrackCount
+}
+
+internal fun hasExpectedWatershedRows(importedRowCount: Int, expectedRowCount: Int?): Boolean {
+    return expectedRowCount == null || importedRowCount == expectedRowCount
 }
 
 internal val RoomImportManifest.expectedCoreRowCount: Int
