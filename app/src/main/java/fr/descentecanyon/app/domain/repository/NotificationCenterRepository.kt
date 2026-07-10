@@ -6,6 +6,7 @@ import fr.descentecanyon.app.domain.model.ForumActiveTopic
 import fr.descentecanyon.app.domain.model.NotificationCenterState
 import fr.descentecanyon.app.domain.model.NotificationSyncSummary
 import fr.descentecanyon.app.domain.model.TrackedActivityEvent
+import fr.descentecanyon.app.domain.model.TrackedActivityType
 import kotlinx.coroutines.flow.Flow
 
 interface NotificationCenterRepository {
@@ -50,4 +51,12 @@ interface NotificationCenterRepository {
         activeTopics: List<ForumActiveTopic>,
         nowEpochMs: Long = System.currentTimeMillis(),
     ): NotificationSyncSummary
+
+    suspend fun syncFetchedDebits(latestDebits: List<Debit>): NotificationSyncSummary
+
+    suspend fun syncFetchedForumTopics(activeTopics: List<ForumActiveTopic>): NotificationSyncSummary
+
+    suspend fun pendingEvents(type: TrackedActivityType): List<TrackedActivityEvent>
+
+    suspend fun markEventsDelivered(eventIds: Collection<String>)
 }

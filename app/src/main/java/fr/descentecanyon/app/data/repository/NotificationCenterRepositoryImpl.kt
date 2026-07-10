@@ -11,6 +11,8 @@ import fr.descentecanyon.app.domain.model.Debit
 import fr.descentecanyon.app.domain.model.ForumActiveTopic
 import fr.descentecanyon.app.domain.model.NotificationCenterState
 import fr.descentecanyon.app.domain.model.NotificationSyncSummary
+import fr.descentecanyon.app.domain.model.TrackedActivityEvent
+import fr.descentecanyon.app.domain.model.TrackedActivityType
 import fr.descentecanyon.app.domain.model.forumCategoryKey
 import fr.descentecanyon.app.domain.repository.NotificationCenterRepository
 import java.io.IOException
@@ -20,6 +22,7 @@ import kotlin.random.Random
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.distinctUntilChanged
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
@@ -185,6 +188,29 @@ class NotificationCenterRepositoryImpl @Inject constructor(
             updatedState
         }
         return summary
+    }
+
+    override suspend fun syncFetchedDebits(latestDebits: List<Debit>): NotificationSyncSummary {
+        return syncFetchedContent(latestDebits = latestDebits, activeTopics = emptyList())
+    }
+
+    override suspend fun syncFetchedForumTopics(activeTopics: List<ForumActiveTopic>): NotificationSyncSummary {
+        return syncFetchedContent(latestDebits = emptyList(), activeTopics = activeTopics)
+    }
+
+    override suspend fun pendingEvents(type: TrackedActivityType): List<TrackedActivityEvent> {
+        return observeState().first().recentEvents.filter { it.type == type && !it.notificationDelivered }
+    }
+
+    override suspend fun markEventsDelivered(eventIds: Collection<String>) {
+        if (eventIds.isEmpty()) return
+        updateState { state ->
+            state.copy(
+                recentEvents = state.recentEvents.map { event ->
+                    if (event.id in eventIds) event.copy(notificationDelivered = true) else event
+                }
+            )
+        }
     }
 
     private suspend fun updateState(transform: (NotificationCenterState) -> NotificationCenterState) {

@@ -23,6 +23,11 @@ internal object NotificationSyncEngine {
             debit.canyonId.toString(),
             debit.date.toString(),
             debit.niveau.name,
+            debit.auteur.orEmpty(),
+            debit.isDescended?.toString().orEmpty(),
+            debit.waterTemperature.orEmpty(),
+            debit.airTemperature.orEmpty(),
+            debit.commentaire.orEmpty(),
         ).joinToString("|")
     }
 
@@ -110,7 +115,7 @@ internal object NotificationSyncEngine {
             }
             newDebits.forEach { debit ->
                 debitEvents += TrackedActivityEvent(
-                    id = "debit:${followed.canyonId}:${buildDebitKey(debit)}:$nowEpochMs",
+                    id = "debit:${buildDebitKey(debit)}",
                     type = TrackedActivityType.DEBIT,
                     title = followed.canyonName,
                     body = "${debit.niveau.label} • ${debit.date.format(debitDateFormatter)}",
@@ -141,7 +146,7 @@ internal object NotificationSyncEngine {
                 val marker = buildForumTopicMarker(topic)
                 if (emittedForumMarkers.add(marker)) {
                     forumEvents += TrackedActivityEvent(
-                        id = "forum:${followed.key}:$marker:$nowEpochMs",
+                        id = "forum:$marker",
                         type = TrackedActivityType.FORUM,
                         title = topic.title,
                         body = topic.lastAuthor
@@ -171,7 +176,7 @@ internal object NotificationSyncEngine {
                 val marker = buildForumTopicMarker(topic)
                 if (emittedForumMarkers.add(marker)) {
                     forumEvents += TrackedActivityEvent(
-                        id = "forum-thread:${followed.topicId}:$marker:$nowEpochMs",
+                        id = "forum:$marker",
                         type = TrackedActivityType.FORUM,
                         title = topic.title,
                         body = topic.lastAuthor

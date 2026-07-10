@@ -51,24 +51,28 @@ class AppNotificationPublisher @Inject constructor(
         )
     }
 
-    fun publishDebitEvents(events: List<TrackedActivityEvent>) {
-        if (events.isEmpty() || !canPostNotifications()) return
+    fun publishDebitEvents(events: List<TrackedActivityEvent>): Boolean {
+        if (events.isEmpty()) return true
+        if (!canPostNotifications(DEBIT_CHANNEL_ID)) return false
         val notification = if (events.size == 1) {
             buildSingleDebitNotification(events.first())
         } else {
             buildGroupedDebitNotification(events)
         }
         notifySafely(DEBIT_NOTIFICATION_ID, notification)
+        return true
     }
 
-    fun publishForumEvents(events: List<TrackedActivityEvent>) {
-        if (events.isEmpty() || !canPostNotifications()) return
+    fun publishForumEvents(events: List<TrackedActivityEvent>): Boolean {
+        if (events.isEmpty()) return true
+        if (!canPostNotifications(FORUM_CHANNEL_ID)) return false
         val notification = if (events.size == 1) {
             buildSingleForumNotification(events.first())
         } else {
             buildGroupedForumNotification(events)
         }
         notifySafely(FORUM_NOTIFICATION_ID, notification)
+        return true
     }
 
     private fun buildSingleDebitNotification(event: TrackedActivityEvent) =
@@ -161,9 +165,14 @@ class AppNotificationPublisher @Inject constructor(
         )
     }
 
-    private fun canPostNotifications(): Boolean {
-        return Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU ||
+    private fun canPostNotifications(channelId: String): Boolean {
+        val hasPermission = Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU ||
             ContextCompat.checkSelfPermission(context, Manifest.permission.POST_NOTIFICATIONS) == PackageManager.PERMISSION_GRANTED
+        if (!hasPermission || !NotificationManagerCompat.from(context).areNotificationsEnabled()) return false
+        return Build.VERSION.SDK_INT < Build.VERSION_CODES.O ||
+            context.getSystemService(NotificationManager::class.java)
+                ?.getNotificationChannel(channelId)
+                ?.importance != NotificationManager.IMPORTANCE_NONE
     }
 
     @SuppressLint("MissingPermission")

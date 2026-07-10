@@ -59,6 +59,7 @@ data class TrackedActivityEvent(
     val canyonName: String? = null,
     val forumName: String? = null,
     val externalUrl: String? = null,
+    val notificationDelivered: Boolean = false,
 )
 
 @Serializable

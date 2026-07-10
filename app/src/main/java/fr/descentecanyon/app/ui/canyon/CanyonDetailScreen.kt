@@ -1,7 +1,10 @@
 package fr.descentecanyon.app.ui.canyon
 
+import android.Manifest
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.net.Uri
+import android.os.Build
 import android.util.Patterns
 import android.widget.Toast
 import androidx.compose.animation.AnimatedVisibility
@@ -91,6 +94,9 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
+import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.core.content.ContextCompat
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
@@ -154,6 +160,9 @@ fun CanyonDetailScreen(
     val context = LocalContext.current
     val lifecycleOwner = LocalLifecycleOwner.current
     val contentWidth = rememberDcContentWidth(maxWidth = 940.dp)
+    val notificationPermissionLauncher = rememberLauncherForActivityResult(
+        contract = ActivityResultContracts.RequestPermission(),
+    ) { viewModel.toggleDebitNotifications() }
 
     LaunchedEffect(canyonId) {
         PerformanceTrace.logEvent("canyon_detail_screen_visible", "canyonId" to canyonId)
@@ -220,7 +229,16 @@ fun CanyonDetailScreen(
                         AddInterestIcon(contentDescription = stringResource(R.string.interest_rating_add_action))
                     }
                     IconButton(
-                        onClick = viewModel::toggleDebitNotifications,
+                        onClick = {
+                            if (!uiState.isDebitNotificationsEnabled &&
+                                Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU &&
+                                ContextCompat.checkSelfPermission(context, Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED
+                            ) {
+                                notificationPermissionLauncher.launch(Manifest.permission.POST_NOTIFICATIONS)
+                            } else {
+                                viewModel.toggleDebitNotifications()
+                            }
+                        },
                         modifier = Modifier.testTag(TestTags.detailDebitNotificationButton),
                     ) {
                         Icon(

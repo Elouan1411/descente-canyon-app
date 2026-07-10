@@ -1,8 +1,13 @@
 package fr.descentecanyon.app.ui.home
 
+import android.Manifest
 import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.net.Uri
+import android.os.Build
+import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -75,6 +80,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import androidx.core.content.ContextCompat
 import fr.descentecanyon.app.R
 import fr.descentecanyon.app.domain.model.Debit
 import fr.descentecanyon.app.domain.model.ForumCategory
@@ -118,6 +124,13 @@ fun HomeScreen(
     val screenHorizontalPadding = rememberDcScreenHorizontalPadding()
     var showLoginDialog by remember { mutableStateOf(false) }
     var selectedFeedOverride by remember { mutableStateOf<HomeFeedType?>(null) }
+    var pendingFollowAction by remember { mutableStateOf<(() -> Unit)?>(null) }
+    val notificationPermissionLauncher = rememberLauncherForActivityResult(
+        contract = ActivityResultContracts.RequestPermission(),
+    ) {
+        pendingFollowAction?.invoke()
+        pendingFollowAction = null
+    }
     val selectedFeed = selectedFeedOverride ?: homeState.selectedFeed
     val listState = rememberLazyListState()
     val selectFeed: (HomeFeedType) -> Unit = { type ->
@@ -331,15 +344,37 @@ fun HomeScreen(
                                 openExternalUrl(context, url)
                             },
                             onToggleCategoryFollow = {
-                                homeViewModel.toggleForumCategoryFollow(
-                                    ForumCategory(
-                                        forumId = topic.forumId,
-                                        forumName = topic.forumName,
-                                        forumUrl = topic.topicUrl,
+                                val toggle = {
+                                    homeViewModel.toggleForumCategoryFollow(
+                                        ForumCategory(
+                                            forumId = topic.forumId,
+                                            forumName = topic.forumName,
+                                            forumUrl = topic.topicUrl,
+                                        )
                                     )
-                                )
+                                }
+                                if (!homeState.followedForumCategoryKeys.contains(forumCategoryKey(topic.forumId, topic.forumName)) &&
+                                    Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU &&
+                                    ContextCompat.checkSelfPermission(context, Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED
+                                ) {
+                                    pendingFollowAction = toggle
+                                    notificationPermissionLauncher.launch(Manifest.permission.POST_NOTIFICATIONS)
+                                } else {
+                                    toggle()
+                                }
                             },
-                            onToggleThreadFollow = { homeViewModel.toggleForumThreadFollow(topic) },
+                            onToggleThreadFollow = {
+                                val toggle = { homeViewModel.toggleForumThreadFollow(topic) }
+                                if (topic.topicId !in homeState.followedForumThreadIds &&
+                                    Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU &&
+                                    ContextCompat.checkSelfPermission(context, Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED
+                                ) {
+                                    pendingFollowAction = toggle
+                                    notificationPermissionLauncher.launch(Manifest.permission.POST_NOTIFICATIONS)
+                                } else {
+                                    toggle()
+                                }
+                            },
                         )
                     }
                 }
