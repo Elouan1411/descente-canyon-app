@@ -8,8 +8,10 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import fr.descentecanyon.app.R
 import fr.descentecanyon.app.domain.model.DailyWeatherForecast
 import java.time.format.DateTimeFormatter
 import java.util.Locale
@@ -37,7 +39,7 @@ fun CanyonDailyForecastCard(
             verticalArrangement = Arrangement.spacedBy(16.dp),
         ) {
             Text(
-                text = "Prévisions Météo (5 Jours)",
+                text = stringResource(R.string.weather_daily_title),
                 style = MaterialTheme.typography.titleMedium,
                 fontWeight = FontWeight.SemiBold,
             )
@@ -48,7 +50,7 @@ fun CanyonDailyForecastCard(
             ) {
                 itemsIndexed(forecasts) { index, forecast ->
                     val isSelected = index == selectedIndex
-                    val dayOfWeek = forecast.date.format(DateTimeFormatter.ofPattern("EEE", Locale.FRANCE)).replaceFirstChar { it.uppercase() }
+                    val dayOfWeek = forecast.date.format(DateTimeFormatter.ofPattern("EEE", Locale.getDefault())).replaceFirstChar { it.uppercase() }
                     
                     Surface(
                         color = if (isSelected) MaterialTheme.colorScheme.primaryContainer else MaterialTheme.colorScheme.surface,
@@ -81,7 +83,7 @@ fun CanyonDailyForecastCard(
                 verticalArrangement = Arrangement.spacedBy(8.dp),
                 modifier = Modifier.fillMaxWidth()
             ) {
-                val fullDate = selectedForecast.date.format(DateTimeFormatter.ofPattern("EEEE d MMMM", Locale.FRANCE)).replaceFirstChar { it.uppercase() }
+                val fullDate = selectedForecast.date.format(DateTimeFormatter.ofPattern("EEEE d MMMM", Locale.getDefault())).replaceFirstChar { it.uppercase() }
                 Text(
                     text = fullDate,
                     style = MaterialTheme.typography.titleSmall,
@@ -93,15 +95,15 @@ fun CanyonDailyForecastCard(
                     horizontalArrangement = Arrangement.SpaceBetween
                 ) {
                     DetailItem(
-                        label = "Temps",
-                        value = WeatherIconHelper.getDescriptionForWeatherCode(selectedForecast.weatherCode)
+                        label = stringResource(R.string.weather_daily_condition),
+                        value = stringResource(WeatherIconHelper.getDescriptionForWeatherCode(selectedForecast.weatherCode))
                     )
                     DetailItem(
-                        label = "Températures",
+                        label = stringResource(R.string.weather_daily_temperatures),
                         value = "${selectedForecast.temperatureMin?.toInt() ?: "--"}°C / ${selectedForecast.temperatureMax?.toInt() ?: "--"}°C"
                     )
                     DetailItem(
-                        label = "Précipitations",
+                        label = stringResource(R.string.weather_daily_precipitation),
                         value = "${selectedForecast.precipitationMm} mm"
                     )
                 }
