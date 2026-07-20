@@ -371,6 +371,7 @@ object DatabaseModule {
             )
             db.execSQL("CREATE INDEX IF NOT EXISTS `index_canyon_pdfs_canyonId` ON `canyon_pdfs` (`canyonId`)")
             db.execSQL("CREATE UNIQUE INDEX IF NOT EXISTS `index_canyon_pdfs_serverPdfId` ON `canyon_pdfs` (`serverPdfId`)")
+            ensureTableColumn(db, "daily_weather", "weatherCode", "INTEGER")
         }
     }
 
