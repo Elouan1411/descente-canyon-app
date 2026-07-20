@@ -528,6 +528,11 @@ private fun CanyonDetailContent(
             )
         }
         item {
+            CanyonDailyForecastCard(
+                forecasts = weather?.dailyForecasts ?: emptyList(),
+            )
+        }
+        item {
             CanyonDebitPredictionCard(
                 predictions = predictions,
                 isLoading = isLoadingPredictions,
