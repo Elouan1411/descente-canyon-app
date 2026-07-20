@@ -55,7 +55,7 @@ fun CanyonDailyForecastCard(
                     Surface(
                         color = if (isSelected) MaterialTheme.colorScheme.primaryContainer else MaterialTheme.colorScheme.surface,
                         shape = MaterialTheme.shapes.medium,
-                        modifier = Modifier.clickable { selectedIndex = index }
+                        onClick = { selectedIndex = index }
                     ) {
                         Column(
                             horizontalAlignment = Alignment.CenterHorizontally,
