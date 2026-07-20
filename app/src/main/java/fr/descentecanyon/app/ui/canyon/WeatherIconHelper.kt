@@ -1,5 +1,8 @@
 package fr.descentecanyon.app.ui.canyon
 
+import androidx.annotation.StringRes
+import fr.descentecanyon.app.R
+
 object WeatherIconHelper {
     fun getEmojiForWeatherCode(weatherCode: Int?): String {
         return when (weatherCode) {
@@ -16,18 +19,19 @@ object WeatherIconHelper {
         }
     }
 
-    fun getDescriptionForWeatherCode(weatherCode: Int?): String {
+    @StringRes
+    fun getDescriptionForWeatherCode(weatherCode: Int?): Int {
         return when (weatherCode) {
-            0 -> "Ciel clair"
-            1, 2, 3 -> "Nuageux"
-            45, 48 -> "Brouillard"
-            51, 53, 55, 56, 57 -> "Bruine"
-            61, 63, 65, 66, 67 -> "Pluie"
-            71, 73, 75, 77 -> "Neige"
-            80, 81, 82 -> "Averses"
-            85, 86 -> "Averses de neige"
-            95, 96, 99 -> "Orage"
-            else -> "Inconnu"
+            0 -> R.string.weather_code_clear
+            1, 2, 3 -> R.string.weather_code_cloudy
+            45, 48 -> R.string.weather_code_fog
+            51, 53, 55, 56, 57 -> R.string.weather_code_drizzle
+            61, 63, 65, 66, 67 -> R.string.weather_code_rain
+            71, 73, 75, 77 -> R.string.weather_code_snow
+            80, 81, 82 -> R.string.weather_code_showers
+            85, 86 -> R.string.weather_code_snow_showers
+            95, 96, 99 -> R.string.weather_code_thunderstorm
+            else -> R.string.weather_code_unknown
         }
     }
 }
