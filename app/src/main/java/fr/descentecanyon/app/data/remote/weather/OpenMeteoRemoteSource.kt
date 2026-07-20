@@ -30,6 +30,8 @@ open class OpenMeteoRemoteSource @Inject constructor(
             )
             parameter("past_hours", 72)
             parameter("forecast_hours", 48)
+            parameter("daily", DAILY_VARIABLES)
+            parameter("forecast_days", 5)
             parameter("timezone", "auto")
         }.body()
     }
