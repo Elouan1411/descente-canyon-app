@@ -14,7 +14,7 @@ open class OpenMeteoRemoteSource @Inject constructor(
 
     companion object {
         private const val DAILY_VARIABLES =
-            "precipitation_sum,rain_sum,snowfall_sum,temperature_2m_mean,temperature_2m_min,temperature_2m_max,precipitation_hours"
+            "precipitation_sum,rain_sum,snowfall_sum,temperature_2m_mean,temperature_2m_min,temperature_2m_max,precipitation_hours,weather_code"
     }
 
     open suspend fun fetchForecast(
