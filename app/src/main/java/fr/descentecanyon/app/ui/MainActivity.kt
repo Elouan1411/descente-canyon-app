@@ -317,8 +317,7 @@ internal fun shouldShowBottomBar(backStackEntry: NavBackStackEntry?): Boolean {
         destination.hasRoute(Screen.Search::class) ||
         destination.hasRoute(Screen.Map::class) ||
         destination.hasRoute(Screen.Favorites::class) ||
-        destination.hasRoute(Screen.CanyonDetail::class) ||
-        destination.hasRoute(Screen.CanyonPointsMap::class)
+        destination.hasRoute(Screen.CanyonDetail::class)
 }
 
 internal fun handleBottomNavClick(

@@ -132,6 +132,42 @@ fun loadCurrentDeviceLocation(
         .addOnSuccessListener(::useIfFresh)
 }
 
+/**
+ * Observes the foreground device position. Call the returned function as soon as the map leaves
+ * composition so GPS updates do not continue in the background.
+ */
+@SuppressLint("MissingPermission")
+fun observeDeviceLocation(
+    context: Context,
+    onLocation: (Double, Double) -> Unit,
+    onUnavailable: () -> Unit = {},
+): () -> Unit {
+    if (!context.hasLocationPermission()) {
+        onUnavailable()
+        return {}
+    }
+
+    val client = LocationServices.getFusedLocationProviderClient(context)
+    val request = LocationRequest.Builder(
+        Priority.PRIORITY_HIGH_ACCURACY,
+        LOCATION_UPDATE_INTERVAL_MS,
+    )
+        .setMinUpdateIntervalMillis(LOCATION_UPDATE_MIN_INTERVAL_MS)
+        .build()
+    val callback = object : LocationCallback() {
+        override fun onLocationResult(result: LocationResult) {
+            result.lastLocation?.let { location ->
+                onLocation(location.latitude, location.longitude)
+            }
+        }
+    }
+
+    client.requestLocationUpdates(request, callback, Looper.getMainLooper())
+        .addOnFailureListener { onUnavailable() }
+
+    return { client.removeLocationUpdates(callback) }
+}
+
 private fun Location.isFreshEnough(): Boolean {
     val ageMs = (SystemClock.elapsedRealtimeNanos() - elapsedRealtimeNanos) / 1_000_000
     return ageMs in 0..LOCATION_MAX_UPDATE_AGE_MS

@@ -5,9 +5,11 @@ package fr.descentecanyon.app.ui.map
 import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.graphics.Paint
+import android.graphics.Path
 import android.graphics.Rect
 import android.os.Bundle
 import android.util.Log
+import android.view.Gravity
 import androidx.annotation.ColorInt
 import androidx.core.content.ContextCompat
 import androidx.compose.runtime.Composable
@@ -29,6 +31,7 @@ import org.maplibre.android.MapLibre
 import org.maplibre.android.annotations.IconFactory
 import org.maplibre.android.annotations.Marker
 import org.maplibre.android.annotations.MarkerOptions
+import org.maplibre.android.camera.CameraPosition
 import org.maplibre.android.camera.CameraUpdateFactory
 import org.maplibre.android.geometry.LatLng
 import org.maplibre.android.geometry.LatLngBounds
@@ -126,20 +129,32 @@ private val CANYON_TAP_LAYER_IDS = CANYON_VISIBLE_POINT_LAYER_IDS + CANYON_POINT
 
 private val EMPTY_FEATURE_COLLECTION = FeatureCollection.fromFeatures(emptyList<Feature>())
 
+enum class UserTrackingMode {
+    NONE,
+    LOCATION,
+    HEADING,
+}
+
 @Composable
 fun MapLibreView(
     markers: List<CanyonSummary>,
     userLatitude: Double?,
     userLongitude: Double?,
+    userBearingDegrees: Double? = null,
+    userTrackingMode: UserTrackingMode = UserTrackingMode.NONE,
+    positionCompassWithControls: Boolean = false,
     onMarkerClick: (Int) -> Unit,
     onVisibleBoundsChanged: (LatLngBounds) -> Unit = {},
     onCameraChanged: (MapCameraState) -> Unit = {},
+    onUserCameraMove: () -> Unit = {},
+    onCameraBearingChanged: (Double) -> Unit = {},
     clusterMarkers: Boolean = true,
     watershedGeometryJson: String? = null,
     watershedBounds: LatLngBounds? = null,
     showWatershed: Boolean = false,
     persistedCameraState: MapCameraState? = null,
     focusLocationRequestId: Int = 0,
+    resetNorthRequestId: Int = 0,
     styleUri: String = MAP_STYLE_URI,
     modifier: Modifier = Modifier,
 ) {
@@ -175,7 +190,7 @@ fun MapLibreView(
         factory = {
             mapView.apply {
                 getMapAsync { map ->
-                    renderState.bindMap(map, onMarkerClick, styleUri)
+                    renderState.bindMap(map, onMarkerClick, styleUri, positionCompassWithControls)
                 }
             }
         },
@@ -185,15 +200,21 @@ fun MapLibreView(
                 markers = markers,
                 userLatitude = userLatitude,
                 userLongitude = userLongitude,
+                userBearingDegrees = userBearingDegrees,
+                userTrackingMode = userTrackingMode,
+                positionCompassWithControls = positionCompassWithControls,
                 onMarkerClick = onMarkerClick,
                 onVisibleBoundsChanged = onVisibleBoundsChanged,
                 onCameraChanged = onCameraChanged,
+                onUserCameraMove = onUserCameraMove,
+                onCameraBearingChanged = onCameraBearingChanged,
                 clusterMarkers = clusterMarkers,
                 watershedGeometryJson = watershedGeometryJson,
                 watershedBounds = watershedBounds,
                 showWatershed = showWatershed,
                 persistedCameraState = persistedCameraState,
                 focusLocationRequestId = focusLocationRequestId,
+                resetNorthRequestId = resetNorthRequestId,
                 styleUri = styleUri,
             )
         },
@@ -212,9 +233,14 @@ private class MapRenderState(
     private var markers: List<CanyonSummary> = emptyList()
     private var userLatitude: Double? = null
     private var userLongitude: Double? = null
+    private var userBearingDegrees: Double? = null
+    private var userTrackingMode: UserTrackingMode = UserTrackingMode.NONE
+    private var positionCompassWithControls: Boolean = false
     private var onMarkerClick: (Int) -> Unit = {}
     private var onVisibleBoundsChanged: (LatLngBounds) -> Unit = {}
     private var onCameraChanged: (MapCameraState) -> Unit = {}
+    private var onUserCameraMove: () -> Unit = {}
+    private var onCameraBearingChanged: (Double) -> Unit = {}
     private var clusterMarkers: Boolean = true
     private var watershedGeometryJson: String? = null
     private var watershedBounds: LatLngBounds? = null
@@ -222,6 +248,9 @@ private class MapRenderState(
     private var persistedCameraState: MapCameraState? = null
     private var focusLocationRequestId: Int = 0
     private var lastFocusedLocationRequestId: Int = 0
+    private var resetNorthRequestId: Int = 0
+    private var lastResetNorthRequestId: Int = 0
+    private var lastFollowSignature: Int? = null
     private var listenersAttached = false
     private var lastRenderSignature: Int? = null
     private var lastFitDataSignature: Int? = null
@@ -233,10 +262,13 @@ private class MapRenderState(
         map: MapLibreMap,
         onMarkerClick: (Int) -> Unit,
         styleUri: String,
+        positionCompassWithControls: Boolean,
     ) {
         this.map = map
         this.onMarkerClick = onMarkerClick
         this.styleUri = styleUri
+        this.positionCompassWithControls = positionCompassWithControls
+        configureCompass(map)
         map.setStyle(Style.Builder().fromUri(styleUri)) {
             renderMode = null
             if (!listenersAttached) {
@@ -255,29 +287,42 @@ private class MapRenderState(
         markers: List<CanyonSummary>,
         userLatitude: Double?,
         userLongitude: Double?,
+        userBearingDegrees: Double?,
+        userTrackingMode: UserTrackingMode,
+        positionCompassWithControls: Boolean,
         onMarkerClick: (Int) -> Unit,
         onVisibleBoundsChanged: (LatLngBounds) -> Unit,
         onCameraChanged: (MapCameraState) -> Unit,
+        onUserCameraMove: () -> Unit,
+        onCameraBearingChanged: (Double) -> Unit,
         clusterMarkers: Boolean,
         watershedGeometryJson: String?,
         watershedBounds: LatLngBounds?,
         showWatershed: Boolean,
         persistedCameraState: MapCameraState?,
         focusLocationRequestId: Int,
+        resetNorthRequestId: Int,
         styleUri: String,
     ) {
         this.markers = markers
         this.userLatitude = userLatitude
         this.userLongitude = userLongitude
+        this.userBearingDegrees = userBearingDegrees
+        this.userTrackingMode = userTrackingMode
+        this.positionCompassWithControls = positionCompassWithControls
         this.onMarkerClick = onMarkerClick
         this.onVisibleBoundsChanged = onVisibleBoundsChanged
         this.onCameraChanged = onCameraChanged
+        this.onUserCameraMove = onUserCameraMove
+        this.onCameraBearingChanged = onCameraBearingChanged
         this.clusterMarkers = clusterMarkers
         this.watershedGeometryJson = watershedGeometryJson
         this.watershedBounds = watershedBounds
         this.showWatershed = showWatershed
         this.persistedCameraState = persistedCameraState
         this.focusLocationRequestId = focusLocationRequestId
+        this.resetNorthRequestId = resetNorthRequestId
+        map?.let(::configureCompass)
 
         if (this.styleUri != styleUri) {
             this.styleUri = styleUri
@@ -302,6 +347,7 @@ private class MapRenderState(
             Log.e(TAG, "Unable to refresh map data", throwable)
         }
 
+        maybeResetNorth()
         maybeFocusOnLocation()
     }
 
@@ -315,6 +361,12 @@ private class MapRenderState(
                 }
             }
             dispatchVisibleBounds(map)
+            onCameraBearingChanged(normalizeBearing(map.cameraPosition.bearing))
+        }
+        map.addOnCameraMoveStartedListener { reason ->
+            if (reason == MapLibreMap.OnCameraMoveStartedListener.REASON_API_GESTURE) {
+                onUserCameraMove()
+            }
         }
         map.setOnMarkerClickListener { marker ->
             if (!clusterMarkers) {
@@ -328,6 +380,19 @@ private class MapRenderState(
             }
             handleClusteredTap(map, latLng)
         }
+    }
+
+    private fun configureCompass(map: MapLibreMap) {
+        if (!positionCompassWithControls) {
+            map.uiSettings.setCompassEnabled(true)
+            return
+        }
+
+        val density = context.resources.displayMetrics.density
+        map.uiSettings.setCompassEnabled(true)
+        map.uiSettings.setCompassGravity(Gravity.END or Gravity.CENTER_VERTICAL)
+        map.uiSettings.setCompassMargins(0, 0, (12 * density).roundToInt(), (58 * density).roundToInt())
+        map.uiSettings.setCompassFadeFacingNorth(true)
     }
 
     private fun handleAnnotationTap(marker: Marker) {
@@ -402,6 +467,8 @@ private class MapRenderState(
             markers = markers,
             userLatitude = userLatitude,
             userLongitude = userLongitude,
+            userBearingDegrees = userBearingDegrees,
+            userTrackingMode = userTrackingMode,
             clusterMarkers = clusterMarkers,
             watershedGeometryJson = watershedGeometryJson,
             showWatershed = showWatershed,
@@ -573,6 +640,36 @@ private class MapRenderState(
         val map = map ?: return
         val latitude = userLatitude ?: return
         val longitude = userLongitude ?: return
+
+        if (userTrackingMode != UserTrackingMode.NONE) {
+            val bearing = when (userTrackingMode) {
+                UserTrackingMode.LOCATION -> 0.0
+                UserTrackingMode.HEADING -> userBearingDegrees ?: map.cameraPosition.bearing
+                UserTrackingMode.NONE -> map.cameraPosition.bearing
+            }
+            val signature = listOf(
+                latitude.coordinateHash(),
+                longitude.coordinateHash(),
+                bearing.roundToInt(),
+                userTrackingMode.ordinal,
+            ).fold(17) { result, value -> 31 * result + value }
+            if (signature == lastFollowSignature) return
+
+            lastFollowSignature = signature
+            didFitCamera = true
+            map.animateCamera(
+                CameraUpdateFactory.newCameraPosition(
+                    CameraPosition.Builder()
+                        .target(LatLng(latitude, longitude))
+                        .zoom(maxOf(map.cameraPosition.zoom, USER_LOCATION_FOCUS_ZOOM))
+                        .bearing(bearing)
+                        .build(),
+                ),
+                350,
+            )
+            return
+        }
+
         if (focusLocationRequestId == 0 || focusLocationRequestId == lastFocusedLocationRequestId) return
 
         lastFocusedLocationRequestId = focusLocationRequestId
@@ -580,6 +677,26 @@ private class MapRenderState(
         map.animateCamera(
             CameraUpdateFactory.newLatLngZoom(LatLng(latitude, longitude), USER_LOCATION_FOCUS_ZOOM),
             500,
+        )
+    }
+
+    private fun maybeResetNorth() {
+        val map = map ?: return
+        if (resetNorthRequestId == 0 || resetNorthRequestId == lastResetNorthRequestId) return
+
+        val camera = map.cameraPosition
+        val target = camera.target ?: return
+        lastResetNorthRequestId = resetNorthRequestId
+        map.animateCamera(
+            CameraUpdateFactory.newCameraPosition(
+                CameraPosition.Builder()
+                    .target(target)
+                    .zoom(camera.zoom)
+                    .tilt(camera.tilt)
+                    .bearing(0.0)
+                    .build(),
+            ),
+            250,
         )
     }
 
@@ -614,6 +731,8 @@ private class MapRenderState(
         markers: List<CanyonSummary>,
         userLatitude: Double?,
         userLongitude: Double?,
+        userBearingDegrees: Double?,
+        userTrackingMode: UserTrackingMode,
         clusterMarkers: Boolean,
         watershedGeometryJson: String?,
         showWatershed: Boolean,
@@ -629,6 +748,8 @@ private class MapRenderState(
         }
         result = 31 * result + userLatitude.coordinateHash()
         result = 31 * result + userLongitude.coordinateHash()
+        result = 31 * result + userBearingDegrees.coordinateHash()
+        result = 31 * result + userTrackingMode.ordinal
         result = 31 * result + showWatershed.hashCode()
         if (showWatershed && !watershedGeometryJson.isNullOrBlank()) {
             result = 31 * result + watershedGeometryJson.hashCode()
@@ -902,7 +1023,18 @@ private class MapRenderState(
             val currentUserLatitude = userLatitude
             val currentUserLongitude = userLongitude
             if (currentUserLatitude != null && currentUserLongitude != null) {
-                add(AnnotationMarker.User(currentUserLatitude, currentUserLongitude))
+                add(
+                    AnnotationMarker.User(
+                        latitude = currentUserLatitude,
+                        longitude = currentUserLongitude,
+                        // Annotation icons are screen-aligned: keep the arrow up while the map follows heading.
+                        bearingDegrees = when (userTrackingMode) {
+                            UserTrackingMode.NONE -> null
+                            UserTrackingMode.LOCATION -> userBearingDegrees
+                            UserTrackingMode.HEADING -> 0.0
+                        },
+                    )
+                )
             }
         }
     }
@@ -925,6 +1057,7 @@ private sealed interface AnnotationMarker {
     data class User(
         override val latitude: Double,
         override val longitude: Double,
+        val bearingDegrees: Double?,
     ) : AnnotationMarker
 }
 
@@ -1026,6 +1159,8 @@ private fun Double?.coordinateHash(): Int {
     return this?.times(1_000_000)?.roundToInt() ?: 0
 }
 
+private fun normalizeBearing(bearing: Double): Double = (bearing % 360.0 + 360.0) % 360.0
+
 internal fun shouldShowDetailPoints(
     zoom: Double,
     visibleMarkerCount: Int,
@@ -1092,7 +1227,7 @@ private fun drawableToBitmap(
 private fun AnnotationMarker.toMarkerBitmap(context: android.content.Context): Bitmap {
     return when (this) {
         is AnnotationMarker.Canyon -> drawableToBitmap(context, canyon.markerIconRes())
-        is AnnotationMarker.User -> createMarkerBitmap(context.getString(R.string.map_user_marker_label), 0xFF111827.toInt())
+        is AnnotationMarker.User -> createUserMarkerBitmap(bearingDegrees)
     }
 }
 
@@ -1147,5 +1282,39 @@ private fun createMarkerBitmap(label: String, colorInt: Int): Bitmap {
     canvas.drawRoundRect(rect.left.toFloat(), rect.top.toFloat(), rect.right.toFloat(), rect.bottom.toFloat(), 22f, 22f, strokePaint)
     val y = height / 2f - (textPaint.descent() + textPaint.ascent()) / 2f
     canvas.drawText(label.take(4), width / 2f, y, textPaint)
+    return bitmap
+}
+
+private fun createUserMarkerBitmap(bearingDegrees: Double?): Bitmap {
+    val width = 120
+    val height = 144
+    val centerX = width / 2f
+    val anchorY = 117f
+    val bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888)
+    val canvas = Canvas(bitmap)
+    val haloPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply { color = USER_HALO_COLOR }
+    val whitePaint = Paint(Paint.ANTI_ALIAS_FLAG).apply { color = USER_STROKE_COLOR }
+    val bluePaint = Paint(Paint.ANTI_ALIAS_FLAG).apply { color = USER_POINT_COLOR }
+
+    canvas.drawCircle(centerX, anchorY - 18f, 42f, haloPaint)
+    if (bearingDegrees == null) {
+        canvas.drawCircle(centerX, anchorY - 18f, 22f, whitePaint)
+        canvas.drawCircle(centerX, anchorY - 18f, 16f, bluePaint)
+    } else {
+        canvas.save()
+        canvas.rotate(bearingDegrees.toFloat(), centerX, anchorY - 18f)
+        val arrow = Path().apply {
+            moveTo(centerX, anchorY - 57f)
+            lineTo(centerX - 22f, anchorY + 12f)
+            lineTo(centerX, anchorY + 2f)
+            lineTo(centerX + 22f, anchorY + 12f)
+            close()
+        }
+        canvas.drawPath(arrow, whitePaint)
+        canvas.scale(0.72f, 0.72f, centerX, anchorY - 18f)
+        canvas.drawPath(arrow, bluePaint)
+        canvas.restore()
+    }
+
     return bitmap
 }
