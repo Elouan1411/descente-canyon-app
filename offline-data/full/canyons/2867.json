@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "scrapedAt": "2026-03-24T09:47:13.442965+00:00",
+  "scrapedAt": "2026-07-16T16:57:53.082490+00:00",
   "source": {
     "site": "descente-canyon.com",
     "canyonId": 2867,
@@ -33,34 +33,34 @@
       "coursEau": "Vallon des Meyeres"
     },
     "rating": {
-      "cotation": "",
-      "interet": null,
-      "nbVotes": 0
+      "cotation": "v3a1III",
+      "interet": 1.6,
+      "nbVotes": 9
     },
     "metrics": {
       "altitudeDepartM": 1120,
       "deniveleM": 420,
       "longueurM": 1800,
-      "cascadeMaxM": null,
-      "cordeMiniM": null,
-      "navette": null
+      "cascadeMaxM": 35,
+      "cordeMiniM": 35,
+      "navette": "3.0km"
     },
     "timings": {
-      "approche": null,
-      "descente": null,
-      "retour": null
+      "approche": "45min",
+      "descente": "3h00",
+      "retour": "5min"
     },
     "topo": {
-      "accesAval": null,
+      "accesAval": "Possibilité de laisser le véhicule à l'arrivé et de remonter à pied jusqu'au départ de la marche d'approche (point 112) en 30min.",
       "accesAmont": null,
-      "approche": null,
-      "descente": null,
-      "retour": null,
-      "engagement": null,
-      "periode": null,
+      "approche": "Une très belle marche d'approche avec une vue magnifique sur le Riu (Affluent) et un très beau passage de la Crête de la Pelau.",
+      "descente": "Une première partie horizontale à sec jusqu'à la marche de 130m puis quelques bassins bien alimentés et une série de cascades finales magnifiques avec de superbes bassins de réception.",
+      "retour": "On traverse le vallon de Pierlas puis on remonte une pente raide pour rejoindre la D428 et le véhicule en 5min.",
+      "engagement": "Peu engagé sur toute la première partie puis un engagement certain avec les cascades finales.",
+      "periode": "La première partie est presque toujours à sec et l'eau apparait dans la deuxième partie avec de belles vasques et cascades.",
       "geologie": null,
       "historique": null,
-      "remarques": null
+      "remarques": "Descente à effectuer au printemps ou après une période de pluies car sinon il est à sec ...."
     },
     "geoPoints": [
       {
@@ -70,16 +70,54 @@
         "latitude": 44.007507,
         "longitude": 7.014771,
         "label": null
+      },
+      {
+        "canyonId": 2867,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 44.009014,
+        "longitude": 7.012775,
+        "label": null
       }
     ],
     "representativePoint": {
-      "type": "SORTIE",
-      "latitude": 44.007507,
-      "longitude": 7.014771,
+      "type": "PARKING_AVAL",
+      "latitude": 44.009014,
+      "longitude": 7.012775,
       "label": null
     },
     "bibliography": {
-      "topoguides": [],
+      "topoguides": [
+        {
+          "id": "biblio_b228f4b2ce58d332",
+          "kind": "TOPOGUIDE",
+          "title": "Canyoning : Alpes Maritimes. 170 descentes",
+          "authors": [
+            "Franck Jourdan",
+            "Jean-François Fiorina"
+          ],
+          "publicationYear": 2026,
+          "reference": "9782958258054",
+          "editor": "auto-edition",
+          "status": "en stock\n\n- 35,99 € -\n\nCommandez cet ouvrage dès maintenant !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/1175/Canyoning-:-Alpes-Maritimes--170-descentes.html"
+        },
+        {
+          "id": "biblio_e4d17cea52b1c46f",
+          "kind": "TOPOGUIDE",
+          "title": "Les Canyons Sauvages des Alpes-Maritimes",
+          "authors": [
+            "Jean-François Fiorina",
+            "Franck Jourdan",
+            "Jean-Claude Juda"
+          ],
+          "publicationYear": 2004,
+          "reference": "ISBN 2-9520630-1-X",
+          "editor": "Association Corse Canyon",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/188/topoguide.html"
+        }
+      ],
       "maps": [
         {
           "id": "map_1b6eca29674d88a9",
@@ -93,16 +131,17 @@
     },
     "reglementation": {
       "hasSpecificRegulation": true,
+      "isForbidden": false,
       "rules": [
         {
           "id": 543,
-          "status": "Actif",
+          "status": "Abrogé",
           "action": "Interdit",
           "title": "Arrêté municipal (Pierlas) - 21 mai 2024",
           "summary": "La pratique de l'escalade et du canyoning sont interdit sur toute la commune...",
           "remark": "La raison invoquée est simplement... un risque d'accident majeur. (?)",
-          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nArrêté municipal n°2024-01 du 21 mai 2024 (commune de Pierlas)",
-          "effectiveDate": "21 mai 2024",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nArrêté municipal n°2024-01 du 21 mai 2024 (commune de Pierlas)\n\nConsultez :\n\nArrêté annulé en date du 15/10/2024",
+          "effectiveDate": "15 oct 2024",
           "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/543/legislation.html",
           "attachments": [
             {
@@ -140,8 +179,7 @@
           "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/26/legislation.html",
           "attachments": []
         }
-      ],
-      "isForbidden": true
+      ]
     }
   }
 }

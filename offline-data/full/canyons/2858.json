@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "scrapedAt": "2026-03-24T09:47:11.064863+00:00",
+  "scrapedAt": "2026-07-16T16:57:50.775648+00:00",
   "source": {
     "site": "descente-canyon.com",
     "canyonId": 2858,
@@ -79,7 +79,35 @@
       "label": null
     },
     "bibliography": {
-      "topoguides": [],
+      "topoguides": [
+        {
+          "id": "biblio_b228f4b2ce58d332",
+          "kind": "TOPOGUIDE",
+          "title": "Canyoning : Alpes Maritimes. 170 descentes",
+          "authors": [
+            "Franck Jourdan",
+            "Jean-François Fiorina"
+          ],
+          "publicationYear": 2026,
+          "reference": "9782958258054",
+          "editor": "auto-edition",
+          "status": "en stock\n\n- 35,99 € -\n\nCommandez cet ouvrage dès maintenant !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/1175/Canyoning-:-Alpes-Maritimes--170-descentes.html"
+        },
+        {
+          "id": "biblio_c5e9cf6236f834de",
+          "kind": "TOPOGUIDE",
+          "title": "CDROM - Inventaire des canyons méditérannéens",
+          "authors": [
+            "Les Doigts Déglingués"
+          ],
+          "publicationYear": 2003,
+          "reference": "ISBN N°2-9513896-6-3",
+          "editor": "auto-édition",
+          "status": null,
+          "detailUrl": "https://www.descente-canyon.com/canyoning/topoguide/1266/topoguide.html"
+        }
+      ],
       "maps": [
         {
           "id": "map_1b6eca29674d88a9",
@@ -93,6 +121,7 @@
     },
     "reglementation": {
       "hasSpecificRegulation": true,
+      "isForbidden": false,
       "rules": [
         {
           "id": 349,
@@ -123,8 +152,7 @@
           "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/26/legislation.html",
           "attachments": []
         }
-      ],
-      "isForbidden": false
+      ]
     }
   }
 }

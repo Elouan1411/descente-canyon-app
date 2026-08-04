@@ -6,12 +6,12 @@ import android.database.sqlite.SQLiteDatabase
 import android.util.JsonReader
 import android.util.JsonToken
 import androidx.room.withTransaction
-import androidx.sqlite.db.SupportSQLiteDatabase
 import dagger.hilt.android.qualifiers.ApplicationContext
 import fr.descentecanyon.app.data.local.dao.AppMetadataDao
 import fr.descentecanyon.app.data.local.dao.BibliographyDao
 import fr.descentecanyon.app.data.local.dao.CanyonDao
 import fr.descentecanyon.app.data.local.dao.CanyonTrackDao
+import fr.descentecanyon.app.data.local.dao.ForumUserDao
 import fr.descentecanyon.app.data.local.dao.GeoPointDao
 import fr.descentecanyon.app.data.local.dao.RegulationDao
 import fr.descentecanyon.app.data.local.dao.SearchIndexDao
@@ -24,6 +24,7 @@ import fr.descentecanyon.app.data.local.entity.CanyonBibliographyEntity
 import fr.descentecanyon.app.data.local.entity.CanyonEntity
 import fr.descentecanyon.app.data.local.entity.CanyonRegulationEntity
 import fr.descentecanyon.app.data.local.entity.CanyonTrackEntity
+import fr.descentecanyon.app.data.local.entity.ForumUserEntity
 import fr.descentecanyon.app.data.local.entity.GeoPointEntity
 import fr.descentecanyon.app.data.local.entity.RegulationTextEntity
 import fr.descentecanyon.app.data.local.entity.SearchIndexEntity
@@ -54,6 +55,7 @@ class EmbeddedAppDataImporter @Inject constructor(
     private val watershedDao: WatershedDao,
     private val appMetadataDao: AppMetadataDao,
     private val searchIndexDao: SearchIndexDao,
+    private val forumUserDao: ForumUserDao,
     private val representativePointSelector: RepresentativePointSelector,
 ) {
 
@@ -123,6 +125,7 @@ class EmbeddedAppDataImporter @Inject constructor(
                             "importedRows" to rows.importedRowCount,
                             "canyonRows" to rows.canyonEntities.size,
                             "trackRows" to rows.canyonTrackEntities.size,
+                            "forumUserRows" to rows.forumUserEntities.size,
                         )
                     },
                 ) {
@@ -363,9 +366,10 @@ class EmbeddedAppDataImporter @Inject constructor(
             bibliographyEntries = readAssetText("bibliography_entries.json"),
             canyonBibliography = readAssetText("canyon_bibliography.json"),
             regulationTexts = readAssetText("regulation_texts.json"),
-            canyonRegulations = readAssetText("canyon_regulations.json"),
-            canyonTracks = readOptionalAssetText("tracks.json"),
-        )
+                canyonRegulations = readAssetText("canyon_regulations.json"),
+                canyonTracks = readOptionalAssetText("tracks.json"),
+                forumUsers = readOptionalAssetText("forum_users.json"),
+            )
     }
 
     private fun decodeCoreImportPayloads(payloads: CoreAssetPayloads): DecodedCoreImportRows {
@@ -378,6 +382,9 @@ class EmbeddedAppDataImporter @Inject constructor(
             canyonRegulations = json.decodeFromString(ListSerializer(CanyonRegulationImportRow.serializer()), payloads.canyonRegulations),
             canyonTracks = payloads.canyonTracks?.let {
                 json.decodeFromString(ListSerializer(CanyonTrackImportRow.serializer()), it)
+            }.orEmpty(),
+            forumUsers = payloads.forumUsers?.let {
+                json.decodeFromString(ListSerializer(ForumUserImportRow.serializer()), it)
             }.orEmpty(),
         )
     }
@@ -396,6 +403,7 @@ class EmbeddedAppDataImporter @Inject constructor(
             regulationTextEntities = decodedRows.regulationTexts.map { it.toEntity(json) },
             canyonRegulationEntities = decodedRows.canyonRegulations.map { it.toEntity() },
             canyonTrackEntities = decodedRows.canyonTracks.map { it.toEntity(json) },
+            forumUserEntities = decodedRows.forumUsers.map { it.toEntity() },
         )
     }
 
@@ -531,6 +539,26 @@ class EmbeddedAppDataImporter @Inject constructor(
                         bboxMaxLatitude = cursor.getDoubleOrNull("bboxMaxLatitude"),
                     )
                     },
+                    forumUserEntities = assetDatabase.queryList(
+                    "SELECT username, normalizedUsername, forumUserId, profileUrl, source, hasForumActivity, hasDebitActivity, forumPostCount, debitObservationCount, lastForumPostAt, lastForumPostUrl, lastDebitObservationAt, lastDebitObservationUrl, updatedAt FROM forum_users"
+                    ) { cursor ->
+                    ForumUserEntity(
+                        username = cursor.getString("username"),
+                        normalizedUsername = cursor.getString("normalizedUsername"),
+                        forumUserId = cursor.getIntOrNull("forumUserId"),
+                        profileUrl = cursor.getStringOrNull("profileUrl"),
+                        source = cursor.getString("source"),
+                        hasForumActivity = cursor.getBoolean("hasForumActivity"),
+                        hasDebitActivity = cursor.getBoolean("hasDebitActivity"),
+                        forumPostCount = cursor.getInt("forumPostCount"),
+                        debitObservationCount = cursor.getInt("debitObservationCount"),
+                        lastForumPostAt = cursor.getStringOrNull("lastForumPostAt"),
+                        lastForumPostUrl = cursor.getStringOrNull("lastForumPostUrl"),
+                        lastDebitObservationAt = cursor.getStringOrNull("lastDebitObservationAt"),
+                        lastDebitObservationUrl = cursor.getStringOrNull("lastDebitObservationUrl"),
+                        updatedAt = cursor.getString("updatedAt"),
+                    )
+                    },
                 )
             } finally {
                 assetDatabase.close()
@@ -593,6 +621,11 @@ class EmbeddedAppDataImporter @Inject constructor(
                 .forEach { (_, tracks) ->
                     tracks.chunked(300).forEach { chunk -> canyonTrackDao.insertAll(chunk) }
                 }
+
+            forumUserDao.clearAll()
+            rows.forumUserEntities
+                .chunked(500)
+                .forEach { chunk -> forumUserDao.insertAll(chunk) }
 
             appMetadataDao.insert(AppMetadataEntity(DATASET_VERSION_KEY, datasetVersion))
         }
@@ -1108,6 +1141,25 @@ class EmbeddedAppDataImporter @Inject constructor(
         )
     }
 
+    private fun ForumUserImportRow.toEntity(): ForumUserEntity {
+        return ForumUserEntity(
+            username = username,
+            normalizedUsername = normalizedUsername,
+            forumUserId = forumUserId,
+            profileUrl = profileUrl,
+            source = source,
+            hasForumActivity = hasForumActivity,
+            hasDebitActivity = hasDebitActivity,
+            forumPostCount = forumPostCount,
+            debitObservationCount = debitObservationCount,
+            lastForumPostAt = lastForumPostAt,
+            lastForumPostUrl = lastForumPostUrl,
+            lastDebitObservationAt = lastDebitObservationAt,
+            lastDebitObservationUrl = lastDebitObservationUrl,
+            updatedAt = updatedAt,
+        )
+    }
+
     companion object {
         private const val DATASET_VERSION_KEY = "embedded_dataset_version"
         private const val WATERSHEDS_VERSION_KEY = "embedded_watersheds_version"
@@ -1160,6 +1212,7 @@ private data class CoreAssetPayloads(
     val regulationTexts: String,
     val canyonRegulations: String,
     val canyonTracks: String?,
+    val forumUsers: String?,
 ) {
     val totalPayloadBytes: Int
         get() = listOfNotNull(
@@ -1170,6 +1223,7 @@ private data class CoreAssetPayloads(
             regulationTexts,
             canyonRegulations,
             canyonTracks,
+            forumUsers,
         ).sumOf { it.toByteArray().size }
 
     val trackPayloadBytes: Int
@@ -1187,6 +1241,7 @@ private data class DecodedCoreImportRows(
     val regulationTexts: List<RegulationImportRow>,
     val canyonRegulations: List<CanyonRegulationImportRow>,
     val canyonTracks: List<CanyonTrackImportRow>,
+    val forumUsers: List<ForumUserImportRow>,
 ) {
     val importedRowCount: Int
         get() = canyonRows.size +
@@ -1195,7 +1250,8 @@ private data class DecodedCoreImportRows(
             canyonBibliography.size +
             regulationTexts.size +
             canyonRegulations.size +
-            canyonTracks.size
+            canyonTracks.size +
+            forumUsers.size
 }
 
 private data class MappedCoreImportRows(
@@ -1206,6 +1262,7 @@ private data class MappedCoreImportRows(
     val regulationTextEntities: List<RegulationTextEntity>,
     val canyonRegulationEntities: List<CanyonRegulationEntity>,
     val canyonTrackEntities: List<CanyonTrackEntity>,
+    val forumUserEntities: List<ForumUserEntity>,
 ) {
     val importedRowCount: Int
         get() = canyonEntities.size +
@@ -1214,7 +1271,8 @@ private data class MappedCoreImportRows(
             canyonBibliographyEntities.size +
             regulationTextEntities.size +
             canyonRegulationEntities.size +
-            canyonTrackEntities.size
+            canyonTrackEntities.size +
+            forumUserEntities.size
 }
 
 private data class WatershedImportStats(
@@ -1276,4 +1334,5 @@ internal val RoomImportManifest.expectedCoreRowCount: Int
         "regulation_texts",
         "canyon_regulations",
         "tracks",
+        "forum_users",
     ).sumOf { counts[it] ?: 0 }

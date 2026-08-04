@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "scrapedAt": "2026-03-24T09:51:39.171010+00:00",
+  "scrapedAt": "2026-07-16T17:01:51.165507+00:00",
   "source": {
     "site": "descente-canyon.com",
     "canyonId": 22047,
@@ -9,7 +9,7 @@
       "description": "https://www.descente-canyon.com/canyoning/canyon-description/22047/topo.html",
       "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22047/carte.html",
       "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22047/guides-et-cartes.html",
-      "regulation": null
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/22047/legislation.html"
     }
   },
   "canyon": {
@@ -108,9 +108,27 @@
       ]
     },
     "reglementation": {
-      "hasSpecificRegulation": false,
-      "rules": [],
-      "isForbidden": false
+      "hasSpecificRegulation": true,
+      "isForbidden": false,
+      "rules": [
+        {
+          "id": 611,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Ain) - 21 mai 1997",
+          "summary": "Cet arrête fixe le cadre global de pratique dans le département de l'Ain :\n\n- équipements individuel et collectif obligatoires\n\n- effectif des groupes et normes d'encadrement (8 à 10 personnes selon le cas)\n\n- qualification de l'encadrement\n\n- protection du milieu",
+          "remark": null,
+          "details": "Arrêté préfectoral (Ain) du 21 mai 1997",
+          "effectiveDate": "21 mai 1997",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/611/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral (Ain) du 21 mai 1997",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem611_pj1.pdf"
+            }
+          ]
+        }
+      ]
     }
   }
 }

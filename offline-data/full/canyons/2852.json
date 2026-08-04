@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "scrapedAt": "2026-03-24T09:47:09.361761+00:00",
+  "scrapedAt": "2026-07-16T16:57:49.754747+00:00",
   "source": {
     "site": "descente-canyon.com",
     "canyonId": 2852,
@@ -33,34 +33,34 @@
       "coursEau": null
     },
     "rating": {
-      "cotation": "",
-      "interet": null,
-      "nbVotes": 0
+      "cotation": "v4a2V",
+      "interet": 3.1,
+      "nbVotes": 73
     },
     "metrics": {
       "altitudeDepartM": 1550,
       "deniveleM": 660,
       "longueurM": 2150,
-      "cascadeMaxM": null,
-      "cordeMiniM": null,
-      "navette": null
+      "cascadeMaxM": 28,
+      "cordeMiniM": 30,
+      "navette": "4.0km"
     },
     "timings": {
-      "approche": null,
-      "descente": null,
-      "retour": null
+      "approche": "1h50",
+      "descente": "5-6h",
+      "retour": "20min"
     },
     "topo": {
-      "accesAval": null,
+      "accesAval": "Depuis Nice remonter jusqu'à Touët/Var par la N202, puis prendre la direction de Beuil sur la D28. Lorsque la roche des gorges du cians change de couleur (rouge), prendre la D428 dans un virage en direction de Pierlas. Faire environ 4km et garer la première voiture après la balise 108 sur une petite aire juste avant le pont. (L'accès par la piste à la sortie du canyon est interdite sauf aux riverains).\n\nContinuer jusqu'à Pierlas, passer sous le village et se garer à la balise 114 à la barrière de la piste.",
       "accesAmont": null,
-      "approche": null,
-      "descente": null,
-      "retour": null,
-      "engagement": null,
-      "periode": null,
-      "geologie": null,
+      "approche": "Faire quelques mètres sur la piste, puis prendre le sentier PR à droite à la balise 118.\n\nMonter jusqu'au hameaux de Serre puis prendre le sentier qui traverse à niveau, la roche change alors de couleur, dépasser les 2 captages pour rejoindre le troisième vallon au niveau d'une grande dalle, on aperçoit un amarrage en RD.",
+      "descente": "Sans être difficile, la descente est longue et exigeante. Il faudra rester vigilant jusqu'au bout.\n\nUne cinquantaine d'obstacles dont un tiers à désescalader sans problème particulier. Les quatre plus grandes cascades font respectivement: 27, 28, 26 et 28 m. Frottements éventuels à surveiller.\n\nPour respecter l'horaire, il est souhaitable que tous les participants soient non seulement autonomes, mais participent aux manip. de corde.\n\nLes amarrages sont corrects sauf dans l'amont. Il a été souvent remarqué que les relais atteignables à pied (par l'extérieur du canyon) sont souvent ôtés ou vandalisés. Emportez donc un minimum de matériel et préférez la mise en place de lunule plutôt que de relais onéreux...\n\nPanorama grandiose.",
+      "retour": "Sortir rive droite lorsque la piste traverse le vallon, puis descendre la piste jusqu'au pont.",
+      "engagement": "Particulièrement engagé.\n\nTrès sensible aux pluies.",
+      "periode": "Fin avril, peu d'eau. A faire après des pluies ou à la fin de la fonte des neiges (attentions aux névés).",
+      "geologie": "Schiste rouges - pélite du PERMIEN du Dôme de Barrot - socle de l'ère Primaire - splendide coloration rouge Bordeaux.",
       "historique": null,
-      "remarques": null
+      "remarques": "Sans navette: Passer la balise 111 et se garer dans le virage amont (2 places). Rejoindre Pierlas en 15 mn. Retour: après le dernier rappel, ne ratez pas le sentier RG (bien visible) qui ramène à la balise par une traversée très légèrement montante (50 min)."
     },
     "geoPoints": [
       {
@@ -78,16 +78,46 @@
         "latitude": 44.023418,
         "longitude": 7.013417,
         "label": null
+      },
+      {
+        "canyonId": 2852,
+        "rawType": "parking_amont",
+        "type": "PARKING_AMONT",
+        "latitude": 44.032917,
+        "longitude": 7.034417,
+        "label": null
+      },
+      {
+        "canyonId": 2852,
+        "rawType": "parking_aval",
+        "type": "PARKING_AVAL",
+        "latitude": 44.011917,
+        "longitude": 7.014278,
+        "label": null
       }
     ],
     "representativePoint": {
-      "type": "ENTREE",
-      "latitude": 44.036861,
-      "longitude": 7.006333,
+      "type": "PARKING_AMONT",
+      "latitude": 44.032917,
+      "longitude": 7.034417,
       "label": null
     },
     "bibliography": {
       "topoguides": [
+        {
+          "id": "biblio_b228f4b2ce58d332",
+          "kind": "TOPOGUIDE",
+          "title": "Canyoning : Alpes Maritimes. 170 descentes",
+          "authors": [
+            "Franck Jourdan",
+            "Jean-François Fiorina"
+          ],
+          "publicationYear": 2026,
+          "reference": "9782958258054",
+          "editor": "auto-edition",
+          "status": "en stock\n\n- 35,99 € -\n\nCommandez cet ouvrage dès maintenant !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/1175/Canyoning-:-Alpes-Maritimes--170-descentes.html"
+        },
         {
           "id": "biblio_3cf99204167f6619",
           "kind": "TOPOGUIDE",
@@ -144,16 +174,17 @@
     },
     "reglementation": {
       "hasSpecificRegulation": true,
+      "isForbidden": false,
       "rules": [
         {
           "id": 543,
-          "status": "Actif",
+          "status": "Abrogé",
           "action": "Interdit",
           "title": "Arrêté municipal (Pierlas) - 21 mai 2024",
           "summary": "La pratique de l'escalade et du canyoning sont interdit sur toute la commune...",
           "remark": "La raison invoquée est simplement... un risque d'accident majeur. (?)",
-          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nArrêté municipal n°2024-01 du 21 mai 2024 (commune de Pierlas)",
-          "effectiveDate": "21 mai 2024",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nArrêté municipal n°2024-01 du 21 mai 2024 (commune de Pierlas)\n\nConsultez :\n\nArrêté annulé en date du 15/10/2024",
+          "effectiveDate": "15 oct 2024",
           "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/543/legislation.html",
           "attachments": [
             {
@@ -191,8 +222,7 @@
           "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/26/legislation.html",
           "attachments": []
         }
-      ],
-      "isForbidden": true
+      ]
     }
   }
 }

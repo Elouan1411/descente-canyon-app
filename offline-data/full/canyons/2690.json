@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "scrapedAt": "2026-03-24T09:46:28.414006+00:00",
+  "scrapedAt": "2026-07-16T16:57:11.110746+00:00",
   "source": {
     "site": "descente-canyon.com",
     "canyonId": 2690,
@@ -24,9 +24,9 @@
       "pays": "France",
       "region": "Occitanie",
       "departement": "Lozère",
-      "communePrincipale": "Le Pont-de-Montvert",
+      "communePrincipale": "Vialas",
       "communes": [
-        "Le Pont-de-Montvert"
+        "Vialas"
       ],
       "massif": "Cévennes",
       "bassin": null,
@@ -125,7 +125,25 @@
     },
     "reglementation": {
       "hasSpecificRegulation": true,
+      "isForbidden": false,
       "rules": [
+        {
+          "id": 607,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté municipal (Vialas) - 17 juin 2026",
+          "summary": "La pratique du canyon est autorisée toute l'année. Pour la période allant du 1er juillet au 31 août inclus, l'accès au canyon est autorisé uniquement le matin de 9h à 12h.",
+          "remark": null,
+          "details": "Arrêté municipal (Vialas) n°2026-045 du 17 juin 2026",
+          "effectiveDate": "17 juin 2026",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/607/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté municipal (Vialas) n°2026-045 du 17 juin 2026",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem607_pj1.pdf"
+            }
+          ]
+        },
         {
           "id": 508,
           "status": "Actif",
@@ -143,8 +161,7 @@
             }
           ]
         }
-      ],
-      "isForbidden": false
+      ]
     }
   }
 }

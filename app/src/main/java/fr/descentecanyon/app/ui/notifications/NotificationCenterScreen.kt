@@ -61,6 +61,7 @@ import fr.descentecanyon.app.R
 import fr.descentecanyon.app.domain.model.FollowedCanyon
 import fr.descentecanyon.app.domain.model.FollowedForumCategory
 import fr.descentecanyon.app.domain.model.FollowedForumThread
+import fr.descentecanyon.app.domain.model.FollowedUser
 import fr.descentecanyon.app.domain.model.TrackedActivityEvent
 import fr.descentecanyon.app.domain.model.TrackedActivityType
 import fr.descentecanyon.app.ui.components.CompactAppBar
@@ -141,6 +142,30 @@ fun NotificationCenterScreen(
                         title = stringResource(R.string.notifications_activity_title),
                         subtitle = stringResource(R.string.notifications_activity_subtitle),
                     )
+                }
+
+                item {
+                    SectionHeader(
+                        title = "Utilisateurs suivis",
+                        subtitle = "Nouveaux débits et nouveaux messages forum",
+                    )
+                }
+
+                if (uiState.followedUsers.isEmpty()) {
+                    item {
+                        EmptyCard(
+                            icon = Icons.Default.NotificationsActive,
+                            title = "Aucun utilisateur suivi",
+                            body = "Suivez un utilisateur depuis sa fiche pour recevoir ses activités.",
+                        )
+                    }
+                } else {
+                    items(uiState.followedUsers, key = { it.normalizedUsername }) { user ->
+                        FollowedUserCard(
+                            user = user,
+                            onRemove = { viewModel.removeUserFollow(user.normalizedUsername) },
+                        )
+                    }
                 }
 
                 if (uiState.recentEvents.isEmpty()) {
@@ -230,6 +255,35 @@ fun NotificationCenterScreen(
                     }
                 }
             }
+        }
+    }
+}
+
+@Composable
+private fun FollowedUserCard(
+    user: FollowedUser,
+    onRemove: () -> Unit,
+) {
+    Card(
+        modifier = Modifier.fillMaxWidth(),
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
+        border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.72f)),
+    ) {
+        Row(
+            modifier = Modifier.padding(14.dp),
+            verticalAlignment = Alignment.CenterVertically,
+        ) {
+            Icon(Icons.Default.NotificationsActive, contentDescription = null)
+            Spacer(Modifier.width(12.dp))
+            Column(Modifier.weight(1f)) {
+                Text(user.username, fontWeight = FontWeight.SemiBold)
+                Text(
+                    if (user.forumUserId == null) "Débits suivis · Forum indisponible" else "Débits et forum suivis",
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                )
+            }
+            TextButton(onClick = onRemove) { Text("Retirer") }
         }
     }
 }

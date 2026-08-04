@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "scrapedAt": "2026-03-24T09:46:43.001266+00:00",
+  "scrapedAt": "2026-07-16T16:57:26.185768+00:00",
   "source": {
     "site": "descente-canyon.com",
     "canyonId": 2750,
@@ -33,7 +33,7 @@
     "rating": {
       "cotation": "v4a3IV",
       "interet": 3.4,
-      "nbVotes": 32
+      "nbVotes": 33
     },
     "metrics": {
       "altitudeDepartM": null,
@@ -101,7 +101,7 @@
           "publicationYear": 2008,
           "reference": "978-2-9526064-2-4",
           "editor": null,
-          "status": "en stock\n\n- 25,90 € -\n\nCommandez cet ouvrage dès maintenant !",
+          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
           "detailUrl": "https://www.descente-canyon.com/boutique/produit/130/Tour-de-l-Europe-en-Canyon---T1---Suisse--Autriche--Italie-du-Nord--Slovenie.html"
         },
         {
@@ -136,10 +136,11 @@
     },
     "reglementation": {
       "hasSpecificRegulation": true,
+      "isForbidden": false,
       "rules": [
         {
           "id": 585,
-          "status": "Actif",
+          "status": "Obsolète",
           "action": "Indéfini",
           "title": "Arrêté - 29 sept 2025",
           "summary": "Information d'Énergie Électrique du Simplon SA (https://ees-canyoning.ch) : \" Événement d'exploitation (purge, maintenance, essai…) prévu du 29.09.2025 au 24.04.2026.\n\nAucune activité de canyoning ne sera possible pendant cette période en raison de risques de lâchers d'eau importants.\"",
@@ -149,8 +150,7 @@
           "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/585/legislation.html",
           "attachments": []
         }
-      ],
-      "isForbidden": false
+      ]
     }
   }
 }

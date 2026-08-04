@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "scrapedAt": "2026-03-24T09:43:29.447868+00:00",
+  "scrapedAt": "2026-07-16T16:54:33.741878+00:00",
   "source": {
     "site": "descente-canyon.com",
     "canyonId": 210,
@@ -30,12 +30,12 @@
       ],
       "massif": "Vercors",
       "bassin": "Isère",
-      "coursEau": "Le Versoud"
+      "coursEau": null
     },
     "rating": {
       "cotation": "v3a3III",
       "interet": 2.7,
-      "nbVotes": 163
+      "nbVotes": 164
     },
     "metrics": {
       "altitudeDepartM": 300,
@@ -58,7 +58,7 @@
       "retour": "On arrive à l'endroit où l'on avait traversé le canyon pendant la marche d'approche ; le parking est à 5 minutes.",
       "engagement": "Il existe quelques échappatoires.",
       "periode": "Attention à ne pas se faire surprendre par le débit variable dû au captage situé bien en amont du départ ! Le débit turbiné par la centrale est visible en temps réel sur un afficheur fixé sur le local transformateur, juste au-dessus de l’ancienne scierie.",
-      "geologie": "Calcaire",
+      "geologie": null,
       "historique": null,
       "remarques": "Autre départ possible beaucoup plus haut, en-dessous de la route des Monts : long et encombré pour seulement 3 rappels en plus (version décrite dans le topo-guide \"Vercors et alentours\")"
     },
@@ -171,6 +171,7 @@
     },
     "reglementation": {
       "hasSpecificRegulation": true,
+      "isForbidden": false,
       "rules": [
         {
           "id": 553,
@@ -222,8 +223,7 @@
             }
           ]
         }
-      ],
-      "isForbidden": false
+      ]
     }
   }
 }

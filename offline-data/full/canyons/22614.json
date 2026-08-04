@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "scrapedAt": "2026-03-24T09:53:41.341913+00:00",
+  "scrapedAt": "2026-07-16T17:03:39.823996+00:00",
   "source": {
     "site": "descente-canyon.com",
     "canyonId": 22614,
@@ -33,34 +33,34 @@
       "coursEau": "Vallon des Adouces"
     },
     "rating": {
-      "cotation": "",
-      "interet": null,
-      "nbVotes": 0
+      "cotation": "v3a2IV",
+      "interet": 2.0,
+      "nbVotes": 3
     },
     "metrics": {
       "altitudeDepartM": 1650,
       "deniveleM": 490,
       "longueurM": 2700,
-      "cascadeMaxM": null,
-      "cordeMiniM": null,
-      "navette": null
+      "cascadeMaxM": 19,
+      "cordeMiniM": 20,
+      "navette": "néant"
     },
     "timings": {
-      "approche": null,
-      "descente": null,
-      "retour": null
+      "approche": "2h00",
+      "descente": "3h",
+      "retour": "10min"
     },
     "topo": {
-      "accesAval": null,
+      "accesAval": "Par la D28, passer les gorges inférieures du Cians et se rendre à Pierlas.\n\nSe garer dans la première épingle de la route Pierlas - Ilonse.",
       "accesAmont": null,
-      "approche": null,
-      "descente": null,
-      "retour": null,
-      "engagement": null,
-      "periode": null,
-      "geologie": null,
+      "approche": "Monter par la route, (la balise 115 n'est plus en place) jusqu'à la première route goudronnée à gauche (1,9 km). A la 4° épingle la quitter pour le sentier qui part à droite (peinture jaune).\n\nNe pas continuer par la piste, elle débouche dans des propriétés.\n\nLe sentier débouche sur une piste que l'on suit, passer une barrière, puis sortir à un petit col.\n\nSuivre la piste qui descend légèrement jusqu'au premier vallon bien marqué.",
+      "descente": "Éboulis marneux au départ puis le vallon se creuse.\n\nAprès quelques cascades espacées de façon régulière, on débouche, après une belle C10, dans le vallon de la Villette à environ 1350 m d'altitude.\n\nUne petite marche, un premier encaissement qui nécessite encore la corde, puis une zone de marche assez longue. Enfin un petit encaissement marqué par une cascade de 2/3 m.\n\n14 cascades (de C3 à C20) nécessitent l'usage de la corde\n\n1250 m pour Adouces + 1450 m pour le ravin de Villette.",
+      "retour": "100 mètres après l'encaissement sortir rive droite par une sente, captage, puis une route jusqu'à la voiture.",
+      "engagement": "Pas d'échappatoire jusqu'à la confluence (altitude 1350).\n\nPuis un sentier (peinture jaune) coupe le ruisseau au point côté 1299.",
+      "periode": "Printemps, ou/et après des pluies.\n\nAucune vasque.\n\nDébit identique au Riu de Pierlas (partie supérieure).",
+      "geologie": "Marne, calcaire, conglomérat.",
       "historique": "Ouvert et équipé le 30/04/2011 par Annie, Pierre, Robert, Xavier et Pilou.",
-      "remarques": null
+      "remarques": "Équipement : AN, sangle-maillon , mono pts , 2 pts dans la 20m.\n\nOn peut faire une navette (intéressante: 2,8 km, 250 m de déniv.) de voiture sur la route Pierlas-Ilonse (voir IGN).\n\nApproche avec navette: 1h"
     },
     "geoPoints": [
       {
@@ -101,16 +101,17 @@
     },
     "reglementation": {
       "hasSpecificRegulation": true,
+      "isForbidden": false,
       "rules": [
         {
           "id": 543,
-          "status": "Actif",
+          "status": "Abrogé",
           "action": "Interdit",
           "title": "Arrêté municipal (Pierlas) - 21 mai 2024",
           "summary": "La pratique de l'escalade et du canyoning sont interdit sur toute la commune...",
           "remark": "La raison invoquée est simplement... un risque d'accident majeur. (?)",
-          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nArrêté municipal n°2024-01 du 21 mai 2024 (commune de Pierlas)",
-          "effectiveDate": "21 mai 2024",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nArrêté municipal n°2024-01 du 21 mai 2024 (commune de Pierlas)\n\nConsultez :\n\nArrêté annulé en date du 15/10/2024",
+          "effectiveDate": "15 oct 2024",
           "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/543/legislation.html",
           "attachments": [
             {
@@ -148,8 +149,7 @@
           "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/26/legislation.html",
           "attachments": []
         }
-      ],
-      "isForbidden": true
+      ]
     }
   }
 }

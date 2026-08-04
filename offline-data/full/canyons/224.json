@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "scrapedAt": "2026-03-24T09:43:34.455321+00:00",
+  "scrapedAt": "2026-07-16T16:54:37.735352+00:00",
   "source": {
     "site": "descente-canyon.com",
     "canyonId": 224,
@@ -42,7 +42,7 @@
       "deniveleM": 70,
       "longueurM": 400,
       "cascadeMaxM": 10,
-      "cordeMiniM": 20,
+      "cordeMiniM": 15,
       "navette": "néant"
     },
     "timings": {
@@ -53,7 +53,7 @@
     "topo": {
       "accesAval": "À l'entrée de Bouis (hameau de Villebois), prendre le chemin de la Motte sur la droite. Vous passez sur un petit pont depuis lequel vous apprécierez le débit. Cette piste, qui monte rapidement, vous amène à un carrefour. Prendre à gauche. Après un virage à droite, le chemin s'élargit. Juste avant un virage à droite en épingle, se garer au niveau du panneau d'information du canyon.\n\nLa piste est déconseillée aux voitures basses.\n\nVue la faible largeur de la piste et le faible nombre de place de parking dessus, il est conseillé de limiter le nombre de voiture qui montent. Il y a un beau parking dans le centre du hameau, à 50 m du départ du chemin de la Motte, à gauche après le lavoir.\n\nAutre possibilité de se garer au village de villebois au centre du village, prendre la ruelle entre les maisons et montée le chemin derrière l’église 30min",
       "accesAmont": null,
-      "approche": "Un petit chemin en contre-bas vous amènera aux premiers ressauts. Attention, le départ du canyon ne se fait pas dans le premier ruisseau rencontré (le Rhéby), mais dans le deuxième (le Crot au Gay).",
+      "approche": "Un petit chemin en contre-bas vous amènera aux premiers ressauts. Attention, le départ du canyon ne se fait pas dans le premier ruisseau rencontré (le Rhéby), mais dans le deuxième (le Crot au Gay).\n\nSinon du parking de bougie prendre en direction du château. Remonter sur le chemin, prendre la sente aux ânes à droite, et au croisement de chemin prendre celui qui descend, on arrive ainsi sur le départ de l’autre côté",
       "descente": "Ludique et peu technique.",
       "retour": "Après la dernière cascade prendre obligatoirement un chemin en RG. Prendre à droite puis à gauche (couloir un peu raide). Une fois le chemin d'approche récupéré :\n\n- prendre à gauche si on a opté pour la navette (déconseillée) que l'on retrouvera en environ 200m\n\n- prendre le deuxième chemin à droite pour retour sur Villebois et le premier à droite pour retour sur Bouis.",
       "engagement": "Il est facile de s'échapper ou de se mettre hors d'eau en quasi-permanence, sauf sur les 3 dernières cascades.",
@@ -65,11 +65,35 @@
     "geoPoints": [
       {
         "canyonId": 224,
+        "rawType": "depart",
+        "type": "ENTREE",
+        "latitude": 45.855808,
+        "longitude": 5.44555,
+        "label": null
+      },
+      {
+        "canyonId": 224,
+        "rawType": "arrivee",
+        "type": "SORTIE",
+        "latitude": 45.856121,
+        "longitude": 5.44164,
+        "label": null
+      },
+      {
+        "canyonId": 224,
         "rawType": "parking",
         "type": "PARKING_AVAL",
         "latitude": 45.855228,
         "longitude": 5.440807,
         "label": null
+      },
+      {
+        "canyonId": 224,
+        "rawType": "point_externe",
+        "type": "POINT_REMARQUABLE",
+        "latitude": 45.8554,
+        "longitude": 5.43699,
+        "label": "Débouché de la sente de retour"
       }
     ],
     "representativePoint": {
@@ -93,6 +117,7 @@
     },
     "reglementation": {
       "hasSpecificRegulation": true,
+      "isForbidden": false,
       "rules": [
         {
           "id": 593,
@@ -148,9 +173,9 @@
           "status": "Obsolète",
           "action": "Interdit",
           "title": "Arrêté préfectoral (Ain) - 01 juil 2003",
-          "summary": "Pour des raisons de sécheresse, les canyons de Treffond-Pernaz et du rhéby sont interdit jusqu'au 31 octobre 2003. Si la situation météo le permet, cet arrêté sera supprimé avant le 31 octobre 2003.\n\nPlus d'infos : actualité du 26 juillet 2003",
-          "remark": "L'arrêté préfectoral du 11 avril 2002 est donc abrogé. Il définissait de manière précise les parties praticables et posait une interdiction partielle pour la protection du milieu. La pratique de descente de canyon était interdite au mois d'Août et du 1er novembre au 14 avril.\n\nCet arrêté prenait lui-même le relais de l'arrêté municipal concerté de 1995 qui autorisait la pratique du 15 avril au 31 juillet et du 1er septembre au 31 octobre.",
-          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nConsultez le document\n\nArrêté Prefectoral du 22 juillet 2003\n\nPréfecture de l'Ain\n\nDirection des relations avec les collectivités locales\n\nARRETE\n\nPortant interdiction de la pratique du canyonning et de la pêche sur le cours d'eau du RHEBY, de la PERNAZ et de ses affluents\n\nLe préfet de l'Ain\n\nChevalier de la légion d'honneur,\n\nVU le code général des collectivités territoriales, notamment son article 2215.1 ;\n\nVU la loi n°84-610 relative à l'organisation et à la promotion des activités physiques et sportives ;\n\nVU la loi n°92-3 du 3 janvier 1992 sur l'eau ;\n\nVU le décret n°73-912 du 21 mai 1997 portant réglementation du canyonning dans le département de l'Ain ;\n\nVU l'arrêté préfectoral du 11 avril 2002 portant réglementation du canyonning sur le cours d'eau du Rhéby, de la Pernaz et de ses affluents ;\n\nVU l'avis du président de la fédération départementale pour la pêche et la protection des milieux aquatiques de l'Ain du 18 juillet 2003 ;\n\nVU l'avis du chef de brigade du conseil supérieur de la pêche de l'Ain du 18 juillet 2003 ;\n\nVU l'avis du directeur départemental de la jeunesse et des sports en date du 18 juillet 2003 ;\n\nCONSIDERANT le niveau très bas des rivières ;\n\nCONSIDERANT qu'il n'est par conséquent plus possible d'envisager la descente des canyons sans causer d'importantes dégradations du milieu et du biotope ;\n\nSUR proposition de la secrétaire générale de la préfecture ;\n\nARTICLE 1er - La pratique de la pêche sur les cours d'eau de la Pernaz et de ses affluents, communes de Serrières de Briord, Montagnieu, Bénonces et Seillonnaz, et sur le cours d'eau le Rhéby commune de Villebois, est interdite.\n\nLa pratique de la descente des canyons sur ces mêmes cours d'eau est interdite.\n\nARTICLE 2 - Les dispositions de l'article 1 sont d'application immédiate et jusqu'au 31 octobre 2003.\n\nElles seront revues en tant que besoin en fonction de l'évolution de la situation météorologique et hydrologique.\n\nARTICLE 3 - La secrétaire générale de la préfecture, le sous préfet de BELLEY, le directeur départemental de la jeunesse et des sports, le lieutenant colonel commandant le groupement de gendarmerie de l'Ain, le directeur départemental de l'agriculture et de la forêt, le directeur départemental des services d'incendie et de secours, les maires des communes concernées sont chargés, chacun en ce qui le concerne, de l'exécution du présent arrêté qui sera publié au recueil des actes administratifs et affiché dans chaque mairie concernée.\n\nFait à BOURG EN BRESSE, le 22 juillet 2003\n\nPour le Préfet,\n\nLa Secrétaire Générale - Isabelle RUEFF",
+          "summary": "Pour des raisons de sécheresse, les canyons de Treffond-Pernaz et du rhéby sont interdit jusqu'au 31 octobre 2003. Si la situation météo le permet, cet arrêté sera supprimé avant le 31 octobre 2003.",
+          "remark": null,
+          "details": "Consultez le document\n\nArrêté Prefectoral du 22 juillet 2003\n\nPréfecture de l'Ain\n\nDirection des relations avec les collectivités locales\n\nARRETE\n\nPortant interdiction de la pratique du canyonning et de la pêche sur le cours d'eau du RHEBY, de la PERNAZ et de ses affluents\n\nLe préfet de l'Ain\n\nChevalier de la légion d'honneur,\n\nVU le code général des collectivités territoriales, notamment son article 2215.1 ;\n\nVU la loi n°84-610 relative à l'organisation et à la promotion des activités physiques et sportives ;\n\nVU la loi n°92-3 du 3 janvier 1992 sur l'eau ;\n\nVU le décret n°73-912 du 21 mai 1997 portant réglementation du canyonning dans le département de l'Ain ;\n\nVU l'arrêté préfectoral du 11 avril 2002 portant réglementation du canyonning sur le cours d'eau du Rhéby, de la Pernaz et de ses affluents ;\n\nVU l'avis du président de la fédération départementale pour la pêche et la protection des milieux aquatiques de l'Ain du 18 juillet 2003 ;\n\nVU l'avis du chef de brigade du conseil supérieur de la pêche de l'Ain du 18 juillet 2003 ;\n\nVU l'avis du directeur départemental de la jeunesse et des sports en date du 18 juillet 2003 ;\n\nCONSIDERANT le niveau très bas des rivières ;\n\nCONSIDERANT qu'il n'est par conséquent plus possible d'envisager la descente des canyons sans causer d'importantes dégradations du milieu et du biotope ;\n\nSUR proposition de la secrétaire générale de la préfecture ;\n\nARTICLE 1er - La pratique de la pêche sur les cours d'eau de la Pernaz et de ses affluents, communes de Serrières de Briord, Montagnieu, Bénonces et Seillonnaz, et sur le cours d'eau le Rhéby commune de Villebois, est interdite.\n\nLa pratique de la descente des canyons sur ces mêmes cours d'eau est interdite.\n\nARTICLE 2 - Les dispositions de l'article 1 sont d'application immédiate et jusqu'au 31 octobre 2003.\n\nElles seront revues en tant que besoin en fonction de l'évolution de la situation météorologique et hydrologique.\n\nARTICLE 3 - La secrétaire générale de la préfecture, le sous préfet de BELLEY, le directeur départemental de la jeunesse et des sports, le lieutenant colonel commandant le groupement de gendarmerie de l'Ain, le directeur départemental de l'agriculture et de la forêt, le directeur départemental des services d'incendie et de secours, les maires des communes concernées sont chargés, chacun en ce qui le concerne, de l'exécution du présent arrêté qui sera publié au recueil des actes administratifs et affiché dans chaque mairie concernée.\n\nFait à BOURG EN BRESSE, le 22 juillet 2003\n\nPour le Préfet,\n\nLa Secrétaire Générale - Isabelle RUEFF",
           "effectiveDate": "31 oct 2003",
           "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/57/legislation.html",
           "attachments": []
@@ -178,9 +203,25 @@
           "effectiveDate": "11 avr 2002",
           "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/518/legislation.html",
           "attachments": []
+        },
+        {
+          "id": 611,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Ain) - 21 mai 1997",
+          "summary": "Cet arrête fixe le cadre global de pratique dans le département de l'Ain :\n\n- équipements individuel et collectif obligatoires\n\n- effectif des groupes et normes d'encadrement (8 à 10 personnes selon le cas)\n\n- qualification de l'encadrement\n\n- protection du milieu",
+          "remark": null,
+          "details": "Arrêté préfectoral (Ain) du 21 mai 1997",
+          "effectiveDate": "21 mai 1997",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/611/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral (Ain) du 21 mai 1997",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem611_pj1.pdf"
+            }
+          ]
         }
-      ],
-      "isForbidden": false
+      ]
     }
   }
 }

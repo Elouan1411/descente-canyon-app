@@ -39,6 +39,7 @@ import java.time.format.DateTimeFormatter
 internal fun DebitListItem(
     debit: Debit,
     isLatest: Boolean = false,
+    onAuthorClick: ((String) -> Unit)? = null,
     modifier: Modifier = Modifier,
 ) {
     var expanded by rememberSaveable(debit.id) { mutableStateOf(false) }
@@ -101,6 +102,7 @@ internal fun DebitListItem(
                         text = auteur,
                         style = MaterialTheme.typography.bodySmall,
                         color = secondaryTextColor,
+                        modifier = if (onAuthorClick == null) Modifier else Modifier.clickable { onAuthorClick(auteur) },
                     )
                 }
                 AnimatedVisibility(visible = expanded) {

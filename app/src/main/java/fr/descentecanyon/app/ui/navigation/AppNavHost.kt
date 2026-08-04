@@ -26,6 +26,9 @@ import fr.descentecanyon.app.ui.interest.InterestRatingFormScreen
 import fr.descentecanyon.app.ui.map.MapScreen
 import fr.descentecanyon.app.ui.notifications.NotificationCenterScreen
 import fr.descentecanyon.app.ui.search.SearchScreen
+import fr.descentecanyon.app.ui.users.UserProfileScreen
+import fr.descentecanyon.app.ui.users.UserSearchScreen
+import fr.descentecanyon.app.domain.model.normalizeForSearch
 
 @Composable
 fun AppNavHost(
@@ -57,6 +60,9 @@ fun AppNavHost(
                 },
                 onNotificationsClick = {
                     navController.navigateSingleTop(Screen.Notifications)
+                },
+                onUsersClick = {
+                    navController.navigateSingleTop(Screen.UserSearch)
                 },
                 contentPadding = topLevelContentPadding,
             )
@@ -124,6 +130,7 @@ fun AppNavHost(
                 onOpenPhotoGallery = { photoId ->
                     navController.navigateSingleTop(Screen.PhotoGallery(detail.canyonId, photoId))
                 },
+                onUserClick = { username -> navController.navigateSingleTop(Screen.UserProfile(username.normalizeForSearch())) },
                 openDebitsTabInitially = detail.openDebitsTab,
                 contentPadding = topLevelContentPadding,
                 refreshDebitsAfterSubmission = refreshDebitsAfterSubmission,
@@ -148,6 +155,21 @@ fun AppNavHost(
                 onCanyonClick = { canyonId ->
                     navController.navigateSingleTop(Screen.CanyonDetail(canyonId, openDebitsTab = true))
                 },
+                contentPadding = topLevelContentPadding,
+            )
+        }
+
+        composable<Screen.UserSearch> {
+            UserSearchScreen(
+                onBackClick = { navController.popBackStack() },
+                onUserClick = { username -> navController.navigateSingleTop(Screen.UserProfile(username)) },
+                contentPadding = topLevelContentPadding,
+            )
+        }
+
+        composable<Screen.UserProfile> {
+            UserProfileScreen(
+                onBackClick = { navController.popBackStack() },
                 contentPadding = topLevelContentPadding,
             )
         }

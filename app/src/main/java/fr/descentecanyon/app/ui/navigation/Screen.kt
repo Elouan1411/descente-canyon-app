@@ -23,6 +23,12 @@ sealed interface Screen {
     data object Notifications : Screen
 
     @Serializable
+    data object UserSearch : Screen
+
+    @Serializable
+    data class UserProfile(val normalizedUsername: String) : Screen
+
+    @Serializable
     data class CanyonDetail(
         val canyonId: Int,
         val openDebitsTab: Boolean = false,

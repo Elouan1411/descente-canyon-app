@@ -120,24 +120,17 @@
   },
   {
     "canyonId": 27,
-    "type": "PARKING_AVAL",
-    "latitude": 45.208557,
-    "longitude": 5.661272,
-    "label": "Parking obligatoire"
-  },
-  {
-    "canyonId": 27,
-    "type": "ENTREE",
-    "latitude": 45.2094819,
-    "longitude": 5.6481815,
-    "label": null
-  },
-  {
-    "canyonId": 27,
     "type": "SORTIE",
     "latitude": 45.208519,
     "longitude": 5.655662,
     "label": null
+  },
+  {
+    "canyonId": 27,
+    "type": "PARKING_AVAL",
+    "latitude": 45.208557,
+    "longitude": 5.661272,
+    "label": "Parking obligatoire"
   },
   {
     "canyonId": 28,
@@ -303,8 +296,8 @@
   {
     "canyonId": 217,
     "type": "PARKING_AVAL",
-    "latitude": 45.156113,
-    "longitude": 5.439167,
+    "latitude": 45.156349,
+    "longitude": 5.44018,
     "label": null
   },
   {
@@ -400,10 +393,31 @@
   },
   {
     "canyonId": 224,
+    "type": "ENTREE",
+    "latitude": 45.855808,
+    "longitude": 5.44555,
+    "label": null
+  },
+  {
+    "canyonId": 224,
+    "type": "SORTIE",
+    "latitude": 45.856121,
+    "longitude": 5.44164,
+    "label": null
+  },
+  {
+    "canyonId": 224,
     "type": "PARKING_AVAL",
     "latitude": 45.855228,
     "longitude": 5.440807,
     "label": null
+  },
+  {
+    "canyonId": 224,
+    "type": "POINT_REMARQUABLE",
+    "latitude": 45.8554,
+    "longitude": 5.43699,
+    "label": "Débouché de la sente de retour"
   },
   {
     "canyonId": 225,
@@ -2219,6 +2233,13 @@
     "label": null
   },
   {
+    "canyonId": 2134,
+    "type": "POINT_REMARQUABLE",
+    "latitude": 44.68438,
+    "longitude": 5.57028,
+    "label": "Départ de la sente d'accès"
+  },
+  {
     "canyonId": 2135,
     "type": "ENTREE",
     "latitude": 44.690777,
@@ -2886,30 +2907,16 @@
   {
     "canyonId": 2163,
     "type": "PARKING_AVAL",
-    "latitude": 45.805588,
-    "longitude": 5.597363,
-    "label": "sans navette"
-  },
-  {
-    "canyonId": 2163,
-    "type": "PARKING_AVAL",
     "latitude": 45.807503,
     "longitude": 5.602169,
     "label": "parking secondaire"
   },
   {
     "canyonId": 2163,
-    "type": "ENTREE",
-    "latitude": 45.8042585,
-    "longitude": 5.5898884,
-    "label": null
-  },
-  {
-    "canyonId": 2163,
-    "type": "SORTIE",
-    "latitude": 45.8075265,
-    "longitude": 5.5977812,
-    "label": null
+    "type": "PARKING_AVAL",
+    "latitude": 45.805588,
+    "longitude": 5.597363,
+    "label": "sans navette"
   },
   {
     "canyonId": 2164,
@@ -2963,8 +2970,8 @@
   {
     "canyonId": 2169,
     "type": "ENTREE",
-    "latitude": 45.957417,
-    "longitude": 5.523033,
+    "latitude": 45.9566,
+    "longitude": 5.52554,
     "label": null
   },
   {
@@ -2979,7 +2986,7 @@
     "type": "PARKING_AVAL",
     "latitude": 45.954075,
     "longitude": 5.532646,
-    "label": "Parking en face du camping obligatoire"
+    "label": "Parking et vestiaires obligatoires"
   },
   {
     "canyonId": 2170,
@@ -3423,31 +3430,10 @@
     "label": null
   },
   {
-    "canyonId": 2195,
-    "type": "ENTREE",
-    "latitude": 46.3534,
-    "longitude": 5.90658,
-    "label": null
-  },
-  {
-    "canyonId": 2195,
-    "type": "SORTIE",
-    "latitude": 46.3642356,
-    "longitude": 5.8860746,
-    "label": null
-  },
-  {
     "canyonId": 2196,
     "type": "PARKING_AVAL",
     "latitude": 46.364265,
     "longitude": 5.878733,
-    "label": null
-  },
-  {
-    "canyonId": 2197,
-    "type": "PARKING_AVAL",
-    "latitude": 46.34613,
-    "longitude": 5.837255,
     "label": null
   },
   {
@@ -3459,9 +3445,9 @@
   },
   {
     "canyonId": 2197,
-    "type": "SORTIE",
-    "latitude": 46.3414163,
-    "longitude": 5.834402,
+    "type": "PARKING_AVAL",
+    "latitude": 46.34613,
+    "longitude": 5.837255,
     "label": null
   },
   {
@@ -3483,13 +3469,13 @@
     "type": "PARKING_AMONT",
     "latitude": 46.361427,
     "longitude": 5.691692,
-    "label": null
+    "label": "Si navette (facultative)"
   },
   {
     "canyonId": 2200,
     "type": "PARKING_AVAL",
-    "latitude": 46.359821,
-    "longitude": 5.69386,
+    "latitude": 46.3638,
+    "longitude": 5.698148,
     "label": null
   },
   {
@@ -3563,20 +3549,6 @@
     "label": null
   },
   {
-    "canyonId": 2210,
-    "type": "ENTREE",
-    "latitude": 46.3252,
-    "longitude": 5.7774,
-    "label": null
-  },
-  {
-    "canyonId": 2210,
-    "type": "SORTIE",
-    "latitude": 46.3252,
-    "longitude": 5.7774,
-    "label": null
-  },
-  {
     "canyonId": 2211,
     "type": "PARKING_AVAL",
     "latitude": 46.318241,
@@ -3589,6 +3561,27 @@
     "latitude": 44.4902,
     "longitude": 3.944236,
     "label": "position approximative"
+  },
+  {
+    "canyonId": 2212,
+    "type": "PARKING_AMONT",
+    "latitude": 44.489098,
+    "longitude": 3.938859,
+    "label": "(parking amont si intégrale / parking unique si sortie après Rajolle)"
+  },
+  {
+    "canyonId": 2212,
+    "type": "POINT_REMARQUABLE",
+    "latitude": 44.482731,
+    "longitude": 3.938586,
+    "label": "Sentier de sortie après la Rajolle (ou echappatoire si descente intégrale)"
+  },
+  {
+    "canyonId": 2212,
+    "type": "POINT_REMARQUABLE",
+    "latitude": 44.483345,
+    "longitude": 3.939062,
+    "label": "Passage de la Rajolle"
   },
   {
     "canyonId": 2213,
@@ -3763,20 +3756,6 @@
     "type": "SORTIE",
     "latitude": 43.866943,
     "longitude": 6.950167,
-    "label": null
-  },
-  {
-    "canyonId": 2224,
-    "type": "PARKING_AMONT",
-    "latitude": 43.885445,
-    "longitude": 6.938056,
-    "label": null
-  },
-  {
-    "canyonId": 2224,
-    "type": "PARKING_AVAL",
-    "latitude": 43.866779,
-    "longitude": 6.949833,
     "label": null
   },
   {
@@ -15505,6 +15484,20 @@
     "label": null
   },
   {
+    "canyonId": 2852,
+    "type": "PARKING_AMONT",
+    "latitude": 44.032917,
+    "longitude": 7.034417,
+    "label": null
+  },
+  {
+    "canyonId": 2852,
+    "type": "PARKING_AVAL",
+    "latitude": 44.011917,
+    "longitude": 7.014278,
+    "label": null
+  },
+  {
     "canyonId": 2853,
     "type": "ENTREE",
     "latitude": 42.211163,
@@ -15817,6 +15810,13 @@
     "type": "SORTIE",
     "latitude": 44.007507,
     "longitude": 7.014771,
+    "label": null
+  },
+  {
+    "canyonId": 2867,
+    "type": "PARKING_AVAL",
+    "latitude": 44.009014,
+    "longitude": 7.012775,
     "label": null
   },
   {
@@ -17963,13 +17963,6 @@
   },
   {
     "canyonId": 2975,
-    "type": "ENTREE",
-    "latitude": 42.1032897,
-    "longitude": 9.085479,
-    "label": null
-  },
-  {
-    "canyonId": 2975,
     "type": "SORTIE",
     "latitude": 42.096001,
     "longitude": 9.0752,
@@ -18663,13 +18656,6 @@
   },
   {
     "canyonId": 21012,
-    "type": "PARKING_AVAL",
-    "latitude": 45.639908,
-    "longitude": 7.857486,
-    "label": null
-  },
-  {
-    "canyonId": 21012,
     "type": "ENTREE",
     "latitude": 45.639267,
     "longitude": 7.861975,
@@ -18677,9 +18663,9 @@
   },
   {
     "canyonId": 21012,
-    "type": "SORTIE",
-    "latitude": 45.6392801,
-    "longitude": 7.8587289,
+    "type": "PARKING_AVAL",
+    "latitude": 45.639908,
+    "longitude": 7.857486,
     "label": null
   },
   {
@@ -20780,21 +20766,7 @@
     "type": "SORTIE",
     "latitude": 42.17812,
     "longitude": 1.395419,
-    "label": "Arrivée 1 (sans navette)"
-  },
-  {
-    "canyonId": 21127,
-    "type": "SORTIE",
-    "latitude": 42.176716,
-    "longitude": 1.390162,
-    "label": "Arrivée 2 (avec navette)"
-  },
-  {
-    "canyonId": 21127,
-    "type": "PARKING_AVAL",
-    "latitude": 42.177029,
-    "longitude": 1.390159,
-    "label": "navette possible"
+    "label": null
   },
   {
     "canyonId": 21127,
@@ -28877,8 +28849,8 @@
   {
     "canyonId": 21578,
     "type": "PARKING_AVAL",
-    "latitude": 42.199299,
-    "longitude": 1.319928,
+    "latitude": 42.199402,
+    "longitude": 1.32129,
     "label": null
   },
   {
@@ -31084,7 +31056,14 @@
     "type": "ENTREE",
     "latitude": 42.10284,
     "longitude": 0.555711,
-    "label": null
+    "label": "Départ affluent Rio Seco"
+  },
+  {
+    "canyonId": 21702,
+    "type": "ENTREE",
+    "latitude": 42.096722,
+    "longitude": 0.56139,
+    "label": "Départ Rio Cajigar"
   },
   {
     "canyonId": 21702,
@@ -31103,9 +31082,16 @@
   {
     "canyonId": 21702,
     "type": "POINT_REMARQUABLE",
-    "latitude": 42.097252,
-    "longitude": 0.561118,
-    "label": "Confluence Riu Sec / Cajigar"
+    "latitude": 42.110241,
+    "longitude": 0.54987,
+    "label": "Carrefour piste d'accès avec GR18"
+  },
+  {
+    "canyonId": 21702,
+    "type": "POINT_REMARQUABLE",
+    "latitude": 42.108452,
+    "longitude": 0.5623,
+    "label": "Carrefour GR18 avec Ruta Turistica del Congost"
   },
   {
     "canyonId": 21703,
@@ -32636,8 +32622,8 @@
   {
     "canyonId": 21762,
     "type": "PARKING_AVAL",
-    "latitude": 42.202862,
-    "longitude": 1.357219,
+    "latitude": 42.200039,
+    "longitude": 1.34029,
     "label": null
   },
   {
@@ -35088,20 +35074,6 @@
     "type": "PARKING_AVAL",
     "latitude": 45.610737,
     "longitude": 6.258924,
-    "label": null
-  },
-  {
-    "canyonId": 21895,
-    "type": "ENTREE",
-    "latitude": 45.6137959,
-    "longitude": 6.2516933,
-    "label": null
-  },
-  {
-    "canyonId": 21895,
-    "type": "SORTIE",
-    "latitude": 45.6118431,
-    "longitude": 6.2556879,
     "label": null
   },
   {
@@ -39659,20 +39631,6 @@
     "type": "PARKING_AVAL",
     "latitude": 45.32077,
     "longitude": 6.348982,
-    "label": null
-  },
-  {
-    "canyonId": 22121,
-    "type": "ENTREE",
-    "latitude": 45.3322649,
-    "longitude": 6.3607983,
-    "label": null
-  },
-  {
-    "canyonId": 22121,
-    "type": "SORTIE",
-    "latitude": 45.3200763,
-    "longitude": 6.3457866,
     "label": null
   },
   {
@@ -44434,27 +44392,6 @@
     "latitude": 43.525852,
     "longitude": 6.147945,
     "label": null
-  },
-  {
-    "canyonId": 22370,
-    "type": "PARKING_AMONT",
-    "latitude": 43.532116,
-    "longitude": 6.146175,
-    "label": null
-  },
-  {
-    "canyonId": 22370,
-    "type": "PARKING_AVAL",
-    "latitude": 43.525078,
-    "longitude": 6.149281,
-    "label": null
-  },
-  {
-    "canyonId": 22370,
-    "type": "POINT_REMARQUABLE",
-    "latitude": 43.530327,
-    "longitude": 6.144726,
-    "label": "Entrée du canyon"
   },
   {
     "canyonId": 22371,
@@ -59830,13 +59767,6 @@
   },
   {
     "canyonId": 23205,
-    "type": "PARKING_AVAL",
-    "latitude": 46.623428,
-    "longitude": 8.02234,
-    "label": null
-  },
-  {
-    "canyonId": 23205,
     "type": "ENTREE",
     "latitude": 46.592861,
     "longitude": 8.01605,
@@ -59844,9 +59774,9 @@
   },
   {
     "canyonId": 23205,
-    "type": "SORTIE",
-    "latitude": 46.5980937,
-    "longitude": 8.0126601,
+    "type": "PARKING_AVAL",
+    "latitude": 46.623428,
+    "longitude": 8.02234,
     "label": null
   },
   {

@@ -41,6 +41,7 @@ import androidx.compose.material.icons.filled.MoreVert
 import androidx.compose.material.icons.filled.Notifications
 import androidx.compose.material.icons.filled.Refresh
 import androidx.compose.material.icons.filled.Search
+import androidx.compose.material.icons.filled.People
 import androidx.compose.material.icons.filled.WifiOff
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
@@ -111,6 +112,7 @@ fun HomeScreen(
     onQuickSearchClick: () -> Unit,
     onMapClick: () -> Unit,
     onNotificationsClick: () -> Unit,
+    onUsersClick: () -> Unit,
     modifier: Modifier = Modifier,
     contentPadding: PaddingValues = PaddingValues(),
     homeViewModel: HomeViewModel = hiltViewModel(),
@@ -222,6 +224,15 @@ fun HomeScreen(
 
             item {
                 QuickSearchCard(onClick = onQuickSearchClick)
+            }
+
+            item {
+                HomeActionCard(
+                    title = "Utilisateurs",
+                    hint = "Rechercher un pseudo et suivre son activité",
+                    icon = Icons.Default.People,
+                    onClick = onUsersClick,
+                )
             }
 
             item {

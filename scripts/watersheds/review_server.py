@@ -14,6 +14,7 @@ DEFAULT_REVIEW_FILE = ROOT_DIR / "watershed-review" / "watershed-review.json"
 DEFAULT_STATE_FILE = ROOT_DIR / "build" / "watershed-review" / "watershed-review-state.json"
 STALE_LEGACY_REVIEW_FILE = ROOT_DIR / "build" / "watershed-review" / "watershed-review.json"
 WATERSHED_RUNS_DIR = ROOT_DIR / "watershed-results" / "runs"
+ROOM_IMPORT_WATERSHEDS_FILE = ROOT_DIR / "offline-data" / "full" / "room-import" / "watersheds.json"
 
 REVIEW_FILE = DEFAULT_REVIEW_FILE
 STATE_FILE = DEFAULT_STATE_FILE
@@ -266,13 +267,15 @@ def build_review_context() -> dict[str, object]:
     world_run_dir = find_latest_world_run()
     if world_run_dir is None:
         raise FileNotFoundError("No world watershed run found in watershed-results/runs/full")
+    if not ROOM_IMPORT_WATERSHEDS_FILE.exists():
+        raise FileNotFoundError("No room-import watersheds file found in offline-data/full/room-import")
 
     reference_runs = list_reference_runs(world_run_dir)
     return {
         "world": {
             "label": world_run_dir.name,
             "catchmentsUrl": to_web_path(world_run_dir / "import_ready_catchments.json"),
-            "watershedsUrl": to_web_path(world_run_dir / "import_ready_watersheds.json"),
+            "watershedsUrl": to_web_path(ROOM_IMPORT_WATERSHEDS_FILE),
             "summaryUrl": to_web_path(world_run_dir / "summary.json"),
             "statusIndexUrl": to_web_path(world_run_dir / "canyon_status_index.json"),
         },

@@ -2,6 +2,7 @@ package fr.descentecanyon.app.data.remote.scraper
 
 import fr.descentecanyon.app.data.remote.dto.ScrapedForumActiveTopic
 import fr.descentecanyon.app.data.remote.dto.ScrapedForumCategory
+import fr.descentecanyon.app.data.remote.dto.ScrapedForumUserPost
 import java.net.URI
 import java.time.OffsetDateTime
 import org.jsoup.nodes.Document
@@ -27,6 +28,32 @@ internal object ForumParser {
 
     fun parseActiveTopics(doc: Document): List<ScrapedForumActiveTopic> {
         return doc.select("ul.topiclist.topics > li.row").mapNotNull(::parseTopicRow)
+    }
+
+    fun parseUserPosts(doc: Document): List<ScrapedForumUserPost> {
+        return doc.select("div.search.post").mapNotNull { post ->
+            val profile = post.selectFirst("a.username, a.username-coloured") ?: return@mapNotNull null
+            val author = profile.text().trim().takeIf { it.isNotBlank() } ?: return@mapNotNull null
+            val topicLink = post.selectFirst("dl.postprofile a[href*=viewtopic][href*=t=]")
+                ?: return@mapNotNull null
+            val messageLink = post.selectFirst("div.postbody h3 a[href*=viewtopic][href*=p=]")
+                ?: post.selectFirst("a[href*=viewtopic][href*=p=]")
+                ?: return@mapNotNull null
+            val topicUrl = sanitizeForumUrl(topicLink.absUrl("href").ifBlank { topicLink.attr("href") })
+            val postUrl = sanitizeForumUrl(messageLink.absUrl("href").ifBlank { messageLink.attr("href") })
+            val postId = postUrl.extractQueryInt("p") ?: return@mapNotNull null
+            val topicId = topicUrl.extractQueryInt("t") ?: postUrl.extractQueryInt("t") ?: return@mapNotNull null
+            val forumLink = post.selectFirst("dl.postprofile a[href*=viewforum]")
+            ScrapedForumUserPost(
+                postId = postId,
+                topicId = topicId,
+                forumId = forumLink?.absUrl("href")?.let(::sanitizeForumUrl)?.extractQueryInt("f"),
+                topicTitle = topicLink.text().trim(),
+                author = author,
+                postedAtText = post.selectFirst("dd.search-result-date")?.text()?.trim().orEmpty(),
+                postUrl = postUrl,
+            )
+        }
     }
 
     private fun parseTopicRow(row: Element): ScrapedForumActiveTopic? {

@@ -321,6 +321,9 @@ def insert_rows(connection: sqlite3.Connection, room_import_dir: Path, manifest:
     canyon_regulations = load_json(room_import_dir / "canyon_regulations.json")
     watersheds = load_json(room_import_dir / "watersheds.json")
 
+    forum_users_path = room_import_dir / "forum_users.json"
+    forum_users = load_json(forum_users_path) if forum_users_path.exists() else []
+
     tracks_path = room_import_dir / "tracks.json"
     if tracks_path.exists():
         canyon_tracks = load_json(tracks_path)
@@ -510,6 +513,36 @@ def insert_rows(connection: sqlite3.Connection, room_import_dir: Path, manifest:
         ],
     )
 
+    if forum_users:
+        connection.executemany(
+            """
+            INSERT OR REPLACE INTO forum_users (
+                username, normalizedUsername, forumUserId, profileUrl, source, hasForumActivity,
+                hasDebitActivity, forumPostCount, debitObservationCount, lastForumPostAt,
+                lastForumPostUrl, lastDebitObservationAt, lastDebitObservationUrl, updatedAt
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            """,
+            [
+                (
+                    row["username"],
+                    row["normalizedUsername"],
+                    row.get("forumUserId"),
+                    row.get("profileUrl"),
+                    row["source"],
+                    1 if row.get("hasForumActivity") else 0,
+                    1 if row.get("hasDebitActivity") else 0,
+                    int(row.get("forumPostCount") or 0),
+                    int(row.get("debitObservationCount") or 0),
+                    row.get("lastForumPostAt"),
+                    row.get("lastForumPostUrl"),
+                    row.get("lastDebitObservationAt"),
+                    row.get("lastDebitObservationUrl"),
+                    row["updatedAt"],
+                )
+                for row in forum_users
+            ],
+        )
+
     connection.executemany(
         "INSERT INTO app_metadata (key, value) VALUES (?, ?)",
         [
@@ -533,10 +566,11 @@ def insert_rows(connection: sqlite3.Connection, room_import_dir: Path, manifest:
         "canyon_regulations": len(canyon_regulations),
         "watersheds": connection.execute("SELECT COUNT(*) FROM watersheds").fetchone()[0],
         "tracks": len(canyon_tracks),
+        "forum_users": len(forum_users),
         "search_index": len(search_index_rows),
     }
 
-    for table_name in ("canyons", "geo_points", "bibliography_entries", "canyon_bibliography", "regulation_texts", "canyon_regulations", "watersheds", "tracks"):
+    for table_name in ("canyons", "geo_points", "bibliography_entries", "canyon_bibliography", "regulation_texts", "canyon_regulations", "watersheds", "tracks", "forum_users"):
         expected_value = int(expected_counts.get(table_name, 0))
         actual_value = int(actual_counts[table_name])
         if actual_value != expected_value:

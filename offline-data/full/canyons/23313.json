@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "scrapedAt": "2026-03-24T09:56:31.848436+00:00",
+  "scrapedAt": "2026-07-16T17:05:50.306138+00:00",
   "source": {
     "site": "descente-canyon.com",
     "canyonId": 23313,
@@ -9,7 +9,7 @@
       "description": "https://www.descente-canyon.com/canyoning/canyon-description/23313/topo.html",
       "map": "https://www.descente-canyon.com/canyoning/canyon-carte/23313/carte.html",
       "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/23313/guides-et-cartes.html",
-      "regulation": null
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/23313/legislation.html"
     }
   },
   "canyon": {
@@ -51,16 +51,16 @@
       "retour": "50min"
     },
     "topo": {
-      "accesAval": "Du village de la Palud sur Verdon prendre la direction du Col d'Ayen sur 1,8 km. De là, emprunter une petite piste sur votre gauche menant à un champ, peu avant le ravin d'Ayen (parking).\n\nSi mise en place d'une navette :\n\nDe La Palud sur Verdon, garer un premier véhicule au parking de Mainmorte (voir fiche pour le parking aval), puis revenir sur La Palud et effectuer avec votre second véhicule, 1,8 km, dès la sortie du village en direction du Col d'Ayen. De là, emprunter une petite piste sur votre gauche menant à un champ un peu avant le ravin d'Ayen (parking amont).",
+      "accesAval": "Du village de la Palud sur Verdon prendre la direction du Col d'Ayen sur 1,8 km. De là, emprunter une petite piste sur votre gauche menant à un champ, peu avant le ravin d'Ayen (parking).\n\nSi mise en place d'une navette :\n\nDu centre de La-Palud-sur-Verdon, aller en direction du chalet de la Maline. Garer le véhicule de sortie dans le petit parking présent dans le premier virage en épingle vers la gauche, 300m avant un petit pont.\n\nRevenir sur La Palud et effectuer avec votre second véhicule, 1,8 km, dès la sortie du village en direction du Col d'Ayen. De là, emprunter une petite piste sur votre gauche menant à un champ un peu avant le ravin d'Ayen (parking amont).",
       "accesAmont": null,
-      "approche": "En direction du Col d'Ayen, au fond du champ, se rendre au départ de la descente.",
-      "descente": "C15 1 pt en RG; (C6+C6+Pi3) R25 1 pt en RD ; D1; D2; C5 1 pt RD ; C17 1pt en RD ; C18 1 pt en RD ; C8 1 pt en RD ; marche de 40m ; C5 1 pt en RD, mini-encaissement avec D5 ; D3 ; sortie du mini-encaissement ; D3 ; C10 1 pt en RG ; C8 1 pt en RD ; C25 1 pt en RG.",
-      "retour": "De la dernière cascade, faire 10m à travers la végétation pour se rendre sur un sentier. Prendre à gauche et suivre ce sentier jusqu'à un gros cairn. De là, ce sentier s'élève vers la barre rocheuse et se perd par la suite... Suivre au mieux en parallèle de cette falaise, 50 m plus bas, des pseudos petites sentes pour rejoindre presque au bout de celle-ci, un sentier bien marqué de cairns. Ce sentier s'élève de nouveau et passe au dessus de la barre rocheuse pour rejoindre votre véhicule.\n\nSi vous avez mis en place une navette pour le retour :\n\nDe la dernière cascade, rejoindre la route en face (façon sanglier +++) et le parking aval (non testé, mais prévoir de quoi couper du bois et des broussailles). Sinon emprunter le sentier partant à droite pour rejoindre le ravin d'Ayen et le parking de Mainmorte (non testé aussi).",
-      "engagement": "Sur goujons mono-points de 8mm + maillons de chaîne",
+      "approche": "En direction du Col d'Ayen, au fond du champ, se rendre au départ de la descente. Le départ se trouve sous la route, en aval de la seule maison présente sur le secteur.",
+      "descente": "R15 pt RG\n\nR22 pt RD\n\nR5 pt RD\n\nR6 pt RD\n\nR22 pt RD\n\nR17 pt RD\n\nR12 pt RD dont 10 en araignée\n\nDésescalade\n\nC5 en araignée pt RD\n\nDésescalade\n\nR10 amarrage naturel - Désescalade raide possible\n\n8 m Désescalade\n\n3 m Désescalade\n\nR12 pt RD\n\nR15 pt RD\n\nR25 pt RD",
+      "retour": "De la dernière cascade, faire 10m à travers la végétation pour se rendre sur un sentier. Prendre à gauche et suivre ce sentier jusqu'à un gros cairn. De là, ce sentier s'élève vers la barre rocheuse et se perd par la suite... Suivre au mieux en parallèle de cette falaise, 50 m plus bas, des pseudos petites sentes pour rejoindre presque au bout de celle-ci, un sentier bien marqué de cairns. Ce sentier s'élève de nouveau et passe au dessus de la barre rocheuse pour rejoindre votre véhicule.\n\nSi vous avez mis en place une navette pour le retour :\n\n5m après le dernier rappel, prendre la sente qui part sur la gauche et rejoint les voies d'escalade au bout de 30m.\n\nSuivre le sentier qui monte légèrement et suivant le ruisseau jusqu'à rejoindre la voiture (20 min).",
+      "engagement": "Equipement variable, mais majoritairement avec 2 points non reliés",
       "periode": "Ravin sec la majeure partie du temps.",
       "geologie": null,
       "historique": null,
-      "remarques": "Équipement : terrain d'aventure.\n\nPossibilité d'enchaîner avec le ravin de Mainmorte."
+      "remarques": "Possibilité d'enchaîner avec le ravin de Mainmorte."
     },
     "geoPoints": [
       {
@@ -124,9 +124,27 @@
       "resources": []
     },
     "reglementation": {
-      "hasSpecificRegulation": false,
-      "rules": [],
-      "isForbidden": false
+      "hasSpecificRegulation": true,
+      "isForbidden": false,
+      "rules": [
+        {
+          "id": 602,
+          "status": "Actif",
+          "action": "Indéfini",
+          "title": "Information - 22 juin 2022",
+          "summary": "Canyonning responsable dans le Verdon (Source FNE)",
+          "remark": "Quelques conseils essentiels pour une pratique raisonnable de la descente de canyons dans les Gorges du Verdon.",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nInformation - 22 juin 2022",
+          "effectiveDate": "22 juin 2022",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/602/legislation.html",
+          "attachments": [
+            {
+              "label": "Information - 22 juin 2022",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem602_pj1.pdf"
+            }
+          ]
+        }
+      ]
     }
   }
 }

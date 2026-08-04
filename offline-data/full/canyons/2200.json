@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "scrapedAt": "2026-03-24T09:44:32.347866+00:00",
+  "scrapedAt": "2026-07-16T16:55:29.907203+00:00",
   "source": {
     "site": "descente-canyon.com",
     "canyonId": 2200,
@@ -15,10 +15,10 @@
   "canyon": {
     "id": 2200,
     "identity": {
-      "nom": "Bief de la Goulette",
-      "nomComplet": "Le Bief de la Goulette, Ruisseau de Douvres",
-      "prefixeNom": "Le",
-      "url": "https://www.descente-canyon.com/canyoning/canyon/2200/Bief-de-la-Goulette.html"
+      "nom": "Goulette",
+      "nomComplet": "Le Bief de la Goulette, Cascade de Douvre, Ruisseau de Douvre",
+      "prefixeNom": "Le Bief de la",
+      "url": "https://www.descente-canyon.com/canyoning/canyon/2200/Goulette.html"
     },
     "location": {
       "pays": "France",
@@ -30,7 +30,7 @@
       ],
       "massif": "Jura",
       "bassin": "Bienne",
-      "coursEau": "Ruisseau de Douvres"
+      "coursEau": "Ruisseau de Douvre"
     },
     "rating": {
       "cotation": "v3a1I",
@@ -43,24 +43,24 @@
       "longueurM": 400,
       "cascadeMaxM": 30,
       "cordeMiniM": 40,
-      "navette": "2.6km"
+      "navette": "néant"
     },
     "timings": {
-      "approche": "1min",
+      "approche": "15min",
       "descente": "1h30",
       "retour": "5min"
     },
     "topo": {
-      "accesAval": "de St-Claude par la D 436 après Vaux, à droite le nouveau pont de Jeurre, puis à gauche la route menant à la D 356. Au carrefour (panneau Bief de la Goulette), prendre à gauche sur 550 m où l'on recoupe le Bief (N 46°21'35\" E 5°41'37\"). NOTA : ces 550 m sont en sens interdit sauf riverains, donc... On se gare au carrefour !",
-      "accesAmont": "de ce carrefour, prendre à droite le chemin de Douvre, et se garer au mieux vers N 46°21'42\" E 5°41'24\" et sans gêner (peu de place) juste avant de déboucher dans les prairies du hameau. Le début de la course est à la lisière du bois.\n\nAccès sans navette : Suivre le balisage constitué de deux vagues bleues. Du carrefour où vous aurez laissé votre véhicule, prenez la route qui monte à Douvre sur 100 m en direction du nord est. Le départ du sentier est sur votre gauche. Il rejoint la route goudronnée 200 m avant l'accès amont en un quart d'heure.",
-      "approche": "De la route, descendre dans le ravin, sentier discret dans les buis.",
+      "accesAval": "De Saint-Claude prendre la D436 vers l'ouest. Au niveau de Jeurre, la quitter et prendre à droite le pont sur la Bienne (D27), dépasser l'aire de covoiturage à gauche puis prendre juste après la petite route à gauche en direction du \"hameau de Douvre\". La suivre un peu moins de 600m et se stationner sur le bas côté au niveau d'un carrefour situé dans une épingle marquée à droite. NOTA : les 550 m suivants sont en sens interdit sauf riverains, donc... On se gare au carrefour !",
+      "accesAmont": null,
+      "approche": "Suivre le balisage constitué de deux vagues bleues : du carrefour où vous avez laissé votre véhicule, prenez la route qui monte à Douvre sur 50 m en direction du nord-est : le départ du sentier est alors sur votre gauche. Il rejoint en un quart d'heure la route goudronnée, 200 m avant l'accès amont (petite sente qui descend au départ) .",
       "descente": "Des cascades faciles de hauteurs croissantes se succèdent jusqu'à la route.",
       "retour": "Au pont, prendre à gauche la route sur 500m pour retrouver les véhicules garés au carrefour (balisage bleu).",
-      "engagement": "Aucun engagement. Échappatoires latéraux nombreux, encaissement faible.",
+      "engagement": "Aucun engagement. Échappatoires latérales nombreuses, encaissement faible.",
       "periode": "A faire en hautes eaux. Praticable même avec des débits importants. Pas de nage, pas de sauts. S'assèche presque totalement.\n\nC'est le canyon de \"dépannage\" par excellence, praticable quand tout est en crue sur la région.",
-      "geologie": "Cascades de tuff",
-      "historique": "Reco par des spéléos dans les années 70, puis équipement par JL Lacroix, D. Guyétand, J. Boillot et P. Jeandel en 90 et 91",
-      "remarques": "Course très proche du canyon de la Teinte. Possibilité d'enchaîner les deux, car coulent de façon assez similaire (décrue de la Teinte un peu plus rapide cependant)."
+      "geologie": null,
+      "historique": "Reconnaissance par des spéléos dans les années 70, puis équipement par J.L. Lacroix, D. Guyétand, J. Boillot et P. Jeandel en 1990 et 1991",
+      "remarques": "- Course très proche du canyon de la Teinte. Possibilité d'enchaîner les deux, car coulent de façon assez similaire (décrue de la Teinte un plus rapide cependant).\n\n- Une navette (inutile) de 2.1 kms est possible : se garer à l'amont au mieux vers N 46°21'42\" E 5°41'24\" et sans gêner (peu de place) juste avant de déboucher dans les prairies du hameau."
     },
     "geoPoints": [
       {
@@ -69,14 +69,14 @@
         "type": "PARKING_AMONT",
         "latitude": 46.361427,
         "longitude": 5.691692,
-        "label": null
+        "label": "Si navette (facultative)"
       },
       {
         "canyonId": 2200,
-        "rawType": "parking_aval",
+        "rawType": "parking",
         "type": "PARKING_AVAL",
-        "latitude": 46.359821,
-        "longitude": 5.69386,
+        "latitude": 46.3638,
+        "longitude": 5.698148,
         "label": null
       }
     ],
@@ -84,7 +84,7 @@
       "type": "PARKING_AMONT",
       "latitude": 46.361427,
       "longitude": 5.691692,
-      "label": null
+      "label": "Si navette (facultative)"
     },
     "bibliography": {
       "topoguides": [],
@@ -101,7 +101,29 @@
     },
     "reglementation": {
       "hasSpecificRegulation": true,
+      "isForbidden": false,
       "rules": [
+        {
+          "id": 610,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Jura) - 10 juil 2026",
+          "summary": "Dans le cadre des mesures de restriction des usages de l'eau liées à la sécheresse, la préfecture a décidé que la pratique du canyonisme sur les canyons situés sur les cours d'eau du Tacon, de la Bienne et de leurs affluents est interdite, sauf entre 08h00 et 12h00.",
+          "remark": null,
+          "details": "Arrêté préfectoral n°2026-07-10-001 (Jura) du 10 juillet 2026\n\nCommuniqué de presse d'activation de mesure de restrictions concernant les activités aquatiques et nautiques (10 juillet 2026)",
+          "effectiveDate": "10 juil 2026",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/610/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral n°2026-07-10-001 (Jura) du 10 juillet 2026",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem610_pj1.pdf"
+            },
+            {
+              "label": "Communiqué de presse d'activation de mesure de restrictions concernant les activités aquatiques et nautiques (10 juillet 2026)",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem610_pj2.pdf"
+            }
+          ]
+        },
         {
           "id": 491,
           "status": "Abrogé",
@@ -127,8 +149,7 @@
             }
           ]
         }
-      ],
-      "isForbidden": false
+      ]
     }
   }
 }

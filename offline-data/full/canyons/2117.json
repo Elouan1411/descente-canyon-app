@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "scrapedAt": "2026-03-24T09:44:08.299738+00:00",
+  "scrapedAt": "2026-07-16T16:55:11.229121+00:00",
   "source": {
     "site": "descente-canyon.com",
     "canyonId": 2117,
@@ -31,7 +31,7 @@
       ],
       "massif": "Chartreuse",
       "bassin": null,
-      "coursEau": "Grenant"
+      "coursEau": null
     },
     "rating": {
       "cotation": "v3a3II",
@@ -58,8 +58,8 @@
       "descente": "Ce ruisseau, très prisé des pécheurs dont on veillera à respecter la quiétude, comporte de nombreux petits ressauts pouvant être éventuellement agrémentés de sauts depuis les berges.",
       "retour": "Merci d'être discret ! Eviter de faire sécher ses combi sur les clôtures des riverains ! Et surtout, ne vous changer pas devant l'église ! Préférer d'ailleurs le parking situé un peu plus haut dans le village, derrière l'école communale.",
       "engagement": "Engagement limité à quelques enchaînements de ressauts.",
-      "periode": "voir ci-dessus",
-      "geologie": "Calcaire",
+      "periode": null,
+      "geologie": null,
       "historique": null,
       "remarques": "Agréable parcours, dans une ambiance forestière.\n\nMéfier vous des jours où la tannerie est en fonctionnement : l'eau troublée a alors une odeur insupportable.\n\nMerci de respecter les pécheurs fort irrités de trouver aujourd'hui des canyonistes peu respectueux."
     },
@@ -165,6 +165,7 @@
     },
     "reglementation": {
       "hasSpecificRegulation": true,
+      "isForbidden": false,
       "rules": [
         {
           "id": 497,
@@ -345,8 +346,7 @@
           "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/59/legislation.html",
           "attachments": []
         }
-      ],
-      "isForbidden": false
+      ]
     }
   }
 }

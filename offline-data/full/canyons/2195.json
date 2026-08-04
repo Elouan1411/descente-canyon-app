@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "scrapedAt": "2026-03-24T09:44:29.782256+00:00",
+  "scrapedAt": "2026-07-16T16:55:28.072222+00:00",
   "source": {
     "site": "descente-canyon.com",
     "canyonId": 2195,
@@ -78,22 +78,6 @@
         "latitude": 46.364147,
         "longitude": 5.879233,
         "label": null
-      },
-      {
-        "canyonId": 2195,
-        "rawType": "depart",
-        "type": "ENTREE",
-        "latitude": 46.3534,
-        "longitude": 5.90658,
-        "label": null
-      },
-      {
-        "canyonId": 2195,
-        "rawType": "arrivee",
-        "type": "SORTIE",
-        "latitude": 46.3642356,
-        "longitude": 5.8860746,
-        "label": null
       }
     ],
     "representativePoint": {
@@ -125,7 +109,29 @@
     },
     "reglementation": {
       "hasSpecificRegulation": true,
+      "isForbidden": false,
       "rules": [
+        {
+          "id": 610,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Jura) - 10 juil 2026",
+          "summary": "Dans le cadre des mesures de restriction des usages de l'eau liées à la sécheresse, la préfecture a décidé que la pratique du canyonisme sur les canyons situés sur les cours d'eau du Tacon, de la Bienne et de leurs affluents est interdite, sauf entre 08h00 et 12h00.",
+          "remark": null,
+          "details": "Arrêté préfectoral n°2026-07-10-001 (Jura) du 10 juillet 2026\n\nCommuniqué de presse d'activation de mesure de restrictions concernant les activités aquatiques et nautiques (10 juillet 2026)",
+          "effectiveDate": "10 juil 2026",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/610/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral n°2026-07-10-001 (Jura) du 10 juillet 2026",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem610_pj1.pdf"
+            },
+            {
+              "label": "Communiqué de presse d'activation de mesure de restrictions concernant les activités aquatiques et nautiques (10 juillet 2026)",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem610_pj2.pdf"
+            }
+          ]
+        },
         {
           "id": 491,
           "status": "Abrogé",
@@ -151,8 +157,7 @@
             }
           ]
         }
-      ],
-      "isForbidden": false
+      ]
     }
   }
 }

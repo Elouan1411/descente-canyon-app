@@ -34,7 +34,17 @@ class MapLibreViewTest {
         assertEquals(0xFF0077E6.toInt(), interestMarkerColor(canyonWithInterest(4f)))
     }
 
-    private fun canyonWithInterest(interest: Float?): CanyonSummary {
+    @Test
+    fun `interest render priority draws high interest canyons last`() {
+        assertEquals(0, interestMarkerRenderPriority(canyonWithInterest(3.5f, isForbidden = true)))
+        assertEquals(1, interestMarkerRenderPriority(canyonWithInterest(null)))
+        assertEquals(2, interestMarkerRenderPriority(canyonWithInterest(0.5f)))
+        assertEquals(3, interestMarkerRenderPriority(canyonWithInterest(1.5f)))
+        assertEquals(4, interestMarkerRenderPriority(canyonWithInterest(2.5f)))
+        assertEquals(5, interestMarkerRenderPriority(canyonWithInterest(3.5f)))
+    }
+
+    private fun canyonWithInterest(interest: Float?, isForbidden: Boolean = false): CanyonSummary {
         return CanyonSummary(
             id = 1,
             nom = "Test",
@@ -42,6 +52,8 @@ class MapLibreViewTest {
             cotation = "3/3/II",
             interet = interest,
             url = "https://example.test/canyon/1",
+            isForbidden = isForbidden,
         )
     }
+
 }

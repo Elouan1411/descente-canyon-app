@@ -6,6 +6,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import fr.descentecanyon.app.domain.model.FollowedCanyon
 import fr.descentecanyon.app.domain.model.FollowedForumCategory
 import fr.descentecanyon.app.domain.model.FollowedForumThread
+import fr.descentecanyon.app.domain.model.FollowedUser
 import fr.descentecanyon.app.domain.model.TrackedActivityEvent
 import fr.descentecanyon.app.domain.repository.NotificationCenterRepository
 import javax.inject.Inject
@@ -19,6 +20,7 @@ data class NotificationCenterUiState(
     val followedCanyons: List<FollowedCanyon> = emptyList(),
     val followedForumCategories: List<FollowedForumCategory> = emptyList(),
     val followedForumThreads: List<FollowedForumThread> = emptyList(),
+    val followedUsers: List<FollowedUser> = emptyList(),
     val recentEvents: List<TrackedActivityEvent> = emptyList(),
 )
 
@@ -38,6 +40,7 @@ class NotificationCenterViewModel @Inject constructor(
                         followedCanyons = state.followedCanyons,
                         followedForumCategories = state.followedForumCategories,
                         followedForumThreads = state.followedForumThreads,
+                        followedUsers = state.followedUsers,
                         recentEvents = state.recentEvents,
                     )
                 }
@@ -60,6 +63,12 @@ class NotificationCenterViewModel @Inject constructor(
     fun removeForumThreadFollow(topicId: Int) {
         viewModelScope.launch {
             notificationCenterRepository.removeForumThreadFollow(topicId)
+        }
+    }
+
+    fun removeUserFollow(normalizedUsername: String) {
+        viewModelScope.launch {
+            notificationCenterRepository.removeUserFollow(normalizedUsername)
         }
     }
 

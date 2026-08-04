@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "scrapedAt": "2026-03-24T09:45:06.277048+00:00",
+  "scrapedAt": "2026-07-16T16:55:59.133305+00:00",
   "source": {
     "site": "descente-canyon.com",
     "canyonId": 2334,
@@ -30,12 +30,12 @@
       ],
       "massif": "Alta rocca",
       "bassin": "Osu",
-      "coursEau": "Ruisseau de Palavesani"
+      "coursEau": null
     },
     "rating": {
       "cotation": "v4a5II",
       "interet": 3.1,
-      "nbVotes": 87
+      "nbVotes": 88
     },
     "metrics": {
       "altitudeDepartM": 850,
@@ -58,7 +58,7 @@
       "retour": "Au pied de la grande cascade, remonter en RG par un sentier raide et retrouver le chemin touristique.",
       "engagement": "Engagement total une fois commencé. Canyon dangereux si les mains courantes ne sont pas installées. Il serait regrettable qu'un accident entraine sa fermeture. Soyez prudent. Le débit est toujours important. L'eau est trouble contrairement à la plupart des canyons de la région. Ceci n’enlève en rien la beauté de la descente mais demande un sondage OBLIGATOIRE.",
       "periode": "Toujours bien alimenté.",
-      "geologie": "Granite",
+      "geologie": null,
       "historique": null,
       "remarques": "Une des plus belles cascades de Corse, historique et mythique."
     },
@@ -179,6 +179,7 @@
     },
     "reglementation": {
       "hasSpecificRegulation": true,
+      "isForbidden": false,
       "rules": [
         {
           "id": 520,
@@ -201,8 +202,7 @@
             }
           ]
         }
-      ],
-      "isForbidden": false
+      ]
     }
   }
 }

@@ -13,6 +13,7 @@ import fr.descentecanyon.app.data.repository.EdfPracticabilityRepositoryImpl
 import fr.descentecanyon.app.data.repository.DebitSubmissionRepositoryImpl
 import fr.descentecanyon.app.data.repository.FavoritesRepositoryImpl
 import fr.descentecanyon.app.data.repository.ForumRepositoryImpl
+import fr.descentecanyon.app.data.repository.ForumUserRepositoryImpl
 import fr.descentecanyon.app.data.repository.InterestRatingRepositoryImpl
 import fr.descentecanyon.app.data.repository.MapOfflineRepositoryImpl
 import fr.descentecanyon.app.data.repository.NotificationCenterRepositoryImpl
@@ -27,6 +28,7 @@ import fr.descentecanyon.app.domain.repository.DebitSubmissionRepository
 import fr.descentecanyon.app.domain.repository.EdfPracticabilityRepository
 import fr.descentecanyon.app.domain.repository.FavoritesRepository
 import fr.descentecanyon.app.domain.repository.ForumRepository
+import fr.descentecanyon.app.domain.repository.ForumUserRepository
 import fr.descentecanyon.app.domain.repository.InterestRatingRepository
 import fr.descentecanyon.app.domain.repository.MapOfflineRepository
 import fr.descentecanyon.app.domain.repository.NotificationCenterRepository
@@ -69,6 +71,10 @@ abstract class RepositoryModule {
     @Binds
     @Singleton
     abstract fun bindForumRepository(impl: ForumRepositoryImpl): ForumRepository
+
+    @Binds
+    @Singleton
+    abstract fun bindForumUserRepository(impl: ForumUserRepositoryImpl): ForumUserRepository
 
     @Binds
     @Singleton

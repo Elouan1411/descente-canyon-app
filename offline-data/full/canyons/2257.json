@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "scrapedAt": "2026-03-24T09:44:47.228873+00:00",
+  "scrapedAt": "2026-07-16T16:55:42.760572+00:00",
   "source": {
     "site": "descente-canyon.com",
     "canyonId": 2257,
@@ -30,7 +30,7 @@
       ],
       "massif": "Ecrins - Oisans - Champsaur",
       "bassin": "Durance",
-      "coursEau": "Ruisseau de Tramouillon"
+      "coursEau": null
     },
     "rating": {
       "cotation": "v3a2II",
@@ -58,7 +58,7 @@
       "retour": "Sentier RG juste après double cascade finale (cairn puis sente bien marquée)",
       "engagement": "Faible, possibilité de sortir assez facilement dans les bois.",
       "periode": "Faisable de mai à septembre",
-      "geologie": "Calcaire",
+      "geologie": null,
       "historique": null,
       "remarques": "Équipement convenable dans l'ensemble, sur lunules pour la première partie, puis relais chainés (pas toujours placés de manière très pertinente, attention aux frottements)"
     },
@@ -144,6 +144,7 @@
     },
     "reglementation": {
       "hasSpecificRegulation": true,
+      "isForbidden": true,
       "rules": [
         {
           "id": 422,
@@ -166,8 +167,7 @@
             }
           ]
         }
-      ],
-      "isForbidden": true
+      ]
     }
   }
 }

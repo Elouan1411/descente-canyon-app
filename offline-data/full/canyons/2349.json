@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "scrapedAt": "2026-03-24T09:45:10.145340+00:00",
+  "scrapedAt": "2026-07-16T16:56:02.421359+00:00",
   "source": {
     "site": "descente-canyon.com",
     "canyonId": 2349,
@@ -30,12 +30,12 @@
       ],
       "massif": "Bavella",
       "bassin": "Solenzara",
-      "coursEau": "Polischellu"
+      "coursEau": null
     },
     "rating": {
       "cotation": "v3a2II",
       "interet": 2.8,
-      "nbVotes": 94
+      "nbVotes": 95
     },
     "metrics": {
       "altitudeDepartM": 600,
@@ -57,8 +57,8 @@
       "descente": "Cette première cascade (environ 20 m) est formée du bloc et de la paroi rive D de granit rouge. Puis la seconde cascade C18 est arrosée par bon débit. Elle peut s'éviter RG avec deux rappels de 8 m. La suite est jolie et ludique.",
       "retour": "Arrivé au pont, remonter à la route rive D et rejoindre le parking.",
       "engagement": "Quasi nul. Attention au crues.",
-      "periode": "Mai – Septembre",
-      "geologie": "Granite rouge",
+      "periode": null,
+      "geologie": null,
       "historique": null,
       "remarques": "Autre début de marche d'approche : du parking, revenir au pont et descendre rive droite vers le ruisseau. Puis suivre le chemin rive droite qui monte dans le sous-bois.\n\nParcours réputé facile, les sauts et toboggans requièrent néanmoins les précautions d'usage."
     },
@@ -179,6 +179,7 @@
     },
     "reglementation": {
       "hasSpecificRegulation": true,
+      "isForbidden": false,
       "rules": [
         {
           "id": 541,
@@ -239,8 +240,7 @@
             }
           ]
         }
-      ],
-      "isForbidden": false
+      ]
     }
   }
 }

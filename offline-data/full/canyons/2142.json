@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "scrapedAt": "2026-03-24T09:44:14.176199+00:00",
+  "scrapedAt": "2026-07-16T16:55:14.544958+00:00",
   "source": {
     "site": "descente-canyon.com",
     "canyonId": 2142,
@@ -30,12 +30,12 @@
       ],
       "massif": "Bornes - Aravis",
       "bassin": "Lac d'Annecy",
-      "coursEau": "Ruisseau de Montmin"
+      "coursEau": null
     },
     "rating": {
       "cotation": "v3a3III",
       "interet": 2.7,
-      "nbVotes": 105
+      "nbVotes": 108
     },
     "metrics": {
       "altitudeDepartM": 710,
@@ -54,7 +54,7 @@
       "accesAval": "Du rond-point de Giez entre Faverges et Doussard, prendre Vesonne direction Montmin, Col de la Forclaz par la D42. Traverser le village de Vesonne et monter en direction de Montmin. Se garer au-dessus du village de Vesonne dans le virage avant de rentrer dans la gorge : parking dédié au canyoning (toilettes, vestiaires). Il est désormais interdit de se préparer dans le village de Vesonne sous peine d'amende.\n\nSi navette parking amont (peu utile) : continuer sur la D42 qui monte à Montmin (500 m). Il est interdit de se garer proche de l'oratoire (réservé aux secours et dépose-minute) Poursuivre la route, vous trouverez une grande esplanade à droite, qui se trouve à moins de 10 minutes à pied de l'oratoire.\n\nVeillez à vous garer afin d'optimiser les places et de respecter la propreté des lieux.",
       "accesAmont": null,
       "approche": "Du parking aval obligatoire, remonter la D42 à pied jusqu'à l'oratoire (15min, moins d'1km). Au niveau de l'oratoire, une sente très raide permet de rejoindre le canyon en contrebas (cordes fixes).",
-      "descente": "On commence par un joli petit SP puis on passe sous une belle arche naturelle. S’en suit une succession descente en rappel, de marche et de saut possible. C’est un canyon assez ludique avec de bonnes zones d’attente pour un groupe. Les obstacles n’excèdent pas 10m de haut. La végétation est importante, on peut notamment observer une belle résurgence qui cascade sur fond de mousse.",
+      "descente": null,
       "retour": "Pour sortir, il faut poursuivre en rive droite sur un sentier qui longe le canyon, puis rejoint le cours d’eau après le barrage. Puis une sente en RG longe la rivière jusqu’à trouver un sentier RD qui remonte au parking d'accueil (15 minutes). Ne pas rejoindre le village.",
       "engagement": "Sortie possible par un sentier à mi-parcours RD face à la cascade (affluent RG)",
       "periode": "Attendre la fin de la fonte. Il y a toujours de l'eau.",
@@ -142,7 +142,7 @@
           "publicationYear": 2004,
           "reference": "ISBN: 2741702888",
           "editor": "GAP",
-          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "status": "stock très réduit !\n\n- 16,99 € -\n\nCommandez cet ouvrage dès maintenant !",
           "detailUrl": "https://www.descente-canyon.com/boutique/produit/128/Canyons-de-Haute-Savoie.html"
         },
         {
@@ -175,6 +175,7 @@
     },
     "reglementation": {
       "hasSpecificRegulation": true,
+      "isForbidden": false,
       "rules": [
         {
           "id": 271,
@@ -205,8 +206,7 @@
             }
           ]
         }
-      ],
-      "isForbidden": false
+      ]
     }
   }
 }

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "scrapedAt": "2026-03-24T09:53:41.263930+00:00",
+  "scrapedAt": "2026-07-16T17:03:39.645096+00:00",
   "source": {
     "site": "descente-canyon.com",
     "canyonId": 22613,
@@ -33,34 +33,34 @@
       "coursEau": "Vairon"
     },
     "rating": {
-      "cotation": "",
-      "interet": null,
-      "nbVotes": 0
+      "cotation": "v3a2III",
+      "interet": 1.8,
+      "nbVotes": 3
     },
     "metrics": {
       "altitudeDepartM": 1630,
       "deniveleM": 470,
       "longueurM": 1450,
-      "cascadeMaxM": null,
-      "cordeMiniM": null,
-      "navette": null
+      "cascadeMaxM": 23,
+      "cordeMiniM": 25,
+      "navette": "néant"
     },
     "timings": {
-      "approche": null,
-      "descente": null,
-      "retour": null
+      "approche": "1h50",
+      "descente": "2h15",
+      "retour": "10/15min"
     },
     "topo": {
-      "accesAval": null,
+      "accesAval": "Par la D28 (gorges inf. du Cians) et la D428 se rendre à Pierlas et se garer à la première épingle de la route Pierlas - Ilonse.",
       "accesAmont": null,
-      "approche": null,
-      "descente": null,
-      "retour": null,
-      "engagement": null,
-      "periode": null,
-      "geologie": null,
+      "approche": "Monter par la route (la balise 115 n'existe plus) pendant 1,9 km et prendre la première route goudronnée à gauche. A la 4° épingle, (ne pas poursuivre par cette piste qui donne dans des propriètés), prendre le sentier à droite (peinture jaune) qui débouche sur une piste.\n\nLa suivre sur la gauche, et 500 m après une barrière dépasser un virage à droite de quelques mètres. Descendre une petite pente pour rejoindre le ravin. (sources dans la marne).",
+      "descente": "Le vallon n'est pas encombré, ni glissant et permet une progression assez rapide. 11 cascades nécessitent l'usage de la corde. 2 AN et 9 cascades équipées d'un seul goujon de 8 en bon état. Quelques petits ressauts a désescalader.\n\nContinuer par le vallon de la Villette et son dernier encaissement (2 ressauts de 2/3 m sans corde).\n\n1150 m pour Vairon + 300 m pour Villette.",
+      "retour": "100 mètres après l'encaissement, sortir par une sente rive droite, captage, puis la route qui retourne à la voiture.",
+      "engagement": "Aucune échappatoire possible dès la 1ere cascade.",
+      "periode": "Avril, mai. La fonte des neiges alimente le vallon.\n\nCoule un peu plus tard que le Riu.",
+      "geologie": "Marne, calcaire et conglomérat.",
       "historique": "Ouvert et équipé le 23/04/2011 par Pierre, Robert et Pilou.",
-      "remarques": null
+      "remarques": "On peut faire une partie navette en se garant sur la route Pierlas- Ilonse au départ de la piste interdite sans l'emprunter (voir IGN).\n\nNavette intéressante: 250 mètres de dénivellation, horaire d'approche divisé par 2..."
     },
     "geoPoints": [
       {
@@ -101,16 +101,17 @@
     },
     "reglementation": {
       "hasSpecificRegulation": true,
+      "isForbidden": false,
       "rules": [
         {
           "id": 543,
-          "status": "Actif",
+          "status": "Abrogé",
           "action": "Interdit",
           "title": "Arrêté municipal (Pierlas) - 21 mai 2024",
           "summary": "La pratique de l'escalade et du canyoning sont interdit sur toute la commune...",
           "remark": "La raison invoquée est simplement... un risque d'accident majeur. (?)",
-          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nArrêté municipal n°2024-01 du 21 mai 2024 (commune de Pierlas)",
-          "effectiveDate": "21 mai 2024",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nArrêté municipal n°2024-01 du 21 mai 2024 (commune de Pierlas)\n\nConsultez :\n\nArrêté annulé en date du 15/10/2024",
+          "effectiveDate": "15 oct 2024",
           "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/543/legislation.html",
           "attachments": [
             {
@@ -148,8 +149,7 @@
           "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/26/legislation.html",
           "attachments": []
         }
-      ],
-      "isForbidden": true
+      ]
     }
   }
 }

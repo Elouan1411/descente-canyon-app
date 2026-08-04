@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "scrapedAt": "2026-03-24T09:44:30.358602+00:00",
+  "scrapedAt": "2026-07-16T16:55:27.985634+00:00",
   "source": {
     "site": "descente-canyon.com",
     "canyonId": 2197,
@@ -16,7 +16,7 @@
     "id": 2197,
     "identity": {
       "nom": "Coiserette",
-      "nomComplet": "Canyon de Coiserette, Tacon",
+      "nomComplet": "Canyon de Coiserette, Le Tacon",
       "prefixeNom": "Canyon de",
       "url": "https://www.descente-canyon.com/canyoning/canyon/2197/Coiserette.html"
     },
@@ -32,7 +32,7 @@
       ],
       "massif": "Jura",
       "bassin": "Bienne",
-      "coursEau": "Tacon"
+      "coursEau": "Le Tacon"
     },
     "rating": {
       "cotation": "v3a4III",
@@ -62,17 +62,9 @@
       "periode": "Des crues de 10 voir 15 m3/seconde peuvent passer dans les étroits...\n\nAttendre donc l'étiage pour atteindre environ 300l/seconde.\n\nTrès aquatique, néo complète obligatoire. Beaucoup de nage.\n\nLes profondeur de bassins changent avec le débit, à cause des \"barrages filtrants\" et sont très encombrés de troncs, malgré les nombreux efforts des amoureux du site ! Attention donc, vérifier les sauts impérativement.\n\nPériode conseillée : La belle saison...",
       "geologie": "Sans doute le plus bel encaissement du massif Jurassien avec le Groin (01)",
       "historique": "Première descente par des spéléos/grimpeurs du massif vers 1975 (1ère partie)\n\nOuverture de la suite et équipement par le Spéléo-Club Sanclaudien et Haut-Jura Canyon à partir de 1991 (F. Jacquier, J.L. Lacroix, D. Guyétand)",
-      "remarques": "Débit idéal à Saint Claude autour de 2m3/s :\n\nhttps://www.hydro.eaufrance.fr/sitehydro/V2420560/fiche\n\nhttps://www.vigicrues.gouv.fr/station/V242056001/station/V244402001\n\nEn cas d'orage violent ou de grosse intempérie, cette même sonde peut monter jusqu'à 80m3/s en moins de 2h... Consultation météo indispensable avant de s'engager dans ce canyon.\n\nUn plan de secours a été réalisé en 2025 comprenant entre autre la pose de pastilles numérotées dans le canyon. Elles permettent d'indiquer aux services de secours votre position précise en cas de blessures ou de blocage technique (montée d'eau). Ce projet a été conduit et mis en œuvre par le PGHM des Hauts de Bienne en collaboration avec le GPCE39, la SDJES, le département du Jura et la communauté de communes du Haut Jura Saint-Claude.\n\nRépartition des balises :\n\nPartie 1 : Balises 1 à 9\n\nPartie 2 : Balises 10 à 16\n\nPartie 3 : Balises 17 à 22\n\nPour plus de renseignement merci de contacter le PGHM des Hauts de Bienne au 03 84 60 31 0"
+      "remarques": "Débit idéal à Saint Claude autour de 2m3/s :\n\nhttps://www.hydro.eaufrance.fr/sitehydro/V2420560/fiche\n\nhttps://www.vigicrues.gouv.fr/station/V242056001\n\nEn cas d'orage violent ou de grosse intempérie, cette même sonde peut monter jusqu'à 80m3/s en moins de 2h... Consultation météo indispensable avant de s'engager dans ce canyon.\n\nUn plan de secours a été réalisé en 2025 comprenant entre autre la pose de pastilles numérotées dans le canyon. Elles permettent d'indiquer aux services de secours votre position précise en cas de blessures ou de blocage technique (montée d'eau). Ce projet a été conduit et mis en œuvre par le PGHM des Hauts de Bienne en collaboration avec le GPCE39, la SDJES, le département du Jura et la communauté de communes du Haut Jura Saint-Claude.\n\nRépartition des balises :\n\nPartie 1 : Balises 1 à 9\n\nPartie 2 : Balises 10 à 16\n\nPartie 3 : Balises 17 à 22\n\nPour plus de renseignement merci de contacter le PGHM des Hauts de Bienne au 03 84 60 31 0"
     },
     "geoPoints": [
-      {
-        "canyonId": 2197,
-        "rawType": "parking",
-        "type": "PARKING_AVAL",
-        "latitude": 46.34613,
-        "longitude": 5.837255,
-        "label": null
-      },
       {
         "canyonId": 2197,
         "rawType": "depart",
@@ -83,10 +75,10 @@
       },
       {
         "canyonId": 2197,
-        "rawType": "arrivee",
-        "type": "SORTIE",
-        "latitude": 46.3414163,
-        "longitude": 5.834402,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.34613,
+        "longitude": 5.837255,
         "label": null
       }
     ],
@@ -139,7 +131,29 @@
     },
     "reglementation": {
       "hasSpecificRegulation": true,
+      "isForbidden": false,
       "rules": [
+        {
+          "id": 610,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Jura) - 10 juil 2026",
+          "summary": "Dans le cadre des mesures de restriction des usages de l'eau liées à la sécheresse, la préfecture a décidé que la pratique du canyonisme sur les canyons situés sur les cours d'eau du Tacon, de la Bienne et de leurs affluents est interdite, sauf entre 08h00 et 12h00.",
+          "remark": null,
+          "details": "Arrêté préfectoral n°2026-07-10-001 (Jura) du 10 juillet 2026\n\nCommuniqué de presse d'activation de mesure de restrictions concernant les activités aquatiques et nautiques (10 juillet 2026)",
+          "effectiveDate": "10 juil 2026",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/610/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral n°2026-07-10-001 (Jura) du 10 juillet 2026",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem610_pj1.pdf"
+            },
+            {
+              "label": "Communiqué de presse d'activation de mesure de restrictions concernant les activités aquatiques et nautiques (10 juillet 2026)",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem610_pj2.pdf"
+            }
+          ]
+        },
         {
           "id": 491,
           "status": "Abrogé",
@@ -165,8 +179,7 @@
             }
           ]
         }
-      ],
-      "isForbidden": false
+      ]
     }
   }
 }

@@ -24,9 +24,7 @@ import fr.descentecanyon.app.R
 import fr.descentecanyon.app.domain.model.CanyonSummary
 import fr.descentecanyon.app.domain.model.GeoPointType
 import fr.descentecanyon.app.map.MAP_STYLE_URI
-import kotlin.math.cos
 import kotlin.math.roundToInt
-import kotlin.math.sin
 import org.maplibre.android.MapLibre
 import org.maplibre.android.annotations.IconFactory
 import org.maplibre.android.annotations.Marker
@@ -78,8 +76,8 @@ private const val CANYON_SOURCE_ID = "canyon-source"
 private const val CANYON_CLUSTER_LAYER_ID = "canyon-cluster-layer"
 private const val CANYON_CLUSTER_COUNT_LAYER_ID = "canyon-cluster-count-layer"
 private const val CANYON_VISIBLE_SOURCE_ID = "canyon-visible-source"
-private const val CANYON_VISIBLE_POINT_LAYER_ID = "canyon-visible-point-layer"
-private const val CANYON_POINT_LAYER_ID = "canyon-point-layer"
+private const val CANYON_VISIBLE_CLUSTER_LAYER_ID = "canyon-visible-cluster-layer"
+private const val CANYON_VISIBLE_CLUSTER_COUNT_LAYER_ID = "canyon-visible-cluster-count-layer"
 private const val USER_SOURCE_ID = "user-source"
 private const val USER_HALO_LAYER_ID = "user-halo-layer"
 private const val USER_POINT_LAYER_ID = "user-point-layer"
@@ -87,6 +85,7 @@ private const val USER_POINT_LAYER_ID = "user-point-layer"
 private const val PROPERTY_CANYON_ID = "canyonId"
 private const val PROPERTY_CANYON_NAME = "name"
 private const val PROPERTY_INTEREST_COLOR = "interestColor"
+private const val PROPERTY_RENDER_PRIORITY = "renderPriority"
 private const val PROPERTY_POINT_COUNT = "point_count"
 private const val PROPERTY_POINT_COUNT_ABBREVIATED = "point_count_abbreviated"
 
@@ -113,10 +112,17 @@ private const val EMPTY_GEOJSON = "{\"type\":\"FeatureCollection\",\"features\":
 
 private const val CLUSTER_RADIUS = 88
 private const val CLUSTER_MAX_ZOOM = 12
+private const val DETAIL_CLUSTER_RADIUS = 36
+private const val DETAIL_CLUSTER_MAX_ZOOM = 15
 private const val CLUSTER_TAP_FALLBACK_ZOOM_DELTA = 2.0
 private const val DETAIL_POINT_ZOOM_THRESHOLD = 8.4
 private const val DETAIL_POINT_VISIBLE_COUNT_THRESHOLD = 12
 private const val USER_LOCATION_FOCUS_ZOOM = 9.6
+
+private val CANYON_RENDER_PRIORITIES = 0..5
+private val CANYON_POINT_LAYER_IDS = CANYON_RENDER_PRIORITIES.map(::canyonPointLayerId)
+private val CANYON_VISIBLE_POINT_LAYER_IDS = CANYON_RENDER_PRIORITIES.map(::canyonVisiblePointLayerId)
+private val CANYON_TAP_LAYER_IDS = CANYON_VISIBLE_POINT_LAYER_IDS + CANYON_POINT_LAYER_IDS
 
 private val EMPTY_FEATURE_COLLECTION = FeatureCollection.fromFeatures(emptyList<Feature>())
 
@@ -337,35 +343,56 @@ private class MapRenderState(
         latLng: LatLng,
     ): Boolean {
         val screenPoint = map.projection.toScreenLocation(latLng)
-        val clusterFeature = map.queryRenderedFeatures(screenPoint, CANYON_CLUSTER_LAYER_ID).firstOrNull()
+        val detailClusterFeature = map.queryRenderedFeatures(
+            screenPoint,
+            CANYON_VISIBLE_CLUSTER_LAYER_ID,
+            CANYON_VISIBLE_CLUSTER_COUNT_LAYER_ID,
+        ).firstOrNull()
+        if (detailClusterFeature != null) {
+            zoomToCluster(map, detailClusterFeature, CANYON_VISIBLE_SOURCE_ID)
+            return true
+        }
+
+        val clusterFeature = map.queryRenderedFeatures(
+            screenPoint,
+            CANYON_CLUSTER_LAYER_ID,
+            CANYON_CLUSTER_COUNT_LAYER_ID,
+        ).firstOrNull()
         if (clusterFeature != null) {
-            val geometry = clusterFeature.geometry() as? Point ?: return true
-            val expansionZoom = runCatching {
-                map.style
-                    ?.getSourceAs<GeoJsonSource>(CANYON_SOURCE_ID)
-                    ?.getClusterExpansionZoom(clusterFeature)
-                    ?.toDouble()
-            }.getOrNull()
-            map.animateCamera(
-                CameraUpdateFactory.newLatLngZoom(
-                    LatLng(geometry.latitude(), geometry.longitude()),
-                    expansionZoom ?: (map.cameraPosition.zoom + CLUSTER_TAP_FALLBACK_ZOOM_DELTA),
-                ),
-                350,
-            )
+            zoomToCluster(map, clusterFeature, CANYON_SOURCE_ID)
             return true
         }
 
         val canyonFeature = map.queryRenderedFeatures(
             screenPoint,
-            CANYON_VISIBLE_POINT_LAYER_ID,
-            CANYON_POINT_LAYER_ID,
+            *CANYON_TAP_LAYER_IDS.toTypedArray(),
         ).firstOrNull()
         val canyonId = canyonFeature?.getNumberProperty(PROPERTY_CANYON_ID)?.toInt()
             ?: canyonFeature?.getStringProperty(PROPERTY_CANYON_ID)?.toIntOrNull()
             ?: return false
         onMarkerClick(canyonId)
         return true
+    }
+
+    private fun zoomToCluster(
+        map: MapLibreMap,
+        clusterFeature: Feature,
+        sourceId: String,
+    ) {
+        val geometry = clusterFeature.geometry() as? Point ?: return
+        val expansionZoom = runCatching {
+            map.style
+                ?.getSourceAs<GeoJsonSource>(sourceId)
+                ?.getClusterExpansionZoom(clusterFeature)
+                ?.toDouble()
+        }.getOrNull()
+        map.animateCamera(
+            CameraUpdateFactory.newLatLngZoom(
+                LatLng(geometry.latitude(), geometry.longitude()),
+                expansionZoom ?: (map.cameraPosition.zoom + CLUSTER_TAP_FALLBACK_ZOOM_DELTA),
+            ),
+            350,
+        )
     }
 
     private fun render(force: Boolean) {
@@ -666,7 +693,16 @@ private class MapRenderState(
             style.addSource(GeoJsonSource(USER_SOURCE_ID, EMPTY_FEATURE_COLLECTION))
         }
         if (style.getSource(CANYON_VISIBLE_SOURCE_ID) == null) {
-            style.addSource(GeoJsonSource(CANYON_VISIBLE_SOURCE_ID, EMPTY_FEATURE_COLLECTION))
+            style.addSource(
+                GeoJsonSource(
+                    CANYON_VISIBLE_SOURCE_ID,
+                    EMPTY_FEATURE_COLLECTION,
+                    GeoJsonOptions()
+                        .withCluster(true)
+                        .withClusterRadius(DETAIL_CLUSTER_RADIUS)
+                        .withClusterMaxZoom(DETAIL_CLUSTER_MAX_ZOOM),
+                )
+            )
         }
         if (style.getLayer(CANYON_CLUSTER_LAYER_ID) == null) {
             style.addLayer(
@@ -719,74 +755,60 @@ private class MapRenderState(
                     )
             )
         }
-        if (style.getLayer(CANYON_POINT_LAYER_ID) == null) {
+        if (style.getLayer(CANYON_VISIBLE_CLUSTER_LAYER_ID) == null) {
             style.addLayer(
-                CircleLayer(CANYON_POINT_LAYER_ID, CANYON_SOURCE_ID)
-                    .withFilter(Expression.not(Expression.has(PROPERTY_POINT_COUNT)))
+                CircleLayer(CANYON_VISIBLE_CLUSTER_LAYER_ID, CANYON_VISIBLE_SOURCE_ID)
+                    .withFilter(Expression.has(PROPERTY_POINT_COUNT))
                     .withProperties(
-                        circleColor(Expression.toColor(Expression.get(PROPERTY_INTEREST_COLOR))),
+                        circleColor(CLUSTER_SMALL_COLOR),
                         circleRadius(
-                            Expression.interpolate(
-                                Expression.linear(),
-                                Expression.zoom(),
-                                Expression.stop(2, 4.0),
-                                Expression.stop(5, 5.2),
-                                Expression.stop(8, 6.4),
-                                Expression.stop(11, 8.0),
+                            Expression.step(
+                                Expression.get(PROPERTY_POINT_COUNT),
+                                14,
+                                Expression.stop(4, 18),
+                                Expression.stop(10, 22),
                             )
                         ),
-                        circleOpacity(
-                            Expression.interpolate(
-                                Expression.linear(),
-                                Expression.zoom(),
-                                Expression.stop(2, 0.8),
-                                Expression.stop(5, 0.86),
-                                Expression.stop(8, 0.92),
-                                Expression.stop(11, 0.96),
-                            )
-                        ),
-                        circleStrokeColor(CANYON_POINT_STROKE),
-                        circleStrokeWidth(
-                            Expression.interpolate(
-                                Expression.linear(),
-                                Expression.zoom(),
-                                Expression.stop(2, 1.0),
-                                Expression.stop(8, 1.4),
-                                Expression.stop(11, 1.9),
-                            )
-                        ),
-                        circleStrokeOpacity(0.95f),
-                    )
-            )
-        }
-        if (style.getLayer(CANYON_VISIBLE_POINT_LAYER_ID) == null) {
-            style.addLayer(
-                CircleLayer(CANYON_VISIBLE_POINT_LAYER_ID, CANYON_VISIBLE_SOURCE_ID)
-                    .withProperties(
-                        circleColor(Expression.toColor(Expression.get(PROPERTY_INTEREST_COLOR))),
-                        circleRadius(
-                            Expression.interpolate(
-                                Expression.linear(),
-                                Expression.zoom(),
-                                Expression.stop(8, 5.8),
-                                Expression.stop(10, 7.0),
-                                Expression.stop(12, 8.4),
-                            )
-                        ),
-                        circleOpacity(
-                            Expression.interpolate(
-                                Expression.linear(),
-                                Expression.zoom(),
-                                Expression.stop(8, 0.9),
-                                Expression.stop(10, 0.95),
-                                Expression.stop(12, 1.0),
-                            )
-                        ),
-                        circleStrokeColor(CANYON_POINT_STROKE),
-                        circleStrokeWidth(1.9f),
+                        circleOpacity(0.94f),
+                        circleStrokeColor(CLUSTER_STROKE_COLOR),
+                        circleStrokeWidth(2.4f),
                         circleStrokeOpacity(0.98f),
                     )
             )
+        }
+        if (style.getLayer(CANYON_VISIBLE_CLUSTER_COUNT_LAYER_ID) == null) {
+            style.addLayer(
+                SymbolLayer(CANYON_VISIBLE_CLUSTER_COUNT_LAYER_ID, CANYON_VISIBLE_SOURCE_ID)
+                    .withFilter(Expression.has(PROPERTY_POINT_COUNT))
+                    .withProperties(
+                        textField(Expression.toString(Expression.get(PROPERTY_POINT_COUNT_ABBREVIATED))),
+                        textFont(arrayOf("Open Sans Semibold")),
+                        textSize(
+                            Expression.step(
+                                Expression.get(PROPERTY_POINT_COUNT),
+                                11.5f,
+                                Expression.stop(10, 12.5f),
+                            )
+                        ),
+                        textColor(CLUSTER_TEXT_COLOR),
+                        textHaloColor(CLUSTER_TEXT_HALO_COLOR),
+                        textHaloWidth(1.4f),
+                        textAllowOverlap(false),
+                        textIgnorePlacement(false),
+                    )
+            )
+        }
+        CANYON_RENDER_PRIORITIES.forEach { priority ->
+            val pointLayerId = canyonPointLayerId(priority)
+            if (style.getLayer(pointLayerId) == null) {
+                style.addLayer(buildCanyonPointLayer(pointLayerId, CANYON_SOURCE_ID, priority, detailMode = false))
+            }
+        }
+        CANYON_RENDER_PRIORITIES.forEach { priority ->
+            val visiblePointLayerId = canyonVisiblePointLayerId(priority)
+            if (style.getLayer(visiblePointLayerId) == null) {
+                style.addLayer(buildCanyonPointLayer(visiblePointLayerId, CANYON_VISIBLE_SOURCE_ID, priority, detailMode = true))
+            }
         }
         if (style.getLayer(USER_HALO_LAYER_ID) == null) {
             style.addLayer(
@@ -818,14 +840,16 @@ private class MapRenderState(
     }
 
     private fun buildCanyonFeatureCollection(markers: List<CanyonSummary>): FeatureCollection {
-        val features = distributedCanyonPositions(markers).map { positioned ->
-            val canyon = positioned.canyon
+        val features = markers.mapNotNull { canyon ->
+            val latitude = canyon.latitude ?: return@mapNotNull null
+            val longitude = canyon.longitude ?: return@mapNotNull null
             Feature.fromGeometry(
-                Point.fromLngLat(positioned.longitude, positioned.latitude),
+                Point.fromLngLat(longitude, latitude),
                 JsonObject().apply {
                     addProperty(PROPERTY_CANYON_ID, canyon.id)
                     addProperty(PROPERTY_CANYON_NAME, canyon.nom)
                     addProperty(PROPERTY_INTEREST_COLOR, colorIntToMapColor(interestMarkerColor(canyon)))
+                    addProperty(PROPERTY_RENDER_PRIORITY, interestMarkerRenderPriority(canyon))
                 },
             )
         }
@@ -870,8 +894,10 @@ private class MapRenderState(
 
     private fun buildAnnotationMarkers(): List<AnnotationMarker> {
         return buildList {
-            distributedCanyonPositions(markers).forEach { positioned ->
-                add(AnnotationMarker.Canyon(positioned.canyon, positioned.latitude, positioned.longitude))
+            markers.forEach { canyon ->
+                val latitude = canyon.latitude ?: return@forEach
+                val longitude = canyon.longitude ?: return@forEach
+                add(AnnotationMarker.Canyon(canyon, latitude, longitude))
             }
             val currentUserLatitude = userLatitude
             val currentUserLongitude = userLongitude
@@ -902,41 +928,80 @@ private sealed interface AnnotationMarker {
     ) : AnnotationMarker
 }
 
-private data class PositionedCanyon(
-    val canyon: CanyonSummary,
-    val latitude: Double,
-    val longitude: Double,
-)
-
-private fun distributedCanyonPositions(markers: List<CanyonSummary>): List<PositionedCanyon> {
-    val indexed = markers.mapIndexedNotNull { index, canyon ->
-        val latitude = canyon.latitude ?: return@mapIndexedNotNull null
-        val longitude = canyon.longitude ?: return@mapIndexedNotNull null
-        Triple(index, canyon, Pair(latitude, longitude))
+private fun buildCanyonPointLayer(
+    layerId: String,
+    sourceId: String,
+    priority: Int,
+    detailMode: Boolean,
+): CircleLayer {
+    val radiusExpression = if (detailMode) {
+        Expression.interpolate(
+            Expression.linear(),
+            Expression.zoom(),
+            Expression.stop(8, 5.8),
+            Expression.stop(10, 7.0),
+            Expression.stop(12, 8.4),
+        )
+    } else {
+        Expression.interpolate(
+            Expression.linear(),
+            Expression.zoom(),
+            Expression.stop(2, 4.0),
+            Expression.stop(5, 5.2),
+            Expression.stop(8, 6.4),
+            Expression.stop(11, 8.0),
+        )
     }
-    return indexed
-        .groupBy { (_, _, coords) -> coords.first.roundForGroup() to coords.second.roundForGroup() }
-        .values
-        .flatMap { group ->
-            if (group.size == 1) {
-                val (_, canyon, coords) = group.first()
-                listOf(PositionedCanyon(canyon, coords.first, coords.second))
+    val opacityExpression = if (detailMode) {
+        Expression.interpolate(
+            Expression.linear(),
+            Expression.zoom(),
+            Expression.stop(8, 0.9),
+            Expression.stop(10, 0.95),
+            Expression.stop(12, 1.0),
+        )
+    } else {
+        Expression.interpolate(
+            Expression.linear(),
+            Expression.zoom(),
+            Expression.stop(2, 0.8),
+            Expression.stop(5, 0.86),
+            Expression.stop(8, 0.92),
+            Expression.stop(11, 0.96),
+        )
+    }
+    return CircleLayer(layerId, sourceId)
+        .withFilter(
+            Expression.all(
+                Expression.not(Expression.has(PROPERTY_POINT_COUNT)),
+                Expression.eq(Expression.get(PROPERTY_RENDER_PRIORITY), Expression.literal(priority)),
+            )
+        )
+        .withProperties(
+            circleColor(Expression.toColor(Expression.get(PROPERTY_INTEREST_COLOR))),
+            circleRadius(radiusExpression),
+            circleOpacity(opacityExpression),
+            circleStrokeColor(CANYON_POINT_STROKE),
+            if (detailMode) {
+                circleStrokeWidth(1.9f)
             } else {
-                val ordered = group.sortedBy { (_, canyon, _) -> canyon.id }
-                val radius = 0.00018 + ((ordered.size - 2).coerceAtLeast(0) * 0.00003)
-                ordered.mapIndexed { idx, (_, canyon, coords) ->
-                    val angle = (2.0 * Math.PI * idx) / ordered.size
-                    PositionedCanyon(
-                        canyon = canyon,
-                        latitude = coords.first + sin(angle) * radius,
-                        longitude = coords.second + cos(angle) * radius,
+                circleStrokeWidth(
+                    Expression.interpolate(
+                        Expression.linear(),
+                        Expression.zoom(),
+                        Expression.stop(2, 1.0),
+                        Expression.stop(8, 1.4),
+                        Expression.stop(11, 1.9),
                     )
-                }
-            }
-        }
+                )
+            },
+            circleStrokeOpacity(if (detailMode) 0.98f else 0.95f),
+        )
 }
 
-private fun Double.roundForGroup(): Int = (this * 10_000).roundToInt()
+private fun canyonPointLayerId(priority: Int): String = "canyon-point-layer-$priority"
+
+private fun canyonVisiblePointLayerId(priority: Int): String = "canyon-visible-point-layer-$priority"
 
 private fun LatLngBounds.toSignatureHash(): Int {
     var result = 17
@@ -979,6 +1044,17 @@ internal fun interestMarkerColor(canyon: CanyonSummary): Int {
         interest <= 2f -> INTEREST_1_TO_2_COLOR
         interest <= 3f -> INTEREST_2_TO_3_COLOR
         else -> INTEREST_3_TO_4_COLOR
+    }
+}
+
+internal fun interestMarkerRenderPriority(canyon: CanyonSummary): Int {
+    return when {
+        canyon.isForbidden -> 0
+        canyon.interet == null || canyon.interet <= 0f -> 1
+        canyon.interet <= 1f -> 2
+        canyon.interet <= 2f -> 3
+        canyon.interet <= 3f -> 4
+        else -> 5
     }
 }
 

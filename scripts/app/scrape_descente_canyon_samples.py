@@ -473,11 +473,18 @@ def parse_summary_page(canyon_id: int, html: str) -> dict[str, Any]:
         if re.search(r"/lieu/\d{5}/", href) and text not in {region, departement}:
             communes.append(text)
 
-    interest_block = fiche.select_one("a[href*='canyon-interet']")
-    interest_container = interest_block.parent if interest_block is not None else None
-    interet = normalize_interest(
-        extract_float(clean_text(interest_container.get_text(" ", strip=True)) if interest_container else None)
+    interest_block = next(
+        (
+            link
+            for link in soup.select("a[href*='canyon-interet']")
+            if re.search(r"\d+\s*vote", link.get_text(" ", strip=True), re.I)
+        ),
+        None,
     )
+    interest_container = interest_block.parent if interest_block is not None else None
+    interest_text = clean_text(interest_container.get_text(" ", strip=True)) if interest_container else None
+    interest_match = re.search(r"(\d+(?:[.,]\d+)?)\s*/\s*4\b", interest_text or "")
+    interet = normalize_interest(extract_float(interest_match.group(1)) if interest_match else None)
     nb_votes = 0
     if interest_block is not None:
         votes_match = re.search(r"(\d+)\s*vote", interest_block.get_text(" ", strip=True), re.I)

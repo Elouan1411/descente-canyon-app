@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "scrapedAt": "2026-03-24T09:44:09.081939+00:00",
+  "scrapedAt": "2026-07-16T16:55:11.466994+00:00",
   "source": {
     "site": "descente-canyon.com",
     "canyonId": 2127,
@@ -36,7 +36,7 @@
     "rating": {
       "cotation": "v4a3III",
       "interet": 3.1,
-      "nbVotes": 131
+      "nbVotes": 132
     },
     "metrics": {
       "altitudeDepartM": 640,
@@ -59,7 +59,7 @@
       "retour": "Une sortie rive droite permet de rejoindre le pont du Diable.",
       "engagement": "Très important",
       "periode": "Le canyon est déséquipé des mains courantes fixes de septembre à fin mai. Il faut donc savoir poser des MC rappelables.",
-      "geologie": "Calcaire",
+      "geologie": null,
       "historique": null,
       "remarques": "Ne s'engager qu'avec un débit peu important (plusieurs morts par noyade !)."
     },
@@ -163,6 +163,7 @@
     },
     "reglementation": {
       "hasSpecificRegulation": true,
+      "isForbidden": false,
       "rules": [
         {
           "id": 574,
@@ -273,8 +274,7 @@
           "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/180/legislation.html",
           "attachments": []
         }
-      ],
-      "isForbidden": false
+      ]
     }
   }
 }

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "scrapedAt": "2026-03-24T09:56:06.116219+00:00",
+  "scrapedAt": "2026-07-16T17:05:31.525232+00:00",
   "source": {
     "site": "descente-canyon.com",
     "canyonId": 23205,
@@ -28,7 +28,7 @@
       "communes": [],
       "massif": "Alpes Bernoises",
       "bassin": "Zwei Lutschinen",
-      "coursEau": "Sandbach (Inner)"
+      "coursEau": null
     },
     "rating": {
       "cotation": "v3a2II",
@@ -38,7 +38,7 @@
     "metrics": {
       "altitudeDepartM": 2035,
       "deniveleM": 400,
-      "longueurM": 650,
+      "longueurM": null,
       "cascadeMaxM": 25,
       "cordeMiniM": 30,
       "navette": "néant"
@@ -56,19 +56,11 @@
       "retour": "Quand le sentier coupe le canyon, prendre à gauche pour rejoindre rapidement la gare d'Alpigen.",
       "engagement": "Possibilité de sortir du ruisseau très régulièrement.",
       "periode": "Si un peu trop d'eau dans Sandbach, Inner sandbach sera parfait.",
-      "geologie": "Calcaire",
+      "geologie": null,
       "historique": "08/09/2012 et 30/06/2013 Timo et Sacha",
-      "remarques": "L’équipement est monopoint mais en excellent état, garantissant une descente en toute sécurité. Ce canyon est sans doute l’un des plus beaux que j’ai parcourus, notamment grâce à son cadre naturel exceptionnel. La roche, l’eau cristalline et les panoramas en font un véritable joyau de la nature. Accessible pour les pratiquants en quête d’une aventure en milieu naturel, ce canyon est, à mes yeux, un véritable « First Class Canyon », offrant à la fois adrénaline et émerveillement."
+      "remarques": null
     },
     "geoPoints": [
-      {
-        "canyonId": 23205,
-        "rawType": "parking",
-        "type": "PARKING_AVAL",
-        "latitude": 46.623428,
-        "longitude": 8.02234,
-        "label": null
-      },
       {
         "canyonId": 23205,
         "rawType": "depart",
@@ -79,10 +71,10 @@
       },
       {
         "canyonId": 23205,
-        "rawType": "arrivee",
-        "type": "SORTIE",
-        "latitude": 46.5980937,
-        "longitude": 8.0126601,
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 46.623428,
+        "longitude": 8.02234,
         "label": null
       }
     ],
@@ -107,6 +99,7 @@
     },
     "reglementation": {
       "hasSpecificRegulation": true,
+      "isForbidden": false,
       "rules": [
         {
           "id": 402,
@@ -133,8 +126,7 @@
             }
           ]
         }
-      ],
-      "isForbidden": false
+      ]
     }
   }
 }

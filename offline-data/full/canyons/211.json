@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "scrapedAt": "2026-03-24T09:43:31.078993+00:00",
+  "scrapedAt": "2026-07-16T16:54:34.951971+00:00",
   "source": {
     "site": "descente-canyon.com",
     "canyonId": 211,
@@ -36,7 +36,7 @@
     "rating": {
       "cotation": "v5a3IV",
       "interet": 3.4,
-      "nbVotes": 211
+      "nbVotes": 212
     },
     "metrics": {
       "altitudeDepartM": 882,
@@ -215,7 +215,20 @@
     },
     "reglementation": {
       "hasSpecificRegulation": true,
+      "isForbidden": false,
       "rules": [
+        {
+          "id": 603,
+          "status": "Obsolète",
+          "action": "Réglemente",
+          "title": "Arrêté - 18 juin 2026",
+          "summary": "Dans le cadre de travaux de protection contre les chutes de blocs réalisés par le Département entre 2016 et 2023, un compartiment rocheux d’environ 3000m3 a été instrumenté et fait l’objet d’un suivi depuis.\n\nLe dispositif est tombé en panne et nécessite une intervention urgente afin d’assurer la sécurité de tout le monde.\n\nLe compartiment se trouve au-dessus du canyon des Ecouges et l’intervention est de nature à faire tomber de blocs, exposant ainsi les canyoneurs.\n\nDans ce cadre un arrêté d’interdiction du canyoning est prévu le 18 juin 2026 de 8h00 à 17h00.",
+          "remark": null,
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.",
+          "effectiveDate": "18 juin 2026",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/603/legislation.html",
+          "attachments": []
+        },
         {
           "id": 347,
           "status": "Obsolète",
@@ -286,8 +299,7 @@
           "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/160/legislation.html",
           "attachments": []
         }
-      ],
-      "isForbidden": false
+      ]
     }
   }
 }

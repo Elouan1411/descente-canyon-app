@@ -3,10 +3,11 @@ package fr.descentecanyon.app.domain.repository
 import fr.descentecanyon.app.domain.model.Debit
 import fr.descentecanyon.app.domain.model.ForumCategory
 import fr.descentecanyon.app.domain.model.ForumActiveTopic
+import fr.descentecanyon.app.domain.model.ForumUser
+import fr.descentecanyon.app.domain.model.ForumUserPost
 import fr.descentecanyon.app.domain.model.NotificationCenterState
 import fr.descentecanyon.app.domain.model.NotificationSyncSummary
 import fr.descentecanyon.app.domain.model.TrackedActivityEvent
-import fr.descentecanyon.app.domain.model.TrackedActivityType
 import kotlinx.coroutines.flow.Flow
 
 interface NotificationCenterRepository {
@@ -18,6 +19,8 @@ interface NotificationCenterRepository {
     fun observeIsForumCategoryFollowed(forumId: Int?, forumName: String): Flow<Boolean>
 
     fun observeIsForumThreadFollowed(topicId: Int): Flow<Boolean>
+
+    fun observeIsUserFollowed(normalizedUsername: String): Flow<Boolean>
 
     suspend fun toggleCanyonFollow(
         canyonId: Int,
@@ -42,6 +45,10 @@ interface NotificationCenterRepository {
 
     suspend fun removeForumThreadFollow(topicId: Int)
 
+    suspend fun toggleUserFollow(user: ForumUser)
+
+    suspend fun removeUserFollow(normalizedUsername: String)
+
     suspend fun clearRecentActivity()
 
     suspend fun getOrCreateInstallOffsetMinutes(): Int
@@ -56,7 +63,9 @@ interface NotificationCenterRepository {
 
     suspend fun syncFetchedForumTopics(activeTopics: List<ForumActiveTopic>): NotificationSyncSummary
 
-    suspend fun pendingEvents(type: TrackedActivityType): List<TrackedActivityEvent>
+    suspend fun syncFetchedUserPosts(posts: List<ForumUserPost>): NotificationSyncSummary
+
+    suspend fun pendingEvents(type: fr.descentecanyon.app.domain.model.TrackedActivityType): List<TrackedActivityEvent>
 
     suspend fun markEventsDelivered(eventIds: Collection<String>)
 }

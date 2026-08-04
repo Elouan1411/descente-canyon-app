@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "scrapedAt": "2026-03-24T09:44:05.719671+00:00",
+  "scrapedAt": "2026-07-16T16:55:09.002507+00:00",
   "source": {
     "site": "descente-canyon.com",
     "canyonId": 2116,
@@ -31,12 +31,12 @@
       ],
       "massif": "Chartreuse",
       "bassin": "Isère",
-      "coursEau": "Ruisseau de l’Alloix"
+      "coursEau": null
     },
     "rating": {
       "cotation": "v4a3II",
       "interet": 2.8,
-      "nbVotes": 137
+      "nbVotes": 138
     },
     "metrics": {
       "altitudeDepartM": 660,
@@ -178,6 +178,7 @@
     },
     "reglementation": {
       "hasSpecificRegulation": true,
+      "isForbidden": false,
       "rules": [
         {
           "id": 411,
@@ -208,8 +209,7 @@
           "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/43/legislation.html",
           "attachments": []
         }
-      ],
-      "isForbidden": false
+      ]
     }
   }
 }

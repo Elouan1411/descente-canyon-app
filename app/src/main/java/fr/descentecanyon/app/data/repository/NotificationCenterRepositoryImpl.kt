@@ -9,6 +9,8 @@ import androidx.datastore.preferences.preferencesDataStore
 import dagger.hilt.android.qualifiers.ApplicationContext
 import fr.descentecanyon.app.domain.model.Debit
 import fr.descentecanyon.app.domain.model.ForumActiveTopic
+import fr.descentecanyon.app.domain.model.ForumUser
+import fr.descentecanyon.app.domain.model.ForumUserPost
 import fr.descentecanyon.app.domain.model.NotificationCenterState
 import fr.descentecanyon.app.domain.model.NotificationSyncSummary
 import fr.descentecanyon.app.domain.model.TrackedActivityEvent
@@ -68,6 +70,12 @@ class NotificationCenterRepositoryImpl @Inject constructor(
     override fun observeIsForumThreadFollowed(topicId: Int): Flow<Boolean> {
         return observeState()
             .map { state -> state.followedForumThreads.any { it.topicId == topicId } }
+            .distinctUntilChanged()
+    }
+
+    override fun observeIsUserFollowed(normalizedUsername: String): Flow<Boolean> {
+        return observeState()
+            .map { state -> state.followedUsers.any { it.normalizedUsername == normalizedUsername } }
             .distinctUntilChanged()
     }
 
@@ -154,6 +162,25 @@ class NotificationCenterRepositoryImpl @Inject constructor(
         }
     }
 
+    override suspend fun toggleUserFollow(user: ForumUser) {
+        updateState { state ->
+            if (state.followedUsers.any { it.normalizedUsername == user.normalizedUsername }) {
+                state.copy(followedUsers = state.followedUsers.filterNot { it.normalizedUsername == user.normalizedUsername })
+            } else {
+                state.copy(
+                    followedUsers = (state.followedUsers + NotificationSyncEngine.buildInitialUserFollow(user))
+                        .sortedBy { it.username.lowercase() },
+                )
+            }
+        }
+    }
+
+    override suspend fun removeUserFollow(normalizedUsername: String) {
+        updateState { state ->
+            state.copy(followedUsers = state.followedUsers.filterNot { it.normalizedUsername == normalizedUsername })
+        }
+    }
+
     override suspend fun clearRecentActivity() {
         updateState { state -> state.copy(recentEvents = emptyList()) }
     }
@@ -196,6 +223,20 @@ class NotificationCenterRepositoryImpl @Inject constructor(
 
     override suspend fun syncFetchedForumTopics(activeTopics: List<ForumActiveTopic>): NotificationSyncSummary {
         return syncFetchedContent(latestDebits = emptyList(), activeTopics = activeTopics)
+    }
+
+    override suspend fun syncFetchedUserPosts(posts: List<ForumUserPost>): NotificationSyncSummary {
+        var summary = NotificationSyncSummary()
+        updateState { state ->
+            val (updated, syncSummary) = NotificationSyncEngine.applyFetchedUserPosts(
+                state = state,
+                posts = posts,
+                nowEpochMs = System.currentTimeMillis(),
+            )
+            summary = syncSummary
+            updated
+        }
+        return summary
     }
 
     override suspend fun pendingEvents(type: TrackedActivityType): List<TrackedActivityEvent> {

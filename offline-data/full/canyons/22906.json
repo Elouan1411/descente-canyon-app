@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "scrapedAt": "2026-03-24T09:54:51.900046+00:00",
+  "scrapedAt": "2026-07-16T17:04:34.267895+00:00",
   "source": {
     "site": "descente-canyon.com",
     "canyonId": 22906,
@@ -9,7 +9,7 @@
       "description": "https://www.descente-canyon.com/canyoning/canyon-description/22906/topo.html",
       "map": "https://www.descente-canyon.com/canyoning/canyon-carte/22906/carte.html",
       "bibliography": "https://www.descente-canyon.com/canyoning/canyon-bibliographie/22906/guides-et-cartes.html",
-      "regulation": null
+      "regulation": "https://www.descente-canyon.com/canyoning/canyon-reglementation/22906/legislation.html"
     }
   },
   "canyon": {
@@ -108,9 +108,27 @@
       "resources": []
     },
     "reglementation": {
-      "hasSpecificRegulation": false,
-      "rules": [],
-      "isForbidden": false
+      "hasSpecificRegulation": true,
+      "isForbidden": false,
+      "rules": [
+        {
+          "id": 606,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Gard) - 02 juin 2026",
+          "summary": "- La pratique du canyonisme est autorisée toute l'année (sauf réglementation locale via les plans de gestion locaux) du lever au coucher du soleil. Il est interdit de s'engager dans une descente de canyon :\n\n• Après 17h00 pour la période allant du 1er octobre au 31 mars;\n\n• Après 19h00 pour la période allant du 1°' avril au 30 septembre.\n\n- Suite à un avis de vigilance météorologique orange ou rouge : pluies, orages, inondation, diffusé par Météo France, la pratique du canyonisme est interdite dans le ou les secteurs concernés et ce, jusqu'à la fin de l'alerte. Idem en cas de risque de feu de forêt de niveau rouge ou de sécheresse.\n\n- Le nombre de personnes par groupe devra être adapté à la difficulté et à l'engagement du canyon et ne pourra excéder 10 personnes, encadrement compris (sauf réglementation locale)",
+          "remark": null,
+          "details": "Arrêté préfectoral (Gard) n°02026-06-02-0087 du 2 juin 2026",
+          "effectiveDate": "02 juin 2026",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/606/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral (Gard) n°02026-06-02-0087 du 2 juin 2026",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem606_pj1.pdf"
+            }
+          ]
+        }
+      ]
     }
   }
 }

@@ -16,6 +16,7 @@ import fr.descentecanyon.app.data.local.dao.CanyonDao
 import fr.descentecanyon.app.data.local.dao.CanyonTrackDao
 import fr.descentecanyon.app.data.local.dao.DailyWeatherDao
 import fr.descentecanyon.app.data.local.dao.DebitDao
+import fr.descentecanyon.app.data.local.dao.ForumUserDao
 import fr.descentecanyon.app.data.local.dao.GeoPointDao
 import fr.descentecanyon.app.data.local.dao.PendingDebitSubmissionDao
 import fr.descentecanyon.app.data.local.dao.PhotoDao
@@ -343,6 +344,12 @@ object DatabaseModule {
         }
     }
 
+    private val MIGRATION_13_14 = object : Migration(13, 14) {
+        override fun migrate(db: SupportSQLiteDatabase) {
+            createForumUsersTable(db)
+        }
+    }
+
     @Provides
     @Singleton
     fun provideDatabase(@ApplicationContext context: Context): DescenteCanyonDatabase {
@@ -363,6 +370,7 @@ object DatabaseModule {
             .addMigrations(MIGRATION_10_11)
             .addMigrations(MIGRATION_11_12)
             .addMigrations(MIGRATION_12_13)
+            .addMigrations(MIGRATION_13_14)
             .createFromAsset(PREPACKAGED_DATABASE_ASSET_PATH)
 
         return builder.build()
@@ -405,6 +413,9 @@ object DatabaseModule {
 
     @Provides
     fun provideSearchIndexDao(database: DescenteCanyonDatabase): SearchIndexDao = database.searchIndexDao()
+
+    @Provides
+    fun provideForumUserDao(database: DescenteCanyonDatabase): ForumUserDao = database.forumUserDao()
 
     private fun ensureCanyonColumn(
         db: SupportSQLiteDatabase,
@@ -467,6 +478,32 @@ object DatabaseModule {
             )
             """.trimIndent()
         )
+    }
+
+    private fun createForumUsersTable(db: SupportSQLiteDatabase) {
+        db.execSQL(
+            """
+            CREATE TABLE IF NOT EXISTS `forum_users` (
+                `username` TEXT NOT NULL,
+                `normalizedUsername` TEXT NOT NULL,
+                `forumUserId` INTEGER,
+                `profileUrl` TEXT,
+                `source` TEXT NOT NULL,
+                `hasForumActivity` INTEGER NOT NULL,
+                `hasDebitActivity` INTEGER NOT NULL,
+                `forumPostCount` INTEGER NOT NULL,
+                `debitObservationCount` INTEGER NOT NULL,
+                `lastForumPostAt` TEXT,
+                `lastForumPostUrl` TEXT,
+                `lastDebitObservationAt` TEXT,
+                `lastDebitObservationUrl` TEXT,
+                `updatedAt` TEXT NOT NULL,
+                PRIMARY KEY(`username`)
+            )
+            """.trimIndent()
+        )
+        db.execSQL("CREATE UNIQUE INDEX IF NOT EXISTS `index_forum_users_normalizedUsername` ON `forum_users` (`normalizedUsername`)")
+        db.execSQL("CREATE INDEX IF NOT EXISTS `index_forum_users_forumUserId` ON `forum_users` (`forumUserId`)")
     }
 
     private fun recreateDebitsTable(db: SupportSQLiteDatabase) {

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "scrapedAt": "2026-03-24T09:53:42.031962+00:00",
+  "scrapedAt": "2026-07-16T17:03:40.399749+00:00",
   "source": {
     "site": "descente-canyon.com",
     "canyonId": 22617,
@@ -33,34 +33,34 @@
       "coursEau": "Coulié"
     },
     "rating": {
-      "cotation": "",
-      "interet": null,
-      "nbVotes": 0
+      "cotation": "v3a2II",
+      "interet": 1.0,
+      "nbVotes": 1
     },
     "metrics": {
       "altitudeDepartM": 1188,
       "deniveleM": 100,
       "longueurM": 350,
-      "cascadeMaxM": null,
-      "cordeMiniM": null,
-      "navette": null
+      "cascadeMaxM": 13,
+      "cordeMiniM": 25,
+      "navette": "néant"
     },
     "timings": {
-      "approche": null,
-      "descente": null,
-      "retour": null
+      "approche": "45min",
+      "descente": "1h15",
+      "retour": "15min"
     },
     "topo": {
-      "accesAval": null,
+      "accesAval": "De Nice se rendre à Pierlas et se garer à l'entrée du village.",
       "accesAmont": null,
-      "approche": null,
-      "descente": null,
-      "retour": null,
-      "engagement": null,
-      "periode": null,
+      "approche": "Passer sous le tunnel et prendre le GR bal 113 et continuer jusqu’à la passerelle (départ).",
+      "descente": "Petite descente dans un vallon qui s'encaisse progressivement avec de jolies petites cascades. Toujours en eau. La sortie est 50m après la barrière en bois du chemin pris a l'aller que l'on voit au dessus.",
+      "retour": "Avant les jardins prendre un sentier qui les traverse en montant au village.",
+      "engagement": "Canyon court\n\nSangle-maillon ou AN\n\nCertaines cascades se descendent par 2 (vérifier avant d'ôter la corde)",
+      "periode": "Toute l'année",
       "geologie": null,
       "historique": "Ouvert Le 1 05 2011 Robert et Pilou",
-      "remarques": null
+      "remarques": "Vallon idéal pour initiation aux rappels et sortie familiale.\n\nA cumuler avec le Vallon de la Villette"
     },
     "geoPoints": [
       {
@@ -93,16 +93,17 @@
     },
     "reglementation": {
       "hasSpecificRegulation": true,
+      "isForbidden": false,
       "rules": [
         {
           "id": 543,
-          "status": "Actif",
+          "status": "Abrogé",
           "action": "Interdit",
           "title": "Arrêté municipal (Pierlas) - 21 mai 2024",
           "summary": "La pratique de l'escalade et du canyoning sont interdit sur toute la commune...",
           "remark": "La raison invoquée est simplement... un risque d'accident majeur. (?)",
-          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nArrêté municipal n°2024-01 du 21 mai 2024 (commune de Pierlas)",
-          "effectiveDate": "21 mai 2024",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nArrêté municipal n°2024-01 du 21 mai 2024 (commune de Pierlas)\n\nConsultez :\n\nArrêté annulé en date du 15/10/2024",
+          "effectiveDate": "15 oct 2024",
           "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/543/legislation.html",
           "attachments": [
             {
@@ -111,8 +112,7 @@
             }
           ]
         }
-      ],
-      "isForbidden": true
+      ]
     }
   }
 }

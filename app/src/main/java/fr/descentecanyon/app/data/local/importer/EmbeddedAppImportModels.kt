@@ -133,3 +133,21 @@ data class CanyonTrackImportRow(
     val bbox: List<Double>? = null,
     val geometry: JsonElement? = null,
 )
+
+@Serializable
+data class ForumUserImportRow(
+    val username: String,
+    val normalizedUsername: String,
+    val forumUserId: Int? = null,
+    val profileUrl: String? = null,
+    val source: String,
+    val hasForumActivity: Boolean = false,
+    val hasDebitActivity: Boolean = false,
+    val forumPostCount: Int = 0,
+    val debitObservationCount: Int = 0,
+    val lastForumPostAt: String? = null,
+    val lastForumPostUrl: String? = null,
+    val lastDebitObservationAt: String? = null,
+    val lastDebitObservationUrl: String? = null,
+    val updatedAt: String,
+)

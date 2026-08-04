@@ -7,6 +7,7 @@ import fr.descentecanyon.app.data.remote.dto.ScrapedCanyonSummary
 import fr.descentecanyon.app.data.remote.dto.ScrapedDebit
 import fr.descentecanyon.app.data.remote.dto.ScrapedForumActiveTopic
 import fr.descentecanyon.app.data.remote.dto.ScrapedForumCategory
+import fr.descentecanyon.app.data.remote.dto.ScrapedForumUserPost
 import fr.descentecanyon.app.data.remote.dto.ScrapedGeoPoint
 import fr.descentecanyon.app.data.remote.dto.ScrapedPhoto
 import fr.descentecanyon.app.domain.model.AirTemperature
@@ -136,6 +137,16 @@ class CanyonScraper @Inject constructor(
                 runCatching {
                     val doc = fetchDocument("$BASE_URL/forums/")
                     ForumParser.parseCategories(doc)
+                }
+            }
+        }
+
+    suspend fun scrapeForumUserPosts(authorId: Int): Result<List<ScrapedForumUserPost>> =
+        withContext(Dispatchers.IO) {
+            semaphore.withPermit {
+                runCatching {
+                    val doc = fetchDocument("$BASE_URL/forums/search.php?author_id=$authorId&sr=posts&sk=t&sd=d")
+                    ForumParser.parseUserPosts(doc)
                 }
             }
         }

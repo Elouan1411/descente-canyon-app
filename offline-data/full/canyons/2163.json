@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "scrapedAt": "2026-03-24T09:44:20.841925+00:00",
+  "scrapedAt": "2026-07-16T16:55:20.023254+00:00",
   "source": {
     "site": "descente-canyon.com",
     "canyonId": 2163,
@@ -30,12 +30,12 @@
       ],
       "massif": "Bugey",
       "bassin": null,
-      "coursEau": "Biez des Cruies"
+      "coursEau": null
     },
     "rating": {
       "cotation": "v4a1II",
       "interet": 2.4,
-      "nbVotes": 40
+      "nbVotes": 41
     },
     "metrics": {
       "altitudeDepartM": 930,
@@ -58,7 +58,7 @@
       "retour": "Suivre le ruisseau le plus possible et Reprendre le sentier de montée sur rive droite (sauf si garé à la cote 530).",
       "engagement": "Peu d'échappatoires possibles après la première C25.",
       "periode": "Le bassin versant est faible, mais un filet d'eau circule tout au long de l'année. Les conditions idéales se trouveront en période de crue. Pas de vasque profonde.",
-      "geologie": "Calcaire",
+      "geologie": null,
       "historique": null,
       "remarques": "Sur la fin, un amarrage est constitué de deux maillons non reliés. Il s'agit d'un départ de main courante, un autre amarrage est placé tout de suite après le nez de cascade."
     },
@@ -73,14 +73,6 @@
       },
       {
         "canyonId": 2163,
-        "rawType": "parking",
-        "type": "PARKING_AVAL",
-        "latitude": 45.805588,
-        "longitude": 5.597363,
-        "label": "sans navette"
-      },
-      {
-        "canyonId": 2163,
         "rawType": "parking_aval",
         "type": "PARKING_AVAL",
         "latitude": 45.807503,
@@ -89,19 +81,11 @@
       },
       {
         "canyonId": 2163,
-        "rawType": "depart",
-        "type": "ENTREE",
-        "latitude": 45.8042585,
-        "longitude": 5.5898884,
-        "label": null
-      },
-      {
-        "canyonId": 2163,
-        "rawType": "arrivee",
-        "type": "SORTIE",
-        "latitude": 45.8075265,
-        "longitude": 5.5977812,
-        "label": null
+        "rawType": "parking",
+        "type": "PARKING_AVAL",
+        "latitude": 45.805588,
+        "longitude": 5.597363,
+        "label": "sans navette"
       }
     ],
     "representativePoint": {
@@ -125,6 +109,7 @@
     },
     "reglementation": {
       "hasSpecificRegulation": true,
+      "isForbidden": false,
       "rules": [
         {
           "id": 345,
@@ -162,9 +147,25 @@
           "effectiveDate": "15 sept 2005",
           "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/103/legislation.html",
           "attachments": []
+        },
+        {
+          "id": 611,
+          "status": "Actif",
+          "action": "Réglemente",
+          "title": "Arrêté préfectoral (Ain) - 21 mai 1997",
+          "summary": "Cet arrête fixe le cadre global de pratique dans le département de l'Ain :\n\n- équipements individuel et collectif obligatoires\n\n- effectif des groupes et normes d'encadrement (8 à 10 personnes selon le cas)\n\n- qualification de l'encadrement\n\n- protection du milieu",
+          "remark": null,
+          "details": "Arrêté préfectoral (Ain) du 21 mai 1997",
+          "effectiveDate": "21 mai 1997",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/611/legislation.html",
+          "attachments": [
+            {
+              "label": "Arrêté préfectoral (Ain) du 21 mai 1997",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem611_pj1.pdf"
+            }
+          ]
         }
-      ],
-      "isForbidden": false
+      ]
     }
   }
 }

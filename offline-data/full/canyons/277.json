@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "scrapedAt": "2026-03-24T09:43:55.971979+00:00",
+  "scrapedAt": "2026-07-16T16:54:57.313095+00:00",
   "source": {
     "site": "descente-canyon.com",
     "canyonId": 277,
@@ -35,7 +35,7 @@
     "rating": {
       "cotation": "v3a2III",
       "interet": 2.8,
-      "nbVotes": 124
+      "nbVotes": 125
     },
     "metrics": {
       "altitudeDepartM": 820,
@@ -54,7 +54,7 @@
       "accesAval": "Se garer sur le plus haut parking de Moustiers, après la chapelle et le cimetière. Le parking est payant du 1er avril au 31 octobre de 9h à 19h.",
       "accesAmont": null,
       "approche": "A partir du parking, emprunter le chemin balisé qui part vers le Sud (Courchon - La Chaîne) qui conduit à la \"Voie Romaine\" dont on peut voir les murs en pierre depuis Moustiers.\n\nLa suivre jusqu'au plateau au niveau du départ de vol libre, puis continuer la piste.\n\nA un embranchement de pistes suivre celle qui part légèrement à droite, jusqu'à rejoindre la grande piste en partie goudronnée qui traverse le plateau du Nord au Sud, au niveau de la ferme-gîte de Vénascle.\n\nSuivre cette piste vers la droite pendant plus d'un kilomètre jusqu'à un vallon (ravin de Bourillon) au niveau des ruines de Font Rouit à gauche.\n\nUn sentier balisé en jaune quitte la piste vers la droite (indications \"vers le GR4\") et conduit en quelques minutes au départ du canyon en longeant en RG un ravin généralement sec.",
-      "descente": "1ere partie parfois encaissée, suivi d'une seconde très ouverte.\n\nPrésence de bonnes résurgences avant la fin et au niveau de la sortie.\n\nCette dernière coule toute l'année et le débit constaté au niveau du pont sur la route n'est donc pas indicatif de ce qui coule dans le canyon (sauf en cas de crue).\n\nPour des raisons de protection du milieu, il est fortement conseillé d'éviter les vasques finales (à partir des résurgences) où le tuff et la végétation présente une grande fragilité.\n\nRestez discret dans le canyon où nichent quelques vautours.",
+      "descente": "1ere partie parfois encaissée, suivi d'une seconde très ouverte.\n\nPrésence de bonnes résurgences avant la fin et au niveau de la sortie.\n\nCette dernière coule toute l'année et le débit constaté au niveau du pont sur la route n'est donc pas indicatif de ce qui coule dans le canyon (sauf en cas de crue).\n\nPour des raisons de protection du milieu, il faut éviter les vasques finales (à partir des résurgences) où le tuff et la végétation présente une très grande fragilité.\n\nRestez discret dans le canyon où nichent quelques vautours.",
       "retour": "Au niveau de la confluence avec Vénascle, un panneau en RG rappelle l'interdiction de poursuivre par le cours d'eau (propriétés privées) et de sortir RG.\n\nil indique le nouveau sentier de sortie (re-balisé en rouge) qui part en RD en face du panneau, traverse le ravin de Vénascle et ramène au sentier botanique.\n\nA noter, un passage effondré au niveau du ravin de Courchon (corde fixe en place).",
       "engagement": "Quelques encaissements assez court dans la première partie.\n\nSeconde partie très ouverte.",
       "periode": null,
@@ -153,7 +153,25 @@
     },
     "reglementation": {
       "hasSpecificRegulation": true,
+      "isForbidden": false,
       "rules": [
+        {
+          "id": 602,
+          "status": "Actif",
+          "action": "Indéfini",
+          "title": "Information - 22 juin 2022",
+          "summary": "Canyonning responsable dans le Verdon (Source FNE)",
+          "remark": "Quelques conseils essentiels pour une pratique raisonnable de la descente de canyons dans les Gorges du Verdon.",
+          "details": "Consultez la fiche détaillée de cette réglementation qui impacte d'autres canyons.\n\nInformation - 22 juin 2022",
+          "effectiveDate": "22 juin 2022",
+          "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/602/legislation.html",
+          "attachments": [
+            {
+              "label": "Information - 22 juin 2022",
+              "url": "https://static.descente-canyon.com/canyoning/reglem/reglem602_pj1.pdf"
+            }
+          ]
+        },
         {
           "id": 166,
           "status": "Abrogé",
@@ -217,8 +235,7 @@
             }
           ]
         }
-      ],
-      "isForbidden": false
+      ]
     }
   }
 }

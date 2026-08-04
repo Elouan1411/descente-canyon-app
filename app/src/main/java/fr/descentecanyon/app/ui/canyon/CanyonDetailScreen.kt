@@ -147,6 +147,7 @@ fun CanyonDetailScreen(
     onShowMapClick: () -> Unit,
     onOpenPredictionInfo: () -> Unit,
     onOpenPhotoGallery: (Long) -> Unit,
+    onUserClick: (String) -> Unit = {},
     openDebitsTabInitially: Boolean = false,
     modifier: Modifier = Modifier,
     contentPadding: PaddingValues = PaddingValues(),
@@ -336,6 +337,7 @@ fun CanyonDetailScreen(
                             onOpenPredictionInfo = onOpenPredictionInfo,
                             downloadingPhotoIds = uiState.downloadingPhotoIds,
                             onOpenPhotoGallery = onOpenPhotoGallery,
+                            onUserClick = onUserClick,
                             onPersistedPhotoMissing = viewModel::onPersistedPhotoMissing,
                             openDebitsTabInitially = openDebitsTabInitially,
                             bottomContentPadding = contentPadding.calculateBottomPadding() + 96.dp,
@@ -461,6 +463,7 @@ private fun CanyonDetailContent(
     onOpenPredictionInfo: () -> Unit,
     downloadingPhotoIds: Set<Long>,
     onOpenPhotoGallery: (Long) -> Unit,
+    onUserClick: (String) -> Unit,
     onPersistedPhotoMissing: (Long) -> Unit,
     openDebitsTabInitially: Boolean,
     bottomContentPadding: Dp = 0.dp,
@@ -558,7 +561,7 @@ private fun CanyonDetailContent(
                 onOpenPhotoGallery = onOpenPhotoGallery,
                 onPersistedPhotoMissing = onPersistedPhotoMissing,
             )
-            2 -> debitItems(detail.debits, isLoadingDebits, debitError)
+            2 -> debitItems(detail.debits, isLoadingDebits, debitError, onUserClick)
         }
     }
 }
@@ -1673,6 +1676,7 @@ private fun LazyListScope.debitItems(
     debits: List<Debit>,
     isLoadingDebits: Boolean,
     debitError: String?,
+    onUserClick: (String) -> Unit,
 ) {
     if (isLoadingDebits && debits.isEmpty()) {
         item {
@@ -1709,6 +1713,7 @@ private fun LazyListScope.debitItems(
             DebitListItem(
                 debit = debit,
                 isLatest = debit == debits.first(),
+                onAuthorClick = onUserClick,
                 modifier = Modifier.padding(horizontal = 16.dp, vertical = 4.dp),
             )
         }

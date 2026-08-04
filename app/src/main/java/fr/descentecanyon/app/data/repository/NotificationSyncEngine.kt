@@ -4,7 +4,10 @@ import fr.descentecanyon.app.domain.model.Debit
 import fr.descentecanyon.app.domain.model.FollowedCanyon
 import fr.descentecanyon.app.domain.model.FollowedForumCategory
 import fr.descentecanyon.app.domain.model.FollowedForumThread
+import fr.descentecanyon.app.domain.model.FollowedUser
 import fr.descentecanyon.app.domain.model.ForumActiveTopic
+import fr.descentecanyon.app.domain.model.ForumUser
+import fr.descentecanyon.app.domain.model.ForumUserPost
 import fr.descentecanyon.app.domain.model.NotificationCenterState
 import fr.descentecanyon.app.domain.model.NotificationSyncSummary
 import fr.descentecanyon.app.domain.model.TrackedActivityEvent
@@ -86,6 +89,12 @@ internal object NotificationSyncEngine {
                 .takeLast(MAX_SEEN_KEYS),
         )
     }
+
+    fun buildInitialUserFollow(user: ForumUser): FollowedUser = FollowedUser(
+        username = user.username,
+        normalizedUsername = user.normalizedUsername,
+        forumUserId = user.forumUserId,
+    )
 
     fun matchesForumCategory(topic: ForumActiveTopic, forumId: Int?, forumName: String): Boolean {
         return if (forumId != null && topic.forumId != null) {
@@ -211,6 +220,40 @@ internal object NotificationSyncEngine {
             newForumEvents = forumEvents,
         )
         return updatedState to summary
+    }
+
+    fun applyFetchedUserPosts(
+        state: NotificationCenterState,
+        posts: List<ForumUserPost>,
+        nowEpochMs: Long,
+    ): Pair<NotificationCenterState, NotificationSyncSummary> {
+        val events = mutableListOf<TrackedActivityEvent>()
+        val users = state.followedUsers.map { followed ->
+            val matching = posts.filter { it.author.equals(followed.username, ignoreCase = true) }
+            val markers = matching.map { "forum-post:${it.postId}" }
+            if (followed.hasSeededForumPosts) {
+                matching.filter { "forum-post:${it.postId}" !in followed.seenForumPostMarkers }.forEach { post ->
+                    events += TrackedActivityEvent(
+                        id = "forum-post:${post.postId}",
+                        type = TrackedActivityType.FORUM,
+                        title = post.topicTitle,
+                        body = "${followed.username} • ${post.postedAtText}",
+                        occurredAtEpochMs = nowEpochMs,
+                        externalUrl = post.postUrl,
+                    )
+                }
+            }
+            followed.copy(
+                seenForumPostMarkers = mergeSeenKeys(followed.seenForumPostMarkers, markers),
+                hasSeededForumPosts = true,
+            )
+        }
+        val updated = state.copy(
+            followedUsers = users,
+            recentEvents = (events + state.recentEvents).sortedByDescending { it.occurredAtEpochMs }
+                .distinctBy { it.id }.take(MAX_ACTIVITY_EVENTS),
+        )
+        return updated to NotificationSyncSummary(newForumEvents = events)
     }
 
     private fun mergeSeenKeys(previous: List<String>, current: List<String>): List<String> {

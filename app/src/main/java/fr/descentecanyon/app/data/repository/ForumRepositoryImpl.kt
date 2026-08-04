@@ -5,6 +5,7 @@ import fr.descentecanyon.app.data.remote.scraper.CanyonScraper
 import fr.descentecanyon.app.domain.model.CachedItems
 import fr.descentecanyon.app.domain.model.ForumCategory
 import fr.descentecanyon.app.domain.model.ForumActiveTopic
+import fr.descentecanyon.app.domain.model.ForumUserPost
 import fr.descentecanyon.app.domain.repository.ForumRepository
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -46,6 +47,22 @@ class ForumRepositoryImpl @Inject constructor(
             val syncedAtEpochMs = System.currentTimeMillis()
             snapshotStore.writeForumCategories(categories, syncedAtEpochMs)
             CachedItems(items = categories, syncedAtEpochMs = syncedAtEpochMs)
+        }
+    }
+
+    override suspend fun refreshUserPosts(authorId: Int): Result<List<ForumUserPost>> {
+        return scraper.scrapeForumUserPosts(authorId).map { posts ->
+            posts.map {
+                ForumUserPost(
+                    postId = it.postId,
+                    topicId = it.topicId,
+                    forumId = it.forumId,
+                    topicTitle = it.topicTitle,
+                    author = it.author,
+                    postedAtText = it.postedAtText,
+                    postUrl = it.postUrl,
+                )
+            }
         }
     }
 }

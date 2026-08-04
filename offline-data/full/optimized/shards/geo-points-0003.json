@@ -1,21 +1,5 @@
 [
   {
-    "canyonId": 2201,
-    "type": "PARKING_AVAL",
-    "rawType": "parking",
-    "latitude": 46.655884,
-    "longitude": 6.005339,
-    "label": null
-  },
-  {
-    "canyonId": 2202,
-    "type": "PARKING_AVAL",
-    "rawType": "parking",
-    "latitude": 46.64053,
-    "longitude": 6.029628,
-    "label": null
-  },
-  {
     "canyonId": 2203,
     "type": "PARKING_AVAL",
     "rawType": "parking",
@@ -72,22 +56,6 @@
     "label": null
   },
   {
-    "canyonId": 2210,
-    "type": "ENTREE",
-    "rawType": "depart",
-    "latitude": 46.3252,
-    "longitude": 5.7774,
-    "label": null
-  },
-  {
-    "canyonId": 2210,
-    "type": "SORTIE",
-    "rawType": "arrivee",
-    "latitude": 46.3252,
-    "longitude": 5.7774,
-    "label": null
-  },
-  {
     "canyonId": 2211,
     "type": "PARKING_AVAL",
     "rawType": "parking",
@@ -102,6 +70,30 @@
     "latitude": 44.4902,
     "longitude": 3.944236,
     "label": "position approximative"
+  },
+  {
+    "canyonId": 2212,
+    "type": "PARKING_AMONT",
+    "rawType": "parking_amont",
+    "latitude": 44.489098,
+    "longitude": 3.938859,
+    "label": "(parking amont si intégrale / parking unique si sortie après Rajolle)"
+  },
+  {
+    "canyonId": 2212,
+    "type": "POINT_REMARQUABLE",
+    "rawType": "point_externe",
+    "latitude": 44.482731,
+    "longitude": 3.938586,
+    "label": "Sentier de sortie après la Rajolle (ou echappatoire si descente intégrale)"
+  },
+  {
+    "canyonId": 2212,
+    "type": "POINT_REMARQUABLE",
+    "rawType": "point_interne",
+    "latitude": 44.483345,
+    "longitude": 3.939062,
+    "label": "Passage de la Rajolle"
   },
   {
     "canyonId": 2213,
@@ -301,22 +293,6 @@
     "rawType": "arrivee",
     "latitude": 43.866943,
     "longitude": 6.950167,
-    "label": null
-  },
-  {
-    "canyonId": 2224,
-    "type": "PARKING_AMONT",
-    "rawType": "parking_amont",
-    "latitude": 43.885445,
-    "longitude": 6.938056,
-    "label": null
-  },
-  {
-    "canyonId": 2224,
-    "type": "PARKING_AVAL",
-    "rawType": "parking_aval",
-    "latitude": 43.866779,
-    "longitude": 6.949833,
     "label": null
   },
   {
@@ -1997,6 +1973,30 @@
     "rawType": "depart",
     "latitude": 45.578888,
     "longitude": 6.421111,
+    "label": null
+  },
+  {
+    "canyonId": 2315,
+    "type": "SORTIE",
+    "rawType": "arrivee",
+    "latitude": 45.589169,
+    "longitude": 6.438333,
+    "label": null
+  },
+  {
+    "canyonId": 2315,
+    "type": "PARKING_AMONT",
+    "rawType": "parking_amont",
+    "latitude": 45.581669,
+    "longitude": 6.430278,
+    "label": null
+  },
+  {
+    "canyonId": 2315,
+    "type": "PARKING_AVAL",
+    "rawType": "parking_aval",
+    "latitude": 45.591946,
+    "longitude": 6.443611,
     "label": null
   }
 ]

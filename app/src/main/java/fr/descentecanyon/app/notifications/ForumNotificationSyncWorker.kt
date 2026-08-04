@@ -19,12 +19,20 @@ class ForumNotificationSyncWorker(
         )
         val repository = entryPoint.notificationCenterRepository()
         val state = repository.observeState().first()
-        if (state.followedForumCategories.isEmpty() && state.followedForumThreads.isEmpty()) return Result.success()
+        if (state.followedForumCategories.isEmpty() && state.followedForumThreads.isEmpty() && state.followedUsers.none { it.forumUserId != null }) return Result.success()
 
         val topics = entryPoint.forumRepository().refreshActiveTopics(MAX_TOPICS_TO_SCAN)
             .getOrElse { return Result.retry() }
             .items
         repository.syncFetchedForumTopics(topics)
+        val userPosts = state.followedUsers.mapNotNull { followed ->
+            followed.forumUserId?.let { authorId ->
+                entryPoint.forumRepository().refreshUserPosts(authorId).getOrNull()
+            }
+        }.flatten()
+        if (userPosts.isNotEmpty() || state.followedUsers.any { it.forumUserId != null }) {
+            repository.syncFetchedUserPosts(userPosts)
+        }
         val pendingEvents = repository.pendingEvents(TrackedActivityType.FORUM)
         if (entryPoint.appNotificationPublisher().publishForumEvents(pendingEvents)) {
             repository.markEventsDelivered(pendingEvents.map { it.id })

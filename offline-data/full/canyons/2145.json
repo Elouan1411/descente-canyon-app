@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "scrapedAt": "2026-03-24T09:44:15.758268+00:00",
+  "scrapedAt": "2026-07-16T16:55:15.887725+00:00",
   "source": {
     "site": "descente-canyon.com",
     "canyonId": 2145,
@@ -31,12 +31,12 @@
       ],
       "massif": "Chablais - Platé - Aiguilles Rouges",
       "bassin": "Arve",
-      "coursEau": "Ruisseau des Rots"
+      "coursEau": null
     },
     "rating": {
       "cotation": "v3a3II",
       "interet": 2.6,
-      "nbVotes": 54
+      "nbVotes": 55
     },
     "metrics": {
       "altitudeDepartM": 700,
@@ -59,7 +59,7 @@
       "retour": "On remonte jusqu'au parking par une sente en rive droite du canyon.",
       "engagement": "Il est possible de s'échapper quasiment à tout moment et presque toutes les cascades peuvent êtres évitées dans la partie basse.",
       "periode": "Un débit trop important dans les toboggans du bas pourrait présenter un danger de \"marmites tourbillonnantes\" (plusieurs morts). Eviter donc les périodes de pluies prolongées, la fonte des neiges...",
-      "geologie": "Calcaire",
+      "geologie": null,
       "historique": null,
       "remarques": "Très fréquenté en saison par les professionnels du secteur."
     },
@@ -118,7 +118,7 @@
           "publicationYear": 2004,
           "reference": "ISBN: 2741702888",
           "editor": "GAP",
-          "status": "stock vide !\n\nSans doute disponible prochainement : contactez-nous !",
+          "status": "stock très réduit !\n\n- 16,99 € -\n\nCommandez cet ouvrage dès maintenant !",
           "detailUrl": "https://www.descente-canyon.com/boutique/produit/128/Canyons-de-Haute-Savoie.html"
         },
         {
@@ -151,6 +151,7 @@
     },
     "reglementation": {
       "hasSpecificRegulation": true,
+      "isForbidden": false,
       "rules": [
         {
           "id": 552,
@@ -220,8 +221,7 @@
             }
           ]
         }
-      ],
-      "isForbidden": false
+      ]
     }
   }
 }

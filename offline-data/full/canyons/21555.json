@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "scrapedAt": "2026-03-24T09:49:52.366502+00:00",
+  "scrapedAt": "2026-07-16T17:00:17.584721+00:00",
   "source": {
     "site": "descente-canyon.com",
     "canyonId": 21555,
@@ -95,7 +95,35 @@
       "label": null
     },
     "bibliography": {
-      "topoguides": [],
+      "topoguides": [
+        {
+          "id": "biblio_b228f4b2ce58d332",
+          "kind": "TOPOGUIDE",
+          "title": "Canyoning : Alpes Maritimes. 170 descentes",
+          "authors": [
+            "Franck Jourdan",
+            "Jean-François Fiorina"
+          ],
+          "publicationYear": 2026,
+          "reference": "9782958258054",
+          "editor": "auto-edition",
+          "status": "en stock\n\n- 35,99 € -\n\nCommandez cet ouvrage dès maintenant !",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/1175/Canyoning-:-Alpes-Maritimes--170-descentes.html"
+        },
+        {
+          "id": "biblio_3cf99204167f6619",
+          "kind": "TOPOGUIDE",
+          "title": "100 beaux canyons méditerranéens",
+          "authors": [
+            "Jean-François FIORINA et Franck JOURDAN"
+          ],
+          "publicationYear": 2007,
+          "reference": "978 2 7417 0339 6",
+          "editor": "GAP",
+          "status": "ouvrage épuisé",
+          "detailUrl": "https://www.descente-canyon.com/boutique/produit/111/100-beaux-canyons-mediterraneens.html"
+        }
+      ],
       "maps": [
         {
           "id": "map_f5a5c0f3b7f39109",
@@ -109,6 +137,7 @@
     },
     "reglementation": {
       "hasSpecificRegulation": true,
+      "isForbidden": false,
       "rules": [
         {
           "id": 349,
@@ -139,8 +168,7 @@
           "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/26/legislation.html",
           "attachments": []
         }
-      ],
-      "isForbidden": false
+      ]
     }
   }
 }

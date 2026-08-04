@@ -137,27 +137,19 @@
   },
   {
     "canyonId": 27,
-    "type": "PARKING_AVAL",
-    "rawType": "parking",
-    "latitude": 45.208557,
-    "longitude": 5.661272,
-    "label": "Parking obligatoire"
-  },
-  {
-    "canyonId": 27,
-    "type": "ENTREE",
-    "rawType": "depart",
-    "latitude": 45.2094819,
-    "longitude": 5.6481815,
-    "label": null
-  },
-  {
-    "canyonId": 27,
     "type": "SORTIE",
     "rawType": "arrivee",
     "latitude": 45.208519,
     "longitude": 5.655662,
     "label": null
+  },
+  {
+    "canyonId": 27,
+    "type": "PARKING_AVAL",
+    "rawType": "parking",
+    "latitude": 45.208557,
+    "longitude": 5.661272,
+    "label": "Parking obligatoire"
   },
   {
     "canyonId": 28,
@@ -347,8 +339,8 @@
     "canyonId": 217,
     "type": "PARKING_AVAL",
     "rawType": "parking",
-    "latitude": 45.156113,
-    "longitude": 5.439167,
+    "latitude": 45.156349,
+    "longitude": 5.44018,
     "label": null
   },
   {
@@ -457,11 +449,35 @@
   },
   {
     "canyonId": 224,
+    "type": "ENTREE",
+    "rawType": "depart",
+    "latitude": 45.855808,
+    "longitude": 5.44555,
+    "label": null
+  },
+  {
+    "canyonId": 224,
+    "type": "SORTIE",
+    "rawType": "arrivee",
+    "latitude": 45.856121,
+    "longitude": 5.44164,
+    "label": null
+  },
+  {
+    "canyonId": 224,
     "type": "PARKING_AVAL",
     "rawType": "parking",
     "latitude": 45.855228,
     "longitude": 5.440807,
     "label": null
+  },
+  {
+    "canyonId": 224,
+    "type": "POINT_REMARQUABLE",
+    "rawType": "point_externe",
+    "latitude": 45.8554,
+    "longitude": 5.43699,
+    "label": "Débouché de la sente de retour"
   },
   {
     "canyonId": 225,
@@ -1982,21 +1998,5 @@
     "latitude": 43.935848,
     "longitude": 6.721806,
     "label": "depart sup. pour Saint-Jean partie amont"
-  },
-  {
-    "canyonId": 2107,
-    "type": "SORTIE",
-    "rawType": "arrivee",
-    "latitude": 43.941917,
-    "longitude": 6.688828,
-    "label": null
-  },
-  {
-    "canyonId": 2107,
-    "type": "PARKING_AVAL",
-    "rawType": "parking",
-    "latitude": 43.942036,
-    "longitude": 6.690062,
-    "label": null
   }
 ]

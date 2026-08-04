@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "scrapedAt": "2026-03-24T09:50:53.598144+00:00",
+  "scrapedAt": "2026-07-16T17:01:08.837218+00:00",
   "source": {
     "site": "descente-canyon.com",
     "canyonId": 21830,
@@ -35,12 +35,12 @@
     "rating": {
       "cotation": "??",
       "interet": 0.5,
-      "nbVotes": 3
+      "nbVotes": 4
     },
     "metrics": {
-      "altitudeDepartM": null,
-      "deniveleM": null,
-      "longueurM": null,
+      "altitudeDepartM": 1090,
+      "deniveleM": 120,
+      "longueurM": 250,
       "cascadeMaxM": 11,
       "cordeMiniM": 17,
       "navette": "néant"
@@ -85,6 +85,7 @@
     },
     "reglementation": {
       "hasSpecificRegulation": true,
+      "isForbidden": false,
       "rules": [
         {
           "id": 325,
@@ -127,8 +128,7 @@
           "textUrl": "https://www.descente-canyon.com/canyoning/reglementation/reglemtexte/154/legislation.html",
           "attachments": []
         }
-      ],
-      "isForbidden": false
+      ]
     }
   }
 }
