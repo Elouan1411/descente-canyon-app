@@ -10,7 +10,9 @@ import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
 import android.hardware.SensorManager
 import android.net.Uri
+import android.os.Build
 import android.view.Surface
+import android.view.WindowManager
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.background
@@ -588,7 +590,7 @@ private fun rememberDeviceHeading(enabled: Boolean): DeviceHeading {
             val listener = object : SensorEventListener {
                 override fun onSensorChanged(event: SensorEvent) {
                     SensorManager.getRotationMatrixFromVector(rotationMatrix, event.values)
-                    val displayRotation = context.display.rotation
+                    val displayRotation = context.displayRotation()
                     val axes = displayAxes(displayRotation)
                     SensorManager.remapCoordinateSystem(
                         rotationMatrix,
@@ -621,6 +623,15 @@ private fun displayAxes(rotation: Int): Pair<Int, Int> {
         Surface.ROTATION_180 -> SensorManager.AXIS_MINUS_X to SensorManager.AXIS_MINUS_Y
         Surface.ROTATION_270 -> SensorManager.AXIS_MINUS_Y to SensorManager.AXIS_X
         else -> SensorManager.AXIS_X to SensorManager.AXIS_Y
+    }
+}
+
+private fun Context.displayRotation(): Int {
+    return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+        display.rotation
+    } else {
+        @Suppress("DEPRECATION")
+        (getSystemService(Context.WINDOW_SERVICE) as WindowManager).defaultDisplay.rotation
     }
 }
 
