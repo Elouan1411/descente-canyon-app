@@ -213,7 +213,7 @@ fun buildReleasePackageReport(inspections: List<ReleasePackageInspection>): Stri
 
 android {
     namespace = "fr.descentecanyon.app"
-    compileSdk = 35
+    compileSdk = 36
 
     signingConfigs {
         if (hasReleaseSigning) {
@@ -236,7 +236,7 @@ android {
     defaultConfig {
         applicationId = "fr.descentecanyon.app"
         minSdk = 26
-        targetSdk = 35
+        targetSdk = 36
         versionCode = ciVersionCode
         versionName = ciVersionName
 
