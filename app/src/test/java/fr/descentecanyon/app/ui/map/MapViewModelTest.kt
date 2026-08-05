@@ -4,10 +4,15 @@ import androidx.lifecycle.SavedStateHandle
 import fr.descentecanyon.app.domain.model.CanyonSummary
 import fr.descentecanyon.app.domain.model.CanyonSearchItem
 import fr.descentecanyon.app.domain.model.CotationRating
+import fr.descentecanyon.app.domain.model.SearchCriteria
 import fr.descentecanyon.app.domain.repository.CanyonRepository
+import fr.descentecanyon.app.domain.repository.FavoritesRepository
 import fr.descentecanyon.app.domain.usecase.SearchCanyonsUseCase
+import fr.descentecanyon.app.domain.usecase.ToggleFavoriteUseCase
 import fr.descentecanyon.app.testutil.MainDispatcherRule
 import fr.descentecanyon.app.testutil.localizedContext
+import io.mockk.coEvery
+import io.mockk.coVerify
 import io.mockk.every
 import io.mockk.mockk
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -26,13 +31,15 @@ class MapViewModelTest {
     val mainDispatcherRule = MainDispatcherRule()
 
     private val canyonRepository = mockk<CanyonRepository>()
+    private val favoritesRepository = mockk<FavoritesRepository>()
     private val searchCanyonsUseCase = SearchCanyonsUseCase(canyonRepository)
+    private val toggleFavoriteUseCase = ToggleFavoriteUseCase(favoritesRepository)
 
     @Test
     @OptIn(ExperimentalCoroutinesApi::class)
     fun `permission denial updates ui state`() = runTest {
         every { canyonRepository.observeSearchCatalog() } returns flowOf(emptyList())
-        val viewModel = MapViewModel(localizedContext(), SavedStateHandle(), searchCanyonsUseCase)
+        val viewModel = mapViewModel()
 
         viewModel.onLocationPermissionResult(false)
 
@@ -45,7 +52,7 @@ class MapViewModelTest {
     @OptIn(ExperimentalCoroutinesApi::class)
     fun `focus around user stores location and increments request id`() = runTest {
         every { canyonRepository.observeSearchCatalog() } returns flowOf(listOf(catalogItem(id = 42)))
-        val viewModel = MapViewModel(localizedContext(), SavedStateHandle(), searchCanyonsUseCase)
+        val viewModel = mapViewModel()
 
         advanceUntilIdle()
 
@@ -63,7 +70,7 @@ class MapViewModelTest {
     @OptIn(ExperimentalCoroutinesApi::class)
     fun `select canyon exposes bottom sheet item`() = runTest {
         every { canyonRepository.observeSearchCatalog() } returns flowOf(listOf(catalogItem(id = 7, nom = "Aiglun")))
-        val viewModel = MapViewModel(localizedContext(), SavedStateHandle(), searchCanyonsUseCase)
+        val viewModel = mapViewModel()
 
         advanceUntilIdle()
         viewModel.selectCanyon(7)
@@ -71,6 +78,22 @@ class MapViewModelTest {
         assertEquals(7, viewModel.uiState.value.selectedCanyon?.id)
         viewModel.clearSelectedCanyon()
         assertEquals(null, viewModel.uiState.value.selectedCanyon)
+    }
+
+    @Test
+    @OptIn(ExperimentalCoroutinesApi::class)
+    fun `selected canyon favorite can be toggled`() = runTest {
+        every { canyonRepository.observeSearchCatalog() } returns flowOf(listOf(catalogItem(id = 7)))
+        every { favoritesRepository.isFavorite(7) } returns flowOf(false)
+        coEvery { favoritesRepository.addFavorite(7) } returns Unit
+        val viewModel = mapViewModel()
+
+        advanceUntilIdle()
+        viewModel.selectCanyon(7)
+        viewModel.toggleSelectedCanyonFavorite()
+        advanceUntilIdle()
+
+        coVerify { favoritesRepository.addFavorite(7) }
     }
 
     @Test
@@ -89,7 +112,7 @@ class MapViewModelTest {
             )
         )
 
-        val viewModel = MapViewModel(localizedContext(), savedStateHandle, searchCanyonsUseCase)
+        val viewModel = mapViewModel(savedStateHandle)
 
         advanceUntilIdle()
 
@@ -102,17 +125,44 @@ class MapViewModelTest {
         assertEquals(3, viewModel.uiState.value.focusLocationRequestId)
     }
 
+    @Test
+    @OptIn(ExperimentalCoroutinesApi::class)
+    fun `filters update both map markers and result count`() = runTest {
+        every { canyonRepository.observeSearchCatalog() } returns flowOf(
+            listOf(
+                catalogItem(id = 1, country = "France"),
+                catalogItem(id = 2, country = "Espagne"),
+            )
+        )
+        val viewModel = mapViewModel()
+
+        advanceUntilIdle()
+        viewModel.onCriteriaChanged(SearchCriteria(selectedCountry = "France"))
+        advanceUntilIdle()
+
+        assertEquals(listOf(1), viewModel.uiState.value.mapCanyons.map(CanyonSummary::id))
+        assertEquals(1, viewModel.uiState.value.totalResultsCount)
+        assertEquals("France", viewModel.uiState.value.criteria.selectedCountry)
+
+        viewModel.clearAllFilters()
+        advanceUntilIdle()
+
+        assertEquals(listOf(1, 2), viewModel.uiState.value.mapCanyons.map(CanyonSummary::id))
+        assertEquals(2, viewModel.uiState.value.totalResultsCount)
+    }
+
     private fun catalogItem(
         id: Int,
         nom: String = "Riolan",
+        country: String = "France",
         latitude: Double = 43.71,
         longitude: Double = 6.88,
     ) = CanyonSearchItem(
         id = id,
         nom = nom,
         nomComplet = nom,
-        pays = "France",
-        countryTokens = listOf("France"),
+        pays = country,
+        countryTokens = listOf(country),
         cotation = "v4a4III",
         cotationRating = CotationRating.parse("v4a4III"),
         url = "/canyoning/canyon/$id/${nom.lowercase()}.html",
@@ -122,4 +172,15 @@ class MapViewModelTest {
         representativeLat = latitude,
         representativeLng = longitude,
     )
+
+    private fun mapViewModel(savedStateHandle: SavedStateHandle = SavedStateHandle()): MapViewModel {
+        every { favoritesRepository.getFavorites() } returns flowOf(emptyList())
+        return MapViewModel(
+            context = localizedContext(),
+            savedStateHandle = savedStateHandle,
+            searchCanyonsUseCase = searchCanyonsUseCase,
+            favoritesRepository = favoritesRepository,
+            toggleFavoriteUseCase = toggleFavoriteUseCase,
+        )
+    }
 }

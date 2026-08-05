@@ -8,21 +8,28 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import fr.descentecanyon.app.R
 import fr.descentecanyon.app.domain.model.CanyonSummary
+import fr.descentecanyon.app.domain.model.SearchCriteria
 import fr.descentecanyon.app.domain.model.toSummary
+import fr.descentecanyon.app.domain.repository.FavoritesRepository
 import fr.descentecanyon.app.domain.usecase.SearchCanyonsUseCase
+import fr.descentecanyon.app.domain.usecase.ToggleFavoriteUseCase
 import fr.descentecanyon.app.perf.PerformanceTrace
 import kotlin.math.abs
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.catch
+import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import kotlinx.serialization.encodeToString
+import kotlinx.serialization.json.Json
 import javax.inject.Inject
 
 data class MapUiState(
     val mapCanyons: List<CanyonSummary> = emptyList(),
     val selectedCanyon: CanyonSummary? = null,
+    val isSelectedCanyonFavorite: Boolean = false,
     val isLoading: Boolean = true,
     val error: String? = null,
     val transientMessage: String? = null,
@@ -33,6 +40,10 @@ data class MapUiState(
     val userLongitude: Double? = null,
     val cameraState: MapCameraState? = null,
     val focusLocationRequestId: Int = 0,
+    val criteria: SearchCriteria = SearchCriteria(),
+    val availableCountries: List<String> = emptyList(),
+    val availableDepartments: List<String> = emptyList(),
+    val totalResultsCount: Int = 0,
 )
 
 data class MapCameraState(
@@ -46,8 +57,12 @@ class MapViewModel @Inject constructor(
     @param:ApplicationContext private val context: Context,
     private val savedStateHandle: SavedStateHandle,
     searchCanyonsUseCase: SearchCanyonsUseCase,
+    private val favoritesRepository: FavoritesRepository,
+    private val toggleFavoriteUseCase: ToggleFavoriteUseCase,
 ) : ViewModel() {
 
+    private val initialCriteria = loadCriteria()
+    private val criteriaFlow = MutableStateFlow(initialCriteria)
     private val _uiState = MutableStateFlow(
         MapUiState(
             hasLocationPermission = savedStateHandle[MAP_HAS_LOCATION_PERMISSION_KEY] ?: false,
@@ -56,16 +71,40 @@ class MapViewModel @Inject constructor(
             userLongitude = savedStateHandle.get<Double>(MAP_USER_LONGITUDE_KEY),
             cameraState = loadCameraState(savedStateHandle),
             focusLocationRequestId = savedStateHandle[MAP_FOCUS_LOCATION_REQUEST_ID_KEY] ?: 0,
+            criteria = initialCriteria,
         )
     )
     val uiState: StateFlow<MapUiState> = _uiState.asStateFlow()
     private var hasLoggedInitialCatalog = false
+    private var favoriteCanyonIds = emptySet<Int>()
     private val restoredSelectedCanyonId = savedStateHandle.get<Int>(MAP_SELECTED_CANYON_ID_KEY)
 
     init {
         PerformanceTrace.start(MAP_INITIAL_TRACE_KEY, "map_initial_load")
         viewModelScope.launch {
+            favoritesRepository.getFavorites().collect { favorites ->
+                favoriteCanyonIds = favorites.mapTo(mutableSetOf()) { it.id }
+                _uiState.update { state ->
+                    state.copy(isSelectedCanyonFavorite = state.selectedCanyon?.id?.let(favoriteCanyonIds::contains) == true)
+                }
+            }
+        }
+        viewModelScope.launch {
             searchCanyonsUseCase.observeCatalog()
+                .combine(criteriaFlow) { catalog, criteria ->
+                    val resultSet = searchCanyonsUseCase(catalog, criteria)
+                    val matchingCanyons = if (resultSet.isResultListDeferred) catalog else resultSet.results
+                    MapCatalogState(
+                        mapCanyons = matchingCanyons.mapNotNull { item ->
+                            item.takeIf { it.representativeLat != null && it.representativeLng != null }?.toSummary()
+                        },
+                        criteria = criteria,
+                        availableCountries = resultSet.availableCountries,
+                        availableDepartments = resultSet.availableDepartments,
+                        totalResultsCount = resultSet.totalResultsCount,
+                        catalogSize = catalog.size,
+                    )
+                }
                 .catch { throwable ->
                     if (!hasLoggedInitialCatalog) {
                         hasLoggedInitialCatalog = true
@@ -82,34 +121,38 @@ class MapViewModel @Inject constructor(
                         )
                     }
                 }
-                .collect { catalog ->
+                .collect { catalogState ->
                 val mappingStartedAt = monotonicNowMs()
-                val mapCanyons = catalog.mapNotNull { item ->
-                    item.takeIf { it.representativeLat != null && it.representativeLng != null }?.toSummary()
-                }
                 PerformanceTrace.logEvent(
                     event = "map_catalog_compute",
-                    "catalogSize" to catalog.size,
-                    "markerCount" to mapCanyons.size,
+                    "catalogSize" to catalogState.catalogSize,
+                    "markerCount" to catalogState.mapCanyons.size,
+                    "activeFilters" to catalogState.criteria.activeFilterCount(),
                     "durationMs" to (monotonicNowMs() - mappingStartedAt),
                 )
                 _uiState.update { state ->
+                    val selectedCanyon = (state.selectedCanyon?.id ?: restoredSelectedCanyonId)?.let { selectedId ->
+                        catalogState.mapCanyons.firstOrNull { canyon -> canyon.id == selectedId }
+                    }
                     state.copy(
-                        mapCanyons = mapCanyons,
-                        selectedCanyon = (state.selectedCanyon?.id ?: restoredSelectedCanyonId)?.let { selectedId ->
-                            mapCanyons.firstOrNull { canyon -> canyon.id == selectedId }
-                        },
+                        mapCanyons = catalogState.mapCanyons,
+                        selectedCanyon = selectedCanyon,
+                        isSelectedCanyonFavorite = selectedCanyon?.id?.let(favoriteCanyonIds::contains) == true,
                         isLoading = false,
+                        criteria = catalogState.criteria,
+                        availableCountries = catalogState.availableCountries,
+                        availableDepartments = catalogState.availableDepartments,
+                        totalResultsCount = catalogState.totalResultsCount,
                     )
                 }
                 if (!hasLoggedInitialCatalog) {
                     hasLoggedInitialCatalog = true
                     PerformanceTrace.end(
-                        key = MAP_INITIAL_TRACE_KEY,
-                        outcome = "ready",
-                        "catalogSize" to catalog.size,
-                        "markerCount" to mapCanyons.size,
-                    )
+                            key = MAP_INITIAL_TRACE_KEY,
+                            outcome = "ready",
+                            "catalogSize" to catalogState.catalogSize,
+                            "markerCount" to catalogState.mapCanyons.size,
+                        )
                 }
                 }
         }
@@ -173,26 +216,74 @@ class MapViewModel @Inject constructor(
 
     fun selectCanyon(canyonId: Int) {
         _uiState.update { state ->
-            state.copy(selectedCanyon = state.mapCanyons.firstOrNull { it.id == canyonId })
+            val selectedCanyon = state.mapCanyons.firstOrNull { it.id == canyonId }
+            state.copy(
+                selectedCanyon = selectedCanyon,
+                isSelectedCanyonFavorite = selectedCanyon?.id?.let(favoriteCanyonIds::contains) == true,
+            )
         }
         savedStateHandle[MAP_SELECTED_CANYON_ID_KEY] = canyonId
     }
 
     fun clearSelectedCanyon() {
-        _uiState.update { it.copy(selectedCanyon = null) }
+        _uiState.update { it.copy(selectedCanyon = null, isSelectedCanyonFavorite = false) }
         savedStateHandle[MAP_SELECTED_CANYON_ID_KEY] = null
+    }
+
+    fun toggleSelectedCanyonFavorite() {
+        val canyonId = _uiState.value.selectedCanyon?.id ?: return
+        viewModelScope.launch {
+            toggleFavoriteUseCase(canyonId)
+        }
     }
 
     fun clearTransientMessage() {
         _uiState.update { it.copy(transientMessage = null) }
     }
 
+    fun onCriteriaChanged(criteria: SearchCriteria) {
+        val current = criteriaFlow.value
+        val sanitized = criteria.sanitizedForMap()
+        val updated = if (!current.selectedCountry.equals(sanitized.selectedCountry, ignoreCase = true) &&
+            current.selectedDepartment == sanitized.selectedDepartment
+        ) {
+            sanitized.copy(selectedDepartment = null)
+        } else {
+            sanitized
+        }
+        criteriaFlow.value = updated
+        persistCriteria(updated)
+        _uiState.update { it.copy(criteria = updated, error = null) }
+    }
+
+    fun clearAllFilters() = onCriteriaChanged(criteriaFlow.value.clearAllFilters())
+
     private fun persistCameraState(cameraState: MapCameraState) {
         savedStateHandle[MAP_CAMERA_LATITUDE_KEY] = cameraState.latitude
         savedStateHandle[MAP_CAMERA_LONGITUDE_KEY] = cameraState.longitude
         savedStateHandle[MAP_CAMERA_ZOOM_KEY] = cameraState.zoom
     }
+
+    private fun loadCriteria(): SearchCriteria {
+        val raw = savedStateHandle.get<String>(MAP_CRITERIA_KEY).orEmpty()
+        return runCatching { json.decodeFromString<SearchCriteria>(raw) }
+            .getOrDefault(SearchCriteria())
+            .sanitizedForMap()
+    }
+
+    private fun persistCriteria(criteria: SearchCriteria) {
+        savedStateHandle[MAP_CRITERIA_KEY] = json.encodeToString(criteria.sanitizedForMap())
+    }
 }
+
+private data class MapCatalogState(
+    val mapCanyons: List<CanyonSummary>,
+    val criteria: SearchCriteria,
+    val availableCountries: List<String>,
+    val availableDepartments: List<String>,
+    val totalResultsCount: Int,
+    val catalogSize: Int,
+)
 
 private const val MAP_INITIAL_TRACE_KEY = "screen.map.initial"
 private const val MAP_HAS_LOCATION_PERMISSION_KEY = "map_has_location_permission"
@@ -204,6 +295,8 @@ private const val MAP_CAMERA_LONGITUDE_KEY = "map_camera_longitude"
 private const val MAP_CAMERA_ZOOM_KEY = "map_camera_zoom"
 private const val MAP_SELECTED_CANYON_ID_KEY = "map_selected_canyon_id"
 private const val MAP_FOCUS_LOCATION_REQUEST_ID_KEY = "map_focus_location_request_id"
+private const val MAP_CRITERIA_KEY = "map_criteria"
+private val json = Json { ignoreUnknownKeys = true }
 
 private fun monotonicNowMs(): Long = System.nanoTime() / 1_000_000
 
@@ -220,3 +313,10 @@ private fun MapCameraState?.isSameAs(other: MapCameraState): Boolean {
         abs(longitude - other.longitude) < 0.000001 &&
         abs(zoom - other.zoom) < 0.01
 }
+
+private fun SearchCriteria.sanitizedForMap(): SearchCriteria = copy(
+    query = "",
+    userLatitude = null,
+    userLongitude = null,
+    selectedDepartment = selectedDepartment.takeIf { selectedCountry != null },
+)

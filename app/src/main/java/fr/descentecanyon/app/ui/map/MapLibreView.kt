@@ -118,6 +118,7 @@ private const val CLUSTER_MAX_ZOOM = 12
 private const val DETAIL_CLUSTER_RADIUS = 36
 private const val DETAIL_CLUSTER_MAX_ZOOM = 15
 private const val CLUSTER_TAP_FALLBACK_ZOOM_DELTA = 2.0
+private const val CLUSTER_TAP_MIN_ZOOM_DELTA = 1.5
 private const val DETAIL_POINT_ZOOM_THRESHOLD = 8.4
 private const val DETAIL_POINT_VISIBLE_COUNT_THRESHOLD = 12
 private const val USER_LOCATION_FOCUS_ZOOM = 9.6
@@ -144,6 +145,7 @@ fun MapLibreView(
     userTrackingMode: UserTrackingMode = UserTrackingMode.NONE,
     positionCompassWithControls: Boolean = false,
     onMarkerClick: (Int) -> Unit,
+    onMapInteraction: () -> Unit = {},
     onVisibleBoundsChanged: (LatLngBounds) -> Unit = {},
     onCameraChanged: (MapCameraState) -> Unit = {},
     onUserCameraMove: () -> Unit = {},
@@ -190,7 +192,13 @@ fun MapLibreView(
         factory = {
             mapView.apply {
                 getMapAsync { map ->
-                    renderState.bindMap(map, onMarkerClick, styleUri, positionCompassWithControls)
+                    renderState.bindMap(
+                        map = map,
+                        onMarkerClick = onMarkerClick,
+                        onMapInteraction = onMapInteraction,
+                        styleUri = styleUri,
+                        positionCompassWithControls = positionCompassWithControls,
+                    )
                 }
             }
         },
@@ -204,6 +212,7 @@ fun MapLibreView(
                 userTrackingMode = userTrackingMode,
                 positionCompassWithControls = positionCompassWithControls,
                 onMarkerClick = onMarkerClick,
+                onMapInteraction = onMapInteraction,
                 onVisibleBoundsChanged = onVisibleBoundsChanged,
                 onCameraChanged = onCameraChanged,
                 onUserCameraMove = onUserCameraMove,
@@ -237,6 +246,7 @@ private class MapRenderState(
     private var userTrackingMode: UserTrackingMode = UserTrackingMode.NONE
     private var positionCompassWithControls: Boolean = false
     private var onMarkerClick: (Int) -> Unit = {}
+    private var onMapInteraction: () -> Unit = {}
     private var onVisibleBoundsChanged: (LatLngBounds) -> Unit = {}
     private var onCameraChanged: (MapCameraState) -> Unit = {}
     private var onUserCameraMove: () -> Unit = {}
@@ -261,11 +271,13 @@ private class MapRenderState(
     fun bindMap(
         map: MapLibreMap,
         onMarkerClick: (Int) -> Unit,
+        onMapInteraction: () -> Unit,
         styleUri: String,
         positionCompassWithControls: Boolean,
     ) {
         this.map = map
         this.onMarkerClick = onMarkerClick
+        this.onMapInteraction = onMapInteraction
         this.styleUri = styleUri
         this.positionCompassWithControls = positionCompassWithControls
         configureCompass(map)
@@ -291,6 +303,7 @@ private class MapRenderState(
         userTrackingMode: UserTrackingMode,
         positionCompassWithControls: Boolean,
         onMarkerClick: (Int) -> Unit,
+        onMapInteraction: () -> Unit,
         onVisibleBoundsChanged: (LatLngBounds) -> Unit,
         onCameraChanged: (MapCameraState) -> Unit,
         onUserCameraMove: () -> Unit,
@@ -311,6 +324,7 @@ private class MapRenderState(
         this.userTrackingMode = userTrackingMode
         this.positionCompassWithControls = positionCompassWithControls
         this.onMarkerClick = onMarkerClick
+        this.onMapInteraction = onMapInteraction
         this.onVisibleBoundsChanged = onVisibleBoundsChanged
         this.onCameraChanged = onCameraChanged
         this.onUserCameraMove = onUserCameraMove
@@ -376,6 +390,7 @@ private class MapRenderState(
         }
         map.addOnMapClickListener { latLng ->
             if (!clusterMarkers) {
+                onMapInteraction()
                 return@addOnMapClickListener false
             }
             handleClusteredTap(map, latLng)
@@ -414,6 +429,7 @@ private class MapRenderState(
             CANYON_VISIBLE_CLUSTER_COUNT_LAYER_ID,
         ).firstOrNull()
         if (detailClusterFeature != null) {
+            onMapInteraction()
             zoomToCluster(map, detailClusterFeature, CANYON_VISIBLE_SOURCE_ID)
             return true
         }
@@ -424,6 +440,7 @@ private class MapRenderState(
             CANYON_CLUSTER_COUNT_LAYER_ID,
         ).firstOrNull()
         if (clusterFeature != null) {
+            onMapInteraction()
             zoomToCluster(map, clusterFeature, CANYON_SOURCE_ID)
             return true
         }
@@ -434,7 +451,10 @@ private class MapRenderState(
         ).firstOrNull()
         val canyonId = canyonFeature?.getNumberProperty(PROPERTY_CANYON_ID)?.toInt()
             ?: canyonFeature?.getStringProperty(PROPERTY_CANYON_ID)?.toIntOrNull()
-            ?: return false
+            ?: run {
+                onMapInteraction()
+                return false
+            }
         onMarkerClick(canyonId)
         return true
     }
@@ -445,16 +465,15 @@ private class MapRenderState(
         sourceId: String,
     ) {
         val geometry = clusterFeature.geometry() as? Point ?: return
+        val source = map.style?.getSourceAs<GeoJsonSource>(sourceId)
         val expansionZoom = runCatching {
-            map.style
-                ?.getSourceAs<GeoJsonSource>(sourceId)
-                ?.getClusterExpansionZoom(clusterFeature)
+            source?.getClusterExpansionZoom(clusterFeature)
                 ?.toDouble()
         }.getOrNull()
         map.animateCamera(
             CameraUpdateFactory.newLatLngZoom(
                 LatLng(geometry.latitude(), geometry.longitude()),
-                expansionZoom ?: (map.cameraPosition.zoom + CLUSTER_TAP_FALLBACK_ZOOM_DELTA),
+                clusterTapTargetZoom(map.cameraPosition.zoom, expansionZoom),
             ),
             350,
         )
@@ -1283,6 +1302,14 @@ private fun createMarkerBitmap(label: String, colorInt: Int): Bitmap {
     val y = height / 2f - (textPaint.descent() + textPaint.ascent()) / 2f
     canvas.drawText(label.take(4), width / 2f, y, textPaint)
     return bitmap
+}
+
+internal fun clusterTapTargetZoom(
+    currentZoom: Double,
+    expansionZoom: Double?,
+): Double {
+    return expansionZoom?.coerceAtLeast(currentZoom + CLUSTER_TAP_MIN_ZOOM_DELTA)
+        ?: (currentZoom + CLUSTER_TAP_FALLBACK_ZOOM_DELTA)
 }
 
 private fun createUserMarkerBitmap(bearingDegrees: Double?): Bitmap {

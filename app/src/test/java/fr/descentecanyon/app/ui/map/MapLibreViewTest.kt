@@ -24,6 +24,21 @@ class MapLibreViewTest {
     }
 
     @Test
+    fun `cluster tap advances by at least one and a half zoom levels`() {
+        assertEquals(4.5, clusterTapTargetZoom(currentZoom = 3.0, expansionZoom = 4.0), 0.001)
+    }
+
+    @Test
+    fun `cluster tap honors a farther expansion zoom`() {
+        assertEquals(6.0, clusterTapTargetZoom(currentZoom = 3.0, expansionZoom = 6.0), 0.001)
+    }
+
+    @Test
+    fun `cluster tap advances two zoom levels when the source cannot expand`() {
+        assertEquals(7.0, clusterTapTargetZoom(currentZoom = 5.0, expansionZoom = null), 0.001)
+    }
+
+    @Test
     fun `interest marker colors follow descente canyon scale`() {
         assertEquals(0xFFE7F3F5.toInt(), interestMarkerColor(canyonWithInterest(null)))
         assertEquals(0xFFE7F3F5.toInt(), interestMarkerColor(canyonWithInterest(0f)))

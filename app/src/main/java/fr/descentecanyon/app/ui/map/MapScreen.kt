@@ -5,69 +5,82 @@ import android.app.Activity
 import android.content.Context
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.asPaddingValues
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.navigationBars
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.ui.draw.alpha
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Clear
 import androidx.compose.material.icons.filled.Explore
 import androidx.compose.material.icons.filled.MyLocation
-import androidx.compose.material3.Button
-import androidx.compose.material3.Card
-import androidx.compose.material3.CardDefaults
+import androidx.compose.material.icons.filled.Tune
+import androidx.compose.material3.BottomSheetScaffold
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.ModalBottomSheet
+import androidx.compose.material3.SheetValue
+import androidx.compose.material3.rememberBottomSheetScaffoldState
+import androidx.compose.material3.rememberStandardBottomSheetState
 import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Brush
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import fr.descentecanyon.app.R
 import fr.descentecanyon.app.domain.model.CanyonSummary
 import fr.descentecanyon.app.perf.PerformanceTrace
-import fr.descentecanyon.app.ui.components.SelectedCanyonSheetContent
+import fr.descentecanyon.app.ui.components.CanyonSummaryCard
+import fr.descentecanyon.app.ui.components.CanyonSummaryCardVariant
 import fr.descentecanyon.app.ui.design.DcEmptyState
-import fr.descentecanyon.app.ui.design.DcSectionHeader
 import fr.descentecanyon.app.ui.design.LocalDcColors
-import fr.descentecanyon.app.ui.design.LocalDcShapes
 import fr.descentecanyon.app.ui.design.LocalDcSpacing
 import fr.descentecanyon.app.ui.design.rememberDcContentWidth
 import fr.descentecanyon.app.ui.design.rememberDcScreenHorizontalPadding
 import fr.descentecanyon.app.ui.location.hasLocationPermission
 import fr.descentecanyon.app.ui.location.loadCurrentDeviceLocation
 import fr.descentecanyon.app.ui.location.requestLocationSettings
+import fr.descentecanyon.app.ui.search.SearchFiltersSheet
+import fr.descentecanyon.app.ui.search.SearchFiltersSheetState
 import org.maplibre.android.geometry.LatLngBounds
+
+private val MAP_RESULTS_SHEET_PEEK_HEIGHT = 72.dp
+private const val MAP_RESULTS_SHEET_COMPACT_ITEM_LIMIT = 2
+private val MAP_BOTTOM_NAVIGATION_CONTENT_HEIGHT = 80.dp
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -81,11 +94,20 @@ fun MapScreen(
     val context = LocalContext.current
     val snackbarHostState = remember { SnackbarHostState() }
     val dcColors = LocalDcColors.current
-    val dcShapes = LocalDcShapes.current
-    val spacing = LocalDcSpacing.current
     val contentWidth = rememberDcContentWidth()
     val screenHorizontalPadding = rememberDcScreenHorizontalPadding()
+    val initialFocusLocationRequestId = remember { uiState.focusLocationRequestId }
+    val bottomSheetState = rememberStandardBottomSheetState()
+    val bottomSheetScaffoldState = rememberBottomSheetScaffoldState(
+        bottomSheetState = bottomSheetState,
+    )
+    val bottomNavigationInset = maxOf(
+        contentPadding.calculateBottomPadding(),
+        MAP_BOTTOM_NAVIGATION_CONTENT_HEIGHT +
+            WindowInsets.navigationBars.asPaddingValues().calculateBottomPadding(),
+    )
     var visibleBounds by remember { mutableStateOf<LatLngBounds?>(null) }
+    var showFiltersSheet by rememberSaveable { mutableStateOf(false) }
     val visibleCanyons = remember(uiState.mapCanyons, visibleBounds) {
         visibleBounds?.let { bounds ->
             uiState.mapCanyons.filter { canyon -> canyon.isWithin(bounds) }
@@ -138,198 +160,356 @@ fun MapScreen(
         }
     }
 
-    uiState.selectedCanyon?.let { canyon ->
-        ModalBottomSheet(
-            onDismissRequest = viewModel::clearSelectedCanyon,
-        ) {
-            SelectedCanyonSheetContent(
-                canyon = canyon,
-                onOpen = {
-                    viewModel.clearSelectedCanyon()
-                    onCanyonClick(canyon.id)
-                },
-                onClose = viewModel::clearSelectedCanyon,
+    LaunchedEffect(bottomSheetState.currentValue) {
+        if (bottomSheetState.currentValue == SheetValue.Expanded) {
+            viewModel.clearSelectedCanyon()
+        }
+    }
+
+    fun focusAroundUser() {
+        if (context.hasLocationPermission()) {
+            viewModel.onLocationPermissionResult(true)
+            focusAroundUserWithSettingsCheck()
+        } else {
+            permissionLauncher.launch(
+                arrayOf(
+                    Manifest.permission.ACCESS_FINE_LOCATION,
+                    Manifest.permission.ACCESS_COARSE_LOCATION,
+                )
             )
         }
     }
 
-    Box(
+    BottomSheetScaffold(
+        sheetContent = {
+            MapResultsSheet(
+                isLoading = uiState.isLoading,
+                visibleCanyons = visibleCanyons,
+                isExpanded = bottomSheetState.currentValue == SheetValue.Expanded,
+                hasActiveFilters = uiState.criteria.activeFilterCount() > 0,
+                bottomContentPadding = bottomNavigationInset,
+                onClearFilters = viewModel::clearAllFilters,
+                onCanyonClick = onCanyonClick,
+            )
+        },
+        scaffoldState = bottomSheetScaffoldState,
         modifier = modifier
-            .fillMaxSize()
-            .background(dcColors.backgroundBase)
-            .statusBarsPadding()
+            .fillMaxSize(),
+        sheetPeekHeight = MAP_RESULTS_SHEET_PEEK_HEIGHT + bottomNavigationInset,
+        sheetShape = RoundedCornerShape(topStart = 28.dp, topEnd = 28.dp),
+        sheetContainerColor = dcColors.surfaceOverlay,
+        sheetContentColor = dcColors.textPrimary,
+        sheetDragHandle = null,
+        containerColor = dcColors.backgroundBase,
     ) {
-    Column(
-        modifier = Modifier
-            .fillMaxHeight()
-            .width(contentWidth)
-            .align(Alignment.TopCenter)
-            .padding(horizontal = screenHorizontalPadding),
-        verticalArrangement = Arrangement.spacedBy(spacing.md),
-    ) {
-        SnackbarHost(hostState = snackbarHostState)
-
-        MapHeroCard(
-            isLocating = uiState.isLocating,
-            onAroundMeClick = {
-                if (context.hasLocationPermission()) {
-                    viewModel.onLocationPermissionResult(true)
-                    focusAroundUserWithSettingsCheck()
-                } else {
-                    permissionLauncher.launch(
-                        arrayOf(
-                            Manifest.permission.ACCESS_FINE_LOCATION,
-                            Manifest.permission.ACCESS_COARSE_LOCATION,
-                        )
-                    )
-                }
-            },
-        )
-
-        Card(
-            modifier = Modifier.fillMaxWidth(),
-            shape = dcShapes.xl,
-            colors = CardDefaults.cardColors(containerColor = dcColors.surfaceRaised),
-            elevation = CardDefaults.cardElevation(defaultElevation = 0.dp),
-        ) {
+        Box(modifier = Modifier.fillMaxSize()) {
             MapLibreView(
                 markers = uiState.mapCanyons,
                 userLatitude = uiState.userLatitude,
                 userLongitude = uiState.userLongitude,
                 onMarkerClick = viewModel::selectCanyon,
+                onMapInteraction = viewModel::clearSelectedCanyon,
                 onVisibleBoundsChanged = { bounds -> visibleBounds = bounds },
                 onCameraChanged = viewModel::onCameraChanged,
                 persistedCameraState = uiState.cameraState,
-                focusLocationRequestId = uiState.focusLocationRequestId,
+                focusLocationRequestId = uiState.focusLocationRequestId.takeUnless {
+                    it == initialFocusLocationRequestId
+                } ?: 0,
+                modifier = Modifier.fillMaxSize(),
+            )
+
+            Row(
                 modifier = Modifier
-                    .fillMaxWidth()
-                    .height(390.dp),
-            )
-        }
-
-        if (!uiState.isLoading) {
-            DcSectionHeader(
-                title = stringResource(R.string.map_visible_title),
-                subtitle = stringResource(R.string.map_visible_description, visibleCanyons.size),
-            )
-        }
-
-        Box(
-            modifier = Modifier
-                .fillMaxWidth()
-                .weight(1f)
-                .padding(bottom = contentPadding.calculateBottomPadding()),
-        ) {
-            when {
-                uiState.isLoading -> {
-                    Box(
-                        modifier = Modifier.fillMaxSize(),
-                        contentAlignment = Alignment.Center,
-                    ) {
-                        CircularProgressIndicator()
-                    }
-                }
-
-                visibleCanyons.isEmpty() -> {
-                    EmptyVisibleCard(modifier = Modifier.fillMaxWidth())
-                }
-
-                else -> {
-                    LazyColumn(
-                        modifier = Modifier
-                            .fillMaxSize(),
-                        contentPadding = PaddingValues(bottom = 24.dp),
-                        verticalArrangement = Arrangement.spacedBy(12.dp),
-                    ) {
-                        items(
-                            items = visibleCanyons,
-                            key = { canyon -> canyon.id },
-                        ) { canyon ->
-                            NearbyCanyonCard(
-                                canyon = canyon,
-                                onClick = { onCanyonClick(canyon.id) },
-                            )
-                        }
-                        item {
-                            Spacer(modifier = Modifier.height(12.dp))
-                        }
-                    }
-                }
+                    .align(Alignment.TopCenter)
+                    .statusBarsPadding()
+                    .width(contentWidth)
+                    .padding(horizontal = screenHorizontalPadding, vertical = 12.dp),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically,
+            ) {
+                MapFilterControl(
+                    activeFilterCount = uiState.criteria.activeFilterCount(),
+                    totalResultsCount = uiState.totalResultsCount,
+                    onClick = { showFiltersSheet = true },
+                    onClear = viewModel::clearAllFilters,
+                )
+                MapLocationControl(
+                    isLocating = uiState.isLocating,
+                    onClick = ::focusAroundUser,
+                )
             }
+
+            uiState.selectedCanyon?.let { canyon ->
+                CanyonSummaryCard(
+                    canyon = canyon,
+                    onClick = { onCanyonClick(canyon.id) },
+                    variant = CanyonSummaryCardVariant.MapSheet,
+                    isFavorite = uiState.isSelectedCanyonFavorite,
+                    onFavoriteClick = viewModel::toggleSelectedCanyonFavorite,
+                    modifier = Modifier
+                        .align(Alignment.BottomCenter)
+                        .width(contentWidth)
+                        .padding(
+                            start = screenHorizontalPadding,
+                            end = screenHorizontalPadding,
+                            bottom = MAP_RESULTS_SHEET_PEEK_HEIGHT + bottomNavigationInset + 12.dp,
+                        )
+                        .alpha(0.94f),
+                )
+            }
+
+            SnackbarHost(
+                hostState = snackbarHostState,
+                modifier = Modifier
+                    .align(Alignment.TopCenter)
+                    .statusBarsPadding()
+                    .width(contentWidth)
+                    .padding(
+                        start = screenHorizontalPadding,
+                        top = 72.dp,
+                        end = screenHorizontalPadding,
+                    ),
+            )
         }
     }
+
+    if (showFiltersSheet) {
+        SearchFiltersSheet(
+            uiState = SearchFiltersSheetState(
+                criteria = uiState.criteria,
+                availableCountries = uiState.availableCountries,
+                availableDepartments = uiState.availableDepartments,
+                totalResultsCount = uiState.totalResultsCount,
+            ),
+            onDismiss = { showFiltersSheet = false },
+            onCriteriaChanged = viewModel::onCriteriaChanged,
+            onClearAll = viewModel::clearAllFilters,
+        )
     }
 }
 
 @Composable
-private fun MapHeroCard(
-    isLocating: Boolean,
-    onAroundMeClick: () -> Unit,
+private fun MapFilterControl(
+    activeFilterCount: Int,
+    totalResultsCount: Int,
+    onClick: () -> Unit,
+    onClear: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     val colors = LocalDcColors.current
-    val shapes = LocalDcShapes.current
-    Card(
-        modifier = modifier.fillMaxWidth(),
-        shape = shapes.xl,
-        colors = CardDefaults.cardColors(containerColor = Color.Transparent),
+    val hasActiveFilters = activeFilterCount > 0
+    Surface(
+        onClick = onClick,
+        modifier = modifier
+            .height(48.dp)
+            .widthIn(max = 280.dp),
+        shape = RoundedCornerShape(24.dp),
+        color = if (hasActiveFilters) colors.water.copy(alpha = 0.92f) else colors.surfaceRaised,
+        contentColor = colors.textPrimary,
+        shadowElevation = 4.dp,
+    ) {
+        Row(
+            modifier = Modifier.padding(start = 14.dp, end = if (hasActiveFilters) 2.dp else 14.dp),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.spacedBy(10.dp),
+        ) {
+            Icon(
+                imageVector = Icons.Default.Tune,
+                contentDescription = null,
+                tint = if (hasActiveFilters) colors.primaryAction else colors.textMuted,
+            )
+            Text(
+                text = if (hasActiveFilters) {
+                    stringResource(R.string.search_filters_active_count, activeFilterCount)
+                } else {
+                    stringResource(R.string.search_filters)
+                },
+                style = MaterialTheme.typography.labelLarge,
+                fontWeight = FontWeight.Bold,
+                maxLines = 1,
+                color = colors.textPrimary,
+            )
+            Text(
+                text = stringResource(R.string.search_results_count, totalResultsCount),
+                style = MaterialTheme.typography.labelMedium,
+                maxLines = 1,
+                color = if (hasActiveFilters) colors.primaryAction else colors.textSecondary,
+            )
+            if (hasActiveFilters) {
+                IconButton(onClick = onClear, modifier = Modifier.size(40.dp)) {
+                    Icon(
+                        imageVector = Icons.Default.Clear,
+                        contentDescription = stringResource(R.string.search_clear_filters),
+                    )
+                }
+            }
+        }
+    }
+}
+
+@Composable
+private fun MapLocationControl(
+    isLocating: Boolean,
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier,
+) {
+    val colors = LocalDcColors.current
+    Surface(
+        modifier = modifier.size(48.dp),
+        shape = RoundedCornerShape(24.dp),
+        color = colors.surfaceRaised,
+        contentColor = colors.textPrimary,
+        shadowElevation = 4.dp,
+    ) {
+        IconButton(
+            onClick = onClick,
+            enabled = !isLocating,
+        ) {
+            if (isLocating) {
+                CircularProgressIndicator(
+                    modifier = Modifier.size(20.dp),
+                    color = colors.primaryAction,
+                    strokeWidth = 2.dp,
+                )
+            } else {
+                Icon(
+                    imageVector = Icons.Default.MyLocation,
+                    contentDescription = stringResource(R.string.map_my_location),
+                    tint = colors.primaryAction,
+                )
+            }
+        }
+    }
+}
+
+@Composable
+private fun MapResultsSheet(
+    isLoading: Boolean,
+    visibleCanyons: List<CanyonSummary>,
+    isExpanded: Boolean,
+    hasActiveFilters: Boolean,
+    bottomContentPadding: Dp,
+    onClearFilters: () -> Unit,
+    onCanyonClick: (Int) -> Unit,
+    modifier: Modifier = Modifier,
+) {
+    val colors = LocalDcColors.current
+    val spacing = LocalDcSpacing.current
+    val hasCompactContent = !isLoading &&
+        visibleCanyons.size in 1..MAP_RESULTS_SHEET_COMPACT_ITEM_LIMIT
+    Column(
+        modifier = modifier
+            .fillMaxWidth()
+            .then(
+                if (hasCompactContent) Modifier else Modifier.fillMaxHeight(0.82f)
+            ),
     ) {
         Box(
             modifier = Modifier
                 .fillMaxWidth()
-                .background(
-                    Brush.linearGradient(
-                        colors = listOf(colors.waterDeep, colors.surfaceRaised, colors.rock.copy(alpha = 0.82f)),
-                    )
-                )
-                .padding(horizontal = 16.dp, vertical = 8.dp),
+                .padding(top = 10.dp, bottom = 6.dp),
+            contentAlignment = Alignment.Center,
         ) {
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceBetween,
-                verticalAlignment = Alignment.CenterVertically,
-            ) {
-                Row(
-                    modifier = Modifier.weight(1f),
-                    horizontalArrangement = Arrangement.spacedBy(10.dp),
-                    verticalAlignment = Alignment.CenterVertically,
+            Surface(
+                modifier = Modifier
+                    .width(40.dp)
+                    .height(4.dp),
+                shape = RoundedCornerShape(2.dp),
+                color = colors.borderSubtle,
+            ) {}
+        }
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = spacing.lg, vertical = 6.dp),
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically,
+        ) {
+            Column(modifier = Modifier.weight(1f)) {
+                Text(
+                    text = stringResource(R.string.map_visible_title),
+                    style = MaterialTheme.typography.titleMedium,
+                    fontWeight = FontWeight.ExtraBold,
+                )
+            }
+            Icon(
+                imageVector = Icons.Default.Explore,
+                contentDescription = null,
+                tint = colors.primaryAction,
+            )
+        }
+
+        val contentAlpha = if (isExpanded) 1f else 0f
+        when {
+            isLoading -> {
+                Box(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .weight(1f)
+                        .alpha(contentAlpha),
+                    contentAlignment = Alignment.Center,
                 ) {
-                    Icon(
-                        imageVector = Icons.Default.Explore,
-                        contentDescription = null,
-                        tint = Color.White,
-                    )
-                    Text(
-                        text = stringResource(R.string.tab_map),
-                        style = MaterialTheme.typography.titleLarge,
-                        color = Color.White,
-                        fontWeight = FontWeight.Bold,
-                    )
+                    CircularProgressIndicator()
                 }
-                Button(
-                    onClick = onAroundMeClick,
-                    enabled = !isLocating,
-                    shape = shapes.pill,
-                    contentPadding = androidx.compose.foundation.layout.PaddingValues(horizontal = 16.dp, vertical = 10.dp),
+            }
+
+            visibleCanyons.isEmpty() -> {
+                EmptyVisibleCard(
+                    hasActiveFilters = hasActiveFilters,
+                    onClearFilters = onClearFilters,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .weight(1f)
+                        .alpha(contentAlpha)
+                        .padding(horizontal = spacing.lg, vertical = spacing.md),
+                )
+            }
+
+            hasCompactContent -> {
+                Column(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .alpha(contentAlpha)
+                        .padding(
+                            start = spacing.lg,
+                            top = spacing.sm,
+                            end = spacing.lg,
+                            bottom = 24.dp + bottomContentPadding,
+                        ),
+                    verticalArrangement = Arrangement.spacedBy(12.dp),
                 ) {
-                    if (isLocating) {
-                        CircularProgressIndicator(
-                            modifier = Modifier.size(18.dp),
-                            color = MaterialTheme.colorScheme.onPrimary,
-                            strokeWidth = 2.dp,
-                        )
-                    } else {
-                        Icon(
-                            imageVector = Icons.Default.MyLocation,
-                            contentDescription = null,
+                    visibleCanyons.forEach { canyon ->
+                        NearbyCanyonCard(
+                            canyon = canyon,
+                            onClick = { onCanyonClick(canyon.id) },
                         )
                     }
-                    Spacer(modifier = Modifier.size(8.dp))
-                    Text(
-                        text = stringResource(
-                            if (isLocating) R.string.map_focus_loading else R.string.map_focus_action
+                }
+            }
+
+            else -> {
+                LazyColumn(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .weight(1f)
+                        .alpha(contentAlpha),
+                    contentPadding = PaddingValues(
+                        start = spacing.lg,
+                        top = spacing.sm,
+                        end = spacing.lg,
+                        bottom = 24.dp + bottomContentPadding,
+                    ),
+                    verticalArrangement = Arrangement.spacedBy(12.dp),
+                ) {
+                    items(
+                        items = visibleCanyons,
+                        key = { canyon -> canyon.id },
+                    ) { canyon ->
+                        NearbyCanyonCard(
+                            canyon = canyon,
+                            onClick = { onCanyonClick(canyon.id) },
                         )
-                    )
+                    }
                 }
             }
         }
@@ -337,13 +517,24 @@ private fun MapHeroCard(
 }
 
 @Composable
-private fun EmptyVisibleCard(modifier: Modifier = Modifier) {
-    DcEmptyState(
-        title = stringResource(R.string.map_visible_empty_title),
-        body = stringResource(R.string.map_visible_empty_description),
-        icon = Icons.Default.Explore,
-        modifier = modifier,
-    )
+private fun EmptyVisibleCard(
+    hasActiveFilters: Boolean,
+    onClearFilters: () -> Unit,
+    modifier: Modifier = Modifier,
+) {
+    Column(horizontalAlignment = Alignment.CenterHorizontally) {
+        DcEmptyState(
+            title = stringResource(R.string.map_visible_empty_title),
+            body = stringResource(R.string.map_visible_empty_description),
+            icon = Icons.Default.Explore,
+            modifier = modifier,
+        )
+        if (hasActiveFilters) {
+            TextButton(onClick = onClearFilters) {
+                Text(stringResource(R.string.search_clear_filters))
+            }
+        }
+    }
 }
 
 private fun focusAroundUserFromDevice(

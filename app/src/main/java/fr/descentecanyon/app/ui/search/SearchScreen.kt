@@ -461,7 +461,12 @@ fun SearchScreen(
 
     if (showFiltersSheet) {
         SearchFiltersSheet(
-            uiState = uiState,
+            uiState = SearchFiltersSheetState(
+                criteria = uiState.criteria,
+                availableCountries = uiState.availableCountries,
+                availableDepartments = uiState.availableDepartments,
+                totalResultsCount = uiState.totalResultsCount,
+            ),
             onDismiss = { showFiltersSheet = false },
             onCriteriaChanged = viewModel::onCriteriaChanged,
             onClearAll = viewModel::clearAllFilters,

@@ -8,18 +8,22 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.StarHalf
 import androidx.compose.material.icons.filled.CloudDownload
+import androidx.compose.material.icons.filled.Favorite
+import androidx.compose.material.icons.filled.FavoriteBorder
 import androidx.compose.material.icons.filled.Place
 import androidx.compose.material.icons.filled.Star
 import androidx.compose.material.icons.filled.StarBorder
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -55,6 +59,8 @@ fun CanyonSummaryCard(
     onClick: () -> Unit,
     modifier: Modifier = Modifier,
     variant: CanyonSummaryCardVariant = CanyonSummaryCardVariant.Compact,
+    isFavorite: Boolean = false,
+    onFavoriteClick: (() -> Unit)? = null,
 ) {
     val colors = LocalDcColors.current
     val spacing = LocalDcSpacing.current
@@ -75,6 +81,13 @@ fun CanyonSummaryCard(
                     .height(if (variant == CanyonSummaryCardVariant.MapSheet) 5.dp else 4.dp)
                     .padding(horizontal = spacing.lg),
             )
+            if (variant == CanyonSummaryCardVariant.MapSheet && onFavoriteClick != null) {
+                MapSheetFavoriteContent(
+                    canyon = canyon,
+                    isFavorite = isFavorite,
+                    onFavoriteClick = onFavoriteClick,
+                )
+            } else {
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -124,17 +137,116 @@ fun CanyonSummaryCard(
                     }
                 }
                 Spacer(modifier = Modifier.width(spacing.sm))
-                if (canyon.isForbidden) {
-                    ForbiddenBadge()
-                } else {
-                    CotationBadge(cotation = canyon.cotation)
+                Column(horizontalAlignment = Alignment.End) {
+                    if (canyon.isForbidden) {
+                        ForbiddenBadge()
+                    } else {
+                        CotationBadge(cotation = canyon.cotation)
+                    }
                 }
             }
 
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(horizontal = spacing.lg, vertical = spacing.md),
+                    .padding(
+                        start = spacing.lg,
+                        top = if (variant == CanyonSummaryCardVariant.MapSheet) 0.dp else spacing.md,
+                        end = spacing.lg,
+                        bottom = if (variant == CanyonSummaryCardVariant.MapSheet) 0.dp else spacing.md,
+                    ),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically,
+            ) {
+                canyon.interet?.let { interest ->
+                    InterestStars(interest = interest)
+                }
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    if (onFavoriteClick != null) {
+                        IconButton(
+                            onClick = onFavoriteClick,
+                            modifier = Modifier.size(40.dp),
+                        ) {
+                            Icon(
+                                imageVector = if (isFavorite) Icons.Default.Favorite else Icons.Default.FavoriteBorder,
+                                modifier = Modifier.size(24.dp),
+                                contentDescription = stringResource(
+                                    if (isFavorite) R.string.remove_favorite else R.string.add_favorite,
+                                ),
+                                tint = if (isFavorite) MaterialTheme.colorScheme.error else colors.textSecondary,
+                            )
+                        }
+                    }
+                    canyon.dernierDebit?.let { niveau ->
+                        DebitBadge(niveau = niveau)
+                    }
+                    if (canyon.isOffline) {
+                        Spacer(modifier = Modifier.width(spacing.sm))
+                        SummaryIconBadge(
+                            icon = Icons.Default.CloudDownload,
+                            contentDescription = stringResource(R.string.offline_available),
+                        )
+                    }
+                }
+            }
+            }
+        }
+    }
+}
+
+@Composable
+private fun MapSheetFavoriteContent(
+    canyon: CanyonSummary,
+    isFavorite: Boolean,
+    onFavoriteClick: () -> Unit,
+) {
+    val colors = LocalDcColors.current
+    val spacing = LocalDcSpacing.current
+    Box(modifier = Modifier.fillMaxWidth()) {
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(
+                    start = spacing.lg,
+                    top = spacing.lg,
+                    end = spacing.lg + 96.dp,
+                ),
+        ) {
+            Text(
+                text = canyon.nom,
+                style = MaterialTheme.typography.titleLarge,
+                fontWeight = FontWeight.ExtraBold,
+                color = colors.textPrimary,
+                maxLines = 2,
+                overflow = TextOverflow.Ellipsis,
+            )
+            val location = buildString {
+                append(canyon.pays)
+                canyon.departement?.let { append(" - $it") }
+            }
+            Row(
+                modifier = Modifier.padding(top = 3.dp),
+                verticalAlignment = Alignment.CenterVertically,
+            ) {
+                Icon(
+                    imageVector = Icons.Default.Place,
+                    contentDescription = null,
+                    modifier = Modifier.size(14.dp),
+                    tint = colors.textMuted,
+                )
+                Spacer(modifier = Modifier.width(3.dp))
+                Text(
+                    text = location,
+                    style = MaterialTheme.typography.bodySmall,
+                    color = colors.textSecondary,
+                    maxLines = 1,
+                    overflow = TextOverflow.Ellipsis,
+                )
+            }
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .heightIn(min = 40.dp),
                 horizontalArrangement = Arrangement.SpaceBetween,
                 verticalAlignment = Alignment.CenterVertically,
             ) {
@@ -152,6 +264,38 @@ fun CanyonSummaryCard(
                             contentDescription = stringResource(R.string.offline_available),
                         )
                     }
+                }
+            }
+        }
+        Column(
+            modifier = Modifier
+                .matchParentSize()
+                .padding(top = spacing.lg, end = spacing.lg),
+            horizontalAlignment = Alignment.End,
+        ) {
+            if (canyon.isForbidden) {
+                ForbiddenBadge()
+            } else {
+                CotationBadge(cotation = canyon.cotation)
+            }
+            Box(
+                modifier = Modifier
+                    .weight(1f)
+                    .fillMaxWidth(),
+                contentAlignment = Alignment.CenterEnd,
+            ) {
+                IconButton(
+                    onClick = onFavoriteClick,
+                    modifier = Modifier.size(48.dp),
+                ) {
+                    Icon(
+                        imageVector = if (isFavorite) Icons.Default.Favorite else Icons.Default.FavoriteBorder,
+                        modifier = Modifier.size(28.dp),
+                        contentDescription = stringResource(
+                            if (isFavorite) R.string.remove_favorite else R.string.add_favorite,
+                        ),
+                        tint = if (isFavorite) MaterialTheme.colorScheme.error else colors.textSecondary,
+                    )
                 }
             }
         }

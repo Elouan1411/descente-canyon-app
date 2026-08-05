@@ -58,7 +58,7 @@ import java.text.Normalizer
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun SearchFiltersSheet(
-    uiState: SearchUiState,
+    uiState: SearchFiltersSheetState,
     onDismiss: () -> Unit,
     onCriteriaChanged: (SearchCriteria) -> Unit,
     onClearAll: () -> Unit,
@@ -187,6 +187,13 @@ fun SearchFiltersSheet(
         }
     }
 }
+
+data class SearchFiltersSheetState(
+    val criteria: SearchCriteria,
+    val availableCountries: List<String>,
+    val availableDepartments: List<String>,
+    val totalResultsCount: Int,
+)
 
 @Composable
 private fun FilterSection(title: String, content: @Composable () -> Unit) {
