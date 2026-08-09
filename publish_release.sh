@@ -5,14 +5,43 @@ set -e
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$SCRIPT_DIR"
 
-# Read version defaults from version.properties if available
-VERSION_CODE_DEFAULT=$(grep '^VERSION_CODE=' version.properties 2>/dev/null | cut -d'=' -f2 | tr -d '\r\n')
-VERSION_NAME_DEFAULT=$(grep '^VERSION_NAME=' version.properties 2>/dev/null | cut -d'=' -f2 | tr -d '\r\n')
+# Read version defaults from version.properties
+VERSION_CODE_CURRENT=$(grep '^VERSION_CODE=' version.properties 2>/dev/null | cut -d'=' -f2 | tr -d '\r\n')
+VERSION_NAME_CURRENT=$(grep '^VERSION_NAME=' version.properties 2>/dev/null | cut -d'=' -f2 | tr -d '\r\n')
 
-VERSION_CODE="${1:-${VERSION_CODE_DEFAULT:-30}}"
-VERSION_NAME="${2:-${VERSION_NAME_DEFAULT:-2.1.0}}"
-RELEASE_NOTES="${3:-Nouvelle mise à jour disponible.}"
-APK_PATH="${4}"
+if [ -z "$VERSION_CODE_CURRENT" ]; then VERSION_CODE_CURRENT=30; fi
+if [ -z "$VERSION_NAME_CURRENT" ]; then VERSION_NAME_CURRENT="2.1.0"; fi
+
+# Auto-bump if no explicit versionCode argument was passed
+if [ -z "$1" ]; then
+    NEW_VERSION_CODE=$((VERSION_CODE_CURRENT + 1))
+
+    # Auto-bump patch version (ex: 2.1.0 -> 2.1.1)
+    MAJOR=$(echo "$VERSION_NAME_CURRENT" | cut -d. -f1)
+    MINOR=$(echo "$VERSION_NAME_CURRENT" | cut -d. -f2)
+    PATCH=$(echo "$VERSION_NAME_CURRENT" | cut -d. -f3)
+    if [ -z "$PATCH" ]; then PATCH=0; fi
+    NEW_PATCH=$((PATCH + 1))
+    NEW_VERSION_NAME="${MAJOR}.${MINOR}.${NEW_PATCH}"
+
+    # Update version.properties
+    echo "VERSION_CODE=${NEW_VERSION_CODE}" > version.properties
+    echo "VERSION_NAME=${NEW_VERSION_NAME}" >> version.properties
+
+    echo "🔄 Auto-bump dans version.properties :"
+    echo "   VERSION_CODE : ${VERSION_CODE_CURRENT} ➡️ ${NEW_VERSION_CODE}"
+    echo "   VERSION_NAME : ${VERSION_NAME_CURRENT} ➡️ ${NEW_VERSION_NAME}"
+
+    VERSION_CODE="$NEW_VERSION_CODE"
+    VERSION_NAME="$NEW_VERSION_NAME"
+    RELEASE_NOTES="Mise à jour v${NEW_VERSION_NAME}"
+    APK_PATH=""
+else
+    VERSION_CODE="$1"
+    VERSION_NAME="${2:-$VERSION_NAME_CURRENT}"
+    RELEASE_NOTES="${3:-Mise à jour v${VERSION_NAME}}"
+    APK_PATH="${4}"
+fi
 
 # Find APK path if not specified
 if [ -z "$APK_PATH" ]; then
@@ -24,8 +53,7 @@ if [ -z "$APK_PATH" ]; then
         APK_PATH="app/build/outputs/apk/debug/app-debug.apk"
     else
         echo "❌ Impossible de trouver un fichier APK dans app/build/outputs/apk/"
-        echo "💡 Générez d'abord un APK dans Android Studio ou spécifiez son chemin :"
-        echo "   ./publish_release.sh 31 \"2.1.1\" \"Notes...\" \"/chemin/vers/mon-app.apk\""
+        echo "💡 Générez d'abord votre APK dans Android Studio."
         exit 1
     fi
 fi
