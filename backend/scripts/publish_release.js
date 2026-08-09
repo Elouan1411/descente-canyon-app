@@ -74,7 +74,15 @@ async function publishRelease() {
 
     if (blobToken) {
       console.log('📦 Uploading APK directly to Vercel Blob (bypassing 4.5MB limit)...');
-      const { put } = require('@vercel/blob');
+      let put;
+      try {
+        put = require('@vercel/blob').put;
+      } catch (e) {
+        console.error('❌ Le module "@vercel/blob" n\'est pas installé.');
+        console.error('💡 Veuillez exécuter "cd backend && npm install" puis réessayer.');
+        process.exit(1);
+      }
+
       const blobFilename = `releases/descente-canyon-v${versionCode}-${Date.now()}.apk`;
       const blob = await put(blobFilename, fs.createReadStream(absoluteApkPath), {
         access: 'public',

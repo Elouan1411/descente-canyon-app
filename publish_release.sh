@@ -98,6 +98,10 @@ echo "📦 Fichier APK   : $FINAL_APK_PATH"
 echo "=========================================="
 
 cd backend
+if [ ! -d "node_modules/@vercel/blob" ]; then
+    echo "📦 Installation des dépendances du backend..."
+    npm install --silent
+fi
 npm run publish-release -- --apk="$FINAL_APK_PATH" --versionCode="$VERSION_CODE" --versionName="$VERSION_NAME" --notes="$RELEASE_NOTES"
 
 cd "$SCRIPT_DIR"
