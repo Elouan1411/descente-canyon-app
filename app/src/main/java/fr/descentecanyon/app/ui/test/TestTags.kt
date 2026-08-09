@@ -7,6 +7,7 @@ object TestTags {
     const val detailDebitNotificationButton = "detail_debit_notification_button"
     const val detailReportDebitButton = "detail_report_debit_button"
     const val detailRateInterestButton = "detail_rate_interest_button"
+    const val detailShareButton = "detail_share_button"
     const val favoritesList = "favorites_list"
     const val debitObserverNameField = "debit_observer_name_field"
     const val debitObserverEmailField = "debit_observer_email_field"

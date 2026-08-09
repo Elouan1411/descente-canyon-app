@@ -45,6 +45,7 @@ import androidx.compose.material.icons.filled.LocationOn
 import androidx.compose.material.icons.filled.Navigation
 import androidx.compose.material.icons.filled.NotificationsActive
 import androidx.compose.material.icons.filled.NotificationsNone
+import androidx.compose.material.icons.filled.Share
 import androidx.compose.material.icons.filled.Star
 import androidx.compose.material.icons.filled.WaterDrop
 import androidx.compose.material3.Card
@@ -254,6 +255,30 @@ fun CanyonDetailScreen(
                                 stringResource(R.string.notifications_canyon_follow_action)
                             },
                             tint = if (uiState.isDebitNotificationsEnabled) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onPrimaryContainer,
+                        )
+                    }
+                    IconButton(
+                        onClick = {
+                            uiState.canyonDetail?.canyon?.let { canyon ->
+                                val shareUrl = when {
+                                    canyon.url.startsWith("http://") || canyon.url.startsWith("https://") -> canyon.url
+                                    canyon.url.startsWith("/") -> "https://www.descentecanyon.com${canyon.url}"
+                                    else -> "https://www.descentecanyon.com/${canyon.url}"
+                                }
+                                val shareText = context.getString(R.string.share_canyon_text, canyon.nom, shareUrl)
+                                val sendIntent = Intent(Intent.ACTION_SEND).apply {
+                                    putExtra(Intent.EXTRA_TEXT, shareText)
+                                    type = "text/plain"
+                                }
+                                val shareIntent = Intent.createChooser(sendIntent, context.getString(R.string.share_canyon))
+                                context.startActivity(shareIntent)
+                            }
+                        },
+                        modifier = Modifier.testTag(TestTags.detailShareButton),
+                    ) {
+                        Icon(
+                            imageVector = Icons.Default.Share,
+                            contentDescription = stringResource(R.string.share_canyon),
                         )
                     }
                     IconButton(
