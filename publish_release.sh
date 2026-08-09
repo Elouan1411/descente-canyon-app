@@ -27,14 +27,12 @@ done
 VERSION_CODE_CURRENT=$(grep '^VERSION_CODE=' version.properties 2>/dev/null | cut -d'=' -f2 | tr -d '\r\n')
 VERSION_NAME_CURRENT=$(grep '^VERSION_NAME=' version.properties 2>/dev/null | cut -d'=' -f2 | tr -d '\r\n')
 
-if [ -z "$VERSION_CODE_CURRENT" ]; then VERSION_CODE_CURRENT=30; fi
-if [ -z "$VERSION_NAME_CURRENT" ]; then VERSION_NAME_CURRENT="2.1.0"; fi
+if [ -z "$VERSION_CODE_CURRENT" ]; then VERSION_CODE_CURRENT=36; fi
+if [ -z "$VERSION_NAME_CURRENT" ]; then VERSION_NAME_CURRENT="2.1.6"; fi
 
-# Auto-bump if no explicit versionCode was passed
-if [ -z "$VERSION_CODE_ARG" ]; then
+# If explicit version code passed OR if --bump flag passed
+if [[ "$*" == *"--bump"* ]]; then
     NEW_VERSION_CODE=$((VERSION_CODE_CURRENT + 1))
-
-    # Auto-bump patch version (ex: 2.1.0 -> 2.1.1)
     MAJOR=$(echo "$VERSION_NAME_CURRENT" | cut -d. -f1)
     MINOR=$(echo "$VERSION_NAME_CURRENT" | cut -d. -f2)
     PATCH=$(echo "$VERSION_NAME_CURRENT" | cut -d. -f3)
@@ -42,38 +40,42 @@ if [ -z "$VERSION_CODE_ARG" ]; then
     NEW_PATCH=$((PATCH + 1))
     NEW_VERSION_NAME="${MAJOR}.${MINOR}.${NEW_PATCH}"
 
-    # Update version.properties
     echo "VERSION_CODE=${NEW_VERSION_CODE}" > version.properties
     echo "VERSION_NAME=${NEW_VERSION_NAME}" >> version.properties
 
-    echo "🔄 Auto-bump dans version.properties :"
+    echo "🔄 Bump de version dans version.properties :"
     echo "   VERSION_CODE : ${VERSION_CODE_CURRENT} ➡️ ${NEW_VERSION_CODE}"
     echo "   VERSION_NAME : ${VERSION_NAME_CURRENT} ➡️ ${NEW_VERSION_NAME}"
 
     VERSION_CODE="$NEW_VERSION_CODE"
     VERSION_NAME="$NEW_VERSION_NAME"
-    RELEASE_NOTES="${RELEASE_NOTES_ARG:-Mise à jour v${NEW_VERSION_NAME}}"
-else
+elif [ -n "$VERSION_CODE_ARG" ]; then
     VERSION_CODE="$VERSION_CODE_ARG"
     VERSION_NAME="${VERSION_NAME_ARG:-$VERSION_NAME_CURRENT}"
-    RELEASE_NOTES="${RELEASE_NOTES_ARG:-Mise à jour v${VERSION_NAME}}"
+else
+    # Default: Use the version code and name from version.properties (matching Android Studio build)
+    VERSION_CODE="$VERSION_CODE_CURRENT"
+    VERSION_NAME="$VERSION_NAME_CURRENT"
 fi
 
-# Find or build APK path
-if [ -z "$APK_PATH" ]; then
-    echo "🔨 Compilation de l'APK avec la nouvelle version (build $VERSION_CODE)..."
-    ./gradlew assembleRelease -PpythonBinary=python3 || ./gradlew assembleDebug -PpythonBinary=python3
+RELEASE_NOTES="${RELEASE_NOTES_ARG:-Mise à jour v${VERSION_NAME}}"
+# Remove --bump from release notes if it captured it
+RELEASE_NOTES=$(echo "$RELEASE_NOTES" | sed 's/--bump//g' | xargs)
+if [ -z "$RELEASE_NOTES" ]; then RELEASE_NOTES="Mise à jour v${VERSION_NAME}"; fi
 
-    if [ -f "app/build/outputs/apk/release/app-release.apk" ]; then
+# Find APK path if not explicitly provided
+if [ -z "$APK_PATH" ]; then
+    if [ -f "app/release/app-release.apk" ]; then
+        APK_PATH="app/release/app-release.apk"
+    elif [ -f "app/build/outputs/apk/release/app-release.apk" ]; then
         APK_PATH="app/build/outputs/apk/release/app-release.apk"
     elif [ -f "app/build/outputs/apk/release/app-release-unsigned.apk" ]; then
         APK_PATH="app/build/outputs/apk/release/app-release-unsigned.apk"
     elif [ -f "app/build/outputs/apk/debug/app-debug.apk" ]; then
         APK_PATH="app/build/outputs/apk/debug/app-debug.apk"
-    elif [ -f "app/release/app-release.apk" ]; then
-        APK_PATH="app/release/app-release.apk"
     else
-        echo "❌ Impossible de trouver un fichier APK après compilation."
+        echo "❌ Impossible de trouver un fichier APK."
+        echo "💡 Générez d'abord votre APK dans Android Studio."
         exit 1
     fi
 fi
