@@ -27,6 +27,8 @@ import fr.descentecanyon.app.data.local.entity.GeoPointEntity
 import fr.descentecanyon.app.data.local.entity.ForumUserEntity
 import fr.descentecanyon.app.data.local.entity.PendingDebitSubmissionEntity
 import fr.descentecanyon.app.data.local.entity.PhotoEntity
+import fr.descentecanyon.app.data.local.dao.CanyonPdfDao
+import fr.descentecanyon.app.data.local.entity.CanyonPdfEntity
 import fr.descentecanyon.app.data.local.entity.RegulationTextEntity
 import fr.descentecanyon.app.data.local.entity.SearchIndexEntity
 import fr.descentecanyon.app.data.local.entity.WatershedEntity
@@ -48,8 +50,9 @@ import fr.descentecanyon.app.data.local.entity.WatershedEntity
         PendingDebitSubmissionEntity::class,
         SearchIndexEntity::class,
         ForumUserEntity::class,
+        CanyonPdfEntity::class,
     ],
-    version = 14,
+    version = 15,
     exportSchema = true,
 )
 abstract class DescenteCanyonDatabase : RoomDatabase() {
@@ -66,6 +69,7 @@ abstract class DescenteCanyonDatabase : RoomDatabase() {
     abstract fun pendingDebitSubmissionDao(): PendingDebitSubmissionDao
     abstract fun searchIndexDao(): SearchIndexDao
     abstract fun forumUserDao(): ForumUserDao
+    abstract fun canyonPdfDao(): CanyonPdfDao
 
     companion object {
         const val DATABASE_NAME = "descente_canyon_db"

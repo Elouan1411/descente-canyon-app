@@ -13,6 +13,7 @@ import dagger.hilt.components.SingletonComponent
 import fr.descentecanyon.app.data.local.dao.AppMetadataDao
 import fr.descentecanyon.app.data.local.dao.BibliographyDao
 import fr.descentecanyon.app.data.local.dao.CanyonDao
+import fr.descentecanyon.app.data.local.dao.CanyonPdfDao
 import fr.descentecanyon.app.data.local.dao.CanyonTrackDao
 import fr.descentecanyon.app.data.local.dao.DailyWeatherDao
 import fr.descentecanyon.app.data.local.dao.DebitDao
@@ -350,6 +351,29 @@ object DatabaseModule {
         }
     }
 
+    private val MIGRATION_14_15 = object : Migration(14, 15) {
+        override fun migrate(db: SupportSQLiteDatabase) {
+            db.execSQL(
+                """
+                CREATE TABLE IF NOT EXISTS `canyon_pdfs` (
+                    `id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+                    `serverPdfId` TEXT NOT NULL,
+                    `canyonId` INTEGER NOT NULL,
+                    `fileName` TEXT NOT NULL,
+                    `fileSize` INTEGER NOT NULL,
+                    `localPath` TEXT,
+                    `remoteUrl` TEXT NOT NULL,
+                    `uploadedAt` INTEGER NOT NULL,
+                    `isDownloaded` INTEGER NOT NULL DEFAULT 0,
+                    FOREIGN KEY(`canyonId`) REFERENCES `canyons`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE
+                )
+                """.trimIndent()
+            )
+            db.execSQL("CREATE INDEX IF NOT EXISTS `index_canyon_pdfs_canyonId` ON `canyon_pdfs` (`canyonId`)")
+            db.execSQL("CREATE UNIQUE INDEX IF NOT EXISTS `index_canyon_pdfs_serverPdfId` ON `canyon_pdfs` (`serverPdfId`)")
+        }
+    }
+
     @Provides
     @Singleton
     fun provideDatabase(@ApplicationContext context: Context): DescenteCanyonDatabase {
@@ -371,6 +395,7 @@ object DatabaseModule {
             .addMigrations(MIGRATION_11_12)
             .addMigrations(MIGRATION_12_13)
             .addMigrations(MIGRATION_13_14)
+            .addMigrations(MIGRATION_14_15)
             .createFromAsset(PREPACKAGED_DATABASE_ASSET_PATH)
 
         return builder.build()
@@ -416,6 +441,9 @@ object DatabaseModule {
 
     @Provides
     fun provideForumUserDao(database: DescenteCanyonDatabase): ForumUserDao = database.forumUserDao()
+
+    @Provides
+    fun provideCanyonPdfDao(database: DescenteCanyonDatabase): CanyonPdfDao = database.canyonPdfDao()
 
     private fun ensureCanyonColumn(
         db: SupportSQLiteDatabase,
