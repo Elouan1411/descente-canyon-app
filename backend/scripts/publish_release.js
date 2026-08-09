@@ -42,6 +42,7 @@ async function publishRelease() {
   const notes = args.notes || 'Nouvelle mise à jour disponible.';
   const baseUrl = (args.url || process.env.BACKEND_URL || 'https://descente-canyon-app.vercel.app').replace(/\/$/, '');
   const appSecret = args.secret || process.env.APP_SECRET || 'descente_canyon_secret_key_2026';
+  const apkHash = args.apkHash || process.env.APK_SIGNATURE_HASH || 'default_apk_sha256_hash';
   const blobToken = args.blobToken || process.env.BLOB_READ_WRITE_TOKEN;
 
   if (!apkPath || !versionCode) {
