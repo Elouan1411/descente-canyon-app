@@ -40,7 +40,7 @@ val fileVersionCode = versionProperties.getProperty("VERSION_CODE")?.toIntOrNull
 val fileVersionName = versionProperties.getProperty("VERSION_NAME")?.takeIf { it.isNotBlank() } ?: "1.0.0"
 val ciVersionCode = providers.gradleProperty("ciVersionCode").orNull?.toIntOrNull() ?: fileVersionCode
 val ciVersionName = providers.gradleProperty("ciVersionName").orNull ?: fileVersionName
-val pythonBinary = providers.gradleProperty("pythonBinary").orNull?.takeIf { it.isNotBlank() } ?: "python"
+val pythonBinary = providers.gradleProperty("pythonBinary").orNull?.takeIf { it.isNotBlank() } ?: "/usr/local/bin/python3"
 val hasReleaseSigning = listOf(
     releaseKeystoreFile,
     releaseStorePassword,
@@ -277,8 +277,8 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_25
-        targetCompatibility = JavaVersion.VERSION_25
+        sourceCompatibility = JavaVersion.VERSION_21
+        targetCompatibility = JavaVersion.VERSION_21
     }
 
     buildFeatures {
@@ -391,7 +391,7 @@ play {
 
 kotlin {
     compilerOptions {
-        jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_25)
+        jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_21)
     }
 }
 
