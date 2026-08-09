@@ -59,19 +59,21 @@ else
     RELEASE_NOTES="${RELEASE_NOTES_ARG:-Mise à jour v${VERSION_NAME}}"
 fi
 
-# Find APK path if not explicitly provided
+# Find or build APK path
 if [ -z "$APK_PATH" ]; then
-    if [ -f "app/release/app-release.apk" ]; then
-        APK_PATH="app/release/app-release.apk"
-    elif [ -f "app/build/outputs/apk/release/app-release.apk" ]; then
+    echo "🔨 Compilation de l'APK avec la nouvelle version (build $VERSION_CODE)..."
+    ./gradlew assembleRelease -PpythonBinary=python3 || ./gradlew assembleDebug -PpythonBinary=python3
+
+    if [ -f "app/build/outputs/apk/release/app-release.apk" ]; then
         APK_PATH="app/build/outputs/apk/release/app-release.apk"
     elif [ -f "app/build/outputs/apk/release/app-release-unsigned.apk" ]; then
         APK_PATH="app/build/outputs/apk/release/app-release-unsigned.apk"
     elif [ -f "app/build/outputs/apk/debug/app-debug.apk" ]; then
         APK_PATH="app/build/outputs/apk/debug/app-debug.apk"
+    elif [ -f "app/release/app-release.apk" ]; then
+        APK_PATH="app/release/app-release.apk"
     else
-        echo "❌ Impossible de trouver un fichier APK."
-        echo "💡 Générez d'abord votre APK dans Android Studio."
+        echo "❌ Impossible de trouver un fichier APK après compilation."
         exit 1
     fi
 fi
