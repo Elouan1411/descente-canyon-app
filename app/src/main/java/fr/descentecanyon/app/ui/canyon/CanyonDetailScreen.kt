@@ -257,44 +257,6 @@ fun CanyonDetailScreen(
                             tint = if (uiState.isDebitNotificationsEnabled) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onPrimaryContainer,
                         )
                     }
-                    IconButton(
-                        onClick = {
-                            uiState.canyonDetail?.canyon?.let { canyon ->
-                                val shareUrl = when {
-                                    canyon.url.startsWith("http://") || canyon.url.startsWith("https://") -> canyon.url
-                                    canyon.url.startsWith("/") -> "https://www.descentecanyon.com${canyon.url}"
-                                    else -> "https://www.descentecanyon.com/${canyon.url}"
-                                }
-                                val shareText = context.getString(R.string.share_canyon_text, canyon.nom, shareUrl)
-                                val sendIntent = Intent(Intent.ACTION_SEND).apply {
-                                    putExtra(Intent.EXTRA_TEXT, shareText)
-                                    type = "text/plain"
-                                }
-                                val shareIntent = Intent.createChooser(sendIntent, context.getString(R.string.share_canyon))
-                                context.startActivity(shareIntent)
-                            }
-                        },
-                        modifier = Modifier.testTag(TestTags.detailShareButton),
-                    ) {
-                        Icon(
-                            imageVector = Icons.Default.Share,
-                            contentDescription = stringResource(R.string.share_canyon),
-                        )
-                    }
-                    IconButton(
-                        onClick = viewModel::toggleFavorite,
-                        modifier = Modifier.testTag(TestTags.detailFavoriteButton),
-                    ) {
-                        Icon(
-                            imageVector = if (uiState.isFavorite) Icons.Default.Favorite else Icons.Default.FavoriteBorder,
-                            contentDescription = if (uiState.isFavorite) {
-                                stringResource(R.string.remove_favorite)
-                            } else {
-                                stringResource(R.string.add_favorite)
-                            },
-                            tint = if (uiState.isFavorite) MaterialTheme.colorScheme.error else MaterialTheme.colorScheme.onPrimaryContainer,
-                        )
-                    }
                 },
             )
         },
@@ -343,6 +305,24 @@ fun CanyonDetailScreen(
                     ) {
                         CanyonDetailContent(
                             detail = uiState.canyonDetail!!,
+                            isFavorite = uiState.isFavorite,
+                            onFavoriteToggle = viewModel::toggleFavorite,
+                            onShareClick = {
+                                uiState.canyonDetail?.canyon?.let { canyon ->
+                                    val shareUrl = when {
+                                        canyon.url.startsWith("http://") || canyon.url.startsWith("https://") -> canyon.url
+                                        canyon.url.startsWith("/") -> "https://www.descentecanyon.com${canyon.url}"
+                                        else -> "https://www.descentecanyon.com/${canyon.url}"
+                                    }
+                                    val shareText = context.getString(R.string.share_canyon_text, canyon.nom, shareUrl)
+                                    val sendIntent = Intent(Intent.ACTION_SEND).apply {
+                                        putExtra(Intent.EXTRA_TEXT, shareText)
+                                        type = "text/plain"
+                                    }
+                                    val shareIntent = Intent.createChooser(sendIntent, context.getString(R.string.share_canyon))
+                                    context.startActivity(shareIntent)
+                                }
+                            },
                             isRefreshingDetail = uiState.isRefreshingDetail,
                             isOnline = uiState.isOnline,
                             isLoadingPhotos = uiState.isLoadingPhotos,
@@ -470,6 +450,9 @@ private fun AddInterestIcon(
 @Composable
 private fun CanyonDetailContent(
     detail: CanyonDetail,
+    isFavorite: Boolean,
+    onFavoriteToggle: () -> Unit,
+    onShareClick: () -> Unit,
     isRefreshingDetail: Boolean,
     isOnline: Boolean,
     isLoadingPhotos: Boolean,
@@ -532,6 +515,9 @@ private fun CanyonDetailContent(
         item {
             SummaryCard(
                 detail = detail,
+                isFavorite = isFavorite,
+                onFavoriteToggle = onFavoriteToggle,
+                onShareClick = onShareClick,
                 onPersistedPhotoMissing = onPersistedPhotoMissing,
             )
         }
@@ -628,6 +614,9 @@ private fun DetailRefreshingBanner(modifier: Modifier = Modifier) {
 @Composable
 private fun SummaryCard(
     detail: CanyonDetail,
+    isFavorite: Boolean,
+    onFavoriteToggle: () -> Unit,
+    onShareClick: () -> Unit,
     onPersistedPhotoMissing: (Long) -> Unit,
     modifier: Modifier = Modifier,
 ) {
@@ -678,48 +667,105 @@ private fun SummaryCard(
                             )
                         )
                 )
-                Column(
+                Row(
                     modifier = Modifier
+                        .fillMaxWidth()
                         .align(Alignment.BottomStart)
                         .padding(spacing.lg),
-                    verticalArrangement = Arrangement.spacedBy(spacing.sm),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.Bottom,
                 ) {
-                    Row(
-                        horizontalArrangement = Arrangement.spacedBy(spacing.sm),
-                        verticalAlignment = Alignment.CenterVertically,
+                    Column(
+                        modifier = Modifier.weight(1f),
+                        verticalArrangement = Arrangement.spacedBy(spacing.sm),
                     ) {
-                        if (canyon.isForbidden) {
-                            ForbiddenBadge()
-                        } else {
-                            CotationBadge(cotation = canyon.cotation)
+                        Row(
+                            horizontalArrangement = Arrangement.spacedBy(spacing.sm),
+                            verticalAlignment = Alignment.CenterVertically,
+                        ) {
+                            if (canyon.isForbidden) {
+                                ForbiddenBadge()
+                            } else {
+                                CotationBadge(cotation = canyon.cotation)
+                            }
+                            canyon.interet?.let { interest ->
+                                InterestStars(interest = interest)
+                            }
                         }
-                        canyon.interet?.let { interest ->
-                            InterestStars(interest = interest)
-                        }
-                    }
-                    Text(
-                        text = canyon.nom,
-                        style = MaterialTheme.typography.headlineLarge,
-                        fontWeight = FontWeight.ExtraBold,
-                        color = colors.snow,
-                        maxLines = 2,
-                        overflow = TextOverflow.Ellipsis,
-                    )
-                    Row(verticalAlignment = Alignment.CenterVertically) {
-                        Icon(
-                            imageVector = Icons.Default.LocationOn,
-                            contentDescription = null,
-                            modifier = Modifier.size(16.dp),
-                            tint = colors.waterMist,
-                        )
-                        Spacer(modifier = Modifier.width(4.dp))
                         Text(
-                            text = "${canyon.commune} - ${canyon.pays}",
-                            style = MaterialTheme.typography.bodyMedium,
-                            color = colors.waterMist,
-                            maxLines = 1,
+                            text = canyon.nom,
+                            style = MaterialTheme.typography.headlineLarge,
+                            fontWeight = FontWeight.ExtraBold,
+                            color = colors.snow,
+                            maxLines = 2,
                             overflow = TextOverflow.Ellipsis,
                         )
+                        Row(verticalAlignment = Alignment.CenterVertically) {
+                            Icon(
+                                imageVector = Icons.Default.LocationOn,
+                                contentDescription = null,
+                                modifier = Modifier.size(16.dp),
+                                tint = colors.waterMist,
+                            )
+                            Spacer(modifier = Modifier.width(4.dp))
+                            Text(
+                                text = "${canyon.commune} - ${canyon.pays}",
+                                style = MaterialTheme.typography.bodyMedium,
+                                color = colors.waterMist,
+                                maxLines = 1,
+                                overflow = TextOverflow.Ellipsis,
+                            )
+                        }
+                    }
+
+                    Spacer(modifier = Modifier.width(spacing.sm))
+
+                    Row(
+                        horizontalArrangement = Arrangement.spacedBy(spacing.xs),
+                        verticalAlignment = Alignment.CenterVertically,
+                    ) {
+                        Surface(
+                            shape = CircleShape,
+                            color = colors.surfacePhotoScrim.copy(alpha = 0.72f),
+                            contentColor = colors.snow,
+                        ) {
+                            IconButton(
+                                onClick = onShareClick,
+                                modifier = Modifier
+                                    .size(36.dp)
+                                    .testTag(TestTags.detailShareButton),
+                            ) {
+                                Icon(
+                                    imageVector = Icons.Default.Share,
+                                    contentDescription = stringResource(R.string.share_canyon),
+                                    tint = colors.snow,
+                                    modifier = Modifier.size(20.dp),
+                                )
+                            }
+                        }
+                        Surface(
+                            shape = CircleShape,
+                            color = colors.surfacePhotoScrim.copy(alpha = 0.72f),
+                            contentColor = colors.snow,
+                        ) {
+                            IconButton(
+                                onClick = onFavoriteToggle,
+                                modifier = Modifier
+                                    .size(36.dp)
+                                    .testTag(TestTags.detailFavoriteButton),
+                            ) {
+                                Icon(
+                                    imageVector = if (isFavorite) Icons.Default.Favorite else Icons.Default.FavoriteBorder,
+                                    contentDescription = if (isFavorite) {
+                                        stringResource(R.string.remove_favorite)
+                                    } else {
+                                        stringResource(R.string.add_favorite)
+                                    },
+                                    tint = if (isFavorite) MaterialTheme.colorScheme.error else colors.snow,
+                                    modifier = Modifier.size(20.dp),
+                                )
+                            }
+                        }
                     }
                 }
                 heroPhoto?.auteur?.takeIf { it.isNotBlank() }?.let { author ->
