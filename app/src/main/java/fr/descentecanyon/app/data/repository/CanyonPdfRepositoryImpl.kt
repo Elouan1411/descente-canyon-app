@@ -72,6 +72,20 @@ class CanyonPdfRepositoryImpl @Inject constructor(
                         )
                     )
                 }
+
+                val localPdfs = canyonPdfDao.getPdfsForCanyonSync(canyonId)
+                val remoteServerIds = remotePdfs.map { it.serverPdfId }.toSet()
+
+                for (localPdf in localPdfs) {
+                    if (localPdf.serverPdfId !in remoteServerIds) {
+                        localPdf.localPath?.let { path ->
+                            val file = File(path)
+                            if (file.exists()) file.delete()
+                        }
+                        canyonPdfDao.deletePdfByServerId(localPdf.serverPdfId)
+                    }
+                }
+
                 canyonPdfDao.insertOrUpdatePdfs(remotePdfs)
                 Result.success(Unit)
             } else {
