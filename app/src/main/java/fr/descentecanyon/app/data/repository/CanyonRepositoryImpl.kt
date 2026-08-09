@@ -34,16 +34,22 @@ import kotlinx.coroutines.flow.shareIn
 import javax.inject.Inject
 import javax.inject.Singleton
 
+import dagger.hilt.android.qualifiers.ApplicationContext
+import fr.descentecanyon.app.data.local.dao.CanyonPdfDao
+
 @Singleton
 class CanyonRepositoryImpl @Inject constructor(
+    @ApplicationContext private val context: Context,
     private val database: DescenteCanyonDatabase,
     private val canyonDao: CanyonDao,
+    private val canyonPdfDao: CanyonPdfDao,
     private val localStore: CanyonLocalStore,
     private val geoPointDao: GeoPointDao,
     private val searchIndexDao: SearchIndexDao,
     private val watershedDao: WatershedDao,
     private val scraper: CanyonScraper,
     private val mapOfflineRepository: MapOfflineRepository,
+    private val canyonPdfRepository: CanyonPdfRepository,
 ) : CanyonRepository {
 
     private val repositoryScope = CoroutineScope(SupervisorJob() + Dispatchers.Default)
@@ -153,6 +159,17 @@ class CanyonRepositoryImpl @Inject constructor(
                 longitude = point.longitude,
                 radiusKm = 3.0,
             ).getOrThrow()
+        }
+
+        // Also sync and download community PDFs for offline access
+        runCatching {
+            canyonPdfRepository.syncPdfsForCanyon(canyonId)
+            val pdfs = canyonPdfDao.getPdfsForCanyonSync(canyonId)
+            for (pdf in pdfs) {
+                if (!pdf.isDownloaded) {
+                    canyonPdfRepository.downloadPdfFile(context, pdf)
+                }
+            }
         }
     }
 

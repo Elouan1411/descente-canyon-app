@@ -107,4 +107,10 @@ abstract class RepositoryModule {
     @Binds
     @Singleton
     abstract fun bindWeatherRepository(impl: WeatherRepositoryImpl): WeatherRepository
+
+    @Binds
+    @Singleton
+    abstract fun bindCanyonPdfRepository(
+        impl: fr.descentecanyon.app.data.repository.CanyonPdfRepositoryImpl,
+    ): fr.descentecanyon.app.data.repository.CanyonPdfRepository
 }
