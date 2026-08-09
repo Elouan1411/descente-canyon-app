@@ -29,27 +29,50 @@ export async function POST(req: NextRequest) {
   }
 
   try {
-    const formData = await req.formData();
-    const file = formData.get('file') as File | null;
-    const versionCodeStr = formData.get('versionCode') as string | null;
-    const versionName = (formData.get('versionName') as string | null) || '1.0.0';
-    const releaseNotes = (formData.get('releaseNotes') as string | null) || 'Nouvelle version disponible.';
-    const minSupportedVersionCodeStr = formData.get('minSupportedVersionCode') as string | null;
+    const contentType = req.headers.get('content-type') || '';
+    let finalBlobUrl = '';
+    let versionCode = 0;
+    let versionName = '1.0.0';
+    let releaseNotes = 'Nouvelle version disponible.';
+    let minSupportedVersionCode = 1;
 
-    if (!file || !versionCodeStr) {
-      return NextResponse.json({ error: 'Missing file or versionCode' }, { status: 400 });
+    if (contentType.includes('application/json')) {
+      const json = await req.json();
+      finalBlobUrl = json.blobUrl || '';
+      versionCode = parseInt(json.versionCode, 10);
+      if (json.versionName) versionName = json.versionName;
+      if (json.releaseNotes) releaseNotes = json.releaseNotes;
+      if (json.minSupportedVersionCode) minSupportedVersionCode = parseInt(json.minSupportedVersionCode, 10);
+
+      if (!finalBlobUrl || isNaN(versionCode)) {
+        return NextResponse.json({ error: 'Missing blobUrl or valid versionCode' }, { status: 400 });
+      }
+    } else {
+      const formData = await req.formData();
+      const file = formData.get('file') as File | null;
+      const versionCodeStr = formData.get('versionCode') as string | null;
+      const vName = formData.get('versionName') as string | null;
+      const rNotes = formData.get('releaseNotes') as string | null;
+      const minSupportedStr = formData.get('minSupportedVersionCode') as string | null;
+
+      if (!file || !versionCodeStr) {
+        return NextResponse.json({ error: 'Missing file or versionCode' }, { status: 400 });
+      }
+
+      versionCode = parseInt(versionCodeStr, 10);
+      if (isNaN(versionCode)) {
+        return NextResponse.json({ error: 'Invalid versionCode' }, { status: 400 });
+      }
+
+      if (vName) versionName = vName;
+      if (rNotes) releaseNotes = rNotes;
+      if (minSupportedStr) minSupportedVersionCode = parseInt(minSupportedStr, 10);
+
+      // Upload to Vercel Blob
+      const blobFilename = `releases/descente-canyon-v${versionCode}-${Date.now()}.apk`;
+      const blob = await put(blobFilename, file, { access: 'public' });
+      finalBlobUrl = blob.url;
     }
-
-    const versionCode = parseInt(versionCodeStr, 10);
-    const minSupportedVersionCode = minSupportedVersionCodeStr ? parseInt(minSupportedVersionCodeStr, 10) : 1;
-
-    if (isNaN(versionCode)) {
-      return NextResponse.json({ error: 'Invalid versionCode' }, { status: 400 });
-    }
-
-    // Upload to Vercel Blob
-    const blobFilename = `releases/descente-canyon-v${versionCode}-${Date.now()}.apk`;
-    const blob = await put(blobFilename, file, { access: 'public' });
 
     const releaseId = `rel_${versionCode}_${Date.now()}`;
     const newRelease: AppReleaseRecord = {
@@ -57,7 +80,7 @@ export async function POST(req: NextRequest) {
       versionCode,
       versionName,
       releaseNotes,
-      blobUrl: blob.url,
+      blobUrl: finalBlobUrl,
       uploadedAt: Date.now(),
       minSupportedVersionCode,
     };
