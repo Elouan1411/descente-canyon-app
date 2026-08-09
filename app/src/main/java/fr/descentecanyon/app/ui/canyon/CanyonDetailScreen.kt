@@ -2291,6 +2291,7 @@ private fun sendDepartureIntent(
     val currentTimeStr = SimpleDateFormat("HH:mm", Locale.getDefault()).format(Date())
 
     val sb = StringBuilder()
+    sb.append(context.getString(R.string.share_departure_intro)).append("\n\n")
     sb.append("🚨 ").append(context.getString(R.string.share_departure_header, canyon.nom)).append("\n")
     sb.append("🔗 ").append(shareUrl).append("\n")
     sb.append("🕒 ").append(context.getString(R.string.share_departure_time, currentTimeStr)).append("\n")
