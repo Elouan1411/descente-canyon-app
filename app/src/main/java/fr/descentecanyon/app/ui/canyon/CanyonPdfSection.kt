@@ -12,12 +12,12 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.OpenInNew
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.Download
 import androidx.compose.material.icons.filled.ExpandLess
 import androidx.compose.material.icons.filled.ExpandMore
-import androidx.compose.material.icons.filled.OpenInNew
 import androidx.compose.material.icons.filled.PictureAsPdf
 import androidx.compose.material.icons.filled.Refresh
 import androidx.compose.material3.*
@@ -334,27 +334,25 @@ private fun PdfItemRow(
                         overflow = TextOverflow.Ellipsis,
                     )
 
-                    Row(
-                        verticalAlignment = Alignment.CenterVertically,
-                        horizontalArrangement = Arrangement.spacedBy(8.dp),
+                    Text(
+                        text = "$sizeMb • $dateStr",
+                        style = MaterialTheme.typography.bodySmall,
+                        color = colors.textSecondary,
                         modifier = Modifier.padding(top = 2.dp),
-                    ) {
-                        Text(
-                            text = "$sizeMb • $dateStr",
-                            style = MaterialTheme.typography.bodySmall,
-                            color = colors.textSecondary,
-                        )
+                    )
 
-                        Text(
-                            text = if (pdf.isDownloaded) {
-                                stringResource(R.string.pdf_downloaded_tag)
-                            } else {
-                                stringResource(R.string.pdf_online_tag)
-                            },
-                            style = MaterialTheme.typography.labelSmall.copy(fontSize = 10.sp),
-                            color = if (pdf.isDownloaded) MaterialTheme.colorScheme.primary else colors.textSecondary,
-                        )
-                    }
+                    Text(
+                        text = if (pdf.isDownloaded) {
+                            stringResource(R.string.pdf_downloaded_tag)
+                        } else {
+                            stringResource(R.string.pdf_online_tag)
+                        },
+                        style = MaterialTheme.typography.labelSmall.copy(fontSize = 11.sp, fontWeight = FontWeight.Medium),
+                        color = if (pdf.isDownloaded) MaterialTheme.colorScheme.primary else colors.textSecondary,
+                        maxLines = 1,
+                        overflow = TextOverflow.Ellipsis,
+                        modifier = Modifier.padding(top = 2.dp),
+                    )
                 }
             }
 
@@ -362,7 +360,7 @@ private fun PdfItemRow(
                 if (pdf.isDownloaded) {
                     IconButton(onClick = onOpenClick) {
                         Icon(
-                            imageVector = Icons.Default.OpenInNew,
+                            imageVector = Icons.AutoMirrored.Filled.OpenInNew,
                             contentDescription = stringResource(R.string.pdf_open),
                             tint = MaterialTheme.colorScheme.primary,
                         )
