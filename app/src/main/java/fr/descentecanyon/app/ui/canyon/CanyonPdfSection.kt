@@ -14,7 +14,6 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.OpenInNew
 import androidx.compose.material.icons.filled.Add
-import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.Download
 import androidx.compose.material.icons.filled.ExpandLess
 import androidx.compose.material.icons.filled.ExpandMore
@@ -56,7 +55,6 @@ fun CanyonPdfSection(
     var isExpanded by remember { mutableStateOf(true) }
     var isUploading by remember { mutableStateOf(false) }
     var isSyncing by remember { mutableStateOf(false) }
-    var pendingDeletePdf by remember { mutableStateOf<CanyonPdfEntity?>(null) }
 
     LaunchedEffect(canyonId) {
         isSyncing = true
@@ -239,9 +237,6 @@ fun CanyonPdfSection(
                                         pdfRepository.downloadPdfFile(context, pdf)
                                     }
                                 },
-                                onDeleteClick = {
-                                    pendingDeletePdf = pdf
-                                },
                                 colors = colors,
                             )
                         }
@@ -250,35 +245,6 @@ fun CanyonPdfSection(
             }
         }
     }
-
-    pendingDeletePdf?.let { pdfToDelete ->
-        AlertDialog(
-            onDismissRequest = { pendingDeletePdf = null },
-            title = { Text(text = stringResource(R.string.pdf_delete_confirm_title)) },
-            text = { Text(text = stringResource(R.string.pdf_delete_confirm_message)) },
-            confirmButton = {
-                TextButton(
-                    onClick = {
-                        val toDelete = pdfToDelete
-                        pendingDeletePdf = null
-                        scope.launch {
-                            pdfRepository.deletePdf(context, toDelete)
-                        }
-                    }
-                ) {
-                    Text(
-                        text = stringResource(R.string.pdf_delete),
-                        color = MaterialTheme.colorScheme.error
-                    )
-                }
-            },
-            dismissButton = {
-                TextButton(onClick = { pendingDeletePdf = null }) {
-                    Text(text = stringResource(android.R.string.cancel))
-                }
-            }
-        )
-    }
 }
 
 @Composable
@@ -286,7 +252,6 @@ private fun PdfItemRow(
     pdf: CanyonPdfEntity,
     onOpenClick: () -> Unit,
     onDownloadClick: () -> Unit,
-    onDeleteClick: () -> Unit,
     colors: DcColors,
 ) {
     val sizeMb = String.format(Locale.ROOT, "%.1f MB", pdf.fileSize / (1024.0 * 1024.0))
@@ -373,14 +338,6 @@ private fun PdfItemRow(
                             tint = MaterialTheme.colorScheme.primary,
                         )
                     }
-                }
-
-                IconButton(onClick = onDeleteClick) {
-                    Icon(
-                        imageVector = Icons.Default.Delete,
-                        contentDescription = stringResource(R.string.pdf_delete),
-                        tint = MaterialTheme.colorScheme.error.copy(alpha = 0.7f),
-                    )
                 }
             }
         }
