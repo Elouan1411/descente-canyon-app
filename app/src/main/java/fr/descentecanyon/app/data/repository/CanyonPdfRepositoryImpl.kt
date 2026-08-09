@@ -143,7 +143,8 @@ class CanyonPdfRepositoryImpl @Inject constructor(
                 val generatedId = canyonPdfDao.insertOrUpdatePdf(entity)
                 Result.success(entity.copy(id = generatedId))
             } else {
-                Result.failure(Exception("HTTP ${conn.responseCode}"))
+                val err = conn.errorStream?.bufferedReader()?.use { it.readText() } ?: ""
+                Result.failure(Exception("HTTP ${conn.responseCode}: $err"))
             }
         } catch (e: Exception) {
             Result.failure(e)
@@ -173,7 +174,8 @@ class CanyonPdfRepositoryImpl @Inject constructor(
                 canyonPdfDao.updateDownloadState(pdf.serverPdfId, isDownloaded = true, localPath = localFile.absolutePath)
                 Result.success(localFile)
             } else {
-                Result.failure(Exception("HTTP Download Error ${conn.responseCode}"))
+                val err = conn.errorStream?.bufferedReader()?.use { it.readText() } ?: ""
+                Result.failure(Exception("HTTP Download Error ${conn.responseCode}: $err"))
             }
         } catch (e: Exception) {
             Result.failure(e)
@@ -206,7 +208,8 @@ class CanyonPdfRepositoryImpl @Inject constructor(
                 canyonPdfDao.deletePdfByServerId(pdf.serverPdfId)
                 Result.success(Unit)
             } else {
-                Result.failure(Exception("HTTP Delete Error ${conn.responseCode}"))
+                val err = conn.errorStream?.bufferedReader()?.use { it.readText() } ?: ""
+                Result.failure(Exception("HTTP Delete Error ${conn.responseCode}: $err"))
             }
         } catch (e: Exception) {
             Result.failure(e)

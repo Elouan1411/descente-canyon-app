@@ -1,8 +1,11 @@
 import crypto from 'crypto';
 import { NextRequest } from 'next/server';
 
-const APP_SECRET = process.env.APP_SECRET || 'descente_canyon_secret_key_2026';
-const APK_SIGNATURE_HASH = process.env.APK_SIGNATURE_HASH || 'default_apk_sha256_hash';
+const APP_SECRET = (process.env.APP_SECRET || 'descente_canyon_secret_key_2026').trim();
+const APK_SIGNATURE_HASH = (process.env.APK_SIGNATURE_HASH || 'default_apk_sha256_hash')
+  .replace(/:/g, '')
+  .trim()
+  .toLowerCase();
 
 export function verifyHmacAuth(req: NextRequest): boolean {
   if (process.env.SKIP_AUTH === 'true') {
