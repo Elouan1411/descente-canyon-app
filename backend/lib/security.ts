@@ -5,20 +5,17 @@ const APP_SECRET = (process.env.APP_SECRET || 'descente_canyon_secret_key_2026')
 
 export function verifyHmacAuth(req: NextRequest): boolean {
   if (process.env.SKIP_AUTH === 'true') {
-    console.log('[Auth] SKIP_AUTH is true, allowing request');
     return true;
   }
 
   const authHeader = req.headers.get('x-app-auth');
   if (!authHeader) {
-    console.log('[Auth Error] Missing x-app-auth header');
     return false;
   }
 
   try {
     const parts = authHeader.split(':');
     if (parts.length !== 3) {
-      console.log('[Auth Error] Malformed x-app-auth header, expected 3 parts');
       return false;
     }
 
@@ -28,7 +25,6 @@ export function verifyHmacAuth(req: NextRequest): boolean {
 
     // 10 minutes tolerance window
     if (Math.abs(now - timestamp) > 10 * 60 * 1000) {
-      console.log(`[Auth Error] Timestamp expired or out of sync. Client: ${timestamp}, Server: ${now}`);
       return false;
     }
 
@@ -52,10 +48,8 @@ export function verifyHmacAuth(req: NextRequest): boolean {
       }
     }
 
-    console.log(`[Auth Error] Invalid signature for path: ${req.nextUrl.pathname}. Configured hashes count: ${allowedHashes.length}`);
     return false;
   } catch (error) {
-    console.log('[Auth Error] Exception during verification:', error);
     return false;
   }
 }

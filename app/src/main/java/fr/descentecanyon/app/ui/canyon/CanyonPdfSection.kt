@@ -19,6 +19,7 @@ import androidx.compose.material.icons.filled.ExpandLess
 import androidx.compose.material.icons.filled.ExpandMore
 import androidx.compose.material.icons.filled.OpenInNew
 import androidx.compose.material.icons.filled.PictureAsPdf
+import androidx.compose.material.icons.filled.Refresh
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -54,10 +55,13 @@ fun CanyonPdfSection(
 
     var isExpanded by remember { mutableStateOf(true) }
     var isUploading by remember { mutableStateOf(false) }
+    var isSyncing by remember { mutableStateOf(false) }
     var pendingDeletePdf by remember { mutableStateOf<CanyonPdfEntity?>(null) }
 
     LaunchedEffect(canyonId) {
+        isSyncing = true
         pdfRepository.syncPdfsForCanyon(canyonId)
+        isSyncing = false
     }
 
     val pdfPickerLauncher = rememberLauncherForActivityResult(
@@ -93,6 +97,8 @@ fun CanyonPdfSection(
                     context.getString(R.string.pdf_upload_success),
                     Toast.LENGTH_SHORT
                 ).show()
+                // Sync automatically after upload
+                pdfRepository.syncPdfsForCanyon(canyonId)
             } else {
                 Toast.makeText(
                     context,
@@ -120,6 +126,7 @@ fun CanyonPdfSection(
                 Row(
                     verticalAlignment = Alignment.CenterVertically,
                     horizontalArrangement = Arrangement.spacedBy(10.dp),
+                    modifier = Modifier.weight(1f, fill = false)
                 ) {
                     Icon(
                         imageVector = Icons.Default.PictureAsPdf,
@@ -149,8 +156,32 @@ fun CanyonPdfSection(
 
                 Row(verticalAlignment = Alignment.CenterVertically) {
                     IconButton(
+                        onClick = {
+                            isSyncing = true
+                            scope.launch {
+                                pdfRepository.syncPdfsForCanyon(canyonId)
+                                isSyncing = false
+                            }
+                        },
+                        enabled = !isSyncing && !isUploading,
+                    ) {
+                        if (isSyncing) {
+                            CircularProgressIndicator(
+                                modifier = Modifier.size(18.dp),
+                                strokeWidth = 2.dp,
+                                color = MaterialTheme.colorScheme.primary,
+                            )
+                        } else {
+                            Icon(
+                                imageVector = Icons.Default.Refresh,
+                                contentDescription = stringResource(R.string.pdf_sync),
+                                tint = MaterialTheme.colorScheme.primary,
+                            )
+                        }
+                    }
+                    IconButton(
                         onClick = { pdfPickerLauncher.launch("application/pdf") },
-                        enabled = !isUploading,
+                        enabled = !isUploading && !isSyncing,
                     ) {
                         if (isUploading) {
                             CircularProgressIndicator(
