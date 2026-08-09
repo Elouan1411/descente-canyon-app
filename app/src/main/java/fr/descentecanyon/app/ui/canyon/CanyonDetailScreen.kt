@@ -1,12 +1,15 @@
 package fr.descentecanyon.app.ui.canyon
 
 import android.Manifest
+import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Build
 import android.util.Patterns
 import android.widget.Toast
+import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.BorderStroke
@@ -95,8 +98,7 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
-import androidx.activity.compose.rememberLauncherForActivityResult
-import androidx.activity.result.contract.ActivityResultContracts
+import androidx.compose.material3.rememberModalBottomSheetState
 import androidx.core.content.ContextCompat
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.Lifecycle
@@ -104,9 +106,16 @@ import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import fr.descentecanyon.app.R
+import fr.descentecanyon.app.domain.model.Canyon
+import fr.descentecanyon.app.domain.model.CanyonDetail
+import fr.descentecanyon.app.ui.location.hasLocationPermission
+import fr.descentecanyon.app.ui.location.loadCurrentDeviceLocation
+import java.text.SimpleDateFormat
+import java.time.format.DateTimeFormatter
+import java.util.Date
+import java.util.Locale
 import fr.descentecanyon.app.domain.model.BibliographyEntry
 import fr.descentecanyon.app.domain.model.BibliographyKind
-import fr.descentecanyon.app.domain.model.CanyonDetail
 import fr.descentecanyon.app.domain.model.CanyonDebitPredictions
 import fr.descentecanyon.app.domain.model.CanyonEdfPracticability
 import fr.descentecanyon.app.domain.model.CanyonPhoto
@@ -135,8 +144,6 @@ import fr.descentecanyon.app.ui.test.TestTags
 import fr.descentecanyon.app.ui.theme.DebitCorrect
 import fr.descentecanyon.app.ui.theme.DebitCrue
 import fr.descentecanyon.app.ui.theme.DebitTresGros
-import java.time.format.DateTimeFormatter
-import java.util.Locale
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -165,6 +172,20 @@ fun CanyonDetailScreen(
     val notificationPermissionLauncher = rememberLauncherForActivityResult(
         contract = ActivityResultContracts.RequestPermission(),
     ) { viewModel.toggleDebitNotifications() }
+
+    var showShareBottomSheet by remember { mutableStateOf(false) }
+    var pendingSafetyShare by remember { mutableStateOf(false) }
+
+    val locationPermissionLauncher = rememberLauncherForActivityResult(
+        contract = ActivityResultContracts.RequestMultiplePermissions(),
+    ) { permissions ->
+        val granted = permissions[Manifest.permission.ACCESS_FINE_LOCATION] == true ||
+            permissions[Manifest.permission.ACCESS_COARSE_LOCATION] == true
+        if (pendingSafetyShare) {
+            pendingSafetyShare = false
+            triggerSafetyShare(context, uiState.canyonDetail?.canyon, granted)
+        }
+    }
 
     LaunchedEffect(canyonId) {
         PerformanceTrace.logEvent("canyon_detail_screen_visible", "canyonId" to canyonId)
@@ -307,22 +328,7 @@ fun CanyonDetailScreen(
                             detail = uiState.canyonDetail!!,
                             isFavorite = uiState.isFavorite,
                             onFavoriteToggle = viewModel::toggleFavorite,
-                            onShareClick = {
-                                uiState.canyonDetail?.canyon?.let { canyon ->
-                                    val shareUrl = when {
-                                        canyon.url.startsWith("http://") || canyon.url.startsWith("https://") -> canyon.url
-                                        canyon.url.startsWith("/") -> "https://www.descentecanyon.com${canyon.url}"
-                                        else -> "https://www.descentecanyon.com/${canyon.url}"
-                                    }
-                                    val shareText = context.getString(R.string.share_canyon_text, canyon.nom, shareUrl)
-                                    val sendIntent = Intent(Intent.ACTION_SEND).apply {
-                                        putExtra(Intent.EXTRA_TEXT, shareText)
-                                        type = "text/plain"
-                                    }
-                                    val shareIntent = Intent.createChooser(sendIntent, context.getString(R.string.share_canyon))
-                                    context.startActivity(shareIntent)
-                                }
-                            },
+                            onShareClick = { showShareBottomSheet = true },
                             isRefreshingDetail = uiState.isRefreshingDetail,
                             isOnline = uiState.isOnline,
                             isLoadingPhotos = uiState.isLoadingPhotos,
@@ -377,6 +383,28 @@ fun CanyonDetailScreen(
                 }
             }
         }
+    }
+
+    if (showShareBottomSheet) {
+        ShareOptionsBottomSheet(
+            onDismissRequest = { showShareBottomSheet = false },
+            onSimpleShare = {
+                triggerSimpleShare(context, uiState.canyonDetail?.canyon)
+            },
+            onSafetyDepartureShare = {
+                if (context.hasLocationPermission()) {
+                    triggerSafetyShare(context, uiState.canyonDetail?.canyon, true)
+                } else {
+                    pendingSafetyShare = true
+                    locationPermissionLauncher.launch(
+                        arrayOf(
+                            Manifest.permission.ACCESS_FINE_LOCATION,
+                            Manifest.permission.ACCESS_COARSE_LOCATION,
+                        )
+                    )
+                }
+            },
+        )
     }
 }
 
@@ -2090,4 +2118,255 @@ private fun openNavigation(
     val label = Uri.encode(point.navigationLabel(context))
     val uri = Uri.parse("geo:${point.latitude},${point.longitude}?q=${point.latitude},${point.longitude}($label)")
     context.startActivity(Intent(Intent.ACTION_VIEW, uri))
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+private fun ShareOptionsBottomSheet(
+    onDismissRequest: () -> Unit,
+    onSimpleShare: () -> Unit,
+    onSafetyDepartureShare: () -> Unit,
+) {
+    val sheetState = rememberModalBottomSheetState(skipPartiallyExpanded = true)
+
+    ModalBottomSheet(
+        onDismissRequest = onDismissRequest,
+        sheetState = sheetState,
+    ) {
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .navigationBarsPadding()
+                .padding(horizontal = 24.dp, vertical = 16.dp),
+            verticalArrangement = Arrangement.spacedBy(16.dp),
+        ) {
+            Text(
+                text = stringResource(R.string.share_options_title),
+                style = MaterialTheme.typography.headlineSmall,
+                fontWeight = FontWeight.Bold,
+            )
+
+            Card(
+                onClick = {
+                    onDismissRequest()
+                    onSimpleShare()
+                },
+                modifier = Modifier.fillMaxWidth(),
+                colors = CardDefaults.cardColors(
+                    containerColor = MaterialTheme.colorScheme.surfaceContainerHigh,
+                ),
+            ) {
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(16.dp),
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.spacedBy(16.dp),
+                ) {
+                    Surface(
+                        shape = CircleShape,
+                        color = MaterialTheme.colorScheme.primaryContainer,
+                        modifier = Modifier.size(44.dp),
+                    ) {
+                        Box(contentAlignment = Alignment.Center) {
+                            Icon(
+                                imageVector = Icons.Default.Share,
+                                contentDescription = null,
+                                tint = MaterialTheme.colorScheme.onPrimaryContainer,
+                            )
+                        }
+                    }
+                    Column(modifier = Modifier.weight(1f)) {
+                        Text(
+                            text = stringResource(R.string.share_option_simple_title),
+                            style = MaterialTheme.typography.titleMedium,
+                            fontWeight = FontWeight.SemiBold,
+                        )
+                        Text(
+                            text = stringResource(R.string.share_option_simple_subtitle),
+                            style = MaterialTheme.typography.bodyMedium,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant,
+                        )
+                    }
+                }
+            }
+
+            Card(
+                onClick = {
+                    onDismissRequest()
+                    onSafetyDepartureShare()
+                },
+                modifier = Modifier.fillMaxWidth(),
+                colors = CardDefaults.cardColors(
+                    containerColor = MaterialTheme.colorScheme.surfaceContainerHigh,
+                ),
+            ) {
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(16.dp),
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.spacedBy(16.dp),
+                ) {
+                    Surface(
+                        shape = CircleShape,
+                        color = MaterialTheme.colorScheme.errorContainer,
+                        modifier = Modifier.size(44.dp),
+                    ) {
+                        Box(contentAlignment = Alignment.Center) {
+                            Icon(
+                                imageVector = Icons.Default.Navigation,
+                                contentDescription = null,
+                                tint = MaterialTheme.colorScheme.onErrorContainer,
+                            )
+                        }
+                    }
+                    Column(modifier = Modifier.weight(1f)) {
+                        Text(
+                            text = stringResource(R.string.share_option_safety_title),
+                            style = MaterialTheme.typography.titleMedium,
+                            fontWeight = FontWeight.SemiBold,
+                        )
+                        Text(
+                            text = stringResource(R.string.share_option_safety_subtitle),
+                            style = MaterialTheme.typography.bodyMedium,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant,
+                        )
+                    }
+                }
+            }
+
+            Spacer(modifier = Modifier.height(8.dp))
+        }
+    }
+}
+
+private fun triggerSimpleShare(context: Context, canyon: Canyon?) {
+    if (canyon == null) return
+    val shareUrl = when {
+        canyon.url.startsWith("http://") || canyon.url.startsWith("https://") -> canyon.url
+        canyon.url.startsWith("/") -> "https://www.descentecanyon.com${canyon.url}"
+        else -> "https://www.descentecanyon.com/${canyon.url}"
+    }
+    val shareText = context.getString(R.string.share_canyon_text, canyon.nom, shareUrl)
+    val sendIntent = Intent(Intent.ACTION_SEND).apply {
+        putExtra(Intent.EXTRA_TEXT, shareText)
+        type = "text/plain"
+    }
+    val shareIntent = Intent.createChooser(sendIntent, context.getString(R.string.share_canyon))
+    context.startActivity(shareIntent)
+}
+
+private fun triggerSafetyShare(context: Context, canyon: Canyon?, hasPermission: Boolean) {
+    if (canyon == null) return
+    val shareUrl = when {
+        canyon.url.startsWith("http://") || canyon.url.startsWith("https://") -> canyon.url
+        canyon.url.startsWith("/") -> "https://www.descentecanyon.com${canyon.url}"
+        else -> "https://www.descentecanyon.com/${canyon.url}"
+    }
+
+    if (hasPermission) {
+        Toast.makeText(context, context.getString(R.string.share_departure_locating), Toast.LENGTH_SHORT).show()
+        loadCurrentDeviceLocation(
+            context = context,
+            onLocation = { lat, lng ->
+                sendDepartureIntent(context, canyon, shareUrl, lat, lng)
+            },
+            onUnavailable = {
+                sendDepartureIntent(context, canyon, shareUrl, null, null)
+            },
+        )
+    } else {
+        sendDepartureIntent(context, canyon, shareUrl, null, null)
+    }
+}
+
+private fun sendDepartureIntent(
+    context: Context,
+    canyon: Canyon,
+    shareUrl: String,
+    lat: Double?,
+    lng: Double?,
+) {
+    val currentTimeStr = SimpleDateFormat("HH:mm", Locale.getDefault()).format(Date())
+
+    val sb = StringBuilder()
+    sb.append("🚨 ").append(context.getString(R.string.share_departure_header, canyon.nom)).append("\n")
+    sb.append("🔗 ").append(shareUrl).append("\n")
+    sb.append("🕒 ").append(context.getString(R.string.share_departure_time, currentTimeStr)).append("\n")
+
+    if (lat != null && lng != null) {
+        val mapsUrl = "https://maps.google.com/?q=%.5f,%.5f".format(Locale.ROOT, lat, lng)
+        sb.append("📍 ").append(context.getString(R.string.share_departure_gps, mapsUrl)).append("\n")
+    } else {
+        sb.append("📍 ").append(context.getString(R.string.share_departure_gps_unavailable)).append("\n")
+    }
+
+    sb.append("⏱️ ").append(context.getString(R.string.share_departure_durations_header)).append("\n")
+    if (!canyon.tempsApproche.isNullOrBlank()) {
+        sb.append("- ").append(context.getString(R.string.share_departure_approach, canyon.tempsApproche)).append("\n")
+    }
+    if (!canyon.tempsDescente.isNullOrBlank()) {
+        sb.append("- ").append(context.getString(R.string.share_departure_descent, canyon.tempsDescente)).append("\n")
+    }
+    if (!canyon.tempsRetour.isNullOrBlank()) {
+        sb.append("- ").append(context.getString(R.string.share_departure_return, canyon.tempsRetour)).append("\n")
+    }
+
+    val totalMinutes = calculateTotalDurationMinutes(canyon.tempsApproche, canyon.tempsDescente, canyon.tempsRetour)
+    if (totalMinutes != null && totalMinutes > 0) {
+        val totalFormatted = formatMinutesToHoursMinutes(totalMinutes)
+        sb.append("⏳ ").append(context.getString(R.string.share_departure_total_estimated, totalFormatted)).append("\n")
+    }
+
+    val sendIntent = Intent(Intent.ACTION_SEND).apply {
+        putExtra(Intent.EXTRA_TEXT, sb.toString().trimEnd())
+        type = "text/plain"
+    }
+    val shareIntent = Intent.createChooser(sendIntent, context.getString(R.string.share_option_safety_title))
+    context.startActivity(shareIntent)
+}
+
+private fun parseDurationMinutes(text: String?): Int? {
+    if (text.isNullOrBlank()) return null
+    val clean = text.lowercase(Locale.ROOT).trim()
+
+    val hoursRegex = Regex("""(\d+)\s*h\s*(\d*)""")
+    val hoursMatch = hoursRegex.find(clean)
+    if (hoursMatch != null) {
+        val hours = hoursMatch.groupValues[1].toIntOrNull() ?: 0
+        val mins = hoursMatch.groupValues[2].toIntOrNull() ?: 0
+        return hours * 60 + mins
+    }
+
+    val minsRegex = Regex("""(\d+)""")
+    val minsMatch = minsRegex.find(clean)
+    if (minsMatch != null) {
+        return minsMatch.groupValues[1].toIntOrNull()
+    }
+
+    return null
+}
+
+private fun calculateTotalDurationMinutes(
+    tempsApproche: String?,
+    tempsDescente: String?,
+    tempsRetour: String?,
+): Int? {
+    val appMins = parseDurationMinutes(tempsApproche)
+    val descMins = parseDurationMinutes(tempsDescente)
+    val retMins = parseDurationMinutes(tempsRetour)
+
+    val validMins = listOfNotNull(appMins, descMins, retMins)
+    return if (validMins.isNotEmpty()) validMins.sum() else null
+}
+
+private fun formatMinutesToHoursMinutes(totalMinutes: Int): String {
+    val h = totalMinutes / 60
+    val m = totalMinutes % 60
+    return when {
+        h > 0 && m > 0 -> "${h}h${m.toString().padStart(2, '0')}"
+        h > 0 -> "${h}h00"
+        else -> "${m} min"
+    }
 }
