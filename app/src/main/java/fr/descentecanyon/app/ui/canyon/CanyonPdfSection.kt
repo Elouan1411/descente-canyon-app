@@ -231,22 +231,14 @@ fun CanyonPdfSection(
                         pdfList.forEach { pdf ->
                             PdfItemRow(
                                 pdf = pdf,
-                                onOpenClick = {
+                                onOpenExternal = {
                                     if (pdf.isDownloaded) {
-                                        if (pdf.mimeType.contains("gpx") || pdf.fileName.endsWith(".gpx", ignoreCase = true)) {
-                                            pdfRepository.openPdfWithExternalApp(context, pdf)
-                                        } else {
-                                            selectedPdfToView = pdf
-                                        }
+                                        pdfRepository.openPdfWithExternalApp(context, pdf)
                                     } else {
                                         scope.launch {
                                             val dlResult = pdfRepository.downloadPdfFile(context, pdf)
                                             if (dlResult.isSuccess) {
-                                                if (pdf.mimeType.contains("gpx") || pdf.fileName.endsWith(".gpx", ignoreCase = true)) {
-                                                    pdfRepository.openPdfWithExternalApp(context, pdf)
-                                                } else {
-                                                    selectedPdfToView = pdf
-                                                }
+                                                pdfRepository.openPdfWithExternalApp(context, pdf)
                                             }
                                         }
                                     }
@@ -264,114 +256,185 @@ fun CanyonPdfSection(
             }
         }
     }
-    
-    selectedPdfToView?.let { pdf ->
-        pdf.localPath?.let { path ->
-            InAppDocumentViewerDialog(
-                file = java.io.File(path),
-                mimeType = pdf.mimeType,
-                onDismiss = { selectedPdfToView = null },
-                onOpenExternal = { pdfRepository.openPdfWithExternalApp(context, pdf) }
-            )
-        }
-    }
 }
 
 @Composable
 private fun PdfItemRow(
     pdf: CanyonPdfEntity,
-    onOpenClick: () -> Unit,
+    onOpenExternal: () -> Unit,
     onDownloadClick: () -> Unit,
     colors: DcColors,
 ) {
+    var isItemExpanded by remember { mutableStateOf(false) }
     val sizeMb = String.format(Locale.ROOT, "%.1f MB", pdf.fileSize / (1024.0 * 1024.0))
     val dateStr = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).format(Date(pdf.uploadedAt))
 
     Surface(
-        modifier = Modifier.fillMaxWidth(),
+        modifier = Modifier
+            .fillMaxWidth()
+            .clickable { isItemExpanded = !isItemExpanded },
         shape = RoundedCornerShape(12.dp),
         color = colors.surfaceRaised,
         border = androidx.compose.foundation.BorderStroke(0.5.dp, colors.borderSubtle),
     ) {
-        Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(12.dp),
-            verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.SpaceBetween,
-        ) {
+        Column(modifier = Modifier.padding(12.dp)) {
             Row(
-                modifier = Modifier.weight(1f),
+                modifier = Modifier.fillMaxWidth(),
                 verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.spacedBy(10.dp),
+                horizontalArrangement = Arrangement.SpaceBetween,
             ) {
-                Box(
-                    modifier = Modifier
-                        .size(40.dp)
-                        .clip(RoundedCornerShape(8.dp))
-                        .background(MaterialTheme.colorScheme.primary.copy(alpha = 0.12f)),
-                    contentAlignment = Alignment.Center,
+                Row(
+                    modifier = Modifier.weight(1f),
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.spacedBy(10.dp),
                 ) {
-                    val icon = when {
-                        pdf.mimeType.startsWith("image/") -> Icons.Default.Image
-                        pdf.mimeType.contains("gpx") || pdf.fileName.endsWith(".gpx", ignoreCase = true) -> Icons.Default.Map
-                        else -> Icons.Default.PictureAsPdf
+                    Box(
+                        modifier = Modifier
+                            .size(40.dp)
+                            .clip(RoundedCornerShape(8.dp))
+                            .background(MaterialTheme.colorScheme.primary.copy(alpha = 0.12f)),
+                        contentAlignment = Alignment.Center,
+                    ) {
+                        val icon = when {
+                            pdf.mimeType.startsWith("image/") -> Icons.Default.Image
+                            pdf.mimeType.contains("gpx") || pdf.fileName.endsWith(".gpx", ignoreCase = true) -> Icons.Default.Map
+                            else -> Icons.Default.PictureAsPdf
+                        }
+                        Icon(
+                            imageVector = icon,
+                            contentDescription = null,
+                            tint = MaterialTheme.colorScheme.primary,
+                            modifier = Modifier.size(20.dp)
+                        )
                     }
-                    Icon(
-                        imageVector = icon,
-                        contentDescription = null,
-                        tint = MaterialTheme.colorScheme.primary,
-                        modifier = Modifier.size(20.dp)
-                    )
+
+                    Column(modifier = Modifier.weight(1f)) {
+                        Text(
+                            text = pdf.fileName,
+                            style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.SemiBold),
+                            color = MaterialTheme.colorScheme.onSurface,
+                            maxLines = 1,
+                            overflow = TextOverflow.Ellipsis,
+                        )
+
+                        Text(
+                            text = "$sizeMb • $dateStr",
+                            style = MaterialTheme.typography.bodySmall,
+                            color = colors.textSecondary,
+                            modifier = Modifier.padding(top = 2.dp),
+                        )
+
+                        Text(
+                            text = if (pdf.isDownloaded) {
+                                stringResource(R.string.pdf_downloaded_tag)
+                            } else {
+                                stringResource(R.string.pdf_online_tag)
+                            },
+                            style = MaterialTheme.typography.labelSmall.copy(fontSize = 11.sp, fontWeight = FontWeight.Medium),
+                            color = if (pdf.isDownloaded) MaterialTheme.colorScheme.primary else colors.textSecondary,
+                            maxLines = 1,
+                            overflow = TextOverflow.Ellipsis,
+                            modifier = Modifier.padding(top = 2.dp),
+                        )
+                    }
                 }
 
-                Column(modifier = Modifier.weight(1f)) {
-                    Text(
-                        text = pdf.fileName,
-                        style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.SemiBold),
-                        color = MaterialTheme.colorScheme.onSurface,
-                        maxLines = 1,
-                        overflow = TextOverflow.Ellipsis,
-                    )
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    if (pdf.isDownloaded) {
+                        IconButton(onClick = onOpenExternal) {
+                            Icon(
+                                imageVector = Icons.AutoMirrored.Filled.OpenInNew,
+                                contentDescription = stringResource(R.string.pdf_open),
+                                tint = MaterialTheme.colorScheme.primary,
+                            )
+                        }
+                    } else {
+                        IconButton(onClick = onDownloadClick) {
+                            Icon(
+                                imageVector = Icons.Default.Download,
+                                contentDescription = stringResource(R.string.pdf_download),
+                                tint = MaterialTheme.colorScheme.primary,
+                            )
+                        }
+                    }
 
-                    Text(
-                        text = "$sizeMb • $dateStr",
-                        style = MaterialTheme.typography.bodySmall,
-                        color = colors.textSecondary,
-                        modifier = Modifier.padding(top = 2.dp),
-                    )
-
-                    Text(
-                        text = if (pdf.isDownloaded) {
-                            stringResource(R.string.pdf_downloaded_tag)
-                        } else {
-                            stringResource(R.string.pdf_online_tag)
-                        },
-                        style = MaterialTheme.typography.labelSmall.copy(fontSize = 11.sp, fontWeight = FontWeight.Medium),
-                        color = if (pdf.isDownloaded) MaterialTheme.colorScheme.primary else colors.textSecondary,
-                        maxLines = 1,
-                        overflow = TextOverflow.Ellipsis,
-                        modifier = Modifier.padding(top = 2.dp),
-                    )
+                    IconButton(onClick = { isItemExpanded = !isItemExpanded }) {
+                        Icon(
+                            imageVector = if (isItemExpanded) Icons.Default.ExpandLess else Icons.Default.ExpandMore,
+                            contentDescription = null,
+                            tint = colors.textSecondary,
+                        )
+                    }
                 }
             }
 
-            Row(verticalAlignment = Alignment.CenterVertically) {
-                if (pdf.isDownloaded) {
-                    IconButton(onClick = onOpenClick) {
-                        Icon(
-                            imageVector = Icons.AutoMirrored.Filled.OpenInNew,
-                            contentDescription = stringResource(R.string.pdf_open),
-                            tint = MaterialTheme.colorScheme.primary,
-                        )
-                    }
-                } else {
-                    IconButton(onClick = onDownloadClick) {
-                        Icon(
-                            imageVector = Icons.Default.Download,
-                            contentDescription = stringResource(R.string.pdf_download),
-                            tint = MaterialTheme.colorScheme.primary,
-                        )
+            AnimatedVisibility(visible = isItemExpanded) {
+                Column(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(top = 12.dp)
+                ) {
+                    if (!pdf.isDownloaded || pdf.localPath == null) {
+                        Box(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .height(120.dp)
+                                .clip(RoundedCornerShape(8.dp))
+                                .background(colors.surfaceBase),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            Button(onClick = onDownloadClick) {
+                                Icon(Icons.Default.Download, contentDescription = null)
+                                Spacer(Modifier.width(6.dp))
+                                Text("Télécharger pour afficher le document")
+                            }
+                        }
+                    } else {
+                        val file = java.io.File(pdf.localPath)
+                        if (pdf.mimeType.startsWith("image/")) {
+                            Box(
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .wrapContentHeight()
+                                    .clip(RoundedCornerShape(8.dp))
+                                    .background(colors.surfaceBase),
+                                contentAlignment = Alignment.Center
+                            ) {
+                                coil3.compose.AsyncImage(
+                                    model = Uri.fromFile(file),
+                                    contentDescription = pdf.fileName,
+                                    modifier = Modifier
+                                        .fillMaxWidth()
+                                        .heightIn(max = 400.dp),
+                                    contentScale = androidx.compose.ui.layout.ContentScale.Fit
+                                )
+                            }
+                        } else if (pdf.mimeType == "application/pdf") {
+                            Box(
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .height(400.dp)
+                                    .clip(RoundedCornerShape(8.dp))
+                                    .background(colors.surfaceBase)
+                            ) {
+                                PdfViewer(file = file)
+                            }
+                        } else {
+                            Box(
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .padding(16.dp)
+                                    .clip(RoundedCornerShape(8.dp))
+                                    .background(colors.surfaceBase),
+                                contentAlignment = Alignment.Center
+                            ) {
+                                Text(
+                                    text = "Tracé GPX - Utilisez le bouton ci-dessus pour l'ouvrir dans votre application GPS.",
+                                    color = colors.textSecondary,
+                                    style = MaterialTheme.typography.bodySmall
+                                )
+                            }
+                        }
                     }
                 }
             }
