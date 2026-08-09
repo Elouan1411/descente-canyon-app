@@ -60,7 +60,7 @@ fun CanyonPdfSection(
 
     LaunchedEffect(canyonId) {
         isSyncing = true
-        pdfRepository.syncPdfsForCanyon(canyonId)
+        pdfRepository.syncPdfsForCanyon(context, canyonId)
         isSyncing = false
     }
 
@@ -98,7 +98,7 @@ fun CanyonPdfSection(
                     Toast.LENGTH_SHORT
                 ).show()
                 // Sync automatically after upload
-                pdfRepository.syncPdfsForCanyon(canyonId)
+                pdfRepository.syncPdfsForCanyon(context, canyonId)
             } else {
                 Toast.makeText(
                     context,
@@ -159,7 +159,7 @@ fun CanyonPdfSection(
                         onClick = {
                             isSyncing = true
                             scope.launch {
-                                pdfRepository.syncPdfsForCanyon(canyonId)
+                                pdfRepository.syncPdfsForCanyon(context, canyonId)
                                 isSyncing = false
                             }
                         },

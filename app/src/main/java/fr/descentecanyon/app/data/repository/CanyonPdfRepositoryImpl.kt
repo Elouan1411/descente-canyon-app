@@ -31,12 +31,14 @@ class CanyonPdfRepositoryImpl @Inject constructor(
         return canyonPdfDao.getPdfsForCanyon(canyonId)
     }
 
-    override suspend fun syncPdfsForCanyon(canyonId: Int): Result<Unit> = withContext(Dispatchers.IO) {
+    override suspend fun syncPdfsForCanyon(context: Context, canyonId: Int): Result<Unit> = withContext(Dispatchers.IO) {
         try {
             val path = "/api/canyons/$canyonId/pdfs"
+            val authHeader = SignatureUtils.generateHmacAuthHeader(context, path)
             val url = URL("$baseUrl$path")
             val conn = (url.openConnection() as HttpURLConnection).apply {
                 requestMethod = "GET"
+                setRequestProperty("X-App-Auth", authHeader)
                 readTimeout = 15000
                 connectTimeout = 15000
             }

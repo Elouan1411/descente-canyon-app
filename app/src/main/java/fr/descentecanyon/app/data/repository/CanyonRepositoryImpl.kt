@@ -164,7 +164,7 @@ class CanyonRepositoryImpl @Inject constructor(
 
         // Also sync and download community PDFs for offline access
         runCatching {
-            canyonPdfRepository.syncPdfsForCanyon(canyonId)
+            canyonPdfRepository.syncPdfsForCanyon(context, canyonId)
             val pdfs = canyonPdfDao.getPdfsForCanyonSync(canyonId)
             for (pdf in pdfs) {
                 if (!pdf.isDownloaded) {
