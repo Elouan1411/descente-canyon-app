@@ -25,7 +25,7 @@ class CanyonPdfRepositoryImpl @Inject constructor(
 ) : CanyonPdfRepository {
 
     // Configure your Vercel deployment URL here or via BuildConfig
-    private val baseUrl = "https://descente-canyon-pdf-backend.vercel.app"
+    private val baseUrl = "https://descente-canyon-app.vercel.app"
 
     override fun getPdfsForCanyon(canyonId: Int): Flow<List<CanyonPdfEntity>> {
         return canyonPdfDao.getPdfsForCanyon(canyonId)
