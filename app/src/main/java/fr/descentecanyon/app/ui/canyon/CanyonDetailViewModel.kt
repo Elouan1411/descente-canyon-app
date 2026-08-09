@@ -8,6 +8,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import fr.descentecanyon.app.R
 import fr.descentecanyon.app.data.network.ConnectivityObserver
+import fr.descentecanyon.app.data.repository.CanyonPdfRepository
 import fr.descentecanyon.app.domain.model.CanyonDetail
 import fr.descentecanyon.app.domain.model.CanyonDebitPredictions
 import fr.descentecanyon.app.domain.model.CanyonWeather
@@ -82,6 +83,7 @@ class CanyonDetailViewModel @Inject constructor(
     private val connectivityObserver: ConnectivityObserver,
     private val favoritesRepository: FavoritesRepository,
     private val notificationCenterRepository: NotificationCenterRepository,
+    val canyonPdfRepository: CanyonPdfRepository,
 ) : ViewModel() {
 
     private val canyonId: Int = savedStateHandle["canyonId"]

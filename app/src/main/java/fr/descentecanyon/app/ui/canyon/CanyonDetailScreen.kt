@@ -340,6 +340,7 @@ fun CanyonDetailScreen(
                             onUserClick = onUserClick,
                             onPersistedPhotoMissing = viewModel::onPersistedPhotoMissing,
                             openDebitsTabInitially = openDebitsTabInitially,
+                            pdfRepository = viewModel.canyonPdfRepository,
                             bottomContentPadding = contentPadding.calculateBottomPadding() + 96.dp,
                             modifier = Modifier
                                 .fillMaxHeight()
@@ -466,6 +467,7 @@ private fun CanyonDetailContent(
     onUserClick: (String) -> Unit,
     onPersistedPhotoMissing: (Long) -> Unit,
     openDebitsTabInitially: Boolean,
+    pdfRepository: fr.descentecanyon.app.data.repository.CanyonPdfRepository,
     bottomContentPadding: Dp = 0.dp,
     modifier: Modifier = Modifier,
 ) {
@@ -550,7 +552,7 @@ private fun CanyonDetailContent(
         }
 
         when (selectedTab) {
-            0 -> topoItems(detail)
+            0 -> topoItems(detail, pdfRepository)
             1 -> photosItems(
                 photos = detail.photos,
                 isOnline = isOnline,
@@ -874,7 +876,10 @@ private fun SummaryMetricSection(
     }
 }
 
-private fun LazyListScope.topoItems(detail: CanyonDetail) {
+private fun LazyListScope.topoItems(
+    detail: CanyonDetail,
+    pdfRepository: fr.descentecanyon.app.data.repository.CanyonPdfRepository,
+) {
         val sectionModifier = Modifier.padding(horizontal = 16.dp, vertical = 4.dp)
         detail.accesAval?.let { text ->
             item {
@@ -985,6 +990,13 @@ private fun LazyListScope.topoItems(detail: CanyonDetail) {
                     modifier = sectionModifier,
                 )
             }
+        }
+        item {
+            CanyonPdfSection(
+                canyonId = detail.canyon.id,
+                pdfRepository = pdfRepository,
+                modifier = sectionModifier,
+            )
         }
         item {
             Spacer(modifier = Modifier.height(132.dp)) // FAB clearance
