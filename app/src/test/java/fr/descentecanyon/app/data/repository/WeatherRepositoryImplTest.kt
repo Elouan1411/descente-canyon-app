@@ -26,7 +26,7 @@ class WeatherRepositoryImplTest {
     fun `uses watershed center when available`() = runTest {
         val dispatcher = StandardTestDispatcher(testScheduler)
         val remoteSource = fakeRemoteSource(forecastDto())
-        val repository = WeatherRepositoryImpl(remoteSource, dispatcher)
+        val repository = WeatherRepositoryImpl(remoteSource, mockk(relaxed = true), dispatcher)
         val detail = canyonDetail(
             watershed = CanyonWatershed(
                 areaKm2 = 12.5,
@@ -56,7 +56,7 @@ class WeatherRepositoryImplTest {
     fun `falls back to entry point when watershed is missing`() = runTest {
         val dispatcher = StandardTestDispatcher(testScheduler)
         val remoteSource = fakeRemoteSource(forecastDto())
-        val repository = WeatherRepositoryImpl(remoteSource, dispatcher)
+        val repository = WeatherRepositoryImpl(remoteSource, mockk(relaxed = true), dispatcher)
         val detail = canyonDetail(
             geoPoints = listOf(
                 GeoPoint(id = 1, canyonId = 42, type = GeoPointType.SORTIE, latitude = 43.01, longitude = 6.01),
