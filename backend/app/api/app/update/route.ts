@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { put, del } from '@vercel/blob';
+import { put, del, list } from '@vercel/blob';
 import { verifyHmacAuth } from '@/lib/security';
 import { getLatestRelease, insertReleaseRecord, deleteOldReleasesExcept, AppReleaseRecord } from '@/lib/db';
 
@@ -87,16 +87,24 @@ export async function POST(req: NextRequest) {
 
     await insertReleaseRecord(newRelease);
 
-    // Clean up old releases from DB and Vercel Blob to save storage
-    const oldReleases = await deleteOldReleasesExcept(releaseId);
-    for (const oldRel of oldReleases) {
-      if (oldRel.blobUrl) {
-        try {
-          await del(oldRel.blobUrl);
-        } catch (e) {
-          console.error(`Failed to delete old blob ${oldRel.blobUrl}:`, e);
+    // Clean up old releases from DB
+    await deleteOldReleasesExcept(releaseId);
+
+    // Purge ALL old & orphan release blobs in Vercel Blob under 'releases/'
+    try {
+      const { blobs } = await list({ prefix: 'releases/' });
+      for (const b of blobs) {
+        if (b.url !== finalBlobUrl) {
+          try {
+            await del(b.url);
+            console.log(`Deleted old release blob: ${b.url}`);
+          } catch (e) {
+            console.error(`Failed to delete old blob ${b.url}:`, e);
+          }
         }
       }
+    } catch (e) {
+      console.error('Failed to list/purge old release blobs:', e);
     }
 
     return NextResponse.json({ success: true, release: newRelease });

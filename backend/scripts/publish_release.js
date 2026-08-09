@@ -76,6 +76,7 @@ async function publishRelease() {
 
   try {
     let response;
+    let uploadedBlobUrl = '';
 
     if (blobToken) {
       console.log('📦 Uploading APK directly to Vercel Blob (bypassing 4.5MB limit)...');
@@ -94,6 +95,7 @@ async function publishRelease() {
         token: blobToken,
       });
 
+      uploadedBlobUrl = blob.url;
       console.log(`✅ Uploaded to Blob: ${blob.url}`);
       console.log('📝 Registering release in database...');
 
@@ -155,6 +157,14 @@ async function publishRelease() {
       console.log(resultText);
     } else {
       console.error(`❌ Upload failed (${response.status}):`, resultText);
+      if (uploadedBlobUrl) {
+        console.log('🧹 Nettoyage du blob orphelin créé lors de cet essai...');
+        try {
+          const { del } = require('@vercel/blob');
+          await del(uploadedBlobUrl, { token: blobToken });
+          console.log('✅ Blob orphelin supprimé de Vercel Storage.');
+        } catch (e) {}
+      }
       if (response.status === 403) {
         console.error('💡 L\'erreur 403 (Unauthorized APK signature) signifie que votre clé HMAC (APP_SECRET) ou l\'empreinte SHA-256 (APK_SIGNATURE_HASH) locale ne correspond pas à celle configurée dans Vercel.');
         console.error('👉 Veuillez vérifier votre fichier backend/.env.local pour qu\'il contienne les mêmes clés que Vercel.');
