@@ -17,6 +17,8 @@ import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Download
 import androidx.compose.material.icons.filled.ExpandLess
 import androidx.compose.material.icons.filled.ExpandMore
+import androidx.compose.material.icons.filled.Image
+import androidx.compose.material.icons.filled.Map
 import androidx.compose.material.icons.filled.PictureAsPdf
 import androidx.compose.material.icons.filled.Refresh
 import androidx.compose.material3.*
@@ -55,6 +57,7 @@ fun CanyonPdfSection(
     var isExpanded by remember { mutableStateOf(true) }
     var isUploading by remember { mutableStateOf(false) }
     var isSyncing by remember { mutableStateOf(false) }
+    var selectedPdfToView by remember { mutableStateOf<CanyonPdfEntity?>(null) }
 
     LaunchedEffect(canyonId) {
         isSyncing = true
@@ -68,6 +71,14 @@ fun CanyonPdfSection(
         if (uri == null) return@rememberLauncherForActivityResult
 
         val fileDetails = getFileDetails(context, uri) ?: return@rememberLauncherForActivityResult
+        val mimeType = context.contentResolver.getType(uri) ?: "application/pdf"
+        
+        val allowedTypes = listOf("application/pdf", "image/jpeg", "image/png", "image/webp", "application/gpx+xml", "application/xml", "text/xml", "application/octet-stream")
+        if (!allowedTypes.contains(mimeType) && !fileDetails.first.endsWith(".gpx", ignoreCase = true)) {
+            Toast.makeText(context, "Format non supporté.", Toast.LENGTH_LONG).show()
+            return@rememberLauncherForActivityResult
+        }
+        
         val maxSizeBytes = 100L * 1024L * 1024L
 
         if (fileDetails.second > maxSizeBytes) {
@@ -178,7 +189,7 @@ fun CanyonPdfSection(
                         }
                     }
                     IconButton(
-                        onClick = { pdfPickerLauncher.launch("application/pdf") },
+                        onClick = { pdfPickerLauncher.launch("*/*") },
                         enabled = !isUploading && !isSyncing,
                     ) {
                         if (isUploading) {
@@ -222,12 +233,20 @@ fun CanyonPdfSection(
                                 pdf = pdf,
                                 onOpenClick = {
                                     if (pdf.isDownloaded) {
-                                        pdfRepository.openPdfWithExternalApp(context, pdf)
+                                        if (pdf.mimeType.contains("gpx") || pdf.fileName.endsWith(".gpx", ignoreCase = true)) {
+                                            pdfRepository.openPdfWithExternalApp(context, pdf)
+                                        } else {
+                                            selectedPdfToView = pdf
+                                        }
                                     } else {
                                         scope.launch {
                                             val dlResult = pdfRepository.downloadPdfFile(context, pdf)
                                             if (dlResult.isSuccess) {
-                                                pdfRepository.openPdfWithExternalApp(context, pdf)
+                                                if (pdf.mimeType.contains("gpx") || pdf.fileName.endsWith(".gpx", ignoreCase = true)) {
+                                                    pdfRepository.openPdfWithExternalApp(context, pdf)
+                                                } else {
+                                                    selectedPdfToView = pdf
+                                                }
                                             }
                                         }
                                     }
@@ -243,6 +262,17 @@ fun CanyonPdfSection(
                     }
                 }
             }
+        }
+    }
+    
+    selectedPdfToView?.let { pdf ->
+        pdf.localPath?.let { path ->
+            InAppDocumentViewerDialog(
+                file = java.io.File(path),
+                mimeType = pdf.mimeType,
+                onDismiss = { selectedPdfToView = null },
+                onOpenExternal = { pdfRepository.openPdfWithExternalApp(context, pdf) }
+            )
         }
     }
 }
@@ -282,8 +312,13 @@ private fun PdfItemRow(
                         .background(MaterialTheme.colorScheme.primary.copy(alpha = 0.12f)),
                     contentAlignment = Alignment.Center,
                 ) {
+                    val icon = when {
+                        pdf.mimeType.startsWith("image/") -> Icons.Default.Image
+                        pdf.mimeType.contains("gpx") || pdf.fileName.endsWith(".gpx", ignoreCase = true) -> Icons.Default.Map
+                        else -> Icons.Default.PictureAsPdf
+                    }
                     Icon(
-                        imageVector = Icons.Default.PictureAsPdf,
+                        imageVector = icon,
                         contentDescription = null,
                         tint = MaterialTheme.colorScheme.primary,
                         modifier = Modifier.size(20.dp)

@@ -375,6 +375,12 @@ object DatabaseModule {
         }
     }
 
+    private val MIGRATION_15_16 = object : Migration(15, 16) {
+        override fun migrate(db: SupportSQLiteDatabase) {
+            ensureTableColumn(db, "canyon_pdfs", "mimeType", "TEXT NOT NULL DEFAULT 'application/pdf'")
+        }
+    }
+
     @Provides
     @Singleton
     fun provideDatabase(@ApplicationContext context: Context): DescenteCanyonDatabase {
@@ -397,6 +403,7 @@ object DatabaseModule {
             .addMigrations(MIGRATION_12_13)
             .addMigrations(MIGRATION_13_14)
             .addMigrations(MIGRATION_14_15)
+            .addMigrations(MIGRATION_15_16)
             .createFromAsset(PREPACKAGED_DATABASE_ASSET_PATH)
 
         return builder.build()

@@ -56,6 +56,7 @@ class CanyonPdfRepositoryImpl @Inject constructor(
                     val fileSize = item.getLong("fileSize")
                     val blobUrl = item.getString("blobUrl")
                     val uploadedAt = item.getLong("uploadedAt")
+                    val mimeType = item.optString("mimeType", "application/pdf")
 
                     val existingLocal = canyonPdfDao.getPdfByServerId(serverPdfId)
                     remotePdfs.add(
@@ -68,6 +69,7 @@ class CanyonPdfRepositoryImpl @Inject constructor(
                             localPath = existingLocal?.localPath,
                             remoteUrl = blobUrl,
                             uploadedAt = uploadedAt,
+                            mimeType = mimeType,
                             isDownloaded = existingLocal?.isDownloaded ?: false
                         )
                     )
@@ -109,41 +111,90 @@ class CanyonPdfRepositoryImpl @Inject constructor(
         }
 
         try {
-            val path = "/api/canyons/$canyonId/pdfs"
-            val authHeader = SignatureUtils.generateHmacAuthHeader(context, path)
-            val url = URL("$baseUrl$path")
-            val boundary = "Boundary-${System.currentTimeMillis()}"
-
-            val conn = (url.openConnection() as HttpURLConnection).apply {
+            val mimeType = context.contentResolver.getType(fileUri) ?: "application/pdf"
+            
+            // 1. Demander le jeton d'upload direct
+            val tokenPath = "/api/canyons/$canyonId/pdfs/upload-token"
+            val tokenAuth = SignatureUtils.generateHmacAuthHeader(context, tokenPath)
+            val tokenConn = (URL("$baseUrl$tokenPath").openConnection() as HttpURLConnection).apply {
                 requestMethod = "POST"
                 doOutput = true
-                doInput = true
-                useCaches = false
-                setRequestProperty("X-App-Auth", authHeader)
-                setRequestProperty("Content-Type", "multipart/form-data; boundary=$boundary")
-                readTimeout = 60000
-                connectTimeout = 30000
+                setRequestProperty("X-App-Auth", tokenAuth)
+                setRequestProperty("Content-Type", "application/json")
             }
-
-            conn.outputStream.use { os ->
-                val header = "--$boundary\r\nContent-Disposition: form-data; name=\"file\"; filename=\"$fileName\"\r\nContent-Type: application/pdf\r\n\r\n"
-                os.write(header.toByteArray(Charsets.UTF_8))
-
-                context.contentResolver.openInputStream(fileUri)?.use { isStream ->
-                    isStream.copyTo(os)
-                } ?: throw IllegalArgumentException("Cannot read file stream")
-
-                val footer = "\r\n--$boundary--\r\n"
-                os.write(footer.toByteArray(Charsets.UTF_8))
+            
+            val tokenPayload = JSONObject().apply {
+                put("fileName", fileName)
+                put("contentType", mimeType)
+            }.toString()
+            
+            tokenConn.outputStream.use { os ->
+                os.write(tokenPayload.toByteArray())
                 os.flush()
             }
-
-            if (conn.responseCode in 200..201) {
-                val jsonStr = conn.inputStream.bufferedReader().use { it.readText() }
+            
+            if (tokenConn.responseCode != 200) {
+                val err = tokenConn.errorStream?.bufferedReader()?.use { it.readText() } ?: ""
+                return@withContext Result.failure(Exception("Token fetch failed: ${tokenConn.responseCode} $err"))
+            }
+            
+            val tokenResponse = JSONObject(tokenConn.inputStream.bufferedReader().use { it.readText() })
+            val clientToken = tokenResponse.getString("clientToken")
+            val blobUrl = tokenResponse.getString("uploadUrl")
+            val pdfId = tokenResponse.getString("pdfId")
+            
+            // 2. Upload direct sur Vercel Blob (bypasse la limite de 4.5 Mo)
+            val uploadConn = (URL(blobUrl).openConnection() as HttpURLConnection).apply {
+                requestMethod = "PUT"
+                doOutput = true
+                setRequestProperty("Authorization", "Bearer $clientToken")
+                setRequestProperty("x-api-version", "7")
+                setRequestProperty("Content-Type", mimeType)
+            }
+            
+            uploadConn.outputStream.use { os ->
+                context.contentResolver.openInputStream(fileUri)?.use { isStream ->
+                    isStream.copyTo(os)
+                }
+            }
+            
+            if (uploadConn.responseCode != 200) {
+                return@withContext Result.failure(Exception("Blob upload failed: ${uploadConn.responseCode}"))
+            }
+            
+            val uploadResult = JSONObject(uploadConn.inputStream.bufferedReader().use { it.readText() })
+            val finalBlobUrl = uploadResult.getString("url")
+            
+            // 3. Enregistrer les métadonnées sur le serveur Postgres
+            val savePath = "/api/canyons/$canyonId/pdfs"
+            val saveAuth = SignatureUtils.generateHmacAuthHeader(context, savePath)
+            val saveConn = (URL("$baseUrl$savePath").openConnection() as HttpURLConnection).apply {
+                requestMethod = "POST"
+                doOutput = true
+                setRequestProperty("X-App-Auth", saveAuth)
+                setRequestProperty("Content-Type", "application/json")
+            }
+            
+            val savePayload = JSONObject().apply {
+                put("id", pdfId)
+                put("blobUrl", finalBlobUrl)
+                put("fileName", fileName)
+                put("fileSize", fileSize)
+                put("mimeType", mimeType)
+            }.toString()
+            
+            saveConn.outputStream.use { os ->
+                os.write(savePayload.toByteArray())
+                os.flush()
+            }
+            
+            if (saveConn.responseCode in 200..201) {
+                val jsonStr = saveConn.inputStream.bufferedReader().use { it.readText() }
                 val item = JSONObject(jsonStr).getJSONObject("pdf")
                 val serverPdfId = item.getString("id")
                 val remoteUrl = item.getString("blobUrl")
                 val uploadedAt = item.getLong("uploadedAt")
+                val savedMimeType = item.optString("mimeType", mimeType)
 
                 val entity = CanyonPdfEntity(
                     serverPdfId = serverPdfId,
@@ -153,14 +204,15 @@ class CanyonPdfRepositoryImpl @Inject constructor(
                     localPath = null,
                     remoteUrl = remoteUrl,
                     uploadedAt = uploadedAt,
+                    mimeType = savedMimeType,
                     isDownloaded = false
                 )
 
                 val generatedId = canyonPdfDao.insertOrUpdatePdf(entity)
                 Result.success(entity.copy(id = generatedId))
             } else {
-                val err = conn.errorStream?.bufferedReader()?.use { it.readText() } ?: ""
-                Result.failure(Exception("HTTP ${conn.responseCode}: $err"))
+                val err = saveConn.errorStream?.bufferedReader()?.use { it.readText() } ?: ""
+                Result.failure(Exception("HTTP save error ${saveConn.responseCode}: $err"))
             }
         } catch (e: Exception) {
             Result.failure(e)
@@ -172,8 +224,9 @@ class CanyonPdfRepositoryImpl @Inject constructor(
         pdf: CanyonPdfEntity
     ): Result<File> = withContext(Dispatchers.IO) {
         try {
+            val extension = pdf.fileName.substringAfterLast('.', "pdf")
             val pdfsDir = File(context.filesDir, "pdfs/${pdf.canyonId}").apply { mkdirs() }
-            val localFile = File(pdfsDir, "${pdf.serverPdfId}.pdf")
+            val localFile = File(pdfsDir, "${pdf.serverPdfId}.$extension")
 
             val url = URL(pdf.remoteUrl)
             val conn = (url.openConnection() as HttpURLConnection).apply {

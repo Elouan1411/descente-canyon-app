@@ -30,5 +30,6 @@ data class CanyonPdfEntity(
     val localPath: String?,
     val remoteUrl: String,
     val uploadedAt: Long,
+    val mimeType: String = "application/pdf",
     val isDownloaded: Boolean = false,
 )

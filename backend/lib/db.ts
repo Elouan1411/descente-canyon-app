@@ -7,6 +7,7 @@ export interface CanyonPdfRecord {
   fileSize: number;
   blobUrl: string;
   uploadedAt: number;
+  mimeType?: string;
 }
 
 export interface AppReleaseRecord {
@@ -30,6 +31,9 @@ export async function initDb() {
         blob_url TEXT NOT NULL,
         uploaded_at BIGINT NOT NULL
       );
+    `;
+    await sql`
+      ALTER TABLE canyon_pdfs ADD COLUMN IF NOT EXISTS mime_type VARCHAR(100) DEFAULT 'application/pdf';
     `;
     await sql`
       CREATE INDEX IF NOT EXISTS idx_canyon_id ON canyon_pdfs(canyon_id);
@@ -57,7 +61,7 @@ export async function initDb() {
 export async function getPdfsForCanyon(canyonId: number): Promise<CanyonPdfRecord[]> {
   try {
     const { rows } = await sql`
-      SELECT id, canyon_id, file_name, file_size, blob_url, uploaded_at 
+      SELECT id, canyon_id, file_name, file_size, blob_url, uploaded_at, mime_type 
       FROM canyon_pdfs 
       WHERE canyon_id = ${canyonId}
       ORDER BY uploaded_at DESC
@@ -69,6 +73,7 @@ export async function getPdfsForCanyon(canyonId: number): Promise<CanyonPdfRecor
       fileSize: Number(r.file_size),
       blobUrl: r.blob_url,
       uploadedAt: Number(r.uploaded_at),
+      mimeType: r.mime_type || 'application/pdf',
     }));
   } catch (err) {
     await initDb();
@@ -78,9 +83,10 @@ export async function getPdfsForCanyon(canyonId: number): Promise<CanyonPdfRecor
 
 export async function insertPdfRecord(pdf: CanyonPdfRecord): Promise<void> {
   await initDb();
+  const mimeType = pdf.mimeType || 'application/pdf';
   await sql`
-    INSERT INTO canyon_pdfs (id, canyon_id, file_name, file_size, blob_url, uploaded_at)
-    VALUES (${pdf.id}, ${pdf.canyonId}, ${pdf.fileName}, ${pdf.fileSize}, ${pdf.blobUrl}, ${pdf.uploadedAt})
+    INSERT INTO canyon_pdfs (id, canyon_id, file_name, file_size, blob_url, uploaded_at, mime_type)
+    VALUES (${pdf.id}, ${pdf.canyonId}, ${pdf.fileName}, ${pdf.fileSize}, ${pdf.blobUrl}, ${pdf.uploadedAt}, ${mimeType})
   `;
 }
 
@@ -89,7 +95,7 @@ export async function deletePdfRecord(pdfId: string): Promise<CanyonPdfRecord | 
     const { rows } = await sql`
       DELETE FROM canyon_pdfs 
       WHERE id = ${pdfId}
-      RETURNING id, canyon_id, file_name, file_size, blob_url, uploaded_at
+      RETURNING id, canyon_id, file_name, file_size, blob_url, uploaded_at, mime_type
     `;
     if (rows.length === 0) return null;
     const r = rows[0];
@@ -100,6 +106,7 @@ export async function deletePdfRecord(pdfId: string): Promise<CanyonPdfRecord | 
       fileSize: Number(r.file_size),
       blobUrl: r.blob_url,
       uploadedAt: Number(r.uploaded_at),
+      mimeType: r.mime_type || 'application/pdf',
     };
   } catch (err) {
     return null;
