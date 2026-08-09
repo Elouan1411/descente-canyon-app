@@ -69,3 +69,13 @@ echo "=========================================="
 
 cd backend
 npm run publish-release -- --apk="../$APK_PATH" --versionCode="$VERSION_CODE" --versionName="$VERSION_NAME" --notes="$RELEASE_NOTES"
+
+cd "$SCRIPT_DIR"
+echo "=========================================="
+echo "🐙 Git Commit & Push du bump de version"
+echo "=========================================="
+git add version.properties
+git commit -m "chore(release): bump version to v${VERSION_NAME} (build ${VERSION_CODE})"
+git push origin main
+
+echo "✨ Release v${VERSION_NAME} (build ${VERSION_CODE}) publiée et poussée sur GitHub !"
