@@ -251,6 +251,7 @@ class CanyonDetailViewModelTest {
             connectivityObserver = connectivityObserver,
             favoritesRepository = favoritesRepository,
             notificationCenterRepository = notificationCenterRepository,
+            canyonPdfRepository = mockk(relaxed = true),
         )
     }
 

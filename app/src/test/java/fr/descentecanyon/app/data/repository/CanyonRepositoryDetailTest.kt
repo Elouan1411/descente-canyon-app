@@ -101,14 +101,17 @@ class CanyonRepositoryDetailTest {
         coEvery { debitDao.getByCanyonId(42) } returns flowOf(emptyList())
 
         val repository = CanyonRepositoryImpl(
+            context = mockk(relaxed = true),
             database = database,
             canyonDao = canyonDao,
+            canyonPdfDao = mockk(relaxed = true),
             localStore = localStore,
             geoPointDao = geoPointDao,
             searchIndexDao = searchIndexDao,
             watershedDao = watershedDao,
             scraper = scraper,
             mapOfflineRepository = mapOfflineRepository,
+            canyonPdfRepository = mockk(relaxed = true),
         )
 
         val result = repository.getCanyonDetail(42).getOrThrow()

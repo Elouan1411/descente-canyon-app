@@ -62,14 +62,17 @@ class CanyonRepositoryNearbyTest {
         )
 
         val repository = CanyonRepositoryImpl(
+            context = mockk(relaxed = true),
             database = database,
             canyonDao = canyonDao,
+            canyonPdfDao = mockk(relaxed = true),
             localStore = localStore,
             geoPointDao = geoPointDao,
             searchIndexDao = searchIndexDao,
             watershedDao = watershedDao,
             scraper = scraper,
             mapOfflineRepository = mapOfflineRepository,
+            canyonPdfRepository = mockk(relaxed = true),
         )
 
         val result = repository.getCanyonsNearby(43.70, 6.90, radiusKm = 10.0).first().getOrThrow()
