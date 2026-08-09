@@ -60,6 +60,11 @@ async function publishRelease() {
   console.log(`📁 File: ${absoluteApkPath}`);
   console.log(`🌐 Target: ${baseUrl}`);
 
+  if (!process.env.APP_SECRET || !process.env.APK_SIGNATURE_HASH) {
+    console.log('⚠️ Warning: APP_SECRET ou APK_SIGNATURE_HASH non trouvés dans l\'environnement local / .env.local.');
+    console.log('   Si vous avez configuré ces variables sur Vercel, assurez-vous de créer backend/.env.local avec les mêmes valeurs.');
+  }
+
   // Generate HMAC Auth Header
   const timestamp = Date.now().toString();
   const nonce = crypto.randomBytes(8).toString('hex');
@@ -150,6 +155,10 @@ async function publishRelease() {
       console.log(resultText);
     } else {
       console.error(`❌ Upload failed (${response.status}):`, resultText);
+      if (response.status === 403) {
+        console.error('💡 L\'erreur 403 (Unauthorized APK signature) signifie que votre clé HMAC (APP_SECRET) ou l\'empreinte SHA-256 (APK_SIGNATURE_HASH) locale ne correspond pas à celle configurée dans Vercel.');
+        console.error('👉 Veuillez vérifier votre fichier backend/.env.local pour qu\'il contienne les mêmes clés que Vercel.');
+      }
     }
   } catch (err) {
     console.error('❌ Error uploading release:', err);
