@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "publish-release": "node scripts/publish_release.js"
   },
   "dependencies": {
     "@vercel/blob": "^0.23.0",

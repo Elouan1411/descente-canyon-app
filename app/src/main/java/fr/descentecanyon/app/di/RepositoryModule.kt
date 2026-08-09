@@ -113,4 +113,10 @@ abstract class RepositoryModule {
     abstract fun bindCanyonPdfRepository(
         impl: fr.descentecanyon.app.data.repository.CanyonPdfRepositoryImpl,
     ): fr.descentecanyon.app.data.repository.CanyonPdfRepository
+
+    @Binds
+    @Singleton
+    abstract fun bindAppUpdateRepository(
+        impl: fr.descentecanyon.app.data.repository.AppUpdateRepositoryImpl,
+    ): fr.descentecanyon.app.data.repository.AppUpdateRepository
 }

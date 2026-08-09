@@ -25,6 +25,9 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.setValue
+import androidx.compose.runtime.mutableFloatStateOf
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.produceState
@@ -54,11 +57,13 @@ import fr.descentecanyon.app.ui.navigation.navigateSingleTop
 import fr.descentecanyon.app.ui.design.LocalDcColors
 import fr.descentecanyon.app.ui.theme.DescenteCanyonTheme
 import kotlinx.coroutines.flow.MutableSharedFlow
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     @Inject lateinit var appStartupCoordinator: AppStartupCoordinator
+    @Inject lateinit var appUpdateRepository: fr.descentecanyon.app.data.repository.AppUpdateRepository
 
     private val incomingLaunchTargets = MutableSharedFlow<AppLaunchTarget>(extraBufferCapacity = 1)
 
@@ -74,6 +79,7 @@ class MainActivity : ComponentActivity() {
             DescenteCanyonTheme {
                 AppStartupScreen(
                     appStartupCoordinator = appStartupCoordinator,
+                    appUpdateRepository = appUpdateRepository,
                     initialLaunchTarget = initialLaunchTarget,
                     incomingLaunchTargets = incomingLaunchTargets,
                 )
@@ -94,6 +100,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 private fun AppStartupScreen(
     appStartupCoordinator: AppStartupCoordinator,
+    appUpdateRepository: fr.descentecanyon.app.data.repository.AppUpdateRepository,
     initialLaunchTarget: AppLaunchTarget,
     incomingLaunchTargets: MutableSharedFlow<AppLaunchTarget>,
 ) {
@@ -145,6 +152,7 @@ private fun AppStartupScreen(
                 }
             }
             MainScreen(
+                appUpdateRepository = appUpdateRepository,
                 initialLaunchTarget = initialLaunchTarget,
                 incomingLaunchTargets = incomingLaunchTargets,
             )
@@ -180,6 +188,7 @@ private const val TAG = "MainActivity"
 
 @Composable
 private fun MainScreen(
+    appUpdateRepository: fr.descentecanyon.app.data.repository.AppUpdateRepository,
     initialLaunchTarget: AppLaunchTarget,
     incomingLaunchTargets: MutableSharedFlow<AppLaunchTarget>,
 ) {
@@ -190,6 +199,41 @@ private fun MainScreen(
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val selectedBottomNavItem = resolveSelectedBottomNavItem(navBackStackEntry)
     val showBottomBar = shouldShowBottomBar(navBackStackEntry)
+    val context = androidx.compose.ui.platform.LocalContext.current
+    val scope = androidx.compose.runtime.rememberCoroutineScope()
+    var updateInfoState by androidx.compose.runtime.remember { androidx.compose.runtime.mutableStateOf<fr.descentecanyon.app.data.model.AppUpdateInfo?>(null) }
+    var isDownloadingUpdate by androidx.compose.runtime.remember { androidx.compose.runtime.mutableStateOf(false) }
+    var updateDownloadProgress by androidx.compose.runtime.remember { androidx.compose.runtime.mutableFloatStateOf(0f) }
+
+    androidx.compose.runtime.LaunchedEffect(Unit) {
+        val result = appUpdateRepository.checkForUpdate(context)
+        if (result.isSuccess) {
+            updateInfoState = result.getOrNull()
+        }
+    }
+
+    updateInfoState?.let { updateInfo ->
+        fr.descentecanyon.app.ui.update.AppUpdateDialog(
+            updateInfo = updateInfo,
+            isDownloading = isDownloadingUpdate,
+            downloadProgress = updateDownloadProgress,
+            onUpdateClick = {
+                isDownloadingUpdate = true
+                scope.launch {
+                    appUpdateRepository.downloadAndInstallApk(
+                        context = context,
+                        updateInfo = updateInfo,
+                        onProgress = { progress -> updateDownloadProgress = progress }
+                    )
+                    isDownloadingUpdate = false
+                }
+            },
+            onDismissRequest = {
+                updateInfoState = null
+            }
+        )
+    }
+
     val dcColors = LocalDcColors.current
 
     androidx.compose.runtime.LaunchedEffect(navController, initialLaunchTarget, incomingLaunchTargets) {

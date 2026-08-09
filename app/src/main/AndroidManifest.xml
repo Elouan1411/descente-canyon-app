@@ -18,6 +18,9 @@
     <!-- Runtime permission required on Android 13+ for alert delivery -->
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
+    <!-- Request install permission for in-app APK updates -->
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+
     <application
         android:name=".DescenteCanyonApp"
         android:allowBackup="true"
