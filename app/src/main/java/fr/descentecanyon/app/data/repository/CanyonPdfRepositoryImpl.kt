@@ -299,8 +299,17 @@ class CanyonPdfRepositoryImpl @Inject constructor(
             val authority = "${context.packageName}.fileprovider"
             val uri: Uri = FileProvider.getUriForFile(context, authority, localFile)
 
+            val targetMimeType = when {
+                pdf.mimeType.isNotBlank() && pdf.mimeType != "application/octet-stream" -> pdf.mimeType
+                pdf.fileName.endsWith(".gpx", ignoreCase = true) -> "application/gpx+xml"
+                pdf.fileName.endsWith(".png", ignoreCase = true) -> "image/png"
+                pdf.fileName.endsWith(".jpg", ignoreCase = true) || pdf.fileName.endsWith(".jpeg", ignoreCase = true) -> "image/jpeg"
+                pdf.fileName.endsWith(".webp", ignoreCase = true) -> "image/webp"
+                else -> "application/pdf"
+            }
+
             val intent = Intent(Intent.ACTION_VIEW).apply {
-                setDataAndType(uri, "application/pdf")
+                setDataAndType(uri, targetMimeType)
                 addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
                 addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             }
