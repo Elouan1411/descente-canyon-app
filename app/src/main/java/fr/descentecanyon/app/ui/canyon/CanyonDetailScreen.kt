@@ -51,6 +51,8 @@ import androidx.compose.material.icons.filled.NotificationsNone
 import androidx.compose.material.icons.filled.Share
 import androidx.compose.material.icons.filled.Star
 import androidx.compose.material.icons.filled.WaterDrop
+import androidx.compose.material3.AlertDialog
+import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CircularProgressIndicator
@@ -173,7 +175,7 @@ fun CanyonDetailScreen(
         contract = ActivityResultContracts.RequestPermission(),
     ) { viewModel.toggleDebitNotifications() }
 
-    var showShareBottomSheet by remember { mutableStateOf(false) }
+    var showDepartureDialog by remember { mutableStateOf(false) }
     var pendingSafetyShare by remember { mutableStateOf(false) }
 
     val locationPermissionLauncher = rememberLauncherForActivityResult(
@@ -328,7 +330,8 @@ fun CanyonDetailScreen(
                             detail = uiState.canyonDetail!!,
                             isFavorite = uiState.isFavorite,
                             onFavoriteToggle = viewModel::toggleFavorite,
-                            onShareClick = { showShareBottomSheet = true },
+                            onShareClick = { triggerSimpleShare(context, uiState.canyonDetail?.canyon) },
+                            onNotifyDepartureClick = { showDepartureDialog = true },
                             isRefreshingDetail = uiState.isRefreshingDetail,
                             isOnline = uiState.isOnline,
                             isLoadingPhotos = uiState.isLoadingPhotos,
@@ -385,25 +388,47 @@ fun CanyonDetailScreen(
         }
     }
 
-    if (showShareBottomSheet) {
-        ShareOptionsBottomSheet(
-            onDismissRequest = { showShareBottomSheet = false },
-            onSimpleShare = {
-                triggerSimpleShare(context, uiState.canyonDetail?.canyon)
+    if (showDepartureDialog) {
+        AlertDialog(
+            onDismissRequest = { showDepartureDialog = false },
+            title = {
+                Text(
+                    text = stringResource(R.string.share_departure_dialog_title),
+                    style = MaterialTheme.typography.titleLarge,
+                    fontWeight = FontWeight.Bold,
+                )
             },
-            onSafetyDepartureShare = {
-                if (context.hasLocationPermission()) {
-                    triggerSafetyShare(context, uiState.canyonDetail?.canyon, true)
-                } else {
-                    pendingSafetyShare = true
-                    locationPermissionLauncher.launch(
-                        arrayOf(
-                            Manifest.permission.ACCESS_FINE_LOCATION,
-                            Manifest.permission.ACCESS_COARSE_LOCATION,
-                        )
-                    )
+            text = {
+                Text(
+                    text = stringResource(R.string.share_departure_dialog_explanation),
+                    style = MaterialTheme.typography.bodyMedium,
+                )
+            },
+            confirmButton = {
+                Button(
+                    onClick = {
+                        showDepartureDialog = false
+                        if (context.hasLocationPermission()) {
+                            triggerSafetyShare(context, uiState.canyonDetail?.canyon, true)
+                        } else {
+                            pendingSafetyShare = true
+                            locationPermissionLauncher.launch(
+                                arrayOf(
+                                    Manifest.permission.ACCESS_FINE_LOCATION,
+                                    Manifest.permission.ACCESS_COARSE_LOCATION,
+                                )
+                            )
+                        }
+                    }
+                ) {
+                    Text(stringResource(R.string.share_departure_dialog_confirm))
                 }
             },
+            dismissButton = {
+                TextButton(onClick = { showDepartureDialog = false }) {
+                    Text(stringResource(android.R.string.cancel))
+                }
+            }
         )
     }
 }
@@ -481,6 +506,7 @@ private fun CanyonDetailContent(
     isFavorite: Boolean,
     onFavoriteToggle: () -> Unit,
     onShareClick: () -> Unit,
+    onNotifyDepartureClick: () -> Unit,
     isRefreshingDetail: Boolean,
     isOnline: Boolean,
     isLoadingPhotos: Boolean,
@@ -546,6 +572,7 @@ private fun CanyonDetailContent(
                 isFavorite = isFavorite,
                 onFavoriteToggle = onFavoriteToggle,
                 onShareClick = onShareClick,
+                onNotifyDepartureClick = onNotifyDepartureClick,
                 onPersistedPhotoMissing = onPersistedPhotoMissing,
             )
         }
@@ -645,6 +672,7 @@ private fun SummaryCard(
     isFavorite: Boolean,
     onFavoriteToggle: () -> Unit,
     onShareClick: () -> Unit,
+    onNotifyDepartureClick: () -> Unit,
     onPersistedPhotoMissing: (Long) -> Unit,
     modifier: Modifier = Modifier,
 ) {
@@ -752,6 +780,23 @@ private fun SummaryCard(
                         horizontalArrangement = Arrangement.spacedBy(spacing.xs),
                         verticalAlignment = Alignment.CenterVertically,
                     ) {
+                        Surface(
+                            shape = CircleShape,
+                            color = colors.surfacePhotoScrim.copy(alpha = 0.72f),
+                            contentColor = colors.snow,
+                        ) {
+                            IconButton(
+                                onClick = onNotifyDepartureClick,
+                                modifier = Modifier.size(36.dp),
+                            ) {
+                                Icon(
+                                    imageVector = Icons.Default.Navigation,
+                                    contentDescription = stringResource(R.string.share_departure_dialog_title),
+                                    tint = colors.snow,
+                                    modifier = Modifier.size(20.dp),
+                                )
+                            }
+                        }
                         Surface(
                             shape = CircleShape,
                             color = colors.surfacePhotoScrim.copy(alpha = 0.72f),
@@ -2120,126 +2165,7 @@ private fun openNavigation(
     context.startActivity(Intent(Intent.ACTION_VIEW, uri))
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
-@Composable
-private fun ShareOptionsBottomSheet(
-    onDismissRequest: () -> Unit,
-    onSimpleShare: () -> Unit,
-    onSafetyDepartureShare: () -> Unit,
-) {
-    val sheetState = rememberModalBottomSheetState(skipPartiallyExpanded = true)
 
-    ModalBottomSheet(
-        onDismissRequest = onDismissRequest,
-        sheetState = sheetState,
-    ) {
-        Column(
-            modifier = Modifier
-                .fillMaxWidth()
-                .navigationBarsPadding()
-                .padding(horizontal = 24.dp, vertical = 16.dp),
-            verticalArrangement = Arrangement.spacedBy(16.dp),
-        ) {
-            Text(
-                text = stringResource(R.string.share_options_title),
-                style = MaterialTheme.typography.headlineSmall,
-                fontWeight = FontWeight.Bold,
-            )
-
-            Card(
-                onClick = {
-                    onDismissRequest()
-                    onSimpleShare()
-                },
-                modifier = Modifier.fillMaxWidth(),
-                colors = CardDefaults.cardColors(
-                    containerColor = MaterialTheme.colorScheme.surfaceContainerHigh,
-                ),
-            ) {
-                Row(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(16.dp),
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.spacedBy(16.dp),
-                ) {
-                    Surface(
-                        shape = CircleShape,
-                        color = MaterialTheme.colorScheme.primaryContainer,
-                        modifier = Modifier.size(44.dp),
-                    ) {
-                        Box(contentAlignment = Alignment.Center) {
-                            Icon(
-                                imageVector = Icons.Default.Share,
-                                contentDescription = null,
-                                tint = MaterialTheme.colorScheme.onPrimaryContainer,
-                            )
-                        }
-                    }
-                    Column(modifier = Modifier.weight(1f)) {
-                        Text(
-                            text = stringResource(R.string.share_option_simple_title),
-                            style = MaterialTheme.typography.titleMedium,
-                            fontWeight = FontWeight.SemiBold,
-                        )
-                        Text(
-                            text = stringResource(R.string.share_option_simple_subtitle),
-                            style = MaterialTheme.typography.bodyMedium,
-                            color = MaterialTheme.colorScheme.onSurfaceVariant,
-                        )
-                    }
-                }
-            }
-
-            Card(
-                onClick = {
-                    onDismissRequest()
-                    onSafetyDepartureShare()
-                },
-                modifier = Modifier.fillMaxWidth(),
-                colors = CardDefaults.cardColors(
-                    containerColor = MaterialTheme.colorScheme.surfaceContainerHigh,
-                ),
-            ) {
-                Row(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(16.dp),
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.spacedBy(16.dp),
-                ) {
-                    Surface(
-                        shape = CircleShape,
-                        color = MaterialTheme.colorScheme.errorContainer,
-                        modifier = Modifier.size(44.dp),
-                    ) {
-                        Box(contentAlignment = Alignment.Center) {
-                            Icon(
-                                imageVector = Icons.Default.Navigation,
-                                contentDescription = null,
-                                tint = MaterialTheme.colorScheme.onErrorContainer,
-                            )
-                        }
-                    }
-                    Column(modifier = Modifier.weight(1f)) {
-                        Text(
-                            text = stringResource(R.string.share_option_safety_title),
-                            style = MaterialTheme.typography.titleMedium,
-                            fontWeight = FontWeight.SemiBold,
-                        )
-                        Text(
-                            text = stringResource(R.string.share_option_safety_subtitle),
-                            style = MaterialTheme.typography.bodyMedium,
-                            color = MaterialTheme.colorScheme.onSurfaceVariant,
-                        )
-                    }
-                }
-            }
-
-            Spacer(modifier = Modifier.height(8.dp))
-        }
-    }
-}
 
 private fun triggerSimpleShare(context: Context, canyon: Canyon?) {
     if (canyon == null) return
@@ -2324,7 +2250,7 @@ private fun sendDepartureIntent(
         putExtra(Intent.EXTRA_TEXT, sb.toString().trimEnd())
         type = "text/plain"
     }
-    val shareIntent = Intent.createChooser(sendIntent, context.getString(R.string.share_option_safety_title))
+    val shareIntent = Intent.createChooser(sendIntent, context.getString(R.string.share_departure_dialog_title))
     context.startActivity(shareIntent)
 }
 
