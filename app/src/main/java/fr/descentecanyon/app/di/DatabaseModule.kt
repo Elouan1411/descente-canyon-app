@@ -17,6 +17,7 @@ import fr.descentecanyon.app.data.local.dao.CanyonPdfDao
 import fr.descentecanyon.app.data.local.dao.CanyonTrackDao
 import fr.descentecanyon.app.data.local.dao.DailyWeatherDao
 import fr.descentecanyon.app.data.local.dao.DebitDao
+import fr.descentecanyon.app.data.local.dao.FavoriteFolderDao
 import fr.descentecanyon.app.data.local.dao.ForumUserDao
 import fr.descentecanyon.app.data.local.dao.GeoPointDao
 import fr.descentecanyon.app.data.local.dao.PendingDebitSubmissionDao
@@ -393,6 +394,31 @@ object DatabaseModule {
         }
     }
 
+    private val MIGRATION_18_19 = object : Migration(18, 19) {
+        override fun migrate(db: SupportSQLiteDatabase) {
+            db.execSQL(
+                """
+                CREATE TABLE IF NOT EXISTS `favorite_folders` (
+                    `id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+                    `name` TEXT NOT NULL,
+                    `createdAt` INTEGER NOT NULL
+                )
+                """.trimIndent()
+            )
+            db.execSQL(
+                """
+                CREATE TABLE IF NOT EXISTS `canyon_favorite_folder_cross_ref` (
+                    `canyonId` INTEGER NOT NULL,
+                    `folderId` INTEGER NOT NULL,
+                    PRIMARY KEY(`canyonId`, `folderId`)
+                )
+                """.trimIndent()
+            )
+            db.execSQL("CREATE INDEX IF NOT EXISTS `index_canyon_favorite_folder_cross_ref_folderId` ON `canyon_favorite_folder_cross_ref` (`folderId`)")
+            db.execSQL("CREATE INDEX IF NOT EXISTS `index_canyon_favorite_folder_cross_ref_canyonId` ON `canyon_favorite_folder_cross_ref` (`canyonId`)")
+        }
+    }
+
     @Provides
     @Singleton
     fun provideDatabase(@ApplicationContext context: Context): DescenteCanyonDatabase {
@@ -418,6 +444,7 @@ object DatabaseModule {
             .addMigrations(MIGRATION_15_16)
             .addMigrations(MIGRATION_16_17)
             .addMigrations(MIGRATION_17_18)
+            .addMigrations(MIGRATION_18_19)
             .createFromAsset(PREPACKAGED_DATABASE_ASSET_PATH)
 
         return builder.build()
@@ -466,6 +493,9 @@ object DatabaseModule {
 
     @Provides
     fun provideCanyonPdfDao(database: DescenteCanyonDatabase): CanyonPdfDao = database.canyonPdfDao()
+
+    @Provides
+    fun provideFavoriteFolderDao(database: DescenteCanyonDatabase): FavoriteFolderDao = database.favoriteFolderDao()
 
     private fun ensureCanyonColumn(
         db: SupportSQLiteDatabase,

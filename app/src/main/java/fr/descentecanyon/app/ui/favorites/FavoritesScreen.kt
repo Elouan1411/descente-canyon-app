@@ -21,16 +21,21 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.Sort
+import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.ArrowDropDown
 import androidx.compose.material.icons.filled.Clear
+import androidx.compose.material.icons.filled.CreateNewFolder
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.FavoriteBorder
 import androidx.compose.material.icons.filled.FilterList
+import androidx.compose.material.icons.filled.Folder
+import androidx.compose.material.icons.filled.FolderOpen
 import androidx.compose.material.icons.filled.Place
 import androidx.compose.material.icons.filled.Public
-import androidx.compose.material.icons.filled.Sort
 import androidx.compose.material.icons.filled.Star
+import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
+import androidx.compose.material3.Checkbox
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
@@ -39,9 +44,11 @@ import androidx.compose.material3.FilterChipDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.SwipeToDismissBox
 import androidx.compose.material3.SwipeToDismissBoxValue
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.material3.rememberSwipeToDismissBoxState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -57,6 +64,8 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import fr.descentecanyon.app.R
+import fr.descentecanyon.app.domain.model.CanyonSummary
+import fr.descentecanyon.app.domain.model.FavoriteFolder
 import fr.descentecanyon.app.ui.components.CanyonSummaryCard
 import fr.descentecanyon.app.ui.design.DcEmptyState
 import fr.descentecanyon.app.ui.design.DcSectionHeader
@@ -75,6 +84,10 @@ fun FavoritesScreen(
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
     val contentWidth = rememberDcContentWidth()
     val screenHorizontalPadding = rememberDcScreenHorizontalPadding()
+
+    var showCreateFolderDialog by remember { mutableStateOf(false) }
+    var folderToDelete by remember { mutableStateOf<FavoriteFolder?>(null) }
+    var canyonForFolderAssignment by remember { mutableStateOf<CanyonSummary?>(null) }
 
     Box(
         modifier = modifier
@@ -98,6 +111,17 @@ fun FavoritesScreen(
             )
 
             if (uiState.rawFavorites.isNotEmpty()) {
+                // Folders Bar
+                FavoritesFoldersBar(
+                    folders = uiState.folders,
+                    selectedFolderId = uiState.selectedFolderId,
+                    onSelectFolder = viewModel::selectFolder,
+                    onCreateFolderClick = { showCreateFolderDialog = true },
+                    onDeleteFolderClick = { folderToDelete = it },
+                    modifier = Modifier.padding(bottom = 6.dp),
+                )
+
+                // Filters Bar
                 FavoritesFilterBar(
                     uiState = uiState,
                     onSortSelected = viewModel::setSortOption,
@@ -179,10 +203,25 @@ fun FavoritesScreen(
                             FavoriteDismissItem(
                                 onRemove = { viewModel.removeFavorite(canyon.id) },
                             ) {
-                                CanyonSummaryCard(
-                                    canyon = canyon,
-                                    onClick = { onCanyonClick(canyon.id) },
-                                )
+                                Box(modifier = Modifier.fillMaxWidth()) {
+                                    CanyonSummaryCard(
+                                        canyon = canyon,
+                                        onClick = { onCanyonClick(canyon.id) },
+                                    )
+                                    IconButton(
+                                        onClick = { canyonForFolderAssignment = canyon },
+                                        modifier = Modifier
+                                            .align(Alignment.BottomEnd)
+                                            .padding(bottom = 4.dp, end = 4.dp),
+                                    ) {
+                                        Icon(
+                                            imageVector = Icons.Default.FolderOpen,
+                                            contentDescription = stringResource(R.string.favorite_folder_manage),
+                                            tint = MaterialTheme.colorScheme.primary,
+                                            modifier = Modifier.size(20.dp),
+                                        )
+                                    }
+                                }
                             }
                         }
                     }
@@ -190,6 +229,242 @@ fun FavoritesScreen(
             }
         }
     }
+
+    // Create Folder Dialog
+    if (showCreateFolderDialog) {
+        CreateFolderDialog(
+            onDismiss = { showCreateFolderDialog = false },
+            onCreate = { name ->
+                viewModel.createFolder(name)
+                showCreateFolderDialog = false
+            },
+        )
+    }
+
+    // Delete Folder Dialog
+    folderToDelete?.let { folder ->
+        AlertDialog(
+            onDismissRequest = { folderToDelete = null },
+            title = { Text(stringResource(R.string.favorite_folder_delete_title)) },
+            text = { Text(stringResource(R.string.favorite_folder_delete_confirm, folder.name)) },
+            confirmButton = {
+                TextButton(
+                    onClick = {
+                        viewModel.deleteFolder(folder.id)
+                        folderToDelete = null
+                    }
+                ) {
+                    Text(stringResource(R.string.pdf_delete), color = MaterialTheme.colorScheme.error)
+                }
+            },
+            dismissButton = {
+                TextButton(onClick = { folderToDelete = null }) {
+                    Text(stringResource(android.R.string.cancel))
+                }
+            }
+        )
+    }
+
+    // Manage Canyon Folders Dialog
+    canyonForFolderAssignment?.let { canyon ->
+        ManageCanyonFoldersDialog(
+            canyon = canyon,
+            folders = uiState.folders,
+            canyonFolderMap = uiState.canyonFolderMap,
+            onToggleFolder = { folderId -> viewModel.toggleCanyonInFolder(canyon.id, folderId) },
+            onCreateFolderClick = { showCreateFolderDialog = true },
+            onDismiss = { canyonForFolderAssignment = null }
+        )
+    }
+}
+
+@Composable
+private fun FavoritesFoldersBar(
+    folders: List<FavoriteFolder>,
+    selectedFolderId: Int?,
+    onSelectFolder: (Int?) -> Unit,
+    onCreateFolderClick: () -> Unit,
+    onDeleteFolderClick: (FavoriteFolder) -> Unit,
+    modifier: Modifier = Modifier,
+) {
+    Row(
+        modifier = modifier
+            .fillMaxWidth()
+            .horizontalScroll(rememberScrollState()),
+        horizontalArrangement = Arrangement.spacedBy(8.dp),
+        verticalAlignment = Alignment.CenterVertically,
+    ) {
+        // "Tous les favoris"
+        FilterChip(
+            selected = selectedFolderId == null,
+            onClick = { onSelectFolder(null) },
+            label = { Text(stringResource(R.string.favorite_folder_all)) },
+            leadingIcon = {
+                Icon(Icons.Default.Folder, contentDescription = null, modifier = Modifier.size(16.dp))
+            },
+            colors = FilterChipDefaults.filterChipColors(
+                selectedContainerColor = MaterialTheme.colorScheme.primaryContainer,
+                selectedLabelColor = MaterialTheme.colorScheme.onPrimaryContainer,
+            ),
+        )
+
+        // Custom Folders
+        folders.forEach { folder ->
+            var showMenu by remember { mutableStateOf(false) }
+
+            Box {
+                FilterChip(
+                    selected = selectedFolderId == folder.id,
+                    onClick = { onSelectFolder(folder.id) },
+                    label = { Text("${folder.name} (${folder.canyonCount})") },
+                    leadingIcon = {
+                        Icon(Icons.Default.FolderOpen, contentDescription = null, modifier = Modifier.size(16.dp))
+                    },
+                    trailingIcon = {
+                        IconButton(
+                            onClick = { showMenu = true },
+                            modifier = Modifier.size(16.dp)
+                        ) {
+                            Icon(Icons.Default.Delete, contentDescription = null, modifier = Modifier.size(14.dp))
+                        }
+                    },
+                    colors = FilterChipDefaults.filterChipColors(
+                        selectedContainerColor = MaterialTheme.colorScheme.primaryContainer,
+                        selectedLabelColor = MaterialTheme.colorScheme.onPrimaryContainer,
+                    ),
+                )
+
+                DropdownMenu(
+                    expanded = showMenu,
+                    onDismissRequest = { showMenu = false },
+                ) {
+                    DropdownMenuItem(
+                        text = { Text(stringResource(R.string.favorite_folder_delete_title)) },
+                        onClick = {
+                            showMenu = false
+                            onDeleteFolderClick(folder)
+                        },
+                        leadingIcon = {
+                            Icon(Icons.Default.Delete, contentDescription = null, tint = MaterialTheme.colorScheme.error)
+                        }
+                    )
+                }
+            }
+        }
+
+        // "+ Nouveau dossier"
+        FilterChip(
+            selected = false,
+            onClick = onCreateFolderClick,
+            label = { Text(stringResource(R.string.favorite_folder_create)) },
+            leadingIcon = {
+                Icon(Icons.Default.Add, contentDescription = null, modifier = Modifier.size(16.dp))
+            },
+        )
+    }
+}
+
+@Composable
+private fun CreateFolderDialog(
+    onDismiss: () -> Unit,
+    onCreate: (String) -> Unit,
+) {
+    var folderName by remember { mutableStateOf("") }
+
+    AlertDialog(
+        onDismissRequest = onDismiss,
+        title = { Text(stringResource(R.string.favorite_folder_create_title)) },
+        text = {
+            Column {
+                OutlinedTextField(
+                    value = folderName,
+                    onValueChange = { folderName = it },
+                    label = { Text(stringResource(R.string.favorite_folder_name_hint)) },
+                    singleLine = true,
+                    modifier = Modifier.fillMaxWidth()
+                )
+            }
+        },
+        confirmButton = {
+            Button(
+                onClick = { onCreate(folderName) },
+                enabled = folderName.isNotBlank()
+            ) {
+                Text(stringResource(R.string.favorite_folder_create))
+            }
+        },
+        dismissButton = {
+            TextButton(onClick = onDismiss) {
+                Text(stringResource(android.R.string.cancel))
+            }
+        }
+    )
+}
+
+@Composable
+private fun ManageCanyonFoldersDialog(
+    canyon: CanyonSummary,
+    folders: List<FavoriteFolder>,
+    canyonFolderMap: Map<Int, Set<Int>>,
+    onToggleFolder: (Int) -> Unit,
+    onCreateFolderClick: () -> Unit,
+    onDismiss: () -> Unit,
+) {
+    val assignedFolderIds = canyonFolderMap[canyon.id] ?: emptySet()
+
+    AlertDialog(
+        onDismissRequest = onDismiss,
+        title = { Text("${canyon.nom} - ${stringResource(R.string.favorite_folder_manage_title)}") },
+        text = {
+            Column {
+                if (folders.isEmpty()) {
+                    Text(
+                        text = "Aucun dossier créé.",
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                        modifier = Modifier.padding(vertical = 8.dp)
+                    )
+                } else {
+                    folders.forEach { folder ->
+                        val isAssigned = assignedFolderIds.contains(folder.id)
+                        Row(
+                            verticalAlignment = Alignment.CenterVertically,
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(vertical = 4.dp)
+                        ) {
+                            Checkbox(
+                                checked = isAssigned,
+                                onCheckedChange = { onToggleFolder(folder.id) }
+                            )
+                            Spacer(modifier = Modifier.width(8.dp))
+                            Text(
+                                text = folder.name,
+                                style = MaterialTheme.typography.bodyLarge,
+                                color = MaterialTheme.colorScheme.onSurface
+                            )
+                        }
+                    }
+                }
+                Spacer(modifier = Modifier.height(8.dp))
+                TextButton(
+                    onClick = {
+                        onDismiss()
+                        onCreateFolderClick()
+                    }
+                ) {
+                    Icon(Icons.Default.Add, contentDescription = null, modifier = Modifier.size(16.dp))
+                    Spacer(modifier = Modifier.width(4.dp))
+                    Text(stringResource(R.string.favorite_folder_create))
+                }
+            }
+        },
+        confirmButton = {
+            TextButton(onClick = onDismiss) {
+                Text("OK")
+            }
+        }
+    )
 }
 
 @Composable
@@ -219,7 +494,7 @@ private fun FavoritesFilterBar(
         horizontalArrangement = Arrangement.spacedBy(8.dp),
         verticalAlignment = Alignment.CenterVertically,
     ) {
-        // --- Sort Chip ---
+        // Sort Dropdown Chip
         Box {
             FilterChip(
                 selected = uiState.selectedSort != FavoriteSortOption.DATE_ADDED_DESC,
@@ -240,38 +515,36 @@ private fun FavoritesFilterBar(
                     Icon(Icons.Default.ArrowDropDown, contentDescription = null, modifier = Modifier.size(16.dp))
                 },
             )
+
             DropdownMenu(
                 expanded = sortMenuExpanded,
                 onDismissRequest = { sortMenuExpanded = false },
             ) {
-                DropdownMenuItem(
-                    text = { Text(stringResource(R.string.favorite_sort_date_desc)) },
-                    onClick = { onSortSelected(FavoriteSortOption.DATE_ADDED_DESC); sortMenuExpanded = false },
-                )
-                DropdownMenuItem(
-                    text = { Text(stringResource(R.string.favorite_sort_date_asc)) },
-                    onClick = { onSortSelected(FavoriteSortOption.DATE_ADDED_ASC); sortMenuExpanded = false },
-                )
-                DropdownMenuItem(
-                    text = { Text(stringResource(R.string.favorite_sort_rating_desc)) },
-                    onClick = { onSortSelected(FavoriteSortOption.RATING_DESC); sortMenuExpanded = false },
-                )
-                DropdownMenuItem(
-                    text = { Text(stringResource(R.string.favorite_sort_name_asc)) },
-                    onClick = { onSortSelected(FavoriteSortOption.NAME_ASC); sortMenuExpanded = false },
-                )
+                FavoriteSortOption.entries.forEach { option ->
+                    val label = when (option) {
+                        FavoriteSortOption.DATE_ADDED_DESC -> stringResource(R.string.favorite_sort_date_desc)
+                        FavoriteSortOption.DATE_ADDED_ASC -> stringResource(R.string.favorite_sort_date_asc)
+                        FavoriteSortOption.RATING_DESC -> stringResource(R.string.favorite_sort_rating_desc)
+                        FavoriteSortOption.NAME_ASC -> stringResource(R.string.favorite_sort_name_asc)
+                    }
+                    DropdownMenuItem(
+                        text = { Text(label) },
+                        onClick = {
+                            onSortSelected(option)
+                            sortMenuExpanded = false
+                        },
+                    )
+                }
             }
         }
 
-        // --- Country Chip ---
-        if (uiState.availableCountries.size > 1 || uiState.selectedCountry != null) {
+        // Country Filter Chip
+        if (uiState.availableCountries.isNotEmpty()) {
             Box {
                 FilterChip(
                     selected = uiState.selectedCountry != null,
                     onClick = { countryMenuExpanded = true },
-                    label = {
-                        Text(uiState.selectedCountry ?: stringResource(R.string.favorite_filter_country))
-                    },
+                    label = { Text(uiState.selectedCountry ?: stringResource(R.string.favorite_filter_country)) },
                     leadingIcon = {
                         Icon(Icons.Default.Public, contentDescription = null, modifier = Modifier.size(16.dp))
                     },
@@ -279,33 +552,38 @@ private fun FavoritesFilterBar(
                         Icon(Icons.Default.ArrowDropDown, contentDescription = null, modifier = Modifier.size(16.dp))
                     },
                 )
+
                 DropdownMenu(
                     expanded = countryMenuExpanded,
                     onDismissRequest = { countryMenuExpanded = false },
                 ) {
                     DropdownMenuItem(
                         text = { Text(stringResource(R.string.favorite_filter_all)) },
-                        onClick = { onCountrySelected(null); countryMenuExpanded = false },
+                        onClick = {
+                            onCountrySelected(null)
+                            countryMenuExpanded = false
+                        },
                     )
                     uiState.availableCountries.forEach { country ->
                         DropdownMenuItem(
                             text = { Text(country) },
-                            onClick = { onCountrySelected(country); countryMenuExpanded = false },
+                            onClick = {
+                                onCountrySelected(country)
+                                countryMenuExpanded = false
+                            },
                         )
                     }
                 }
             }
         }
 
-        // --- Region Chip ---
-        if (uiState.availableRegions.size > 1 || uiState.selectedRegion != null) {
+        // Region Filter Chip
+        if (uiState.availableRegions.isNotEmpty()) {
             Box {
                 FilterChip(
                     selected = uiState.selectedRegion != null,
                     onClick = { regionMenuExpanded = true },
-                    label = {
-                        Text(uiState.selectedRegion ?: stringResource(R.string.favorite_filter_region))
-                    },
+                    label = { Text(uiState.selectedRegion ?: stringResource(R.string.favorite_filter_region)) },
                     leadingIcon = {
                         Icon(Icons.Default.Place, contentDescription = null, modifier = Modifier.size(16.dp))
                     },
@@ -313,32 +591,39 @@ private fun FavoritesFilterBar(
                         Icon(Icons.Default.ArrowDropDown, contentDescription = null, modifier = Modifier.size(16.dp))
                     },
                 )
+
                 DropdownMenu(
                     expanded = regionMenuExpanded,
                     onDismissRequest = { regionMenuExpanded = false },
                 ) {
                     DropdownMenuItem(
                         text = { Text(stringResource(R.string.favorite_filter_all)) },
-                        onClick = { onRegionSelected(null); regionMenuExpanded = false },
+                        onClick = {
+                            onRegionSelected(null)
+                            regionMenuExpanded = false
+                        },
                     )
                     uiState.availableRegions.forEach { region ->
                         DropdownMenuItem(
                             text = { Text(region) },
-                            onClick = { onRegionSelected(region); regionMenuExpanded = false },
+                            onClick = {
+                                onRegionSelected(region)
+                                regionMenuExpanded = false
+                            },
                         )
                     }
                 }
             }
         }
 
-        // --- Rating Chip ---
+        // Min Rating Filter Chip
         Box {
             FilterChip(
                 selected = uiState.minRating > 0f,
                 onClick = { ratingMenuExpanded = true },
                 label = {
-                    val text = if (uiState.minRating > 0f) "≥ ${uiState.minRating}★" else stringResource(R.string.favorite_filter_rating)
-                    Text(text)
+                    val label = if (uiState.minRating > 0f) "≥ ${uiState.minRating}★" else stringResource(R.string.favorite_filter_rating)
+                    Text(label)
                 },
                 leadingIcon = {
                     Icon(Icons.Default.Star, contentDescription = null, modifier = Modifier.size(16.dp))
@@ -347,30 +632,25 @@ private fun FavoritesFilterBar(
                     Icon(Icons.Default.ArrowDropDown, contentDescription = null, modifier = Modifier.size(16.dp))
                 },
             )
+
             DropdownMenu(
                 expanded = ratingMenuExpanded,
                 onDismissRequest = { ratingMenuExpanded = false },
             ) {
-                DropdownMenuItem(
-                    text = { Text(stringResource(R.string.favorite_filter_all)) },
-                    onClick = { onMinRatingSelected(0f); ratingMenuExpanded = false },
-                )
-                DropdownMenuItem(
-                    text = { Text("≥ 2.0 ★") },
-                    onClick = { onMinRatingSelected(2.0f); ratingMenuExpanded = false },
-                )
-                DropdownMenuItem(
-                    text = { Text("≥ 3.0 ★") },
-                    onClick = { onMinRatingSelected(3.0f); ratingMenuExpanded = false },
-                )
-                DropdownMenuItem(
-                    text = { Text("≥ 3.5 ★") },
-                    onClick = { onMinRatingSelected(3.5f); ratingMenuExpanded = false },
-                )
+                listOf(0f, 2.0f, 3.0f, 3.5f).forEach { rating ->
+                    val text = if (rating == 0f) stringResource(R.string.favorite_filter_all) else "≥ $rating★"
+                    DropdownMenuItem(
+                        text = { Text(text) },
+                        onClick = {
+                            onMinRatingSelected(rating)
+                            ratingMenuExpanded = false
+                        },
+                    )
+                }
             }
         }
 
-        // --- Reset Button ---
+        // Reset Filters Button
         if (hasActiveFilters) {
             IconButton(
                 onClick = onResetFilters,

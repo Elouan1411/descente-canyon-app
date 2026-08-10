@@ -16,6 +16,8 @@ import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+import fr.descentecanyon.app.domain.model.FavoriteFolder
+
 enum class FavoriteSortOption {
     DATE_ADDED_DESC,
     DATE_ADDED_ASC,
@@ -32,6 +34,9 @@ data class FavoritesUiState(
     val selectedRegion: String? = null,
     val minRating: Float = 0f,
     val selectedSort: FavoriteSortOption = FavoriteSortOption.DATE_ADDED_DESC,
+    val folders: List<FavoriteFolder> = emptyList(),
+    val selectedFolderId: Int? = null,
+    val canyonFolderMap: Map<Int, Set<Int>> = emptyMap(), // canyonId -> set of folderIds
     val isLoading: Boolean = false,
     val error: String? = null,
 )
@@ -41,6 +46,7 @@ private data class FilterParams(
     val country: String? = null,
     val region: String? = null,
     val minRating: Float = 0f,
+    val folderId: Int? = null,
 )
 
 @HiltViewModel
@@ -50,20 +56,28 @@ class FavoritesViewModel @Inject constructor(
 ) : ViewModel() {
 
     private val _rawFavorites = MutableStateFlow<List<CanyonSummary>>(emptyList())
+    private val _folders = MutableStateFlow<List<FavoriteFolder>>(emptyList())
+    private val _canyonFolderMap = MutableStateFlow<Map<Int, Set<Int>>>(emptyMap())
     private val _filterParams = MutableStateFlow(FilterParams())
     private val _isLoading = MutableStateFlow(true)
     private val _error = MutableStateFlow<String?>(null)
 
     val uiState: StateFlow<FavoritesUiState> = combine(
         _rawFavorites,
-        _filterParams,
-        _isLoading,
-        _error
-    ) { rawList, params, isLoading, error ->
+        _folders,
+        _canyonFolderMap,
+        _filterParams
+    ) { rawList, folders, folderMap, params ->
         val availableCountries = rawList.map { it.pays }.distinct().sorted()
         val availableRegions = rawList.mapNotNull { it.region ?: it.departement }.distinct().sorted()
 
         var filtered = rawList.asSequence()
+
+        if (params.folderId != null) {
+            filtered = filtered.filter { summary ->
+                folderMap[summary.id]?.contains(params.folderId) == true
+            }
+        }
 
         if (!params.country.isNullOrBlank()) {
             filtered = filtered.filter { it.pays.equals(params.country, ignoreCase = true) }
@@ -96,9 +110,14 @@ class FavoritesViewModel @Inject constructor(
             selectedRegion = params.region,
             minRating = params.minRating,
             selectedSort = params.sort,
-            isLoading = isLoading,
-            error = error,
+            folders = folders,
+            selectedFolderId = params.folderId,
+            canyonFolderMap = folderMap,
         )
+    }.combine(_isLoading) { state, isLoading ->
+        state.copy(isLoading = isLoading)
+    }.combine(_error) { state, error ->
+        state.copy(error = error)
     }.stateIn(
         scope = viewModelScope,
         started = SharingStarted.WhileSubscribed(5000),
@@ -107,6 +126,7 @@ class FavoritesViewModel @Inject constructor(
 
     init {
         loadFavorites()
+        loadFolders()
     }
 
     private fun loadFavorites() {
@@ -116,6 +136,68 @@ class FavoritesViewModel @Inject constructor(
                 _rawFavorites.value = favorites
                 _isLoading.value = false
                 _error.value = null
+            }
+        }
+    }
+
+    private fun loadFolders() {
+        viewModelScope.launch {
+            favoritesRepository.getFolders().collect { foldersList ->
+                _folders.value = foldersList
+                
+                // Also update map of canyon -> folder IDs
+                val map = mutableMapOf<Int, MutableSet<Int>>()
+                foldersList.forEach { folder ->
+                    favoritesRepository.getCanyonIdsForFolder(folder.id).collect { canyonIds ->
+                        canyonIds.forEach { canyonId ->
+                            map.getOrPut(canyonId) { mutableSetOf() }.add(folder.id)
+                        }
+                        _canyonFolderMap.value = map.mapValues { it.value.toSet() }
+                    }
+                }
+            }
+        }
+    }
+
+    fun selectFolder(folderId: Int?) {
+        _filterParams.value = _filterParams.value.copy(folderId = folderId)
+    }
+
+    fun createFolder(name: String) {
+        if (name.isBlank()) return
+        viewModelScope.launch {
+            runCatching {
+                favoritesRepository.createFolder(name)
+            }.onFailure {
+                _error.value = "Impossible de créer le dossier."
+            }
+        }
+    }
+
+    fun deleteFolder(folderId: Int) {
+        viewModelScope.launch {
+            runCatching {
+                if (_filterParams.value.folderId == folderId) {
+                    selectFolder(null)
+                }
+                favoritesRepository.deleteFolder(folderId)
+            }.onFailure {
+                _error.value = "Impossible de supprimer le dossier."
+            }
+        }
+    }
+
+    fun toggleCanyonInFolder(canyonId: Int, folderId: Int) {
+        viewModelScope.launch {
+            val currentFolderIds = _canyonFolderMap.value[canyonId] ?: emptySet()
+            if (currentFolderIds.contains(folderId)) {
+                favoritesRepository.removeCanyonFromFolder(canyonId, folderId)
+                val updated = currentFolderIds - folderId
+                _canyonFolderMap.value = _canyonFolderMap.value + (canyonId to updated)
+            } else {
+                favoritesRepository.addCanyonToFolder(canyonId, folderId)
+                val updated = currentFolderIds + folderId
+                _canyonFolderMap.value = _canyonFolderMap.value + (canyonId to updated)
             }
         }
     }
