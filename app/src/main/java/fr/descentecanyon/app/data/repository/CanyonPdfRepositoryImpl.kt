@@ -57,6 +57,7 @@ class CanyonPdfRepositoryImpl @Inject constructor(
                     val blobUrl = item.getString("blobUrl")
                     val uploadedAt = item.getLong("uploadedAt")
                     val mimeType = item.optString("mimeType", "application/pdf")
+                    val uploaderId = item.optString("uploaderId", "").ifBlank { null }
 
                     val existingLocal = canyonPdfDao.getPdfByServerId(serverPdfId)
                     remotePdfs.add(
@@ -70,7 +71,8 @@ class CanyonPdfRepositoryImpl @Inject constructor(
                             remoteUrl = blobUrl,
                             uploadedAt = uploadedAt,
                             mimeType = mimeType,
-                            isDownloaded = existingLocal?.isDownloaded ?: false
+                            isDownloaded = existingLocal?.isDownloaded ?: false,
+                            uploaderId = uploaderId ?: existingLocal?.uploaderId
                         )
                     )
                 }
@@ -111,6 +113,7 @@ class CanyonPdfRepositoryImpl @Inject constructor(
         }
 
         try {
+            val myInstallationId = fr.descentecanyon.app.security.InstallationIdManager.getInstallationId(context)
             val mimeType = context.contentResolver.getType(fileUri) ?: "application/pdf"
             
             // 1. Demander le jeton d'upload direct
@@ -181,6 +184,7 @@ class CanyonPdfRepositoryImpl @Inject constructor(
                 put("fileName", fileName)
                 put("fileSize", fileSize)
                 put("mimeType", mimeType)
+                put("uploaderId", myInstallationId)
             }.toString()
             
             saveConn.outputStream.use { os ->
@@ -195,6 +199,7 @@ class CanyonPdfRepositoryImpl @Inject constructor(
                 val remoteUrl = item.getString("blobUrl")
                 val uploadedAt = item.getLong("uploadedAt")
                 val savedMimeType = item.optString("mimeType", mimeType)
+                val savedUploaderId = item.optString("uploaderId", myInstallationId)
 
                 val entity = CanyonPdfEntity(
                     serverPdfId = serverPdfId,
@@ -205,7 +210,8 @@ class CanyonPdfRepositoryImpl @Inject constructor(
                     remoteUrl = remoteUrl,
                     uploadedAt = uploadedAt,
                     mimeType = savedMimeType,
-                    isDownloaded = false
+                    isDownloaded = false,
+                    uploaderId = savedUploaderId
                 )
 
                 val generatedId = canyonPdfDao.insertOrUpdatePdf(entity)
