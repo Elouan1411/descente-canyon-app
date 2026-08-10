@@ -455,8 +455,8 @@ private fun PdfItemRow(
                             Box(
                                 modifier = Modifier
                                     .fillMaxWidth()
-                                    .wrapContentHeight()
-                                    .clip(RoundedCornerShape(8.dp))
+                                    .padding(horizontal = (-12).dp)
+                                    .clip(RoundedCornerShape(bottomStart = 12.dp, bottomEnd = 12.dp))
                                     .background(colors.surfaceBase),
                                 contentAlignment = Alignment.Center
                             ) {
@@ -465,16 +465,17 @@ private fun PdfItemRow(
                                     contentDescription = pdf.fileName,
                                     modifier = Modifier
                                         .fillMaxWidth()
-                                        .heightIn(max = 400.dp),
-                                    contentScale = androidx.compose.ui.layout.ContentScale.Fit
+                                        .heightIn(max = 650.dp),
+                                    contentScale = androidx.compose.ui.layout.ContentScale.FillWidth
                                 )
                             }
                         } else if (pdf.mimeType == "application/pdf") {
                             Box(
                                 modifier = Modifier
                                     .fillMaxWidth()
-                                    .height(400.dp)
-                                    .clip(RoundedCornerShape(8.dp))
+                                    .padding(horizontal = (-12).dp)
+                                    .height(550.dp)
+                                    .clip(RoundedCornerShape(bottomStart = 12.dp, bottomEnd = 12.dp))
                                     .background(colors.surfaceBase)
                             ) {
                                 PdfViewer(file = file)
