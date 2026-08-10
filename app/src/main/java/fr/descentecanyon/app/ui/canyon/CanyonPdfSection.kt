@@ -426,7 +426,7 @@ private fun PdfItemRow(
                         )
                     }
                 }
-            }  }
+            }
 
             AnimatedVisibility(visible = isItemExpanded) {
                 Column(

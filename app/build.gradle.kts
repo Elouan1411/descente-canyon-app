@@ -40,7 +40,7 @@ val fileVersionCode = versionProperties.getProperty("VERSION_CODE")?.toIntOrNull
 val fileVersionName = versionProperties.getProperty("VERSION_NAME")?.takeIf { it.isNotBlank() } ?: "1.0.0"
 val ciVersionCode = providers.gradleProperty("ciVersionCode").orNull?.toIntOrNull() ?: fileVersionCode
 val ciVersionName = providers.gradleProperty("ciVersionName").orNull ?: fileVersionName
-val pythonBinary = providers.gradleProperty("pythonBinary").orNull?.takeIf { it.isNotBlank() } ?: "/usr/local/bin/python3"
+val pythonBinary = providers.gradleProperty("pythonBinary").orNull?.takeIf { it.isNotBlank() } ?: "python3"
 val hasReleaseSigning = listOf(
     releaseKeystoreFile,
     releaseStorePassword,
