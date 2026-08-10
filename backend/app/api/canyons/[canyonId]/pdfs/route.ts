@@ -37,7 +37,7 @@ export async function POST(
 
   if (contentTypeHeader.includes('application/json')) {
     const json = await req.json();
-    const { id, blobUrl, fileName, fileSize, mimeType } = json;
+    const { id, blobUrl, fileName, fileSize, mimeType, uploaderId } = json;
 
     if (!blobUrl || !fileName || !fileSize) {
       return NextResponse.json({ error: 'Missing required metadata fields' }, { status: 400 });
@@ -52,6 +52,7 @@ export async function POST(
       blobUrl,
       uploadedAt: Date.now(),
       mimeType: mimeType || 'application/pdf',
+      uploaderId: uploaderId || undefined,
     };
 
     await insertPdfRecord(record);
@@ -60,6 +61,7 @@ export async function POST(
     const formData = await req.formData();
     const file = formData.get('file') as File | null;
     const requestedMimeType = (formData.get('mimeType') as string | null) || file?.type || 'application/pdf';
+    const uploaderId = (formData.get('uploaderId') as string | null) || undefined;
 
     if (!file) {
       return NextResponse.json({ error: 'No file provided' }, { status: 400 });
@@ -82,6 +84,7 @@ export async function POST(
       blobUrl: blob.url,
       uploadedAt: Date.now(),
       mimeType: requestedMimeType,
+      uploaderId,
     };
 
     await insertPdfRecord(record);

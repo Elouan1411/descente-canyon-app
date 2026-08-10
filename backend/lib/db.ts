@@ -8,6 +8,7 @@ export interface CanyonPdfRecord {
   blobUrl: string;
   uploadedAt: number;
   mimeType?: string;
+  uploaderId?: string;
 }
 
 export interface AppReleaseRecord {
@@ -36,6 +37,9 @@ export async function initDb() {
       ALTER TABLE canyon_pdfs ADD COLUMN IF NOT EXISTS mime_type VARCHAR(100) DEFAULT 'application/pdf';
     `;
     await sql`
+      ALTER TABLE canyon_pdfs ADD COLUMN IF NOT EXISTS uploader_id VARCHAR(255) DEFAULT NULL;
+    `;
+    await sql`
       CREATE INDEX IF NOT EXISTS idx_canyon_id ON canyon_pdfs(canyon_id);
     `;
 
@@ -61,7 +65,7 @@ export async function initDb() {
 export async function getPdfsForCanyon(canyonId: number): Promise<CanyonPdfRecord[]> {
   try {
     const { rows } = await sql`
-      SELECT id, canyon_id, file_name, file_size, blob_url, uploaded_at, mime_type 
+      SELECT id, canyon_id, file_name, file_size, blob_url, uploaded_at, mime_type, uploader_id 
       FROM canyon_pdfs 
       WHERE canyon_id = ${canyonId}
       ORDER BY uploaded_at DESC
@@ -74,6 +78,7 @@ export async function getPdfsForCanyon(canyonId: number): Promise<CanyonPdfRecor
       blobUrl: r.blob_url,
       uploadedAt: Number(r.uploaded_at),
       mimeType: r.mime_type || 'application/pdf',
+      uploaderId: r.uploader_id || undefined,
     }));
   } catch (err) {
     await initDb();
@@ -84,9 +89,10 @@ export async function getPdfsForCanyon(canyonId: number): Promise<CanyonPdfRecor
 export async function insertPdfRecord(pdf: CanyonPdfRecord): Promise<void> {
   await initDb();
   const mimeType = pdf.mimeType || 'application/pdf';
+  const uploaderId = pdf.uploaderId || null;
   await sql`
-    INSERT INTO canyon_pdfs (id, canyon_id, file_name, file_size, blob_url, uploaded_at, mime_type)
-    VALUES (${pdf.id}, ${pdf.canyonId}, ${pdf.fileName}, ${pdf.fileSize}, ${pdf.blobUrl}, ${pdf.uploadedAt}, ${mimeType})
+    INSERT INTO canyon_pdfs (id, canyon_id, file_name, file_size, blob_url, uploaded_at, mime_type, uploader_id)
+    VALUES (${pdf.id}, ${pdf.canyonId}, ${pdf.fileName}, ${pdf.fileSize}, ${pdf.blobUrl}, ${pdf.uploadedAt}, ${mimeType}, ${uploaderId})
   `;
 }
 
