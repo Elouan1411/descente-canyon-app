@@ -27,14 +27,15 @@ class FavoritesRepositoryImpl @Inject constructor(
 
     override suspend fun addFavorite(canyonId: Int) {
         database.withTransaction {
-            canyonDao.setFavorite(canyonId, true)
+            val now = System.currentTimeMillis()
+            canyonDao.setFavorite(canyonId, true, now)
             searchIndexDao.setFavorite(canyonId, true)
         }
     }
 
     override suspend fun removeFavorite(canyonId: Int) {
         database.withTransaction {
-            canyonDao.setFavorite(canyonId, false)
+            canyonDao.setFavorite(canyonId, false, null)
             searchIndexDao.setFavorite(canyonId, false)
         }
     }

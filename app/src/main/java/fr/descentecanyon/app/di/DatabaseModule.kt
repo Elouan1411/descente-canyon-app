@@ -387,6 +387,12 @@ object DatabaseModule {
         }
     }
 
+    private val MIGRATION_17_18 = object : Migration(17, 18) {
+        override fun migrate(db: SupportSQLiteDatabase) {
+            ensureTableColumn(db, "canyons", "favoriteAddedAt", "INTEGER DEFAULT NULL")
+        }
+    }
+
     @Provides
     @Singleton
     fun provideDatabase(@ApplicationContext context: Context): DescenteCanyonDatabase {
@@ -411,6 +417,7 @@ object DatabaseModule {
             .addMigrations(MIGRATION_14_15)
             .addMigrations(MIGRATION_15_16)
             .addMigrations(MIGRATION_16_17)
+            .addMigrations(MIGRATION_17_18)
             .createFromAsset(PREPACKAGED_DATABASE_ASSET_PATH)
 
         return builder.build()
