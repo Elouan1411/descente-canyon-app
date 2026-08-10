@@ -14,6 +14,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.OpenInNew
 import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.Download
 import androidx.compose.material.icons.filled.ExpandLess
 import androidx.compose.material.icons.filled.ExpandMore
@@ -35,6 +36,7 @@ import androidx.compose.ui.unit.sp
 import fr.descentecanyon.app.R
 import fr.descentecanyon.app.data.local.entity.CanyonPdfEntity
 import fr.descentecanyon.app.data.repository.CanyonPdfRepository
+import fr.descentecanyon.app.security.InstallationIdManager
 import fr.descentecanyon.app.ui.design.DcColors
 import fr.descentecanyon.app.ui.design.LocalDcColors
 import kotlinx.coroutines.launch
@@ -51,13 +53,15 @@ fun CanyonPdfSection(
     val context = LocalContext.current
     val scope = rememberCoroutineScope()
     val colors = LocalDcColors.current
+    val currentInstallationId = remember(context) { InstallationIdManager.getInstallationId(context) }
 
     val pdfList by pdfRepository.getPdfsForCanyon(canyonId).collectAsState(initial = emptyList())
 
     var isExpanded by remember { mutableStateOf(true) }
     var isUploading by remember { mutableStateOf(false) }
     var isSyncing by remember { mutableStateOf(false) }
-    var selectedPdfToView by remember { mutableStateOf<CanyonPdfEntity?>(null) }
+    var pdfToDelete by remember { mutableStateOf<CanyonPdfEntity?>(null) }
+    var isDeleting by remember { mutableStateOf(false) }
 
     LaunchedEffect(canyonId) {
         isSyncing = true
@@ -106,7 +110,6 @@ fun CanyonPdfSection(
                     context.getString(R.string.pdf_upload_success),
                     Toast.LENGTH_SHORT
                 ).show()
-                // Sync automatically after upload
                 pdfRepository.syncPdfsForCanyon(context, canyonId)
             } else {
                 Toast.makeText(
@@ -116,6 +119,46 @@ fun CanyonPdfSection(
                 ).show()
             }
         }
+    }
+
+    if (pdfToDelete != null) {
+        AlertDialog(
+            onDismissRequest = { if (!isDeleting) pdfToDelete = null },
+            title = { Text("Supprimer le document", fontWeight = FontWeight.Bold) },
+            text = { Text("Voulez-vous vraiment supprimer '${pdfToDelete?.fileName}' ? Cette action est définitive.") },
+            confirmButton = {
+                Button(
+                    onClick = {
+                        val target = pdfToDelete ?: return@Button
+                        isDeleting = true
+                        scope.launch {
+                            val res = pdfRepository.deletePdf(context, target)
+                            isDeleting = false
+                            pdfToDelete = null
+                            if (res.isSuccess) {
+                                Toast.makeText(context, "Document supprimé.", Toast.LENGTH_SHORT).show()
+                                pdfRepository.syncPdfsForCanyon(context, canyonId)
+                            } else {
+                                Toast.makeText(context, "Erreur lors de la suppression.", Toast.LENGTH_LONG).show()
+                            }
+                        }
+                    },
+                    enabled = !isDeleting,
+                    colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.error)
+                ) {
+                    if (isDeleting) {
+                        CircularProgressIndicator(modifier = Modifier.size(16.dp), color = MaterialTheme.colorScheme.onError, strokeWidth = 2.dp)
+                    } else {
+                        Text("Supprimer")
+                    }
+                }
+            },
+            dismissButton = {
+                TextButton(onClick = { pdfToDelete = null }, enabled = !isDeleting) {
+                    Text("Annuler")
+                }
+            }
+        )
     }
 
     Surface(
@@ -229,8 +272,10 @@ fun CanyonPdfSection(
                         )
                     } else {
                         pdfList.forEach { pdf ->
+                            val isMyUpload = !pdf.uploaderId.isNullOrBlank() && pdf.uploaderId == currentInstallationId
                             PdfItemRow(
                                 pdf = pdf,
+                                isMyUpload = isMyUpload,
                                 onOpenExternal = {
                                     if (pdf.isDownloaded) {
                                         pdfRepository.openPdfWithExternalApp(context, pdf)
@@ -248,6 +293,9 @@ fun CanyonPdfSection(
                                         pdfRepository.downloadPdfFile(context, pdf)
                                     }
                                 },
+                                onDeleteClick = {
+                                    pdfToDelete = pdf
+                                },
                                 colors = colors,
                             )
                         }
@@ -261,8 +309,10 @@ fun CanyonPdfSection(
 @Composable
 private fun PdfItemRow(
     pdf: CanyonPdfEntity,
+    isMyUpload: Boolean,
     onOpenExternal: () -> Unit,
     onDownloadClick: () -> Unit,
+    onDeleteClick: () -> Unit,
     colors: DcColors,
 ) {
     var isItemExpanded by remember { mutableStateOf(false) }
@@ -340,6 +390,16 @@ private fun PdfItemRow(
                 }
 
                 Row(verticalAlignment = Alignment.CenterVertically) {
+                    if (isMyUpload) {
+                        IconButton(onClick = onDeleteClick) {
+                            Icon(
+                                imageVector = Icons.Default.Delete,
+                                contentDescription = "Supprimer mon document",
+                                tint = MaterialTheme.colorScheme.error.copy(alpha = 0.85f),
+                            )
+                        }
+                    }
+
                     if (pdf.isDownloaded) {
                         IconButton(onClick = onOpenExternal) {
                             Icon(
@@ -366,7 +426,7 @@ private fun PdfItemRow(
                         )
                     }
                 }
-            }
+            }  }
 
             AnimatedVisibility(visible = isItemExpanded) {
                 Column(
