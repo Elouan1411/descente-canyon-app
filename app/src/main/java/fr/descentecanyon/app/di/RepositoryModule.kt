@@ -119,4 +119,10 @@ abstract class RepositoryModule {
     abstract fun bindAppUpdateRepository(
         impl: fr.descentecanyon.app.data.repository.AppUpdateRepositoryImpl,
     ): fr.descentecanyon.app.data.repository.AppUpdateRepository
+
+    @Binds
+    @Singleton
+    abstract fun bindAccessPassRepository(
+        impl: fr.descentecanyon.app.data.repository.AccessPassRepositoryImpl,
+    ): fr.descentecanyon.app.data.repository.AccessPassRepository
 }

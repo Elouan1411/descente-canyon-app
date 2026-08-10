@@ -64,6 +64,7 @@ import javax.inject.Inject
 class MainActivity : ComponentActivity() {
     @Inject lateinit var appStartupCoordinator: AppStartupCoordinator
     @Inject lateinit var appUpdateRepository: fr.descentecanyon.app.data.repository.AppUpdateRepository
+    @Inject lateinit var accessPassRepository: fr.descentecanyon.app.data.repository.AccessPassRepository
 
     private val incomingLaunchTargets = MutableSharedFlow<AppLaunchTarget>(extraBufferCapacity = 1)
 
@@ -80,6 +81,7 @@ class MainActivity : ComponentActivity() {
                 AppStartupScreen(
                     appStartupCoordinator = appStartupCoordinator,
                     appUpdateRepository = appUpdateRepository,
+                    accessPassRepository = accessPassRepository,
                     initialLaunchTarget = initialLaunchTarget,
                     incomingLaunchTargets = incomingLaunchTargets,
                 )
@@ -101,9 +103,16 @@ class MainActivity : ComponentActivity() {
 private fun AppStartupScreen(
     appStartupCoordinator: AppStartupCoordinator,
     appUpdateRepository: fr.descentecanyon.app.data.repository.AppUpdateRepository,
+    accessPassRepository: fr.descentecanyon.app.data.repository.AccessPassRepository,
     initialLaunchTarget: AppLaunchTarget,
     incomingLaunchTargets: MutableSharedFlow<AppLaunchTarget>,
 ) {
+    val context = androidx.compose.ui.platform.LocalContext.current
+    var isUnlocked by remember { mutableStateOf(accessPassRepository.isAppUnlocked(context)) }
+    var isVerifying by remember { mutableStateOf(false) }
+    var activationError by remember { mutableStateOf<String?>(null) }
+    val scope = rememberCoroutineScope()
+
     val retryVersion = remember { mutableIntStateOf(0) }
     val startupState by produceState<StartupUiState>(
         initialValue = StartupUiState.Resolving,
@@ -123,6 +132,29 @@ private fun AppStartupScreen(
             Log.e(TAG, "Startup initialization failed", throwable)
             StartupUiState.Error
         }
+    }
+
+    if (!isUnlocked) {
+        fr.descentecanyon.app.ui.activation.AppActivationDialog(
+            isVerifying = isVerifying,
+            errorMessage = activationError,
+            onVerifyClick = { password ->
+                scope.launch {
+                    isVerifying = true
+                    activationError = null
+                    val result = accessPassRepository.verifyAndUnlockApp(context, password)
+                    isVerifying = false
+                    result.fold(
+                        onSuccess = {
+                            isUnlocked = true
+                        },
+                        onFailure = { err ->
+                            activationError = err.message ?: "Erreur de vérification"
+                        }
+                    )
+                }
+            }
+        )
     }
 
     when (val state = startupState) {
