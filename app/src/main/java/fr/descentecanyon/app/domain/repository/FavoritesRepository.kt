@@ -30,4 +30,6 @@ interface FavoritesRepository {
     fun getFolderIdsForCanyon(canyonId: Int): Flow<List<Int>>
 
     fun getCanyonIdsForFolder(folderId: Int): Flow<List<Int>>
+
+    fun getAllCanyonFolderMap(): Flow<Map<Int, Set<Int>>>
 }

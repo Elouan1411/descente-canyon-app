@@ -127,6 +127,7 @@ class FavoritesViewModel @Inject constructor(
     init {
         loadFavorites()
         loadFolders()
+        loadCanyonFolderMap()
     }
 
     private fun loadFavorites() {
@@ -144,17 +145,14 @@ class FavoritesViewModel @Inject constructor(
         viewModelScope.launch {
             favoritesRepository.getFolders().collect { foldersList ->
                 _folders.value = foldersList
-                
-                // Also update map of canyon -> folder IDs
-                val map = mutableMapOf<Int, MutableSet<Int>>()
-                foldersList.forEach { folder ->
-                    favoritesRepository.getCanyonIdsForFolder(folder.id).collect { canyonIds ->
-                        canyonIds.forEach { canyonId ->
-                            map.getOrPut(canyonId) { mutableSetOf() }.add(folder.id)
-                        }
-                        _canyonFolderMap.value = map.mapValues { it.value.toSet() }
-                    }
-                }
+            }
+        }
+    }
+
+    private fun loadCanyonFolderMap() {
+        viewModelScope.launch {
+            favoritesRepository.getAllCanyonFolderMap().collect { map ->
+                _canyonFolderMap.value = map
             }
         }
     }
@@ -192,12 +190,8 @@ class FavoritesViewModel @Inject constructor(
             val currentFolderIds = _canyonFolderMap.value[canyonId] ?: emptySet()
             if (currentFolderIds.contains(folderId)) {
                 favoritesRepository.removeCanyonFromFolder(canyonId, folderId)
-                val updated = currentFolderIds - folderId
-                _canyonFolderMap.value = _canyonFolderMap.value + (canyonId to updated)
             } else {
                 favoritesRepository.addCanyonToFolder(canyonId, folderId)
-                val updated = currentFolderIds + folderId
-                _canyonFolderMap.value = _canyonFolderMap.value + (canyonId to updated)
             }
         }
     }

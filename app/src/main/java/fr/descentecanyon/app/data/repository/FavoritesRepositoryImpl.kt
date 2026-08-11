@@ -101,4 +101,14 @@ class FavoritesRepositoryImpl @Inject constructor(
     override fun getCanyonIdsForFolder(folderId: Int): Flow<List<Int>> {
         return favoriteFolderDao.getCanyonIdsForFolder(folderId)
     }
+
+    override fun getAllCanyonFolderMap(): Flow<Map<Int, Set<Int>>> {
+        return favoriteFolderDao.getAllCrossRefs().map { crossRefs ->
+            val map = mutableMapOf<Int, MutableSet<Int>>()
+            crossRefs.forEach { ref ->
+                map.getOrPut(ref.canyonId) { mutableSetOf() }.add(ref.folderId)
+            }
+            map.mapValues { it.value.toSet() }
+        }
+    }
 }
