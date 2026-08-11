@@ -508,8 +508,6 @@ Fotos und Wasserstände werden weiterhin online abgerufen, wenn ein Netzwerk ver
     <string name="share_options_title">Canyon teilen</string>
     <string name="share_option_simple_title">Canyon-Seite teilen</string>
     <string name="share_option_simple_subtitle">Nur den Link zur Canyon-Seite senden.</string>
-    <string name="share_option_safety_title">Abreise melden (Sicherheit)</string>
-    <string name="share_option_safety_subtitle">Startzeit, GPS-Startposition und geschätzte Zeiten senden.</string>
     <string name="share_departure_locating">GPS-Position wird abgerufen...</string>
     <string name="share_departure_intro">Hallo! Kurze Nachricht, um Bescheid zu geben, dass wir in die Schlucht starten.</string>
     <string name="share_departure_header">Canyon-Start: %1$s</string>
@@ -521,4 +519,88 @@ Fotos und Wasserstände werden weiterhin online abgerufen, wenn ein Netzwerk ver
     <string name="share_departure_descent">Canyon-Abstieg: %1$s</string>
     <string name="share_departure_return">Rückweg: %1$s</string>
     <string name="share_departure_total_estimated">Geschätzte Gesamtdauer: ~%1$s</string>
+    <string name="favorite_filter_all">All</string>
+    <string name="favorite_filter_country">Country</string>
+    <string name="favorite_filter_rating">Rating</string>
+    <string name="favorite_filter_region">Region</string>
+    <string name="favorite_folder_all">All favorites</string>
+    <string name="favorite_folder_create">New folder</string>
+    <string name="favorite_folder_create_title">Create a favorite folder</string>
+    <string name="favorite_folder_delete_confirm">Are you sure you want to delete the folder \"%1$s\"? Favorites will not be deleted.</string>
+    <string name="favorite_folder_delete_title">Delete folder</string>
+    <string name="favorite_folder_manage">Manage folders</string>
+    <string name="favorite_folder_manage_title">Add to folders</string>
+    <string name="favorite_folder_name_hint">Folder name (e.g. Corsica 2026)</string>
+    <string name="favorite_folders_title">Folders</string>
+    <string name="favorite_no_matching_filters">No favorites match the selected filters.</string>
+    <string name="favorite_reset_filters">Reset filters</string>
+    <string name="favorite_sort_date_asc">Date added (oldest)</string>
+    <string name="favorite_sort_date_desc">Date added (newest)</string>
+    <string name="favorite_sort_name_asc">Name (A-Z)</string>
+    <string name="favorite_sort_rating_desc">Rating (highest)</string>
+    <string name="map_follow_heading">Suivre l’orientation</string>
+    <string name="map_heading_unavailable">La boussole n’est pas disponible sur cet appareil.</string>
+    <string name="map_hide_watershed">Masquer le bassin</string>
+    <string name="map_location_permission_denied">La carte reste disponible sans votre position.</string>
+    <string name="map_location_settings_unavailable">Activez la localisation pour utiliser cette fonction.</string>
+    <string name="map_my_location">Ma position</string>
+    <string name="map_navigation_unavailable">Aucune application de navigation n’est disponible.</string>
+    <string name="map_points_panel_count">%1$d point(s) GPS</string>
+    <string name="map_points_panel_title">Points du canyon</string>
+    <string name="map_reset_north">Orienter la carte vers le nord</string>
+    <string name="map_watershed">Bassin versant</string>
+    <string name="navigate_chooser_title">Choisir une application de navigation</string>
+    <string name="notification_channel_debits_body">Nouveaux débits détectés sur les canyons suivis.</string>
+    <string name="notification_channel_debits_title">Débits suivis</string>
+    <string name="notification_channel_forum_body">Nouveaux messages détectés sur les rubriques suivies.</string>
+    <string name="notification_channel_forum_title">Forum suivi</string>
+    <string name="notification_debit_group_title">%1$d nouveaux débits suivis</string>
+    <string name="notification_forum_group_title">%1$d nouveaux messages forum</string>
+    <string name="notifications_activity_empty_body">Les nouveaux débits et messages suivis apparaîtront ici.</string>
+    <string name="notifications_activity_empty_title">Aucune activité récente</string>
+    <string name="notifications_activity_subtitle">Les derniers débits et messages détectés pour tes suivis.</string>
+    <string name="notifications_activity_title">Activité suivie</string>
+    <string name="notifications_canyon_follow_action">Suivre les nouveaux débits</string>
+    <string name="notifications_canyon_unfollow_action">Arrêter de suivre les débits</string>
+    <string name="notifications_canyons_empty_body">Ouvre une fiche canyon puis active la cloche des débits.</string>
+    <string name="notifications_canyons_empty_title">Aucun canyon suivi</string>
+    <string name="notifications_canyons_subtitle">Active un canyon depuis sa fiche pour recevoir les nouveaux débits.</string>
+    <string name="notifications_canyons_title">Canyons suivis</string>
+    <string name="notifications_clear_activity">Vider l\'activité</string>
+    <string name="notifications_followed_canyon_meta">Canyon #%1$d</string>
+    <string name="notifications_followed_forum_meta">Rubrique surveillée</string>
+    <string name="notifications_forum_actions">Actions du sujet</string>
+    <string name="notifications_forum_category_badge">Rubrique suivie</string>
+    <string name="notifications_forum_empty_body">Depuis l\'accueil, ouvre l\'onglet forum puis active la cloche d\'une rubrique.</string>
+    <string name="notifications_forum_empty_title">Aucune rubrique suivie</string>
+    <string name="notifications_forum_filter_all">Toutes les rubriques</string>
+    <string name="notifications_forum_filter_title">Rubrique</string>
+    <string name="notifications_forum_follow_action">Suivre cette rubrique</string>
+    <string name="notifications_forum_subtitle">Active une rubrique depuis le flux forum de l\'accueil.</string>
+    <string name="notifications_forum_thread_badge">Sujet suivi</string>
+    <string name="notifications_forum_thread_follow_action">Suivre ce sujet</string>
+    <string name="notifications_forum_thread_unfollow_action">Arrêter de suivre ce sujet</string>
+    <string name="notifications_forum_title">Rubriques forum suivies</string>
+    <string name="notifications_forum_unfollow_action">Arrêter de suivre cette rubrique</string>
+    <string name="notifications_open">Ouvrir</string>
+    <string name="notifications_permission_action">Autoriser</string>
+    <string name="notifications_permission_body">Android bloque encore les alertes. Autorise les notifications pour recevoir les nouveaux débits et messages suivis.</string>
+    <string name="notifications_permission_title">Autoriser les notifications</string>
+    <string name="notifications_screen_title">Notifications</string>
+    <string name="notifications_unfollow">Retirer</string>
+    <string name="share_departure_dialog_confirm">Share my departure</string>
+    <string name="share_departure_dialog_explanation">This feature allows you to quickly share your canyon departure with your relatives or emergency contacts.
+
+The sent message will contain:
+• The canyon details page
+• Departure time and your exact starting GPS position
+• Estimated times (approach, descent, return) to calculate expected exit time
+
+Would you like to generate and share your departure?</string>
+    <string name="share_departure_dialog_title">Notify departure</string>
+    <string name="update_dialog_button">Update</string>
+    <string name="update_dialog_downloading">Downloading update...</string>
+    <string name="update_dialog_later">Later</string>
+    <string name="update_dialog_title">Update Available</string>
+    <string name="update_dialog_version">Version %1$s is available.</string>
 </resources>
