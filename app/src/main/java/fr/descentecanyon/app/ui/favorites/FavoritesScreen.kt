@@ -203,25 +203,11 @@ fun FavoritesScreen(
                             FavoriteDismissItem(
                                 onRemove = { viewModel.removeFavorite(canyon.id) },
                             ) {
-                                Box(modifier = Modifier.fillMaxWidth()) {
-                                    CanyonSummaryCard(
-                                        canyon = canyon,
-                                        onClick = { onCanyonClick(canyon.id) },
-                                    )
-                                    IconButton(
-                                        onClick = { canyonForFolderAssignment = canyon },
-                                        modifier = Modifier
-                                            .align(Alignment.BottomEnd)
-                                            .padding(bottom = 4.dp, end = 4.dp),
-                                    ) {
-                                        Icon(
-                                            imageVector = Icons.Default.FolderOpen,
-                                            contentDescription = stringResource(R.string.favorite_folder_manage),
-                                            tint = MaterialTheme.colorScheme.primary,
-                                            modifier = Modifier.size(20.dp),
-                                        )
-                                    }
-                                }
+                                CanyonSummaryCard(
+                                    canyon = canyon,
+                                    onClick = { onCanyonClick(canyon.id) },
+                                    onFolderClick = { canyonForFolderAssignment = canyon },
+                                )
                             }
                         }
                     }
