@@ -327,9 +327,11 @@ private fun PdfItemRow(
         color = colors.surfaceRaised,
         border = androidx.compose.foundation.BorderStroke(0.5.dp, colors.borderSubtle),
     ) {
-        Column(modifier = Modifier.padding(12.dp)) {
+        Column(modifier = Modifier.fillMaxWidth()) {
             Row(
-                modifier = Modifier.fillMaxWidth(),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(12.dp),
                 verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.SpaceBetween,
             ) {
@@ -429,15 +431,12 @@ private fun PdfItemRow(
             }
 
             AnimatedVisibility(visible = isItemExpanded) {
-                Column(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(top = 12.dp)
-                ) {
+                Column(modifier = Modifier.fillMaxWidth()) {
                     if (!pdf.isDownloaded || pdf.localPath == null) {
                         Box(
                             modifier = Modifier
                                 .fillMaxWidth()
+                                .padding(start = 12.dp, end = 12.dp, bottom = 12.dp)
                                 .height(120.dp)
                                 .clip(RoundedCornerShape(8.dp))
                                 .background(colors.surfaceBase),
@@ -455,7 +454,6 @@ private fun PdfItemRow(
                             Box(
                                 modifier = Modifier
                                     .fillMaxWidth()
-                                    .padding(horizontal = (-12).dp)
                                     .clip(RoundedCornerShape(bottomStart = 12.dp, bottomEnd = 12.dp))
                                     .background(colors.surfaceBase),
                                 contentAlignment = Alignment.Center
@@ -473,7 +471,6 @@ private fun PdfItemRow(
                             Box(
                                 modifier = Modifier
                                     .fillMaxWidth()
-                                    .padding(horizontal = (-12).dp)
                                     .height(550.dp)
                                     .clip(RoundedCornerShape(bottomStart = 12.dp, bottomEnd = 12.dp))
                                     .background(colors.surfaceBase)
@@ -484,7 +481,7 @@ private fun PdfItemRow(
                             Box(
                                 modifier = Modifier
                                     .fillMaxWidth()
-                                    .padding(16.dp)
+                                    .padding(12.dp)
                                     .clip(RoundedCornerShape(8.dp))
                                     .background(colors.surfaceBase),
                                 contentAlignment = Alignment.Center
