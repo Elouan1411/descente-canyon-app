@@ -10,6 +10,7 @@ import android.graphics.Rect
 import android.os.Bundle
 import android.util.Log
 import android.view.Gravity
+import android.view.View
 import androidx.annotation.ColorInt
 import androidx.core.content.ContextCompat
 import androidx.compose.runtime.Composable
@@ -17,6 +18,8 @@ import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.unit.Dp
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
@@ -36,6 +39,7 @@ import org.maplibre.android.camera.CameraUpdateFactory
 import org.maplibre.android.geometry.LatLng
 import org.maplibre.android.geometry.LatLngBounds
 import org.maplibre.android.maps.MapLibreMap
+import org.maplibre.android.maps.MapLibreMapOptions
 import org.maplibre.android.maps.MapView
 import org.maplibre.android.maps.Style
 import org.maplibre.android.style.expressions.Expression
@@ -144,6 +148,9 @@ fun MapLibreView(
     userBearingDegrees: Double? = null,
     userTrackingMode: UserTrackingMode = UserTrackingMode.NONE,
     positionCompassWithControls: Boolean = false,
+    compassTopMargin: Dp? = null,
+    compassEndMargin: Dp = 12.dp,
+    compassFadeFacingNorth: Boolean = true,
     onMarkerClick: (Int) -> Unit,
     onMapInteraction: () -> Unit = {},
     onVisibleBoundsChanged: (LatLngBounds) -> Unit = {},
@@ -163,9 +170,20 @@ fun MapLibreView(
     val context = LocalContext.current
     val lifecycleOwner = LocalLifecycleOwner.current
     val renderState = remember { MapRenderState(context) }
-    val mapView = remember {
+    // Insets settle after composition during a rotation. Keep the renderer instance stable
+    // while its compass margins are refreshed by updateData.
+    val mapOptions = remember(context) {
+        createMapOptions(
+            context = context,
+            positionCompassWithControls = positionCompassWithControls,
+            compassTopMargin = compassTopMargin,
+            compassEndMargin = compassEndMargin,
+            compassFadeFacingNorth = compassFadeFacingNorth,
+        )
+    }
+    val mapView = remember(mapOptions) {
         MapLibre.getInstance(context)
-        MapView(context).apply { onCreate(Bundle()) }
+        MapView(context, mapOptions).apply { onCreate(Bundle()) }
     }
 
     DisposableEffect(lifecycleOwner, mapView) {
@@ -188,6 +206,22 @@ fun MapLibreView(
         }
     }
 
+    DisposableEffect(mapView) {
+        val refreshCompass = Runnable { renderState.refreshCompass() }
+        val listener = View.OnLayoutChangeListener { _, left, top, right, bottom, oldLeft, oldTop, oldRight, oldBottom ->
+            if (right - left != oldRight - oldLeft || bottom - top != oldBottom - oldTop) {
+                // MapLibre posts its own UI reset after this layout pass.
+                mapView.removeCallbacks(refreshCompass)
+                mapView.postDelayed(refreshCompass, 100L)
+            }
+        }
+        mapView.addOnLayoutChangeListener(listener)
+        onDispose {
+            mapView.removeOnLayoutChangeListener(listener)
+            mapView.removeCallbacks(refreshCompass)
+        }
+    }
+
     AndroidView(
         factory = {
             mapView.apply {
@@ -198,6 +232,9 @@ fun MapLibreView(
                         onMapInteraction = onMapInteraction,
                         styleUri = styleUri,
                         positionCompassWithControls = positionCompassWithControls,
+                        compassTopMargin = compassTopMargin,
+                        compassEndMargin = compassEndMargin,
+                        compassFadeFacingNorth = compassFadeFacingNorth,
                     )
                 }
             }
@@ -211,6 +248,9 @@ fun MapLibreView(
                 userBearingDegrees = userBearingDegrees,
                 userTrackingMode = userTrackingMode,
                 positionCompassWithControls = positionCompassWithControls,
+                compassTopMargin = compassTopMargin,
+                compassEndMargin = compassEndMargin,
+                compassFadeFacingNorth = compassFadeFacingNorth,
                 onMarkerClick = onMarkerClick,
                 onMapInteraction = onMapInteraction,
                 onVisibleBoundsChanged = onVisibleBoundsChanged,
@@ -230,6 +270,45 @@ fun MapLibreView(
     )
 }
 
+private fun createMapOptions(
+    context: android.content.Context,
+    positionCompassWithControls: Boolean,
+    compassTopMargin: Dp?,
+    compassEndMargin: Dp,
+    compassFadeFacingNorth: Boolean,
+): MapLibreMapOptions {
+    val density = context.resources.displayMetrics.density
+    return MapLibreMapOptions()
+        .compassEnabled(true)
+        .compassFadesWhenFacingNorth(compassFadeFacingNorth)
+        .apply {
+            when {
+                compassTopMargin != null -> {
+                    compassGravity(Gravity.END or Gravity.TOP)
+                    compassMargins(
+                        intArrayOf(
+                            0,
+                            (compassTopMargin.value * density).roundToInt(),
+                            (compassEndMargin.value * density).roundToInt(),
+                            0,
+                        )
+                    )
+                }
+                positionCompassWithControls -> {
+                    compassGravity(Gravity.END or Gravity.CENTER_VERTICAL)
+                    compassMargins(
+                        intArrayOf(
+                            0,
+                            0,
+                            (compassEndMargin.value * density).roundToInt(),
+                            (58 * density).roundToInt(),
+                        )
+                    )
+                }
+            }
+        }
+}
+
 private class MapRenderState(
     private val context: android.content.Context,
 ) {
@@ -245,6 +324,9 @@ private class MapRenderState(
     private var userBearingDegrees: Double? = null
     private var userTrackingMode: UserTrackingMode = UserTrackingMode.NONE
     private var positionCompassWithControls: Boolean = false
+    private var compassTopMargin: Dp? = null
+    private var compassEndMargin: Dp = 12.dp
+    private var compassFadeFacingNorth: Boolean = true
     private var onMarkerClick: (Int) -> Unit = {}
     private var onMapInteraction: () -> Unit = {}
     private var onVisibleBoundsChanged: (LatLngBounds) -> Unit = {}
@@ -274,15 +356,22 @@ private class MapRenderState(
         onMapInteraction: () -> Unit,
         styleUri: String,
         positionCompassWithControls: Boolean,
+        compassTopMargin: Dp?,
+        compassEndMargin: Dp,
+        compassFadeFacingNorth: Boolean,
     ) {
         this.map = map
         this.onMarkerClick = onMarkerClick
         this.onMapInteraction = onMapInteraction
         this.styleUri = styleUri
         this.positionCompassWithControls = positionCompassWithControls
+        this.compassTopMargin = compassTopMargin
+        this.compassEndMargin = compassEndMargin
+        this.compassFadeFacingNorth = compassFadeFacingNorth
         configureCompass(map)
         map.setStyle(Style.Builder().fromUri(styleUri)) {
             renderMode = null
+            configureCompass(map)
             if (!listenersAttached) {
                 attachListeners(map)
                 listenersAttached = true
@@ -302,6 +391,9 @@ private class MapRenderState(
         userBearingDegrees: Double?,
         userTrackingMode: UserTrackingMode,
         positionCompassWithControls: Boolean,
+        compassTopMargin: Dp?,
+        compassEndMargin: Dp,
+        compassFadeFacingNorth: Boolean,
         onMarkerClick: (Int) -> Unit,
         onMapInteraction: () -> Unit,
         onVisibleBoundsChanged: (LatLngBounds) -> Unit,
@@ -323,6 +415,9 @@ private class MapRenderState(
         this.userBearingDegrees = userBearingDegrees
         this.userTrackingMode = userTrackingMode
         this.positionCompassWithControls = positionCompassWithControls
+        this.compassTopMargin = compassTopMargin
+        this.compassEndMargin = compassEndMargin
+        this.compassFadeFacingNorth = compassFadeFacingNorth
         this.onMarkerClick = onMarkerClick
         this.onMapInteraction = onMapInteraction
         this.onVisibleBoundsChanged = onVisibleBoundsChanged
@@ -344,6 +439,7 @@ private class MapRenderState(
             didFitCamera = false
             map?.setStyle(Style.Builder().fromUri(styleUri)) {
                 renderMode = null
+                this@MapRenderState.map?.let(::configureCompass)
                 render(force = true)
             }
             return
@@ -367,6 +463,7 @@ private class MapRenderState(
 
     private fun attachListeners(map: MapLibreMap) {
         map.addOnCameraIdleListener {
+            configureCompass(map)
             if (clusterMarkers) {
                 runCatching {
                     refreshViewportDerivedSources(map)
@@ -398,16 +495,33 @@ private class MapRenderState(
     }
 
     private fun configureCompass(map: MapLibreMap) {
-        if (!positionCompassWithControls) {
-            map.uiSettings.setCompassEnabled(true)
-            return
-        }
-
         val density = context.resources.displayMetrics.density
         map.uiSettings.setCompassEnabled(true)
-        map.uiSettings.setCompassGravity(Gravity.END or Gravity.CENTER_VERTICAL)
-        map.uiSettings.setCompassMargins(0, 0, (12 * density).roundToInt(), (58 * density).roundToInt())
-        map.uiSettings.setCompassFadeFacingNorth(true)
+        map.uiSettings.setCompassFadeFacingNorth(compassFadeFacingNorth)
+        when {
+            compassTopMargin != null -> {
+                map.uiSettings.setCompassGravity(Gravity.END or Gravity.TOP)
+                map.uiSettings.setCompassMargins(
+                    0,
+                    (compassTopMargin!!.value * density).roundToInt(),
+                    (compassEndMargin.value * density).roundToInt(),
+                    0,
+                )
+            }
+            positionCompassWithControls -> {
+                map.uiSettings.setCompassGravity(Gravity.END or Gravity.CENTER_VERTICAL)
+                map.uiSettings.setCompassMargins(
+                    0,
+                    0,
+                    (compassEndMargin.value * density).roundToInt(),
+                    (58 * density).roundToInt(),
+                )
+            }
+        }
+    }
+
+    fun refreshCompass() {
+        map?.let(::configureCompass)
     }
 
     private fun handleAnnotationTap(marker: Marker) {

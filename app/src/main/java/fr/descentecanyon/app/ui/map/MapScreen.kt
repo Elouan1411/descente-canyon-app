@@ -19,6 +19,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.navigationBars
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.statusBars
 import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.widthIn
@@ -54,7 +55,9 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.Dp
@@ -96,6 +99,8 @@ fun MapScreen(
     val dcColors = LocalDcColors.current
     val contentWidth = rememberDcContentWidth()
     val screenHorizontalPadding = rememberDcScreenHorizontalPadding()
+    val layoutDirection = LocalLayoutDirection.current
+    val configuration = LocalConfiguration.current
     val initialFocusLocationRequestId = remember { uiState.focusLocationRequestId }
     val bottomSheetState = rememberStandardBottomSheetState()
     val bottomSheetScaffoldState = rememberBottomSheetScaffoldState(
@@ -106,6 +111,14 @@ fun MapScreen(
         MAP_BOTTOM_NAVIGATION_CONTENT_HEIGHT +
             WindowInsets.navigationBars.asPaddingValues().calculateBottomPadding(),
     )
+    val statusBarPadding = WindowInsets.statusBars.asPaddingValues().calculateTopPadding()
+    val compassTopMargin = statusBarPadding + 72.dp
+    val navigationBarPadding = WindowInsets.navigationBars.asPaddingValues()
+    val navigationBarEndPadding = navigationBarPadding.calculateRightPadding(layoutDirection)
+    val mapControlsEndPadding = screenHorizontalPadding + navigationBarEndPadding
+    val isLandscape = configuration.screenWidthDp > configuration.screenHeightDp
+    // MapLibre must receive system insets before its native compass is created.
+    val areMapInsetsReady = statusBarPadding > 0.dp && (!isLandscape || navigationBarEndPadding > 0.dp)
     var visibleBounds by remember { mutableStateOf<LatLngBounds?>(null) }
     var showFiltersSheet by rememberSaveable { mutableStateOf(false) }
     val visibleCanyons = remember(uiState.mapCanyons, visibleBounds) {
@@ -203,27 +216,37 @@ fun MapScreen(
         containerColor = dcColors.backgroundBase,
     ) {
         Box(modifier = Modifier.fillMaxSize()) {
-            MapLibreView(
-                markers = uiState.mapCanyons,
-                userLatitude = uiState.userLatitude,
-                userLongitude = uiState.userLongitude,
-                onMarkerClick = viewModel::selectCanyon,
-                onMapInteraction = viewModel::clearSelectedCanyon,
-                onVisibleBoundsChanged = { bounds -> visibleBounds = bounds },
-                onCameraChanged = viewModel::onCameraChanged,
-                persistedCameraState = uiState.cameraState,
-                focusLocationRequestId = uiState.focusLocationRequestId.takeUnless {
-                    it == initialFocusLocationRequestId
-                } ?: 0,
-                modifier = Modifier.fillMaxSize(),
-            )
+            if (areMapInsetsReady) {
+                MapLibreView(
+                    markers = uiState.mapCanyons,
+                    userLatitude = uiState.userLatitude,
+                    userLongitude = uiState.userLongitude,
+                    onMarkerClick = viewModel::selectCanyon,
+                    onMapInteraction = viewModel::clearSelectedCanyon,
+                    onVisibleBoundsChanged = { bounds -> visibleBounds = bounds },
+                    onCameraChanged = viewModel::onCameraChanged,
+                    compassTopMargin = compassTopMargin,
+                    compassEndMargin = mapControlsEndPadding,
+                    compassFadeFacingNorth = false,
+                    persistedCameraState = uiState.cameraState,
+                    focusLocationRequestId = uiState.focusLocationRequestId.takeUnless {
+                        it == initialFocusLocationRequestId
+                    } ?: 0,
+                    modifier = Modifier.fillMaxSize(),
+                )
+            }
 
             Row(
                 modifier = Modifier
                     .align(Alignment.TopCenter)
                     .statusBarsPadding()
                     .width(contentWidth)
-                    .padding(horizontal = screenHorizontalPadding, vertical = 12.dp),
+                    .padding(
+                        start = screenHorizontalPadding,
+                        top = 12.dp,
+                        end = mapControlsEndPadding,
+                        bottom = 12.dp,
+                    ),
                 horizontalArrangement = Arrangement.SpaceBetween,
                 verticalAlignment = Alignment.CenterVertically,
             ) {
