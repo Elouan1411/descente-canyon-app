@@ -174,9 +174,8 @@ internal object DebitParser {
             return observationDetails
         }
 
-        return authors.mapIndexed { index, author ->
+        return authors.map { author ->
             val matchingDetail = observationDetails.firstOrNull { detail -> detail.author == author }
-                ?: observationDetails.getOrNull(index)
             DebitObservationDetail(
                 author = author,
                 comment = matchingDetail?.comment,

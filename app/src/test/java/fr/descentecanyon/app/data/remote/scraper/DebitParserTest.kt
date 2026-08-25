@@ -69,6 +69,37 @@ class DebitParserTest {
     }
 
     @Test
+    fun `merged canyon debit does not assign a comment to an author without details`() {
+        val doc = Jsoup.parse(
+            """
+            <table id="listedebit"><tbody>
+              <tr class="debit4 a2026">
+                <td>mer. 19 août 2026</td>
+                <td>nec<br />Hodoul</td>
+                <td><span title="parcouru"></span></td>
+                <td><span class="ic ic-tint"></span></td>
+                <td>Douce</td>
+                <td>Chaud</td>
+                <td><button id="r200716" class="lire">Lire</button></td>
+              </tr>
+              <tr id="tr200716" class="remarque">
+                <td></td>
+                <td colspan="6">
+                  <div class="userc"><b>Hodoul</b></div>
+                  <p>Fait en intégral amont/avale à deux.</p>
+                </td>
+              </tr>
+            </tbody></table>
+            """.trimIndent(),
+        )
+
+        val result = DebitParser.parseCanyonDebits(doc, 211)
+
+        assertEquals(listOf("nec", "Hodoul"), result.map { it.auteur })
+        assertEquals(listOf(null, "Fait en intégral amont/avale à deux."), result.map { it.commentaire })
+    }
+
+    @Test
     fun `parse latest debits returns non-empty list`() {
         val doc = Jsoup.parse(loadHtml("derniers_debits.html"))
         val result = DebitParser.parseLatestDebits(doc)
