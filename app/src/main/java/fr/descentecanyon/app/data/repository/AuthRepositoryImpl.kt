@@ -23,36 +23,31 @@ class AuthRepositoryImpl @Inject constructor(
         _authState.value = AuthState.Loading
         return runCatching {
             sessionManager.login(username, password)
-            credentialStore.saveCredentials(username, password)
+            credentialStore.saveCredentials(username)
             credentialStore.saveSessionCookies(username, sessionManager.getCookies())
-            _authState.value = AuthState.Connected(username)
-        }.onFailure { e ->
-            _authState.value = AuthState.Error(e.message ?: "Login failed")
-        }
-    }
+             _authState.value = AuthState.Connected(username)
+         }.onFailure { e ->
+             _authState.value = AuthState.Error(e.message ?: "Login failed")
+         }
+     }
 
-    override suspend fun logout() {
+     override suspend fun logout() {
         sessionManager.logout()
         credentialStore.clearCredentials()
-        _authState.value = AuthState.Disconnected
-    }
+         _authState.value = AuthState.Disconnected
+      }
 
     override suspend fun tryRestoreSession(): Result<Unit> {
         val savedUsername = credentialStore.getUsername()
         val savedCookies = credentialStore.getSessionCookies()
         if (savedUsername != null && savedCookies.isNotEmpty()) {
             sessionManager.restoreSession(savedUsername, savedCookies)
-            _authState.value = AuthState.Connected(savedUsername)
+             _authState.value = AuthState.Connected(savedUsername)
             return Result.success(Unit)
-        }
+         }
 
-        if (!credentialStore.hasCredentials()) {
-            return Result.failure(IllegalStateException("No saved credentials"))
-        }
-        val username = savedUsername!!
-        val password = credentialStore.getPassword()!!
-        return login(username, password)
-    }
+        return Result.failure(IllegalStateException("No saved credentials"))
+      }
 
     override fun hasSavedCredentials(): Boolean = credentialStore.hasSessionCookies() || credentialStore.hasCredentials()
 }

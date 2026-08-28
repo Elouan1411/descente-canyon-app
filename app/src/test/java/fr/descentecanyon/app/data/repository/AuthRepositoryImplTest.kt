@@ -63,15 +63,14 @@ class AuthRepositoryImplTest {
     }
 
     @Test
-    fun `tryRestoreSession fails when no credentials`() = runTest {
+     fun `tryRestoreSession fails when no credentials`() = runTest {
         every { credentialStore.getUsername() } returns null
         every { credentialStore.getSessionCookies() } returns emptyMap()
-        every { credentialStore.hasCredentials() } returns false
 
         val result = repository.tryRestoreSession()
 
         assertTrue(result.isFailure)
-    }
+       }
 
     @Test
     fun `tryRestoreSession restores saved cookies without login`() = runTest {
