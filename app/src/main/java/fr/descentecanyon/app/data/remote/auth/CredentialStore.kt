@@ -16,9 +16,8 @@ import javax.inject.Singleton
  * Interface for secure credential storage.
  */
 interface CredentialStore {
-    fun saveCredentials(username: String, password: String)
+    fun saveCredentials(username: String)
     fun getUsername(): String?
-    fun getPassword(): String?
     fun hasCredentials(): Boolean
     fun clearCredentials()
     fun saveSessionCookies(username: String, cookies: Map<String, String>)
@@ -27,8 +26,11 @@ interface CredentialStore {
 }
 
 /**
- * Implementation using EncryptedSharedPreferences (AES-256, Android Keystore-backed).
- */
+  * Implementation using EncryptedSharedPreferences (AES-256, Android Keystore-backed).
+  *
+  * Only the session cookies are persisted as credentials - the password is never stored,
+  * so a session is restored via cookies alone and a stale cookie triggers a re-login flow.
+  */
 @Singleton
 class EncryptedCredentialStore @Inject constructor(
     @param:ApplicationContext private val context: Context,
@@ -37,9 +39,8 @@ class EncryptedCredentialStore @Inject constructor(
     companion object {
         private const val PREFS_NAME = "dc_auth_prefs"
         private const val KEY_USERNAME = "username"
-        private const val KEY_PASSWORD = "password"
         private const val KEY_SESSION_COOKIES = "session_cookies"
-    }
+     }
 
     private val prefs: SharedPreferences by lazy {
         try {
@@ -65,19 +66,16 @@ class EncryptedCredentialStore @Inject constructor(
         )
     }
 
-    override fun saveCredentials(username: String, password: String) {
+    override fun saveCredentials(username: String) {
         prefs.edit()
             .putString(KEY_USERNAME, username)
-            .putString(KEY_PASSWORD, password)
             .apply()
-    }
+      }
 
     override fun getUsername(): String? = prefs.getString(KEY_USERNAME, null)
 
-    override fun getPassword(): String? = prefs.getString(KEY_PASSWORD, null)
-
     override fun hasCredentials(): Boolean =
-        getUsername() != null && getPassword() != null
+        getUsername() != null
 
     override fun clearCredentials() {
         prefs.edit().clear().apply()

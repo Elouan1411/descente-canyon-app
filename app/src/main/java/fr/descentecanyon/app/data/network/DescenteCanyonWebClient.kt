@@ -23,17 +23,18 @@ open class DescenteCanyonWebClient @Inject constructor() {
         url: String,
         cookies: Map<String, String> = emptyMap(),
         timeoutMs: Int = TIMEOUT_MS,
-    ): WebDocumentResponse {
+     ): WebDocumentResponse {
         val response = buildConnection(url, cookies, timeoutMs)
-            .followRedirects(true)
-            .execute()
+             .followRedirects(true)
+             .execute()
 
+        val finalUrl = response.url().toString()
         return WebDocumentResponse(
             document = response.parse(),
             cookies = response.cookies(),
-            finalUrl = response.url().toString(),
-        )
-    }
+            finalUrl = finalUrl,
+         )
+     }
 
     open fun postDocument(
         url: String,
@@ -80,21 +81,32 @@ open class DescenteCanyonWebClient @Inject constructor() {
         url: String,
         cookies: Map<String, String>,
         timeoutMs: Int,
-    ): Connection {
+        ): Connection {
         return Jsoup.connect(url)
-            .userAgent(USER_AGENT)
-            .timeout(timeoutMs)
-            .apply {
-                if (cookies.isNotEmpty()) {
-                    cookies(cookies)
-                }
-            }
-    }
+               .userAgent(USER_AGENT)
+               .timeout(timeoutMs)
+               .apply {
+                  // Never forward session cookies to a non-HTTPS or off-domain endpoint.
+                  if (cookies.isNotEmpty() && isCookieSafe(url)) {
+                     cookies(cookies)
+                  }
+               }
+        }
+
+        // ponytail: coarse host guard (endsWith domain) suffices for our single fixed origin;
+        // upgrade to per-cookie Domain matching if descente-canyon.com ever subdomains cookies.
+     internal fun isCookieSafe(url: String): Boolean {
+        val uri = runCatching { java.net.URI(url) }.getOrNull() ?: return false
+        val host = uri.host?.lowercase() ?: return false
+        return uri.scheme == "https" &&
+               (host == TRUSTED_HOST || host.endsWith(".$TRUSTED_HOST"))
+     }
 
     companion object {
         private val USER_AGENT = "DescenteCanyonApp/${BuildConfig.VERSION_NAME} (Android)"
+        private const val TRUSTED_HOST = "descente-canyon.com"
         private const val TIMEOUT_MS = 30_000
-    }
+       }
 }
 
 data class WebDocumentResponse(
