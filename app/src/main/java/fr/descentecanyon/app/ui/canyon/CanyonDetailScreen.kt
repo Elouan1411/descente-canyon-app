@@ -257,6 +257,15 @@ fun CanyonDetailScreen(
                         )
                     }
                     IconButton(
+                        onClick = { triggerSimpleShare(context, uiState.canyonDetail?.canyon) },
+                        modifier = Modifier.testTag(TestTags.detailShareButton),
+                    ) {
+                        Icon(
+                            imageVector = Icons.Default.Share,
+                            contentDescription = stringResource(R.string.share_canyon),
+                        )
+                    }
+                    IconButton(
                         onClick = viewModel::toggleFavorite,
                         modifier = Modifier.testTag(TestTags.detailFavoriteButton),
                     ) {
@@ -2003,3 +2012,20 @@ private fun openNavigation(
     val uri = Uri.parse("geo:${point.latitude},${point.longitude}?q=${point.latitude},${point.longitude}($label)")
     context.startActivity(Intent(Intent.ACTION_VIEW, uri))
 }
+
+private fun triggerSimpleShare(context: android.content.Context, canyon: Canyon?) {
+    if (canyon == null) return
+    val shareUrl = when {
+        canyon.url.startsWith("http://") || canyon.url.startsWith("https://") -> canyon.url
+        canyon.url.startsWith("/") -> "https://www.descentecanyon.com${canyon.url}"
+        else -> "https://www.descentecanyon.com/${canyon.url}"
+    }
+    val shareText = context.getString(R.string.share_canyon_text, canyon.nom, shareUrl)
+    val sendIntent = Intent(Intent.ACTION_SEND).apply {
+        putExtra(Intent.EXTRA_TEXT, shareText)
+        type = "text/plain"
+    }
+    val shareIntent = Intent.createChooser(sendIntent, context.getString(R.string.share_canyon))
+    context.startActivity(shareIntent)
+}
+
