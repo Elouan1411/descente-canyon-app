@@ -256,29 +256,6 @@ fun CanyonDetailScreen(
                             tint = if (uiState.isDebitNotificationsEnabled) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onPrimaryContainer,
                         )
                     }
-                    IconButton(
-                        onClick = { triggerSimpleShare(context, uiState.canyonDetail?.canyon) },
-                        modifier = Modifier.testTag(TestTags.detailShareButton),
-                    ) {
-                        Icon(
-                            imageVector = Icons.Default.Share,
-                            contentDescription = stringResource(R.string.share_canyon),
-                        )
-                    }
-                    IconButton(
-                        onClick = viewModel::toggleFavorite,
-                        modifier = Modifier.testTag(TestTags.detailFavoriteButton),
-                    ) {
-                        Icon(
-                            imageVector = if (uiState.isFavorite) Icons.Default.Favorite else Icons.Default.FavoriteBorder,
-                            contentDescription = if (uiState.isFavorite) {
-                                stringResource(R.string.remove_favorite)
-                            } else {
-                                stringResource(R.string.add_favorite)
-                            },
-                            tint = if (uiState.isFavorite) MaterialTheme.colorScheme.error else MaterialTheme.colorScheme.onPrimaryContainer,
-                        )
-                    }
                 },
             )
         },
@@ -327,6 +304,9 @@ fun CanyonDetailScreen(
                     ) {
                         CanyonDetailContent(
                             detail = uiState.canyonDetail!!,
+                            isFavorite = uiState.isFavorite,
+                            onFavoriteToggle = viewModel::toggleFavorite,
+                            onShareClick = { triggerSimpleShare(context, uiState.canyonDetail?.canyon) },
                             isRefreshingDetail = uiState.isRefreshingDetail,
                             isOnline = uiState.isOnline,
                             isLoadingPhotos = uiState.isLoadingPhotos,
@@ -453,6 +433,9 @@ private fun AddInterestIcon(
 @Composable
 private fun CanyonDetailContent(
     detail: CanyonDetail,
+    isFavorite: Boolean,
+    onFavoriteToggle: () -> Unit,
+    onShareClick: () -> Unit,
     isRefreshingDetail: Boolean,
     isOnline: Boolean,
     isLoadingPhotos: Boolean,
@@ -514,6 +497,9 @@ private fun CanyonDetailContent(
         item {
             SummaryCard(
                 detail = detail,
+                isFavorite = isFavorite,
+                onFavoriteToggle = onFavoriteToggle,
+                onShareClick = onShareClick,
                 onPersistedPhotoMissing = onPersistedPhotoMissing,
             )
         }
@@ -605,6 +591,9 @@ private fun DetailRefreshingBanner(modifier: Modifier = Modifier) {
 @Composable
 private fun SummaryCard(
     detail: CanyonDetail,
+    isFavorite: Boolean,
+    onFavoriteToggle: () -> Unit,
+    onShareClick: () -> Unit,
     onPersistedPhotoMissing: (Long) -> Unit,
     modifier: Modifier = Modifier,
 ) {
@@ -697,6 +686,55 @@ private fun SummaryCard(
                             maxLines = 1,
                             overflow = TextOverflow.Ellipsis,
                         )
+                    }
+                }
+                Row(
+                    modifier = Modifier
+                        .align(Alignment.BottomEnd)
+                        .padding(spacing.md),
+                    horizontalArrangement = Arrangement.spacedBy(spacing.xs),
+                ) {
+                    Surface(
+                        shape = CircleShape,
+                        color = colors.surfacePhotoScrim.copy(alpha = 0.72f),
+                        contentColor = colors.snow,
+                    ) {
+                        IconButton(
+                            onClick = onShareClick,
+                            modifier = Modifier
+                                .size(36.dp)
+                                .testTag(TestTags.detailShareButton),
+                        ) {
+                            Icon(
+                                imageVector = Icons.Default.Share,
+                                contentDescription = stringResource(R.string.share_canyon),
+                                tint = colors.snow,
+                                modifier = Modifier.size(20.dp),
+                            )
+                        }
+                    }
+                    Surface(
+                        shape = CircleShape,
+                        color = colors.surfacePhotoScrim.copy(alpha = 0.72f),
+                        contentColor = colors.snow,
+                    ) {
+                        IconButton(
+                            onClick = onFavoriteToggle,
+                            modifier = Modifier
+                                .size(36.dp)
+                                .testTag(TestTags.detailFavoriteButton),
+                        ) {
+                            Icon(
+                                imageVector = if (isFavorite) Icons.Default.Favorite else Icons.Default.FavoriteBorder,
+                                contentDescription = if (isFavorite) {
+                                    stringResource(R.string.remove_favorite)
+                                } else {
+                                    stringResource(R.string.add_favorite)
+                                },
+                                tint = if (isFavorite) MaterialTheme.colorScheme.error else colors.snow,
+                                modifier = Modifier.size(20.dp),
+                            )
+                        }
                     }
                 }
                 heroPhoto?.auteur?.takeIf { it.isNotBlank() }?.let { author ->
